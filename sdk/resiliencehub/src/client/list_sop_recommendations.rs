@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSopRecommendations`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`assessment_arn(impl Into<String>)`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::set_assessment_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p><br>
-    /// - On success, responds with [`ListSopRecommendationsOutput`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput) with field(s):
+                            /// - On success, responds with [`ListSopRecommendationsOutput`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
     ///   - [`sop_recommendations(Vec::<SopRecommendation>)`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput::sop_recommendations): <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    /// - On failure, responds with [`SdkError<ListSopRecommendationsError>`](crate::operation::list_sop_recommendations::ListSopRecommendationsError)
+                            /// - On failure, responds with [`SdkError<ListSopRecommendationsError>`](crate::operation::list_sop_recommendations::ListSopRecommendationsError)
     pub fn list_sop_recommendations(&self) -> crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder {
-        crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_sop_recommendations::builders::ListSopRecommendationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

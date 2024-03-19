@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeEntitiesInput {
+pub struct BatchDescribeEntitiesInput  {
     /// <p>List of entity IDs and the catalogs the entities are present in.</p>
-    pub entity_request_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRequest>>,
+    pub entity_request_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityRequest>>,
 }
-impl BatchDescribeEntitiesInput {
+impl  BatchDescribeEntitiesInput  {
     /// <p>List of entity IDs and the catalogs the entities are present in.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_request_list.is_none()`.
-    pub fn entity_request_list(&self) -> &[crate::types::EntityRequest] {
-        self.entity_request_list.as_deref().unwrap_or_default()
+    pub fn entity_request_list(&self) -> & [crate::types::EntityRequest] {
+        self.entity_request_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDescribeEntitiesInput {
@@ -25,7 +26,7 @@ impl BatchDescribeEntitiesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeEntitiesInputBuilder {
-    pub(crate) entity_request_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRequest>>,
+    pub(crate) entity_request_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityRequest>>,
 }
 impl BatchDescribeEntitiesInputBuilder {
     /// Appends an item to `entity_request_list`.
@@ -35,26 +36,26 @@ impl BatchDescribeEntitiesInputBuilder {
     /// <p>List of entity IDs and the catalogs the entities are present in.</p>
     pub fn entity_request_list(mut self, input: crate::types::EntityRequest) -> Self {
         let mut v = self.entity_request_list.unwrap_or_default();
-        v.push(input);
-        self.entity_request_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_request_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of entity IDs and the catalogs the entities are present in.</p>
-    pub fn set_entity_request_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityRequest>>) -> Self {
-        self.entity_request_list = input;
-        self
+    pub fn set_entity_request_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityRequest>>) -> Self {
+        self.entity_request_list = input; self
     }
     /// <p>List of entity IDs and the catalogs the entities are present in.</p>
-    pub fn get_entity_request_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRequest>> {
+    pub fn get_entity_request_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityRequest>> {
         &self.entity_request_list
     }
     /// Consumes the builder and constructs a [`BatchDescribeEntitiesInput`](crate::operation::batch_describe_entities::BatchDescribeEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_describe_entities::BatchDescribeEntitiesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_describe_entities::BatchDescribeEntitiesInput {
-            entity_request_list: self.entity_request_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_describe_entities::BatchDescribeEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_describe_entities::BatchDescribeEntitiesInput {
+                entity_request_list: self.entity_request_list
+                ,
+            }
+        )
     }
 }
+

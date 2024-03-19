@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddOnRequest {
+pub struct AddOnRequest  {
     /// <p>The add-on type.</p>
     pub add_on_type: crate::types::AddOnType,
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
@@ -15,19 +15,19 @@ pub struct AddOnRequest {
     /// </important>
     pub stop_instance_on_idle_request: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
 }
-impl AddOnRequest {
+impl  AddOnRequest  {
     /// <p>The add-on type.</p>
-    pub fn add_on_type(&self) -> &crate::types::AddOnType {
+    pub fn add_on_type(&self) -> & crate::types::AddOnType {
         &self.add_on_type
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
-    pub fn auto_snapshot_add_on_request(&self) -> ::std::option::Option<&crate::types::AutoSnapshotAddOnRequest> {
+    pub fn auto_snapshot_add_on_request(&self) -> ::std::option::Option<& crate::types::AutoSnapshotAddOnRequest> {
         self.auto_snapshot_add_on_request.as_ref()
     }
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p><important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn stop_instance_on_idle_request(&self) -> ::std::option::Option<&crate::types::StopInstanceOnIdleRequest> {
+    pub fn stop_instance_on_idle_request(&self) -> ::std::option::Option<& crate::types::StopInstanceOnIdleRequest> {
         self.stop_instance_on_idle_request.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AddOnRequestBuilder {
     }
     /// <p>The add-on type.</p>
     pub fn set_add_on_type(mut self, input: ::std::option::Option<crate::types::AddOnType>) -> Self {
-        self.add_on_type = input;
-        self
+        self.add_on_type = input; self
     }
     /// <p>The add-on type.</p>
     pub fn get_add_on_type(&self) -> &::std::option::Option<crate::types::AddOnType> {
@@ -69,8 +68,7 @@ impl AddOnRequestBuilder {
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
     pub fn set_auto_snapshot_add_on_request(mut self, input: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>) -> Self {
-        self.auto_snapshot_add_on_request = input;
-        self
+        self.auto_snapshot_add_on_request = input; self
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
     pub fn get_auto_snapshot_add_on_request(&self) -> &::std::option::Option<crate::types::AutoSnapshotAddOnRequest> {
@@ -87,8 +85,7 @@ impl AddOnRequestBuilder {
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn set_stop_instance_on_idle_request(mut self, input: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>) -> Self {
-        self.stop_instance_on_idle_request = input;
-        self
+        self.stop_instance_on_idle_request = input; self
     }
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p><important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
@@ -100,15 +97,19 @@ impl AddOnRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`add_on_type`](crate::types::builders::AddOnRequestBuilder::add_on_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AddOnRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AddOnRequest {
-            add_on_type: self.add_on_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "add_on_type",
-                    "add_on_type was not specified but it is required when building AddOnRequest",
-                )
-            })?,
-            auto_snapshot_add_on_request: self.auto_snapshot_add_on_request,
-            stop_instance_on_idle_request: self.stop_instance_on_idle_request,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AddOnRequest {
+                add_on_type: self.add_on_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("add_on_type", "add_on_type was not specified but it is required when building AddOnRequest")
+                    )?
+                ,
+                auto_snapshot_add_on_request: self.auto_snapshot_add_on_request
+                ,
+                stop_instance_on_idle_request: self.stop_instance_on_idle_request
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeTypeConfigurationsInput {
+pub struct BatchDescribeTypeConfigurationsInput  {
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    pub type_configuration_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
+    pub type_configuration_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::TypeConfigurationIdentifier>>,
 }
-impl BatchDescribeTypeConfigurationsInput {
+impl  BatchDescribeTypeConfigurationsInput  {
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.type_configuration_identifiers.is_none()`.
-    pub fn type_configuration_identifiers(&self) -> &[crate::types::TypeConfigurationIdentifier] {
-        self.type_configuration_identifiers.as_deref().unwrap_or_default()
+    pub fn type_configuration_identifiers(&self) -> & [crate::types::TypeConfigurationIdentifier] {
+        self.type_configuration_identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDescribeTypeConfigurationsInput {
@@ -25,7 +26,7 @@ impl BatchDescribeTypeConfigurationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsInputBuilder {
-    pub(crate) type_configuration_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
+    pub(crate) type_configuration_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::TypeConfigurationIdentifier>>,
 }
 impl BatchDescribeTypeConfigurationsInputBuilder {
     /// Appends an item to `type_configuration_identifiers`.
@@ -35,33 +36,26 @@ impl BatchDescribeTypeConfigurationsInputBuilder {
     /// <p>The list of identifiers for the desired extension configurations.</p>
     pub fn type_configuration_identifiers(mut self, input: crate::types::TypeConfigurationIdentifier) -> Self {
         let mut v = self.type_configuration_identifiers.unwrap_or_default();
-        v.push(input);
-        self.type_configuration_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.type_configuration_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    pub fn set_type_configuration_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
-    ) -> Self {
-        self.type_configuration_identifiers = input;
-        self
+    pub fn set_type_configuration_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TypeConfigurationIdentifier>>) -> Self {
+        self.type_configuration_identifiers = input; self
     }
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    pub fn get_type_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>> {
+    pub fn get_type_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TypeConfigurationIdentifier>> {
         &self.type_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsInput`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput {
-                type_configuration_identifiers: self.type_configuration_identifiers,
-            },
+                type_configuration_identifiers: self.type_configuration_identifiers
+                ,
+            }
         )
     }
 }
+

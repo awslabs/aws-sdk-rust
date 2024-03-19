@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConvertRecoveryPointToSnapshotInput {
+pub struct ConvertRecoveryPointToSnapshotInput  {
     /// <p>The unique identifier of the recovery point.</p>
     pub recovery_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot.</p>
@@ -10,15 +10,15 @@ pub struct ConvertRecoveryPointToSnapshotInput {
     /// <p>How long to retain the snapshot.</p>
     pub retention_period: ::std::option::Option<i32>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ConvertRecoveryPointToSnapshotInput {
+impl  ConvertRecoveryPointToSnapshotInput  {
     /// <p>The unique identifier of the recovery point.</p>
-    pub fn recovery_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_id(&self) -> ::std::option::Option<& str> {
         self.recovery_point_id.as_deref()
     }
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>How long to retain the snapshot.</p>
@@ -26,10 +26,11 @@ impl ConvertRecoveryPointToSnapshotInput {
         self.retention_period
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConvertRecoveryPointToSnapshotInput {
@@ -46,7 +47,7 @@ pub struct ConvertRecoveryPointToSnapshotInputBuilder {
     pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ConvertRecoveryPointToSnapshotInputBuilder {
     /// <p>The unique identifier of the recovery point.</p>
@@ -57,8 +58,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
     }
     /// <p>The unique identifier of the recovery point.</p>
     pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_id = input;
-        self
+        self.recovery_point_id = input; self
     }
     /// <p>The unique identifier of the recovery point.</p>
     pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the snapshot.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
     }
     /// <p>How long to retain the snapshot.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>How long to retain the snapshot.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
@@ -100,33 +98,32 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ConvertRecoveryPointToSnapshotInput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput {
-                recovery_point_id: self.recovery_point_id,
-                snapshot_name: self.snapshot_name,
-                retention_period: self.retention_period,
-                tags: self.tags,
-            },
+                recovery_point_id: self.recovery_point_id
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                retention_period: self.retention_period
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

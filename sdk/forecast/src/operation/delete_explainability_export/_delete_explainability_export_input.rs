@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExplainabilityExportInput {
+pub struct DeleteExplainabilityExportInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub explainability_export_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteExplainabilityExportInput {
+impl  DeleteExplainabilityExportInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
-    pub fn explainability_export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn explainability_export_arn(&self) -> ::std::option::Option<& str> {
         self.explainability_export_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteExplainabilityExportInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explainability_export_arn = input;
-        self
+        self.explainability_export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn get_explainability_export_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_export_arn
     }
     /// Consumes the builder and constructs a [`DeleteExplainabilityExportInput`](crate::operation::delete_explainability_export::DeleteExplainabilityExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_explainability_export::DeleteExplainabilityExportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_explainability_export::DeleteExplainabilityExportInput {
-            explainability_export_arn: self.explainability_export_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_explainability_export::DeleteExplainabilityExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_explainability_export::DeleteExplainabilityExportInput {
+                explainability_export_arn: self.explainability_export_arn
+                ,
+            }
+        )
     }
 }
+

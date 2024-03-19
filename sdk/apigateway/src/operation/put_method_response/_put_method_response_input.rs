@@ -3,7 +3,7 @@
 /// <p>Request to add a MethodResponse to an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMethodResponseInput {
+pub struct PutMethodResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The Resource identifier for the Method resource.</p>
@@ -13,33 +13,33 @@ pub struct PutMethodResponseInput {
     /// <p>The method response's status code.</p>
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-    pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>>,
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub response_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub response_models: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutMethodResponseInput {
+impl  PutMethodResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The Resource identifier for the Method resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The HTTP verb of the Method resource.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>The method response's status code.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-    pub fn response_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn response_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, bool>> {
         self.response_parameters.as_ref()
     }
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn response_models(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn response_models(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.response_models.as_ref()
     }
 }
@@ -58,8 +58,8 @@ pub struct PutMethodResponseInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
-    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
-    pub(crate) response_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>>,
+    pub(crate) response_models: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutMethodResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -70,8 +70,7 @@ impl PutMethodResponseInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl PutMethodResponseInputBuilder {
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl PutMethodResponseInputBuilder {
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl PutMethodResponseInputBuilder {
     }
     /// <p>The method response's status code.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The method response's status code.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,17 +125,16 @@ impl PutMethodResponseInputBuilder {
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     pub fn response_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.response_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.response_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.response_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-    pub fn set_response_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>) -> Self {
-        self.response_parameters = input;
-        self
+    pub fn set_response_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>>) -> Self {
+        self.response_parameters = input; self
     }
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>> {
         &self.response_parameters
     }
     /// Adds a key-value pair to `response_models`.
@@ -147,39 +142,38 @@ impl PutMethodResponseInputBuilder {
     /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
     ///
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn response_models(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_models(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.response_models.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.response_models = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.response_models = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn set_response_models(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.response_models = input;
-        self
+    pub fn set_response_models(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.response_models = input; self
     }
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn get_response_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_models(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.response_models
     }
     /// Consumes the builder and constructs a [`PutMethodResponseInput`](crate::operation::put_method_response::PutMethodResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_method_response::PutMethodResponseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_method_response::PutMethodResponseInput {
-            rest_api_id: self.rest_api_id,
-            resource_id: self.resource_id,
-            http_method: self.http_method,
-            status_code: self.status_code,
-            response_parameters: self.response_parameters,
-            response_models: self.response_models,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_method_response::PutMethodResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_method_response::PutMethodResponseInput {
+                rest_api_id: self.rest_api_id
+                ,
+                resource_id: self.resource_id
+                ,
+                http_method: self.http_method
+                ,
+                status_code: self.status_code
+                ,
+                response_parameters: self.response_parameters
+                ,
+                response_models: self.response_models
+                ,
+            }
+        )
     }
 }
+

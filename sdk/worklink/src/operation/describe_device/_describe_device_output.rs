@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceOutput {
+pub struct DescribeDeviceOutput  {
     /// <p>The current state of the device.</p>
     pub status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>The model of the device.</p>
@@ -23,49 +23,49 @@ pub struct DescribeDeviceOutput {
     pub username: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDeviceOutput {
+impl  DescribeDeviceOutput  {
     /// <p>The current state of the device.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeviceStatus> {
         self.status.as_ref()
     }
     /// <p>The model of the device.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The manufacturer of the device.</p>
-    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<& str> {
         self.manufacturer.as_deref()
     }
     /// <p>The operating system of the device.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system(&self) -> ::std::option::Option<& str> {
         self.operating_system.as_deref()
     }
     /// <p>The operating system version of the device.</p>
-    pub fn operating_system_version(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system_version(&self) -> ::std::option::Option<& str> {
         self.operating_system_version.as_deref()
     }
     /// <p>The operating system patch level of the device.</p>
-    pub fn patch_level(&self) -> ::std::option::Option<&str> {
+    pub fn patch_level(&self) -> ::std::option::Option<& str> {
         self.patch_level.as_deref()
     }
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
-    pub fn first_accessed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn first_accessed_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.first_accessed_time.as_ref()
     }
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
-    pub fn last_accessed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed_time.as_ref()
     }
     /// <p>The user name associated with the device.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
     pub fn builder() -> crate::operation::describe_device::builders::DescribeDeviceOutputBuilder {
@@ -96,8 +96,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The current state of the device.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the device.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
@@ -110,8 +109,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The model of the device.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The model of the device.</p>
     pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The manufacturer of the device.</p>
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer = input;
-        self
+        self.manufacturer = input; self
     }
     /// <p>The manufacturer of the device.</p>
     pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The operating system of the device.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>The operating system of the device.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +148,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The operating system version of the device.</p>
     pub fn set_operating_system_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system_version = input;
-        self
+        self.operating_system_version = input; self
     }
     /// <p>The operating system version of the device.</p>
     pub fn get_operating_system_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The operating system patch level of the device.</p>
     pub fn set_patch_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_level = input;
-        self
+        self.patch_level = input; self
     }
     /// <p>The operating system patch level of the device.</p>
     pub fn get_patch_level(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +174,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
     pub fn set_first_accessed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.first_accessed_time = input;
-        self
+        self.first_accessed_time = input; self
     }
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
     pub fn get_first_accessed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +187,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
     pub fn set_last_accessed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed_time = input;
-        self
+        self.last_accessed_time = input; self
     }
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
     pub fn get_last_accessed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,35 +200,44 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The user name associated with the device.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name associated with the device.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
     pub fn build(self) -> crate::operation::describe_device::DescribeDeviceOutput {
         crate::operation::describe_device::DescribeDeviceOutput {
-            status: self.status,
-            model: self.model,
-            manufacturer: self.manufacturer,
-            operating_system: self.operating_system,
-            operating_system_version: self.operating_system_version,
-            patch_level: self.patch_level,
-            first_accessed_time: self.first_accessed_time,
-            last_accessed_time: self.last_accessed_time,
-            username: self.username,
+            status: self.status
+            ,
+            model: self.model
+            ,
+            manufacturer: self.manufacturer
+            ,
+            operating_system: self.operating_system
+            ,
+            operating_system_version: self.operating_system_version
+            ,
+            patch_level: self.patch_level
+            ,
+            first_accessed_time: self.first_accessed_time
+            ,
+            last_accessed_time: self.last_accessed_time
+            ,
+            username: self.username
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

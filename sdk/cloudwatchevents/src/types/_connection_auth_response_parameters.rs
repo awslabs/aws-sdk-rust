@@ -3,7 +3,7 @@
 /// <p>Contains the authorization parameters to use for the connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionAuthResponseParameters {
+pub struct ConnectionAuthResponseParameters  {
     /// <p>The authorization parameters for Basic authorization.</p>
     pub basic_auth_parameters: ::std::option::Option<crate::types::ConnectionBasicAuthResponseParameters>,
     /// <p>The OAuth parameters to use for authorization.</p>
@@ -13,21 +13,21 @@ pub struct ConnectionAuthResponseParameters {
     /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
     pub invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
-impl ConnectionAuthResponseParameters {
+impl  ConnectionAuthResponseParameters  {
     /// <p>The authorization parameters for Basic authorization.</p>
-    pub fn basic_auth_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionBasicAuthResponseParameters> {
+    pub fn basic_auth_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionBasicAuthResponseParameters> {
         self.basic_auth_parameters.as_ref()
     }
     /// <p>The OAuth parameters to use for authorization.</p>
-    pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionOAuthResponseParameters> {
+    pub fn o_auth_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionOAuthResponseParameters> {
         self.o_auth_parameters.as_ref()
     }
     /// <p>The API Key parameters to use for authorization.</p>
-    pub fn api_key_auth_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionApiKeyAuthResponseParameters> {
+    pub fn api_key_auth_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionApiKeyAuthResponseParameters> {
         self.api_key_auth_parameters.as_ref()
     }
     /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
-    pub fn invocation_http_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
+    pub fn invocation_http_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ConnectionAuthResponseParametersBuilder {
     }
     /// <p>The authorization parameters for Basic authorization.</p>
     pub fn set_basic_auth_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionBasicAuthResponseParameters>) -> Self {
-        self.basic_auth_parameters = input;
-        self
+        self.basic_auth_parameters = input; self
     }
     /// <p>The authorization parameters for Basic authorization.</p>
     pub fn get_basic_auth_parameters(&self) -> &::std::option::Option<crate::types::ConnectionBasicAuthResponseParameters> {
@@ -69,8 +68,7 @@ impl ConnectionAuthResponseParametersBuilder {
     }
     /// <p>The OAuth parameters to use for authorization.</p>
     pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionOAuthResponseParameters>) -> Self {
-        self.o_auth_parameters = input;
-        self
+        self.o_auth_parameters = input; self
     }
     /// <p>The OAuth parameters to use for authorization.</p>
     pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::ConnectionOAuthResponseParameters> {
@@ -83,8 +81,7 @@ impl ConnectionAuthResponseParametersBuilder {
     }
     /// <p>The API Key parameters to use for authorization.</p>
     pub fn set_api_key_auth_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionApiKeyAuthResponseParameters>) -> Self {
-        self.api_key_auth_parameters = input;
-        self
+        self.api_key_auth_parameters = input; self
     }
     /// <p>The API Key parameters to use for authorization.</p>
     pub fn get_api_key_auth_parameters(&self) -> &::std::option::Option<crate::types::ConnectionApiKeyAuthResponseParameters> {
@@ -97,8 +94,7 @@ impl ConnectionAuthResponseParametersBuilder {
     }
     /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
     pub fn set_invocation_http_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionHttpParameters>) -> Self {
-        self.invocation_http_parameters = input;
-        self
+        self.invocation_http_parameters = input; self
     }
     /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
     pub fn get_invocation_http_parameters(&self) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
@@ -107,10 +103,15 @@ impl ConnectionAuthResponseParametersBuilder {
     /// Consumes the builder and constructs a [`ConnectionAuthResponseParameters`](crate::types::ConnectionAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionAuthResponseParameters {
         crate::types::ConnectionAuthResponseParameters {
-            basic_auth_parameters: self.basic_auth_parameters,
-            o_auth_parameters: self.o_auth_parameters,
-            api_key_auth_parameters: self.api_key_auth_parameters,
-            invocation_http_parameters: self.invocation_http_parameters,
+            basic_auth_parameters: self.basic_auth_parameters
+            ,
+            o_auth_parameters: self.o_auth_parameters
+            ,
+            api_key_auth_parameters: self.api_key_auth_parameters
+            ,
+            invocation_http_parameters: self.invocation_http_parameters
+            ,
         }
     }
 }
+

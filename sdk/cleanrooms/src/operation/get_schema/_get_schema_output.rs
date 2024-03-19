@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaOutput {
+pub struct GetSchemaOutput  {
     /// <p>The entire schema object.</p>
     pub schema: ::std::option::Option<crate::types::Schema>,
     _request_id: Option<String>,
 }
-impl GetSchemaOutput {
+impl  GetSchemaOutput  {
     /// <p>The entire schema object.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput).
     pub fn builder() -> crate::operation::get_schema::builders::GetSchemaOutputBuilder {
@@ -41,27 +41,28 @@ impl GetSchemaOutputBuilder {
     }
     /// <p>The entire schema object.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The entire schema object.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
         &self.schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput).
     pub fn build(self) -> crate::operation::get_schema::GetSchemaOutput {
         crate::operation::get_schema::GetSchemaOutput {
-            schema: self.schema,
+            schema: self.schema
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

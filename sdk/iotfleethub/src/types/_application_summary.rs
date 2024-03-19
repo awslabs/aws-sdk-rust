@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The unique Id of the web application.</p>
     pub application_id: ::std::string::String,
     /// <p>The name of the web application.</p>
@@ -21,25 +21,22 @@ pub struct ApplicationSummary {
     /// <p>The current state of the web application.</p>
     pub application_state: ::std::option::Option<crate::types::ApplicationState>,
 }
-impl ApplicationSummary {
+impl  ApplicationSummary  {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> &str {
-        use std::ops::Deref;
-        self.application_name.deref()
+    pub fn application_name(&self) -> & str {
+        use std::ops::Deref; self.application_name.deref()
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(&self) -> ::std::option::Option<&str> {
+    pub fn application_description(&self) -> ::std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(&self) -> &str {
-        use std::ops::Deref;
-        self.application_url.deref()
+    pub fn application_url(&self) -> & str {
+        use std::ops::Deref; self.application_url.deref()
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub fn application_creation_date(&self) -> i64 {
@@ -50,7 +47,7 @@ impl ApplicationSummary {
         self.application_last_update_date
     }
     /// <p>The current state of the web application.</p>
-    pub fn application_state(&self) -> ::std::option::Option<&crate::types::ApplicationState> {
+    pub fn application_state(&self) -> ::std::option::Option<& crate::types::ApplicationState> {
         self.application_state.as_ref()
     }
 }
@@ -82,8 +79,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The unique Id of the web application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique Id of the web application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +93,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The name of the web application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the web application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +106,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>An optional description of the web application.</p>
     pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_description = input;
-        self
+        self.application_description = input; self
     }
     /// <p>An optional description of the web application.</p>
     pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +120,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The URL of the web application.</p>
     pub fn set_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_url = input;
-        self
+        self.application_url = input; self
     }
     /// <p>The URL of the web application.</p>
     pub fn get_application_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +133,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub fn set_application_creation_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_creation_date = input;
-        self
+        self.application_creation_date = input; self
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub fn get_application_creation_date(&self) -> &::std::option::Option<i64> {
@@ -154,8 +146,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
     pub fn set_application_last_update_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_last_update_date = input;
-        self
+        self.application_last_update_date = input; self
     }
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
     pub fn get_application_last_update_date(&self) -> &::std::option::Option<i64> {
@@ -168,8 +159,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The current state of the web application.</p>
     pub fn set_application_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
-        self.application_state = input;
-        self
+        self.application_state = input; self
     }
     /// <p>The current state of the web application.</p>
     pub fn get_application_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
@@ -181,29 +171,35 @@ impl ApplicationSummaryBuilder {
     /// - [`application_name`](crate::types::builders::ApplicationSummaryBuilder::application_name)
     /// - [`application_url`](crate::types::builders::ApplicationSummaryBuilder::application_url)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationSummary {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_name",
-                    "application_name was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_description: self.application_description,
-            application_url: self.application_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_url",
-                    "application_url was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_creation_date: self.application_creation_date.unwrap_or_default(),
-            application_last_update_date: self.application_last_update_date.unwrap_or_default(),
-            application_state: self.application_state,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationSummary {
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_name: self.application_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_name", "application_name was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_description: self.application_description
+                ,
+                application_url: self.application_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_url", "application_url was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_creation_date: self.application_creation_date
+                    .unwrap_or_default()
+                ,
+                application_last_update_date: self.application_last_update_date
+                    .unwrap_or_default()
+                ,
+                application_state: self.application_state
+                ,
+            }
+        )
     }
 }
+

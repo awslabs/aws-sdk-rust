@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMailDomainOutput {
+pub struct GetMailDomainOutput  {
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>>,
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub is_test_domain: bool,
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
@@ -15,12 +15,13 @@ pub struct GetMailDomainOutput {
     pub dkim_verification_status: ::std::option::Option<crate::types::DnsRecordVerificationStatus>,
     _request_id: Option<String>,
 }
-impl GetMailDomainOutput {
+impl  GetMailDomainOutput  {
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[crate::types::DnsRecord] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [crate::types::DnsRecord] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub fn is_test_domain(&self) -> bool {
@@ -31,19 +32,19 @@ impl GetMailDomainOutput {
         self.is_default
     }
     /// <p>Indicates the status of the domain ownership verification.</p>
-    pub fn ownership_verification_status(&self) -> ::std::option::Option<&crate::types::DnsRecordVerificationStatus> {
+    pub fn ownership_verification_status(&self) -> ::std::option::Option<& crate::types::DnsRecordVerificationStatus> {
         self.ownership_verification_status.as_ref()
     }
     /// <p>Indicates the status of a DKIM verification.</p>
-    pub fn dkim_verification_status(&self) -> ::std::option::Option<&crate::types::DnsRecordVerificationStatus> {
+    pub fn dkim_verification_status(&self) -> ::std::option::Option<& crate::types::DnsRecordVerificationStatus> {
         self.dkim_verification_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMailDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMailDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetMailDomainOutput`](crate::operation::get_mail_domain::GetMailDomainOutput).
     pub fn builder() -> crate::operation::get_mail_domain::builders::GetMailDomainOutputBuilder {
@@ -55,7 +56,7 @@ impl GetMailDomainOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMailDomainOutputBuilder {
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>>,
     pub(crate) is_test_domain: ::std::option::Option<bool>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) ownership_verification_status: ::std::option::Option<crate::types::DnsRecordVerificationStatus>,
@@ -70,17 +71,16 @@ impl GetMailDomainOutputBuilder {
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     pub fn records(mut self, input: crate::types::DnsRecord) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>>) -> Self {
+        self.records = input; self
     }
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>> {
         &self.records
     }
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
@@ -90,8 +90,7 @@ impl GetMailDomainOutputBuilder {
     }
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub fn set_is_test_domain(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_test_domain = input;
-        self
+        self.is_test_domain = input; self
     }
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub fn get_is_test_domain(&self) -> &::std::option::Option<bool> {
@@ -104,8 +103,7 @@ impl GetMailDomainOutputBuilder {
     }
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -118,8 +116,7 @@ impl GetMailDomainOutputBuilder {
     }
     /// <p>Indicates the status of the domain ownership verification.</p>
     pub fn set_ownership_verification_status(mut self, input: ::std::option::Option<crate::types::DnsRecordVerificationStatus>) -> Self {
-        self.ownership_verification_status = input;
-        self
+        self.ownership_verification_status = input; self
     }
     /// <p>Indicates the status of the domain ownership verification.</p>
     pub fn get_ownership_verification_status(&self) -> &::std::option::Option<crate::types::DnsRecordVerificationStatus> {
@@ -132,31 +129,38 @@ impl GetMailDomainOutputBuilder {
     }
     /// <p>Indicates the status of a DKIM verification.</p>
     pub fn set_dkim_verification_status(mut self, input: ::std::option::Option<crate::types::DnsRecordVerificationStatus>) -> Self {
-        self.dkim_verification_status = input;
-        self
+        self.dkim_verification_status = input; self
     }
     /// <p>Indicates the status of a DKIM verification.</p>
     pub fn get_dkim_verification_status(&self) -> &::std::option::Option<crate::types::DnsRecordVerificationStatus> {
         &self.dkim_verification_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMailDomainOutput`](crate::operation::get_mail_domain::GetMailDomainOutput).
     pub fn build(self) -> crate::operation::get_mail_domain::GetMailDomainOutput {
         crate::operation::get_mail_domain::GetMailDomainOutput {
-            records: self.records,
-            is_test_domain: self.is_test_domain.unwrap_or_default(),
-            is_default: self.is_default.unwrap_or_default(),
-            ownership_verification_status: self.ownership_verification_status,
-            dkim_verification_status: self.dkim_verification_status,
+            records: self.records
+            ,
+            is_test_domain: self.is_test_domain
+                .unwrap_or_default()
+            ,
+            is_default: self.is_default
+                .unwrap_or_default()
+            ,
+            ownership_verification_status: self.ownership_verification_status
+            ,
+            dkim_verification_status: self.dkim_verification_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

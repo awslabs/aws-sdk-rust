@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let algorithmnameresampling = unimplemented!();
 /// match algorithmnameresampling {
@@ -42,16 +42,14 @@
 /// Specifically, when `algorithmnameresampling` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlgorithmNameResampling::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AlgorithmNameResampling {
     /// AVERAGE
     Average,
@@ -83,112 +81,98 @@ pub enum AlgorithmNameResampling {
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AlgorithmNameResampling {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVERAGE" => AlgorithmNameResampling::Average,
-            "BILINEAR" => AlgorithmNameResampling::Bilinear,
-            "CUBIC" => AlgorithmNameResampling::Cubic,
-            "CUBICSPLINE" => AlgorithmNameResampling::Cubicspline,
-            "LANCZOS" => AlgorithmNameResampling::Lanczos,
-            "MAX" => AlgorithmNameResampling::Max,
-            "MED" => AlgorithmNameResampling::Med,
-            "MIN" => AlgorithmNameResampling::Min,
-            "MODE" => AlgorithmNameResampling::Mode,
-            "NEAR" => AlgorithmNameResampling::Near,
-            "Q1" => AlgorithmNameResampling::Q1,
-            "Q3" => AlgorithmNameResampling::Q3,
-            "RMS" => AlgorithmNameResampling::Rms,
-            "SUM" => AlgorithmNameResampling::Sum,
-            other => AlgorithmNameResampling::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AVERAGE" => AlgorithmNameResampling::Average,
+"BILINEAR" => AlgorithmNameResampling::Bilinear,
+"CUBIC" => AlgorithmNameResampling::Cubic,
+"CUBICSPLINE" => AlgorithmNameResampling::Cubicspline,
+"LANCZOS" => AlgorithmNameResampling::Lanczos,
+"MAX" => AlgorithmNameResampling::Max,
+"MED" => AlgorithmNameResampling::Med,
+"MIN" => AlgorithmNameResampling::Min,
+"MODE" => AlgorithmNameResampling::Mode,
+"NEAR" => AlgorithmNameResampling::Near,
+"Q1" => AlgorithmNameResampling::Q1,
+"Q3" => AlgorithmNameResampling::Q3,
+"RMS" => AlgorithmNameResampling::Rms,
+"SUM" => AlgorithmNameResampling::Sum,
+other => AlgorithmNameResampling::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AlgorithmNameResampling {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AlgorithmNameResampling::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AlgorithmNameResampling::from(s))
+                    }
+                }
 impl AlgorithmNameResampling {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AlgorithmNameResampling::Average => "AVERAGE",
-            AlgorithmNameResampling::Bilinear => "BILINEAR",
-            AlgorithmNameResampling::Cubic => "CUBIC",
-            AlgorithmNameResampling::Cubicspline => "CUBICSPLINE",
-            AlgorithmNameResampling::Lanczos => "LANCZOS",
-            AlgorithmNameResampling::Max => "MAX",
-            AlgorithmNameResampling::Med => "MED",
-            AlgorithmNameResampling::Min => "MIN",
-            AlgorithmNameResampling::Mode => "MODE",
-            AlgorithmNameResampling::Near => "NEAR",
-            AlgorithmNameResampling::Q1 => "Q1",
-            AlgorithmNameResampling::Q3 => "Q3",
-            AlgorithmNameResampling::Rms => "RMS",
-            AlgorithmNameResampling::Sum => "SUM",
-            AlgorithmNameResampling::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVERAGE",
-            "BILINEAR",
-            "CUBIC",
-            "CUBICSPLINE",
-            "LANCZOS",
-            "MAX",
-            "MED",
-            "MIN",
-            "MODE",
-            "NEAR",
-            "Q1",
-            "Q3",
-            "RMS",
-            "SUM",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AlgorithmNameResampling::Average => "AVERAGE",
+    AlgorithmNameResampling::Bilinear => "BILINEAR",
+    AlgorithmNameResampling::Cubic => "CUBIC",
+    AlgorithmNameResampling::Cubicspline => "CUBICSPLINE",
+    AlgorithmNameResampling::Lanczos => "LANCZOS",
+    AlgorithmNameResampling::Max => "MAX",
+    AlgorithmNameResampling::Med => "MED",
+    AlgorithmNameResampling::Min => "MIN",
+    AlgorithmNameResampling::Mode => "MODE",
+    AlgorithmNameResampling::Near => "NEAR",
+    AlgorithmNameResampling::Q1 => "Q1",
+    AlgorithmNameResampling::Q3 => "Q3",
+    AlgorithmNameResampling::Rms => "RMS",
+    AlgorithmNameResampling::Sum => "SUM",
+    AlgorithmNameResampling::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVERAGE", "BILINEAR", "CUBIC", "CUBICSPLINE", "LANCZOS", "MAX", "MED", "MIN", "MODE", "NEAR", "Q1", "Q3", "RMS", "SUM"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AlgorithmNameResampling {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AlgorithmNameResampling {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AlgorithmNameResampling {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AlgorithmNameResampling::Average => write!(f, "AVERAGE"),
-            AlgorithmNameResampling::Bilinear => write!(f, "BILINEAR"),
-            AlgorithmNameResampling::Cubic => write!(f, "CUBIC"),
-            AlgorithmNameResampling::Cubicspline => write!(f, "CUBICSPLINE"),
-            AlgorithmNameResampling::Lanczos => write!(f, "LANCZOS"),
-            AlgorithmNameResampling::Max => write!(f, "MAX"),
-            AlgorithmNameResampling::Med => write!(f, "MED"),
-            AlgorithmNameResampling::Min => write!(f, "MIN"),
-            AlgorithmNameResampling::Mode => write!(f, "MODE"),
-            AlgorithmNameResampling::Near => write!(f, "NEAR"),
-            AlgorithmNameResampling::Q1 => write!(f, "Q1"),
-            AlgorithmNameResampling::Q3 => write!(f, "Q3"),
-            AlgorithmNameResampling::Rms => write!(f, "RMS"),
-            AlgorithmNameResampling::Sum => write!(f, "SUM"),
-            AlgorithmNameResampling::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AlgorithmNameResampling::Average => write!(f, "AVERAGE"),
+AlgorithmNameResampling::Bilinear => write!(f, "BILINEAR"),
+AlgorithmNameResampling::Cubic => write!(f, "CUBIC"),
+AlgorithmNameResampling::Cubicspline => write!(f, "CUBICSPLINE"),
+AlgorithmNameResampling::Lanczos => write!(f, "LANCZOS"),
+AlgorithmNameResampling::Max => write!(f, "MAX"),
+AlgorithmNameResampling::Med => write!(f, "MED"),
+AlgorithmNameResampling::Min => write!(f, "MIN"),
+AlgorithmNameResampling::Mode => write!(f, "MODE"),
+AlgorithmNameResampling::Near => write!(f, "NEAR"),
+AlgorithmNameResampling::Q1 => write!(f, "Q1"),
+AlgorithmNameResampling::Q3 => write!(f, "Q3"),
+AlgorithmNameResampling::Rms => write!(f, "RMS"),
+AlgorithmNameResampling::Sum => write!(f, "SUM"),
+AlgorithmNameResampling::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

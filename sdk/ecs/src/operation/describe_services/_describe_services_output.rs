@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServicesOutput {
+pub struct DescribeServicesOutput  {
     /// <p>The list of services described.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
+    pub services: ::std::option::Option<::std::vec::Vec::<crate::types::Service>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
-impl DescribeServicesOutput {
+impl  DescribeServicesOutput  {
     /// <p>The list of services described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
-    pub fn services(&self) -> &[crate::types::Service] {
-        self.services.as_deref().unwrap_or_default()
+    pub fn services(&self) -> & [crate::types::Service] {
+        self.services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeServicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
     pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder {
@@ -39,8 +41,8 @@ impl DescribeServicesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesOutputBuilder {
-    pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec::<crate::types::Service>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
 impl DescribeServicesOutputBuilder {
@@ -51,17 +53,16 @@ impl DescribeServicesOutputBuilder {
     /// <p>The list of services described.</p>
     pub fn services(mut self, input: crate::types::Service) -> Self {
         let mut v = self.services.unwrap_or_default();
-        v.push(input);
-        self.services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of services described.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Service>>) -> Self {
+        self.services = input; self
     }
     /// <p>The list of services described.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Service>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Service>> {
         &self.services
     }
     /// Appends an item to `failures`.
@@ -71,34 +72,36 @@ impl DescribeServicesOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
     pub fn build(self) -> crate::operation::describe_services::DescribeServicesOutput {
         crate::operation::describe_services::DescribeServicesOutput {
-            services: self.services,
-            failures: self.failures,
+            services: self.services
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

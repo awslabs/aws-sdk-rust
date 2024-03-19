@@ -3,19 +3,19 @@
 /// <p>Details and type of a related item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemIdentifier {
+pub struct ItemIdentifier  {
     /// <p>Details about the related item.</p>
     pub value: ::std::option::Option<crate::types::ItemValue>,
     /// <p>The type of related item.</p>
     pub r#type: crate::types::ItemType,
 }
-impl ItemIdentifier {
+impl  ItemIdentifier  {
     /// <p>Details about the related item.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::ItemValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::ItemValue> {
         self.value.as_ref()
     }
     /// <p>The type of related item.</p>
-    pub fn r#type(&self) -> &crate::types::ItemType {
+    pub fn r#type(&self) -> & crate::types::ItemType {
         &self.r#type
     }
 }
@@ -42,8 +42,7 @@ impl ItemIdentifierBuilder {
     }
     /// <p>Details about the related item.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::ItemValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Details about the related item.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::ItemValue> {
@@ -57,8 +56,7 @@ impl ItemIdentifierBuilder {
     }
     /// <p>The type of related item.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ItemType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of related item.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ItemType> {
@@ -68,14 +66,17 @@ impl ItemIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ItemIdentifierBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ItemIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ItemIdentifier {
-            value: self.value,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ItemIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ItemIdentifier {
+                value: self.value
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ItemIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

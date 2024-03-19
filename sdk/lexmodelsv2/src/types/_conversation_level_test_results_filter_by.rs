@@ -3,13 +3,13 @@
 /// <p>The selection to filter the test set results data at the conversation level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLevelTestResultsFilterBy {
+pub struct ConversationLevelTestResultsFilterBy  {
     /// <p>The selection of matched or mismatched end-to-end status to filter test set results data at the conversation level.</p>
     pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
-impl ConversationLevelTestResultsFilterBy {
+impl  ConversationLevelTestResultsFilterBy  {
     /// <p>The selection of matched or mismatched end-to-end status to filter test set results data at the conversation level.</p>
-    pub fn end_to_end_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
+    pub fn end_to_end_result(&self) -> ::std::option::Option<& crate::types::TestResultMatchStatus> {
         self.end_to_end_result.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ConversationLevelTestResultsFilterByBuilder {
     }
     /// <p>The selection of matched or mismatched end-to-end status to filter test set results data at the conversation level.</p>
     pub fn set_end_to_end_result(mut self, input: ::std::option::Option<crate::types::TestResultMatchStatus>) -> Self {
-        self.end_to_end_result = input;
-        self
+        self.end_to_end_result = input; self
     }
     /// <p>The selection of matched or mismatched end-to-end status to filter test set results data at the conversation level.</p>
     pub fn get_end_to_end_result(&self) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
@@ -44,7 +43,9 @@ impl ConversationLevelTestResultsFilterByBuilder {
     /// Consumes the builder and constructs a [`ConversationLevelTestResultsFilterBy`](crate::types::ConversationLevelTestResultsFilterBy).
     pub fn build(self) -> crate::types::ConversationLevelTestResultsFilterBy {
         crate::types::ConversationLevelTestResultsFilterBy {
-            end_to_end_result: self.end_to_end_result,
+            end_to_end_result: self.end_to_end_result
+            ,
         }
     }
 }
+

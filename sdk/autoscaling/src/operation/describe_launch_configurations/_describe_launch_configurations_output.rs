@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLaunchConfigurationsOutput {
+pub struct DescribeLaunchConfigurationsOutput  {
     /// <p>The launch configurations.</p>
-    pub launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
+    pub launch_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchConfiguration>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeLaunchConfigurationsOutput {
+impl  DescribeLaunchConfigurationsOutput  {
     /// <p>The launch configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_configurations.is_none()`.
-    pub fn launch_configurations(&self) -> &[crate::types::LaunchConfiguration] {
-        self.launch_configurations.as_deref().unwrap_or_default()
+    pub fn launch_configurations(&self) -> & [crate::types::LaunchConfiguration] {
+        self.launch_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLaunchConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLaunchConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationsOutput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeLaunchConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationsOutputBuilder {
-    pub(crate) launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
+    pub(crate) launch_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeLaunchConfigurationsOutputBuilder {
     /// <p>The launch configurations.</p>
     pub fn launch_configurations(mut self, input: crate::types::LaunchConfiguration) -> Self {
         let mut v = self.launch_configurations.unwrap_or_default();
-        v.push(input);
-        self.launch_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.launch_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch configurations.</p>
-    pub fn set_launch_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>) -> Self {
-        self.launch_configurations = input;
-        self
+    pub fn set_launch_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchConfiguration>>) -> Self {
+        self.launch_configurations = input; self
     }
     /// <p>The launch configurations.</p>
-    pub fn get_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
+    pub fn get_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchConfiguration>> {
         &self.launch_configurations
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribeLaunchConfigurationsOutputBuilder {
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLaunchConfigurationsOutput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput {
         crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput {
-            launch_configurations: self.launch_configurations,
-            next_token: self.next_token,
+            launch_configurations: self.launch_configurations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -24,11 +24,7 @@ impl DataDetails {
     /// Tries to convert the enum instance into [`ContentData`](crate::types::DataDetails::ContentData), extracting the inner [`ContentDataDetails`](crate::types::ContentDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content_data(&self) -> ::std::result::Result<&crate::types::ContentDataDetails, &Self> {
-        if let DataDetails::ContentData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataDetails::ContentData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContentData`](crate::types::DataDetails::ContentData).
     pub fn is_content_data(&self) -> bool {
@@ -37,11 +33,7 @@ impl DataDetails {
     /// Tries to convert the enum instance into [`GenerativeData`](crate::types::DataDetails::GenerativeData), extracting the inner [`GenerativeDataDetails`](crate::types::GenerativeDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_generative_data(&self) -> ::std::result::Result<&crate::types::GenerativeDataDetails, &Self> {
-        if let DataDetails::GenerativeData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataDetails::GenerativeData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GenerativeData`](crate::types::DataDetails::GenerativeData).
     pub fn is_generative_data(&self) -> bool {
@@ -50,11 +42,7 @@ impl DataDetails {
     /// Tries to convert the enum instance into [`SourceContentData`](crate::types::DataDetails::SourceContentData), extracting the inner [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_source_content_data(&self) -> ::std::result::Result<&crate::types::SourceContentDataDetails, &Self> {
-        if let DataDetails::SourceContentData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataDetails::SourceContentData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SourceContentData`](crate::types::DataDetails::SourceContentData).
     pub fn is_source_content_data(&self) -> bool {
@@ -65,3 +53,4 @@ impl DataDetails {
         matches!(self, Self::Unknown)
     }
 }
+

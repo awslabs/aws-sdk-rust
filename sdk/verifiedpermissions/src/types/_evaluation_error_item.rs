@@ -4,18 +4,17 @@
 /// <p>This data type is a response parameter of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>, and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EvaluationErrorItem {
+pub struct EvaluationErrorItem  {
     /// <p>The error description.</p>
     pub error_description: ::std::string::String,
 }
-impl EvaluationErrorItem {
+impl  EvaluationErrorItem  {
     /// <p>The error description.</p>
-    pub fn error_description(&self) -> &str {
-        use std::ops::Deref;
-        self.error_description.deref()
+    pub fn error_description(&self) -> & str {
+        use std::ops::Deref; self.error_description.deref()
     }
 }
-impl ::std::fmt::Debug for EvaluationErrorItem {
+impl  ::std::fmt::Debug for EvaluationErrorItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluationErrorItem");
         formatter.field("error_description", &"*** Sensitive Data Redacted ***");
@@ -44,8 +43,7 @@ impl EvaluationErrorItemBuilder {
     }
     /// <p>The error description.</p>
     pub fn set_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_description = input;
-        self
+        self.error_description = input; self
     }
     /// <p>The error description.</p>
     pub fn get_error_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,14 +53,15 @@ impl EvaluationErrorItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_description`](crate::types::builders::EvaluationErrorItemBuilder::error_description)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationErrorItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationErrorItem {
-            error_description: self.error_description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_description",
-                    "error_description was not specified but it is required when building EvaluationErrorItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationErrorItem {
+                error_description: self.error_description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_description", "error_description was not specified but it is required when building EvaluationErrorItem")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EvaluationErrorItemBuilder {
@@ -72,3 +71,4 @@ impl ::std::fmt::Debug for EvaluationErrorItemBuilder {
         formatter.finish()
     }
 }
+

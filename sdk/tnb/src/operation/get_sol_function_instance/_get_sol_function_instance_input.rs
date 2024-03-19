@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolFunctionInstanceInput {
+pub struct GetSolFunctionInstanceInput  {
     /// <p>ID of the network function.</p>
     pub vnf_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSolFunctionInstanceInput {
+impl  GetSolFunctionInstanceInput  {
     /// <p>ID of the network function.</p>
-    pub fn vnf_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_instance_id(&self) -> ::std::option::Option<& str> {
         self.vnf_instance_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetSolFunctionInstanceInputBuilder {
     }
     /// <p>ID of the network function.</p>
     pub fn set_vnf_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_instance_id = input;
-        self
+        self.vnf_instance_id = input; self
     }
     /// <p>ID of the network function.</p>
     pub fn get_vnf_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vnf_instance_id
     }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceInput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput {
-            vnf_instance_id: self.vnf_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput {
+                vnf_instance_id: self.vnf_instance_id
+                ,
+            }
+        )
     }
 }
+

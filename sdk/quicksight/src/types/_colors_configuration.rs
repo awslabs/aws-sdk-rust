@@ -3,16 +3,17 @@
 /// <p>The color configurations for a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColorsConfiguration {
+pub struct ColorsConfiguration  {
     /// <p>A list of up to 50 custom colors.</p>
-    pub custom_colors: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>,
+    pub custom_colors: ::std::option::Option<::std::vec::Vec::<crate::types::CustomColor>>,
 }
-impl ColorsConfiguration {
+impl  ColorsConfiguration  {
     /// <p>A list of up to 50 custom colors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_colors.is_none()`.
-    pub fn custom_colors(&self) -> &[crate::types::CustomColor] {
-        self.custom_colors.as_deref().unwrap_or_default()
+    pub fn custom_colors(&self) -> & [crate::types::CustomColor] {
+        self.custom_colors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ColorsConfiguration {
@@ -26,7 +27,7 @@ impl ColorsConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColorsConfigurationBuilder {
-    pub(crate) custom_colors: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>,
+    pub(crate) custom_colors: ::std::option::Option<::std::vec::Vec::<crate::types::CustomColor>>,
 }
 impl ColorsConfigurationBuilder {
     /// Appends an item to `custom_colors`.
@@ -36,23 +37,24 @@ impl ColorsConfigurationBuilder {
     /// <p>A list of up to 50 custom colors.</p>
     pub fn custom_colors(mut self, input: crate::types::CustomColor) -> Self {
         let mut v = self.custom_colors.unwrap_or_default();
-        v.push(input);
-        self.custom_colors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_colors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 50 custom colors.</p>
-    pub fn set_custom_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>) -> Self {
-        self.custom_colors = input;
-        self
+    pub fn set_custom_colors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomColor>>) -> Self {
+        self.custom_colors = input; self
     }
     /// <p>A list of up to 50 custom colors.</p>
-    pub fn get_custom_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomColor>> {
+    pub fn get_custom_colors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomColor>> {
         &self.custom_colors
     }
     /// Consumes the builder and constructs a [`ColorsConfiguration`](crate::types::ColorsConfiguration).
     pub fn build(self) -> crate::types::ColorsConfiguration {
         crate::types::ColorsConfiguration {
-            custom_colors: self.custom_colors,
+            custom_colors: self.custom_colors
+            ,
         }
     }
 }
+

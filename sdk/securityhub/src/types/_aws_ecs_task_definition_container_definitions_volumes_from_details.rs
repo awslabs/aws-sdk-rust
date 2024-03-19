@@ -3,19 +3,19 @@
 /// <p>A data volume to mount from another container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails  {
     /// <p>Whether the container has read-only access to the volume.</p>
     pub read_only: ::std::option::Option<bool>,
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
     pub source_container: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails  {
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
-    pub fn source_container(&self) -> ::std::option::Option<&str> {
+    pub fn source_container(&self) -> ::std::option::Option<& str> {
         self.source_container.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     }
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_only = input;
-        self
+        self.read_only = input; self
     }
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn get_read_only(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
     pub fn set_source_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_container = input;
-        self
+        self.source_container = input; self
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
     pub fn get_source_container(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
-            read_only: self.read_only,
-            source_container: self.source_container,
+            read_only: self.read_only
+            ,
+            source_container: self.source_container
+            ,
         }
     }
 }
+

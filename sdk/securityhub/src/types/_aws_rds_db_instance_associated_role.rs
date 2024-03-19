@@ -3,7 +3,7 @@
 /// <p>An IAM role associated with the DB instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbInstanceAssociatedRole {
+pub struct AwsRdsDbInstanceAssociatedRole  {
     /// <p>The ARN of the IAM role that is associated with the DB instance.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature associated with the IAM role.</p>
@@ -19,13 +19,13 @@ pub struct AwsRdsDbInstanceAssociatedRole {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbInstanceAssociatedRole {
+impl  AwsRdsDbInstanceAssociatedRole  {
     /// <p>The ARN of the IAM role that is associated with the DB instance.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the feature associated with the IAM role.</p>
-    pub fn feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<& str> {
         self.feature_name.as_deref()
     }
     /// <p>Describes the state of the association between the IAM role and the DB instance. The <code>Status</code> property returns one of the following values:</p>
@@ -37,7 +37,7 @@ impl AwsRdsDbInstanceAssociatedRole {
     /// <li>
     /// <p><code>INVALID</code> - The IAM role ARN is associated with the DB instance. But the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
     }
     /// <p>The ARN of the IAM role that is associated with the DB instance.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that is associated with the DB instance.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
     }
     /// <p>The name of the feature associated with the IAM role.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_name = input;
-        self
+        self.feature_name = input; self
     }
     /// <p>The name of the feature associated with the IAM role.</p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
     /// <p><code>INVALID</code> - The IAM role ARN is associated with the DB instance. But the DB instance is unable to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes the state of the association between the IAM role and the DB instance. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
@@ -126,9 +123,13 @@ impl AwsRdsDbInstanceAssociatedRoleBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbInstanceAssociatedRole`](crate::types::AwsRdsDbInstanceAssociatedRole).
     pub fn build(self) -> crate::types::AwsRdsDbInstanceAssociatedRole {
         crate::types::AwsRdsDbInstanceAssociatedRole {
-            role_arn: self.role_arn,
-            feature_name: self.feature_name,
-            status: self.status,
+            role_arn: self.role_arn
+            ,
+            feature_name: self.feature_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

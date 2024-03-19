@@ -3,20 +3,19 @@
 /// <p>Information about the dataflow endpoint <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataflowEndpointConfig {
+pub struct DataflowEndpointConfig  {
     /// <p>Name of a dataflow endpoint.</p>
     pub dataflow_endpoint_name: ::std::string::String,
     /// <p>Region of a dataflow endpoint.</p>
     pub dataflow_endpoint_region: ::std::option::Option<::std::string::String>,
 }
-impl DataflowEndpointConfig {
+impl  DataflowEndpointConfig  {
     /// <p>Name of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_name(&self) -> &str {
-        use std::ops::Deref;
-        self.dataflow_endpoint_name.deref()
+    pub fn dataflow_endpoint_name(&self) -> & str {
+        use std::ops::Deref; self.dataflow_endpoint_name.deref()
     }
     /// <p>Region of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_region(&self) -> ::std::option::Option<&str> {
+    pub fn dataflow_endpoint_region(&self) -> ::std::option::Option<& str> {
         self.dataflow_endpoint_region.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl DataflowEndpointConfigBuilder {
     }
     /// <p>Name of a dataflow endpoint.</p>
     pub fn set_dataflow_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_endpoint_name = input;
-        self
+        self.dataflow_endpoint_name = input; self
     }
     /// <p>Name of a dataflow endpoint.</p>
     pub fn get_dataflow_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DataflowEndpointConfigBuilder {
     }
     /// <p>Region of a dataflow endpoint.</p>
     pub fn set_dataflow_endpoint_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_endpoint_region = input;
-        self
+        self.dataflow_endpoint_region = input; self
     }
     /// <p>Region of a dataflow endpoint.</p>
     pub fn get_dataflow_endpoint_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl DataflowEndpointConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`dataflow_endpoint_name`](crate::types::builders::DataflowEndpointConfigBuilder::dataflow_endpoint_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DataflowEndpointConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataflowEndpointConfig {
-            dataflow_endpoint_name: self.dataflow_endpoint_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dataflow_endpoint_name",
-                    "dataflow_endpoint_name was not specified but it is required when building DataflowEndpointConfig",
-                )
-            })?,
-            dataflow_endpoint_region: self.dataflow_endpoint_region,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataflowEndpointConfig {
+                dataflow_endpoint_name: self.dataflow_endpoint_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dataflow_endpoint_name", "dataflow_endpoint_name was not specified but it is required when building DataflowEndpointConfig")
+                    )?
+                ,
+                dataflow_endpoint_region: self.dataflow_endpoint_region
+                ,
+            }
+        )
     }
 }
+

@@ -21,11 +21,7 @@ impl RuleMatch {
     /// Tries to convert the enum instance into [`HttpMatch`](crate::types::RuleMatch::HttpMatch), extracting the inner [`HttpMatch`](crate::types::HttpMatch).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http_match(&self) -> ::std::result::Result<&crate::types::HttpMatch, &Self> {
-        if let RuleMatch::HttpMatch(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RuleMatch::HttpMatch(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`HttpMatch`](crate::types::RuleMatch::HttpMatch).
     pub fn is_http_match(&self) -> bool {
@@ -36,3 +32,4 @@ impl RuleMatch {
         matches!(self, Self::Unknown)
     }
 }
+

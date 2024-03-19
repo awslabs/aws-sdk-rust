@@ -4,19 +4,19 @@
 /// <p>A SQL-based Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ReferenceDataSource {
+pub struct S3ReferenceDataSource  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The object key name containing the reference data.</p>
     pub file_key: ::std::option::Option<::std::string::String>,
 }
-impl S3ReferenceDataSource {
+impl  S3ReferenceDataSource  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The object key name containing the reference data.</p>
-    pub fn file_key(&self) -> ::std::option::Option<&str> {
+    pub fn file_key(&self) -> ::std::option::Option<& str> {
         self.file_key.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl S3ReferenceDataSourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl S3ReferenceDataSourceBuilder {
     }
     /// <p>The object key name containing the reference data.</p>
     pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_key = input;
-        self
+        self.file_key = input; self
     }
     /// <p>The object key name containing the reference data.</p>
     pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl S3ReferenceDataSourceBuilder {
     /// Consumes the builder and constructs a [`S3ReferenceDataSource`](crate::types::S3ReferenceDataSource).
     pub fn build(self) -> crate::types::S3ReferenceDataSource {
         crate::types::S3ReferenceDataSource {
-            bucket_arn: self.bucket_arn,
-            file_key: self.file_key,
+            bucket_arn: self.bucket_arn
+            ,
+            file_key: self.file_key
+            ,
         }
     }
 }
+

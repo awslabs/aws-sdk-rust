@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatetargetsarchitecture = unimplemented!();
 /// match updatetargetsarchitecture {
@@ -32,16 +32,14 @@
 /// Specifically, when `updatetargetsarchitecture` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateTargetsArchitecture::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The architecture of the cores which are the targets of an update.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UpdateTargetsArchitecture {
     #[allow(missing_docs)] // documentation missing in model
     Aarch64,
@@ -53,67 +51,68 @@ pub enum UpdateTargetsArchitecture {
     X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UpdateTargetsArchitecture {
-    fn from(s: &str) -> Self {
-        match s {
-            "aarch64" => UpdateTargetsArchitecture::Aarch64,
-            "armv6l" => UpdateTargetsArchitecture::Armv6l,
-            "armv7l" => UpdateTargetsArchitecture::Armv7l,
-            "x86_64" => UpdateTargetsArchitecture::X8664,
-            other => UpdateTargetsArchitecture::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "aarch64" => UpdateTargetsArchitecture::Aarch64,
+"armv6l" => UpdateTargetsArchitecture::Armv6l,
+"armv7l" => UpdateTargetsArchitecture::Armv7l,
+"x86_64" => UpdateTargetsArchitecture::X8664,
+other => UpdateTargetsArchitecture::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UpdateTargetsArchitecture {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UpdateTargetsArchitecture::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UpdateTargetsArchitecture::from(s))
+                    }
+                }
 impl UpdateTargetsArchitecture {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateTargetsArchitecture::Aarch64 => "aarch64",
-            UpdateTargetsArchitecture::Armv6l => "armv6l",
-            UpdateTargetsArchitecture::Armv7l => "armv7l",
-            UpdateTargetsArchitecture::X8664 => "x86_64",
-            UpdateTargetsArchitecture::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["aarch64", "armv6l", "armv7l", "x86_64"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateTargetsArchitecture::Aarch64 => "aarch64",
+    UpdateTargetsArchitecture::Armv6l => "armv6l",
+    UpdateTargetsArchitecture::Armv7l => "armv7l",
+    UpdateTargetsArchitecture::X8664 => "x86_64",
+    UpdateTargetsArchitecture::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["aarch64", "armv6l", "armv7l", "x86_64"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UpdateTargetsArchitecture {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UpdateTargetsArchitecture {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UpdateTargetsArchitecture {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UpdateTargetsArchitecture::Aarch64 => write!(f, "aarch64"),
-            UpdateTargetsArchitecture::Armv6l => write!(f, "armv6l"),
-            UpdateTargetsArchitecture::Armv7l => write!(f, "armv7l"),
-            UpdateTargetsArchitecture::X8664 => write!(f, "x86_64"),
-            UpdateTargetsArchitecture::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UpdateTargetsArchitecture::Aarch64 => write!(f, "aarch64"),
+UpdateTargetsArchitecture::Armv6l => write!(f, "armv6l"),
+UpdateTargetsArchitecture::Armv7l => write!(f, "armv7l"),
+UpdateTargetsArchitecture::X8664 => write!(f, "x86_64"),
+UpdateTargetsArchitecture::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartProjectSessionInput {
+pub struct StartProjectSessionInput  {
     /// <p>The name of the project to act upon.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub assume_control: ::std::option::Option<bool>,
 }
-impl StartProjectSessionInput {
+impl  StartProjectSessionInput  {
     /// <p>The name of the project to act upon.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
@@ -41,8 +41,7 @@ impl StartProjectSessionInputBuilder {
     }
     /// <p>The name of the project to act upon.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project to act upon.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl StartProjectSessionInputBuilder {
     }
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub fn set_assume_control(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.assume_control = input;
-        self
+        self.assume_control = input; self
     }
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub fn get_assume_control(&self) -> &::std::option::Option<bool> {
         &self.assume_control
     }
     /// Consumes the builder and constructs a [`StartProjectSessionInput`](crate::operation::start_project_session::StartProjectSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_project_session::StartProjectSessionInput {
-            name: self.name,
-            assume_control: self.assume_control,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_project_session::StartProjectSessionInput {
+                name: self.name
+                ,
+                assume_control: self.assume_control
+                ,
+            }
+        )
     }
 }
+

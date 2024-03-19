@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectAttachmentInput {
+pub struct RejectAttachmentInput  {
     /// <p>The ID of the attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
 }
-impl RejectAttachmentInput {
+impl  RejectAttachmentInput  {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl RejectAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
     }
     /// Consumes the builder and constructs a [`RejectAttachmentInput`](crate::operation::reject_attachment::RejectAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reject_attachment::RejectAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reject_attachment::RejectAttachmentInput {
-            attachment_id: self.attachment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_attachment::RejectAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_attachment::RejectAttachmentInput {
+                attachment_id: self.attachment_id
+                ,
+            }
+        )
     }
 }
+

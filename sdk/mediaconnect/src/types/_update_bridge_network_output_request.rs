@@ -3,7 +3,7 @@
 /// Update an existing network output.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBridgeNetworkOutputRequest {
+pub struct UpdateBridgeNetworkOutputRequest  {
     /// The network output IP Address.
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// The network output's gateway network name.
@@ -15,13 +15,13 @@ pub struct UpdateBridgeNetworkOutputRequest {
     /// The network output TTL.
     pub ttl: ::std::option::Option<i32>,
 }
-impl UpdateBridgeNetworkOutputRequest {
+impl  UpdateBridgeNetworkOutputRequest  {
     /// The network output IP Address.
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// The network output's gateway network name.
-    pub fn network_name(&self) -> ::std::option::Option<&str> {
+    pub fn network_name(&self) -> ::std::option::Option<& str> {
         self.network_name.as_deref()
     }
     /// The network output port.
@@ -29,7 +29,7 @@ impl UpdateBridgeNetworkOutputRequest {
         self.port
     }
     /// The network output protocol.
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// The network output TTL.
@@ -62,8 +62,7 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     }
     /// The network output IP Address.
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// The network output IP Address.
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     }
     /// The network output's gateway network name.
     pub fn set_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_name = input;
-        self
+        self.network_name = input; self
     }
     /// The network output's gateway network name.
     pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     }
     /// The network output port.
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// The network output port.
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     }
     /// The network output protocol.
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// The network output protocol.
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -118,8 +114,7 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     }
     /// The network output TTL.
     pub fn set_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// The network output TTL.
     pub fn get_ttl(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl UpdateBridgeNetworkOutputRequestBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeNetworkOutputRequest`](crate::types::UpdateBridgeNetworkOutputRequest).
     pub fn build(self) -> crate::types::UpdateBridgeNetworkOutputRequest {
         crate::types::UpdateBridgeNetworkOutputRequest {
-            ip_address: self.ip_address,
-            network_name: self.network_name,
-            port: self.port,
-            protocol: self.protocol,
-            ttl: self.ttl,
+            ip_address: self.ip_address
+            ,
+            network_name: self.network_name
+            ,
+            port: self.port
+            ,
+            protocol: self.protocol
+            ,
+            ttl: self.ttl
+            ,
         }
     }
 }
+

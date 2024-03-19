@@ -3,7 +3,7 @@
 /// <p>Describes an instance state change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceStateChange {
+pub struct InstanceStateChange  {
     /// <p>The current state of the instance.</p>
     pub current_state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The ID of the instance.</p>
@@ -11,17 +11,17 @@ pub struct InstanceStateChange {
     /// <p>The previous state of the instance.</p>
     pub previous_state: ::std::option::Option<crate::types::InstanceState>,
 }
-impl InstanceStateChange {
+impl  InstanceStateChange  {
     /// <p>The current state of the instance.</p>
-    pub fn current_state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
+    pub fn current_state(&self) -> ::std::option::Option<& crate::types::InstanceState> {
         self.current_state.as_ref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The previous state of the instance.</p>
-    pub fn previous_state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
+    pub fn previous_state(&self) -> ::std::option::Option<& crate::types::InstanceState> {
         self.previous_state.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl InstanceStateChangeBuilder {
     }
     /// <p>The current state of the instance.</p>
     pub fn set_current_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
-        self.current_state = input;
-        self
+        self.current_state = input; self
     }
     /// <p>The current state of the instance.</p>
     pub fn get_current_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
@@ -62,8 +61,7 @@ impl InstanceStateChangeBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl InstanceStateChangeBuilder {
     }
     /// <p>The previous state of the instance.</p>
     pub fn set_previous_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
-        self.previous_state = input;
-        self
+        self.previous_state = input; self
     }
     /// <p>The previous state of the instance.</p>
     pub fn get_previous_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
@@ -86,9 +83,13 @@ impl InstanceStateChangeBuilder {
     /// Consumes the builder and constructs a [`InstanceStateChange`](crate::types::InstanceStateChange).
     pub fn build(self) -> crate::types::InstanceStateChange {
         crate::types::InstanceStateChange {
-            current_state: self.current_state,
-            instance_id: self.instance_id,
-            previous_state: self.previous_state,
+            current_state: self.current_state
+            ,
+            instance_id: self.instance_id
+            ,
+            previous_state: self.previous_state
+            ,
         }
     }
 }
+

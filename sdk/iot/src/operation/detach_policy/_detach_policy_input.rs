@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachPolicyInput {
+pub struct DetachPolicyInput  {
     /// <p>The policy to detach.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The target from which the policy will be detached.</p>
     pub target: ::std::option::Option<::std::string::String>,
 }
-impl DetachPolicyInput {
+impl  DetachPolicyInput  {
     /// <p>The policy to detach.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The target from which the policy will be detached.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DetachPolicyInputBuilder {
     }
     /// <p>The policy to detach.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The policy to detach.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DetachPolicyInputBuilder {
     }
     /// <p>The target from which the policy will be detached.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target from which the policy will be detached.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
     /// Consumes the builder and constructs a [`DetachPolicyInput`](crate::operation::detach_policy::DetachPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_policy::DetachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detach_policy::DetachPolicyInput {
-            policy_name: self.policy_name,
-            target: self.target,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_policy::DetachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_policy::DetachPolicyInput {
+                policy_name: self.policy_name
+                ,
+                target: self.target
+                ,
+            }
+        )
     }
 }
+

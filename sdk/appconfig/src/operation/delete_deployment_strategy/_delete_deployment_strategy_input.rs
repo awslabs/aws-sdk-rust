@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeploymentStrategyInput {
+pub struct DeleteDeploymentStrategyInput  {
     /// <p>The ID of the deployment strategy you want to delete.</p>
     pub deployment_strategy_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDeploymentStrategyInput {
+impl  DeleteDeploymentStrategyInput  {
     /// <p>The ID of the deployment strategy you want to delete.</p>
-    pub fn deployment_strategy_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_strategy_id(&self) -> ::std::option::Option<& str> {
         self.deployment_strategy_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteDeploymentStrategyInputBuilder {
     }
     /// <p>The ID of the deployment strategy you want to delete.</p>
     pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_strategy_id = input;
-        self
+        self.deployment_strategy_id = input; self
     }
     /// <p>The ID of the deployment strategy you want to delete.</p>
     pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_strategy_id
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput {
-            deployment_strategy_id: self.deployment_strategy_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput {
+                deployment_strategy_id: self.deployment_strategy_id
+                ,
+            }
+        )
     }
 }
+

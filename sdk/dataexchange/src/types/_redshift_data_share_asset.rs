@@ -3,15 +3,14 @@
 /// <p>The Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDataShareAsset {
+pub struct RedshiftDataShareAsset  {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub arn: ::std::string::String,
 }
-impl RedshiftDataShareAsset {
+impl  RedshiftDataShareAsset  {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl RedshiftDataShareAsset {
@@ -36,8 +35,7 @@ impl RedshiftDataShareAssetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RedshiftDataShareAssetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::RedshiftDataShareAssetBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareAsset, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDataShareAsset {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RedshiftDataShareAsset",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDataShareAsset {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RedshiftDataShareAsset")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -100,3 +100,4 @@ pub mod builders;
 
 /// Error types that AWS Health Imaging can respond with.
 pub mod error;
+

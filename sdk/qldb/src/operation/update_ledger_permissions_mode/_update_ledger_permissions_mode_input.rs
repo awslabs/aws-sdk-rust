@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLedgerPermissionsModeInput {
+pub struct UpdateLedgerPermissionsModeInput  {
     /// <p>The name of the ledger.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
@@ -18,9 +18,9 @@ pub struct UpdateLedgerPermissionsModeInput {
     /// </note>
     pub permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,
 }
-impl UpdateLedgerPermissionsModeInput {
+impl  UpdateLedgerPermissionsModeInput  {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
@@ -34,7 +34,7 @@ impl UpdateLedgerPermissionsModeInput {
     /// </ul><note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    pub fn permissions_mode(&self) -> ::std::option::Option<&crate::types::PermissionsMode> {
+    pub fn permissions_mode(&self) -> ::std::option::Option<& crate::types::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl UpdateLedgerPermissionsModeInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ledger.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl UpdateLedgerPermissionsModeInputBuilder {
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
     pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
-        self.permissions_mode = input;
-        self
+        self.permissions_mode = input; self
     }
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
     /// <ul>
@@ -114,15 +112,15 @@ impl UpdateLedgerPermissionsModeInputBuilder {
         &self.permissions_mode
     }
     /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeInput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput {
-            name: self.name,
-            permissions_mode: self.permissions_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput {
+                name: self.name
+                ,
+                permissions_mode: self.permissions_mode
+                ,
+            }
+        )
     }
 }
+

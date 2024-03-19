@@ -5,54 +5,50 @@ pub use crate::operation::update_answer::_update_answer_input::UpdateAnswerInput
 
 impl UpdateAnswerInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_answer::UpdateAnswerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_answer::UpdateAnswerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_answer();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_answer::UpdateAnswerOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_answer::UpdateAnswerError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_answer();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateAnswer`.
-///
+/// 
 /// <p>Update the answer to a specific question in a workload review.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnswerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_answer::builders::UpdateAnswerInputBuilder,
+                    inner: crate::operation::update_answer::builders::UpdateAnswerInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_answer::UpdateAnswerOutput,
-        crate::operation::update_answer::UpdateAnswerError,
-    > for UpdateAnswerFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_answer::UpdateAnswerOutput,
-            crate::operation::update_answer::UpdateAnswerError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_answer::UpdateAnswerOutput,
+                    crate::operation::update_answer::UpdateAnswerError,
+                > for UpdateAnswerFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_answer::UpdateAnswerOutput,
+                        crate::operation::update_answer::UpdateAnswerError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateAnswerFluentBuilder {
     /// Creates a new `UpdateAnswer`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateAnswerFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_answer::UpdateAnswerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_answer::UpdateAnswerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_answer::UpdateAnswer::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_answer::UpdateAnswer::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_answer::UpdateAnswerOutput,
-        crate::operation::update_answer::UpdateAnswerError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_answer::UpdateAnswerOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_answer::UpdateAnswerError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_answer::UpdateAnswer::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_answer::UpdateAnswer::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_answer::UpdateAnswerOutput, crate::operation::update_answer::UpdateAnswerError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
@@ -171,13 +158,13 @@ impl UpdateAnswerFluentBuilder {
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_selected_choices(input);
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_selected_choices()
     }
     /// Adds a key-value pair to `ChoiceUpdates`.
@@ -190,15 +177,12 @@ impl UpdateAnswerFluentBuilder {
         self
     }
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn set_choice_updates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
-    ) -> Self {
+    pub fn set_choice_updates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>>) -> Self {
         self.inner = self.inner.set_choice_updates(input);
         self
     }
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn get_choice_updates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
+    pub fn get_choice_updates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>> {
         self.inner.get_choice_updates()
     }
     /// <p>The notes associated with the workload.</p>
@@ -247,3 +231,4 @@ impl UpdateAnswerFluentBuilder {
         self.inner.get_reason()
     }
 }
+

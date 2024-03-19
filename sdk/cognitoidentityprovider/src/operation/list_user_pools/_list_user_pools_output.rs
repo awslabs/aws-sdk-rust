@@ -3,30 +3,31 @@
 /// <p>Represents the response to list user pools.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserPoolsOutput {
+pub struct ListUserPoolsOutput  {
     /// <p>The user pools from the response to list users.</p>
-    pub user_pools: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>,
+    pub user_pools: ::std::option::Option<::std::vec::Vec::<crate::types::UserPoolDescriptionType>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListUserPoolsOutput {
+impl  ListUserPoolsOutput  {
     /// <p>The user pools from the response to list users.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_pools.is_none()`.
-    pub fn user_pools(&self) -> &[crate::types::UserPoolDescriptionType] {
-        self.user_pools.as_deref().unwrap_or_default()
+    pub fn user_pools(&self) -> & [crate::types::UserPoolDescriptionType] {
+        self.user_pools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUserPoolsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUserPoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserPoolsOutput`](crate::operation::list_user_pools::ListUserPoolsOutput).
     pub fn builder() -> crate::operation::list_user_pools::builders::ListUserPoolsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListUserPoolsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserPoolsOutputBuilder {
-    pub(crate) user_pools: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>,
+    pub(crate) user_pools: ::std::option::Option<::std::vec::Vec::<crate::types::UserPoolDescriptionType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListUserPoolsOutputBuilder {
     /// <p>The user pools from the response to list users.</p>
     pub fn user_pools(mut self, input: crate::types::UserPoolDescriptionType) -> Self {
         let mut v = self.user_pools.unwrap_or_default();
-        v.push(input);
-        self.user_pools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_pools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user pools from the response to list users.</p>
-    pub fn set_user_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>>) -> Self {
-        self.user_pools = input;
-        self
+    pub fn set_user_pools(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserPoolDescriptionType>>) -> Self {
+        self.user_pools = input; self
     }
     /// <p>The user pools from the response to list users.</p>
-    pub fn get_user_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>> {
+    pub fn get_user_pools(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserPoolDescriptionType>> {
         &self.user_pools
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -70,28 +70,30 @@ impl ListUserPoolsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUserPoolsOutput`](crate::operation::list_user_pools::ListUserPoolsOutput).
     pub fn build(self) -> crate::operation::list_user_pools::ListUserPoolsOutput {
         crate::operation::list_user_pools::ListUserPoolsOutput {
-            user_pools: self.user_pools,
-            next_token: self.next_token,
+            user_pools: self.user_pools
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

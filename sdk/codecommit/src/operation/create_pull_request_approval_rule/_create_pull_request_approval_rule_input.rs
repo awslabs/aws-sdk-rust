@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePullRequestApprovalRuleInput {
+pub struct CreatePullRequestApprovalRuleInput  {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the approval rule.</p>
@@ -26,13 +26,13 @@ pub struct CreatePullRequestApprovalRuleInput {
     /// </note>
     pub approval_rule_content: ::std::option::Option<::std::string::String>,
 }
-impl CreatePullRequestApprovalRuleInput {
+impl  CreatePullRequestApprovalRuleInput  {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The name for the approval rule.</p>
-    pub fn approval_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_name.as_deref()
     }
     /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.</p><note>
@@ -52,7 +52,7 @@ impl CreatePullRequestApprovalRuleInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn approval_rule_content(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_content(&self) -> ::std::option::Option<& str> {
         self.approval_rule_content.as_deref()
     }
 }
@@ -80,8 +80,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
     }
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
     }
     /// <p>The name for the approval rule.</p>
     pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_name = input;
-        self
+        self.approval_rule_name = input; self
     }
     /// <p>The name for the approval rule.</p>
     pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
     pub fn set_approval_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_content = input;
-        self
+        self.approval_rule_content = input; self
     }
     /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.</p><note>
     /// <p>When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
@@ -166,16 +163,17 @@ impl CreatePullRequestApprovalRuleInputBuilder {
         &self.approval_rule_content
     }
     /// Consumes the builder and constructs a [`CreatePullRequestApprovalRuleInput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput {
-            pull_request_id: self.pull_request_id,
-            approval_rule_name: self.approval_rule_name,
-            approval_rule_content: self.approval_rule_content,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput {
+                pull_request_id: self.pull_request_id
+                ,
+                approval_rule_name: self.approval_rule_name
+                ,
+                approval_rule_content: self.approval_rule_content
+                ,
+            }
+        )
     }
 }
+

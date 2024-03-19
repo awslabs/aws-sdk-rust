@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNotificationChannelsOutput {
+pub struct ListNotificationChannelsOutput  {
     /// <p>An array that contains the requested notification channels.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
+    pub channels: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationChannel>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListNotificationChannelsOutput {
+impl  ListNotificationChannelsOutput  {
     /// <p>An array that contains the requested notification channels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
-    pub fn channels(&self) -> &[crate::types::NotificationChannel] {
-        self.channels.as_deref().unwrap_or_default()
+    pub fn channels(&self) -> & [crate::types::NotificationChannel] {
+        self.channels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListNotificationChannelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListNotificationChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput).
     pub fn builder() -> crate::operation::list_notification_channels::builders::ListNotificationChannelsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListNotificationChannelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationChannelsOutputBuilder {
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationChannel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListNotificationChannelsOutputBuilder {
     /// <p>An array that contains the requested notification channels.</p>
     pub fn channels(mut self, input: crate::types::NotificationChannel) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the requested notification channels.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationChannel>>) -> Self {
+        self.channels = input; self
     }
     /// <p>An array that contains the requested notification channels.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationChannel>> {
         &self.channels
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -69,28 +69,30 @@ impl ListNotificationChannelsOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput).
     pub fn build(self) -> crate::operation::list_notification_channels::ListNotificationChannelsOutput {
         crate::operation::list_notification_channels::ListNotificationChannelsOutput {
-            channels: self.channels,
-            next_token: self.next_token,
+            channels: self.channels
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

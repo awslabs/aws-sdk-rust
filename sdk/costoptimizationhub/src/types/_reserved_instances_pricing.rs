@@ -3,7 +3,7 @@
 /// <p>Pricing details for your recommended reserved instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedInstancesPricing {
+pub struct ReservedInstancesPricing  {
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended reserved instance, over the length of the lookback period.</p>
     pub estimated_on_demand_cost: ::std::option::Option<f64>,
     /// <p>The cost of paying for the recommended reserved instance monthly.</p>
@@ -13,7 +13,7 @@ pub struct ReservedInstancesPricing {
     /// <p>The estimated cost of your recurring monthly fees for the recommended reserved instance across the month.</p>
     pub estimated_monthly_amortized_reservation_cost: ::std::option::Option<f64>,
 }
-impl ReservedInstancesPricing {
+impl  ReservedInstancesPricing  {
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended reserved instance, over the length of the lookback period.</p>
     pub fn estimated_on_demand_cost(&self) -> ::std::option::Option<f64> {
         self.estimated_on_demand_cost
@@ -55,8 +55,7 @@ impl ReservedInstancesPricingBuilder {
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended reserved instance, over the length of the lookback period.</p>
     pub fn set_estimated_on_demand_cost(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_on_demand_cost = input;
-        self
+        self.estimated_on_demand_cost = input; self
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended reserved instance, over the length of the lookback period.</p>
     pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl ReservedInstancesPricingBuilder {
     }
     /// <p>The cost of paying for the recommended reserved instance monthly.</p>
     pub fn set_monthly_reservation_eligible_cost(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.monthly_reservation_eligible_cost = input;
-        self
+        self.monthly_reservation_eligible_cost = input; self
     }
     /// <p>The cost of paying for the recommended reserved instance monthly.</p>
     pub fn get_monthly_reservation_eligible_cost(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl ReservedInstancesPricingBuilder {
     }
     /// <p>The savings percentage relative to the total On-Demand costs that are associated with this instance.</p>
     pub fn set_savings_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.savings_percentage = input;
-        self
+        self.savings_percentage = input; self
     }
     /// <p>The savings percentage relative to the total On-Demand costs that are associated with this instance.</p>
     pub fn get_savings_percentage(&self) -> &::std::option::Option<f64> {
@@ -97,8 +94,7 @@ impl ReservedInstancesPricingBuilder {
     }
     /// <p>The estimated cost of your recurring monthly fees for the recommended reserved instance across the month.</p>
     pub fn set_estimated_monthly_amortized_reservation_cost(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_amortized_reservation_cost = input;
-        self
+        self.estimated_monthly_amortized_reservation_cost = input; self
     }
     /// <p>The estimated cost of your recurring monthly fees for the recommended reserved instance across the month.</p>
     pub fn get_estimated_monthly_amortized_reservation_cost(&self) -> &::std::option::Option<f64> {
@@ -107,10 +103,15 @@ impl ReservedInstancesPricingBuilder {
     /// Consumes the builder and constructs a [`ReservedInstancesPricing`](crate::types::ReservedInstancesPricing).
     pub fn build(self) -> crate::types::ReservedInstancesPricing {
         crate::types::ReservedInstancesPricing {
-            estimated_on_demand_cost: self.estimated_on_demand_cost,
-            monthly_reservation_eligible_cost: self.monthly_reservation_eligible_cost,
-            savings_percentage: self.savings_percentage,
-            estimated_monthly_amortized_reservation_cost: self.estimated_monthly_amortized_reservation_cost,
+            estimated_on_demand_cost: self.estimated_on_demand_cost
+            ,
+            monthly_reservation_eligible_cost: self.monthly_reservation_eligible_cost
+            ,
+            savings_percentage: self.savings_percentage
+            ,
+            estimated_monthly_amortized_reservation_cost: self.estimated_monthly_amortized_reservation_cost
+            ,
         }
     }
 }
+

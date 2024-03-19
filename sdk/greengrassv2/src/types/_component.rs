@@ -3,7 +3,7 @@
 /// <p>Contains information about a component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Component {
+pub struct Component  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -11,17 +11,17 @@ pub struct Component {
     /// <p>The latest version of the component and its details.</p>
     pub latest_version: ::std::option::Option<crate::types::ComponentLatestVersion>,
 }
-impl Component {
+impl  Component  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The latest version of the component and its details.</p>
-    pub fn latest_version(&self) -> ::std::option::Option<&crate::types::ComponentLatestVersion> {
+    pub fn latest_version(&self) -> ::std::option::Option<& crate::types::ComponentLatestVersion> {
         self.latest_version.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ComponentBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ComponentBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ComponentBuilder {
     }
     /// <p>The latest version of the component and its details.</p>
     pub fn set_latest_version(mut self, input: ::std::option::Option<crate::types::ComponentLatestVersion>) -> Self {
-        self.latest_version = input;
-        self
+        self.latest_version = input; self
     }
     /// <p>The latest version of the component and its details.</p>
     pub fn get_latest_version(&self) -> &::std::option::Option<crate::types::ComponentLatestVersion> {
@@ -86,9 +83,13 @@ impl ComponentBuilder {
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {
         crate::types::Component {
-            arn: self.arn,
-            component_name: self.component_name,
-            latest_version: self.latest_version,
+            arn: self.arn
+            ,
+            component_name: self.component_name
+            ,
+            latest_version: self.latest_version
+            ,
         }
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::put_rule_groups_namespace::_put_rule_groups_namespace_
 
 impl PutRuleGroupsNamespaceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_rule_groups_namespace();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_rule_groups_namespace();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutRuleGroupsNamespace`.
-///
+/// 
 /// <p>Updates an existing rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.</p>
 /// <p>Use this operation only to update existing rule groups namespaces. To create a new rule groups namespace, use <code>CreateRuleGroupsNamespace</code>.</p>
 /// <p>You can't use this operation to add tags to an existing rule groups namespace. Instead, use <code>TagResource</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRuleGroupsNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder,
+                    inner: crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
-    > for PutRuleGroupsNamespaceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-            crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
+                    crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
+                > for PutRuleGroupsNamespaceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
+                        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutRuleGroupsNamespaceFluentBuilder {
     /// Creates a new `PutRuleGroupsNamespace`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl PutRuleGroupsNamespaceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespace::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespace::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespace::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespace::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput, crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the workspace where you are updating the rule groups namespace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -170,3 +157,4 @@ impl PutRuleGroupsNamespaceFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

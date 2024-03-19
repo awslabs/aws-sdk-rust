@@ -22,11 +22,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`CloudFormationStackUpdate`](crate::types::FindingDetails::CloudFormationStackUpdate), extracting the inner [`CloudFormationStackUpdate`](crate::types::CloudFormationStackUpdate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cloud_formation_stack_update(&self) -> ::std::result::Result<&crate::types::CloudFormationStackUpdate, &Self> {
-        if let FindingDetails::CloudFormationStackUpdate(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::CloudFormationStackUpdate(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CloudFormationStackUpdate`](crate::types::FindingDetails::CloudFormationStackUpdate).
     pub fn is_cloud_formation_stack_update(&self) -> bool {
@@ -35,11 +31,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`CodeDeployDeployment`](crate::types::FindingDetails::CodeDeployDeployment), extracting the inner [`CodeDeployDeployment`](crate::types::CodeDeployDeployment).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_code_deploy_deployment(&self) -> ::std::result::Result<&crate::types::CodeDeployDeployment, &Self> {
-        if let FindingDetails::CodeDeployDeployment(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::CodeDeployDeployment(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CodeDeployDeployment`](crate::types::FindingDetails::CodeDeployDeployment).
     pub fn is_code_deploy_deployment(&self) -> bool {
@@ -50,3 +42,4 @@ impl FindingDetails {
         matches!(self, Self::Unknown)
     }
 }
+

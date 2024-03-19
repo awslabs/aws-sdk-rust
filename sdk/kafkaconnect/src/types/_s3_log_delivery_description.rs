@@ -3,7 +3,7 @@
 /// <p>The description of the details about delivering logs to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3LogDeliveryDescription {
+pub struct S3LogDeliveryDescription  {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
@@ -11,9 +11,9 @@ pub struct S3LogDeliveryDescription {
     /// <p>The S3 prefix that is the destination for log delivery.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3LogDeliveryDescription {
+impl  S3LogDeliveryDescription  {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
@@ -21,7 +21,7 @@ impl S3LogDeliveryDescription {
         self.enabled
     }
     /// <p>The S3 prefix that is the destination for log delivery.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl S3LogDeliveryDescriptionBuilder {
     }
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl S3LogDeliveryDescriptionBuilder {
     }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl S3LogDeliveryDescriptionBuilder {
     }
     /// <p>The S3 prefix that is the destination for log delivery.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The S3 prefix that is the destination for log delivery.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,14 @@ impl S3LogDeliveryDescriptionBuilder {
     /// Consumes the builder and constructs a [`S3LogDeliveryDescription`](crate::types::S3LogDeliveryDescription).
     pub fn build(self) -> crate::types::S3LogDeliveryDescription {
         crate::types::S3LogDeliveryDescription {
-            bucket: self.bucket,
-            enabled: self.enabled.unwrap_or_default(),
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

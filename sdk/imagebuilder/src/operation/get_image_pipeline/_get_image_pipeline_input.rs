@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImagePipelineInput {
+pub struct GetImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetImagePipelineInput {
+impl  GetImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-    pub fn image_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetImagePipelineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
     pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_pipeline_arn = input;
-        self
+        self.image_pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
     pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_pipeline_arn
     }
     /// Consumes the builder and constructs a [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_image_pipeline::GetImagePipelineInput {
-            image_pipeline_arn: self.image_pipeline_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_image_pipeline::GetImagePipelineInput {
+                image_pipeline_arn: self.image_pipeline_arn
+                ,
+            }
+        )
     }
 }
+

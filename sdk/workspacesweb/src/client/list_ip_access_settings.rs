@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIpAccessSettings`](crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput) with field(s):
+                            /// - On success, responds with [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput) with field(s):
     ///   - [`ip_access_settings(Option<Vec::<IpAccessSettingsSummary>>)`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput::ip_access_settings): <p>The IP access settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListIpAccessSettingsError>`](crate::operation::list_ip_access_settings::ListIpAccessSettingsError)
+                            /// - On failure, responds with [`SdkError<ListIpAccessSettingsError>`](crate::operation::list_ip_access_settings::ListIpAccessSettingsError)
     pub fn list_ip_access_settings(&self) -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder {
-        crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

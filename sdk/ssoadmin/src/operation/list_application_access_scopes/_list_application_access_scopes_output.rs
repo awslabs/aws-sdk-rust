@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationAccessScopesOutput {
+pub struct ListApplicationAccessScopesOutput  {
     /// <p>An array list of access scopes and their authorized targets that are associated with the application.</p>
-    pub scopes: ::std::vec::Vec<crate::types::ScopeDetails>,
+    pub scopes: ::std::vec::Vec::<crate::types::ScopeDetails>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApplicationAccessScopesOutput {
+impl  ListApplicationAccessScopesOutput  {
     /// <p>An array list of access scopes and their authorized targets that are associated with the application.</p>
-    pub fn scopes(&self) -> &[crate::types::ScopeDetails] {
-        use std::ops::Deref;
-        self.scopes.deref()
+    pub fn scopes(&self) -> & [crate::types::ScopeDetails] {
+        use std::ops::Deref; self.scopes.deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationAccessScopesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationAccessScopesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationAccessScopesOutput`](crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput).
     pub fn builder() -> crate::operation::list_application_access_scopes::builders::ListApplicationAccessScopesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListApplicationAccessScopesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationAccessScopesOutputBuilder {
-    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ScopeDetails>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec::<crate::types::ScopeDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListApplicationAccessScopesOutputBuilder {
     /// <p>An array list of access scopes and their authorized targets that are associated with the application.</p>
     pub fn scopes(mut self, input: crate::types::ScopeDetails) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array list of access scopes and their authorized targets that are associated with the application.</p>
-    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScopeDetails>>) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScopeDetails>>) -> Self {
+        self.scopes = input; self
     }
     /// <p>An array list of access scopes and their authorized targets that are associated with the application.</p>
-    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScopeDetails>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScopeDetails>> {
         &self.scopes
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -68,40 +66,37 @@ impl ListApplicationAccessScopesOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationAccessScopesOutput`](crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`scopes`](crate::operation::list_application_access_scopes::builders::ListApplicationAccessScopesOutputBuilder::scopes)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput {
-            scopes: self.scopes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scopes",
-                    "scopes was not specified but it is required when building ListApplicationAccessScopesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput {
+                scopes: self.scopes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scopes", "scopes was not specified but it is required when building ListApplicationAccessScopesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

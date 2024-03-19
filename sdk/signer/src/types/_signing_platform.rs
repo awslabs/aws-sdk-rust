@@ -3,7 +3,7 @@
 /// <p>Contains information about the signing configurations and parameters that are used to perform a code-signing job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SigningPlatform {
+pub struct SigningPlatform  {
     /// <p>The ID of a signing platform.</p>
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a signing platform.</p>
@@ -23,33 +23,33 @@ pub struct SigningPlatform {
     /// <p>Indicates whether revocation is supported for the platform.</p>
     pub revocation_supported: bool,
 }
-impl SigningPlatform {
+impl  SigningPlatform  {
     /// <p>The ID of a signing platform.</p>
-    pub fn platform_id(&self) -> ::std::option::Option<&str> {
+    pub fn platform_id(&self) -> ::std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>The display name of a signing platform.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Any partner entities linked to a signing platform.</p>
-    pub fn partner(&self) -> ::std::option::Option<&str> {
+    pub fn partner(&self) -> ::std::option::Option<& str> {
         self.partner.as_deref()
     }
     /// <p>The types of targets that can be signed by a signing platform.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The category of a signing platform.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::Category> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::Category> {
         self.category.as_ref()
     }
     /// <p>The configuration of a signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
-    pub fn signing_configuration(&self) -> ::std::option::Option<&crate::types::SigningConfiguration> {
+    pub fn signing_configuration(&self) -> ::std::option::Option<& crate::types::SigningConfiguration> {
         self.signing_configuration.as_ref()
     }
     /// <p>The image format of a AWS Signer platform or profile.</p>
-    pub fn signing_image_format(&self) -> ::std::option::Option<&crate::types::SigningImageFormat> {
+    pub fn signing_image_format(&self) -> ::std::option::Option<& crate::types::SigningImageFormat> {
         self.signing_image_format.as_ref()
     }
     /// <p>The maximum size (in MB) of code that can be signed by a signing platform.</p>
@@ -90,8 +90,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The ID of a signing platform.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_id = input;
-        self
+        self.platform_id = input; self
     }
     /// <p>The ID of a signing platform.</p>
     pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The display name of a signing platform.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of a signing platform.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>Any partner entities linked to a signing platform.</p>
     pub fn set_partner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner = input;
-        self
+        self.partner = input; self
     }
     /// <p>Any partner entities linked to a signing platform.</p>
     pub fn get_partner(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The types of targets that can be signed by a signing platform.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The types of targets that can be signed by a signing platform.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The category of a signing platform.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Category>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of a signing platform.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::Category> {
@@ -160,8 +155,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The configuration of a signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
     pub fn set_signing_configuration(mut self, input: ::std::option::Option<crate::types::SigningConfiguration>) -> Self {
-        self.signing_configuration = input;
-        self
+        self.signing_configuration = input; self
     }
     /// <p>The configuration of a signing platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>
     pub fn get_signing_configuration(&self) -> &::std::option::Option<crate::types::SigningConfiguration> {
@@ -174,8 +168,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The image format of a AWS Signer platform or profile.</p>
     pub fn set_signing_image_format(mut self, input: ::std::option::Option<crate::types::SigningImageFormat>) -> Self {
-        self.signing_image_format = input;
-        self
+        self.signing_image_format = input; self
     }
     /// <p>The image format of a AWS Signer platform or profile.</p>
     pub fn get_signing_image_format(&self) -> &::std::option::Option<crate::types::SigningImageFormat> {
@@ -188,8 +181,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>The maximum size (in MB) of code that can be signed by a signing platform.</p>
     pub fn set_max_size_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size_in_mb = input;
-        self
+        self.max_size_in_mb = input; self
     }
     /// <p>The maximum size (in MB) of code that can be signed by a signing platform.</p>
     pub fn get_max_size_in_mb(&self) -> &::std::option::Option<i32> {
@@ -202,8 +194,7 @@ impl SigningPlatformBuilder {
     }
     /// <p>Indicates whether revocation is supported for the platform.</p>
     pub fn set_revocation_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.revocation_supported = input;
-        self
+        self.revocation_supported = input; self
     }
     /// <p>Indicates whether revocation is supported for the platform.</p>
     pub fn get_revocation_supported(&self) -> &::std::option::Option<bool> {
@@ -212,15 +203,27 @@ impl SigningPlatformBuilder {
     /// Consumes the builder and constructs a [`SigningPlatform`](crate::types::SigningPlatform).
     pub fn build(self) -> crate::types::SigningPlatform {
         crate::types::SigningPlatform {
-            platform_id: self.platform_id,
-            display_name: self.display_name,
-            partner: self.partner,
-            target: self.target,
-            category: self.category,
-            signing_configuration: self.signing_configuration,
-            signing_image_format: self.signing_image_format,
-            max_size_in_mb: self.max_size_in_mb.unwrap_or_default(),
-            revocation_supported: self.revocation_supported.unwrap_or_default(),
+            platform_id: self.platform_id
+            ,
+            display_name: self.display_name
+            ,
+            partner: self.partner
+            ,
+            target: self.target
+            ,
+            category: self.category
+            ,
+            signing_configuration: self.signing_configuration
+            ,
+            signing_image_format: self.signing_image_format
+            ,
+            max_size_in_mb: self.max_size_in_mb
+                .unwrap_or_default()
+            ,
+            revocation_supported: self.revocation_supported
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

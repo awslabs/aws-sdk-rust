@@ -3,16 +3,17 @@
 /// <p>Information about an Amazon Web Services CloudFormation stack used to create a monthly cost estimate for DevOps Guru to analyze Amazon Web Services resources. The maximum number of stacks you can specify for a cost estimate is one. The estimate created is for the cost to analyze the Amazon Web Services resources defined by the stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudFormationCostEstimationResourceCollectionFilter {
+pub struct CloudFormationCostEstimationResourceCollectionFilter  {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    pub stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub stack_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CloudFormationCostEstimationResourceCollectionFilter {
+impl  CloudFormationCostEstimationResourceCollectionFilter  {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_names.is_none()`.
-    pub fn stack_names(&self) -> &[::std::string::String] {
-        self.stack_names.as_deref().unwrap_or_default()
+    pub fn stack_names(&self) -> & [::std::string::String] {
+        self.stack_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CloudFormationCostEstimationResourceCollectionFilter {
@@ -26,7 +27,7 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFormationCostEstimationResourceCollectionFilterBuilder {
-    pub(crate) stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) stack_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CloudFormationCostEstimationResourceCollectionFilterBuilder {
     /// Appends an item to `stack_names`.
@@ -36,23 +37,24 @@ impl CloudFormationCostEstimationResourceCollectionFilterBuilder {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
     pub fn stack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_names.unwrap_or_default();
-        v.push(input.into());
-        self.stack_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.stack_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    pub fn set_stack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.stack_names = input;
-        self
+    pub fn set_stack_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.stack_names = input; self
     }
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    pub fn get_stack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stack_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.stack_names
     }
     /// Consumes the builder and constructs a [`CloudFormationCostEstimationResourceCollectionFilter`](crate::types::CloudFormationCostEstimationResourceCollectionFilter).
     pub fn build(self) -> crate::types::CloudFormationCostEstimationResourceCollectionFilter {
         crate::types::CloudFormationCostEstimationResourceCollectionFilter {
-            stack_names: self.stack_names,
+            stack_names: self.stack_names
+            ,
         }
     }
 }
+

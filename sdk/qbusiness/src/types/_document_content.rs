@@ -22,11 +22,7 @@ impl DocumentContent {
     /// Tries to convert the enum instance into [`Blob`](crate::types::DocumentContent::Blob), extracting the inner [`Blob`](::aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob(&self) -> ::std::result::Result<&::aws_smithy_types::Blob, &Self> {
-        if let DocumentContent::Blob(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentContent::Blob(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Blob`](crate::types::DocumentContent::Blob).
     pub fn is_blob(&self) -> bool {
@@ -35,11 +31,7 @@ impl DocumentContent {
     /// Tries to convert the enum instance into [`S3`](crate::types::DocumentContent::S3), extracting the inner [`S3`](crate::types::S3).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&crate::types::S3, &Self> {
-        if let DocumentContent::S3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentContent::S3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::DocumentContent::S3).
     pub fn is_s3(&self) -> bool {
@@ -50,3 +42,4 @@ impl DocumentContent {
         matches!(self, Self::Unknown)
     }
 }
+

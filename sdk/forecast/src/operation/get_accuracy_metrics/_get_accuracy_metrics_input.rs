@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccuracyMetricsInput {
+pub struct GetAccuracyMetricsInput  {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     pub predictor_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetAccuracyMetricsInput {
+impl  GetAccuracyMetricsInput  {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    pub fn predictor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn predictor_arn(&self) -> ::std::option::Option<& str> {
         self.predictor_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetAccuracyMetricsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.predictor_arn = input;
-        self
+        self.predictor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_arn
     }
     /// Consumes the builder and constructs a [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput {
-            predictor_arn: self.predictor_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput {
+                predictor_arn: self.predictor_arn
+                ,
+            }
+        )
     }
 }
+

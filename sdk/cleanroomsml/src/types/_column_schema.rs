@@ -3,22 +3,20 @@
 /// <p>Metadata for a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnSchema {
+pub struct ColumnSchema  {
     /// <p>The name of a column.</p>
     pub column_name: ::std::string::String,
     /// <p>The data type of column.</p>
-    pub column_types: ::std::vec::Vec<crate::types::ColumnType>,
+    pub column_types: ::std::vec::Vec::<crate::types::ColumnType>,
 }
-impl ColumnSchema {
+impl  ColumnSchema  {
     /// <p>The name of a column.</p>
-    pub fn column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.column_name.deref()
+    pub fn column_name(&self) -> & str {
+        use std::ops::Deref; self.column_name.deref()
     }
     /// <p>The data type of column.</p>
-    pub fn column_types(&self) -> &[crate::types::ColumnType] {
-        use std::ops::Deref;
-        self.column_types.deref()
+    pub fn column_types(&self) -> & [crate::types::ColumnType] {
+        use std::ops::Deref; self.column_types.deref()
     }
 }
 impl ColumnSchema {
@@ -33,7 +31,7 @@ impl ColumnSchema {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnSchemaBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
-    pub(crate) column_types: ::std::option::Option<::std::vec::Vec<crate::types::ColumnType>>,
+    pub(crate) column_types: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnType>>,
 }
 impl ColumnSchemaBuilder {
     /// <p>The name of a column.</p>
@@ -44,8 +42,7 @@ impl ColumnSchemaBuilder {
     }
     /// <p>The name of a column.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>The name of a column.</p>
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl ColumnSchemaBuilder {
     /// <p>The data type of column.</p>
     pub fn column_types(mut self, input: crate::types::ColumnType) -> Self {
         let mut v = self.column_types.unwrap_or_default();
-        v.push(input);
-        self.column_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data type of column.</p>
-    pub fn set_column_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnType>>) -> Self {
-        self.column_types = input;
-        self
+    pub fn set_column_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnType>>) -> Self {
+        self.column_types = input; self
     }
     /// <p>The data type of column.</p>
-    pub fn get_column_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnType>> {
+    pub fn get_column_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnType>> {
         &self.column_types
     }
     /// Consumes the builder and constructs a [`ColumnSchema`](crate::types::ColumnSchema).
@@ -76,19 +72,20 @@ impl ColumnSchemaBuilder {
     /// - [`column_name`](crate::types::builders::ColumnSchemaBuilder::column_name)
     /// - [`column_types`](crate::types::builders::ColumnSchemaBuilder::column_types)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnSchema, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColumnSchema {
-            column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_name",
-                    "column_name was not specified but it is required when building ColumnSchema",
-                )
-            })?,
-            column_types: self.column_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_types",
-                    "column_types was not specified but it is required when building ColumnSchema",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColumnSchema {
+                column_name: self.column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_name", "column_name was not specified but it is required when building ColumnSchema")
+                    )?
+                ,
+                column_types: self.column_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_types", "column_types was not specified but it is required when building ColumnSchema")
+                    )?
+                ,
+            }
+        )
     }
 }
+

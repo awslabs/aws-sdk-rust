@@ -4,13 +4,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemoryGiBPerVCpu {
+pub struct MemoryGiBPerVCpu  {
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no minimum limit.</p>
     pub min: ::std::option::Option<f64>,
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no maximum limit.</p>
     pub max: ::std::option::Option<f64>,
 }
-impl MemoryGiBPerVCpu {
+impl  MemoryGiBPerVCpu  {
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
@@ -42,8 +42,7 @@ impl MemoryGiBPerVCpuBuilder {
     }
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -56,8 +55,7 @@ impl MemoryGiBPerVCpuBuilder {
     }
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no maximum limit.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is not specified, there is no maximum limit.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl MemoryGiBPerVCpuBuilder {
     /// Consumes the builder and constructs a [`MemoryGiBPerVCpu`](crate::types::MemoryGiBPerVCpu).
     pub fn build(self) -> crate::types::MemoryGiBPerVCpu {
         crate::types::MemoryGiBPerVCpu {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

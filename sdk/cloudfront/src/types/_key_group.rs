@@ -4,7 +4,7 @@
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyGroup {
+pub struct KeyGroup  {
     /// <p>The identifier for the key group.</p>
     pub id: ::std::string::String,
     /// <p>The date and time when the key group was last modified.</p>
@@ -12,18 +12,17 @@ pub struct KeyGroup {
     /// <p>The key group configuration.</p>
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
 }
-impl KeyGroup {
+impl  KeyGroup  {
     /// <p>The identifier for the key group.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The date and time when the key group was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>The key group configuration.</p>
-    pub fn key_group_config(&self) -> ::std::option::Option<&crate::types::KeyGroupConfig> {
+    pub fn key_group_config(&self) -> ::std::option::Option<& crate::types::KeyGroupConfig> {
         self.key_group_config.as_ref()
     }
 }
@@ -51,8 +50,7 @@ impl KeyGroupBuilder {
     }
     /// <p>The identifier for the key group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the key group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl KeyGroupBuilder {
     }
     /// <p>The date and time when the key group was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time when the key group was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -81,8 +78,7 @@ impl KeyGroupBuilder {
     }
     /// <p>The key group configuration.</p>
     pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
-        self.key_group_config = input;
-        self
+        self.key_group_config = input; self
     }
     /// <p>The key group configuration.</p>
     pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
@@ -93,20 +89,22 @@ impl KeyGroupBuilder {
     /// - [`id`](crate::types::builders::KeyGroupBuilder::id)
     /// - [`last_modified_time`](crate::types::builders::KeyGroupBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyGroup {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building KeyGroup",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building KeyGroup",
-                )
-            })?,
-            key_group_config: self.key_group_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyGroup {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building KeyGroup")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building KeyGroup")
+                    )?
+                ,
+                key_group_config: self.key_group_config
+                ,
+            }
+        )
     }
 }
+

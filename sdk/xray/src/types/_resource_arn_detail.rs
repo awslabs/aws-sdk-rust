@@ -3,13 +3,13 @@
 /// <p>A list of resources ARNs corresponding to the segments in a trace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceArnDetail {
+pub struct ResourceArnDetail  {
     /// <p>The ARN of a corresponding resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl ResourceArnDetail {
+impl  ResourceArnDetail  {
     /// <p>The ARN of a corresponding resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ResourceArnDetailBuilder {
     }
     /// <p>The ARN of a corresponding resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of a corresponding resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ResourceArnDetailBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceArnDetail`](crate::types::ResourceArnDetail).
     pub fn build(self) -> crate::types::ResourceArnDetail {
-        crate::types::ResourceArnDetail { arn: self.arn }
+        crate::types::ResourceArnDetail {
+            arn: self.arn
+            ,
+        }
     }
 }
+

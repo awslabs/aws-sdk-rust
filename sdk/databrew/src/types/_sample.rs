@@ -3,19 +3,19 @@
 /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Sample {
+pub struct Sample  {
     /// <p>The number of rows in the sample.</p>
     pub size: ::std::option::Option<i32>,
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
     pub r#type: crate::types::SampleType,
 }
-impl Sample {
+impl  Sample  {
     /// <p>The number of rows in the sample.</p>
     pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
-    pub fn r#type(&self) -> &crate::types::SampleType {
+    pub fn r#type(&self) -> & crate::types::SampleType {
         &self.r#type
     }
 }
@@ -41,8 +41,7 @@ impl SampleBuilder {
     }
     /// <p>The number of rows in the sample.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The number of rows in the sample.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl SampleBuilder {
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SampleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SampleType> {
@@ -67,14 +65,17 @@ impl SampleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::SampleBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Sample, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Sample {
-            size: self.size,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Sample",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Sample {
+                size: self.size
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Sample")
+                    )?
+                ,
+            }
+        )
     }
 }
+

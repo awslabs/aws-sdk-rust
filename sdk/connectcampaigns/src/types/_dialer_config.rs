@@ -24,11 +24,7 @@ impl DialerConfig {
     /// Tries to convert the enum instance into [`AgentlessDialerConfig`](crate::types::DialerConfig::AgentlessDialerConfig), extracting the inner [`AgentlessDialerConfig`](crate::types::AgentlessDialerConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_agentless_dialer_config(&self) -> ::std::result::Result<&crate::types::AgentlessDialerConfig, &Self> {
-        if let DialerConfig::AgentlessDialerConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DialerConfig::AgentlessDialerConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AgentlessDialerConfig`](crate::types::DialerConfig::AgentlessDialerConfig).
     pub fn is_agentless_dialer_config(&self) -> bool {
@@ -37,11 +33,7 @@ impl DialerConfig {
     /// Tries to convert the enum instance into [`PredictiveDialerConfig`](crate::types::DialerConfig::PredictiveDialerConfig), extracting the inner [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_predictive_dialer_config(&self) -> ::std::result::Result<&crate::types::PredictiveDialerConfig, &Self> {
-        if let DialerConfig::PredictiveDialerConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DialerConfig::PredictiveDialerConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PredictiveDialerConfig`](crate::types::DialerConfig::PredictiveDialerConfig).
     pub fn is_predictive_dialer_config(&self) -> bool {
@@ -50,11 +42,7 @@ impl DialerConfig {
     /// Tries to convert the enum instance into [`ProgressiveDialerConfig`](crate::types::DialerConfig::ProgressiveDialerConfig), extracting the inner [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_progressive_dialer_config(&self) -> ::std::result::Result<&crate::types::ProgressiveDialerConfig, &Self> {
-        if let DialerConfig::ProgressiveDialerConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DialerConfig::ProgressiveDialerConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ProgressiveDialerConfig`](crate::types::DialerConfig::ProgressiveDialerConfig).
     pub fn is_progressive_dialer_config(&self) -> bool {
@@ -65,3 +53,4 @@ impl DialerConfig {
         matches!(self, Self::Unknown)
     }
 }
+

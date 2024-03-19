@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateagentloglevel = unimplemented!();
 /// match updateagentloglevel {
@@ -36,16 +36,14 @@
 /// Specifically, when `updateagentloglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateAgentLogLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The minimum level of log statements that should be logged by the OTA Agent during an update.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UpdateAgentLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Debug,
@@ -65,79 +63,80 @@ pub enum UpdateAgentLogLevel {
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UpdateAgentLogLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEBUG" => UpdateAgentLogLevel::Debug,
-            "ERROR" => UpdateAgentLogLevel::Error,
-            "FATAL" => UpdateAgentLogLevel::Fatal,
-            "INFO" => UpdateAgentLogLevel::Info,
-            "NONE" => UpdateAgentLogLevel::None,
-            "TRACE" => UpdateAgentLogLevel::Trace,
-            "VERBOSE" => UpdateAgentLogLevel::Verbose,
-            "WARN" => UpdateAgentLogLevel::Warn,
-            other => UpdateAgentLogLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DEBUG" => UpdateAgentLogLevel::Debug,
+"ERROR" => UpdateAgentLogLevel::Error,
+"FATAL" => UpdateAgentLogLevel::Fatal,
+"INFO" => UpdateAgentLogLevel::Info,
+"NONE" => UpdateAgentLogLevel::None,
+"TRACE" => UpdateAgentLogLevel::Trace,
+"VERBOSE" => UpdateAgentLogLevel::Verbose,
+"WARN" => UpdateAgentLogLevel::Warn,
+other => UpdateAgentLogLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UpdateAgentLogLevel {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UpdateAgentLogLevel::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UpdateAgentLogLevel::from(s))
+                    }
+                }
 impl UpdateAgentLogLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateAgentLogLevel::Debug => "DEBUG",
-            UpdateAgentLogLevel::Error => "ERROR",
-            UpdateAgentLogLevel::Fatal => "FATAL",
-            UpdateAgentLogLevel::Info => "INFO",
-            UpdateAgentLogLevel::None => "NONE",
-            UpdateAgentLogLevel::Trace => "TRACE",
-            UpdateAgentLogLevel::Verbose => "VERBOSE",
-            UpdateAgentLogLevel::Warn => "WARN",
-            UpdateAgentLogLevel::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateAgentLogLevel::Debug => "DEBUG",
+    UpdateAgentLogLevel::Error => "ERROR",
+    UpdateAgentLogLevel::Fatal => "FATAL",
+    UpdateAgentLogLevel::Info => "INFO",
+    UpdateAgentLogLevel::None => "NONE",
+    UpdateAgentLogLevel::Trace => "TRACE",
+    UpdateAgentLogLevel::Verbose => "VERBOSE",
+    UpdateAgentLogLevel::Warn => "WARN",
+    UpdateAgentLogLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UpdateAgentLogLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UpdateAgentLogLevel {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UpdateAgentLogLevel {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UpdateAgentLogLevel::Debug => write!(f, "DEBUG"),
-            UpdateAgentLogLevel::Error => write!(f, "ERROR"),
-            UpdateAgentLogLevel::Fatal => write!(f, "FATAL"),
-            UpdateAgentLogLevel::Info => write!(f, "INFO"),
-            UpdateAgentLogLevel::None => write!(f, "NONE"),
-            UpdateAgentLogLevel::Trace => write!(f, "TRACE"),
-            UpdateAgentLogLevel::Verbose => write!(f, "VERBOSE"),
-            UpdateAgentLogLevel::Warn => write!(f, "WARN"),
-            UpdateAgentLogLevel::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UpdateAgentLogLevel::Debug => write!(f, "DEBUG"),
+UpdateAgentLogLevel::Error => write!(f, "ERROR"),
+UpdateAgentLogLevel::Fatal => write!(f, "FATAL"),
+UpdateAgentLogLevel::Info => write!(f, "INFO"),
+UpdateAgentLogLevel::None => write!(f, "NONE"),
+UpdateAgentLogLevel::Trace => write!(f, "TRACE"),
+UpdateAgentLogLevel::Verbose => write!(f, "VERBOSE"),
+UpdateAgentLogLevel::Warn => write!(f, "WARN"),
+UpdateAgentLogLevel::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

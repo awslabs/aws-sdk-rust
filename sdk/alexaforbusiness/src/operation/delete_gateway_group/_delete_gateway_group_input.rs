@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGatewayGroupInput {
+pub struct DeleteGatewayGroupInput  {
     /// <p>The ARN of the gateway group to delete.</p>
     pub gateway_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGatewayGroupInput {
+impl  DeleteGatewayGroupInput  {
     /// <p>The ARN of the gateway group to delete.</p>
-    pub fn gateway_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_group_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_group_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteGatewayGroupInputBuilder {
     }
     /// <p>The ARN of the gateway group to delete.</p>
     pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_group_arn = input;
-        self
+        self.gateway_group_arn = input; self
     }
     /// <p>The ARN of the gateway group to delete.</p>
     pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_group_arn
     }
     /// Consumes the builder and constructs a [`DeleteGatewayGroupInput`](crate::operation::delete_gateway_group::DeleteGatewayGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_gateway_group::DeleteGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_gateway_group::DeleteGatewayGroupInput {
-            gateway_group_arn: self.gateway_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_gateway_group::DeleteGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_gateway_group::DeleteGatewayGroupInput {
+                gateway_group_arn: self.gateway_group_arn
+                ,
+            }
+        )
     }
 }
+

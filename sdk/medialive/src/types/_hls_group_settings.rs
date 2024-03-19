@@ -3,9 +3,9 @@
 /// Hls Group Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsGroupSettings {
+pub struct HlsGroupSettings  {
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
-    pub ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
+    pub ad_markers: ::std::option::Option<::std::vec::Vec::<crate::types::HlsAdMarkers>>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub base_url_content: ::std::option::Option<::std::string::String>,
     /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
@@ -15,7 +15,7 @@ pub struct HlsGroupSettings {
     /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
     pub base_url_manifest1: ::std::option::Option<::std::string::String>,
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
-    pub caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>>,
+    pub caption_language_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionLanguageMapping>>,
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub caption_language_setting: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
     /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
@@ -91,81 +91,83 @@ pub struct HlsGroupSettings {
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub ts_file_mode: ::std::option::Option<crate::types::HlsTsFileMode>,
 }
-impl HlsGroupSettings {
+impl  HlsGroupSettings  {
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_markers.is_none()`.
-    pub fn ad_markers(&self) -> &[crate::types::HlsAdMarkers] {
-        self.ad_markers.as_deref().unwrap_or_default()
+    pub fn ad_markers(&self) -> & [crate::types::HlsAdMarkers] {
+        self.ad_markers.as_deref()
+        .unwrap_or_default()
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
-    pub fn base_url_content(&self) -> ::std::option::Option<&str> {
+    pub fn base_url_content(&self) -> ::std::option::Option<& str> {
         self.base_url_content.as_deref()
     }
     /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
-    pub fn base_url_content1(&self) -> ::std::option::Option<&str> {
+    pub fn base_url_content1(&self) -> ::std::option::Option<& str> {
         self.base_url_content1.as_deref()
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
-    pub fn base_url_manifest(&self) -> ::std::option::Option<&str> {
+    pub fn base_url_manifest(&self) -> ::std::option::Option<& str> {
         self.base_url_manifest.as_deref()
     }
     /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
-    pub fn base_url_manifest1(&self) -> ::std::option::Option<&str> {
+    pub fn base_url_manifest1(&self) -> ::std::option::Option<& str> {
         self.base_url_manifest1.as_deref()
     }
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_language_mappings.is_none()`.
-    pub fn caption_language_mappings(&self) -> &[crate::types::CaptionLanguageMapping] {
-        self.caption_language_mappings.as_deref().unwrap_or_default()
+    pub fn caption_language_mappings(&self) -> & [crate::types::CaptionLanguageMapping] {
+        self.caption_language_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
-    pub fn caption_language_setting(&self) -> ::std::option::Option<&crate::types::HlsCaptionLanguageSetting> {
+    pub fn caption_language_setting(&self) -> ::std::option::Option<& crate::types::HlsCaptionLanguageSetting> {
         self.caption_language_setting.as_ref()
     }
     /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
-    pub fn client_cache(&self) -> ::std::option::Option<&crate::types::HlsClientCache> {
+    pub fn client_cache(&self) -> ::std::option::Option<& crate::types::HlsClientCache> {
         self.client_cache.as_ref()
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    pub fn codec_specification(&self) -> ::std::option::Option<&crate::types::HlsCodecSpecification> {
+    pub fn codec_specification(&self) -> ::std::option::Option<& crate::types::HlsCodecSpecification> {
         self.codec_specification.as_ref()
     }
     /// For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to "explicit" then this parameter is required and is used as the IV for encryption.
-    pub fn constant_iv(&self) -> ::std::option::Option<&str> {
+    pub fn constant_iv(&self) -> ::std::option::Option<& str> {
         self.constant_iv.as_deref()
     }
     /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
     /// Place segments in subdirectories.
-    pub fn directory_structure(&self) -> ::std::option::Option<&crate::types::HlsDirectoryStructure> {
+    pub fn directory_structure(&self) -> ::std::option::Option<& crate::types::HlsDirectoryStructure> {
         self.directory_structure.as_ref()
     }
     /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
-    pub fn discontinuity_tags(&self) -> ::std::option::Option<&crate::types::HlsDiscontinuityTags> {
+    pub fn discontinuity_tags(&self) -> ::std::option::Option<& crate::types::HlsDiscontinuityTags> {
         self.discontinuity_tags.as_ref()
     }
     /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::HlsEncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& crate::types::HlsEncryptionType> {
         self.encryption_type.as_ref()
     }
     /// Parameters that control interactions with the CDN.
-    pub fn hls_cdn_settings(&self) -> ::std::option::Option<&crate::types::HlsCdnSettings> {
+    pub fn hls_cdn_settings(&self) -> ::std::option::Option<& crate::types::HlsCdnSettings> {
         self.hls_cdn_settings.as_ref()
     }
     /// State of HLS ID3 Segment Tagging
-    pub fn hls_id3_segment_tagging(&self) -> ::std::option::Option<&crate::types::HlsId3SegmentTaggingState> {
+    pub fn hls_id3_segment_tagging(&self) -> ::std::option::Option<& crate::types::HlsId3SegmentTaggingState> {
         self.hls_id3_segment_tagging.as_ref()
     }
     /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
-    pub fn i_frame_only_playlists(&self) -> ::std::option::Option<&crate::types::IFrameOnlyPlaylistType> {
+    pub fn i_frame_only_playlists(&self) -> ::std::option::Option<& crate::types::IFrameOnlyPlaylistType> {
         self.i_frame_only_playlists.as_ref()
     }
     /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
-    pub fn incomplete_segment_behavior(&self) -> ::std::option::Option<&crate::types::HlsIncompleteSegmentBehavior> {
+    pub fn incomplete_segment_behavior(&self) -> ::std::option::Option<& crate::types::HlsIncompleteSegmentBehavior> {
         self.incomplete_segment_behavior.as_ref()
     }
     /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
@@ -173,15 +175,15 @@ impl HlsGroupSettings {
         self.index_n_segments
     }
     /// Parameter that control output group behavior on input loss.
-    pub fn input_loss_action(&self) -> ::std::option::Option<&crate::types::InputLossActionForHlsOut> {
+    pub fn input_loss_action(&self) -> ::std::option::Option<& crate::types::InputLossActionForHlsOut> {
         self.input_loss_action.as_ref()
     }
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to "include", IV is listed in the manifest, otherwise the IV is not in the manifest.
-    pub fn iv_in_manifest(&self) -> ::std::option::Option<&crate::types::HlsIvInManifest> {
+    pub fn iv_in_manifest(&self) -> ::std::option::Option<& crate::types::HlsIvInManifest> {
         self.iv_in_manifest.as_ref()
     }
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
-    pub fn iv_source(&self) -> ::std::option::Option<&crate::types::HlsIvSource> {
+    pub fn iv_source(&self) -> ::std::option::Option<& crate::types::HlsIvSource> {
         self.iv_source.as_ref()
     }
     /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
@@ -189,23 +191,23 @@ impl HlsGroupSettings {
         self.keep_segments
     }
     /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
-    pub fn key_format(&self) -> ::std::option::Option<&str> {
+    pub fn key_format(&self) -> ::std::option::Option<& str> {
         self.key_format.as_deref()
     }
     /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-    pub fn key_format_versions(&self) -> ::std::option::Option<&str> {
+    pub fn key_format_versions(&self) -> ::std::option::Option<& str> {
         self.key_format_versions.as_deref()
     }
     /// The key provider settings.
-    pub fn key_provider_settings(&self) -> ::std::option::Option<&crate::types::KeyProviderSettings> {
+    pub fn key_provider_settings(&self) -> ::std::option::Option<& crate::types::KeyProviderSettings> {
         self.key_provider_settings.as_ref()
     }
     /// When set to gzip, compresses HLS playlist.
-    pub fn manifest_compression(&self) -> ::std::option::Option<&crate::types::HlsManifestCompression> {
+    pub fn manifest_compression(&self) -> ::std::option::Option<& crate::types::HlsManifestCompression> {
         self.manifest_compression.as_ref()
     }
     /// Indicates whether the output manifest should use floating point or integer values for segment duration.
-    pub fn manifest_duration_format(&self) -> ::std::option::Option<&crate::types::HlsManifestDurationFormat> {
+    pub fn manifest_duration_format(&self) -> ::std::option::Option<& crate::types::HlsManifestDurationFormat> {
         self.manifest_duration_format.as_ref()
     }
     /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
@@ -213,19 +215,19 @@ impl HlsGroupSettings {
         self.min_segment_length
     }
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::HlsMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::HlsMode> {
         self.mode.as_ref()
     }
     /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
-    pub fn output_selection(&self) -> ::std::option::Option<&crate::types::HlsOutputSelection> {
+    pub fn output_selection(&self) -> ::std::option::Option<& crate::types::HlsOutputSelection> {
         self.output_selection.as_ref()
     }
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
-    pub fn program_date_time(&self) -> ::std::option::Option<&crate::types::HlsProgramDateTime> {
+    pub fn program_date_time(&self) -> ::std::option::Option<& crate::types::HlsProgramDateTime> {
         self.program_date_time.as_ref()
     }
     /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
-    pub fn program_date_time_clock(&self) -> ::std::option::Option<&crate::types::HlsProgramDateTimeClock> {
+    pub fn program_date_time_clock(&self) -> ::std::option::Option<& crate::types::HlsProgramDateTimeClock> {
         self.program_date_time_clock.as_ref()
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
@@ -233,7 +235,7 @@ impl HlsGroupSettings {
         self.program_date_time_period
     }
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
-    pub fn redundant_manifest(&self) -> ::std::option::Option<&crate::types::HlsRedundantManifest> {
+    pub fn redundant_manifest(&self) -> ::std::option::Option<& crate::types::HlsRedundantManifest> {
         self.redundant_manifest.as_ref()
     }
     /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
@@ -241,7 +243,7 @@ impl HlsGroupSettings {
         self.segment_length
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
-    pub fn segmentation_mode(&self) -> ::std::option::Option<&crate::types::HlsSegmentationMode> {
+    pub fn segmentation_mode(&self) -> ::std::option::Option<& crate::types::HlsSegmentationMode> {
         self.segmentation_mode.as_ref()
     }
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
@@ -249,11 +251,11 @@ impl HlsGroupSettings {
         self.segments_per_subdirectory
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    pub fn stream_inf_resolution(&self) -> ::std::option::Option<&crate::types::HlsStreamInfResolution> {
+    pub fn stream_inf_resolution(&self) -> ::std::option::Option<& crate::types::HlsStreamInfResolution> {
         self.stream_inf_resolution.as_ref()
     }
     /// Indicates ID3 frame that has the timecode.
-    pub fn timed_metadata_id3_frame(&self) -> ::std::option::Option<&crate::types::HlsTimedMetadataId3Frame> {
+    pub fn timed_metadata_id3_frame(&self) -> ::std::option::Option<& crate::types::HlsTimedMetadataId3Frame> {
         self.timed_metadata_id3_frame.as_ref()
     }
     /// Timed Metadata interval in seconds.
@@ -265,7 +267,7 @@ impl HlsGroupSettings {
         self.timestamp_delta_milliseconds
     }
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
-    pub fn ts_file_mode(&self) -> ::std::option::Option<&crate::types::HlsTsFileMode> {
+    pub fn ts_file_mode(&self) -> ::std::option::Option<& crate::types::HlsTsFileMode> {
         self.ts_file_mode.as_ref()
     }
 }
@@ -280,12 +282,12 @@ impl HlsGroupSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsGroupSettingsBuilder {
-    pub(crate) ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
+    pub(crate) ad_markers: ::std::option::Option<::std::vec::Vec::<crate::types::HlsAdMarkers>>,
     pub(crate) base_url_content: ::std::option::Option<::std::string::String>,
     pub(crate) base_url_content1: ::std::option::Option<::std::string::String>,
     pub(crate) base_url_manifest: ::std::option::Option<::std::string::String>,
     pub(crate) base_url_manifest1: ::std::option::Option<::std::string::String>,
-    pub(crate) caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>>,
+    pub(crate) caption_language_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionLanguageMapping>>,
     pub(crate) caption_language_setting: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
     pub(crate) client_cache: ::std::option::Option<crate::types::HlsClientCache>,
     pub(crate) codec_specification: ::std::option::Option<crate::types::HlsCodecSpecification>,
@@ -332,17 +334,16 @@ impl HlsGroupSettingsBuilder {
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
     pub fn ad_markers(mut self, input: crate::types::HlsAdMarkers) -> Self {
         let mut v = self.ad_markers.unwrap_or_default();
-        v.push(input);
-        self.ad_markers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ad_markers = ::std::option::Option::Some(v);
+                        self
     }
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
-    pub fn set_ad_markers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>) -> Self {
-        self.ad_markers = input;
-        self
+    pub fn set_ad_markers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HlsAdMarkers>>) -> Self {
+        self.ad_markers = input; self
     }
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
-    pub fn get_ad_markers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>> {
+    pub fn get_ad_markers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HlsAdMarkers>> {
         &self.ad_markers
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
@@ -352,8 +353,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub fn set_base_url_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url_content = input;
-        self
+        self.base_url_content = input; self
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub fn get_base_url_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -366,8 +366,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
     pub fn set_base_url_content1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url_content1 = input;
-        self
+        self.base_url_content1 = input; self
     }
     /// Optional. One value per output group. This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
     pub fn get_base_url_content1(&self) -> &::std::option::Option<::std::string::String> {
@@ -380,8 +379,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub fn set_base_url_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url_manifest = input;
-        self
+        self.base_url_manifest = input; self
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub fn get_base_url_manifest(&self) -> &::std::option::Option<::std::string::String> {
@@ -394,8 +392,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
     pub fn set_base_url_manifest1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url_manifest1 = input;
-        self
+        self.base_url_manifest1 = input; self
     }
     /// Optional. One value per output group. Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
     pub fn get_base_url_manifest1(&self) -> &::std::option::Option<::std::string::String> {
@@ -408,17 +405,16 @@ impl HlsGroupSettingsBuilder {
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
     pub fn caption_language_mappings(mut self, input: crate::types::CaptionLanguageMapping) -> Self {
         let mut v = self.caption_language_mappings.unwrap_or_default();
-        v.push(input);
-        self.caption_language_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.caption_language_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
-    pub fn set_caption_language_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>>) -> Self {
-        self.caption_language_mappings = input;
-        self
+    pub fn set_caption_language_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionLanguageMapping>>) -> Self {
+        self.caption_language_mappings = input; self
     }
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
-    pub fn get_caption_language_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>> {
+    pub fn get_caption_language_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CaptionLanguageMapping>> {
         &self.caption_language_mappings
     }
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
@@ -428,8 +424,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub fn set_caption_language_setting(mut self, input: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>) -> Self {
-        self.caption_language_setting = input;
-        self
+        self.caption_language_setting = input; self
     }
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub fn get_caption_language_setting(&self) -> &::std::option::Option<crate::types::HlsCaptionLanguageSetting> {
@@ -442,8 +437,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
     pub fn set_client_cache(mut self, input: ::std::option::Option<crate::types::HlsClientCache>) -> Self {
-        self.client_cache = input;
-        self
+        self.client_cache = input; self
     }
     /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
     pub fn get_client_cache(&self) -> &::std::option::Option<crate::types::HlsClientCache> {
@@ -456,8 +450,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub fn set_codec_specification(mut self, input: ::std::option::Option<crate::types::HlsCodecSpecification>) -> Self {
-        self.codec_specification = input;
-        self
+        self.codec_specification = input; self
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub fn get_codec_specification(&self) -> &::std::option::Option<crate::types::HlsCodecSpecification> {
@@ -470,8 +463,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to "explicit" then this parameter is required and is used as the IV for encryption.
     pub fn set_constant_iv(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.constant_iv = input;
-        self
+        self.constant_iv = input; self
     }
     /// For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to "explicit" then this parameter is required and is used as the IV for encryption.
     pub fn get_constant_iv(&self) -> &::std::option::Option<::std::string::String> {
@@ -485,8 +477,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
@@ -499,8 +490,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Place segments in subdirectories.
     pub fn set_directory_structure(mut self, input: ::std::option::Option<crate::types::HlsDirectoryStructure>) -> Self {
-        self.directory_structure = input;
-        self
+        self.directory_structure = input; self
     }
     /// Place segments in subdirectories.
     pub fn get_directory_structure(&self) -> &::std::option::Option<crate::types::HlsDirectoryStructure> {
@@ -513,8 +503,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
     pub fn set_discontinuity_tags(mut self, input: ::std::option::Option<crate::types::HlsDiscontinuityTags>) -> Self {
-        self.discontinuity_tags = input;
-        self
+        self.discontinuity_tags = input; self
     }
     /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
     pub fn get_discontinuity_tags(&self) -> &::std::option::Option<crate::types::HlsDiscontinuityTags> {
@@ -527,8 +516,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::HlsEncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::HlsEncryptionType> {
@@ -541,8 +529,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Parameters that control interactions with the CDN.
     pub fn set_hls_cdn_settings(mut self, input: ::std::option::Option<crate::types::HlsCdnSettings>) -> Self {
-        self.hls_cdn_settings = input;
-        self
+        self.hls_cdn_settings = input; self
     }
     /// Parameters that control interactions with the CDN.
     pub fn get_hls_cdn_settings(&self) -> &::std::option::Option<crate::types::HlsCdnSettings> {
@@ -555,8 +542,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// State of HLS ID3 Segment Tagging
     pub fn set_hls_id3_segment_tagging(mut self, input: ::std::option::Option<crate::types::HlsId3SegmentTaggingState>) -> Self {
-        self.hls_id3_segment_tagging = input;
-        self
+        self.hls_id3_segment_tagging = input; self
     }
     /// State of HLS ID3 Segment Tagging
     pub fn get_hls_id3_segment_tagging(&self) -> &::std::option::Option<crate::types::HlsId3SegmentTaggingState> {
@@ -569,8 +555,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
     pub fn set_i_frame_only_playlists(mut self, input: ::std::option::Option<crate::types::IFrameOnlyPlaylistType>) -> Self {
-        self.i_frame_only_playlists = input;
-        self
+        self.i_frame_only_playlists = input; self
     }
     /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field). STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
     pub fn get_i_frame_only_playlists(&self) -> &::std::option::Option<crate::types::IFrameOnlyPlaylistType> {
@@ -583,8 +568,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
     pub fn set_incomplete_segment_behavior(mut self, input: ::std::option::Option<crate::types::HlsIncompleteSegmentBehavior>) -> Self {
-        self.incomplete_segment_behavior = input;
-        self
+        self.incomplete_segment_behavior = input; self
     }
     /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
     pub fn get_incomplete_segment_behavior(&self) -> &::std::option::Option<crate::types::HlsIncompleteSegmentBehavior> {
@@ -597,8 +581,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
     pub fn set_index_n_segments(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index_n_segments = input;
-        self
+        self.index_n_segments = input; self
     }
     /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
     pub fn get_index_n_segments(&self) -> &::std::option::Option<i32> {
@@ -611,8 +594,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Parameter that control output group behavior on input loss.
     pub fn set_input_loss_action(mut self, input: ::std::option::Option<crate::types::InputLossActionForHlsOut>) -> Self {
-        self.input_loss_action = input;
-        self
+        self.input_loss_action = input; self
     }
     /// Parameter that control output group behavior on input loss.
     pub fn get_input_loss_action(&self) -> &::std::option::Option<crate::types::InputLossActionForHlsOut> {
@@ -625,8 +607,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to "include", IV is listed in the manifest, otherwise the IV is not in the manifest.
     pub fn set_iv_in_manifest(mut self, input: ::std::option::Option<crate::types::HlsIvInManifest>) -> Self {
-        self.iv_in_manifest = input;
-        self
+        self.iv_in_manifest = input; self
     }
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to "include", IV is listed in the manifest, otherwise the IV is not in the manifest.
     pub fn get_iv_in_manifest(&self) -> &::std::option::Option<crate::types::HlsIvInManifest> {
@@ -639,8 +620,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
     pub fn set_iv_source(mut self, input: ::std::option::Option<crate::types::HlsIvSource>) -> Self {
-        self.iv_source = input;
-        self
+        self.iv_source = input; self
     }
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
     pub fn get_iv_source(&self) -> &::std::option::Option<crate::types::HlsIvSource> {
@@ -653,8 +633,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
     pub fn set_keep_segments(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.keep_segments = input;
-        self
+        self.keep_segments = input; self
     }
     /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
     pub fn get_keep_segments(&self) -> &::std::option::Option<i32> {
@@ -667,8 +646,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
     pub fn set_key_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_format = input;
-        self
+        self.key_format = input; self
     }
     /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
     pub fn get_key_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -681,8 +659,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     pub fn set_key_format_versions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_format_versions = input;
-        self
+        self.key_format_versions = input; self
     }
     /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     pub fn get_key_format_versions(&self) -> &::std::option::Option<::std::string::String> {
@@ -695,8 +672,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// The key provider settings.
     pub fn set_key_provider_settings(mut self, input: ::std::option::Option<crate::types::KeyProviderSettings>) -> Self {
-        self.key_provider_settings = input;
-        self
+        self.key_provider_settings = input; self
     }
     /// The key provider settings.
     pub fn get_key_provider_settings(&self) -> &::std::option::Option<crate::types::KeyProviderSettings> {
@@ -709,8 +685,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// When set to gzip, compresses HLS playlist.
     pub fn set_manifest_compression(mut self, input: ::std::option::Option<crate::types::HlsManifestCompression>) -> Self {
-        self.manifest_compression = input;
-        self
+        self.manifest_compression = input; self
     }
     /// When set to gzip, compresses HLS playlist.
     pub fn get_manifest_compression(&self) -> &::std::option::Option<crate::types::HlsManifestCompression> {
@@ -723,8 +698,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Indicates whether the output manifest should use floating point or integer values for segment duration.
     pub fn set_manifest_duration_format(mut self, input: ::std::option::Option<crate::types::HlsManifestDurationFormat>) -> Self {
-        self.manifest_duration_format = input;
-        self
+        self.manifest_duration_format = input; self
     }
     /// Indicates whether the output manifest should use floating point or integer values for segment duration.
     pub fn get_manifest_duration_format(&self) -> &::std::option::Option<crate::types::HlsManifestDurationFormat> {
@@ -737,8 +711,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     pub fn set_min_segment_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_segment_length = input;
-        self
+        self.min_segment_length = input; self
     }
     /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     pub fn get_min_segment_length(&self) -> &::std::option::Option<i32> {
@@ -751,8 +724,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::HlsMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::HlsMode> {
@@ -765,8 +737,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
     pub fn set_output_selection(mut self, input: ::std::option::Option<crate::types::HlsOutputSelection>) -> Self {
-        self.output_selection = input;
-        self
+        self.output_selection = input; self
     }
     /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
     pub fn get_output_selection(&self) -> &::std::option::Option<crate::types::HlsOutputSelection> {
@@ -779,8 +750,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
     pub fn set_program_date_time(mut self, input: ::std::option::Option<crate::types::HlsProgramDateTime>) -> Self {
-        self.program_date_time = input;
-        self
+        self.program_date_time = input; self
     }
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
     pub fn get_program_date_time(&self) -> &::std::option::Option<crate::types::HlsProgramDateTime> {
@@ -793,8 +763,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
     pub fn set_program_date_time_clock(mut self, input: ::std::option::Option<crate::types::HlsProgramDateTimeClock>) -> Self {
-        self.program_date_time_clock = input;
-        self
+        self.program_date_time_clock = input; self
     }
     /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
     pub fn get_program_date_time_clock(&self) -> &::std::option::Option<crate::types::HlsProgramDateTimeClock> {
@@ -807,8 +776,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     pub fn set_program_date_time_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_date_time_period = input;
-        self
+        self.program_date_time_period = input; self
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     pub fn get_program_date_time_period(&self) -> &::std::option::Option<i32> {
@@ -821,8 +789,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     pub fn set_redundant_manifest(mut self, input: ::std::option::Option<crate::types::HlsRedundantManifest>) -> Self {
-        self.redundant_manifest = input;
-        self
+        self.redundant_manifest = input; self
     }
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     pub fn get_redundant_manifest(&self) -> &::std::option::Option<crate::types::HlsRedundantManifest> {
@@ -835,8 +802,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
     pub fn set_segment_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segment_length = input;
-        self
+        self.segment_length = input; self
     }
     /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
     pub fn get_segment_length(&self) -> &::std::option::Option<i32> {
@@ -849,8 +815,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
     pub fn set_segmentation_mode(mut self, input: ::std::option::Option<crate::types::HlsSegmentationMode>) -> Self {
-        self.segmentation_mode = input;
-        self
+        self.segmentation_mode = input; self
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
     pub fn get_segmentation_mode(&self) -> &::std::option::Option<crate::types::HlsSegmentationMode> {
@@ -863,8 +828,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
     pub fn set_segments_per_subdirectory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segments_per_subdirectory = input;
-        self
+        self.segments_per_subdirectory = input; self
     }
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
     pub fn get_segments_per_subdirectory(&self) -> &::std::option::Option<i32> {
@@ -877,8 +841,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub fn set_stream_inf_resolution(mut self, input: ::std::option::Option<crate::types::HlsStreamInfResolution>) -> Self {
-        self.stream_inf_resolution = input;
-        self
+        self.stream_inf_resolution = input; self
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub fn get_stream_inf_resolution(&self) -> &::std::option::Option<crate::types::HlsStreamInfResolution> {
@@ -891,8 +854,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Indicates ID3 frame that has the timecode.
     pub fn set_timed_metadata_id3_frame(mut self, input: ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>) -> Self {
-        self.timed_metadata_id3_frame = input;
-        self
+        self.timed_metadata_id3_frame = input; self
     }
     /// Indicates ID3 frame that has the timecode.
     pub fn get_timed_metadata_id3_frame(&self) -> &::std::option::Option<crate::types::HlsTimedMetadataId3Frame> {
@@ -905,8 +867,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Timed Metadata interval in seconds.
     pub fn set_timed_metadata_id3_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timed_metadata_id3_period = input;
-        self
+        self.timed_metadata_id3_period = input; self
     }
     /// Timed Metadata interval in seconds.
     pub fn get_timed_metadata_id3_period(&self) -> &::std::option::Option<i32> {
@@ -919,8 +880,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     pub fn set_timestamp_delta_milliseconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timestamp_delta_milliseconds = input;
-        self
+        self.timestamp_delta_milliseconds = input; self
     }
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     pub fn get_timestamp_delta_milliseconds(&self) -> &::std::option::Option<i32> {
@@ -933,8 +893,7 @@ impl HlsGroupSettingsBuilder {
     }
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub fn set_ts_file_mode(mut self, input: ::std::option::Option<crate::types::HlsTsFileMode>) -> Self {
-        self.ts_file_mode = input;
-        self
+        self.ts_file_mode = input; self
     }
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub fn get_ts_file_mode(&self) -> &::std::option::Option<crate::types::HlsTsFileMode> {
@@ -943,49 +902,93 @@ impl HlsGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`HlsGroupSettings`](crate::types::HlsGroupSettings).
     pub fn build(self) -> crate::types::HlsGroupSettings {
         crate::types::HlsGroupSettings {
-            ad_markers: self.ad_markers,
-            base_url_content: self.base_url_content,
-            base_url_content1: self.base_url_content1,
-            base_url_manifest: self.base_url_manifest,
-            base_url_manifest1: self.base_url_manifest1,
-            caption_language_mappings: self.caption_language_mappings,
-            caption_language_setting: self.caption_language_setting,
-            client_cache: self.client_cache,
-            codec_specification: self.codec_specification,
-            constant_iv: self.constant_iv,
-            destination: self.destination,
-            directory_structure: self.directory_structure,
-            discontinuity_tags: self.discontinuity_tags,
-            encryption_type: self.encryption_type,
-            hls_cdn_settings: self.hls_cdn_settings,
-            hls_id3_segment_tagging: self.hls_id3_segment_tagging,
-            i_frame_only_playlists: self.i_frame_only_playlists,
-            incomplete_segment_behavior: self.incomplete_segment_behavior,
-            index_n_segments: self.index_n_segments,
-            input_loss_action: self.input_loss_action,
-            iv_in_manifest: self.iv_in_manifest,
-            iv_source: self.iv_source,
-            keep_segments: self.keep_segments,
-            key_format: self.key_format,
-            key_format_versions: self.key_format_versions,
-            key_provider_settings: self.key_provider_settings,
-            manifest_compression: self.manifest_compression,
-            manifest_duration_format: self.manifest_duration_format,
-            min_segment_length: self.min_segment_length,
-            mode: self.mode,
-            output_selection: self.output_selection,
-            program_date_time: self.program_date_time,
-            program_date_time_clock: self.program_date_time_clock,
-            program_date_time_period: self.program_date_time_period,
-            redundant_manifest: self.redundant_manifest,
-            segment_length: self.segment_length,
-            segmentation_mode: self.segmentation_mode,
-            segments_per_subdirectory: self.segments_per_subdirectory,
-            stream_inf_resolution: self.stream_inf_resolution,
-            timed_metadata_id3_frame: self.timed_metadata_id3_frame,
-            timed_metadata_id3_period: self.timed_metadata_id3_period,
-            timestamp_delta_milliseconds: self.timestamp_delta_milliseconds,
-            ts_file_mode: self.ts_file_mode,
+            ad_markers: self.ad_markers
+            ,
+            base_url_content: self.base_url_content
+            ,
+            base_url_content1: self.base_url_content1
+            ,
+            base_url_manifest: self.base_url_manifest
+            ,
+            base_url_manifest1: self.base_url_manifest1
+            ,
+            caption_language_mappings: self.caption_language_mappings
+            ,
+            caption_language_setting: self.caption_language_setting
+            ,
+            client_cache: self.client_cache
+            ,
+            codec_specification: self.codec_specification
+            ,
+            constant_iv: self.constant_iv
+            ,
+            destination: self.destination
+            ,
+            directory_structure: self.directory_structure
+            ,
+            discontinuity_tags: self.discontinuity_tags
+            ,
+            encryption_type: self.encryption_type
+            ,
+            hls_cdn_settings: self.hls_cdn_settings
+            ,
+            hls_id3_segment_tagging: self.hls_id3_segment_tagging
+            ,
+            i_frame_only_playlists: self.i_frame_only_playlists
+            ,
+            incomplete_segment_behavior: self.incomplete_segment_behavior
+            ,
+            index_n_segments: self.index_n_segments
+            ,
+            input_loss_action: self.input_loss_action
+            ,
+            iv_in_manifest: self.iv_in_manifest
+            ,
+            iv_source: self.iv_source
+            ,
+            keep_segments: self.keep_segments
+            ,
+            key_format: self.key_format
+            ,
+            key_format_versions: self.key_format_versions
+            ,
+            key_provider_settings: self.key_provider_settings
+            ,
+            manifest_compression: self.manifest_compression
+            ,
+            manifest_duration_format: self.manifest_duration_format
+            ,
+            min_segment_length: self.min_segment_length
+            ,
+            mode: self.mode
+            ,
+            output_selection: self.output_selection
+            ,
+            program_date_time: self.program_date_time
+            ,
+            program_date_time_clock: self.program_date_time_clock
+            ,
+            program_date_time_period: self.program_date_time_period
+            ,
+            redundant_manifest: self.redundant_manifest
+            ,
+            segment_length: self.segment_length
+            ,
+            segmentation_mode: self.segmentation_mode
+            ,
+            segments_per_subdirectory: self.segments_per_subdirectory
+            ,
+            stream_inf_resolution: self.stream_inf_resolution
+            ,
+            timed_metadata_id3_frame: self.timed_metadata_id3_frame
+            ,
+            timed_metadata_id3_period: self.timed_metadata_id3_period
+            ,
+            timestamp_delta_milliseconds: self.timestamp_delta_milliseconds
+            ,
+            ts_file_mode: self.ts_file_mode
+            ,
         }
     }
 }
+

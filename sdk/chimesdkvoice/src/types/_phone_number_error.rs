@@ -3,7 +3,7 @@
 /// <p>If a phone number action fails for one or more of the phone numbers in a request, a list of the failed phone numbers is returned, along with error codes and error messages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PhoneNumberError {
+pub struct PhoneNumberError  {
     /// <p>The phone number ID for which the action failed.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -11,21 +11,21 @@ pub struct PhoneNumberError {
     /// <p>The error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl PhoneNumberError {
+impl  PhoneNumberError  {
     /// <p>The phone number ID for which the action failed.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
-impl ::std::fmt::Debug for PhoneNumberError {
+impl  ::std::fmt::Debug for PhoneNumberError  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberError");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl PhoneNumberErrorBuilder {
     }
     /// <p>The phone number ID for which the action failed.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The phone number ID for which the action failed.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl PhoneNumberErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -85,8 +83,7 @@ impl PhoneNumberErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl PhoneNumberErrorBuilder {
     /// Consumes the builder and constructs a [`PhoneNumberError`](crate::types::PhoneNumberError).
     pub fn build(self) -> crate::types::PhoneNumberError {
         crate::types::PhoneNumberError {
-            phone_number_id: self.phone_number_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            phone_number_id: self.phone_number_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for PhoneNumberErrorBuilder {
         formatter.finish()
     }
 }
+

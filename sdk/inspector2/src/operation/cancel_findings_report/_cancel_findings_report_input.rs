@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelFindingsReportInput {
+pub struct CancelFindingsReportInput  {
     /// <p>The ID of the report to be canceled.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelFindingsReportInput {
+impl  CancelFindingsReportInput  {
     /// <p>The ID of the report to be canceled.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl CancelFindingsReportInputBuilder {
     }
     /// <p>The ID of the report to be canceled.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>The ID of the report to be canceled.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_id
     }
     /// Consumes the builder and constructs a [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportInput { report_id: self.report_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_findings_report::CancelFindingsReportInput {
+                report_id: self.report_id
+                ,
+            }
+        )
     }
 }
+

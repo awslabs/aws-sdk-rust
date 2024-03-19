@@ -3,13 +3,13 @@
 /// <p>An optional structure that configures resource ID overrides for the import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobResourceIdOverrideConfiguration {
+pub struct AssetBundleImportJobResourceIdOverrideConfiguration  {
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub prefix_for_all_resources: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleImportJobResourceIdOverrideConfiguration {
+impl  AssetBundleImportJobResourceIdOverrideConfiguration  {
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
-    pub fn prefix_for_all_resources(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_for_all_resources(&self) -> ::std::option::Option<& str> {
         self.prefix_for_all_resources.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AssetBundleImportJobResourceIdOverrideConfigurationBuilder {
     }
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub fn set_prefix_for_all_resources(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_for_all_resources = input;
-        self
+        self.prefix_for_all_resources = input; self
     }
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub fn get_prefix_for_all_resources(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AssetBundleImportJobResourceIdOverrideConfigurationBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobResourceIdOverrideConfiguration`](crate::types::AssetBundleImportJobResourceIdOverrideConfiguration).
     pub fn build(self) -> crate::types::AssetBundleImportJobResourceIdOverrideConfiguration {
         crate::types::AssetBundleImportJobResourceIdOverrideConfiguration {
-            prefix_for_all_resources: self.prefix_for_all_resources,
+            prefix_for_all_resources: self.prefix_for_all_resources
+            ,
         }
     }
 }
+

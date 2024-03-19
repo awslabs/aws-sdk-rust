@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkflowInput {
+pub struct CreateWorkflowInput  {
     /// <p>A textual description for the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
@@ -22,17 +22,17 @@ pub struct CreateWorkflowInput {
     /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
     /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p><note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub on_exception_steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateWorkflowInput {
+impl  CreateWorkflowInput  {
     /// <p>A textual description for the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
@@ -52,24 +52,27 @@ impl CreateWorkflowInput {
     /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
     /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
-    pub fn steps(&self) -> &[crate::types::WorkflowStep] {
-        self.steps.as_deref().unwrap_or_default()
+    pub fn steps(&self) -> & [crate::types::WorkflowStep] {
+        self.steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p><note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_exception_steps.is_none()`.
-    pub fn on_exception_steps(&self) -> &[crate::types::WorkflowStep] {
-        self.on_exception_steps.as_deref().unwrap_or_default()
+    pub fn on_exception_steps(&self) -> & [crate::types::WorkflowStep] {
+        self.on_exception_steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateWorkflowInput {
@@ -84,9 +87,9 @@ impl CreateWorkflowInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkflowInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
+    pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateWorkflowInputBuilder {
     /// <p>A textual description for the workflow.</p>
@@ -96,8 +99,7 @@ impl CreateWorkflowInputBuilder {
     }
     /// <p>A textual description for the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A textual description for the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,9 +128,9 @@ impl CreateWorkflowInputBuilder {
     /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
     pub fn steps(mut self, input: crate::types::WorkflowStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p>The <code>TYPE</code> specifies which of the following actions is being taken for this step.</p>
@@ -147,9 +149,8 @@ impl CreateWorkflowInputBuilder {
     /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
     /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>) -> Self {
+        self.steps = input; self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p>The <code>TYPE</code> specifies which of the following actions is being taken for this step.</p>
@@ -168,7 +169,7 @@ impl CreateWorkflowInputBuilder {
     /// <p>Currently, copying and tagging are supported only on S3.</p>
     /// </note>
     /// <p>For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>> {
         &self.steps
     }
     /// Appends an item to `on_exception_steps`.
@@ -180,21 +181,20 @@ impl CreateWorkflowInputBuilder {
     /// </note>
     pub fn on_exception_steps(mut self, input: crate::types::WorkflowStep) -> Self {
         let mut v = self.on_exception_steps.unwrap_or_default();
-        v.push(input);
-        self.on_exception_steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.on_exception_steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p><note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
-        self.on_exception_steps = input;
-        self
+    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>) -> Self {
+        self.on_exception_steps = input; self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p><note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>> {
         &self.on_exception_steps
     }
     /// Appends an item to `tags`.
@@ -204,28 +204,32 @@ impl CreateWorkflowInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
-            description: self.description,
-            steps: self.steps,
-            on_exception_steps: self.on_exception_steps,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_workflow::CreateWorkflowInput {
+                description: self.description
+                ,
+                steps: self.steps
+                ,
+                on_exception_steps: self.on_exception_steps
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

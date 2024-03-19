@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIntegrationsOutput {
+pub struct ListIntegrationsOutput  {
     /// <p>The list of ListIntegrations instances.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::ListIntegrationItem>>,
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIntegrationsOutput {
+impl  ListIntegrationsOutput  {
     /// <p>The list of ListIntegrations instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::ListIntegrationItem] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::ListIntegrationItem] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIntegrationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationsOutput`](crate::operation::list_integrations::ListIntegrationsOutput).
     pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListIntegrationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntegrationsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ListIntegrationItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListIntegrationsOutputBuilder {
     /// <p>The list of ListIntegrations instances.</p>
     pub fn items(mut self, input: crate::types::ListIntegrationItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of ListIntegrations instances.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListIntegrationItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The list of ListIntegrations instances.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListIntegrationItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
@@ -69,28 +69,30 @@ impl ListIntegrationsOutputBuilder {
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIntegrationsOutput`](crate::operation::list_integrations::ListIntegrationsOutput).
     pub fn build(self) -> crate::operation::list_integrations::ListIntegrationsOutput {
         crate::operation::list_integrations::ListIntegrationsOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

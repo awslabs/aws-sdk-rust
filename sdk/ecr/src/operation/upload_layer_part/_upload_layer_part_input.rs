@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadLayerPartInput {
+pub struct UploadLayerPartInput  {
     /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to which you are uploading layer parts.</p>
@@ -16,17 +16,17 @@ pub struct UploadLayerPartInput {
     /// <p>The base64-encoded layer part payload.</p>
     pub layer_part_blob: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl UploadLayerPartInput {
+impl  UploadLayerPartInput  {
     /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository to which you are uploading layer parts.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
@@ -38,7 +38,7 @@ impl UploadLayerPartInput {
         self.part_last_byte
     }
     /// <p>The base64-encoded layer part payload.</p>
-    pub fn layer_part_blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn layer_part_blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.layer_part_blob.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl UploadLayerPartInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UploadLayerPartInputBuilder {
     }
     /// <p>The name of the repository to which you are uploading layer parts.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository to which you are uploading layer parts.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl UploadLayerPartInputBuilder {
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl UploadLayerPartInputBuilder {
     }
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
     pub fn set_part_first_byte(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.part_first_byte = input;
-        self
+        self.part_first_byte = input; self
     }
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
     pub fn get_part_first_byte(&self) -> &::std::option::Option<i64> {
@@ -128,8 +124,7 @@ impl UploadLayerPartInputBuilder {
     }
     /// <p>The position of the last byte of the layer part within the overall image layer.</p>
     pub fn set_part_last_byte(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.part_last_byte = input;
-        self
+        self.part_last_byte = input; self
     }
     /// <p>The position of the last byte of the layer part within the overall image layer.</p>
     pub fn get_part_last_byte(&self) -> &::std::option::Option<i64> {
@@ -143,24 +138,30 @@ impl UploadLayerPartInputBuilder {
     }
     /// <p>The base64-encoded layer part payload.</p>
     pub fn set_layer_part_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.layer_part_blob = input;
-        self
+        self.layer_part_blob = input; self
     }
     /// <p>The base64-encoded layer part payload.</p>
     pub fn get_layer_part_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.layer_part_blob
     }
     /// Consumes the builder and constructs a [`UploadLayerPartInput`](crate::operation::upload_layer_part::UploadLayerPartInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_layer_part::UploadLayerPartInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::upload_layer_part::UploadLayerPartInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            upload_id: self.upload_id,
-            part_first_byte: self.part_first_byte,
-            part_last_byte: self.part_last_byte,
-            layer_part_blob: self.layer_part_blob,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_layer_part::UploadLayerPartInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_layer_part::UploadLayerPartInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                upload_id: self.upload_id
+                ,
+                part_first_byte: self.part_first_byte
+                ,
+                part_last_byte: self.part_last_byte
+                ,
+                layer_part_blob: self.layer_part_blob
+                ,
+            }
+        )
     }
 }
+

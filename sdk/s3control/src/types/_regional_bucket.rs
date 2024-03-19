@@ -3,7 +3,7 @@
 /// <p>The container for the regional bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegionalBucket {
+pub struct RegionalBucket  {
     /// <p></p>
     pub bucket: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
@@ -15,14 +15,13 @@ pub struct RegionalBucket {
     /// <p>The Outposts ID of the regional bucket.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
-impl RegionalBucket {
+impl  RegionalBucket  {
     /// <p></p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p></p>
@@ -30,11 +29,11 @@ impl RegionalBucket {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
-    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date
     }
     /// <p>The Outposts ID of the regional bucket.</p>
-    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl RegionalBucketBuilder {
     }
     /// <p></p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p></p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl RegionalBucketBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl RegionalBucketBuilder {
     }
     /// <p></p>
     pub fn set_public_access_block_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_access_block_enabled = input;
-        self
+        self.public_access_block_enabled = input; self
     }
     /// <p></p>
     pub fn get_public_access_block_enabled(&self) -> &::std::option::Option<bool> {
@@ -108,8 +104,7 @@ impl RegionalBucketBuilder {
     }
     /// <p>The creation date of the regional bucket</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date of the regional bucket</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +117,7 @@ impl RegionalBucketBuilder {
     }
     /// <p>The Outposts ID of the regional bucket.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The Outposts ID of the regional bucket.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,22 +128,27 @@ impl RegionalBucketBuilder {
     /// - [`bucket`](crate::types::builders::RegionalBucketBuilder::bucket)
     /// - [`creation_date`](crate::types::builders::RegionalBucketBuilder::creation_date)
     pub fn build(self) -> ::std::result::Result<crate::types::RegionalBucket, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegionalBucket {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building RegionalBucket",
-                )
-            })?,
-            bucket_arn: self.bucket_arn,
-            public_access_block_enabled: self.public_access_block_enabled.unwrap_or_default(),
-            creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date",
-                    "creation_date was not specified but it is required when building RegionalBucket",
-                )
-            })?,
-            outpost_id: self.outpost_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegionalBucket {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building RegionalBucket")
+                    )?
+                ,
+                bucket_arn: self.bucket_arn
+                ,
+                public_access_block_enabled: self.public_access_block_enabled
+                    .unwrap_or_default()
+                ,
+                creation_date: self.creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date", "creation_date was not specified but it is required when building RegionalBucket")
+                    )?
+                ,
+                outpost_id: self.outpost_id
+                ,
+            }
+        )
     }
 }
+

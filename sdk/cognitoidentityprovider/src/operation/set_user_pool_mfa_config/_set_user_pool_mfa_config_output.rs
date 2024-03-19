@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetUserPoolMfaConfigOutput {
+pub struct SetUserPoolMfaConfigOutput  {
     /// <p>The SMS text message MFA configuration.</p>
     pub sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     /// <p>The software token MFA configuration.</p>
@@ -19,13 +19,13 @@ pub struct SetUserPoolMfaConfigOutput {
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     _request_id: Option<String>,
 }
-impl SetUserPoolMfaConfigOutput {
+impl  SetUserPoolMfaConfigOutput  {
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn sms_mfa_configuration(&self) -> ::std::option::Option<&crate::types::SmsMfaConfigType> {
+    pub fn sms_mfa_configuration(&self) -> ::std::option::Option<& crate::types::SmsMfaConfigType> {
         self.sms_mfa_configuration.as_ref()
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn software_token_mfa_configuration(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
+    pub fn software_token_mfa_configuration(&self) -> ::std::option::Option<& crate::types::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
     }
     /// <p>The MFA configuration. Valid values include:</p>
@@ -37,15 +37,15 @@ impl SetUserPoolMfaConfigOutput {
     /// <li>
     /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p></li>
     /// </ul>
-    pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
+    pub fn mfa_configuration(&self) -> ::std::option::Option<& crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SetUserPoolMfaConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetUserPoolMfaConfigOutput {
     /// Creates a new builder-style object to manufacture [`SetUserPoolMfaConfigOutput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput).
     pub fn builder() -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigOutputBuilder {
@@ -70,8 +70,7 @@ impl SetUserPoolMfaConfigOutputBuilder {
     }
     /// <p>The SMS text message MFA configuration.</p>
     pub fn set_sms_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
-        self.sms_mfa_configuration = input;
-        self
+        self.sms_mfa_configuration = input; self
     }
     /// <p>The SMS text message MFA configuration.</p>
     pub fn get_sms_mfa_configuration(&self) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
@@ -84,8 +83,7 @@ impl SetUserPoolMfaConfigOutputBuilder {
     }
     /// <p>The software token MFA configuration.</p>
     pub fn set_software_token_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
-        self.software_token_mfa_configuration = input;
-        self
+        self.software_token_mfa_configuration = input; self
     }
     /// <p>The software token MFA configuration.</p>
     pub fn get_software_token_mfa_configuration(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
@@ -114,8 +112,7 @@ impl SetUserPoolMfaConfigOutputBuilder {
     /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p></li>
     /// </ul>
     pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
-        self.mfa_configuration = input;
-        self
+        self.mfa_configuration = input; self
     }
     /// <p>The MFA configuration. Valid values include:</p>
     /// <ul>
@@ -130,21 +127,25 @@ impl SetUserPoolMfaConfigOutputBuilder {
         &self.mfa_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetUserPoolMfaConfigOutput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput).
     pub fn build(self) -> crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput {
         crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput {
-            sms_mfa_configuration: self.sms_mfa_configuration,
-            software_token_mfa_configuration: self.software_token_mfa_configuration,
-            mfa_configuration: self.mfa_configuration,
+            sms_mfa_configuration: self.sms_mfa_configuration
+            ,
+            software_token_mfa_configuration: self.software_token_mfa_configuration
+            ,
+            mfa_configuration: self.mfa_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

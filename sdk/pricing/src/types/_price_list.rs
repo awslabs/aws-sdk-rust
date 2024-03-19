@@ -4,7 +4,7 @@
 /// <p>This is the type of price list references that match your request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PriceList {
+pub struct PriceList  {
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
     pub price_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"> <code>GetAttributeValues</code> </a> API.</p>
@@ -12,26 +12,27 @@ pub struct PriceList {
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
-    pub file_formats: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub file_formats: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PriceList {
+impl  PriceList  {
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
-    pub fn price_list_arn(&self) -> ::std::option::Option<&str> {
+    pub fn price_list_arn(&self) -> ::std::option::Option<& str> {
         self.price_list_arn.as_deref()
     }
     /// <p>This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"> <code>GetAttributeValues</code> </a> API.</p>
-    pub fn region_code(&self) -> ::std::option::Option<&str> {
+    pub fn region_code(&self) -> ::std::option::Option<& str> {
         self.region_code.as_deref()
     }
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_formats.is_none()`.
-    pub fn file_formats(&self) -> &[::std::string::String] {
-        self.file_formats.as_deref().unwrap_or_default()
+    pub fn file_formats(&self) -> & [::std::string::String] {
+        self.file_formats.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PriceList {
@@ -48,7 +49,7 @@ pub struct PriceListBuilder {
     pub(crate) price_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region_code: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
-    pub(crate) file_formats: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) file_formats: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PriceListBuilder {
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
@@ -58,8 +59,7 @@ impl PriceListBuilder {
     }
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
     pub fn set_price_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.price_list_arn = input;
-        self
+        self.price_list_arn = input; self
     }
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
     pub fn get_price_list_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl PriceListBuilder {
     }
     /// <p>This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"> <code>GetAttributeValues</code> </a> API.</p>
     pub fn set_region_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_code = input;
-        self
+        self.region_code = input; self
     }
     /// <p>This is used to filter the Price List by Amazon Web Services Region. For example, to get the price list only for the <code>US East (N. Virginia)</code> Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price lists for all applicable Regions. The available <code>RegionCode</code> list can be retrieved from <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html"> <code>GetAttributeValues</code> </a> API.</p>
     pub fn get_region_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl PriceListBuilder {
     }
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,26 +98,30 @@ impl PriceListBuilder {
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
     pub fn file_formats(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.file_formats.unwrap_or_default();
-        v.push(input.into());
-        self.file_formats = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.file_formats = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
-    pub fn set_file_formats(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.file_formats = input;
-        self
+    pub fn set_file_formats(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.file_formats = input; self
     }
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response.</p>
-    pub fn get_file_formats(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_formats(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.file_formats
     }
     /// Consumes the builder and constructs a [`PriceList`](crate::types::PriceList).
     pub fn build(self) -> crate::types::PriceList {
         crate::types::PriceList {
-            price_list_arn: self.price_list_arn,
-            region_code: self.region_code,
-            currency_code: self.currency_code,
-            file_formats: self.file_formats,
+            price_list_arn: self.price_list_arn
+            ,
+            region_code: self.region_code
+            ,
+            currency_code: self.currency_code
+            ,
+            file_formats: self.file_formats
+            ,
         }
     }
 }
+

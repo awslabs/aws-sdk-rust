@@ -46,3 +46,4 @@ pub use crate::types::_worker_type_specification_input::WorkerTypeSpecificationI
 pub use crate::types::_image_configuration_input::ImageConfigurationInputBuilder;
 
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
+

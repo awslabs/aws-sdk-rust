@@ -3,7 +3,7 @@
 /// <p>Describes a schema object in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetAdvisorSchemaObjectResponse {
+pub struct FleetAdvisorSchemaObjectResponse  {
     /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
     pub schema_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
@@ -25,9 +25,9 @@ pub struct FleetAdvisorSchemaObjectResponse {
     /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
     pub code_size: ::std::option::Option<i64>,
 }
-impl FleetAdvisorSchemaObjectResponse {
+impl  FleetAdvisorSchemaObjectResponse  {
     /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
-    pub fn schema_id(&self) -> ::std::option::Option<&str> {
+    pub fn schema_id(&self) -> ::std::option::Option<& str> {
         self.schema_id.as_deref()
     }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
@@ -41,7 +41,7 @@ impl FleetAdvisorSchemaObjectResponse {
     /// <li>
     /// <p><code>QUEUE</code></p></li>
     /// </ul>
-    pub fn object_type(&self) -> ::std::option::Option<&str> {
+    pub fn object_type(&self) -> ::std::option::Option<& str> {
         self.object_type.as_deref()
     }
     /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
@@ -82,8 +82,7 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
     pub fn set_schema_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
     }
     /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
     pub fn get_schema_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     /// <p><code>QUEUE</code></p></li>
     /// </ul>
     pub fn set_object_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type = input;
-        self
+        self.object_type = input; self
     }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
@@ -140,8 +138,7 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn set_number_of_objects(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_objects = input;
-        self
+        self.number_of_objects = input; self
     }
     /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn get_number_of_objects(&self) -> &::std::option::Option<i64> {
@@ -154,8 +151,7 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn set_code_line_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.code_line_count = input;
-        self
+        self.code_line_count = input; self
     }
     /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn get_code_line_count(&self) -> &::std::option::Option<i64> {
@@ -168,8 +164,7 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     }
     /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.code_size = input;
-        self
+        self.code_size = input; self
     }
     /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn get_code_size(&self) -> &::std::option::Option<i64> {
@@ -178,11 +173,17 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     /// Consumes the builder and constructs a [`FleetAdvisorSchemaObjectResponse`](crate::types::FleetAdvisorSchemaObjectResponse).
     pub fn build(self) -> crate::types::FleetAdvisorSchemaObjectResponse {
         crate::types::FleetAdvisorSchemaObjectResponse {
-            schema_id: self.schema_id,
-            object_type: self.object_type,
-            number_of_objects: self.number_of_objects,
-            code_line_count: self.code_line_count,
-            code_size: self.code_size,
+            schema_id: self.schema_id
+            ,
+            object_type: self.object_type
+            ,
+            number_of_objects: self.number_of_objects
+            ,
+            code_line_count: self.code_line_count
+            ,
+            code_size: self.code_size
+            ,
         }
     }
 }
+

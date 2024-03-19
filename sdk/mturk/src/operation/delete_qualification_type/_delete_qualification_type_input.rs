@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQualificationTypeInput {
+pub struct DeleteQualificationTypeInput  {
     /// <p>The ID of the QualificationType to dispose.</p>
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQualificationTypeInput {
+impl  DeleteQualificationTypeInput  {
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> ::std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteQualificationTypeInputBuilder {
     }
     /// <p>The ID of the QualificationType to dispose.</p>
     pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_type_id = input;
-        self
+        self.qualification_type_id = input; self
     }
     /// <p>The ID of the QualificationType to dispose.</p>
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualification_type_id
     }
     /// Consumes the builder and constructs a [`DeleteQualificationTypeInput`](crate::operation::delete_qualification_type::DeleteQualificationTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_qualification_type::DeleteQualificationTypeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_qualification_type::DeleteQualificationTypeInput {
-            qualification_type_id: self.qualification_type_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_qualification_type::DeleteQualificationTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_qualification_type::DeleteQualificationTypeInput {
+                qualification_type_id: self.qualification_type_id
+                ,
+            }
+        )
     }
 }
+

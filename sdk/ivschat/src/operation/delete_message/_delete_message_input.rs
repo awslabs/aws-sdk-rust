@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMessageInput {
+pub struct DeleteMessageInput  {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
@@ -10,17 +10,17 @@ pub struct DeleteMessageInput {
     /// <p>Reason for deleting the message.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMessageInput {
+impl  DeleteMessageInput  {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
-    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn room_identifier(&self) -> ::std::option::Option<& str> {
         self.room_identifier.as_deref()
     }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Reason for deleting the message.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteMessageInputBuilder {
     }
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_identifier = input;
-        self
+        self.room_identifier = input; self
     }
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN.</p>
     pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteMessageInputBuilder {
     }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DeleteMessageInputBuilder {
     }
     /// <p>Reason for deleting the message.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Reason for deleting the message.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_message::DeleteMessageInput {
-            room_identifier: self.room_identifier,
-            id: self.id,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_message::DeleteMessageInput {
+                room_identifier: self.room_identifier
+                ,
+                id: self.id
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

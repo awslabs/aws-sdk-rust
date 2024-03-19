@@ -3,13 +3,13 @@
 /// <p>Contains the category by which to group the sessions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsSessionGroupBySpecification {
+pub struct AnalyticsSessionGroupBySpecification  {
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
     pub name: crate::types::AnalyticsSessionField,
 }
-impl AnalyticsSessionGroupBySpecification {
+impl  AnalyticsSessionGroupBySpecification  {
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
-    pub fn name(&self) -> &crate::types::AnalyticsSessionField {
+    pub fn name(&self) -> & crate::types::AnalyticsSessionField {
         &self.name
     }
 }
@@ -35,8 +35,7 @@ impl AnalyticsSessionGroupBySpecificationBuilder {
     }
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionField>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsSessionField> {
@@ -45,16 +44,16 @@ impl AnalyticsSessionGroupBySpecificationBuilder {
     /// Consumes the builder and constructs a [`AnalyticsSessionGroupBySpecification`](crate::types::AnalyticsSessionGroupBySpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AnalyticsSessionGroupBySpecificationBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AnalyticsSessionGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsSessionGroupBySpecification {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalyticsSessionGroupBySpecification",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsSessionGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsSessionGroupBySpecification {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalyticsSessionGroupBySpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

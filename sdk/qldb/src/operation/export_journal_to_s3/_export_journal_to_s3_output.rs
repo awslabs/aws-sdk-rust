@@ -2,25 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportJournalToS3Output {
+pub struct ExportJournalToS3Output  {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     pub export_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl ExportJournalToS3Output {
+impl  ExportJournalToS3Output  {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
-    pub fn export_id(&self) -> &str {
-        use std::ops::Deref;
-        self.export_id.deref()
+    pub fn export_id(&self) -> & str {
+        use std::ops::Deref; self.export_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportJournalToS3Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportJournalToS3Output {
     /// Creates a new builder-style object to manufacture [`ExportJournalToS3Output`](crate::operation::export_journal_to_s3::ExportJournalToS3Output).
     pub fn builder() -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3OutputBuilder {
@@ -46,8 +45,7 @@ impl ExportJournalToS3OutputBuilder {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
@@ -55,29 +53,28 @@ impl ExportJournalToS3OutputBuilder {
         &self.export_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportJournalToS3Output`](crate::operation::export_journal_to_s3::ExportJournalToS3Output).
     /// This method will fail if any of the following fields are not set:
     /// - [`export_id`](crate::operation::export_journal_to_s3::builders::ExportJournalToS3OutputBuilder::export_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Output, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::export_journal_to_s3::ExportJournalToS3Output {
-            export_id: self.export_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "export_id",
-                    "export_id was not specified but it is required when building ExportJournalToS3Output",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Output, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_journal_to_s3::ExportJournalToS3Output {
+                export_id: self.export_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("export_id", "export_id was not specified but it is required when building ExportJournalToS3Output")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

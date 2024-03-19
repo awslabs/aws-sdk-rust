@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceNetworkVpcAssociationOutput {
+pub struct CreateServiceNetworkVpcAssociationOutput  {
     /// <p>The ID of the association.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The operation's status.</p>
@@ -12,38 +12,39 @@ pub struct CreateServiceNetworkVpcAssociationOutput {
     /// <p>The account that created the association.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateServiceNetworkVpcAssociationOutput {
+impl  CreateServiceNetworkVpcAssociationOutput  {
     /// <p>The ID of the association.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The operation's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The account that created the association.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServiceNetworkVpcAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateServiceNetworkVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkVpcAssociationOutput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput).
     pub fn builder() -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationOutputBuilder {
@@ -59,7 +60,7 @@ pub struct CreateServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateServiceNetworkVpcAssociationOutputBuilder {
@@ -70,8 +71,7 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The operation's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The operation's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
@@ -98,8 +97,7 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The account that created the association.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The account that created the association.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,37 +123,42 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     /// <p>The IDs of the security groups.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateServiceNetworkVpcAssociationOutput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput).
     pub fn build(self) -> crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput {
         crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput {
-            id: self.id,
-            status: self.status,
-            arn: self.arn,
-            created_by: self.created_by,
-            security_group_ids: self.security_group_ids,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            arn: self.arn
+            ,
+            created_by: self.created_by
+            ,
+            security_group_ids: self.security_group_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

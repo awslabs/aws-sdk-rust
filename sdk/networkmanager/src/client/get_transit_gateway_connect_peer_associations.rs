@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTransitGatewayConnectPeerAssociations`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`transit_gateway_connect_peer_arns(impl Into<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::transit_gateway_connect_peer_arns) / [`set_transit_gateway_connect_peer_arns(Option<Vec::<String>>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::set_transit_gateway_connect_peer_arns):<br>required: **false**<br><p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput) with field(s):
+                            /// - On success, responds with [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput) with field(s):
     ///   - [`transit_gateway_connect_peer_associations(Option<Vec::<TransitGatewayConnectPeerAssociation>>)`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput::transit_gateway_connect_peer_associations): <p>Information about the transit gateway Connect peer associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput::next_token): <p>The token to use for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetTransitGatewayConnectPeerAssociationsError>`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsError)
-    pub fn get_transit_gateway_connect_peer_associations(
-        &self,
-    ) -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder {
-        crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<GetTransitGatewayConnectPeerAssociationsError>`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsError)
+    pub fn get_transit_gateway_connect_peer_associations(&self) -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder {
+                                crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

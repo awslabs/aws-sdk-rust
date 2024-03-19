@@ -3,19 +3,19 @@
 /// <p>Returns a list of all broker users. Does not apply to RabbitMQ brokers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSummary {
+pub struct UserSummary  {
     /// <p>The type of change pending for the broker user.</p>
     pub pending_change: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub username: ::std::option::Option<::std::string::String>,
 }
-impl UserSummary {
+impl  UserSummary  {
     /// <p>The type of change pending for the broker user.</p>
-    pub fn pending_change(&self) -> ::std::option::Option<&crate::types::ChangeType> {
+    pub fn pending_change(&self) -> ::std::option::Option<& crate::types::ChangeType> {
         self.pending_change.as_ref()
     }
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UserSummaryBuilder {
     }
     /// <p>The type of change pending for the broker user.</p>
     pub fn set_pending_change(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
-        self.pending_change = input;
-        self
+        self.pending_change = input; self
     }
     /// <p>The type of change pending for the broker user.</p>
     pub fn get_pending_change(&self) -> &::std::option::Option<crate::types::ChangeType> {
@@ -56,8 +55,7 @@ impl UserSummaryBuilder {
     }
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl UserSummaryBuilder {
     /// Consumes the builder and constructs a [`UserSummary`](crate::types::UserSummary).
     pub fn build(self) -> crate::types::UserSummary {
         crate::types::UserSummary {
-            pending_change: self.pending_change,
-            username: self.username,
+            pending_change: self.pending_change
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

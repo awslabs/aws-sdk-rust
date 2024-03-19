@@ -3,7 +3,7 @@
 /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafv2RulesActionDetails {
+pub struct AwsWafv2RulesActionDetails  {
     /// <p>Instructs WAF to allow the web request.</p>
     pub allow: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
     /// <p>Instructs WAF to block the web request.</p>
@@ -13,21 +13,21 @@ pub struct AwsWafv2RulesActionDetails {
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     pub count: ::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails>,
 }
-impl AwsWafv2RulesActionDetails {
+impl  AwsWafv2RulesActionDetails  {
     /// <p>Instructs WAF to allow the web request.</p>
-    pub fn allow(&self) -> ::std::option::Option<&crate::types::AwsWafv2ActionAllowDetails> {
+    pub fn allow(&self) -> ::std::option::Option<& crate::types::AwsWafv2ActionAllowDetails> {
         self.allow.as_ref()
     }
     /// <p>Instructs WAF to block the web request.</p>
-    pub fn block(&self) -> ::std::option::Option<&crate::types::AwsWafv2ActionBlockDetails> {
+    pub fn block(&self) -> ::std::option::Option<& crate::types::AwsWafv2ActionBlockDetails> {
         self.block.as_ref()
     }
     /// <p>Instructs WAF to run a CAPTCHA check against the web request.</p>
-    pub fn captcha(&self) -> ::std::option::Option<&crate::types::AwsWafv2RulesActionCaptchaDetails> {
+    pub fn captcha(&self) -> ::std::option::Option<& crate::types::AwsWafv2RulesActionCaptchaDetails> {
         self.captcha.as_ref()
     }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
-    pub fn count(&self) -> ::std::option::Option<&crate::types::AwsWafv2RulesActionCountDetails> {
+    pub fn count(&self) -> ::std::option::Option<& crate::types::AwsWafv2RulesActionCountDetails> {
         self.count.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AwsWafv2RulesActionDetailsBuilder {
     }
     /// <p>Instructs WAF to allow the web request.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>) -> Self {
-        self.allow = input;
-        self
+        self.allow = input; self
     }
     /// <p>Instructs WAF to allow the web request.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::AwsWafv2ActionAllowDetails> {
@@ -69,8 +68,7 @@ impl AwsWafv2RulesActionDetailsBuilder {
     }
     /// <p>Instructs WAF to block the web request.</p>
     pub fn set_block(mut self, input: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>) -> Self {
-        self.block = input;
-        self
+        self.block = input; self
     }
     /// <p>Instructs WAF to block the web request.</p>
     pub fn get_block(&self) -> &::std::option::Option<crate::types::AwsWafv2ActionBlockDetails> {
@@ -83,8 +81,7 @@ impl AwsWafv2RulesActionDetailsBuilder {
     }
     /// <p>Instructs WAF to run a CAPTCHA check against the web request.</p>
     pub fn set_captcha(mut self, input: ::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails>) -> Self {
-        self.captcha = input;
-        self
+        self.captcha = input; self
     }
     /// <p>Instructs WAF to run a CAPTCHA check against the web request.</p>
     pub fn get_captcha(&self) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails> {
@@ -97,8 +94,7 @@ impl AwsWafv2RulesActionDetailsBuilder {
     }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     pub fn set_count(mut self, input: ::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     pub fn get_count(&self) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails> {
@@ -107,10 +103,15 @@ impl AwsWafv2RulesActionDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafv2RulesActionDetails`](crate::types::AwsWafv2RulesActionDetails).
     pub fn build(self) -> crate::types::AwsWafv2RulesActionDetails {
         crate::types::AwsWafv2RulesActionDetails {
-            allow: self.allow,
-            block: self.block,
-            captcha: self.captcha,
-            count: self.count,
+            allow: self.allow
+            ,
+            block: self.block
+            ,
+            captcha: self.captcha
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

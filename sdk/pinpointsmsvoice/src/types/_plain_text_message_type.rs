@@ -3,7 +3,7 @@
 /// An object that defines a message that contains unformatted text.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlainTextMessageType {
+pub struct PlainTextMessageType  {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     pub language_code: ::std::option::Option<::std::string::String>,
     /// The plain (not SSML-formatted) text to deliver to the recipient.
@@ -11,17 +11,17 @@ pub struct PlainTextMessageType {
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     pub voice_id: ::std::option::Option<::std::string::String>,
 }
-impl PlainTextMessageType {
+impl  PlainTextMessageType  {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn language_code(&self) -> ::std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<& str> {
         self.language_code.as_deref()
     }
     /// The plain (not SSML-formatted) text to deliver to the recipient.
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
-    pub fn voice_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_id(&self) -> ::std::option::Option<& str> {
         self.voice_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PlainTextMessageTypeBuilder {
     }
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PlainTextMessageTypeBuilder {
     }
     /// The plain (not SSML-formatted) text to deliver to the recipient.
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// The plain (not SSML-formatted) text to deliver to the recipient.
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PlainTextMessageTypeBuilder {
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_id = input;
-        self
+        self.voice_id = input; self
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl PlainTextMessageTypeBuilder {
     /// Consumes the builder and constructs a [`PlainTextMessageType`](crate::types::PlainTextMessageType).
     pub fn build(self) -> crate::types::PlainTextMessageType {
         crate::types::PlainTextMessageType {
-            language_code: self.language_code,
-            text: self.text,
-            voice_id: self.voice_id,
+            language_code: self.language_code
+            ,
+            text: self.text
+            ,
+            voice_id: self.voice_id
+            ,
         }
     }
 }
+

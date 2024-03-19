@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePlaceIndexOutput {
+pub struct UpdatePlaceIndexOutput  {
     /// <p>The name of the updated place index resource.</p>
     pub index_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
@@ -15,31 +15,29 @@ pub struct UpdatePlaceIndexOutput {
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl UpdatePlaceIndexOutput {
+impl  UpdatePlaceIndexOutput  {
     /// <p>The name of the updated place index resource.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li>
     /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
-    pub fn index_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.index_arn.deref()
+    pub fn index_arn(&self) -> & str {
+        use std::ops::Deref; self.index_arn.deref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePlaceIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
     pub fn builder() -> crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder {
@@ -65,8 +63,7 @@ impl UpdatePlaceIndexOutputBuilder {
     }
     /// <p>The name of the updated place index resource.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the updated place index resource.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +85,7 @@ impl UpdatePlaceIndexOutputBuilder {
     /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_arn = input;
-        self
+        self.index_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
@@ -107,50 +103,47 @@ impl UpdatePlaceIndexOutputBuilder {
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::index_name)
     /// - [`index_arn`](crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::index_arn)
     /// - [`update_time`](crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::update_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_place_index::UpdatePlaceIndexOutput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building UpdatePlaceIndexOutput",
-                )
-            })?,
-            index_arn: self.index_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_arn",
-                    "index_arn was not specified but it is required when building UpdatePlaceIndexOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building UpdatePlaceIndexOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_place_index::UpdatePlaceIndexOutput {
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building UpdatePlaceIndexOutput")
+                    )?
+                ,
+                index_arn: self.index_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_arn", "index_arn was not specified but it is required when building UpdatePlaceIndexOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building UpdatePlaceIndexOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

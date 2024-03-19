@@ -3,7 +3,7 @@
 /// <p>An object representing a block storage device on the Recovery Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryInstanceDisk {
+pub struct RecoveryInstanceDisk  {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
     pub internal_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
@@ -11,9 +11,9 @@ pub struct RecoveryInstanceDisk {
     /// <p>The EBS Volume ID of this disk.</p>
     pub ebs_volume_id: ::std::option::Option<::std::string::String>,
 }
-impl RecoveryInstanceDisk {
+impl  RecoveryInstanceDisk  {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
-    pub fn internal_device_name(&self) -> ::std::option::Option<&str> {
+    pub fn internal_device_name(&self) -> ::std::option::Option<& str> {
         self.internal_device_name.as_deref()
     }
     /// <p>The amount of storage on the disk in bytes.</p>
@@ -21,7 +21,7 @@ impl RecoveryInstanceDisk {
         self.bytes
     }
     /// <p>The EBS Volume ID of this disk.</p>
-    pub fn ebs_volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn ebs_volume_id(&self) -> ::std::option::Option<& str> {
         self.ebs_volume_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RecoveryInstanceDiskBuilder {
     }
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
     pub fn set_internal_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.internal_device_name = input;
-        self
+        self.internal_device_name = input; self
     }
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
     pub fn get_internal_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RecoveryInstanceDiskBuilder {
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn get_bytes(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl RecoveryInstanceDiskBuilder {
     }
     /// <p>The EBS Volume ID of this disk.</p>
     pub fn set_ebs_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ebs_volume_id = input;
-        self
+        self.ebs_volume_id = input; self
     }
     /// <p>The EBS Volume ID of this disk.</p>
     pub fn get_ebs_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,14 @@ impl RecoveryInstanceDiskBuilder {
     /// Consumes the builder and constructs a [`RecoveryInstanceDisk`](crate::types::RecoveryInstanceDisk).
     pub fn build(self) -> crate::types::RecoveryInstanceDisk {
         crate::types::RecoveryInstanceDisk {
-            internal_device_name: self.internal_device_name,
-            bytes: self.bytes.unwrap_or_default(),
-            ebs_volume_id: self.ebs_volume_id,
+            internal_device_name: self.internal_device_name
+            ,
+            bytes: self.bytes
+                .unwrap_or_default()
+            ,
+            ebs_volume_id: self.ebs_volume_id
+            ,
         }
     }
 }
+

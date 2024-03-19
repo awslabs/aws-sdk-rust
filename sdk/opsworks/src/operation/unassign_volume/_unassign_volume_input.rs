@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnassignVolumeInput {
+pub struct UnassignVolumeInput  {
     /// <p>The volume ID.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
-impl UnassignVolumeInput {
+impl  UnassignVolumeInput  {
     /// <p>The volume ID.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl UnassignVolumeInputBuilder {
     }
     /// <p>The volume ID.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The volume ID.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
     /// Consumes the builder and constructs a [`UnassignVolumeInput`](crate::operation::unassign_volume::UnassignVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unassign_volume::UnassignVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::unassign_volume::UnassignVolumeInput { volume_id: self.volume_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unassign_volume::UnassignVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unassign_volume::UnassignVolumeInput {
+                volume_id: self.volume_id
+                ,
+            }
+        )
     }
 }
+

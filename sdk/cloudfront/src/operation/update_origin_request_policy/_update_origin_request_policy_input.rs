@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOriginRequestPolicyInput {
+pub struct UpdateOriginRequestPolicyInput  {
     /// <p>An origin request policy configuration.</p>
     pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
@@ -10,17 +10,17 @@ pub struct UpdateOriginRequestPolicyInput {
     /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateOriginRequestPolicyInput {
+impl  UpdateOriginRequestPolicyInput  {
     /// <p>An origin request policy configuration.</p>
-    pub fn origin_request_policy_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    pub fn origin_request_policy_config(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateOriginRequestPolicyInputBuilder {
     }
     /// <p>An origin request policy configuration.</p>
     pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
-        self.origin_request_policy_config = input;
-        self
+        self.origin_request_policy_config = input; self
     }
     /// <p>An origin request policy configuration.</p>
     pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
@@ -63,8 +62,7 @@ impl UpdateOriginRequestPolicyInputBuilder {
     }
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateOriginRequestPolicyInputBuilder {
     }
     /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateOriginRequestPolicyInput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput {
-            origin_request_policy_config: self.origin_request_policy_config,
-            id: self.id,
-            if_match: self.if_match,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput {
+                origin_request_policy_config: self.origin_request_policy_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
+

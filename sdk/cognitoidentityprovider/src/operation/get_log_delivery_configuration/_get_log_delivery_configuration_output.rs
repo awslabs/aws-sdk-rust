@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLogDeliveryConfigurationOutput {
+pub struct GetLogDeliveryConfigurationOutput  {
     /// <p>The detailed activity logging configuration of the requested user pool.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfigurationType>,
     _request_id: Option<String>,
 }
-impl GetLogDeliveryConfigurationOutput {
+impl  GetLogDeliveryConfigurationOutput  {
     /// <p>The detailed activity logging configuration of the requested user pool.</p>
-    pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfigurationType> {
+    pub fn log_delivery_configuration(&self) -> ::std::option::Option<& crate::types::LogDeliveryConfigurationType> {
         self.log_delivery_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLogDeliveryConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLogDeliveryConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLogDeliveryConfigurationOutput`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput).
     pub fn builder() -> crate::operation::get_log_delivery_configuration::builders::GetLogDeliveryConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl GetLogDeliveryConfigurationOutputBuilder {
     }
     /// <p>The detailed activity logging configuration of the requested user pool.</p>
     pub fn set_log_delivery_configuration(mut self, input: ::std::option::Option<crate::types::LogDeliveryConfigurationType>) -> Self {
-        self.log_delivery_configuration = input;
-        self
+        self.log_delivery_configuration = input; self
     }
     /// <p>The detailed activity logging configuration of the requested user pool.</p>
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfigurationType> {
         &self.log_delivery_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLogDeliveryConfigurationOutput`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput).
     pub fn build(self) -> crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput {
         crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput {
-            log_delivery_configuration: self.log_delivery_configuration,
+            log_delivery_configuration: self.log_delivery_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

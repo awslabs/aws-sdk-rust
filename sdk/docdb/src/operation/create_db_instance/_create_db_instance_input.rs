@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>CreateDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbInstanceInput {
+pub struct CreateDbInstanceInput  {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -35,7 +35,7 @@ pub struct CreateDbInstanceInput {
     /// <p>Default: <code>false</code></p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The identifier of the cluster that the instance will belong to.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -54,7 +54,7 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
-impl CreateDbInstanceInput {
+impl  CreateDbInstanceInput  {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -66,22 +66,22 @@ impl CreateDbInstanceInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid value: <code>docdb</code></p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The Amazon EC2 Availability Zone that the instance is created in.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code></p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -89,7 +89,7 @@ impl CreateDbInstanceInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
@@ -98,13 +98,14 @@ impl CreateDbInstanceInput {
         self.auto_minor_version_upgrade
     }
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the cluster that the instance will belong to.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -124,12 +125,12 @@ impl CreateDbInstanceInput {
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
-    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
-    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_identifier.as_deref()
     }
 }
@@ -150,7 +151,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
     pub(crate) promotion_tier: ::std::option::Option<i32>,
@@ -187,8 +188,7 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -212,8 +212,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +228,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid value: <code>docdb</code></p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid value: <code>docdb</code></p>
@@ -248,8 +246,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code></p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Amazon EC2 Availability Zone that the instance is created in.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
@@ -272,8 +269,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
@@ -292,8 +288,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     /// <p>Default: <code>false</code></p>
@@ -307,17 +302,16 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The identifier of the cluster that the instance will belong to.</p>
@@ -328,8 +322,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The identifier of the cluster that the instance will belong to.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster that the instance will belong to.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -342,8 +335,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
+        self.copy_tags_to_snapshot = input; self
     }
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
@@ -360,8 +352,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.promotion_tier = input;
-        self
+        self.promotion_tier = input; self
     }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
@@ -376,8 +367,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_performance_insights = input;
-        self
+        self.enable_performance_insights = input; self
     }
     /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
     pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
@@ -394,8 +384,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.performance_insights_kms_key_id = input;
-        self
+        self.performance_insights_kms_key_id = input; self
     }
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -412,8 +401,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = input;
-        self
+        self.ca_certificate_identifier = input; self
     }
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
@@ -421,23 +409,37 @@ impl CreateDbInstanceInputBuilder {
         &self.ca_certificate_identifier
     }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_db_instance::CreateDbInstanceInput {
-            db_instance_identifier: self.db_instance_identifier,
-            db_instance_class: self.db_instance_class,
-            engine: self.engine,
-            availability_zone: self.availability_zone,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            tags: self.tags,
-            db_cluster_identifier: self.db_cluster_identifier,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-            promotion_tier: self.promotion_tier,
-            enable_performance_insights: self.enable_performance_insights,
-            performance_insights_kms_key_id: self.performance_insights_kms_key_id,
-            ca_certificate_identifier: self.ca_certificate_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_instance::CreateDbInstanceInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                db_instance_class: self.db_instance_class
+                ,
+                engine: self.engine
+                ,
+                availability_zone: self.availability_zone
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                tags: self.tags
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot
+                ,
+                promotion_tier: self.promotion_tier
+                ,
+                enable_performance_insights: self.enable_performance_insights
+                ,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id
+                ,
+                ca_certificate_identifier: self.ca_certificate_identifier
+                ,
+            }
+        )
     }
 }
+

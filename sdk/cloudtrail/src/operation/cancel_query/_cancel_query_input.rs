@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelQueryInput {
+pub struct CancelQueryInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelQueryInput {
+impl  CancelQueryInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl CancelQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store = input;
-        self
+        self.event_data_store = input; self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
@@ -60,8 +59,7 @@ impl CancelQueryInputBuilder {
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,9 +67,14 @@ impl CancelQueryInputBuilder {
     }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_query::CancelQueryInput {
-            event_data_store: self.event_data_store,
-            query_id: self.query_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::cancel_query::CancelQueryInput {
+                event_data_store: self.event_data_store
+                ,
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

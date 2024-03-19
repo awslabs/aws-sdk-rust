@@ -9,7 +9,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheSubnetGroup {
+pub struct CacheSubnetGroup  {
     /// <p>The name of the cache subnet group.</p>
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cache subnet group.</p>
@@ -17,40 +17,42 @@ pub struct CacheSubnetGroup {
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec::<crate::types::Subnet>>,
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
+    pub supported_network_types: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkType>>,
 }
-impl CacheSubnetGroup {
+impl  CacheSubnetGroup  {
     /// <p>The name of the cache subnet group.</p>
-    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>The description of the cache subnet group.</p>
-    pub fn cache_subnet_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_description(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_description.as_deref()
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
-    pub fn subnets(&self) -> &[crate::types::Subnet] {
-        self.subnets.as_deref().unwrap_or_default()
+    pub fn subnets(&self) -> & [crate::types::Subnet] {
+        self.subnets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
-    pub fn supported_network_types(&self) -> &[crate::types::NetworkType] {
-        self.supported_network_types.as_deref().unwrap_or_default()
+    pub fn supported_network_types(&self) -> & [crate::types::NetworkType] {
+        self.supported_network_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CacheSubnetGroup {
@@ -67,9 +69,9 @@ pub struct CacheSubnetGroupBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<crate::types::Subnet>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
+    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkType>>,
 }
 impl CacheSubnetGroupBuilder {
     /// <p>The name of the cache subnet group.</p>
@@ -79,8 +81,7 @@ impl CacheSubnetGroupBuilder {
     }
     /// <p>The name of the cache subnet group.</p>
     pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_name = input;
-        self
+        self.cache_subnet_group_name = input; self
     }
     /// <p>The name of the cache subnet group.</p>
     pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +94,7 @@ impl CacheSubnetGroupBuilder {
     }
     /// <p>The description of the cache subnet group.</p>
     pub fn set_cache_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_description = input;
-        self
+        self.cache_subnet_group_description = input; self
     }
     /// <p>The description of the cache subnet group.</p>
     pub fn get_cache_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl CacheSubnetGroupBuilder {
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,17 +120,16 @@ impl CacheSubnetGroupBuilder {
     /// <p>A list of subnets associated with the cache subnet group.</p>
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input);
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subnet>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subnet>> {
         &self.subnets
     }
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
@@ -141,8 +139,7 @@ impl CacheSubnetGroupBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,28 +152,34 @@ impl CacheSubnetGroupBuilder {
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn supported_network_types(mut self, input: crate::types::NetworkType) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
-        v.push(input);
-        self.supported_network_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_network_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>) -> Self {
-        self.supported_network_types = input;
-        self
+    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkType>>) -> Self {
+        self.supported_network_types = input; self
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkType>> {
+    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NetworkType>> {
         &self.supported_network_types
     }
     /// Consumes the builder and constructs a [`CacheSubnetGroup`](crate::types::CacheSubnetGroup).
     pub fn build(self) -> crate::types::CacheSubnetGroup {
         crate::types::CacheSubnetGroup {
-            cache_subnet_group_name: self.cache_subnet_group_name,
-            cache_subnet_group_description: self.cache_subnet_group_description,
-            vpc_id: self.vpc_id,
-            subnets: self.subnets,
-            arn: self.arn,
-            supported_network_types: self.supported_network_types,
+            cache_subnet_group_name: self.cache_subnet_group_name
+            ,
+            cache_subnet_group_description: self.cache_subnet_group_description
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnets: self.subnets
+            ,
+            arn: self.arn
+            ,
+            supported_network_types: self.supported_network_types
+            ,
         }
     }
 }
+

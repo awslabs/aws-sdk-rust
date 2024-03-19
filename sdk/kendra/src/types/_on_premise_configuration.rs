@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information to connect to GitHub Enterprise Server (on premises).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnPremiseConfiguration {
+pub struct OnPremiseConfiguration  {
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub host_url: ::std::string::String,
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
@@ -12,20 +12,18 @@ pub struct OnPremiseConfiguration {
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub ssl_certificate_s3_path: ::std::option::Option<crate::types::S3Path>,
 }
-impl OnPremiseConfiguration {
+impl  OnPremiseConfiguration  {
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
-    pub fn host_url(&self) -> &str {
-        use std::ops::Deref;
-        self.host_url.deref()
+    pub fn host_url(&self) -> & str {
+        use std::ops::Deref; self.host_url.deref()
     }
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    pub fn organization_name(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_name.deref()
+    pub fn organization_name(&self) -> & str {
+        use std::ops::Deref; self.organization_name.deref()
     }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
-    pub fn ssl_certificate_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn ssl_certificate_s3_path(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
 }
@@ -53,8 +51,7 @@ impl OnPremiseConfigurationBuilder {
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub fn set_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_url = input;
-        self
+        self.host_url = input; self
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +65,7 @@ impl OnPremiseConfigurationBuilder {
     }
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_name = input;
-        self
+        self.organization_name = input; self
     }
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +81,7 @@ impl OnPremiseConfigurationBuilder {
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn set_ssl_certificate_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
-        self.ssl_certificate_s3_path = input;
-        self
+        self.ssl_certificate_s3_path = input; self
     }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
@@ -98,20 +93,22 @@ impl OnPremiseConfigurationBuilder {
     /// - [`host_url`](crate::types::builders::OnPremiseConfigurationBuilder::host_url)
     /// - [`organization_name`](crate::types::builders::OnPremiseConfigurationBuilder::organization_name)
     pub fn build(self) -> ::std::result::Result<crate::types::OnPremiseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OnPremiseConfiguration {
-            host_url: self.host_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host_url",
-                    "host_url was not specified but it is required when building OnPremiseConfiguration",
-                )
-            })?,
-            organization_name: self.organization_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_name",
-                    "organization_name was not specified but it is required when building OnPremiseConfiguration",
-                )
-            })?,
-            ssl_certificate_s3_path: self.ssl_certificate_s3_path,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OnPremiseConfiguration {
+                host_url: self.host_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host_url", "host_url was not specified but it is required when building OnPremiseConfiguration")
+                    )?
+                ,
+                organization_name: self.organization_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_name", "organization_name was not specified but it is required when building OnPremiseConfiguration")
+                    )?
+                ,
+                ssl_certificate_s3_path: self.ssl_certificate_s3_path
+                ,
+            }
+        )
     }
 }
+

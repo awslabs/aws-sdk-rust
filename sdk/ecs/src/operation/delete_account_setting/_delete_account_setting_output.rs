@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccountSettingOutput {
+pub struct DeleteAccountSettingOutput  {
     /// <p>The account setting for the specified principal ARN.</p>
     pub setting: ::std::option::Option<crate::types::Setting>,
     _request_id: Option<String>,
 }
-impl DeleteAccountSettingOutput {
+impl  DeleteAccountSettingOutput  {
     /// <p>The account setting for the specified principal ARN.</p>
-    pub fn setting(&self) -> ::std::option::Option<&crate::types::Setting> {
+    pub fn setting(&self) -> ::std::option::Option<& crate::types::Setting> {
         self.setting.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAccountSettingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAccountSettingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSettingOutput`](crate::operation::delete_account_setting::DeleteAccountSettingOutput).
     pub fn builder() -> crate::operation::delete_account_setting::builders::DeleteAccountSettingOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteAccountSettingOutputBuilder {
     }
     /// <p>The account setting for the specified principal ARN.</p>
     pub fn set_setting(mut self, input: ::std::option::Option<crate::types::Setting>) -> Self {
-        self.setting = input;
-        self
+        self.setting = input; self
     }
     /// <p>The account setting for the specified principal ARN.</p>
     pub fn get_setting(&self) -> &::std::option::Option<crate::types::Setting> {
         &self.setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAccountSettingOutput`](crate::operation::delete_account_setting::DeleteAccountSettingOutput).
     pub fn build(self) -> crate::operation::delete_account_setting::DeleteAccountSettingOutput {
         crate::operation::delete_account_setting::DeleteAccountSettingOutput {
-            setting: self.setting,
+            setting: self.setting
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

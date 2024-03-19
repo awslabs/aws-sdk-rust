@@ -3,7 +3,7 @@
 /// <p>A metadata object that represents the deletion task being executed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteConfigurationTask {
+pub struct BatchDeleteConfigurationTask  {
     /// <p>The deletion task's unique identifier.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The current execution status of the deletion task. Valid status are: INITIALIZING | VALIDATING | DELETING | COMPLETED | FAILED.</p>
@@ -15,58 +15,62 @@ pub struct BatchDeleteConfigurationTask {
     /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub configuration_type: ::std::option::Option<crate::types::DeletionConfigurationItemType>,
     /// <p>The list of configuration IDs that were originally requested to be deleted by the deletion task.</p>
-    pub requested_configurations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub requested_configurations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of configuration IDs that were successfully deleted by the deletion task.</p>
-    pub deleted_configurations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub deleted_configurations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of configuration IDs that failed to delete during the deletion task, each paired with an error message.</p>
-    pub failed_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FailedConfiguration>>,
+    pub failed_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::FailedConfiguration>>,
     /// <p>A list of configuration IDs that produced warnings regarding their deletion, paired with a warning message.</p>
-    pub deletion_warnings: ::std::option::Option<::std::vec::Vec<crate::types::DeletionWarning>>,
+    pub deletion_warnings: ::std::option::Option<::std::vec::Vec::<crate::types::DeletionWarning>>,
 }
-impl BatchDeleteConfigurationTask {
+impl  BatchDeleteConfigurationTask  {
     /// <p>The deletion task's unique identifier.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The current execution status of the deletion task. Valid status are: INITIALIZING | VALIDATING | DELETING | COMPLETED | FAILED.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BatchDeleteConfigurationTaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BatchDeleteConfigurationTaskStatus> {
         self.status.as_ref()
     }
     /// <p>An epoch seconds timestamp (UTC) of when the deletion task was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>An epoch seconds timestamp (UTC) of when the deletion task was completed or failed.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
-    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::DeletionConfigurationItemType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<& crate::types::DeletionConfigurationItemType> {
         self.configuration_type.as_ref()
     }
     /// <p>The list of configuration IDs that were originally requested to be deleted by the deletion task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_configurations.is_none()`.
-    pub fn requested_configurations(&self) -> &[::std::string::String] {
-        self.requested_configurations.as_deref().unwrap_or_default()
+    pub fn requested_configurations(&self) -> & [::std::string::String] {
+        self.requested_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of configuration IDs that were successfully deleted by the deletion task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted_configurations.is_none()`.
-    pub fn deleted_configurations(&self) -> &[::std::string::String] {
-        self.deleted_configurations.as_deref().unwrap_or_default()
+    pub fn deleted_configurations(&self) -> & [::std::string::String] {
+        self.deleted_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of configuration IDs that failed to delete during the deletion task, each paired with an error message.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_configurations.is_none()`.
-    pub fn failed_configurations(&self) -> &[crate::types::FailedConfiguration] {
-        self.failed_configurations.as_deref().unwrap_or_default()
+    pub fn failed_configurations(&self) -> & [crate::types::FailedConfiguration] {
+        self.failed_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of configuration IDs that produced warnings regarding their deletion, paired with a warning message.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deletion_warnings.is_none()`.
-    pub fn deletion_warnings(&self) -> &[crate::types::DeletionWarning] {
-        self.deletion_warnings.as_deref().unwrap_or_default()
+    pub fn deletion_warnings(&self) -> & [crate::types::DeletionWarning] {
+        self.deletion_warnings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteConfigurationTask {
@@ -85,10 +89,10 @@ pub struct BatchDeleteConfigurationTaskBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) configuration_type: ::std::option::Option<crate::types::DeletionConfigurationItemType>,
-    pub(crate) requested_configurations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) deleted_configurations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) failed_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FailedConfiguration>>,
-    pub(crate) deletion_warnings: ::std::option::Option<::std::vec::Vec<crate::types::DeletionWarning>>,
+    pub(crate) requested_configurations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) deleted_configurations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) failed_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::FailedConfiguration>>,
+    pub(crate) deletion_warnings: ::std::option::Option<::std::vec::Vec::<crate::types::DeletionWarning>>,
 }
 impl BatchDeleteConfigurationTaskBuilder {
     /// <p>The deletion task's unique identifier.</p>
@@ -98,8 +102,7 @@ impl BatchDeleteConfigurationTaskBuilder {
     }
     /// <p>The deletion task's unique identifier.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The deletion task's unique identifier.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +115,7 @@ impl BatchDeleteConfigurationTaskBuilder {
     }
     /// <p>The current execution status of the deletion task. Valid status are: INITIALIZING | VALIDATING | DELETING | COMPLETED | FAILED.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchDeleteConfigurationTaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current execution status of the deletion task. Valid status are: INITIALIZING | VALIDATING | DELETING | COMPLETED | FAILED.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BatchDeleteConfigurationTaskStatus> {
@@ -126,8 +128,7 @@ impl BatchDeleteConfigurationTaskBuilder {
     }
     /// <p>An epoch seconds timestamp (UTC) of when the deletion task was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>An epoch seconds timestamp (UTC) of when the deletion task was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +141,7 @@ impl BatchDeleteConfigurationTaskBuilder {
     }
     /// <p>An epoch seconds timestamp (UTC) of when the deletion task was completed or failed.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>An epoch seconds timestamp (UTC) of when the deletion task was completed or failed.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,8 +154,7 @@ impl BatchDeleteConfigurationTaskBuilder {
     }
     /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::DeletionConfigurationItemType>) -> Self {
-        self.configuration_type = input;
-        self
+        self.configuration_type = input; self
     }
     /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::DeletionConfigurationItemType> {
@@ -168,17 +167,16 @@ impl BatchDeleteConfigurationTaskBuilder {
     /// <p>The list of configuration IDs that were originally requested to be deleted by the deletion task.</p>
     pub fn requested_configurations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_configurations.unwrap_or_default();
-        v.push(input.into());
-        self.requested_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.requested_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of configuration IDs that were originally requested to be deleted by the deletion task.</p>
-    pub fn set_requested_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.requested_configurations = input;
-        self
+    pub fn set_requested_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.requested_configurations = input; self
     }
     /// <p>The list of configuration IDs that were originally requested to be deleted by the deletion task.</p>
-    pub fn get_requested_configurations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.requested_configurations
     }
     /// Appends an item to `deleted_configurations`.
@@ -188,17 +186,16 @@ impl BatchDeleteConfigurationTaskBuilder {
     /// <p>The list of configuration IDs that were successfully deleted by the deletion task.</p>
     pub fn deleted_configurations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deleted_configurations.unwrap_or_default();
-        v.push(input.into());
-        self.deleted_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.deleted_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of configuration IDs that were successfully deleted by the deletion task.</p>
-    pub fn set_deleted_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.deleted_configurations = input;
-        self
+    pub fn set_deleted_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.deleted_configurations = input; self
     }
     /// <p>The list of configuration IDs that were successfully deleted by the deletion task.</p>
-    pub fn get_deleted_configurations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deleted_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.deleted_configurations
     }
     /// Appends an item to `failed_configurations`.
@@ -208,17 +205,16 @@ impl BatchDeleteConfigurationTaskBuilder {
     /// <p>A list of configuration IDs that failed to delete during the deletion task, each paired with an error message.</p>
     pub fn failed_configurations(mut self, input: crate::types::FailedConfiguration) -> Self {
         let mut v = self.failed_configurations.unwrap_or_default();
-        v.push(input);
-        self.failed_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of configuration IDs that failed to delete during the deletion task, each paired with an error message.</p>
-    pub fn set_failed_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedConfiguration>>) -> Self {
-        self.failed_configurations = input;
-        self
+    pub fn set_failed_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedConfiguration>>) -> Self {
+        self.failed_configurations = input; self
     }
     /// <p>A list of configuration IDs that failed to delete during the deletion task, each paired with an error message.</p>
-    pub fn get_failed_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedConfiguration>> {
+    pub fn get_failed_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedConfiguration>> {
         &self.failed_configurations
     }
     /// Appends an item to `deletion_warnings`.
@@ -228,31 +224,40 @@ impl BatchDeleteConfigurationTaskBuilder {
     /// <p>A list of configuration IDs that produced warnings regarding their deletion, paired with a warning message.</p>
     pub fn deletion_warnings(mut self, input: crate::types::DeletionWarning) -> Self {
         let mut v = self.deletion_warnings.unwrap_or_default();
-        v.push(input);
-        self.deletion_warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.deletion_warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of configuration IDs that produced warnings regarding their deletion, paired with a warning message.</p>
-    pub fn set_deletion_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletionWarning>>) -> Self {
-        self.deletion_warnings = input;
-        self
+    pub fn set_deletion_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeletionWarning>>) -> Self {
+        self.deletion_warnings = input; self
     }
     /// <p>A list of configuration IDs that produced warnings regarding their deletion, paired with a warning message.</p>
-    pub fn get_deletion_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletionWarning>> {
+    pub fn get_deletion_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeletionWarning>> {
         &self.deletion_warnings
     }
     /// Consumes the builder and constructs a [`BatchDeleteConfigurationTask`](crate::types::BatchDeleteConfigurationTask).
     pub fn build(self) -> crate::types::BatchDeleteConfigurationTask {
         crate::types::BatchDeleteConfigurationTask {
-            task_id: self.task_id,
-            status: self.status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            configuration_type: self.configuration_type,
-            requested_configurations: self.requested_configurations,
-            deleted_configurations: self.deleted_configurations,
-            failed_configurations: self.failed_configurations,
-            deletion_warnings: self.deletion_warnings,
+            task_id: self.task_id
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            configuration_type: self.configuration_type
+            ,
+            requested_configurations: self.requested_configurations
+            ,
+            deleted_configurations: self.deleted_configurations
+            ,
+            failed_configurations: self.failed_configurations
+            ,
+            deletion_warnings: self.deletion_warnings
+            ,
         }
     }
 }
+

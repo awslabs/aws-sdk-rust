@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConfigurations`](crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
-    /// - On success, responds with [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput) with field(s):
     ///   - [`configurations(Option<Vec::<Configuration>>)`](crate::operation::list_configurations::ListConfigurationsOutput::configurations): <p>An array of MSK configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configurations::ListConfigurationsOutput::next_token): <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
-    /// - On failure, responds with [`SdkError<ListConfigurationsError>`](crate::operation::list_configurations::ListConfigurationsError)
+                            /// - On failure, responds with [`SdkError<ListConfigurationsError>`](crate::operation::list_configurations::ListConfigurationsError)
     pub fn list_configurations(&self) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
-        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,22 +3,20 @@
 /// <p>An object that contains a list of tags to be assigned to a list of dataset IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobDataSetOverrideTags {
+pub struct AssetBundleImportJobDataSetOverrideTags  {
     /// <p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>
-    pub data_set_ids: ::std::vec::Vec<::std::string::String>,
+    pub data_set_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of tags for the datasets that you want to apply overrides to.</p>
-    pub tags: ::std::vec::Vec<crate::types::Tag>,
+    pub tags: ::std::vec::Vec::<crate::types::Tag>,
 }
-impl AssetBundleImportJobDataSetOverrideTags {
+impl  AssetBundleImportJobDataSetOverrideTags  {
     /// <p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>
-    pub fn data_set_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.data_set_ids.deref()
+    pub fn data_set_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.data_set_ids.deref()
     }
     /// <p>A list of tags for the datasets that you want to apply overrides to.</p>
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        use std::ops::Deref;
-        self.tags.deref()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        use std::ops::Deref; self.tags.deref()
     }
 }
 impl AssetBundleImportJobDataSetOverrideTags {
@@ -32,8 +30,8 @@ impl AssetBundleImportJobDataSetOverrideTags {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSetOverrideTagsBuilder {
-    pub(crate) data_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) data_set_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AssetBundleImportJobDataSetOverrideTagsBuilder {
     /// Appends an item to `data_set_ids`.
@@ -43,17 +41,16 @@ impl AssetBundleImportJobDataSetOverrideTagsBuilder {
     /// <p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>
     pub fn data_set_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_set_ids.unwrap_or_default();
-        v.push(input.into());
-        self.data_set_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.data_set_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>
-    pub fn set_data_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.data_set_ids = input;
-        self
+    pub fn set_data_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.data_set_ids = input; self
     }
     /// <p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>
-    pub fn get_data_set_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_set_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.data_set_ids
     }
     /// Appends an item to `tags`.
@@ -63,39 +60,37 @@ impl AssetBundleImportJobDataSetOverrideTagsBuilder {
     /// <p>A list of tags for the datasets that you want to apply overrides to.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags for the datasets that you want to apply overrides to.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags for the datasets that you want to apply overrides to.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSetOverrideTags`](crate::types::AssetBundleImportJobDataSetOverrideTags).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_ids`](crate::types::builders::AssetBundleImportJobDataSetOverrideTagsBuilder::data_set_ids)
     /// - [`tags`](crate::types::builders::AssetBundleImportJobDataSetOverrideTagsBuilder::tags)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSetOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSetOverrideTags {
-            data_set_ids: self.data_set_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_ids",
-                    "data_set_ids was not specified but it is required when building AssetBundleImportJobDataSetOverrideTags",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building AssetBundleImportJobDataSetOverrideTags",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSetOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobDataSetOverrideTags {
+                data_set_ids: self.data_set_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_ids", "data_set_ids was not specified but it is required when building AssetBundleImportJobDataSetOverrideTags")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building AssetBundleImportJobDataSetOverrideTags")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExecutionInput {
+pub struct GetExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Export object that generated this specific execution.</p>
     pub export_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for this specific execution.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetExecutionInput {
+impl  GetExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Export object that generated this specific execution.</p>
-    pub fn export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn export_arn(&self) -> ::std::option::Option<& str> {
         self.export_arn.as_deref()
     }
     /// <p>The ID for this specific execution.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Export object that generated this specific execution.</p>
     pub fn set_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_arn = input;
-        self
+        self.export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Export object that generated this specific execution.</p>
     pub fn get_export_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetExecutionInputBuilder {
     }
     /// <p>The ID for this specific execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The ID for this specific execution.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
     }
     /// Consumes the builder and constructs a [`GetExecutionInput`](crate::operation::get_execution::GetExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_execution::GetExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_execution::GetExecutionInput {
-            export_arn: self.export_arn,
-            execution_id: self.execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_execution::GetExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_execution::GetExecutionInput {
+                export_arn: self.export_arn
+                ,
+                execution_id: self.execution_id
+                ,
+            }
+        )
     }
 }
+

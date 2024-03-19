@@ -3,7 +3,7 @@
 /// <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a> .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecretListEntry {
+pub struct SecretListEntry  {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the secret.</p>
@@ -29,11 +29,11 @@ pub struct SecretListEntry {
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p><note>
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
-    pub secret_versions_to_stages: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub secret_versions_to_stages: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>Returns the name of the service that created the secret.</p>
     pub owning_service: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when a secret was created.</p>
@@ -41,21 +41,21 @@ pub struct SecretListEntry {
     /// <p>The Region where Secrets Manager originated the secret.</p>
     pub primary_region: ::std::option::Option<::std::string::String>,
 }
-impl SecretListEntry {
+impl  SecretListEntry  {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The friendly name of the secret.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The user-provided description of the secret.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
@@ -63,57 +63,56 @@ impl SecretListEntry {
         self.rotation_enabled
     }
     /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
-    pub fn rotation_lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_lambda_arn(&self) -> ::std::option::Option<& str> {
         self.rotation_lambda_arn.as_deref()
     }
     /// <p>A structure that defines the rotation configuration for the secret.</p>
-    pub fn rotation_rules(&self) -> ::std::option::Option<&crate::types::RotationRulesType> {
+    pub fn rotation_rules(&self) -> ::std::option::Option<& crate::types::RotationRulesType> {
         self.rotation_rules.as_ref()
     }
     /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
-    pub fn last_rotated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_rotated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_rotated_date.as_ref()
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
-    pub fn last_changed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_changed_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    pub fn last_accessed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
-    pub fn deleted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deleted_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
-    pub fn next_rotation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn next_rotation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.next_rotation_date.as_ref()
     }
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p><note>
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
-    pub fn secret_versions_to_stages(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn secret_versions_to_stages(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.secret_versions_to_stages.as_ref()
     }
     /// <p>Returns the name of the service that created the secret.</p>
-    pub fn owning_service(&self) -> ::std::option::Option<&str> {
+    pub fn owning_service(&self) -> ::std::option::Option<& str> {
         self.owning_service.as_deref()
     }
     /// <p>The date and time when a secret was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The Region where Secrets Manager originated the secret.</p>
-    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+    pub fn primary_region(&self) -> ::std::option::Option<& str> {
         self.primary_region.as_deref()
     }
 }
@@ -140,9 +139,8 @@ pub struct SecretListEntryBuilder {
     pub(crate) last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deleted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) secret_versions_to_stages:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) secret_versions_to_stages: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) owning_service: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
@@ -155,8 +153,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The friendly name of the secret.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the secret.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The user-provided description of the secret.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The user-provided description of the secret.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +192,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +205,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
     pub fn set_rotation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rotation_enabled = input;
-        self
+        self.rotation_enabled = input; self
     }
     /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
     pub fn get_rotation_enabled(&self) -> &::std::option::Option<bool> {
@@ -225,8 +218,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
     pub fn set_rotation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_lambda_arn = input;
-        self
+        self.rotation_lambda_arn = input; self
     }
     /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
     pub fn get_rotation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +231,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>A structure that defines the rotation configuration for the secret.</p>
     pub fn set_rotation_rules(mut self, input: ::std::option::Option<crate::types::RotationRulesType>) -> Self {
-        self.rotation_rules = input;
-        self
+        self.rotation_rules = input; self
     }
     /// <p>A structure that defines the rotation configuration for the secret.</p>
     pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::RotationRulesType> {
@@ -253,8 +244,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
     pub fn set_last_rotated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_rotated_date = input;
-        self
+        self.last_rotated_date = input; self
     }
     /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
     pub fn get_last_rotated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,8 +257,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
     pub fn set_last_changed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_changed_date = input;
-        self
+        self.last_changed_date = input; self
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
     pub fn get_last_changed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -281,8 +270,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn set_last_accessed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed_date = input;
-        self
+        self.last_accessed_date = input; self
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn get_last_accessed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -295,8 +283,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     pub fn set_deleted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deleted_date = input;
-        self
+        self.deleted_date = input; self
     }
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     pub fn get_deleted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -309,8 +296,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn set_next_rotation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.next_rotation_date = input;
-        self
+        self.next_rotation_date = input; self
     }
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn get_next_rotation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -323,17 +309,16 @@ impl SecretListEntryBuilder {
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Adds a key-value pair to `secret_versions_to_stages`.
@@ -343,32 +328,22 @@ impl SecretListEntryBuilder {
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p><note>
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
-    pub fn secret_versions_to_stages(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn secret_versions_to_stages(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.secret_versions_to_stages.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.secret_versions_to_stages = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.secret_versions_to_stages = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p><note>
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
-    pub fn set_secret_versions_to_stages(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.secret_versions_to_stages = input;
-        self
+    pub fn set_secret_versions_to_stages(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.secret_versions_to_stages = input; self
     }
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p><note>
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
-    pub fn get_secret_versions_to_stages(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_secret_versions_to_stages(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.secret_versions_to_stages
     }
     /// <p>Returns the name of the service that created the secret.</p>
@@ -378,8 +353,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>Returns the name of the service that created the secret.</p>
     pub fn set_owning_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_service = input;
-        self
+        self.owning_service = input; self
     }
     /// <p>Returns the name of the service that created the secret.</p>
     pub fn get_owning_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -392,8 +366,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The date and time when a secret was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time when a secret was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -406,8 +379,7 @@ impl SecretListEntryBuilder {
     }
     /// <p>The Region where Secrets Manager originated the secret.</p>
     pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_region = input;
-        self
+        self.primary_region = input; self
     }
     /// <p>The Region where Secrets Manager originated the secret.</p>
     pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -416,23 +388,41 @@ impl SecretListEntryBuilder {
     /// Consumes the builder and constructs a [`SecretListEntry`](crate::types::SecretListEntry).
     pub fn build(self) -> crate::types::SecretListEntry {
         crate::types::SecretListEntry {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            kms_key_id: self.kms_key_id,
-            rotation_enabled: self.rotation_enabled,
-            rotation_lambda_arn: self.rotation_lambda_arn,
-            rotation_rules: self.rotation_rules,
-            last_rotated_date: self.last_rotated_date,
-            last_changed_date: self.last_changed_date,
-            last_accessed_date: self.last_accessed_date,
-            deleted_date: self.deleted_date,
-            next_rotation_date: self.next_rotation_date,
-            tags: self.tags,
-            secret_versions_to_stages: self.secret_versions_to_stages,
-            owning_service: self.owning_service,
-            created_date: self.created_date,
-            primary_region: self.primary_region,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            rotation_enabled: self.rotation_enabled
+            ,
+            rotation_lambda_arn: self.rotation_lambda_arn
+            ,
+            rotation_rules: self.rotation_rules
+            ,
+            last_rotated_date: self.last_rotated_date
+            ,
+            last_changed_date: self.last_changed_date
+            ,
+            last_accessed_date: self.last_accessed_date
+            ,
+            deleted_date: self.deleted_date
+            ,
+            next_rotation_date: self.next_rotation_date
+            ,
+            tags: self.tags
+            ,
+            secret_versions_to_stages: self.secret_versions_to_stages
+            ,
+            owning_service: self.owning_service
+            ,
+            created_date: self.created_date
+            ,
+            primary_region: self.primary_region
+            ,
         }
     }
 }
+

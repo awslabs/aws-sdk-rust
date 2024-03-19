@@ -3,7 +3,7 @@
 /// <p>Represents information about a current revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CurrentRevision {
+pub struct CurrentRevision  {
     /// <p>The revision ID of the current version of an artifact.</p>
     pub revision: ::std::string::String,
     /// <p>The change identifier for the current revision.</p>
@@ -13,23 +13,21 @@ pub struct CurrentRevision {
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub revision_summary: ::std::option::Option<::std::string::String>,
 }
-impl CurrentRevision {
+impl  CurrentRevision  {
     /// <p>The revision ID of the current version of an artifact.</p>
-    pub fn revision(&self) -> &str {
-        use std::ops::Deref;
-        self.revision.deref()
+    pub fn revision(&self) -> & str {
+        use std::ops::Deref; self.revision.deref()
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn change_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.change_identifier.deref()
+    pub fn change_identifier(&self) -> & str {
+        use std::ops::Deref; self.change_identifier.deref()
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
-    pub fn revision_summary(&self) -> ::std::option::Option<&str> {
+    pub fn revision_summary(&self) -> ::std::option::Option<& str> {
         self.revision_summary.as_deref()
     }
 }
@@ -58,8 +56,7 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The revision ID of the current version of an artifact.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision ID of the current version of an artifact.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The change identifier for the current revision.</p>
     pub fn set_change_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_identifier = input;
-        self
+        self.change_identifier = input; self
     }
     /// <p>The change identifier for the current revision.</p>
     pub fn get_change_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +96,7 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub fn set_revision_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_summary = input;
-        self
+        self.revision_summary = input; self
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub fn get_revision_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +107,24 @@ impl CurrentRevisionBuilder {
     /// - [`revision`](crate::types::builders::CurrentRevisionBuilder::revision)
     /// - [`change_identifier`](crate::types::builders::CurrentRevisionBuilder::change_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::CurrentRevision, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CurrentRevision {
-            revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision",
-                    "revision was not specified but it is required when building CurrentRevision",
-                )
-            })?,
-            change_identifier: self.change_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "change_identifier",
-                    "change_identifier was not specified but it is required when building CurrentRevision",
-                )
-            })?,
-            created: self.created,
-            revision_summary: self.revision_summary,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CurrentRevision {
+                revision: self.revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision", "revision was not specified but it is required when building CurrentRevision")
+                    )?
+                ,
+                change_identifier: self.change_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("change_identifier", "change_identifier was not specified but it is required when building CurrentRevision")
+                    )?
+                ,
+                created: self.created
+                ,
+                revision_summary: self.revision_summary
+                ,
+            }
+        )
     }
 }
+

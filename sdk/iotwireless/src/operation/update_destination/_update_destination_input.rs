@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDestinationInput {
+pub struct UpdateDestinationInput  {
     /// <p>The new name of the resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of value in <code>Expression</code>.</p>
@@ -14,25 +14,25 @@ pub struct UpdateDestinationInput {
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDestinationInput {
+impl  UpdateDestinationInput  {
     /// <p>The new name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn expression_type(&self) -> ::std::option::Option<&crate::types::ExpressionType> {
+    pub fn expression_type(&self) -> ::std::option::Option<& crate::types::ExpressionType> {
         self.expression_type.as_ref()
     }
     /// <p>The new rule name or topic rule to send messages to.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>A new description of the resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateDestinationInputBuilder {
     }
     /// <p>The new name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateDestinationInputBuilder {
     }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn set_expression_type(mut self, input: ::std::option::Option<crate::types::ExpressionType>) -> Self {
-        self.expression_type = input;
-        self
+        self.expression_type = input; self
     }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
@@ -90,8 +88,7 @@ impl UpdateDestinationInputBuilder {
     }
     /// <p>The new rule name or topic rule to send messages to.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The new rule name or topic rule to send messages to.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl UpdateDestinationInputBuilder {
     }
     /// <p>A new description of the resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description of the resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,23 +114,28 @@ impl UpdateDestinationInputBuilder {
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_destination::UpdateDestinationInput {
-            name: self.name,
-            expression_type: self.expression_type,
-            expression: self.expression,
-            description: self.description,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_destination::UpdateDestinationInput {
+                name: self.name
+                ,
+                expression_type: self.expression_type
+                ,
+                expression: self.expression
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

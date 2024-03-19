@@ -3,23 +3,23 @@
 /// <p>The foundation model output from the pre-processing step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PreProcessingModelInvocationOutput {
+pub struct PreProcessingModelInvocationOutput  {
     /// <p>The unique identifier of the trace.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the response from the Lambda parsing of the output of the pre-processing step.</p>
     pub parsed_response: ::std::option::Option<crate::types::PreProcessingParsedResponse>,
 }
-impl PreProcessingModelInvocationOutput {
+impl  PreProcessingModelInvocationOutput  {
     /// <p>The unique identifier of the trace.</p>
-    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<& str> {
         self.trace_id.as_deref()
     }
     /// <p>Details about the response from the Lambda parsing of the output of the pre-processing step.</p>
-    pub fn parsed_response(&self) -> ::std::option::Option<&crate::types::PreProcessingParsedResponse> {
+    pub fn parsed_response(&self) -> ::std::option::Option<& crate::types::PreProcessingParsedResponse> {
         self.parsed_response.as_ref()
     }
 }
-impl ::std::fmt::Debug for PreProcessingModelInvocationOutput {
+impl  ::std::fmt::Debug for PreProcessingModelInvocationOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PreProcessingModelInvocationOutput");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl PreProcessingModelInvocationOutputBuilder {
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_id = input;
-        self
+        self.trace_id = input; self
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PreProcessingModelInvocationOutputBuilder {
     }
     /// <p>Details about the response from the Lambda parsing of the output of the pre-processing step.</p>
     pub fn set_parsed_response(mut self, input: ::std::option::Option<crate::types::PreProcessingParsedResponse>) -> Self {
-        self.parsed_response = input;
-        self
+        self.parsed_response = input; self
     }
     /// <p>Details about the response from the Lambda parsing of the output of the pre-processing step.</p>
     pub fn get_parsed_response(&self) -> &::std::option::Option<crate::types::PreProcessingParsedResponse> {
@@ -73,8 +71,10 @@ impl PreProcessingModelInvocationOutputBuilder {
     /// Consumes the builder and constructs a [`PreProcessingModelInvocationOutput`](crate::types::PreProcessingModelInvocationOutput).
     pub fn build(self) -> crate::types::PreProcessingModelInvocationOutput {
         crate::types::PreProcessingModelInvocationOutput {
-            trace_id: self.trace_id,
-            parsed_response: self.parsed_response,
+            trace_id: self.trace_id
+            ,
+            parsed_response: self.parsed_response
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for PreProcessingModelInvocationOutputBuilder {
         formatter.finish()
     }
 }
+

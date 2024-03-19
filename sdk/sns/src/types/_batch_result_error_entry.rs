@@ -3,7 +3,7 @@
 /// <p>Gives a detailed description of failed messages in the batch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchResultErrorEntry {
+pub struct BatchResultErrorEntry  {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
     pub id: ::std::string::String,
     /// <p>An error code representing why the action failed on this entry.</p>
@@ -13,19 +13,17 @@ pub struct BatchResultErrorEntry {
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub sender_fault: bool,
 }
-impl BatchResultErrorEntry {
+impl  BatchResultErrorEntry  {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>An error code representing why the action failed on this entry.</p>
-    pub fn code(&self) -> &str {
-        use std::ops::Deref;
-        self.code.deref()
+    pub fn code(&self) -> & str {
+        use std::ops::Deref; self.code.deref()
     }
     /// <p>A message explaining why the action failed on this entry.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
@@ -58,8 +56,7 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>The <code>Id</code> of an entry in a batch request</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The <code>Id</code> of an entry in a batch request</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>An error code representing why the action failed on this entry.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>An error code representing why the action failed on this entry.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub fn set_sender_fault(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sender_fault = input;
-        self
+        self.sender_fault = input; self
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub fn get_sender_fault(&self) -> &::std::option::Option<bool> {
@@ -114,21 +108,25 @@ impl BatchResultErrorEntryBuilder {
     /// - [`id`](crate::types::builders::BatchResultErrorEntryBuilder::id)
     /// - [`code`](crate::types::builders::BatchResultErrorEntryBuilder::code)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchResultErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchResultErrorEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building BatchResultErrorEntry",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building BatchResultErrorEntry",
-                )
-            })?,
-            message: self.message,
-            sender_fault: self.sender_fault.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchResultErrorEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building BatchResultErrorEntry")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building BatchResultErrorEntry")
+                    )?
+                ,
+                message: self.message
+                ,
+                sender_fault: self.sender_fault
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

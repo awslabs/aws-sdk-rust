@@ -3,15 +3,14 @@
 /// <p>Represents a single row in the query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Row {
+pub struct Row  {
     /// <p>List of data points in a single row of the result set.</p>
-    pub data: ::std::vec::Vec<crate::types::Datum>,
+    pub data: ::std::vec::Vec::<crate::types::Datum>,
 }
-impl Row {
+impl  Row  {
     /// <p>List of data points in a single row of the result set.</p>
-    pub fn data(&self) -> &[crate::types::Datum] {
-        use std::ops::Deref;
-        self.data.deref()
+    pub fn data(&self) -> & [crate::types::Datum] {
+        use std::ops::Deref; self.data.deref()
     }
 }
 impl Row {
@@ -25,7 +24,7 @@ impl Row {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowBuilder {
-    pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
+    pub(crate) data: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>,
 }
 impl RowBuilder {
     /// Appends an item to `data`.
@@ -35,27 +34,31 @@ impl RowBuilder {
     /// <p>List of data points in a single row of the result set.</p>
     pub fn data(mut self, input: crate::types::Datum) -> Self {
         let mut v = self.data.unwrap_or_default();
-        v.push(input);
-        self.data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of data points in a single row of the result set.</p>
-    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>) -> Self {
+        self.data = input; self
     }
     /// <p>List of data points in a single row of the result set.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datum>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Datum>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::RowBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::Row, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Row {
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building Row")
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Row {
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building Row")
+                    )?
+                ,
+            }
+        )
     }
 }
+

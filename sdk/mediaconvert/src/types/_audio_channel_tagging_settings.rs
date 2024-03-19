@@ -3,22 +3,23 @@
 /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use Audio layout tagging, your output must be in a QuickTime (MOV) container and your audio codec must be AAC, WAV, or AIFF.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioChannelTaggingSettings {
+pub struct AudioChannelTaggingSettings  {
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
     pub channel_tag: ::std::option::Option<crate::types::AudioChannelTag>,
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
-    pub channel_tags: ::std::option::Option<::std::vec::Vec<crate::types::AudioChannelTag>>,
+    pub channel_tags: ::std::option::Option<::std::vec::Vec::<crate::types::AudioChannelTag>>,
 }
-impl AudioChannelTaggingSettings {
+impl  AudioChannelTaggingSettings  {
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
-    pub fn channel_tag(&self) -> ::std::option::Option<&crate::types::AudioChannelTag> {
+    pub fn channel_tag(&self) -> ::std::option::Option<& crate::types::AudioChannelTag> {
         self.channel_tag.as_ref()
     }
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_tags.is_none()`.
-    pub fn channel_tags(&self) -> &[crate::types::AudioChannelTag] {
-        self.channel_tags.as_deref().unwrap_or_default()
+    pub fn channel_tags(&self) -> & [crate::types::AudioChannelTag] {
+        self.channel_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AudioChannelTaggingSettings {
@@ -33,7 +34,7 @@ impl AudioChannelTaggingSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioChannelTaggingSettingsBuilder {
     pub(crate) channel_tag: ::std::option::Option<crate::types::AudioChannelTag>,
-    pub(crate) channel_tags: ::std::option::Option<::std::vec::Vec<crate::types::AudioChannelTag>>,
+    pub(crate) channel_tags: ::std::option::Option<::std::vec::Vec::<crate::types::AudioChannelTag>>,
 }
 impl AudioChannelTaggingSettingsBuilder {
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
@@ -43,8 +44,7 @@ impl AudioChannelTaggingSettingsBuilder {
     }
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
     pub fn set_channel_tag(mut self, input: ::std::option::Option<crate::types::AudioChannelTag>) -> Self {
-        self.channel_tag = input;
-        self
+        self.channel_tag = input; self
     }
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
     pub fn get_channel_tag(&self) -> &::std::option::Option<crate::types::AudioChannelTag> {
@@ -57,24 +57,26 @@ impl AudioChannelTaggingSettingsBuilder {
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
     pub fn channel_tags(mut self, input: crate::types::AudioChannelTag) -> Self {
         let mut v = self.channel_tags.unwrap_or_default();
-        v.push(input);
-        self.channel_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channel_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
-    pub fn set_channel_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioChannelTag>>) -> Self {
-        self.channel_tags = input;
-        self
+    pub fn set_channel_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudioChannelTag>>) -> Self {
+        self.channel_tags = input; self
     }
     /// Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags in the same order as your output's audio channel order. For example, if your output audio track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
-    pub fn get_channel_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioChannelTag>> {
+    pub fn get_channel_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudioChannelTag>> {
         &self.channel_tags
     }
     /// Consumes the builder and constructs a [`AudioChannelTaggingSettings`](crate::types::AudioChannelTaggingSettings).
     pub fn build(self) -> crate::types::AudioChannelTaggingSettings {
         crate::types::AudioChannelTaggingSettings {
-            channel_tag: self.channel_tag,
-            channel_tags: self.channel_tags,
+            channel_tag: self.channel_tag
+            ,
+            channel_tags: self.channel_tags
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains all the information about a watchlist.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Watchlist {
+pub struct Watchlist  {
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist.</p>
@@ -19,21 +19,21 @@ pub struct Watchlist {
     /// <p>The timestamp of when the watchlist was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Watchlist {
+impl  Watchlist  {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the watchlist.</p>
-    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
+    pub fn watchlist_id(&self) -> ::std::option::Option<& str> {
         self.watchlist_id.as_deref()
     }
     /// <p>The name for the watchlist.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the watchlist.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether the specified watchlist is the default watchlist of a domain.</p>
@@ -41,15 +41,15 @@ impl Watchlist {
         self.default_watchlist
     }
     /// <p>The timestamp of when the watchlist was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the watchlist was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for Watchlist {
+impl  ::std::fmt::Debug for Watchlist  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Watchlist");
         formatter.field("domain_id", &self.domain_id);
@@ -89,8 +89,7 @@ impl WatchlistBuilder {
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl WatchlistBuilder {
     }
     /// <p>The identifier of the watchlist.</p>
     pub fn set_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.watchlist_id = input;
-        self
+        self.watchlist_id = input; self
     }
     /// <p>The identifier of the watchlist.</p>
     pub fn get_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl WatchlistBuilder {
     }
     /// <p>The name for the watchlist.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the watchlist.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl WatchlistBuilder {
     }
     /// <p>The description of the watchlist.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the watchlist.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl WatchlistBuilder {
     }
     /// <p>Whether the specified watchlist is the default watchlist of a domain.</p>
     pub fn set_default_watchlist(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_watchlist = input;
-        self
+        self.default_watchlist = input; self
     }
     /// <p>Whether the specified watchlist is the default watchlist of a domain.</p>
     pub fn get_default_watchlist(&self) -> &::std::option::Option<bool> {
@@ -159,8 +154,7 @@ impl WatchlistBuilder {
     }
     /// <p>The timestamp of when the watchlist was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the watchlist was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +167,7 @@ impl WatchlistBuilder {
     }
     /// <p>The timestamp of when the watchlist was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the watchlist was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,13 +176,21 @@ impl WatchlistBuilder {
     /// Consumes the builder and constructs a [`Watchlist`](crate::types::Watchlist).
     pub fn build(self) -> crate::types::Watchlist {
         crate::types::Watchlist {
-            domain_id: self.domain_id,
-            watchlist_id: self.watchlist_id,
-            name: self.name,
-            description: self.description,
-            default_watchlist: self.default_watchlist.unwrap_or_default(),
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            domain_id: self.domain_id
+            ,
+            watchlist_id: self.watchlist_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            default_watchlist: self.default_watchlist
+                .unwrap_or_default()
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
@@ -206,3 +207,4 @@ impl ::std::fmt::Debug for WatchlistBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information to include in the subject name and alternate subject name of the certificate. The subject name can be common name, directory path, DNS as common name, or left blank. You can optionally include email to the subject name for user templates. If you leave the subject name blank then you must set a subject alternate name. The subject alternate name (SAN) can include globally unique identifier (GUID), DNS, domain DNS, email, service principal name (SPN), and user principal name (UPN). You can leave the SAN blank. If you leave the SAN blank, then you must set a subject name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubjectNameFlagsV4 {
+pub struct SubjectNameFlagsV4  {
     /// <p>Include the domain DNS in the subject alternate name.</p>
     pub san_require_domain_dns: ::std::option::Option<bool>,
     /// <p>Include the service principal name (SPN) in the subject alternate name.</p>
@@ -25,7 +25,7 @@ pub struct SubjectNameFlagsV4 {
     /// <p>Include the directory path in the subject name.</p>
     pub require_directory_path: ::std::option::Option<bool>,
 }
-impl SubjectNameFlagsV4 {
+impl  SubjectNameFlagsV4  {
     /// <p>Include the domain DNS in the subject alternate name.</p>
     pub fn san_require_domain_dns(&self) -> ::std::option::Option<bool> {
         self.san_require_domain_dns
@@ -97,8 +97,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the domain DNS in the subject alternate name.</p>
     pub fn set_san_require_domain_dns(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.san_require_domain_dns = input;
-        self
+        self.san_require_domain_dns = input; self
     }
     /// <p>Include the domain DNS in the subject alternate name.</p>
     pub fn get_san_require_domain_dns(&self) -> &::std::option::Option<bool> {
@@ -111,8 +110,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the service principal name (SPN) in the subject alternate name.</p>
     pub fn set_san_require_spn(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.san_require_spn = input;
-        self
+        self.san_require_spn = input; self
     }
     /// <p>Include the service principal name (SPN) in the subject alternate name.</p>
     pub fn get_san_require_spn(&self) -> &::std::option::Option<bool> {
@@ -125,8 +123,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the globally unique identifier (GUID) in the subject alternate name.</p>
     pub fn set_san_require_directory_guid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.san_require_directory_guid = input;
-        self
+        self.san_require_directory_guid = input; self
     }
     /// <p>Include the globally unique identifier (GUID) in the subject alternate name.</p>
     pub fn get_san_require_directory_guid(&self) -> &::std::option::Option<bool> {
@@ -139,8 +136,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the user principal name (UPN) in the subject alternate name.</p>
     pub fn set_san_require_upn(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.san_require_upn = input;
-        self
+        self.san_require_upn = input; self
     }
     /// <p>Include the user principal name (UPN) in the subject alternate name.</p>
     pub fn get_san_require_upn(&self) -> &::std::option::Option<bool> {
@@ -153,8 +149,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the subject's email in the subject alternate name.</p>
     pub fn set_san_require_email(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.san_require_email = input;
-        self
+        self.san_require_email = input; self
     }
     /// <p>Include the subject's email in the subject alternate name.</p>
     pub fn get_san_require_email(&self) -> &::std::option::Option<bool> {
@@ -167,8 +162,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the DNS in the subject alternate name.</p>
     pub fn set_san_require_dns(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.san_require_dns = input;
-        self
+        self.san_require_dns = input; self
     }
     /// <p>Include the DNS in the subject alternate name.</p>
     pub fn get_san_require_dns(&self) -> &::std::option::Option<bool> {
@@ -181,8 +175,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the DNS as common name in the subject name.</p>
     pub fn set_require_dns_as_cn(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_dns_as_cn = input;
-        self
+        self.require_dns_as_cn = input; self
     }
     /// <p>Include the DNS as common name in the subject name.</p>
     pub fn get_require_dns_as_cn(&self) -> &::std::option::Option<bool> {
@@ -195,8 +188,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the subject's email in the subject name.</p>
     pub fn set_require_email(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_email = input;
-        self
+        self.require_email = input; self
     }
     /// <p>Include the subject's email in the subject name.</p>
     pub fn get_require_email(&self) -> &::std::option::Option<bool> {
@@ -209,8 +201,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the common name in the subject name.</p>
     pub fn set_require_common_name(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_common_name = input;
-        self
+        self.require_common_name = input; self
     }
     /// <p>Include the common name in the subject name.</p>
     pub fn get_require_common_name(&self) -> &::std::option::Option<bool> {
@@ -223,8 +214,7 @@ impl SubjectNameFlagsV4Builder {
     }
     /// <p>Include the directory path in the subject name.</p>
     pub fn set_require_directory_path(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_directory_path = input;
-        self
+        self.require_directory_path = input; self
     }
     /// <p>Include the directory path in the subject name.</p>
     pub fn get_require_directory_path(&self) -> &::std::option::Option<bool> {
@@ -233,16 +223,27 @@ impl SubjectNameFlagsV4Builder {
     /// Consumes the builder and constructs a [`SubjectNameFlagsV4`](crate::types::SubjectNameFlagsV4).
     pub fn build(self) -> crate::types::SubjectNameFlagsV4 {
         crate::types::SubjectNameFlagsV4 {
-            san_require_domain_dns: self.san_require_domain_dns,
-            san_require_spn: self.san_require_spn,
-            san_require_directory_guid: self.san_require_directory_guid,
-            san_require_upn: self.san_require_upn,
-            san_require_email: self.san_require_email,
-            san_require_dns: self.san_require_dns,
-            require_dns_as_cn: self.require_dns_as_cn,
-            require_email: self.require_email,
-            require_common_name: self.require_common_name,
-            require_directory_path: self.require_directory_path,
+            san_require_domain_dns: self.san_require_domain_dns
+            ,
+            san_require_spn: self.san_require_spn
+            ,
+            san_require_directory_guid: self.san_require_directory_guid
+            ,
+            san_require_upn: self.san_require_upn
+            ,
+            san_require_email: self.san_require_email
+            ,
+            san_require_dns: self.san_require_dns
+            ,
+            require_dns_as_cn: self.require_dns_as_cn
+            ,
+            require_email: self.require_email
+            ,
+            require_common_name: self.require_common_name
+            ,
+            require_directory_path: self.require_directory_path
+            ,
         }
     }
 }
+

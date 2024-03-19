@@ -3,11 +3,11 @@
 /// <p>Contains details for an image resource that was identified for a lifecycle action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExecutionResourcesImpactedSummary {
+pub struct LifecycleExecutionResourcesImpactedSummary  {
     /// <p>Indicates whether an image resource that was identified for a lifecycle action has associated resources that are also impacted.</p>
     pub has_impacted_resources: bool,
 }
-impl LifecycleExecutionResourcesImpactedSummary {
+impl  LifecycleExecutionResourcesImpactedSummary  {
     /// <p>Indicates whether an image resource that was identified for a lifecycle action has associated resources that are also impacted.</p>
     pub fn has_impacted_resources(&self) -> bool {
         self.has_impacted_resources
@@ -34,8 +34,7 @@ impl LifecycleExecutionResourcesImpactedSummaryBuilder {
     }
     /// <p>Indicates whether an image resource that was identified for a lifecycle action has associated resources that are also impacted.</p>
     pub fn set_has_impacted_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_impacted_resources = input;
-        self
+        self.has_impacted_resources = input; self
     }
     /// <p>Indicates whether an image resource that was identified for a lifecycle action has associated resources that are also impacted.</p>
     pub fn get_has_impacted_resources(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl LifecycleExecutionResourcesImpactedSummaryBuilder {
     /// Consumes the builder and constructs a [`LifecycleExecutionResourcesImpactedSummary`](crate::types::LifecycleExecutionResourcesImpactedSummary).
     pub fn build(self) -> crate::types::LifecycleExecutionResourcesImpactedSummary {
         crate::types::LifecycleExecutionResourcesImpactedSummary {
-            has_impacted_resources: self.has_impacted_resources.unwrap_or_default(),
+            has_impacted_resources: self.has_impacted_resources
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Contains the response to a successful <code>GetServerCertificate</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServerCertificateOutput {
+pub struct GetServerCertificateOutput  {
     /// <p>A structure containing details about the server certificate.</p>
     pub server_certificate: ::std::option::Option<crate::types::ServerCertificate>,
     _request_id: Option<String>,
 }
-impl GetServerCertificateOutput {
+impl  GetServerCertificateOutput  {
     /// <p>A structure containing details about the server certificate.</p>
-    pub fn server_certificate(&self) -> ::std::option::Option<&crate::types::ServerCertificate> {
+    pub fn server_certificate(&self) -> ::std::option::Option<& crate::types::ServerCertificate> {
         self.server_certificate.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServerCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput).
     pub fn builder() -> crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder {
@@ -42,27 +42,28 @@ impl GetServerCertificateOutputBuilder {
     }
     /// <p>A structure containing details about the server certificate.</p>
     pub fn set_server_certificate(mut self, input: ::std::option::Option<crate::types::ServerCertificate>) -> Self {
-        self.server_certificate = input;
-        self
+        self.server_certificate = input; self
     }
     /// <p>A structure containing details about the server certificate.</p>
     pub fn get_server_certificate(&self) -> &::std::option::Option<crate::types::ServerCertificate> {
         &self.server_certificate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput).
     pub fn build(self) -> crate::operation::get_server_certificate::GetServerCertificateOutput {
         crate::operation::get_server_certificate::GetServerCertificateOutput {
-            server_certificate: self.server_certificate,
+            server_certificate: self.server_certificate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

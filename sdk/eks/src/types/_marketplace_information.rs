@@ -3,19 +3,19 @@
 /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MarketplaceInformation {
+pub struct MarketplaceInformation  {
     /// <p>The product ID from the Amazon Web Services Marketplace.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The product URL from the Amazon Web Services Marketplace.</p>
     pub product_url: ::std::option::Option<::std::string::String>,
 }
-impl MarketplaceInformation {
+impl  MarketplaceInformation  {
     /// <p>The product ID from the Amazon Web Services Marketplace.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The product URL from the Amazon Web Services Marketplace.</p>
-    pub fn product_url(&self) -> ::std::option::Option<&str> {
+    pub fn product_url(&self) -> ::std::option::Option<& str> {
         self.product_url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MarketplaceInformationBuilder {
     }
     /// <p>The product ID from the Amazon Web Services Marketplace.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product ID from the Amazon Web Services Marketplace.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MarketplaceInformationBuilder {
     }
     /// <p>The product URL from the Amazon Web Services Marketplace.</p>
     pub fn set_product_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_url = input;
-        self
+        self.product_url = input; self
     }
     /// <p>The product URL from the Amazon Web Services Marketplace.</p>
     pub fn get_product_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MarketplaceInformationBuilder {
     /// Consumes the builder and constructs a [`MarketplaceInformation`](crate::types::MarketplaceInformation).
     pub fn build(self) -> crate::types::MarketplaceInformation {
         crate::types::MarketplaceInformation {
-            product_id: self.product_id,
-            product_url: self.product_url,
+            product_id: self.product_id
+            ,
+            product_url: self.product_url
+            ,
         }
     }
 }
+

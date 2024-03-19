@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVolumes`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`gateway_arn(impl Into<String>)`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::set_gateway_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::set_marker):<br>required: **false**<br><p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_volumes::builders::ListVolumesFluentBuilder::set_limit):<br>required: **false**<br><p>Specifies that the list of volumes returned be limited to the specified number of items.</p><br>
-    /// - On success, responds with [`ListVolumesOutput`](crate::operation::list_volumes::ListVolumesOutput) with field(s):
+                            /// - On success, responds with [`ListVolumesOutput`](crate::operation::list_volumes::ListVolumesOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::list_volumes::ListVolumesOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_volumes::ListVolumesOutput::marker): <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
     ///   - [`volume_infos(Option<Vec::<VolumeInfo>>)`](crate::operation::list_volumes::ListVolumesOutput::volume_infos): <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    /// - On failure, responds with [`SdkError<ListVolumesError>`](crate::operation::list_volumes::ListVolumesError)
+                            /// - On failure, responds with [`SdkError<ListVolumesError>`](crate::operation::list_volumes::ListVolumesError)
     pub fn list_volumes(&self) -> crate::operation::list_volumes::builders::ListVolumesFluentBuilder {
-        crate::operation::list_volumes::builders::ListVolumesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_volumes::builders::ListVolumesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

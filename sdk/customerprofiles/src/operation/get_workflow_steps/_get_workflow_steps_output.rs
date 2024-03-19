@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowStepsOutput {
+pub struct GetWorkflowStepsOutput  {
     /// <p>Unique identifier for the workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>List containing workflow step details.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepItem>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetWorkflowStepsOutput {
+impl  GetWorkflowStepsOutput  {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>List containing workflow step details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::WorkflowStepItem] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::WorkflowStepItem] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowStepsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWorkflowStepsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepsOutput`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput).
     pub fn builder() -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsOutputBuilder {
@@ -51,7 +52,7 @@ impl GetWorkflowStepsOutput {
 pub struct GetWorkflowStepsOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,8 +64,7 @@ impl GetWorkflowStepsOutputBuilder {
     }
     /// <p>Unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>Unique identifier for the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl GetWorkflowStepsOutputBuilder {
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -91,17 +90,16 @@ impl GetWorkflowStepsOutputBuilder {
     /// <p>List containing workflow step details.</p>
     pub fn items(mut self, input: crate::types::WorkflowStepItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List containing workflow step details.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>List containing workflow step details.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepItem>> {
         &self.items
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -111,30 +109,34 @@ impl GetWorkflowStepsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWorkflowStepsOutput`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput).
     pub fn build(self) -> crate::operation::get_workflow_steps::GetWorkflowStepsOutput {
         crate::operation::get_workflow_steps::GetWorkflowStepsOutput {
-            workflow_id: self.workflow_id,
-            workflow_type: self.workflow_type,
-            items: self.items,
-            next_token: self.next_token,
+            workflow_id: self.workflow_id
+            ,
+            workflow_type: self.workflow_type
+            ,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

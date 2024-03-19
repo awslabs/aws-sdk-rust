@@ -5,54 +5,50 @@ pub use crate::operation::create_security_profile::_create_security_profile_inpu
 
 impl CreateSecurityProfileInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_security_profile();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_security_profile::CreateSecurityProfileOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_security_profile::CreateSecurityProfileError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_security_profile();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSecurityProfile`.
-///
+/// 
 /// <p>Creates a security profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder,
+                    inner: crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        crate::operation::create_security_profile::CreateSecurityProfileError,
-    > for CreateSecurityProfileFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_security_profile::CreateSecurityProfileOutput,
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_security_profile::CreateSecurityProfileOutput,
+                    crate::operation::create_security_profile::CreateSecurityProfileError,
+                > for CreateSecurityProfileFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_security_profile::CreateSecurityProfileOutput,
+                        crate::operation::create_security_profile::CreateSecurityProfileError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSecurityProfileFluentBuilder {
     /// Creates a new `CreateSecurityProfile`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateSecurityProfileFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_security_profile::CreateSecurityProfile::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_security_profile::CreateSecurityProfile::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        crate::operation::create_security_profile::CreateSecurityProfileError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_security_profile::CreateSecurityProfileOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_security_profile::CreateSecurityProfile::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_security_profile::CreateSecurityProfile::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_security_profile::CreateSecurityProfileOutput, crate::operation::create_security_profile::CreateSecurityProfileError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the security profile.</p>
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
@@ -146,12 +133,12 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_permissions()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -178,12 +165,12 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Adds a key-value pair to `AllowedAccessControlTags`.
@@ -191,26 +178,17 @@ impl CreateSecurityProfileFluentBuilder {
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
     ///
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn allowed_access_control_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_access_control_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_access_control_tags(k.into(), v.into());
         self
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn set_allowed_access_control_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_access_control_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_access_control_tags(input);
         self
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn get_allowed_access_control_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_allowed_access_control_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_allowed_access_control_tags()
     }
     /// Appends an item to `TagRestrictedResources`.
@@ -223,12 +201,12 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code></p>
-    pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_restricted_resources(input);
         self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code></p>
-    pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_tag_restricted_resources()
     }
     /// Appends an item to `Applications`.
@@ -243,13 +221,13 @@ impl CreateSecurityProfileFluentBuilder {
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Application>> {
         self.inner.get_applications()
     }
     /// Appends an item to `HierarchyRestrictedResources`.
@@ -262,12 +240,12 @@ impl CreateSecurityProfileFluentBuilder {
         self
     }
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
-    pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_hierarchy_restricted_resources(input);
         self
     }
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
-    pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_hierarchy_restricted_resources()
     }
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
@@ -285,3 +263,4 @@ impl CreateSecurityProfileFluentBuilder {
         self.inner.get_allowed_access_control_hierarchy_group_id()
     }
 }
+

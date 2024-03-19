@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeWorkflowRunInput {
+pub struct ResumeWorkflowRunInput  {
     /// <p>The name of the workflow to resume.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run to resume.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub node_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ResumeWorkflowRunInput {
+impl  ResumeWorkflowRunInput  {
     /// <p>The name of the workflow to resume.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the workflow run to resume.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids.is_none()`.
-    pub fn node_ids(&self) -> &[::std::string::String] {
-        self.node_ids.as_deref().unwrap_or_default()
+    pub fn node_ids(&self) -> & [::std::string::String] {
+        self.node_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResumeWorkflowRunInput {
@@ -39,7 +40,7 @@ impl ResumeWorkflowRunInput {
 pub struct ResumeWorkflowRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
-    pub(crate) node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) node_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResumeWorkflowRunInputBuilder {
     /// <p>The name of the workflow to resume.</p>
@@ -50,8 +51,7 @@ impl ResumeWorkflowRunInputBuilder {
     }
     /// <p>The name of the workflow to resume.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow to resume.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl ResumeWorkflowRunInputBuilder {
     }
     /// <p>The ID of the workflow run to resume.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The ID of the workflow run to resume.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,27 +78,30 @@ impl ResumeWorkflowRunInputBuilder {
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
     pub fn node_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_ids.unwrap_or_default();
-        v.push(input.into());
-        self.node_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.node_ids = input;
-        self
+    pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.node_ids = input; self
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.node_ids
     }
     /// Consumes the builder and constructs a [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
-            name: self.name,
-            run_id: self.run_id,
-            node_ids: self.node_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+                node_ids: self.node_ids
+                ,
+            }
+        )
     }
 }
+

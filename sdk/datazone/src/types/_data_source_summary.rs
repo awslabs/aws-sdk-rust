@@ -3,7 +3,7 @@
 /// <p>The details of the data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DataSourceSummary {
+pub struct DataSourceSummary  {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The ID of the environment in which the data source exists.</p>
@@ -33,54 +33,49 @@ pub struct DataSourceSummary {
     /// <p>The timestamp of when the data source was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DataSourceSummary {
+impl  DataSourceSummary  {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The ID of the environment in which the data source exists.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The ID of the data source.</p>
-    pub fn data_source_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_id.deref()
+    pub fn data_source_id(&self) -> & str {
+        use std::ops::Deref; self.data_source_id.deref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of the data source.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The status of the data source.</p>
-    pub fn status(&self) -> &crate::types::DataSourceStatus {
+    pub fn status(&self) -> & crate::types::DataSourceStatus {
         &self.status
     }
     /// <p>Specifies whether the data source is enabled.</p>
-    pub fn enable_setting(&self) -> ::std::option::Option<&crate::types::EnableSetting> {
+    pub fn enable_setting(&self) -> ::std::option::Option<& crate::types::EnableSetting> {
         self.enable_setting.as_ref()
     }
     /// <p>The details of the schedule of the data source runs.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::ScheduleConfiguration> {
         self.schedule.as_ref()
     }
     /// <p>The status of the last data source run.</p>
-    pub fn last_run_status(&self) -> ::std::option::Option<&crate::types::DataSourceRunStatus> {
+    pub fn last_run_status(&self) -> ::std::option::Option<& crate::types::DataSourceRunStatus> {
         self.last_run_status.as_ref()
     }
     /// <p>The timestamp of when the data source run was last performed.</p>
-    pub fn last_run_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_run_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_run_at.as_ref()
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn last_run_error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
+    pub fn last_run_error_message(&self) -> ::std::option::Option<& crate::types::DataSourceErrorMessage> {
         self.last_run_error_message.as_ref()
     }
     /// <p>The count of the assets created during the last data source run.</p>
@@ -88,15 +83,15 @@ impl DataSourceSummary {
         self.last_run_asset_count
     }
     /// <p>The timestamp of when the data source was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the data source was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for DataSourceSummary {
+impl  ::std::fmt::Debug for DataSourceSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceSummary");
         formatter.field("domain_id", &self.domain_id);
@@ -151,8 +146,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The ID of the environment in which the data source exists.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment in which the data source exists.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The ID of the data source.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The ID of the data source.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +188,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +202,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The type of the data source.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the data source.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +216,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The status of the data source.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the data source.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -240,8 +229,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>Specifies whether the data source is enabled.</p>
     pub fn set_enable_setting(mut self, input: ::std::option::Option<crate::types::EnableSetting>) -> Self {
-        self.enable_setting = input;
-        self
+        self.enable_setting = input; self
     }
     /// <p>Specifies whether the data source is enabled.</p>
     pub fn get_enable_setting(&self) -> &::std::option::Option<crate::types::EnableSetting> {
@@ -254,8 +242,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The details of the schedule of the data source runs.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The details of the schedule of the data source runs.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
@@ -268,8 +255,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The status of the last data source run.</p>
     pub fn set_last_run_status(mut self, input: ::std::option::Option<crate::types::DataSourceRunStatus>) -> Self {
-        self.last_run_status = input;
-        self
+        self.last_run_status = input; self
     }
     /// <p>The status of the last data source run.</p>
     pub fn get_last_run_status(&self) -> &::std::option::Option<crate::types::DataSourceRunStatus> {
@@ -282,8 +268,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The timestamp of when the data source run was last performed.</p>
     pub fn set_last_run_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_run_at = input;
-        self
+        self.last_run_at = input; self
     }
     /// <p>The timestamp of when the data source run was last performed.</p>
     pub fn get_last_run_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -296,8 +281,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_last_run_error_message(mut self, input: ::std::option::Option<crate::types::DataSourceErrorMessage>) -> Self {
-        self.last_run_error_message = input;
-        self
+        self.last_run_error_message = input; self
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_last_run_error_message(&self) -> &::std::option::Option<crate::types::DataSourceErrorMessage> {
@@ -310,8 +294,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The count of the assets created during the last data source run.</p>
     pub fn set_last_run_asset_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.last_run_asset_count = input;
-        self
+        self.last_run_asset_count = input; self
     }
     /// <p>The count of the assets created during the last data source run.</p>
     pub fn get_last_run_asset_count(&self) -> &::std::option::Option<i32> {
@@ -324,8 +307,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The timestamp of when the data source was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the data source was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -338,8 +320,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The timestamp of when the data source was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the data source was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -354,52 +335,56 @@ impl DataSourceSummaryBuilder {
     /// - [`r#type`](crate::types::builders::DataSourceSummaryBuilder::r#type)
     /// - [`status`](crate::types::builders::DataSourceSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceSummary {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_id",
-                    "data_source_id was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            enable_setting: self.enable_setting,
-            schedule: self.schedule,
-            last_run_status: self.last_run_status,
-            last_run_at: self.last_run_at,
-            last_run_error_message: self.last_run_error_message,
-            last_run_asset_count: self.last_run_asset_count,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceSummary {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                data_source_id: self.data_source_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_id", "data_source_id was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                enable_setting: self.enable_setting
+                ,
+                schedule: self.schedule
+                ,
+                last_run_status: self.last_run_status
+                ,
+                last_run_at: self.last_run_at
+                ,
+                last_run_error_message: self.last_run_error_message
+                ,
+                last_run_asset_count: self.last_run_asset_count
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DataSourceSummaryBuilder {
@@ -422,3 +407,4 @@ impl ::std::fmt::Debug for DataSourceSummaryBuilder {
         formatter.finish()
     }
 }
+

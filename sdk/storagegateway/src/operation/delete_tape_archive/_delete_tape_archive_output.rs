@@ -3,22 +3,22 @@
 /// <p>DeleteTapeArchiveOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTapeArchiveOutput {
+pub struct DeleteTapeArchiveOutput  {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
     pub tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteTapeArchiveOutput {
+impl  DeleteTapeArchiveOutput  {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
-    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteTapeArchiveOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteTapeArchiveOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTapeArchiveOutput`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput).
     pub fn builder() -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteTapeArchiveOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
     pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tape_arn = input;
-        self
+        self.tape_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
     pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.tape_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteTapeArchiveOutput`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput).
     pub fn build(self) -> crate::operation::delete_tape_archive::DeleteTapeArchiveOutput {
         crate::operation::delete_tape_archive::DeleteTapeArchiveOutput {
-            tape_arn: self.tape_arn,
+            tape_arn: self.tape_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

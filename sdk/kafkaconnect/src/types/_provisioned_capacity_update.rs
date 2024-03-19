@@ -3,13 +3,13 @@
 /// <p>An update to a connector's fixed capacity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedCapacityUpdate {
+pub struct ProvisionedCapacityUpdate  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub mcu_count: i32,
     /// <p>The number of workers that are allocated to the connector.</p>
     pub worker_count: i32,
 }
-impl ProvisionedCapacityUpdate {
+impl  ProvisionedCapacityUpdate  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn mcu_count(&self) -> i32 {
         self.mcu_count
@@ -42,8 +42,7 @@ impl ProvisionedCapacityUpdateBuilder {
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn set_mcu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mcu_count = input;
-        self
+        self.mcu_count = input; self
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn get_mcu_count(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl ProvisionedCapacityUpdateBuilder {
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn set_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.worker_count = input;
-        self
+        self.worker_count = input; self
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn get_worker_count(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,13 @@ impl ProvisionedCapacityUpdateBuilder {
     /// Consumes the builder and constructs a [`ProvisionedCapacityUpdate`](crate::types::ProvisionedCapacityUpdate).
     pub fn build(self) -> crate::types::ProvisionedCapacityUpdate {
         crate::types::ProvisionedCapacityUpdate {
-            mcu_count: self.mcu_count.unwrap_or_default(),
-            worker_count: self.worker_count.unwrap_or_default(),
+            mcu_count: self.mcu_count
+                .unwrap_or_default()
+            ,
+            worker_count: self.worker_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

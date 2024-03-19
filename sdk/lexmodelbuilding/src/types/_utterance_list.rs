@@ -3,22 +3,23 @@
 /// <p>Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtteranceList {
+pub struct UtteranceList  {
     /// <p>The version of the bot that processed the list.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    pub utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>,
+    pub utterances: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceData>>,
 }
-impl UtteranceList {
+impl  UtteranceList  {
     /// <p>The version of the bot that processed the list.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utterances.is_none()`.
-    pub fn utterances(&self) -> &[crate::types::UtteranceData] {
-        self.utterances.as_deref().unwrap_or_default()
+    pub fn utterances(&self) -> & [crate::types::UtteranceData] {
+        self.utterances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UtteranceList {
@@ -33,7 +34,7 @@ impl UtteranceList {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceListBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
-    pub(crate) utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>,
+    pub(crate) utterances: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceData>>,
 }
 impl UtteranceListBuilder {
     /// <p>The version of the bot that processed the list.</p>
@@ -43,8 +44,7 @@ impl UtteranceListBuilder {
     }
     /// <p>The version of the bot that processed the list.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot that processed the list.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl UtteranceListBuilder {
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
     pub fn utterances(mut self, input: crate::types::UtteranceData) -> Self {
         let mut v = self.utterances.unwrap_or_default();
-        v.push(input);
-        self.utterances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.utterances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>) -> Self {
-        self.utterances = input;
-        self
+    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceData>>) -> Self {
+        self.utterances = input; self
     }
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>> {
+    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtteranceData>> {
         &self.utterances
     }
     /// Consumes the builder and constructs a [`UtteranceList`](crate::types::UtteranceList).
     pub fn build(self) -> crate::types::UtteranceList {
         crate::types::UtteranceList {
-            bot_version: self.bot_version,
-            utterances: self.utterances,
+            bot_version: self.bot_version
+            ,
+            utterances: self.utterances
+            ,
         }
     }
 }
+

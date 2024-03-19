@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImportImageTasks`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::set_filters):<br>required: **false**<br><p>Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.</p><br>
     ///   - [`import_task_ids(impl Into<String>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::import_task_ids) / [`set_import_task_ids(Option<Vec::<String>>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::set_import_task_ids):<br>required: **false**<br><p>The IDs of the import image tasks.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the next page of results.</p><br>
-    /// - On success, responds with [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput) with field(s):
+                            /// - On success, responds with [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput) with field(s):
     ///   - [`import_image_tasks(Option<Vec::<ImportImageTask>>)`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput::import_image_tasks): <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput::next_token): <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeImportImageTasksError>`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksError)
+                            /// - On failure, responds with [`SdkError<DescribeImportImageTasksError>`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksError)
     pub fn describe_import_image_tasks(&self) -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder {
-        crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

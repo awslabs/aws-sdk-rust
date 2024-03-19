@@ -3,7 +3,7 @@
 /// <p>Contains information about the member account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Member {
+pub struct Member  {
     /// <p>The ID of the member account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector ID of the member account.</p>
@@ -21,41 +21,41 @@ pub struct Member {
     /// <p>The administrator account ID.</p>
     pub administrator_id: ::std::option::Option<::std::string::String>,
 }
-impl Member {
+impl  Member  {
     /// <p>The ID of the member account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The detector ID of the member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The administrator account ID.</p>
-    pub fn master_id(&self) -> ::std::option::Option<&str> {
+    pub fn master_id(&self) -> ::std::option::Option<& str> {
         self.master_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
-    pub fn relationship_status(&self) -> ::std::option::Option<&str> {
+    pub fn relationship_status(&self) -> ::std::option::Option<& str> {
         self.relationship_status.as_deref()
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn invited_at(&self) -> ::std::option::Option<&str> {
+    pub fn invited_at(&self) -> ::std::option::Option<& str> {
         self.invited_at.as_deref()
     }
     /// <p>The last-updated timestamp of the member.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&str> {
+    pub fn updated_at(&self) -> ::std::option::Option<& str> {
         self.updated_at.as_deref()
     }
     /// <p>The administrator account ID.</p>
-    pub fn administrator_id(&self) -> ::std::option::Option<&str> {
+    pub fn administrator_id(&self) -> ::std::option::Option<& str> {
         self.administrator_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for Member {
+impl  ::std::fmt::Debug for Member  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Member");
         formatter.field("account_id", &self.account_id);
@@ -98,8 +98,7 @@ impl MemberBuilder {
     }
     /// <p>The ID of the member account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the member account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl MemberBuilder {
     }
     /// <p>The detector ID of the member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID of the member account.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl MemberBuilder {
     }
     /// <p>The administrator account ID.</p>
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_id = input;
-        self
+        self.master_id = input; self
     }
     /// <p>The administrator account ID.</p>
     pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl MemberBuilder {
     }
     /// <p>The email address of the member account.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the member account.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +153,7 @@ impl MemberBuilder {
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
     pub fn set_relationship_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relationship_status = input;
-        self
+        self.relationship_status = input; self
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
     pub fn get_relationship_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +166,7 @@ impl MemberBuilder {
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn set_invited_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invited_at = input;
-        self
+        self.invited_at = input; self
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn get_invited_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +180,7 @@ impl MemberBuilder {
     }
     /// <p>The last-updated timestamp of the member.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The last-updated timestamp of the member.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +193,7 @@ impl MemberBuilder {
     }
     /// <p>The administrator account ID.</p>
     pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.administrator_id = input;
-        self
+        self.administrator_id = input; self
     }
     /// <p>The administrator account ID.</p>
     pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,14 +202,22 @@ impl MemberBuilder {
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {
         crate::types::Member {
-            account_id: self.account_id,
-            detector_id: self.detector_id,
-            master_id: self.master_id,
-            email: self.email,
-            relationship_status: self.relationship_status,
-            invited_at: self.invited_at,
-            updated_at: self.updated_at,
-            administrator_id: self.administrator_id,
+            account_id: self.account_id
+            ,
+            detector_id: self.detector_id
+            ,
+            master_id: self.master_id
+            ,
+            email: self.email
+            ,
+            relationship_status: self.relationship_status
+            ,
+            invited_at: self.invited_at
+            ,
+            updated_at: self.updated_at
+            ,
+            administrator_id: self.administrator_id
+            ,
         }
     }
 }
@@ -235,3 +235,4 @@ impl ::std::fmt::Debug for MemberBuilder {
         formatter.finish()
     }
 }
+

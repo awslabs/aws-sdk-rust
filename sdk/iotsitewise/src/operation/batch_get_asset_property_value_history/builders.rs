@@ -5,54 +5,50 @@ pub use crate::operation::batch_get_asset_property_value_history::_batch_get_ass
 
 impl BatchGetAssetPropertyValueHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_get_asset_property_value_history();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_get_asset_property_value_history();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchGetAssetPropertyValueHistory`.
-///
+/// 
 /// <p>Gets the historical values for one or more asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryInputBuilder,
+                    inner: crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
-    > for BatchGetAssetPropertyValueHistoryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
+                    crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
+                > for BatchGetAssetPropertyValueHistoryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
+                        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchGetAssetPropertyValueHistoryFluentBuilder {
     /// Creates a new `BatchGetAssetPropertyValueHistory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistory::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistory::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistory::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistory::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput, crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::batch_get_asset_property_value_history::paginator::BatchGetAssetPropertyValueHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value_history::paginator::BatchGetAssetPropertyValueHistoryPaginator {
-        crate::operation::batch_get_asset_property_value_history::paginator::BatchGetAssetPropertyValueHistoryPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::batch_get_asset_property_value_history::paginator::BatchGetAssetPropertyValueHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value_history::paginator::BatchGetAssetPropertyValueHistoryPaginator {
+                                crate::operation::batch_get_asset_property_value_history::paginator::BatchGetAssetPropertyValueHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -124,12 +111,12 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetAssetPropertyValueHistoryEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The list of asset property historical value entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetAssetPropertyValueHistoryEntry>> {
         self.inner.get_entries()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -179,3 +166,4 @@ impl BatchGetAssetPropertyValueHistoryFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

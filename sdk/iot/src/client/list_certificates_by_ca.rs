@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCertificatesByCA`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`ca_certificate_id(impl Into<String>)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::ca_certificate_id) / [`set_ca_certificate_id(Option<String>)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::set_ca_certificate_id):<br>required: **true**<br><p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::set_page_size):<br>required: **false**<br><p>The result page size.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     ///   - [`ascending_order(bool)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p><br>
-    /// - On success, responds with [`ListCertificatesByCaOutput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput) with field(s):
+                            /// - On success, responds with [`ListCertificatesByCaOutput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput) with field(s):
     ///   - [`certificates(Option<Vec::<Certificate>>)`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput::certificates): <p>The device certificates signed by the specified CA certificate.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListCertificatesByCAError>`](crate::operation::list_certificates_by_ca::ListCertificatesByCAError)
+                            /// - On failure, responds with [`SdkError<ListCertificatesByCAError>`](crate::operation::list_certificates_by_ca::ListCertificatesByCAError)
     pub fn list_certificates_by_ca(&self) -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder {
-        crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::new(self.handle.clone())
+                            }
 }
+

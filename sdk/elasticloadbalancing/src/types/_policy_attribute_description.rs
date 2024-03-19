@@ -3,19 +3,19 @@
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyAttributeDescription {
+pub struct PolicyAttributeDescription  {
     /// <p>The name of the attribute.</p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
-impl PolicyAttributeDescription {
+impl  PolicyAttributeDescription  {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PolicyAttributeDescriptionBuilder {
     }
     /// <p>The name of the attribute.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the attribute.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PolicyAttributeDescriptionBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PolicyAttributeDescriptionBuilder {
     /// Consumes the builder and constructs a [`PolicyAttributeDescription`](crate::types::PolicyAttributeDescription).
     pub fn build(self) -> crate::types::PolicyAttributeDescription {
         crate::types::PolicyAttributeDescription {
-            attribute_name: self.attribute_name,
-            attribute_value: self.attribute_value,
+            attribute_name: self.attribute_name
+            ,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
+

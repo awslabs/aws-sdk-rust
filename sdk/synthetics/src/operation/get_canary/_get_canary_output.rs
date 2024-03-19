@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCanaryOutput {
+pub struct GetCanaryOutput  {
     /// <p>A structure that contains the full information about the canary.</p>
     pub canary: ::std::option::Option<crate::types::Canary>,
     _request_id: Option<String>,
 }
-impl GetCanaryOutput {
+impl  GetCanaryOutput  {
     /// <p>A structure that contains the full information about the canary.</p>
-    pub fn canary(&self) -> ::std::option::Option<&crate::types::Canary> {
+    pub fn canary(&self) -> ::std::option::Option<& crate::types::Canary> {
         self.canary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCanaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCanaryOutput {
     /// Creates a new builder-style object to manufacture [`GetCanaryOutput`](crate::operation::get_canary::GetCanaryOutput).
     pub fn builder() -> crate::operation::get_canary::builders::GetCanaryOutputBuilder {
@@ -40,27 +40,28 @@ impl GetCanaryOutputBuilder {
     }
     /// <p>A structure that contains the full information about the canary.</p>
     pub fn set_canary(mut self, input: ::std::option::Option<crate::types::Canary>) -> Self {
-        self.canary = input;
-        self
+        self.canary = input; self
     }
     /// <p>A structure that contains the full information about the canary.</p>
     pub fn get_canary(&self) -> &::std::option::Option<crate::types::Canary> {
         &self.canary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCanaryOutput`](crate::operation::get_canary::GetCanaryOutput).
     pub fn build(self) -> crate::operation::get_canary::GetCanaryOutput {
         crate::operation::get_canary::GetCanaryOutput {
-            canary: self.canary,
+            canary: self.canary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,28 +3,28 @@
 /// <p>The output from the GetLoggingOptions operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLoggingOptionsOutput {
+pub struct GetLoggingOptionsOutput  {
     /// <p>The ARN of the IAM role that grants access.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging level.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     _request_id: Option<String>,
 }
-impl GetLoggingOptionsOutput {
+impl  GetLoggingOptionsOutput  {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The logging level.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLoggingOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
     pub fn builder() -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
@@ -48,8 +48,7 @@ impl GetLoggingOptionsOutputBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl GetLoggingOptionsOutputBuilder {
     }
     /// <p>The logging level.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>The logging level.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
         &self.log_level
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
     pub fn build(self) -> crate::operation::get_logging_options::GetLoggingOptionsOutput {
         crate::operation::get_logging_options::GetLoggingOptionsOutput {
-            role_arn: self.role_arn,
-            log_level: self.log_level,
+            role_arn: self.role_arn
+            ,
+            log_level: self.log_level
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

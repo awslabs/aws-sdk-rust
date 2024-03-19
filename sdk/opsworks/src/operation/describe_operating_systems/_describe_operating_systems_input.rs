@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOperatingSystemsInput {}
+pub struct DescribeOperatingSystemsInput  {
+}
 impl DescribeOperatingSystemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
     pub fn builder() -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeOperatingSystemsInput {
 /// A builder for [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeOperatingSystemsInputBuilder {}
+pub struct DescribeOperatingSystemsInputBuilder {
+}
 impl DescribeOperatingSystemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_operating_systems::DescribeOperatingSystemsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_operating_systems::DescribeOperatingSystemsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_operating_systems::DescribeOperatingSystemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_operating_systems::DescribeOperatingSystemsInput {
+            }
+        )
     }
 }
+

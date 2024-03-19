@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDataQualityResultOutput {
+pub struct BatchGetDataQualityResultOutput  {
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub results: ::std::vec::Vec<crate::types::DataQualityResult>,
+    pub results: ::std::vec::Vec::<crate::types::DataQualityResult>,
     /// <p>A list of result IDs for which results were not found.</p>
-    pub results_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub results_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchGetDataQualityResultOutput {
+impl  BatchGetDataQualityResultOutput  {
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub fn results(&self) -> &[crate::types::DataQualityResult] {
-        use std::ops::Deref;
-        self.results.deref()
+    pub fn results(&self) -> & [crate::types::DataQualityResult] {
+        use std::ops::Deref; self.results.deref()
     }
     /// <p>A list of result IDs for which results were not found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_not_found.is_none()`.
-    pub fn results_not_found(&self) -> &[::std::string::String] {
-        self.results_not_found.as_deref().unwrap_or_default()
+    pub fn results_not_found(&self) -> & [::std::string::String] {
+        self.results_not_found.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetDataQualityResultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetDataQualityResultOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput).
     pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultOutputBuilder {
@@ -38,8 +38,8 @@ impl BatchGetDataQualityResultOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>,
-    pub(crate) results_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::DataQualityResult>>,
+    pub(crate) results_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetDataQualityResultOutputBuilder {
@@ -50,17 +50,16 @@ impl BatchGetDataQualityResultOutputBuilder {
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
     pub fn results(mut self, input: crate::types::DataQualityResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataQualityResult>>) -> Self {
+        self.results = input; self
     }
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataQualityResult>> {
         &self.results
     }
     /// Appends an item to `results_not_found`.
@@ -70,46 +69,43 @@ impl BatchGetDataQualityResultOutputBuilder {
     /// <p>A list of result IDs for which results were not found.</p>
     pub fn results_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.results_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.results_not_found = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.results_not_found = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of result IDs for which results were not found.</p>
-    pub fn set_results_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.results_not_found = input;
-        self
+    pub fn set_results_not_found(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.results_not_found = input; self
     }
     /// <p>A list of result IDs for which results were not found.</p>
-    pub fn get_results_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_results_not_found(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.results_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building BatchGetDataQualityResultOutput",
-                )
-            })?,
-            results_not_found: self.results_not_found,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building BatchGetDataQualityResultOutput")
+                    )?
+                ,
+                results_not_found: self.results_not_found
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

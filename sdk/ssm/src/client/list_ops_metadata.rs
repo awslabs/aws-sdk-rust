@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOpsMetadata`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(OpsMetadataFilter)`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::filters) / [`set_filters(Option<Vec::<OpsMetadataFilter>>)`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
-    /// - On success, responds with [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput) with field(s):
+                            /// - On success, responds with [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput) with field(s):
     ///   - [`ops_metadata_list(Option<Vec::<OpsMetadata>>)`](crate::operation::list_ops_metadata::ListOpsMetadataOutput::ops_metadata_list): <p>Returns a list of OpsMetadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ops_metadata::ListOpsMetadataOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListOpsMetadataError>`](crate::operation::list_ops_metadata::ListOpsMetadataError)
+                            /// - On failure, responds with [`SdkError<ListOpsMetadataError>`](crate::operation::list_ops_metadata::ListOpsMetadataError)
     pub fn list_ops_metadata(&self) -> crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder {
-        crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::new(self.handle.clone())
+                            }
 }
+

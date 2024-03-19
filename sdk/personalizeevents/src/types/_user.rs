@@ -3,26 +3,25 @@
 /// <p>Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing users individually</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct User {
+pub struct User  {
     /// <p>The ID associated with the user.</p>
     pub user_id: ::std::string::String,
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
     pub properties: ::std::option::Option<::std::string::String>,
 }
-impl User {
+impl  User  {
     /// <p>The ID associated with the user.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
-    pub fn properties(&self) -> ::std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
-impl ::std::fmt::Debug for User {
+impl  ::std::fmt::Debug for User  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_id", &self.user_id);
@@ -53,8 +52,7 @@ impl UserBuilder {
     }
     /// <p>The ID associated with the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ID associated with the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,7 @@ impl UserBuilder {
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
     }
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
@@ -81,15 +78,17 @@ impl UserBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::User {
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building User",
-                )
-            })?,
-            properties: self.properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::User {
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building User")
+                    )?
+                ,
+                properties: self.properties
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UserBuilder {
@@ -100,3 +99,4 @@ impl ::std::fmt::Debug for UserBuilder {
         formatter.finish()
     }
 }
+

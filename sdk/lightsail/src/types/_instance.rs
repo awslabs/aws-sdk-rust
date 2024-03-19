@@ -3,7 +3,7 @@
 /// <p>Describes an instance (a virtual private server).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
@@ -17,7 +17,7 @@ pub struct Instance {
     /// <p>The type of resource (usually <code>Instance</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
@@ -25,7 +25,7 @@ pub struct Instance {
     /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
+    pub add_ons: ::std::option::Option<::std::vec::Vec::<crate::types::AddOn>>,
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
     pub is_static_ip: ::std::option::Option<bool>,
     /// <p>The private IP address of the instance.</p>
@@ -33,7 +33,7 @@ pub struct Instance {
     /// <p>The public IP address of the instance.</p>
     pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 addresses of the instance.</p>
-    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -50,100 +50,103 @@ pub struct Instance {
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
-impl Instance {
+impl  Instance  {
     /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region name and Availability Zone where the instance is located.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The type of resource (usually <code>Instance</code>).</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
-    pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_id(&self) -> ::std::option::Option<& str> {
         self.blueprint_id.as_deref()
     }
     /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
-    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<& str> {
         self.blueprint_name.as_deref()
     }
     /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_ons.is_none()`.
-    pub fn add_ons(&self) -> &[crate::types::AddOn] {
-        self.add_ons.as_deref().unwrap_or_default()
+    pub fn add_ons(&self) -> & [crate::types::AddOn] {
+        self.add_ons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
     pub fn is_static_ip(&self) -> ::std::option::Option<bool> {
         self.is_static_ip
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> ::std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
     /// <p>The IPv6 addresses of the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
-    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
-        self.ipv6_addresses.as_deref().unwrap_or_default()
+    pub fn ipv6_addresses(&self) -> & [::std::string::String] {
+        self.ipv6_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
-    pub fn hardware(&self) -> ::std::option::Option<&crate::types::InstanceHardware> {
+    pub fn hardware(&self) -> ::std::option::Option<& crate::types::InstanceHardware> {
         self.hardware.as_ref()
     }
     /// <p>Information about the public ports and monthly data transfer rates for the instance.</p>
-    pub fn networking(&self) -> ::std::option::Option<&crate::types::InstanceNetworking> {
+    pub fn networking(&self) -> ::std::option::Option<& crate::types::InstanceNetworking> {
         self.networking.as_ref()
     }
     /// <p>The status code and the state (<code>running</code>) for the instance.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::InstanceState> {
         self.state.as_ref()
     }
     /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
-    pub fn ssh_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_key_name(&self) -> ::std::option::Option<& str> {
         self.ssh_key_name.as_deref()
     }
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
-    pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
+    pub fn metadata_options(&self) -> ::std::option::Option<& crate::types::InstanceMetadataOptions> {
         self.metadata_options.as_ref()
     }
 }
@@ -164,15 +167,15 @@ pub struct InstanceBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) blueprint_id: ::std::option::Option<::std::string::String>,
     pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
+    pub(crate) add_ons: ::std::option::Option<::std::vec::Vec::<crate::types::AddOn>>,
     pub(crate) is_static_ip: ::std::option::Option<bool>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) hardware: ::std::option::Option<crate::types::InstanceHardware>,
     pub(crate) networking: ::std::option::Option<crate::types::InstanceNetworking>,
@@ -189,8 +192,7 @@ impl InstanceBuilder {
     }
     /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +205,7 @@ impl InstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +218,7 @@ impl InstanceBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +231,7 @@ impl InstanceBuilder {
     }
     /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -245,8 +244,7 @@ impl InstanceBuilder {
     }
     /// <p>The region name and Availability Zone where the instance is located.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The region name and Availability Zone where the instance is located.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -259,8 +257,7 @@ impl InstanceBuilder {
     }
     /// <p>The type of resource (usually <code>Instance</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource (usually <code>Instance</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -273,17 +270,16 @@ impl InstanceBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
@@ -293,8 +289,7 @@ impl InstanceBuilder {
     }
     /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blueprint_id = input;
-        self
+        self.blueprint_id = input; self
     }
     /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +302,7 @@ impl InstanceBuilder {
     }
     /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blueprint_name = input;
-        self
+        self.blueprint_name = input; self
     }
     /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +315,7 @@ impl InstanceBuilder {
     }
     /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,17 +328,16 @@ impl InstanceBuilder {
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
     pub fn add_ons(mut self, input: crate::types::AddOn) -> Self {
         let mut v = self.add_ons.unwrap_or_default();
-        v.push(input);
-        self.add_ons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_ons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>) -> Self {
-        self.add_ons = input;
-        self
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddOn>>) -> Self {
+        self.add_ons = input; self
     }
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOn>> {
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddOn>> {
         &self.add_ons
     }
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
@@ -355,8 +347,7 @@ impl InstanceBuilder {
     }
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
     pub fn set_is_static_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_static_ip = input;
-        self
+        self.is_static_ip = input; self
     }
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
     pub fn get_is_static_ip(&self) -> &::std::option::Option<bool> {
@@ -369,8 +360,7 @@ impl InstanceBuilder {
     }
     /// <p>The private IP address of the instance.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The private IP address of the instance.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -383,8 +373,7 @@ impl InstanceBuilder {
     }
     /// <p>The public IP address of the instance.</p>
     pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip_address = input;
-        self
+        self.public_ip_address = input; self
     }
     /// <p>The public IP address of the instance.</p>
     pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -397,17 +386,16 @@ impl InstanceBuilder {
     /// <p>The IPv6 addresses of the instance.</p>
     pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ipv6_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ipv6_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 addresses of the instance.</p>
-    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ipv6_addresses = input;
-        self
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input; self
     }
     /// <p>The IPv6 addresses of the instance.</p>
-    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ipv6_addresses
     }
     /// <p>The IP address type of the instance.</p>
@@ -419,8 +407,7 @@ impl InstanceBuilder {
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -434,8 +421,7 @@ impl InstanceBuilder {
     }
     /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
     pub fn set_hardware(mut self, input: ::std::option::Option<crate::types::InstanceHardware>) -> Self {
-        self.hardware = input;
-        self
+        self.hardware = input; self
     }
     /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
     pub fn get_hardware(&self) -> &::std::option::Option<crate::types::InstanceHardware> {
@@ -448,8 +434,7 @@ impl InstanceBuilder {
     }
     /// <p>Information about the public ports and monthly data transfer rates for the instance.</p>
     pub fn set_networking(mut self, input: ::std::option::Option<crate::types::InstanceNetworking>) -> Self {
-        self.networking = input;
-        self
+        self.networking = input; self
     }
     /// <p>Information about the public ports and monthly data transfer rates for the instance.</p>
     pub fn get_networking(&self) -> &::std::option::Option<crate::types::InstanceNetworking> {
@@ -462,8 +447,7 @@ impl InstanceBuilder {
     }
     /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
@@ -476,8 +460,7 @@ impl InstanceBuilder {
     }
     /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -490,8 +473,7 @@ impl InstanceBuilder {
     }
     /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_key_name = input;
-        self
+        self.ssh_key_name = input; self
     }
     /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -504,8 +486,7 @@ impl InstanceBuilder {
     }
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
-        self.metadata_options = input;
-        self
+        self.metadata_options = input; self
     }
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
@@ -514,28 +495,51 @@ impl InstanceBuilder {
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            blueprint_id: self.blueprint_id,
-            blueprint_name: self.blueprint_name,
-            bundle_id: self.bundle_id,
-            add_ons: self.add_ons,
-            is_static_ip: self.is_static_ip,
-            private_ip_address: self.private_ip_address,
-            public_ip_address: self.public_ip_address,
-            ipv6_addresses: self.ipv6_addresses,
-            ip_address_type: self.ip_address_type,
-            hardware: self.hardware,
-            networking: self.networking,
-            state: self.state,
-            username: self.username,
-            ssh_key_name: self.ssh_key_name,
-            metadata_options: self.metadata_options,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            blueprint_id: self.blueprint_id
+            ,
+            blueprint_name: self.blueprint_name
+            ,
+            bundle_id: self.bundle_id
+            ,
+            add_ons: self.add_ons
+            ,
+            is_static_ip: self.is_static_ip
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            public_ip_address: self.public_ip_address
+            ,
+            ipv6_addresses: self.ipv6_addresses
+            ,
+            ip_address_type: self.ip_address_type
+            ,
+            hardware: self.hardware
+            ,
+            networking: self.networking
+            ,
+            state: self.state
+            ,
+            username: self.username
+            ,
+            ssh_key_name: self.ssh_key_name
+            ,
+            metadata_options: self.metadata_options
+            ,
         }
     }
 }
+

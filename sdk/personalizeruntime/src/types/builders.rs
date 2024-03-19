@@ -4,3 +4,4 @@ pub use crate::types::_predicted_item::PredictedItemBuilder;
 pub use crate::types::_promotion::PromotionBuilder;
 
 pub use crate::types::_predicted_action::PredictedActionBuilder;
+

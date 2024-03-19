@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSpeechSynthesisTaskOutput {
+pub struct GetSpeechSynthesisTaskOutput  {
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     pub synthesis_task: ::std::option::Option<crate::types::SynthesisTask>,
     _request_id: Option<String>,
 }
-impl GetSpeechSynthesisTaskOutput {
+impl  GetSpeechSynthesisTaskOutput  {
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
-    pub fn synthesis_task(&self) -> ::std::option::Option<&crate::types::SynthesisTask> {
+    pub fn synthesis_task(&self) -> ::std::option::Option<& crate::types::SynthesisTask> {
         self.synthesis_task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSpeechSynthesisTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSpeechSynthesisTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskOutput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput).
     pub fn builder() -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl GetSpeechSynthesisTaskOutputBuilder {
     }
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     pub fn set_synthesis_task(mut self, input: ::std::option::Option<crate::types::SynthesisTask>) -> Self {
-        self.synthesis_task = input;
-        self
+        self.synthesis_task = input; self
     }
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     pub fn get_synthesis_task(&self) -> &::std::option::Option<crate::types::SynthesisTask> {
         &self.synthesis_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskOutput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput).
     pub fn build(self) -> crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput {
         crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput {
-            synthesis_task: self.synthesis_task,
+            synthesis_task: self.synthesis_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

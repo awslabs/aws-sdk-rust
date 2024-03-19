@@ -3,19 +3,19 @@
 /// <p>A database that points to an entity outside the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FederatedDatabase {
+pub struct FederatedDatabase  {
     /// <p>A unique identifier for the federated database.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to the external metastore.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
 }
-impl FederatedDatabase {
+impl  FederatedDatabase  {
     /// <p>A unique identifier for the federated database.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name of the connection to the external metastore.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FederatedDatabaseBuilder {
     }
     /// <p>A unique identifier for the federated database.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>A unique identifier for the federated database.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FederatedDatabaseBuilder {
     }
     /// <p>The name of the connection to the external metastore.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to the external metastore.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FederatedDatabaseBuilder {
     /// Consumes the builder and constructs a [`FederatedDatabase`](crate::types::FederatedDatabase).
     pub fn build(self) -> crate::types::FederatedDatabase {
         crate::types::FederatedDatabase {
-            identifier: self.identifier,
-            connection_name: self.connection_name,
+            identifier: self.identifier
+            ,
+            connection_name: self.connection_name
+            ,
         }
     }
 }
+

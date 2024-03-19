@@ -3,13 +3,13 @@
 /// <p>Information about the installed GuardDuty security agent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentDetails {
+pub struct AgentDetails  {
     /// <p>Version of the installed GuardDuty security agent.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl AgentDetails {
+impl  AgentDetails  {
     /// <p>Version of the installed GuardDuty security agent.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AgentDetailsBuilder {
     }
     /// <p>Version of the installed GuardDuty security agent.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version of the installed GuardDuty security agent.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AgentDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AgentDetails`](crate::types::AgentDetails).
     pub fn build(self) -> crate::types::AgentDetails {
-        crate::types::AgentDetails { version: self.version }
+        crate::types::AgentDetails {
+            version: self.version
+            ,
+        }
     }
 }
+

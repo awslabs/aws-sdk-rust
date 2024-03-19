@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasets`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`flywheel_arn(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::flywheel_arn) / [`set_flywheel_arn(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_flywheel_arn):<br>required: **false**<br><p>The Amazon Resource Number (ARN) of the flywheel.</p><br>
     ///   - [`filter(DatasetFilter)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::filter) / [`set_filter(Option<DatasetFilter>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the datasets to be returned in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a response. The default is 100.</p><br>
-    /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
+                            /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
     ///   - [`dataset_properties_list(Option<Vec::<DatasetProperties>>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_properties_list): <p>The dataset properties list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
+                            /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
-        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImportInput {
+pub struct GetImportInput  {
     /// <p>The identifier of the import job information to return.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
 }
-impl GetImportInput {
+impl  GetImportInput  {
     /// <p>The identifier of the import job information to return.</p>
-    pub fn import_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<& str> {
         self.import_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetImportInputBuilder {
     }
     /// <p>The identifier of the import job information to return.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p>The identifier of the import job information to return.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetImportInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetImportInput`](crate::operation::get_import::GetImportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_import::GetImportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_import::GetImportInput { import_id: self.import_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_import::GetImportInput {
+                import_id: self.import_id
+                ,
+            }
+        )
     }
 }
+

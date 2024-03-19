@@ -3,7 +3,7 @@
 /// <p>A data source in an Amazon Q application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>The name of the Amazon Q data source.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q data source.</p>
@@ -17,29 +17,29 @@ pub struct DataSource {
     /// <p>The status of the Amazon Q data source.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
-impl DataSource {
+impl  DataSource  {
     /// <p>The name of the Amazon Q data source.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The identifier of the Amazon Q data source.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The type of the Amazon Q data source.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The Unix timestamp when the Amazon Q data source was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The status of the Amazon Q data source.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DataSourceBuilder {
     }
     /// <p>The name of the Amazon Q data source.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the Amazon Q data source.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DataSourceBuilder {
     }
     /// <p>The identifier of the Amazon Q data source.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the Amazon Q data source.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DataSourceBuilder {
     }
     /// <p>The type of the Amazon Q data source.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the Amazon Q data source.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DataSourceBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q data source was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q data source was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl DataSourceBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q data source was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl DataSourceBuilder {
     }
     /// <p>The status of the Amazon Q data source.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Amazon Q data source.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -149,12 +143,19 @@ impl DataSourceBuilder {
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            display_name: self.display_name,
-            data_source_id: self.data_source_id,
-            r#type: self.r#type,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            status: self.status,
+            display_name: self.display_name
+            ,
+            data_source_id: self.data_source_id
+            ,
+            r#type: self.r#type
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

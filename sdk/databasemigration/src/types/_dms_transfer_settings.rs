@@ -3,19 +3,19 @@
 /// <p>The settings in JSON format for the DMS Transfer type source endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DmsTransferSettings {
+pub struct DmsTransferSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket to use.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
-impl DmsTransferSettings {
+impl  DmsTransferSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The name of the S3 bucket to use.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DmsTransferSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_access_role_arn = input;
-        self
+        self.service_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DmsTransferSettingsBuilder {
     }
     /// <p>The name of the S3 bucket to use.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket to use.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DmsTransferSettingsBuilder {
     /// Consumes the builder and constructs a [`DmsTransferSettings`](crate::types::DmsTransferSettings).
     pub fn build(self) -> crate::types::DmsTransferSettings {
         crate::types::DmsTransferSettings {
-            service_access_role_arn: self.service_access_role_arn,
-            bucket_name: self.bucket_name,
+            service_access_role_arn: self.service_access_role_arn
+            ,
+            bucket_name: self.bucket_name
+            ,
         }
     }
 }
+

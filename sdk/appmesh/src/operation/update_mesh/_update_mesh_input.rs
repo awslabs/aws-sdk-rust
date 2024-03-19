@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMeshInput {
+pub struct UpdateMeshInput  {
     /// <p>The name of the service mesh to update.</p>
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The service mesh specification to apply.</p>
@@ -10,17 +10,17 @@ pub struct UpdateMeshInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateMeshInput {
+impl  UpdateMeshInput  {
     /// <p>The name of the service mesh to update.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The service mesh specification to apply.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::MeshSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::MeshSpec> {
         self.spec.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateMeshInputBuilder {
     }
     /// <p>The name of the service mesh to update.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh to update.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateMeshInputBuilder {
     }
     /// <p>The service mesh specification to apply.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::MeshSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The service mesh specification to apply.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::MeshSpec> {
@@ -76,8 +74,7 @@ impl UpdateMeshInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl UpdateMeshInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateMeshInput`](crate::operation::update_mesh::UpdateMeshInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_mesh::UpdateMeshInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_mesh::UpdateMeshInput {
-            mesh_name: self.mesh_name,
-            spec: self.spec,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_mesh::UpdateMeshInput {
+                mesh_name: self.mesh_name
+                ,
+                spec: self.spec
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePortalOutput {
+pub struct CreatePortalOutput  {
     /// <p>The ID of the created portal.</p>
     pub portal_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
@@ -16,38 +16,34 @@ pub struct CreatePortalOutput {
     pub sso_application_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreatePortalOutput {
+impl  CreatePortalOutput  {
     /// <p>The ID of the created portal.</p>
-    pub fn portal_id(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_id.deref()
+    pub fn portal_id(&self) -> & str {
+        use std::ops::Deref; self.portal_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_start_url.deref()
+    pub fn portal_start_url(&self) -> & str {
+        use std::ops::Deref; self.portal_start_url.deref()
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn portal_status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
+    pub fn portal_status(&self) -> ::std::option::Option<& crate::types::PortalStatus> {
         self.portal_status.as_ref()
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn sso_application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sso_application_id.deref()
+    pub fn sso_application_id(&self) -> & str {
+        use std::ops::Deref; self.sso_application_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePortalOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePortalOutput {
     /// Creates a new builder-style object to manufacture [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
     pub fn builder() -> crate::operation::create_portal::builders::CreatePortalOutputBuilder {
@@ -75,8 +71,7 @@ impl CreatePortalOutputBuilder {
     }
     /// <p>The ID of the created portal.</p>
     pub fn set_portal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_id = input;
-        self
+        self.portal_id = input; self
     }
     /// <p>The ID of the created portal.</p>
     pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +87,7 @@ impl CreatePortalOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
@@ -108,8 +102,7 @@ impl CreatePortalOutputBuilder {
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn set_portal_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_start_url = input;
-        self
+        self.portal_start_url = input; self
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn get_portal_start_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +116,7 @@ impl CreatePortalOutputBuilder {
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn set_portal_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
-        self.portal_status = input;
-        self
+        self.portal_status = input; self
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn get_portal_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
@@ -138,58 +130,55 @@ impl CreatePortalOutputBuilder {
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     pub fn set_sso_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sso_application_id = input;
-        self
+        self.sso_application_id = input; self
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
     pub fn get_sso_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sso_application_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_id`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::portal_id)
     /// - [`portal_arn`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::portal_arn)
     /// - [`portal_start_url`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::portal_start_url)
     /// - [`sso_application_id`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::sso_application_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalOutput {
-            portal_id: self.portal_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_id",
-                    "portal_id was not specified but it is required when building CreatePortalOutput",
-                )
-            })?,
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building CreatePortalOutput",
-                )
-            })?,
-            portal_start_url: self.portal_start_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_start_url",
-                    "portal_start_url was not specified but it is required when building CreatePortalOutput",
-                )
-            })?,
-            portal_status: self.portal_status,
-            sso_application_id: self.sso_application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sso_application_id",
-                    "sso_application_id was not specified but it is required when building CreatePortalOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_portal::CreatePortalOutput {
+                portal_id: self.portal_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_id", "portal_id was not specified but it is required when building CreatePortalOutput")
+                    )?
+                ,
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building CreatePortalOutput")
+                    )?
+                ,
+                portal_start_url: self.portal_start_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_start_url", "portal_start_url was not specified but it is required when building CreatePortalOutput")
+                    )?
+                ,
+                portal_status: self.portal_status
+                ,
+                sso_application_id: self.sso_application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sso_application_id", "sso_application_id was not specified but it is required when building CreatePortalOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

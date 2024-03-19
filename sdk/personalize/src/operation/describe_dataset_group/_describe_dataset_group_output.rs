@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetGroupOutput {
+pub struct DescribeDatasetGroupOutput  {
     /// <p>A listing of the dataset group's properties.</p>
     pub dataset_group: ::std::option::Option<crate::types::DatasetGroup>,
     _request_id: Option<String>,
 }
-impl DescribeDatasetGroupOutput {
+impl  DescribeDatasetGroupOutput  {
     /// <p>A listing of the dataset group's properties.</p>
-    pub fn dataset_group(&self) -> ::std::option::Option<&crate::types::DatasetGroup> {
+    pub fn dataset_group(&self) -> ::std::option::Option<& crate::types::DatasetGroup> {
         self.dataset_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDatasetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDatasetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput).
     pub fn builder() -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeDatasetGroupOutputBuilder {
     }
     /// <p>A listing of the dataset group's properties.</p>
     pub fn set_dataset_group(mut self, input: ::std::option::Option<crate::types::DatasetGroup>) -> Self {
-        self.dataset_group = input;
-        self
+        self.dataset_group = input; self
     }
     /// <p>A listing of the dataset group's properties.</p>
     pub fn get_dataset_group(&self) -> &::std::option::Option<crate::types::DatasetGroup> {
         &self.dataset_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput).
     pub fn build(self) -> crate::operation::describe_dataset_group::DescribeDatasetGroupOutput {
         crate::operation::describe_dataset_group::DescribeDatasetGroupOutput {
-            dataset_group: self.dataset_group,
+            dataset_group: self.dataset_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

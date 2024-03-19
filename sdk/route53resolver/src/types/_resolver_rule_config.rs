@@ -3,27 +3,28 @@
 /// <p>In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html">UpdateResolverRule</a> request, information about the changes that you want to make.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolverRuleConfig {
+pub struct ResolverRuleConfig  {
     /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-    pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
+    pub target_ips: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>>,
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl ResolverRuleConfig {
+impl  ResolverRuleConfig  {
     /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ips.is_none()`.
-    pub fn target_ips(&self) -> &[crate::types::TargetAddress] {
-        self.target_ips.as_deref().unwrap_or_default()
+    pub fn target_ips(&self) -> & [crate::types::TargetAddress] {
+        self.target_ips.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.resolver_endpoint_id.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl ResolverRuleConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverRuleConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
+    pub(crate) target_ips: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>>,
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRuleConfigBuilder {
@@ -50,8 +51,7 @@ impl ResolverRuleConfigBuilder {
     }
     /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl ResolverRuleConfigBuilder {
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
     pub fn target_ips(mut self, input: crate::types::TargetAddress) -> Self {
         let mut v = self.target_ips.unwrap_or_default();
-        v.push(input);
-        self.target_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
-        self.target_ips = input;
-        self
+    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>>) -> Self {
+        self.target_ips = input; self
     }
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>> {
         &self.target_ips
     }
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
@@ -84,8 +83,7 @@ impl ResolverRuleConfigBuilder {
     }
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_endpoint_id = input;
-        self
+        self.resolver_endpoint_id = input; self
     }
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl ResolverRuleConfigBuilder {
     /// Consumes the builder and constructs a [`ResolverRuleConfig`](crate::types::ResolverRuleConfig).
     pub fn build(self) -> crate::types::ResolverRuleConfig {
         crate::types::ResolverRuleConfig {
-            name: self.name,
-            target_ips: self.target_ips,
-            resolver_endpoint_id: self.resolver_endpoint_id,
+            name: self.name
+            ,
+            target_ips: self.target_ips
+            ,
+            resolver_endpoint_id: self.resolver_endpoint_id
+            ,
         }
     }
 }
+

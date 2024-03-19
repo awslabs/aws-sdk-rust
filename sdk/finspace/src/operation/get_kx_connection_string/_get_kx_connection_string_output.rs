@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetKxConnectionStringOutput {
+pub struct GetKxConnectionStringOutput  {
     /// <p>The signed connection string that you can use to connect to clusters.</p>
     pub signed_connection_string: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetKxConnectionStringOutput {
+impl  GetKxConnectionStringOutput  {
     /// <p>The signed connection string that you can use to connect to clusters.</p>
-    pub fn signed_connection_string(&self) -> ::std::option::Option<&str> {
+    pub fn signed_connection_string(&self) -> ::std::option::Option<& str> {
         self.signed_connection_string.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetKxConnectionStringOutput {
+impl  ::std::fmt::Debug for GetKxConnectionStringOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetKxConnectionStringOutput");
         formatter.field("signed_connection_string", &"*** Sensitive Data Redacted ***");
@@ -22,10 +22,10 @@ impl ::std::fmt::Debug for GetKxConnectionStringOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetKxConnectionStringOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKxConnectionStringOutput {
     /// Creates a new builder-style object to manufacture [`GetKxConnectionStringOutput`](crate::operation::get_kx_connection_string::GetKxConnectionStringOutput).
     pub fn builder() -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringOutputBuilder {
@@ -48,26 +48,26 @@ impl GetKxConnectionStringOutputBuilder {
     }
     /// <p>The signed connection string that you can use to connect to clusters.</p>
     pub fn set_signed_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signed_connection_string = input;
-        self
+        self.signed_connection_string = input; self
     }
     /// <p>The signed connection string that you can use to connect to clusters.</p>
     pub fn get_signed_connection_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.signed_connection_string
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKxConnectionStringOutput`](crate::operation::get_kx_connection_string::GetKxConnectionStringOutput).
     pub fn build(self) -> crate::operation::get_kx_connection_string::GetKxConnectionStringOutput {
         crate::operation::get_kx_connection_string::GetKxConnectionStringOutput {
-            signed_connection_string: self.signed_connection_string,
+            signed_connection_string: self.signed_connection_string
+            ,
             _request_id: self._request_id,
         }
     }
@@ -80,3 +80,4 @@ impl ::std::fmt::Debug for GetKxConnectionStringOutputBuilder {
         formatter.finish()
     }
 }
+

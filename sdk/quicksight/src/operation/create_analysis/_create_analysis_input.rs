@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAnalysisInput {
+pub struct CreateAnalysisInput  {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
@@ -13,14 +13,14 @@ pub struct CreateAnalysisInput {
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
@@ -28,62 +28,65 @@ pub struct CreateAnalysisInput {
     /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
     pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
     /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
-    pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub folder_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateAnalysisInput {
+impl  CreateAnalysisInput  {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
-    pub fn analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_id(&self) -> ::std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::Parameters> {
         self.parameters.as_ref()
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::ResourcePermission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    pub fn source_entity(&self) -> ::std::option::Option<&crate::types::AnalysisSourceEntity> {
+    pub fn source_entity(&self) -> ::std::option::Option<& crate::types::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    pub fn theme_arn(&self) -> ::std::option::Option<&str> {
+    pub fn theme_arn(&self) -> ::std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::AnalysisDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::AnalysisDefinition> {
         self.definition.as_ref()
     }
     /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
-    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
+    pub fn validation_strategy(&self) -> ::std::option::Option<& crate::types::ValidationStrategy> {
         self.validation_strategy.as_ref()
     }
     /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
-    pub fn folder_arns(&self) -> &[::std::string::String] {
-        self.folder_arns.as_deref().unwrap_or_default()
+    pub fn folder_arns(&self) -> & [::std::string::String] {
+        self.folder_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAnalysisInput {
@@ -101,13 +104,13 @@ pub struct CreateAnalysisInputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<crate::types::Parameters>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     pub(crate) source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) definition: ::std::option::Option<crate::types::AnalysisDefinition>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
-    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
@@ -118,8 +121,7 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +135,7 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
     }
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +149,7 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +162,7 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
@@ -177,19 +176,18 @@ impl CreateAnalysisInputBuilder {
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
@@ -201,8 +199,7 @@ impl CreateAnalysisInputBuilder {
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
-        self.source_entity = input;
-        self
+        self.source_entity = input; self
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
@@ -216,8 +213,7 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_arn = input;
-        self
+        self.theme_arn = input; self
     }
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,17 +226,16 @@ impl CreateAnalysisInputBuilder {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The definition of an analysis.</p>
@@ -254,8 +249,7 @@ impl CreateAnalysisInputBuilder {
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::AnalysisDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -270,8 +264,7 @@ impl CreateAnalysisInputBuilder {
     }
     /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
     pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
-        self.validation_strategy = input;
-        self
+        self.validation_strategy = input; self
     }
     /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
@@ -284,35 +277,46 @@ impl CreateAnalysisInputBuilder {
     /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_arns.unwrap_or_default();
-        v.push(input.into());
-        self.folder_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.folder_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
-    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.folder_arns = input;
-        self
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.folder_arns = input; self
     }
     /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
-    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.folder_arns
     }
     /// Consumes the builder and constructs a [`CreateAnalysisInput`](crate::operation::create_analysis::CreateAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_analysis::CreateAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_analysis::CreateAnalysisInput {
-            aws_account_id: self.aws_account_id,
-            analysis_id: self.analysis_id,
-            name: self.name,
-            parameters: self.parameters,
-            permissions: self.permissions,
-            source_entity: self.source_entity,
-            theme_arn: self.theme_arn,
-            tags: self.tags,
-            definition: self.definition,
-            validation_strategy: self.validation_strategy,
-            folder_arns: self.folder_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_analysis::CreateAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_analysis::CreateAnalysisInput {
+                aws_account_id: self.aws_account_id
+                ,
+                analysis_id: self.analysis_id
+                ,
+                name: self.name
+                ,
+                parameters: self.parameters
+                ,
+                permissions: self.permissions
+                ,
+                source_entity: self.source_entity
+                ,
+                theme_arn: self.theme_arn
+                ,
+                tags: self.tags
+                ,
+                definition: self.definition
+                ,
+                validation_strategy: self.validation_strategy
+                ,
+                folder_arns: self.folder_arns
+                ,
+            }
+        )
     }
 }
+

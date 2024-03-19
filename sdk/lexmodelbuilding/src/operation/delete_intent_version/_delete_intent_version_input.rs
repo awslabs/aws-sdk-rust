@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIntentVersionInput {
+pub struct DeleteIntentVersionInput  {
     /// <p>The name of the intent.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIntentVersionInput {
+impl  DeleteIntentVersionInput  {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteIntentVersionInputBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the intent.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteIntentVersionInputBuilder {
     }
     /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     /// Consumes the builder and constructs a [`DeleteIntentVersionInput`](crate::operation::delete_intent_version::DeleteIntentVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_intent_version::DeleteIntentVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_intent_version::DeleteIntentVersionInput {
-            name: self.name,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_intent_version::DeleteIntentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_intent_version::DeleteIntentVersionInput {
+                name: self.name
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

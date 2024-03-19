@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchRasterDataCollectionOutput {
+pub struct SearchRasterDataCollectionOutput  {
     /// <p>Approximate number of results in the response.</p>
     pub approximate_result_count: i32,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ItemSource>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::ItemSource>>,
     _request_id: Option<String>,
 }
-impl SearchRasterDataCollectionOutput {
+impl  SearchRasterDataCollectionOutput  {
     /// <p>Approximate number of results in the response.</p>
     pub fn approximate_result_count(&self) -> i32 {
         self.approximate_result_count
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::ItemSource] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::ItemSource] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for SearchRasterDataCollectionOutput {
+impl  ::std::fmt::Debug for SearchRasterDataCollectionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchRasterDataCollectionOutput");
         formatter.field("approximate_result_count", &self.approximate_result_count);
@@ -38,10 +39,10 @@ impl ::std::fmt::Debug for SearchRasterDataCollectionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchRasterDataCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchRasterDataCollectionOutput {
     /// Creates a new builder-style object to manufacture [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput).
     pub fn builder() -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder {
@@ -55,7 +56,7 @@ impl SearchRasterDataCollectionOutput {
 pub struct SearchRasterDataCollectionOutputBuilder {
     pub(crate) approximate_result_count: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ItemSource>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ItemSource>>,
     _request_id: Option<String>,
 }
 impl SearchRasterDataCollectionOutputBuilder {
@@ -67,8 +68,7 @@ impl SearchRasterDataCollectionOutputBuilder {
     }
     /// <p>Approximate number of results in the response.</p>
     pub fn set_approximate_result_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.approximate_result_count = input;
-        self
+        self.approximate_result_count = input; self
     }
     /// <p>Approximate number of results in the response.</p>
     pub fn get_approximate_result_count(&self) -> &::std::option::Option<i32> {
@@ -81,8 +81,7 @@ impl SearchRasterDataCollectionOutputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,48 +94,45 @@ impl SearchRasterDataCollectionOutputBuilder {
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
     pub fn items(mut self, input: crate::types::ItemSource) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ItemSource>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ItemSource>>) -> Self {
+        self.items = input; self
     }
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemSource>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ItemSource>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`approximate_result_count`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder::approximate_result_count)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
-            approximate_result_count: self.approximate_result_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "approximate_result_count",
-                    "approximate_result_count was not specified but it is required when building SearchRasterDataCollectionOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            items: self.items,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
+                approximate_result_count: self.approximate_result_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("approximate_result_count", "approximate_result_count was not specified but it is required when building SearchRasterDataCollectionOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                items: self.items
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchRasterDataCollectionOutputBuilder {
@@ -149,3 +145,4 @@ impl ::std::fmt::Debug for SearchRasterDataCollectionOutputBuilder {
         formatter.finish()
     }
 }
+

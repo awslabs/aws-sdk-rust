@@ -3,7 +3,7 @@
 /// <p>Provides information about a replication instance version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EngineVersion {
+pub struct EngineVersion  {
     /// <p>The version number of the replication instance.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the replication instance version. Valid values are <code>DEPRECATED</code>, <code>DEFAULT_VERSION</code>, and <code>ACTIVE</code>.</p>
@@ -19,42 +19,43 @@ pub struct EngineVersion {
     /// <p>The date when the replication instance will have a version upgrade forced.</p>
     pub force_upgrade_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of valid replication instance versions that you can upgrade to.</p>
-    pub available_upgrades: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub available_upgrades: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EngineVersion {
+impl  EngineVersion  {
     /// <p>The version number of the replication instance.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The lifecycle status of the replication instance version. Valid values are <code>DEPRECATED</code>, <code>DEFAULT_VERSION</code>, and <code>ACTIVE</code>.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& str> {
         self.lifecycle.as_deref()
     }
     /// <p>The release status of the replication instance version.</p>
-    pub fn release_status(&self) -> ::std::option::Option<&crate::types::ReleaseStatusValues> {
+    pub fn release_status(&self) -> ::std::option::Option<& crate::types::ReleaseStatusValues> {
         self.release_status.as_ref()
     }
     /// <p>The date when the replication instance version became publicly available.</p>
-    pub fn launch_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn launch_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.launch_date.as_ref()
     }
     /// <p>The date when the replication instance will be automatically upgraded. This setting only applies if the <code>auto-minor-version</code> setting is enabled.</p>
-    pub fn auto_upgrade_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn auto_upgrade_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.auto_upgrade_date.as_ref()
     }
     /// <p>The date when the replication instance version will be deprecated and can no longer be requested.</p>
-    pub fn deprecation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deprecation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
     /// <p>The date when the replication instance will have a version upgrade forced.</p>
-    pub fn force_upgrade_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn force_upgrade_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.force_upgrade_date.as_ref()
     }
     /// <p>The list of valid replication instance versions that you can upgrade to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_upgrades.is_none()`.
-    pub fn available_upgrades(&self) -> &[::std::string::String] {
-        self.available_upgrades.as_deref().unwrap_or_default()
+    pub fn available_upgrades(&self) -> & [::std::string::String] {
+        self.available_upgrades.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EngineVersion {
@@ -75,7 +76,7 @@ pub struct EngineVersionBuilder {
     pub(crate) auto_upgrade_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) force_upgrade_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) available_upgrades: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) available_upgrades: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EngineVersionBuilder {
     /// <p>The version number of the replication instance.</p>
@@ -85,8 +86,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The version number of the replication instance.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the replication instance.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The lifecycle status of the replication instance version. Valid values are <code>DEPRECATED</code>, <code>DEFAULT_VERSION</code>, and <code>ACTIVE</code>.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The lifecycle status of the replication instance version. Valid values are <code>DEPRECATED</code>, <code>DEFAULT_VERSION</code>, and <code>ACTIVE</code>.</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The release status of the replication instance version.</p>
     pub fn set_release_status(mut self, input: ::std::option::Option<crate::types::ReleaseStatusValues>) -> Self {
-        self.release_status = input;
-        self
+        self.release_status = input; self
     }
     /// <p>The release status of the replication instance version.</p>
     pub fn get_release_status(&self) -> &::std::option::Option<crate::types::ReleaseStatusValues> {
@@ -127,8 +125,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The date when the replication instance version became publicly available.</p>
     pub fn set_launch_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.launch_date = input;
-        self
+        self.launch_date = input; self
     }
     /// <p>The date when the replication instance version became publicly available.</p>
     pub fn get_launch_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +138,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The date when the replication instance will be automatically upgraded. This setting only applies if the <code>auto-minor-version</code> setting is enabled.</p>
     pub fn set_auto_upgrade_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.auto_upgrade_date = input;
-        self
+        self.auto_upgrade_date = input; self
     }
     /// <p>The date when the replication instance will be automatically upgraded. This setting only applies if the <code>auto-minor-version</code> setting is enabled.</p>
     pub fn get_auto_upgrade_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +151,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The date when the replication instance version will be deprecated and can no longer be requested.</p>
     pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deprecation_date = input;
-        self
+        self.deprecation_date = input; self
     }
     /// <p>The date when the replication instance version will be deprecated and can no longer be requested.</p>
     pub fn get_deprecation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +164,7 @@ impl EngineVersionBuilder {
     }
     /// <p>The date when the replication instance will have a version upgrade forced.</p>
     pub fn set_force_upgrade_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.force_upgrade_date = input;
-        self
+        self.force_upgrade_date = input; self
     }
     /// <p>The date when the replication instance will have a version upgrade forced.</p>
     pub fn get_force_upgrade_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,30 +177,38 @@ impl EngineVersionBuilder {
     /// <p>The list of valid replication instance versions that you can upgrade to.</p>
     pub fn available_upgrades(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.available_upgrades.unwrap_or_default();
-        v.push(input.into());
-        self.available_upgrades = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.available_upgrades = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of valid replication instance versions that you can upgrade to.</p>
-    pub fn set_available_upgrades(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.available_upgrades = input;
-        self
+    pub fn set_available_upgrades(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.available_upgrades = input; self
     }
     /// <p>The list of valid replication instance versions that you can upgrade to.</p>
-    pub fn get_available_upgrades(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_available_upgrades(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.available_upgrades
     }
     /// Consumes the builder and constructs a [`EngineVersion`](crate::types::EngineVersion).
     pub fn build(self) -> crate::types::EngineVersion {
         crate::types::EngineVersion {
-            version: self.version,
-            lifecycle: self.lifecycle,
-            release_status: self.release_status,
-            launch_date: self.launch_date,
-            auto_upgrade_date: self.auto_upgrade_date,
-            deprecation_date: self.deprecation_date,
-            force_upgrade_date: self.force_upgrade_date,
-            available_upgrades: self.available_upgrades,
+            version: self.version
+            ,
+            lifecycle: self.lifecycle
+            ,
+            release_status: self.release_status
+            ,
+            launch_date: self.launch_date
+            ,
+            auto_upgrade_date: self.auto_upgrade_date
+            ,
+            deprecation_date: self.deprecation_date
+            ,
+            force_upgrade_date: self.force_upgrade_date
+            ,
+            available_upgrades: self.available_upgrades
+            ,
         }
     }
 }
+

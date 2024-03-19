@@ -7,7 +7,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotProvisioningSpecification {
+pub struct SpotProvisioningSpecification  {
     /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub timeout_duration_minutes: ::std::option::Option<i32>,
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
@@ -21,13 +21,13 @@ pub struct SpotProvisioningSpecification {
     /// </note>
     pub allocation_strategy: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
 }
-impl SpotProvisioningSpecification {
+impl  SpotProvisioningSpecification  {
     /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub fn timeout_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_duration_minutes
     }
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
-    pub fn timeout_action(&self) -> ::std::option::Option<&crate::types::SpotProvisioningTimeoutAction> {
+    pub fn timeout_action(&self) -> ::std::option::Option<& crate::types::SpotProvisioningTimeoutAction> {
         self.timeout_action.as_ref()
     }
     /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates.</p><note>
@@ -39,7 +39,7 @@ impl SpotProvisioningSpecification {
     /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
-    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::SpotProvisioningAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<& crate::types::SpotProvisioningAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl SpotProvisioningSpecificationBuilder {
     }
     /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub fn set_timeout_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_duration_minutes = input;
-        self
+        self.timeout_duration_minutes = input; self
     }
     /// <p>The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     pub fn get_timeout_duration_minutes(&self) -> &::std::option::Option<i32> {
@@ -83,8 +82,7 @@ impl SpotProvisioningSpecificationBuilder {
     }
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
     pub fn set_timeout_action(mut self, input: ::std::option::Option<crate::types::SpotProvisioningTimeoutAction>) -> Self {
-        self.timeout_action = input;
-        self
+        self.timeout_action = input; self
     }
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
     pub fn get_timeout_action(&self) -> &::std::option::Option<crate::types::SpotProvisioningTimeoutAction> {
@@ -101,8 +99,7 @@ impl SpotProvisioningSpecificationBuilder {
     /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022.</p>
     /// </note>
     pub fn set_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.block_duration_minutes = input;
-        self
+        self.block_duration_minutes = input; self
     }
     /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates.</p><note>
     /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022.</p>
@@ -121,8 +118,7 @@ impl SpotProvisioningSpecificationBuilder {
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>) -> Self {
-        self.allocation_strategy = input;
-        self
+        self.allocation_strategy = input; self
     }
     /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
@@ -133,10 +129,15 @@ impl SpotProvisioningSpecificationBuilder {
     /// Consumes the builder and constructs a [`SpotProvisioningSpecification`](crate::types::SpotProvisioningSpecification).
     pub fn build(self) -> crate::types::SpotProvisioningSpecification {
         crate::types::SpotProvisioningSpecification {
-            timeout_duration_minutes: self.timeout_duration_minutes,
-            timeout_action: self.timeout_action,
-            block_duration_minutes: self.block_duration_minutes,
-            allocation_strategy: self.allocation_strategy,
+            timeout_duration_minutes: self.timeout_duration_minutes
+            ,
+            timeout_action: self.timeout_action
+            ,
+            block_duration_minutes: self.block_duration_minutes
+            ,
+            allocation_strategy: self.allocation_strategy
+            ,
         }
     }
 }
+

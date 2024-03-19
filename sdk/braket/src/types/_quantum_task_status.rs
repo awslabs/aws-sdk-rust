@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let quantumtaskstatus = unimplemented!();
 /// match quantumtaskstatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `quantumtaskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QuantumTaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum QuantumTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -62,76 +60,77 @@ pub enum QuantumTaskStatus {
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for QuantumTaskStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => QuantumTaskStatus::Cancelled,
-            "CANCELLING" => QuantumTaskStatus::Cancelling,
-            "COMPLETED" => QuantumTaskStatus::Completed,
-            "CREATED" => QuantumTaskStatus::Created,
-            "FAILED" => QuantumTaskStatus::Failed,
-            "QUEUED" => QuantumTaskStatus::Queued,
-            "RUNNING" => QuantumTaskStatus::Running,
-            other => QuantumTaskStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CANCELLED" => QuantumTaskStatus::Cancelled,
+"CANCELLING" => QuantumTaskStatus::Cancelling,
+"COMPLETED" => QuantumTaskStatus::Completed,
+"CREATED" => QuantumTaskStatus::Created,
+"FAILED" => QuantumTaskStatus::Failed,
+"QUEUED" => QuantumTaskStatus::Queued,
+"RUNNING" => QuantumTaskStatus::Running,
+other => QuantumTaskStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for QuantumTaskStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(QuantumTaskStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(QuantumTaskStatus::from(s))
+                    }
+                }
 impl QuantumTaskStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QuantumTaskStatus::Cancelled => "CANCELLED",
-            QuantumTaskStatus::Cancelling => "CANCELLING",
-            QuantumTaskStatus::Completed => "COMPLETED",
-            QuantumTaskStatus::Created => "CREATED",
-            QuantumTaskStatus::Failed => "FAILED",
-            QuantumTaskStatus::Queued => "QUEUED",
-            QuantumTaskStatus::Running => "RUNNING",
-            QuantumTaskStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED", "CANCELLING", "COMPLETED", "CREATED", "FAILED", "QUEUED", "RUNNING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QuantumTaskStatus::Cancelled => "CANCELLED",
+    QuantumTaskStatus::Cancelling => "CANCELLING",
+    QuantumTaskStatus::Completed => "COMPLETED",
+    QuantumTaskStatus::Created => "CREATED",
+    QuantumTaskStatus::Failed => "FAILED",
+    QuantumTaskStatus::Queued => "QUEUED",
+    QuantumTaskStatus::Running => "RUNNING",
+    QuantumTaskStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "COMPLETED", "CREATED", "FAILED", "QUEUED", "RUNNING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for QuantumTaskStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl QuantumTaskStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for QuantumTaskStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            QuantumTaskStatus::Cancelled => write!(f, "CANCELLED"),
-            QuantumTaskStatus::Cancelling => write!(f, "CANCELLING"),
-            QuantumTaskStatus::Completed => write!(f, "COMPLETED"),
-            QuantumTaskStatus::Created => write!(f, "CREATED"),
-            QuantumTaskStatus::Failed => write!(f, "FAILED"),
-            QuantumTaskStatus::Queued => write!(f, "QUEUED"),
-            QuantumTaskStatus::Running => write!(f, "RUNNING"),
-            QuantumTaskStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                QuantumTaskStatus::Cancelled => write!(f, "CANCELLED"),
+QuantumTaskStatus::Cancelling => write!(f, "CANCELLING"),
+QuantumTaskStatus::Completed => write!(f, "COMPLETED"),
+QuantumTaskStatus::Created => write!(f, "CREATED"),
+QuantumTaskStatus::Failed => write!(f, "FAILED"),
+QuantumTaskStatus::Queued => write!(f, "QUEUED"),
+QuantumTaskStatus::Running => write!(f, "RUNNING"),
+QuantumTaskStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

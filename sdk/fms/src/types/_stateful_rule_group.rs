@@ -3,7 +3,7 @@
 /// <p>Network Firewall stateful rule group, used in a <code>NetworkFirewallPolicyDescription</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatefulRuleGroup {
+pub struct StatefulRuleGroup  {
     /// <p>The name of the rule group.</p>
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the rule group.</p>
@@ -15,13 +15,13 @@ pub struct StatefulRuleGroup {
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub r#override: ::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>,
 }
-impl StatefulRuleGroup {
+impl  StatefulRuleGroup  {
     /// <p>The name of the rule group.</p>
-    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_name(&self) -> ::std::option::Option<& str> {
         self.rule_group_name.as_deref()
     }
     /// <p>The resource ID of the rule group.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
@@ -31,7 +31,7 @@ impl StatefulRuleGroup {
         self.priority
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn r#override(&self) -> ::std::option::Option<&crate::types::NetworkFirewallStatefulRuleGroupOverride> {
+    pub fn r#override(&self) -> ::std::option::Option<& crate::types::NetworkFirewallStatefulRuleGroupOverride> {
         self.r#override.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl StatefulRuleGroupBuilder {
     }
     /// <p>The name of the rule group.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_name = input;
-        self
+        self.rule_group_name = input; self
     }
     /// <p>The name of the rule group.</p>
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl StatefulRuleGroupBuilder {
     }
     /// <p>The resource ID of the rule group.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID of the rule group.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl StatefulRuleGroupBuilder {
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy. For information about</p>
     /// <p>You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single Network Firewall firewall policy. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy. For information about</p>
@@ -107,8 +104,7 @@ impl StatefulRuleGroupBuilder {
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride> {
@@ -117,10 +113,15 @@ impl StatefulRuleGroupBuilder {
     /// Consumes the builder and constructs a [`StatefulRuleGroup`](crate::types::StatefulRuleGroup).
     pub fn build(self) -> crate::types::StatefulRuleGroup {
         crate::types::StatefulRuleGroup {
-            rule_group_name: self.rule_group_name,
-            resource_id: self.resource_id,
-            priority: self.priority,
-            r#override: self.r#override,
+            rule_group_name: self.rule_group_name
+            ,
+            resource_id: self.resource_id
+            ,
+            priority: self.priority
+            ,
+            r#override: self.r#override
+            ,
         }
     }
 }
+

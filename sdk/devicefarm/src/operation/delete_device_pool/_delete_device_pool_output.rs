@@ -3,14 +3,14 @@
 /// <p>Represents the result of a delete device pool request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDevicePoolOutput {
+pub struct DeleteDevicePoolOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteDevicePoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDevicePoolOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDevicePoolOutput`](crate::operation::delete_device_pool::DeleteDevicePoolOutput).
     pub fn builder() -> crate::operation::delete_device_pool::builders::DeleteDevicePoolOutputBuilder {
@@ -26,14 +26,14 @@ pub struct DeleteDevicePoolOutputBuilder {
 }
 impl DeleteDevicePoolOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDevicePoolOutput`](crate::operation::delete_device_pool::DeleteDevicePoolOutput).
     pub fn build(self) -> crate::operation::delete_device_pool::DeleteDevicePoolOutput {
         crate::operation::delete_device_pool::DeleteDevicePoolOutput {
@@ -41,3 +41,4 @@ impl DeleteDevicePoolOutputBuilder {
         }
     }
 }
+

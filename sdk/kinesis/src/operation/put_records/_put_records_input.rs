@@ -3,27 +3,28 @@
 /// <p>A <code>PutRecords</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRecordsInput {
+pub struct PutRecordsInput  {
     /// <p>The records associated with the request.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsRequestEntry>>,
     /// <p>The stream name associated with the request.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutRecordsInput {
+impl  PutRecordsInput  {
     /// <p>The records associated with the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[crate::types::PutRecordsRequestEntry] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [crate::types::PutRecordsRequestEntry] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The stream name associated with the request.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl PutRecordsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordsInputBuilder {
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsRequestEntry>>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,17 +51,16 @@ impl PutRecordsInputBuilder {
     /// <p>The records associated with the request.</p>
     pub fn records(mut self, input: crate::types::PutRecordsRequestEntry) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The records associated with the request.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsRequestEntry>>) -> Self {
+        self.records = input; self
     }
     /// <p>The records associated with the request.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsRequestEntry>> {
         &self.records
     }
     /// <p>The stream name associated with the request.</p>
@@ -70,8 +70,7 @@ impl PutRecordsInputBuilder {
     }
     /// <p>The stream name associated with the request.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The stream name associated with the request.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl PutRecordsInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,10 +91,16 @@ impl PutRecordsInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_records::PutRecordsInput {
-            records: self.records,
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_records::PutRecordsInput {
+                records: self.records
+                ,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDashboardInput {
+pub struct DescribeDashboardInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -12,13 +12,13 @@ pub struct DescribeDashboardInput {
     /// <p>The alias name.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDashboardInput {
+impl  DescribeDashboardInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
@@ -26,7 +26,7 @@ impl DescribeDashboardInput {
         self.version_number
     }
     /// <p>The alias name.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeDashboardInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeDashboardInputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The ID for the dashboard.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DescribeDashboardInputBuilder {
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -98,22 +95,26 @@ impl DescribeDashboardInputBuilder {
     }
     /// <p>The alias name.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The alias name.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_name
     }
     /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_dashboard::DescribeDashboardInput {
-            aws_account_id: self.aws_account_id,
-            dashboard_id: self.dashboard_id,
-            version_number: self.version_number,
-            alias_name: self.alias_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dashboard::DescribeDashboardInput {
+                aws_account_id: self.aws_account_id
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                version_number: self.version_number
+                ,
+                alias_name: self.alias_name
+                ,
+            }
+        )
     }
 }
+

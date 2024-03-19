@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetImages`](crate::operation::get_images::builders::GetImagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_images::builders::GetImagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::set_stream_name):<br>required: **false**<br><p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p><br>
     ///   - [`stream_arn(impl Into<String>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::set_stream_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p><br>
     ///   - [`image_selector_type(ImageSelectorType)`](crate::operation::get_images::builders::GetImagesFluentBuilder::image_selector_type) / [`set_image_selector_type(Option<ImageSelectorType>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::set_image_selector_type):<br>required: **true**<br><p>The origin of the Server or Producer timestamps to use to generate the images.</p><br>
@@ -16,11 +16,12 @@ impl super::Client {
     ///   - [`height_pixels(i32)`](crate::operation::get_images::builders::GetImagesFluentBuilder::height_pixels) / [`set_height_pixels(Option<i32>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::set_height_pixels):<br>required: **false**<br><p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p><br>
     ///   - [`max_results(i64)`](crate::operation::get_images::builders::GetImagesFluentBuilder::max_results) / [`set_max_results(Option<i64>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of images to be returned by the API.</p><note>  <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p> </note><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_images::builders::GetImagesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p><br>
-    /// - On success, responds with [`GetImagesOutput`](crate::operation::get_images::GetImagesOutput) with field(s):
+                            /// - On success, responds with [`GetImagesOutput`](crate::operation::get_images::GetImagesOutput) with field(s):
     ///   - [`images(Option<Vec::<Image>>)`](crate::operation::get_images::GetImagesOutput::images): <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_images::GetImagesOutput::next_token): <p>The encrypted token that was used in the request to get more images.</p>
-    /// - On failure, responds with [`SdkError<GetImagesError>`](crate::operation::get_images::GetImagesError)
+                            /// - On failure, responds with [`SdkError<GetImagesError>`](crate::operation::get_images::GetImagesError)
     pub fn get_images(&self) -> crate::operation::get_images::builders::GetImagesFluentBuilder {
-        crate::operation::get_images::builders::GetImagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_images::builders::GetImagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

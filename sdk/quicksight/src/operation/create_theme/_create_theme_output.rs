@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateThemeOutput {
+pub struct CreateThemeOutput  {
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
@@ -17,21 +17,21 @@ pub struct CreateThemeOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateThemeOutput {
+impl  CreateThemeOutput  {
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
-    pub fn version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn version_arn(&self) -> ::std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The ID of the theme.</p>
-    pub fn theme_id(&self) -> ::std::option::Option<&str> {
+    pub fn theme_id(&self) -> ::std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The theme creation status.</p>
-    pub fn creation_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn creation_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -39,15 +39,15 @@ impl CreateThemeOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateThemeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateThemeOutput {
     /// Creates a new builder-style object to manufacture [`CreateThemeOutput`](crate::operation::create_theme::CreateThemeOutput).
     pub fn builder() -> crate::operation::create_theme::builders::CreateThemeOutputBuilder {
@@ -75,8 +75,7 @@ impl CreateThemeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateThemeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
     pub fn set_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_arn = input;
-        self
+        self.version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
     pub fn get_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl CreateThemeOutputBuilder {
     }
     /// <p>The ID of the theme.</p>
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>The ID of the theme.</p>
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl CreateThemeOutputBuilder {
     }
     /// <p>The theme creation status.</p>
     pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.creation_status = input;
-        self
+        self.creation_status = input; self
     }
     /// <p>The theme creation status.</p>
     pub fn get_creation_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -131,8 +127,7 @@ impl CreateThemeOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -145,32 +140,39 @@ impl CreateThemeOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateThemeOutput`](crate::operation::create_theme::CreateThemeOutput).
     pub fn build(self) -> crate::operation::create_theme::CreateThemeOutput {
         crate::operation::create_theme::CreateThemeOutput {
-            arn: self.arn,
-            version_arn: self.version_arn,
-            theme_id: self.theme_id,
-            creation_status: self.creation_status,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            arn: self.arn
+            ,
+            version_arn: self.version_arn
+            ,
+            theme_id: self.theme_id
+            ,
+            creation_status: self.creation_status
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

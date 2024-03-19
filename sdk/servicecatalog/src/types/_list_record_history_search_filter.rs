@@ -3,7 +3,7 @@
 /// <p>The search filter to use when listing history records.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecordHistorySearchFilter {
+pub struct ListRecordHistorySearchFilter  {
     /// <p>The filter key.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct ListRecordHistorySearchFilter {
     /// <p>The filter value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ListRecordHistorySearchFilter {
+impl  ListRecordHistorySearchFilter  {
     /// <p>The filter key.</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl ListRecordHistorySearchFilter {
     /// <li>
     /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The filter value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl ListRecordHistorySearchFilterBuilder {
     /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The filter key.</p>
     /// <ul>
@@ -85,8 +84,7 @@ impl ListRecordHistorySearchFilterBuilder {
     }
     /// <p>The filter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The filter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,11 @@ impl ListRecordHistorySearchFilterBuilder {
     /// Consumes the builder and constructs a [`ListRecordHistorySearchFilter`](crate::types::ListRecordHistorySearchFilter).
     pub fn build(self) -> crate::types::ListRecordHistorySearchFilter {
         crate::types::ListRecordHistorySearchFilter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

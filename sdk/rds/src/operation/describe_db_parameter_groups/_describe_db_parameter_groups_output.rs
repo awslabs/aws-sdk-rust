@@ -3,30 +3,31 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBParameterGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbParameterGroupsOutput {
+pub struct DescribeDbParameterGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    pub db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>,
+    pub db_parameter_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroup>>,
     _request_id: Option<String>,
 }
-impl DescribeDbParameterGroupsOutput {
+impl  DescribeDbParameterGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_parameter_groups.is_none()`.
-    pub fn db_parameter_groups(&self) -> &[crate::types::DbParameterGroup] {
-        self.db_parameter_groups.as_deref().unwrap_or_default()
+    pub fn db_parameter_groups(&self) -> & [crate::types::DbParameterGroup] {
+        self.db_parameter_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDbParameterGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDbParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput).
     pub fn builder() -> crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeDbParameterGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>,
+    pub(crate) db_parameter_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbParameterGroupsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeDbParameterGroupsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeDbParameterGroupsOutputBuilder {
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
     pub fn db_parameter_groups(mut self, input: crate::types::DbParameterGroup) -> Self {
         let mut v = self.db_parameter_groups.unwrap_or_default();
-        v.push(input);
-        self.db_parameter_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_parameter_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    pub fn set_db_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>) -> Self {
-        self.db_parameter_groups = input;
-        self
+    pub fn set_db_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroup>>) -> Self {
+        self.db_parameter_groups = input; self
     }
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    pub fn get_db_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>> {
+    pub fn get_db_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroup>> {
         &self.db_parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDbParameterGroupsOutput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput).
     pub fn build(self) -> crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput {
         crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput {
-            marker: self.marker,
-            db_parameter_groups: self.db_parameter_groups,
+            marker: self.marker
+            ,
+            db_parameter_groups: self.db_parameter_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

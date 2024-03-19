@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateCustomDomainInput {
+pub struct DisassociateCustomDomainInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain name that you want to disassociate from the App Runner service.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateCustomDomainInput {
+impl  DisassociateCustomDomainInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
     /// <p>The domain name that you want to disassociate from the App Runner service.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateCustomDomainInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DisassociateCustomDomainInputBuilder {
     }
     /// <p>The domain name that you want to disassociate from the App Runner service.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name that you want to disassociate from the App Runner service.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`DisassociateCustomDomainInput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput {
-            service_arn: self.service_arn,
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput {
+                service_arn: self.service_arn
+                ,
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

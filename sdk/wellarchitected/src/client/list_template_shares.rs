@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplateShares`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`template_arn(impl Into<String>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::set_template_arn):<br>required: **true**<br><p>The review template ARN.</p><br>
     ///   - [`shared_with_prefix(impl Into<String>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::set_shared_with_prefix):<br>required: **false**<br><p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`status(ShareStatus)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
-    /// - On success, responds with [`ListTemplateSharesOutput`](crate::operation::list_template_shares::ListTemplateSharesOutput) with field(s):
+                            /// - On success, responds with [`ListTemplateSharesOutput`](crate::operation::list_template_shares::ListTemplateSharesOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::template_arn): <p>The review template ARN.</p>
     ///   - [`template_share_summaries(Option<Vec::<TemplateShareSummary>>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::template_share_summaries): <p>A review template share summary return object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_shares::ListTemplateSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListTemplateSharesError>`](crate::operation::list_template_shares::ListTemplateSharesError)
+                            /// - On failure, responds with [`SdkError<ListTemplateSharesError>`](crate::operation::list_template_shares::ListTemplateSharesError)
     pub fn list_template_shares(&self) -> crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder {
-        crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_template_shares::builders::ListTemplateSharesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

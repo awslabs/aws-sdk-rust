@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVocabularyFilterInput {
+pub struct GetVocabularyFilterInput  {
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }
-impl GetVocabularyFilterInput {
+impl  GetVocabularyFilterInput  {
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
-    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetVocabularyFilterInputBuilder {
     }
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+        self.vocabulary_filter_name = input; self
     }
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
     pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_filter_name
     }
     /// Consumes the builder and constructs a [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_vocabulary_filter::GetVocabularyFilterInput {
-            vocabulary_filter_name: self.vocabulary_filter_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_vocabulary_filter::GetVocabularyFilterInput {
+                vocabulary_filter_name: self.vocabulary_filter_name
+                ,
+            }
+        )
     }
 }
+

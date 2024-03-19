@@ -3,7 +3,7 @@
 /// Chunk
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Chunk {
+pub struct Chunk  {
     /// Chunk index
     pub index: i64,
     /// Chunk length
@@ -15,7 +15,7 @@ pub struct Chunk {
     /// Chunk token
     pub chunk_token: ::std::string::String,
 }
-impl Chunk {
+impl  Chunk  {
     /// Chunk index
     pub fn index(&self) -> i64 {
         self.index
@@ -25,18 +25,16 @@ impl Chunk {
         self.length
     }
     /// Chunk checksum
-    pub fn checksum(&self) -> &str {
-        use std::ops::Deref;
-        self.checksum.deref()
+    pub fn checksum(&self) -> & str {
+        use std::ops::Deref; self.checksum.deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(&self) -> &crate::types::DataChecksumAlgorithm {
+    pub fn checksum_algorithm(&self) -> & crate::types::DataChecksumAlgorithm {
         &self.checksum_algorithm
     }
     /// Chunk token
-    pub fn chunk_token(&self) -> &str {
-        use std::ops::Deref;
-        self.chunk_token.deref()
+    pub fn chunk_token(&self) -> & str {
+        use std::ops::Deref; self.chunk_token.deref()
     }
 }
 impl Chunk {
@@ -65,8 +63,7 @@ impl ChunkBuilder {
     }
     /// Chunk index
     pub fn set_index(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// Chunk index
     pub fn get_index(&self) -> &::std::option::Option<i64> {
@@ -80,8 +77,7 @@ impl ChunkBuilder {
     }
     /// Chunk length
     pub fn set_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// Chunk length
     pub fn get_length(&self) -> &::std::option::Option<i64> {
@@ -95,8 +91,7 @@ impl ChunkBuilder {
     }
     /// Chunk checksum
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// Chunk checksum
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl ChunkBuilder {
     }
     /// Checksum algorithm
     pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input;
-        self
+        self.checksum_algorithm = input; self
     }
     /// Checksum algorithm
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
@@ -125,8 +119,7 @@ impl ChunkBuilder {
     }
     /// Chunk token
     pub fn set_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chunk_token = input;
-        self
+        self.chunk_token = input; self
     }
     /// Chunk token
     pub fn get_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,27 +131,31 @@ impl ChunkBuilder {
     /// - [`checksum_algorithm`](crate::types::builders::ChunkBuilder::checksum_algorithm)
     /// - [`chunk_token`](crate::types::builders::ChunkBuilder::chunk_token)
     pub fn build(self) -> ::std::result::Result<crate::types::Chunk, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Chunk {
-            index: self.index.unwrap_or_default(),
-            length: self.length.unwrap_or_default(),
-            checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checksum",
-                    "checksum was not specified but it is required when building Chunk",
-                )
-            })?,
-            checksum_algorithm: self.checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checksum_algorithm",
-                    "checksum_algorithm was not specified but it is required when building Chunk",
-                )
-            })?,
-            chunk_token: self.chunk_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "chunk_token",
-                    "chunk_token was not specified but it is required when building Chunk",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Chunk {
+                index: self.index
+                    .unwrap_or_default()
+                ,
+                length: self.length
+                    .unwrap_or_default()
+                ,
+                checksum: self.checksum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checksum", "checksum was not specified but it is required when building Chunk")
+                    )?
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checksum_algorithm", "checksum_algorithm was not specified but it is required when building Chunk")
+                    )?
+                ,
+                chunk_token: self.chunk_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("chunk_token", "chunk_token was not specified but it is required when building Chunk")
+                    )?
+                ,
+            }
+        )
     }
 }
+

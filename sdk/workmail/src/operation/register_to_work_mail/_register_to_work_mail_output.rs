@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterToWorkMailOutput {
+pub struct RegisterToWorkMailOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for RegisterToWorkMailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterToWorkMailOutput {
     /// Creates a new builder-style object to manufacture [`RegisterToWorkMailOutput`](crate::operation::register_to_work_mail::RegisterToWorkMailOutput).
     pub fn builder() -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailOutputBuilder {
@@ -25,14 +25,14 @@ pub struct RegisterToWorkMailOutputBuilder {
 }
 impl RegisterToWorkMailOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterToWorkMailOutput`](crate::operation::register_to_work_mail::RegisterToWorkMailOutput).
     pub fn build(self) -> crate::operation::register_to_work_mail::RegisterToWorkMailOutput {
         crate::operation::register_to_work_mail::RegisterToWorkMailOutput {
@@ -40,3 +40,4 @@ impl RegisterToWorkMailOutputBuilder {
         }
     }
 }
+

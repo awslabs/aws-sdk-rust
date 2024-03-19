@@ -3,13 +3,13 @@
 /// <p>Identifies the objects that a rule applies to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails  {
     /// <p>The configuration for the filter.</p>
     pub predicate: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
+impl  AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails  {
     /// <p>The configuration for the filter.</p>
-    pub fn predicate(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails> {
+    pub fn predicate(&self) -> ::std::option::Option<& crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails> {
         self.predicate.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder {
         self
     }
     /// <p>The configuration for the filter.</p>
-    pub fn set_predicate(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
-    ) -> Self {
-        self.predicate = input;
-        self
+    pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>) -> Self {
+        self.predicate = input; self
     }
     /// <p>The configuration for the filter.</p>
     pub fn get_predicate(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails> {
@@ -46,6 +42,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails { predicate: self.predicate }
+        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
+            predicate: self.predicate
+            ,
+        }
     }
 }
+

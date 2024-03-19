@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeCacheSecurityGroupIngressInput {
+pub struct RevokeCacheSecurityGroupIngressInput  {
     /// <p>The name of the cache security group to revoke ingress from.</p>
     pub cache_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
@@ -11,17 +11,17 @@ pub struct RevokeCacheSecurityGroupIngressInput {
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
-impl RevokeCacheSecurityGroupIngressInput {
+impl  RevokeCacheSecurityGroupIngressInput  {
     /// <p>The name of the cache security group to revoke ingress from.</p>
-    pub fn cache_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_security_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_security_group_name.as_deref()
     }
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
-    pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_name(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
-    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl RevokeCacheSecurityGroupIngressInputBuilder {
     }
     /// <p>The name of the cache security group to revoke ingress from.</p>
     pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_security_group_name = input;
-        self
+        self.cache_security_group_name = input; self
     }
     /// <p>The name of the cache security group to revoke ingress from.</p>
     pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl RevokeCacheSecurityGroupIngressInputBuilder {
     }
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
     pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_security_group_name = input;
-        self
+        self.ec2_security_group_name = input; self
     }
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
     pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,26 +77,24 @@ impl RevokeCacheSecurityGroupIngressInputBuilder {
     }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
     pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_security_group_owner_id = input;
-        self
+        self.ec2_security_group_owner_id = input; self
     }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
     pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`RevokeCacheSecurityGroupIngressInput`](crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressInput {
-                cache_security_group_name: self.cache_security_group_name,
-                ec2_security_group_name: self.ec2_security_group_name,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
-            },
+                cache_security_group_name: self.cache_security_group_name
+                ,
+                ec2_security_group_name: self.ec2_security_group_name
+                ,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id
+                ,
+            }
         )
     }
 }
+

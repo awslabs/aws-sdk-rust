@@ -3,7 +3,7 @@
 /// <p>An object representing failback related information of the Recovery Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryInstanceFailback {
+pub struct RecoveryInstanceFailback  {
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
     pub failback_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The Job ID of the last failback log for this Recovery Instance.</p>
@@ -25,29 +25,29 @@ pub struct RecoveryInstanceFailback {
     /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
     pub failback_launch_type: ::std::option::Option<crate::types::FailbackLaunchType>,
 }
-impl RecoveryInstanceFailback {
+impl  RecoveryInstanceFailback  {
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
-    pub fn failback_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn failback_client_id(&self) -> ::std::option::Option<& str> {
         self.failback_client_id.as_deref()
     }
     /// <p>The Job ID of the last failback log for this Recovery Instance.</p>
-    pub fn failback_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn failback_job_id(&self) -> ::std::option::Option<& str> {
         self.failback_job_id.as_deref()
     }
     /// <p>The date and time that the failback initiation started.</p>
-    pub fn failback_initiation_time(&self) -> ::std::option::Option<&str> {
+    pub fn failback_initiation_time(&self) -> ::std::option::Option<& str> {
         self.failback_initiation_time.as_deref()
     }
     /// <p>The state of the failback process that this Recovery Instance is in.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::FailbackState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::FailbackState> {
         self.state.as_ref()
     }
     /// <p>The date and time the agent on the Recovery Instance was last seen by the service.</p>
-    pub fn agent_last_seen_by_service_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn agent_last_seen_by_service_date_time(&self) -> ::std::option::Option<& str> {
         self.agent_last_seen_by_service_date_time.as_deref()
     }
     /// <p>The date and time that the failback client was last seen by the service.</p>
-    pub fn failback_client_last_seen_by_service_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn failback_client_last_seen_by_service_date_time(&self) -> ::std::option::Option<& str> {
         self.failback_client_last_seen_by_service_date_time.as_deref()
     }
     /// <p>Whether we are failing back to the original Source Server for this Recovery Instance.</p>
@@ -55,15 +55,15 @@ impl RecoveryInstanceFailback {
         self.failback_to_original_server
     }
     /// <p>The date and time of the first byte that was replicated from the Recovery Instance.</p>
-    pub fn first_byte_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn first_byte_date_time(&self) -> ::std::option::Option<& str> {
         self.first_byte_date_time.as_deref()
     }
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
-    pub fn elapsed_replication_duration(&self) -> ::std::option::Option<&str> {
+    pub fn elapsed_replication_duration(&self) -> ::std::option::Option<& str> {
         self.elapsed_replication_duration.as_deref()
     }
     /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
-    pub fn failback_launch_type(&self) -> ::std::option::Option<&crate::types::FailbackLaunchType> {
+    pub fn failback_launch_type(&self) -> ::std::option::Option<& crate::types::FailbackLaunchType> {
         self.failback_launch_type.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
     pub fn set_failback_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failback_client_id = input;
-        self
+        self.failback_client_id = input; self
     }
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
     pub fn get_failback_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The Job ID of the last failback log for this Recovery Instance.</p>
     pub fn set_failback_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failback_job_id = input;
-        self
+        self.failback_job_id = input; self
     }
     /// <p>The Job ID of the last failback log for this Recovery Instance.</p>
     pub fn get_failback_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The date and time that the failback initiation started.</p>
     pub fn set_failback_initiation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failback_initiation_time = input;
-        self
+        self.failback_initiation_time = input; self
     }
     /// <p>The date and time that the failback initiation started.</p>
     pub fn get_failback_initiation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The state of the failback process that this Recovery Instance is in.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::FailbackState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the failback process that this Recovery Instance is in.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::FailbackState> {
@@ -153,8 +149,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The date and time the agent on the Recovery Instance was last seen by the service.</p>
     pub fn set_agent_last_seen_by_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_last_seen_by_service_date_time = input;
-        self
+        self.agent_last_seen_by_service_date_time = input; self
     }
     /// <p>The date and time the agent on the Recovery Instance was last seen by the service.</p>
     pub fn get_agent_last_seen_by_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The date and time that the failback client was last seen by the service.</p>
     pub fn set_failback_client_last_seen_by_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failback_client_last_seen_by_service_date_time = input;
-        self
+        self.failback_client_last_seen_by_service_date_time = input; self
     }
     /// <p>The date and time that the failback client was last seen by the service.</p>
     pub fn get_failback_client_last_seen_by_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>Whether we are failing back to the original Source Server for this Recovery Instance.</p>
     pub fn set_failback_to_original_server(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.failback_to_original_server = input;
-        self
+        self.failback_to_original_server = input; self
     }
     /// <p>Whether we are failing back to the original Source Server for this Recovery Instance.</p>
     pub fn get_failback_to_original_server(&self) -> &::std::option::Option<bool> {
@@ -195,8 +188,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The date and time of the first byte that was replicated from the Recovery Instance.</p>
     pub fn set_first_byte_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_byte_date_time = input;
-        self
+        self.first_byte_date_time = input; self
     }
     /// <p>The date and time of the first byte that was replicated from the Recovery Instance.</p>
     pub fn get_first_byte_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
     pub fn set_elapsed_replication_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elapsed_replication_duration = input;
-        self
+        self.elapsed_replication_duration = input; self
     }
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
     pub fn get_elapsed_replication_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +214,7 @@ impl RecoveryInstanceFailbackBuilder {
     }
     /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
     pub fn set_failback_launch_type(mut self, input: ::std::option::Option<crate::types::FailbackLaunchType>) -> Self {
-        self.failback_launch_type = input;
-        self
+        self.failback_launch_type = input; self
     }
     /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
     pub fn get_failback_launch_type(&self) -> &::std::option::Option<crate::types::FailbackLaunchType> {
@@ -233,16 +223,27 @@ impl RecoveryInstanceFailbackBuilder {
     /// Consumes the builder and constructs a [`RecoveryInstanceFailback`](crate::types::RecoveryInstanceFailback).
     pub fn build(self) -> crate::types::RecoveryInstanceFailback {
         crate::types::RecoveryInstanceFailback {
-            failback_client_id: self.failback_client_id,
-            failback_job_id: self.failback_job_id,
-            failback_initiation_time: self.failback_initiation_time,
-            state: self.state,
-            agent_last_seen_by_service_date_time: self.agent_last_seen_by_service_date_time,
-            failback_client_last_seen_by_service_date_time: self.failback_client_last_seen_by_service_date_time,
-            failback_to_original_server: self.failback_to_original_server,
-            first_byte_date_time: self.first_byte_date_time,
-            elapsed_replication_duration: self.elapsed_replication_duration,
-            failback_launch_type: self.failback_launch_type,
+            failback_client_id: self.failback_client_id
+            ,
+            failback_job_id: self.failback_job_id
+            ,
+            failback_initiation_time: self.failback_initiation_time
+            ,
+            state: self.state
+            ,
+            agent_last_seen_by_service_date_time: self.agent_last_seen_by_service_date_time
+            ,
+            failback_client_last_seen_by_service_date_time: self.failback_client_last_seen_by_service_date_time
+            ,
+            failback_to_original_server: self.failback_to_original_server
+            ,
+            first_byte_date_time: self.first_byte_date_time
+            ,
+            elapsed_replication_duration: self.elapsed_replication_duration
+            ,
+            failback_launch_type: self.failback_launch_type
+            ,
         }
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndexFacesOutput {
+pub struct IndexFacesOutput  {
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.</p>
-    pub face_records: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>,
+    pub face_records: ::std::option::Option<::std::vec::Vec::<crate::types::FaceRecord>>,
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
     /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
     /// <ul>
@@ -18,15 +18,16 @@ pub struct IndexFacesOutput {
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    pub unindexed_faces: ::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>>,
+    pub unindexed_faces: ::std::option::Option<::std::vec::Vec::<crate::types::UnindexedFace>>,
     _request_id: Option<String>,
 }
-impl IndexFacesOutput {
+impl  IndexFacesOutput  {
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_records.is_none()`.
-    pub fn face_records(&self) -> &[crate::types::FaceRecord] {
-        self.face_records.as_deref().unwrap_or_default()
+    pub fn face_records(&self) -> & [crate::types::FaceRecord] {
+        self.face_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
     /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
@@ -37,25 +38,26 @@ impl IndexFacesOutput {
     /// <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p></li>
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>.</p>
-    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<& crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn face_model_version(&self) -> ::std::option::Option<& str> {
         self.face_model_version.as_deref()
     }
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unindexed_faces.is_none()`.
-    pub fn unindexed_faces(&self) -> &[crate::types::UnindexedFace] {
-        self.unindexed_faces.as_deref().unwrap_or_default()
+    pub fn unindexed_faces(&self) -> & [crate::types::UnindexedFace] {
+        self.unindexed_faces.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for IndexFacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl IndexFacesOutput {
     /// Creates a new builder-style object to manufacture [`IndexFacesOutput`](crate::operation::index_faces::IndexFacesOutput).
     pub fn builder() -> crate::operation::index_faces::builders::IndexFacesOutputBuilder {
@@ -67,10 +69,10 @@ impl IndexFacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexFacesOutputBuilder {
-    pub(crate) face_records: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>,
+    pub(crate) face_records: ::std::option::Option<::std::vec::Vec::<crate::types::FaceRecord>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,
-    pub(crate) unindexed_faces: ::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>>,
+    pub(crate) unindexed_faces: ::std::option::Option<::std::vec::Vec::<crate::types::UnindexedFace>>,
     _request_id: Option<String>,
 }
 impl IndexFacesOutputBuilder {
@@ -81,17 +83,16 @@ impl IndexFacesOutputBuilder {
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.</p>
     pub fn face_records(mut self, input: crate::types::FaceRecord) -> Self {
         let mut v = self.face_records.unwrap_or_default();
-        v.push(input);
-        self.face_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.face_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.</p>
-    pub fn set_face_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>) -> Self {
-        self.face_records = input;
-        self
+    pub fn set_face_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FaceRecord>>) -> Self {
+        self.face_records = input; self
     }
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.</p>
-    pub fn get_face_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>> {
+    pub fn get_face_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FaceRecord>> {
         &self.face_records
     }
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
@@ -117,8 +118,7 @@ impl IndexFacesOutputBuilder {
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>.</p>
     pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
-        self.orientation_correction = input;
-        self
+        self.orientation_correction = input; self
     }
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
     /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
@@ -139,8 +139,7 @@ impl IndexFacesOutputBuilder {
     }
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
     pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_model_version = input;
-        self
+        self.face_model_version = input; self
     }
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
     pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,36 +152,40 @@ impl IndexFacesOutputBuilder {
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
     pub fn unindexed_faces(mut self, input: crate::types::UnindexedFace) -> Self {
         let mut v = self.unindexed_faces.unwrap_or_default();
-        v.push(input);
-        self.unindexed_faces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unindexed_faces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    pub fn set_unindexed_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>>) -> Self {
-        self.unindexed_faces = input;
-        self
+    pub fn set_unindexed_faces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnindexedFace>>) -> Self {
+        self.unindexed_faces = input; self
     }
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    pub fn get_unindexed_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>> {
+    pub fn get_unindexed_faces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnindexedFace>> {
         &self.unindexed_faces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`IndexFacesOutput`](crate::operation::index_faces::IndexFacesOutput).
     pub fn build(self) -> crate::operation::index_faces::IndexFacesOutput {
         crate::operation::index_faces::IndexFacesOutput {
-            face_records: self.face_records,
-            orientation_correction: self.orientation_correction,
-            face_model_version: self.face_model_version,
-            unindexed_faces: self.unindexed_faces,
+            face_records: self.face_records
+            ,
+            orientation_correction: self.orientation_correction
+            ,
+            face_model_version: self.face_model_version
+            ,
+            unindexed_faces: self.unindexed_faces
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

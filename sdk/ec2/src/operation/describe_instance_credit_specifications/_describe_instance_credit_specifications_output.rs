@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceCreditSpecificationsOutput {
+pub struct DescribeInstanceCreditSpecificationsOutput  {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
+    pub instance_credit_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceCreditSpecification>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInstanceCreditSpecificationsOutput {
+impl  DescribeInstanceCreditSpecificationsOutput  {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_credit_specifications.is_none()`.
-    pub fn instance_credit_specifications(&self) -> &[crate::types::InstanceCreditSpecification] {
-        self.instance_credit_specifications.as_deref().unwrap_or_default()
+    pub fn instance_credit_specifications(&self) -> & [crate::types::InstanceCreditSpecification] {
+        self.instance_credit_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceCreditSpecificationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInstanceCreditSpecificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceCreditSpecificationsOutput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput).
     pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeInstanceCreditSpecificationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceCreditSpecificationsOutputBuilder {
-    pub(crate) instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
+    pub(crate) instance_credit_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceCreditSpecification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl DescribeInstanceCreditSpecificationsOutputBuilder {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
     pub fn instance_credit_specifications(mut self, input: crate::types::InstanceCreditSpecification) -> Self {
         let mut v = self.instance_credit_specifications.unwrap_or_default();
-        v.push(input);
-        self.instance_credit_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_credit_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub fn set_instance_credit_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
-    ) -> Self {
-        self.instance_credit_specifications = input;
-        self
+    pub fn set_instance_credit_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceCreditSpecification>>) -> Self {
+        self.instance_credit_specifications = input; self
     }
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub fn get_instance_credit_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>> {
+    pub fn get_instance_credit_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceCreditSpecification>> {
         &self.instance_credit_specifications
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -72,28 +69,30 @@ impl DescribeInstanceCreditSpecificationsOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInstanceCreditSpecificationsOutput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput).
     pub fn build(self) -> crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput {
         crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput {
-            instance_credit_specifications: self.instance_credit_specifications,
-            next_token: self.next_token,
+            instance_credit_specifications: self.instance_credit_specifications
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

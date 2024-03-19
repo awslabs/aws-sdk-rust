@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGraphInput {
+pub struct GetGraphInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetGraphInput {
+impl  GetGraphInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetGraphInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetGraphInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetGraphInput`](crate::operation::get_graph::GetGraphInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_graph::GetGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_graph::GetGraphInput {
-            graph_identifier: self.graph_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_graph::GetGraphInput {
+                graph_identifier: self.graph_identifier
+                ,
+            }
+        )
     }
 }
+

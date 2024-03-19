@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The name, ID, or ARN of the application that will be updated.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
@@ -11,18 +11,18 @@ pub struct UpdateApplicationInput {
     /// <p>The new description of the application.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>The name, ID, or ARN of the application that will be updated.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for application is deprecated.")]
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The name, ID, or ARN of the application that will be updated.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The name, ID, or ARN of the application that will be updated.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl UpdateApplicationInputBuilder {
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for application is deprecated.")]
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for application is deprecated.")]
@@ -81,21 +79,24 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The new description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application: self.application,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                application: self.application
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

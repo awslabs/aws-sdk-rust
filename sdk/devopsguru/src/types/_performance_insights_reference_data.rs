@@ -3,19 +3,19 @@
 /// <p>Reference data used to evaluate Performance Insights to determine if its performance is anomalous or not.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceInsightsReferenceData {
+pub struct PerformanceInsightsReferenceData  {
     /// <p>The name of the reference data.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific reference values used to evaluate the Performance Insights. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceComparisonValues.html">PerformanceInsightsReferenceComparisonValues</a> </code>.</p>
     pub comparison_values: ::std::option::Option<crate::types::PerformanceInsightsReferenceComparisonValues>,
 }
-impl PerformanceInsightsReferenceData {
+impl  PerformanceInsightsReferenceData  {
     /// <p>The name of the reference data.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The specific reference values used to evaluate the Performance Insights. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceComparisonValues.html">PerformanceInsightsReferenceComparisonValues</a> </code>.</p>
-    pub fn comparison_values(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsReferenceComparisonValues> {
+    pub fn comparison_values(&self) -> ::std::option::Option<& crate::types::PerformanceInsightsReferenceComparisonValues> {
         self.comparison_values.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PerformanceInsightsReferenceDataBuilder {
     }
     /// <p>The name of the reference data.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the reference data.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PerformanceInsightsReferenceDataBuilder {
     }
     /// <p>The specific reference values used to evaluate the Performance Insights. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceComparisonValues.html">PerformanceInsightsReferenceComparisonValues</a> </code>.</p>
     pub fn set_comparison_values(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsReferenceComparisonValues>) -> Self {
-        self.comparison_values = input;
-        self
+        self.comparison_values = input; self
     }
     /// <p>The specific reference values used to evaluate the Performance Insights. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceComparisonValues.html">PerformanceInsightsReferenceComparisonValues</a> </code>.</p>
     pub fn get_comparison_values(&self) -> &::std::option::Option<crate::types::PerformanceInsightsReferenceComparisonValues> {
@@ -65,8 +63,11 @@ impl PerformanceInsightsReferenceDataBuilder {
     /// Consumes the builder and constructs a [`PerformanceInsightsReferenceData`](crate::types::PerformanceInsightsReferenceData).
     pub fn build(self) -> crate::types::PerformanceInsightsReferenceData {
         crate::types::PerformanceInsightsReferenceData {
-            name: self.name,
-            comparison_values: self.comparison_values,
+            name: self.name
+            ,
+            comparison_values: self.comparison_values
+            ,
         }
     }
 }
+

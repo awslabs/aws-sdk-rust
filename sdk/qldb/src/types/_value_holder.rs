@@ -3,17 +3,17 @@
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ValueHolder {
+pub struct ValueHolder  {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     pub ion_text: ::std::option::Option<::std::string::String>,
 }
-impl ValueHolder {
+impl  ValueHolder  {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_text(&self) -> ::std::option::Option<&str> {
+    pub fn ion_text(&self) -> ::std::option::Option<& str> {
         self.ion_text.as_deref()
     }
 }
-impl ::std::fmt::Debug for ValueHolder {
+impl  ::std::fmt::Debug for ValueHolder  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ValueHolder");
         formatter.field("ion_text", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl ValueHolderBuilder {
     }
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     pub fn set_ion_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ion_text = input;
-        self
+        self.ion_text = input; self
     }
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     pub fn get_ion_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl ValueHolderBuilder {
     }
     /// Consumes the builder and constructs a [`ValueHolder`](crate::types::ValueHolder).
     pub fn build(self) -> crate::types::ValueHolder {
-        crate::types::ValueHolder { ion_text: self.ion_text }
+        crate::types::ValueHolder {
+            ion_text: self.ion_text
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for ValueHolderBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for ValueHolderBuilder {
         formatter.finish()
     }
 }
+

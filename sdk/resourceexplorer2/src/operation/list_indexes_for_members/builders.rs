@@ -5,54 +5,50 @@ pub use crate::operation::list_indexes_for_members::_list_indexes_for_members_in
 
 impl ListIndexesForMembersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_indexes_for_members::ListIndexesForMembersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_indexes_for_members();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_indexes_for_members::ListIndexesForMembersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_indexes_for_members();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListIndexesForMembers`.
-///
+/// 
 /// <p>Retrieves a list of a member's indexes in all Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer. Only the management account or a delegated administrator with service access enabled can invoke this API call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIndexesForMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_indexes_for_members::builders::ListIndexesForMembersInputBuilder,
+                    inner: crate::operation::list_indexes_for_members::builders::ListIndexesForMembersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
-        crate::operation::list_indexes_for_members::ListIndexesForMembersError,
-    > for ListIndexesForMembersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
-            crate::operation::list_indexes_for_members::ListIndexesForMembersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
+                    crate::operation::list_indexes_for_members::ListIndexesForMembersError,
+                > for ListIndexesForMembersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
+                        crate::operation::list_indexes_for_members::ListIndexesForMembersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListIndexesForMembersFluentBuilder {
     /// Creates a new `ListIndexesForMembers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListIndexesForMembersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_indexes_for_members::ListIndexesForMembersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_indexes_for_members::ListIndexesForMembers::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_indexes_for_members::ListIndexesForMembers::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
-        crate::operation::list_indexes_for_members::ListIndexesForMembersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_indexes_for_members::ListIndexesForMembersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_indexes_for_members::ListIndexesForMembersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_indexes_for_members::ListIndexesForMembers::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_indexes_for_members::ListIndexesForMembers::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_indexes_for_members::ListIndexesForMembersOutput, crate::operation::list_indexes_for_members::ListIndexesForMembersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_indexes_for_members::paginator::ListIndexesForMembersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_indexes_for_members::paginator::ListIndexesForMembersPaginator {
-        crate::operation::list_indexes_for_members::paginator::ListIndexesForMembersPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_indexes_for_members::paginator::ListIndexesForMembersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_indexes_for_members::paginator::ListIndexesForMembersPaginator {
+                                crate::operation::list_indexes_for_members::paginator::ListIndexesForMembersPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AccountIdList`.
     ///
     /// To override the contents of this collection use [`set_account_id_list`](Self::set_account_id_list).
@@ -124,12 +111,12 @@ impl ListIndexesForMembersFluentBuilder {
         self
     }
     /// <p>The account IDs will limit the output to only indexes from these accounts.</p>
-    pub fn set_account_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_account_id_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_id_list(input);
         self
     }
     /// <p>The account IDs will limit the output to only indexes from these accounts.</p>
-    pub fn get_account_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_id_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_account_id_list()
     }
     /// <p>The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p><note>
@@ -167,3 +154,4 @@ impl ListIndexesForMembersFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppInstanceUserEndpoints`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_instance_user_arn(impl Into<String>)`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::set_app_instance_user_arn):<br>required: **true**<br><p>The ARN of the <code>AppInstanceUser</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of endpoints that you want to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested endpoints are returned.</p><br>
-    /// - On success, responds with [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput) with field(s):
+                            /// - On success, responds with [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput) with field(s):
     ///   - [`app_instance_user_endpoints(Option<Vec::<AppInstanceUserEndpointSummary>>)`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput::app_instance_user_endpoints): <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput::next_token): <p>The token passed by previous API calls until all requested endpoints are returned.</p>
-    /// - On failure, responds with [`SdkError<ListAppInstanceUserEndpointsError>`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError)
-    pub fn list_app_instance_user_endpoints(
-        &self,
-    ) -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder {
-        crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAppInstanceUserEndpointsError>`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError)
+    pub fn list_app_instance_user_endpoints(&self) -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder {
+                                crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

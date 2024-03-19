@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListActionTypes`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`action_owner_filter(ActionOwner)`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::action_owner_filter) / [`set_action_owner_filter(Option<ActionOwner>)`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::set_action_owner_filter):<br>required: **false**<br><p>Filters the list of action types to those created by a specified entity.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p><br>
     ///   - [`region_filter(impl Into<String>)`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::region_filter) / [`set_region_filter(Option<String>)`](crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::set_region_filter):<br>required: **false**<br><p>The Region to filter on for the list of action types.</p><br>
-    /// - On success, responds with [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput) with field(s):
+                            /// - On success, responds with [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput) with field(s):
     ///   - [`action_types(Vec::<ActionType>)`](crate::operation::list_action_types::ListActionTypesOutput::action_types): <p>Provides details of the action types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_action_types::ListActionTypesOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
-    /// - On failure, responds with [`SdkError<ListActionTypesError>`](crate::operation::list_action_types::ListActionTypesError)
+                            /// - On failure, responds with [`SdkError<ListActionTypesError>`](crate::operation::list_action_types::ListActionTypesError)
     pub fn list_action_types(&self) -> crate::operation::list_action_types::builders::ListActionTypesFluentBuilder {
-        crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

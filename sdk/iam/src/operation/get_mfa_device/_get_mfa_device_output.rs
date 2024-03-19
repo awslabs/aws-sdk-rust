@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMfaDeviceOutput {
+pub struct GetMfaDeviceOutput  {
     /// <p>The friendly name identifying the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
@@ -10,33 +10,32 @@ pub struct GetMfaDeviceOutput {
     /// <p>The date that a specified user's MFA device was first enabled.</p>
     pub enable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
-    pub certifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub certifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetMfaDeviceOutput {
+impl  GetMfaDeviceOutput  {
     /// <p>The friendly name identifying the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    pub fn serial_number(&self) -> &str {
-        use std::ops::Deref;
-        self.serial_number.deref()
+    pub fn serial_number(&self) -> & str {
+        use std::ops::Deref; self.serial_number.deref()
     }
     /// <p>The date that a specified user's MFA device was first enabled.</p>
-    pub fn enable_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enable_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enable_date.as_ref()
     }
     /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
-    pub fn certifications(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn certifications(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.certifications.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMfaDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`GetMfaDeviceOutput`](crate::operation::get_mfa_device::GetMfaDeviceOutput).
     pub fn builder() -> crate::operation::get_mfa_device::builders::GetMfaDeviceOutputBuilder {
@@ -51,7 +50,7 @@ pub struct GetMfaDeviceOutputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) enable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) certifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) certifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetMfaDeviceOutputBuilder {
@@ -62,8 +61,7 @@ impl GetMfaDeviceOutputBuilder {
     }
     /// <p>The friendly name identifying the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The friendly name identifying the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetMfaDeviceOutputBuilder {
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl GetMfaDeviceOutputBuilder {
     }
     /// <p>The date that a specified user's MFA device was first enabled.</p>
     pub fn set_enable_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enable_date = input;
-        self
+        self.enable_date = input; self
     }
     /// <p>The date that a specified user's MFA device was first enabled.</p>
     pub fn get_enable_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,54 +99,49 @@ impl GetMfaDeviceOutputBuilder {
     /// To override the contents of this collection use [`set_certifications`](Self::set_certifications).
     ///
     /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
-    pub fn certifications(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certifications(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.certifications.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.certifications = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.certifications = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
-    pub fn set_certifications(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.certifications = input;
-        self
+    pub fn set_certifications(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.certifications = input; self
     }
     /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
-    pub fn get_certifications(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_certifications(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.certifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMfaDeviceOutput`](crate::operation::get_mfa_device::GetMfaDeviceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`serial_number`](crate::operation::get_mfa_device::builders::GetMfaDeviceOutputBuilder::serial_number)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_mfa_device::GetMfaDeviceOutput {
-            user_name: self.user_name,
-            serial_number: self.serial_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "serial_number",
-                    "serial_number was not specified but it is required when building GetMfaDeviceOutput",
-                )
-            })?,
-            enable_date: self.enable_date,
-            certifications: self.certifications,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_mfa_device::GetMfaDeviceOutput {
+                user_name: self.user_name
+                ,
+                serial_number: self.serial_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("serial_number", "serial_number was not specified but it is required when building GetMfaDeviceOutput")
+                    )?
+                ,
+                enable_date: self.enable_date
+                ,
+                certifications: self.certifications
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

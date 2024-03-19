@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEntitledApplicationsInput {
+pub struct ListEntitledApplicationsInput  {
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entitlement.</p>
@@ -12,17 +12,17 @@ pub struct ListEntitledApplicationsInput {
     /// <p>The maximum size of each page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEntitledApplicationsInput {
+impl  ListEntitledApplicationsInput  {
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the entitlement.</p>
-    pub fn entitlement_name(&self) -> ::std::option::Option<&str> {
+    pub fn entitlement_name(&self) -> ::std::option::Option<& str> {
         self.entitlement_name.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -55,8 +55,7 @@ impl ListEntitledApplicationsInputBuilder {
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListEntitledApplicationsInputBuilder {
     }
     /// <p>The name of the entitlement.</p>
     pub fn set_entitlement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entitlement_name = input;
-        self
+        self.entitlement_name = input; self
     }
     /// <p>The name of the entitlement.</p>
     pub fn get_entitlement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListEntitledApplicationsInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl ListEntitledApplicationsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEntitledApplicationsInput`](crate::operation::list_entitled_applications::ListEntitledApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entitled_applications::ListEntitledApplicationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_entitled_applications::ListEntitledApplicationsInput {
-            stack_name: self.stack_name,
-            entitlement_name: self.entitlement_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_entitled_applications::ListEntitledApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_entitled_applications::ListEntitledApplicationsInput {
+                stack_name: self.stack_name
+                ,
+                entitlement_name: self.entitlement_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

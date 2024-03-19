@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateBrowserSettingsOutput {
+pub struct AssociateBrowserSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The ARN of the browser settings.</p>
     pub browser_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AssociateBrowserSettingsOutput {
+impl  AssociateBrowserSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.browser_settings_arn.deref()
+    pub fn browser_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.browser_settings_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateBrowserSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateBrowserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateBrowserSettingsOutput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput).
     pub fn builder() -> crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsOutputBuilder {
@@ -50,8 +48,7 @@ impl AssociateBrowserSettingsOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,46 +62,41 @@ impl AssociateBrowserSettingsOutputBuilder {
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_settings_arn = input;
-        self
+        self.browser_settings_arn = input; self
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.browser_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateBrowserSettingsOutput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsOutputBuilder::portal_arn)
     /// - [`browser_settings_arn`](crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsOutputBuilder::browser_settings_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput {
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building AssociateBrowserSettingsOutput",
-                )
-            })?,
-            browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "browser_settings_arn",
-                    "browser_settings_arn was not specified but it is required when building AssociateBrowserSettingsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateBrowserSettingsOutput")
+                    )?
+                ,
+                browser_settings_arn: self.browser_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("browser_settings_arn", "browser_settings_arn was not specified but it is required when building AssociateBrowserSettingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

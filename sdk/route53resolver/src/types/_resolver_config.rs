@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about a Resolver configuration for a VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolverConfig {
+pub struct ResolverConfig  {
     /// <p>ID for the Resolver configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
@@ -23,17 +23,17 @@ pub struct ResolverConfig {
     /// </ul>
     pub autodefined_reverse: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
 }
-impl ResolverConfig {
+impl  ResolverConfig  {
     /// <p>ID for the Resolver configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
@@ -47,7 +47,7 @@ impl ResolverConfig {
     /// <li>
     /// <p><b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p></li>
     /// </ul>
-    pub fn autodefined_reverse(&self) -> ::std::option::Option<&crate::types::ResolverAutodefinedReverseStatus> {
+    pub fn autodefined_reverse(&self) -> ::std::option::Option<& crate::types::ResolverAutodefinedReverseStatus> {
         self.autodefined_reverse.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ResolverConfigBuilder {
     }
     /// <p>ID for the Resolver configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID for the Resolver configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ResolverConfigBuilder {
     }
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ResolverConfigBuilder {
     }
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +134,7 @@ impl ResolverConfigBuilder {
     /// <p><b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p></li>
     /// </ul>
     pub fn set_autodefined_reverse(mut self, input: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>) -> Self {
-        self.autodefined_reverse = input;
-        self
+        self.autodefined_reverse = input; self
     }
     /// <p>The status of whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. The status can be one of following:</p>
     /// <ul>
@@ -157,10 +153,15 @@ impl ResolverConfigBuilder {
     /// Consumes the builder and constructs a [`ResolverConfig`](crate::types::ResolverConfig).
     pub fn build(self) -> crate::types::ResolverConfig {
         crate::types::ResolverConfig {
-            id: self.id,
-            resource_id: self.resource_id,
-            owner_id: self.owner_id,
-            autodefined_reverse: self.autodefined_reverse,
+            id: self.id
+            ,
+            resource_id: self.resource_id
+            ,
+            owner_id: self.owner_id
+            ,
+            autodefined_reverse: self.autodefined_reverse
+            ,
         }
     }
 }
+

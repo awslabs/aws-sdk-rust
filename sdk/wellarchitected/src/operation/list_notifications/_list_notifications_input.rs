@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNotificationsInput {
+pub struct ListNotificationsInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -14,13 +14,13 @@ pub struct ListNotificationsInput {
     /// </note>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListNotificationsInput {
+impl  ListNotificationsInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -30,7 +30,7 @@ impl ListNotificationsInput {
     /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl ListNotificationsInputBuilder {
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
@@ -114,14 +110,19 @@ impl ListNotificationsInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_notifications::ListNotificationsInput {
-            workload_id: self.workload_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_notifications::ListNotificationsInput {
+                workload_id: self.workload_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

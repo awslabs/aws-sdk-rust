@@ -3,31 +3,32 @@
 /// <p>You can use this parameter to set an MFA configuration that uses the SMS delivery medium.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminSetUserSettingsInput {
+pub struct AdminSetUserSettingsInput  {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
+    pub mfa_options: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>,
 }
-impl AdminSetUserSettingsInput {
+impl  AdminSetUserSettingsInput  {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
-    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
-        self.mfa_options.as_deref().unwrap_or_default()
+    pub fn mfa_options(&self) -> & [crate::types::MfaOptionType] {
+        self.mfa_options.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AdminSetUserSettingsInput {
+impl  ::std::fmt::Debug for AdminSetUserSettingsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserSettingsInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -49,7 +50,7 @@ impl AdminSetUserSettingsInput {
 pub struct AdminSetUserSettingsInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
-    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
+    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>,
 }
 impl AdminSetUserSettingsInputBuilder {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
@@ -60,8 +61,7 @@ impl AdminSetUserSettingsInputBuilder {
     }
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +75,7 @@ impl AdminSetUserSettingsInputBuilder {
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,29 +88,30 @@ impl AdminSetUserSettingsInputBuilder {
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
-        v.push(input);
-        self.mfa_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mfa_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
-        self.mfa_options = input;
-        self
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>) -> Self {
+        self.mfa_options = input; self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
     /// Consumes the builder and constructs a [`AdminSetUserSettingsInput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::admin_set_user_settings::AdminSetUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::admin_set_user_settings::AdminSetUserSettingsInput {
-            user_pool_id: self.user_pool_id,
-            username: self.username,
-            mfa_options: self.mfa_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_set_user_settings::AdminSetUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_set_user_settings::AdminSetUserSettingsInput {
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                mfa_options: self.mfa_options
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminSetUserSettingsInputBuilder {
@@ -123,3 +123,4 @@ impl ::std::fmt::Debug for AdminSetUserSettingsInputBuilder {
         formatter.finish()
     }
 }
+

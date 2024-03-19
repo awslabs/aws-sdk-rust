@@ -3,7 +3,7 @@
 /// <p>Describes configuration parameters for a Managed Service for Apache Flink application or a Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlinkApplicationConfiguration {
+pub struct FlinkApplicationConfiguration  {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"> Checkpoints for Fault Tolerance</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
     pub checkpoint_configuration: ::std::option::Option<crate::types::CheckpointConfiguration>,
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
@@ -11,17 +11,17 @@ pub struct FlinkApplicationConfiguration {
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
-impl FlinkApplicationConfiguration {
+impl  FlinkApplicationConfiguration  {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"> Checkpoints for Fault Tolerance</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
-    pub fn checkpoint_configuration(&self) -> ::std::option::Option<&crate::types::CheckpointConfiguration> {
+    pub fn checkpoint_configuration(&self) -> ::std::option::Option<& crate::types::CheckpointConfiguration> {
         self.checkpoint_configuration.as_ref()
     }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
-    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<& crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
-    pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
+    pub fn parallelism_configuration(&self) -> ::std::option::Option<& crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FlinkApplicationConfigurationBuilder {
     }
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"> Checkpoints for Fault Tolerance</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
     pub fn set_checkpoint_configuration(mut self, input: ::std::option::Option<crate::types::CheckpointConfiguration>) -> Self {
-        self.checkpoint_configuration = input;
-        self
+        self.checkpoint_configuration = input; self
     }
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"> Checkpoints for Fault Tolerance</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
     pub fn get_checkpoint_configuration(&self) -> &::std::option::Option<crate::types::CheckpointConfiguration> {
@@ -62,8 +61,7 @@ impl FlinkApplicationConfigurationBuilder {
     }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
-        self.monitoring_configuration = input;
-        self
+        self.monitoring_configuration = input; self
     }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
@@ -76,8 +74,7 @@ impl FlinkApplicationConfigurationBuilder {
     }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
-        self.parallelism_configuration = input;
-        self
+        self.parallelism_configuration = input; self
     }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
@@ -86,9 +83,13 @@ impl FlinkApplicationConfigurationBuilder {
     /// Consumes the builder and constructs a [`FlinkApplicationConfiguration`](crate::types::FlinkApplicationConfiguration).
     pub fn build(self) -> crate::types::FlinkApplicationConfiguration {
         crate::types::FlinkApplicationConfiguration {
-            checkpoint_configuration: self.checkpoint_configuration,
-            monitoring_configuration: self.monitoring_configuration,
-            parallelism_configuration: self.parallelism_configuration,
+            checkpoint_configuration: self.checkpoint_configuration
+            ,
+            monitoring_configuration: self.monitoring_configuration
+            ,
+            parallelism_configuration: self.parallelism_configuration
+            ,
         }
     }
 }
+

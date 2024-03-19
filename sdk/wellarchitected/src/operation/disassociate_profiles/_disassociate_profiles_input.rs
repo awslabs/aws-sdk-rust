@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateProfilesInput {
+pub struct DisassociateProfilesInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub profile_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociateProfilesInput {
+impl  DisassociateProfilesInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_arns.is_none()`.
-    pub fn profile_arns(&self) -> &[::std::string::String] {
-        self.profile_arns.as_deref().unwrap_or_default()
+    pub fn profile_arns(&self) -> & [::std::string::String] {
+        self.profile_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateProfilesInput {
@@ -32,7 +33,7 @@ impl DisassociateProfilesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateProfilesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
-    pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociateProfilesInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -43,8 +44,7 @@ impl DisassociateProfilesInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl DisassociateProfilesInputBuilder {
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
     pub fn profile_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.profile_arns.unwrap_or_default();
-        v.push(input.into());
-        self.profile_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.profile_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.profile_arns = input;
-        self
+    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.profile_arns = input; self
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.profile_arns
     }
     /// Consumes the builder and constructs a [`DisassociateProfilesInput`](crate::operation::disassociate_profiles::DisassociateProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_profiles::DisassociateProfilesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_profiles::DisassociateProfilesInput {
-            workload_id: self.workload_id,
-            profile_arns: self.profile_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_profiles::DisassociateProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_profiles::DisassociateProfilesInput {
+                workload_id: self.workload_id
+                ,
+                profile_arns: self.profile_arns
+                ,
+            }
+        )
     }
 }
+

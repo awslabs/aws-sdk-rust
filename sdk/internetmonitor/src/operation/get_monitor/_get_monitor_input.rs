@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMonitorInput {
+pub struct GetMonitorInput  {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
 }
-impl GetMonitorInput {
+impl  GetMonitorInput  {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetMonitorInputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetMonitorInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorInput {
-            monitor_name: self.monitor_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_monitor::GetMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+            }
+        )
     }
 }
+

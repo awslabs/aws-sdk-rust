@@ -3,23 +3,22 @@
 /// <p>Specifies an attribute and value that filter the events returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookupAttribute {
+pub struct LookupAttribute  {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
     pub attribute_key: crate::types::LookupAttributeKey,
     /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
     /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     pub attribute_value: ::std::string::String,
 }
-impl LookupAttribute {
+impl  LookupAttribute  {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    pub fn attribute_key(&self) -> &crate::types::LookupAttributeKey {
+    pub fn attribute_key(&self) -> & crate::types::LookupAttributeKey {
         &self.attribute_key
     }
     /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
     /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
-    pub fn attribute_value(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_value.deref()
+    pub fn attribute_value(&self) -> & str {
+        use std::ops::Deref; self.attribute_value.deref()
     }
 }
 impl LookupAttribute {
@@ -45,8 +44,7 @@ impl LookupAttributeBuilder {
     }
     /// <p>Specifies an attribute on which to filter the events returned.</p>
     pub fn set_attribute_key(mut self, input: ::std::option::Option<crate::types::LookupAttributeKey>) -> Self {
-        self.attribute_key = input;
-        self
+        self.attribute_key = input; self
     }
     /// <p>Specifies an attribute on which to filter the events returned.</p>
     pub fn get_attribute_key(&self) -> &::std::option::Option<crate::types::LookupAttributeKey> {
@@ -62,8 +60,7 @@ impl LookupAttributeBuilder {
     /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
     /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
     /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
@@ -75,19 +72,20 @@ impl LookupAttributeBuilder {
     /// - [`attribute_key`](crate::types::builders::LookupAttributeBuilder::attribute_key)
     /// - [`attribute_value`](crate::types::builders::LookupAttributeBuilder::attribute_value)
     pub fn build(self) -> ::std::result::Result<crate::types::LookupAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LookupAttribute {
-            attribute_key: self.attribute_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_key",
-                    "attribute_key was not specified but it is required when building LookupAttribute",
-                )
-            })?,
-            attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_value",
-                    "attribute_value was not specified but it is required when building LookupAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LookupAttribute {
+                attribute_key: self.attribute_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_key", "attribute_key was not specified but it is required when building LookupAttribute")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_value", "attribute_value was not specified but it is required when building LookupAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

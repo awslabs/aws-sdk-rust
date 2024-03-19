@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSpacesOutput {
+pub struct ListSpacesOutput  {
     /// <p>An array of structures that contain some information about the private re:Posts in the account.</p>
-    pub spaces: ::std::vec::Vec<crate::types::SpaceData>,
+    pub spaces: ::std::vec::Vec::<crate::types::SpaceData>,
     /// <p>The token that you use when you request the next set of private re:Posts.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSpacesOutput {
+impl  ListSpacesOutput  {
     /// <p>An array of structures that contain some information about the private re:Posts in the account.</p>
-    pub fn spaces(&self) -> &[crate::types::SpaceData] {
-        use std::ops::Deref;
-        self.spaces.deref()
+    pub fn spaces(&self) -> & [crate::types::SpaceData] {
+        use std::ops::Deref; self.spaces.deref()
     }
     /// <p>The token that you use when you request the next set of private re:Posts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSpacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSpacesOutput {
     /// Creates a new builder-style object to manufacture [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput).
     pub fn builder() -> crate::operation::list_spaces::builders::ListSpacesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListSpacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpacesOutputBuilder {
-    pub(crate) spaces: ::std::option::Option<::std::vec::Vec<crate::types::SpaceData>>,
+    pub(crate) spaces: ::std::option::Option<::std::vec::Vec::<crate::types::SpaceData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListSpacesOutputBuilder {
     /// <p>An array of structures that contain some information about the private re:Posts in the account.</p>
     pub fn spaces(mut self, input: crate::types::SpaceData) -> Self {
         let mut v = self.spaces.unwrap_or_default();
-        v.push(input);
-        self.spaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.spaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contain some information about the private re:Posts in the account.</p>
-    pub fn set_spaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpaceData>>) -> Self {
-        self.spaces = input;
-        self
+    pub fn set_spaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SpaceData>>) -> Self {
+        self.spaces = input; self
     }
     /// <p>An array of structures that contain some information about the private re:Posts in the account.</p>
-    pub fn get_spaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpaceData>> {
+    pub fn get_spaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SpaceData>> {
         &self.spaces
     }
     /// <p>The token that you use when you request the next set of private re:Posts.</p>
@@ -68,35 +66,37 @@ impl ListSpacesOutputBuilder {
     }
     /// <p>The token that you use when you request the next set of private re:Posts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that you use when you request the next set of private re:Posts.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`spaces`](crate::operation::list_spaces::builders::ListSpacesOutputBuilder::spaces)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_spaces::ListSpacesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_spaces::ListSpacesOutput {
-            spaces: self.spaces.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "spaces",
-                    "spaces was not specified but it is required when building ListSpacesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_spaces::ListSpacesOutput {
+                spaces: self.spaces
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("spaces", "spaces was not specified but it is required when building ListSpacesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

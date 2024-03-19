@@ -3,17 +3,17 @@
 /// <p>Filter events using an event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The event pattern.</p>
     pub pattern: ::std::option::Option<::std::string::String>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The event pattern.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<& str> {
         self.pattern.as_deref()
     }
 }
-impl ::std::fmt::Debug for Filter {
+impl  ::std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("pattern", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl FilterBuilder {
     }
     /// <p>The event pattern.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>The event pattern.</p>
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl FilterBuilder {
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter { pattern: self.pattern }
+        crate::types::Filter {
+            pattern: self.pattern
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for FilterBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for FilterBuilder {
         formatter.finish()
     }
 }
+

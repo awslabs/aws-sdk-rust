@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflowRuns`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::set_name):<br>required: **true**<br><p>Name of the workflow whose metadata of runs should be returned.</p><br>
     ///   - [`include_graph(bool)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::include_graph) / [`set_include_graph(Option<bool>)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::set_include_graph):<br>required: **false**<br><p>Specifies whether to include the workflow graph in response or not.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>The maximum size of the response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of workflow runs to be included in the response.</p><br>
-    /// - On success, responds with [`GetWorkflowRunsOutput`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput) with field(s):
+                            /// - On success, responds with [`GetWorkflowRunsOutput`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput) with field(s):
     ///   - [`runs(Option<Vec::<WorkflowRun>>)`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput::runs): <p>A list of workflow run metadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput::next_token): <p>A continuation token, if not all requested workflow runs have been returned.</p>
-    /// - On failure, responds with [`SdkError<GetWorkflowRunsError>`](crate::operation::get_workflow_runs::GetWorkflowRunsError)
+                            /// - On failure, responds with [`SdkError<GetWorkflowRunsError>`](crate::operation::get_workflow_runs::GetWorkflowRunsError)
     pub fn get_workflow_runs(&self) -> crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder {
-        crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_workflow_runs::builders::GetWorkflowRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

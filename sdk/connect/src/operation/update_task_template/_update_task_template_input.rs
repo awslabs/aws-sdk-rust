@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTaskTemplateInput {
+pub struct UpdateTaskTemplateInput  {
     /// <p>A unique identifier for the task template.</p>
     pub task_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -20,46 +20,47 @@ pub struct UpdateTaskTemplateInput {
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub status: ::std::option::Option<crate::types::TaskTemplateStatus>,
     /// <p>Fields that are part of the template.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
+    pub fields: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateField>>,
 }
-impl UpdateTaskTemplateInput {
+impl  UpdateTaskTemplateInput  {
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_template_id(&self) -> ::std::option::Option<& str> {
         self.task_template_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the task template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the task template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
-    pub fn constraints(&self) -> ::std::option::Option<&crate::types::TaskTemplateConstraints> {
+    pub fn constraints(&self) -> ::std::option::Option<& crate::types::TaskTemplateConstraints> {
         self.constraints.as_ref()
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    pub fn defaults(&self) -> ::std::option::Option<&crate::types::TaskTemplateDefaults> {
+    pub fn defaults(&self) -> ::std::option::Option<& crate::types::TaskTemplateDefaults> {
         self.defaults.as_ref()
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskTemplateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskTemplateStatus> {
         self.status.as_ref()
     }
     /// <p>Fields that are part of the template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
-    pub fn fields(&self) -> &[crate::types::TaskTemplateField] {
-        self.fields.as_deref().unwrap_or_default()
+    pub fn fields(&self) -> & [crate::types::TaskTemplateField] {
+        self.fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateTaskTemplateInput {
@@ -81,7 +82,7 @@ pub struct UpdateTaskTemplateInputBuilder {
     pub(crate) constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     pub(crate) defaults: ::std::option::Option<crate::types::TaskTemplateDefaults>,
     pub(crate) status: ::std::option::Option<crate::types::TaskTemplateStatus>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateField>>,
 }
 impl UpdateTaskTemplateInputBuilder {
     /// <p>A unique identifier for the task template.</p>
@@ -92,8 +93,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_template_id = input;
-        self
+        self.task_template_id = input; self
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>The name of the task template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the task template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>The description of the task template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the task template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +146,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
-        self.constraints = input;
-        self
+        self.constraints = input; self
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn get_constraints(&self) -> &::std::option::Option<crate::types::TaskTemplateConstraints> {
@@ -177,8 +172,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
     pub fn set_defaults(mut self, input: ::std::option::Option<crate::types::TaskTemplateDefaults>) -> Self {
-        self.defaults = input;
-        self
+        self.defaults = input; self
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
     pub fn get_defaults(&self) -> &::std::option::Option<crate::types::TaskTemplateDefaults> {
@@ -191,8 +185,7 @@ impl UpdateTaskTemplateInputBuilder {
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
@@ -205,34 +198,42 @@ impl UpdateTaskTemplateInputBuilder {
     /// <p>Fields that are part of the template.</p>
     pub fn fields(mut self, input: crate::types::TaskTemplateField) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateField>>) -> Self {
+        self.fields = input; self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateField>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateTaskTemplateInput`](crate::operation::update_task_template::UpdateTaskTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_task_template::UpdateTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_task_template::UpdateTaskTemplateInput {
-            task_template_id: self.task_template_id,
-            instance_id: self.instance_id,
-            name: self.name,
-            description: self.description,
-            contact_flow_id: self.contact_flow_id,
-            constraints: self.constraints,
-            defaults: self.defaults,
-            status: self.status,
-            fields: self.fields,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_task_template::UpdateTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_task_template::UpdateTaskTemplateInput {
+                task_template_id: self.task_template_id
+                ,
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                contact_flow_id: self.contact_flow_id
+                ,
+                constraints: self.constraints
+                ,
+                defaults: self.defaults
+                ,
+                status: self.status
+                ,
+                fields: self.fields
+                ,
+            }
+        )
     }
 }
+

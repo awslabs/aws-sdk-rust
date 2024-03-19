@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessPolicies`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`r#type(AccessPolicyType)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::type) / [`set_type(Option<AccessPolicyType>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_type):<br>required: **true**<br><p>The type of access policy.</p><br>
     ///   - [`resource(impl Into<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::resource) / [`set_resource(Option<Vec::<String>>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_resource):<br>required: **false**<br><p>Resource filters (can be collections or indexes) that policies can apply to.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p><br>
-    /// - On success, responds with [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput) with field(s):
     ///   - [`access_policy_summaries(Option<Vec::<AccessPolicySummary>>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::access_policy_summaries): <p>Details about the requested access policies.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::operation::list_access_policies::ListAccessPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::operation::list_access_policies::ListAccessPoliciesError)
     pub fn list_access_policies(&self) -> crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder {
-        crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

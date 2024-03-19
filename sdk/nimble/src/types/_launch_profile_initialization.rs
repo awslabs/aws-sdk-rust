@@ -4,11 +4,11 @@
 /// <p>This includes scripts, endpoints, security groups, subnets, and other configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct LaunchProfileInitialization {
+pub struct LaunchProfileInitialization  {
     /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
     pub active_directory: ::std::option::Option<crate::types::LaunchProfileInitializationActiveDirectory>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
@@ -20,55 +20,58 @@ pub struct LaunchProfileInitialization {
     /// <p>The platform of the launch platform, either Windows or Linux.</p>
     pub platform: ::std::option::Option<crate::types::LaunchProfilePlatform>,
     /// <p>The system initializtion scripts.</p>
-    pub system_initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
+    pub system_initialization_scripts: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>>,
     /// <p>The user initializtion scripts.</p>
-    pub user_initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
+    pub user_initialization_scripts: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>>,
 }
-impl LaunchProfileInitialization {
+impl  LaunchProfileInitialization  {
     /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
-    pub fn active_directory(&self) -> ::std::option::Option<&crate::types::LaunchProfileInitializationActiveDirectory> {
+    pub fn active_directory(&self) -> ::std::option::Option<& crate::types::LaunchProfileInitializationActiveDirectory> {
         self.active_directory.as_ref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_group_ids.is_none()`.
-    pub fn ec2_security_group_ids(&self) -> &[::std::string::String] {
-        self.ec2_security_group_ids.as_deref().unwrap_or_default()
+    pub fn ec2_security_group_ids(&self) -> & [::std::string::String] {
+        self.ec2_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn launch_profile_protocol_version(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_protocol_version(&self) -> ::std::option::Option<& str> {
         self.launch_profile_protocol_version.as_deref()
     }
     /// <p>The launch purpose.</p>
-    pub fn launch_purpose(&self) -> ::std::option::Option<&str> {
+    pub fn launch_purpose(&self) -> ::std::option::Option<& str> {
         self.launch_purpose.as_deref()
     }
     /// <p>The name for the launch profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The platform of the launch platform, either Windows or Linux.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::LaunchProfilePlatform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::LaunchProfilePlatform> {
         self.platform.as_ref()
     }
     /// <p>The system initializtion scripts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_initialization_scripts.is_none()`.
-    pub fn system_initialization_scripts(&self) -> &[crate::types::LaunchProfileInitializationScript] {
-        self.system_initialization_scripts.as_deref().unwrap_or_default()
+    pub fn system_initialization_scripts(&self) -> & [crate::types::LaunchProfileInitializationScript] {
+        self.system_initialization_scripts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user initializtion scripts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_initialization_scripts.is_none()`.
-    pub fn user_initialization_scripts(&self) -> &[crate::types::LaunchProfileInitializationScript] {
-        self.user_initialization_scripts.as_deref().unwrap_or_default()
+    pub fn user_initialization_scripts(&self) -> & [crate::types::LaunchProfileInitializationScript] {
+        self.user_initialization_scripts.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for LaunchProfileInitialization {
+impl  ::std::fmt::Debug for LaunchProfileInitialization  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchProfileInitialization");
         formatter.field("active_directory", &self.active_directory);
@@ -95,14 +98,14 @@ impl LaunchProfileInitialization {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LaunchProfileInitializationBuilder {
     pub(crate) active_directory: ::std::option::Option<crate::types::LaunchProfileInitializationActiveDirectory>,
-    pub(crate) ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ec2_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_protocol_version: ::std::option::Option<::std::string::String>,
     pub(crate) launch_purpose: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::LaunchProfilePlatform>,
-    pub(crate) system_initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
-    pub(crate) user_initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
+    pub(crate) system_initialization_scripts: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>>,
+    pub(crate) user_initialization_scripts: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>>,
 }
 impl LaunchProfileInitializationBuilder {
     /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
@@ -112,8 +115,7 @@ impl LaunchProfileInitializationBuilder {
     }
     /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
     pub fn set_active_directory(mut self, input: ::std::option::Option<crate::types::LaunchProfileInitializationActiveDirectory>) -> Self {
-        self.active_directory = input;
-        self
+        self.active_directory = input; self
     }
     /// <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
     pub fn get_active_directory(&self) -> &::std::option::Option<crate::types::LaunchProfileInitializationActiveDirectory> {
@@ -126,17 +128,16 @@ impl LaunchProfileInitializationBuilder {
     /// <p>The EC2 security groups that control access to the studio component.</p>
     pub fn ec2_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.ec2_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ec2_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ec2_security_group_ids = input;
-        self
+    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ec2_security_group_ids = input; self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ec2_security_group_ids
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
@@ -146,8 +147,7 @@ impl LaunchProfileInitializationBuilder {
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_id = input;
-        self
+        self.launch_profile_id = input; self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +160,7 @@ impl LaunchProfileInitializationBuilder {
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn set_launch_profile_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_protocol_version = input;
-        self
+        self.launch_profile_protocol_version = input; self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn get_launch_profile_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +173,7 @@ impl LaunchProfileInitializationBuilder {
     }
     /// <p>The launch purpose.</p>
     pub fn set_launch_purpose(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_purpose = input;
-        self
+        self.launch_purpose = input; self
     }
     /// <p>The launch purpose.</p>
     pub fn get_launch_purpose(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +186,7 @@ impl LaunchProfileInitializationBuilder {
     }
     /// <p>The name for the launch profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the launch profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +199,7 @@ impl LaunchProfileInitializationBuilder {
     }
     /// <p>The platform of the launch platform, either Windows or Linux.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::LaunchProfilePlatform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the launch platform, either Windows or Linux.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::LaunchProfilePlatform> {
@@ -216,20 +212,16 @@ impl LaunchProfileInitializationBuilder {
     /// <p>The system initializtion scripts.</p>
     pub fn system_initialization_scripts(mut self, input: crate::types::LaunchProfileInitializationScript) -> Self {
         let mut v = self.system_initialization_scripts.unwrap_or_default();
-        v.push(input);
-        self.system_initialization_scripts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.system_initialization_scripts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The system initializtion scripts.</p>
-    pub fn set_system_initialization_scripts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
-    ) -> Self {
-        self.system_initialization_scripts = input;
-        self
+    pub fn set_system_initialization_scripts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>>) -> Self {
+        self.system_initialization_scripts = input; self
     }
     /// <p>The system initializtion scripts.</p>
-    pub fn get_system_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>> {
+    pub fn get_system_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>> {
         &self.system_initialization_scripts
     }
     /// Appends an item to `user_initialization_scripts`.
@@ -239,34 +231,39 @@ impl LaunchProfileInitializationBuilder {
     /// <p>The user initializtion scripts.</p>
     pub fn user_initialization_scripts(mut self, input: crate::types::LaunchProfileInitializationScript) -> Self {
         let mut v = self.user_initialization_scripts.unwrap_or_default();
-        v.push(input);
-        self.user_initialization_scripts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_initialization_scripts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user initializtion scripts.</p>
-    pub fn set_user_initialization_scripts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>>,
-    ) -> Self {
-        self.user_initialization_scripts = input;
-        self
+    pub fn set_user_initialization_scripts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>>) -> Self {
+        self.user_initialization_scripts = input; self
     }
     /// <p>The user initializtion scripts.</p>
-    pub fn get_user_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileInitializationScript>> {
+    pub fn get_user_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchProfileInitializationScript>> {
         &self.user_initialization_scripts
     }
     /// Consumes the builder and constructs a [`LaunchProfileInitialization`](crate::types::LaunchProfileInitialization).
     pub fn build(self) -> crate::types::LaunchProfileInitialization {
         crate::types::LaunchProfileInitialization {
-            active_directory: self.active_directory,
-            ec2_security_group_ids: self.ec2_security_group_ids,
-            launch_profile_id: self.launch_profile_id,
-            launch_profile_protocol_version: self.launch_profile_protocol_version,
-            launch_purpose: self.launch_purpose,
-            name: self.name,
-            platform: self.platform,
-            system_initialization_scripts: self.system_initialization_scripts,
-            user_initialization_scripts: self.user_initialization_scripts,
+            active_directory: self.active_directory
+            ,
+            ec2_security_group_ids: self.ec2_security_group_ids
+            ,
+            launch_profile_id: self.launch_profile_id
+            ,
+            launch_profile_protocol_version: self.launch_profile_protocol_version
+            ,
+            launch_purpose: self.launch_purpose
+            ,
+            name: self.name
+            ,
+            platform: self.platform
+            ,
+            system_initialization_scripts: self.system_initialization_scripts
+            ,
+            user_initialization_scripts: self.user_initialization_scripts
+            ,
         }
     }
 }
@@ -285,3 +282,4 @@ impl ::std::fmt::Debug for LaunchProfileInitializationBuilder {
         formatter.finish()
     }
 }
+

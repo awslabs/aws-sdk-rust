@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataSetImportTaskInput {
+pub struct CreateDataSetImportTaskInput  {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The data set import task configuration.</p>
@@ -10,17 +10,17 @@ pub struct CreateDataSetImportTaskInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateDataSetImportTaskInput {
+impl  CreateDataSetImportTaskInput  {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The data set import task configuration.</p>
-    pub fn import_config(&self) -> ::std::option::Option<&crate::types::DataSetImportConfig> {
+    pub fn import_config(&self) -> ::std::option::Option<& crate::types::DataSetImportConfig> {
         self.import_config.as_ref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateDataSetImportTaskInputBuilder {
     }
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateDataSetImportTaskInputBuilder {
     }
     /// <p>The data set import task configuration.</p>
     pub fn set_import_config(mut self, input: ::std::option::Option<crate::types::DataSetImportConfig>) -> Self {
-        self.import_config = input;
-        self
+        self.import_config = input; self
     }
     /// <p>The data set import task configuration.</p>
     pub fn get_import_config(&self) -> &::std::option::Option<crate::types::DataSetImportConfig> {
@@ -77,24 +75,24 @@ impl CreateDataSetImportTaskInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDataSetImportTaskInput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput {
-            application_id: self.application_id,
-            import_config: self.import_config,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput {
+                application_id: self.application_id
+                ,
+                import_config: self.import_config
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

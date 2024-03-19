@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`LookupPolicy`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p><br>
     ///   - [`object_reference(ObjectReference)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::set_object_reference):<br>required: **true**<br><p>Reference that identifies the object whose policies will be looked up.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
-    /// - On success, responds with [`LookupPolicyOutput`](crate::operation::lookup_policy::LookupPolicyOutput) with field(s):
+                            /// - On success, responds with [`LookupPolicyOutput`](crate::operation::lookup_policy::LookupPolicyOutput) with field(s):
     ///   - [`policy_to_path_list(Option<Vec::<PolicyToPath>>)`](crate::operation::lookup_policy::LookupPolicyOutput::policy_to_path_list): <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::lookup_policy::LookupPolicyOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<LookupPolicyError>`](crate::operation::lookup_policy::LookupPolicyError)
+                            /// - On failure, responds with [`SdkError<LookupPolicyError>`](crate::operation::lookup_policy::LookupPolicyError)
     pub fn lookup_policy(&self) -> crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder {
-        crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::new(self.handle.clone())
+                            }
 }
+

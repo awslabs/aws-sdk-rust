@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGlobalSettingsInput {}
+pub struct DescribeGlobalSettingsInput  {
+}
 impl DescribeGlobalSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalSettingsInput`](crate::operation::describe_global_settings::DescribeGlobalSettingsInput).
     pub fn builder() -> crate::operation::describe_global_settings::builders::DescribeGlobalSettingsInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeGlobalSettingsInput {
 /// A builder for [`DescribeGlobalSettingsInput`](crate::operation::describe_global_settings::DescribeGlobalSettingsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeGlobalSettingsInputBuilder {}
+pub struct DescribeGlobalSettingsInputBuilder {
+}
 impl DescribeGlobalSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalSettingsInput`](crate::operation::describe_global_settings::DescribeGlobalSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_global_settings::DescribeGlobalSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_global_settings::DescribeGlobalSettingsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_global_settings::DescribeGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_global_settings::DescribeGlobalSettingsInput {
+            }
+        )
     }
 }
+

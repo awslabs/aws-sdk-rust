@@ -3,24 +3,26 @@
 /// <p>A structure that contains information on the generated snapshot file groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotJobResultFileGroup {
+pub struct SnapshotJobResultFileGroup  {
     /// <p>A list of <code>SnapshotFile</code> objects.</p>
-    pub files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
+    pub files: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>>,
     /// <p>A list of <code>SnapshotJobS3Result</code> objects.</p>
-    pub s3_results: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,
+    pub s3_results: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotJobS3Result>>,
 }
-impl SnapshotJobResultFileGroup {
+impl  SnapshotJobResultFileGroup  {
     /// <p>A list of <code>SnapshotFile</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
-    pub fn files(&self) -> &[crate::types::SnapshotFile] {
-        self.files.as_deref().unwrap_or_default()
+    pub fn files(&self) -> & [crate::types::SnapshotFile] {
+        self.files.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>SnapshotJobS3Result</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_results.is_none()`.
-    pub fn s3_results(&self) -> &[crate::types::SnapshotJobS3Result] {
-        self.s3_results.as_deref().unwrap_or_default()
+    pub fn s3_results(&self) -> & [crate::types::SnapshotJobS3Result] {
+        self.s3_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnapshotJobResultFileGroup {
@@ -34,8 +36,8 @@ impl SnapshotJobResultFileGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotJobResultFileGroupBuilder {
-    pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
-    pub(crate) s3_results: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,
+    pub(crate) files: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>>,
+    pub(crate) s3_results: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotJobS3Result>>,
 }
 impl SnapshotJobResultFileGroupBuilder {
     /// Appends an item to `files`.
@@ -45,17 +47,16 @@ impl SnapshotJobResultFileGroupBuilder {
     /// <p>A list of <code>SnapshotFile</code> objects.</p>
     pub fn files(mut self, input: crate::types::SnapshotFile) -> Self {
         let mut v = self.files.unwrap_or_default();
-        v.push(input);
-        self.files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SnapshotFile</code> objects.</p>
-    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>) -> Self {
-        self.files = input;
-        self
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>>) -> Self {
+        self.files = input; self
     }
     /// <p>A list of <code>SnapshotFile</code> objects.</p>
-    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>> {
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>> {
         &self.files
     }
     /// Appends an item to `s3_results`.
@@ -65,24 +66,26 @@ impl SnapshotJobResultFileGroupBuilder {
     /// <p>A list of <code>SnapshotJobS3Result</code> objects.</p>
     pub fn s3_results(mut self, input: crate::types::SnapshotJobS3Result) -> Self {
         let mut v = self.s3_results.unwrap_or_default();
-        v.push(input);
-        self.s3_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.s3_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SnapshotJobS3Result</code> objects.</p>
-    pub fn set_s3_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>) -> Self {
-        self.s3_results = input;
-        self
+    pub fn set_s3_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotJobS3Result>>) -> Self {
+        self.s3_results = input; self
     }
     /// <p>A list of <code>SnapshotJobS3Result</code> objects.</p>
-    pub fn get_s3_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>> {
+    pub fn get_s3_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotJobS3Result>> {
         &self.s3_results
     }
     /// Consumes the builder and constructs a [`SnapshotJobResultFileGroup`](crate::types::SnapshotJobResultFileGroup).
     pub fn build(self) -> crate::types::SnapshotJobResultFileGroup {
         crate::types::SnapshotJobResultFileGroup {
-            files: self.files,
-            s3_results: self.s3_results,
+            files: self.files
+            ,
+            s3_results: self.s3_results
+            ,
         }
     }
 }
+

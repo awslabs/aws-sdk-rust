@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImageBlockPublicAccessStateOutput {
+pub struct GetImageBlockPublicAccessStateOutput  {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
@@ -14,7 +14,7 @@ pub struct GetImageBlockPublicAccessStateOutput {
     pub image_block_public_access_state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetImageBlockPublicAccessStateOutput {
+impl  GetImageBlockPublicAccessStateOutput  {
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
     /// <ul>
@@ -23,15 +23,15 @@ impl GetImageBlockPublicAccessStateOutput {
     /// <li>
     /// <p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
-    pub fn image_block_public_access_state(&self) -> ::std::option::Option<&str> {
+    pub fn image_block_public_access_state(&self) -> ::std::option::Option<& str> {
         self.image_block_public_access_state.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImageBlockPublicAccessStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetImageBlockPublicAccessStateOutput {
     /// Creates a new builder-style object to manufacture [`GetImageBlockPublicAccessStateOutput`](crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateOutput).
     pub fn builder() -> crate::operation::get_image_block_public_access_state::builders::GetImageBlockPublicAccessStateOutputBuilder {
@@ -68,8 +68,7 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
     /// <p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub fn set_image_block_public_access_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_block_public_access_state = input;
-        self
+        self.image_block_public_access_state = input; self
     }
     /// <p>The current state of block public access for AMIs at the account level in the specified Amazon Web Services Region.</p>
     /// <p>Possible values:</p>
@@ -83,19 +82,21 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
         &self.image_block_public_access_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetImageBlockPublicAccessStateOutput`](crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateOutput).
     pub fn build(self) -> crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateOutput {
         crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateOutput {
-            image_block_public_access_state: self.image_block_public_access_state,
+            image_block_public_access_state: self.image_block_public_access_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

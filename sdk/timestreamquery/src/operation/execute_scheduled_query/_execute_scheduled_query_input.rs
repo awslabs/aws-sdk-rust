@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ExecuteScheduledQueryInput {
+pub struct ExecuteScheduledQueryInput  {
     /// <p>ARN of the scheduled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
@@ -10,21 +10,21 @@ pub struct ExecuteScheduledQueryInput {
     /// <p>Not used.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl ExecuteScheduledQueryInput {
+impl  ExecuteScheduledQueryInput  {
     /// <p>ARN of the scheduled query.</p>
-    pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_query_arn(&self) -> ::std::option::Option<& str> {
         self.scheduled_query_arn.as_deref()
     }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
-    pub fn invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn invocation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.invocation_time.as_ref()
     }
     /// <p>Not used.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ExecuteScheduledQueryInput {
+impl  ::std::fmt::Debug for ExecuteScheduledQueryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteScheduledQueryInput");
         formatter.field("scheduled_query_arn", &self.scheduled_query_arn);
@@ -57,8 +57,7 @@ impl ExecuteScheduledQueryInputBuilder {
     }
     /// <p>ARN of the scheduled query.</p>
     pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_query_arn = input;
-        self
+        self.scheduled_query_arn = input; self
     }
     /// <p>ARN of the scheduled query.</p>
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl ExecuteScheduledQueryInputBuilder {
     }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
     pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.invocation_time = input;
-        self
+        self.invocation_time = input; self
     }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp.</p>
     pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,23 +84,24 @@ impl ExecuteScheduledQueryInputBuilder {
     }
     /// <p>Not used.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Not used.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ExecuteScheduledQueryInput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput {
-            scheduled_query_arn: self.scheduled_query_arn,
-            invocation_time: self.invocation_time,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput {
+                scheduled_query_arn: self.scheduled_query_arn
+                ,
+                invocation_time: self.invocation_time
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ExecuteScheduledQueryInputBuilder {
@@ -114,3 +113,4 @@ impl ::std::fmt::Debug for ExecuteScheduledQueryInputBuilder {
         formatter.finish()
     }
 }
+

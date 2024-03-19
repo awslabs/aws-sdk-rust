@@ -3,7 +3,7 @@
 /// <p>Summary information about the import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportJobSummary {
+pub struct ImportJobSummary  {
     /// <p>The identifier of the import job.</p>
     pub import_job_id: ::std::string::String,
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
@@ -21,53 +21,49 @@ pub struct ImportJobSummary {
     /// <p>The timestamp when the import job was last modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub external_source_configuration: ::std::option::Option<crate::types::ExternalSourceConfiguration>,
 }
-impl ImportJobSummary {
+impl  ImportJobSummary  {
     /// <p>The identifier of the import job.</p>
-    pub fn import_job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.import_job_id.deref()
+    pub fn import_job_id(&self) -> & str {
+        use std::ops::Deref; self.import_job_id.deref()
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-    pub fn upload_id(&self) -> &str {
-        use std::ops::Deref;
-        self.upload_id.deref()
+    pub fn upload_id(&self) -> & str {
+        use std::ops::Deref; self.upload_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_arn.deref()
+    pub fn knowledge_base_arn(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_arn.deref()
     }
     /// <p>The type of import job.</p>
-    pub fn import_job_type(&self) -> &crate::types::ImportJobType {
+    pub fn import_job_type(&self) -> & crate::types::ImportJobType {
         &self.import_job_type
     }
     /// <p>The status of the import job.</p>
-    pub fn status(&self) -> &crate::types::ImportJobStatus {
+    pub fn status(&self) -> & crate::types::ImportJobStatus {
         &self.status
     }
     /// <p>The timestamp when the import job was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The timestamp when the import job was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
-    pub fn external_source_configuration(&self) -> ::std::option::Option<&crate::types::ExternalSourceConfiguration> {
+    pub fn external_source_configuration(&self) -> ::std::option::Option<& crate::types::ExternalSourceConfiguration> {
         self.external_source_configuration.as_ref()
     }
 }
@@ -90,7 +86,7 @@ pub struct ImportJobSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ImportJobStatus>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) external_source_configuration: ::std::option::Option<crate::types::ExternalSourceConfiguration>,
 }
 impl ImportJobSummaryBuilder {
@@ -102,8 +98,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The identifier of the import job.</p>
     pub fn set_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_job_id = input;
-        self
+        self.import_job_id = input; self
     }
     /// <p>The identifier of the import job.</p>
     pub fn get_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +126,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +140,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_arn = input;
-        self
+        self.knowledge_base_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +154,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The type of import job.</p>
     pub fn set_import_job_type(mut self, input: ::std::option::Option<crate::types::ImportJobType>) -> Self {
-        self.import_job_type = input;
-        self
+        self.import_job_type = input; self
     }
     /// <p>The type of import job.</p>
     pub fn get_import_job_type(&self) -> &::std::option::Option<crate::types::ImportJobType> {
@@ -177,8 +168,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The status of the import job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the import job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportJobStatus> {
@@ -192,8 +182,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The timestamp when the import job was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp when the import job was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -207,8 +196,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The timestamp when the import job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when the import job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -221,17 +209,16 @@ impl ImportJobSummaryBuilder {
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
@@ -241,8 +228,7 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub fn set_external_source_configuration(mut self, input: ::std::option::Option<crate::types::ExternalSourceConfiguration>) -> Self {
-        self.external_source_configuration = input;
-        self
+        self.external_source_configuration = input; self
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub fn get_external_source_configuration(&self) -> &::std::option::Option<crate::types::ExternalSourceConfiguration> {
@@ -259,57 +245,54 @@ impl ImportJobSummaryBuilder {
     /// - [`created_time`](crate::types::builders::ImportJobSummaryBuilder::created_time)
     /// - [`last_modified_time`](crate::types::builders::ImportJobSummaryBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportJobSummary {
-            import_job_id: self.import_job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_job_id",
-                    "import_job_id was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upload_id",
-                    "upload_id was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            knowledge_base_arn: self.knowledge_base_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_arn",
-                    "knowledge_base_arn was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            import_job_type: self.import_job_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_job_type",
-                    "import_job_type was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building ImportJobSummary",
-                )
-            })?,
-            metadata: self.metadata,
-            external_source_configuration: self.external_source_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportJobSummary {
+                import_job_id: self.import_job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("import_job_id", "import_job_id was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                upload_id: self.upload_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "upload_id was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_arn", "knowledge_base_arn was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                import_job_type: self.import_job_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("import_job_type", "import_job_type was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building ImportJobSummary")
+                    )?
+                ,
+                metadata: self.metadata
+                ,
+                external_source_configuration: self.external_source_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustStoreRevocationsInput {
+pub struct DescribeTrustStoreRevocationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revocation IDs of the revocation files you want to describe.</p>
-    pub revocation_ids: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub revocation_ids: ::std::option::Option<::std::vec::Vec::<i64>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl DescribeTrustStoreRevocationsInput {
+impl  DescribeTrustStoreRevocationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The revocation IDs of the revocation files you want to describe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revocation_ids.is_none()`.
-    pub fn revocation_ids(&self) -> &[i64] {
-        self.revocation_ids.as_deref().unwrap_or_default()
+    pub fn revocation_ids(&self) -> & [i64] {
+        self.revocation_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -44,7 +45,7 @@ impl DescribeTrustStoreRevocationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustStoreRevocationsInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) revocation_ids: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) revocation_ids: ::std::option::Option<::std::vec::Vec::<i64>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl DescribeTrustStoreRevocationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeTrustStoreRevocationsInputBuilder {
     /// <p>The revocation IDs of the revocation files you want to describe.</p>
     pub fn revocation_ids(mut self, input: i64) -> Self {
         let mut v = self.revocation_ids.unwrap_or_default();
-        v.push(input);
-        self.revocation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revocation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The revocation IDs of the revocation files you want to describe.</p>
-    pub fn set_revocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.revocation_ids = input;
-        self
+    pub fn set_revocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.revocation_ids = input; self
     }
     /// <p>The revocation IDs of the revocation files you want to describe.</p>
-    pub fn get_revocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_revocation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.revocation_ids
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -91,8 +90,7 @@ impl DescribeTrustStoreRevocationsInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +103,26 @@ impl DescribeTrustStoreRevocationsInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeTrustStoreRevocationsInput`](crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsInput {
-            trust_store_arn: self.trust_store_arn,
-            revocation_ids: self.revocation_ids,
-            marker: self.marker,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsInput {
+                trust_store_arn: self.trust_store_arn
+                ,
+                revocation_ids: self.revocation_ids
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

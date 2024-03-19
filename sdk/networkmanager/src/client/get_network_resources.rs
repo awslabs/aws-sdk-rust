@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetNetworkResources`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`core_network_id(impl Into<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_core_network_id):<br>required: **false**<br><p>The ID of a core network.</p><br>
     ///   - [`registered_gateway_arn(impl Into<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::registered_gateway_arn) / [`set_registered_gateway_arn(Option<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_registered_gateway_arn):<br>required: **false**<br><p>The ARN of the gateway.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_resource_arn):<br>required: **false**<br><p>The ARN of the resource.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetNetworkResourcesOutput`](crate::operation::get_network_resources::GetNetworkResourcesOutput) with field(s):
+                            /// - On success, responds with [`GetNetworkResourcesOutput`](crate::operation::get_network_resources::GetNetworkResourcesOutput) with field(s):
     ///   - [`network_resources(Option<Vec::<NetworkResource>>)`](crate::operation::get_network_resources::GetNetworkResourcesOutput::network_resources): <p>The network resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_resources::GetNetworkResourcesOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetNetworkResourcesError>`](crate::operation::get_network_resources::GetNetworkResourcesError)
+                            /// - On failure, responds with [`SdkError<GetNetworkResourcesError>`](crate::operation::get_network_resources::GetNetworkResourcesError)
     pub fn get_network_resources(&self) -> crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder {
-        crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_network_resources::builders::GetNetworkResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

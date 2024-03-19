@@ -3,7 +3,7 @@
 /// <p>An unusual cost pattern. This consists of the detailed metadata and the current status of the anomaly object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Anomaly {
+pub struct Anomaly  {
     /// <p>The unique identifier for the anomaly.</p>
     pub anomaly_id: ::std::string::String,
     /// <p>The first day the anomaly is detected.</p>
@@ -13,7 +13,7 @@ pub struct Anomaly {
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
     pub dimension_value: ::std::option::Option<::std::string::String>,
     /// <p>The list of identified root causes for the anomaly.</p>
-    pub root_causes: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>,
+    pub root_causes: ::std::option::Option<::std::vec::Vec::<crate::types::RootCause>>,
     /// <p>The latest and maximum score for the anomaly.</p>
     pub anomaly_score: ::std::option::Option<crate::types::AnomalyScore>,
     /// <p>The dollar impact for the anomaly.</p>
@@ -23,45 +23,44 @@ pub struct Anomaly {
     /// <p>The feedback value.</p>
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
-impl Anomaly {
+impl  Anomaly  {
     /// <p>The unique identifier for the anomaly.</p>
-    pub fn anomaly_id(&self) -> &str {
-        use std::ops::Deref;
-        self.anomaly_id.deref()
+    pub fn anomaly_id(&self) -> & str {
+        use std::ops::Deref; self.anomaly_id.deref()
     }
     /// <p>The first day the anomaly is detected.</p>
-    pub fn anomaly_start_date(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_start_date(&self) -> ::std::option::Option<& str> {
         self.anomaly_start_date.as_deref()
     }
     /// <p>The last day the anomaly is detected.</p>
-    pub fn anomaly_end_date(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_end_date(&self) -> ::std::option::Option<& str> {
         self.anomaly_end_date.as_deref()
     }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
-    pub fn dimension_value(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_value(&self) -> ::std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The list of identified root causes for the anomaly.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.root_causes.is_none()`.
-    pub fn root_causes(&self) -> &[crate::types::RootCause] {
-        self.root_causes.as_deref().unwrap_or_default()
+    pub fn root_causes(&self) -> & [crate::types::RootCause] {
+        self.root_causes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The latest and maximum score for the anomaly.</p>
-    pub fn anomaly_score(&self) -> ::std::option::Option<&crate::types::AnomalyScore> {
+    pub fn anomaly_score(&self) -> ::std::option::Option<& crate::types::AnomalyScore> {
         self.anomaly_score.as_ref()
     }
     /// <p>The dollar impact for the anomaly.</p>
-    pub fn impact(&self) -> ::std::option::Option<&crate::types::Impact> {
+    pub fn impact(&self) -> ::std::option::Option<& crate::types::Impact> {
         self.impact.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly.</p>
-    pub fn monitor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_arn.deref()
+    pub fn monitor_arn(&self) -> & str {
+        use std::ops::Deref; self.monitor_arn.deref()
     }
     /// <p>The feedback value.</p>
-    pub fn feedback(&self) -> ::std::option::Option<&crate::types::AnomalyFeedbackType> {
+    pub fn feedback(&self) -> ::std::option::Option<& crate::types::AnomalyFeedbackType> {
         self.feedback.as_ref()
     }
 }
@@ -80,7 +79,7 @@ pub struct AnomalyBuilder {
     pub(crate) anomaly_start_date: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_end_date: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_value: ::std::option::Option<::std::string::String>,
-    pub(crate) root_causes: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>,
+    pub(crate) root_causes: ::std::option::Option<::std::vec::Vec::<crate::types::RootCause>>,
     pub(crate) anomaly_score: ::std::option::Option<crate::types::AnomalyScore>,
     pub(crate) impact: ::std::option::Option<crate::types::Impact>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
@@ -95,8 +94,7 @@ impl AnomalyBuilder {
     }
     /// <p>The unique identifier for the anomaly.</p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_id = input;
-        self
+        self.anomaly_id = input; self
     }
     /// <p>The unique identifier for the anomaly.</p>
     pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl AnomalyBuilder {
     }
     /// <p>The first day the anomaly is detected.</p>
     pub fn set_anomaly_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_start_date = input;
-        self
+        self.anomaly_start_date = input; self
     }
     /// <p>The first day the anomaly is detected.</p>
     pub fn get_anomaly_start_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl AnomalyBuilder {
     }
     /// <p>The last day the anomaly is detected.</p>
     pub fn set_anomaly_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_end_date = input;
-        self
+        self.anomaly_end_date = input; self
     }
     /// <p>The last day the anomaly is detected.</p>
     pub fn get_anomaly_end_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl AnomalyBuilder {
     }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
     pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_value = input;
-        self
+        self.dimension_value = input; self
     }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor).</p>
     pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,17 +146,16 @@ impl AnomalyBuilder {
     /// <p>The list of identified root causes for the anomaly.</p>
     pub fn root_causes(mut self, input: crate::types::RootCause) -> Self {
         let mut v = self.root_causes.unwrap_or_default();
-        v.push(input);
-        self.root_causes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.root_causes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of identified root causes for the anomaly.</p>
-    pub fn set_root_causes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>) -> Self {
-        self.root_causes = input;
-        self
+    pub fn set_root_causes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RootCause>>) -> Self {
+        self.root_causes = input; self
     }
     /// <p>The list of identified root causes for the anomaly.</p>
-    pub fn get_root_causes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCause>> {
+    pub fn get_root_causes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RootCause>> {
         &self.root_causes
     }
     /// <p>The latest and maximum score for the anomaly.</p>
@@ -172,8 +166,7 @@ impl AnomalyBuilder {
     }
     /// <p>The latest and maximum score for the anomaly.</p>
     pub fn set_anomaly_score(mut self, input: ::std::option::Option<crate::types::AnomalyScore>) -> Self {
-        self.anomaly_score = input;
-        self
+        self.anomaly_score = input; self
     }
     /// <p>The latest and maximum score for the anomaly.</p>
     pub fn get_anomaly_score(&self) -> &::std::option::Option<crate::types::AnomalyScore> {
@@ -187,8 +180,7 @@ impl AnomalyBuilder {
     }
     /// <p>The dollar impact for the anomaly.</p>
     pub fn set_impact(mut self, input: ::std::option::Option<crate::types::Impact>) -> Self {
-        self.impact = input;
-        self
+        self.impact = input; self
     }
     /// <p>The dollar impact for the anomaly.</p>
     pub fn get_impact(&self) -> &::std::option::Option<crate::types::Impact> {
@@ -202,8 +194,7 @@ impl AnomalyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +207,7 @@ impl AnomalyBuilder {
     }
     /// <p>The feedback value.</p>
     pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
-        self.feedback = input;
-        self
+        self.feedback = input; self
     }
     /// <p>The feedback value.</p>
     pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
@@ -228,26 +218,34 @@ impl AnomalyBuilder {
     /// - [`anomaly_id`](crate::types::builders::AnomalyBuilder::anomaly_id)
     /// - [`monitor_arn`](crate::types::builders::AnomalyBuilder::monitor_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Anomaly {
-            anomaly_id: self.anomaly_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "anomaly_id",
-                    "anomaly_id was not specified but it is required when building Anomaly",
-                )
-            })?,
-            anomaly_start_date: self.anomaly_start_date,
-            anomaly_end_date: self.anomaly_end_date,
-            dimension_value: self.dimension_value,
-            root_causes: self.root_causes,
-            anomaly_score: self.anomaly_score,
-            impact: self.impact,
-            monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_arn",
-                    "monitor_arn was not specified but it is required when building Anomaly",
-                )
-            })?,
-            feedback: self.feedback,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Anomaly {
+                anomaly_id: self.anomaly_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("anomaly_id", "anomaly_id was not specified but it is required when building Anomaly")
+                    )?
+                ,
+                anomaly_start_date: self.anomaly_start_date
+                ,
+                anomaly_end_date: self.anomaly_end_date
+                ,
+                dimension_value: self.dimension_value
+                ,
+                root_causes: self.root_causes
+                ,
+                anomaly_score: self.anomaly_score
+                ,
+                impact: self.impact
+                ,
+                monitor_arn: self.monitor_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_arn", "monitor_arn was not specified but it is required when building Anomaly")
+                    )?
+                ,
+                feedback: self.feedback
+                ,
+            }
+        )
     }
 }
+

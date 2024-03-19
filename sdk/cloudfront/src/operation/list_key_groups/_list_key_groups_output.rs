@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeyGroupsOutput {
+pub struct ListKeyGroupsOutput  {
     /// <p>A list of key groups.</p>
     pub key_group_list: ::std::option::Option<crate::types::KeyGroupList>,
     _request_id: Option<String>,
 }
-impl ListKeyGroupsOutput {
+impl  ListKeyGroupsOutput  {
     /// <p>A list of key groups.</p>
-    pub fn key_group_list(&self) -> ::std::option::Option<&crate::types::KeyGroupList> {
+    pub fn key_group_list(&self) -> ::std::option::Option<& crate::types::KeyGroupList> {
         self.key_group_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListKeyGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListKeyGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListKeyGroupsOutput`](crate::operation::list_key_groups::ListKeyGroupsOutput).
     pub fn builder() -> crate::operation::list_key_groups::builders::ListKeyGroupsOutputBuilder {
@@ -40,27 +40,28 @@ impl ListKeyGroupsOutputBuilder {
     }
     /// <p>A list of key groups.</p>
     pub fn set_key_group_list(mut self, input: ::std::option::Option<crate::types::KeyGroupList>) -> Self {
-        self.key_group_list = input;
-        self
+        self.key_group_list = input; self
     }
     /// <p>A list of key groups.</p>
     pub fn get_key_group_list(&self) -> &::std::option::Option<crate::types::KeyGroupList> {
         &self.key_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListKeyGroupsOutput`](crate::operation::list_key_groups::ListKeyGroupsOutput).
     pub fn build(self) -> crate::operation::list_key_groups::ListKeyGroupsOutput {
         crate::operation::list_key_groups::ListKeyGroupsOutput {
-            key_group_list: self.key_group_list,
+            key_group_list: self.key_group_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

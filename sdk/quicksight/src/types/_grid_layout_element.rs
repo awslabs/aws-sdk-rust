@@ -3,7 +3,7 @@
 /// <p>An element within a grid layout.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GridLayoutElement {
+pub struct GridLayoutElement  {
     /// <p>A unique identifier for an element within a grid layout.</p>
     pub element_id: ::std::string::String,
     /// <p>The type of element.</p>
@@ -17,14 +17,13 @@ pub struct GridLayoutElement {
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub row_span: i32,
 }
-impl GridLayoutElement {
+impl  GridLayoutElement  {
     /// <p>A unique identifier for an element within a grid layout.</p>
-    pub fn element_id(&self) -> &str {
-        use std::ops::Deref;
-        self.element_id.deref()
+    pub fn element_id(&self) -> & str {
+        use std::ops::Deref; self.element_id.deref()
     }
     /// <p>The type of element.</p>
-    pub fn element_type(&self) -> &crate::types::LayoutElementType {
+    pub fn element_type(&self) -> & crate::types::LayoutElementType {
         &self.element_type
     }
     /// <p>The column index for the upper left corner of an element.</p>
@@ -71,8 +70,7 @@ impl GridLayoutElementBuilder {
     }
     /// <p>A unique identifier for an element within a grid layout.</p>
     pub fn set_element_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.element_id = input;
-        self
+        self.element_id = input; self
     }
     /// <p>A unique identifier for an element within a grid layout.</p>
     pub fn get_element_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The type of element.</p>
     pub fn set_element_type(mut self, input: ::std::option::Option<crate::types::LayoutElementType>) -> Self {
-        self.element_type = input;
-        self
+        self.element_type = input; self
     }
     /// <p>The type of element.</p>
     pub fn get_element_type(&self) -> &::std::option::Option<crate::types::LayoutElementType> {
@@ -100,8 +97,7 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The column index for the upper left corner of an element.</p>
     pub fn set_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column_index = input;
-        self
+        self.column_index = input; self
     }
     /// <p>The column index for the upper left corner of an element.</p>
     pub fn get_column_index(&self) -> &::std::option::Option<i32> {
@@ -115,8 +111,7 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
     pub fn set_column_span(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column_span = input;
-        self
+        self.column_span = input; self
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
     pub fn get_column_span(&self) -> &::std::option::Option<i32> {
@@ -129,8 +124,7 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The row index for the upper left corner of an element.</p>
     pub fn set_row_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.row_index = input;
-        self
+        self.row_index = input; self
     }
     /// <p>The row index for the upper left corner of an element.</p>
     pub fn get_row_index(&self) -> &::std::option::Option<i32> {
@@ -144,8 +138,7 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub fn set_row_span(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.row_span = input;
-        self
+        self.row_span = input; self
     }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub fn get_row_span(&self) -> &::std::option::Option<i32> {
@@ -158,33 +151,34 @@ impl GridLayoutElementBuilder {
     /// - [`column_span`](crate::types::builders::GridLayoutElementBuilder::column_span)
     /// - [`row_span`](crate::types::builders::GridLayoutElementBuilder::row_span)
     pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutElement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GridLayoutElement {
-            element_id: self.element_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "element_id",
-                    "element_id was not specified but it is required when building GridLayoutElement",
-                )
-            })?,
-            element_type: self.element_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "element_type",
-                    "element_type was not specified but it is required when building GridLayoutElement",
-                )
-            })?,
-            column_index: self.column_index,
-            column_span: self.column_span.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_span",
-                    "column_span was not specified but it is required when building GridLayoutElement",
-                )
-            })?,
-            row_index: self.row_index,
-            row_span: self.row_span.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "row_span",
-                    "row_span was not specified but it is required when building GridLayoutElement",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GridLayoutElement {
+                element_id: self.element_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("element_id", "element_id was not specified but it is required when building GridLayoutElement")
+                    )?
+                ,
+                element_type: self.element_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("element_type", "element_type was not specified but it is required when building GridLayoutElement")
+                    )?
+                ,
+                column_index: self.column_index
+                ,
+                column_span: self.column_span
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_span", "column_span was not specified but it is required when building GridLayoutElement")
+                    )?
+                ,
+                row_index: self.row_index
+                ,
+                row_span: self.row_span
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("row_span", "row_span was not specified but it is required when building GridLayoutElement")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishRecipeOutput {
+pub struct PublishRecipeOutput  {
     /// <p>The name of the recipe that you published.</p>
     pub name: ::std::string::String,
     _request_id: Option<String>,
 }
-impl PublishRecipeOutput {
+impl  PublishRecipeOutput  {
     /// <p>The name of the recipe that you published.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PublishRecipeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishRecipeOutput {
     /// Creates a new builder-style object to manufacture [`PublishRecipeOutput`](crate::operation::publish_recipe::PublishRecipeOutput).
     pub fn builder() -> crate::operation::publish_recipe::builders::PublishRecipeOutputBuilder {
@@ -42,36 +41,35 @@ impl PublishRecipeOutputBuilder {
     }
     /// <p>The name of the recipe that you published.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recipe that you published.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishRecipeOutput`](crate::operation::publish_recipe::PublishRecipeOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::publish_recipe::builders::PublishRecipeOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::publish_recipe::PublishRecipeOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::publish_recipe::PublishRecipeOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PublishRecipeOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_recipe::PublishRecipeOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::publish_recipe::PublishRecipeOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PublishRecipeOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppInstanceUserInput {
+pub struct DescribeAppInstanceUserInput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAppInstanceUserInput {
+impl  DescribeAppInstanceUserInput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_instance_user_arn
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceUserInput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput {
-            app_instance_user_arn: self.app_instance_user_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput {
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+            }
+        )
     }
 }
+

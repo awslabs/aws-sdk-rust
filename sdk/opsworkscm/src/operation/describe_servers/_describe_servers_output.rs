@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServersOutput {
+pub struct DescribeServersOutput  {
     /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
     /// <p><i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
     /// <p><i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
@@ -12,12 +12,12 @@ pub struct DescribeServersOutput {
     /// <li>
     /// <p><code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p></li>
     /// </ul>
-    pub servers: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
+    pub servers: ::std::option::Option<::std::vec::Vec::<crate::types::Server>>,
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeServersOutput {
+impl  DescribeServersOutput  {
     /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
     /// <p><i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
     /// <p><i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
@@ -27,21 +27,22 @@ impl DescribeServersOutput {
     /// <li>
     /// <p><code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.servers.is_none()`.
-    pub fn servers(&self) -> &[crate::types::Server] {
-        self.servers.as_deref().unwrap_or_default()
+    pub fn servers(&self) -> & [crate::types::Server] {
+        self.servers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeServersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeServersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServersOutput`](crate::operation::describe_servers::DescribeServersOutput).
     pub fn builder() -> crate::operation::describe_servers::builders::DescribeServersOutputBuilder {
@@ -53,7 +54,7 @@ impl DescribeServersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServersOutputBuilder {
-    pub(crate) servers: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
+    pub(crate) servers: ::std::option::Option<::std::vec::Vec::<crate::types::Server>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -73,9 +74,9 @@ impl DescribeServersOutputBuilder {
     /// </ul>
     pub fn servers(mut self, input: crate::types::Server) -> Self {
         let mut v = self.servers.unwrap_or_default();
-        v.push(input);
-        self.servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
     /// <p><i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
@@ -86,9 +87,8 @@ impl DescribeServersOutputBuilder {
     /// <li>
     /// <p><code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p></li>
     /// </ul>
-    pub fn set_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Server>>) -> Self {
-        self.servers = input;
-        self
+    pub fn set_servers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Server>>) -> Self {
+        self.servers = input; self
     }
     /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
     /// <p><i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
@@ -99,7 +99,7 @@ impl DescribeServersOutputBuilder {
     /// <li>
     /// <p><code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p></li>
     /// </ul>
-    pub fn get_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Server>> {
+    pub fn get_servers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Server>> {
         &self.servers
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
@@ -109,28 +109,30 @@ impl DescribeServersOutputBuilder {
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeServersOutput`](crate::operation::describe_servers::DescribeServersOutput).
     pub fn build(self) -> crate::operation::describe_servers::DescribeServersOutput {
         crate::operation::describe_servers::DescribeServersOutput {
-            servers: self.servers,
-            next_token: self.next_token,
+            servers: self.servers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

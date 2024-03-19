@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCoverage`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
     ///   - [`filter_criteria(CoverageFilterCriteria)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::filter_criteria) / [`set_filter_criteria(Option<CoverageFilterCriteria>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_filter_criteria):<br>required: **false**<br><p>An object that contains details on the filters to apply to the coverage data for your environment.</p><br>
-    /// - On success, responds with [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput) with field(s):
+                            /// - On success, responds with [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_coverage::ListCoverageOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     ///   - [`covered_resources(Option<Vec::<CoveredResource>>)`](crate::operation::list_coverage::ListCoverageOutput::covered_resources): <p>An object that contains details on the covered resources in your environment.</p>
-    /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
+                            /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
     pub fn list_coverage(&self) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {
-        crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(self.handle.clone())
+                            }
 }
+

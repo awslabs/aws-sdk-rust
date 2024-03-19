@@ -3,7 +3,7 @@
 /// <p>The task assessment report in JSON format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationTaskAssessmentResult {
+pub struct ReplicationTaskAssessmentResult  {
     /// <p>The replication task identifier of the task on which the task assessment was run.</p>
     pub replication_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -21,35 +21,35 @@ pub struct ReplicationTaskAssessmentResult {
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
     pub s3_object_url: ::std::option::Option<::std::string::String>,
 }
-impl ReplicationTaskAssessmentResult {
+impl  ReplicationTaskAssessmentResult  {
     /// <p>The replication task identifier of the task on which the task assessment was run.</p>
-    pub fn replication_task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The date the task assessment was completed.</p>
-    pub fn replication_task_last_assessment_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_task_last_assessment_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replication_task_last_assessment_date.as_ref()
     }
     /// <p>The status of the task assessment.</p>
-    pub fn assessment_status(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_status(&self) -> ::std::option::Option<& str> {
         self.assessment_status.as_deref()
     }
     /// <p>The file containing the results of the task assessment.</p>
-    pub fn assessment_results_file(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_results_file(&self) -> ::std::option::Option<& str> {
         self.assessment_results_file.as_deref()
     }
     /// <p>The task assessment results in JSON format.</p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    pub fn assessment_results(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_results(&self) -> ::std::option::Option<& str> {
         self.assessment_results.as_deref()
     }
     /// <p>The URL of the S3 object containing the task assessment results.</p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    pub fn s3_object_url(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_url(&self) -> ::std::option::Option<& str> {
         self.s3_object_url.as_deref()
     }
 }
@@ -80,8 +80,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p>The replication task identifier of the task on which the task assessment was run.</p>
     pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_identifier = input;
-        self
+        self.replication_task_identifier = input; self
     }
     /// <p>The replication task identifier of the task on which the task assessment was run.</p>
     pub fn get_replication_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_arn = input;
-        self
+        self.replication_task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p>The date the task assessment was completed.</p>
     pub fn set_replication_task_last_assessment_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.replication_task_last_assessment_date = input;
-        self
+        self.replication_task_last_assessment_date = input; self
     }
     /// <p>The date the task assessment was completed.</p>
     pub fn get_replication_task_last_assessment_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +119,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p>The status of the task assessment.</p>
     pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_status = input;
-        self
+        self.assessment_status = input; self
     }
     /// <p>The status of the task assessment.</p>
     pub fn get_assessment_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +132,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     }
     /// <p>The file containing the results of the task assessment.</p>
     pub fn set_assessment_results_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_results_file = input;
-        self
+        self.assessment_results_file = input; self
     }
     /// <p>The file containing the results of the task assessment.</p>
     pub fn get_assessment_results_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     /// <p>The task assessment results in JSON format.</p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
     pub fn set_assessment_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_results = input;
-        self
+        self.assessment_results = input; self
     }
     /// <p>The task assessment results in JSON format.</p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
@@ -169,8 +163,7 @@ impl ReplicationTaskAssessmentResultBuilder {
     /// <p>The URL of the S3 object containing the task assessment results.</p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
     pub fn set_s3_object_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_url = input;
-        self
+        self.s3_object_url = input; self
     }
     /// <p>The URL of the S3 object containing the task assessment results.</p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
@@ -180,13 +173,21 @@ impl ReplicationTaskAssessmentResultBuilder {
     /// Consumes the builder and constructs a [`ReplicationTaskAssessmentResult`](crate::types::ReplicationTaskAssessmentResult).
     pub fn build(self) -> crate::types::ReplicationTaskAssessmentResult {
         crate::types::ReplicationTaskAssessmentResult {
-            replication_task_identifier: self.replication_task_identifier,
-            replication_task_arn: self.replication_task_arn,
-            replication_task_last_assessment_date: self.replication_task_last_assessment_date,
-            assessment_status: self.assessment_status,
-            assessment_results_file: self.assessment_results_file,
-            assessment_results: self.assessment_results,
-            s3_object_url: self.s3_object_url,
+            replication_task_identifier: self.replication_task_identifier
+            ,
+            replication_task_arn: self.replication_task_arn
+            ,
+            replication_task_last_assessment_date: self.replication_task_last_assessment_date
+            ,
+            assessment_status: self.assessment_status
+            ,
+            assessment_results_file: self.assessment_results_file
+            ,
+            assessment_results: self.assessment_results
+            ,
+            s3_object_url: self.s3_object_url
+            ,
         }
     }
 }
+

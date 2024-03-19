@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlotInput {
+pub struct DeleteSlotInput  {
     /// <p>The identifier of the slot to delete.</p>
     pub slot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the slot to delete.</p>
@@ -14,25 +14,25 @@ pub struct DeleteSlotInput {
     /// <p>The identifier of the intent associated with the slot.</p>
     pub intent_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSlotInput {
+impl  DeleteSlotInput  {
     /// <p>The identifier of the slot to delete.</p>
-    pub fn slot_id(&self) -> ::std::option::Option<&str> {
+    pub fn slot_id(&self) -> ::std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The identifier of the bot associated with the slot to delete.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot to delete.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the intent associated with the slot.</p>
-    pub fn intent_id(&self) -> ::std::option::Option<&str> {
+    pub fn intent_id(&self) -> ::std::option::Option<& str> {
         self.intent_id.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DeleteSlotInputBuilder {
     }
     /// <p>The identifier of the slot to delete.</p>
     pub fn set_slot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_id = input;
-        self
+        self.slot_id = input; self
     }
     /// <p>The identifier of the slot to delete.</p>
     pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl DeleteSlotInputBuilder {
     }
     /// <p>The identifier of the bot associated with the slot to delete.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot associated with the slot to delete.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl DeleteSlotInputBuilder {
     }
     /// <p>The version of the bot associated with the slot to delete.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot associated with the slot to delete.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl DeleteSlotInputBuilder {
     }
     /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl DeleteSlotInputBuilder {
     }
     /// <p>The identifier of the intent associated with the slot.</p>
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>The identifier of the intent associated with the slot.</p>
     pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,12 +126,20 @@ impl DeleteSlotInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteSlotInput`](crate::operation::delete_slot::DeleteSlotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_slot::DeleteSlotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_slot::DeleteSlotInput {
-            slot_id: self.slot_id,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            intent_id: self.intent_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_slot::DeleteSlotInput {
+                slot_id: self.slot_id
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_id: self.intent_id
+                ,
+            }
+        )
     }
 }
+

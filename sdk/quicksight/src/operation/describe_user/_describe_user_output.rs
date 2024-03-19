@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>The user name.</p>
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11,13 +11,13 @@ pub struct DescribeUserOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeUserOutput {
+impl  DescribeUserOutput  {
     /// <p>The user name.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -26,10 +26,10 @@ impl DescribeUserOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>The user name.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
@@ -68,8 +67,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,33 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
-            user: self.user,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            user: self.user
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

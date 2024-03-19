@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterinstancetype = unimplemented!();
 /// match clusterinstancetype {
@@ -66,16 +66,14 @@
 /// Specifically, when `clusterinstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterInstanceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ClusterInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC512Xlarge,
@@ -155,208 +153,170 @@ pub enum ClusterInstanceType {
     MlTrn1N32Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ClusterInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ml.c5.12xlarge" => ClusterInstanceType::MlC512Xlarge,
-            "ml.c5.18xlarge" => ClusterInstanceType::MlC518Xlarge,
-            "ml.c5.24xlarge" => ClusterInstanceType::MlC524Xlarge,
-            "ml.c5.2xlarge" => ClusterInstanceType::MlC52Xlarge,
-            "ml.c5.4xlarge" => ClusterInstanceType::MlC54Xlarge,
-            "ml.c5.9xlarge" => ClusterInstanceType::MlC59Xlarge,
-            "ml.c5.large" => ClusterInstanceType::MlC5Large,
-            "ml.c5.xlarge" => ClusterInstanceType::MlC5Xlarge,
-            "ml.c5n.18xlarge" => ClusterInstanceType::MlC5N18Xlarge,
-            "ml.c5n.2xlarge" => ClusterInstanceType::MlC5N2Xlarge,
-            "ml.c5n.4xlarge" => ClusterInstanceType::MlC5N4Xlarge,
-            "ml.c5n.9xlarge" => ClusterInstanceType::MlC5N9Xlarge,
-            "ml.c5n.large" => ClusterInstanceType::MlC5NLarge,
-            "ml.g5.12xlarge" => ClusterInstanceType::MlG512Xlarge,
-            "ml.g5.16xlarge" => ClusterInstanceType::MlG516Xlarge,
-            "ml.g5.24xlarge" => ClusterInstanceType::MlG524Xlarge,
-            "ml.g5.2xlarge" => ClusterInstanceType::MlG52Xlarge,
-            "ml.g5.48xlarge" => ClusterInstanceType::MlG548Xlarge,
-            "ml.g5.4xlarge" => ClusterInstanceType::MlG54Xlarge,
-            "ml.g5.8xlarge" => ClusterInstanceType::MlG58Xlarge,
-            "ml.g5.xlarge" => ClusterInstanceType::MlG5Xlarge,
-            "ml.m5.12xlarge" => ClusterInstanceType::MlM512Xlarge,
-            "ml.m5.16xlarge" => ClusterInstanceType::MlM516Xlarge,
-            "ml.m5.24xlarge" => ClusterInstanceType::MlM524Xlarge,
-            "ml.m5.2xlarge" => ClusterInstanceType::MlM52Xlarge,
-            "ml.m5.4xlarge" => ClusterInstanceType::MlM54Xlarge,
-            "ml.m5.8xlarge" => ClusterInstanceType::MlM58Xlarge,
-            "ml.m5.large" => ClusterInstanceType::MlM5Large,
-            "ml.m5.xlarge" => ClusterInstanceType::MlM5Xlarge,
-            "ml.p4d.24xlarge" => ClusterInstanceType::MlP4D24Xlarge,
-            "ml.p4de.24xlarge" => ClusterInstanceType::MlP4De24Xlarge,
-            "ml.p5.48xlarge" => ClusterInstanceType::MlP548Xlarge,
-            "ml.t3.2xlarge" => ClusterInstanceType::MlT32Xlarge,
-            "ml.t3.large" => ClusterInstanceType::MlT3Large,
-            "ml.t3.medium" => ClusterInstanceType::MlT3Medium,
-            "ml.t3.xlarge" => ClusterInstanceType::MlT3Xlarge,
-            "ml.trn1.32xlarge" => ClusterInstanceType::MlTrn132Xlarge,
-            "ml.trn1n.32xlarge" => ClusterInstanceType::MlTrn1N32Xlarge,
-            other => ClusterInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ml.c5.12xlarge" => ClusterInstanceType::MlC512Xlarge,
+"ml.c5.18xlarge" => ClusterInstanceType::MlC518Xlarge,
+"ml.c5.24xlarge" => ClusterInstanceType::MlC524Xlarge,
+"ml.c5.2xlarge" => ClusterInstanceType::MlC52Xlarge,
+"ml.c5.4xlarge" => ClusterInstanceType::MlC54Xlarge,
+"ml.c5.9xlarge" => ClusterInstanceType::MlC59Xlarge,
+"ml.c5.large" => ClusterInstanceType::MlC5Large,
+"ml.c5.xlarge" => ClusterInstanceType::MlC5Xlarge,
+"ml.c5n.18xlarge" => ClusterInstanceType::MlC5N18Xlarge,
+"ml.c5n.2xlarge" => ClusterInstanceType::MlC5N2Xlarge,
+"ml.c5n.4xlarge" => ClusterInstanceType::MlC5N4Xlarge,
+"ml.c5n.9xlarge" => ClusterInstanceType::MlC5N9Xlarge,
+"ml.c5n.large" => ClusterInstanceType::MlC5NLarge,
+"ml.g5.12xlarge" => ClusterInstanceType::MlG512Xlarge,
+"ml.g5.16xlarge" => ClusterInstanceType::MlG516Xlarge,
+"ml.g5.24xlarge" => ClusterInstanceType::MlG524Xlarge,
+"ml.g5.2xlarge" => ClusterInstanceType::MlG52Xlarge,
+"ml.g5.48xlarge" => ClusterInstanceType::MlG548Xlarge,
+"ml.g5.4xlarge" => ClusterInstanceType::MlG54Xlarge,
+"ml.g5.8xlarge" => ClusterInstanceType::MlG58Xlarge,
+"ml.g5.xlarge" => ClusterInstanceType::MlG5Xlarge,
+"ml.m5.12xlarge" => ClusterInstanceType::MlM512Xlarge,
+"ml.m5.16xlarge" => ClusterInstanceType::MlM516Xlarge,
+"ml.m5.24xlarge" => ClusterInstanceType::MlM524Xlarge,
+"ml.m5.2xlarge" => ClusterInstanceType::MlM52Xlarge,
+"ml.m5.4xlarge" => ClusterInstanceType::MlM54Xlarge,
+"ml.m5.8xlarge" => ClusterInstanceType::MlM58Xlarge,
+"ml.m5.large" => ClusterInstanceType::MlM5Large,
+"ml.m5.xlarge" => ClusterInstanceType::MlM5Xlarge,
+"ml.p4d.24xlarge" => ClusterInstanceType::MlP4D24Xlarge,
+"ml.p4de.24xlarge" => ClusterInstanceType::MlP4De24Xlarge,
+"ml.p5.48xlarge" => ClusterInstanceType::MlP548Xlarge,
+"ml.t3.2xlarge" => ClusterInstanceType::MlT32Xlarge,
+"ml.t3.large" => ClusterInstanceType::MlT3Large,
+"ml.t3.medium" => ClusterInstanceType::MlT3Medium,
+"ml.t3.xlarge" => ClusterInstanceType::MlT3Xlarge,
+"ml.trn1.32xlarge" => ClusterInstanceType::MlTrn132Xlarge,
+"ml.trn1n.32xlarge" => ClusterInstanceType::MlTrn1N32Xlarge,
+other => ClusterInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ClusterInstanceType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ClusterInstanceType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ClusterInstanceType::from(s))
+                    }
+                }
 impl ClusterInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterInstanceType::MlC512Xlarge => "ml.c5.12xlarge",
-            ClusterInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-            ClusterInstanceType::MlC524Xlarge => "ml.c5.24xlarge",
-            ClusterInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-            ClusterInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-            ClusterInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-            ClusterInstanceType::MlC5Large => "ml.c5.large",
-            ClusterInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-            ClusterInstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
-            ClusterInstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
-            ClusterInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
-            ClusterInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
-            ClusterInstanceType::MlC5NLarge => "ml.c5n.large",
-            ClusterInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
-            ClusterInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
-            ClusterInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
-            ClusterInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
-            ClusterInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
-            ClusterInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
-            ClusterInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
-            ClusterInstanceType::MlG5Xlarge => "ml.g5.xlarge",
-            ClusterInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-            ClusterInstanceType::MlM516Xlarge => "ml.m5.16xlarge",
-            ClusterInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-            ClusterInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-            ClusterInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-            ClusterInstanceType::MlM58Xlarge => "ml.m5.8xlarge",
-            ClusterInstanceType::MlM5Large => "ml.m5.large",
-            ClusterInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-            ClusterInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
-            ClusterInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
-            ClusterInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
-            ClusterInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
-            ClusterInstanceType::MlT3Large => "ml.t3.large",
-            ClusterInstanceType::MlT3Medium => "ml.t3.medium",
-            ClusterInstanceType::MlT3Xlarge => "ml.t3.xlarge",
-            ClusterInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
-            ClusterInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
-            ClusterInstanceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ml.c5.12xlarge",
-            "ml.c5.18xlarge",
-            "ml.c5.24xlarge",
-            "ml.c5.2xlarge",
-            "ml.c5.4xlarge",
-            "ml.c5.9xlarge",
-            "ml.c5.large",
-            "ml.c5.xlarge",
-            "ml.c5n.18xlarge",
-            "ml.c5n.2xlarge",
-            "ml.c5n.4xlarge",
-            "ml.c5n.9xlarge",
-            "ml.c5n.large",
-            "ml.g5.12xlarge",
-            "ml.g5.16xlarge",
-            "ml.g5.24xlarge",
-            "ml.g5.2xlarge",
-            "ml.g5.48xlarge",
-            "ml.g5.4xlarge",
-            "ml.g5.8xlarge",
-            "ml.g5.xlarge",
-            "ml.m5.12xlarge",
-            "ml.m5.16xlarge",
-            "ml.m5.24xlarge",
-            "ml.m5.2xlarge",
-            "ml.m5.4xlarge",
-            "ml.m5.8xlarge",
-            "ml.m5.large",
-            "ml.m5.xlarge",
-            "ml.p4d.24xlarge",
-            "ml.p4de.24xlarge",
-            "ml.p5.48xlarge",
-            "ml.t3.2xlarge",
-            "ml.t3.large",
-            "ml.t3.medium",
-            "ml.t3.xlarge",
-            "ml.trn1.32xlarge",
-            "ml.trn1n.32xlarge",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClusterInstanceType::MlC512Xlarge => "ml.c5.12xlarge",
+    ClusterInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+    ClusterInstanceType::MlC524Xlarge => "ml.c5.24xlarge",
+    ClusterInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+    ClusterInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+    ClusterInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+    ClusterInstanceType::MlC5Large => "ml.c5.large",
+    ClusterInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+    ClusterInstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
+    ClusterInstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
+    ClusterInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
+    ClusterInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
+    ClusterInstanceType::MlC5NLarge => "ml.c5n.large",
+    ClusterInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+    ClusterInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+    ClusterInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+    ClusterInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+    ClusterInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+    ClusterInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+    ClusterInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+    ClusterInstanceType::MlG5Xlarge => "ml.g5.xlarge",
+    ClusterInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+    ClusterInstanceType::MlM516Xlarge => "ml.m5.16xlarge",
+    ClusterInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+    ClusterInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+    ClusterInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+    ClusterInstanceType::MlM58Xlarge => "ml.m5.8xlarge",
+    ClusterInstanceType::MlM5Large => "ml.m5.large",
+    ClusterInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+    ClusterInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+    ClusterInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
+    ClusterInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+    ClusterInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
+    ClusterInstanceType::MlT3Large => "ml.t3.large",
+    ClusterInstanceType::MlT3Medium => "ml.t3.medium",
+    ClusterInstanceType::MlT3Xlarge => "ml.t3.xlarge",
+    ClusterInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
+    ClusterInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
+    ClusterInstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ml.c5.12xlarge", "ml.c5.18xlarge", "ml.c5.24xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.large", "ml.c5.xlarge", "ml.c5n.18xlarge", "ml.c5n.2xlarge", "ml.c5n.4xlarge", "ml.c5n.9xlarge", "ml.c5n.large", "ml.g5.12xlarge", "ml.g5.16xlarge", "ml.g5.24xlarge", "ml.g5.2xlarge", "ml.g5.48xlarge", "ml.g5.4xlarge", "ml.g5.8xlarge", "ml.g5.xlarge", "ml.m5.12xlarge", "ml.m5.16xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.8xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.p4d.24xlarge", "ml.p4de.24xlarge", "ml.p5.48xlarge", "ml.t3.2xlarge", "ml.t3.large", "ml.t3.medium", "ml.t3.xlarge", "ml.trn1.32xlarge", "ml.trn1n.32xlarge"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ClusterInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ClusterInstanceType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ClusterInstanceType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ClusterInstanceType::MlC512Xlarge => write!(f, "ml.c5.12xlarge"),
-            ClusterInstanceType::MlC518Xlarge => write!(f, "ml.c5.18xlarge"),
-            ClusterInstanceType::MlC524Xlarge => write!(f, "ml.c5.24xlarge"),
-            ClusterInstanceType::MlC52Xlarge => write!(f, "ml.c5.2xlarge"),
-            ClusterInstanceType::MlC54Xlarge => write!(f, "ml.c5.4xlarge"),
-            ClusterInstanceType::MlC59Xlarge => write!(f, "ml.c5.9xlarge"),
-            ClusterInstanceType::MlC5Large => write!(f, "ml.c5.large"),
-            ClusterInstanceType::MlC5Xlarge => write!(f, "ml.c5.xlarge"),
-            ClusterInstanceType::MlC5N18Xlarge => write!(f, "ml.c5n.18xlarge"),
-            ClusterInstanceType::MlC5N2Xlarge => write!(f, "ml.c5n.2xlarge"),
-            ClusterInstanceType::MlC5N4Xlarge => write!(f, "ml.c5n.4xlarge"),
-            ClusterInstanceType::MlC5N9Xlarge => write!(f, "ml.c5n.9xlarge"),
-            ClusterInstanceType::MlC5NLarge => write!(f, "ml.c5n.large"),
-            ClusterInstanceType::MlG512Xlarge => write!(f, "ml.g5.12xlarge"),
-            ClusterInstanceType::MlG516Xlarge => write!(f, "ml.g5.16xlarge"),
-            ClusterInstanceType::MlG524Xlarge => write!(f, "ml.g5.24xlarge"),
-            ClusterInstanceType::MlG52Xlarge => write!(f, "ml.g5.2xlarge"),
-            ClusterInstanceType::MlG548Xlarge => write!(f, "ml.g5.48xlarge"),
-            ClusterInstanceType::MlG54Xlarge => write!(f, "ml.g5.4xlarge"),
-            ClusterInstanceType::MlG58Xlarge => write!(f, "ml.g5.8xlarge"),
-            ClusterInstanceType::MlG5Xlarge => write!(f, "ml.g5.xlarge"),
-            ClusterInstanceType::MlM512Xlarge => write!(f, "ml.m5.12xlarge"),
-            ClusterInstanceType::MlM516Xlarge => write!(f, "ml.m5.16xlarge"),
-            ClusterInstanceType::MlM524Xlarge => write!(f, "ml.m5.24xlarge"),
-            ClusterInstanceType::MlM52Xlarge => write!(f, "ml.m5.2xlarge"),
-            ClusterInstanceType::MlM54Xlarge => write!(f, "ml.m5.4xlarge"),
-            ClusterInstanceType::MlM58Xlarge => write!(f, "ml.m5.8xlarge"),
-            ClusterInstanceType::MlM5Large => write!(f, "ml.m5.large"),
-            ClusterInstanceType::MlM5Xlarge => write!(f, "ml.m5.xlarge"),
-            ClusterInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
-            ClusterInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
-            ClusterInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
-            ClusterInstanceType::MlT32Xlarge => write!(f, "ml.t3.2xlarge"),
-            ClusterInstanceType::MlT3Large => write!(f, "ml.t3.large"),
-            ClusterInstanceType::MlT3Medium => write!(f, "ml.t3.medium"),
-            ClusterInstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
-            ClusterInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
-            ClusterInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
-            ClusterInstanceType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ClusterInstanceType::MlC512Xlarge => write!(f, "ml.c5.12xlarge"),
+ClusterInstanceType::MlC518Xlarge => write!(f, "ml.c5.18xlarge"),
+ClusterInstanceType::MlC524Xlarge => write!(f, "ml.c5.24xlarge"),
+ClusterInstanceType::MlC52Xlarge => write!(f, "ml.c5.2xlarge"),
+ClusterInstanceType::MlC54Xlarge => write!(f, "ml.c5.4xlarge"),
+ClusterInstanceType::MlC59Xlarge => write!(f, "ml.c5.9xlarge"),
+ClusterInstanceType::MlC5Large => write!(f, "ml.c5.large"),
+ClusterInstanceType::MlC5Xlarge => write!(f, "ml.c5.xlarge"),
+ClusterInstanceType::MlC5N18Xlarge => write!(f, "ml.c5n.18xlarge"),
+ClusterInstanceType::MlC5N2Xlarge => write!(f, "ml.c5n.2xlarge"),
+ClusterInstanceType::MlC5N4Xlarge => write!(f, "ml.c5n.4xlarge"),
+ClusterInstanceType::MlC5N9Xlarge => write!(f, "ml.c5n.9xlarge"),
+ClusterInstanceType::MlC5NLarge => write!(f, "ml.c5n.large"),
+ClusterInstanceType::MlG512Xlarge => write!(f, "ml.g5.12xlarge"),
+ClusterInstanceType::MlG516Xlarge => write!(f, "ml.g5.16xlarge"),
+ClusterInstanceType::MlG524Xlarge => write!(f, "ml.g5.24xlarge"),
+ClusterInstanceType::MlG52Xlarge => write!(f, "ml.g5.2xlarge"),
+ClusterInstanceType::MlG548Xlarge => write!(f, "ml.g5.48xlarge"),
+ClusterInstanceType::MlG54Xlarge => write!(f, "ml.g5.4xlarge"),
+ClusterInstanceType::MlG58Xlarge => write!(f, "ml.g5.8xlarge"),
+ClusterInstanceType::MlG5Xlarge => write!(f, "ml.g5.xlarge"),
+ClusterInstanceType::MlM512Xlarge => write!(f, "ml.m5.12xlarge"),
+ClusterInstanceType::MlM516Xlarge => write!(f, "ml.m5.16xlarge"),
+ClusterInstanceType::MlM524Xlarge => write!(f, "ml.m5.24xlarge"),
+ClusterInstanceType::MlM52Xlarge => write!(f, "ml.m5.2xlarge"),
+ClusterInstanceType::MlM54Xlarge => write!(f, "ml.m5.4xlarge"),
+ClusterInstanceType::MlM58Xlarge => write!(f, "ml.m5.8xlarge"),
+ClusterInstanceType::MlM5Large => write!(f, "ml.m5.large"),
+ClusterInstanceType::MlM5Xlarge => write!(f, "ml.m5.xlarge"),
+ClusterInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
+ClusterInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
+ClusterInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+ClusterInstanceType::MlT32Xlarge => write!(f, "ml.t3.2xlarge"),
+ClusterInstanceType::MlT3Large => write!(f, "ml.t3.large"),
+ClusterInstanceType::MlT3Medium => write!(f, "ml.t3.medium"),
+ClusterInstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
+ClusterInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
+ClusterInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
+ClusterInstanceType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

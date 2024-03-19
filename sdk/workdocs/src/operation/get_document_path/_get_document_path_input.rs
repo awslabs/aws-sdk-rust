@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetDocumentPathInput {
+pub struct GetDocumentPathInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
@@ -14,13 +14,13 @@ pub struct GetDocumentPathInput {
     /// <p>This value is not supported.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl GetDocumentPathInput {
+impl  GetDocumentPathInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
@@ -28,15 +28,15 @@ impl GetDocumentPathInput {
         self.limit
     }
     /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
-    pub fn fields(&self) -> ::std::option::Option<&str> {
+    pub fn fields(&self) -> ::std::option::Option<& str> {
         self.fields.as_deref()
     }
     /// <p>This value is not supported.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetDocumentPathInput {
+impl  ::std::fmt::Debug for GetDocumentPathInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentPathInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -72,8 +72,7 @@ impl GetDocumentPathInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl GetDocumentPathInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The ID of the document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl GetDocumentPathInputBuilder {
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -115,8 +112,7 @@ impl GetDocumentPathInputBuilder {
     }
     /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fields = input;
-        self
+        self.fields = input; self
     }
     /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,24 +125,28 @@ impl GetDocumentPathInputBuilder {
     }
     /// <p>This value is not supported.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>This value is not supported.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`GetDocumentPathInput`](crate::operation::get_document_path::GetDocumentPathInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_document_path::GetDocumentPathInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_document_path::GetDocumentPathInput {
-            authentication_token: self.authentication_token,
-            document_id: self.document_id,
-            limit: self.limit,
-            fields: self.fields,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_document_path::GetDocumentPathInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_document_path::GetDocumentPathInput {
+                authentication_token: self.authentication_token
+                ,
+                document_id: self.document_id
+                ,
+                limit: self.limit
+                ,
+                fields: self.fields
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetDocumentPathInputBuilder {
@@ -160,3 +160,4 @@ impl ::std::fmt::Debug for GetDocumentPathInputBuilder {
         formatter.finish()
     }
 }
+

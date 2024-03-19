@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeAssetBundleExportJobOutput {
+pub struct DescribeAssetBundleExportJobOutput  {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
     pub job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
@@ -13,7 +13,7 @@ pub struct DescribeAssetBundleExportJobOutput {
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobError>>,
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the export job was created.</p>
@@ -23,7 +23,7 @@ pub struct DescribeAssetBundleExportJobOutput {
     /// <p>The ID of the Amazon Web Services account that the export job was executed in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource ARNs that exported with the job.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The include dependencies flag.</p>
     pub include_all_dependencies: bool,
     /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
@@ -42,67 +42,67 @@ pub struct DescribeAssetBundleExportJobOutput {
     pub validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
     /// <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p>
     /// <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
-    pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobWarning>>,
     _request_id: Option<String>,
 }
-impl DescribeAssetBundleExportJobOutput {
+impl  DescribeAssetBundleExportJobOutput  {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::AssetBundleExportJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::AssetBundleExportJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The URL to download the exported asset bundle data from.</p>
     /// <p>This URL is available only after the job has succeeded. This URL is valid for 5 minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed.</p>
     /// <p>The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>. The file has a <code>.qs</code> extension.</p>
     /// <p>This URL can't be used in a <code>StartAssetBundleImportJob</code> API call and should only be used for download purposes.</p>
-    pub fn download_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<& str> {
         self.download_url.as_deref()
     }
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::AssetBundleExportJobError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::AssetBundleExportJobError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time that the export job was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<& str> {
         self.asset_bundle_export_job_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that the export job was executed in.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A list of resource ARNs that exported with the job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The include dependencies flag.</p>
     pub fn include_all_dependencies(&self) -> bool {
         self.include_all_dependencies
     }
     /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
-    pub fn export_format(&self) -> ::std::option::Option<&crate::types::AssetBundleExportFormat> {
+    pub fn export_format(&self) -> ::std::option::Option<& crate::types::AssetBundleExportFormat> {
         self.export_format.as_ref()
     }
     /// <p>The CloudFormation override property configuration for the export job.</p>
-    pub fn cloud_formation_override_property_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
+    pub fn cloud_formation_override_property_configuration(&self) -> ::std::option::Option<& crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         self.cloud_formation_override_property_configuration.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the response.</p>
@@ -118,18 +118,19 @@ impl DescribeAssetBundleExportJobOutput {
         self.include_tags
     }
     /// <p>The validation strategy that is used to export the analysis or dashboard.</p>
-    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::AssetBundleExportJobValidationStrategy> {
+    pub fn validation_strategy(&self) -> ::std::option::Option<& crate::types::AssetBundleExportJobValidationStrategy> {
         self.validation_strategy.as_ref()
     }
     /// <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p>
     /// <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
-    pub fn warnings(&self) -> &[crate::types::AssetBundleExportJobWarning] {
-        self.warnings.as_deref().unwrap_or_default()
+    pub fn warnings(&self) -> & [crate::types::AssetBundleExportJobWarning] {
+        self.warnings.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutput {
+impl  ::std::fmt::Debug for DescribeAssetBundleExportJobOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssetBundleExportJobOutput");
         formatter.field("job_status", &self.job_status);
@@ -142,10 +143,7 @@ impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutput {
         formatter.field("resource_arns", &self.resource_arns);
         formatter.field("include_all_dependencies", &self.include_all_dependencies);
         formatter.field("export_format", &self.export_format);
-        formatter.field(
-            "cloud_formation_override_property_configuration",
-            &self.cloud_formation_override_property_configuration,
-        );
+        formatter.field("cloud_formation_override_property_configuration", &self.cloud_formation_override_property_configuration);
         formatter.field("request_id", &self.request_id);
         formatter.field("status", &self.status);
         formatter.field("include_permissions", &self.include_permissions);
@@ -157,10 +155,10 @@ impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetBundleExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAssetBundleExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetBundleExportJobOutput`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput).
     pub fn builder() -> crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobOutputBuilder {
@@ -174,22 +172,21 @@ impl DescribeAssetBundleExportJobOutput {
 pub struct DescribeAssetBundleExportJobOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobError>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) include_all_dependencies: ::std::option::Option<bool>,
     pub(crate) export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
-    pub(crate) cloud_formation_override_property_configuration:
-        ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
+    pub(crate) cloud_formation_override_property_configuration: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) include_permissions: ::std::option::Option<bool>,
     pub(crate) include_tags: ::std::option::Option<bool>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
-    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobWarning>>,
     _request_id: Option<String>,
 }
 impl DescribeAssetBundleExportJobOutputBuilder {
@@ -202,8 +199,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
@@ -223,8 +219,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     /// <p>The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>. The file has a <code>.qs</code> extension.</p>
     /// <p>This URL can't be used in a <code>StartAssetBundleImportJob</code> API call and should only be used for download purposes.</p>
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_url = input;
-        self
+        self.download_url = input; self
     }
     /// <p>The URL to download the exported asset bundle data from.</p>
     /// <p>This URL is available only after the job has succeeded. This URL is valid for 5 minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed.</p>
@@ -241,19 +236,18 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
     pub fn errors(mut self, input: crate::types::AssetBundleExportJobError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobError>> {
         &self.errors
     }
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
@@ -263,8 +257,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +270,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The time that the export job was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the export job was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -291,8 +283,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub fn set_asset_bundle_export_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_bundle_export_job_id = input;
-        self
+        self.asset_bundle_export_job_id = input; self
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +296,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that the export job was executed in.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that the export job was executed in.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,17 +309,16 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     /// <p>A list of resource ARNs that exported with the job.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource ARNs that exported with the job.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>A list of resource ARNs that exported with the job.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// <p>The include dependencies flag.</p>
@@ -339,8 +328,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The include dependencies flag.</p>
     pub fn set_include_all_dependencies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_all_dependencies = input;
-        self
+        self.include_all_dependencies = input; self
     }
     /// <p>The include dependencies flag.</p>
     pub fn get_include_all_dependencies(&self) -> &::std::option::Option<bool> {
@@ -353,33 +341,23 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
     pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::AssetBundleExportFormat>) -> Self {
-        self.export_format = input;
-        self
+        self.export_format = input; self
     }
     /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
         &self.export_format
     }
     /// <p>The CloudFormation override property configuration for the export job.</p>
-    pub fn cloud_formation_override_property_configuration(
-        mut self,
-        input: crate::types::AssetBundleCloudFormationOverridePropertyConfiguration,
-    ) -> Self {
+    pub fn cloud_formation_override_property_configuration(mut self, input: crate::types::AssetBundleCloudFormationOverridePropertyConfiguration) -> Self {
         self.cloud_formation_override_property_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CloudFormation override property configuration for the export job.</p>
-    pub fn set_cloud_formation_override_property_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
-    ) -> Self {
-        self.cloud_formation_override_property_configuration = input;
-        self
+    pub fn set_cloud_formation_override_property_configuration(mut self, input: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>) -> Self {
+        self.cloud_formation_override_property_configuration = input; self
     }
     /// <p>The CloudFormation override property configuration for the export job.</p>
-    pub fn get_cloud_formation_override_property_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
+    pub fn get_cloud_formation_override_property_configuration(&self) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         &self.cloud_formation_override_property_configuration
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -389,8 +367,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -403,8 +380,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The HTTP status of the response.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the response.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -417,8 +393,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The include permissions flag.</p>
     pub fn set_include_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_permissions = input;
-        self
+        self.include_permissions = input; self
     }
     /// <p>The include permissions flag.</p>
     pub fn get_include_permissions(&self) -> &::std::option::Option<bool> {
@@ -431,8 +406,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The include tags flag.</p>
     pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_tags = input;
-        self
+        self.include_tags = input; self
     }
     /// <p>The include tags flag.</p>
     pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
@@ -445,8 +419,7 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     }
     /// <p>The validation strategy that is used to export the analysis or dashboard.</p>
     pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>) -> Self {
-        self.validation_strategy = input;
-        self
+        self.validation_strategy = input; self
     }
     /// <p>The validation strategy that is used to export the analysis or dashboard.</p>
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy> {
@@ -460,50 +433,70 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     /// <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
     pub fn warnings(mut self, input: crate::types::AssetBundleExportJobWarning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p>
     /// <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
-    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>>) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobWarning>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p>
     /// <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
-    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobWarning>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobWarning>> {
         &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAssetBundleExportJobOutput`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput).
     pub fn build(self) -> crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput {
         crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput {
-            job_status: self.job_status,
-            download_url: self.download_url,
-            errors: self.errors,
-            arn: self.arn,
-            created_time: self.created_time,
-            asset_bundle_export_job_id: self.asset_bundle_export_job_id,
-            aws_account_id: self.aws_account_id,
-            resource_arns: self.resource_arns,
-            include_all_dependencies: self.include_all_dependencies.unwrap_or_default(),
-            export_format: self.export_format,
-            cloud_formation_override_property_configuration: self.cloud_formation_override_property_configuration,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
-            include_permissions: self.include_permissions.unwrap_or_default(),
-            include_tags: self.include_tags.unwrap_or_default(),
-            validation_strategy: self.validation_strategy,
-            warnings: self.warnings,
+            job_status: self.job_status
+            ,
+            download_url: self.download_url
+            ,
+            errors: self.errors
+            ,
+            arn: self.arn
+            ,
+            created_time: self.created_time
+            ,
+            asset_bundle_export_job_id: self.asset_bundle_export_job_id
+            ,
+            aws_account_id: self.aws_account_id
+            ,
+            resource_arns: self.resource_arns
+            ,
+            include_all_dependencies: self.include_all_dependencies
+                .unwrap_or_default()
+            ,
+            export_format: self.export_format
+            ,
+            cloud_formation_override_property_configuration: self.cloud_formation_override_property_configuration
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            include_permissions: self.include_permissions
+                .unwrap_or_default()
+            ,
+            include_tags: self.include_tags
+                .unwrap_or_default()
+            ,
+            validation_strategy: self.validation_strategy
+            ,
+            warnings: self.warnings
+            ,
             _request_id: self._request_id,
         }
     }
@@ -521,10 +514,7 @@ impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutputBuilder {
         formatter.field("resource_arns", &self.resource_arns);
         formatter.field("include_all_dependencies", &self.include_all_dependencies);
         formatter.field("export_format", &self.export_format);
-        formatter.field(
-            "cloud_formation_override_property_configuration",
-            &self.cloud_formation_override_property_configuration,
-        );
+        formatter.field("cloud_formation_override_property_configuration", &self.cloud_formation_override_property_configuration);
         formatter.field("request_id", &self.request_id);
         formatter.field("status", &self.status);
         formatter.field("include_permissions", &self.include_permissions);
@@ -535,3 +525,4 @@ impl ::std::fmt::Debug for DescribeAssetBundleExportJobOutputBuilder {
         formatter.finish()
     }
 }
+

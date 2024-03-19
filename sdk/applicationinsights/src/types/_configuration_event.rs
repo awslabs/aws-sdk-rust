@@ -3,7 +3,7 @@
 /// <p>The event information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationEvent {
+pub struct ConfigurationEvent  {
     /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
@@ -21,37 +21,37 @@ pub struct ConfigurationEvent {
     /// <p>The name of the resource Application Insights attempted to configure.</p>
     pub event_resource_name: ::std::option::Option<::std::string::String>,
 }
-impl ConfigurationEvent {
+impl  ConfigurationEvent  {
     /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The resource monitored by Application Insights.</p>
-    pub fn monitored_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitored_resource_arn(&self) -> ::std::option::Option<& str> {
         self.monitored_resource_arn.as_deref()
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn event_status(&self) -> ::std::option::Option<&crate::types::ConfigurationEventStatus> {
+    pub fn event_status(&self) -> ::std::option::Option<& crate::types::ConfigurationEventStatus> {
         self.event_status.as_ref()
     }
     /// <p>The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.</p>
-    pub fn event_resource_type(&self) -> ::std::option::Option<&crate::types::ConfigurationEventResourceType> {
+    pub fn event_resource_type(&self) -> ::std::option::Option<& crate::types::ConfigurationEventResourceType> {
         self.event_resource_type.as_ref()
     }
     /// <p>The timestamp of the event.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The details of the event in plain text.</p>
-    pub fn event_detail(&self) -> ::std::option::Option<&str> {
+    pub fn event_detail(&self) -> ::std::option::Option<& str> {
         self.event_detail.as_deref()
     }
     /// <p>The name of the resource Application Insights attempted to configure.</p>
-    pub fn event_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_resource_name(&self) -> ::std::option::Option<& str> {
         self.event_resource_name.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The resource monitored by Application Insights.</p>
     pub fn set_monitored_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitored_resource_arn = input;
-        self
+        self.monitored_resource_arn = input; self
     }
     /// <p>The resource monitored by Application Insights.</p>
     pub fn get_monitored_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
     pub fn set_event_status(mut self, input: ::std::option::Option<crate::types::ConfigurationEventStatus>) -> Self {
-        self.event_status = input;
-        self
+        self.event_status = input; self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
     pub fn get_event_status(&self) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
@@ -139,8 +135,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.</p>
     pub fn set_event_resource_type(mut self, input: ::std::option::Option<crate::types::ConfigurationEventResourceType>) -> Self {
-        self.event_resource_type = input;
-        self
+        self.event_resource_type = input; self
     }
     /// <p>The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.</p>
     pub fn get_event_resource_type(&self) -> &::std::option::Option<crate::types::ConfigurationEventResourceType> {
@@ -153,8 +148,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The timestamp of the event.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>The timestamp of the event.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +161,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The details of the event in plain text.</p>
     pub fn set_event_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_detail = input;
-        self
+        self.event_detail = input; self
     }
     /// <p>The details of the event in plain text.</p>
     pub fn get_event_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The name of the resource Application Insights attempted to configure.</p>
     pub fn set_event_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_resource_name = input;
-        self
+        self.event_resource_name = input; self
     }
     /// <p>The name of the resource Application Insights attempted to configure.</p>
     pub fn get_event_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl ConfigurationEventBuilder {
     /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     pub fn build(self) -> crate::types::ConfigurationEvent {
         crate::types::ConfigurationEvent {
-            resource_group_name: self.resource_group_name,
-            account_id: self.account_id,
-            monitored_resource_arn: self.monitored_resource_arn,
-            event_status: self.event_status,
-            event_resource_type: self.event_resource_type,
-            event_time: self.event_time,
-            event_detail: self.event_detail,
-            event_resource_name: self.event_resource_name,
+            resource_group_name: self.resource_group_name
+            ,
+            account_id: self.account_id
+            ,
+            monitored_resource_arn: self.monitored_resource_arn
+            ,
+            event_status: self.event_status
+            ,
+            event_resource_type: self.event_resource_type
+            ,
+            event_time: self.event_time
+            ,
+            event_detail: self.event_detail
+            ,
+            event_resource_name: self.event_resource_name
+            ,
         }
     }
 }
+

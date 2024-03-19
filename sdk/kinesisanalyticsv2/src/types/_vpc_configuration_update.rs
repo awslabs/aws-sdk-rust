@@ -3,31 +3,32 @@
 /// <p>Describes updates to the VPC configuration used by the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConfigurationUpdate {
+pub struct VpcConfigurationUpdate  {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
     pub vpc_configuration_id: ::std::string::String,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub subnet_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_id_updates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub security_group_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_id_updates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl VpcConfigurationUpdate {
+impl  VpcConfigurationUpdate  {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
-    pub fn vpc_configuration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_configuration_id.deref()
+    pub fn vpc_configuration_id(&self) -> & str {
+        use std::ops::Deref; self.vpc_configuration_id.deref()
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_id_updates.is_none()`.
-    pub fn subnet_id_updates(&self) -> &[::std::string::String] {
-        self.subnet_id_updates.as_deref().unwrap_or_default()
+    pub fn subnet_id_updates(&self) -> & [::std::string::String] {
+        self.subnet_id_updates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_id_updates.is_none()`.
-    pub fn security_group_id_updates(&self) -> &[::std::string::String] {
-        self.security_group_id_updates.as_deref().unwrap_or_default()
+    pub fn security_group_id_updates(&self) -> & [::std::string::String] {
+        self.security_group_id_updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl VpcConfigurationUpdate {
@@ -42,8 +43,8 @@ impl VpcConfigurationUpdate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConfigurationUpdateBuilder {
     pub(crate) vpc_configuration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_id_updates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group_id_updates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl VpcConfigurationUpdateBuilder {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
@@ -54,8 +55,7 @@ impl VpcConfigurationUpdateBuilder {
     }
     /// <p>Describes an update to the ID of the VPC configuration.</p>
     pub fn set_vpc_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_configuration_id = input;
-        self
+        self.vpc_configuration_id = input; self
     }
     /// <p>Describes an update to the ID of the VPC configuration.</p>
     pub fn get_vpc_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,17 +68,16 @@ impl VpcConfigurationUpdateBuilder {
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
     pub fn subnet_id_updates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_id_updates.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_id_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_id_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn set_subnet_id_updates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_id_updates = input;
-        self
+    pub fn set_subnet_id_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_id_updates = input; self
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn get_subnet_id_updates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_id_updates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_id_updates
     }
     /// Appends an item to `security_group_id_updates`.
@@ -88,32 +87,35 @@ impl VpcConfigurationUpdateBuilder {
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub fn security_group_id_updates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_id_updates.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_id_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_id_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn set_security_group_id_updates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_id_updates = input;
-        self
+    pub fn set_security_group_id_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_id_updates = input; self
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn get_security_group_id_updates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_id_updates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_id_updates
     }
     /// Consumes the builder and constructs a [`VpcConfigurationUpdate`](crate::types::VpcConfigurationUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_configuration_id`](crate::types::builders::VpcConfigurationUpdateBuilder::vpc_configuration_id)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VpcConfigurationUpdate {
-            vpc_configuration_id: self.vpc_configuration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_configuration_id",
-                    "vpc_configuration_id was not specified but it is required when building VpcConfigurationUpdate",
-                )
-            })?,
-            subnet_id_updates: self.subnet_id_updates,
-            security_group_id_updates: self.security_group_id_updates,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VpcConfigurationUpdate {
+                vpc_configuration_id: self.vpc_configuration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_configuration_id", "vpc_configuration_id was not specified but it is required when building VpcConfigurationUpdate")
+                    )?
+                ,
+                subnet_id_updates: self.subnet_id_updates
+                ,
+                security_group_id_updates: self.security_group_id_updates
+                ,
+            }
+        )
     }
 }
+

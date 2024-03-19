@@ -3,7 +3,7 @@
 /// <p>A storage location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLocation {
+pub struct StorageLocation  {
     /// <p>The location's bucket.</p>
     pub bucket: ::std::string::String,
     /// <p>The location's repo prefix.</p>
@@ -15,31 +15,26 @@ pub struct StorageLocation {
     /// <p>The location's manifest prefix.</p>
     pub manifest_prefix_location: ::std::string::String,
 }
-impl StorageLocation {
+impl  StorageLocation  {
     /// <p>The location's bucket.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The location's repo prefix.</p>
-    pub fn repo_prefix_location(&self) -> &str {
-        use std::ops::Deref;
-        self.repo_prefix_location.deref()
+    pub fn repo_prefix_location(&self) -> & str {
+        use std::ops::Deref; self.repo_prefix_location.deref()
     }
     /// <p>The location's generated prefix.</p>
-    pub fn generated_prefix_location(&self) -> &str {
-        use std::ops::Deref;
-        self.generated_prefix_location.deref()
+    pub fn generated_prefix_location(&self) -> & str {
+        use std::ops::Deref; self.generated_prefix_location.deref()
     }
     /// <p>The location's binary prefix.</p>
-    pub fn binary_prefix_location(&self) -> &str {
-        use std::ops::Deref;
-        self.binary_prefix_location.deref()
+    pub fn binary_prefix_location(&self) -> & str {
+        use std::ops::Deref; self.binary_prefix_location.deref()
     }
     /// <p>The location's manifest prefix.</p>
-    pub fn manifest_prefix_location(&self) -> &str {
-        use std::ops::Deref;
-        self.manifest_prefix_location.deref()
+    pub fn manifest_prefix_location(&self) -> & str {
+        use std::ops::Deref; self.manifest_prefix_location.deref()
     }
 }
 impl StorageLocation {
@@ -68,8 +63,7 @@ impl StorageLocationBuilder {
     }
     /// <p>The location's bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The location's bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +77,7 @@ impl StorageLocationBuilder {
     }
     /// <p>The location's repo prefix.</p>
     pub fn set_repo_prefix_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repo_prefix_location = input;
-        self
+        self.repo_prefix_location = input; self
     }
     /// <p>The location's repo prefix.</p>
     pub fn get_repo_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +91,7 @@ impl StorageLocationBuilder {
     }
     /// <p>The location's generated prefix.</p>
     pub fn set_generated_prefix_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_prefix_location = input;
-        self
+        self.generated_prefix_location = input; self
     }
     /// <p>The location's generated prefix.</p>
     pub fn get_generated_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +105,7 @@ impl StorageLocationBuilder {
     }
     /// <p>The location's binary prefix.</p>
     pub fn set_binary_prefix_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.binary_prefix_location = input;
-        self
+        self.binary_prefix_location = input; self
     }
     /// <p>The location's binary prefix.</p>
     pub fn get_binary_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +119,7 @@ impl StorageLocationBuilder {
     }
     /// <p>The location's manifest prefix.</p>
     pub fn set_manifest_prefix_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_prefix_location = input;
-        self
+        self.manifest_prefix_location = input; self
     }
     /// <p>The location's manifest prefix.</p>
     pub fn get_manifest_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,37 +133,35 @@ impl StorageLocationBuilder {
     /// - [`binary_prefix_location`](crate::types::builders::StorageLocationBuilder::binary_prefix_location)
     /// - [`manifest_prefix_location`](crate::types::builders::StorageLocationBuilder::manifest_prefix_location)
     pub fn build(self) -> ::std::result::Result<crate::types::StorageLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StorageLocation {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building StorageLocation",
-                )
-            })?,
-            repo_prefix_location: self.repo_prefix_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repo_prefix_location",
-                    "repo_prefix_location was not specified but it is required when building StorageLocation",
-                )
-            })?,
-            generated_prefix_location: self.generated_prefix_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "generated_prefix_location",
-                    "generated_prefix_location was not specified but it is required when building StorageLocation",
-                )
-            })?,
-            binary_prefix_location: self.binary_prefix_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "binary_prefix_location",
-                    "binary_prefix_location was not specified but it is required when building StorageLocation",
-                )
-            })?,
-            manifest_prefix_location: self.manifest_prefix_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manifest_prefix_location",
-                    "manifest_prefix_location was not specified but it is required when building StorageLocation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StorageLocation {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building StorageLocation")
+                    )?
+                ,
+                repo_prefix_location: self.repo_prefix_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repo_prefix_location", "repo_prefix_location was not specified but it is required when building StorageLocation")
+                    )?
+                ,
+                generated_prefix_location: self.generated_prefix_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("generated_prefix_location", "generated_prefix_location was not specified but it is required when building StorageLocation")
+                    )?
+                ,
+                binary_prefix_location: self.binary_prefix_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("binary_prefix_location", "binary_prefix_location was not specified but it is required when building StorageLocation")
+                    )?
+                ,
+                manifest_prefix_location: self.manifest_prefix_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manifest_prefix_location", "manifest_prefix_location was not specified but it is required when building StorageLocation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataCatalogInput {
+pub struct UpdateDataCatalogInput  {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
@@ -25,19 +25,19 @@ pub struct UpdateDataCatalogInput {
     /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl UpdateDataCatalogInput {
+impl  UpdateDataCatalogInput  {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCatalogType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataCatalogType> {
         self.r#type.as_ref()
     }
     /// <p>New or modified text that describes the data catalog.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
@@ -56,7 +56,7 @@ impl UpdateDataCatalogInput {
     /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -74,7 +74,7 @@ pub struct UpdateDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDataCatalogInputBuilder {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -85,8 +85,7 @@ impl UpdateDataCatalogInputBuilder {
     }
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl UpdateDataCatalogInputBuilder {
     }
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
@@ -114,8 +112,7 @@ impl UpdateDataCatalogInputBuilder {
     }
     /// <p>New or modified text that describes the data catalog.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>New or modified text that describes the data catalog.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,9 +140,9 @@ impl UpdateDataCatalogInputBuilder {
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
@@ -163,9 +160,8 @@ impl UpdateDataCatalogInputBuilder {
     /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
@@ -183,18 +179,23 @@ impl UpdateDataCatalogInputBuilder {
     /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateDataCatalogInput`](crate::operation::update_data_catalog::UpdateDataCatalogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_catalog::UpdateDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_data_catalog::UpdateDataCatalogInput {
-            name: self.name,
-            r#type: self.r#type,
-            description: self.description,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_catalog::UpdateDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_catalog::UpdateDataCatalogInput {
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

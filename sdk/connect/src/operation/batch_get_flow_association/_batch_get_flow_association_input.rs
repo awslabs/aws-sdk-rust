@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetFlowAssociationInput {
+pub struct BatchGetFlowAssociationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The type of resource association.</p>
     pub resource_type: ::std::option::Option<crate::types::ListFlowAssociationResourceType>,
 }
-impl BatchGetFlowAssociationInput {
+impl  BatchGetFlowAssociationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of resource association.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ListFlowAssociationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ListFlowAssociationResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl BatchGetFlowAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFlowAssociationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ListFlowAssociationResourceType>,
 }
 impl BatchGetFlowAssociationInputBuilder {
@@ -50,8 +51,7 @@ impl BatchGetFlowAssociationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl BatchGetFlowAssociationInputBuilder {
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// <p>The type of resource association.</p>
@@ -84,24 +83,24 @@ impl BatchGetFlowAssociationInputBuilder {
     }
     /// <p>The type of resource association.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ListFlowAssociationResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource association.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ListFlowAssociationResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`BatchGetFlowAssociationInput`](crate::operation::batch_get_flow_association::BatchGetFlowAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_flow_association::BatchGetFlowAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_flow_association::BatchGetFlowAssociationInput {
-            instance_id: self.instance_id,
-            resource_ids: self.resource_ids,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_flow_association::BatchGetFlowAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationInput {
+                instance_id: self.instance_id
+                ,
+                resource_ids: self.resource_ids
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

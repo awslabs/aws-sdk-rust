@@ -3,19 +3,19 @@
 /// <p>Contains the category by which the utterance analytics were grouped and the values for that category.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsUtteranceGroupByKey {
+pub struct AnalyticsUtteranceGroupByKey  {
     /// <p>The category by which the utterance analytics were grouped.</p>
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
     /// <p>A member of the category by which the utterance analytics were grouped.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsUtteranceGroupByKey {
+impl  AnalyticsUtteranceGroupByKey  {
     /// <p>The category by which the utterance analytics were grouped.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsUtteranceField> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsUtteranceField> {
         self.name.as_ref()
     }
     /// <p>A member of the category by which the utterance analytics were grouped.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AnalyticsUtteranceGroupByKeyBuilder {
     }
     /// <p>The category by which the utterance analytics were grouped.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceField>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The category by which the utterance analytics were grouped.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceField> {
@@ -55,8 +54,7 @@ impl AnalyticsUtteranceGroupByKeyBuilder {
     }
     /// <p>A member of the category by which the utterance analytics were grouped.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A member of the category by which the utterance analytics were grouped.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AnalyticsUtteranceGroupByKeyBuilder {
     /// Consumes the builder and constructs a [`AnalyticsUtteranceGroupByKey`](crate::types::AnalyticsUtteranceGroupByKey).
     pub fn build(self) -> crate::types::AnalyticsUtteranceGroupByKey {
         crate::types::AnalyticsUtteranceGroupByKey {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::get_reservation_purchase_recommendation::_get_reservat
 
 impl GetReservationPurchaseRecommendationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_reservation_purchase_recommendation();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_reservation_purchase_recommendation();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetReservationPurchaseRecommendation`.
-///
+/// 
 /// <p>Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p>
 /// <p>Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.</p>
 /// <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of normalized units. This way, you can purchase any instance size that you want. For this example, your RI recommendation is for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReservationPurchaseRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationInputBuilder,
+                    inner: crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
-    > for GetReservationPurchaseRecommendationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
-            crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
+                    crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
+                > for GetReservationPurchaseRecommendationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
+                        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetReservationPurchaseRecommendationFluentBuilder {
     /// Creates a new `GetReservationPurchaseRecommendation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,54 +59,44 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The account ID that's associated with the recommendation.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -408,3 +394,4 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
         self.inner.get_next_page_token()
     }
 }
+

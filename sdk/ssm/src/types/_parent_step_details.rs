@@ -3,7 +3,7 @@
 /// <p>A detailed status of the parent step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParentStepDetails {
+pub struct ParentStepDetails  {
     /// <p>The unique ID of a step execution.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
@@ -15,17 +15,17 @@ pub struct ParentStepDetails {
     /// <p>The current value of the specified iterator in the loop.</p>
     pub iterator_value: ::std::option::Option<::std::string::String>,
 }
-impl ParentStepDetails {
+impl  ParentStepDetails  {
     /// <p>The unique ID of a step execution.</p>
-    pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_execution_id(&self) -> ::std::option::Option<& str> {
         self.step_execution_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn step_name(&self) -> ::std::option::Option<&str> {
+    pub fn step_name(&self) -> ::std::option::Option<& str> {
         self.step_name.as_deref()
     }
     /// <p>The name of the automation action.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The current repetition of the loop represented by an integer.</p>
@@ -33,7 +33,7 @@ impl ParentStepDetails {
         self.iteration
     }
     /// <p>The current value of the specified iterator in the loop.</p>
-    pub fn iterator_value(&self) -> ::std::option::Option<&str> {
+    pub fn iterator_value(&self) -> ::std::option::Option<& str> {
         self.iterator_value.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ParentStepDetailsBuilder {
     }
     /// <p>The unique ID of a step execution.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_execution_id = input;
-        self
+        self.step_execution_id = input; self
     }
     /// <p>The unique ID of a step execution.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ParentStepDetailsBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_name = input;
-        self
+        self.step_name = input; self
     }
     /// <p>The name of the step.</p>
     pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ParentStepDetailsBuilder {
     }
     /// <p>The name of the automation action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The name of the automation action.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ParentStepDetailsBuilder {
     }
     /// <p>The current repetition of the loop represented by an integer.</p>
     pub fn set_iteration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iteration = input;
-        self
+        self.iteration = input; self
     }
     /// <p>The current repetition of the loop represented by an integer.</p>
     pub fn get_iteration(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl ParentStepDetailsBuilder {
     }
     /// <p>The current value of the specified iterator in the loop.</p>
     pub fn set_iterator_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iterator_value = input;
-        self
+        self.iterator_value = input; self
     }
     /// <p>The current value of the specified iterator in the loop.</p>
     pub fn get_iterator_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl ParentStepDetailsBuilder {
     /// Consumes the builder and constructs a [`ParentStepDetails`](crate::types::ParentStepDetails).
     pub fn build(self) -> crate::types::ParentStepDetails {
         crate::types::ParentStepDetails {
-            step_execution_id: self.step_execution_id,
-            step_name: self.step_name,
-            action: self.action,
-            iteration: self.iteration,
-            iterator_value: self.iterator_value,
+            step_execution_id: self.step_execution_id
+            ,
+            step_name: self.step_name
+            ,
+            action: self.action
+            ,
+            iteration: self.iteration
+            ,
+            iterator_value: self.iterator_value
+            ,
         }
     }
 }
+

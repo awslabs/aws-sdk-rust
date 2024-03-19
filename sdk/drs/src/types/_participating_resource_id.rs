@@ -21,11 +21,7 @@ impl ParticipatingResourceId {
     /// Tries to convert the enum instance into [`SourceNetworkId`](crate::types::ParticipatingResourceId::SourceNetworkId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_source_network_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ParticipatingResourceId::SourceNetworkId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParticipatingResourceId::SourceNetworkId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SourceNetworkId`](crate::types::ParticipatingResourceId::SourceNetworkId).
     pub fn is_source_network_id(&self) -> bool {
@@ -36,3 +32,4 @@ impl ParticipatingResourceId {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamingImagesOutput {
+pub struct ListStreamingImagesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A collection of streaming images.</p>
-    pub streaming_images: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
+    pub streaming_images: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingImage>>,
     _request_id: Option<String>,
 }
-impl ListStreamingImagesOutput {
+impl  ListStreamingImagesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A collection of streaming images.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_images.is_none()`.
-    pub fn streaming_images(&self) -> &[crate::types::StreamingImage] {
-        self.streaming_images.as_deref().unwrap_or_default()
+    pub fn streaming_images(&self) -> & [crate::types::StreamingImage] {
+        self.streaming_images.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStreamingImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStreamingImagesOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingImagesOutput`](crate::operation::list_streaming_images::ListStreamingImagesOutput).
     pub fn builder() -> crate::operation::list_streaming_images::builders::ListStreamingImagesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListStreamingImagesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingImagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) streaming_images: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
+    pub(crate) streaming_images: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingImage>>,
     _request_id: Option<String>,
 }
 impl ListStreamingImagesOutputBuilder {
@@ -49,8 +50,7 @@ impl ListStreamingImagesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListStreamingImagesOutputBuilder {
     /// <p>A collection of streaming images.</p>
     pub fn streaming_images(mut self, input: crate::types::StreamingImage) -> Self {
         let mut v = self.streaming_images.unwrap_or_default();
-        v.push(input);
-        self.streaming_images = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streaming_images = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of streaming images.</p>
-    pub fn set_streaming_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>) -> Self {
-        self.streaming_images = input;
-        self
+    pub fn set_streaming_images(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingImage>>) -> Self {
+        self.streaming_images = input; self
     }
     /// <p>A collection of streaming images.</p>
-    pub fn get_streaming_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>> {
+    pub fn get_streaming_images(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamingImage>> {
         &self.streaming_images
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStreamingImagesOutput`](crate::operation::list_streaming_images::ListStreamingImagesOutput).
     pub fn build(self) -> crate::operation::list_streaming_images::ListStreamingImagesOutput {
         crate::operation::list_streaming_images::ListStreamingImagesOutput {
-            next_token: self.next_token,
-            streaming_images: self.streaming_images,
+            next_token: self.next_token
+            ,
+            streaming_images: self.streaming_images
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

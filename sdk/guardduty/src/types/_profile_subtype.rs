@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let profilesubtype = unimplemented!();
 /// match profilesubtype {
@@ -32,16 +32,14 @@
 /// Specifically, when `profilesubtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProfileSubtype::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ProfileSubtype {
     #[allow(missing_docs)] // documentation missing in model
     Frequent,
@@ -53,67 +51,68 @@ pub enum ProfileSubtype {
     Unseen,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ProfileSubtype {
-    fn from(s: &str) -> Self {
-        match s {
-            "FREQUENT" => ProfileSubtype::Frequent,
-            "INFREQUENT" => ProfileSubtype::Infrequent,
-            "RARE" => ProfileSubtype::Rare,
-            "UNSEEN" => ProfileSubtype::Unseen,
-            other => ProfileSubtype::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "FREQUENT" => ProfileSubtype::Frequent,
+"INFREQUENT" => ProfileSubtype::Infrequent,
+"RARE" => ProfileSubtype::Rare,
+"UNSEEN" => ProfileSubtype::Unseen,
+other => ProfileSubtype::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ProfileSubtype {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ProfileSubtype::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ProfileSubtype::from(s))
+                    }
+                }
 impl ProfileSubtype {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProfileSubtype::Frequent => "FREQUENT",
-            ProfileSubtype::Infrequent => "INFREQUENT",
-            ProfileSubtype::Rare => "RARE",
-            ProfileSubtype::Unseen => "UNSEEN",
-            ProfileSubtype::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FREQUENT", "INFREQUENT", "RARE", "UNSEEN"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProfileSubtype::Frequent => "FREQUENT",
+    ProfileSubtype::Infrequent => "INFREQUENT",
+    ProfileSubtype::Rare => "RARE",
+    ProfileSubtype::Unseen => "UNSEEN",
+    ProfileSubtype::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FREQUENT", "INFREQUENT", "RARE", "UNSEEN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ProfileSubtype {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ProfileSubtype {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ProfileSubtype {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ProfileSubtype::Frequent => write!(f, "FREQUENT"),
-            ProfileSubtype::Infrequent => write!(f, "INFREQUENT"),
-            ProfileSubtype::Rare => write!(f, "RARE"),
-            ProfileSubtype::Unseen => write!(f, "UNSEEN"),
-            ProfileSubtype::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ProfileSubtype::Frequent => write!(f, "FREQUENT"),
+ProfileSubtype::Infrequent => write!(f, "INFREQUENT"),
+ProfileSubtype::Rare => write!(f, "RARE"),
+ProfileSubtype::Unseen => write!(f, "UNSEEN"),
+ProfileSubtype::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

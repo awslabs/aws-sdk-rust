@@ -3,22 +3,22 @@
 /// <p>A complex type that contains the response information for the specified geolocation code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeoLocationOutput {
+pub struct GetGeoLocationOutput  {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
     pub geo_location_details: ::std::option::Option<crate::types::GeoLocationDetails>,
     _request_id: Option<String>,
 }
-impl GetGeoLocationOutput {
+impl  GetGeoLocationOutput  {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
-    pub fn geo_location_details(&self) -> ::std::option::Option<&crate::types::GeoLocationDetails> {
+    pub fn geo_location_details(&self) -> ::std::option::Option<& crate::types::GeoLocationDetails> {
         self.geo_location_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGeoLocationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGeoLocationOutput {
     /// Creates a new builder-style object to manufacture [`GetGeoLocationOutput`](crate::operation::get_geo_location::GetGeoLocationOutput).
     pub fn builder() -> crate::operation::get_geo_location::builders::GetGeoLocationOutputBuilder {
@@ -42,27 +42,28 @@ impl GetGeoLocationOutputBuilder {
     }
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
     pub fn set_geo_location_details(mut self, input: ::std::option::Option<crate::types::GeoLocationDetails>) -> Self {
-        self.geo_location_details = input;
-        self
+        self.geo_location_details = input; self
     }
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
     pub fn get_geo_location_details(&self) -> &::std::option::Option<crate::types::GeoLocationDetails> {
         &self.geo_location_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGeoLocationOutput`](crate::operation::get_geo_location::GetGeoLocationOutput).
     pub fn build(self) -> crate::operation::get_geo_location::GetGeoLocationOutput {
         crate::operation::get_geo_location::GetGeoLocationOutput {
-            geo_location_details: self.geo_location_details,
+            geo_location_details: self.geo_location_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

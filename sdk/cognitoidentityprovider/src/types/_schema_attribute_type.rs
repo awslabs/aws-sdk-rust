@@ -4,7 +4,7 @@
 /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaAttributeType {
+pub struct SchemaAttributeType  {
     /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
@@ -24,13 +24,13 @@ pub struct SchemaAttributeType {
     /// <p>Specifies the constraints for an attribute of the string type.</p>
     pub string_attribute_constraints: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
 }
-impl SchemaAttributeType {
+impl  SchemaAttributeType  {
     /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
-    pub fn attribute_data_type(&self) -> ::std::option::Option<&crate::types::AttributeDataType> {
+    pub fn attribute_data_type(&self) -> ::std::option::Option<& crate::types::AttributeDataType> {
         self.attribute_data_type.as_ref()
     }
     /// <note>
@@ -50,11 +50,11 @@ impl SchemaAttributeType {
         self.required
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
-    pub fn number_attribute_constraints(&self) -> ::std::option::Option<&crate::types::NumberAttributeConstraintsType> {
+    pub fn number_attribute_constraints(&self) -> ::std::option::Option<& crate::types::NumberAttributeConstraintsType> {
         self.number_attribute_constraints.as_ref()
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
-    pub fn string_attribute_constraints(&self) -> ::std::option::Option<&crate::types::StringAttributeConstraintsType> {
+    pub fn string_attribute_constraints(&self) -> ::std::option::Option<& crate::types::StringAttributeConstraintsType> {
         self.string_attribute_constraints.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl SchemaAttributeTypeBuilder {
     }
     /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl SchemaAttributeTypeBuilder {
     }
     /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub fn set_attribute_data_type(mut self, input: ::std::option::Option<crate::types::AttributeDataType>) -> Self {
-        self.attribute_data_type = input;
-        self
+        self.attribute_data_type = input; self
     }
     /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub fn get_attribute_data_type(&self) -> &::std::option::Option<crate::types::AttributeDataType> {
@@ -119,8 +117,7 @@ impl SchemaAttributeTypeBuilder {
     /// </note>
     /// <p>Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator. Users won't be able to modify this attribute using their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
     pub fn set_developer_only_attribute(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.developer_only_attribute = input;
-        self
+        self.developer_only_attribute = input; self
     }
     /// <note>
     /// <p>You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a> in the user pool client to control how attributes can be mutated for new use cases instead of using <code>DeveloperOnlyAttribute</code>.</p>
@@ -138,8 +135,7 @@ impl SchemaAttributeTypeBuilder {
     /// <p>Specifies whether the value of the attribute can be changed.</p>
     /// <p>Any user pool attribute whose value you map from an IdP attribute must be mutable, with a parameter value of <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
     pub fn set_mutable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mutable = input;
-        self
+        self.mutable = input; self
     }
     /// <p>Specifies whether the value of the attribute can be changed.</p>
     /// <p>Any user pool attribute whose value you map from an IdP attribute must be mutable, with a parameter value of <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
@@ -153,8 +149,7 @@ impl SchemaAttributeTypeBuilder {
     }
     /// <p>Specifies whether a user pool attribute is required. If the attribute is required and the user doesn't provide a value, registration or sign-in will fail.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Specifies whether a user pool attribute is required. If the attribute is required and the user doesn't provide a value, registration or sign-in will fail.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -167,8 +162,7 @@ impl SchemaAttributeTypeBuilder {
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
     pub fn set_number_attribute_constraints(mut self, input: ::std::option::Option<crate::types::NumberAttributeConstraintsType>) -> Self {
-        self.number_attribute_constraints = input;
-        self
+        self.number_attribute_constraints = input; self
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
     pub fn get_number_attribute_constraints(&self) -> &::std::option::Option<crate::types::NumberAttributeConstraintsType> {
@@ -181,8 +175,7 @@ impl SchemaAttributeTypeBuilder {
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
     pub fn set_string_attribute_constraints(mut self, input: ::std::option::Option<crate::types::StringAttributeConstraintsType>) -> Self {
-        self.string_attribute_constraints = input;
-        self
+        self.string_attribute_constraints = input; self
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
     pub fn get_string_attribute_constraints(&self) -> &::std::option::Option<crate::types::StringAttributeConstraintsType> {
@@ -191,13 +184,21 @@ impl SchemaAttributeTypeBuilder {
     /// Consumes the builder and constructs a [`SchemaAttributeType`](crate::types::SchemaAttributeType).
     pub fn build(self) -> crate::types::SchemaAttributeType {
         crate::types::SchemaAttributeType {
-            name: self.name,
-            attribute_data_type: self.attribute_data_type,
-            developer_only_attribute: self.developer_only_attribute,
-            mutable: self.mutable,
-            required: self.required,
-            number_attribute_constraints: self.number_attribute_constraints,
-            string_attribute_constraints: self.string_attribute_constraints,
+            name: self.name
+            ,
+            attribute_data_type: self.attribute_data_type
+            ,
+            developer_only_attribute: self.developer_only_attribute
+            ,
+            mutable: self.mutable
+            ,
+            required: self.required
+            ,
+            number_attribute_constraints: self.number_attribute_constraints
+            ,
+            string_attribute_constraints: self.string_attribute_constraints
+            ,
         }
     }
 }
+

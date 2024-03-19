@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct SynthesizeSpeechOutput {
+pub struct SynthesizeSpeechOutput  {
     /// <p>Stream containing the synthesized speech.</p>
     pub audio_stream: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
@@ -22,9 +22,9 @@ pub struct SynthesizeSpeechOutput {
     pub request_characters: i32,
     _request_id: Option<String>,
 }
-impl SynthesizeSpeechOutput {
+impl  SynthesizeSpeechOutput  {
     /// <p>Stream containing the synthesized speech.</p>
-    pub fn audio_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn audio_stream(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.audio_stream
     }
     /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
@@ -39,7 +39,7 @@ impl SynthesizeSpeechOutput {
     /// <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p></li>
     /// </ul>
     /// <p></p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>Number of characters synthesized.</p>
@@ -48,10 +48,10 @@ impl SynthesizeSpeechOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SynthesizeSpeechOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SynthesizeSpeechOutput {
     /// Creates a new builder-style object to manufacture [`SynthesizeSpeechOutput`](crate::operation::synthesize_speech::SynthesizeSpeechOutput).
     pub fn builder() -> crate::operation::synthesize_speech::builders::SynthesizeSpeechOutputBuilder {
@@ -76,8 +76,7 @@ impl SynthesizeSpeechOutputBuilder {
     }
     /// <p>Stream containing the synthesized speech.</p>
     pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.audio_stream = input;
-        self
+        self.audio_stream = input; self
     }
     /// <p>Stream containing the synthesized speech.</p>
     pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -112,8 +111,7 @@ impl SynthesizeSpeechOutputBuilder {
     /// </ul>
     /// <p></p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request.</p>
     /// <ul>
@@ -137,29 +135,34 @@ impl SynthesizeSpeechOutputBuilder {
     }
     /// <p>Number of characters synthesized.</p>
     pub fn set_request_characters(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.request_characters = input;
-        self
+        self.request_characters = input; self
     }
     /// <p>Number of characters synthesized.</p>
     pub fn get_request_characters(&self) -> &::std::option::Option<i32> {
         &self.request_characters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SynthesizeSpeechOutput`](crate::operation::synthesize_speech::SynthesizeSpeechOutput).
     pub fn build(self) -> crate::operation::synthesize_speech::SynthesizeSpeechOutput {
         crate::operation::synthesize_speech::SynthesizeSpeechOutput {
-            audio_stream: self.audio_stream.unwrap_or_default(),
-            content_type: self.content_type,
-            request_characters: self.request_characters.unwrap_or_default(),
+            audio_stream: self.audio_stream
+                .unwrap_or_default()
+            ,
+            content_type: self.content_type
+            ,
+            request_characters: self.request_characters
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

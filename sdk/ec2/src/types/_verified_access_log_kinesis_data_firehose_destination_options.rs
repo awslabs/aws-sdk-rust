@@ -3,19 +3,19 @@
 /// <p>Describes Amazon Kinesis Data Firehose logging options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
+pub struct VerifiedAccessLogKinesisDataFirehoseDestinationOptions  {
     /// <p>Indicates whether logging is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The ID of the delivery stream.</p>
     pub delivery_stream: ::std::option::Option<::std::string::String>,
 }
-impl VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
+impl  VerifiedAccessLogKinesisDataFirehoseDestinationOptions  {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn delivery_stream(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> ::std::option::Option<& str> {
         self.delivery_stream.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
     }
     /// <p>The ID of the delivery stream.</p>
     pub fn set_delivery_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream = input;
-        self
+        self.delivery_stream = input; self
     }
     /// <p>The ID of the delivery stream.</p>
     pub fn get_delivery_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
     /// Consumes the builder and constructs a [`VerifiedAccessLogKinesisDataFirehoseDestinationOptions`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions).
     pub fn build(self) -> crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
         crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
-            enabled: self.enabled,
-            delivery_stream: self.delivery_stream,
+            enabled: self.enabled
+            ,
+            delivery_stream: self.delivery_stream
+            ,
         }
     }
 }
+

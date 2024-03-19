@@ -3,7 +3,8 @@
 /// <p>A one time schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OneTimeSchedule {}
+pub struct OneTimeSchedule  {
+}
 impl OneTimeSchedule {
     /// Creates a new builder-style object to manufacture [`OneTimeSchedule`](crate::types::OneTimeSchedule).
     pub fn builder() -> crate::types::builders::OneTimeScheduleBuilder {
@@ -14,10 +15,13 @@ impl OneTimeSchedule {
 /// A builder for [`OneTimeSchedule`](crate::types::OneTimeSchedule).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct OneTimeScheduleBuilder {}
+pub struct OneTimeScheduleBuilder {
+}
 impl OneTimeScheduleBuilder {
     /// Consumes the builder and constructs a [`OneTimeSchedule`](crate::types::OneTimeSchedule).
     pub fn build(self) -> crate::types::OneTimeSchedule {
-        crate::types::OneTimeSchedule {}
+        crate::types::OneTimeSchedule {
+        }
     }
 }
+

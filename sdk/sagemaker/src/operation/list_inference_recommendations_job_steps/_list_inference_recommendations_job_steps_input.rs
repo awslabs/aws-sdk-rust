@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInferenceRecommendationsJobStepsInput {
+pub struct ListInferenceRecommendationsJobStepsInput  {
     /// <p>The name for the Inference Recommender job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
@@ -15,18 +15,18 @@ pub struct ListInferenceRecommendationsJobStepsInput {
     /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListInferenceRecommendationsJobStepsInput {
+impl  ListInferenceRecommendationsJobStepsInput  {
     /// <p>The name for the Inference Recommender job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RecommendationJobStatus> {
         self.status.as_ref()
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    pub fn step_type(&self) -> ::std::option::Option<&crate::types::RecommendationStepType> {
+    pub fn step_type(&self) -> ::std::option::Option<& crate::types::RecommendationStepType> {
         self.step_type.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -34,7 +34,7 @@ impl ListInferenceRecommendationsJobStepsInput {
         self.max_results
     }
     /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
     }
     /// <p>The name for the Inference Recommender job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name for the Inference Recommender job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
     }
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
@@ -94,8 +92,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
-        self.step_type = input;
-        self
+        self.step_type = input; self
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p><code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
@@ -109,8 +106,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -123,28 +119,28 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
     }
     /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobStepsInput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput {
-                job_name: self.job_name,
-                status: self.status,
-                step_type: self.step_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                job_name: self.job_name
+                ,
+                status: self.status
+                ,
+                step_type: self.step_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

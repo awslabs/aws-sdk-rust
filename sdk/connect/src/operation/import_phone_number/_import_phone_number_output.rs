@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportPhoneNumberOutput {
+pub struct ImportPhoneNumberOutput  {
     /// <p>A unique identifier for the phone number.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub phone_number_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ImportPhoneNumberOutput {
+impl  ImportPhoneNumberOutput  {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn phone_number_arn(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> ::std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportPhoneNumberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportPhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`ImportPhoneNumberOutput`](crate::operation::import_phone_number::ImportPhoneNumberOutput).
     pub fn builder() -> crate::operation::import_phone_number::builders::ImportPhoneNumberOutputBuilder {
@@ -47,8 +47,7 @@ impl ImportPhoneNumberOutputBuilder {
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ImportPhoneNumberOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn set_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_arn = input;
-        self
+        self.phone_number_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportPhoneNumberOutput`](crate::operation::import_phone_number::ImportPhoneNumberOutput).
     pub fn build(self) -> crate::operation::import_phone_number::ImportPhoneNumberOutput {
         crate::operation::import_phone_number::ImportPhoneNumberOutput {
-            phone_number_id: self.phone_number_id,
-            phone_number_arn: self.phone_number_arn,
+            phone_number_id: self.phone_number_id
+            ,
+            phone_number_arn: self.phone_number_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

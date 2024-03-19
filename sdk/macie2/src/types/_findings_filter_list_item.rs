@@ -3,7 +3,7 @@
 /// <p>Provides information about a findings filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingsFilterListItem {
+pub struct FindingsFilterListItem  {
     /// <p>The action that's performed on findings that match the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub action: ::std::option::Option<crate::types::FindingsFilterAction>,
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
@@ -13,27 +13,27 @@ pub struct FindingsFilterListItem {
     /// <p>The custom name of the filter.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl FindingsFilterListItem {
+impl  FindingsFilterListItem  {
     /// <p>The action that's performed on findings that match the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::FindingsFilterAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::FindingsFilterAction> {
         self.action.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the filter.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The custom name of the filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,7 +52,7 @@ pub struct FindingsFilterListItemBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl FindingsFilterListItemBuilder {
     /// <p>The action that's performed on findings that match the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -62,8 +62,7 @@ impl FindingsFilterListItemBuilder {
     }
     /// <p>The action that's performed on findings that match the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action that's performed on findings that match the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::FindingsFilterAction> {
@@ -76,8 +75,7 @@ impl FindingsFilterListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl FindingsFilterListItemBuilder {
     }
     /// <p>The unique identifier for the filter.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the filter.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl FindingsFilterListItemBuilder {
     }
     /// <p>The custom name of the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The custom name of the filter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,27 +114,32 @@ impl FindingsFilterListItemBuilder {
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`FindingsFilterListItem`](crate::types::FindingsFilterListItem).
     pub fn build(self) -> crate::types::FindingsFilterListItem {
         crate::types::FindingsFilterListItem {
-            action: self.action,
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            tags: self.tags,
+            action: self.action
+            ,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

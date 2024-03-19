@@ -3,7 +3,7 @@
 /// Create Agent Alias Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAgentAliasInput {
+pub struct CreateAgentAliasInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Name for a resource.
@@ -13,35 +13,36 @@ pub struct CreateAgentAliasInput {
     /// Description of the Resource.
     pub description: ::std::option::Option<::std::string::String>,
     /// Routing configuration for an Agent alias.
-    pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>,
     /// A map of tag keys and values
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateAgentAliasInput {
+impl  CreateAgentAliasInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Name for a resource.
-    pub fn agent_alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn agent_alias_name(&self) -> ::std::option::Option<& str> {
         self.agent_alias_name.as_deref()
     }
     /// Client specified token used for idempotency checks
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Routing configuration for an Agent alias.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
-    pub fn routing_configuration(&self) -> &[crate::types::AgentAliasRoutingConfigurationListItem] {
-        self.routing_configuration.as_deref().unwrap_or_default()
+    pub fn routing_configuration(&self) -> & [crate::types::AgentAliasRoutingConfigurationListItem] {
+        self.routing_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// A map of tag keys and values
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -60,8 +61,8 @@ pub struct CreateAgentAliasInputBuilder {
     pub(crate) agent_alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentAliasInputBuilder {
     /// Id generated at the server side when an Agent is created
@@ -72,8 +73,7 @@ impl CreateAgentAliasInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +87,7 @@ impl CreateAgentAliasInputBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_name = input;
-        self
+        self.agent_alias_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl CreateAgentAliasInputBuilder {
     }
     /// Client specified token used for idempotency checks
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Client specified token used for idempotency checks
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl CreateAgentAliasInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,20 +126,16 @@ impl CreateAgentAliasInputBuilder {
     /// Routing configuration for an Agent alias.
     pub fn routing_configuration(mut self, input: crate::types::AgentAliasRoutingConfigurationListItem) -> Self {
         let mut v = self.routing_configuration.unwrap_or_default();
-        v.push(input);
-        self.routing_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routing_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// Routing configuration for an Agent alias.
-    pub fn set_routing_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
-    ) -> Self {
-        self.routing_configuration = input;
-        self
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>) -> Self {
+        self.routing_configuration = input; self
     }
     /// Routing configuration for an Agent alias.
-    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
     }
     /// Adds a key-value pair to `tags`.
@@ -152,30 +145,36 @@ impl CreateAgentAliasInputBuilder {
     /// A map of tag keys and values
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A map of tag keys and values
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A map of tag keys and values
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAgentAliasInput`](crate::operation::create_agent_alias::CreateAgentAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_agent_alias::CreateAgentAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_agent_alias::CreateAgentAliasInput {
-            agent_id: self.agent_id,
-            agent_alias_name: self.agent_alias_name,
-            client_token: self.client_token,
-            description: self.description,
-            routing_configuration: self.routing_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_agent_alias::CreateAgentAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_agent_alias::CreateAgentAliasInput {
+                agent_id: self.agent_id
+                ,
+                agent_alias_name: self.agent_alias_name
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                routing_configuration: self.routing_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>A partition dimension defined by an attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Partition {
+pub struct Partition  {
     /// <p>The name of the attribute that defines a partition dimension.</p>
     pub attribute_name: ::std::string::String,
 }
-impl Partition {
+impl  Partition  {
     /// <p>The name of the attribute that defines a partition dimension.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
 }
 impl Partition {
@@ -36,8 +35,7 @@ impl PartitionBuilder {
     }
     /// <p>The name of the attribute that defines a partition dimension.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the attribute that defines a partition dimension.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PartitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_name`](crate::types::builders::PartitionBuilder::attribute_name)
     pub fn build(self) -> ::std::result::Result<crate::types::Partition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Partition {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building Partition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Partition {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building Partition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

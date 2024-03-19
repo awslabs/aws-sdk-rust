@@ -3,19 +3,19 @@
 /// <p>Information about the checksum of a model deployed on a device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Checksum {
+pub struct Checksum  {
     /// <p>The type of the checksum.</p>
     pub r#type: ::std::option::Option<crate::types::ChecksumType>,
     /// <p>The checksum of the model.</p>
     pub sum: ::std::option::Option<::std::string::String>,
 }
-impl Checksum {
+impl  Checksum  {
     /// <p>The type of the checksum.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChecksumType> {
         self.r#type.as_ref()
     }
     /// <p>The checksum of the model.</p>
-    pub fn sum(&self) -> ::std::option::Option<&str> {
+    pub fn sum(&self) -> ::std::option::Option<& str> {
         self.sum.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ChecksumBuilder {
     }
     /// <p>The type of the checksum.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChecksumType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the checksum.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
@@ -55,8 +54,7 @@ impl ChecksumBuilder {
     }
     /// <p>The checksum of the model.</p>
     pub fn set_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sum = input;
-        self
+        self.sum = input; self
     }
     /// <p>The checksum of the model.</p>
     pub fn get_sum(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ChecksumBuilder {
     /// Consumes the builder and constructs a [`Checksum`](crate::types::Checksum).
     pub fn build(self) -> crate::types::Checksum {
         crate::types::Checksum {
-            r#type: self.r#type,
-            sum: self.sum,
+            r#type: self.r#type
+            ,
+            sum: self.sum
+            ,
         }
     }
 }
+

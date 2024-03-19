@@ -3,7 +3,7 @@
 /// <p>An improvement summary of a lens review in a workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImprovementSummary {
+pub struct ImprovementSummary  {
     /// <p>The ID of the question.</p>
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -18,37 +18,38 @@ pub struct ImprovementSummary {
     /// <p>This value does not apply to custom lenses.</p>
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan details.</p>
-    pub improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
+    pub improvement_plans: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceImprovementPlan>>,
 }
-impl ImprovementSummary {
+impl  ImprovementSummary  {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(&self) -> ::std::option::Option<&str> {
+    pub fn question_title(&self) -> ::std::option::Option<& str> {
         self.question_title.as_deref()
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    pub fn risk(&self) -> ::std::option::Option<&crate::types::Risk> {
+    pub fn risk(&self) -> ::std::option::Option<& crate::types::Risk> {
         self.risk.as_ref()
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn improvement_plan_url(&self) -> ::std::option::Option<&str> {
+    pub fn improvement_plan_url(&self) -> ::std::option::Option<& str> {
         self.improvement_plan_url.as_deref()
     }
     /// <p>The improvement plan details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.improvement_plans.is_none()`.
-    pub fn improvement_plans(&self) -> &[crate::types::ChoiceImprovementPlan] {
-        self.improvement_plans.as_deref().unwrap_or_default()
+    pub fn improvement_plans(&self) -> & [crate::types::ChoiceImprovementPlan] {
+        self.improvement_plans.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImprovementSummary {
@@ -67,7 +68,7 @@ pub struct ImprovementSummaryBuilder {
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) improvement_plan_url: ::std::option::Option<::std::string::String>,
-    pub(crate) improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
+    pub(crate) improvement_plans: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceImprovementPlan>>,
 }
 impl ImprovementSummaryBuilder {
     /// <p>The ID of the question.</p>
@@ -77,8 +78,7 @@ impl ImprovementSummaryBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl ImprovementSummaryBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -108,8 +107,7 @@ impl ImprovementSummaryBuilder {
     }
     /// <p>The title of the question.</p>
     pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_title = input;
-        self
+        self.question_title = input; self
     }
     /// <p>The title of the question.</p>
     pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl ImprovementSummaryBuilder {
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::Risk>) -> Self {
-        self.risk = input;
-        self
+        self.risk = input; self
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
@@ -140,8 +137,7 @@ impl ImprovementSummaryBuilder {
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
     pub fn set_improvement_plan_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.improvement_plan_url = input;
-        self
+        self.improvement_plan_url = input; self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
@@ -156,28 +152,34 @@ impl ImprovementSummaryBuilder {
     /// <p>The improvement plan details.</p>
     pub fn improvement_plans(mut self, input: crate::types::ChoiceImprovementPlan) -> Self {
         let mut v = self.improvement_plans.unwrap_or_default();
-        v.push(input);
-        self.improvement_plans = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.improvement_plans = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The improvement plan details.</p>
-    pub fn set_improvement_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>) -> Self {
-        self.improvement_plans = input;
-        self
+    pub fn set_improvement_plans(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceImprovementPlan>>) -> Self {
+        self.improvement_plans = input; self
     }
     /// <p>The improvement plan details.</p>
-    pub fn get_improvement_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>> {
+    pub fn get_improvement_plans(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChoiceImprovementPlan>> {
         &self.improvement_plans
     }
     /// Consumes the builder and constructs a [`ImprovementSummary`](crate::types::ImprovementSummary).
     pub fn build(self) -> crate::types::ImprovementSummary {
         crate::types::ImprovementSummary {
-            question_id: self.question_id,
-            pillar_id: self.pillar_id,
-            question_title: self.question_title,
-            risk: self.risk,
-            improvement_plan_url: self.improvement_plan_url,
-            improvement_plans: self.improvement_plans,
+            question_id: self.question_id
+            ,
+            pillar_id: self.pillar_id
+            ,
+            question_title: self.question_title
+            ,
+            risk: self.risk
+            ,
+            improvement_plan_url: self.improvement_plan_url
+            ,
+            improvement_plans: self.improvement_plans
+            ,
         }
     }
 }
+

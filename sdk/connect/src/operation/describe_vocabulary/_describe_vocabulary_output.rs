@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVocabularyOutput {
+pub struct DescribeVocabularyOutput  {
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub vocabulary: ::std::option::Option<crate::types::Vocabulary>,
     _request_id: Option<String>,
 }
-impl DescribeVocabularyOutput {
+impl  DescribeVocabularyOutput  {
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
-    pub fn vocabulary(&self) -> ::std::option::Option<&crate::types::Vocabulary> {
+    pub fn vocabulary(&self) -> ::std::option::Option<& crate::types::Vocabulary> {
         self.vocabulary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVocabularyOutput`](crate::operation::describe_vocabulary::DescribeVocabularyOutput).
     pub fn builder() -> crate::operation::describe_vocabulary::builders::DescribeVocabularyOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeVocabularyOutputBuilder {
     }
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub fn set_vocabulary(mut self, input: ::std::option::Option<crate::types::Vocabulary>) -> Self {
-        self.vocabulary = input;
-        self
+        self.vocabulary = input; self
     }
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     pub fn get_vocabulary(&self) -> &::std::option::Option<crate::types::Vocabulary> {
         &self.vocabulary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVocabularyOutput`](crate::operation::describe_vocabulary::DescribeVocabularyOutput).
     pub fn build(self) -> crate::operation::describe_vocabulary::DescribeVocabularyOutput {
         crate::operation::describe_vocabulary::DescribeVocabularyOutput {
-            vocabulary: self.vocabulary,
+            vocabulary: self.vocabulary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

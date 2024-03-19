@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeComplianceByResource`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_type(impl Into<String>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::set_resource_type):<br>required: **false**<br><p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p><br>
     ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::set_resource_id):<br>required: **false**<br><p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p><br>
     ///   - [`compliance_types(ComplianceType)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::compliance_types) / [`set_compliance_types(Option<Vec::<ComplianceType>>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::set_compliance_types):<br>required: **false**<br><p>Filters the results by compliance.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`DescribeComplianceByResourceOutput`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput) with field(s):
+                            /// - On success, responds with [`DescribeComplianceByResourceOutput`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput) with field(s):
     ///   - [`compliance_by_resources(Option<Vec::<ComplianceByResource>>)`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput::compliance_by_resources): <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<DescribeComplianceByResourceError>`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError)
-    pub fn describe_compliance_by_resource(
-        &self,
-    ) -> crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder {
-        crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeComplianceByResourceError>`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError)
+    pub fn describe_compliance_by_resource(&self) -> crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder {
+                                crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceFluentBuilder::new(self.handle.clone())
+                            }
 }
+

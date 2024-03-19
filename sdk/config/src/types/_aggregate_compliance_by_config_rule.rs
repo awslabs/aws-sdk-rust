@@ -4,7 +4,7 @@
 /// <p>A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregateComplianceByConfigRule {
+pub struct AggregateComplianceByConfigRule  {
     /// <p>The name of the Config rule.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
@@ -14,21 +14,21 @@ pub struct AggregateComplianceByConfigRule {
     /// <p>The source region from where the data is aggregated.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
-impl AggregateComplianceByConfigRule {
+impl  AggregateComplianceByConfigRule  {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
-    pub fn compliance(&self) -> ::std::option::Option<&crate::types::Compliance> {
+    pub fn compliance(&self) -> ::std::option::Option<& crate::types::Compliance> {
         self.compliance.as_ref()
     }
     /// <p>The 12-digit account ID of the source account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The source region from where the data is aggregated.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl AggregateComplianceByConfigRuleBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AggregateComplianceByConfigRuleBuilder {
     }
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
     pub fn set_compliance(mut self, input: ::std::option::Option<crate::types::Compliance>) -> Self {
-        self.compliance = input;
-        self
+        self.compliance = input; self
     }
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
     pub fn get_compliance(&self) -> &::std::option::Option<crate::types::Compliance> {
@@ -84,8 +82,7 @@ impl AggregateComplianceByConfigRuleBuilder {
     }
     /// <p>The 12-digit account ID of the source account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The 12-digit account ID of the source account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl AggregateComplianceByConfigRuleBuilder {
     }
     /// <p>The source region from where the data is aggregated.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The source region from where the data is aggregated.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,10 +104,15 @@ impl AggregateComplianceByConfigRuleBuilder {
     /// Consumes the builder and constructs a [`AggregateComplianceByConfigRule`](crate::types::AggregateComplianceByConfigRule).
     pub fn build(self) -> crate::types::AggregateComplianceByConfigRule {
         crate::types::AggregateComplianceByConfigRule {
-            config_rule_name: self.config_rule_name,
-            compliance: self.compliance,
-            account_id: self.account_id,
-            aws_region: self.aws_region,
+            config_rule_name: self.config_rule_name
+            ,
+            compliance: self.compliance
+            ,
+            account_id: self.account_id
+            ,
+            aws_region: self.aws_region
+            ,
         }
     }
 }
+

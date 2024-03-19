@@ -3,7 +3,7 @@
 /// <p>Details about a package version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageVersionHistory {
+pub struct PackageVersionHistory  {
     /// <p>The package version.</p>
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>A message associated with the package version when it was uploaded.</p>
@@ -13,21 +13,21 @@ pub struct PackageVersionHistory {
     /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
     pub plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
 }
-impl PackageVersionHistory {
+impl  PackageVersionHistory  {
     /// <p>The package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>A message associated with the package version when it was uploaded.</p>
-    pub fn commit_message(&self) -> ::std::option::Option<&str> {
+    pub fn commit_message(&self) -> ::std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p>The date and time when the package was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
-    pub fn plugin_properties(&self) -> ::std::option::Option<&crate::types::PluginProperties> {
+    pub fn plugin_properties(&self) -> ::std::option::Option<& crate::types::PluginProperties> {
         self.plugin_properties.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PackageVersionHistoryBuilder {
     }
     /// <p>The package version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The package version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PackageVersionHistoryBuilder {
     }
     /// <p>A message associated with the package version when it was uploaded.</p>
     pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>A message associated with the package version when it was uploaded.</p>
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PackageVersionHistoryBuilder {
     }
     /// <p>The date and time when the package was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the package was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl PackageVersionHistoryBuilder {
     }
     /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
     pub fn set_plugin_properties(mut self, input: ::std::option::Option<crate::types::PluginProperties>) -> Self {
-        self.plugin_properties = input;
-        self
+        self.plugin_properties = input; self
     }
     /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
     pub fn get_plugin_properties(&self) -> &::std::option::Option<crate::types::PluginProperties> {
@@ -107,10 +103,15 @@ impl PackageVersionHistoryBuilder {
     /// Consumes the builder and constructs a [`PackageVersionHistory`](crate::types::PackageVersionHistory).
     pub fn build(self) -> crate::types::PackageVersionHistory {
         crate::types::PackageVersionHistory {
-            package_version: self.package_version,
-            commit_message: self.commit_message,
-            created_at: self.created_at,
-            plugin_properties: self.plugin_properties,
+            package_version: self.package_version
+            ,
+            commit_message: self.commit_message
+            ,
+            created_at: self.created_at
+            ,
+            plugin_properties: self.plugin_properties
+            ,
         }
     }
 }
+

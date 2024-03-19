@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportPlaybackKeyPairOutput {
+pub struct ImportPlaybackKeyPairOutput  {
     /// <p></p>
     pub key_pair: ::std::option::Option<crate::types::PlaybackKeyPair>,
     _request_id: Option<String>,
 }
-impl ImportPlaybackKeyPairOutput {
+impl  ImportPlaybackKeyPairOutput  {
     /// <p></p>
-    pub fn key_pair(&self) -> ::std::option::Option<&crate::types::PlaybackKeyPair> {
+    pub fn key_pair(&self) -> ::std::option::Option<& crate::types::PlaybackKeyPair> {
         self.key_pair.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportPlaybackKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportPlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairOutput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput).
     pub fn builder() -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder {
@@ -40,27 +40,28 @@ impl ImportPlaybackKeyPairOutputBuilder {
     }
     /// <p></p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<crate::types::PlaybackKeyPair>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p></p>
     pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::PlaybackKeyPair> {
         &self.key_pair
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportPlaybackKeyPairOutput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput).
     pub fn build(self) -> crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput {
         crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput {
-            key_pair: self.key_pair,
+            key_pair: self.key_pair
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

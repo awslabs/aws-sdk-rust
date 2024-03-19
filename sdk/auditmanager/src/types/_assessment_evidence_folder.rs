@@ -3,7 +3,7 @@
 /// <p>The folder where Audit Manager stores evidence for an assessment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentEvidenceFolder {
+pub struct AssessmentEvidenceFolder  {
     /// <p>The name of the evidence folder.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the first evidence was added to the evidence folder.</p>
@@ -41,37 +41,37 @@ pub struct AssessmentEvidenceFolder {
     /// <p>The total number of Amazon Web Services resources that were assessed to generate the evidence.</p>
     pub evidence_aws_service_source_count: i32,
 }
-impl AssessmentEvidenceFolder {
+impl  AssessmentEvidenceFolder  {
     /// <p>The name of the evidence folder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date when the first evidence was added to the evidence folder.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The identifier for the control set.</p>
-    pub fn control_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_id(&self) -> ::std::option::Option<& str> {
         self.control_set_id.as_deref()
     }
     /// <p>The unique identifier for the control.</p>
-    pub fn control_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_id(&self) -> ::std::option::Option<& str> {
         self.control_id.as_deref()
     }
     /// <p>The identifier for the folder that the evidence is stored in.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Web Service that the evidence was collected from.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&str> {
+    pub fn data_source(&self) -> ::std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>The name of the user who created the evidence folder.</p>
-    pub fn author(&self) -> ::std::option::Option<&str> {
+    pub fn author(&self) -> ::std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The total amount of evidence in the evidence folder.</p>
@@ -83,7 +83,7 @@ impl AssessmentEvidenceFolder {
         self.assessment_report_selection_count
     }
     /// <p>The name of the control.</p>
-    pub fn control_name(&self) -> ::std::option::Option<&str> {
+    pub fn control_name(&self) -> ::std::option::Option<& str> {
         self.control_name.as_deref()
     }
     /// <p>The amount of evidence that's included in the evidence folder.</p>
@@ -153,8 +153,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The name of the evidence folder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the evidence folder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The date when the first evidence was added to the evidence folder.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date when the first evidence was added to the evidence folder.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +179,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +192,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The identifier for the control set.</p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_set_id = input;
-        self
+        self.control_set_id = input; self
     }
     /// <p>The identifier for the control set.</p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +205,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The unique identifier for the control.</p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_id = input;
-        self
+        self.control_id = input; self
     }
     /// <p>The unique identifier for the control.</p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +218,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +231,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The Amazon Web Service that the evidence was collected from.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The Amazon Web Service that the evidence was collected from.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +244,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The name of the user who created the evidence folder.</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author = input;
-        self
+        self.author = input; self
     }
     /// <p>The name of the user who created the evidence folder.</p>
     pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +257,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The total amount of evidence in the evidence folder.</p>
     pub fn set_total_evidence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_evidence = input;
-        self
+        self.total_evidence = input; self
     }
     /// <p>The total amount of evidence in the evidence folder.</p>
     pub fn get_total_evidence(&self) -> &::std::option::Option<i32> {
@@ -279,8 +270,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The total count of evidence that's included in the assessment report.</p>
     pub fn set_assessment_report_selection_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.assessment_report_selection_count = input;
-        self
+        self.assessment_report_selection_count = input; self
     }
     /// <p>The total count of evidence that's included in the assessment report.</p>
     pub fn get_assessment_report_selection_count(&self) -> &::std::option::Option<i32> {
@@ -293,8 +283,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The name of the control.</p>
     pub fn set_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_name = input;
-        self
+        self.control_name = input; self
     }
     /// <p>The name of the control.</p>
     pub fn get_control_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +296,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The amount of evidence that's included in the evidence folder.</p>
     pub fn set_evidence_resources_included_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_resources_included_count = input;
-        self
+        self.evidence_resources_included_count = input; self
     }
     /// <p>The amount of evidence that's included in the evidence folder.</p>
     pub fn get_evidence_resources_included_count(&self) -> &::std::option::Option<i32> {
@@ -321,8 +309,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub fn set_evidence_by_type_configuration_data_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_by_type_configuration_data_count = input;
-        self
+        self.evidence_by_type_configuration_data_count = input; self
     }
     /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub fn get_evidence_by_type_configuration_data_count(&self) -> &::std::option::Option<i32> {
@@ -335,8 +322,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The number of evidence that falls under the manual category. This evidence is imported manually.</p>
     pub fn set_evidence_by_type_manual_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_by_type_manual_count = input;
-        self
+        self.evidence_by_type_manual_count = input; self
     }
     /// <p>The number of evidence that falls under the manual category. This evidence is imported manually.</p>
     pub fn get_evidence_by_type_manual_count(&self) -> &::std::option::Option<i32> {
@@ -349,8 +335,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
     pub fn set_evidence_by_type_compliance_check_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_by_type_compliance_check_count = input;
-        self
+        self.evidence_by_type_compliance_check_count = input; self
     }
     /// <p>The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.</p>
     pub fn get_evidence_by_type_compliance_check_count(&self) -> &::std::option::Option<i32> {
@@ -363,8 +348,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
     pub fn set_evidence_by_type_compliance_check_issues_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_by_type_compliance_check_issues_count = input;
-        self
+        self.evidence_by_type_compliance_check_issues_count = input; self
     }
     /// <p>The total number of issues that were reported directly from Security Hub, Config, or both.</p>
     pub fn get_evidence_by_type_compliance_check_issues_count(&self) -> &::std::option::Option<i32> {
@@ -377,8 +361,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs.</p>
     pub fn set_evidence_by_type_user_activity_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_by_type_user_activity_count = input;
-        self
+        self.evidence_by_type_user_activity_count = input; self
     }
     /// <p>The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs.</p>
     pub fn get_evidence_by_type_user_activity_count(&self) -> &::std::option::Option<i32> {
@@ -391,8 +374,7 @@ impl AssessmentEvidenceFolderBuilder {
     }
     /// <p>The total number of Amazon Web Services resources that were assessed to generate the evidence.</p>
     pub fn set_evidence_aws_service_source_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_aws_service_source_count = input;
-        self
+        self.evidence_aws_service_source_count = input; self
     }
     /// <p>The total number of Amazon Web Services resources that were assessed to generate the evidence.</p>
     pub fn get_evidence_aws_service_source_count(&self) -> &::std::option::Option<i32> {
@@ -401,24 +383,52 @@ impl AssessmentEvidenceFolderBuilder {
     /// Consumes the builder and constructs a [`AssessmentEvidenceFolder`](crate::types::AssessmentEvidenceFolder).
     pub fn build(self) -> crate::types::AssessmentEvidenceFolder {
         crate::types::AssessmentEvidenceFolder {
-            name: self.name,
-            date: self.date,
-            assessment_id: self.assessment_id,
-            control_set_id: self.control_set_id,
-            control_id: self.control_id,
-            id: self.id,
-            data_source: self.data_source,
-            author: self.author,
-            total_evidence: self.total_evidence.unwrap_or_default(),
-            assessment_report_selection_count: self.assessment_report_selection_count.unwrap_or_default(),
-            control_name: self.control_name,
-            evidence_resources_included_count: self.evidence_resources_included_count.unwrap_or_default(),
-            evidence_by_type_configuration_data_count: self.evidence_by_type_configuration_data_count.unwrap_or_default(),
-            evidence_by_type_manual_count: self.evidence_by_type_manual_count.unwrap_or_default(),
-            evidence_by_type_compliance_check_count: self.evidence_by_type_compliance_check_count.unwrap_or_default(),
-            evidence_by_type_compliance_check_issues_count: self.evidence_by_type_compliance_check_issues_count.unwrap_or_default(),
-            evidence_by_type_user_activity_count: self.evidence_by_type_user_activity_count.unwrap_or_default(),
-            evidence_aws_service_source_count: self.evidence_aws_service_source_count.unwrap_or_default(),
+            name: self.name
+            ,
+            date: self.date
+            ,
+            assessment_id: self.assessment_id
+            ,
+            control_set_id: self.control_set_id
+            ,
+            control_id: self.control_id
+            ,
+            id: self.id
+            ,
+            data_source: self.data_source
+            ,
+            author: self.author
+            ,
+            total_evidence: self.total_evidence
+                .unwrap_or_default()
+            ,
+            assessment_report_selection_count: self.assessment_report_selection_count
+                .unwrap_or_default()
+            ,
+            control_name: self.control_name
+            ,
+            evidence_resources_included_count: self.evidence_resources_included_count
+                .unwrap_or_default()
+            ,
+            evidence_by_type_configuration_data_count: self.evidence_by_type_configuration_data_count
+                .unwrap_or_default()
+            ,
+            evidence_by_type_manual_count: self.evidence_by_type_manual_count
+                .unwrap_or_default()
+            ,
+            evidence_by_type_compliance_check_count: self.evidence_by_type_compliance_check_count
+                .unwrap_or_default()
+            ,
+            evidence_by_type_compliance_check_issues_count: self.evidence_by_type_compliance_check_issues_count
+                .unwrap_or_default()
+            ,
+            evidence_by_type_user_activity_count: self.evidence_by_type_user_activity_count
+                .unwrap_or_default()
+            ,
+            evidence_aws_service_source_count: self.evidence_aws_service_source_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

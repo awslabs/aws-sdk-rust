@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRepositoryScanningConfigurationOutput {
+pub struct BatchGetRepositoryScanningConfigurationOutput  {
     /// <p>The scanning configuration for the requested repositories.</p>
-    pub scanning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>>,
+    pub scanning_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfiguration>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfigurationFailure>>,
     _request_id: Option<String>,
 }
-impl BatchGetRepositoryScanningConfigurationOutput {
+impl  BatchGetRepositoryScanningConfigurationOutput  {
     /// <p>The scanning configuration for the requested repositories.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scanning_configurations.is_none()`.
-    pub fn scanning_configurations(&self) -> &[crate::types::RepositoryScanningConfiguration] {
-        self.scanning_configurations.as_deref().unwrap_or_default()
+    pub fn scanning_configurations(&self) -> & [crate::types::RepositoryScanningConfiguration] {
+        self.scanning_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::RepositoryScanningConfigurationFailure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::RepositoryScanningConfigurationFailure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetRepositoryScanningConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetRepositoryScanningConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationOutput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput).
-    pub fn builder() -> crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationOutputBuilder {
         crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationOutputBuilder::default()
     }
 }
@@ -40,8 +41,8 @@ impl BatchGetRepositoryScanningConfigurationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationOutputBuilder {
-    pub(crate) scanning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>>,
+    pub(crate) scanning_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfiguration>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfigurationFailure>>,
     _request_id: Option<String>,
 }
 impl BatchGetRepositoryScanningConfigurationOutputBuilder {
@@ -52,20 +53,16 @@ impl BatchGetRepositoryScanningConfigurationOutputBuilder {
     /// <p>The scanning configuration for the requested repositories.</p>
     pub fn scanning_configurations(mut self, input: crate::types::RepositoryScanningConfiguration) -> Self {
         let mut v = self.scanning_configurations.unwrap_or_default();
-        v.push(input);
-        self.scanning_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scanning_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scanning configuration for the requested repositories.</p>
-    pub fn set_scanning_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>>,
-    ) -> Self {
-        self.scanning_configurations = input;
-        self
+    pub fn set_scanning_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfiguration>>) -> Self {
+        self.scanning_configurations = input; self
     }
     /// <p>The scanning configuration for the requested repositories.</p>
-    pub fn get_scanning_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>> {
+    pub fn get_scanning_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfiguration>> {
         &self.scanning_configurations
     }
     /// Appends an item to `failures`.
@@ -75,34 +72,36 @@ impl BatchGetRepositoryScanningConfigurationOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::RepositoryScanningConfigurationFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfigurationFailure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryScanningConfigurationFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationOutput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput).
     pub fn build(self) -> crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput {
         crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput {
-            scanning_configurations: self.scanning_configurations,
-            failures: self.failures,
+            scanning_configurations: self.scanning_configurations
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

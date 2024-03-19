@@ -3,7 +3,7 @@
 /// <p>Configures how labels are consolidated across human workers and processes output data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnnotationConsolidationConfig {
+pub struct AnnotationConsolidationConfig  {
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
     /// <p>This parameter is required for all labeling jobs. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation Lambda</a>.</p>
     /// <p><b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the boxes.</p>
@@ -606,7 +606,7 @@ pub struct AnnotationConsolidationConfig {
     /// </ul>
     pub annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
 }
-impl AnnotationConsolidationConfig {
+impl  AnnotationConsolidationConfig  {
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
     /// <p>This parameter is required for all labeling jobs. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation Lambda</a>.</p>
     /// <p><b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the boxes.</p>
@@ -1207,7 +1207,7 @@ impl AnnotationConsolidationConfig {
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// </ul>
-    pub fn annotation_consolidation_lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn annotation_consolidation_lambda_arn(&self) -> ::std::option::Option<& str> {
         self.annotation_consolidation_lambda_arn.as_deref()
     }
 }
@@ -2431,8 +2431,7 @@ impl AnnotationConsolidationConfigBuilder {
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// </ul>
     pub fn set_annotation_consolidation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.annotation_consolidation_lambda_arn = input;
-        self
+        self.annotation_consolidation_lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
     /// <p>This parameter is required for all labeling jobs. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation Lambda</a>.</p>
@@ -3040,7 +3039,9 @@ impl AnnotationConsolidationConfigBuilder {
     /// Consumes the builder and constructs a [`AnnotationConsolidationConfig`](crate::types::AnnotationConsolidationConfig).
     pub fn build(self) -> crate::types::AnnotationConsolidationConfig {
         crate::types::AnnotationConsolidationConfig {
-            annotation_consolidation_lambda_arn: self.annotation_consolidation_lambda_arn,
+            annotation_consolidation_lambda_arn: self.annotation_consolidation_lambda_arn
+            ,
         }
     }
 }
+

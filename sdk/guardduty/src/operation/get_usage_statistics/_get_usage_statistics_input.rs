@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUsageStatisticsInput {
+pub struct GetUsageStatisticsInput  {
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of usage statistics to retrieve.</p>
@@ -16,21 +16,21 @@ pub struct GetUsageStatisticsInput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetUsageStatisticsInput {
+impl  GetUsageStatisticsInput  {
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The type of usage statistics to retrieve.</p>
-    pub fn usage_statistic_type(&self) -> ::std::option::Option<&crate::types::UsageStatisticType> {
+    pub fn usage_statistic_type(&self) -> ::std::option::Option<& crate::types::UsageStatisticType> {
         self.usage_statistic_type.as_ref()
     }
     /// <p>Represents the criteria used for querying usage.</p>
-    pub fn usage_criteria(&self) -> ::std::option::Option<&crate::types::UsageCriteria> {
+    pub fn usage_criteria(&self) -> ::std::option::Option<& crate::types::UsageCriteria> {
         self.usage_criteria.as_ref()
     }
     /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -38,7 +38,7 @@ impl GetUsageStatisticsInput {
         self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The type of usage statistics to retrieve.</p>
     pub fn set_usage_statistic_type(mut self, input: ::std::option::Option<crate::types::UsageStatisticType>) -> Self {
-        self.usage_statistic_type = input;
-        self
+        self.usage_statistic_type = input; self
     }
     /// <p>The type of usage statistics to retrieve.</p>
     pub fn get_usage_statistic_type(&self) -> &::std::option::Option<crate::types::UsageStatisticType> {
@@ -99,8 +97,7 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>Represents the criteria used for querying usage.</p>
     pub fn set_usage_criteria(mut self, input: ::std::option::Option<crate::types::UsageCriteria>) -> Self {
-        self.usage_criteria = input;
-        self
+        self.usage_criteria = input; self
     }
     /// <p>Represents the criteria used for querying usage.</p>
     pub fn get_usage_criteria(&self) -> &::std::option::Option<crate::types::UsageCriteria> {
@@ -113,8 +110,7 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -141,25 +136,30 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_usage_statistics::GetUsageStatisticsInput {
-            detector_id: self.detector_id,
-            usage_statistic_type: self.usage_statistic_type,
-            usage_criteria: self.usage_criteria,
-            unit: self.unit,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_usage_statistics::GetUsageStatisticsInput {
+                detector_id: self.detector_id
+                ,
+                usage_statistic_type: self.usage_statistic_type
+                ,
+                usage_criteria: self.usage_criteria
+                ,
+                unit: self.unit
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -10,26 +10,25 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Subscriber {
+pub struct Subscriber  {
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
     pub subscription_type: crate::types::SubscriptionType,
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
     pub address: ::std::string::String,
 }
-impl Subscriber {
+impl  Subscriber  {
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
-    pub fn subscription_type(&self) -> &crate::types::SubscriptionType {
+    pub fn subscription_type(&self) -> & crate::types::SubscriptionType {
         &self.subscription_type
     }
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
-    pub fn address(&self) -> &str {
-        use std::ops::Deref;
-        self.address.deref()
+    pub fn address(&self) -> & str {
+        use std::ops::Deref; self.address.deref()
     }
 }
-impl ::std::fmt::Debug for Subscriber {
+impl  ::std::fmt::Debug for Subscriber  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Subscriber");
         formatter.field("subscription_type", &self.subscription_type);
@@ -60,8 +59,7 @@ impl SubscriberBuilder {
     }
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
     pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
-        self.subscription_type = input;
-        self
+        self.subscription_type = input; self
     }
     /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
     pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
@@ -77,8 +75,7 @@ impl SubscriberBuilder {
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
@@ -90,20 +87,20 @@ impl SubscriberBuilder {
     /// - [`subscription_type`](crate::types::builders::SubscriberBuilder::subscription_type)
     /// - [`address`](crate::types::builders::SubscriberBuilder::address)
     pub fn build(self) -> ::std::result::Result<crate::types::Subscriber, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Subscriber {
-            subscription_type: self.subscription_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscription_type",
-                    "subscription_type was not specified but it is required when building Subscriber",
-                )
-            })?,
-            address: self.address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address",
-                    "address was not specified but it is required when building Subscriber",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Subscriber {
+                subscription_type: self.subscription_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscription_type", "subscription_type was not specified but it is required when building Subscriber")
+                    )?
+                ,
+                address: self.address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("address", "address was not specified but it is required when building Subscriber")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SubscriberBuilder {
@@ -114,3 +111,4 @@ impl ::std::fmt::Debug for SubscriberBuilder {
         formatter.finish()
     }
 }
+

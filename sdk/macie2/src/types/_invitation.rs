@@ -3,7 +3,7 @@
 /// <p>Provides information about an Amazon Macie membership invitation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Invitation {
+pub struct Invitation  {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the invitation.</p>
@@ -13,21 +13,21 @@ pub struct Invitation {
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
 }
-impl Invitation {
+impl  Invitation  {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The unique identifier for the invitation.</p>
-    pub fn invitation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invitation_id(&self) -> ::std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-    pub fn invited_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn invited_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
-    pub fn relationship_status(&self) -> ::std::option::Option<&crate::types::RelationshipStatus> {
+    pub fn relationship_status(&self) -> ::std::option::Option<& crate::types::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl InvitationBuilder {
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl InvitationBuilder {
     }
     /// <p>The unique identifier for the invitation.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invitation_id = input;
-        self
+        self.invitation_id = input; self
     }
     /// <p>The unique identifier for the invitation.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl InvitationBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
     pub fn set_invited_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.invited_at = input;
-        self
+        self.invited_at = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
     pub fn get_invited_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl InvitationBuilder {
     }
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub fn set_relationship_status(mut self, input: ::std::option::Option<crate::types::RelationshipStatus>) -> Self {
-        self.relationship_status = input;
-        self
+        self.relationship_status = input; self
     }
     /// <p>The status of the relationship between the account that sent the invitation and the account that received the invitation.</p>
     pub fn get_relationship_status(&self) -> &::std::option::Option<crate::types::RelationshipStatus> {
@@ -107,10 +103,15 @@ impl InvitationBuilder {
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).
     pub fn build(self) -> crate::types::Invitation {
         crate::types::Invitation {
-            account_id: self.account_id,
-            invitation_id: self.invitation_id,
-            invited_at: self.invited_at,
-            relationship_status: self.relationship_status,
+            account_id: self.account_id
+            ,
+            invitation_id: self.invitation_id
+            ,
+            invited_at: self.invited_at
+            ,
+            relationship_status: self.relationship_status
+            ,
         }
     }
 }
+

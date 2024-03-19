@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSkillGroupInput {
+pub struct DeleteSkillGroupInput  {
     /// <p>The ARN of the skill group to delete. Required.</p>
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSkillGroupInput {
+impl  DeleteSkillGroupInput  {
     /// <p>The ARN of the skill group to delete. Required.</p>
-    pub fn skill_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> ::std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
 }
@@ -33,19 +33,20 @@ impl DeleteSkillGroupInputBuilder {
     }
     /// <p>The ARN of the skill group to delete. Required.</p>
     pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_group_arn = input;
-        self
+        self.skill_group_arn = input; self
     }
     /// <p>The ARN of the skill group to delete. Required.</p>
     pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.skill_group_arn
     }
     /// Consumes the builder and constructs a [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_skill_group::DeleteSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_skill_group::DeleteSkillGroupInput {
-            skill_group_arn: self.skill_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_skill_group::DeleteSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_skill_group::DeleteSkillGroupInput {
+                skill_group_arn: self.skill_group_arn
+                ,
+            }
+        )
     }
 }
+

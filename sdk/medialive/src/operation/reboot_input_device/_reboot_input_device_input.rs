@@ -3,19 +3,19 @@
 /// A request to reboot an AWS Elemental device.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebootInputDeviceInput {
+pub struct RebootInputDeviceInput  {
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
     pub force: ::std::option::Option<crate::types::RebootInputDeviceForce>,
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
-impl RebootInputDeviceInput {
+impl  RebootInputDeviceInput  {
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
-    pub fn force(&self) -> ::std::option::Option<&crate::types::RebootInputDeviceForce> {
+    pub fn force(&self) -> ::std::option::Option<& crate::types::RebootInputDeviceForce> {
         self.force.as_ref()
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RebootInputDeviceInputBuilder {
     }
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
     pub fn set_force(mut self, input: ::std::option::Option<crate::types::RebootInputDeviceForce>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
     pub fn get_force(&self) -> &::std::option::Option<crate::types::RebootInputDeviceForce> {
@@ -56,20 +55,22 @@ impl RebootInputDeviceInputBuilder {
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_device_id
     }
     /// Consumes the builder and constructs a [`RebootInputDeviceInput`](crate::operation::reboot_input_device::RebootInputDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reboot_input_device::RebootInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reboot_input_device::RebootInputDeviceInput {
-            force: self.force,
-            input_device_id: self.input_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_input_device::RebootInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reboot_input_device::RebootInputDeviceInput {
+                force: self.force
+                ,
+                input_device_id: self.input_device_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePolicyTemplateOutput {
+pub struct UpdatePolicyTemplateOutput  {
     /// <p>The ID of the policy store that contains the updated policy template.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>The ID of the updated policy template.</p>
@@ -13,31 +13,29 @@ pub struct UpdatePolicyTemplateOutput {
     pub last_updated_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl UpdatePolicyTemplateOutput {
+impl  UpdatePolicyTemplateOutput  {
     /// <p>The ID of the policy store that contains the updated policy template.</p>
-    pub fn policy_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_store_id.deref()
+    pub fn policy_store_id(&self) -> & str {
+        use std::ops::Deref; self.policy_store_id.deref()
     }
     /// <p>The ID of the updated policy template.</p>
-    pub fn policy_template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_template_id.deref()
+    pub fn policy_template_id(&self) -> & str {
+        use std::ops::Deref; self.policy_template_id.deref()
     }
     /// <p>The date and time that the policy template was originally created.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
     /// <p>The date and time that the policy template was most recently updated.</p>
-    pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePolicyTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePolicyTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyTemplateOutput`](crate::operation::update_policy_template::UpdatePolicyTemplateOutput).
     pub fn builder() -> crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder {
@@ -64,8 +62,7 @@ impl UpdatePolicyTemplateOutputBuilder {
     }
     /// <p>The ID of the policy store that contains the updated policy template.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>The ID of the policy store that contains the updated policy template.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl UpdatePolicyTemplateOutputBuilder {
     }
     /// <p>The ID of the updated policy template.</p>
     pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_template_id = input;
-        self
+        self.policy_template_id = input; self
     }
     /// <p>The ID of the updated policy template.</p>
     pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl UpdatePolicyTemplateOutputBuilder {
     }
     /// <p>The date and time that the policy template was originally created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time that the policy template was originally created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -109,58 +104,53 @@ impl UpdatePolicyTemplateOutputBuilder {
     }
     /// <p>The date and time that the policy template was most recently updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date and time that the policy template was most recently updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePolicyTemplateOutput`](crate::operation::update_policy_template::UpdatePolicyTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder::policy_store_id)
     /// - [`policy_template_id`](crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder::policy_template_id)
     /// - [`created_date`](crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder::created_date)
     /// - [`last_updated_date`](crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder::last_updated_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_policy_template::UpdatePolicyTemplateOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_policy_template::UpdatePolicyTemplateOutput {
-            policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_store_id",
-                    "policy_store_id was not specified but it is required when building UpdatePolicyTemplateOutput",
-                )
-            })?,
-            policy_template_id: self.policy_template_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_template_id",
-                    "policy_template_id was not specified but it is required when building UpdatePolicyTemplateOutput",
-                )
-            })?,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building UpdatePolicyTemplateOutput",
-                )
-            })?,
-            last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_date",
-                    "last_updated_date was not specified but it is required when building UpdatePolicyTemplateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_policy_template::UpdatePolicyTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_policy_template::UpdatePolicyTemplateOutput {
+                policy_store_id: self.policy_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_store_id", "policy_store_id was not specified but it is required when building UpdatePolicyTemplateOutput")
+                    )?
+                ,
+                policy_template_id: self.policy_template_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_template_id", "policy_template_id was not specified but it is required when building UpdatePolicyTemplateOutput")
+                    )?
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building UpdatePolicyTemplateOutput")
+                    )?
+                ,
+                last_updated_date: self.last_updated_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_date", "last_updated_date was not specified but it is required when building UpdatePolicyTemplateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

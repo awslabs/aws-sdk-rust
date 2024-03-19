@@ -3,11 +3,11 @@
 /// <p>The metric for the validator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatorMetric {
+pub struct ValidatorMetric  {
     /// <p>The validation loss associated with this validator.</p>
     pub validation_loss: ::std::option::Option<f32>,
 }
-impl ValidatorMetric {
+impl  ValidatorMetric  {
     /// <p>The validation loss associated with this validator.</p>
     pub fn validation_loss(&self) -> ::std::option::Option<f32> {
         self.validation_loss
@@ -34,8 +34,7 @@ impl ValidatorMetricBuilder {
     }
     /// <p>The validation loss associated with this validator.</p>
     pub fn set_validation_loss(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.validation_loss = input;
-        self
+        self.validation_loss = input; self
     }
     /// <p>The validation loss associated with this validator.</p>
     pub fn get_validation_loss(&self) -> &::std::option::Option<f32> {
@@ -44,7 +43,9 @@ impl ValidatorMetricBuilder {
     /// Consumes the builder and constructs a [`ValidatorMetric`](crate::types::ValidatorMetric).
     pub fn build(self) -> crate::types::ValidatorMetric {
         crate::types::ValidatorMetric {
-            validation_loss: self.validation_loss,
+            validation_loss: self.validation_loss
+            ,
         }
     }
 }
+

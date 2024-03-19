@@ -3,22 +3,23 @@
 /// <p>Information about how to remediate a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Remediation {
+pub struct Remediation  {
     /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
     pub recommendation: ::std::option::Option<crate::types::Recommendation>,
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    pub suggested_fixes: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>,
+    pub suggested_fixes: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestedFix>>,
 }
-impl Remediation {
+impl  Remediation  {
     /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::Recommendation> {
+    pub fn recommendation(&self) -> ::std::option::Option<& crate::types::Recommendation> {
         self.recommendation.as_ref()
     }
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_fixes.is_none()`.
-    pub fn suggested_fixes(&self) -> &[crate::types::SuggestedFix] {
-        self.suggested_fixes.as_deref().unwrap_or_default()
+    pub fn suggested_fixes(&self) -> & [crate::types::SuggestedFix] {
+        self.suggested_fixes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Remediation {
@@ -33,7 +34,7 @@ impl Remediation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemediationBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::Recommendation>,
-    pub(crate) suggested_fixes: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>,
+    pub(crate) suggested_fixes: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestedFix>>,
 }
 impl RemediationBuilder {
     /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
@@ -43,8 +44,7 @@ impl RemediationBuilder {
     }
     /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::Recommendation>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::Recommendation> {
@@ -57,24 +57,26 @@ impl RemediationBuilder {
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
     pub fn suggested_fixes(mut self, input: crate::types::SuggestedFix) -> Self {
         let mut v = self.suggested_fixes.unwrap_or_default();
-        v.push(input);
-        self.suggested_fixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suggested_fixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    pub fn set_suggested_fixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>) -> Self {
-        self.suggested_fixes = input;
-        self
+    pub fn set_suggested_fixes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestedFix>>) -> Self {
+        self.suggested_fixes = input; self
     }
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    pub fn get_suggested_fixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
+    pub fn get_suggested_fixes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuggestedFix>> {
         &self.suggested_fixes
     }
     /// Consumes the builder and constructs a [`Remediation`](crate::types::Remediation).
     pub fn build(self) -> crate::types::Remediation {
         crate::types::Remediation {
-            recommendation: self.recommendation,
-            suggested_fixes: self.suggested_fixes,
+            recommendation: self.recommendation
+            ,
+            suggested_fixes: self.suggested_fixes
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>For private hosted zones, this is a complex type that contains information about an Amazon VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRoute53HostedZoneVpcDetails {
+pub struct AwsRoute53HostedZoneVpcDetails  {
     /// <p>The identifier of an Amazon VPC.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region that an Amazon VPC was created in.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl AwsRoute53HostedZoneVpcDetails {
+impl  AwsRoute53HostedZoneVpcDetails  {
     /// <p>The identifier of an Amazon VPC.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Web Services Region that an Amazon VPC was created in.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRoute53HostedZoneVpcDetailsBuilder {
     }
     /// <p>The identifier of an Amazon VPC.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of an Amazon VPC.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRoute53HostedZoneVpcDetailsBuilder {
     }
     /// <p>The Amazon Web Services Region that an Amazon VPC was created in.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region that an Amazon VPC was created in.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRoute53HostedZoneVpcDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsRoute53HostedZoneVpcDetails`](crate::types::AwsRoute53HostedZoneVpcDetails).
     pub fn build(self) -> crate::types::AwsRoute53HostedZoneVpcDetails {
         crate::types::AwsRoute53HostedZoneVpcDetails {
-            id: self.id,
-            region: self.region,
+            id: self.id
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

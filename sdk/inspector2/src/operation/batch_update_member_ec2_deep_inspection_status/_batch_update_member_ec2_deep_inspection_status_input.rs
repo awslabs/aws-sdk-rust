@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateMemberEc2DeepInspectionStatusInput {
+pub struct BatchUpdateMemberEc2DeepInspectionStatusInput  {
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatus>>,
 }
-impl BatchUpdateMemberEc2DeepInspectionStatusInput {
+impl  BatchUpdateMemberEc2DeepInspectionStatusInput  {
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[crate::types::MemberAccountEc2DeepInspectionStatus] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [crate::types::MemberAccountEc2DeepInspectionStatus] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateMemberEc2DeepInspectionStatusInput`](crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
+    pub fn builder() -> crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
         crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder::default()
     }
 }
@@ -26,7 +26,7 @@ impl BatchUpdateMemberEc2DeepInspectionStatusInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatus>>,
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
     /// Appends an item to `account_ids`.
@@ -36,30 +36,26 @@ impl BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
     pub fn account_ids(mut self, input: crate::types::MemberAccountEc2DeepInspectionStatus) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input);
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatus>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatus>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchUpdateMemberEc2DeepInspectionStatusInput`](crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput {
-                account_ids: self.account_ids,
-            },
+                account_ids: self.account_ids
+                ,
+            }
         )
     }
 }
+

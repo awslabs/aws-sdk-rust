@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ModifyClusterInput {
+pub struct ModifyClusterInput  {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -30,9 +30,9 @@ pub struct ModifyClusterInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cluster_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p><note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
@@ -138,22 +138,22 @@ pub struct ModifyClusterInput {
     /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
     pub multi_az: ::std::option::Option<bool>,
 }
-impl ModifyClusterInput {
+impl  ModifyClusterInput  {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code></p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The new cluster type.</p>
     /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
     /// <p>Valid Values: <code> multi-node | single-node </code></p>
-    pub fn cluster_type(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& str> {
         self.cluster_type.as_deref()
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
@@ -173,16 +173,18 @@ impl ModifyClusterInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
-    pub fn cluster_security_groups(&self) -> &[::std::string::String] {
-        self.cluster_security_groups.as_deref().unwrap_or_default()
+    pub fn cluster_security_groups(&self) -> & [::std::string::String] {
+        self.cluster_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p><note>
@@ -202,13 +204,13 @@ impl ModifyClusterInput {
     /// <li>
     /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
-    pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_parameter_group_name.as_deref()
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
@@ -231,13 +233,13 @@ impl ModifyClusterInput {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Example: <code>1.0</code></p>
-    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
@@ -246,11 +248,11 @@ impl ModifyClusterInput {
         self.allow_version_upgrade
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_configuration_identifier.as_deref()
     }
     /// <p>The new identifier for the cluster.</p>
@@ -268,7 +270,7 @@ impl ModifyClusterInput {
     /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code></p>
-    pub fn new_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn new_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.new_cluster_identifier.as_deref()
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.</p>
@@ -277,7 +279,7 @@ impl ModifyClusterInput {
     }
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
-    pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> ::std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
@@ -287,7 +289,7 @@ impl ModifyClusterInput {
         self.enhanced_vpc_routing
     }
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
-    pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> ::std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
@@ -296,7 +298,7 @@ impl ModifyClusterInput {
         self.encrypted
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
@@ -304,7 +306,7 @@ impl ModifyClusterInput {
         self.availability_zone_relocation
     }
     /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
@@ -323,11 +325,11 @@ impl ModifyClusterInput {
         self.manage_master_password
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
-    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.master_password_secret_kms_key_id.as_deref()
     }
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& str> {
         self.ip_address_type.as_deref()
     }
     /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
@@ -335,7 +337,7 @@ impl ModifyClusterInput {
         self.multi_az
     }
 }
-impl ::std::fmt::Debug for ModifyClusterInput {
+impl  ::std::fmt::Debug for ModifyClusterInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
@@ -385,8 +387,8 @@ pub struct ModifyClusterInputBuilder {
     pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,
-    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
@@ -422,8 +424,7 @@ impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code></p>
@@ -441,8 +442,7 @@ impl ModifyClusterInputBuilder {
     /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
     /// <p>Valid Values: <code> multi-node | single-node </code></p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>The new cluster type.</p>
     /// <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request.</p>
@@ -461,8 +461,7 @@ impl ModifyClusterInputBuilder {
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -481,8 +480,7 @@ impl ModifyClusterInputBuilder {
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: Integer greater than <code>0</code>.</p>
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_nodes = input;
-        self
+        self.number_of_nodes = input; self
     }
     /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>
     /// <p>For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -507,9 +505,9 @@ impl ModifyClusterInputBuilder {
     /// </ul>
     pub fn cluster_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.cluster_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cluster_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
@@ -522,9 +520,8 @@ impl ModifyClusterInputBuilder {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cluster_security_groups = input;
-        self
+    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cluster_security_groups = input; self
     }
     /// <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
@@ -537,7 +534,7 @@ impl ModifyClusterInputBuilder {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cluster_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -547,17 +544,16 @@ impl ModifyClusterInputBuilder {
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
@@ -601,8 +597,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p><note>
@@ -636,8 +631,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_parameter_group_name = input;
-        self
+        self.cluster_parameter_group_name = input; self
     }
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>.</p>
     /// <p>Default: Uses existing setting.</p>
@@ -660,8 +654,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automated_snapshot_retention_period = input;
-        self
+        self.automated_snapshot_retention_period = input; self
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>
@@ -682,8 +675,7 @@ impl ModifyClusterInputBuilder {
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input;
-        self
+        self.manual_snapshot_retention_period = input; self
     }
     /// <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -708,8 +700,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is necessary during the window, it may result in an outage.</p>
     /// <p>This maintenance window change is made immediately. If the new maintenance window indicates the current time, there must be at least 120 minutes between the current time and end of the window in order to ensure that pending changes are applied.</p>
@@ -731,8 +722,7 @@ impl ModifyClusterInputBuilder {
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Example: <code>1.0</code></p>
     pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_version = input;
-        self
+        self.cluster_version = input; self
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -749,8 +739,7 @@ impl ModifyClusterInputBuilder {
     /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_allow_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_version_upgrade = input;
-        self
+        self.allow_version_upgrade = input; self
     }
     /// <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window.</p>
     /// <p>Default: <code>false</code></p>
@@ -764,8 +753,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_client_certificate_identifier = input;
-        self
+        self.hsm_client_certificate_identifier = input; self
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -778,8 +766,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_configuration_identifier = input;
-        self
+        self.hsm_configuration_identifier = input; self
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -820,8 +807,7 @@ impl ModifyClusterInputBuilder {
     /// </ul>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn set_new_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_cluster_identifier = input;
-        self
+        self.new_cluster_identifier = input; self
     }
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
@@ -848,8 +834,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -864,8 +849,7 @@ impl ModifyClusterInputBuilder {
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
@@ -883,8 +867,7 @@ impl ModifyClusterInputBuilder {
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enhanced_vpc_routing = input;
-        self
+        self.enhanced_vpc_routing = input; self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
@@ -899,8 +882,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
     pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintenance_track_name = input;
-        self
+        self.maintenance_track_name = input; self
     }
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
     pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -915,8 +897,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
     /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key.</p>
     /// <p>If the value is not encrypted (false), then the cluster is decrypted.</p>
@@ -930,8 +911,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -944,8 +924,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
     pub fn set_availability_zone_relocation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.availability_zone_relocation = input;
-        self
+        self.availability_zone_relocation = input; self
     }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
     pub fn get_availability_zone_relocation(&self) -> &::std::option::Option<bool> {
@@ -958,8 +937,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -986,8 +964,7 @@ impl ModifyClusterInputBuilder {
     /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
     /// <p>Valid Values:</p>
@@ -1007,8 +984,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_master_password = input;
-        self
+        self.manage_master_password = input; self
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
@@ -1021,8 +997,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_password_secret_kms_key_id = input;
-        self
+        self.master_password_secret_kms_key_id = input; self
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1035,8 +1010,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -1049,48 +1023,76 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
-            cluster_identifier: self.cluster_identifier,
-            cluster_type: self.cluster_type,
-            node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes,
-            cluster_security_groups: self.cluster_security_groups,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            master_user_password: self.master_user_password,
-            cluster_parameter_group_name: self.cluster_parameter_group_name,
-            automated_snapshot_retention_period: self.automated_snapshot_retention_period,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            cluster_version: self.cluster_version,
-            allow_version_upgrade: self.allow_version_upgrade,
-            hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-            hsm_configuration_identifier: self.hsm_configuration_identifier,
-            new_cluster_identifier: self.new_cluster_identifier,
-            publicly_accessible: self.publicly_accessible,
-            elastic_ip: self.elastic_ip,
-            enhanced_vpc_routing: self.enhanced_vpc_routing,
-            maintenance_track_name: self.maintenance_track_name,
-            encrypted: self.encrypted,
-            kms_key_id: self.kms_key_id,
-            availability_zone_relocation: self.availability_zone_relocation,
-            availability_zone: self.availability_zone,
-            port: self.port,
-            manage_master_password: self.manage_master_password,
-            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
-            ip_address_type: self.ip_address_type,
-            multi_az: self.multi_az,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster::ModifyClusterInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                cluster_type: self.cluster_type
+                ,
+                node_type: self.node_type
+                ,
+                number_of_nodes: self.number_of_nodes
+                ,
+                cluster_security_groups: self.cluster_security_groups
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                master_user_password: self.master_user_password
+                ,
+                cluster_parameter_group_name: self.cluster_parameter_group_name
+                ,
+                automated_snapshot_retention_period: self.automated_snapshot_retention_period
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                cluster_version: self.cluster_version
+                ,
+                allow_version_upgrade: self.allow_version_upgrade
+                ,
+                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier
+                ,
+                hsm_configuration_identifier: self.hsm_configuration_identifier
+                ,
+                new_cluster_identifier: self.new_cluster_identifier
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                elastic_ip: self.elastic_ip
+                ,
+                enhanced_vpc_routing: self.enhanced_vpc_routing
+                ,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                availability_zone_relocation: self.availability_zone_relocation
+                ,
+                availability_zone: self.availability_zone
+                ,
+                port: self.port
+                ,
+                manage_master_password: self.manage_master_password
+                ,
+                master_password_secret_kms_key_id: self.master_password_secret_kms_key_id
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                multi_az: self.multi_az
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ModifyClusterInputBuilder {
@@ -1128,3 +1130,4 @@ impl ::std::fmt::Debug for ModifyClusterInputBuilder {
         formatter.finish()
     }
 }
+

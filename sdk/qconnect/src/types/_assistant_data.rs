@@ -3,7 +3,7 @@
 /// <p>The assistant data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssistantData {
+pub struct AssistantData  {
     /// <p>The identifier of the Amazon Q assistant.</p>
     pub assistant_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
@@ -17,7 +17,7 @@ pub struct AssistantData {
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
@@ -27,50 +27,47 @@ pub struct AssistantData {
     /// <p>The configuration information for the Amazon Q assistant capability.</p>
     pub capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
 }
-impl AssistantData {
+impl  AssistantData  {
     /// <p>The identifier of the Amazon Q assistant.</p>
-    pub fn assistant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_id.deref()
+    pub fn assistant_id(&self) -> & str {
+        use std::ops::Deref; self.assistant_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
-    pub fn assistant_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_arn.deref()
+    pub fn assistant_arn(&self) -> & str {
+        use std::ops::Deref; self.assistant_arn.deref()
     }
     /// <p>The name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of assistant.</p>
-    pub fn r#type(&self) -> &crate::types::AssistantType {
+    pub fn r#type(&self) -> & crate::types::AssistantType {
         &self.r#type
     }
     /// <p>The status of the assistant.</p>
-    pub fn status(&self) -> &crate::types::AssistantStatus {
+    pub fn status(&self) -> & crate::types::AssistantStatus {
         &self.status
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The configuration information for the Amazon Q assistant integration.</p>
-    pub fn integration_configuration(&self) -> ::std::option::Option<&crate::types::AssistantIntegrationConfiguration> {
+    pub fn integration_configuration(&self) -> ::std::option::Option<& crate::types::AssistantIntegrationConfiguration> {
         self.integration_configuration.as_ref()
     }
     /// <p>The configuration information for the Amazon Q assistant capability.</p>
-    pub fn capability_configuration(&self) -> ::std::option::Option<&crate::types::AssistantCapabilityConfiguration> {
+    pub fn capability_configuration(&self) -> ::std::option::Option<& crate::types::AssistantCapabilityConfiguration> {
         self.capability_configuration.as_ref()
     }
 }
@@ -91,7 +88,7 @@ pub struct AssistantDataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AssistantType>,
     pub(crate) status: ::std::option::Option<crate::types::AssistantStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) integration_configuration: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
     pub(crate) capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
@@ -105,8 +102,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The identifier of the Amazon Q assistant.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Amazon Q assistant.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
     pub fn set_assistant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_arn = input;
-        self
+        self.assistant_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
     pub fn get_assistant_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +130,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +144,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The type of assistant.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AssistantType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of assistant.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AssistantType> {
@@ -165,8 +158,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The status of the assistant.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssistantStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the assistant.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssistantStatus> {
@@ -179,8 +171,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,17 +184,16 @@ impl AssistantDataBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
@@ -217,8 +207,7 @@ impl AssistantDataBuilder {
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.</p>
@@ -233,8 +222,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The configuration information for the Amazon Q assistant integration.</p>
     pub fn set_integration_configuration(mut self, input: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>) -> Self {
-        self.integration_configuration = input;
-        self
+        self.integration_configuration = input; self
     }
     /// <p>The configuration information for the Amazon Q assistant integration.</p>
     pub fn get_integration_configuration(&self) -> &::std::option::Option<crate::types::AssistantIntegrationConfiguration> {
@@ -247,8 +235,7 @@ impl AssistantDataBuilder {
     }
     /// <p>The configuration information for the Amazon Q assistant capability.</p>
     pub fn set_capability_configuration(mut self, input: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>) -> Self {
-        self.capability_configuration = input;
-        self
+        self.capability_configuration = input; self
     }
     /// <p>The configuration information for the Amazon Q assistant capability.</p>
     pub fn get_capability_configuration(&self) -> &::std::option::Option<crate::types::AssistantCapabilityConfiguration> {
@@ -262,42 +249,45 @@ impl AssistantDataBuilder {
     /// - [`r#type`](crate::types::builders::AssistantDataBuilder::r#type)
     /// - [`status`](crate::types::builders::AssistantDataBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AssistantData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssistantData {
-            assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assistant_id",
-                    "assistant_id was not specified but it is required when building AssistantData",
-                )
-            })?,
-            assistant_arn: self.assistant_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assistant_arn",
-                    "assistant_arn was not specified but it is required when building AssistantData",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssistantData",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AssistantData",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AssistantData",
-                )
-            })?,
-            description: self.description,
-            tags: self.tags,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            integration_configuration: self.integration_configuration,
-            capability_configuration: self.capability_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssistantData {
+                assistant_id: self.assistant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assistant_id", "assistant_id was not specified but it is required when building AssistantData")
+                    )?
+                ,
+                assistant_arn: self.assistant_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assistant_arn", "assistant_arn was not specified but it is required when building AssistantData")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssistantData")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AssistantData")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AssistantData")
+                    )?
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                integration_configuration: self.integration_configuration
+                ,
+                capability_configuration: self.capability_configuration
+                ,
+            }
+        )
     }
 }
+

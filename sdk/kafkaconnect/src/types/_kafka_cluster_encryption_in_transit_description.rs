@@ -3,13 +3,13 @@
 /// <p>The description of the encryption in transit to the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaClusterEncryptionInTransitDescription {
+pub struct KafkaClusterEncryptionInTransitDescription  {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub encryption_type: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
 }
-impl KafkaClusterEncryptionInTransitDescription {
+impl  KafkaClusterEncryptionInTransitDescription  {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransitType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& crate::types::KafkaClusterEncryptionInTransitType> {
         self.encryption_type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl KafkaClusterEncryptionInTransitDescriptionBuilder {
     }
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType> {
@@ -44,7 +43,9 @@ impl KafkaClusterEncryptionInTransitDescriptionBuilder {
     /// Consumes the builder and constructs a [`KafkaClusterEncryptionInTransitDescription`](crate::types::KafkaClusterEncryptionInTransitDescription).
     pub fn build(self) -> crate::types::KafkaClusterEncryptionInTransitDescription {
         crate::types::KafkaClusterEncryptionInTransitDescription {
-            encryption_type: self.encryption_type,
+            encryption_type: self.encryption_type
+            ,
         }
     }
 }
+

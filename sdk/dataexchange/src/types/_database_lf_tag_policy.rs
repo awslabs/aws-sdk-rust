@@ -3,15 +3,14 @@
 /// <p>The LF-tag policy for database resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabaseLfTagPolicy {
+pub struct DatabaseLfTagPolicy  {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub expression: ::std::vec::Vec<crate::types::LfTag>,
+    pub expression: ::std::vec::Vec::<crate::types::LfTag>,
 }
-impl DatabaseLfTagPolicy {
+impl  DatabaseLfTagPolicy  {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn expression(&self) -> &[crate::types::LfTag] {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & [crate::types::LfTag] {
+        use std::ops::Deref; self.expression.deref()
     }
 }
 impl DatabaseLfTagPolicy {
@@ -25,7 +24,7 @@ impl DatabaseLfTagPolicy {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseLfTagPolicyBuilder {
-    pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
+    pub(crate) expression: ::std::option::Option<::std::vec::Vec::<crate::types::LfTag>>,
 }
 impl DatabaseLfTagPolicyBuilder {
     /// Appends an item to `expression`.
@@ -35,30 +34,31 @@ impl DatabaseLfTagPolicyBuilder {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
-        v.push(input);
-        self.expression = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.expression = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
-        self.expression = input;
-        self
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTag>>) -> Self {
+        self.expression = input; self
     }
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTag>> {
+    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTag>> {
         &self.expression
     }
     /// Consumes the builder and constructs a [`DatabaseLfTagPolicy`](crate::types::DatabaseLfTagPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::DatabaseLfTagPolicyBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::DatabaseLfTagPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatabaseLfTagPolicy {
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building DatabaseLfTagPolicy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatabaseLfTagPolicy {
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building DatabaseLfTagPolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

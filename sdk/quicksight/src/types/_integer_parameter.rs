@@ -3,22 +3,20 @@
 /// <p>An integer parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerParameter {
+pub struct IntegerParameter  {
     /// <p>The name of the integer parameter.</p>
     pub name: ::std::string::String,
     /// <p>The values for the integer parameter.</p>
-    pub values: ::std::vec::Vec<i64>,
+    pub values: ::std::vec::Vec::<i64>,
 }
-impl IntegerParameter {
+impl  IntegerParameter  {
     /// <p>The name of the integer parameter.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values for the integer parameter.</p>
-    pub fn values(&self) -> &[i64] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [i64] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl IntegerParameter {
@@ -33,7 +31,7 @@ impl IntegerParameter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
 impl IntegerParameterBuilder {
     /// <p>The name of the integer parameter.</p>
@@ -44,8 +42,7 @@ impl IntegerParameterBuilder {
     }
     /// <p>The name of the integer parameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the integer parameter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl IntegerParameterBuilder {
     /// <p>The values for the integer parameter.</p>
     pub fn values(mut self, input: i64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values for the integer parameter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values for the integer parameter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`IntegerParameter`](crate::types::IntegerParameter).
@@ -76,19 +72,20 @@ impl IntegerParameterBuilder {
     /// - [`name`](crate::types::builders::IntegerParameterBuilder::name)
     /// - [`values`](crate::types::builders::IntegerParameterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IntegerParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building IntegerParameter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building IntegerParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IntegerParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building IntegerParameter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building IntegerParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

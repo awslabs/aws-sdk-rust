@@ -3,24 +3,25 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEvaluationsOutput {
+pub struct PutEvaluationsOutput  {
     /// <p>Requests that failed because of a client or server error.</p>
-    pub failed_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
+    pub failed_evaluations: ::std::option::Option<::std::vec::Vec::<crate::types::Evaluation>>,
     _request_id: Option<String>,
 }
-impl PutEvaluationsOutput {
+impl  PutEvaluationsOutput  {
     /// <p>Requests that failed because of a client or server error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_evaluations.is_none()`.
-    pub fn failed_evaluations(&self) -> &[crate::types::Evaluation] {
-        self.failed_evaluations.as_deref().unwrap_or_default()
+    pub fn failed_evaluations(&self) -> & [crate::types::Evaluation] {
+        self.failed_evaluations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutEvaluationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`PutEvaluationsOutput`](crate::operation::put_evaluations::PutEvaluationsOutput).
     pub fn builder() -> crate::operation::put_evaluations::builders::PutEvaluationsOutputBuilder {
@@ -32,7 +33,7 @@ impl PutEvaluationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEvaluationsOutputBuilder {
-    pub(crate) failed_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
+    pub(crate) failed_evaluations: ::std::option::Option<::std::vec::Vec::<crate::types::Evaluation>>,
     _request_id: Option<String>,
 }
 impl PutEvaluationsOutputBuilder {
@@ -43,33 +44,34 @@ impl PutEvaluationsOutputBuilder {
     /// <p>Requests that failed because of a client or server error.</p>
     pub fn failed_evaluations(mut self, input: crate::types::Evaluation) -> Self {
         let mut v = self.failed_evaluations.unwrap_or_default();
-        v.push(input);
-        self.failed_evaluations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_evaluations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Requests that failed because of a client or server error.</p>
-    pub fn set_failed_evaluations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>) -> Self {
-        self.failed_evaluations = input;
-        self
+    pub fn set_failed_evaluations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Evaluation>>) -> Self {
+        self.failed_evaluations = input; self
     }
     /// <p>Requests that failed because of a client or server error.</p>
-    pub fn get_failed_evaluations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
+    pub fn get_failed_evaluations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Evaluation>> {
         &self.failed_evaluations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutEvaluationsOutput`](crate::operation::put_evaluations::PutEvaluationsOutput).
     pub fn build(self) -> crate::operation::put_evaluations::PutEvaluationsOutput {
         crate::operation::put_evaluations::PutEvaluationsOutput {
-            failed_evaluations: self.failed_evaluations,
+            failed_evaluations: self.failed_evaluations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

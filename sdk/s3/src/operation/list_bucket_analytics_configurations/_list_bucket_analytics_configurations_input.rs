@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBucketAnalyticsConfigurationsInput {
+pub struct ListBucketAnalyticsConfigurationsInput  {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
@@ -10,17 +10,17 @@ pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl ListBucketAnalyticsConfigurationsInput {
+impl  ListBucketAnalyticsConfigurationsInput  {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
-    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
     }
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
     }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continuation_token = input;
-        self
+        self.continuation_token = input; self
     }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`ListBucketAnalyticsConfigurationsInput`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput {
-                bucket: self.bucket,
-                continuation_token: self.continuation_token,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
+                bucket: self.bucket
+                ,
+                continuation_token: self.continuation_token
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+            }
         )
     }
 }
+

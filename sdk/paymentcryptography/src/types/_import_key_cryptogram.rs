@@ -3,7 +3,7 @@
 /// <p>Parameter information for key material import using asymmetric RSA wrap and unwrap key exchange method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportKeyCryptogram {
+pub struct ImportKeyCryptogram  {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>Specifies whether the key is exportable from the service.</p>
@@ -15,9 +15,9 @@ pub struct ImportKeyCryptogram {
     /// <p>The wrapping spec for the wrapped key cryptogram.</p>
     pub wrapping_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
 }
-impl ImportKeyCryptogram {
+impl  ImportKeyCryptogram  {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn key_attributes(&self) -> ::std::option::Option<&crate::types::KeyAttributes> {
+    pub fn key_attributes(&self) -> ::std::option::Option<& crate::types::KeyAttributes> {
         self.key_attributes.as_ref()
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
@@ -25,17 +25,15 @@ impl ImportKeyCryptogram {
         self.exportable
     }
     /// <p>The RSA wrapped key cryptogram under import.</p>
-    pub fn wrapped_key_cryptogram(&self) -> &str {
-        use std::ops::Deref;
-        self.wrapped_key_cryptogram.deref()
+    pub fn wrapped_key_cryptogram(&self) -> & str {
+        use std::ops::Deref; self.wrapped_key_cryptogram.deref()
     }
     /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
-    pub fn import_token(&self) -> &str {
-        use std::ops::Deref;
-        self.import_token.deref()
+    pub fn import_token(&self) -> & str {
+        use std::ops::Deref; self.import_token.deref()
     }
     /// <p>The wrapping spec for the wrapped key cryptogram.</p>
-    pub fn wrapping_spec(&self) -> ::std::option::Option<&crate::types::WrappingKeySpec> {
+    pub fn wrapping_spec(&self) -> ::std::option::Option<& crate::types::WrappingKeySpec> {
         self.wrapping_spec.as_ref()
     }
 }
@@ -65,8 +63,7 @@ impl ImportKeyCryptogramBuilder {
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
-        self.key_attributes = input;
-        self
+        self.key_attributes = input; self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
@@ -80,8 +77,7 @@ impl ImportKeyCryptogramBuilder {
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
     pub fn set_exportable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exportable = input;
-        self
+        self.exportable = input; self
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
     pub fn get_exportable(&self) -> &::std::option::Option<bool> {
@@ -95,8 +91,7 @@ impl ImportKeyCryptogramBuilder {
     }
     /// <p>The RSA wrapped key cryptogram under import.</p>
     pub fn set_wrapped_key_cryptogram(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wrapped_key_cryptogram = input;
-        self
+        self.wrapped_key_cryptogram = input; self
     }
     /// <p>The RSA wrapped key cryptogram under import.</p>
     pub fn get_wrapped_key_cryptogram(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl ImportKeyCryptogramBuilder {
     }
     /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn set_import_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_token = input;
-        self
+        self.import_token = input; self
     }
     /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl ImportKeyCryptogramBuilder {
     }
     /// <p>The wrapping spec for the wrapped key cryptogram.</p>
     pub fn set_wrapping_spec(mut self, input: ::std::option::Option<crate::types::WrappingKeySpec>) -> Self {
-        self.wrapping_spec = input;
-        self
+        self.wrapping_spec = input; self
     }
     /// <p>The wrapping spec for the wrapped key cryptogram.</p>
     pub fn get_wrapping_spec(&self) -> &::std::option::Option<crate::types::WrappingKeySpec> {
@@ -137,27 +130,29 @@ impl ImportKeyCryptogramBuilder {
     /// - [`wrapped_key_cryptogram`](crate::types::builders::ImportKeyCryptogramBuilder::wrapped_key_cryptogram)
     /// - [`import_token`](crate::types::builders::ImportKeyCryptogramBuilder::import_token)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportKeyCryptogram, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportKeyCryptogram {
-            key_attributes: self.key_attributes,
-            exportable: self.exportable.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "exportable",
-                    "exportable was not specified but it is required when building ImportKeyCryptogram",
-                )
-            })?,
-            wrapped_key_cryptogram: self.wrapped_key_cryptogram.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "wrapped_key_cryptogram",
-                    "wrapped_key_cryptogram was not specified but it is required when building ImportKeyCryptogram",
-                )
-            })?,
-            import_token: self.import_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_token",
-                    "import_token was not specified but it is required when building ImportKeyCryptogram",
-                )
-            })?,
-            wrapping_spec: self.wrapping_spec,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportKeyCryptogram {
+                key_attributes: self.key_attributes
+                ,
+                exportable: self.exportable
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("exportable", "exportable was not specified but it is required when building ImportKeyCryptogram")
+                    )?
+                ,
+                wrapped_key_cryptogram: self.wrapped_key_cryptogram
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("wrapped_key_cryptogram", "wrapped_key_cryptogram was not specified but it is required when building ImportKeyCryptogram")
+                    )?
+                ,
+                import_token: self.import_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("import_token", "import_token was not specified but it is required when building ImportKeyCryptogram")
+                    )?
+                ,
+                wrapping_spec: self.wrapping_spec
+                ,
+            }
+        )
     }
 }
+

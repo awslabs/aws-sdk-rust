@@ -3,20 +3,19 @@
 /// <p>Details of a resource that is associated to an Firewall Manager resource set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The resource's universal resource indicator (URI).</p>
     pub uri: ::std::string::String,
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The resource's universal resource indicator (URI).</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ResourceBuilder {
     }
     /// <p>The resource's universal resource indicator (URI).</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The resource's universal resource indicator (URI).</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::ResourceBuilder::uri)
     pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Resource {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building Resource",
-                )
-            })?,
-            account_id: self.account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Resource {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building Resource")
+                    )?
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

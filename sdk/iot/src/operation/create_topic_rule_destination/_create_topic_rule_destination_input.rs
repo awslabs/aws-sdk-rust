@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTopicRuleDestinationInput {
+pub struct CreateTopicRuleDestinationInput  {
     /// <p>The topic rule destination configuration.</p>
     pub destination_configuration: ::std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
 }
-impl CreateTopicRuleDestinationInput {
+impl  CreateTopicRuleDestinationInput  {
     /// <p>The topic rule destination configuration.</p>
-    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::TopicRuleDestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<& crate::types::TopicRuleDestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateTopicRuleDestinationInputBuilder {
     }
     /// <p>The topic rule destination configuration.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::TopicRuleDestinationConfiguration>) -> Self {
-        self.destination_configuration = input;
-        self
+        self.destination_configuration = input; self
     }
     /// <p>The topic rule destination configuration.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::TopicRuleDestinationConfiguration> {
         &self.destination_configuration
     }
     /// Consumes the builder and constructs a [`CreateTopicRuleDestinationInput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput {
-            destination_configuration: self.destination_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput {
+                destination_configuration: self.destination_configuration
+                ,
+            }
+        )
     }
 }
+

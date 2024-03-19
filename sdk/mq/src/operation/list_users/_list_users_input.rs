@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersInput {
+pub struct ListUsersInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -10,9 +10,9 @@ pub struct ListUsersInput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListUsersInput {
+impl  ListUsersInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -20,7 +20,7 @@ impl ListUsersInput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl ListUsersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
-            broker_id: self.broker_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_users::ListUsersInput {
+                broker_id: self.broker_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

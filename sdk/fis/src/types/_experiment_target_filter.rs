@@ -3,22 +3,23 @@
 /// <p>Describes a filter used for the target resources in an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTargetFilter {
+pub struct ExperimentTargetFilter  {
     /// <p>The attribute path for the filter.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The attribute values for the filter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ExperimentTargetFilter {
+impl  ExperimentTargetFilter  {
     /// <p>The attribute path for the filter.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The attribute values for the filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExperimentTargetFilter {
@@ -33,7 +34,7 @@ impl ExperimentTargetFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTargetFilterBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ExperimentTargetFilterBuilder {
     /// <p>The attribute path for the filter.</p>
@@ -43,8 +44,7 @@ impl ExperimentTargetFilterBuilder {
     }
     /// <p>The attribute path for the filter.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The attribute path for the filter.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ExperimentTargetFilterBuilder {
     /// <p>The attribute values for the filter.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`ExperimentTargetFilter`](crate::types::ExperimentTargetFilter).
     pub fn build(self) -> crate::types::ExperimentTargetFilter {
         crate::types::ExperimentTargetFilter {
-            path: self.path,
-            values: self.values,
+            path: self.path
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The termination health details, including the source IP address and timestamp of the last successful <code>SIP OPTIONS</code> message from your SIP infrastructure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminationHealth {
+pub struct TerminationHealth  {
     /// <p>The timestamp, in ISO 8601 format.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source IP address.</p>
     pub source: ::std::option::Option<::std::string::String>,
 }
-impl TerminationHealth {
+impl  TerminationHealth  {
     /// <p>The timestamp, in ISO 8601 format.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The source IP address.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TerminationHealthBuilder {
     }
     /// <p>The timestamp, in ISO 8601 format.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp, in ISO 8601 format.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl TerminationHealthBuilder {
     }
     /// <p>The source IP address.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source IP address.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TerminationHealthBuilder {
     /// Consumes the builder and constructs a [`TerminationHealth`](crate::types::TerminationHealth).
     pub fn build(self) -> crate::types::TerminationHealth {
         crate::types::TerminationHealth {
-            timestamp: self.timestamp,
-            source: self.source,
+            timestamp: self.timestamp
+            ,
+            source: self.source
+            ,
         }
     }
 }
+

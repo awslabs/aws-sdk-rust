@@ -6,7 +6,7 @@
 /// <p>If you prefer to use percentage instead of milliseconds, see .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AbsoluteTimeRange {
+pub struct AbsoluteTimeRange  {
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     pub start_time: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
@@ -16,7 +16,7 @@ pub struct AbsoluteTimeRange {
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub last: ::std::option::Option<i64>,
 }
-impl AbsoluteTimeRange {
+impl  AbsoluteTimeRange  {
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     pub fn start_time(&self) -> ::std::option::Option<i64> {
         self.start_time
@@ -58,8 +58,7 @@ impl AbsoluteTimeRangeBuilder {
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
@@ -72,8 +71,7 @@ impl AbsoluteTimeRangeBuilder {
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<i64> {
@@ -86,8 +84,7 @@ impl AbsoluteTimeRangeBuilder {
     }
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn set_first(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.first = input;
-        self
+        self.first = input; self
     }
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn get_first(&self) -> &::std::option::Option<i64> {
@@ -100,8 +97,7 @@ impl AbsoluteTimeRangeBuilder {
     }
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn set_last(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last = input;
-        self
+        self.last = input; self
     }
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn get_last(&self) -> &::std::option::Option<i64> {
@@ -110,10 +106,15 @@ impl AbsoluteTimeRangeBuilder {
     /// Consumes the builder and constructs a [`AbsoluteTimeRange`](crate::types::AbsoluteTimeRange).
     pub fn build(self) -> crate::types::AbsoluteTimeRange {
         crate::types::AbsoluteTimeRange {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            first: self.first,
-            last: self.last,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            first: self.first
+            ,
+            last: self.last
+            ,
         }
     }
 }
+

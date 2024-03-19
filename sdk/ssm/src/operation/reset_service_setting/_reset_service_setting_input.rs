@@ -3,7 +3,7 @@
 /// <p>The request body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetServiceSettingInput {
+pub struct ResetServiceSettingInput  {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct ResetServiceSettingInput {
     /// </ul>
     pub setting_id: ::std::option::Option<::std::string::String>,
 }
-impl ResetServiceSettingInput {
+impl  ResetServiceSettingInput  {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ impl ResetServiceSettingInput {
     /// <li>
     /// <p><code>/ssm/parameter-store/high-throughput-enabled</code></p></li>
     /// </ul>
-    pub fn setting_id(&self) -> ::std::option::Option<&str> {
+    pub fn setting_id(&self) -> ::std::option::Option<& str> {
         self.setting_id.as_deref()
     }
 }
@@ -107,8 +107,7 @@ impl ResetServiceSettingInputBuilder {
     /// <p><code>/ssm/parameter-store/high-throughput-enabled</code></p></li>
     /// </ul>
     pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.setting_id = input;
-        self
+        self.setting_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
@@ -133,10 +132,13 @@ impl ResetServiceSettingInputBuilder {
         &self.setting_id
     }
     /// Consumes the builder and constructs a [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::reset_service_setting::ResetServiceSettingInput { setting_id: self.setting_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_service_setting::ResetServiceSettingInput {
+                setting_id: self.setting_id
+                ,
+            }
+        )
     }
 }
+

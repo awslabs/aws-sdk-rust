@@ -4,7 +4,7 @@
 /// <p>For more information about bucket access logs, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs">Logging bucket requests using access logging in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketAccessLogConfig {
+pub struct BucketAccessLogConfig  {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
     pub enabled: bool,
     /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p><note>
@@ -17,7 +17,7 @@ pub struct BucketAccessLogConfig {
     /// </note>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl BucketAccessLogConfig {
+impl  BucketAccessLogConfig  {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -25,14 +25,14 @@ impl BucketAccessLogConfig {
     /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p><note>
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The optional object prefix for the bucket access log.</p>
     /// <p>The prefix is an optional addition to the object key that organizes your access log files in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each log object will begin with the <code>logs/</code> prefix in its key (for example, <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p><note>
     /// <p>This parameter can be optionally specified when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl BucketAccessLogConfigBuilder {
     }
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -78,8 +77,7 @@ impl BucketAccessLogConfigBuilder {
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p><note>
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
@@ -100,8 +98,7 @@ impl BucketAccessLogConfigBuilder {
     /// <p>This parameter can be optionally specified when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The optional object prefix for the bucket access log.</p>
     /// <p>The prefix is an optional addition to the object key that organizes your access log files in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each log object will begin with the <code>logs/</code> prefix in its key (for example, <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p><note>
@@ -114,15 +111,19 @@ impl BucketAccessLogConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::BucketAccessLogConfigBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::BucketAccessLogConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BucketAccessLogConfig {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building BucketAccessLogConfig",
-                )
-            })?,
-            destination: self.destination,
-            prefix: self.prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BucketAccessLogConfig {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building BucketAccessLogConfig")
+                    )?
+                ,
+                destination: self.destination
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

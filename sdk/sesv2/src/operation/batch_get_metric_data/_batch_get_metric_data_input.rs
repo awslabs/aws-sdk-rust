@@ -3,16 +3,17 @@
 /// <p>Represents a request to retrieve a batch of metric data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetMetricDataInput {
+pub struct BatchGetMetricDataInput  {
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub queries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
+    pub queries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetMetricDataQuery>>,
 }
-impl BatchGetMetricDataInput {
+impl  BatchGetMetricDataInput  {
     /// <p>A list of queries for metrics to be retrieved.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
-    pub fn queries(&self) -> &[crate::types::BatchGetMetricDataQuery] {
-        self.queries.as_deref().unwrap_or_default()
+    pub fn queries(&self) -> & [crate::types::BatchGetMetricDataQuery] {
+        self.queries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetMetricDataInput {
@@ -26,7 +27,7 @@ impl BatchGetMetricDataInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataInputBuilder {
-    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetMetricDataQuery>>,
 }
 impl BatchGetMetricDataInputBuilder {
     /// Appends an item to `queries`.
@@ -36,24 +37,26 @@ impl BatchGetMetricDataInputBuilder {
     /// <p>A list of queries for metrics to be retrieved.</p>
     pub fn queries(mut self, input: crate::types::BatchGetMetricDataQuery) -> Self {
         let mut v = self.queries.unwrap_or_default();
-        v.push(input);
-        self.queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>) -> Self {
-        self.queries = input;
-        self
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetMetricDataQuery>>) -> Self {
+        self.queries = input; self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetMetricDataQuery>> {
         &self.queries
     }
     /// Consumes the builder and constructs a [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_metric_data::BatchGetMetricDataInput { queries: self.queries })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_metric_data::BatchGetMetricDataInput {
+                queries: self.queries
+                ,
+            }
+        )
     }
 }
+

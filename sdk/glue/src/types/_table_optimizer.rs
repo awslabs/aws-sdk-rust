@@ -3,7 +3,7 @@
 /// <p>Contains details about an optimizer associated with a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableOptimizer {
+pub struct TableOptimizer  {
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
     pub r#type: ::std::option::Option<crate::types::TableOptimizerType>,
     /// <p>A <code>TableOptimizerConfiguration</code> object that was specified when creating or updating a table optimizer.</p>
@@ -11,17 +11,17 @@ pub struct TableOptimizer {
     /// <p>A <code>TableOptimizerRun</code> object representing the last run of the table optimizer.</p>
     pub last_run: ::std::option::Option<crate::types::TableOptimizerRun>,
 }
-impl TableOptimizer {
+impl  TableOptimizer  {
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableOptimizerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TableOptimizerType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>TableOptimizerConfiguration</code> object that was specified when creating or updating a table optimizer.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::TableOptimizerConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::TableOptimizerConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>A <code>TableOptimizerRun</code> object representing the last run of the table optimizer.</p>
-    pub fn last_run(&self) -> ::std::option::Option<&crate::types::TableOptimizerRun> {
+    pub fn last_run(&self) -> ::std::option::Option<& crate::types::TableOptimizerRun> {
         self.last_run.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TableOptimizerBuilder {
     }
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
@@ -62,8 +61,7 @@ impl TableOptimizerBuilder {
     }
     /// <p>A <code>TableOptimizerConfiguration</code> object that was specified when creating or updating a table optimizer.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::TableOptimizerConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>A <code>TableOptimizerConfiguration</code> object that was specified when creating or updating a table optimizer.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::TableOptimizerConfiguration> {
@@ -76,8 +74,7 @@ impl TableOptimizerBuilder {
     }
     /// <p>A <code>TableOptimizerRun</code> object representing the last run of the table optimizer.</p>
     pub fn set_last_run(mut self, input: ::std::option::Option<crate::types::TableOptimizerRun>) -> Self {
-        self.last_run = input;
-        self
+        self.last_run = input; self
     }
     /// <p>A <code>TableOptimizerRun</code> object representing the last run of the table optimizer.</p>
     pub fn get_last_run(&self) -> &::std::option::Option<crate::types::TableOptimizerRun> {
@@ -86,9 +83,13 @@ impl TableOptimizerBuilder {
     /// Consumes the builder and constructs a [`TableOptimizer`](crate::types::TableOptimizer).
     pub fn build(self) -> crate::types::TableOptimizer {
         crate::types::TableOptimizer {
-            r#type: self.r#type,
-            configuration: self.configuration,
-            last_run: self.last_run,
+            r#type: self.r#type
+            ,
+            configuration: self.configuration
+            ,
+            last_run: self.last_run
+            ,
         }
     }
 }
+

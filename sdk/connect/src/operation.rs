@@ -729,3 +729,4 @@ pub mod update_view_content;
 
 /// Types for the `UpdateViewMetadata` operation.
 pub mod update_view_metadata;
+

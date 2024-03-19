@@ -4,19 +4,19 @@
 /// <p>For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PersonDetection {
+pub struct PersonDetection  {
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     pub timestamp: i64,
     /// <p>Details about a person whose path was tracked in a video.</p>
     pub person: ::std::option::Option<crate::types::PersonDetail>,
 }
-impl PersonDetection {
+impl  PersonDetection  {
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
     /// <p>Details about a person whose path was tracked in a video.</p>
-    pub fn person(&self) -> ::std::option::Option<&crate::types::PersonDetail> {
+    pub fn person(&self) -> ::std::option::Option<& crate::types::PersonDetail> {
         self.person.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PersonDetectionBuilder {
     }
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
@@ -56,8 +55,7 @@ impl PersonDetectionBuilder {
     }
     /// <p>Details about a person whose path was tracked in a video.</p>
     pub fn set_person(mut self, input: ::std::option::Option<crate::types::PersonDetail>) -> Self {
-        self.person = input;
-        self
+        self.person = input; self
     }
     /// <p>Details about a person whose path was tracked in a video.</p>
     pub fn get_person(&self) -> &::std::option::Option<crate::types::PersonDetail> {
@@ -66,8 +64,12 @@ impl PersonDetectionBuilder {
     /// Consumes the builder and constructs a [`PersonDetection`](crate::types::PersonDetection).
     pub fn build(self) -> crate::types::PersonDetection {
         crate::types::PersonDetection {
-            timestamp: self.timestamp.unwrap_or_default(),
-            person: self.person,
+            timestamp: self.timestamp
+                .unwrap_or_default()
+            ,
+            person: self.person
+            ,
         }
     }
 }
+

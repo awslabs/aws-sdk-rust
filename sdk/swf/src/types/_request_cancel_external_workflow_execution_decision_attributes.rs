@@ -14,7 +14,7 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
+pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes  {
     /// <p>The <code>workflowId</code> of the external workflow execution to cancel.</p>
     pub workflow_id: ::std::string::String,
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
@@ -22,18 +22,17 @@ pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub control: ::std::option::Option<::std::string::String>,
 }
-impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
+impl  RequestCancelExternalWorkflowExecutionDecisionAttributes  {
     /// <p>The <code>workflowId</code> of the external workflow execution to cancel.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn control(&self) -> ::std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<& str> {
         self.control.as_deref()
     }
 }
@@ -61,8 +60,7 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The <code>workflowId</code> of the external workflow execution to cancel.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The <code>workflowId</code> of the external workflow execution to cancel.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +86,7 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control = input;
-        self
+        self.control = input; self
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,19 +95,20 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder::workflow_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building RequestCancelExternalWorkflowExecutionDecisionAttributes",
-                )
-            })?,
-            run_id: self.run_id,
-            control: self.control,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes {
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building RequestCancelExternalWorkflowExecutionDecisionAttributes")
+                    )?
+                ,
+                run_id: self.run_id
+                ,
+                control: self.control
+                ,
+            }
+        )
     }
 }
+

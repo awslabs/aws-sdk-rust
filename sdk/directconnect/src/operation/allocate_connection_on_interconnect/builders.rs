@@ -5,23 +5,20 @@ pub use crate::operation::allocate_connection_on_interconnect::_allocate_connect
 
 impl AllocateConnectionOnInterconnectInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.allocate_connection_on_interconnect();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.allocate_connection_on_interconnect();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AllocateConnectionOnInterconnect`.
-///
+/// 
 /// <p>Deprecated. Use <code>AllocateHostedConnection</code> instead.</p>
 /// <p>Creates a hosted connection on an interconnect.</p>
 /// <p>Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified interconnect.</p><note>
@@ -31,33 +28,32 @@ impl AllocateConnectionOnInterconnectInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder,
+                    inner: crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
-    > for AllocateConnectionOnInterconnectFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
-            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+                    crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
+                > for AllocateConnectionOnInterconnectFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+                        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AllocateConnectionOnInterconnectFluentBuilder {
     /// Creates a new `AllocateConnectionOnInterconnect`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
-        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth(input.into());
@@ -184,3 +171,4 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         self.inner.get_vlan()
     }
 }
+

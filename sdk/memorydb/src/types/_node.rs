@@ -3,7 +3,7 @@
 /// <p>Represents an individual node within a cluster. Each node runs its own instance of the cluster's protocol-compliant caching software.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Node {
+pub struct Node  {
     /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update on the node</p>
@@ -15,25 +15,25 @@ pub struct Node {
     /// <p>The hostname for connecting to this node.</p>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
 }
-impl Node {
+impl  Node  {
     /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the service update on the node</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The Availability Zone in which the node resides</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The date and time when the node was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The hostname for connecting to this node.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl NodeBuilder {
     }
     /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl NodeBuilder {
     }
     /// <p>The status of the service update on the node</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the service update on the node</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl NodeBuilder {
     }
     /// <p>The Availability Zone in which the node resides</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in which the node resides</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl NodeBuilder {
     }
     /// <p>The date and time when the node was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The date and time when the node was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl NodeBuilder {
     }
     /// <p>The hostname for connecting to this node.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The hostname for connecting to this node.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
@@ -128,11 +123,17 @@ impl NodeBuilder {
     /// Consumes the builder and constructs a [`Node`](crate::types::Node).
     pub fn build(self) -> crate::types::Node {
         crate::types::Node {
-            name: self.name,
-            status: self.status,
-            availability_zone: self.availability_zone,
-            create_time: self.create_time,
-            endpoint: self.endpoint,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            availability_zone: self.availability_zone
+            ,
+            create_time: self.create_time
+            ,
+            endpoint: self.endpoint
+            ,
         }
     }
 }
+

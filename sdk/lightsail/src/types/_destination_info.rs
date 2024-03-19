@@ -3,19 +3,19 @@
 /// <p>Describes the destination of a record.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationInfo {
+pub struct DestinationInfo  {
     /// <p>The ID of the resource created at the destination.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The destination service of the record.</p>
     pub service: ::std::option::Option<::std::string::String>,
 }
-impl DestinationInfo {
+impl  DestinationInfo  {
     /// <p>The ID of the resource created at the destination.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The destination service of the record.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DestinationInfoBuilder {
     }
     /// <p>The ID of the resource created at the destination.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource created at the destination.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DestinationInfoBuilder {
     }
     /// <p>The destination service of the record.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The destination service of the record.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DestinationInfoBuilder {
     /// Consumes the builder and constructs a [`DestinationInfo`](crate::types::DestinationInfo).
     pub fn build(self) -> crate::types::DestinationInfo {
         crate::types::DestinationInfo {
-            id: self.id,
-            service: self.service,
+            id: self.id
+            ,
+            service: self.service
+            ,
         }
     }
 }
+

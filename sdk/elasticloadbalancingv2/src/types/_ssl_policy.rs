@@ -3,38 +3,41 @@
 /// <p>Information about a policy used for SSL negotiation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SslPolicy {
+pub struct SslPolicy  {
     /// <p>The protocols.</p>
-    pub ssl_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ssl_protocols: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ciphers.</p>
-    pub ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
+    pub ciphers: ::std::option::Option<::std::vec::Vec::<crate::types::Cipher>>,
     /// <p>The name of the policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The supported load balancers.</p>
-    pub supported_load_balancer_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_load_balancer_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SslPolicy {
+impl  SslPolicy  {
     /// <p>The protocols.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssl_protocols.is_none()`.
-    pub fn ssl_protocols(&self) -> &[::std::string::String] {
-        self.ssl_protocols.as_deref().unwrap_or_default()
+    pub fn ssl_protocols(&self) -> & [::std::string::String] {
+        self.ssl_protocols.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ciphers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ciphers.is_none()`.
-    pub fn ciphers(&self) -> &[crate::types::Cipher] {
-        self.ciphers.as_deref().unwrap_or_default()
+    pub fn ciphers(&self) -> & [crate::types::Cipher] {
+        self.ciphers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The supported load balancers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_load_balancer_types.is_none()`.
-    pub fn supported_load_balancer_types(&self) -> &[::std::string::String] {
-        self.supported_load_balancer_types.as_deref().unwrap_or_default()
+    pub fn supported_load_balancer_types(&self) -> & [::std::string::String] {
+        self.supported_load_balancer_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SslPolicy {
@@ -48,10 +51,10 @@ impl SslPolicy {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SslPolicyBuilder {
-    pub(crate) ssl_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
+    pub(crate) ssl_protocols: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ciphers: ::std::option::Option<::std::vec::Vec::<crate::types::Cipher>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_load_balancer_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_load_balancer_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SslPolicyBuilder {
     /// Appends an item to `ssl_protocols`.
@@ -61,17 +64,16 @@ impl SslPolicyBuilder {
     /// <p>The protocols.</p>
     pub fn ssl_protocols(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ssl_protocols.unwrap_or_default();
-        v.push(input.into());
-        self.ssl_protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ssl_protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols.</p>
-    pub fn set_ssl_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ssl_protocols = input;
-        self
+    pub fn set_ssl_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ssl_protocols = input; self
     }
     /// <p>The protocols.</p>
-    pub fn get_ssl_protocols(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ssl_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ssl_protocols
     }
     /// Appends an item to `ciphers`.
@@ -81,17 +83,16 @@ impl SslPolicyBuilder {
     /// <p>The ciphers.</p>
     pub fn ciphers(mut self, input: crate::types::Cipher) -> Self {
         let mut v = self.ciphers.unwrap_or_default();
-        v.push(input);
-        self.ciphers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ciphers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ciphers.</p>
-    pub fn set_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>) -> Self {
-        self.ciphers = input;
-        self
+    pub fn set_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Cipher>>) -> Self {
+        self.ciphers = input; self
     }
     /// <p>The ciphers.</p>
-    pub fn get_ciphers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cipher>> {
+    pub fn get_ciphers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Cipher>> {
         &self.ciphers
     }
     /// <p>The name of the policy.</p>
@@ -101,8 +102,7 @@ impl SslPolicyBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +115,30 @@ impl SslPolicyBuilder {
     /// <p>The supported load balancers.</p>
     pub fn supported_load_balancer_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_load_balancer_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_load_balancer_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_load_balancer_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported load balancers.</p>
-    pub fn set_supported_load_balancer_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_load_balancer_types = input;
-        self
+    pub fn set_supported_load_balancer_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_load_balancer_types = input; self
     }
     /// <p>The supported load balancers.</p>
-    pub fn get_supported_load_balancer_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_load_balancer_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_load_balancer_types
     }
     /// Consumes the builder and constructs a [`SslPolicy`](crate::types::SslPolicy).
     pub fn build(self) -> crate::types::SslPolicy {
         crate::types::SslPolicy {
-            ssl_protocols: self.ssl_protocols,
-            ciphers: self.ciphers,
-            name: self.name,
-            supported_load_balancer_types: self.supported_load_balancer_types,
+            ssl_protocols: self.ssl_protocols
+            ,
+            ciphers: self.ciphers
+            ,
+            name: self.name
+            ,
+            supported_load_balancer_types: self.supported_load_balancer_types
+            ,
         }
     }
 }
+

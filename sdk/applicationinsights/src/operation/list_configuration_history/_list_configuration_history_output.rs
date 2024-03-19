@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigurationHistoryOutput {
+pub struct ListConfigurationHistoryOutput  {
     /// <p>The list of configuration events and their corresponding details.</p>
-    pub event_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>,
+    pub event_list: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationEvent>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListConfigurationHistoryOutput {
+impl  ListConfigurationHistoryOutput  {
     /// <p>The list of configuration events and their corresponding details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_list.is_none()`.
-    pub fn event_list(&self) -> &[crate::types::ConfigurationEvent] {
-        self.event_list.as_deref().unwrap_or_default()
+    pub fn event_list(&self) -> & [crate::types::ConfigurationEvent] {
+        self.event_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConfigurationHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConfigurationHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
     pub fn builder() -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder {
@@ -37,7 +38,7 @@ impl ListConfigurationHistoryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationHistoryOutputBuilder {
-    pub(crate) event_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>,
+    pub(crate) event_list: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListConfigurationHistoryOutputBuilder {
     /// <p>The list of configuration events and their corresponding details.</p>
     pub fn event_list(mut self, input: crate::types::ConfigurationEvent) -> Self {
         let mut v = self.event_list.unwrap_or_default();
-        v.push(input);
-        self.event_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of configuration events and their corresponding details.</p>
-    pub fn set_event_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>) -> Self {
-        self.event_list = input;
-        self
+    pub fn set_event_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationEvent>>) -> Self {
+        self.event_list = input; self
     }
     /// <p>The list of configuration events and their corresponding details.</p>
-    pub fn get_event_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>> {
+    pub fn get_event_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationEvent>> {
         &self.event_list
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl ListConfigurationHistoryOutputBuilder {
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
     pub fn build(self) -> crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
         crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
-            event_list: self.event_list,
-            next_token: self.next_token,
+            event_list: self.event_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

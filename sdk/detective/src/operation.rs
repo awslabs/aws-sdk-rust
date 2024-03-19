@@ -87,3 +87,4 @@ pub mod update_investigation_state;
 
 /// Types for the `UpdateOrganizationConfiguration` operation.
 pub mod update_organization_configuration;
+

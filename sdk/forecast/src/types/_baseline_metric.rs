@@ -3,15 +3,15 @@
 /// <p>An individual metric that you can use for comparison as you evaluate your monitoring results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BaselineMetric {
+pub struct BaselineMetric  {
     /// <p>The name of the metric.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the metric.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl BaselineMetric {
+impl  BaselineMetric  {
     /// <p>The name of the metric.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value for the metric.</p>
@@ -41,8 +41,7 @@ impl BaselineMetricBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the metric.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BaselineMetricBuilder {
     }
     /// <p>The value for the metric.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the metric.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl BaselineMetricBuilder {
     /// Consumes the builder and constructs a [`BaselineMetric`](crate::types::BaselineMetric).
     pub fn build(self) -> crate::types::BaselineMetric {
         crate::types::BaselineMetric {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

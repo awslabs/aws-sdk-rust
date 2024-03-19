@@ -3,22 +3,23 @@
 /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeLifecycleConfiguration {
+pub struct DataLakeLifecycleConfiguration  {
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
     pub expiration: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
+    pub transitions: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeLifecycleTransition>>,
 }
-impl DataLakeLifecycleConfiguration {
+impl  DataLakeLifecycleConfiguration  {
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
-    pub fn expiration(&self) -> ::std::option::Option<&crate::types::DataLakeLifecycleExpiration> {
+    pub fn expiration(&self) -> ::std::option::Option<& crate::types::DataLakeLifecycleExpiration> {
         self.expiration.as_ref()
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transitions.is_none()`.
-    pub fn transitions(&self) -> &[crate::types::DataLakeLifecycleTransition] {
-        self.transitions.as_deref().unwrap_or_default()
+    pub fn transitions(&self) -> & [crate::types::DataLakeLifecycleTransition] {
+        self.transitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataLakeLifecycleConfiguration {
@@ -33,7 +34,7 @@ impl DataLakeLifecycleConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeLifecycleConfigurationBuilder {
     pub(crate) expiration: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
-    pub(crate) transitions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
+    pub(crate) transitions: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeLifecycleTransition>>,
 }
 impl DataLakeLifecycleConfigurationBuilder {
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
@@ -43,8 +44,7 @@ impl DataLakeLifecycleConfigurationBuilder {
     }
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<crate::types::DataLakeLifecycleExpiration> {
@@ -57,24 +57,26 @@ impl DataLakeLifecycleConfigurationBuilder {
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
     pub fn transitions(mut self, input: crate::types::DataLakeLifecycleTransition) -> Self {
         let mut v = self.transitions.unwrap_or_default();
-        v.push(input);
-        self.transitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub fn set_transitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>) -> Self {
-        self.transitions = input;
-        self
+    pub fn set_transitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeLifecycleTransition>>) -> Self {
+        self.transitions = input; self
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub fn get_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>> {
+    pub fn get_transitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataLakeLifecycleTransition>> {
         &self.transitions
     }
     /// Consumes the builder and constructs a [`DataLakeLifecycleConfiguration`](crate::types::DataLakeLifecycleConfiguration).
     pub fn build(self) -> crate::types::DataLakeLifecycleConfiguration {
         crate::types::DataLakeLifecycleConfiguration {
-            expiration: self.expiration,
-            transitions: self.transitions,
+            expiration: self.expiration
+            ,
+            transitions: self.transitions
+            ,
         }
     }
 }
+

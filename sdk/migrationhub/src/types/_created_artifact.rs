@@ -3,20 +3,19 @@
 /// <p>An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatedArtifact {
+pub struct CreatedArtifact  {
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
     pub name: ::std::string::String,
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreatedArtifact {
+impl  CreatedArtifact  {
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl CreatedArtifactBuilder {
     }
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl CreatedArtifactBuilder {
     }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl CreatedArtifactBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CreatedArtifactBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::CreatedArtifact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreatedArtifact {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreatedArtifact",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreatedArtifact {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreatedArtifact")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

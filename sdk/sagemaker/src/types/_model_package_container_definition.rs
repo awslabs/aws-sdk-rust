@@ -3,7 +3,7 @@
 /// <p>Describes the Docker container for the model package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelPackageContainerDefinition {
+pub struct ModelPackageContainerDefinition  {
     /// <p>The DNS host name for the Docker container.</p>
     pub container_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
@@ -20,7 +20,7 @@ pub struct ModelPackageContainerDefinition {
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A structure with Model Input details.</p>
     pub model_input: ::std::option::Option<crate::types::ModelInput>,
     /// <p>The machine learning framework of the model package container image.</p>
@@ -32,56 +32,56 @@ pub struct ModelPackageContainerDefinition {
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
 }
-impl ModelPackageContainerDefinition {
+impl  ModelPackageContainerDefinition  {
     /// <p>The DNS host name for the Docker container.</p>
-    pub fn container_hostname(&self) -> ::std::option::Option<&str> {
+    pub fn container_hostname(&self) -> ::std::option::Option<& str> {
         self.container_hostname.as_deref()
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
     /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
-    pub fn image_digest(&self) -> ::std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<& str> {
         self.image_digest.as_deref()
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
-    pub fn model_data_url(&self) -> ::std::option::Option<&str> {
+    pub fn model_data_url(&self) -> ::std::option::Option<& str> {
         self.model_data_url.as_deref()
     }
     /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
-    pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
+    pub fn model_data_source(&self) -> ::std::option::Option<& crate::types::ModelDataSource> {
         self.model_data_source.as_ref()
     }
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>A structure with Model Input details.</p>
-    pub fn model_input(&self) -> ::std::option::Option<&crate::types::ModelInput> {
+    pub fn model_input(&self) -> ::std::option::Option<& crate::types::ModelInput> {
         self.model_input.as_ref()
     }
     /// <p>The machine learning framework of the model package container image.</p>
-    pub fn framework(&self) -> ::std::option::Option<&str> {
+    pub fn framework(&self) -> ::std::option::Option<& str> {
         self.framework.as_deref()
     }
     /// <p>The framework version of the Model Package Container Image.</p>
-    pub fn framework_version(&self) -> ::std::option::Option<&str> {
+    pub fn framework_version(&self) -> ::std::option::Option<& str> {
         self.framework_version.as_deref()
     }
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
-    pub fn nearest_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn nearest_model_name(&self) -> ::std::option::Option<& str> {
         self.nearest_model_name.as_deref()
     }
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
-    pub fn additional_s3_data_source(&self) -> ::std::option::Option<&crate::types::AdditionalS3DataSource> {
+    pub fn additional_s3_data_source(&self) -> ::std::option::Option<& crate::types::AdditionalS3DataSource> {
         self.additional_s3_data_source.as_ref()
     }
 }
@@ -102,7 +102,7 @@ pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
     pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) model_input: ::std::option::Option<crate::types::ModelInput>,
     pub(crate) framework: ::std::option::Option<::std::string::String>,
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
@@ -117,8 +117,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>The DNS host name for the Docker container.</p>
     pub fn set_container_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_hostname = input;
-        self
+        self.container_hostname = input; self
     }
     /// <p>The DNS host name for the Docker container.</p>
     pub fn get_container_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl ModelPackageContainerDefinitionBuilder {
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
     /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
     /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
@@ -149,8 +147,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
     pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +164,7 @@ impl ModelPackageContainerDefinitionBuilder {
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub fn set_model_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_data_url = input;
-        self
+        self.model_data_url = input; self
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
@@ -183,8 +179,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
     pub fn set_model_data_source(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
-        self.model_data_source = input;
-        self
+        self.model_data_source = input; self
     }
     /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
     pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
@@ -197,8 +192,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,20 +205,16 @@ impl ModelPackageContainerDefinitionBuilder {
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>A structure with Model Input details.</p>
@@ -234,8 +224,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>A structure with Model Input details.</p>
     pub fn set_model_input(mut self, input: ::std::option::Option<crate::types::ModelInput>) -> Self {
-        self.model_input = input;
-        self
+        self.model_input = input; self
     }
     /// <p>A structure with Model Input details.</p>
     pub fn get_model_input(&self) -> &::std::option::Option<crate::types::ModelInput> {
@@ -248,8 +237,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>The machine learning framework of the model package container image.</p>
     pub fn set_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework = input;
-        self
+        self.framework = input; self
     }
     /// <p>The machine learning framework of the model package container image.</p>
     pub fn get_framework(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +250,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>The framework version of the Model Package Container Image.</p>
     pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_version = input;
-        self
+        self.framework_version = input; self
     }
     /// <p>The framework version of the Model Package Container Image.</p>
     pub fn get_framework_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +263,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
     pub fn set_nearest_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nearest_model_name = input;
-        self
+        self.nearest_model_name = input; self
     }
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
     pub fn get_nearest_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -290,8 +276,7 @@ impl ModelPackageContainerDefinitionBuilder {
     }
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub fn set_additional_s3_data_source(mut self, input: ::std::option::Option<crate::types::AdditionalS3DataSource>) -> Self {
-        self.additional_s3_data_source = input;
-        self
+        self.additional_s3_data_source = input; self
     }
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub fn get_additional_s3_data_source(&self) -> &::std::option::Option<crate::types::AdditionalS3DataSource> {
@@ -300,18 +285,31 @@ impl ModelPackageContainerDefinitionBuilder {
     /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
     pub fn build(self) -> crate::types::ModelPackageContainerDefinition {
         crate::types::ModelPackageContainerDefinition {
-            container_hostname: self.container_hostname,
-            image: self.image,
-            image_digest: self.image_digest,
-            model_data_url: self.model_data_url,
-            model_data_source: self.model_data_source,
-            product_id: self.product_id,
-            environment: self.environment,
-            model_input: self.model_input,
-            framework: self.framework,
-            framework_version: self.framework_version,
-            nearest_model_name: self.nearest_model_name,
-            additional_s3_data_source: self.additional_s3_data_source,
+            container_hostname: self.container_hostname
+            ,
+            image: self.image
+            ,
+            image_digest: self.image_digest
+            ,
+            model_data_url: self.model_data_url
+            ,
+            model_data_source: self.model_data_source
+            ,
+            product_id: self.product_id
+            ,
+            environment: self.environment
+            ,
+            model_input: self.model_input
+            ,
+            framework: self.framework
+            ,
+            framework_version: self.framework_version
+            ,
+            nearest_model_name: self.nearest_model_name
+            ,
+            additional_s3_data_source: self.additional_s3_data_source
+            ,
         }
     }
 }
+

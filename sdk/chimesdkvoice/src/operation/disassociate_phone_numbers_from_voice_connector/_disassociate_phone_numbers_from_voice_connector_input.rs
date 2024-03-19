@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociatePhoneNumbersFromVoiceConnectorInput {
+pub struct DisassociatePhoneNumbersFromVoiceConnectorInput  {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociatePhoneNumbersFromVoiceConnectorInput {
+impl  DisassociatePhoneNumbersFromVoiceConnectorInput  {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
-    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
-        self.e164_phone_numbers.as_deref().unwrap_or_default()
+    pub fn e164_phone_numbers(&self) -> & [::std::string::String] {
+        self.e164_phone_numbers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumbersFromVoiceConnectorInput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
         crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorInputBuilder::default()
     }
 }
@@ -33,7 +33,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
     /// <p>The Voice Connector ID.</p>
@@ -44,8 +44,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,31 +57,28 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.e164_phone_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.e164_phone_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.e164_phone_numbers = input;
-        self
+    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.e164_phone_numbers = input; self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.e164_phone_numbers
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorInput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput {
-                voice_connector_id: self.voice_connector_id,
-                e164_phone_numbers: self.e164_phone_numbers,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                e164_phone_numbers: self.e164_phone_numbers
+                ,
+            }
         )
     }
 }
+

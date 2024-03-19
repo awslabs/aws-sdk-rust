@@ -3,7 +3,7 @@
 /// <p>Represents the request to create a user in the specified user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminCreateUserInput {
+pub struct AdminCreateUserInput  {
     /// <p>The user pool ID for the user pool where the user will be created.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
@@ -26,11 +26,11 @@ pub struct AdminCreateUserInput {
     /// <li>
     /// <p><b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p></li>
     /// </ul>
-    pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>,
     /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
     /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
-    pub validation_data: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub validation_data: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>,
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
@@ -43,7 +43,7 @@ pub struct AdminCreateUserInput {
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
     pub message_action: ::std::option::Option<crate::types::MessageActionType>,
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    pub desired_delivery_mediums: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>>,
+    pub desired_delivery_mediums: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryMediumType>>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
@@ -57,11 +57,11 @@ pub struct AdminCreateUserInput {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl AdminCreateUserInput {
+impl  AdminCreateUserInput  {
     /// <p>The user pool ID for the user pool where the user will be created.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
@@ -73,7 +73,7 @@ impl AdminCreateUserInput {
     /// <li>
     /// <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p></li>
     /// </ul>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) either you should supply (in your call to <code>AdminCreateUser</code>) or the user should supply (when they sign up in response to your welcome message).</p>
@@ -86,24 +86,26 @@ impl AdminCreateUserInput {
     /// <li>
     /// <p><b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
-    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
-        self.user_attributes.as_deref().unwrap_or_default()
+    pub fn user_attributes(&self) -> & [crate::types::AttributeType] {
+        self.user_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
     /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_data.is_none()`.
-    pub fn validation_data(&self) -> &[crate::types::AttributeType] {
-        self.validation_data.as_deref().unwrap_or_default()
+    pub fn validation_data(&self) -> & [crate::types::AttributeType] {
+        self.validation_data.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
     /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
-    pub fn temporary_password(&self) -> ::std::option::Option<&str> {
+    pub fn temporary_password(&self) -> ::std::option::Option<& str> {
         self.temporary_password.as_deref()
     }
     /// <p>This parameter is used only if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
@@ -113,14 +115,15 @@ impl AdminCreateUserInput {
         self.force_alias_creation
     }
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
-    pub fn message_action(&self) -> ::std::option::Option<&crate::types::MessageActionType> {
+    pub fn message_action(&self) -> ::std::option::Option<& crate::types::MessageActionType> {
         self.message_action.as_ref()
     }
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.desired_delivery_mediums.is_none()`.
-    pub fn desired_delivery_mediums(&self) -> &[crate::types::DeliveryMediumType] {
-        self.desired_delivery_mediums.as_deref().unwrap_or_default()
+    pub fn desired_delivery_mediums(&self) -> & [crate::types::DeliveryMediumType] {
+        self.desired_delivery_mediums.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -135,11 +138,11 @@ impl AdminCreateUserInput {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn client_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
-impl ::std::fmt::Debug for AdminCreateUserInput {
+impl  ::std::fmt::Debug for AdminCreateUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminCreateUserInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -167,13 +170,13 @@ impl AdminCreateUserInput {
 pub struct AdminCreateUserInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
-    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
-    pub(crate) validation_data: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>,
+    pub(crate) validation_data: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>,
     pub(crate) temporary_password: ::std::option::Option<::std::string::String>,
     pub(crate) force_alias_creation: ::std::option::Option<bool>,
     pub(crate) message_action: ::std::option::Option<crate::types::MessageActionType>,
-    pub(crate) desired_delivery_mediums: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>>,
-    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) desired_delivery_mediums: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryMediumType>>,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl AdminCreateUserInputBuilder {
     /// <p>The user pool ID for the user pool where the user will be created.</p>
@@ -184,8 +187,7 @@ impl AdminCreateUserInputBuilder {
     }
     /// <p>The user pool ID for the user pool where the user will be created.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool where the user will be created.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +217,7 @@ impl AdminCreateUserInputBuilder {
     /// <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p></li>
     /// </ul>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
     /// <ul>
@@ -246,9 +247,9 @@ impl AdminCreateUserInputBuilder {
     /// </ul>
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
-        v.push(input);
-        self.user_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) either you should supply (in your call to <code>AdminCreateUser</code>) or the user should supply (when they sign up in response to your welcome message).</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
@@ -260,9 +261,8 @@ impl AdminCreateUserInputBuilder {
     /// <li>
     /// <p><b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p></li>
     /// </ul>
-    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
-        self.user_attributes = input;
-        self
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>) -> Self {
+        self.user_attributes = input; self
     }
     /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) either you should supply (in your call to <code>AdminCreateUser</code>) or the user should supply (when they sign up in response to your welcome message).</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
@@ -274,7 +274,7 @@ impl AdminCreateUserInputBuilder {
     /// <li>
     /// <p><b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p></li>
     /// </ul>
-    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>> {
         &self.user_attributes
     }
     /// Appends an item to `validation_data`.
@@ -286,21 +286,20 @@ impl AdminCreateUserInputBuilder {
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
     pub fn validation_data(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.validation_data.unwrap_or_default();
-        v.push(input);
-        self.validation_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
     /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
-    pub fn set_validation_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
-        self.validation_data = input;
-        self
+    pub fn set_validation_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>) -> Self {
+        self.validation_data = input; self
     }
     /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
     /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
-    pub fn get_validation_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_validation_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>> {
         &self.validation_data
     }
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
@@ -316,8 +315,7 @@ impl AdminCreateUserInputBuilder {
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
     /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
     pub fn set_temporary_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.temporary_password = input;
-        self
+        self.temporary_password = input; self
     }
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
@@ -337,8 +335,7 @@ impl AdminCreateUserInputBuilder {
     /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
     /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
     pub fn set_force_alias_creation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_alias_creation = input;
-        self
+        self.force_alias_creation = input; self
     }
     /// <p>This parameter is used only if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
     /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
@@ -353,8 +350,7 @@ impl AdminCreateUserInputBuilder {
     }
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
     pub fn set_message_action(mut self, input: ::std::option::Option<crate::types::MessageActionType>) -> Self {
-        self.message_action = input;
-        self
+        self.message_action = input; self
     }
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
     pub fn get_message_action(&self) -> &::std::option::Option<crate::types::MessageActionType> {
@@ -367,17 +363,16 @@ impl AdminCreateUserInputBuilder {
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
     pub fn desired_delivery_mediums(mut self, input: crate::types::DeliveryMediumType) -> Self {
         let mut v = self.desired_delivery_mediums.unwrap_or_default();
-        v.push(input);
-        self.desired_delivery_mediums = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.desired_delivery_mediums = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    pub fn set_desired_delivery_mediums(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>>) -> Self {
-        self.desired_delivery_mediums = input;
-        self
+    pub fn set_desired_delivery_mediums(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryMediumType>>) -> Self {
+        self.desired_delivery_mediums = input; self
     }
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    pub fn get_desired_delivery_mediums(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>> {
+    pub fn get_desired_delivery_mediums(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeliveryMediumType>> {
         &self.desired_delivery_mediums
     }
     /// Adds a key-value pair to `client_metadata`.
@@ -397,15 +392,11 @@ impl AdminCreateUserInputBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.client_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.client_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -420,12 +411,8 @@ impl AdminCreateUserInputBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_client_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.client_metadata = input;
-        self
+    pub fn set_client_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.client_metadata = input; self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -440,24 +427,33 @@ impl AdminCreateUserInputBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`AdminCreateUserInput`](crate::operation::admin_create_user::AdminCreateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::admin_create_user::AdminCreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::admin_create_user::AdminCreateUserInput {
-            user_pool_id: self.user_pool_id,
-            username: self.username,
-            user_attributes: self.user_attributes,
-            validation_data: self.validation_data,
-            temporary_password: self.temporary_password,
-            force_alias_creation: self.force_alias_creation,
-            message_action: self.message_action,
-            desired_delivery_mediums: self.desired_delivery_mediums,
-            client_metadata: self.client_metadata,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_create_user::AdminCreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_create_user::AdminCreateUserInput {
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                user_attributes: self.user_attributes
+                ,
+                validation_data: self.validation_data
+                ,
+                temporary_password: self.temporary_password
+                ,
+                force_alias_creation: self.force_alias_creation
+                ,
+                message_action: self.message_action
+                ,
+                desired_delivery_mediums: self.desired_delivery_mediums
+                ,
+                client_metadata: self.client_metadata
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminCreateUserInputBuilder {
@@ -475,3 +471,4 @@ impl ::std::fmt::Debug for AdminCreateUserInputBuilder {
         formatter.finish()
     }
 }
+

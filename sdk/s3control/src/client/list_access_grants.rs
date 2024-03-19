@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessGrants`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::set_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that is making this request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants</code> request in order to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`permission(Permission)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::permission) / [`set_permission(Option<Permission>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::set_permission):<br>required: **false**<br><p>The type of permission granted to your S3 data, which can be set to one of the following values:</p> <ul>  <li>   <p><code>READ</code> – Grant read-only access to the S3 data.</p></li>  <li>   <p><code>WRITE</code> – Grant write-only access to the S3 data.</p></li>  <li>   <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li> </ul><br>
     ///   - [`grant_scope(impl Into<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::grant_scope) / [`set_grant_scope(Option<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::set_grant_scope):<br>required: **false**<br><p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p><br>
     ///   - [`application_arn(impl Into<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::application_arn) / [`set_application_arn(Option<String>)`](crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::set_application_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p><br>
-    /// - On success, responds with [`ListAccessGrantsOutput`](crate::operation::list_access_grants::ListAccessGrantsOutput) with field(s):
+                            /// - On success, responds with [`ListAccessGrantsOutput`](crate::operation::list_access_grants::ListAccessGrantsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_grants::ListAccessGrantsOutput::next_token): <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants</code> request in order to retrieve the next page of results.</p>
     ///   - [`access_grants_list(Option<Vec::<ListAccessGrantEntry>>)`](crate::operation::list_access_grants::ListAccessGrantsOutput::access_grants_list): <p>A container for a list of grants in an S3 Access Grants instance.</p>
-    /// - On failure, responds with [`SdkError<ListAccessGrantsError>`](crate::operation::list_access_grants::ListAccessGrantsError)
+                            /// - On failure, responds with [`SdkError<ListAccessGrantsError>`](crate::operation::list_access_grants::ListAccessGrantsError)
     pub fn list_access_grants(&self) -> crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder {
-        crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_access_grants::builders::ListAccessGrantsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

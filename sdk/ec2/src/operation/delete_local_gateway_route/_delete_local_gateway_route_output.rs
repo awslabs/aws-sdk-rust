@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLocalGatewayRouteOutput {
+pub struct DeleteLocalGatewayRouteOutput  {
     /// <p>Information about the route.</p>
     pub route: ::std::option::Option<crate::types::LocalGatewayRoute>,
     _request_id: Option<String>,
 }
-impl DeleteLocalGatewayRouteOutput {
+impl  DeleteLocalGatewayRouteOutput  {
     /// <p>Information about the route.</p>
-    pub fn route(&self) -> ::std::option::Option<&crate::types::LocalGatewayRoute> {
+    pub fn route(&self) -> ::std::option::Option<& crate::types::LocalGatewayRoute> {
         self.route.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteLocalGatewayRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteLocalGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteOutput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput).
     pub fn builder() -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteLocalGatewayRouteOutputBuilder {
     }
     /// <p>Information about the route.</p>
     pub fn set_route(mut self, input: ::std::option::Option<crate::types::LocalGatewayRoute>) -> Self {
-        self.route = input;
-        self
+        self.route = input; self
     }
     /// <p>Information about the route.</p>
     pub fn get_route(&self) -> &::std::option::Option<crate::types::LocalGatewayRoute> {
         &self.route
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteOutput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput).
     pub fn build(self) -> crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput {
         crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput {
-            route: self.route,
+            route: self.route
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

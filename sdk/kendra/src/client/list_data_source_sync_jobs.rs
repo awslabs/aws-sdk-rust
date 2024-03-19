@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSourceSyncJobs`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the data source connector.</p><br>
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index used with the data source connector.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p><br>
     ///   - [`start_time_filter(TimeRange)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::start_time_filter) / [`set_start_time_filter(Option<TimeRange>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_start_time_filter):<br>required: **false**<br><p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p><br>
     ///   - [`status_filter(DataSourceSyncJobStatus)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::status_filter) / [`set_status_filter(Option<DataSourceSyncJobStatus>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_status_filter):<br>required: **false**<br><p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p><br>
-    /// - On success, responds with [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput) with field(s):
     ///   - [`history(Option<Vec::<DataSourceSyncJob>>)`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput::history): <p>A history of synchronization jobs for the data source connector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError)
+                            /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError)
     pub fn list_data_source_sync_jobs(&self) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder {
-        crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

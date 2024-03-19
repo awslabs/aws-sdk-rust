@@ -3,7 +3,7 @@
 /// <p>The Lightsail resource that <code>SetupHistory</code> was ran on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetupHistoryResource {
+pub struct SetupHistoryResource  {
     /// <p>The name of the Lightsail resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lightsail resource.</p>
@@ -15,25 +15,25 @@ pub struct SetupHistoryResource {
     /// <p>The Lightsail resource type. For example, <code>Instance</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
-impl SetupHistoryResource {
+impl  SetupHistoryResource  {
     /// <p>The name of the Lightsail resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lightsail resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The timestamp for when the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Describes the resource location.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The Lightsail resource type. For example, <code>Instance</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SetupHistoryResourceBuilder {
     }
     /// <p>The name of the Lightsail resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Lightsail resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl SetupHistoryResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lightsail resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lightsail resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl SetupHistoryResourceBuilder {
     }
     /// <p>The timestamp for when the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp for when the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl SetupHistoryResourceBuilder {
     }
     /// <p>Describes the resource location.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Describes the resource location.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -118,8 +114,7 @@ impl SetupHistoryResourceBuilder {
     }
     /// <p>The Lightsail resource type. For example, <code>Instance</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The Lightsail resource type. For example, <code>Instance</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -128,11 +123,17 @@ impl SetupHistoryResourceBuilder {
     /// Consumes the builder and constructs a [`SetupHistoryResource`](crate::types::SetupHistoryResource).
     pub fn build(self) -> crate::types::SetupHistoryResource {
         crate::types::SetupHistoryResource {
-            name: self.name,
-            arn: self.arn,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

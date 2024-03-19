@@ -3,7 +3,7 @@
 /// <p>Information about a load balancer listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLoadBalancerListener {
+pub struct AwsElbLoadBalancerListener  {
     /// <p>The port on which the instance is listening.</p>
     pub instance_port: ::std::option::Option<i32>,
     /// <p>The protocol to use to route traffic to instances.</p>
@@ -19,14 +19,14 @@ pub struct AwsElbLoadBalancerListener {
     /// <p>The ARN of the server certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsElbLoadBalancerListener {
+impl  AwsElbLoadBalancerListener  {
     /// <p>The port on which the instance is listening.</p>
     pub fn instance_port(&self) -> ::std::option::Option<i32> {
         self.instance_port
     }
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
-    pub fn instance_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn instance_protocol(&self) -> ::std::option::Option<& str> {
         self.instance_protocol.as_deref()
     }
     /// <p>The port on which the load balancer is listening.</p>
@@ -37,11 +37,11 @@ impl AwsElbLoadBalancerListener {
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The ARN of the server certificate.</p>
-    pub fn ssl_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_certificate_id(&self) -> ::std::option::Option<& str> {
         self.ssl_certificate_id.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl AwsElbLoadBalancerListenerBuilder {
     }
     /// <p>The port on which the instance is listening.</p>
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_port = input;
-        self
+        self.instance_port = input; self
     }
     /// <p>The port on which the instance is listening.</p>
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
@@ -86,8 +85,7 @@ impl AwsElbLoadBalancerListenerBuilder {
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn set_instance_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_protocol = input;
-        self
+        self.instance_protocol = input; self
     }
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
@@ -105,8 +103,7 @@ impl AwsElbLoadBalancerListenerBuilder {
     /// <p>On EC2-VPC, you can specify any port from the range 1-65535.</p>
     /// <p>On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.load_balancer_port = input;
-        self
+        self.load_balancer_port = input; self
     }
     /// <p>The port on which the load balancer is listening.</p>
     /// <p>On EC2-VPC, you can specify any port from the range 1-65535.</p>
@@ -123,8 +120,7 @@ impl AwsElbLoadBalancerListenerBuilder {
     /// <p>The load balancer transport protocol to use for routing.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
@@ -138,8 +134,7 @@ impl AwsElbLoadBalancerListenerBuilder {
     }
     /// <p>The ARN of the server certificate.</p>
     pub fn set_ssl_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_certificate_id = input;
-        self
+        self.ssl_certificate_id = input; self
     }
     /// <p>The ARN of the server certificate.</p>
     pub fn get_ssl_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,11 +143,17 @@ impl AwsElbLoadBalancerListenerBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerListener`](crate::types::AwsElbLoadBalancerListener).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerListener {
         crate::types::AwsElbLoadBalancerListener {
-            instance_port: self.instance_port,
-            instance_protocol: self.instance_protocol,
-            load_balancer_port: self.load_balancer_port,
-            protocol: self.protocol,
-            ssl_certificate_id: self.ssl_certificate_id,
+            instance_port: self.instance_port
+            ,
+            instance_protocol: self.instance_protocol
+            ,
+            load_balancer_port: self.load_balancer_port
+            ,
+            protocol: self.protocol
+            ,
+            ssl_certificate_id: self.ssl_certificate_id
+            ,
         }
     }
 }
+

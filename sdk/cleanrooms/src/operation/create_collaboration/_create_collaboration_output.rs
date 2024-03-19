@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCollaborationOutput {
+pub struct CreateCollaborationOutput  {
     /// <p>The entire created collaboration object.</p>
     pub collaboration: ::std::option::Option<crate::types::Collaboration>,
     _request_id: Option<String>,
 }
-impl CreateCollaborationOutput {
+impl  CreateCollaborationOutput  {
     /// <p>The entire created collaboration object.</p>
-    pub fn collaboration(&self) -> ::std::option::Option<&crate::types::Collaboration> {
+    pub fn collaboration(&self) -> ::std::option::Option<& crate::types::Collaboration> {
         self.collaboration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCollaborationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationOutput`](crate::operation::create_collaboration::CreateCollaborationOutput).
     pub fn builder() -> crate::operation::create_collaboration::builders::CreateCollaborationOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateCollaborationOutputBuilder {
     }
     /// <p>The entire created collaboration object.</p>
     pub fn set_collaboration(mut self, input: ::std::option::Option<crate::types::Collaboration>) -> Self {
-        self.collaboration = input;
-        self
+        self.collaboration = input; self
     }
     /// <p>The entire created collaboration object.</p>
     pub fn get_collaboration(&self) -> &::std::option::Option<crate::types::Collaboration> {
         &self.collaboration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCollaborationOutput`](crate::operation::create_collaboration::CreateCollaborationOutput).
     pub fn build(self) -> crate::operation::create_collaboration::CreateCollaborationOutput {
         crate::operation::create_collaboration::CreateCollaborationOutput {
-            collaboration: self.collaboration,
+            collaboration: self.collaboration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

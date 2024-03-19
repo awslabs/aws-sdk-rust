@@ -3,29 +3,29 @@
 /// <p>The relational filter configuration for the data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalFilterConfiguration {
+pub struct RelationalFilterConfiguration  {
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
     pub database_name: ::std::string::String,
     /// <p>The schema name specified in the relational filter configuration for the data source.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
-    pub filter_expressions: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
+    pub filter_expressions: ::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>>,
 }
-impl RelationalFilterConfiguration {
+impl  RelationalFilterConfiguration  {
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The schema name specified in the relational filter configuration for the data source.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_expressions.is_none()`.
-    pub fn filter_expressions(&self) -> &[crate::types::FilterExpression] {
-        self.filter_expressions.as_deref().unwrap_or_default()
+    pub fn filter_expressions(&self) -> & [crate::types::FilterExpression] {
+        self.filter_expressions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RelationalFilterConfiguration {
@@ -41,7 +41,7 @@ impl RelationalFilterConfiguration {
 pub struct RelationalFilterConfigurationBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_expressions: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
+    pub(crate) filter_expressions: ::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>>,
 }
 impl RelationalFilterConfigurationBuilder {
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
@@ -52,8 +52,7 @@ impl RelationalFilterConfigurationBuilder {
     }
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl RelationalFilterConfigurationBuilder {
     }
     /// <p>The schema name specified in the relational filter configuration for the data source.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The schema name specified in the relational filter configuration for the data source.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,32 +78,35 @@ impl RelationalFilterConfigurationBuilder {
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
     pub fn filter_expressions(mut self, input: crate::types::FilterExpression) -> Self {
         let mut v = self.filter_expressions.unwrap_or_default();
-        v.push(input);
-        self.filter_expressions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_expressions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
-    pub fn set_filter_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>) -> Self {
-        self.filter_expressions = input;
-        self
+    pub fn set_filter_expressions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>>) -> Self {
+        self.filter_expressions = input; self
     }
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
-    pub fn get_filter_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>> {
+    pub fn get_filter_expressions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>> {
         &self.filter_expressions
     }
     /// Consumes the builder and constructs a [`RelationalFilterConfiguration`](crate::types::RelationalFilterConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_name`](crate::types::builders::RelationalFilterConfigurationBuilder::database_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RelationalFilterConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RelationalFilterConfiguration {
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building RelationalFilterConfiguration",
-                )
-            })?,
-            schema_name: self.schema_name,
-            filter_expressions: self.filter_expressions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RelationalFilterConfiguration {
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building RelationalFilterConfiguration")
+                    )?
+                ,
+                schema_name: self.schema_name
+                ,
+                filter_expressions: self.filter_expressions
+                ,
+            }
+        )
     }
 }
+

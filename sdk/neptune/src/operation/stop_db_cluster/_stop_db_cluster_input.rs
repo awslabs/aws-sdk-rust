@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDbClusterInput {
+pub struct StopDbClusterInput  {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl StopDbClusterInput {
+impl  StopDbClusterInput  {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopDbClusterInputBuilder {
     }
     /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
     }
     /// Consumes the builder and constructs a [`StopDbClusterInput`](crate::operation::stop_db_cluster::StopDbClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_db_cluster::StopDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_db_cluster::StopDbClusterInput {
-            db_cluster_identifier: self.db_cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_db_cluster::StopDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_db_cluster::StopDbClusterInput {
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+            }
+        )
     }
 }
+

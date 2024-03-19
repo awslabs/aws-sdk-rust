@@ -3,22 +3,23 @@
 /// <p>Represents the request to add custom attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddCustomAttributesInput {
+pub struct AddCustomAttributesInput  {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>,
+    pub custom_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaAttributeType>>,
 }
-impl AddCustomAttributesInput {
+impl  AddCustomAttributesInput  {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_attributes.is_none()`.
-    pub fn custom_attributes(&self) -> &[crate::types::SchemaAttributeType] {
-        self.custom_attributes.as_deref().unwrap_or_default()
+    pub fn custom_attributes(&self) -> & [crate::types::SchemaAttributeType] {
+        self.custom_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddCustomAttributesInput {
@@ -33,7 +34,7 @@ impl AddCustomAttributesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddCustomAttributesInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>,
+    pub(crate) custom_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaAttributeType>>,
 }
 impl AddCustomAttributesInputBuilder {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
@@ -44,8 +45,7 @@ impl AddCustomAttributesInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,27 +58,28 @@ impl AddCustomAttributesInputBuilder {
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
     pub fn custom_attributes(mut self, input: crate::types::SchemaAttributeType) -> Self {
         let mut v = self.custom_attributes.unwrap_or_default();
-        v.push(input);
-        self.custom_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>) -> Self {
-        self.custom_attributes = input;
-        self
+    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaAttributeType>>) -> Self {
+        self.custom_attributes = input; self
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
+    pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaAttributeType>> {
         &self.custom_attributes
     }
     /// Consumes the builder and constructs a [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_custom_attributes::AddCustomAttributesInput {
-            user_pool_id: self.user_pool_id,
-            custom_attributes: self.custom_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_custom_attributes::AddCustomAttributesInput {
+                user_pool_id: self.user_pool_id
+                ,
+                custom_attributes: self.custom_attributes
+                ,
+            }
+        )
     }
 }
+

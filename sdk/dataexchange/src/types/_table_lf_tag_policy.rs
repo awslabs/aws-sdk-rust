@@ -3,15 +3,14 @@
 /// <p>The LF-tag policy for a table resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableLfTagPolicy {
+pub struct TableLfTagPolicy  {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub expression: ::std::vec::Vec<crate::types::LfTag>,
+    pub expression: ::std::vec::Vec::<crate::types::LfTag>,
 }
-impl TableLfTagPolicy {
+impl  TableLfTagPolicy  {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn expression(&self) -> &[crate::types::LfTag] {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & [crate::types::LfTag] {
+        use std::ops::Deref; self.expression.deref()
     }
 }
 impl TableLfTagPolicy {
@@ -25,7 +24,7 @@ impl TableLfTagPolicy {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableLfTagPolicyBuilder {
-    pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
+    pub(crate) expression: ::std::option::Option<::std::vec::Vec::<crate::types::LfTag>>,
 }
 impl TableLfTagPolicyBuilder {
     /// Appends an item to `expression`.
@@ -35,30 +34,31 @@ impl TableLfTagPolicyBuilder {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
-        v.push(input);
-        self.expression = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.expression = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
-        self.expression = input;
-        self
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTag>>) -> Self {
+        self.expression = input; self
     }
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTag>> {
+    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTag>> {
         &self.expression
     }
     /// Consumes the builder and constructs a [`TableLfTagPolicy`](crate::types::TableLfTagPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::TableLfTagPolicyBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::TableLfTagPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TableLfTagPolicy {
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building TableLfTagPolicy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TableLfTagPolicy {
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building TableLfTagPolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

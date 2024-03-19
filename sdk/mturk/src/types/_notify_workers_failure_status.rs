@@ -3,7 +3,7 @@
 /// <p>When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyWorkersFailureStatus {
+pub struct NotifyWorkersFailureStatus  {
     /// <p>Encoded value for the failure type.</p>
     pub notify_workers_failure_code: ::std::option::Option<crate::types::NotifyWorkersFailureCode>,
     /// <p>A message detailing the reason the Worker could not be notified.</p>
@@ -11,17 +11,17 @@ pub struct NotifyWorkersFailureStatus {
     /// <p>The ID of the Worker.</p>
     pub worker_id: ::std::option::Option<::std::string::String>,
 }
-impl NotifyWorkersFailureStatus {
+impl  NotifyWorkersFailureStatus  {
     /// <p>Encoded value for the failure type.</p>
-    pub fn notify_workers_failure_code(&self) -> ::std::option::Option<&crate::types::NotifyWorkersFailureCode> {
+    pub fn notify_workers_failure_code(&self) -> ::std::option::Option<& crate::types::NotifyWorkersFailureCode> {
         self.notify_workers_failure_code.as_ref()
     }
     /// <p>A message detailing the reason the Worker could not be notified.</p>
-    pub fn notify_workers_failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn notify_workers_failure_message(&self) -> ::std::option::Option<& str> {
         self.notify_workers_failure_message.as_deref()
     }
     /// <p>The ID of the Worker.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl NotifyWorkersFailureStatusBuilder {
     }
     /// <p>Encoded value for the failure type.</p>
     pub fn set_notify_workers_failure_code(mut self, input: ::std::option::Option<crate::types::NotifyWorkersFailureCode>) -> Self {
-        self.notify_workers_failure_code = input;
-        self
+        self.notify_workers_failure_code = input; self
     }
     /// <p>Encoded value for the failure type.</p>
     pub fn get_notify_workers_failure_code(&self) -> &::std::option::Option<crate::types::NotifyWorkersFailureCode> {
@@ -62,8 +61,7 @@ impl NotifyWorkersFailureStatusBuilder {
     }
     /// <p>A message detailing the reason the Worker could not be notified.</p>
     pub fn set_notify_workers_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notify_workers_failure_message = input;
-        self
+        self.notify_workers_failure_message = input; self
     }
     /// <p>A message detailing the reason the Worker could not be notified.</p>
     pub fn get_notify_workers_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl NotifyWorkersFailureStatusBuilder {
     }
     /// <p>The ID of the Worker.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl NotifyWorkersFailureStatusBuilder {
     /// Consumes the builder and constructs a [`NotifyWorkersFailureStatus`](crate::types::NotifyWorkersFailureStatus).
     pub fn build(self) -> crate::types::NotifyWorkersFailureStatus {
         crate::types::NotifyWorkersFailureStatus {
-            notify_workers_failure_code: self.notify_workers_failure_code,
-            notify_workers_failure_message: self.notify_workers_failure_message,
-            worker_id: self.worker_id,
+            notify_workers_failure_code: self.notify_workers_failure_code
+            ,
+            notify_workers_failure_message: self.notify_workers_failure_message
+            ,
+            worker_id: self.worker_id
+            ,
         }
     }
 }
+

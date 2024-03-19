@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSigningPlatformInput {
+pub struct GetSigningPlatformInput  {
     /// <p>The ID of the target signing platform.</p>
     pub platform_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSigningPlatformInput {
+impl  GetSigningPlatformInput  {
     /// <p>The ID of the target signing platform.</p>
-    pub fn platform_id(&self) -> ::std::option::Option<&str> {
+    pub fn platform_id(&self) -> ::std::option::Option<& str> {
         self.platform_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetSigningPlatformInputBuilder {
     }
     /// <p>The ID of the target signing platform.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_id = input;
-        self
+        self.platform_id = input; self
     }
     /// <p>The ID of the target signing platform.</p>
     pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_id
     }
     /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_signing_platform::GetSigningPlatformInput {
-            platform_id: self.platform_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_signing_platform::GetSigningPlatformInput {
+                platform_id: self.platform_id
+                ,
+            }
+        )
     }
 }
+

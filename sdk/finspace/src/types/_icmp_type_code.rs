@@ -3,13 +3,13 @@
 /// <p>Defines the ICMP protocol that consists of the ICMP type and code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IcmpTypeCode {
+pub struct IcmpTypeCode  {
     /// <p>The ICMP type. A value of <i>-1</i> means all types.</p>
     pub r#type: i32,
     /// <p>The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP type.</p>
     pub code: i32,
 }
-impl IcmpTypeCode {
+impl  IcmpTypeCode  {
     /// <p>The ICMP type. A value of <i>-1</i> means all types.</p>
     pub fn r#type(&self) -> i32 {
         self.r#type
@@ -42,8 +42,7 @@ impl IcmpTypeCodeBuilder {
     }
     /// <p>The ICMP type. A value of <i>-1</i> means all types.</p>
     pub fn set_type(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The ICMP type. A value of <i>-1</i> means all types.</p>
     pub fn get_type(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl IcmpTypeCodeBuilder {
     }
     /// <p>The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP type.</p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP type.</p>
     pub fn get_code(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,13 @@ impl IcmpTypeCodeBuilder {
     /// Consumes the builder and constructs a [`IcmpTypeCode`](crate::types::IcmpTypeCode).
     pub fn build(self) -> crate::types::IcmpTypeCode {
         crate::types::IcmpTypeCode {
-            r#type: self.r#type.unwrap_or_default(),
-            code: self.code.unwrap_or_default(),
+            r#type: self.r#type
+                .unwrap_or_default()
+            ,
+            code: self.code
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

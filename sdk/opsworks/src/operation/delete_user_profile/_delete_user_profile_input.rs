@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserProfileInput {
+pub struct DeleteUserProfileInput  {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserProfileInput {
+impl  DeleteUserProfileInput  {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteUserProfileInputBuilder {
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_user_arn = input;
-        self
+        self.iam_user_arn = input; self
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_user_arn
     }
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user_profile::DeleteUserProfileInput {
-            iam_user_arn: self.iam_user_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_profile::DeleteUserProfileInput {
+                iam_user_arn: self.iam_user_arn
+                ,
+            }
+        )
     }
 }
+

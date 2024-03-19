@@ -3,25 +3,25 @@
 /// <p>The recommended configuration to use for Real-Time Inference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeInferenceRecommendation {
+pub struct RealTimeInferenceRecommendation  {
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The recommended instance type for Real-Time Inference.</p>
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The recommended environment variables to set in the model container for Real-Time Inference.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RealTimeInferenceRecommendation {
+impl  RealTimeInferenceRecommendation  {
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The recommended instance type for Real-Time Inference.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The recommended environment variables to set in the model container for Real-Time Inference.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl RealTimeInferenceRecommendation {
 pub struct RealTimeInferenceRecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RealTimeInferenceRecommendationBuilder {
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
@@ -49,8 +49,7 @@ impl RealTimeInferenceRecommendationBuilder {
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl RealTimeInferenceRecommendationBuilder {
     }
     /// <p>The recommended instance type for Real-Time Inference.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The recommended instance type for Real-Time Inference.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
@@ -78,28 +76,28 @@ impl RealTimeInferenceRecommendationBuilder {
     /// <p>The recommended environment variables to set in the model container for Real-Time Inference.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The recommended environment variables to set in the model container for Real-Time Inference.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The recommended environment variables to set in the model container for Real-Time Inference.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`RealTimeInferenceRecommendation`](crate::types::RealTimeInferenceRecommendation).
     pub fn build(self) -> crate::types::RealTimeInferenceRecommendation {
         crate::types::RealTimeInferenceRecommendation {
-            recommendation_id: self.recommendation_id,
-            instance_type: self.instance_type,
-            environment: self.environment,
+            recommendation_id: self.recommendation_id
+            ,
+            instance_type: self.instance_type
+            ,
+            environment: self.environment
+            ,
         }
     }
 }
+

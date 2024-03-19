@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_cluster_name):<br>required: **false**<br><p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p><br>
     ///   - [`snapshot_name(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_snapshot_name):<br>required: **false**<br><p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p><br>
     ///   - [`source(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::source) / [`set_source(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_source):<br>required: **false**<br><p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`show_detail(bool)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::show_detail) / [`set_show_detail(Option<bool>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_show_detail):<br>required: **false**<br><p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p><br>
-    /// - On success, responds with [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput) with field(s):
+                            /// - On success, responds with [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     ///   - [`snapshots(Option<Vec::<Snapshot>>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::snapshots): <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
+                            /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
     pub fn describe_snapshots(&self) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
-        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,24 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateVariableInput {
+pub struct BatchCreateVariableInput  {
     /// <p>The list of variables for the batch create variable request.</p>
-    pub variable_entries: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
+    pub variable_entries: ::std::option::Option<::std::vec::Vec::<crate::types::VariableEntry>>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl BatchCreateVariableInput {
+impl  BatchCreateVariableInput  {
     /// <p>The list of variables for the batch create variable request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variable_entries.is_none()`.
-    pub fn variable_entries(&self) -> &[crate::types::VariableEntry] {
-        self.variable_entries.as_deref().unwrap_or_default()
+    pub fn variable_entries(&self) -> & [crate::types::VariableEntry] {
+        self.variable_entries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchCreateVariableInput {
@@ -33,8 +35,8 @@ impl BatchCreateVariableInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateVariableInputBuilder {
-    pub(crate) variable_entries: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) variable_entries: ::std::option::Option<::std::vec::Vec::<crate::types::VariableEntry>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl BatchCreateVariableInputBuilder {
     /// Appends an item to `variable_entries`.
@@ -44,17 +46,16 @@ impl BatchCreateVariableInputBuilder {
     /// <p>The list of variables for the batch create variable request.</p>
     pub fn variable_entries(mut self, input: crate::types::VariableEntry) -> Self {
         let mut v = self.variable_entries.unwrap_or_default();
-        v.push(input);
-        self.variable_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variable_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn set_variable_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>) -> Self {
-        self.variable_entries = input;
-        self
+    pub fn set_variable_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VariableEntry>>) -> Self {
+        self.variable_entries = input; self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn get_variable_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
+    pub fn get_variable_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VariableEntry>> {
         &self.variable_entries
     }
     /// Appends an item to `tags`.
@@ -64,27 +65,28 @@ impl BatchCreateVariableInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_create_variable::BatchCreateVariableInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_create_variable::BatchCreateVariableInput {
-            variable_entries: self.variable_entries,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_create_variable::BatchCreateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_create_variable::BatchCreateVariableInput {
+                variable_entries: self.variable_entries
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

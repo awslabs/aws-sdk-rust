@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlertInput {
+pub struct DescribeAlertInput  {
     /// <p>The ARN of the alert to describe.</p>
     pub alert_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAlertInput {
+impl  DescribeAlertInput  {
     /// <p>The ARN of the alert to describe.</p>
-    pub fn alert_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alert_arn(&self) -> ::std::option::Option<& str> {
         self.alert_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeAlertInputBuilder {
     }
     /// <p>The ARN of the alert to describe.</p>
     pub fn set_alert_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alert_arn = input;
-        self
+        self.alert_arn = input; self
     }
     /// <p>The ARN of the alert to describe.</p>
     pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.alert_arn
     }
     /// Consumes the builder and constructs a [`DescribeAlertInput`](crate::operation::describe_alert::DescribeAlertInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_alert::DescribeAlertInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_alert::DescribeAlertInput { alert_arn: self.alert_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_alert::DescribeAlertInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_alert::DescribeAlertInput {
+                alert_arn: self.alert_arn
+                ,
+            }
+        )
     }
 }
+

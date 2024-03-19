@@ -5,54 +5,50 @@ pub use crate::operation::create_trust_store::_create_trust_store_input::CreateT
 
 impl CreateTrustStoreInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_trust_store::CreateTrustStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_trust_store();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_trust_store::CreateTrustStoreOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_trust_store::CreateTrustStoreError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_trust_store();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateTrustStore`.
-///
+/// 
 /// <p>Creates a trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrustStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder,
+                    inner: crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_trust_store::CreateTrustStoreOutput,
-        crate::operation::create_trust_store::CreateTrustStoreError,
-    > for CreateTrustStoreFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_trust_store::CreateTrustStoreOutput,
-            crate::operation::create_trust_store::CreateTrustStoreError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_trust_store::CreateTrustStoreOutput,
+                    crate::operation::create_trust_store::CreateTrustStoreError,
+                > for CreateTrustStoreFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_trust_store::CreateTrustStoreOutput,
+                        crate::operation::create_trust_store::CreateTrustStoreError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateTrustStoreFluentBuilder {
     /// Creates a new `CreateTrustStore`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateTrustStoreFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_trust_store::CreateTrustStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_trust_store::CreateTrustStore::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_trust_store::CreateTrustStore::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_trust_store::CreateTrustStoreOutput,
-        crate::operation::create_trust_store::CreateTrustStoreError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_trust_store::CreateTrustStore::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_trust_store::CreateTrustStore::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_trust_store::CreateTrustStoreOutput, crate::operation::create_trust_store::CreateTrustStoreError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `certificateList`.
     ///
     /// To override the contents of this collection use [`set_certificate_list`](Self::set_certificate_list).
@@ -118,12 +105,12 @@ impl CreateTrustStoreFluentBuilder {
         self
     }
     /// <p>A list of CA certificates to be added to the trust store.</p>
-    pub fn set_certificate_list(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
+    pub fn set_certificate_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>>) -> Self {
         self.inner = self.inner.set_certificate_list(input);
         self
     }
     /// <p>A list of CA certificates to be added to the trust store.</p>
-    pub fn get_certificate_list(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_certificate_list(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>> {
         self.inner.get_certificate_list()
     }
     /// Appends an item to `tags`.
@@ -136,12 +123,12 @@ impl CreateTrustStoreFluentBuilder {
         self
     }
     /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
@@ -162,3 +149,4 @@ impl CreateTrustStoreFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

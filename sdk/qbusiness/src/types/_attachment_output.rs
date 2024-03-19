@@ -3,7 +3,7 @@
 /// <p>The details of a file uploaded during chat.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentOutput {
+pub struct AttachmentOutput  {
     /// <p>The name of a file uploaded during chat.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of a file uploaded during chat.</p>
@@ -11,17 +11,17 @@ pub struct AttachmentOutput {
     /// <p>An error associated with a file uploaded during chat.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
 }
-impl AttachmentOutput {
+impl  AttachmentOutput  {
     /// <p>The name of a file uploaded during chat.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of a file uploaded during chat.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AttachmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>An error associated with a file uploaded during chat.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AttachmentOutputBuilder {
     }
     /// <p>The name of a file uploaded during chat.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a file uploaded during chat.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AttachmentOutputBuilder {
     }
     /// <p>The status of a file uploaded during chat.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a file uploaded during chat.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
@@ -76,8 +74,7 @@ impl AttachmentOutputBuilder {
     }
     /// <p>An error associated with a file uploaded during chat.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An error associated with a file uploaded during chat.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -86,9 +83,13 @@ impl AttachmentOutputBuilder {
     /// Consumes the builder and constructs a [`AttachmentOutput`](crate::types::AttachmentOutput).
     pub fn build(self) -> crate::types::AttachmentOutput {
         crate::types::AttachmentOutput {
-            name: self.name,
-            status: self.status,
-            error: self.error,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

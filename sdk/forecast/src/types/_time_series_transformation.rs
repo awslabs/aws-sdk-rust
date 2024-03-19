@@ -3,22 +3,23 @@
 /// <p>A transformation function is a pair of operations that select and modify the rows in a related time series. You select the rows that you want with a condition operation and you modify the rows with a transformation operation. All conditions are joined with an AND operation, meaning that all conditions must be true for the transformation to be applied. Transformations are applied in the order that they are listed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesTransformation {
+pub struct TimeSeriesTransformation  {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub time_series_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
+    pub time_series_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesCondition>>,
 }
-impl TimeSeriesTransformation {
+impl  TimeSeriesTransformation  {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_conditions.is_none()`.
-    pub fn time_series_conditions(&self) -> &[crate::types::TimeSeriesCondition] {
-        self.time_series_conditions.as_deref().unwrap_or_default()
+    pub fn time_series_conditions(&self) -> & [crate::types::TimeSeriesCondition] {
+        self.time_series_conditions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TimeSeriesTransformation {
@@ -33,7 +34,7 @@ impl TimeSeriesTransformation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesTransformationBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
-    pub(crate) time_series_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
+    pub(crate) time_series_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesCondition>>,
 }
 impl TimeSeriesTransformationBuilder {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
@@ -43,8 +44,7 @@ impl TimeSeriesTransformationBuilder {
     }
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
@@ -57,24 +57,26 @@ impl TimeSeriesTransformationBuilder {
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
     pub fn time_series_conditions(mut self, input: crate::types::TimeSeriesCondition) -> Self {
         let mut v = self.time_series_conditions.unwrap_or_default();
-        v.push(input);
-        self.time_series_conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.time_series_conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub fn set_time_series_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>) -> Self {
-        self.time_series_conditions = input;
-        self
+    pub fn set_time_series_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesCondition>>) -> Self {
+        self.time_series_conditions = input; self
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub fn get_time_series_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>> {
+    pub fn get_time_series_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesCondition>> {
         &self.time_series_conditions
     }
     /// Consumes the builder and constructs a [`TimeSeriesTransformation`](crate::types::TimeSeriesTransformation).
     pub fn build(self) -> crate::types::TimeSeriesTransformation {
         crate::types::TimeSeriesTransformation {
-            action: self.action,
-            time_series_conditions: self.time_series_conditions,
+            action: self.action
+            ,
+            time_series_conditions: self.time_series_conditions
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The segment delivery configuration settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentDeliveryConfiguration {
+pub struct SegmentDeliveryConfiguration  {
     /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.</p>
     pub base_url: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl SegmentDeliveryConfiguration {
+impl  SegmentDeliveryConfiguration  {
     /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.</p>
-    pub fn base_url(&self) -> ::std::option::Option<&str> {
+    pub fn base_url(&self) -> ::std::option::Option<& str> {
         self.base_url.as_deref()
     }
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SegmentDeliveryConfigurationBuilder {
     }
     /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.</p>
     pub fn set_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url = input;
-        self
+        self.base_url = input; self
     }
     /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as <code>https://example.com/some/path</code>. To use a relative URL specify the relative path, such as <code>/some/path*</code>.</p>
     pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SegmentDeliveryConfigurationBuilder {
     }
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SegmentDeliveryConfigurationBuilder {
     /// Consumes the builder and constructs a [`SegmentDeliveryConfiguration`](crate::types::SegmentDeliveryConfiguration).
     pub fn build(self) -> crate::types::SegmentDeliveryConfiguration {
         crate::types::SegmentDeliveryConfiguration {
-            base_url: self.base_url,
-            name: self.name,
+            base_url: self.base_url
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

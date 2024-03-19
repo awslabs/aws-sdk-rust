@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateSipMediaApplicationCallInput {
+pub struct CreateSipMediaApplicationCallInput  {
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
     pub from_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The phone number that the service should call.</p>
@@ -10,27 +10,27 @@ pub struct CreateSipMediaApplicationCallInput {
     /// <p>The ID of the SIP media application.</p>
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub sip_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub sip_headers: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateSipMediaApplicationCallInput {
+impl  CreateSipMediaApplicationCallInput  {
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
-    pub fn from_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn from_phone_number(&self) -> ::std::option::Option<& str> {
         self.from_phone_number.as_deref()
     }
     /// <p>The phone number that the service should call.</p>
-    pub fn to_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn to_phone_number(&self) -> ::std::option::Option<& str> {
         self.to_phone_number.as_deref()
     }
     /// <p>The ID of the SIP media application.</p>
-    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn sip_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn sip_headers(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.sip_headers.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateSipMediaApplicationCallInput {
+impl  ::std::fmt::Debug for CreateSipMediaApplicationCallInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSipMediaApplicationCallInput");
         formatter.field("from_phone_number", &"*** Sensitive Data Redacted ***");
@@ -54,7 +54,7 @@ pub struct CreateSipMediaApplicationCallInputBuilder {
     pub(crate) from_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) to_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) sip_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) sip_headers: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInputBuilder {
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
@@ -65,8 +65,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
     }
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
     pub fn set_from_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_phone_number = input;
-        self
+        self.from_phone_number = input; self
     }
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
     pub fn get_from_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
     }
     /// <p>The phone number that the service should call.</p>
     pub fn set_to_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to_phone_number = input;
-        self
+        self.to_phone_number = input; self
     }
     /// <p>The phone number that the service should call.</p>
     pub fn get_to_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
     }
     /// <p>The ID of the SIP media application.</p>
     pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sip_media_application_id = input;
-        self
+        self.sip_media_application_id = input; self
     }
     /// <p>The ID of the SIP media application.</p>
     pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,35 +106,32 @@ impl CreateSipMediaApplicationCallInputBuilder {
     /// <p>The SIP headers added to an outbound call leg.</p>
     pub fn sip_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.sip_headers.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.sip_headers = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.sip_headers = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn set_sip_headers(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.sip_headers = input;
-        self
+    pub fn set_sip_headers(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.sip_headers = input; self
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn get_sip_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_sip_headers(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.sip_headers
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationCallInput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput {
-            from_phone_number: self.from_phone_number,
-            to_phone_number: self.to_phone_number,
-            sip_media_application_id: self.sip_media_application_id,
-            sip_headers: self.sip_headers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput {
+                from_phone_number: self.from_phone_number
+                ,
+                to_phone_number: self.to_phone_number
+                ,
+                sip_media_application_id: self.sip_media_application_id
+                ,
+                sip_headers: self.sip_headers
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateSipMediaApplicationCallInputBuilder {
@@ -150,3 +144,4 @@ impl ::std::fmt::Debug for CreateSipMediaApplicationCallInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSegmentVersionInput {
+pub struct GetSegmentVersionInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the segment.</p>
@@ -10,17 +10,17 @@ pub struct GetSegmentVersionInput {
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl GetSegmentVersionInput {
+impl  GetSegmentVersionInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the segment.</p>
-    pub fn segment_id(&self) -> ::std::option::Option<&str> {
+    pub fn segment_id(&self) -> ::std::option::Option<& str> {
         self.segment_id.as_deref()
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetSegmentVersionInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetSegmentVersionInputBuilder {
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_id = input;
-        self
+        self.segment_id = input; self
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetSegmentVersionInputBuilder {
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetSegmentVersionInput`](crate::operation::get_segment_version::GetSegmentVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_segment_version::GetSegmentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_segment_version::GetSegmentVersionInput {
-            application_id: self.application_id,
-            segment_id: self.segment_id,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_segment_version::GetSegmentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_segment_version::GetSegmentVersionInput {
+                application_id: self.application_id
+                ,
+                segment_id: self.segment_id
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

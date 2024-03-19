@@ -3,7 +3,8 @@
 /// <p>The input for the DeleteRegistrationCode operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRegistrationCodeInput {}
+pub struct DeleteRegistrationCodeInput  {
+}
 impl DeleteRegistrationCodeInput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistrationCodeInput`](crate::operation::delete_registration_code::DeleteRegistrationCodeInput).
     pub fn builder() -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeInputBuilder {
@@ -14,15 +15,15 @@ impl DeleteRegistrationCodeInput {
 /// A builder for [`DeleteRegistrationCodeInput`](crate::operation::delete_registration_code::DeleteRegistrationCodeInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteRegistrationCodeInputBuilder {}
+pub struct DeleteRegistrationCodeInputBuilder {
+}
 impl DeleteRegistrationCodeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistrationCodeInput`](crate::operation::delete_registration_code::DeleteRegistrationCodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_registration_code::DeleteRegistrationCodeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_registration_code::DeleteRegistrationCodeInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_registration_code::DeleteRegistrationCodeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_registration_code::DeleteRegistrationCodeInput {
+            }
+        )
     }
 }
+

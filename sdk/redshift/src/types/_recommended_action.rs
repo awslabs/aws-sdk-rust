@@ -3,7 +3,7 @@
 /// <p>The recommended action from the Amazon Redshift Advisor recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendedAction {
+pub struct RecommendedAction  {
     /// <p>The specific instruction about the command.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The database name to perform the action on. Only applicable if the type of command is SQL.</p>
@@ -13,21 +13,21 @@ pub struct RecommendedAction {
     /// <p>The type of command.</p>
     pub r#type: ::std::option::Option<crate::types::RecommendedActionType>,
 }
-impl RecommendedAction {
+impl  RecommendedAction  {
     /// <p>The specific instruction about the command.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The database name to perform the action on. Only applicable if the type of command is SQL.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The command to run.</p>
-    pub fn command(&self) -> ::std::option::Option<&str> {
+    pub fn command(&self) -> ::std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>The type of command.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecommendedActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RecommendedActionType> {
         self.r#type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>The specific instruction about the command.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The specific instruction about the command.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>The database name to perform the action on. Only applicable if the type of command is SQL.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database name to perform the action on. Only applicable if the type of command is SQL.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>The command to run.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>The command to run.</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>The type of command.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendedActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of command.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendedActionType> {
@@ -107,10 +103,15 @@ impl RecommendedActionBuilder {
     /// Consumes the builder and constructs a [`RecommendedAction`](crate::types::RecommendedAction).
     pub fn build(self) -> crate::types::RecommendedAction {
         crate::types::RecommendedAction {
-            text: self.text,
-            database: self.database,
-            command: self.command,
-            r#type: self.r#type,
+            text: self.text
+            ,
+            database: self.database
+            ,
+            command: self.command
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

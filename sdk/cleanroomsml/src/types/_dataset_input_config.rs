@@ -3,20 +3,19 @@
 /// <p>Defines the Glue data source and schema mapping information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetInputConfig {
+pub struct DatasetInputConfig  {
     /// <p>The schema information for the training data.</p>
-    pub schema: ::std::vec::Vec<crate::types::ColumnSchema>,
+    pub schema: ::std::vec::Vec::<crate::types::ColumnSchema>,
     /// <p>A DataSource object that specifies the Glue data source for the training data.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
 }
-impl DatasetInputConfig {
+impl  DatasetInputConfig  {
     /// <p>The schema information for the training data.</p>
-    pub fn schema(&self) -> &[crate::types::ColumnSchema] {
-        use std::ops::Deref;
-        self.schema.deref()
+    pub fn schema(&self) -> & [crate::types::ColumnSchema] {
+        use std::ops::Deref; self.schema.deref()
     }
     /// <p>A DataSource object that specifies the Glue data source for the training data.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl DatasetInputConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetInputConfigBuilder {
-    pub(crate) schema: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
+    pub(crate) schema: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
 }
 impl DatasetInputConfigBuilder {
@@ -42,17 +41,16 @@ impl DatasetInputConfigBuilder {
     /// <p>The schema information for the training data.</p>
     pub fn schema(mut self, input: crate::types::ColumnSchema) -> Self {
         let mut v = self.schema.unwrap_or_default();
-        v.push(input);
-        self.schema = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The schema information for the training data.</p>
-    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>) -> Self {
-        self.schema = input;
-        self
+    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>>) -> Self {
+        self.schema = input; self
     }
     /// <p>The schema information for the training data.</p>
-    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>> {
+    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>> {
         &self.schema
     }
     /// <p>A DataSource object that specifies the Glue data source for the training data.</p>
@@ -63,8 +61,7 @@ impl DatasetInputConfigBuilder {
     }
     /// <p>A DataSource object that specifies the Glue data source for the training data.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>A DataSource object that specifies the Glue data source for the training data.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -74,14 +71,17 @@ impl DatasetInputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schema`](crate::types::builders::DatasetInputConfigBuilder::schema)
     pub fn build(self) -> ::std::result::Result<crate::types::DatasetInputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatasetInputConfig {
-            schema: self.schema.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema",
-                    "schema was not specified but it is required when building DatasetInputConfig",
-                )
-            })?,
-            data_source: self.data_source,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatasetInputConfig {
+                schema: self.schema
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema", "schema was not specified but it is required when building DatasetInputConfig")
+                    )?
+                ,
+                data_source: self.data_source
+                ,
+            }
+        )
     }
 }
+

@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveCustomRoutingEndpointsInput {
+pub struct RemoveCustomRoutingEndpointsInput  {
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
-    pub endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub endpoint_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl RemoveCustomRoutingEndpointsInput {
+impl  RemoveCustomRoutingEndpointsInput  {
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_ids.is_none()`.
-    pub fn endpoint_ids(&self) -> &[::std::string::String] {
-        self.endpoint_ids.as_deref().unwrap_or_default()
+    pub fn endpoint_ids(&self) -> & [::std::string::String] {
+        self.endpoint_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
 }
@@ -31,7 +32,7 @@ impl RemoveCustomRoutingEndpointsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsInputBuilder {
-    pub(crate) endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) endpoint_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveCustomRoutingEndpointsInputBuilder {
@@ -42,17 +43,16 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
     pub fn endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.endpoint_ids.unwrap_or_default();
-        v.push(input.into());
-        self.endpoint_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.endpoint_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
-    pub fn set_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.endpoint_ids = input;
-        self
+    pub fn set_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.endpoint_ids = input; self
     }
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.</p>
-    pub fn get_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.endpoint_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
@@ -63,23 +63,22 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`RemoveCustomRoutingEndpointsInput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput {
-            endpoint_ids: self.endpoint_ids,
-            endpoint_group_arn: self.endpoint_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput {
+                endpoint_ids: self.endpoint_ids
+                ,
+                endpoint_group_arn: self.endpoint_group_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,22 @@
 /// <p>The sort configuration for a <code>TableVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableSortConfiguration {
+pub struct TableSortConfiguration  {
     /// <p>The field sort options for rows in the table.</p>
-    pub row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub row_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
 }
-impl TableSortConfiguration {
+impl  TableSortConfiguration  {
     /// <p>The field sort options for rows in the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_sort.is_none()`.
-    pub fn row_sort(&self) -> &[crate::types::FieldSortOptions] {
-        self.row_sort.as_deref().unwrap_or_default()
+    pub fn row_sort(&self) -> & [crate::types::FieldSortOptions] {
+        self.row_sort.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
-    pub fn pagination_configuration(&self) -> ::std::option::Option<&crate::types::PaginationConfiguration> {
+    pub fn pagination_configuration(&self) -> ::std::option::Option<& crate::types::PaginationConfiguration> {
         self.pagination_configuration.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl TableSortConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableSortConfigurationBuilder {
-    pub(crate) row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) row_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
     pub(crate) pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl TableSortConfigurationBuilder {
@@ -43,17 +44,16 @@ impl TableSortConfigurationBuilder {
     /// <p>The field sort options for rows in the table.</p>
     pub fn row_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.row_sort.unwrap_or_default();
-        v.push(input);
-        self.row_sort = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.row_sort = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field sort options for rows in the table.</p>
-    pub fn set_row_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.row_sort = input;
-        self
+    pub fn set_row_sort(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>) -> Self {
+        self.row_sort = input; self
     }
     /// <p>The field sort options for rows in the table.</p>
-    pub fn get_row_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_row_sort(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>> {
         &self.row_sort
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
@@ -63,8 +63,7 @@ impl TableSortConfigurationBuilder {
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub fn set_pagination_configuration(mut self, input: ::std::option::Option<crate::types::PaginationConfiguration>) -> Self {
-        self.pagination_configuration = input;
-        self
+        self.pagination_configuration = input; self
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub fn get_pagination_configuration(&self) -> &::std::option::Option<crate::types::PaginationConfiguration> {
@@ -73,8 +72,11 @@ impl TableSortConfigurationBuilder {
     /// Consumes the builder and constructs a [`TableSortConfiguration`](crate::types::TableSortConfiguration).
     pub fn build(self) -> crate::types::TableSortConfiguration {
         crate::types::TableSortConfiguration {
-            row_sort: self.row_sort,
-            pagination_configuration: self.pagination_configuration,
+            row_sort: self.row_sort
+            ,
+            pagination_configuration: self.pagination_configuration
+            ,
         }
     }
 }
+

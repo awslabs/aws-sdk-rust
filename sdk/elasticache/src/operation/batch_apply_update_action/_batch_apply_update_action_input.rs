@@ -2,29 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchApplyUpdateActionInput {
+pub struct BatchApplyUpdateActionInput  {
     /// <p>The replication group IDs</p>
-    pub replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The cache cluster IDs</p>
-    pub cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cache_cluster_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The unique ID of the service update</p>
     pub service_update_name: ::std::option::Option<::std::string::String>,
 }
-impl BatchApplyUpdateActionInput {
+impl  BatchApplyUpdateActionInput  {
     /// <p>The replication group IDs</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group_ids.is_none()`.
-    pub fn replication_group_ids(&self) -> &[::std::string::String] {
-        self.replication_group_ids.as_deref().unwrap_or_default()
+    pub fn replication_group_ids(&self) -> & [::std::string::String] {
+        self.replication_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The cache cluster IDs</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_cluster_ids.is_none()`.
-    pub fn cache_cluster_ids(&self) -> &[::std::string::String] {
-        self.cache_cluster_ids.as_deref().unwrap_or_default()
+    pub fn cache_cluster_ids(&self) -> & [::std::string::String] {
+        self.cache_cluster_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_update_name(&self) -> ::std::option::Option<& str> {
         self.service_update_name.as_deref()
     }
 }
@@ -39,8 +41,8 @@ impl BatchApplyUpdateActionInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchApplyUpdateActionInputBuilder {
-    pub(crate) replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) cache_cluster_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchApplyUpdateActionInputBuilder {
@@ -51,17 +53,16 @@ impl BatchApplyUpdateActionInputBuilder {
     /// <p>The replication group IDs</p>
     pub fn replication_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.replication_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.replication_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The replication group IDs</p>
-    pub fn set_replication_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replication_group_ids = input;
-        self
+    pub fn set_replication_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.replication_group_ids = input; self
     }
     /// <p>The replication group IDs</p>
-    pub fn get_replication_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.replication_group_ids
     }
     /// Appends an item to `cache_cluster_ids`.
@@ -71,17 +72,16 @@ impl BatchApplyUpdateActionInputBuilder {
     /// <p>The cache cluster IDs</p>
     pub fn cache_cluster_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cache_cluster_ids.unwrap_or_default();
-        v.push(input.into());
-        self.cache_cluster_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cache_cluster_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn set_cache_cluster_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cache_cluster_ids = input;
-        self
+    pub fn set_cache_cluster_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cache_cluster_ids = input; self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn get_cache_cluster_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_cluster_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cache_cluster_ids
     }
     /// <p>The unique ID of the service update</p>
@@ -92,24 +92,24 @@ impl BatchApplyUpdateActionInputBuilder {
     }
     /// <p>The unique ID of the service update</p>
     pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_update_name = input;
-        self
+        self.service_update_name = input; self
     }
     /// <p>The unique ID of the service update</p>
     pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_update_name
     }
     /// Consumes the builder and constructs a [`BatchApplyUpdateActionInput`](crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput {
-            replication_group_ids: self.replication_group_ids,
-            cache_cluster_ids: self.cache_cluster_ids,
-            service_update_name: self.service_update_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput {
+                replication_group_ids: self.replication_group_ids
+                ,
+                cache_cluster_ids: self.cache_cluster_ids
+                ,
+                service_update_name: self.service_update_name
+                ,
+            }
+        )
     }
 }
+

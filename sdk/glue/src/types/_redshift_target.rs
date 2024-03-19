@@ -3,11 +3,11 @@
 /// <p>Specifies a target that uses Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftTarget {
+pub struct RedshiftTarget  {
     /// <p>The name of the data target.</p>
     pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The name of the database to write to.</p>
     pub database: ::std::string::String,
     /// <p>The name of the table in the database to write to.</p>
@@ -19,37 +19,33 @@ pub struct RedshiftTarget {
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
     pub upsert_redshift_options: ::std::option::Option<crate::types::UpsertRedshiftTargetOptions>,
 }
-impl RedshiftTarget {
+impl  RedshiftTarget  {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    pub fn redshift_tmp_dir(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_tmp_dir(&self) -> ::std::option::Option<& str> {
         self.redshift_tmp_dir.as_deref()
     }
     /// <p>The IAM role with permissions.</p>
-    pub fn tmp_dir_iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn tmp_dir_iam_role(&self) -> ::std::option::Option<& str> {
         self.tmp_dir_iam_role.as_deref()
     }
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
-    pub fn upsert_redshift_options(&self) -> ::std::option::Option<&crate::types::UpsertRedshiftTargetOptions> {
+    pub fn upsert_redshift_options(&self) -> ::std::option::Option<& crate::types::UpsertRedshiftTargetOptions> {
         self.upsert_redshift_options.as_ref()
     }
 }
@@ -65,7 +61,7 @@ impl RedshiftTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
     pub(crate) redshift_tmp_dir: ::std::option::Option<::std::string::String>,
@@ -81,8 +77,7 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,17 +90,16 @@ impl RedshiftTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>The name of the database to write to.</p>
@@ -116,8 +110,7 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The name of the database to write to.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database to write to.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +124,7 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +137,7 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn set_redshift_tmp_dir(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_tmp_dir = input;
-        self
+        self.redshift_tmp_dir = input; self
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn get_redshift_tmp_dir(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +150,7 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The IAM role with permissions.</p>
     pub fn set_tmp_dir_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tmp_dir_iam_role = input;
-        self
+        self.tmp_dir_iam_role = input; self
     }
     /// <p>The IAM role with permissions.</p>
     pub fn get_tmp_dir_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +163,7 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
     pub fn set_upsert_redshift_options(mut self, input: ::std::option::Option<crate::types::UpsertRedshiftTargetOptions>) -> Self {
-        self.upsert_redshift_options = input;
-        self
+        self.upsert_redshift_options = input; self
     }
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
     pub fn get_upsert_redshift_options(&self) -> &::std::option::Option<crate::types::UpsertRedshiftTargetOptions> {
@@ -187,34 +176,36 @@ impl RedshiftTargetBuilder {
     /// - [`database`](crate::types::builders::RedshiftTargetBuilder::database)
     /// - [`table`](crate::types::builders::RedshiftTargetBuilder::table)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftTarget {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RedshiftTarget",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building RedshiftTarget",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building RedshiftTarget",
-                )
-            })?,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building RedshiftTarget",
-                )
-            })?,
-            redshift_tmp_dir: self.redshift_tmp_dir,
-            tmp_dir_iam_role: self.tmp_dir_iam_role,
-            upsert_redshift_options: self.upsert_redshift_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftTarget {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RedshiftTarget")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building RedshiftTarget")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building RedshiftTarget")
+                    )?
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building RedshiftTarget")
+                    )?
+                ,
+                redshift_tmp_dir: self.redshift_tmp_dir
+                ,
+                tmp_dir_iam_role: self.tmp_dir_iam_role
+                ,
+                upsert_redshift_options: self.upsert_redshift_options
+                ,
+            }
+        )
     }
 }
+

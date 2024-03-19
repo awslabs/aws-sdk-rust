@@ -3,15 +3,14 @@
 /// <p>When you update a SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about a Kinesis data stream that is configured as the destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamsOutputUpdate {
+pub struct KinesisStreamsOutputUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
     pub resource_arn_update: ::std::string::String,
 }
-impl KinesisStreamsOutputUpdate {
+impl  KinesisStreamsOutputUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
-    pub fn resource_arn_update(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn_update.deref()
+    pub fn resource_arn_update(&self) -> & str {
+        use std::ops::Deref; self.resource_arn_update.deref()
     }
 }
 impl KinesisStreamsOutputUpdate {
@@ -36,8 +35,7 @@ impl KinesisStreamsOutputUpdateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn_update = input;
-        self
+        self.resource_arn_update = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the output.</p>
     pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KinesisStreamsOutputUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn_update`](crate::types::builders::KinesisStreamsOutputUpdateBuilder::resource_arn_update)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamsOutputUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisStreamsOutputUpdate {
-            resource_arn_update: self.resource_arn_update.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn_update",
-                    "resource_arn_update was not specified but it is required when building KinesisStreamsOutputUpdate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisStreamsOutputUpdate {
+                resource_arn_update: self.resource_arn_update
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn_update", "resource_arn_update was not specified but it is required when building KinesisStreamsOutputUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

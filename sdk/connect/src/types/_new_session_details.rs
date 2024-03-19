@@ -3,37 +3,38 @@
 /// <p>Payload of chat properties to apply when starting a new contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewSessionDetails {
+pub struct NewSessionDetails  {
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
-    pub supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_messaging_content_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The customer's details.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
     pub streaming_configuration: ::std::option::Option<crate::types::ChatStreamingConfiguration>,
 }
-impl NewSessionDetails {
+impl  NewSessionDetails  {
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_messaging_content_types.is_none()`.
-    pub fn supported_messaging_content_types(&self) -> &[::std::string::String] {
-        self.supported_messaging_content_types.as_deref().unwrap_or_default()
+    pub fn supported_messaging_content_types(&self) -> & [::std::string::String] {
+        self.supported_messaging_content_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The customer's details.</p>
-    pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
+    pub fn participant_details(&self) -> ::std::option::Option<& crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn streaming_configuration(&self) -> ::std::option::Option<&crate::types::ChatStreamingConfiguration> {
+    pub fn streaming_configuration(&self) -> ::std::option::Option<& crate::types::ChatStreamingConfiguration> {
         self.streaming_configuration.as_ref()
     }
 }
@@ -48,9 +49,9 @@ impl NewSessionDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewSessionDetailsBuilder {
-    pub(crate) supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_messaging_content_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) streaming_configuration: ::std::option::Option<crate::types::ChatStreamingConfiguration>,
 }
 impl NewSessionDetailsBuilder {
@@ -62,19 +63,18 @@ impl NewSessionDetailsBuilder {
     /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
     pub fn supported_messaging_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_messaging_content_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_messaging_content_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_messaging_content_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
-    pub fn set_supported_messaging_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_messaging_content_types = input;
-        self
+    pub fn set_supported_messaging_content_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_messaging_content_types = input; self
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
-    pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_messaging_content_types
     }
     /// <p>The customer's details.</p>
@@ -84,8 +84,7 @@ impl NewSessionDetailsBuilder {
     }
     /// <p>The customer's details.</p>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
-        self.participant_details = input;
-        self
+        self.participant_details = input; self
     }
     /// <p>The customer's details.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
@@ -99,19 +98,18 @@ impl NewSessionDetailsBuilder {
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
@@ -121,8 +119,7 @@ impl NewSessionDetailsBuilder {
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
     pub fn set_streaming_configuration(mut self, input: ::std::option::Option<crate::types::ChatStreamingConfiguration>) -> Self {
-        self.streaming_configuration = input;
-        self
+        self.streaming_configuration = input; self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
     pub fn get_streaming_configuration(&self) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
@@ -131,10 +128,15 @@ impl NewSessionDetailsBuilder {
     /// Consumes the builder and constructs a [`NewSessionDetails`](crate::types::NewSessionDetails).
     pub fn build(self) -> crate::types::NewSessionDetails {
         crate::types::NewSessionDetails {
-            supported_messaging_content_types: self.supported_messaging_content_types,
-            participant_details: self.participant_details,
-            attributes: self.attributes,
-            streaming_configuration: self.streaming_configuration,
+            supported_messaging_content_types: self.supported_messaging_content_types
+            ,
+            participant_details: self.participant_details
+            ,
+            attributes: self.attributes
+            ,
+            streaming_configuration: self.streaming_configuration
+            ,
         }
     }
 }
+

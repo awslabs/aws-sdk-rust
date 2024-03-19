@@ -3,13 +3,13 @@
 /// <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustedAdvisorCategorySpecificSummary {
+pub struct TrustedAdvisorCategorySpecificSummary  {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub cost_optimizing: ::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
 }
-impl TrustedAdvisorCategorySpecificSummary {
+impl  TrustedAdvisorCategorySpecificSummary  {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
-    pub fn cost_optimizing(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorCostOptimizingSummary> {
+    pub fn cost_optimizing(&self) -> ::std::option::Option<& crate::types::TrustedAdvisorCostOptimizingSummary> {
         self.cost_optimizing.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TrustedAdvisorCategorySpecificSummaryBuilder {
     }
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub fn set_cost_optimizing(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>) -> Self {
-        self.cost_optimizing = input;
-        self
+        self.cost_optimizing = input; self
     }
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub fn get_cost_optimizing(&self) -> &::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary> {
@@ -44,7 +43,9 @@ impl TrustedAdvisorCategorySpecificSummaryBuilder {
     /// Consumes the builder and constructs a [`TrustedAdvisorCategorySpecificSummary`](crate::types::TrustedAdvisorCategorySpecificSummary).
     pub fn build(self) -> crate::types::TrustedAdvisorCategorySpecificSummary {
         crate::types::TrustedAdvisorCategorySpecificSummary {
-            cost_optimizing: self.cost_optimizing,
+            cost_optimizing: self.cost_optimizing
+            ,
         }
     }
 }
+

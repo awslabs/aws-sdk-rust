@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRestoreTestingPlanOutput {
+pub struct GetRestoreTestingPlanOutput  {
     /// <p>Specifies the body of a restore testing plan. Includes <code>RestoreTestingPlanName</code>.</p>
     pub restore_testing_plan: ::std::option::Option<crate::types::RestoreTestingPlanForGet>,
     _request_id: Option<String>,
 }
-impl GetRestoreTestingPlanOutput {
+impl  GetRestoreTestingPlanOutput  {
     /// <p>Specifies the body of a restore testing plan. Includes <code>RestoreTestingPlanName</code>.</p>
-    pub fn restore_testing_plan(&self) -> ::std::option::Option<&crate::types::RestoreTestingPlanForGet> {
+    pub fn restore_testing_plan(&self) -> ::std::option::Option<& crate::types::RestoreTestingPlanForGet> {
         self.restore_testing_plan.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRestoreTestingPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRestoreTestingPlanOutput {
     /// Creates a new builder-style object to manufacture [`GetRestoreTestingPlanOutput`](crate::operation::get_restore_testing_plan::GetRestoreTestingPlanOutput).
     pub fn builder() -> crate::operation::get_restore_testing_plan::builders::GetRestoreTestingPlanOutputBuilder {
@@ -41,27 +41,28 @@ impl GetRestoreTestingPlanOutputBuilder {
     }
     /// <p>Specifies the body of a restore testing plan. Includes <code>RestoreTestingPlanName</code>.</p>
     pub fn set_restore_testing_plan(mut self, input: ::std::option::Option<crate::types::RestoreTestingPlanForGet>) -> Self {
-        self.restore_testing_plan = input;
-        self
+        self.restore_testing_plan = input; self
     }
     /// <p>Specifies the body of a restore testing plan. Includes <code>RestoreTestingPlanName</code>.</p>
     pub fn get_restore_testing_plan(&self) -> &::std::option::Option<crate::types::RestoreTestingPlanForGet> {
         &self.restore_testing_plan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRestoreTestingPlanOutput`](crate::operation::get_restore_testing_plan::GetRestoreTestingPlanOutput).
     pub fn build(self) -> crate::operation::get_restore_testing_plan::GetRestoreTestingPlanOutput {
         crate::operation::get_restore_testing_plan::GetRestoreTestingPlanOutput {
-            restore_testing_plan: self.restore_testing_plan,
+            restore_testing_plan: self.restore_testing_plan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

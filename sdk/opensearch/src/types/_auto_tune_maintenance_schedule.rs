@@ -6,7 +6,7 @@
 /// <p>The Auto-Tune maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoTuneMaintenanceSchedule {
+pub struct AutoTuneMaintenanceSchedule  {
     /// <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
     pub start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
@@ -14,17 +14,17 @@ pub struct AutoTuneMaintenanceSchedule {
     /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
     pub cron_expression_for_recurrence: ::std::option::Option<::std::string::String>,
 }
-impl AutoTuneMaintenanceSchedule {
+impl  AutoTuneMaintenanceSchedule  {
     /// <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
-    pub fn start_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_at.as_ref()
     }
     /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
-    pub fn duration(&self) -> ::std::option::Option<&crate::types::Duration> {
+    pub fn duration(&self) -> ::std::option::Option<& crate::types::Duration> {
         self.duration.as_ref()
     }
     /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
-    pub fn cron_expression_for_recurrence(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression_for_recurrence(&self) -> ::std::option::Option<& str> {
         self.cron_expression_for_recurrence.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AutoTuneMaintenanceScheduleBuilder {
     }
     /// <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
     pub fn set_start_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_at = input;
-        self
+        self.start_at = input; self
     }
     /// <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
     pub fn get_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +64,7 @@ impl AutoTuneMaintenanceScheduleBuilder {
     }
     /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
     pub fn get_duration(&self) -> &::std::option::Option<crate::types::Duration> {
@@ -79,8 +77,7 @@ impl AutoTuneMaintenanceScheduleBuilder {
     }
     /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
     pub fn set_cron_expression_for_recurrence(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression_for_recurrence = input;
-        self
+        self.cron_expression_for_recurrence = input; self
     }
     /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
     pub fn get_cron_expression_for_recurrence(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +86,13 @@ impl AutoTuneMaintenanceScheduleBuilder {
     /// Consumes the builder and constructs a [`AutoTuneMaintenanceSchedule`](crate::types::AutoTuneMaintenanceSchedule).
     pub fn build(self) -> crate::types::AutoTuneMaintenanceSchedule {
         crate::types::AutoTuneMaintenanceSchedule {
-            start_at: self.start_at,
-            duration: self.duration,
-            cron_expression_for_recurrence: self.cron_expression_for_recurrence,
+            start_at: self.start_at
+            ,
+            duration: self.duration
+            ,
+            cron_expression_for_recurrence: self.cron_expression_for_recurrence
+            ,
         }
     }
 }
+

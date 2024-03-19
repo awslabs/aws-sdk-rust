@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCodeSigningConfigInput {
+pub struct DeleteCodeSigningConfigInput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCodeSigningConfigInput {
+impl  DeleteCodeSigningConfigInput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> ::std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteCodeSigningConfigInputBuilder {
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_signing_config_arn = input;
-        self
+        self.code_signing_config_arn = input; self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_signing_config_arn
     }
     /// Consumes the builder and constructs a [`DeleteCodeSigningConfigInput`](crate::operation::delete_code_signing_config::DeleteCodeSigningConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_code_signing_config::DeleteCodeSigningConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_code_signing_config::DeleteCodeSigningConfigInput {
-            code_signing_config_arn: self.code_signing_config_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigInput {
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+            }
+        )
     }
 }
+

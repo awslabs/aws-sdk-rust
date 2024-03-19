@@ -3,33 +3,34 @@
 /// <p>Contains the parameters for DescribeObjects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeObjectsInput {
+pub struct DescribeObjectsInput  {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub object_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub evaluate_expressions: ::std::option::Option<bool>,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeObjectsInput {
+impl  DescribeObjectsInput  {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_ids.is_none()`.
-    pub fn object_ids(&self) -> &[::std::string::String] {
-        self.object_ids.as_deref().unwrap_or_default()
+    pub fn object_ids(&self) -> & [::std::string::String] {
+        self.object_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub fn evaluate_expressions(&self) -> ::std::option::Option<bool> {
         self.evaluate_expressions
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl DescribeObjectsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeObjectsInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
-    pub(crate) object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) object_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) evaluate_expressions: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
@@ -58,8 +59,7 @@ impl DescribeObjectsInputBuilder {
     }
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,17 +72,16 @@ impl DescribeObjectsInputBuilder {
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
     pub fn object_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.object_ids.unwrap_or_default();
-        v.push(input.into());
-        self.object_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.object_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.object_ids = input;
-        self
+    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.object_ids = input; self
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.object_ids
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
@@ -92,8 +91,7 @@ impl DescribeObjectsInputBuilder {
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub fn set_evaluate_expressions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.evaluate_expressions = input;
-        self
+        self.evaluate_expressions = input; self
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub fn get_evaluate_expressions(&self) -> &::std::option::Option<bool> {
@@ -106,22 +104,26 @@ impl DescribeObjectsInputBuilder {
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::operation::describe_objects::DescribeObjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsInput {
-            pipeline_id: self.pipeline_id,
-            object_ids: self.object_ids,
-            evaluate_expressions: self.evaluate_expressions,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_objects::DescribeObjectsInput {
+                pipeline_id: self.pipeline_id
+                ,
+                object_ids: self.object_ids
+                ,
+                evaluate_expressions: self.evaluate_expressions
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

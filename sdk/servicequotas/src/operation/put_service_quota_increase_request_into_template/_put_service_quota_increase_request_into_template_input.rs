@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput {
+pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput  {
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
@@ -12,17 +12,17 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// <p>Specifies the new, increased value for the quota.</p>
     pub desired_value: ::std::option::Option<f64>,
 }
-impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
+impl  PutServiceQuotaIncreaseRequestIntoTemplateInput  {
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>Specifies the Amazon Web Services Region to which the template applies.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>Specifies the new, increased value for the quota.</p>
@@ -32,10 +32,8 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
-        crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
+        crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder::default()
     }
 }
 
@@ -57,8 +55,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     }
     /// <p>Specifies the Amazon Web Services Region to which the template applies.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>Specifies the Amazon Web Services Region to which the template applies.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,27 +97,26 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     }
     /// <p>Specifies the new, increased value for the quota.</p>
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.desired_value = input;
-        self
+        self.desired_value = input; self
     }
     /// <p>Specifies the new, increased value for the quota.</p>
     pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
         &self.desired_value
     }
     /// Consumes the builder and constructs a [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput {
-                quota_code: self.quota_code,
-                service_code: self.service_code,
-                aws_region: self.aws_region,
-                desired_value: self.desired_value,
-            },
+                quota_code: self.quota_code
+                ,
+                service_code: self.service_code
+                ,
+                aws_region: self.aws_region
+                ,
+                desired_value: self.desired_value
+                ,
+            }
         )
     }
 }
+

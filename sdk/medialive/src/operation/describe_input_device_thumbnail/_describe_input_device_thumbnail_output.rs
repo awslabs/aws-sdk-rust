@@ -3,7 +3,7 @@
 /// Placeholder documentation for DescribeInputDeviceThumbnailResponse
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct DescribeInputDeviceThumbnailOutput {
+pub struct DescribeInputDeviceThumbnailOutput  {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// Specifies the media type of the thumbnail.
@@ -16,13 +16,13 @@ pub struct DescribeInputDeviceThumbnailOutput {
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeInputDeviceThumbnailOutput {
+impl  DescribeInputDeviceThumbnailOutput  {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn body(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// Specifies the media type of the thumbnail.
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::ContentType> {
         self.content_type.as_ref()
     }
     /// The length of the content.
@@ -30,19 +30,19 @@ impl DescribeInputDeviceThumbnailOutput {
         self.content_length
     }
     /// The unique, cacheable version of this thumbnail.
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// The date and time the thumbnail was last updated at the device.
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInputDeviceThumbnailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInputDeviceThumbnailOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailOutput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput).
     pub fn builder() -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailOutputBuilder {
@@ -69,8 +69,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     }
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -83,8 +82,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     }
     /// Specifies the media type of the thumbnail.
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// Specifies the media type of the thumbnail.
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
@@ -97,8 +95,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     }
     /// The length of the content.
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.content_length = input;
-        self
+        self.content_length = input; self
     }
     /// The length of the content.
     pub fn get_content_length(&self) -> &::std::option::Option<i64> {
@@ -111,8 +108,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     }
     /// The unique, cacheable version of this thumbnail.
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// The unique, cacheable version of this thumbnail.
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,31 +121,37 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
     }
     /// The date and time the thumbnail was last updated at the device.
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// The date and time the thumbnail was last updated at the device.
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInputDeviceThumbnailOutput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput).
     pub fn build(self) -> crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput {
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput {
-            body: self.body.unwrap_or_default(),
-            content_type: self.content_type,
-            content_length: self.content_length,
-            e_tag: self.e_tag,
-            last_modified: self.last_modified,
+            body: self.body
+                .unwrap_or_default()
+            ,
+            content_type: self.content_type
+            ,
+            content_length: self.content_length
+            ,
+            e_tag: self.e_tag
+            ,
+            last_modified: self.last_modified
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

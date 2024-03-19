@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourceSetInput {
+pub struct PutResourceSetInput  {
     /// <p>Details about the resource set to be created or updated.&gt;</p>
     pub resource_set: ::std::option::Option<crate::types::ResourceSet>,
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutResourceSetInput {
+impl  PutResourceSetInput  {
     /// <p>Details about the resource set to be created or updated.&gt;</p>
-    pub fn resource_set(&self) -> ::std::option::Option<&crate::types::ResourceSet> {
+    pub fn resource_set(&self) -> ::std::option::Option<& crate::types::ResourceSet> {
         self.resource_set.as_ref()
     }
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutResourceSetInput {
@@ -32,7 +33,7 @@ impl PutResourceSetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourceSetInputBuilder {
     pub(crate) resource_set: ::std::option::Option<crate::types::ResourceSet>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutResourceSetInputBuilder {
     /// <p>Details about the resource set to be created or updated.&gt;</p>
@@ -43,8 +44,7 @@ impl PutResourceSetInputBuilder {
     }
     /// <p>Details about the resource set to be created or updated.&gt;</p>
     pub fn set_resource_set(mut self, input: ::std::option::Option<crate::types::ResourceSet>) -> Self {
-        self.resource_set = input;
-        self
+        self.resource_set = input; self
     }
     /// <p>Details about the resource set to be created or updated.&gt;</p>
     pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
@@ -57,26 +57,28 @@ impl PutResourceSetInputBuilder {
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutResourceSetInput`](crate::operation::put_resource_set::PutResourceSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_set::PutResourceSetInput {
-            resource_set: self.resource_set,
-            tag_list: self.tag_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_set::PutResourceSetInput {
+                resource_set: self.resource_set
+                ,
+                tag_list: self.tag_list
+                ,
+            }
+        )
     }
 }
+

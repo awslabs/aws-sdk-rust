@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverPrimaryComputeInput {
+pub struct FailoverPrimaryComputeInput  {
     /// <p>The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl FailoverPrimaryComputeInput {
+impl  FailoverPrimaryComputeInput  {
     /// <p>The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl FailoverPrimaryComputeInputBuilder {
     }
     /// <p>The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`FailoverPrimaryComputeInput`](crate::operation::failover_primary_compute::FailoverPrimaryComputeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::failover_primary_compute::FailoverPrimaryComputeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::failover_primary_compute::FailoverPrimaryComputeInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::failover_primary_compute::FailoverPrimaryComputeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::failover_primary_compute::FailoverPrimaryComputeInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

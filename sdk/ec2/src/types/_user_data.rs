@@ -3,17 +3,17 @@
 /// <p>Describes the user data for an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserData {
+pub struct UserData  {
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
-impl UserData {
+impl  UserData  {
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
-impl ::std::fmt::Debug for UserData {
+impl  ::std::fmt::Debug for UserData  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserData");
         formatter.field("data", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl UserDataBuilder {
     }
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl UserDataBuilder {
     }
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {
-        crate::types::UserData { data: self.data }
+        crate::types::UserData {
+            data: self.data
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for UserDataBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for UserDataBuilder {
         formatter.finish()
     }
 }
+

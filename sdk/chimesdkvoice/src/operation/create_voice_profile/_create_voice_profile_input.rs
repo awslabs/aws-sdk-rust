@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVoiceProfileInput {
+pub struct CreateVoiceProfileInput  {
     /// <p>The ID of the speaker search task.</p>
     pub speaker_search_task_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateVoiceProfileInput {
+impl  CreateVoiceProfileInput  {
     /// <p>The ID of the speaker search task.</p>
-    pub fn speaker_search_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn speaker_search_task_id(&self) -> ::std::option::Option<& str> {
         self.speaker_search_task_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl CreateVoiceProfileInputBuilder {
     }
     /// <p>The ID of the speaker search task.</p>
     pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.speaker_search_task_id = input;
-        self
+        self.speaker_search_task_id = input; self
     }
     /// <p>The ID of the speaker search task.</p>
     pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.speaker_search_task_id
     }
     /// Consumes the builder and constructs a [`CreateVoiceProfileInput`](crate::operation::create_voice_profile::CreateVoiceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_voice_profile::CreateVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_voice_profile::CreateVoiceProfileInput {
-            speaker_search_task_id: self.speaker_search_task_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_voice_profile::CreateVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_voice_profile::CreateVoiceProfileInput {
+                speaker_search_task_id: self.speaker_search_task_id
+                ,
+            }
+        )
     }
 }
+

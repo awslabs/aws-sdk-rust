@@ -3,20 +3,19 @@
 /// <p>Information about a name/value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NameValuePair {
+pub struct NameValuePair  {
     /// <p>The name of the pair.</p>
     pub name: ::std::string::String,
     /// <p>The value of the pair.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl NameValuePair {
+impl  NameValuePair  {
     /// <p>The name of the pair.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the pair.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl NameValuePairBuilder {
     }
     /// <p>The name of the pair.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the pair.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl NameValuePairBuilder {
     }
     /// <p>The value of the pair.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the pair.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl NameValuePairBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::NameValuePairBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::NameValuePair, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NameValuePair {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building NameValuePair",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NameValuePair {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building NameValuePair")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

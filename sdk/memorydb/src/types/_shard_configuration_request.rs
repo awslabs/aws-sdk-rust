@@ -3,11 +3,11 @@
 /// <p>A request to configure the sharding properties of a cluster</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShardConfigurationRequest {
+pub struct ShardConfigurationRequest  {
     /// <p>The number of shards in the cluster</p>
     pub shard_count: i32,
 }
-impl ShardConfigurationRequest {
+impl  ShardConfigurationRequest  {
     /// <p>The number of shards in the cluster</p>
     pub fn shard_count(&self) -> i32 {
         self.shard_count
@@ -34,8 +34,7 @@ impl ShardConfigurationRequestBuilder {
     }
     /// <p>The number of shards in the cluster</p>
     pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_count = input;
-        self
+        self.shard_count = input; self
     }
     /// <p>The number of shards in the cluster</p>
     pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,10 @@ impl ShardConfigurationRequestBuilder {
     /// Consumes the builder and constructs a [`ShardConfigurationRequest`](crate::types::ShardConfigurationRequest).
     pub fn build(self) -> crate::types::ShardConfigurationRequest {
         crate::types::ShardConfigurationRequest {
-            shard_count: self.shard_count.unwrap_or_default(),
+            shard_count: self.shard_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,51 +3,53 @@
 /// <p>Describes the properties of the specified workflow</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribedWorkflow {
+pub struct DescribedWorkflow  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub arn: ::std::string::String,
     /// <p>Specifies the text description for the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub on_exception_steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DescribedWorkflow {
+impl  DescribedWorkflow  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Specifies the text description for the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
-    pub fn steps(&self) -> &[crate::types::WorkflowStep] {
-        self.steps.as_deref().unwrap_or_default()
+    pub fn steps(&self) -> & [crate::types::WorkflowStep] {
+        self.steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_exception_steps.is_none()`.
-    pub fn on_exception_steps(&self) -> &[crate::types::WorkflowStep] {
-        self.on_exception_steps.as_deref().unwrap_or_default()
+    pub fn on_exception_steps(&self) -> & [crate::types::WorkflowStep] {
+        self.on_exception_steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribedWorkflow {
@@ -63,10 +65,10 @@ impl DescribedWorkflow {
 pub struct DescribedWorkflowBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
+    pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DescribedWorkflowBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
@@ -77,8 +79,7 @@ impl DescribedWorkflowBuilder {
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +92,7 @@ impl DescribedWorkflowBuilder {
     }
     /// <p>Specifies the text description for the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies the text description for the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,17 +105,16 @@ impl DescribedWorkflowBuilder {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     pub fn steps(mut self, input: crate::types::WorkflowStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>) -> Self {
+        self.steps = input; self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>> {
         &self.steps
     }
     /// Appends an item to `on_exception_steps`.
@@ -125,17 +124,16 @@ impl DescribedWorkflowBuilder {
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
     pub fn on_exception_steps(mut self, input: crate::types::WorkflowStep) -> Self {
         let mut v = self.on_exception_steps.unwrap_or_default();
-        v.push(input);
-        self.on_exception_steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.on_exception_steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
-        self.on_exception_steps = input;
-        self
+    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>>) -> Self {
+        self.on_exception_steps = input; self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStep>> {
         &self.on_exception_steps
     }
     /// <p>A unique identifier for the workflow.</p>
@@ -145,8 +143,7 @@ impl DescribedWorkflowBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,35 +156,41 @@ impl DescribedWorkflowBuilder {
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedWorkflow`](crate::types::DescribedWorkflow).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedWorkflowBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DescribedWorkflow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DescribedWorkflow {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribedWorkflow",
-                )
-            })?,
-            description: self.description,
-            steps: self.steps,
-            on_exception_steps: self.on_exception_steps,
-            workflow_id: self.workflow_id,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DescribedWorkflow {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribedWorkflow")
+                    )?
+                ,
+                description: self.description
+                ,
+                steps: self.steps
+                ,
+                on_exception_steps: self.on_exception_steps
+                ,
+                workflow_id: self.workflow_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHyperParameterTuningJobsInput {
+pub struct ListHyperParameterTuningJobsInput  {
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
@@ -24,9 +24,9 @@ pub struct ListHyperParameterTuningJobsInput {
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
     pub status_equals: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
 }
-impl ListHyperParameterTuningJobsInput {
+impl  ListHyperParameterTuningJobsInput  {
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
@@ -34,35 +34,35 @@ impl ListHyperParameterTuningJobsInput {
         self.max_results
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobSortByOptions> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::HyperParameterTuningJobSortByOptions> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
-    pub fn last_modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
-    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::HyperParameterTuningJobStatus> {
         self.status_equals.as_ref()
     }
 }
@@ -96,8 +96,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -124,8 +122,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobSortByOptions>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobSortByOptions> {
@@ -138,8 +135,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -152,8 +148,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,8 +174,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +187,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
     pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_after = input;
-        self
+        self.last_modified_time_after = input; self
     }
     /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
     pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +200,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
     pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_before = input;
-        self
+        self.last_modified_time_before = input; self
     }
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,31 +213,38 @@ impl ListHyperParameterTuningJobsInputBuilder {
     }
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
         &self.status_equals
     }
     /// Consumes the builder and constructs a [`ListHyperParameterTuningJobsInput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            name_contains: self.name_contains,
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            last_modified_time_after: self.last_modified_time_after,
-            last_modified_time_before: self.last_modified_time_before,
-            status_equals: self.status_equals,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                name_contains: self.name_contains
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                status_equals: self.status_equals
+                ,
+            }
+        )
     }
 }
+

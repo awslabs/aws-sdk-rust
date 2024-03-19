@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableBaselineOutput {
+pub struct EnableBaselineOutput  {
     /// <p>The ID (in UUID format) of the asynchronous <code>EnableBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
     pub operation_identifier: ::std::string::String,
     /// <p>The ARN of the <code>EnabledBaseline</code> resource.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl EnableBaselineOutput {
+impl  EnableBaselineOutput  {
     /// <p>The ID (in UUID format) of the asynchronous <code>EnableBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
-    pub fn operation_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_identifier.deref()
+    pub fn operation_identifier(&self) -> & str {
+        use std::ops::Deref; self.operation_identifier.deref()
     }
     /// <p>The ARN of the <code>EnabledBaseline</code> resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableBaselineOutput {
     /// Creates a new builder-style object to manufacture [`EnableBaselineOutput`](crate::operation::enable_baseline::EnableBaselineOutput).
     pub fn builder() -> crate::operation::enable_baseline::builders::EnableBaselineOutputBuilder {
@@ -50,8 +48,7 @@ impl EnableBaselineOutputBuilder {
     }
     /// <p>The ID (in UUID format) of the asynchronous <code>EnableBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>The ID (in UUID format) of the asynchronous <code>EnableBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,43 +62,41 @@ impl EnableBaselineOutputBuilder {
     }
     /// <p>The ARN of the <code>EnabledBaseline</code> resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the <code>EnabledBaseline</code> resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableBaselineOutput`](crate::operation::enable_baseline::EnableBaselineOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`operation_identifier`](crate::operation::enable_baseline::builders::EnableBaselineOutputBuilder::operation_identifier)
     /// - [`arn`](crate::operation::enable_baseline::builders::EnableBaselineOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_baseline::EnableBaselineOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_baseline::EnableBaselineOutput {
-            operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_identifier",
-                    "operation_identifier was not specified but it is required when building EnableBaselineOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building EnableBaselineOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_baseline::EnableBaselineOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_baseline::EnableBaselineOutput {
+                operation_identifier: self.operation_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_identifier", "operation_identifier was not specified but it is required when building EnableBaselineOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building EnableBaselineOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelManifestNodes`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::set_name):<br>required: **true**<br><p>The name of the vehicle model to list information about.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next set of results.</p> <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return, between 1 and 100, inclusive.</p><br>
-    /// - On success, responds with [`ListModelManifestNodesOutput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput) with field(s):
+                            /// - On success, responds with [`ListModelManifestNodesOutput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput) with field(s):
     ///   - [`nodes(Option<Vec::<Node>>)`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput::nodes): <p>A list of information about nodes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListModelManifestNodesError>`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesError)
+                            /// - On failure, responds with [`SdkError<ListModelManifestNodesError>`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesError)
     pub fn list_model_manifest_nodes(&self) -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder {
-        crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

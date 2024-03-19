@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHumanTaskUiOutput {
+pub struct DescribeHumanTaskUiOutput  {
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the human task user interface (worker task template).</p>
@@ -15,33 +15,33 @@ pub struct DescribeHumanTaskUiOutput {
     pub ui_template: ::std::option::Option<crate::types::UiTemplateInfo>,
     _request_id: Option<String>,
 }
-impl DescribeHumanTaskUiOutput {
+impl  DescribeHumanTaskUiOutput  {
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
-    pub fn human_task_ui_arn(&self) -> ::std::option::Option<&str> {
+    pub fn human_task_ui_arn(&self) -> ::std::option::Option<& str> {
         self.human_task_ui_arn.as_deref()
     }
     /// <p>The name of the human task user interface (worker task template).</p>
-    pub fn human_task_ui_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_task_ui_name(&self) -> ::std::option::Option<& str> {
         self.human_task_ui_name.as_deref()
     }
     /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
-    pub fn human_task_ui_status(&self) -> ::std::option::Option<&crate::types::HumanTaskUiStatus> {
+    pub fn human_task_ui_status(&self) -> ::std::option::Option<& crate::types::HumanTaskUiStatus> {
         self.human_task_ui_status.as_ref()
     }
     /// <p>The timestamp when the human task user interface was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Container for user interface template information.</p>
-    pub fn ui_template(&self) -> ::std::option::Option<&crate::types::UiTemplateInfo> {
+    pub fn ui_template(&self) -> ::std::option::Option<& crate::types::UiTemplateInfo> {
         self.ui_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeHumanTaskUiOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeHumanTaskUiOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanTaskUiOutput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput).
     pub fn builder() -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiOutputBuilder {
@@ -69,8 +69,7 @@ impl DescribeHumanTaskUiOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
     pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_task_ui_arn = input;
-        self
+        self.human_task_ui_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
     pub fn get_human_task_ui_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl DescribeHumanTaskUiOutputBuilder {
     }
     /// <p>The name of the human task user interface (worker task template).</p>
     pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_task_ui_name = input;
-        self
+        self.human_task_ui_name = input; self
     }
     /// <p>The name of the human task user interface (worker task template).</p>
     pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl DescribeHumanTaskUiOutputBuilder {
     }
     /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
     pub fn set_human_task_ui_status(mut self, input: ::std::option::Option<crate::types::HumanTaskUiStatus>) -> Self {
-        self.human_task_ui_status = input;
-        self
+        self.human_task_ui_status = input; self
     }
     /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
     pub fn get_human_task_ui_status(&self) -> &::std::option::Option<crate::types::HumanTaskUiStatus> {
@@ -113,8 +110,7 @@ impl DescribeHumanTaskUiOutputBuilder {
     }
     /// <p>The timestamp when the human task user interface was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when the human task user interface was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,31 +124,36 @@ impl DescribeHumanTaskUiOutputBuilder {
     }
     /// <p>Container for user interface template information.</p>
     pub fn set_ui_template(mut self, input: ::std::option::Option<crate::types::UiTemplateInfo>) -> Self {
-        self.ui_template = input;
-        self
+        self.ui_template = input; self
     }
     /// <p>Container for user interface template information.</p>
     pub fn get_ui_template(&self) -> &::std::option::Option<crate::types::UiTemplateInfo> {
         &self.ui_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeHumanTaskUiOutput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput).
     pub fn build(self) -> crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput {
         crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput {
-            human_task_ui_arn: self.human_task_ui_arn,
-            human_task_ui_name: self.human_task_ui_name,
-            human_task_ui_status: self.human_task_ui_status,
-            creation_time: self.creation_time,
-            ui_template: self.ui_template,
+            human_task_ui_arn: self.human_task_ui_arn
+            ,
+            human_task_ui_name: self.human_task_ui_name
+            ,
+            human_task_ui_status: self.human_task_ui_status
+            ,
+            creation_time: self.creation_time
+            ,
+            ui_template: self.ui_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

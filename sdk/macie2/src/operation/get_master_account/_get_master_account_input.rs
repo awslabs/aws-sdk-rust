@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMasterAccountInput {}
+pub struct GetMasterAccountInput  {
+}
 impl GetMasterAccountInput {
     /// Creates a new builder-style object to manufacture [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
     pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountInputBuilder {
@@ -13,12 +14,15 @@ impl GetMasterAccountInput {
 /// A builder for [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetMasterAccountInputBuilder {}
+pub struct GetMasterAccountInputBuilder {
+}
 impl GetMasterAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_master_account::GetMasterAccountInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_master_account::GetMasterAccountInput {
+            }
+        )
     }
 }
+

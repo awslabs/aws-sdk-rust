@@ -3,7 +3,7 @@
 /// <p>Criteria used to return data quality results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityResultFilterCriteria {
+pub struct DataQualityResultFilterCriteria  {
     /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Filter results by the specified job name.</p>
@@ -15,25 +15,25 @@ pub struct DataQualityResultFilterCriteria {
     /// <p>Filter results by runs that started before this time.</p>
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DataQualityResultFilterCriteria {
+impl  DataQualityResultFilterCriteria  {
     /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>Filter results by the specified job name.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>Filter results by the specified job run ID.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
     /// <p>Filter results by runs that started after this time.</p>
-    pub fn started_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_after.as_ref()
     }
     /// <p>Filter results by runs that started before this time.</p>
-    pub fn started_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_before.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl DataQualityResultFilterCriteriaBuilder {
     }
     /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>Filter results by the specified data source. For example, retrieving all results for an Glue table.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -76,8 +75,7 @@ impl DataQualityResultFilterCriteriaBuilder {
     }
     /// <p>Filter results by the specified job name.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>Filter results by the specified job name.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DataQualityResultFilterCriteriaBuilder {
     }
     /// <p>Filter results by the specified job run ID.</p>
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_run_id = input;
-        self
+        self.job_run_id = input; self
     }
     /// <p>Filter results by the specified job run ID.</p>
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DataQualityResultFilterCriteriaBuilder {
     }
     /// <p>Filter results by runs that started after this time.</p>
     pub fn set_started_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_after = input;
-        self
+        self.started_after = input; self
     }
     /// <p>Filter results by runs that started after this time.</p>
     pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl DataQualityResultFilterCriteriaBuilder {
     }
     /// <p>Filter results by runs that started before this time.</p>
     pub fn set_started_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_before = input;
-        self
+        self.started_before = input; self
     }
     /// <p>Filter results by runs that started before this time.</p>
     pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl DataQualityResultFilterCriteriaBuilder {
     /// Consumes the builder and constructs a [`DataQualityResultFilterCriteria`](crate::types::DataQualityResultFilterCriteria).
     pub fn build(self) -> crate::types::DataQualityResultFilterCriteria {
         crate::types::DataQualityResultFilterCriteria {
-            data_source: self.data_source,
-            job_name: self.job_name,
-            job_run_id: self.job_run_id,
-            started_after: self.started_after,
-            started_before: self.started_before,
+            data_source: self.data_source
+            ,
+            job_name: self.job_name
+            ,
+            job_run_id: self.job_run_id
+            ,
+            started_after: self.started_after
+            ,
+            started_before: self.started_before
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The optional configuration of subtotals cells.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableFieldSubtotalOptions {
+pub struct PivotTableFieldSubtotalOptions  {
     /// <p>The field ID of the subtotal options.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
 }
-impl PivotTableFieldSubtotalOptions {
+impl  PivotTableFieldSubtotalOptions  {
     /// <p>The field ID of the subtotal options.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PivotTableFieldSubtotalOptionsBuilder {
     }
     /// <p>The field ID of the subtotal options.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the subtotal options.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl PivotTableFieldSubtotalOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`PivotTableFieldSubtotalOptions`](crate::types::PivotTableFieldSubtotalOptions).
     pub fn build(self) -> crate::types::PivotTableFieldSubtotalOptions {
-        crate::types::PivotTableFieldSubtotalOptions { field_id: self.field_id }
+        crate::types::PivotTableFieldSubtotalOptions {
+            field_id: self.field_id
+            ,
+        }
     }
 }
+

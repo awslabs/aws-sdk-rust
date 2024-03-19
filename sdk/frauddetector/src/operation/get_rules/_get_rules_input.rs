@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRulesInput {
+pub struct GetRulesInput  {
     /// <p>The rule ID.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector ID.</p>
@@ -14,21 +14,21 @@ pub struct GetRulesInput {
     /// <p>The maximum number of rules to return for the request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetRulesInput {
+impl  GetRulesInput  {
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(&self) -> ::std::option::Option<&str> {
+    pub fn rule_version(&self) -> ::std::option::Option<& str> {
         self.rule_version.as_deref()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of rules to return for the request.</p>
@@ -61,8 +61,7 @@ impl GetRulesInputBuilder {
     }
     /// <p>The rule ID.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The rule ID.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetRulesInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl GetRulesInputBuilder {
     }
     /// <p>The rule version.</p>
     pub fn set_rule_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_version = input;
-        self
+        self.rule_version = input; self
     }
     /// <p>The rule version.</p>
     pub fn get_rule_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl GetRulesInputBuilder {
     }
     /// <p>The next page token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next page token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl GetRulesInputBuilder {
     }
     /// <p>The maximum number of rules to return for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of rules to return for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -127,12 +122,20 @@ impl GetRulesInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRulesInput`](crate::operation::get_rules::GetRulesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_rules::GetRulesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_rules::GetRulesInput {
-            rule_id: self.rule_id,
-            detector_id: self.detector_id,
-            rule_version: self.rule_version,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_rules::GetRulesInput {
+                rule_id: self.rule_id
+                ,
+                detector_id: self.detector_id
+                ,
+                rule_version: self.rule_version
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

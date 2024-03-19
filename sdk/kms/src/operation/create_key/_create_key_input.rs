@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyInput {
+pub struct CreateKeyInput  {
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
@@ -120,7 +120,7 @@ pub struct CreateKeyInput {
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
     /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key, omit this parameter or set it to <code>False</code>. The default value is <code>False</code>.</p>
     /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -133,7 +133,7 @@ pub struct CreateKeyInput {
     /// <p>Each KMS key in an external key store is associated two backing keys. One is key material that KMS generates. The other is the external key specified by this parameter. When you use the KMS key in an external key store to encrypt data, the encryption operation is performed first by KMS using the KMS key material, and then by the external key manager using the specified external key, a process known as <i>double encryption</i>. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-double-encryption">Double encryption</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub xks_key_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateKeyInput {
+impl  CreateKeyInput  {
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
@@ -145,14 +145,14 @@ impl CreateKeyInput {
     /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a symmetric encryption KMS key; otherwise, it is required. You can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
@@ -169,13 +169,13 @@ impl CreateKeyInput {
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// </ul>
-    pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsageType> {
+    pub fn key_usage(&self) -> ::std::option::Option<& crate::types::KeyUsageType> {
         self.key_usage.as_ref()
     }
     /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS supports both parameters.</p>
     #[deprecated(note = "This parameter has been deprecated. Instead, use the KeySpec parameter.")]
-    pub fn customer_master_key_spec(&self) -> ::std::option::Option<&crate::types::CustomerMasterKeySpec> {
+    pub fn customer_master_key_spec(&self) -> ::std::option::Option<& crate::types::CustomerMasterKeySpec> {
         self.customer_master_key_spec.as_ref()
     }
     /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
@@ -235,20 +235,20 @@ impl CreateKeyInput {
     /// <p><code>SM2</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn key_spec(&self) -> ::std::option::Option<&crate::types::KeySpec> {
+    pub fn key_spec(&self) -> ::std::option::Option<& crate::types::KeySpec> {
         self.key_spec.as_ref()
     }
     /// <p>The source of the key material for the KMS key. You cannot change the origin after you create the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the key material.</p>
     /// <p>To <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-create-cmk.html">create a KMS key with no key material</a> (for imported key material), set this value to <code>EXTERNAL</code>. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i>Key Management Service Developer Guide</i>. The <code>EXTERNAL</code> origin value is valid only for symmetric KMS keys.</p>
     /// <p>To <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-cmk-keystore.html">create a KMS key in an CloudHSM key store</a> and create its key material in the associated CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the CloudHSM key store. The <code>KeySpec</code> value must be <code>SYMMETRIC_DEFAULT</code>.</p>
     /// <p>To <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-xks-keys.html">create a KMS key in an external key store</a>, set this value to <code>EXTERNAL_KEY_STORE</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the external key store and the <code>XksKeyId</code> parameter to identify the associated external key. The <code>KeySpec</code> value must be <code>SYMMETRIC_DEFAULT</code>.</p>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::OriginType> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::OriginType> {
         self.origin.as_ref()
     }
     /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. The <code>ConnectionState</code> of the custom key store must be <code>CONNECTED</code>. To find the CustomKeyStoreID and ConnectionState use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
     /// <p>When you create a KMS key in an CloudHSM key store, KMS generates a non-exportable 256-bit symmetric key in its associated CloudHSM cluster and associates it with the KMS key. When you create a KMS key in an external key store, you must use the <code>XksKeyId</code> parameter to specify an external key that serves as key material for the KMS key.</p>
-    pub fn custom_key_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn custom_key_store_id(&self) -> ::std::option::Option<& str> {
         self.custom_key_store_id.as_deref()
     }
     /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
@@ -267,10 +267,11 @@ impl CreateKeyInput {
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
     /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key, omit this parameter or set it to <code>False</code>. The default value is <code>False</code>.</p>
@@ -284,7 +285,7 @@ impl CreateKeyInput {
     /// <p>This parameter is required for a KMS key with an <code>Origin</code> value of <code>EXTERNAL_KEY_STORE</code>. It is not valid for KMS keys with any other <code>Origin</code> value.</p>
     /// <p>The external key must be an existing 256-bit AES symmetric encryption key hosted outside of Amazon Web Services in an external key manager associated with the external key store specified by the <code>CustomKeyStoreId</code> parameter. This key must be enabled and configured to perform encryption and decryption. Each KMS key in an external key store must use a different external key. For details, see <a href="https://docs.aws.amazon.com/create-xks-keys.html#xks-key-requirements">Requirements for a KMS key in an external key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Each KMS key in an external key store is associated two backing keys. One is key material that KMS generates. The other is the external key specified by this parameter. When you use the KMS key in an external key store to encrypt data, the encryption operation is performed first by KMS using the KMS key material, and then by the external key manager using the specified external key, a process known as <i>double encryption</i>. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-double-encryption">Double encryption</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn xks_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn xks_key_id(&self) -> ::std::option::Option<& str> {
         self.xks_key_id.as_deref()
     }
 }
@@ -307,7 +308,7 @@ pub struct CreateKeyInputBuilder {
     pub(crate) origin: ::std::option::Option<crate::types::OriginType>,
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
     pub(crate) xks_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -339,8 +340,7 @@ impl CreateKeyInputBuilder {
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
@@ -369,8 +369,7 @@ impl CreateKeyInputBuilder {
     /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -412,8 +411,7 @@ impl CreateKeyInputBuilder {
     /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// </ul>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
-        self.key_usage = input;
-        self
+        self.key_usage = input; self
     }
     /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a symmetric encryption KMS key; otherwise, it is required. You can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
     /// <p>Select only one valid value.</p>
@@ -443,8 +441,7 @@ impl CreateKeyInputBuilder {
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS supports both parameters.</p>
     #[deprecated(note = "This parameter has been deprecated. Instead, use the KeySpec parameter.")]
     pub fn set_customer_master_key_spec(mut self, input: ::std::option::Option<crate::types::CustomerMasterKeySpec>) -> Self {
-        self.customer_master_key_spec = input;
-        self
+        self.customer_master_key_spec = input; self
     }
     /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS supports both parameters.</p>
@@ -571,8 +568,7 @@ impl CreateKeyInputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_key_spec(mut self, input: ::std::option::Option<crate::types::KeySpec>) -> Self {
-        self.key_spec = input;
-        self
+        self.key_spec = input; self
     }
     /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p><important>
@@ -647,8 +643,7 @@ impl CreateKeyInputBuilder {
     /// <p>To <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-cmk-keystore.html">create a KMS key in an CloudHSM key store</a> and create its key material in the associated CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the CloudHSM key store. The <code>KeySpec</code> value must be <code>SYMMETRIC_DEFAULT</code>.</p>
     /// <p>To <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-xks-keys.html">create a KMS key in an external key store</a>, set this value to <code>EXTERNAL_KEY_STORE</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the external key store and the <code>XksKeyId</code> parameter to identify the associated external key. The <code>KeySpec</code> value must be <code>SYMMETRIC_DEFAULT</code>.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::OriginType>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>The source of the key material for the KMS key. You cannot change the origin after you create the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the key material.</p>
     /// <p>To <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-create-cmk.html">create a KMS key with no key material</a> (for imported key material), set this value to <code>EXTERNAL</code>. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i>Key Management Service Developer Guide</i>. The <code>EXTERNAL</code> origin value is valid only for symmetric KMS keys.</p>
@@ -668,8 +663,7 @@ impl CreateKeyInputBuilder {
     /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
     /// <p>When you create a KMS key in an CloudHSM key store, KMS generates a non-exportable 256-bit symmetric key in its associated CloudHSM cluster and associates it with the KMS key. When you create a KMS key in an external key store, you must use the <code>XksKeyId</code> parameter to specify an external key that serves as key material for the KMS key.</p>
     pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_key_store_id = input;
-        self
+        self.custom_key_store_id = input; self
     }
     /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. The <code>ConnectionState</code> of the custom key store must be <code>CONNECTED</code>. To find the CustomKeyStoreID and ConnectionState use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
@@ -692,8 +686,7 @@ impl CreateKeyInputBuilder {
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
     pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bypass_policy_lockout_safety_check = input;
-        self
+        self.bypass_policy_lockout_safety_check = input; self
     }
     /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
@@ -717,9 +710,9 @@ impl CreateKeyInputBuilder {
     /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -729,9 +722,8 @@ impl CreateKeyInputBuilder {
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -741,7 +733,7 @@ impl CreateKeyInputBuilder {
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
@@ -759,8 +751,7 @@ impl CreateKeyInputBuilder {
     /// <p>This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the <code>ReplicateKey</code> operation.</p>
     /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a multi-Region key with imported key material. However, you cannot create a multi-Region key in a custom key store.</p>
     pub fn set_multi_region(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_region = input;
-        self
+        self.multi_region = input; self
     }
     /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You cannot change this value after you create the KMS key.</p>
     /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key, omit this parameter or set it to <code>False</code>. The default value is <code>False</code>.</p>
@@ -783,8 +774,7 @@ impl CreateKeyInputBuilder {
     /// <p>The external key must be an existing 256-bit AES symmetric encryption key hosted outside of Amazon Web Services in an external key manager associated with the external key store specified by the <code>CustomKeyStoreId</code> parameter. This key must be enabled and configured to perform encryption and decryption. Each KMS key in an external key store must use a different external key. For details, see <a href="https://docs.aws.amazon.com/create-xks-keys.html#xks-key-requirements">Requirements for a KMS key in an external key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Each KMS key in an external key store is associated two backing keys. One is key material that KMS generates. The other is the external key specified by this parameter. When you use the KMS key in an external key store to encrypt data, the encryption operation is performed first by KMS using the KMS key material, and then by the external key manager using the specified external key, a process known as <i>double encryption</i>. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-double-encryption">Double encryption</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_xks_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xks_key_id = input;
-        self
+        self.xks_key_id = input; self
     }
     /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key</a> that serves as key material for the KMS key in an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key store</a>. Specify the ID that the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-xks-proxy">external key store proxy</a> uses to refer to the external key. For help, see the documentation for your external key store proxy.</p>
     /// <p>This parameter is required for a KMS key with an <code>Origin</code> value of <code>EXTERNAL_KEY_STORE</code>. It is not valid for KMS keys with any other <code>Origin</code> value.</p>
@@ -795,18 +785,32 @@ impl CreateKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
-            policy: self.policy,
-            description: self.description,
-            key_usage: self.key_usage,
-            customer_master_key_spec: self.customer_master_key_spec,
-            key_spec: self.key_spec,
-            origin: self.origin,
-            custom_key_store_id: self.custom_key_store_id,
-            bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
-            tags: self.tags,
-            multi_region: self.multi_region,
-            xks_key_id: self.xks_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_key::CreateKeyInput {
+                policy: self.policy
+                ,
+                description: self.description
+                ,
+                key_usage: self.key_usage
+                ,
+                customer_master_key_spec: self.customer_master_key_spec
+                ,
+                key_spec: self.key_spec
+                ,
+                origin: self.origin
+                ,
+                custom_key_store_id: self.custom_key_store_id
+                ,
+                bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check
+                ,
+                tags: self.tags
+                ,
+                multi_region: self.multi_region
+                ,
+                xks_key_id: self.xks_key_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetByteMatchSetInput {
+pub struct GetByteMatchSetInput  {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: ::std::option::Option<::std::string::String>,
 }
-impl GetByteMatchSetInput {
+impl  GetByteMatchSetInput  {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn byte_match_set_id(&self) -> ::std::option::Option<& str> {
         self.byte_match_set_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetByteMatchSetInputBuilder {
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.byte_match_set_id = input;
-        self
+        self.byte_match_set_id = input; self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn get_byte_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.byte_match_set_id
     }
     /// Consumes the builder and constructs a [`GetByteMatchSetInput`](crate::operation::get_byte_match_set::GetByteMatchSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_byte_match_set::GetByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_byte_match_set::GetByteMatchSetInput {
-            byte_match_set_id: self.byte_match_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_byte_match_set::GetByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_byte_match_set::GetByteMatchSetInput {
+                byte_match_set_id: self.byte_match_set_id
+                ,
+            }
+        )
     }
 }
+

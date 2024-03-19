@@ -3,7 +3,7 @@
 /// <p>Provides information about a custom data identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCustomDataIdentifierSummary {
+pub struct BatchGetCustomDataIdentifierSummary  {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
@@ -17,13 +17,13 @@ pub struct BatchGetCustomDataIdentifierSummary {
     /// <p>The custom name of the custom data identifier.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetCustomDataIdentifierSummary {
+impl  BatchGetCustomDataIdentifierSummary  {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
@@ -31,15 +31,15 @@ impl BatchGetCustomDataIdentifierSummary {
         self.deleted
     }
     /// <p>The custom description of the custom data identifier.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the custom data identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The custom name of the custom data identifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +95,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deleted = input;
-        self
+        self.deleted = input; self
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub fn get_deleted(&self) -> &::std::option::Option<bool> {
@@ -111,8 +108,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     }
     /// <p>The custom description of the custom data identifier.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The custom description of the custom data identifier.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     }
     /// <p>The unique identifier for the custom data identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the custom data identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     }
     /// <p>The custom name of the custom data identifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The custom name of the custom data identifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
     /// Consumes the builder and constructs a [`BatchGetCustomDataIdentifierSummary`](crate::types::BatchGetCustomDataIdentifierSummary).
     pub fn build(self) -> crate::types::BatchGetCustomDataIdentifierSummary {
         crate::types::BatchGetCustomDataIdentifierSummary {
-            arn: self.arn,
-            created_at: self.created_at,
-            deleted: self.deleted,
-            description: self.description,
-            id: self.id,
-            name: self.name,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            deleted: self.deleted
+            ,
+            description: self.description
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

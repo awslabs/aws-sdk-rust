@@ -3,7 +3,7 @@
 /// <p>Dash manifest configuration parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DashPlaylistSettings {
+pub struct DashPlaylistSettings  {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub manifest_window_seconds: ::std::option::Option<i32>,
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
@@ -13,7 +13,7 @@ pub struct DashPlaylistSettings {
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub suggested_presentation_delay_seconds: ::std::option::Option<i32>,
 }
-impl DashPlaylistSettings {
+impl  DashPlaylistSettings  {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub fn manifest_window_seconds(&self) -> ::std::option::Option<i32> {
         self.manifest_window_seconds
@@ -55,8 +55,7 @@ impl DashPlaylistSettingsBuilder {
     }
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub fn set_manifest_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.manifest_window_seconds = input;
-        self
+        self.manifest_window_seconds = input; self
     }
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl DashPlaylistSettingsBuilder {
     }
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn set_min_buffer_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_buffer_time_seconds = input;
-        self
+        self.min_buffer_time_seconds = input; self
     }
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn get_min_buffer_time_seconds(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl DashPlaylistSettingsBuilder {
     }
     /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn set_min_update_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_update_period_seconds = input;
-        self
+        self.min_update_period_seconds = input; self
     }
     /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn get_min_update_period_seconds(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl DashPlaylistSettingsBuilder {
     }
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn set_suggested_presentation_delay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.suggested_presentation_delay_seconds = input;
-        self
+        self.suggested_presentation_delay_seconds = input; self
     }
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn get_suggested_presentation_delay_seconds(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl DashPlaylistSettingsBuilder {
     /// Consumes the builder and constructs a [`DashPlaylistSettings`](crate::types::DashPlaylistSettings).
     pub fn build(self) -> crate::types::DashPlaylistSettings {
         crate::types::DashPlaylistSettings {
-            manifest_window_seconds: self.manifest_window_seconds,
-            min_buffer_time_seconds: self.min_buffer_time_seconds,
-            min_update_period_seconds: self.min_update_period_seconds,
-            suggested_presentation_delay_seconds: self.suggested_presentation_delay_seconds,
+            manifest_window_seconds: self.manifest_window_seconds
+            ,
+            min_buffer_time_seconds: self.min_buffer_time_seconds
+            ,
+            min_update_period_seconds: self.min_update_period_seconds
+            ,
+            suggested_presentation_delay_seconds: self.suggested_presentation_delay_seconds
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The input fails to satisfy the specified constraints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     /// <p>The identifier for the error.</p>
     pub error_code: ::std::string::String,
     /// <p>Description of the error.</p>
@@ -11,36 +11,34 @@ pub struct ValidationException {
     /// <p>The reason the request failed validation.</p>
     pub reason: crate::types::ValidationExceptionReason,
     /// <p>The field that caused the error, if applicable.</p>
-    pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub field_list: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ValidationException {
+impl  ValidationException  {
     /// <p>The identifier for the error.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The reason the request failed validation.</p>
-    pub fn reason(&self) -> &crate::types::ValidationExceptionReason {
+    pub fn reason(&self) -> & crate::types::ValidationExceptionReason {
         &self.reason
     }
     /// <p>The field that caused the error, if applicable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_list.is_none()`.
-    pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
-        self.field_list.as_deref().unwrap_or_default()
+    pub fn field_list(&self) -> & [crate::types::ValidationExceptionField] {
+        self.field_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ValidationException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -54,9 +52,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ValidationExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::types::error::ValidationException).
@@ -72,7 +68,7 @@ pub struct ValidationExceptionBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    pub(crate) field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) field_list: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -84,8 +80,7 @@ impl ValidationExceptionBuilder {
     }
     /// <p>The identifier for the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The identifier for the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl ValidationExceptionBuilder {
     }
     /// <p>Description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl ValidationExceptionBuilder {
     }
     /// <p>The reason the request failed validation.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason the request failed validation.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
@@ -128,57 +121,57 @@ impl ValidationExceptionBuilder {
     /// <p>The field that caused the error, if applicable.</p>
     pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.field_list.unwrap_or_default();
-        v.push(input);
-        self.field_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field that caused the error, if applicable.</p>
-    pub fn set_field_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
-        self.field_list = input;
-        self
+    pub fn set_field_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>>) -> Self {
+        self.field_list = input; self
     }
     /// <p>The field that caused the error, if applicable.</p>
-    pub fn get_field_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+    pub fn get_field_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>> {
         &self.field_list
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::error::builders::ValidationExceptionBuilder::error_code)
     /// - [`message`](crate::types::error::builders::ValidationExceptionBuilder::message)
     /// - [`reason`](crate::types::error::builders::ValidationExceptionBuilder::reason)
     pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ValidationException {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building ValidationException",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ValidationException",
-                )
-            })?,
-            reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reason",
-                    "reason was not specified but it is required when building ValidationException",
-                )
-            })?,
-            field_list: self.field_list,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::ValidationException {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building ValidationException")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ValidationException")
+                    )?
+                ,
+                reason: self.reason
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reason", "reason was not specified but it is required when building ValidationException")
+                    )?
+                ,
+                field_list: self.field_list
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

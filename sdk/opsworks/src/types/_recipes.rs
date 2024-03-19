@@ -4,48 +4,53 @@
 /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recipes {
+pub struct Recipes  {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    pub setup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub setup: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    pub configure: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configure: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    pub deploy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub deploy: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    pub undeploy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub undeploy: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    pub shutdown: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub shutdown: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Recipes {
+impl  Recipes  {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.setup.is_none()`.
-    pub fn setup(&self) -> &[::std::string::String] {
-        self.setup.as_deref().unwrap_or_default()
+    pub fn setup(&self) -> & [::std::string::String] {
+        self.setup.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configure.is_none()`.
-    pub fn configure(&self) -> &[::std::string::String] {
-        self.configure.as_deref().unwrap_or_default()
+    pub fn configure(&self) -> & [::std::string::String] {
+        self.configure.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deploy.is_none()`.
-    pub fn deploy(&self) -> &[::std::string::String] {
-        self.deploy.as_deref().unwrap_or_default()
+    pub fn deploy(&self) -> & [::std::string::String] {
+        self.deploy.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.undeploy.is_none()`.
-    pub fn undeploy(&self) -> &[::std::string::String] {
-        self.undeploy.as_deref().unwrap_or_default()
+    pub fn undeploy(&self) -> & [::std::string::String] {
+        self.undeploy.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shutdown.is_none()`.
-    pub fn shutdown(&self) -> &[::std::string::String] {
-        self.shutdown.as_deref().unwrap_or_default()
+    pub fn shutdown(&self) -> & [::std::string::String] {
+        self.shutdown.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Recipes {
@@ -59,11 +64,11 @@ impl Recipes {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipesBuilder {
-    pub(crate) setup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) configure: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) deploy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) undeploy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) shutdown: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) setup: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) configure: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) deploy: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) undeploy: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) shutdown: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RecipesBuilder {
     /// Appends an item to `setup`.
@@ -73,17 +78,16 @@ impl RecipesBuilder {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
     pub fn setup(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.setup.unwrap_or_default();
-        v.push(input.into());
-        self.setup = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.setup = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    pub fn set_setup(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.setup = input;
-        self
+    pub fn set_setup(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.setup = input; self
     }
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    pub fn get_setup(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_setup(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.setup
     }
     /// Appends an item to `configure`.
@@ -93,17 +97,16 @@ impl RecipesBuilder {
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
     pub fn configure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configure.unwrap_or_default();
-        v.push(input.into());
-        self.configure = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configure = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    pub fn set_configure(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.configure = input;
-        self
+    pub fn set_configure(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.configure = input; self
     }
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    pub fn get_configure(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configure(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.configure
     }
     /// Appends an item to `deploy`.
@@ -113,17 +116,16 @@ impl RecipesBuilder {
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
     pub fn deploy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deploy.unwrap_or_default();
-        v.push(input.into());
-        self.deploy = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.deploy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    pub fn set_deploy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.deploy = input;
-        self
+    pub fn set_deploy(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.deploy = input; self
     }
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    pub fn get_deploy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deploy(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.deploy
     }
     /// Appends an item to `undeploy`.
@@ -133,17 +135,16 @@ impl RecipesBuilder {
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
     pub fn undeploy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.undeploy.unwrap_or_default();
-        v.push(input.into());
-        self.undeploy = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.undeploy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    pub fn set_undeploy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.undeploy = input;
-        self
+    pub fn set_undeploy(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.undeploy = input; self
     }
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    pub fn get_undeploy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_undeploy(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.undeploy
     }
     /// Appends an item to `shutdown`.
@@ -153,27 +154,32 @@ impl RecipesBuilder {
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
     pub fn shutdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shutdown.unwrap_or_default();
-        v.push(input.into());
-        self.shutdown = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.shutdown = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    pub fn set_shutdown(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.shutdown = input;
-        self
+    pub fn set_shutdown(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.shutdown = input; self
     }
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    pub fn get_shutdown(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shutdown(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.shutdown
     }
     /// Consumes the builder and constructs a [`Recipes`](crate::types::Recipes).
     pub fn build(self) -> crate::types::Recipes {
         crate::types::Recipes {
-            setup: self.setup,
-            configure: self.configure,
-            deploy: self.deploy,
-            undeploy: self.undeploy,
-            shutdown: self.shutdown,
+            setup: self.setup
+            ,
+            configure: self.configure
+            ,
+            deploy: self.deploy
+            ,
+            undeploy: self.undeploy
+            ,
+            shutdown: self.shutdown
+            ,
         }
     }
 }
+

@@ -3,29 +3,31 @@
 /// <p>The field options of a table visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableFieldOptions {
+pub struct TableFieldOptions  {
     /// <p>The field options to be configured to a table.</p>
-    pub selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>>,
+    pub selected_field_options: ::std::option::Option<::std::vec::Vec::<crate::types::TableFieldOption>>,
     /// <p>The order of the field IDs that are configured as field options for a table visual.</p>
-    pub order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub order: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The settings for the pinned columns of a table visual.</p>
     pub pinned_field_options: ::std::option::Option<crate::types::TablePinnedFieldOptions>,
 }
-impl TableFieldOptions {
+impl  TableFieldOptions  {
     /// <p>The field options to be configured to a table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_field_options.is_none()`.
-    pub fn selected_field_options(&self) -> &[crate::types::TableFieldOption] {
-        self.selected_field_options.as_deref().unwrap_or_default()
+    pub fn selected_field_options(&self) -> & [crate::types::TableFieldOption] {
+        self.selected_field_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The order of the field IDs that are configured as field options for a table visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.order.is_none()`.
-    pub fn order(&self) -> &[::std::string::String] {
-        self.order.as_deref().unwrap_or_default()
+    pub fn order(&self) -> & [::std::string::String] {
+        self.order.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The settings for the pinned columns of a table visual.</p>
-    pub fn pinned_field_options(&self) -> ::std::option::Option<&crate::types::TablePinnedFieldOptions> {
+    pub fn pinned_field_options(&self) -> ::std::option::Option<& crate::types::TablePinnedFieldOptions> {
         self.pinned_field_options.as_ref()
     }
 }
@@ -40,8 +42,8 @@ impl TableFieldOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableFieldOptionsBuilder {
-    pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>>,
-    pub(crate) order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec::<crate::types::TableFieldOption>>,
+    pub(crate) order: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pinned_field_options: ::std::option::Option<crate::types::TablePinnedFieldOptions>,
 }
 impl TableFieldOptionsBuilder {
@@ -52,17 +54,16 @@ impl TableFieldOptionsBuilder {
     /// <p>The field options to be configured to a table.</p>
     pub fn selected_field_options(mut self, input: crate::types::TableFieldOption) -> Self {
         let mut v = self.selected_field_options.unwrap_or_default();
-        v.push(input);
-        self.selected_field_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.selected_field_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field options to be configured to a table.</p>
-    pub fn set_selected_field_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>>) -> Self {
-        self.selected_field_options = input;
-        self
+    pub fn set_selected_field_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableFieldOption>>) -> Self {
+        self.selected_field_options = input; self
     }
     /// <p>The field options to be configured to a table.</p>
-    pub fn get_selected_field_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>> {
+    pub fn get_selected_field_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableFieldOption>> {
         &self.selected_field_options
     }
     /// Appends an item to `order`.
@@ -72,17 +73,16 @@ impl TableFieldOptionsBuilder {
     /// <p>The order of the field IDs that are configured as field options for a table visual.</p>
     pub fn order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.order.unwrap_or_default();
-        v.push(input.into());
-        self.order = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.order = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The order of the field IDs that are configured as field options for a table visual.</p>
-    pub fn set_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.order = input;
-        self
+    pub fn set_order(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.order = input; self
     }
     /// <p>The order of the field IDs that are configured as field options for a table visual.</p>
-    pub fn get_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_order(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.order
     }
     /// <p>The settings for the pinned columns of a table visual.</p>
@@ -92,8 +92,7 @@ impl TableFieldOptionsBuilder {
     }
     /// <p>The settings for the pinned columns of a table visual.</p>
     pub fn set_pinned_field_options(mut self, input: ::std::option::Option<crate::types::TablePinnedFieldOptions>) -> Self {
-        self.pinned_field_options = input;
-        self
+        self.pinned_field_options = input; self
     }
     /// <p>The settings for the pinned columns of a table visual.</p>
     pub fn get_pinned_field_options(&self) -> &::std::option::Option<crate::types::TablePinnedFieldOptions> {
@@ -102,9 +101,13 @@ impl TableFieldOptionsBuilder {
     /// Consumes the builder and constructs a [`TableFieldOptions`](crate::types::TableFieldOptions).
     pub fn build(self) -> crate::types::TableFieldOptions {
         crate::types::TableFieldOptions {
-            selected_field_options: self.selected_field_options,
-            order: self.order,
-            pinned_field_options: self.pinned_field_options,
+            selected_field_options: self.selected_field_options
+            ,
+            order: self.order
+            ,
+            pinned_field_options: self.pinned_field_options
+            ,
         }
     }
 }
+

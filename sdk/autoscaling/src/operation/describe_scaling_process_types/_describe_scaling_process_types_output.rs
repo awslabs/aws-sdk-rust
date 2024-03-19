@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingProcessTypesOutput {
+pub struct DescribeScalingProcessTypesOutput  {
     /// <p>The names of the process types.</p>
-    pub processes: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>,
+    pub processes: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessType>>,
     _request_id: Option<String>,
 }
-impl DescribeScalingProcessTypesOutput {
+impl  DescribeScalingProcessTypesOutput  {
     /// <p>The names of the process types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processes.is_none()`.
-    pub fn processes(&self) -> &[crate::types::ProcessType] {
-        self.processes.as_deref().unwrap_or_default()
+    pub fn processes(&self) -> & [crate::types::ProcessType] {
+        self.processes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScalingProcessTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScalingProcessTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput).
     pub fn builder() -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeScalingProcessTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesOutputBuilder {
-    pub(crate) processes: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>,
+    pub(crate) processes: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessType>>,
     _request_id: Option<String>,
 }
 impl DescribeScalingProcessTypesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeScalingProcessTypesOutputBuilder {
     /// <p>The names of the process types.</p>
     pub fn processes(mut self, input: crate::types::ProcessType) -> Self {
         let mut v = self.processes.unwrap_or_default();
-        v.push(input);
-        self.processes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the process types.</p>
-    pub fn set_processes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>) -> Self {
-        self.processes = input;
-        self
+    pub fn set_processes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessType>>) -> Self {
+        self.processes = input; self
     }
     /// <p>The names of the process types.</p>
-    pub fn get_processes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessType>> {
+    pub fn get_processes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessType>> {
         &self.processes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput).
     pub fn build(self) -> crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput {
         crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput {
-            processes: self.processes,
+            processes: self.processes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

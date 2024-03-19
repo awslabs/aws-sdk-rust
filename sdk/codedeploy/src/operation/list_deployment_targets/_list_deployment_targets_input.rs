@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeploymentTargetsInput {
+pub struct ListDeploymentTargetsInput  {
     /// <p>The unique ID of a deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
@@ -14,15 +14,15 @@ pub struct ListDeploymentTargetsInput {
     /// <li>
     /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
-    pub target_filters: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
+    pub target_filters: ::std::option::Option<::std::collections::HashMap::<crate::types::TargetFilterName, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl ListDeploymentTargetsInput {
+impl  ListDeploymentTargetsInput  {
     /// <p>The unique ID of a deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
@@ -32,9 +32,7 @@ impl ListDeploymentTargetsInput {
     /// <li>
     /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
-    pub fn target_filters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>> {
+    pub fn target_filters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::TargetFilterName, ::std::vec::Vec::<::std::string::String>>> {
         self.target_filters.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl ListDeploymentTargetsInput {
 pub struct ListDeploymentTargetsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) target_filters:
-        ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) target_filters: ::std::option::Option<::std::collections::HashMap::<crate::types::TargetFilterName, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl ListDeploymentTargetsInputBuilder {
     /// <p>The unique ID of a deployment.</p>
@@ -63,8 +60,7 @@ impl ListDeploymentTargetsInputBuilder {
     }
     /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +73,7 @@ impl ListDeploymentTargetsInputBuilder {
     }
     /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,11 +90,11 @@ impl ListDeploymentTargetsInputBuilder {
     /// <li>
     /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
-    pub fn target_filters(mut self, k: crate::types::TargetFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn target_filters(mut self, k: crate::types::TargetFilterName, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.target_filters.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.target_filters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.target_filters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
@@ -108,12 +103,8 @@ impl ListDeploymentTargetsInputBuilder {
     /// <li>
     /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
-    pub fn set_target_filters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.target_filters = input;
-        self
+    pub fn set_target_filters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::TargetFilterName, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.target_filters = input; self
     }
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
@@ -122,20 +113,21 @@ impl ListDeploymentTargetsInputBuilder {
     /// <li>
     /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
-    pub fn get_target_filters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_target_filters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::TargetFilterName, ::std::vec::Vec::<::std::string::String>>> {
         &self.target_filters
     }
     /// Consumes the builder and constructs a [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_deployment_targets::ListDeploymentTargetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_deployment_targets::ListDeploymentTargetsInput {
-            deployment_id: self.deployment_id,
-            next_token: self.next_token,
-            target_filters: self.target_filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_deployment_targets::ListDeploymentTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_deployment_targets::ListDeploymentTargetsInput {
+                deployment_id: self.deployment_id
+                ,
+                next_token: self.next_token
+                ,
+                target_filters: self.target_filters
+                ,
+            }
+        )
     }
 }
+

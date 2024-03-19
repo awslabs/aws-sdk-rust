@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNodeConfigurationOptionsInput {
+pub struct DescribeNodeConfigurationOptionsInput  {
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.</p>
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
@@ -14,7 +14,7 @@ pub struct DescribeNodeConfigurationOptionsInput {
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::NodeConfigurationOptionsFilter>>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -22,35 +22,36 @@ pub struct DescribeNodeConfigurationOptionsInput {
     /// <p>Constraints: minimum 100, maximum 500.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeNodeConfigurationOptionsInput {
+impl  DescribeNodeConfigurationOptionsInput  {
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::NodeConfigurationOptionsFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::NodeConfigurationOptionsFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -76,7 +77,7 @@ pub struct DescribeNodeConfigurationOptionsInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::NodeConfigurationOptionsFilter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -89,8 +90,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     }
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
@@ -103,8 +103,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     }
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     }
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,17 +155,16 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     /// <p>A set of name, operator, and value items to filter the results.</p>
     pub fn filters(mut self, input: crate::types::NodeConfigurationOptionsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeConfigurationOptionsFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeConfigurationOptionsFilter>> {
         &self.filters
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
@@ -179,8 +174,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +191,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
     /// <p>Default: <code>500</code></p>
     /// <p>Constraints: minimum 100, maximum 500.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     /// <p>Default: <code>500</code></p>
@@ -207,23 +200,27 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeNodeConfigurationOptionsInput`](crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput {
-                action_type: self.action_type,
-                cluster_identifier: self.cluster_identifier,
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_arn: self.snapshot_arn,
-                owner_account: self.owner_account,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
+                action_type: self.action_type
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                owner_account: self.owner_account
+                ,
+                filters: self.filters
+                ,
+                marker: self.marker
+                ,
+                max_records: self.max_records
+                ,
+            }
         )
     }
 }
+

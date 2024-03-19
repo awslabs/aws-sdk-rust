@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverShardInput {
+pub struct FailoverShardInput  {
     /// <p>The cluster being failed over</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the shard</p>
     pub shard_name: ::std::option::Option<::std::string::String>,
 }
-impl FailoverShardInput {
+impl  FailoverShardInput  {
     /// <p>The cluster being failed over</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the shard</p>
-    pub fn shard_name(&self) -> ::std::option::Option<&str> {
+    pub fn shard_name(&self) -> ::std::option::Option<& str> {
         self.shard_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FailoverShardInputBuilder {
     }
     /// <p>The cluster being failed over</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The cluster being failed over</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl FailoverShardInputBuilder {
     }
     /// <p>The name of the shard</p>
     pub fn set_shard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shard_name = input;
-        self
+        self.shard_name = input; self
     }
     /// <p>The name of the shard</p>
     pub fn get_shard_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.shard_name
     }
     /// Consumes the builder and constructs a [`FailoverShardInput`](crate::operation::failover_shard::FailoverShardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::failover_shard::FailoverShardInput {
-            cluster_name: self.cluster_name,
-            shard_name: self.shard_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::failover_shard::FailoverShardInput {
+                cluster_name: self.cluster_name
+                ,
+                shard_name: self.shard_name
+                ,
+            }
+        )
     }
 }
+

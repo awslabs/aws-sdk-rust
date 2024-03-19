@@ -3,19 +3,19 @@
 /// <p>Information about anomaly detection and mitigation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyDetection {
+pub struct AnomalyDetection  {
     /// <p>The latest anomaly detection result.</p>
     pub result: ::std::option::Option<crate::types::AnomalyResultEnum>,
     /// <p>Indicates whether anomaly mitigation is in progress.</p>
     pub mitigation_in_effect: ::std::option::Option<crate::types::MitigationInEffectEnum>,
 }
-impl AnomalyDetection {
+impl  AnomalyDetection  {
     /// <p>The latest anomaly detection result.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::AnomalyResultEnum> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::AnomalyResultEnum> {
         self.result.as_ref()
     }
     /// <p>Indicates whether anomaly mitigation is in progress.</p>
-    pub fn mitigation_in_effect(&self) -> ::std::option::Option<&crate::types::MitigationInEffectEnum> {
+    pub fn mitigation_in_effect(&self) -> ::std::option::Option<& crate::types::MitigationInEffectEnum> {
         self.mitigation_in_effect.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AnomalyDetectionBuilder {
     }
     /// <p>The latest anomaly detection result.</p>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::AnomalyResultEnum>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The latest anomaly detection result.</p>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::AnomalyResultEnum> {
@@ -55,8 +54,7 @@ impl AnomalyDetectionBuilder {
     }
     /// <p>Indicates whether anomaly mitigation is in progress.</p>
     pub fn set_mitigation_in_effect(mut self, input: ::std::option::Option<crate::types::MitigationInEffectEnum>) -> Self {
-        self.mitigation_in_effect = input;
-        self
+        self.mitigation_in_effect = input; self
     }
     /// <p>Indicates whether anomaly mitigation is in progress.</p>
     pub fn get_mitigation_in_effect(&self) -> &::std::option::Option<crate::types::MitigationInEffectEnum> {
@@ -65,8 +63,11 @@ impl AnomalyDetectionBuilder {
     /// Consumes the builder and constructs a [`AnomalyDetection`](crate::types::AnomalyDetection).
     pub fn build(self) -> crate::types::AnomalyDetection {
         crate::types::AnomalyDetection {
-            result: self.result,
-            mitigation_in_effect: self.mitigation_in_effect,
+            result: self.result
+            ,
+            mitigation_in_effect: self.mitigation_in_effect
+            ,
         }
     }
 }
+

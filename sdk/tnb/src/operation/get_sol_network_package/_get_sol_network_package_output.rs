@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetSolNetworkPackageOutput {
+pub struct GetSolNetworkPackageOutput  {
     /// <p>Network package ID.</p>
     pub id: ::std::string::String,
     /// <p>Network package ARN.</p>
@@ -20,68 +20,62 @@ pub struct GetSolNetworkPackageOutput {
     /// <p>Network service descriptor version.</p>
     pub nsd_version: ::std::string::String,
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub vnf_pkg_ids: ::std::vec::Vec<::std::string::String>,
+    pub vnf_pkg_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>Metadata associated with a network package.</p>
     /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     pub metadata: ::std::option::Option<crate::types::GetSolNetworkPackageMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetSolNetworkPackageOutput {
+impl  GetSolNetworkPackageOutput  {
     /// <p>Network package ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Network package ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Network service descriptor onboarding state.</p>
-    pub fn nsd_onboarding_state(&self) -> &crate::types::NsdOnboardingState {
+    pub fn nsd_onboarding_state(&self) -> & crate::types::NsdOnboardingState {
         &self.nsd_onboarding_state
     }
     /// <p>Network service descriptor operational state.</p>
-    pub fn nsd_operational_state(&self) -> &crate::types::NsdOperationalState {
+    pub fn nsd_operational_state(&self) -> & crate::types::NsdOperationalState {
         &self.nsd_operational_state
     }
     /// <p>Network service descriptor usage state.</p>
-    pub fn nsd_usage_state(&self) -> &crate::types::NsdUsageState {
+    pub fn nsd_usage_state(&self) -> & crate::types::NsdUsageState {
         &self.nsd_usage_state
     }
     /// <p>Network service descriptor ID.</p>
-    pub fn nsd_id(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_id.deref()
+    pub fn nsd_id(&self) -> & str {
+        use std::ops::Deref; self.nsd_id.deref()
     }
     /// <p>Network service descriptor name.</p>
-    pub fn nsd_name(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_name.deref()
+    pub fn nsd_name(&self) -> & str {
+        use std::ops::Deref; self.nsd_name.deref()
     }
     /// <p>Network service descriptor version.</p>
-    pub fn nsd_version(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_version.deref()
+    pub fn nsd_version(&self) -> & str {
+        use std::ops::Deref; self.nsd_version.deref()
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn vnf_pkg_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.vnf_pkg_ids.deref()
+    pub fn vnf_pkg_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.vnf_pkg_ids.deref()
     }
     /// <p>Metadata associated with a network package.</p>
     /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::GetSolNetworkPackageMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::GetSolNetworkPackageMetadata> {
         self.metadata.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetSolNetworkPackageOutput {
+impl  ::std::fmt::Debug for GetSolNetworkPackageOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSolNetworkPackageOutput");
         formatter.field("id", &self.id);
@@ -100,10 +94,10 @@ impl ::std::fmt::Debug for GetSolNetworkPackageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSolNetworkPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSolNetworkPackageOutput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageOutput`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput).
     pub fn builder() -> crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder {
@@ -123,9 +117,9 @@ pub struct GetSolNetworkPackageOutputBuilder {
     pub(crate) nsd_id: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_name: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_version: ::std::option::Option<::std::string::String>,
-    pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolNetworkPackageMetadata>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkPackageOutputBuilder {
@@ -137,8 +131,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network package ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Network package ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +145,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network package ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Network package ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +159,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network service descriptor onboarding state.</p>
     pub fn set_nsd_onboarding_state(mut self, input: ::std::option::Option<crate::types::NsdOnboardingState>) -> Self {
-        self.nsd_onboarding_state = input;
-        self
+        self.nsd_onboarding_state = input; self
     }
     /// <p>Network service descriptor onboarding state.</p>
     pub fn get_nsd_onboarding_state(&self) -> &::std::option::Option<crate::types::NsdOnboardingState> {
@@ -182,8 +173,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network service descriptor operational state.</p>
     pub fn set_nsd_operational_state(mut self, input: ::std::option::Option<crate::types::NsdOperationalState>) -> Self {
-        self.nsd_operational_state = input;
-        self
+        self.nsd_operational_state = input; self
     }
     /// <p>Network service descriptor operational state.</p>
     pub fn get_nsd_operational_state(&self) -> &::std::option::Option<crate::types::NsdOperationalState> {
@@ -197,8 +187,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network service descriptor usage state.</p>
     pub fn set_nsd_usage_state(mut self, input: ::std::option::Option<crate::types::NsdUsageState>) -> Self {
-        self.nsd_usage_state = input;
-        self
+        self.nsd_usage_state = input; self
     }
     /// <p>Network service descriptor usage state.</p>
     pub fn get_nsd_usage_state(&self) -> &::std::option::Option<crate::types::NsdUsageState> {
@@ -212,8 +201,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network service descriptor ID.</p>
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_id = input;
-        self
+        self.nsd_id = input; self
     }
     /// <p>Network service descriptor ID.</p>
     pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +215,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network service descriptor name.</p>
     pub fn set_nsd_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_name = input;
-        self
+        self.nsd_name = input; self
     }
     /// <p>Network service descriptor name.</p>
     pub fn get_nsd_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +229,7 @@ impl GetSolNetworkPackageOutputBuilder {
     }
     /// <p>Network service descriptor version.</p>
     pub fn set_nsd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_version = input;
-        self
+        self.nsd_version = input; self
     }
     /// <p>Network service descriptor version.</p>
     pub fn get_nsd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,17 +242,16 @@ impl GetSolNetworkPackageOutputBuilder {
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
     pub fn vnf_pkg_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vnf_pkg_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vnf_pkg_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vnf_pkg_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vnf_pkg_ids = input;
-        self
+    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vnf_pkg_ids = input; self
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vnf_pkg_ids
     }
     /// <p>Metadata associated with a network package.</p>
@@ -279,8 +264,7 @@ impl GetSolNetworkPackageOutputBuilder {
     /// <p>Metadata associated with a network package.</p>
     /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolNetworkPackageMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Metadata associated with a network package.</p>
     /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
@@ -294,28 +278,27 @@ impl GetSolNetworkPackageOutputBuilder {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageOutput`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder::id)
@@ -327,69 +310,61 @@ impl GetSolNetworkPackageOutputBuilder {
     /// - [`nsd_name`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder::nsd_name)
     /// - [`nsd_version`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder::nsd_version)
     /// - [`vnf_pkg_ids`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder::vnf_pkg_ids)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_sol_network_package::GetSolNetworkPackageOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            nsd_onboarding_state: self.nsd_onboarding_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_onboarding_state",
-                    "nsd_onboarding_state was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            nsd_operational_state: self.nsd_operational_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_operational_state",
-                    "nsd_operational_state was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            nsd_usage_state: self.nsd_usage_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_usage_state",
-                    "nsd_usage_state was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            nsd_id: self.nsd_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_id",
-                    "nsd_id was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            nsd_name: self.nsd_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_name",
-                    "nsd_name was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            nsd_version: self.nsd_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_version",
-                    "nsd_version was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            vnf_pkg_ids: self.vnf_pkg_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnf_pkg_ids",
-                    "vnf_pkg_ids was not specified but it is required when building GetSolNetworkPackageOutput",
-                )
-            })?,
-            metadata: self.metadata,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_network_package::GetSolNetworkPackageOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                nsd_onboarding_state: self.nsd_onboarding_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_onboarding_state", "nsd_onboarding_state was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                nsd_operational_state: self.nsd_operational_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_operational_state", "nsd_operational_state was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                nsd_usage_state: self.nsd_usage_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_usage_state", "nsd_usage_state was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                nsd_id: self.nsd_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_id", "nsd_id was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                nsd_name: self.nsd_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_name", "nsd_name was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                nsd_version: self.nsd_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_version", "nsd_version was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                vnf_pkg_ids: self.vnf_pkg_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnf_pkg_ids", "vnf_pkg_ids was not specified but it is required when building GetSolNetworkPackageOutput")
+                    )?
+                ,
+                metadata: self.metadata
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetSolNetworkPackageOutputBuilder {
@@ -410,3 +385,4 @@ impl ::std::fmt::Debug for GetSolNetworkPackageOutputBuilder {
         formatter.finish()
     }
 }
+

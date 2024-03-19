@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackSetOperationOutput {
+pub struct DescribeStackSetOperationOutput  {
     /// <p>The specified stack set operation.</p>
     pub stack_set_operation: ::std::option::Option<crate::types::StackSetOperation>,
     _request_id: Option<String>,
 }
-impl DescribeStackSetOperationOutput {
+impl  DescribeStackSetOperationOutput  {
     /// <p>The specified stack set operation.</p>
-    pub fn stack_set_operation(&self) -> ::std::option::Option<&crate::types::StackSetOperation> {
+    pub fn stack_set_operation(&self) -> ::std::option::Option<& crate::types::StackSetOperation> {
         self.stack_set_operation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStackSetOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStackSetOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSetOperationOutput`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput).
     pub fn builder() -> crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeStackSetOperationOutputBuilder {
     }
     /// <p>The specified stack set operation.</p>
     pub fn set_stack_set_operation(mut self, input: ::std::option::Option<crate::types::StackSetOperation>) -> Self {
-        self.stack_set_operation = input;
-        self
+        self.stack_set_operation = input; self
     }
     /// <p>The specified stack set operation.</p>
     pub fn get_stack_set_operation(&self) -> &::std::option::Option<crate::types::StackSetOperation> {
         &self.stack_set_operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStackSetOperationOutput`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput).
     pub fn build(self) -> crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput {
         crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput {
-            stack_set_operation: self.stack_set_operation,
+            stack_set_operation: self.stack_set_operation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Details about the ECR automated re-scan duration setting for your environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcrConfiguration {
+pub struct EcrConfiguration  {
     /// <p>The rescan duration configured for image push date.</p>
     pub rescan_duration: crate::types::EcrRescanDuration,
     /// <p>The rescan duration configured for image pull date.</p>
     pub pull_date_rescan_duration: ::std::option::Option<crate::types::EcrPullDateRescanDuration>,
 }
-impl EcrConfiguration {
+impl  EcrConfiguration  {
     /// <p>The rescan duration configured for image push date.</p>
-    pub fn rescan_duration(&self) -> &crate::types::EcrRescanDuration {
+    pub fn rescan_duration(&self) -> & crate::types::EcrRescanDuration {
         &self.rescan_duration
     }
     /// <p>The rescan duration configured for image pull date.</p>
-    pub fn pull_date_rescan_duration(&self) -> ::std::option::Option<&crate::types::EcrPullDateRescanDuration> {
+    pub fn pull_date_rescan_duration(&self) -> ::std::option::Option<& crate::types::EcrPullDateRescanDuration> {
         self.pull_date_rescan_duration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl EcrConfigurationBuilder {
     }
     /// <p>The rescan duration configured for image push date.</p>
     pub fn set_rescan_duration(mut self, input: ::std::option::Option<crate::types::EcrRescanDuration>) -> Self {
-        self.rescan_duration = input;
-        self
+        self.rescan_duration = input; self
     }
     /// <p>The rescan duration configured for image push date.</p>
     pub fn get_rescan_duration(&self) -> &::std::option::Option<crate::types::EcrRescanDuration> {
@@ -56,8 +55,7 @@ impl EcrConfigurationBuilder {
     }
     /// <p>The rescan duration configured for image pull date.</p>
     pub fn set_pull_date_rescan_duration(mut self, input: ::std::option::Option<crate::types::EcrPullDateRescanDuration>) -> Self {
-        self.pull_date_rescan_duration = input;
-        self
+        self.pull_date_rescan_duration = input; self
     }
     /// <p>The rescan duration configured for image pull date.</p>
     pub fn get_pull_date_rescan_duration(&self) -> &::std::option::Option<crate::types::EcrPullDateRescanDuration> {
@@ -67,14 +65,17 @@ impl EcrConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rescan_duration`](crate::types::builders::EcrConfigurationBuilder::rescan_duration)
     pub fn build(self) -> ::std::result::Result<crate::types::EcrConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EcrConfiguration {
-            rescan_duration: self.rescan_duration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rescan_duration",
-                    "rescan_duration was not specified but it is required when building EcrConfiguration",
-                )
-            })?,
-            pull_date_rescan_duration: self.pull_date_rescan_duration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EcrConfiguration {
+                rescan_duration: self.rescan_duration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rescan_duration", "rescan_duration was not specified but it is required when building EcrConfiguration")
+                    )?
+                ,
+                pull_date_rescan_duration: self.pull_date_rescan_duration
+                ,
+            }
+        )
     }
 }
+

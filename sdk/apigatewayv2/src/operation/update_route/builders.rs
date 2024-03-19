@@ -5,54 +5,50 @@ pub use crate::operation::update_route::_update_route_input::UpdateRouteInputBui
 
 impl UpdateRouteInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_route::UpdateRouteOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_route::UpdateRouteError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_route();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_route::UpdateRouteOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_route::UpdateRouteError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_route();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateRoute`.
-///
+/// 
 /// <p>Updates a Route.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_route::builders::UpdateRouteInputBuilder,
+                    inner: crate::operation::update_route::builders::UpdateRouteInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_route::UpdateRouteOutput,
-        crate::operation::update_route::UpdateRouteError,
-    > for UpdateRouteFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_route::UpdateRouteOutput,
-            crate::operation::update_route::UpdateRouteError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_route::UpdateRouteOutput,
+                    crate::operation::update_route::UpdateRouteError,
+                > for UpdateRouteFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_route::UpdateRouteOutput,
+                        crate::operation::update_route::UpdateRouteError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateRouteFluentBuilder {
     /// Creates a new `UpdateRoute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateRouteFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_route::UpdateRouteOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_route::UpdateRouteError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_route::UpdateRoute::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_route::UpdateRoute::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_route::UpdateRouteOutput,
-        crate::operation::update_route::UpdateRouteError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_route::UpdateRouteError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_route::UpdateRoute::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_route::UpdateRoute::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_route::UpdateRouteOutput, crate::operation::update_route::UpdateRouteError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The API identifier.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -146,12 +133,12 @@ impl UpdateRouteFluentBuilder {
         self
     }
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn set_authorization_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_authorization_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_authorization_scopes(input);
         self
     }
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn get_authorization_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorization_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_authorization_scopes()
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
@@ -215,24 +202,17 @@ impl UpdateRouteFluentBuilder {
     /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
     ///
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    pub fn request_models(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_models(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_models(k.into(), v.into());
         self
     }
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_request_models(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_request_models(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_request_models(input);
         self
     }
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    pub fn get_request_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_models(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_request_models()
     }
     /// Adds a key-value pair to `RequestParameters`.
@@ -245,17 +225,12 @@ impl UpdateRouteFluentBuilder {
         self
     }
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_request_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
-    ) -> Self {
+    pub fn set_request_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>>) -> Self {
         self.inner = self.inner.set_request_parameters(input);
         self
     }
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    pub fn get_request_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>> {
+    pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>> {
         self.inner.get_request_parameters()
     }
     /// <p>The route ID.</p>
@@ -315,3 +290,4 @@ impl UpdateRouteFluentBuilder {
         self.inner.get_target()
     }
 }
+

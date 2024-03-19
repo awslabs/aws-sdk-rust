@@ -22,11 +22,7 @@ impl AnalysisStatusUnion {
     /// Tries to convert the enum instance into [`RuntimeAnalysisStatus`](crate::types::AnalysisStatusUnion::RuntimeAnalysisStatus), extracting the inner [`RuntimeAnalysisStatus`](crate::types::RuntimeAnalysisStatus).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_runtime_analysis_status(&self) -> ::std::result::Result<&crate::types::RuntimeAnalysisStatus, &Self> {
-        if let AnalysisStatusUnion::RuntimeAnalysisStatus(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisStatusUnion::RuntimeAnalysisStatus(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RuntimeAnalysisStatus`](crate::types::AnalysisStatusUnion::RuntimeAnalysisStatus).
     pub fn is_runtime_analysis_status(&self) -> bool {
@@ -35,11 +31,7 @@ impl AnalysisStatusUnion {
     /// Tries to convert the enum instance into [`SrcCodeOrDbAnalysisStatus`](crate::types::AnalysisStatusUnion::SrcCodeOrDbAnalysisStatus), extracting the inner [`SrcCodeOrDbAnalysisStatus`](crate::types::SrcCodeOrDbAnalysisStatus).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_src_code_or_db_analysis_status(&self) -> ::std::result::Result<&crate::types::SrcCodeOrDbAnalysisStatus, &Self> {
-        if let AnalysisStatusUnion::SrcCodeOrDbAnalysisStatus(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisStatusUnion::SrcCodeOrDbAnalysisStatus(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SrcCodeOrDbAnalysisStatus`](crate::types::AnalysisStatusUnion::SrcCodeOrDbAnalysisStatus).
     pub fn is_src_code_or_db_analysis_status(&self) -> bool {
@@ -50,3 +42,4 @@ impl AnalysisStatusUnion {
         matches!(self, Self::Unknown)
     }
 }
+

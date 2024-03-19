@@ -3,7 +3,7 @@
 /// <p>The content of an inbound integration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InboundIntegration {
+pub struct InboundIntegration  {
     /// <p>The Amazon Resource Name (ARN) of an inbound integration.</p>
     pub integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source of an inbound integration.</p>
@@ -13,35 +13,36 @@ pub struct InboundIntegration {
     /// <p>The status of an inbound integration.</p>
     pub status: ::std::option::Option<crate::types::ZeroEtlIntegrationStatus>,
     /// <p>The outstanding errors of an inbound integration. Each item is an "IntegrationError". This is null if there is no error.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>>,
     /// <p>The creation time of an inbound integration.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl InboundIntegration {
+impl  InboundIntegration  {
     /// <p>The Amazon Resource Name (ARN) of an inbound integration.</p>
-    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<& str> {
         self.integration_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source of an inbound integration.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The status of an inbound integration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ZeroEtlIntegrationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ZeroEtlIntegrationStatus> {
         self.status.as_ref()
     }
     /// <p>The outstanding errors of an inbound integration. Each item is an "IntegrationError". This is null if there is no error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::IntegrationError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::IntegrationError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The creation time of an inbound integration.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -60,7 +61,7 @@ pub struct InboundIntegrationBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ZeroEtlIntegrationStatus>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InboundIntegrationBuilder {
@@ -71,8 +72,7 @@ impl InboundIntegrationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an inbound integration.</p>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_arn = input;
-        self
+        self.integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an inbound integration.</p>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl InboundIntegrationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source of an inbound integration.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source of an inbound integration.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl InboundIntegrationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl InboundIntegrationBuilder {
     }
     /// <p>The status of an inbound integration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ZeroEtlIntegrationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an inbound integration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ZeroEtlIntegrationStatus> {
@@ -127,17 +124,16 @@ impl InboundIntegrationBuilder {
     /// <p>The outstanding errors of an inbound integration. Each item is an "IntegrationError". This is null if there is no error.</p>
     pub fn errors(mut self, input: crate::types::IntegrationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The outstanding errors of an inbound integration. Each item is an "IntegrationError". This is null if there is no error.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>The outstanding errors of an inbound integration. Each item is an "IntegrationError". This is null if there is no error.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>> {
         &self.errors
     }
     /// <p>The creation time of an inbound integration.</p>
@@ -147,8 +143,7 @@ impl InboundIntegrationBuilder {
     }
     /// <p>The creation time of an inbound integration.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The creation time of an inbound integration.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -157,12 +152,19 @@ impl InboundIntegrationBuilder {
     /// Consumes the builder and constructs a [`InboundIntegration`](crate::types::InboundIntegration).
     pub fn build(self) -> crate::types::InboundIntegration {
         crate::types::InboundIntegration {
-            integration_arn: self.integration_arn,
-            source_arn: self.source_arn,
-            target_arn: self.target_arn,
-            status: self.status,
-            errors: self.errors,
-            create_time: self.create_time,
+            integration_arn: self.integration_arn
+            ,
+            source_arn: self.source_arn
+            ,
+            target_arn: self.target_arn
+            ,
+            status: self.status
+            ,
+            errors: self.errors
+            ,
+            create_time: self.create_time
+            ,
         }
     }
 }
+

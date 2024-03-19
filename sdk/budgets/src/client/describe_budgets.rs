@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBudgets`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::set_account_id):<br>required: **true**<br><p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::set_max_results):<br>required: **false**<br><p>An integer that represents how many budgets a paginated response contains. The default is 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p><br>
-    /// - On success, responds with [`DescribeBudgetsOutput`](crate::operation::describe_budgets::DescribeBudgetsOutput) with field(s):
+                            /// - On success, responds with [`DescribeBudgetsOutput`](crate::operation::describe_budgets::DescribeBudgetsOutput) with field(s):
     ///   - [`budgets(Option<Vec::<Budget>>)`](crate::operation::describe_budgets::DescribeBudgetsOutput::budgets): <p>A list of budgets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budgets::DescribeBudgetsOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    /// - On failure, responds with [`SdkError<DescribeBudgetsError>`](crate::operation::describe_budgets::DescribeBudgetsError)
+                            /// - On failure, responds with [`SdkError<DescribeBudgetsError>`](crate::operation::describe_budgets::DescribeBudgetsError)
     pub fn describe_budgets(&self) -> crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder {
-        crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

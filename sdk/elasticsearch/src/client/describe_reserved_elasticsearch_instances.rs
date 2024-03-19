@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservedElasticsearchInstances`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reserved_elasticsearch_instance_id(impl Into<String>)`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::reserved_elasticsearch_instance_id) / [`set_reserved_elasticsearch_instance_id(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::set_reserved_elasticsearch_instance_id):<br>required: **false**<br><p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::set_max_results):<br>required: **false**<br><p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p><br>
-    /// - On success, responds with [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput) with field(s):
+                            /// - On success, responds with [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`reserved_elasticsearch_instances(Option<Vec::<ReservedElasticsearchInstance>>)`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput::reserved_elasticsearch_instances): <p>List of reserved Elasticsearch instances.</p>
-    /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstancesError>`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesError)
-    pub fn describe_reserved_elasticsearch_instances(
-        &self,
-    ) -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder {
-        crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstancesError>`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesError)
+    pub fn describe_reserved_elasticsearch_instances(&self) -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder {
+                                crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

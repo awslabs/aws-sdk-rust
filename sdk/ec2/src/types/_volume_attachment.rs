@@ -3,7 +3,7 @@
 /// <p>Describes volume attachment details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeAttachment {
+pub struct VolumeAttachment  {
     /// <p>The time stamp when the attachment initiated.</p>
     pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device name.</p>
@@ -24,27 +24,27 @@ pub struct VolumeAttachment {
     /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
     pub instance_owning_service: ::std::option::Option<::std::string::String>,
 }
-impl VolumeAttachment {
+impl  VolumeAttachment  {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The device name.</p>
     /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
-    pub fn device(&self) -> ::std::option::Option<&str> {
+    pub fn device(&self) -> ::std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>The ID of the instance.</p>
     /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The attachment state of the volume.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::VolumeAttachmentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::VolumeAttachmentState> {
         self.state.as_ref()
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
@@ -52,12 +52,12 @@ impl VolumeAttachment {
         self.delete_on_termination
     }
     /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
-    pub fn associated_resource(&self) -> ::std::option::Option<&str> {
+    pub fn associated_resource(&self) -> ::std::option::Option<& str> {
         self.associated_resource.as_deref()
     }
     /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
     /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
-    pub fn instance_owning_service(&self) -> ::std::option::Option<&str> {
+    pub fn instance_owning_service(&self) -> ::std::option::Option<& str> {
         self.instance_owning_service.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl VolumeAttachmentBuilder {
     }
     /// <p>The time stamp when the attachment initiated.</p>
     pub fn set_attach_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.attach_time = input;
-        self
+        self.attach_time = input; self
     }
     /// <p>The time stamp when the attachment initiated.</p>
     pub fn get_attach_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -105,8 +104,7 @@ impl VolumeAttachmentBuilder {
     /// <p>The device name.</p>
     /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>The device name.</p>
     /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
@@ -122,8 +120,7 @@ impl VolumeAttachmentBuilder {
     /// <p>The ID of the instance.</p>
     /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
@@ -137,8 +134,7 @@ impl VolumeAttachmentBuilder {
     }
     /// <p>The attachment state of the volume.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::VolumeAttachmentState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The attachment state of the volume.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::VolumeAttachmentState> {
@@ -151,8 +147,7 @@ impl VolumeAttachmentBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The ID of the volume.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +160,7 @@ impl VolumeAttachmentBuilder {
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -179,8 +173,7 @@ impl VolumeAttachmentBuilder {
     }
     /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
     pub fn set_associated_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_resource = input;
-        self
+        self.associated_resource = input; self
     }
     /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
     pub fn get_associated_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl VolumeAttachmentBuilder {
     /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
     /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
     pub fn set_instance_owning_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_owning_service = input;
-        self
+        self.instance_owning_service = input; self
     }
     /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
     /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
@@ -206,14 +198,23 @@ impl VolumeAttachmentBuilder {
     /// Consumes the builder and constructs a [`VolumeAttachment`](crate::types::VolumeAttachment).
     pub fn build(self) -> crate::types::VolumeAttachment {
         crate::types::VolumeAttachment {
-            attach_time: self.attach_time,
-            device: self.device,
-            instance_id: self.instance_id,
-            state: self.state,
-            volume_id: self.volume_id,
-            delete_on_termination: self.delete_on_termination,
-            associated_resource: self.associated_resource,
-            instance_owning_service: self.instance_owning_service,
+            attach_time: self.attach_time
+            ,
+            device: self.device
+            ,
+            instance_id: self.instance_id
+            ,
+            state: self.state
+            ,
+            volume_id: self.volume_id
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            associated_resource: self.associated_resource
+            ,
+            instance_owning_service: self.instance_owning_service
+            ,
         }
     }
 }
+

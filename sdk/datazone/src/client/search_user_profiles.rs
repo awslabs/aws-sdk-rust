@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchUserProfiles`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which you want to search user profiles.</p><br>
     ///   - [`user_type(UserSearchType)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::user_type) / [`set_user_type(Option<UserSearchType>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::set_user_type):<br>required: **true**<br><p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p><br>
     ///   - [`search_text(impl Into<String>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::search_text) / [`set_search_text(Option<String>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::set_search_text):<br>required: **false**<br><p>Specifies the text for which to search.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call to <code>SearchUserProfiles</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p><br>
-    /// - On success, responds with [`SearchUserProfilesOutput`](crate::operation::search_user_profiles::SearchUserProfilesOutput) with field(s):
+                            /// - On success, responds with [`SearchUserProfilesOutput`](crate::operation::search_user_profiles::SearchUserProfilesOutput) with field(s):
     ///   - [`items(Option<Vec::<UserProfileSummary>>)`](crate::operation::search_user_profiles::SearchUserProfilesOutput::items): <p>The results of the <code>SearchUserProfiles</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_user_profiles::SearchUserProfilesOutput::next_token): <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
-    /// - On failure, responds with [`SdkError<SearchUserProfilesError>`](crate::operation::search_user_profiles::SearchUserProfilesError)
+                            /// - On failure, responds with [`SdkError<SearchUserProfilesError>`](crate::operation::search_user_profiles::SearchUserProfilesError)
     pub fn search_user_profiles(&self) -> crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder {
-        crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_user_profiles::builders::SearchUserProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A request to update the comment for a hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHostedZoneCommentInput {
+pub struct UpdateHostedZoneCommentInput  {
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl UpdateHostedZoneCommentInput {
+impl  UpdateHostedZoneCommentInput  {
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateHostedZoneCommentInputBuilder {
     }
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateHostedZoneCommentInputBuilder {
     }
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
     /// Consumes the builder and constructs a [`UpdateHostedZoneCommentInput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput {
-            id: self.id,
-            comment: self.comment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput {
+                id: self.id
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

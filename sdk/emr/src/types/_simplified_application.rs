@@ -3,19 +3,19 @@
 /// <p>The returned release label application names or versions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimplifiedApplication {
+pub struct SimplifiedApplication  {
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl SimplifiedApplication {
+impl  SimplifiedApplication  {
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SimplifiedApplicationBuilder {
     }
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SimplifiedApplicationBuilder {
     }
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SimplifiedApplicationBuilder {
     /// Consumes the builder and constructs a [`SimplifiedApplication`](crate::types::SimplifiedApplication).
     pub fn build(self) -> crate::types::SimplifiedApplication {
         crate::types::SimplifiedApplication {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

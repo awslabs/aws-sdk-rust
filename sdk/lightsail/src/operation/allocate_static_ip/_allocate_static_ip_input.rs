@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllocateStaticIpInput {
+pub struct AllocateStaticIpInput  {
     /// <p>The name of the static IP address.</p>
     pub static_ip_name: ::std::option::Option<::std::string::String>,
 }
-impl AllocateStaticIpInput {
+impl  AllocateStaticIpInput  {
     /// <p>The name of the static IP address.</p>
-    pub fn static_ip_name(&self) -> ::std::option::Option<&str> {
+    pub fn static_ip_name(&self) -> ::std::option::Option<& str> {
         self.static_ip_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl AllocateStaticIpInputBuilder {
     }
     /// <p>The name of the static IP address.</p>
     pub fn set_static_ip_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.static_ip_name = input;
-        self
+        self.static_ip_name = input; self
     }
     /// <p>The name of the static IP address.</p>
     pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.static_ip_name
     }
     /// Consumes the builder and constructs a [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::allocate_static_ip::AllocateStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::allocate_static_ip::AllocateStaticIpInput {
-            static_ip_name: self.static_ip_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::allocate_static_ip::AllocateStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::allocate_static_ip::AllocateStaticIpInput {
+                static_ip_name: self.static_ip_name
+                ,
+            }
+        )
     }
 }
+

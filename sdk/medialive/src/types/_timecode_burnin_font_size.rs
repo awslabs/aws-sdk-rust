@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timecodeburninfontsize = unimplemented!();
 /// match timecodeburninfontsize {
@@ -32,16 +32,14 @@
 /// Specifically, when `timecodeburninfontsize` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimecodeBurninFontSize::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Timecode Burnin Font Size
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TimecodeBurninFontSize {
     #[allow(missing_docs)] // documentation missing in model
     ExtraSmall10,
@@ -53,67 +51,68 @@ pub enum TimecodeBurninFontSize {
     Small16,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TimecodeBurninFontSize {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXTRA_SMALL_10" => TimecodeBurninFontSize::ExtraSmall10,
-            "LARGE_48" => TimecodeBurninFontSize::Large48,
-            "MEDIUM_32" => TimecodeBurninFontSize::Medium32,
-            "SMALL_16" => TimecodeBurninFontSize::Small16,
-            other => TimecodeBurninFontSize::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EXTRA_SMALL_10" => TimecodeBurninFontSize::ExtraSmall10,
+"LARGE_48" => TimecodeBurninFontSize::Large48,
+"MEDIUM_32" => TimecodeBurninFontSize::Medium32,
+"SMALL_16" => TimecodeBurninFontSize::Small16,
+other => TimecodeBurninFontSize::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TimecodeBurninFontSize {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TimecodeBurninFontSize::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TimecodeBurninFontSize::from(s))
+                    }
+                }
 impl TimecodeBurninFontSize {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TimecodeBurninFontSize::ExtraSmall10 => "EXTRA_SMALL_10",
-            TimecodeBurninFontSize::Large48 => "LARGE_48",
-            TimecodeBurninFontSize::Medium32 => "MEDIUM_32",
-            TimecodeBurninFontSize::Small16 => "SMALL_16",
-            TimecodeBurninFontSize::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EXTRA_SMALL_10", "LARGE_48", "MEDIUM_32", "SMALL_16"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TimecodeBurninFontSize::ExtraSmall10 => "EXTRA_SMALL_10",
+    TimecodeBurninFontSize::Large48 => "LARGE_48",
+    TimecodeBurninFontSize::Medium32 => "MEDIUM_32",
+    TimecodeBurninFontSize::Small16 => "SMALL_16",
+    TimecodeBurninFontSize::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXTRA_SMALL_10", "LARGE_48", "MEDIUM_32", "SMALL_16"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TimecodeBurninFontSize {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TimecodeBurninFontSize {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TimecodeBurninFontSize {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TimecodeBurninFontSize::ExtraSmall10 => write!(f, "EXTRA_SMALL_10"),
-            TimecodeBurninFontSize::Large48 => write!(f, "LARGE_48"),
-            TimecodeBurninFontSize::Medium32 => write!(f, "MEDIUM_32"),
-            TimecodeBurninFontSize::Small16 => write!(f, "SMALL_16"),
-            TimecodeBurninFontSize::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TimecodeBurninFontSize::ExtraSmall10 => write!(f, "EXTRA_SMALL_10"),
+TimecodeBurninFontSize::Large48 => write!(f, "LARGE_48"),
+TimecodeBurninFontSize::Medium32 => write!(f, "MEDIUM_32"),
+TimecodeBurninFontSize::Small16 => write!(f, "SMALL_16"),
+TimecodeBurninFontSize::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

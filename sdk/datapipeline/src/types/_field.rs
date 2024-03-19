@@ -3,7 +3,7 @@
 /// <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Field {
+pub struct Field  {
     /// <p>The field identifier.</p>
     pub key: ::std::string::String,
     /// <p>The field value, expressed as a String.</p>
@@ -11,18 +11,17 @@ pub struct Field {
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub ref_value: ::std::option::Option<::std::string::String>,
 }
-impl Field {
+impl  Field  {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> ::std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<& str> {
         self.string_value.as_deref()
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
-    pub fn ref_value(&self) -> ::std::option::Option<&str> {
+    pub fn ref_value(&self) -> ::std::option::Option<& str> {
         self.ref_value.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl FieldBuilder {
     }
     /// <p>The field identifier.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The field identifier.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl FieldBuilder {
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl FieldBuilder {
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub fn set_ref_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ref_value = input;
-        self
+        self.ref_value = input; self
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub fn get_ref_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,12 +85,19 @@ impl FieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::FieldBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::Field, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Field {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Field")
-            })?,
-            string_value: self.string_value,
-            ref_value: self.ref_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Field {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Field")
+                    )?
+                ,
+                string_value: self.string_value
+                ,
+                ref_value: self.ref_value
+                ,
+            }
+        )
     }
 }
+

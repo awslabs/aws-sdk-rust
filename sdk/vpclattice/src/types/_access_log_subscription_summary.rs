@@ -3,7 +3,7 @@
 /// <p>Summary information about an access log subscription.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessLogSubscriptionSummary {
+pub struct AccessLogSubscriptionSummary  {
     /// <p>The ID of the access log subscription.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the access log subscription</p>
@@ -19,38 +19,33 @@ pub struct AccessLogSubscriptionSummary {
     /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
 }
-impl AccessLogSubscriptionSummary {
+impl  AccessLogSubscriptionSummary  {
     /// <p>The ID of the access log subscription.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The ID of the service or service network.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service or service network.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_arn.deref()
+    pub fn destination_arn(&self) -> & str {
+        use std::ops::Deref; self.destination_arn.deref()
     }
     /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
 }
@@ -82,8 +77,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The ID of the access log subscription.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the access log subscription.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The ID of the service or service network.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the service or service network.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +119,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service or service network.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service or service network.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +133,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +147,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,8 +161,7 @@ impl AccessLogSubscriptionSummaryBuilder {
     }
     /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -189,49 +177,45 @@ impl AccessLogSubscriptionSummaryBuilder {
     /// - [`created_at`](crate::types::builders::AccessLogSubscriptionSummaryBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::AccessLogSubscriptionSummaryBuilder::last_updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessLogSubscriptionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessLogSubscriptionSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-            destination_arn: self.destination_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_arn",
-                    "destination_arn was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-            last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_at",
-                    "last_updated_at was not specified but it is required when building AccessLogSubscriptionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessLogSubscriptionSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+                destination_arn: self.destination_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_arn", "destination_arn was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+                last_updated_at: self.last_updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_at", "last_updated_at was not specified but it is required when building AccessLogSubscriptionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

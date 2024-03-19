@@ -3,29 +3,28 @@
 /// <p>A complex type containing the response information for the new health check.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHealthCheckOutput {
+pub struct CreateHealthCheckOutput  {
     /// <p>A complex type that contains identifying information about the health check.</p>
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>The unique URL representing the new health check.</p>
     pub location: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateHealthCheckOutput {
+impl  CreateHealthCheckOutput  {
     /// <p>A complex type that contains identifying information about the health check.</p>
-    pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
+    pub fn health_check(&self) -> ::std::option::Option<& crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
     /// <p>The unique URL representing the new health check.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHealthCheckOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`CreateHealthCheckOutput`](crate::operation::create_health_check::CreateHealthCheckOutput).
     pub fn builder() -> crate::operation::create_health_check::builders::CreateHealthCheckOutputBuilder {
@@ -50,8 +49,7 @@ impl CreateHealthCheckOutputBuilder {
     }
     /// <p>A complex type that contains identifying information about the health check.</p>
     pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheck>) -> Self {
-        self.health_check = input;
-        self
+        self.health_check = input; self
     }
     /// <p>A complex type that contains identifying information about the health check.</p>
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
@@ -65,37 +63,37 @@ impl CreateHealthCheckOutputBuilder {
     }
     /// <p>The unique URL representing the new health check.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The unique URL representing the new health check.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHealthCheckOutput`](crate::operation::create_health_check::CreateHealthCheckOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::operation::create_health_check::builders::CreateHealthCheckOutputBuilder::location)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_health_check::CreateHealthCheckOutput {
-            health_check: self.health_check,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building CreateHealthCheckOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_health_check::CreateHealthCheckOutput {
+                health_check: self.health_check
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building CreateHealthCheckOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBlueprints`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of a list to return.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_tags):<br>required: **false**<br><p>Filters the list by an Amazon Web Services resource tag.</p><br>
-    /// - On success, responds with [`ListBlueprintsOutput`](crate::operation::list_blueprints::ListBlueprintsOutput) with field(s):
+                            /// - On success, responds with [`ListBlueprintsOutput`](crate::operation::list_blueprints::ListBlueprintsOutput) with field(s):
     ///   - [`blueprints(Option<Vec::<String>>)`](crate::operation::list_blueprints::ListBlueprintsOutput::blueprints): <p>List of names of blueprints in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_blueprints::ListBlueprintsOutput::next_token): <p>A continuation token, if not all blueprint names have been returned.</p>
-    /// - On failure, responds with [`SdkError<ListBlueprintsError>`](crate::operation::list_blueprints::ListBlueprintsError)
+                            /// - On failure, responds with [`SdkError<ListBlueprintsError>`](crate::operation::list_blueprints::ListBlueprintsError)
     pub fn list_blueprints(&self) -> crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder {
-        crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

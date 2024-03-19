@@ -3,7 +3,7 @@
 /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManifestConfig {
+pub struct ManifestConfig  {
     /// <p>Specifies what DataSync uses the manifest for.</p>
     pub action: ::std::option::Option<crate::types::ManifestAction>,
     /// <p>Specifies the file format of your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-create">Creating a manifest</a>.</p>
@@ -14,20 +14,20 @@ pub struct ManifestConfig {
     /// </note>
     pub source: ::std::option::Option<crate::types::SourceManifestConfig>,
 }
-impl ManifestConfig {
+impl  ManifestConfig  {
     /// <p>Specifies what DataSync uses the manifest for.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ManifestAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::ManifestAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the file format of your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-create">Creating a manifest</a>.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::ManifestFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::ManifestFormat> {
         self.format.as_ref()
     }
     /// <p>Specifies the manifest that you want DataSync to use and where it's hosted.</p><note>
     /// <p>You must specify this parameter if you're configuring a new manifest on or after February 7, 2024.</p>
     /// <p>If you don't, you'll get a 400 status code and <code>ValidationException</code> error stating that you're missing the IAM role for DataSync to access the S3 bucket where you're hosting your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing DataSync access to your manifest</a>.</p>
     /// </note>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::SourceManifestConfig> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::SourceManifestConfig> {
         self.source.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ManifestConfigBuilder {
     }
     /// <p>Specifies what DataSync uses the manifest for.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ManifestAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies what DataSync uses the manifest for.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ManifestAction> {
@@ -68,8 +67,7 @@ impl ManifestConfigBuilder {
     }
     /// <p>Specifies the file format of your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-create">Creating a manifest</a>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::ManifestFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the file format of your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-create">Creating a manifest</a>.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ManifestFormat> {
@@ -88,8 +86,7 @@ impl ManifestConfigBuilder {
     /// <p>If you don't, you'll get a 400 status code and <code>ValidationException</code> error stating that you're missing the IAM role for DataSync to access the S3 bucket where you're hosting your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing DataSync access to your manifest</a>.</p>
     /// </note>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::SourceManifestConfig>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Specifies the manifest that you want DataSync to use and where it's hosted.</p><note>
     /// <p>You must specify this parameter if you're configuring a new manifest on or after February 7, 2024.</p>
@@ -101,9 +98,13 @@ impl ManifestConfigBuilder {
     /// Consumes the builder and constructs a [`ManifestConfig`](crate::types::ManifestConfig).
     pub fn build(self) -> crate::types::ManifestConfig {
         crate::types::ManifestConfig {
-            action: self.action,
-            format: self.format,
-            source: self.source,
+            action: self.action
+            ,
+            format: self.format
+            ,
+            source: self.source
+            ,
         }
     }
 }
+

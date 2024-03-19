@@ -3,19 +3,19 @@
 /// <p>The name and ARN of a fleet metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetMetricNameAndArn {
+pub struct FleetMetricNameAndArn  {
     /// <p>The fleet metric name.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The fleet metric ARN.</p>
     pub metric_arn: ::std::option::Option<::std::string::String>,
 }
-impl FleetMetricNameAndArn {
+impl  FleetMetricNameAndArn  {
     /// <p>The fleet metric name.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The fleet metric ARN.</p>
-    pub fn metric_arn(&self) -> ::std::option::Option<&str> {
+    pub fn metric_arn(&self) -> ::std::option::Option<& str> {
         self.metric_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FleetMetricNameAndArnBuilder {
     }
     /// <p>The fleet metric name.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The fleet metric name.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FleetMetricNameAndArnBuilder {
     }
     /// <p>The fleet metric ARN.</p>
     pub fn set_metric_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_arn = input;
-        self
+        self.metric_arn = input; self
     }
     /// <p>The fleet metric ARN.</p>
     pub fn get_metric_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FleetMetricNameAndArnBuilder {
     /// Consumes the builder and constructs a [`FleetMetricNameAndArn`](crate::types::FleetMetricNameAndArn).
     pub fn build(self) -> crate::types::FleetMetricNameAndArn {
         crate::types::FleetMetricNameAndArn {
-            metric_name: self.metric_name,
-            metric_arn: self.metric_arn,
+            metric_name: self.metric_name
+            ,
+            metric_arn: self.metric_arn
+            ,
         }
     }
 }
+

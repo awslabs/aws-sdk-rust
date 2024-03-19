@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationComponentStrategiesInput {
+pub struct GetApplicationComponentStrategiesInput  {
     /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub application_component_id: ::std::option::Option<::std::string::String>,
 }
-impl GetApplicationComponentStrategiesInput {
+impl  GetApplicationComponentStrategiesInput  {
     /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
-    pub fn application_component_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_component_id(&self) -> ::std::option::Option<& str> {
         self.application_component_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetApplicationComponentStrategiesInputBuilder {
     }
     /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn set_application_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_component_id = input;
-        self
+        self.application_component_id = input; self
     }
     /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_component_id
     }
     /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput {
-                application_component_id: self.application_component_id,
-            },
+                application_component_id: self.application_component_id
+                ,
+            }
         )
     }
 }
+

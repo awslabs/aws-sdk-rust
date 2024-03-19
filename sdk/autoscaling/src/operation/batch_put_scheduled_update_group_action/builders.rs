@@ -5,54 +5,50 @@ pub use crate::operation::batch_put_scheduled_update_group_action::_batch_put_sc
 
 impl BatchPutScheduledUpdateGroupActionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_put_scheduled_update_group_action();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_put_scheduled_update_group_action();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchPutScheduledUpdateGroupAction`.
-///
+/// 
 /// <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutScheduledUpdateGroupActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionInputBuilder,
+                    inner: crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
-    > for BatchPutScheduledUpdateGroupActionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
-            crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
+                    crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
+                > for BatchPutScheduledUpdateGroupActionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
+                        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchPutScheduledUpdateGroupActionFluentBuilder {
     /// Creates a new `BatchPutScheduledUpdateGroupAction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,54 +57,44 @@ impl BatchPutScheduledUpdateGroupActionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupAction::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupAction::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupAction::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupAction::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput, crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
@@ -133,15 +119,13 @@ impl BatchPutScheduledUpdateGroupActionFluentBuilder {
         self
     }
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    pub fn set_scheduled_update_group_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>,
-    ) -> Self {
+    pub fn set_scheduled_update_group_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledUpdateGroupActionRequest>>) -> Self {
         self.inner = self.inner.set_scheduled_update_group_actions(input);
         self
     }
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    pub fn get_scheduled_update_group_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>> {
+    pub fn get_scheduled_update_group_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduledUpdateGroupActionRequest>> {
         self.inner.get_scheduled_update_group_actions()
     }
 }
+

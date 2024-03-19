@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>DescribeAlertManagerDefinition</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlertManagerDefinitionInput {
+pub struct DescribeAlertManagerDefinitionInput  {
     /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAlertManagerDefinitionInput {
+impl  DescribeAlertManagerDefinitionInput  {
     /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DescribeAlertManagerDefinitionInputBuilder {
     }
     /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DescribeAlertManagerDefinitionInput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput {
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput {
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

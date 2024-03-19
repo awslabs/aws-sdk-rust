@@ -5,17 +5,16 @@
 /// <p>Example: <code>"determiningPolicies":[{"policyId":"SPEXAMPLEabcdefg111111"}]</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeterminingPolicyItem {
+pub struct DeterminingPolicyItem  {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     pub policy_id: ::std::string::String,
 }
-impl DeterminingPolicyItem {
+impl  DeterminingPolicyItem  {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
-    pub fn policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_id.deref()
+    pub fn policy_id(&self) -> & str {
+        use std::ops::Deref; self.policy_id.deref()
     }
 }
 impl DeterminingPolicyItem {
@@ -42,8 +41,7 @@ impl DeterminingPolicyItemBuilder {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
@@ -54,13 +52,15 @@ impl DeterminingPolicyItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_id`](crate::types::builders::DeterminingPolicyItemBuilder::policy_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DeterminingPolicyItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeterminingPolicyItem {
-            policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_id",
-                    "policy_id was not specified but it is required when building DeterminingPolicyItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeterminingPolicyItem {
+                policy_id: self.policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_id", "policy_id was not specified but it is required when building DeterminingPolicyItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

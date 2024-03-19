@@ -74,3 +74,4 @@ pub use crate::types::_job::JobBuilder;
 pub use crate::types::_device_job_config::DeviceJobConfigBuilder;
 
 pub use crate::types::_ota_job_config::OtaJobConfigBuilder;
+

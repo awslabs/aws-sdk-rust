@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingsOutput {
+pub struct ListFindingsOutput  {
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    pub finding_arns: ::std::vec::Vec<::std::string::String>,
+    pub finding_arns: ::std::vec::Vec::<::std::string::String>,
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFindingsOutput {
+impl  ListFindingsOutput  {
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    pub fn finding_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.finding_arns.deref()
+    pub fn finding_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.finding_arns.deref()
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
     pub fn builder() -> crate::operation::list_findings::builders::ListFindingsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListFindingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsOutputBuilder {
-    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListFindingsOutputBuilder {
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
     pub fn finding_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_arns.unwrap_or_default();
-        v.push(input.into());
-        self.finding_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_arns = input;
-        self
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_arns = input; self
     }
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_arns
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -68,37 +66,37 @@ impl ListFindingsOutputBuilder {
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`finding_arns`](crate::operation::list_findings::builders::ListFindingsOutputBuilder::finding_arns)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsOutput {
-            finding_arns: self.finding_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_arns",
-                    "finding_arns was not specified but it is required when building ListFindingsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_findings::ListFindingsOutput {
+                finding_arns: self.finding_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_arns", "finding_arns was not specified but it is required when building ListFindingsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

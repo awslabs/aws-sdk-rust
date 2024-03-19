@@ -3,7 +3,7 @@
 /// <p>Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie accounts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageStatisticsFilter {
+pub struct UsageStatisticsFilter  {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
     pub comparator: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>,
     /// <p>The field to use in the condition.</p>
@@ -20,15 +20,15 @@ pub struct UsageStatisticsFilter {
     /// <li>
     /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UsageStatisticsFilter {
+impl  UsageStatisticsFilter  {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::UsageStatisticsFilterComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<& crate::types::UsageStatisticsFilterComparator> {
         self.comparator.as_ref()
     }
     /// <p>The field to use in the condition.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::UsageStatisticsFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::UsageStatisticsFilterKey> {
         self.key.as_ref()
     }
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
@@ -43,10 +43,11 @@ impl UsageStatisticsFilter {
     /// <li>
     /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UsageStatisticsFilter {
@@ -62,7 +63,7 @@ impl UsageStatisticsFilter {
 pub struct UsageStatisticsFilterBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>,
     pub(crate) key: ::std::option::Option<crate::types::UsageStatisticsFilterKey>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UsageStatisticsFilterBuilder {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
@@ -72,8 +73,7 @@ impl UsageStatisticsFilterBuilder {
     }
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>) -> Self {
-        self.comparator = input;
-        self
+        self.comparator = input; self
     }
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
     pub fn get_comparator(&self) -> &::std::option::Option<crate::types::UsageStatisticsFilterComparator> {
@@ -86,8 +86,7 @@ impl UsageStatisticsFilterBuilder {
     }
     /// <p>The field to use in the condition.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::UsageStatisticsFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The field to use in the condition.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::UsageStatisticsFilterKey> {
@@ -111,9 +110,9 @@ impl UsageStatisticsFilterBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
@@ -127,9 +126,8 @@ impl UsageStatisticsFilterBuilder {
     /// <li>
     /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
@@ -143,15 +141,19 @@ impl UsageStatisticsFilterBuilder {
     /// <li>
     /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`UsageStatisticsFilter`](crate::types::UsageStatisticsFilter).
     pub fn build(self) -> crate::types::UsageStatisticsFilter {
         crate::types::UsageStatisticsFilter {
-            comparator: self.comparator,
-            key: self.key,
-            values: self.values,
+            comparator: self.comparator
+            ,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

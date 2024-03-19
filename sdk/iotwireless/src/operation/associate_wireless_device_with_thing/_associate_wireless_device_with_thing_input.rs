@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateWirelessDeviceWithThingInput {
+pub struct AssociateWirelessDeviceWithThingInput  {
     /// <p>The ID of the resource to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing to associate with the wireless device.</p>
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateWirelessDeviceWithThingInput {
+impl  AssociateWirelessDeviceWithThingInput  {
     /// <p>The ID of the resource to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the thing to associate with the wireless device.</p>
-    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateWirelessDeviceWithThingInputBuilder {
     }
     /// <p>The ID of the resource to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl AssociateWirelessDeviceWithThingInputBuilder {
     }
     /// <p>The ARN of the thing to associate with the wireless device.</p>
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// <p>The ARN of the thing to associate with the wireless device.</p>
     pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_arn
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingInput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput {
-                id: self.id,
-                thing_arn: self.thing_arn,
-            },
+                id: self.id
+                ,
+                thing_arn: self.thing_arn
+                ,
+            }
         )
     }
 }
+

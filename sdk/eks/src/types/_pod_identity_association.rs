@@ -3,7 +3,7 @@
 /// <p>Amazon EKS Pod Identity associations provide the ability to manage credentials for your applications, similar to the way that Amazon EC2 instance profiles provide credentials to Amazon EC2 instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PodIdentityAssociation {
+pub struct PodIdentityAssociation  {
     /// <p>The name of the cluster that the association is in.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
@@ -34,35 +34,35 @@ pub struct PodIdentityAssociation {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp that the association was created at.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent timestamp that the association was modified at</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PodIdentityAssociation {
+impl  PodIdentityAssociation  {
     /// <p>The name of the cluster that the association is in.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
-    pub fn service_account(&self) -> ::std::option::Option<&str> {
+    pub fn service_account(&self) -> ::std::option::Option<& str> {
         self.service_account.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn association_arn(&self) -> ::std::option::Option<& str> {
         self.association_arn.as_deref()
     }
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
@@ -83,15 +83,15 @@ impl PodIdentityAssociation {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp that the association was created at.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The most recent timestamp that the association was modified at</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -112,7 +112,7 @@ pub struct PodIdentityAssociationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -124,8 +124,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The name of the cluster that the association is in.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster that the association is in.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub fn set_service_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account = input;
-        self
+        self.service_account = input; self
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub fn get_service_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +163,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +176,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_arn = input;
-        self
+        self.association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,9 +219,9 @@ impl PodIdentityAssociationBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -247,9 +241,8 @@ impl PodIdentityAssociationBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -269,7 +262,7 @@ impl PodIdentityAssociationBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The timestamp that the association was created at.</p>
@@ -279,8 +272,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The timestamp that the association was created at.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp that the association was created at.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -293,8 +285,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The most recent timestamp that the association was modified at</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The most recent timestamp that the association was modified at</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -303,15 +294,25 @@ impl PodIdentityAssociationBuilder {
     /// Consumes the builder and constructs a [`PodIdentityAssociation`](crate::types::PodIdentityAssociation).
     pub fn build(self) -> crate::types::PodIdentityAssociation {
         crate::types::PodIdentityAssociation {
-            cluster_name: self.cluster_name,
-            namespace: self.namespace,
-            service_account: self.service_account,
-            role_arn: self.role_arn,
-            association_arn: self.association_arn,
-            association_id: self.association_id,
-            tags: self.tags,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
+            cluster_name: self.cluster_name
+            ,
+            namespace: self.namespace
+            ,
+            service_account: self.service_account
+            ,
+            role_arn: self.role_arn
+            ,
+            association_arn: self.association_arn
+            ,
+            association_id: self.association_id
+            ,
+            tags: self.tags
+            ,
+            created_at: self.created_at
+            ,
+            modified_at: self.modified_at
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListListenersInput {
+pub struct ListListenersInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
@@ -10,9 +10,9 @@ pub struct ListListenersInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListListenersInput {
+impl  ListListenersInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
-    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
@@ -20,7 +20,7 @@ impl ListListenersInput {
         self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListListenersInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
     pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
     pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListListenersInputBuilder {
     }
     /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl ListListenersInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
-            accelerator_arn: self.accelerator_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_listeners::ListListenersInput {
+                accelerator_arn: self.accelerator_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

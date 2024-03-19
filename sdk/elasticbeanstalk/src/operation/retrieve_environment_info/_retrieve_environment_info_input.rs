@@ -3,7 +3,7 @@
 /// <p>Request to download logs retrieved with <code>RequestEnvironmentInfo</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrieveEnvironmentInfoInput {
+pub struct RetrieveEnvironmentInfoInput  {
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
@@ -15,21 +15,21 @@ pub struct RetrieveEnvironmentInfoInput {
     /// <p>The type of information to retrieve.</p>
     pub info_type: ::std::option::Option<crate::types::EnvironmentInfoType>,
 }
-impl RetrieveEnvironmentInfoInput {
+impl  RetrieveEnvironmentInfoInput  {
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The type of information to retrieve.</p>
-    pub fn info_type(&self) -> ::std::option::Option<&crate::types::EnvironmentInfoType> {
+    pub fn info_type(&self) -> ::std::option::Option<& crate::types::EnvironmentInfoType> {
         self.info_type.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
@@ -80,8 +79,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
@@ -97,24 +95,24 @@ impl RetrieveEnvironmentInfoInputBuilder {
     }
     /// <p>The type of information to retrieve.</p>
     pub fn set_info_type(mut self, input: ::std::option::Option<crate::types::EnvironmentInfoType>) -> Self {
-        self.info_type = input;
-        self
+        self.info_type = input; self
     }
     /// <p>The type of information to retrieve.</p>
     pub fn get_info_type(&self) -> &::std::option::Option<crate::types::EnvironmentInfoType> {
         &self.info_type
     }
     /// Consumes the builder and constructs a [`RetrieveEnvironmentInfoInput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput {
-            environment_id: self.environment_id,
-            environment_name: self.environment_name,
-            info_type: self.info_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput {
+                environment_id: self.environment_id
+                ,
+                environment_name: self.environment_name
+                ,
+                info_type: self.info_type
+                ,
+            }
+        )
     }
 }
+

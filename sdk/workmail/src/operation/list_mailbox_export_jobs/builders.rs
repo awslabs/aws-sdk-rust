@@ -5,54 +5,50 @@ pub use crate::operation::list_mailbox_export_jobs::_list_mailbox_export_jobs_in
 
 impl ListMailboxExportJobsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_mailbox_export_jobs();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_mailbox_export_jobs();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListMailboxExportJobs`.
-///
+/// 
 /// <p>Lists the mailbox export jobs started for the specified organization within the last seven days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMailboxExportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder,
+                    inner: crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
-    > for ListMailboxExportJobsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
+                    crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
+                > for ListMailboxExportJobsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
+                        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListMailboxExportJobsFluentBuilder {
     /// Creates a new `ListMailboxExportJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListMailboxExportJobsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_mailbox_export_jobs::ListMailboxExportJobs::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobs::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput,
-        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_mailbox_export_jobs::ListMailboxExportJobs::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobs::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput, crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator {
-        crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator {
+                                crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The organization ID.</p>
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -157,3 +144,4 @@ impl ListMailboxExportJobsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

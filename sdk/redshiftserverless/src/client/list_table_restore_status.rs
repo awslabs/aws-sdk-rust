@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTableRestoreStatus`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p><br>
     ///   - [`namespace_name(impl Into<String>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::set_namespace_name):<br>required: **false**<br><p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p><br>
     ///   - [`workgroup_name(impl Into<String>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::set_workgroup_name):<br>required: **false**<br><p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p><br>
-    /// - On success, responds with [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput) with field(s):
+                            /// - On success, responds with [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput::next_token): <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
     ///   - [`table_restore_statuses(Option<Vec::<TableRestoreStatus>>)`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput::table_restore_statuses): <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    /// - On failure, responds with [`SdkError<ListTableRestoreStatusError>`](crate::operation::list_table_restore_status::ListTableRestoreStatusError)
+                            /// - On failure, responds with [`SdkError<ListTableRestoreStatusError>`](crate::operation::list_table_restore_status::ListTableRestoreStatusError)
     pub fn list_table_restore_status(&self) -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder {
-        crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

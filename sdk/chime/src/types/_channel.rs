@@ -3,7 +3,7 @@
 /// <p>The details of a channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Channel {
+pub struct Channel  {
     /// <p>The name of the channel.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the channel.</p>
@@ -23,45 +23,45 @@ pub struct Channel {
     /// <p>The time at which a channel was last updated.</p>
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Channel {
+impl  Channel  {
     /// <p>The name of the channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The mode of the channel.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ChannelMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::ChannelMode> {
         self.mode.as_ref()
     }
     /// <p>The channel's privacy setting.</p>
-    pub fn privacy(&self) -> ::std::option::Option<&crate::types::ChannelPrivacy> {
+    pub fn privacy(&self) -> ::std::option::Option<& crate::types::ChannelPrivacy> {
         self.privacy.as_ref()
     }
     /// <p>The channel's metadata.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.created_by.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn last_message_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_message_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for Channel {
+impl  ::std::fmt::Debug for Channel  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Channel");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -105,8 +105,7 @@ impl ChannelBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl ChannelBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl ChannelBuilder {
     }
     /// <p>The mode of the channel.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The mode of the channel.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
@@ -147,8 +144,7 @@ impl ChannelBuilder {
     }
     /// <p>The channel's privacy setting.</p>
     pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
-        self.privacy = input;
-        self
+        self.privacy = input; self
     }
     /// <p>The channel's privacy setting.</p>
     pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
@@ -161,8 +157,7 @@ impl ChannelBuilder {
     }
     /// <p>The channel's metadata.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The channel's metadata.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl ChannelBuilder {
     }
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -189,8 +183,7 @@ impl ChannelBuilder {
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,8 +196,7 @@ impl ChannelBuilder {
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
     pub fn set_last_message_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_message_timestamp = input;
-        self
+        self.last_message_timestamp = input; self
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
     pub fn get_last_message_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,8 +209,7 @@ impl ChannelBuilder {
     }
     /// <p>The time at which a channel was last updated.</p>
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// <p>The time at which a channel was last updated.</p>
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -227,15 +218,24 @@ impl ChannelBuilder {
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
-            name: self.name,
-            channel_arn: self.channel_arn,
-            mode: self.mode,
-            privacy: self.privacy,
-            metadata: self.metadata,
-            created_by: self.created_by,
-            created_timestamp: self.created_timestamp,
-            last_message_timestamp: self.last_message_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
+            name: self.name
+            ,
+            channel_arn: self.channel_arn
+            ,
+            mode: self.mode
+            ,
+            privacy: self.privacy
+            ,
+            metadata: self.metadata
+            ,
+            created_by: self.created_by
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_message_timestamp: self.last_message_timestamp
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
         }
     }
 }
@@ -254,3 +254,4 @@ impl ::std::fmt::Debug for ChannelBuilder {
         formatter.finish()
     }
 }
+

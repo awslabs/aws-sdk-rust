@@ -3,7 +3,7 @@
 /// <p>The configuration options to sort aggregated values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregationSortConfiguration {
+pub struct AggregationSortConfiguration  {
     /// <p>The column that determines the sort order of aggregated values.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction of values.</p>
@@ -17,9 +17,9 @@ pub struct AggregationSortConfiguration {
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
-impl AggregationSortConfiguration {
+impl  AggregationSortConfiguration  {
     /// <p>The column that determines the sort order of aggregated values.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The sort direction of values.</p>
@@ -29,11 +29,11 @@ impl AggregationSortConfiguration {
     /// <li>
     /// <p><code>DESC</code>: Sort in descending order.</p></li>
     /// </ul>
-    pub fn sort_direction(&self) -> &crate::types::SortDirection {
+    pub fn sort_direction(&self) -> & crate::types::SortDirection {
         &self.sort_direction
     }
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
-    pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> ::std::option::Option<& crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl AggregationSortConfigurationBuilder {
     }
     /// <p>The column that determines the sort order of aggregated values.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that determines the sort order of aggregated values.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -88,8 +87,7 @@ impl AggregationSortConfigurationBuilder {
     /// <p><code>DESC</code>: Sort in descending order.</p></li>
     /// </ul>
     pub fn set_sort_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
-        self.sort_direction = input;
-        self
+        self.sort_direction = input; self
     }
     /// <p>The sort direction of values.</p>
     /// <ul>
@@ -108,8 +106,7 @@ impl AggregationSortConfigurationBuilder {
     }
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
     pub fn set_aggregation_function(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
-        self.aggregation_function = input;
-        self
+        self.aggregation_function = input; self
     }
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
     pub fn get_aggregation_function(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
@@ -119,15 +116,19 @@ impl AggregationSortConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sort_direction`](crate::types::builders::AggregationSortConfigurationBuilder::sort_direction)
     pub fn build(self) -> ::std::result::Result<crate::types::AggregationSortConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AggregationSortConfiguration {
-            column: self.column,
-            sort_direction: self.sort_direction.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sort_direction",
-                    "sort_direction was not specified but it is required when building AggregationSortConfiguration",
-                )
-            })?,
-            aggregation_function: self.aggregation_function,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AggregationSortConfiguration {
+                column: self.column
+                ,
+                sort_direction: self.sort_direction
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sort_direction", "sort_direction was not specified but it is required when building AggregationSortConfiguration")
+                    )?
+                ,
+                aggregation_function: self.aggregation_function
+                ,
+            }
+        )
     }
 }
+

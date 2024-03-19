@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateProfileInput {
+pub struct UpdateProfileInput  {
     /// <p>Specifies the unique, system-generated identifier for the profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile, used to identify it.</p>
@@ -14,29 +14,29 @@ pub struct UpdateProfileInput {
     /// <p>Specifies the name for the business associated with this profile.</p>
     pub business_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateProfileInput {
+impl  UpdateProfileInput  {
     /// <p>Specifies the unique, system-generated identifier for the profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>The name of the profile, used to identify it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the email address associated with this customer profile.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Specifies the phone number associated with the profile.</p>
-    pub fn phone(&self) -> ::std::option::Option<&str> {
+    pub fn phone(&self) -> ::std::option::Option<& str> {
         self.phone.as_deref()
     }
     /// <p>Specifies the name for the business associated with this profile.</p>
-    pub fn business_name(&self) -> ::std::option::Option<&str> {
+    pub fn business_name(&self) -> ::std::option::Option<& str> {
         self.business_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateProfileInput {
+impl  ::std::fmt::Debug for UpdateProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProfileInput");
         formatter.field("profile_id", &self.profile_id);
@@ -73,8 +73,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>Specifies the unique, system-generated identifier for the profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>Specifies the unique, system-generated identifier for the profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The name of the profile, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the profile, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>Specifies the email address associated with this customer profile.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Specifies the email address associated with this customer profile.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>Specifies the phone number associated with the profile.</p>
     pub fn set_phone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone = input;
-        self
+        self.phone = input; self
     }
     /// <p>Specifies the phone number associated with the profile.</p>
     pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,24 +125,28 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>Specifies the name for the business associated with this profile.</p>
     pub fn set_business_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.business_name = input;
-        self
+        self.business_name = input; self
     }
     /// <p>Specifies the name for the business associated with this profile.</p>
     pub fn get_business_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_name
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
-            profile_id: self.profile_id,
-            name: self.name,
-            email: self.email,
-            phone: self.phone,
-            business_name: self.business_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_profile::UpdateProfileInput {
+                profile_id: self.profile_id
+                ,
+                name: self.name
+                ,
+                email: self.email
+                ,
+                phone: self.phone
+                ,
+                business_name: self.business_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateProfileInputBuilder {
@@ -160,3 +160,4 @@ impl ::std::fmt::Debug for UpdateProfileInputBuilder {
         formatter.finish()
     }
 }
+

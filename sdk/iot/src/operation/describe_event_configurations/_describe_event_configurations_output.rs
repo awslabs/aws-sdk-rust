@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventConfigurationsOutput {
+pub struct DescribeEventConfigurationsOutput  {
     /// <p>The event configurations.</p>
-    pub event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
+    pub event_configurations: ::std::option::Option<::std::collections::HashMap::<crate::types::EventType, crate::types::Configuration>>,
     /// <p>The creation date of the event configuration.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the event configurations were last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeEventConfigurationsOutput {
+impl  DescribeEventConfigurationsOutput  {
     /// <p>The event configurations.</p>
-    pub fn event_configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
+    pub fn event_configurations(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::EventType, crate::types::Configuration>> {
         self.event_configurations.as_ref()
     }
     /// <p>The creation date of the event configuration.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the event configurations were last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEventConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEventConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventConfigurationsOutput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder {
@@ -41,7 +41,7 @@ impl DescribeEventConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventConfigurationsOutputBuilder {
-    pub(crate) event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
+    pub(crate) event_configurations: ::std::option::Option<::std::collections::HashMap::<crate::types::EventType, crate::types::Configuration>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -54,22 +54,16 @@ impl DescribeEventConfigurationsOutputBuilder {
     /// <p>The event configurations.</p>
     pub fn event_configurations(mut self, k: crate::types::EventType, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.event_configurations.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.event_configurations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.event_configurations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The event configurations.</p>
-    pub fn set_event_configurations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
-    ) -> Self {
-        self.event_configurations = input;
-        self
+    pub fn set_event_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::EventType, crate::types::Configuration>>) -> Self {
+        self.event_configurations = input; self
     }
     /// <p>The event configurations.</p>
-    pub fn get_event_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
+    pub fn get_event_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::EventType, crate::types::Configuration>> {
         &self.event_configurations
     }
     /// <p>The creation date of the event configuration.</p>
@@ -79,8 +73,7 @@ impl DescribeEventConfigurationsOutputBuilder {
     }
     /// <p>The creation date of the event configuration.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date of the event configuration.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,29 +86,32 @@ impl DescribeEventConfigurationsOutputBuilder {
     }
     /// <p>The date the event configurations were last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date the event configurations were last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEventConfigurationsOutput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput {
         crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput {
-            event_configurations: self.event_configurations,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            event_configurations: self.event_configurations
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

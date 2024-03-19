@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReplicationConfigurationInput {
+pub struct GetReplicationConfigurationInput  {
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
-impl GetReplicationConfigurationInput {
+impl  GetReplicationConfigurationInput  {
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`GetReplicationConfigurationInput`](crate::operation::get_replication_configuration::GetReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_replication_configuration::GetReplicationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_replication_configuration::GetReplicationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

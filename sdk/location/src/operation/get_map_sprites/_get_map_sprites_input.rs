@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetMapSpritesInput {
+pub struct GetMapSpritesInput  {
     /// <p>The map resource associated with the sprite ﬁle.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
@@ -23,9 +23,9 @@ pub struct GetMapSpritesInput {
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GetMapSpritesInput {
+impl  GetMapSpritesInput  {
     /// <p>The map resource associated with the sprite ﬁle.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
@@ -42,15 +42,15 @@ impl GetMapSpritesInput {
     /// <li>
     /// <p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetMapSpritesInput {
+impl  ::std::fmt::Debug for GetMapSpritesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMapSpritesInput");
         formatter.field("map_name", &self.map_name);
@@ -83,8 +83,7 @@ impl GetMapSpritesInputBuilder {
     }
     /// <p>The map resource associated with the sprite ﬁle.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The map resource associated with the sprite ﬁle.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl GetMapSpritesInputBuilder {
     /// <p><code>sprites@2x.json</code> for high pixel density displays</p></li>
     /// </ul>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
@@ -151,22 +149,24 @@ impl GetMapSpritesInputBuilder {
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_map_sprites::GetMapSpritesInput {
-            map_name: self.map_name,
-            file_name: self.file_name,
-            key: self.key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_map_sprites::GetMapSpritesInput {
+                map_name: self.map_name
+                ,
+                file_name: self.file_name
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetMapSpritesInputBuilder {
@@ -178,3 +178,4 @@ impl ::std::fmt::Debug for GetMapSpritesInputBuilder {
         formatter.finish()
     }
 }
+

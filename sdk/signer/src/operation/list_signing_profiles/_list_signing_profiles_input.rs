@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSigningProfilesInput {
+pub struct ListSigningProfilesInput  {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub include_canceled: ::std::option::Option<bool>,
     /// <p>The maximum number of profiles to be returned.</p>
@@ -12,9 +12,9 @@ pub struct ListSigningProfilesInput {
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>,
+    pub statuses: ::std::option::Option<::std::vec::Vec::<crate::types::SigningProfileStatus>>,
 }
-impl ListSigningProfilesInput {
+impl  ListSigningProfilesInput  {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn include_canceled(&self) -> ::std::option::Option<bool> {
         self.include_canceled
@@ -24,18 +24,19 @@ impl ListSigningProfilesInput {
         self.max_results
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
-    pub fn platform_id(&self) -> ::std::option::Option<&str> {
+    pub fn platform_id(&self) -> ::std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
-    pub fn statuses(&self) -> &[crate::types::SigningProfileStatus] {
-        self.statuses.as_deref().unwrap_or_default()
+    pub fn statuses(&self) -> & [crate::types::SigningProfileStatus] {
+        self.statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListSigningProfilesInput {
@@ -53,7 +54,7 @@ pub struct ListSigningProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
-    pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>,
+    pub(crate) statuses: ::std::option::Option<::std::vec::Vec::<crate::types::SigningProfileStatus>>,
 }
 impl ListSigningProfilesInputBuilder {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
@@ -63,8 +64,7 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn set_include_canceled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_canceled = input;
-        self
+        self.include_canceled = input; self
     }
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn get_include_canceled(&self) -> &::std::option::Option<bool> {
@@ -77,8 +77,7 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>The maximum number of profiles to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of profiles to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -91,8 +90,7 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_id = input;
-        self
+        self.platform_id = input; self
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,30 +116,34 @@ impl ListSigningProfilesInputBuilder {
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
     pub fn statuses(mut self, input: crate::types::SigningProfileStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
-        v.push(input);
-        self.statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SigningProfileStatus>>) -> Self {
+        self.statuses = input; self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SigningProfileStatus>> {
         &self.statuses
     }
     /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_signing_profiles::ListSigningProfilesInput {
-            include_canceled: self.include_canceled,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            platform_id: self.platform_id,
-            statuses: self.statuses,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_signing_profiles::ListSigningProfilesInput {
+                include_canceled: self.include_canceled
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                platform_id: self.platform_id
+                ,
+                statuses: self.statuses
+                ,
+            }
+        )
     }
 }
+

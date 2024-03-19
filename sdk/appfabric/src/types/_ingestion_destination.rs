@@ -3,7 +3,7 @@
 /// <p>Contains information about an ingestion destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionDestination {
+pub struct IngestionDestination  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
     pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
@@ -29,23 +29,21 @@ pub struct IngestionDestination {
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IngestionDestination {
+impl  IngestionDestination  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub fn ingestion_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.ingestion_arn.deref()
+    pub fn ingestion_arn(&self) -> & str {
+        use std::ops::Deref; self.ingestion_arn.deref()
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<& crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>The state of the ingestion destination.</p>
@@ -56,20 +54,20 @@ impl IngestionDestination {
     /// <li>
     /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionDestinationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IngestionDestinationStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The timestamp of when the ingestion destination was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -102,8 +100,7 @@ impl IngestionDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl IngestionDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn set_ingestion_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_arn = input;
-        self
+        self.ingestion_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn get_ingestion_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl IngestionDestinationBuilder {
     }
     /// <p>Contains information about how ingested data is processed.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>Contains information about how ingested data is processed.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -147,8 +142,7 @@ impl IngestionDestinationBuilder {
     }
     /// <p>Contains information about the destination of ingested data.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
-        self.destination_configuration = input;
-        self
+        self.destination_configuration = input; self
     }
     /// <p>Contains information about the destination of ingested data.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
@@ -175,8 +169,7 @@ impl IngestionDestinationBuilder {
     /// <p><code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionDestinationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
@@ -198,8 +191,7 @@ impl IngestionDestinationBuilder {
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
@@ -213,8 +205,7 @@ impl IngestionDestinationBuilder {
     }
     /// <p>The timestamp of when the ingestion destination was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the ingestion destination was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -227,8 +218,7 @@ impl IngestionDestinationBuilder {
     }
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -239,25 +229,32 @@ impl IngestionDestinationBuilder {
     /// - [`arn`](crate::types::builders::IngestionDestinationBuilder::arn)
     /// - [`ingestion_arn`](crate::types::builders::IngestionDestinationBuilder::ingestion_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionDestination {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building IngestionDestination",
-                )
-            })?,
-            ingestion_arn: self.ingestion_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ingestion_arn",
-                    "ingestion_arn was not specified but it is required when building IngestionDestination",
-                )
-            })?,
-            processing_configuration: self.processing_configuration,
-            destination_configuration: self.destination_configuration,
-            status: self.status,
-            status_reason: self.status_reason,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionDestination {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IngestionDestination")
+                    )?
+                ,
+                ingestion_arn: self.ingestion_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ingestion_arn", "ingestion_arn was not specified but it is required when building IngestionDestination")
+                    )?
+                ,
+                processing_configuration: self.processing_configuration
+                ,
+                destination_configuration: self.destination_configuration
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+            }
+        )
     }
 }
+

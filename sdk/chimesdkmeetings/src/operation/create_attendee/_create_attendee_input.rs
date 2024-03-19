@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAttendeeInput {
+pub struct CreateAttendeeInput  {
     /// <p>The unique ID of the meeting.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
@@ -27,15 +27,15 @@ pub struct CreateAttendeeInput {
     /// </ul>
     pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
-impl CreateAttendeeInput {
+impl  CreateAttendeeInput  {
     /// <p>The unique ID of the meeting.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
-    pub fn external_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_user_id(&self) -> ::std::option::Option<& str> {
         self.external_user_id.as_deref()
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p><note>
@@ -54,11 +54,11 @@ impl CreateAttendeeInput {
     /// <li>
     /// <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p></li>
     /// </ul>
-    pub fn capabilities(&self) -> ::std::option::Option<&crate::types::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> ::std::option::Option<& crate::types::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateAttendeeInput {
+impl  ::std::fmt::Debug for CreateAttendeeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -91,8 +91,7 @@ impl CreateAttendeeInputBuilder {
     }
     /// <p>The unique ID of the meeting.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The unique ID of the meeting.</p>
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl CreateAttendeeInputBuilder {
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
     pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_user_id = input;
-        self
+        self.external_user_id = input; self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
@@ -156,8 +154,7 @@ impl CreateAttendeeInputBuilder {
     /// <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p></li>
     /// </ul>
     pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
-        self.capabilities = input;
-        self
+        self.capabilities = input; self
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p><note>
     /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
@@ -179,14 +176,17 @@ impl CreateAttendeeInputBuilder {
         &self.capabilities
     }
     /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::operation::create_attendee::CreateAttendeeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_attendee::CreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_attendee::CreateAttendeeInput {
-            meeting_id: self.meeting_id,
-            external_user_id: self.external_user_id,
-            capabilities: self.capabilities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_attendee::CreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_attendee::CreateAttendeeInput {
+                meeting_id: self.meeting_id
+                ,
+                external_user_id: self.external_user_id
+                ,
+                capabilities: self.capabilities
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAttendeeInputBuilder {
@@ -198,3 +198,4 @@ impl ::std::fmt::Debug for CreateAttendeeInputBuilder {
         formatter.finish()
     }
 }
+

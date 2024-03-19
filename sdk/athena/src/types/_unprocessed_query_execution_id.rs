@@ -3,7 +3,7 @@
 /// <p>Describes a query execution that failed to process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedQueryExecutionId {
+pub struct UnprocessedQueryExecutionId  {
     /// <p>The unique identifier of the query execution.</p>
     pub query_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedQueryExecutionId {
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedQueryExecutionId {
+impl  UnprocessedQueryExecutionId  {
     /// <p>The unique identifier of the query execution.</p>
-    pub fn query_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> ::std::option::Option<& str> {
         self.query_execution_id.as_deref()
     }
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UnprocessedQueryExecutionIdBuilder {
     }
     /// <p>The unique identifier of the query execution.</p>
     pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_execution_id = input;
-        self
+        self.query_execution_id = input; self
     }
     /// <p>The unique identifier of the query execution.</p>
     pub fn get_query_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UnprocessedQueryExecutionIdBuilder {
     }
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UnprocessedQueryExecutionIdBuilder {
     }
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UnprocessedQueryExecutionIdBuilder {
     /// Consumes the builder and constructs a [`UnprocessedQueryExecutionId`](crate::types::UnprocessedQueryExecutionId).
     pub fn build(self) -> crate::types::UnprocessedQueryExecutionId {
         crate::types::UnprocessedQueryExecutionId {
-            query_execution_id: self.query_execution_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            query_execution_id: self.query_execution_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

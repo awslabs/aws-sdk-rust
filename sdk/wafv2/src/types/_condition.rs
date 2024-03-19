@@ -3,19 +3,19 @@
 /// <p>A single match condition for a <code>Filter</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Condition {
+pub struct Condition  {
     /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
     pub action_condition: ::std::option::Option<crate::types::ActionCondition>,
     /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
     pub label_name_condition: ::std::option::Option<crate::types::LabelNameCondition>,
 }
-impl Condition {
+impl  Condition  {
     /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
-    pub fn action_condition(&self) -> ::std::option::Option<&crate::types::ActionCondition> {
+    pub fn action_condition(&self) -> ::std::option::Option<& crate::types::ActionCondition> {
         self.action_condition.as_ref()
     }
     /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
-    pub fn label_name_condition(&self) -> ::std::option::Option<&crate::types::LabelNameCondition> {
+    pub fn label_name_condition(&self) -> ::std::option::Option<& crate::types::LabelNameCondition> {
         self.label_name_condition.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ConditionBuilder {
     }
     /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
     pub fn set_action_condition(mut self, input: ::std::option::Option<crate::types::ActionCondition>) -> Self {
-        self.action_condition = input;
-        self
+        self.action_condition = input; self
     }
     /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
     pub fn get_action_condition(&self) -> &::std::option::Option<crate::types::ActionCondition> {
@@ -55,8 +54,7 @@ impl ConditionBuilder {
     }
     /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
     pub fn set_label_name_condition(mut self, input: ::std::option::Option<crate::types::LabelNameCondition>) -> Self {
-        self.label_name_condition = input;
-        self
+        self.label_name_condition = input; self
     }
     /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
     pub fn get_label_name_condition(&self) -> &::std::option::Option<crate::types::LabelNameCondition> {
@@ -65,8 +63,11 @@ impl ConditionBuilder {
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     pub fn build(self) -> crate::types::Condition {
         crate::types::Condition {
-            action_condition: self.action_condition,
-            label_name_condition: self.label_name_condition,
+            action_condition: self.action_condition
+            ,
+            label_name_condition: self.label_name_condition
+            ,
         }
     }
 }
+

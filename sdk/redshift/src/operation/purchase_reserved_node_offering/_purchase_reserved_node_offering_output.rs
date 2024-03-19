@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseReservedNodeOfferingOutput {
+pub struct PurchaseReservedNodeOfferingOutput  {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     _request_id: Option<String>,
 }
-impl PurchaseReservedNodeOfferingOutput {
+impl  PurchaseReservedNodeOfferingOutput  {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
-    pub fn reserved_node(&self) -> ::std::option::Option<&crate::types::ReservedNode> {
+    pub fn reserved_node(&self) -> ::std::option::Option<& crate::types::ReservedNode> {
         self.reserved_node.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PurchaseReservedNodeOfferingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PurchaseReservedNodeOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedNodeOfferingOutput`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput).
     pub fn builder() -> crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingOutputBuilder {
@@ -40,27 +40,28 @@ impl PurchaseReservedNodeOfferingOutputBuilder {
     }
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub fn set_reserved_node(mut self, input: ::std::option::Option<crate::types::ReservedNode>) -> Self {
-        self.reserved_node = input;
-        self
+        self.reserved_node = input; self
     }
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings.</p>
     pub fn get_reserved_node(&self) -> &::std::option::Option<crate::types::ReservedNode> {
         &self.reserved_node
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PurchaseReservedNodeOfferingOutput`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput).
     pub fn build(self) -> crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput {
         crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput {
-            reserved_node: self.reserved_node,
+            reserved_node: self.reserved_node
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

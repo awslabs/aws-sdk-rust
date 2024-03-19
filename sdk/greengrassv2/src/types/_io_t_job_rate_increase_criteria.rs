@@ -3,13 +3,13 @@
 /// <p>Contains information about criteria to meet before a job increases its rollout rate. Specify either <code>numberOfNotifiedThings</code> or <code>numberOfSucceededThings</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IoTJobRateIncreaseCriteria {
+pub struct IoTJobRateIncreaseCriteria  {
     /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
     pub number_of_notified_things: ::std::option::Option<i32>,
     /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
     pub number_of_succeeded_things: ::std::option::Option<i32>,
 }
-impl IoTJobRateIncreaseCriteria {
+impl  IoTJobRateIncreaseCriteria  {
     /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
     pub fn number_of_notified_things(&self) -> ::std::option::Option<i32> {
         self.number_of_notified_things
@@ -41,8 +41,7 @@ impl IoTJobRateIncreaseCriteriaBuilder {
     }
     /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
     pub fn set_number_of_notified_things(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_notified_things = input;
-        self
+        self.number_of_notified_things = input; self
     }
     /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
     pub fn get_number_of_notified_things(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl IoTJobRateIncreaseCriteriaBuilder {
     }
     /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
     pub fn set_number_of_succeeded_things(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_succeeded_things = input;
-        self
+        self.number_of_succeeded_things = input; self
     }
     /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
     pub fn get_number_of_succeeded_things(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl IoTJobRateIncreaseCriteriaBuilder {
     /// Consumes the builder and constructs a [`IoTJobRateIncreaseCriteria`](crate::types::IoTJobRateIncreaseCriteria).
     pub fn build(self) -> crate::types::IoTJobRateIncreaseCriteria {
         crate::types::IoTJobRateIncreaseCriteria {
-            number_of_notified_things: self.number_of_notified_things,
-            number_of_succeeded_things: self.number_of_succeeded_things,
+            number_of_notified_things: self.number_of_notified_things
+            ,
+            number_of_succeeded_things: self.number_of_succeeded_things
+            ,
         }
     }
 }
+

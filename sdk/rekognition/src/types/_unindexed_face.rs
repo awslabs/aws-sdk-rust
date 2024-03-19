@@ -3,7 +3,7 @@
 /// <p>A face that <code>IndexFaces</code> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnindexedFace {
+pub struct UnindexedFace  {
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
     /// <li>
@@ -19,11 +19,11 @@ pub struct UnindexedFace {
     /// <li>
     /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
-    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec::<crate::types::Reason>>,
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.</p>
     pub face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
-impl UnindexedFace {
+impl  UnindexedFace  {
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
     /// <li>
@@ -39,13 +39,14 @@ impl UnindexedFace {
     /// <li>
     /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
-    pub fn reasons(&self) -> &[crate::types::Reason] {
-        self.reasons.as_deref().unwrap_or_default()
+    pub fn reasons(&self) -> & [crate::types::Reason] {
+        self.reasons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.</p>
-    pub fn face_detail(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
+    pub fn face_detail(&self) -> ::std::option::Option<& crate::types::FaceDetail> {
         self.face_detail.as_ref()
     }
 }
@@ -60,7 +61,7 @@ impl UnindexedFace {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnindexedFaceBuilder {
-    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec::<crate::types::Reason>>,
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl UnindexedFaceBuilder {
@@ -85,9 +86,9 @@ impl UnindexedFaceBuilder {
     /// </ul>
     pub fn reasons(mut self, input: crate::types::Reason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
-        v.push(input);
-        self.reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
@@ -104,9 +105,8 @@ impl UnindexedFaceBuilder {
     /// <li>
     /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
-    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>) -> Self {
-        self.reasons = input;
-        self
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Reason>>) -> Self {
+        self.reasons = input; self
     }
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
@@ -123,7 +123,7 @@ impl UnindexedFaceBuilder {
     /// <li>
     /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
-    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reason>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Reason>> {
         &self.reasons
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.</p>
@@ -133,8 +133,7 @@ impl UnindexedFaceBuilder {
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.</p>
     pub fn set_face_detail(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
-        self.face_detail = input;
-        self
+        self.face_detail = input; self
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.</p>
     pub fn get_face_detail(&self) -> &::std::option::Option<crate::types::FaceDetail> {
@@ -143,8 +142,11 @@ impl UnindexedFaceBuilder {
     /// Consumes the builder and constructs a [`UnindexedFace`](crate::types::UnindexedFace).
     pub fn build(self) -> crate::types::UnindexedFace {
         crate::types::UnindexedFace {
-            reasons: self.reasons,
-            face_detail: self.face_detail,
+            reasons: self.reasons
+            ,
+            face_detail: self.face_detail
+            ,
         }
     }
 }
+

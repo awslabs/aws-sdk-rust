@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppInstanceAdminOutput {
+pub struct CreateAppInstanceAdminOutput  {
     /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_admin: ::std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAppInstanceAdminOutput {
+impl  CreateAppInstanceAdminOutput  {
     /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn app_instance_admin(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn app_instance_admin(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.app_instance_admin.as_ref()
     }
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAppInstanceAdminOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAppInstanceAdminOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceAdminOutput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput).
     pub fn builder() -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateAppInstanceAdminOutputBuilder {
     }
     /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn set_app_instance_admin(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.app_instance_admin = input;
-        self
+        self.app_instance_admin = input; self
     }
     /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn get_app_instance_admin(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -61,28 +60,30 @@ impl CreateAppInstanceAdminOutputBuilder {
     }
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_instance_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAppInstanceAdminOutput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput).
     pub fn build(self) -> crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput {
         crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput {
-            app_instance_admin: self.app_instance_admin,
-            app_instance_arn: self.app_instance_arn,
+            app_instance_admin: self.app_instance_admin
+            ,
+            app_instance_arn: self.app_instance_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

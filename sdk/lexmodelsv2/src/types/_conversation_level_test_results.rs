@@ -3,15 +3,14 @@
 /// <p>The test set results data at the conversation level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLevelTestResults {
+pub struct ConversationLevelTestResults  {
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub items: ::std::vec::Vec<crate::types::ConversationLevelTestResultItem>,
+    pub items: ::std::vec::Vec::<crate::types::ConversationLevelTestResultItem>,
 }
-impl ConversationLevelTestResults {
+impl  ConversationLevelTestResults  {
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub fn items(&self) -> &[crate::types::ConversationLevelTestResultItem] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::ConversationLevelTestResultItem] {
+        use std::ops::Deref; self.items.deref()
     }
 }
 impl ConversationLevelTestResults {
@@ -25,7 +24,7 @@ impl ConversationLevelTestResults {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResultsBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ConversationLevelTestResultItem>>,
 }
 impl ConversationLevelTestResultsBuilder {
     /// Appends an item to `items`.
@@ -35,30 +34,31 @@ impl ConversationLevelTestResultsBuilder {
     /// <p>The item list in the test set results data at the conversation level.</p>
     pub fn items(mut self, input: crate::types::ConversationLevelTestResultItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConversationLevelTestResultItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConversationLevelTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ConversationLevelTestResults`](crate::types::ConversationLevelTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::ConversationLevelTestResultsBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResults, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConversationLevelTestResults {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ConversationLevelTestResults",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConversationLevelTestResults {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ConversationLevelTestResults")
+                    )?
+                ,
+            }
+        )
     }
 }
+

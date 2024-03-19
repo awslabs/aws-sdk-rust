@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceSyncBlockerSummaryOutput {
+pub struct GetServiceSyncBlockerSummaryOutput  {
     /// <p>The detailed data of the requested service sync blocker summary.</p>
     pub service_sync_blocker_summary: ::std::option::Option<crate::types::ServiceSyncBlockerSummary>,
     _request_id: Option<String>,
 }
-impl GetServiceSyncBlockerSummaryOutput {
+impl  GetServiceSyncBlockerSummaryOutput  {
     /// <p>The detailed data of the requested service sync blocker summary.</p>
-    pub fn service_sync_blocker_summary(&self) -> ::std::option::Option<&crate::types::ServiceSyncBlockerSummary> {
+    pub fn service_sync_blocker_summary(&self) -> ::std::option::Option<& crate::types::ServiceSyncBlockerSummary> {
         self.service_sync_blocker_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceSyncBlockerSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceSyncBlockerSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSyncBlockerSummaryOutput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput).
     pub fn builder() -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryOutputBuilder {
@@ -40,27 +40,28 @@ impl GetServiceSyncBlockerSummaryOutputBuilder {
     }
     /// <p>The detailed data of the requested service sync blocker summary.</p>
     pub fn set_service_sync_blocker_summary(mut self, input: ::std::option::Option<crate::types::ServiceSyncBlockerSummary>) -> Self {
-        self.service_sync_blocker_summary = input;
-        self
+        self.service_sync_blocker_summary = input; self
     }
     /// <p>The detailed data of the requested service sync blocker summary.</p>
     pub fn get_service_sync_blocker_summary(&self) -> &::std::option::Option<crate::types::ServiceSyncBlockerSummary> {
         &self.service_sync_blocker_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceSyncBlockerSummaryOutput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput).
     pub fn build(self) -> crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput {
         crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput {
-            service_sync_blocker_summary: self.service_sync_blocker_summary,
+            service_sync_blocker_summary: self.service_sync_blocker_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

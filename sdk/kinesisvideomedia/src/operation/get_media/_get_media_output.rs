@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetMediaOutput {
+pub struct GetMediaOutput  {
     /// <p>The content type of the requested media.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The payload Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see . The chunks that Kinesis Video Streams returns in the <code>GetMedia</code> call also include the following additional Matroska (MKV) tags:</p>
@@ -51,9 +51,9 @@ pub struct GetMediaOutput {
     pub payload: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
-impl GetMediaOutput {
+impl  GetMediaOutput  {
     /// <p>The content type of the requested media.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The payload Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see . The chunks that Kinesis Video Streams returns in the <code>GetMedia</code> call also include the following additional Matroska (MKV) tags:</p>
@@ -99,15 +99,15 @@ impl GetMediaOutput {
     /// <li>
     /// <p>5000 - Internal error</p></li>
     /// </ul>
-    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn payload(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
 impl ::aws_types::request_id::RequestId for GetMediaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMediaOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaOutput`](crate::operation::get_media::GetMediaOutput).
     pub fn builder() -> crate::operation::get_media::builders::GetMediaOutputBuilder {
@@ -131,8 +131,7 @@ impl GetMediaOutputBuilder {
     }
     /// <p>The content type of the requested media.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content type of the requested media.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +228,7 @@ impl GetMediaOutputBuilder {
     /// <p>5000 - Internal error</p></li>
     /// </ul>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The payload Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see . The chunks that Kinesis Video Streams returns in the <code>GetMedia</code> call also include the following additional Matroska (MKV) tags:</p>
     /// <ul>
@@ -279,20 +277,24 @@ impl GetMediaOutputBuilder {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMediaOutput`](crate::operation::get_media::GetMediaOutput).
     pub fn build(self) -> crate::operation::get_media::GetMediaOutput {
         crate::operation::get_media::GetMediaOutput {
-            content_type: self.content_type,
-            payload: self.payload.unwrap_or_default(),
+            content_type: self.content_type
+            ,
+            payload: self.payload
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

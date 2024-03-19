@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct BatchCreateDelegationByAssessmentInput {
+pub struct BatchCreateDelegationByAssessmentInput  {
     /// <p>The API request to batch create delegations in Audit Manager.</p>
-    pub create_delegation_requests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>>,
+    pub create_delegation_requests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateDelegationRequest>>,
     /// <p>The identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchCreateDelegationByAssessmentInput {
+impl  BatchCreateDelegationByAssessmentInput  {
     /// <p>The API request to batch create delegations in Audit Manager.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_delegation_requests.is_none()`.
-    pub fn create_delegation_requests(&self) -> &[crate::types::CreateDelegationRequest] {
-        self.create_delegation_requests.as_deref().unwrap_or_default()
+    pub fn create_delegation_requests(&self) -> & [crate::types::CreateDelegationRequest] {
+        self.create_delegation_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for BatchCreateDelegationByAssessmentInput {
+impl  ::std::fmt::Debug for BatchCreateDelegationByAssessmentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateDelegationByAssessmentInput");
         formatter.field("create_delegation_requests", &"*** Sensitive Data Redacted ***");
@@ -39,7 +40,7 @@ impl BatchCreateDelegationByAssessmentInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct BatchCreateDelegationByAssessmentInputBuilder {
-    pub(crate) create_delegation_requests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>>,
+    pub(crate) create_delegation_requests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateDelegationRequest>>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateDelegationByAssessmentInputBuilder {
@@ -50,17 +51,16 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
     /// <p>The API request to batch create delegations in Audit Manager.</p>
     pub fn create_delegation_requests(mut self, input: crate::types::CreateDelegationRequest) -> Self {
         let mut v = self.create_delegation_requests.unwrap_or_default();
-        v.push(input);
-        self.create_delegation_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.create_delegation_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The API request to batch create delegations in Audit Manager.</p>
-    pub fn set_create_delegation_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>>) -> Self {
-        self.create_delegation_requests = input;
-        self
+    pub fn set_create_delegation_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateDelegationRequest>>) -> Self {
+        self.create_delegation_requests = input; self
     }
     /// <p>The API request to batch create delegations in Audit Manager.</p>
-    pub fn get_create_delegation_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>> {
+    pub fn get_create_delegation_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateDelegationRequest>> {
         &self.create_delegation_requests
     }
     /// <p>The identifier for the assessment.</p>
@@ -71,25 +71,21 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
     }
     /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }
     /// Consumes the builder and constructs a [`BatchCreateDelegationByAssessmentInput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput {
-                create_delegation_requests: self.create_delegation_requests,
-                assessment_id: self.assessment_id,
-            },
+                create_delegation_requests: self.create_delegation_requests
+                ,
+                assessment_id: self.assessment_id
+                ,
+            }
         )
     }
 }
@@ -101,3 +97,4 @@ impl ::std::fmt::Debug for BatchCreateDelegationByAssessmentInputBuilder {
         formatter.finish()
     }
 }
+

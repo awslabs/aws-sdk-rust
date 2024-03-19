@@ -3,9 +3,9 @@
 /// <p>Specifies S3 buckets to add or remove from the exclusion list defined by the classification scope for an Amazon Macie account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ClassificationScopeExclusionUpdate {
+pub struct S3ClassificationScopeExclusionUpdate  {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    pub bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bucket_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -17,12 +17,13 @@ pub struct S3ClassificationScopeExclusionUpdate {
     /// </ul>
     pub operation: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
 }
-impl S3ClassificationScopeExclusionUpdate {
+impl  S3ClassificationScopeExclusionUpdate  {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_names.is_none()`.
-    pub fn bucket_names(&self) -> &[::std::string::String] {
-        self.bucket_names.as_deref().unwrap_or_default()
+    pub fn bucket_names(&self) -> & [::std::string::String] {
+        self.bucket_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
@@ -33,7 +34,7 @@ impl S3ClassificationScopeExclusionUpdate {
     /// <li>
     /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::ClassificationScopeUpdateOperation> {
+    pub fn operation(&self) -> ::std::option::Option<& crate::types::ClassificationScopeUpdateOperation> {
         self.operation.as_ref()
     }
 }
@@ -48,7 +49,7 @@ impl S3ClassificationScopeExclusionUpdate {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeExclusionUpdateBuilder {
-    pub(crate) bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bucket_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operation: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
 }
 impl S3ClassificationScopeExclusionUpdateBuilder {
@@ -59,17 +60,16 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
     pub fn bucket_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bucket_names.unwrap_or_default();
-        v.push(input.into());
-        self.bucket_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bucket_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    pub fn set_bucket_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bucket_names = input;
-        self
+    pub fn set_bucket_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bucket_names = input; self
     }
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    pub fn get_bucket_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bucket_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bucket_names
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
@@ -96,8 +96,7 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
@@ -114,8 +113,11 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// Consumes the builder and constructs a [`S3ClassificationScopeExclusionUpdate`](crate::types::S3ClassificationScopeExclusionUpdate).
     pub fn build(self) -> crate::types::S3ClassificationScopeExclusionUpdate {
         crate::types::S3ClassificationScopeExclusionUpdate {
-            bucket_names: self.bucket_names,
-            operation: self.operation,
+            bucket_names: self.bucket_names
+            ,
+            operation: self.operation
+            ,
         }
     }
 }
+

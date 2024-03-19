@@ -3,7 +3,7 @@
 /// <p>Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period for the radio unit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommitmentInformation {
+pub struct CommitmentInformation  {
     /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
     pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
     /// <p>The date and time that the commitment period started.</p>
@@ -11,17 +11,17 @@ pub struct CommitmentInformation {
     /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
     pub expires_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CommitmentInformation {
+impl  CommitmentInformation  {
     /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
-    pub fn commitment_configuration(&self) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
+    pub fn commitment_configuration(&self) -> ::std::option::Option<& crate::types::CommitmentConfiguration> {
         self.commitment_configuration.as_ref()
     }
     /// <p>The date and time that the commitment period started.</p>
-    pub fn start_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_at.as_ref()
     }
     /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
-    pub fn expires_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expires_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expires_on.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CommitmentInformationBuilder {
     }
     /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
     pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
-        self.commitment_configuration = input;
-        self
+        self.commitment_configuration = input; self
     }
     /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
     pub fn get_commitment_configuration(&self) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
@@ -63,8 +62,7 @@ impl CommitmentInformationBuilder {
     }
     /// <p>The date and time that the commitment period started.</p>
     pub fn set_start_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_at = input;
-        self
+        self.start_at = input; self
     }
     /// <p>The date and time that the commitment period started.</p>
     pub fn get_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -77,8 +75,7 @@ impl CommitmentInformationBuilder {
     }
     /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
     pub fn set_expires_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expires_on = input;
-        self
+        self.expires_on = input; self
     }
     /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
     pub fn get_expires_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,9 +84,13 @@ impl CommitmentInformationBuilder {
     /// Consumes the builder and constructs a [`CommitmentInformation`](crate::types::CommitmentInformation).
     pub fn build(self) -> crate::types::CommitmentInformation {
         crate::types::CommitmentInformation {
-            commitment_configuration: self.commitment_configuration,
-            start_at: self.start_at,
-            expires_on: self.expires_on,
+            commitment_configuration: self.commitment_configuration
+            ,
+            start_at: self.start_at
+            ,
+            expires_on: self.expires_on
+            ,
         }
     }
 }
+

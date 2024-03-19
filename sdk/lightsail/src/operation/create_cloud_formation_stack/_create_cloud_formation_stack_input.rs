@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCloudFormationStackInput {
+pub struct CreateCloudFormationStackInput  {
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEntry>>,
 }
-impl CreateCloudFormationStackInput {
+impl  CreateCloudFormationStackInput  {
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::InstanceEntry] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::InstanceEntry] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCloudFormationStackInput {
@@ -25,7 +26,7 @@ impl CreateCloudFormationStackInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCloudFormationStackInputBuilder {
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEntry>>,
 }
 impl CreateCloudFormationStackInputBuilder {
     /// Appends an item to `instances`.
@@ -35,26 +36,26 @@ impl CreateCloudFormationStackInputBuilder {
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
     pub fn instances(mut self, input: crate::types::InstanceEntry) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEntry>>) -> Self {
+        self.instances = input; self
     }
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceEntry>> {
         &self.instances
     }
     /// Consumes the builder and constructs a [`CreateCloudFormationStackInput`](crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput { instances: self.instances })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput {
+                instances: self.instances
+                ,
+            }
+        )
     }
 }
+

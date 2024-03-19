@@ -3,9 +3,9 @@
 /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CmafGroupSettings {
+pub struct CmafGroupSettings  {
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-    pub additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CmafAdditionalManifest>>,
+    pub additional_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CmafAdditionalManifest>>,
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub base_url: ::std::option::Option<::std::string::String>,
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
@@ -59,39 +59,40 @@ pub struct CmafGroupSettings {
     /// When you enable Precise segment duration in DASH manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
     pub write_segment_timeline_in_representation: ::std::option::Option<crate::types::CmafWriteSegmentTimelineInRepresentation>,
 }
-impl CmafGroupSettings {
+impl  CmafGroupSettings  {
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_manifests.is_none()`.
-    pub fn additional_manifests(&self) -> &[crate::types::CmafAdditionalManifest] {
-        self.additional_manifests.as_deref().unwrap_or_default()
+    pub fn additional_manifests(&self) -> & [crate::types::CmafAdditionalManifest] {
+        self.additional_manifests.as_deref()
+        .unwrap_or_default()
     }
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
-    pub fn base_url(&self) -> ::std::option::Option<&str> {
+    pub fn base_url(&self) -> ::std::option::Option<& str> {
         self.base_url.as_deref()
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
-    pub fn client_cache(&self) -> ::std::option::Option<&crate::types::CmafClientCache> {
+    pub fn client_cache(&self) -> ::std::option::Option<& crate::types::CmafClientCache> {
         self.client_cache.as_ref()
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    pub fn codec_specification(&self) -> ::std::option::Option<&crate::types::CmafCodecSpecification> {
+    pub fn codec_specification(&self) -> ::std::option::Option<& crate::types::CmafCodecSpecification> {
         self.codec_specification.as_ref()
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
-    pub fn dash_manifest_style(&self) -> ::std::option::Option<&crate::types::DashManifestStyle> {
+    pub fn dash_manifest_style(&self) -> ::std::option::Option<& crate::types::DashManifestStyle> {
         self.dash_manifest_style.as_ref()
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn destination_settings(&self) -> ::std::option::Option<&crate::types::DestinationSettings> {
+    pub fn destination_settings(&self) -> ::std::option::Option<& crate::types::DestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// DRM settings.
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::CmafEncryptionSettings> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::CmafEncryptionSettings> {
         self.encryption.as_ref()
     }
     /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control to specify whether the encoder enforces this value strictly.
@@ -99,19 +100,19 @@ impl CmafGroupSettings {
         self.fragment_length
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest, MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
-    pub fn image_based_trick_play(&self) -> ::std::option::Option<&crate::types::CmafImageBasedTrickPlay> {
+    pub fn image_based_trick_play(&self) -> ::std::option::Option<& crate::types::CmafImageBasedTrickPlay> {
         self.image_based_trick_play.as_ref()
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    pub fn image_based_trick_play_settings(&self) -> ::std::option::Option<&crate::types::CmafImageBasedTrickPlaySettings> {
+    pub fn image_based_trick_play_settings(&self) -> ::std::option::Option<& crate::types::CmafImageBasedTrickPlaySettings> {
         self.image_based_trick_play_settings.as_ref()
     }
     /// When set to GZIP, compresses HLS playlist.
-    pub fn manifest_compression(&self) -> ::std::option::Option<&crate::types::CmafManifestCompression> {
+    pub fn manifest_compression(&self) -> ::std::option::Option<& crate::types::CmafManifestCompression> {
         self.manifest_compression.as_ref()
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    pub fn manifest_duration_format(&self) -> ::std::option::Option<&crate::types::CmafManifestDurationFormat> {
+    pub fn manifest_duration_format(&self) -> ::std::option::Option<& crate::types::CmafManifestDurationFormat> {
         self.manifest_duration_format.as_ref()
     }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
@@ -123,19 +124,19 @@ impl CmafGroupSettings {
         self.min_final_segment_length
     }
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
-    pub fn mpd_manifest_bandwidth_type(&self) -> ::std::option::Option<&crate::types::CmafMpdManifestBandwidthType> {
+    pub fn mpd_manifest_bandwidth_type(&self) -> ::std::option::Option<& crate::types::CmafMpdManifestBandwidthType> {
         self.mpd_manifest_bandwidth_type.as_ref()
     }
     /// Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file.
-    pub fn mpd_profile(&self) -> ::std::option::Option<&crate::types::CmafMpdProfile> {
+    pub fn mpd_profile(&self) -> ::std::option::Option<& crate::types::CmafMpdProfile> {
         self.mpd_profile.as_ref()
     }
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
-    pub fn pts_offset_handling_for_b_frames(&self) -> ::std::option::Option<&crate::types::CmafPtsOffsetHandlingForBFrames> {
+    pub fn pts_offset_handling_for_b_frames(&self) -> ::std::option::Option<& crate::types::CmafPtsOffsetHandlingForBFrames> {
         self.pts_offset_handling_for_b_frames.as_ref()
     }
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
-    pub fn segment_control(&self) -> ::std::option::Option<&crate::types::CmafSegmentControl> {
+    pub fn segment_control(&self) -> ::std::option::Option<& crate::types::CmafSegmentControl> {
         self.segment_control.as_ref()
     }
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
@@ -143,31 +144,31 @@ impl CmafGroupSettings {
         self.segment_length
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn segment_length_control(&self) -> ::std::option::Option<&crate::types::CmafSegmentLengthControl> {
+    pub fn segment_length_control(&self) -> ::std::option::Option<& crate::types::CmafSegmentLengthControl> {
         self.segment_length_control.as_ref()
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    pub fn stream_inf_resolution(&self) -> ::std::option::Option<&crate::types::CmafStreamInfResolution> {
+    pub fn stream_inf_resolution(&self) -> ::std::option::Option<& crate::types::CmafStreamInfResolution> {
         self.stream_inf_resolution.as_ref()
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    pub fn target_duration_compatibility_mode(&self) -> ::std::option::Option<&crate::types::CmafTargetDurationCompatibilityMode> {
+    pub fn target_duration_compatibility_mode(&self) -> ::std::option::Option<& crate::types::CmafTargetDurationCompatibilityMode> {
         self.target_duration_compatibility_mode.as_ref()
     }
     /// Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
-    pub fn video_composition_offsets(&self) -> ::std::option::Option<&crate::types::CmafVideoCompositionOffsets> {
+    pub fn video_composition_offsets(&self) -> ::std::option::Option<& crate::types::CmafVideoCompositionOffsets> {
         self.video_composition_offsets.as_ref()
     }
     /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
-    pub fn write_dash_manifest(&self) -> ::std::option::Option<&crate::types::CmafWriteDashManifest> {
+    pub fn write_dash_manifest(&self) -> ::std::option::Option<& crate::types::CmafWriteDashManifest> {
         self.write_dash_manifest.as_ref()
     }
     /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
-    pub fn write_hls_manifest(&self) -> ::std::option::Option<&crate::types::CmafWriteHlsManifest> {
+    pub fn write_hls_manifest(&self) -> ::std::option::Option<& crate::types::CmafWriteHlsManifest> {
         self.write_hls_manifest.as_ref()
     }
     /// When you enable Precise segment duration in DASH manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
-    pub fn write_segment_timeline_in_representation(&self) -> ::std::option::Option<&crate::types::CmafWriteSegmentTimelineInRepresentation> {
+    pub fn write_segment_timeline_in_representation(&self) -> ::std::option::Option<& crate::types::CmafWriteSegmentTimelineInRepresentation> {
         self.write_segment_timeline_in_representation.as_ref()
     }
 }
@@ -182,7 +183,7 @@ impl CmafGroupSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CmafGroupSettingsBuilder {
-    pub(crate) additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CmafAdditionalManifest>>,
+    pub(crate) additional_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CmafAdditionalManifest>>,
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
     pub(crate) client_cache: ::std::option::Option<crate::types::CmafClientCache>,
     pub(crate) codec_specification: ::std::option::Option<crate::types::CmafCodecSpecification>,
@@ -218,17 +219,16 @@ impl CmafGroupSettingsBuilder {
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
     pub fn additional_manifests(mut self, input: crate::types::CmafAdditionalManifest) -> Self {
         let mut v = self.additional_manifests.unwrap_or_default();
-        v.push(input);
-        self.additional_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-    pub fn set_additional_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CmafAdditionalManifest>>) -> Self {
-        self.additional_manifests = input;
-        self
+    pub fn set_additional_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CmafAdditionalManifest>>) -> Self {
+        self.additional_manifests = input; self
     }
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-    pub fn get_additional_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CmafAdditionalManifest>> {
+    pub fn get_additional_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CmafAdditionalManifest>> {
         &self.additional_manifests
     }
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
@@ -238,8 +238,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub fn set_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url = input;
-        self
+        self.base_url = input; self
     }
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +251,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
     pub fn set_client_cache(mut self, input: ::std::option::Option<crate::types::CmafClientCache>) -> Self {
-        self.client_cache = input;
-        self
+        self.client_cache = input; self
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
     pub fn get_client_cache(&self) -> &::std::option::Option<crate::types::CmafClientCache> {
@@ -266,8 +264,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub fn set_codec_specification(mut self, input: ::std::option::Option<crate::types::CmafCodecSpecification>) -> Self {
-        self.codec_specification = input;
-        self
+        self.codec_specification = input; self
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub fn get_codec_specification(&self) -> &::std::option::Option<crate::types::CmafCodecSpecification> {
@@ -280,8 +277,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn set_dash_manifest_style(mut self, input: ::std::option::Option<crate::types::DashManifestStyle>) -> Self {
-        self.dash_manifest_style = input;
-        self
+        self.dash_manifest_style = input; self
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn get_dash_manifest_style(&self) -> &::std::option::Option<crate::types::DashManifestStyle> {
@@ -294,8 +290,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +303,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn set_destination_settings(mut self, input: ::std::option::Option<crate::types::DestinationSettings>) -> Self {
-        self.destination_settings = input;
-        self
+        self.destination_settings = input; self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn get_destination_settings(&self) -> &::std::option::Option<crate::types::DestinationSettings> {
@@ -322,8 +316,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// DRM settings.
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::CmafEncryptionSettings>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// DRM settings.
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::CmafEncryptionSettings> {
@@ -336,8 +329,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control to specify whether the encoder enforces this value strictly.
     pub fn set_fragment_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fragment_length = input;
-        self
+        self.fragment_length = input; self
     }
     /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control to specify whether the encoder enforces this value strictly.
     pub fn get_fragment_length(&self) -> &::std::option::Option<i32> {
@@ -350,8 +342,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest, MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn set_image_based_trick_play(mut self, input: ::std::option::Option<crate::types::CmafImageBasedTrickPlay>) -> Self {
-        self.image_based_trick_play = input;
-        self
+        self.image_based_trick_play = input; self
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest, MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub fn get_image_based_trick_play(&self) -> &::std::option::Option<crate::types::CmafImageBasedTrickPlay> {
@@ -364,8 +355,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     pub fn set_image_based_trick_play_settings(mut self, input: ::std::option::Option<crate::types::CmafImageBasedTrickPlaySettings>) -> Self {
-        self.image_based_trick_play_settings = input;
-        self
+        self.image_based_trick_play_settings = input; self
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     pub fn get_image_based_trick_play_settings(&self) -> &::std::option::Option<crate::types::CmafImageBasedTrickPlaySettings> {
@@ -378,8 +368,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// When set to GZIP, compresses HLS playlist.
     pub fn set_manifest_compression(mut self, input: ::std::option::Option<crate::types::CmafManifestCompression>) -> Self {
-        self.manifest_compression = input;
-        self
+        self.manifest_compression = input; self
     }
     /// When set to GZIP, compresses HLS playlist.
     pub fn get_manifest_compression(&self) -> &::std::option::Option<crate::types::CmafManifestCompression> {
@@ -392,8 +381,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
     pub fn set_manifest_duration_format(mut self, input: ::std::option::Option<crate::types::CmafManifestDurationFormat>) -> Self {
-        self.manifest_duration_format = input;
-        self
+        self.manifest_duration_format = input; self
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
     pub fn get_manifest_duration_format(&self) -> &::std::option::Option<crate::types::CmafManifestDurationFormat> {
@@ -406,8 +394,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub fn set_min_buffer_time(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_buffer_time = input;
-        self
+        self.min_buffer_time = input; self
     }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub fn get_min_buffer_time(&self) -> &::std::option::Option<i32> {
@@ -420,8 +407,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     pub fn set_min_final_segment_length(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_final_segment_length = input;
-        self
+        self.min_final_segment_length = input; self
     }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     pub fn get_min_final_segment_length(&self) -> &::std::option::Option<f64> {
@@ -434,8 +420,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
     pub fn set_mpd_manifest_bandwidth_type(mut self, input: ::std::option::Option<crate::types::CmafMpdManifestBandwidthType>) -> Self {
-        self.mpd_manifest_bandwidth_type = input;
-        self
+        self.mpd_manifest_bandwidth_type = input; self
     }
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
     pub fn get_mpd_manifest_bandwidth_type(&self) -> &::std::option::Option<crate::types::CmafMpdManifestBandwidthType> {
@@ -448,8 +433,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file.
     pub fn set_mpd_profile(mut self, input: ::std::option::Option<crate::types::CmafMpdProfile>) -> Self {
-        self.mpd_profile = input;
-        self
+        self.mpd_profile = input; self
     }
     /// Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file.
     pub fn get_mpd_profile(&self) -> &::std::option::Option<crate::types::CmafMpdProfile> {
@@ -462,8 +446,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
     pub fn set_pts_offset_handling_for_b_frames(mut self, input: ::std::option::Option<crate::types::CmafPtsOffsetHandlingForBFrames>) -> Self {
-        self.pts_offset_handling_for_b_frames = input;
-        self
+        self.pts_offset_handling_for_b_frames = input; self
     }
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
     pub fn get_pts_offset_handling_for_b_frames(&self) -> &::std::option::Option<crate::types::CmafPtsOffsetHandlingForBFrames> {
@@ -476,8 +459,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     pub fn set_segment_control(mut self, input: ::std::option::Option<crate::types::CmafSegmentControl>) -> Self {
-        self.segment_control = input;
-        self
+        self.segment_control = input; self
     }
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     pub fn get_segment_control(&self) -> &::std::option::Option<crate::types::CmafSegmentControl> {
@@ -490,8 +472,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     pub fn set_segment_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segment_length = input;
-        self
+        self.segment_length = input; self
     }
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     pub fn get_segment_length(&self) -> &::std::option::Option<i32> {
@@ -504,8 +485,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
     pub fn set_segment_length_control(mut self, input: ::std::option::Option<crate::types::CmafSegmentLengthControl>) -> Self {
-        self.segment_length_control = input;
-        self
+        self.segment_length_control = input; self
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
     pub fn get_segment_length_control(&self) -> &::std::option::Option<crate::types::CmafSegmentLengthControl> {
@@ -518,8 +498,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub fn set_stream_inf_resolution(mut self, input: ::std::option::Option<crate::types::CmafStreamInfResolution>) -> Self {
-        self.stream_inf_resolution = input;
-        self
+        self.stream_inf_resolution = input; self
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub fn get_stream_inf_resolution(&self) -> &::std::option::Option<crate::types::CmafStreamInfResolution> {
@@ -532,8 +511,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub fn set_target_duration_compatibility_mode(mut self, input: ::std::option::Option<crate::types::CmafTargetDurationCompatibilityMode>) -> Self {
-        self.target_duration_compatibility_mode = input;
-        self
+        self.target_duration_compatibility_mode = input; self
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub fn get_target_duration_compatibility_mode(&self) -> &::std::option::Option<crate::types::CmafTargetDurationCompatibilityMode> {
@@ -546,8 +524,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
     pub fn set_video_composition_offsets(mut self, input: ::std::option::Option<crate::types::CmafVideoCompositionOffsets>) -> Self {
-        self.video_composition_offsets = input;
-        self
+        self.video_composition_offsets = input; self
     }
     /// Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
     pub fn get_video_composition_offsets(&self) -> &::std::option::Option<crate::types::CmafVideoCompositionOffsets> {
@@ -560,8 +537,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
     pub fn set_write_dash_manifest(mut self, input: ::std::option::Option<crate::types::CmafWriteDashManifest>) -> Self {
-        self.write_dash_manifest = input;
-        self
+        self.write_dash_manifest = input; self
     }
     /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
     pub fn get_write_dash_manifest(&self) -> &::std::option::Option<crate::types::CmafWriteDashManifest> {
@@ -574,8 +550,7 @@ impl CmafGroupSettingsBuilder {
     }
     /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
     pub fn set_write_hls_manifest(mut self, input: ::std::option::Option<crate::types::CmafWriteHlsManifest>) -> Self {
-        self.write_hls_manifest = input;
-        self
+        self.write_hls_manifest = input; self
     }
     /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
     pub fn get_write_hls_manifest(&self) -> &::std::option::Option<crate::types::CmafWriteHlsManifest> {
@@ -587,12 +562,8 @@ impl CmafGroupSettingsBuilder {
         self
     }
     /// When you enable Precise segment duration in DASH manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
-    pub fn set_write_segment_timeline_in_representation(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafWriteSegmentTimelineInRepresentation>,
-    ) -> Self {
-        self.write_segment_timeline_in_representation = input;
-        self
+    pub fn set_write_segment_timeline_in_representation(mut self, input: ::std::option::Option<crate::types::CmafWriteSegmentTimelineInRepresentation>) -> Self {
+        self.write_segment_timeline_in_representation = input; self
     }
     /// When you enable Precise segment duration in DASH manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
     pub fn get_write_segment_timeline_in_representation(&self) -> &::std::option::Option<crate::types::CmafWriteSegmentTimelineInRepresentation> {
@@ -601,33 +572,61 @@ impl CmafGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`CmafGroupSettings`](crate::types::CmafGroupSettings).
     pub fn build(self) -> crate::types::CmafGroupSettings {
         crate::types::CmafGroupSettings {
-            additional_manifests: self.additional_manifests,
-            base_url: self.base_url,
-            client_cache: self.client_cache,
-            codec_specification: self.codec_specification,
-            dash_manifest_style: self.dash_manifest_style,
-            destination: self.destination,
-            destination_settings: self.destination_settings,
-            encryption: self.encryption,
-            fragment_length: self.fragment_length,
-            image_based_trick_play: self.image_based_trick_play,
-            image_based_trick_play_settings: self.image_based_trick_play_settings,
-            manifest_compression: self.manifest_compression,
-            manifest_duration_format: self.manifest_duration_format,
-            min_buffer_time: self.min_buffer_time,
-            min_final_segment_length: self.min_final_segment_length,
-            mpd_manifest_bandwidth_type: self.mpd_manifest_bandwidth_type,
-            mpd_profile: self.mpd_profile,
-            pts_offset_handling_for_b_frames: self.pts_offset_handling_for_b_frames,
-            segment_control: self.segment_control,
-            segment_length: self.segment_length,
-            segment_length_control: self.segment_length_control,
-            stream_inf_resolution: self.stream_inf_resolution,
-            target_duration_compatibility_mode: self.target_duration_compatibility_mode,
-            video_composition_offsets: self.video_composition_offsets,
-            write_dash_manifest: self.write_dash_manifest,
-            write_hls_manifest: self.write_hls_manifest,
-            write_segment_timeline_in_representation: self.write_segment_timeline_in_representation,
+            additional_manifests: self.additional_manifests
+            ,
+            base_url: self.base_url
+            ,
+            client_cache: self.client_cache
+            ,
+            codec_specification: self.codec_specification
+            ,
+            dash_manifest_style: self.dash_manifest_style
+            ,
+            destination: self.destination
+            ,
+            destination_settings: self.destination_settings
+            ,
+            encryption: self.encryption
+            ,
+            fragment_length: self.fragment_length
+            ,
+            image_based_trick_play: self.image_based_trick_play
+            ,
+            image_based_trick_play_settings: self.image_based_trick_play_settings
+            ,
+            manifest_compression: self.manifest_compression
+            ,
+            manifest_duration_format: self.manifest_duration_format
+            ,
+            min_buffer_time: self.min_buffer_time
+            ,
+            min_final_segment_length: self.min_final_segment_length
+            ,
+            mpd_manifest_bandwidth_type: self.mpd_manifest_bandwidth_type
+            ,
+            mpd_profile: self.mpd_profile
+            ,
+            pts_offset_handling_for_b_frames: self.pts_offset_handling_for_b_frames
+            ,
+            segment_control: self.segment_control
+            ,
+            segment_length: self.segment_length
+            ,
+            segment_length_control: self.segment_length_control
+            ,
+            stream_inf_resolution: self.stream_inf_resolution
+            ,
+            target_duration_compatibility_mode: self.target_duration_compatibility_mode
+            ,
+            video_composition_offsets: self.video_composition_offsets
+            ,
+            write_dash_manifest: self.write_dash_manifest
+            ,
+            write_hls_manifest: self.write_hls_manifest
+            ,
+            write_segment_timeline_in_representation: self.write_segment_timeline_in_representation
+            ,
         }
     }
 }
+

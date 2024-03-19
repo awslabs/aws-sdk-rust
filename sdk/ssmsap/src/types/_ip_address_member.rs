@@ -3,7 +3,7 @@
 /// <p>Provides information of the IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpAddressMember {
+pub struct IpAddressMember  {
     /// <p>The IP address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The primary IP address.</p>
@@ -11,9 +11,9 @@ pub struct IpAddressMember {
     /// <p>The type of allocation for the IP address.</p>
     pub allocation_type: ::std::option::Option<crate::types::AllocationType>,
 }
-impl IpAddressMember {
+impl  IpAddressMember  {
     /// <p>The IP address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The primary IP address.</p>
@@ -21,7 +21,7 @@ impl IpAddressMember {
         self.primary
     }
     /// <p>The type of allocation for the IP address.</p>
-    pub fn allocation_type(&self) -> ::std::option::Option<&crate::types::AllocationType> {
+    pub fn allocation_type(&self) -> ::std::option::Option<& crate::types::AllocationType> {
         self.allocation_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl IpAddressMemberBuilder {
     }
     /// <p>The IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl IpAddressMemberBuilder {
     }
     /// <p>The primary IP address.</p>
     pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// <p>The primary IP address.</p>
     pub fn get_primary(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl IpAddressMemberBuilder {
     }
     /// <p>The type of allocation for the IP address.</p>
     pub fn set_allocation_type(mut self, input: ::std::option::Option<crate::types::AllocationType>) -> Self {
-        self.allocation_type = input;
-        self
+        self.allocation_type = input; self
     }
     /// <p>The type of allocation for the IP address.</p>
     pub fn get_allocation_type(&self) -> &::std::option::Option<crate::types::AllocationType> {
@@ -86,9 +83,13 @@ impl IpAddressMemberBuilder {
     /// Consumes the builder and constructs a [`IpAddressMember`](crate::types::IpAddressMember).
     pub fn build(self) -> crate::types::IpAddressMember {
         crate::types::IpAddressMember {
-            ip_address: self.ip_address,
-            primary: self.primary,
-            allocation_type: self.allocation_type,
+            ip_address: self.ip_address
+            ,
+            primary: self.primary
+            ,
+            allocation_type: self.allocation_type
+            ,
         }
     }
 }
+

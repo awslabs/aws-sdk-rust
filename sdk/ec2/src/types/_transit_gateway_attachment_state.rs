@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transitgatewayattachmentstate = unimplemented!();
 /// match transitgatewayattachmentstate {
@@ -41,16 +41,14 @@
 /// Specifically, when `transitgatewayattachmentstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransitGatewayAttachmentState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TransitGatewayAttachmentState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -80,108 +78,95 @@ pub enum TransitGatewayAttachmentState {
     RollingBack,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TransitGatewayAttachmentState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => TransitGatewayAttachmentState::Available,
-            "deleted" => TransitGatewayAttachmentState::Deleted,
-            "deleting" => TransitGatewayAttachmentState::Deleting,
-            "failed" => TransitGatewayAttachmentState::Failed,
-            "failing" => TransitGatewayAttachmentState::Failing,
-            "initiating" => TransitGatewayAttachmentState::Initiating,
-            "initiatingRequest" => TransitGatewayAttachmentState::InitiatingRequest,
-            "modifying" => TransitGatewayAttachmentState::Modifying,
-            "pending" => TransitGatewayAttachmentState::Pending,
-            "pendingAcceptance" => TransitGatewayAttachmentState::PendingAcceptance,
-            "rejected" => TransitGatewayAttachmentState::Rejected,
-            "rejecting" => TransitGatewayAttachmentState::Rejecting,
-            "rollingBack" => TransitGatewayAttachmentState::RollingBack,
-            other => TransitGatewayAttachmentState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "available" => TransitGatewayAttachmentState::Available,
+"deleted" => TransitGatewayAttachmentState::Deleted,
+"deleting" => TransitGatewayAttachmentState::Deleting,
+"failed" => TransitGatewayAttachmentState::Failed,
+"failing" => TransitGatewayAttachmentState::Failing,
+"initiating" => TransitGatewayAttachmentState::Initiating,
+"initiatingRequest" => TransitGatewayAttachmentState::InitiatingRequest,
+"modifying" => TransitGatewayAttachmentState::Modifying,
+"pending" => TransitGatewayAttachmentState::Pending,
+"pendingAcceptance" => TransitGatewayAttachmentState::PendingAcceptance,
+"rejected" => TransitGatewayAttachmentState::Rejected,
+"rejecting" => TransitGatewayAttachmentState::Rejecting,
+"rollingBack" => TransitGatewayAttachmentState::RollingBack,
+other => TransitGatewayAttachmentState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TransitGatewayAttachmentState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TransitGatewayAttachmentState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TransitGatewayAttachmentState::from(s))
+                    }
+                }
 impl TransitGatewayAttachmentState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TransitGatewayAttachmentState::Available => "available",
-            TransitGatewayAttachmentState::Deleted => "deleted",
-            TransitGatewayAttachmentState::Deleting => "deleting",
-            TransitGatewayAttachmentState::Failed => "failed",
-            TransitGatewayAttachmentState::Failing => "failing",
-            TransitGatewayAttachmentState::Initiating => "initiating",
-            TransitGatewayAttachmentState::InitiatingRequest => "initiatingRequest",
-            TransitGatewayAttachmentState::Modifying => "modifying",
-            TransitGatewayAttachmentState::Pending => "pending",
-            TransitGatewayAttachmentState::PendingAcceptance => "pendingAcceptance",
-            TransitGatewayAttachmentState::Rejected => "rejected",
-            TransitGatewayAttachmentState::Rejecting => "rejecting",
-            TransitGatewayAttachmentState::RollingBack => "rollingBack",
-            TransitGatewayAttachmentState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available",
-            "deleted",
-            "deleting",
-            "failed",
-            "failing",
-            "initiating",
-            "initiatingRequest",
-            "modifying",
-            "pending",
-            "pendingAcceptance",
-            "rejected",
-            "rejecting",
-            "rollingBack",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TransitGatewayAttachmentState::Available => "available",
+    TransitGatewayAttachmentState::Deleted => "deleted",
+    TransitGatewayAttachmentState::Deleting => "deleting",
+    TransitGatewayAttachmentState::Failed => "failed",
+    TransitGatewayAttachmentState::Failing => "failing",
+    TransitGatewayAttachmentState::Initiating => "initiating",
+    TransitGatewayAttachmentState::InitiatingRequest => "initiatingRequest",
+    TransitGatewayAttachmentState::Modifying => "modifying",
+    TransitGatewayAttachmentState::Pending => "pending",
+    TransitGatewayAttachmentState::PendingAcceptance => "pendingAcceptance",
+    TransitGatewayAttachmentState::Rejected => "rejected",
+    TransitGatewayAttachmentState::Rejecting => "rejecting",
+    TransitGatewayAttachmentState::RollingBack => "rollingBack",
+    TransitGatewayAttachmentState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "failed", "failing", "initiating", "initiatingRequest", "modifying", "pending", "pendingAcceptance", "rejected", "rejecting", "rollingBack"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TransitGatewayAttachmentState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TransitGatewayAttachmentState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TransitGatewayAttachmentState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TransitGatewayAttachmentState::Available => write!(f, "available"),
-            TransitGatewayAttachmentState::Deleted => write!(f, "deleted"),
-            TransitGatewayAttachmentState::Deleting => write!(f, "deleting"),
-            TransitGatewayAttachmentState::Failed => write!(f, "failed"),
-            TransitGatewayAttachmentState::Failing => write!(f, "failing"),
-            TransitGatewayAttachmentState::Initiating => write!(f, "initiating"),
-            TransitGatewayAttachmentState::InitiatingRequest => write!(f, "initiatingRequest"),
-            TransitGatewayAttachmentState::Modifying => write!(f, "modifying"),
-            TransitGatewayAttachmentState::Pending => write!(f, "pending"),
-            TransitGatewayAttachmentState::PendingAcceptance => write!(f, "pendingAcceptance"),
-            TransitGatewayAttachmentState::Rejected => write!(f, "rejected"),
-            TransitGatewayAttachmentState::Rejecting => write!(f, "rejecting"),
-            TransitGatewayAttachmentState::RollingBack => write!(f, "rollingBack"),
-            TransitGatewayAttachmentState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TransitGatewayAttachmentState::Available => write!(f, "available"),
+TransitGatewayAttachmentState::Deleted => write!(f, "deleted"),
+TransitGatewayAttachmentState::Deleting => write!(f, "deleting"),
+TransitGatewayAttachmentState::Failed => write!(f, "failed"),
+TransitGatewayAttachmentState::Failing => write!(f, "failing"),
+TransitGatewayAttachmentState::Initiating => write!(f, "initiating"),
+TransitGatewayAttachmentState::InitiatingRequest => write!(f, "initiatingRequest"),
+TransitGatewayAttachmentState::Modifying => write!(f, "modifying"),
+TransitGatewayAttachmentState::Pending => write!(f, "pending"),
+TransitGatewayAttachmentState::PendingAcceptance => write!(f, "pendingAcceptance"),
+TransitGatewayAttachmentState::Rejected => write!(f, "rejected"),
+TransitGatewayAttachmentState::Rejecting => write!(f, "rejecting"),
+TransitGatewayAttachmentState::RollingBack => write!(f, "rollingBack"),
+TransitGatewayAttachmentState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

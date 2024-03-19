@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"All": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct All {}
+pub struct All  {
+}
 impl All {
     /// Creates a new builder-style object to manufacture [`All`](crate::types::All).
     pub fn builder() -> crate::types::builders::AllBuilder {
@@ -16,10 +17,13 @@ impl All {
 /// A builder for [`All`](crate::types::All).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AllBuilder {}
+pub struct AllBuilder {
+}
 impl AllBuilder {
     /// Consumes the builder and constructs a [`All`](crate::types::All).
     pub fn build(self) -> crate::types::All {
-        crate::types::All {}
+        crate::types::All {
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the hardware of a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalDatabaseHardware {
+pub struct RelationalDatabaseHardware  {
     /// <p>The number of vCPUs for the database.</p>
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The size of the disk for the database.</p>
@@ -11,7 +11,7 @@ pub struct RelationalDatabaseHardware {
     /// <p>The amount of RAM in GB for the database.</p>
     pub ram_size_in_gb: ::std::option::Option<f32>,
 }
-impl RelationalDatabaseHardware {
+impl  RelationalDatabaseHardware  {
     /// <p>The number of vCPUs for the database.</p>
     pub fn cpu_count(&self) -> ::std::option::Option<i32> {
         self.cpu_count
@@ -48,8 +48,7 @@ impl RelationalDatabaseHardwareBuilder {
     }
     /// <p>The number of vCPUs for the database.</p>
     pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu_count = input;
-        self
+        self.cpu_count = input; self
     }
     /// <p>The number of vCPUs for the database.</p>
     pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl RelationalDatabaseHardwareBuilder {
     }
     /// <p>The size of the disk for the database.</p>
     pub fn set_disk_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.disk_size_in_gb = input;
-        self
+        self.disk_size_in_gb = input; self
     }
     /// <p>The size of the disk for the database.</p>
     pub fn get_disk_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl RelationalDatabaseHardwareBuilder {
     }
     /// <p>The amount of RAM in GB for the database.</p>
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.ram_size_in_gb = input;
-        self
+        self.ram_size_in_gb = input; self
     }
     /// <p>The amount of RAM in GB for the database.</p>
     pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
@@ -86,9 +83,13 @@ impl RelationalDatabaseHardwareBuilder {
     /// Consumes the builder and constructs a [`RelationalDatabaseHardware`](crate::types::RelationalDatabaseHardware).
     pub fn build(self) -> crate::types::RelationalDatabaseHardware {
         crate::types::RelationalDatabaseHardware {
-            cpu_count: self.cpu_count,
-            disk_size_in_gb: self.disk_size_in_gb,
-            ram_size_in_gb: self.ram_size_in_gb,
+            cpu_count: self.cpu_count
+            ,
+            disk_size_in_gb: self.disk_size_in_gb
+            ,
+            ram_size_in_gb: self.ram_size_in_gb
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterInput {
+pub struct CreateClusterInput  {
     /// <p>A policy that defines how the service retains backups.</p>
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
@@ -16,21 +16,21 @@ pub struct CreateClusterInput {
     /// <li>
     /// <p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateClusterInput {
+impl  CreateClusterInput  {
     /// <p>A policy that defines how the service retains backups.</p>
-    pub fn backup_retention_policy(&self) -> ::std::option::Option<&crate::types::BackupRetentionPolicy> {
+    pub fn backup_retention_policy(&self) -> ::std::option::Option<& crate::types::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
-    pub fn hsm_type(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_type(&self) -> ::std::option::Option<& str> {
         self.hsm_type.as_deref()
     }
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
-    pub fn source_backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_backup_id(&self) -> ::std::option::Option<& str> {
         self.source_backup_id.as_deref()
     }
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
@@ -40,16 +40,18 @@ impl CreateClusterInput {
     /// <li>
     /// <p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateClusterInput {
@@ -66,8 +68,8 @@ pub struct CreateClusterInputBuilder {
     pub(crate) backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
     pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateClusterInputBuilder {
     /// <p>A policy that defines how the service retains backups.</p>
@@ -77,8 +79,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn set_backup_retention_policy(mut self, input: ::std::option::Option<crate::types::BackupRetentionPolicy>) -> Self {
-        self.backup_retention_policy = input;
-        self
+        self.backup_retention_policy = input; self
     }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn get_backup_retention_policy(&self) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
@@ -92,8 +93,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
     pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_type = input;
-        self
+        self.hsm_type = input; self
     }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
     pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
     pub fn set_source_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_backup_id = input;
-        self
+        self.source_backup_id = input; self
     }
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
     pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,9 +125,9 @@ impl CreateClusterInputBuilder {
     /// </ul>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
@@ -137,9 +136,8 @@ impl CreateClusterInputBuilder {
     /// <li>
     /// <p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
@@ -148,7 +146,7 @@ impl CreateClusterInputBuilder {
     /// <li>
     /// <p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `tag_list`.
@@ -158,29 +156,34 @@ impl CreateClusterInputBuilder {
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
-            backup_retention_policy: self.backup_retention_policy,
-            hsm_type: self.hsm_type,
-            source_backup_id: self.source_backup_id,
-            subnet_ids: self.subnet_ids,
-            tag_list: self.tag_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster::CreateClusterInput {
+                backup_retention_policy: self.backup_retention_policy
+                ,
+                hsm_type: self.hsm_type
+                ,
+                source_backup_id: self.source_backup_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                tag_list: self.tag_list
+                ,
+            }
+        )
     }
 }
+

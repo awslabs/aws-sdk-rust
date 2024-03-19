@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceCollectionHealthOutput {
+pub struct DescribeResourceCollectionHealthOutput  {
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
-    pub cloud_formation: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>,
+    pub cloud_formation: ::std::option::Option<::std::vec::Vec::<crate::types::CloudFormationHealth>>,
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
-    pub service: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>,
+    pub service: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceHealth>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
@@ -21,24 +21,26 @@ pub struct DescribeResourceCollectionHealthOutput {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagHealth>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagHealth>>,
     _request_id: Option<String>,
 }
-impl DescribeResourceCollectionHealthOutput {
+impl  DescribeResourceCollectionHealthOutput  {
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_formation.is_none()`.
-    pub fn cloud_formation(&self) -> &[crate::types::CloudFormationHealth] {
-        self.cloud_formation.as_deref().unwrap_or_default()
+    pub fn cloud_formation(&self) -> & [crate::types::CloudFormationHealth] {
+        self.cloud_formation.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service.is_none()`.
-    pub fn service(&self) -> &[crate::types::ServiceHealth] {
-        self.service.as_deref().unwrap_or_default()
+    pub fn service(&self) -> & [crate::types::ServiceHealth] {
+        self.service.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
@@ -53,17 +55,18 @@ impl DescribeResourceCollectionHealthOutput {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagHealth] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagHealth] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResourceCollectionHealthOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeResourceCollectionHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceCollectionHealthOutput`](crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput).
     pub fn builder() -> crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthOutputBuilder {
@@ -75,10 +78,10 @@ impl DescribeResourceCollectionHealthOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourceCollectionHealthOutputBuilder {
-    pub(crate) cloud_formation: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>,
-    pub(crate) service: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>,
+    pub(crate) cloud_formation: ::std::option::Option<::std::vec::Vec::<crate::types::CloudFormationHealth>>,
+    pub(crate) service: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceHealth>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagHealth>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagHealth>>,
     _request_id: Option<String>,
 }
 impl DescribeResourceCollectionHealthOutputBuilder {
@@ -89,17 +92,16 @@ impl DescribeResourceCollectionHealthOutputBuilder {
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
     pub fn cloud_formation(mut self, input: crate::types::CloudFormationHealth) -> Self {
         let mut v = self.cloud_formation.unwrap_or_default();
-        v.push(input);
-        self.cloud_formation = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cloud_formation = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
-    pub fn set_cloud_formation(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>) -> Self {
-        self.cloud_formation = input;
-        self
+    pub fn set_cloud_formation(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CloudFormationHealth>>) -> Self {
+        self.cloud_formation = input; self
     }
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
-    pub fn get_cloud_formation(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>> {
+    pub fn get_cloud_formation(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CloudFormationHealth>> {
         &self.cloud_formation
     }
     /// Appends an item to `service`.
@@ -109,17 +111,16 @@ impl DescribeResourceCollectionHealthOutputBuilder {
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
     pub fn service(mut self, input: crate::types::ServiceHealth) -> Self {
         let mut v = self.service.unwrap_or_default();
-        v.push(input);
-        self.service = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
-    pub fn set_service(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>) -> Self {
-        self.service = input;
-        self
+    pub fn set_service(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceHealth>>) -> Self {
+        self.service = input; self
     }
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
-    pub fn get_service(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>> {
+    pub fn get_service(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceHealth>> {
         &self.service
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -129,8 +130,7 @@ impl DescribeResourceCollectionHealthOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,9 +154,9 @@ impl DescribeResourceCollectionHealthOutputBuilder {
     /// </important>
     pub fn tags(mut self, input: crate::types::TagHealth) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging best practices</a> whitepaper.</p>
@@ -170,9 +170,8 @@ impl DescribeResourceCollectionHealthOutputBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagHealth>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagHealth>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging best practices</a> whitepaper.</p>
@@ -186,26 +185,31 @@ impl DescribeResourceCollectionHealthOutputBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagHealth>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagHealth>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeResourceCollectionHealthOutput`](crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput).
     pub fn build(self) -> crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput {
         crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput {
-            cloud_formation: self.cloud_formation,
-            service: self.service,
-            next_token: self.next_token,
-            tags: self.tags,
+            cloud_formation: self.cloud_formation
+            ,
+            service: self.service
+            ,
+            next_token: self.next_token
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

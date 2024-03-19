@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebootRelationalDatabaseInput {
+pub struct RebootRelationalDatabaseInput  {
     /// <p>The name of your database to reboot.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
 }
-impl RebootRelationalDatabaseInput {
+impl  RebootRelationalDatabaseInput  {
     /// <p>The name of your database to reboot.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl RebootRelationalDatabaseInputBuilder {
     }
     /// <p>The name of your database to reboot.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of your database to reboot.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_name
     }
     /// Consumes the builder and constructs a [`RebootRelationalDatabaseInput`](crate::operation::reboot_relational_database::RebootRelationalDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_relational_database::RebootRelationalDatabaseInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reboot_relational_database::RebootRelationalDatabaseInput {
-            relational_database_name: self.relational_database_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_relational_database::RebootRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseInput {
+                relational_database_name: self.relational_database_name
+                ,
+            }
+        )
     }
 }
+

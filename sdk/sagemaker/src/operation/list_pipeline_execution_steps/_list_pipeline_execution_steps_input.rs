@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPipelineExecutionStepsInput {
+pub struct ListPipelineExecutionStepsInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
@@ -12,13 +12,13 @@ pub struct ListPipelineExecutionStepsInput {
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListPipelineExecutionStepsInput {
+impl  ListPipelineExecutionStepsInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of pipeline execution steps to return in the response.</p>
@@ -26,7 +26,7 @@ impl ListPipelineExecutionStepsInput {
         self.max_results
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListPipelineExecutionStepsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+        self.pipeline_execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListPipelineExecutionStepsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListPipelineExecutionStepsInputBuilder {
     }
     /// <p>The maximum number of pipeline execution steps to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of pipeline execution steps to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,25 +93,26 @@ impl ListPipelineExecutionStepsInputBuilder {
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListPipelineExecutionStepsInput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput {
-            pipeline_execution_arn: self.pipeline_execution_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            sort_order: self.sort_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput {
+                pipeline_execution_arn: self.pipeline_execution_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

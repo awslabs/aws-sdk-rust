@@ -3,13 +3,13 @@
 /// <p>A structure that describes the Amazon S3 settings to use to save the generated dashboard snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotS3DestinationConfiguration {
+pub struct SnapshotS3DestinationConfiguration  {
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
     pub bucket_configuration: ::std::option::Option<crate::types::S3BucketConfiguration>,
 }
-impl SnapshotS3DestinationConfiguration {
+impl  SnapshotS3DestinationConfiguration  {
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
-    pub fn bucket_configuration(&self) -> ::std::option::Option<&crate::types::S3BucketConfiguration> {
+    pub fn bucket_configuration(&self) -> ::std::option::Option<& crate::types::S3BucketConfiguration> {
         self.bucket_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl SnapshotS3DestinationConfigurationBuilder {
     }
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
     pub fn set_bucket_configuration(mut self, input: ::std::option::Option<crate::types::S3BucketConfiguration>) -> Self {
-        self.bucket_configuration = input;
-        self
+        self.bucket_configuration = input; self
     }
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
     pub fn get_bucket_configuration(&self) -> &::std::option::Option<crate::types::S3BucketConfiguration> {
@@ -45,7 +44,9 @@ impl SnapshotS3DestinationConfigurationBuilder {
     /// Consumes the builder and constructs a [`SnapshotS3DestinationConfiguration`](crate::types::SnapshotS3DestinationConfiguration).
     pub fn build(self) -> crate::types::SnapshotS3DestinationConfiguration {
         crate::types::SnapshotS3DestinationConfiguration {
-            bucket_configuration: self.bucket_configuration,
+            bucket_configuration: self.bucket_configuration
+            ,
         }
     }
 }
+

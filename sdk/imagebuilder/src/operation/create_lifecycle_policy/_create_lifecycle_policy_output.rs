@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLifecyclePolicyOutput {
+pub struct CreateLifecyclePolicyOutput  {
     /// <p>The client token that uniquely identifies the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that the request created.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLifecyclePolicyOutput {
+impl  CreateLifecyclePolicyOutput  {
     /// <p>The client token that uniquely identifies the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that the request created.</p>
-    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLifecyclePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLifecyclePolicyOutput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput).
     pub fn builder() -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateLifecyclePolicyOutputBuilder {
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateLifecyclePolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that the request created.</p>
     pub fn set_lifecycle_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy_arn = input;
-        self
+        self.lifecycle_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that the request created.</p>
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyOutput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput).
     pub fn build(self) -> crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput {
         crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput {
-            client_token: self.client_token,
-            lifecycle_policy_arn: self.lifecycle_policy_arn,
+            client_token: self.client_token
+            ,
+            lifecycle_policy_arn: self.lifecycle_policy_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

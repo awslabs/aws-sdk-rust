@@ -252,3 +252,4 @@ pub mod builders;
 
 /// Error types that Amazon EC2 Container Registry can respond with.
 pub mod error;
+

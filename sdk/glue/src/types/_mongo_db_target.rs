@@ -3,7 +3,7 @@
 /// <p>Specifies an Amazon DocumentDB or MongoDB data store to crawl.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MongoDbTarget {
+pub struct MongoDbTarget  {
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
@@ -12,13 +12,13 @@ pub struct MongoDbTarget {
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub scan_all: ::std::option::Option<bool>,
 }
-impl MongoDbTarget {
+impl  MongoDbTarget  {
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
@@ -50,8 +50,7 @@ impl MongoDbTargetBuilder {
     }
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl MongoDbTargetBuilder {
     }
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +78,7 @@ impl MongoDbTargetBuilder {
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub fn set_scan_all(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.scan_all = input;
-        self
+        self.scan_all = input; self
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
@@ -91,9 +88,13 @@ impl MongoDbTargetBuilder {
     /// Consumes the builder and constructs a [`MongoDbTarget`](crate::types::MongoDbTarget).
     pub fn build(self) -> crate::types::MongoDbTarget {
         crate::types::MongoDbTarget {
-            connection_name: self.connection_name,
-            path: self.path,
-            scan_all: self.scan_all,
+            connection_name: self.connection_name
+            ,
+            path: self.path
+            ,
+            scan_all: self.scan_all
+            ,
         }
     }
 }
+

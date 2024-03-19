@@ -5,55 +5,51 @@ pub use crate::operation::get_current_metric_data::_get_current_metric_data_inpu
 
 impl GetCurrentMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_current_metric_data::GetCurrentMetricDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_current_metric_data();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_current_metric_data::GetCurrentMetricDataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_current_metric_data();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetCurrentMetricData`.
-///
+/// 
 /// <p>Gets the real-time metric data from the specified Amazon Connect instance.</p>
 /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCurrentMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder,
+                    inner: crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
-        crate::operation::get_current_metric_data::GetCurrentMetricDataError,
-    > for GetCurrentMetricDataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
-            crate::operation::get_current_metric_data::GetCurrentMetricDataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
+                    crate::operation::get_current_metric_data::GetCurrentMetricDataError,
+                > for GetCurrentMetricDataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
+                        crate::operation::get_current_metric_data::GetCurrentMetricDataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetCurrentMetricDataFluentBuilder {
     /// Creates a new `GetCurrentMetricData`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl GetCurrentMetricDataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_current_metric_data::GetCurrentMetricDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_current_metric_data::GetCurrentMetricData::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_current_metric_data::GetCurrentMetricData::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_current_metric_data::GetCurrentMetricDataOutput,
-        crate::operation::get_current_metric_data::GetCurrentMetricDataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_current_metric_data::GetCurrentMetricDataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_current_metric_data::GetCurrentMetricDataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_current_metric_data::GetCurrentMetricData::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_current_metric_data::GetCurrentMetricData::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_current_metric_data::GetCurrentMetricDataOutput, crate::operation::get_current_metric_data::GetCurrentMetricDataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator {
-        crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator {
+                                crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -212,7 +199,7 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <li>
     /// <p>When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is required.</p></li>
     /// </ul>
-    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Grouping>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
@@ -227,7 +214,7 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <li>
     /// <p>When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is required.</p></li>
     /// </ul>
-    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
+    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Grouping>> {
         self.inner.get_groupings()
     }
     /// Appends an item to `CurrentMetrics`.
@@ -436,7 +423,7 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
-    pub fn set_current_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>) -> Self {
+    pub fn set_current_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetric>>) -> Self {
         self.inner = self.inner.set_current_metrics(input);
         self
     }
@@ -539,7 +526,7 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a></p>
     /// </dd>
     /// </dl>
-    pub fn get_current_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>> {
+    pub fn get_current_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetric>> {
         self.inner.get_current_metrics()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -593,7 +580,7 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <li>
     /// <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
-    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetricSortCriteria>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
@@ -603,7 +590,8 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <li>
     /// <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
-    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetricSortCriteria>> {
         self.inner.get_sort_criteria()
     }
 }
+

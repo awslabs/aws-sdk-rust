@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInferenceSchedulerInput {
+pub struct UpdateInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler to be updated.</p>
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
@@ -16,9 +16,9 @@ pub struct UpdateInferenceSchedulerInput {
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateInferenceSchedulerInput {
+impl  UpdateInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler to be updated.</p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
@@ -26,19 +26,19 @@ impl UpdateInferenceSchedulerInput {
         self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.</p>
-    pub fn data_upload_frequency(&self) -> ::std::option::Option<&crate::types::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> ::std::option::Option<& crate::types::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
-    pub fn data_input_configuration(&self) -> ::std::option::Option<&crate::types::InferenceInputConfiguration> {
+    pub fn data_input_configuration(&self) -> ::std::option::Option<& crate::types::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p>Specifies information for the output results from the inference scheduler, including the output S3 location.</p>
-    pub fn data_output_configuration(&self) -> ::std::option::Option<&crate::types::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(&self) -> ::std::option::Option<& crate::types::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateInferenceSchedulerInputBuilder {
     }
     /// <p>The name of the inference scheduler to be updated.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_name = input;
-        self
+        self.inference_scheduler_name = input; self
     }
     /// <p>The name of the inference scheduler to be updated.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UpdateInferenceSchedulerInputBuilder {
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
     pub fn set_data_delay_offset_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.data_delay_offset_in_minutes = input;
-        self
+        self.data_delay_offset_in_minutes = input; self
     }
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
     pub fn get_data_delay_offset_in_minutes(&self) -> &::std::option::Option<i64> {
@@ -97,8 +95,7 @@ impl UpdateInferenceSchedulerInputBuilder {
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.</p>
     pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
-        self.data_upload_frequency = input;
-        self
+        self.data_upload_frequency = input; self
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes.</p>
     pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
@@ -111,8 +108,7 @@ impl UpdateInferenceSchedulerInputBuilder {
     }
     /// <p>Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn set_data_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputConfiguration>) -> Self {
-        self.data_input_configuration = input;
-        self
+        self.data_input_configuration = input; self
     }
     /// <p>Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn get_data_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
@@ -125,8 +121,7 @@ impl UpdateInferenceSchedulerInputBuilder {
     }
     /// <p>Specifies information for the output results from the inference scheduler, including the output S3 location.</p>
     pub fn set_data_output_configuration(mut self, input: ::std::option::Option<crate::types::InferenceOutputConfiguration>) -> Self {
-        self.data_output_configuration = input;
-        self
+        self.data_output_configuration = input; self
     }
     /// <p>Specifies information for the output results from the inference scheduler, including the output S3 location.</p>
     pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
@@ -139,27 +134,30 @@ impl UpdateInferenceSchedulerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateInferenceSchedulerInput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_inference_scheduler::UpdateInferenceSchedulerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_inference_scheduler::UpdateInferenceSchedulerInput {
-            inference_scheduler_name: self.inference_scheduler_name,
-            data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
-            data_upload_frequency: self.data_upload_frequency,
-            data_input_configuration: self.data_input_configuration,
-            data_output_configuration: self.data_output_configuration,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_inference_scheduler::UpdateInferenceSchedulerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_inference_scheduler::UpdateInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes
+                ,
+                data_upload_frequency: self.data_upload_frequency
+                ,
+                data_input_configuration: self.data_input_configuration
+                ,
+                data_output_configuration: self.data_output_configuration
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

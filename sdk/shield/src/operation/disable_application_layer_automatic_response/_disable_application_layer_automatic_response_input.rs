@@ -2,20 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableApplicationLayerAutomaticResponseInput {
+pub struct DisableApplicationLayerAutomaticResponseInput  {
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisableApplicationLayerAutomaticResponseInput {
+impl  DisableApplicationLayerAutomaticResponseInput  {
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl DisableApplicationLayerAutomaticResponseInput {
     /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
-    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder {
         crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder::default()
     }
 }
@@ -35,24 +34,20 @@ impl DisableApplicationLayerAutomaticResponseInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

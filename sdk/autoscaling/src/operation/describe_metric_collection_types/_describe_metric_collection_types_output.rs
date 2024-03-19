@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMetricCollectionTypesOutput {
+pub struct DescribeMetricCollectionTypesOutput  {
     /// <p>The metrics.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricCollectionType>>,
     /// <p>The granularities for the metrics.</p>
-    pub granularities: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,
+    pub granularities: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGranularityType>>,
     _request_id: Option<String>,
 }
-impl DescribeMetricCollectionTypesOutput {
+impl  DescribeMetricCollectionTypesOutput  {
     /// <p>The metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::MetricCollectionType] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::MetricCollectionType] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The granularities for the metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.granularities.is_none()`.
-    pub fn granularities(&self) -> &[crate::types::MetricGranularityType] {
-        self.granularities.as_deref().unwrap_or_default()
+    pub fn granularities(&self) -> & [crate::types::MetricGranularityType] {
+        self.granularities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMetricCollectionTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMetricCollectionTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput).
     pub fn builder() -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesOutputBuilder {
@@ -39,8 +41,8 @@ impl DescribeMetricCollectionTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetricCollectionTypesOutputBuilder {
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>,
-    pub(crate) granularities: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricCollectionType>>,
+    pub(crate) granularities: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGranularityType>>,
     _request_id: Option<String>,
 }
 impl DescribeMetricCollectionTypesOutputBuilder {
@@ -51,17 +53,16 @@ impl DescribeMetricCollectionTypesOutputBuilder {
     /// <p>The metrics.</p>
     pub fn metrics(mut self, input: crate::types::MetricCollectionType) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metrics.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricCollectionType>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The metrics.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricCollectionType>> {
         &self.metrics
     }
     /// Appends an item to `granularities`.
@@ -71,34 +72,36 @@ impl DescribeMetricCollectionTypesOutputBuilder {
     /// <p>The granularities for the metrics.</p>
     pub fn granularities(mut self, input: crate::types::MetricGranularityType) -> Self {
         let mut v = self.granularities.unwrap_or_default();
-        v.push(input);
-        self.granularities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.granularities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The granularities for the metrics.</p>
-    pub fn set_granularities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>) -> Self {
-        self.granularities = input;
-        self
+    pub fn set_granularities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGranularityType>>) -> Self {
+        self.granularities = input; self
     }
     /// <p>The granularities for the metrics.</p>
-    pub fn get_granularities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>> {
+    pub fn get_granularities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricGranularityType>> {
         &self.granularities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput).
     pub fn build(self) -> crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput {
         crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput {
-            metrics: self.metrics,
-            granularities: self.granularities,
+            metrics: self.metrics
+            ,
+            granularities: self.granularities
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

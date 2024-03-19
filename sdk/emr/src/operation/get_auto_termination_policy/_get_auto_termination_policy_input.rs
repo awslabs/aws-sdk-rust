@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAutoTerminationPolicyInput {
+pub struct GetAutoTerminationPolicyInput  {
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAutoTerminationPolicyInput {
+impl  GetAutoTerminationPolicyInput  {
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetAutoTerminationPolicyInputBuilder {
     }
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
     /// Consumes the builder and constructs a [`GetAutoTerminationPolicyInput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyInput { cluster_id: self.cluster_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyInput {
+                cluster_id: self.cluster_id
+                ,
+            }
+        )
     }
 }
+

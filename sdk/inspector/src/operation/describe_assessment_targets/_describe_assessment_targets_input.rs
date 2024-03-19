@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssessmentTargetsInput {
+pub struct DescribeAssessmentTargetsInput  {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assessment_target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeAssessmentTargetsInput {
+impl  DescribeAssessmentTargetsInput  {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_target_arns.is_none()`.
-    pub fn assessment_target_arns(&self) -> &[::std::string::String] {
-        self.assessment_target_arns.as_deref().unwrap_or_default()
+    pub fn assessment_target_arns(&self) -> & [::std::string::String] {
+        self.assessment_target_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeAssessmentTargetsInput {
@@ -25,7 +26,7 @@ impl DescribeAssessmentTargetsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsInputBuilder {
-    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeAssessmentTargetsInputBuilder {
     /// Appends an item to `assessment_target_arns`.
@@ -35,28 +36,26 @@ impl DescribeAssessmentTargetsInputBuilder {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
     pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_target_arns.unwrap_or_default();
-        v.push(input.into());
-        self.assessment_target_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assessment_target_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assessment_target_arns = input;
-        self
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assessment_target_arns = input; self
     }
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assessment_target_arns
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentTargetsInput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput {
-            assessment_target_arns: self.assessment_target_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput {
+                assessment_target_arns: self.assessment_target_arns
+                ,
+            }
+        )
     }
 }
+

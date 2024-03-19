@@ -3,7 +3,7 @@
 /// <p>Describes updates to the configuration parameters for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlinkApplicationConfigurationUpdate {
+pub struct FlinkApplicationConfigurationUpdate  {
     /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
     pub checkpoint_configuration_update: ::std::option::Option<crate::types::CheckpointConfigurationUpdate>,
     /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
@@ -11,17 +11,17 @@ pub struct FlinkApplicationConfigurationUpdate {
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
     pub parallelism_configuration_update: ::std::option::Option<crate::types::ParallelismConfigurationUpdate>,
 }
-impl FlinkApplicationConfigurationUpdate {
+impl  FlinkApplicationConfigurationUpdate  {
     /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
-    pub fn checkpoint_configuration_update(&self) -> ::std::option::Option<&crate::types::CheckpointConfigurationUpdate> {
+    pub fn checkpoint_configuration_update(&self) -> ::std::option::Option<& crate::types::CheckpointConfigurationUpdate> {
         self.checkpoint_configuration_update.as_ref()
     }
     /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
-    pub fn monitoring_configuration_update(&self) -> ::std::option::Option<&crate::types::MonitoringConfigurationUpdate> {
+    pub fn monitoring_configuration_update(&self) -> ::std::option::Option<& crate::types::MonitoringConfigurationUpdate> {
         self.monitoring_configuration_update.as_ref()
     }
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
-    pub fn parallelism_configuration_update(&self) -> ::std::option::Option<&crate::types::ParallelismConfigurationUpdate> {
+    pub fn parallelism_configuration_update(&self) -> ::std::option::Option<& crate::types::ParallelismConfigurationUpdate> {
         self.parallelism_configuration_update.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FlinkApplicationConfigurationUpdateBuilder {
     }
     /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
     pub fn set_checkpoint_configuration_update(mut self, input: ::std::option::Option<crate::types::CheckpointConfigurationUpdate>) -> Self {
-        self.checkpoint_configuration_update = input;
-        self
+        self.checkpoint_configuration_update = input; self
     }
     /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
     pub fn get_checkpoint_configuration_update(&self) -> &::std::option::Option<crate::types::CheckpointConfigurationUpdate> {
@@ -62,8 +61,7 @@ impl FlinkApplicationConfigurationUpdateBuilder {
     }
     /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn set_monitoring_configuration_update(mut self, input: ::std::option::Option<crate::types::MonitoringConfigurationUpdate>) -> Self {
-        self.monitoring_configuration_update = input;
-        self
+        self.monitoring_configuration_update = input; self
     }
     /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn get_monitoring_configuration_update(&self) -> &::std::option::Option<crate::types::MonitoringConfigurationUpdate> {
@@ -76,8 +74,7 @@ impl FlinkApplicationConfigurationUpdateBuilder {
     }
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn set_parallelism_configuration_update(mut self, input: ::std::option::Option<crate::types::ParallelismConfigurationUpdate>) -> Self {
-        self.parallelism_configuration_update = input;
-        self
+        self.parallelism_configuration_update = input; self
     }
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn get_parallelism_configuration_update(&self) -> &::std::option::Option<crate::types::ParallelismConfigurationUpdate> {
@@ -86,9 +83,13 @@ impl FlinkApplicationConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`FlinkApplicationConfigurationUpdate`](crate::types::FlinkApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::FlinkApplicationConfigurationUpdate {
         crate::types::FlinkApplicationConfigurationUpdate {
-            checkpoint_configuration_update: self.checkpoint_configuration_update,
-            monitoring_configuration_update: self.monitoring_configuration_update,
-            parallelism_configuration_update: self.parallelism_configuration_update,
+            checkpoint_configuration_update: self.checkpoint_configuration_update
+            ,
+            monitoring_configuration_update: self.monitoring_configuration_update
+            ,
+            parallelism_configuration_update: self.parallelism_configuration_update
+            ,
         }
     }
 }
+

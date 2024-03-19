@@ -3,19 +3,19 @@
 /// <p>Contains the metadata for query results such as the column names, data types, and other attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnInfo {
+pub struct ColumnInfo  {
     /// <p>The name of the result set column. The name of the result set is available for columns of all data types except for arrays.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others.</p>
     pub r#type: ::std::option::Option<::std::boxed::Box<crate::types::Type>>,
 }
-impl ColumnInfo {
+impl  ColumnInfo  {
     /// <p>The name of the result set column. The name of the result set is available for columns of all data types except for arrays.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The name of the result set column. The name of the result set is available for columns of all data types except for arrays.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the result set column. The name of the result set is available for columns of all data types except for arrays.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Type>>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Type>> {
@@ -66,8 +64,11 @@ impl ColumnInfoBuilder {
     /// Consumes the builder and constructs a [`ColumnInfo`](crate::types::ColumnInfo).
     pub fn build(self) -> crate::types::ColumnInfo {
         crate::types::ColumnInfo {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

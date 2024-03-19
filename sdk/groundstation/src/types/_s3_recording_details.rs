@@ -3,19 +3,19 @@
 /// <p>Details about an S3 recording <code>Config</code> used in a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3RecordingDetails {
+pub struct S3RecordingDetails  {
     /// <p>ARN of the bucket used.</p>
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Key template used for the S3 Recording Configuration</p>
     pub key_template: ::std::option::Option<::std::string::String>,
 }
-impl S3RecordingDetails {
+impl  S3RecordingDetails  {
     /// <p>ARN of the bucket used.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>Key template used for the S3 Recording Configuration</p>
-    pub fn key_template(&self) -> ::std::option::Option<&str> {
+    pub fn key_template(&self) -> ::std::option::Option<& str> {
         self.key_template.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3RecordingDetailsBuilder {
     }
     /// <p>ARN of the bucket used.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>ARN of the bucket used.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3RecordingDetailsBuilder {
     }
     /// <p>Key template used for the S3 Recording Configuration</p>
     pub fn set_key_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_template = input;
-        self
+        self.key_template = input; self
     }
     /// <p>Key template used for the S3 Recording Configuration</p>
     pub fn get_key_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3RecordingDetailsBuilder {
     /// Consumes the builder and constructs a [`S3RecordingDetails`](crate::types::S3RecordingDetails).
     pub fn build(self) -> crate::types::S3RecordingDetails {
         crate::types::S3RecordingDetails {
-            bucket_arn: self.bucket_arn,
-            key_template: self.key_template,
+            bucket_arn: self.bucket_arn
+            ,
+            key_template: self.key_template
+            ,
         }
     }
 }
+

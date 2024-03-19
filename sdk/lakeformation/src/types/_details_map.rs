@@ -4,16 +4,17 @@
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetailsMap {
+pub struct DetailsMap  {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_share: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DetailsMap {
+impl  DetailsMap  {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share.is_none()`.
-    pub fn resource_share(&self) -> &[::std::string::String] {
-        self.resource_share.as_deref().unwrap_or_default()
+    pub fn resource_share(&self) -> & [::std::string::String] {
+        self.resource_share.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DetailsMap {
@@ -27,7 +28,7 @@ impl DetailsMap {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetailsMapBuilder {
-    pub(crate) resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_share: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DetailsMapBuilder {
     /// Appends an item to `resource_share`.
@@ -37,23 +38,24 @@ impl DetailsMapBuilder {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
     pub fn resource_share(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share.unwrap_or_default();
-        v.push(input.into());
-        self.resource_share = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_share = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn set_resource_share(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_share = input;
-        self
+    pub fn set_resource_share(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_share = input; self
     }
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn get_resource_share(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_share
     }
     /// Consumes the builder and constructs a [`DetailsMap`](crate::types::DetailsMap).
     pub fn build(self) -> crate::types::DetailsMap {
         crate::types::DetailsMap {
-            resource_share: self.resource_share,
+            resource_share: self.resource_share
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNetworkInsightsPathInput {
+pub struct DeleteNetworkInsightsPathInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the path.</p>
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteNetworkInsightsPathInput {
+impl  DeleteNetworkInsightsPathInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_path_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_path_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteNetworkInsightsPathInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,23 +54,22 @@ impl DeleteNetworkInsightsPathInputBuilder {
     }
     /// <p>The ID of the path.</p>
     pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_path_id = input;
-        self
+        self.network_insights_path_id = input; self
     }
     /// <p>The ID of the path.</p>
     pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_path_id
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsPathInput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput {
-            dry_run: self.dry_run,
-            network_insights_path_id: self.network_insights_path_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput {
+                dry_run: self.dry_run
+                ,
+                network_insights_path_id: self.network_insights_path_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRuleGroupInput {
+pub struct GetRuleGroupInput  {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub rule_group_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRuleGroupInput {
+impl  GetRuleGroupInput  {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> ::std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRuleGroupInputBuilder {
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_id = input;
-        self
+        self.rule_group_id = input; self
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_id
     }
     /// Consumes the builder and constructs a [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_rule_group::GetRuleGroupInput {
-            rule_group_id: self.rule_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_rule_group::GetRuleGroupInput {
+                rule_group_id: self.rule_group_id
+                ,
+            }
+        )
     }
 }
+

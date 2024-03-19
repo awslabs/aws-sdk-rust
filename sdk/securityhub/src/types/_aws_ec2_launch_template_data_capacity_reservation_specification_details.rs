@@ -3,22 +3,19 @@
 /// <p>Specifies the Capacity Reservation targeting option of an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
+pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails  {
     /// <p>Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>, the instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p>
     pub capacity_reservation_preference: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a target Capacity Reservation.</p>
-    pub capacity_reservation_target:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>,
+    pub capacity_reservation_target: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>,
 }
-impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
+impl  AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails  {
     /// <p>Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>, the instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p>
-    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_preference.as_deref()
     }
     /// <p>Specifies a target Capacity Reservation.</p>
-    pub fn capacity_reservation_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails> {
+    pub fn capacity_reservation_target(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails> {
         self.capacity_reservation_target.as_ref()
     }
 }
@@ -34,8 +31,7 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetailsBuilder {
     pub(crate) capacity_reservation_preference: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservation_target:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>,
+    pub(crate) capacity_reservation_target: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>,
 }
 impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetailsBuilder {
     /// <p>Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>, the instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p>
@@ -45,40 +41,33 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetailsBuilder {
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>, the instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p>
     pub fn set_capacity_reservation_preference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_preference = input;
-        self
+        self.capacity_reservation_preference = input; self
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>, the instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p>
     pub fn get_capacity_reservation_preference(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_preference
     }
     /// <p>Specifies a target Capacity Reservation.</p>
-    pub fn capacity_reservation_target(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails,
-    ) -> Self {
+    pub fn capacity_reservation_target(mut self, input: crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails) -> Self {
         self.capacity_reservation_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target Capacity Reservation.</p>
-    pub fn set_capacity_reservation_target(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>,
-    ) -> Self {
-        self.capacity_reservation_target = input;
-        self
+    pub fn set_capacity_reservation_target(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>) -> Self {
+        self.capacity_reservation_target = input; self
     }
     /// <p>Specifies a target Capacity Reservation.</p>
-    pub fn get_capacity_reservation_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails> {
+    pub fn get_capacity_reservation_target(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails> {
         &self.capacity_reservation_target
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
         crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
-            capacity_reservation_preference: self.capacity_reservation_preference,
-            capacity_reservation_target: self.capacity_reservation_target,
+            capacity_reservation_preference: self.capacity_reservation_preference
+            ,
+            capacity_reservation_target: self.capacity_reservation_target
+            ,
         }
     }
 }
+

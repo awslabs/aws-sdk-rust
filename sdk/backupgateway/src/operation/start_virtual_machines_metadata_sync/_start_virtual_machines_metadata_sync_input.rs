@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartVirtualMachinesMetadataSyncInput {
+pub struct StartVirtualMachinesMetadataSyncInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
 }
-impl StartVirtualMachinesMetadataSyncInput {
+impl  StartVirtualMachinesMetadataSyncInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl StartVirtualMachinesMetadataSyncInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hypervisor_arn
     }
     /// Consumes the builder and constructs a [`StartVirtualMachinesMetadataSyncInput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput {
-                hypervisor_arn: self.hypervisor_arn,
-            },
+                hypervisor_arn: self.hypervisor_arn
+                ,
+            }
         )
     }
 }
+

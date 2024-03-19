@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOriginAccessControlInput {
+pub struct CreateOriginAccessControlInput  {
     /// <p>Contains the origin access control.</p>
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
-impl CreateOriginAccessControlInput {
+impl  CreateOriginAccessControlInput  {
     /// <p>Contains the origin access control.</p>
-    pub fn origin_access_control_config(&self) -> ::std::option::Option<&crate::types::OriginAccessControlConfig> {
+    pub fn origin_access_control_config(&self) -> ::std::option::Option<& crate::types::OriginAccessControlConfig> {
         self.origin_access_control_config.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateOriginAccessControlInputBuilder {
     }
     /// <p>Contains the origin access control.</p>
     pub fn set_origin_access_control_config(mut self, input: ::std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
-        self.origin_access_control_config = input;
-        self
+        self.origin_access_control_config = input; self
     }
     /// <p>Contains the origin access control.</p>
     pub fn get_origin_access_control_config(&self) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
         &self.origin_access_control_config
     }
     /// Consumes the builder and constructs a [`CreateOriginAccessControlInput`](crate::operation::create_origin_access_control::CreateOriginAccessControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_origin_access_control::CreateOriginAccessControlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_origin_access_control::CreateOriginAccessControlInput {
-            origin_access_control_config: self.origin_access_control_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_origin_access_control::CreateOriginAccessControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_origin_access_control::CreateOriginAccessControlInput {
+                origin_access_control_config: self.origin_access_control_config
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The metadata of the contract.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContractMetadata {
+pub struct ContractMetadata  {
     /// <p>The name of the token contract.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The symbol of the token contract.</p>
@@ -11,13 +11,13 @@ pub struct ContractMetadata {
     /// <p>The decimals used by the token contract.</p>
     pub decimals: ::std::option::Option<i32>,
 }
-impl ContractMetadata {
+impl  ContractMetadata  {
     /// <p>The name of the token contract.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The symbol of the token contract.</p>
-    pub fn symbol(&self) -> ::std::option::Option<&str> {
+    pub fn symbol(&self) -> ::std::option::Option<& str> {
         self.symbol.as_deref()
     }
     /// <p>The decimals used by the token contract.</p>
@@ -48,8 +48,7 @@ impl ContractMetadataBuilder {
     }
     /// <p>The name of the token contract.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the token contract.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ContractMetadataBuilder {
     }
     /// <p>The symbol of the token contract.</p>
     pub fn set_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.symbol = input;
-        self
+        self.symbol = input; self
     }
     /// <p>The symbol of the token contract.</p>
     pub fn get_symbol(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ContractMetadataBuilder {
     }
     /// <p>The decimals used by the token contract.</p>
     pub fn set_decimals(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.decimals = input;
-        self
+        self.decimals = input; self
     }
     /// <p>The decimals used by the token contract.</p>
     pub fn get_decimals(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ContractMetadataBuilder {
     /// Consumes the builder and constructs a [`ContractMetadata`](crate::types::ContractMetadata).
     pub fn build(self) -> crate::types::ContractMetadata {
         crate::types::ContractMetadata {
-            name: self.name,
-            symbol: self.symbol,
-            decimals: self.decimals,
+            name: self.name
+            ,
+            symbol: self.symbol
+            ,
+            decimals: self.decimals
+            ,
         }
     }
 }
+

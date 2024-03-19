@@ -3,19 +3,19 @@
 /// <p>An option group membership.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbOptionGroupMembership {
+pub struct AwsRdsDbOptionGroupMembership  {
     /// <p>The name of the option group.</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the option group membership.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbOptionGroupMembership {
+impl  AwsRdsDbOptionGroupMembership  {
     /// <p>The name of the option group.</p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>The status of the option group membership.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRdsDbOptionGroupMembershipBuilder {
     }
     /// <p>The name of the option group.</p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>The name of the option group.</p>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRdsDbOptionGroupMembershipBuilder {
     }
     /// <p>The status of the option group membership.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the option group membership.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRdsDbOptionGroupMembershipBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbOptionGroupMembership`](crate::types::AwsRdsDbOptionGroupMembership).
     pub fn build(self) -> crate::types::AwsRdsDbOptionGroupMembership {
         crate::types::AwsRdsDbOptionGroupMembership {
-            option_group_name: self.option_group_name,
-            status: self.status,
+            option_group_name: self.option_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

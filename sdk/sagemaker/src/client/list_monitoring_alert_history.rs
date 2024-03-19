@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMonitoringAlertHistory`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::set_monitoring_schedule_name):<br>required: **false**<br><p>The name of a monitoring schedule.</p><br>
     ///   - [`monitoring_alert_name(impl Into<String>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::monitoring_alert_name) / [`set_monitoring_alert_name(Option<String>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::set_monitoring_alert_name):<br>required: **false**<br><p>The name of a monitoring alert.</p><br>
     ///   - [`sort_by(MonitoringAlertHistorySortKey)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::sort_by) / [`set_sort_by(Option<MonitoringAlertHistorySortKey>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field used to sort results. The default is <code>CreationTime</code>.</p><br>
@@ -13,13 +13,12 @@ impl super::Client {
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only alerts created on or before the specified time.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only alerts created on or after the specified time.</p><br>
     ///   - [`status_equals(MonitoringAlertStatus)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::status_equals) / [`set_status_equals(Option<MonitoringAlertStatus>)`](crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that retrieves only alerts with a specific status.</p><br>
-    /// - On success, responds with [`ListMonitoringAlertHistoryOutput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput) with field(s):
+                            /// - On success, responds with [`ListMonitoringAlertHistoryOutput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput) with field(s):
     ///   - [`monitoring_alert_history(Option<Vec::<MonitoringAlertHistorySummary>>)`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput::monitoring_alert_history): <p>An alert history for a model monitoring schedule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListMonitoringAlertHistoryError>`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError)
-    pub fn list_monitoring_alert_history(
-        &self,
-    ) -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder {
-        crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListMonitoringAlertHistoryError>`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError)
+    pub fn list_monitoring_alert_history(&self) -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder {
+                                crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

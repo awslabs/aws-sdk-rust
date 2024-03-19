@@ -3,32 +3,31 @@
 /// <p>An exception for attempting to schedule a domain action during an unavailable time slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotNotAvailableException {
+pub struct SlotNotAvailableException  {
     /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
-    pub slot_suggestions: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub slot_suggestions: ::std::option::Option<::std::vec::Vec::<i64>>,
     /// <p>A description of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl SlotNotAvailableException {
+impl  SlotNotAvailableException  {
     /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_suggestions.is_none()`.
-    pub fn slot_suggestions(&self) -> &[i64] {
-        self.slot_suggestions.as_deref().unwrap_or_default()
+    pub fn slot_suggestions(&self) -> & [i64] {
+        self.slot_suggestions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SlotNotAvailableException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for SlotNotAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "SlotNotAvailableException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +42,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::SlotNotAvailabl
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SlotNotAvailableException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl SlotNotAvailableException {
     /// Creates a new builder-style object to manufacture [`SlotNotAvailableException`](crate::types::error::SlotNotAvailableException).
@@ -58,7 +55,7 @@ impl SlotNotAvailableException {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotNotAvailableExceptionBuilder {
-    pub(crate) slot_suggestions: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) slot_suggestions: ::std::option::Option<::std::vec::Vec::<i64>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
@@ -70,17 +67,16 @@ impl SlotNotAvailableExceptionBuilder {
     /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
     pub fn slot_suggestions(mut self, input: i64) -> Self {
         let mut v = self.slot_suggestions.unwrap_or_default();
-        v.push(input);
-        self.slot_suggestions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slot_suggestions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
-    pub fn set_slot_suggestions(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.slot_suggestions = input;
-        self
+    pub fn set_slot_suggestions(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.slot_suggestions = input; self
     }
     /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
-    pub fn get_slot_suggestions(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_slot_suggestions(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.slot_suggestions
     }
     /// <p>A description of the error.</p>
@@ -90,30 +86,32 @@ impl SlotNotAvailableExceptionBuilder {
     }
     /// <p>A description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`SlotNotAvailableException`](crate::types::error::SlotNotAvailableException).
     pub fn build(self) -> crate::types::error::SlotNotAvailableException {
         crate::types::error::SlotNotAvailableException {
-            slot_suggestions: self.slot_suggestions,
-            message: self.message,
+            slot_suggestions: self.slot_suggestions
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

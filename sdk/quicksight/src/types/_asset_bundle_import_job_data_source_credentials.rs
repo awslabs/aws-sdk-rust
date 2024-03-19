@@ -3,23 +3,23 @@
 /// <p>The login credentials to use to import a data source resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssetBundleImportJobDataSourceCredentials {
+pub struct AssetBundleImportJobDataSourceCredentials  {
     /// <p>A username and password credential pair to be used to create the imported data source. Keep this field blank if you are using a Secrets Manager secret to provide credentials.</p>
     pub credential_pair: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentialPair>,
     /// <p>The ARN of the Secrets Manager secret that's used to create the imported data source. Keep this field blank, unless you are using a secret in place of a credential pair.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleImportJobDataSourceCredentials {
+impl  AssetBundleImportJobDataSourceCredentials  {
     /// <p>A username and password credential pair to be used to create the imported data source. Keep this field blank if you are using a Secrets Manager secret to provide credentials.</p>
-    pub fn credential_pair(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobDataSourceCredentialPair> {
+    pub fn credential_pair(&self) -> ::std::option::Option<& crate::types::AssetBundleImportJobDataSourceCredentialPair> {
         self.credential_pair.as_ref()
     }
     /// <p>The ARN of the Secrets Manager secret that's used to create the imported data source. Keep this field blank, unless you are using a secret in place of a credential pair.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentials {
+impl  ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssetBundleImportJobDataSourceCredentials");
         formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl AssetBundleImportJobDataSourceCredentialsBuilder {
     }
     /// <p>A username and password credential pair to be used to create the imported data source. Keep this field blank if you are using a Secrets Manager secret to provide credentials.</p>
     pub fn set_credential_pair(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentialPair>) -> Self {
-        self.credential_pair = input;
-        self
+        self.credential_pair = input; self
     }
     /// <p>A username and password credential pair to be used to create the imported data source. Keep this field blank if you are using a Secrets Manager secret to provide credentials.</p>
     pub fn get_credential_pair(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentialPair> {
@@ -63,8 +62,7 @@ impl AssetBundleImportJobDataSourceCredentialsBuilder {
     }
     /// <p>The ARN of the Secrets Manager secret that's used to create the imported data source. Keep this field blank, unless you are using a secret in place of a credential pair.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The ARN of the Secrets Manager secret that's used to create the imported data source. Keep this field blank, unless you are using a secret in place of a credential pair.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl AssetBundleImportJobDataSourceCredentialsBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSourceCredentials`](crate::types::AssetBundleImportJobDataSourceCredentials).
     pub fn build(self) -> crate::types::AssetBundleImportJobDataSourceCredentials {
         crate::types::AssetBundleImportJobDataSourceCredentials {
-            credential_pair: self.credential_pair,
-            secret_arn: self.secret_arn,
+            credential_pair: self.credential_pair
+            ,
+            secret_arn: self.secret_arn
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentialsBuilder {
         formatter.finish()
     }
 }
+

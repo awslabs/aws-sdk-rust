@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipestate = unimplemented!();
 /// match pipestate {
@@ -43,16 +43,14 @@
 /// Specifically, when `pipestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipeState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -86,116 +84,101 @@ pub enum PipeState {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PipeState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => PipeState::CreateFailed,
-            "CREATE_ROLLBACK_FAILED" => PipeState::CreateRollbackFailed,
-            "CREATING" => PipeState::Creating,
-            "DELETE_FAILED" => PipeState::DeleteFailed,
-            "DELETE_ROLLBACK_FAILED" => PipeState::DeleteRollbackFailed,
-            "DELETING" => PipeState::Deleting,
-            "RUNNING" => PipeState::Running,
-            "STARTING" => PipeState::Starting,
-            "START_FAILED" => PipeState::StartFailed,
-            "STOPPED" => PipeState::Stopped,
-            "STOPPING" => PipeState::Stopping,
-            "STOP_FAILED" => PipeState::StopFailed,
-            "UPDATE_FAILED" => PipeState::UpdateFailed,
-            "UPDATE_ROLLBACK_FAILED" => PipeState::UpdateRollbackFailed,
-            "UPDATING" => PipeState::Updating,
-            other => PipeState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATE_FAILED" => PipeState::CreateFailed,
+"CREATE_ROLLBACK_FAILED" => PipeState::CreateRollbackFailed,
+"CREATING" => PipeState::Creating,
+"DELETE_FAILED" => PipeState::DeleteFailed,
+"DELETE_ROLLBACK_FAILED" => PipeState::DeleteRollbackFailed,
+"DELETING" => PipeState::Deleting,
+"RUNNING" => PipeState::Running,
+"STARTING" => PipeState::Starting,
+"START_FAILED" => PipeState::StartFailed,
+"STOPPED" => PipeState::Stopped,
+"STOPPING" => PipeState::Stopping,
+"STOP_FAILED" => PipeState::StopFailed,
+"UPDATE_FAILED" => PipeState::UpdateFailed,
+"UPDATE_ROLLBACK_FAILED" => PipeState::UpdateRollbackFailed,
+"UPDATING" => PipeState::Updating,
+other => PipeState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PipeState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PipeState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PipeState::from(s))
+                    }
+                }
 impl PipeState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PipeState::CreateFailed => "CREATE_FAILED",
-            PipeState::CreateRollbackFailed => "CREATE_ROLLBACK_FAILED",
-            PipeState::Creating => "CREATING",
-            PipeState::DeleteFailed => "DELETE_FAILED",
-            PipeState::DeleteRollbackFailed => "DELETE_ROLLBACK_FAILED",
-            PipeState::Deleting => "DELETING",
-            PipeState::Running => "RUNNING",
-            PipeState::Starting => "STARTING",
-            PipeState::StartFailed => "START_FAILED",
-            PipeState::Stopped => "STOPPED",
-            PipeState::Stopping => "STOPPING",
-            PipeState::StopFailed => "STOP_FAILED",
-            PipeState::UpdateFailed => "UPDATE_FAILED",
-            PipeState::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
-            PipeState::Updating => "UPDATING",
-            PipeState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED",
-            "CREATE_ROLLBACK_FAILED",
-            "CREATING",
-            "DELETE_FAILED",
-            "DELETE_ROLLBACK_FAILED",
-            "DELETING",
-            "RUNNING",
-            "STARTING",
-            "START_FAILED",
-            "STOPPED",
-            "STOPPING",
-            "STOP_FAILED",
-            "UPDATE_FAILED",
-            "UPDATE_ROLLBACK_FAILED",
-            "UPDATING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PipeState::CreateFailed => "CREATE_FAILED",
+    PipeState::CreateRollbackFailed => "CREATE_ROLLBACK_FAILED",
+    PipeState::Creating => "CREATING",
+    PipeState::DeleteFailed => "DELETE_FAILED",
+    PipeState::DeleteRollbackFailed => "DELETE_ROLLBACK_FAILED",
+    PipeState::Deleting => "DELETING",
+    PipeState::Running => "RUNNING",
+    PipeState::Starting => "STARTING",
+    PipeState::StartFailed => "START_FAILED",
+    PipeState::Stopped => "STOPPED",
+    PipeState::Stopping => "STOPPING",
+    PipeState::StopFailed => "STOP_FAILED",
+    PipeState::UpdateFailed => "UPDATE_FAILED",
+    PipeState::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
+    PipeState::Updating => "UPDATING",
+    PipeState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_ROLLBACK_FAILED", "CREATING", "DELETE_FAILED", "DELETE_ROLLBACK_FAILED", "DELETING", "RUNNING", "STARTING", "START_FAILED", "STOPPED", "STOPPING", "STOP_FAILED", "UPDATE_FAILED", "UPDATE_ROLLBACK_FAILED", "UPDATING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PipeState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PipeState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PipeState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PipeState::CreateFailed => write!(f, "CREATE_FAILED"),
-            PipeState::CreateRollbackFailed => write!(f, "CREATE_ROLLBACK_FAILED"),
-            PipeState::Creating => write!(f, "CREATING"),
-            PipeState::DeleteFailed => write!(f, "DELETE_FAILED"),
-            PipeState::DeleteRollbackFailed => write!(f, "DELETE_ROLLBACK_FAILED"),
-            PipeState::Deleting => write!(f, "DELETING"),
-            PipeState::Running => write!(f, "RUNNING"),
-            PipeState::Starting => write!(f, "STARTING"),
-            PipeState::StartFailed => write!(f, "START_FAILED"),
-            PipeState::Stopped => write!(f, "STOPPED"),
-            PipeState::Stopping => write!(f, "STOPPING"),
-            PipeState::StopFailed => write!(f, "STOP_FAILED"),
-            PipeState::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            PipeState::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
-            PipeState::Updating => write!(f, "UPDATING"),
-            PipeState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PipeState::CreateFailed => write!(f, "CREATE_FAILED"),
+PipeState::CreateRollbackFailed => write!(f, "CREATE_ROLLBACK_FAILED"),
+PipeState::Creating => write!(f, "CREATING"),
+PipeState::DeleteFailed => write!(f, "DELETE_FAILED"),
+PipeState::DeleteRollbackFailed => write!(f, "DELETE_ROLLBACK_FAILED"),
+PipeState::Deleting => write!(f, "DELETING"),
+PipeState::Running => write!(f, "RUNNING"),
+PipeState::Starting => write!(f, "STARTING"),
+PipeState::StartFailed => write!(f, "START_FAILED"),
+PipeState::Stopped => write!(f, "STOPPED"),
+PipeState::Stopping => write!(f, "STOPPING"),
+PipeState::StopFailed => write!(f, "STOP_FAILED"),
+PipeState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+PipeState::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
+PipeState::Updating => write!(f, "UPDATING"),
+PipeState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

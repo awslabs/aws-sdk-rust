@@ -3,19 +3,19 @@
 /// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BucketAclGrantConfiguration {
+pub struct S3BucketAclGrantConfiguration  {
     /// <p>The permissions being granted.</p>
     pub permission: crate::types::AclPermission,
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub grantee: ::std::option::Option<crate::types::AclGrantee>,
 }
-impl S3BucketAclGrantConfiguration {
+impl  S3BucketAclGrantConfiguration  {
     /// <p>The permissions being granted.</p>
-    pub fn permission(&self) -> &crate::types::AclPermission {
+    pub fn permission(&self) -> & crate::types::AclPermission {
         &self.permission
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&crate::types::AclGrantee> {
+    pub fn grantee(&self) -> ::std::option::Option<& crate::types::AclGrantee> {
         self.grantee.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl S3BucketAclGrantConfigurationBuilder {
     }
     /// <p>The permissions being granted.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::AclPermission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The permissions being granted.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::AclPermission> {
@@ -57,8 +56,7 @@ impl S3BucketAclGrantConfigurationBuilder {
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::AclGrantee>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::AclGrantee> {
@@ -68,14 +66,17 @@ impl S3BucketAclGrantConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`permission`](crate::types::builders::S3BucketAclGrantConfigurationBuilder::permission)
     pub fn build(self) -> ::std::result::Result<crate::types::S3BucketAclGrantConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3BucketAclGrantConfiguration {
-            permission: self.permission.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "permission",
-                    "permission was not specified but it is required when building S3BucketAclGrantConfiguration",
-                )
-            })?,
-            grantee: self.grantee,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3BucketAclGrantConfiguration {
+                permission: self.permission
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("permission", "permission was not specified but it is required when building S3BucketAclGrantConfiguration")
+                    )?
+                ,
+                grantee: self.grantee
+                ,
+            }
+        )
     }
 }
+

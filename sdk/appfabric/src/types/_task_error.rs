@@ -3,19 +3,19 @@
 /// <p>Contains information about an error returned from a user access task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskError {
+pub struct TaskError  {
     /// <p>The code of the error.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The message of the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl TaskError {
+impl  TaskError  {
     /// <p>The code of the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The message of the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TaskErrorBuilder {
     }
     /// <p>The code of the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The code of the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TaskErrorBuilder {
     }
     /// <p>The message of the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message of the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TaskErrorBuilder {
     /// Consumes the builder and constructs a [`TaskError`](crate::types::TaskError).
     pub fn build(self) -> crate::types::TaskError {
         crate::types::TaskError {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

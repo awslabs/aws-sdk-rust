@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTableRestoreStatus`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::set_cluster_identifier):<br>required: **false**<br><p>The Amazon Redshift cluster that the table is being restored to.</p><br>
     ///   - [`table_restore_request_id(impl Into<String>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::table_restore_request_id) / [`set_table_restore_request_id(Option<String>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::set_table_restore_request_id):<br>required: **false**<br><p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p><br>
-    /// - On success, responds with [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput) with field(s):
+                            /// - On success, responds with [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput) with field(s):
     ///   - [`table_restore_status_details(Option<Vec::<TableRestoreStatus>>)`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput::table_restore_status_details): <p>A list of status details for one or more table restore requests.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput::marker): <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
-    /// - On failure, responds with [`SdkError<DescribeTableRestoreStatusError>`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError)
-    pub fn describe_table_restore_status(
-        &self,
-    ) -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder {
-        crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeTableRestoreStatusError>`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError)
+    pub fn describe_table_restore_status(&self) -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder {
+                                crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

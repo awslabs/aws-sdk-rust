@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEnvironmentBlueprintConfigurationInput {
+pub struct PutEnvironmentBlueprintConfigurationInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment blueprint.</p>
@@ -12,41 +12,36 @@ pub struct PutEnvironmentBlueprintConfigurationInput {
     /// <p>The ARN of the manage access role.</p>
     pub manage_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
-    pub enabled_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The regional parameters in the environment blueprint.</p>
-    pub regional_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub regional_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
-impl PutEnvironmentBlueprintConfigurationInput {
+impl  PutEnvironmentBlueprintConfigurationInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the environment blueprint.</p>
-    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_blueprint_identifier.as_deref()
     }
     /// <p>The ARN of the provisioning role.</p>
-    pub fn provisioning_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_role_arn(&self) -> ::std::option::Option<& str> {
         self.provisioning_role_arn.as_deref()
     }
     /// <p>The ARN of the manage access role.</p>
-    pub fn manage_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn manage_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.manage_access_role_arn.as_deref()
     }
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_regions.is_none()`.
-    pub fn enabled_regions(&self) -> &[::std::string::String] {
-        self.enabled_regions.as_deref().unwrap_or_default()
+    pub fn enabled_regions(&self) -> & [::std::string::String] {
+        self.enabled_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The regional parameters in the environment blueprint.</p>
-    pub fn regional_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn regional_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.regional_parameters.as_ref()
     }
 }
@@ -65,10 +60,8 @@ pub struct PutEnvironmentBlueprintConfigurationInputBuilder {
     pub(crate) environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) manage_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) enabled_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) regional_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) enabled_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) regional_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
 impl PutEnvironmentBlueprintConfigurationInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
@@ -79,8 +72,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +86,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     }
     /// <p>The identifier of the environment blueprint.</p>
     pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_identifier = input;
-        self
+        self.environment_blueprint_identifier = input; self
     }
     /// <p>The identifier of the environment blueprint.</p>
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +99,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     }
     /// <p>The ARN of the provisioning role.</p>
     pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_role_arn = input;
-        self
+        self.provisioning_role_arn = input; self
     }
     /// <p>The ARN of the provisioning role.</p>
     pub fn get_provisioning_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +112,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     }
     /// <p>The ARN of the manage access role.</p>
     pub fn set_manage_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manage_access_role_arn = input;
-        self
+        self.manage_access_role_arn = input; self
     }
     /// <p>The ARN of the manage access role.</p>
     pub fn get_manage_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +125,16 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
     pub fn enabled_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_regions.unwrap_or_default();
-        v.push(input.into());
-        self.enabled_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enabled_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
-    pub fn set_enabled_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enabled_regions = input;
-        self
+    pub fn set_enabled_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enabled_regions = input; self
     }
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
-    pub fn get_enabled_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enabled_regions
     }
     /// Adds a key-value pair to `regional_parameters`.
@@ -154,50 +142,38 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_regional_parameters`](Self::set_regional_parameters).
     ///
     /// <p>The regional parameters in the environment blueprint.</p>
-    pub fn regional_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn regional_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.regional_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.regional_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.regional_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The regional parameters in the environment blueprint.</p>
-    pub fn set_regional_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.regional_parameters = input;
-        self
+    pub fn set_regional_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.regional_parameters = input; self
     }
     /// <p>The regional parameters in the environment blueprint.</p>
-    pub fn get_regional_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_regional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.regional_parameters
     }
     /// Consumes the builder and constructs a [`PutEnvironmentBlueprintConfigurationInput`](crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput {
-                domain_identifier: self.domain_identifier,
-                environment_blueprint_identifier: self.environment_blueprint_identifier,
-                provisioning_role_arn: self.provisioning_role_arn,
-                manage_access_role_arn: self.manage_access_role_arn,
-                enabled_regions: self.enabled_regions,
-                regional_parameters: self.regional_parameters,
-            },
+                domain_identifier: self.domain_identifier
+                ,
+                environment_blueprint_identifier: self.environment_blueprint_identifier
+                ,
+                provisioning_role_arn: self.provisioning_role_arn
+                ,
+                manage_access_role_arn: self.manage_access_role_arn
+                ,
+                enabled_regions: self.enabled_regions
+                ,
+                regional_parameters: self.regional_parameters
+                ,
+            }
         )
     }
 }
+

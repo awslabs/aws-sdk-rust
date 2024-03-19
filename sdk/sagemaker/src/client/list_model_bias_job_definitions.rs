@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelBiasJobDefinitions`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`endpoint_name(impl Into<String>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_endpoint_name):<br>required: **false**<br><p>Name of the endpoint to monitor for model bias.</p><br>
     ///   - [`sort_by(MonitoringJobDefinitionSortKey)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::sort_by) / [`set_sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_sort_order):<br>required: **false**<br><p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_name_contains):<br>required: **false**<br><p>Filter for model bias jobs whose name contains a specified string.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only model bias jobs created before a specified time.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only model bias jobs created after a specified time.</p><br>
-    /// - On success, responds with [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput) with field(s):
+                            /// - On success, responds with [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec::<MonitoringJobDefinitionSummary>>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::job_definition_summaries): <p>A JSON array in which each element is a summary for a model bias jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListModelBiasJobDefinitionsError>`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError)
-    pub fn list_model_bias_job_definitions(
-        &self,
-    ) -> crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder {
-        crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListModelBiasJobDefinitionsError>`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError)
+    pub fn list_model_bias_job_definitions(&self) -> crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder {
+                                crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,26 +3,25 @@
 /// <p>Describes the configuration of the dashboard snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotConfiguration {
+pub struct SnapshotConfiguration  {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    pub file_groups: ::std::vec::Vec<crate::types::SnapshotFileGroup>,
+    pub file_groups: ::std::vec::Vec::<crate::types::SnapshotFileGroup>,
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub destination_configuration: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>,
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
 }
-impl SnapshotConfiguration {
+impl  SnapshotConfiguration  {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    pub fn file_groups(&self) -> &[crate::types::SnapshotFileGroup] {
-        use std::ops::Deref;
-        self.file_groups.deref()
+    pub fn file_groups(&self) -> & [crate::types::SnapshotFileGroup] {
+        use std::ops::Deref; self.file_groups.deref()
     }
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
-    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotDestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<& crate::types::SnapshotDestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::Parameters> {
         self.parameters.as_ref()
     }
 }
@@ -37,7 +36,7 @@ impl SnapshotConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotConfigurationBuilder {
-    pub(crate) file_groups: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>>,
+    pub(crate) file_groups: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFileGroup>>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>,
     pub(crate) parameters: ::std::option::Option<crate::types::Parameters>,
 }
@@ -49,17 +48,16 @@ impl SnapshotConfigurationBuilder {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
     pub fn file_groups(mut self, input: crate::types::SnapshotFileGroup) -> Self {
         let mut v = self.file_groups.unwrap_or_default();
-        v.push(input);
-        self.file_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.file_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    pub fn set_file_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>>) -> Self {
-        self.file_groups = input;
-        self
+    pub fn set_file_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFileGroup>>) -> Self {
+        self.file_groups = input; self
     }
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    pub fn get_file_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>> {
+    pub fn get_file_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFileGroup>> {
         &self.file_groups
     }
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
@@ -69,8 +67,7 @@ impl SnapshotConfigurationBuilder {
     }
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>) -> Self {
-        self.destination_configuration = input;
-        self
+        self.destination_configuration = input; self
     }
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::SnapshotDestinationConfiguration> {
@@ -83,8 +80,7 @@ impl SnapshotConfigurationBuilder {
     }
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
@@ -94,15 +90,19 @@ impl SnapshotConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_groups`](crate::types::builders::SnapshotConfigurationBuilder::file_groups)
     pub fn build(self) -> ::std::result::Result<crate::types::SnapshotConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnapshotConfiguration {
-            file_groups: self.file_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_groups",
-                    "file_groups was not specified but it is required when building SnapshotConfiguration",
-                )
-            })?,
-            destination_configuration: self.destination_configuration,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnapshotConfiguration {
+                file_groups: self.file_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_groups", "file_groups was not specified but it is required when building SnapshotConfiguration")
+                    )?
+                ,
+                destination_configuration: self.destination_configuration
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

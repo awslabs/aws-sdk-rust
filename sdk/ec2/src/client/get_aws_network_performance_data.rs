@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetAwsNetworkPerformanceData`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`data_queries(DataQuery)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::data_queries) / [`set_data_queries(Option<Vec::<DataQuery>>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::set_data_queries):<br>required: **false**<br><p>A list of network performance data queries.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::set_start_time):<br>required: **false**<br><p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::set_end_time):<br>required: **false**<br><p>The ending time for the performance data request. The end time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`GetAwsNetworkPerformanceDataOutput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput) with field(s):
+                            /// - On success, responds with [`GetAwsNetworkPerformanceDataOutput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput) with field(s):
     ///   - [`data_responses(Option<Vec::<DataResponse>>)`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput::data_responses): <p>The list of data responses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<GetAwsNetworkPerformanceDataError>`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError)
-    pub fn get_aws_network_performance_data(
-        &self,
-    ) -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder {
-        crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetAwsNetworkPerformanceDataError>`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError)
+    pub fn get_aws_network_performance_data(&self) -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder {
+                                crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataFluentBuilder::new(self.handle.clone())
+                            }
 }
+

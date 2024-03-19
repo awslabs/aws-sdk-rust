@@ -3,19 +3,19 @@
 /// <p>The device verifier against which it is authenticated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceSecretVerifierConfigType {
+pub struct DeviceSecretVerifierConfigType  {
     /// <p>The password verifier.</p>
     pub password_verifier: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub salt: ::std::option::Option<::std::string::String>,
 }
-impl DeviceSecretVerifierConfigType {
+impl  DeviceSecretVerifierConfigType  {
     /// <p>The password verifier.</p>
-    pub fn password_verifier(&self) -> ::std::option::Option<&str> {
+    pub fn password_verifier(&self) -> ::std::option::Option<& str> {
         self.password_verifier.as_deref()
     }
     /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
-    pub fn salt(&self) -> ::std::option::Option<&str> {
+    pub fn salt(&self) -> ::std::option::Option<& str> {
         self.salt.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeviceSecretVerifierConfigTypeBuilder {
     }
     /// <p>The password verifier.</p>
     pub fn set_password_verifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password_verifier = input;
-        self
+        self.password_verifier = input; self
     }
     /// <p>The password verifier.</p>
     pub fn get_password_verifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DeviceSecretVerifierConfigTypeBuilder {
     }
     /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub fn set_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.salt = input;
-        self
+        self.salt = input; self
     }
     /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a></p>
     pub fn get_salt(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DeviceSecretVerifierConfigTypeBuilder {
     /// Consumes the builder and constructs a [`DeviceSecretVerifierConfigType`](crate::types::DeviceSecretVerifierConfigType).
     pub fn build(self) -> crate::types::DeviceSecretVerifierConfigType {
         crate::types::DeviceSecretVerifierConfigType {
-            password_verifier: self.password_verifier,
-            salt: self.salt,
+            password_verifier: self.password_verifier
+            ,
+            salt: self.salt
+            ,
         }
     }
 }
+

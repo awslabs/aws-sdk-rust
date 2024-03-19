@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyGroupInput {
+pub struct CreateKeyGroupInput  {
     /// <p>A key group configuration.</p>
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
 }
-impl CreateKeyGroupInput {
+impl  CreateKeyGroupInput  {
     /// <p>A key group configuration.</p>
-    pub fn key_group_config(&self) -> ::std::option::Option<&crate::types::KeyGroupConfig> {
+    pub fn key_group_config(&self) -> ::std::option::Option<& crate::types::KeyGroupConfig> {
         self.key_group_config.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl CreateKeyGroupInputBuilder {
     }
     /// <p>A key group configuration.</p>
     pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
-        self.key_group_config = input;
-        self
+        self.key_group_config = input; self
     }
     /// <p>A key group configuration.</p>
     pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
         &self.key_group_config
     }
     /// Consumes the builder and constructs a [`CreateKeyGroupInput`](crate::operation::create_key_group::CreateKeyGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_key_group::CreateKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_key_group::CreateKeyGroupInput {
-            key_group_config: self.key_group_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key_group::CreateKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_key_group::CreateKeyGroupInput {
+                key_group_config: self.key_group_config
+                ,
+            }
+        )
     }
 }
+

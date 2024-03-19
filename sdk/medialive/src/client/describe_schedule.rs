@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSchedule`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_id(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_channel_id):<br>required: **true**<br>Id of the channel whose schedule is being updated.<br>
     ///   - [`max_results(i32)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
-    /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
+                            /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::next_token): The next token; for use in pagination.
     ///   - [`schedule_actions(Option<Vec::<ScheduleAction>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::schedule_actions): The list of actions in the schedule.
-    /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::operation::describe_schedule::DescribeScheduleError)
+                            /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::operation::describe_schedule::DescribeScheduleError)
     pub fn describe_schedule(&self) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {
-        crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(self.handle.clone())
+                            }
 }
+

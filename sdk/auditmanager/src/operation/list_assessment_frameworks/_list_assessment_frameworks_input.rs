@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentFrameworksInput {
+pub struct ListAssessmentFrameworksInput  {
     /// <p>The type of framework, such as a standard framework or a custom framework.</p>
     pub framework_type: ::std::option::Option<crate::types::FrameworkType>,
     /// <p>The pagination token that's used to fetch the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListAssessmentFrameworksInput {
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAssessmentFrameworksInput {
+impl  ListAssessmentFrameworksInput  {
     /// <p>The type of framework, such as a standard framework or a custom framework.</p>
-    pub fn framework_type(&self) -> ::std::option::Option<&crate::types::FrameworkType> {
+    pub fn framework_type(&self) -> ::std::option::Option<& crate::types::FrameworkType> {
         self.framework_type.as_ref()
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
@@ -48,8 +48,7 @@ impl ListAssessmentFrameworksInputBuilder {
     }
     /// <p>The type of framework, such as a standard framework or a custom framework.</p>
     pub fn set_framework_type(mut self, input: ::std::option::Option<crate::types::FrameworkType>) -> Self {
-        self.framework_type = input;
-        self
+        self.framework_type = input; self
     }
     /// <p>The type of framework, such as a standard framework or a custom framework.</p>
     pub fn get_framework_type(&self) -> &::std::option::Option<crate::types::FrameworkType> {
@@ -62,8 +61,7 @@ impl ListAssessmentFrameworksInputBuilder {
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ListAssessmentFrameworksInputBuilder {
     }
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentFrameworksInput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput {
-            framework_type: self.framework_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput {
+                framework_type: self.framework_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

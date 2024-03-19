@@ -3,7 +3,7 @@
 /// <p>Specifies a custom CSV classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCsvClassifierRequest {
+pub struct CreateCsvClassifierRequest  {
     /// <p>The name of the classifier.</p>
     pub name: ::std::string::String,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
@@ -13,7 +13,7 @@ pub struct CreateCsvClassifierRequest {
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub contains_header: ::std::option::Option<crate::types::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
-    pub header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub header: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub disable_value_trimming: ::std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
@@ -21,33 +21,33 @@ pub struct CreateCsvClassifierRequest {
     /// <p>Enables the configuration of custom datatypes.</p>
     pub custom_datatype_configured: ::std::option::Option<bool>,
     /// <p>Creates a list of supported custom datatypes.</p>
-    pub custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub custom_datatypes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
     pub serde: ::std::option::Option<crate::types::CsvSerdeOption>,
 }
-impl CreateCsvClassifierRequest {
+impl  CreateCsvClassifierRequest  {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>A custom symbol to denote what combines content into a single column value. Must be different from the column delimiter.</p>
-    pub fn quote_symbol(&self) -> ::std::option::Option<&str> {
+    pub fn quote_symbol(&self) -> ::std::option::Option<& str> {
         self.quote_symbol.as_deref()
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn contains_header(&self) -> ::std::option::Option<&crate::types::CsvHeaderOption> {
+    pub fn contains_header(&self) -> ::std::option::Option<& crate::types::CsvHeaderOption> {
         self.contains_header.as_ref()
     }
     /// <p>A list of strings representing column names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header.is_none()`.
-    pub fn header(&self) -> &[::std::string::String] {
-        self.header.as_deref().unwrap_or_default()
+    pub fn header(&self) -> & [::std::string::String] {
+        self.header.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn disable_value_trimming(&self) -> ::std::option::Option<bool> {
@@ -62,13 +62,14 @@ impl CreateCsvClassifierRequest {
         self.custom_datatype_configured
     }
     /// <p>Creates a list of supported custom datatypes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_datatypes.is_none()`.
-    pub fn custom_datatypes(&self) -> &[::std::string::String] {
-        self.custom_datatypes.as_deref().unwrap_or_default()
+    pub fn custom_datatypes(&self) -> & [::std::string::String] {
+        self.custom_datatypes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
-    pub fn serde(&self) -> ::std::option::Option<&crate::types::CsvSerdeOption> {
+    pub fn serde(&self) -> ::std::option::Option<& crate::types::CsvSerdeOption> {
         self.serde.as_ref()
     }
 }
@@ -87,11 +88,11 @@ pub struct CreateCsvClassifierRequestBuilder {
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) quote_symbol: ::std::option::Option<::std::string::String>,
     pub(crate) contains_header: ::std::option::Option<crate::types::CsvHeaderOption>,
-    pub(crate) header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) header: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) disable_value_trimming: ::std::option::Option<bool>,
     pub(crate) allow_single_column: ::std::option::Option<bool>,
     pub(crate) custom_datatype_configured: ::std::option::Option<bool>,
-    pub(crate) custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_datatypes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) serde: ::std::option::Option<crate::types::CsvSerdeOption>,
 }
 impl CreateCsvClassifierRequestBuilder {
@@ -103,8 +104,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the classifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +117,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>A custom symbol to denote what combines content into a single column value. Must be different from the column delimiter.</p>
     pub fn set_quote_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quote_symbol = input;
-        self
+        self.quote_symbol = input; self
     }
     /// <p>A custom symbol to denote what combines content into a single column value. Must be different from the column delimiter.</p>
     pub fn get_quote_symbol(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +143,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn set_contains_header(mut self, input: ::std::option::Option<crate::types::CsvHeaderOption>) -> Self {
-        self.contains_header = input;
-        self
+        self.contains_header = input; self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn get_contains_header(&self) -> &::std::option::Option<crate::types::CsvHeaderOption> {
@@ -159,17 +156,16 @@ impl CreateCsvClassifierRequestBuilder {
     /// <p>A list of strings representing column names.</p>
     pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.header.unwrap_or_default();
-        v.push(input.into());
-        self.header = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.header = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn set_header(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.header = input;
-        self
+    pub fn set_header(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.header = input; self
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn get_header(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_header(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.header
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
@@ -179,8 +175,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn set_disable_value_trimming(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_value_trimming = input;
-        self
+        self.disable_value_trimming = input; self
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn get_disable_value_trimming(&self) -> &::std::option::Option<bool> {
@@ -193,8 +188,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn set_allow_single_column(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_single_column = input;
-        self
+        self.allow_single_column = input; self
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn get_allow_single_column(&self) -> &::std::option::Option<bool> {
@@ -207,8 +201,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>Enables the configuration of custom datatypes.</p>
     pub fn set_custom_datatype_configured(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.custom_datatype_configured = input;
-        self
+        self.custom_datatype_configured = input; self
     }
     /// <p>Enables the configuration of custom datatypes.</p>
     pub fn get_custom_datatype_configured(&self) -> &::std::option::Option<bool> {
@@ -221,17 +214,16 @@ impl CreateCsvClassifierRequestBuilder {
     /// <p>Creates a list of supported custom datatypes.</p>
     pub fn custom_datatypes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_datatypes.unwrap_or_default();
-        v.push(input.into());
-        self.custom_datatypes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.custom_datatypes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Creates a list of supported custom datatypes.</p>
-    pub fn set_custom_datatypes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.custom_datatypes = input;
-        self
+    pub fn set_custom_datatypes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.custom_datatypes = input; self
     }
     /// <p>Creates a list of supported custom datatypes.</p>
-    pub fn get_custom_datatypes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_datatypes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.custom_datatypes
     }
     /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
@@ -241,8 +233,7 @@ impl CreateCsvClassifierRequestBuilder {
     }
     /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
     pub fn set_serde(mut self, input: ::std::option::Option<crate::types::CsvSerdeOption>) -> Self {
-        self.serde = input;
-        self
+        self.serde = input; self
     }
     /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
     pub fn get_serde(&self) -> &::std::option::Option<crate::types::CsvSerdeOption> {
@@ -252,22 +243,33 @@ impl CreateCsvClassifierRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CreateCsvClassifierRequestBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateCsvClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateCsvClassifierRequest {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateCsvClassifierRequest",
-                )
-            })?,
-            delimiter: self.delimiter,
-            quote_symbol: self.quote_symbol,
-            contains_header: self.contains_header,
-            header: self.header,
-            disable_value_trimming: self.disable_value_trimming,
-            allow_single_column: self.allow_single_column,
-            custom_datatype_configured: self.custom_datatype_configured,
-            custom_datatypes: self.custom_datatypes,
-            serde: self.serde,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateCsvClassifierRequest {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateCsvClassifierRequest")
+                    )?
+                ,
+                delimiter: self.delimiter
+                ,
+                quote_symbol: self.quote_symbol
+                ,
+                contains_header: self.contains_header
+                ,
+                header: self.header
+                ,
+                disable_value_trimming: self.disable_value_trimming
+                ,
+                allow_single_column: self.allow_single_column
+                ,
+                custom_datatype_configured: self.custom_datatype_configured
+                ,
+                custom_datatypes: self.custom_datatypes
+                ,
+                serde: self.serde
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutStoredQueryOutput {
+pub struct PutStoredQueryOutput  {
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub query_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutStoredQueryOutput {
+impl  PutStoredQueryOutput  {
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
-    pub fn query_arn(&self) -> ::std::option::Option<&str> {
+    pub fn query_arn(&self) -> ::std::option::Option<& str> {
         self.query_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutStoredQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutStoredQueryOutput {
     /// Creates a new builder-style object to manufacture [`PutStoredQueryOutput`](crate::operation::put_stored_query::PutStoredQueryOutput).
     pub fn builder() -> crate::operation::put_stored_query::builders::PutStoredQueryOutputBuilder {
@@ -40,27 +40,28 @@ impl PutStoredQueryOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub fn set_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_arn = input;
-        self
+        self.query_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub fn get_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutStoredQueryOutput`](crate::operation::put_stored_query::PutStoredQueryOutput).
     pub fn build(self) -> crate::operation::put_stored_query::PutStoredQueryOutput {
         crate::operation::put_stored_query::PutStoredQueryOutput {
-            query_arn: self.query_arn,
+            query_arn: self.query_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

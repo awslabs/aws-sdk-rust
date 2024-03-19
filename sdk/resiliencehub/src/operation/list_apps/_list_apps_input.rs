@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppsInput {
+pub struct ListAppsInput  {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -18,9 +18,9 @@ pub struct ListAppsInput {
     /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
     pub reverse_order: ::std::option::Option<bool>,
 }
-impl ListAppsInput {
+impl  ListAppsInput  {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -28,19 +28,19 @@ impl ListAppsInput {
         self.max_results
     }
     /// <p>The name for the one of the listed applications.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
-    pub fn from_last_assessment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from_last_assessment_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from_last_assessment_time.as_ref()
     }
     /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
-    pub fn to_last_assessment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to_last_assessment_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to_last_assessment_time.as_ref()
     }
     /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
@@ -75,8 +75,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -103,8 +101,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The name for the one of the listed applications.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the one of the listed applications.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn set_from_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from_last_assessment_time = input;
-        self
+        self.from_last_assessment_time = input; self
     }
     /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn get_from_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +140,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn set_to_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.to_last_assessment_time = input;
-        self
+        self.to_last_assessment_time = input; self
     }
     /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn get_to_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +153,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reverse_order = input;
-        self
+        self.reverse_order = input; self
     }
     /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
@@ -168,14 +161,24 @@ impl ListAppsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name: self.name,
-            app_arn: self.app_arn,
-            from_last_assessment_time: self.from_last_assessment_time,
-            to_last_assessment_time: self.to_last_assessment_time,
-            reverse_order: self.reverse_order,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_apps::ListAppsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name: self.name
+                ,
+                app_arn: self.app_arn
+                ,
+                from_last_assessment_time: self.from_last_assessment_time
+                ,
+                to_last_assessment_time: self.to_last_assessment_time
+                ,
+                reverse_order: self.reverse_order
+                ,
+            }
+        )
     }
 }
+

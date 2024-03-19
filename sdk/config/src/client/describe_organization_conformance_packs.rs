@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOrganizationConformancePacks`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`organization_conformance_pack_names(impl Into<String>)`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::organization_conformance_pack_names) / [`set_organization_conformance_pack_names(Option<Vec::<String>>)`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::set_organization_conformance_pack_names):<br>required: **false**<br><p>The name that you assign to an organization conformance pack.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`DescribeOrganizationConformancePacksOutput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput) with field(s):
+                            /// - On success, responds with [`DescribeOrganizationConformancePacksOutput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput) with field(s):
     ///   - [`organization_conformance_packs(Option<Vec::<OrganizationConformancePack>>)`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput::organization_conformance_packs): <p>Returns a list of OrganizationConformancePacks objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<DescribeOrganizationConformancePacksError>`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError)
-    pub fn describe_organization_conformance_packs(
-        &self,
-    ) -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder {
-        crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeOrganizationConformancePacksError>`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError)
+    pub fn describe_organization_conformance_packs(&self) -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder {
+                                crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

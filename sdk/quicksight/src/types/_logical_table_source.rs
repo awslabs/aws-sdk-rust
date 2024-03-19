@@ -3,7 +3,7 @@
 /// <p>Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogicalTableSource {
+pub struct LogicalTableSource  {
     /// <p>Specifies the result of a join of two logical tables.</p>
     pub join_instruction: ::std::option::Option<crate::types::JoinInstruction>,
     /// <p>Physical table ID.</p>
@@ -11,17 +11,17 @@ pub struct LogicalTableSource {
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
     pub data_set_arn: ::std::option::Option<::std::string::String>,
 }
-impl LogicalTableSource {
+impl  LogicalTableSource  {
     /// <p>Specifies the result of a join of two logical tables.</p>
-    pub fn join_instruction(&self) -> ::std::option::Option<&crate::types::JoinInstruction> {
+    pub fn join_instruction(&self) -> ::std::option::Option<& crate::types::JoinInstruction> {
         self.join_instruction.as_ref()
     }
     /// <p>Physical table ID.</p>
-    pub fn physical_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn physical_table_id(&self) -> ::std::option::Option<& str> {
         self.physical_table_id.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
-    pub fn data_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_arn(&self) -> ::std::option::Option<& str> {
         self.data_set_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl LogicalTableSourceBuilder {
     }
     /// <p>Specifies the result of a join of two logical tables.</p>
     pub fn set_join_instruction(mut self, input: ::std::option::Option<crate::types::JoinInstruction>) -> Self {
-        self.join_instruction = input;
-        self
+        self.join_instruction = input; self
     }
     /// <p>Specifies the result of a join of two logical tables.</p>
     pub fn get_join_instruction(&self) -> &::std::option::Option<crate::types::JoinInstruction> {
@@ -62,8 +61,7 @@ impl LogicalTableSourceBuilder {
     }
     /// <p>Physical table ID.</p>
     pub fn set_physical_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.physical_table_id = input;
-        self
+        self.physical_table_id = input; self
     }
     /// <p>Physical table ID.</p>
     pub fn get_physical_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl LogicalTableSourceBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
     pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_arn = input;
-        self
+        self.data_set_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
     pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl LogicalTableSourceBuilder {
     /// Consumes the builder and constructs a [`LogicalTableSource`](crate::types::LogicalTableSource).
     pub fn build(self) -> crate::types::LogicalTableSource {
         crate::types::LogicalTableSource {
-            join_instruction: self.join_instruction,
-            physical_table_id: self.physical_table_id,
-            data_set_arn: self.data_set_arn,
+            join_instruction: self.join_instruction
+            ,
+            physical_table_id: self.physical_table_id
+            ,
+            data_set_arn: self.data_set_arn
+            ,
         }
     }
 }
+

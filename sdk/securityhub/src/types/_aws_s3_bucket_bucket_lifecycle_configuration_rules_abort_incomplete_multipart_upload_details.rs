@@ -3,11 +3,11 @@
 /// <p>Information about what Amazon S3 does when a multipart upload is incomplete.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails  {
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
     pub days_after_initiation: ::std::option::Option<i32>,
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
+impl  AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails  {
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
     pub fn days_after_initiation(&self) -> ::std::option::Option<i32> {
         self.days_after_initiation
@@ -34,8 +34,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
     }
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
     pub fn set_days_after_initiation(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days_after_initiation = input;
-        self
+        self.days_after_initiation = input; self
     }
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
     pub fn get_days_after_initiation(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
-            days_after_initiation: self.days_after_initiation,
+            days_after_initiation: self.days_after_initiation
+            ,
         }
     }
 }
+

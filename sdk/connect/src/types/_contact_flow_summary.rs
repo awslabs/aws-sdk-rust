@@ -4,7 +4,7 @@
 /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactFlowSummary {
+pub struct ContactFlowSummary  {
     /// <p>The identifier of the flow.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
@@ -16,25 +16,25 @@ pub struct ContactFlowSummary {
     /// <p>The type of flow.</p>
     pub contact_flow_state: ::std::option::Option<crate::types::ContactFlowState>,
 }
-impl ContactFlowSummary {
+impl  ContactFlowSummary  {
     /// <p>The identifier of the flow.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the flow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of flow.</p>
-    pub fn contact_flow_type(&self) -> ::std::option::Option<&crate::types::ContactFlowType> {
+    pub fn contact_flow_type(&self) -> ::std::option::Option<& crate::types::ContactFlowType> {
         self.contact_flow_type.as_ref()
     }
     /// <p>The type of flow.</p>
-    pub fn contact_flow_state(&self) -> ::std::option::Option<&crate::types::ContactFlowState> {
+    pub fn contact_flow_state(&self) -> ::std::option::Option<& crate::types::ContactFlowState> {
         self.contact_flow_state.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl ContactFlowSummaryBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ContactFlowSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ContactFlowSummaryBuilder {
     }
     /// <p>The name of the flow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the flow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ContactFlowSummaryBuilder {
     }
     /// <p>The type of flow.</p>
     pub fn set_contact_flow_type(mut self, input: ::std::option::Option<crate::types::ContactFlowType>) -> Self {
-        self.contact_flow_type = input;
-        self
+        self.contact_flow_type = input; self
     }
     /// <p>The type of flow.</p>
     pub fn get_contact_flow_type(&self) -> &::std::option::Option<crate::types::ContactFlowType> {
@@ -119,8 +115,7 @@ impl ContactFlowSummaryBuilder {
     }
     /// <p>The type of flow.</p>
     pub fn set_contact_flow_state(mut self, input: ::std::option::Option<crate::types::ContactFlowState>) -> Self {
-        self.contact_flow_state = input;
-        self
+        self.contact_flow_state = input; self
     }
     /// <p>The type of flow.</p>
     pub fn get_contact_flow_state(&self) -> &::std::option::Option<crate::types::ContactFlowState> {
@@ -129,11 +124,17 @@ impl ContactFlowSummaryBuilder {
     /// Consumes the builder and constructs a [`ContactFlowSummary`](crate::types::ContactFlowSummary).
     pub fn build(self) -> crate::types::ContactFlowSummary {
         crate::types::ContactFlowSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            contact_flow_type: self.contact_flow_type,
-            contact_flow_state: self.contact_flow_state,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            contact_flow_type: self.contact_flow_type
+            ,
+            contact_flow_state: self.contact_flow_state
+            ,
         }
     }
 }
+

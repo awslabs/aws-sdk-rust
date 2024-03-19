@@ -3,7 +3,7 @@
 /// <p>Output of a update answer call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnswerOutput {
+pub struct UpdateAnswerOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -17,32 +17,32 @@ pub struct UpdateAnswerOutput {
     pub answer: ::std::option::Option<crate::types::Answer>,
     _request_id: Option<String>,
 }
-impl UpdateAnswerOutput {
+impl  UpdateAnswerOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>An answer of the question.</p>
-    pub fn answer(&self) -> ::std::option::Option<&crate::types::Answer> {
+    pub fn answer(&self) -> ::std::option::Option<& crate::types::Answer> {
         self.answer.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAnswerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAnswerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnswerOutput`](crate::operation::update_answer::UpdateAnswerOutput).
     pub fn builder() -> crate::operation::update_answer::builders::UpdateAnswerOutputBuilder {
@@ -68,8 +68,7 @@ impl UpdateAnswerOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl UpdateAnswerOutputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -105,8 +103,7 @@ impl UpdateAnswerOutputBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The ARN for the lens.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,30 +116,34 @@ impl UpdateAnswerOutputBuilder {
     }
     /// <p>An answer of the question.</p>
     pub fn set_answer(mut self, input: ::std::option::Option<crate::types::Answer>) -> Self {
-        self.answer = input;
-        self
+        self.answer = input; self
     }
     /// <p>An answer of the question.</p>
     pub fn get_answer(&self) -> &::std::option::Option<crate::types::Answer> {
         &self.answer
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAnswerOutput`](crate::operation::update_answer::UpdateAnswerOutput).
     pub fn build(self) -> crate::operation::update_answer::UpdateAnswerOutput {
         crate::operation::update_answer::UpdateAnswerOutput {
-            workload_id: self.workload_id,
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            answer: self.answer,
+            workload_id: self.workload_id
+            ,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            answer: self.answer
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

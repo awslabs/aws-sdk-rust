@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeComponentOutput {
+pub struct DescribeComponentOutput  {
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
     pub application_component: ::std::option::Option<crate::types::ApplicationComponent>,
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub resource_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeComponentOutput {
+impl  DescribeComponentOutput  {
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
-    pub fn application_component(&self) -> ::std::option::Option<&crate::types::ApplicationComponent> {
+    pub fn application_component(&self) -> ::std::option::Option<& crate::types::ApplicationComponent> {
         self.application_component.as_ref()
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_list.is_none()`.
-    pub fn resource_list(&self) -> &[::std::string::String] {
-        self.resource_list.as_deref().unwrap_or_default()
+    pub fn resource_list(&self) -> & [::std::string::String] {
+        self.resource_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeComponentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
     pub fn builder() -> crate::operation::describe_component::builders::DescribeComponentOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeComponentOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComponentOutputBuilder {
     pub(crate) application_component: ::std::option::Option<crate::types::ApplicationComponent>,
-    pub(crate) resource_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeComponentOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeComponentOutputBuilder {
     }
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
     pub fn set_application_component(mut self, input: ::std::option::Option<crate::types::ApplicationComponent>) -> Self {
-        self.application_component = input;
-        self
+        self.application_component = input; self
     }
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
     pub fn get_application_component(&self) -> &::std::option::Option<crate::types::ApplicationComponent> {
@@ -63,34 +63,36 @@ impl DescribeComponentOutputBuilder {
     /// <p>The list of resource ARNs that belong to the component.</p>
     pub fn resource_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_list.unwrap_or_default();
-        v.push(input.into());
-        self.resource_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn set_resource_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_list = input;
-        self
+    pub fn set_resource_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_list = input; self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn get_resource_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
     pub fn build(self) -> crate::operation::describe_component::DescribeComponentOutput {
         crate::operation::describe_component::DescribeComponentOutput {
-            application_component: self.application_component,
-            resource_list: self.resource_list,
+            application_component: self.application_component
+            ,
+            resource_list: self.resource_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

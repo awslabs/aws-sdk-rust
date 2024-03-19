@@ -3,16 +3,17 @@
 /// A list of schedule actions to create (in a request) or that have been created (in a response).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchScheduleActionCreateRequest {
+pub struct BatchScheduleActionCreateRequest  {
     /// A list of schedule actions to create.
-    pub schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
+    pub schedule_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAction>>,
 }
-impl BatchScheduleActionCreateRequest {
+impl  BatchScheduleActionCreateRequest  {
     /// A list of schedule actions to create.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_actions.is_none()`.
-    pub fn schedule_actions(&self) -> &[crate::types::ScheduleAction] {
-        self.schedule_actions.as_deref().unwrap_or_default()
+    pub fn schedule_actions(&self) -> & [crate::types::ScheduleAction] {
+        self.schedule_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchScheduleActionCreateRequest {
@@ -26,7 +27,7 @@ impl BatchScheduleActionCreateRequest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchScheduleActionCreateRequestBuilder {
-    pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
+    pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionCreateRequestBuilder {
     /// Appends an item to `schedule_actions`.
@@ -36,23 +37,24 @@ impl BatchScheduleActionCreateRequestBuilder {
     /// A list of schedule actions to create.
     pub fn schedule_actions(mut self, input: crate::types::ScheduleAction) -> Self {
         let mut v = self.schedule_actions.unwrap_or_default();
-        v.push(input);
-        self.schedule_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schedule_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of schedule actions to create.
-    pub fn set_schedule_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>) -> Self {
-        self.schedule_actions = input;
-        self
+    pub fn set_schedule_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAction>>) -> Self {
+        self.schedule_actions = input; self
     }
     /// A list of schedule actions to create.
-    pub fn get_schedule_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+    pub fn get_schedule_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAction>> {
         &self.schedule_actions
     }
     /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::types::BatchScheduleActionCreateRequest).
     pub fn build(self) -> crate::types::BatchScheduleActionCreateRequest {
         crate::types::BatchScheduleActionCreateRequest {
-            schedule_actions: self.schedule_actions,
+            schedule_actions: self.schedule_actions
+            ,
         }
     }
 }
+

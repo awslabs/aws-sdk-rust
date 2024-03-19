@@ -3,7 +3,7 @@
 /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmrStepMetadata {
+pub struct EmrStepMetadata  {
     /// <p>The identifier of the EMR cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the EMR cluster step.</p>
@@ -13,21 +13,21 @@ pub struct EmrStepMetadata {
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
     pub log_file_path: ::std::option::Option<::std::string::String>,
 }
-impl EmrStepMetadata {
+impl  EmrStepMetadata  {
     /// <p>The identifier of the EMR cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The identifier of the EMR cluster step.</p>
-    pub fn step_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_id(&self) -> ::std::option::Option<& str> {
         self.step_id.as_deref()
     }
     /// <p>The name of the EMR cluster step.</p>
-    pub fn step_name(&self) -> ::std::option::Option<&str> {
+    pub fn step_name(&self) -> ::std::option::Option<& str> {
         self.step_name.as_deref()
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    pub fn log_file_path(&self) -> ::std::option::Option<&str> {
+    pub fn log_file_path(&self) -> ::std::option::Option<& str> {
         self.log_file_path.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl EmrStepMetadataBuilder {
     }
     /// <p>The identifier of the EMR cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The identifier of the EMR cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl EmrStepMetadataBuilder {
     }
     /// <p>The identifier of the EMR cluster step.</p>
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_id = input;
-        self
+        self.step_id = input; self
     }
     /// <p>The identifier of the EMR cluster step.</p>
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl EmrStepMetadataBuilder {
     }
     /// <p>The name of the EMR cluster step.</p>
     pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_name = input;
-        self
+        self.step_name = input; self
     }
     /// <p>The name of the EMR cluster step.</p>
     pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl EmrStepMetadataBuilder {
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
     pub fn set_log_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_file_path = input;
-        self
+        self.log_file_path = input; self
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
     pub fn get_log_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl EmrStepMetadataBuilder {
     /// Consumes the builder and constructs a [`EmrStepMetadata`](crate::types::EmrStepMetadata).
     pub fn build(self) -> crate::types::EmrStepMetadata {
         crate::types::EmrStepMetadata {
-            cluster_id: self.cluster_id,
-            step_id: self.step_id,
-            step_name: self.step_name,
-            log_file_path: self.log_file_path,
+            cluster_id: self.cluster_id
+            ,
+            step_id: self.step_id
+            ,
+            step_name: self.step_name
+            ,
+            log_file_path: self.log_file_path
+            ,
         }
     }
 }
+

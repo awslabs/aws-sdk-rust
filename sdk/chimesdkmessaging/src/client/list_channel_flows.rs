@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelFlows`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_instance_arn(impl Into<String>)`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::set_app_instance_arn):<br>required: **true**<br><p>The ARN of the app instance.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of channel flows that you want to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested channel flows are returned.</p><br>
-    /// - On success, responds with [`ListChannelFlowsOutput`](crate::operation::list_channel_flows::ListChannelFlowsOutput) with field(s):
+                            /// - On success, responds with [`ListChannelFlowsOutput`](crate::operation::list_channel_flows::ListChannelFlowsOutput) with field(s):
     ///   - [`channel_flows(Option<Vec::<ChannelFlowSummary>>)`](crate::operation::list_channel_flows::ListChannelFlowsOutput::channel_flows): <p>The information about each channel flow.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_flows::ListChannelFlowsOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
-    /// - On failure, responds with [`SdkError<ListChannelFlowsError>`](crate::operation::list_channel_flows::ListChannelFlowsError)
+                            /// - On failure, responds with [`SdkError<ListChannelFlowsError>`](crate::operation::list_channel_flows::ListChannelFlowsError)
     pub fn list_channel_flows(&self) -> crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder {
-        crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

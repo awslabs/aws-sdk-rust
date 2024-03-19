@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProductSubscriptions`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`product(impl Into<String>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::product) / [`set_product(Option<String>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::set_product):<br>required: **true**<br><p>The name of the user-based subscription product.</p><br>
     ///   - [`identity_provider(IdentityProvider)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::set_identity_provider):<br>required: **true**<br><p>An object that specifies details for the identity provider.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
     ///   - [`filters(Filter)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::set_filters):<br>required: **false**<br><p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next set of results.</p><br>
-    /// - On success, responds with [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput) with field(s):
+                            /// - On success, responds with [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput) with field(s):
     ///   - [`product_user_summaries(Option<Vec::<ProductUserSummary>>)`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput::product_user_summaries): <p>Metadata that describes the list product subscriptions operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProductSubscriptionsError>`](crate::operation::list_product_subscriptions::ListProductSubscriptionsError)
+                            /// - On failure, responds with [`SdkError<ListProductSubscriptionsError>`](crate::operation::list_product_subscriptions::ListProductSubscriptionsError)
     pub fn list_product_subscriptions(&self) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder {
-        crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStateMachineInput {
+pub struct DeleteStateMachineInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStateMachineInput {
+impl  DeleteStateMachineInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteStateMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_arn
     }
     /// Consumes the builder and constructs a [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_state_machine::DeleteStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_state_machine::DeleteStateMachineInput {
-            state_machine_arn: self.state_machine_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_state_machine::DeleteStateMachineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_state_machine::DeleteStateMachineInput {
+                state_machine_arn: self.state_machine_arn
+                ,
+            }
+        )
     }
 }
+

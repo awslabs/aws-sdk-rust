@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelBanInput {
+pub struct DescribeChannelBanInput  {
     /// <p>The ARN of the channel from which the user is banned.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the member being banned.</p>
@@ -10,17 +10,17 @@ pub struct DescribeChannelBanInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
-impl DescribeChannelBanInput {
+impl  DescribeChannelBanInput  {
     /// <p>The ARN of the channel from which the user is banned.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the member being banned.</p>
-    pub fn member_arn(&self) -> ::std::option::Option<&str> {
+    pub fn member_arn(&self) -> ::std::option::Option<& str> {
         self.member_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeChannelBanInputBuilder {
     }
     /// <p>The ARN of the channel from which the user is banned.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel from which the user is banned.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeChannelBanInputBuilder {
     }
     /// <p>The ARN of the member being banned.</p>
     pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_arn = input;
-        self
+        self.member_arn = input; self
     }
     /// <p>The ARN of the member being banned.</p>
     pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DescribeChannelBanInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`DescribeChannelBanInput`](crate::operation::describe_channel_ban::DescribeChannelBanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_channel_ban::DescribeChannelBanInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_channel_ban::DescribeChannelBanInput {
-            channel_arn: self.channel_arn,
-            member_arn: self.member_arn,
-            chime_bearer: self.chime_bearer,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_channel_ban::DescribeChannelBanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_channel_ban::DescribeChannelBanInput {
+                channel_arn: self.channel_arn
+                ,
+                member_arn: self.member_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
+        )
     }
 }
+

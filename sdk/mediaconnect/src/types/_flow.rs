@@ -3,7 +3,7 @@
 /// The settings for a flow, including its source, outputs, and entitlements.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Flow {
+pub struct Flow  {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
@@ -11,93 +11,98 @@ pub struct Flow {
     /// The IP address from which video will be sent to output destinations.
     pub egress_ip: ::std::option::Option<::std::string::String>,
     /// The entitlements in this flow.
-    pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>,
     /// The Amazon Resource Name (ARN) of the flow.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
+    pub media_streams: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStream>>,
     /// The name of the flow.
     pub name: ::std::option::Option<::std::string::String>,
     /// The outputs in this flow.
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
     /// The settings for the source of the flow.
     pub source: ::std::option::Option<crate::types::Source>,
     /// The settings for source failover.
     pub source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::Source>>,
     /// The current status of the flow.
     pub status: ::std::option::Option<crate::types::Status>,
     /// The VPC Interfaces for this flow.
-    pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
+    pub vpc_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterface>>,
     /// The maintenance setting of a flow
     pub maintenance: ::std::option::Option<crate::types::Maintenance>,
 }
-impl Flow {
+impl  Flow  {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The IP address from which video will be sent to output destinations.
-    pub fn egress_ip(&self) -> ::std::option::Option<&str> {
+    pub fn egress_ip(&self) -> ::std::option::Option<& str> {
         self.egress_ip.as_deref()
     }
     /// The entitlements in this flow.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
-    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
-        self.entitlements.as_deref().unwrap_or_default()
+    pub fn entitlements(&self) -> & [crate::types::Entitlement] {
+        self.entitlements.as_deref()
+        .unwrap_or_default()
     }
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_streams.is_none()`.
-    pub fn media_streams(&self) -> &[crate::types::MediaStream] {
-        self.media_streams.as_deref().unwrap_or_default()
+    pub fn media_streams(&self) -> & [crate::types::MediaStream] {
+        self.media_streams.as_deref()
+        .unwrap_or_default()
     }
     /// The name of the flow.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The outputs in this flow.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::Output] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::Output] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// The settings for the source of the flow.
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(&self) -> ::std::option::Option<&crate::types::FailoverConfig> {
+    pub fn source_failover_config(&self) -> ::std::option::Option<& crate::types::FailoverConfig> {
         self.source_failover_config.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::Source] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::Source] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// The current status of the flow.
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// The VPC Interfaces for this flow.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_interfaces.is_none()`.
-    pub fn vpc_interfaces(&self) -> &[crate::types::VpcInterface] {
-        self.vpc_interfaces.as_deref().unwrap_or_default()
+    pub fn vpc_interfaces(&self) -> & [crate::types::VpcInterface] {
+        self.vpc_interfaces.as_deref()
+        .unwrap_or_default()
     }
     /// The maintenance setting of a flow
-    pub fn maintenance(&self) -> ::std::option::Option<&crate::types::Maintenance> {
+    pub fn maintenance(&self) -> ::std::option::Option<& crate::types::Maintenance> {
         self.maintenance.as_ref()
     }
 }
@@ -115,16 +120,16 @@ pub struct FlowBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) egress_ip: ::std::option::Option<::std::string::String>,
-    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
+    pub(crate) media_streams: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStream>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::Source>>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
-    pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
+    pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterface>>,
     pub(crate) maintenance: ::std::option::Option<crate::types::Maintenance>,
 }
 impl FlowBuilder {
@@ -136,8 +141,7 @@ impl FlowBuilder {
     }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +154,7 @@ impl FlowBuilder {
     }
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +167,7 @@ impl FlowBuilder {
     }
     /// The IP address from which video will be sent to output destinations.
     pub fn set_egress_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.egress_ip = input;
-        self
+        self.egress_ip = input; self
     }
     /// The IP address from which video will be sent to output destinations.
     pub fn get_egress_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,17 +180,16 @@ impl FlowBuilder {
     /// The entitlements in this flow.
     pub fn entitlements(mut self, input: crate::types::Entitlement) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-        v.push(input);
-        self.entitlements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlements = ::std::option::Option::Some(v);
+                        self
     }
     /// The entitlements in this flow.
-    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
-        self.entitlements = input;
-        self
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>) -> Self {
+        self.entitlements = input; self
     }
     /// The entitlements in this flow.
-    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// The Amazon Resource Name (ARN) of the flow.
@@ -199,8 +200,7 @@ impl FlowBuilder {
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,17 +213,16 @@ impl FlowBuilder {
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
     pub fn media_streams(mut self, input: crate::types::MediaStream) -> Self {
         let mut v = self.media_streams.unwrap_or_default();
-        v.push(input);
-        self.media_streams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_streams = ::std::option::Option::Some(v);
+                        self
     }
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>) -> Self {
-        self.media_streams = input;
-        self
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStream>>) -> Self {
+        self.media_streams = input; self
     }
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStream>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStream>> {
         &self.media_streams
     }
     /// The name of the flow.
@@ -234,8 +233,7 @@ impl FlowBuilder {
     }
     /// The name of the flow.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the flow.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,17 +246,16 @@ impl FlowBuilder {
     /// The outputs in this flow.
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// The outputs in this flow.
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// The outputs in this flow.
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Output>> {
         &self.outputs
     }
     /// The settings for the source of the flow.
@@ -269,8 +266,7 @@ impl FlowBuilder {
     }
     /// The settings for the source of the flow.
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// The settings for the source of the flow.
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -283,8 +279,7 @@ impl FlowBuilder {
     }
     /// The settings for source failover.
     pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::FailoverConfig>) -> Self {
-        self.source_failover_config = input;
-        self
+        self.source_failover_config = input; self
     }
     /// The settings for source failover.
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
@@ -296,17 +291,16 @@ impl FlowBuilder {
     ///
     pub fn sources(mut self, input: crate::types::Source) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Source>>) -> Self {
+        self.sources = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Source>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Source>> {
         &self.sources
     }
     /// The current status of the flow.
@@ -317,8 +311,7 @@ impl FlowBuilder {
     }
     /// The current status of the flow.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The current status of the flow.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -331,17 +324,16 @@ impl FlowBuilder {
     /// The VPC Interfaces for this flow.
     pub fn vpc_interfaces(mut self, input: crate::types::VpcInterface) -> Self {
         let mut v = self.vpc_interfaces.unwrap_or_default();
-        v.push(input);
-        self.vpc_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// The VPC Interfaces for this flow.
-    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>) -> Self {
-        self.vpc_interfaces = input;
-        self
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterface>>) -> Self {
+        self.vpc_interfaces = input; self
     }
     /// The VPC Interfaces for this flow.
-    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcInterface>> {
         &self.vpc_interfaces
     }
     /// The maintenance setting of a flow
@@ -351,8 +343,7 @@ impl FlowBuilder {
     }
     /// The maintenance setting of a flow
     pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::Maintenance>) -> Self {
-        self.maintenance = input;
-        self
+        self.maintenance = input; self
     }
     /// The maintenance setting of a flow
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::Maintenance> {
@@ -361,20 +352,35 @@ impl FlowBuilder {
     /// Consumes the builder and constructs a [`Flow`](crate::types::Flow).
     pub fn build(self) -> crate::types::Flow {
         crate::types::Flow {
-            availability_zone: self.availability_zone,
-            description: self.description,
-            egress_ip: self.egress_ip,
-            entitlements: self.entitlements,
-            flow_arn: self.flow_arn,
-            media_streams: self.media_streams,
-            name: self.name,
-            outputs: self.outputs,
-            source: self.source,
-            source_failover_config: self.source_failover_config,
-            sources: self.sources,
-            status: self.status,
-            vpc_interfaces: self.vpc_interfaces,
-            maintenance: self.maintenance,
+            availability_zone: self.availability_zone
+            ,
+            description: self.description
+            ,
+            egress_ip: self.egress_ip
+            ,
+            entitlements: self.entitlements
+            ,
+            flow_arn: self.flow_arn
+            ,
+            media_streams: self.media_streams
+            ,
+            name: self.name
+            ,
+            outputs: self.outputs
+            ,
+            source: self.source
+            ,
+            source_failover_config: self.source_failover_config
+            ,
+            sources: self.sources
+            ,
+            status: self.status
+            ,
+            vpc_interfaces: self.vpc_interfaces
+            ,
+            maintenance: self.maintenance
+            ,
         }
     }
 }
+

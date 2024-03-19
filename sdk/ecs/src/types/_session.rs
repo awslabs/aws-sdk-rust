@@ -3,7 +3,7 @@
 /// <p>The details for the execute command session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Session {
+pub struct Session  {
     /// <p>The ID of the execute command session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
@@ -11,21 +11,21 @@ pub struct Session {
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
     pub token_value: ::std::option::Option<::std::string::String>,
 }
-impl Session {
+impl  Session  {
     /// <p>The ID of the execute command session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
-    pub fn stream_url(&self) -> ::std::option::Option<&str> {
+    pub fn stream_url(&self) -> ::std::option::Option<& str> {
         self.stream_url.as_deref()
     }
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
-    pub fn token_value(&self) -> ::std::option::Option<&str> {
+    pub fn token_value(&self) -> ::std::option::Option<& str> {
         self.token_value.as_deref()
     }
 }
-impl ::std::fmt::Debug for Session {
+impl  ::std::fmt::Debug for Session  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Session");
         formatter.field("session_id", &self.session_id);
@@ -57,8 +57,7 @@ impl SessionBuilder {
     }
     /// <p>The ID of the execute command session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The ID of the execute command session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl SessionBuilder {
     }
     /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
     pub fn set_stream_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_url = input;
-        self
+        self.stream_url = input; self
     }
     /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
     pub fn get_stream_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl SessionBuilder {
     }
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
     pub fn set_token_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_value = input;
-        self
+        self.token_value = input; self
     }
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
     pub fn get_token_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl SessionBuilder {
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
-            session_id: self.session_id,
-            stream_url: self.stream_url,
-            token_value: self.token_value,
+            session_id: self.session_id
+            ,
+            stream_url: self.stream_url
+            ,
+            token_value: self.token_value
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for SessionBuilder {
         formatter.finish()
     }
 }
+

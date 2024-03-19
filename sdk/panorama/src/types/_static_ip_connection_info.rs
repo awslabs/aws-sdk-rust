@@ -3,36 +3,32 @@
 /// <p>A static IP configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StaticIpConnectionInfo {
+pub struct StaticIpConnectionInfo  {
     /// <p>The connection's IP address.</p>
     pub ip_address: ::std::string::String,
     /// <p>The connection's DNS mask.</p>
     pub mask: ::std::string::String,
     /// <p>The connection's DNS address.</p>
-    pub dns: ::std::vec::Vec<::std::string::String>,
+    pub dns: ::std::vec::Vec::<::std::string::String>,
     /// <p>The connection's default gateway.</p>
     pub default_gateway: ::std::string::String,
 }
-impl StaticIpConnectionInfo {
+impl  StaticIpConnectionInfo  {
     /// <p>The connection's IP address.</p>
-    pub fn ip_address(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_address.deref()
+    pub fn ip_address(&self) -> & str {
+        use std::ops::Deref; self.ip_address.deref()
     }
     /// <p>The connection's DNS mask.</p>
-    pub fn mask(&self) -> &str {
-        use std::ops::Deref;
-        self.mask.deref()
+    pub fn mask(&self) -> & str {
+        use std::ops::Deref; self.mask.deref()
     }
     /// <p>The connection's DNS address.</p>
-    pub fn dns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.dns.deref()
+    pub fn dns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.dns.deref()
     }
     /// <p>The connection's default gateway.</p>
-    pub fn default_gateway(&self) -> &str {
-        use std::ops::Deref;
-        self.default_gateway.deref()
+    pub fn default_gateway(&self) -> & str {
+        use std::ops::Deref; self.default_gateway.deref()
     }
 }
 impl StaticIpConnectionInfo {
@@ -48,7 +44,7 @@ impl StaticIpConnectionInfo {
 pub struct StaticIpConnectionInfoBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) mask: ::std::option::Option<::std::string::String>,
-    pub(crate) dns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) default_gateway: ::std::option::Option<::std::string::String>,
 }
 impl StaticIpConnectionInfoBuilder {
@@ -60,8 +56,7 @@ impl StaticIpConnectionInfoBuilder {
     }
     /// <p>The connection's IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The connection's IP address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl StaticIpConnectionInfoBuilder {
     }
     /// <p>The connection's DNS mask.</p>
     pub fn set_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mask = input;
-        self
+        self.mask = input; self
     }
     /// <p>The connection's DNS mask.</p>
     pub fn get_mask(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,17 +83,16 @@ impl StaticIpConnectionInfoBuilder {
     /// <p>The connection's DNS address.</p>
     pub fn dns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns.unwrap_or_default();
-        v.push(input.into());
-        self.dns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The connection's DNS address.</p>
-    pub fn set_dns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns = input;
-        self
+    pub fn set_dns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns = input; self
     }
     /// <p>The connection's DNS address.</p>
-    pub fn get_dns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns
     }
     /// <p>The connection's default gateway.</p>
@@ -110,8 +103,7 @@ impl StaticIpConnectionInfoBuilder {
     }
     /// <p>The connection's default gateway.</p>
     pub fn set_default_gateway(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_gateway = input;
-        self
+        self.default_gateway = input; self
     }
     /// <p>The connection's default gateway.</p>
     pub fn get_default_gateway(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +116,30 @@ impl StaticIpConnectionInfoBuilder {
     /// - [`dns`](crate::types::builders::StaticIpConnectionInfoBuilder::dns)
     /// - [`default_gateway`](crate::types::builders::StaticIpConnectionInfoBuilder::default_gateway)
     pub fn build(self) -> ::std::result::Result<crate::types::StaticIpConnectionInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StaticIpConnectionInfo {
-            ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address",
-                    "ip_address was not specified but it is required when building StaticIpConnectionInfo",
-                )
-            })?,
-            mask: self.mask.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mask",
-                    "mask was not specified but it is required when building StaticIpConnectionInfo",
-                )
-            })?,
-            dns: self.dns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dns",
-                    "dns was not specified but it is required when building StaticIpConnectionInfo",
-                )
-            })?,
-            default_gateway: self.default_gateway.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_gateway",
-                    "default_gateway was not specified but it is required when building StaticIpConnectionInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StaticIpConnectionInfo {
+                ip_address: self.ip_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_address", "ip_address was not specified but it is required when building StaticIpConnectionInfo")
+                    )?
+                ,
+                mask: self.mask
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mask", "mask was not specified but it is required when building StaticIpConnectionInfo")
+                    )?
+                ,
+                dns: self.dns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dns", "dns was not specified but it is required when building StaticIpConnectionInfo")
+                    )?
+                ,
+                default_gateway: self.default_gateway
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_gateway", "default_gateway was not specified but it is required when building StaticIpConnectionInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

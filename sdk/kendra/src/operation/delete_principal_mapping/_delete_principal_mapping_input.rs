@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePrincipalMappingInput {
+pub struct DeletePrincipalMappingInput  {
     /// <p>The identifier of the index you want to delete a group from.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source you want to delete a group from.</p>
@@ -15,18 +15,18 @@ pub struct DeletePrincipalMappingInput {
     /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.</p>
     pub ordering_id: ::std::option::Option<i64>,
 }
-impl DeletePrincipalMappingInput {
+impl  DeletePrincipalMappingInput  {
     /// <p>The identifier of the index you want to delete a group from.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The identifier of the group you want to delete.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
@@ -61,8 +61,7 @@ impl DeletePrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the index you want to delete a group from.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index you want to delete a group from.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl DeletePrincipalMappingInputBuilder {
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
@@ -93,8 +91,7 @@ impl DeletePrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the group you want to delete.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier of the group you want to delete.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DeletePrincipalMappingInputBuilder {
     /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
     /// <p>The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.</p>
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ordering_id = input;
-        self
+        self.ordering_id = input; self
     }
     /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>
     /// <p>The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>
@@ -121,17 +117,19 @@ impl DeletePrincipalMappingInputBuilder {
         &self.ordering_id
     }
     /// Consumes the builder and constructs a [`DeletePrincipalMappingInput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_principal_mapping::DeletePrincipalMappingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_principal_mapping::DeletePrincipalMappingInput {
-            index_id: self.index_id,
-            data_source_id: self.data_source_id,
-            group_id: self.group_id,
-            ordering_id: self.ordering_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_principal_mapping::DeletePrincipalMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_principal_mapping::DeletePrincipalMappingInput {
+                index_id: self.index_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                group_id: self.group_id
+                ,
+                ordering_id: self.ordering_id
+                ,
+            }
+        )
     }
 }
+

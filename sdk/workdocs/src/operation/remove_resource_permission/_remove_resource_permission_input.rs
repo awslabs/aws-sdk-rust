@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RemoveResourcePermissionInput {
+pub struct RemoveResourcePermissionInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
@@ -12,25 +12,25 @@ pub struct RemoveResourcePermissionInput {
     /// <p>The principal type of the resource.</p>
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
-impl RemoveResourcePermissionInput {
+impl  RemoveResourcePermissionInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The principal ID of the resource.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The principal type of the resource.</p>
-    pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> ::std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for RemoveResourcePermissionInput {
+impl  ::std::fmt::Debug for RemoveResourcePermissionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveResourcePermissionInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -64,8 +64,7 @@ impl RemoveResourcePermissionInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl RemoveResourcePermissionInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl RemoveResourcePermissionInputBuilder {
     }
     /// <p>The principal ID of the resource.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID of the resource.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,26 +105,26 @@ impl RemoveResourcePermissionInputBuilder {
     }
     /// <p>The principal type of the resource.</p>
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input;
-        self
+        self.principal_type = input; self
     }
     /// <p>The principal type of the resource.</p>
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
         &self.principal_type
     }
     /// Consumes the builder and constructs a [`RemoveResourcePermissionInput`](crate::operation::remove_resource_permission::RemoveResourcePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_resource_permission::RemoveResourcePermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_resource_permission::RemoveResourcePermissionInput {
-            authentication_token: self.authentication_token,
-            resource_id: self.resource_id,
-            principal_id: self.principal_id,
-            principal_type: self.principal_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_resource_permission::RemoveResourcePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_resource_permission::RemoveResourcePermissionInput {
+                authentication_token: self.authentication_token
+                ,
+                resource_id: self.resource_id
+                ,
+                principal_id: self.principal_id
+                ,
+                principal_type: self.principal_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RemoveResourcePermissionInputBuilder {
@@ -140,3 +137,4 @@ impl ::std::fmt::Debug for RemoveResourcePermissionInputBuilder {
         formatter.finish()
     }
 }
+

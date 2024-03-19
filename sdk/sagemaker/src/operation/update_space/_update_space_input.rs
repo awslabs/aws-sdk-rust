@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSpaceInput {
+pub struct UpdateSpaceInput  {
     /// <p>The ID of the associated domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
@@ -12,21 +12,21 @@ pub struct UpdateSpaceInput {
     /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
     pub space_display_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSpaceInput {
+impl  UpdateSpaceInput  {
     /// <p>The ID of the associated domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>A collection of space settings.</p>
-    pub fn space_settings(&self) -> ::std::option::Option<&crate::types::SpaceSettings> {
+    pub fn space_settings(&self) -> ::std::option::Option<& crate::types::SpaceSettings> {
         self.space_settings.as_ref()
     }
     /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_display_name(&self) -> ::std::option::Option<& str> {
         self.space_display_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The ID of the associated domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the associated domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>A collection of space settings.</p>
     pub fn set_space_settings(mut self, input: ::std::option::Option<crate::types::SpaceSettings>) -> Self {
-        self.space_settings = input;
-        self
+        self.space_settings = input; self
     }
     /// <p>A collection of space settings.</p>
     pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
@@ -98,8 +95,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
     pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_display_name = input;
-        self
+        self.space_display_name = input; self
     }
     /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
     pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,11 +103,18 @@ impl UpdateSpaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
-            domain_id: self.domain_id,
-            space_name: self.space_name,
-            space_settings: self.space_settings,
-            space_display_name: self.space_display_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_space::UpdateSpaceInput {
+                domain_id: self.domain_id
+                ,
+                space_name: self.space_name
+                ,
+                space_settings: self.space_settings
+                ,
+                space_display_name: self.space_display_name
+                ,
+            }
+        )
     }
 }
+

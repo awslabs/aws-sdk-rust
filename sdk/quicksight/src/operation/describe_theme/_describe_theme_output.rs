@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThemeOutput {
+pub struct DescribeThemeOutput  {
     /// <p>The information about the theme that you are describing.</p>
     pub theme: ::std::option::Option<crate::types::Theme>,
     /// <p>The HTTP status of the request.</p>
@@ -11,9 +11,9 @@ pub struct DescribeThemeOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeThemeOutput {
+impl  DescribeThemeOutput  {
     /// <p>The information about the theme that you are describing.</p>
-    pub fn theme(&self) -> ::std::option::Option<&crate::types::Theme> {
+    pub fn theme(&self) -> ::std::option::Option<& crate::types::Theme> {
         self.theme.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -21,15 +21,15 @@ impl DescribeThemeOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeThemeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeThemeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThemeOutput`](crate::operation::describe_theme::DescribeThemeOutput).
     pub fn builder() -> crate::operation::describe_theme::builders::DescribeThemeOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeThemeOutputBuilder {
     }
     /// <p>The information about the theme that you are describing.</p>
     pub fn set_theme(mut self, input: ::std::option::Option<crate::types::Theme>) -> Self {
-        self.theme = input;
-        self
+        self.theme = input; self
     }
     /// <p>The information about the theme that you are describing.</p>
     pub fn get_theme(&self) -> &::std::option::Option<crate::types::Theme> {
@@ -68,8 +67,7 @@ impl DescribeThemeOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -82,29 +80,33 @@ impl DescribeThemeOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeThemeOutput`](crate::operation::describe_theme::DescribeThemeOutput).
     pub fn build(self) -> crate::operation::describe_theme::DescribeThemeOutput {
         crate::operation::describe_theme::DescribeThemeOutput {
-            theme: self.theme,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            theme: self.theme
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

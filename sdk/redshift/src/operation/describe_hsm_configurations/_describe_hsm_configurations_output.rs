@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHsmConfigurationsOutput {
+pub struct DescribeHsmConfigurationsOutput  {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-    pub hsm_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>,
+    pub hsm_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::HsmConfiguration>>,
     _request_id: Option<String>,
 }
-impl DescribeHsmConfigurationsOutput {
+impl  DescribeHsmConfigurationsOutput  {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsm_configurations.is_none()`.
-    pub fn hsm_configurations(&self) -> &[crate::types::HsmConfiguration] {
-        self.hsm_configurations.as_deref().unwrap_or_default()
+    pub fn hsm_configurations(&self) -> & [crate::types::HsmConfiguration] {
+        self.hsm_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeHsmConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeHsmConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHsmConfigurationsOutput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeHsmConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHsmConfigurationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) hsm_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>,
+    pub(crate) hsm_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::HsmConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeHsmConfigurationsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeHsmConfigurationsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeHsmConfigurationsOutputBuilder {
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
     pub fn hsm_configurations(mut self, input: crate::types::HsmConfiguration) -> Self {
         let mut v = self.hsm_configurations.unwrap_or_default();
-        v.push(input);
-        self.hsm_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hsm_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-    pub fn set_hsm_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>) -> Self {
-        self.hsm_configurations = input;
-        self
+    pub fn set_hsm_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HsmConfiguration>>) -> Self {
+        self.hsm_configurations = input; self
     }
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-    pub fn get_hsm_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>> {
+    pub fn get_hsm_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HsmConfiguration>> {
         &self.hsm_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeHsmConfigurationsOutput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput {
         crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput {
-            marker: self.marker,
-            hsm_configurations: self.hsm_configurations,
+            marker: self.marker
+            ,
+            hsm_configurations: self.hsm_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

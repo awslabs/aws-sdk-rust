@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>The unique identifier for the user that you want to update.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The option to indicate the type of user.</p>
@@ -30,9 +30,9 @@ pub struct UpdateUserInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateUserInput {
+impl  UpdateUserInput  {
     /// <p>The unique identifier for the user that you want to update.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The option to indicate the type of user.</p>
@@ -42,15 +42,15 @@ impl UpdateUserInput {
     /// <li>
     /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.r#type.as_ref()
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
@@ -60,19 +60,19 @@ impl UpdateUserInput {
     /// <li>
     /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
     /// </ul>
-    pub fn api_access(&self) -> ::std::option::Option<&crate::types::ApiAccess> {
+    pub fn api_access(&self) -> ::std::option::Option<& crate::types::ApiAccess> {
         self.api_access.as_ref()
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    pub fn api_access_principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn api_access_principal_arn(&self) -> ::std::option::Option<& str> {
         self.api_access_principal_arn.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateUserInput {
+impl  ::std::fmt::Debug for UpdateUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
         formatter.field("user_id", &self.user_id);
@@ -113,8 +113,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The unique identifier for the user that you want to update.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier for the user that you want to update.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl UpdateUserInputBuilder {
     /// <p><code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
@@ -159,8 +157,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The first name of the user.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name of the user.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +170,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The last name of the user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name of the user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +195,7 @@ impl UpdateUserInputBuilder {
     /// <p><code>DISABLED</code> – The user does not have permissions to use any APIs.</p></li>
     /// </ul>
     pub fn set_api_access(mut self, input: ::std::option::Option<crate::types::ApiAccess>) -> Self {
-        self.api_access = input;
-        self
+        self.api_access = input; self
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
@@ -219,8 +214,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     pub fn set_api_access_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_access_principal_arn = input;
-        self
+        self.api_access_principal_arn = input; self
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     pub fn get_api_access_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +227,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,15 +235,24 @@ impl UpdateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            user_id: self.user_id,
-            r#type: self.r#type,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            api_access: self.api_access,
-            api_access_principal_arn: self.api_access_principal_arn,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_user::UpdateUserInput {
+                user_id: self.user_id
+                ,
+                r#type: self.r#type
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                api_access: self.api_access
+                ,
+                api_access_principal_arn: self.api_access_principal_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateUserInputBuilder {
@@ -266,3 +268,4 @@ impl ::std::fmt::Debug for UpdateUserInputBuilder {
         formatter.finish()
     }
 }
+

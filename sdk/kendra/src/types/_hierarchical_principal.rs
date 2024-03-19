@@ -3,15 +3,14 @@
 /// <p>Information to define the hierarchy for which documents users should have access to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HierarchicalPrincipal {
+pub struct HierarchicalPrincipal  {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub principal_list: ::std::vec::Vec<crate::types::Principal>,
+    pub principal_list: ::std::vec::Vec::<crate::types::Principal>,
 }
-impl HierarchicalPrincipal {
+impl  HierarchicalPrincipal  {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn principal_list(&self) -> &[crate::types::Principal] {
-        use std::ops::Deref;
-        self.principal_list.deref()
+    pub fn principal_list(&self) -> & [crate::types::Principal] {
+        use std::ops::Deref; self.principal_list.deref()
     }
 }
 impl HierarchicalPrincipal {
@@ -25,7 +24,7 @@ impl HierarchicalPrincipal {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchicalPrincipalBuilder {
-    pub(crate) principal_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub(crate) principal_list: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
 }
 impl HierarchicalPrincipalBuilder {
     /// Appends an item to `principal_list`.
@@ -35,30 +34,31 @@ impl HierarchicalPrincipalBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
     pub fn principal_list(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.principal_list.unwrap_or_default();
-        v.push(input);
-        self.principal_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.principal_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn set_principal_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.principal_list = input;
-        self
+    pub fn set_principal_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>) -> Self {
+        self.principal_list = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn get_principal_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principal_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Principal>> {
         &self.principal_list
     }
     /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::types::HierarchicalPrincipal).
     /// This method will fail if any of the following fields are not set:
     /// - [`principal_list`](crate::types::builders::HierarchicalPrincipalBuilder::principal_list)
     pub fn build(self) -> ::std::result::Result<crate::types::HierarchicalPrincipal, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HierarchicalPrincipal {
-            principal_list: self.principal_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal_list",
-                    "principal_list was not specified but it is required when building HierarchicalPrincipal",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HierarchicalPrincipal {
+                principal_list: self.principal_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal_list", "principal_list was not specified but it is required when building HierarchicalPrincipal")
+                    )?
+                ,
+            }
+        )
     }
 }
+

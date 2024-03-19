@@ -3,15 +3,14 @@
 /// <p>The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssessmentFrameworkControl {
+pub struct CreateAssessmentFrameworkControl  {
     /// <p>The unique identifier of the control.</p>
     pub id: ::std::string::String,
 }
-impl CreateAssessmentFrameworkControl {
+impl  CreateAssessmentFrameworkControl  {
     /// <p>The unique identifier of the control.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl CreateAssessmentFrameworkControl {
@@ -36,8 +35,7 @@ impl CreateAssessmentFrameworkControlBuilder {
     }
     /// <p>The unique identifier of the control.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the control.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CreateAssessmentFrameworkControlBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CreateAssessmentFrameworkControlBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateAssessmentFrameworkControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateAssessmentFrameworkControl {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CreateAssessmentFrameworkControl",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateAssessmentFrameworkControl {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CreateAssessmentFrameworkControl")
+                    )?
+                ,
+            }
+        )
     }
 }
+

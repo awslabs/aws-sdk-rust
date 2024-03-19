@@ -3,7 +3,7 @@
 /// <p>The snapshot configuration to use when creating an Amazon FSx for OpenZFS volume from a snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOpenZfsOriginSnapshotConfiguration {
+pub struct CreateOpenZfsOriginSnapshotConfiguration  {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the strategy used when copying data from the snapshot to the new volume.</p>
@@ -18,9 +18,9 @@ pub struct CreateOpenZfsOriginSnapshotConfiguration {
     /// </note>
     pub copy_strategy: ::std::option::Option<crate::types::OpenZfsCopyStrategy>,
 }
-impl CreateOpenZfsOriginSnapshotConfiguration {
+impl  CreateOpenZfsOriginSnapshotConfiguration  {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>Specifies the strategy used when copying data from the snapshot to the new volume.</p>
@@ -33,7 +33,7 @@ impl CreateOpenZfsOriginSnapshotConfiguration {
     /// </ul><note>
     /// <p>The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another FSx for OpenZFS file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
     /// </note>
-    pub fn copy_strategy(&self) -> ::std::option::Option<&crate::types::OpenZfsCopyStrategy> {
+    pub fn copy_strategy(&self) -> ::std::option::Option<& crate::types::OpenZfsCopyStrategy> {
         self.copy_strategy.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl CreateOpenZfsOriginSnapshotConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl CreateOpenZfsOriginSnapshotConfigurationBuilder {
     /// <p>The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another FSx for OpenZFS file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
     /// </note>
     pub fn set_copy_strategy(mut self, input: ::std::option::Option<crate::types::OpenZfsCopyStrategy>) -> Self {
-        self.copy_strategy = input;
-        self
+        self.copy_strategy = input; self
     }
     /// <p>Specifies the strategy used when copying data from the snapshot to the new volume.</p>
     /// <ul>
@@ -112,8 +110,11 @@ impl CreateOpenZfsOriginSnapshotConfigurationBuilder {
     /// Consumes the builder and constructs a [`CreateOpenZfsOriginSnapshotConfiguration`](crate::types::CreateOpenZfsOriginSnapshotConfiguration).
     pub fn build(self) -> crate::types::CreateOpenZfsOriginSnapshotConfiguration {
         crate::types::CreateOpenZfsOriginSnapshotConfiguration {
-            snapshot_arn: self.snapshot_arn,
-            copy_strategy: self.copy_strategy,
+            snapshot_arn: self.snapshot_arn
+            ,
+            copy_strategy: self.copy_strategy
+            ,
         }
     }
 }
+

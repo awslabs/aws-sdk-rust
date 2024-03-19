@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataRepositoryTaskInput {
+pub struct CreateDataRepositoryTaskInput  {
     /// <p>Specifies the type of data repository task to create.</p>
     /// <ul>
     /// <li>
@@ -26,7 +26,7 @@ pub struct CreateDataRepositoryTaskInput {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note></li>
     /// </ul>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
@@ -34,13 +34,13 @@ pub struct CreateDataRepositoryTaskInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub capacity_to_release: ::std::option::Option<i64>,
     /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
     pub release_configuration: ::std::option::Option<crate::types::ReleaseConfiguration>,
 }
-impl CreateDataRepositoryTaskInput {
+impl  CreateDataRepositoryTaskInput  {
     /// <p>Specifies the type of data repository task to create.</p>
     /// <ul>
     /// <li>
@@ -52,7 +52,7 @@ impl CreateDataRepositoryTaskInput {
     /// <li>
     /// <p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataRepositoryTaskType> {
         self.r#type.as_ref()
     }
     /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails. If you don't provide paths, the default behavior is to export all files to S3 (for export tasks), import all files from S3 (for import tasks), or release all exported files that meet the last accessed time criteria (for release tasks).</p>
@@ -66,35 +66,37 @@ impl CreateDataRepositoryTaskInput {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
-    pub fn paths(&self) -> &[::std::string::String] {
-        self.paths.as_deref().unwrap_or_default()
+    pub fn paths(&self) -> & [::std::string::String] {
+        self.paths.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
-    pub fn report(&self) -> ::std::option::Option<&crate::types::CompletionReport> {
+    pub fn report(&self) -> ::std::option::Option<& crate::types::CompletionReport> {
         self.report.as_ref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub fn capacity_to_release(&self) -> ::std::option::Option<i64> {
         self.capacity_to_release
     }
     /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
-    pub fn release_configuration(&self) -> ::std::option::Option<&crate::types::ReleaseConfiguration> {
+    pub fn release_configuration(&self) -> ::std::option::Option<& crate::types::ReleaseConfiguration> {
         self.release_configuration.as_ref()
     }
 }
@@ -110,11 +112,11 @@ impl CreateDataRepositoryTaskInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataRepositoryTaskType>,
-    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) report: ::std::option::Option<crate::types::CompletionReport>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) capacity_to_release: ::std::option::Option<i64>,
     pub(crate) release_configuration: ::std::option::Option<crate::types::ReleaseConfiguration>,
 }
@@ -147,8 +149,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// <p><code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the type of data repository task to create.</p>
     /// <ul>
@@ -181,9 +182,9 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// </ul>
     pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.paths.unwrap_or_default();
-        v.push(input.into());
-        self.paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails. If you don't provide paths, the default behavior is to export all files to S3 (for export tasks), import all files from S3 (for import tasks), or release all exported files that meet the last accessed time criteria (for release tasks).</p>
     /// <ul>
@@ -196,9 +197,8 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note></li>
     /// </ul>
-    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.paths = input;
-        self
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.paths = input; self
     }
     /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails. If you don't provide paths, the default behavior is to export all files to S3 (for export tasks), import all files from S3 (for import tasks), or release all exported files that meet the last accessed time criteria (for release tasks).</p>
     /// <ul>
@@ -211,7 +211,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note></li>
     /// </ul>
-    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.paths
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -222,8 +222,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +236,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
     pub fn set_report(mut self, input: ::std::option::Option<crate::types::CompletionReport>) -> Self {
-        self.report = input;
-        self
+        self.report = input; self
     }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
     pub fn get_report(&self) -> &::std::option::Option<crate::types::CompletionReport> {
@@ -251,8 +249,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,17 +262,16 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
@@ -285,8 +281,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub fn set_capacity_to_release(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity_to_release = input;
-        self
+        self.capacity_to_release = input; self
     }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub fn get_capacity_to_release(&self) -> &::std::option::Option<i64> {
@@ -299,29 +294,34 @@ impl CreateDataRepositoryTaskInputBuilder {
     }
     /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
     pub fn set_release_configuration(mut self, input: ::std::option::Option<crate::types::ReleaseConfiguration>) -> Self {
-        self.release_configuration = input;
-        self
+        self.release_configuration = input; self
     }
     /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
     pub fn get_release_configuration(&self) -> &::std::option::Option<crate::types::ReleaseConfiguration> {
         &self.release_configuration
     }
     /// Consumes the builder and constructs a [`CreateDataRepositoryTaskInput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput {
-            r#type: self.r#type,
-            paths: self.paths,
-            file_system_id: self.file_system_id,
-            report: self.report,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-            capacity_to_release: self.capacity_to_release,
-            release_configuration: self.release_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput {
+                r#type: self.r#type
+                ,
+                paths: self.paths
+                ,
+                file_system_id: self.file_system_id
+                ,
+                report: self.report
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                capacity_to_release: self.capacity_to_release
+                ,
+                release_configuration: self.release_configuration
+                ,
+            }
+        )
     }
 }
+

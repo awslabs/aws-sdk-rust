@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingGroupConfiguration {
+pub struct AutoScalingGroupConfiguration  {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     pub desired_capacity: i32,
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
@@ -13,7 +13,7 @@ pub struct AutoScalingGroupConfiguration {
     /// <p>The instance type for the Auto Scaling group.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
-impl AutoScalingGroupConfiguration {
+impl  AutoScalingGroupConfiguration  {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     pub fn desired_capacity(&self) -> i32 {
         self.desired_capacity
@@ -27,7 +27,7 @@ impl AutoScalingGroupConfiguration {
         self.max_size
     }
     /// <p>The instance type for the Auto Scaling group.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AutoScalingGroupConfigurationBuilder {
     }
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_capacity = input;
-        self
+        self.desired_capacity = input; self
     }
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl AutoScalingGroupConfigurationBuilder {
     }
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_size = input;
-        self
+        self.min_size = input; self
     }
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
     pub fn get_min_size(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl AutoScalingGroupConfigurationBuilder {
     }
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl AutoScalingGroupConfigurationBuilder {
     }
     /// <p>The instance type for the Auto Scaling group.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type for the Auto Scaling group.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,18 @@ impl AutoScalingGroupConfigurationBuilder {
     /// Consumes the builder and constructs a [`AutoScalingGroupConfiguration`](crate::types::AutoScalingGroupConfiguration).
     pub fn build(self) -> crate::types::AutoScalingGroupConfiguration {
         crate::types::AutoScalingGroupConfiguration {
-            desired_capacity: self.desired_capacity.unwrap_or_default(),
-            min_size: self.min_size.unwrap_or_default(),
-            max_size: self.max_size.unwrap_or_default(),
-            instance_type: self.instance_type,
+            desired_capacity: self.desired_capacity
+                .unwrap_or_default()
+            ,
+            min_size: self.min_size
+                .unwrap_or_default()
+            ,
+            max_size: self.max_size
+                .unwrap_or_default()
+            ,
+            instance_type: self.instance_type
+            ,
         }
     }
 }
+

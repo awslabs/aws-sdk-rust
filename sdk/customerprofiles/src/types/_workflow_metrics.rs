@@ -3,13 +3,13 @@
 /// <p>Generic object containing workflow execution metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowMetrics {
+pub struct WorkflowMetrics  {
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>,
 }
-impl WorkflowMetrics {
+impl  WorkflowMetrics  {
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(&self) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowMetrics> {
+    pub fn appflow_integration(&self) -> ::std::option::Option<& crate::types::AppflowIntegrationWorkflowMetrics> {
         self.appflow_integration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl WorkflowMetricsBuilder {
     }
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_appflow_integration(mut self, input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>) -> Self {
-        self.appflow_integration = input;
-        self
+        self.appflow_integration = input; self
     }
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_appflow_integration(&self) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics> {
@@ -44,7 +43,9 @@ impl WorkflowMetricsBuilder {
     /// Consumes the builder and constructs a [`WorkflowMetrics`](crate::types::WorkflowMetrics).
     pub fn build(self) -> crate::types::WorkflowMetrics {
         crate::types::WorkflowMetrics {
-            appflow_integration: self.appflow_integration,
+            appflow_integration: self.appflow_integration
+            ,
         }
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNamespaces`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::set_next_token):<br>required: **false**<br><p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
-    /// - On success, responds with [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput) with field(s):
+                            /// - On success, responds with [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput) with field(s):
     ///   - [`namespaces(Option<Vec::<NamespaceInfoV2>>)`](crate::operation::list_namespaces::ListNamespacesOutput::namespaces): <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::next_token): <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_namespaces::ListNamespacesOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
+                            /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
     pub fn list_namespaces(&self) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
-        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,20 +3,19 @@
 /// <p>The properties that Amazon AppFlow applies when you use Marketo as a flow destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MarketoDestinationProperties {
+pub struct MarketoDestinationProperties  {
     /// <p>The object specified in the Marketo flow destination.</p>
     pub object: ::std::string::String,
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
 }
-impl MarketoDestinationProperties {
+impl  MarketoDestinationProperties  {
     /// <p>The object specified in the Marketo flow destination.</p>
-    pub fn object(&self) -> &str {
-        use std::ops::Deref;
-        self.object.deref()
+    pub fn object(&self) -> & str {
+        use std::ops::Deref; self.object.deref()
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
-    pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(&self) -> ::std::option::Option<& crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl MarketoDestinationPropertiesBuilder {
     }
     /// <p>The object specified in the Marketo flow destination.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>The object specified in the Marketo flow destination.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl MarketoDestinationPropertiesBuilder {
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
     pub fn set_error_handling_config(mut self, input: ::std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
-        self.error_handling_config = input;
-        self
+        self.error_handling_config = input; self
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
     pub fn get_error_handling_config(&self) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
@@ -68,14 +65,17 @@ impl MarketoDestinationPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::MarketoDestinationPropertiesBuilder::object)
     pub fn build(self) -> ::std::result::Result<crate::types::MarketoDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MarketoDestinationProperties {
-            object: self.object.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object",
-                    "object was not specified but it is required when building MarketoDestinationProperties",
-                )
-            })?,
-            error_handling_config: self.error_handling_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MarketoDestinationProperties {
+                object: self.object
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object", "object was not specified but it is required when building MarketoDestinationProperties")
+                    )?
+                ,
+                error_handling_config: self.error_handling_config
+                ,
+            }
+        )
     }
 }
+

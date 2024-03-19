@@ -3,30 +3,32 @@
 /// <p>The result of a single metric data query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDataResult {
+pub struct MetricDataResult  {
     /// <p>The query identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A list of timestamps for the metric data results.</p>
-    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
-impl MetricDataResult {
+impl  MetricDataResult  {
     /// <p>The query identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A list of timestamps for the metric data results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
-    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
-        self.timestamps.as_deref().unwrap_or_default()
+    pub fn timestamps(&self) -> & [::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[i64] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [i64] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricDataResult {
@@ -41,8 +43,8 @@ impl MetricDataResult {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDataResultBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
 impl MetricDataResultBuilder {
     /// <p>The query identifier.</p>
@@ -52,8 +54,7 @@ impl MetricDataResultBuilder {
     }
     /// <p>The query identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The query identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl MetricDataResultBuilder {
     /// <p>A list of timestamps for the metric data results.</p>
     pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of timestamps for the metric data results.</p>
-    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>A list of timestamps for the metric data results.</p>
-    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.
@@ -86,25 +86,28 @@ impl MetricDataResultBuilder {
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
     pub fn values(mut self, input: i64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.values = input; self
     }
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`MetricDataResult`](crate::types::MetricDataResult).
     pub fn build(self) -> crate::types::MetricDataResult {
         crate::types::MetricDataResult {
-            id: self.id,
-            timestamps: self.timestamps,
-            values: self.values,
+            id: self.id
+            ,
+            timestamps: self.timestamps
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

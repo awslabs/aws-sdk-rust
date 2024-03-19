@@ -3,7 +3,7 @@
 /// <p>Contains information on the metrics used to evalute the peformance of a given adapter version. Includes data for baseline model performance and individual adapter version perfromance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdapterVersionEvaluationMetric {
+pub struct AdapterVersionEvaluationMetric  {
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
     pub baseline: ::std::option::Option<crate::types::EvaluationMetric>,
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
@@ -11,17 +11,17 @@ pub struct AdapterVersionEvaluationMetric {
     /// <p>Indicates the feature type being analyzed by a given adapter version.</p>
     pub feature_type: ::std::option::Option<crate::types::FeatureType>,
 }
-impl AdapterVersionEvaluationMetric {
+impl  AdapterVersionEvaluationMetric  {
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
-    pub fn baseline(&self) -> ::std::option::Option<&crate::types::EvaluationMetric> {
+    pub fn baseline(&self) -> ::std::option::Option<& crate::types::EvaluationMetric> {
         self.baseline.as_ref()
     }
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
-    pub fn adapter_version(&self) -> ::std::option::Option<&crate::types::EvaluationMetric> {
+    pub fn adapter_version(&self) -> ::std::option::Option<& crate::types::EvaluationMetric> {
         self.adapter_version.as_ref()
     }
     /// <p>Indicates the feature type being analyzed by a given adapter version.</p>
-    pub fn feature_type(&self) -> ::std::option::Option<&crate::types::FeatureType> {
+    pub fn feature_type(&self) -> ::std::option::Option<& crate::types::FeatureType> {
         self.feature_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AdapterVersionEvaluationMetricBuilder {
     }
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
     pub fn set_baseline(mut self, input: ::std::option::Option<crate::types::EvaluationMetric>) -> Self {
-        self.baseline = input;
-        self
+        self.baseline = input; self
     }
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
     pub fn get_baseline(&self) -> &::std::option::Option<crate::types::EvaluationMetric> {
@@ -62,8 +61,7 @@ impl AdapterVersionEvaluationMetricBuilder {
     }
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
     pub fn set_adapter_version(mut self, input: ::std::option::Option<crate::types::EvaluationMetric>) -> Self {
-        self.adapter_version = input;
-        self
+        self.adapter_version = input; self
     }
     /// <p>The F1 score, precision, and recall metrics for the baseline model.</p>
     pub fn get_adapter_version(&self) -> &::std::option::Option<crate::types::EvaluationMetric> {
@@ -76,8 +74,7 @@ impl AdapterVersionEvaluationMetricBuilder {
     }
     /// <p>Indicates the feature type being analyzed by a given adapter version.</p>
     pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::FeatureType>) -> Self {
-        self.feature_type = input;
-        self
+        self.feature_type = input; self
     }
     /// <p>Indicates the feature type being analyzed by a given adapter version.</p>
     pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::FeatureType> {
@@ -86,9 +83,13 @@ impl AdapterVersionEvaluationMetricBuilder {
     /// Consumes the builder and constructs a [`AdapterVersionEvaluationMetric`](crate::types::AdapterVersionEvaluationMetric).
     pub fn build(self) -> crate::types::AdapterVersionEvaluationMetric {
         crate::types::AdapterVersionEvaluationMetric {
-            baseline: self.baseline,
-            adapter_version: self.adapter_version,
-            feature_type: self.feature_type,
+            baseline: self.baseline
+            ,
+            adapter_version: self.adapter_version
+            ,
+            feature_type: self.feature_type
+            ,
         }
     }
 }
+

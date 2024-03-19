@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDefaultEncryptionConfigurationOutput {
+pub struct PutDefaultEncryptionConfigurationOutput  {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: crate::types::EncryptionType,
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
@@ -11,25 +11,25 @@ pub struct PutDefaultEncryptionConfigurationOutput {
     pub configuration_status: ::std::option::Option<crate::types::ConfigurationStatus>,
     _request_id: Option<String>,
 }
-impl PutDefaultEncryptionConfigurationOutput {
+impl  PutDefaultEncryptionConfigurationOutput  {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+    pub fn encryption_type(&self) -> & crate::types::EncryptionType {
         &self.encryption_type
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
-    pub fn configuration_status(&self) -> ::std::option::Option<&crate::types::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> ::std::option::Option<& crate::types::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutDefaultEncryptionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutDefaultEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutDefaultEncryptionConfigurationOutput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput).
     pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder {
@@ -55,8 +55,7 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
@@ -69,8 +68,7 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,43 +82,39 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     pub fn set_configuration_status(mut self, input: ::std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.configuration_status = input;
-        self
+        self.configuration_status = input; self
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     pub fn get_configuration_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
         &self.configuration_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationOutput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`encryption_type`](crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder::encryption_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput {
-                encryption_type: self.encryption_type.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "encryption_type",
-                        "encryption_type was not specified but it is required when building PutDefaultEncryptionConfigurationOutput",
-                    )
-                })?,
-                kms_key_arn: self.kms_key_arn,
-                configuration_status: self.configuration_status,
+                encryption_type: self.encryption_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_type", "encryption_type was not specified but it is required when building PutDefaultEncryptionConfigurationOutput")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                configuration_status: self.configuration_status
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSecurityControlDefinitionOutput {
+pub struct GetSecurityControlDefinitionOutput  {
     /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub security_control_definition: ::std::option::Option<crate::types::SecurityControlDefinition>,
     _request_id: Option<String>,
 }
-impl GetSecurityControlDefinitionOutput {
+impl  GetSecurityControlDefinitionOutput  {
     /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
-    pub fn security_control_definition(&self) -> ::std::option::Option<&crate::types::SecurityControlDefinition> {
+    pub fn security_control_definition(&self) -> ::std::option::Option<& crate::types::SecurityControlDefinition> {
         self.security_control_definition.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSecurityControlDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSecurityControlDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetSecurityControlDefinitionOutput`](crate::operation::get_security_control_definition::GetSecurityControlDefinitionOutput).
     pub fn builder() -> crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder {
@@ -41,27 +41,28 @@ impl GetSecurityControlDefinitionOutputBuilder {
     }
     /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub fn set_security_control_definition(mut self, input: ::std::option::Option<crate::types::SecurityControlDefinition>) -> Self {
-        self.security_control_definition = input;
-        self
+        self.security_control_definition = input; self
     }
     /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub fn get_security_control_definition(&self) -> &::std::option::Option<crate::types::SecurityControlDefinition> {
         &self.security_control_definition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSecurityControlDefinitionOutput`](crate::operation::get_security_control_definition::GetSecurityControlDefinitionOutput).
     pub fn build(self) -> crate::operation::get_security_control_definition::GetSecurityControlDefinitionOutput {
         crate::operation::get_security_control_definition::GetSecurityControlDefinitionOutput {
-            security_control_definition: self.security_control_definition,
+            security_control_definition: self.security_control_definition
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

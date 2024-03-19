@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomModels`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>Return custom models created before the specified time.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Return custom models created after the specified time.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_name_contains):<br>required: **false**<br><p>Return custom models only if the job name contains these characters.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p><br>
     ///   - [`sort_by(SortModelsBy)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::sort_by) / [`set_sort_by(Option<SortModelsBy>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort by in the returned list of models.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order of the results.</p><br>
-    /// - On success, responds with [`ListCustomModelsOutput`](crate::operation::list_custom_models::ListCustomModelsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomModelsOutput`](crate::operation::list_custom_models::ListCustomModelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_models::ListCustomModelsOutput::next_token): <p>Continuation token for the next request to list the next set of results.</p>
     ///   - [`model_summaries(Option<Vec::<CustomModelSummary>>)`](crate::operation::list_custom_models::ListCustomModelsOutput::model_summaries): <p>Model summaries.</p>
-    /// - On failure, responds with [`SdkError<ListCustomModelsError>`](crate::operation::list_custom_models::ListCustomModelsError)
+                            /// - On failure, responds with [`SdkError<ListCustomModelsError>`](crate::operation::list_custom_models::ListCustomModelsError)
     pub fn list_custom_models(&self) -> crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder {
-        crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_models::builders::ListCustomModelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

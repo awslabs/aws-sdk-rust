@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEncryptionKeyOutput {
+pub struct GetEncryptionKeyOutput  {
     /// <p>A kms key ID.</p>
     pub kms_key_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetEncryptionKeyOutput {
+impl  GetEncryptionKeyOutput  {
     /// <p>A kms key ID.</p>
-    pub fn kms_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_id.deref()
+    pub fn kms_key_id(&self) -> & str {
+        use std::ops::Deref; self.kms_key_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEncryptionKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetEncryptionKeyOutput`](crate::operation::get_encryption_key::GetEncryptionKeyOutput).
     pub fn builder() -> crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder {
@@ -42,36 +41,35 @@ impl GetEncryptionKeyOutputBuilder {
     }
     /// <p>A kms key ID.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>A kms key ID.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEncryptionKeyOutput`](crate::operation::get_encryption_key::GetEncryptionKeyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key_id`](crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder::kms_key_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_encryption_key::GetEncryptionKeyOutput {
-            kms_key_id: self.kms_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_id",
-                    "kms_key_id was not specified but it is required when building GetEncryptionKeyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_encryption_key::GetEncryptionKeyOutput {
+                kms_key_id: self.kms_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_id", "kms_key_id was not specified but it is required when building GetEncryptionKeyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

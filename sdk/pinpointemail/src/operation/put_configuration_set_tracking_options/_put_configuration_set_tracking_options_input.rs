@@ -3,19 +3,19 @@
 /// <p>A request to add a custom domain for tracking open and click events to a configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigurationSetTrackingOptionsInput {
+pub struct PutConfigurationSetTrackingOptionsInput  {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain that you want to use to track open and click events.</p>
     pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
-impl PutConfigurationSetTrackingOptionsInput {
+impl  PutConfigurationSetTrackingOptionsInput  {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The domain that you want to use to track open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> ::std::option::Option<&str> {
+    pub fn custom_redirect_domain(&self) -> ::std::option::Option<& str> {
         self.custom_redirect_domain.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
     }
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
     }
     /// <p>The domain that you want to use to track open and click events.</p>
     pub fn set_custom_redirect_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_redirect_domain = input;
-        self
+        self.custom_redirect_domain = input; self
     }
     /// <p>The domain that you want to use to track open and click events.</p>
     pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_redirect_domain
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                custom_redirect_domain: self.custom_redirect_domain,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                custom_redirect_domain: self.custom_redirect_domain
+                ,
+            }
         )
     }
 }
+

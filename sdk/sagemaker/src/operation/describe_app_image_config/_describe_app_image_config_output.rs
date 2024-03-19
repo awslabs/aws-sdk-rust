@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppImageConfigOutput {
+pub struct DescribeAppImageConfigOutput  {
     /// <p>The ARN of the AppImageConfig.</p>
     pub app_image_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AppImageConfig.</p>
@@ -17,37 +17,37 @@ pub struct DescribeAppImageConfigOutput {
     pub jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
     _request_id: Option<String>,
 }
-impl DescribeAppImageConfigOutput {
+impl  DescribeAppImageConfigOutput  {
     /// <p>The ARN of the AppImageConfig.</p>
-    pub fn app_image_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_image_config_arn(&self) -> ::std::option::Option<& str> {
         self.app_image_config_arn.as_deref()
     }
     /// <p>The name of the AppImageConfig.</p>
-    pub fn app_image_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_image_config_name(&self) -> ::std::option::Option<& str> {
         self.app_image_config_name.as_deref()
     }
     /// <p>When the AppImageConfig was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the AppImageConfig was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The configuration of a KernelGateway app.</p>
-    pub fn kernel_gateway_image_config(&self) -> ::std::option::Option<&crate::types::KernelGatewayImageConfig> {
+    pub fn kernel_gateway_image_config(&self) -> ::std::option::Option<& crate::types::KernelGatewayImageConfig> {
         self.kernel_gateway_image_config.as_ref()
     }
     /// <p>The configuration of the JupyterLab app.</p>
-    pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<&crate::types::JupyterLabAppImageConfig> {
+    pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<& crate::types::JupyterLabAppImageConfig> {
         self.jupyter_lab_app_image_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppImageConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAppImageConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppImageConfigOutput`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput).
     pub fn builder() -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigOutputBuilder {
@@ -75,8 +75,7 @@ impl DescribeAppImageConfigOutputBuilder {
     }
     /// <p>The ARN of the AppImageConfig.</p>
     pub fn set_app_image_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_image_config_arn = input;
-        self
+        self.app_image_config_arn = input; self
     }
     /// <p>The ARN of the AppImageConfig.</p>
     pub fn get_app_image_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl DescribeAppImageConfigOutputBuilder {
     }
     /// <p>The name of the AppImageConfig.</p>
     pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_image_config_name = input;
-        self
+        self.app_image_config_name = input; self
     }
     /// <p>The name of the AppImageConfig.</p>
     pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl DescribeAppImageConfigOutputBuilder {
     }
     /// <p>When the AppImageConfig was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the AppImageConfig was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +114,7 @@ impl DescribeAppImageConfigOutputBuilder {
     }
     /// <p>When the AppImageConfig was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the AppImageConfig was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +127,7 @@ impl DescribeAppImageConfigOutputBuilder {
     }
     /// <p>The configuration of a KernelGateway app.</p>
     pub fn set_kernel_gateway_image_config(mut self, input: ::std::option::Option<crate::types::KernelGatewayImageConfig>) -> Self {
-        self.kernel_gateway_image_config = input;
-        self
+        self.kernel_gateway_image_config = input; self
     }
     /// <p>The configuration of a KernelGateway app.</p>
     pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
@@ -145,32 +140,38 @@ impl DescribeAppImageConfigOutputBuilder {
     }
     /// <p>The configuration of the JupyterLab app.</p>
     pub fn set_jupyter_lab_app_image_config(mut self, input: ::std::option::Option<crate::types::JupyterLabAppImageConfig>) -> Self {
-        self.jupyter_lab_app_image_config = input;
-        self
+        self.jupyter_lab_app_image_config = input; self
     }
     /// <p>The configuration of the JupyterLab app.</p>
     pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
         &self.jupyter_lab_app_image_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAppImageConfigOutput`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput).
     pub fn build(self) -> crate::operation::describe_app_image_config::DescribeAppImageConfigOutput {
         crate::operation::describe_app_image_config::DescribeAppImageConfigOutput {
-            app_image_config_arn: self.app_image_config_arn,
-            app_image_config_name: self.app_image_config_name,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            kernel_gateway_image_config: self.kernel_gateway_image_config,
-            jupyter_lab_app_image_config: self.jupyter_lab_app_image_config,
+            app_image_config_arn: self.app_image_config_arn
+            ,
+            app_image_config_name: self.app_image_config_name
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            kernel_gateway_image_config: self.kernel_gateway_image_config
+            ,
+            jupyter_lab_app_image_config: self.jupyter_lab_app_image_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

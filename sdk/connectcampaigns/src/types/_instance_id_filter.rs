@@ -3,20 +3,19 @@
 /// Connect instance identifier filter
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceIdFilter {
+pub struct InstanceIdFilter  {
     /// Amazon Connect Instance Id
     pub value: ::std::string::String,
     /// Operators for Connect instance identifier filter
     pub operator: crate::types::InstanceIdFilterOperator,
 }
-impl InstanceIdFilter {
+impl  InstanceIdFilter  {
     /// Amazon Connect Instance Id
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// Operators for Connect instance identifier filter
-    pub fn operator(&self) -> &crate::types::InstanceIdFilterOperator {
+    pub fn operator(&self) -> & crate::types::InstanceIdFilterOperator {
         &self.operator
     }
 }
@@ -43,8 +42,7 @@ impl InstanceIdFilterBuilder {
     }
     /// Amazon Connect Instance Id
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Amazon Connect Instance Id
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl InstanceIdFilterBuilder {
     }
     /// Operators for Connect instance identifier filter
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::InstanceIdFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// Operators for Connect instance identifier filter
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::InstanceIdFilterOperator> {
@@ -70,19 +67,20 @@ impl InstanceIdFilterBuilder {
     /// - [`value`](crate::types::builders::InstanceIdFilterBuilder::value)
     /// - [`operator`](crate::types::builders::InstanceIdFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::InstanceIdFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InstanceIdFilter {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building InstanceIdFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building InstanceIdFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InstanceIdFilter {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building InstanceIdFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building InstanceIdFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

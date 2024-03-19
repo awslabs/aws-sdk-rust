@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchUsers`](crate::operation::search_users::builders::SearchUsersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_users::builders::SearchUsersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p><br>
     ///   - [`filters(Filter)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::set_filters):<br>required: **false**<br><p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p><br>
     ///   - [`sort_criteria(Sort)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<Vec::<Sort>>)`](crate::operation::search_users::builders::SearchUsersFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p><br>
-    /// - On success, responds with [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput) with field(s):
+                            /// - On success, responds with [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput) with field(s):
     ///   - [`users(Option<Vec::<UserData>>)`](crate::operation::search_users::SearchUsersOutput::users): <p>The users that meet the specified set of filter criteria, in sort order.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_users::SearchUsersOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_users::SearchUsersOutput::total_count): <p>The total number of users returned.</p>
-    /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::operation::search_users::SearchUsersError)
+                            /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::operation::search_users::SearchUsersError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_users(&self) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
-        crate::operation::search_users::builders::SearchUsersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_users::builders::SearchUsersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

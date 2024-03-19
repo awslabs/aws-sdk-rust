@@ -3,7 +3,7 @@
 /// <p>Lists a summary of the properties of a SageMaker HyperPod cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterSummary {
+pub struct ClusterSummary  {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SageMaker HyperPod cluster.</p>
@@ -13,21 +13,21 @@ pub struct ClusterSummary {
     /// <p>The status of the SageMaker HyperPod cluster.</p>
     pub cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
 }
-impl ClusterSummary {
+impl  ClusterSummary  {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the SageMaker HyperPod cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The time when the SageMaker HyperPod cluster is created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of the SageMaker HyperPod cluster.</p>
-    pub fn cluster_status(&self) -> ::std::option::Option<&crate::types::ClusterStatus> {
+    pub fn cluster_status(&self) -> ::std::option::Option<& crate::types::ClusterStatus> {
         self.cluster_status.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ClusterSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ClusterSummaryBuilder {
     }
     /// <p>The name of the SageMaker HyperPod cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the SageMaker HyperPod cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl ClusterSummaryBuilder {
     }
     /// <p>The time when the SageMaker HyperPod cluster is created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the SageMaker HyperPod cluster is created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +98,7 @@ impl ClusterSummaryBuilder {
     }
     /// <p>The status of the SageMaker HyperPod cluster.</p>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<crate::types::ClusterStatus>) -> Self {
-        self.cluster_status = input;
-        self
+        self.cluster_status = input; self
     }
     /// <p>The status of the SageMaker HyperPod cluster.</p>
     pub fn get_cluster_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
@@ -111,10 +107,15 @@ impl ClusterSummaryBuilder {
     /// Consumes the builder and constructs a [`ClusterSummary`](crate::types::ClusterSummary).
     pub fn build(self) -> crate::types::ClusterSummary {
         crate::types::ClusterSummary {
-            cluster_arn: self.cluster_arn,
-            cluster_name: self.cluster_name,
-            creation_time: self.creation_time,
-            cluster_status: self.cluster_status,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_name: self.cluster_name
+            ,
+            creation_time: self.creation_time
+            ,
+            cluster_status: self.cluster_status
+            ,
         }
     }
 }
+

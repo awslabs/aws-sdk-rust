@@ -12,7 +12,7 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceConfiguration {
+pub struct DataSourceConfiguration  {
     /// <p>Specifies how the results of an operation will be stored by the caller.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -24,7 +24,7 @@ pub struct DataSourceConfiguration {
     /// <p>Default value: <code>SingleUse</code></p>
     pub intended_use: ::std::option::Option<crate::types::IntendedUse>,
 }
-impl DataSourceConfiguration {
+impl  DataSourceConfiguration  {
     /// <p>Specifies how the results of an operation will be stored by the caller.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -34,7 +34,7 @@ impl DataSourceConfiguration {
     /// <p><code>Storage</code> specifies that the result can be cached or stored in a database.</p></li>
     /// </ul>
     /// <p>Default value: <code>SingleUse</code></p>
-    pub fn intended_use(&self) -> ::std::option::Option<&crate::types::IntendedUse> {
+    pub fn intended_use(&self) -> ::std::option::Option<& crate::types::IntendedUse> {
         self.intended_use.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl DataSourceConfigurationBuilder {
     /// </ul>
     /// <p>Default value: <code>SingleUse</code></p>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::IntendedUse>) -> Self {
-        self.intended_use = input;
-        self
+        self.intended_use = input; self
     }
     /// <p>Specifies how the results of an operation will be stored by the caller.</p>
     /// <p>Valid values include:</p>
@@ -93,7 +92,9 @@ impl DataSourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
     pub fn build(self) -> crate::types::DataSourceConfiguration {
         crate::types::DataSourceConfiguration {
-            intended_use: self.intended_use,
+            intended_use: self.intended_use
+            ,
         }
     }
 }
+

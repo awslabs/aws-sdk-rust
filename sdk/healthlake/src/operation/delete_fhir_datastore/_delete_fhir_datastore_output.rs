@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFhirDatastoreOutput {
+pub struct DeleteFhirDatastoreOutput  {
     /// <p>The AWS-generated ID for the data store to be deleted.</p>
     pub datastore_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
@@ -13,32 +13,29 @@ pub struct DeleteFhirDatastoreOutput {
     pub datastore_endpoint: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeleteFhirDatastoreOutput {
+impl  DeleteFhirDatastoreOutput  {
     /// <p>The AWS-generated ID for the data store to be deleted.</p>
-    pub fn datastore_id(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_id.deref()
+    pub fn datastore_id(&self) -> & str {
+        use std::ops::Deref; self.datastore_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
-    pub fn datastore_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_arn.deref()
+    pub fn datastore_arn(&self) -> & str {
+        use std::ops::Deref; self.datastore_arn.deref()
     }
     /// <p>The status of the data store that the user has requested to be deleted.</p>
-    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+    pub fn datastore_status(&self) -> & crate::types::DatastoreStatus {
         &self.datastore_status
     }
     /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-    pub fn datastore_endpoint(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_endpoint.deref()
+    pub fn datastore_endpoint(&self) -> & str {
+        use std::ops::Deref; self.datastore_endpoint.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFhirDatastoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreOutput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput).
     pub fn builder() -> crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreOutputBuilder {
@@ -65,8 +62,7 @@ impl DeleteFhirDatastoreOutputBuilder {
     }
     /// <p>The AWS-generated ID for the data store to be deleted.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The AWS-generated ID for the data store to be deleted.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl DeleteFhirDatastoreOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn set_datastore_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_arn = input;
-        self
+        self.datastore_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl DeleteFhirDatastoreOutputBuilder {
     }
     /// <p>The status of the data store that the user has requested to be deleted.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.datastore_status = input;
-        self
+        self.datastore_status = input; self
     }
     /// <p>The status of the data store that the user has requested to be deleted.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
@@ -110,58 +104,53 @@ impl DeleteFhirDatastoreOutputBuilder {
     }
     /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     pub fn set_datastore_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_endpoint = input;
-        self
+        self.datastore_endpoint = input; self
     }
     /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFhirDatastoreOutput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`datastore_id`](crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreOutputBuilder::datastore_id)
     /// - [`datastore_arn`](crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreOutputBuilder::datastore_arn)
     /// - [`datastore_status`](crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreOutputBuilder::datastore_status)
     /// - [`datastore_endpoint`](crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreOutputBuilder::datastore_endpoint)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput {
-            datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_id",
-                    "datastore_id was not specified but it is required when building DeleteFhirDatastoreOutput",
-                )
-            })?,
-            datastore_arn: self.datastore_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_arn",
-                    "datastore_arn was not specified but it is required when building DeleteFhirDatastoreOutput",
-                )
-            })?,
-            datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_status",
-                    "datastore_status was not specified but it is required when building DeleteFhirDatastoreOutput",
-                )
-            })?,
-            datastore_endpoint: self.datastore_endpoint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_endpoint",
-                    "datastore_endpoint was not specified but it is required when building DeleteFhirDatastoreOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput {
+                datastore_id: self.datastore_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_id", "datastore_id was not specified but it is required when building DeleteFhirDatastoreOutput")
+                    )?
+                ,
+                datastore_arn: self.datastore_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_arn", "datastore_arn was not specified but it is required when building DeleteFhirDatastoreOutput")
+                    )?
+                ,
+                datastore_status: self.datastore_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_status", "datastore_status was not specified but it is required when building DeleteFhirDatastoreOutput")
+                    )?
+                ,
+                datastore_endpoint: self.datastore_endpoint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_endpoint", "datastore_endpoint was not specified but it is required when building DeleteFhirDatastoreOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

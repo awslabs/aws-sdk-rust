@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppValidationConfigurationInput {
+pub struct DeleteAppValidationConfigurationInput  {
     /// <p>The ID of the application.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAppValidationConfigurationInput {
+impl  DeleteAppValidationConfigurationInput  {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteAppValidationConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`DeleteAppValidationConfigurationInput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput { app_id: self.app_id },
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput {
+                app_id: self.app_id
+                ,
+            }
         )
     }
 }
+

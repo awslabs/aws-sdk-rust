@@ -21,11 +21,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`ConnectConfiguration`](crate::types::Configuration::ConnectConfiguration), extracting the inner [`ConnectConfiguration`](crate::types::ConnectConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_connect_configuration(&self) -> ::std::result::Result<&crate::types::ConnectConfiguration, &Self> {
-        if let Configuration::ConnectConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Configuration::ConnectConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ConnectConfiguration`](crate::types::Configuration::ConnectConfiguration).
     pub fn is_connect_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl Configuration {
         matches!(self, Self::Unknown)
     }
 }
+

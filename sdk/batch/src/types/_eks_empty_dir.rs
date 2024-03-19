@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. An <code>emptyDir</code> volume is first created when a pod is assigned to a node. It exists as long as that pod is running on that node. The <code>emptyDir</code> volume is initially empty. All containers in the pod can read and write the files in the <code>emptyDir</code> volume. However, the <code>emptyDir</code> volume can be mounted at the same or different paths in each container. When a pod is removed from a node for any reason, the data in the <code>emptyDir</code> is deleted permanently. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksEmptyDir {
+pub struct EksEmptyDir  {
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
     /// <dl>
     /// <dt>
@@ -23,7 +23,7 @@ pub struct EksEmptyDir {
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
     pub size_limit: ::std::option::Option<::std::string::String>,
 }
-impl EksEmptyDir {
+impl  EksEmptyDir  {
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
     /// <dl>
     /// <dt>
@@ -39,11 +39,11 @@ impl EksEmptyDir {
     /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
     /// </dd>
     /// </dl>
-    pub fn medium(&self) -> ::std::option::Option<&str> {
+    pub fn medium(&self) -> ::std::option::Option<& str> {
         self.medium.as_deref()
     }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
-    pub fn size_limit(&self) -> ::std::option::Option<&str> {
+    pub fn size_limit(&self) -> ::std::option::Option<& str> {
         self.size_limit.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl EksEmptyDirBuilder {
     /// </dd>
     /// </dl>
     pub fn set_medium(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.medium = input;
-        self
+        self.medium = input; self
     }
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
     /// <dl>
@@ -125,8 +124,7 @@ impl EksEmptyDirBuilder {
     }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
     pub fn set_size_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.size_limit = input;
-        self
+        self.size_limit = input; self
     }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
     pub fn get_size_limit(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,11 @@ impl EksEmptyDirBuilder {
     /// Consumes the builder and constructs a [`EksEmptyDir`](crate::types::EksEmptyDir).
     pub fn build(self) -> crate::types::EksEmptyDir {
         crate::types::EksEmptyDir {
-            medium: self.medium,
-            size_limit: self.size_limit,
+            medium: self.medium
+            ,
+            size_limit: self.size_limit
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a prefix list reference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayPrefixListReference {
+pub struct TransitGatewayPrefixListReference  {
     /// <p>The ID of the transit gateway route table.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
@@ -17,21 +17,21 @@ pub struct TransitGatewayPrefixListReference {
     /// <p>Information about the transit gateway attachment.</p>
     pub transit_gateway_attachment: ::std::option::Option<crate::types::TransitGatewayPrefixListAttachment>,
 }
-impl TransitGatewayPrefixListReference {
+impl  TransitGatewayPrefixListReference  {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The ID of the prefix list owner.</p>
-    pub fn prefix_list_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_owner_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_owner_id.as_deref()
     }
     /// <p>The state of the prefix list reference.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayPrefixListReferenceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayPrefixListReferenceState> {
         self.state.as_ref()
     }
     /// <p>Indicates whether traffic that matches this route is dropped.</p>
@@ -39,7 +39,7 @@ impl TransitGatewayPrefixListReference {
         self.blackhole
     }
     /// <p>Information about the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment(&self) -> ::std::option::Option<&crate::types::TransitGatewayPrefixListAttachment> {
+    pub fn transit_gateway_attachment(&self) -> ::std::option::Option<& crate::types::TransitGatewayPrefixListAttachment> {
         self.transit_gateway_attachment.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl TransitGatewayPrefixListReferenceBuilder {
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl TransitGatewayPrefixListReferenceBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl TransitGatewayPrefixListReferenceBuilder {
     }
     /// <p>The ID of the prefix list owner.</p>
     pub fn set_prefix_list_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_owner_id = input;
-        self
+        self.prefix_list_owner_id = input; self
     }
     /// <p>The ID of the prefix list owner.</p>
     pub fn get_prefix_list_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl TransitGatewayPrefixListReferenceBuilder {
     }
     /// <p>The state of the prefix list reference.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayPrefixListReferenceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the prefix list reference.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayPrefixListReferenceState> {
@@ -125,8 +121,7 @@ impl TransitGatewayPrefixListReferenceBuilder {
     }
     /// <p>Indicates whether traffic that matches this route is dropped.</p>
     pub fn set_blackhole(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.blackhole = input;
-        self
+        self.blackhole = input; self
     }
     /// <p>Indicates whether traffic that matches this route is dropped.</p>
     pub fn get_blackhole(&self) -> &::std::option::Option<bool> {
@@ -139,8 +134,7 @@ impl TransitGatewayPrefixListReferenceBuilder {
     }
     /// <p>Information about the transit gateway attachment.</p>
     pub fn set_transit_gateway_attachment(mut self, input: ::std::option::Option<crate::types::TransitGatewayPrefixListAttachment>) -> Self {
-        self.transit_gateway_attachment = input;
-        self
+        self.transit_gateway_attachment = input; self
     }
     /// <p>Information about the transit gateway attachment.</p>
     pub fn get_transit_gateway_attachment(&self) -> &::std::option::Option<crate::types::TransitGatewayPrefixListAttachment> {
@@ -149,12 +143,19 @@ impl TransitGatewayPrefixListReferenceBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayPrefixListReference`](crate::types::TransitGatewayPrefixListReference).
     pub fn build(self) -> crate::types::TransitGatewayPrefixListReference {
         crate::types::TransitGatewayPrefixListReference {
-            transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-            prefix_list_id: self.prefix_list_id,
-            prefix_list_owner_id: self.prefix_list_owner_id,
-            state: self.state,
-            blackhole: self.blackhole,
-            transit_gateway_attachment: self.transit_gateway_attachment,
+            transit_gateway_route_table_id: self.transit_gateway_route_table_id
+            ,
+            prefix_list_id: self.prefix_list_id
+            ,
+            prefix_list_owner_id: self.prefix_list_owner_id
+            ,
+            state: self.state
+            ,
+            blackhole: self.blackhole
+            ,
+            transit_gateway_attachment: self.transit_gateway_attachment
+            ,
         }
     }
 }
+

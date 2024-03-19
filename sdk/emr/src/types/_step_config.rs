@@ -3,7 +3,7 @@
 /// <p>Specification for a cluster (job flow) step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StepConfig {
+pub struct StepConfig  {
     /// <p>The name of the step.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action to take when the step fails. Use one of the following values:</p>
@@ -23,9 +23,9 @@ pub struct StepConfig {
     /// <p>The JAR file used for the step.</p>
     pub hadoop_jar_step: ::std::option::Option<crate::types::HadoopJarStepConfig>,
 }
-impl StepConfig {
+impl  StepConfig  {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The action to take when the step fails. Use one of the following values:</p>
@@ -41,11 +41,11 @@ impl StepConfig {
     /// </ul>
     /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
-    pub fn action_on_failure(&self) -> ::std::option::Option<&crate::types::ActionOnFailure> {
+    pub fn action_on_failure(&self) -> ::std::option::Option<& crate::types::ActionOnFailure> {
         self.action_on_failure.as_ref()
     }
     /// <p>The JAR file used for the step.</p>
-    pub fn hadoop_jar_step(&self) -> ::std::option::Option<&crate::types::HadoopJarStepConfig> {
+    pub fn hadoop_jar_step(&self) -> ::std::option::Option<& crate::types::HadoopJarStepConfig> {
         self.hadoop_jar_step.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl StepConfigBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl StepConfigBuilder {
     /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
     pub fn set_action_on_failure(mut self, input: ::std::option::Option<crate::types::ActionOnFailure>) -> Self {
-        self.action_on_failure = input;
-        self
+        self.action_on_failure = input; self
     }
     /// <p>The action to take when the step fails. Use one of the following values:</p>
     /// <ul>
@@ -138,8 +136,7 @@ impl StepConfigBuilder {
     }
     /// <p>The JAR file used for the step.</p>
     pub fn set_hadoop_jar_step(mut self, input: ::std::option::Option<crate::types::HadoopJarStepConfig>) -> Self {
-        self.hadoop_jar_step = input;
-        self
+        self.hadoop_jar_step = input; self
     }
     /// <p>The JAR file used for the step.</p>
     pub fn get_hadoop_jar_step(&self) -> &::std::option::Option<crate::types::HadoopJarStepConfig> {
@@ -148,9 +145,13 @@ impl StepConfigBuilder {
     /// Consumes the builder and constructs a [`StepConfig`](crate::types::StepConfig).
     pub fn build(self) -> crate::types::StepConfig {
         crate::types::StepConfig {
-            name: self.name,
-            action_on_failure: self.action_on_failure,
-            hadoop_jar_step: self.hadoop_jar_step,
+            name: self.name
+            ,
+            action_on_failure: self.action_on_failure
+            ,
+            hadoop_jar_step: self.hadoop_jar_step
+            ,
         }
     }
 }
+

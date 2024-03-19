@@ -3,7 +3,7 @@
 /// <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every Amazon Web Services account in the organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Root {
+pub struct Root  {
     /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,31 +16,32 @@ pub struct Root {
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    pub policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
+    pub policy_types: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyTypeSummary>>,
 }
-impl Root {
+impl  Root  {
     /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_types.is_none()`.
-    pub fn policy_types(&self) -> &[crate::types::PolicyTypeSummary] {
-        self.policy_types.as_deref().unwrap_or_default()
+    pub fn policy_types(&self) -> & [crate::types::PolicyTypeSummary] {
+        self.policy_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Root {
@@ -57,7 +58,7 @@ pub struct RootBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
+    pub(crate) policy_types: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyTypeSummary>>,
 }
 impl RootBuilder {
     /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
@@ -69,8 +70,7 @@ impl RootBuilder {
     /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
@@ -86,8 +86,7 @@ impl RootBuilder {
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
@@ -103,8 +102,7 @@ impl RootBuilder {
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -120,30 +118,34 @@ impl RootBuilder {
     /// </note>
     pub fn policy_types(mut self, input: crate::types::PolicyTypeSummary) -> Self {
         let mut v = self.policy_types.unwrap_or_default();
-        v.push(input);
-        self.policy_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>) -> Self {
-        self.policy_types = input;
-        self
+    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyTypeSummary>>) -> Self {
+        self.policy_types = input; self
     }
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p><note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
+    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyTypeSummary>> {
         &self.policy_types
     }
     /// Consumes the builder and constructs a [`Root`](crate::types::Root).
     pub fn build(self) -> crate::types::Root {
         crate::types::Root {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            policy_types: self.policy_types,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            policy_types: self.policy_types
+            ,
         }
     }
 }
+

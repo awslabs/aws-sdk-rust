@@ -3,30 +3,28 @@
 /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectedLanguageLowConfidenceException {
+pub struct DetectedLanguageLowConfidenceException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the auto-detected language from Amazon Comprehend.</p>
     pub detected_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl DetectedLanguageLowConfidenceException {
+impl  DetectedLanguageLowConfidenceException  {
     /// <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-    pub fn detected_language_code(&self) -> ::std::option::Option<&str> {
+    pub fn detected_language_code(&self) -> ::std::option::Option<& str> {
         self.detected_language_code.as_deref()
     }
 }
 impl DetectedLanguageLowConfidenceException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for DetectedLanguageLowConfidenceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "DetectedLanguageLowConfidenceException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::DetectedLanguag
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DetectedLanguageLowConfidenceException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DetectedLanguageLowConfidenceException {
     /// Creates a new builder-style object to manufacture [`DetectedLanguageLowConfidenceException`](crate::types::error::DetectedLanguageLowConfidenceException).
@@ -68,8 +64,7 @@ impl DetectedLanguageLowConfidenceExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,30 +77,32 @@ impl DetectedLanguageLowConfidenceExceptionBuilder {
     }
     /// <p>The language code of the auto-detected language from Amazon Comprehend.</p>
     pub fn set_detected_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detected_language_code = input;
-        self
+        self.detected_language_code = input; self
     }
     /// <p>The language code of the auto-detected language from Amazon Comprehend.</p>
     pub fn get_detected_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.detected_language_code
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`DetectedLanguageLowConfidenceException`](crate::types::error::DetectedLanguageLowConfidenceException).
     pub fn build(self) -> crate::types::error::DetectedLanguageLowConfidenceException {
         crate::types::error::DetectedLanguageLowConfidenceException {
-            message: self.message,
-            detected_language_code: self.detected_language_code,
+            message: self.message
+            ,
+            detected_language_code: self.detected_language_code
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

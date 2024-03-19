@@ -3,11 +3,11 @@
 /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceSpoofingRisk {
+pub struct VoiceSpoofingRisk  {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     pub risk_score: i32,
 }
-impl VoiceSpoofingRisk {
+impl  VoiceSpoofingRisk  {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     pub fn risk_score(&self) -> i32 {
         self.risk_score
@@ -35,8 +35,7 @@ impl VoiceSpoofingRiskBuilder {
     }
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     pub fn set_risk_score(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.risk_score = input;
-        self
+        self.risk_score = input; self
     }
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     pub fn get_risk_score(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl VoiceSpoofingRiskBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`risk_score`](crate::types::builders::VoiceSpoofingRiskBuilder::risk_score)
     pub fn build(self) -> ::std::result::Result<crate::types::VoiceSpoofingRisk, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VoiceSpoofingRisk {
-            risk_score: self.risk_score.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "risk_score",
-                    "risk_score was not specified but it is required when building VoiceSpoofingRisk",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VoiceSpoofingRisk {
+                risk_score: self.risk_score
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("risk_score", "risk_score was not specified but it is required when building VoiceSpoofingRisk")
+                    )?
+                ,
+            }
+        )
     }
 }
+

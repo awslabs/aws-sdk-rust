@@ -3,7 +3,7 @@
 /// A request to update the bridge.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBridgeInput {
+pub struct UpdateBridgeInput  {
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -13,21 +13,21 @@ pub struct UpdateBridgeInput {
     /// The settings for source failover.
     pub source_failover_config: ::std::option::Option<crate::types::UpdateFailoverConfig>,
 }
-impl UpdateBridgeInput {
+impl  UpdateBridgeInput  {
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn egress_gateway_bridge(&self) -> ::std::option::Option<&crate::types::UpdateEgressGatewayBridgeRequest> {
+    pub fn egress_gateway_bridge(&self) -> ::std::option::Option<& crate::types::UpdateEgressGatewayBridgeRequest> {
         self.egress_gateway_bridge.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn ingress_gateway_bridge(&self) -> ::std::option::Option<&crate::types::UpdateIngressGatewayBridgeRequest> {
+    pub fn ingress_gateway_bridge(&self) -> ::std::option::Option<& crate::types::UpdateIngressGatewayBridgeRequest> {
         self.ingress_gateway_bridge.as_ref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(&self) -> ::std::option::Option<&crate::types::UpdateFailoverConfig> {
+    pub fn source_failover_config(&self) -> ::std::option::Option<& crate::types::UpdateFailoverConfig> {
         self.source_failover_config.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdateBridgeInputBuilder {
     }
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
     }
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateBridgeInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_egress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest>) -> Self {
-        self.egress_gateway_bridge = input;
-        self
+        self.egress_gateway_bridge = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_egress_gateway_bridge(&self) -> &::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest> {
@@ -84,8 +82,7 @@ impl UpdateBridgeInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_ingress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest>) -> Self {
-        self.ingress_gateway_bridge = input;
-        self
+        self.ingress_gateway_bridge = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_ingress_gateway_bridge(&self) -> &::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest> {
@@ -98,22 +95,26 @@ impl UpdateBridgeInputBuilder {
     }
     /// The settings for source failover.
     pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::UpdateFailoverConfig>) -> Self {
-        self.source_failover_config = input;
-        self
+        self.source_failover_config = input; self
     }
     /// The settings for source failover.
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::UpdateFailoverConfig> {
         &self.source_failover_config
     }
     /// Consumes the builder and constructs a [`UpdateBridgeInput`](crate::operation::update_bridge::UpdateBridgeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_bridge::UpdateBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_bridge::UpdateBridgeInput {
-            bridge_arn: self.bridge_arn,
-            egress_gateway_bridge: self.egress_gateway_bridge,
-            ingress_gateway_bridge: self.ingress_gateway_bridge,
-            source_failover_config: self.source_failover_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bridge::UpdateBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_bridge::UpdateBridgeInput {
+                bridge_arn: self.bridge_arn
+                ,
+                egress_gateway_bridge: self.egress_gateway_bridge
+                ,
+                ingress_gateway_bridge: self.ingress_gateway_bridge
+                ,
+                source_failover_config: self.source_failover_config
+                ,
+            }
+        )
     }
 }
+

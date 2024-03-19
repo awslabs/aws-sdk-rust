@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowTargetsOutput {
+pub struct DescribeMaintenanceWindowTargetsOutput  {
     /// <p>Information about the targets in the maintenance window.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTarget>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowTarget>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMaintenanceWindowTargetsOutput {
+impl  DescribeMaintenanceWindowTargetsOutput  {
     /// <p>Information about the targets in the maintenance window.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::MaintenanceWindowTarget] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::MaintenanceWindowTarget] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMaintenanceWindowTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMaintenanceWindowTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowTargetsOutput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput).
     pub fn builder() -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeMaintenanceWindowTargetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTargetsOutputBuilder {
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTarget>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeMaintenanceWindowTargetsOutputBuilder {
     /// <p>Information about the targets in the maintenance window.</p>
     pub fn targets(mut self, input: crate::types::MaintenanceWindowTarget) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the targets in the maintenance window.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTarget>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowTarget>>) -> Self {
+        self.targets = input; self
     }
     /// <p>Information about the targets in the maintenance window.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTarget>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowTarget>> {
         &self.targets
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeMaintenanceWindowTargetsOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTargetsOutput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput).
     pub fn build(self) -> crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput {
         crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput {
-            targets: self.targets,
-            next_token: self.next_token,
+            targets: self.targets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssetPropertyInput {
+pub struct UpdateAssetPropertyInput  {
     /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -18,31 +18,31 @@ pub struct UpdateAssetPropertyInput {
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
     pub property_unit: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAssetPropertyInput {
+impl  UpdateAssetPropertyInput  {
     /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
-    pub fn property_alias(&self) -> ::std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
-    pub fn property_notification_state(&self) -> ::std::option::Option<&crate::types::PropertyNotificationState> {
+    pub fn property_notification_state(&self) -> ::std::option::Option<& crate::types::PropertyNotificationState> {
         self.property_notification_state.as_ref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
-    pub fn property_unit(&self) -> ::std::option::Option<&str> {
+    pub fn property_unit(&self) -> ::std::option::Option<& str> {
         self.property_unit.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl UpdateAssetPropertyInputBuilder {
     }
     /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl UpdateAssetPropertyInputBuilder {
     }
     /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl UpdateAssetPropertyInputBuilder {
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
     pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_alias = input;
-        self
+        self.property_alias = input; self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
@@ -121,8 +118,7 @@ impl UpdateAssetPropertyInputBuilder {
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
     pub fn set_property_notification_state(mut self, input: ::std::option::Option<crate::types::PropertyNotificationState>) -> Self {
-        self.property_notification_state = input;
-        self
+        self.property_notification_state = input; self
     }
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
@@ -136,8 +132,7 @@ impl UpdateAssetPropertyInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,25 +145,30 @@ impl UpdateAssetPropertyInputBuilder {
     }
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
     pub fn set_property_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_unit = input;
-        self
+        self.property_unit = input; self
     }
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
     pub fn get_property_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.property_unit
     }
     /// Consumes the builder and constructs a [`UpdateAssetPropertyInput`](crate::operation::update_asset_property::UpdateAssetPropertyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_asset_property::UpdateAssetPropertyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_asset_property::UpdateAssetPropertyInput {
-            asset_id: self.asset_id,
-            property_id: self.property_id,
-            property_alias: self.property_alias,
-            property_notification_state: self.property_notification_state,
-            client_token: self.client_token,
-            property_unit: self.property_unit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_asset_property::UpdateAssetPropertyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_asset_property::UpdateAssetPropertyInput {
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+                property_notification_state: self.property_notification_state
+                ,
+                client_token: self.client_token
+                ,
+                property_unit: self.property_unit
+                ,
+            }
+        )
     }
 }
+

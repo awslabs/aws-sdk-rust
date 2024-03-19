@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorldExportJobOutput {
+pub struct CreateWorldExportJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the world export job.</p>
@@ -95,12 +95,12 @@ pub struct CreateWorldExportJobOutput {
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateWorldExportJobOutput {
+impl  CreateWorldExportJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the world export job.</p>
@@ -142,11 +142,11 @@ impl CreateWorldExportJobOutput {
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorldExportJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorldExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world export job if it failed:</p>
@@ -189,31 +189,31 @@ impl CreateWorldExportJobOutput {
     /// </dd>
     /// </dl>
     /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldExportJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::WorldExportJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
-    pub fn iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role(&self) -> ::std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorldExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWorldExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorldExportJobOutput`](crate::operation::create_world_export_job::CreateWorldExportJobOutput).
     pub fn builder() -> crate::operation::create_world_export_job::builders::CreateWorldExportJobOutputBuilder {
@@ -232,7 +232,7 @@ pub struct CreateWorldExportJobOutputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateWorldExportJobOutputBuilder {
@@ -243,8 +243,7 @@ impl CreateWorldExportJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +332,7 @@ impl CreateWorldExportJobOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorldExportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the world export job.</p>
     /// <dl>
@@ -385,8 +383,7 @@ impl CreateWorldExportJobOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -477,8 +474,7 @@ impl CreateWorldExportJobOutputBuilder {
     /// </dl>
     /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::WorldExportJobErrorCode>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
@@ -530,8 +526,7 @@ impl CreateWorldExportJobOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -544,8 +539,7 @@ impl CreateWorldExportJobOutputBuilder {
     }
     /// <p>The output location.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>The output location.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
@@ -558,8 +552,7 @@ impl CreateWorldExportJobOutputBuilder {
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -572,40 +565,48 @@ impl CreateWorldExportJobOutputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWorldExportJobOutput`](crate::operation::create_world_export_job::CreateWorldExportJobOutput).
     pub fn build(self) -> crate::operation::create_world_export_job::CreateWorldExportJobOutput {
         crate::operation::create_world_export_job::CreateWorldExportJobOutput {
-            arn: self.arn,
-            status: self.status,
-            created_at: self.created_at,
-            failure_code: self.failure_code,
-            client_request_token: self.client_request_token,
-            output_location: self.output_location,
-            iam_role: self.iam_role,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            failure_code: self.failure_code
+            ,
+            client_request_token: self.client_request_token
+            ,
+            output_location: self.output_location
+            ,
+            iam_role: self.iam_role
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

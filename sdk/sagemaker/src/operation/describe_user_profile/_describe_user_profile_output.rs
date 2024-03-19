@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserProfileOutput {
+pub struct DescribeUserProfileOutput  {
     /// <p>The ID of the domain that contains the profile.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile Amazon Resource Name (ARN).</p>
@@ -27,57 +27,57 @@ pub struct DescribeUserProfileOutput {
     pub user_settings: ::std::option::Option<crate::types::UserSettings>,
     _request_id: Option<String>,
 }
-impl DescribeUserProfileOutput {
+impl  DescribeUserProfileOutput  {
     /// <p>The ID of the domain that contains the profile.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    pub fn user_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_arn(&self) -> ::std::option::Option<& str> {
         self.user_profile_arn.as_deref()
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> ::std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
-    pub fn home_efs_file_system_uid(&self) -> ::std::option::Option<&str> {
+    pub fn home_efs_file_system_uid(&self) -> ::std::option::Option<& str> {
         self.home_efs_file_system_uid.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UserProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UserProfileStatus> {
         self.status.as_ref()
     }
     /// <p>The last modified time.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The IAM Identity Center user identifier.</p>
-    pub fn single_sign_on_user_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn single_sign_on_user_identifier(&self) -> ::std::option::Option<& str> {
         self.single_sign_on_user_identifier.as_deref()
     }
     /// <p>The IAM Identity Center user value.</p>
-    pub fn single_sign_on_user_value(&self) -> ::std::option::Option<&str> {
+    pub fn single_sign_on_user_value(&self) -> ::std::option::Option<& str> {
         self.single_sign_on_user_value.as_deref()
     }
     /// <p>A collection of settings.</p>
-    pub fn user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
+    pub fn user_settings(&self) -> ::std::option::Option<& crate::types::UserSettings> {
         self.user_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
     pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
@@ -110,8 +110,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The ID of the domain that contains the profile.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the domain that contains the profile.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The user profile Amazon Resource Name (ARN).</p>
     pub fn set_user_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_arn = input;
-        self
+        self.user_profile_arn = input; self
     }
     /// <p>The user profile Amazon Resource Name (ARN).</p>
     pub fn get_user_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +136,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The user profile name.</p>
     pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_name = input;
-        self
+        self.user_profile_name = input; self
     }
     /// <p>The user profile name.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub fn set_home_efs_file_system_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_efs_file_system_uid = input;
-        self
+        self.home_efs_file_system_uid = input; self
     }
     /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub fn get_home_efs_file_system_uid(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +162,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserProfileStatus> {
@@ -180,8 +175,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The last modified time.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last modified time.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +188,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +201,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The failure reason.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The failure reason.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +214,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The IAM Identity Center user identifier.</p>
     pub fn set_single_sign_on_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.single_sign_on_user_identifier = input;
-        self
+        self.single_sign_on_user_identifier = input; self
     }
     /// <p>The IAM Identity Center user identifier.</p>
     pub fn get_single_sign_on_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +227,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The IAM Identity Center user value.</p>
     pub fn set_single_sign_on_user_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.single_sign_on_user_value = input;
-        self
+        self.single_sign_on_user_value = input; self
     }
     /// <p>The IAM Identity Center user value.</p>
     pub fn get_single_sign_on_user_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,37 +240,48 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>A collection of settings.</p>
     pub fn set_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
-        self.user_settings = input;
-        self
+        self.user_settings = input; self
     }
     /// <p>A collection of settings.</p>
     pub fn get_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
         &self.user_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
     pub fn build(self) -> crate::operation::describe_user_profile::DescribeUserProfileOutput {
         crate::operation::describe_user_profile::DescribeUserProfileOutput {
-            domain_id: self.domain_id,
-            user_profile_arn: self.user_profile_arn,
-            user_profile_name: self.user_profile_name,
-            home_efs_file_system_uid: self.home_efs_file_system_uid,
-            status: self.status,
-            last_modified_time: self.last_modified_time,
-            creation_time: self.creation_time,
-            failure_reason: self.failure_reason,
-            single_sign_on_user_identifier: self.single_sign_on_user_identifier,
-            single_sign_on_user_value: self.single_sign_on_user_value,
-            user_settings: self.user_settings,
+            domain_id: self.domain_id
+            ,
+            user_profile_arn: self.user_profile_arn
+            ,
+            user_profile_name: self.user_profile_name
+            ,
+            home_efs_file_system_uid: self.home_efs_file_system_uid
+            ,
+            status: self.status
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            creation_time: self.creation_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            single_sign_on_user_identifier: self.single_sign_on_user_identifier
+            ,
+            single_sign_on_user_value: self.single_sign_on_user_value
+            ,
+            user_settings: self.user_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

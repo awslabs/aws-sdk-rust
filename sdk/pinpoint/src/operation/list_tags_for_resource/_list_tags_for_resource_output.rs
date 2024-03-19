@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub tags_model: ::std::option::Option<crate::types::TagsModel>,
     _request_id: Option<String>,
 }
-impl ListTagsForResourceOutput {
+impl  ListTagsForResourceOutput  {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-    pub fn tags_model(&self) -> ::std::option::Option<&crate::types::TagsModel> {
+    pub fn tags_model(&self) -> ::std::option::Option<& crate::types::TagsModel> {
         self.tags_model.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTagsForResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
     pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
@@ -41,27 +41,28 @@ impl ListTagsForResourceOutputBuilder {
     }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub fn set_tags_model(mut self, input: ::std::option::Option<crate::types::TagsModel>) -> Self {
-        self.tags_model = input;
-        self
+        self.tags_model = input; self
     }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub fn get_tags_model(&self) -> &::std::option::Option<crate::types::TagsModel> {
         &self.tags_model
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
     pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            tags_model: self.tags_model,
+            tags_model: self.tags_model
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

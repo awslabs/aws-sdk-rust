@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPlaceInput {
+pub struct GetPlaceInput  {
     /// <p>The name of the place index resource that you want to use for the search.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the place to find.</p>
@@ -31,9 +31,9 @@ pub struct GetPlaceInput {
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GetPlaceInput {
+impl  GetPlaceInput  {
     /// <p>The name of the place index resource that you want to use for the search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The identifier of the place to find.</p>
@@ -52,7 +52,7 @@ impl GetPlaceInput {
     /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn place_id(&self) -> ::std::option::Option<&str> {
+    pub fn place_id(&self) -> ::std::option::Option<& str> {
         self.place_id.as_deref()
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
@@ -60,15 +60,15 @@ impl GetPlaceInput {
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetPlaceInput {
+impl  ::std::fmt::Debug for GetPlaceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlaceInput");
         formatter.field("index_name", &self.index_name);
@@ -103,8 +103,7 @@ impl GetPlaceInputBuilder {
     }
     /// <p>The name of the place index resource that you want to use for the search.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the place index resource that you want to use for the search.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl GetPlaceInputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.place_id = input;
-        self
+        self.place_id = input; self
     }
     /// <p>The identifier of the place to find.</p>
     /// <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p>
@@ -185,8 +183,7 @@ impl GetPlaceInputBuilder {
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -203,8 +200,7 @@ impl GetPlaceInputBuilder {
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,12 +208,18 @@ impl GetPlaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPlaceInput`](crate::operation::get_place::GetPlaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_place::GetPlaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_place::GetPlaceInput {
-            index_name: self.index_name,
-            place_id: self.place_id,
-            language: self.language,
-            key: self.key,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_place::GetPlaceInput {
+                index_name: self.index_name
+                ,
+                place_id: self.place_id
+                ,
+                language: self.language
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetPlaceInputBuilder {
@@ -230,3 +232,4 @@ impl ::std::fmt::Debug for GetPlaceInputBuilder {
         formatter.finish()
     }
 }
+

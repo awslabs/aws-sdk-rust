@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIpamResourceDiscoveries`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`ipam_resource_discovery_ids(impl Into<String>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::ipam_resource_discovery_ids) / [`set_ipam_resource_discovery_ids(Option<Vec::<String>>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::set_ipam_resource_discovery_ids):<br>required: **false**<br><p>The IPAM resource discovery IDs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resource discoveries to return in one page of results.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::set_filters):<br>required: **false**<br><p>The resource discovery filters.</p><br>
-    /// - On success, responds with [`DescribeIpamResourceDiscoveriesOutput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput) with field(s):
+                            /// - On success, responds with [`DescribeIpamResourceDiscoveriesOutput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput) with field(s):
     ///   - [`ipam_resource_discoveries(Option<Vec::<IpamResourceDiscovery>>)`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput::ipam_resource_discoveries): <p>The resource discoveries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeIpamResourceDiscoveriesError>`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError)
-    pub fn describe_ipam_resource_discoveries(
-        &self,
-    ) -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder {
-        crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeIpamResourceDiscoveriesError>`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesError)
+    pub fn describe_ipam_resource_discoveries(&self) -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder {
+                                crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

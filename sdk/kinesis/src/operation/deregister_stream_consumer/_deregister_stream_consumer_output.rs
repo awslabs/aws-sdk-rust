@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterStreamConsumerOutput {
+pub struct DeregisterStreamConsumerOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeregisterStreamConsumerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeregisterStreamConsumerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput).
     pub fn builder() -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeregisterStreamConsumerOutputBuilder {
 }
 impl DeregisterStreamConsumerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput).
     pub fn build(self) -> crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput {
         crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput {
@@ -40,3 +40,4 @@ impl DeregisterStreamConsumerOutputBuilder {
         }
     }
 }
+

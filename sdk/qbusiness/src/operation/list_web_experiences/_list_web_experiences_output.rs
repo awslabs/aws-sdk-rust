@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWebExperiencesOutput {
+pub struct ListWebExperiencesOutput  {
     /// <p>An array of summary information for one or more Amazon Q experiences.</p>
-    pub web_experiences: ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>>,
+    pub web_experiences: ::std::option::Option<::std::vec::Vec::<crate::types::WebExperience>>,
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWebExperiencesOutput {
+impl  ListWebExperiencesOutput  {
     /// <p>An array of summary information for one or more Amazon Q experiences.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.web_experiences.is_none()`.
-    pub fn web_experiences(&self) -> &[crate::types::WebExperience] {
-        self.web_experiences.as_deref().unwrap_or_default()
+    pub fn web_experiences(&self) -> & [crate::types::WebExperience] {
+        self.web_experiences.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWebExperiencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWebExperiencesOutput {
     /// Creates a new builder-style object to manufacture [`ListWebExperiencesOutput`](crate::operation::list_web_experiences::ListWebExperiencesOutput).
     pub fn builder() -> crate::operation::list_web_experiences::builders::ListWebExperiencesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListWebExperiencesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebExperiencesOutputBuilder {
-    pub(crate) web_experiences: ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>>,
+    pub(crate) web_experiences: ::std::option::Option<::std::vec::Vec::<crate::types::WebExperience>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListWebExperiencesOutputBuilder {
     /// <p>An array of summary information for one or more Amazon Q experiences.</p>
     pub fn web_experiences(mut self, input: crate::types::WebExperience) -> Self {
         let mut v = self.web_experiences.unwrap_or_default();
-        v.push(input);
-        self.web_experiences = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.web_experiences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of summary information for one or more Amazon Q experiences.</p>
-    pub fn set_web_experiences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>>) -> Self {
-        self.web_experiences = input;
-        self
+    pub fn set_web_experiences(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WebExperience>>) -> Self {
+        self.web_experiences = input; self
     }
     /// <p>An array of summary information for one or more Amazon Q experiences.</p>
-    pub fn get_web_experiences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebExperience>> {
+    pub fn get_web_experiences(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WebExperience>> {
         &self.web_experiences
     }
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
@@ -69,28 +69,30 @@ impl ListWebExperiencesOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWebExperiencesOutput`](crate::operation::list_web_experiences::ListWebExperiencesOutput).
     pub fn build(self) -> crate::operation::list_web_experiences::ListWebExperiencesOutput {
         crate::operation::list_web_experiences::ListWebExperiencesOutput {
-            web_experiences: self.web_experiences,
-            next_token: self.next_token,
+            web_experiences: self.web_experiences
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

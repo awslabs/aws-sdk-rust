@@ -3,13 +3,13 @@
 /// <p>The resolved attributes specific to the text generation problem type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextGenerationResolvedAttributes {
+pub struct TextGenerationResolvedAttributes  {
     /// <p>The name of the base model to fine-tune.</p>
     pub base_model_name: ::std::option::Option<::std::string::String>,
 }
-impl TextGenerationResolvedAttributes {
+impl  TextGenerationResolvedAttributes  {
     /// <p>The name of the base model to fine-tune.</p>
-    pub fn base_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn base_model_name(&self) -> ::std::option::Option<& str> {
         self.base_model_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TextGenerationResolvedAttributesBuilder {
     }
     /// <p>The name of the base model to fine-tune.</p>
     pub fn set_base_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_model_name = input;
-        self
+        self.base_model_name = input; self
     }
     /// <p>The name of the base model to fine-tune.</p>
     pub fn get_base_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl TextGenerationResolvedAttributesBuilder {
     /// Consumes the builder and constructs a [`TextGenerationResolvedAttributes`](crate::types::TextGenerationResolvedAttributes).
     pub fn build(self) -> crate::types::TextGenerationResolvedAttributes {
         crate::types::TextGenerationResolvedAttributes {
-            base_model_name: self.base_model_name,
+            base_model_name: self.base_model_name
+            ,
         }
     }
 }
+

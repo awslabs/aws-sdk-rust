@@ -3,15 +3,13 @@
 /// <p>The training data configuration to use when creating a domain recommender or custom solution version (trained model).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingDataConfig {
+pub struct TrainingDataConfig  {
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations. For example, you might have a column that you want to use only to filter recommendations. You can exclude this column from training and Amazon Personalize considers it only when filtering.</p>
-    pub excluded_dataset_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub excluded_dataset_columns: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl TrainingDataConfig {
+impl  TrainingDataConfig  {
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations. For example, you might have a column that you want to use only to filter recommendations. You can exclude this column from training and Amazon Personalize considers it only when filtering.</p>
-    pub fn excluded_dataset_columns(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn excluded_dataset_columns(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.excluded_dataset_columns.as_ref()
     }
 }
@@ -26,8 +24,7 @@ impl TrainingDataConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataConfigBuilder {
-    pub(crate) excluded_dataset_columns:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) excluded_dataset_columns: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl TrainingDataConfigBuilder {
     /// Adds a key-value pair to `excluded_dataset_columns`.
@@ -35,34 +32,26 @@ impl TrainingDataConfigBuilder {
     /// To override the contents of this collection use [`set_excluded_dataset_columns`](Self::set_excluded_dataset_columns).
     ///
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations. For example, you might have a column that you want to use only to filter recommendations. You can exclude this column from training and Amazon Personalize considers it only when filtering.</p>
-    pub fn excluded_dataset_columns(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_dataset_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.excluded_dataset_columns.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.excluded_dataset_columns = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.excluded_dataset_columns = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations. For example, you might have a column that you want to use only to filter recommendations. You can exclude this column from training and Amazon Personalize considers it only when filtering.</p>
-    pub fn set_excluded_dataset_columns(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.excluded_dataset_columns = input;
-        self
+    pub fn set_excluded_dataset_columns(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.excluded_dataset_columns = input; self
     }
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations. For example, you might have a column that you want to use only to filter recommendations. You can exclude this column from training and Amazon Personalize considers it only when filtering.</p>
-    pub fn get_excluded_dataset_columns(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_excluded_dataset_columns(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.excluded_dataset_columns
     }
     /// Consumes the builder and constructs a [`TrainingDataConfig`](crate::types::TrainingDataConfig).
     pub fn build(self) -> crate::types::TrainingDataConfig {
         crate::types::TrainingDataConfig {
-            excluded_dataset_columns: self.excluded_dataset_columns,
+            excluded_dataset_columns: self.excluded_dataset_columns
+            ,
         }
     }
 }
+

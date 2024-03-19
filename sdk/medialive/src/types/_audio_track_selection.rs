@@ -3,21 +3,22 @@
 /// Audio Track Selection
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioTrackSelection {
+pub struct AudioTrackSelection  {
     /// Selects one or more unique audio tracks from within a source.
-    pub tracks: ::std::option::Option<::std::vec::Vec<crate::types::AudioTrack>>,
+    pub tracks: ::std::option::Option<::std::vec::Vec::<crate::types::AudioTrack>>,
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
     pub dolby_e_decode: ::std::option::Option<crate::types::AudioDolbyEDecode>,
 }
-impl AudioTrackSelection {
+impl  AudioTrackSelection  {
     /// Selects one or more unique audio tracks from within a source.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracks.is_none()`.
-    pub fn tracks(&self) -> &[crate::types::AudioTrack] {
-        self.tracks.as_deref().unwrap_or_default()
+    pub fn tracks(&self) -> & [crate::types::AudioTrack] {
+        self.tracks.as_deref()
+        .unwrap_or_default()
     }
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
-    pub fn dolby_e_decode(&self) -> ::std::option::Option<&crate::types::AudioDolbyEDecode> {
+    pub fn dolby_e_decode(&self) -> ::std::option::Option<& crate::types::AudioDolbyEDecode> {
         self.dolby_e_decode.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl AudioTrackSelection {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioTrackSelectionBuilder {
-    pub(crate) tracks: ::std::option::Option<::std::vec::Vec<crate::types::AudioTrack>>,
+    pub(crate) tracks: ::std::option::Option<::std::vec::Vec::<crate::types::AudioTrack>>,
     pub(crate) dolby_e_decode: ::std::option::Option<crate::types::AudioDolbyEDecode>,
 }
 impl AudioTrackSelectionBuilder {
@@ -43,17 +44,16 @@ impl AudioTrackSelectionBuilder {
     /// Selects one or more unique audio tracks from within a source.
     pub fn tracks(mut self, input: crate::types::AudioTrack) -> Self {
         let mut v = self.tracks.unwrap_or_default();
-        v.push(input);
-        self.tracks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tracks = ::std::option::Option::Some(v);
+                        self
     }
     /// Selects one or more unique audio tracks from within a source.
-    pub fn set_tracks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioTrack>>) -> Self {
-        self.tracks = input;
-        self
+    pub fn set_tracks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudioTrack>>) -> Self {
+        self.tracks = input; self
     }
     /// Selects one or more unique audio tracks from within a source.
-    pub fn get_tracks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioTrack>> {
+    pub fn get_tracks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudioTrack>> {
         &self.tracks
     }
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
@@ -63,8 +63,7 @@ impl AudioTrackSelectionBuilder {
     }
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
     pub fn set_dolby_e_decode(mut self, input: ::std::option::Option<crate::types::AudioDolbyEDecode>) -> Self {
-        self.dolby_e_decode = input;
-        self
+        self.dolby_e_decode = input; self
     }
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
     pub fn get_dolby_e_decode(&self) -> &::std::option::Option<crate::types::AudioDolbyEDecode> {
@@ -73,8 +72,11 @@ impl AudioTrackSelectionBuilder {
     /// Consumes the builder and constructs a [`AudioTrackSelection`](crate::types::AudioTrackSelection).
     pub fn build(self) -> crate::types::AudioTrackSelection {
         crate::types::AudioTrackSelection {
-            tracks: self.tracks,
-            dolby_e_decode: self.dolby_e_decode,
+            tracks: self.tracks
+            ,
+            dolby_e_decode: self.dolby_e_decode
+            ,
         }
     }
 }
+

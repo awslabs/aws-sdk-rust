@@ -13,7 +13,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSnapshotScheduleInput {
+pub struct UpdateSnapshotScheduleInput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -25,11 +25,11 @@ pub struct UpdateSnapshotScheduleInput {
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UpdateSnapshotScheduleInput {
+impl  UpdateSnapshotScheduleInput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -41,16 +41,17 @@ impl UpdateSnapshotScheduleInput {
         self.recurrence_in_hours
     }
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateSnapshotScheduleInput {
@@ -68,7 +69,7 @@ pub struct UpdateSnapshotScheduleInputBuilder {
     pub(crate) start_at: ::std::option::Option<i32>,
     pub(crate) recurrence_in_hours: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UpdateSnapshotScheduleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
@@ -79,8 +80,7 @@ impl UpdateSnapshotScheduleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +94,7 @@ impl UpdateSnapshotScheduleInputBuilder {
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn set_start_at(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_at = input;
-        self
+        self.start_at = input; self
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn get_start_at(&self) -> &::std::option::Option<i32> {
@@ -109,8 +108,7 @@ impl UpdateSnapshotScheduleInputBuilder {
     }
     /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
     pub fn set_recurrence_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.recurrence_in_hours = input;
-        self
+        self.recurrence_in_hours = input; self
     }
     /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
     pub fn get_recurrence_in_hours(&self) -> &::std::option::Option<i32> {
@@ -123,8 +121,7 @@ impl UpdateSnapshotScheduleInputBuilder {
     }
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Optional description of the snapshot that overwrites the existing description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,36 +136,38 @@ impl UpdateSnapshotScheduleInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotScheduleInput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput {
-            volume_arn: self.volume_arn,
-            start_at: self.start_at,
-            recurrence_in_hours: self.recurrence_in_hours,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput {
+                volume_arn: self.volume_arn
+                ,
+                start_at: self.start_at
+                ,
+                recurrence_in_hours: self.recurrence_in_hours
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Specifies configuration for how an endpoint performs asynchronous inference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AsyncInferenceConfig {
+pub struct AsyncInferenceConfig  {
     /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
     pub client_config: ::std::option::Option<crate::types::AsyncInferenceClientConfig>,
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
     pub output_config: ::std::option::Option<crate::types::AsyncInferenceOutputConfig>,
 }
-impl AsyncInferenceConfig {
+impl  AsyncInferenceConfig  {
     /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
-    pub fn client_config(&self) -> ::std::option::Option<&crate::types::AsyncInferenceClientConfig> {
+    pub fn client_config(&self) -> ::std::option::Option<& crate::types::AsyncInferenceClientConfig> {
         self.client_config.as_ref()
     }
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::AsyncInferenceOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::AsyncInferenceOutputConfig> {
         self.output_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AsyncInferenceConfigBuilder {
     }
     /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
     pub fn set_client_config(mut self, input: ::std::option::Option<crate::types::AsyncInferenceClientConfig>) -> Self {
-        self.client_config = input;
-        self
+        self.client_config = input; self
     }
     /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
     pub fn get_client_config(&self) -> &::std::option::Option<crate::types::AsyncInferenceClientConfig> {
@@ -56,8 +55,7 @@ impl AsyncInferenceConfigBuilder {
     }
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::AsyncInferenceOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::AsyncInferenceOutputConfig> {
@@ -66,8 +64,11 @@ impl AsyncInferenceConfigBuilder {
     /// Consumes the builder and constructs a [`AsyncInferenceConfig`](crate::types::AsyncInferenceConfig).
     pub fn build(self) -> crate::types::AsyncInferenceConfig {
         crate::types::AsyncInferenceConfig {
-            client_config: self.client_config,
-            output_config: self.output_config,
+            client_config: self.client_config
+            ,
+            output_config: self.output_config
+            ,
         }
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BaseKpiResult {
+pub struct BaseKpiResult  {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
+    pub rows: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>>,
 }
-impl BaseKpiResult {
+impl  BaseKpiResult  {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
-    pub fn rows(&self) -> &[crate::types::ResultRow] {
-        self.rows.as_deref().unwrap_or_default()
+    pub fn rows(&self) -> & [crate::types::ResultRow] {
+        self.rows.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BaseKpiResult {
@@ -26,7 +27,7 @@ impl BaseKpiResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaseKpiResultBuilder {
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>>,
 }
 impl BaseKpiResultBuilder {
     /// Appends an item to `rows`.
@@ -36,21 +37,24 @@ impl BaseKpiResultBuilder {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     pub fn rows(mut self, input: crate::types::ResultRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>>) -> Self {
+        self.rows = input; self
     }
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRow>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>> {
         &self.rows
     }
     /// Consumes the builder and constructs a [`BaseKpiResult`](crate::types::BaseKpiResult).
     pub fn build(self) -> crate::types::BaseKpiResult {
-        crate::types::BaseKpiResult { rows: self.rows }
+        crate::types::BaseKpiResult {
+            rows: self.rows
+            ,
+        }
     }
 }
+

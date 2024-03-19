@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFileCacheOutput {
+pub struct CreateFileCacheOutput  {
     /// <p>A description of the cache that was created.</p>
     pub file_cache: ::std::option::Option<crate::types::FileCacheCreating>,
     _request_id: Option<String>,
 }
-impl CreateFileCacheOutput {
+impl  CreateFileCacheOutput  {
     /// <p>A description of the cache that was created.</p>
-    pub fn file_cache(&self) -> ::std::option::Option<&crate::types::FileCacheCreating> {
+    pub fn file_cache(&self) -> ::std::option::Option<& crate::types::FileCacheCreating> {
         self.file_cache.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFileCacheOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileCacheOutput`](crate::operation::create_file_cache::CreateFileCacheOutput).
     pub fn builder() -> crate::operation::create_file_cache::builders::CreateFileCacheOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateFileCacheOutputBuilder {
     }
     /// <p>A description of the cache that was created.</p>
     pub fn set_file_cache(mut self, input: ::std::option::Option<crate::types::FileCacheCreating>) -> Self {
-        self.file_cache = input;
-        self
+        self.file_cache = input; self
     }
     /// <p>A description of the cache that was created.</p>
     pub fn get_file_cache(&self) -> &::std::option::Option<crate::types::FileCacheCreating> {
         &self.file_cache
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFileCacheOutput`](crate::operation::create_file_cache::CreateFileCacheOutput).
     pub fn build(self) -> crate::operation::create_file_cache::CreateFileCacheOutput {
         crate::operation::create_file_cache::CreateFileCacheOutput {
-            file_cache: self.file_cache,
+            file_cache: self.file_cache
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

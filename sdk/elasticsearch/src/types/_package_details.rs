@@ -3,7 +3,7 @@
 /// <p>Basic information about a package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageDetails {
+pub struct PackageDetails  {
     /// <p>Internal ID of the package.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>User specified name of the package.</p>
@@ -23,41 +23,41 @@ pub struct PackageDetails {
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl PackageDetails {
+impl  PackageDetails  {
     /// <p>Internal ID of the package.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>User specified name of the package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
-    pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> ::std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>User-specified description of the package.</p>
-    pub fn package_description(&self) -> ::std::option::Option<&str> {
+    pub fn package_description(&self) -> ::std::option::Option<& str> {
         self.package_description.as_deref()
     }
     /// <p>Current state of the package. Values are COPYING/COPY_FAILED/AVAILABLE/DELETING/DELETE_FAILED</p>
-    pub fn package_status(&self) -> ::std::option::Option<&crate::types::PackageStatus> {
+    pub fn package_status(&self) -> ::std::option::Option<& crate::types::PackageStatus> {
         self.package_status.as_ref()
     }
     /// <p>Timestamp which tells creation date of the package.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn available_package_version(&self) -> ::std::option::Option<&str> {
+    pub fn available_package_version(&self) -> ::std::option::Option<& str> {
         self.available_package_version.as_deref()
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Internal ID of the package.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>Internal ID of the package.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>User specified name of the package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>User specified name of the package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
     pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
-        self.package_type = input;
-        self
+        self.package_type = input; self
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
     pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
@@ -132,8 +129,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>User-specified description of the package.</p>
     pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_description = input;
-        self
+        self.package_description = input; self
     }
     /// <p>User-specified description of the package.</p>
     pub fn get_package_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Current state of the package. Values are COPYING/COPY_FAILED/AVAILABLE/DELETING/DELETE_FAILED</p>
     pub fn set_package_status(mut self, input: ::std::option::Option<crate::types::PackageStatus>) -> Self {
-        self.package_status = input;
-        self
+        self.package_status = input; self
     }
     /// <p>Current state of the package. Values are COPYING/COPY_FAILED/AVAILABLE/DELETING/DELETE_FAILED</p>
     pub fn get_package_status(&self) -> &::std::option::Option<crate::types::PackageStatus> {
@@ -160,8 +155,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Timestamp which tells creation date of the package.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Timestamp which tells creation date of the package.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +168,7 @@ impl PackageDetailsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +181,7 @@ impl PackageDetailsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_available_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.available_package_version = input;
-        self
+        self.available_package_version = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_available_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -212,15 +203,25 @@ impl PackageDetailsBuilder {
     /// Consumes the builder and constructs a [`PackageDetails`](crate::types::PackageDetails).
     pub fn build(self) -> crate::types::PackageDetails {
         crate::types::PackageDetails {
-            package_id: self.package_id,
-            package_name: self.package_name,
-            package_type: self.package_type,
-            package_description: self.package_description,
-            package_status: self.package_status,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            available_package_version: self.available_package_version,
-            error_details: self.error_details,
+            package_id: self.package_id
+            ,
+            package_name: self.package_name
+            ,
+            package_type: self.package_type
+            ,
+            package_description: self.package_description
+            ,
+            package_status: self.package_status
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            available_package_version: self.available_package_version
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SequenceNumberRange {
+pub struct SequenceNumberRange  {
     /// <p>The starting sequence number for the range.</p>
     pub starting_sequence_number: ::std::string::String,
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
     pub ending_sequence_number: ::std::option::Option<::std::string::String>,
 }
-impl SequenceNumberRange {
+impl  SequenceNumberRange  {
     /// <p>The starting sequence number for the range.</p>
-    pub fn starting_sequence_number(&self) -> &str {
-        use std::ops::Deref;
-        self.starting_sequence_number.deref()
+    pub fn starting_sequence_number(&self) -> & str {
+        use std::ops::Deref; self.starting_sequence_number.deref()
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    pub fn ending_sequence_number(&self) -> ::std::option::Option<&str> {
+    pub fn ending_sequence_number(&self) -> ::std::option::Option<& str> {
         self.ending_sequence_number.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl SequenceNumberRangeBuilder {
     }
     /// <p>The starting sequence number for the range.</p>
     pub fn set_starting_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_sequence_number = input;
-        self
+        self.starting_sequence_number = input; self
     }
     /// <p>The starting sequence number for the range.</p>
     pub fn get_starting_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SequenceNumberRangeBuilder {
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
     pub fn set_ending_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ending_sequence_number = input;
-        self
+        self.ending_sequence_number = input; self
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
     pub fn get_ending_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl SequenceNumberRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`starting_sequence_number`](crate::types::builders::SequenceNumberRangeBuilder::starting_sequence_number)
     pub fn build(self) -> ::std::result::Result<crate::types::SequenceNumberRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SequenceNumberRange {
-            starting_sequence_number: self.starting_sequence_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "starting_sequence_number",
-                    "starting_sequence_number was not specified but it is required when building SequenceNumberRange",
-                )
-            })?,
-            ending_sequence_number: self.ending_sequence_number,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SequenceNumberRange {
+                starting_sequence_number: self.starting_sequence_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("starting_sequence_number", "starting_sequence_number was not specified but it is required when building SequenceNumberRange")
+                    )?
+                ,
+                ending_sequence_number: self.ending_sequence_number
+                ,
+            }
+        )
     }
 }
+

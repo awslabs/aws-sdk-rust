@@ -3,7 +3,7 @@
 /// <p>Specifies the settings and content for the default message and any default messages that you tailored for specific channels.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectMessageConfiguration {
+pub struct DirectMessageConfiguration  {
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub adm_message: ::std::option::Option<crate::types::AdmMessage>,
     /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
@@ -23,41 +23,41 @@ pub struct DirectMessageConfiguration {
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
     pub voice_message: ::std::option::Option<crate::types::VoiceMessage>,
 }
-impl DirectMessageConfiguration {
+impl  DirectMessageConfiguration  {
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    pub fn adm_message(&self) -> ::std::option::Option<&crate::types::AdmMessage> {
+    pub fn adm_message(&self) -> ::std::option::Option<& crate::types::AdmMessage> {
         self.adm_message.as_ref()
     }
     /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    pub fn apns_message(&self) -> ::std::option::Option<&crate::types::ApnsMessage> {
+    pub fn apns_message(&self) -> ::std::option::Option<& crate::types::ApnsMessage> {
         self.apns_message.as_ref()
     }
     /// <p>The default push notification message for the Baidu (Baidu Cloud Push) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    pub fn baidu_message(&self) -> ::std::option::Option<&crate::types::BaiduMessage> {
+    pub fn baidu_message(&self) -> ::std::option::Option<& crate::types::BaiduMessage> {
         self.baidu_message.as_ref()
     }
     /// <p>The default message for all channels.</p>
-    pub fn default_message(&self) -> ::std::option::Option<&crate::types::DefaultMessage> {
+    pub fn default_message(&self) -> ::std::option::Option<& crate::types::DefaultMessage> {
         self.default_message.as_ref()
     }
     /// <p>The default push notification message for all push notification channels.</p>
-    pub fn default_push_notification_message(&self) -> ::std::option::Option<&crate::types::DefaultPushNotificationMessage> {
+    pub fn default_push_notification_message(&self) -> ::std::option::Option<& crate::types::DefaultPushNotificationMessage> {
         self.default_push_notification_message.as_ref()
     }
     /// <p>The default message for the email channel. This message overrides the default message (DefaultMessage).</p>
-    pub fn email_message(&self) -> ::std::option::Option<&crate::types::EmailMessage> {
+    pub fn email_message(&self) -> ::std::option::Option<& crate::types::EmailMessage> {
         self.email_message.as_ref()
     }
     /// <p>The default push notification message for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
-    pub fn gcm_message(&self) -> ::std::option::Option<&crate::types::GcmMessage> {
+    pub fn gcm_message(&self) -> ::std::option::Option<& crate::types::GcmMessage> {
         self.gcm_message.as_ref()
     }
     /// <p>The default message for the SMS channel. This message overrides the default message (DefaultMessage).</p>
-    pub fn sms_message(&self) -> ::std::option::Option<&crate::types::SmsMessage> {
+    pub fn sms_message(&self) -> ::std::option::Option<& crate::types::SmsMessage> {
         self.sms_message.as_ref()
     }
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
-    pub fn voice_message(&self) -> ::std::option::Option<&crate::types::VoiceMessage> {
+    pub fn voice_message(&self) -> ::std::option::Option<& crate::types::VoiceMessage> {
         self.voice_message.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn set_adm_message(mut self, input: ::std::option::Option<crate::types::AdmMessage>) -> Self {
-        self.adm_message = input;
-        self
+        self.adm_message = input; self
     }
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn get_adm_message(&self) -> &::std::option::Option<crate::types::AdmMessage> {
@@ -104,8 +103,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn set_apns_message(mut self, input: ::std::option::Option<crate::types::ApnsMessage>) -> Self {
-        self.apns_message = input;
-        self
+        self.apns_message = input; self
     }
     /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn get_apns_message(&self) -> &::std::option::Option<crate::types::ApnsMessage> {
@@ -118,8 +116,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default push notification message for the Baidu (Baidu Cloud Push) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn set_baidu_message(mut self, input: ::std::option::Option<crate::types::BaiduMessage>) -> Self {
-        self.baidu_message = input;
-        self
+        self.baidu_message = input; self
     }
     /// <p>The default push notification message for the Baidu (Baidu Cloud Push) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn get_baidu_message(&self) -> &::std::option::Option<crate::types::BaiduMessage> {
@@ -132,8 +129,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default message for all channels.</p>
     pub fn set_default_message(mut self, input: ::std::option::Option<crate::types::DefaultMessage>) -> Self {
-        self.default_message = input;
-        self
+        self.default_message = input; self
     }
     /// <p>The default message for all channels.</p>
     pub fn get_default_message(&self) -> &::std::option::Option<crate::types::DefaultMessage> {
@@ -146,8 +142,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default push notification message for all push notification channels.</p>
     pub fn set_default_push_notification_message(mut self, input: ::std::option::Option<crate::types::DefaultPushNotificationMessage>) -> Self {
-        self.default_push_notification_message = input;
-        self
+        self.default_push_notification_message = input; self
     }
     /// <p>The default push notification message for all push notification channels.</p>
     pub fn get_default_push_notification_message(&self) -> &::std::option::Option<crate::types::DefaultPushNotificationMessage> {
@@ -160,8 +155,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default message for the email channel. This message overrides the default message (DefaultMessage).</p>
     pub fn set_email_message(mut self, input: ::std::option::Option<crate::types::EmailMessage>) -> Self {
-        self.email_message = input;
-        self
+        self.email_message = input; self
     }
     /// <p>The default message for the email channel. This message overrides the default message (DefaultMessage).</p>
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::EmailMessage> {
@@ -174,8 +168,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default push notification message for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn set_gcm_message(mut self, input: ::std::option::Option<crate::types::GcmMessage>) -> Self {
-        self.gcm_message = input;
-        self
+        self.gcm_message = input; self
     }
     /// <p>The default push notification message for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     pub fn get_gcm_message(&self) -> &::std::option::Option<crate::types::GcmMessage> {
@@ -188,8 +181,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default message for the SMS channel. This message overrides the default message (DefaultMessage).</p>
     pub fn set_sms_message(mut self, input: ::std::option::Option<crate::types::SmsMessage>) -> Self {
-        self.sms_message = input;
-        self
+        self.sms_message = input; self
     }
     /// <p>The default message for the SMS channel. This message overrides the default message (DefaultMessage).</p>
     pub fn get_sms_message(&self) -> &::std::option::Option<crate::types::SmsMessage> {
@@ -202,8 +194,7 @@ impl DirectMessageConfigurationBuilder {
     }
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
     pub fn set_voice_message(mut self, input: ::std::option::Option<crate::types::VoiceMessage>) -> Self {
-        self.voice_message = input;
-        self
+        self.voice_message = input; self
     }
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
     pub fn get_voice_message(&self) -> &::std::option::Option<crate::types::VoiceMessage> {
@@ -212,15 +203,25 @@ impl DirectMessageConfigurationBuilder {
     /// Consumes the builder and constructs a [`DirectMessageConfiguration`](crate::types::DirectMessageConfiguration).
     pub fn build(self) -> crate::types::DirectMessageConfiguration {
         crate::types::DirectMessageConfiguration {
-            adm_message: self.adm_message,
-            apns_message: self.apns_message,
-            baidu_message: self.baidu_message,
-            default_message: self.default_message,
-            default_push_notification_message: self.default_push_notification_message,
-            email_message: self.email_message,
-            gcm_message: self.gcm_message,
-            sms_message: self.sms_message,
-            voice_message: self.voice_message,
+            adm_message: self.adm_message
+            ,
+            apns_message: self.apns_message
+            ,
+            baidu_message: self.baidu_message
+            ,
+            default_message: self.default_message
+            ,
+            default_push_notification_message: self.default_push_notification_message
+            ,
+            email_message: self.email_message
+            ,
+            gcm_message: self.gcm_message
+            ,
+            sms_message: self.sms_message
+            ,
+            voice_message: self.voice_message
+            ,
         }
     }
 }
+

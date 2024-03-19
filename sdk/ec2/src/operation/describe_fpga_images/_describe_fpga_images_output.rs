@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFpgaImagesOutput {
+pub struct DescribeFpgaImagesOutput  {
     /// <p>Information about the FPGA images.</p>
-    pub fpga_images: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>,
+    pub fpga_images: ::std::option::Option<::std::vec::Vec::<crate::types::FpgaImage>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFpgaImagesOutput {
+impl  DescribeFpgaImagesOutput  {
     /// <p>Information about the FPGA images.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fpga_images.is_none()`.
-    pub fn fpga_images(&self) -> &[crate::types::FpgaImage] {
-        self.fpga_images.as_deref().unwrap_or_default()
+    pub fn fpga_images(&self) -> & [crate::types::FpgaImage] {
+        self.fpga_images.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFpgaImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFpgaImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
     pub fn builder() -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeFpgaImagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFpgaImagesOutputBuilder {
-    pub(crate) fpga_images: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>,
+    pub(crate) fpga_images: ::std::option::Option<::std::vec::Vec::<crate::types::FpgaImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeFpgaImagesOutputBuilder {
     /// <p>Information about the FPGA images.</p>
     pub fn fpga_images(mut self, input: crate::types::FpgaImage) -> Self {
         let mut v = self.fpga_images.unwrap_or_default();
-        v.push(input);
-        self.fpga_images = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fpga_images = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the FPGA images.</p>
-    pub fn set_fpga_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>) -> Self {
-        self.fpga_images = input;
-        self
+    pub fn set_fpga_images(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FpgaImage>>) -> Self {
+        self.fpga_images = input; self
     }
     /// <p>Information about the FPGA images.</p>
-    pub fn get_fpga_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>> {
+    pub fn get_fpga_images(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FpgaImage>> {
         &self.fpga_images
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl DescribeFpgaImagesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
     pub fn build(self) -> crate::operation::describe_fpga_images::DescribeFpgaImagesOutput {
         crate::operation::describe_fpga_images::DescribeFpgaImagesOutput {
-            fpga_images: self.fpga_images,
-            next_token: self.next_token,
+            fpga_images: self.fpga_images
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Feature specific configuration for the training job. Configuration provided for the job must match the feature type parameter associated with project. If configuration and feature type do not match an InvalidParameterException is returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomizationFeatureConfig {
+pub struct CustomizationFeatureConfig  {
     /// <p>Configuration options for Custom Moderation training.</p>
     pub content_moderation: ::std::option::Option<crate::types::CustomizationFeatureContentModerationConfig>,
 }
-impl CustomizationFeatureConfig {
+impl  CustomizationFeatureConfig  {
     /// <p>Configuration options for Custom Moderation training.</p>
-    pub fn content_moderation(&self) -> ::std::option::Option<&crate::types::CustomizationFeatureContentModerationConfig> {
+    pub fn content_moderation(&self) -> ::std::option::Option<& crate::types::CustomizationFeatureContentModerationConfig> {
         self.content_moderation.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl CustomizationFeatureConfigBuilder {
     }
     /// <p>Configuration options for Custom Moderation training.</p>
     pub fn set_content_moderation(mut self, input: ::std::option::Option<crate::types::CustomizationFeatureContentModerationConfig>) -> Self {
-        self.content_moderation = input;
-        self
+        self.content_moderation = input; self
     }
     /// <p>Configuration options for Custom Moderation training.</p>
     pub fn get_content_moderation(&self) -> &::std::option::Option<crate::types::CustomizationFeatureContentModerationConfig> {
@@ -44,7 +43,9 @@ impl CustomizationFeatureConfigBuilder {
     /// Consumes the builder and constructs a [`CustomizationFeatureConfig`](crate::types::CustomizationFeatureConfig).
     pub fn build(self) -> crate::types::CustomizationFeatureConfig {
         crate::types::CustomizationFeatureConfig {
-            content_moderation: self.content_moderation,
+            content_moderation: self.content_moderation
+            ,
         }
     }
 }
+

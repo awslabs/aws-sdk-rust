@@ -3,13 +3,13 @@
 /// Placeholder documentation for DeleteReservationRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReservationInput {
+pub struct DeleteReservationInput  {
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReservationInput {
+impl  DeleteReservationInput  {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteReservationInputBuilder {
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_id = input;
-        self
+        self.reservation_id = input; self
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reservation_id
     }
     /// Consumes the builder and constructs a [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_reservation::DeleteReservationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_reservation::DeleteReservationInput {
-            reservation_id: self.reservation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_reservation::DeleteReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_reservation::DeleteReservationInput {
+                reservation_id: self.reservation_id
+                ,
+            }
+        )
     }
 }
+

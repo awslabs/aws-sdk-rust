@@ -3,13 +3,13 @@
 /// <p>The LoRaWAN information used to start a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanStartFuotaTask {
+pub struct LoRaWanStartFuotaTask  {
     /// <p>Start time of a FUOTA task.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LoRaWanStartFuotaTask {
+impl  LoRaWanStartFuotaTask  {
     /// <p>Start time of a FUOTA task.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LoRaWanStartFuotaTaskBuilder {
     }
     /// <p>Start time of a FUOTA task.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Start time of a FUOTA task.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -43,6 +42,10 @@ impl LoRaWanStartFuotaTaskBuilder {
     }
     /// Consumes the builder and constructs a [`LoRaWanStartFuotaTask`](crate::types::LoRaWanStartFuotaTask).
     pub fn build(self) -> crate::types::LoRaWanStartFuotaTask {
-        crate::types::LoRaWanStartFuotaTask { start_time: self.start_time }
+        crate::types::LoRaWanStartFuotaTask {
+            start_time: self.start_time
+            ,
+        }
     }
 }
+

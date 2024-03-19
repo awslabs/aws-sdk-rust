@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportCertificateAuthorityCertificateInput {
+pub struct ImportCertificateAuthorityCertificateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
@@ -12,19 +12,19 @@ pub struct ImportCertificateAuthorityCertificateInput {
     /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
     pub certificate_chain: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl ImportCertificateAuthorityCertificateInput {
+impl  ImportCertificateAuthorityCertificateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn certificate(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.certificate.as_ref()
     }
     /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding.</p>
     /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.certificate_chain.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ImportCertificateAuthorityCertificateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
@@ -70,8 +69,7 @@ impl ImportCertificateAuthorityCertificateInputBuilder {
     }
     /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -86,8 +84,7 @@ impl ImportCertificateAuthorityCertificateInputBuilder {
     /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding.</p>
     /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding.</p>
     /// <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
@@ -95,18 +92,17 @@ impl ImportCertificateAuthorityCertificateInputBuilder {
         &self.certificate_chain
     }
     /// Consumes the builder and constructs a [`ImportCertificateAuthorityCertificateInput`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateInput {
-                certificate_authority_arn: self.certificate_authority_arn,
-                certificate: self.certificate,
-                certificate_chain: self.certificate_chain,
-            },
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+            }
         )
     }
 }
+

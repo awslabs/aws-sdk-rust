@@ -3,15 +3,15 @@
 /// <p>A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustedSigners {
+pub struct TrustedSigners  {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub enabled: bool,
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub quantity: i32,
     /// <p>A list of Amazon Web Services account identifiers.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TrustedSigners {
+impl  TrustedSigners  {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -21,10 +21,11 @@ impl TrustedSigners {
         self.quantity
     }
     /// <p>A list of Amazon Web Services account identifiers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[::std::string::String] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [::std::string::String] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TrustedSigners {
@@ -40,7 +41,7 @@ impl TrustedSigners {
 pub struct TrustedSignersBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TrustedSignersBuilder {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
@@ -51,8 +52,7 @@ impl TrustedSignersBuilder {
     }
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -66,8 +66,7 @@ impl TrustedSignersBuilder {
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -80,17 +79,16 @@ impl TrustedSignersBuilder {
     /// <p>A list of Amazon Web Services account identifiers.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services account identifiers.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// <p>A list of Amazon Web Services account identifiers.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`TrustedSigners`](crate::types::TrustedSigners).
@@ -98,20 +96,22 @@ impl TrustedSignersBuilder {
     /// - [`enabled`](crate::types::builders::TrustedSignersBuilder::enabled)
     /// - [`quantity`](crate::types::builders::TrustedSignersBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::TrustedSigners, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrustedSigners {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building TrustedSigners",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building TrustedSigners",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrustedSigners {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building TrustedSigners")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building TrustedSigners")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

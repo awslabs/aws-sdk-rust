@@ -2,35 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCollaborationConfiguredAudienceModelAssociationsOutput {
+pub struct ListCollaborationConfiguredAudienceModelAssociationsOutput  {
     /// <p>The metadata of the configured audience model association within a collaboration.</p>
-    pub collaboration_configured_audience_model_association_summaries:
-        ::std::vec::Vec<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>,
+    pub collaboration_configured_audience_model_association_summaries: ::std::vec::Vec::<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCollaborationConfiguredAudienceModelAssociationsOutput {
+impl  ListCollaborationConfiguredAudienceModelAssociationsOutput  {
     /// <p>The metadata of the configured audience model association within a collaboration.</p>
-    pub fn collaboration_configured_audience_model_association_summaries(
-        &self,
-    ) -> &[crate::types::CollaborationConfiguredAudienceModelAssociationSummary] {
-        use std::ops::Deref;
-        self.collaboration_configured_audience_model_association_summaries.deref()
+    pub fn collaboration_configured_audience_model_association_summaries(&self) -> & [crate::types::CollaborationConfiguredAudienceModelAssociationSummary] {
+        use std::ops::Deref; self.collaboration_configured_audience_model_association_summaries.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCollaborationConfiguredAudienceModelAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCollaborationConfiguredAudienceModelAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationConfiguredAudienceModelAssociationsOutput`](crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput).
-    pub fn builder() -> crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder {
         crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder::default()
     }
 }
@@ -39,8 +35,7 @@ impl ListCollaborationConfiguredAudienceModelAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder {
-    pub(crate) collaboration_configured_audience_model_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>>,
+    pub(crate) collaboration_configured_audience_model_association_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,27 +45,18 @@ impl ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_collaboration_configured_audience_model_association_summaries`](Self::set_collaboration_configured_audience_model_association_summaries).
     ///
     /// <p>The metadata of the configured audience model association within a collaboration.</p>
-    pub fn collaboration_configured_audience_model_association_summaries(
-        mut self,
-        input: crate::types::CollaborationConfiguredAudienceModelAssociationSummary,
-    ) -> Self {
+    pub fn collaboration_configured_audience_model_association_summaries(mut self, input: crate::types::CollaborationConfiguredAudienceModelAssociationSummary) -> Self {
         let mut v = self.collaboration_configured_audience_model_association_summaries.unwrap_or_default();
-        v.push(input);
-        self.collaboration_configured_audience_model_association_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collaboration_configured_audience_model_association_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata of the configured audience model association within a collaboration.</p>
-    pub fn set_collaboration_configured_audience_model_association_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>>,
-    ) -> Self {
-        self.collaboration_configured_audience_model_association_summaries = input;
-        self
+    pub fn set_collaboration_configured_audience_model_association_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>>) -> Self {
+        self.collaboration_configured_audience_model_association_summaries = input; self
     }
     /// <p>The metadata of the configured audience model association within a collaboration.</p>
-    pub fn get_collaboration_configured_audience_model_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>> {
+    pub fn get_collaboration_configured_audience_model_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>> {
         &self.collaboration_configured_audience_model_association_summaries
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -80,31 +66,25 @@ impl ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCollaborationConfiguredAudienceModelAssociationsOutput`](crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`collaboration_configured_audience_model_association_summaries`](crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder::collaboration_configured_audience_model_association_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput {
                 collaboration_configured_audience_model_association_summaries: self.collaboration_configured_audience_model_association_summaries
@@ -119,3 +99,4 @@ impl ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder {
         )
     }
 }
+

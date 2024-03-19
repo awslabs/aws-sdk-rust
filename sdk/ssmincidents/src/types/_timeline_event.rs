@@ -3,7 +3,7 @@
 /// <p>A significant event that happened during the incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimelineEvent {
+pub struct TimelineEvent  {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
     pub incident_record_arn: ::std::string::String,
     /// <p>The ID of the timeline event.</p>
@@ -17,42 +17,39 @@ pub struct TimelineEvent {
     /// <p>A short description of the event.</p>
     pub event_data: ::std::string::String,
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub event_references: ::std::option::Option<::std::vec::Vec::<crate::types::EventReference>>,
 }
-impl TimelineEvent {
+impl  TimelineEvent  {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
-    pub fn incident_record_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.incident_record_arn.deref()
+    pub fn incident_record_arn(&self) -> & str {
+        use std::ops::Deref; self.incident_record_arn.deref()
     }
     /// <p>The ID of the timeline event.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> & str {
+        use std::ops::Deref; self.event_id.deref()
     }
     /// <p>The timestamp for when the event occurred.</p>
-    pub fn event_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn event_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.event_time
     }
     /// <p>The timestamp for when the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn event_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.event_updated_time
     }
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
-    pub fn event_type(&self) -> &str {
-        use std::ops::Deref;
-        self.event_type.deref()
+    pub fn event_type(&self) -> & str {
+        use std::ops::Deref; self.event_type.deref()
     }
     /// <p>A short description of the event.</p>
-    pub fn event_data(&self) -> &str {
-        use std::ops::Deref;
-        self.event_data.deref()
+    pub fn event_data(&self) -> & str {
+        use std::ops::Deref; self.event_data.deref()
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_references.is_none()`.
-    pub fn event_references(&self) -> &[crate::types::EventReference] {
-        self.event_references.as_deref().unwrap_or_default()
+    pub fn event_references(&self) -> & [crate::types::EventReference] {
+        self.event_references.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TimelineEvent {
@@ -72,7 +69,7 @@ pub struct TimelineEventBuilder {
     pub(crate) event_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_data: ::std::option::Option<::std::string::String>,
-    pub(crate) event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub(crate) event_references: ::std::option::Option<::std::vec::Vec::<crate::types::EventReference>>,
 }
 impl TimelineEventBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
@@ -83,8 +80,7 @@ impl TimelineEventBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
     pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_record_arn = input;
-        self
+        self.incident_record_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl TimelineEventBuilder {
     }
     /// <p>The ID of the timeline event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the timeline event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +108,7 @@ impl TimelineEventBuilder {
     }
     /// <p>The timestamp for when the event occurred.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>The timestamp for when the event occurred.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,8 +122,7 @@ impl TimelineEventBuilder {
     }
     /// <p>The timestamp for when the timeline event was last updated.</p>
     pub fn set_event_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_updated_time = input;
-        self
+        self.event_updated_time = input; self
     }
     /// <p>The timestamp for when the timeline event was last updated.</p>
     pub fn get_event_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -143,8 +136,7 @@ impl TimelineEventBuilder {
     }
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +150,7 @@ impl TimelineEventBuilder {
     }
     /// <p>A short description of the event.</p>
     pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data = input;
-        self
+        self.event_data = input; self
     }
     /// <p>A short description of the event.</p>
     pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,17 +163,16 @@ impl TimelineEventBuilder {
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         let mut v = self.event_references.unwrap_or_default();
-        v.push(input);
-        self.event_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
-        self.event_references = input;
-        self
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventReference>>) -> Self {
+        self.event_references = input; self
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventReference>> {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`TimelineEvent`](crate::types::TimelineEvent).
@@ -194,44 +184,42 @@ impl TimelineEventBuilder {
     /// - [`event_type`](crate::types::builders::TimelineEventBuilder::event_type)
     /// - [`event_data`](crate::types::builders::TimelineEventBuilder::event_data)
     pub fn build(self) -> ::std::result::Result<crate::types::TimelineEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimelineEvent {
-            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "incident_record_arn",
-                    "incident_record_arn was not specified but it is required when building TimelineEvent",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building TimelineEvent",
-                )
-            })?,
-            event_time: self.event_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_time",
-                    "event_time was not specified but it is required when building TimelineEvent",
-                )
-            })?,
-            event_updated_time: self.event_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_updated_time",
-                    "event_updated_time was not specified but it is required when building TimelineEvent",
-                )
-            })?,
-            event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_type",
-                    "event_type was not specified but it is required when building TimelineEvent",
-                )
-            })?,
-            event_data: self.event_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_data",
-                    "event_data was not specified but it is required when building TimelineEvent",
-                )
-            })?,
-            event_references: self.event_references,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimelineEvent {
+                incident_record_arn: self.incident_record_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("incident_record_arn", "incident_record_arn was not specified but it is required when building TimelineEvent")
+                    )?
+                ,
+                event_id: self.event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_id", "event_id was not specified but it is required when building TimelineEvent")
+                    )?
+                ,
+                event_time: self.event_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_time", "event_time was not specified but it is required when building TimelineEvent")
+                    )?
+                ,
+                event_updated_time: self.event_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_updated_time", "event_updated_time was not specified but it is required when building TimelineEvent")
+                    )?
+                ,
+                event_type: self.event_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_type", "event_type was not specified but it is required when building TimelineEvent")
+                    )?
+                ,
+                event_data: self.event_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_data", "event_data was not specified but it is required when building TimelineEvent")
+                    )?
+                ,
+                event_references: self.event_references
+                ,
+            }
+        )
     }
 }
+

@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceComplianceSummariesInput {
+pub struct ListResourceComplianceSummariesInput  {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListResourceComplianceSummariesInput {
+impl  ListResourceComplianceSummariesInput  {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ComplianceStringFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ComplianceStringFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -37,7 +38,7 @@ impl ListResourceComplianceSummariesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceComplianceSummariesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl ListResourceComplianceSummariesInputBuilder {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::ComplianceStringFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>> {
         &self.filters
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -69,8 +69,7 @@ impl ListResourceComplianceSummariesInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,26 +82,24 @@ impl ListResourceComplianceSummariesInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListResourceComplianceSummariesInput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

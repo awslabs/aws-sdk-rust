@@ -3,25 +3,23 @@
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateConnectionOAuthClientRequestParameters {
+pub struct CreateConnectionOAuthClientRequestParameters  {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
     pub client_id: ::std::string::String,
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub client_secret: ::std::string::String,
 }
-impl CreateConnectionOAuthClientRequestParameters {
+impl  CreateConnectionOAuthClientRequestParameters  {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
-    pub fn client_id(&self) -> &str {
-        use std::ops::Deref;
-        self.client_id.deref()
+    pub fn client_id(&self) -> & str {
+        use std::ops::Deref; self.client_id.deref()
     }
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
-    pub fn client_secret(&self) -> &str {
-        use std::ops::Deref;
-        self.client_secret.deref()
+    pub fn client_secret(&self) -> & str {
+        use std::ops::Deref; self.client_secret.deref()
     }
 }
-impl ::std::fmt::Debug for CreateConnectionOAuthClientRequestParameters {
+impl  ::std::fmt::Debug for CreateConnectionOAuthClientRequestParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionOAuthClientRequestParameters");
         formatter.field("client_id", &self.client_id);
@@ -52,8 +50,7 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
     }
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
     }
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,23 +74,21 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::CreateConnectionOAuthClientRequestParametersBuilder::client_id)
     /// - [`client_secret`](crate::types::builders::CreateConnectionOAuthClientRequestParametersBuilder::client_secret)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CreateConnectionOAuthClientRequestParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateConnectionOAuthClientRequestParameters {
-            client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_id",
-                    "client_id was not specified but it is required when building CreateConnectionOAuthClientRequestParameters",
-                )
-            })?,
-            client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_secret",
-                    "client_secret was not specified but it is required when building CreateConnectionOAuthClientRequestParameters",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateConnectionOAuthClientRequestParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CreateConnectionOAuthClientRequestParameters {
+                client_id: self.client_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_id", "client_id was not specified but it is required when building CreateConnectionOAuthClientRequestParameters")
+                    )?
+                ,
+                client_secret: self.client_secret
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_secret", "client_secret was not specified but it is required when building CreateConnectionOAuthClientRequestParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateConnectionOAuthClientRequestParametersBuilder {
@@ -105,3 +99,4 @@ impl ::std::fmt::Debug for CreateConnectionOAuthClientRequestParametersBuilder {
         formatter.finish()
     }
 }
+

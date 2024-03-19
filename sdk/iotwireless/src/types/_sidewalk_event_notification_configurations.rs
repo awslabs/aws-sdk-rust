@@ -3,13 +3,13 @@
 /// <p><code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SidewalkEventNotificationConfigurations {
+pub struct SidewalkEventNotificationConfigurations  {
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     pub amazon_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
-impl SidewalkEventNotificationConfigurations {
+impl  SidewalkEventNotificationConfigurations  {
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
-    pub fn amazon_id_event_topic(&self) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn amazon_id_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.amazon_id_event_topic.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SidewalkEventNotificationConfigurationsBuilder {
     }
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     pub fn set_amazon_id_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.amazon_id_event_topic = input;
-        self
+        self.amazon_id_event_topic = input; self
     }
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
     pub fn get_amazon_id_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
@@ -44,7 +43,9 @@ impl SidewalkEventNotificationConfigurationsBuilder {
     /// Consumes the builder and constructs a [`SidewalkEventNotificationConfigurations`](crate::types::SidewalkEventNotificationConfigurations).
     pub fn build(self) -> crate::types::SidewalkEventNotificationConfigurations {
         crate::types::SidewalkEventNotificationConfigurations {
-            amazon_id_event_topic: self.amazon_id_event_topic,
+            amazon_id_event_topic: self.amazon_id_event_topic
+            ,
         }
     }
 }
+

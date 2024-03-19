@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBaselinesOutput {
+pub struct ListBaselinesOutput  {
     /// <p>A list of <code>Baseline</code> object details.</p>
-    pub baselines: ::std::vec::Vec<crate::types::BaselineSummary>,
+    pub baselines: ::std::vec::Vec::<crate::types::BaselineSummary>,
     /// <p>A pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBaselinesOutput {
+impl  ListBaselinesOutput  {
     /// <p>A list of <code>Baseline</code> object details.</p>
-    pub fn baselines(&self) -> &[crate::types::BaselineSummary] {
-        use std::ops::Deref;
-        self.baselines.deref()
+    pub fn baselines(&self) -> & [crate::types::BaselineSummary] {
+        use std::ops::Deref; self.baselines.deref()
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBaselinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBaselinesOutput {
     /// Creates a new builder-style object to manufacture [`ListBaselinesOutput`](crate::operation::list_baselines::ListBaselinesOutput).
     pub fn builder() -> crate::operation::list_baselines::builders::ListBaselinesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListBaselinesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBaselinesOutputBuilder {
-    pub(crate) baselines: ::std::option::Option<::std::vec::Vec<crate::types::BaselineSummary>>,
+    pub(crate) baselines: ::std::option::Option<::std::vec::Vec::<crate::types::BaselineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListBaselinesOutputBuilder {
     /// <p>A list of <code>Baseline</code> object details.</p>
     pub fn baselines(mut self, input: crate::types::BaselineSummary) -> Self {
         let mut v = self.baselines.unwrap_or_default();
-        v.push(input);
-        self.baselines = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.baselines = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Baseline</code> object details.</p>
-    pub fn set_baselines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BaselineSummary>>) -> Self {
-        self.baselines = input;
-        self
+    pub fn set_baselines(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BaselineSummary>>) -> Self {
+        self.baselines = input; self
     }
     /// <p>A list of <code>Baseline</code> object details.</p>
-    pub fn get_baselines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BaselineSummary>> {
+    pub fn get_baselines(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BaselineSummary>> {
         &self.baselines
     }
     /// <p>A pagination token.</p>
@@ -68,37 +66,37 @@ impl ListBaselinesOutputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBaselinesOutput`](crate::operation::list_baselines::ListBaselinesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`baselines`](crate::operation::list_baselines::builders::ListBaselinesOutputBuilder::baselines)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_baselines::ListBaselinesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_baselines::ListBaselinesOutput {
-            baselines: self.baselines.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "baselines",
-                    "baselines was not specified but it is required when building ListBaselinesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_baselines::ListBaselinesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_baselines::ListBaselinesOutput {
+                baselines: self.baselines
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("baselines", "baselines was not specified but it is required when building ListBaselinesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

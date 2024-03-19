@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTags`](crate::operation::list_tags::builders::ListTagsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tags::builders::ListTagsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p><br>
-    /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
+                            /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
     ///   - [`tag_list(Vec::<Tag>)`](crate::operation::list_tags::ListTagsOutput::tag_list): <p>A list of tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
-    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
+                            /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
     pub fn list_tags(&self) -> crate::operation::list_tags::builders::ListTagsFluentBuilder {
-        crate::operation::list_tags::builders::ListTagsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_tags::builders::ListTagsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

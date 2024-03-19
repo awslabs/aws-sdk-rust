@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetConnections`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`connection_ids(impl Into<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::connection_ids) / [`set_connection_ids(Option<Vec::<String>>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_connection_ids):<br>required: **false**<br><p>One or more connection IDs.</p><br>
     ///   - [`device_id(impl Into<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_device_id):<br>required: **false**<br><p>The ID of the device.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_connections::builders::GetConnectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetConnectionsOutput`](crate::operation::get_connections::GetConnectionsOutput) with field(s):
+                            /// - On success, responds with [`GetConnectionsOutput`](crate::operation::get_connections::GetConnectionsOutput) with field(s):
     ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::get_connections::GetConnectionsOutput::connections): <p>Information about the connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connections::GetConnectionsOutput::next_token): <p>The token to use for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetConnectionsError>`](crate::operation::get_connections::GetConnectionsError)
+                            /// - On failure, responds with [`SdkError<GetConnectionsError>`](crate::operation::get_connections::GetConnectionsError)
     pub fn get_connections(&self) -> crate::operation::get_connections::builders::GetConnectionsFluentBuilder {
-        crate::operation::get_connections::builders::GetConnectionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_connections::builders::GetConnectionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

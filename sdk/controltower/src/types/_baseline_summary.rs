@@ -3,7 +3,7 @@
 /// <p>Returns a summary of information about a <code>Baseline</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BaselineSummary {
+pub struct BaselineSummary  {
     /// <p>The full ARN of a Baseline.</p>
     pub arn: ::std::string::String,
     /// <p>The human-readable name of a Baseline.</p>
@@ -11,19 +11,17 @@ pub struct BaselineSummary {
     /// <p>A summary description of a Baseline.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl BaselineSummary {
+impl  BaselineSummary  {
     /// <p>The full ARN of a Baseline.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The human-readable name of a Baseline.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A summary description of a Baseline.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl BaselineSummaryBuilder {
     }
     /// <p>The full ARN of a Baseline.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The full ARN of a Baseline.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl BaselineSummaryBuilder {
     }
     /// <p>The human-readable name of a Baseline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The human-readable name of a Baseline.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl BaselineSummaryBuilder {
     }
     /// <p>A summary description of a Baseline.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A summary description of a Baseline.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl BaselineSummaryBuilder {
     /// - [`arn`](crate::types::builders::BaselineSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::BaselineSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::BaselineSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BaselineSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building BaselineSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building BaselineSummary",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BaselineSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building BaselineSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building BaselineSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

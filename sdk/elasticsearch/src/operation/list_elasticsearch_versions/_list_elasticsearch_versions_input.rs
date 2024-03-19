@@ -6,19 +6,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListElasticsearchVersionsInput {
+pub struct ListElasticsearchVersionsInput  {
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListElasticsearchVersionsInput {
+impl  ListElasticsearchVersionsInput  {
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl ListElasticsearchVersionsInputBuilder {
     }
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -58,23 +57,22 @@ impl ListElasticsearchVersionsInputBuilder {
     }
     /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListElasticsearchVersionsInput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFunctionInput {
+pub struct DeleteFunctionInput  {
     /// <p>The GraphQL API ID.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Function</code> ID.</p>
     pub function_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFunctionInput {
+impl  DeleteFunctionInput  {
     /// <p>The GraphQL API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The <code>Function</code> ID.</p>
-    pub fn function_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_id(&self) -> ::std::option::Option<& str> {
         self.function_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteFunctionInputBuilder {
     }
     /// <p>The GraphQL API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The GraphQL API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteFunctionInputBuilder {
     }
     /// <p>The <code>Function</code> ID.</p>
     pub fn set_function_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_id = input;
-        self
+        self.function_id = input; self
     }
     /// <p>The <code>Function</code> ID.</p>
     pub fn get_function_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_id
     }
     /// Consumes the builder and constructs a [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_function::DeleteFunctionInput {
-            api_id: self.api_id,
-            function_id: self.function_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_function::DeleteFunctionInput {
+                api_id: self.api_id
+                ,
+                function_id: self.function_id
+                ,
+            }
+        )
     }
 }
+

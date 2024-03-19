@@ -3,7 +3,7 @@
 /// <p>Filter by asset. [TwinMaker asset]</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterByAsset {
+pub struct FilterByAsset  {
     /// <p>Filter by asset Id.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The external-Id property of an asset.</p>
@@ -13,13 +13,13 @@ pub struct FilterByAsset {
     /// <p>Boolean to include the asset model.</p>
     pub include_asset_model: ::std::option::Option<bool>,
 }
-impl FilterByAsset {
+impl  FilterByAsset  {
     /// <p>Filter by asset Id.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The external-Id property of an asset.</p>
-    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_external_id(&self) -> ::std::option::Option<& str> {
         self.asset_external_id.as_deref()
     }
     /// <p>Includes sub-assets.[need description hekp for this]</p>
@@ -55,8 +55,7 @@ impl FilterByAssetBuilder {
     }
     /// <p>Filter by asset Id.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>Filter by asset Id.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FilterByAssetBuilder {
     }
     /// <p>The external-Id property of an asset.</p>
     pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_external_id = input;
-        self
+        self.asset_external_id = input; self
     }
     /// <p>The external-Id property of an asset.</p>
     pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl FilterByAssetBuilder {
     }
     /// <p>Includes sub-assets.[need description hekp for this]</p>
     pub fn set_include_offspring(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_offspring = input;
-        self
+        self.include_offspring = input; self
     }
     /// <p>Includes sub-assets.[need description hekp for this]</p>
     pub fn get_include_offspring(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl FilterByAssetBuilder {
     }
     /// <p>Boolean to include the asset model.</p>
     pub fn set_include_asset_model(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_asset_model = input;
-        self
+        self.include_asset_model = input; self
     }
     /// <p>Boolean to include the asset model.</p>
     pub fn get_include_asset_model(&self) -> &::std::option::Option<bool> {
@@ -107,10 +103,15 @@ impl FilterByAssetBuilder {
     /// Consumes the builder and constructs a [`FilterByAsset`](crate::types::FilterByAsset).
     pub fn build(self) -> crate::types::FilterByAsset {
         crate::types::FilterByAsset {
-            asset_id: self.asset_id,
-            asset_external_id: self.asset_external_id,
-            include_offspring: self.include_offspring,
-            include_asset_model: self.include_asset_model,
+            asset_id: self.asset_id
+            ,
+            asset_external_id: self.asset_external_id
+            ,
+            include_offspring: self.include_offspring
+            ,
+            include_asset_model: self.include_asset_model
+            ,
         }
     }
 }
+

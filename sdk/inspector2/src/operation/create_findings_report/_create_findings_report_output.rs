@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFindingsReportOutput {
+pub struct CreateFindingsReportOutput  {
     /// <p>The ID of the report.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateFindingsReportOutput {
+impl  CreateFindingsReportOutput  {
     /// <p>The ID of the report.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFindingsReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFindingsReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateFindingsReportOutput`](crate::operation::create_findings_report::CreateFindingsReportOutput).
     pub fn builder() -> crate::operation::create_findings_report::builders::CreateFindingsReportOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateFindingsReportOutputBuilder {
     }
     /// <p>The ID of the report.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>The ID of the report.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFindingsReportOutput`](crate::operation::create_findings_report::CreateFindingsReportOutput).
     pub fn build(self) -> crate::operation::create_findings_report::CreateFindingsReportOutput {
         crate::operation::create_findings_report::CreateFindingsReportOutput {
-            report_id: self.report_id,
+            report_id: self.report_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEventAggregates`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(EventFilter)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::filter) / [`set_filter(Option<EventFilter>)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::set_filter):<br>required: **false**<br><p>Values to narrow the results returned.</p><br>
     ///   - [`aggregate_field(EventAggregateField)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::aggregate_field) / [`set_aggregate_field(Option<EventAggregateField>)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::set_aggregate_field):<br>required: **true**<br><p>The only currently supported value is <code>eventTypeCategory</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p><br>
-    /// - On success, responds with [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput) with field(s):
+                            /// - On success, responds with [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput) with field(s):
     ///   - [`event_aggregates(Option<Vec::<EventAggregate>>)`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput::event_aggregates): <p>The number of events in each category that meet the optional filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventAggregatesError>`](crate::operation::describe_event_aggregates::DescribeEventAggregatesError)
+                            /// - On failure, responds with [`SdkError<DescribeEventAggregatesError>`](crate::operation::describe_event_aggregates::DescribeEventAggregatesError)
     pub fn describe_event_aggregates(&self) -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder {
-        crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

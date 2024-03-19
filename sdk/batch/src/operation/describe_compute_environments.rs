@@ -9,238 +9,181 @@ impl DescribeComputeEnvironments {
         Self
     }
     pub(crate) async fn orchestrate(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>()
-                    .expect("correct error type")
-            })
-        };
-        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            .await
-            .map_err(map_err)?;
-        let output = context.finalize().map_err(map_err)?;
-        ::std::result::Result::Ok(
-            output
-                .downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput>()
-                .expect("correct output type"),
-        )
-    }
-
-    pub(crate) async fn orchestrate_with_stop_point(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
-        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
-    ) -> ::std::result::Result<
-        ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("batch", "DescribeComputeEnvironments", input, runtime_plugins, stop_point)
-            .await
-    }
-
-    pub(crate) fn operation_runtime_plugins(
-        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        client_config: &crate::config::Config,
-        config_override: ::std::option::Option<crate::config::Builder>,
-    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
-        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
-        if let ::std::option::Option::Some(config_override) = config_override {
-            for plugin in config_override.runtime_plugins.iter().cloned() {
-                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
-            }
-            runtime_plugins = runtime_plugins.with_operation_plugin(crate::config::ConfigOverrideRuntimePlugin::new(
-                config_override,
-                client_config.config.clone(),
-                &client_config.runtime_components,
-            ));
-        }
-        runtime_plugins
-    }
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
+                    ) -> ::std::result::Result<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>().expect("correct error type")
+                            })
+                        };
+                        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+                            .await
+                            .map_err(map_err)?;
+                        let output = context.finalize().map_err(map_err)?;
+                        ::std::result::Result::Ok(output.downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput>().expect("correct output type"))
+                    }
+    
+                    pub(crate) async fn orchestrate_with_stop_point(
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
+                        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
+                    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext, ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+                        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
+                            "batch",
+                            "DescribeComputeEnvironments",
+                            input,
+                            runtime_plugins,
+                            stop_point
+                        ).await
+                    }
+    
+                    pub(crate) fn operation_runtime_plugins(
+                        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        client_config: &crate::config::Config,
+                        config_override: ::std::option::Option<crate::config::Builder>,
+                    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
+                        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
+                        runtime_plugins = runtime_plugins
+                                        .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![::aws_runtime::auth::sigv4::SCHEME_ID]));
+                        if let ::std::option::Option::Some(config_override) = config_override {
+                            for plugin in config_override.runtime_plugins.iter().cloned() {
+                                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
+                            }
+                            runtime_plugins = runtime_plugins.with_operation_plugin(
+                                crate::config::ConfigOverrideRuntimePlugin::new(config_override, client_config.config.clone(), &client_config.runtime_components)
+                            );
+                        }
+                        runtime_plugins
+                    }
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DescribeComputeEnvironments {
-    fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
-        let mut cfg = ::aws_smithy_types::config_bag::Layer::new("DescribeComputeEnvironments");
+                fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
+                    let mut cfg = ::aws_smithy_types::config_bag::Layer::new("DescribeComputeEnvironments");
 
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
-            DescribeComputeEnvironmentsRequestSerializer,
-        ));
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
-            DescribeComputeEnvironmentsResponseDeserializer,
-        ));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(DescribeComputeEnvironmentsRequestSerializer));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(DescribeComputeEnvironmentsResponseDeserializer));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
-        ));
+                    
+                    cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new()));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
-            "DescribeComputeEnvironments",
-            "batch",
-        ));
-        let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
-        signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
-        signing_options.normalize_uri_path = true;
-        signing_options.payload_override = None;
+                    cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+                            "DescribeComputeEnvironments",
+                            "batch",
+                        ));
+let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
+                            signing_options.double_uri_encode = true;
+                            signing_options.content_sha256_header = false;
+                            signing_options.normalize_uri_path = true;
+                            signing_options.payload_override = None;
 
-        cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
-            signing_options,
-            ..::std::default::Default::default()
-        });
+                            cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
+                                signing_options,
+                                ..::std::default::Default::default()
+                            });
 
-        ::std::option::Option::Some(cfg.freeze())
-    }
+                    ::std::option::Option::Some(cfg.freeze())
+                }
 
-    fn runtime_components(
-        &self,
-        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeComputeEnvironments")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
-            .with_interceptor(DescribeComputeEnvironmentsEndpointParamsInterceptor)
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-            >::new());
+                fn runtime_components(&self, _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+                    #[allow(unused_mut)]
+                    let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeComputeEnvironments")
+                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::RequestAndResponseBody))
+.with_interceptor(DescribeComputeEnvironmentsEndpointParamsInterceptor)
+                            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>::new())
+.with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>::new())
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>::new());
 
-        ::std::borrow::Cow::Owned(rcb)
-    }
-}
-
-#[derive(Debug)]
-struct DescribeComputeEnvironmentsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeComputeEnvironmentsResponseDeserializer {
-    fn deserialize_nonstreaming(
-        &self,
-        response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-    ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
-        let body = response.body().bytes().expect("body loaded");
-        #[allow(unused_mut)]
-        let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_describe_compute_environments::de_describe_compute_environments_http_error(status, headers, body)
-        } else {
-            crate::protocol_serde::shape_describe_compute_environments::de_describe_compute_environments_http_response(status, headers, body)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
-    }
-}
-#[derive(Debug)]
-struct DescribeComputeEnvironmentsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComputeEnvironmentsRequestSerializer {
-    #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
-    fn serialize_input(
-        &self,
-        input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
-        _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = input
-            .downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput>()
-            .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            fn uri_base(
-                _input: &crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/v1/describecomputeenvironments").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
+                    ::std::borrow::Cow::Owned(rcb)
+                }
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
+
+            
+#[derive(Debug)]
+            struct DescribeComputeEnvironmentsResponseDeserializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeComputeEnvironmentsResponseDeserializer {
+                
+
+                fn deserialize_nonstreaming(&self, response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
+                    let (success, status) = (response.status().is_success(), response.status().as_u16());
+            let headers = response.headers();
+            let body = response.body().bytes().expect("body loaded");
+            #[allow(unused_mut)]
+            let mut force_error = false;
+            ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
+            let parse_result = if !success && status != 200 || force_error {
+                crate::protocol_serde::shape_describe_compute_environments::de_describe_compute_environments_http_error(status, headers, body)
+            } else {
+                crate::protocol_serde::shape_describe_compute_environments::de_describe_compute_environments_http_response(status, headers, body)
+            };
+            crate::protocol_serde::type_erase_result(parse_result)
+                }
+            }
+#[derive(Debug)]
+            struct DescribeComputeEnvironmentsRequestSerializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComputeEnvironmentsRequestSerializer {
+                #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
+                fn serialize_input(&self, input: ::aws_smithy_runtime_api::client::interceptors::context::Input, _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let input = input.downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput>().expect("correct type");
+                    let _header_serialization_settings = _cfg.load::<crate::serialization_settings::HeaderSerializationSettings>().cloned().unwrap_or_default();
+                    let mut request_builder = {
+                        fn uri_base(_input: &crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    use ::std::fmt::Write as _;
+    ::std::write!(output, "/v1/describecomputeenvironments").expect("formatting should succeed");
+    ::std::result::Result::Ok(())
+}
+#[allow(clippy::unnecessary_wraps)]
+fn update_http_builder(
                 input: &crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
-                builder: ::http::request::Builder,
+                builder: ::http::request::Builder
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
+    let mut uri = ::std::string::String::new();
+    uri_base(input, &mut uri)?;
+    ::std::result::Result::Ok(builder.method("POST").uri(uri))
+}
+let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
+builder
+                    };
+                    let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_describe_compute_environments::ser_describe_compute_environments_input(&input)?);
+                    if let Some(content_length) = body.content_length() {
+                                let content_length = content_length.to_string();
+                                request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+                            }
+                    ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+                }
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_describe_compute_environments::ser_describe_compute_environments_input(&input)?,
-        );
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
-        }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
-    }
-}
 #[derive(Debug)]
-struct DescribeComputeEnvironmentsEndpointParamsInterceptor;
+            struct DescribeComputeEnvironmentsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeComputeEnvironmentsEndpointParamsInterceptor {
-    fn name(&self) -> &'static str {
-        "DescribeComputeEnvironmentsEndpointParamsInterceptor"
-    }
+            impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeComputeEnvironmentsEndpointParamsInterceptor {
+                fn name(&self) -> &'static str {
+                    "DescribeComputeEnvironmentsEndpointParamsInterceptor"
+                }
 
-    fn read_before_execution(
-        &self,
-        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
-            '_,
-            ::aws_smithy_runtime_api::client::interceptors::context::Input,
-            ::aws_smithy_runtime_api::client::interceptors::context::Output,
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-        >,
-        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        let _input = context
-            .input()
-            .downcast_ref::<DescribeComputeEnvironmentsInput>()
-            .ok_or("failed to downcast to DescribeComputeEnvironmentsInput")?;
+                fn read_before_execution(
+                    &self,
+                    context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_, ::aws_smithy_runtime_api::client::interceptors::context::Input, ::aws_smithy_runtime_api::client::interceptors::context::Output, ::aws_smithy_runtime_api::client::interceptors::context::Error>,
+                    cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+                ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let _input = context.input()
+                        .downcast_ref::<DescribeComputeEnvironmentsInput>()
+                        .ok_or("failed to downcast to DescribeComputeEnvironmentsInput")?;
 
-        let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
-            .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
-            .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
-            })?;
-        cfg.interceptor_state()
-            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
-        ::std::result::Result::Ok(())
-    }
-}
+                    
+
+                    let params = crate::config::endpoint::Params::builder()
+                        .set_region(cfg.load::<::aws_types::region::Region>().map(|r|r.as_ref().to_owned()))
+.set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
+.set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
+.set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+                        .build()
+                        .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err))?;
+                    cfg.interceptor_state().store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
+                    ::std::result::Result::Ok(())
+                }
+            }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
 mod describe_compute_environments_request_test {
@@ -249,87 +192,180 @@ mod describe_compute_environments_request_test {
     #[::tokio::test]
     #[allow(unused_mut)]
     async fn deserialize_describe_compute_response() {
-        let expected_output = crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::builder()
-            .set_compute_environments(::std::option::Option::Some(vec![crate::types::ComputeEnvironmentDetail::builder()
-                .set_compute_environment_name(::std::option::Option::Some("test-batch-compute".to_owned()))
-                .set_compute_environment_arn(::std::option::Option::Some("arn".to_owned()))
-                .set_ecs_cluster_arn(::std::option::Option::Some("clusteran".to_owned()))
-                .set_tags(::std::option::Option::Some({
-                    let mut ret = ::std::collections::HashMap::new();
-                    ret.insert("foo".to_owned(), "bar".to_owned());
-                    ret
-                }))
-                .set_type(::std::option::Option::Some(
-                    "MANAGED".parse::<crate::types::CeType>().expect("static value validated to member"),
-                ))
-                .set_state(::std::option::Option::Some(
-                    "ENABLED".parse::<crate::types::CeState>().expect("static value validated to member"),
-                ))
-                .set_status(::std::option::Option::Some(
-                    "VALID".parse::<crate::types::CeStatus>().expect("static value validated to member"),
-                ))
-                .set_status_reason(::std::option::Option::Some("ComputeEnvironment Healthy".to_owned()))
-                .set_compute_resources(::std::option::Option::Some(
-                    crate::types::ComputeResource::builder()
-                        .set_type(::std::option::Option::Some(
-                            "EC2".parse::<crate::types::CrType>().expect("static value validated to member"),
-                        ))
-                        .set_minv_cpus(::std::option::Option::Some(0))
-                        .set_maxv_cpus(::std::option::Option::Some(256))
-                        .set_desiredv_cpus(::std::option::Option::Some(0))
-                        .set_instance_types(::std::option::Option::Some(vec!["optimal".to_owned()]))
-                        .set_subnets(::std::option::Option::Some(vec![
-                            "subnet-c745b79c".to_owned(),
-                            "subnet-d4e24fe8".to_owned(),
-                        ]))
-                        .set_security_group_ids(::std::option::Option::Some(vec!["sg-06a55e7b".to_owned()]))
-                        .set_instance_role(::std::option::Option::Some("instancerole".to_owned()))
-                        .set_tags(::std::option::Option::Some({
-                            let mut ret = ::std::collections::HashMap::new();
-                            ret.insert("Name".to_owned(), "batch-compute".to_owned());
-                            ret
-                        }))
-                        .set_ec2_configuration(::std::option::Option::Some(vec![crate::types::Ec2Configuration::builder()
-                            .set_image_type(::std::option::Option::Some("ECS_AL1".to_owned()))
-                            .build()]))
-                        .build(),
-                ))
-                .set_service_role(::std::option::Option::Some(
-                    "arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole".to_owned(),
-                ))
-                .build()]))
-            .build();
+        let expected_output =crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::builder()
+        .set_compute_environments(
+            ::std::option::Option::Some(
+                vec![
+                    crate::types::ComputeEnvironmentDetail::builder()
+                    .set_compute_environment_name(
+                        ::std::option::Option::Some(
+                            "test-batch-compute".to_owned()
+                        )
+                    )
+                    .set_compute_environment_arn(
+                        ::std::option::Option::Some(
+                            "arn".to_owned()
+                        )
+                    )
+                    .set_ecs_cluster_arn(
+                        ::std::option::Option::Some(
+                            "clusteran".to_owned()
+                        )
+                    )
+                    .set_tags(
+                        ::std::option::Option::Some(
+                             {
+                                let mut ret = ::std::collections::HashMap::new();
+                                ret.insert(
+                                    "foo".to_owned()
+                                    ,
+                                    "bar".to_owned()
+                                );
+                                ret
+                            }
+                        )
+                    )
+                    .set_type(
+                        ::std::option::Option::Some(
+                            "MANAGED".parse::<crate::types::CeType>().expect("static value validated to member")
+                        )
+                    )
+                    .set_state(
+                        ::std::option::Option::Some(
+                            "ENABLED".parse::<crate::types::CeState>().expect("static value validated to member")
+                        )
+                    )
+                    .set_status(
+                        ::std::option::Option::Some(
+                            "VALID".parse::<crate::types::CeStatus>().expect("static value validated to member")
+                        )
+                    )
+                    .set_status_reason(
+                        ::std::option::Option::Some(
+                            "ComputeEnvironment Healthy".to_owned()
+                        )
+                    )
+                    .set_compute_resources(
+                        ::std::option::Option::Some(
+                            crate::types::ComputeResource::builder()
+                            .set_type(
+                                ::std::option::Option::Some(
+                                    "EC2".parse::<crate::types::CrType>().expect("static value validated to member")
+                                )
+                            )
+                            .set_minv_cpus(
+                                ::std::option::Option::Some(
+                                    0
+                                )
+                            )
+                            .set_maxv_cpus(
+                                ::std::option::Option::Some(
+                                    256
+                                )
+                            )
+                            .set_desiredv_cpus(
+                                ::std::option::Option::Some(
+                                    0
+                                )
+                            )
+                            .set_instance_types(
+                                ::std::option::Option::Some(
+                                    vec![
+                                        "optimal".to_owned()
+                                        ,
+                                    ]
+                                )
+                            )
+                            .set_subnets(
+                                ::std::option::Option::Some(
+                                    vec![
+                                        "subnet-c745b79c".to_owned()
+                                        ,
+                                        "subnet-d4e24fe8".to_owned()
+                                        ,
+                                    ]
+                                )
+                            )
+                            .set_security_group_ids(
+                                ::std::option::Option::Some(
+                                    vec![
+                                        "sg-06a55e7b".to_owned()
+                                        ,
+                                    ]
+                                )
+                            )
+                            .set_instance_role(
+                                ::std::option::Option::Some(
+                                    "instancerole".to_owned()
+                                )
+                            )
+                            .set_tags(
+                                ::std::option::Option::Some(
+                                     {
+                                        let mut ret = ::std::collections::HashMap::new();
+                                        ret.insert(
+                                            "Name".to_owned()
+                                            ,
+                                            "batch-compute".to_owned()
+                                        );
+                                        ret
+                                    }
+                                )
+                            )
+                            .set_ec2_configuration(
+                                ::std::option::Option::Some(
+                                    vec![
+                                        crate::types::Ec2Configuration::builder()
+                                        .set_image_type(
+                                            ::std::option::Option::Some(
+                                                "ECS_AL1".to_owned()
+                                            )
+                                        )
+                                        .build()
+                                        ,
+                                    ]
+                                )
+                            )
+                            .build()
+                        )
+                    )
+                    .set_service_role(
+                        ::std::option::Option::Some(
+                            "arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole".to_owned()
+                        )
+                    )
+                    .build()
+                    ,
+                ]
+            )
+        )
+        .build()
+        ;
         let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_types::body::SdkBody::from("    {\n        \"computeEnvironments\":[{\n            \"computeEnvironmentName\":\"test-batch-compute\",\n            \"computeEnvironmentArn\":\"arn\",\n            \"ecsClusterArn\":\"clusteran\",\n            \"tags\":{\"foo\": \"bar\"},\n            \"type\":\"MANAGED\",\n            \"state\":\"ENABLED\",\n            \"status\":\"VALID\",\n            \"statusReason\":\"ComputeEnvironment Healthy\",\n            \"computeResources\":{\n                \"type\":\"EC2\",\n                \"minvCpus\":0,\n                \"maxvCpus\":256,\n                \"desiredvCpus\":0,\n                \"instanceTypes\":[\"optimal\"],\n                \"subnets\":[\"subnet-c745b79c\",\"subnet-d4e24fe8\"],\n                \"securityGroupIds\":[\"sg-06a55e7b\"],\n                \"instanceRole\":\"instancerole\",\n                \"tags\":{\"Name\":\"batch-compute\"},\n                \"ec2Configuration\":[{\"imageType\":\"ECS_AL1\"}]\n            },\n            \"serviceRole\":\"arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole\"\n        }]\n    }\n"))
                     .unwrap()
                     ).unwrap();
-        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
-
-        let op = crate::operation::describe_compute_environments::DescribeComputeEnvironments::new();
-        let config = op.config().expect("the operation has config");
-        let de = config
-            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
-            .expect("the config must have a deserializer");
-
-        let parsed = de.deserialize_streaming(&mut http_response);
-        let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
-            de.deserialize_nonstreaming(&http_response)
-        });
-        let parsed = parsed
-            .expect("should be successful response")
-            .downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput>()
-            .unwrap();
-        ::pretty_assertions::assert_eq!(
-            parsed.compute_environments,
-            expected_output.compute_environments,
-            "Unexpected value for `compute_environments`"
-        );
+                    use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        
+                    let op = crate::operation::describe_compute_environments::DescribeComputeEnvironments::new();
+                    let config = op.config().expect("the operation has config");
+                    let de = config.load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>().expect("the config must have a deserializer");
+        
+                    let parsed = de.deserialize_streaming(&mut http_response);
+                    let parsed = parsed.unwrap_or_else(|| {
+                        let http_response = http_response.map(|body| {
+                            ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap()))
+                        });
+                        de.deserialize_nonstreaming(&http_response)
+                    });
+        let parsed = parsed.expect("should be successful response").downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput>().unwrap();
+        ::pretty_assertions::assert_eq!(parsed.compute_environments, expected_output.compute_environments, "Unexpected value for `compute_environments`");
         ::pretty_assertions::assert_eq!(parsed.next_token, expected_output.next_token, "Unexpected value for `next_token`");
     }
+    
+    
 }
 
 /// Error type for the `DescribeComputeEnvironmentsError` operation.
@@ -341,36 +377,28 @@ pub enum DescribeComputeEnvironmentsError {
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-DescribeComputeEnvironmentsError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl DescribeComputeEnvironmentsError {
     /// Creates the `DescribeComputeEnvironmentsError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `DescribeComputeEnvironmentsError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `DescribeComputeEnvironmentsError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -390,23 +418,33 @@ impl DescribeComputeEnvironmentsError {
 impl ::std::error::Error for DescribeComputeEnvironmentsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::ClientException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ServerException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for DescribeComputeEnvironmentsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ClientException(_inner) => _inner.fmt(f),
-            Self::ServerException(_inner) => _inner.fmt(f),
+            Self::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -422,28 +460,31 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeComputeEnvironments
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeComputeEnvironmentsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::ClientException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ServerException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for DescribeComputeEnvironmentsError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 pub use crate::operation::describe_compute_environments::_describe_compute_environments_output::DescribeComputeEnvironmentsOutput;
 
@@ -458,3 +499,4 @@ pub mod builders;
 
 /// Paginator for this operation
 pub mod paginator;
+

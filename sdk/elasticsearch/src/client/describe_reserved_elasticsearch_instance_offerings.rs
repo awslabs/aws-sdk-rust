@@ -2,19 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservedElasticsearchInstanceOfferings`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reserved_elasticsearch_instance_offering_id(impl Into<String>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::reserved_elasticsearch_instance_offering_id) / [`set_reserved_elasticsearch_instance_offering_id(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::set_reserved_elasticsearch_instance_offering_id):<br>required: **false**<br><p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::set_max_results):<br>required: **false**<br><p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::set_next_token):<br>required: **false**<br><p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p><br>
-    /// - On success, responds with [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput) with field(s):
+                            /// - On success, responds with [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`reserved_elasticsearch_instance_offerings(Option<Vec::<ReservedElasticsearchInstanceOffering>>)`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput::reserved_elasticsearch_instance_offerings): <p>List of reserved Elasticsearch instance offerings</p>
-    /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstanceOfferingsError>`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError)
-    pub fn describe_reserved_elasticsearch_instance_offerings(
-        &self,
-    ) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder
-    {
-        crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstanceOfferingsError>`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError)
+    pub fn describe_reserved_elasticsearch_instance_offerings(&self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder {
+                                crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

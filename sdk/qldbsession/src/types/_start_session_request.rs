@@ -3,15 +3,14 @@
 /// <p>Specifies a request to start a new session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSessionRequest {
+pub struct StartSessionRequest  {
     /// <p>The name of the ledger to start a new session against.</p>
     pub ledger_name: ::std::string::String,
 }
-impl StartSessionRequest {
+impl  StartSessionRequest  {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn ledger_name(&self) -> &str {
-        use std::ops::Deref;
-        self.ledger_name.deref()
+    pub fn ledger_name(&self) -> & str {
+        use std::ops::Deref; self.ledger_name.deref()
     }
 }
 impl StartSessionRequest {
@@ -36,8 +35,7 @@ impl StartSessionRequestBuilder {
     }
     /// <p>The name of the ledger to start a new session against.</p>
     pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ledger_name = input;
-        self
+        self.ledger_name = input; self
     }
     /// <p>The name of the ledger to start a new session against.</p>
     pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl StartSessionRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ledger_name`](crate::types::builders::StartSessionRequestBuilder::ledger_name)
     pub fn build(self) -> ::std::result::Result<crate::types::StartSessionRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartSessionRequest {
-            ledger_name: self.ledger_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ledger_name",
-                    "ledger_name was not specified but it is required when building StartSessionRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StartSessionRequest {
+                ledger_name: self.ledger_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ledger_name", "ledger_name was not specified but it is required when building StartSessionRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

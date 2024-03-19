@@ -4,19 +4,19 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterScopeConfiguration {
+pub struct FilterScopeConfiguration  {
     /// <p>The configuration for applying a filter to specific sheets.</p>
     pub selected_sheets: ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
     /// <p>The configuration for applying a filter to all sheets.</p>
     pub all_sheets: ::std::option::Option<crate::types::AllSheetsFilterScopeConfiguration>,
 }
-impl FilterScopeConfiguration {
+impl  FilterScopeConfiguration  {
     /// <p>The configuration for applying a filter to specific sheets.</p>
-    pub fn selected_sheets(&self) -> ::std::option::Option<&crate::types::SelectedSheetsFilterScopeConfiguration> {
+    pub fn selected_sheets(&self) -> ::std::option::Option<& crate::types::SelectedSheetsFilterScopeConfiguration> {
         self.selected_sheets.as_ref()
     }
     /// <p>The configuration for applying a filter to all sheets.</p>
-    pub fn all_sheets(&self) -> ::std::option::Option<&crate::types::AllSheetsFilterScopeConfiguration> {
+    pub fn all_sheets(&self) -> ::std::option::Option<& crate::types::AllSheetsFilterScopeConfiguration> {
         self.all_sheets.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl FilterScopeConfigurationBuilder {
     }
     /// <p>The configuration for applying a filter to specific sheets.</p>
     pub fn set_selected_sheets(mut self, input: ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>) -> Self {
-        self.selected_sheets = input;
-        self
+        self.selected_sheets = input; self
     }
     /// <p>The configuration for applying a filter to specific sheets.</p>
     pub fn get_selected_sheets(&self) -> &::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration> {
@@ -56,8 +55,7 @@ impl FilterScopeConfigurationBuilder {
     }
     /// <p>The configuration for applying a filter to all sheets.</p>
     pub fn set_all_sheets(mut self, input: ::std::option::Option<crate::types::AllSheetsFilterScopeConfiguration>) -> Self {
-        self.all_sheets = input;
-        self
+        self.all_sheets = input; self
     }
     /// <p>The configuration for applying a filter to all sheets.</p>
     pub fn get_all_sheets(&self) -> &::std::option::Option<crate::types::AllSheetsFilterScopeConfiguration> {
@@ -66,8 +64,11 @@ impl FilterScopeConfigurationBuilder {
     /// Consumes the builder and constructs a [`FilterScopeConfiguration`](crate::types::FilterScopeConfiguration).
     pub fn build(self) -> crate::types::FilterScopeConfiguration {
         crate::types::FilterScopeConfiguration {
-            selected_sheets: self.selected_sheets,
-            all_sheets: self.all_sheets,
+            selected_sheets: self.selected_sheets
+            ,
+            all_sheets: self.all_sheets
+            ,
         }
     }
 }
+

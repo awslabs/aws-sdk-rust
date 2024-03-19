@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFlowOutput {
+pub struct DescribeFlowOutput  {
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub flow: ::std::option::Option<crate::types::Flow>,
     /// Messages that provide the state of the flow.
     pub messages: ::std::option::Option<crate::types::Messages>,
     _request_id: Option<String>,
 }
-impl DescribeFlowOutput {
+impl  DescribeFlowOutput  {
     /// The settings for a flow, including its source, outputs, and entitlements.
-    pub fn flow(&self) -> ::std::option::Option<&crate::types::Flow> {
+    pub fn flow(&self) -> ::std::option::Option<& crate::types::Flow> {
         self.flow.as_ref()
     }
     /// Messages that provide the state of the flow.
-    pub fn messages(&self) -> ::std::option::Option<&crate::types::Messages> {
+    pub fn messages(&self) -> ::std::option::Option<& crate::types::Messages> {
         self.messages.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFlowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::operation::describe_flow::DescribeFlowOutput).
     pub fn builder() -> crate::operation::describe_flow::builders::DescribeFlowOutputBuilder {
@@ -47,8 +47,7 @@ impl DescribeFlowOutputBuilder {
     }
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub fn set_flow(mut self, input: ::std::option::Option<crate::types::Flow>) -> Self {
-        self.flow = input;
-        self
+        self.flow = input; self
     }
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub fn get_flow(&self) -> &::std::option::Option<crate::types::Flow> {
@@ -61,28 +60,30 @@ impl DescribeFlowOutputBuilder {
     }
     /// Messages that provide the state of the flow.
     pub fn set_messages(mut self, input: ::std::option::Option<crate::types::Messages>) -> Self {
-        self.messages = input;
-        self
+        self.messages = input; self
     }
     /// Messages that provide the state of the flow.
     pub fn get_messages(&self) -> &::std::option::Option<crate::types::Messages> {
         &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::operation::describe_flow::DescribeFlowOutput).
     pub fn build(self) -> crate::operation::describe_flow::DescribeFlowOutput {
         crate::operation::describe_flow::DescribeFlowOutput {
-            flow: self.flow,
-            messages: self.messages,
+            flow: self.flow
+            ,
+            messages: self.messages
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

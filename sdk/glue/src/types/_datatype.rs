@@ -3,22 +3,20 @@
 /// <p>A structure representing the datatype of the value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Datatype {
+pub struct Datatype  {
     /// <p>The datatype of the value.</p>
     pub id: ::std::string::String,
     /// <p>A label assigned to the datatype.</p>
     pub label: ::std::string::String,
 }
-impl Datatype {
+impl  Datatype  {
     /// <p>The datatype of the value.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A label assigned to the datatype.</p>
-    pub fn label(&self) -> &str {
-        use std::ops::Deref;
-        self.label.deref()
+    pub fn label(&self) -> & str {
+        use std::ops::Deref; self.label.deref()
     }
 }
 impl Datatype {
@@ -44,8 +42,7 @@ impl DatatypeBuilder {
     }
     /// <p>The datatype of the value.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The datatype of the value.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl DatatypeBuilder {
     }
     /// <p>A label assigned to the datatype.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A label assigned to the datatype.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl DatatypeBuilder {
     /// - [`id`](crate::types::builders::DatatypeBuilder::id)
     /// - [`label`](crate::types::builders::DatatypeBuilder::label)
     pub fn build(self) -> ::std::result::Result<crate::types::Datatype, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Datatype {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Datatype",
-                )
-            })?,
-            label: self.label.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "label",
-                    "label was not specified but it is required when building Datatype",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Datatype {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Datatype")
+                    )?
+                ,
+                label: self.label
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("label", "label was not specified but it is required when building Datatype")
+                    )?
+                ,
+            }
+        )
     }
 }
+

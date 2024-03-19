@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceEc2InstancesOutput {
+pub struct DescribeDeviceEc2InstancesOutput  {
     /// <p>A list of structures containing information about each instance.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>,
     _request_id: Option<String>,
 }
-impl DescribeDeviceEc2InstancesOutput {
+impl  DescribeDeviceEc2InstancesOutput  {
     /// <p>A list of structures containing information about each instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::InstanceSummary] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::InstanceSummary] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDeviceEc2InstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDeviceEc2InstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput).
     pub fn builder() -> crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeDeviceEc2InstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesOutputBuilder {
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeDeviceEc2InstancesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeDeviceEc2InstancesOutputBuilder {
     /// <p>A list of structures containing information about each instance.</p>
     pub fn instances(mut self, input: crate::types::InstanceSummary) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of structures containing information about each instance.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>) -> Self {
+        self.instances = input; self
     }
     /// <p>A list of structures containing information about each instance.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>> {
         &self.instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput).
     pub fn build(self) -> crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput {
         crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput {
-            instances: self.instances,
+            instances: self.instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

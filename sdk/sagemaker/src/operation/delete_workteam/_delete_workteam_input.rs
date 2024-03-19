@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkteamInput {
+pub struct DeleteWorkteamInput  {
     /// <p>The name of the work team to delete.</p>
     pub workteam_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkteamInput {
+impl  DeleteWorkteamInput  {
     /// <p>The name of the work team to delete.</p>
-    pub fn workteam_name(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_name(&self) -> ::std::option::Option<& str> {
         self.workteam_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteWorkteamInputBuilder {
     }
     /// <p>The name of the work team to delete.</p>
     pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_name = input;
-        self
+        self.workteam_name = input; self
     }
     /// <p>The name of the work team to delete.</p>
     pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workteam_name
     }
     /// Consumes the builder and constructs a [`DeleteWorkteamInput`](crate::operation::delete_workteam::DeleteWorkteamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_workteam::DeleteWorkteamInput {
-            workteam_name: self.workteam_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_workteam::DeleteWorkteamInput {
+                workteam_name: self.workteam_name
+                ,
+            }
+        )
     }
 }
+

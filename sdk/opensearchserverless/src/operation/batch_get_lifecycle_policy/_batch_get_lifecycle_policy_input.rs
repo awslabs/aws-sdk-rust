@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetLifecyclePolicyInput {
+pub struct BatchGetLifecyclePolicyInput  {
     /// <p>The unique identifiers of policy types and policy names.</p>
-    pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyIdentifier>>,
+    pub identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyIdentifier>>,
 }
-impl BatchGetLifecyclePolicyInput {
+impl  BatchGetLifecyclePolicyInput  {
     /// <p>The unique identifiers of policy types and policy names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
-    pub fn identifiers(&self) -> &[crate::types::LifecyclePolicyIdentifier] {
-        self.identifiers.as_deref().unwrap_or_default()
+    pub fn identifiers(&self) -> & [crate::types::LifecyclePolicyIdentifier] {
+        self.identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetLifecyclePolicyInput {
@@ -25,7 +26,7 @@ impl BatchGetLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetLifecyclePolicyInputBuilder {
-    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyIdentifier>>,
+    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyIdentifier>>,
 }
 impl BatchGetLifecyclePolicyInputBuilder {
     /// Appends an item to `identifiers`.
@@ -35,28 +36,26 @@ impl BatchGetLifecyclePolicyInputBuilder {
     /// <p>The unique identifiers of policy types and policy names.</p>
     pub fn identifiers(mut self, input: crate::types::LifecyclePolicyIdentifier) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
-        v.push(input);
-        self.identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of policy types and policy names.</p>
-    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyIdentifier>>) -> Self {
-        self.identifiers = input;
-        self
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyIdentifier>>) -> Self {
+        self.identifiers = input; self
     }
     /// <p>The unique identifiers of policy types and policy names.</p>
-    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyIdentifier>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyIdentifier>> {
         &self.identifiers
     }
     /// Consumes the builder and constructs a [`BatchGetLifecyclePolicyInput`](crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput {
-            identifiers: self.identifiers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput {
+                identifiers: self.identifiers
+                ,
+            }
+        )
     }
 }
+

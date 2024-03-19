@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobLogItemsOutput {
+pub struct DescribeJobLogItemsOutput  {
     /// <p>An array of Job log items.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::JobLog>>,
     /// <p>The token of the next Job log items to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeJobLogItemsOutput {
+impl  DescribeJobLogItemsOutput  {
     /// <p>An array of Job log items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::JobLog] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::JobLog] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token of the next Job log items to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeJobLogItemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeJobLogItemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobLogItemsOutput`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput).
     pub fn builder() -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeJobLogItemsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobLogItemsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::JobLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeJobLogItemsOutputBuilder {
     /// <p>An array of Job log items.</p>
     pub fn items(mut self, input: crate::types::JobLog) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Job log items.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobLog>>) -> Self {
+        self.items = input; self
     }
     /// <p>An array of Job log items.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobLog>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobLog>> {
         &self.items
     }
     /// <p>The token of the next Job log items to retrieve.</p>
@@ -69,28 +69,30 @@ impl DescribeJobLogItemsOutputBuilder {
     }
     /// <p>The token of the next Job log items to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token of the next Job log items to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeJobLogItemsOutput`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput).
     pub fn build(self) -> crate::operation::describe_job_log_items::DescribeJobLogItemsOutput {
         crate::operation::describe_job_log_items::DescribeJobLogItemsOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

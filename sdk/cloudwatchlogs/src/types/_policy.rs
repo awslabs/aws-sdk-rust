@@ -3,13 +3,13 @@
 /// <p>A structure that contains information about one delivery destination policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Policy {
+pub struct Policy  {
     /// <p>The contents of the delivery destination policy.</p>
     pub delivery_destination_policy: ::std::option::Option<::std::string::String>,
 }
-impl Policy {
+impl  Policy  {
     /// <p>The contents of the delivery destination policy.</p>
-    pub fn delivery_destination_policy(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_destination_policy(&self) -> ::std::option::Option<& str> {
         self.delivery_destination_policy.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PolicyBuilder {
     }
     /// <p>The contents of the delivery destination policy.</p>
     pub fn set_delivery_destination_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_destination_policy = input;
-        self
+        self.delivery_destination_policy = input; self
     }
     /// <p>The contents of the delivery destination policy.</p>
     pub fn get_delivery_destination_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PolicyBuilder {
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {
         crate::types::Policy {
-            delivery_destination_policy: self.delivery_destination_policy,
+            delivery_destination_policy: self.delivery_destination_policy
+            ,
         }
     }
 }
+

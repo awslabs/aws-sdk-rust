@@ -3,7 +3,7 @@
 /// <p>Output column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputColumn {
+pub struct OutputColumn  {
     /// <p>The display name of the column..</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for a column.</p>
@@ -13,21 +13,21 @@ pub struct OutputColumn {
     /// <p>The sub data type of the column.</p>
     pub sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
 }
-impl OutputColumn {
+impl  OutputColumn  {
     /// <p>The display name of the column..</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for a column.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ColumnDataType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ColumnDataType> {
         self.r#type.as_ref()
     }
     /// <p>The sub data type of the column.</p>
-    pub fn sub_type(&self) -> ::std::option::Option<&crate::types::ColumnDataSubType> {
+    pub fn sub_type(&self) -> ::std::option::Option<& crate::types::ColumnDataSubType> {
         self.sub_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl OutputColumnBuilder {
     }
     /// <p>The display name of the column..</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name of the column..</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl OutputColumnBuilder {
     }
     /// <p>A description for a column.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for a column.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl OutputColumnBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ColumnDataType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ColumnDataType> {
@@ -97,8 +94,7 @@ impl OutputColumnBuilder {
     }
     /// <p>The sub data type of the column.</p>
     pub fn set_sub_type(mut self, input: ::std::option::Option<crate::types::ColumnDataSubType>) -> Self {
-        self.sub_type = input;
-        self
+        self.sub_type = input; self
     }
     /// <p>The sub data type of the column.</p>
     pub fn get_sub_type(&self) -> &::std::option::Option<crate::types::ColumnDataSubType> {
@@ -107,10 +103,15 @@ impl OutputColumnBuilder {
     /// Consumes the builder and constructs a [`OutputColumn`](crate::types::OutputColumn).
     pub fn build(self) -> crate::types::OutputColumn {
         crate::types::OutputColumn {
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            sub_type: self.sub_type,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            sub_type: self.sub_type
+            ,
         }
     }
 }
+

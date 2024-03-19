@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRestoreTestingSelectionInput {
+pub struct DeleteRestoreTestingSelectionInput  {
     /// <p>Required unique name of the restore testing plan that contains the restore testing selection you wish to delete.</p>
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>Required unique name of the restore testing selection you wish to delete.</p>
     pub restore_testing_selection_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRestoreTestingSelectionInput {
+impl  DeleteRestoreTestingSelectionInput  {
     /// <p>Required unique name of the restore testing plan that contains the restore testing selection you wish to delete.</p>
-    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_plan_name.as_deref()
     }
     /// <p>Required unique name of the restore testing selection you wish to delete.</p>
-    pub fn restore_testing_selection_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_selection_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_selection_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteRestoreTestingSelectionInputBuilder {
     }
     /// <p>Required unique name of the restore testing plan that contains the restore testing selection you wish to delete.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>Required unique name of the restore testing plan that contains the restore testing selection you wish to delete.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteRestoreTestingSelectionInputBuilder {
     }
     /// <p>Required unique name of the restore testing selection you wish to delete.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_selection_name = input;
-        self
+        self.restore_testing_selection_name = input; self
     }
     /// <p>Required unique name of the restore testing selection you wish to delete.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }
     /// Consumes the builder and constructs a [`DeleteRestoreTestingSelectionInput`](crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionInput {
-            restore_testing_plan_name: self.restore_testing_plan_name,
-            restore_testing_selection_name: self.restore_testing_selection_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionInput {
+                restore_testing_plan_name: self.restore_testing_plan_name
+                ,
+                restore_testing_selection_name: self.restore_testing_selection_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>A container encapsulates the runtime environment for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Container {
+pub struct Container  {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A list of URIs for containers created in the context Region.</p>
-    pub image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub image_uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Container {
+impl  Container  {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A list of URIs for containers created in the context Region.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_uris.is_none()`.
-    pub fn image_uris(&self) -> &[::std::string::String] {
-        self.image_uris.as_deref().unwrap_or_default()
+    pub fn image_uris(&self) -> & [::std::string::String] {
+        self.image_uris.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Container {
@@ -33,7 +34,7 @@ impl Container {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) image_uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ContainerBuilder {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
@@ -43,8 +44,7 @@ impl ContainerBuilder {
     }
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ContainerBuilder {
     /// <p>A list of URIs for containers created in the context Region.</p>
     pub fn image_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_uris.unwrap_or_default();
-        v.push(input.into());
-        self.image_uris = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_uris = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of URIs for containers created in the context Region.</p>
-    pub fn set_image_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_uris = input;
-        self
+    pub fn set_image_uris(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.image_uris = input; self
     }
     /// <p>A list of URIs for containers created in the context Region.</p>
-    pub fn get_image_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_uris(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.image_uris
     }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {
         crate::types::Container {
-            region: self.region,
-            image_uris: self.image_uris,
+            region: self.region
+            ,
+            image_uris: self.image_uris
+            ,
         }
     }
 }
+

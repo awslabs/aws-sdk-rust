@@ -3,7 +3,7 @@
 /// <p>Describes overrides for a launch template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetLaunchTemplateOverridesRequest {
+pub struct FleetLaunchTemplateOverridesRequest  {
     /// <p>The instance type.</p>
     /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
@@ -35,26 +35,26 @@ pub struct FleetLaunchTemplateOverridesRequest {
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
 }
-impl FleetLaunchTemplateOverridesRequest {
+impl  FleetLaunchTemplateOverridesRequest  {
     /// <p>The instance type.</p>
     /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn max_price(&self) -> ::std::option::Option<&str> {
+    pub fn max_price(&self) -> ::std::option::Option<& str> {
         self.max_price.as_deref()
     }
     /// <p>The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have only one subnet ID.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The number of units provided by the specified instance type.</p><note>
@@ -71,17 +71,17 @@ impl FleetLaunchTemplateOverridesRequest {
         self.priority
     }
     /// <p>The location where the instance launched, if applicable.</p>
-    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+    pub fn placement(&self) -> ::std::option::Option<& crate::types::Placement> {
         self.placement.as_ref()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<& crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
 }
@@ -120,8 +120,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type.</p>
     /// <p><code>mac1.metal</code> is not supported as a launch template override.</p><note>
@@ -141,8 +140,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_price = input;
-        self
+        self.max_price = input; self
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
@@ -157,8 +155,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     }
     /// <p>The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have only one subnet ID.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have only one subnet ID.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +185,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
     /// </note>
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.weighted_capacity = input;
-        self
+        self.weighted_capacity = input; self
     }
     /// <p>The number of units provided by the specified instance type.</p><note>
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
@@ -211,8 +206,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// <p>If the Spot <code>AllocationStrategy</code> is set to <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a best-effort basis to determine which launch template override to use in fulfilling Spot capacity, but optimizes for capacity first.</p>
     /// <p>Valid values are whole numbers starting at <code>0</code>. The lower the number, the higher the priority. If no number is set, the launch template override has the lowest priority. You can set the same priority for different launch template overrides.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority for the launch template override. The highest priority is launched first.</p>
     /// <p>If the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand capacity.</p>
@@ -228,8 +222,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     }
     /// <p>The location where the instance launched, if applicable.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
-        self.placement = input;
-        self
+        self.placement = input; self
     }
     /// <p>The location where the instance launched, if applicable.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
@@ -246,8 +239,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
-        self.instance_requirements = input;
-        self
+        self.instance_requirements = input; self
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
@@ -262,8 +254,7 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     }
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,15 +263,25 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// Consumes the builder and constructs a [`FleetLaunchTemplateOverridesRequest`](crate::types::FleetLaunchTemplateOverridesRequest).
     pub fn build(self) -> crate::types::FleetLaunchTemplateOverridesRequest {
         crate::types::FleetLaunchTemplateOverridesRequest {
-            instance_type: self.instance_type,
-            max_price: self.max_price,
-            subnet_id: self.subnet_id,
-            availability_zone: self.availability_zone,
-            weighted_capacity: self.weighted_capacity,
-            priority: self.priority,
-            placement: self.placement,
-            instance_requirements: self.instance_requirements,
-            image_id: self.image_id,
+            instance_type: self.instance_type
+            ,
+            max_price: self.max_price
+            ,
+            subnet_id: self.subnet_id
+            ,
+            availability_zone: self.availability_zone
+            ,
+            weighted_capacity: self.weighted_capacity
+            ,
+            priority: self.priority
+            ,
+            placement: self.placement
+            ,
+            instance_requirements: self.instance_requirements
+            ,
+            image_id: self.image_id
+            ,
         }
     }
 }
+

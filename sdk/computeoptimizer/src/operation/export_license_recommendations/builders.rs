@@ -5,56 +5,52 @@ pub use crate::operation::export_license_recommendations::_export_license_recomm
 
 impl ExportLicenseRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.export_license_recommendations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.export_license_recommendations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ExportLicenseRecommendations`.
-///
+/// 
 /// <p>Export optimization recommendations for your licenses.</p>
 /// <p>Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
 /// <p>You can have only one license export job in progress per Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportLicenseRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::export_license_recommendations::builders::ExportLicenseRecommendationsInputBuilder,
+                    inner: crate::operation::export_license_recommendations::builders::ExportLicenseRecommendationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
-        crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
-    > for ExportLicenseRecommendationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
-            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
+                    crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
+                > for ExportLicenseRecommendationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
+                        crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ExportLicenseRecommendationsFluentBuilder {
     /// Creates a new `ExportLicenseRecommendations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl ExportLicenseRecommendationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::export_license_recommendations::ExportLicenseRecommendations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::export_license_recommendations::ExportLicenseRecommendations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput,
-        crate::operation::export_license_recommendations::ExportLicenseRecommendationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_license_recommendations::ExportLicenseRecommendationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::export_license_recommendations::ExportLicenseRecommendations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::export_license_recommendations::ExportLicenseRecommendations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput, crate::operation::export_license_recommendations::ExportLicenseRecommendationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -128,7 +115,7 @@ impl ExportLicenseRecommendationsFluentBuilder {
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter is omitted, recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
@@ -137,7 +124,7 @@ impl ExportLicenseRecommendationsFluentBuilder {
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter is omitted, recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `filters`.
@@ -150,12 +137,12 @@ impl ExportLicenseRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of objects to specify a filter that exports a more specific set of license recommendations.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendationFilter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `fieldsToExport`.
@@ -168,12 +155,12 @@ impl ExportLicenseRecommendationsFluentBuilder {
         self
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_fields_to_export(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportableLicenseField>>) -> Self {
+    pub fn set_fields_to_export(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExportableLicenseField>>) -> Self {
         self.inner = self.inner.set_fields_to_export(input);
         self
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_fields_to_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportableLicenseField>> {
+    pub fn get_fields_to_export(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExportableLicenseField>> {
         self.inner.get_fields_to_export()
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
@@ -234,3 +221,4 @@ impl ExportLicenseRecommendationsFluentBuilder {
         self.inner.get_include_member_accounts()
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDataCatalogEncryptionSettingsOutput {
+pub struct PutDataCatalogEncryptionSettingsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutDataCatalogEncryptionSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutDataCatalogEncryptionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput).
     pub fn builder() -> crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct PutDataCatalogEncryptionSettingsOutputBuilder {
 }
 impl PutDataCatalogEncryptionSettingsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput).
     pub fn build(self) -> crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput {
         crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput {
@@ -40,3 +40,4 @@ impl PutDataCatalogEncryptionSettingsOutputBuilder {
         }
     }
 }
+

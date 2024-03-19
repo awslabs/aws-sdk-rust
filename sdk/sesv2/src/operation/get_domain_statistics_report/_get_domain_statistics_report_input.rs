@@ -3,7 +3,7 @@
 /// <p>A request to obtain deliverability metrics for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainStatisticsReportInput {
+pub struct GetDomainStatisticsReportInput  {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
@@ -11,17 +11,17 @@ pub struct GetDomainStatisticsReportInput {
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetDomainStatisticsReportInput {
+impl  GetDomainStatisticsReportInput  {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl GetDomainStatisticsReportInputBuilder {
     }
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl GetDomainStatisticsReportInputBuilder {
     }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,24 +77,24 @@ impl GetDomainStatisticsReportInputBuilder {
     }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }
     /// Consumes the builder and constructs a [`GetDomainStatisticsReportInput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput {
-            domain: self.domain,
-            start_date: self.start_date,
-            end_date: self.end_date,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput {
+                domain: self.domain
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+            }
+        )
     }
 }
+

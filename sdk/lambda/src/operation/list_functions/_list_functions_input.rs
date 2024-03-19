@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFunctionsInput {
+pub struct ListFunctionsInput  {
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     pub master_region: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
@@ -12,17 +12,17 @@ pub struct ListFunctionsInput {
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListFunctionsInput {
+impl  ListFunctionsInput  {
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
-    pub fn master_region(&self) -> ::std::option::Option<&str> {
+    pub fn master_region(&self) -> ::std::option::Option<& str> {
         self.master_region.as_deref()
     }
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
-    pub fn function_version(&self) -> ::std::option::Option<&crate::types::FunctionVersion> {
+    pub fn function_version(&self) -> ::std::option::Option<& crate::types::FunctionVersion> {
         self.function_version.as_ref()
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
@@ -54,8 +54,7 @@ impl ListFunctionsInputBuilder {
     }
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     pub fn set_master_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_region = input;
-        self
+        self.master_region = input; self
     }
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     pub fn get_master_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListFunctionsInputBuilder {
     }
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
     pub fn set_function_version(mut self, input: ::std::option::Option<crate::types::FunctionVersion>) -> Self {
-        self.function_version = input;
-        self
+        self.function_version = input; self
     }
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
     pub fn get_function_version(&self) -> &::std::option::Option<crate::types::FunctionVersion> {
@@ -82,8 +80,7 @@ impl ListFunctionsInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,22 +93,26 @@ impl ListFunctionsInputBuilder {
     }
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_functions::ListFunctionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_functions::ListFunctionsInput {
-            master_region: self.master_region,
-            function_version: self.function_version,
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_functions::ListFunctionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_functions::ListFunctionsInput {
+                master_region: self.master_region
+                ,
+                function_version: self.function_version
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

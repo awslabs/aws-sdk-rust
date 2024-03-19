@@ -3,19 +3,19 @@
 /// <p>Parameter value of the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterValue {
+pub struct ParameterValue  {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The input value associated with the parameter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ParameterValue {
+impl  ParameterValue  {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The input value associated with the parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ParameterValueBuilder {
     }
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl ParameterValueBuilder {
     }
     /// <p>The input value associated with the parameter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The input value associated with the parameter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl ParameterValueBuilder {
     /// Consumes the builder and constructs a [`ParameterValue`](crate::types::ParameterValue).
     pub fn build(self) -> crate::types::ParameterValue {
         crate::types::ParameterValue {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

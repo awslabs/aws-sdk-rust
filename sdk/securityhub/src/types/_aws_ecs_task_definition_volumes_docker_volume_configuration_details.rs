@@ -3,37 +3,37 @@
 /// <p>Information about a Docker volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
+pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails  {
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
     pub autoprovision: ::std::option::Option<bool>,
     /// <p>The Docker volume driver to use.</p>
     pub driver: ::std::option::Option<::std::string::String>,
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub driver_opts: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub driver_opts: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub labels: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
     pub scope: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
+impl  AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails  {
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
     pub fn autoprovision(&self) -> ::std::option::Option<bool> {
         self.autoprovision
     }
     /// <p>The Docker volume driver to use.</p>
-    pub fn driver(&self) -> ::std::option::Option<&str> {
+    pub fn driver(&self) -> ::std::option::Option<& str> {
         self.driver.as_deref()
     }
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub fn driver_opts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn driver_opts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.driver_opts.as_ref()
     }
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn labels(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.labels.as_ref()
     }
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
 }
@@ -50,8 +50,8 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
 pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     pub(crate) autoprovision: ::std::option::Option<bool>,
     pub(crate) driver: ::std::option::Option<::std::string::String>,
-    pub(crate) driver_opts: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) driver_opts: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
@@ -62,8 +62,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     }
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
     pub fn set_autoprovision(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.autoprovision = input;
-        self
+        self.autoprovision = input; self
     }
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
     pub fn get_autoprovision(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     }
     /// <p>The Docker volume driver to use.</p>
     pub fn set_driver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.driver = input;
-        self
+        self.driver = input; self
     }
     /// <p>The Docker volume driver to use.</p>
     pub fn get_driver(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,20 +88,16 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// <p>A map of Docker driver-specific options that are passed through.</p>
     pub fn driver_opts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.driver_opts.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.driver_opts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.driver_opts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub fn set_driver_opts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.driver_opts = input;
-        self
+    pub fn set_driver_opts(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.driver_opts = input; self
     }
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub fn get_driver_opts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_driver_opts(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.driver_opts
     }
     /// Adds a key-value pair to `labels`.
@@ -113,17 +107,16 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// <p>Custom metadata to add to the Docker volume.</p>
     pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.labels.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.labels = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.labels = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.labels
     }
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
@@ -133,8 +126,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     }
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,11 +135,17 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
-            autoprovision: self.autoprovision,
-            driver: self.driver,
-            driver_opts: self.driver_opts,
-            labels: self.labels,
-            scope: self.scope,
+            autoprovision: self.autoprovision
+            ,
+            driver: self.driver
+            ,
+            driver_opts: self.driver_opts
+            ,
+            labels: self.labels
+            ,
+            scope: self.scope
+            ,
         }
     }
 }
+

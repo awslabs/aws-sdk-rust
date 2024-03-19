@@ -3,7 +3,7 @@
 /// <p>Send OTP message request parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendOtpMessageRequestParameters {
+pub struct SendOtpMessageRequestParameters  {
     /// <p>The attempts allowed to validate an OTP.</p>
     pub allowed_attempts: ::std::option::Option<i32>,
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
@@ -27,17 +27,17 @@ pub struct SendOtpMessageRequestParameters {
     /// <p>The time in minutes before the OTP is no longer valid.</p>
     pub validity_period: ::std::option::Option<i32>,
 }
-impl SendOtpMessageRequestParameters {
+impl  SendOtpMessageRequestParameters  {
     /// <p>The attempts allowed to validate an OTP.</p>
     pub fn allowed_attempts(&self) -> ::std::option::Option<i32> {
         self.allowed_attempts
     }
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
-    pub fn brand_name(&self) -> ::std::option::Option<&str> {
+    pub fn brand_name(&self) -> ::std::option::Option<& str> {
         self.brand_name.as_deref()
     }
     /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
-    pub fn channel(&self) -> ::std::option::Option<&str> {
+    pub fn channel(&self) -> ::std::option::Option<& str> {
         self.channel.as_deref()
     }
     /// <p>The number of characters in the generated OTP.</p>
@@ -45,27 +45,27 @@ impl SendOtpMessageRequestParameters {
         self.code_length
     }
     /// <p>The destination identity to send OTP to.</p>
-    pub fn destination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn destination_identity(&self) -> ::std::option::Option<& str> {
         self.destination_identity.as_deref()
     }
     /// <p>A unique Entity ID received from DLT after entity registration is approved.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The language to be used for the outgoing message body containing the OTP.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The origination identity used to send OTP from.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity(&self) -> ::std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>A unique Template ID received from DLT after entity registration is approved.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The time in minutes before the OTP is no longer valid.</p>
@@ -104,8 +104,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The attempts allowed to validate an OTP.</p>
     pub fn set_allowed_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allowed_attempts = input;
-        self
+        self.allowed_attempts = input; self
     }
     /// <p>The attempts allowed to validate an OTP.</p>
     pub fn get_allowed_attempts(&self) -> &::std::option::Option<i32> {
@@ -119,8 +118,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
     pub fn set_brand_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.brand_name = input;
-        self
+        self.brand_name = input; self
     }
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
     pub fn get_brand_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
     pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
     pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +145,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The number of characters in the generated OTP.</p>
     pub fn set_code_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code_length = input;
-        self
+        self.code_length = input; self
     }
     /// <p>The number of characters in the generated OTP.</p>
     pub fn get_code_length(&self) -> &::std::option::Option<i32> {
@@ -163,8 +159,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The destination identity to send OTP to.</p>
     pub fn set_destination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_identity = input;
-        self
+        self.destination_identity = input; self
     }
     /// <p>The destination identity to send OTP to.</p>
     pub fn get_destination_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +172,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>A unique Entity ID received from DLT after entity registration is approved.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>A unique Entity ID received from DLT after entity registration is approved.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +185,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The language to be used for the outgoing message body containing the OTP.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language to be used for the outgoing message body containing the OTP.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +199,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The origination identity used to send OTP from.</p>
     pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_identity = input;
-        self
+        self.origination_identity = input; self
     }
     /// <p>The origination identity used to send OTP from.</p>
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +213,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +226,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>A unique Template ID received from DLT after entity registration is approved.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>A unique Template ID received from DLT after entity registration is approved.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +239,7 @@ impl SendOtpMessageRequestParametersBuilder {
     }
     /// <p>The time in minutes before the OTP is no longer valid.</p>
     pub fn set_validity_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.validity_period = input;
-        self
+        self.validity_period = input; self
     }
     /// <p>The time in minutes before the OTP is no longer valid.</p>
     pub fn get_validity_period(&self) -> &::std::option::Option<i32> {
@@ -259,17 +248,29 @@ impl SendOtpMessageRequestParametersBuilder {
     /// Consumes the builder and constructs a [`SendOtpMessageRequestParameters`](crate::types::SendOtpMessageRequestParameters).
     pub fn build(self) -> crate::types::SendOtpMessageRequestParameters {
         crate::types::SendOtpMessageRequestParameters {
-            allowed_attempts: self.allowed_attempts,
-            brand_name: self.brand_name,
-            channel: self.channel,
-            code_length: self.code_length,
-            destination_identity: self.destination_identity,
-            entity_id: self.entity_id,
-            language: self.language,
-            origination_identity: self.origination_identity,
-            reference_id: self.reference_id,
-            template_id: self.template_id,
-            validity_period: self.validity_period,
+            allowed_attempts: self.allowed_attempts
+            ,
+            brand_name: self.brand_name
+            ,
+            channel: self.channel
+            ,
+            code_length: self.code_length
+            ,
+            destination_identity: self.destination_identity
+            ,
+            entity_id: self.entity_id
+            ,
+            language: self.language
+            ,
+            origination_identity: self.origination_identity
+            ,
+            reference_id: self.reference_id
+            ,
+            template_id: self.template_id
+            ,
+            validity_period: self.validity_period
+            ,
         }
     }
 }
+

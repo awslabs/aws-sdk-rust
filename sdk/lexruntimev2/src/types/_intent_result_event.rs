@@ -3,16 +3,16 @@
 /// <p>Contains the current state of the conversation between the client application and Amazon Lex V2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentResultEvent {
+pub struct IntentResultEvent  {
     /// <p>Indicates whether the input to the operation was text, speech, or from a touch-tone keypad.</p>
     pub input_mode: ::std::option::Option<crate::types::InputMode>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
+    pub interpretations: ::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>>,
     /// <p>The state of the user's session with Amazon Lex V2.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>The attributes sent in the request.</p>
-    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The identifier of the session in use.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
@@ -20,36 +20,37 @@ pub struct IntentResultEvent {
     /// <p>The bot member that is processing the intent.</p>
     pub recognized_bot_member: ::std::option::Option<crate::types::RecognizedBotMember>,
 }
-impl IntentResultEvent {
+impl  IntentResultEvent  {
     /// <p>Indicates whether the input to the operation was text, speech, or from a touch-tone keypad.</p>
-    pub fn input_mode(&self) -> ::std::option::Option<&crate::types::InputMode> {
+    pub fn input_mode(&self) -> ::std::option::Option<& crate::types::InputMode> {
         self.input_mode.as_ref()
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interpretations.is_none()`.
-    pub fn interpretations(&self) -> &[crate::types::Interpretation] {
-        self.interpretations.as_deref().unwrap_or_default()
+    pub fn interpretations(&self) -> & [crate::types::Interpretation] {
+        self.interpretations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
-    pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn session_state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.session_state.as_ref()
     }
     /// <p>The attributes sent in the request.</p>
-    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>The identifier of the session in use.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The bot member that is processing the intent.</p>
-    pub fn recognized_bot_member(&self) -> ::std::option::Option<&crate::types::RecognizedBotMember> {
+    pub fn recognized_bot_member(&self) -> ::std::option::Option<& crate::types::RecognizedBotMember> {
         self.recognized_bot_member.as_ref()
     }
 }
@@ -65,9 +66,9 @@ impl IntentResultEvent {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentResultEventBuilder {
     pub(crate) input_mode: ::std::option::Option<crate::types::InputMode>,
-    pub(crate) interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
+    pub(crate) interpretations: ::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
-    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) recognized_bot_member: ::std::option::Option<crate::types::RecognizedBotMember>,
@@ -80,8 +81,7 @@ impl IntentResultEventBuilder {
     }
     /// <p>Indicates whether the input to the operation was text, speech, or from a touch-tone keypad.</p>
     pub fn set_input_mode(mut self, input: ::std::option::Option<crate::types::InputMode>) -> Self {
-        self.input_mode = input;
-        self
+        self.input_mode = input; self
     }
     /// <p>Indicates whether the input to the operation was text, speech, or from a touch-tone keypad.</p>
     pub fn get_input_mode(&self) -> &::std::option::Option<crate::types::InputMode> {
@@ -95,19 +95,18 @@ impl IntentResultEventBuilder {
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(mut self, input: crate::types::Interpretation) -> Self {
         let mut v = self.interpretations.unwrap_or_default();
-        v.push(input);
-        self.interpretations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.interpretations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>) -> Self {
-        self.interpretations = input;
-        self
+    pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>>) -> Self {
+        self.interpretations = input; self
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
+    pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>> {
         &self.interpretations
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
@@ -117,8 +116,7 @@ impl IntentResultEventBuilder {
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.session_state = input;
-        self
+        self.session_state = input; self
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
@@ -129,26 +127,18 @@ impl IntentResultEventBuilder {
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
     ///
     /// <p>The attributes sent in the request.</p>
-    pub fn request_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The attributes sent in the request.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_attributes = input;
-        self
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_attributes = input; self
     }
     /// <p>The attributes sent in the request.</p>
-    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>The identifier of the session in use.</p>
@@ -158,8 +148,7 @@ impl IntentResultEventBuilder {
     }
     /// <p>The identifier of the session in use.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the session in use.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +161,7 @@ impl IntentResultEventBuilder {
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +174,7 @@ impl IntentResultEventBuilder {
     }
     /// <p>The bot member that is processing the intent.</p>
     pub fn set_recognized_bot_member(mut self, input: ::std::option::Option<crate::types::RecognizedBotMember>) -> Self {
-        self.recognized_bot_member = input;
-        self
+        self.recognized_bot_member = input; self
     }
     /// <p>The bot member that is processing the intent.</p>
     pub fn get_recognized_bot_member(&self) -> &::std::option::Option<crate::types::RecognizedBotMember> {
@@ -196,13 +183,21 @@ impl IntentResultEventBuilder {
     /// Consumes the builder and constructs a [`IntentResultEvent`](crate::types::IntentResultEvent).
     pub fn build(self) -> crate::types::IntentResultEvent {
         crate::types::IntentResultEvent {
-            input_mode: self.input_mode,
-            interpretations: self.interpretations,
-            session_state: self.session_state,
-            request_attributes: self.request_attributes,
-            session_id: self.session_id,
-            event_id: self.event_id,
-            recognized_bot_member: self.recognized_bot_member,
+            input_mode: self.input_mode
+            ,
+            interpretations: self.interpretations
+            ,
+            session_state: self.session_state
+            ,
+            request_attributes: self.request_attributes
+            ,
+            session_id: self.session_id
+            ,
+            event_id: self.event_id
+            ,
+            recognized_bot_member: self.recognized_bot_member
+            ,
         }
     }
 }
+

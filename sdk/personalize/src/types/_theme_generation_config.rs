@@ -3,13 +3,13 @@
 /// <p>The configuration details for generating themes with a batch inference job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThemeGenerationConfig {
+pub struct ThemeGenerationConfig  {
     /// <p>Fields used to generate descriptive themes for a batch inference job.</p>
     pub fields_for_theme_generation: ::std::option::Option<crate::types::FieldsForThemeGeneration>,
 }
-impl ThemeGenerationConfig {
+impl  ThemeGenerationConfig  {
     /// <p>Fields used to generate descriptive themes for a batch inference job.</p>
-    pub fn fields_for_theme_generation(&self) -> ::std::option::Option<&crate::types::FieldsForThemeGeneration> {
+    pub fn fields_for_theme_generation(&self) -> ::std::option::Option<& crate::types::FieldsForThemeGeneration> {
         self.fields_for_theme_generation.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ThemeGenerationConfigBuilder {
     }
     /// <p>Fields used to generate descriptive themes for a batch inference job.</p>
     pub fn set_fields_for_theme_generation(mut self, input: ::std::option::Option<crate::types::FieldsForThemeGeneration>) -> Self {
-        self.fields_for_theme_generation = input;
-        self
+        self.fields_for_theme_generation = input; self
     }
     /// <p>Fields used to generate descriptive themes for a batch inference job.</p>
     pub fn get_fields_for_theme_generation(&self) -> &::std::option::Option<crate::types::FieldsForThemeGeneration> {
@@ -45,7 +44,9 @@ impl ThemeGenerationConfigBuilder {
     /// Consumes the builder and constructs a [`ThemeGenerationConfig`](crate::types::ThemeGenerationConfig).
     pub fn build(self) -> crate::types::ThemeGenerationConfig {
         crate::types::ThemeGenerationConfig {
-            fields_for_theme_generation: self.fields_for_theme_generation,
+            fields_for_theme_generation: self.fields_for_theme_generation
+            ,
         }
     }
 }
+

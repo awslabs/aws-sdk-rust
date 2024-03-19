@@ -5,23 +5,20 @@ pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_con
 
 impl DeleteVpcPeeringConnectionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_vpc_peering_connection();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_vpc_peering_connection();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteVpcPeeringConnection`.
-///
+/// 
 /// <p>Removes a VPC peering connection. To delete the connection, you must have a valid authorization for the VPC peering connection that you want to delete..</p>
 /// <p>Once a valid authorization exists, call this operation from the Amazon Web Services account that is used to manage the Amazon GameLift fleets. Identify the connection to delete by the connection ID and fleet ID. If successful, the connection is removed.</p>
 /// <p><b>Related actions</b></p>
@@ -29,33 +26,32 @@ impl DeleteVpcPeeringConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder,
+                    inner: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-    > for DeleteVpcPeeringConnectionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
+                    crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+                > for DeleteVpcPeeringConnectionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
+                        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteVpcPeeringConnectionFluentBuilder {
     /// Creates a new `DeleteVpcPeeringConnection`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
-        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput, crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -140,3 +127,4 @@ impl DeleteVpcPeeringConnectionFluentBuilder {
         self.inner.get_vpc_peering_connection_id()
     }
 }
+

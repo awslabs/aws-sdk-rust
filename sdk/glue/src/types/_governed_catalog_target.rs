@@ -3,13 +3,13 @@
 /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GovernedCatalogTarget {
+pub struct GovernedCatalogTarget  {
     /// <p>The name of the data target.</p>
     pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub partition_keys: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     /// <p>The name of the table in the database to write to.</p>
     pub table: ::std::string::String,
     /// <p>The name of the database to write to.</p>
@@ -17,35 +17,32 @@ pub struct GovernedCatalogTarget {
     /// <p>A policy that specifies update behavior for the governed catalog.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
 }
-impl GovernedCatalogTarget {
+impl  GovernedCatalogTarget  {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
-    pub fn partition_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        self.partition_keys.as_deref().unwrap_or_default()
+    pub fn partition_keys(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        self.partition_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>A policy that specifies update behavior for the governed catalog.</p>
-    pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::CatalogSchemaChangePolicy> {
+    pub fn schema_change_policy(&self) -> ::std::option::Option<& crate::types::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -61,8 +58,8 @@ impl GovernedCatalogTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GovernedCatalogTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
@@ -76,8 +73,7 @@ impl GovernedCatalogTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,17 +86,16 @@ impl GovernedCatalogTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// Appends an item to `partition_keys`.
@@ -108,19 +103,18 @@ impl GovernedCatalogTargetBuilder {
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn partition_keys(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-        v.push(input);
-        self.partition_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partition_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.partition_keys = input;
-        self
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.partition_keys = input; self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.partition_keys
     }
     /// <p>The name of the table in the database to write to.</p>
@@ -131,8 +125,7 @@ impl GovernedCatalogTargetBuilder {
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +139,7 @@ impl GovernedCatalogTargetBuilder {
     }
     /// <p>The name of the database to write to.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database to write to.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +152,7 @@ impl GovernedCatalogTargetBuilder {
     }
     /// <p>A policy that specifies update behavior for the governed catalog.</p>
     pub fn set_schema_change_policy(mut self, input: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>) -> Self {
-        self.schema_change_policy = input;
-        self
+        self.schema_change_policy = input; self
     }
     /// <p>A policy that specifies update behavior for the governed catalog.</p>
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::CatalogSchemaChangePolicy> {
@@ -174,33 +165,34 @@ impl GovernedCatalogTargetBuilder {
     /// - [`table`](crate::types::builders::GovernedCatalogTargetBuilder::table)
     /// - [`database`](crate::types::builders::GovernedCatalogTargetBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GovernedCatalogTarget {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GovernedCatalogTarget",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building GovernedCatalogTarget",
-                )
-            })?,
-            partition_keys: self.partition_keys,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building GovernedCatalogTarget",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building GovernedCatalogTarget",
-                )
-            })?,
-            schema_change_policy: self.schema_change_policy,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GovernedCatalogTarget {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GovernedCatalogTarget")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building GovernedCatalogTarget")
+                    )?
+                ,
+                partition_keys: self.partition_keys
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building GovernedCatalogTarget")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building GovernedCatalogTarget")
+                    )?
+                ,
+                schema_change_policy: self.schema_change_policy
+                ,
+            }
+        )
     }
 }
+

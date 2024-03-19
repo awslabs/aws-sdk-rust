@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MoveAccountInput {
+pub struct MoveAccountInput  {
     /// <p>The unique identifier (ID) of the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -25,10 +25,10 @@ pub struct MoveAccountInput {
     /// </ul>
     pub destination_parent_id: ::std::option::Option<::std::string::String>,
 }
-impl MoveAccountInput {
+impl  MoveAccountInput  {
     /// <p>The unique identifier (ID) of the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
@@ -39,7 +39,7 @@ impl MoveAccountInput {
     /// <li>
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
-    pub fn source_parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_parent_id(&self) -> ::std::option::Option<& str> {
         self.source_parent_id.as_deref()
     }
     /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
@@ -50,7 +50,7 @@ impl MoveAccountInput {
     /// <li>
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
-    pub fn destination_parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_parent_id(&self) -> ::std::option::Option<& str> {
         self.destination_parent_id.as_deref()
     }
 }
@@ -80,8 +80,7 @@ impl MoveAccountInputBuilder {
     /// <p>The unique identifier (ID) of the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The unique identifier (ID) of the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
@@ -110,8 +109,7 @@ impl MoveAccountInputBuilder {
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn set_source_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_parent_id = input;
-        self
+        self.source_parent_id = input; self
     }
     /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
@@ -146,8 +144,7 @@ impl MoveAccountInputBuilder {
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn set_destination_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_parent_id = input;
-        self
+        self.destination_parent_id = input; self
     }
     /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
@@ -162,10 +159,16 @@ impl MoveAccountInputBuilder {
     }
     /// Consumes the builder and constructs a [`MoveAccountInput`](crate::operation::move_account::MoveAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::move_account::MoveAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::move_account::MoveAccountInput {
-            account_id: self.account_id,
-            source_parent_id: self.source_parent_id,
-            destination_parent_id: self.destination_parent_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::move_account::MoveAccountInput {
+                account_id: self.account_id
+                ,
+                source_parent_id: self.source_parent_id
+                ,
+                destination_parent_id: self.destination_parent_id
+                ,
+            }
+        )
     }
 }
+

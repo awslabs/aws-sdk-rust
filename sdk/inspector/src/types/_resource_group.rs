@@ -3,27 +3,25 @@
 /// <p>Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <code>DescribeResourceGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceGroup {
+pub struct ResourceGroup  {
     /// <p>The ARN of the resource group.</p>
     pub arn: ::std::string::String,
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub tags: ::std::vec::Vec<crate::types::ResourceGroupTag>,
+    pub tags: ::std::vec::Vec::<crate::types::ResourceGroupTag>,
     /// <p>The time at which resource group is created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
 }
-impl ResourceGroup {
+impl  ResourceGroup  {
     /// <p>The ARN of the resource group.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn tags(&self) -> &[crate::types::ResourceGroupTag] {
-        use std::ops::Deref;
-        self.tags.deref()
+    pub fn tags(&self) -> & [crate::types::ResourceGroupTag] {
+        use std::ops::Deref; self.tags.deref()
     }
     /// <p>The time at which resource group is created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
 }
@@ -39,7 +37,7 @@ impl ResourceGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceGroupBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceGroupTag>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceGroupBuilder {
@@ -51,8 +49,7 @@ impl ResourceGroupBuilder {
     }
     /// <p>The ARN of the resource group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the resource group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl ResourceGroupBuilder {
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
     pub fn tags(mut self, input: crate::types::ResourceGroupTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceGroupTag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceGroupTag>> {
         &self.tags
     }
     /// <p>The time at which resource group is created.</p>
@@ -86,8 +82,7 @@ impl ResourceGroupBuilder {
     }
     /// <p>The time at which resource group is created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which resource group is created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,25 +94,25 @@ impl ResourceGroupBuilder {
     /// - [`tags`](crate::types::builders::ResourceGroupBuilder::tags)
     /// - [`created_at`](crate::types::builders::ResourceGroupBuilder::created_at)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceGroup {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ResourceGroup",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building ResourceGroup",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ResourceGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceGroup {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ResourceGroup")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building ResourceGroup")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ResourceGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

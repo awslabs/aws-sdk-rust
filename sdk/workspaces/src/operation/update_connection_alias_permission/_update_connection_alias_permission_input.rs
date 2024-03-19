@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectionAliasPermissionInput {
+pub struct UpdateConnectionAliasPermissionInput  {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     pub connection_alias_permission: ::std::option::Option<crate::types::ConnectionAliasPermission>,
 }
-impl UpdateConnectionAliasPermissionInput {
+impl  UpdateConnectionAliasPermissionInput  {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn connection_alias_permission(&self) -> ::std::option::Option<&crate::types::ConnectionAliasPermission> {
+    pub fn connection_alias_permission(&self) -> ::std::option::Option<& crate::types::ConnectionAliasPermission> {
         self.connection_alias_permission.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateConnectionAliasPermissionInputBuilder {
     }
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateConnectionAliasPermissionInputBuilder {
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     pub fn set_connection_alias_permission(mut self, input: ::std::option::Option<crate::types::ConnectionAliasPermission>) -> Self {
-        self.connection_alias_permission = input;
-        self
+        self.connection_alias_permission = input; self
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     pub fn get_connection_alias_permission(&self) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
         &self.connection_alias_permission
     }
     /// Consumes the builder and constructs a [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput {
-                alias_id: self.alias_id,
-                connection_alias_permission: self.connection_alias_permission,
-            },
+                alias_id: self.alias_id
+                ,
+                connection_alias_permission: self.connection_alias_permission
+                ,
+            }
         )
     }
 }
+

@@ -24,11 +24,7 @@ impl ApiConfiguration {
     /// Tries to convert the enum instance into [`DataStoreConfig`](crate::types::ApiConfiguration::DataStoreConfig), extracting the inner [`DataStoreRenderConfig`](crate::types::DataStoreRenderConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_data_store_config(&self) -> ::std::result::Result<&crate::types::DataStoreRenderConfig, &Self> {
-        if let ApiConfiguration::DataStoreConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApiConfiguration::DataStoreConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DataStoreConfig`](crate::types::ApiConfiguration::DataStoreConfig).
     pub fn is_data_store_config(&self) -> bool {
@@ -37,11 +33,7 @@ impl ApiConfiguration {
     /// Tries to convert the enum instance into [`GraphQlConfig`](crate::types::ApiConfiguration::GraphQlConfig), extracting the inner [`GraphQlRenderConfig`](crate::types::GraphQlRenderConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_graph_ql_config(&self) -> ::std::result::Result<&crate::types::GraphQlRenderConfig, &Self> {
-        if let ApiConfiguration::GraphQlConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApiConfiguration::GraphQlConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GraphQlConfig`](crate::types::ApiConfiguration::GraphQlConfig).
     pub fn is_graph_ql_config(&self) -> bool {
@@ -50,11 +42,7 @@ impl ApiConfiguration {
     /// Tries to convert the enum instance into [`NoApiConfig`](crate::types::ApiConfiguration::NoApiConfig), extracting the inner [`NoApiRenderConfig`](crate::types::NoApiRenderConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_no_api_config(&self) -> ::std::result::Result<&crate::types::NoApiRenderConfig, &Self> {
-        if let ApiConfiguration::NoApiConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApiConfiguration::NoApiConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NoApiConfig`](crate::types::ApiConfiguration::NoApiConfig).
     pub fn is_no_api_config(&self) -> bool {
@@ -65,3 +53,4 @@ impl ApiConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

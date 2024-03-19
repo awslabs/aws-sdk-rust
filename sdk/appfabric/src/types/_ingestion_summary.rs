@@ -3,7 +3,7 @@
 /// <p>Contains a summary of an ingestion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionSummary {
+pub struct IngestionSummary  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the application.</p>
@@ -13,24 +13,21 @@ pub struct IngestionSummary {
     /// <p>The status of the ingestion.</p>
     pub state: crate::types::IngestionState,
 }
-impl IngestionSummary {
+impl  IngestionSummary  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the application.</p>
-    pub fn app(&self) -> &str {
-        use std::ops::Deref;
-        self.app.deref()
+    pub fn app(&self) -> & str {
+        use std::ops::Deref; self.app.deref()
     }
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tenant_id.deref()
+    pub fn tenant_id(&self) -> & str {
+        use std::ops::Deref; self.tenant_id.deref()
     }
     /// <p>The status of the ingestion.</p>
-    pub fn state(&self) -> &crate::types::IngestionState {
+    pub fn state(&self) -> & crate::types::IngestionState {
         &self.state
     }
 }
@@ -59,8 +56,7 @@ impl IngestionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl IngestionSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl IngestionSummaryBuilder {
     }
     /// <p>The ID of the application tenant.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
     }
     /// <p>The ID of the application tenant.</p>
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl IngestionSummaryBuilder {
     }
     /// <p>The status of the ingestion.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IngestionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of the ingestion.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IngestionState> {
@@ -118,31 +111,30 @@ impl IngestionSummaryBuilder {
     /// - [`tenant_id`](crate::types::builders::IngestionSummaryBuilder::tenant_id)
     /// - [`state`](crate::types::builders::IngestionSummaryBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building IngestionSummary",
-                )
-            })?,
-            app: self.app.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app",
-                    "app was not specified but it is required when building IngestionSummary",
-                )
-            })?,
-            tenant_id: self.tenant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tenant_id",
-                    "tenant_id was not specified but it is required when building IngestionSummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building IngestionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IngestionSummary")
+                    )?
+                ,
+                app: self.app
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app", "app was not specified but it is required when building IngestionSummary")
+                    )?
+                ,
+                tenant_id: self.tenant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tenant_id", "tenant_id was not specified but it is required when building IngestionSummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building IngestionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

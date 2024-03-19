@@ -4,15 +4,14 @@
 /// <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchDestination {
+pub struct CloudWatchDestination  {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
-    pub dimension_configurations: ::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>,
+    pub dimension_configurations: ::std::vec::Vec::<crate::types::CloudWatchDimensionConfiguration>,
 }
-impl CloudWatchDestination {
+impl  CloudWatchDestination  {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
-    pub fn dimension_configurations(&self) -> &[crate::types::CloudWatchDimensionConfiguration] {
-        use std::ops::Deref;
-        self.dimension_configurations.deref()
+    pub fn dimension_configurations(&self) -> & [crate::types::CloudWatchDimensionConfiguration] {
+        use std::ops::Deref; self.dimension_configurations.deref()
     }
 }
 impl CloudWatchDestination {
@@ -26,7 +25,7 @@ impl CloudWatchDestination {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchDestinationBuilder {
-    pub(crate) dimension_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+    pub(crate) dimension_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestinationBuilder {
     /// Appends an item to `dimension_configurations`.
@@ -36,33 +35,31 @@ impl CloudWatchDestinationBuilder {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
     pub fn dimension_configurations(mut self, input: crate::types::CloudWatchDimensionConfiguration) -> Self {
         let mut v = self.dimension_configurations.unwrap_or_default();
-        v.push(input);
-        self.dimension_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimension_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
-    pub fn set_dimension_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
-    ) -> Self {
-        self.dimension_configurations = input;
-        self
+    pub fn set_dimension_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchDimensionConfiguration>>) -> Self {
+        self.dimension_configurations = input; self
     }
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
-    pub fn get_dimension_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>> {
+    pub fn get_dimension_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchDimensionConfiguration>> {
         &self.dimension_configurations
     }
     /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::types::CloudWatchDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_configurations`](crate::types::builders::CloudWatchDestinationBuilder::dimension_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudWatchDestination {
-            dimension_configurations: self.dimension_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_configurations",
-                    "dimension_configurations was not specified but it is required when building CloudWatchDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudWatchDestination {
+                dimension_configurations: self.dimension_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_configurations", "dimension_configurations was not specified but it is required when building CloudWatchDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

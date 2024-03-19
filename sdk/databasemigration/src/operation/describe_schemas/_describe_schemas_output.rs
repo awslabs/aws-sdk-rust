@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSchemasOutput {
+pub struct DescribeSchemasOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The described schema.</p>
-    pub schemas: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub schemas: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeSchemasOutput {
+impl  DescribeSchemasOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The described schema.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schemas.is_none()`.
-    pub fn schemas(&self) -> &[::std::string::String] {
-        self.schemas.as_deref().unwrap_or_default()
+    pub fn schemas(&self) -> & [::std::string::String] {
+        self.schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSchemasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSchemasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSchemasOutput`](crate::operation::describe_schemas::DescribeSchemasOutput).
     pub fn builder() -> crate::operation::describe_schemas::builders::DescribeSchemasOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeSchemasOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchemasOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) schemas: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) schemas: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeSchemasOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeSchemasOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeSchemasOutputBuilder {
     /// <p>The described schema.</p>
     pub fn schemas(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.schemas.unwrap_or_default();
-        v.push(input.into());
-        self.schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The described schema.</p>
-    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.schemas = input;
-        self
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.schemas = input; self
     }
     /// <p>The described schema.</p>
-    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.schemas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSchemasOutput`](crate::operation::describe_schemas::DescribeSchemasOutput).
     pub fn build(self) -> crate::operation::describe_schemas::DescribeSchemasOutput {
         crate::operation::describe_schemas::DescribeSchemasOutput {
-            marker: self.marker,
-            schemas: self.schemas,
+            marker: self.marker
+            ,
+            schemas: self.schemas
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

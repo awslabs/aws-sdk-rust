@@ -3,21 +3,20 @@
 /// <p>Contains the details of an IoT SiteWise configuration error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationErrorDetails {
+pub struct ConfigurationErrorDetails  {
     /// <p>The error code.</p>
     pub code: crate::types::ErrorCode,
     /// <p>The error message.</p>
     pub message: ::std::string::String,
 }
-impl ConfigurationErrorDetails {
+impl  ConfigurationErrorDetails  {
     /// <p>The error code.</p>
-    pub fn code(&self) -> &crate::types::ErrorCode {
+    pub fn code(&self) -> & crate::types::ErrorCode {
         &self.code
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl ConfigurationErrorDetails {
@@ -43,8 +42,7 @@ impl ConfigurationErrorDetailsBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -58,8 +56,7 @@ impl ConfigurationErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl ConfigurationErrorDetailsBuilder {
     /// - [`code`](crate::types::builders::ConfigurationErrorDetailsBuilder::code)
     /// - [`message`](crate::types::builders::ConfigurationErrorDetailsBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfigurationErrorDetails {
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building ConfigurationErrorDetails",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ConfigurationErrorDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfigurationErrorDetails {
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building ConfigurationErrorDetails")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ConfigurationErrorDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

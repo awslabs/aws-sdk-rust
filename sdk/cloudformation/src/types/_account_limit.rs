@@ -13,17 +13,17 @@
 /// <p>For more information about these account limits, and other CloudFormation limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountLimit {
+pub struct AccountLimit  {
     /// <p>The name of the account limit.</p>
     /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code></p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value that's associated with the account limit name.</p>
     pub value: ::std::option::Option<i32>,
 }
-impl AccountLimit {
+impl  AccountLimit  {
     /// <p>The name of the account limit.</p>
     /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value that's associated with the account limit name.</p>
@@ -55,8 +55,7 @@ impl AccountLimitBuilder {
     /// <p>The name of the account limit.</p>
     /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the account limit.</p>
     /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code></p>
@@ -70,8 +69,7 @@ impl AccountLimitBuilder {
     }
     /// <p>The value that's associated with the account limit name.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that's associated with the account limit name.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -80,8 +78,11 @@ impl AccountLimitBuilder {
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     pub fn build(self) -> crate::types::AccountLimit {
         crate::types::AccountLimit {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

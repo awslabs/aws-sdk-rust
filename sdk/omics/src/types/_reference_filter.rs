@@ -3,7 +3,7 @@
 /// <p>A filter for references.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceFilter {
+pub struct ReferenceFilter  {
     /// <p>A name to filter on.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 checksum to filter on.</p>
@@ -13,21 +13,21 @@ pub struct ReferenceFilter {
     /// <p>The filter's end date.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ReferenceFilter {
+impl  ReferenceFilter  {
     /// <p>A name to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An MD5 checksum to filter on.</p>
-    pub fn md5(&self) -> ::std::option::Option<&str> {
+    pub fn md5(&self) -> ::std::option::Option<& str> {
         self.md5.as_deref()
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ReferenceFilterBuilder {
     }
     /// <p>A name to filter on.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name to filter on.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ReferenceFilterBuilder {
     }
     /// <p>An MD5 checksum to filter on.</p>
     pub fn set_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5 = input;
-        self
+        self.md5 = input; self
     }
     /// <p>An MD5 checksum to filter on.</p>
     pub fn get_md5(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ReferenceFilterBuilder {
     }
     /// <p>The filter's start date.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>The filter's start date.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl ReferenceFilterBuilder {
     }
     /// <p>The filter's end date.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>The filter's end date.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl ReferenceFilterBuilder {
     /// Consumes the builder and constructs a [`ReferenceFilter`](crate::types::ReferenceFilter).
     pub fn build(self) -> crate::types::ReferenceFilter {
         crate::types::ReferenceFilter {
-            name: self.name,
-            md5: self.md5,
-            created_after: self.created_after,
-            created_before: self.created_before,
+            name: self.name
+            ,
+            md5: self.md5
+            ,
+            created_after: self.created_after
+            ,
+            created_before: self.created_before
+            ,
         }
     }
 }
+

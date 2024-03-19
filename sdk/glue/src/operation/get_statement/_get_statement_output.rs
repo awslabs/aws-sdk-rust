@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStatementOutput {
+pub struct GetStatementOutput  {
     /// <p>Returns the statement.</p>
     pub statement: ::std::option::Option<crate::types::Statement>,
     _request_id: Option<String>,
 }
-impl GetStatementOutput {
+impl  GetStatementOutput  {
     /// <p>Returns the statement.</p>
-    pub fn statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.statement.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStatementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStatementOutput {
     /// Creates a new builder-style object to manufacture [`GetStatementOutput`](crate::operation::get_statement::GetStatementOutput).
     pub fn builder() -> crate::operation::get_statement::builders::GetStatementOutputBuilder {
@@ -40,27 +40,28 @@ impl GetStatementOutputBuilder {
     }
     /// <p>Returns the statement.</p>
     pub fn set_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>Returns the statement.</p>
     pub fn get_statement(&self) -> &::std::option::Option<crate::types::Statement> {
         &self.statement
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStatementOutput`](crate::operation::get_statement::GetStatementOutput).
     pub fn build(self) -> crate::operation::get_statement::GetStatementOutput {
         crate::operation::get_statement::GetStatementOutput {
-            statement: self.statement,
+            statement: self.statement
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

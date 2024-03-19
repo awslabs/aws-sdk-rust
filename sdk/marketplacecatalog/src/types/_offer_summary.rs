@@ -3,7 +3,7 @@
 /// <p>Summarized information about an offer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferSummary {
+pub struct OfferSummary  {
     /// <p>The name of the offer.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The product ID of the offer.</p>
@@ -13,44 +13,46 @@ pub struct OfferSummary {
     /// <p>The availability end date of the offer.</p>
     pub availability_end_date: ::std::option::Option<::std::string::String>,
     /// <p>The buyer accounts in the offer.</p>
-    pub buyer_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub buyer_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the offer.</p>
     pub state: ::std::option::Option<crate::types::OfferStateString>,
     /// <p>The targeting in the offer.</p>
-    pub targeting: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
+    pub targeting: ::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>>,
 }
-impl OfferSummary {
+impl  OfferSummary  {
     /// <p>The name of the offer.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The product ID of the offer.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The release date of the offer.</p>
-    pub fn release_date(&self) -> ::std::option::Option<&str> {
+    pub fn release_date(&self) -> ::std::option::Option<& str> {
         self.release_date.as_deref()
     }
     /// <p>The availability end date of the offer.</p>
-    pub fn availability_end_date(&self) -> ::std::option::Option<&str> {
+    pub fn availability_end_date(&self) -> ::std::option::Option<& str> {
         self.availability_end_date.as_deref()
     }
     /// <p>The buyer accounts in the offer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buyer_accounts.is_none()`.
-    pub fn buyer_accounts(&self) -> &[::std::string::String] {
-        self.buyer_accounts.as_deref().unwrap_or_default()
+    pub fn buyer_accounts(&self) -> & [::std::string::String] {
+        self.buyer_accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the offer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::OfferStateString> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::OfferStateString> {
         self.state.as_ref()
     }
     /// <p>The targeting in the offer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targeting.is_none()`.
-    pub fn targeting(&self) -> &[crate::types::OfferTargetingString] {
-        self.targeting.as_deref().unwrap_or_default()
+    pub fn targeting(&self) -> & [crate::types::OfferTargetingString] {
+        self.targeting.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OfferSummary {
@@ -68,9 +70,9 @@ pub struct OfferSummaryBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) release_date: ::std::option::Option<::std::string::String>,
     pub(crate) availability_end_date: ::std::option::Option<::std::string::String>,
-    pub(crate) buyer_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) buyer_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::OfferStateString>,
-    pub(crate) targeting: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
+    pub(crate) targeting: ::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>>,
 }
 impl OfferSummaryBuilder {
     /// <p>The name of the offer.</p>
@@ -80,8 +82,7 @@ impl OfferSummaryBuilder {
     }
     /// <p>The name of the offer.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the offer.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl OfferSummaryBuilder {
     }
     /// <p>The product ID of the offer.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product ID of the offer.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl OfferSummaryBuilder {
     }
     /// <p>The release date of the offer.</p>
     pub fn set_release_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_date = input;
-        self
+        self.release_date = input; self
     }
     /// <p>The release date of the offer.</p>
     pub fn get_release_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl OfferSummaryBuilder {
     }
     /// <p>The availability end date of the offer.</p>
     pub fn set_availability_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_end_date = input;
-        self
+        self.availability_end_date = input; self
     }
     /// <p>The availability end date of the offer.</p>
     pub fn get_availability_end_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +134,16 @@ impl OfferSummaryBuilder {
     /// <p>The buyer accounts in the offer.</p>
     pub fn buyer_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.buyer_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.buyer_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.buyer_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The buyer accounts in the offer.</p>
-    pub fn set_buyer_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.buyer_accounts = input;
-        self
+    pub fn set_buyer_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.buyer_accounts = input; self
     }
     /// <p>The buyer accounts in the offer.</p>
-    pub fn get_buyer_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_buyer_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.buyer_accounts
     }
     /// <p>The status of the offer.</p>
@@ -156,8 +153,7 @@ impl OfferSummaryBuilder {
     }
     /// <p>The status of the offer.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::OfferStateString>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of the offer.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::OfferStateString> {
@@ -170,29 +166,36 @@ impl OfferSummaryBuilder {
     /// <p>The targeting in the offer.</p>
     pub fn targeting(mut self, input: crate::types::OfferTargetingString) -> Self {
         let mut v = self.targeting.unwrap_or_default();
-        v.push(input);
-        self.targeting = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targeting = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targeting in the offer.</p>
-    pub fn set_targeting(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>) -> Self {
-        self.targeting = input;
-        self
+    pub fn set_targeting(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>>) -> Self {
+        self.targeting = input; self
     }
     /// <p>The targeting in the offer.</p>
-    pub fn get_targeting(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>> {
+    pub fn get_targeting(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>> {
         &self.targeting
     }
     /// Consumes the builder and constructs a [`OfferSummary`](crate::types::OfferSummary).
     pub fn build(self) -> crate::types::OfferSummary {
         crate::types::OfferSummary {
-            name: self.name,
-            product_id: self.product_id,
-            release_date: self.release_date,
-            availability_end_date: self.availability_end_date,
-            buyer_accounts: self.buyer_accounts,
-            state: self.state,
-            targeting: self.targeting,
+            name: self.name
+            ,
+            product_id: self.product_id
+            ,
+            release_date: self.release_date
+            ,
+            availability_end_date: self.availability_end_date
+            ,
+            buyer_accounts: self.buyer_accounts
+            ,
+            state: self.state
+            ,
+            targeting: self.targeting
+            ,
         }
     }
 }
+

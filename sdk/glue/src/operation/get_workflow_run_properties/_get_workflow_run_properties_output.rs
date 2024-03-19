@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowRunPropertiesOutput {
+pub struct GetWorkflowRunPropertiesOutput  {
     /// <p>The workflow run properties which were set during the specified run.</p>
-    pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub run_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetWorkflowRunPropertiesOutput {
+impl  GetWorkflowRunPropertiesOutput  {
     /// <p>The workflow run properties which were set during the specified run.</p>
-    pub fn run_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn run_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.run_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowRunPropertiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWorkflowRunPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowRunPropertiesOutput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput).
     pub fn builder() -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesOutputBuilder {
@@ -29,7 +29,7 @@ impl GetWorkflowRunPropertiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesOutputBuilder {
-    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetWorkflowRunPropertiesOutputBuilder {
@@ -38,42 +38,36 @@ impl GetWorkflowRunPropertiesOutputBuilder {
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
     ///
     /// <p>The workflow run properties which were set during the specified run.</p>
-    pub fn run_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn run_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.run_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.run_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.run_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The workflow run properties which were set during the specified run.</p>
-    pub fn set_run_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.run_properties = input;
-        self
+    pub fn set_run_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.run_properties = input; self
     }
     /// <p>The workflow run properties which were set during the specified run.</p>
-    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.run_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWorkflowRunPropertiesOutput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput).
     pub fn build(self) -> crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput {
         crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput {
-            run_properties: self.run_properties,
+            run_properties: self.run_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

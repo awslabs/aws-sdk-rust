@@ -3,20 +3,19 @@
 /// <p>Defines the Amazon Web Services Region and KMS key to add to the replication set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddRegionAction {
+pub struct AddRegionAction  {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     pub region_name: ::std::string::String,
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl AddRegionAction {
+impl  AddRegionAction  {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
-    pub fn region_name(&self) -> &str {
-        use std::ops::Deref;
-        self.region_name.deref()
+    pub fn region_name(&self) -> & str {
+        use std::ops::Deref; self.region_name.deref()
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
-    pub fn sse_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn sse_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.sse_kms_key_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AddRegionActionBuilder {
     }
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AddRegionActionBuilder {
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub fn set_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_kms_key_id = input;
-        self
+        self.sse_kms_key_id = input; self
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub fn get_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AddRegionActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region_name`](crate::types::builders::AddRegionActionBuilder::region_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AddRegionAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AddRegionAction {
-            region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region_name",
-                    "region_name was not specified but it is required when building AddRegionAction",
-                )
-            })?,
-            sse_kms_key_id: self.sse_kms_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AddRegionAction {
+                region_name: self.region_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region_name", "region_name was not specified but it is required when building AddRegionAction")
+                    )?
+                ,
+                sse_kms_key_id: self.sse_kms_key_id
+                ,
+            }
+        )
     }
 }
+

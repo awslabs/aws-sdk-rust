@@ -11,15 +11,15 @@ pub enum ParameterValue {
     /// <p>A control parameter that is an enum.</p>
     Enum(::std::string::String),
     /// <p>A control parameter that is a list of enums.</p>
-    EnumList(::std::vec::Vec<::std::string::String>),
+    EnumList(::std::vec::Vec::<::std::string::String>),
     /// <p>A control parameter that is an integer.</p>
     Integer(i32),
     /// <p>A control parameter that is a list of integers.</p>
-    IntegerList(::std::vec::Vec<i32>),
+    IntegerList(::std::vec::Vec::<i32>),
     /// <p>A control parameter that is a string.</p>
     String(::std::string::String),
     /// <p>A control parameter that is a list of strings.</p>
-    StringList(::std::vec::Vec<::std::string::String>),
+    StringList(::std::vec::Vec::<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -34,11 +34,7 @@ impl ParameterValue {
     /// Tries to convert the enum instance into [`Boolean`](crate::types::ParameterValue::Boolean), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean(&self) -> ::std::result::Result<&bool, &Self> {
-        if let ParameterValue::Boolean(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParameterValue::Boolean(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Boolean`](crate::types::ParameterValue::Boolean).
     pub fn is_boolean(&self) -> bool {
@@ -47,11 +43,7 @@ impl ParameterValue {
     /// Tries to convert the enum instance into [`Double`](crate::types::ParameterValue::Double), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double(&self) -> ::std::result::Result<&f64, &Self> {
-        if let ParameterValue::Double(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParameterValue::Double(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Double`](crate::types::ParameterValue::Double).
     pub fn is_double(&self) -> bool {
@@ -60,11 +52,7 @@ impl ParameterValue {
     /// Tries to convert the enum instance into [`Enum`](crate::types::ParameterValue::Enum), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_enum(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ParameterValue::Enum(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParameterValue::Enum(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Enum`](crate::types::ParameterValue::Enum).
     pub fn is_enum(&self) -> bool {
@@ -72,12 +60,8 @@ impl ParameterValue {
     }
     /// Tries to convert the enum instance into [`EnumList`](crate::types::ParameterValue::EnumList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_enum_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let ParameterValue::EnumList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_enum_list(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let ParameterValue::EnumList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EnumList`](crate::types::ParameterValue::EnumList).
     pub fn is_enum_list(&self) -> bool {
@@ -86,11 +70,7 @@ impl ParameterValue {
     /// Tries to convert the enum instance into [`Integer`](crate::types::ParameterValue::Integer), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer(&self) -> ::std::result::Result<&i32, &Self> {
-        if let ParameterValue::Integer(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParameterValue::Integer(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Integer`](crate::types::ParameterValue::Integer).
     pub fn is_integer(&self) -> bool {
@@ -98,12 +78,8 @@ impl ParameterValue {
     }
     /// Tries to convert the enum instance into [`IntegerList`](crate::types::ParameterValue::IntegerList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_integer_list(&self) -> ::std::result::Result<&::std::vec::Vec<i32>, &Self> {
-        if let ParameterValue::IntegerList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_integer_list(&self) -> ::std::result::Result<&::std::vec::Vec::<i32>, &Self> {
+        if let ParameterValue::IntegerList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IntegerList`](crate::types::ParameterValue::IntegerList).
     pub fn is_integer_list(&self) -> bool {
@@ -112,11 +88,7 @@ impl ParameterValue {
     /// Tries to convert the enum instance into [`String`](crate::types::ParameterValue::String), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ParameterValue::String(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParameterValue::String(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`String`](crate::types::ParameterValue::String).
     pub fn is_string(&self) -> bool {
@@ -124,12 +96,8 @@ impl ParameterValue {
     }
     /// Tries to convert the enum instance into [`StringList`](crate::types::ParameterValue::StringList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let ParameterValue::StringList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_string_list(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let ParameterValue::StringList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringList`](crate::types::ParameterValue::StringList).
     pub fn is_string_list(&self) -> bool {
@@ -140,3 +108,4 @@ impl ParameterValue {
         matches!(self, Self::Unknown)
     }
 }
+

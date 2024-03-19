@@ -3,19 +3,19 @@
 /// <p>The key usage extension defines the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyUsage {
+pub struct KeyUsage  {
     /// <p>Sets the key usage extension to critical.</p>
     pub critical: ::std::option::Option<bool>,
     /// <p>The key usage flags represent the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
     pub usage_flags: ::std::option::Option<crate::types::KeyUsageFlags>,
 }
-impl KeyUsage {
+impl  KeyUsage  {
     /// <p>Sets the key usage extension to critical.</p>
     pub fn critical(&self) -> ::std::option::Option<bool> {
         self.critical
     }
     /// <p>The key usage flags represent the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
-    pub fn usage_flags(&self) -> ::std::option::Option<&crate::types::KeyUsageFlags> {
+    pub fn usage_flags(&self) -> ::std::option::Option<& crate::types::KeyUsageFlags> {
         self.usage_flags.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Sets the key usage extension to critical.</p>
     pub fn set_critical(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.critical = input;
-        self
+        self.critical = input; self
     }
     /// <p>Sets the key usage extension to critical.</p>
     pub fn get_critical(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl KeyUsageBuilder {
     }
     /// <p>The key usage flags represent the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
     pub fn set_usage_flags(mut self, input: ::std::option::Option<crate::types::KeyUsageFlags>) -> Self {
-        self.usage_flags = input;
-        self
+        self.usage_flags = input; self
     }
     /// <p>The key usage flags represent the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
     pub fn get_usage_flags(&self) -> &::std::option::Option<crate::types::KeyUsageFlags> {
@@ -66,8 +64,11 @@ impl KeyUsageBuilder {
     /// Consumes the builder and constructs a [`KeyUsage`](crate::types::KeyUsage).
     pub fn build(self) -> crate::types::KeyUsage {
         crate::types::KeyUsage {
-            critical: self.critical,
-            usage_flags: self.usage_flags,
+            critical: self.critical
+            ,
+            usage_flags: self.usage_flags
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMaintenanceOutput {
+pub struct StartMaintenanceOutput  {
     /// <p>Contains the response to a <code>StartMaintenance</code> request.</p>
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }
-impl StartMaintenanceOutput {
+impl  StartMaintenanceOutput  {
     /// <p>Contains the response to a <code>StartMaintenance</code> request.</p>
-    pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> ::std::option::Option<& crate::types::Server> {
         self.server.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMaintenanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMaintenanceOutput {
     /// Creates a new builder-style object to manufacture [`StartMaintenanceOutput`](crate::operation::start_maintenance::StartMaintenanceOutput).
     pub fn builder() -> crate::operation::start_maintenance::builders::StartMaintenanceOutputBuilder {
@@ -40,27 +40,28 @@ impl StartMaintenanceOutputBuilder {
     }
     /// <p>Contains the response to a <code>StartMaintenance</code> request.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
-        self.server = input;
-        self
+        self.server = input; self
     }
     /// <p>Contains the response to a <code>StartMaintenance</code> request.</p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
         &self.server
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMaintenanceOutput`](crate::operation::start_maintenance::StartMaintenanceOutput).
     pub fn build(self) -> crate::operation::start_maintenance::StartMaintenanceOutput {
         crate::operation::start_maintenance::StartMaintenanceOutput {
-            server: self.server,
+            server: self.server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

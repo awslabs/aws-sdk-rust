@@ -3,19 +3,19 @@
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentS3LogConfiguration {
+pub struct ExperimentS3LogConfiguration  {
     /// <p>The name of the destination bucket.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The bucket prefix.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl ExperimentS3LogConfiguration {
+impl  ExperimentS3LogConfiguration  {
     /// <p>The name of the destination bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExperimentS3LogConfigurationBuilder {
     }
     /// <p>The name of the destination bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the destination bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ExperimentS3LogConfigurationBuilder {
     }
     /// <p>The bucket prefix.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The bucket prefix.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ExperimentS3LogConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExperimentS3LogConfiguration`](crate::types::ExperimentS3LogConfiguration).
     pub fn build(self) -> crate::types::ExperimentS3LogConfiguration {
         crate::types::ExperimentS3LogConfiguration {
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

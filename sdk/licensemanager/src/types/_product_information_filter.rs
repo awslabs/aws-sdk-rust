@@ -3,30 +3,29 @@
 /// <p>Describes product information filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductInformationFilter {
+pub struct ProductInformationFilter  {
     /// <p>Filter name.</p>
     pub product_information_filter_name: ::std::string::String,
     /// <p>Filter value.</p>
-    pub product_information_filter_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub product_information_filter_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Logical operator.</p>
     pub product_information_filter_comparator: ::std::string::String,
 }
-impl ProductInformationFilter {
+impl  ProductInformationFilter  {
     /// <p>Filter name.</p>
-    pub fn product_information_filter_name(&self) -> &str {
-        use std::ops::Deref;
-        self.product_information_filter_name.deref()
+    pub fn product_information_filter_name(&self) -> & str {
+        use std::ops::Deref; self.product_information_filter_name.deref()
     }
     /// <p>Filter value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_information_filter_value.is_none()`.
-    pub fn product_information_filter_value(&self) -> &[::std::string::String] {
-        self.product_information_filter_value.as_deref().unwrap_or_default()
+    pub fn product_information_filter_value(&self) -> & [::std::string::String] {
+        self.product_information_filter_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Logical operator.</p>
-    pub fn product_information_filter_comparator(&self) -> &str {
-        use std::ops::Deref;
-        self.product_information_filter_comparator.deref()
+    pub fn product_information_filter_comparator(&self) -> & str {
+        use std::ops::Deref; self.product_information_filter_comparator.deref()
     }
 }
 impl ProductInformationFilter {
@@ -41,7 +40,7 @@ impl ProductInformationFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductInformationFilterBuilder {
     pub(crate) product_information_filter_name: ::std::option::Option<::std::string::String>,
-    pub(crate) product_information_filter_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) product_information_filter_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) product_information_filter_comparator: ::std::option::Option<::std::string::String>,
 }
 impl ProductInformationFilterBuilder {
@@ -53,8 +52,7 @@ impl ProductInformationFilterBuilder {
     }
     /// <p>Filter name.</p>
     pub fn set_product_information_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_information_filter_name = input;
-        self
+        self.product_information_filter_name = input; self
     }
     /// <p>Filter name.</p>
     pub fn get_product_information_filter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,17 +65,16 @@ impl ProductInformationFilterBuilder {
     /// <p>Filter value.</p>
     pub fn product_information_filter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_information_filter_value.unwrap_or_default();
-        v.push(input.into());
-        self.product_information_filter_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.product_information_filter_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filter value.</p>
-    pub fn set_product_information_filter_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.product_information_filter_value = input;
-        self
+    pub fn set_product_information_filter_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.product_information_filter_value = input; self
     }
     /// <p>Filter value.</p>
-    pub fn get_product_information_filter_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_information_filter_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.product_information_filter_value
     }
     /// <p>Logical operator.</p>
@@ -88,8 +85,7 @@ impl ProductInformationFilterBuilder {
     }
     /// <p>Logical operator.</p>
     pub fn set_product_information_filter_comparator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_information_filter_comparator = input;
-        self
+        self.product_information_filter_comparator = input; self
     }
     /// <p>Logical operator.</p>
     pub fn get_product_information_filter_comparator(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,20 +96,22 @@ impl ProductInformationFilterBuilder {
     /// - [`product_information_filter_name`](crate::types::builders::ProductInformationFilterBuilder::product_information_filter_name)
     /// - [`product_information_filter_comparator`](crate::types::builders::ProductInformationFilterBuilder::product_information_filter_comparator)
     pub fn build(self) -> ::std::result::Result<crate::types::ProductInformationFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProductInformationFilter {
-            product_information_filter_name: self.product_information_filter_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product_information_filter_name",
-                    "product_information_filter_name was not specified but it is required when building ProductInformationFilter",
-                )
-            })?,
-            product_information_filter_value: self.product_information_filter_value,
-            product_information_filter_comparator: self.product_information_filter_comparator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product_information_filter_comparator",
-                    "product_information_filter_comparator was not specified but it is required when building ProductInformationFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProductInformationFilter {
+                product_information_filter_name: self.product_information_filter_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("product_information_filter_name", "product_information_filter_name was not specified but it is required when building ProductInformationFilter")
+                    )?
+                ,
+                product_information_filter_value: self.product_information_filter_value
+                ,
+                product_information_filter_comparator: self.product_information_filter_comparator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("product_information_filter_comparator", "product_information_filter_comparator was not specified but it is required when building ProductInformationFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

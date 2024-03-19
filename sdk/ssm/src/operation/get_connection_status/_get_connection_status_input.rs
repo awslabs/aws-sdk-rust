@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionStatusInput {
+pub struct GetConnectionStatusInput  {
     /// <p>The managed node ID.</p>
     pub target: ::std::option::Option<::std::string::String>,
 }
-impl GetConnectionStatusInput {
+impl  GetConnectionStatusInput  {
     /// <p>The managed node ID.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetConnectionStatusInputBuilder {
     }
     /// <p>The managed node ID.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The managed node ID.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
     /// Consumes the builder and constructs a [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_connection_status::GetConnectionStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_connection_status::GetConnectionStatusInput { target: self.target })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connection_status::GetConnectionStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_connection_status::GetConnectionStatusInput {
+                target: self.target
+                ,
+            }
+        )
     }
 }
+

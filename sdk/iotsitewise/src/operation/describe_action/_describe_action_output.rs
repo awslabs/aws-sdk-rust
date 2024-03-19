@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActionOutput {
+pub struct DescribeActionOutput  {
     /// <p>The ID of the action.</p>
     pub action_id: ::std::string::String,
     /// <p>The resource the action will be taken on.</p>
@@ -15,35 +15,33 @@ pub struct DescribeActionOutput {
     pub execution_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl DescribeActionOutput {
+impl  DescribeActionOutput  {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> & str {
+        use std::ops::Deref; self.action_id.deref()
     }
     /// <p>The resource the action will be taken on.</p>
-    pub fn target_resource(&self) -> ::std::option::Option<&crate::types::TargetResource> {
+    pub fn target_resource(&self) -> ::std::option::Option<& crate::types::TargetResource> {
         self.target_resource.as_ref()
     }
     /// <p>The ID of the action definition.</p>
-    pub fn action_definition_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_definition_id.deref()
+    pub fn action_definition_id(&self) -> & str {
+        use std::ops::Deref; self.action_definition_id.deref()
     }
     /// <p>The JSON payload of the action.</p>
-    pub fn action_payload(&self) -> ::std::option::Option<&crate::types::ActionPayload> {
+    pub fn action_payload(&self) -> ::std::option::Option<& crate::types::ActionPayload> {
         self.action_payload.as_ref()
     }
     /// <p>The time the action was executed.</p>
-    pub fn execution_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn execution_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.execution_time
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput).
     pub fn builder() -> crate::operation::describe_action::builders::DescribeActionOutputBuilder {
@@ -71,8 +69,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The ID of the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID of the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The resource the action will be taken on.</p>
     pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::TargetResource>) -> Self {
-        self.target_resource = input;
-        self
+        self.target_resource = input; self
     }
     /// <p>The resource the action will be taken on.</p>
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::TargetResource> {
@@ -101,8 +97,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The ID of the action definition.</p>
     pub fn set_action_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_definition_id = input;
-        self
+        self.action_definition_id = input; self
     }
     /// <p>The ID of the action definition.</p>
     pub fn get_action_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +111,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The JSON payload of the action.</p>
     pub fn set_action_payload(mut self, input: ::std::option::Option<crate::types::ActionPayload>) -> Self {
-        self.action_payload = input;
-        self
+        self.action_payload = input; self
     }
     /// <p>The JSON payload of the action.</p>
     pub fn get_action_payload(&self) -> &::std::option::Option<crate::types::ActionPayload> {
@@ -131,52 +125,51 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The time the action was executed.</p>
     pub fn set_execution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.execution_time = input;
-        self
+        self.execution_time = input; self
     }
     /// <p>The time the action was executed.</p>
     pub fn get_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.execution_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_id`](crate::operation::describe_action::builders::DescribeActionOutputBuilder::action_id)
     /// - [`action_definition_id`](crate::operation::describe_action::builders::DescribeActionOutputBuilder::action_definition_id)
     /// - [`execution_time`](crate::operation::describe_action::builders::DescribeActionOutputBuilder::execution_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_action::DescribeActionOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_action::DescribeActionOutput {
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building DescribeActionOutput",
-                )
-            })?,
-            target_resource: self.target_resource,
-            action_definition_id: self.action_definition_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_definition_id",
-                    "action_definition_id was not specified but it is required when building DescribeActionOutput",
-                )
-            })?,
-            action_payload: self.action_payload,
-            execution_time: self.execution_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_time",
-                    "execution_time was not specified but it is required when building DescribeActionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_action::DescribeActionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_action::DescribeActionOutput {
+                action_id: self.action_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_id", "action_id was not specified but it is required when building DescribeActionOutput")
+                    )?
+                ,
+                target_resource: self.target_resource
+                ,
+                action_definition_id: self.action_definition_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_definition_id", "action_definition_id was not specified but it is required when building DescribeActionOutput")
+                    )?
+                ,
+                action_payload: self.action_payload
+                ,
+                execution_time: self.execution_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_time", "execution_time was not specified but it is required when building DescribeActionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

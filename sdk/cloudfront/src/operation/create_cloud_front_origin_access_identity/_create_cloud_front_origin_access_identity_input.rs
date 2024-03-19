@@ -3,13 +3,13 @@
 /// <p>The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"> Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCloudFrontOriginAccessIdentityInput {
+pub struct CreateCloudFrontOriginAccessIdentityInput  {
     /// <p>The current configuration information for the identity.</p>
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
-impl CreateCloudFrontOriginAccessIdentityInput {
+impl  CreateCloudFrontOriginAccessIdentityInput  {
     /// <p>The current configuration information for the identity.</p>
-    pub fn cloud_front_origin_access_identity_config(&self) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
+    pub fn cloud_front_origin_access_identity_config(&self) -> ::std::option::Option<& crate::types::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
 }
@@ -34,28 +34,21 @@ impl CreateCloudFrontOriginAccessIdentityInputBuilder {
         self
     }
     /// <p>The current configuration information for the identity.</p>
-    pub fn set_cloud_front_origin_access_identity_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
-    ) -> Self {
-        self.cloud_front_origin_access_identity_config = input;
-        self
+    pub fn set_cloud_front_origin_access_identity_config(mut self, input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>) -> Self {
+        self.cloud_front_origin_access_identity_config = input; self
     }
     /// <p>The current configuration information for the identity.</p>
     pub fn get_cloud_front_origin_access_identity_config(&self) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
         &self.cloud_front_origin_access_identity_config
     }
     /// Consumes the builder and constructs a [`CreateCloudFrontOriginAccessIdentityInput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput {
-                cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config,
-            },
+                cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config
+                ,
+            }
         )
     }
 }
+

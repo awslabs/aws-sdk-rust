@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCurrentUserData`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`filters(UserDataFilters)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::filters) / [`set_filters(Option<UserDataFilters>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::set_filters):<br>required: **true**<br><p>The filters to apply to returned user data. You can filter up to the following limits:</p> <ul>  <li>   <p>Queues: 100</p></li>  <li>   <p>Routing profiles: 100</p></li>  <li>   <p>Agents: 100</p></li>  <li>   <p>Contact states: 9</p></li>  <li>   <p>User hierarchy groups: 1</p></li> </ul> <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p> <p>Currently tagging is only supported on the resources that are passed in the filter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput) with field(s):
+                            /// - On success, responds with [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`user_data_list(Option<Vec::<UserData>>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::user_data_list): <p>A list of the user data that is returned.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::approximate_total_count): <p>The total count of the result, regardless of the current page size.</p>
-    /// - On failure, responds with [`SdkError<GetCurrentUserDataError>`](crate::operation::get_current_user_data::GetCurrentUserDataError)
+                            /// - On failure, responds with [`SdkError<GetCurrentUserDataError>`](crate::operation::get_current_user_data::GetCurrentUserDataError)
     pub fn get_current_user_data(&self) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder {
-        crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::new(self.handle.clone())
+                            }
 }
+

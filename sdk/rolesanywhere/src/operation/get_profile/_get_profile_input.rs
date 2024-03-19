@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProfileInput {
+pub struct GetProfileInput  {
     /// <p>The unique identifier of the profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
-impl GetProfileInput {
+impl  GetProfileInput  {
     /// <p>The unique identifier of the profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetProfileInputBuilder {
     }
     /// <p>The unique identifier of the profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The unique identifier of the profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetProfileInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_profile::GetProfileInput { profile_id: self.profile_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_profile::GetProfileInput {
+                profile_id: self.profile_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOriginEndpointInput {
+pub struct CreateOriginEndpointInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
@@ -20,41 +20,41 @@ pub struct CreateOriginEndpointInput {
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateOriginEndpointInput {
+impl  CreateOriginEndpointInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_group_name(&self) -> ::std::option::Option<& str> {
         self.channel_group_name.as_deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
-    pub fn origin_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn origin_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.origin_endpoint_name.as_deref()
     }
     /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
-    pub fn container_type(&self) -> ::std::option::Option<&crate::types::ContainerType> {
+    pub fn container_type(&self) -> ::std::option::Option<& crate::types::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
-    pub fn segment(&self) -> ::std::option::Option<&crate::types::Segment> {
+    pub fn segment(&self) -> ::std::option::Option<& crate::types::Segment> {
         self.segment.as_ref()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Enter any descriptive text that helps you to identify the origin endpoint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
@@ -62,21 +62,23 @@ impl CreateOriginEndpointInput {
         self.startover_window_seconds
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
-    pub fn hls_manifests(&self) -> &[crate::types::CreateHlsManifestConfiguration] {
-        self.hls_manifests.as_deref().unwrap_or_default()
+    pub fn hls_manifests(&self) -> & [crate::types::CreateHlsManifestConfiguration] {
+        self.hls_manifests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.low_latency_hls_manifests.is_none()`.
-    pub fn low_latency_hls_manifests(&self) -> &[crate::types::CreateLowLatencyHlsManifestConfiguration] {
-        self.low_latency_hls_manifests.as_deref().unwrap_or_default()
+    pub fn low_latency_hls_manifests(&self) -> & [crate::types::CreateLowLatencyHlsManifestConfiguration] {
+        self.low_latency_hls_manifests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -99,9 +101,9 @@ pub struct CreateOriginEndpointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
-    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
-    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>>,
+    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -112,8 +114,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +128,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +142,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
     pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_endpoint_name = input;
-        self
+        self.origin_endpoint_name = input; self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
     pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +156,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
     pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
-        self.container_type = input;
-        self
+        self.container_type = input; self
     }
     /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
     pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
@@ -171,8 +169,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<crate::types::Segment>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
     }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     pub fn get_segment(&self) -> &::std::option::Option<crate::types::Segment> {
@@ -185,8 +182,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +195,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>Enter any descriptive text that helps you to identify the origin endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Enter any descriptive text that helps you to identify the origin endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +208,7 @@ impl CreateOriginEndpointInputBuilder {
     }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub fn set_startover_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.startover_window_seconds = input;
-        self
+        self.startover_window_seconds = input; self
     }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
@@ -227,17 +221,16 @@ impl CreateOriginEndpointInputBuilder {
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
     pub fn hls_manifests(mut self, input: crate::types::CreateHlsManifestConfiguration) -> Self {
         let mut v = self.hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>) -> Self {
-        self.hls_manifests = input;
-        self
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>>) -> Self {
+        self.hls_manifests = input; self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>> {
         &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
@@ -247,20 +240,16 @@ impl CreateOriginEndpointInputBuilder {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn low_latency_hls_manifests(mut self, input: crate::types::CreateLowLatencyHlsManifestConfiguration) -> Self {
         let mut v = self.low_latency_hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.low_latency_hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.low_latency_hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn set_low_latency_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
-    ) -> Self {
-        self.low_latency_hls_manifests = input;
-        self
+    pub fn set_low_latency_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>>) -> Self {
+        self.low_latency_hls_manifests = input; self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
     /// Adds a key-value pair to `tags`.
@@ -272,40 +261,50 @@ impl CreateOriginEndpointInputBuilder {
     /// <p><code>"Key2": "Value2"</code></p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOriginEndpointInput`](crate::operation::create_origin_endpoint::CreateOriginEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_origin_endpoint::CreateOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_origin_endpoint::CreateOriginEndpointInput {
-            channel_group_name: self.channel_group_name,
-            channel_name: self.channel_name,
-            origin_endpoint_name: self.origin_endpoint_name,
-            container_type: self.container_type,
-            segment: self.segment,
-            client_token: self.client_token,
-            description: self.description,
-            startover_window_seconds: self.startover_window_seconds,
-            hls_manifests: self.hls_manifests,
-            low_latency_hls_manifests: self.low_latency_hls_manifests,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_origin_endpoint::CreateOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_origin_endpoint::CreateOriginEndpointInput {
+                channel_group_name: self.channel_group_name
+                ,
+                channel_name: self.channel_name
+                ,
+                origin_endpoint_name: self.origin_endpoint_name
+                ,
+                container_type: self.container_type
+                ,
+                segment: self.segment
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                startover_window_seconds: self.startover_window_seconds
+                ,
+                hls_manifests: self.hls_manifests
+                ,
+                low_latency_hls_manifests: self.low_latency_hls_manifests
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

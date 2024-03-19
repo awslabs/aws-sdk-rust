@@ -3,21 +3,20 @@
 /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSchedule {
+pub struct JobSchedule  {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
     pub day_of_the_week: crate::types::JobScheduleDayOfTheWeek,
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub time: ::std::string::String,
 }
-impl JobSchedule {
+impl  JobSchedule  {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
-    pub fn day_of_the_week(&self) -> &crate::types::JobScheduleDayOfTheWeek {
+    pub fn day_of_the_week(&self) -> & crate::types::JobScheduleDayOfTheWeek {
         &self.day_of_the_week
     }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
-    pub fn time(&self) -> &str {
-        use std::ops::Deref;
-        self.time.deref()
+    pub fn time(&self) -> & str {
+        use std::ops::Deref; self.time.deref()
     }
 }
 impl JobSchedule {
@@ -43,8 +42,7 @@ impl JobScheduleBuilder {
     }
     /// <p>The day when the Identity Resolution Job should run every week.</p>
     pub fn set_day_of_the_week(mut self, input: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>) -> Self {
-        self.day_of_the_week = input;
-        self
+        self.day_of_the_week = input; self
     }
     /// <p>The day when the Identity Resolution Job should run every week.</p>
     pub fn get_day_of_the_week(&self) -> &::std::option::Option<crate::types::JobScheduleDayOfTheWeek> {
@@ -58,8 +56,7 @@ impl JobScheduleBuilder {
     }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl JobScheduleBuilder {
     /// - [`day_of_the_week`](crate::types::builders::JobScheduleBuilder::day_of_the_week)
     /// - [`time`](crate::types::builders::JobScheduleBuilder::time)
     pub fn build(self) -> ::std::result::Result<crate::types::JobSchedule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobSchedule {
-            day_of_the_week: self.day_of_the_week.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "day_of_the_week",
-                    "day_of_the_week was not specified but it is required when building JobSchedule",
-                )
-            })?,
-            time: self.time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time",
-                    "time was not specified but it is required when building JobSchedule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobSchedule {
+                day_of_the_week: self.day_of_the_week
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("day_of_the_week", "day_of_the_week was not specified but it is required when building JobSchedule")
+                    )?
+                ,
+                time: self.time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time", "time was not specified but it is required when building JobSchedule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

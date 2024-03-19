@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecodeAuthorizationMessageInput {
+pub struct DecodeAuthorizationMessageInput  {
     /// <p>The encoded message that was returned with the response.</p>
     pub encoded_message: ::std::option::Option<::std::string::String>,
 }
-impl DecodeAuthorizationMessageInput {
+impl  DecodeAuthorizationMessageInput  {
     /// <p>The encoded message that was returned with the response.</p>
-    pub fn encoded_message(&self) -> ::std::option::Option<&str> {
+    pub fn encoded_message(&self) -> ::std::option::Option<& str> {
         self.encoded_message.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DecodeAuthorizationMessageInputBuilder {
     }
     /// <p>The encoded message that was returned with the response.</p>
     pub fn set_encoded_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoded_message = input;
-        self
+        self.encoded_message = input; self
     }
     /// <p>The encoded message that was returned with the response.</p>
     pub fn get_encoded_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.encoded_message
     }
     /// Consumes the builder and constructs a [`DecodeAuthorizationMessageInput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput {
-            encoded_message: self.encoded_message,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput {
+                encoded_message: self.encoded_message
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResolverOutput {
+pub struct UpdateResolverOutput  {
     /// <p>The updated <code>Resolver</code> object.</p>
     pub resolver: ::std::option::Option<crate::types::Resolver>,
     _request_id: Option<String>,
 }
-impl UpdateResolverOutput {
+impl  UpdateResolverOutput  {
     /// <p>The updated <code>Resolver</code> object.</p>
-    pub fn resolver(&self) -> ::std::option::Option<&crate::types::Resolver> {
+    pub fn resolver(&self) -> ::std::option::Option<& crate::types::Resolver> {
         self.resolver.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateResolverOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateResolverOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverOutput`](crate::operation::update_resolver::UpdateResolverOutput).
     pub fn builder() -> crate::operation::update_resolver::builders::UpdateResolverOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateResolverOutputBuilder {
     }
     /// <p>The updated <code>Resolver</code> object.</p>
     pub fn set_resolver(mut self, input: ::std::option::Option<crate::types::Resolver>) -> Self {
-        self.resolver = input;
-        self
+        self.resolver = input; self
     }
     /// <p>The updated <code>Resolver</code> object.</p>
     pub fn get_resolver(&self) -> &::std::option::Option<crate::types::Resolver> {
         &self.resolver
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateResolverOutput`](crate::operation::update_resolver::UpdateResolverOutput).
     pub fn build(self) -> crate::operation::update_resolver::UpdateResolverOutput {
         crate::operation::update_resolver::UpdateResolverOutput {
-            resolver: self.resolver,
+            resolver: self.resolver
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

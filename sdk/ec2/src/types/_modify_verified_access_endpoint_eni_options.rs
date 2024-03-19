@@ -3,15 +3,15 @@
 /// <p>Describes the options when modifying a Verified Access endpoint with the <code>network-interface</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVerifiedAccessEndpointEniOptions {
+pub struct ModifyVerifiedAccessEndpointEniOptions  {
     /// <p>The IP protocol.</p>
     pub protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     /// <p>The IP port number.</p>
     pub port: ::std::option::Option<i32>,
 }
-impl ModifyVerifiedAccessEndpointEniOptions {
+impl  ModifyVerifiedAccessEndpointEniOptions  {
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
@@ -41,8 +41,7 @@ impl ModifyVerifiedAccessEndpointEniOptionsBuilder {
     }
     /// <p>The IP protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The IP protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
@@ -55,8 +54,7 @@ impl ModifyVerifiedAccessEndpointEniOptionsBuilder {
     }
     /// <p>The IP port number.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The IP port number.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ModifyVerifiedAccessEndpointEniOptionsBuilder {
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointEniOptions`](crate::types::ModifyVerifiedAccessEndpointEniOptions).
     pub fn build(self) -> crate::types::ModifyVerifiedAccessEndpointEniOptions {
         crate::types::ModifyVerifiedAccessEndpointEniOptions {
-            protocol: self.protocol,
-            port: self.port,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

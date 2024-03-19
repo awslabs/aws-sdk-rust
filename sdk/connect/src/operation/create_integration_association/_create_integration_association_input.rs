@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIntegrationAssociationInput {
+pub struct CreateIntegrationAssociationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of information to be ingested.</p>
@@ -18,37 +18,37 @@ pub struct CreateIntegrationAssociationInput {
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateIntegrationAssociationInput {
+impl  CreateIntegrationAssociationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of information to be ingested.</p>
-    pub fn integration_type(&self) -> ::std::option::Option<&crate::types::IntegrationType> {
+    pub fn integration_type(&self) -> ::std::option::Option<& crate::types::IntegrationType> {
         self.integration_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
-    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<& str> {
         self.integration_arn.as_deref()
     }
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
-    pub fn source_application_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_application_url(&self) -> ::std::option::Option<& str> {
         self.source_application_url.as_deref()
     }
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
-    pub fn source_application_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_application_name(&self) -> ::std::option::Option<& str> {
         self.source_application_name.as_deref()
     }
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -69,7 +69,7 @@ pub struct CreateIntegrationAssociationInputBuilder {
     pub(crate) source_application_url: ::std::option::Option<::std::string::String>,
     pub(crate) source_application_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationAssociationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -80,8 +80,7 @@ impl CreateIntegrationAssociationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl CreateIntegrationAssociationInputBuilder {
     }
     /// <p>The type of information to be ingested.</p>
     pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
-        self.integration_type = input;
-        self
+        self.integration_type = input; self
     }
     /// <p>The type of information to be ingested.</p>
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
@@ -114,8 +112,7 @@ impl CreateIntegrationAssociationInputBuilder {
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_arn = input;
-        self
+        self.integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
@@ -130,8 +127,7 @@ impl CreateIntegrationAssociationInputBuilder {
     }
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
     pub fn set_source_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_application_url = input;
-        self
+        self.source_application_url = input; self
     }
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
     pub fn get_source_application_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +140,7 @@ impl CreateIntegrationAssociationInputBuilder {
     }
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
     pub fn set_source_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_application_name = input;
-        self
+        self.source_application_name = input; self
     }
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
     pub fn get_source_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +153,7 @@ impl CreateIntegrationAssociationInputBuilder {
     }
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
@@ -172,34 +166,38 @@ impl CreateIntegrationAssociationInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIntegrationAssociationInput`](crate::operation::create_integration_association::CreateIntegrationAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_integration_association::CreateIntegrationAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_integration_association::CreateIntegrationAssociationInput {
-            instance_id: self.instance_id,
-            integration_type: self.integration_type,
-            integration_arn: self.integration_arn,
-            source_application_url: self.source_application_url,
-            source_application_name: self.source_application_name,
-            source_type: self.source_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_integration_association::CreateIntegrationAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_integration_association::CreateIntegrationAssociationInput {
+                instance_id: self.instance_id
+                ,
+                integration_type: self.integration_type
+                ,
+                integration_arn: self.integration_arn
+                ,
+                source_application_url: self.source_application_url
+                ,
+                source_application_name: self.source_application_name
+                ,
+                source_type: self.source_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

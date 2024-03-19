@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccountAssignmentDeletionStatus`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::instance_arn) / [`set_instance_arn(Option<String>)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::set_instance_arn):<br>required: **true**<br><p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display for the assignment.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p><br>
     ///   - [`filter(OperationStatusFilter)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::set_filter):<br>required: **false**<br><p>Filters results based on the passed attribute value.</p><br>
-    /// - On success, responds with [`ListAccountAssignmentDeletionStatusOutput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput) with field(s):
+                            /// - On success, responds with [`ListAccountAssignmentDeletionStatusOutput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput) with field(s):
     ///   - [`account_assignments_deletion_status(Option<Vec::<AccountAssignmentOperationStatusMetadata>>)`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput::account_assignments_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    /// - On failure, responds with [`SdkError<ListAccountAssignmentDeletionStatusError>`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError)
-    pub fn list_account_assignment_deletion_status(
-        &self,
-    ) -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder {
-        crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListAccountAssignmentDeletionStatusError>`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError)
+    pub fn list_account_assignment_deletion_status(&self) -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder {
+                                crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

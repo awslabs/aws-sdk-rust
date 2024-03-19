@@ -3,7 +3,7 @@
 /// <p>Describes an environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EnvironmentSummary {
+pub struct EnvironmentSummary  {
     /// <p>The ID of the environment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment.</p>
@@ -35,69 +35,69 @@ pub struct EnvironmentSummary {
     /// <p>The tag keys and optional values for the resource.</p>
     pub tags: ::std::option::Option<crate::types::EmbeddedTag>,
 }
-impl EnvironmentSummary {
+impl  EnvironmentSummary  {
     /// <p>The ID of the environment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
-    pub fn desktop_arn(&self) -> ::std::option::Option<&str> {
+    pub fn desktop_arn(&self) -> ::std::option::Option<& str> {
         self.desktop_arn.as_deref()
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
-    pub fn desktop_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn desktop_endpoint(&self) -> ::std::option::Option<& str> {
         self.desktop_endpoint.as_deref()
     }
     /// <p>The type of streaming desktop for the environment.</p>
-    pub fn desktop_type(&self) -> ::std::option::Option<&crate::types::DesktopType> {
+    pub fn desktop_type(&self) -> ::std::option::Option<& crate::types::DesktopType> {
         self.desktop_type.as_ref()
     }
     /// <p>The activation code to register a device to the environment.</p>
-    pub fn activation_code(&self) -> ::std::option::Option<&str> {
+    pub fn activation_code(&self) -> ::std::option::Option<& str> {
         self.activation_code.as_deref()
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
-    pub fn software_set_update_schedule(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateSchedule> {
+    pub fn software_set_update_schedule(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateSchedule> {
         self.software_set_update_schedule.as_ref()
     }
     /// <p>A specification for a time window to apply software updates.</p>
-    pub fn maintenance_window(&self) -> ::std::option::Option<&crate::types::MaintenanceWindow> {
+    pub fn maintenance_window(&self) -> ::std::option::Option<& crate::types::MaintenanceWindow> {
         self.maintenance_window.as_ref()
     }
     /// <p>An option to define which software updates to apply.</p>
-    pub fn software_set_update_mode(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateMode> {
+    pub fn software_set_update_mode(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateMode> {
         self.software_set_update_mode.as_ref()
     }
     /// <p>The ID of the software set to apply.</p>
-    pub fn desired_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn desired_software_set_id(&self) -> ::std::option::Option<& str> {
         self.desired_software_set_id.as_deref()
     }
     /// <p>The ID of the software set that is pending to be installed.</p>
-    pub fn pending_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn pending_software_set_id(&self) -> ::std::option::Option<& str> {
         self.pending_software_set_id.as_deref()
     }
     /// <p>The timestamp of when the environment was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the device was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The tag keys and optional values for the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::EmbeddedTag> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::EmbeddedTag> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for EnvironmentSummary {
+impl  ::std::fmt::Debug for EnvironmentSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentSummary");
         formatter.field("id", &self.id);
@@ -153,8 +153,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the environment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the environment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +179,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
     pub fn set_desktop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desktop_arn = input;
-        self
+        self.desktop_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
     pub fn get_desktop_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +192,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub fn set_desktop_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desktop_endpoint = input;
-        self
+        self.desktop_endpoint = input; self
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub fn get_desktop_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +205,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The type of streaming desktop for the environment.</p>
     pub fn set_desktop_type(mut self, input: ::std::option::Option<crate::types::DesktopType>) -> Self {
-        self.desktop_type = input;
-        self
+        self.desktop_type = input; self
     }
     /// <p>The type of streaming desktop for the environment.</p>
     pub fn get_desktop_type(&self) -> &::std::option::Option<crate::types::DesktopType> {
@@ -223,8 +218,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The activation code to register a device to the environment.</p>
     pub fn set_activation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activation_code = input;
-        self
+        self.activation_code = input; self
     }
     /// <p>The activation code to register a device to the environment.</p>
     pub fn get_activation_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +231,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn set_software_set_update_schedule(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>) -> Self {
-        self.software_set_update_schedule = input;
-        self
+        self.software_set_update_schedule = input; self
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
@@ -251,8 +244,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>A specification for a time window to apply software updates.</p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<crate::types::MaintenanceWindow>) -> Self {
-        self.maintenance_window = input;
-        self
+        self.maintenance_window = input; self
     }
     /// <p>A specification for a time window to apply software updates.</p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<crate::types::MaintenanceWindow> {
@@ -265,8 +257,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>An option to define which software updates to apply.</p>
     pub fn set_software_set_update_mode(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateMode>) -> Self {
-        self.software_set_update_mode = input;
-        self
+        self.software_set_update_mode = input; self
     }
     /// <p>An option to define which software updates to apply.</p>
     pub fn get_software_set_update_mode(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateMode> {
@@ -279,8 +270,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn set_desired_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_software_set_id = input;
-        self
+        self.desired_software_set_id = input; self
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +283,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the software set that is pending to be installed.</p>
     pub fn set_pending_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pending_software_set_id = input;
-        self
+        self.pending_software_set_id = input; self
     }
     /// <p>The ID of the software set that is pending to be installed.</p>
     pub fn get_pending_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +296,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -321,8 +309,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The timestamp of when the device was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the device was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -335,8 +322,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,8 +335,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The tag keys and optional values for the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::EmbeddedTag>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::EmbeddedTag> {
@@ -359,21 +344,36 @@ impl EnvironmentSummaryBuilder {
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {
         crate::types::EnvironmentSummary {
-            id: self.id,
-            name: self.name,
-            desktop_arn: self.desktop_arn,
-            desktop_endpoint: self.desktop_endpoint,
-            desktop_type: self.desktop_type,
-            activation_code: self.activation_code,
-            software_set_update_schedule: self.software_set_update_schedule,
-            maintenance_window: self.maintenance_window,
-            software_set_update_mode: self.software_set_update_mode,
-            desired_software_set_id: self.desired_software_set_id,
-            pending_software_set_id: self.pending_software_set_id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            arn: self.arn,
-            tags: self.tags,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            desktop_arn: self.desktop_arn
+            ,
+            desktop_endpoint: self.desktop_endpoint
+            ,
+            desktop_type: self.desktop_type
+            ,
+            activation_code: self.activation_code
+            ,
+            software_set_update_schedule: self.software_set_update_schedule
+            ,
+            maintenance_window: self.maintenance_window
+            ,
+            software_set_update_mode: self.software_set_update_mode
+            ,
+            desired_software_set_id: self.desired_software_set_id
+            ,
+            pending_software_set_id: self.pending_software_set_id
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
@@ -398,3 +398,4 @@ impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
         formatter.finish()
     }
 }
+

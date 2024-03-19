@@ -3,7 +3,7 @@
 /// <p>List of field-level encryption profiles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldLevelEncryptionProfileList {
+pub struct FieldLevelEncryptionProfileList  {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
@@ -11,11 +11,11 @@ pub struct FieldLevelEncryptionProfileList {
     /// <p>The number of field-level encryption profiles.</p>
     pub quantity: i32,
     /// <p>The field-level encryption profile items.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::FieldLevelEncryptionProfileSummary>>,
 }
-impl FieldLevelEncryptionProfileList {
+impl  FieldLevelEncryptionProfileList  {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
@@ -27,10 +27,11 @@ impl FieldLevelEncryptionProfileList {
         self.quantity
     }
     /// <p>The field-level encryption profile items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::FieldLevelEncryptionProfileSummary] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::FieldLevelEncryptionProfileSummary] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FieldLevelEncryptionProfileList {
@@ -47,7 +48,7 @@ pub struct FieldLevelEncryptionProfileListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::FieldLevelEncryptionProfileSummary>>,
 }
 impl FieldLevelEncryptionProfileListBuilder {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
@@ -57,8 +58,7 @@ impl FieldLevelEncryptionProfileListBuilder {
     }
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl FieldLevelEncryptionProfileListBuilder {
     }
     /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of field-level encryption profiles you want in the response body.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -87,8 +86,7 @@ impl FieldLevelEncryptionProfileListBuilder {
     }
     /// <p>The number of field-level encryption profiles.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of field-level encryption profiles.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -101,17 +99,16 @@ impl FieldLevelEncryptionProfileListBuilder {
     /// <p>The field-level encryption profile items.</p>
     pub fn items(mut self, input: crate::types::FieldLevelEncryptionProfileSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field-level encryption profile items.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldLevelEncryptionProfileSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>The field-level encryption profile items.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldLevelEncryptionProfileSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldLevelEncryptionProfileSummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileList`](crate::types::FieldLevelEncryptionProfileList).
@@ -119,21 +116,24 @@ impl FieldLevelEncryptionProfileListBuilder {
     /// - [`max_items`](crate::types::builders::FieldLevelEncryptionProfileListBuilder::max_items)
     /// - [`quantity`](crate::types::builders::FieldLevelEncryptionProfileListBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldLevelEncryptionProfileList {
-            next_marker: self.next_marker,
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building FieldLevelEncryptionProfileList",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building FieldLevelEncryptionProfileList",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldLevelEncryptionProfileList {
+                next_marker: self.next_marker
+                ,
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building FieldLevelEncryptionProfileList")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building FieldLevelEncryptionProfileList")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

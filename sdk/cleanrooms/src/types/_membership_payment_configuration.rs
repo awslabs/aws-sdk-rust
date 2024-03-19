@@ -3,13 +3,13 @@
 /// <p>An object representing the payment responsibilities accepted by the collaboration member.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MembershipPaymentConfiguration {
+pub struct MembershipPaymentConfiguration  {
     /// <p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>
     pub query_compute: ::std::option::Option<crate::types::MembershipQueryComputePaymentConfig>,
 }
-impl MembershipPaymentConfiguration {
+impl  MembershipPaymentConfiguration  {
     /// <p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>
-    pub fn query_compute(&self) -> ::std::option::Option<&crate::types::MembershipQueryComputePaymentConfig> {
+    pub fn query_compute(&self) -> ::std::option::Option<& crate::types::MembershipQueryComputePaymentConfig> {
         self.query_compute.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl MembershipPaymentConfigurationBuilder {
     }
     /// <p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>
     pub fn set_query_compute(mut self, input: ::std::option::Option<crate::types::MembershipQueryComputePaymentConfig>) -> Self {
-        self.query_compute = input;
-        self
+        self.query_compute = input; self
     }
     /// <p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>
     pub fn get_query_compute(&self) -> &::std::option::Option<crate::types::MembershipQueryComputePaymentConfig> {
@@ -45,7 +44,9 @@ impl MembershipPaymentConfigurationBuilder {
     /// Consumes the builder and constructs a [`MembershipPaymentConfiguration`](crate::types::MembershipPaymentConfiguration).
     pub fn build(self) -> crate::types::MembershipPaymentConfiguration {
         crate::types::MembershipPaymentConfiguration {
-            query_compute: self.query_compute,
+            query_compute: self.query_compute
+            ,
         }
     }
 }
+

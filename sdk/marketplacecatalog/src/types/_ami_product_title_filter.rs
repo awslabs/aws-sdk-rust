@@ -3,21 +3,22 @@
 /// <p>Object that allows filtering on product title.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmiProductTitleFilter {
+pub struct AmiProductTitleFilter  {
     /// <p>A string array of unique product title values to be filtered on.</p>
-    pub value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A string that will be the <code>wildCard</code> input for product tile filter. It matches the provided value as a substring in the actual value.</p>
     pub wild_card_value: ::std::option::Option<::std::string::String>,
 }
-impl AmiProductTitleFilter {
+impl  AmiProductTitleFilter  {
     /// <p>A string array of unique product title values to be filtered on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
-    pub fn value_list(&self) -> &[::std::string::String] {
-        self.value_list.as_deref().unwrap_or_default()
+    pub fn value_list(&self) -> & [::std::string::String] {
+        self.value_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that will be the <code>wildCard</code> input for product tile filter. It matches the provided value as a substring in the actual value.</p>
-    pub fn wild_card_value(&self) -> ::std::option::Option<&str> {
+    pub fn wild_card_value(&self) -> ::std::option::Option<& str> {
         self.wild_card_value.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl AmiProductTitleFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmiProductTitleFilterBuilder {
-    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) wild_card_value: ::std::option::Option<::std::string::String>,
 }
 impl AmiProductTitleFilterBuilder {
@@ -43,17 +44,16 @@ impl AmiProductTitleFilterBuilder {
     /// <p>A string array of unique product title values to be filtered on.</p>
     pub fn value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_list.unwrap_or_default();
-        v.push(input.into());
-        self.value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A string array of unique product title values to be filtered on.</p>
-    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value_list = input;
-        self
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value_list = input; self
     }
     /// <p>A string array of unique product title values to be filtered on.</p>
-    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value_list
     }
     /// <p>A string that will be the <code>wildCard</code> input for product tile filter. It matches the provided value as a substring in the actual value.</p>
@@ -63,8 +63,7 @@ impl AmiProductTitleFilterBuilder {
     }
     /// <p>A string that will be the <code>wildCard</code> input for product tile filter. It matches the provided value as a substring in the actual value.</p>
     pub fn set_wild_card_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wild_card_value = input;
-        self
+        self.wild_card_value = input; self
     }
     /// <p>A string that will be the <code>wildCard</code> input for product tile filter. It matches the provided value as a substring in the actual value.</p>
     pub fn get_wild_card_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl AmiProductTitleFilterBuilder {
     /// Consumes the builder and constructs a [`AmiProductTitleFilter`](crate::types::AmiProductTitleFilter).
     pub fn build(self) -> crate::types::AmiProductTitleFilter {
         crate::types::AmiProductTitleFilter {
-            value_list: self.value_list,
-            wild_card_value: self.wild_card_value,
+            value_list: self.value_list
+            ,
+            wild_card_value: self.wild_card_value
+            ,
         }
     }
 }
+

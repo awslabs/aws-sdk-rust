@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDeviceDefinitionInput {
+pub struct UpdateDeviceDefinitionInput  {
     /// The ID of the device definition.
     pub device_definition_id: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDeviceDefinitionInput {
+impl  UpdateDeviceDefinitionInput  {
     /// The ID of the device definition.
-    pub fn device_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_definition_id(&self) -> ::std::option::Option<& str> {
         self.device_definition_id.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateDeviceDefinitionInputBuilder {
     }
     /// The ID of the device definition.
     pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_definition_id = input;
-        self
+        self.device_definition_id = input; self
     }
     /// The ID of the device definition.
     pub fn get_device_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl UpdateDeviceDefinitionInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the definition.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateDeviceDefinitionInput`](crate::operation::update_device_definition::UpdateDeviceDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_definition::UpdateDeviceDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_device_definition::UpdateDeviceDefinitionInput {
-            device_definition_id: self.device_definition_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device_definition::UpdateDeviceDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_device_definition::UpdateDeviceDefinitionInput {
+                device_definition_id: self.device_definition_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

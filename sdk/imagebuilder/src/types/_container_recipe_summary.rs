@@ -3,7 +3,7 @@
 /// <p>A summary of a container recipe</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerRecipeSummary {
+pub struct ContainerRecipeSummary  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of container, such as "Docker".</p>
@@ -19,39 +19,39 @@ pub struct ContainerRecipeSummary {
     /// <p>The date when this container recipe was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ContainerRecipeSummary {
+impl  ContainerRecipeSummary  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the type of container, such as "Docker".</p>
-    pub fn container_type(&self) -> ::std::option::Option<&crate::types::ContainerType> {
+    pub fn container_type(&self) -> ::std::option::Option<& crate::types::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The name of the container recipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the container recipe.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The base image for the container recipe.</p>
-    pub fn parent_image(&self) -> ::std::option::Option<&str> {
+    pub fn parent_image(&self) -> ::std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The date when this container recipe was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -73,7 +73,7 @@ pub struct ContainerRecipeSummaryBuilder {
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) parent_image: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ContainerRecipeSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
@@ -83,8 +83,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>Specifies the type of container, such as "Docker".</p>
     pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
-        self.container_type = input;
-        self
+        self.container_type = input; self
     }
     /// <p>Specifies the type of container, such as "Docker".</p>
     pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
@@ -111,8 +109,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>The name of the container recipe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the container recipe.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
@@ -139,8 +135,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>The owner of the container recipe.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the container recipe.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>The base image for the container recipe.</p>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_image = input;
-        self
+        self.parent_image = input; self
     }
     /// <p>The base image for the container recipe.</p>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl ContainerRecipeSummaryBuilder {
     }
     /// <p>The date when this container recipe was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date when this container recipe was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,30 +174,38 @@ impl ContainerRecipeSummaryBuilder {
     /// <p>Tags that are attached to the container recipe.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ContainerRecipeSummary`](crate::types::ContainerRecipeSummary).
     pub fn build(self) -> crate::types::ContainerRecipeSummary {
         crate::types::ContainerRecipeSummary {
-            arn: self.arn,
-            container_type: self.container_type,
-            name: self.name,
-            platform: self.platform,
-            owner: self.owner,
-            parent_image: self.parent_image,
-            date_created: self.date_created,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            container_type: self.container_type
+            ,
+            name: self.name
+            ,
+            platform: self.platform
+            ,
+            owner: self.owner
+            ,
+            parent_image: self.parent_image
+            ,
+            date_created: self.date_created
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

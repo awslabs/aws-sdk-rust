@@ -3,19 +3,19 @@
 /// <p>The configuration information of the external data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalSourceConfiguration {
+pub struct ExternalSourceConfiguration  {
     /// <p>The type of the external data source.</p>
     pub source: crate::types::ExternalSource,
     /// <p>The configuration information of the external data source.</p>
     pub configuration: ::std::option::Option<crate::types::Configuration>,
 }
-impl ExternalSourceConfiguration {
+impl  ExternalSourceConfiguration  {
     /// <p>The type of the external data source.</p>
-    pub fn source(&self) -> &crate::types::ExternalSource {
+    pub fn source(&self) -> & crate::types::ExternalSource {
         &self.source
     }
     /// <p>The configuration information of the external data source.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::Configuration> {
         self.configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ExternalSourceConfigurationBuilder {
     }
     /// <p>The type of the external data source.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ExternalSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The type of the external data source.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ExternalSource> {
@@ -57,8 +56,7 @@ impl ExternalSourceConfigurationBuilder {
     }
     /// <p>The configuration information of the external data source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration information of the external data source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
@@ -68,14 +66,17 @@ impl ExternalSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::ExternalSourceConfigurationBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::ExternalSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExternalSourceConfiguration {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building ExternalSourceConfiguration",
-                )
-            })?,
-            configuration: self.configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExternalSourceConfiguration {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building ExternalSourceConfiguration")
+                    )?
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

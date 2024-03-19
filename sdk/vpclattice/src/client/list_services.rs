@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServices`](crate::operation::list_services::builders::ListServicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_services::builders::ListServicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_services::builders::ListServicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
-    /// - On success, responds with [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput) with field(s):
+                            /// - On success, responds with [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput) with field(s):
     ///   - [`items(Option<Vec::<ServiceSummary>>)`](crate::operation::list_services::ListServicesOutput::items): <p>The services.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
+                            /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
     pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

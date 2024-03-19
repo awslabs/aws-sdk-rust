@@ -12,7 +12,6 @@ use crate::client::orchestrator::endpoints::StaticUriEndpointResolver;
 use crate::client::retries::strategy::{NeverRetryStrategy, StandardRetryStrategy};
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_async::time::TimeSource;
-use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
 use aws_smithy_runtime_api::client::auth::{
     AuthSchemeOptionResolverParams, SharedAuthScheme, SharedAuthSchemeOptionResolver,
@@ -35,6 +34,9 @@ use aws_smithy_runtime_api::client::ser_de::{
     DeserializeResponse, SerializeRequest, SharedRequestSerializer, SharedResponseDeserializer,
 };
 use aws_smithy_runtime_api::shared::IntoShared;
+use aws_smithy_runtime_api::{
+    box_error::BoxError, client::stalled_stream_protection::StalledStreamProtectionConfig,
+};
 use aws_smithy_types::config_bag::{ConfigBag, Layer};
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
@@ -293,6 +295,15 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self
     }
 
+    /// Configures stalled stream protection with the given config.
+    pub fn stalled_stream_protection(
+        mut self,
+        stalled_stream_protection: StalledStreamProtectionConfig,
+    ) -> Self {
+        self.config.store_put(stalled_stream_protection);
+        self
+    }
+
     /// Configures the serializer for the builder.
     pub fn serializer<I2>(
         mut self,
@@ -329,6 +340,28 @@ impl<I, O, E> OperationBuilder<I, O, E> {
             .store_put(SharedResponseDeserializer::new(FnDeserializer::new(
                 deserializer,
             )));
+        OperationBuilder {
+            service_name: self.service_name,
+            operation_name: self.operation_name,
+            config: self.config,
+            runtime_components: self.runtime_components,
+            runtime_plugins: self.runtime_plugins,
+            _phantom: Default::default(),
+        }
+    }
+
+    /// Configures the a deserializer implementation for the builder.
+    pub fn deserializer_impl<O2, E2>(
+        mut self,
+        deserializer: impl DeserializeResponse + Send + Sync + 'static,
+    ) -> OperationBuilder<I, O2, E2>
+    where
+        O2: fmt::Debug + Send + Sync + 'static,
+        E2: std::error::Error + fmt::Debug + Send + Sync + 'static,
+    {
+        let deserializer: SharedResponseDeserializer = deserializer.into_shared();
+        self.config.store_put(deserializer);
+
         OperationBuilder {
             service_name: self.service_name,
             operation_name: self.operation_name,

@@ -3,52 +3,49 @@
 /// <p>Summary information about a Composition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositionSummary {
+pub struct CompositionSummary  {
     /// <p>ARN of the Composition resource.</p>
     pub arn: ::std::string::String,
     /// <p>ARN of the attached stage.</p>
     pub stage_arn: ::std::string::String,
     /// <p>Array of Destination objects.</p>
-    pub destinations: ::std::vec::Vec<crate::types::DestinationSummary>,
+    pub destinations: ::std::vec::Vec::<crate::types::DestinationSummary>,
     /// <p>State of the Composition resource.</p>
     pub state: crate::types::CompositionState,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>UTC time of the Composition start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>UTC time of the Composition end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CompositionSummary {
+impl  CompositionSummary  {
     /// <p>ARN of the Composition resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>ARN of the attached stage.</p>
-    pub fn stage_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stage_arn.deref()
+    pub fn stage_arn(&self) -> & str {
+        use std::ops::Deref; self.stage_arn.deref()
     }
     /// <p>Array of Destination objects.</p>
-    pub fn destinations(&self) -> &[crate::types::DestinationSummary] {
-        use std::ops::Deref;
-        self.destinations.deref()
+    pub fn destinations(&self) -> & [crate::types::DestinationSummary] {
+        use std::ops::Deref; self.destinations.deref()
     }
     /// <p>State of the Composition resource.</p>
-    pub fn state(&self) -> &crate::types::CompositionState {
+    pub fn state(&self) -> & crate::types::CompositionState {
         &self.state
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>UTC time of the Composition start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>UTC time of the Composition end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -65,9 +62,9 @@ impl CompositionSummary {
 pub struct CompositionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationSummary>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationSummary>>,
     pub(crate) state: ::std::option::Option<crate::types::CompositionState>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -80,8 +77,7 @@ impl CompositionSummaryBuilder {
     }
     /// <p>ARN of the Composition resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the Composition resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl CompositionSummaryBuilder {
     }
     /// <p>ARN of the attached stage.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>ARN of the attached stage.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,17 +104,16 @@ impl CompositionSummaryBuilder {
     /// <p>Array of Destination objects.</p>
     pub fn destinations(mut self, input: crate::types::DestinationSummary) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of Destination objects.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationSummary>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationSummary>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>Array of Destination objects.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationSummary>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DestinationSummary>> {
         &self.destinations
     }
     /// <p>State of the Composition resource.</p>
@@ -130,8 +124,7 @@ impl CompositionSummaryBuilder {
     }
     /// <p>State of the Composition resource.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CompositionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of the Composition resource.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CompositionState> {
@@ -144,17 +137,16 @@ impl CompositionSummaryBuilder {
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>UTC time of the Composition start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
@@ -164,8 +156,7 @@ impl CompositionSummaryBuilder {
     }
     /// <p>UTC time of the Composition start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>UTC time of the Composition start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,8 +169,7 @@ impl CompositionSummaryBuilder {
     }
     /// <p>UTC time of the Composition end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>UTC time of the Composition end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -192,34 +182,36 @@ impl CompositionSummaryBuilder {
     /// - [`destinations`](crate::types::builders::CompositionSummaryBuilder::destinations)
     /// - [`state`](crate::types::builders::CompositionSummaryBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::CompositionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CompositionSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CompositionSummary",
-                )
-            })?,
-            stage_arn: self.stage_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stage_arn",
-                    "stage_arn was not specified but it is required when building CompositionSummary",
-                )
-            })?,
-            destinations: self.destinations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destinations",
-                    "destinations was not specified but it is required when building CompositionSummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building CompositionSummary",
-                )
-            })?,
-            tags: self.tags,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CompositionSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CompositionSummary")
+                    )?
+                ,
+                stage_arn: self.stage_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stage_arn", "stage_arn was not specified but it is required when building CompositionSummary")
+                    )?
+                ,
+                destinations: self.destinations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destinations", "destinations was not specified but it is required when building CompositionSummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building CompositionSummary")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Creates a new documentation part of a given API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDocumentationPartInput {
+pub struct CreateDocumentationPartInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
@@ -11,17 +11,17 @@ pub struct CreateDocumentationPartInput {
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub properties: ::std::option::Option<::std::string::String>,
 }
-impl CreateDocumentationPartInput {
+impl  CreateDocumentationPartInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::DocumentationPartLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::DocumentationPartLocation> {
         self.location.as_ref()
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-    pub fn properties(&self) -> ::std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateDocumentationPartInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateDocumentationPartInputBuilder {
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::DocumentationPartLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::DocumentationPartLocation> {
@@ -79,24 +77,24 @@ impl CreateDocumentationPartInputBuilder {
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_documentation_part::CreateDocumentationPartInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_documentation_part::CreateDocumentationPartInput {
-            rest_api_id: self.rest_api_id,
-            location: self.location,
-            properties: self.properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_documentation_part::CreateDocumentationPartInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_documentation_part::CreateDocumentationPartInput {
+                rest_api_id: self.rest_api_id
+                ,
+                location: self.location
+                ,
+                properties: self.properties
+                ,
+            }
+        )
     }
 }
+

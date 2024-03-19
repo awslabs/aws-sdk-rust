@@ -5,54 +5,50 @@ pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreemen
 
 impl ConfirmCustomerAgreementInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.confirm_customer_agreement();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.confirm_customer_agreement();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ConfirmCustomerAgreement`.
-///
+/// 
 /// <p>The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder,
+                    inner: crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-    > for ConfirmCustomerAgreementFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
+                    crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
+                > for ConfirmCustomerAgreementFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
+                        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ConfirmCustomerAgreementFluentBuilder {
     /// Creates a new `ConfirmCustomerAgreement`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ConfirmCustomerAgreementFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput, crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the customer agreement.</p>
     pub fn agreement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agreement_name(input.into());
@@ -123,3 +110,4 @@ impl ConfirmCustomerAgreementFluentBuilder {
         self.inner.get_agreement_name()
     }
 }
+

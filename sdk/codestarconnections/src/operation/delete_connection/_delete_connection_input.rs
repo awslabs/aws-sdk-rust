@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectionInput {
+pub struct DeleteConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub connection_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectionInput {
+impl  DeleteConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteConnectionInputBuilder {
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
@@ -52,11 +51,13 @@ impl DeleteConnectionInputBuilder {
         &self.connection_arn
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_connection::DeleteConnectionInput {
-            connection_arn: self.connection_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connection::DeleteConnectionInput {
+                connection_arn: self.connection_arn
+                ,
+            }
+        )
     }
 }
+

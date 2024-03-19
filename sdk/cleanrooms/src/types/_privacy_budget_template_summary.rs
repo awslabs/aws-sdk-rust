@@ -3,7 +3,7 @@
 /// <p>A summary of the privacy budget template. The summary includes membership information, collaboration information, and creation information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivacyBudgetTemplateSummary {
+pub struct PrivacyBudgetTemplateSummary  {
     /// <p>The unique identifier of the privacy budget template.</p>
     pub id: ::std::string::String,
     /// <p>The ARN of the privacy budget template.</p>
@@ -23,47 +23,41 @@ pub struct PrivacyBudgetTemplateSummary {
     /// <p>The most recent time at which the privacy budget template was updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl PrivacyBudgetTemplateSummary {
+impl  PrivacyBudgetTemplateSummary  {
     /// <p>The unique identifier of the privacy budget template.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ARN of the privacy budget template.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_id.deref()
+    pub fn membership_id(&self) -> & str {
+        use std::ops::Deref; self.membership_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the privacy budget template.</p>
-    pub fn membership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_arn.deref()
+    pub fn membership_arn(&self) -> & str {
+        use std::ops::Deref; self.membership_arn.deref()
     }
     /// <p>The unique ID of the collaboration that contains this privacy budget template.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The ARN of the collaboration that contains this privacy budget template.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>The type of the privacy budget template.</p>
-    pub fn privacy_budget_type(&self) -> &crate::types::PrivacyBudgetType {
+    pub fn privacy_budget_type(&self) -> & crate::types::PrivacyBudgetType {
         &self.privacy_budget_type
     }
     /// <p>The time at which the privacy budget template was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the privacy budget template was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -97,8 +91,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The unique identifier of the privacy budget template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the privacy budget template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The ARN of the privacy budget template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the privacy budget template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +119,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +133,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the privacy budget template.</p>
     pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_arn = input;
-        self
+        self.membership_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the privacy budget template.</p>
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +147,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The unique ID of the collaboration that contains this privacy budget template.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The unique ID of the collaboration that contains this privacy budget template.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +161,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The ARN of the collaboration that contains this privacy budget template.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The ARN of the collaboration that contains this privacy budget template.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +175,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The type of the privacy budget template.</p>
     pub fn set_privacy_budget_type(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetType>) -> Self {
-        self.privacy_budget_type = input;
-        self
+        self.privacy_budget_type = input; self
     }
     /// <p>The type of the privacy budget template.</p>
     pub fn get_privacy_budget_type(&self) -> &::std::option::Option<crate::types::PrivacyBudgetType> {
@@ -202,8 +189,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The time at which the privacy budget template was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the privacy budget template was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,8 +203,7 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     }
     /// <p>The most recent time at which the privacy budget template was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the privacy budget template was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,61 +221,55 @@ impl PrivacyBudgetTemplateSummaryBuilder {
     /// - [`create_time`](crate::types::builders::PrivacyBudgetTemplateSummaryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::PrivacyBudgetTemplateSummaryBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivacyBudgetTemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrivacyBudgetTemplateSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_id",
-                    "membership_id was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_arn",
-                    "membership_arn was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            privacy_budget_type: self.privacy_budget_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "privacy_budget_type",
-                    "privacy_budget_type was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building PrivacyBudgetTemplateSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrivacyBudgetTemplateSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                membership_id: self.membership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_id", "membership_id was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                membership_arn: self.membership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_arn", "membership_arn was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                privacy_budget_type: self.privacy_budget_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("privacy_budget_type", "privacy_budget_type was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building PrivacyBudgetTemplateSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

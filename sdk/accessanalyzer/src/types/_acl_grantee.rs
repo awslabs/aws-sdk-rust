@@ -22,11 +22,7 @@ impl AclGrantee {
     /// Tries to convert the enum instance into [`Id`](crate::types::AclGrantee::Id), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AclGrantee::Id(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AclGrantee::Id(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Id`](crate::types::AclGrantee::Id).
     pub fn is_id(&self) -> bool {
@@ -35,11 +31,7 @@ impl AclGrantee {
     /// Tries to convert the enum instance into [`Uri`](crate::types::AclGrantee::Uri), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_uri(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AclGrantee::Uri(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AclGrantee::Uri(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Uri`](crate::types::AclGrantee::Uri).
     pub fn is_uri(&self) -> bool {
@@ -50,3 +42,4 @@ impl AclGrantee {
         matches!(self, Self::Unknown)
     }
 }
+

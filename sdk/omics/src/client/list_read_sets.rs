@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReadSets`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The jobs' sequence store ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of read sets to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ReadSetFilter)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::filter) / [`set_filter(Option<ReadSetFilter>)`](crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListReadSetsOutput`](crate::operation::list_read_sets::ListReadSetsOutput) with field(s):
+                            /// - On success, responds with [`ListReadSetsOutput`](crate::operation::list_read_sets::ListReadSetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_sets::ListReadSetsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`read_sets(Vec::<ReadSetListItem>)`](crate::operation::list_read_sets::ListReadSetsOutput::read_sets): <p>A list of read sets.</p>
-    /// - On failure, responds with [`SdkError<ListReadSetsError>`](crate::operation::list_read_sets::ListReadSetsError)
+                            /// - On failure, responds with [`SdkError<ListReadSetsError>`](crate::operation::list_read_sets::ListReadSetsError)
     pub fn list_read_sets(&self) -> crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder {
-        crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

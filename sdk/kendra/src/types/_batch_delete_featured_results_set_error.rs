@@ -3,7 +3,7 @@
 /// <p>Provides information about a set of featured results that couldn't be removed from an index by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteFeaturedResultsSet.html">BatchDeleteFeaturedResultsSet</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteFeaturedResultsSetError {
+pub struct BatchDeleteFeaturedResultsSetError  {
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
     pub id: ::std::string::String,
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
@@ -11,20 +11,18 @@ pub struct BatchDeleteFeaturedResultsSetError {
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
     pub error_message: ::std::string::String,
 }
-impl BatchDeleteFeaturedResultsSetError {
+impl  BatchDeleteFeaturedResultsSetError  {
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
-    pub fn error_code(&self) -> &crate::types::ErrorCode {
+    pub fn error_code(&self) -> & crate::types::ErrorCode {
         &self.error_code
     }
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl BatchDeleteFeaturedResultsSetError {
@@ -51,8 +49,7 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
     }
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
     }
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -81,8 +77,7 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
     }
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
     /// - [`error_code`](crate::types::builders::BatchDeleteFeaturedResultsSetErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchDeleteFeaturedResultsSetErrorBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteFeaturedResultsSetError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchDeleteFeaturedResultsSetError {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building BatchDeleteFeaturedResultsSetError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchDeleteFeaturedResultsSetError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchDeleteFeaturedResultsSetError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchDeleteFeaturedResultsSetError {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building BatchDeleteFeaturedResultsSetError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchDeleteFeaturedResultsSetError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchDeleteFeaturedResultsSetError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

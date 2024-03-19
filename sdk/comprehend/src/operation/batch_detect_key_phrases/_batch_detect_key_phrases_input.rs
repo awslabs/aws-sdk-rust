@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct BatchDetectKeyPhrasesInput {
+pub struct BatchDetectKeyPhrasesInput  {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub text_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
-impl BatchDetectKeyPhrasesInput {
+impl  BatchDetectKeyPhrasesInput  {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_list.is_none()`.
-    pub fn text_list(&self) -> &[::std::string::String] {
-        self.text_list.as_deref().unwrap_or_default()
+    pub fn text_list(&self) -> & [::std::string::String] {
+        self.text_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
 }
-impl ::std::fmt::Debug for BatchDetectKeyPhrasesInput {
+impl  ::std::fmt::Debug for BatchDetectKeyPhrasesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectKeyPhrasesInput");
         formatter.field("text_list", &"*** Sensitive Data Redacted ***");
@@ -39,7 +40,7 @@ impl BatchDetectKeyPhrasesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct BatchDetectKeyPhrasesInputBuilder {
-    pub(crate) text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) text_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl BatchDetectKeyPhrasesInputBuilder {
@@ -50,17 +51,16 @@ impl BatchDetectKeyPhrasesInputBuilder {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
     pub fn text_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.text_list.unwrap_or_default();
-        v.push(input.into());
-        self.text_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.text_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.text_list = input;
-        self
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.text_list = input; self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.text_list
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
@@ -71,22 +71,22 @@ impl BatchDetectKeyPhrasesInputBuilder {
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesInput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput {
-            text_list: self.text_list,
-            language_code: self.language_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput {
+                text_list: self.text_list
+                ,
+                language_code: self.language_code
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for BatchDetectKeyPhrasesInputBuilder {
@@ -97,3 +97,4 @@ impl ::std::fmt::Debug for BatchDetectKeyPhrasesInputBuilder {
         formatter.finish()
     }
 }
+

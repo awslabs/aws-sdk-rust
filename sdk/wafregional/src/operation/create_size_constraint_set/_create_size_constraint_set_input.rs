@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSizeConstraintSetInput {
+pub struct CreateSizeConstraintSetInput  {
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateSizeConstraintSetInput {
+impl  CreateSizeConstraintSetInput  {
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateSizeConstraintSetInputBuilder {
     }
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreateSizeConstraintSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`CreateSizeConstraintSetInput`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput {
-            name: self.name,
-            change_token: self.change_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput {
+                name: self.name
+                ,
+                change_token: self.change_token
+                ,
+            }
+        )
     }
 }
+

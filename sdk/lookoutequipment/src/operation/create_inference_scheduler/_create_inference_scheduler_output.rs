@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInferenceSchedulerOutput {
+pub struct CreateInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created.</p>
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of inference scheduler being created.</p>
@@ -16,32 +16,32 @@ pub struct CreateInferenceSchedulerOutput {
     pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
     _request_id: Option<String>,
 }
-impl CreateInferenceSchedulerOutput {
+impl  CreateInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created.</p>
-    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>The name of inference scheduler being created.</p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceSchedulerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
     /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
     /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
-    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
+    pub fn model_quality(&self) -> ::std::option::Option<& crate::types::ModelQuality> {
         self.model_quality.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateInferenceSchedulerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerOutput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput).
     pub fn builder() -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerOutputBuilder {
@@ -67,8 +67,7 @@ impl CreateInferenceSchedulerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created.</p>
     pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_arn = input;
-        self
+        self.inference_scheduler_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created.</p>
     pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl CreateInferenceSchedulerOutputBuilder {
     }
     /// <p>The name of inference scheduler being created.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_name = input;
-        self
+        self.inference_scheduler_name = input; self
     }
     /// <p>The name of inference scheduler being created.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl CreateInferenceSchedulerOutputBuilder {
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
@@ -115,8 +112,7 @@ impl CreateInferenceSchedulerOutputBuilder {
     /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
     pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
-        self.model_quality = input;
-        self
+        self.model_quality = input; self
     }
     /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
@@ -126,22 +122,27 @@ impl CreateInferenceSchedulerOutputBuilder {
         &self.model_quality
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateInferenceSchedulerOutput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput).
     pub fn build(self) -> crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput {
         crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput {
-            inference_scheduler_arn: self.inference_scheduler_arn,
-            inference_scheduler_name: self.inference_scheduler_name,
-            status: self.status,
-            model_quality: self.model_quality,
+            inference_scheduler_arn: self.inference_scheduler_arn
+            ,
+            inference_scheduler_name: self.inference_scheduler_name
+            ,
+            status: self.status
+            ,
+            model_quality: self.model_quality
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

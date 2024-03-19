@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePermissionVersionOutput {
+pub struct CreatePermissionVersionOutput  {
     /// <p>Information about a RAM managed permission.</p>
     pub permission: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePermissionVersionOutput {
+impl  CreatePermissionVersionOutput  {
     /// <p>Information about a RAM managed permission.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::ResourceSharePermissionDetail> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::ResourceSharePermissionDetail> {
         self.permission.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePermissionVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePermissionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionVersionOutput`](crate::operation::create_permission_version::CreatePermissionVersionOutput).
     pub fn builder() -> crate::operation::create_permission_version::builders::CreatePermissionVersionOutputBuilder {
@@ -47,8 +47,7 @@ impl CreatePermissionVersionOutputBuilder {
     }
     /// <p>Information about a RAM managed permission.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionDetail>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>Information about a RAM managed permission.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionDetail> {
@@ -61,28 +60,30 @@ impl CreatePermissionVersionOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePermissionVersionOutput`](crate::operation::create_permission_version::CreatePermissionVersionOutput).
     pub fn build(self) -> crate::operation::create_permission_version::CreatePermissionVersionOutput {
         crate::operation::create_permission_version::CreatePermissionVersionOutput {
-            permission: self.permission,
-            client_token: self.client_token,
+            permission: self.permission
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

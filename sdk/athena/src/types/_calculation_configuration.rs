@@ -3,13 +3,13 @@
 /// <p>Contains configuration information for the calculation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CalculationConfiguration {
+pub struct CalculationConfiguration  {
     /// <p>A string that contains the code for the calculation.</p>
     pub code_block: ::std::option::Option<::std::string::String>,
 }
-impl CalculationConfiguration {
+impl  CalculationConfiguration  {
     /// <p>A string that contains the code for the calculation.</p>
-    pub fn code_block(&self) -> ::std::option::Option<&str> {
+    pub fn code_block(&self) -> ::std::option::Option<& str> {
         self.code_block.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CalculationConfigurationBuilder {
     }
     /// <p>A string that contains the code for the calculation.</p>
     pub fn set_code_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_block = input;
-        self
+        self.code_block = input; self
     }
     /// <p>A string that contains the code for the calculation.</p>
     pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CalculationConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`CalculationConfiguration`](crate::types::CalculationConfiguration).
     pub fn build(self) -> crate::types::CalculationConfiguration {
-        crate::types::CalculationConfiguration { code_block: self.code_block }
+        crate::types::CalculationConfiguration {
+            code_block: self.code_block
+            ,
+        }
     }
 }
+

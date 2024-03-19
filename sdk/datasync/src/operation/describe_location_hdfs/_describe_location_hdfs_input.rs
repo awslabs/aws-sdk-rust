@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationHdfsInput {
+pub struct DescribeLocationHdfsInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLocationHdfsInput {
+impl  DescribeLocationHdfsInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeLocationHdfsInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     /// Consumes the builder and constructs a [`DescribeLocationHdfsInput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_location_hdfs::DescribeLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_location_hdfs::DescribeLocationHdfsInput {
-            location_arn: self.location_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_location_hdfs::DescribeLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_location_hdfs::DescribeLocationHdfsInput {
+                location_arn: self.location_arn
+                ,
+            }
+        )
     }
 }
+

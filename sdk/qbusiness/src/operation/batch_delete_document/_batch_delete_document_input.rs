@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteDocumentInput {
+pub struct BatchDeleteDocumentInput  {
     /// <p>The identifier of the Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Documents deleted from the Amazon Q index.</p>
-    pub documents: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>>,
+    pub documents: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteDocument>>,
     /// <p>The identifier of the data source sync during which the documents were deleted.</p>
     pub data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchDeleteDocumentInput {
+impl  BatchDeleteDocumentInput  {
     /// <p>The identifier of the Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>Documents deleted from the Amazon Q index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
-    pub fn documents(&self) -> &[crate::types::DeleteDocument] {
-        self.documents.as_deref().unwrap_or_default()
+    pub fn documents(&self) -> & [crate::types::DeleteDocument] {
+        self.documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the data source sync during which the documents were deleted.</p>
-    pub fn data_source_sync_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_sync_id(&self) -> ::std::option::Option<& str> {
         self.data_source_sync_id.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl BatchDeleteDocumentInput {
 pub struct BatchDeleteDocumentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>>,
+    pub(crate) documents: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteDocument>>,
     pub(crate) data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDocumentInputBuilder {
@@ -57,8 +58,7 @@ impl BatchDeleteDocumentInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl BatchDeleteDocumentInputBuilder {
     }
     /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl BatchDeleteDocumentInputBuilder {
     /// <p>Documents deleted from the Amazon Q index.</p>
     pub fn documents(mut self, input: crate::types::DeleteDocument) -> Self {
         let mut v = self.documents.unwrap_or_default();
-        v.push(input);
-        self.documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Documents deleted from the Amazon Q index.</p>
-    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>>) -> Self {
-        self.documents = input;
-        self
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteDocument>>) -> Self {
+        self.documents = input; self
     }
     /// <p>Documents deleted from the Amazon Q index.</p>
-    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>> {
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteDocument>> {
         &self.documents
     }
     /// <p>The identifier of the data source sync during which the documents were deleted.</p>
@@ -106,23 +104,26 @@ impl BatchDeleteDocumentInputBuilder {
     }
     /// <p>The identifier of the data source sync during which the documents were deleted.</p>
     pub fn set_data_source_sync_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_sync_id = input;
-        self
+        self.data_source_sync_id = input; self
     }
     /// <p>The identifier of the data source sync during which the documents were deleted.</p>
     pub fn get_data_source_sync_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_sync_id
     }
     /// Consumes the builder and constructs a [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_delete_document::BatchDeleteDocumentInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            documents: self.documents,
-            data_source_sync_id: self.data_source_sync_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_document::BatchDeleteDocumentInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                documents: self.documents
+                ,
+                data_source_sync_id: self.data_source_sync_id
+                ,
+            }
+        )
     }
 }
+

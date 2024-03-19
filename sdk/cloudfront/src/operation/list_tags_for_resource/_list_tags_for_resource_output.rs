@@ -3,22 +3,22 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: ::std::option::Option<crate::types::Tags>,
     _request_id: Option<String>,
 }
-impl ListTagsForResourceOutput {
+impl  ListTagsForResourceOutput  {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::Tags> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTagsForResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
     pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
@@ -42,27 +42,28 @@ impl ListTagsForResourceOutputBuilder {
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
     pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            tags: self.tags,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

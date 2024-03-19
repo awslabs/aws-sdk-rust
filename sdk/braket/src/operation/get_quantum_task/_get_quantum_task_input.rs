@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQuantumTaskInput {
+pub struct GetQuantumTaskInput  {
     /// <p>The ARN of the task to retrieve.</p>
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes to return information for.</p>
-    pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
+    pub additional_attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
-impl GetQuantumTaskInput {
+impl  GetQuantumTaskInput  {
     /// <p>The ARN of the task to retrieve.</p>
-    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn quantum_task_arn(&self) -> ::std::option::Option<& str> {
         self.quantum_task_arn.as_deref()
     }
     /// <p>A list of attributes to return information for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attribute_names.is_none()`.
-    pub fn additional_attribute_names(&self) -> &[crate::types::QuantumTaskAdditionalAttributeName] {
-        self.additional_attribute_names.as_deref().unwrap_or_default()
+    pub fn additional_attribute_names(&self) -> & [crate::types::QuantumTaskAdditionalAttributeName] {
+        self.additional_attribute_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetQuantumTaskInput {
@@ -32,7 +33,7 @@ impl GetQuantumTaskInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInputBuilder {
     pub(crate) quantum_task_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
+    pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInputBuilder {
     /// <p>The ARN of the task to retrieve.</p>
@@ -43,8 +44,7 @@ impl GetQuantumTaskInputBuilder {
     }
     /// <p>The ARN of the task to retrieve.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quantum_task_arn = input;
-        self
+        self.quantum_task_arn = input; self
     }
     /// <p>The ARN of the task to retrieve.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl GetQuantumTaskInputBuilder {
     /// <p>A list of attributes to return information for.</p>
     pub fn additional_attribute_names(mut self, input: crate::types::QuantumTaskAdditionalAttributeName) -> Self {
         let mut v = self.additional_attribute_names.unwrap_or_default();
-        v.push(input);
-        self.additional_attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn set_additional_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
-    ) -> Self {
-        self.additional_attribute_names = input;
-        self
+    pub fn set_additional_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuantumTaskAdditionalAttributeName>>) -> Self {
+        self.additional_attribute_names = input; self
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>> {
+    pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuantumTaskAdditionalAttributeName>> {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskInput {
-            quantum_task_arn: self.quantum_task_arn,
-            additional_attribute_names: self.additional_attribute_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_quantum_task::GetQuantumTaskInput {
+                quantum_task_arn: self.quantum_task_arn
+                ,
+                additional_attribute_names: self.additional_attribute_names
+                ,
+            }
+        )
     }
 }
+

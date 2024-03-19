@@ -5,56 +5,52 @@ pub use crate::operation::get_cost_categories::_get_cost_categories_input::GetCo
 
 impl GetCostCategoriesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_cost_categories();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_cost_categories::GetCostCategoriesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_cost_categories::GetCostCategoriesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_cost_categories();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetCostCategories`.
-///
+/// 
 /// <p>Retrieves an array of Cost Category names and values incurred cost.</p><note>
 /// <p>If some Cost Category names and values are not associated with any cost, they will not be returned by this API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCostCategoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder,
+                    inner: crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        crate::operation::get_cost_categories::GetCostCategoriesError,
-    > for GetCostCategoriesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_cost_categories::GetCostCategoriesOutput,
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_cost_categories::GetCostCategoriesOutput,
+                    crate::operation::get_cost_categories::GetCostCategoriesError,
+                > for GetCostCategoriesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_cost_categories::GetCostCategoriesOutput,
+                        crate::operation::get_cost_categories::GetCostCategoriesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetCostCategoriesFluentBuilder {
     /// Creates a new `GetCostCategories`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl GetCostCategoriesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_cost_categories::GetCostCategories::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_cost_categories::GetCostCategories::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        crate::operation::get_cost_categories::GetCostCategoriesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_cost_categories::GetCostCategories::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_cost_categories::GetCostCategories::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_cost_categories::GetCostCategoriesOutput, crate::operation::get_cost_categories::GetCostCategoriesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
     pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -373,7 +360,7 @@ impl GetCostCategoriesFluentBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -397,7 +384,7 @@ impl GetCostCategoriesFluentBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>> {
         self.inner.get_sort_by()
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
@@ -435,3 +422,4 @@ impl GetCostCategoriesFluentBuilder {
         self.inner.get_next_page_token()
     }
 }
+

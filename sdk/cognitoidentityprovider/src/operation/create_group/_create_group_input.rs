@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGroupInput {
+pub struct CreateGroupInput  {
     /// <p>The name of the group. Must be unique.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool.</p>
@@ -16,21 +16,21 @@ pub struct CreateGroupInput {
     /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
     pub precedence: ::std::option::Option<i32>,
 }
-impl CreateGroupInput {
+impl  CreateGroupInput  {
     /// <p>The name of the group. Must be unique.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>A string containing the description of the group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
@@ -66,8 +66,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>The name of the group. Must be unique.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group. Must be unique.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>A string containing the description of the group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A string containing the description of the group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl CreateGroupInputBuilder {
     /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null. The maximum <code>Precedence</code> value is <code>2^31-1</code>.</p>
     pub fn set_precedence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.precedence = input;
-        self
+        self.precedence = input; self
     }
     /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
     /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
@@ -138,12 +133,20 @@ impl CreateGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
-            group_name: self.group_name,
-            user_pool_id: self.user_pool_id,
-            description: self.description,
-            role_arn: self.role_arn,
-            precedence: self.precedence,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_group::CreateGroupInput {
+                group_name: self.group_name
+                ,
+                user_pool_id: self.user_pool_id
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                precedence: self.precedence
+                ,
+            }
+        )
     }
 }
+

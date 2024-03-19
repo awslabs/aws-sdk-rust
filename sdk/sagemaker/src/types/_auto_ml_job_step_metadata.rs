@@ -3,13 +3,13 @@
 /// <p>Metadata for an AutoML job step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMlJobStepMetadata {
+pub struct AutoMlJobStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the AutoML job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl AutoMlJobStepMetadata {
+impl  AutoMlJobStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the AutoML job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AutoMlJobStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AutoMlJobStepMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`AutoMlJobStepMetadata`](crate::types::AutoMlJobStepMetadata).
     pub fn build(self) -> crate::types::AutoMlJobStepMetadata {
-        crate::types::AutoMlJobStepMetadata { arn: self.arn }
+        crate::types::AutoMlJobStepMetadata {
+            arn: self.arn
+            ,
+        }
     }
 }
+

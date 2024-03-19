@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateResolverEndpointIpAddressInput {
+pub struct AssociateResolverEndpointIpAddressInput  {
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
     pub ip_address: ::std::option::Option<crate::types::IpAddressUpdate>,
 }
-impl AssociateResolverEndpointIpAddressInput {
+impl  AssociateResolverEndpointIpAddressInput  {
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
-    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.resolver_endpoint_id.as_deref()
     }
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&crate::types::IpAddressUpdate> {
+    pub fn ip_address(&self) -> ::std::option::Option<& crate::types::IpAddressUpdate> {
         self.ip_address.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateResolverEndpointIpAddressInputBuilder {
     }
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
     pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_endpoint_id = input;
-        self
+        self.resolver_endpoint_id = input; self
     }
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
     pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl AssociateResolverEndpointIpAddressInputBuilder {
     }
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<crate::types::IpAddressUpdate>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<crate::types::IpAddressUpdate> {
         &self.ip_address
     }
     /// Consumes the builder and constructs a [`AssociateResolverEndpointIpAddressInput`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressInput {
-                resolver_endpoint_id: self.resolver_endpoint_id,
-                ip_address: self.ip_address,
-            },
+                resolver_endpoint_id: self.resolver_endpoint_id
+                ,
+                ip_address: self.ip_address
+                ,
+            }
         )
     }
 }
+

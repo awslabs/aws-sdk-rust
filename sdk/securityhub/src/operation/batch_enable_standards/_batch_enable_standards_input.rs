@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEnableStandardsInput {
+pub struct BatchEnableStandardsInput  {
     /// <p>The list of standards checks to enable.</p>
-    pub standards_subscription_requests: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>>,
+    pub standards_subscription_requests: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsSubscriptionRequest>>,
 }
-impl BatchEnableStandardsInput {
+impl  BatchEnableStandardsInput  {
     /// <p>The list of standards checks to enable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscription_requests.is_none()`.
-    pub fn standards_subscription_requests(&self) -> &[crate::types::StandardsSubscriptionRequest] {
-        self.standards_subscription_requests.as_deref().unwrap_or_default()
+    pub fn standards_subscription_requests(&self) -> & [crate::types::StandardsSubscriptionRequest] {
+        self.standards_subscription_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchEnableStandardsInput {
@@ -25,7 +26,7 @@ impl BatchEnableStandardsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEnableStandardsInputBuilder {
-    pub(crate) standards_subscription_requests: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>>,
+    pub(crate) standards_subscription_requests: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsSubscriptionRequest>>,
 }
 impl BatchEnableStandardsInputBuilder {
     /// Appends an item to `standards_subscription_requests`.
@@ -35,29 +36,26 @@ impl BatchEnableStandardsInputBuilder {
     /// <p>The list of standards checks to enable.</p>
     pub fn standards_subscription_requests(mut self, input: crate::types::StandardsSubscriptionRequest) -> Self {
         let mut v = self.standards_subscription_requests.unwrap_or_default();
-        v.push(input);
-        self.standards_subscription_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.standards_subscription_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of standards checks to enable.</p>
-    pub fn set_standards_subscription_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>>,
-    ) -> Self {
-        self.standards_subscription_requests = input;
-        self
+    pub fn set_standards_subscription_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsSubscriptionRequest>>) -> Self {
+        self.standards_subscription_requests = input; self
     }
     /// <p>The list of standards checks to enable.</p>
-    pub fn get_standards_subscription_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>> {
+    pub fn get_standards_subscription_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StandardsSubscriptionRequest>> {
         &self.standards_subscription_requests
     }
     /// Consumes the builder and constructs a [`BatchEnableStandardsInput`](crate::operation::batch_enable_standards::BatchEnableStandardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_enable_standards::BatchEnableStandardsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_enable_standards::BatchEnableStandardsInput {
-            standards_subscription_requests: self.standards_subscription_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_enable_standards::BatchEnableStandardsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_enable_standards::BatchEnableStandardsInput {
+                standards_subscription_requests: self.standards_subscription_requests
+                ,
+            }
+        )
     }
 }
+

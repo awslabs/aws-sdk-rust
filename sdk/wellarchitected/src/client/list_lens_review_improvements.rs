@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLensReviewImprovements`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
     ///   - [`lens_alias(impl Into<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::lens_alias) / [`set_lens_alias(Option<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::set_lens_alias):<br>required: **true**<br><p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p> <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p><br>
     ///   - [`pillar_id(impl Into<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::pillar_id) / [`set_pillar_id(Option<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::set_pillar_id):<br>required: **false**<br><p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p><br>
@@ -11,17 +11,16 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`question_priority(QuestionPriority)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::question_priority) / [`set_question_priority(Option<QuestionPriority>)`](crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::set_question_priority):<br>required: **false**<br><p>The priority of the question.</p><br>
-    /// - On success, responds with [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput) with field(s):
+                            /// - On success, responds with [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone_number(Option<i32>)`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput::milestone_number): <p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>
     ///   - [`lens_alias(Option<String>)`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput::lens_alias): <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p> <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_arn(Option<String>)`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`improvement_summaries(Option<Vec::<ImprovementSummary>>)`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput::improvement_summaries): <p>List of improvement summaries of lens review in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLensReviewImprovementsError>`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsError)
-    pub fn list_lens_review_improvements(
-        &self,
-    ) -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder {
-        crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListLensReviewImprovementsError>`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsError)
+    pub fn list_lens_review_improvements(&self) -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder {
+                                crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

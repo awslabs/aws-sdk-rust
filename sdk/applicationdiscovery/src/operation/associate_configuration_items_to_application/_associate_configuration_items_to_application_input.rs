@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateConfigurationItemsToApplicationInput {
+pub struct AssociateConfigurationItemsToApplicationInput  {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
     pub application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configuration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AssociateConfigurationItemsToApplicationInput {
+impl  AssociateConfigurationItemsToApplicationInput  {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    pub fn application_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_configuration_id(&self) -> ::std::option::Option<& str> {
         self.application_configuration_id.as_deref()
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
-    pub fn configuration_ids(&self) -> &[::std::string::String] {
-        self.configuration_ids.as_deref().unwrap_or_default()
+    pub fn configuration_ids(&self) -> & [::std::string::String] {
+        self.configuration_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssociateConfigurationItemsToApplicationInput {
     /// Creates a new builder-style object to manufacture [`AssociateConfigurationItemsToApplicationInput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput).
-    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder {
         crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder::default()
     }
 }
@@ -33,7 +33,7 @@ impl AssociateConfigurationItemsToApplicationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConfigurationItemsToApplicationInputBuilder {
     pub(crate) application_configuration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AssociateConfigurationItemsToApplicationInputBuilder {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
@@ -44,8 +44,7 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
     }
     /// <p>The configuration ID of an application with which items are to be associated.</p>
     pub fn set_application_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_configuration_id = input;
-        self
+        self.application_configuration_id = input; self
     }
     /// <p>The configuration ID of an application with which items are to be associated.</p>
     pub fn get_application_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,31 +57,28 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
     /// <p>The ID of each configuration item to be associated with an application.</p>
     pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.configuration_ids = input;
-        self
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.configuration_ids = input; self
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.configuration_ids
     }
     /// Consumes the builder and constructs a [`AssociateConfigurationItemsToApplicationInput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput {
-                application_configuration_id: self.application_configuration_id,
-                configuration_ids: self.configuration_ids,
-            },
+                application_configuration_id: self.application_configuration_id
+                ,
+                configuration_ids: self.configuration_ids
+                ,
+            }
         )
     }
 }
+

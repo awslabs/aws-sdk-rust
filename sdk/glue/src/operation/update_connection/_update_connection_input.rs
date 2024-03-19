@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectionInput {
+pub struct UpdateConnectionInput  {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection definition to update.</p>
@@ -10,17 +10,17 @@ pub struct UpdateConnectionInput {
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub connection_input: ::std::option::Option<crate::types::ConnectionInput>,
 }
-impl UpdateConnectionInput {
+impl  UpdateConnectionInput  {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the connection definition to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
-    pub fn connection_input(&self) -> ::std::option::Option<&crate::types::ConnectionInput> {
+    pub fn connection_input(&self) -> ::std::option::Option<& crate::types::ConnectionInput> {
         self.connection_input.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The name of the connection definition to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the connection definition to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub fn set_connection_input(mut self, input: ::std::option::Option<crate::types::ConnectionInput>) -> Self {
-        self.connection_input = input;
-        self
+        self.connection_input = input; self
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub fn get_connection_input(&self) -> &::std::option::Option<crate::types::ConnectionInput> {
         &self.connection_input
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
-            catalog_id: self.catalog_id,
-            name: self.name,
-            connection_input: self.connection_input,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_connection::UpdateConnectionInput {
+                catalog_id: self.catalog_id
+                ,
+                name: self.name
+                ,
+                connection_input: self.connection_input
+                ,
+            }
+        )
     }
 }
+

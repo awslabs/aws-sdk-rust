@@ -3,7 +3,7 @@
 /// Attributes that define an Amazon SageMaker machine learning resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SageMakerMachineLearningModelResourceData {
+pub struct SageMakerMachineLearningModelResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
     pub destination_path: ::std::option::Option<::std::string::String>,
     /// The owner setting for downloaded machine learning resources.
@@ -11,17 +11,17 @@ pub struct SageMakerMachineLearningModelResourceData {
     /// The ARN of the Amazon SageMaker training job that represents the source model.
     pub sage_maker_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl SageMakerMachineLearningModelResourceData {
+impl  SageMakerMachineLearningModelResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(&self) -> ::std::option::Option<&str> {
+    pub fn destination_path(&self) -> ::std::option::Option<& str> {
         self.destination_path.as_deref()
     }
     /// The owner setting for downloaded machine learning resources.
-    pub fn owner_setting(&self) -> ::std::option::Option<&crate::types::ResourceDownloadOwnerSetting> {
+    pub fn owner_setting(&self) -> ::std::option::Option<& crate::types::ResourceDownloadOwnerSetting> {
         self.owner_setting.as_ref()
     }
     /// The ARN of the Amazon SageMaker training job that represents the source model.
-    pub fn sage_maker_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sage_maker_job_arn(&self) -> ::std::option::Option<& str> {
         self.sage_maker_job_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
     }
     /// The absolute local path of the resource inside the Lambda environment.
     pub fn set_destination_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_path = input;
-        self
+        self.destination_path = input; self
     }
     /// The absolute local path of the resource inside the Lambda environment.
     pub fn get_destination_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
     }
     /// The owner setting for downloaded machine learning resources.
     pub fn set_owner_setting(mut self, input: ::std::option::Option<crate::types::ResourceDownloadOwnerSetting>) -> Self {
-        self.owner_setting = input;
-        self
+        self.owner_setting = input; self
     }
     /// The owner setting for downloaded machine learning resources.
     pub fn get_owner_setting(&self) -> &::std::option::Option<crate::types::ResourceDownloadOwnerSetting> {
@@ -76,8 +74,7 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
     }
     /// The ARN of the Amazon SageMaker training job that represents the source model.
     pub fn set_sage_maker_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sage_maker_job_arn = input;
-        self
+        self.sage_maker_job_arn = input; self
     }
     /// The ARN of the Amazon SageMaker training job that represents the source model.
     pub fn get_sage_maker_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl SageMakerMachineLearningModelResourceDataBuilder {
     /// Consumes the builder and constructs a [`SageMakerMachineLearningModelResourceData`](crate::types::SageMakerMachineLearningModelResourceData).
     pub fn build(self) -> crate::types::SageMakerMachineLearningModelResourceData {
         crate::types::SageMakerMachineLearningModelResourceData {
-            destination_path: self.destination_path,
-            owner_setting: self.owner_setting,
-            sage_maker_job_arn: self.sage_maker_job_arn,
+            destination_path: self.destination_path
+            ,
+            owner_setting: self.owner_setting
+            ,
+            sage_maker_job_arn: self.sage_maker_job_arn
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LakeFormationConfiguration {
+pub struct LakeFormationConfiguration  {
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub use_lake_formation_credentials: ::std::option::Option<bool>,
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl LakeFormationConfiguration {
+impl  LakeFormationConfiguration  {
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn use_lake_formation_credentials(&self) -> ::std::option::Option<bool> {
         self.use_lake_formation_credentials
     }
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LakeFormationConfigurationBuilder {
     }
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn set_use_lake_formation_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_lake_formation_credentials = input;
-        self
+        self.use_lake_formation_credentials = input; self
     }
     /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn get_use_lake_formation_credentials(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl LakeFormationConfigurationBuilder {
     }
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LakeFormationConfigurationBuilder {
     /// Consumes the builder and constructs a [`LakeFormationConfiguration`](crate::types::LakeFormationConfiguration).
     pub fn build(self) -> crate::types::LakeFormationConfiguration {
         crate::types::LakeFormationConfiguration {
-            use_lake_formation_credentials: self.use_lake_formation_credentials,
-            account_id: self.account_id,
+            use_lake_formation_credentials: self.use_lake_formation_credentials
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

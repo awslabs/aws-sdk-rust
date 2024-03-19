@@ -3,11 +3,11 @@
 /// <p>Properties associated with the columns participating in a join.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JoinKeyProperties {
+pub struct JoinKeyProperties  {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub unique_key: ::std::option::Option<bool>,
 }
-impl JoinKeyProperties {
+impl  JoinKeyProperties  {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub fn unique_key(&self) -> ::std::option::Option<bool> {
         self.unique_key
@@ -34,8 +34,7 @@ impl JoinKeyPropertiesBuilder {
     }
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub fn set_unique_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unique_key = input;
-        self
+        self.unique_key = input; self
     }
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub fn get_unique_key(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl JoinKeyPropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`JoinKeyProperties`](crate::types::JoinKeyProperties).
     pub fn build(self) -> crate::types::JoinKeyProperties {
-        crate::types::JoinKeyProperties { unique_key: self.unique_key }
+        crate::types::JoinKeyProperties {
+            unique_key: self.unique_key
+            ,
+        }
     }
 }
+

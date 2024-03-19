@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceProfileOutput {
+pub struct CreateServiceProfileOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the new service profile.</p>
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateServiceProfileOutput {
+impl  CreateServiceProfileOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the new service profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServiceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceProfileOutput`](crate::operation::create_service_profile::CreateServiceProfileOutput).
     pub fn builder() -> crate::operation::create_service_profile::builders::CreateServiceProfileOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateServiceProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateServiceProfileOutputBuilder {
     }
     /// <p>The ID of the new service profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the new service profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateServiceProfileOutput`](crate::operation::create_service_profile::CreateServiceProfileOutput).
     pub fn build(self) -> crate::operation::create_service_profile::CreateServiceProfileOutput {
         crate::operation::create_service_profile::CreateServiceProfileOutput {
-            arn: self.arn,
-            id: self.id,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

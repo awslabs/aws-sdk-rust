@@ -4,7 +4,7 @@
 /// <p>To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalTranscriptionJob {
+pub struct MedicalTranscriptionJob  {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub medical_transcription_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the specified medical transcription job.</p>
@@ -62,20 +62,20 @@ pub struct MedicalTranscriptionJob {
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl MedicalTranscriptionJob {
+impl  MedicalTranscriptionJob  {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn medical_transcription_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn medical_transcription_job_name(&self) -> ::std::option::Option<& str> {
         self.medical_transcription_job_name.as_deref()
     }
     /// <p>Provides the status of the specified medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn transcription_job_status(&self) -> ::std::option::Option<&crate::types::TranscriptionJobStatus> {
+    pub fn transcription_job_status(&self) -> ::std::option::Option<& crate::types::TranscriptionJobStatus> {
         self.transcription_job_status.as_ref()
     }
     /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
@@ -83,31 +83,31 @@ impl MedicalTranscriptionJob {
         self.media_sample_rate_hertz
     }
     /// <p>The format of the input media file.</p>
-    pub fn media_format(&self) -> ::std::option::Option<&crate::types::MediaFormat> {
+    pub fn media_format(&self) -> ::std::option::Option<& crate::types::MediaFormat> {
         self.media_format.as_ref()
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
-    pub fn media(&self) -> ::std::option::Option<&crate::types::Media> {
+    pub fn media(&self) -> ::std::option::Option<& crate::types::Media> {
         self.media.as_ref()
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&crate::types::MedicalTranscript> {
+    pub fn transcript(&self) -> ::std::option::Option<& crate::types::MedicalTranscript> {
         self.transcript.as_ref()
     }
     /// <p>The date and time the specified medical transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time the specified medical transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time the specified medical transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
@@ -132,30 +132,31 @@ impl MedicalTranscriptionJob {
     /// <p><code>Invalid number of channels: number of channels too large</code>.</p>
     /// <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.</p></li>
     /// </ul>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::MedicalTranscriptionSetting> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::MedicalTranscriptionSetting> {
         self.settings.as_ref()
     }
     /// <p>Indicates whether content identification was enabled for your transcription request.</p>
-    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<& crate::types::MedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Describes the medical specialty represented in your media.</p>
-    pub fn specialty(&self) -> ::std::option::Option<&crate::types::Specialty> {
+    pub fn specialty(&self) -> ::std::option::Option<& crate::types::Specialty> {
         self.specialty.as_ref()
     }
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MedicalTranscriptionJob {
@@ -184,7 +185,7 @@ pub struct MedicalTranscriptionJobBuilder {
     pub(crate) content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     pub(crate) specialty: ::std::option::Option<crate::types::Specialty>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl MedicalTranscriptionJobBuilder {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -194,8 +195,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub fn set_medical_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.medical_transcription_job_name = input;
-        self
+        self.medical_transcription_job_name = input; self
     }
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub fn get_medical_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +210,7 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>Provides the status of the specified medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub fn set_transcription_job_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
-        self.transcription_job_status = input;
-        self
+        self.transcription_job_status = input; self
     }
     /// <p>Provides the status of the specified medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
@@ -225,8 +224,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -239,8 +237,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.media_sample_rate_hertz = input;
-        self
+        self.media_sample_rate_hertz = input; self
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
@@ -253,8 +250,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>The format of the input media file.</p>
     pub fn set_media_format(mut self, input: ::std::option::Option<crate::types::MediaFormat>) -> Self {
-        self.media_format = input;
-        self
+        self.media_format = input; self
     }
     /// <p>The format of the input media file.</p>
     pub fn get_media_format(&self) -> &::std::option::Option<crate::types::MediaFormat> {
@@ -269,8 +265,7 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
-        self.media = input;
-        self
+        self.media = input; self
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
@@ -284,8 +279,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::MedicalTranscript>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
     pub fn get_transcript(&self) -> &::std::option::Option<crate::types::MedicalTranscript> {
@@ -300,8 +294,7 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>The date and time the specified medical transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time the specified medical transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -317,8 +310,7 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>The date and time the specified medical transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time the specified medical transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -334,8 +326,7 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>The date and time the specified medical transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>The date and time the specified medical transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
@@ -391,8 +382,7 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.</p></li>
     /// </ul>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -426,8 +416,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::MedicalTranscriptionSetting>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::MedicalTranscriptionSetting> {
@@ -440,8 +429,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>Indicates whether content identification was enabled for your transcription request.</p>
     pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::MedicalContentIdentificationType>) -> Self {
-        self.content_identification_type = input;
-        self
+        self.content_identification_type = input; self
     }
     /// <p>Indicates whether content identification was enabled for your transcription request.</p>
     pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
@@ -454,8 +442,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>Describes the medical specialty represented in your media.</p>
     pub fn set_specialty(mut self, input: ::std::option::Option<crate::types::Specialty>) -> Self {
-        self.specialty = input;
-        self
+        self.specialty = input; self
     }
     /// <p>Describes the medical specialty represented in your media.</p>
     pub fn get_specialty(&self) -> &::std::option::Option<crate::types::Specialty> {
@@ -468,8 +455,7 @@ impl MedicalTranscriptionJobBuilder {
     }
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -482,38 +468,54 @@ impl MedicalTranscriptionJobBuilder {
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`MedicalTranscriptionJob`](crate::types::MedicalTranscriptionJob).
     pub fn build(self) -> crate::types::MedicalTranscriptionJob {
         crate::types::MedicalTranscriptionJob {
-            medical_transcription_job_name: self.medical_transcription_job_name,
-            transcription_job_status: self.transcription_job_status,
-            language_code: self.language_code,
-            media_sample_rate_hertz: self.media_sample_rate_hertz,
-            media_format: self.media_format,
-            media: self.media,
-            transcript: self.transcript,
-            start_time: self.start_time,
-            creation_time: self.creation_time,
-            completion_time: self.completion_time,
-            failure_reason: self.failure_reason,
-            settings: self.settings,
-            content_identification_type: self.content_identification_type,
-            specialty: self.specialty,
-            r#type: self.r#type,
-            tags: self.tags,
+            medical_transcription_job_name: self.medical_transcription_job_name
+            ,
+            transcription_job_status: self.transcription_job_status
+            ,
+            language_code: self.language_code
+            ,
+            media_sample_rate_hertz: self.media_sample_rate_hertz
+            ,
+            media_format: self.media_format
+            ,
+            media: self.media
+            ,
+            transcript: self.transcript
+            ,
+            start_time: self.start_time
+            ,
+            creation_time: self.creation_time
+            ,
+            completion_time: self.completion_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            settings: self.settings
+            ,
+            content_identification_type: self.content_identification_type
+            ,
+            specialty: self.specialty
+            ,
+            r#type: self.r#type
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

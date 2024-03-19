@@ -3,19 +3,19 @@
 /// <p>Represents a request to create an export job from a data source to a data destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExportJobInput {
+pub struct CreateExportJobInput  {
     /// <p>The data source for the export job.</p>
     pub export_data_source: ::std::option::Option<crate::types::ExportDataSource>,
     /// <p>The destination for the export job.</p>
     pub export_destination: ::std::option::Option<crate::types::ExportDestination>,
 }
-impl CreateExportJobInput {
+impl  CreateExportJobInput  {
     /// <p>The data source for the export job.</p>
-    pub fn export_data_source(&self) -> ::std::option::Option<&crate::types::ExportDataSource> {
+    pub fn export_data_source(&self) -> ::std::option::Option<& crate::types::ExportDataSource> {
         self.export_data_source.as_ref()
     }
     /// <p>The destination for the export job.</p>
-    pub fn export_destination(&self) -> ::std::option::Option<&crate::types::ExportDestination> {
+    pub fn export_destination(&self) -> ::std::option::Option<& crate::types::ExportDestination> {
         self.export_destination.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateExportJobInputBuilder {
     }
     /// <p>The data source for the export job.</p>
     pub fn set_export_data_source(mut self, input: ::std::option::Option<crate::types::ExportDataSource>) -> Self {
-        self.export_data_source = input;
-        self
+        self.export_data_source = input; self
     }
     /// <p>The data source for the export job.</p>
     pub fn get_export_data_source(&self) -> &::std::option::Option<crate::types::ExportDataSource> {
@@ -57,20 +56,22 @@ impl CreateExportJobInputBuilder {
     }
     /// <p>The destination for the export job.</p>
     pub fn set_export_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
-        self.export_destination = input;
-        self
+        self.export_destination = input; self
     }
     /// <p>The destination for the export job.</p>
     pub fn get_export_destination(&self) -> &::std::option::Option<crate::types::ExportDestination> {
         &self.export_destination
     }
     /// Consumes the builder and constructs a [`CreateExportJobInput`](crate::operation::create_export_job::CreateExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_export_job::CreateExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_export_job::CreateExportJobInput {
-            export_data_source: self.export_data_source,
-            export_destination: self.export_destination,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_export_job::CreateExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_export_job::CreateExportJobInput {
+                export_data_source: self.export_data_source
+                ,
+                export_destination: self.export_destination
+                ,
+            }
+        )
     }
 }
+

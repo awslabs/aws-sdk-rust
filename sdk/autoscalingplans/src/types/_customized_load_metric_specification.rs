@@ -8,43 +8,42 @@
 /// <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomizedLoadMetricSpecification {
+pub struct CustomizedLoadMetricSpecification  {
     /// <p>The name of the metric.</p>
     pub metric_name: ::std::string::String,
     /// <p>The namespace of the metric.</p>
     pub namespace: ::std::string::String,
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>>,
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
     pub statistic: crate::types::MetricStatistic,
     /// <p>The unit of the metric.</p>
     pub unit: ::std::option::Option<::std::string::String>,
 }
-impl CustomizedLoadMetricSpecification {
+impl  CustomizedLoadMetricSpecification  {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> &str {
-        use std::ops::Deref;
-        self.metric_name.deref()
+    pub fn metric_name(&self) -> & str {
+        use std::ops::Deref; self.metric_name.deref()
     }
     /// <p>The namespace of the metric.</p>
-    pub fn namespace(&self) -> &str {
-        use std::ops::Deref;
-        self.namespace.deref()
+    pub fn namespace(&self) -> & str {
+        use std::ops::Deref; self.namespace.deref()
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::MetricDimension] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::MetricDimension] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
-    pub fn statistic(&self) -> &crate::types::MetricStatistic {
+    pub fn statistic(&self) -> & crate::types::MetricStatistic {
         &self.statistic
     }
     /// <p>The unit of the metric.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -61,7 +60,7 @@ impl CustomizedLoadMetricSpecification {
 pub struct CustomizedLoadMetricSpecificationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>>,
     pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
 }
@@ -74,8 +73,7 @@ impl CustomizedLoadMetricSpecificationBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CustomizedLoadMetricSpecificationBuilder {
     }
     /// <p>The namespace of the metric.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the metric.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,19 +101,18 @@ impl CustomizedLoadMetricSpecificationBuilder {
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
     pub fn dimensions(mut self, input: crate::types::MetricDimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>> {
         &self.dimensions
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
@@ -127,8 +123,7 @@ impl CustomizedLoadMetricSpecificationBuilder {
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
@@ -141,8 +136,7 @@ impl CustomizedLoadMetricSpecificationBuilder {
     }
     /// <p>The unit of the metric.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of the metric.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,27 +148,29 @@ impl CustomizedLoadMetricSpecificationBuilder {
     /// - [`namespace`](crate::types::builders::CustomizedLoadMetricSpecificationBuilder::namespace)
     /// - [`statistic`](crate::types::builders::CustomizedLoadMetricSpecificationBuilder::statistic)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomizedLoadMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomizedLoadMetricSpecification {
-            metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric_name",
-                    "metric_name was not specified but it is required when building CustomizedLoadMetricSpecification",
-                )
-            })?,
-            namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace",
-                    "namespace was not specified but it is required when building CustomizedLoadMetricSpecification",
-                )
-            })?,
-            dimensions: self.dimensions,
-            statistic: self.statistic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statistic",
-                    "statistic was not specified but it is required when building CustomizedLoadMetricSpecification",
-                )
-            })?,
-            unit: self.unit,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomizedLoadMetricSpecification {
+                metric_name: self.metric_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "metric_name was not specified but it is required when building CustomizedLoadMetricSpecification")
+                    )?
+                ,
+                namespace: self.namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "namespace was not specified but it is required when building CustomizedLoadMetricSpecification")
+                    )?
+                ,
+                dimensions: self.dimensions
+                ,
+                statistic: self.statistic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statistic", "statistic was not specified but it is required when building CustomizedLoadMetricSpecification")
+                    )?
+                ,
+                unit: self.unit
+                ,
+            }
+        )
     }
 }
+

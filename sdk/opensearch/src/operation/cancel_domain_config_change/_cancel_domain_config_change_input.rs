@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDomainConfigChangeInput {
+pub struct CancelDomainConfigChangeInput  {
     /// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>True</code>, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CancelDomainConfigChangeInput {
+impl  CancelDomainConfigChangeInput  {
     /// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>When set to <code>True</code>, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.</p>
@@ -41,8 +41,7 @@ impl CancelDomainConfigChangeInputBuilder {
     }
     /// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl CancelDomainConfigChangeInputBuilder {
     }
     /// <p>When set to <code>True</code>, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>When set to <code>True</code>, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CancelDomainConfigChangeInput`](crate::operation::cancel_domain_config_change::CancelDomainConfigChangeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_domain_config_change::CancelDomainConfigChangeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_domain_config_change::CancelDomainConfigChangeInput {
-            domain_name: self.domain_name,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_domain_config_change::CancelDomainConfigChangeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeInput {
+                domain_name: self.domain_name
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

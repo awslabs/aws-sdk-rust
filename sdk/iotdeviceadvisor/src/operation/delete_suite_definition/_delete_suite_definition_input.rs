@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSuiteDefinitionInput {
+pub struct DeleteSuiteDefinitionInput  {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSuiteDefinitionInput {
+impl  DeleteSuiteDefinitionInput  {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteSuiteDefinitionInputBuilder {
     }
     /// <p>Suite definition ID of the test suite to be deleted.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition ID of the test suite to be deleted.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.suite_definition_id
     }
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
-            suite_definition_id: self.suite_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
+                suite_definition_id: self.suite_definition_id
+                ,
+            }
+        )
     }
 }
+

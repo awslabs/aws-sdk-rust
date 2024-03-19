@@ -3,24 +3,26 @@
 /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelfManagedKafkaAccessConfigurationVpc {
+pub struct SelfManagedKafkaAccessConfigurationVpc  {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub security_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SelfManagedKafkaAccessConfigurationVpc {
+impl  SelfManagedKafkaAccessConfigurationVpc  {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
-    pub fn subnets(&self) -> &[::std::string::String] {
-        self.subnets.as_deref().unwrap_or_default()
+    pub fn subnets(&self) -> & [::std::string::String] {
+        self.subnets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group.is_none()`.
-    pub fn security_group(&self) -> &[::std::string::String] {
-        self.security_group.as_deref().unwrap_or_default()
+    pub fn security_group(&self) -> & [::std::string::String] {
+        self.security_group.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SelfManagedKafkaAccessConfigurationVpc {
@@ -34,8 +36,8 @@ impl SelfManagedKafkaAccessConfigurationVpc {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfManagedKafkaAccessConfigurationVpcBuilder {
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SelfManagedKafkaAccessConfigurationVpcBuilder {
     /// Appends an item to `subnets`.
@@ -45,17 +47,16 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnets
     }
     /// Appends an item to `security_group`.
@@ -65,24 +66,26 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
     pub fn security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group.unwrap_or_default();
-        v.push(input.into());
-        self.security_group = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn set_security_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group = input;
-        self
+    pub fn set_security_group(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group = input; self
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn get_security_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group
     }
     /// Consumes the builder and constructs a [`SelfManagedKafkaAccessConfigurationVpc`](crate::types::SelfManagedKafkaAccessConfigurationVpc).
     pub fn build(self) -> crate::types::SelfManagedKafkaAccessConfigurationVpc {
         crate::types::SelfManagedKafkaAccessConfigurationVpc {
-            subnets: self.subnets,
-            security_group: self.security_group,
+            subnets: self.subnets
+            ,
+            security_group: self.security_group
+            ,
         }
     }
 }
+

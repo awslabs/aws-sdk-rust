@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub server_id: ::std::string::String,
     /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub user: ::std::option::Option<crate::types::DescribedUser>,
     _request_id: Option<String>,
 }
-impl DescribeUserOutput {
+impl  DescribeUserOutput  {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> & str {
+        use std::ops::Deref; self.server_id.deref()
     }
     /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::DescribedUser> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::DescribedUser> {
         self.user.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -49,8 +48,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +62,37 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::DescribedUser>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::DescribedUser> {
         &self.user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_id`](crate::operation::describe_user::builders::DescribeUserOutputBuilder::server_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_user::DescribeUserOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_user::DescribeUserOutput {
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building DescribeUserOutput",
-                )
-            })?,
-            user: self.user,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user::DescribeUserOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_user::DescribeUserOutput {
+                server_id: self.server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_id", "server_id was not specified but it is required when building DescribeUserOutput")
+                    )?
+                ,
+                user: self.user
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

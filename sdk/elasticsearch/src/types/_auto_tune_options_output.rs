@@ -3,19 +3,19 @@
 /// <p>Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoTuneOptionsOutput {
+pub struct AutoTuneOptionsOutput  {
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl AutoTuneOptionsOutput {
+impl  AutoTuneOptionsOutput  {
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AutoTuneState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AutoTuneState> {
         self.state.as_ref()
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AutoTuneOptionsOutputBuilder {
     }
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AutoTuneState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AutoTuneState> {
@@ -55,8 +54,7 @@ impl AutoTuneOptionsOutputBuilder {
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AutoTuneOptionsOutputBuilder {
     /// Consumes the builder and constructs a [`AutoTuneOptionsOutput`](crate::types::AutoTuneOptionsOutput).
     pub fn build(self) -> crate::types::AutoTuneOptionsOutput {
         crate::types::AutoTuneOptionsOutput {
-            state: self.state,
-            error_message: self.error_message,
+            state: self.state
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

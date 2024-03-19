@@ -111,3 +111,4 @@ pub mod unsubscribe_from_event;
 
 /// Types for the `UpdateAssessmentTarget` operation.
 pub mod update_assessment_target;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNodesInput {
+pub struct ListNodesInput  {
     /// <p>The unique identifier of the network for which to list nodes.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member who owns the nodes to list.</p>
@@ -15,18 +15,18 @@ pub struct ListNodesInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListNodesInput {
+impl  ListNodesInput  {
     /// <p>The unique identifier of the network for which to list nodes.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the member who owns the nodes to list.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NodeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NodeStatus> {
         self.status.as_ref()
     }
     /// <p>The maximum number of nodes to list.</p>
@@ -34,7 +34,7 @@ impl ListNodesInput {
         self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>The unique identifier of the network for which to list nodes.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network for which to list nodes.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl ListNodesInputBuilder {
     /// <p>The unique identifier of the member who owns the nodes to list.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The unique identifier of the member who owns the nodes to list.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
@@ -95,8 +93,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NodeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeStatus> {
@@ -109,8 +106,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>The maximum number of nodes to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of nodes to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -123,8 +119,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,12 +127,20 @@ impl ListNodesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_nodes::ListNodesInput {
-            network_id: self.network_id,
-            member_id: self.member_id,
-            status: self.status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_nodes::ListNodesInput {
+                network_id: self.network_id
+                ,
+                member_id: self.member_id
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::update_health_check::_update_health_check_input::Updat
 
 impl UpdateHealthCheckInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_health_check::UpdateHealthCheckOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_health_check::UpdateHealthCheckError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_health_check();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_health_check::UpdateHealthCheckOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_health_check::UpdateHealthCheckError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_health_check();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateHealthCheck`.
-///
+/// 
 /// <p>Updates an existing health check. Note that some values can't be updated.</p>
 /// <p>For more information about updating health checks, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating, Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateHealthCheckFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_health_check::builders::UpdateHealthCheckInputBuilder,
+                    inner: crate::operation::update_health_check::builders::UpdateHealthCheckInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_health_check::UpdateHealthCheckOutput,
-        crate::operation::update_health_check::UpdateHealthCheckError,
-    > for UpdateHealthCheckFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_health_check::UpdateHealthCheckOutput,
-            crate::operation::update_health_check::UpdateHealthCheckError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_health_check::UpdateHealthCheckOutput,
+                    crate::operation::update_health_check::UpdateHealthCheckError,
+                > for UpdateHealthCheckFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_health_check::UpdateHealthCheckOutput,
+                        crate::operation::update_health_check::UpdateHealthCheckError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateHealthCheckFluentBuilder {
     /// Creates a new `UpdateHealthCheck`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateHealthCheckFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_health_check::UpdateHealthCheckOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_health_check::UpdateHealthCheckError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_health_check::UpdateHealthCheck::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_health_check::UpdateHealthCheck::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_health_check::UpdateHealthCheckOutput,
-        crate::operation::update_health_check::UpdateHealthCheckError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_health_check::UpdateHealthCheckOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_health_check::UpdateHealthCheckError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_health_check::UpdateHealthCheck::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_health_check::UpdateHealthCheck::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_health_check::UpdateHealthCheckOutput, crate::operation::update_health_check::UpdateHealthCheckError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
     pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_id(input.into());
@@ -504,12 +491,12 @@ impl UpdateHealthCheckFluentBuilder {
         self
     }
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn set_child_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_child_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_child_health_checks(input);
         self
     }
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn get_child_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_child_health_checks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_child_health_checks()
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during <code>TLS</code> negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
@@ -542,12 +529,12 @@ impl UpdateHealthCheckFluentBuilder {
         self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckRegion>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckRegion>> {
         self.inner.get_regions()
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
@@ -632,7 +619,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p></li>
     /// </ul>
-    pub fn set_reset_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>>) -> Self {
+    pub fn set_reset_elements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResettableElementName>>) -> Self {
         self.inner = self.inner.set_reset_elements(input);
         self
     }
@@ -647,7 +634,8 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p></li>
     /// </ul>
-    pub fn get_reset_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>> {
+    pub fn get_reset_elements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResettableElementName>> {
         self.inner.get_reset_elements()
     }
 }
+

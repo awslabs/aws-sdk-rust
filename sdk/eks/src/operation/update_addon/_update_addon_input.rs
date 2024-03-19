@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAddonInput {
+pub struct UpdateAddonInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
@@ -28,23 +28,23 @@ pub struct UpdateAddonInput {
     /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub configuration_values: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAddonInput {
+impl  UpdateAddonInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
-    pub fn addon_name(&self) -> ::std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<& str> {
         self.addon_name.as_deref()
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn addon_version(&self) -> ::std::option::Option<&str> {
+    pub fn addon_version(&self) -> ::std::option::Option<& str> {
         self.addon_version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
-    pub fn service_account_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_account_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_account_role_arn.as_deref()
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
@@ -56,15 +56,15 @@ impl UpdateAddonInput {
     /// <li>
     /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
     /// </ul>
-    pub fn resolve_conflicts(&self) -> ::std::option::Option<&crate::types::ResolveConflicts> {
+    pub fn resolve_conflicts(&self) -> ::std::option::Option<& crate::types::ResolveConflicts> {
         self.resolve_conflicts.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
-    pub fn configuration_values(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_values(&self) -> ::std::option::Option<& str> {
         self.configuration_values.as_deref()
     }
 }
@@ -96,8 +96,7 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_name = input;
-        self
+        self.addon_name = input; self
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_version = input;
-        self
+        self.addon_version = input; self
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +140,7 @@ impl UpdateAddonInputBuilder {
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// </note>
     pub fn set_service_account_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account_role_arn = input;
-        self
+        self.service_account_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p><note>
     /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -175,8 +171,7 @@ impl UpdateAddonInputBuilder {
     /// <p><b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend that you test any field and value changes on a non-production cluster before updating the add-on on your production cluster.</p></li>
     /// </ul>
     pub fn set_resolve_conflicts(mut self, input: ::std::option::Option<crate::types::ResolveConflicts>) -> Self {
-        self.resolve_conflicts = input;
-        self
+        self.resolve_conflicts = input; self
     }
     /// <p>How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Conflicts are handled based on the option you choose:</p>
     /// <ul>
@@ -197,8 +192,7 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +205,7 @@ impl UpdateAddonInputBuilder {
     }
     /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub fn set_configuration_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_values = input;
-        self
+        self.configuration_values = input; self
     }
     /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub fn get_configuration_values(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,14 +213,24 @@ impl UpdateAddonInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAddonInput`](crate::operation::update_addon::UpdateAddonInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_addon::UpdateAddonInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_addon::UpdateAddonInput {
-            cluster_name: self.cluster_name,
-            addon_name: self.addon_name,
-            addon_version: self.addon_version,
-            service_account_role_arn: self.service_account_role_arn,
-            resolve_conflicts: self.resolve_conflicts,
-            client_request_token: self.client_request_token,
-            configuration_values: self.configuration_values,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_addon::UpdateAddonInput {
+                cluster_name: self.cluster_name
+                ,
+                addon_name: self.addon_name
+                ,
+                addon_version: self.addon_version
+                ,
+                service_account_role_arn: self.service_account_role_arn
+                ,
+                resolve_conflicts: self.resolve_conflicts
+                ,
+                client_request_token: self.client_request_token
+                ,
+                configuration_values: self.configuration_values
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectPeerInput {
+pub struct DeleteConnectPeerInput  {
     /// <p>The ID of the deleted Connect peer.</p>
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectPeerInput {
+impl  DeleteConnectPeerInput  {
     /// <p>The ID of the deleted Connect peer.</p>
-    pub fn connect_peer_id(&self) -> ::std::option::Option<&str> {
+    pub fn connect_peer_id(&self) -> ::std::option::Option<& str> {
         self.connect_peer_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteConnectPeerInputBuilder {
     }
     /// <p>The ID of the deleted Connect peer.</p>
     pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_peer_id = input;
-        self
+        self.connect_peer_id = input; self
     }
     /// <p>The ID of the deleted Connect peer.</p>
     pub fn get_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connect_peer_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectPeerInput`](crate::operation::delete_connect_peer::DeleteConnectPeerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_connect_peer::DeleteConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_connect_peer::DeleteConnectPeerInput {
-            connect_peer_id: self.connect_peer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connect_peer::DeleteConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connect_peer::DeleteConnectPeerInput {
+                connect_peer_id: self.connect_peer_id
+                ,
+            }
+        )
     }
 }
+

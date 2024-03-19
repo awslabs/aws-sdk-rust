@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGatewayInput {
+pub struct DescribeGatewayInput  {
     /// <p>The ID of the gateway device.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGatewayInput {
+impl  DescribeGatewayInput  {
     /// <p>The ID of the gateway device.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeGatewayInputBuilder {
     }
     /// <p>The ID of the gateway device.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The ID of the gateway device.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
     /// Consumes the builder and constructs a [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_gateway::DescribeGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_gateway::DescribeGatewayInput { gateway_id: self.gateway_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_gateway::DescribeGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_gateway::DescribeGatewayInput {
+                gateway_id: self.gateway_id
+                ,
+            }
+        )
     }
 }
+

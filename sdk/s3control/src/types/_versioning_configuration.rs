@@ -3,19 +3,19 @@
 /// <p>Describes the versioning state of an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html">PutBucketVersioning</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersioningConfiguration {
+pub struct VersioningConfiguration  {
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
     pub mfa_delete: ::std::option::Option<crate::types::MfaDelete>,
     /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
     pub status: ::std::option::Option<crate::types::BucketVersioningStatus>,
 }
-impl VersioningConfiguration {
+impl  VersioningConfiguration  {
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
-    pub fn mfa_delete(&self) -> ::std::option::Option<&crate::types::MfaDelete> {
+    pub fn mfa_delete(&self) -> ::std::option::Option<& crate::types::MfaDelete> {
         self.mfa_delete.as_ref()
     }
     /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BucketVersioningStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BucketVersioningStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VersioningConfigurationBuilder {
     }
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
     pub fn set_mfa_delete(mut self, input: ::std::option::Option<crate::types::MfaDelete>) -> Self {
-        self.mfa_delete = input;
-        self
+        self.mfa_delete = input; self
     }
     /// <p>Specifies whether MFA delete is enabled or disabled in the bucket versioning configuration for the S3 on Outposts bucket.</p>
     pub fn get_mfa_delete(&self) -> &::std::option::Option<crate::types::MfaDelete> {
@@ -55,8 +54,7 @@ impl VersioningConfigurationBuilder {
     }
     /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BucketVersioningStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Sets the versioning state of the S3 on Outposts bucket.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BucketVersioningStatus> {
@@ -65,8 +63,11 @@ impl VersioningConfigurationBuilder {
     /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::types::VersioningConfiguration).
     pub fn build(self) -> crate::types::VersioningConfiguration {
         crate::types::VersioningConfiguration {
-            mfa_delete: self.mfa_delete,
-            status: self.status,
+            mfa_delete: self.mfa_delete
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

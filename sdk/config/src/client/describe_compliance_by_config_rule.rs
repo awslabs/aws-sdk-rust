@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeComplianceByConfigRule`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`config_rule_names(impl Into<String>)`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::config_rule_names) / [`set_config_rule_names(Option<Vec::<String>>)`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::set_config_rule_names):<br>required: **false**<br><p>Specify one or more Config rule names to filter the results by rule.</p><br>
     ///   - [`compliance_types(ComplianceType)`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::compliance_types) / [`set_compliance_types(Option<Vec::<ComplianceType>>)`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::set_compliance_types):<br>required: **false**<br><p>Filters the results by compliance.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`DescribeComplianceByConfigRuleOutput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput) with field(s):
+                            /// - On success, responds with [`DescribeComplianceByConfigRuleOutput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput) with field(s):
     ///   - [`compliance_by_config_rules(Option<Vec::<ComplianceByConfigRule>>)`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput::compliance_by_config_rules): <p>Indicates whether each of the specified Config rules is compliant.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<DescribeComplianceByConfigRuleError>`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError)
-    pub fn describe_compliance_by_config_rule(
-        &self,
-    ) -> crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder {
-        crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeComplianceByConfigRuleError>`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError)
+    pub fn describe_compliance_by_config_rule(&self) -> crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder {
+                                crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::new(self.handle.clone())
+                            }
 }
+

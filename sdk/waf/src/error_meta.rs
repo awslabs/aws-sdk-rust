@@ -141,7 +141,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -165,135 +165,107 @@ impl ::std::fmt::Display for Error {
             Error::WafSubscriptionNotFoundException(inner) => inner.fmt(f),
             Error::WafTagOperationException(inner) => inner.fmt(f),
             Error::WafTagOperationInternalErrorException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::WafBadRequestException(inner) => inner.meta(),
-            Self::WafDisallowedNameException(inner) => inner.meta(),
-            Self::WafEntityMigrationException(inner) => inner.meta(),
-            Self::WafInternalErrorException(inner) => inner.meta(),
-            Self::WafInvalidAccountException(inner) => inner.meta(),
-            Self::WafInvalidOperationException(inner) => inner.meta(),
-            Self::WafInvalidParameterException(inner) => inner.meta(),
-            Self::WafInvalidPermissionPolicyException(inner) => inner.meta(),
-            Self::WafInvalidRegexPatternException(inner) => inner.meta(),
-            Self::WafLimitsExceededException(inner) => inner.meta(),
-            Self::WafNonEmptyEntityException(inner) => inner.meta(),
-            Self::WafNonexistentContainerException(inner) => inner.meta(),
-            Self::WafNonexistentItemException(inner) => inner.meta(),
-            Self::WafReferencedItemException(inner) => inner.meta(),
-            Self::WafServiceLinkedRoleErrorException(inner) => inner.meta(),
-            Self::WafStaleDataException(inner) => inner.meta(),
-            Self::WafSubscriptionNotFoundException(inner) => inner.meta(),
-            Self::WafTagOperationException(inner) => inner.meta(),
-            Self::WafTagOperationInternalErrorException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_byte_match_set::CreateByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::WafBadRequestException(inner) => inner.meta(),
+Self::WafDisallowedNameException(inner) => inner.meta(),
+Self::WafEntityMigrationException(inner) => inner.meta(),
+Self::WafInternalErrorException(inner) => inner.meta(),
+Self::WafInvalidAccountException(inner) => inner.meta(),
+Self::WafInvalidOperationException(inner) => inner.meta(),
+Self::WafInvalidParameterException(inner) => inner.meta(),
+Self::WafInvalidPermissionPolicyException(inner) => inner.meta(),
+Self::WafInvalidRegexPatternException(inner) => inner.meta(),
+Self::WafLimitsExceededException(inner) => inner.meta(),
+Self::WafNonEmptyEntityException(inner) => inner.meta(),
+Self::WafNonexistentContainerException(inner) => inner.meta(),
+Self::WafNonexistentItemException(inner) => inner.meta(),
+Self::WafReferencedItemException(inner) => inner.meta(),
+Self::WafServiceLinkedRoleErrorException(inner) => inner.meta(),
+Self::WafStaleDataException(inner) => inner.meta(),
+Self::WafSubscriptionNotFoundException(inner) => inner.meta(),
+Self::WafTagOperationException(inner) => inner.meta(),
+Self::WafTagOperationInternalErrorException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_byte_match_set::CreateByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_byte_match_set::CreateByteMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_byte_match_set::CreateByteMatchSetError> for Error {
     fn from(err: crate::operation::create_byte_match_set::CreateByteMatchSetError) -> Self {
         match err {
-            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
+            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_byte_match_set::CreateByteMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_byte_match_set::CreateByteMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_byte_match_set::CreateByteMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_geo_match_set::CreateGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_geo_match_set::CreateGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_geo_match_set::CreateGeoMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_geo_match_set::CreateGeoMatchSetError> for Error {
     fn from(err: crate::operation::create_geo_match_set::CreateGeoMatchSetError) -> Self {
         match err {
-            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
+            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_geo_match_set::CreateGeoMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_geo_match_set::CreateGeoMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ip_set::CreateIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ip_set::CreateIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ip_set::CreateIPSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -310,17 +282,16 @@ impl From<crate::operation::create_ip_set::CreateIPSetError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -328,106 +299,75 @@ impl From<crate::operation::create_rate_based_rule::CreateRateBasedRuleError> fo
     fn from(err: crate::operation::create_rate_based_rule::CreateRateBasedRuleError) -> Self {
         match err {
             crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::create_rate_based_rule::CreateRateBasedRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_regex_match_set::CreateRegexMatchSetError> for Error {
     fn from(err: crate::operation::create_regex_match_set::CreateRegexMatchSetError) -> Self {
         match err {
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
+            crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_regex_match_set::CreateRegexMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_regex_match_set::CreateRegexMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError> for Error {
     fn from(err: crate::operation::create_regex_pattern_set::CreateRegexPatternSetError) -> Self {
         match err {
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule::CreateRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule::CreateRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule::CreateRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -441,24 +381,21 @@ impl From<crate::operation::create_rule::CreateRuleError> for Error {
             crate::operation::create_rule::CreateRuleError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_rule::CreateRuleError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_rule::CreateRuleError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::create_rule::CreateRuleError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::create_rule::CreateRuleError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::create_rule::CreateRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -471,108 +408,73 @@ impl From<crate::operation::create_rule_group::CreateRuleGroupError> for Error {
             crate::operation::create_rule_group::CreateRuleGroupError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_rule_group::CreateRuleGroupError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_rule_group::CreateRuleGroupError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::create_rule_group::CreateRuleGroupError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::create_rule_group::CreateRuleGroupError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::create_rule_group::CreateRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_size_constraint_set::CreateSizeConstraintSetError> for Error {
     fn from(err: crate::operation::create_size_constraint_set::CreateSizeConstraintSetError) -> Self {
         match err {
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_size_constraint_set::CreateSizeConstraintSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError> for Error {
     fn from(err: crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError) -> Self {
         match err {
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl::CreateWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl::CreateWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl::CreateWebACLError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -587,174 +489,124 @@ impl From<crate::operation::create_web_acl::CreateWebACLError> for Error {
             crate::operation::create_web_acl::CreateWebACLError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_web_acl::CreateWebACLError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_web_acl::CreateWebACLError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::create_web_acl::CreateWebACLError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::create_web_acl::CreateWebACLError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::create_web_acl::CreateWebACLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError> for Error {
     fn from(err: crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError) -> Self {
         match err {
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafEntityMigrationException(inner) => {
-                Error::WafEntityMigrationException(inner)
-            }
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafEntityMigrationException(inner) => Error::WafEntityMigrationException(inner),
+            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_xss_match_set::CreateXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_xss_match_set::CreateXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_xss_match_set::CreateXssMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_xss_match_set::CreateXssMatchSetError> for Error {
     fn from(err: crate::operation::create_xss_match_set::CreateXssMatchSetError) -> Self {
         match err {
-            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
+            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::create_xss_match_set::CreateXssMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::create_xss_match_set::CreateXssMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::create_xss_match_set::CreateXssMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_byte_match_set::DeleteByteMatchSetError> for Error {
     fn from(err: crate::operation::delete_byte_match_set::DeleteByteMatchSetError) -> Self {
         match err {
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_byte_match_set::DeleteByteMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_byte_match_set::DeleteByteMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError> for Error {
     fn from(err: crate::operation::delete_geo_match_set::DeleteGeoMatchSetError) -> Self {
         match err {
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_geo_match_set::DeleteGeoMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ip_set::DeleteIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ip_set::DeleteIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ip_set::DeleteIPSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -771,203 +623,142 @@ impl From<crate::operation::delete_ip_set::DeleteIPSetError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError> for Error {
     fn from(err: crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError) -> Self {
         match err {
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_permission_policy::DeletePermissionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_permission_policy::DeletePermissionPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_permission_policy::DeletePermissionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_permission_policy::DeletePermissionPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_permission_policy::DeletePermissionPolicyError> for Error {
     fn from(err: crate::operation::delete_permission_policy::DeletePermissionPolicyError) -> Self {
         match err {
-            crate::operation::delete_permission_policy::DeletePermissionPolicyError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_permission_policy::DeletePermissionPolicyError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_permission_policy::DeletePermissionPolicyError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::delete_permission_policy::DeletePermissionPolicyError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_permission_policy::DeletePermissionPolicyError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_permission_policy::DeletePermissionPolicyError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_permission_policy::DeletePermissionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError> for Error {
     fn from(err: crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError) -> Self {
         match err {
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_match_set::DeleteRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_match_set::DeleteRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_match_set::DeleteRegexMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_regex_match_set::DeleteRegexMatchSetError> for Error {
     fn from(err: crate::operation::delete_regex_match_set::DeleteRegexMatchSetError) -> Self {
         match err {
-            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_regex_match_set::DeleteRegexMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError> for Error {
     fn from(err: crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError) -> Self {
         match err {
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule::DeleteRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule::DeleteRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule::DeleteRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -981,24 +772,21 @@ impl From<crate::operation::delete_rule::DeleteRuleError> for Error {
             crate::operation::delete_rule::DeleteRuleError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_rule::DeleteRuleError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_rule::DeleteRuleError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::delete_rule::DeleteRuleError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::delete_rule::DeleteRuleError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::delete_rule::DeleteRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule_group::DeleteRuleGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1006,118 +794,79 @@ impl From<crate::operation::delete_rule_group::DeleteRuleGroupError> for Error {
     fn from(err: crate::operation::delete_rule_group::DeleteRuleGroupError) -> Self {
         match err {
             crate::operation::delete_rule_group::DeleteRuleGroupError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::delete_rule_group::DeleteRuleGroupError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
+            crate::operation::delete_rule_group::DeleteRuleGroupError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
-            crate::operation::delete_rule_group::DeleteRuleGroupError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::delete_rule_group::DeleteRuleGroupError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::delete_rule_group::DeleteRuleGroupError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::delete_rule_group::DeleteRuleGroupError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::delete_rule_group::DeleteRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError> for Error {
     fn from(err: crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError) -> Self {
         match err {
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError> for Error {
     fn from(err: crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError) -> Self {
         match err {
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_acl::DeleteWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_acl::DeleteWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_acl::DeleteWebACLError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1131,61 +880,47 @@ impl From<crate::operation::delete_web_acl::DeleteWebACLError> for Error {
             crate::operation::delete_web_acl::DeleteWebACLError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_web_acl::DeleteWebACLError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_web_acl::DeleteWebACLError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::delete_web_acl::DeleteWebACLError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::delete_web_acl::DeleteWebACLError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::delete_web_acl::DeleteWebACLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_xss_match_set::DeleteXssMatchSetError> for Error {
     fn from(err: crate::operation::delete_xss_match_set::DeleteXssMatchSetError) -> Self {
         match err {
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafNonEmptyEntityException(inner) => {
-                Error::WafNonEmptyEntityException(inner)
-            }
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafNonEmptyEntityException(inner) => Error::WafNonEmptyEntityException(inner),
+            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::delete_xss_match_set::DeleteXssMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::delete_xss_match_set::DeleteXssMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1194,24 +929,21 @@ impl From<crate::operation::get_byte_match_set::GetByteMatchSetError> for Error 
         match err {
             crate::operation::get_byte_match_set::GetByteMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
             crate::operation::get_byte_match_set::GetByteMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
-            crate::operation::get_byte_match_set::GetByteMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_byte_match_set::GetByteMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_byte_match_set::GetByteMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token::GetChangeTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token::GetChangeTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token::GetChangeTokenError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1223,46 +955,38 @@ impl From<crate::operation::get_change_token::GetChangeTokenError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_change_token_status::GetChangeTokenStatusError> for Error {
     fn from(err: crate::operation::get_change_token_status::GetChangeTokenStatusError) -> Self {
         match err {
-            crate::operation::get_change_token_status::GetChangeTokenStatusError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_change_token_status::GetChangeTokenStatusError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_change_token_status::GetChangeTokenStatusError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_change_token_status::GetChangeTokenStatusError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_change_token_status::GetChangeTokenStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_geo_match_set::GetGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_geo_match_set::GetGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_geo_match_set::GetGeoMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1276,17 +1000,16 @@ impl From<crate::operation::get_geo_match_set::GetGeoMatchSetError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ip_set::GetIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ip_set::GetIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ip_set::GetIPSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1300,74 +1023,60 @@ impl From<crate::operation::get_ip_set::GetIPSetError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_logging_configuration::GetLoggingConfigurationError> for Error {
     fn from(err: crate::operation::get_logging_configuration::GetLoggingConfigurationError) -> Self {
         match err {
-            crate::operation::get_logging_configuration::GetLoggingConfigurationError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_logging_configuration::GetLoggingConfigurationError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_logging_configuration::GetLoggingConfigurationError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_logging_configuration::GetLoggingConfigurationError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_logging_configuration::GetLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_permission_policy::GetPermissionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_permission_policy::GetPermissionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_permission_policy::GetPermissionPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_permission_policy::GetPermissionPolicyError> for Error {
     fn from(err: crate::operation::get_permission_policy::GetPermissionPolicyError) -> Self {
         match err {
-            crate::operation::get_permission_policy::GetPermissionPolicyError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_permission_policy::GetPermissionPolicyError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_permission_policy::GetPermissionPolicyError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_permission_policy::GetPermissionPolicyError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_permission_policy::GetPermissionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rate_based_rule::GetRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rate_based_rule::GetRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rate_based_rule::GetRateBasedRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1375,67 +1084,46 @@ impl From<crate::operation::get_rate_based_rule::GetRateBasedRuleError> for Erro
     fn from(err: crate::operation::get_rate_based_rule::GetRateBasedRuleError) -> Self {
         match err {
             crate::operation::get_rate_based_rule::GetRateBasedRuleError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::get_rate_based_rule::GetRateBasedRuleError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::get_rate_based_rule::GetRateBasedRuleError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_rate_based_rule::GetRateBasedRuleError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::get_rate_based_rule::GetRateBasedRuleError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_rate_based_rule::GetRateBasedRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError> for Error {
     fn from(err: crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError) -> Self {
         match err {
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1443,57 +1131,45 @@ impl From<crate::operation::get_regex_match_set::GetRegexMatchSetError> for Erro
     fn from(err: crate::operation::get_regex_match_set::GetRegexMatchSetError) -> Self {
         match err {
             crate::operation::get_regex_match_set::GetRegexMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::get_regex_match_set::GetRegexMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::get_regex_match_set::GetRegexMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_regex_match_set::GetRegexMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::get_regex_match_set::GetRegexMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_regex_match_set::GetRegexMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_regex_pattern_set::GetRegexPatternSetError> for Error {
     fn from(err: crate::operation::get_regex_pattern_set::GetRegexPatternSetError) -> Self {
         match err {
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_regex_pattern_set::GetRegexPatternSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_regex_pattern_set::GetRegexPatternSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::get_regex_pattern_set::GetRegexPatternSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_regex_pattern_set::GetRegexPatternSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule::GetRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule::GetRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule::GetRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1507,17 +1183,16 @@ impl From<crate::operation::get_rule::GetRuleError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule_group::GetRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule_group::GetRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule_group::GetRuleGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1530,109 +1205,84 @@ impl From<crate::operation::get_rule_group::GetRuleGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_sampled_requests::GetSampledRequestsError> for Error {
     fn from(err: crate::operation::get_sampled_requests::GetSampledRequestsError) -> Self {
         match err {
-            crate::operation::get_sampled_requests::GetSampledRequestsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_sampled_requests::GetSampledRequestsError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_sampled_requests::GetSampledRequestsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_sampled_requests::GetSampledRequestsError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_sampled_requests::GetSampledRequestsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_size_constraint_set::GetSizeConstraintSetError> for Error {
     fn from(err: crate::operation::get_size_constraint_set::GetSizeConstraintSetError) -> Self {
         match err {
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_size_constraint_set::GetSizeConstraintSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_size_constraint_set::GetSizeConstraintSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::get_size_constraint_set::GetSizeConstraintSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_size_constraint_set::GetSizeConstraintSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError> for Error {
     fn from(err: crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError) -> Self {
         match err {
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_web_acl::GetWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_web_acl::GetWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_web_acl::GetWebACLError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1646,17 +1296,16 @@ impl From<crate::operation::get_web_acl::GetWebACLError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_xss_match_set::GetXssMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1670,85 +1319,61 @@ impl From<crate::operation::get_xss_match_set::GetXssMatchSetError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError> for Error {
     fn from(err: crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError) -> Self {
         match err {
-            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_byte_match_sets::ListByteMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_byte_match_sets::ListByteMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_byte_match_sets::ListByteMatchSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_byte_match_sets::ListByteMatchSetsError> for Error {
     fn from(err: crate::operation::list_byte_match_sets::ListByteMatchSetsError) -> Self {
         match err {
-            crate::operation::list_byte_match_sets::ListByteMatchSetsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_byte_match_sets::ListByteMatchSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_byte_match_sets::ListByteMatchSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_byte_match_sets::ListByteMatchSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_byte_match_sets::ListByteMatchSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1756,24 +1381,21 @@ impl From<crate::operation::list_geo_match_sets::ListGeoMatchSetsError> for Erro
     fn from(err: crate::operation::list_geo_match_sets::ListGeoMatchSetsError) -> Self {
         match err {
             crate::operation::list_geo_match_sets::ListGeoMatchSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_geo_match_sets::ListGeoMatchSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_geo_match_sets::ListGeoMatchSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ip_sets::ListIPSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ip_sets::ListIPSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ip_sets::ListIPSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1786,133 +1408,105 @@ impl From<crate::operation::list_ip_sets::ListIPSetsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_logging_configurations::ListLoggingConfigurationsError> for Error {
     fn from(err: crate::operation::list_logging_configurations::ListLoggingConfigurationsError) -> Self {
         match err {
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::list_logging_configurations::ListLoggingConfigurationsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_logging_configurations::ListLoggingConfigurationsError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::list_logging_configurations::ListLoggingConfigurationsError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::list_logging_configurations::ListLoggingConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rate_based_rules::ListRateBasedRulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rate_based_rules::ListRateBasedRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rate_based_rules::ListRateBasedRulesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_rate_based_rules::ListRateBasedRulesError> for Error {
     fn from(err: crate::operation::list_rate_based_rules::ListRateBasedRulesError) -> Self {
         match err {
-            crate::operation::list_rate_based_rules::ListRateBasedRulesError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_rate_based_rules::ListRateBasedRulesError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_rate_based_rules::ListRateBasedRulesError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_rate_based_rules::ListRateBasedRulesError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_rate_based_rules::ListRateBasedRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_match_sets::ListRegexMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_match_sets::ListRegexMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_match_sets::ListRegexMatchSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_regex_match_sets::ListRegexMatchSetsError> for Error {
     fn from(err: crate::operation::list_regex_match_sets::ListRegexMatchSetsError) -> Self {
         match err {
-            crate::operation::list_regex_match_sets::ListRegexMatchSetsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_regex_match_sets::ListRegexMatchSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_regex_match_sets::ListRegexMatchSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_regex_match_sets::ListRegexMatchSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_regex_match_sets::ListRegexMatchSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError> for Error {
     fn from(err: crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError) -> Self {
         match err {
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1924,17 +1518,16 @@ impl From<crate::operation::list_rule_groups::ListRuleGroupsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rules::ListRulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rules::ListRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rules::ListRulesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1947,107 +1540,82 @@ impl From<crate::operation::list_rules::ListRulesError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError> for Error {
     fn from(err: crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError) -> Self {
         match err {
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError> for Error {
     fn from(err: crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError) -> Self {
         match err {
-            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError> for Error {
     fn from(err: crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError) -> Self {
         match err {
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2055,36 +1623,25 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::WafBadRequestException(inner) => Error::WafBadRequestException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafTagOperationException(inner) => {
-                Error::WafTagOperationException(inner)
-            }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_acls::ListWebACLsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_acls::ListWebACLsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_acls::ListWebACLsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2097,17 +1654,16 @@ impl From<crate::operation::list_web_acls::ListWebACLsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_xss_match_sets::ListXssMatchSetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2115,91 +1671,69 @@ impl From<crate::operation::list_xss_match_sets::ListXssMatchSetsError> for Erro
     fn from(err: crate::operation::list_xss_match_sets::ListXssMatchSetsError) -> Self {
         match err {
             crate::operation::list_xss_match_sets::ListXssMatchSetsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::list_xss_match_sets::ListXssMatchSetsError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
+            crate::operation::list_xss_match_sets::ListXssMatchSetsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
             crate::operation::list_xss_match_sets::ListXssMatchSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_logging_configuration::PutLoggingConfigurationError> for Error {
     fn from(err: crate::operation::put_logging_configuration::PutLoggingConfigurationError) -> Self {
         match err {
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafServiceLinkedRoleErrorException(inner) => {
-                Error::WafServiceLinkedRoleErrorException(inner)
-            }
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafServiceLinkedRoleErrorException(inner) => Error::WafServiceLinkedRoleErrorException(inner),
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::put_logging_configuration::PutLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_permission_policy::PutPermissionPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_permission_policy::PutPermissionPolicyError> for Error {
     fn from(err: crate::operation::put_permission_policy::PutPermissionPolicyError) -> Self {
         match err {
-            crate::operation::put_permission_policy::PutPermissionPolicyError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::put_permission_policy::PutPermissionPolicyError::WafInvalidPermissionPolicyException(inner) => {
-                Error::WafInvalidPermissionPolicyException(inner)
-            }
-            crate::operation::put_permission_policy::PutPermissionPolicyError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::put_permission_policy::PutPermissionPolicyError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::put_permission_policy::PutPermissionPolicyError::WafInvalidPermissionPolicyException(inner) => Error::WafInvalidPermissionPolicyException(inner),
+            crate::operation::put_permission_policy::PutPermissionPolicyError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::put_permission_policy::PutPermissionPolicyError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::put_permission_policy::PutPermissionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2212,24 +1746,21 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::tag_resource::TagResourceError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::tag_resource::TagResourceError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::tag_resource::TagResourceError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2241,113 +1772,78 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
             crate::operation::untag_resource::UntagResourceError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::untag_resource::UntagResourceError::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-            crate::operation::untag_resource::UntagResourceError::WafTagOperationInternalErrorException(inner) => {
-                Error::WafTagOperationInternalErrorException(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_byte_match_set::UpdateByteMatchSetError> for Error {
     fn from(err: crate::operation::update_byte_match_set::UpdateByteMatchSetError) -> Self {
         match err {
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::update_byte_match_set::UpdateByteMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_byte_match_set::UpdateByteMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_geo_match_set::UpdateGeoMatchSetError> for Error {
     fn from(err: crate::operation::update_geo_match_set::UpdateGeoMatchSetError) -> Self {
         match err {
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::update_geo_match_set::UpdateGeoMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_geo_match_set::UpdateGeoMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2359,9 +1855,7 @@ impl From<crate::operation::update_ip_set::UpdateIPSetError> for Error {
             crate::operation::update_ip_set::UpdateIPSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
-            crate::operation::update_ip_set::UpdateIPSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
+            crate::operation::update_ip_set::UpdateIPSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
@@ -2369,153 +1863,101 @@ impl From<crate::operation::update_ip_set::UpdateIPSetError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError> for Error {
     fn from(err: crate::operation::update_rate_based_rule::UpdateRateBasedRuleError) -> Self {
         match err {
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_rate_based_rule::UpdateRateBasedRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_match_set::UpdateRegexMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_regex_match_set::UpdateRegexMatchSetError> for Error {
     fn from(err: crate::operation::update_regex_match_set::UpdateRegexMatchSetError) -> Self {
         match err {
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafDisallowedNameException(inner) => {
-                Error::WafDisallowedNameException(inner)
-            }
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafDisallowedNameException(inner) => Error::WafDisallowedNameException(inner),
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::update_regex_match_set::UpdateRegexMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_regex_match_set::UpdateRegexMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError> for Error {
     fn from(err: crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError) -> Self {
         match err {
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInvalidRegexPatternException(inner) => {
-                Error::WafInvalidRegexPatternException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafInvalidRegexPatternException(inner) => Error::WafInvalidRegexPatternException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule::UpdateRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule::UpdateRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule::UpdateRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2535,17 +1977,16 @@ impl From<crate::operation::update_rule::UpdateRuleError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2553,134 +1994,83 @@ impl From<crate::operation::update_rule_group::UpdateRuleGroupError> for Error {
     fn from(err: crate::operation::update_rule_group::UpdateRuleGroupError) -> Self {
         match err {
             crate::operation::update_rule_group::UpdateRuleGroupError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::update_rule_group::UpdateRuleGroupError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_rule_group::UpdateRuleGroupError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
+            crate::operation::update_rule_group::UpdateRuleGroupError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_rule_group::UpdateRuleGroupError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
             crate::operation::update_rule_group::UpdateRuleGroupError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
-            crate::operation::update_rule_group::UpdateRuleGroupError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_rule_group::UpdateRuleGroupError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::update_rule_group::UpdateRuleGroupError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_rule_group::UpdateRuleGroupError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::update_rule_group::UpdateRuleGroupError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_rule_group::UpdateRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError> for Error {
     fn from(err: crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError) -> Self {
         match err {
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafReferencedItemException(inner) => {
-                Error::WafReferencedItemException(inner)
-            }
-            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError> for Error {
     fn from(err: crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError) -> Self {
         match err {
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafStaleDataException(inner) => {
-                Error::WafStaleDataException(inner)
-            }
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_acl::UpdateWebACLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_acl::UpdateWebACLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_acl::UpdateWebACLError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2692,57 +2082,38 @@ impl From<crate::operation::update_web_acl::UpdateWebACLError> for Error {
             crate::operation::update_web_acl::UpdateWebACLError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
-            crate::operation::update_web_acl::UpdateWebACLError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
+            crate::operation::update_web_acl::UpdateWebACLError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafReferencedItemException(inner) => Error::WafReferencedItemException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
-            crate::operation::update_web_acl::UpdateWebACLError::WafSubscriptionNotFoundException(inner) => {
-                Error::WafSubscriptionNotFoundException(inner)
-            }
+            crate::operation::update_web_acl::UpdateWebACLError::WafSubscriptionNotFoundException(inner) => Error::WafSubscriptionNotFoundException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_xss_match_set::UpdateXssMatchSetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_xss_match_set::UpdateXssMatchSetError> for Error {
     fn from(err: crate::operation::update_xss_match_set::UpdateXssMatchSetError) -> Self {
         match err {
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInternalErrorException(inner) => {
-                Error::WafInternalErrorException(inner)
-            }
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInvalidAccountException(inner) => {
-                Error::WafInvalidAccountException(inner)
-            }
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInvalidOperationException(inner) => {
-                Error::WafInvalidOperationException(inner)
-            }
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInvalidParameterException(inner) => {
-                Error::WafInvalidParameterException(inner)
-            }
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafLimitsExceededException(inner) => {
-                Error::WafLimitsExceededException(inner)
-            }
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafNonexistentContainerException(inner) => {
-                Error::WafNonexistentContainerException(inner)
-            }
-            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafNonexistentItemException(inner) => {
-                Error::WafNonexistentItemException(inner)
-            }
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafNonexistentContainerException(inner) => Error::WafNonexistentContainerException(inner),
+            crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::update_xss_match_set::UpdateXssMatchSetError::WafStaleDataException(inner) => Error::WafStaleDataException(inner),
             crate::operation::update_xss_match_set::UpdateXssMatchSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2770,7 +2141,7 @@ impl ::std::error::Error for Error {
             Error::WafSubscriptionNotFoundException(inner) => inner.source(),
             Error::WafTagOperationException(inner) => inner.source(),
             Error::WafTagOperationInternalErrorException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -2800,3 +2171,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

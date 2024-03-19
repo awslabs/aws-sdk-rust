@@ -5,54 +5,50 @@ pub use crate::operation::create_custom_action_type::_create_custom_action_type_
 
 impl CreateCustomActionTypeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_custom_action_type();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_custom_action_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCustomActionType`.
-///
+/// 
 /// <p>Creates a new custom action that can be used in all pipelines associated with the Amazon Web Services account. Only used for custom actions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder,
+                    inner: crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-        crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-    > for CreateCustomActionTypeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
+                    crate::operation::create_custom_action_type::CreateCustomActionTypeError,
+                > for CreateCustomActionTypeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
+                        crate::operation::create_custom_action_type::CreateCustomActionTypeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCustomActionTypeFluentBuilder {
     /// Creates a new `CreateCustomActionType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateCustomActionTypeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_custom_action_type::CreateCustomActionType::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_custom_action_type::CreateCustomActionType::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-        crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_custom_action_type::CreateCustomActionTypeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_action_type::CreateCustomActionTypeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_custom_action_type::CreateCustomActionType::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_custom_action_type::CreateCustomActionType::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_custom_action_type::CreateCustomActionTypeOutput, crate::operation::create_custom_action_type::CreateCustomActionTypeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The category of the custom action, such as a build action or a test action.</p>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.inner = self.inner.category(input);
@@ -178,14 +165,14 @@ impl CreateCustomActionTypeFluentBuilder {
     /// <p>The configuration properties for the custom action.</p><note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn set_configuration_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>) -> Self {
+    pub fn set_configuration_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionConfigurationProperty>>) -> Self {
         self.inner = self.inner.set_configuration_properties(input);
         self
     }
     /// <p>The configuration properties for the custom action.</p><note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn get_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
+    pub fn get_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionConfigurationProperty>> {
         self.inner.get_configuration_properties()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -226,12 +213,13 @@ impl CreateCustomActionTypeFluentBuilder {
         self
     }
     /// <p>The tags for the custom action.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags for the custom action.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

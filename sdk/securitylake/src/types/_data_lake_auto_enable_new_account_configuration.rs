@@ -3,22 +3,20 @@
 /// <p>Automatically enable new organization accounts as member accounts from an Amazon Security Lake administrator account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeAutoEnableNewAccountConfiguration {
+pub struct DataLakeAutoEnableNewAccountConfiguration  {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
     pub region: ::std::string::String,
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub sources: ::std::vec::Vec<crate::types::AwsLogSourceResource>,
+    pub sources: ::std::vec::Vec::<crate::types::AwsLogSourceResource>,
 }
-impl DataLakeAutoEnableNewAccountConfiguration {
+impl  DataLakeAutoEnableNewAccountConfiguration  {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn sources(&self) -> &[crate::types::AwsLogSourceResource] {
-        use std::ops::Deref;
-        self.sources.deref()
+    pub fn sources(&self) -> & [crate::types::AwsLogSourceResource] {
+        use std::ops::Deref; self.sources.deref()
     }
 }
 impl DataLakeAutoEnableNewAccountConfiguration {
@@ -33,7 +31,7 @@ impl DataLakeAutoEnableNewAccountConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeAutoEnableNewAccountConfigurationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceResource>>,
 }
 impl DataLakeAutoEnableNewAccountConfigurationBuilder {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
@@ -44,8 +42,7 @@ impl DataLakeAutoEnableNewAccountConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,39 +55,37 @@ impl DataLakeAutoEnableNewAccountConfigurationBuilder {
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
     pub fn sources(mut self, input: crate::types::AwsLogSourceResource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceResource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceResource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`DataLakeAutoEnableNewAccountConfiguration`](crate::types::DataLakeAutoEnableNewAccountConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::DataLakeAutoEnableNewAccountConfigurationBuilder::region)
     /// - [`sources`](crate::types::builders::DataLakeAutoEnableNewAccountConfigurationBuilder::sources)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DataLakeAutoEnableNewAccountConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataLakeAutoEnableNewAccountConfiguration {
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building DataLakeAutoEnableNewAccountConfiguration",
-                )
-            })?,
-            sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sources",
-                    "sources was not specified but it is required when building DataLakeAutoEnableNewAccountConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DataLakeAutoEnableNewAccountConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DataLakeAutoEnableNewAccountConfiguration {
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building DataLakeAutoEnableNewAccountConfiguration")
+                    )?
+                ,
+                sources: self.sources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sources", "sources was not specified but it is required when building DataLakeAutoEnableNewAccountConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

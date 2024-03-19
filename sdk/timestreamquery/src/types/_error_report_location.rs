@@ -3,13 +3,13 @@
 /// <p>This contains the location of the error report for a single scheduled query call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorReportLocation {
+pub struct ErrorReportLocation  {
     /// <p>The S3 location where error reports are written.</p>
     pub s3_report_location: ::std::option::Option<crate::types::S3ReportLocation>,
 }
-impl ErrorReportLocation {
+impl  ErrorReportLocation  {
     /// <p>The S3 location where error reports are written.</p>
-    pub fn s3_report_location(&self) -> ::std::option::Option<&crate::types::S3ReportLocation> {
+    pub fn s3_report_location(&self) -> ::std::option::Option<& crate::types::S3ReportLocation> {
         self.s3_report_location.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ErrorReportLocationBuilder {
     }
     /// <p>The S3 location where error reports are written.</p>
     pub fn set_s3_report_location(mut self, input: ::std::option::Option<crate::types::S3ReportLocation>) -> Self {
-        self.s3_report_location = input;
-        self
+        self.s3_report_location = input; self
     }
     /// <p>The S3 location where error reports are written.</p>
     pub fn get_s3_report_location(&self) -> &::std::option::Option<crate::types::S3ReportLocation> {
@@ -44,7 +43,9 @@ impl ErrorReportLocationBuilder {
     /// Consumes the builder and constructs a [`ErrorReportLocation`](crate::types::ErrorReportLocation).
     pub fn build(self) -> crate::types::ErrorReportLocation {
         crate::types::ErrorReportLocation {
-            s3_report_location: self.s3_report_location,
+            s3_report_location: self.s3_report_location
+            ,
         }
     }
 }
+

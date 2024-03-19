@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleInput {
+pub struct UpdateRuleInput  {
     /// <p>A unique identifier for the rule.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -12,35 +12,36 @@ pub struct UpdateRuleInput {
     /// <p>The conditions of the rule.</p>
     pub function: ::std::option::Option<::std::string::String>,
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::RuleAction>>,
     /// <p>The publish status of the rule.</p>
     pub publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
 }
-impl UpdateRuleInput {
+impl  UpdateRuleInput  {
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The conditions of the rule.</p>
-    pub fn function(&self) -> ::std::option::Option<&str> {
+    pub fn function(&self) -> ::std::option::Option<& str> {
         self.function.as_deref()
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::RuleAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::RuleAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
+    pub fn publish_status(&self) -> ::std::option::Option<& crate::types::RulePublishStatus> {
         self.publish_status.as_ref()
     }
 }
@@ -59,7 +60,7 @@ pub struct UpdateRuleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) function: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::RuleAction>>,
     pub(crate) publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
 }
 impl UpdateRuleInputBuilder {
@@ -71,8 +72,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The conditions of the rule.</p>
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function = input;
-        self
+        self.function = input; self
     }
     /// <p>The conditions of the rule.</p>
     pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,17 +127,16 @@ impl UpdateRuleInputBuilder {
     /// <p>A list of actions to be run when the rule is triggered.</p>
     pub fn actions(mut self, input: crate::types::RuleAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleAction>> {
         &self.actions
     }
     /// <p>The publish status of the rule.</p>
@@ -151,8 +147,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The publish status of the rule.</p>
     pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
-        self.publish_status = input;
-        self
+        self.publish_status = input; self
     }
     /// <p>The publish status of the rule.</p>
     pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
@@ -160,13 +155,22 @@ impl UpdateRuleInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
-            rule_id: self.rule_id,
-            instance_id: self.instance_id,
-            name: self.name,
-            function: self.function,
-            actions: self.actions,
-            publish_status: self.publish_status,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_rule::UpdateRuleInput {
+                rule_id: self.rule_id
+                ,
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                function: self.function
+                ,
+                actions: self.actions
+                ,
+                publish_status: self.publish_status
+                ,
+            }
+        )
     }
 }
+

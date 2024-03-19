@@ -2,50 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetSessionOutput {
+pub struct GetSessionOutput  {
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
-    pub recent_intent_summary_view: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
+    pub recent_intent_summary_view: ::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>>,
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier for the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the current state of the bot.</p>
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
     _request_id: Option<String>,
 }
-impl GetSessionOutput {
+impl  GetSessionOutput  {
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recent_intent_summary_view.is_none()`.
-    pub fn recent_intent_summary_view(&self) -> &[crate::types::IntentSummary] {
-        self.recent_intent_summary_view.as_deref().unwrap_or_default()
+    pub fn recent_intent_summary_view(&self) -> & [crate::types::IntentSummary] {
+        self.recent_intent_summary_view.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn session_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
     /// <p>A unique identifier for the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Describes the current state of the bot.</p>
-    pub fn dialog_action(&self) -> ::std::option::Option<&crate::types::DialogAction> {
+    pub fn dialog_action(&self) -> ::std::option::Option<& crate::types::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
-    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
-        self.active_contexts.as_deref().unwrap_or_default()
+    pub fn active_contexts(&self) -> & [crate::types::ActiveContext] {
+        self.active_contexts.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for GetSessionOutput {
+impl  ::std::fmt::Debug for GetSessionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionOutput");
         formatter.field("recent_intent_summary_view", &self.recent_intent_summary_view);
@@ -58,10 +60,10 @@ impl ::std::fmt::Debug for GetSessionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
     pub fn builder() -> crate::operation::get_session::builders::GetSessionOutputBuilder {
@@ -73,11 +75,11 @@ impl GetSessionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetSessionOutputBuilder {
-    pub(crate) recent_intent_summary_view: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
-    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) recent_intent_summary_view: ::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>>,
+    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
-    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
     _request_id: Option<String>,
 }
 impl GetSessionOutputBuilder {
@@ -89,19 +91,18 @@ impl GetSessionOutputBuilder {
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
     pub fn recent_intent_summary_view(mut self, input: crate::types::IntentSummary) -> Self {
         let mut v = self.recent_intent_summary_view.unwrap_or_default();
-        v.push(input);
-        self.recent_intent_summary_view = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recent_intent_summary_view = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
-    pub fn set_recent_intent_summary_view(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>) -> Self {
-        self.recent_intent_summary_view = input;
-        self
+    pub fn set_recent_intent_summary_view(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>>) -> Self {
+        self.recent_intent_summary_view = input; self
     }
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
-    pub fn get_recent_intent_summary_view(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>> {
+    pub fn get_recent_intent_summary_view(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>> {
         &self.recent_intent_summary_view
     }
     /// Adds a key-value pair to `session_attributes`.
@@ -109,26 +110,18 @@ impl GetSessionOutputBuilder {
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
     ///
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.session_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.session_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.session_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.session_attributes = input;
-        self
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.session_attributes = input; self
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.session_attributes
     }
     /// <p>A unique identifier for the session.</p>
@@ -138,8 +131,7 @@ impl GetSessionOutputBuilder {
     }
     /// <p>A unique identifier for the session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>A unique identifier for the session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +144,7 @@ impl GetSessionOutputBuilder {
     }
     /// <p>Describes the current state of the bot.</p>
     pub fn set_dialog_action(mut self, input: ::std::option::Option<crate::types::DialogAction>) -> Self {
-        self.dialog_action = input;
-        self
+        self.dialog_action = input; self
     }
     /// <p>Describes the current state of the bot.</p>
     pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
@@ -167,38 +158,42 @@ impl GetSessionOutputBuilder {
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub fn active_contexts(mut self, input: crate::types::ActiveContext) -> Self {
         let mut v = self.active_contexts.unwrap_or_default();
-        v.push(input);
-        self.active_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
-        self.active_contexts = input;
-        self
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>) -> Self {
+        self.active_contexts = input; self
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
     pub fn build(self) -> crate::operation::get_session::GetSessionOutput {
         crate::operation::get_session::GetSessionOutput {
-            recent_intent_summary_view: self.recent_intent_summary_view,
-            session_attributes: self.session_attributes,
-            session_id: self.session_id,
-            dialog_action: self.dialog_action,
-            active_contexts: self.active_contexts,
+            recent_intent_summary_view: self.recent_intent_summary_view
+            ,
+            session_attributes: self.session_attributes
+            ,
+            session_id: self.session_id
+            ,
+            dialog_action: self.dialog_action
+            ,
+            active_contexts: self.active_contexts
+            ,
             _request_id: self._request_id,
         }
     }
@@ -215,3 +210,4 @@ impl ::std::fmt::Debug for GetSessionOutputBuilder {
         formatter.finish()
     }
 }
+

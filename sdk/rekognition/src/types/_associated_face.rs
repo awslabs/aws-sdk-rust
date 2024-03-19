@@ -3,13 +3,13 @@
 /// <p>Provides face metadata for the faces that are associated to a specific UserID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedFace {
+pub struct AssociatedFace  {
     /// <p>Unique identifier assigned to the face.</p>
     pub face_id: ::std::option::Option<::std::string::String>,
 }
-impl AssociatedFace {
+impl  AssociatedFace  {
     /// <p>Unique identifier assigned to the face.</p>
-    pub fn face_id(&self) -> ::std::option::Option<&str> {
+    pub fn face_id(&self) -> ::std::option::Option<& str> {
         self.face_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AssociatedFaceBuilder {
     }
     /// <p>Unique identifier assigned to the face.</p>
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_id = input;
-        self
+        self.face_id = input; self
     }
     /// <p>Unique identifier assigned to the face.</p>
     pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AssociatedFaceBuilder {
     }
     /// Consumes the builder and constructs a [`AssociatedFace`](crate::types::AssociatedFace).
     pub fn build(self) -> crate::types::AssociatedFace {
-        crate::types::AssociatedFace { face_id: self.face_id }
+        crate::types::AssociatedFace {
+            face_id: self.face_id
+            ,
+        }
     }
 }
+

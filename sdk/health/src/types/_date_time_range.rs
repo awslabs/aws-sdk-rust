@@ -3,19 +3,19 @@
 /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateTimeRange {
+pub struct DateTimeRange  {
     /// <p>The starting date and time of a time range.</p>
     pub from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending date and time of a time range.</p>
     pub to: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DateTimeRange {
+impl  DateTimeRange  {
     /// <p>The starting date and time of a time range.</p>
-    pub fn from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from.as_ref()
     }
     /// <p>The ending date and time of a time range.</p>
-    pub fn to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DateTimeRangeBuilder {
     }
     /// <p>The starting date and time of a time range.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The starting date and time of a time range.</p>
     pub fn get_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl DateTimeRangeBuilder {
     }
     /// <p>The ending date and time of a time range.</p>
     pub fn set_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
     }
     /// <p>The ending date and time of a time range.</p>
     pub fn get_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl DateTimeRangeBuilder {
     /// Consumes the builder and constructs a [`DateTimeRange`](crate::types::DateTimeRange).
     pub fn build(self) -> crate::types::DateTimeRange {
         crate::types::DateTimeRange {
-            from: self.from,
-            to: self.to,
+            from: self.from
+            ,
+            to: self.to
+            ,
         }
     }
 }
+

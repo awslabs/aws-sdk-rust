@@ -3,19 +3,19 @@
 /// <p>Not supported by Neptune.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptionGroupMembership {
+pub struct OptionGroupMembership  {
     /// <p>Not supported by Neptune.</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl OptionGroupMembership {
+impl  OptionGroupMembership  {
     /// <p>Not supported by Neptune.</p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl OptionGroupMembershipBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl OptionGroupMembershipBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl OptionGroupMembershipBuilder {
     /// Consumes the builder and constructs a [`OptionGroupMembership`](crate::types::OptionGroupMembership).
     pub fn build(self) -> crate::types::OptionGroupMembership {
         crate::types::OptionGroupMembership {
-            option_group_name: self.option_group_name,
-            status: self.status,
+            option_group_name: self.option_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

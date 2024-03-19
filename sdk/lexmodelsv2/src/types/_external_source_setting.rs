@@ -3,13 +3,13 @@
 /// <p>Provides information about the external source of the slot type's definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalSourceSetting {
+pub struct ExternalSourceSetting  {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     pub grammar_slot_type_setting: ::std::option::Option<crate::types::GrammarSlotTypeSetting>,
 }
-impl ExternalSourceSetting {
+impl  ExternalSourceSetting  {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
-    pub fn grammar_slot_type_setting(&self) -> ::std::option::Option<&crate::types::GrammarSlotTypeSetting> {
+    pub fn grammar_slot_type_setting(&self) -> ::std::option::Option<& crate::types::GrammarSlotTypeSetting> {
         self.grammar_slot_type_setting.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ExternalSourceSettingBuilder {
     }
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     pub fn set_grammar_slot_type_setting(mut self, input: ::std::option::Option<crate::types::GrammarSlotTypeSetting>) -> Self {
-        self.grammar_slot_type_setting = input;
-        self
+        self.grammar_slot_type_setting = input; self
     }
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     pub fn get_grammar_slot_type_setting(&self) -> &::std::option::Option<crate::types::GrammarSlotTypeSetting> {
@@ -44,7 +43,9 @@ impl ExternalSourceSettingBuilder {
     /// Consumes the builder and constructs a [`ExternalSourceSetting`](crate::types::ExternalSourceSetting).
     pub fn build(self) -> crate::types::ExternalSourceSetting {
         crate::types::ExternalSourceSetting {
-            grammar_slot_type_setting: self.grammar_slot_type_setting,
+            grammar_slot_type_setting: self.grammar_slot_type_setting
+            ,
         }
     }
 }
+

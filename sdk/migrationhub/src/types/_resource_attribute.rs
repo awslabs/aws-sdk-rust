@@ -32,21 +32,20 @@
 /// </dl>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceAttribute {
+pub struct ResourceAttribute  {
     /// <p>Type of resource.</p>
     pub r#type: crate::types::ResourceAttributeType,
     /// <p>Value of the resource type.</p>
     pub value: ::std::string::String,
 }
-impl ResourceAttribute {
+impl  ResourceAttribute  {
     /// <p>Type of resource.</p>
-    pub fn r#type(&self) -> &crate::types::ResourceAttributeType {
+    pub fn r#type(&self) -> & crate::types::ResourceAttributeType {
         &self.r#type
     }
     /// <p>Value of the resource type.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ResourceAttribute {
@@ -72,8 +71,7 @@ impl ResourceAttributeBuilder {
     }
     /// <p>Type of resource.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceAttributeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of resource.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceAttributeType> {
@@ -87,8 +85,7 @@ impl ResourceAttributeBuilder {
     }
     /// <p>Value of the resource type.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Value of the resource type.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,19 +96,20 @@ impl ResourceAttributeBuilder {
     /// - [`r#type`](crate::types::builders::ResourceAttributeBuilder::r#type)
     /// - [`value`](crate::types::builders::ResourceAttributeBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceAttribute {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ResourceAttribute",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ResourceAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceAttribute {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ResourceAttribute")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ResourceAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

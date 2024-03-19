@@ -3,7 +3,7 @@
 /// The metadata of a single transport stream program.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransportStreamProgram {
+pub struct TransportStreamProgram  {
     /// The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the Program Association Table.
     pub pcr_pid: ::std::option::Option<i32>,
     /// The program name as it is reported in the Program Association Table.
@@ -13,15 +13,15 @@ pub struct TransportStreamProgram {
     /// The program Packet ID (PID) as it is reported in the Program Association Table.
     pub program_pid: ::std::option::Option<i32>,
     /// The list of elementary transport streams in the program. The list includes video, audio, and data streams.
-    pub streams: ::std::option::Option<::std::vec::Vec<crate::types::TransportStream>>,
+    pub streams: ::std::option::Option<::std::vec::Vec::<crate::types::TransportStream>>,
 }
-impl TransportStreamProgram {
+impl  TransportStreamProgram  {
     /// The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the Program Association Table.
     pub fn pcr_pid(&self) -> ::std::option::Option<i32> {
         self.pcr_pid
     }
     /// The program name as it is reported in the Program Association Table.
-    pub fn program_name(&self) -> ::std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<& str> {
         self.program_name.as_deref()
     }
     /// The program number as it is reported in the Program Association Table.
@@ -33,10 +33,11 @@ impl TransportStreamProgram {
         self.program_pid
     }
     /// The list of elementary transport streams in the program. The list includes video, audio, and data streams.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
-    pub fn streams(&self) -> &[crate::types::TransportStream] {
-        self.streams.as_deref().unwrap_or_default()
+    pub fn streams(&self) -> & [crate::types::TransportStream] {
+        self.streams.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransportStreamProgram {
@@ -54,7 +55,7 @@ pub struct TransportStreamProgramBuilder {
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_number: ::std::option::Option<i32>,
     pub(crate) program_pid: ::std::option::Option<i32>,
-    pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::TransportStream>>,
+    pub(crate) streams: ::std::option::Option<::std::vec::Vec::<crate::types::TransportStream>>,
 }
 impl TransportStreamProgramBuilder {
     /// The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the Program Association Table.
@@ -65,8 +66,7 @@ impl TransportStreamProgramBuilder {
     }
     /// The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the Program Association Table.
     pub fn set_pcr_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pcr_pid = input;
-        self
+        self.pcr_pid = input; self
     }
     /// The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the Program Association Table.
     pub fn get_pcr_pid(&self) -> &::std::option::Option<i32> {
@@ -79,8 +79,7 @@ impl TransportStreamProgramBuilder {
     }
     /// The program name as it is reported in the Program Association Table.
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// The program name as it is reported in the Program Association Table.
     pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl TransportStreamProgramBuilder {
     }
     /// The program number as it is reported in the Program Association Table.
     pub fn set_program_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_number = input;
-        self
+        self.program_number = input; self
     }
     /// The program number as it is reported in the Program Association Table.
     pub fn get_program_number(&self) -> &::std::option::Option<i32> {
@@ -109,8 +107,7 @@ impl TransportStreamProgramBuilder {
     }
     /// The program Packet ID (PID) as it is reported in the Program Association Table.
     pub fn set_program_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_pid = input;
-        self
+        self.program_pid = input; self
     }
     /// The program Packet ID (PID) as it is reported in the Program Association Table.
     pub fn get_program_pid(&self) -> &::std::option::Option<i32> {
@@ -123,27 +120,32 @@ impl TransportStreamProgramBuilder {
     /// The list of elementary transport streams in the program. The list includes video, audio, and data streams.
     pub fn streams(mut self, input: crate::types::TransportStream) -> Self {
         let mut v = self.streams.unwrap_or_default();
-        v.push(input);
-        self.streams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streams = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of elementary transport streams in the program. The list includes video, audio, and data streams.
-    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransportStream>>) -> Self {
-        self.streams = input;
-        self
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransportStream>>) -> Self {
+        self.streams = input; self
     }
     /// The list of elementary transport streams in the program. The list includes video, audio, and data streams.
-    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransportStream>> {
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransportStream>> {
         &self.streams
     }
     /// Consumes the builder and constructs a [`TransportStreamProgram`](crate::types::TransportStreamProgram).
     pub fn build(self) -> crate::types::TransportStreamProgram {
         crate::types::TransportStreamProgram {
-            pcr_pid: self.pcr_pid,
-            program_name: self.program_name,
-            program_number: self.program_number,
-            program_pid: self.program_pid,
-            streams: self.streams,
+            pcr_pid: self.pcr_pid
+            ,
+            program_name: self.program_name
+            ,
+            program_number: self.program_number
+            ,
+            program_pid: self.program_pid
+            ,
+            streams: self.streams
+            ,
         }
     }
 }
+

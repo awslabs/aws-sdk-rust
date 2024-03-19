@@ -5,23 +5,20 @@ pub use crate::operation::get_organizations_access_report::_get_organizations_ac
 
 impl GetOrganizationsAccessReportInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_organizations_access_report();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_organizations_access_report();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetOrganizationsAccessReport`.
-///
+/// 
 /// <p>Retrieves the service last accessed data report for Organizations that was previously generated using the <code> <code>GenerateOrganizationsAccessReport</code> </code> operation. This operation retrieves the status of your report job and the report contents.</p>
 /// <p>Depending on the parameters that you passed when you generated the report, the data returned could include different information. For details, see <code>GenerateOrganizationsAccessReport</code>.</p>
 /// <p>To call this operation, you must be signed in to the management account in your organization. SCPs must be enabled for your organization root. You must have permissions to perform this operation. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Refining permissions using service last accessed data</a> in the <i>IAM User Guide</i>.</p>
@@ -30,33 +27,32 @@ impl GetOrganizationsAccessReportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOrganizationsAccessReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportInputBuilder,
+                    inner: crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
-    > for GetOrganizationsAccessReportFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
-            crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+                    crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
+                > for GetOrganizationsAccessReportFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+                        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetOrganizationsAccessReportFluentBuilder {
     /// Creates a new `GetOrganizationsAccessReport`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl GetOrganizationsAccessReportFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_organizations_access_report::GetOrganizationsAccessReport::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReport::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_organizations_access_report::GetOrganizationsAccessReport::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_organizations_access_report::GetOrganizationsAccessReport::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput, crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the request generated by the <code>GenerateOrganizationsAccessReport</code> operation.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -172,3 +159,4 @@ impl GetOrganizationsAccessReportFluentBuilder {
         self.inner.get_sort_key()
     }
 }
+

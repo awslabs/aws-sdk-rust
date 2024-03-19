@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketIntelligentTieringConfigurationInput {
+pub struct PutBucketIntelligentTieringConfigurationInput  {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
@@ -10,24 +10,23 @@ pub struct PutBucketIntelligentTieringConfigurationInput {
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     pub intelligent_tiering_configuration: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
 }
-impl PutBucketIntelligentTieringConfigurationInput {
+impl  PutBucketIntelligentTieringConfigurationInput  {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
-    pub fn intelligent_tiering_configuration(&self) -> ::std::option::Option<&crate::types::IntelligentTieringConfiguration> {
+    pub fn intelligent_tiering_configuration(&self) -> ::std::option::Option<& crate::types::IntelligentTieringConfiguration> {
         self.intelligent_tiering_configuration.as_ref()
     }
 }
 impl PutBucketIntelligentTieringConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketIntelligentTieringConfigurationInput`](crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationInput).
-    pub fn builder() -> crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder {
         crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ impl PutBucketIntelligentTieringConfigurationInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl PutBucketIntelligentTieringConfigurationInputBuilder {
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,26 +76,24 @@ impl PutBucketIntelligentTieringConfigurationInputBuilder {
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     pub fn set_intelligent_tiering_configuration(mut self, input: ::std::option::Option<crate::types::IntelligentTieringConfiguration>) -> Self {
-        self.intelligent_tiering_configuration = input;
-        self
+        self.intelligent_tiering_configuration = input; self
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     pub fn get_intelligent_tiering_configuration(&self) -> &::std::option::Option<crate::types::IntelligentTieringConfiguration> {
         &self.intelligent_tiering_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketIntelligentTieringConfigurationInput`](crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationInput {
-                bucket: self.bucket,
-                id: self.id,
-                intelligent_tiering_configuration: self.intelligent_tiering_configuration,
-            },
+                bucket: self.bucket
+                ,
+                id: self.id
+                ,
+                intelligent_tiering_configuration: self.intelligent_tiering_configuration
+                ,
+            }
         )
     }
 }
+

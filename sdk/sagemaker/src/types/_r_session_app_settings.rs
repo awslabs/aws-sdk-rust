@@ -3,22 +3,23 @@
 /// <p>A collection of settings that apply to an <code>RSessionGateway</code> app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RSessionAppSettings {
+pub struct RSessionAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
+    pub custom_images: ::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>>,
 }
-impl RSessionAppSettings {
+impl  RSessionAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_images.is_none()`.
-    pub fn custom_images(&self) -> &[crate::types::CustomImage] {
-        self.custom_images.as_deref().unwrap_or_default()
+    pub fn custom_images(&self) -> & [crate::types::CustomImage] {
+        self.custom_images.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RSessionAppSettings {
@@ -33,7 +34,7 @@ impl RSessionAppSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RSessionAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
+    pub(crate) custom_images: ::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>>,
 }
 impl RSessionAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -43,8 +44,7 @@ impl RSessionAppSettingsBuilder {
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -57,24 +57,26 @@ impl RSessionAppSettingsBuilder {
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
     pub fn custom_images(mut self, input: crate::types::CustomImage) -> Self {
         let mut v = self.custom_images.unwrap_or_default();
-        v.push(input);
-        self.custom_images = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_images = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>) -> Self {
-        self.custom_images = input;
-        self
+    pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>>) -> Self {
+        self.custom_images = input; self
     }
     /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
-    pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
+    pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>> {
         &self.custom_images
     }
     /// Consumes the builder and constructs a [`RSessionAppSettings`](crate::types::RSessionAppSettings).
     pub fn build(self) -> crate::types::RSessionAppSettings {
         crate::types::RSessionAppSettings {
-            default_resource_spec: self.default_resource_spec,
-            custom_images: self.custom_images,
+            default_resource_spec: self.default_resource_spec
+            ,
+            custom_images: self.custom_images
+            ,
         }
     }
 }
+

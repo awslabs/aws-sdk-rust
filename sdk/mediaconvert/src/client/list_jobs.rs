@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListJobs`](crate::operation::list_jobs::builders::ListJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_max_results):<br>required: **false**<br>Optional. Number of jobs, up to twenty, that will be returned at one time.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_next_token):<br>required: **false**<br>Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.<br>
     ///   - [`order(Order)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
     ///   - [`queue(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::queue) / [`set_queue(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_queue):<br>required: **false**<br>Optional. Provide a queue name to get back only jobs from that queue.<br>
     ///   - [`status(JobStatus)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::status) / [`set_status(Option<JobStatus>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_status):<br>required: **false**<br>Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.<br>
-    /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
+                            /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec::<Job>>)`](crate::operation::list_jobs::ListJobsOutput::jobs): List of jobs
     ///   - [`next_token(Option<String>)`](crate::operation::list_jobs::ListJobsOutput::next_token): Use this string to request the next batch of jobs.
-    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::operation::list_jobs::ListJobsError)
+                            /// - On failure, responds with [`SdkError<ListJobsError>`](crate::operation::list_jobs::ListJobsError)
     pub fn list_jobs(&self) -> crate::operation::list_jobs::builders::ListJobsFluentBuilder {
-        crate::operation::list_jobs::builders::ListJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_jobs::builders::ListJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

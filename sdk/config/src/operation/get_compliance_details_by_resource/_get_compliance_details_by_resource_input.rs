@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComplianceDetailsByResourceInput {
+pub struct GetComplianceDetailsByResourceInput  {
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
+    pub compliance_types: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
@@ -18,30 +18,31 @@ pub struct GetComplianceDetailsByResourceInput {
     /// </note>
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetComplianceDetailsByResourceInput {
+impl  GetComplianceDetailsByResourceInput  {
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_types.is_none()`.
-    pub fn compliance_types(&self) -> &[crate::types::ComplianceType] {
-        self.compliance_types.as_deref().unwrap_or_default()
+    pub fn compliance_types(&self) -> & [crate::types::ComplianceType] {
+        self.compliance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
-    pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_evaluation_id(&self) -> ::std::option::Option<& str> {
         self.resource_evaluation_id.as_deref()
     }
 }
@@ -58,7 +59,7 @@ impl GetComplianceDetailsByResourceInput {
 pub struct GetComplianceDetailsByResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
+    pub(crate) compliance_types: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
@@ -70,8 +71,7 @@ impl GetComplianceDetailsByResourceInputBuilder {
     }
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl GetComplianceDetailsByResourceInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,19 +98,18 @@ impl GetComplianceDetailsByResourceInputBuilder {
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         let mut v = self.compliance_types.unwrap_or_default();
-        v.push(input);
-        self.compliance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compliance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
-        self.compliance_types = input;
-        self
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>>) -> Self {
+        self.compliance_types = input; self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>> {
         &self.compliance_types
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -121,8 +119,7 @@ impl GetComplianceDetailsByResourceInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl GetComplianceDetailsByResourceInputBuilder {
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_evaluation_id = input;
-        self
+        self.resource_evaluation_id = input; self
     }
     /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
@@ -149,20 +145,21 @@ impl GetComplianceDetailsByResourceInputBuilder {
         &self.resource_evaluation_id
     }
     /// Consumes the builder and constructs a [`GetComplianceDetailsByResourceInput`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                compliance_types: self.compliance_types,
-                next_token: self.next_token,
-                resource_evaluation_id: self.resource_evaluation_id,
-            },
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+                compliance_types: self.compliance_types
+                ,
+                next_token: self.next_token
+                ,
+                resource_evaluation_id: self.resource_evaluation_id
+                ,
+            }
         )
     }
 }
+

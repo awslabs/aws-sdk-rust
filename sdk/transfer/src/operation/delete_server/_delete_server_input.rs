@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServerInput {
+pub struct DeleteServerInput  {
     /// <p>A unique system-assigned identifier for a server instance.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServerInput {
+impl  DeleteServerInput  {
     /// <p>A unique system-assigned identifier for a server instance.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteServerInputBuilder {
     }
     /// <p>A unique system-assigned identifier for a server instance.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A unique system-assigned identifier for a server instance.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_server::DeleteServerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_server::DeleteServerInput { server_id: self.server_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_server::DeleteServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_server::DeleteServerInput {
+                server_id: self.server_id
+                ,
+            }
+        )
     }
 }
+

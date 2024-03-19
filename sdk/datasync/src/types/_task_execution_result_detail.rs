@@ -3,7 +3,7 @@
 /// <p>Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskExecutionResultDetail {
+pub struct TaskExecutionResultDetail  {
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
     pub prepare_duration: ::std::option::Option<i64>,
     /// <p>The status of the PREPARING phase.</p>
@@ -23,13 +23,13 @@ pub struct TaskExecutionResultDetail {
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub error_detail: ::std::option::Option<::std::string::String>,
 }
-impl TaskExecutionResultDetail {
+impl  TaskExecutionResultDetail  {
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
     pub fn prepare_duration(&self) -> ::std::option::Option<i64> {
         self.prepare_duration
     }
     /// <p>The status of the PREPARING phase.</p>
-    pub fn prepare_status(&self) -> ::std::option::Option<&crate::types::PhaseStatus> {
+    pub fn prepare_status(&self) -> ::std::option::Option<& crate::types::PhaseStatus> {
         self.prepare_status.as_ref()
     }
     /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
@@ -41,7 +41,7 @@ impl TaskExecutionResultDetail {
         self.transfer_duration
     }
     /// <p>The status of the TRANSFERRING phase.</p>
-    pub fn transfer_status(&self) -> ::std::option::Option<&crate::types::PhaseStatus> {
+    pub fn transfer_status(&self) -> ::std::option::Option<& crate::types::PhaseStatus> {
         self.transfer_status.as_ref()
     }
     /// <p>The total time in milliseconds that DataSync spent in the VERIFYING phase.</p>
@@ -49,15 +49,15 @@ impl TaskExecutionResultDetail {
         self.verify_duration
     }
     /// <p>The status of the VERIFYING phase.</p>
-    pub fn verify_status(&self) -> ::std::option::Option<&crate::types::PhaseStatus> {
+    pub fn verify_status(&self) -> ::std::option::Option<& crate::types::PhaseStatus> {
         self.verify_status.as_ref()
     }
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
-    pub fn error_detail(&self) -> ::std::option::Option<&str> {
+    pub fn error_detail(&self) -> ::std::option::Option<& str> {
         self.error_detail.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
     pub fn set_prepare_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.prepare_duration = input;
-        self
+        self.prepare_duration = input; self
     }
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.</p>
     pub fn get_prepare_duration(&self) -> &::std::option::Option<i64> {
@@ -104,8 +103,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The status of the PREPARING phase.</p>
     pub fn set_prepare_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
-        self.prepare_status = input;
-        self
+        self.prepare_status = input; self
     }
     /// <p>The status of the PREPARING phase.</p>
     pub fn get_prepare_status(&self) -> &::std::option::Option<crate::types::PhaseStatus> {
@@ -118,8 +116,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
     pub fn set_total_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_duration = input;
-        self
+        self.total_duration = input; self
     }
     /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
     pub fn get_total_duration(&self) -> &::std::option::Option<i64> {
@@ -132,8 +129,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING phase.</p>
     pub fn set_transfer_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.transfer_duration = input;
-        self
+        self.transfer_duration = input; self
     }
     /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING phase.</p>
     pub fn get_transfer_duration(&self) -> &::std::option::Option<i64> {
@@ -146,8 +142,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The status of the TRANSFERRING phase.</p>
     pub fn set_transfer_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
-        self.transfer_status = input;
-        self
+        self.transfer_status = input; self
     }
     /// <p>The status of the TRANSFERRING phase.</p>
     pub fn get_transfer_status(&self) -> &::std::option::Option<crate::types::PhaseStatus> {
@@ -160,8 +155,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The total time in milliseconds that DataSync spent in the VERIFYING phase.</p>
     pub fn set_verify_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.verify_duration = input;
-        self
+        self.verify_duration = input; self
     }
     /// <p>The total time in milliseconds that DataSync spent in the VERIFYING phase.</p>
     pub fn get_verify_duration(&self) -> &::std::option::Option<i64> {
@@ -174,8 +168,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>The status of the VERIFYING phase.</p>
     pub fn set_verify_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
-        self.verify_status = input;
-        self
+        self.verify_status = input; self
     }
     /// <p>The status of the VERIFYING phase.</p>
     pub fn get_verify_status(&self) -> &::std::option::Option<crate::types::PhaseStatus> {
@@ -188,8 +181,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl TaskExecutionResultDetailBuilder {
     }
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_detail = input;
-        self
+        self.error_detail = input; self
     }
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl TaskExecutionResultDetailBuilder {
     /// Consumes the builder and constructs a [`TaskExecutionResultDetail`](crate::types::TaskExecutionResultDetail).
     pub fn build(self) -> crate::types::TaskExecutionResultDetail {
         crate::types::TaskExecutionResultDetail {
-            prepare_duration: self.prepare_duration,
-            prepare_status: self.prepare_status,
-            total_duration: self.total_duration,
-            transfer_duration: self.transfer_duration,
-            transfer_status: self.transfer_status,
-            verify_duration: self.verify_duration,
-            verify_status: self.verify_status,
-            error_code: self.error_code,
-            error_detail: self.error_detail,
+            prepare_duration: self.prepare_duration
+            ,
+            prepare_status: self.prepare_status
+            ,
+            total_duration: self.total_duration
+            ,
+            transfer_duration: self.transfer_duration
+            ,
+            transfer_status: self.transfer_status
+            ,
+            verify_duration: self.verify_duration
+            ,
+            verify_status: self.verify_status
+            ,
+            error_code: self.error_code
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

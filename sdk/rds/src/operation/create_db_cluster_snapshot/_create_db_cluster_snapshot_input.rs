@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbClusterSnapshotInput {
+pub struct CreateDbClusterSnapshotInput  {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -25,9 +25,9 @@ pub struct CreateDbClusterSnapshotInput {
     /// <p>Example: <code>my-cluster1</code></p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDbClusterSnapshotInput {
+impl  CreateDbClusterSnapshotInput  {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -39,7 +39,7 @@ impl CreateDbClusterSnapshotInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code></p>
-    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
@@ -49,14 +49,15 @@ impl CreateDbClusterSnapshotInput {
     /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDbClusterSnapshotInput {
@@ -72,7 +73,7 @@ impl CreateDbClusterSnapshotInput {
 pub struct CreateDbClusterSnapshotInputBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -103,8 +104,7 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code></p>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = input;
-        self
+        self.db_cluster_snapshot_identifier = input; self
     }
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -140,8 +140,7 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -160,30 +159,30 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput {
-            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-            db_cluster_identifier: self.db_cluster_identifier,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput {
+                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

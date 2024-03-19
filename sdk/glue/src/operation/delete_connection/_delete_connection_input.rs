@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectionInput {
+pub struct DeleteConnectionInput  {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to delete.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectionInput {
+impl  DeleteConnectionInput  {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the connection to delete.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteConnectionInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteConnectionInputBuilder {
     }
     /// <p>The name of the connection to delete.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to delete.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_name
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_connection::DeleteConnectionInput {
-            catalog_id: self.catalog_id,
-            connection_name: self.connection_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connection::DeleteConnectionInput {
+                catalog_id: self.catalog_id
+                ,
+                connection_name: self.connection_name
+                ,
+            }
+        )
     }
 }
+

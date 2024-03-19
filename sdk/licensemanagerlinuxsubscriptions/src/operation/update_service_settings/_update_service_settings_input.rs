@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSettingsInput {
+pub struct UpdateServiceSettingsInput  {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
     pub linux_subscriptions_discovery: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
@@ -10,13 +10,13 @@ pub struct UpdateServiceSettingsInput {
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
     pub allow_update: ::std::option::Option<bool>,
 }
-impl UpdateServiceSettingsInput {
+impl  UpdateServiceSettingsInput  {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn linux_subscriptions_discovery(&self) -> ::std::option::Option<&crate::types::LinuxSubscriptionsDiscovery> {
+    pub fn linux_subscriptions_discovery(&self) -> ::std::option::Option<& crate::types::LinuxSubscriptionsDiscovery> {
         self.linux_subscriptions_discovery.as_ref()
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn linux_subscriptions_discovery_settings(&self) -> ::std::option::Option<&crate::types::LinuxSubscriptionsDiscoverySettings> {
+    pub fn linux_subscriptions_discovery_settings(&self) -> ::std::option::Option<& crate::types::LinuxSubscriptionsDiscoverySettings> {
         self.linux_subscriptions_discovery_settings.as_ref()
     }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
@@ -48,8 +48,7 @@ impl UpdateServiceSettingsInputBuilder {
     }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
     pub fn set_linux_subscriptions_discovery(mut self, input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>) -> Self {
-        self.linux_subscriptions_discovery = input;
-        self
+        self.linux_subscriptions_discovery = input; self
     }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
     pub fn get_linux_subscriptions_discovery(&self) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
@@ -62,12 +61,8 @@ impl UpdateServiceSettingsInputBuilder {
         self
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn set_linux_subscriptions_discovery_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,
-    ) -> Self {
-        self.linux_subscriptions_discovery_settings = input;
-        self
+    pub fn set_linux_subscriptions_discovery_settings(mut self, input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>) -> Self {
+        self.linux_subscriptions_discovery_settings = input; self
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     pub fn get_linux_subscriptions_discovery_settings(&self) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
@@ -80,22 +75,24 @@ impl UpdateServiceSettingsInputBuilder {
     }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
     pub fn set_allow_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_update = input;
-        self
+        self.allow_update = input; self
     }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
     pub fn get_allow_update(&self) -> &::std::option::Option<bool> {
         &self.allow_update
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_service_settings::UpdateServiceSettingsInput {
-            linux_subscriptions_discovery: self.linux_subscriptions_discovery,
-            linux_subscriptions_discovery_settings: self.linux_subscriptions_discovery_settings,
-            allow_update: self.allow_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_settings::UpdateServiceSettingsInput {
+                linux_subscriptions_discovery: self.linux_subscriptions_discovery
+                ,
+                linux_subscriptions_discovery_settings: self.linux_subscriptions_discovery_settings
+                ,
+                allow_update: self.allow_update
+                ,
+            }
+        )
     }
 }
+

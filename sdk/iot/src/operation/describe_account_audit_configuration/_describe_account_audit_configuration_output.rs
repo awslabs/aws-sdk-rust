@@ -2,41 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountAuditConfigurationOutput {
+pub struct DescribeAccountAuditConfigurationOutput  {
     /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
-    pub audit_notification_target_configurations:
-        ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
+    pub audit_notification_target_configurations: ::std::option::Option<::std::collections::HashMap::<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     /// <p>Which audit checks are enabled and disabled for this account.</p>
-    pub audit_check_configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
+    pub audit_check_configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AuditCheckConfiguration>>,
     _request_id: Option<String>,
 }
-impl DescribeAccountAuditConfigurationOutput {
+impl  DescribeAccountAuditConfigurationOutput  {
     /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
-    pub fn audit_notification_target_configurations(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
+    pub fn audit_notification_target_configurations(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         self.audit_notification_target_configurations.as_ref()
     }
     /// <p>Which audit checks are enabled and disabled for this account.</p>
-    pub fn audit_check_configurations(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
+    pub fn audit_check_configurations(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AuditCheckConfiguration>> {
         self.audit_check_configurations.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountAuditConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountAuditConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAuditConfigurationOutput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput).
     pub fn builder() -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder {
@@ -49,10 +44,8 @@ impl DescribeAccountAuditConfigurationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAuditConfigurationOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) audit_notification_target_configurations:
-        ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
-    pub(crate) audit_check_configurations:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
+    pub(crate) audit_notification_target_configurations: ::std::option::Option<::std::collections::HashMap::<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
+    pub(crate) audit_check_configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AuditCheckConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAuditConfigurationOutputBuilder {
@@ -65,8 +58,7 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
@@ -78,28 +70,18 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_audit_notification_target_configurations`](Self::set_audit_notification_target_configurations).
     ///
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
-    pub fn audit_notification_target_configurations(
-        mut self,
-        k: crate::types::AuditNotificationType,
-        v: crate::types::AuditNotificationTarget,
-    ) -> Self {
+    pub fn audit_notification_target_configurations(mut self, k: crate::types::AuditNotificationType, v: crate::types::AuditNotificationTarget) -> Self {
         let mut hash_map = self.audit_notification_target_configurations.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.audit_notification_target_configurations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.audit_notification_target_configurations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
-    pub fn set_audit_notification_target_configurations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
-    ) -> Self {
-        self.audit_notification_target_configurations = input;
-        self
+    pub fn set_audit_notification_target_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>) -> Self {
+        self.audit_notification_target_configurations = input; self
     }
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
-    pub fn get_audit_notification_target_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
+    pub fn get_audit_notification_target_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         &self.audit_notification_target_configurations
     }
     /// Adds a key-value pair to `audit_check_configurations`.
@@ -107,46 +89,40 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_audit_check_configurations`](Self::set_audit_check_configurations).
     ///
     /// <p>Which audit checks are enabled and disabled for this account.</p>
-    pub fn audit_check_configurations(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AuditCheckConfiguration,
-    ) -> Self {
+    pub fn audit_check_configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AuditCheckConfiguration) -> Self {
         let mut hash_map = self.audit_check_configurations.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.audit_check_configurations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.audit_check_configurations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Which audit checks are enabled and disabled for this account.</p>
-    pub fn set_audit_check_configurations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
-    ) -> Self {
-        self.audit_check_configurations = input;
-        self
+    pub fn set_audit_check_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AuditCheckConfiguration>>) -> Self {
+        self.audit_check_configurations = input; self
     }
     /// <p>Which audit checks are enabled and disabled for this account.</p>
-    pub fn get_audit_check_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
+    pub fn get_audit_check_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AuditCheckConfiguration>> {
         &self.audit_check_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountAuditConfigurationOutput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput {
         crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput {
-            role_arn: self.role_arn,
-            audit_notification_target_configurations: self.audit_notification_target_configurations,
-            audit_check_configurations: self.audit_check_configurations,
+            role_arn: self.role_arn
+            ,
+            audit_notification_target_configurations: self.audit_notification_target_configurations
+            ,
+            audit_check_configurations: self.audit_check_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

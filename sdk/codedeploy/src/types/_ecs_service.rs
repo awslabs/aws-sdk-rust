@@ -3,19 +3,19 @@
 /// <p>Contains the service and cluster names used to identify an Amazon ECS deployment's target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsService {
+pub struct EcsService  {
     /// <p>The name of the target Amazon ECS service.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster that the Amazon ECS service is associated with.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
 }
-impl EcsService {
+impl  EcsService  {
     /// <p>The name of the target Amazon ECS service.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the cluster that the Amazon ECS service is associated with.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EcsServiceBuilder {
     }
     /// <p>The name of the target Amazon ECS service.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the target Amazon ECS service.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EcsServiceBuilder {
     }
     /// <p>The name of the cluster that the Amazon ECS service is associated with.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster that the Amazon ECS service is associated with.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EcsServiceBuilder {
     /// Consumes the builder and constructs a [`EcsService`](crate::types::EcsService).
     pub fn build(self) -> crate::types::EcsService {
         crate::types::EcsService {
-            service_name: self.service_name,
-            cluster_name: self.cluster_name,
+            service_name: self.service_name
+            ,
+            cluster_name: self.cluster_name
+            ,
         }
     }
 }
+

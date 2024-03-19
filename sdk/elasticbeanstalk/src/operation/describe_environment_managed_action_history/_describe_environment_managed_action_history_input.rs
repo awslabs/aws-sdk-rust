@@ -3,7 +3,7 @@
 /// <p>Request to list completed and failed managed actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEnvironmentManagedActionHistoryInput {
+pub struct DescribeEnvironmentManagedActionHistoryInput  {
     /// <p>The environment ID of the target environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target environment.</p>
@@ -13,17 +13,17 @@ pub struct DescribeEnvironmentManagedActionHistoryInput {
     /// <p>The maximum number of items to return for a single request.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl DescribeEnvironmentManagedActionHistoryInput {
+impl  DescribeEnvironmentManagedActionHistoryInput  {
     /// <p>The environment ID of the target environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the target environment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The pagination token returned by a previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for a single request.</p>
@@ -55,8 +55,7 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
     }
     /// <p>The environment ID of the target environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The environment ID of the target environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
     }
     /// <p>The name of the target environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the target environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
     }
     /// <p>The pagination token returned by a previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token returned by a previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,27 +94,26 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
     }
     /// <p>The maximum number of items to return for a single request.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of items to return for a single request.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionHistoryInput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput {
-                environment_id: self.environment_id,
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-                max_items: self.max_items,
-            },
+                environment_id: self.environment_id
+                ,
+                environment_name: self.environment_name
+                ,
+                next_token: self.next_token
+                ,
+                max_items: self.max_items
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetModelInvocationLoggingConfigurationInput {}
+pub struct GetModelInvocationLoggingConfigurationInput  {
+}
 impl GetModelInvocationLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetModelInvocationLoggingConfigurationInput`](crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput).
     pub fn builder() -> crate::operation::get_model_invocation_logging_configuration::builders::GetModelInvocationLoggingConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetModelInvocationLoggingConfigurationInput {
 /// A builder for [`GetModelInvocationLoggingConfigurationInput`](crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetModelInvocationLoggingConfigurationInputBuilder {}
+pub struct GetModelInvocationLoggingConfigurationInputBuilder {
+}
 impl GetModelInvocationLoggingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetModelInvocationLoggingConfigurationInput`](crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput {
+            }
+        )
     }
 }
+

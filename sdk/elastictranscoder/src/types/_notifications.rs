@@ -5,7 +5,7 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Notifications {
+pub struct Notifications  {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
     pub progressing: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
@@ -15,21 +15,21 @@ pub struct Notifications {
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
     pub error: ::std::option::Option<::std::string::String>,
 }
-impl Notifications {
+impl  Notifications  {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
-    pub fn progressing(&self) -> ::std::option::Option<&str> {
+    pub fn progressing(&self) -> ::std::option::Option<& str> {
         self.progressing.as_deref()
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
-    pub fn completed(&self) -> ::std::option::Option<&str> {
+    pub fn completed(&self) -> ::std::option::Option<& str> {
         self.completed.as_deref()
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
-    pub fn warning(&self) -> ::std::option::Option<&str> {
+    pub fn warning(&self) -> ::std::option::Option<& str> {
         self.warning.as_deref()
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl NotificationsBuilder {
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
     pub fn set_progressing(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progressing = input;
-        self
+        self.progressing = input; self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
     pub fn get_progressing(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl NotificationsBuilder {
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
     pub fn set_completed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.completed = input;
-        self
+        self.completed = input; self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
     pub fn get_completed(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl NotificationsBuilder {
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
     pub fn set_warning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warning = input;
-        self
+        self.warning = input; self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
     pub fn get_warning(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl NotificationsBuilder {
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,10 +105,15 @@ impl NotificationsBuilder {
     /// Consumes the builder and constructs a [`Notifications`](crate::types::Notifications).
     pub fn build(self) -> crate::types::Notifications {
         crate::types::Notifications {
-            progressing: self.progressing,
-            completed: self.completed,
-            warning: self.warning,
-            error: self.error,
+            progressing: self.progressing
+            ,
+            completed: self.completed
+            ,
+            warning: self.warning
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

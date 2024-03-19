@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDocumentPathOutput {
+pub struct GetDocumentPathOutput  {
     /// <p>The path information.</p>
     pub path: ::std::option::Option<crate::types::ResourcePath>,
     _request_id: Option<String>,
 }
-impl GetDocumentPathOutput {
+impl  GetDocumentPathOutput  {
     /// <p>The path information.</p>
-    pub fn path(&self) -> ::std::option::Option<&crate::types::ResourcePath> {
+    pub fn path(&self) -> ::std::option::Option<& crate::types::ResourcePath> {
         self.path.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDocumentPathOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDocumentPathOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentPathOutput`](crate::operation::get_document_path::GetDocumentPathOutput).
     pub fn builder() -> crate::operation::get_document_path::builders::GetDocumentPathOutputBuilder {
@@ -40,27 +40,28 @@ impl GetDocumentPathOutputBuilder {
     }
     /// <p>The path information.</p>
     pub fn set_path(mut self, input: ::std::option::Option<crate::types::ResourcePath>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path information.</p>
     pub fn get_path(&self) -> &::std::option::Option<crate::types::ResourcePath> {
         &self.path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDocumentPathOutput`](crate::operation::get_document_path::GetDocumentPathOutput).
     pub fn build(self) -> crate::operation::get_document_path::GetDocumentPathOutput {
         crate::operation::get_document_path::GetDocumentPathOutput {
-            path: self.path,
+            path: self.path
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

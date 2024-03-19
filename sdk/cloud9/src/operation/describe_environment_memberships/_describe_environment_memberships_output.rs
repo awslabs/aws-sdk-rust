@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEnvironmentMembershipsOutput {
+pub struct DescribeEnvironmentMembershipsOutput  {
     /// <p>Information about the environment members for the environment.</p>
-    pub memberships: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>,
+    pub memberships: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentMember>>,
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeEnvironmentMembershipsOutput {
+impl  DescribeEnvironmentMembershipsOutput  {
     /// <p>Information about the environment members for the environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.memberships.is_none()`.
-    pub fn memberships(&self) -> &[crate::types::EnvironmentMember] {
-        self.memberships.as_deref().unwrap_or_default()
+    pub fn memberships(&self) -> & [crate::types::EnvironmentMember] {
+        self.memberships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEnvironmentMembershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEnvironmentMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsOutput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput).
     pub fn builder() -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeEnvironmentMembershipsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsOutputBuilder {
-    pub(crate) memberships: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>,
+    pub(crate) memberships: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeEnvironmentMembershipsOutputBuilder {
     /// <p>Information about the environment members for the environment.</p>
     pub fn memberships(mut self, input: crate::types::EnvironmentMember) -> Self {
         let mut v = self.memberships.unwrap_or_default();
-        v.push(input);
-        self.memberships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.memberships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the environment members for the environment.</p>
-    pub fn set_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>) -> Self {
-        self.memberships = input;
-        self
+    pub fn set_memberships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentMember>>) -> Self {
+        self.memberships = input; self
     }
     /// <p>Information about the environment members for the environment.</p>
-    pub fn get_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>> {
+    pub fn get_memberships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentMember>> {
         &self.memberships
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
@@ -69,28 +69,30 @@ impl DescribeEnvironmentMembershipsOutputBuilder {
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentMembershipsOutput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput).
     pub fn build(self) -> crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput {
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput {
-            memberships: self.memberships,
-            next_token: self.next_token,
+            memberships: self.memberships
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

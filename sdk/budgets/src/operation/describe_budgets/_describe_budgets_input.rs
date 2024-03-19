@@ -3,7 +3,7 @@
 /// <p>Request of DescribeBudgets</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBudgetsInput {
+pub struct DescribeBudgetsInput  {
     /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
@@ -11,9 +11,9 @@ pub struct DescribeBudgetsInput {
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBudgetsInput {
+impl  DescribeBudgetsInput  {
     /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
@@ -21,7 +21,7 @@ impl DescribeBudgetsInput {
         self.max_results
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DescribeBudgetsInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeBudgetsInputBuilder {
     }
     /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,21 +75,24 @@ impl DescribeBudgetsInputBuilder {
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeBudgetsInput`](crate::operation::describe_budgets::DescribeBudgetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_budgets::DescribeBudgetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_budgets::DescribeBudgetsInput {
-            account_id: self.account_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_budgets::DescribeBudgetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_budgets::DescribeBudgetsInput {
+                account_id: self.account_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

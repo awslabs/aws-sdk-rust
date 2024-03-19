@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reservedinstancestate = unimplemented!();
 /// match reservedinstancestate {
@@ -34,16 +34,14 @@
 /// Specifically, when `reservedinstancestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReservedInstanceState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ReservedInstanceState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -59,73 +57,74 @@ pub enum ReservedInstanceState {
     Retired,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ReservedInstanceState {
-    fn from(s: &str) -> Self {
-        match s {
-            "active" => ReservedInstanceState::Active,
-            "payment-failed" => ReservedInstanceState::PaymentFailed,
-            "payment-pending" => ReservedInstanceState::PaymentPending,
-            "queued" => ReservedInstanceState::Queued,
-            "queued-deleted" => ReservedInstanceState::QueuedDeleted,
-            "retired" => ReservedInstanceState::Retired,
-            other => ReservedInstanceState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "active" => ReservedInstanceState::Active,
+"payment-failed" => ReservedInstanceState::PaymentFailed,
+"payment-pending" => ReservedInstanceState::PaymentPending,
+"queued" => ReservedInstanceState::Queued,
+"queued-deleted" => ReservedInstanceState::QueuedDeleted,
+"retired" => ReservedInstanceState::Retired,
+other => ReservedInstanceState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ReservedInstanceState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ReservedInstanceState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ReservedInstanceState::from(s))
+                    }
+                }
 impl ReservedInstanceState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReservedInstanceState::Active => "active",
-            ReservedInstanceState::PaymentFailed => "payment-failed",
-            ReservedInstanceState::PaymentPending => "payment-pending",
-            ReservedInstanceState::Queued => "queued",
-            ReservedInstanceState::QueuedDeleted => "queued-deleted",
-            ReservedInstanceState::Retired => "retired",
-            ReservedInstanceState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReservedInstanceState::Active => "active",
+    ReservedInstanceState::PaymentFailed => "payment-failed",
+    ReservedInstanceState::PaymentPending => "payment-pending",
+    ReservedInstanceState::Queued => "queued",
+    ReservedInstanceState::QueuedDeleted => "queued-deleted",
+    ReservedInstanceState::Retired => "retired",
+    ReservedInstanceState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ReservedInstanceState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ReservedInstanceState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ReservedInstanceState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ReservedInstanceState::Active => write!(f, "active"),
-            ReservedInstanceState::PaymentFailed => write!(f, "payment-failed"),
-            ReservedInstanceState::PaymentPending => write!(f, "payment-pending"),
-            ReservedInstanceState::Queued => write!(f, "queued"),
-            ReservedInstanceState::QueuedDeleted => write!(f, "queued-deleted"),
-            ReservedInstanceState::Retired => write!(f, "retired"),
-            ReservedInstanceState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ReservedInstanceState::Active => write!(f, "active"),
+ReservedInstanceState::PaymentFailed => write!(f, "payment-failed"),
+ReservedInstanceState::PaymentPending => write!(f, "payment-pending"),
+ReservedInstanceState::Queued => write!(f, "queued"),
+ReservedInstanceState::QueuedDeleted => write!(f, "queued-deleted"),
+ReservedInstanceState::Retired => write!(f, "retired"),
+ReservedInstanceState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

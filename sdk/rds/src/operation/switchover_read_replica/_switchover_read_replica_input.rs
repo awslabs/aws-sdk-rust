@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SwitchoverReadReplicaInput {
+pub struct SwitchoverReadReplicaInput  {
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -11,14 +11,14 @@ pub struct SwitchoverReadReplicaInput {
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
-impl SwitchoverReadReplicaInput {
+impl  SwitchoverReadReplicaInput  {
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl SwitchoverReadReplicaInputBuilder {
     /// <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -67,12 +66,13 @@ impl SwitchoverReadReplicaInputBuilder {
         &self.db_instance_identifier
     }
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
-            db_instance_identifier: self.db_instance_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+            }
+        )
     }
 }
+

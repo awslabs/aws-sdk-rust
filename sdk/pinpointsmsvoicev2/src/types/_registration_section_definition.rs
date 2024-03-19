@@ -3,20 +3,19 @@
 /// <p>Provides information on the specified section definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationSectionDefinition {
+pub struct RegistrationSectionDefinition  {
     /// <p>The path to the section of the registration.</p>
     pub section_path: ::std::string::String,
     /// <p>The path to the section of the registration.</p>
     pub display_hints: ::std::option::Option<crate::types::RegistrationSectionDisplayHints>,
 }
-impl RegistrationSectionDefinition {
+impl  RegistrationSectionDefinition  {
     /// <p>The path to the section of the registration.</p>
-    pub fn section_path(&self) -> &str {
-        use std::ops::Deref;
-        self.section_path.deref()
+    pub fn section_path(&self) -> & str {
+        use std::ops::Deref; self.section_path.deref()
     }
     /// <p>The path to the section of the registration.</p>
-    pub fn display_hints(&self) -> ::std::option::Option<&crate::types::RegistrationSectionDisplayHints> {
+    pub fn display_hints(&self) -> ::std::option::Option<& crate::types::RegistrationSectionDisplayHints> {
         self.display_hints.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl RegistrationSectionDefinitionBuilder {
     }
     /// <p>The path to the section of the registration.</p>
     pub fn set_section_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.section_path = input;
-        self
+        self.section_path = input; self
     }
     /// <p>The path to the section of the registration.</p>
     pub fn get_section_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl RegistrationSectionDefinitionBuilder {
     }
     /// <p>The path to the section of the registration.</p>
     pub fn set_display_hints(mut self, input: ::std::option::Option<crate::types::RegistrationSectionDisplayHints>) -> Self {
-        self.display_hints = input;
-        self
+        self.display_hints = input; self
     }
     /// <p>The path to the section of the registration.</p>
     pub fn get_display_hints(&self) -> &::std::option::Option<crate::types::RegistrationSectionDisplayHints> {
@@ -69,14 +66,17 @@ impl RegistrationSectionDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`section_path`](crate::types::builders::RegistrationSectionDefinitionBuilder::section_path)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationSectionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationSectionDefinition {
-            section_path: self.section_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "section_path",
-                    "section_path was not specified but it is required when building RegistrationSectionDefinition",
-                )
-            })?,
-            display_hints: self.display_hints,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationSectionDefinition {
+                section_path: self.section_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("section_path", "section_path was not specified but it is required when building RegistrationSectionDefinition")
+                    )?
+                ,
+                display_hints: self.display_hints
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Result {
+pub struct Result  {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
@@ -15,18 +15,18 @@ pub struct Result {
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub is_partial: bool,
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub alternatives: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>,
+    pub alternatives: ::std::option::Option<::std::vec::Vec::<crate::types::Alternative>>,
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The language code that represents the language spoken in your audio stream.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub language_identification: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
+    pub language_identification: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageWithScore>>,
 }
-impl Result {
+impl  Result  {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    pub fn result_id(&self) -> ::std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<& str> {
         self.result_id.as_deref()
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
@@ -43,25 +43,27 @@ impl Result {
         self.is_partial
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternatives.is_none()`.
-    pub fn alternatives(&self) -> &[crate::types::Alternative] {
-        self.alternatives.as_deref().unwrap_or_default()
+    pub fn alternatives(&self) -> & [crate::types::Alternative] {
+        self.alternatives.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// <p>The language code that represents the language spoken in your audio stream.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_identification.is_none()`.
-    pub fn language_identification(&self) -> &[crate::types::LanguageWithScore] {
-        self.language_identification.as_deref().unwrap_or_default()
+    pub fn language_identification(&self) -> & [crate::types::LanguageWithScore] {
+        self.language_identification.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Result {
@@ -79,10 +81,10 @@ pub struct ResultBuilder {
     pub(crate) start_time: ::std::option::Option<f64>,
     pub(crate) end_time: ::std::option::Option<f64>,
     pub(crate) is_partial: ::std::option::Option<bool>,
-    pub(crate) alternatives: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>,
+    pub(crate) alternatives: ::std::option::Option<::std::vec::Vec::<crate::types::Alternative>>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
-    pub(crate) language_identification: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
+    pub(crate) language_identification: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageWithScore>>,
 }
 impl ResultBuilder {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
@@ -92,8 +94,7 @@ impl ResultBuilder {
     }
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +107,7 @@ impl ResultBuilder {
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<f64> {
@@ -120,8 +120,7 @@ impl ResultBuilder {
     }
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<f64> {
@@ -136,8 +135,7 @@ impl ResultBuilder {
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub fn set_is_partial(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_partial = input;
-        self
+        self.is_partial = input; self
     }
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
@@ -151,17 +149,16 @@ impl ResultBuilder {
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     pub fn alternatives(mut self, input: crate::types::Alternative) -> Self {
         let mut v = self.alternatives.unwrap_or_default();
-        v.push(input);
-        self.alternatives = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alternatives = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn set_alternatives(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>) -> Self {
-        self.alternatives = input;
-        self
+    pub fn set_alternatives(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Alternative>>) -> Self {
+        self.alternatives = input; self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn get_alternatives(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alternative>> {
+    pub fn get_alternatives(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Alternative>> {
         &self.alternatives
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
@@ -171,8 +168,7 @@ impl ResultBuilder {
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +181,7 @@ impl ResultBuilder {
     }
     /// <p>The language code that represents the language spoken in your audio stream.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code that represents the language spoken in your audio stream.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -200,32 +195,43 @@ impl ResultBuilder {
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
     pub fn language_identification(mut self, input: crate::types::LanguageWithScore) -> Self {
         let mut v = self.language_identification.unwrap_or_default();
-        v.push(input);
-        self.language_identification = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.language_identification = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn set_language_identification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>) -> Self {
-        self.language_identification = input;
-        self
+    pub fn set_language_identification(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageWithScore>>) -> Self {
+        self.language_identification = input; self
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn get_language_identification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>> {
+    pub fn get_language_identification(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LanguageWithScore>> {
         &self.language_identification
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {
         crate::types::Result {
-            result_id: self.result_id,
-            start_time: self.start_time.unwrap_or_default(),
-            end_time: self.end_time.unwrap_or_default(),
-            is_partial: self.is_partial.unwrap_or_default(),
-            alternatives: self.alternatives,
-            channel_id: self.channel_id,
-            language_code: self.language_code,
-            language_identification: self.language_identification,
+            result_id: self.result_id
+            ,
+            start_time: self.start_time
+                .unwrap_or_default()
+            ,
+            end_time: self.end_time
+                .unwrap_or_default()
+            ,
+            is_partial: self.is_partial
+                .unwrap_or_default()
+            ,
+            alternatives: self.alternatives
+            ,
+            channel_id: self.channel_id
+            ,
+            language_code: self.language_code
+            ,
+            language_identification: self.language_identification
+            ,
         }
     }
 }
+

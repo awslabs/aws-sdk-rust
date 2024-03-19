@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransitGatewayPrefixListReferencesOutput {
+pub struct GetTransitGatewayPrefixListReferencesOutput  {
     /// <p>Information about the prefix list references.</p>
-    pub transit_gateway_prefix_list_references: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPrefixListReference>>,
+    pub transit_gateway_prefix_list_references: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayPrefixListReference>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetTransitGatewayPrefixListReferencesOutput {
+impl  GetTransitGatewayPrefixListReferencesOutput  {
     /// <p>Information about the prefix list references.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_prefix_list_references.is_none()`.
-    pub fn transit_gateway_prefix_list_references(&self) -> &[crate::types::TransitGatewayPrefixListReference] {
-        self.transit_gateway_prefix_list_references.as_deref().unwrap_or_default()
+    pub fn transit_gateway_prefix_list_references(&self) -> & [crate::types::TransitGatewayPrefixListReference] {
+        self.transit_gateway_prefix_list_references.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTransitGatewayPrefixListReferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTransitGatewayPrefixListReferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPrefixListReferencesOutput`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput).
     pub fn builder() -> crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesOutputBuilder {
@@ -37,7 +38,7 @@ impl GetTransitGatewayPrefixListReferencesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPrefixListReferencesOutputBuilder {
-    pub(crate) transit_gateway_prefix_list_references: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPrefixListReference>>,
+    pub(crate) transit_gateway_prefix_list_references: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayPrefixListReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,22 +50,16 @@ impl GetTransitGatewayPrefixListReferencesOutputBuilder {
     /// <p>Information about the prefix list references.</p>
     pub fn transit_gateway_prefix_list_references(mut self, input: crate::types::TransitGatewayPrefixListReference) -> Self {
         let mut v = self.transit_gateway_prefix_list_references.unwrap_or_default();
-        v.push(input);
-        self.transit_gateway_prefix_list_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transit_gateway_prefix_list_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the prefix list references.</p>
-    pub fn set_transit_gateway_prefix_list_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPrefixListReference>>,
-    ) -> Self {
-        self.transit_gateway_prefix_list_references = input;
-        self
+    pub fn set_transit_gateway_prefix_list_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayPrefixListReference>>) -> Self {
+        self.transit_gateway_prefix_list_references = input; self
     }
     /// <p>Information about the prefix list references.</p>
-    pub fn get_transit_gateway_prefix_list_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPrefixListReference>> {
+    pub fn get_transit_gateway_prefix_list_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayPrefixListReference>> {
         &self.transit_gateway_prefix_list_references
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -74,28 +69,30 @@ impl GetTransitGatewayPrefixListReferencesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTransitGatewayPrefixListReferencesOutput`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput).
     pub fn build(self) -> crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput {
         crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput {
-            transit_gateway_prefix_list_references: self.transit_gateway_prefix_list_references,
-            next_token: self.next_token,
+            transit_gateway_prefix_list_references: self.transit_gateway_prefix_list_references
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

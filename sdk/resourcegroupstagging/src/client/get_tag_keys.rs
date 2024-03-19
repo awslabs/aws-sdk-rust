@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTagKeys`](crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pagination_token(impl Into<String>)`](crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder::pagination_token) / [`set_pagination_token(Option<String>)`](crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder::set_pagination_token):<br>required: **false**<br><p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p><br>
-    /// - On success, responds with [`GetTagKeysOutput`](crate::operation::get_tag_keys::GetTagKeysOutput) with field(s):
+                            /// - On success, responds with [`GetTagKeysOutput`](crate::operation::get_tag_keys::GetTagKeysOutput) with field(s):
     ///   - [`pagination_token(Option<String>)`](crate::operation::get_tag_keys::GetTagKeysOutput::pagination_token): <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     ///   - [`tag_keys(Option<Vec::<String>>)`](crate::operation::get_tag_keys::GetTagKeysOutput::tag_keys): <p>A list of all tag keys in the Amazon Web Services account.</p>
-    /// - On failure, responds with [`SdkError<GetTagKeysError>`](crate::operation::get_tag_keys::GetTagKeysError)
+                            /// - On failure, responds with [`SdkError<GetTagKeysError>`](crate::operation::get_tag_keys::GetTagKeysError)
     pub fn get_tag_keys(&self) -> crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder {
-        crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_tag_keys::builders::GetTagKeysFluentBuilder::new(self.handle.clone())
+                            }
 }
+

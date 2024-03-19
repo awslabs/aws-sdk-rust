@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCodeReviewsInput {
+pub struct ListCodeReviewsInput  {
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
+    pub provider_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>,
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
@@ -17,9 +17,9 @@ pub struct ListCodeReviewsInput {
     /// <li>
     /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::JobState>>,
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The type of code reviews to list in the response.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
@@ -27,12 +27,13 @@ pub struct ListCodeReviewsInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListCodeReviewsInput {
+impl  ListCodeReviewsInput  {
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_types.is_none()`.
-    pub fn provider_types(&self) -> &[crate::types::ProviderType] {
-        self.provider_types.as_deref().unwrap_or_default()
+    pub fn provider_types(&self) -> & [crate::types::ProviderType] {
+        self.provider_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
@@ -46,19 +47,21 @@ impl ListCodeReviewsInput {
     /// <li>
     /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::JobState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::JobState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
-    pub fn repository_names(&self) -> &[::std::string::String] {
-        self.repository_names.as_deref().unwrap_or_default()
+    pub fn repository_names(&self) -> & [::std::string::String] {
+        self.repository_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of code reviews to list in the response.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
@@ -66,7 +69,7 @@ impl ListCodeReviewsInput {
         self.max_results
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -81,9 +84,9 @@ impl ListCodeReviewsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodeReviewsInputBuilder {
-    pub(crate) provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
-    pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) provider_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::JobState>>,
+    pub(crate) repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,17 +99,16 @@ impl ListCodeReviewsInputBuilder {
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
     pub fn provider_types(mut self, input: crate::types::ProviderType) -> Self {
         let mut v = self.provider_types.unwrap_or_default();
-        v.push(input);
-        self.provider_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provider_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
-        self.provider_types = input;
-        self
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>) -> Self {
+        self.provider_types = input; self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>> {
         &self.provider_types
     }
     /// Appends an item to `states`.
@@ -127,9 +129,9 @@ impl ListCodeReviewsInputBuilder {
     /// </ul>
     pub fn states(mut self, input: crate::types::JobState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
@@ -143,9 +145,8 @@ impl ListCodeReviewsInputBuilder {
     /// <li>
     /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobState>>) -> Self {
+        self.states = input; self
     }
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
@@ -159,7 +160,7 @@ impl ListCodeReviewsInputBuilder {
     /// <li>
     /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobState>> {
         &self.states
     }
     /// Appends an item to `repository_names`.
@@ -169,17 +170,16 @@ impl ListCodeReviewsInputBuilder {
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
-        v.push(input.into());
-        self.repository_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.repository_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.repository_names = input;
-        self
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.repository_names = input; self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.repository_names
     }
     /// <p>The type of code reviews to list in the response.</p>
@@ -190,8 +190,7 @@ impl ListCodeReviewsInputBuilder {
     }
     /// <p>The type of code reviews to list in the response.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of code reviews to list in the response.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -204,8 +203,7 @@ impl ListCodeReviewsInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -218,24 +216,30 @@ impl ListCodeReviewsInputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCodeReviewsInput`](crate::operation::list_code_reviews::ListCodeReviewsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_code_reviews::ListCodeReviewsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_code_reviews::ListCodeReviewsInput {
-            provider_types: self.provider_types,
-            states: self.states,
-            repository_names: self.repository_names,
-            r#type: self.r#type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_code_reviews::ListCodeReviewsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_code_reviews::ListCodeReviewsInput {
+                provider_types: self.provider_types
+                ,
+                states: self.states
+                ,
+                repository_names: self.repository_names
+                ,
+                r#type: self.r#type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

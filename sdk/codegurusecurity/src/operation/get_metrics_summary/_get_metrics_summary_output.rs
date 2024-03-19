@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetricsSummaryOutput {
+pub struct GetMetricsSummaryOutput  {
     /// <p>The summary metrics from the specified date.</p>
     pub metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
     _request_id: Option<String>,
 }
-impl GetMetricsSummaryOutput {
+impl  GetMetricsSummaryOutput  {
     /// <p>The summary metrics from the specified date.</p>
-    pub fn metrics_summary(&self) -> ::std::option::Option<&crate::types::MetricsSummary> {
+    pub fn metrics_summary(&self) -> ::std::option::Option<& crate::types::MetricsSummary> {
         self.metrics_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetricsSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMetricsSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricsSummaryOutput`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput).
     pub fn builder() -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryOutputBuilder {
@@ -40,27 +40,28 @@ impl GetMetricsSummaryOutputBuilder {
     }
     /// <p>The summary metrics from the specified date.</p>
     pub fn set_metrics_summary(mut self, input: ::std::option::Option<crate::types::MetricsSummary>) -> Self {
-        self.metrics_summary = input;
-        self
+        self.metrics_summary = input; self
     }
     /// <p>The summary metrics from the specified date.</p>
     pub fn get_metrics_summary(&self) -> &::std::option::Option<crate::types::MetricsSummary> {
         &self.metrics_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMetricsSummaryOutput`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput).
     pub fn build(self) -> crate::operation::get_metrics_summary::GetMetricsSummaryOutput {
         crate::operation::get_metrics_summary::GetMetricsSummaryOutput {
-            metrics_summary: self.metrics_summary,
+            metrics_summary: self.metrics_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

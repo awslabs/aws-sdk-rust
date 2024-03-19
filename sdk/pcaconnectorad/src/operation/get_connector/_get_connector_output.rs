@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectorOutput {
+pub struct GetConnectorOutput  {
     /// <p>A structure that contains information about your connector.</p>
     pub connector: ::std::option::Option<crate::types::Connector>,
     _request_id: Option<String>,
 }
-impl GetConnectorOutput {
+impl  GetConnectorOutput  {
     /// <p>A structure that contains information about your connector.</p>
-    pub fn connector(&self) -> ::std::option::Option<&crate::types::Connector> {
+    pub fn connector(&self) -> ::std::option::Option<& crate::types::Connector> {
         self.connector.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConnectorOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectorOutput`](crate::operation::get_connector::GetConnectorOutput).
     pub fn builder() -> crate::operation::get_connector::builders::GetConnectorOutputBuilder {
@@ -40,27 +40,28 @@ impl GetConnectorOutputBuilder {
     }
     /// <p>A structure that contains information about your connector.</p>
     pub fn set_connector(mut self, input: ::std::option::Option<crate::types::Connector>) -> Self {
-        self.connector = input;
-        self
+        self.connector = input; self
     }
     /// <p>A structure that contains information about your connector.</p>
     pub fn get_connector(&self) -> &::std::option::Option<crate::types::Connector> {
         &self.connector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConnectorOutput`](crate::operation::get_connector::GetConnectorOutput).
     pub fn build(self) -> crate::operation::get_connector::GetConnectorOutput {
         crate::operation::get_connector::GetConnectorOutput {
-            connector: self.connector,
+            connector: self.connector
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

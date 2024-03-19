@@ -3,7 +3,7 @@
 /// <p>Information about the user who made a specified commit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserInfo {
+pub struct UserInfo  {
     /// <p>The name of the user who made the specified commit.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The email address associated with the user who made the commit, if any.</p>
@@ -11,17 +11,17 @@ pub struct UserInfo {
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
     pub date: ::std::option::Option<::std::string::String>,
 }
-impl UserInfo {
+impl  UserInfo  {
     /// <p>The name of the user who made the specified commit.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The email address associated with the user who made the commit, if any.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
-    pub fn date(&self) -> ::std::option::Option<&str> {
+    pub fn date(&self) -> ::std::option::Option<& str> {
         self.date.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UserInfoBuilder {
     }
     /// <p>The name of the user who made the specified commit.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the user who made the specified commit.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UserInfoBuilder {
     }
     /// <p>The email address associated with the user who made the commit, if any.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address associated with the user who made the commit, if any.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UserInfoBuilder {
     }
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
     pub fn get_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UserInfoBuilder {
     /// Consumes the builder and constructs a [`UserInfo`](crate::types::UserInfo).
     pub fn build(self) -> crate::types::UserInfo {
         crate::types::UserInfo {
-            name: self.name,
-            email: self.email,
-            date: self.date,
+            name: self.name
+            ,
+            email: self.email
+            ,
+            date: self.date
+            ,
         }
     }
 }
+

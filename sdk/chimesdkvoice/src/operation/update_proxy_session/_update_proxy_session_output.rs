@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProxySessionOutput {
+pub struct UpdateProxySessionOutput  {
     /// <p>The updated proxy session details.</p>
     pub proxy_session: ::std::option::Option<crate::types::ProxySession>,
     _request_id: Option<String>,
 }
-impl UpdateProxySessionOutput {
+impl  UpdateProxySessionOutput  {
     /// <p>The updated proxy session details.</p>
-    pub fn proxy_session(&self) -> ::std::option::Option<&crate::types::ProxySession> {
+    pub fn proxy_session(&self) -> ::std::option::Option<& crate::types::ProxySession> {
         self.proxy_session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateProxySessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateProxySessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProxySessionOutput`](crate::operation::update_proxy_session::UpdateProxySessionOutput).
     pub fn builder() -> crate::operation::update_proxy_session::builders::UpdateProxySessionOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateProxySessionOutputBuilder {
     }
     /// <p>The updated proxy session details.</p>
     pub fn set_proxy_session(mut self, input: ::std::option::Option<crate::types::ProxySession>) -> Self {
-        self.proxy_session = input;
-        self
+        self.proxy_session = input; self
     }
     /// <p>The updated proxy session details.</p>
     pub fn get_proxy_session(&self) -> &::std::option::Option<crate::types::ProxySession> {
         &self.proxy_session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateProxySessionOutput`](crate::operation::update_proxy_session::UpdateProxySessionOutput).
     pub fn build(self) -> crate::operation::update_proxy_session::UpdateProxySessionOutput {
         crate::operation::update_proxy_session::UpdateProxySessionOutput {
-            proxy_session: self.proxy_session,
+            proxy_session: self.proxy_session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

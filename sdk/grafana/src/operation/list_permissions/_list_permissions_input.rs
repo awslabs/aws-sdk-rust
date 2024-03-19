@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPermissionsInput {
+pub struct ListPermissionsInput  {
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
@@ -16,29 +16,29 @@ pub struct ListPermissionsInput {
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
-impl ListPermissionsInput {
+impl  ListPermissionsInput  {
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl ListPermissionsInputBuilder {
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +81,7 @@ impl ListPermissionsInputBuilder {
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl ListPermissionsInputBuilder {
     }
     /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
@@ -110,8 +107,7 @@ impl ListPermissionsInputBuilder {
     }
     /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +120,7 @@ impl ListPermissionsInputBuilder {
     }
     /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,24 +134,30 @@ impl ListPermissionsInputBuilder {
     }
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            user_type: self.user_type,
-            user_id: self.user_id,
-            group_id: self.group_id,
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_permissions::ListPermissionsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                user_type: self.user_type
+                ,
+                user_id: self.user_id
+                ,
+                group_id: self.group_id
+                ,
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

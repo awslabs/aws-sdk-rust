@@ -3,7 +3,7 @@
 /// <p>Identifies where the sensitive data begins and ends.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Range {
+pub struct Range  {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub start: ::std::option::Option<i64>,
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
@@ -11,7 +11,7 @@ pub struct Range {
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
     pub start_column: ::std::option::Option<i64>,
 }
-impl Range {
+impl  Range  {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn start(&self) -> ::std::option::Option<i64> {
         self.start
@@ -48,8 +48,7 @@ impl RangeBuilder {
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn get_start(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl RangeBuilder {
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn set_end(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn get_end(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl RangeBuilder {
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
     pub fn set_start_column(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_column = input;
-        self
+        self.start_column = input; self
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
     pub fn get_start_column(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl RangeBuilder {
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            start: self.start,
-            end: self.end,
-            start_column: self.start_column,
+            start: self.start
+            ,
+            end: self.end
+            ,
+            start_column: self.start_column
+            ,
         }
     }
 }
+

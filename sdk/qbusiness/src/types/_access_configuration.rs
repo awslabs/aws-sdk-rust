@@ -3,20 +3,19 @@
 /// <p>Used to configure access permissions for a document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessConfiguration {
+pub struct AccessConfiguration  {
     /// <p>A list of <code>AccessControlList</code> objects.</p>
-    pub access_controls: ::std::vec::Vec<crate::types::AccessControl>,
+    pub access_controls: ::std::vec::Vec::<crate::types::AccessControl>,
     /// <p>Describes the member relation within the <code>AccessControlList</code> object.</p>
     pub member_relation: ::std::option::Option<crate::types::MemberRelation>,
 }
-impl AccessConfiguration {
+impl  AccessConfiguration  {
     /// <p>A list of <code>AccessControlList</code> objects.</p>
-    pub fn access_controls(&self) -> &[crate::types::AccessControl] {
-        use std::ops::Deref;
-        self.access_controls.deref()
+    pub fn access_controls(&self) -> & [crate::types::AccessControl] {
+        use std::ops::Deref; self.access_controls.deref()
     }
     /// <p>Describes the member relation within the <code>AccessControlList</code> object.</p>
-    pub fn member_relation(&self) -> ::std::option::Option<&crate::types::MemberRelation> {
+    pub fn member_relation(&self) -> ::std::option::Option<& crate::types::MemberRelation> {
         self.member_relation.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl AccessConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessConfigurationBuilder {
-    pub(crate) access_controls: ::std::option::Option<::std::vec::Vec<crate::types::AccessControl>>,
+    pub(crate) access_controls: ::std::option::Option<::std::vec::Vec::<crate::types::AccessControl>>,
     pub(crate) member_relation: ::std::option::Option<crate::types::MemberRelation>,
 }
 impl AccessConfigurationBuilder {
@@ -42,17 +41,16 @@ impl AccessConfigurationBuilder {
     /// <p>A list of <code>AccessControlList</code> objects.</p>
     pub fn access_controls(mut self, input: crate::types::AccessControl) -> Self {
         let mut v = self.access_controls.unwrap_or_default();
-        v.push(input);
-        self.access_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>AccessControlList</code> objects.</p>
-    pub fn set_access_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControl>>) -> Self {
-        self.access_controls = input;
-        self
+    pub fn set_access_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessControl>>) -> Self {
+        self.access_controls = input; self
     }
     /// <p>A list of <code>AccessControlList</code> objects.</p>
-    pub fn get_access_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControl>> {
+    pub fn get_access_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessControl>> {
         &self.access_controls
     }
     /// <p>Describes the member relation within the <code>AccessControlList</code> object.</p>
@@ -62,8 +60,7 @@ impl AccessConfigurationBuilder {
     }
     /// <p>Describes the member relation within the <code>AccessControlList</code> object.</p>
     pub fn set_member_relation(mut self, input: ::std::option::Option<crate::types::MemberRelation>) -> Self {
-        self.member_relation = input;
-        self
+        self.member_relation = input; self
     }
     /// <p>Describes the member relation within the <code>AccessControlList</code> object.</p>
     pub fn get_member_relation(&self) -> &::std::option::Option<crate::types::MemberRelation> {
@@ -73,14 +70,17 @@ impl AccessConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access_controls`](crate::types::builders::AccessConfigurationBuilder::access_controls)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessConfiguration {
-            access_controls: self.access_controls.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_controls",
-                    "access_controls was not specified but it is required when building AccessConfiguration",
-                )
-            })?,
-            member_relation: self.member_relation,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessConfiguration {
+                access_controls: self.access_controls
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_controls", "access_controls was not specified but it is required when building AccessConfiguration")
+                    )?
+                ,
+                member_relation: self.member_relation
+                ,
+            }
+        )
     }
 }
+

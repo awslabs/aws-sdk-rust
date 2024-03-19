@@ -3,7 +3,7 @@
 /// <p>Information about the send notification action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendNotificationActionDefinition {
+pub struct SendNotificationActionDefinition  {
     /// <p>Notification delivery method.</p>
     pub delivery_method: crate::types::NotificationDeliveryType,
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
@@ -15,26 +15,25 @@ pub struct SendNotificationActionDefinition {
     /// <p>Notification recipient.</p>
     pub recipient: ::std::option::Option<crate::types::NotificationRecipientType>,
 }
-impl SendNotificationActionDefinition {
+impl  SendNotificationActionDefinition  {
     /// <p>Notification delivery method.</p>
-    pub fn delivery_method(&self) -> &crate::types::NotificationDeliveryType {
+    pub fn delivery_method(&self) -> & crate::types::NotificationDeliveryType {
         &self.delivery_method
     }
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    pub fn content(&self) -> &str {
-        use std::ops::Deref;
-        self.content.deref()
+    pub fn content(&self) -> & str {
+        use std::ops::Deref; self.content.deref()
     }
     /// <p>Content type format.</p>
-    pub fn content_type(&self) -> &crate::types::NotificationContentType {
+    pub fn content_type(&self) -> & crate::types::NotificationContentType {
         &self.content_type
     }
     /// <p>Notification recipient.</p>
-    pub fn recipient(&self) -> ::std::option::Option<&crate::types::NotificationRecipientType> {
+    pub fn recipient(&self) -> ::std::option::Option<& crate::types::NotificationRecipientType> {
         self.recipient.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl SendNotificationActionDefinitionBuilder {
     }
     /// <p>Notification delivery method.</p>
     pub fn set_delivery_method(mut self, input: ::std::option::Option<crate::types::NotificationDeliveryType>) -> Self {
-        self.delivery_method = input;
-        self
+        self.delivery_method = input; self
     }
     /// <p>Notification delivery method.</p>
     pub fn get_delivery_method(&self) -> &::std::option::Option<crate::types::NotificationDeliveryType> {
@@ -78,8 +76,7 @@ impl SendNotificationActionDefinitionBuilder {
     }
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl SendNotificationActionDefinitionBuilder {
     }
     /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl SendNotificationActionDefinitionBuilder {
     }
     /// <p>Content type format.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::NotificationContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Content type format.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::NotificationContentType> {
@@ -123,8 +118,7 @@ impl SendNotificationActionDefinitionBuilder {
     }
     /// <p>Notification recipient.</p>
     pub fn set_recipient(mut self, input: ::std::option::Option<crate::types::NotificationRecipientType>) -> Self {
-        self.recipient = input;
-        self
+        self.recipient = input; self
     }
     /// <p>Notification recipient.</p>
     pub fn get_recipient(&self) -> &::std::option::Option<crate::types::NotificationRecipientType> {
@@ -136,27 +130,29 @@ impl SendNotificationActionDefinitionBuilder {
     /// - [`content`](crate::types::builders::SendNotificationActionDefinitionBuilder::content)
     /// - [`content_type`](crate::types::builders::SendNotificationActionDefinitionBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::SendNotificationActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SendNotificationActionDefinition {
-            delivery_method: self.delivery_method.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "delivery_method",
-                    "delivery_method was not specified but it is required when building SendNotificationActionDefinition",
-                )
-            })?,
-            subject: self.subject,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building SendNotificationActionDefinition",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building SendNotificationActionDefinition",
-                )
-            })?,
-            recipient: self.recipient,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SendNotificationActionDefinition {
+                delivery_method: self.delivery_method
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("delivery_method", "delivery_method was not specified but it is required when building SendNotificationActionDefinition")
+                    )?
+                ,
+                subject: self.subject
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building SendNotificationActionDefinition")
+                    )?
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building SendNotificationActionDefinition")
+                    )?
+                ,
+                recipient: self.recipient
+                ,
+            }
+        )
     }
 }
+

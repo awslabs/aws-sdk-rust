@@ -30,11 +30,7 @@ impl Property {
     /// Tries to convert the enum instance into [`EoCloudCover`](crate::types::Property::EoCloudCover), extracting the inner [`EoCloudCoverInput`](crate::types::EoCloudCoverInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_eo_cloud_cover(&self) -> ::std::result::Result<&crate::types::EoCloudCoverInput, &Self> {
-        if let Property::EoCloudCover(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Property::EoCloudCover(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EoCloudCover`](crate::types::Property::EoCloudCover).
     pub fn is_eo_cloud_cover(&self) -> bool {
@@ -43,11 +39,7 @@ impl Property {
     /// Tries to convert the enum instance into [`LandsatCloudCoverLand`](crate::types::Property::LandsatCloudCoverLand), extracting the inner [`LandsatCloudCoverLandInput`](crate::types::LandsatCloudCoverLandInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_landsat_cloud_cover_land(&self) -> ::std::result::Result<&crate::types::LandsatCloudCoverLandInput, &Self> {
-        if let Property::LandsatCloudCoverLand(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Property::LandsatCloudCoverLand(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`LandsatCloudCoverLand`](crate::types::Property::LandsatCloudCoverLand).
     pub fn is_landsat_cloud_cover_land(&self) -> bool {
@@ -56,11 +48,7 @@ impl Property {
     /// Tries to convert the enum instance into [`Platform`](crate::types::Property::Platform), extracting the inner [`PlatformInput`](crate::types::PlatformInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_platform(&self) -> ::std::result::Result<&crate::types::PlatformInput, &Self> {
-        if let Property::Platform(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Property::Platform(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Platform`](crate::types::Property::Platform).
     pub fn is_platform(&self) -> bool {
@@ -69,11 +57,7 @@ impl Property {
     /// Tries to convert the enum instance into [`ViewOffNadir`](crate::types::Property::ViewOffNadir), extracting the inner [`ViewOffNadirInput`](crate::types::ViewOffNadirInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_view_off_nadir(&self) -> ::std::result::Result<&crate::types::ViewOffNadirInput, &Self> {
-        if let Property::ViewOffNadir(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Property::ViewOffNadir(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ViewOffNadir`](crate::types::Property::ViewOffNadir).
     pub fn is_view_off_nadir(&self) -> bool {
@@ -82,11 +66,7 @@ impl Property {
     /// Tries to convert the enum instance into [`ViewSunAzimuth`](crate::types::Property::ViewSunAzimuth), extracting the inner [`ViewSunAzimuthInput`](crate::types::ViewSunAzimuthInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_view_sun_azimuth(&self) -> ::std::result::Result<&crate::types::ViewSunAzimuthInput, &Self> {
-        if let Property::ViewSunAzimuth(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Property::ViewSunAzimuth(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ViewSunAzimuth`](crate::types::Property::ViewSunAzimuth).
     pub fn is_view_sun_azimuth(&self) -> bool {
@@ -95,11 +75,7 @@ impl Property {
     /// Tries to convert the enum instance into [`ViewSunElevation`](crate::types::Property::ViewSunElevation), extracting the inner [`ViewSunElevationInput`](crate::types::ViewSunElevationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_view_sun_elevation(&self) -> ::std::result::Result<&crate::types::ViewSunElevationInput, &Self> {
-        if let Property::ViewSunElevation(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Property::ViewSunElevation(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ViewSunElevation`](crate::types::Property::ViewSunElevation).
     pub fn is_view_sun_elevation(&self) -> bool {
@@ -110,3 +86,4 @@ impl Property {
         matches!(self, Self::Unknown)
     }
 }
+

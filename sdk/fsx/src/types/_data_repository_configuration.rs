@@ -4,7 +4,7 @@
 /// <p>This data type is not supported on file systems with a data repository association. For file systems with a data repository association, see .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataRepositoryConfiguration {
+pub struct DataRepositoryConfiguration  {
     /// <p>Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository. The lifecycle can have the following values:</p>
     /// <ul>
     /// <li>
@@ -41,7 +41,7 @@ pub struct DataRepositoryConfiguration {
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub failure_details: ::std::option::Option<crate::types::DataRepositoryFailureDetails>,
 }
-impl DataRepositoryConfiguration {
+impl  DataRepositoryConfiguration  {
     /// <p>Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository. The lifecycle can have the following values:</p>
     /// <ul>
     /// <li>
@@ -55,15 +55,15 @@ impl DataRepositoryConfiguration {
     /// <li>
     /// <p><code>FAILED</code> - The data repository is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::DataRepositoryLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::DataRepositoryLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>
-    pub fn import_path(&self) -> ::std::option::Option<&str> {
+    pub fn import_path(&self) -> ::std::option::Option<& str> {
         self.import_path.as_deref()
     }
     /// <p>The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file system files in S3.</p>
-    pub fn export_path(&self) -> ::std::option::Option<&str> {
+    pub fn export_path(&self) -> ::std::option::Option<& str> {
         self.export_path.as_deref()
     }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
@@ -82,11 +82,11 @@ impl DataRepositoryConfiguration {
     /// <li>
     /// <p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
-    pub fn auto_import_policy(&self) -> ::std::option::Option<&crate::types::AutoImportPolicyType> {
+    pub fn auto_import_policy(&self) -> ::std::option::Option<& crate::types::AutoImportPolicyType> {
         self.auto_import_policy.as_ref()
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
-    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::DataRepositoryFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<& crate::types::DataRepositoryFailureDetails> {
         self.failure_details.as_ref()
     }
 }
@@ -140,8 +140,7 @@ impl DataRepositoryConfigurationBuilder {
     /// <p><code>FAILED</code> - The data repository is in a terminal state that cannot be recovered.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository. The lifecycle can have the following values:</p>
     /// <ul>
@@ -166,8 +165,7 @@ impl DataRepositoryConfigurationBuilder {
     }
     /// <p>The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>
     pub fn set_import_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_path = input;
-        self
+        self.import_path = input; self
     }
     /// <p>The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>
     pub fn get_import_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +178,7 @@ impl DataRepositoryConfigurationBuilder {
     }
     /// <p>The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file system files in S3.</p>
     pub fn set_export_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_path = input;
-        self
+        self.export_path = input; self
     }
     /// <p>The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file system files in S3.</p>
     pub fn get_export_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +193,7 @@ impl DataRepositoryConfigurationBuilder {
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn set_imported_file_chunk_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.imported_file_chunk_size = input;
-        self
+        self.imported_file_chunk_size = input; self
     }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
@@ -231,8 +227,7 @@ impl DataRepositoryConfigurationBuilder {
     /// <p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     pub fn set_auto_import_policy(mut self, input: ::std::option::Option<crate::types::AutoImportPolicyType>) -> Self {
-        self.auto_import_policy = input;
-        self
+        self.auto_import_policy = input; self
     }
     /// <p>Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy configures how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
@@ -255,8 +250,7 @@ impl DataRepositoryConfigurationBuilder {
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::DataRepositoryFailureDetails>) -> Self {
-        self.failure_details = input;
-        self
+        self.failure_details = input; self
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::DataRepositoryFailureDetails> {
@@ -265,12 +259,19 @@ impl DataRepositoryConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataRepositoryConfiguration`](crate::types::DataRepositoryConfiguration).
     pub fn build(self) -> crate::types::DataRepositoryConfiguration {
         crate::types::DataRepositoryConfiguration {
-            lifecycle: self.lifecycle,
-            import_path: self.import_path,
-            export_path: self.export_path,
-            imported_file_chunk_size: self.imported_file_chunk_size,
-            auto_import_policy: self.auto_import_policy,
-            failure_details: self.failure_details,
+            lifecycle: self.lifecycle
+            ,
+            import_path: self.import_path
+            ,
+            export_path: self.export_path
+            ,
+            imported_file_chunk_size: self.imported_file_chunk_size
+            ,
+            auto_import_policy: self.auto_import_policy
+            ,
+            failure_details: self.failure_details
+            ,
         }
     }
 }
+

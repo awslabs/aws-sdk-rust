@@ -3,28 +3,29 @@
 /// <p>Amazon Security Lake can collect logs and events from natively-supported Amazon Web Services services and custom sources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogSource {
+pub struct LogSource  {
     /// <p>Specify the account from which you want to collect logs.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Regions from which you want to collect logs.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Specify the sources from which you want to collect logs.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>,
 }
-impl LogSource {
+impl  LogSource  {
     /// <p>Specify the account from which you want to collect logs.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>Specify the Regions from which you want to collect logs.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Specify the sources from which you want to collect logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::LogSourceResource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LogSource {
@@ -40,7 +41,7 @@ impl LogSource {
 pub struct LogSourceBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>,
 }
 impl LogSourceBuilder {
     /// <p>Specify the account from which you want to collect logs.</p>
@@ -50,8 +51,7 @@ impl LogSourceBuilder {
     }
     /// <p>Specify the account from which you want to collect logs.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>Specify the account from which you want to collect logs.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl LogSourceBuilder {
     }
     /// <p>Specify the Regions from which you want to collect logs.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Specify the Regions from which you want to collect logs.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl LogSourceBuilder {
     /// <p>Specify the sources from which you want to collect logs.</p>
     pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the sources from which you want to collect logs.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>Specify the sources from which you want to collect logs.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`LogSource`](crate::types::LogSource).
     pub fn build(self) -> crate::types::LogSource {
         crate::types::LogSource {
-            account: self.account,
-            region: self.region,
-            sources: self.sources,
+            account: self.account
+            ,
+            region: self.region
+            ,
+            sources: self.sources
+            ,
         }
     }
 }
+

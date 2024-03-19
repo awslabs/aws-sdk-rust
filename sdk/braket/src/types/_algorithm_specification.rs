@@ -3,19 +3,19 @@
 /// <p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmSpecification {
+pub struct AlgorithmSpecification  {
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
     pub script_mode_config: ::std::option::Option<crate::types::ScriptModeConfig>,
     /// <p>The container image used to create an Amazon Braket job.</p>
     pub container_image: ::std::option::Option<crate::types::ContainerImage>,
 }
-impl AlgorithmSpecification {
+impl  AlgorithmSpecification  {
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
-    pub fn script_mode_config(&self) -> ::std::option::Option<&crate::types::ScriptModeConfig> {
+    pub fn script_mode_config(&self) -> ::std::option::Option<& crate::types::ScriptModeConfig> {
         self.script_mode_config.as_ref()
     }
     /// <p>The container image used to create an Amazon Braket job.</p>
-    pub fn container_image(&self) -> ::std::option::Option<&crate::types::ContainerImage> {
+    pub fn container_image(&self) -> ::std::option::Option<& crate::types::ContainerImage> {
         self.container_image.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AlgorithmSpecificationBuilder {
     }
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
     pub fn set_script_mode_config(mut self, input: ::std::option::Option<crate::types::ScriptModeConfig>) -> Self {
-        self.script_mode_config = input;
-        self
+        self.script_mode_config = input; self
     }
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
     pub fn get_script_mode_config(&self) -> &::std::option::Option<crate::types::ScriptModeConfig> {
@@ -55,8 +54,7 @@ impl AlgorithmSpecificationBuilder {
     }
     /// <p>The container image used to create an Amazon Braket job.</p>
     pub fn set_container_image(mut self, input: ::std::option::Option<crate::types::ContainerImage>) -> Self {
-        self.container_image = input;
-        self
+        self.container_image = input; self
     }
     /// <p>The container image used to create an Amazon Braket job.</p>
     pub fn get_container_image(&self) -> &::std::option::Option<crate::types::ContainerImage> {
@@ -65,8 +63,11 @@ impl AlgorithmSpecificationBuilder {
     /// Consumes the builder and constructs a [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
     pub fn build(self) -> crate::types::AlgorithmSpecification {
         crate::types::AlgorithmSpecification {
-            script_mode_config: self.script_mode_config,
-            container_image: self.container_image,
+            script_mode_config: self.script_mode_config
+            ,
+            container_image: self.container_image
+            ,
         }
     }
 }
+

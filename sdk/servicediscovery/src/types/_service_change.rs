@@ -3,7 +3,7 @@
 /// <p>A complex type that contains changes to an existing service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceChange {
+pub struct ServiceChange  {
     /// <p>A description for the service.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
@@ -11,17 +11,17 @@ pub struct ServiceChange {
     /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
-impl ServiceChange {
+impl  ServiceChange  {
     /// <p>A description for the service.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_config(&self) -> ::std::option::Option<&crate::types::DnsConfigChange> {
+    pub fn dns_config(&self) -> ::std::option::Option<& crate::types::DnsConfigChange> {
         self.dns_config.as_ref()
     }
     /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
+    pub fn health_check_config(&self) -> ::std::option::Option<& crate::types::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ServiceChangeBuilder {
     }
     /// <p>A description for the service.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the service.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ServiceChangeBuilder {
     }
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub fn set_dns_config(mut self, input: ::std::option::Option<crate::types::DnsConfigChange>) -> Self {
-        self.dns_config = input;
-        self
+        self.dns_config = input; self
     }
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
     pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfigChange> {
@@ -76,8 +74,7 @@ impl ServiceChangeBuilder {
     }
     /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
-        self.health_check_config = input;
-        self
+        self.health_check_config = input; self
     }
     /// <p><i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
@@ -86,9 +83,13 @@ impl ServiceChangeBuilder {
     /// Consumes the builder and constructs a [`ServiceChange`](crate::types::ServiceChange).
     pub fn build(self) -> crate::types::ServiceChange {
         crate::types::ServiceChange {
-            description: self.description,
-            dns_config: self.dns_config,
-            health_check_config: self.health_check_config,
+            description: self.description
+            ,
+            dns_config: self.dns_config
+            ,
+            health_check_config: self.health_check_config
+            ,
         }
     }
 }
+

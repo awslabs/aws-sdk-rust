@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTestSetDiscrepancyReportInput {
+pub struct CreateTestSetDiscrepancyReportInput  {
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set discrepancy report.</p>
     pub target: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
 }
-impl CreateTestSetDiscrepancyReportInput {
+impl  CreateTestSetDiscrepancyReportInput  {
     /// <p>The test set Id for the test set discrepancy report.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The target bot for the test set discrepancy report.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportResourceTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::TestSetDiscrepancyReportResourceTarget> {
         self.target.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateTestSetDiscrepancyReportInputBuilder {
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl CreateTestSetDiscrepancyReportInputBuilder {
     }
     /// <p>The target bot for the test set discrepancy report.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target bot for the test set discrepancy report.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
         &self.target
     }
     /// Consumes the builder and constructs a [`CreateTestSetDiscrepancyReportInput`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportInput {
-                test_set_id: self.test_set_id,
-                target: self.target,
-            },
+                test_set_id: self.test_set_id
+                ,
+                target: self.target
+                ,
+            }
         )
     }
 }
+

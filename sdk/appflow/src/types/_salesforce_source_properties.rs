@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when Salesforce is being used as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceSourceProperties {
+pub struct SalesforceSourceProperties  {
     /// <p>The object specified in the Salesforce flow source.</p>
     pub object: ::std::string::String,
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
@@ -36,11 +36,10 @@ pub struct SalesforceSourceProperties {
     /// </dl>
     pub data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
-impl SalesforceSourceProperties {
+impl  SalesforceSourceProperties  {
     /// <p>The object specified in the Salesforce flow source.</p>
-    pub fn object(&self) -> &str {
-        use std::ops::Deref;
-        self.object.deref()
+    pub fn object(&self) -> & str {
+        use std::ops::Deref; self.object.deref()
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn enable_dynamic_field_update(&self) -> bool {
@@ -74,7 +73,7 @@ impl SalesforceSourceProperties {
     /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.</p>
     /// </dd>
     /// </dl>
-    pub fn data_transfer_api(&self) -> ::std::option::Option<&crate::types::SalesforceDataTransferApi> {
+    pub fn data_transfer_api(&self) -> ::std::option::Option<& crate::types::SalesforceDataTransferApi> {
         self.data_transfer_api.as_ref()
     }
 }
@@ -103,8 +102,7 @@ impl SalesforceSourcePropertiesBuilder {
     }
     /// <p>The object specified in the Salesforce flow source.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>The object specified in the Salesforce flow source.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl SalesforceSourcePropertiesBuilder {
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn set_enable_dynamic_field_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_dynamic_field_update = input;
-        self
+        self.enable_dynamic_field_update = input; self
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn get_enable_dynamic_field_update(&self) -> &::std::option::Option<bool> {
@@ -131,8 +128,7 @@ impl SalesforceSourcePropertiesBuilder {
     }
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub fn set_include_deleted_records(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_deleted_records = input;
-        self
+        self.include_deleted_records = input; self
     }
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub fn get_include_deleted_records(&self) -> &::std::option::Option<bool> {
@@ -191,8 +187,7 @@ impl SalesforceSourcePropertiesBuilder {
     /// </dd>
     /// </dl>
     pub fn set_data_transfer_api(mut self, input: ::std::option::Option<crate::types::SalesforceDataTransferApi>) -> Self {
-        self.data_transfer_api = input;
-        self
+        self.data_transfer_api = input; self
     }
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
     /// <dl>
@@ -225,16 +220,23 @@ impl SalesforceSourcePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::SalesforceSourcePropertiesBuilder::object)
     pub fn build(self) -> ::std::result::Result<crate::types::SalesforceSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SalesforceSourceProperties {
-            object: self.object.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object",
-                    "object was not specified but it is required when building SalesforceSourceProperties",
-                )
-            })?,
-            enable_dynamic_field_update: self.enable_dynamic_field_update.unwrap_or_default(),
-            include_deleted_records: self.include_deleted_records.unwrap_or_default(),
-            data_transfer_api: self.data_transfer_api,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SalesforceSourceProperties {
+                object: self.object
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object", "object was not specified but it is required when building SalesforceSourceProperties")
+                    )?
+                ,
+                enable_dynamic_field_update: self.enable_dynamic_field_update
+                    .unwrap_or_default()
+                ,
+                include_deleted_records: self.include_deleted_records
+                    .unwrap_or_default()
+                ,
+                data_transfer_api: self.data_transfer_api
+                ,
+            }
+        )
     }
 }
+

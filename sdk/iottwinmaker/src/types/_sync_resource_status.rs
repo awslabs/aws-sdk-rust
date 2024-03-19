@@ -3,19 +3,19 @@
 /// <p>The sync resource status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SyncResourceStatus {
+pub struct SyncResourceStatus  {
     /// <p>The sync resource status state.</p>
     pub state: ::std::option::Option<crate::types::SyncResourceState>,
     /// <p>The status error.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl SyncResourceStatus {
+impl  SyncResourceStatus  {
     /// <p>The sync resource status state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SyncResourceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SyncResourceState> {
         self.state.as_ref()
     }
     /// <p>The status error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SyncResourceStatusBuilder {
     }
     /// <p>The sync resource status state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SyncResourceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The sync resource status state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SyncResourceState> {
@@ -55,8 +54,7 @@ impl SyncResourceStatusBuilder {
     }
     /// <p>The status error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The status error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -65,8 +63,11 @@ impl SyncResourceStatusBuilder {
     /// Consumes the builder and constructs a [`SyncResourceStatus`](crate::types::SyncResourceStatus).
     pub fn build(self) -> crate::types::SyncResourceStatus {
         crate::types::SyncResourceStatus {
-            state: self.state,
-            error: self.error,
+            state: self.state
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

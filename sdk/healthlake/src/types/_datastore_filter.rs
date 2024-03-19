@@ -3,7 +3,7 @@
 /// <p>The filters applied to data store query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastoreFilter {
+pub struct DatastoreFilter  {
     /// <p>Allows the user to filter data store results by name.</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>Allows the user to filter data store results by status.</p>
@@ -13,21 +13,21 @@ pub struct DatastoreFilter {
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DatastoreFilter {
+impl  DatastoreFilter  {
     /// <p>Allows the user to filter data store results by name.</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_name(&self) -> ::std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>Allows the user to filter data store results by status.</p>
-    pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
+    pub fn datastore_status(&self) -> ::std::option::Option<& crate::types::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl DatastoreFilterBuilder {
     }
     /// <p>Allows the user to filter data store results by name.</p>
     pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_name = input;
-        self
+        self.datastore_name = input; self
     }
     /// <p>Allows the user to filter data store results by name.</p>
     pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DatastoreFilterBuilder {
     }
     /// <p>Allows the user to filter data store results by status.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.datastore_status = input;
-        self
+        self.datastore_status = input; self
     }
     /// <p>Allows the user to filter data store results by status.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
@@ -83,8 +81,7 @@ impl DatastoreFilterBuilder {
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl DatastoreFilterBuilder {
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl DatastoreFilterBuilder {
     /// Consumes the builder and constructs a [`DatastoreFilter`](crate::types::DatastoreFilter).
     pub fn build(self) -> crate::types::DatastoreFilter {
         crate::types::DatastoreFilter {
-            datastore_name: self.datastore_name,
-            datastore_status: self.datastore_status,
-            created_before: self.created_before,
-            created_after: self.created_after,
+            datastore_name: self.datastore_name
+            ,
+            datastore_status: self.datastore_status
+            ,
+            created_before: self.created_before
+            ,
+            created_after: self.created_after
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>DescribeTaskExecutionRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTaskExecutionInput {
+pub struct DescribeTaskExecutionInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTaskExecutionInput {
+impl  DescribeTaskExecutionInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
-    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeTaskExecutionInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
     pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_execution_arn = input;
-        self
+        self.task_execution_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_execution_arn
     }
     /// Consumes the builder and constructs a [`DescribeTaskExecutionInput`](crate::operation::describe_task_execution::DescribeTaskExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_task_execution::DescribeTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_task_execution::DescribeTaskExecutionInput {
-            task_execution_arn: self.task_execution_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_task_execution::DescribeTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_task_execution::DescribeTaskExecutionInput {
+                task_execution_arn: self.task_execution_arn
+                ,
+            }
+        )
     }
 }
+

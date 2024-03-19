@@ -3,9 +3,9 @@
 /// <p>Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentImportResource {
+pub struct SegmentImportResource  {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub channel_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub channel_counts: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
@@ -17,25 +17,25 @@ pub struct SegmentImportResource {
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
     pub size: ::std::option::Option<i32>,
 }
-impl SegmentImportResource {
+impl  SegmentImportResource  {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn channel_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn channel_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, i32>> {
         self.channel_counts.as_ref()
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the endpoint definitions were imported from to create the segment.</p>
-    pub fn s3_url(&self) -> ::std::option::Option<&str> {
+    pub fn s3_url(&self) -> ::std::option::Option<& str> {
         self.s3_url.as_deref()
     }
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
@@ -54,7 +54,7 @@ impl SegmentImportResource {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentImportResourceBuilder {
-    pub(crate) channel_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) channel_counts: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -69,17 +69,16 @@ impl SegmentImportResourceBuilder {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
     pub fn channel_counts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.channel_counts.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.channel_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.channel_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn set_channel_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
-        self.channel_counts = input;
-        self
+    pub fn set_channel_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>>) -> Self {
+        self.channel_counts = input; self
     }
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn get_channel_counts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_channel_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>> {
         &self.channel_counts
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
@@ -90,8 +89,7 @@ impl SegmentImportResourceBuilder {
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl SegmentImportResourceBuilder {
     }
     /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -120,8 +117,7 @@ impl SegmentImportResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +131,7 @@ impl SegmentImportResourceBuilder {
     }
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the endpoint definitions were imported from to create the segment.</p>
     pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_url = input;
-        self
+        self.s3_url = input; self
     }
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the endpoint definitions were imported from to create the segment.</p>
     pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +145,7 @@ impl SegmentImportResourceBuilder {
     }
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -160,12 +154,19 @@ impl SegmentImportResourceBuilder {
     /// Consumes the builder and constructs a [`SegmentImportResource`](crate::types::SegmentImportResource).
     pub fn build(self) -> crate::types::SegmentImportResource {
         crate::types::SegmentImportResource {
-            channel_counts: self.channel_counts,
-            external_id: self.external_id,
-            format: self.format,
-            role_arn: self.role_arn,
-            s3_url: self.s3_url,
-            size: self.size,
+            channel_counts: self.channel_counts
+            ,
+            external_id: self.external_id
+            ,
+            format: self.format
+            ,
+            role_arn: self.role_arn
+            ,
+            s3_url: self.s3_url
+            ,
+            size: self.size
+            ,
         }
     }
 }
+

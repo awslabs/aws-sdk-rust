@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationsOutput {
+pub struct DescribeConfigurationsOutput  {
     /// <p>A key in the response map. The value is an array of data.</p>
-    pub configurations: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub configurations: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }
-impl DescribeConfigurationsOutput {
+impl  DescribeConfigurationsOutput  {
     /// <p>A key in the response map. The value is an array of data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
-    pub fn configurations(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        self.configurations.as_deref().unwrap_or_default()
+    pub fn configurations(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::string::String>] {
+        self.configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationsOutput`](crate::operation::describe_configurations::DescribeConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_configurations::builders::DescribeConfigurationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationsOutputBuilder {
-    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationsOutputBuilder {
@@ -40,40 +41,36 @@ impl DescribeConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>A key in the response map. The value is an array of data.</p>
-    pub fn configurations(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn configurations(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.configurations.unwrap_or_default();
-        v.push(input);
-        self.configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A key in the response map. The value is an array of data.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    ) -> Self {
-        self.configurations = input;
-        self
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.configurations = input; self
     }
     /// <p>A key in the response map. The value is an array of data.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConfigurationsOutput`](crate::operation::describe_configurations::DescribeConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_configurations::DescribeConfigurationsOutput {
         crate::operation::describe_configurations::DescribeConfigurationsOutput {
-            configurations: self.configurations,
+            configurations: self.configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

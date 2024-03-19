@@ -3,20 +3,19 @@
 /// <p>The parameters that are required to connect to a Google BigQuery data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BigQueryParameters {
+pub struct BigQueryParameters  {
     /// <p>The Google Cloud Platform project ID where your datasource was created.</p>
     pub project_id: ::std::string::String,
     /// <p>The storage location where you create a Google BigQuery data source.</p>
     pub data_set_region: ::std::option::Option<::std::string::String>,
 }
-impl BigQueryParameters {
+impl  BigQueryParameters  {
     /// <p>The Google Cloud Platform project ID where your datasource was created.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The storage location where you create a Google BigQuery data source.</p>
-    pub fn data_set_region(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_region(&self) -> ::std::option::Option<& str> {
         self.data_set_region.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl BigQueryParametersBuilder {
     }
     /// <p>The Google Cloud Platform project ID where your datasource was created.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The Google Cloud Platform project ID where your datasource was created.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl BigQueryParametersBuilder {
     }
     /// <p>The storage location where you create a Google BigQuery data source.</p>
     pub fn set_data_set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_region = input;
-        self
+        self.data_set_region = input; self
     }
     /// <p>The storage location where you create a Google BigQuery data source.</p>
     pub fn get_data_set_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl BigQueryParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`project_id`](crate::types::builders::BigQueryParametersBuilder::project_id)
     pub fn build(self) -> ::std::result::Result<crate::types::BigQueryParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BigQueryParameters {
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building BigQueryParameters",
-                )
-            })?,
-            data_set_region: self.data_set_region,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BigQueryParameters {
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building BigQueryParameters")
+                    )?
+                ,
+                data_set_region: self.data_set_region
+                ,
+            }
+        )
     }
 }
+

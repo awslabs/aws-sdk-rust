@@ -3,7 +3,7 @@
 /// <p>Provides information about the registered owner of an IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpOwner {
+pub struct IpOwner  {
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
     pub asn: ::std::option::Option<::std::string::String>,
     /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
@@ -13,21 +13,21 @@ pub struct IpOwner {
     /// <p>The name of the organization that owned the IP address.</p>
     pub org: ::std::option::Option<::std::string::String>,
 }
-impl IpOwner {
+impl  IpOwner  {
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
     /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
-    pub fn asn_org(&self) -> ::std::option::Option<&str> {
+    pub fn asn_org(&self) -> ::std::option::Option<& str> {
         self.asn_org.as_deref()
     }
     /// <p>The name of the internet service provider (ISP) that owned the IP address.</p>
-    pub fn isp(&self) -> ::std::option::Option<&str> {
+    pub fn isp(&self) -> ::std::option::Option<& str> {
         self.isp.as_deref()
     }
     /// <p>The name of the organization that owned the IP address.</p>
-    pub fn org(&self) -> ::std::option::Option<&str> {
+    pub fn org(&self) -> ::std::option::Option<& str> {
         self.org.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl IpOwnerBuilder {
     }
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl IpOwnerBuilder {
     }
     /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
     pub fn set_asn_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn_org = input;
-        self
+        self.asn_org = input; self
     }
     /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
     pub fn get_asn_org(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl IpOwnerBuilder {
     }
     /// <p>The name of the internet service provider (ISP) that owned the IP address.</p>
     pub fn set_isp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.isp = input;
-        self
+        self.isp = input; self
     }
     /// <p>The name of the internet service provider (ISP) that owned the IP address.</p>
     pub fn get_isp(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl IpOwnerBuilder {
     }
     /// <p>The name of the organization that owned the IP address.</p>
     pub fn set_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.org = input;
-        self
+        self.org = input; self
     }
     /// <p>The name of the organization that owned the IP address.</p>
     pub fn get_org(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl IpOwnerBuilder {
     /// Consumes the builder and constructs a [`IpOwner`](crate::types::IpOwner).
     pub fn build(self) -> crate::types::IpOwner {
         crate::types::IpOwner {
-            asn: self.asn,
-            asn_org: self.asn_org,
-            isp: self.isp,
-            org: self.org,
+            asn: self.asn
+            ,
+            asn_org: self.asn_org
+            ,
+            isp: self.isp
+            ,
+            org: self.org
+            ,
         }
     }
 }
+

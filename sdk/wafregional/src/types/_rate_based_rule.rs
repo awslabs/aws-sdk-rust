@@ -15,7 +15,7 @@
 /// <p>Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateBasedRule {
+pub struct RateBasedRule  {
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
     pub rule_id: ::std::string::String,
     /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
@@ -23,33 +23,31 @@ pub struct RateBasedRule {
     /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub match_predicates: ::std::vec::Vec<crate::types::Predicate>,
+    pub match_predicates: ::std::vec::Vec::<crate::types::Predicate>,
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub rate_key: crate::types::RateKey,
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub rate_limit: i64,
 }
-impl RateBasedRule {
+impl  RateBasedRule  {
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub fn match_predicates(&self) -> &[crate::types::Predicate] {
-        use std::ops::Deref;
-        self.match_predicates.deref()
+    pub fn match_predicates(&self) -> & [crate::types::Predicate] {
+        use std::ops::Deref; self.match_predicates.deref()
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
-    pub fn rate_key(&self) -> &crate::types::RateKey {
+    pub fn rate_key(&self) -> & crate::types::RateKey {
         &self.rate_key
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
@@ -71,7 +69,7 @@ pub struct RateBasedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
-    pub(crate) match_predicates: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
+    pub(crate) match_predicates: ::std::option::Option<::std::vec::Vec::<crate::types::Predicate>>,
     pub(crate) rate_key: ::std::option::Option<crate::types::RateKey>,
     pub(crate) rate_limit: ::std::option::Option<i64>,
 }
@@ -84,8 +82,7 @@ impl RateBasedRuleBuilder {
     }
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl RateBasedRuleBuilder {
     }
     /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +108,7 @@ impl RateBasedRuleBuilder {
     }
     /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,17 +121,16 @@ impl RateBasedRuleBuilder {
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
     pub fn match_predicates(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.match_predicates.unwrap_or_default();
-        v.push(input);
-        self.match_predicates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.match_predicates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub fn set_match_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
-        self.match_predicates = input;
-        self
+    pub fn set_match_predicates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Predicate>>) -> Self {
+        self.match_predicates = input; self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub fn get_match_predicates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+    pub fn get_match_predicates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Predicate>> {
         &self.match_predicates
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
@@ -147,8 +141,7 @@ impl RateBasedRuleBuilder {
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub fn set_rate_key(mut self, input: ::std::option::Option<crate::types::RateKey>) -> Self {
-        self.rate_key = input;
-        self
+        self.rate_key = input; self
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub fn get_rate_key(&self) -> &::std::option::Option<crate::types::RateKey> {
@@ -162,8 +155,7 @@ impl RateBasedRuleBuilder {
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn set_rate_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.rate_limit = input;
-        self
+        self.rate_limit = input; self
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn get_rate_limit(&self) -> &::std::option::Option<i64> {
@@ -176,33 +168,34 @@ impl RateBasedRuleBuilder {
     /// - [`rate_key`](crate::types::builders::RateBasedRuleBuilder::rate_key)
     /// - [`rate_limit`](crate::types::builders::RateBasedRuleBuilder::rate_limit)
     pub fn build(self) -> ::std::result::Result<crate::types::RateBasedRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RateBasedRule {
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building RateBasedRule",
-                )
-            })?,
-            name: self.name,
-            metric_name: self.metric_name,
-            match_predicates: self.match_predicates.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_predicates",
-                    "match_predicates was not specified but it is required when building RateBasedRule",
-                )
-            })?,
-            rate_key: self.rate_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rate_key",
-                    "rate_key was not specified but it is required when building RateBasedRule",
-                )
-            })?,
-            rate_limit: self.rate_limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rate_limit",
-                    "rate_limit was not specified but it is required when building RateBasedRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RateBasedRule {
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building RateBasedRule")
+                    )?
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
+                match_predicates: self.match_predicates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_predicates", "match_predicates was not specified but it is required when building RateBasedRule")
+                    )?
+                ,
+                rate_key: self.rate_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rate_key", "rate_key was not specified but it is required when building RateBasedRule")
+                    )?
+                ,
+                rate_limit: self.rate_limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rate_limit", "rate_limit was not specified but it is required when building RateBasedRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

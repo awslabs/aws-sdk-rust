@@ -3,7 +3,8 @@
 /// <p>Specifies a request to start a transaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTransactionRequest {}
+pub struct StartTransactionRequest  {
+}
 impl StartTransactionRequest {
     /// Creates a new builder-style object to manufacture [`StartTransactionRequest`](crate::types::StartTransactionRequest).
     pub fn builder() -> crate::types::builders::StartTransactionRequestBuilder {
@@ -14,10 +15,13 @@ impl StartTransactionRequest {
 /// A builder for [`StartTransactionRequest`](crate::types::StartTransactionRequest).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct StartTransactionRequestBuilder {}
+pub struct StartTransactionRequestBuilder {
+}
 impl StartTransactionRequestBuilder {
     /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::types::StartTransactionRequest).
     pub fn build(self) -> crate::types::StartTransactionRequest {
-        crate::types::StartTransactionRequest {}
+        crate::types::StartTransactionRequest {
+        }
     }
 }
+

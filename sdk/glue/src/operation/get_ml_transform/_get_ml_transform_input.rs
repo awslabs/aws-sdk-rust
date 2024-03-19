@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlTransformInput {
+pub struct GetMlTransformInput  {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub transform_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMlTransformInput {
+impl  GetMlTransformInput  {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetMlTransformInputBuilder {
     }
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transform_id
     }
     /// Consumes the builder and constructs a [`GetMlTransformInput`](crate::operation::get_ml_transform::GetMlTransformInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_ml_transform::GetMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ml_transform::GetMlTransformInput {
-            transform_id: self.transform_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_transform::GetMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ml_transform::GetMlTransformInput {
+                transform_id: self.transform_id
+                ,
+            }
+        )
     }
 }
+

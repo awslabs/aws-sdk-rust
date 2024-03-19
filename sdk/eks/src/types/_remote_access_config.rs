@@ -3,22 +3,23 @@
 /// <p>An object representing the remote access configuration for the managed node group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoteAccessConfig {
+pub struct RemoteAccessConfig  {
     /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
     pub ec2_ssh_key: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub source_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoteAccessConfig {
+impl  RemoteAccessConfig  {
     /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
-    pub fn ec2_ssh_key(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_ssh_key(&self) -> ::std::option::Option<& str> {
         self.ec2_ssh_key.as_deref()
     }
     /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_security_groups.is_none()`.
-    pub fn source_security_groups(&self) -> &[::std::string::String] {
-        self.source_security_groups.as_deref().unwrap_or_default()
+    pub fn source_security_groups(&self) -> & [::std::string::String] {
+        self.source_security_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoteAccessConfig {
@@ -33,7 +34,7 @@ impl RemoteAccessConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoteAccessConfigBuilder {
     pub(crate) ec2_ssh_key: ::std::option::Option<::std::string::String>,
-    pub(crate) source_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoteAccessConfigBuilder {
     /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
@@ -43,8 +44,7 @@ impl RemoteAccessConfigBuilder {
     }
     /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
     pub fn set_ec2_ssh_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_ssh_key = input;
-        self
+        self.ec2_ssh_key = input; self
     }
     /// <p>The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
     pub fn get_ec2_ssh_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl RemoteAccessConfigBuilder {
     /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub fn source_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.source_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn set_source_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_security_groups = input;
-        self
+    pub fn set_source_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_security_groups = input; self
     }
     /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn get_source_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_security_groups
     }
     /// Consumes the builder and constructs a [`RemoteAccessConfig`](crate::types::RemoteAccessConfig).
     pub fn build(self) -> crate::types::RemoteAccessConfig {
         crate::types::RemoteAccessConfig {
-            ec2_ssh_key: self.ec2_ssh_key,
-            source_security_groups: self.source_security_groups,
+            ec2_ssh_key: self.ec2_ssh_key
+            ,
+            source_security_groups: self.source_security_groups
+            ,
         }
     }
 }
+

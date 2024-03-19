@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyRuleInput {
+pub struct ModifyRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The conditions.</p>
-    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
+    pub conditions: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>,
     /// <p>The actions.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
 }
-impl ModifyRuleInput {
+impl  ModifyRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
-    pub fn conditions(&self) -> &[crate::types::RuleCondition] {
-        self.conditions.as_deref().unwrap_or_default()
+    pub fn conditions(&self) -> & [crate::types::RuleCondition] {
+        self.conditions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::Action] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyRuleInput {
@@ -40,8 +42,8 @@ impl ModifyRuleInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyRuleInputBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
 }
 impl ModifyRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -52,8 +54,7 @@ impl ModifyRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl ModifyRuleInputBuilder {
     /// <p>The conditions.</p>
     pub fn conditions(mut self, input: crate::types::RuleCondition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
-        v.push(input);
-        self.conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The conditions.</p>
-    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>) -> Self {
-        self.conditions = input;
-        self
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>) -> Self {
+        self.conditions = input; self
     }
     /// <p>The conditions.</p>
-    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>> {
         &self.conditions
     }
     /// Appends an item to `actions`.
@@ -86,25 +86,30 @@ impl ModifyRuleInputBuilder {
     /// <p>The actions.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_rule::ModifyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_rule::ModifyRuleInput {
-            rule_arn: self.rule_arn,
-            conditions: self.conditions,
-            actions: self.actions,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::modify_rule::ModifyRuleInput {
+                rule_arn: self.rule_arn
+                ,
+                conditions: self.conditions
+                ,
+                actions: self.actions
+                ,
+            }
+        )
     }
 }
+

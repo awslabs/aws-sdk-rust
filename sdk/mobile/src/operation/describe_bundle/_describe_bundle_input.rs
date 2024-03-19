@@ -3,13 +3,13 @@
 /// <p>Request structure to request the details of a specific bundle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBundleInput {
+pub struct DescribeBundleInput  {
     /// <p>Unique bundle identifier.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBundleInput {
+impl  DescribeBundleInput  {
     /// <p>Unique bundle identifier.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DescribeBundleInputBuilder {
     }
     /// <p>Unique bundle identifier.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>Unique bundle identifier.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }
     /// Consumes the builder and constructs a [`DescribeBundleInput`](crate::operation::describe_bundle::DescribeBundleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_bundle::DescribeBundleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_bundle::DescribeBundleInput { bundle_id: self.bundle_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bundle::DescribeBundleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bundle::DescribeBundleInput {
+                bundle_id: self.bundle_id
+                ,
+            }
+        )
     }
 }
+

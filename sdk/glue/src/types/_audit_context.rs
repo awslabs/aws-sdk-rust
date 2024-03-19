@@ -3,24 +3,25 @@
 /// <p>A structure containing the Lake Formation audit context.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditContext {
+pub struct AuditContext  {
     /// <p>A string containing the additional audit context information.</p>
     pub additional_audit_context: ::std::option::Option<::std::string::String>,
     /// <p>The requested columns for audit.</p>
-    pub requested_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub requested_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>All columns request for audit.</p>
     pub all_columns_requested: ::std::option::Option<bool>,
 }
-impl AuditContext {
+impl  AuditContext  {
     /// <p>A string containing the additional audit context information.</p>
-    pub fn additional_audit_context(&self) -> ::std::option::Option<&str> {
+    pub fn additional_audit_context(&self) -> ::std::option::Option<& str> {
         self.additional_audit_context.as_deref()
     }
     /// <p>The requested columns for audit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_columns.is_none()`.
-    pub fn requested_columns(&self) -> &[::std::string::String] {
-        self.requested_columns.as_deref().unwrap_or_default()
+    pub fn requested_columns(&self) -> & [::std::string::String] {
+        self.requested_columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>All columns request for audit.</p>
     pub fn all_columns_requested(&self) -> ::std::option::Option<bool> {
@@ -39,7 +40,7 @@ impl AuditContext {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditContextBuilder {
     pub(crate) additional_audit_context: ::std::option::Option<::std::string::String>,
-    pub(crate) requested_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) requested_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) all_columns_requested: ::std::option::Option<bool>,
 }
 impl AuditContextBuilder {
@@ -50,8 +51,7 @@ impl AuditContextBuilder {
     }
     /// <p>A string containing the additional audit context information.</p>
     pub fn set_additional_audit_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.additional_audit_context = input;
-        self
+        self.additional_audit_context = input; self
     }
     /// <p>A string containing the additional audit context information.</p>
     pub fn get_additional_audit_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl AuditContextBuilder {
     /// <p>The requested columns for audit.</p>
     pub fn requested_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_columns.unwrap_or_default();
-        v.push(input.into());
-        self.requested_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.requested_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested columns for audit.</p>
-    pub fn set_requested_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.requested_columns = input;
-        self
+    pub fn set_requested_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.requested_columns = input; self
     }
     /// <p>The requested columns for audit.</p>
-    pub fn get_requested_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.requested_columns
     }
     /// <p>All columns request for audit.</p>
@@ -84,8 +83,7 @@ impl AuditContextBuilder {
     }
     /// <p>All columns request for audit.</p>
     pub fn set_all_columns_requested(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_columns_requested = input;
-        self
+        self.all_columns_requested = input; self
     }
     /// <p>All columns request for audit.</p>
     pub fn get_all_columns_requested(&self) -> &::std::option::Option<bool> {
@@ -94,9 +92,13 @@ impl AuditContextBuilder {
     /// Consumes the builder and constructs a [`AuditContext`](crate::types::AuditContext).
     pub fn build(self) -> crate::types::AuditContext {
         crate::types::AuditContext {
-            additional_audit_context: self.additional_audit_context,
-            requested_columns: self.requested_columns,
-            all_columns_requested: self.all_columns_requested,
+            additional_audit_context: self.additional_audit_context
+            ,
+            requested_columns: self.requested_columns
+            ,
+            all_columns_requested: self.all_columns_requested
+            ,
         }
     }
 }
+

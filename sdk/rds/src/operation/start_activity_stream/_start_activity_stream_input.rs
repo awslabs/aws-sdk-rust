@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartActivityStreamInput {
+pub struct StartActivityStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
@@ -14,17 +14,17 @@ pub struct StartActivityStreamInput {
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub engine_native_audit_fields_included: ::std::option::Option<bool>,
 }
-impl StartActivityStreamInput {
+impl  StartActivityStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ActivityStreamMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::ActivityStreamMode> {
         self.mode.as_ref()
     }
     /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
@@ -62,8 +62,7 @@ impl StartActivityStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl StartActivityStreamInputBuilder {
     }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ActivityStreamMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ActivityStreamMode> {
@@ -92,8 +90,7 @@ impl StartActivityStreamInputBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl StartActivityStreamInputBuilder {
     }
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
@@ -120,24 +116,28 @@ impl StartActivityStreamInputBuilder {
     }
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn set_engine_native_audit_fields_included(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.engine_native_audit_fields_included = input;
-        self
+        self.engine_native_audit_fields_included = input; self
     }
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
     pub fn get_engine_native_audit_fields_included(&self) -> &::std::option::Option<bool> {
         &self.engine_native_audit_fields_included
     }
     /// Consumes the builder and constructs a [`StartActivityStreamInput`](crate::operation::start_activity_stream::StartActivityStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_activity_stream::StartActivityStreamInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_activity_stream::StartActivityStreamInput {
-            resource_arn: self.resource_arn,
-            mode: self.mode,
-            kms_key_id: self.kms_key_id,
-            apply_immediately: self.apply_immediately,
-            engine_native_audit_fields_included: self.engine_native_audit_fields_included,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_activity_stream::StartActivityStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_activity_stream::StartActivityStreamInput {
+                resource_arn: self.resource_arn
+                ,
+                mode: self.mode
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+                engine_native_audit_fields_included: self.engine_native_audit_fields_included
+                ,
+            }
+        )
     }
 }
+

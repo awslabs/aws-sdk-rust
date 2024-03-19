@@ -3,22 +3,21 @@
 /// <p>Contains the details of the transaction to commit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommitTransactionRequest {
+pub struct CommitTransactionRequest  {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
     pub transaction_id: ::std::string::String,
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
     pub commit_digest: ::aws_smithy_types::Blob,
 }
-impl CommitTransactionRequest {
+impl  CommitTransactionRequest  {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
-    pub fn transaction_id(&self) -> &str {
-        use std::ops::Deref;
-        self.transaction_id.deref()
+    pub fn transaction_id(&self) -> & str {
+        use std::ops::Deref; self.transaction_id.deref()
     }
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
-    pub fn commit_digest(&self) -> &::aws_smithy_types::Blob {
+    pub fn commit_digest(&self) -> & ::aws_smithy_types::Blob {
         &self.commit_digest
     }
 }
@@ -45,8 +44,7 @@ impl CommitTransactionRequestBuilder {
     }
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +60,7 @@ impl CommitTransactionRequestBuilder {
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
     pub fn set_commit_digest(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.commit_digest = input;
-        self
+        self.commit_digest = input; self
     }
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
@@ -75,19 +72,20 @@ impl CommitTransactionRequestBuilder {
     /// - [`transaction_id`](crate::types::builders::CommitTransactionRequestBuilder::transaction_id)
     /// - [`commit_digest`](crate::types::builders::CommitTransactionRequestBuilder::commit_digest)
     pub fn build(self) -> ::std::result::Result<crate::types::CommitTransactionRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CommitTransactionRequest {
-            transaction_id: self.transaction_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transaction_id",
-                    "transaction_id was not specified but it is required when building CommitTransactionRequest",
-                )
-            })?,
-            commit_digest: self.commit_digest.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_digest",
-                    "commit_digest was not specified but it is required when building CommitTransactionRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CommitTransactionRequest {
+                transaction_id: self.transaction_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transaction_id", "transaction_id was not specified but it is required when building CommitTransactionRequest")
+                    )?
+                ,
+                commit_digest: self.commit_digest
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_digest", "commit_digest was not specified but it is required when building CommitTransactionRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

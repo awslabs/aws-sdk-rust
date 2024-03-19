@@ -3,7 +3,7 @@
 /// <p>Contains configuration information and metadata about a CloudFront function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionSummary {
+pub struct FunctionSummary  {
     /// <p>The name of the CloudFront function.</p>
     pub name: ::std::string::String,
     /// <p>The status of the CloudFront function.</p>
@@ -13,22 +13,21 @@ pub struct FunctionSummary {
     /// <p>Contains metadata about a CloudFront function.</p>
     pub function_metadata: ::std::option::Option<crate::types::FunctionMetadata>,
 }
-impl FunctionSummary {
+impl  FunctionSummary  {
     /// <p>The name of the CloudFront function.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The status of the CloudFront function.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
-    pub fn function_config(&self) -> ::std::option::Option<&crate::types::FunctionConfig> {
+    pub fn function_config(&self) -> ::std::option::Option<& crate::types::FunctionConfig> {
         self.function_config.as_ref()
     }
     /// <p>Contains metadata about a CloudFront function.</p>
-    pub fn function_metadata(&self) -> ::std::option::Option<&crate::types::FunctionMetadata> {
+    pub fn function_metadata(&self) -> ::std::option::Option<& crate::types::FunctionMetadata> {
         self.function_metadata.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl FunctionSummaryBuilder {
     }
     /// <p>The name of the CloudFront function.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the CloudFront function.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl FunctionSummaryBuilder {
     }
     /// <p>The status of the CloudFront function.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the CloudFront function.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl FunctionSummaryBuilder {
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
     pub fn set_function_config(mut self, input: ::std::option::Option<crate::types::FunctionConfig>) -> Self {
-        self.function_config = input;
-        self
+        self.function_config = input; self
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
     pub fn get_function_config(&self) -> &::std::option::Option<crate::types::FunctionConfig> {
@@ -101,8 +97,7 @@ impl FunctionSummaryBuilder {
     }
     /// <p>Contains metadata about a CloudFront function.</p>
     pub fn set_function_metadata(mut self, input: ::std::option::Option<crate::types::FunctionMetadata>) -> Self {
-        self.function_metadata = input;
-        self
+        self.function_metadata = input; self
     }
     /// <p>Contains metadata about a CloudFront function.</p>
     pub fn get_function_metadata(&self) -> &::std::option::Option<crate::types::FunctionMetadata> {
@@ -112,16 +107,21 @@ impl FunctionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FunctionSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::FunctionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FunctionSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FunctionSummary",
-                )
-            })?,
-            status: self.status,
-            function_config: self.function_config,
-            function_metadata: self.function_metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FunctionSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FunctionSummary")
+                    )?
+                ,
+                status: self.status
+                ,
+                function_config: self.function_config
+                ,
+                function_metadata: self.function_metadata
+                ,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelQualityJobDefinitionOutput {
+pub struct DeleteModelQualityJobDefinitionOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteModelQualityJobDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteModelQualityJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput).
     pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteModelQualityJobDefinitionOutputBuilder {
 }
 impl DeleteModelQualityJobDefinitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput).
     pub fn build(self) -> crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput {
         crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput {
@@ -40,3 +40,4 @@ impl DeleteModelQualityJobDefinitionOutputBuilder {
         }
     }
 }
+

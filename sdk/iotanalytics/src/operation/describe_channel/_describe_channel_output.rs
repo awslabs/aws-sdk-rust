@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelOutput {
+pub struct DescribeChannelOutput  {
     /// <p>An object that contains information about the channel.</p>
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub statistics: ::std::option::Option<crate::types::ChannelStatistics>,
     _request_id: Option<String>,
 }
-impl DescribeChannelOutput {
+impl  DescribeChannelOutput  {
     /// <p>An object that contains information about the channel.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::ChannelStatistics> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::ChannelStatistics> {
         self.statistics.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
     pub fn builder() -> crate::operation::describe_channel::builders::DescribeChannelOutputBuilder {
@@ -47,8 +47,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// <p>An object that contains information about the channel.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>An object that contains information about the channel.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -61,28 +60,30 @@ impl DescribeChannelOutputBuilder {
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::ChannelStatistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn get_statistics(&self) -> &::std::option::Option<crate::types::ChannelStatistics> {
         &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
     pub fn build(self) -> crate::operation::describe_channel::DescribeChannelOutput {
         crate::operation::describe_channel::DescribeChannelOutput {
-            channel: self.channel,
-            statistics: self.statistics,
+            channel: self.channel
+            ,
+            statistics: self.statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

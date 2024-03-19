@@ -3,7 +3,7 @@
 /// <p>Summary information about a contact evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationSummary {
+pub struct EvaluationSummary  {
     /// <p>A unique identifier for the contact evaluation.</p>
     pub evaluation_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
@@ -23,46 +23,41 @@ pub struct EvaluationSummary {
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
 }
-impl EvaluationSummary {
+impl  EvaluationSummary  {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_id.deref()
+    pub fn evaluation_id(&self) -> & str {
+        use std::ops::Deref; self.evaluation_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_arn.deref()
+    pub fn evaluation_arn(&self) -> & str {
+        use std::ops::Deref; self.evaluation_arn.deref()
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn evaluation_form_title(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_form_title.deref()
+    pub fn evaluation_form_title(&self) -> & str {
+        use std::ops::Deref; self.evaluation_form_title.deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_form_id.deref()
+    pub fn evaluation_form_id(&self) -> & str {
+        use std::ops::Deref; self.evaluation_form_id.deref()
     }
     /// <p>The status of the contact evaluation.</p>
-    pub fn status(&self) -> &crate::types::EvaluationStatus {
+    pub fn status(&self) -> & crate::types::EvaluationStatus {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluator_arn.deref()
+    pub fn evaluator_arn(&self) -> & str {
+        use std::ops::Deref; self.evaluator_arn.deref()
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn score(&self) -> ::std::option::Option<&crate::types::EvaluationScore> {
+    pub fn score(&self) -> ::std::option::Option<& crate::types::EvaluationScore> {
         self.score.as_ref()
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
 }
@@ -96,8 +91,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_id = input;
-        self
+        self.evaluation_id = input; self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +105,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn set_evaluation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_arn = input;
-        self
+        self.evaluation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn get_evaluation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +119,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>A title of the evaluation form.</p>
     pub fn set_evaluation_form_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_title = input;
-        self
+        self.evaluation_form_title = input; self
     }
     /// <p>A title of the evaluation form.</p>
     pub fn get_evaluation_form_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +133,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_id = input;
-        self
+        self.evaluation_form_id = input; self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +147,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The status of the contact evaluation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the contact evaluation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationStatus> {
@@ -171,8 +161,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn set_evaluator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluator_arn = input;
-        self
+        self.evaluator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn get_evaluator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +174,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn set_score(mut self, input: ::std::option::Option<crate::types::EvaluationScore>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn get_score(&self) -> &::std::option::Option<crate::types::EvaluationScore> {
@@ -200,8 +188,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -215,8 +202,7 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,56 +219,52 @@ impl EvaluationSummaryBuilder {
     /// - [`created_time`](crate::types::builders::EvaluationSummaryBuilder::created_time)
     /// - [`last_modified_time`](crate::types::builders::EvaluationSummaryBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationSummary {
-            evaluation_id: self.evaluation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_id",
-                    "evaluation_id was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            evaluation_arn: self.evaluation_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_arn",
-                    "evaluation_arn was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            evaluation_form_title: self.evaluation_form_title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_form_title",
-                    "evaluation_form_title was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_form_id",
-                    "evaluation_form_id was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            evaluator_arn: self.evaluator_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluator_arn",
-                    "evaluator_arn was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            score: self.score,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building EvaluationSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationSummary {
+                evaluation_id: self.evaluation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_id", "evaluation_id was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                evaluation_arn: self.evaluation_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_arn", "evaluation_arn was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                evaluation_form_title: self.evaluation_form_title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_form_title", "evaluation_form_title was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                evaluation_form_id: self.evaluation_form_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_form_id", "evaluation_form_id was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                evaluator_arn: self.evaluator_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluator_arn", "evaluator_arn was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                score: self.score
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building EvaluationSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

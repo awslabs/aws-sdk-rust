@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeploymentsInput {
+pub struct ListDeploymentsInput  {
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
@@ -16,25 +16,25 @@ pub struct ListDeploymentsInput {
     /// <p>The maximum number of deployments to list.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDeploymentsInput {
+impl  ListDeploymentsInput  {
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of a service for result list filtering. Proton returns deployments associated with service instances of the service.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The maximum number of deployments to list.</p>
@@ -68,8 +68,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The name of a service for result list filtering. Proton returns deployments associated with service instances of the service.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of a service for result list filtering. Proton returns deployments associated with service instances of the service.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p>
     pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_instance_name = input;
-        self
+        self.service_instance_name = input; self
     }
     /// <p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p>
     pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +120,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,24 +133,30 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The maximum number of deployments to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of deployments to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsInput {
-            next_token: self.next_token,
-            environment_name: self.environment_name,
-            service_name: self.service_name,
-            service_instance_name: self.service_instance_name,
-            component_name: self.component_name,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_deployments::ListDeploymentsInput {
+                next_token: self.next_token
+                ,
+                environment_name: self.environment_name
+                ,
+                service_name: self.service_name
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                component_name: self.component_name
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

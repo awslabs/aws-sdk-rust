@@ -3,7 +3,7 @@
 /// <p>Information about a data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProviderDescriptor {
+pub struct DataProviderDescriptor  {
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
@@ -13,21 +13,21 @@ pub struct DataProviderDescriptor {
     /// <p>The Amazon Resource Name (ARN) of the data provider.</p>
     pub data_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl DataProviderDescriptor {
+impl  DataProviderDescriptor  {
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
-    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
-    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The user-friendly name of the data provider.</p>
-    pub fn data_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_name(&self) -> ::std::option::Option<& str> {
         self.data_provider_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the data provider.</p>
-    pub fn data_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_arn(&self) -> ::std::option::Option<& str> {
         self.data_provider_arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DataProviderDescriptorBuilder {
     }
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input;
-        self
+        self.secrets_manager_secret_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DataProviderDescriptorBuilder {
     }
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
     pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input;
-        self
+        self.secrets_manager_access_role_arn = input; self
     }
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
     pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DataProviderDescriptorBuilder {
     }
     /// <p>The user-friendly name of the data provider.</p>
     pub fn set_data_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_name = input;
-        self
+        self.data_provider_name = input; self
     }
     /// <p>The user-friendly name of the data provider.</p>
     pub fn get_data_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DataProviderDescriptorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data provider.</p>
     pub fn set_data_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_arn = input;
-        self
+        self.data_provider_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data provider.</p>
     pub fn get_data_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DataProviderDescriptorBuilder {
     /// Consumes the builder and constructs a [`DataProviderDescriptor`](crate::types::DataProviderDescriptor).
     pub fn build(self) -> crate::types::DataProviderDescriptor {
         crate::types::DataProviderDescriptor {
-            secrets_manager_secret_id: self.secrets_manager_secret_id,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-            data_provider_name: self.data_provider_name,
-            data_provider_arn: self.data_provider_arn,
+            secrets_manager_secret_id: self.secrets_manager_secret_id
+            ,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
+            ,
+            data_provider_name: self.data_provider_name
+            ,
+            data_provider_arn: self.data_provider_arn
+            ,
         }
     }
 }
+

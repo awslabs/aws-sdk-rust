@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartWorkflowExecutionInput {
+pub struct StartWorkflowExecutionInput  {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub domain: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ pub struct StartWorkflowExecutionInput {
     /// </note>
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
@@ -51,55 +51,56 @@ pub struct StartWorkflowExecutionInput {
     /// </note>
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
-impl StartWorkflowExecutionInput {
+impl  StartWorkflowExecutionInput  {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The type of the workflow to start.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(&self) -> ::std::option::Option<&str> {
+    pub fn task_priority(&self) -> ::std::option::Option<& str> {
         self.task_priority.as_deref()
     }
     /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p><note>
     /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
-    pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.execution_start_to_close_timeout.as_deref()
     }
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[::std::string::String] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [::std::string::String] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.task_start_to_close_timeout.as_deref()
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
@@ -114,13 +115,13 @@ impl StartWorkflowExecutionInput {
     /// </ul><note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
+    pub fn child_policy(&self) -> ::std::option::Option<& crate::types::ChildPolicy> {
         self.child_policy.as_ref()
     }
     /// <p>The IAM role to attach to this workflow execution.</p><note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn lambda_role(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_role(&self) -> ::std::option::Option<& str> {
         self.lambda_role.as_deref()
     }
 }
@@ -142,7 +143,7 @@ pub struct StartWorkflowExecutionInputBuilder {
     pub(crate) task_priority: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     pub(crate) child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     pub(crate) lambda_role: ::std::option::Option<::std::string::String>,
@@ -158,8 +159,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain in which the workflow execution is created.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -176,8 +176,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -192,8 +191,7 @@ impl StartWorkflowExecutionInputBuilder {
     }
     /// <p>The type of the workflow to start.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The type of the workflow to start.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -212,8 +210,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
     }
     /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
@@ -231,8 +228,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_priority = input;
-        self
+        self.task_priority = input; self
     }
     /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -246,8 +242,7 @@ impl StartWorkflowExecutionInputBuilder {
     }
     /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +261,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
     pub fn set_execution_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_start_to_close_timeout = input;
-        self
+        self.execution_start_to_close_timeout = input; self
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p><note>
@@ -283,17 +277,16 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
     pub fn tag_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input.into());
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_list
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
@@ -309,8 +302,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_start_to_close_timeout = input;
-        self
+        self.task_start_to_close_timeout = input; self
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
@@ -348,8 +340,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
-        self.child_policy = input;
-        self
+        self.child_policy = input; self
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -377,8 +368,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn set_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_role = input;
-        self
+        self.lambda_role = input; self
     }
     /// <p>The IAM role to attach to this workflow execution.</p><note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -387,24 +377,33 @@ impl StartWorkflowExecutionInputBuilder {
         &self.lambda_role
     }
     /// Consumes the builder and constructs a [`StartWorkflowExecutionInput`](crate::operation::start_workflow_execution::StartWorkflowExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_workflow_execution::StartWorkflowExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_workflow_execution::StartWorkflowExecutionInput {
-            domain: self.domain,
-            workflow_id: self.workflow_id,
-            workflow_type: self.workflow_type,
-            task_list: self.task_list,
-            task_priority: self.task_priority,
-            input: self.input,
-            execution_start_to_close_timeout: self.execution_start_to_close_timeout,
-            tag_list: self.tag_list,
-            task_start_to_close_timeout: self.task_start_to_close_timeout,
-            child_policy: self.child_policy,
-            lambda_role: self.lambda_role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_workflow_execution::StartWorkflowExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_workflow_execution::StartWorkflowExecutionInput {
+                domain: self.domain
+                ,
+                workflow_id: self.workflow_id
+                ,
+                workflow_type: self.workflow_type
+                ,
+                task_list: self.task_list
+                ,
+                task_priority: self.task_priority
+                ,
+                input: self.input
+                ,
+                execution_start_to_close_timeout: self.execution_start_to_close_timeout
+                ,
+                tag_list: self.tag_list
+                ,
+                task_start_to_close_timeout: self.task_start_to_close_timeout
+                ,
+                child_policy: self.child_policy
+                ,
+                lambda_role: self.lambda_role
+                ,
+            }
+        )
     }
 }
+

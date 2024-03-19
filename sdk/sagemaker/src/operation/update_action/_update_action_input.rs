@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateActionInput {
+pub struct UpdateActionInput  {
     /// <p>The name of the action to update.</p>
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description for the action.</p>
@@ -10,32 +10,33 @@ pub struct UpdateActionInput {
     /// <p>The new status for the action.</p>
     pub status: ::std::option::Option<crate::types::ActionStatus>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A list of properties to remove.</p>
-    pub properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub properties_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateActionInput {
+impl  UpdateActionInput  {
     /// <p>The name of the action to update.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The new description for the action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The new status for the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ActionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>A list of properties to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties_to_remove.is_none()`.
-    pub fn properties_to_remove(&self) -> &[::std::string::String] {
-        self.properties_to_remove.as_deref().unwrap_or_default()
+    pub fn properties_to_remove(&self) -> & [::std::string::String] {
+        self.properties_to_remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateActionInput {
@@ -52,8 +53,8 @@ pub struct UpdateActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ActionStatus>,
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) properties_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateActionInputBuilder {
     /// <p>The name of the action to update.</p>
@@ -64,8 +65,7 @@ impl UpdateActionInputBuilder {
     }
     /// <p>The name of the action to update.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the action to update.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl UpdateActionInputBuilder {
     }
     /// <p>The new description for the action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description for the action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl UpdateActionInputBuilder {
     }
     /// <p>The new status for the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The new status for the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
@@ -106,17 +104,16 @@ impl UpdateActionInputBuilder {
     /// <p>The new list of properties. Overwrites the current property list.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// Appends an item to `properties_to_remove`.
@@ -126,29 +123,34 @@ impl UpdateActionInputBuilder {
     /// <p>A list of properties to remove.</p>
     pub fn properties_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.properties_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.properties_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.properties_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of properties to remove.</p>
-    pub fn set_properties_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.properties_to_remove = input;
-        self
+    pub fn set_properties_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.properties_to_remove = input; self
     }
     /// <p>A list of properties to remove.</p>
-    pub fn get_properties_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_properties_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.properties_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateActionInput`](crate::operation::update_action::UpdateActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_action::UpdateActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_action::UpdateActionInput {
-            action_name: self.action_name,
-            description: self.description,
-            status: self.status,
-            properties: self.properties,
-            properties_to_remove: self.properties_to_remove,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_action::UpdateActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_action::UpdateActionInput {
+                action_name: self.action_name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                properties: self.properties
+                ,
+                properties_to_remove: self.properties_to_remove
+                ,
+            }
+        )
     }
 }
+

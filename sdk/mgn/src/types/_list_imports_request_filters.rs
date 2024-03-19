@@ -3,16 +3,17 @@
 /// <p>List imports request filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportsRequestFilters {
+pub struct ListImportsRequestFilters  {
     /// <p>List imports request filters import IDs.</p>
-    pub import_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub import_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListImportsRequestFilters {
+impl  ListImportsRequestFilters  {
     /// <p>List imports request filters import IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_ids.is_none()`.
-    pub fn import_ids(&self) -> &[::std::string::String] {
-        self.import_ids.as_deref().unwrap_or_default()
+    pub fn import_ids(&self) -> & [::std::string::String] {
+        self.import_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListImportsRequestFilters {
@@ -26,7 +27,7 @@ impl ListImportsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportsRequestFiltersBuilder {
-    pub(crate) import_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) import_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListImportsRequestFiltersBuilder {
     /// Appends an item to `import_ids`.
@@ -36,21 +37,24 @@ impl ListImportsRequestFiltersBuilder {
     /// <p>List imports request filters import IDs.</p>
     pub fn import_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_ids.unwrap_or_default();
-        v.push(input.into());
-        self.import_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.import_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List imports request filters import IDs.</p>
-    pub fn set_import_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.import_ids = input;
-        self
+    pub fn set_import_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.import_ids = input; self
     }
     /// <p>List imports request filters import IDs.</p>
-    pub fn get_import_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.import_ids
     }
     /// Consumes the builder and constructs a [`ListImportsRequestFilters`](crate::types::ListImportsRequestFilters).
     pub fn build(self) -> crate::types::ListImportsRequestFilters {
-        crate::types::ListImportsRequestFilters { import_ids: self.import_ids }
+        crate::types::ListImportsRequestFilters {
+            import_ids: self.import_ids
+            ,
+        }
     }
 }
+

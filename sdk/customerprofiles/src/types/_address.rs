@@ -3,7 +3,7 @@
 /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Address {
+pub struct Address  {
     /// <p>The first line of a customer address.</p>
     pub address1: ::std::option::Option<::std::string::String>,
     /// <p>The second line of a customer address.</p>
@@ -25,49 +25,49 @@ pub struct Address {
     /// <p>The postal code of a customer address.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
 }
-impl Address {
+impl  Address  {
     /// <p>The first line of a customer address.</p>
-    pub fn address1(&self) -> ::std::option::Option<&str> {
+    pub fn address1(&self) -> ::std::option::Option<& str> {
         self.address1.as_deref()
     }
     /// <p>The second line of a customer address.</p>
-    pub fn address2(&self) -> ::std::option::Option<&str> {
+    pub fn address2(&self) -> ::std::option::Option<& str> {
         self.address2.as_deref()
     }
     /// <p>The third line of a customer address.</p>
-    pub fn address3(&self) -> ::std::option::Option<&str> {
+    pub fn address3(&self) -> ::std::option::Option<& str> {
         self.address3.as_deref()
     }
     /// <p>The fourth line of a customer address.</p>
-    pub fn address4(&self) -> ::std::option::Option<&str> {
+    pub fn address4(&self) -> ::std::option::Option<& str> {
         self.address4.as_deref()
     }
     /// <p>The city in which a customer lives.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The county in which a customer lives.</p>
-    pub fn county(&self) -> ::std::option::Option<&str> {
+    pub fn county(&self) -> ::std::option::Option<& str> {
         self.county.as_deref()
     }
     /// <p>The state in which a customer lives.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The province in which a customer lives.</p>
-    pub fn province(&self) -> ::std::option::Option<&str> {
+    pub fn province(&self) -> ::std::option::Option<& str> {
         self.province.as_deref()
     }
     /// <p>The country in which a customer lives.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The postal code of a customer address.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<& str> {
         self.postal_code.as_deref()
     }
 }
-impl ::std::fmt::Debug for Address {
+impl  ::std::fmt::Debug for Address  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
         formatter.field("address1", &"*** Sensitive Data Redacted ***");
@@ -113,8 +113,7 @@ impl AddressBuilder {
     }
     /// <p>The first line of a customer address.</p>
     pub fn set_address1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address1 = input;
-        self
+        self.address1 = input; self
     }
     /// <p>The first line of a customer address.</p>
     pub fn get_address1(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl AddressBuilder {
     }
     /// <p>The second line of a customer address.</p>
     pub fn set_address2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address2 = input;
-        self
+        self.address2 = input; self
     }
     /// <p>The second line of a customer address.</p>
     pub fn get_address2(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl AddressBuilder {
     }
     /// <p>The third line of a customer address.</p>
     pub fn set_address3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address3 = input;
-        self
+        self.address3 = input; self
     }
     /// <p>The third line of a customer address.</p>
     pub fn get_address3(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl AddressBuilder {
     }
     /// <p>The fourth line of a customer address.</p>
     pub fn set_address4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address4 = input;
-        self
+        self.address4 = input; self
     }
     /// <p>The fourth line of a customer address.</p>
     pub fn get_address4(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl AddressBuilder {
     }
     /// <p>The city in which a customer lives.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>The city in which a customer lives.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +178,7 @@ impl AddressBuilder {
     }
     /// <p>The county in which a customer lives.</p>
     pub fn set_county(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.county = input;
-        self
+        self.county = input; self
     }
     /// <p>The county in which a customer lives.</p>
     pub fn get_county(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +191,7 @@ impl AddressBuilder {
     }
     /// <p>The state in which a customer lives.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state in which a customer lives.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +204,7 @@ impl AddressBuilder {
     }
     /// <p>The province in which a customer lives.</p>
     pub fn set_province(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.province = input;
-        self
+        self.province = input; self
     }
     /// <p>The province in which a customer lives.</p>
     pub fn get_province(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +217,7 @@ impl AddressBuilder {
     }
     /// <p>The country in which a customer lives.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The country in which a customer lives.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +230,7 @@ impl AddressBuilder {
     }
     /// <p>The postal code of a customer address.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
     }
     /// <p>The postal code of a customer address.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,16 +239,26 @@ impl AddressBuilder {
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
-            address1: self.address1,
-            address2: self.address2,
-            address3: self.address3,
-            address4: self.address4,
-            city: self.city,
-            county: self.county,
-            state: self.state,
-            province: self.province,
-            country: self.country,
-            postal_code: self.postal_code,
+            address1: self.address1
+            ,
+            address2: self.address2
+            ,
+            address3: self.address3
+            ,
+            address4: self.address4
+            ,
+            city: self.city
+            ,
+            county: self.county
+            ,
+            state: self.state
+            ,
+            province: self.province
+            ,
+            country: self.country
+            ,
+            postal_code: self.postal_code
+            ,
         }
     }
 }
@@ -278,3 +278,4 @@ impl ::std::fmt::Debug for AddressBuilder {
         formatter.finish()
     }
 }
+

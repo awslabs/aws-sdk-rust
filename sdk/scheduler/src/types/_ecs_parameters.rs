@@ -3,7 +3,7 @@
 /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsParameters {
+pub struct EcsParameters  {
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
     pub task_definition_arn: ::std::string::String,
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
@@ -17,53 +17,53 @@ pub struct EcsParameters {
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The capacity provider strategy to use for the task.</p>
-    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
+    pub placement_constraints: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>>,
     /// <p>The task placement strategy for a task or service.</p>
-    pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
+    pub placement_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>The reference ID to use for the task.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
-impl EcsParameters {
+impl  EcsParameters  {
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
-    pub fn task_definition_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.task_definition_arn.deref()
+    pub fn task_definition_arn(&self) -> & str {
+        use std::ops::Deref; self.task_definition_arn.deref()
     }
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
     pub fn task_count(&self) -> ::std::option::Option<i32> {
         self.task_count
     }
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
+    pub fn launch_type(&self) -> ::std::option::Option<& crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>This structure specifies the network configuration for an ECS task.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
-    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
-    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
-        self.capacity_provider_strategy.as_deref().unwrap_or_default()
+    pub fn capacity_provider_strategy(&self) -> & [crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(&self) -> ::std::option::Option<bool> {
@@ -74,30 +74,33 @@ impl EcsParameters {
         self.enable_execute_command
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
-    pub fn placement_constraints(&self) -> &[crate::types::PlacementConstraint] {
-        self.placement_constraints.as_deref().unwrap_or_default()
+    pub fn placement_constraints(&self) -> & [crate::types::PlacementConstraint] {
+        self.placement_constraints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The task placement strategy for a task or service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_strategy.is_none()`.
-    pub fn placement_strategy(&self) -> &[crate::types::PlacementStrategy] {
-        self.placement_strategy.as_deref().unwrap_or_default()
+    pub fn placement_strategy(&self) -> & [crate::types::PlacementStrategy] {
+        self.placement_strategy.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
-    pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
+    pub fn propagate_tags(&self) -> ::std::option::Option<& crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
     /// <p>The reference ID to use for the task.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::string::String>] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsParameters {
@@ -117,14 +120,14 @@ pub struct EcsParametersBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
-    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
-    pub(crate) placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
+    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>>,
+    pub(crate) placement_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
 impl EcsParametersBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
@@ -135,8 +138,7 @@ impl EcsParametersBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
     pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_definition_arn = input;
-        self
+        self.task_definition_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the task definition to use if the event target is an Amazon ECS task.</p>
     pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +151,7 @@ impl EcsParametersBuilder {
     }
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
     pub fn set_task_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.task_count = input;
-        self
+        self.task_count = input; self
     }
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
     pub fn get_task_count(&self) -> &::std::option::Option<i32> {
@@ -163,8 +164,7 @@ impl EcsParametersBuilder {
     }
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
-        self.launch_type = input;
-        self
+        self.launch_type = input; self
     }
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
@@ -177,8 +177,7 @@ impl EcsParametersBuilder {
     }
     /// <p>This structure specifies the network configuration for an ECS task.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>This structure specifies the network configuration for an ECS task.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -191,8 +190,7 @@ impl EcsParametersBuilder {
     }
     /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
     pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +203,7 @@ impl EcsParametersBuilder {
     }
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,20 +216,16 @@ impl EcsParametersBuilder {
     /// <p>The capacity provider strategy to use for the task.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
-        v.push(input);
-        self.capacity_provider_strategy = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_provider_strategy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    pub fn set_capacity_provider_strategy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    ) -> Self {
-        self.capacity_provider_strategy = input;
-        self
+    pub fn set_capacity_provider_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>) -> Self {
+        self.capacity_provider_strategy = input; self
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -242,8 +235,7 @@ impl EcsParametersBuilder {
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_ecs_managed_tags = input;
-        self
+        self.enable_ecs_managed_tags = input; self
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
@@ -256,8 +248,7 @@ impl EcsParametersBuilder {
     }
     /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
     pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_execute_command = input;
-        self
+        self.enable_execute_command = input; self
     }
     /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
@@ -270,17 +261,16 @@ impl EcsParametersBuilder {
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
     pub fn placement_constraints(mut self, input: crate::types::PlacementConstraint) -> Self {
         let mut v = self.placement_constraints.unwrap_or_default();
-        v.push(input);
-        self.placement_constraints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.placement_constraints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>) -> Self {
-        self.placement_constraints = input;
-        self
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>>) -> Self {
+        self.placement_constraints = input; self
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>> {
         &self.placement_constraints
     }
     /// Appends an item to `placement_strategy`.
@@ -290,17 +280,16 @@ impl EcsParametersBuilder {
     /// <p>The task placement strategy for a task or service.</p>
     pub fn placement_strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
         let mut v = self.placement_strategy.unwrap_or_default();
-        v.push(input);
-        self.placement_strategy = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.placement_strategy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The task placement strategy for a task or service.</p>
-    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>) -> Self {
-        self.placement_strategy = input;
-        self
+    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>>) -> Self {
+        self.placement_strategy = input; self
     }
     /// <p>The task placement strategy for a task or service.</p>
-    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
+    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>> {
         &self.placement_strategy
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
@@ -310,8 +299,7 @@ impl EcsParametersBuilder {
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
-        self.propagate_tags = input;
-        self
+        self.propagate_tags = input; self
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use Amazon ECS's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> API action.</p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
@@ -324,8 +312,7 @@ impl EcsParametersBuilder {
     }
     /// <p>The reference ID to use for the task.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>The reference ID to use for the task.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -336,48 +323,59 @@ impl EcsParametersBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-    pub fn tags(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn tags(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`EcsParameters`](crate::types::EcsParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_definition_arn`](crate::types::builders::EcsParametersBuilder::task_definition_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::EcsParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EcsParameters {
-            task_definition_arn: self.task_definition_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_definition_arn",
-                    "task_definition_arn was not specified but it is required when building EcsParameters",
-                )
-            })?,
-            task_count: self.task_count,
-            launch_type: self.launch_type,
-            network_configuration: self.network_configuration,
-            platform_version: self.platform_version,
-            group: self.group,
-            capacity_provider_strategy: self.capacity_provider_strategy,
-            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
-            enable_execute_command: self.enable_execute_command,
-            placement_constraints: self.placement_constraints,
-            placement_strategy: self.placement_strategy,
-            propagate_tags: self.propagate_tags,
-            reference_id: self.reference_id,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EcsParameters {
+                task_definition_arn: self.task_definition_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_definition_arn", "task_definition_arn was not specified but it is required when building EcsParameters")
+                    )?
+                ,
+                task_count: self.task_count
+                ,
+                launch_type: self.launch_type
+                ,
+                network_configuration: self.network_configuration
+                ,
+                platform_version: self.platform_version
+                ,
+                group: self.group
+                ,
+                capacity_provider_strategy: self.capacity_provider_strategy
+                ,
+                enable_ecs_managed_tags: self.enable_ecs_managed_tags
+                ,
+                enable_execute_command: self.enable_execute_command
+                ,
+                placement_constraints: self.placement_constraints
+                ,
+                placement_strategy: self.placement_strategy
+                ,
+                propagate_tags: self.propagate_tags
+                ,
+                reference_id: self.reference_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetricPolicyOutput {
+pub struct GetMetricPolicyOutput  {
     /// <p>The metric policy that is associated with the specific container.</p>
     pub metric_policy: ::std::option::Option<crate::types::MetricPolicy>,
     _request_id: Option<String>,
 }
-impl GetMetricPolicyOutput {
+impl  GetMetricPolicyOutput  {
     /// <p>The metric policy that is associated with the specific container.</p>
-    pub fn metric_policy(&self) -> ::std::option::Option<&crate::types::MetricPolicy> {
+    pub fn metric_policy(&self) -> ::std::option::Option<& crate::types::MetricPolicy> {
         self.metric_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetricPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMetricPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput).
     pub fn builder() -> crate::operation::get_metric_policy::builders::GetMetricPolicyOutputBuilder {
@@ -41,27 +41,28 @@ impl GetMetricPolicyOutputBuilder {
     }
     /// <p>The metric policy that is associated with the specific container.</p>
     pub fn set_metric_policy(mut self, input: ::std::option::Option<crate::types::MetricPolicy>) -> Self {
-        self.metric_policy = input;
-        self
+        self.metric_policy = input; self
     }
     /// <p>The metric policy that is associated with the specific container.</p>
     pub fn get_metric_policy(&self) -> &::std::option::Option<crate::types::MetricPolicy> {
         &self.metric_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput).
     pub fn build(self) -> crate::operation::get_metric_policy::GetMetricPolicyOutput {
         crate::operation::get_metric_policy::GetMetricPolicyOutput {
-            metric_policy: self.metric_policy,
+            metric_policy: self.metric_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

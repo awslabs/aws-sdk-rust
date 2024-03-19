@@ -3,22 +3,22 @@
 /// <p>Contains the response to a <code>DescribeStackSummary</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackSummaryOutput {
+pub struct DescribeStackSummaryOutput  {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     pub stack_summary: ::std::option::Option<crate::types::StackSummary>,
     _request_id: Option<String>,
 }
-impl DescribeStackSummaryOutput {
+impl  DescribeStackSummaryOutput  {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
-    pub fn stack_summary(&self) -> ::std::option::Option<&crate::types::StackSummary> {
+    pub fn stack_summary(&self) -> ::std::option::Option<& crate::types::StackSummary> {
         self.stack_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStackSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStackSummaryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput).
     pub fn builder() -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeStackSummaryOutputBuilder {
     }
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     pub fn set_stack_summary(mut self, input: ::std::option::Option<crate::types::StackSummary>) -> Self {
-        self.stack_summary = input;
-        self
+        self.stack_summary = input; self
     }
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     pub fn get_stack_summary(&self) -> &::std::option::Option<crate::types::StackSummary> {
         &self.stack_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput).
     pub fn build(self) -> crate::operation::describe_stack_summary::DescribeStackSummaryOutput {
         crate::operation::describe_stack_summary::DescribeStackSummaryOutput {
-            stack_summary: self.stack_summary,
+            stack_summary: self.stack_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

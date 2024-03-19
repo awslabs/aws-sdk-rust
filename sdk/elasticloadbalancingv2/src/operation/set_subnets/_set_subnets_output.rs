@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetSubnetsOutput {
+pub struct SetSubnetsOutput  {
     /// <p>Information about the subnets.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     _request_id: Option<String>,
 }
-impl SetSubnetsOutput {
+impl  SetSubnetsOutput  {
     /// <p>Information about the subnets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SetSubnetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetSubnetsOutput {
     /// Creates a new builder-style object to manufacture [`SetSubnetsOutput`](crate::operation::set_subnets::SetSubnetsOutput).
     pub fn builder() -> crate::operation::set_subnets::builders::SetSubnetsOutputBuilder {
@@ -39,7 +40,7 @@ impl SetSubnetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetSubnetsOutputBuilder {
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     _request_id: Option<String>,
 }
@@ -51,17 +52,16 @@ impl SetSubnetsOutputBuilder {
     /// <p>Information about the subnets.</p>
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input);
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the subnets.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>Information about the subnets.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
@@ -73,8 +73,7 @@ impl SetSubnetsOutputBuilder {
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
@@ -82,20 +81,23 @@ impl SetSubnetsOutputBuilder {
         &self.ip_address_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetSubnetsOutput`](crate::operation::set_subnets::SetSubnetsOutput).
     pub fn build(self) -> crate::operation::set_subnets::SetSubnetsOutput {
         crate::operation::set_subnets::SetSubnetsOutput {
-            availability_zones: self.availability_zones,
-            ip_address_type: self.ip_address_type,
+            availability_zones: self.availability_zones
+            ,
+            ip_address_type: self.ip_address_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

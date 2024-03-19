@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCrossAccountAttachmentInput {
+pub struct DescribeCrossAccountAttachmentInput  {
     /// <p>The Amazon Resource Name (ARN) for the cross-account attachment to describe.</p>
     pub attachment_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCrossAccountAttachmentInput {
+impl  DescribeCrossAccountAttachmentInput  {
     /// <p>The Amazon Resource Name (ARN) for the cross-account attachment to describe.</p>
-    pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_arn(&self) -> ::std::option::Option<& str> {
         self.attachment_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeCrossAccountAttachmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the cross-account attachment to describe.</p>
     pub fn set_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_arn = input;
-        self
+        self.attachment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the cross-account attachment to describe.</p>
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_arn
     }
     /// Consumes the builder and constructs a [`DescribeCrossAccountAttachmentInput`](crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentInput {
-            attachment_arn: self.attachment_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentInput {
+                attachment_arn: self.attachment_arn
+                ,
+            }
+        )
     }
 }
+

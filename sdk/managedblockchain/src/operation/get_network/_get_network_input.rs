@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkInput {
+pub struct GetNetworkInput  {
     /// <p>The unique identifier of the network to get information about.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkInput {
+impl  GetNetworkInput  {
     /// <p>The unique identifier of the network to get information about.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetNetworkInputBuilder {
     }
     /// <p>The unique identifier of the network to get information about.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network to get information about.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetNetworkInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetNetworkInput`](crate::operation::get_network::GetNetworkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_network::GetNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_network::GetNetworkInput { network_id: self.network_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_network::GetNetworkInput {
+                network_id: self.network_id
+                ,
+            }
+        )
     }
 }
+

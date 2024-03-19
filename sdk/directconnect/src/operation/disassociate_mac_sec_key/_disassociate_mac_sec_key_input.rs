@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateMacSecKeyInput {
+pub struct DisassociateMacSecKeyInput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DisassociateMacSecKeyInput {
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateMacSecKeyInput {
+impl  DisassociateMacSecKeyInput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DisassociateMacSecKeyInputBuilder {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
@@ -65,8 +64,7 @@ impl DisassociateMacSecKeyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
@@ -74,13 +72,15 @@ impl DisassociateMacSecKeyInputBuilder {
         &self.secret_arn
     }
     /// Consumes the builder and constructs a [`DisassociateMacSecKeyInput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput {
-            connection_id: self.connection_id,
-            secret_arn: self.secret_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput {
+                connection_id: self.connection_id
+                ,
+                secret_arn: self.secret_arn
+                ,
+            }
+        )
     }
 }
+

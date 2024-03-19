@@ -3,7 +3,7 @@
 /// <p>Provides information about the specified version of the registration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationVersionInformation {
+pub struct RegistrationVersionInformation  {
     /// <p>The version number of the registration.</p>
     pub version_number: i64,
     /// <p>The status of the registration.</p>
@@ -29,9 +29,9 @@ pub struct RegistrationVersionInformation {
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
     /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
-    pub denied_reasons: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>,
+    pub denied_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationDeniedReasonInformation>>,
 }
-impl RegistrationVersionInformation {
+impl  RegistrationVersionInformation  {
     /// <p>The version number of the registration.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
@@ -55,18 +55,19 @@ impl RegistrationVersionInformation {
     /// <li>
     /// <p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
-    pub fn registration_version_status(&self) -> &crate::types::RegistrationVersionStatus {
+    pub fn registration_version_status(&self) -> & crate::types::RegistrationVersionStatus {
         &self.registration_version_status
     }
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
-    pub fn registration_version_status_history(&self) -> ::std::option::Option<&crate::types::RegistrationVersionStatusHistory> {
+    pub fn registration_version_status_history(&self) -> ::std::option::Option<& crate::types::RegistrationVersionStatusHistory> {
         self.registration_version_status_history.as_ref()
     }
     /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.denied_reasons.is_none()`.
-    pub fn denied_reasons(&self) -> &[crate::types::RegistrationDeniedReasonInformation] {
-        self.denied_reasons.as_deref().unwrap_or_default()
+    pub fn denied_reasons(&self) -> & [crate::types::RegistrationDeniedReasonInformation] {
+        self.denied_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegistrationVersionInformation {
@@ -83,7 +84,7 @@ pub struct RegistrationVersionInformationBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) registration_version_status: ::std::option::Option<crate::types::RegistrationVersionStatus>,
     pub(crate) registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
-    pub(crate) denied_reasons: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>,
+    pub(crate) denied_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationDeniedReasonInformation>>,
 }
 impl RegistrationVersionInformationBuilder {
     /// <p>The version number of the registration.</p>
@@ -94,8 +95,7 @@ impl RegistrationVersionInformationBuilder {
     }
     /// <p>The version number of the registration.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number of the registration.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -145,8 +145,7 @@ impl RegistrationVersionInformationBuilder {
     /// <p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     pub fn set_registration_version_status(mut self, input: ::std::option::Option<crate::types::RegistrationVersionStatus>) -> Self {
-        self.registration_version_status = input;
-        self
+        self.registration_version_status = input; self
     }
     /// <p>The status of the registration.</p>
     /// <ul>
@@ -178,8 +177,7 @@ impl RegistrationVersionInformationBuilder {
     }
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub fn set_registration_version_status_history(mut self, input: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>) -> Self {
-        self.registration_version_status_history = input;
-        self
+        self.registration_version_status_history = input; self
     }
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub fn get_registration_version_status_history(&self) -> &::std::option::Option<crate::types::RegistrationVersionStatusHistory> {
@@ -192,17 +190,16 @@ impl RegistrationVersionInformationBuilder {
     /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     pub fn denied_reasons(mut self, input: crate::types::RegistrationDeniedReasonInformation) -> Self {
         let mut v = self.denied_reasons.unwrap_or_default();
-        v.push(input);
-        self.denied_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.denied_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
-    pub fn set_denied_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>) -> Self {
-        self.denied_reasons = input;
-        self
+    pub fn set_denied_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationDeniedReasonInformation>>) -> Self {
+        self.denied_reasons = input; self
     }
     /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
-    pub fn get_denied_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>> {
+    pub fn get_denied_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationDeniedReasonInformation>> {
         &self.denied_reasons
     }
     /// Consumes the builder and constructs a [`RegistrationVersionInformation`](crate::types::RegistrationVersionInformation).
@@ -210,21 +207,24 @@ impl RegistrationVersionInformationBuilder {
     /// - [`version_number`](crate::types::builders::RegistrationVersionInformationBuilder::version_number)
     /// - [`registration_version_status`](crate::types::builders::RegistrationVersionInformationBuilder::registration_version_status)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationVersionInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationVersionInformation {
-            version_number: self.version_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version_number",
-                    "version_number was not specified but it is required when building RegistrationVersionInformation",
-                )
-            })?,
-            registration_version_status: self.registration_version_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_version_status",
-                    "registration_version_status was not specified but it is required when building RegistrationVersionInformation",
-                )
-            })?,
-            registration_version_status_history: self.registration_version_status_history,
-            denied_reasons: self.denied_reasons,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationVersionInformation {
+                version_number: self.version_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version_number", "version_number was not specified but it is required when building RegistrationVersionInformation")
+                    )?
+                ,
+                registration_version_status: self.registration_version_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_version_status", "registration_version_status was not specified but it is required when building RegistrationVersionInformation")
+                    )?
+                ,
+                registration_version_status_history: self.registration_version_status_history
+                ,
+                denied_reasons: self.denied_reasons
+                ,
+            }
+        )
     }
 }
+

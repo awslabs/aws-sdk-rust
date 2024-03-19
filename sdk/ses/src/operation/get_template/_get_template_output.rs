@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateOutput {
+pub struct GetTemplateOutput  {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub template: ::std::option::Option<crate::types::Template>,
     _request_id: Option<String>,
 }
-impl GetTemplateOutput {
+impl  GetTemplateOutput  {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
-    pub fn template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn builder() -> crate::operation::get_template::builders::GetTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
         &self.template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn build(self) -> crate::operation::get_template::GetTemplateOutput {
         crate::operation::get_template::GetTemplateOutput {
-            template: self.template,
+            template: self.template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

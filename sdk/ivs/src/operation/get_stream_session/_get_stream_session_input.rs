@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamSessionInput {
+pub struct GetStreamSessionInput  {
     /// <p>ARN of the channel resource</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
-impl GetStreamSessionInput {
+impl  GetStreamSessionInput  {
     /// <p>ARN of the channel resource</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
-    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<& str> {
         self.stream_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetStreamSessionInputBuilder {
     }
     /// <p>ARN of the channel resource</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>ARN of the channel resource</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetStreamSessionInputBuilder {
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_stream_session::GetStreamSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stream_session::GetStreamSessionInput {
-            channel_arn: self.channel_arn,
-            stream_id: self.stream_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stream_session::GetStreamSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_stream_session::GetStreamSessionInput {
+                channel_arn: self.channel_arn
+                ,
+                stream_id: self.stream_id
+                ,
+            }
+        )
     }
 }
+

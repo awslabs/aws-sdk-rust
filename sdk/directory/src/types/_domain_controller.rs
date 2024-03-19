@@ -3,7 +3,7 @@
 /// <p>Contains information about the domain controllers for a specified directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainController {
+pub struct DomainController  {
     /// <p>Identifier of the directory where the domain controller resides.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a specific domain controller in the directory.</p>
@@ -25,45 +25,45 @@ pub struct DomainController {
     /// <p>The date and time that the status was last updated.</p>
     pub status_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DomainController {
+impl  DomainController  {
     /// <p>Identifier of the directory where the domain controller resides.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>Identifies a specific domain controller in the directory.</p>
-    pub fn domain_controller_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_controller_id(&self) -> ::std::option::Option<& str> {
         self.domain_controller_id.as_deref()
     }
     /// <p>The IP address of the domain controller.</p>
-    pub fn dns_ip_addr(&self) -> ::std::option::Option<&str> {
+    pub fn dns_ip_addr(&self) -> ::std::option::Option<& str> {
         self.dns_ip_addr.as_deref()
     }
     /// <p>The identifier of the VPC that contains the domain controller.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The Availability Zone where the domain controller is located.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The status of the domain controller.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DomainControllerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DomainControllerStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the domain controller state.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Specifies when the domain controller was created.</p>
-    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the status was last updated.</p>
-    pub fn status_last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn status_last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl DomainControllerBuilder {
     }
     /// <p>Identifier of the directory where the domain controller resides.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier of the directory where the domain controller resides.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl DomainControllerBuilder {
     }
     /// <p>Identifies a specific domain controller in the directory.</p>
     pub fn set_domain_controller_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_controller_id = input;
-        self
+        self.domain_controller_id = input; self
     }
     /// <p>Identifies a specific domain controller in the directory.</p>
     pub fn get_domain_controller_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl DomainControllerBuilder {
     }
     /// <p>The IP address of the domain controller.</p>
     pub fn set_dns_ip_addr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_ip_addr = input;
-        self
+        self.dns_ip_addr = input; self
     }
     /// <p>The IP address of the domain controller.</p>
     pub fn get_dns_ip_addr(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl DomainControllerBuilder {
     }
     /// <p>The identifier of the VPC that contains the domain controller.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The identifier of the VPC that contains the domain controller.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl DomainControllerBuilder {
     }
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl DomainControllerBuilder {
     }
     /// <p>The Availability Zone where the domain controller is located.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone where the domain controller is located.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl DomainControllerBuilder {
     }
     /// <p>The status of the domain controller.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DomainControllerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the domain controller.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DomainControllerStatus> {
@@ -195,8 +188,7 @@ impl DomainControllerBuilder {
     }
     /// <p>A description of the domain controller state.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>A description of the domain controller state.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl DomainControllerBuilder {
     }
     /// <p>Specifies when the domain controller was created.</p>
     pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.launch_time = input;
-        self
+        self.launch_time = input; self
     }
     /// <p>Specifies when the domain controller was created.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +214,7 @@ impl DomainControllerBuilder {
     }
     /// <p>The date and time that the status was last updated.</p>
     pub fn set_status_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.status_last_updated_date_time = input;
-        self
+        self.status_last_updated_date_time = input; self
     }
     /// <p>The date and time that the status was last updated.</p>
     pub fn get_status_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,16 +223,27 @@ impl DomainControllerBuilder {
     /// Consumes the builder and constructs a [`DomainController`](crate::types::DomainController).
     pub fn build(self) -> crate::types::DomainController {
         crate::types::DomainController {
-            directory_id: self.directory_id,
-            domain_controller_id: self.domain_controller_id,
-            dns_ip_addr: self.dns_ip_addr,
-            vpc_id: self.vpc_id,
-            subnet_id: self.subnet_id,
-            availability_zone: self.availability_zone,
-            status: self.status,
-            status_reason: self.status_reason,
-            launch_time: self.launch_time,
-            status_last_updated_date_time: self.status_last_updated_date_time,
+            directory_id: self.directory_id
+            ,
+            domain_controller_id: self.domain_controller_id
+            ,
+            dns_ip_addr: self.dns_ip_addr
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            availability_zone: self.availability_zone
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            launch_time: self.launch_time
+            ,
+            status_last_updated_date_time: self.status_last_updated_date_time
+            ,
         }
     }
 }
+

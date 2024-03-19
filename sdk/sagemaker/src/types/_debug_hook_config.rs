@@ -3,34 +3,35 @@
 /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DebugHookConfig {
+pub struct DebugHookConfig  {
     /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
-    pub hook_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub hook_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    pub collection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CollectionConfiguration>>,
+    pub collection_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionConfiguration>>,
 }
-impl DebugHookConfig {
+impl  DebugHookConfig  {
     /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
-    pub fn hook_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn hook_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.hook_parameters.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_configurations.is_none()`.
-    pub fn collection_configurations(&self) -> &[crate::types::CollectionConfiguration] {
-        self.collection_configurations.as_deref().unwrap_or_default()
+    pub fn collection_configurations(&self) -> & [crate::types::CollectionConfiguration] {
+        self.collection_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DebugHookConfig {
@@ -46,8 +47,8 @@ impl DebugHookConfig {
 pub struct DebugHookConfigBuilder {
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
-    pub(crate) hook_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) collection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CollectionConfiguration>>,
+    pub(crate) hook_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) collection_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionConfiguration>>,
 }
 impl DebugHookConfigBuilder {
     /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
@@ -57,8 +58,7 @@ impl DebugHookConfigBuilder {
     }
     /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
     }
     /// <p>Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.</p>
     pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl DebugHookConfigBuilder {
     }
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_path = input;
-        self
+        self.s3_output_path = input; self
     }
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
     pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,26 +83,18 @@ impl DebugHookConfigBuilder {
     /// To override the contents of this collection use [`set_hook_parameters`](Self::set_hook_parameters).
     ///
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
-    pub fn hook_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hook_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.hook_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.hook_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.hook_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
-    pub fn set_hook_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.hook_parameters = input;
-        self
+    pub fn set_hook_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.hook_parameters = input; self
     }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters.</p>
-    pub fn get_hook_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_hook_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.hook_parameters
     }
     /// Appends an item to `collection_configurations`.
@@ -113,26 +104,30 @@ impl DebugHookConfigBuilder {
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn collection_configurations(mut self, input: crate::types::CollectionConfiguration) -> Self {
         let mut v = self.collection_configurations.unwrap_or_default();
-        v.push(input);
-        self.collection_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collection_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    pub fn set_collection_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionConfiguration>>) -> Self {
-        self.collection_configurations = input;
-        self
+    pub fn set_collection_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionConfiguration>>) -> Self {
+        self.collection_configurations = input; self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    pub fn get_collection_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionConfiguration>> {
+    pub fn get_collection_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollectionConfiguration>> {
         &self.collection_configurations
     }
     /// Consumes the builder and constructs a [`DebugHookConfig`](crate::types::DebugHookConfig).
     pub fn build(self) -> crate::types::DebugHookConfig {
         crate::types::DebugHookConfig {
-            local_path: self.local_path,
-            s3_output_path: self.s3_output_path,
-            hook_parameters: self.hook_parameters,
-            collection_configurations: self.collection_configurations,
+            local_path: self.local_path
+            ,
+            s3_output_path: self.s3_output_path
+            ,
+            hook_parameters: self.hook_parameters
+            ,
+            collection_configurations: self.collection_configurations
+            ,
         }
     }
 }
+

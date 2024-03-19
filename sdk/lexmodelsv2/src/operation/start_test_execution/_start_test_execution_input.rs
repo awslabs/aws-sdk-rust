@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTestExecutionInput {
+pub struct StartTestExecutionInput  {
     /// <p>The test set Id for the test set execution.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set execution.</p>
@@ -12,21 +12,21 @@ pub struct StartTestExecutionInput {
     /// <p>Indicates whether audio or text is used.</p>
     pub test_execution_modality: ::std::option::Option<crate::types::TestExecutionModality>,
 }
-impl StartTestExecutionInput {
+impl  StartTestExecutionInput  {
     /// <p>The test set Id for the test set execution.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The target bot for the test set execution.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::TestExecutionTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::TestExecutionTarget> {
         self.target.as_ref()
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
-    pub fn api_mode(&self) -> ::std::option::Option<&crate::types::TestExecutionApiMode> {
+    pub fn api_mode(&self) -> ::std::option::Option<& crate::types::TestExecutionApiMode> {
         self.api_mode.as_ref()
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn test_execution_modality(&self) -> ::std::option::Option<&crate::types::TestExecutionModality> {
+    pub fn test_execution_modality(&self) -> ::std::option::Option<& crate::types::TestExecutionModality> {
         self.test_execution_modality.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl StartTestExecutionInputBuilder {
     }
     /// <p>The test set Id for the test set execution.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for the test set execution.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartTestExecutionInputBuilder {
     }
     /// <p>The target bot for the test set execution.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestExecutionTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target bot for the test set execution.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::TestExecutionTarget> {
@@ -85,8 +83,7 @@ impl StartTestExecutionInputBuilder {
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
     pub fn set_api_mode(mut self, input: ::std::option::Option<crate::types::TestExecutionApiMode>) -> Self {
-        self.api_mode = input;
-        self
+        self.api_mode = input; self
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
     pub fn get_api_mode(&self) -> &::std::option::Option<crate::types::TestExecutionApiMode> {
@@ -99,23 +96,26 @@ impl StartTestExecutionInputBuilder {
     }
     /// <p>Indicates whether audio or text is used.</p>
     pub fn set_test_execution_modality(mut self, input: ::std::option::Option<crate::types::TestExecutionModality>) -> Self {
-        self.test_execution_modality = input;
-        self
+        self.test_execution_modality = input; self
     }
     /// <p>Indicates whether audio or text is used.</p>
     pub fn get_test_execution_modality(&self) -> &::std::option::Option<crate::types::TestExecutionModality> {
         &self.test_execution_modality
     }
     /// Consumes the builder and constructs a [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_test_execution::StartTestExecutionInput {
-            test_set_id: self.test_set_id,
-            target: self.target,
-            api_mode: self.api_mode,
-            test_execution_modality: self.test_execution_modality,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_test_execution::StartTestExecutionInput {
+                test_set_id: self.test_set_id
+                ,
+                target: self.target
+                ,
+                api_mode: self.api_mode
+                ,
+                test_execution_modality: self.test_execution_modality
+                ,
+            }
+        )
     }
 }
+

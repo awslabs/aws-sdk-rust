@@ -6,7 +6,7 @@
 /// <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventDestination {
+pub struct EventDestination  {
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -36,7 +36,7 @@ pub struct EventDestination {
     /// <li>
     /// <p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
-    pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
+    pub matching_event_types: ::std::vec::Vec::<crate::types::EventType>,
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
@@ -44,7 +44,7 @@ pub struct EventDestination {
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
-impl EventDestination {
+impl  EventDestination  {
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -52,9 +52,8 @@ impl EventDestination {
     /// <li>
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub fn enabled(&self) -> bool {
@@ -79,20 +78,19 @@ impl EventDestination {
     /// <li>
     /// <p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
-    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
-        use std::ops::Deref;
-        self.matching_event_types.deref()
+    pub fn matching_event_types(&self) -> & [crate::types::EventType] {
+        use std::ops::Deref; self.matching_event_types.deref()
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
-    pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<& crate::types::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
-    pub fn cloud_watch_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchDestination> {
+    pub fn cloud_watch_destination(&self) -> ::std::option::Option<& crate::types::CloudWatchDestination> {
         self.cloud_watch_destination.as_ref()
     }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
-    pub fn sns_destination(&self) -> ::std::option::Option<&crate::types::SnsDestination> {
+    pub fn sns_destination(&self) -> ::std::option::Option<& crate::types::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
@@ -109,7 +107,7 @@ impl EventDestination {
 pub struct EventDestinationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>,
     pub(crate) kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     pub(crate) cloud_watch_destination: ::std::option::Option<crate::types::CloudWatchDestination>,
     pub(crate) sns_destination: ::std::option::Option<crate::types::SnsDestination>,
@@ -135,8 +133,7 @@ impl EventDestinationBuilder {
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
@@ -155,8 +152,7 @@ impl EventDestinationBuilder {
     }
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -187,9 +183,9 @@ impl EventDestinationBuilder {
     /// </ul>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
-        v.push(input);
-        self.matching_event_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matching_event_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
@@ -210,9 +206,8 @@ impl EventDestinationBuilder {
     /// <li>
     /// <p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
-    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
-        self.matching_event_types = input;
-        self
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>) -> Self {
+        self.matching_event_types = input; self
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
@@ -233,7 +228,7 @@ impl EventDestinationBuilder {
     /// <li>
     /// <p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
-    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventType>> {
         &self.matching_event_types
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
@@ -243,8 +238,7 @@ impl EventDestinationBuilder {
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
-        self.kinesis_firehose_destination = input;
-        self
+        self.kinesis_firehose_destination = input; self
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
@@ -257,8 +251,7 @@ impl EventDestinationBuilder {
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
     pub fn set_cloud_watch_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchDestination>) -> Self {
-        self.cloud_watch_destination = input;
-        self
+        self.cloud_watch_destination = input; self
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
     pub fn get_cloud_watch_destination(&self) -> &::std::option::Option<crate::types::CloudWatchDestination> {
@@ -271,8 +264,7 @@ impl EventDestinationBuilder {
     }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
     pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
-        self.sns_destination = input;
-        self
+        self.sns_destination = input; self
     }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
     pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
@@ -283,23 +275,29 @@ impl EventDestinationBuilder {
     /// - [`name`](crate::types::builders::EventDestinationBuilder::name)
     /// - [`matching_event_types`](crate::types::builders::EventDestinationBuilder::matching_event_types)
     pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventDestination {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EventDestination",
-                )
-            })?,
-            enabled: self.enabled.unwrap_or_default(),
-            matching_event_types: self.matching_event_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "matching_event_types",
-                    "matching_event_types was not specified but it is required when building EventDestination",
-                )
-            })?,
-            kinesis_firehose_destination: self.kinesis_firehose_destination,
-            cloud_watch_destination: self.cloud_watch_destination,
-            sns_destination: self.sns_destination,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventDestination {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EventDestination")
+                    )?
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                matching_event_types: self.matching_event_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("matching_event_types", "matching_event_types was not specified but it is required when building EventDestination")
+                    )?
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                cloud_watch_destination: self.cloud_watch_destination
+                ,
+                sns_destination: self.sns_destination
+                ,
+            }
+        )
     }
 }
+

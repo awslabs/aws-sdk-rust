@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSpeakerEnrollmentJobs`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::set_domain_id):<br>required: **true**<br><p>The identifier of the domain that contains the speaker enrollment jobs.</p><br>
     ///   - [`job_status(SpeakerEnrollmentJobStatus)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::job_status) / [`set_job_status(Option<SpeakerEnrollmentJobStatus>)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::set_job_status):<br>required: **false**<br><p>Provides the status of your speaker enrollment Job.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p><br>
-    /// - On success, responds with [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput) with field(s):
+                            /// - On success, responds with [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput) with field(s):
     ///   - [`job_summaries(Option<Vec::<SpeakerEnrollmentJobSummary>>)`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput::job_summaries): <p>A list containing details about each specified speaker enrollment job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<ListSpeakerEnrollmentJobsError>`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError)
+                            /// - On failure, responds with [`SdkError<ListSpeakerEnrollmentJobsError>`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError)
     pub fn list_speaker_enrollment_jobs(&self) -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder {
-        crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

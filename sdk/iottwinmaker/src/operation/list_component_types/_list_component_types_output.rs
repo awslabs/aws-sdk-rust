@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentTypesOutput {
+pub struct ListComponentTypesOutput  {
     /// <p>The ID of the workspace.</p>
     pub workspace_id: ::std::string::String,
     /// <p>A list of objects that contain information about the component types.</p>
-    pub component_type_summaries: ::std::vec::Vec<crate::types::ComponentTypeSummary>,
+    pub component_type_summaries: ::std::vec::Vec::<crate::types::ComponentTypeSummary>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of results to display.</p>
     pub max_results: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl ListComponentTypesOutput {
+impl  ListComponentTypesOutput  {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> & str {
+        use std::ops::Deref; self.workspace_id.deref()
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn component_type_summaries(&self) -> &[crate::types::ComponentTypeSummary] {
-        use std::ops::Deref;
-        self.component_type_summaries.deref()
+    pub fn component_type_summaries(&self) -> & [crate::types::ComponentTypeSummary] {
+        use std::ops::Deref; self.component_type_summaries.deref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of results to display.</p>
@@ -34,10 +32,10 @@ impl ListComponentTypesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListComponentTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListComponentTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
     pub fn builder() -> crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder {
@@ -50,7 +48,7 @@ impl ListComponentTypesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentTypesOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) component_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    pub(crate) component_type_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -64,8 +62,7 @@ impl ListComponentTypesOutputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +75,16 @@ impl ListComponentTypesOutputBuilder {
     /// <p>A list of objects that contain information about the component types.</p>
     pub fn component_type_summaries(mut self, input: crate::types::ComponentTypeSummary) -> Self {
         let mut v = self.component_type_summaries.unwrap_or_default();
-        v.push(input);
-        self.component_type_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_type_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn set_component_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>) -> Self {
-        self.component_type_summaries = input;
-        self
+    pub fn set_component_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentTypeSummary>>) -> Self {
+        self.component_type_summaries = input; self
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn get_component_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>> {
+    pub fn get_component_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentTypeSummary>> {
         &self.component_type_summaries
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -98,8 +94,7 @@ impl ListComponentTypesOutputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,46 +107,45 @@ impl ListComponentTypesOutputBuilder {
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_id`](crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::workspace_id)
     /// - [`component_type_summaries`](crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::component_type_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesOutput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building ListComponentTypesOutput",
-                )
-            })?,
-            component_type_summaries: self.component_type_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_type_summaries",
-                    "component_type_summaries was not specified but it is required when building ListComponentTypesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_component_types::ListComponentTypesOutput {
+                workspace_id: self.workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_id", "workspace_id was not specified but it is required when building ListComponentTypesOutput")
+                    )?
+                ,
+                component_type_summaries: self.component_type_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_type_summaries", "component_type_summaries was not specified but it is required when building ListComponentTypesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

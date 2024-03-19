@@ -3,13 +3,13 @@
 /// <p>The cluster marker configuration of the geospatial map selected point style.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterMarkerConfiguration {
+pub struct ClusterMarkerConfiguration  {
     /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     pub cluster_marker: ::std::option::Option<crate::types::ClusterMarker>,
 }
-impl ClusterMarkerConfiguration {
+impl  ClusterMarkerConfiguration  {
     /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
-    pub fn cluster_marker(&self) -> ::std::option::Option<&crate::types::ClusterMarker> {
+    pub fn cluster_marker(&self) -> ::std::option::Option<& crate::types::ClusterMarker> {
         self.cluster_marker.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ClusterMarkerConfigurationBuilder {
     }
     /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     pub fn set_cluster_marker(mut self, input: ::std::option::Option<crate::types::ClusterMarker>) -> Self {
-        self.cluster_marker = input;
-        self
+        self.cluster_marker = input; self
     }
     /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     pub fn get_cluster_marker(&self) -> &::std::option::Option<crate::types::ClusterMarker> {
@@ -44,7 +43,9 @@ impl ClusterMarkerConfigurationBuilder {
     /// Consumes the builder and constructs a [`ClusterMarkerConfiguration`](crate::types::ClusterMarkerConfiguration).
     pub fn build(self) -> crate::types::ClusterMarkerConfiguration {
         crate::types::ClusterMarkerConfiguration {
-            cluster_marker: self.cluster_marker,
+            cluster_marker: self.cluster_marker
+            ,
         }
     }
 }
+

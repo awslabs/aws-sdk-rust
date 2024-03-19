@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePublicAccessBlockInput {
+pub struct DeletePublicAccessBlockInput  {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePublicAccessBlockInput {
+impl  DeletePublicAccessBlockInput  {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeletePublicAccessBlockInputBuilder {
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeletePublicAccessBlockInput`](crate::operation::delete_public_access_block::DeletePublicAccessBlockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_public_access_block::DeletePublicAccessBlockInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_public_access_block::DeletePublicAccessBlockInput { account_id: self.account_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_public_access_block::DeletePublicAccessBlockInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_public_access_block::DeletePublicAccessBlockInput {
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

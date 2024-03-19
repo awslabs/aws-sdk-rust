@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStreamInput {
+pub struct DescribeStreamInput  {
     /// <p>The stream ID.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStreamInput {
+impl  DescribeStreamInput  {
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<& str> {
         self.stream_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeStreamInputBuilder {
     }
     /// <p>The stream ID.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// <p>The stream ID.</p>
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_stream::DescribeStreamInput { stream_id: self.stream_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stream::DescribeStreamInput {
+                stream_id: self.stream_id
+                ,
+            }
+        )
     }
 }
+

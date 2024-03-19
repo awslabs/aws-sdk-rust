@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAttachmentInput {
+pub struct GetAttachmentInput  {
     /// <p>A unique identifier for the attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
-impl GetAttachmentInput {
+impl  GetAttachmentInput  {
     /// <p>A unique identifier for the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(&self) -> ::std::option::Option<&str> {
+    pub fn connection_token(&self) -> ::std::option::Option<& str> {
         self.connection_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetAttachmentInputBuilder {
     }
     /// <p>A unique identifier for the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>A unique identifier for the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetAttachmentInputBuilder {
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_token = input;
-        self
+        self.connection_token = input; self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::operation::get_attachment::GetAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_attachment::GetAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_attachment::GetAttachmentInput {
-            attachment_id: self.attachment_id,
-            connection_token: self.connection_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_attachment::GetAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_attachment::GetAttachmentInput {
+                attachment_id: self.attachment_id
+                ,
+                connection_token: self.connection_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The structure representing the configureAgentRequest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigureAgentInput {
+pub struct ConfigureAgentInput  {
     /// <p>The name of the profiling group for which the configured agent is collecting profiling data.</p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.</p>
@@ -29,15 +29,15 @@ pub struct ConfigureAgentInput {
     /// <li>
     /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<crate::types::MetadataField, ::std::string::String>>,
 }
-impl ConfigureAgentInput {
+impl  ConfigureAgentInput  {
     /// <p>The name of the profiling group for which the configured agent is collecting profiling data.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> ::std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.</p>
-    pub fn fleet_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_instance_id(&self) -> ::std::option::Option<& str> {
         self.fleet_instance_id.as_deref()
     }
     /// <p>Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
@@ -61,7 +61,7 @@ impl ConfigureAgentInput {
     /// <li>
     /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::MetadataField, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -78,7 +78,7 @@ impl ConfigureAgentInput {
 pub struct ConfigureAgentInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<crate::types::MetadataField, ::std::string::String>>,
 }
 impl ConfigureAgentInputBuilder {
     /// <p>The name of the profiling group for which the configured agent is collecting profiling data.</p>
@@ -89,8 +89,7 @@ impl ConfigureAgentInputBuilder {
     }
     /// <p>The name of the profiling group for which the configured agent is collecting profiling data.</p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profiling_group_name = input;
-        self
+        self.profiling_group_name = input; self
     }
     /// <p>The name of the profiling group for which the configured agent is collecting profiling data.</p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ConfigureAgentInputBuilder {
     }
     /// <p>A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.</p>
     pub fn set_fleet_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_instance_id = input;
-        self
+        self.fleet_instance_id = input; self
     }
     /// <p>A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.</p>
     pub fn get_fleet_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,9 +135,9 @@ impl ConfigureAgentInputBuilder {
     /// </ul>
     pub fn metadata(mut self, k: crate::types::MetadataField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
@@ -162,12 +160,8 @@ impl ConfigureAgentInputBuilder {
     /// <li>
     /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::MetadataField, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
@@ -190,17 +184,21 @@ impl ConfigureAgentInputBuilder {
     /// <li>
     /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::MetadataField, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ConfigureAgentInput`](crate::operation::configure_agent::ConfigureAgentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::configure_agent::ConfigureAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::configure_agent::ConfigureAgentInput {
-            profiling_group_name: self.profiling_group_name,
-            fleet_instance_id: self.fleet_instance_id,
-            metadata: self.metadata,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::configure_agent::ConfigureAgentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::configure_agent::ConfigureAgentInput {
+                profiling_group_name: self.profiling_group_name
+                ,
+                fleet_instance_id: self.fleet_instance_id
+                ,
+                metadata: self.metadata
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfirmTransitVirtualInterfaceInput {
+pub struct ConfirmTransitVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
 }
-impl ConfirmTransitVirtualInterfaceInput {
+impl  ConfirmTransitVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.direct_connect_gateway_id
     }
     /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceInput`](crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput {
-            virtual_interface_id: self.virtual_interface_id,
-            direct_connect_gateway_id: self.direct_connect_gateway_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput {
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHitOutput {
+pub struct GetHitOutput  {
     /// <p>Contains the requested HIT data.</p>
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }
-impl GetHitOutput {
+impl  GetHitOutput  {
     /// <p>Contains the requested HIT data.</p>
-    pub fn hit(&self) -> ::std::option::Option<&crate::types::Hit> {
+    pub fn hit(&self) -> ::std::option::Option<& crate::types::Hit> {
         self.hit.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetHitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetHitOutput {
     /// Creates a new builder-style object to manufacture [`GetHitOutput`](crate::operation::get_hit::GetHitOutput).
     pub fn builder() -> crate::operation::get_hit::builders::GetHitOutputBuilder {
@@ -40,27 +40,28 @@ impl GetHitOutputBuilder {
     }
     /// <p>Contains the requested HIT data.</p>
     pub fn set_hit(mut self, input: ::std::option::Option<crate::types::Hit>) -> Self {
-        self.hit = input;
-        self
+        self.hit = input; self
     }
     /// <p>Contains the requested HIT data.</p>
     pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
         &self.hit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetHitOutput`](crate::operation::get_hit::GetHitOutput).
     pub fn build(self) -> crate::operation::get_hit::GetHitOutput {
         crate::operation::get_hit::GetHitOutput {
-            hit: self.hit,
+            hit: self.hit
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

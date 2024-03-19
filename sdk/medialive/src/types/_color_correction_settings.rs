@@ -3,16 +3,17 @@
 /// Property of encoderSettings. Controls color conversion when you are using 3D LUT files to perform color conversion on video.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColorCorrectionSettings {
+pub struct ColorCorrectionSettings  {
     /// An array of colorCorrections that applies when you are using 3D LUT files to perform color conversion on video. Each colorCorrection contains one 3D LUT file (that defines the color mapping for converting an input color space to an output color space), and the input/output combination that this 3D LUT file applies to. MediaLive reads the color space in the input metadata, determines the color space that you have specified for the output, and finds and uses the LUT file that applies to this combination.
-    pub global_color_corrections: ::std::option::Option<::std::vec::Vec<crate::types::ColorCorrection>>,
+    pub global_color_corrections: ::std::option::Option<::std::vec::Vec::<crate::types::ColorCorrection>>,
 }
-impl ColorCorrectionSettings {
+impl  ColorCorrectionSettings  {
     /// An array of colorCorrections that applies when you are using 3D LUT files to perform color conversion on video. Each colorCorrection contains one 3D LUT file (that defines the color mapping for converting an input color space to an output color space), and the input/output combination that this 3D LUT file applies to. MediaLive reads the color space in the input metadata, determines the color space that you have specified for the output, and finds and uses the LUT file that applies to this combination.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_color_corrections.is_none()`.
-    pub fn global_color_corrections(&self) -> &[crate::types::ColorCorrection] {
-        self.global_color_corrections.as_deref().unwrap_or_default()
+    pub fn global_color_corrections(&self) -> & [crate::types::ColorCorrection] {
+        self.global_color_corrections.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ColorCorrectionSettings {
@@ -26,7 +27,7 @@ impl ColorCorrectionSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColorCorrectionSettingsBuilder {
-    pub(crate) global_color_corrections: ::std::option::Option<::std::vec::Vec<crate::types::ColorCorrection>>,
+    pub(crate) global_color_corrections: ::std::option::Option<::std::vec::Vec::<crate::types::ColorCorrection>>,
 }
 impl ColorCorrectionSettingsBuilder {
     /// Appends an item to `global_color_corrections`.
@@ -36,23 +37,24 @@ impl ColorCorrectionSettingsBuilder {
     /// An array of colorCorrections that applies when you are using 3D LUT files to perform color conversion on video. Each colorCorrection contains one 3D LUT file (that defines the color mapping for converting an input color space to an output color space), and the input/output combination that this 3D LUT file applies to. MediaLive reads the color space in the input metadata, determines the color space that you have specified for the output, and finds and uses the LUT file that applies to this combination.
     pub fn global_color_corrections(mut self, input: crate::types::ColorCorrection) -> Self {
         let mut v = self.global_color_corrections.unwrap_or_default();
-        v.push(input);
-        self.global_color_corrections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.global_color_corrections = ::std::option::Option::Some(v);
+                        self
     }
     /// An array of colorCorrections that applies when you are using 3D LUT files to perform color conversion on video. Each colorCorrection contains one 3D LUT file (that defines the color mapping for converting an input color space to an output color space), and the input/output combination that this 3D LUT file applies to. MediaLive reads the color space in the input metadata, determines the color space that you have specified for the output, and finds and uses the LUT file that applies to this combination.
-    pub fn set_global_color_corrections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColorCorrection>>) -> Self {
-        self.global_color_corrections = input;
-        self
+    pub fn set_global_color_corrections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColorCorrection>>) -> Self {
+        self.global_color_corrections = input; self
     }
     /// An array of colorCorrections that applies when you are using 3D LUT files to perform color conversion on video. Each colorCorrection contains one 3D LUT file (that defines the color mapping for converting an input color space to an output color space), and the input/output combination that this 3D LUT file applies to. MediaLive reads the color space in the input metadata, determines the color space that you have specified for the output, and finds and uses the LUT file that applies to this combination.
-    pub fn get_global_color_corrections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColorCorrection>> {
+    pub fn get_global_color_corrections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColorCorrection>> {
         &self.global_color_corrections
     }
     /// Consumes the builder and constructs a [`ColorCorrectionSettings`](crate::types::ColorCorrectionSettings).
     pub fn build(self) -> crate::types::ColorCorrectionSettings {
         crate::types::ColorCorrectionSettings {
-            global_color_corrections: self.global_color_corrections,
+            global_color_corrections: self.global_color_corrections
+            ,
         }
     }
 }
+

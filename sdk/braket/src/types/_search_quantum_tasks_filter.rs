@@ -3,27 +3,25 @@
 /// <p>A filter to use to search for tasks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchQuantumTasksFilter {
+pub struct SearchQuantumTasksFilter  {
     /// <p>The name of the device used for the task.</p>
     pub name: ::std::string::String,
     /// <p>The values to use for the filter.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>An operator to use in the filter.</p>
     pub operator: crate::types::SearchQuantumTasksFilterOperator,
 }
-impl SearchQuantumTasksFilter {
+impl  SearchQuantumTasksFilter  {
     /// <p>The name of the device used for the task.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values to use for the filter.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>An operator to use in the filter.</p>
-    pub fn operator(&self) -> &crate::types::SearchQuantumTasksFilterOperator {
+    pub fn operator(&self) -> & crate::types::SearchQuantumTasksFilterOperator {
         &self.operator
     }
 }
@@ -39,7 +37,7 @@ impl SearchQuantumTasksFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::SearchQuantumTasksFilterOperator>,
 }
 impl SearchQuantumTasksFilterBuilder {
@@ -51,8 +49,7 @@ impl SearchQuantumTasksFilterBuilder {
     }
     /// <p>The name of the device used for the task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the device used for the task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl SearchQuantumTasksFilterBuilder {
     /// <p>The values to use for the filter.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values to use for the filter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values to use for the filter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>An operator to use in the filter.</p>
@@ -86,8 +82,7 @@ impl SearchQuantumTasksFilterBuilder {
     }
     /// <p>An operator to use in the filter.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::SearchQuantumTasksFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>An operator to use in the filter.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::SearchQuantumTasksFilterOperator> {
@@ -99,25 +94,25 @@ impl SearchQuantumTasksFilterBuilder {
     /// - [`values`](crate::types::builders::SearchQuantumTasksFilterBuilder::values)
     /// - [`operator`](crate::types::builders::SearchQuantumTasksFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchQuantumTasksFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchQuantumTasksFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SearchQuantumTasksFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building SearchQuantumTasksFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building SearchQuantumTasksFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchQuantumTasksFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SearchQuantumTasksFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building SearchQuantumTasksFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building SearchQuantumTasksFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

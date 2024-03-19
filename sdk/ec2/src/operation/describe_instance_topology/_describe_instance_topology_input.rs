@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceTopologyInput {
+pub struct DescribeInstanceTopologyInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -14,10 +14,10 @@ pub struct DescribeInstanceTopologyInput {
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the placement group that each instance is in.</p>
     /// <p>Constraints: Maximum 100 explicitly specified placement group names.</p>
-    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -27,15 +27,15 @@ pub struct DescribeInstanceTopologyInput {
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>usw2-az2</code>) or Local Zone (for example, <code>usw2-lax1-az1</code>) that the instance is in.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
-impl DescribeInstanceTopologyInput {
+impl  DescribeInstanceTopologyInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -47,17 +47,19 @@ impl DescribeInstanceTopologyInput {
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
+    pub fn instance_ids(&self) -> & [::std::string::String] {
+        self.instance_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the placement group that each instance is in.</p>
     /// <p>Constraints: Maximum 100 explicitly specified placement group names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
-    pub fn group_names(&self) -> &[::std::string::String] {
-        self.group_names.as_deref().unwrap_or_default()
+    pub fn group_names(&self) -> & [::std::string::String] {
+        self.group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -68,10 +70,11 @@ impl DescribeInstanceTopologyInput {
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>usw2-az2</code>) or Local Zone (for example, <code>usw2-lax1-az1</code>) that the instance is in.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeInstanceTopologyInput {
@@ -88,9 +91,9 @@ pub struct DescribeInstanceTopologyInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
 impl DescribeInstanceTopologyInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -100,8 +103,7 @@ impl DescribeInstanceTopologyInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -114,8 +116,7 @@ impl DescribeInstanceTopologyInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +133,7 @@ impl DescribeInstanceTopologyInputBuilder {
     /// <p>You can't specify this parameter and the instance IDs parameter in the same request.</p>
     /// <p>Default: <code>20</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>You can't specify this parameter and the instance IDs parameter in the same request.</p>
@@ -150,21 +150,20 @@ impl DescribeInstanceTopologyInputBuilder {
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_ids
     }
     /// Appends an item to `group_names`.
@@ -175,19 +174,18 @@ impl DescribeInstanceTopologyInputBuilder {
     /// <p>Constraints: Maximum 100 explicitly specified placement group names.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the placement group that each instance is in.</p>
     /// <p>Constraints: Maximum 100 explicitly specified placement group names.</p>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_names = input;
-        self
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_names = input; self
     }
     /// <p>The name of the placement group that each instance is in.</p>
     /// <p>Constraints: Maximum 100 explicitly specified placement group names.</p>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_names
     }
     /// Appends an item to `filters`.
@@ -205,9 +203,9 @@ impl DescribeInstanceTopologyInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -218,9 +216,8 @@ impl DescribeInstanceTopologyInputBuilder {
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>usw2-az2</code>) or Local Zone (for example, <code>usw2-lax1-az1</code>) that the instance is in.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -231,23 +228,27 @@ impl DescribeInstanceTopologyInputBuilder {
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>usw2-az2</code>) or Local Zone (for example, <code>usw2-lax1-az1</code>) that the instance is in.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeInstanceTopologyInput`](crate::operation::describe_instance_topology::DescribeInstanceTopologyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_topology::DescribeInstanceTopologyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_instance_topology::DescribeInstanceTopologyInput {
-            dry_run: self.dry_run,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            instance_ids: self.instance_ids,
-            group_names: self.group_names,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_topology::DescribeInstanceTopologyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_instance_topology::DescribeInstanceTopologyInput {
+                dry_run: self.dry_run
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                instance_ids: self.instance_ids
+                ,
+                group_names: self.group_names
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

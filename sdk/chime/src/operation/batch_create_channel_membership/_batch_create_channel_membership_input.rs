@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateChannelMembershipInput {
+pub struct BatchCreateChannelMembershipInput  {
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The ARNs of the members you want to add to the channel.</p>
-    pub member_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub member_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
-impl BatchCreateChannelMembershipInput {
+impl  BatchCreateChannelMembershipInput  {
     /// <p>The ARN of the channel to which you're adding users.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMembershipType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
     /// <p>The ARNs of the members you want to add to the channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_arns.is_none()`.
-    pub fn member_arns(&self) -> &[::std::string::String] {
-        self.member_arns.as_deref().unwrap_or_default()
+    pub fn member_arns(&self) -> & [::std::string::String] {
+        self.member_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl BatchCreateChannelMembershipInput {
 pub struct BatchCreateChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
-    pub(crate) member_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) member_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateChannelMembershipInputBuilder {
@@ -57,8 +58,7 @@ impl BatchCreateChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl BatchCreateChannelMembershipInputBuilder {
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
@@ -85,17 +84,16 @@ impl BatchCreateChannelMembershipInputBuilder {
     /// <p>The ARNs of the members you want to add to the channel.</p>
     pub fn member_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.member_arns.unwrap_or_default();
-        v.push(input.into());
-        self.member_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.member_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the members you want to add to the channel.</p>
-    pub fn set_member_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.member_arns = input;
-        self
+    pub fn set_member_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.member_arns = input; self
     }
     /// <p>The ARNs of the members you want to add to the channel.</p>
-    pub fn get_member_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.member_arns
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -105,25 +103,26 @@ impl BatchCreateChannelMembershipInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`BatchCreateChannelMembershipInput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput {
-            channel_arn: self.channel_arn,
-            r#type: self.r#type,
-            member_arns: self.member_arns,
-            chime_bearer: self.chime_bearer,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput {
+                channel_arn: self.channel_arn
+                ,
+                r#type: self.r#type
+                ,
+                member_arns: self.member_arns
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
+        )
     }
 }
+

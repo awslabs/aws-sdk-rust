@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddEgressGatewayBridgeRequest {
+pub struct AddEgressGatewayBridgeRequest  {
     /// The maximum expected bitrate (in bps).
     pub max_bitrate: ::std::option::Option<i32>,
 }
-impl AddEgressGatewayBridgeRequest {
+impl  AddEgressGatewayBridgeRequest  {
     /// The maximum expected bitrate (in bps).
     pub fn max_bitrate(&self) -> ::std::option::Option<i32> {
         self.max_bitrate
@@ -34,8 +34,7 @@ impl AddEgressGatewayBridgeRequestBuilder {
     }
     /// The maximum expected bitrate (in bps).
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// The maximum expected bitrate (in bps).
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl AddEgressGatewayBridgeRequestBuilder {
     /// Consumes the builder and constructs a [`AddEgressGatewayBridgeRequest`](crate::types::AddEgressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::AddEgressGatewayBridgeRequest {
         crate::types::AddEgressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate,
+            max_bitrate: self.max_bitrate
+            ,
         }
     }
 }
+

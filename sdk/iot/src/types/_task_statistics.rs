@@ -3,7 +3,7 @@
 /// <p>Statistics for the checks performed during the audit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskStatistics {
+pub struct TaskStatistics  {
     /// <p>The number of checks in this audit.</p>
     pub total_checks: ::std::option::Option<i32>,
     /// <p>The number of checks in progress.</p>
@@ -19,7 +19,7 @@ pub struct TaskStatistics {
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     pub canceled_checks: ::std::option::Option<i32>,
 }
-impl TaskStatistics {
+impl  TaskStatistics  {
     /// <p>The number of checks in this audit.</p>
     pub fn total_checks(&self) -> ::std::option::Option<i32> {
         self.total_checks
@@ -76,8 +76,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks in this audit.</p>
     pub fn set_total_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_checks = input;
-        self
+        self.total_checks = input; self
     }
     /// <p>The number of checks in this audit.</p>
     pub fn get_total_checks(&self) -> &::std::option::Option<i32> {
@@ -90,8 +89,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks in progress.</p>
     pub fn set_in_progress_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.in_progress_checks = input;
-        self
+        self.in_progress_checks = input; self
     }
     /// <p>The number of checks in progress.</p>
     pub fn get_in_progress_checks(&self) -> &::std::option::Option<i32> {
@@ -104,8 +102,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks waiting for data collection.</p>
     pub fn set_waiting_for_data_collection_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.waiting_for_data_collection_checks = input;
-        self
+        self.waiting_for_data_collection_checks = input; self
     }
     /// <p>The number of checks waiting for data collection.</p>
     pub fn get_waiting_for_data_collection_checks(&self) -> &::std::option::Option<i32> {
@@ -118,8 +115,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks that found compliant resources.</p>
     pub fn set_compliant_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.compliant_checks = input;
-        self
+        self.compliant_checks = input; self
     }
     /// <p>The number of checks that found compliant resources.</p>
     pub fn get_compliant_checks(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks that found noncompliant resources.</p>
     pub fn set_non_compliant_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.non_compliant_checks = input;
-        self
+        self.non_compliant_checks = input; self
     }
     /// <p>The number of checks that found noncompliant resources.</p>
     pub fn get_non_compliant_checks(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks.</p>
     pub fn set_failed_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_checks = input;
-        self
+        self.failed_checks = input; self
     }
     /// <p>The number of checks.</p>
     pub fn get_failed_checks(&self) -> &::std::option::Option<i32> {
@@ -160,8 +154,7 @@ impl TaskStatisticsBuilder {
     }
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     pub fn set_canceled_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.canceled_checks = input;
-        self
+        self.canceled_checks = input; self
     }
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     pub fn get_canceled_checks(&self) -> &::std::option::Option<i32> {
@@ -170,13 +163,21 @@ impl TaskStatisticsBuilder {
     /// Consumes the builder and constructs a [`TaskStatistics`](crate::types::TaskStatistics).
     pub fn build(self) -> crate::types::TaskStatistics {
         crate::types::TaskStatistics {
-            total_checks: self.total_checks,
-            in_progress_checks: self.in_progress_checks,
-            waiting_for_data_collection_checks: self.waiting_for_data_collection_checks,
-            compliant_checks: self.compliant_checks,
-            non_compliant_checks: self.non_compliant_checks,
-            failed_checks: self.failed_checks,
-            canceled_checks: self.canceled_checks,
+            total_checks: self.total_checks
+            ,
+            in_progress_checks: self.in_progress_checks
+            ,
+            waiting_for_data_collection_checks: self.waiting_for_data_collection_checks
+            ,
+            compliant_checks: self.compliant_checks
+            ,
+            non_compliant_checks: self.non_compliant_checks
+            ,
+            failed_checks: self.failed_checks
+            ,
+            canceled_checks: self.canceled_checks
+            ,
         }
     }
 }
+

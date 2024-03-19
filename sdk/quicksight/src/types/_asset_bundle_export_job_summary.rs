@@ -3,7 +3,7 @@
 /// <p>A summary of the export job that includes details of the job's configuration and its current status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleExportJobSummary {
+pub struct AssetBundleExportJobSummary  {
     /// <p>The current status of the export job.</p>
     pub job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
     /// <p>The ARN of the export job.</p>
@@ -21,21 +21,21 @@ pub struct AssetBundleExportJobSummary {
     /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
     pub include_tags: bool,
 }
-impl AssetBundleExportJobSummary {
+impl  AssetBundleExportJobSummary  {
     /// <p>The current status of the export job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::AssetBundleExportJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::AssetBundleExportJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The ARN of the export job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time that the export job was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The ID of the export job.</p>
-    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<& str> {
         self.asset_bundle_export_job_id.as_deref()
     }
     /// <p>The flag that determines the inclusion of resource dependencies in the returned asset bundle.</p>
@@ -43,7 +43,7 @@ impl AssetBundleExportJobSummary {
         self.include_all_dependencies
     }
     /// <p>The format for the export job.</p>
-    pub fn export_format(&self) -> ::std::option::Option<&crate::types::AssetBundleExportFormat> {
+    pub fn export_format(&self) -> ::std::option::Option<& crate::types::AssetBundleExportFormat> {
         self.export_format.as_ref()
     }
     /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
@@ -83,8 +83,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The current status of the export job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The current status of the export job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobStatus> {
@@ -97,8 +96,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The ARN of the export job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the export job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The time that the export job was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the export job was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +122,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The ID of the export job.</p>
     pub fn set_asset_bundle_export_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_bundle_export_job_id = input;
-        self
+        self.asset_bundle_export_job_id = input; self
     }
     /// <p>The ID of the export job.</p>
     pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The flag that determines the inclusion of resource dependencies in the returned asset bundle.</p>
     pub fn set_include_all_dependencies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_all_dependencies = input;
-        self
+        self.include_all_dependencies = input; self
     }
     /// <p>The flag that determines the inclusion of resource dependencies in the returned asset bundle.</p>
     pub fn get_include_all_dependencies(&self) -> &::std::option::Option<bool> {
@@ -153,8 +148,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The format for the export job.</p>
     pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::AssetBundleExportFormat>) -> Self {
-        self.export_format = input;
-        self
+        self.export_format = input; self
     }
     /// <p>The format for the export job.</p>
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
@@ -167,8 +161,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
     pub fn set_include_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_permissions = input;
-        self
+        self.include_permissions = input; self
     }
     /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
     pub fn get_include_permissions(&self) -> &::std::option::Option<bool> {
@@ -181,8 +174,7 @@ impl AssetBundleExportJobSummaryBuilder {
     }
     /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
     pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_tags = input;
-        self
+        self.include_tags = input; self
     }
     /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
     pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
@@ -191,14 +183,26 @@ impl AssetBundleExportJobSummaryBuilder {
     /// Consumes the builder and constructs a [`AssetBundleExportJobSummary`](crate::types::AssetBundleExportJobSummary).
     pub fn build(self) -> crate::types::AssetBundleExportJobSummary {
         crate::types::AssetBundleExportJobSummary {
-            job_status: self.job_status,
-            arn: self.arn,
-            created_time: self.created_time,
-            asset_bundle_export_job_id: self.asset_bundle_export_job_id,
-            include_all_dependencies: self.include_all_dependencies.unwrap_or_default(),
-            export_format: self.export_format,
-            include_permissions: self.include_permissions.unwrap_or_default(),
-            include_tags: self.include_tags.unwrap_or_default(),
+            job_status: self.job_status
+            ,
+            arn: self.arn
+            ,
+            created_time: self.created_time
+            ,
+            asset_bundle_export_job_id: self.asset_bundle_export_job_id
+            ,
+            include_all_dependencies: self.include_all_dependencies
+                .unwrap_or_default()
+            ,
+            export_format: self.export_format
+            ,
+            include_permissions: self.include_permissions
+                .unwrap_or_default()
+            ,
+            include_tags: self.include_tags
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

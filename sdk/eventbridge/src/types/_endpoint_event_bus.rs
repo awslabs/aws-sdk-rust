@@ -3,15 +3,14 @@
 /// <p>The event buses the endpoint is associated with.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointEventBus {
+pub struct EndpointEventBus  {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     pub event_bus_arn: ::std::string::String,
 }
-impl EndpointEventBus {
+impl  EndpointEventBus  {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub fn event_bus_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.event_bus_arn.deref()
+    pub fn event_bus_arn(&self) -> & str {
+        use std::ops::Deref; self.event_bus_arn.deref()
     }
 }
 impl EndpointEventBus {
@@ -36,8 +35,7 @@ impl EndpointEventBusBuilder {
     }
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_arn = input;
-        self
+        self.event_bus_arn = input; self
     }
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl EndpointEventBusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_bus_arn`](crate::types::builders::EndpointEventBusBuilder::event_bus_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::EndpointEventBus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EndpointEventBus {
-            event_bus_arn: self.event_bus_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_bus_arn",
-                    "event_bus_arn was not specified but it is required when building EndpointEventBus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EndpointEventBus {
+                event_bus_arn: self.event_bus_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_bus_arn", "event_bus_arn was not specified but it is required when building EndpointEventBus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

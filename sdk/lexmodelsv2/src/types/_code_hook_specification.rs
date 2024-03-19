@@ -3,13 +3,13 @@
 /// <p>Contains information about code hooks that Amazon Lex calls during a conversation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeHookSpecification {
+pub struct CodeHookSpecification  {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     pub lambda_code_hook: ::std::option::Option<crate::types::LambdaCodeHook>,
 }
-impl CodeHookSpecification {
+impl  CodeHookSpecification  {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
-    pub fn lambda_code_hook(&self) -> ::std::option::Option<&crate::types::LambdaCodeHook> {
+    pub fn lambda_code_hook(&self) -> ::std::option::Option<& crate::types::LambdaCodeHook> {
         self.lambda_code_hook.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl CodeHookSpecificationBuilder {
     }
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     pub fn set_lambda_code_hook(mut self, input: ::std::option::Option<crate::types::LambdaCodeHook>) -> Self {
-        self.lambda_code_hook = input;
-        self
+        self.lambda_code_hook = input; self
     }
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     pub fn get_lambda_code_hook(&self) -> &::std::option::Option<crate::types::LambdaCodeHook> {
@@ -45,7 +44,9 @@ impl CodeHookSpecificationBuilder {
     /// Consumes the builder and constructs a [`CodeHookSpecification`](crate::types::CodeHookSpecification).
     pub fn build(self) -> crate::types::CodeHookSpecification {
         crate::types::CodeHookSpecification {
-            lambda_code_hook: self.lambda_code_hook,
+            lambda_code_hook: self.lambda_code_hook
+            ,
         }
     }
 }
+

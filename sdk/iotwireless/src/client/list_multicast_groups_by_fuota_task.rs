@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMulticastGroupsByFuotaTask`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::set_id):<br>required: **true**<br><p>The ID of a FUOTA task.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
-    /// - On success, responds with [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput) with field(s):
+                            /// - On success, responds with [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`multicast_group_list(Option<Vec::<MulticastGroupByFuotaTask>>)`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput::multicast_group_list): <p>List of multicast groups associated with a FUOTA task.</p>
-    /// - On failure, responds with [`SdkError<ListMulticastGroupsByFuotaTaskError>`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskError)
-    pub fn list_multicast_groups_by_fuota_task(
-        &self,
-    ) -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder {
-        crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListMulticastGroupsByFuotaTaskError>`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskError)
+    pub fn list_multicast_groups_by_fuota_task(&self) -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder {
+                                crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::new(self.handle.clone())
+                            }
 }
+

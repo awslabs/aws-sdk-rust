@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteBudgetActionInput {
+pub struct ExecuteBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
@@ -12,21 +12,21 @@ pub struct ExecuteBudgetActionInput {
     /// <p>The type of execution.</p>
     pub execution_type: ::std::option::Option<crate::types::ExecutionType>,
 }
-impl ExecuteBudgetActionInput {
+impl  ExecuteBudgetActionInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The type of execution.</p>
-    pub fn execution_type(&self) -> ::std::option::Option<&crate::types::ExecutionType> {
+    pub fn execution_type(&self) -> ::std::option::Option<& crate::types::ExecutionType> {
         self.execution_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ExecuteBudgetActionInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ExecuteBudgetActionInputBuilder {
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ExecuteBudgetActionInputBuilder {
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl ExecuteBudgetActionInputBuilder {
     }
     /// <p>The type of execution.</p>
     pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
-        self.execution_type = input;
-        self
+        self.execution_type = input; self
     }
     /// <p>The type of execution.</p>
     pub fn get_execution_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
         &self.execution_type
     }
     /// Consumes the builder and constructs a [`ExecuteBudgetActionInput`](crate::operation::execute_budget_action::ExecuteBudgetActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_budget_action::ExecuteBudgetActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::execute_budget_action::ExecuteBudgetActionInput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
-            action_id: self.action_id,
-            execution_type: self.execution_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_budget_action::ExecuteBudgetActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_budget_action::ExecuteBudgetActionInput {
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                action_id: self.action_id
+                ,
+                execution_type: self.execution_type
+                ,
+            }
+        )
     }
 }
+

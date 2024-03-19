@@ -3,16 +3,17 @@
 /// <p>Represents a single row in the query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Row {
+pub struct Row  {
     /// <p>The data in a row of query results.</p>
-    pub row_data: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
+    pub row_data: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Document>>,
 }
-impl Row {
+impl  Row  {
     /// <p>The data in a row of query results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_data.is_none()`.
-    pub fn row_data(&self) -> &[::aws_smithy_types::Document] {
-        self.row_data.as_deref().unwrap_or_default()
+    pub fn row_data(&self) -> & [::aws_smithy_types::Document] {
+        self.row_data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Row {
@@ -26,7 +27,7 @@ impl Row {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowBuilder {
-    pub(crate) row_data: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
+    pub(crate) row_data: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Document>>,
 }
 impl RowBuilder {
     /// Appends an item to `row_data`.
@@ -36,21 +37,24 @@ impl RowBuilder {
     /// <p>The data in a row of query results.</p>
     pub fn row_data(mut self, input: ::aws_smithy_types::Document) -> Self {
         let mut v = self.row_data.unwrap_or_default();
-        v.push(input);
-        self.row_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.row_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data in a row of query results.</p>
-    pub fn set_row_data(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>) -> Self {
-        self.row_data = input;
-        self
+    pub fn set_row_data(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Document>>) -> Self {
+        self.row_data = input; self
     }
     /// <p>The data in a row of query results.</p>
-    pub fn get_row_data(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+    pub fn get_row_data(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Document>> {
         &self.row_data
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
-        crate::types::Row { row_data: self.row_data }
+        crate::types::Row {
+            row_data: self.row_data
+            ,
+        }
     }
 }
+

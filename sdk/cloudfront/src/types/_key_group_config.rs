@@ -4,27 +4,25 @@
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyGroupConfig {
+pub struct KeyGroupConfig  {
     /// <p>A name to identify the key group.</p>
     pub name: ::std::string::String,
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub items: ::std::vec::Vec<::std::string::String>,
+    pub items: ::std::vec::Vec::<::std::string::String>,
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl KeyGroupConfig {
+impl  KeyGroupConfig  {
     /// <p>A name to identify the key group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub fn items(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -40,7 +38,7 @@ impl KeyGroupConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyGroupConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl KeyGroupConfigBuilder {
@@ -52,8 +50,7 @@ impl KeyGroupConfigBuilder {
     }
     /// <p>A name to identify the key group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name to identify the key group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +63,16 @@ impl KeyGroupConfigBuilder {
     /// <p>A list of the identifiers of the public keys in the key group.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.items
     }
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
@@ -86,8 +82,7 @@ impl KeyGroupConfigBuilder {
     }
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,20 +93,22 @@ impl KeyGroupConfigBuilder {
     /// - [`name`](crate::types::builders::KeyGroupConfigBuilder::name)
     /// - [`items`](crate::types::builders::KeyGroupConfigBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyGroupConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyGroupConfig {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building KeyGroupConfig",
-                )
-            })?,
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building KeyGroupConfig",
-                )
-            })?,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyGroupConfig {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building KeyGroupConfig")
+                    )?
+                ,
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building KeyGroupConfig")
+                    )?
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

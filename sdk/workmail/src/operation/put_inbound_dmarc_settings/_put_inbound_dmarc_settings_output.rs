@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutInboundDmarcSettingsOutput {
+pub struct PutInboundDmarcSettingsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutInboundDmarcSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutInboundDmarcSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput).
     pub fn builder() -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct PutInboundDmarcSettingsOutputBuilder {
 }
 impl PutInboundDmarcSettingsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput).
     pub fn build(self) -> crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput {
         crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput {
@@ -40,3 +40,4 @@ impl PutInboundDmarcSettingsOutputBuilder {
         }
     }
 }
+

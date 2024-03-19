@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchImageSetsInput {
+pub struct SearchImageSetsInput  {
     /// <p>The identifier of the data store where the image sets reside.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The search criteria that filters by applying a maximum of 1 item to <code>SearchByAttribute</code>.</p>
@@ -12,13 +12,13 @@ pub struct SearchImageSetsInput {
     /// <p>The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl SearchImageSetsInput {
+impl  SearchImageSetsInput  {
     /// <p>The identifier of the data store where the image sets reside.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The search criteria that filters by applying a maximum of 1 item to <code>SearchByAttribute</code>.</p>
-    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::SearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<& crate::types::SearchCriteria> {
         self.search_criteria.as_ref()
     }
     /// <p>The maximum number of results that can be returned in a search.</p>
@@ -26,11 +26,11 @@ impl SearchImageSetsInput {
         self.max_results
     }
     /// <p>The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for SearchImageSetsInput {
+impl  ::std::fmt::Debug for SearchImageSetsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchImageSetsInput");
         formatter.field("datastore_id", &self.datastore_id);
@@ -65,8 +65,7 @@ impl SearchImageSetsInputBuilder {
     }
     /// <p>The identifier of the data store where the image sets reside.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The identifier of the data store where the image sets reside.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl SearchImageSetsInputBuilder {
     }
     /// <p>The search criteria that filters by applying a maximum of 1 item to <code>SearchByAttribute</code>.</p>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::SearchCriteria>) -> Self {
-        self.search_criteria = input;
-        self
+        self.search_criteria = input; self
     }
     /// <p>The search criteria that filters by applying a maximum of 1 item to <code>SearchByAttribute</code>.</p>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::SearchCriteria> {
@@ -93,8 +91,7 @@ impl SearchImageSetsInputBuilder {
     }
     /// <p>The maximum number of results that can be returned in a search.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that can be returned in a search.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -107,23 +104,26 @@ impl SearchImageSetsInputBuilder {
     }
     /// <p>The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`SearchImageSetsInput`](crate::operation::search_image_sets::SearchImageSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_image_sets::SearchImageSetsInput {
-            datastore_id: self.datastore_id,
-            search_criteria: self.search_criteria,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_image_sets::SearchImageSetsInput {
+                datastore_id: self.datastore_id
+                ,
+                search_criteria: self.search_criteria
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchImageSetsInputBuilder {
@@ -136,3 +136,4 @@ impl ::std::fmt::Debug for SearchImageSetsInputBuilder {
         formatter.finish()
     }
 }
+

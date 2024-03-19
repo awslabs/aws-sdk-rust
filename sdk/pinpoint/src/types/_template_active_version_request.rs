@@ -3,15 +3,15 @@
 /// <p>Specifies which version of a message template to use as the active version of the template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateActiveVersionRequest {
-    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
+pub struct TemplateActiveVersionRequest  {
+    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl TemplateActiveVersionRequest {
-    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
+impl  TemplateActiveVersionRequest  {
+    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -29,25 +29,28 @@ pub struct TemplateActiveVersionRequestBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl TemplateActiveVersionRequestBuilder {
-    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
+    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
+    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
-    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
+    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     /// Consumes the builder and constructs a [`TemplateActiveVersionRequest`](crate::types::TemplateActiveVersionRequest).
     pub fn build(self) -> crate::types::TemplateActiveVersionRequest {
-        crate::types::TemplateActiveVersionRequest { version: self.version }
+        crate::types::TemplateActiveVersionRequest {
+            version: self.version
+            ,
+        }
     }
 }
+

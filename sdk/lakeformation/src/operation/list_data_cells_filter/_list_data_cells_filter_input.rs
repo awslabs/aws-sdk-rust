@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataCellsFilterInput {
+pub struct ListDataCellsFilterInput  {
     /// <p>A table in the Glue Data Catalog.</p>
     pub table: ::std::option::Option<crate::types::TableResource>,
     /// <p>A continuation token, if this is a continuation call.</p>
@@ -10,13 +10,13 @@ pub struct ListDataCellsFilterInput {
     /// <p>The maximum size of the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDataCellsFilterInput {
+impl  ListDataCellsFilterInput  {
     /// <p>A table in the Glue Data Catalog.</p>
-    pub fn table(&self) -> ::std::option::Option<&crate::types::TableResource> {
+    pub fn table(&self) -> ::std::option::Option<& crate::types::TableResource> {
         self.table.as_ref()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the response.</p>
@@ -47,8 +47,7 @@ impl ListDataCellsFilterInputBuilder {
     }
     /// <p>A table in the Glue Data Catalog.</p>
     pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableResource>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>A table in the Glue Data Catalog.</p>
     pub fn get_table(&self) -> &::std::option::Option<crate::types::TableResource> {
@@ -61,8 +60,7 @@ impl ListDataCellsFilterInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListDataCellsFilterInputBuilder {
     }
     /// <p>The maximum size of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDataCellsFilterInput`](crate::operation::list_data_cells_filter::ListDataCellsFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_data_cells_filter::ListDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_data_cells_filter::ListDataCellsFilterInput {
-            table: self.table,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_cells_filter::ListDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_cells_filter::ListDataCellsFilterInput {
+                table: self.table
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

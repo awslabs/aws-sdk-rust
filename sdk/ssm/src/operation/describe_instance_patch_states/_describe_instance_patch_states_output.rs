@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstancePatchStatesOutput {
+pub struct DescribeInstancePatchStatesOutput  {
     /// <p>The high-level patch state for the requested managed nodes.</p>
-    pub instance_patch_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
+    pub instance_patch_states: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInstancePatchStatesOutput {
+impl  DescribeInstancePatchStatesOutput  {
     /// <p>The high-level patch state for the requested managed nodes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_patch_states.is_none()`.
-    pub fn instance_patch_states(&self) -> &[crate::types::InstancePatchState] {
-        self.instance_patch_states.as_deref().unwrap_or_default()
+    pub fn instance_patch_states(&self) -> & [crate::types::InstancePatchState] {
+        self.instance_patch_states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstancePatchStatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInstancePatchStatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesOutput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput).
     pub fn builder() -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeInstancePatchStatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesOutputBuilder {
-    pub(crate) instance_patch_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
+    pub(crate) instance_patch_states: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePatchState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeInstancePatchStatesOutputBuilder {
     /// <p>The high-level patch state for the requested managed nodes.</p>
     pub fn instance_patch_states(mut self, input: crate::types::InstancePatchState) -> Self {
         let mut v = self.instance_patch_states.unwrap_or_default();
-        v.push(input);
-        self.instance_patch_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_patch_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The high-level patch state for the requested managed nodes.</p>
-    pub fn set_instance_patch_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>) -> Self {
-        self.instance_patch_states = input;
-        self
+    pub fn set_instance_patch_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePatchState>>) -> Self {
+        self.instance_patch_states = input; self
     }
     /// <p>The high-level patch state for the requested managed nodes.</p>
-    pub fn get_instance_patch_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>> {
+    pub fn get_instance_patch_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstancePatchState>> {
         &self.instance_patch_states
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeInstancePatchStatesOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInstancePatchStatesOutput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput).
     pub fn build(self) -> crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput {
         crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput {
-            instance_patch_states: self.instance_patch_states,
-            next_token: self.next_token,
+            instance_patch_states: self.instance_patch_states
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

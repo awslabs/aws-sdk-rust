@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRegistryScanningConfigurationInput {
+pub struct PutRegistryScanningConfigurationInput  {
     /// <p>The scanning type to set for the registry.</p>
     /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
     /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>>,
 }
-impl PutRegistryScanningConfigurationInput {
+impl  PutRegistryScanningConfigurationInput  {
     /// <p>The scanning type to set for the registry.</p>
     /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
     /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::RegistryScanningRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::RegistryScanningRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutRegistryScanningConfigurationInput {
@@ -36,7 +37,7 @@ impl PutRegistryScanningConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRegistryScanningConfigurationInputBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>>,
 }
 impl PutRegistryScanningConfigurationInputBuilder {
     /// <p>The scanning type to set for the registry.</p>
@@ -50,8 +51,7 @@ impl PutRegistryScanningConfigurationInputBuilder {
     /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
     /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// <p>The scanning type to set for the registry.</p>
     /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
@@ -66,31 +66,28 @@ impl PutRegistryScanningConfigurationInputBuilder {
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
     pub fn rules(mut self, input: crate::types::RegistryScanningRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationInput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput {
-                scan_type: self.scan_type,
-                rules: self.rules,
-            },
+                scan_type: self.scan_type
+                ,
+                rules: self.rules
+                ,
+            }
         )
     }
 }
+

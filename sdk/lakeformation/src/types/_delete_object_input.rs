@@ -3,29 +3,29 @@
 /// <p>An object to delete from the governed table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteObjectInput {
+pub struct DeleteObjectInput  {
     /// <p>The Amazon S3 location of the object to delete.</p>
     pub uri: ::std::string::String,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub partition_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteObjectInput {
+impl  DeleteObjectInput  {
     /// <p>The Amazon S3 location of the object to delete.</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
-    pub fn partition_values(&self) -> &[::std::string::String] {
-        self.partition_values.as_deref().unwrap_or_default()
+    pub fn partition_values(&self) -> & [::std::string::String] {
+        self.partition_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteObjectInput {
@@ -41,7 +41,7 @@ impl DeleteObjectInput {
 pub struct DeleteObjectInputBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) partition_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteObjectInputBuilder {
     /// <p>The Amazon S3 location of the object to delete.</p>
@@ -52,8 +52,7 @@ impl DeleteObjectInputBuilder {
     }
     /// <p>The Amazon S3 location of the object to delete.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The Amazon S3 location of the object to delete.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl DeleteObjectInputBuilder {
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,32 +78,35 @@ impl DeleteObjectInputBuilder {
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
     pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
-        v.push(input.into());
-        self.partition_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.partition_values = input;
-        self
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.partition_values = input; self
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.partition_values
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::types::DeleteObjectInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::DeleteObjectInputBuilder::uri)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteObjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteObjectInput {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building DeleteObjectInput",
-                )
-            })?,
-            e_tag: self.e_tag,
-            partition_values: self.partition_values,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteObjectInput {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building DeleteObjectInput")
+                    )?
+                ,
+                e_tag: self.e_tag
+                ,
+                partition_values: self.partition_values
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisFirehoseDestination {
+pub struct KinesisFirehoseDestination  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
     pub iam_role_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
     pub delivery_stream_arn: ::std::string::String,
 }
-impl KinesisFirehoseDestination {
+impl  KinesisFirehoseDestination  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
-    pub fn delivery_stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.delivery_stream_arn.deref()
+    pub fn delivery_stream_arn(&self) -> & str {
+        use std::ops::Deref; self.delivery_stream_arn.deref()
     }
 }
 impl KinesisFirehoseDestination {
@@ -44,8 +42,7 @@ impl KinesisFirehoseDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl KinesisFirehoseDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
     pub fn set_delivery_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_arn = input;
-        self
+        self.delivery_stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
     pub fn get_delivery_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl KinesisFirehoseDestinationBuilder {
     /// - [`iam_role_arn`](crate::types::builders::KinesisFirehoseDestinationBuilder::iam_role_arn)
     /// - [`delivery_stream_arn`](crate::types::builders::KinesisFirehoseDestinationBuilder::delivery_stream_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisFirehoseDestination {
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building KinesisFirehoseDestination",
-                )
-            })?,
-            delivery_stream_arn: self.delivery_stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "delivery_stream_arn",
-                    "delivery_stream_arn was not specified but it is required when building KinesisFirehoseDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisFirehoseDestination {
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building KinesisFirehoseDestination")
+                    )?
+                ,
+                delivery_stream_arn: self.delivery_stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("delivery_stream_arn", "delivery_stream_arn was not specified but it is required when building KinesisFirehoseDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

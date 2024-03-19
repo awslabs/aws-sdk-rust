@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRecoverySnapshots`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`source_server_id(impl Into<String>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Filter Recovery Snapshots by Source Server ID.</p><br>
     ///   - [`filters(DescribeRecoverySnapshotsRequestFilters)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::filters) / [`set_filters(Option<DescribeRecoverySnapshotsRequestFilters>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::set_filters):<br>required: **false**<br><p>A set of filters by which to return Recovery Snapshots.</p><br>
     ///   - [`order(RecoverySnapshotsOrder)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::order) / [`set_order(Option<RecoverySnapshotsOrder>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::set_order):<br>required: **false**<br><p>The sorted ordering by which to return Recovery Snapshots.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Recovery Snapshots to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Recovery Snapshot to retrieve.</p><br>
-    /// - On success, responds with [`DescribeRecoverySnapshotsOutput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput) with field(s):
+                            /// - On success, responds with [`DescribeRecoverySnapshotsOutput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput) with field(s):
     ///   - [`items(Option<Vec::<RecoverySnapshot>>)`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput::items): <p>An array of Recovery Snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput::next_token): <p>The token of the next Recovery Snapshot to retrieve.</p>
-    /// - On failure, responds with [`SdkError<DescribeRecoverySnapshotsError>`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError)
+                            /// - On failure, responds with [`SdkError<DescribeRecoverySnapshotsError>`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError)
     pub fn describe_recovery_snapshots(&self) -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder {
-        crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

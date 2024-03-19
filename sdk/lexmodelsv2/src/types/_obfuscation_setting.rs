@@ -3,13 +3,13 @@
 /// <p>Determines whether Amazon Lex obscures slot values in conversation logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObfuscationSetting {
+pub struct ObfuscationSetting  {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
     pub obfuscation_setting_type: crate::types::ObfuscationSettingType,
 }
-impl ObfuscationSetting {
+impl  ObfuscationSetting  {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
-    pub fn obfuscation_setting_type(&self) -> &crate::types::ObfuscationSettingType {
+    pub fn obfuscation_setting_type(&self) -> & crate::types::ObfuscationSettingType {
         &self.obfuscation_setting_type
     }
 }
@@ -35,8 +35,7 @@ impl ObfuscationSettingBuilder {
     }
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
     pub fn set_obfuscation_setting_type(mut self, input: ::std::option::Option<crate::types::ObfuscationSettingType>) -> Self {
-        self.obfuscation_setting_type = input;
-        self
+        self.obfuscation_setting_type = input; self
     }
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
     pub fn get_obfuscation_setting_type(&self) -> &::std::option::Option<crate::types::ObfuscationSettingType> {
@@ -46,13 +45,15 @@ impl ObfuscationSettingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`obfuscation_setting_type`](crate::types::builders::ObfuscationSettingBuilder::obfuscation_setting_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ObfuscationSetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ObfuscationSetting {
-            obfuscation_setting_type: self.obfuscation_setting_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "obfuscation_setting_type",
-                    "obfuscation_setting_type was not specified but it is required when building ObfuscationSetting",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ObfuscationSetting {
+                obfuscation_setting_type: self.obfuscation_setting_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("obfuscation_setting_type", "obfuscation_setting_type was not specified but it is required when building ObfuscationSetting")
+                    )?
+                ,
+            }
+        )
     }
 }
+

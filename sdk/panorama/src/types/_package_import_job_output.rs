@@ -3,7 +3,7 @@
 /// <p>Results of a package import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageImportJobOutput {
+pub struct PackageImportJobOutput  {
     /// <p>The package's ID.</p>
     pub package_id: ::std::string::String,
     /// <p>The package's version.</p>
@@ -13,24 +13,21 @@ pub struct PackageImportJobOutput {
     /// <p>The package's output location.</p>
     pub output_s3_location: ::std::option::Option<crate::types::OutPutS3Location>,
 }
-impl PackageImportJobOutput {
+impl  PackageImportJobOutput  {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> &str {
-        use std::ops::Deref;
-        self.package_id.deref()
+    pub fn package_id(&self) -> & str {
+        use std::ops::Deref; self.package_id.deref()
     }
     /// <p>The package's version.</p>
-    pub fn package_version(&self) -> &str {
-        use std::ops::Deref;
-        self.package_version.deref()
+    pub fn package_version(&self) -> & str {
+        use std::ops::Deref; self.package_version.deref()
     }
     /// <p>The package's patch version.</p>
-    pub fn patch_version(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_version.deref()
+    pub fn patch_version(&self) -> & str {
+        use std::ops::Deref; self.patch_version.deref()
     }
     /// <p>The package's output location.</p>
-    pub fn output_s3_location(&self) -> ::std::option::Option<&crate::types::OutPutS3Location> {
+    pub fn output_s3_location(&self) -> ::std::option::Option<& crate::types::OutPutS3Location> {
         self.output_s3_location.as_ref()
     }
 }
@@ -59,8 +56,7 @@ impl PackageImportJobOutputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The package's ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl PackageImportJobOutputBuilder {
     }
     /// <p>The package's version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The package's version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl PackageImportJobOutputBuilder {
     }
     /// <p>The package's patch version.</p>
     pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_version = input;
-        self
+        self.patch_version = input; self
     }
     /// <p>The package's patch version.</p>
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl PackageImportJobOutputBuilder {
     }
     /// <p>The package's output location.</p>
     pub fn set_output_s3_location(mut self, input: ::std::option::Option<crate::types::OutPutS3Location>) -> Self {
-        self.output_s3_location = input;
-        self
+        self.output_s3_location = input; self
     }
     /// <p>The package's output location.</p>
     pub fn get_output_s3_location(&self) -> &::std::option::Option<crate::types::OutPutS3Location> {
@@ -117,26 +110,27 @@ impl PackageImportJobOutputBuilder {
     /// - [`package_version`](crate::types::builders::PackageImportJobOutputBuilder::package_version)
     /// - [`patch_version`](crate::types::builders::PackageImportJobOutputBuilder::patch_version)
     pub fn build(self) -> ::std::result::Result<crate::types::PackageImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PackageImportJobOutput {
-            package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_id",
-                    "package_id was not specified but it is required when building PackageImportJobOutput",
-                )
-            })?,
-            package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_version",
-                    "package_version was not specified but it is required when building PackageImportJobOutput",
-                )
-            })?,
-            patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_version",
-                    "patch_version was not specified but it is required when building PackageImportJobOutput",
-                )
-            })?,
-            output_s3_location: self.output_s3_location,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PackageImportJobOutput {
+                package_id: self.package_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_id", "package_id was not specified but it is required when building PackageImportJobOutput")
+                    )?
+                ,
+                package_version: self.package_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "package_version was not specified but it is required when building PackageImportJobOutput")
+                    )?
+                ,
+                patch_version: self.patch_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_version", "patch_version was not specified but it is required when building PackageImportJobOutput")
+                    )?
+                ,
+                output_s3_location: self.output_s3_location
+                ,
+            }
+        )
     }
 }
+

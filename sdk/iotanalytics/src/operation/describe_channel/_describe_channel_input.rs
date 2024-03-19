@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelInput {
+pub struct DescribeChannelInput  {
     /// <p>The name of the channel whose information is retrieved.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub include_statistics: ::std::option::Option<bool>,
 }
-impl DescribeChannelInput {
+impl  DescribeChannelInput  {
     /// <p>The name of the channel whose information is retrieved.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
@@ -41,8 +41,7 @@ impl DescribeChannelInputBuilder {
     }
     /// <p>The name of the channel whose information is retrieved.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel whose information is retrieved.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeChannelInputBuilder {
     }
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub fn set_include_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_statistics = input;
-        self
+        self.include_statistics = input; self
     }
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub fn get_include_statistics(&self) -> &::std::option::Option<bool> {
         &self.include_statistics
     }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput {
-            channel_name: self.channel_name,
-            include_statistics: self.include_statistics,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_channel::DescribeChannelInput {
+                channel_name: self.channel_name
+                ,
+                include_statistics: self.include_statistics
+                ,
+            }
+        )
     }
 }
+

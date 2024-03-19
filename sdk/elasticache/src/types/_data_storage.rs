@@ -3,19 +3,19 @@
 /// <p>The data storage limit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataStorage {
+pub struct DataStorage  {
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub maximum: ::std::option::Option<i32>,
     /// <p>The unit that the storage is measured in, in GB.</p>
     pub unit: ::std::option::Option<crate::types::DataStorageUnit>,
 }
-impl DataStorage {
+impl  DataStorage  {
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub fn maximum(&self) -> ::std::option::Option<i32> {
         self.maximum
     }
     /// <p>The unit that the storage is measured in, in GB.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::DataStorageUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::DataStorageUnit> {
         self.unit.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DataStorageBuilder {
     }
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl DataStorageBuilder {
     }
     /// <p>The unit that the storage is measured in, in GB.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::DataStorageUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit that the storage is measured in, in GB.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::DataStorageUnit> {
@@ -67,8 +65,11 @@ impl DataStorageBuilder {
     /// Consumes the builder and constructs a [`DataStorage`](crate::types::DataStorage).
     pub fn build(self) -> crate::types::DataStorage {
         crate::types::DataStorage {
-            maximum: self.maximum,
-            unit: self.unit,
+            maximum: self.maximum
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

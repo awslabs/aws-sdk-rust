@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSecurityProfilePermissionsOutput {
+pub struct ListSecurityProfilePermissionsOutput  {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this resource was last modified.</p>
@@ -13,31 +13,32 @@ pub struct ListSecurityProfilePermissionsOutput {
     pub last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSecurityProfilePermissionsOutput {
+impl  ListSecurityProfilePermissionsOutput  {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[::std::string::String] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [::std::string::String] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The timestamp when this resource was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSecurityProfilePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSecurityProfilePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
     pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder {
@@ -49,7 +50,7 @@ impl ListSecurityProfilePermissionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilePermissionsOutputBuilder {
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
@@ -63,17 +64,16 @@ impl ListSecurityProfilePermissionsOutputBuilder {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input.into());
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.permissions
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -83,8 +83,7 @@ impl ListSecurityProfilePermissionsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ListSecurityProfilePermissionsOutputBuilder {
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,30 +109,34 @@ impl ListSecurityProfilePermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
     pub fn build(self) -> crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput {
         crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput {
-            permissions: self.permissions,
-            next_token: self.next_token,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            permissions: self.permissions
+            ,
+            next_token: self.next_token
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

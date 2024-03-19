@@ -3,7 +3,7 @@
 /// An update operation for a record.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordPatch {
+pub struct RecordPatch  {
     /// An operation, either replace or remove.
     pub op: crate::types::Operation,
     /// The key associated with the record patch.
@@ -15,18 +15,17 @@ pub struct RecordPatch {
     /// The last modified date of the client device.
     pub device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RecordPatch {
+impl  RecordPatch  {
     /// An operation, either replace or remove.
-    pub fn op(&self) -> &crate::types::Operation {
+    pub fn op(&self) -> & crate::types::Operation {
         &self.op
     }
     /// The key associated with the record patch.
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// The value associated with the record patch.
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
@@ -34,7 +33,7 @@ impl RecordPatch {
         self.sync_count
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl RecordPatchBuilder {
     }
     /// An operation, either replace or remove.
     pub fn set_op(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
-        self.op = input;
-        self
+        self.op = input; self
     }
     /// An operation, either replace or remove.
     pub fn get_op(&self) -> &::std::option::Option<crate::types::Operation> {
@@ -79,8 +77,7 @@ impl RecordPatchBuilder {
     }
     /// The key associated with the record patch.
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// The key associated with the record patch.
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl RecordPatchBuilder {
     }
     /// The value associated with the record patch.
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// The value associated with the record patch.
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl RecordPatchBuilder {
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
     pub fn set_sync_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sync_count = input;
-        self
+        self.sync_count = input; self
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
     pub fn get_sync_count(&self) -> &::std::option::Option<i64> {
@@ -122,8 +117,7 @@ impl RecordPatchBuilder {
     }
     /// The last modified date of the client device.
     pub fn set_device_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.device_last_modified_date = input;
-        self
+        self.device_last_modified_date = input; self
     }
     /// The last modified date of the client device.
     pub fn get_device_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -135,27 +129,29 @@ impl RecordPatchBuilder {
     /// - [`key`](crate::types::builders::RecordPatchBuilder::key)
     /// - [`sync_count`](crate::types::builders::RecordPatchBuilder::sync_count)
     pub fn build(self) -> ::std::result::Result<crate::types::RecordPatch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecordPatch {
-            op: self.op.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "op",
-                    "op was not specified but it is required when building RecordPatch",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building RecordPatch",
-                )
-            })?,
-            value: self.value,
-            sync_count: self.sync_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_count",
-                    "sync_count was not specified but it is required when building RecordPatch",
-                )
-            })?,
-            device_last_modified_date: self.device_last_modified_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecordPatch {
+                op: self.op
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("op", "op was not specified but it is required when building RecordPatch")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building RecordPatch")
+                    )?
+                ,
+                value: self.value
+                ,
+                sync_count: self.sync_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_count", "sync_count was not specified but it is required when building RecordPatch")
+                    )?
+                ,
+                device_last_modified_date: self.device_last_modified_date
+                ,
+            }
+        )
     }
 }
+

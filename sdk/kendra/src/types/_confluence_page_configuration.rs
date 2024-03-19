@@ -3,18 +3,19 @@
 /// <p>Configuration of the page settings for the Confluence data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfluencePageConfiguration {
+pub struct ConfluencePageConfiguration  {
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub page_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluencePageToIndexFieldMapping>>,
+    pub page_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluencePageToIndexFieldMapping>>,
 }
-impl ConfluencePageConfiguration {
+impl  ConfluencePageConfiguration  {
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.page_field_mappings.is_none()`.
-    pub fn page_field_mappings(&self) -> &[crate::types::ConfluencePageToIndexFieldMapping] {
-        self.page_field_mappings.as_deref().unwrap_or_default()
+    pub fn page_field_mappings(&self) -> & [crate::types::ConfluencePageToIndexFieldMapping] {
+        self.page_field_mappings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConfluencePageConfiguration {
@@ -28,7 +29,7 @@ impl ConfluencePageConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfluencePageConfigurationBuilder {
-    pub(crate) page_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluencePageToIndexFieldMapping>>,
+    pub(crate) page_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluencePageToIndexFieldMapping>>,
 }
 impl ConfluencePageConfigurationBuilder {
     /// Appends an item to `page_field_mappings`.
@@ -39,25 +40,26 @@ impl ConfluencePageConfigurationBuilder {
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn page_field_mappings(mut self, input: crate::types::ConfluencePageToIndexFieldMapping) -> Self {
         let mut v = self.page_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.page_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.page_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn set_page_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfluencePageToIndexFieldMapping>>) -> Self {
-        self.page_field_mappings = input;
-        self
+    pub fn set_page_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluencePageToIndexFieldMapping>>) -> Self {
+        self.page_field_mappings = input; self
     }
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn get_page_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfluencePageToIndexFieldMapping>> {
+    pub fn get_page_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfluencePageToIndexFieldMapping>> {
         &self.page_field_mappings
     }
     /// Consumes the builder and constructs a [`ConfluencePageConfiguration`](crate::types::ConfluencePageConfiguration).
     pub fn build(self) -> crate::types::ConfluencePageConfiguration {
         crate::types::ConfluencePageConfiguration {
-            page_field_mappings: self.page_field_mappings,
+            page_field_mappings: self.page_field_mappings
+            ,
         }
     }
 }
+

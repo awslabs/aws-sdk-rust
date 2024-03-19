@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssociationBatchInput {
+pub struct CreateAssociationBatchInput  {
     /// <p>One or more associations.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssociationBatchRequestEntry>>,
 }
-impl CreateAssociationBatchInput {
+impl  CreateAssociationBatchInput  {
     /// <p>One or more associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::CreateAssociationBatchRequestEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::CreateAssociationBatchRequestEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAssociationBatchInput {
@@ -25,7 +26,7 @@ impl CreateAssociationBatchInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssociationBatchInputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssociationBatchRequestEntry>>,
 }
 impl CreateAssociationBatchInputBuilder {
     /// Appends an item to `entries`.
@@ -35,26 +36,26 @@ impl CreateAssociationBatchInputBuilder {
     /// <p>One or more associations.</p>
     pub fn entries(mut self, input: crate::types::CreateAssociationBatchRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more associations.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssociationBatchRequestEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>One or more associations.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateAssociationBatchRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_association_batch::CreateAssociationBatchInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_association_batch::CreateAssociationBatchInput { entries: self.entries })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_association_batch::CreateAssociationBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_association_batch::CreateAssociationBatchInput {
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

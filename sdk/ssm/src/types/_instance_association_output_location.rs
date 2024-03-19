@@ -4,13 +4,13 @@
 /// <p>For the minimal permissions required to enable Amazon S3 output for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-associations-creating.html#state-manager-associations-console">Create an association (console)</a> in the <i>Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceAssociationOutputLocation {
+pub struct InstanceAssociationOutputLocation  {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub s3_location: ::std::option::Option<crate::types::S3OutputLocation>,
 }
-impl InstanceAssociationOutputLocation {
+impl  InstanceAssociationOutputLocation  {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3OutputLocation> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::S3OutputLocation> {
         self.s3_location.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl InstanceAssociationOutputLocationBuilder {
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3OutputLocation>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3OutputLocation> {
@@ -45,7 +44,9 @@ impl InstanceAssociationOutputLocationBuilder {
     /// Consumes the builder and constructs a [`InstanceAssociationOutputLocation`](crate::types::InstanceAssociationOutputLocation).
     pub fn build(self) -> crate::types::InstanceAssociationOutputLocation {
         crate::types::InstanceAssociationOutputLocation {
-            s3_location: self.s3_location,
+            s3_location: self.s3_location
+            ,
         }
     }
 }
+

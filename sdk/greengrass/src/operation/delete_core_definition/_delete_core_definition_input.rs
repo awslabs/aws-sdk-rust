@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCoreDefinitionInput {
+pub struct DeleteCoreDefinitionInput  {
     /// The ID of the core definition.
     pub core_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCoreDefinitionInput {
+impl  DeleteCoreDefinitionInput  {
     /// The ID of the core definition.
-    pub fn core_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_definition_id(&self) -> ::std::option::Option<& str> {
         self.core_definition_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteCoreDefinitionInputBuilder {
     }
     /// The ID of the core definition.
     pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_definition_id = input;
-        self
+        self.core_definition_id = input; self
     }
     /// The ID of the core definition.
     pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_definition_id
     }
     /// Consumes the builder and constructs a [`DeleteCoreDefinitionInput`](crate::operation::delete_core_definition::DeleteCoreDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_core_definition::DeleteCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_core_definition::DeleteCoreDefinitionInput {
-            core_definition_id: self.core_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_core_definition::DeleteCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_core_definition::DeleteCoreDefinitionInput {
+                core_definition_id: self.core_definition_id
+                ,
+            }
+        )
     }
 }
+

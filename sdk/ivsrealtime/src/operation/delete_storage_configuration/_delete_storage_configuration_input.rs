@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStorageConfigurationInput {
+pub struct DeleteStorageConfigurationInput  {
     /// <p>ARN of the storage configuration to be deleted.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStorageConfigurationInput {
+impl  DeleteStorageConfigurationInput  {
     /// <p>ARN of the storage configuration to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteStorageConfigurationInputBuilder {
     }
     /// <p>ARN of the storage configuration to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the storage configuration to be deleted.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteStorageConfigurationInput`](crate::operation::delete_storage_configuration::DeleteStorageConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_storage_configuration::DeleteStorageConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_storage_configuration::DeleteStorageConfigurationInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_storage_configuration::DeleteStorageConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_storage_configuration::DeleteStorageConfigurationInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

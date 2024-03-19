@@ -3,7 +3,7 @@
 /// <p>Specific configuration settings for a DocumentDB event source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentDbEventSourceConfig {
+pub struct DocumentDbEventSourceConfig  {
     /// <p>The name of the database to consume within the DocumentDB cluster.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections.</p>
@@ -11,17 +11,17 @@ pub struct DocumentDbEventSourceConfig {
     /// <p>Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes.</p>
     pub full_document: ::std::option::Option<crate::types::FullDocument>,
 }
-impl DocumentDbEventSourceConfig {
+impl  DocumentDbEventSourceConfig  {
     /// <p>The name of the database to consume within the DocumentDB cluster.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes.</p>
-    pub fn full_document(&self) -> ::std::option::Option<&crate::types::FullDocument> {
+    pub fn full_document(&self) -> ::std::option::Option<& crate::types::FullDocument> {
         self.full_document.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DocumentDbEventSourceConfigBuilder {
     }
     /// <p>The name of the database to consume within the DocumentDB cluster.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database to consume within the DocumentDB cluster.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DocumentDbEventSourceConfigBuilder {
     }
     /// <p>The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections.</p>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_name = input;
-        self
+        self.collection_name = input; self
     }
     /// <p>The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections.</p>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl DocumentDbEventSourceConfigBuilder {
     }
     /// <p>Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes.</p>
     pub fn set_full_document(mut self, input: ::std::option::Option<crate::types::FullDocument>) -> Self {
-        self.full_document = input;
-        self
+        self.full_document = input; self
     }
     /// <p>Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes.</p>
     pub fn get_full_document(&self) -> &::std::option::Option<crate::types::FullDocument> {
@@ -86,9 +83,13 @@ impl DocumentDbEventSourceConfigBuilder {
     /// Consumes the builder and constructs a [`DocumentDbEventSourceConfig`](crate::types::DocumentDbEventSourceConfig).
     pub fn build(self) -> crate::types::DocumentDbEventSourceConfig {
         crate::types::DocumentDbEventSourceConfig {
-            database_name: self.database_name,
-            collection_name: self.collection_name,
-            full_document: self.full_document,
+            database_name: self.database_name
+            ,
+            collection_name: self.collection_name
+            ,
+            full_document: self.full_document
+            ,
         }
     }
 }
+

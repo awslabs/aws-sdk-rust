@@ -7,22 +7,20 @@
 /// <p>Contains the identifier and the name of the <code>IPSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpSetSummary {
+pub struct IpSetSummary  {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
     pub ip_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
     pub name: ::std::string::String,
 }
-impl IpSetSummary {
+impl  IpSetSummary  {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
-    pub fn ip_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_set_id.deref()
+    pub fn ip_set_id(&self) -> & str {
+        use std::ops::Deref; self.ip_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl IpSetSummary {
@@ -48,8 +46,7 @@ impl IpSetSummaryBuilder {
     }
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
     pub fn set_ip_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_set_id = input;
-        self
+        self.ip_set_id = input; self
     }
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
     pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +60,7 @@ impl IpSetSummaryBuilder {
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,19 +71,20 @@ impl IpSetSummaryBuilder {
     /// - [`ip_set_id`](crate::types::builders::IpSetSummaryBuilder::ip_set_id)
     /// - [`name`](crate::types::builders::IpSetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::IpSetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpSetSummary {
-            ip_set_id: self.ip_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_set_id",
-                    "ip_set_id was not specified but it is required when building IpSetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building IpSetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpSetSummary {
+                ip_set_id: self.ip_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_set_id", "ip_set_id was not specified but it is required when building IpSetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building IpSetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

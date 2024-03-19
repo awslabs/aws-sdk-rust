@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchDataSets`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID.</p><br>
     ///   - [`filters(DataSetSearchFilter)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::filters) / [`set_filters(Option<Vec::<DataSetSearchFilter>>)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::set_filters):<br>required: **true**<br><p>The filters to apply to the search.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that can be used in a subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`SearchDataSetsOutput`](crate::operation::search_data_sets::SearchDataSetsOutput) with field(s):
+                            /// - On success, responds with [`SearchDataSetsOutput`](crate::operation::search_data_sets::SearchDataSetsOutput) with field(s):
     ///   - [`data_set_summaries(Option<Vec::<DataSetSummary>>)`](crate::operation::search_data_sets::SearchDataSetsOutput::data_set_summaries): <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_data_sets::SearchDataSetsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`status(i32)`](crate::operation::search_data_sets::SearchDataSetsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::search_data_sets::SearchDataSetsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<SearchDataSetsError>`](crate::operation::search_data_sets::SearchDataSetsError)
+                            /// - On failure, responds with [`SdkError<SearchDataSetsError>`](crate::operation::search_data_sets::SearchDataSetsError)
     pub fn search_data_sets(&self) -> crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder {
-        crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_data_sets::builders::SearchDataSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

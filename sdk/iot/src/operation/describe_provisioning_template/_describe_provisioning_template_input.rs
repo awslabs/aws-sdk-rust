@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProvisioningTemplateInput {
+pub struct DescribeProvisioningTemplateInput  {
     /// <p>The name of the provisioning template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeProvisioningTemplateInput {
+impl  DescribeProvisioningTemplateInput  {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeProvisioningTemplateInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateInput`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_provisioning_template::DescribeProvisioningTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_provisioning_template::DescribeProvisioningTemplateInput {
-            template_name: self.template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_provisioning_template::DescribeProvisioningTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_provisioning_template::DescribeProvisioningTemplateInput {
+                template_name: self.template_name
+                ,
+            }
+        )
     }
 }
+

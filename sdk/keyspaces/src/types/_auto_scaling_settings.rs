@@ -28,7 +28,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingSettings {
+pub struct AutoScalingSettings  {
     /// <p>This optional parameter enables auto scaling for the table if set to <code>false</code>.</p>
     pub auto_scaling_disabled: bool,
     /// <p>The minimum level of throughput the table should always be ready to support. The value must be between 1 and the max throughput per second quota for your account (40,000 by default).</p>
@@ -38,7 +38,7 @@ pub struct AutoScalingSettings {
     /// <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's ratio of consumed to provisioned capacity stays at or near the target value that you specify. You define the target value as a percentage between 20 and 90.</p>
     pub scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicy>,
 }
-impl AutoScalingSettings {
+impl  AutoScalingSettings  {
     /// <p>This optional parameter enables auto scaling for the table if set to <code>false</code>.</p>
     pub fn auto_scaling_disabled(&self) -> bool {
         self.auto_scaling_disabled
@@ -52,7 +52,7 @@ impl AutoScalingSettings {
         self.maximum_units
     }
     /// <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's ratio of consumed to provisioned capacity stays at or near the target value that you specify. You define the target value as a percentage between 20 and 90.</p>
-    pub fn scaling_policy(&self) -> ::std::option::Option<&crate::types::AutoScalingPolicy> {
+    pub fn scaling_policy(&self) -> ::std::option::Option<& crate::types::AutoScalingPolicy> {
         self.scaling_policy.as_ref()
     }
 }
@@ -80,8 +80,7 @@ impl AutoScalingSettingsBuilder {
     }
     /// <p>This optional parameter enables auto scaling for the table if set to <code>false</code>.</p>
     pub fn set_auto_scaling_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_scaling_disabled = input;
-        self
+        self.auto_scaling_disabled = input; self
     }
     /// <p>This optional parameter enables auto scaling for the table if set to <code>false</code>.</p>
     pub fn get_auto_scaling_disabled(&self) -> &::std::option::Option<bool> {
@@ -94,8 +93,7 @@ impl AutoScalingSettingsBuilder {
     }
     /// <p>The minimum level of throughput the table should always be ready to support. The value must be between 1 and the max throughput per second quota for your account (40,000 by default).</p>
     pub fn set_minimum_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.minimum_units = input;
-        self
+        self.minimum_units = input; self
     }
     /// <p>The minimum level of throughput the table should always be ready to support. The value must be between 1 and the max throughput per second quota for your account (40,000 by default).</p>
     pub fn get_minimum_units(&self) -> &::std::option::Option<i64> {
@@ -108,8 +106,7 @@ impl AutoScalingSettingsBuilder {
     }
     /// <p>Manage costs by specifying the maximum amount of throughput to provision. The value must be between 1 and the max throughput per second quota for your account (40,000 by default).</p>
     pub fn set_maximum_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.maximum_units = input;
-        self
+        self.maximum_units = input; self
     }
     /// <p>Manage costs by specifying the maximum amount of throughput to provision. The value must be between 1 and the max throughput per second quota for your account (40,000 by default).</p>
     pub fn get_maximum_units(&self) -> &::std::option::Option<i64> {
@@ -122,8 +119,7 @@ impl AutoScalingSettingsBuilder {
     }
     /// <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's ratio of consumed to provisioned capacity stays at or near the target value that you specify. You define the target value as a percentage between 20 and 90.</p>
     pub fn set_scaling_policy(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicy>) -> Self {
-        self.scaling_policy = input;
-        self
+        self.scaling_policy = input; self
     }
     /// <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's ratio of consumed to provisioned capacity stays at or near the target value that you specify. You define the target value as a percentage between 20 and 90.</p>
     pub fn get_scaling_policy(&self) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
@@ -132,10 +128,16 @@ impl AutoScalingSettingsBuilder {
     /// Consumes the builder and constructs a [`AutoScalingSettings`](crate::types::AutoScalingSettings).
     pub fn build(self) -> crate::types::AutoScalingSettings {
         crate::types::AutoScalingSettings {
-            auto_scaling_disabled: self.auto_scaling_disabled.unwrap_or_default(),
-            minimum_units: self.minimum_units,
-            maximum_units: self.maximum_units,
-            scaling_policy: self.scaling_policy,
+            auto_scaling_disabled: self.auto_scaling_disabled
+                .unwrap_or_default()
+            ,
+            minimum_units: self.minimum_units
+            ,
+            maximum_units: self.maximum_units
+            ,
+            scaling_policy: self.scaling_policy
+            ,
         }
     }
 }
+

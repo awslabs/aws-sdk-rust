@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteProvisionedProductServiceActionOutput {
+pub struct ExecuteProvisionedProductServiceActionOutput  {
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
     pub record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
 }
-impl ExecuteProvisionedProductServiceActionOutput {
+impl  ExecuteProvisionedProductServiceActionOutput  {
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
-    pub fn record_detail(&self) -> ::std::option::Option<&crate::types::RecordDetail> {
+    pub fn record_detail(&self) -> ::std::option::Option<& crate::types::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteProvisionedProductServiceActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteProvisionedProductServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput).
     pub fn builder() -> crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionOutputBuilder {
@@ -40,27 +40,28 @@ impl ExecuteProvisionedProductServiceActionOutputBuilder {
     }
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
     pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
-        self.record_detail = input;
-        self
+        self.record_detail = input; self
     }
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
     pub fn get_record_detail(&self) -> &::std::option::Option<crate::types::RecordDetail> {
         &self.record_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput).
     pub fn build(self) -> crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput {
         crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput {
-            record_detail: self.record_detail,
+            record_detail: self.record_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

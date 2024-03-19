@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateWorkflowOutput {
+pub struct UpdateWorkflowOutput  {
     /// <p>The ID of the migration workflow.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
@@ -16,9 +16,9 @@ pub struct UpdateWorkflowOutput {
     /// <p>The ID of the application configured in Application Discovery Service.</p>
     pub ads_application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The inputs required to update a migration workflow.</p>
-    pub workflow_inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
+    pub workflow_inputs: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub step_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the migration workflow.</p>
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     /// <p>The time at which the migration workflow was created.</p>
@@ -26,62 +26,63 @@ pub struct UpdateWorkflowOutput {
     /// <p>The time at which the migration workflow was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags added to the migration workflow.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateWorkflowOutput {
+impl  UpdateWorkflowOutput  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the migration workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The ID of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn ads_application_configuration_id(&self) -> ::std::option::Option<& str> {
         self.ads_application_configuration_id.as_deref()
     }
     /// <p>The inputs required to update a migration workflow.</p>
-    pub fn workflow_inputs(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
+    pub fn workflow_inputs(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::StepInput>> {
         self.workflow_inputs.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_targets.is_none()`.
-    pub fn step_targets(&self) -> &[::std::string::String] {
-        self.step_targets.as_deref().unwrap_or_default()
+    pub fn step_targets(&self) -> & [::std::string::String] {
+        self.step_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The time at which the migration workflow was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the migration workflow was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The tags added to the migration workflow.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateWorkflowOutput {
+impl  ::std::fmt::Debug for UpdateWorkflowOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowOutput");
         formatter.field("id", &self.id);
@@ -101,10 +102,10 @@ impl ::std::fmt::Debug for UpdateWorkflowOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput).
     pub fn builder() -> crate::operation::update_workflow::builders::UpdateWorkflowOutputBuilder {
@@ -122,12 +123,12 @@ pub struct UpdateWorkflowOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) ads_application_configuration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) workflow_inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
-    pub(crate) step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) workflow_inputs: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>>,
+    pub(crate) step_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateWorkflowOutputBuilder {
@@ -138,8 +139,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +152,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +165,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The name of the migration workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the migration workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +178,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The description of the migration workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the migration workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +191,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +204,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The ID of the application configured in Application Discovery Service.</p>
     pub fn set_ads_application_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ads_application_configuration_id = input;
-        self
+        self.ads_application_configuration_id = input; self
     }
     /// <p>The ID of the application configured in Application Discovery Service.</p>
     pub fn get_ads_application_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,20 +217,16 @@ impl UpdateWorkflowOutputBuilder {
     /// <p>The inputs required to update a migration workflow.</p>
     pub fn workflow_inputs(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::StepInput) -> Self {
         let mut hash_map = self.workflow_inputs.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.workflow_inputs = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.workflow_inputs = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The inputs required to update a migration workflow.</p>
-    pub fn set_workflow_inputs(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
-    ) -> Self {
-        self.workflow_inputs = input;
-        self
+    pub fn set_workflow_inputs(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>>) -> Self {
+        self.workflow_inputs = input; self
     }
     /// <p>The inputs required to update a migration workflow.</p>
-    pub fn get_workflow_inputs(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
+    pub fn get_workflow_inputs(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>> {
         &self.workflow_inputs
     }
     /// Appends an item to `step_targets`.
@@ -245,17 +236,16 @@ impl UpdateWorkflowOutputBuilder {
     /// <p>The servers on which a step will be run.</p>
     pub fn step_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.step_targets.unwrap_or_default();
-        v.push(input.into());
-        self.step_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.step_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.step_targets = input;
-        self
+    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.step_targets = input; self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.step_targets
     }
     /// <p>The status of the migration workflow.</p>
@@ -265,8 +255,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The status of the migration workflow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the migration workflow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MigrationWorkflowStatusEnum> {
@@ -279,8 +268,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The time at which the migration workflow was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the migration workflow was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -293,8 +281,7 @@ impl UpdateWorkflowOutputBuilder {
     }
     /// <p>The time at which the migration workflow was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time at which the migration workflow was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -307,43 +294,54 @@ impl UpdateWorkflowOutputBuilder {
     /// <p>The tags added to the migration workflow.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags added to the migration workflow.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags added to the migration workflow.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput).
     pub fn build(self) -> crate::operation::update_workflow::UpdateWorkflowOutput {
         crate::operation::update_workflow::UpdateWorkflowOutput {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            template_id: self.template_id,
-            ads_application_configuration_id: self.ads_application_configuration_id,
-            workflow_inputs: self.workflow_inputs,
-            step_targets: self.step_targets,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            template_id: self.template_id
+            ,
+            ads_application_configuration_id: self.ads_application_configuration_id
+            ,
+            workflow_inputs: self.workflow_inputs
+            ,
+            step_targets: self.step_targets
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -367,3 +365,4 @@ impl ::std::fmt::Debug for UpdateWorkflowOutputBuilder {
         formatter.finish()
     }
 }
+

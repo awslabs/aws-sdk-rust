@@ -3,32 +3,31 @@
 /// <p>An error message with a list of conflicting queries used across different sets of featured results. This occurred with the request for a new featured results set. Check that the queries you specified for featured results are unique per featured results set for each index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeaturedResultsConflictException {
+pub struct FeaturedResultsConflictException  {
     /// <p>An explanation for the conflicting queries.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    pub conflicting_items: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>,
+    pub conflicting_items: ::std::option::Option<::std::vec::Vec::<crate::types::ConflictingItem>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl FeaturedResultsConflictException {
+impl  FeaturedResultsConflictException  {
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conflicting_items.is_none()`.
-    pub fn conflicting_items(&self) -> &[crate::types::ConflictingItem] {
-        self.conflicting_items.as_deref().unwrap_or_default()
+    pub fn conflicting_items(&self) -> & [crate::types::ConflictingItem] {
+        self.conflicting_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FeaturedResultsConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for FeaturedResultsConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "FeaturedResultsConflictException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +42,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::FeaturedResults
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FeaturedResultsConflictException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl FeaturedResultsConflictException {
     /// Creates a new builder-style object to manufacture [`FeaturedResultsConflictException`](crate::types::error::FeaturedResultsConflictException).
@@ -59,7 +56,7 @@ impl FeaturedResultsConflictException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturedResultsConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) conflicting_items: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>,
+    pub(crate) conflicting_items: ::std::option::Option<::std::vec::Vec::<crate::types::ConflictingItem>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl FeaturedResultsConflictExceptionBuilder {
@@ -70,8 +67,7 @@ impl FeaturedResultsConflictExceptionBuilder {
     }
     /// <p>An explanation for the conflicting queries.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An explanation for the conflicting queries.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,36 +80,38 @@ impl FeaturedResultsConflictExceptionBuilder {
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
     pub fn conflicting_items(mut self, input: crate::types::ConflictingItem) -> Self {
         let mut v = self.conflicting_items.unwrap_or_default();
-        v.push(input);
-        self.conflicting_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conflicting_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    pub fn set_conflicting_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>) -> Self {
-        self.conflicting_items = input;
-        self
+    pub fn set_conflicting_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConflictingItem>>) -> Self {
+        self.conflicting_items = input; self
     }
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    pub fn get_conflicting_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>> {
+    pub fn get_conflicting_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConflictingItem>> {
         &self.conflicting_items
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`FeaturedResultsConflictException`](crate::types::error::FeaturedResultsConflictException).
     pub fn build(self) -> crate::types::error::FeaturedResultsConflictException {
         crate::types::error::FeaturedResultsConflictException {
-            message: self.message,
-            conflicting_items: self.conflicting_items,
+            message: self.message
+            ,
+            conflicting_items: self.conflicting_items
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

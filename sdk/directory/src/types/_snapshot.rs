@@ -3,7 +3,7 @@
 /// <p>Describes a directory snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The directory identifier.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot identifier.</p>
@@ -17,29 +17,29 @@ pub struct Snapshot {
     /// <p>The date and time that the snapshot was taken.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Snapshot {
+impl  Snapshot  {
     /// <p>The directory identifier.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The snapshot identifier.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The snapshot type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SnapshotType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SnapshotType> {
         self.r#type.as_ref()
     }
     /// <p>The descriptive name of the snapshot.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The snapshot status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SnapshotStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SnapshotStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the snapshot was taken.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl SnapshotBuilder {
     }
     /// <p>The directory identifier.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The directory identifier.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot identifier.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The snapshot identifier.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SnapshotType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The snapshot type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SnapshotType> {
@@ -111,8 +108,7 @@ impl SnapshotBuilder {
     }
     /// <p>The descriptive name of the snapshot.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The descriptive name of the snapshot.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SnapshotStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The snapshot status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SnapshotStatus> {
@@ -139,8 +134,7 @@ impl SnapshotBuilder {
     }
     /// <p>The date and time that the snapshot was taken.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time that the snapshot was taken.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl SnapshotBuilder {
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
-            directory_id: self.directory_id,
-            snapshot_id: self.snapshot_id,
-            r#type: self.r#type,
-            name: self.name,
-            status: self.status,
-            start_time: self.start_time,
+            directory_id: self.directory_id
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
         }
     }
 }
+

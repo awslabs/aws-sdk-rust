@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutImageTagMutabilityInput {
+pub struct PutImageTagMutabilityInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
@@ -10,17 +10,17 @@ pub struct PutImageTagMutabilityInput {
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
 }
-impl PutImageTagMutabilityInput {
+impl  PutImageTagMutabilityInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn image_tag_mutability(&self) -> ::std::option::Option<&crate::types::ImageTagMutability> {
+    pub fn image_tag_mutability(&self) -> ::std::option::Option<& crate::types::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl PutImageTagMutabilityInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PutImageTagMutabilityInputBuilder {
     }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl PutImageTagMutabilityInputBuilder {
     }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<crate::types::ImageTagMutability>) -> Self {
-        self.image_tag_mutability = input;
-        self
+        self.image_tag_mutability = input; self
     }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }
     /// Consumes the builder and constructs a [`PutImageTagMutabilityInput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_tag_mutability: self.image_tag_mutability,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                image_tag_mutability: self.image_tag_mutability
+                ,
+            }
+        )
     }
 }
+

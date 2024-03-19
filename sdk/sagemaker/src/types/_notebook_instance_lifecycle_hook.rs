@@ -8,13 +8,13 @@
 /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotebookInstanceLifecycleHook {
+pub struct NotebookInstanceLifecycleHook  {
     /// <p>A base64-encoded string that contains a shell script for a notebook instance lifecycle configuration.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl NotebookInstanceLifecycleHook {
+impl  NotebookInstanceLifecycleHook  {
     /// <p>A base64-encoded string that contains a shell script for a notebook instance lifecycle configuration.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl NotebookInstanceLifecycleHookBuilder {
     }
     /// <p>A base64-encoded string that contains a shell script for a notebook instance lifecycle configuration.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>A base64-encoded string that contains a shell script for a notebook instance lifecycle configuration.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -48,6 +47,10 @@ impl NotebookInstanceLifecycleHookBuilder {
     }
     /// Consumes the builder and constructs a [`NotebookInstanceLifecycleHook`](crate::types::NotebookInstanceLifecycleHook).
     pub fn build(self) -> crate::types::NotebookInstanceLifecycleHook {
-        crate::types::NotebookInstanceLifecycleHook { content: self.content }
+        crate::types::NotebookInstanceLifecycleHook {
+            content: self.content
+            ,
+        }
     }
 }
+

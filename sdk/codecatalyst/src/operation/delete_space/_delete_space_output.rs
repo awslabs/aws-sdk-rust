@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSpaceOutput {
+pub struct DeleteSpaceOutput  {
     /// <p>The name of the space.</p>
     pub name: ::std::string::String,
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteSpaceOutput {
+impl  DeleteSpaceOutput  {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSpaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSpaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput).
     pub fn builder() -> crate::operation::delete_space::builders::DeleteSpaceOutputBuilder {
@@ -49,8 +48,7 @@ impl DeleteSpaceOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,35 +61,37 @@ impl DeleteSpaceOutputBuilder {
     }
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::delete_space::builders::DeleteSpaceOutputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeleteSpaceOutput",
-                )
-            })?,
-            display_name: self.display_name,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_space::DeleteSpaceOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DeleteSpaceOutput")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A summary of findings metrics in an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountFindingsMetric {
+pub struct AccountFindingsMetric  {
     /// <p>The date from which the finding metrics were retrieved.</p>
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of new findings of each severity in account on the specified date.</p>
@@ -15,25 +15,25 @@ pub struct AccountFindingsMetric {
     /// <p>The average time it takes to close findings of each severity in days.</p>
     pub mean_time_to_close: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
 }
-impl AccountFindingsMetric {
+impl  AccountFindingsMetric  {
     /// <p>The date from which the finding metrics were retrieved.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The number of new findings of each severity in account on the specified date.</p>
-    pub fn new_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn new_findings(&self) -> ::std::option::Option<& crate::types::FindingMetricsValuePerSeverity> {
         self.new_findings.as_ref()
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
-    pub fn closed_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn closed_findings(&self) -> ::std::option::Option<& crate::types::FindingMetricsValuePerSeverity> {
         self.closed_findings.as_ref()
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
-    pub fn open_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn open_findings(&self) -> ::std::option::Option<& crate::types::FindingMetricsValuePerSeverity> {
         self.open_findings.as_ref()
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
-    pub fn mean_time_to_close(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn mean_time_to_close(&self) -> ::std::option::Option<& crate::types::FindingMetricsValuePerSeverity> {
         self.mean_time_to_close.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl AccountFindingsMetricBuilder {
     }
     /// <p>The date from which the finding metrics were retrieved.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date from which the finding metrics were retrieved.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +75,7 @@ impl AccountFindingsMetricBuilder {
     }
     /// <p>The number of new findings of each severity in account on the specified date.</p>
     pub fn set_new_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
-        self.new_findings = input;
-        self
+        self.new_findings = input; self
     }
     /// <p>The number of new findings of each severity in account on the specified date.</p>
     pub fn get_new_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
@@ -90,8 +88,7 @@ impl AccountFindingsMetricBuilder {
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
     pub fn set_closed_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
-        self.closed_findings = input;
-        self
+        self.closed_findings = input; self
     }
     /// <p>The number of closed findings of each severity in an account on the specified date.</p>
     pub fn get_closed_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
@@ -104,8 +101,7 @@ impl AccountFindingsMetricBuilder {
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
     pub fn set_open_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
-        self.open_findings = input;
-        self
+        self.open_findings = input; self
     }
     /// <p>The number of open findings of each severity in an account as of the specified date.</p>
     pub fn get_open_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
@@ -118,8 +114,7 @@ impl AccountFindingsMetricBuilder {
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
     pub fn set_mean_time_to_close(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
-        self.mean_time_to_close = input;
-        self
+        self.mean_time_to_close = input; self
     }
     /// <p>The average time it takes to close findings of each severity in days.</p>
     pub fn get_mean_time_to_close(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
@@ -128,11 +123,17 @@ impl AccountFindingsMetricBuilder {
     /// Consumes the builder and constructs a [`AccountFindingsMetric`](crate::types::AccountFindingsMetric).
     pub fn build(self) -> crate::types::AccountFindingsMetric {
         crate::types::AccountFindingsMetric {
-            date: self.date,
-            new_findings: self.new_findings,
-            closed_findings: self.closed_findings,
-            open_findings: self.open_findings,
-            mean_time_to_close: self.mean_time_to_close,
+            date: self.date
+            ,
+            new_findings: self.new_findings
+            ,
+            closed_findings: self.closed_findings
+            ,
+            open_findings: self.open_findings
+            ,
+            mean_time_to_close: self.mean_time_to_close
+            ,
         }
     }
 }
+

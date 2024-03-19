@@ -3,13 +3,13 @@
 /// <p>The status of the workspace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkspaceStatus {
+pub struct WorkspaceStatus  {
     /// <p>The current status of the workspace.</p>
     pub status_code: crate::types::WorkspaceStatusCode,
 }
-impl WorkspaceStatus {
+impl  WorkspaceStatus  {
     /// <p>The current status of the workspace.</p>
-    pub fn status_code(&self) -> &crate::types::WorkspaceStatusCode {
+    pub fn status_code(&self) -> & crate::types::WorkspaceStatusCode {
         &self.status_code
     }
 }
@@ -35,8 +35,7 @@ impl WorkspaceStatusBuilder {
     }
     /// <p>The current status of the workspace.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::WorkspaceStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The current status of the workspace.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::WorkspaceStatusCode> {
@@ -46,13 +45,15 @@ impl WorkspaceStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::WorkspaceStatusBuilder::status_code)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkspaceStatus {
-            status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_code",
-                    "status_code was not specified but it is required when building WorkspaceStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkspaceStatus {
+                status_code: self.status_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_code", "status_code was not specified but it is required when building WorkspaceStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

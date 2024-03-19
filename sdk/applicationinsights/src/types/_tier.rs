@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tier = unimplemented!();
 /// match tier {
@@ -49,16 +49,14 @@
 /// Specifically, when `tier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Tier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     ActiveDirectory,
@@ -104,140 +102,119 @@ pub enum Tier {
     SqlServerFailoverClusterInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Tier {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE_DIRECTORY" => Tier::ActiveDirectory,
-            "CUSTOM" => Tier::Custom,
-            "DEFAULT" => Tier::Default,
-            "DOT_NET_CORE" => Tier::DotNetCore,
-            "DOT_NET_WEB" => Tier::DotNetWeb,
-            "DOT_NET_WEB_TIER" => Tier::DotNetWebTier,
-            "DOT_NET_WORKER" => Tier::DotNetWorker,
-            "JAVA_JMX" => Tier::JavaJmx,
-            "MYSQL" => Tier::Mysql,
-            "ORACLE" => Tier::Oracle,
-            "POSTGRESQL" => Tier::Postgresql,
-            "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
-            "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
-            "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
-            "SAP_NETWEAVER_DISTRIBUTED" => Tier::SapNetweaverDistributed,
-            "SAP_NETWEAVER_HIGH_AVAILABILITY" => Tier::SapNetweaverHighAvailability,
-            "SAP_NETWEAVER_STANDARD" => Tier::SapNetweaverStandard,
-            "SHAREPOINT" => Tier::Sharepoint,
-            "SQL_SERVER" => Tier::SqlServer,
-            "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
-            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
-            other => Tier::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE_DIRECTORY" => Tier::ActiveDirectory,
+"CUSTOM" => Tier::Custom,
+"DEFAULT" => Tier::Default,
+"DOT_NET_CORE" => Tier::DotNetCore,
+"DOT_NET_WEB" => Tier::DotNetWeb,
+"DOT_NET_WEB_TIER" => Tier::DotNetWebTier,
+"DOT_NET_WORKER" => Tier::DotNetWorker,
+"JAVA_JMX" => Tier::JavaJmx,
+"MYSQL" => Tier::Mysql,
+"ORACLE" => Tier::Oracle,
+"POSTGRESQL" => Tier::Postgresql,
+"SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
+"SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
+"SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
+"SAP_NETWEAVER_DISTRIBUTED" => Tier::SapNetweaverDistributed,
+"SAP_NETWEAVER_HIGH_AVAILABILITY" => Tier::SapNetweaverHighAvailability,
+"SAP_NETWEAVER_STANDARD" => Tier::SapNetweaverStandard,
+"SHAREPOINT" => Tier::Sharepoint,
+"SQL_SERVER" => Tier::SqlServer,
+"SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
+"SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
+other => Tier::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Tier {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Tier::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Tier::from(s))
+                    }
+                }
 impl Tier {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Tier::ActiveDirectory => "ACTIVE_DIRECTORY",
-            Tier::Custom => "CUSTOM",
-            Tier::Default => "DEFAULT",
-            Tier::DotNetCore => "DOT_NET_CORE",
-            Tier::DotNetWeb => "DOT_NET_WEB",
-            Tier::DotNetWebTier => "DOT_NET_WEB_TIER",
-            Tier::DotNetWorker => "DOT_NET_WORKER",
-            Tier::JavaJmx => "JAVA_JMX",
-            Tier::Mysql => "MYSQL",
-            Tier::Oracle => "ORACLE",
-            Tier::Postgresql => "POSTGRESQL",
-            Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
-            Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
-            Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
-            Tier::SapNetweaverDistributed => "SAP_NETWEAVER_DISTRIBUTED",
-            Tier::SapNetweaverHighAvailability => "SAP_NETWEAVER_HIGH_AVAILABILITY",
-            Tier::SapNetweaverStandard => "SAP_NETWEAVER_STANDARD",
-            Tier::Sharepoint => "SHAREPOINT",
-            Tier::SqlServer => "SQL_SERVER",
-            Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
-            Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
-            Tier::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE_DIRECTORY",
-            "CUSTOM",
-            "DEFAULT",
-            "DOT_NET_CORE",
-            "DOT_NET_WEB",
-            "DOT_NET_WEB_TIER",
-            "DOT_NET_WORKER",
-            "JAVA_JMX",
-            "MYSQL",
-            "ORACLE",
-            "POSTGRESQL",
-            "SAP_HANA_HIGH_AVAILABILITY",
-            "SAP_HANA_MULTI_NODE",
-            "SAP_HANA_SINGLE_NODE",
-            "SAP_NETWEAVER_DISTRIBUTED",
-            "SAP_NETWEAVER_HIGH_AVAILABILITY",
-            "SAP_NETWEAVER_STANDARD",
-            "SHAREPOINT",
-            "SQL_SERVER",
-            "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
-            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Tier::ActiveDirectory => "ACTIVE_DIRECTORY",
+    Tier::Custom => "CUSTOM",
+    Tier::Default => "DEFAULT",
+    Tier::DotNetCore => "DOT_NET_CORE",
+    Tier::DotNetWeb => "DOT_NET_WEB",
+    Tier::DotNetWebTier => "DOT_NET_WEB_TIER",
+    Tier::DotNetWorker => "DOT_NET_WORKER",
+    Tier::JavaJmx => "JAVA_JMX",
+    Tier::Mysql => "MYSQL",
+    Tier::Oracle => "ORACLE",
+    Tier::Postgresql => "POSTGRESQL",
+    Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
+    Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
+    Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
+    Tier::SapNetweaverDistributed => "SAP_NETWEAVER_DISTRIBUTED",
+    Tier::SapNetweaverHighAvailability => "SAP_NETWEAVER_HIGH_AVAILABILITY",
+    Tier::SapNetweaverStandard => "SAP_NETWEAVER_STANDARD",
+    Tier::Sharepoint => "SHAREPOINT",
+    Tier::SqlServer => "SQL_SERVER",
+    Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
+    Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
+    Tier::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE_DIRECTORY", "CUSTOM", "DEFAULT", "DOT_NET_CORE", "DOT_NET_WEB", "DOT_NET_WEB_TIER", "DOT_NET_WORKER", "JAVA_JMX", "MYSQL", "ORACLE", "POSTGRESQL", "SAP_HANA_HIGH_AVAILABILITY", "SAP_HANA_MULTI_NODE", "SAP_HANA_SINGLE_NODE", "SAP_NETWEAVER_DISTRIBUTED", "SAP_NETWEAVER_HIGH_AVAILABILITY", "SAP_NETWEAVER_STANDARD", "SHAREPOINT", "SQL_SERVER", "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP", "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Tier {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Tier {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Tier {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Tier::ActiveDirectory => write!(f, "ACTIVE_DIRECTORY"),
-            Tier::Custom => write!(f, "CUSTOM"),
-            Tier::Default => write!(f, "DEFAULT"),
-            Tier::DotNetCore => write!(f, "DOT_NET_CORE"),
-            Tier::DotNetWeb => write!(f, "DOT_NET_WEB"),
-            Tier::DotNetWebTier => write!(f, "DOT_NET_WEB_TIER"),
-            Tier::DotNetWorker => write!(f, "DOT_NET_WORKER"),
-            Tier::JavaJmx => write!(f, "JAVA_JMX"),
-            Tier::Mysql => write!(f, "MYSQL"),
-            Tier::Oracle => write!(f, "ORACLE"),
-            Tier::Postgresql => write!(f, "POSTGRESQL"),
-            Tier::SapHanaHighAvailability => write!(f, "SAP_HANA_HIGH_AVAILABILITY"),
-            Tier::SapHanaMultiNode => write!(f, "SAP_HANA_MULTI_NODE"),
-            Tier::SapHanaSingleNode => write!(f, "SAP_HANA_SINGLE_NODE"),
-            Tier::SapNetweaverDistributed => write!(f, "SAP_NETWEAVER_DISTRIBUTED"),
-            Tier::SapNetweaverHighAvailability => write!(f, "SAP_NETWEAVER_HIGH_AVAILABILITY"),
-            Tier::SapNetweaverStandard => write!(f, "SAP_NETWEAVER_STANDARD"),
-            Tier::Sharepoint => write!(f, "SHAREPOINT"),
-            Tier::SqlServer => write!(f, "SQL_SERVER"),
-            Tier::SqlServerAlwaysonAvailabilityGroup => write!(f, "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP"),
-            Tier::SqlServerFailoverClusterInstance => write!(f, "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"),
-            Tier::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Tier::ActiveDirectory => write!(f, "ACTIVE_DIRECTORY"),
+Tier::Custom => write!(f, "CUSTOM"),
+Tier::Default => write!(f, "DEFAULT"),
+Tier::DotNetCore => write!(f, "DOT_NET_CORE"),
+Tier::DotNetWeb => write!(f, "DOT_NET_WEB"),
+Tier::DotNetWebTier => write!(f, "DOT_NET_WEB_TIER"),
+Tier::DotNetWorker => write!(f, "DOT_NET_WORKER"),
+Tier::JavaJmx => write!(f, "JAVA_JMX"),
+Tier::Mysql => write!(f, "MYSQL"),
+Tier::Oracle => write!(f, "ORACLE"),
+Tier::Postgresql => write!(f, "POSTGRESQL"),
+Tier::SapHanaHighAvailability => write!(f, "SAP_HANA_HIGH_AVAILABILITY"),
+Tier::SapHanaMultiNode => write!(f, "SAP_HANA_MULTI_NODE"),
+Tier::SapHanaSingleNode => write!(f, "SAP_HANA_SINGLE_NODE"),
+Tier::SapNetweaverDistributed => write!(f, "SAP_NETWEAVER_DISTRIBUTED"),
+Tier::SapNetweaverHighAvailability => write!(f, "SAP_NETWEAVER_HIGH_AVAILABILITY"),
+Tier::SapNetweaverStandard => write!(f, "SAP_NETWEAVER_STANDARD"),
+Tier::Sharepoint => write!(f, "SHAREPOINT"),
+Tier::SqlServer => write!(f, "SQL_SERVER"),
+Tier::SqlServerAlwaysonAvailabilityGroup => write!(f, "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP"),
+Tier::SqlServerFailoverClusterInstance => write!(f, "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"),
+Tier::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

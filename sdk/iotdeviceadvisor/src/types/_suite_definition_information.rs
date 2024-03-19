@@ -3,13 +3,13 @@
 /// <p>Information about the suite definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuiteDefinitionInformation {
+pub struct SuiteDefinitionInformation  {
     /// <p>Suite definition ID of the test suite.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite name of the test suite.</p>
     pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub default_devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
+    pub default_devices: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceUnderTest>>,
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub intended_for_qualification: ::std::option::Option<bool>,
     /// <p>Verifies if the test suite is a long duration test.</p>
@@ -19,20 +19,21 @@ pub struct SuiteDefinitionInformation {
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SuiteDefinitionInformation {
+impl  SuiteDefinitionInformation  {
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite name of the test suite.</p>
-    pub fn suite_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> ::std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_devices.is_none()`.
-    pub fn default_devices(&self) -> &[crate::types::DeviceUnderTest] {
-        self.default_devices.as_deref().unwrap_or_default()
+    pub fn default_devices(&self) -> & [crate::types::DeviceUnderTest] {
+        self.default_devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub fn intended_for_qualification(&self) -> ::std::option::Option<bool> {
@@ -43,11 +44,11 @@ impl SuiteDefinitionInformation {
         self.is_long_duration_test
     }
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -64,7 +65,7 @@ impl SuiteDefinitionInformation {
 pub struct SuiteDefinitionInformationBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_name: ::std::option::Option<::std::string::String>,
-    pub(crate) default_devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
+    pub(crate) default_devices: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceUnderTest>>,
     pub(crate) intended_for_qualification: ::std::option::Option<bool>,
     pub(crate) is_long_duration_test: ::std::option::Option<bool>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
@@ -78,8 +79,7 @@ impl SuiteDefinitionInformationBuilder {
     }
     /// <p>Suite definition ID of the test suite.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition ID of the test suite.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl SuiteDefinitionInformationBuilder {
     }
     /// <p>Suite name of the test suite.</p>
     pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_name = input;
-        self
+        self.suite_definition_name = input; self
     }
     /// <p>Suite name of the test suite.</p>
     pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +105,16 @@ impl SuiteDefinitionInformationBuilder {
     /// <p>Specifies the devices that are under test for the test suite.</p>
     pub fn default_devices(mut self, input: crate::types::DeviceUnderTest) -> Self {
         let mut v = self.default_devices.unwrap_or_default();
-        v.push(input);
-        self.default_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub fn set_default_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>) -> Self {
-        self.default_devices = input;
-        self
+    pub fn set_default_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceUnderTest>>) -> Self {
+        self.default_devices = input; self
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub fn get_default_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
+    pub fn get_default_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceUnderTest>> {
         &self.default_devices
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
@@ -126,8 +124,7 @@ impl SuiteDefinitionInformationBuilder {
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub fn set_intended_for_qualification(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.intended_for_qualification = input;
-        self
+        self.intended_for_qualification = input; self
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub fn get_intended_for_qualification(&self) -> &::std::option::Option<bool> {
@@ -140,8 +137,7 @@ impl SuiteDefinitionInformationBuilder {
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
     pub fn set_is_long_duration_test(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_long_duration_test = input;
-        self
+        self.is_long_duration_test = input; self
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
     pub fn get_is_long_duration_test(&self) -> &::std::option::Option<bool> {
@@ -154,8 +150,7 @@ impl SuiteDefinitionInformationBuilder {
     }
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -168,8 +163,7 @@ impl SuiteDefinitionInformationBuilder {
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,13 +172,21 @@ impl SuiteDefinitionInformationBuilder {
     /// Consumes the builder and constructs a [`SuiteDefinitionInformation`](crate::types::SuiteDefinitionInformation).
     pub fn build(self) -> crate::types::SuiteDefinitionInformation {
         crate::types::SuiteDefinitionInformation {
-            suite_definition_id: self.suite_definition_id,
-            suite_definition_name: self.suite_definition_name,
-            default_devices: self.default_devices,
-            intended_for_qualification: self.intended_for_qualification,
-            is_long_duration_test: self.is_long_duration_test,
-            protocol: self.protocol,
-            created_at: self.created_at,
+            suite_definition_id: self.suite_definition_id
+            ,
+            suite_definition_name: self.suite_definition_name
+            ,
+            default_devices: self.default_devices
+            ,
+            intended_for_qualification: self.intended_for_qualification
+            ,
+            is_long_duration_test: self.is_long_duration_test
+            ,
+            protocol: self.protocol
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

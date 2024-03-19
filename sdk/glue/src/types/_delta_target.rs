@@ -3,9 +3,9 @@
 /// <p>Specifies a Delta data store to crawl one or more Delta tables.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeltaTarget {
+pub struct DeltaTarget  {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub delta_tables: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
@@ -13,15 +13,16 @@ pub struct DeltaTarget {
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
     pub create_native_delta_table: ::std::option::Option<bool>,
 }
-impl DeltaTarget {
+impl  DeltaTarget  {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delta_tables.is_none()`.
-    pub fn delta_tables(&self) -> &[::std::string::String] {
-        self.delta_tables.as_deref().unwrap_or_default()
+    pub fn delta_tables(&self) -> & [::std::string::String] {
+        self.delta_tables.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
@@ -44,7 +45,7 @@ impl DeltaTarget {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeltaTargetBuilder {
-    pub(crate) delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) delta_tables: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) write_manifest: ::std::option::Option<bool>,
     pub(crate) create_native_delta_table: ::std::option::Option<bool>,
@@ -57,17 +58,16 @@ impl DeltaTargetBuilder {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
     pub fn delta_tables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delta_tables.unwrap_or_default();
-        v.push(input.into());
-        self.delta_tables = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.delta_tables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn set_delta_tables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.delta_tables = input;
-        self
+    pub fn set_delta_tables(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.delta_tables = input; self
     }
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn get_delta_tables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delta_tables(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.delta_tables
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
@@ -77,8 +77,7 @@ impl DeltaTargetBuilder {
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl DeltaTargetBuilder {
     }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     pub fn set_write_manifest(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.write_manifest = input;
-        self
+        self.write_manifest = input; self
     }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     pub fn get_write_manifest(&self) -> &::std::option::Option<bool> {
@@ -105,8 +103,7 @@ impl DeltaTargetBuilder {
     }
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
     pub fn set_create_native_delta_table(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_native_delta_table = input;
-        self
+        self.create_native_delta_table = input; self
     }
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
     pub fn get_create_native_delta_table(&self) -> &::std::option::Option<bool> {
@@ -115,10 +112,15 @@ impl DeltaTargetBuilder {
     /// Consumes the builder and constructs a [`DeltaTarget`](crate::types::DeltaTarget).
     pub fn build(self) -> crate::types::DeltaTarget {
         crate::types::DeltaTarget {
-            delta_tables: self.delta_tables,
-            connection_name: self.connection_name,
-            write_manifest: self.write_manifest,
-            create_native_delta_table: self.create_native_delta_table,
+            delta_tables: self.delta_tables
+            ,
+            connection_name: self.connection_name
+            ,
+            write_manifest: self.write_manifest
+            ,
+            create_native_delta_table: self.create_native_delta_table
+            ,
         }
     }
 }
+

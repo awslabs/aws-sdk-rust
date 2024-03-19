@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutKeyPolicyInput {
+pub struct PutKeyPolicyInput  {
     /// <p>Sets the key policy on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -42,7 +42,7 @@ pub struct PutKeyPolicyInput {
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
     pub bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
 }
-impl PutKeyPolicyInput {
+impl  PutKeyPolicyInput  {
     /// <p>Sets the key policy on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -53,11 +53,11 @@ impl PutKeyPolicyInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The key policy to attach to the KMS key.</p>
@@ -78,7 +78,7 @@ impl PutKeyPolicyInput {
     /// <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p></li>
     /// </ul>
     /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
@@ -133,8 +133,7 @@ impl PutKeyPolicyInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Sets the key policy on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -156,8 +155,7 @@ impl PutKeyPolicyInputBuilder {
     }
     /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +203,7 @@ impl PutKeyPolicyInputBuilder {
     /// </ul>
     /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>The key policy must meet the following criteria:</p>
@@ -244,8 +241,7 @@ impl PutKeyPolicyInputBuilder {
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
     pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bypass_policy_lockout_safety_check = input;
-        self
+        self.bypass_policy_lockout_safety_check = input; self
     }
     /// <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p><important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
@@ -256,14 +252,19 @@ impl PutKeyPolicyInputBuilder {
         &self.bypass_policy_lockout_safety_check
     }
     /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::operation::put_key_policy::PutKeyPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_key_policy::PutKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_key_policy::PutKeyPolicyInput {
-            key_id: self.key_id,
-            policy_name: self.policy_name,
-            policy: self.policy,
-            bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_key_policy::PutKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_key_policy::PutKeyPolicyInput {
+                key_id: self.key_id
+                ,
+                policy_name: self.policy_name
+                ,
+                policy: self.policy
+                ,
+                bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check
+                ,
+            }
+        )
     }
 }
+

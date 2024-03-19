@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricingPlansOutput {
+pub struct ListPricingPlansOutput  {
     /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
-    pub pricing_plans: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
+    pub pricing_plans: ::std::option::Option<::std::vec::Vec::<crate::types::PricingPlanListElement>>,
     /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPricingPlansOutput {
+impl  ListPricingPlansOutput  {
     /// <p>The billing period for which the described pricing plans are applicable.</p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_plans.is_none()`.
-    pub fn pricing_plans(&self) -> &[crate::types::PricingPlanListElement] {
-        self.pricing_plans.as_deref().unwrap_or_default()
+    pub fn pricing_plans(&self) -> & [crate::types::PricingPlanListElement] {
+        self.pricing_plans.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPricingPlansOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPricingPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansOutput`](crate::operation::list_pricing_plans::ListPricingPlansOutput).
     pub fn builder() -> crate::operation::list_pricing_plans::builders::ListPricingPlansOutputBuilder {
@@ -44,7 +45,7 @@ impl ListPricingPlansOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansOutputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
-    pub(crate) pricing_plans: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
+    pub(crate) pricing_plans: ::std::option::Option<::std::vec::Vec::<crate::types::PricingPlanListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl ListPricingPlansOutputBuilder {
     }
     /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p>The billing period for which the described pricing plans are applicable.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl ListPricingPlansOutputBuilder {
     /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
     pub fn pricing_plans(mut self, input: crate::types::PricingPlanListElement) -> Self {
         let mut v = self.pricing_plans.unwrap_or_default();
-        v.push(input);
-        self.pricing_plans = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pricing_plans = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
-    pub fn set_pricing_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>) -> Self {
-        self.pricing_plans = input;
-        self
+    pub fn set_pricing_plans(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PricingPlanListElement>>) -> Self {
+        self.pricing_plans = input; self
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved.</p>
-    pub fn get_pricing_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>> {
+    pub fn get_pricing_plans(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PricingPlanListElement>> {
         &self.pricing_plans
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
@@ -90,29 +89,32 @@ impl ListPricingPlansOutputBuilder {
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPricingPlansOutput`](crate::operation::list_pricing_plans::ListPricingPlansOutput).
     pub fn build(self) -> crate::operation::list_pricing_plans::ListPricingPlansOutput {
         crate::operation::list_pricing_plans::ListPricingPlansOutput {
-            billing_period: self.billing_period,
-            pricing_plans: self.pricing_plans,
-            next_token: self.next_token,
+            billing_period: self.billing_period
+            ,
+            pricing_plans: self.pricing_plans
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

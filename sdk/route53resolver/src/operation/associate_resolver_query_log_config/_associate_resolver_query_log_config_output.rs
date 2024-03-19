@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateResolverQueryLogConfigOutput {
+pub struct AssociateResolverQueryLogConfigOutput  {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
     pub resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,
 }
-impl AssociateResolverQueryLogConfigOutput {
+impl  AssociateResolverQueryLogConfigOutput  {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
-    pub fn resolver_query_log_config_association(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigAssociation> {
+    pub fn resolver_query_log_config_association(&self) -> ::std::option::Option<& crate::types::ResolverQueryLogConfigAssociation> {
         self.resolver_query_log_config_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateResolverQueryLogConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigOutput`](crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput).
     pub fn builder() -> crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigOutputBuilder {
@@ -39,31 +39,29 @@ impl AssociateResolverQueryLogConfigOutputBuilder {
         self
     }
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
-    pub fn set_resolver_query_log_config_association(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
-    ) -> Self {
-        self.resolver_query_log_config_association = input;
-        self
+    pub fn set_resolver_query_log_config_association(mut self, input: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>) -> Self {
+        self.resolver_query_log_config_association = input; self
     }
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
     pub fn get_resolver_query_log_config_association(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociation> {
         &self.resolver_query_log_config_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateResolverQueryLogConfigOutput`](crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput).
     pub fn build(self) -> crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput {
         crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput {
-            resolver_query_log_config_association: self.resolver_query_log_config_association,
+            resolver_query_log_config_association: self.resolver_query_log_config_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

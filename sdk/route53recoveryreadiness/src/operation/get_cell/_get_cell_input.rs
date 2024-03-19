@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCellInput {
+pub struct GetCellInput  {
     /// <p>The name of the cell.</p>
     pub cell_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCellInput {
+impl  GetCellInput  {
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> ::std::option::Option<&str> {
+    pub fn cell_name(&self) -> ::std::option::Option<& str> {
         self.cell_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetCellInputBuilder {
     }
     /// <p>The name of the cell.</p>
     pub fn set_cell_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cell_name = input;
-        self
+        self.cell_name = input; self
     }
     /// <p>The name of the cell.</p>
     pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetCellInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetCellInput`](crate::operation::get_cell::GetCellInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_cell::GetCellInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cell::GetCellInput { cell_name: self.cell_name })
+        ::std::result::Result::Ok(
+            crate::operation::get_cell::GetCellInput {
+                cell_name: self.cell_name
+                ,
+            }
+        )
     }
 }
+

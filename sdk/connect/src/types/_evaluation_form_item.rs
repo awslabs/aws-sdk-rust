@@ -22,11 +22,7 @@ impl EvaluationFormItem {
     /// Tries to convert the enum instance into [`Question`](crate::types::EvaluationFormItem::Question), extracting the inner [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_question(&self) -> ::std::result::Result<&crate::types::EvaluationFormQuestion, &Self> {
-        if let EvaluationFormItem::Question(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EvaluationFormItem::Question(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Question`](crate::types::EvaluationFormItem::Question).
     pub fn is_question(&self) -> bool {
@@ -35,11 +31,7 @@ impl EvaluationFormItem {
     /// Tries to convert the enum instance into [`Section`](crate::types::EvaluationFormItem::Section), extracting the inner [`EvaluationFormSection`](crate::types::EvaluationFormSection).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_section(&self) -> ::std::result::Result<&crate::types::EvaluationFormSection, &Self> {
-        if let EvaluationFormItem::Section(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EvaluationFormItem::Section(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Section`](crate::types::EvaluationFormItem::Section).
     pub fn is_section(&self) -> bool {
@@ -50,3 +42,4 @@ impl EvaluationFormItem {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::stop_model_customization_job::_stop_model_customizatio
 
 impl StopModelCustomizationJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.stop_model_customization_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.stop_model_customization_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StopModelCustomizationJob`.
-///
+/// 
 /// <p>Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopModelCustomizationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobInputBuilder,
+                    inner: crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
-    > for StopModelCustomizationJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
+                    crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
+                > for StopModelCustomizationJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
+                        crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StopModelCustomizationJobFluentBuilder {
     /// Creates a new `StopModelCustomizationJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl StopModelCustomizationJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::stop_model_customization_job::StopModelCustomizationJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::stop_model_customization_job::StopModelCustomizationJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput,
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_model_customization_job::StopModelCustomizationJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::stop_model_customization_job::StopModelCustomizationJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::stop_model_customization_job::StopModelCustomizationJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput, crate::operation::stop_model_customization_job::StopModelCustomizationJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Job identifier of the job to stop.</p>
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_identifier(input.into());
@@ -123,3 +110,4 @@ impl StopModelCustomizationJobFluentBuilder {
         self.inner.get_job_identifier()
     }
 }
+

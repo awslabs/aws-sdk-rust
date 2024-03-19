@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceSetsOutput {
+pub struct ListResourceSetsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource sets associated with the account.</p>
-    pub resource_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetOutput>>,
+    pub resource_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceSetOutput>>,
     _request_id: Option<String>,
 }
-impl ListResourceSetsOutput {
+impl  ListResourceSetsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of resource sets associated with the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_sets.is_none()`.
-    pub fn resource_sets(&self) -> &[crate::types::ResourceSetOutput] {
-        self.resource_sets.as_deref().unwrap_or_default()
+    pub fn resource_sets(&self) -> & [crate::types::ResourceSetOutput] {
+        self.resource_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResourceSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResourceSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetsOutput`](crate::operation::list_resource_sets::ListResourceSetsOutput).
     pub fn builder() -> crate::operation::list_resource_sets::builders::ListResourceSetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListResourceSetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceSetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetOutput>>,
+    pub(crate) resource_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceSetOutput>>,
     _request_id: Option<String>,
 }
 impl ListResourceSetsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListResourceSetsOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListResourceSetsOutputBuilder {
     /// <p>A list of resource sets associated with the account.</p>
     pub fn resource_sets(mut self, input: crate::types::ResourceSetOutput) -> Self {
         let mut v = self.resource_sets.unwrap_or_default();
-        v.push(input);
-        self.resource_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource sets associated with the account.</p>
-    pub fn set_resource_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSetOutput>>) -> Self {
-        self.resource_sets = input;
-        self
+    pub fn set_resource_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceSetOutput>>) -> Self {
+        self.resource_sets = input; self
     }
     /// <p>A list of resource sets associated with the account.</p>
-    pub fn get_resource_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSetOutput>> {
+    pub fn get_resource_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceSetOutput>> {
         &self.resource_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResourceSetsOutput`](crate::operation::list_resource_sets::ListResourceSetsOutput).
     pub fn build(self) -> crate::operation::list_resource_sets::ListResourceSetsOutput {
         crate::operation::list_resource_sets::ListResourceSetsOutput {
-            next_token: self.next_token,
-            resource_sets: self.resource_sets,
+            next_token: self.next_token
+            ,
+            resource_sets: self.resource_sets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartIngestionJobOutput {
+pub struct StartIngestionJobOutput  {
     /// Contains the information of an ingestion job.
     pub ingestion_job: ::std::option::Option<crate::types::IngestionJob>,
     _request_id: Option<String>,
 }
-impl StartIngestionJobOutput {
+impl  StartIngestionJobOutput  {
     /// Contains the information of an ingestion job.
-    pub fn ingestion_job(&self) -> ::std::option::Option<&crate::types::IngestionJob> {
+    pub fn ingestion_job(&self) -> ::std::option::Option<& crate::types::IngestionJob> {
         self.ingestion_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartIngestionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartIngestionJobOutput`](crate::operation::start_ingestion_job::StartIngestionJobOutput).
     pub fn builder() -> crate::operation::start_ingestion_job::builders::StartIngestionJobOutputBuilder {
@@ -41,27 +41,28 @@ impl StartIngestionJobOutputBuilder {
     }
     /// Contains the information of an ingestion job.
     pub fn set_ingestion_job(mut self, input: ::std::option::Option<crate::types::IngestionJob>) -> Self {
-        self.ingestion_job = input;
-        self
+        self.ingestion_job = input; self
     }
     /// Contains the information of an ingestion job.
     pub fn get_ingestion_job(&self) -> &::std::option::Option<crate::types::IngestionJob> {
         &self.ingestion_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartIngestionJobOutput`](crate::operation::start_ingestion_job::StartIngestionJobOutput).
     pub fn build(self) -> crate::operation::start_ingestion_job::StartIngestionJobOutput {
         crate::operation::start_ingestion_job::StartIngestionJobOutput {
-            ingestion_job: self.ingestion_job,
+            ingestion_job: self.ingestion_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

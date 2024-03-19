@@ -3,15 +3,14 @@
 /// <p>HTTP URL destination configuration used by the topic rule's HTTP action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpUrlDestinationConfiguration {
+pub struct HttpUrlDestinationConfiguration  {
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     pub confirmation_url: ::std::string::String,
 }
-impl HttpUrlDestinationConfiguration {
+impl  HttpUrlDestinationConfiguration  {
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
-    pub fn confirmation_url(&self) -> &str {
-        use std::ops::Deref;
-        self.confirmation_url.deref()
+    pub fn confirmation_url(&self) -> & str {
+        use std::ops::Deref; self.confirmation_url.deref()
     }
 }
 impl HttpUrlDestinationConfiguration {
@@ -36,8 +35,7 @@ impl HttpUrlDestinationConfigurationBuilder {
     }
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     pub fn set_confirmation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.confirmation_url = input;
-        self
+        self.confirmation_url = input; self
     }
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl HttpUrlDestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`confirmation_url`](crate::types::builders::HttpUrlDestinationConfigurationBuilder::confirmation_url)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpUrlDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HttpUrlDestinationConfiguration {
-            confirmation_url: self.confirmation_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "confirmation_url",
-                    "confirmation_url was not specified but it is required when building HttpUrlDestinationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HttpUrlDestinationConfiguration {
+                confirmation_url: self.confirmation_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("confirmation_url", "confirmation_url was not specified but it is required when building HttpUrlDestinationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

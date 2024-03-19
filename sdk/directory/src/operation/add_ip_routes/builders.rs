@@ -5,55 +5,51 @@ pub use crate::operation::add_ip_routes::_add_ip_routes_input::AddIpRoutesInputB
 
 impl AddIpRoutesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_ip_routes::AddIpRoutesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_ip_routes::AddIpRoutesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_ip_routes();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_ip_routes::AddIpRoutesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_ip_routes::AddIpRoutesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_ip_routes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddIpRoutes`.
-///
+/// 
 /// <p>If the DNS server for your self-managed domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from your Microsoft AD on Amazon Web Services to a peer VPC.</p>
 /// <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddIpRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_ip_routes::builders::AddIpRoutesInputBuilder,
+                    inner: crate::operation::add_ip_routes::builders::AddIpRoutesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_ip_routes::AddIpRoutesOutput,
-        crate::operation::add_ip_routes::AddIpRoutesError,
-    > for AddIpRoutesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_ip_routes::AddIpRoutesOutput,
-            crate::operation::add_ip_routes::AddIpRoutesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_ip_routes::AddIpRoutesOutput,
+                    crate::operation::add_ip_routes::AddIpRoutesError,
+                > for AddIpRoutesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_ip_routes::AddIpRoutesOutput,
+                        crate::operation::add_ip_routes::AddIpRoutesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddIpRoutesFluentBuilder {
     /// Creates a new `AddIpRoutes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl AddIpRoutesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_ip_routes::AddIpRoutesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_ip_routes::AddIpRoutesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_ip_routes::AddIpRoutes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_ip_routes::AddIpRoutes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_ip_routes::AddIpRoutesOutput,
-        crate::operation::add_ip_routes::AddIpRoutesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_ip_routes::AddIpRoutesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_ip_routes::AddIpRoutesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_ip_routes::AddIpRoutes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_ip_routes::AddIpRoutes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_ip_routes::AddIpRoutesOutput, crate::operation::add_ip_routes::AddIpRoutesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Identifier (ID) of the directory to which to add the address block.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
@@ -133,12 +120,12 @@ impl AddIpRoutesFluentBuilder {
         self
     }
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    pub fn set_ip_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>) -> Self {
+    pub fn set_ip_routes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpRoute>>) -> Self {
         self.inner = self.inner.set_ip_routes(input);
         self
     }
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    pub fn get_ip_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRoute>> {
+    pub fn get_ip_routes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpRoute>> {
         self.inner.get_ip_routes()
     }
     /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules:</p>
@@ -288,3 +275,4 @@ impl AddIpRoutesFluentBuilder {
         self.inner.get_update_security_group_for_directory_controllers()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a volume status event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeStatusEvent {
+pub struct VolumeStatusEvent  {
     /// <p>A description of the event.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of this event.</p>
@@ -17,29 +17,29 @@ pub struct VolumeStatusEvent {
     /// <p>The ID of the instance associated with the event.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl VolumeStatusEvent {
+impl  VolumeStatusEvent  {
     /// <p>A description of the event.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of this event.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The type of this event.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&str> {
+    pub fn event_type(&self) -> ::std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>The latest end time of the event.</p>
-    pub fn not_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The earliest start time of the event.</p>
-    pub fn not_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>The ID of the instance associated with the event.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl VolumeStatusEventBuilder {
     }
     /// <p>A description of the event.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the event.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl VolumeStatusEventBuilder {
     }
     /// <p>The ID of this event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of this event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl VolumeStatusEventBuilder {
     }
     /// <p>The type of this event.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of this event.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl VolumeStatusEventBuilder {
     }
     /// <p>The latest end time of the event.</p>
     pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_after = input;
-        self
+        self.not_after = input; self
     }
     /// <p>The latest end time of the event.</p>
     pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl VolumeStatusEventBuilder {
     }
     /// <p>The earliest start time of the event.</p>
     pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_before = input;
-        self
+        self.not_before = input; self
     }
     /// <p>The earliest start time of the event.</p>
     pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl VolumeStatusEventBuilder {
     }
     /// <p>The ID of the instance associated with the event.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance associated with the event.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl VolumeStatusEventBuilder {
     /// Consumes the builder and constructs a [`VolumeStatusEvent`](crate::types::VolumeStatusEvent).
     pub fn build(self) -> crate::types::VolumeStatusEvent {
         crate::types::VolumeStatusEvent {
-            description: self.description,
-            event_id: self.event_id,
-            event_type: self.event_type,
-            not_after: self.not_after,
-            not_before: self.not_before,
-            instance_id: self.instance_id,
+            description: self.description
+            ,
+            event_id: self.event_id
+            ,
+            event_type: self.event_type
+            ,
+            not_after: self.not_after
+            ,
+            not_before: self.not_before
+            ,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

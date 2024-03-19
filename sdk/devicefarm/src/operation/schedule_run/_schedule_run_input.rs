@@ -3,7 +3,7 @@
 /// <p>Represents a request to the schedule run operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleRunInput {
+pub struct ScheduleRunInput  {
     /// <p>The ARN of the project for the run to be scheduled.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
@@ -22,38 +22,38 @@ pub struct ScheduleRunInput {
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub execution_configuration: ::std::option::Option<crate::types::ExecutionConfiguration>,
 }
-impl ScheduleRunInput {
+impl  ScheduleRunInput  {
     /// <p>The ARN of the project for the run to be scheduled.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
-    pub fn device_pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_pool_arn(&self) -> ::std::option::Option<& str> {
         self.device_pool_arn.as_deref()
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
-    pub fn device_selection_configuration(&self) -> ::std::option::Option<&crate::types::DeviceSelectionConfiguration> {
+    pub fn device_selection_configuration(&self) -> ::std::option::Option<& crate::types::DeviceSelectionConfiguration> {
         self.device_selection_configuration.as_ref()
     }
     /// <p>The name for the run to be scheduled.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about the test for the run to be scheduled.</p>
-    pub fn test(&self) -> ::std::option::Option<&crate::types::ScheduleRunTest> {
+    pub fn test(&self) -> ::std::option::Option<& crate::types::ScheduleRunTest> {
         self.test.as_ref()
     }
     /// <p>Information about the settings for the run to be scheduled.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ScheduleRunConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ScheduleRunConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
-    pub fn execution_configuration(&self) -> ::std::option::Option<&crate::types::ExecutionConfiguration> {
+    pub fn execution_configuration(&self) -> ::std::option::Option<& crate::types::ExecutionConfiguration> {
         self.execution_configuration.as_ref()
     }
 }
@@ -86,8 +86,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>The ARN of the project for the run to be scheduled.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The ARN of the project for the run to be scheduled.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
     pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_pool_arn = input;
-        self
+        self.device_pool_arn = input; self
     }
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
     pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl ScheduleRunInputBuilder {
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
     pub fn set_device_selection_configuration(mut self, input: ::std::option::Option<crate::types::DeviceSelectionConfiguration>) -> Self {
-        self.device_selection_configuration = input;
-        self
+        self.device_selection_configuration = input; self
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
@@ -145,8 +141,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>The name for the run to be scheduled.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the run to be scheduled.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>Information about the test for the run to be scheduled.</p>
     pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
-        self.test = input;
-        self
+        self.test = input; self
     }
     /// <p>Information about the test for the run to be scheduled.</p>
     pub fn get_test(&self) -> &::std::option::Option<crate::types::ScheduleRunTest> {
@@ -174,8 +168,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>Information about the settings for the run to be scheduled.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleRunConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Information about the settings for the run to be scheduled.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
@@ -188,8 +181,7 @@ impl ScheduleRunInputBuilder {
     }
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub fn set_execution_configuration(mut self, input: ::std::option::Option<crate::types::ExecutionConfiguration>) -> Self {
-        self.execution_configuration = input;
-        self
+        self.execution_configuration = input; self
     }
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub fn get_execution_configuration(&self) -> &::std::option::Option<crate::types::ExecutionConfiguration> {
@@ -197,15 +189,26 @@ impl ScheduleRunInputBuilder {
     }
     /// Consumes the builder and constructs a [`ScheduleRunInput`](crate::operation::schedule_run::ScheduleRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::schedule_run::ScheduleRunInput {
-            project_arn: self.project_arn,
-            app_arn: self.app_arn,
-            device_pool_arn: self.device_pool_arn,
-            device_selection_configuration: self.device_selection_configuration,
-            name: self.name,
-            test: self.test,
-            configuration: self.configuration,
-            execution_configuration: self.execution_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::schedule_run::ScheduleRunInput {
+                project_arn: self.project_arn
+                ,
+                app_arn: self.app_arn
+                ,
+                device_pool_arn: self.device_pool_arn
+                ,
+                device_selection_configuration: self.device_selection_configuration
+                ,
+                name: self.name
+                ,
+                test: self.test
+                ,
+                configuration: self.configuration
+                ,
+                execution_configuration: self.execution_configuration
+                ,
+            }
+        )
     }
 }
+

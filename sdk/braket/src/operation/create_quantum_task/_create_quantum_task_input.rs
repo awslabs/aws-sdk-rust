@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQuantumTaskInput {
+pub struct CreateQuantumTaskInput  {
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device to run the task on.</p>
@@ -18,23 +18,23 @@ pub struct CreateQuantumTaskInput {
     /// <p>The action associated with the task.</p>
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be added to the quantum task you're creating.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
     pub job_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
-    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
+    pub associations: ::std::option::Option<::std::vec::Vec::<crate::types::Association>>,
 }
-impl CreateQuantumTaskInput {
+impl  CreateQuantumTaskInput  {
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ARN of the device to run the task on.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The parameters for the device to run the task on.</p>
-    pub fn device_parameters(&self) -> ::std::option::Option<&str> {
+    pub fn device_parameters(&self) -> ::std::option::Option<& str> {
         self.device_parameters.as_deref()
     }
     /// <p>The number of shots to use for the task.</p>
@@ -42,30 +42,31 @@ impl CreateQuantumTaskInput {
         self.shots
     }
     /// <p>The S3 bucket to store task result files in.</p>
-    pub fn output_s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_bucket(&self) -> ::std::option::Option<& str> {
         self.output_s3_bucket.as_deref()
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.output_s3_key_prefix.as_deref()
     }
     /// <p>The action associated with the task.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>Tags to be added to the quantum task you're creating.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
-    pub fn job_token(&self) -> ::std::option::Option<&str> {
+    pub fn job_token(&self) -> ::std::option::Option<& str> {
         self.job_token.as_deref()
     }
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
-    pub fn associations(&self) -> &[crate::types::Association] {
-        self.associations.as_deref().unwrap_or_default()
+    pub fn associations(&self) -> & [crate::types::Association] {
+        self.associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateQuantumTaskInput {
@@ -86,9 +87,9 @@ pub struct CreateQuantumTaskInputBuilder {
     pub(crate) output_s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) job_token: ::std::option::Option<::std::string::String>,
-    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec::<crate::types::Association>>,
 }
 impl CreateQuantumTaskInputBuilder {
     /// <p>The client token associated with the request.</p>
@@ -99,8 +100,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token associated with the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The ARN of the device to run the task on.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device to run the task on.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The parameters for the device to run the task on.</p>
     pub fn set_device_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_parameters = input;
-        self
+        self.device_parameters = input; self
     }
     /// <p>The parameters for the device to run the task on.</p>
     pub fn get_device_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The number of shots to use for the task.</p>
     pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.shots = input;
-        self
+        self.shots = input; self
     }
     /// <p>The number of shots to use for the task.</p>
     pub fn get_shots(&self) -> &::std::option::Option<i64> {
@@ -158,8 +155,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The S3 bucket to store task result files in.</p>
     pub fn set_output_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_bucket = input;
-        self
+        self.output_s3_bucket = input; self
     }
     /// <p>The S3 bucket to store task result files in.</p>
     pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +169,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
     pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_key_prefix = input;
-        self
+        self.output_s3_key_prefix = input; self
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
     pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The action associated with the task.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action associated with the task.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,17 +196,16 @@ impl CreateQuantumTaskInputBuilder {
     /// <p>Tags to be added to the quantum task you're creating.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags to be added to the quantum task you're creating.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to be added to the quantum task you're creating.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
@@ -222,8 +215,7 @@ impl CreateQuantumTaskInputBuilder {
     }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
     pub fn set_job_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_token = input;
-        self
+        self.job_token = input; self
     }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
     pub fn get_job_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,34 +228,44 @@ impl CreateQuantumTaskInputBuilder {
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
     pub fn associations(mut self, input: crate::types::Association) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
-    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Association>>) -> Self {
+        self.associations = input; self
     }
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
-    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Association>> {
         &self.associations
     }
     /// Consumes the builder and constructs a [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_quantum_task::CreateQuantumTaskInput {
-            client_token: self.client_token,
-            device_arn: self.device_arn,
-            device_parameters: self.device_parameters,
-            shots: self.shots,
-            output_s3_bucket: self.output_s3_bucket,
-            output_s3_key_prefix: self.output_s3_key_prefix,
-            action: self.action,
-            tags: self.tags,
-            job_token: self.job_token,
-            associations: self.associations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_quantum_task::CreateQuantumTaskInput {
+                client_token: self.client_token
+                ,
+                device_arn: self.device_arn
+                ,
+                device_parameters: self.device_parameters
+                ,
+                shots: self.shots
+                ,
+                output_s3_bucket: self.output_s3_bucket
+                ,
+                output_s3_key_prefix: self.output_s3_key_prefix
+                ,
+                action: self.action
+                ,
+                tags: self.tags
+                ,
+                job_token: self.job_token
+                ,
+                associations: self.associations
+                ,
+            }
+        )
     }
 }
+

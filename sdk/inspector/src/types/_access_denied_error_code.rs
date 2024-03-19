@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniederrorcode = unimplemented!();
 /// match accessdeniederrorcode {
@@ -36,16 +36,14 @@
 /// Specifically, when `accessdeniederrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AccessDeniedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedToAssessmentRun,
@@ -65,88 +63,80 @@ pub enum AccessDeniedErrorCode {
     AccessDeniedToSnsTopic,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AccessDeniedErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
-            "ACCESS_DENIED_TO_ASSESSMENT_TARGET" => AccessDeniedErrorCode::AccessDeniedToAssessmentTarget,
-            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate,
-            "ACCESS_DENIED_TO_FINDING" => AccessDeniedErrorCode::AccessDeniedToFinding,
-            "ACCESS_DENIED_TO_IAM_ROLE" => AccessDeniedErrorCode::AccessDeniedToIamRole,
-            "ACCESS_DENIED_TO_RESOURCE_GROUP" => AccessDeniedErrorCode::AccessDeniedToResourceGroup,
-            "ACCESS_DENIED_TO_RULES_PACKAGE" => AccessDeniedErrorCode::AccessDeniedToRulesPackage,
-            "ACCESS_DENIED_TO_SNS_TOPIC" => AccessDeniedErrorCode::AccessDeniedToSnsTopic,
-            other => AccessDeniedErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
+"ACCESS_DENIED_TO_ASSESSMENT_TARGET" => AccessDeniedErrorCode::AccessDeniedToAssessmentTarget,
+"ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate,
+"ACCESS_DENIED_TO_FINDING" => AccessDeniedErrorCode::AccessDeniedToFinding,
+"ACCESS_DENIED_TO_IAM_ROLE" => AccessDeniedErrorCode::AccessDeniedToIamRole,
+"ACCESS_DENIED_TO_RESOURCE_GROUP" => AccessDeniedErrorCode::AccessDeniedToResourceGroup,
+"ACCESS_DENIED_TO_RULES_PACKAGE" => AccessDeniedErrorCode::AccessDeniedToRulesPackage,
+"ACCESS_DENIED_TO_SNS_TOPIC" => AccessDeniedErrorCode::AccessDeniedToSnsTopic,
+other => AccessDeniedErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AccessDeniedErrorCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AccessDeniedErrorCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AccessDeniedErrorCode::from(s))
+                    }
+                }
 impl AccessDeniedErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccessDeniedErrorCode::AccessDeniedToAssessmentRun => "ACCESS_DENIED_TO_ASSESSMENT_RUN",
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
-            AccessDeniedErrorCode::AccessDeniedToFinding => "ACCESS_DENIED_TO_FINDING",
-            AccessDeniedErrorCode::AccessDeniedToIamRole => "ACCESS_DENIED_TO_IAM_ROLE",
-            AccessDeniedErrorCode::AccessDeniedToResourceGroup => "ACCESS_DENIED_TO_RESOURCE_GROUP",
-            AccessDeniedErrorCode::AccessDeniedToRulesPackage => "ACCESS_DENIED_TO_RULES_PACKAGE",
-            AccessDeniedErrorCode::AccessDeniedToSnsTopic => "ACCESS_DENIED_TO_SNS_TOPIC",
-            AccessDeniedErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED_TO_ASSESSMENT_RUN",
-            "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
-            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
-            "ACCESS_DENIED_TO_FINDING",
-            "ACCESS_DENIED_TO_IAM_ROLE",
-            "ACCESS_DENIED_TO_RESOURCE_GROUP",
-            "ACCESS_DENIED_TO_RULES_PACKAGE",
-            "ACCESS_DENIED_TO_SNS_TOPIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccessDeniedErrorCode::AccessDeniedToAssessmentRun => "ACCESS_DENIED_TO_ASSESSMENT_RUN",
+    AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
+    AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
+    AccessDeniedErrorCode::AccessDeniedToFinding => "ACCESS_DENIED_TO_FINDING",
+    AccessDeniedErrorCode::AccessDeniedToIamRole => "ACCESS_DENIED_TO_IAM_ROLE",
+    AccessDeniedErrorCode::AccessDeniedToResourceGroup => "ACCESS_DENIED_TO_RESOURCE_GROUP",
+    AccessDeniedErrorCode::AccessDeniedToRulesPackage => "ACCESS_DENIED_TO_RULES_PACKAGE",
+    AccessDeniedErrorCode::AccessDeniedToSnsTopic => "ACCESS_DENIED_TO_SNS_TOPIC",
+    AccessDeniedErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED_TO_ASSESSMENT_RUN", "ACCESS_DENIED_TO_ASSESSMENT_TARGET", "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE", "ACCESS_DENIED_TO_FINDING", "ACCESS_DENIED_TO_IAM_ROLE", "ACCESS_DENIED_TO_RESOURCE_GROUP", "ACCESS_DENIED_TO_RULES_PACKAGE", "ACCESS_DENIED_TO_SNS_TOPIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AccessDeniedErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AccessDeniedErrorCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AccessDeniedErrorCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AccessDeniedErrorCode::AccessDeniedToAssessmentRun => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_RUN"),
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_TARGET"),
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE"),
-            AccessDeniedErrorCode::AccessDeniedToFinding => write!(f, "ACCESS_DENIED_TO_FINDING"),
-            AccessDeniedErrorCode::AccessDeniedToIamRole => write!(f, "ACCESS_DENIED_TO_IAM_ROLE"),
-            AccessDeniedErrorCode::AccessDeniedToResourceGroup => write!(f, "ACCESS_DENIED_TO_RESOURCE_GROUP"),
-            AccessDeniedErrorCode::AccessDeniedToRulesPackage => write!(f, "ACCESS_DENIED_TO_RULES_PACKAGE"),
-            AccessDeniedErrorCode::AccessDeniedToSnsTopic => write!(f, "ACCESS_DENIED_TO_SNS_TOPIC"),
-            AccessDeniedErrorCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AccessDeniedErrorCode::AccessDeniedToAssessmentRun => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_RUN"),
+AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_TARGET"),
+AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE"),
+AccessDeniedErrorCode::AccessDeniedToFinding => write!(f, "ACCESS_DENIED_TO_FINDING"),
+AccessDeniedErrorCode::AccessDeniedToIamRole => write!(f, "ACCESS_DENIED_TO_IAM_ROLE"),
+AccessDeniedErrorCode::AccessDeniedToResourceGroup => write!(f, "ACCESS_DENIED_TO_RESOURCE_GROUP"),
+AccessDeniedErrorCode::AccessDeniedToRulesPackage => write!(f, "ACCESS_DENIED_TO_RULES_PACKAGE"),
+AccessDeniedErrorCode::AccessDeniedToSnsTopic => write!(f, "ACCESS_DENIED_TO_SNS_TOPIC"),
+AccessDeniedErrorCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,21 +3,21 @@
 /// <p>The configuration of custom values for the destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomValuesConfiguration {
+pub struct CustomValuesConfiguration  {
     /// <p>Includes the null value in custom action parameter values.</p>
     pub include_null_value: ::std::option::Option<bool>,
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub custom_values: ::std::option::Option<crate::types::CustomParameterValues>,
 }
-impl CustomValuesConfiguration {
+impl  CustomValuesConfiguration  {
     /// <p>Includes the null value in custom action parameter values.</p>
     pub fn include_null_value(&self) -> ::std::option::Option<bool> {
         self.include_null_value
     }
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn custom_values(&self) -> ::std::option::Option<&crate::types::CustomParameterValues> {
+    pub fn custom_values(&self) -> ::std::option::Option<& crate::types::CustomParameterValues> {
         self.custom_values.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl CustomValuesConfigurationBuilder {
     }
     /// <p>Includes the null value in custom action parameter values.</p>
     pub fn set_include_null_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_null_value = input;
-        self
+        self.include_null_value = input; self
     }
     /// <p>Includes the null value in custom action parameter values.</p>
     pub fn get_include_null_value(&self) -> &::std::option::Option<bool> {
@@ -60,8 +59,7 @@ impl CustomValuesConfigurationBuilder {
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn set_custom_values(mut self, input: ::std::option::Option<crate::types::CustomParameterValues>) -> Self {
-        self.custom_values = input;
-        self
+        self.custom_values = input; self
     }
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
@@ -71,8 +69,11 @@ impl CustomValuesConfigurationBuilder {
     /// Consumes the builder and constructs a [`CustomValuesConfiguration`](crate::types::CustomValuesConfiguration).
     pub fn build(self) -> crate::types::CustomValuesConfiguration {
         crate::types::CustomValuesConfiguration {
-            include_null_value: self.include_null_value,
-            custom_values: self.custom_values,
+            include_null_value: self.include_null_value
+            ,
+            custom_values: self.custom_values
+            ,
         }
     }
 }
+

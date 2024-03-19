@@ -3,19 +3,19 @@
 /// <p>Contains an origin request policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginRequestPolicySummary {
+pub struct OriginRequestPolicySummary  {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub r#type: crate::types::OriginRequestPolicyType,
     /// <p>The origin request policy.</p>
     pub origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
 }
-impl OriginRequestPolicySummary {
+impl  OriginRequestPolicySummary  {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> &crate::types::OriginRequestPolicyType {
+    pub fn r#type(&self) -> & crate::types::OriginRequestPolicyType {
         &self.r#type
     }
     /// <p>The origin request policy.</p>
-    pub fn origin_request_policy(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
+    pub fn origin_request_policy(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicy> {
         self.origin_request_policy.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl OriginRequestPolicySummaryBuilder {
     }
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyType> {
@@ -57,8 +56,7 @@ impl OriginRequestPolicySummaryBuilder {
     }
     /// <p>The origin request policy.</p>
     pub fn set_origin_request_policy(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicy>) -> Self {
-        self.origin_request_policy = input;
-        self
+        self.origin_request_policy = input; self
     }
     /// <p>The origin request policy.</p>
     pub fn get_origin_request_policy(&self) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
@@ -68,14 +66,17 @@ impl OriginRequestPolicySummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::OriginRequestPolicySummaryBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginRequestPolicySummary {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building OriginRequestPolicySummary",
-                )
-            })?,
-            origin_request_policy: self.origin_request_policy,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginRequestPolicySummary {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building OriginRequestPolicySummary")
+                    )?
+                ,
+                origin_request_policy: self.origin_request_policy
+                ,
+            }
+        )
     }
 }
+

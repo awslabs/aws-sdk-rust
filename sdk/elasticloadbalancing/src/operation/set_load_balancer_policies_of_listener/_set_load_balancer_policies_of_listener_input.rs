@@ -3,17 +3,17 @@
 /// <p>Contains the parameters for SetLoadBalancePoliciesOfListener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetLoadBalancerPoliciesOfListenerInput {
+pub struct SetLoadBalancerPoliciesOfListenerInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The external port of the load balancer.</p>
     pub load_balancer_port: ::std::option::Option<i32>,
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SetLoadBalancerPoliciesOfListenerInput {
+impl  SetLoadBalancerPoliciesOfListenerInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The external port of the load balancer.</p>
@@ -21,10 +21,11 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         self.load_balancer_port
     }
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
-    pub fn policy_names(&self) -> &[::std::string::String] {
-        self.policy_names.as_deref().unwrap_or_default()
+    pub fn policy_names(&self) -> & [::std::string::String] {
+        self.policy_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SetLoadBalancerPoliciesOfListenerInput {
@@ -40,7 +41,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
 pub struct SetLoadBalancerPoliciesOfListenerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_port: ::std::option::Option<i32>,
-    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -51,8 +52,7 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +66,7 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     }
     /// <p>The external port of the load balancer.</p>
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.load_balancer_port = input;
-        self
+        self.load_balancer_port = input; self
     }
     /// <p>The external port of the load balancer.</p>
     pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
@@ -80,32 +79,30 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names = input; self
     }
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerInput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput {
-                load_balancer_name: self.load_balancer_name,
-                load_balancer_port: self.load_balancer_port,
-                policy_names: self.policy_names,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                load_balancer_port: self.load_balancer_port
+                ,
+                policy_names: self.policy_names
+                ,
+            }
         )
     }
 }
+

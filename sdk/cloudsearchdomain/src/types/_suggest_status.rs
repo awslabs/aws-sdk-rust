@@ -3,19 +3,19 @@
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggestStatus {
+pub struct SuggestStatus  {
     /// <p>How long it took to process the request, in milliseconds.</p>
     pub timems: i64,
     /// <p>The encrypted resource ID for the request.</p>
     pub rid: ::std::option::Option<::std::string::String>,
 }
-impl SuggestStatus {
+impl  SuggestStatus  {
     /// <p>How long it took to process the request, in milliseconds.</p>
     pub fn timems(&self) -> i64 {
         self.timems
     }
     /// <p>The encrypted resource ID for the request.</p>
-    pub fn rid(&self) -> ::std::option::Option<&str> {
+    pub fn rid(&self) -> ::std::option::Option<& str> {
         self.rid.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SuggestStatusBuilder {
     }
     /// <p>How long it took to process the request, in milliseconds.</p>
     pub fn set_timems(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timems = input;
-        self
+        self.timems = input; self
     }
     /// <p>How long it took to process the request, in milliseconds.</p>
     pub fn get_timems(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl SuggestStatusBuilder {
     }
     /// <p>The encrypted resource ID for the request.</p>
     pub fn set_rid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rid = input;
-        self
+        self.rid = input; self
     }
     /// <p>The encrypted resource ID for the request.</p>
     pub fn get_rid(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,12 @@ impl SuggestStatusBuilder {
     /// Consumes the builder and constructs a [`SuggestStatus`](crate::types::SuggestStatus).
     pub fn build(self) -> crate::types::SuggestStatus {
         crate::types::SuggestStatus {
-            timems: self.timems.unwrap_or_default(),
-            rid: self.rid,
+            timems: self.timems
+                .unwrap_or_default()
+            ,
+            rid: self.rid
+            ,
         }
     }
 }
+

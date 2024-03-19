@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDetectorInput {
+pub struct PutDetectorInput  {
     /// <p>The detector ID.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the detector.</p>
@@ -10,26 +10,27 @@ pub struct PutDetectorInput {
     /// <p>The name of the event type.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutDetectorInput {
+impl  PutDetectorInput  {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The description of the detector.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutDetectorInput {
@@ -46,7 +47,7 @@ pub struct PutDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutDetectorInputBuilder {
     /// <p>The detector ID.</p>
@@ -57,8 +58,7 @@ impl PutDetectorInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl PutDetectorInputBuilder {
     }
     /// <p>The description of the detector.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the detector.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl PutDetectorInputBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The name of the event type.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,26 +98,32 @@ impl PutDetectorInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutDetectorInput`](crate::operation::put_detector::PutDetectorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_detector::PutDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_detector::PutDetectorInput {
-            detector_id: self.detector_id,
-            description: self.description,
-            event_type_name: self.event_type_name,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_detector::PutDetectorInput {
+                detector_id: self.detector_id
+                ,
+                description: self.description
+                ,
+                event_type_name: self.event_type_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVpcTenancyInput {
+pub struct ModifyVpcTenancyInput  {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance tenancy attribute for the VPC.</p>
@@ -10,13 +10,13 @@ pub struct ModifyVpcTenancyInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ModifyVpcTenancyInput {
+impl  ModifyVpcTenancyInput  {
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The instance tenancy attribute for the VPC.</p>
-    pub fn instance_tenancy(&self) -> ::std::option::Option<&crate::types::VpcTenancy> {
+    pub fn instance_tenancy(&self) -> ::std::option::Option<& crate::types::VpcTenancy> {
         self.instance_tenancy.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl ModifyVpcTenancyInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ModifyVpcTenancyInputBuilder {
     }
     /// <p>The instance tenancy attribute for the VPC.</p>
     pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::VpcTenancy>) -> Self {
-        self.instance_tenancy = input;
-        self
+        self.instance_tenancy = input; self
     }
     /// <p>The instance tenancy attribute for the VPC.</p>
     pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::VpcTenancy> {
@@ -77,21 +75,24 @@ impl ModifyVpcTenancyInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyVpcTenancyInput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput {
-            vpc_id: self.vpc_id,
-            instance_tenancy: self.instance_tenancy,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput {
+                vpc_id: self.vpc_id
+                ,
+                instance_tenancy: self.instance_tenancy
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

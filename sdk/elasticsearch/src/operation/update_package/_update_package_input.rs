@@ -3,7 +3,7 @@
 /// <p>Container for request parameters to <code> <code>UpdatePackage</code> </code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePackageInput {
+pub struct UpdatePackageInput  {
     /// <p>Unique identifier for the package.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
@@ -13,21 +13,21 @@ pub struct UpdatePackageInput {
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     pub commit_message: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePackageInput {
+impl  UpdatePackageInput  {
     /// <p>Unique identifier for the package.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
-    pub fn package_source(&self) -> ::std::option::Option<&crate::types::PackageSource> {
+    pub fn package_source(&self) -> ::std::option::Option<& crate::types::PackageSource> {
         self.package_source.as_ref()
     }
     /// <p>New description of the package.</p>
-    pub fn package_description(&self) -> ::std::option::Option<&str> {
+    pub fn package_description(&self) -> ::std::option::Option<& str> {
         self.package_description.as_deref()
     }
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
-    pub fn commit_message(&self) -> ::std::option::Option<&str> {
+    pub fn commit_message(&self) -> ::std::option::Option<& str> {
         self.commit_message.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>Unique identifier for the package.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>Unique identifier for the package.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
     pub fn set_package_source(mut self, input: ::std::option::Option<crate::types::PackageSource>) -> Self {
-        self.package_source = input;
-        self
+        self.package_source = input; self
     }
     /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
     pub fn get_package_source(&self) -> &::std::option::Option<crate::types::PackageSource> {
@@ -85,8 +83,7 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>New description of the package.</p>
     pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_description = input;
-        self
+        self.package_description = input; self
     }
     /// <p>New description of the package.</p>
     pub fn get_package_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.commit_message
     }
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_package::UpdatePackageInput {
-            package_id: self.package_id,
-            package_source: self.package_source,
-            package_description: self.package_description,
-            commit_message: self.commit_message,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_package::UpdatePackageInput {
+                package_id: self.package_id
+                ,
+                package_source: self.package_source
+                ,
+                package_description: self.package_description
+                ,
+                commit_message: self.commit_message
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLifecycleConfigurationInput {
+pub struct PutLifecycleConfigurationInput  {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
@@ -19,11 +19,11 @@ pub struct PutLifecycleConfigurationInput {
     /// </ul><note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each storage transition. See the example requests in the following section for more information.</p>
     /// </note>
-    pub lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
+    pub lifecycle_policies: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicy>>,
 }
-impl PutLifecycleConfigurationInput {
+impl  PutLifecycleConfigurationInput  {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
@@ -40,10 +40,11 @@ impl PutLifecycleConfigurationInput {
     /// </ul><note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each storage transition. See the example requests in the following section for more information.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policies.is_none()`.
-    pub fn lifecycle_policies(&self) -> &[crate::types::LifecyclePolicy] {
-        self.lifecycle_policies.as_deref().unwrap_or_default()
+    pub fn lifecycle_policies(&self) -> & [crate::types::LifecyclePolicy] {
+        self.lifecycle_policies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutLifecycleConfigurationInput {
@@ -58,7 +59,7 @@ impl PutLifecycleConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecycleConfigurationInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
+    pub(crate) lifecycle_policies: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicy>>,
 }
 impl PutLifecycleConfigurationInputBuilder {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
@@ -69,8 +70,7 @@ impl PutLifecycleConfigurationInputBuilder {
     }
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +96,9 @@ impl PutLifecycleConfigurationInputBuilder {
     /// </note>
     pub fn lifecycle_policies(mut self, input: crate::types::LifecyclePolicy) -> Self {
         let mut v = self.lifecycle_policies.unwrap_or_default();
-        v.push(input);
-        self.lifecycle_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lifecycle_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
     /// <ul>
@@ -114,9 +114,8 @@ impl PutLifecycleConfigurationInputBuilder {
     /// </ul><note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each storage transition. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn set_lifecycle_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>) -> Self {
-        self.lifecycle_policies = input;
-        self
+    pub fn set_lifecycle_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicy>>) -> Self {
+        self.lifecycle_policies = input; self
     }
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management of the following:</p>
     /// <ul>
@@ -132,19 +131,19 @@ impl PutLifecycleConfigurationInputBuilder {
     /// </ul><note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each storage transition. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn get_lifecycle_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
+    pub fn get_lifecycle_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicy>> {
         &self.lifecycle_policies
     }
     /// Consumes the builder and constructs a [`PutLifecycleConfigurationInput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput {
-            file_system_id: self.file_system_id,
-            lifecycle_policies: self.lifecycle_policies,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput {
+                file_system_id: self.file_system_id
+                ,
+                lifecycle_policies: self.lifecycle_policies
+                ,
+            }
+        )
     }
 }
+

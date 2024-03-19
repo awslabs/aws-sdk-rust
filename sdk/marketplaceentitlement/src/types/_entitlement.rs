@@ -3,7 +3,7 @@
 /// <p>An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
@@ -15,25 +15,25 @@ pub struct Entitlement {
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Entitlement {
+impl  Entitlement  {
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
-    pub fn dimension(&self) -> ::std::option::Option<&str> {
+    pub fn dimension(&self) -> ::std::option::Option<& str> {
         self.dimension.as_deref()
     }
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
-    pub fn customer_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn customer_identifier(&self) -> ::std::option::Option<& str> {
         self.customer_identifier.as_deref()
     }
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::EntitlementValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::EntitlementValue> {
         self.value.as_ref()
     }
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
-    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EntitlementBuilder {
     }
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EntitlementBuilder {
     }
     /// <p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EntitlementBuilder {
     }
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
     pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_identifier = input;
-        self
+        self.customer_identifier = input; self
     }
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl EntitlementBuilder {
     }
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::EntitlementValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::EntitlementValue> {
@@ -118,8 +114,7 @@ impl EntitlementBuilder {
     }
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input;
-        self
+        self.expiration_date = input; self
     }
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl EntitlementBuilder {
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {
         crate::types::Entitlement {
-            product_code: self.product_code,
-            dimension: self.dimension,
-            customer_identifier: self.customer_identifier,
-            value: self.value,
-            expiration_date: self.expiration_date,
+            product_code: self.product_code
+            ,
+            dimension: self.dimension
+            ,
+            customer_identifier: self.customer_identifier
+            ,
+            value: self.value
+            ,
+            expiration_date: self.expiration_date
+            ,
         }
     }
 }
+

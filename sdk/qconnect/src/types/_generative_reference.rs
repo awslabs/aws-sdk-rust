@@ -3,19 +3,19 @@
 /// <p>Reference information about generative content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerativeReference {
+pub struct GenerativeReference  {
     /// <p>The identifier of the LLM model.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the LLM model.</p>
     pub generation_id: ::std::option::Option<::std::string::String>,
 }
-impl GenerativeReference {
+impl  GenerativeReference  {
     /// <p>The identifier of the LLM model.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The identifier of the LLM model.</p>
-    pub fn generation_id(&self) -> ::std::option::Option<&str> {
+    pub fn generation_id(&self) -> ::std::option::Option<& str> {
         self.generation_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GenerativeReferenceBuilder {
     }
     /// <p>The identifier of the LLM model.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The identifier of the LLM model.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GenerativeReferenceBuilder {
     }
     /// <p>The identifier of the LLM model.</p>
     pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_id = input;
-        self
+        self.generation_id = input; self
     }
     /// <p>The identifier of the LLM model.</p>
     pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl GenerativeReferenceBuilder {
     /// Consumes the builder and constructs a [`GenerativeReference`](crate::types::GenerativeReference).
     pub fn build(self) -> crate::types::GenerativeReference {
         crate::types::GenerativeReference {
-            model_id: self.model_id,
-            generation_id: self.generation_id,
+            model_id: self.model_id
+            ,
+            generation_id: self.generation_id
+            ,
         }
     }
 }
+

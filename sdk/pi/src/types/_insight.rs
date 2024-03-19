@@ -3,7 +3,7 @@
 /// <p>Retrieves the list of performance issues which are identified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Insight {
+pub struct Insight  {
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
     pub insight_id: ::std::string::String,
     /// <p>The type of insight. For example, <code>HighDBLoad</code>, <code>HighCPU</code>, or <code>DominatingSQLs</code>.</p>
@@ -17,72 +17,75 @@ pub struct Insight {
     /// <p>The severity of the insight. The values are: <code>Low</code>, <code>Medium</code>, or <code>High</code>.</p>
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>List of supporting insights that provide additional factors for the insight.</p>
-    pub supporting_insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    pub supporting_insights: ::std::option::Option<::std::vec::Vec::<crate::types::Insight>>,
     /// <p>Description of the insight. For example: <code>A high severity Insight found between 02:00 to 02:30, where there was an unusually high DB load 600x above baseline. Likely performance impact</code>.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of recommendations for the insight. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code>.</p>
-    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
-    pub insight_data: ::std::option::Option<::std::vec::Vec<crate::types::Data>>,
+    pub insight_data: ::std::option::Option<::std::vec::Vec::<crate::types::Data>>,
     /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
-    pub baseline_data: ::std::option::Option<::std::vec::Vec<crate::types::Data>>,
+    pub baseline_data: ::std::option::Option<::std::vec::Vec::<crate::types::Data>>,
 }
-impl Insight {
+impl  Insight  {
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
-    pub fn insight_id(&self) -> &str {
-        use std::ops::Deref;
-        self.insight_id.deref()
+    pub fn insight_id(&self) -> & str {
+        use std::ops::Deref; self.insight_id.deref()
     }
     /// <p>The type of insight. For example, <code>HighDBLoad</code>, <code>HighCPU</code>, or <code>DominatingSQLs</code>.</p>
-    pub fn insight_type(&self) -> ::std::option::Option<&str> {
+    pub fn insight_type(&self) -> ::std::option::Option<& str> {
         self.insight_type.as_deref()
     }
     /// <p>Indicates if the insight is causal or correlated insight.</p>
-    pub fn context(&self) -> ::std::option::Option<&crate::types::ContextType> {
+    pub fn context(&self) -> ::std::option::Option<& crate::types::ContextType> {
         self.context.as_ref()
     }
     /// <p>The start time of the insight. For example, <code>2018-10-30T00:00:00Z</code>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the insight. For example, <code>2018-10-30T00:00:00Z</code>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The severity of the insight. The values are: <code>Low</code>, <code>Medium</code>, or <code>High</code>.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::Severity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::Severity> {
         self.severity.as_ref()
     }
     /// <p>List of supporting insights that provide additional factors for the insight.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supporting_insights.is_none()`.
-    pub fn supporting_insights(&self) -> &[crate::types::Insight] {
-        self.supporting_insights.as_deref().unwrap_or_default()
+    pub fn supporting_insights(&self) -> & [crate::types::Insight] {
+        self.supporting_insights.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Description of the insight. For example: <code>A high severity Insight found between 02:00 to 02:30, where there was an unusually high DB load 600x above baseline. Likely performance impact</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of recommendations for the insight. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
-    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
-        self.recommendations.as_deref().unwrap_or_default()
+    pub fn recommendations(&self) -> & [crate::types::Recommendation] {
+        self.recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_data.is_none()`.
-    pub fn insight_data(&self) -> &[crate::types::Data] {
-        self.insight_data.as_deref().unwrap_or_default()
+    pub fn insight_data(&self) -> & [crate::types::Data] {
+        self.insight_data.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.baseline_data.is_none()`.
-    pub fn baseline_data(&self) -> &[crate::types::Data] {
-        self.baseline_data.as_deref().unwrap_or_default()
+    pub fn baseline_data(&self) -> & [crate::types::Data] {
+        self.baseline_data.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for Insight {
+impl  ::std::fmt::Debug for Insight  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Insight");
         formatter.field("insight_id", &self.insight_id);
@@ -116,11 +119,11 @@ pub struct InsightBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) severity: ::std::option::Option<crate::types::Severity>,
-    pub(crate) supporting_insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
+    pub(crate) supporting_insights: ::std::option::Option<::std::vec::Vec::<crate::types::Insight>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    pub(crate) insight_data: ::std::option::Option<::std::vec::Vec<crate::types::Data>>,
-    pub(crate) baseline_data: ::std::option::Option<::std::vec::Vec<crate::types::Data>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
+    pub(crate) insight_data: ::std::option::Option<::std::vec::Vec::<crate::types::Data>>,
+    pub(crate) baseline_data: ::std::option::Option<::std::vec::Vec::<crate::types::Data>>,
 }
 impl InsightBuilder {
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
@@ -131,8 +134,7 @@ impl InsightBuilder {
     }
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
     }
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +147,7 @@ impl InsightBuilder {
     }
     /// <p>The type of insight. For example, <code>HighDBLoad</code>, <code>HighCPU</code>, or <code>DominatingSQLs</code>.</p>
     pub fn set_insight_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_type = input;
-        self
+        self.insight_type = input; self
     }
     /// <p>The type of insight. For example, <code>HighDBLoad</code>, <code>HighCPU</code>, or <code>DominatingSQLs</code>.</p>
     pub fn get_insight_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +160,7 @@ impl InsightBuilder {
     }
     /// <p>Indicates if the insight is causal or correlated insight.</p>
     pub fn set_context(mut self, input: ::std::option::Option<crate::types::ContextType>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>Indicates if the insight is causal or correlated insight.</p>
     pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextType> {
@@ -173,8 +173,7 @@ impl InsightBuilder {
     }
     /// <p>The start time of the insight. For example, <code>2018-10-30T00:00:00Z</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the insight. For example, <code>2018-10-30T00:00:00Z</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +186,7 @@ impl InsightBuilder {
     }
     /// <p>The end time of the insight. For example, <code>2018-10-30T00:00:00Z</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the insight. For example, <code>2018-10-30T00:00:00Z</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,8 +199,7 @@ impl InsightBuilder {
     }
     /// <p>The severity of the insight. The values are: <code>Low</code>, <code>Medium</code>, or <code>High</code>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the insight. The values are: <code>Low</code>, <code>Medium</code>, or <code>High</code>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
@@ -215,17 +212,16 @@ impl InsightBuilder {
     /// <p>List of supporting insights that provide additional factors for the insight.</p>
     pub fn supporting_insights(mut self, input: crate::types::Insight) -> Self {
         let mut v = self.supporting_insights.unwrap_or_default();
-        v.push(input);
-        self.supporting_insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supporting_insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of supporting insights that provide additional factors for the insight.</p>
-    pub fn set_supporting_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>) -> Self {
-        self.supporting_insights = input;
-        self
+    pub fn set_supporting_insights(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Insight>>) -> Self {
+        self.supporting_insights = input; self
     }
     /// <p>List of supporting insights that provide additional factors for the insight.</p>
-    pub fn get_supporting_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
+    pub fn get_supporting_insights(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Insight>> {
         &self.supporting_insights
     }
     /// <p>Description of the insight. For example: <code>A high severity Insight found between 02:00 to 02:30, where there was an unusually high DB load 600x above baseline. Likely performance impact</code>.</p>
@@ -235,8 +231,7 @@ impl InsightBuilder {
     }
     /// <p>Description of the insight. For example: <code>A high severity Insight found between 02:00 to 02:30, where there was an unusually high DB load 600x above baseline. Likely performance impact</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the insight. For example: <code>A high severity Insight found between 02:00 to 02:30, where there was an unusually high DB load 600x above baseline. Likely performance impact</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,17 +244,16 @@ impl InsightBuilder {
     /// <p>List of recommendations for the insight. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code>.</p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-        v.push(input);
-        self.recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of recommendations for the insight. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code>.</p>
-    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
-        self.recommendations = input;
-        self
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>) -> Self {
+        self.recommendations = input; self
     }
     /// <p>List of recommendations for the insight. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code>.</p>
-    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// Appends an item to `insight_data`.
@@ -269,17 +263,16 @@ impl InsightBuilder {
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
     pub fn insight_data(mut self, input: crate::types::Data) -> Self {
         let mut v = self.insight_data.unwrap_or_default();
-        v.push(input);
-        self.insight_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.insight_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
-    pub fn set_insight_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Data>>) -> Self {
-        self.insight_data = input;
-        self
+    pub fn set_insight_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Data>>) -> Self {
+        self.insight_data = input; self
     }
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
-    pub fn get_insight_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Data>> {
+    pub fn get_insight_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Data>> {
         &self.insight_data
     }
     /// Appends an item to `baseline_data`.
@@ -289,41 +282,51 @@ impl InsightBuilder {
     /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
     pub fn baseline_data(mut self, input: crate::types::Data) -> Self {
         let mut v = self.baseline_data.unwrap_or_default();
-        v.push(input);
-        self.baseline_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.baseline_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
-    pub fn set_baseline_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Data>>) -> Self {
-        self.baseline_data = input;
-        self
+    pub fn set_baseline_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Data>>) -> Self {
+        self.baseline_data = input; self
     }
     /// <p>Metric names and values from the timeframe used as baseline to generate the insight.</p>
-    pub fn get_baseline_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Data>> {
+    pub fn get_baseline_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Data>> {
         &self.baseline_data
     }
     /// Consumes the builder and constructs a [`Insight`](crate::types::Insight).
     /// This method will fail if any of the following fields are not set:
     /// - [`insight_id`](crate::types::builders::InsightBuilder::insight_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Insight, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Insight {
-            insight_id: self.insight_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "insight_id",
-                    "insight_id was not specified but it is required when building Insight",
-                )
-            })?,
-            insight_type: self.insight_type,
-            context: self.context,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            severity: self.severity,
-            supporting_insights: self.supporting_insights,
-            description: self.description,
-            recommendations: self.recommendations,
-            insight_data: self.insight_data,
-            baseline_data: self.baseline_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Insight {
+                insight_id: self.insight_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("insight_id", "insight_id was not specified but it is required when building Insight")
+                    )?
+                ,
+                insight_type: self.insight_type
+                ,
+                context: self.context
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                severity: self.severity
+                ,
+                supporting_insights: self.supporting_insights
+                ,
+                description: self.description
+                ,
+                recommendations: self.recommendations
+                ,
+                insight_data: self.insight_data
+                ,
+                baseline_data: self.baseline_data
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InsightBuilder {
@@ -343,3 +346,4 @@ impl ::std::fmt::Debug for InsightBuilder {
         formatter.finish()
     }
 }
+

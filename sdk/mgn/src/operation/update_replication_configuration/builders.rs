@@ -5,54 +5,50 @@ pub use crate::operation::update_replication_configuration::_update_replication_
 
 impl UpdateReplicationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_replication_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_replication_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
-///
+/// 
 /// <p>Allows you to update multiple ReplicationConfigurations by Source Server ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder,
+                    inner: crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
-    > for UpdateReplicationConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
-            crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
+                    crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
+                > for UpdateReplicationConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
+                        crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateReplicationConfigurationFluentBuilder {
     /// Creates a new `UpdateReplicationConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateReplicationConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_replication_configuration::UpdateReplicationConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_replication_configuration::UpdateReplicationConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_replication_configuration::UpdateReplicationConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_replication_configuration::UpdateReplicationConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_replication_configuration::UpdateReplicationConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput, crate::operation::update_replication_configuration::UpdateReplicationConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Update replication configuration Source Server ID request.</p>
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
@@ -174,12 +161,12 @@ impl UpdateReplicationConfigurationFluentBuilder {
         self
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_replication_servers_security_groups_ids(input);
         self
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_replication_servers_security_groups_ids()
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
@@ -216,10 +203,7 @@ impl UpdateReplicationConfigurationFluentBuilder {
         self
     }
     /// <p>Update replication configuration use default large Staging Disk type request.</p>
-    pub fn set_default_large_staging_disk_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
-    ) -> Self {
+    pub fn set_default_large_staging_disk_type(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
         self.inner = self.inner.set_default_large_staging_disk_type(input);
         self
     }
@@ -237,15 +221,12 @@ impl UpdateReplicationConfigurationFluentBuilder {
         self
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    pub fn set_replicated_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
-    ) -> Self {
+    pub fn set_replicated_disks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfigurationReplicatedDisk>>) -> Self {
         self.inner = self.inner.set_replicated_disks(input);
         self
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    pub fn get_replicated_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>> {
+    pub fn get_replicated_disks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfigurationReplicatedDisk>> {
         self.inner.get_replicated_disks()
     }
     /// <p>Update replication configuration EBS encryption request.</p>
@@ -323,24 +304,17 @@ impl UpdateReplicationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
     ///
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn staging_area_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_area_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.staging_area_tags(k.into(), v.into());
         self
     }
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn set_staging_area_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_staging_area_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_staging_area_tags(input);
         self
     }
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn get_staging_area_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_staging_area_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_staging_area_tags()
     }
     /// <p>Update replication configuration use Fips Endpoint.</p>
@@ -372,3 +346,4 @@ impl UpdateReplicationConfigurationFluentBuilder {
         self.inner.get_account_id()
     }
 }
+

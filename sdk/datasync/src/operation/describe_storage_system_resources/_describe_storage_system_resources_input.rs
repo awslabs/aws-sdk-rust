@@ -2,39 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStorageSystemResourcesInput {
+pub struct DescribeStorageSystemResourcesInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
     pub resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>>,
+    pub filter: ::std::option::Option<::std::collections::HashMap::<crate::types::DiscoveryResourceFilter, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStorageSystemResourcesInput {
+impl  DescribeStorageSystemResourcesInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
-    pub fn discovery_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn discovery_job_arn(&self) -> ::std::option::Option<& str> {
         self.discovery_job_arn.as_deref()
     }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::DiscoveryResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::DiscoveryResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>> {
+    pub fn filter(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DiscoveryResourceFilter, ::std::vec::Vec::<::std::string::String>>> {
         self.filter.as_ref()
     }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
@@ -42,7 +41,7 @@ impl DescribeStorageSystemResourcesInput {
         self.max_results
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -59,9 +58,8 @@ impl DescribeStorageSystemResourcesInput {
 pub struct DescribeStorageSystemResourcesInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filter:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap::<crate::types::DiscoveryResourceFilter, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -74,8 +72,7 @@ impl DescribeStorageSystemResourcesInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
     pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discovery_job_arn = input;
-        self
+        self.discovery_job_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
     pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +86,7 @@ impl DescribeStorageSystemResourcesInputBuilder {
     }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DiscoveryResourceType> {
@@ -103,17 +99,16 @@ impl DescribeStorageSystemResourcesInputBuilder {
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// Adds a key-value pair to `filter`.
@@ -121,24 +116,18 @@ impl DescribeStorageSystemResourcesInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub fn filter(mut self, k: crate::types::DiscoveryResourceFilter, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filter(mut self, k: crate::types::DiscoveryResourceFilter, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.filter = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.filter = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DiscoveryResourceFilter, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.filter = input; self
     }
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DiscoveryResourceFilter, ::std::vec::Vec::<::std::string::String>>> {
         &self.filter
     }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
@@ -148,8 +137,7 @@ impl DescribeStorageSystemResourcesInputBuilder {
     }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -162,27 +150,30 @@ impl DescribeStorageSystemResourcesInputBuilder {
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeStorageSystemResourcesInput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput {
-            discovery_job_arn: self.discovery_job_arn,
-            resource_type: self.resource_type,
-            resource_ids: self.resource_ids,
-            filter: self.filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput {
+                discovery_job_arn: self.discovery_job_arn
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_ids: self.resource_ids
+                ,
+                filter: self.filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

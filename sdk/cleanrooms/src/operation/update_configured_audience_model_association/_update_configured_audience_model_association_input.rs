@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfiguredAudienceModelAssociationInput {
+pub struct UpdateConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for the configured audience model association that you want to update.</p>
     pub configured_audience_model_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the membership that contains the configured audience model association that you want to update.</p>
@@ -12,28 +12,27 @@ pub struct UpdateConfiguredAudienceModelAssociationInput {
     /// <p>A new name for the configured audience model association.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConfiguredAudienceModelAssociationInput {
+impl  UpdateConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for the configured audience model association that you want to update.</p>
-    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_association_identifier.as_deref()
     }
     /// <p>A unique identifier of the membership that contains the configured audience model association that you want to update.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A new description for the configured audience model association.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A new name for the configured audience model association.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl UpdateConfiguredAudienceModelAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredAudienceModelAssociationInput`](crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationInput).
-    pub fn builder() -> crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationInputBuilder {
         crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationInputBuilder::default()
     }
 }
@@ -56,8 +55,7 @@ impl UpdateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for the configured audience model association that you want to update.</p>
     pub fn set_configured_audience_model_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_association_identifier = input;
-        self
+        self.configured_audience_model_association_identifier = input; self
     }
     /// <p>A unique identifier for the configured audience model association that you want to update.</p>
     pub fn get_configured_audience_model_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl UpdateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier of the membership that contains the configured audience model association that you want to update.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier of the membership that contains the configured audience model association that you want to update.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl UpdateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A new description for the configured audience model association.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the configured audience model association.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,27 +95,26 @@ impl UpdateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A new name for the configured audience model association.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new name for the configured audience model association.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredAudienceModelAssociationInput`](crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationInput {
-                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier,
-                membership_identifier: self.membership_identifier,
-                description: self.description,
-                name: self.name,
-            },
+                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier
+                ,
+                membership_identifier: self.membership_identifier
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

@@ -10,7 +10,7 @@
 /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomErrorResponse {
+pub struct CustomErrorResponse  {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
     pub error_code: i32,
     /// <p>The path to the custom error page that you want CloudFront to return to a viewer when your origin returns the HTTP status code specified by <code>ErrorCode</code>, for example, <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects and your custom error pages in different locations, your distribution must include a cache behavior for which the following is true:</p>
@@ -38,7 +38,7 @@ pub struct CustomErrorResponse {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub error_caching_min_ttl: ::std::option::Option<i64>,
 }
-impl CustomErrorResponse {
+impl  CustomErrorResponse  {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
     pub fn error_code(&self) -> i32 {
         self.error_code
@@ -52,7 +52,7 @@ impl CustomErrorResponse {
     /// </ul>
     /// <p>If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for <code>ResponseCode</code>.</p>
     /// <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the files that you want to return to viewers because the origin server is unavailable.</p>
-    pub fn response_page_path(&self) -> ::std::option::Option<&str> {
+    pub fn response_page_path(&self) -> ::std::option::Option<& str> {
         self.response_page_path.as_deref()
     }
     /// <p>The HTTP status code that you want CloudFront to return to the viewer along with the custom error page. There are a variety of reasons that you might want CloudFront to return a status code different from the status code that your origin returned to CloudFront, for example:</p>
@@ -65,7 +65,7 @@ impl CustomErrorResponse {
     /// <p>You might want to return a <code>200</code> status code (OK) and static website so your customers don't know that your website is down.</p></li>
     /// </ul>
     /// <p>If you specify a value for <code>ResponseCode</code>, you must also specify a value for <code>ResponsePagePath</code>.</p>
-    pub fn response_code(&self) -> ::std::option::Option<&str> {
+    pub fn response_code(&self) -> ::std::option::Option<& str> {
         self.response_code.as_deref()
     }
     /// <p>The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see whether the problem that caused the error has been resolved and the requested object is now available.</p>
@@ -99,8 +99,7 @@ impl CustomErrorResponseBuilder {
     }
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<i32> {
@@ -129,8 +128,7 @@ impl CustomErrorResponseBuilder {
     /// <p>If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for <code>ResponseCode</code>.</p>
     /// <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the files that you want to return to viewers because the origin server is unavailable.</p>
     pub fn set_response_page_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response_page_path = input;
-        self
+        self.response_page_path = input; self
     }
     /// <p>The path to the custom error page that you want CloudFront to return to a viewer when your origin returns the HTTP status code specified by <code>ErrorCode</code>, for example, <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects and your custom error pages in different locations, your distribution must include a cache behavior for which the following is true:</p>
     /// <ul>
@@ -169,8 +167,7 @@ impl CustomErrorResponseBuilder {
     /// </ul>
     /// <p>If you specify a value for <code>ResponseCode</code>, you must also specify a value for <code>ResponsePagePath</code>.</p>
     pub fn set_response_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response_code = input;
-        self
+        self.response_code = input; self
     }
     /// <p>The HTTP status code that you want CloudFront to return to the viewer along with the custom error page. There are a variety of reasons that you might want CloudFront to return a status code different from the status code that your origin returned to CloudFront, for example:</p>
     /// <ul>
@@ -194,8 +191,7 @@ impl CustomErrorResponseBuilder {
     /// <p>The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see whether the problem that caused the error has been resolved and the requested object is now available.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_error_caching_min_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.error_caching_min_ttl = input;
-        self
+        self.error_caching_min_ttl = input; self
     }
     /// <p>The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see whether the problem that caused the error has been resolved and the requested object is now available.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -206,16 +202,21 @@ impl CustomErrorResponseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::builders::CustomErrorResponseBuilder::error_code)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomErrorResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomErrorResponse {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building CustomErrorResponse",
-                )
-            })?,
-            response_page_path: self.response_page_path,
-            response_code: self.response_code,
-            error_caching_min_ttl: self.error_caching_min_ttl,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomErrorResponse {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building CustomErrorResponse")
+                    )?
+                ,
+                response_page_path: self.response_page_path
+                ,
+                response_code: self.response_code
+                ,
+                error_caching_min_ttl: self.error_caching_min_ttl
+                ,
+            }
+        )
     }
 }
+

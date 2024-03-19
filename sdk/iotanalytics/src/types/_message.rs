@@ -3,20 +3,19 @@
 /// <p>Information about a message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     pub message_id: ::std::string::String,
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub payload: ::aws_smithy_types::Blob,
 }
-impl Message {
+impl  Message  {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> &str {
-        use std::ops::Deref;
-        self.message_id.deref()
+    pub fn message_id(&self) -> & str {
+        use std::ops::Deref; self.message_id.deref()
     }
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
-    pub fn payload(&self) -> &::aws_smithy_types::Blob {
+    pub fn payload(&self) -> & ::aws_smithy_types::Blob {
         &self.payload
     }
 }
@@ -43,8 +42,7 @@ impl MessageBuilder {
     }
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl MessageBuilder {
     }
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -70,19 +67,20 @@ impl MessageBuilder {
     /// - [`message_id`](crate::types::builders::MessageBuilder::message_id)
     /// - [`payload`](crate::types::builders::MessageBuilder::payload)
     pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Message {
-            message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_id",
-                    "message_id was not specified but it is required when building Message",
-                )
-            })?,
-            payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload",
-                    "payload was not specified but it is required when building Message",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Message {
+                message_id: self.message_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_id", "message_id was not specified but it is required when building Message")
+                    )?
+                ,
+                payload: self.payload
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload", "payload was not specified but it is required when building Message")
+                    )?
+                ,
+            }
+        )
     }
 }
+

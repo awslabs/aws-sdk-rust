@@ -3,7 +3,7 @@
 /// <p>Information about build output artifacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildArtifacts {
+pub struct BuildArtifacts  {
     /// <p>Information about the location of the build artifacts.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 hash of the build artifact.</p>
@@ -55,23 +55,23 @@ pub struct BuildArtifacts {
     /// </dl>
     pub bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
-impl BuildArtifacts {
+impl  BuildArtifacts  {
     /// <p>Information about the location of the build artifacts.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p><note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn sha256_sum(&self) -> ::std::option::Option<&str> {
+    pub fn sha256_sum(&self) -> ::std::option::Option<& str> {
         self.sha256_sum.as_deref()
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p><note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn md5_sum(&self) -> ::std::option::Option<&str> {
+    pub fn md5_sum(&self) -> ::std::option::Option<& str> {
         self.md5_sum.as_deref()
     }
     /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
@@ -83,7 +83,7 @@ impl BuildArtifacts {
         self.encryption_disabled
     }
     /// <p>An identifier for this artifact definition.</p>
-    pub fn artifact_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_identifier(&self) -> ::std::option::Option<& str> {
         self.artifact_identifier.as_deref()
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
@@ -117,7 +117,7 @@ impl BuildArtifacts {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn bucket_owner_access(&self) -> ::std::option::Option<&crate::types::BucketOwnerAccess> {
+    pub fn bucket_owner_access(&self) -> ::std::option::Option<& crate::types::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
     }
 }
@@ -148,8 +148,7 @@ impl BuildArtifactsBuilder {
     }
     /// <p>Information about the location of the build artifacts.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Information about the location of the build artifacts.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +167,7 @@ impl BuildArtifactsBuilder {
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
     pub fn set_sha256_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sha256_sum = input;
-        self
+        self.sha256_sum = input; self
     }
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p><note>
@@ -191,8 +189,7 @@ impl BuildArtifactsBuilder {
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
     pub fn set_md5_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5_sum = input;
-        self
+        self.md5_sum = input; self
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p><note>
@@ -208,8 +205,7 @@ impl BuildArtifactsBuilder {
     }
     /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub fn set_override_artifact_name(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.override_artifact_name = input;
-        self
+        self.override_artifact_name = input; self
     }
     /// <p>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</p>
     pub fn get_override_artifact_name(&self) -> &::std::option::Option<bool> {
@@ -222,8 +218,7 @@ impl BuildArtifactsBuilder {
     }
     /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encryption_disabled = input;
-        self
+        self.encryption_disabled = input; self
     }
     /// <p>Information that tells you if encryption for build artifacts is disabled.</p>
     pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
@@ -236,8 +231,7 @@ impl BuildArtifactsBuilder {
     }
     /// <p>An identifier for this artifact definition.</p>
     pub fn set_artifact_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_identifier = input;
-        self
+        self.artifact_identifier = input; self
     }
     /// <p>An identifier for this artifact definition.</p>
     pub fn get_artifact_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -310,8 +304,7 @@ impl BuildArtifactsBuilder {
     /// </dd>
     /// </dl>
     pub fn set_bucket_owner_access(mut self, input: ::std::option::Option<crate::types::BucketOwnerAccess>) -> Self {
-        self.bucket_owner_access = input;
-        self
+        self.bucket_owner_access = input; self
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -350,13 +343,21 @@ impl BuildArtifactsBuilder {
     /// Consumes the builder and constructs a [`BuildArtifacts`](crate::types::BuildArtifacts).
     pub fn build(self) -> crate::types::BuildArtifacts {
         crate::types::BuildArtifacts {
-            location: self.location,
-            sha256_sum: self.sha256_sum,
-            md5_sum: self.md5_sum,
-            override_artifact_name: self.override_artifact_name,
-            encryption_disabled: self.encryption_disabled,
-            artifact_identifier: self.artifact_identifier,
-            bucket_owner_access: self.bucket_owner_access,
+            location: self.location
+            ,
+            sha256_sum: self.sha256_sum
+            ,
+            md5_sum: self.md5_sum
+            ,
+            override_artifact_name: self.override_artifact_name
+            ,
+            encryption_disabled: self.encryption_disabled
+            ,
+            artifact_identifier: self.artifact_identifier
+            ,
+            bucket_owner_access: self.bucket_owner_access
+            ,
         }
     }
 }
+

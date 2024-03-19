@@ -3,19 +3,19 @@
 /// <p>The ECS service recommendation details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsService {
+pub struct EcsService  {
     /// <p>The ECS service configuration used for recommendations.</p>
     pub configuration: ::std::option::Option<crate::types::EcsServiceConfiguration>,
     /// <p>Cost impact of the recommendation.</p>
     pub cost_calculation: ::std::option::Option<crate::types::ResourceCostCalculation>,
 }
-impl EcsService {
+impl  EcsService  {
     /// <p>The ECS service configuration used for recommendations.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::EcsServiceConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::EcsServiceConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Cost impact of the recommendation.</p>
-    pub fn cost_calculation(&self) -> ::std::option::Option<&crate::types::ResourceCostCalculation> {
+    pub fn cost_calculation(&self) -> ::std::option::Option<& crate::types::ResourceCostCalculation> {
         self.cost_calculation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EcsServiceBuilder {
     }
     /// <p>The ECS service configuration used for recommendations.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::EcsServiceConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The ECS service configuration used for recommendations.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::EcsServiceConfiguration> {
@@ -55,8 +54,7 @@ impl EcsServiceBuilder {
     }
     /// <p>Cost impact of the recommendation.</p>
     pub fn set_cost_calculation(mut self, input: ::std::option::Option<crate::types::ResourceCostCalculation>) -> Self {
-        self.cost_calculation = input;
-        self
+        self.cost_calculation = input; self
     }
     /// <p>Cost impact of the recommendation.</p>
     pub fn get_cost_calculation(&self) -> &::std::option::Option<crate::types::ResourceCostCalculation> {
@@ -65,8 +63,11 @@ impl EcsServiceBuilder {
     /// Consumes the builder and constructs a [`EcsService`](crate::types::EcsService).
     pub fn build(self) -> crate::types::EcsService {
         crate::types::EcsService {
-            configuration: self.configuration,
-            cost_calculation: self.cost_calculation,
+            configuration: self.configuration
+            ,
+            cost_calculation: self.cost_calculation
+            ,
         }
     }
 }
+

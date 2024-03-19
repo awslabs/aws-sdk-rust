@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInterpolatedAssetPropertyValuesInput {
+pub struct GetInterpolatedAssetPropertyValuesInput  {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property, in UUID format.</p>
@@ -48,17 +48,17 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on.</p>
     pub interval_window_in_seconds: ::std::option::Option<i64>,
 }
-impl GetInterpolatedAssetPropertyValuesInput {
+impl  GetInterpolatedAssetPropertyValuesInput  {
     /// <p>The ID of the asset, in UUID format.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property, in UUID format.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> ::std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
@@ -78,7 +78,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
         self.end_time_offset_in_nanos
     }
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
-    pub fn quality(&self) -> ::std::option::Option<&crate::types::Quality> {
+    pub fn quality(&self) -> ::std::option::Option<& crate::types::Quality> {
         self.quality.as_ref()
     }
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
@@ -86,7 +86,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
         self.interval_in_seconds
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
@@ -104,7 +104,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
     /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p>
     /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p><note>
@@ -153,8 +153,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The ID of the asset property, in UUID format.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the asset property, in UUID format.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +179,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_alias = input;
-        self
+        self.property_alias = input; self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +193,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
     pub fn set_start_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_time_in_seconds = input;
-        self
+        self.start_time_in_seconds = input; self
     }
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
     pub fn get_start_time_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -210,8 +206,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
     pub fn set_start_time_offset_in_nanos(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_time_offset_in_nanos = input;
-        self
+        self.start_time_offset_in_nanos = input; self
     }
     /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
     pub fn get_start_time_offset_in_nanos(&self) -> &::std::option::Option<i32> {
@@ -225,8 +220,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
     pub fn set_end_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_time_in_seconds = input;
-        self
+        self.end_time_in_seconds = input; self
     }
     /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
     pub fn get_end_time_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -239,8 +233,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
     pub fn set_end_time_offset_in_nanos(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_time_offset_in_nanos = input;
-        self
+        self.end_time_offset_in_nanos = input; self
     }
     /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
     pub fn get_end_time_offset_in_nanos(&self) -> &::std::option::Option<i32> {
@@ -254,8 +247,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
     pub fn set_quality(mut self, input: ::std::option::Option<crate::types::Quality>) -> Self {
-        self.quality = input;
-        self
+        self.quality = input; self
     }
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
     pub fn get_quality(&self) -> &::std::option::Option<crate::types::Quality> {
@@ -269,8 +261,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
     pub fn set_interval_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.interval_in_seconds = input;
-        self
+        self.interval_in_seconds = input; self
     }
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
     pub fn get_interval_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -283,8 +274,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -297,8 +287,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -332,8 +321,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The interpolation type.</p>
     /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code></p>
@@ -372,8 +360,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     /// </note>
     /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on.</p>
     pub fn set_interval_window_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.interval_window_in_seconds = input;
-        self
+        self.interval_window_in_seconds = input; self
     }
     /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p><note>
     /// <ul>
@@ -388,28 +375,37 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.interval_window_in_seconds
     }
     /// Consumes the builder and constructs a [`GetInterpolatedAssetPropertyValuesInput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput {
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                property_alias: self.property_alias,
-                start_time_in_seconds: self.start_time_in_seconds,
-                start_time_offset_in_nanos: self.start_time_offset_in_nanos,
-                end_time_in_seconds: self.end_time_in_seconds,
-                end_time_offset_in_nanos: self.end_time_offset_in_nanos,
-                quality: self.quality,
-                interval_in_seconds: self.interval_in_seconds,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                r#type: self.r#type,
-                interval_window_in_seconds: self.interval_window_in_seconds,
-            },
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+                start_time_in_seconds: self.start_time_in_seconds
+                ,
+                start_time_offset_in_nanos: self.start_time_offset_in_nanos
+                ,
+                end_time_in_seconds: self.end_time_in_seconds
+                ,
+                end_time_offset_in_nanos: self.end_time_offset_in_nanos
+                ,
+                quality: self.quality
+                ,
+                interval_in_seconds: self.interval_in_seconds
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                r#type: self.r#type
+                ,
+                interval_window_in_seconds: self.interval_window_in_seconds
+                ,
+            }
         )
     }
 }
+

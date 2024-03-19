@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePracticeRunConfigurationOutput {
+pub struct CreatePracticeRunConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you configured the practice run for.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the resource that you configured the practice run for.</p>
@@ -14,32 +14,30 @@ pub struct CreatePracticeRunConfigurationOutput {
     pub practice_run_configuration: ::std::option::Option<crate::types::PracticeRunConfiguration>,
     _request_id: Option<String>,
 }
-impl CreatePracticeRunConfigurationOutput {
+impl  CreatePracticeRunConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you configured the practice run for.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the resource that you configured the practice run for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
-    pub fn zonal_autoshift_status(&self) -> &crate::types::ZonalAutoshiftStatus {
+    pub fn zonal_autoshift_status(&self) -> & crate::types::ZonalAutoshiftStatus {
         &self.zonal_autoshift_status
     }
     /// <p>A practice run configuration for a resource. Configurations include the outcome alarm that you specify for practice runs, and, optionally, a blocking alarm and blocking dates and windows.</p>
-    pub fn practice_run_configuration(&self) -> ::std::option::Option<&crate::types::PracticeRunConfiguration> {
+    pub fn practice_run_configuration(&self) -> ::std::option::Option<& crate::types::PracticeRunConfiguration> {
         self.practice_run_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePracticeRunConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePracticeRunConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreatePracticeRunConfigurationOutput`](crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationOutput).
     pub fn builder() -> crate::operation::create_practice_run_configuration::builders::CreatePracticeRunConfigurationOutputBuilder {
@@ -66,8 +64,7 @@ impl CreatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you configured the practice run for.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you configured the practice run for.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +78,7 @@ impl CreatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The name of the resource that you configured the practice run for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource that you configured the practice run for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl CreatePracticeRunConfigurationOutputBuilder {
     /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
-        self.zonal_autoshift_status = input;
-        self
+        self.zonal_autoshift_status = input; self
     }
     /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
@@ -114,56 +109,49 @@ impl CreatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>A practice run configuration for a resource. Configurations include the outcome alarm that you specify for practice runs, and, optionally, a blocking alarm and blocking dates and windows.</p>
     pub fn set_practice_run_configuration(mut self, input: ::std::option::Option<crate::types::PracticeRunConfiguration>) -> Self {
-        self.practice_run_configuration = input;
-        self
+        self.practice_run_configuration = input; self
     }
     /// <p>A practice run configuration for a resource. Configurations include the outcome alarm that you specify for practice runs, and, optionally, a blocking alarm and blocking dates and windows.</p>
     pub fn get_practice_run_configuration(&self) -> &::std::option::Option<crate::types::PracticeRunConfiguration> {
         &self.practice_run_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePracticeRunConfigurationOutput`](crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::create_practice_run_configuration::builders::CreatePracticeRunConfigurationOutputBuilder::arn)
     /// - [`name`](crate::operation::create_practice_run_configuration::builders::CreatePracticeRunConfigurationOutputBuilder::name)
     /// - [`zonal_autoshift_status`](crate::operation::create_practice_run_configuration::builders::CreatePracticeRunConfigurationOutputBuilder::zonal_autoshift_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationOutput {
-                arn: self.arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "arn",
-                        "arn was not specified but it is required when building CreatePracticeRunConfigurationOutput",
-                    )
-                })?,
-                name: self.name.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "name",
-                        "name was not specified but it is required when building CreatePracticeRunConfigurationOutput",
-                    )
-                })?,
-                zonal_autoshift_status: self.zonal_autoshift_status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "zonal_autoshift_status",
-                        "zonal_autoshift_status was not specified but it is required when building CreatePracticeRunConfigurationOutput",
-                    )
-                })?,
-                practice_run_configuration: self.practice_run_configuration,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreatePracticeRunConfigurationOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreatePracticeRunConfigurationOutput")
+                    )?
+                ,
+                zonal_autoshift_status: self.zonal_autoshift_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zonal_autoshift_status", "zonal_autoshift_status was not specified but it is required when building CreatePracticeRunConfigurationOutput")
+                    )?
+                ,
+                practice_run_configuration: self.practice_run_configuration
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

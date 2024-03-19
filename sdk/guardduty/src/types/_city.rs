@@ -3,13 +3,13 @@
 /// <p>Contains information about the city associated with the IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct City {
+pub struct City  {
     /// <p>The city name of the remote IP address.</p>
     pub city_name: ::std::option::Option<::std::string::String>,
 }
-impl City {
+impl  City  {
     /// <p>The city name of the remote IP address.</p>
-    pub fn city_name(&self) -> ::std::option::Option<&str> {
+    pub fn city_name(&self) -> ::std::option::Option<& str> {
         self.city_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CityBuilder {
     }
     /// <p>The city name of the remote IP address.</p>
     pub fn set_city_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city_name = input;
-        self
+        self.city_name = input; self
     }
     /// <p>The city name of the remote IP address.</p>
     pub fn get_city_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CityBuilder {
     }
     /// Consumes the builder and constructs a [`City`](crate::types::City).
     pub fn build(self) -> crate::types::City {
-        crate::types::City { city_name: self.city_name }
+        crate::types::City {
+            city_name: self.city_name
+            ,
+        }
     }
 }
+

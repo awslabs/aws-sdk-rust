@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProtectionInput {
+pub struct DeleteProtectionInput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
     pub protection_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProtectionInput {
+impl  DeleteProtectionInput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
-    pub fn protection_id(&self) -> ::std::option::Option<&str> {
+    pub fn protection_id(&self) -> ::std::option::Option<& str> {
         self.protection_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteProtectionInputBuilder {
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
     pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protection_id = input;
-        self
+        self.protection_id = input; self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
     pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.protection_id
     }
     /// Consumes the builder and constructs a [`DeleteProtectionInput`](crate::operation::delete_protection::DeleteProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_protection::DeleteProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_protection::DeleteProtectionInput {
-            protection_id: self.protection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_protection::DeleteProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_protection::DeleteProtectionInput {
+                protection_id: self.protection_id
+                ,
+            }
+        )
     }
 }
+

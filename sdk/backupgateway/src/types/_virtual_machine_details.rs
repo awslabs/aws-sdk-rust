@@ -3,7 +3,7 @@
 /// <p>Your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualMachineDetails {
+pub struct VirtualMachineDetails  {
     /// <p>The host name of the virtual machine.</p>
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual machine's hypervisor.</p>
@@ -17,38 +17,39 @@ pub struct VirtualMachineDetails {
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub last_backup_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub vmware_tags: ::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>>,
+    pub vmware_tags: ::std::option::Option<::std::vec::Vec::<crate::types::VmwareTag>>,
 }
-impl VirtualMachineDetails {
+impl  VirtualMachineDetails  {
     /// <p>The host name of the virtual machine.</p>
-    pub fn host_name(&self) -> ::std::option::Option<&str> {
+    pub fn host_name(&self) -> ::std::option::Option<& str> {
         self.host_name.as_deref()
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn hypervisor_id(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> ::std::option::Option<& str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>The name of the virtual machine.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path of the virtual machine.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn last_backup_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_backup_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_tags.is_none()`.
-    pub fn vmware_tags(&self) -> &[crate::types::VmwareTag] {
-        self.vmware_tags.as_deref().unwrap_or_default()
+    pub fn vmware_tags(&self) -> & [crate::types::VmwareTag] {
+        self.vmware_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl VirtualMachineDetails {
@@ -68,7 +69,7 @@ pub struct VirtualMachineDetailsBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_backup_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) vmware_tags: ::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>>,
+    pub(crate) vmware_tags: ::std::option::Option<::std::vec::Vec::<crate::types::VmwareTag>>,
 }
 impl VirtualMachineDetailsBuilder {
     /// <p>The host name of the virtual machine.</p>
@@ -78,8 +79,7 @@ impl VirtualMachineDetailsBuilder {
     }
     /// <p>The host name of the virtual machine.</p>
     pub fn set_host_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_name = input;
-        self
+        self.host_name = input; self
     }
     /// <p>The host name of the virtual machine.</p>
     pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl VirtualMachineDetailsBuilder {
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
     pub fn set_hypervisor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_id = input;
-        self
+        self.hypervisor_id = input; self
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
     pub fn get_hypervisor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl VirtualMachineDetailsBuilder {
     }
     /// <p>The name of the virtual machine.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the virtual machine.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl VirtualMachineDetailsBuilder {
     }
     /// <p>The path of the virtual machine.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of the virtual machine.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl VirtualMachineDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +144,7 @@ impl VirtualMachineDetailsBuilder {
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub fn set_last_backup_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_backup_date = input;
-        self
+        self.last_backup_date = input; self
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub fn get_last_backup_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,29 +157,36 @@ impl VirtualMachineDetailsBuilder {
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
     pub fn vmware_tags(mut self, input: crate::types::VmwareTag) -> Self {
         let mut v = self.vmware_tags.unwrap_or_default();
-        v.push(input);
-        self.vmware_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vmware_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub fn set_vmware_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>>) -> Self {
-        self.vmware_tags = input;
-        self
+    pub fn set_vmware_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VmwareTag>>) -> Self {
+        self.vmware_tags = input; self
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub fn get_vmware_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>> {
+    pub fn get_vmware_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VmwareTag>> {
         &self.vmware_tags
     }
     /// Consumes the builder and constructs a [`VirtualMachineDetails`](crate::types::VirtualMachineDetails).
     pub fn build(self) -> crate::types::VirtualMachineDetails {
         crate::types::VirtualMachineDetails {
-            host_name: self.host_name,
-            hypervisor_id: self.hypervisor_id,
-            name: self.name,
-            path: self.path,
-            resource_arn: self.resource_arn,
-            last_backup_date: self.last_backup_date,
-            vmware_tags: self.vmware_tags,
+            host_name: self.host_name
+            ,
+            hypervisor_id: self.hypervisor_id
+            ,
+            name: self.name
+            ,
+            path: self.path
+            ,
+            resource_arn: self.resource_arn
+            ,
+            last_backup_date: self.last_backup_date
+            ,
+            vmware_tags: self.vmware_tags
+            ,
         }
     }
 }
+

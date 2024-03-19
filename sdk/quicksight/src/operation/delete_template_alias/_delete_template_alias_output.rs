@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTemplateAliasOutput {
+pub struct DeleteTemplateAliasOutput  {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>An ID for the template associated with the deletion.</p>
@@ -15,33 +15,33 @@ pub struct DeleteTemplateAliasOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteTemplateAliasOutput {
+impl  DeleteTemplateAliasOutput  {
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
     /// <p>An ID for the template associated with the deletion.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name for the template alias.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteTemplateAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateAliasOutput`](crate::operation::delete_template_alias::DeleteTemplateAliasOutput).
     pub fn builder() -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder {
@@ -68,8 +68,7 @@ impl DeleteTemplateAliasOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -82,8 +81,7 @@ impl DeleteTemplateAliasOutputBuilder {
     }
     /// <p>An ID for the template associated with the deletion.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>An ID for the template associated with the deletion.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DeleteTemplateAliasOutputBuilder {
     }
     /// <p>The name for the template alias.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The name for the template alias.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl DeleteTemplateAliasOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,37 @@ impl DeleteTemplateAliasOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteTemplateAliasOutput`](crate::operation::delete_template_alias::DeleteTemplateAliasOutput).
     pub fn build(self) -> crate::operation::delete_template_alias::DeleteTemplateAliasOutput {
         crate::operation::delete_template_alias::DeleteTemplateAliasOutput {
-            status: self.status.unwrap_or_default(),
-            template_id: self.template_id,
-            alias_name: self.alias_name,
-            arn: self.arn,
-            request_id: self.request_id,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            template_id: self.template_id
+            ,
+            alias_name: self.alias_name
+            ,
+            arn: self.arn
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

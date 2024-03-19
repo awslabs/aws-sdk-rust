@@ -6,7 +6,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LocalHealthEventsConfig {
+pub struct LocalHealthEventsConfig  {
     /// <p>The status of whether Internet Monitor creates a health event based on a threshold percentage set for a local health score. The status can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub status: ::std::option::Option<crate::types::LocalHealthEventsConfigStatus>,
     /// <p>The health event threshold percentage set for a local health score.</p>
@@ -15,9 +15,9 @@ pub struct LocalHealthEventsConfig {
     /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.1%.</p>
     pub min_traffic_impact: f64,
 }
-impl LocalHealthEventsConfig {
+impl  LocalHealthEventsConfig  {
     /// <p>The status of whether Internet Monitor creates a health event based on a threshold percentage set for a local health score. The status can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LocalHealthEventsConfigStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LocalHealthEventsConfigStatus> {
         self.status.as_ref()
     }
     /// <p>The health event threshold percentage set for a local health score.</p>
@@ -53,8 +53,7 @@ impl LocalHealthEventsConfigBuilder {
     }
     /// <p>The status of whether Internet Monitor creates a health event based on a threshold percentage set for a local health score. The status can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LocalHealthEventsConfigStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of whether Internet Monitor creates a health event based on a threshold percentage set for a local health score. The status can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LocalHealthEventsConfigStatus> {
@@ -67,8 +66,7 @@ impl LocalHealthEventsConfigBuilder {
     }
     /// <p>The health event threshold percentage set for a local health score.</p>
     pub fn set_health_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.health_score_threshold = input;
-        self
+        self.health_score_threshold = input; self
     }
     /// <p>The health event threshold percentage set for a local health score.</p>
     pub fn get_health_score_threshold(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl LocalHealthEventsConfigBuilder {
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
     /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.1%.</p>
     pub fn set_min_traffic_impact(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_traffic_impact = input;
-        self
+        self.min_traffic_impact = input; self
     }
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
     /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.1%.</p>
@@ -94,9 +91,15 @@ impl LocalHealthEventsConfigBuilder {
     /// Consumes the builder and constructs a [`LocalHealthEventsConfig`](crate::types::LocalHealthEventsConfig).
     pub fn build(self) -> crate::types::LocalHealthEventsConfig {
         crate::types::LocalHealthEventsConfig {
-            status: self.status,
-            health_score_threshold: self.health_score_threshold.unwrap_or_default(),
-            min_traffic_impact: self.min_traffic_impact.unwrap_or_default(),
+            status: self.status
+            ,
+            health_score_threshold: self.health_score_threshold
+                .unwrap_or_default()
+            ,
+            min_traffic_impact: self.min_traffic_impact
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

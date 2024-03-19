@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfiguredAudienceModelPolicyInput {
+pub struct GetConfiguredAudienceModelPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
     pub configured_audience_model_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetConfiguredAudienceModelPolicyInput {
+impl  GetConfiguredAudienceModelPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetConfiguredAudienceModelPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_audience_model_arn
     }
     /// Consumes the builder and constructs a [`GetConfiguredAudienceModelPolicyInput`](crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyInput {
-                configured_audience_model_arn: self.configured_audience_model_arn,
-            },
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+            }
         )
     }
 }
+

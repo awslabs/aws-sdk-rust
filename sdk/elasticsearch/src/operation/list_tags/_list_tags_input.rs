@@ -3,13 +3,13 @@
 /// <p>Container for the parameters to the <code><code>ListTags</code></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsInput {
+pub struct ListTagsInput  {
     /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsInput {
+impl  ListTagsInput  {
     /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl ListTagsInputBuilder {
     }
     /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl ListTagsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput { arn: self.arn })
+        ::std::result::Result::Ok(
+            crate::operation::list_tags::ListTagsInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

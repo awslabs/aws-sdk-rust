@@ -3,16 +3,17 @@
 /// <p>The response elements represent the results of an update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResult {
+pub struct UpdateResult  {
     /// <p>Values for fields generated during the request.</p>
-    pub generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub generated_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
 }
-impl UpdateResult {
+impl  UpdateResult  {
     /// <p>Values for fields generated during the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generated_fields.is_none()`.
-    pub fn generated_fields(&self) -> &[crate::types::Field] {
-        self.generated_fields.as_deref().unwrap_or_default()
+    pub fn generated_fields(&self) -> & [crate::types::Field] {
+        self.generated_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateResult {
@@ -26,7 +27,7 @@ impl UpdateResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResultBuilder {
-    pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
 }
 impl UpdateResultBuilder {
     /// Appends an item to `generated_fields`.
@@ -36,23 +37,24 @@ impl UpdateResultBuilder {
     /// <p>Values for fields generated during the request.</p>
     pub fn generated_fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.generated_fields.unwrap_or_default();
-        v.push(input);
-        self.generated_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.generated_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Values for fields generated during the request.</p>
-    pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
-        self.generated_fields = input;
-        self
+    pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>) -> Self {
+        self.generated_fields = input; self
     }
     /// <p>Values for fields generated during the request.</p>
-    pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Field>> {
         &self.generated_fields
     }
     /// Consumes the builder and constructs a [`UpdateResult`](crate::types::UpdateResult).
     pub fn build(self) -> crate::types::UpdateResult {
         crate::types::UpdateResult {
-            generated_fields: self.generated_fields,
+            generated_fields: self.generated_fields
+            ,
         }
     }
 }
+

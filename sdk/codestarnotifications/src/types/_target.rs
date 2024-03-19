@@ -3,7 +3,7 @@
 /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Target {
+pub struct Target  {
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct Target {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     pub target_address: ::std::option::Option<::std::string::String>,
 }
-impl Target {
+impl  Target  {
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
     /// <li>
@@ -23,15 +23,15 @@ impl Target {
     /// <li>
     /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
-    pub fn target_type(&self) -> ::std::option::Option<&str> {
+    pub fn target_type(&self) -> ::std::option::Option<& str> {
         self.target_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn target_address(&self) -> ::std::option::Option<&str> {
+    pub fn target_address(&self) -> ::std::option::Option<& str> {
         self.target_address.as_deref()
     }
 }
-impl ::std::fmt::Debug for Target {
+impl  ::std::fmt::Debug for Target  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Target");
         formatter.field("target_type", &self.target_type);
@@ -73,8 +73,7 @@ impl TargetBuilder {
     /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
     /// <ul>
@@ -93,8 +92,7 @@ impl TargetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_address = input;
-        self
+        self.target_address = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,10 @@ impl TargetBuilder {
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {
         crate::types::Target {
-            target_type: self.target_type,
-            target_address: self.target_address,
+            target_type: self.target_type
+            ,
+            target_address: self.target_address
+            ,
         }
     }
 }
@@ -116,3 +116,4 @@ impl ::std::fmt::Debug for TargetBuilder {
         formatter.finish()
     }
 }
+

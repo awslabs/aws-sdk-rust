@@ -3,13 +3,13 @@
 /// <p>Details on the cache hit of a pipeline execution step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheHitResult {
+pub struct CacheHitResult  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
-impl CacheHitResult {
+impl  CacheHitResult  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn source_pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.source_pipeline_execution_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CacheHitResultBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn set_source_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_pipeline_execution_arn = input;
-        self
+        self.source_pipeline_execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn get_source_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl CacheHitResultBuilder {
     /// Consumes the builder and constructs a [`CacheHitResult`](crate::types::CacheHitResult).
     pub fn build(self) -> crate::types::CacheHitResult {
         crate::types::CacheHitResult {
-            source_pipeline_execution_arn: self.source_pipeline_execution_arn,
+            source_pipeline_execution_arn: self.source_pipeline_execution_arn
+            ,
         }
     }
 }
+

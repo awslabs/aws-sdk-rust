@@ -3,7 +3,7 @@
 /// <p>Information about a failed world.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorldFailure {
+pub struct WorldFailure  {
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
     /// <dt>
@@ -43,7 +43,7 @@ pub struct WorldFailure {
     /// <p>The number of failed worlds.</p>
     pub failure_count: i32,
 }
-impl WorldFailure {
+impl  WorldFailure  {
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
     /// <dt>
@@ -77,11 +77,11 @@ impl WorldFailure {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
-    pub fn sample_failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn sample_failure_reason(&self) -> ::std::option::Option<& str> {
         self.sample_failure_reason.as_deref()
     }
     /// <p>The number of failed worlds.</p>
@@ -176,8 +176,7 @@ impl WorldFailureBuilder {
     /// </dd>
     /// </dl>
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
@@ -222,8 +221,7 @@ impl WorldFailureBuilder {
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub fn set_sample_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_failure_reason = input;
-        self
+        self.sample_failure_reason = input; self
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub fn get_sample_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +234,7 @@ impl WorldFailureBuilder {
     }
     /// <p>The number of failed worlds.</p>
     pub fn set_failure_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_count = input;
-        self
+        self.failure_count = input; self
     }
     /// <p>The number of failed worlds.</p>
     pub fn get_failure_count(&self) -> &::std::option::Option<i32> {
@@ -246,9 +243,14 @@ impl WorldFailureBuilder {
     /// Consumes the builder and constructs a [`WorldFailure`](crate::types::WorldFailure).
     pub fn build(self) -> crate::types::WorldFailure {
         crate::types::WorldFailure {
-            failure_code: self.failure_code,
-            sample_failure_reason: self.sample_failure_reason,
-            failure_count: self.failure_count.unwrap_or_default(),
+            failure_code: self.failure_code
+            ,
+            sample_failure_reason: self.sample_failure_reason
+            ,
+            failure_count: self.failure_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

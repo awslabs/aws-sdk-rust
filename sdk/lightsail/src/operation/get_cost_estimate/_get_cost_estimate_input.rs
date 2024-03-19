@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostEstimateInput {
+pub struct GetCostEstimateInput  {
     /// <p>The resource name.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The cost estimate start time.</p>
@@ -28,9 +28,9 @@ pub struct GetCostEstimateInput {
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetCostEstimateInput {
+impl  GetCostEstimateInput  {
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The cost estimate start time.</p>
@@ -43,7 +43,7 @@ impl GetCostEstimateInput {
     /// <p>For example, if you want to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The cost estimate end time.</p>
@@ -56,7 +56,7 @@ impl GetCostEstimateInput {
     /// <p>For example, if you want to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl GetCostEstimateInputBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl GetCostEstimateInputBuilder {
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The cost estimate start time.</p>
     /// <p>Constraints:</p>
@@ -159,8 +157,7 @@ impl GetCostEstimateInputBuilder {
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The cost estimate end time.</p>
     /// <p>Constraints:</p>
@@ -176,13 +173,17 @@ impl GetCostEstimateInputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`GetCostEstimateInput`](crate::operation::get_cost_estimate::GetCostEstimateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cost_estimate::GetCostEstimateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cost_estimate::GetCostEstimateInput {
-            resource_name: self.resource_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cost_estimate::GetCostEstimateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cost_estimate::GetCostEstimateInput {
+                resource_name: self.resource_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

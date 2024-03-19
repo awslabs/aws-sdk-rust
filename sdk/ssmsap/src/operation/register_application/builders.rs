@@ -5,23 +5,20 @@ pub use crate::operation::register_application::_register_application_input::Reg
 
 impl RegisterApplicationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::register_application::RegisterApplicationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_application::RegisterApplicationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.register_application();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::register_application::RegisterApplicationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::register_application::RegisterApplicationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.register_application();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RegisterApplication`.
-///
+/// 
 /// <p>Register an SAP application with AWS Systems Manager for SAP. You must meet the following requirements before registering.</p>
 /// <p>The SAP application you want to register with AWS Systems Manager for SAP is running on Amazon EC2.</p>
 /// <p>AWS Systems Manager Agent must be setup on an Amazon EC2 instance along with the required IAM permissions.</p>
@@ -29,33 +26,32 @@ impl RegisterApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::register_application::builders::RegisterApplicationInputBuilder,
+                    inner: crate::operation::register_application::builders::RegisterApplicationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::register_application::RegisterApplicationOutput,
-        crate::operation::register_application::RegisterApplicationError,
-    > for RegisterApplicationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::register_application::RegisterApplicationOutput,
-            crate::operation::register_application::RegisterApplicationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::register_application::RegisterApplicationOutput,
+                    crate::operation::register_application::RegisterApplicationError,
+                > for RegisterApplicationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::register_application::RegisterApplicationOutput,
+                        crate::operation::register_application::RegisterApplicationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RegisterApplicationFluentBuilder {
     /// Creates a new `RegisterApplication`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl RegisterApplicationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_application::RegisterApplicationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_application::RegisterApplicationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::register_application::RegisterApplication::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::register_application::RegisterApplication::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::register_application::RegisterApplicationOutput,
-        crate::operation::register_application::RegisterApplicationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_application::RegisterApplicationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::register_application::RegisterApplication::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::register_application::RegisterApplication::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::register_application::RegisterApplicationOutput, crate::operation::register_application::RegisterApplicationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -149,12 +136,12 @@ impl RegisterApplicationFluentBuilder {
         self
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instances(input);
         self
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_instances()
     }
     /// <p>The SAP instance number of the application.</p>
@@ -195,12 +182,12 @@ impl RegisterApplicationFluentBuilder {
         self
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `Credentials`.
@@ -213,12 +200,12 @@ impl RegisterApplicationFluentBuilder {
         self
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>> {
         self.inner.get_credentials()
     }
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
@@ -236,3 +223,4 @@ impl RegisterApplicationFluentBuilder {
         self.inner.get_database_arn()
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAbpV11 {
+pub struct UpdateAbpV11  {
     /// <p>The FCnt init value.</p>
     pub f_cnt_start: ::std::option::Option<i32>,
 }
-impl UpdateAbpV11 {
+impl  UpdateAbpV11  {
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(&self) -> ::std::option::Option<i32> {
         self.f_cnt_start
@@ -34,8 +34,7 @@ impl UpdateAbpV11Builder {
     }
     /// <p>The FCnt init value.</p>
     pub fn set_f_cnt_start(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.f_cnt_start = input;
-        self
+        self.f_cnt_start = input; self
     }
     /// <p>The FCnt init value.</p>
     pub fn get_f_cnt_start(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl UpdateAbpV11Builder {
     /// Consumes the builder and constructs a [`UpdateAbpV11`](crate::types::UpdateAbpV11).
     pub fn build(self) -> crate::types::UpdateAbpV11 {
         crate::types::UpdateAbpV11 {
-            f_cnt_start: self.f_cnt_start,
+            f_cnt_start: self.f_cnt_start
+            ,
         }
     }
 }
+

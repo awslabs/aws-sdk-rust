@@ -3,7 +3,7 @@
 /// <p>The structure that stores the capacity configuration details of a scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxScalingGroupConfiguration {
+pub struct KxScalingGroupConfiguration  {
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub scaling_group_name: ::std::string::String,
     /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
@@ -15,11 +15,10 @@ pub struct KxScalingGroupConfiguration {
     /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
     pub cpu: ::std::option::Option<f64>,
 }
-impl KxScalingGroupConfiguration {
+impl  KxScalingGroupConfiguration  {
     /// <p>A unique identifier for the kdb scaling group.</p>
-    pub fn scaling_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scaling_group_name.deref()
+    pub fn scaling_group_name(&self) -> & str {
+        use std::ops::Deref; self.scaling_group_name.deref()
     }
     /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
     pub fn memory_limit(&self) -> ::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl KxScalingGroupConfigurationBuilder {
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_group_name = input;
-        self
+        self.scaling_group_name = input; self
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl KxScalingGroupConfigurationBuilder {
     }
     /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
     pub fn set_memory_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_limit = input;
-        self
+        self.memory_limit = input; self
     }
     /// <p>An optional hard limit on the amount of memory a kdb cluster can use.</p>
     pub fn get_memory_limit(&self) -> &::std::option::Option<i32> {
@@ -93,8 +90,7 @@ impl KxScalingGroupConfigurationBuilder {
     }
     /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
     pub fn set_memory_reservation(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_reservation = input;
-        self
+        self.memory_reservation = input; self
     }
     /// <p>A reservation of the minimum amount of memory that should be available on the scaling group for a kdb cluster to be successfully placed in a scaling group.</p>
     pub fn get_memory_reservation(&self) -> &::std::option::Option<i32> {
@@ -108,8 +104,7 @@ impl KxScalingGroupConfigurationBuilder {
     }
     /// <p>The number of kdb cluster nodes.</p>
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.node_count = input;
-        self
+        self.node_count = input; self
     }
     /// <p>The number of kdb cluster nodes.</p>
     pub fn get_node_count(&self) -> &::std::option::Option<i32> {
@@ -122,8 +117,7 @@ impl KxScalingGroupConfigurationBuilder {
     }
     /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The number of vCPUs that you want to reserve for each node of this kdb cluster on the scaling group host.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<f64> {
@@ -135,27 +129,29 @@ impl KxScalingGroupConfigurationBuilder {
     /// - [`memory_reservation`](crate::types::builders::KxScalingGroupConfigurationBuilder::memory_reservation)
     /// - [`node_count`](crate::types::builders::KxScalingGroupConfigurationBuilder::node_count)
     pub fn build(self) -> ::std::result::Result<crate::types::KxScalingGroupConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KxScalingGroupConfiguration {
-            scaling_group_name: self.scaling_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scaling_group_name",
-                    "scaling_group_name was not specified but it is required when building KxScalingGroupConfiguration",
-                )
-            })?,
-            memory_limit: self.memory_limit,
-            memory_reservation: self.memory_reservation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "memory_reservation",
-                    "memory_reservation was not specified but it is required when building KxScalingGroupConfiguration",
-                )
-            })?,
-            node_count: self.node_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "node_count",
-                    "node_count was not specified but it is required when building KxScalingGroupConfiguration",
-                )
-            })?,
-            cpu: self.cpu,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KxScalingGroupConfiguration {
+                scaling_group_name: self.scaling_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scaling_group_name", "scaling_group_name was not specified but it is required when building KxScalingGroupConfiguration")
+                    )?
+                ,
+                memory_limit: self.memory_limit
+                ,
+                memory_reservation: self.memory_reservation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("memory_reservation", "memory_reservation was not specified but it is required when building KxScalingGroupConfiguration")
+                    )?
+                ,
+                node_count: self.node_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("node_count", "node_count was not specified but it is required when building KxScalingGroupConfiguration")
+                    )?
+                ,
+                cpu: self.cpu
+                ,
+            }
+        )
     }
 }
+

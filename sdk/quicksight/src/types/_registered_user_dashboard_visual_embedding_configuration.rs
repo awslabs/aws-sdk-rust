@@ -3,15 +3,15 @@
 /// <p>The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisteredUserDashboardVisualEmbeddingConfiguration {
+pub struct RegisteredUserDashboardVisualEmbeddingConfiguration  {
     /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub initial_dashboard_visual_id: ::std::option::Option<crate::types::DashboardVisualId>,
 }
-impl RegisteredUserDashboardVisualEmbeddingConfiguration {
+impl  RegisteredUserDashboardVisualEmbeddingConfiguration  {
     /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn initial_dashboard_visual_id(&self) -> ::std::option::Option<&crate::types::DashboardVisualId> {
+    pub fn initial_dashboard_visual_id(&self) -> ::std::option::Option<& crate::types::DashboardVisualId> {
         self.initial_dashboard_visual_id.as_ref()
     }
 }
@@ -39,8 +39,7 @@ impl RegisteredUserDashboardVisualEmbeddingConfigurationBuilder {
     /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn set_initial_dashboard_visual_id(mut self, input: ::std::option::Option<crate::types::DashboardVisualId>) -> Self {
-        self.initial_dashboard_visual_id = input;
-        self
+        self.initial_dashboard_visual_id = input; self
     }
     /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
@@ -50,7 +49,9 @@ impl RegisteredUserDashboardVisualEmbeddingConfigurationBuilder {
     /// Consumes the builder and constructs a [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration).
     pub fn build(self) -> crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration {
         crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration {
-            initial_dashboard_visual_id: self.initial_dashboard_visual_id,
+            initial_dashboard_visual_id: self.initial_dashboard_visual_id
+            ,
         }
     }
 }
+

@@ -2,35 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateConnectorInput {
+pub struct CreateConnectorInput  {
     /// <p>Create Connector request name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Create Connector request SSM instance ID.</p>
     pub ssm_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Create Connector request tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Create Connector request SSM command config.</p>
     pub ssm_command_config: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>,
 }
-impl CreateConnectorInput {
+impl  CreateConnectorInput  {
     /// <p>Create Connector request name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Create Connector request SSM instance ID.</p>
-    pub fn ssm_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssm_instance_id(&self) -> ::std::option::Option<& str> {
         self.ssm_instance_id.as_deref()
     }
     /// <p>Create Connector request tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Create Connector request SSM command config.</p>
-    pub fn ssm_command_config(&self) -> ::std::option::Option<&crate::types::ConnectorSsmCommandConfig> {
+    pub fn ssm_command_config(&self) -> ::std::option::Option<& crate::types::ConnectorSsmCommandConfig> {
         self.ssm_command_config.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateConnectorInput {
+impl  ::std::fmt::Debug for CreateConnectorInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectorInput");
         formatter.field("name", &self.name);
@@ -53,7 +53,7 @@ impl CreateConnectorInput {
 pub struct CreateConnectorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ssm_instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) ssm_command_config: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>,
 }
 impl CreateConnectorInputBuilder {
@@ -65,8 +65,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>Create Connector request name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Create Connector request name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>Create Connector request SSM instance ID.</p>
     pub fn set_ssm_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssm_instance_id = input;
-        self
+        self.ssm_instance_id = input; self
     }
     /// <p>Create Connector request SSM instance ID.</p>
     pub fn get_ssm_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +92,16 @@ impl CreateConnectorInputBuilder {
     /// <p>Create Connector request tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Create Connector request tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Create Connector request tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Create Connector request SSM command config.</p>
@@ -114,23 +111,26 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>Create Connector request SSM command config.</p>
     pub fn set_ssm_command_config(mut self, input: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>) -> Self {
-        self.ssm_command_config = input;
-        self
+        self.ssm_command_config = input; self
     }
     /// <p>Create Connector request SSM command config.</p>
     pub fn get_ssm_command_config(&self) -> &::std::option::Option<crate::types::ConnectorSsmCommandConfig> {
         &self.ssm_command_config
     }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
-            name: self.name,
-            ssm_instance_id: self.ssm_instance_id,
-            tags: self.tags,
-            ssm_command_config: self.ssm_command_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connector::CreateConnectorInput {
+                name: self.name
+                ,
+                ssm_instance_id: self.ssm_instance_id
+                ,
+                tags: self.tags
+                ,
+                ssm_command_config: self.ssm_command_config
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateConnectorInputBuilder {
@@ -143,3 +143,4 @@ impl ::std::fmt::Debug for CreateConnectorInputBuilder {
         formatter.finish()
     }
 }
+

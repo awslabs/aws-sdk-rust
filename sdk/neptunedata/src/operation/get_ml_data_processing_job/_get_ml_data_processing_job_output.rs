@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlDataProcessingJobOutput {
+pub struct GetMlDataProcessingJobOutput  {
     /// <p>Status of the data processing job.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this data-processing job.</p>
@@ -11,25 +11,25 @@ pub struct GetMlDataProcessingJobOutput {
     pub processing_job: ::std::option::Option<crate::types::MlResourceDefinition>,
     _request_id: Option<String>,
 }
-impl GetMlDataProcessingJobOutput {
+impl  GetMlDataProcessingJobOutput  {
     /// <p>Status of the data processing job.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The unique identifier of this data-processing job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Definition of the data processing job.</p>
-    pub fn processing_job(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn processing_job(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.processing_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMlDataProcessingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMlDataProcessingJobOutput {
     /// Creates a new builder-style object to manufacture [`GetMlDataProcessingJobOutput`](crate::operation::get_ml_data_processing_job::GetMlDataProcessingJobOutput).
     pub fn builder() -> crate::operation::get_ml_data_processing_job::builders::GetMlDataProcessingJobOutputBuilder {
@@ -54,8 +54,7 @@ impl GetMlDataProcessingJobOutputBuilder {
     }
     /// <p>Status of the data processing job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the data processing job.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetMlDataProcessingJobOutputBuilder {
     }
     /// <p>The unique identifier of this data-processing job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of this data-processing job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetMlDataProcessingJobOutputBuilder {
     }
     /// <p>Definition of the data processing job.</p>
     pub fn set_processing_job(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.processing_job = input;
-        self
+        self.processing_job = input; self
     }
     /// <p>Definition of the data processing job.</p>
     pub fn get_processing_job(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
         &self.processing_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMlDataProcessingJobOutput`](crate::operation::get_ml_data_processing_job::GetMlDataProcessingJobOutput).
     pub fn build(self) -> crate::operation::get_ml_data_processing_job::GetMlDataProcessingJobOutput {
         crate::operation::get_ml_data_processing_job::GetMlDataProcessingJobOutput {
-            status: self.status,
-            id: self.id,
-            processing_job: self.processing_job,
+            status: self.status
+            ,
+            id: self.id
+            ,
+            processing_job: self.processing_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

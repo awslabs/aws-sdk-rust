@@ -3,22 +3,20 @@
 /// <p>A value or list of parameter values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterValue {
+pub struct ParameterValue  {
     /// <p>The ID of the parameter value.</p>
     pub id: ::std::string::String,
     /// <p>The field value, expressed as a String.</p>
     pub string_value: ::std::string::String,
 }
-impl ParameterValue {
+impl  ParameterValue  {
     /// <p>The ID of the parameter value.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> &str {
-        use std::ops::Deref;
-        self.string_value.deref()
+    pub fn string_value(&self) -> & str {
+        use std::ops::Deref; self.string_value.deref()
     }
 }
 impl ParameterValue {
@@ -44,8 +42,7 @@ impl ParameterValueBuilder {
     }
     /// <p>The ID of the parameter value.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the parameter value.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ParameterValueBuilder {
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ParameterValueBuilder {
     /// - [`id`](crate::types::builders::ParameterValueBuilder::id)
     /// - [`string_value`](crate::types::builders::ParameterValueBuilder::string_value)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParameterValue {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ParameterValue",
-                )
-            })?,
-            string_value: self.string_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "string_value",
-                    "string_value was not specified but it is required when building ParameterValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParameterValue {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ParameterValue")
+                    )?
+                ,
+                string_value: self.string_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("string_value", "string_value was not specified but it is required when building ParameterValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

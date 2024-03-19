@@ -3,13 +3,13 @@
 /// <p>Contains information about the Amazon EC2 instance that is running the Amazon ECS container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerInstanceDetails {
+pub struct ContainerInstanceDetails  {
     /// <p>Represents the nodes in the Amazon ECS cluster that has a <code>HEALTHY</code> coverage status.</p>
     pub covered_container_instances: ::std::option::Option<i64>,
     /// <p>Represents total number of nodes in the Amazon ECS cluster.</p>
     pub compatible_container_instances: ::std::option::Option<i64>,
 }
-impl ContainerInstanceDetails {
+impl  ContainerInstanceDetails  {
     /// <p>Represents the nodes in the Amazon ECS cluster that has a <code>HEALTHY</code> coverage status.</p>
     pub fn covered_container_instances(&self) -> ::std::option::Option<i64> {
         self.covered_container_instances
@@ -41,8 +41,7 @@ impl ContainerInstanceDetailsBuilder {
     }
     /// <p>Represents the nodes in the Amazon ECS cluster that has a <code>HEALTHY</code> coverage status.</p>
     pub fn set_covered_container_instances(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.covered_container_instances = input;
-        self
+        self.covered_container_instances = input; self
     }
     /// <p>Represents the nodes in the Amazon ECS cluster that has a <code>HEALTHY</code> coverage status.</p>
     pub fn get_covered_container_instances(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl ContainerInstanceDetailsBuilder {
     }
     /// <p>Represents total number of nodes in the Amazon ECS cluster.</p>
     pub fn set_compatible_container_instances(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compatible_container_instances = input;
-        self
+        self.compatible_container_instances = input; self
     }
     /// <p>Represents total number of nodes in the Amazon ECS cluster.</p>
     pub fn get_compatible_container_instances(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl ContainerInstanceDetailsBuilder {
     /// Consumes the builder and constructs a [`ContainerInstanceDetails`](crate::types::ContainerInstanceDetails).
     pub fn build(self) -> crate::types::ContainerInstanceDetails {
         crate::types::ContainerInstanceDetails {
-            covered_container_instances: self.covered_container_instances,
-            compatible_container_instances: self.compatible_container_instances,
+            covered_container_instances: self.covered_container_instances
+            ,
+            compatible_container_instances: self.compatible_container_instances
+            ,
         }
     }
 }
+

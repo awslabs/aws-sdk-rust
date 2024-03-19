@@ -3,7 +3,7 @@
 /// <p>Details about an NTP server connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NtpStatus {
+pub struct NtpStatus  {
     /// <p>The connection's status.</p>
     pub connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,
     /// <p>The IP address of the server.</p>
@@ -11,17 +11,17 @@ pub struct NtpStatus {
     /// <p>The domain name of the server.</p>
     pub ntp_server_name: ::std::option::Option<::std::string::String>,
 }
-impl NtpStatus {
+impl  NtpStatus  {
     /// <p>The connection's status.</p>
-    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::NetworkConnectionStatus> {
+    pub fn connection_status(&self) -> ::std::option::Option<& crate::types::NetworkConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The IP address of the server.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The domain name of the server.</p>
-    pub fn ntp_server_name(&self) -> ::std::option::Option<&str> {
+    pub fn ntp_server_name(&self) -> ::std::option::Option<& str> {
         self.ntp_server_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl NtpStatusBuilder {
     }
     /// <p>The connection's status.</p>
     pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::NetworkConnectionStatus>) -> Self {
-        self.connection_status = input;
-        self
+        self.connection_status = input; self
     }
     /// <p>The connection's status.</p>
     pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::NetworkConnectionStatus> {
@@ -62,8 +61,7 @@ impl NtpStatusBuilder {
     }
     /// <p>The IP address of the server.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of the server.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl NtpStatusBuilder {
     }
     /// <p>The domain name of the server.</p>
     pub fn set_ntp_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ntp_server_name = input;
-        self
+        self.ntp_server_name = input; self
     }
     /// <p>The domain name of the server.</p>
     pub fn get_ntp_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl NtpStatusBuilder {
     /// Consumes the builder and constructs a [`NtpStatus`](crate::types::NtpStatus).
     pub fn build(self) -> crate::types::NtpStatus {
         crate::types::NtpStatus {
-            connection_status: self.connection_status,
-            ip_address: self.ip_address,
-            ntp_server_name: self.ntp_server_name,
+            connection_status: self.connection_status
+            ,
+            ip_address: self.ip_address
+            ,
+            ntp_server_name: self.ntp_server_name
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolutionMetricsOutput {
+pub struct GetSolutionMetricsOutput  {
     /// <p>The same solution version ARN as specified in the request.</p>
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
-    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>,
     _request_id: Option<String>,
 }
-impl GetSolutionMetricsOutput {
+impl  GetSolutionMetricsOutput  {
     /// <p>The same solution version ARN as specified in the request.</p>
-    pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> ::std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn metrics(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, f64>> {
         self.metrics.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSolutionMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSolutionMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetSolutionMetricsOutput`](crate::operation::get_solution_metrics::GetSolutionMetricsOutput).
     pub fn builder() -> crate::operation::get_solution_metrics::builders::GetSolutionMetricsOutputBuilder {
@@ -36,7 +36,7 @@ impl GetSolutionMetricsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolutionMetricsOutputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>,
     _request_id: Option<String>,
 }
 impl GetSolutionMetricsOutputBuilder {
@@ -47,8 +47,7 @@ impl GetSolutionMetricsOutputBuilder {
     }
     /// <p>The same solution version ARN as specified in the request.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_version_arn = input;
-        self
+        self.solution_version_arn = input; self
     }
     /// <p>The same solution version ARN as specified in the request.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,34 +60,36 @@ impl GetSolutionMetricsOutputBuilder {
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
     pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.metrics = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.metrics = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>> {
         &self.metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSolutionMetricsOutput`](crate::operation::get_solution_metrics::GetSolutionMetricsOutput).
     pub fn build(self) -> crate::operation::get_solution_metrics::GetSolutionMetricsOutput {
         crate::operation::get_solution_metrics::GetSolutionMetricsOutput {
-            solution_version_arn: self.solution_version_arn,
-            metrics: self.metrics,
+            solution_version_arn: self.solution_version_arn
+            ,
+            metrics: self.metrics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

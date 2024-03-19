@@ -3,13 +3,13 @@
 /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails  {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     pub enable: ::std::option::Option<bool>,
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub rollback: ::std::option::Option<bool>,
 }
-impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+impl  AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails  {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
@@ -41,8 +41,7 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
     }
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
+        self.enable = input; self
     }
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rollback = input;
-        self
+        self.rollback = input; self
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn get_rollback(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
     /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
         crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
-            enable: self.enable,
-            rollback: self.rollback,
+            enable: self.enable
+            ,
+            rollback: self.rollback
+            ,
         }
     }
 }
+

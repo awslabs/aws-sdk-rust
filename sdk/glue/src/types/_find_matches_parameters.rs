@@ -3,7 +3,7 @@
 /// <p>The parameters to configure the find matches transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindMatchesParameters {
+pub struct FindMatchesParameters  {
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
     pub primary_key_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
@@ -18,9 +18,9 @@ pub struct FindMatchesParameters {
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
     pub enforce_provided_labels: ::std::option::Option<bool>,
 }
-impl FindMatchesParameters {
+impl  FindMatchesParameters  {
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
-    pub fn primary_key_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn primary_key_column_name(&self) -> ::std::option::Option<& str> {
         self.primary_key_column_name.as_deref()
     }
     /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
@@ -65,8 +65,7 @@ impl FindMatchesParametersBuilder {
     }
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
     pub fn set_primary_key_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_key_column_name = input;
-        self
+        self.primary_key_column_name = input; self
     }
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
     pub fn get_primary_key_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl FindMatchesParametersBuilder {
     /// <p>The precision metric indicates how often your model is correct when it predicts a match.</p>
     /// <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
     pub fn set_precision_recall_tradeoff(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.precision_recall_tradeoff = input;
-        self
+        self.precision_recall_tradeoff = input; self
     }
     /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
     /// <p>The precision metric indicates how often your model is correct when it predicts a match.</p>
@@ -103,8 +101,7 @@ impl FindMatchesParametersBuilder {
     /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall.</p>
     /// <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
     pub fn set_accuracy_cost_tradeoff(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.accuracy_cost_tradeoff = input;
-        self
+        self.accuracy_cost_tradeoff = input; self
     }
     /// <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
     /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall.</p>
@@ -121,8 +118,7 @@ impl FindMatchesParametersBuilder {
     /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
     pub fn set_enforce_provided_labels(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enforce_provided_labels = input;
-        self
+        self.enforce_provided_labels = input; self
     }
     /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
@@ -132,10 +128,15 @@ impl FindMatchesParametersBuilder {
     /// Consumes the builder and constructs a [`FindMatchesParameters`](crate::types::FindMatchesParameters).
     pub fn build(self) -> crate::types::FindMatchesParameters {
         crate::types::FindMatchesParameters {
-            primary_key_column_name: self.primary_key_column_name,
-            precision_recall_tradeoff: self.precision_recall_tradeoff,
-            accuracy_cost_tradeoff: self.accuracy_cost_tradeoff,
-            enforce_provided_labels: self.enforce_provided_labels,
+            primary_key_column_name: self.primary_key_column_name
+            ,
+            precision_recall_tradeoff: self.precision_recall_tradeoff
+            ,
+            accuracy_cost_tradeoff: self.accuracy_cost_tradeoff
+            ,
+            enforce_provided_labels: self.enforce_provided_labels
+            ,
         }
     }
 }
+

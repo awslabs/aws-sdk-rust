@@ -3,15 +3,15 @@
 /// <p>Summary information for groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupSummary {
+pub struct GroupSummary  {
     /// <p>The identifier of the group you want group summary information on.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub ordering_id: ::std::option::Option<i64>,
 }
-impl GroupSummary {
+impl  GroupSummary  {
     /// <p>The identifier of the group you want group summary information on.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
@@ -41,8 +41,7 @@ impl GroupSummaryBuilder {
     }
     /// <p>The identifier of the group you want group summary information on.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier of the group you want group summary information on.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GroupSummaryBuilder {
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ordering_id = input;
-        self
+        self.ordering_id = input; self
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl GroupSummaryBuilder {
     /// Consumes the builder and constructs a [`GroupSummary`](crate::types::GroupSummary).
     pub fn build(self) -> crate::types::GroupSummary {
         crate::types::GroupSummary {
-            group_id: self.group_id,
-            ordering_id: self.ordering_id,
+            group_id: self.group_id
+            ,
+            ordering_id: self.ordering_id
+            ,
         }
     }
 }
+

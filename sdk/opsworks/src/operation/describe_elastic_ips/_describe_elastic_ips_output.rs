@@ -3,24 +3,25 @@
 /// <p>Contains the response to a <code>DescribeElasticIps</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeElasticIpsOutput {
+pub struct DescribeElasticIpsOutput  {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub elastic_ips: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
+    pub elastic_ips: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticIp>>,
     _request_id: Option<String>,
 }
-impl DescribeElasticIpsOutput {
+impl  DescribeElasticIpsOutput  {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_ips.is_none()`.
-    pub fn elastic_ips(&self) -> &[crate::types::ElasticIp] {
-        self.elastic_ips.as_deref().unwrap_or_default()
+    pub fn elastic_ips(&self) -> & [crate::types::ElasticIp] {
+        self.elastic_ips.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeElasticIpsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeElasticIpsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput).
     pub fn builder() -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeElasticIpsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticIpsOutputBuilder {
-    pub(crate) elastic_ips: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
+    pub(crate) elastic_ips: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticIp>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticIpsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeElasticIpsOutputBuilder {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     pub fn elastic_ips(mut self, input: crate::types::ElasticIp) -> Self {
         let mut v = self.elastic_ips.unwrap_or_default();
-        v.push(input);
-        self.elastic_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.elastic_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub fn set_elastic_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>) -> Self {
-        self.elastic_ips = input;
-        self
+    pub fn set_elastic_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticIp>>) -> Self {
+        self.elastic_ips = input; self
     }
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub fn get_elastic_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>> {
+    pub fn get_elastic_ips(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ElasticIp>> {
         &self.elastic_ips
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput).
     pub fn build(self) -> crate::operation::describe_elastic_ips::DescribeElasticIpsOutput {
         crate::operation::describe_elastic_ips::DescribeElasticIpsOutput {
-            elastic_ips: self.elastic_ips,
+            elastic_ips: self.elastic_ips
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

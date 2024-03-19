@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagedDataIdentifiersInput {
+pub struct ListManagedDataIdentifiersInput  {
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListManagedDataIdentifiersInput {
+impl  ListManagedDataIdentifiersInput  {
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl ListManagedDataIdentifiersInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListManagedDataIdentifiersInput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteOpenCypherExplainQueryOutput {
+pub struct ExecuteOpenCypherExplainQueryOutput  {
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
     pub results: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
-impl ExecuteOpenCypherExplainQueryOutput {
+impl  ExecuteOpenCypherExplainQueryOutput  {
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
-    pub fn results(&self) -> &::aws_smithy_types::Blob {
+    pub fn results(&self) -> & ::aws_smithy_types::Blob {
         &self.results
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteOpenCypherExplainQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteOpenCypherExplainQueryOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteOpenCypherExplainQueryOutput`](crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput).
     pub fn builder() -> crate::operation::execute_open_cypher_explain_query::builders::ExecuteOpenCypherExplainQueryOutputBuilder {
@@ -41,39 +41,35 @@ impl ExecuteOpenCypherExplainQueryOutputBuilder {
     }
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.results = input;
-        self
+        self.results = input; self
     }
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
     pub fn get_results(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteOpenCypherExplainQueryOutput`](crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::execute_open_cypher_explain_query::builders::ExecuteOpenCypherExplainQueryOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building ExecuteOpenCypherExplainQueryOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building ExecuteOpenCypherExplainQueryOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

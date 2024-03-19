@@ -5,23 +5,20 @@ pub use crate::operation::put_remediation_configurations::_put_remediation_confi
 
 impl PutRemediationConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_remediation_configurations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_remediation_configurations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutRemediationConfigurations`.
-///
+/// 
 /// <p>Adds or updates the remediation configuration with a specific Config rule with the selected target or action. The API creates the <code>RemediationConfiguration</code> object for the Config rule. The Config rule must already exist for you to add a remediation configuration. The target (SSM document) must exist and have permissions to use the target.</p><note>
 /// <p><b>Be aware of backward incompatible changes</b></p>
 /// <p>If you make backward incompatible changes to the SSM document, you must call this again to ensure the remediations can run.</p>
@@ -38,33 +35,32 @@ impl PutRemediationConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRemediationConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder,
+                    inner: crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-    > for PutRemediationConfigurationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
+                    crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+                > for PutRemediationConfigurationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
+                        crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutRemediationConfigurationsFluentBuilder {
     /// Creates a new `PutRemediationConfigurations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -73,53 +69,44 @@ impl PutRemediationConfigurationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_remediation_configurations::PutRemediationConfigurations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_remediation_configurations::PutRemediationConfigurations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_remediation_configurations::PutRemediationConfigurationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_remediation_configurations::PutRemediationConfigurations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_remediation_configurations::PutRemediationConfigurations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput, crate::operation::put_remediation_configurations::PutRemediationConfigurationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `RemediationConfigurations`.
     ///
     /// To override the contents of this collection use [`set_remediation_configurations`](Self::set_remediation_configurations).
@@ -130,12 +117,13 @@ impl PutRemediationConfigurationsFluentBuilder {
         self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
+    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>) -> Self {
         self.inner = self.inner.set_remediation_configurations(input);
         self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>> {
         self.inner.get_remediation_configurations()
     }
 }
+

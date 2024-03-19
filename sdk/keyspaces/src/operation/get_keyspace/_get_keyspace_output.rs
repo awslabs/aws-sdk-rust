@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyspaceOutput {
+pub struct GetKeyspaceOutput  {
     /// <p>The name of the keyspace.</p>
     pub keyspace_name: ::std::string::String,
     /// <p>Returns the ARN of the keyspace.</p>
@@ -10,36 +10,35 @@ pub struct GetKeyspaceOutput {
     /// <p>Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub replication_strategy: crate::types::Rs,
     /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
-    pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetKeyspaceOutput {
+impl  GetKeyspaceOutput  {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.keyspace_name.deref()
+    pub fn keyspace_name(&self) -> & str {
+        use std::ops::Deref; self.keyspace_name.deref()
     }
     /// <p>Returns the ARN of the keyspace.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
-    pub fn replication_strategy(&self) -> &crate::types::Rs {
+    pub fn replication_strategy(&self) -> & crate::types::Rs {
         &self.replication_strategy
     }
     /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_regions.is_none()`.
-    pub fn replication_regions(&self) -> &[::std::string::String] {
-        self.replication_regions.as_deref().unwrap_or_default()
+    pub fn replication_regions(&self) -> & [::std::string::String] {
+        self.replication_regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyspaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKeyspaceOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::operation::get_keyspace::GetKeyspaceOutput).
     pub fn builder() -> crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder {
@@ -54,7 +53,7 @@ pub struct GetKeyspaceOutputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_strategy: ::std::option::Option<crate::types::Rs>,
-    pub(crate) replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetKeyspaceOutputBuilder {
@@ -66,8 +65,7 @@ impl GetKeyspaceOutputBuilder {
     }
     /// <p>The name of the keyspace.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl GetKeyspaceOutputBuilder {
     }
     /// <p>Returns the ARN of the keyspace.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Returns the ARN of the keyspace.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl GetKeyspaceOutputBuilder {
     }
     /// <p>Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub fn set_replication_strategy(mut self, input: ::std::option::Option<crate::types::Rs>) -> Self {
-        self.replication_strategy = input;
-        self
+        self.replication_strategy = input; self
     }
     /// <p>Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub fn get_replication_strategy(&self) -> &::std::option::Option<crate::types::Rs> {
@@ -110,55 +106,55 @@ impl GetKeyspaceOutputBuilder {
     /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
     pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_regions.unwrap_or_default();
-        v.push(input.into());
-        self.replication_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.replication_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
-    pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replication_regions = input;
-        self
+    pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.replication_regions = input; self
     }
     /// <p>If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned.</p>
-    pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.replication_regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKeyspaceOutput`](crate::operation::get_keyspace::GetKeyspaceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`keyspace_name`](crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder::keyspace_name)
     /// - [`resource_arn`](crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder::resource_arn)
     /// - [`replication_strategy`](crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder::replication_strategy)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_keyspace::GetKeyspaceOutput {
-            keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyspace_name",
-                    "keyspace_name was not specified but it is required when building GetKeyspaceOutput",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building GetKeyspaceOutput",
-                )
-            })?,
-            replication_strategy: self.replication_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "replication_strategy",
-                    "replication_strategy was not specified but it is required when building GetKeyspaceOutput",
-                )
-            })?,
-            replication_regions: self.replication_regions,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_keyspace::GetKeyspaceOutput {
+                keyspace_name: self.keyspace_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyspace_name", "keyspace_name was not specified but it is required when building GetKeyspaceOutput")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building GetKeyspaceOutput")
+                    )?
+                ,
+                replication_strategy: self.replication_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("replication_strategy", "replication_strategy was not specified but it is required when building GetKeyspaceOutput")
+                    )?
+                ,
+                replication_regions: self.replication_regions
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

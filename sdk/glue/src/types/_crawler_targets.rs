@@ -3,72 +3,80 @@
 /// <p>Specifies data stores to crawl.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrawlerTargets {
+pub struct CrawlerTargets  {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
-    pub s3_targets: ::std::option::Option<::std::vec::Vec<crate::types::S3Target>>,
+    pub s3_targets: ::std::option::Option<::std::vec::Vec::<crate::types::S3Target>>,
     /// <p>Specifies JDBC targets.</p>
-    pub jdbc_targets: ::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>>,
+    pub jdbc_targets: ::std::option::Option<::std::vec::Vec::<crate::types::JdbcTarget>>,
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
-    pub mongo_db_targets: ::std::option::Option<::std::vec::Vec<crate::types::MongoDbTarget>>,
+    pub mongo_db_targets: ::std::option::Option<::std::vec::Vec::<crate::types::MongoDbTarget>>,
     /// <p>Specifies Amazon DynamoDB targets.</p>
-    pub dynamo_db_targets: ::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>>,
+    pub dynamo_db_targets: ::std::option::Option<::std::vec::Vec::<crate::types::DynamoDbTarget>>,
     /// <p>Specifies Glue Data Catalog targets.</p>
-    pub catalog_targets: ::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>>,
+    pub catalog_targets: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogTarget>>,
     /// <p>Specifies Delta data store targets.</p>
-    pub delta_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>>,
+    pub delta_targets: ::std::option::Option<::std::vec::Vec::<crate::types::DeltaTarget>>,
     /// <p>Specifies Apache Iceberg data store targets.</p>
-    pub iceberg_targets: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>,
+    pub iceberg_targets: ::std::option::Option<::std::vec::Vec::<crate::types::IcebergTarget>>,
     /// <p>Specifies Apache Hudi data store targets.</p>
-    pub hudi_targets: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>,
+    pub hudi_targets: ::std::option::Option<::std::vec::Vec::<crate::types::HudiTarget>>,
 }
-impl CrawlerTargets {
+impl  CrawlerTargets  {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_targets.is_none()`.
-    pub fn s3_targets(&self) -> &[crate::types::S3Target] {
-        self.s3_targets.as_deref().unwrap_or_default()
+    pub fn s3_targets(&self) -> & [crate::types::S3Target] {
+        self.s3_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies JDBC targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jdbc_targets.is_none()`.
-    pub fn jdbc_targets(&self) -> &[crate::types::JdbcTarget] {
-        self.jdbc_targets.as_deref().unwrap_or_default()
+    pub fn jdbc_targets(&self) -> & [crate::types::JdbcTarget] {
+        self.jdbc_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mongo_db_targets.is_none()`.
-    pub fn mongo_db_targets(&self) -> &[crate::types::MongoDbTarget] {
-        self.mongo_db_targets.as_deref().unwrap_or_default()
+    pub fn mongo_db_targets(&self) -> & [crate::types::MongoDbTarget] {
+        self.mongo_db_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies Amazon DynamoDB targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dynamo_db_targets.is_none()`.
-    pub fn dynamo_db_targets(&self) -> &[crate::types::DynamoDbTarget] {
-        self.dynamo_db_targets.as_deref().unwrap_or_default()
+    pub fn dynamo_db_targets(&self) -> & [crate::types::DynamoDbTarget] {
+        self.dynamo_db_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies Glue Data Catalog targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.catalog_targets.is_none()`.
-    pub fn catalog_targets(&self) -> &[crate::types::CatalogTarget] {
-        self.catalog_targets.as_deref().unwrap_or_default()
+    pub fn catalog_targets(&self) -> & [crate::types::CatalogTarget] {
+        self.catalog_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies Delta data store targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delta_targets.is_none()`.
-    pub fn delta_targets(&self) -> &[crate::types::DeltaTarget] {
-        self.delta_targets.as_deref().unwrap_or_default()
+    pub fn delta_targets(&self) -> & [crate::types::DeltaTarget] {
+        self.delta_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies Apache Iceberg data store targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iceberg_targets.is_none()`.
-    pub fn iceberg_targets(&self) -> &[crate::types::IcebergTarget] {
-        self.iceberg_targets.as_deref().unwrap_or_default()
+    pub fn iceberg_targets(&self) -> & [crate::types::IcebergTarget] {
+        self.iceberg_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies Apache Hudi data store targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hudi_targets.is_none()`.
-    pub fn hudi_targets(&self) -> &[crate::types::HudiTarget] {
-        self.hudi_targets.as_deref().unwrap_or_default()
+    pub fn hudi_targets(&self) -> & [crate::types::HudiTarget] {
+        self.hudi_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CrawlerTargets {
@@ -82,14 +90,14 @@ impl CrawlerTargets {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlerTargetsBuilder {
-    pub(crate) s3_targets: ::std::option::Option<::std::vec::Vec<crate::types::S3Target>>,
-    pub(crate) jdbc_targets: ::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>>,
-    pub(crate) mongo_db_targets: ::std::option::Option<::std::vec::Vec<crate::types::MongoDbTarget>>,
-    pub(crate) dynamo_db_targets: ::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>>,
-    pub(crate) catalog_targets: ::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>>,
-    pub(crate) delta_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>>,
-    pub(crate) iceberg_targets: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>,
-    pub(crate) hudi_targets: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>,
+    pub(crate) s3_targets: ::std::option::Option<::std::vec::Vec::<crate::types::S3Target>>,
+    pub(crate) jdbc_targets: ::std::option::Option<::std::vec::Vec::<crate::types::JdbcTarget>>,
+    pub(crate) mongo_db_targets: ::std::option::Option<::std::vec::Vec::<crate::types::MongoDbTarget>>,
+    pub(crate) dynamo_db_targets: ::std::option::Option<::std::vec::Vec::<crate::types::DynamoDbTarget>>,
+    pub(crate) catalog_targets: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogTarget>>,
+    pub(crate) delta_targets: ::std::option::Option<::std::vec::Vec::<crate::types::DeltaTarget>>,
+    pub(crate) iceberg_targets: ::std::option::Option<::std::vec::Vec::<crate::types::IcebergTarget>>,
+    pub(crate) hudi_targets: ::std::option::Option<::std::vec::Vec::<crate::types::HudiTarget>>,
 }
 impl CrawlerTargetsBuilder {
     /// Appends an item to `s3_targets`.
@@ -99,17 +107,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
     pub fn s3_targets(mut self, input: crate::types::S3Target) -> Self {
         let mut v = self.s3_targets.unwrap_or_default();
-        v.push(input);
-        self.s3_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.s3_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
-    pub fn set_s3_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Target>>) -> Self {
-        self.s3_targets = input;
-        self
+    pub fn set_s3_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Target>>) -> Self {
+        self.s3_targets = input; self
     }
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
-    pub fn get_s3_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Target>> {
+    pub fn get_s3_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Target>> {
         &self.s3_targets
     }
     /// Appends an item to `jdbc_targets`.
@@ -119,17 +126,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies JDBC targets.</p>
     pub fn jdbc_targets(mut self, input: crate::types::JdbcTarget) -> Self {
         let mut v = self.jdbc_targets.unwrap_or_default();
-        v.push(input);
-        self.jdbc_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.jdbc_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies JDBC targets.</p>
-    pub fn set_jdbc_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>>) -> Self {
-        self.jdbc_targets = input;
-        self
+    pub fn set_jdbc_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JdbcTarget>>) -> Self {
+        self.jdbc_targets = input; self
     }
     /// <p>Specifies JDBC targets.</p>
-    pub fn get_jdbc_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>> {
+    pub fn get_jdbc_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JdbcTarget>> {
         &self.jdbc_targets
     }
     /// Appends an item to `mongo_db_targets`.
@@ -139,17 +145,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
     pub fn mongo_db_targets(mut self, input: crate::types::MongoDbTarget) -> Self {
         let mut v = self.mongo_db_targets.unwrap_or_default();
-        v.push(input);
-        self.mongo_db_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mongo_db_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
-    pub fn set_mongo_db_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MongoDbTarget>>) -> Self {
-        self.mongo_db_targets = input;
-        self
+    pub fn set_mongo_db_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MongoDbTarget>>) -> Self {
+        self.mongo_db_targets = input; self
     }
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
-    pub fn get_mongo_db_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MongoDbTarget>> {
+    pub fn get_mongo_db_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MongoDbTarget>> {
         &self.mongo_db_targets
     }
     /// Appends an item to `dynamo_db_targets`.
@@ -159,17 +164,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Amazon DynamoDB targets.</p>
     pub fn dynamo_db_targets(mut self, input: crate::types::DynamoDbTarget) -> Self {
         let mut v = self.dynamo_db_targets.unwrap_or_default();
-        v.push(input);
-        self.dynamo_db_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dynamo_db_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Amazon DynamoDB targets.</p>
-    pub fn set_dynamo_db_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>>) -> Self {
-        self.dynamo_db_targets = input;
-        self
+    pub fn set_dynamo_db_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DynamoDbTarget>>) -> Self {
+        self.dynamo_db_targets = input; self
     }
     /// <p>Specifies Amazon DynamoDB targets.</p>
-    pub fn get_dynamo_db_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>> {
+    pub fn get_dynamo_db_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DynamoDbTarget>> {
         &self.dynamo_db_targets
     }
     /// Appends an item to `catalog_targets`.
@@ -179,17 +183,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Glue Data Catalog targets.</p>
     pub fn catalog_targets(mut self, input: crate::types::CatalogTarget) -> Self {
         let mut v = self.catalog_targets.unwrap_or_default();
-        v.push(input);
-        self.catalog_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.catalog_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Glue Data Catalog targets.</p>
-    pub fn set_catalog_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>>) -> Self {
-        self.catalog_targets = input;
-        self
+    pub fn set_catalog_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogTarget>>) -> Self {
+        self.catalog_targets = input; self
     }
     /// <p>Specifies Glue Data Catalog targets.</p>
-    pub fn get_catalog_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>> {
+    pub fn get_catalog_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CatalogTarget>> {
         &self.catalog_targets
     }
     /// Appends an item to `delta_targets`.
@@ -199,17 +202,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Delta data store targets.</p>
     pub fn delta_targets(mut self, input: crate::types::DeltaTarget) -> Self {
         let mut v = self.delta_targets.unwrap_or_default();
-        v.push(input);
-        self.delta_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.delta_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Delta data store targets.</p>
-    pub fn set_delta_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>>) -> Self {
-        self.delta_targets = input;
-        self
+    pub fn set_delta_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeltaTarget>>) -> Self {
+        self.delta_targets = input; self
     }
     /// <p>Specifies Delta data store targets.</p>
-    pub fn get_delta_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>> {
+    pub fn get_delta_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeltaTarget>> {
         &self.delta_targets
     }
     /// Appends an item to `iceberg_targets`.
@@ -219,17 +221,16 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Apache Iceberg data store targets.</p>
     pub fn iceberg_targets(mut self, input: crate::types::IcebergTarget) -> Self {
         let mut v = self.iceberg_targets.unwrap_or_default();
-        v.push(input);
-        self.iceberg_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.iceberg_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Apache Iceberg data store targets.</p>
-    pub fn set_iceberg_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>) -> Self {
-        self.iceberg_targets = input;
-        self
+    pub fn set_iceberg_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IcebergTarget>>) -> Self {
+        self.iceberg_targets = input; self
     }
     /// <p>Specifies Apache Iceberg data store targets.</p>
-    pub fn get_iceberg_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>> {
+    pub fn get_iceberg_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IcebergTarget>> {
         &self.iceberg_targets
     }
     /// Appends an item to `hudi_targets`.
@@ -239,30 +240,38 @@ impl CrawlerTargetsBuilder {
     /// <p>Specifies Apache Hudi data store targets.</p>
     pub fn hudi_targets(mut self, input: crate::types::HudiTarget) -> Self {
         let mut v = self.hudi_targets.unwrap_or_default();
-        v.push(input);
-        self.hudi_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hudi_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies Apache Hudi data store targets.</p>
-    pub fn set_hudi_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>) -> Self {
-        self.hudi_targets = input;
-        self
+    pub fn set_hudi_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HudiTarget>>) -> Self {
+        self.hudi_targets = input; self
     }
     /// <p>Specifies Apache Hudi data store targets.</p>
-    pub fn get_hudi_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>> {
+    pub fn get_hudi_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HudiTarget>> {
         &self.hudi_targets
     }
     /// Consumes the builder and constructs a [`CrawlerTargets`](crate::types::CrawlerTargets).
     pub fn build(self) -> crate::types::CrawlerTargets {
         crate::types::CrawlerTargets {
-            s3_targets: self.s3_targets,
-            jdbc_targets: self.jdbc_targets,
-            mongo_db_targets: self.mongo_db_targets,
-            dynamo_db_targets: self.dynamo_db_targets,
-            catalog_targets: self.catalog_targets,
-            delta_targets: self.delta_targets,
-            iceberg_targets: self.iceberg_targets,
-            hudi_targets: self.hudi_targets,
+            s3_targets: self.s3_targets
+            ,
+            jdbc_targets: self.jdbc_targets
+            ,
+            mongo_db_targets: self.mongo_db_targets
+            ,
+            dynamo_db_targets: self.dynamo_db_targets
+            ,
+            catalog_targets: self.catalog_targets
+            ,
+            delta_targets: self.delta_targets
+            ,
+            iceberg_targets: self.iceberg_targets
+            ,
+            hudi_targets: self.hudi_targets
+            ,
         }
     }
 }
+

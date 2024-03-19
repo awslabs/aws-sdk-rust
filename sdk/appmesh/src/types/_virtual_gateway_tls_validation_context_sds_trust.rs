@@ -3,15 +3,14 @@
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualGatewayTlsValidationContextSdsTrust {
+pub struct VirtualGatewayTlsValidationContextSdsTrust  {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub secret_name: ::std::string::String,
 }
-impl VirtualGatewayTlsValidationContextSdsTrust {
+impl  VirtualGatewayTlsValidationContextSdsTrust  {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
-    pub fn secret_name(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_name.deref()
+    pub fn secret_name(&self) -> & str {
+        use std::ops::Deref; self.secret_name.deref()
     }
 }
 impl VirtualGatewayTlsValidationContextSdsTrust {
@@ -36,8 +35,7 @@ impl VirtualGatewayTlsValidationContextSdsTrustBuilder {
     }
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub fn set_secret_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_name = input;
-        self
+        self.secret_name = input; self
     }
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub fn get_secret_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl VirtualGatewayTlsValidationContextSdsTrustBuilder {
     /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextSdsTrust`](crate::types::VirtualGatewayTlsValidationContextSdsTrust).
     /// This method will fail if any of the following fields are not set:
     /// - [`secret_name`](crate::types::builders::VirtualGatewayTlsValidationContextSdsTrustBuilder::secret_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextSdsTrust, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualGatewayTlsValidationContextSdsTrust {
-            secret_name: self.secret_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_name",
-                    "secret_name was not specified but it is required when building VirtualGatewayTlsValidationContextSdsTrust",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextSdsTrust, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::VirtualGatewayTlsValidationContextSdsTrust {
+                secret_name: self.secret_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_name", "secret_name was not specified but it is required when building VirtualGatewayTlsValidationContextSdsTrust")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStageSessionInput {
+pub struct GetStageSessionInput  {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of a session within the stage.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl GetStageSessionInput {
+impl  GetStageSessionInput  {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stage_arn(&self) -> ::std::option::Option<& str> {
         self.stage_arn.as_deref()
     }
     /// <p>ID of a session within the stage.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetStageSessionInputBuilder {
     }
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetStageSessionInputBuilder {
     }
     /// <p>ID of a session within the stage.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>ID of a session within the stage.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`GetStageSessionInput`](crate::operation::get_stage_session::GetStageSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_stage_session::GetStageSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stage_session::GetStageSessionInput {
-            stage_arn: self.stage_arn,
-            session_id: self.session_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage_session::GetStageSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_stage_session::GetStageSessionInput {
+                stage_arn: self.stage_arn
+                ,
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

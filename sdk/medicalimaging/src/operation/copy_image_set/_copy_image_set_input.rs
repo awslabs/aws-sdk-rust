@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyImageSetInput {
+pub struct CopyImageSetInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The source image set identifier.</p>
@@ -10,17 +10,17 @@ pub struct CopyImageSetInput {
     /// <p>Copy image set information.</p>
     pub copy_image_set_information: ::std::option::Option<crate::types::CopyImageSetInformation>,
 }
-impl CopyImageSetInput {
+impl  CopyImageSetInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The source image set identifier.</p>
-    pub fn source_image_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_image_set_id(&self) -> ::std::option::Option<& str> {
         self.source_image_set_id.as_deref()
     }
     /// <p>Copy image set information.</p>
-    pub fn copy_image_set_information(&self) -> ::std::option::Option<&crate::types::CopyImageSetInformation> {
+    pub fn copy_image_set_information(&self) -> ::std::option::Option<& crate::types::CopyImageSetInformation> {
         self.copy_image_set_information.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CopyImageSetInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CopyImageSetInputBuilder {
     }
     /// <p>The source image set identifier.</p>
     pub fn set_source_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_image_set_id = input;
-        self
+        self.source_image_set_id = input; self
     }
     /// <p>The source image set identifier.</p>
     pub fn get_source_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl CopyImageSetInputBuilder {
     }
     /// <p>Copy image set information.</p>
     pub fn set_copy_image_set_information(mut self, input: ::std::option::Option<crate::types::CopyImageSetInformation>) -> Self {
-        self.copy_image_set_information = input;
-        self
+        self.copy_image_set_information = input; self
     }
     /// <p>Copy image set information.</p>
     pub fn get_copy_image_set_information(&self) -> &::std::option::Option<crate::types::CopyImageSetInformation> {
         &self.copy_image_set_information
     }
     /// Consumes the builder and constructs a [`CopyImageSetInput`](crate::operation::copy_image_set::CopyImageSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::copy_image_set::CopyImageSetInput {
-            datastore_id: self.datastore_id,
-            source_image_set_id: self.source_image_set_id,
-            copy_image_set_information: self.copy_image_set_information,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_image_set::CopyImageSetInput {
+                datastore_id: self.datastore_id
+                ,
+                source_image_set_id: self.source_image_set_id
+                ,
+                copy_image_set_information: self.copy_image_set_information
+                ,
+            }
+        )
     }
 }
+

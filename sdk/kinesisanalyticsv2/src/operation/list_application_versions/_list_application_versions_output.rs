@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationVersionsOutput {
+pub struct ListApplicationVersionsOutput  {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub application_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
+    pub application_version_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApplicationVersionsOutput {
+impl  ListApplicationVersionsOutput  {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_version_summaries.is_none()`.
-    pub fn application_version_summaries(&self) -> &[crate::types::ApplicationVersionSummary] {
-        self.application_version_summaries.as_deref().unwrap_or_default()
+    pub fn application_version_summaries(&self) -> & [crate::types::ApplicationVersionSummary] {
+        self.application_version_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
     pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder {
@@ -39,7 +40,7 @@ impl ListApplicationVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsOutputBuilder {
-    pub(crate) application_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
+    pub(crate) application_version_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,22 +53,18 @@ impl ListApplicationVersionsOutputBuilder {
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     pub fn application_version_summaries(mut self, input: crate::types::ApplicationVersionSummary) -> Self {
         let mut v = self.application_version_summaries.unwrap_or_default();
-        v.push(input);
-        self.application_version_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_version_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn set_application_version_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
-    ) -> Self {
-        self.application_version_summaries = input;
-        self
+    pub fn set_application_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionSummary>>) -> Self {
+        self.application_version_summaries = input; self
     }
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn get_application_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
+    pub fn get_application_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionSummary>> {
         &self.application_version_summaries
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
@@ -77,28 +74,30 @@ impl ListApplicationVersionsOutputBuilder {
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
     pub fn build(self) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
         crate::operation::list_application_versions::ListApplicationVersionsOutput {
-            application_version_summaries: self.application_version_summaries,
-            next_token: self.next_token,
+            application_version_summaries: self.application_version_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

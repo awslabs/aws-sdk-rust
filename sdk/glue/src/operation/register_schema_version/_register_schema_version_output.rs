@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterSchemaVersionOutput {
+pub struct RegisterSchemaVersionOutput  {
     /// <p>The unique ID that represents the version of this schema.</p>
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
@@ -11,9 +11,9 @@ pub struct RegisterSchemaVersionOutput {
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     _request_id: Option<String>,
 }
-impl RegisterSchemaVersionOutput {
+impl  RegisterSchemaVersionOutput  {
     /// <p>The unique ID that represents the version of this schema.</p>
-    pub fn schema_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> ::std::option::Option<& str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
@@ -21,15 +21,15 @@ impl RegisterSchemaVersionOutput {
         self.version_number
     }
     /// <p>The status of the schema version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SchemaVersionStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterSchemaVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterSchemaVersionOutput`](crate::operation::register_schema_version::RegisterSchemaVersionOutput).
     pub fn builder() -> crate::operation::register_schema_version::builders::RegisterSchemaVersionOutputBuilder {
@@ -54,8 +54,7 @@ impl RegisterSchemaVersionOutputBuilder {
     }
     /// <p>The unique ID that represents the version of this schema.</p>
     pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version_id = input;
-        self
+        self.schema_version_id = input; self
     }
     /// <p>The unique ID that represents the version of this schema.</p>
     pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl RegisterSchemaVersionOutputBuilder {
     }
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -82,29 +80,32 @@ impl RegisterSchemaVersionOutputBuilder {
     }
     /// <p>The status of the schema version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the schema version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterSchemaVersionOutput`](crate::operation::register_schema_version::RegisterSchemaVersionOutput).
     pub fn build(self) -> crate::operation::register_schema_version::RegisterSchemaVersionOutput {
         crate::operation::register_schema_version::RegisterSchemaVersionOutput {
-            schema_version_id: self.schema_version_id,
-            version_number: self.version_number,
-            status: self.status,
+            schema_version_id: self.schema_version_id
+            ,
+            version_number: self.version_number
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

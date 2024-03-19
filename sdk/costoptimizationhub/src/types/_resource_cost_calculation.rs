@@ -3,21 +3,22 @@
 /// <p>Cost impact of the resource recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCostCalculation {
+pub struct ResourceCostCalculation  {
     /// <p>Usage details of the resource recommendation.</p>
-    pub usages: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
+    pub usages: ::std::option::Option<::std::vec::Vec::<crate::types::Usage>>,
     /// <p>Pricing details of the resource recommendation.</p>
     pub pricing: ::std::option::Option<crate::types::ResourcePricing>,
 }
-impl ResourceCostCalculation {
+impl  ResourceCostCalculation  {
     /// <p>Usage details of the resource recommendation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usages.is_none()`.
-    pub fn usages(&self) -> &[crate::types::Usage] {
-        self.usages.as_deref().unwrap_or_default()
+    pub fn usages(&self) -> & [crate::types::Usage] {
+        self.usages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Pricing details of the resource recommendation.</p>
-    pub fn pricing(&self) -> ::std::option::Option<&crate::types::ResourcePricing> {
+    pub fn pricing(&self) -> ::std::option::Option<& crate::types::ResourcePricing> {
         self.pricing.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl ResourceCostCalculation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceCostCalculationBuilder {
-    pub(crate) usages: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
+    pub(crate) usages: ::std::option::Option<::std::vec::Vec::<crate::types::Usage>>,
     pub(crate) pricing: ::std::option::Option<crate::types::ResourcePricing>,
 }
 impl ResourceCostCalculationBuilder {
@@ -43,17 +44,16 @@ impl ResourceCostCalculationBuilder {
     /// <p>Usage details of the resource recommendation.</p>
     pub fn usages(mut self, input: crate::types::Usage) -> Self {
         let mut v = self.usages.unwrap_or_default();
-        v.push(input);
-        self.usages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.usages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Usage details of the resource recommendation.</p>
-    pub fn set_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>) -> Self {
-        self.usages = input;
-        self
+    pub fn set_usages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Usage>>) -> Self {
+        self.usages = input; self
     }
     /// <p>Usage details of the resource recommendation.</p>
-    pub fn get_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Usage>> {
+    pub fn get_usages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Usage>> {
         &self.usages
     }
     /// <p>Pricing details of the resource recommendation.</p>
@@ -63,8 +63,7 @@ impl ResourceCostCalculationBuilder {
     }
     /// <p>Pricing details of the resource recommendation.</p>
     pub fn set_pricing(mut self, input: ::std::option::Option<crate::types::ResourcePricing>) -> Self {
-        self.pricing = input;
-        self
+        self.pricing = input; self
     }
     /// <p>Pricing details of the resource recommendation.</p>
     pub fn get_pricing(&self) -> &::std::option::Option<crate::types::ResourcePricing> {
@@ -73,8 +72,11 @@ impl ResourceCostCalculationBuilder {
     /// Consumes the builder and constructs a [`ResourceCostCalculation`](crate::types::ResourceCostCalculation).
     pub fn build(self) -> crate::types::ResourceCostCalculation {
         crate::types::ResourceCostCalculation {
-            usages: self.usages,
-            pricing: self.pricing,
+            usages: self.usages
+            ,
+            pricing: self.pricing
+            ,
         }
     }
 }
+

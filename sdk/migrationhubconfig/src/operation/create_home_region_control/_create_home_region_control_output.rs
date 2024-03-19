@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHomeRegionControlOutput {
+pub struct CreateHomeRegionControlOutput  {
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     pub home_region_control: ::std::option::Option<crate::types::HomeRegionControl>,
     _request_id: Option<String>,
 }
-impl CreateHomeRegionControlOutput {
+impl  CreateHomeRegionControlOutput  {
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
-    pub fn home_region_control(&self) -> ::std::option::Option<&crate::types::HomeRegionControl> {
+    pub fn home_region_control(&self) -> ::std::option::Option<& crate::types::HomeRegionControl> {
         self.home_region_control.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHomeRegionControlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHomeRegionControlOutput {
     /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlOutput`](crate::operation::create_home_region_control::CreateHomeRegionControlOutput).
     pub fn builder() -> crate::operation::create_home_region_control::builders::CreateHomeRegionControlOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateHomeRegionControlOutputBuilder {
     }
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     pub fn set_home_region_control(mut self, input: ::std::option::Option<crate::types::HomeRegionControl>) -> Self {
-        self.home_region_control = input;
-        self
+        self.home_region_control = input; self
     }
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     pub fn get_home_region_control(&self) -> &::std::option::Option<crate::types::HomeRegionControl> {
         &self.home_region_control
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHomeRegionControlOutput`](crate::operation::create_home_region_control::CreateHomeRegionControlOutput).
     pub fn build(self) -> crate::operation::create_home_region_control::CreateHomeRegionControlOutput {
         crate::operation::create_home_region_control::CreateHomeRegionControlOutput {
-            home_region_control: self.home_region_control,
+            home_region_control: self.home_region_control
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

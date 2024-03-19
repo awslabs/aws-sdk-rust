@@ -3,7 +3,7 @@
 /// <p>Contains error details for the requested associate project asset action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetErrorDetails {
+pub struct AssetErrorDetails  {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
     /// <p>The error code.</p>
@@ -11,20 +11,18 @@ pub struct AssetErrorDetails {
     /// <p>The error message.</p>
     pub message: ::std::string::String,
 }
-impl AssetErrorDetails {
+impl  AssetErrorDetails  {
     /// <p>The ID of the asset, in UUID format.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> & str {
+        use std::ops::Deref; self.asset_id.deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> &crate::types::AssetErrorCode {
+    pub fn code(&self) -> & crate::types::AssetErrorCode {
         &self.code
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl AssetErrorDetails {
@@ -51,8 +49,7 @@ impl AssetErrorDetailsBuilder {
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AssetErrorDetailsBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::AssetErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::AssetErrorCode> {
@@ -81,8 +77,7 @@ impl AssetErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl AssetErrorDetailsBuilder {
     /// - [`code`](crate::types::builders::AssetErrorDetailsBuilder::code)
     /// - [`message`](crate::types::builders::AssetErrorDetailsBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetErrorDetails {
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building AssetErrorDetails",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building AssetErrorDetails",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building AssetErrorDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetErrorDetails {
+                asset_id: self.asset_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_id", "asset_id was not specified but it is required when building AssetErrorDetails")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building AssetErrorDetails")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building AssetErrorDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

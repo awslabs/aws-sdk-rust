@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatasourcePackagesInput {
+pub struct UpdateDatasourcePackagesInput  {
     /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data source package start for the behavior graph.</p>
-    pub datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
+    pub datasource_packages: ::std::option::Option<::std::vec::Vec::<crate::types::DatasourcePackage>>,
 }
-impl UpdateDatasourcePackagesInput {
+impl  UpdateDatasourcePackagesInput  {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The data source package start for the behavior graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasource_packages.is_none()`.
-    pub fn datasource_packages(&self) -> &[crate::types::DatasourcePackage] {
-        self.datasource_packages.as_deref().unwrap_or_default()
+    pub fn datasource_packages(&self) -> & [crate::types::DatasourcePackage] {
+        self.datasource_packages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateDatasourcePackagesInput {
@@ -32,7 +33,7 @@ impl UpdateDatasourcePackagesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasourcePackagesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
+    pub(crate) datasource_packages: ::std::option::Option<::std::vec::Vec::<crate::types::DatasourcePackage>>,
 }
 impl UpdateDatasourcePackagesInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
@@ -43,8 +44,7 @@ impl UpdateDatasourcePackagesInputBuilder {
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl UpdateDatasourcePackagesInputBuilder {
     /// <p>The data source package start for the behavior graph.</p>
     pub fn datasource_packages(mut self, input: crate::types::DatasourcePackage) -> Self {
         let mut v = self.datasource_packages.unwrap_or_default();
-        v.push(input);
-        self.datasource_packages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datasource_packages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn set_datasource_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>) -> Self {
-        self.datasource_packages = input;
-        self
+    pub fn set_datasource_packages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasourcePackage>>) -> Self {
+        self.datasource_packages = input; self
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn get_datasource_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
+    pub fn get_datasource_packages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasourcePackage>> {
         &self.datasource_packages
     }
     /// Consumes the builder and constructs a [`UpdateDatasourcePackagesInput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput {
-            graph_arn: self.graph_arn,
-            datasource_packages: self.datasource_packages,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput {
+                graph_arn: self.graph_arn
+                ,
+                datasource_packages: self.datasource_packages
+                ,
+            }
+        )
     }
 }
+

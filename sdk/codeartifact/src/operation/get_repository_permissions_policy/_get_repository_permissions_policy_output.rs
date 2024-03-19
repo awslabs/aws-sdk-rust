@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositoryPermissionsPolicyOutput {
+pub struct GetRepositoryPermissionsPolicyOutput  {
     /// <p>The returned resource policy.</p>
     pub policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }
-impl GetRepositoryPermissionsPolicyOutput {
+impl  GetRepositoryPermissionsPolicyOutput  {
     /// <p>The returned resource policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::ResourcePolicy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::ResourcePolicy> {
         self.policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRepositoryPermissionsPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRepositoryPermissionsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryPermissionsPolicyOutput`](crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyOutput).
     pub fn builder() -> crate::operation::get_repository_permissions_policy::builders::GetRepositoryPermissionsPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl GetRepositoryPermissionsPolicyOutputBuilder {
     }
     /// <p>The returned resource policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResourcePolicy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The returned resource policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResourcePolicy> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRepositoryPermissionsPolicyOutput`](crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyOutput).
     pub fn build(self) -> crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyOutput {
         crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyOutput {
-            policy: self.policy,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

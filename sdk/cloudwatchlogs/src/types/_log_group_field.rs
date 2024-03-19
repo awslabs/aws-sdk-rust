@@ -3,15 +3,15 @@
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogGroupField {
+pub struct LogGroupField  {
     /// <p>The name of a log field.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of log events queried that contained the field.</p>
     pub percent: i32,
 }
-impl LogGroupField {
+impl  LogGroupField  {
     /// <p>The name of a log field.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The percentage of log events queried that contained the field.</p>
@@ -41,8 +41,7 @@ impl LogGroupFieldBuilder {
     }
     /// <p>The name of a log field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a log field.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LogGroupFieldBuilder {
     }
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn set_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percent = input;
-        self
+        self.percent = input; self
     }
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn get_percent(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl LogGroupFieldBuilder {
     /// Consumes the builder and constructs a [`LogGroupField`](crate::types::LogGroupField).
     pub fn build(self) -> crate::types::LogGroupField {
         crate::types::LogGroupField {
-            name: self.name,
-            percent: self.percent.unwrap_or_default(),
+            name: self.name
+            ,
+            percent: self.percent
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

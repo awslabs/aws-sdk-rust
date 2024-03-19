@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutActionsInput {
+pub struct PutActionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the action or actions to.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of action data.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
 }
-impl PutActionsInput {
+impl  PutActionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the action or actions to.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A list of action data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::Action] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutActionsInput {
@@ -32,7 +33,7 @@ impl PutActionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutActionsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
 }
 impl PutActionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the action or actions to.</p>
@@ -43,8 +44,7 @@ impl PutActionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the action or actions to.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Actions dataset you are adding the action or actions to.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,28 @@ impl PutActionsInputBuilder {
     /// <p>A list of action data.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of action data.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>A list of action data.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`PutActionsInput`](crate::operation::put_actions::PutActionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_actions::PutActionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_actions::PutActionsInput {
-            dataset_arn: self.dataset_arn,
-            actions: self.actions,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_actions::PutActionsInput {
+                dataset_arn: self.dataset_arn
+                ,
+                actions: self.actions
+                ,
+            }
+        )
     }
 }
+

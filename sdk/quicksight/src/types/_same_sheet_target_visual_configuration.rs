@@ -4,9 +4,9 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SameSheetTargetVisualConfiguration {
+pub struct SameSheetTargetVisualConfiguration  {
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
-    pub target_visuals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_visuals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -15,12 +15,13 @@ pub struct SameSheetTargetVisualConfiguration {
     /// </ul>
     pub target_visual_options: ::std::option::Option<crate::types::TargetVisualOptions>,
 }
-impl SameSheetTargetVisualConfiguration {
+impl  SameSheetTargetVisualConfiguration  {
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_visuals.is_none()`.
-    pub fn target_visuals(&self) -> &[::std::string::String] {
-        self.target_visuals.as_deref().unwrap_or_default()
+    pub fn target_visuals(&self) -> & [::std::string::String] {
+        self.target_visuals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -28,7 +29,7 @@ impl SameSheetTargetVisualConfiguration {
     /// <li>
     /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
-    pub fn target_visual_options(&self) -> ::std::option::Option<&crate::types::TargetVisualOptions> {
+    pub fn target_visual_options(&self) -> ::std::option::Option<& crate::types::TargetVisualOptions> {
         self.target_visual_options.as_ref()
     }
 }
@@ -43,7 +44,7 @@ impl SameSheetTargetVisualConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SameSheetTargetVisualConfigurationBuilder {
-    pub(crate) target_visuals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_visuals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) target_visual_options: ::std::option::Option<crate::types::TargetVisualOptions>,
 }
 impl SameSheetTargetVisualConfigurationBuilder {
@@ -54,17 +55,16 @@ impl SameSheetTargetVisualConfigurationBuilder {
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
     pub fn target_visuals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_visuals.unwrap_or_default();
-        v.push(input.into());
-        self.target_visuals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_visuals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
-    pub fn set_target_visuals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_visuals = input;
-        self
+    pub fn set_target_visuals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_visuals = input; self
     }
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
-    pub fn get_target_visuals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_visuals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_visuals
     }
     /// <p>The options that choose the target visual in the same sheet.</p>
@@ -84,8 +84,7 @@ impl SameSheetTargetVisualConfigurationBuilder {
     /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
     pub fn set_target_visual_options(mut self, input: ::std::option::Option<crate::types::TargetVisualOptions>) -> Self {
-        self.target_visual_options = input;
-        self
+        self.target_visual_options = input; self
     }
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -99,8 +98,11 @@ impl SameSheetTargetVisualConfigurationBuilder {
     /// Consumes the builder and constructs a [`SameSheetTargetVisualConfiguration`](crate::types::SameSheetTargetVisualConfiguration).
     pub fn build(self) -> crate::types::SameSheetTargetVisualConfiguration {
         crate::types::SameSheetTargetVisualConfiguration {
-            target_visuals: self.target_visuals,
-            target_visual_options: self.target_visual_options,
+            target_visuals: self.target_visuals
+            ,
+            target_visual_options: self.target_visual_options
+            ,
         }
     }
 }
+

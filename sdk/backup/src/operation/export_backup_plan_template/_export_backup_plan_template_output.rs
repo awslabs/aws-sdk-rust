@@ -2,26 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportBackupPlanTemplateOutput {
+pub struct ExportBackupPlanTemplateOutput  {
     /// <p>The body of a backup plan template in JSON format.</p><note>
     /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
     /// </note>
     pub backup_plan_template_json: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExportBackupPlanTemplateOutput {
+impl  ExportBackupPlanTemplateOutput  {
     /// <p>The body of a backup plan template in JSON format.</p><note>
     /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
     /// </note>
-    pub fn backup_plan_template_json(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_template_json(&self) -> ::std::option::Option<& str> {
         self.backup_plan_template_json.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportBackupPlanTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportBackupPlanTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ExportBackupPlanTemplateOutput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput).
     pub fn builder() -> crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateOutputBuilder {
@@ -48,8 +48,7 @@ impl ExportBackupPlanTemplateOutputBuilder {
     /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
     /// </note>
     pub fn set_backup_plan_template_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_template_json = input;
-        self
+        self.backup_plan_template_json = input; self
     }
     /// <p>The body of a backup plan template in JSON format.</p><note>
     /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code></p>
@@ -58,19 +57,21 @@ impl ExportBackupPlanTemplateOutputBuilder {
         &self.backup_plan_template_json
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportBackupPlanTemplateOutput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput).
     pub fn build(self) -> crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput {
         crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput {
-            backup_plan_template_json: self.backup_plan_template_json,
+            backup_plan_template_json: self.backup_plan_template_json
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

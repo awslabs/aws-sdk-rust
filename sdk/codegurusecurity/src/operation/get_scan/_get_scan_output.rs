@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScanOutput {
+pub struct GetScanOutput  {
     /// <p>The name of the scan.</p>
     pub scan_name: ::std::string::String,
     /// <p>UUID that identifies the individual scan run.</p>
@@ -21,31 +21,29 @@ pub struct GetScanOutput {
     pub scan_name_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetScanOutput {
+impl  GetScanOutput  {
     /// <p>The name of the scan.</p>
-    pub fn scan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_name.deref()
+    pub fn scan_name(&self) -> & str {
+        use std::ops::Deref; self.scan_name.deref()
     }
     /// <p>UUID that identifies the individual scan run.</p>
-    pub fn run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.run_id.deref()
+    pub fn run_id(&self) -> & str {
+        use std::ops::Deref; self.run_id.deref()
     }
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    pub fn scan_state(&self) -> &crate::types::ScanState {
+    pub fn scan_state(&self) -> & crate::types::ScanState {
         &self.scan_state
     }
     /// <p>The time the scan was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
-    pub fn analysis_type(&self) -> &crate::types::AnalysisType {
+    pub fn analysis_type(&self) -> & crate::types::AnalysisType {
         &self.analysis_type
     }
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The number of times a scan has been re-run on a revised resource.</p>
@@ -53,15 +51,15 @@ impl GetScanOutput {
         self.number_of_revisions
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn scan_name_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name_arn(&self) -> ::std::option::Option<& str> {
         self.scan_name_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetScanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetScanOutput {
     /// Creates a new builder-style object to manufacture [`GetScanOutput`](crate::operation::get_scan::GetScanOutput).
     pub fn builder() -> crate::operation::get_scan::builders::GetScanOutputBuilder {
@@ -92,8 +90,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>The name of the scan.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>UUID that identifies the individual scan run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>UUID that identifies the individual scan run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub fn set_scan_state(mut self, input: ::std::option::Option<crate::types::ScanState>) -> Self {
-        self.scan_state = input;
-        self
+        self.scan_state = input; self
     }
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub fn get_scan_state(&self) -> &::std::option::Option<crate::types::ScanState> {
@@ -137,8 +132,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>The time the scan was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time the scan was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,8 +146,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
     pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
-        self.analysis_type = input;
-        self
+        self.analysis_type = input; self
     }
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
     pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
@@ -166,8 +159,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,8 +172,7 @@ impl GetScanOutputBuilder {
     }
     /// <p>The number of times a scan has been re-run on a revised resource.</p>
     pub fn set_number_of_revisions(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_revisions = input;
-        self
+        self.number_of_revisions = input; self
     }
     /// <p>The number of times a scan has been re-run on a revised resource.</p>
     pub fn get_number_of_revisions(&self) -> &::std::option::Option<i64> {
@@ -194,22 +185,21 @@ impl GetScanOutputBuilder {
     }
     /// <p>The ARN for the scan name.</p>
     pub fn set_scan_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name_arn = input;
-        self
+        self.scan_name_arn = input; self
     }
     /// <p>The ARN for the scan name.</p>
     pub fn get_scan_name_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scan_name_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetScanOutput`](crate::operation::get_scan::GetScanOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_name`](crate::operation::get_scan::builders::GetScanOutputBuilder::scan_name)
@@ -218,41 +208,42 @@ impl GetScanOutputBuilder {
     /// - [`created_at`](crate::operation::get_scan::builders::GetScanOutputBuilder::created_at)
     /// - [`analysis_type`](crate::operation::get_scan::builders::GetScanOutputBuilder::analysis_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_scan::GetScanOutput {
-            scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_name",
-                    "scan_name was not specified but it is required when building GetScanOutput",
-                )
-            })?,
-            run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_id",
-                    "run_id was not specified but it is required when building GetScanOutput",
-                )
-            })?,
-            scan_state: self.scan_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_state",
-                    "scan_state was not specified but it is required when building GetScanOutput",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetScanOutput",
-                )
-            })?,
-            analysis_type: self.analysis_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_type",
-                    "analysis_type was not specified but it is required when building GetScanOutput",
-                )
-            })?,
-            updated_at: self.updated_at,
-            number_of_revisions: self.number_of_revisions,
-            scan_name_arn: self.scan_name_arn,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_scan::GetScanOutput {
+                scan_name: self.scan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_name", "scan_name was not specified but it is required when building GetScanOutput")
+                    )?
+                ,
+                run_id: self.run_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_id", "run_id was not specified but it is required when building GetScanOutput")
+                    )?
+                ,
+                scan_state: self.scan_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_state", "scan_state was not specified but it is required when building GetScanOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetScanOutput")
+                    )?
+                ,
+                analysis_type: self.analysis_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_type", "analysis_type was not specified but it is required when building GetScanOutput")
+                    )?
+                ,
+                updated_at: self.updated_at
+                ,
+                number_of_revisions: self.number_of_revisions
+                ,
+                scan_name_arn: self.scan_name_arn
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

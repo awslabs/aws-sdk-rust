@@ -7,19 +7,19 @@
 /// <p>The response from a <code>GetSampledRequests</code> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpHeader {
+pub struct HttpHeader  {
     /// <p>The name of one of the headers in the sampled web request.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of one of the headers in the sampled web request.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl HttpHeader {
+impl  HttpHeader  {
     /// <p>The name of one of the headers in the sampled web request.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of one of the headers in the sampled web request.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl HttpHeaderBuilder {
     }
     /// <p>The name of one of the headers in the sampled web request.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of one of the headers in the sampled web request.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl HttpHeaderBuilder {
     }
     /// <p>The value of one of the headers in the sampled web request.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of one of the headers in the sampled web request.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,11 @@ impl HttpHeaderBuilder {
     /// Consumes the builder and constructs a [`HttpHeader`](crate::types::HttpHeader).
     pub fn build(self) -> crate::types::HttpHeader {
         crate::types::HttpHeader {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

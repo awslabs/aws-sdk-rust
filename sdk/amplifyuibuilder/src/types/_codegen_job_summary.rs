@@ -3,7 +3,7 @@
 /// <p>A summary of the basic information about the code generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodegenJobSummary {
+pub struct CodegenJobSummary  {
     /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
     pub app_id: ::std::string::String,
     /// <p>The name of the backend environment associated with the code generation job.</p>
@@ -15,28 +15,25 @@ pub struct CodegenJobSummary {
     /// <p>The time that the code generation job summary was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CodegenJobSummary {
+impl  CodegenJobSummary  {
     /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> & str {
+        use std::ops::Deref; self.app_id.deref()
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> & str {
+        use std::ops::Deref; self.environment_name.deref()
     }
     /// <p>The unique ID for the code generation job summary.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The time that the code generation job summary was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time that the code generation job summary was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -66,8 +63,7 @@ impl CodegenJobSummaryBuilder {
     }
     /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl CodegenJobSummaryBuilder {
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl CodegenJobSummaryBuilder {
     }
     /// <p>The unique ID for the code generation job summary.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the code generation job summary.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl CodegenJobSummaryBuilder {
     }
     /// <p>The time that the code generation job summary was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time that the code generation job summary was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +117,7 @@ impl CodegenJobSummaryBuilder {
     }
     /// <p>The time that the code generation job summary was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The time that the code generation job summary was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -137,27 +129,29 @@ impl CodegenJobSummaryBuilder {
     /// - [`environment_name`](crate::types::builders::CodegenJobSummaryBuilder::environment_name)
     /// - [`id`](crate::types::builders::CodegenJobSummaryBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::CodegenJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodegenJobSummary {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building CodegenJobSummary",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building CodegenJobSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CodegenJobSummary",
-                )
-            })?,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodegenJobSummary {
+                app_id: self.app_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_id", "app_id was not specified but it is required when building CodegenJobSummary")
+                    )?
+                ,
+                environment_name: self.environment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_name", "environment_name was not specified but it is required when building CodegenJobSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CodegenJobSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+            }
+        )
     }
 }
+

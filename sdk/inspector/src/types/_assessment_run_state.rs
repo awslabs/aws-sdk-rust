@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assessmentrunstate = unimplemented!();
 /// match assessmentrunstate {
@@ -41,16 +41,14 @@
 /// Specifically, when `assessmentrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssessmentRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AssessmentRunState {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -80,108 +78,95 @@ pub enum AssessmentRunState {
     StopDataCollectionPending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AssessmentRunState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => AssessmentRunState::Canceled,
-            "COLLECTING_DATA" => AssessmentRunState::CollectingData,
-            "COMPLETED" => AssessmentRunState::Completed,
-            "COMPLETED_WITH_ERRORS" => AssessmentRunState::CompletedWithErrors,
-            "CREATED" => AssessmentRunState::Created,
-            "DATA_COLLECTED" => AssessmentRunState::DataCollected,
-            "ERROR" => AssessmentRunState::Error,
-            "EVALUATING_RULES" => AssessmentRunState::EvaluatingRules,
-            "FAILED" => AssessmentRunState::Failed,
-            "START_DATA_COLLECTION_IN_PROGRESS" => AssessmentRunState::StartDataCollectionInProgress,
-            "START_DATA_COLLECTION_PENDING" => AssessmentRunState::StartDataCollectionPending,
-            "START_EVALUATING_RULES_PENDING" => AssessmentRunState::StartEvaluatingRulesPending,
-            "STOP_DATA_COLLECTION_PENDING" => AssessmentRunState::StopDataCollectionPending,
-            other => AssessmentRunState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CANCELED" => AssessmentRunState::Canceled,
+"COLLECTING_DATA" => AssessmentRunState::CollectingData,
+"COMPLETED" => AssessmentRunState::Completed,
+"COMPLETED_WITH_ERRORS" => AssessmentRunState::CompletedWithErrors,
+"CREATED" => AssessmentRunState::Created,
+"DATA_COLLECTED" => AssessmentRunState::DataCollected,
+"ERROR" => AssessmentRunState::Error,
+"EVALUATING_RULES" => AssessmentRunState::EvaluatingRules,
+"FAILED" => AssessmentRunState::Failed,
+"START_DATA_COLLECTION_IN_PROGRESS" => AssessmentRunState::StartDataCollectionInProgress,
+"START_DATA_COLLECTION_PENDING" => AssessmentRunState::StartDataCollectionPending,
+"START_EVALUATING_RULES_PENDING" => AssessmentRunState::StartEvaluatingRulesPending,
+"STOP_DATA_COLLECTION_PENDING" => AssessmentRunState::StopDataCollectionPending,
+other => AssessmentRunState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AssessmentRunState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AssessmentRunState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AssessmentRunState::from(s))
+                    }
+                }
 impl AssessmentRunState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssessmentRunState::Canceled => "CANCELED",
-            AssessmentRunState::CollectingData => "COLLECTING_DATA",
-            AssessmentRunState::Completed => "COMPLETED",
-            AssessmentRunState::CompletedWithErrors => "COMPLETED_WITH_ERRORS",
-            AssessmentRunState::Created => "CREATED",
-            AssessmentRunState::DataCollected => "DATA_COLLECTED",
-            AssessmentRunState::Error => "ERROR",
-            AssessmentRunState::EvaluatingRules => "EVALUATING_RULES",
-            AssessmentRunState::Failed => "FAILED",
-            AssessmentRunState::StartDataCollectionInProgress => "START_DATA_COLLECTION_IN_PROGRESS",
-            AssessmentRunState::StartDataCollectionPending => "START_DATA_COLLECTION_PENDING",
-            AssessmentRunState::StartEvaluatingRulesPending => "START_EVALUATING_RULES_PENDING",
-            AssessmentRunState::StopDataCollectionPending => "STOP_DATA_COLLECTION_PENDING",
-            AssessmentRunState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED",
-            "COLLECTING_DATA",
-            "COMPLETED",
-            "COMPLETED_WITH_ERRORS",
-            "CREATED",
-            "DATA_COLLECTED",
-            "ERROR",
-            "EVALUATING_RULES",
-            "FAILED",
-            "START_DATA_COLLECTION_IN_PROGRESS",
-            "START_DATA_COLLECTION_PENDING",
-            "START_EVALUATING_RULES_PENDING",
-            "STOP_DATA_COLLECTION_PENDING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssessmentRunState::Canceled => "CANCELED",
+    AssessmentRunState::CollectingData => "COLLECTING_DATA",
+    AssessmentRunState::Completed => "COMPLETED",
+    AssessmentRunState::CompletedWithErrors => "COMPLETED_WITH_ERRORS",
+    AssessmentRunState::Created => "CREATED",
+    AssessmentRunState::DataCollected => "DATA_COLLECTED",
+    AssessmentRunState::Error => "ERROR",
+    AssessmentRunState::EvaluatingRules => "EVALUATING_RULES",
+    AssessmentRunState::Failed => "FAILED",
+    AssessmentRunState::StartDataCollectionInProgress => "START_DATA_COLLECTION_IN_PROGRESS",
+    AssessmentRunState::StartDataCollectionPending => "START_DATA_COLLECTION_PENDING",
+    AssessmentRunState::StartEvaluatingRulesPending => "START_EVALUATING_RULES_PENDING",
+    AssessmentRunState::StopDataCollectionPending => "STOP_DATA_COLLECTION_PENDING",
+    AssessmentRunState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "COLLECTING_DATA", "COMPLETED", "COMPLETED_WITH_ERRORS", "CREATED", "DATA_COLLECTED", "ERROR", "EVALUATING_RULES", "FAILED", "START_DATA_COLLECTION_IN_PROGRESS", "START_DATA_COLLECTION_PENDING", "START_EVALUATING_RULES_PENDING", "STOP_DATA_COLLECTION_PENDING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AssessmentRunState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AssessmentRunState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AssessmentRunState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AssessmentRunState::Canceled => write!(f, "CANCELED"),
-            AssessmentRunState::CollectingData => write!(f, "COLLECTING_DATA"),
-            AssessmentRunState::Completed => write!(f, "COMPLETED"),
-            AssessmentRunState::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
-            AssessmentRunState::Created => write!(f, "CREATED"),
-            AssessmentRunState::DataCollected => write!(f, "DATA_COLLECTED"),
-            AssessmentRunState::Error => write!(f, "ERROR"),
-            AssessmentRunState::EvaluatingRules => write!(f, "EVALUATING_RULES"),
-            AssessmentRunState::Failed => write!(f, "FAILED"),
-            AssessmentRunState::StartDataCollectionInProgress => write!(f, "START_DATA_COLLECTION_IN_PROGRESS"),
-            AssessmentRunState::StartDataCollectionPending => write!(f, "START_DATA_COLLECTION_PENDING"),
-            AssessmentRunState::StartEvaluatingRulesPending => write!(f, "START_EVALUATING_RULES_PENDING"),
-            AssessmentRunState::StopDataCollectionPending => write!(f, "STOP_DATA_COLLECTION_PENDING"),
-            AssessmentRunState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AssessmentRunState::Canceled => write!(f, "CANCELED"),
+AssessmentRunState::CollectingData => write!(f, "COLLECTING_DATA"),
+AssessmentRunState::Completed => write!(f, "COMPLETED"),
+AssessmentRunState::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
+AssessmentRunState::Created => write!(f, "CREATED"),
+AssessmentRunState::DataCollected => write!(f, "DATA_COLLECTED"),
+AssessmentRunState::Error => write!(f, "ERROR"),
+AssessmentRunState::EvaluatingRules => write!(f, "EVALUATING_RULES"),
+AssessmentRunState::Failed => write!(f, "FAILED"),
+AssessmentRunState::StartDataCollectionInProgress => write!(f, "START_DATA_COLLECTION_IN_PROGRESS"),
+AssessmentRunState::StartDataCollectionPending => write!(f, "START_DATA_COLLECTION_PENDING"),
+AssessmentRunState::StartEvaluatingRulesPending => write!(f, "START_EVALUATING_RULES_PENDING"),
+AssessmentRunState::StopDataCollectionPending => write!(f, "STOP_DATA_COLLECTION_PENDING"),
+AssessmentRunState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

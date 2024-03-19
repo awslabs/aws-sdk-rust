@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRegistries`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`ListRegistriesOutput`](crate::operation::list_registries::ListRegistriesOutput) with field(s):
+                            /// - On success, responds with [`ListRegistriesOutput`](crate::operation::list_registries::ListRegistriesOutput) with field(s):
     ///   - [`registries(Option<Vec::<RegistryListItem>>)`](crate::operation::list_registries::ListRegistriesOutput::registries): <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_registries::ListRegistriesOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::operation::list_registries::ListRegistriesError)
+                            /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::operation::list_registries::ListRegistriesError)
     pub fn list_registries(&self) -> crate::operation::list_registries::builders::ListRegistriesFluentBuilder {
-        crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

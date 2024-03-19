@@ -3,7 +3,7 @@
 /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Type {
+pub struct Type  {
     /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported data types</a>.</p>
     pub scalar_type: ::std::option::Option<crate::types::ScalarType>,
     /// <p>Indicates if the column is an array.</p>
@@ -11,26 +11,27 @@ pub struct Type {
     /// <p>Indicates if the column is a timeseries data type.</p>
     pub time_series_measure_value_column_info: ::std::option::Option<crate::types::ColumnInfo>,
     /// <p>Indicates if the column is a row.</p>
-    pub row_column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
+    pub row_column_info: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>>,
 }
-impl Type {
+impl  Type  {
     /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported data types</a>.</p>
-    pub fn scalar_type(&self) -> ::std::option::Option<&crate::types::ScalarType> {
+    pub fn scalar_type(&self) -> ::std::option::Option<& crate::types::ScalarType> {
         self.scalar_type.as_ref()
     }
     /// <p>Indicates if the column is an array.</p>
-    pub fn array_column_info(&self) -> ::std::option::Option<&crate::types::ColumnInfo> {
+    pub fn array_column_info(&self) -> ::std::option::Option<& crate::types::ColumnInfo> {
         self.array_column_info.as_ref()
     }
     /// <p>Indicates if the column is a timeseries data type.</p>
-    pub fn time_series_measure_value_column_info(&self) -> ::std::option::Option<&crate::types::ColumnInfo> {
+    pub fn time_series_measure_value_column_info(&self) -> ::std::option::Option<& crate::types::ColumnInfo> {
         self.time_series_measure_value_column_info.as_ref()
     }
     /// <p>Indicates if the column is a row.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_column_info.is_none()`.
-    pub fn row_column_info(&self) -> &[crate::types::ColumnInfo] {
-        self.row_column_info.as_deref().unwrap_or_default()
+    pub fn row_column_info(&self) -> & [crate::types::ColumnInfo] {
+        self.row_column_info.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Type {
@@ -47,7 +48,7 @@ pub struct TypeBuilder {
     pub(crate) scalar_type: ::std::option::Option<crate::types::ScalarType>,
     pub(crate) array_column_info: ::std::option::Option<crate::types::ColumnInfo>,
     pub(crate) time_series_measure_value_column_info: ::std::option::Option<crate::types::ColumnInfo>,
-    pub(crate) row_column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
+    pub(crate) row_column_info: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>>,
 }
 impl TypeBuilder {
     /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported data types</a>.</p>
@@ -57,8 +58,7 @@ impl TypeBuilder {
     }
     /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported data types</a>.</p>
     pub fn set_scalar_type(mut self, input: ::std::option::Option<crate::types::ScalarType>) -> Self {
-        self.scalar_type = input;
-        self
+        self.scalar_type = input; self
     }
     /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported data types</a>.</p>
     pub fn get_scalar_type(&self) -> &::std::option::Option<crate::types::ScalarType> {
@@ -71,8 +71,7 @@ impl TypeBuilder {
     }
     /// <p>Indicates if the column is an array.</p>
     pub fn set_array_column_info(mut self, input: ::std::option::Option<crate::types::ColumnInfo>) -> Self {
-        self.array_column_info = input;
-        self
+        self.array_column_info = input; self
     }
     /// <p>Indicates if the column is an array.</p>
     pub fn get_array_column_info(&self) -> &::std::option::Option<crate::types::ColumnInfo> {
@@ -85,8 +84,7 @@ impl TypeBuilder {
     }
     /// <p>Indicates if the column is a timeseries data type.</p>
     pub fn set_time_series_measure_value_column_info(mut self, input: ::std::option::Option<crate::types::ColumnInfo>) -> Self {
-        self.time_series_measure_value_column_info = input;
-        self
+        self.time_series_measure_value_column_info = input; self
     }
     /// <p>Indicates if the column is a timeseries data type.</p>
     pub fn get_time_series_measure_value_column_info(&self) -> &::std::option::Option<crate::types::ColumnInfo> {
@@ -99,26 +97,30 @@ impl TypeBuilder {
     /// <p>Indicates if the column is a row.</p>
     pub fn row_column_info(mut self, input: crate::types::ColumnInfo) -> Self {
         let mut v = self.row_column_info.unwrap_or_default();
-        v.push(input);
-        self.row_column_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.row_column_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates if the column is a row.</p>
-    pub fn set_row_column_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>) -> Self {
-        self.row_column_info = input;
-        self
+    pub fn set_row_column_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>>) -> Self {
+        self.row_column_info = input; self
     }
     /// <p>Indicates if the column is a row.</p>
-    pub fn get_row_column_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+    pub fn get_row_column_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>> {
         &self.row_column_info
     }
     /// Consumes the builder and constructs a [`Type`](crate::types::Type).
     pub fn build(self) -> crate::types::Type {
         crate::types::Type {
-            scalar_type: self.scalar_type,
-            array_column_info: self.array_column_info,
-            time_series_measure_value_column_info: self.time_series_measure_value_column_info,
-            row_column_info: self.row_column_info,
+            scalar_type: self.scalar_type
+            ,
+            array_column_info: self.array_column_info
+            ,
+            time_series_measure_value_column_info: self.time_series_measure_value_column_info
+            ,
+            row_column_info: self.row_column_info
+            ,
         }
     }
 }
+

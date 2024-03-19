@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKnowledgeBasesInput {
+pub struct ListKnowledgeBasesInput  {
     /// Max Results.
     pub max_results: ::std::option::Option<i32>,
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListKnowledgeBasesInput {
+impl  ListKnowledgeBasesInput  {
     /// Max Results.
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListKnowledgeBasesInputBuilder {
     }
     /// Max Results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Max Results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -54,21 +53,22 @@ impl ListKnowledgeBasesInputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListKnowledgeBasesInput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_knowledge_bases::ListKnowledgeBasesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_knowledge_bases::ListKnowledgeBasesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_knowledge_bases::ListKnowledgeBasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_knowledge_bases::ListKnowledgeBasesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

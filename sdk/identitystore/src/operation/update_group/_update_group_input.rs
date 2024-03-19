@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupInput {
+pub struct UpdateGroupInput  {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a group in the identity store.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeOperation>>,
 }
-impl UpdateGroupInput {
+impl  UpdateGroupInput  {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::AttributeOperation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::AttributeOperation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateGroupInput {
@@ -39,7 +40,7 @@ impl UpdateGroupInput {
 pub struct UpdateGroupInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeOperation>>,
 }
 impl UpdateGroupInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -50,8 +51,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,25 +78,30 @@ impl UpdateGroupInputBuilder {
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
     pub fn operations(mut self, input: crate::types::AttributeOperation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeOperation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeOperation>> {
         &self.operations
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
-            identity_store_id: self.identity_store_id,
-            group_id: self.group_id,
-            operations: self.operations,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_group::UpdateGroupInput {
+                identity_store_id: self.identity_store_id
+                ,
+                group_id: self.group_id
+                ,
+                operations: self.operations
+                ,
+            }
+        )
     }
 }
+

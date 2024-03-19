@@ -3,7 +3,7 @@
 /// <p>Information of a particular device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The name of the device.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the device.</p>
@@ -11,17 +11,17 @@ pub struct Device {
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
     pub iot_thing_name: ::std::option::Option<::std::string::String>,
 }
-impl Device {
+impl  Device  {
     /// <p>The name of the device.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Description of the device.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
-    pub fn iot_thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn iot_thing_name(&self) -> ::std::option::Option<& str> {
         self.iot_thing_name.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DeviceBuilder {
     }
     /// <p>The name of the device.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The name of the device.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeviceBuilder {
     }
     /// <p>Description of the device.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the device.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl DeviceBuilder {
     }
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
     pub fn set_iot_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iot_thing_name = input;
-        self
+        self.iot_thing_name = input; self
     }
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
     pub fn get_iot_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl DeviceBuilder {
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {
         crate::types::Device {
-            device_name: self.device_name,
-            description: self.description,
-            iot_thing_name: self.iot_thing_name,
+            device_name: self.device_name
+            ,
+            description: self.description
+            ,
+            iot_thing_name: self.iot_thing_name
+            ,
         }
     }
 }
+

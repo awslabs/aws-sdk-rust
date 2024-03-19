@@ -3,19 +3,19 @@
 /// <p>Specifies attributes for sorting a list of utterances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregatedUtterancesSortBy {
+pub struct AggregatedUtterancesSortBy  {
     /// <p>The utterance attribute to sort by.</p>
     pub attribute: crate::types::AggregatedUtterancesSortAttribute,
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     pub order: crate::types::SortOrder,
 }
-impl AggregatedUtterancesSortBy {
+impl  AggregatedUtterancesSortBy  {
     /// <p>The utterance attribute to sort by.</p>
-    pub fn attribute(&self) -> &crate::types::AggregatedUtterancesSortAttribute {
+    pub fn attribute(&self) -> & crate::types::AggregatedUtterancesSortAttribute {
         &self.attribute
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl AggregatedUtterancesSortByBuilder {
     }
     /// <p>The utterance attribute to sort by.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesSortAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The utterance attribute to sort by.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesSortAttribute> {
@@ -57,8 +56,7 @@ impl AggregatedUtterancesSortByBuilder {
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl AggregatedUtterancesSortByBuilder {
     /// - [`attribute`](crate::types::builders::AggregatedUtterancesSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::AggregatedUtterancesSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::AggregatedUtterancesSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AggregatedUtterancesSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building AggregatedUtterancesSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building AggregatedUtterancesSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AggregatedUtterancesSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building AggregatedUtterancesSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building AggregatedUtterancesSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

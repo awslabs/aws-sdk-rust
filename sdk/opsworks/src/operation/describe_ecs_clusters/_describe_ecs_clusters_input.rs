@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEcsClustersInput {
+pub struct DescribeEcsClustersInput  {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub ecs_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ecs_cluster_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
@@ -12,19 +12,20 @@ pub struct DescribeEcsClustersInput {
     /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeEcsClustersInput {
+impl  DescribeEcsClustersInput  {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_cluster_arns.is_none()`.
-    pub fn ecs_cluster_arns(&self) -> &[::std::string::String] {
-        self.ecs_cluster_arns.as_deref().unwrap_or_default()
+    pub fn ecs_cluster_arns(&self) -> & [::std::string::String] {
+        self.ecs_cluster_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -43,7 +44,7 @@ impl DescribeEcsClustersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEcsClustersInputBuilder {
-    pub(crate) ecs_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ecs_cluster_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -56,17 +57,16 @@ impl DescribeEcsClustersInputBuilder {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
     pub fn ecs_cluster_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ecs_cluster_arns.unwrap_or_default();
-        v.push(input.into());
-        self.ecs_cluster_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ecs_cluster_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn set_ecs_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ecs_cluster_arns = input;
-        self
+    pub fn set_ecs_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ecs_cluster_arns = input; self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn get_ecs_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ecs_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ecs_cluster_arns
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
@@ -76,8 +76,7 @@ impl DescribeEcsClustersInputBuilder {
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DescribeEcsClustersInputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,23 +102,26 @@ impl DescribeEcsClustersInputBuilder {
     }
     /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_ecs_clusters::DescribeEcsClustersInput {
-            ecs_cluster_arns: self.ecs_cluster_arns,
-            stack_id: self.stack_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ecs_clusters::DescribeEcsClustersInput {
+                ecs_cluster_arns: self.ecs_cluster_arns
+                ,
+                stack_id: self.stack_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountAttributesInput {
+pub struct DescribeAccountAttributesInput  {
     /// <p>The account attribute names.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAttributeName>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeAccountAttributesInput {
+impl  DescribeAccountAttributesInput  {
     /// <p>The account attribute names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
-    pub fn attribute_names(&self) -> &[crate::types::AccountAttributeName] {
-        self.attribute_names.as_deref().unwrap_or_default()
+    pub fn attribute_names(&self) -> & [crate::types::AccountAttributeName] {
+        self.attribute_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -31,7 +32,7 @@ impl DescribeAccountAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesInputBuilder {
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAttributeName>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAccountAttributesInputBuilder {
@@ -42,17 +43,16 @@ impl DescribeAccountAttributesInputBuilder {
     /// <p>The account attribute names.</p>
     pub fn attribute_names(mut self, input: crate::types::AccountAttributeName) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input);
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The account attribute names.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAttributeName>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>The account attribute names.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountAttributeName>> {
         &self.attribute_names
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -62,23 +62,22 @@ impl DescribeAccountAttributesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_account_attributes::DescribeAccountAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_account_attributes::DescribeAccountAttributesInput {
-            attribute_names: self.attribute_names,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account_attributes::DescribeAccountAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_account_attributes::DescribeAccountAttributesInput {
+                attribute_names: self.attribute_names
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

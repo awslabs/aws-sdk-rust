@@ -150,3 +150,4 @@ pub mod update_replication_configuration;
 
 /// Types for the `UpdateReplicationConfigurationTemplate` operation.
 pub mod update_replication_configuration_template;
+

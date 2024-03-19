@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpgradeReviewTemplateLensReviewInput {
+pub struct UpgradeReviewTemplateLensReviewInput  {
     /// <p>The ARN of the review template.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -16,23 +16,23 @@ pub struct UpgradeReviewTemplateLensReviewInput {
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpgradeReviewTemplateLensReviewInput {
+impl  UpgradeReviewTemplateLensReviewInput  {
     /// <p>The ARN of the review template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl UpgradeReviewTemplateLensReviewInputBuilder {
     }
     /// <p>The ARN of the review template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The ARN of the review template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl UpgradeReviewTemplateLensReviewInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -104,8 +102,7 @@ impl UpgradeReviewTemplateLensReviewInputBuilder {
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
@@ -115,18 +112,17 @@ impl UpgradeReviewTemplateLensReviewInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpgradeReviewTemplateLensReviewInput`](crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput {
-                template_arn: self.template_arn,
-                lens_alias: self.lens_alias,
-                client_request_token: self.client_request_token,
-            },
+                template_arn: self.template_arn
+                ,
+                lens_alias: self.lens_alias
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

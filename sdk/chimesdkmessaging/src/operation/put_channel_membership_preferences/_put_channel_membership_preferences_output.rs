@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutChannelMembershipPreferencesOutput {
+pub struct PutChannelMembershipPreferencesOutput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The details of a user.</p>
@@ -11,25 +11,25 @@ pub struct PutChannelMembershipPreferencesOutput {
     pub preferences: ::std::option::Option<crate::types::ChannelMembershipPreferences>,
     _request_id: Option<String>,
 }
-impl PutChannelMembershipPreferencesOutput {
+impl  PutChannelMembershipPreferencesOutput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The details of a user.</p>
-    pub fn member(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn member(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.member.as_ref()
     }
     /// <p>The ARN and metadata of the member being added.</p>
-    pub fn preferences(&self) -> ::std::option::Option<&crate::types::ChannelMembershipPreferences> {
+    pub fn preferences(&self) -> ::std::option::Option<& crate::types::ChannelMembershipPreferences> {
         self.preferences.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutChannelMembershipPreferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutChannelMembershipPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesOutput`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput).
     pub fn builder() -> crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesOutputBuilder {
@@ -54,8 +54,7 @@ impl PutChannelMembershipPreferencesOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl PutChannelMembershipPreferencesOutputBuilder {
     }
     /// <p>The details of a user.</p>
     pub fn set_member(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     /// <p>The details of a user.</p>
     pub fn get_member(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -82,29 +80,32 @@ impl PutChannelMembershipPreferencesOutputBuilder {
     }
     /// <p>The ARN and metadata of the member being added.</p>
     pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::ChannelMembershipPreferences>) -> Self {
-        self.preferences = input;
-        self
+        self.preferences = input; self
     }
     /// <p>The ARN and metadata of the member being added.</p>
     pub fn get_preferences(&self) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
         &self.preferences
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutChannelMembershipPreferencesOutput`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput).
     pub fn build(self) -> crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput {
         crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput {
-            channel_arn: self.channel_arn,
-            member: self.member,
-            preferences: self.preferences,
+            channel_arn: self.channel_arn
+            ,
+            member: self.member
+            ,
+            preferences: self.preferences
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

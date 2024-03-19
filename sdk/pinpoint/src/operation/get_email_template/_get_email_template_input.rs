@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEmailTemplateInput {
+pub struct GetEmailTemplateInput  {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -19,12 +19,12 @@ pub struct GetEmailTemplateInput {
     /// </ul>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl GetEmailTemplateInput {
+impl  GetEmailTemplateInput  {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -36,7 +36,7 @@ impl GetEmailTemplateInput {
     /// <li>
     /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -63,14 +63,13 @@ impl GetEmailTemplateInputBuilder {
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -86,7 +85,7 @@ impl GetEmailTemplateInputBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -99,10 +98,9 @@ impl GetEmailTemplateInputBuilder {
     /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -118,12 +116,15 @@ impl GetEmailTemplateInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_email_template::GetEmailTemplateInput {
-            template_name: self.template_name,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_email_template::GetEmailTemplateInput {
+                template_name: self.template_name
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes a block storage disk mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiskMap {
+pub struct DiskMap  {
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
     pub original_disk_path: ::std::option::Option<::std::string::String>,
     /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub new_disk_name: ::std::option::Option<::std::string::String>,
 }
-impl DiskMap {
+impl  DiskMap  {
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
-    pub fn original_disk_path(&self) -> ::std::option::Option<&str> {
+    pub fn original_disk_path(&self) -> ::std::option::Option<& str> {
         self.original_disk_path.as_deref()
     }
     /// <p>The new disk name (<code>my-new-disk</code>).</p>
-    pub fn new_disk_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_disk_name(&self) -> ::std::option::Option<& str> {
         self.new_disk_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DiskMapBuilder {
     }
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
     pub fn set_original_disk_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.original_disk_path = input;
-        self
+        self.original_disk_path = input; self
     }
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
     pub fn get_original_disk_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DiskMapBuilder {
     }
     /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub fn set_new_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_disk_name = input;
-        self
+        self.new_disk_name = input; self
     }
     /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub fn get_new_disk_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DiskMapBuilder {
     /// Consumes the builder and constructs a [`DiskMap`](crate::types::DiskMap).
     pub fn build(self) -> crate::types::DiskMap {
         crate::types::DiskMap {
-            original_disk_path: self.original_disk_path,
-            new_disk_name: self.new_disk_name,
+            original_disk_path: self.original_disk_path
+            ,
+            new_disk_name: self.new_disk_name
+            ,
         }
     }
 }
+

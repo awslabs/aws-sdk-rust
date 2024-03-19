@@ -3,7 +3,7 @@
 /// <p>Details about the sensitive data that was detected on the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClassificationResult {
+pub struct ClassificationResult  {
     /// <p>The type of content that the finding applies to.</p>
     pub mime_type: ::std::option::Option<::std::string::String>,
     /// <p>The total size in bytes of the affected data.</p>
@@ -13,13 +13,13 @@ pub struct ClassificationResult {
     /// <p>The current status of the sensitive data detection.</p>
     pub status: ::std::option::Option<crate::types::ClassificationStatus>,
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    pub sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
+    pub sensitive_data: ::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataResult>>,
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     pub custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
 }
-impl ClassificationResult {
+impl  ClassificationResult  {
     /// <p>The type of content that the finding applies to.</p>
-    pub fn mime_type(&self) -> ::std::option::Option<&str> {
+    pub fn mime_type(&self) -> ::std::option::Option<& str> {
         self.mime_type.as_deref()
     }
     /// <p>The total size in bytes of the affected data.</p>
@@ -31,17 +31,18 @@ impl ClassificationResult {
         self.additional_occurrences
     }
     /// <p>The current status of the sensitive data detection.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClassificationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ClassificationStatus> {
         self.status.as_ref()
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sensitive_data.is_none()`.
-    pub fn sensitive_data(&self) -> &[crate::types::SensitiveDataResult] {
-        self.sensitive_data.as_deref().unwrap_or_default()
+    pub fn sensitive_data(&self) -> & [crate::types::SensitiveDataResult] {
+        self.sensitive_data.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
-    pub fn custom_data_identifiers(&self) -> ::std::option::Option<&crate::types::CustomDataIdentifiersResult> {
+    pub fn custom_data_identifiers(&self) -> ::std::option::Option<& crate::types::CustomDataIdentifiersResult> {
         self.custom_data_identifiers.as_ref()
     }
 }
@@ -60,7 +61,7 @@ pub struct ClassificationResultBuilder {
     pub(crate) size_classified: ::std::option::Option<i64>,
     pub(crate) additional_occurrences: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::ClassificationStatus>,
-    pub(crate) sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
+    pub(crate) sensitive_data: ::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataResult>>,
     pub(crate) custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
 }
 impl ClassificationResultBuilder {
@@ -71,8 +72,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The type of content that the finding applies to.</p>
     pub fn set_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mime_type = input;
-        self
+        self.mime_type = input; self
     }
     /// <p>The type of content that the finding applies to.</p>
     pub fn get_mime_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The total size in bytes of the affected data.</p>
     pub fn set_size_classified(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_classified = input;
-        self
+        self.size_classified = input; self
     }
     /// <p>The total size in bytes of the affected data.</p>
     pub fn get_size_classified(&self) -> &::std::option::Option<i64> {
@@ -99,8 +98,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
     pub fn set_additional_occurrences(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.additional_occurrences = input;
-        self
+        self.additional_occurrences = input; self
     }
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
     pub fn get_additional_occurrences(&self) -> &::std::option::Option<bool> {
@@ -113,8 +111,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The current status of the sensitive data detection.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClassificationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the sensitive data detection.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClassificationStatus> {
@@ -127,17 +124,16 @@ impl ClassificationResultBuilder {
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
     pub fn sensitive_data(mut self, input: crate::types::SensitiveDataResult) -> Self {
         let mut v = self.sensitive_data.unwrap_or_default();
-        v.push(input);
-        self.sensitive_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sensitive_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    pub fn set_sensitive_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>) -> Self {
-        self.sensitive_data = input;
-        self
+    pub fn set_sensitive_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataResult>>) -> Self {
+        self.sensitive_data = input; self
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    pub fn get_sensitive_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>> {
+    pub fn get_sensitive_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataResult>> {
         &self.sensitive_data
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
@@ -147,8 +143,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     pub fn set_custom_data_identifiers(mut self, input: ::std::option::Option<crate::types::CustomDataIdentifiersResult>) -> Self {
-        self.custom_data_identifiers = input;
-        self
+        self.custom_data_identifiers = input; self
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     pub fn get_custom_data_identifiers(&self) -> &::std::option::Option<crate::types::CustomDataIdentifiersResult> {
@@ -157,12 +152,19 @@ impl ClassificationResultBuilder {
     /// Consumes the builder and constructs a [`ClassificationResult`](crate::types::ClassificationResult).
     pub fn build(self) -> crate::types::ClassificationResult {
         crate::types::ClassificationResult {
-            mime_type: self.mime_type,
-            size_classified: self.size_classified,
-            additional_occurrences: self.additional_occurrences,
-            status: self.status,
-            sensitive_data: self.sensitive_data,
-            custom_data_identifiers: self.custom_data_identifiers,
+            mime_type: self.mime_type
+            ,
+            size_classified: self.size_classified
+            ,
+            additional_occurrences: self.additional_occurrences
+            ,
+            status: self.status
+            ,
+            sensitive_data: self.sensitive_data
+            ,
+            custom_data_identifiers: self.custom_data_identifiers
+            ,
         }
     }
 }
+

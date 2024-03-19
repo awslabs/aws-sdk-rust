@@ -2,37 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOptedOutNumbersInput {
+pub struct DescribeOptedOutNumbersInput  {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub opted_out_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub opted_out_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::OptedOutFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeOptedOutNumbersInput {
+impl  DescribeOptedOutNumbersInput  {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opted_out_numbers.is_none()`.
-    pub fn opted_out_numbers(&self) -> &[::std::string::String] {
-        self.opted_out_numbers.as_deref().unwrap_or_default()
+    pub fn opted_out_numbers(&self) -> & [::std::string::String] {
+        self.opted_out_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::OptedOutFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::OptedOutFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -52,8 +54,8 @@ impl DescribeOptedOutNumbersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) opted_out_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>,
+    pub(crate) opted_out_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::OptedOutFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -66,8 +68,7 @@ impl DescribeOptedOutNumbersInputBuilder {
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl DescribeOptedOutNumbersInputBuilder {
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
     pub fn opted_out_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.opted_out_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.opted_out_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.opted_out_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn set_opted_out_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.opted_out_numbers = input;
-        self
+    pub fn set_opted_out_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.opted_out_numbers = input; self
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn get_opted_out_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_opted_out_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.opted_out_numbers
     }
     /// Appends an item to `filters`.
@@ -100,17 +100,16 @@ impl DescribeOptedOutNumbersInputBuilder {
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
     pub fn filters(mut self, input: crate::types::OptedOutFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptedOutFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptedOutFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptedOutFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -120,8 +119,7 @@ impl DescribeOptedOutNumbersInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,26 +132,28 @@ impl DescribeOptedOutNumbersInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeOptedOutNumbersInput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput {
-            opt_out_list_name: self.opt_out_list_name,
-            opted_out_numbers: self.opted_out_numbers,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput {
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                opted_out_numbers: self.opted_out_numbers
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

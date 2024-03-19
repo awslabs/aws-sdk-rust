@@ -5,55 +5,51 @@ pub use crate::operation::get_experiment_results::_get_experiment_results_input:
 
 impl GetExperimentResultsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_experiment_results();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_experiment_results::GetExperimentResultsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_experiment_results::GetExperimentResultsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_experiment_results();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetExperimentResults`.
-///
+/// 
 /// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p>
 /// <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExperimentResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder,
+                    inner: crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        crate::operation::get_experiment_results::GetExperimentResultsError,
-    > for GetExperimentResultsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_experiment_results::GetExperimentResultsOutput,
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_experiment_results::GetExperimentResultsOutput,
+                    crate::operation::get_experiment_results::GetExperimentResultsError,
+                > for GetExperimentResultsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_experiment_results::GetExperimentResultsOutput,
+                        crate::operation::get_experiment_results::GetExperimentResultsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetExperimentResultsFluentBuilder {
     /// Creates a new `GetExperimentResults`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetExperimentResultsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_experiment_results::GetExperimentResults::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_experiment_results::GetExperimentResults::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        crate::operation::get_experiment_results::GetExperimentResultsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_experiment_results::GetExperimentResults::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_experiment_results::GetExperimentResults::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_experiment_results::GetExperimentResultsOutput, crate::operation::get_experiment_results::GetExperimentResultsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -175,12 +162,12 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metric_names(input);
         self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_metric_names()
     }
     /// Appends an item to `treatmentNames`.
@@ -193,12 +180,12 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn set_treatment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_treatment_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_treatment_names(input);
         self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn get_treatment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_treatment_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_treatment_names()
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
@@ -245,7 +232,7 @@ impl GetExperimentResultsFluentBuilder {
     /// <li>
     /// <p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
-    pub fn set_result_stats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>) -> Self {
+    pub fn set_result_stats(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentResultRequestType>>) -> Self {
         self.inner = self.inner.set_result_stats(input);
         self
     }
@@ -260,7 +247,7 @@ impl GetExperimentResultsFluentBuilder {
     /// <li>
     /// <p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
-    pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
+    pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperimentResultRequestType>> {
         self.inner.get_result_stats()
     }
     /// Appends an item to `reportNames`.
@@ -273,12 +260,12 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn set_report_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>) -> Self {
+    pub fn set_report_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentReportName>>) -> Self {
         self.inner = self.inner.set_report_names(input);
         self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn get_report_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>> {
+    pub fn get_report_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperimentReportName>> {
         self.inner.get_report_names()
     }
     /// <p>In seconds, the amount of time to aggregate results together.</p>
@@ -296,3 +283,4 @@ impl GetExperimentResultsFluentBuilder {
         self.inner.get_period()
     }
 }
+

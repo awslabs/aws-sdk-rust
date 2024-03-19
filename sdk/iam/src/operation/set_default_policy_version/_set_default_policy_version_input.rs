@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetDefaultPolicyVersionInput {
+pub struct SetDefaultPolicyVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to set.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct SetDefaultPolicyVersionInput {
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl SetDefaultPolicyVersionInput {
+impl  SetDefaultPolicyVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to set.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The version of the policy to set as the default (operative) version.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl SetDefaultPolicyVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to set.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to set.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -65,8 +64,7 @@ impl SetDefaultPolicyVersionInputBuilder {
     /// <p>The version of the policy to set as the default (operative) version.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version of the policy to set as the default (operative) version.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
@@ -74,15 +72,15 @@ impl SetDefaultPolicyVersionInputBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`SetDefaultPolicyVersionInput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput {
-            policy_arn: self.policy_arn,
-            version_id: self.version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput {
+                policy_arn: self.policy_arn
+                ,
+                version_id: self.version_id
+                ,
+            }
+        )
     }
 }
+

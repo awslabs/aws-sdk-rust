@@ -18,7 +18,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchProfileMembership {
+pub struct LaunchProfileMembership  {
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The persona.</p>
@@ -28,21 +28,21 @@ pub struct LaunchProfileMembership {
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub sid: ::std::option::Option<::std::string::String>,
 }
-impl LaunchProfileMembership {
+impl  LaunchProfileMembership  {
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The persona.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::LaunchProfilePersona> {
+    pub fn persona(&self) -> ::std::option::Option<& crate::types::LaunchProfilePersona> {
         self.persona.as_ref()
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
-    pub fn sid(&self) -> ::std::option::Option<&str> {
+    pub fn sid(&self) -> ::std::option::Option<& str> {
         self.sid.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl LaunchProfileMembershipBuilder {
     }
     /// <p>The ID of the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The ID of the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl LaunchProfileMembershipBuilder {
     }
     /// <p>The persona.</p>
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// <p>The persona.</p>
     pub fn get_persona(&self) -> &::std::option::Option<crate::types::LaunchProfilePersona> {
@@ -98,8 +96,7 @@ impl LaunchProfileMembershipBuilder {
     }
     /// <p>The principal ID.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl LaunchProfileMembershipBuilder {
     }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sid = input;
-        self
+        self.sid = input; self
     }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,10 +118,15 @@ impl LaunchProfileMembershipBuilder {
     /// Consumes the builder and constructs a [`LaunchProfileMembership`](crate::types::LaunchProfileMembership).
     pub fn build(self) -> crate::types::LaunchProfileMembership {
         crate::types::LaunchProfileMembership {
-            identity_store_id: self.identity_store_id,
-            persona: self.persona,
-            principal_id: self.principal_id,
-            sid: self.sid,
+            identity_store_id: self.identity_store_id
+            ,
+            persona: self.persona
+            ,
+            principal_id: self.principal_id
+            ,
+            sid: self.sid
+            ,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Information about a resource for a project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub id: ::std::string::String,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl Resource {
@@ -36,8 +35,7 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ResourceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Resource {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Resource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Resource {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Resource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

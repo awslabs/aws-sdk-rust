@@ -3,24 +3,23 @@
 /// <p>The IP rules of the IP access settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct IpRule {
+pub struct IpRule  {
     /// <p>The IP range of the IP rule.</p>
     pub ip_range: ::std::string::String,
     /// <p>The description of the IP rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl IpRule {
+impl  IpRule  {
     /// <p>The IP range of the IP rule.</p>
-    pub fn ip_range(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_range.deref()
+    pub fn ip_range(&self) -> & str {
+        use std::ops::Deref; self.ip_range.deref()
     }
     /// <p>The description of the IP rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for IpRule {
+impl  ::std::fmt::Debug for IpRule  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IpRule");
         formatter.field("ip_range", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl IpRuleBuilder {
     }
     /// <p>The IP range of the IP rule.</p>
     pub fn set_ip_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_range = input;
-        self
+        self.ip_range = input; self
     }
     /// <p>The IP range of the IP rule.</p>
     pub fn get_ip_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl IpRuleBuilder {
     }
     /// <p>The description of the IP rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the IP rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl IpRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_range`](crate::types::builders::IpRuleBuilder::ip_range)
     pub fn build(self) -> ::std::result::Result<crate::types::IpRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpRule {
-            ip_range: self.ip_range.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_range",
-                    "ip_range was not specified but it is required when building IpRule",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpRule {
+                ip_range: self.ip_range
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_range", "ip_range was not specified but it is required when building IpRule")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for IpRuleBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for IpRuleBuilder {
         formatter.finish()
     }
 }
+

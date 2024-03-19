@@ -5,17 +5,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentFeatures {
+pub struct ContentFeatures  {
     /// <p>The maximum resolution for the meeting content.</p><note>
     /// <p>Defaults to <code>FHD</code>. To use <code>UHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
     /// </note>
     pub max_resolution: ::std::option::Option<crate::types::ContentResolution>,
 }
-impl ContentFeatures {
+impl  ContentFeatures  {
     /// <p>The maximum resolution for the meeting content.</p><note>
     /// <p>Defaults to <code>FHD</code>. To use <code>UHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
     /// </note>
-    pub fn max_resolution(&self) -> ::std::option::Option<&crate::types::ContentResolution> {
+    pub fn max_resolution(&self) -> ::std::option::Option<& crate::types::ContentResolution> {
         self.max_resolution.as_ref()
     }
 }
@@ -44,8 +44,7 @@ impl ContentFeaturesBuilder {
     /// <p>Defaults to <code>FHD</code>. To use <code>UHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
     /// </note>
     pub fn set_max_resolution(mut self, input: ::std::option::Option<crate::types::ContentResolution>) -> Self {
-        self.max_resolution = input;
-        self
+        self.max_resolution = input; self
     }
     /// <p>The maximum resolution for the meeting content.</p><note>
     /// <p>Defaults to <code>FHD</code>. To use <code>UHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
@@ -56,7 +55,9 @@ impl ContentFeaturesBuilder {
     /// Consumes the builder and constructs a [`ContentFeatures`](crate::types::ContentFeatures).
     pub fn build(self) -> crate::types::ContentFeatures {
         crate::types::ContentFeatures {
-            max_resolution: self.max_resolution,
+            max_resolution: self.max_resolution
+            ,
         }
     }
 }
+

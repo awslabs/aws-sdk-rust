@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIpamPools`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`ipam_pool_ids(impl Into<String>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::ipam_pool_ids) / [`set_ipam_pool_ids(Option<Vec::<String>>)`](crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::set_ipam_pool_ids):<br>required: **false**<br><p>The IDs of the IPAM pools you would like information on.</p><br>
-    /// - On success, responds with [`DescribeIpamPoolsOutput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput) with field(s):
+                            /// - On success, responds with [`DescribeIpamPoolsOutput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipam_pools(Option<Vec::<IpamPool>>)`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput::ipam_pools): <p>Information about the IPAM pools.</p>
-    /// - On failure, responds with [`SdkError<DescribeIpamPoolsError>`](crate::operation::describe_ipam_pools::DescribeIpamPoolsError)
+                            /// - On failure, responds with [`SdkError<DescribeIpamPoolsError>`](crate::operation::describe_ipam_pools::DescribeIpamPoolsError)
     pub fn describe_ipam_pools(&self) -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder {
-        crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

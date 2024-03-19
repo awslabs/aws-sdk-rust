@@ -3,7 +3,7 @@
 /// <p>Represents a data model for an API. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Create Models and Mapping Templates for Request and Response Mappings</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Model {
+pub struct Model  {
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the model.</p>
@@ -15,25 +15,25 @@ pub struct Model {
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub schema: ::std::option::Option<::std::string::String>,
 }
-impl Model {
+impl  Model  {
     /// <p>The content-type for the model, for example, "application/json".</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The description of the model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The model identifier.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ModelBuilder {
     }
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ModelBuilder {
     }
     /// <p>The description of the model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ModelBuilder {
     }
     /// <p>The model identifier.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model identifier.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ModelBuilder {
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl ModelBuilder {
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,11 +124,17 @@ impl ModelBuilder {
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).
     pub fn build(self) -> crate::types::Model {
         crate::types::Model {
-            content_type: self.content_type,
-            description: self.description,
-            model_id: self.model_id,
-            name: self.name,
-            schema: self.schema,
+            content_type: self.content_type
+            ,
+            description: self.description
+            ,
+            model_id: self.model_id
+            ,
+            name: self.name
+            ,
+            schema: self.schema
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The ID of the environment to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to update.</p>
@@ -20,41 +20,41 @@ pub struct UpdateEnvironmentInput {
     /// <p>The ID of the software set to apply.</p>
     pub desired_software_set_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEnvironmentInput {
+impl  UpdateEnvironmentInput  {
     /// <p>The ID of the environment to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
-    pub fn desktop_arn(&self) -> ::std::option::Option<&str> {
+    pub fn desktop_arn(&self) -> ::std::option::Option<& str> {
         self.desktop_arn.as_deref()
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
-    pub fn desktop_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn desktop_endpoint(&self) -> ::std::option::Option<& str> {
         self.desktop_endpoint.as_deref()
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
-    pub fn software_set_update_schedule(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateSchedule> {
+    pub fn software_set_update_schedule(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateSchedule> {
         self.software_set_update_schedule.as_ref()
     }
     /// <p>A specification for a time window to apply software updates.</p>
-    pub fn maintenance_window(&self) -> ::std::option::Option<&crate::types::MaintenanceWindow> {
+    pub fn maintenance_window(&self) -> ::std::option::Option<& crate::types::MaintenanceWindow> {
         self.maintenance_window.as_ref()
     }
     /// <p>An option to define which software updates to apply.</p>
-    pub fn software_set_update_mode(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateMode> {
+    pub fn software_set_update_mode(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateMode> {
         self.software_set_update_mode.as_ref()
     }
     /// <p>The ID of the software set to apply.</p>
-    pub fn desired_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn desired_software_set_id(&self) -> ::std::option::Option<& str> {
         self.desired_software_set_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateEnvironmentInput {
+impl  ::std::fmt::Debug for UpdateEnvironmentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
         formatter.field("id", &self.id);
@@ -97,8 +97,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The ID of the environment to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the environment to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The name of the environment to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
     pub fn set_desktop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desktop_arn = input;
-        self
+        self.desktop_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
     pub fn get_desktop_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub fn set_desktop_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desktop_endpoint = input;
-        self
+        self.desktop_endpoint = input; self
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub fn get_desktop_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn set_software_set_update_schedule(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>) -> Self {
-        self.software_set_update_schedule = input;
-        self
+        self.software_set_update_schedule = input; self
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
@@ -167,8 +162,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>A specification for a time window to apply software updates.</p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<crate::types::MaintenanceWindow>) -> Self {
-        self.maintenance_window = input;
-        self
+        self.maintenance_window = input; self
     }
     /// <p>A specification for a time window to apply software updates.</p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<crate::types::MaintenanceWindow> {
@@ -181,8 +175,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>An option to define which software updates to apply.</p>
     pub fn set_software_set_update_mode(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateMode>) -> Self {
-        self.software_set_update_mode = input;
-        self
+        self.software_set_update_mode = input; self
     }
     /// <p>An option to define which software updates to apply.</p>
     pub fn get_software_set_update_mode(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateMode> {
@@ -195,27 +188,34 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn set_desired_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_software_set_id = input;
-        self
+        self.desired_software_set_id = input; self
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_software_set_id
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            id: self.id,
-            name: self.name,
-            desktop_arn: self.desktop_arn,
-            desktop_endpoint: self.desktop_endpoint,
-            software_set_update_schedule: self.software_set_update_schedule,
-            maintenance_window: self.maintenance_window,
-            software_set_update_mode: self.software_set_update_mode,
-            desired_software_set_id: self.desired_software_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment::UpdateEnvironmentInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                desktop_arn: self.desktop_arn
+                ,
+                desktop_endpoint: self.desktop_endpoint
+                ,
+                software_set_update_schedule: self.software_set_update_schedule
+                ,
+                maintenance_window: self.maintenance_window
+                ,
+                software_set_update_mode: self.software_set_update_mode
+                ,
+                desired_software_set_id: self.desired_software_set_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
@@ -232,3 +232,4 @@ impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataRepositoryAssociationInput {
+pub struct UpdateDataRepositoryAssociationInput  {
     /// <p>The ID of the data repository association that you are updating.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -13,13 +13,13 @@ pub struct UpdateDataRepositoryAssociationInput {
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
     pub s3: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
 }
-impl UpdateDataRepositoryAssociationInput {
+impl  UpdateDataRepositoryAssociationInput  {
     /// <p>The ID of the data repository association that you are updating.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
@@ -28,7 +28,7 @@ impl UpdateDataRepositoryAssociationInput {
         self.imported_file_chunk_size
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3DataRepositoryConfiguration> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3DataRepositoryConfiguration> {
         self.s3.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     }
     /// <p>The ID of the data repository association that you are updating.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the data repository association that you are updating.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn set_imported_file_chunk_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.imported_file_chunk_size = input;
-        self
+        self.imported_file_chunk_size = input; self
     }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
@@ -102,27 +99,26 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3DataRepositoryConfiguration> {
         &self.s3
     }
     /// Consumes the builder and constructs a [`UpdateDataRepositoryAssociationInput`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput {
-                association_id: self.association_id,
-                client_request_token: self.client_request_token,
-                imported_file_chunk_size: self.imported_file_chunk_size,
-                s3: self.s3,
-            },
+                association_id: self.association_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                imported_file_chunk_size: self.imported_file_chunk_size
+                ,
+                s3: self.s3
+                ,
+            }
         )
     }
 }
+

@@ -27,16 +27,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExclusionByResourceTypes {
+pub struct ExclusionByResourceTypes  {
     /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>>,
 }
-impl ExclusionByResourceTypes {
+impl  ExclusionByResourceTypes  {
     /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[crate::types::ResourceType] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [crate::types::ResourceType] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExclusionByResourceTypes {
@@ -50,7 +51,7 @@ impl ExclusionByResourceTypes {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExclusionByResourceTypesBuilder {
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>>,
 }
 impl ExclusionByResourceTypesBuilder {
     /// Appends an item to `resource_types`.
@@ -60,23 +61,24 @@ impl ExclusionByResourceTypesBuilder {
     /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
     pub fn resource_types(mut self, input: crate::types::ResourceType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input);
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>A comma-separated list of resource types to exclude from recording by the configuration recorder.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>> {
         &self.resource_types
     }
     /// Consumes the builder and constructs a [`ExclusionByResourceTypes`](crate::types::ExclusionByResourceTypes).
     pub fn build(self) -> crate::types::ExclusionByResourceTypes {
         crate::types::ExclusionByResourceTypes {
-            resource_types: self.resource_types,
+            resource_types: self.resource_types
+            ,
         }
     }
 }
+

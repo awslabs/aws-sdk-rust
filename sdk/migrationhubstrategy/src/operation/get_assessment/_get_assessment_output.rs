@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssessmentOutput {
+pub struct GetAssessmentOutput  {
     /// <p>The ID for the specific assessment task.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the assessment.</p>
     pub data_collection_details: ::std::option::Option<crate::types::DataCollectionDetails>,
     /// <p>List of criteria for assessment.</p>
-    pub assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
+    pub assessment_targets: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>>,
     _request_id: Option<String>,
 }
-impl GetAssessmentOutput {
+impl  GetAssessmentOutput  {
     /// <p>The ID for the specific assessment task.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Detailed information about the assessment.</p>
-    pub fn data_collection_details(&self) -> ::std::option::Option<&crate::types::DataCollectionDetails> {
+    pub fn data_collection_details(&self) -> ::std::option::Option<& crate::types::DataCollectionDetails> {
         self.data_collection_details.as_ref()
     }
     /// <p>List of criteria for assessment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_targets.is_none()`.
-    pub fn assessment_targets(&self) -> &[crate::types::AssessmentTarget] {
-        self.assessment_targets.as_deref().unwrap_or_default()
+    pub fn assessment_targets(&self) -> & [crate::types::AssessmentTarget] {
+        self.assessment_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAssessmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
     pub fn builder() -> crate::operation::get_assessment::builders::GetAssessmentOutputBuilder {
@@ -45,7 +46,7 @@ impl GetAssessmentOutput {
 pub struct GetAssessmentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) data_collection_details: ::std::option::Option<crate::types::DataCollectionDetails>,
-    pub(crate) assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
+    pub(crate) assessment_targets: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>>,
     _request_id: Option<String>,
 }
 impl GetAssessmentOutputBuilder {
@@ -56,8 +57,7 @@ impl GetAssessmentOutputBuilder {
     }
     /// <p>The ID for the specific assessment task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for the specific assessment task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl GetAssessmentOutputBuilder {
     }
     /// <p>Detailed information about the assessment.</p>
     pub fn set_data_collection_details(mut self, input: ::std::option::Option<crate::types::DataCollectionDetails>) -> Self {
-        self.data_collection_details = input;
-        self
+        self.data_collection_details = input; self
     }
     /// <p>Detailed information about the assessment.</p>
     pub fn get_data_collection_details(&self) -> &::std::option::Option<crate::types::DataCollectionDetails> {
@@ -84,35 +83,38 @@ impl GetAssessmentOutputBuilder {
     /// <p>List of criteria for assessment.</p>
     pub fn assessment_targets(mut self, input: crate::types::AssessmentTarget) -> Self {
         let mut v = self.assessment_targets.unwrap_or_default();
-        v.push(input);
-        self.assessment_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assessment_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn set_assessment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>) -> Self {
-        self.assessment_targets = input;
-        self
+    pub fn set_assessment_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>>) -> Self {
+        self.assessment_targets = input; self
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
+    pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>> {
         &self.assessment_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
     pub fn build(self) -> crate::operation::get_assessment::GetAssessmentOutput {
         crate::operation::get_assessment::GetAssessmentOutput {
-            id: self.id,
-            data_collection_details: self.data_collection_details,
-            assessment_targets: self.assessment_targets,
+            id: self.id
+            ,
+            data_collection_details: self.data_collection_details
+            ,
+            assessment_targets: self.assessment_targets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionPermissionSetInput {
+pub struct ProvisionPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the permission set.</p>
@@ -12,21 +12,21 @@ pub struct ProvisionPermissionSetInput {
     /// <p>The entity type for which the assignment will be created.</p>
     pub target_type: ::std::option::Option<crate::types::ProvisionTargetType>,
 }
-impl ProvisionPermissionSetInput {
+impl  ProvisionPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> ::std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&crate::types::ProvisionTargetType> {
+    pub fn target_type(&self) -> ::std::option::Option<& crate::types::ProvisionTargetType> {
         self.target_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ProvisionPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ProvisionPermissionSetInputBuilder {
     }
     /// <p>The ARN of the permission set.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_set_arn = input;
-        self
+        self.permission_set_arn = input; self
     }
     /// <p>The ARN of the permission set.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ProvisionPermissionSetInputBuilder {
     }
     /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl ProvisionPermissionSetInputBuilder {
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::ProvisionTargetType>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::ProvisionTargetType> {
         &self.target_type
     }
     /// Consumes the builder and constructs a [`ProvisionPermissionSetInput`](crate::operation::provision_permission_set::ProvisionPermissionSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::provision_permission_set::ProvisionPermissionSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::provision_permission_set::ProvisionPermissionSetInput {
-            instance_arn: self.instance_arn,
-            permission_set_arn: self.permission_set_arn,
-            target_id: self.target_id,
-            target_type: self.target_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::provision_permission_set::ProvisionPermissionSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::provision_permission_set::ProvisionPermissionSetInput {
+                instance_arn: self.instance_arn
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                target_id: self.target_id
+                ,
+                target_type: self.target_type
+                ,
+            }
+        )
     }
 }
+

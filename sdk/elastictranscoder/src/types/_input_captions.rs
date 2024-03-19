@@ -3,7 +3,7 @@
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputCaptions {
+pub struct InputCaptions  {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
     /// <ul>
     /// <li>
@@ -16,9 +16,9 @@ pub struct InputCaptions {
     /// <p><code>MergePolicy</code> cannot be null.</p>
     pub merge_policy: ::std::option::Option<::std::string::String>,
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    pub caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
+    pub caption_sources: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionSource>>,
 }
-impl InputCaptions {
+impl  InputCaptions  {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
     /// <ul>
     /// <li>
@@ -29,14 +29,15 @@ impl InputCaptions {
     /// <p><b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p></li>
     /// </ul>
     /// <p><code>MergePolicy</code> cannot be null.</p>
-    pub fn merge_policy(&self) -> ::std::option::Option<&str> {
+    pub fn merge_policy(&self) -> ::std::option::Option<& str> {
         self.merge_policy.as_deref()
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_sources.is_none()`.
-    pub fn caption_sources(&self) -> &[crate::types::CaptionSource] {
-        self.caption_sources.as_deref().unwrap_or_default()
+    pub fn caption_sources(&self) -> & [crate::types::CaptionSource] {
+        self.caption_sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InputCaptions {
@@ -51,7 +52,7 @@ impl InputCaptions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputCaptionsBuilder {
     pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
-    pub(crate) caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
+    pub(crate) caption_sources: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionSource>>,
 }
 impl InputCaptionsBuilder {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
@@ -79,8 +80,7 @@ impl InputCaptionsBuilder {
     /// </ul>
     /// <p><code>MergePolicy</code> cannot be null.</p>
     pub fn set_merge_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.merge_policy = input;
-        self
+        self.merge_policy = input; self
     }
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
     /// <ul>
@@ -102,24 +102,26 @@ impl InputCaptionsBuilder {
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     pub fn caption_sources(mut self, input: crate::types::CaptionSource) -> Self {
         let mut v = self.caption_sources.unwrap_or_default();
-        v.push(input);
-        self.caption_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.caption_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    pub fn set_caption_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>) -> Self {
-        self.caption_sources = input;
-        self
+    pub fn set_caption_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionSource>>) -> Self {
+        self.caption_sources = input; self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    pub fn get_caption_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>> {
+    pub fn get_caption_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CaptionSource>> {
         &self.caption_sources
     }
     /// Consumes the builder and constructs a [`InputCaptions`](crate::types::InputCaptions).
     pub fn build(self) -> crate::types::InputCaptions {
         crate::types::InputCaptions {
-            merge_policy: self.merge_policy,
-            caption_sources: self.caption_sources,
+            merge_policy: self.merge_policy
+            ,
+            caption_sources: self.caption_sources
+            ,
         }
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>The visual display options for the visual palette.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisualPalette {
+pub struct VisualPalette  {
     /// <p>The chart color options for the visual palette.</p>
     pub chart_color: ::std::option::Option<::std::string::String>,
     /// <p>The color map options for the visual palette.</p>
-    pub color_map: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,
+    pub color_map: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathColor>>,
 }
-impl VisualPalette {
+impl  VisualPalette  {
     /// <p>The chart color options for the visual palette.</p>
-    pub fn chart_color(&self) -> ::std::option::Option<&str> {
+    pub fn chart_color(&self) -> ::std::option::Option<& str> {
         self.chart_color.as_deref()
     }
     /// <p>The color map options for the visual palette.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_map.is_none()`.
-    pub fn color_map(&self) -> &[crate::types::DataPathColor] {
-        self.color_map.as_deref().unwrap_or_default()
+    pub fn color_map(&self) -> & [crate::types::DataPathColor] {
+        self.color_map.as_deref()
+        .unwrap_or_default()
     }
 }
 impl VisualPalette {
@@ -33,7 +34,7 @@ impl VisualPalette {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VisualPaletteBuilder {
     pub(crate) chart_color: ::std::option::Option<::std::string::String>,
-    pub(crate) color_map: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,
+    pub(crate) color_map: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathColor>>,
 }
 impl VisualPaletteBuilder {
     /// <p>The chart color options for the visual palette.</p>
@@ -43,8 +44,7 @@ impl VisualPaletteBuilder {
     }
     /// <p>The chart color options for the visual palette.</p>
     pub fn set_chart_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chart_color = input;
-        self
+        self.chart_color = input; self
     }
     /// <p>The chart color options for the visual palette.</p>
     pub fn get_chart_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl VisualPaletteBuilder {
     /// <p>The color map options for the visual palette.</p>
     pub fn color_map(mut self, input: crate::types::DataPathColor) -> Self {
         let mut v = self.color_map.unwrap_or_default();
-        v.push(input);
-        self.color_map = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.color_map = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The color map options for the visual palette.</p>
-    pub fn set_color_map(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>) -> Self {
-        self.color_map = input;
-        self
+    pub fn set_color_map(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathColor>>) -> Self {
+        self.color_map = input; self
     }
     /// <p>The color map options for the visual palette.</p>
-    pub fn get_color_map(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>> {
+    pub fn get_color_map(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataPathColor>> {
         &self.color_map
     }
     /// Consumes the builder and constructs a [`VisualPalette`](crate::types::VisualPalette).
     pub fn build(self) -> crate::types::VisualPalette {
         crate::types::VisualPalette {
-            chart_color: self.chart_color,
-            color_map: self.color_map,
+            chart_color: self.chart_color
+            ,
+            color_map: self.color_map
+            ,
         }
     }
 }
+

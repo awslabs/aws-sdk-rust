@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExtendLicenseConsumptionOutput {
+pub struct ExtendLicenseConsumptionOutput  {
     /// <p>License consumption token.</p>
     pub license_consumption_token: ::std::option::Option<::std::string::String>,
     /// <p>Date and time at which the license consumption expires.</p>
     pub expiration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExtendLicenseConsumptionOutput {
+impl  ExtendLicenseConsumptionOutput  {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> ::std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> ::std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Date and time at which the license consumption expires.</p>
-    pub fn expiration(&self) -> ::std::option::Option<&str> {
+    pub fn expiration(&self) -> ::std::option::Option<& str> {
         self.expiration.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExtendLicenseConsumptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExtendLicenseConsumptionOutput {
     /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionOutput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput).
     pub fn builder() -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionOutputBuilder {
@@ -47,8 +47,7 @@ impl ExtendLicenseConsumptionOutputBuilder {
     }
     /// <p>License consumption token.</p>
     pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_consumption_token = input;
-        self
+        self.license_consumption_token = input; self
     }
     /// <p>License consumption token.</p>
     pub fn get_license_consumption_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ExtendLicenseConsumptionOutputBuilder {
     }
     /// <p>Date and time at which the license consumption expires.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>Date and time at which the license consumption expires.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
         &self.expiration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExtendLicenseConsumptionOutput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput).
     pub fn build(self) -> crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput {
         crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput {
-            license_consumption_token: self.license_consumption_token,
-            expiration: self.expiration,
+            license_consumption_token: self.license_consumption_token
+            ,
+            expiration: self.expiration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

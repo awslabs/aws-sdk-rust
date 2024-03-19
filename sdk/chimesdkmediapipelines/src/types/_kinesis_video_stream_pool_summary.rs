@@ -3,7 +3,7 @@
 /// <p>A summary of the Kinesis video stream pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct KinesisVideoStreamPoolSummary {
+pub struct KinesisVideoStreamPoolSummary  {
     /// <p>The name of the video stream pool.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the video stream pool.</p>
@@ -11,21 +11,21 @@ pub struct KinesisVideoStreamPoolSummary {
     /// <p>The ARN of the video stream pool.</p>
     pub pool_arn: ::std::option::Option<::std::string::String>,
 }
-impl KinesisVideoStreamPoolSummary {
+impl  KinesisVideoStreamPoolSummary  {
     /// <p>The name of the video stream pool.</p>
-    pub fn pool_name(&self) -> ::std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>The ID of the video stream pool.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The ARN of the video stream pool.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for KinesisVideoStreamPoolSummary {
+impl  ::std::fmt::Debug for KinesisVideoStreamPoolSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisVideoStreamPoolSummary");
         formatter.field("pool_name", &self.pool_name);
@@ -57,8 +57,7 @@ impl KinesisVideoStreamPoolSummaryBuilder {
     }
     /// <p>The name of the video stream pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// <p>The name of the video stream pool.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl KinesisVideoStreamPoolSummaryBuilder {
     }
     /// <p>The ID of the video stream pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The ID of the video stream pool.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl KinesisVideoStreamPoolSummaryBuilder {
     }
     /// <p>The ARN of the video stream pool.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The ARN of the video stream pool.</p>
     pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl KinesisVideoStreamPoolSummaryBuilder {
     /// Consumes the builder and constructs a [`KinesisVideoStreamPoolSummary`](crate::types::KinesisVideoStreamPoolSummary).
     pub fn build(self) -> crate::types::KinesisVideoStreamPoolSummary {
         crate::types::KinesisVideoStreamPoolSummary {
-            pool_name: self.pool_name,
-            pool_id: self.pool_id,
-            pool_arn: self.pool_arn,
+            pool_name: self.pool_name
+            ,
+            pool_id: self.pool_id
+            ,
+            pool_arn: self.pool_arn
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for KinesisVideoStreamPoolSummaryBuilder {
         formatter.finish()
     }
 }
+

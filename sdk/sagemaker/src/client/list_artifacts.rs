@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListArtifacts`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`source_uri(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::source_uri) / [`set_source_uri(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_source_uri):<br>required: **false**<br><p>A filter that returns only artifacts with the specified source URI.</p><br>
     ///   - [`artifact_type(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::artifact_type) / [`set_artifact_type(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_artifact_type):<br>required: **false**<br><p>A filter that returns only artifacts of the specified type.</p><br>
     ///   - [`created_after(DateTime)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_created_after):<br>required: **false**<br><p>A filter that returns only artifacts created on or after the specified time.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of artifacts to return in the response. The default value is 10.</p><br>
-    /// - On success, responds with [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput) with field(s):
+                            /// - On success, responds with [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput) with field(s):
     ///   - [`artifact_summaries(Option<Vec::<ArtifactSummary>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifact_summaries): <p>A list of artifacts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p>A token for getting the next set of artifacts, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
+                            /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
     pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
-        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

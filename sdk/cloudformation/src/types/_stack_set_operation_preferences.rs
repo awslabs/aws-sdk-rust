@@ -4,13 +4,13 @@
 /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackSetOperationPreferences {
+pub struct StackSetOperationPreferences  {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     pub region_concurrency_type: ::std::option::Option<crate::types::RegionConcurrencyType>,
     /// <p>The order of the Regions where you want to perform the stack operation.</p><note>
     /// <p><code>RegionOrder</code> isn't followed if <code>AutoDeployment</code> is enabled.</p>
     /// </note>
-    pub region_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub region_order: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
     /// <p>By default, <code>0</code> is specified.</p>
@@ -41,18 +41,19 @@ pub struct StackSetOperationPreferences {
     /// </ul>
     pub concurrency_mode: ::std::option::Option<crate::types::ConcurrencyMode>,
 }
-impl StackSetOperationPreferences {
+impl  StackSetOperationPreferences  {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
-    pub fn region_concurrency_type(&self) -> ::std::option::Option<&crate::types::RegionConcurrencyType> {
+    pub fn region_concurrency_type(&self) -> ::std::option::Option<& crate::types::RegionConcurrencyType> {
         self.region_concurrency_type.as_ref()
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p><note>
     /// <p><code>RegionOrder</code> isn't followed if <code>AutoDeployment</code> is enabled.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_order.is_none()`.
-    pub fn region_order(&self) -> &[::std::string::String] {
-        self.region_order.as_deref().unwrap_or_default()
+    pub fn region_order(&self) -> & [::std::string::String] {
+        self.region_order.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
@@ -90,7 +91,7 @@ impl StackSetOperationPreferences {
     /// <li>
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>
     /// </ul>
-    pub fn concurrency_mode(&self) -> ::std::option::Option<&crate::types::ConcurrencyMode> {
+    pub fn concurrency_mode(&self) -> ::std::option::Option<& crate::types::ConcurrencyMode> {
         self.concurrency_mode.as_ref()
     }
 }
@@ -106,7 +107,7 @@ impl StackSetOperationPreferences {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetOperationPreferencesBuilder {
     pub(crate) region_concurrency_type: ::std::option::Option<crate::types::RegionConcurrencyType>,
-    pub(crate) region_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) region_order: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) failure_tolerance_count: ::std::option::Option<i32>,
     pub(crate) failure_tolerance_percentage: ::std::option::Option<i32>,
     pub(crate) max_concurrent_count: ::std::option::Option<i32>,
@@ -121,8 +122,7 @@ impl StackSetOperationPreferencesBuilder {
     }
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     pub fn set_region_concurrency_type(mut self, input: ::std::option::Option<crate::types::RegionConcurrencyType>) -> Self {
-        self.region_concurrency_type = input;
-        self
+        self.region_concurrency_type = input; self
     }
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     pub fn get_region_concurrency_type(&self) -> &::std::option::Option<crate::types::RegionConcurrencyType> {
@@ -137,21 +137,20 @@ impl StackSetOperationPreferencesBuilder {
     /// </note>
     pub fn region_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.region_order.unwrap_or_default();
-        v.push(input.into());
-        self.region_order = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.region_order = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p><note>
     /// <p><code>RegionOrder</code> isn't followed if <code>AutoDeployment</code> is enabled.</p>
     /// </note>
-    pub fn set_region_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.region_order = input;
-        self
+    pub fn set_region_order(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.region_order = input; self
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p><note>
     /// <p><code>RegionOrder</code> isn't followed if <code>AutoDeployment</code> is enabled.</p>
     /// </note>
-    pub fn get_region_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_order(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.region_order
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
@@ -165,8 +164,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub fn set_failure_tolerance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_tolerance_count = input;
-        self
+        self.failure_tolerance_count = input; self
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
@@ -187,8 +185,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub fn set_failure_tolerance_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_tolerance_percentage = input;
-        self
+        self.failure_tolerance_percentage = input; self
     }
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
@@ -210,8 +207,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub fn set_max_concurrent_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrent_count = input;
-        self
+        self.max_concurrent_count = input; self
     }
     /// <p>The maximum number of accounts in which to perform this operation at one time. This can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code> if you're using <code>STRICT_FAILURE_TOLERANCE</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
@@ -235,8 +231,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub fn set_max_concurrent_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrent_percentage = input;
-        self
+        self.max_concurrent_percentage = input; self
     }
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
@@ -267,8 +262,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>
     /// </ul>
     pub fn set_concurrency_mode(mut self, input: ::std::option::Option<crate::types::ConcurrencyMode>) -> Self {
-        self.concurrency_mode = input;
-        self
+        self.concurrency_mode = input; self
     }
     /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
     /// <ul>
@@ -284,13 +278,21 @@ impl StackSetOperationPreferencesBuilder {
     /// Consumes the builder and constructs a [`StackSetOperationPreferences`](crate::types::StackSetOperationPreferences).
     pub fn build(self) -> crate::types::StackSetOperationPreferences {
         crate::types::StackSetOperationPreferences {
-            region_concurrency_type: self.region_concurrency_type,
-            region_order: self.region_order,
-            failure_tolerance_count: self.failure_tolerance_count,
-            failure_tolerance_percentage: self.failure_tolerance_percentage,
-            max_concurrent_count: self.max_concurrent_count,
-            max_concurrent_percentage: self.max_concurrent_percentage,
-            concurrency_mode: self.concurrency_mode,
+            region_concurrency_type: self.region_concurrency_type
+            ,
+            region_order: self.region_order
+            ,
+            failure_tolerance_count: self.failure_tolerance_count
+            ,
+            failure_tolerance_percentage: self.failure_tolerance_percentage
+            ,
+            max_concurrent_count: self.max_concurrent_count
+            ,
+            max_concurrent_percentage: self.max_concurrent_percentage
+            ,
+            concurrency_mode: self.concurrency_mode
+            ,
         }
     }
 }
+

@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFacesInput {
+pub struct DeleteFacesInput  {
     /// <p>Collection from which to remove the specific faces.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of face IDs to delete.</p>
-    pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub face_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteFacesInput {
+impl  DeleteFacesInput  {
     /// <p>Collection from which to remove the specific faces.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>An array of face IDs to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
-    pub fn face_ids(&self) -> &[::std::string::String] {
-        self.face_ids.as_deref().unwrap_or_default()
+    pub fn face_ids(&self) -> & [::std::string::String] {
+        self.face_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteFacesInput {
@@ -32,7 +33,7 @@ impl DeleteFacesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFacesInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
-    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteFacesInputBuilder {
     /// <p>Collection from which to remove the specific faces.</p>
@@ -43,8 +44,7 @@ impl DeleteFacesInputBuilder {
     }
     /// <p>Collection from which to remove the specific faces.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>Collection from which to remove the specific faces.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,28 @@ impl DeleteFacesInputBuilder {
     /// <p>An array of face IDs to delete.</p>
     pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_ids.unwrap_or_default();
-        v.push(input.into());
-        self.face_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.face_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of face IDs to delete.</p>
-    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.face_ids = input;
-        self
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.face_ids = input; self
     }
     /// <p>An array of face IDs to delete.</p>
-    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.face_ids
     }
     /// Consumes the builder and constructs a [`DeleteFacesInput`](crate::operation::delete_faces::DeleteFacesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_faces::DeleteFacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_faces::DeleteFacesInput {
-            collection_id: self.collection_id,
-            face_ids: self.face_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_faces::DeleteFacesInput {
+                collection_id: self.collection_id
+                ,
+                face_ids: self.face_ids
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A list of <code>ActionTypes</code> associated with a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleSummary {
+pub struct RuleSummary  {
     /// <p>The name of the rule.</p>
     pub name: ::std::string::String,
     /// <p>A unique identifier for the rule.</p>
@@ -15,47 +15,43 @@ pub struct RuleSummary {
     /// <p>The publish status of the rule.</p>
     pub publish_status: crate::types::RulePublishStatus,
     /// <p>A list of ActionTypes associated with a rule.</p>
-    pub action_summaries: ::std::vec::Vec<crate::types::ActionSummary>,
+    pub action_summaries: ::std::vec::Vec::<crate::types::ActionSummary>,
     /// <p>The timestamp for when the rule was created.</p>
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the rule was last updated.</p>
     pub last_updated_time: ::aws_smithy_types::DateTime,
 }
-impl RuleSummary {
+impl  RuleSummary  {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_arn.deref()
+    pub fn rule_arn(&self) -> & str {
+        use std::ops::Deref; self.rule_arn.deref()
     }
     /// <p>The name of the event source.</p>
-    pub fn event_source_name(&self) -> &crate::types::EventSourceName {
+    pub fn event_source_name(&self) -> & crate::types::EventSourceName {
         &self.event_source_name
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> &crate::types::RulePublishStatus {
+    pub fn publish_status(&self) -> & crate::types::RulePublishStatus {
         &self.publish_status
     }
     /// <p>A list of ActionTypes associated with a rule.</p>
-    pub fn action_summaries(&self) -> &[crate::types::ActionSummary] {
-        use std::ops::Deref;
-        self.action_summaries.deref()
+    pub fn action_summaries(&self) -> & [crate::types::ActionSummary] {
+        use std::ops::Deref; self.action_summaries.deref()
     }
     /// <p>The timestamp for when the rule was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The timestamp for when the rule was last updated.</p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
 }
@@ -75,7 +71,7 @@ pub struct RuleSummaryBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_name: ::std::option::Option<crate::types::EventSourceName>,
     pub(crate) publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
-    pub(crate) action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
+    pub(crate) action_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ActionSummary>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -88,8 +84,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +126,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>The name of the event source.</p>
     pub fn set_event_source_name(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
-        self.event_source_name = input;
-        self
+        self.event_source_name = input; self
     }
     /// <p>The name of the event source.</p>
     pub fn get_event_source_name(&self) -> &::std::option::Option<crate::types::EventSourceName> {
@@ -148,8 +140,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>The publish status of the rule.</p>
     pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
-        self.publish_status = input;
-        self
+        self.publish_status = input; self
     }
     /// <p>The publish status of the rule.</p>
     pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
@@ -162,17 +153,16 @@ impl RuleSummaryBuilder {
     /// <p>A list of ActionTypes associated with a rule.</p>
     pub fn action_summaries(mut self, input: crate::types::ActionSummary) -> Self {
         let mut v = self.action_summaries.unwrap_or_default();
-        v.push(input);
-        self.action_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ActionTypes associated with a rule.</p>
-    pub fn set_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>) -> Self {
-        self.action_summaries = input;
-        self
+    pub fn set_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionSummary>>) -> Self {
+        self.action_summaries = input; self
     }
     /// <p>A list of ActionTypes associated with a rule.</p>
-    pub fn get_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    pub fn get_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionSummary>> {
         &self.action_summaries
     }
     /// <p>The timestamp for when the rule was created.</p>
@@ -183,8 +173,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>The timestamp for when the rule was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp for when the rule was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -198,8 +187,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>The timestamp for when the rule was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The timestamp for when the rule was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -216,55 +204,50 @@ impl RuleSummaryBuilder {
     /// - [`created_time`](crate::types::builders::RuleSummaryBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::RuleSummaryBuilder::last_updated_time)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            rule_arn: self.rule_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_arn",
-                    "rule_arn was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            event_source_name: self.event_source_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_source_name",
-                    "event_source_name was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            publish_status: self.publish_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "publish_status",
-                    "publish_status was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            action_summaries: self.action_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_summaries",
-                    "action_summaries was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building RuleSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                rule_arn: self.rule_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_arn", "rule_arn was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                event_source_name: self.event_source_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_source_name", "event_source_name was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                publish_status: self.publish_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("publish_status", "publish_status was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                action_summaries: self.action_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_summaries", "action_summaries was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

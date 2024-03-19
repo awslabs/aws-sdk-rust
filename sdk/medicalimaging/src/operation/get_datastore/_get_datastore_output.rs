@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDatastoreOutput {
+pub struct GetDatastoreOutput  {
     /// <p>The data store properties.</p>
     pub datastore_properties: ::std::option::Option<crate::types::DatastoreProperties>,
     _request_id: Option<String>,
 }
-impl GetDatastoreOutput {
+impl  GetDatastoreOutput  {
     /// <p>The data store properties.</p>
-    pub fn datastore_properties(&self) -> ::std::option::Option<&crate::types::DatastoreProperties> {
+    pub fn datastore_properties(&self) -> ::std::option::Option<& crate::types::DatastoreProperties> {
         self.datastore_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDatastoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`GetDatastoreOutput`](crate::operation::get_datastore::GetDatastoreOutput).
     pub fn builder() -> crate::operation::get_datastore::builders::GetDatastoreOutputBuilder {
@@ -41,27 +41,28 @@ impl GetDatastoreOutputBuilder {
     }
     /// <p>The data store properties.</p>
     pub fn set_datastore_properties(mut self, input: ::std::option::Option<crate::types::DatastoreProperties>) -> Self {
-        self.datastore_properties = input;
-        self
+        self.datastore_properties = input; self
     }
     /// <p>The data store properties.</p>
     pub fn get_datastore_properties(&self) -> &::std::option::Option<crate::types::DatastoreProperties> {
         &self.datastore_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDatastoreOutput`](crate::operation::get_datastore::GetDatastoreOutput).
     pub fn build(self) -> crate::operation::get_datastore::GetDatastoreOutput {
         crate::operation::get_datastore::GetDatastoreOutput {
-            datastore_properties: self.datastore_properties,
+            datastore_properties: self.datastore_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

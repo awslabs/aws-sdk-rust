@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PointInTimeRecovery {
+pub struct PointInTimeRecovery  {
     /// <p>The options are:</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct PointInTimeRecovery {
     /// </ul>
     pub status: crate::types::PointInTimeRecoveryStatus,
 }
-impl PointInTimeRecovery {
+impl  PointInTimeRecovery  {
     /// <p>The options are:</p>
     /// <ul>
     /// <li>
@@ -22,7 +22,7 @@ impl PointInTimeRecovery {
     /// <li>
     /// <p><code>status=DISABLED</code></p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::PointInTimeRecoveryStatus {
+    pub fn status(&self) -> & crate::types::PointInTimeRecoveryStatus {
         &self.status
     }
 }
@@ -60,8 +60,7 @@ impl PointInTimeRecoveryBuilder {
     /// <p><code>status=DISABLED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The options are:</p>
     /// <ul>
@@ -77,13 +76,15 @@ impl PointInTimeRecoveryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::PointInTimeRecoveryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::PointInTimeRecovery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PointInTimeRecovery {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building PointInTimeRecovery",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PointInTimeRecovery {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building PointInTimeRecovery")
+                    )?
+                ,
+            }
+        )
     }
 }
+

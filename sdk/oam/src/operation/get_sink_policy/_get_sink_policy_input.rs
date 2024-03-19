@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSinkPolicyInput {
+pub struct GetSinkPolicyInput  {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
     pub sink_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetSinkPolicyInput {
+impl  GetSinkPolicyInput  {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
-    pub fn sink_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn sink_identifier(&self) -> ::std::option::Option<& str> {
         self.sink_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetSinkPolicyInputBuilder {
     }
     /// <p>The ARN of the sink to retrieve the policy of.</p>
     pub fn set_sink_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_identifier = input;
-        self
+        self.sink_identifier = input; self
     }
     /// <p>The ARN of the sink to retrieve the policy of.</p>
     pub fn get_sink_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.sink_identifier
     }
     /// Consumes the builder and constructs a [`GetSinkPolicyInput`](crate::operation::get_sink_policy::GetSinkPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sink_policy::GetSinkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sink_policy::GetSinkPolicyInput {
-            sink_identifier: self.sink_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sink_policy::GetSinkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sink_policy::GetSinkPolicyInput {
+                sink_identifier: self.sink_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_service_settings::_update_service_settings_inpu
 
 impl UpdateServiceSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_service_settings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_service_settings::UpdateServiceSettingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_service_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateServiceSettings`.
-///
+/// 
 /// <p>Updates the service settings for Linux subscriptions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder,
+                    inner: crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        crate::operation::update_service_settings::UpdateServiceSettingsError,
-    > for UpdateServiceSettingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_service_settings::UpdateServiceSettingsOutput,
+                    crate::operation::update_service_settings::UpdateServiceSettingsError,
+                > for UpdateServiceSettingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
+                        crate::operation::update_service_settings::UpdateServiceSettingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateServiceSettingsFluentBuilder {
     /// Creates a new `UpdateServiceSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateServiceSettingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_service_settings::UpdateServiceSettings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_service_settings::UpdateServiceSettings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        crate::operation::update_service_settings::UpdateServiceSettingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_service_settings::UpdateServiceSettings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_service_settings::UpdateServiceSettings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_service_settings::UpdateServiceSettingsOutput, crate::operation::update_service_settings::UpdateServiceSettingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
     pub fn linux_subscriptions_discovery(mut self, input: crate::types::LinuxSubscriptionsDiscovery) -> Self {
         self.inner = self.inner.linux_subscriptions_discovery(input);
@@ -128,10 +115,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    pub fn set_linux_subscriptions_discovery_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,
-    ) -> Self {
+    pub fn set_linux_subscriptions_discovery_settings(mut self, input: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>) -> Self {
         self.inner = self.inner.set_linux_subscriptions_discovery_settings(input);
         self
     }
@@ -154,3 +138,4 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner.get_allow_update()
     }
 }
+

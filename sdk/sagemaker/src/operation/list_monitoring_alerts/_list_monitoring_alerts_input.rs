@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitoringAlertsInput {
+pub struct ListMonitoringAlertsInput  {
     /// <p>The name of a monitoring schedule.</p>
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
@@ -10,13 +10,13 @@ pub struct ListMonitoringAlertsInput {
     /// <p>The maximum number of results to display. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMonitoringAlertsInput {
+impl  ListMonitoringAlertsInput  {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
@@ -48,8 +48,7 @@ impl ListMonitoringAlertsInputBuilder {
     }
     /// <p>The name of a monitoring schedule.</p>
     pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+        self.monitoring_schedule_name = input; self
     }
     /// <p>The name of a monitoring schedule.</p>
     pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListMonitoringAlertsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl ListMonitoringAlertsInputBuilder {
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput {
-            monitoring_schedule_name: self.monitoring_schedule_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput {
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

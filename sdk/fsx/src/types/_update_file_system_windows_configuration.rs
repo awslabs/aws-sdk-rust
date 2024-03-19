@@ -3,7 +3,7 @@
 /// <p>Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFileSystemWindowsConfiguration {
+pub struct UpdateFileSystemWindowsConfiguration  {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
@@ -19,13 +19,13 @@ pub struct UpdateFileSystemWindowsConfiguration {
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
 }
-impl UpdateFileSystemWindowsConfiguration {
+impl  UpdateFileSystemWindowsConfiguration  {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<& str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
-    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<& str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
@@ -37,17 +37,15 @@ impl UpdateFileSystemWindowsConfiguration {
         self.throughput_capacity
     }
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
-    pub fn self_managed_active_directory_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<& crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
         self.self_managed_active_directory_configuration.as_ref()
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
-    pub fn audit_log_configuration(&self) -> ::std::option::Option<&crate::types::WindowsAuditLogCreateConfiguration> {
+    pub fn audit_log_configuration(&self) -> ::std::option::Option<& crate::types::WindowsAuditLogCreateConfiguration> {
         self.audit_log_configuration.as_ref()
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
-    pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
+    pub fn disk_iops_configuration(&self) -> ::std::option::Option<& crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
 }
@@ -78,8 +76,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
     pub fn set_weekly_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = input;
-        self
+        self.weekly_maintenance_start_time = input; self
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_automatic_backup_start_time = input;
-        self
+        self.daily_automatic_backup_start_time = input; self
     }
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
     pub fn set_automatic_backup_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automatic_backup_retention_days = input;
-        self
+        self.automatic_backup_retention_days = input; self
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
     pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
@@ -120,8 +115,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request if there is an existing throughput capacity update request in progress. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput Capacity</a>.</p>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput_capacity = input;
-        self
+        self.throughput_capacity = input; self
     }
     /// <p>Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request if there is an existing throughput capacity update request in progress. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput Capacity</a>.</p>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
@@ -133,17 +127,11 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
         self
     }
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
-    pub fn set_self_managed_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
-    ) -> Self {
-        self.self_managed_active_directory_configuration = input;
-        self
+    pub fn set_self_managed_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>) -> Self {
+        self.self_managed_active_directory_configuration = input; self
     }
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
-    pub fn get_self_managed_active_directory_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+    pub fn get_self_managed_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
         &self.self_managed_active_directory_configuration
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
@@ -153,8 +141,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
     pub fn set_audit_log_configuration(mut self, input: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>) -> Self {
-        self.audit_log_configuration = input;
-        self
+        self.audit_log_configuration = input; self
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
     pub fn get_audit_log_configuration(&self) -> &::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration> {
@@ -167,8 +154,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
-        self.disk_iops_configuration = input;
-        self
+        self.disk_iops_configuration = input; self
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
@@ -177,13 +163,21 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     /// Consumes the builder and constructs a [`UpdateFileSystemWindowsConfiguration`](crate::types::UpdateFileSystemWindowsConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemWindowsConfiguration {
         crate::types::UpdateFileSystemWindowsConfiguration {
-            weekly_maintenance_start_time: self.weekly_maintenance_start_time,
-            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time,
-            automatic_backup_retention_days: self.automatic_backup_retention_days,
-            throughput_capacity: self.throughput_capacity,
-            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration,
-            audit_log_configuration: self.audit_log_configuration,
-            disk_iops_configuration: self.disk_iops_configuration,
+            weekly_maintenance_start_time: self.weekly_maintenance_start_time
+            ,
+            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time
+            ,
+            automatic_backup_retention_days: self.automatic_backup_retention_days
+            ,
+            throughput_capacity: self.throughput_capacity
+            ,
+            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration
+            ,
+            audit_log_configuration: self.audit_log_configuration
+            ,
+            disk_iops_configuration: self.disk_iops_configuration
+            ,
         }
     }
 }
+

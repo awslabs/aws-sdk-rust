@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUseCases`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`integration_association_id(impl Into<String>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::set_integration_association_id):<br>required: **true**<br><p>The identifier for the integration association.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListUseCasesOutput`](crate::operation::list_use_cases::ListUseCasesOutput) with field(s):
+                            /// - On success, responds with [`ListUseCasesOutput`](crate::operation::list_use_cases::ListUseCasesOutput) with field(s):
     ///   - [`use_case_summary_list(Option<Vec::<UseCase>>)`](crate::operation::list_use_cases::ListUseCasesOutput::use_case_summary_list): <p>The use cases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_use_cases::ListUseCasesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListUseCasesError>`](crate::operation::list_use_cases::ListUseCasesError)
+                            /// - On failure, responds with [`SdkError<ListUseCasesError>`](crate::operation::list_use_cases::ListUseCasesError)
     pub fn list_use_cases(&self) -> crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder {
-        crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

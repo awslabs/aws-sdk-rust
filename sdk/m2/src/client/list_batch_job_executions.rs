@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBatchJobExecutions`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to control the number of batch job executions displayed in the list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of batch job executions to return.</p><br>
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`status(BatchJobExecutionStatus)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::status) / [`set_status(Option<BatchJobExecutionStatus>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the batch job executions.</p><br>
     ///   - [`started_after(DateTime)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::started_after) / [`set_started_after(Option<DateTime>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::set_started_after):<br>required: **false**<br><p>The time after which the batch job executions started.</p><br>
     ///   - [`started_before(DateTime)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::started_before) / [`set_started_before(Option<DateTime>)`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::set_started_before):<br>required: **false**<br><p>The time before the batch job executions started.</p><br>
-    /// - On success, responds with [`ListBatchJobExecutionsOutput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListBatchJobExecutionsOutput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput) with field(s):
     ///   - [`batch_job_executions(Vec::<BatchJobExecutionSummary>)`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput::batch_job_executions): <p>Returns a list of batch job executions for an application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
-    /// - On failure, responds with [`SdkError<ListBatchJobExecutionsError>`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListBatchJobExecutionsError>`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsError)
     pub fn list_batch_job_executions(&self) -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder {
-        crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterWorkspaceDirectoryInput {
+pub struct DeregisterWorkspaceDirectoryInput  {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterWorkspaceDirectoryInput {
+impl  DeregisterWorkspaceDirectoryInput  {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeregisterWorkspaceDirectoryInputBuilder {
     }
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`DeregisterWorkspaceDirectoryInput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput {
-            directory_id: self.directory_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput {
+                directory_id: self.directory_id
+                ,
+            }
+        )
     }
 }
+

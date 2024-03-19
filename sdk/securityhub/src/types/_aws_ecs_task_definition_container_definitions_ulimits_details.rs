@@ -3,7 +3,7 @@
 /// <p>A ulimit to set in the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails  {
     /// <p>The hard limit for the ulimit type.</p>
     pub hard_limit: ::std::option::Option<i32>,
     /// <p>The type of the ulimit. Valid values are as follows:</p>
@@ -43,7 +43,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The soft limit for the ulimit type.</p>
     pub soft_limit: ::std::option::Option<i32>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails  {
     /// <p>The hard limit for the ulimit type.</p>
     pub fn hard_limit(&self) -> ::std::option::Option<i32> {
         self.hard_limit
@@ -81,7 +81,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <li>
     /// <p><code>stack</code></p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The soft limit for the ulimit type.</p>
@@ -112,8 +112,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The hard limit for the ulimit type.</p>
     pub fn set_hard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hard_limit = input;
-        self
+        self.hard_limit = input; self
     }
     /// <p>The hard limit for the ulimit type.</p>
     pub fn get_hard_limit(&self) -> &::std::option::Option<i32> {
@@ -190,8 +189,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     /// <p><code>stack</code></p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
@@ -236,8 +234,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The soft limit for the ulimit type.</p>
     pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.soft_limit = input;
-        self
+        self.soft_limit = input; self
     }
     /// <p>The soft limit for the ulimit type.</p>
     pub fn get_soft_limit(&self) -> &::std::option::Option<i32> {
@@ -246,9 +243,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
-            hard_limit: self.hard_limit,
-            name: self.name,
-            soft_limit: self.soft_limit,
+            hard_limit: self.hard_limit
+            ,
+            name: self.name
+            ,
+            soft_limit: self.soft_limit
+            ,
         }
     }
 }
+

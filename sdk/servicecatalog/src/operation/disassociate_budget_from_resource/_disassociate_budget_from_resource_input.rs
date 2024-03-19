@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateBudgetFromResourceInput {
+pub struct DisassociateBudgetFromResourceInput  {
     /// <p>The name of the budget you want to disassociate.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateBudgetFromResourceInput {
+impl  DisassociateBudgetFromResourceInput  {
     /// <p>The name of the budget you want to disassociate.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateBudgetFromResourceInputBuilder {
     }
     /// <p>The name of the budget you want to disassociate.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>The name of the budget you want to disassociate.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DisassociateBudgetFromResourceInputBuilder {
     }
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`DisassociateBudgetFromResourceInput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput {
-            budget_name: self.budget_name,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput {
+                budget_name: self.budget_name
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

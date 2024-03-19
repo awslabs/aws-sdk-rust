@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJobUnlockCodeOutput {
+pub struct GetJobUnlockCodeOutput  {
     /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
     pub unlock_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetJobUnlockCodeOutput {
+impl  GetJobUnlockCodeOutput  {
     /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
-    pub fn unlock_code(&self) -> ::std::option::Option<&str> {
+    pub fn unlock_code(&self) -> ::std::option::Option<& str> {
         self.unlock_code.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetJobUnlockCodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetJobUnlockCodeOutput {
     /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeOutput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput).
     pub fn builder() -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeOutputBuilder {
@@ -40,27 +40,28 @@ impl GetJobUnlockCodeOutputBuilder {
     }
     /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
     pub fn set_unlock_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unlock_code = input;
-        self
+        self.unlock_code = input; self
     }
     /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
     pub fn get_unlock_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.unlock_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetJobUnlockCodeOutput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput).
     pub fn build(self) -> crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput {
         crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput {
-            unlock_code: self.unlock_code,
+            unlock_code: self.unlock_code
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

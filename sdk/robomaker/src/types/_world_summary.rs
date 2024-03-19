@@ -3,7 +3,7 @@
 /// <p>Information about a world.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorldSummary {
+pub struct WorldSummary  {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
@@ -13,21 +13,21 @@ pub struct WorldSummary {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: ::std::option::Option<::std::string::String>,
 }
-impl WorldSummary {
+impl  WorldSummary  {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-    pub fn generation_job(&self) -> ::std::option::Option<&str> {
+    pub fn generation_job(&self) -> ::std::option::Option<& str> {
         self.generation_job.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> ::std::option::Option<&str> {
+    pub fn template(&self) -> ::std::option::Option<& str> {
         self.template.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl WorldSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl WorldSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +81,7 @@ impl WorldSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
     pub fn set_generation_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_job = input;
-        self
+        self.generation_job = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
     pub fn get_generation_job(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl WorldSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl WorldSummaryBuilder {
     /// Consumes the builder and constructs a [`WorldSummary`](crate::types::WorldSummary).
     pub fn build(self) -> crate::types::WorldSummary {
         crate::types::WorldSummary {
-            arn: self.arn,
-            created_at: self.created_at,
-            generation_job: self.generation_job,
-            template: self.template,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            generation_job: self.generation_job
+            ,
+            template: self.template
+            ,
         }
     }
 }
+

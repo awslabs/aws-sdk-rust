@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProtectedResourcesByBackupVaultInput {
+pub struct ListProtectedResourcesByBackupVaultInput  {
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
@@ -12,17 +12,17 @@ pub struct ListProtectedResourcesByBackupVaultInput {
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListProtectedResourcesByBackupVaultInput {
+impl  ListProtectedResourcesByBackupVaultInput  {
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
-    pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_account_id(&self) -> ::std::option::Option<& str> {
         self.backup_vault_account_id.as_deref()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -55,8 +55,7 @@ impl ListProtectedResourcesByBackupVaultInputBuilder {
     }
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListProtectedResourcesByBackupVaultInputBuilder {
     }
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_account_id = input;
-        self
+        self.backup_vault_account_id = input; self
     }
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListProtectedResourcesByBackupVaultInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,27 +94,26 @@ impl ListProtectedResourcesByBackupVaultInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProtectedResourcesByBackupVaultInput`](crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput {
-                backup_vault_name: self.backup_vault_name,
-                backup_vault_account_id: self.backup_vault_account_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                backup_vault_name: self.backup_vault_name
+                ,
+                backup_vault_account_id: self.backup_vault_account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

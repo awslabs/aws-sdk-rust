@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetResourcePolicies`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::set_resource_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
-    /// - On success, responds with [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput) with field(s):
+                            /// - On success, responds with [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     ///   - [`policies(Option<Vec::<GetResourcePoliciesResponseEntry>>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::policies): <p>An array of the <code>Policy</code> object.</p>
-    /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::operation::get_resource_policies::GetResourcePoliciesError)
+                            /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::operation::get_resource_policies::GetResourcePoliciesError)
     pub fn get_resource_policies(&self) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

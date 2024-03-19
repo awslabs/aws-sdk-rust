@@ -3,7 +3,7 @@
 /// <p>Specifies the type of message that triggers a bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvokedBy {
+pub struct InvokedBy  {
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct InvokedBy {
     /// </ul>
     pub targeted_messages: crate::types::TargetedMessages,
 }
-impl InvokedBy {
+impl  InvokedBy  {
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl InvokedBy {
     /// <li>
     /// <p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
-    pub fn standard_messages(&self) -> &crate::types::StandardMessages {
+    pub fn standard_messages(&self) -> & crate::types::StandardMessages {
         &self.standard_messages
     }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
@@ -47,7 +47,7 @@ impl InvokedBy {
     /// <li>
     /// <p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
-    pub fn targeted_messages(&self) -> &crate::types::TargetedMessages {
+    pub fn targeted_messages(&self) -> & crate::types::TargetedMessages {
         &self.targeted_messages
     }
 }
@@ -94,8 +94,7 @@ impl InvokedByBuilder {
     /// <p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
     pub fn set_standard_messages(mut self, input: ::std::option::Option<crate::types::StandardMessages>) -> Self {
-        self.standard_messages = input;
-        self
+        self.standard_messages = input; self
     }
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
@@ -131,8 +130,7 @@ impl InvokedByBuilder {
     /// <p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
     pub fn set_targeted_messages(mut self, input: ::std::option::Option<crate::types::TargetedMessages>) -> Self {
-        self.targeted_messages = input;
-        self
+        self.targeted_messages = input; self
     }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
@@ -149,19 +147,20 @@ impl InvokedByBuilder {
     /// - [`standard_messages`](crate::types::builders::InvokedByBuilder::standard_messages)
     /// - [`targeted_messages`](crate::types::builders::InvokedByBuilder::targeted_messages)
     pub fn build(self) -> ::std::result::Result<crate::types::InvokedBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InvokedBy {
-            standard_messages: self.standard_messages.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "standard_messages",
-                    "standard_messages was not specified but it is required when building InvokedBy",
-                )
-            })?,
-            targeted_messages: self.targeted_messages.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "targeted_messages",
-                    "targeted_messages was not specified but it is required when building InvokedBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InvokedBy {
+                standard_messages: self.standard_messages
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("standard_messages", "standard_messages was not specified but it is required when building InvokedBy")
+                    )?
+                ,
+                targeted_messages: self.targeted_messages
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("targeted_messages", "targeted_messages was not specified but it is required when building InvokedBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

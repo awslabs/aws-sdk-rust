@@ -3,7 +3,7 @@
 /// <p>Details of the response plan that are used when creating an incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponsePlanSummary {
+pub struct ResponsePlanSummary  {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the response plan. This can't include spaces.</p>
@@ -11,19 +11,17 @@ pub struct ResponsePlanSummary {
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl ResponsePlanSummary {
+impl  ResponsePlanSummary  {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl ResponsePlanSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ResponsePlanSummaryBuilder {
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl ResponsePlanSummaryBuilder {
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl ResponsePlanSummaryBuilder {
     /// - [`arn`](crate::types::builders::ResponsePlanSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::ResponsePlanSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponsePlanSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponsePlanSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ResponsePlanSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ResponsePlanSummary",
-                )
-            })?,
-            display_name: self.display_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponsePlanSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ResponsePlanSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ResponsePlanSummary")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+            }
+        )
     }
 }
+

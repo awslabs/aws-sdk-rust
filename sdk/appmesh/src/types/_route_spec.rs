@@ -3,7 +3,7 @@
 /// <p>An object that represents a route specification. Specify one route type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteSpec {
+pub struct RouteSpec  {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP route.</p>
@@ -15,25 +15,25 @@ pub struct RouteSpec {
     /// <p>An object that represents the specification of a gRPC route.</p>
     pub grpc_route: ::std::option::Option<crate::types::GrpcRoute>,
 }
-impl RouteSpec {
+impl  RouteSpec  {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>An object that represents the specification of an HTTP route.</p>
-    pub fn http_route(&self) -> ::std::option::Option<&crate::types::HttpRoute> {
+    pub fn http_route(&self) -> ::std::option::Option<& crate::types::HttpRoute> {
         self.http_route.as_ref()
     }
     /// <p>An object that represents the specification of a TCP route.</p>
-    pub fn tcp_route(&self) -> ::std::option::Option<&crate::types::TcpRoute> {
+    pub fn tcp_route(&self) -> ::std::option::Option<& crate::types::TcpRoute> {
         self.tcp_route.as_ref()
     }
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
-    pub fn http2_route(&self) -> ::std::option::Option<&crate::types::HttpRoute> {
+    pub fn http2_route(&self) -> ::std::option::Option<& crate::types::HttpRoute> {
         self.http2_route.as_ref()
     }
     /// <p>An object that represents the specification of a gRPC route.</p>
-    pub fn grpc_route(&self) -> ::std::option::Option<&crate::types::GrpcRoute> {
+    pub fn grpc_route(&self) -> ::std::option::Option<& crate::types::GrpcRoute> {
         self.grpc_route.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl RouteSpecBuilder {
     }
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl RouteSpecBuilder {
     }
     /// <p>An object that represents the specification of an HTTP route.</p>
     pub fn set_http_route(mut self, input: ::std::option::Option<crate::types::HttpRoute>) -> Self {
-        self.http_route = input;
-        self
+        self.http_route = input; self
     }
     /// <p>An object that represents the specification of an HTTP route.</p>
     pub fn get_http_route(&self) -> &::std::option::Option<crate::types::HttpRoute> {
@@ -90,8 +88,7 @@ impl RouteSpecBuilder {
     }
     /// <p>An object that represents the specification of a TCP route.</p>
     pub fn set_tcp_route(mut self, input: ::std::option::Option<crate::types::TcpRoute>) -> Self {
-        self.tcp_route = input;
-        self
+        self.tcp_route = input; self
     }
     /// <p>An object that represents the specification of a TCP route.</p>
     pub fn get_tcp_route(&self) -> &::std::option::Option<crate::types::TcpRoute> {
@@ -104,8 +101,7 @@ impl RouteSpecBuilder {
     }
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
     pub fn set_http2_route(mut self, input: ::std::option::Option<crate::types::HttpRoute>) -> Self {
-        self.http2_route = input;
-        self
+        self.http2_route = input; self
     }
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
     pub fn get_http2_route(&self) -> &::std::option::Option<crate::types::HttpRoute> {
@@ -118,8 +114,7 @@ impl RouteSpecBuilder {
     }
     /// <p>An object that represents the specification of a gRPC route.</p>
     pub fn set_grpc_route(mut self, input: ::std::option::Option<crate::types::GrpcRoute>) -> Self {
-        self.grpc_route = input;
-        self
+        self.grpc_route = input; self
     }
     /// <p>An object that represents the specification of a gRPC route.</p>
     pub fn get_grpc_route(&self) -> &::std::option::Option<crate::types::GrpcRoute> {
@@ -128,11 +123,17 @@ impl RouteSpecBuilder {
     /// Consumes the builder and constructs a [`RouteSpec`](crate::types::RouteSpec).
     pub fn build(self) -> crate::types::RouteSpec {
         crate::types::RouteSpec {
-            priority: self.priority,
-            http_route: self.http_route,
-            tcp_route: self.tcp_route,
-            http2_route: self.http2_route,
-            grpc_route: self.grpc_route,
+            priority: self.priority
+            ,
+            http_route: self.http_route
+            ,
+            tcp_route: self.tcp_route
+            ,
+            http2_route: self.http2_route
+            ,
+            grpc_route: self.grpc_route
+            ,
         }
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>Input for the OptInPhoneNumber action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct OptInPhoneNumberInput {
+pub struct OptInPhoneNumberInput  {
     /// <p>The phone number to opt in. Use E.164 format.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
-impl OptInPhoneNumberInput {
+impl  OptInPhoneNumberInput  {
     /// <p>The phone number to opt in. Use E.164 format.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
 }
-impl ::std::fmt::Debug for OptInPhoneNumberInput {
+impl  ::std::fmt::Debug for OptInPhoneNumberInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OptInPhoneNumberInput");
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
@@ -42,20 +42,20 @@ impl OptInPhoneNumberInputBuilder {
     }
     /// <p>The phone number to opt in. Use E.164 format.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number to opt in. Use E.164 format.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number
     }
     /// Consumes the builder and constructs a [`OptInPhoneNumberInput`](crate::operation::opt_in_phone_number::OptInPhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::opt_in_phone_number::OptInPhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::opt_in_phone_number::OptInPhoneNumberInput {
-            phone_number: self.phone_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::opt_in_phone_number::OptInPhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::opt_in_phone_number::OptInPhoneNumberInput {
+                phone_number: self.phone_number
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for OptInPhoneNumberInputBuilder {
@@ -65,3 +65,4 @@ impl ::std::fmt::Debug for OptInPhoneNumberInputBuilder {
         formatter.finish()
     }
 }
+

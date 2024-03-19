@@ -5,54 +5,50 @@ pub use crate::operation::add_attributes_to_findings::_add_attributes_to_finding
 
 impl AddAttributesToFindingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_attributes_to_findings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_attributes_to_findings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddAttributesToFindings`.
-///
+/// 
 /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddAttributesToFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder,
+                    inner: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-    > for AddAttributesToFindingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
+                    crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
+                > for AddAttributesToFindingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
+                        crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddAttributesToFindingsFluentBuilder {
     /// Creates a new `AddAttributesToFindings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl AddAttributesToFindingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_attributes_to_findings::AddAttributesToFindings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_attributes_to_findings::AddAttributesToFindings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_attributes_to_findings::AddAttributesToFindings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_attributes_to_findings::AddAttributesToFindings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput, crate::operation::add_attributes_to_findings::AddAttributesToFindingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `findingArns`.
     ///
     /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
@@ -118,12 +105,12 @@ impl AddAttributesToFindingsFluentBuilder {
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_finding_arns()
     }
     /// Appends an item to `attributes`.
@@ -136,12 +123,13 @@ impl AddAttributesToFindingsFluentBuilder {
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         self.inner.get_attributes()
     }
 }
+

@@ -7,19 +7,19 @@
 /// <p>In an <code>UpdateByteMatchSet</code> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a <code>ByteMatchTuple</code> and includes the settings for the <code>ByteMatchTuple</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ByteMatchSetUpdate {
+pub struct ByteMatchSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
     pub action: crate::types::ChangeAction,
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
     pub byte_match_tuple: ::std::option::Option<crate::types::ByteMatchTuple>,
 }
-impl ByteMatchSetUpdate {
+impl  ByteMatchSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
-    pub fn action(&self) -> &crate::types::ChangeAction {
+    pub fn action(&self) -> & crate::types::ChangeAction {
         &self.action
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
-    pub fn byte_match_tuple(&self) -> ::std::option::Option<&crate::types::ByteMatchTuple> {
+    pub fn byte_match_tuple(&self) -> ::std::option::Option<& crate::types::ByteMatchTuple> {
         self.byte_match_tuple.as_ref()
     }
 }
@@ -46,8 +46,7 @@ impl ByteMatchSetUpdateBuilder {
     }
     /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
@@ -61,8 +60,7 @@ impl ByteMatchSetUpdateBuilder {
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
     pub fn set_byte_match_tuple(mut self, input: ::std::option::Option<crate::types::ByteMatchTuple>) -> Self {
-        self.byte_match_tuple = input;
-        self
+        self.byte_match_tuple = input; self
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
     pub fn get_byte_match_tuple(&self) -> &::std::option::Option<crate::types::ByteMatchTuple> {
@@ -72,14 +70,17 @@ impl ByteMatchSetUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::ByteMatchSetUpdateBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchSetUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ByteMatchSetUpdate {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building ByteMatchSetUpdate",
-                )
-            })?,
-            byte_match_tuple: self.byte_match_tuple,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ByteMatchSetUpdate {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building ByteMatchSetUpdate")
+                    )?
+                ,
+                byte_match_tuple: self.byte_match_tuple
+                ,
+            }
+        )
     }
 }
+

@@ -22,11 +22,7 @@ impl Member {
     /// Tries to convert the enum instance into [`GroupIdentifier`](crate::types::Member::GroupIdentifier), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_group_identifier(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Member::GroupIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Member::GroupIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GroupIdentifier`](crate::types::Member::GroupIdentifier).
     pub fn is_group_identifier(&self) -> bool {
@@ -35,11 +31,7 @@ impl Member {
     /// Tries to convert the enum instance into [`UserIdentifier`](crate::types::Member::UserIdentifier), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user_identifier(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Member::UserIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Member::UserIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UserIdentifier`](crate::types::Member::UserIdentifier).
     pub fn is_user_identifier(&self) -> bool {
@@ -50,3 +42,4 @@ impl Member {
         matches!(self, Self::Unknown)
     }
 }
+

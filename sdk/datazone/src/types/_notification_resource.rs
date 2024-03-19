@@ -3,7 +3,7 @@
 /// <p>The details of the resource mentioned in a notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationResource {
+pub struct NotificationResource  {
     /// <p>The type of the resource mentioned in a notification.</p>
     pub r#type: crate::types::NotificationResourceType,
     /// <p>The ID of the resource mentioned in a notification.</p>
@@ -11,18 +11,17 @@ pub struct NotificationResource {
     /// <p>The name of the resource mentioned in a notification.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl NotificationResource {
+impl  NotificationResource  {
     /// <p>The type of the resource mentioned in a notification.</p>
-    pub fn r#type(&self) -> &crate::types::NotificationResourceType {
+    pub fn r#type(&self) -> & crate::types::NotificationResourceType {
         &self.r#type
     }
     /// <p>The ID of the resource mentioned in a notification.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the resource mentioned in a notification.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl NotificationResourceBuilder {
     }
     /// <p>The type of the resource mentioned in a notification.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotificationResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the resource mentioned in a notification.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NotificationResourceType> {
@@ -65,8 +63,7 @@ impl NotificationResourceBuilder {
     }
     /// <p>The ID of the resource mentioned in a notification.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource mentioned in a notification.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl NotificationResourceBuilder {
     }
     /// <p>The name of the resource mentioned in a notification.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource mentioned in a notification.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl NotificationResourceBuilder {
     /// - [`r#type`](crate::types::builders::NotificationResourceBuilder::r#type)
     /// - [`id`](crate::types::builders::NotificationResourceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationResource {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building NotificationResource",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building NotificationResource",
-                )
-            })?,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationResource {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building NotificationResource")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building NotificationResource")
+                    )?
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

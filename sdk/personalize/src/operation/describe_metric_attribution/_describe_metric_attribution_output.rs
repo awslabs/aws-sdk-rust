@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMetricAttributionOutput {
+pub struct DescribeMetricAttributionOutput  {
     /// <p>The details of the metric attribution.</p>
     pub metric_attribution: ::std::option::Option<crate::types::MetricAttribution>,
     _request_id: Option<String>,
 }
-impl DescribeMetricAttributionOutput {
+impl  DescribeMetricAttributionOutput  {
     /// <p>The details of the metric attribution.</p>
-    pub fn metric_attribution(&self) -> ::std::option::Option<&crate::types::MetricAttribution> {
+    pub fn metric_attribution(&self) -> ::std::option::Option<& crate::types::MetricAttribution> {
         self.metric_attribution.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMetricAttributionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMetricAttributionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput).
     pub fn builder() -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeMetricAttributionOutputBuilder {
     }
     /// <p>The details of the metric attribution.</p>
     pub fn set_metric_attribution(mut self, input: ::std::option::Option<crate::types::MetricAttribution>) -> Self {
-        self.metric_attribution = input;
-        self
+        self.metric_attribution = input; self
     }
     /// <p>The details of the metric attribution.</p>
     pub fn get_metric_attribution(&self) -> &::std::option::Option<crate::types::MetricAttribution> {
         &self.metric_attribution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput).
     pub fn build(self) -> crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput {
         crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput {
-            metric_attribution: self.metric_attribution,
+            metric_attribution: self.metric_attribution
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

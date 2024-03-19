@@ -3,13 +3,13 @@
 /// <p>Id of the engine version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EngineVersion {
+pub struct EngineVersion  {
     /// <p>Id for the version.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl EngineVersion {
+impl  EngineVersion  {
     /// <p>Id for the version.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EngineVersionBuilder {
     }
     /// <p>Id for the version.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Id for the version.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EngineVersionBuilder {
     }
     /// Consumes the builder and constructs a [`EngineVersion`](crate::types::EngineVersion).
     pub fn build(self) -> crate::types::EngineVersion {
-        crate::types::EngineVersion { name: self.name }
+        crate::types::EngineVersion {
+            name: self.name
+            ,
+        }
     }
 }
+

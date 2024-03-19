@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserInput {
+pub struct CreateUserInput  {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p><note>
     /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
@@ -18,7 +18,7 @@ pub struct CreateUserInput {
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when they log in.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
-    pub home_directory_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,
+    pub home_directory_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p><note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
     /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -45,22 +45,22 @@ pub struct CreateUserInput {
     /// </ul>
     pub ssh_public_key_body: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateUserInput {
+impl  CreateUserInput  {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p><note>
     /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
     /// </note>
-    pub fn home_directory(&self) -> ::std::option::Option<&str> {
+    pub fn home_directory(&self) -> ::std::option::Option<& str> {
         self.home_directory.as_deref()
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p><note>
     /// <p>If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.</p>
     /// </note>
-    pub fn home_directory_type(&self) -> ::std::option::Option<&crate::types::HomeDirectoryType> {
+    pub fn home_directory_type(&self) -> ::std::option::Option<& crate::types::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
@@ -69,10 +69,11 @@ impl CreateUserInput {
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when they log in.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_directory_mappings.is_none()`.
-    pub fn home_directory_mappings(&self) -> &[crate::types::HomeDirectoryMapEntry] {
-        self.home_directory_mappings.as_deref().unwrap_or_default()
+    pub fn home_directory_mappings(&self) -> & [crate::types::HomeDirectoryMapEntry] {
+        self.home_directory_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p><note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
@@ -80,19 +81,19 @@ impl CreateUserInput {
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
-    pub fn posix_profile(&self) -> ::std::option::Option<&crate::types::PosixProfile> {
+    pub fn posix_profile(&self) -> ::std::option::Option<& crate::types::PosixProfile> {
         self.posix_profile.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
@@ -106,17 +107,18 @@ impl CreateUserInput {
     /// <li>
     /// <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
-    pub fn ssh_public_key_body(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key_body(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key_body.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -133,13 +135,13 @@ impl CreateUserInput {
 pub struct CreateUserInputBuilder {
     pub(crate) home_directory: ::std::option::Option<::std::string::String>,
     pub(crate) home_directory_type: ::std::option::Option<crate::types::HomeDirectoryType>,
-    pub(crate) home_directory_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,
+    pub(crate) home_directory_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::HomeDirectoryMapEntry>>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) posix_profile: ::std::option::Option<crate::types::PosixProfile>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_body: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInputBuilder {
@@ -156,8 +158,7 @@ impl CreateUserInputBuilder {
     /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
     /// </note>
     pub fn set_home_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_directory = input;
-        self
+        self.home_directory = input; self
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p><note>
@@ -177,8 +178,7 @@ impl CreateUserInputBuilder {
     /// <p>If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.</p>
     /// </note>
     pub fn set_home_directory_type(mut self, input: ::std::option::Option<crate::types::HomeDirectoryType>) -> Self {
-        self.home_directory_type = input;
-        self
+        self.home_directory_type = input; self
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p><note>
     /// <p>If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.</p>
@@ -198,9 +198,9 @@ impl CreateUserInputBuilder {
     /// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
     pub fn home_directory_mappings(mut self, input: crate::types::HomeDirectoryMapEntry) -> Self {
         let mut v = self.home_directory_mappings.unwrap_or_default();
-        v.push(input);
-        self.home_directory_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.home_directory_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
@@ -208,9 +208,8 @@ impl CreateUserInputBuilder {
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when they log in.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
-    pub fn set_home_directory_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>) -> Self {
-        self.home_directory_mappings = input;
-        self
+    pub fn set_home_directory_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HomeDirectoryMapEntry>>) -> Self {
+        self.home_directory_mappings = input; self
     }
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
@@ -218,7 +217,7 @@ impl CreateUserInputBuilder {
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when they log in.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
-    pub fn get_home_directory_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>> {
+    pub fn get_home_directory_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HomeDirectoryMapEntry>> {
         &self.home_directory_mappings
     }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p><note>
@@ -238,8 +237,7 @@ impl CreateUserInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p><note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
@@ -257,8 +255,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn set_posix_profile(mut self, input: ::std::option::Option<crate::types::PosixProfile>) -> Self {
-        self.posix_profile = input;
-        self
+        self.posix_profile = input; self
     }
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn get_posix_profile(&self) -> &::std::option::Option<crate::types::PosixProfile> {
@@ -272,8 +269,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +283,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +316,7 @@ impl CreateUserInputBuilder {
     /// <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p></li>
     /// </ul>
     pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_body = input;
-        self
+        self.ssh_public_key_body = input; self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
     /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
@@ -345,17 +339,16 @@ impl CreateUserInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
@@ -366,8 +359,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,17 +367,30 @@ impl CreateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
-            home_directory: self.home_directory,
-            home_directory_type: self.home_directory_type,
-            home_directory_mappings: self.home_directory_mappings,
-            policy: self.policy,
-            posix_profile: self.posix_profile,
-            role: self.role,
-            server_id: self.server_id,
-            ssh_public_key_body: self.ssh_public_key_body,
-            tags: self.tags,
-            user_name: self.user_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_user::CreateUserInput {
+                home_directory: self.home_directory
+                ,
+                home_directory_type: self.home_directory_type
+                ,
+                home_directory_mappings: self.home_directory_mappings
+                ,
+                policy: self.policy
+                ,
+                posix_profile: self.posix_profile
+                ,
+                role: self.role
+                ,
+                server_id: self.server_id
+                ,
+                ssh_public_key_body: self.ssh_public_key_body
+                ,
+                tags: self.tags
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

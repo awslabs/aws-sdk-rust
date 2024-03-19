@@ -3,7 +3,7 @@
 /// <p><b>[Custom snapshot policies that target instances only]</b> Information about pre and/or post scripts for a snapshot lifecycle policy that targets instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html"> Automating application-consistent snapshots with pre and post scripts</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Script {
+pub struct Script  {
     /// <p>Indicate which scripts Amazon Data Lifecycle Manager should run on target instances. Pre scripts run before Amazon Data Lifecycle Manager initiates snapshot creation. Post scripts run after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct Script {
     /// </ul>
     /// <p>If you are automating VSS Backups, omit this parameter.</p>
     /// <p>Default: PRE and POST</p>
-    pub stages: ::std::option::Option<::std::vec::Vec<crate::types::StageValues>>,
+    pub stages: ::std::option::Option<::std::vec::Vec::<crate::types::StageValues>>,
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
     /// <li>
@@ -60,7 +60,7 @@ pub struct Script {
     /// <p>Default: 0</p>
     pub maximum_retry_count: ::std::option::Option<i32>,
 }
-impl Script {
+impl  Script  {
     /// <p>Indicate which scripts Amazon Data Lifecycle Manager should run on target instances. Pre scripts run before Amazon Data Lifecycle Manager initiates snapshot creation. Post scripts run after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <ul>
     /// <li>
@@ -72,10 +72,11 @@ impl Script {
     /// </ul>
     /// <p>If you are automating VSS Backups, omit this parameter.</p>
     /// <p>Default: PRE and POST</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages.is_none()`.
-    pub fn stages(&self) -> &[crate::types::StageValues] {
-        self.stages.as_deref().unwrap_or_default()
+    pub fn stages(&self) -> & [crate::types::StageValues] {
+        self.stages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
@@ -85,7 +86,7 @@ impl Script {
     /// <p>If you are automating VSS Backups, omit this parameter.</p></li>
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
-    pub fn execution_handler_service(&self) -> ::std::option::Option<&crate::types::ExecutionHandlerServiceValues> {
+    pub fn execution_handler_service(&self) -> ::std::option::Option<& crate::types::ExecutionHandlerServiceValues> {
         self.execution_handler_service.as_ref()
     }
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
@@ -97,7 +98,7 @@ impl Script {
     /// <li>
     /// <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p></li>
     /// </ul>
-    pub fn execution_handler(&self) -> ::std::option::Option<&str> {
+    pub fn execution_handler(&self) -> ::std::option::Option<& str> {
         self.execution_handler.as_deref()
     }
     /// <p>Indicates whether Amazon Data Lifecycle Manager should default to crash-consistent snapshots if the pre script fails.</p>
@@ -142,7 +143,7 @@ impl Script {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptBuilder {
-    pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageValues>>,
+    pub(crate) stages: ::std::option::Option<::std::vec::Vec::<crate::types::StageValues>>,
     pub(crate) execution_handler_service: ::std::option::Option<crate::types::ExecutionHandlerServiceValues>,
     pub(crate) execution_handler: ::std::option::Option<::std::string::String>,
     pub(crate) execute_operation_on_script_failure: ::std::option::Option<bool>,
@@ -167,9 +168,9 @@ impl ScriptBuilder {
     /// <p>Default: PRE and POST</p>
     pub fn stages(mut self, input: crate::types::StageValues) -> Self {
         let mut v = self.stages.unwrap_or_default();
-        v.push(input);
-        self.stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicate which scripts Amazon Data Lifecycle Manager should run on target instances. Pre scripts run before Amazon Data Lifecycle Manager initiates snapshot creation. Post scripts run after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <ul>
@@ -182,9 +183,8 @@ impl ScriptBuilder {
     /// </ul>
     /// <p>If you are automating VSS Backups, omit this parameter.</p>
     /// <p>Default: PRE and POST</p>
-    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageValues>>) -> Self {
-        self.stages = input;
-        self
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StageValues>>) -> Self {
+        self.stages = input; self
     }
     /// <p>Indicate which scripts Amazon Data Lifecycle Manager should run on target instances. Pre scripts run before Amazon Data Lifecycle Manager initiates snapshot creation. Post scripts run after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <ul>
@@ -197,7 +197,7 @@ impl ScriptBuilder {
     /// </ul>
     /// <p>If you are automating VSS Backups, omit this parameter.</p>
     /// <p>Default: PRE and POST</p>
-    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageValues>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StageValues>> {
         &self.stages
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
@@ -221,8 +221,7 @@ impl ScriptBuilder {
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
     pub fn set_execution_handler_service(mut self, input: ::std::option::Option<crate::types::ExecutionHandlerServiceValues>) -> Self {
-        self.execution_handler_service = input;
-        self
+        self.execution_handler_service = input; self
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
@@ -259,8 +258,7 @@ impl ScriptBuilder {
     /// <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p></li>
     /// </ul>
     pub fn set_execution_handler(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_handler = input;
-        self
+        self.execution_handler = input; self
     }
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
     /// <ul>
@@ -297,8 +295,7 @@ impl ScriptBuilder {
     /// <p>This parameter is supported only if you run a pre script. If you run a post script only, omit this parameter.</p>
     /// <p>Default: true</p>
     pub fn set_execute_operation_on_script_failure(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.execute_operation_on_script_failure = input;
-        self
+        self.execute_operation_on_script_failure = input; self
     }
     /// <p>Indicates whether Amazon Data Lifecycle Manager should default to crash-consistent snapshots if the pre script fails.</p>
     /// <ul>
@@ -323,8 +320,7 @@ impl ScriptBuilder {
     /// <p>If you are automating VSS Backups, omit this parameter.</p>
     /// <p>Default: 10</p>
     pub fn set_execution_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_timeout = input;
-        self
+        self.execution_timeout = input; self
     }
     /// <p>Specifies a timeout period, in seconds, after which Amazon Data Lifecycle Manager fails the script run attempt if it has not completed. If a script does not complete within its timeout period, Amazon Data Lifecycle Manager fails the attempt. The timeout period applies to the pre and post scripts individually.</p>
     /// <p>If you are automating VSS Backups, omit this parameter.</p>
@@ -355,8 +351,7 @@ impl ScriptBuilder {
     /// <p>If you do not want Amazon Data Lifecycle Manager to retry failed scripts, specify <code>0</code>.</p>
     /// <p>Default: 0</p>
     pub fn set_maximum_retry_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_retry_count = input;
-        self
+        self.maximum_retry_count = input; self
     }
     /// <p>Specifies the number of times Amazon Data Lifecycle Manager should retry scripts that fail.</p>
     /// <ul>
@@ -373,12 +368,19 @@ impl ScriptBuilder {
     /// Consumes the builder and constructs a [`Script`](crate::types::Script).
     pub fn build(self) -> crate::types::Script {
         crate::types::Script {
-            stages: self.stages,
-            execution_handler_service: self.execution_handler_service,
-            execution_handler: self.execution_handler,
-            execute_operation_on_script_failure: self.execute_operation_on_script_failure,
-            execution_timeout: self.execution_timeout,
-            maximum_retry_count: self.maximum_retry_count,
+            stages: self.stages
+            ,
+            execution_handler_service: self.execution_handler_service
+            ,
+            execution_handler: self.execution_handler
+            ,
+            execute_operation_on_script_failure: self.execute_operation_on_script_failure
+            ,
+            execution_timeout: self.execution_timeout
+            ,
+            maximum_retry_count: self.maximum_retry_count
+            ,
         }
     }
 }
+

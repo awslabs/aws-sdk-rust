@@ -3,7 +3,7 @@
 /// <p>Contains validation output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationOutput {
+pub struct ValidationOutput  {
     /// <p>The ID of the validation.</p>
     pub validation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the validation.</p>
@@ -19,33 +19,33 @@ pub struct ValidationOutput {
     /// <p>The output from validation an instance.</p>
     pub server_validation_output: ::std::option::Option<crate::types::ServerValidationOutput>,
 }
-impl ValidationOutput {
+impl  ValidationOutput  {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> ::std::option::Option<&str> {
+    pub fn validation_id(&self) -> ::std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the validation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the validation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ValidationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ValidationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The latest time that the validation was performed.</p>
-    pub fn latest_validation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_validation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_validation_time.as_ref()
     }
     /// <p>The output from validating an application.</p>
-    pub fn app_validation_output(&self) -> ::std::option::Option<&crate::types::AppValidationOutput> {
+    pub fn app_validation_output(&self) -> ::std::option::Option<& crate::types::AppValidationOutput> {
         self.app_validation_output.as_ref()
     }
     /// <p>The output from validation an instance.</p>
-    pub fn server_validation_output(&self) -> ::std::option::Option<&crate::types::ServerValidationOutput> {
+    pub fn server_validation_output(&self) -> ::std::option::Option<& crate::types::ServerValidationOutput> {
         self.server_validation_output.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The ID of the validation.</p>
     pub fn set_validation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_id = input;
-        self
+        self.validation_id = input; self
     }
     /// <p>The ID of the validation.</p>
     pub fn get_validation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The name of the validation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the validation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The status of the validation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ValidationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the validation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ValidationStatus> {
@@ -118,8 +115,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The latest time that the validation was performed.</p>
     pub fn set_latest_validation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_validation_time = input;
-        self
+        self.latest_validation_time = input; self
     }
     /// <p>The latest time that the validation was performed.</p>
     pub fn get_latest_validation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The output from validating an application.</p>
     pub fn set_app_validation_output(mut self, input: ::std::option::Option<crate::types::AppValidationOutput>) -> Self {
-        self.app_validation_output = input;
-        self
+        self.app_validation_output = input; self
     }
     /// <p>The output from validating an application.</p>
     pub fn get_app_validation_output(&self) -> &::std::option::Option<crate::types::AppValidationOutput> {
@@ -160,8 +154,7 @@ impl ValidationOutputBuilder {
     }
     /// <p>The output from validation an instance.</p>
     pub fn set_server_validation_output(mut self, input: ::std::option::Option<crate::types::ServerValidationOutput>) -> Self {
-        self.server_validation_output = input;
-        self
+        self.server_validation_output = input; self
     }
     /// <p>The output from validation an instance.</p>
     pub fn get_server_validation_output(&self) -> &::std::option::Option<crate::types::ServerValidationOutput> {
@@ -170,13 +163,21 @@ impl ValidationOutputBuilder {
     /// Consumes the builder and constructs a [`ValidationOutput`](crate::types::ValidationOutput).
     pub fn build(self) -> crate::types::ValidationOutput {
         crate::types::ValidationOutput {
-            validation_id: self.validation_id,
-            name: self.name,
-            status: self.status,
-            status_message: self.status_message,
-            latest_validation_time: self.latest_validation_time,
-            app_validation_output: self.app_validation_output,
-            server_validation_output: self.server_validation_output,
+            validation_id: self.validation_id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            latest_validation_time: self.latest_validation_time
+            ,
+            app_validation_output: self.app_validation_output
+            ,
+            server_validation_output: self.server_validation_output
+            ,
         }
     }
 }
+

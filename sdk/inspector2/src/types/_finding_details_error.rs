@@ -3,7 +3,7 @@
 /// <p>Details about an error encountered when trying to return vulnerability data for a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingDetailsError {
+pub struct FindingDetailsError  {
     /// <p>The finding ARN that returned an error.</p>
     pub finding_arn: ::std::string::String,
     /// <p>The error code.</p>
@@ -11,20 +11,18 @@ pub struct FindingDetailsError {
     /// <p>The error message.</p>
     pub error_message: ::std::string::String,
 }
-impl FindingDetailsError {
+impl  FindingDetailsError  {
     /// <p>The finding ARN that returned an error.</p>
-    pub fn finding_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.finding_arn.deref()
+    pub fn finding_arn(&self) -> & str {
+        use std::ops::Deref; self.finding_arn.deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> &crate::types::FindingDetailsErrorCode {
+    pub fn error_code(&self) -> & crate::types::FindingDetailsErrorCode {
         &self.error_code
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl FindingDetailsError {
@@ -51,8 +49,7 @@ impl FindingDetailsErrorBuilder {
     }
     /// <p>The finding ARN that returned an error.</p>
     pub fn set_finding_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_arn = input;
-        self
+        self.finding_arn = input; self
     }
     /// <p>The finding ARN that returned an error.</p>
     pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FindingDetailsErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::FindingDetailsErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::FindingDetailsErrorCode> {
@@ -81,8 +77,7 @@ impl FindingDetailsErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl FindingDetailsErrorBuilder {
     /// - [`error_code`](crate::types::builders::FindingDetailsErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::FindingDetailsErrorBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::FindingDetailsError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FindingDetailsError {
-            finding_arn: self.finding_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_arn",
-                    "finding_arn was not specified but it is required when building FindingDetailsError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building FindingDetailsError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building FindingDetailsError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FindingDetailsError {
+                finding_arn: self.finding_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_arn", "finding_arn was not specified but it is required when building FindingDetailsError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building FindingDetailsError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building FindingDetailsError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

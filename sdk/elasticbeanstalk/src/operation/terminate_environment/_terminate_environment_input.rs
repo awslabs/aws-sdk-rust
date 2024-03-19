@@ -3,7 +3,7 @@
 /// <p>Request to terminate an environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateEnvironmentInput {
+pub struct TerminateEnvironmentInput  {
     /// <p>The ID of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
@@ -24,15 +24,15 @@ pub struct TerminateEnvironmentInput {
     /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
     pub force_terminate: ::std::option::Option<bool>,
 }
-impl TerminateEnvironmentInput {
+impl  TerminateEnvironmentInput  {
     /// <p>The ID of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
@@ -79,8 +79,7 @@ impl TerminateEnvironmentInputBuilder {
     /// <p>The ID of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
@@ -96,8 +95,7 @@ impl TerminateEnvironmentInputBuilder {
     /// <p>The name of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the environment to terminate.</p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
@@ -129,8 +127,7 @@ impl TerminateEnvironmentInputBuilder {
     /// <p>Default: <code>true</code></p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_terminate_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.terminate_resources = input;
-        self
+        self.terminate_resources = input; self
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
@@ -152,23 +149,26 @@ impl TerminateEnvironmentInputBuilder {
     }
     /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
     pub fn set_force_terminate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_terminate = input;
-        self
+        self.force_terminate = input; self
     }
     /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
     pub fn get_force_terminate(&self) -> &::std::option::Option<bool> {
         &self.force_terminate
     }
     /// Consumes the builder and constructs a [`TerminateEnvironmentInput`](crate::operation::terminate_environment::TerminateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::terminate_environment::TerminateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::terminate_environment::TerminateEnvironmentInput {
-            environment_id: self.environment_id,
-            environment_name: self.environment_name,
-            terminate_resources: self.terminate_resources,
-            force_terminate: self.force_terminate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_environment::TerminateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::terminate_environment::TerminateEnvironmentInput {
+                environment_id: self.environment_id
+                ,
+                environment_name: self.environment_name
+                ,
+                terminate_resources: self.terminate_resources
+                ,
+                force_terminate: self.force_terminate
+                ,
+            }
+        )
     }
 }
+

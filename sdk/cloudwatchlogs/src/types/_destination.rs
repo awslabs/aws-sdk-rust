@@ -3,7 +3,7 @@
 /// <p>Represents a cross-account destination that receives subscription log events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>The name of the destination.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
@@ -17,25 +17,25 @@ pub struct Destination {
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub creation_time: ::std::option::Option<i64>,
 }
-impl Destination {
+impl  Destination  {
     /// <p>The name of the destination.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
-    pub fn access_policy(&self) -> ::std::option::Option<&str> {
+    pub fn access_policy(&self) -> ::std::option::Option<& str> {
         self.access_policy.as_deref()
     }
     /// <p>The ARN of this destination.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
@@ -69,8 +69,7 @@ impl DestinationBuilder {
     }
     /// <p>The name of the destination.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>The name of the destination.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DestinationBuilder {
     }
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DestinationBuilder {
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
     pub fn set_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policy = input;
-        self
+        self.access_policy = input; self
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
     pub fn get_access_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl DestinationBuilder {
     }
     /// <p>The ARN of this destination.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of this destination.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl DestinationBuilder {
     }
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
@@ -149,12 +143,19 @@ impl DestinationBuilder {
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {
         crate::types::Destination {
-            destination_name: self.destination_name,
-            target_arn: self.target_arn,
-            role_arn: self.role_arn,
-            access_policy: self.access_policy,
-            arn: self.arn,
-            creation_time: self.creation_time,
+            destination_name: self.destination_name
+            ,
+            target_arn: self.target_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            access_policy: self.access_policy
+            ,
+            arn: self.arn
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

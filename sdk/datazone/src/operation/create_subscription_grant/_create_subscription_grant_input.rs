@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriptionGrantInput {
+pub struct CreateSubscriptionGrantInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription grant is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment in which the subscription grant is created.</p>
@@ -12,35 +12,36 @@ pub struct CreateSubscriptionGrantInput {
     /// <p>The entity to which the subscription is to be granted.</p>
     pub granted_entity: ::std::option::Option<crate::types::GrantedEntityInput>,
     /// <p>The names of the assets for which the subscription grant is created.</p>
-    pub asset_target_names: ::std::option::Option<::std::vec::Vec<crate::types::AssetTargetNameMap>>,
+    pub asset_target_names: ::std::option::Option<::std::vec::Vec::<crate::types::AssetTargetNameMap>>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateSubscriptionGrantInput {
+impl  CreateSubscriptionGrantInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription grant is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the environment in which the subscription grant is created.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The ID of the subscription target for which the subscription grant is created.</p>
-    pub fn subscription_target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_target_identifier(&self) -> ::std::option::Option<& str> {
         self.subscription_target_identifier.as_deref()
     }
     /// <p>The entity to which the subscription is to be granted.</p>
-    pub fn granted_entity(&self) -> ::std::option::Option<&crate::types::GrantedEntityInput> {
+    pub fn granted_entity(&self) -> ::std::option::Option<& crate::types::GrantedEntityInput> {
         self.granted_entity.as_ref()
     }
     /// <p>The names of the assets for which the subscription grant is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_target_names.is_none()`.
-    pub fn asset_target_names(&self) -> &[crate::types::AssetTargetNameMap] {
-        self.asset_target_names.as_deref().unwrap_or_default()
+    pub fn asset_target_names(&self) -> & [crate::types::AssetTargetNameMap] {
+        self.asset_target_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct CreateSubscriptionGrantInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_target_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) granted_entity: ::std::option::Option<crate::types::GrantedEntityInput>,
-    pub(crate) asset_target_names: ::std::option::Option<::std::vec::Vec<crate::types::AssetTargetNameMap>>,
+    pub(crate) asset_target_names: ::std::option::Option<::std::vec::Vec::<crate::types::AssetTargetNameMap>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSubscriptionGrantInputBuilder {
@@ -71,8 +72,7 @@ impl CreateSubscriptionGrantInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription grant is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription grant is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl CreateSubscriptionGrantInputBuilder {
     }
     /// <p>The ID of the environment in which the subscription grant is created.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the environment in which the subscription grant is created.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl CreateSubscriptionGrantInputBuilder {
     }
     /// <p>The ID of the subscription target for which the subscription grant is created.</p>
     pub fn set_subscription_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_target_identifier = input;
-        self
+        self.subscription_target_identifier = input; self
     }
     /// <p>The ID of the subscription target for which the subscription grant is created.</p>
     pub fn get_subscription_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl CreateSubscriptionGrantInputBuilder {
     }
     /// <p>The entity to which the subscription is to be granted.</p>
     pub fn set_granted_entity(mut self, input: ::std::option::Option<crate::types::GrantedEntityInput>) -> Self {
-        self.granted_entity = input;
-        self
+        self.granted_entity = input; self
     }
     /// <p>The entity to which the subscription is to be granted.</p>
     pub fn get_granted_entity(&self) -> &::std::option::Option<crate::types::GrantedEntityInput> {
@@ -130,17 +127,16 @@ impl CreateSubscriptionGrantInputBuilder {
     /// <p>The names of the assets for which the subscription grant is created.</p>
     pub fn asset_target_names(mut self, input: crate::types::AssetTargetNameMap) -> Self {
         let mut v = self.asset_target_names.unwrap_or_default();
-        v.push(input);
-        self.asset_target_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_target_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the assets for which the subscription grant is created.</p>
-    pub fn set_asset_target_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetTargetNameMap>>) -> Self {
-        self.asset_target_names = input;
-        self
+    pub fn set_asset_target_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetTargetNameMap>>) -> Self {
+        self.asset_target_names = input; self
     }
     /// <p>The names of the assets for which the subscription grant is created.</p>
-    pub fn get_asset_target_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetTargetNameMap>> {
+    pub fn get_asset_target_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetTargetNameMap>> {
         &self.asset_target_names
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
@@ -150,27 +146,30 @@ impl CreateSubscriptionGrantInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionGrantInput`](crate::operation::create_subscription_grant::CreateSubscriptionGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscription_grant::CreateSubscriptionGrantInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_subscription_grant::CreateSubscriptionGrantInput {
-            domain_identifier: self.domain_identifier,
-            environment_identifier: self.environment_identifier,
-            subscription_target_identifier: self.subscription_target_identifier,
-            granted_entity: self.granted_entity,
-            asset_target_names: self.asset_target_names,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription_grant::CreateSubscriptionGrantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subscription_grant::CreateSubscriptionGrantInput {
+                domain_identifier: self.domain_identifier
+                ,
+                environment_identifier: self.environment_identifier
+                ,
+                subscription_target_identifier: self.subscription_target_identifier
+                ,
+                granted_entity: self.granted_entity
+                ,
+                asset_target_names: self.asset_target_names
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

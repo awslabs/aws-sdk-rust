@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlotTypeInput {
+pub struct DeleteSlotTypeInput  {
     /// <p>The identifier of the slot type to delete.</p>
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the slot type.</p>
@@ -14,21 +14,21 @@ pub struct DeleteSlotTypeInput {
     /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
-impl DeleteSlotTypeInput {
+impl  DeleteSlotTypeInput  {
     /// <p>The identifier of the slot type to delete.</p>
-    pub fn slot_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> ::std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot type.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
@@ -62,8 +62,7 @@ impl DeleteSlotTypeInputBuilder {
     }
     /// <p>The identifier of the slot type to delete.</p>
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
     }
     /// <p>The identifier of the slot type to delete.</p>
     pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl DeleteSlotTypeInputBuilder {
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl DeleteSlotTypeInputBuilder {
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl DeleteSlotTypeInputBuilder {
     }
     /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,23 +117,28 @@ impl DeleteSlotTypeInputBuilder {
     }
     /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input;
-        self
+        self.skip_resource_in_use_check = input; self
     }
     /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
         &self.skip_resource_in_use_check
     }
     /// Consumes the builder and constructs a [`DeleteSlotTypeInput`](crate::operation::delete_slot_type::DeleteSlotTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_slot_type::DeleteSlotTypeInput {
-            slot_type_id: self.slot_type_id,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            skip_resource_in_use_check: self.skip_resource_in_use_check,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_slot_type::DeleteSlotTypeInput {
+                slot_type_id: self.slot_type_id
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                skip_resource_in_use_check: self.skip_resource_in_use_check
+                ,
+            }
+        )
     }
 }
+

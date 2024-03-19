@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReplicationTaskInput {
+pub struct ModifyReplicationTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The replication task identifier.</p>
@@ -41,9 +41,9 @@ pub struct ModifyReplicationTaskInput {
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i></p>
     pub task_data: ::std::option::Option<::std::string::String>,
 }
-impl ModifyReplicationTaskInput {
+impl  ModifyReplicationTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The replication task identifier.</p>
@@ -56,24 +56,24 @@ impl ModifyReplicationTaskInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    pub fn replication_task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_task_identifier.as_deref()
     }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code></p>
-    pub fn migration_type(&self) -> ::std::option::Option<&crate::types::MigrationTypeValue> {
+    pub fn migration_type(&self) -> ::std::option::Option<& crate::types::MigrationTypeValue> {
         self.migration_type.as_ref()
     }
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value.</p>
-    pub fn table_mappings(&self) -> ::std::option::Option<&str> {
+    pub fn table_mappings(&self) -> ::std::option::Option<& str> {
         self.table_mappings.as_deref()
     }
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-    pub fn replication_task_settings(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_settings(&self) -> ::std::option::Option<& str> {
         self.replication_task_settings.as_deref()
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn cdc_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cdc_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
@@ -83,17 +83,17 @@ impl ModifyReplicationTaskInput {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn cdc_start_position(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_start_position(&self) -> ::std::option::Option<& str> {
         self.cdc_start_position.as_deref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
-    pub fn cdc_stop_position(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_stop_position(&self) -> ::std::option::Option<& str> {
         self.cdc_stop_position.as_deref()
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i></p>
-    pub fn task_data(&self) -> ::std::option::Option<&str> {
+    pub fn task_data(&self) -> ::std::option::Option<& str> {
         self.task_data.as_deref()
     }
 }
@@ -127,8 +127,7 @@ impl ModifyReplicationTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_arn = input;
-        self
+        self.replication_task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +158,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_identifier = input;
-        self
+        self.replication_task_identifier = input; self
     }
     /// <p>The replication task identifier.</p>
     /// <p>Constraints:</p>
@@ -182,8 +180,7 @@ impl ModifyReplicationTaskInputBuilder {
     }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code></p>
     pub fn set_migration_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
-        self.migration_type = input;
-        self
+        self.migration_type = input; self
     }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code></p>
     pub fn get_migration_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
@@ -196,8 +193,7 @@ impl ModifyReplicationTaskInputBuilder {
     }
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value.</p>
     pub fn set_table_mappings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_mappings = input;
-        self
+        self.table_mappings = input; self
     }
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value.</p>
     pub fn get_table_mappings(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +206,7 @@ impl ModifyReplicationTaskInputBuilder {
     }
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
     pub fn set_replication_task_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_settings = input;
-        self
+        self.replication_task_settings = input; self
     }
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
     pub fn get_replication_task_settings(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +221,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cdc_start_time = input;
-        self
+        self.cdc_start_time = input; self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
@@ -253,8 +247,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_start_position = input;
-        self
+        self.cdc_start_position = input; self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
@@ -277,8 +270,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
     pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_stop_position = input;
-        self
+        self.cdc_stop_position = input; self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
@@ -293,28 +285,36 @@ impl ModifyReplicationTaskInputBuilder {
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i></p>
     pub fn set_task_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_data = input;
-        self
+        self.task_data = input; self
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i></p>
     pub fn get_task_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_data
     }
     /// Consumes the builder and constructs a [`ModifyReplicationTaskInput`](crate::operation::modify_replication_task::ModifyReplicationTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_replication_task::ModifyReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_replication_task::ModifyReplicationTaskInput {
-            replication_task_arn: self.replication_task_arn,
-            replication_task_identifier: self.replication_task_identifier,
-            migration_type: self.migration_type,
-            table_mappings: self.table_mappings,
-            replication_task_settings: self.replication_task_settings,
-            cdc_start_time: self.cdc_start_time,
-            cdc_start_position: self.cdc_start_position,
-            cdc_stop_position: self.cdc_stop_position,
-            task_data: self.task_data,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_replication_task::ModifyReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_replication_task::ModifyReplicationTaskInput {
+                replication_task_arn: self.replication_task_arn
+                ,
+                replication_task_identifier: self.replication_task_identifier
+                ,
+                migration_type: self.migration_type
+                ,
+                table_mappings: self.table_mappings
+                ,
+                replication_task_settings: self.replication_task_settings
+                ,
+                cdc_start_time: self.cdc_start_time
+                ,
+                cdc_start_position: self.cdc_start_position
+                ,
+                cdc_stop_position: self.cdc_stop_position
+                ,
+                task_data: self.task_data
+                ,
+            }
+        )
     }
 }
+

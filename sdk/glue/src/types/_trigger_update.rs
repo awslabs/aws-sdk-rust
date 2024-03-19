@@ -3,7 +3,7 @@
 /// <p>A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TriggerUpdate {
+pub struct TriggerUpdate  {
     /// <p>Reserved for future use.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of this trigger.</p>
@@ -11,37 +11,38 @@ pub struct TriggerUpdate {
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The actions initiated by this trigger.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub predicate: ::std::option::Option<crate::types::Predicate>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
-impl TriggerUpdate {
+impl  TriggerUpdate  {
     /// <p>Reserved for future use.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of this trigger.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>The actions initiated by this trigger.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::Action] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
-    pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {
+    pub fn predicate(&self) -> ::std::option::Option<& crate::types::Predicate> {
         self.predicate.as_ref()
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn event_batching_condition(&self) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
+    pub fn event_batching_condition(&self) -> ::std::option::Option<& crate::types::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
     }
 }
@@ -59,7 +60,7 @@ pub struct TriggerUpdateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,
     pub(crate) event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
@@ -71,8 +72,7 @@ impl TriggerUpdateBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl TriggerUpdateBuilder {
     }
     /// <p>A description of this trigger.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of this trigger.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl TriggerUpdateBuilder {
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +111,16 @@ impl TriggerUpdateBuilder {
     /// <p>The actions initiated by this trigger.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions initiated by this trigger.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions initiated by this trigger.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
@@ -133,8 +130,7 @@ impl TriggerUpdateBuilder {
     }
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
-        self.predicate = input;
-        self
+        self.predicate = input; self
     }
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
@@ -147,8 +143,7 @@ impl TriggerUpdateBuilder {
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn set_event_batching_condition(mut self, input: ::std::option::Option<crate::types::EventBatchingCondition>) -> Self {
-        self.event_batching_condition = input;
-        self
+        self.event_batching_condition = input; self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn get_event_batching_condition(&self) -> &::std::option::Option<crate::types::EventBatchingCondition> {
@@ -157,12 +152,19 @@ impl TriggerUpdateBuilder {
     /// Consumes the builder and constructs a [`TriggerUpdate`](crate::types::TriggerUpdate).
     pub fn build(self) -> crate::types::TriggerUpdate {
         crate::types::TriggerUpdate {
-            name: self.name,
-            description: self.description,
-            schedule: self.schedule,
-            actions: self.actions,
-            predicate: self.predicate,
-            event_batching_condition: self.event_batching_condition,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            schedule: self.schedule
+            ,
+            actions: self.actions
+            ,
+            predicate: self.predicate
+            ,
+            event_batching_condition: self.event_batching_condition
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSharedEndpointsInput {
+pub struct ListSharedEndpointsInput  {
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
@@ -10,9 +10,9 @@ pub struct ListSharedEndpointsInput {
     /// <p>The ID of the Amazon Web Services Outpost.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
-impl ListSharedEndpointsInput {
+impl  ListSharedEndpointsInput  {
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
@@ -20,7 +20,7 @@ impl ListSharedEndpointsInput {
         self.max_results
     }
     /// <p>The ID of the Amazon Web Services Outpost.</p>
-    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListSharedEndpointsInputBuilder {
     }
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListSharedEndpointsInputBuilder {
     }
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,22 +74,24 @@ impl ListSharedEndpointsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services Outpost.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Outpost.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }
     /// Consumes the builder and constructs a [`ListSharedEndpointsInput`](crate::operation::list_shared_endpoints::ListSharedEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_shared_endpoints::ListSharedEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_shared_endpoints::ListSharedEndpointsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            outpost_id: self.outpost_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shared_endpoints::ListSharedEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_shared_endpoints::ListSharedEndpointsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                outpost_id: self.outpost_id
+                ,
+            }
+        )
     }
 }
+

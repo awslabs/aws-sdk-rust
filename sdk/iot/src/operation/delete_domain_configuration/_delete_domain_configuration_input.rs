@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDomainConfigurationInput {
+pub struct DeleteDomainConfigurationInput  {
     /// <p>The name of the domain configuration to be deleted.</p>
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDomainConfigurationInput {
+impl  DeleteDomainConfigurationInput  {
     /// <p>The name of the domain configuration to be deleted.</p>
-    pub fn domain_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_configuration_name(&self) -> ::std::option::Option<& str> {
         self.domain_configuration_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteDomainConfigurationInputBuilder {
     }
     /// <p>The name of the domain configuration to be deleted.</p>
     pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_configuration_name = input;
-        self
+        self.domain_configuration_name = input; self
     }
     /// <p>The name of the domain configuration to be deleted.</p>
     pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_configuration_name
     }
     /// Consumes the builder and constructs a [`DeleteDomainConfigurationInput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput {
-            domain_configuration_name: self.domain_configuration_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput {
+                domain_configuration_name: self.domain_configuration_name
+                ,
+            }
+        )
     }
 }
+

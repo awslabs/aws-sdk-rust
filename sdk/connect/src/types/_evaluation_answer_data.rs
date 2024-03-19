@@ -24,11 +24,7 @@ impl EvaluationAnswerData {
     /// Tries to convert the enum instance into [`NotApplicable`](crate::types::EvaluationAnswerData::NotApplicable), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_not_applicable(&self) -> ::std::result::Result<&bool, &Self> {
-        if let EvaluationAnswerData::NotApplicable(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EvaluationAnswerData::NotApplicable(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NotApplicable`](crate::types::EvaluationAnswerData::NotApplicable).
     pub fn is_not_applicable(&self) -> bool {
@@ -37,11 +33,7 @@ impl EvaluationAnswerData {
     /// Tries to convert the enum instance into [`NumericValue`](crate::types::EvaluationAnswerData::NumericValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_numeric_value(&self) -> ::std::result::Result<&f64, &Self> {
-        if let EvaluationAnswerData::NumericValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EvaluationAnswerData::NumericValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NumericValue`](crate::types::EvaluationAnswerData::NumericValue).
     pub fn is_numeric_value(&self) -> bool {
@@ -50,11 +42,7 @@ impl EvaluationAnswerData {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::EvaluationAnswerData::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let EvaluationAnswerData::StringValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EvaluationAnswerData::StringValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::EvaluationAnswerData::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -65,3 +53,4 @@ impl EvaluationAnswerData {
         matches!(self, Self::Unknown)
     }
 }
+

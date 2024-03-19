@@ -4,7 +4,7 @@
 /// <p>This type contains limited information about an observability configuration. It includes only identification information, without configuration details. It's returned by the <code>ListObservabilityConfigurations</code> action. Complete configuration information is returned by the <code>CreateObservabilityConfiguration</code>, <code>DescribeObservabilityConfiguration</code>, and <code>DeleteObservabilityConfiguration</code> actions using the <code>ObservabilityConfiguration</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObservabilityConfigurationSummary {
+pub struct ObservabilityConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
     pub observability_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
@@ -12,13 +12,13 @@ pub struct ObservabilityConfigurationSummary {
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
     pub observability_configuration_revision: i32,
 }
-impl ObservabilityConfigurationSummary {
+impl  ObservabilityConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
-    pub fn observability_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn observability_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.observability_configuration_arn.as_deref()
     }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn observability_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn observability_configuration_name(&self) -> ::std::option::Option<& str> {
         self.observability_configuration_name.as_deref()
     }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
@@ -49,8 +49,7 @@ impl ObservabilityConfigurationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
     pub fn set_observability_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.observability_configuration_arn = input;
-        self
+        self.observability_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
     pub fn get_observability_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ObservabilityConfigurationSummaryBuilder {
     }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn set_observability_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.observability_configuration_name = input;
-        self
+        self.observability_configuration_name = input; self
     }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn get_observability_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl ObservabilityConfigurationSummaryBuilder {
     }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
     pub fn set_observability_configuration_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.observability_configuration_revision = input;
-        self
+        self.observability_configuration_revision = input; self
     }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
     pub fn get_observability_configuration_revision(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,14 @@ impl ObservabilityConfigurationSummaryBuilder {
     /// Consumes the builder and constructs a [`ObservabilityConfigurationSummary`](crate::types::ObservabilityConfigurationSummary).
     pub fn build(self) -> crate::types::ObservabilityConfigurationSummary {
         crate::types::ObservabilityConfigurationSummary {
-            observability_configuration_arn: self.observability_configuration_arn,
-            observability_configuration_name: self.observability_configuration_name,
-            observability_configuration_revision: self.observability_configuration_revision.unwrap_or_default(),
+            observability_configuration_arn: self.observability_configuration_arn
+            ,
+            observability_configuration_name: self.observability_configuration_name
+            ,
+            observability_configuration_revision: self.observability_configuration_revision
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,40 +3,40 @@
 /// <p>Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for the given streaming source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnableToDetectSchemaException {
+pub struct UnableToDetectSchemaException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    pub raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub raw_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
-    pub processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub processed_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl UnableToDetectSchemaException {
+impl  UnableToDetectSchemaException  {
     #[allow(missing_docs)] // documentation missing in model
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.raw_input_records.is_none()`.
-    pub fn raw_input_records(&self) -> &[::std::string::String] {
-        self.raw_input_records.as_deref().unwrap_or_default()
+    pub fn raw_input_records(&self) -> & [::std::string::String] {
+        self.raw_input_records.as_deref()
+        .unwrap_or_default()
     }
     #[allow(missing_docs)] // documentation missing in model
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_input_records.is_none()`.
-    pub fn processed_input_records(&self) -> &[::std::string::String] {
-        self.processed_input_records.as_deref().unwrap_or_default()
+    pub fn processed_input_records(&self) -> & [::std::string::String] {
+        self.processed_input_records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UnableToDetectSchemaException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for UnableToDetectSchemaException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "UnableToDetectSchemaException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -51,9 +51,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::UnableToDetectS
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnableToDetectSchemaException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl UnableToDetectSchemaException {
     /// Creates a new builder-style object to manufacture [`UnableToDetectSchemaException`](crate::types::error::UnableToDetectSchemaException).
@@ -67,8 +65,8 @@ impl UnableToDetectSchemaException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnableToDetectSchemaExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) raw_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) processed_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnableToDetectSchemaExceptionBuilder {
@@ -79,8 +77,7 @@ impl UnableToDetectSchemaExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +89,16 @@ impl UnableToDetectSchemaExceptionBuilder {
     ///
     pub fn raw_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.raw_input_records.unwrap_or_default();
-        v.push(input.into());
-        self.raw_input_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.raw_input_records = ::std::option::Option::Some(v);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_raw_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.raw_input_records = input;
-        self
+    pub fn set_raw_input_records(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.raw_input_records = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_raw_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_raw_input_records(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.raw_input_records
     }
     /// Appends an item to `processed_input_records`.
@@ -111,37 +107,40 @@ impl UnableToDetectSchemaExceptionBuilder {
     ///
     pub fn processed_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.processed_input_records.unwrap_or_default();
-        v.push(input.into());
-        self.processed_input_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.processed_input_records = ::std::option::Option::Some(v);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_processed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.processed_input_records = input;
-        self
+    pub fn set_processed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.processed_input_records = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_processed_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_processed_input_records(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.processed_input_records
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`UnableToDetectSchemaException`](crate::types::error::UnableToDetectSchemaException).
     pub fn build(self) -> crate::types::error::UnableToDetectSchemaException {
         crate::types::error::UnableToDetectSchemaException {
-            message: self.message,
-            raw_input_records: self.raw_input_records,
-            processed_input_records: self.processed_input_records,
+            message: self.message
+            ,
+            raw_input_records: self.raw_input_records
+            ,
+            processed_input_records: self.processed_input_records
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

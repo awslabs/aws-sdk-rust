@@ -3,13 +3,13 @@
 /// <p>A file system, created by you in Amazon EFS, that you assign to a user profile or space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EfsFileSystem {
+pub struct EfsFileSystem  {
     /// <p>The ID of your Amazon EFS file system.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl EfsFileSystem {
+impl  EfsFileSystem  {
     /// <p>The ID of your Amazon EFS file system.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl EfsFileSystemBuilder {
     }
     /// <p>The ID of your Amazon EFS file system.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of your Amazon EFS file system.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl EfsFileSystemBuilder {
     /// Consumes the builder and constructs a [`EfsFileSystem`](crate::types::EfsFileSystem).
     pub fn build(self) -> crate::types::EfsFileSystem {
         crate::types::EfsFileSystem {
-            file_system_id: self.file_system_id,
+            file_system_id: self.file_system_id
+            ,
         }
     }
 }
+

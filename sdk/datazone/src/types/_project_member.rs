@@ -3,19 +3,19 @@
 /// <p>The details of a project member.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectMember {
+pub struct ProjectMember  {
     /// <p>The membership details of a project member.</p>
     pub member_details: ::std::option::Option<crate::types::MemberDetails>,
     /// <p>The designated role of a project member.</p>
     pub designation: crate::types::UserDesignation,
 }
-impl ProjectMember {
+impl  ProjectMember  {
     /// <p>The membership details of a project member.</p>
-    pub fn member_details(&self) -> ::std::option::Option<&crate::types::MemberDetails> {
+    pub fn member_details(&self) -> ::std::option::Option<& crate::types::MemberDetails> {
         self.member_details.as_ref()
     }
     /// <p>The designated role of a project member.</p>
-    pub fn designation(&self) -> &crate::types::UserDesignation {
+    pub fn designation(&self) -> & crate::types::UserDesignation {
         &self.designation
     }
 }
@@ -42,8 +42,7 @@ impl ProjectMemberBuilder {
     }
     /// <p>The membership details of a project member.</p>
     pub fn set_member_details(mut self, input: ::std::option::Option<crate::types::MemberDetails>) -> Self {
-        self.member_details = input;
-        self
+        self.member_details = input; self
     }
     /// <p>The membership details of a project member.</p>
     pub fn get_member_details(&self) -> &::std::option::Option<crate::types::MemberDetails> {
@@ -57,8 +56,7 @@ impl ProjectMemberBuilder {
     }
     /// <p>The designated role of a project member.</p>
     pub fn set_designation(mut self, input: ::std::option::Option<crate::types::UserDesignation>) -> Self {
-        self.designation = input;
-        self
+        self.designation = input; self
     }
     /// <p>The designated role of a project member.</p>
     pub fn get_designation(&self) -> &::std::option::Option<crate::types::UserDesignation> {
@@ -68,14 +66,17 @@ impl ProjectMemberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`designation`](crate::types::builders::ProjectMemberBuilder::designation)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectMember, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectMember {
-            member_details: self.member_details,
-            designation: self.designation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "designation",
-                    "designation was not specified but it is required when building ProjectMember",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectMember {
+                member_details: self.member_details
+                ,
+                designation: self.designation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("designation", "designation was not specified but it is required when building ProjectMember")
+                    )?
+                ,
+            }
+        )
     }
 }
+

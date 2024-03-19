@@ -12,9 +12,9 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlPlaneUserAttributeFilter {
+pub struct ControlPlaneUserAttributeFilter  {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
-    pub or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeAndCondition>>,
+    pub or_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeAndCondition>>,
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     pub and_condition: ::std::option::Option<crate::types::AttributeAndCondition>,
     /// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.</p>
@@ -22,23 +22,24 @@ pub struct ControlPlaneUserAttributeFilter {
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
 }
-impl ControlPlaneUserAttributeFilter {
+impl  ControlPlaneUserAttributeFilter  {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.or_conditions.is_none()`.
-    pub fn or_conditions(&self) -> &[crate::types::AttributeAndCondition] {
-        self.or_conditions.as_deref().unwrap_or_default()
+    pub fn or_conditions(&self) -> & [crate::types::AttributeAndCondition] {
+        self.or_conditions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
-    pub fn and_condition(&self) -> ::std::option::Option<&crate::types::AttributeAndCondition> {
+    pub fn and_condition(&self) -> ::std::option::Option<& crate::types::AttributeAndCondition> {
         self.and_condition.as_ref()
     }
     /// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.</p>
-    pub fn tag_condition(&self) -> ::std::option::Option<&crate::types::TagCondition> {
+    pub fn tag_condition(&self) -> ::std::option::Option<& crate::types::TagCondition> {
         self.tag_condition.as_ref()
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
-    pub fn hierarchy_group_condition(&self) -> ::std::option::Option<&crate::types::HierarchyGroupCondition> {
+    pub fn hierarchy_group_condition(&self) -> ::std::option::Option<& crate::types::HierarchyGroupCondition> {
         self.hierarchy_group_condition.as_ref()
     }
 }
@@ -53,7 +54,7 @@ impl ControlPlaneUserAttributeFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlPlaneUserAttributeFilterBuilder {
-    pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeAndCondition>>,
+    pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeAndCondition>>,
     pub(crate) and_condition: ::std::option::Option<crate::types::AttributeAndCondition>,
     pub(crate) tag_condition: ::std::option::Option<crate::types::TagCondition>,
     pub(crate) hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
@@ -66,17 +67,16 @@ impl ControlPlaneUserAttributeFilterBuilder {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
     pub fn or_conditions(mut self, input: crate::types::AttributeAndCondition) -> Self {
         let mut v = self.or_conditions.unwrap_or_default();
-        v.push(input);
-        self.or_conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.or_conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
-    pub fn set_or_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeAndCondition>>) -> Self {
-        self.or_conditions = input;
-        self
+    pub fn set_or_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeAndCondition>>) -> Self {
+        self.or_conditions = input; self
     }
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
-    pub fn get_or_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeAndCondition>> {
+    pub fn get_or_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeAndCondition>> {
         &self.or_conditions
     }
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
@@ -86,8 +86,7 @@ impl ControlPlaneUserAttributeFilterBuilder {
     }
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     pub fn set_and_condition(mut self, input: ::std::option::Option<crate::types::AttributeAndCondition>) -> Self {
-        self.and_condition = input;
-        self
+        self.and_condition = input; self
     }
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     pub fn get_and_condition(&self) -> &::std::option::Option<crate::types::AttributeAndCondition> {
@@ -100,8 +99,7 @@ impl ControlPlaneUserAttributeFilterBuilder {
     }
     /// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.</p>
     pub fn set_tag_condition(mut self, input: ::std::option::Option<crate::types::TagCondition>) -> Self {
-        self.tag_condition = input;
-        self
+        self.tag_condition = input; self
     }
     /// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.</p>
     pub fn get_tag_condition(&self) -> &::std::option::Option<crate::types::TagCondition> {
@@ -114,8 +112,7 @@ impl ControlPlaneUserAttributeFilterBuilder {
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub fn set_hierarchy_group_condition(mut self, input: ::std::option::Option<crate::types::HierarchyGroupCondition>) -> Self {
-        self.hierarchy_group_condition = input;
-        self
+        self.hierarchy_group_condition = input; self
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub fn get_hierarchy_group_condition(&self) -> &::std::option::Option<crate::types::HierarchyGroupCondition> {
@@ -124,10 +121,15 @@ impl ControlPlaneUserAttributeFilterBuilder {
     /// Consumes the builder and constructs a [`ControlPlaneUserAttributeFilter`](crate::types::ControlPlaneUserAttributeFilter).
     pub fn build(self) -> crate::types::ControlPlaneUserAttributeFilter {
         crate::types::ControlPlaneUserAttributeFilter {
-            or_conditions: self.or_conditions,
-            and_condition: self.and_condition,
-            tag_condition: self.tag_condition,
-            hierarchy_group_condition: self.hierarchy_group_condition,
+            or_conditions: self.or_conditions
+            ,
+            and_condition: self.and_condition
+            ,
+            tag_condition: self.tag_condition
+            ,
+            hierarchy_group_condition: self.hierarchy_group_condition
+            ,
         }
     }
 }
+

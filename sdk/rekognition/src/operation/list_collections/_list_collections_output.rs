@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCollectionsOutput {
+pub struct ListCollectionsOutput  {
     /// <p>An array of collection IDs.</p>
-    pub collection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub collection_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub face_model_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub face_model_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListCollectionsOutput {
+impl  ListCollectionsOutput  {
     /// <p>An array of collection IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_ids.is_none()`.
-    pub fn collection_ids(&self) -> &[::std::string::String] {
-        self.collection_ids.as_deref().unwrap_or_default()
+    pub fn collection_ids(&self) -> & [::std::string::String] {
+        self.collection_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_model_versions.is_none()`.
-    pub fn face_model_versions(&self) -> &[::std::string::String] {
-        self.face_model_versions.as_deref().unwrap_or_default()
+    pub fn face_model_versions(&self) -> & [::std::string::String] {
+        self.face_model_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCollectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCollectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput).
     pub fn builder() -> crate::operation::list_collections::builders::ListCollectionsOutputBuilder {
@@ -45,9 +47,9 @@ impl ListCollectionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollectionsOutputBuilder {
-    pub(crate) collection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) collection_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) face_model_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) face_model_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListCollectionsOutputBuilder {
@@ -58,17 +60,16 @@ impl ListCollectionsOutputBuilder {
     /// <p>An array of collection IDs.</p>
     pub fn collection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.collection_ids.unwrap_or_default();
-        v.push(input.into());
-        self.collection_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.collection_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of collection IDs.</p>
-    pub fn set_collection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.collection_ids = input;
-        self
+    pub fn set_collection_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.collection_ids = input; self
     }
     /// <p>An array of collection IDs.</p>
-    pub fn get_collection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_collection_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.collection_ids
     }
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
@@ -78,8 +79,7 @@ impl ListCollectionsOutputBuilder {
     }
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,35 +92,38 @@ impl ListCollectionsOutputBuilder {
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
     pub fn face_model_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_model_versions.unwrap_or_default();
-        v.push(input.into());
-        self.face_model_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.face_model_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub fn set_face_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.face_model_versions = input;
-        self
+    pub fn set_face_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.face_model_versions = input; self
     }
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub fn get_face_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_face_model_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.face_model_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput).
     pub fn build(self) -> crate::operation::list_collections::ListCollectionsOutput {
         crate::operation::list_collections::ListCollectionsOutput {
-            collection_ids: self.collection_ids,
-            next_token: self.next_token,
-            face_model_versions: self.face_model_versions,
+            collection_ids: self.collection_ids
+            ,
+            next_token: self.next_token
+            ,
+            face_model_versions: self.face_model_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

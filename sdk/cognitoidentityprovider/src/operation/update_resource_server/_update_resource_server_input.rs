@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResourceServerInput {
+pub struct UpdateResourceServerInput  {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the resource server.</p>
@@ -10,26 +10,27 @@ pub struct UpdateResourceServerInput {
     /// <p>The name of the resource server.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The scope values to be set for the resource server.</p>
-    pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
+    pub scopes: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerScopeType>>,
 }
-impl UpdateResourceServerInput {
+impl  UpdateResourceServerInput  {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The identifier for the resource server.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name of the resource server.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The scope values to be set for the resource server.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
-    pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
-        self.scopes.as_deref().unwrap_or_default()
+    pub fn scopes(&self) -> & [crate::types::ResourceServerScopeType] {
+        self.scopes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateResourceServerInput {
@@ -46,7 +47,7 @@ pub struct UpdateResourceServerInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerScopeType>>,
 }
 impl UpdateResourceServerInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
@@ -57,8 +58,7 @@ impl UpdateResourceServerInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl UpdateResourceServerInputBuilder {
     }
     /// <p>The identifier for the resource server.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier for the resource server.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl UpdateResourceServerInputBuilder {
     }
     /// <p>The name of the resource server.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource server.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,29 +99,32 @@ impl UpdateResourceServerInputBuilder {
     /// <p>The scope values to be set for the resource server.</p>
     pub fn scopes(mut self, input: crate::types::ResourceServerScopeType) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerScopeType>>) -> Self {
+        self.scopes = input; self
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerScopeType>> {
         &self.scopes
     }
     /// Consumes the builder and constructs a [`UpdateResourceServerInput`](crate::operation::update_resource_server::UpdateResourceServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_resource_server::UpdateResourceServerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_resource_server::UpdateResourceServerInput {
-            user_pool_id: self.user_pool_id,
-            identifier: self.identifier,
-            name: self.name,
-            scopes: self.scopes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resource_server::UpdateResourceServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_resource_server::UpdateResourceServerInput {
+                user_pool_id: self.user_pool_id
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                scopes: self.scopes
+                ,
+            }
+        )
     }
 }
+

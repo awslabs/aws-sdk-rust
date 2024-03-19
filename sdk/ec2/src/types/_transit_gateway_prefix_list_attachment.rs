@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway prefix list attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayPrefixListAttachment {
+pub struct TransitGatewayPrefixListAttachment  {
     /// <p>The ID of the attachment.</p>
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
@@ -11,17 +11,17 @@ pub struct TransitGatewayPrefixListAttachment {
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl TransitGatewayPrefixListAttachment {
+impl  TransitGatewayPrefixListAttachment  {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl TransitGatewayPrefixListAttachmentBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl TransitGatewayPrefixListAttachmentBuilder {
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
@@ -76,8 +74,7 @@ impl TransitGatewayPrefixListAttachmentBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl TransitGatewayPrefixListAttachmentBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayPrefixListAttachment`](crate::types::TransitGatewayPrefixListAttachment).
     pub fn build(self) -> crate::types::TransitGatewayPrefixListAttachment {
         crate::types::TransitGatewayPrefixListAttachment {
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
         }
     }
 }
+

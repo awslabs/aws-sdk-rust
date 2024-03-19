@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeoutConfiguration {
+pub struct TimeoutConfiguration  {
     /// <p>The amount of time in seconds a connection will stay active while idle. A value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
     /// <p>The <code>idleTimeout</code> default for <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p>
     /// <p>The <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
@@ -13,7 +13,7 @@ pub struct TimeoutConfiguration {
     /// <p>The amount of time waiting for the upstream to respond with a complete response per request. A value of <code>0</code> can be set to disable <code>perRequestTimeout</code>. <code>perRequestTimeout</code> can only be set if Service Connect <code>appProtocol</code> isn't <code>TCP</code>. Only <code>idleTimeout</code> is allowed for <code>TCP</code> <code>appProtocol</code>.</p>
     pub per_request_timeout_seconds: ::std::option::Option<i32>,
 }
-impl TimeoutConfiguration {
+impl  TimeoutConfiguration  {
     /// <p>The amount of time in seconds a connection will stay active while idle. A value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
     /// <p>The <code>idleTimeout</code> default for <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p>
     /// <p>The <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
@@ -51,8 +51,7 @@ impl TimeoutConfigurationBuilder {
     /// <p>The <code>idleTimeout</code> default for <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p>
     /// <p>The <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
     pub fn set_idle_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_timeout_seconds = input;
-        self
+        self.idle_timeout_seconds = input; self
     }
     /// <p>The amount of time in seconds a connection will stay active while idle. A value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
     /// <p>The <code>idleTimeout</code> default for <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p>
@@ -67,8 +66,7 @@ impl TimeoutConfigurationBuilder {
     }
     /// <p>The amount of time waiting for the upstream to respond with a complete response per request. A value of <code>0</code> can be set to disable <code>perRequestTimeout</code>. <code>perRequestTimeout</code> can only be set if Service Connect <code>appProtocol</code> isn't <code>TCP</code>. Only <code>idleTimeout</code> is allowed for <code>TCP</code> <code>appProtocol</code>.</p>
     pub fn set_per_request_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.per_request_timeout_seconds = input;
-        self
+        self.per_request_timeout_seconds = input; self
     }
     /// <p>The amount of time waiting for the upstream to respond with a complete response per request. A value of <code>0</code> can be set to disable <code>perRequestTimeout</code>. <code>perRequestTimeout</code> can only be set if Service Connect <code>appProtocol</code> isn't <code>TCP</code>. Only <code>idleTimeout</code> is allowed for <code>TCP</code> <code>appProtocol</code>.</p>
     pub fn get_per_request_timeout_seconds(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,11 @@ impl TimeoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`TimeoutConfiguration`](crate::types::TimeoutConfiguration).
     pub fn build(self) -> crate::types::TimeoutConfiguration {
         crate::types::TimeoutConfiguration {
-            idle_timeout_seconds: self.idle_timeout_seconds,
-            per_request_timeout_seconds: self.per_request_timeout_seconds,
+            idle_timeout_seconds: self.idle_timeout_seconds
+            ,
+            per_request_timeout_seconds: self.per_request_timeout_seconds
+            ,
         }
     }
 }
+

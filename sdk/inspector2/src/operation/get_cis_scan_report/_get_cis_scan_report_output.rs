@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCisScanReportOutput {
+pub struct GetCisScanReportOutput  {
     /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::CisReportStatus>,
     _request_id: Option<String>,
 }
-impl GetCisScanReportOutput {
+impl  GetCisScanReportOutput  {
     /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CisReportStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CisReportStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCisScanReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCisScanReportOutput {
     /// Creates a new builder-style object to manufacture [`GetCisScanReportOutput`](crate::operation::get_cis_scan_report::GetCisScanReportOutput).
     pub fn builder() -> crate::operation::get_cis_scan_report::builders::GetCisScanReportOutputBuilder {
@@ -47,8 +47,7 @@ impl GetCisScanReportOutputBuilder {
     }
     /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetCisScanReportOutputBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CisReportStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CisReportStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCisScanReportOutput`](crate::operation::get_cis_scan_report::GetCisScanReportOutput).
     pub fn build(self) -> crate::operation::get_cis_scan_report::GetCisScanReportOutput {
         crate::operation::get_cis_scan_report::GetCisScanReportOutput {
-            url: self.url,
-            status: self.status,
+            url: self.url
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

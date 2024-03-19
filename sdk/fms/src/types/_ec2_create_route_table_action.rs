@@ -3,19 +3,19 @@
 /// <p>Information about the CreateRouteTable action in Amazon EC2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2CreateRouteTableAction {
+pub struct Ec2CreateRouteTableAction  {
     /// <p>A description of the CreateRouteTable action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of a VPC.</p>
     pub vpc_id: ::std::option::Option<crate::types::ActionTarget>,
 }
-impl Ec2CreateRouteTableAction {
+impl  Ec2CreateRouteTableAction  {
     /// <p>A description of the CreateRouteTable action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the ID of a VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.vpc_id.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl Ec2CreateRouteTableActionBuilder {
     }
     /// <p>A description of the CreateRouteTable action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the CreateRouteTable action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl Ec2CreateRouteTableActionBuilder {
     }
     /// <p>Information about the ID of a VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>Information about the ID of a VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
@@ -66,8 +64,11 @@ impl Ec2CreateRouteTableActionBuilder {
     /// Consumes the builder and constructs a [`Ec2CreateRouteTableAction`](crate::types::Ec2CreateRouteTableAction).
     pub fn build(self) -> crate::types::Ec2CreateRouteTableAction {
         crate::types::Ec2CreateRouteTableAction {
-            description: self.description,
-            vpc_id: self.vpc_id,
+            description: self.description
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

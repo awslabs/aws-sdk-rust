@@ -3,7 +3,7 @@
 /// <p>A rule in the Point in Time (PIT) policy representing when to take snapshots and how long to retain them for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PitPolicyRule {
+pub struct PitPolicyRule  {
     /// <p>The ID of the rule.</p>
     pub rule_id: i64,
     /// <p>The units used to measure the interval and retentionDuration.</p>
@@ -15,13 +15,13 @@ pub struct PitPolicyRule {
     /// <p>Whether this rule is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl PitPolicyRule {
+impl  PitPolicyRule  {
     /// <p>The ID of the rule.</p>
     pub fn rule_id(&self) -> i64 {
         self.rule_id
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    pub fn units(&self) -> &crate::types::PitPolicyRuleUnits {
+    pub fn units(&self) -> & crate::types::PitPolicyRuleUnits {
         &self.units
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
@@ -62,8 +62,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>The ID of the rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The ID of the rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<i64> {
@@ -77,8 +76,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
     pub fn set_units(mut self, input: ::std::option::Option<crate::types::PitPolicyRuleUnits>) -> Self {
-        self.units = input;
-        self
+        self.units = input; self
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
     pub fn get_units(&self) -> &::std::option::Option<crate::types::PitPolicyRuleUnits> {
@@ -92,8 +90,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
     pub fn set_retention_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_duration = input;
-        self
+        self.retention_duration = input; self
     }
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
     pub fn get_retention_duration(&self) -> &::std::option::Option<i32> {
@@ -121,8 +117,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>Whether this rule is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether this rule is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -134,27 +129,30 @@ impl PitPolicyRuleBuilder {
     /// - [`interval`](crate::types::builders::PitPolicyRuleBuilder::interval)
     /// - [`retention_duration`](crate::types::builders::PitPolicyRuleBuilder::retention_duration)
     pub fn build(self) -> ::std::result::Result<crate::types::PitPolicyRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PitPolicyRule {
-            rule_id: self.rule_id.unwrap_or_default(),
-            units: self.units.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "units",
-                    "units was not specified but it is required when building PitPolicyRule",
-                )
-            })?,
-            interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "interval",
-                    "interval was not specified but it is required when building PitPolicyRule",
-                )
-            })?,
-            retention_duration: self.retention_duration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "retention_duration",
-                    "retention_duration was not specified but it is required when building PitPolicyRule",
-                )
-            })?,
-            enabled: self.enabled,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PitPolicyRule {
+                rule_id: self.rule_id
+                    .unwrap_or_default()
+                ,
+                units: self.units
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("units", "units was not specified but it is required when building PitPolicyRule")
+                    )?
+                ,
+                interval: self.interval
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interval", "interval was not specified but it is required when building PitPolicyRule")
+                    )?
+                ,
+                retention_duration: self.retention_duration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("retention_duration", "retention_duration was not specified but it is required when building PitPolicyRule")
+                    )?
+                ,
+                enabled: self.enabled
+                ,
+            }
+        )
     }
 }
+

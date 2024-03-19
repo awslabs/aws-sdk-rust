@@ -3,20 +3,19 @@
 /// <p>The image format of a AWS Signer platform or profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SigningImageFormat {
+pub struct SigningImageFormat  {
     /// <p>The supported formats of a signing image.</p>
-    pub supported_formats: ::std::vec::Vec<crate::types::ImageFormat>,
+    pub supported_formats: ::std::vec::Vec::<crate::types::ImageFormat>,
     /// <p>The default format of a signing image.</p>
     pub default_format: crate::types::ImageFormat,
 }
-impl SigningImageFormat {
+impl  SigningImageFormat  {
     /// <p>The supported formats of a signing image.</p>
-    pub fn supported_formats(&self) -> &[crate::types::ImageFormat] {
-        use std::ops::Deref;
-        self.supported_formats.deref()
+    pub fn supported_formats(&self) -> & [crate::types::ImageFormat] {
+        use std::ops::Deref; self.supported_formats.deref()
     }
     /// <p>The default format of a signing image.</p>
-    pub fn default_format(&self) -> &crate::types::ImageFormat {
+    pub fn default_format(&self) -> & crate::types::ImageFormat {
         &self.default_format
     }
 }
@@ -31,7 +30,7 @@ impl SigningImageFormat {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningImageFormatBuilder {
-    pub(crate) supported_formats: ::std::option::Option<::std::vec::Vec<crate::types::ImageFormat>>,
+    pub(crate) supported_formats: ::std::option::Option<::std::vec::Vec::<crate::types::ImageFormat>>,
     pub(crate) default_format: ::std::option::Option<crate::types::ImageFormat>,
 }
 impl SigningImageFormatBuilder {
@@ -42,17 +41,16 @@ impl SigningImageFormatBuilder {
     /// <p>The supported formats of a signing image.</p>
     pub fn supported_formats(mut self, input: crate::types::ImageFormat) -> Self {
         let mut v = self.supported_formats.unwrap_or_default();
-        v.push(input);
-        self.supported_formats = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_formats = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported formats of a signing image.</p>
-    pub fn set_supported_formats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageFormat>>) -> Self {
-        self.supported_formats = input;
-        self
+    pub fn set_supported_formats(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageFormat>>) -> Self {
+        self.supported_formats = input; self
     }
     /// <p>The supported formats of a signing image.</p>
-    pub fn get_supported_formats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFormat>> {
+    pub fn get_supported_formats(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageFormat>> {
         &self.supported_formats
     }
     /// <p>The default format of a signing image.</p>
@@ -63,8 +61,7 @@ impl SigningImageFormatBuilder {
     }
     /// <p>The default format of a signing image.</p>
     pub fn set_default_format(mut self, input: ::std::option::Option<crate::types::ImageFormat>) -> Self {
-        self.default_format = input;
-        self
+        self.default_format = input; self
     }
     /// <p>The default format of a signing image.</p>
     pub fn get_default_format(&self) -> &::std::option::Option<crate::types::ImageFormat> {
@@ -75,19 +72,20 @@ impl SigningImageFormatBuilder {
     /// - [`supported_formats`](crate::types::builders::SigningImageFormatBuilder::supported_formats)
     /// - [`default_format`](crate::types::builders::SigningImageFormatBuilder::default_format)
     pub fn build(self) -> ::std::result::Result<crate::types::SigningImageFormat, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SigningImageFormat {
-            supported_formats: self.supported_formats.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "supported_formats",
-                    "supported_formats was not specified but it is required when building SigningImageFormat",
-                )
-            })?,
-            default_format: self.default_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_format",
-                    "default_format was not specified but it is required when building SigningImageFormat",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SigningImageFormat {
+                supported_formats: self.supported_formats
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("supported_formats", "supported_formats was not specified but it is required when building SigningImageFormat")
+                    )?
+                ,
+                default_format: self.default_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_format", "default_format was not specified but it is required when building SigningImageFormat")
+                    )?
+                ,
+            }
+        )
     }
 }
+

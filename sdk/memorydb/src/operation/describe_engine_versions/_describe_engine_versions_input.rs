@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEngineVersionsInput {
+pub struct DescribeEngineVersionsInput  {
     /// <p>The Redis engine version</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a specific parameter group family to return details for.</p>
@@ -14,13 +14,13 @@ pub struct DescribeEngineVersionsInput {
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub default_only: ::std::option::Option<bool>,
 }
-impl DescribeEngineVersionsInput {
+impl  DescribeEngineVersionsInput  {
     /// <p>The Redis engine version</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
-    pub fn parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -28,7 +28,7 @@ impl DescribeEngineVersionsInput {
         self.max_results
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
@@ -61,8 +61,7 @@ impl DescribeEngineVersionsInputBuilder {
     }
     /// <p>The Redis engine version</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The Redis engine version</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeEngineVersionsInputBuilder {
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
     pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_family = input;
-        self
+        self.parameter_group_family = input; self
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
     pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DescribeEngineVersionsInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -103,8 +100,7 @@ impl DescribeEngineVersionsInputBuilder {
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,26 +113,28 @@ impl DescribeEngineVersionsInputBuilder {
     }
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub fn set_default_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_only = input;
-        self
+        self.default_only = input; self
     }
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub fn get_default_only(&self) -> &::std::option::Option<bool> {
         &self.default_only
     }
     /// Consumes the builder and constructs a [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_engine_versions::DescribeEngineVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_engine_versions::DescribeEngineVersionsInput {
-            engine_version: self.engine_version,
-            parameter_group_family: self.parameter_group_family,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            default_only: self.default_only,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_engine_versions::DescribeEngineVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_engine_versions::DescribeEngineVersionsInput {
+                engine_version: self.engine_version
+                ,
+                parameter_group_family: self.parameter_group_family
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                default_only: self.default_only
+                ,
+            }
+        )
     }
 }
+

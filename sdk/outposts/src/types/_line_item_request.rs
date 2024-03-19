@@ -3,15 +3,15 @@
 /// <p>Information about a line item request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LineItemRequest {
+pub struct LineItemRequest  {
     /// <p>The ID of the catalog item.</p>
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of a line item request.</p>
     pub quantity: ::std::option::Option<i32>,
 }
-impl LineItemRequest {
+impl  LineItemRequest  {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> ::std::option::Option<& str> {
         self.catalog_item_id.as_deref()
     }
     /// <p>The quantity of a line item request.</p>
@@ -41,8 +41,7 @@ impl LineItemRequestBuilder {
     }
     /// <p>The ID of the catalog item.</p>
     pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_item_id = input;
-        self
+        self.catalog_item_id = input; self
     }
     /// <p>The ID of the catalog item.</p>
     pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LineItemRequestBuilder {
     }
     /// <p>The quantity of a line item request.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The quantity of a line item request.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl LineItemRequestBuilder {
     /// Consumes the builder and constructs a [`LineItemRequest`](crate::types::LineItemRequest).
     pub fn build(self) -> crate::types::LineItemRequest {
         crate::types::LineItemRequest {
-            catalog_item_id: self.catalog_item_id,
-            quantity: self.quantity,
+            catalog_item_id: self.catalog_item_id
+            ,
+            quantity: self.quantity
+            ,
         }
     }
 }
+

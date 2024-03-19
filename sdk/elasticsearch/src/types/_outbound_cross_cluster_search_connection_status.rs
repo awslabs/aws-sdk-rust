@@ -3,7 +3,7 @@
 /// <p>Specifies the connection status of an outbound cross-cluster search connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutboundCrossClusterSearchConnectionStatus {
+pub struct OutboundCrossClusterSearchConnectionStatus  {
     /// <p>The state code for outbound connection. This can be one of the following:</p>
     /// <ul>
     /// <li>VALIDATING: The outbound connection request is being validated.</li>
@@ -19,7 +19,7 @@ pub struct OutboundCrossClusterSearchConnectionStatus {
     /// <p>Specifies verbose information for the outbound connection status.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl OutboundCrossClusterSearchConnectionStatus {
+impl  OutboundCrossClusterSearchConnectionStatus  {
     /// <p>The state code for outbound connection. This can be one of the following:</p>
     /// <ul>
     /// <li>VALIDATING: The outbound connection request is being validated.</li>
@@ -31,11 +31,11 @@ impl OutboundCrossClusterSearchConnectionStatus {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::OutboundCrossClusterSearchConnectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::OutboundCrossClusterSearchConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Specifies verbose information for the outbound connection status.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl OutboundCrossClusterSearchConnectionStatusBuilder {
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The state code for outbound connection. This can be one of the following:</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl OutboundCrossClusterSearchConnectionStatusBuilder {
     }
     /// <p>Specifies verbose information for the outbound connection status.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Specifies verbose information for the outbound connection status.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,11 @@ impl OutboundCrossClusterSearchConnectionStatusBuilder {
     /// Consumes the builder and constructs a [`OutboundCrossClusterSearchConnectionStatus`](crate::types::OutboundCrossClusterSearchConnectionStatus).
     pub fn build(self) -> crate::types::OutboundCrossClusterSearchConnectionStatus {
         crate::types::OutboundCrossClusterSearchConnectionStatus {
-            status_code: self.status_code,
-            message: self.message,
+            status_code: self.status_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

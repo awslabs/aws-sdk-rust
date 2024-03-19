@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachInstancesFromLoadBalancerInput {
+pub struct DetachInstancesFromLoadBalancerInput  {
     /// <p>The name of the Lightsail load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DetachInstancesFromLoadBalancerInput {
+impl  DetachInstancesFromLoadBalancerInput  {
     /// <p>The name of the Lightsail load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
-    pub fn instance_names(&self) -> &[::std::string::String] {
-        self.instance_names.as_deref().unwrap_or_default()
+    pub fn instance_names(&self) -> & [::std::string::String] {
+        self.instance_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DetachInstancesFromLoadBalancerInput {
@@ -32,7 +33,7 @@ impl DetachInstancesFromLoadBalancerInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachInstancesFromLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DetachInstancesFromLoadBalancerInputBuilder {
     /// <p>The name of the Lightsail load balancer.</p>
@@ -43,8 +44,7 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
     }
     /// <p>The name of the Lightsail load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the Lightsail load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
     pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
-        v.push(input.into());
-        self.instance_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_names = input;
-        self
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_names = input; self
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_names
     }
     /// Consumes the builder and constructs a [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name,
-                instance_names: self.instance_names,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                instance_names: self.instance_names
+                ,
+            }
         )
     }
 }
+

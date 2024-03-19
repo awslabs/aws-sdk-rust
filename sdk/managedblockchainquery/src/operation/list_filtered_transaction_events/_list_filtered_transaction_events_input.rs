@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFilteredTransactionEventsInput {
+pub struct ListFilteredTransactionEventsInput  {
     /// <p>The blockchain network where the transaction occurred.</p>
     /// <p>Valid Values: <code>BITCOIN_MAINNET</code> | <code>BITCOIN_TESTNET</code></p>
     pub network: ::std::option::Option<::std::string::String>,
@@ -25,34 +25,34 @@ pub struct ListFilteredTransactionEventsInput {
     /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListFilteredTransactionEventsInput {
+impl  ListFilteredTransactionEventsInput  {
     /// <p>The blockchain network where the transaction occurred.</p>
     /// <p>Valid Values: <code>BITCOIN_MAINNET</code> | <code>BITCOIN_TESTNET</code></p>
-    pub fn network(&self) -> ::std::option::Option<&str> {
+    pub fn network(&self) -> ::std::option::Option<& str> {
         self.network.as_deref()
     }
     /// <p>This is the unique public address on the blockchain for which the transaction events are being requested.</p>
-    pub fn address_identifier_filter(&self) -> ::std::option::Option<&crate::types::AddressIdentifierFilter> {
+    pub fn address_identifier_filter(&self) -> ::std::option::Option<& crate::types::AddressIdentifierFilter> {
         self.address_identifier_filter.as_ref()
     }
     /// <p>This container specifies the time frame for the transaction events returned in the response.</p>
-    pub fn time_filter(&self) -> ::std::option::Option<&crate::types::TimeFilter> {
+    pub fn time_filter(&self) -> ::std::option::Option<& crate::types::TimeFilter> {
         self.time_filter.as_ref()
     }
     /// <p>This container specifies filtering attributes related to BITCOIN_VOUT event types</p>
-    pub fn vout_filter(&self) -> ::std::option::Option<&crate::types::VoutFilter> {
+    pub fn vout_filter(&self) -> ::std::option::Option<& crate::types::VoutFilter> {
         self.vout_filter.as_ref()
     }
     /// <p>The container for the <code>ConfirmationStatusFilter</code> that filters for the <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a> of the results.</p>
-    pub fn confirmation_status_filter(&self) -> ::std::option::Option<&crate::types::ConfirmationStatusFilter> {
+    pub fn confirmation_status_filter(&self) -> ::std::option::Option<& crate::types::ConfirmationStatusFilter> {
         self.confirmation_status_filter.as_ref()
     }
     /// <p>The order by which the results will be sorted.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::ListFilteredTransactionEventsSort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::ListFilteredTransactionEventsSort> {
         self.sort.as_ref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of transaction events to list.</p>
@@ -95,8 +95,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     /// <p>The blockchain network where the transaction occurred.</p>
     /// <p>Valid Values: <code>BITCOIN_MAINNET</code> | <code>BITCOIN_TESTNET</code></p>
     pub fn set_network(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     /// <p>Valid Values: <code>BITCOIN_MAINNET</code> | <code>BITCOIN_TESTNET</code></p>
@@ -111,8 +110,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     }
     /// <p>This is the unique public address on the blockchain for which the transaction events are being requested.</p>
     pub fn set_address_identifier_filter(mut self, input: ::std::option::Option<crate::types::AddressIdentifierFilter>) -> Self {
-        self.address_identifier_filter = input;
-        self
+        self.address_identifier_filter = input; self
     }
     /// <p>This is the unique public address on the blockchain for which the transaction events are being requested.</p>
     pub fn get_address_identifier_filter(&self) -> &::std::option::Option<crate::types::AddressIdentifierFilter> {
@@ -125,8 +123,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     }
     /// <p>This container specifies the time frame for the transaction events returned in the response.</p>
     pub fn set_time_filter(mut self, input: ::std::option::Option<crate::types::TimeFilter>) -> Self {
-        self.time_filter = input;
-        self
+        self.time_filter = input; self
     }
     /// <p>This container specifies the time frame for the transaction events returned in the response.</p>
     pub fn get_time_filter(&self) -> &::std::option::Option<crate::types::TimeFilter> {
@@ -139,8 +136,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     }
     /// <p>This container specifies filtering attributes related to BITCOIN_VOUT event types</p>
     pub fn set_vout_filter(mut self, input: ::std::option::Option<crate::types::VoutFilter>) -> Self {
-        self.vout_filter = input;
-        self
+        self.vout_filter = input; self
     }
     /// <p>This container specifies filtering attributes related to BITCOIN_VOUT event types</p>
     pub fn get_vout_filter(&self) -> &::std::option::Option<crate::types::VoutFilter> {
@@ -153,8 +149,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     }
     /// <p>The container for the <code>ConfirmationStatusFilter</code> that filters for the <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a> of the results.</p>
     pub fn set_confirmation_status_filter(mut self, input: ::std::option::Option<crate::types::ConfirmationStatusFilter>) -> Self {
-        self.confirmation_status_filter = input;
-        self
+        self.confirmation_status_filter = input; self
     }
     /// <p>The container for the <code>ConfirmationStatusFilter</code> that filters for the <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a> of the results.</p>
     pub fn get_confirmation_status_filter(&self) -> &::std::option::Option<crate::types::ConfirmationStatusFilter> {
@@ -167,8 +162,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     }
     /// <p>The order by which the results will be sorted.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ListFilteredTransactionEventsSort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>The order by which the results will be sorted.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::ListFilteredTransactionEventsSort> {
@@ -181,8 +175,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +196,7 @@ impl ListFilteredTransactionEventsInputBuilder {
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of transaction events to list.</p>
     /// <p>Default: <code>100</code></p><note>
@@ -215,21 +207,27 @@ impl ListFilteredTransactionEventsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFilteredTransactionEventsInput`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsInput {
-            network: self.network,
-            address_identifier_filter: self.address_identifier_filter,
-            time_filter: self.time_filter,
-            vout_filter: self.vout_filter,
-            confirmation_status_filter: self.confirmation_status_filter,
-            sort: self.sort,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsInput {
+                network: self.network
+                ,
+                address_identifier_filter: self.address_identifier_filter
+                ,
+                time_filter: self.time_filter
+                ,
+                vout_filter: self.vout_filter
+                ,
+                confirmation_status_filter: self.confirmation_status_filter
+                ,
+                sort: self.sort
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

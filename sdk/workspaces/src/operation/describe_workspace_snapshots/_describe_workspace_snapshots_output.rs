@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceSnapshotsOutput {
+pub struct DescribeWorkspaceSnapshotsOutput  {
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    pub rebuild_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
+    pub rebuild_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>>,
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    pub restore_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
+    pub restore_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>>,
     _request_id: Option<String>,
 }
-impl DescribeWorkspaceSnapshotsOutput {
+impl  DescribeWorkspaceSnapshotsOutput  {
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rebuild_snapshots.is_none()`.
-    pub fn rebuild_snapshots(&self) -> &[crate::types::Snapshot] {
-        self.rebuild_snapshots.as_deref().unwrap_or_default()
+    pub fn rebuild_snapshots(&self) -> & [crate::types::Snapshot] {
+        self.rebuild_snapshots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restore_snapshots.is_none()`.
-    pub fn restore_snapshots(&self) -> &[crate::types::Snapshot] {
-        self.restore_snapshots.as_deref().unwrap_or_default()
+    pub fn restore_snapshots(&self) -> & [crate::types::Snapshot] {
+        self.restore_snapshots.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorkspaceSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorkspaceSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput).
     pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsOutputBuilder {
@@ -39,8 +41,8 @@ impl DescribeWorkspaceSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsOutputBuilder {
-    pub(crate) rebuild_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
-    pub(crate) restore_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
+    pub(crate) rebuild_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>>,
+    pub(crate) restore_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspaceSnapshotsOutputBuilder {
@@ -51,17 +53,16 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
     pub fn rebuild_snapshots(mut self, input: crate::types::Snapshot) -> Self {
         let mut v = self.rebuild_snapshots.unwrap_or_default();
-        v.push(input);
-        self.rebuild_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rebuild_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    pub fn set_rebuild_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
-        self.rebuild_snapshots = input;
-        self
+    pub fn set_rebuild_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>>) -> Self {
+        self.rebuild_snapshots = input; self
     }
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    pub fn get_rebuild_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+    pub fn get_rebuild_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>> {
         &self.rebuild_snapshots
     }
     /// Appends an item to `restore_snapshots`.
@@ -71,34 +72,36 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
     pub fn restore_snapshots(mut self, input: crate::types::Snapshot) -> Self {
         let mut v = self.restore_snapshots.unwrap_or_default();
-        v.push(input);
-        self.restore_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.restore_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    pub fn set_restore_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
-        self.restore_snapshots = input;
-        self
+    pub fn set_restore_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>>) -> Self {
+        self.restore_snapshots = input; self
     }
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    pub fn get_restore_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+    pub fn get_restore_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Snapshot>> {
         &self.restore_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput).
     pub fn build(self) -> crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput {
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput {
-            rebuild_snapshots: self.rebuild_snapshots,
-            restore_snapshots: self.restore_snapshots,
+            rebuild_snapshots: self.rebuild_snapshots
+            ,
+            restore_snapshots: self.restore_snapshots
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

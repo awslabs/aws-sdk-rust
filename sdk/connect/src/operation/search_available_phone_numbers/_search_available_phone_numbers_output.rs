@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchAvailablePhoneNumbersOutput {
+pub struct SearchAvailablePhoneNumbersOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    pub available_numbers_list: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
+    pub available_numbers_list: ::std::option::Option<::std::vec::Vec::<crate::types::AvailableNumberSummary>>,
     _request_id: Option<String>,
 }
-impl SearchAvailablePhoneNumbersOutput {
+impl  SearchAvailablePhoneNumbersOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_numbers_list.is_none()`.
-    pub fn available_numbers_list(&self) -> &[crate::types::AvailableNumberSummary] {
-        self.available_numbers_list.as_deref().unwrap_or_default()
+    pub fn available_numbers_list(&self) -> & [crate::types::AvailableNumberSummary] {
+        self.available_numbers_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchAvailablePhoneNumbersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchAvailablePhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
     pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder {
@@ -38,7 +39,7 @@ impl SearchAvailablePhoneNumbersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) available_numbers_list: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>,
+    pub(crate) available_numbers_list: ::std::option::Option<::std::vec::Vec::<crate::types::AvailableNumberSummary>>,
     _request_id: Option<String>,
 }
 impl SearchAvailablePhoneNumbersOutputBuilder {
@@ -49,8 +50,7 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
     pub fn available_numbers_list(mut self, input: crate::types::AvailableNumberSummary) -> Self {
         let mut v = self.available_numbers_list.unwrap_or_default();
-        v.push(input);
-        self.available_numbers_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.available_numbers_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    pub fn set_available_numbers_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>>) -> Self {
-        self.available_numbers_list = input;
-        self
+    pub fn set_available_numbers_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailableNumberSummary>>) -> Self {
+        self.available_numbers_list = input; self
     }
     /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    pub fn get_available_numbers_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
+    pub fn get_available_numbers_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailableNumberSummary>> {
         &self.available_numbers_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
     pub fn build(self) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
-            next_token: self.next_token,
-            available_numbers_list: self.available_numbers_list,
+            next_token: self.next_token
+            ,
+            available_numbers_list: self.available_numbers_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

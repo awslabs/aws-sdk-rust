@@ -3,7 +3,7 @@
 /// <p>A string representing the status of DNSSEC signing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DnssecStatus {
+pub struct DnssecStatus  {
     /// <p>A string that represents the current hosted zone signing status.</p>
     /// <p>Status can have one of the following values:</p>
     /// <dl>
@@ -42,7 +42,7 @@ pub struct DnssecStatus {
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl DnssecStatus {
+impl  DnssecStatus  {
     /// <p>A string that represents the current hosted zone signing status.</p>
     /// <p>Status can have one of the following values:</p>
     /// <dl>
@@ -77,11 +77,11 @@ impl DnssecStatus {
     /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
     /// </dd>
     /// </dl>
-    pub fn serve_signature(&self) -> ::std::option::Option<&str> {
+    pub fn serve_signature(&self) -> ::std::option::Option<& str> {
         self.serve_signature.as_deref()
     }
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -173,8 +173,7 @@ impl DnssecStatusBuilder {
     /// </dd>
     /// </dl>
     pub fn set_serve_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serve_signature = input;
-        self
+        self.serve_signature = input; self
     }
     /// <p>A string that represents the current hosted zone signing status.</p>
     /// <p>Status can have one of the following values:</p>
@@ -220,8 +219,7 @@ impl DnssecStatusBuilder {
     }
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +228,11 @@ impl DnssecStatusBuilder {
     /// Consumes the builder and constructs a [`DnssecStatus`](crate::types::DnssecStatus).
     pub fn build(self) -> crate::types::DnssecStatus {
         crate::types::DnssecStatus {
-            serve_signature: self.serve_signature,
-            status_message: self.status_message,
+            serve_signature: self.serve_signature
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2Specification {
+pub struct Ec2Specification  {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     pub offering_class: ::std::option::Option<crate::types::OfferingClass>,
 }
-impl Ec2Specification {
+impl  Ec2Specification  {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
-    pub fn offering_class(&self) -> ::std::option::Option<&crate::types::OfferingClass> {
+    pub fn offering_class(&self) -> ::std::option::Option<& crate::types::OfferingClass> {
         self.offering_class.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl Ec2SpecificationBuilder {
     }
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClass>) -> Self {
-        self.offering_class = input;
-        self
+        self.offering_class = input; self
     }
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClass> {
@@ -44,7 +43,9 @@ impl Ec2SpecificationBuilder {
     /// Consumes the builder and constructs a [`Ec2Specification`](crate::types::Ec2Specification).
     pub fn build(self) -> crate::types::Ec2Specification {
         crate::types::Ec2Specification {
-            offering_class: self.offering_class,
+            offering_class: self.offering_class
+            ,
         }
     }
 }
+

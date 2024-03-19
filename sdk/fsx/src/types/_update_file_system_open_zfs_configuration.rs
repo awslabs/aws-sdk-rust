@@ -3,7 +3,7 @@
 /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFileSystemOpenZfsConfiguration {
+pub struct UpdateFileSystemOpenZfsConfiguration  {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
@@ -28,11 +28,11 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
-    pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub add_route_table_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateFileSystemOpenZfsConfiguration {
+impl  UpdateFileSystemOpenZfsConfiguration  {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn automatic_backup_retention_days(&self) -> ::std::option::Option<i32> {
         self.automatic_backup_retention_days
@@ -46,7 +46,7 @@ impl UpdateFileSystemOpenZfsConfiguration {
         self.copy_tags_to_volumes
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
-    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<& str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
@@ -63,24 +63,26 @@ impl UpdateFileSystemOpenZfsConfiguration {
     /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<& str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
-    pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
+    pub fn disk_iops_configuration(&self) -> ::std::option::Option<& crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_route_table_ids.is_none()`.
-    pub fn add_route_table_ids(&self) -> &[::std::string::String] {
-        self.add_route_table_ids.as_deref().unwrap_or_default()
+    pub fn add_route_table_ids(&self) -> & [::std::string::String] {
+        self.add_route_table_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_route_table_ids.is_none()`.
-    pub fn remove_route_table_ids(&self) -> &[::std::string::String] {
-        self.remove_route_table_ids.as_deref().unwrap_or_default()
+    pub fn remove_route_table_ids(&self) -> & [::std::string::String] {
+        self.remove_route_table_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateFileSystemOpenZfsConfiguration {
@@ -101,8 +103,8 @@ pub struct UpdateFileSystemOpenZfsConfigurationBuilder {
     pub(crate) throughput_capacity: ::std::option::Option<i32>,
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
-    pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -112,8 +114,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn set_automatic_backup_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automatic_backup_retention_days = input;
-        self
+        self.automatic_backup_retention_days = input; self
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
@@ -126,8 +127,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub fn set_copy_tags_to_backups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_backups = input;
-        self
+        self.copy_tags_to_backups = input; self
     }
     /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
@@ -140,8 +140,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn set_copy_tags_to_volumes(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_volumes = input;
-        self
+        self.copy_tags_to_volumes = input; self
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn get_copy_tags_to_volumes(&self) -> &::std::option::Option<bool> {
@@ -154,8 +153,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_automatic_backup_start_time = input;
-        self
+        self.daily_automatic_backup_start_time = input; self
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +178,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p></li>
     /// </ul>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput_capacity = input;
-        self
+        self.throughput_capacity = input; self
     }
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
@@ -206,8 +203,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn set_weekly_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = input;
-        self
+        self.weekly_maintenance_start_time = input; self
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>.</p>
     /// <p><code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -223,8 +219,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
-        self.disk_iops_configuration = input;
-        self
+        self.disk_iops_configuration = input; self
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
@@ -237,17 +232,16 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
     pub fn add_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_route_table_ids.unwrap_or_default();
-        v.push(input.into());
-        self.add_route_table_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.add_route_table_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
-    pub fn set_add_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.add_route_table_ids = input;
-        self
+    pub fn set_add_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.add_route_table_ids = input; self
     }
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
-    pub fn get_add_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.add_route_table_ids
     }
     /// Appends an item to `remove_route_table_ids`.
@@ -257,31 +251,40 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
     pub fn remove_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_route_table_ids.unwrap_or_default();
-        v.push(input.into());
-        self.remove_route_table_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_route_table_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    pub fn set_remove_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_route_table_ids = input;
-        self
+    pub fn set_remove_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_route_table_ids = input; self
     }
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_route_table_ids
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemOpenZfsConfiguration`](crate::types::UpdateFileSystemOpenZfsConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemOpenZfsConfiguration {
         crate::types::UpdateFileSystemOpenZfsConfiguration {
-            automatic_backup_retention_days: self.automatic_backup_retention_days,
-            copy_tags_to_backups: self.copy_tags_to_backups,
-            copy_tags_to_volumes: self.copy_tags_to_volumes,
-            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time,
-            throughput_capacity: self.throughput_capacity,
-            weekly_maintenance_start_time: self.weekly_maintenance_start_time,
-            disk_iops_configuration: self.disk_iops_configuration,
-            add_route_table_ids: self.add_route_table_ids,
-            remove_route_table_ids: self.remove_route_table_ids,
+            automatic_backup_retention_days: self.automatic_backup_retention_days
+            ,
+            copy_tags_to_backups: self.copy_tags_to_backups
+            ,
+            copy_tags_to_volumes: self.copy_tags_to_volumes
+            ,
+            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time
+            ,
+            throughput_capacity: self.throughput_capacity
+            ,
+            weekly_maintenance_start_time: self.weekly_maintenance_start_time
+            ,
+            disk_iops_configuration: self.disk_iops_configuration
+            ,
+            add_route_table_ids: self.add_route_table_ids
+            ,
+            remove_route_table_ids: self.remove_route_table_ids
+            ,
         }
     }
 }
+

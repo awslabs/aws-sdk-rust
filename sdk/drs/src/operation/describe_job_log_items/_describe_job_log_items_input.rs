@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobLogItemsInput {
+pub struct DescribeJobLogItemsInput  {
     /// <p>The ID of the Job for which Job log items will be retrieved.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of Job log items to retrieve.</p>
@@ -10,9 +10,9 @@ pub struct DescribeJobLogItemsInput {
     /// <p>The token of the next Job log items to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeJobLogItemsInput {
+impl  DescribeJobLogItemsInput  {
     /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Maximum number of Job log items to retrieve.</p>
@@ -20,7 +20,7 @@ impl DescribeJobLogItemsInput {
         self.max_results
     }
     /// <p>The token of the next Job log items to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeJobLogItemsInputBuilder {
     }
     /// <p>The ID of the Job for which Job log items will be retrieved.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the Job for which Job log items will be retrieved.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DescribeJobLogItemsInputBuilder {
     }
     /// <p>Maximum number of Job log items to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of Job log items to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,22 +74,24 @@ impl DescribeJobLogItemsInputBuilder {
     }
     /// <p>The token of the next Job log items to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token of the next Job log items to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
-            job_id: self.job_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

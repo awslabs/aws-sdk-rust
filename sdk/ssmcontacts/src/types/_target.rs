@@ -3,19 +3,19 @@
 /// <p>The contact or contact channel that's being engaged.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
     pub channel_target_info: ::std::option::Option<crate::types::ChannelTargetInfo>,
     /// <p>Information about the contact that Incident Manager is engaging.</p>
     pub contact_target_info: ::std::option::Option<crate::types::ContactTargetInfo>,
 }
-impl Target {
+impl  Target  {
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
-    pub fn channel_target_info(&self) -> ::std::option::Option<&crate::types::ChannelTargetInfo> {
+    pub fn channel_target_info(&self) -> ::std::option::Option<& crate::types::ChannelTargetInfo> {
         self.channel_target_info.as_ref()
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
-    pub fn contact_target_info(&self) -> ::std::option::Option<&crate::types::ContactTargetInfo> {
+    pub fn contact_target_info(&self) -> ::std::option::Option<& crate::types::ContactTargetInfo> {
         self.contact_target_info.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TargetBuilder {
     }
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
     pub fn set_channel_target_info(mut self, input: ::std::option::Option<crate::types::ChannelTargetInfo>) -> Self {
-        self.channel_target_info = input;
-        self
+        self.channel_target_info = input; self
     }
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
     pub fn get_channel_target_info(&self) -> &::std::option::Option<crate::types::ChannelTargetInfo> {
@@ -55,8 +54,7 @@ impl TargetBuilder {
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
     pub fn set_contact_target_info(mut self, input: ::std::option::Option<crate::types::ContactTargetInfo>) -> Self {
-        self.contact_target_info = input;
-        self
+        self.contact_target_info = input; self
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
     pub fn get_contact_target_info(&self) -> &::std::option::Option<crate::types::ContactTargetInfo> {
@@ -65,8 +63,11 @@ impl TargetBuilder {
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {
         crate::types::Target {
-            channel_target_info: self.channel_target_info,
-            contact_target_info: self.contact_target_info,
+            channel_target_info: self.channel_target_info
+            ,
+            contact_target_info: self.contact_target_info
+            ,
         }
     }
 }
+

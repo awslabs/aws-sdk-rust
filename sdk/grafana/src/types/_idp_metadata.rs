@@ -22,11 +22,7 @@ impl IdpMetadata {
     /// Tries to convert the enum instance into [`Url`](crate::types::IdpMetadata::Url), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let IdpMetadata::Url(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IdpMetadata::Url(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Url`](crate::types::IdpMetadata::Url).
     pub fn is_url(&self) -> bool {
@@ -35,11 +31,7 @@ impl IdpMetadata {
     /// Tries to convert the enum instance into [`Xml`](crate::types::IdpMetadata::Xml), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_xml(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let IdpMetadata::Xml(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IdpMetadata::Xml(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Xml`](crate::types::IdpMetadata::Xml).
     pub fn is_xml(&self) -> bool {
@@ -50,3 +42,4 @@ impl IdpMetadata {
         matches!(self, Self::Unknown)
     }
 }
+

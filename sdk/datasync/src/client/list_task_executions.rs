@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTaskExecutions`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`task_arn(impl Into<String>)`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::task_arn) / [`set_task_arn(Option<String>)`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::set_task_arn):<br>required: **false**<br><p>Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies how many results you want in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies an opaque string that indicates the position at which to begin the next list of results in the response.</p><br>
-    /// - On success, responds with [`ListTaskExecutionsOutput`](crate::operation::list_task_executions::ListTaskExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListTaskExecutionsOutput`](crate::operation::list_task_executions::ListTaskExecutionsOutput) with field(s):
     ///   - [`task_executions(Option<Vec::<TaskExecutionListEntry>>)`](crate::operation::list_task_executions::ListTaskExecutionsOutput::task_executions): <p>A list of the task's executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_task_executions::ListTaskExecutionsOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    /// - On failure, responds with [`SdkError<ListTaskExecutionsError>`](crate::operation::list_task_executions::ListTaskExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListTaskExecutionsError>`](crate::operation::list_task_executions::ListTaskExecutionsError)
     pub fn list_task_executions(&self) -> crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder {
-        crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_task_executions::builders::ListTaskExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

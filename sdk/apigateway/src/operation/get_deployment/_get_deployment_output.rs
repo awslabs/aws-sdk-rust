@@ -3,7 +3,7 @@
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentOutput {
+pub struct GetDeploymentOutput  {
     /// <p>The identifier for the deployment resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the deployment resource.</p>
@@ -11,38 +11,32 @@ pub struct GetDeploymentOutput {
     /// <p>The date and time that the deployment resource was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
-    pub api_summary: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
-    >,
+    pub api_summary: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::MethodSnapshot>>>,
     _request_id: Option<String>,
 }
-impl GetDeploymentOutput {
+impl  GetDeploymentOutput  {
     /// <p>The identifier for the deployment resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description for the deployment resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the deployment resource was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
-    pub fn api_summary(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
-    > {
+    pub fn api_summary(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::MethodSnapshot>>> {
         self.api_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn builder() -> crate::operation::get_deployment::builders::GetDeploymentOutputBuilder {
@@ -57,9 +51,7 @@ pub struct GetDeploymentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) api_summary: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
-    >,
+    pub(crate) api_summary: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::MethodSnapshot>>>,
     _request_id: Option<String>,
 }
 impl GetDeploymentOutputBuilder {
@@ -70,8 +62,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The identifier for the deployment resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the deployment resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +75,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The description for the deployment resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the deployment resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +88,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The date and time that the deployment resource was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time that the deployment resource was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,51 +99,42 @@ impl GetDeploymentOutputBuilder {
     /// To override the contents of this collection use [`set_api_summary`](Self::set_api_summary).
     ///
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
-    pub fn api_summary(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-    ) -> Self {
+    pub fn api_summary(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, crate::types::MethodSnapshot>) -> Self {
         let mut hash_map = self.api_summary.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.api_summary = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.api_summary = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
-    pub fn set_api_summary(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
-        >,
-    ) -> Self {
-        self.api_summary = input;
-        self
+    pub fn set_api_summary(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::MethodSnapshot>>>) -> Self {
+        self.api_summary = input; self
     }
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
-    pub fn get_api_summary(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
-    > {
+    pub fn get_api_summary(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::MethodSnapshot>>> {
         &self.api_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn build(self) -> crate::operation::get_deployment::GetDeploymentOutput {
         crate::operation::get_deployment::GetDeploymentOutput {
-            id: self.id,
-            description: self.description,
-            created_date: self.created_date,
-            api_summary: self.api_summary,
+            id: self.id
+            ,
+            description: self.description
+            ,
+            created_date: self.created_date
+            ,
+            api_summary: self.api_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLbCookieStickinessPolicyInput {
+pub struct CreateLbCookieStickinessPolicyInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
@@ -11,13 +11,13 @@ pub struct CreateLbCookieStickinessPolicyInput {
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     pub cookie_expiration_period: ::std::option::Option<i64>,
 }
-impl CreateLbCookieStickinessPolicyInput {
+impl  CreateLbCookieStickinessPolicyInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
@@ -49,8 +49,7 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     pub fn set_cookie_expiration_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cookie_expiration_period = input;
-        self
+        self.cookie_expiration_period = input; self
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     pub fn get_cookie_expiration_period(&self) -> &::std::option::Option<i64> {
         &self.cookie_expiration_period
     }
     /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyInput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput {
-                load_balancer_name: self.load_balancer_name,
-                policy_name: self.policy_name,
-                cookie_expiration_period: self.cookie_expiration_period,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                policy_name: self.policy_name
+                ,
+                cookie_expiration_period: self.cookie_expiration_period
+                ,
+            }
         )
     }
 }
+

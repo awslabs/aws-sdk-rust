@@ -3,15 +3,14 @@
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlueDataCatalogConfiguration {
+pub struct GlueDataCatalogConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub database_arn: ::std::string::String,
 }
-impl GlueDataCatalogConfiguration {
+impl  GlueDataCatalogConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.database_arn.deref()
+    pub fn database_arn(&self) -> & str {
+        use std::ops::Deref; self.database_arn.deref()
     }
 }
 impl GlueDataCatalogConfiguration {
@@ -36,8 +35,7 @@ impl GlueDataCatalogConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GlueDataCatalogConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`database_arn`](crate::types::builders::GlueDataCatalogConfigurationBuilder::database_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GlueDataCatalogConfiguration {
-            database_arn: self.database_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_arn",
-                    "database_arn was not specified but it is required when building GlueDataCatalogConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GlueDataCatalogConfiguration {
+                database_arn: self.database_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_arn", "database_arn was not specified but it is required when building GlueDataCatalogConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

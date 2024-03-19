@@ -3,7 +3,7 @@
 /// <p>Provides information about a group associated with the principal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrincipalGroup {
+pub struct PrincipalGroup  {
     /// <p>The name of the group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
@@ -11,17 +11,17 @@ pub struct PrincipalGroup {
     /// <p>The type of group.</p>
     pub membership_type: ::std::option::Option<crate::types::MembershipType>,
 }
-impl PrincipalGroup {
+impl  PrincipalGroup  {
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
-    pub fn access(&self) -> &crate::types::ReadAccessType {
+    pub fn access(&self) -> & crate::types::ReadAccessType {
         &self.access
     }
     /// <p>The type of group.</p>
-    pub fn membership_type(&self) -> ::std::option::Option<&crate::types::MembershipType> {
+    pub fn membership_type(&self) -> ::std::option::Option<& crate::types::MembershipType> {
         self.membership_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PrincipalGroupBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PrincipalGroupBuilder {
     }
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
     pub fn set_access(mut self, input: ::std::option::Option<crate::types::ReadAccessType>) -> Self {
-        self.access = input;
-        self
+        self.access = input; self
     }
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
     pub fn get_access(&self) -> &::std::option::Option<crate::types::ReadAccessType> {
@@ -77,8 +75,7 @@ impl PrincipalGroupBuilder {
     }
     /// <p>The type of group.</p>
     pub fn set_membership_type(mut self, input: ::std::option::Option<crate::types::MembershipType>) -> Self {
-        self.membership_type = input;
-        self
+        self.membership_type = input; self
     }
     /// <p>The type of group.</p>
     pub fn get_membership_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
@@ -88,15 +85,19 @@ impl PrincipalGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access`](crate::types::builders::PrincipalGroupBuilder::access)
     pub fn build(self) -> ::std::result::Result<crate::types::PrincipalGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrincipalGroup {
-            name: self.name,
-            access: self.access.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access",
-                    "access was not specified but it is required when building PrincipalGroup",
-                )
-            })?,
-            membership_type: self.membership_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrincipalGroup {
+                name: self.name
+                ,
+                access: self.access
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access", "access was not specified but it is required when building PrincipalGroup")
+                    )?
+                ,
+                membership_type: self.membership_type
+                ,
+            }
+        )
     }
 }
+

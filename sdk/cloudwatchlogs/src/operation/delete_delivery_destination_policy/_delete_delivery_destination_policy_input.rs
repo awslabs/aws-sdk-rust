@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeliveryDestinationPolicyInput {
+pub struct DeleteDeliveryDestinationPolicyInput  {
     /// <p>The name of the delivery destination that you want to delete the policy for.</p>
     pub delivery_destination_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDeliveryDestinationPolicyInput {
+impl  DeleteDeliveryDestinationPolicyInput  {
     /// <p>The name of the delivery destination that you want to delete the policy for.</p>
-    pub fn delivery_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_destination_name(&self) -> ::std::option::Option<& str> {
         self.delivery_destination_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteDeliveryDestinationPolicyInputBuilder {
     }
     /// <p>The name of the delivery destination that you want to delete the policy for.</p>
     pub fn set_delivery_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_destination_name = input;
-        self
+        self.delivery_destination_name = input; self
     }
     /// <p>The name of the delivery destination that you want to delete the policy for.</p>
     pub fn get_delivery_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_destination_name
     }
     /// Consumes the builder and constructs a [`DeleteDeliveryDestinationPolicyInput`](crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyInput {
-                delivery_destination_name: self.delivery_destination_name,
-            },
+                delivery_destination_name: self.delivery_destination_name
+                ,
+            }
         )
     }
 }
+

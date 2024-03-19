@@ -3,15 +3,15 @@
 /// <p>Information about a finding category with open findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CategoryWithFindingNum {
+pub struct CategoryWithFindingNum  {
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
     pub category_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of open findings in the category.</p>
     pub finding_number: ::std::option::Option<i32>,
 }
-impl CategoryWithFindingNum {
+impl  CategoryWithFindingNum  {
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
-    pub fn category_name(&self) -> ::std::option::Option<&str> {
+    pub fn category_name(&self) -> ::std::option::Option<& str> {
         self.category_name.as_deref()
     }
     /// <p>The number of open findings in the category.</p>
@@ -41,8 +41,7 @@ impl CategoryWithFindingNumBuilder {
     }
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
     pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category_name = input;
-        self
+        self.category_name = input; self
     }
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
     pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CategoryWithFindingNumBuilder {
     }
     /// <p>The number of open findings in the category.</p>
     pub fn set_finding_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.finding_number = input;
-        self
+        self.finding_number = input; self
     }
     /// <p>The number of open findings in the category.</p>
     pub fn get_finding_number(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl CategoryWithFindingNumBuilder {
     /// Consumes the builder and constructs a [`CategoryWithFindingNum`](crate::types::CategoryWithFindingNum).
     pub fn build(self) -> crate::types::CategoryWithFindingNum {
         crate::types::CategoryWithFindingNum {
-            category_name: self.category_name,
-            finding_number: self.finding_number,
+            category_name: self.category_name
+            ,
+            finding_number: self.finding_number
+            ,
         }
     }
 }
+

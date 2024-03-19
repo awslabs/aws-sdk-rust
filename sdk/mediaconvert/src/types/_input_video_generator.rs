@@ -3,11 +3,11 @@
 /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputVideoGenerator {
+pub struct InputVideoGenerator  {
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
     pub duration: ::std::option::Option<i32>,
 }
-impl InputVideoGenerator {
+impl  InputVideoGenerator  {
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
     pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
@@ -34,8 +34,7 @@ impl InputVideoGeneratorBuilder {
     }
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl InputVideoGeneratorBuilder {
     }
     /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::types::InputVideoGenerator).
     pub fn build(self) -> crate::types::InputVideoGenerator {
-        crate::types::InputVideoGenerator { duration: self.duration }
+        crate::types::InputVideoGenerator {
+            duration: self.duration
+            ,
+        }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Contains the authorization parameters for the connection if API Key is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionApiKeyAuthResponseParameters {
+pub struct ConnectionApiKeyAuthResponseParameters  {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     pub api_key_name: ::std::option::Option<::std::string::String>,
 }
-impl ConnectionApiKeyAuthResponseParameters {
+impl  ConnectionApiKeyAuthResponseParameters  {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
-    pub fn api_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_name(&self) -> ::std::option::Option<& str> {
         self.api_key_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ConnectionApiKeyAuthResponseParametersBuilder {
     }
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     pub fn set_api_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_name = input;
-        self
+        self.api_key_name = input; self
     }
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     pub fn get_api_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ConnectionApiKeyAuthResponseParametersBuilder {
     /// Consumes the builder and constructs a [`ConnectionApiKeyAuthResponseParameters`](crate::types::ConnectionApiKeyAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionApiKeyAuthResponseParameters {
         crate::types::ConnectionApiKeyAuthResponseParameters {
-            api_key_name: self.api_key_name,
+            api_key_name: self.api_key_name
+            ,
         }
     }
 }
+

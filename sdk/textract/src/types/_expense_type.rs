@@ -3,15 +3,15 @@
 /// <p>An object used to store information about the Type detected by Amazon Textract.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpenseType {
+pub struct ExpenseType  {
     /// <p>The word or line of text detected by Amazon Textract.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The confidence of accuracy, as a percentage.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl ExpenseType {
+impl  ExpenseType  {
     /// <p>The word or line of text detected by Amazon Textract.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The confidence of accuracy, as a percentage.</p>
@@ -41,8 +41,7 @@ impl ExpenseTypeBuilder {
     }
     /// <p>The word or line of text detected by Amazon Textract.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The word or line of text detected by Amazon Textract.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ExpenseTypeBuilder {
     }
     /// <p>The confidence of accuracy, as a percentage.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence of accuracy, as a percentage.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,11 @@ impl ExpenseTypeBuilder {
     /// Consumes the builder and constructs a [`ExpenseType`](crate::types::ExpenseType).
     pub fn build(self) -> crate::types::ExpenseType {
         crate::types::ExpenseType {
-            text: self.text,
-            confidence: self.confidence,
+            text: self.text
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

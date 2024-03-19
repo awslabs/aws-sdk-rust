@@ -3,16 +3,17 @@
 /// <p>The SCTE configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scte {
+pub struct Scte  {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    pub scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
+    pub scte_filter: ::std::option::Option<::std::vec::Vec::<crate::types::ScteFilter>>,
 }
-impl Scte {
+impl  Scte  {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scte_filter.is_none()`.
-    pub fn scte_filter(&self) -> &[crate::types::ScteFilter] {
-        self.scte_filter.as_deref().unwrap_or_default()
+    pub fn scte_filter(&self) -> & [crate::types::ScteFilter] {
+        self.scte_filter.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Scte {
@@ -26,7 +27,7 @@ impl Scte {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScteBuilder {
-    pub(crate) scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
+    pub(crate) scte_filter: ::std::option::Option<::std::vec::Vec::<crate::types::ScteFilter>>,
 }
 impl ScteBuilder {
     /// Appends an item to `scte_filter`.
@@ -36,23 +37,24 @@ impl ScteBuilder {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
     pub fn scte_filter(mut self, input: crate::types::ScteFilter) -> Self {
         let mut v = self.scte_filter.unwrap_or_default();
-        v.push(input);
-        self.scte_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scte_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    pub fn set_scte_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>) -> Self {
-        self.scte_filter = input;
-        self
+    pub fn set_scte_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScteFilter>>) -> Self {
+        self.scte_filter = input; self
     }
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    pub fn get_scte_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>> {
+    pub fn get_scte_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScteFilter>> {
         &self.scte_filter
     }
     /// Consumes the builder and constructs a [`Scte`](crate::types::Scte).
     pub fn build(self) -> crate::types::Scte {
         crate::types::Scte {
-            scte_filter: self.scte_filter,
+            scte_filter: self.scte_filter
+            ,
         }
     }
 }
+

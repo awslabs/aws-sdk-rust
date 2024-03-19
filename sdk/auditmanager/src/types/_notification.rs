@@ -3,7 +3,7 @@
 /// <p>The notification that informs a user of an update in Audit Manager. For example, this includes the notification that's sent when a control set is delegated for review.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Notification {
+pub struct Notification  {
     /// <p>The unique identifier for the notification.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the assessment.</p>
@@ -21,41 +21,41 @@ pub struct Notification {
     /// <p>The sender of the notification.</p>
     pub source: ::std::option::Option<::std::string::String>,
 }
-impl Notification {
+impl  Notification  {
     /// <p>The unique identifier for the notification.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The name of the related assessment.</p>
-    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>The identifier for the control set.</p>
-    pub fn control_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_id(&self) -> ::std::option::Option<& str> {
         self.control_set_id.as_deref()
     }
     /// <p>Specifies the name of the control set that the notification is about.</p>
-    pub fn control_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_name(&self) -> ::std::option::Option<& str> {
         self.control_set_name.as_deref()
     }
     /// <p>The description of the notification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time when the notification was sent.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The sender of the notification.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
 }
-impl ::std::fmt::Debug for Notification {
+impl  ::std::fmt::Debug for Notification  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Notification");
         formatter.field("id", &self.id);
@@ -97,8 +97,7 @@ impl NotificationBuilder {
     }
     /// <p>The unique identifier for the notification.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the notification.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl NotificationBuilder {
     }
     /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl NotificationBuilder {
     }
     /// <p>The name of the related assessment.</p>
     pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_name = input;
-        self
+        self.assessment_name = input; self
     }
     /// <p>The name of the related assessment.</p>
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl NotificationBuilder {
     }
     /// <p>The identifier for the control set.</p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_set_id = input;
-        self
+        self.control_set_id = input; self
     }
     /// <p>The identifier for the control set.</p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl NotificationBuilder {
     }
     /// <p>Specifies the name of the control set that the notification is about.</p>
     pub fn set_control_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_set_name = input;
-        self
+        self.control_set_name = input; self
     }
     /// <p>Specifies the name of the control set that the notification is about.</p>
     pub fn get_control_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl NotificationBuilder {
     }
     /// <p>The description of the notification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the notification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl NotificationBuilder {
     }
     /// <p>The time when the notification was sent.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>The time when the notification was sent.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +188,7 @@ impl NotificationBuilder {
     }
     /// <p>The sender of the notification.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The sender of the notification.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,14 +197,22 @@ impl NotificationBuilder {
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
     pub fn build(self) -> crate::types::Notification {
         crate::types::Notification {
-            id: self.id,
-            assessment_id: self.assessment_id,
-            assessment_name: self.assessment_name,
-            control_set_id: self.control_set_id,
-            control_set_name: self.control_set_name,
-            description: self.description,
-            event_time: self.event_time,
-            source: self.source,
+            id: self.id
+            ,
+            assessment_id: self.assessment_id
+            ,
+            assessment_name: self.assessment_name
+            ,
+            control_set_id: self.control_set_id
+            ,
+            control_set_name: self.control_set_name
+            ,
+            description: self.description
+            ,
+            event_time: self.event_time
+            ,
+            source: self.source
+            ,
         }
     }
 }
@@ -230,3 +230,4 @@ impl ::std::fmt::Debug for NotificationBuilder {
         formatter.finish()
     }
 }
+

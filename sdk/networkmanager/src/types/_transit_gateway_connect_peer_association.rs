@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway Connect peer association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayConnectPeerAssociation {
+pub struct TransitGatewayConnectPeerAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub transit_gateway_connect_peer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
@@ -15,25 +15,25 @@ pub struct TransitGatewayConnectPeerAssociation {
     /// <p>The state of the association.</p>
     pub state: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociationState>,
 }
-impl TransitGatewayConnectPeerAssociation {
+impl  TransitGatewayConnectPeerAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
-    pub fn transit_gateway_connect_peer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_connect_peer_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_connect_peer_arn.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> ::std::option::Option<&str> {
+    pub fn link_id(&self) -> ::std::option::Option<& str> {
         self.link_id.as_deref()
     }
     /// <p>The state of the association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeerAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayConnectPeerAssociationState> {
         self.state.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl TransitGatewayConnectPeerAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub fn set_transit_gateway_connect_peer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_connect_peer_arn = input;
-        self
+        self.transit_gateway_connect_peer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub fn get_transit_gateway_connect_peer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl TransitGatewayConnectPeerAssociationBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl TransitGatewayConnectPeerAssociationBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The ID of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl TransitGatewayConnectPeerAssociationBuilder {
     }
     /// <p>The ID of the link.</p>
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_id = input;
-        self
+        self.link_id = input; self
     }
     /// <p>The ID of the link.</p>
     pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl TransitGatewayConnectPeerAssociationBuilder {
     }
     /// <p>The state of the association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectPeerAssociationState> {
@@ -128,11 +123,17 @@ impl TransitGatewayConnectPeerAssociationBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayConnectPeerAssociation`](crate::types::TransitGatewayConnectPeerAssociation).
     pub fn build(self) -> crate::types::TransitGatewayConnectPeerAssociation {
         crate::types::TransitGatewayConnectPeerAssociation {
-            transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn,
-            global_network_id: self.global_network_id,
-            device_id: self.device_id,
-            link_id: self.link_id,
-            state: self.state,
+            transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn
+            ,
+            global_network_id: self.global_network_id
+            ,
+            device_id: self.device_id
+            ,
+            link_id: self.link_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

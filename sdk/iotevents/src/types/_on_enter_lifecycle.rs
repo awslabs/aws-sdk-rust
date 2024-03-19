@@ -3,16 +3,17 @@
 /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnEnterLifecycle {
+pub struct OnEnterLifecycle  {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
 }
-impl OnEnterLifecycle {
+impl  OnEnterLifecycle  {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::Event] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::Event] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OnEnterLifecycle {
@@ -26,7 +27,7 @@ impl OnEnterLifecycle {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnEnterLifecycleBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
 }
 impl OnEnterLifecycleBuilder {
     /// Appends an item to `events`.
@@ -36,21 +37,24 @@ impl OnEnterLifecycleBuilder {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>) -> Self {
+        self.events = input; self
     }
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Event>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`OnEnterLifecycle`](crate::types::OnEnterLifecycle).
     pub fn build(self) -> crate::types::OnEnterLifecycle {
-        crate::types::OnEnterLifecycle { events: self.events }
+        crate::types::OnEnterLifecycle {
+            events: self.events
+            ,
+        }
     }
 }
+

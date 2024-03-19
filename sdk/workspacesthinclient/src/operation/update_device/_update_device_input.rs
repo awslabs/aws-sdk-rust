@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateDeviceInput {
+pub struct UpdateDeviceInput  {
     /// <p>The ID of the device to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the device to update.</p>
@@ -12,25 +12,25 @@ pub struct UpdateDeviceInput {
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub software_set_update_schedule: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>,
 }
-impl UpdateDeviceInput {
+impl  UpdateDeviceInput  {
     /// <p>The ID of the device to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the device to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the software set to apply.</p>
-    pub fn desired_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn desired_software_set_id(&self) -> ::std::option::Option<& str> {
         self.desired_software_set_id.as_deref()
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
-    pub fn software_set_update_schedule(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateSchedule> {
+    pub fn software_set_update_schedule(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateSchedule> {
         self.software_set_update_schedule.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateDeviceInput {
+impl  ::std::fmt::Debug for UpdateDeviceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceInput");
         formatter.field("id", &self.id);
@@ -65,8 +65,7 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The ID of the device to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the device to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The name of the device to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the device to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn set_desired_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_software_set_id = input;
-        self
+        self.desired_software_set_id = input; self
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,23 +104,26 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn set_software_set_update_schedule(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>) -> Self {
-        self.software_set_update_schedule = input;
-        self
+        self.software_set_update_schedule = input; self
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
         &self.software_set_update_schedule
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_device::UpdateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_device::UpdateDeviceInput {
-            id: self.id,
-            name: self.name,
-            desired_software_set_id: self.desired_software_set_id,
-            software_set_update_schedule: self.software_set_update_schedule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device::UpdateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_device::UpdateDeviceInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                desired_software_set_id: self.desired_software_set_id
+                ,
+                software_set_update_schedule: self.software_set_update_schedule
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateDeviceInputBuilder {
@@ -136,3 +136,4 @@ impl ::std::fmt::Debug for UpdateDeviceInputBuilder {
         formatter.finish()
     }
 }
+

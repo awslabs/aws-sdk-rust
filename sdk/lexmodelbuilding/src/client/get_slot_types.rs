@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetSlotTypes`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of slot types to return in the response. The default is 10.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::set_name_contains):<br>required: **false**<br><p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p><br>
-    /// - On success, responds with [`GetSlotTypesOutput`](crate::operation::get_slot_types::GetSlotTypesOutput) with field(s):
+                            /// - On success, responds with [`GetSlotTypesOutput`](crate::operation::get_slot_types::GetSlotTypesOutput) with field(s):
     ///   - [`slot_types(Option<Vec::<SlotTypeMetadata>>)`](crate::operation::get_slot_types::GetSlotTypesOutput::slot_types): <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_slot_types::GetSlotTypesOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
-    /// - On failure, responds with [`SdkError<GetSlotTypesError>`](crate::operation::get_slot_types::GetSlotTypesError)
+                            /// - On failure, responds with [`SdkError<GetSlotTypesError>`](crate::operation::get_slot_types::GetSlotTypesError)
     pub fn get_slot_types(&self) -> crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder {
-        crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_slot_types::builders::GetSlotTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -4,24 +4,26 @@
 /// <p>For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedResourceConditions {
+pub struct ProtectedResourceConditions  {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
-    pub string_equals: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
+    pub string_equals: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>>,
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
-    pub string_not_equals: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
+    pub string_not_equals: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>>,
 }
-impl ProtectedResourceConditions {
+impl  ProtectedResourceConditions  {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_equals.is_none()`.
-    pub fn string_equals(&self) -> &[crate::types::KeyValue] {
-        self.string_equals.as_deref().unwrap_or_default()
+    pub fn string_equals(&self) -> & [crate::types::KeyValue] {
+        self.string_equals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_not_equals.is_none()`.
-    pub fn string_not_equals(&self) -> &[crate::types::KeyValue] {
-        self.string_not_equals.as_deref().unwrap_or_default()
+    pub fn string_not_equals(&self) -> & [crate::types::KeyValue] {
+        self.string_not_equals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProtectedResourceConditions {
@@ -35,8 +37,8 @@ impl ProtectedResourceConditions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedResourceConditionsBuilder {
-    pub(crate) string_equals: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
-    pub(crate) string_not_equals: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
+    pub(crate) string_equals: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>>,
+    pub(crate) string_not_equals: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>>,
 }
 impl ProtectedResourceConditionsBuilder {
     /// Appends an item to `string_equals`.
@@ -46,17 +48,16 @@ impl ProtectedResourceConditionsBuilder {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
     pub fn string_equals(mut self, input: crate::types::KeyValue) -> Self {
         let mut v = self.string_equals.unwrap_or_default();
-        v.push(input);
-        self.string_equals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.string_equals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
-    pub fn set_string_equals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>) -> Self {
-        self.string_equals = input;
-        self
+    pub fn set_string_equals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>>) -> Self {
+        self.string_equals = input; self
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
-    pub fn get_string_equals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValue>> {
+    pub fn get_string_equals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>> {
         &self.string_equals
     }
     /// Appends an item to `string_not_equals`.
@@ -66,24 +67,26 @@ impl ProtectedResourceConditionsBuilder {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
     pub fn string_not_equals(mut self, input: crate::types::KeyValue) -> Self {
         let mut v = self.string_not_equals.unwrap_or_default();
-        v.push(input);
-        self.string_not_equals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.string_not_equals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
-    pub fn set_string_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>) -> Self {
-        self.string_not_equals = input;
-        self
+    pub fn set_string_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>>) -> Self {
+        self.string_not_equals = input; self
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
-    pub fn get_string_not_equals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValue>> {
+    pub fn get_string_not_equals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValue>> {
         &self.string_not_equals
     }
     /// Consumes the builder and constructs a [`ProtectedResourceConditions`](crate::types::ProtectedResourceConditions).
     pub fn build(self) -> crate::types::ProtectedResourceConditions {
         crate::types::ProtectedResourceConditions {
-            string_equals: self.string_equals,
-            string_not_equals: self.string_not_equals,
+            string_equals: self.string_equals
+            ,
+            string_not_equals: self.string_not_equals
+            ,
         }
     }
 }
+

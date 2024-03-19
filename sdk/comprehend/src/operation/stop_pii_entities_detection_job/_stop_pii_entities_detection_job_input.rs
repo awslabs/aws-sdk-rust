@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopPiiEntitiesDetectionJobInput {
+pub struct StopPiiEntitiesDetectionJobInput  {
     /// <p>The identifier of the PII entities detection job to stop.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl StopPiiEntitiesDetectionJobInput {
+impl  StopPiiEntitiesDetectionJobInput  {
     /// <p>The identifier of the PII entities detection job to stop.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopPiiEntitiesDetectionJobInputBuilder {
     }
     /// <p>The identifier of the PII entities detection job to stop.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier of the PII entities detection job to stop.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StopPiiEntitiesDetectionJobInput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

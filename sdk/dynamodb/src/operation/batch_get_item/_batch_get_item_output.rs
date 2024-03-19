@@ -3,14 +3,9 @@
 /// <p>Represents the output of a <code>BatchGetItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetItemOutput {
+pub struct BatchGetItemOutput  {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    pub responses: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-        >,
-    >,
+    pub responses: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>>,
     /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
@@ -22,7 +17,7 @@ pub struct BatchGetItemOutput {
     /// <p><code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p></li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-    pub unprocessed_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
+    pub unprocessed_keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>>,
     /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
     /// <p>Each element consists of:</p>
     /// <ul>
@@ -31,19 +26,12 @@ pub struct BatchGetItemOutput {
     /// <li>
     /// <p><code>CapacityUnits</code> - The total number of capacity units consumed.</p></li>
     /// </ul>
-    pub consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
+    pub consumed_capacity: ::std::option::Option<::std::vec::Vec::<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }
-impl BatchGetItemOutput {
+impl  BatchGetItemOutput  {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    pub fn responses(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-        >,
-    > {
+    pub fn responses(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>> {
         self.responses.as_ref()
     }
     /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
@@ -57,7 +45,7 @@ impl BatchGetItemOutput {
     /// <p><code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p></li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-    pub fn unprocessed_keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>> {
+    pub fn unprocessed_keys(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>> {
         self.unprocessed_keys.as_ref()
     }
     /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
@@ -68,17 +56,18 @@ impl BatchGetItemOutput {
     /// <li>
     /// <p><code>CapacityUnits</code> - The total number of capacity units consumed.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_capacity.is_none()`.
-    pub fn consumed_capacity(&self) -> &[crate::types::ConsumedCapacity] {
-        self.consumed_capacity.as_deref().unwrap_or_default()
+    pub fn consumed_capacity(&self) -> & [crate::types::ConsumedCapacity] {
+        self.consumed_capacity.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetItemOutput`](crate::operation::batch_get_item::BatchGetItemOutput).
     pub fn builder() -> crate::operation::batch_get_item::builders::BatchGetItemOutputBuilder {
@@ -90,14 +79,9 @@ impl BatchGetItemOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetItemOutputBuilder {
-    pub(crate) responses: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-        >,
-    >,
-    pub(crate) unprocessed_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
-    pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
+    pub(crate) responses: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>>,
+    pub(crate) unprocessed_keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>>,
+    pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec::<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }
 impl BatchGetItemOutputBuilder {
@@ -106,38 +90,18 @@ impl BatchGetItemOutputBuilder {
     /// To override the contents of this collection use [`set_responses`](Self::set_responses).
     ///
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    pub fn responses(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
+    pub fn responses(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
         let mut hash_map = self.responses.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.responses = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.responses = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    pub fn set_responses(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-            >,
-        >,
-    ) -> Self {
-        self.responses = input;
-        self
+    pub fn set_responses(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>>) -> Self {
+        self.responses = input; self
     }
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    pub fn get_responses(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-        >,
-    > {
+    pub fn get_responses(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>> {
         &self.responses
     }
     /// Adds a key-value pair to `unprocessed_keys`.
@@ -157,9 +121,9 @@ impl BatchGetItemOutputBuilder {
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
     pub fn unprocessed_keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::KeysAndAttributes) -> Self {
         let mut hash_map = self.unprocessed_keys.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.unprocessed_keys = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.unprocessed_keys = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
     /// <p>Each element consists of:</p>
@@ -172,12 +136,8 @@ impl BatchGetItemOutputBuilder {
     /// <p><code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p></li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-    pub fn set_unprocessed_keys(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
-    ) -> Self {
-        self.unprocessed_keys = input;
-        self
+    pub fn set_unprocessed_keys(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>>) -> Self {
+        self.unprocessed_keys = input; self
     }
     /// <p>A map of tables and their respective keys that were not processed with the current response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>, so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
     /// <p>Each element consists of:</p>
@@ -190,9 +150,7 @@ impl BatchGetItemOutputBuilder {
     /// <p><code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p></li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-    pub fn get_unprocessed_keys(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>> {
+    pub fn get_unprocessed_keys(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>> {
         &self.unprocessed_keys
     }
     /// Appends an item to `consumed_capacity`.
@@ -209,9 +167,9 @@ impl BatchGetItemOutputBuilder {
     /// </ul>
     pub fn consumed_capacity(mut self, input: crate::types::ConsumedCapacity) -> Self {
         let mut v = self.consumed_capacity.unwrap_or_default();
-        v.push(input);
-        self.consumed_capacity = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.consumed_capacity = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
     /// <p>Each element consists of:</p>
@@ -221,9 +179,8 @@ impl BatchGetItemOutputBuilder {
     /// <li>
     /// <p><code>CapacityUnits</code> - The total number of capacity units consumed.</p></li>
     /// </ul>
-    pub fn set_consumed_capacity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>) -> Self {
-        self.consumed_capacity = input;
-        self
+    pub fn set_consumed_capacity(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConsumedCapacity>>) -> Self {
+        self.consumed_capacity = input; self
     }
     /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
     /// <p>Each element consists of:</p>
@@ -233,25 +190,29 @@ impl BatchGetItemOutputBuilder {
     /// <li>
     /// <p><code>CapacityUnits</code> - The total number of capacity units consumed.</p></li>
     /// </ul>
-    pub fn get_consumed_capacity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
+    pub fn get_consumed_capacity(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConsumedCapacity>> {
         &self.consumed_capacity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetItemOutput`](crate::operation::batch_get_item::BatchGetItemOutput).
     pub fn build(self) -> crate::operation::batch_get_item::BatchGetItemOutput {
         crate::operation::batch_get_item::BatchGetItemOutput {
-            responses: self.responses,
-            unprocessed_keys: self.unprocessed_keys,
-            consumed_capacity: self.consumed_capacity,
+            responses: self.responses
+            ,
+            unprocessed_keys: self.unprocessed_keys
+            ,
+            consumed_capacity: self.consumed_capacity
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

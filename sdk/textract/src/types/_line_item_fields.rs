@@ -3,16 +3,17 @@
 /// <p>A structure that holds information about the different lines found in a document's tables.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LineItemFields {
+pub struct LineItemFields  {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    pub line_item_expense_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
+    pub line_item_expense_fields: ::std::option::Option<::std::vec::Vec::<crate::types::ExpenseField>>,
 }
-impl LineItemFields {
+impl  LineItemFields  {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_item_expense_fields.is_none()`.
-    pub fn line_item_expense_fields(&self) -> &[crate::types::ExpenseField] {
-        self.line_item_expense_fields.as_deref().unwrap_or_default()
+    pub fn line_item_expense_fields(&self) -> & [crate::types::ExpenseField] {
+        self.line_item_expense_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LineItemFields {
@@ -26,7 +27,7 @@ impl LineItemFields {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineItemFieldsBuilder {
-    pub(crate) line_item_expense_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
+    pub(crate) line_item_expense_fields: ::std::option::Option<::std::vec::Vec::<crate::types::ExpenseField>>,
 }
 impl LineItemFieldsBuilder {
     /// Appends an item to `line_item_expense_fields`.
@@ -36,23 +37,24 @@ impl LineItemFieldsBuilder {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
     pub fn line_item_expense_fields(mut self, input: crate::types::ExpenseField) -> Self {
         let mut v = self.line_item_expense_fields.unwrap_or_default();
-        v.push(input);
-        self.line_item_expense_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.line_item_expense_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    pub fn set_line_item_expense_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>) -> Self {
-        self.line_item_expense_fields = input;
-        self
+    pub fn set_line_item_expense_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExpenseField>>) -> Self {
+        self.line_item_expense_fields = input; self
     }
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    pub fn get_line_item_expense_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>> {
+    pub fn get_line_item_expense_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExpenseField>> {
         &self.line_item_expense_fields
     }
     /// Consumes the builder and constructs a [`LineItemFields`](crate::types::LineItemFields).
     pub fn build(self) -> crate::types::LineItemFields {
         crate::types::LineItemFields {
-            line_item_expense_fields: self.line_item_expense_fields,
+            line_item_expense_fields: self.line_item_expense_fields
+            ,
         }
     }
 }
+

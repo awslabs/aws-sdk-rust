@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataQualityJobDefinitionOutput {
+pub struct DescribeDataQualityJobDefinitionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data quality monitoring job definition.</p>
@@ -27,57 +27,57 @@ pub struct DescribeDataQualityJobDefinitionOutput {
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     _request_id: Option<String>,
 }
-impl DescribeDataQualityJobDefinitionOutput {
+impl  DescribeDataQualityJobDefinitionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
-    pub fn job_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition_arn(&self) -> ::std::option::Option<& str> {
         self.job_definition_arn.as_deref()
     }
     /// <p>The name of the data quality monitoring job definition.</p>
-    pub fn job_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition_name(&self) -> ::std::option::Option<& str> {
         self.job_definition_name.as_deref()
     }
     /// <p>The time that the data quality monitoring job definition was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The constraints and baselines for the data quality monitoring job definition.</p>
-    pub fn data_quality_baseline_config(&self) -> ::std::option::Option<&crate::types::DataQualityBaselineConfig> {
+    pub fn data_quality_baseline_config(&self) -> ::std::option::Option<& crate::types::DataQualityBaselineConfig> {
         self.data_quality_baseline_config.as_ref()
     }
     /// <p>Information about the container that runs the data quality monitoring job.</p>
-    pub fn data_quality_app_specification(&self) -> ::std::option::Option<&crate::types::DataQualityAppSpecification> {
+    pub fn data_quality_app_specification(&self) -> ::std::option::Option<& crate::types::DataQualityAppSpecification> {
         self.data_quality_app_specification.as_ref()
     }
     /// <p>The list of inputs for the data quality monitoring job. Currently endpoints are supported.</p>
-    pub fn data_quality_job_input(&self) -> ::std::option::Option<&crate::types::DataQualityJobInput> {
+    pub fn data_quality_job_input(&self) -> ::std::option::Option<& crate::types::DataQualityJobInput> {
         self.data_quality_job_input.as_ref()
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn data_quality_job_output_config(&self) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
+    pub fn data_quality_job_output_config(&self) -> ::std::option::Option<& crate::types::MonitoringOutputConfig> {
         self.data_quality_job_output_config.as_ref()
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn job_resources(&self) -> ::std::option::Option<&crate::types::MonitoringResources> {
+    pub fn job_resources(&self) -> ::std::option::Option<& crate::types::MonitoringResources> {
         self.job_resources.as_ref()
     }
     /// <p>The networking configuration for the data quality monitoring job.</p>
-    pub fn network_config(&self) -> ::std::option::Option<&crate::types::MonitoringNetworkConfig> {
+    pub fn network_config(&self) -> ::std::option::Option<& crate::types::MonitoringNetworkConfig> {
         self.network_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::MonitoringStoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<& crate::types::MonitoringStoppingCondition> {
         self.stopping_condition.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDataQualityJobDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDataQualityJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataQualityJobDefinitionOutput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionOutput).
     pub fn builder() -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionOutputBuilder {
@@ -111,8 +111,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
     pub fn set_job_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_definition_arn = input;
-        self
+        self.job_definition_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
     pub fn get_job_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The name of the data quality monitoring job definition.</p>
     pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_definition_name = input;
-        self
+        self.job_definition_name = input; self
     }
     /// <p>The name of the data quality monitoring job definition.</p>
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The time that the data quality monitoring job definition was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the data quality monitoring job definition was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +152,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The constraints and baselines for the data quality monitoring job definition.</p>
     pub fn set_data_quality_baseline_config(mut self, input: ::std::option::Option<crate::types::DataQualityBaselineConfig>) -> Self {
-        self.data_quality_baseline_config = input;
-        self
+        self.data_quality_baseline_config = input; self
     }
     /// <p>The constraints and baselines for the data quality monitoring job definition.</p>
     pub fn get_data_quality_baseline_config(&self) -> &::std::option::Option<crate::types::DataQualityBaselineConfig> {
@@ -170,8 +166,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>Information about the container that runs the data quality monitoring job.</p>
     pub fn set_data_quality_app_specification(mut self, input: ::std::option::Option<crate::types::DataQualityAppSpecification>) -> Self {
-        self.data_quality_app_specification = input;
-        self
+        self.data_quality_app_specification = input; self
     }
     /// <p>Information about the container that runs the data quality monitoring job.</p>
     pub fn get_data_quality_app_specification(&self) -> &::std::option::Option<crate::types::DataQualityAppSpecification> {
@@ -185,8 +180,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The list of inputs for the data quality monitoring job. Currently endpoints are supported.</p>
     pub fn set_data_quality_job_input(mut self, input: ::std::option::Option<crate::types::DataQualityJobInput>) -> Self {
-        self.data_quality_job_input = input;
-        self
+        self.data_quality_job_input = input; self
     }
     /// <p>The list of inputs for the data quality monitoring job. Currently endpoints are supported.</p>
     pub fn get_data_quality_job_input(&self) -> &::std::option::Option<crate::types::DataQualityJobInput> {
@@ -200,8 +194,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The output configuration for monitoring jobs.</p>
     pub fn set_data_quality_job_output_config(mut self, input: ::std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
-        self.data_quality_job_output_config = input;
-        self
+        self.data_quality_job_output_config = input; self
     }
     /// <p>The output configuration for monitoring jobs.</p>
     pub fn get_data_quality_job_output_config(&self) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
@@ -215,8 +208,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn set_job_resources(mut self, input: ::std::option::Option<crate::types::MonitoringResources>) -> Self {
-        self.job_resources = input;
-        self
+        self.job_resources = input; self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn get_job_resources(&self) -> &::std::option::Option<crate::types::MonitoringResources> {
@@ -229,8 +221,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The networking configuration for the data quality monitoring job.</p>
     pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
-        self.network_config = input;
-        self
+        self.network_config = input; self
     }
     /// <p>The networking configuration for the data quality monitoring job.</p>
     pub fn get_network_config(&self) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
@@ -244,8 +235,7 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,37 +248,48 @@ impl DescribeDataQualityJobDefinitionOutputBuilder {
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
-        self.stopping_condition = input;
-        self
+        self.stopping_condition = input; self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
         &self.stopping_condition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDataQualityJobDefinitionOutput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionOutput).
     pub fn build(self) -> crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionOutput {
         crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionOutput {
-            job_definition_arn: self.job_definition_arn,
-            job_definition_name: self.job_definition_name,
-            creation_time: self.creation_time,
-            data_quality_baseline_config: self.data_quality_baseline_config,
-            data_quality_app_specification: self.data_quality_app_specification,
-            data_quality_job_input: self.data_quality_job_input,
-            data_quality_job_output_config: self.data_quality_job_output_config,
-            job_resources: self.job_resources,
-            network_config: self.network_config,
-            role_arn: self.role_arn,
-            stopping_condition: self.stopping_condition,
+            job_definition_arn: self.job_definition_arn
+            ,
+            job_definition_name: self.job_definition_name
+            ,
+            creation_time: self.creation_time
+            ,
+            data_quality_baseline_config: self.data_quality_baseline_config
+            ,
+            data_quality_app_specification: self.data_quality_app_specification
+            ,
+            data_quality_job_input: self.data_quality_job_input
+            ,
+            data_quality_job_output_config: self.data_quality_job_output_config
+            ,
+            job_resources: self.job_resources
+            ,
+            network_config: self.network_config
+            ,
+            role_arn: self.role_arn
+            ,
+            stopping_condition: self.stopping_condition
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

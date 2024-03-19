@@ -5,22 +5,20 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceTag {
+pub struct ResourceTag  {
     /// <p>The key that's associated with the tag.</p>
     pub key: ::std::string::String,
     /// <p>The value that's associated with the tag.</p>
     pub value: ::std::string::String,
 }
-impl ResourceTag {
+impl  ResourceTag  {
     /// <p>The key that's associated with the tag.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value that's associated with the tag.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ResourceTag {
@@ -46,8 +44,7 @@ impl ResourceTagBuilder {
     }
     /// <p>The key that's associated with the tag.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key that's associated with the tag.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +58,7 @@ impl ResourceTagBuilder {
     }
     /// <p>The value that's associated with the tag.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that's associated with the tag.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,19 +69,20 @@ impl ResourceTagBuilder {
     /// - [`key`](crate::types::builders::ResourceTagBuilder::key)
     /// - [`value`](crate::types::builders::ResourceTagBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceTag {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building ResourceTag",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ResourceTag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceTag {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building ResourceTag")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ResourceTag")
+                    )?
+                ,
+            }
+        )
     }
 }
+

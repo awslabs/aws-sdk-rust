@@ -3,20 +3,19 @@
 /// <p>Describes the annotations associated with a entity recognizer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityRecognizerAnnotations {
+pub struct EntityRecognizerAnnotations  {
     /// <p>Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub s3_uri: ::std::string::String,
     /// <p>Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl EntityRecognizerAnnotations {
+impl  EntityRecognizerAnnotations  {
     /// <p>Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn test_s3_uri(&self) -> ::std::option::Option<& str> {
         self.test_s3_uri.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl EntityRecognizerAnnotationsBuilder {
     }
     /// <p>Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl EntityRecognizerAnnotationsBuilder {
     }
     /// <p>Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub fn set_test_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_s3_uri = input;
-        self
+        self.test_s3_uri = input; self
     }
     /// <p>Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub fn get_test_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl EntityRecognizerAnnotationsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::EntityRecognizerAnnotationsBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerAnnotations, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityRecognizerAnnotations {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building EntityRecognizerAnnotations",
-                )
-            })?,
-            test_s3_uri: self.test_s3_uri,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityRecognizerAnnotations {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building EntityRecognizerAnnotations")
+                    )?
+                ,
+                test_s3_uri: self.test_s3_uri
+                ,
+            }
+        )
     }
 }
+

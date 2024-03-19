@@ -4,7 +4,7 @@
 /// <p>This type contains limited information about a service. It doesn't include configuration details. It's returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListServices.html">ListServices</a> action. Complete service information is returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html">CreateService</a>, <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeService.html">DescribeService</a>, and <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteService.html">DeleteService</a> actions using the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_Service.html">Service</a> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceSummary {
+pub struct ServiceSummary  {
     /// <p>The customer-provided service name.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
@@ -26,29 +26,29 @@ pub struct ServiceSummary {
     /// </ul>
     pub status: ::std::option::Option<crate::types::ServiceStatus>,
 }
-impl ServiceSummary {
+impl  ServiceSummary  {
     /// <p>The customer-provided service name.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
-    pub fn service_url(&self) -> ::std::option::Option<&str> {
+    pub fn service_url(&self) -> ::std::option::Option<& str> {
         self.service_url.as_deref()
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
@@ -58,7 +58,7 @@ impl ServiceSummary {
     /// <li>
     /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceStatus> {
         self.status.as_ref()
     }
 }
@@ -89,8 +89,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The customer-provided service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The customer-provided service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub fn set_service_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_url = input;
-        self
+        self.service_url = input; self
     }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub fn get_service_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +154,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -185,8 +179,7 @@ impl ServiceSummaryBuilder {
     /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
@@ -201,13 +194,21 @@ impl ServiceSummaryBuilder {
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn build(self) -> crate::types::ServiceSummary {
         crate::types::ServiceSummary {
-            service_name: self.service_name,
-            service_id: self.service_id,
-            service_arn: self.service_arn,
-            service_url: self.service_url,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            status: self.status,
+            service_name: self.service_name
+            ,
+            service_id: self.service_id
+            ,
+            service_arn: self.service_arn
+            ,
+            service_url: self.service_url
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

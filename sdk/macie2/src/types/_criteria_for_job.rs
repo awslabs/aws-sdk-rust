@@ -3,19 +3,19 @@
 /// <p>Specifies a property- or tag-based condition that defines criteria for including or excluding S3 buckets from a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CriteriaForJob {
+pub struct CriteriaForJob  {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
     pub simple_criterion: ::std::option::Option<crate::types::SimpleCriterionForJob>,
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
     pub tag_criterion: ::std::option::Option<crate::types::TagCriterionForJob>,
 }
-impl CriteriaForJob {
+impl  CriteriaForJob  {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
-    pub fn simple_criterion(&self) -> ::std::option::Option<&crate::types::SimpleCriterionForJob> {
+    pub fn simple_criterion(&self) -> ::std::option::Option<& crate::types::SimpleCriterionForJob> {
         self.simple_criterion.as_ref()
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
-    pub fn tag_criterion(&self) -> ::std::option::Option<&crate::types::TagCriterionForJob> {
+    pub fn tag_criterion(&self) -> ::std::option::Option<& crate::types::TagCriterionForJob> {
         self.tag_criterion.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CriteriaForJobBuilder {
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
     pub fn set_simple_criterion(mut self, input: ::std::option::Option<crate::types::SimpleCriterionForJob>) -> Self {
-        self.simple_criterion = input;
-        self
+        self.simple_criterion = input; self
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
     pub fn get_simple_criterion(&self) -> &::std::option::Option<crate::types::SimpleCriterionForJob> {
@@ -55,8 +54,7 @@ impl CriteriaForJobBuilder {
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
     pub fn set_tag_criterion(mut self, input: ::std::option::Option<crate::types::TagCriterionForJob>) -> Self {
-        self.tag_criterion = input;
-        self
+        self.tag_criterion = input; self
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
     pub fn get_tag_criterion(&self) -> &::std::option::Option<crate::types::TagCriterionForJob> {
@@ -65,8 +63,11 @@ impl CriteriaForJobBuilder {
     /// Consumes the builder and constructs a [`CriteriaForJob`](crate::types::CriteriaForJob).
     pub fn build(self) -> crate::types::CriteriaForJob {
         crate::types::CriteriaForJob {
-            simple_criterion: self.simple_criterion,
-            tag_criterion: self.tag_criterion,
+            simple_criterion: self.simple_criterion
+            ,
+            tag_criterion: self.tag_criterion
+            ,
         }
     }
 }
+

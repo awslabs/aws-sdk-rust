@@ -3,7 +3,7 @@
 /// <p>Result structure used for requests to export project configuration details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportProjectOutput {
+pub struct ExportProjectOutput  {
     /// <p>URL which can be used to download the exported project configuation file(s).</p>
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.</p>
@@ -12,25 +12,25 @@ pub struct ExportProjectOutput {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExportProjectOutput {
+impl  ExportProjectOutput  {
     /// <p>URL which can be used to download the exported project configuation file(s).</p>
-    pub fn download_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<& str> {
         self.download_url.as_deref()
     }
     /// <p>URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.</p>
-    pub fn share_url(&self) -> ::std::option::Option<&str> {
+    pub fn share_url(&self) -> ::std::option::Option<& str> {
         self.share_url.as_deref()
     }
     /// <p>Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportProjectOutput {
     /// Creates a new builder-style object to manufacture [`ExportProjectOutput`](crate::operation::export_project::ExportProjectOutput).
     pub fn builder() -> crate::operation::export_project::builders::ExportProjectOutputBuilder {
@@ -55,8 +55,7 @@ impl ExportProjectOutputBuilder {
     }
     /// <p>URL which can be used to download the exported project configuation file(s).</p>
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_url = input;
-        self
+        self.download_url = input; self
     }
     /// <p>URL which can be used to download the exported project configuation file(s).</p>
     pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ExportProjectOutputBuilder {
     }
     /// <p>URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.</p>
     pub fn set_share_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_url = input;
-        self
+        self.share_url = input; self
     }
     /// <p>URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.</p>
     pub fn get_share_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,29 +81,32 @@ impl ExportProjectOutputBuilder {
     }
     /// <p>Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportProjectOutput`](crate::operation::export_project::ExportProjectOutput).
     pub fn build(self) -> crate::operation::export_project::ExportProjectOutput {
         crate::operation::export_project::ExportProjectOutput {
-            download_url: self.download_url,
-            share_url: self.share_url,
-            snapshot_id: self.snapshot_id,
+            download_url: self.download_url
+            ,
+            share_url: self.share_url
+            ,
+            snapshot_id: self.snapshot_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

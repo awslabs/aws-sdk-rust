@@ -3,7 +3,7 @@
 /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseAction {
+pub struct ResponseAction  {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     pub block: ::std::option::Option<crate::types::BlockAction>,
@@ -11,15 +11,15 @@ pub struct ResponseAction {
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     pub count: ::std::option::Option<crate::types::CountAction>,
 }
-impl ResponseAction {
+impl  ResponseAction  {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
-    pub fn block(&self) -> ::std::option::Option<&crate::types::BlockAction> {
+    pub fn block(&self) -> ::std::option::Option<& crate::types::BlockAction> {
         self.block.as_ref()
     }
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
-    pub fn count(&self) -> ::std::option::Option<&crate::types::CountAction> {
+    pub fn count(&self) -> ::std::option::Option<& crate::types::CountAction> {
         self.count.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ResponseActionBuilder {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     pub fn set_block(mut self, input: ::std::option::Option<crate::types::BlockAction>) -> Self {
-        self.block = input;
-        self
+        self.block = input; self
     }
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
@@ -64,8 +63,7 @@ impl ResponseActionBuilder {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     pub fn set_count(mut self, input: ::std::option::Option<crate::types::CountAction>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action.</p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
@@ -75,8 +73,11 @@ impl ResponseActionBuilder {
     /// Consumes the builder and constructs a [`ResponseAction`](crate::types::ResponseAction).
     pub fn build(self) -> crate::types::ResponseAction {
         crate::types::ResponseAction {
-            block: self.block,
-            count: self.count,
+            block: self.block
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

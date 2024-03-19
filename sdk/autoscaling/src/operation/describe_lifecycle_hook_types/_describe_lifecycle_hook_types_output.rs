@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLifecycleHookTypesOutput {
+pub struct DescribeLifecycleHookTypesOutput  {
     /// <p>The lifecycle hook types.</p>
-    pub lifecycle_hook_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lifecycle_hook_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeLifecycleHookTypesOutput {
+impl  DescribeLifecycleHookTypesOutput  {
     /// <p>The lifecycle hook types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hook_types.is_none()`.
-    pub fn lifecycle_hook_types(&self) -> &[::std::string::String] {
-        self.lifecycle_hook_types.as_deref().unwrap_or_default()
+    pub fn lifecycle_hook_types(&self) -> & [::std::string::String] {
+        self.lifecycle_hook_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLifecycleHookTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLifecycleHookTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleHookTypesOutput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput).
     pub fn builder() -> crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeLifecycleHookTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHookTypesOutputBuilder {
-    pub(crate) lifecycle_hook_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lifecycle_hook_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeLifecycleHookTypesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeLifecycleHookTypesOutputBuilder {
     /// <p>The lifecycle hook types.</p>
     pub fn lifecycle_hook_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lifecycle_hook_types.unwrap_or_default();
-        v.push(input.into());
-        self.lifecycle_hook_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lifecycle_hook_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The lifecycle hook types.</p>
-    pub fn set_lifecycle_hook_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lifecycle_hook_types = input;
-        self
+    pub fn set_lifecycle_hook_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lifecycle_hook_types = input; self
     }
     /// <p>The lifecycle hook types.</p>
-    pub fn get_lifecycle_hook_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_hook_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lifecycle_hook_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLifecycleHookTypesOutput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput).
     pub fn build(self) -> crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput {
         crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput {
-            lifecycle_hook_types: self.lifecycle_hook_types,
+            lifecycle_hook_types: self.lifecycle_hook_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

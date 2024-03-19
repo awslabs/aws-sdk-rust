@@ -3,7 +3,7 @@
 /// <p>Information about a replacement content entry in the conflict of a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplaceContentEntry {
+pub struct ReplaceContentEntry  {
     /// <p>The path of the conflicting file.</p>
     pub file_path: ::std::string::String,
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
@@ -13,22 +13,21 @@ pub struct ReplaceContentEntry {
     /// <p>The file mode to apply during conflict resoltion.</p>
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
-impl ReplaceContentEntry {
+impl  ReplaceContentEntry  {
     /// <p>The path of the conflicting file.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    pub fn replacement_type(&self) -> &crate::types::ReplacementTypeEnum {
+    pub fn replacement_type(&self) -> & crate::types::ReplacementTypeEnum {
         &self.replacement_type
     }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
-    pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn content(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The file mode to apply during conflict resoltion.</p>
-    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl ReplaceContentEntryBuilder {
     }
     /// <p>The path of the conflicting file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The path of the conflicting file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl ReplaceContentEntryBuilder {
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
     pub fn set_replacement_type(mut self, input: ::std::option::Option<crate::types::ReplacementTypeEnum>) -> Self {
-        self.replacement_type = input;
-        self
+        self.replacement_type = input; self
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
     pub fn get_replacement_type(&self) -> &::std::option::Option<crate::types::ReplacementTypeEnum> {
@@ -86,8 +83,7 @@ impl ReplaceContentEntryBuilder {
     }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
     pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -100,8 +96,7 @@ impl ReplaceContentEntryBuilder {
     }
     /// <p>The file mode to apply during conflict resoltion.</p>
     pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input;
-        self
+        self.file_mode = input; self
     }
     /// <p>The file mode to apply during conflict resoltion.</p>
     pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -112,21 +107,24 @@ impl ReplaceContentEntryBuilder {
     /// - [`file_path`](crate::types::builders::ReplaceContentEntryBuilder::file_path)
     /// - [`replacement_type`](crate::types::builders::ReplaceContentEntryBuilder::replacement_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplaceContentEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplaceContentEntry {
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building ReplaceContentEntry",
-                )
-            })?,
-            replacement_type: self.replacement_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "replacement_type",
-                    "replacement_type was not specified but it is required when building ReplaceContentEntry",
-                )
-            })?,
-            content: self.content,
-            file_mode: self.file_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplaceContentEntry {
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building ReplaceContentEntry")
+                    )?
+                ,
+                replacement_type: self.replacement_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("replacement_type", "replacement_type was not specified but it is required when building ReplaceContentEntry")
+                    )?
+                ,
+                content: self.content
+                ,
+                file_mode: self.file_mode
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProposals`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`network_id(impl Into<String>)`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::network_id) / [`set_network_id(Option<String>)`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::set_network_id):<br>required: **true**<br><p>The unique identifier of the network.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of proposals to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_proposals::builders::ListProposalsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListProposalsOutput`](crate::operation::list_proposals::ListProposalsOutput) with field(s):
+                            /// - On success, responds with [`ListProposalsOutput`](crate::operation::list_proposals::ListProposalsOutput) with field(s):
     ///   - [`proposals(Option<Vec::<ProposalSummary>>)`](crate::operation::list_proposals::ListProposalsOutput::proposals): <p>The summary of each proposal made on the network.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_proposals::ListProposalsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListProposalsError>`](crate::operation::list_proposals::ListProposalsError)
+                            /// - On failure, responds with [`SdkError<ListProposalsError>`](crate::operation::list_proposals::ListProposalsError)
     pub fn list_proposals(&self) -> crate::operation::list_proposals::builders::ListProposalsFluentBuilder {
-        crate::operation::list_proposals::builders::ListProposalsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_proposals::builders::ListProposalsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CategoryFilter {
+pub struct CategoryFilter  {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
@@ -12,18 +12,17 @@ pub struct CategoryFilter {
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
     pub configuration: ::std::option::Option<crate::types::CategoryFilterConfiguration>,
 }
-impl CategoryFilter {
+impl  CategoryFilter  {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.filter_id.deref()
+    pub fn filter_id(&self) -> & str {
+        use std::ops::Deref; self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CategoryFilterConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::CategoryFilterConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -51,8 +50,7 @@ impl CategoryFilterBuilder {
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn set_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_id = input;
-        self
+        self.filter_id = input; self
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl CategoryFilterBuilder {
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -81,8 +78,7 @@ impl CategoryFilterBuilder {
     }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CategoryFilterConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CategoryFilterConfiguration> {
@@ -92,15 +88,19 @@ impl CategoryFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::CategoryFilterBuilder::filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CategoryFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CategoryFilter {
-            filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter_id",
-                    "filter_id was not specified but it is required when building CategoryFilter",
-                )
-            })?,
-            column: self.column,
-            configuration: self.configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CategoryFilter {
+                filter_id: self.filter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter_id", "filter_id was not specified but it is required when building CategoryFilter")
+                    )?
+                ,
+                column: self.column
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

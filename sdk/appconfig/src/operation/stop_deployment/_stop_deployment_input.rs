@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDeploymentInput {
+pub struct StopDeploymentInput  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID.</p>
@@ -10,13 +10,13 @@ pub struct StopDeploymentInput {
     /// <p>The sequence number of the deployment.</p>
     pub deployment_number: ::std::option::Option<i32>,
 }
-impl StopDeploymentInput {
+impl  StopDeploymentInput  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The sequence number of the deployment.</p>
@@ -48,8 +48,7 @@ impl StopDeploymentInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl StopDeploymentInputBuilder {
     }
     /// <p>The environment ID.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The environment ID.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl StopDeploymentInputBuilder {
     }
     /// <p>The sequence number of the deployment.</p>
     pub fn set_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.deployment_number = input;
-        self
+        self.deployment_number = input; self
     }
     /// <p>The sequence number of the deployment.</p>
     pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
         &self.deployment_number
     }
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_deployment::StopDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_deployment::StopDeploymentInput {
-            application_id: self.application_id,
-            environment_id: self.environment_id,
-            deployment_number: self.deployment_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_deployment::StopDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_deployment::StopDeploymentInput {
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                deployment_number: self.deployment_number
+                ,
+            }
+        )
     }
 }
+

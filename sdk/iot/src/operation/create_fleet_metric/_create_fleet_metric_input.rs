@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFleetMetricInput {
+pub struct CreateFleetMetricInput  {
     /// <p>The name of the fleet metric to create.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The search query string.</p>
@@ -22,19 +22,19 @@ pub struct CreateFleetMetricInput {
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub unit: ::std::option::Option<crate::types::FleetMetricUnit>,
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateFleetMetricInput {
+impl  CreateFleetMetricInput  {
     /// <p>The name of the fleet metric to create.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The search query string.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn aggregation_type(&self) -> ::std::option::Option<&crate::types::AggregationType> {
+    pub fn aggregation_type(&self) -> ::std::option::Option<& crate::types::AggregationType> {
         self.aggregation_type.as_ref()
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
@@ -42,30 +42,31 @@ impl CreateFleetMetricInput {
         self.period
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(&self) -> ::std::option::Option<&str> {
+    pub fn aggregation_field(&self) -> ::std::option::Option<& str> {
         self.aggregation_field.as_deref()
     }
     /// <p>The fleet metric description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The query version.</p>
-    pub fn query_version(&self) -> ::std::option::Option<&str> {
+    pub fn query_version(&self) -> ::std::option::Option<& str> {
         self.query_version.as_deref()
     }
     /// <p>The name of the index to search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::FleetMetricUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::FleetMetricUnit> {
         self.unit.as_ref()
     }
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateFleetMetricInput {
@@ -88,7 +89,7 @@ pub struct CreateFleetMetricInputBuilder {
     pub(crate) query_version: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<crate::types::FleetMetricUnit>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateFleetMetricInputBuilder {
     /// <p>The name of the fleet metric to create.</p>
@@ -99,8 +100,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The name of the fleet metric to create.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the fleet metric to create.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The search query string.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The search query string.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The type of the aggregation query.</p>
     pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
-        self.aggregation_type = input;
-        self
+        self.aggregation_type = input; self
     }
     /// <p>The type of the aggregation query.</p>
     pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
@@ -144,8 +142,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -159,8 +156,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The field to aggregate.</p>
     pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aggregation_field = input;
-        self
+        self.aggregation_field = input; self
     }
     /// <p>The field to aggregate.</p>
     pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +169,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The fleet metric description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The fleet metric description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +182,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The query version.</p>
     pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_version = input;
-        self
+        self.query_version = input; self
     }
     /// <p>The query version.</p>
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +195,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>The name of the index to search.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the index to search.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +208,7 @@ impl CreateFleetMetricInputBuilder {
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::FleetMetricUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::FleetMetricUnit> {
@@ -229,34 +221,44 @@ impl CreateFleetMetricInputBuilder {
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetMetricInput`](crate::operation::create_fleet_metric::CreateFleetMetricInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_fleet_metric::CreateFleetMetricInput {
-            metric_name: self.metric_name,
-            query_string: self.query_string,
-            aggregation_type: self.aggregation_type,
-            period: self.period,
-            aggregation_field: self.aggregation_field,
-            description: self.description,
-            query_version: self.query_version,
-            index_name: self.index_name,
-            unit: self.unit,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_fleet_metric::CreateFleetMetricInput {
+                metric_name: self.metric_name
+                ,
+                query_string: self.query_string
+                ,
+                aggregation_type: self.aggregation_type
+                ,
+                period: self.period
+                ,
+                aggregation_field: self.aggregation_field
+                ,
+                description: self.description
+                ,
+                query_version: self.query_version
+                ,
+                index_name: self.index_name
+                ,
+                unit: self.unit
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

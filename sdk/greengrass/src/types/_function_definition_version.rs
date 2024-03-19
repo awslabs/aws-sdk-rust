@@ -3,22 +3,23 @@
 /// Information about a function definition version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionDefinitionVersion {
+pub struct FunctionDefinitionVersion  {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub default_config: ::std::option::Option<crate::types::FunctionDefaultConfig>,
     /// A list of Lambda functions in this function definition version.
-    pub functions: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
+    pub functions: ::std::option::Option<::std::vec::Vec::<crate::types::Function>>,
 }
-impl FunctionDefinitionVersion {
+impl  FunctionDefinitionVersion  {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn default_config(&self) -> ::std::option::Option<&crate::types::FunctionDefaultConfig> {
+    pub fn default_config(&self) -> ::std::option::Option<& crate::types::FunctionDefaultConfig> {
         self.default_config.as_ref()
     }
     /// A list of Lambda functions in this function definition version.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
-    pub fn functions(&self) -> &[crate::types::Function] {
-        self.functions.as_deref().unwrap_or_default()
+    pub fn functions(&self) -> & [crate::types::Function] {
+        self.functions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FunctionDefinitionVersion {
@@ -33,7 +34,7 @@ impl FunctionDefinitionVersion {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionDefinitionVersionBuilder {
     pub(crate) default_config: ::std::option::Option<crate::types::FunctionDefaultConfig>,
-    pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
+    pub(crate) functions: ::std::option::Option<::std::vec::Vec::<crate::types::Function>>,
 }
 impl FunctionDefinitionVersionBuilder {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
@@ -43,8 +44,7 @@ impl FunctionDefinitionVersionBuilder {
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub fn set_default_config(mut self, input: ::std::option::Option<crate::types::FunctionDefaultConfig>) -> Self {
-        self.default_config = input;
-        self
+        self.default_config = input; self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub fn get_default_config(&self) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
@@ -57,24 +57,26 @@ impl FunctionDefinitionVersionBuilder {
     /// A list of Lambda functions in this function definition version.
     pub fn functions(mut self, input: crate::types::Function) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input);
-        self.functions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.functions = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Function>>) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Function>>) -> Self {
+        self.functions = input; self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Function>> {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Function>> {
         &self.functions
     }
     /// Consumes the builder and constructs a [`FunctionDefinitionVersion`](crate::types::FunctionDefinitionVersion).
     pub fn build(self) -> crate::types::FunctionDefinitionVersion {
         crate::types::FunctionDefinitionVersion {
-            default_config: self.default_config,
-            functions: self.functions,
+            default_config: self.default_config
+            ,
+            functions: self.functions
+            ,
         }
     }
 }
+

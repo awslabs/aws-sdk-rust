@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountStatusInput {}
+pub struct GetAccountStatusInput  {
+}
 impl GetAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`GetAccountStatusInput`](crate::operation::get_account_status::GetAccountStatusInput).
     pub fn builder() -> crate::operation::get_account_status::builders::GetAccountStatusInputBuilder {
@@ -13,12 +14,15 @@ impl GetAccountStatusInput {
 /// A builder for [`GetAccountStatusInput`](crate::operation::get_account_status::GetAccountStatusInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetAccountStatusInputBuilder {}
+pub struct GetAccountStatusInputBuilder {
+}
 impl GetAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountStatusInput`](crate::operation::get_account_status::GetAccountStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_account_status::GetAccountStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_account_status::GetAccountStatusInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_account_status::GetAccountStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_account_status::GetAccountStatusInput {
+            }
+        )
     }
 }
+

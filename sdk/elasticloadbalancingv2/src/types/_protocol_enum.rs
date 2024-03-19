@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protocolenum = unimplemented!();
 /// match protocolenum {
@@ -35,16 +35,14 @@
 /// Specifically, when `protocolenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtocolEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ProtocolEnum {
     #[allow(missing_docs)] // documentation missing in model
     Geneve,
@@ -62,76 +60,77 @@ pub enum ProtocolEnum {
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ProtocolEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "GENEVE" => ProtocolEnum::Geneve,
-            "HTTP" => ProtocolEnum::Http,
-            "HTTPS" => ProtocolEnum::Https,
-            "TCP" => ProtocolEnum::Tcp,
-            "TCP_UDP" => ProtocolEnum::TcpUdp,
-            "TLS" => ProtocolEnum::Tls,
-            "UDP" => ProtocolEnum::Udp,
-            other => ProtocolEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "GENEVE" => ProtocolEnum::Geneve,
+"HTTP" => ProtocolEnum::Http,
+"HTTPS" => ProtocolEnum::Https,
+"TCP" => ProtocolEnum::Tcp,
+"TCP_UDP" => ProtocolEnum::TcpUdp,
+"TLS" => ProtocolEnum::Tls,
+"UDP" => ProtocolEnum::Udp,
+other => ProtocolEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ProtocolEnum {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ProtocolEnum::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ProtocolEnum::from(s))
+                    }
+                }
 impl ProtocolEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProtocolEnum::Geneve => "GENEVE",
-            ProtocolEnum::Http => "HTTP",
-            ProtocolEnum::Https => "HTTPS",
-            ProtocolEnum::Tcp => "TCP",
-            ProtocolEnum::TcpUdp => "TCP_UDP",
-            ProtocolEnum::Tls => "TLS",
-            ProtocolEnum::Udp => "UDP",
-            ProtocolEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProtocolEnum::Geneve => "GENEVE",
+    ProtocolEnum::Http => "HTTP",
+    ProtocolEnum::Https => "HTTPS",
+    ProtocolEnum::Tcp => "TCP",
+    ProtocolEnum::TcpUdp => "TCP_UDP",
+    ProtocolEnum::Tls => "TLS",
+    ProtocolEnum::Udp => "UDP",
+    ProtocolEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ProtocolEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ProtocolEnum {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ProtocolEnum {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ProtocolEnum::Geneve => write!(f, "GENEVE"),
-            ProtocolEnum::Http => write!(f, "HTTP"),
-            ProtocolEnum::Https => write!(f, "HTTPS"),
-            ProtocolEnum::Tcp => write!(f, "TCP"),
-            ProtocolEnum::TcpUdp => write!(f, "TCP_UDP"),
-            ProtocolEnum::Tls => write!(f, "TLS"),
-            ProtocolEnum::Udp => write!(f, "UDP"),
-            ProtocolEnum::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ProtocolEnum::Geneve => write!(f, "GENEVE"),
+ProtocolEnum::Http => write!(f, "HTTP"),
+ProtocolEnum::Https => write!(f, "HTTPS"),
+ProtocolEnum::Tcp => write!(f, "TCP"),
+ProtocolEnum::TcpUdp => write!(f, "TCP_UDP"),
+ProtocolEnum::Tls => write!(f, "TLS"),
+ProtocolEnum::Udp => write!(f, "UDP"),
+ProtocolEnum::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

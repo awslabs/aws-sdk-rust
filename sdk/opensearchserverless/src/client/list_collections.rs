@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCollections`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`collection_filters(CollectionFilters)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::collection_filters) / [`set_collection_filters(Option<CollectionFilters>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_collection_filters):<br>required: **false**<br><p>A list of filter names and values that you can use for requests.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p><br>
-    /// - On success, responds with [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput) with field(s):
+                            /// - On success, responds with [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput) with field(s):
     ///   - [`collection_summaries(Option<Vec::<CollectionSummary>>)`](crate::operation::list_collections::ListCollectionsOutput::collection_summaries): <p>Details about each collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_collections::ListCollectionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListCollectionsError>`](crate::operation::list_collections::ListCollectionsError)
+                            /// - On failure, responds with [`SdkError<ListCollectionsError>`](crate::operation::list_collections::ListCollectionsError)
     pub fn list_collections(&self) -> crate::operation::list_collections::builders::ListCollectionsFluentBuilder {
-        crate::operation::list_collections::builders::ListCollectionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_collections::builders::ListCollectionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

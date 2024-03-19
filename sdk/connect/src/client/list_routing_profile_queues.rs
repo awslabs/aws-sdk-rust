@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRoutingProfileQueues`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`routing_profile_id(impl Into<String>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::set_routing_profile_id):<br>required: **true**<br><p>The identifier of the routing profile.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page. The default MaxResult size is 100.</p><br>
-    /// - On success, responds with [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput) with field(s):
+                            /// - On success, responds with [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`routing_profile_queue_config_summary_list(Option<Vec::<RoutingProfileQueueConfigSummary>>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::routing_profile_queue_config_summary_list): <p>Information about the routing profiles.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
     ///   - [`last_modified_region(Option<String>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
-    /// - On failure, responds with [`SdkError<ListRoutingProfileQueuesError>`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError)
+                            /// - On failure, responds with [`SdkError<ListRoutingProfileQueuesError>`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError)
     pub fn list_routing_profile_queues(&self) -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder {
-        crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

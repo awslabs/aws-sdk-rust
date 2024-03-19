@@ -4,17 +4,17 @@
 /// <p>This data type is used within a <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_PolicyDefinition.html">PolicyDefinition</a> structure as part of a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StaticPolicyDefinitionItem {
+pub struct StaticPolicyDefinitionItem  {
     /// <p>A description of the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StaticPolicyDefinitionItem {
+impl  StaticPolicyDefinitionItem  {
     /// <p>A description of the static policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for StaticPolicyDefinitionItem {
+impl  ::std::fmt::Debug for StaticPolicyDefinitionItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StaticPolicyDefinitionItem");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -42,8 +42,7 @@ impl StaticPolicyDefinitionItemBuilder {
     }
     /// <p>A description of the static policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the static policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -52,7 +51,8 @@ impl StaticPolicyDefinitionItemBuilder {
     /// Consumes the builder and constructs a [`StaticPolicyDefinitionItem`](crate::types::StaticPolicyDefinitionItem).
     pub fn build(self) -> crate::types::StaticPolicyDefinitionItem {
         crate::types::StaticPolicyDefinitionItem {
-            description: self.description,
+            description: self.description
+            ,
         }
     }
 }
@@ -63,3 +63,4 @@ impl ::std::fmt::Debug for StaticPolicyDefinitionItemBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterParameterGroupInput {
+pub struct DeleteClusterParameterGroupInput  {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -14,7 +14,7 @@ pub struct DeleteClusterParameterGroupInput {
     /// </ul>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterParameterGroupInput {
+impl  DeleteClusterParameterGroupInput  {
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -23,7 +23,7 @@ impl DeleteClusterParameterGroupInput {
     /// <li>
     /// <p>Cannot delete a default cluster parameter group.</p></li>
     /// </ul>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl DeleteClusterParameterGroupInputBuilder {
     /// <p>Cannot delete a default cluster parameter group.</p></li>
     /// </ul>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to be deleted.</p>
     /// <p>Constraints:</p>
@@ -78,14 +77,13 @@ impl DeleteClusterParameterGroupInputBuilder {
         &self.parameter_group_name
     }
     /// Consumes the builder and constructs a [`DeleteClusterParameterGroupInput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput {
-            parameter_group_name: self.parameter_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput {
+                parameter_group_name: self.parameter_group_name
+                ,
+            }
+        )
     }
 }
+

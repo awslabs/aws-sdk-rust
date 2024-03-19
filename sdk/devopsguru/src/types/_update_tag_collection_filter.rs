@@ -3,28 +3,26 @@
 /// <p>A new collection of Amazon Web Services resources that are defined by an Amazon Web Services tag or tag <i>key</i>/<i>value</i> pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTagCollectionFilter {
+pub struct UpdateTagCollectionFilter  {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     pub app_boundary_key: ::std::string::String,
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
-    pub tag_values: ::std::vec::Vec<::std::string::String>,
+    pub tag_values: ::std::vec::Vec::<::std::string::String>,
 }
-impl UpdateTagCollectionFilter {
+impl  UpdateTagCollectionFilter  {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn app_boundary_key(&self) -> &str {
-        use std::ops::Deref;
-        self.app_boundary_key.deref()
+    pub fn app_boundary_key(&self) -> & str {
+        use std::ops::Deref; self.app_boundary_key.deref()
     }
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
-    pub fn tag_values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.tag_values.deref()
+    pub fn tag_values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.tag_values.deref()
     }
 }
 impl UpdateTagCollectionFilter {
@@ -39,7 +37,7 @@ impl UpdateTagCollectionFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagCollectionFilterBuilder {
     pub(crate) app_boundary_key: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateTagCollectionFilterBuilder {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
@@ -54,8 +52,7 @@ impl UpdateTagCollectionFilterBuilder {
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     pub fn set_app_boundary_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_boundary_key = input;
-        self
+        self.app_boundary_key = input; self
     }
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -71,19 +68,18 @@ impl UpdateTagCollectionFilterBuilder {
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input.into());
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
-    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_values = input; self
     }
     /// <p>The values in an Amazon Web Services tag collection.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
-    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`UpdateTagCollectionFilter`](crate::types::UpdateTagCollectionFilter).
@@ -91,19 +87,20 @@ impl UpdateTagCollectionFilterBuilder {
     /// - [`app_boundary_key`](crate::types::builders::UpdateTagCollectionFilterBuilder::app_boundary_key)
     /// - [`tag_values`](crate::types::builders::UpdateTagCollectionFilterBuilder::tag_values)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateTagCollectionFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateTagCollectionFilter {
-            app_boundary_key: self.app_boundary_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_boundary_key",
-                    "app_boundary_key was not specified but it is required when building UpdateTagCollectionFilter",
-                )
-            })?,
-            tag_values: self.tag_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_values",
-                    "tag_values was not specified but it is required when building UpdateTagCollectionFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateTagCollectionFilter {
+                app_boundary_key: self.app_boundary_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_boundary_key", "app_boundary_key was not specified but it is required when building UpdateTagCollectionFilter")
+                    )?
+                ,
+                tag_values: self.tag_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_values", "tag_values was not specified but it is required when building UpdateTagCollectionFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

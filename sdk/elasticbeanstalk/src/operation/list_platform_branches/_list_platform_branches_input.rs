@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPlatformBranchesInput {
+pub struct ListPlatformBranchesInput  {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
     /// <ul>
@@ -37,14 +37,14 @@ pub struct ListPlatformBranchesInput {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>>,
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPlatformBranchesInput {
+impl  ListPlatformBranchesInput  {
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
     /// <ul>
@@ -79,10 +79,11 @@ impl ListPlatformBranchesInput {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::SearchFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::SearchFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -90,7 +91,7 @@ impl ListPlatformBranchesInput {
     }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -105,7 +106,7 @@ impl ListPlatformBranchesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformBranchesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -150,9 +151,9 @@ impl ListPlatformBranchesInputBuilder {
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
@@ -188,9 +189,8 @@ impl ListPlatformBranchesInputBuilder {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
     /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
@@ -226,7 +226,7 @@ impl ListPlatformBranchesInputBuilder {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>> {
         &self.filters
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
@@ -236,8 +236,7 @@ impl ListPlatformBranchesInputBuilder {
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -252,8 +251,7 @@ impl ListPlatformBranchesInputBuilder {
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
@@ -261,14 +259,17 @@ impl ListPlatformBranchesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_platform_branches::ListPlatformBranchesInput {
-            filters: self.filters,
-            max_records: self.max_records,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_platform_branches::ListPlatformBranchesInput {
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

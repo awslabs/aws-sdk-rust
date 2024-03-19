@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateOpsItemRelatedItemOutput {
+pub struct DisassociateOpsItemRelatedItemOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DisassociateOpsItemRelatedItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateOpsItemRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateOpsItemRelatedItemOutput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput).
     pub fn builder() -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DisassociateOpsItemRelatedItemOutputBuilder {
 }
 impl DisassociateOpsItemRelatedItemOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateOpsItemRelatedItemOutput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput).
     pub fn build(self) -> crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput {
         crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput {
@@ -40,3 +40,4 @@ impl DisassociateOpsItemRelatedItemOutputBuilder {
         }
     }
 }
+

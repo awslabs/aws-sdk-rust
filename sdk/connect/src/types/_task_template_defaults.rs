@@ -3,16 +3,17 @@
 /// <p>Describes default values for fields on a template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskTemplateDefaults {
+pub struct TaskTemplateDefaults  {
     /// <p>Default value for the field.</p>
-    pub default_field_values: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>>,
+    pub default_field_values: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateDefaultFieldValue>>,
 }
-impl TaskTemplateDefaults {
+impl  TaskTemplateDefaults  {
     /// <p>Default value for the field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_field_values.is_none()`.
-    pub fn default_field_values(&self) -> &[crate::types::TaskTemplateDefaultFieldValue] {
-        self.default_field_values.as_deref().unwrap_or_default()
+    pub fn default_field_values(&self) -> & [crate::types::TaskTemplateDefaultFieldValue] {
+        self.default_field_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TaskTemplateDefaults {
@@ -26,7 +27,7 @@ impl TaskTemplateDefaults {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskTemplateDefaultsBuilder {
-    pub(crate) default_field_values: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>>,
+    pub(crate) default_field_values: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateDefaultFieldValue>>,
 }
 impl TaskTemplateDefaultsBuilder {
     /// Appends an item to `default_field_values`.
@@ -36,23 +37,24 @@ impl TaskTemplateDefaultsBuilder {
     /// <p>Default value for the field.</p>
     pub fn default_field_values(mut self, input: crate::types::TaskTemplateDefaultFieldValue) -> Self {
         let mut v = self.default_field_values.unwrap_or_default();
-        v.push(input);
-        self.default_field_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_field_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Default value for the field.</p>
-    pub fn set_default_field_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>>) -> Self {
-        self.default_field_values = input;
-        self
+    pub fn set_default_field_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateDefaultFieldValue>>) -> Self {
+        self.default_field_values = input; self
     }
     /// <p>Default value for the field.</p>
-    pub fn get_default_field_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>> {
+    pub fn get_default_field_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateDefaultFieldValue>> {
         &self.default_field_values
     }
     /// Consumes the builder and constructs a [`TaskTemplateDefaults`](crate::types::TaskTemplateDefaults).
     pub fn build(self) -> crate::types::TaskTemplateDefaults {
         crate::types::TaskTemplateDefaults {
-            default_field_values: self.default_field_values,
+            default_field_values: self.default_field_values
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLayerInput {
+pub struct DeleteLayerInput  {
     /// <p>The layer ID.</p>
     pub layer_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLayerInput {
+impl  DeleteLayerInput  {
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> ::std::option::Option<&str> {
+    pub fn layer_id(&self) -> ::std::option::Option<& str> {
         self.layer_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteLayerInputBuilder {
     }
     /// <p>The layer ID.</p>
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_id = input;
-        self
+        self.layer_id = input; self
     }
     /// <p>The layer ID.</p>
     pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteLayerInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_layer::DeleteLayerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_layer::DeleteLayerInput { layer_id: self.layer_id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_layer::DeleteLayerInput {
+                layer_id: self.layer_id
+                ,
+            }
+        )
     }
 }
+

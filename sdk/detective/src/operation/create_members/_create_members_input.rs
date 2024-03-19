@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateMembersInput {
+pub struct CreateMembersInput  {
     /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
@@ -11,15 +11,15 @@ pub struct CreateMembersInput {
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
     pub disable_email_notification: ::std::option::Option<bool>,
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>,
 }
-impl CreateMembersInput {
+impl  CreateMembersInput  {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
@@ -28,13 +28,14 @@ impl CreateMembersInput {
         self.disable_email_notification
     }
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[crate::types::Account] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [crate::types::Account] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateMembersInput {
+impl  ::std::fmt::Debug for CreateMembersInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMembersInput");
         formatter.field("graph_arn", &self.graph_arn);
@@ -58,7 +59,7 @@ pub struct CreateMembersInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) disable_email_notification: ::std::option::Option<bool>,
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>,
 }
 impl CreateMembersInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
@@ -69,8 +70,7 @@ impl CreateMembersInputBuilder {
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +83,7 @@ impl CreateMembersInputBuilder {
     }
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl CreateMembersInputBuilder {
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
     pub fn set_disable_email_notification(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_email_notification = input;
-        self
+        self.disable_email_notification = input; self
     }
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
@@ -114,29 +112,32 @@ impl CreateMembersInputBuilder {
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
     pub fn accounts(mut self, input: crate::types::Account) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input);
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Account>> {
         &self.accounts
     }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_members::CreateMembersInput {
-            graph_arn: self.graph_arn,
-            message: self.message,
-            disable_email_notification: self.disable_email_notification,
-            accounts: self.accounts,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_members::CreateMembersInput {
+                graph_arn: self.graph_arn
+                ,
+                message: self.message
+                ,
+                disable_email_notification: self.disable_email_notification
+                ,
+                accounts: self.accounts
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateMembersInputBuilder {
@@ -149,3 +150,4 @@ impl ::std::fmt::Debug for CreateMembersInputBuilder {
         formatter.finish()
     }
 }
+

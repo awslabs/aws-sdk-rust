@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInferenceExecutions`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>An opaque pagination token indicating where to continue the listing of inference executions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of inference executions to list.</p><br>
     ///   - [`inference_scheduler_name(impl Into<String>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::set_inference_scheduler_name):<br>required: **true**<br><p>The name of the inference scheduler for the inference execution listed.</p><br>
     ///   - [`data_start_time_after(DateTime)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::data_start_time_after) / [`set_data_start_time_after(Option<DateTime>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::set_data_start_time_after):<br>required: **false**<br><p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution.</p><br>
     ///   - [`data_end_time_before(DateTime)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::data_end_time_before) / [`set_data_end_time_before(Option<DateTime>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::set_data_end_time_before):<br>required: **false**<br><p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution.</p><br>
     ///   - [`status(InferenceExecutionStatus)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::status) / [`set_status(Option<InferenceExecutionStatus>)`](crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the inference execution.</p><br>
-    /// - On success, responds with [`ListInferenceExecutionsOutput`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListInferenceExecutionsOutput`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     ///   - [`inference_execution_summaries(Option<Vec::<InferenceExecutionSummary>>)`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput::inference_execution_summaries): <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p><note>  <p>If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in <code>InferenceExecutionSummaries</code>.</p> </note>
-    /// - On failure, responds with [`SdkError<ListInferenceExecutionsError>`](crate::operation::list_inference_executions::ListInferenceExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListInferenceExecutionsError>`](crate::operation::list_inference_executions::ListInferenceExecutionsError)
     pub fn list_inference_executions(&self) -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder {
-        crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_inference_executions::builders::ListInferenceExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

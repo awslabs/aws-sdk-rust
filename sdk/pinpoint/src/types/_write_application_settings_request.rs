@@ -3,17 +3,17 @@
 /// <p>Specifies the default settings for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WriteApplicationSettingsRequest {
+pub struct WriteApplicationSettingsRequest  {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the 
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
     pub campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
     pub cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     pub event_tagging_enabled: ::std::option::Option<bool>,
-    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
     pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
@@ -26,18 +26,18 @@ pub struct WriteApplicationSettingsRequest {
     /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    /// <p>To override the default quiet time settings for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>To override the default quiet time settings for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
     pub journey_limits: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>,
 }
-impl WriteApplicationSettingsRequest {
+impl  WriteApplicationSettingsRequest  {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the 
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
-    pub fn campaign_hook(&self) -> ::std::option::Option<&crate::types::CampaignHook> {
+    pub fn campaign_hook(&self) -> ::std::option::Option<& crate::types::CampaignHook> {
         self.campaign_hook.as_ref()
     }
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
@@ -48,10 +48,10 @@ impl WriteApplicationSettingsRequest {
     pub fn event_tagging_enabled(&self) -> ::std::option::Option<bool> {
         self.event_tagging_enabled
     }
-    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
-    pub fn limits(&self) -> ::std::option::Option<&crate::types::CampaignLimits> {
+    pub fn limits(&self) -> ::std::option::Option<& crate::types::CampaignLimits> {
         self.limits.as_ref()
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
@@ -64,14 +64,14 @@ impl WriteApplicationSettingsRequest {
     /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    /// <p>To override the default quiet time settings for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>To override the default quiet time settings for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
-    pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
+    pub fn quiet_time(&self) -> ::std::option::Option<& crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
-    pub fn journey_limits(&self) -> ::std::option::Option<&crate::types::ApplicationSettingsJourneyLimits> {
+    pub fn journey_limits(&self) -> ::std::option::Option<& crate::types::ApplicationSettingsJourneyLimits> {
         self.journey_limits.as_ref()
     }
 }
@@ -95,21 +95,20 @@ pub struct WriteApplicationSettingsRequestBuilder {
 }
 impl WriteApplicationSettingsRequestBuilder {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the 
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
     pub fn campaign_hook(mut self, input: crate::types::CampaignHook) -> Self {
         self.campaign_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the 
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
     pub fn set_campaign_hook(mut self, input: ::std::option::Option<crate::types::CampaignHook>) -> Self {
-        self.campaign_hook = input;
-        self
+        self.campaign_hook = input; self
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+    /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the 
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
     pub fn get_campaign_hook(&self) -> &::std::option::Option<crate::types::CampaignHook> {
         &self.campaign_hook
@@ -121,8 +120,7 @@ impl WriteApplicationSettingsRequestBuilder {
     }
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
     pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cloud_watch_metrics_enabled = input;
-        self
+        self.cloud_watch_metrics_enabled = input; self
     }
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
     pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -135,29 +133,27 @@ impl WriteApplicationSettingsRequestBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_event_tagging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.event_tagging_enabled = input;
-        self
+        self.event_tagging_enabled = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_event_tagging_enabled(&self) -> &::std::option::Option<bool> {
         &self.event_tagging_enabled
     }
-    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
     pub fn limits(mut self, input: crate::types::CampaignLimits) -> Self {
         self.limits = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
     pub fn set_limits(mut self, input: ::std::option::Option<crate::types::CampaignLimits>) -> Self {
-        self.limits = input;
-        self
+        self.limits = input; self
     }
-    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
     pub fn get_limits(&self) -> &::std::option::Option<crate::types::CampaignLimits> {
         &self.limits
@@ -172,8 +168,8 @@ impl WriteApplicationSettingsRequestBuilder {
     /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    /// <p>To override the default quiet time settings for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>To override the default quiet time settings for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
         self.quiet_time = ::std::option::Option::Some(input);
@@ -189,12 +185,11 @@ impl WriteApplicationSettingsRequestBuilder {
     /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    /// <p>To override the default quiet time settings for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>To override the default quiet time settings for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
-        self.quiet_time = input;
-        self
+        self.quiet_time = input; self
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
@@ -206,8 +201,8 @@ impl WriteApplicationSettingsRequestBuilder {
     /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    /// <p>To override the default quiet time settings for a specific campaign or journey, use the
-    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
+    /// <p>To override the default quiet time settings for a specific campaign or journey, use the 
+    /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the 
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
     pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {
         &self.quiet_time
@@ -219,8 +214,7 @@ impl WriteApplicationSettingsRequestBuilder {
     }
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
     pub fn set_journey_limits(mut self, input: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>) -> Self {
-        self.journey_limits = input;
-        self
+        self.journey_limits = input; self
     }
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
     pub fn get_journey_limits(&self) -> &::std::option::Option<crate::types::ApplicationSettingsJourneyLimits> {
@@ -229,12 +223,19 @@ impl WriteApplicationSettingsRequestBuilder {
     /// Consumes the builder and constructs a [`WriteApplicationSettingsRequest`](crate::types::WriteApplicationSettingsRequest).
     pub fn build(self) -> crate::types::WriteApplicationSettingsRequest {
         crate::types::WriteApplicationSettingsRequest {
-            campaign_hook: self.campaign_hook,
-            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
-            event_tagging_enabled: self.event_tagging_enabled,
-            limits: self.limits,
-            quiet_time: self.quiet_time,
-            journey_limits: self.journey_limits,
+            campaign_hook: self.campaign_hook
+            ,
+            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled
+            ,
+            event_tagging_enabled: self.event_tagging_enabled
+            ,
+            limits: self.limits
+            ,
+            quiet_time: self.quiet_time
+            ,
+            journey_limits: self.journey_limits
+            ,
         }
     }
 }
+

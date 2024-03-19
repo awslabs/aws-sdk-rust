@@ -3,13 +3,13 @@
 /// <p>The epsilon and noise parameter values that you want to update in the differential privacy template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacyTemplateUpdateParameters {
+pub struct DifferentialPrivacyTemplateUpdateParameters  {
     /// <p>The updated epsilon value that you want to use.</p>
     pub epsilon: ::std::option::Option<i32>,
     /// <p>The updated value of noise added per query. It is measured in terms of the number of users whose contributions you want to obscure. This value governs the rate at which the privacy budget is depleted.</p>
     pub users_noise_per_query: ::std::option::Option<i32>,
 }
-impl DifferentialPrivacyTemplateUpdateParameters {
+impl  DifferentialPrivacyTemplateUpdateParameters  {
     /// <p>The updated epsilon value that you want to use.</p>
     pub fn epsilon(&self) -> ::std::option::Option<i32> {
         self.epsilon
@@ -41,8 +41,7 @@ impl DifferentialPrivacyTemplateUpdateParametersBuilder {
     }
     /// <p>The updated epsilon value that you want to use.</p>
     pub fn set_epsilon(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.epsilon = input;
-        self
+        self.epsilon = input; self
     }
     /// <p>The updated epsilon value that you want to use.</p>
     pub fn get_epsilon(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl DifferentialPrivacyTemplateUpdateParametersBuilder {
     }
     /// <p>The updated value of noise added per query. It is measured in terms of the number of users whose contributions you want to obscure. This value governs the rate at which the privacy budget is depleted.</p>
     pub fn set_users_noise_per_query(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.users_noise_per_query = input;
-        self
+        self.users_noise_per_query = input; self
     }
     /// <p>The updated value of noise added per query. It is measured in terms of the number of users whose contributions you want to obscure. This value governs the rate at which the privacy budget is depleted.</p>
     pub fn get_users_noise_per_query(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl DifferentialPrivacyTemplateUpdateParametersBuilder {
     /// Consumes the builder and constructs a [`DifferentialPrivacyTemplateUpdateParameters`](crate::types::DifferentialPrivacyTemplateUpdateParameters).
     pub fn build(self) -> crate::types::DifferentialPrivacyTemplateUpdateParameters {
         crate::types::DifferentialPrivacyTemplateUpdateParameters {
-            epsilon: self.epsilon,
-            users_noise_per_query: self.users_noise_per_query,
+            epsilon: self.epsilon
+            ,
+            users_noise_per_query: self.users_noise_per_query
+            ,
         }
     }
 }
+

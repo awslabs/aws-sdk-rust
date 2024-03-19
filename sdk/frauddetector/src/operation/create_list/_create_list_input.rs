@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateListInput {
+pub struct CreateListInput  {
     /// <p>The name of the list.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API.</p>
-    pub elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub elements: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub variable_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the list.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of the key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateListInput {
+impl  CreateListInput  {
     /// <p>The name of the list.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
-    pub fn elements(&self) -> &[::std::string::String] {
-        self.elements.as_deref().unwrap_or_default()
+    pub fn elements(&self) -> & [::std::string::String] {
+        self.elements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
-    pub fn variable_type(&self) -> ::std::option::Option<&str> {
+    pub fn variable_type(&self) -> ::std::option::Option<& str> {
         self.variable_type.as_deref()
     }
     /// <p>The description of the list.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A collection of the key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateListInput {
@@ -52,10 +54,10 @@ impl CreateListInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) variable_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateListInputBuilder {
     /// <p>The name of the list.</p>
@@ -66,8 +68,7 @@ impl CreateListInputBuilder {
     }
     /// <p>The name of the list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl CreateListInputBuilder {
     /// <p>The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API.</p>
     pub fn elements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input.into());
-        self.elements = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.elements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API.</p>
-    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.elements = input; self
     }
     /// <p>The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API.</p>
-    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.elements
     }
     /// <p>The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
@@ -100,8 +100,7 @@ impl CreateListInputBuilder {
     }
     /// <p>The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variable_type = input;
-        self
+        self.variable_type = input; self
     }
     /// <p>The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl CreateListInputBuilder {
     }
     /// <p>The description of the list.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the list.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,27 +126,34 @@ impl CreateListInputBuilder {
     /// <p>A collection of the key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of the key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of the key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListInput`](crate::operation::create_list::CreateListInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_list::CreateListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_list::CreateListInput {
-            name: self.name,
-            elements: self.elements,
-            variable_type: self.variable_type,
-            description: self.description,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_list::CreateListInput {
+                name: self.name
+                ,
+                elements: self.elements
+                ,
+                variable_type: self.variable_type
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

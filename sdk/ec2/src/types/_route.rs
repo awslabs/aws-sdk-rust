@@ -3,7 +3,7 @@
 /// <p>Describes a route in a route table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Route {
+pub struct Route  {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block used for the destination match.</p>
@@ -45,53 +45,53 @@ pub struct Route {
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub core_network_arn: ::std::option::Option<::std::string::String>,
 }
-impl Route {
+impl  Route  {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The IPv6 CIDR block used for the destination match.</p>
-    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_ipv6_cidr_block.as_deref()
     }
     /// <p>The prefix of the Amazon Web Service.</p>
-    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<& str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
     /// <p>The ID of a gateway attached to your VPC.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The ID of a NAT instance in your VPC.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of Amazon Web Services account that owns the instance.</p>
-    pub fn instance_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_owner_id(&self) -> ::std::option::Option<& str> {
         self.instance_owner_id.as_deref()
     }
     /// <p>The ID of a NAT gateway.</p>
-    pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> ::std::option::Option<& str> {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_id.as_deref()
     }
     /// <p>The ID of the carrier gateway.</p>
-    pub fn carrier_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn carrier_gateway_id(&self) -> ::std::option::Option<& str> {
         self.carrier_gateway_id.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>Describes how the route was created.</p>
@@ -103,19 +103,19 @@ impl Route {
     /// <li>
     /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::RouteOrigin> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::RouteOrigin> {
         self.origin.as_ref()
     }
     /// <p>The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RouteState> {
         self.state.as_ref()
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_peering_connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<& str> {
         self.core_network_arn.as_deref()
     }
 }
@@ -155,8 +155,7 @@ impl RouteBuilder {
     }
     /// <p>The IPv4 CIDR block used for the destination match.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The IPv4 CIDR block used for the destination match.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +168,7 @@ impl RouteBuilder {
     }
     /// <p>The IPv6 CIDR block used for the destination match.</p>
     pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_ipv6_cidr_block = input;
-        self
+        self.destination_ipv6_cidr_block = input; self
     }
     /// <p>The IPv6 CIDR block used for the destination match.</p>
     pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +181,7 @@ impl RouteBuilder {
     }
     /// <p>The prefix of the Amazon Web Service.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+        self.destination_prefix_list_id = input; self
     }
     /// <p>The prefix of the Amazon Web Service.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +194,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.egress_only_internet_gateway_id = input;
-        self
+        self.egress_only_internet_gateway_id = input; self
     }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +207,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of a gateway attached to your VPC.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The ID of a gateway attached to your VPC.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +220,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of a NAT instance in your VPC.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of a NAT instance in your VPC.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +233,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of Amazon Web Services account that owns the instance.</p>
     pub fn set_instance_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_owner_id = input;
-        self
+        self.instance_owner_id = input; self
     }
     /// <p>The ID of Amazon Web Services account that owns the instance.</p>
     pub fn get_instance_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +246,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of a NAT gateway.</p>
     pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nat_gateway_id = input;
-        self
+        self.nat_gateway_id = input; self
     }
     /// <p>The ID of a NAT gateway.</p>
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,8 +259,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of a transit gateway.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of a transit gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,8 +272,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of the local gateway.</p>
     pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_gateway_id = input;
-        self
+        self.local_gateway_id = input; self
     }
     /// <p>The ID of the local gateway.</p>
     pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,8 +285,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of the carrier gateway.</p>
     pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.carrier_gateway_id = input;
-        self
+        self.carrier_gateway_id = input; self
     }
     /// <p>The ID of the carrier gateway.</p>
     pub fn get_carrier_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -309,8 +298,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -339,8 +327,7 @@ impl RouteBuilder {
     /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::RouteOrigin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>Describes how the route was created.</p>
     /// <ul>
@@ -361,8 +348,7 @@ impl RouteBuilder {
     }
     /// <p>The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
@@ -375,8 +361,7 @@ impl RouteBuilder {
     }
     /// <p>The ID of a VPC peering connection.</p>
     pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_peering_connection_id = input;
-        self
+        self.vpc_peering_connection_id = input; self
     }
     /// <p>The ID of a VPC peering connection.</p>
     pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -389,8 +374,7 @@ impl RouteBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_arn = input;
-        self
+        self.core_network_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -399,22 +383,39 @@ impl RouteBuilder {
     /// Consumes the builder and constructs a [`Route`](crate::types::Route).
     pub fn build(self) -> crate::types::Route {
         crate::types::Route {
-            destination_cidr_block: self.destination_cidr_block,
-            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
-            destination_prefix_list_id: self.destination_prefix_list_id,
-            egress_only_internet_gateway_id: self.egress_only_internet_gateway_id,
-            gateway_id: self.gateway_id,
-            instance_id: self.instance_id,
-            instance_owner_id: self.instance_owner_id,
-            nat_gateway_id: self.nat_gateway_id,
-            transit_gateway_id: self.transit_gateway_id,
-            local_gateway_id: self.local_gateway_id,
-            carrier_gateway_id: self.carrier_gateway_id,
-            network_interface_id: self.network_interface_id,
-            origin: self.origin,
-            state: self.state,
-            vpc_peering_connection_id: self.vpc_peering_connection_id,
-            core_network_arn: self.core_network_arn,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block
+            ,
+            destination_prefix_list_id: self.destination_prefix_list_id
+            ,
+            egress_only_internet_gateway_id: self.egress_only_internet_gateway_id
+            ,
+            gateway_id: self.gateway_id
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_owner_id: self.instance_owner_id
+            ,
+            nat_gateway_id: self.nat_gateway_id
+            ,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            local_gateway_id: self.local_gateway_id
+            ,
+            carrier_gateway_id: self.carrier_gateway_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            origin: self.origin
+            ,
+            state: self.state
+            ,
+            vpc_peering_connection_id: self.vpc_peering_connection_id
+            ,
+            core_network_arn: self.core_network_arn
+            ,
         }
     }
 }
+

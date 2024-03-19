@@ -3,7 +3,7 @@
 /// <p>Returns information about a symbolic link in a repository folder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SymbolicLink {
+pub struct SymbolicLink  {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
@@ -13,21 +13,21 @@ pub struct SymbolicLink {
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
-impl SymbolicLink {
+impl  SymbolicLink  {
     /// <p>The blob ID that contains the information about the symbolic link.</p>
-    pub fn blob_id(&self) -> ::std::option::Option<&str> {
+    pub fn blob_id(&self) -> ::std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
-    pub fn absolute_path(&self) -> ::std::option::Option<&str> {
+    pub fn absolute_path(&self) -> ::std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> ::std::option::Option<&str> {
+    pub fn relative_path(&self) -> ::std::option::Option<& str> {
         self.relative_path.as_deref()
     }
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
-    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SymbolicLinkBuilder {
     }
     /// <p>The blob ID that contains the information about the symbolic link.</p>
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blob_id = input;
-        self
+        self.blob_id = input; self
     }
     /// <p>The blob ID that contains the information about the symbolic link.</p>
     pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SymbolicLinkBuilder {
     }
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
     pub fn set_absolute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.absolute_path = input;
-        self
+        self.absolute_path = input; self
     }
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
     pub fn get_absolute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl SymbolicLinkBuilder {
     }
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
     pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relative_path = input;
-        self
+        self.relative_path = input; self
     }
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
     pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl SymbolicLinkBuilder {
     }
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
     pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input;
-        self
+        self.file_mode = input; self
     }
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
     pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -107,10 +103,15 @@ impl SymbolicLinkBuilder {
     /// Consumes the builder and constructs a [`SymbolicLink`](crate::types::SymbolicLink).
     pub fn build(self) -> crate::types::SymbolicLink {
         crate::types::SymbolicLink {
-            blob_id: self.blob_id,
-            absolute_path: self.absolute_path,
-            relative_path: self.relative_path,
-            file_mode: self.file_mode,
+            blob_id: self.blob_id
+            ,
+            absolute_path: self.absolute_path
+            ,
+            relative_path: self.relative_path
+            ,
+            file_mode: self.file_mode
+            ,
         }
     }
 }
+

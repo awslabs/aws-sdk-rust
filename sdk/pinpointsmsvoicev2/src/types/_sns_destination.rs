@@ -3,15 +3,14 @@
 /// <p>An object that defines an Amazon SNS destination for events. You can use Amazon SNS to send notification when certain events occur.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsDestination {
+pub struct SnsDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
     pub topic_arn: ::std::string::String,
 }
-impl SnsDestination {
+impl  SnsDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
-    pub fn topic_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_arn.deref()
+    pub fn topic_arn(&self) -> & str {
+        use std::ops::Deref; self.topic_arn.deref()
     }
 }
 impl SnsDestination {
@@ -36,8 +35,7 @@ impl SnsDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SnsDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_arn`](crate::types::builders::SnsDestinationBuilder::topic_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SnsDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnsDestination {
-            topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_arn",
-                    "topic_arn was not specified but it is required when building SnsDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnsDestination {
+                topic_arn: self.topic_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_arn", "topic_arn was not specified but it is required when building SnsDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

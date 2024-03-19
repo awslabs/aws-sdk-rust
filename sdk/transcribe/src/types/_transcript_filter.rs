@@ -13,7 +13,7 @@
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for post-call categories</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule criteria for streaming categories</a> for usage examples.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranscriptFilter {
+pub struct TranscriptFilter  {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
     pub transcript_filter_type: crate::types::TranscriptFilterType,
@@ -26,24 +26,24 @@ pub struct TranscriptFilter {
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     pub negate: ::std::option::Option<bool>,
     /// <p>Specify the phrases that you want to flag.</p>
-    pub targets: ::std::vec::Vec<::std::string::String>,
+    pub targets: ::std::vec::Vec::<::std::string::String>,
 }
-impl TranscriptFilter {
+impl  TranscriptFilter  {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
-    pub fn transcript_filter_type(&self) -> &crate::types::TranscriptFilterType {
+    pub fn transcript_filter_type(&self) -> & crate::types::TranscriptFilterType {
         &self.transcript_filter_type
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
-    pub fn absolute_time_range(&self) -> ::std::option::Option<&crate::types::AbsoluteTimeRange> {
+    pub fn absolute_time_range(&self) -> ::std::option::Option<& crate::types::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
-    pub fn relative_time_range(&self) -> ::std::option::Option<&crate::types::RelativeTimeRange> {
+    pub fn relative_time_range(&self) -> ::std::option::Option<& crate::types::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<& crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
@@ -51,9 +51,8 @@ impl TranscriptFilter {
         self.negate
     }
     /// <p>Specify the phrases that you want to flag.</p>
-    pub fn targets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.targets.deref()
+    pub fn targets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.targets.deref()
     }
 }
 impl TranscriptFilter {
@@ -72,7 +71,7 @@ pub struct TranscriptFilterBuilder {
     pub(crate) relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     pub(crate) negate: ::std::option::Option<bool>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TranscriptFilterBuilder {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
@@ -85,8 +84,7 @@ impl TranscriptFilterBuilder {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
     pub fn set_transcript_filter_type(mut self, input: ::std::option::Option<crate::types::TranscriptFilterType>) -> Self {
-        self.transcript_filter_type = input;
-        self
+        self.transcript_filter_type = input; self
     }
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
@@ -100,8 +98,7 @@ impl TranscriptFilterBuilder {
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn set_absolute_time_range(mut self, input: ::std::option::Option<crate::types::AbsoluteTimeRange>) -> Self {
-        self.absolute_time_range = input;
-        self
+        self.absolute_time_range = input; self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn get_absolute_time_range(&self) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
@@ -114,8 +111,7 @@ impl TranscriptFilterBuilder {
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn set_relative_time_range(mut self, input: ::std::option::Option<crate::types::RelativeTimeRange>) -> Self {
-        self.relative_time_range = input;
-        self
+        self.relative_time_range = input; self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn get_relative_time_range(&self) -> &::std::option::Option<crate::types::RelativeTimeRange> {
@@ -128,8 +124,7 @@ impl TranscriptFilterBuilder {
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -142,8 +137,7 @@ impl TranscriptFilterBuilder {
     }
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.negate = input;
-        self
+        self.negate = input; self
     }
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     pub fn get_negate(&self) -> &::std::option::Option<bool> {
@@ -156,17 +150,16 @@ impl TranscriptFilterBuilder {
     /// <p>Specify the phrases that you want to flag.</p>
     pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input.into());
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the phrases that you want to flag.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.targets = input; self
     }
     /// <p>Specify the phrases that you want to flag.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.targets
     }
     /// Consumes the builder and constructs a [`TranscriptFilter`](crate::types::TranscriptFilter).
@@ -174,23 +167,28 @@ impl TranscriptFilterBuilder {
     /// - [`transcript_filter_type`](crate::types::builders::TranscriptFilterBuilder::transcript_filter_type)
     /// - [`targets`](crate::types::builders::TranscriptFilterBuilder::targets)
     pub fn build(self) -> ::std::result::Result<crate::types::TranscriptFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TranscriptFilter {
-            transcript_filter_type: self.transcript_filter_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transcript_filter_type",
-                    "transcript_filter_type was not specified but it is required when building TranscriptFilter",
-                )
-            })?,
-            absolute_time_range: self.absolute_time_range,
-            relative_time_range: self.relative_time_range,
-            participant_role: self.participant_role,
-            negate: self.negate,
-            targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "targets",
-                    "targets was not specified but it is required when building TranscriptFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TranscriptFilter {
+                transcript_filter_type: self.transcript_filter_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transcript_filter_type", "transcript_filter_type was not specified but it is required when building TranscriptFilter")
+                    )?
+                ,
+                absolute_time_range: self.absolute_time_range
+                ,
+                relative_time_range: self.relative_time_range
+                ,
+                participant_role: self.participant_role
+                ,
+                negate: self.negate
+                ,
+                targets: self.targets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("targets", "targets was not specified but it is required when building TranscriptFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

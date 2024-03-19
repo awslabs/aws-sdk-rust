@@ -2,67 +2,64 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExperimentTemplateInput {
+pub struct CreateExperimentTemplateInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A description for the experiment template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The stop conditions.</p>
-    pub stop_conditions: ::std::option::Option<::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>>,
+    pub stop_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::CreateExperimentTemplateStopConditionInput>>,
     /// <p>The targets for the experiment.</p>
-    pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>,
+    pub targets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>,
     /// <p>The actions for the experiment.</p>
-    pub actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>,
+    pub actions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the experiment template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
     pub log_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>,
     /// <p>The experiment options for the experiment template.</p>
     pub experiment_options: ::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput>,
 }
-impl CreateExperimentTemplateInput {
+impl  CreateExperimentTemplateInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A description for the experiment template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The stop conditions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stop_conditions.is_none()`.
-    pub fn stop_conditions(&self) -> &[crate::types::CreateExperimentTemplateStopConditionInput] {
-        self.stop_conditions.as_deref().unwrap_or_default()
+    pub fn stop_conditions(&self) -> & [crate::types::CreateExperimentTemplateStopConditionInput] {
+        self.stop_conditions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The targets for the experiment.</p>
-    pub fn targets(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>> {
+    pub fn targets(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>> {
         self.targets.as_ref()
     }
     /// <p>The actions for the experiment.</p>
-    pub fn actions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateActionInput>> {
+    pub fn actions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateActionInput>> {
         self.actions.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The tags to apply to the experiment template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::CreateExperimentTemplateLogConfigurationInput> {
+    pub fn log_configuration(&self) -> ::std::option::Option<& crate::types::CreateExperimentTemplateLogConfigurationInput> {
         self.log_configuration.as_ref()
     }
     /// <p>The experiment options for the experiment template.</p>
-    pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::CreateExperimentTemplateExperimentOptionsInput> {
+    pub fn experiment_options(&self) -> ::std::option::Option<& crate::types::CreateExperimentTemplateExperimentOptionsInput> {
         self.experiment_options.as_ref()
     }
 }
@@ -79,11 +76,11 @@ impl CreateExperimentTemplateInput {
 pub struct CreateExperimentTemplateInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) stop_conditions: ::std::option::Option<::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>>,
-    pub(crate) targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>,
-    pub(crate) actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>,
+    pub(crate) stop_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::CreateExperimentTemplateStopConditionInput>>,
+    pub(crate) targets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>,
+    pub(crate) actions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>,
     pub(crate) experiment_options: ::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput>,
 }
@@ -96,8 +93,7 @@ impl CreateExperimentTemplateInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +107,7 @@ impl CreateExperimentTemplateInputBuilder {
     }
     /// <p>A description for the experiment template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the experiment template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,20 +120,16 @@ impl CreateExperimentTemplateInputBuilder {
     /// <p>The stop conditions.</p>
     pub fn stop_conditions(mut self, input: crate::types::CreateExperimentTemplateStopConditionInput) -> Self {
         let mut v = self.stop_conditions.unwrap_or_default();
-        v.push(input);
-        self.stop_conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stop_conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The stop conditions.</p>
-    pub fn set_stop_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>>,
-    ) -> Self {
-        self.stop_conditions = input;
-        self
+    pub fn set_stop_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateExperimentTemplateStopConditionInput>>) -> Self {
+        self.stop_conditions = input; self
     }
     /// <p>The stop conditions.</p>
-    pub fn get_stop_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>> {
+    pub fn get_stop_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateExperimentTemplateStopConditionInput>> {
         &self.stop_conditions
     }
     /// Adds a key-value pair to `targets`.
@@ -148,22 +139,16 @@ impl CreateExperimentTemplateInputBuilder {
     /// <p>The targets for the experiment.</p>
     pub fn targets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CreateExperimentTemplateTargetInput) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.targets = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.targets = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The targets for the experiment.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets for the experiment.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>> {
         &self.targets
     }
     /// Adds a key-value pair to `actions`.
@@ -173,22 +158,16 @@ impl CreateExperimentTemplateInputBuilder {
     /// <p>The actions for the experiment.</p>
     pub fn actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CreateExperimentTemplateActionInput) -> Self {
         let mut hash_map = self.actions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.actions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.actions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The actions for the experiment.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions for the experiment.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateActionInput>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CreateExperimentTemplateActionInput>> {
         &self.actions
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
@@ -199,8 +178,7 @@ impl CreateExperimentTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,17 +191,16 @@ impl CreateExperimentTemplateInputBuilder {
     /// <p>The tags to apply to the experiment template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to apply to the experiment template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to apply to the experiment template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration for experiment logging.</p>
@@ -233,8 +210,7 @@ impl CreateExperimentTemplateInputBuilder {
     }
     /// <p>The configuration for experiment logging.</p>
     pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>) -> Self {
-        self.log_configuration = input;
-        self
+        self.log_configuration = input; self
     }
     /// <p>The configuration for experiment logging.</p>
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput> {
@@ -247,30 +223,36 @@ impl CreateExperimentTemplateInputBuilder {
     }
     /// <p>The experiment options for the experiment template.</p>
     pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput>) -> Self {
-        self.experiment_options = input;
-        self
+        self.experiment_options = input; self
     }
     /// <p>The experiment options for the experiment template.</p>
     pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput> {
         &self.experiment_options
     }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateInput`](crate::operation::create_experiment_template::CreateExperimentTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_experiment_template::CreateExperimentTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_experiment_template::CreateExperimentTemplateInput {
-            client_token: self.client_token,
-            description: self.description,
-            stop_conditions: self.stop_conditions,
-            targets: self.targets,
-            actions: self.actions,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            log_configuration: self.log_configuration,
-            experiment_options: self.experiment_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_experiment_template::CreateExperimentTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_experiment_template::CreateExperimentTemplateInput {
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                stop_conditions: self.stop_conditions
+                ,
+                targets: self.targets
+                ,
+                actions: self.actions
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                log_configuration: self.log_configuration
+                ,
+                experiment_options: self.experiment_options
+                ,
+            }
+        )
     }
 }
+

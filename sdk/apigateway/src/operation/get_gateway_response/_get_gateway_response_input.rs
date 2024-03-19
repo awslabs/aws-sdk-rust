@@ -3,19 +3,19 @@
 /// <p>Gets a GatewayResponse of a specified response type on the given RestApi.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGatewayResponseInput {
+pub struct GetGatewayResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
     pub response_type: ::std::option::Option<crate::types::GatewayResponseType>,
 }
-impl GetGatewayResponseInput {
+impl  GetGatewayResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn response_type(&self) -> ::std::option::Option<&crate::types::GatewayResponseType> {
+    pub fn response_type(&self) -> ::std::option::Option<& crate::types::GatewayResponseType> {
         self.response_type.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl GetGatewayResponseInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl GetGatewayResponseInputBuilder {
     }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
-        self.response_type = input;
-        self
+        self.response_type = input; self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
         &self.response_type
     }
     /// Consumes the builder and constructs a [`GetGatewayResponseInput`](crate::operation::get_gateway_response::GetGatewayResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_gateway_response::GetGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_gateway_response::GetGatewayResponseInput {
-            rest_api_id: self.rest_api_id,
-            response_type: self.response_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_gateway_response::GetGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_gateway_response::GetGatewayResponseInput {
+                rest_api_id: self.rest_api_id
+                ,
+                response_type: self.response_type
+                ,
+            }
+        )
     }
 }
+

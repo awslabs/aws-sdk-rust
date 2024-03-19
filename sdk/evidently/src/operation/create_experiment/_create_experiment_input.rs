@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExperimentInput {
+pub struct CreateExperimentInput  {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>A name for the new experiment.</p>
@@ -10,9 +10,9 @@ pub struct CreateExperimentInput {
     /// <p>An optional description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
+    pub treatments: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
+    pub metric_goals: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
@@ -27,35 +27,37 @@ pub struct CreateExperimentInput {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateExperimentInput {
+impl  CreateExperimentInput  {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>A name for the new experiment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the experiment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatments.is_none()`.
-    pub fn treatments(&self) -> &[crate::types::TreatmentConfig] {
-        self.treatments.as_deref().unwrap_or_default()
+    pub fn treatments(&self) -> & [crate::types::TreatmentConfig] {
+        self.treatments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_goals.is_none()`.
-    pub fn metric_goals(&self) -> &[crate::types::MetricGoalConfig] {
-        self.metric_goals.as_deref().unwrap_or_default()
+    pub fn metric_goals(&self) -> & [crate::types::MetricGoalConfig] {
+        self.metric_goals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
+    pub fn randomization_salt(&self) -> ::std::option::Option<& str> {
         self.randomization_salt.as_deref()
     }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
@@ -64,11 +66,11 @@ impl CreateExperimentInput {
         self.sampling_rate
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn online_ab_config(&self) -> ::std::option::Option<&crate::types::OnlineAbConfig> {
+    pub fn online_ab_config(&self) -> ::std::option::Option<& crate::types::OnlineAbConfig> {
         self.online_ab_config.as_ref()
     }
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
+    pub fn segment(&self) -> ::std::option::Option<& str> {
         self.segment.as_deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
@@ -76,7 +78,7 @@ impl CreateExperimentInput {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -94,13 +96,13 @@ pub struct CreateExperimentInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
-    pub(crate) metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
+    pub(crate) treatments: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>,
+    pub(crate) metric_goals: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>,
     pub(crate) randomization_salt: ::std::option::Option<::std::string::String>,
     pub(crate) sampling_rate: ::std::option::Option<i64>,
     pub(crate) online_ab_config: ::std::option::Option<crate::types::OnlineAbConfig>,
     pub(crate) segment: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateExperimentInputBuilder {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
@@ -111,8 +113,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +127,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>A name for the new experiment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the new experiment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +140,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>An optional description of the experiment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the experiment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +153,16 @@ impl CreateExperimentInputBuilder {
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
     pub fn treatments(mut self, input: crate::types::TreatmentConfig) -> Self {
         let mut v = self.treatments.unwrap_or_default();
-        v.push(input);
-        self.treatments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.treatments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>) -> Self {
-        self.treatments = input;
-        self
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>) -> Self {
+        self.treatments = input; self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>> {
         &self.treatments
     }
     /// Appends an item to `metric_goals`.
@@ -174,17 +172,16 @@ impl CreateExperimentInputBuilder {
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn metric_goals(mut self, input: crate::types::MetricGoalConfig) -> Self {
         let mut v = self.metric_goals.unwrap_or_default();
-        v.push(input);
-        self.metric_goals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_goals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>) -> Self {
-        self.metric_goals = input;
-        self
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>) -> Self {
+        self.metric_goals = input; self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>> {
         &self.metric_goals
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
@@ -194,8 +191,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.randomization_salt = input;
-        self
+        self.randomization_salt = input; self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +206,7 @@ impl CreateExperimentInputBuilder {
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sampling_rate = input;
-        self
+        self.sampling_rate = input; self
     }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
@@ -225,8 +220,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn set_online_ab_config(mut self, input: ::std::option::Option<crate::types::OnlineAbConfig>) -> Self {
-        self.online_ab_config = input;
-        self
+        self.online_ab_config = input; self
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn get_online_ab_config(&self) -> &::std::option::Option<crate::types::OnlineAbConfig> {
@@ -239,8 +233,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
     }
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
     pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,42 +250,52 @@ impl CreateExperimentInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_experiment::CreateExperimentInput {
-            project: self.project,
-            name: self.name,
-            description: self.description,
-            treatments: self.treatments,
-            metric_goals: self.metric_goals,
-            randomization_salt: self.randomization_salt,
-            sampling_rate: self.sampling_rate,
-            online_ab_config: self.online_ab_config,
-            segment: self.segment,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_experiment::CreateExperimentInput {
+                project: self.project
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                treatments: self.treatments
+                ,
+                metric_goals: self.metric_goals
+                ,
+                randomization_salt: self.randomization_salt
+                ,
+                sampling_rate: self.sampling_rate
+                ,
+                online_ab_config: self.online_ab_config
+                ,
+                segment: self.segment
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

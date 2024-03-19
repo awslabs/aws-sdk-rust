@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCollaborationPrivacyBudgetTemplateInput {
+pub struct GetCollaborationPrivacyBudgetTemplateInput  {
     /// <p>A unique identifier for one of your collaborations.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for one of your privacy budget templates.</p>
     pub privacy_budget_template_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetCollaborationPrivacyBudgetTemplateInput {
+impl  GetCollaborationPrivacyBudgetTemplateInput  {
     /// <p>A unique identifier for one of your collaborations.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>A unique identifier for one of your privacy budget templates.</p>
-    pub fn privacy_budget_template_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn privacy_budget_template_identifier(&self) -> ::std::option::Option<& str> {
         self.privacy_budget_template_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetCollaborationPrivacyBudgetTemplateInputBuilder {
     }
     /// <p>A unique identifier for one of your collaborations.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for one of your collaborations.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetCollaborationPrivacyBudgetTemplateInputBuilder {
     }
     /// <p>A unique identifier for one of your privacy budget templates.</p>
     pub fn set_privacy_budget_template_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.privacy_budget_template_identifier = input;
-        self
+        self.privacy_budget_template_identifier = input; self
     }
     /// <p>A unique identifier for one of your privacy budget templates.</p>
     pub fn get_privacy_budget_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.privacy_budget_template_identifier
     }
     /// Consumes the builder and constructs a [`GetCollaborationPrivacyBudgetTemplateInput`](crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateInput {
-                collaboration_identifier: self.collaboration_identifier,
-                privacy_budget_template_identifier: self.privacy_budget_template_identifier,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                privacy_budget_template_identifier: self.privacy_budget_template_identifier
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a source or a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteAnalysisEndpointOptions {
+pub struct RouteAnalysisEndpointOptions  {
     /// <p>The ARN of the transit gateway attachment.</p>
     pub transit_gateway_attachment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway.</p>
@@ -11,17 +11,17 @@ pub struct RouteAnalysisEndpointOptions {
     /// <p>The IP address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
 }
-impl RouteAnalysisEndpointOptions {
+impl  RouteAnalysisEndpointOptions  {
     /// <p>The ARN of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_arn.as_deref()
     }
     /// <p>The ARN of the transit gateway.</p>
-    pub fn transit_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_arn.as_deref()
     }
     /// <p>The IP address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RouteAnalysisEndpointOptionsBuilder {
     }
     /// <p>The ARN of the transit gateway attachment.</p>
     pub fn set_transit_gateway_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_arn = input;
-        self
+        self.transit_gateway_attachment_arn = input; self
     }
     /// <p>The ARN of the transit gateway attachment.</p>
     pub fn get_transit_gateway_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RouteAnalysisEndpointOptionsBuilder {
     }
     /// <p>The ARN of the transit gateway.</p>
     pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_arn = input;
-        self
+        self.transit_gateway_arn = input; self
     }
     /// <p>The ARN of the transit gateway.</p>
     pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl RouteAnalysisEndpointOptionsBuilder {
     }
     /// <p>The IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl RouteAnalysisEndpointOptionsBuilder {
     /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptions`](crate::types::RouteAnalysisEndpointOptions).
     pub fn build(self) -> crate::types::RouteAnalysisEndpointOptions {
         crate::types::RouteAnalysisEndpointOptions {
-            transit_gateway_attachment_arn: self.transit_gateway_attachment_arn,
-            transit_gateway_arn: self.transit_gateway_arn,
-            ip_address: self.ip_address,
+            transit_gateway_attachment_arn: self.transit_gateway_attachment_arn
+            ,
+            transit_gateway_arn: self.transit_gateway_arn
+            ,
+            ip_address: self.ip_address
+            ,
         }
     }
 }
+

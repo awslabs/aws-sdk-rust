@@ -3,15 +3,15 @@
 /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManifestProcessingRules {
+pub struct ManifestProcessingRules  {
     /// <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
     /// <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
     pub ad_marker_passthrough: ::std::option::Option<crate::types::AdMarkerPassthrough>,
 }
-impl ManifestProcessingRules {
+impl  ManifestProcessingRules  {
     /// <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
     /// <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
-    pub fn ad_marker_passthrough(&self) -> ::std::option::Option<&crate::types::AdMarkerPassthrough> {
+    pub fn ad_marker_passthrough(&self) -> ::std::option::Option<& crate::types::AdMarkerPassthrough> {
         self.ad_marker_passthrough.as_ref()
     }
 }
@@ -38,8 +38,7 @@ impl ManifestProcessingRulesBuilder {
     /// <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
     /// <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
     pub fn set_ad_marker_passthrough(mut self, input: ::std::option::Option<crate::types::AdMarkerPassthrough>) -> Self {
-        self.ad_marker_passthrough = input;
-        self
+        self.ad_marker_passthrough = input; self
     }
     /// <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
     /// <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
@@ -49,7 +48,9 @@ impl ManifestProcessingRulesBuilder {
     /// Consumes the builder and constructs a [`ManifestProcessingRules`](crate::types::ManifestProcessingRules).
     pub fn build(self) -> crate::types::ManifestProcessingRules {
         crate::types::ManifestProcessingRules {
-            ad_marker_passthrough: self.ad_marker_passthrough,
+            ad_marker_passthrough: self.ad_marker_passthrough
+            ,
         }
     }
 }
+

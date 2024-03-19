@@ -29,11 +29,7 @@ impl Rule {
     /// Tries to convert the enum instance into [`InterruptionFilter`](crate::types::Rule::InterruptionFilter), extracting the inner [`InterruptionFilter`](crate::types::InterruptionFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_interruption_filter(&self) -> ::std::result::Result<&crate::types::InterruptionFilter, &Self> {
-        if let Rule::InterruptionFilter(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Rule::InterruptionFilter(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`InterruptionFilter`](crate::types::Rule::InterruptionFilter).
     pub fn is_interruption_filter(&self) -> bool {
@@ -42,11 +38,7 @@ impl Rule {
     /// Tries to convert the enum instance into [`NonTalkTimeFilter`](crate::types::Rule::NonTalkTimeFilter), extracting the inner [`NonTalkTimeFilter`](crate::types::NonTalkTimeFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_non_talk_time_filter(&self) -> ::std::result::Result<&crate::types::NonTalkTimeFilter, &Self> {
-        if let Rule::NonTalkTimeFilter(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Rule::NonTalkTimeFilter(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NonTalkTimeFilter`](crate::types::Rule::NonTalkTimeFilter).
     pub fn is_non_talk_time_filter(&self) -> bool {
@@ -55,11 +47,7 @@ impl Rule {
     /// Tries to convert the enum instance into [`SentimentFilter`](crate::types::Rule::SentimentFilter), extracting the inner [`SentimentFilter`](crate::types::SentimentFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sentiment_filter(&self) -> ::std::result::Result<&crate::types::SentimentFilter, &Self> {
-        if let Rule::SentimentFilter(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Rule::SentimentFilter(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SentimentFilter`](crate::types::Rule::SentimentFilter).
     pub fn is_sentiment_filter(&self) -> bool {
@@ -68,11 +56,7 @@ impl Rule {
     /// Tries to convert the enum instance into [`TranscriptFilter`](crate::types::Rule::TranscriptFilter), extracting the inner [`TranscriptFilter`](crate::types::TranscriptFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_filter(&self) -> ::std::result::Result<&crate::types::TranscriptFilter, &Self> {
-        if let Rule::TranscriptFilter(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Rule::TranscriptFilter(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TranscriptFilter`](crate::types::Rule::TranscriptFilter).
     pub fn is_transcript_filter(&self) -> bool {
@@ -83,3 +67,4 @@ impl Rule {
         matches!(self, Self::Unknown)
     }
 }
+

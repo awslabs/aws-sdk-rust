@@ -3,7 +3,7 @@
 /// The document level statistics of an ingestion job
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionJobStatistics {
+pub struct IngestionJobStatistics  {
     /// Number of scanned documents
     pub number_of_documents_scanned: i64,
     /// Number of indexed documents
@@ -15,7 +15,7 @@ pub struct IngestionJobStatistics {
     /// Number of failed documents
     pub number_of_documents_failed: i64,
 }
-impl IngestionJobStatistics {
+impl  IngestionJobStatistics  {
     /// Number of scanned documents
     pub fn number_of_documents_scanned(&self) -> i64 {
         self.number_of_documents_scanned
@@ -62,8 +62,7 @@ impl IngestionJobStatisticsBuilder {
     }
     /// Number of scanned documents
     pub fn set_number_of_documents_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_documents_scanned = input;
-        self
+        self.number_of_documents_scanned = input; self
     }
     /// Number of scanned documents
     pub fn get_number_of_documents_scanned(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl IngestionJobStatisticsBuilder {
     }
     /// Number of indexed documents
     pub fn set_number_of_new_documents_indexed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_new_documents_indexed = input;
-        self
+        self.number_of_new_documents_indexed = input; self
     }
     /// Number of indexed documents
     pub fn get_number_of_new_documents_indexed(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl IngestionJobStatisticsBuilder {
     }
     /// Number of modified documents indexed
     pub fn set_number_of_modified_documents_indexed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_modified_documents_indexed = input;
-        self
+        self.number_of_modified_documents_indexed = input; self
     }
     /// Number of modified documents indexed
     pub fn get_number_of_modified_documents_indexed(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl IngestionJobStatisticsBuilder {
     }
     /// Number of deleted documents
     pub fn set_number_of_documents_deleted(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_documents_deleted = input;
-        self
+        self.number_of_documents_deleted = input; self
     }
     /// Number of deleted documents
     pub fn get_number_of_documents_deleted(&self) -> &::std::option::Option<i64> {
@@ -118,8 +114,7 @@ impl IngestionJobStatisticsBuilder {
     }
     /// Number of failed documents
     pub fn set_number_of_documents_failed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_documents_failed = input;
-        self
+        self.number_of_documents_failed = input; self
     }
     /// Number of failed documents
     pub fn get_number_of_documents_failed(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,22 @@ impl IngestionJobStatisticsBuilder {
     /// Consumes the builder and constructs a [`IngestionJobStatistics`](crate::types::IngestionJobStatistics).
     pub fn build(self) -> crate::types::IngestionJobStatistics {
         crate::types::IngestionJobStatistics {
-            number_of_documents_scanned: self.number_of_documents_scanned.unwrap_or_default(),
-            number_of_new_documents_indexed: self.number_of_new_documents_indexed.unwrap_or_default(),
-            number_of_modified_documents_indexed: self.number_of_modified_documents_indexed.unwrap_or_default(),
-            number_of_documents_deleted: self.number_of_documents_deleted.unwrap_or_default(),
-            number_of_documents_failed: self.number_of_documents_failed.unwrap_or_default(),
+            number_of_documents_scanned: self.number_of_documents_scanned
+                .unwrap_or_default()
+            ,
+            number_of_new_documents_indexed: self.number_of_new_documents_indexed
+                .unwrap_or_default()
+            ,
+            number_of_modified_documents_indexed: self.number_of_modified_documents_indexed
+                .unwrap_or_default()
+            ,
+            number_of_documents_deleted: self.number_of_documents_deleted
+                .unwrap_or_default()
+            ,
+            number_of_documents_failed: self.number_of_documents_failed
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

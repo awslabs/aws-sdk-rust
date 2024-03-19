@@ -3,7 +3,7 @@
 /// <p>Request of DescribeSubscribersForNotification</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSubscribersForNotificationInput {
+pub struct DescribeSubscribersForNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
@@ -15,17 +15,17 @@ pub struct DescribeSubscribersForNotificationInput {
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSubscribersForNotificationInput {
+impl  DescribeSubscribersForNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscribers you want to list.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>An optional integer that represents how many entries a paginated response contains.</p>
@@ -33,7 +33,7 @@ impl DescribeSubscribersForNotificationInput {
         self.max_results
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The notification whose subscribers you want to list.</p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input;
-        self
+        self.notification = input; self
     }
     /// <p>The notification whose subscribers you want to list.</p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
@@ -107,8 +104,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -121,28 +117,28 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                notification: self.notification
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

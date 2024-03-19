@@ -3,7 +3,7 @@
 /// <p>The request failed due to an error while processing the model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelErrorException {
+pub struct ModelErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The original status code.</p>
@@ -12,27 +12,25 @@ pub struct ModelErrorException {
     pub resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ModelErrorException {
+impl  ModelErrorException  {
     /// <p>The original status code.</p>
     pub fn original_status_code(&self) -> ::std::option::Option<i32> {
         self.original_status_code
     }
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
 impl ModelErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ModelErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ModelErrorException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -47,9 +45,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ModelErrorExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModelErrorException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ModelErrorException {
     /// Creates a new builder-style object to manufacture [`ModelErrorException`](crate::types::error::ModelErrorException).
@@ -75,8 +71,7 @@ impl ModelErrorExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ModelErrorExceptionBuilder {
     }
     /// <p>The original status code.</p>
     pub fn set_original_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.original_status_code = input;
-        self
+        self.original_status_code = input; self
     }
     /// <p>The original status code.</p>
     pub fn get_original_status_code(&self) -> &::std::option::Option<i32> {
@@ -103,31 +97,34 @@ impl ModelErrorExceptionBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ModelErrorException`](crate::types::error::ModelErrorException).
     pub fn build(self) -> crate::types::error::ModelErrorException {
         crate::types::error::ModelErrorException {
-            message: self.message,
-            original_status_code: self.original_status_code,
-            resource_name: self.resource_name,
+            message: self.message
+            ,
+            original_status_code: self.original_status_code
+            ,
+            resource_name: self.resource_name
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceInstanceInput {
+pub struct GetServiceInstanceInput  {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you want the service instance input for.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl GetServiceInstanceInput {
+impl  GetServiceInstanceInput  {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the service that you want the service instance input for.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetServiceInstanceInputBuilder {
     }
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetServiceInstanceInputBuilder {
     }
     /// <p>The name of the service that you want the service instance input for.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that you want the service instance input for.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_service_instance::GetServiceInstanceInput {
-            name: self.name,
-            service_name: self.service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_instance::GetServiceInstanceInput {
+                name: self.name
+                ,
+                service_name: self.service_name
+                ,
+            }
+        )
     }
 }
+

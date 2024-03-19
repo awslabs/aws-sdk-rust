@@ -174,3 +174,4 @@ pub use crate::types::_workflow_execution_configuration::WorkflowExecutionConfig
 pub use crate::types::_domain_configuration::DomainConfigurationBuilder;
 
 pub use crate::types::_activity_type_configuration::ActivityTypeConfigurationBuilder;
+

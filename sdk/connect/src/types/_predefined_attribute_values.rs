@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PredefinedAttributeValues {
     /// <p>Predefined attribute values of type string list.</p>
-    StringList(::std::vec::Vec<::std::string::String>),
+    StringList(::std::vec::Vec::<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -20,12 +20,8 @@ impl PredefinedAttributeValues {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`StringList`](crate::types::PredefinedAttributeValues::StringList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let PredefinedAttributeValues::StringList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_string_list(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let PredefinedAttributeValues::StringList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringList`](crate::types::PredefinedAttributeValues::StringList).
     pub fn is_string_list(&self) -> bool {
@@ -36,3 +32,4 @@ impl PredefinedAttributeValues {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents an event that a partner tried to generate, but failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPartnerEventsResultEntry {
+pub struct PutPartnerEventsResultEntry  {
     /// <p>The ID of the event.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code that indicates why the event submission failed.</p>
@@ -11,17 +11,17 @@ pub struct PutPartnerEventsResultEntry {
     /// <p>The error message that explains why the event submission failed.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl PutPartnerEventsResultEntry {
+impl  PutPartnerEventsResultEntry  {
     /// <p>The ID of the event.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The error code that indicates why the event submission failed.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message that explains why the event submission failed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PutPartnerEventsResultEntryBuilder {
     }
     /// <p>The ID of the event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PutPartnerEventsResultEntryBuilder {
     }
     /// <p>The error code that indicates why the event submission failed.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code that indicates why the event submission failed.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PutPartnerEventsResultEntryBuilder {
     }
     /// <p>The error message that explains why the event submission failed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message that explains why the event submission failed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl PutPartnerEventsResultEntryBuilder {
     /// Consumes the builder and constructs a [`PutPartnerEventsResultEntry`](crate::types::PutPartnerEventsResultEntry).
     pub fn build(self) -> crate::types::PutPartnerEventsResultEntry {
         crate::types::PutPartnerEventsResultEntry {
-            event_id: self.event_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            event_id: self.event_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContactChannels`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`contact_id(impl Into<String>)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::set_contact_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the contact.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to continue to the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of contact channels per page.</p><br>
-    /// - On success, responds with [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput) with field(s):
+                            /// - On success, responds with [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_channels::ListContactChannelsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`contact_channels(Vec::<ContactChannel>)`](crate::operation::list_contact_channels::ListContactChannelsOutput::contact_channels): <p>A list of contact channels related to the specified contact.</p>
-    /// - On failure, responds with [`SdkError<ListContactChannelsError>`](crate::operation::list_contact_channels::ListContactChannelsError)
+                            /// - On failure, responds with [`SdkError<ListContactChannelsError>`](crate::operation::list_contact_channels::ListContactChannelsError)
     pub fn list_contact_channels(&self) -> crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder {
-        crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contact_channels::builders::ListContactChannelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

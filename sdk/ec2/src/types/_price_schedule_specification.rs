@@ -3,7 +3,7 @@
 /// <p>Describes the price for a Reserved Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PriceScheduleSpecification {
+pub struct PriceScheduleSpecification  {
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The fixed price for the term.</p>
@@ -11,9 +11,9 @@ pub struct PriceScheduleSpecification {
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub term: ::std::option::Option<i64>,
 }
-impl PriceScheduleSpecification {
+impl  PriceScheduleSpecification  {
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
+    pub fn currency_code(&self) -> ::std::option::Option<& crate::types::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
     /// <p>The fixed price for the term.</p>
@@ -48,8 +48,7 @@ impl PriceScheduleSpecificationBuilder {
     }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
@@ -62,8 +61,7 @@ impl PriceScheduleSpecificationBuilder {
     }
     /// <p>The fixed price for the term.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The fixed price for the term.</p>
     pub fn get_price(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl PriceScheduleSpecificationBuilder {
     }
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub fn set_term(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.term = input;
-        self
+        self.term = input; self
     }
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub fn get_term(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl PriceScheduleSpecificationBuilder {
     /// Consumes the builder and constructs a [`PriceScheduleSpecification`](crate::types::PriceScheduleSpecification).
     pub fn build(self) -> crate::types::PriceScheduleSpecification {
         crate::types::PriceScheduleSpecification {
-            currency_code: self.currency_code,
-            price: self.price,
-            term: self.term,
+            currency_code: self.currency_code
+            ,
+            price: self.price
+            ,
+            term: self.term
+            ,
         }
     }
 }
+

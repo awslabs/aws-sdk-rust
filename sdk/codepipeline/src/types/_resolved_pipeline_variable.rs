@@ -3,19 +3,19 @@
 /// <p>A pipeline-level variable used for a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolvedPipelineVariable {
+pub struct ResolvedPipelineVariable  {
     /// <p>The name of a pipeline-level variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The resolved value of a pipeline-level variable.</p>
     pub resolved_value: ::std::option::Option<::std::string::String>,
 }
-impl ResolvedPipelineVariable {
+impl  ResolvedPipelineVariable  {
     /// <p>The name of a pipeline-level variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The resolved value of a pipeline-level variable.</p>
-    pub fn resolved_value(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_value(&self) -> ::std::option::Option<& str> {
         self.resolved_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResolvedPipelineVariableBuilder {
     }
     /// <p>The name of a pipeline-level variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a pipeline-level variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ResolvedPipelineVariableBuilder {
     }
     /// <p>The resolved value of a pipeline-level variable.</p>
     pub fn set_resolved_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_value = input;
-        self
+        self.resolved_value = input; self
     }
     /// <p>The resolved value of a pipeline-level variable.</p>
     pub fn get_resolved_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ResolvedPipelineVariableBuilder {
     /// Consumes the builder and constructs a [`ResolvedPipelineVariable`](crate::types::ResolvedPipelineVariable).
     pub fn build(self) -> crate::types::ResolvedPipelineVariable {
         crate::types::ResolvedPipelineVariable {
-            name: self.name,
-            resolved_value: self.resolved_value,
+            name: self.name
+            ,
+            resolved_value: self.resolved_value
+            ,
         }
     }
 }
+

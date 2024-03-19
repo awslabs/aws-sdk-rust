@@ -3,19 +3,19 @@
 /// <p>Objects that allows sorting on container products based on certain fields and sorting order.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerProductSort {
+pub struct ContainerProductSort  {
     /// <p>Field to sort the container products by.</p>
     pub sort_by: ::std::option::Option<crate::types::ContainerProductSortBy>,
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ContainerProductSort {
+impl  ContainerProductSort  {
     /// <p>Field to sort the container products by.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ContainerProductSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ContainerProductSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ContainerProductSortBuilder {
     }
     /// <p>Field to sort the container products by.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ContainerProductSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Field to sort the container products by.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ContainerProductSortBy> {
@@ -55,8 +54,7 @@ impl ContainerProductSortBuilder {
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl ContainerProductSortBuilder {
     /// Consumes the builder and constructs a [`ContainerProductSort`](crate::types::ContainerProductSort).
     pub fn build(self) -> crate::types::ContainerProductSort {
         crate::types::ContainerProductSort {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
+            sort_by: self.sort_by
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

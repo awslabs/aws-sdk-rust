@@ -3,20 +3,19 @@
 /// <p>Contains information about an unused access finding for an IAM user access key. IAM Access Analyzer charges for unused access analysis based on the number of IAM roles and users analyzed per month. For more details on pricing, see <a href="https://aws.amazon.com/iam/access-analyzer/pricing">IAM Access Analyzer pricing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnusedIamUserAccessKeyDetails {
+pub struct UnusedIamUserAccessKeyDetails  {
     /// <p>The ID of the access key for which the unused access finding was generated.</p>
     pub access_key_id: ::std::string::String,
     /// <p>The time at which the access key was last accessed.</p>
     pub last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UnusedIamUserAccessKeyDetails {
+impl  UnusedIamUserAccessKeyDetails  {
     /// <p>The ID of the access key for which the unused access finding was generated.</p>
-    pub fn access_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.access_key_id.deref()
+    pub fn access_key_id(&self) -> & str {
+        use std::ops::Deref; self.access_key_id.deref()
     }
     /// <p>The time at which the access key was last accessed.</p>
-    pub fn last_accessed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl UnusedIamUserAccessKeyDetailsBuilder {
     }
     /// <p>The ID of the access key for which the unused access finding was generated.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The ID of the access key for which the unused access finding was generated.</p>
     pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl UnusedIamUserAccessKeyDetailsBuilder {
     }
     /// <p>The time at which the access key was last accessed.</p>
     pub fn set_last_accessed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed = input;
-        self
+        self.last_accessed = input; self
     }
     /// <p>The time at which the access key was last accessed.</p>
     pub fn get_last_accessed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -68,14 +65,17 @@ impl UnusedIamUserAccessKeyDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access_key_id`](crate::types::builders::UnusedIamUserAccessKeyDetailsBuilder::access_key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UnusedIamUserAccessKeyDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UnusedIamUserAccessKeyDetails {
-            access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_key_id",
-                    "access_key_id was not specified but it is required when building UnusedIamUserAccessKeyDetails",
-                )
-            })?,
-            last_accessed: self.last_accessed,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UnusedIamUserAccessKeyDetails {
+                access_key_id: self.access_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_key_id", "access_key_id was not specified but it is required when building UnusedIamUserAccessKeyDetails")
+                    )?
+                ,
+                last_accessed: self.last_accessed
+                ,
+            }
+        )
     }
 }
+

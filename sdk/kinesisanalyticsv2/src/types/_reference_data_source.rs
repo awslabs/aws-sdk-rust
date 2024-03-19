@@ -3,7 +3,7 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceDataSource {
+pub struct ReferenceDataSource  {
     /// <p>The name of the in-application table to create.</p>
     pub table_name: ::std::string::String,
     /// <p>Identifies the S3 bucket and object that contains the reference data. A SQL-based Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
@@ -11,18 +11,17 @@ pub struct ReferenceDataSource {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
-impl ReferenceDataSource {
+impl  ReferenceDataSource  {
     /// <p>The name of the in-application table to create.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. A SQL-based Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
-    pub fn s3_reference_data_source(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSource> {
+    pub fn s3_reference_data_source(&self) -> ::std::option::Option<& crate::types::S3ReferenceDataSource> {
         self.s3_reference_data_source.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    pub fn reference_schema(&self) -> ::std::option::Option<&crate::types::SourceSchema> {
+    pub fn reference_schema(&self) -> ::std::option::Option<& crate::types::SourceSchema> {
         self.reference_schema.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl ReferenceDataSourceBuilder {
     }
     /// <p>The name of the in-application table to create.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the in-application table to create.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl ReferenceDataSourceBuilder {
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. A SQL-based Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub fn set_s3_reference_data_source(mut self, input: ::std::option::Option<crate::types::S3ReferenceDataSource>) -> Self {
-        self.s3_reference_data_source = input;
-        self
+        self.s3_reference_data_source = input; self
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. A SQL-based Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application.</p>
     pub fn get_s3_reference_data_source(&self) -> &::std::option::Option<crate::types::S3ReferenceDataSource> {
@@ -79,8 +76,7 @@ impl ReferenceDataSourceBuilder {
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn set_reference_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
-        self.reference_schema = input;
-        self
+        self.reference_schema = input; self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn get_reference_schema(&self) -> &::std::option::Option<crate::types::SourceSchema> {
@@ -90,15 +86,19 @@ impl ReferenceDataSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`table_name`](crate::types::builders::ReferenceDataSourceBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReferenceDataSource {
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building ReferenceDataSource",
-                )
-            })?,
-            s3_reference_data_source: self.s3_reference_data_source,
-            reference_schema: self.reference_schema,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReferenceDataSource {
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building ReferenceDataSource")
+                    )?
+                ,
+                s3_reference_data_source: self.s3_reference_data_source
+                ,
+                reference_schema: self.reference_schema
+                ,
+            }
+        )
     }
 }
+

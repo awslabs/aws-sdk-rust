@@ -3,19 +3,19 @@
 /// <p>Information about items that were not successfully processed in a batch call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsuccessfulItem {
+pub struct UnsuccessfulItem  {
     /// <p>Information about the error.</p>
     pub error: ::std::option::Option<crate::types::UnsuccessfulItemError>,
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl UnsuccessfulItem {
+impl  UnsuccessfulItem  {
     /// <p>Information about the error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::UnsuccessfulItemError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::UnsuccessfulItemError> {
         self.error.as_ref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UnsuccessfulItemBuilder {
     }
     /// <p>Information about the error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::UnsuccessfulItemError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Information about the error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::UnsuccessfulItemError> {
@@ -55,8 +54,7 @@ impl UnsuccessfulItemBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl UnsuccessfulItemBuilder {
     /// Consumes the builder and constructs a [`UnsuccessfulItem`](crate::types::UnsuccessfulItem).
     pub fn build(self) -> crate::types::UnsuccessfulItem {
         crate::types::UnsuccessfulItem {
-            error: self.error,
-            resource_id: self.resource_id,
+            error: self.error
+            ,
+            resource_id: self.resource_id
+            ,
         }
     }
 }
+

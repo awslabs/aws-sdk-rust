@@ -3,20 +3,19 @@
 /// <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2AmiResource {
+pub struct Ec2AmiResource  {
     /// <p>The ID of the AMI in Amazon EC2.</p>
     pub ami_id: ::std::string::String,
     /// <p>The ID of the AMI on the Snow device.</p>
     pub snowball_ami_id: ::std::option::Option<::std::string::String>,
 }
-impl Ec2AmiResource {
+impl  Ec2AmiResource  {
     /// <p>The ID of the AMI in Amazon EC2.</p>
-    pub fn ami_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ami_id.deref()
+    pub fn ami_id(&self) -> & str {
+        use std::ops::Deref; self.ami_id.deref()
     }
     /// <p>The ID of the AMI on the Snow device.</p>
-    pub fn snowball_ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn snowball_ami_id(&self) -> ::std::option::Option<& str> {
         self.snowball_ami_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl Ec2AmiResourceBuilder {
     }
     /// <p>The ID of the AMI in Amazon EC2.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
+        self.ami_id = input; self
     }
     /// <p>The ID of the AMI in Amazon EC2.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl Ec2AmiResourceBuilder {
     }
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn set_snowball_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snowball_ami_id = input;
-        self
+        self.snowball_ami_id = input; self
     }
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn get_snowball_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl Ec2AmiResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ami_id`](crate::types::builders::Ec2AmiResourceBuilder::ami_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Ec2AmiResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ec2AmiResource {
-            ami_id: self.ami_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ami_id",
-                    "ami_id was not specified but it is required when building Ec2AmiResource",
-                )
-            })?,
-            snowball_ami_id: self.snowball_ami_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ec2AmiResource {
+                ami_id: self.ami_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ami_id", "ami_id was not specified but it is required when building Ec2AmiResource")
+                    )?
+                ,
+                snowball_ami_id: self.snowball_ami_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Status of devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceStats {
+pub struct DeviceStats  {
     /// <p>The number of devices connected with a heartbeat.</p>
     pub connected_device_count: ::std::option::Option<i64>,
     /// <p>The number of registered devices.</p>
     pub registered_device_count: ::std::option::Option<i64>,
 }
-impl DeviceStats {
+impl  DeviceStats  {
     /// <p>The number of devices connected with a heartbeat.</p>
     pub fn connected_device_count(&self) -> ::std::option::Option<i64> {
         self.connected_device_count
@@ -42,8 +42,7 @@ impl DeviceStatsBuilder {
     }
     /// <p>The number of devices connected with a heartbeat.</p>
     pub fn set_connected_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.connected_device_count = input;
-        self
+        self.connected_device_count = input; self
     }
     /// <p>The number of devices connected with a heartbeat.</p>
     pub fn get_connected_device_count(&self) -> &::std::option::Option<i64> {
@@ -57,8 +56,7 @@ impl DeviceStatsBuilder {
     }
     /// <p>The number of registered devices.</p>
     pub fn set_registered_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.registered_device_count = input;
-        self
+        self.registered_device_count = input; self
     }
     /// <p>The number of registered devices.</p>
     pub fn get_registered_device_count(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,11 @@ impl DeviceStatsBuilder {
     /// Consumes the builder and constructs a [`DeviceStats`](crate::types::DeviceStats).
     pub fn build(self) -> crate::types::DeviceStats {
         crate::types::DeviceStats {
-            connected_device_count: self.connected_device_count,
-            registered_device_count: self.registered_device_count,
+            connected_device_count: self.connected_device_count
+            ,
+            registered_device_count: self.registered_device_count
+            ,
         }
     }
 }
+

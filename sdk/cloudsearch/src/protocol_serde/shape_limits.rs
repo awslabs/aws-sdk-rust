@@ -38,7 +38,6 @@ pub fn de_limits(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
             _ => {}
         }
     }
-    Ok(crate::serde_util::limits_correct_errors(builder)
-        .build()
-        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+    Ok(crate::serde_util::limits_correct_errors(builder).build().map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }
+

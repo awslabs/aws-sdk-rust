@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReplicationConfigurationInput {
+pub struct CreateReplicationConfigurationInput  {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
     pub source_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationToCreate>>,
 }
-impl CreateReplicationConfigurationInput {
+impl  CreateReplicationConfigurationInput  {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
-    pub fn source_file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_file_system_id(&self) -> ::std::option::Option<& str> {
         self.source_file_system_id.as_deref()
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::DestinationToCreate] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::DestinationToCreate] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateReplicationConfigurationInput {
@@ -32,7 +33,7 @@ impl CreateReplicationConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationConfigurationInputBuilder {
     pub(crate) source_file_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationToCreate>>,
 }
 impl CreateReplicationConfigurationInputBuilder {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
@@ -43,8 +44,7 @@ impl CreateReplicationConfigurationInputBuilder {
     }
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
     pub fn set_source_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file_system_id = input;
-        self
+        self.source_file_system_id = input; self
     }
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
     pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl CreateReplicationConfigurationInputBuilder {
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
     pub fn destinations(mut self, input: crate::types::DestinationToCreate) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationToCreate>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DestinationToCreate>> {
         &self.destinations
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationInput`](crate::operation::create_replication_configuration::CreateReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_replication_configuration::CreateReplicationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_replication_configuration::CreateReplicationConfigurationInput {
-            source_file_system_id: self.source_file_system_id,
-            destinations: self.destinations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_replication_configuration::CreateReplicationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_replication_configuration::CreateReplicationConfigurationInput {
+                source_file_system_id: self.source_file_system_id
+                ,
+                destinations: self.destinations
+                ,
+            }
+        )
     }
 }
+

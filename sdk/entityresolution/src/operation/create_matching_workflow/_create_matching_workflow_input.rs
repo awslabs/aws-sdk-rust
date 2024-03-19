@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMatchingWorkflowInput {
+pub struct CreateMatchingWorkflowInput  {
     /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
+    pub input_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::InputSource>>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
+    pub output_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
@@ -18,43 +18,45 @@ pub struct CreateMatchingWorkflowInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateMatchingWorkflowInput {
+impl  CreateMatchingWorkflowInput  {
     /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>A description of the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_source_config.is_none()`.
-    pub fn input_source_config(&self) -> &[crate::types::InputSource] {
-        self.input_source_config.as_deref().unwrap_or_default()
+    pub fn input_source_config(&self) -> & [crate::types::InputSource] {
+        self.input_source_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
-    pub fn output_source_config(&self) -> &[crate::types::OutputSource] {
-        self.output_source_config.as_deref().unwrap_or_default()
+    pub fn output_source_config(&self) -> & [crate::types::OutputSource] {
+        self.output_source_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
-    pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
+    pub fn resolution_techniques(&self) -> ::std::option::Option<& crate::types::ResolutionTechniques> {
         self.resolution_techniques.as_ref()
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IncrementalRunConfig> {
+    pub fn incremental_run_config(&self) -> ::std::option::Option<& crate::types::IncrementalRunConfig> {
         self.incremental_run_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,12 +73,12 @@ impl CreateMatchingWorkflowInput {
 pub struct CreateMatchingWorkflowInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
-    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
+    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::InputSource>>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>>,
     pub(crate) resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     pub(crate) incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateMatchingWorkflowInputBuilder {
     /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
@@ -87,8 +89,7 @@ impl CreateMatchingWorkflowInputBuilder {
     }
     /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +102,7 @@ impl CreateMatchingWorkflowInputBuilder {
     }
     /// <p>A description of the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,17 +115,16 @@ impl CreateMatchingWorkflowInputBuilder {
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub fn input_source_config(mut self, input: crate::types::InputSource) -> Self {
         let mut v = self.input_source_config.unwrap_or_default();
-        v.push(input);
-        self.input_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>) -> Self {
-        self.input_source_config = input;
-        self
+    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputSource>>) -> Self {
+        self.input_source_config = input; self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
+    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputSource>> {
         &self.input_source_config
     }
     /// Appends an item to `output_source_config`.
@@ -135,17 +134,16 @@ impl CreateMatchingWorkflowInputBuilder {
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::OutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
-        v.push(input);
-        self.output_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>) -> Self {
-        self.output_source_config = input;
-        self
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>>) -> Self {
+        self.output_source_config = input; self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>> {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
@@ -156,8 +154,7 @@ impl CreateMatchingWorkflowInputBuilder {
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn set_resolution_techniques(mut self, input: ::std::option::Option<crate::types::ResolutionTechniques>) -> Self {
-        self.resolution_techniques = input;
-        self
+        self.resolution_techniques = input; self
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
@@ -170,8 +167,7 @@ impl CreateMatchingWorkflowInputBuilder {
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IncrementalRunConfig>) -> Self {
-        self.incremental_run_config = input;
-        self
+        self.incremental_run_config = input; self
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
@@ -185,8 +181,7 @@ impl CreateMatchingWorkflowInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,35 +194,40 @@ impl CreateMatchingWorkflowInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMatchingWorkflowInput`](crate::operation::create_matching_workflow::CreateMatchingWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_matching_workflow::CreateMatchingWorkflowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_matching_workflow::CreateMatchingWorkflowInput {
-            workflow_name: self.workflow_name,
-            description: self.description,
-            input_source_config: self.input_source_config,
-            output_source_config: self.output_source_config,
-            resolution_techniques: self.resolution_techniques,
-            incremental_run_config: self.incremental_run_config,
-            role_arn: self.role_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_matching_workflow::CreateMatchingWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_matching_workflow::CreateMatchingWorkflowInput {
+                workflow_name: self.workflow_name
+                ,
+                description: self.description
+                ,
+                input_source_config: self.input_source_config
+                ,
+                output_source_config: self.output_source_config
+                ,
+                resolution_techniques: self.resolution_techniques
+                ,
+                incremental_run_config: self.incremental_run_config
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

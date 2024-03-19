@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVirtualServiceOutput {
+pub struct DeleteVirtualServiceOutput  {
     /// <p>The virtual service that was deleted.</p>
     pub virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,
 }
-impl DeleteVirtualServiceOutput {
+impl  DeleteVirtualServiceOutput  {
     /// <p>The virtual service that was deleted.</p>
-    pub fn virtual_service(&self) -> ::std::option::Option<&crate::types::VirtualServiceData> {
+    pub fn virtual_service(&self) -> ::std::option::Option<& crate::types::VirtualServiceData> {
         self.virtual_service.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteVirtualServiceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceOutput`](crate::operation::delete_virtual_service::DeleteVirtualServiceOutput).
     pub fn builder() -> crate::operation::delete_virtual_service::builders::DeleteVirtualServiceOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteVirtualServiceOutputBuilder {
     }
     /// <p>The virtual service that was deleted.</p>
     pub fn set_virtual_service(mut self, input: ::std::option::Option<crate::types::VirtualServiceData>) -> Self {
-        self.virtual_service = input;
-        self
+        self.virtual_service = input; self
     }
     /// <p>The virtual service that was deleted.</p>
     pub fn get_virtual_service(&self) -> &::std::option::Option<crate::types::VirtualServiceData> {
         &self.virtual_service
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVirtualServiceOutput`](crate::operation::delete_virtual_service::DeleteVirtualServiceOutput).
     pub fn build(self) -> crate::operation::delete_virtual_service::DeleteVirtualServiceOutput {
         crate::operation::delete_virtual_service::DeleteVirtualServiceOutput {
-            virtual_service: self.virtual_service,
+            virtual_service: self.virtual_service
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

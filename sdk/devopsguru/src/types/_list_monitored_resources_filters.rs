@@ -3,21 +3,20 @@
 /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitoredResourcesFilters {
+pub struct ListMonitoredResourcesFilters  {
     /// <p>The permission status of a resource.</p>
     pub resource_permission: crate::types::ResourcePermission,
     /// <p>The type of resource that you wish to retrieve, such as log groups.</p>
-    pub resource_type_filters: ::std::vec::Vec<crate::types::ResourceTypeFilter>,
+    pub resource_type_filters: ::std::vec::Vec::<crate::types::ResourceTypeFilter>,
 }
-impl ListMonitoredResourcesFilters {
+impl  ListMonitoredResourcesFilters  {
     /// <p>The permission status of a resource.</p>
-    pub fn resource_permission(&self) -> &crate::types::ResourcePermission {
+    pub fn resource_permission(&self) -> & crate::types::ResourcePermission {
         &self.resource_permission
     }
     /// <p>The type of resource that you wish to retrieve, such as log groups.</p>
-    pub fn resource_type_filters(&self) -> &[crate::types::ResourceTypeFilter] {
-        use std::ops::Deref;
-        self.resource_type_filters.deref()
+    pub fn resource_type_filters(&self) -> & [crate::types::ResourceTypeFilter] {
+        use std::ops::Deref; self.resource_type_filters.deref()
     }
 }
 impl ListMonitoredResourcesFilters {
@@ -32,7 +31,7 @@ impl ListMonitoredResourcesFilters {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesFiltersBuilder {
     pub(crate) resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
-    pub(crate) resource_type_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
+    pub(crate) resource_type_filters: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeFilter>>,
 }
 impl ListMonitoredResourcesFiltersBuilder {
     /// <p>The permission status of a resource.</p>
@@ -43,8 +42,7 @@ impl ListMonitoredResourcesFiltersBuilder {
     }
     /// <p>The permission status of a resource.</p>
     pub fn set_resource_permission(mut self, input: ::std::option::Option<crate::types::ResourcePermission>) -> Self {
-        self.resource_permission = input;
-        self
+        self.resource_permission = input; self
     }
     /// <p>The permission status of a resource.</p>
     pub fn get_resource_permission(&self) -> &::std::option::Option<crate::types::ResourcePermission> {
@@ -57,17 +55,16 @@ impl ListMonitoredResourcesFiltersBuilder {
     /// <p>The type of resource that you wish to retrieve, such as log groups.</p>
     pub fn resource_type_filters(mut self, input: crate::types::ResourceTypeFilter) -> Self {
         let mut v = self.resource_type_filters.unwrap_or_default();
-        v.push(input);
-        self.resource_type_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_type_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of resource that you wish to retrieve, such as log groups.</p>
-    pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>) -> Self {
-        self.resource_type_filters = input;
-        self
+    pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeFilter>>) -> Self {
+        self.resource_type_filters = input; self
     }
     /// <p>The type of resource that you wish to retrieve, such as log groups.</p>
-    pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>> {
+    pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeFilter>> {
         &self.resource_type_filters
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesFilters`](crate::types::ListMonitoredResourcesFilters).
@@ -75,19 +72,20 @@ impl ListMonitoredResourcesFiltersBuilder {
     /// - [`resource_permission`](crate::types::builders::ListMonitoredResourcesFiltersBuilder::resource_permission)
     /// - [`resource_type_filters`](crate::types::builders::ListMonitoredResourcesFiltersBuilder::resource_type_filters)
     pub fn build(self) -> ::std::result::Result<crate::types::ListMonitoredResourcesFilters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListMonitoredResourcesFilters {
-            resource_permission: self.resource_permission.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_permission",
-                    "resource_permission was not specified but it is required when building ListMonitoredResourcesFilters",
-                )
-            })?,
-            resource_type_filters: self.resource_type_filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type_filters",
-                    "resource_type_filters was not specified but it is required when building ListMonitoredResourcesFilters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListMonitoredResourcesFilters {
+                resource_permission: self.resource_permission
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_permission", "resource_permission was not specified but it is required when building ListMonitoredResourcesFilters")
+                    )?
+                ,
+                resource_type_filters: self.resource_type_filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type_filters", "resource_type_filters was not specified but it is required when building ListMonitoredResourcesFilters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Information about an OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainInfo {
+pub struct DomainInfo  {
     /// <p>Name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
 }
-impl DomainInfo {
+impl  DomainInfo  {
     /// <p>Name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DomainInfoBuilder {
     }
     /// <p>Name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DomainInfoBuilder {
     }
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -65,8 +63,11 @@ impl DomainInfoBuilder {
     /// Consumes the builder and constructs a [`DomainInfo`](crate::types::DomainInfo).
     pub fn build(self) -> crate::types::DomainInfo {
         crate::types::DomainInfo {
-            domain_name: self.domain_name,
-            engine_type: self.engine_type,
+            domain_name: self.domain_name
+            ,
+            engine_type: self.engine_type
+            ,
         }
     }
 }
+

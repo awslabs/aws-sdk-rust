@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRecommendationTemplateInput {
+pub struct DeleteRecommendationTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRecommendationTemplateInput {
+impl  DeleteRecommendationTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_template_arn(&self) -> ::std::option::Option<& str> {
         self.recommendation_template_arn.as_deref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteRecommendationTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     pub fn set_recommendation_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_template_arn = input;
-        self
+        self.recommendation_template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     pub fn get_recommendation_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DeleteRecommendationTemplateInputBuilder {
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteRecommendationTemplateInput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput {
-            recommendation_template_arn: self.recommendation_template_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput {
+                recommendation_template_arn: self.recommendation_template_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

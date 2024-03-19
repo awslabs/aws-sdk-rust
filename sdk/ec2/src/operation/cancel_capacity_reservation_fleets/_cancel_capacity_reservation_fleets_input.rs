@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelCapacityReservationFleetsInput {
+pub struct CancelCapacityReservationFleetsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub capacity_reservation_fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capacity_reservation_fleet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CancelCapacityReservationFleetsInput {
+impl  CancelCapacityReservationFleetsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservation_fleet_ids.is_none()`.
-    pub fn capacity_reservation_fleet_ids(&self) -> &[::std::string::String] {
-        self.capacity_reservation_fleet_ids.as_deref().unwrap_or_default()
+    pub fn capacity_reservation_fleet_ids(&self) -> & [::std::string::String] {
+        self.capacity_reservation_fleet_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CancelCapacityReservationFleetsInput {
@@ -32,7 +33,7 @@ impl CancelCapacityReservationFleetsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFleetsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) capacity_reservation_fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capacity_reservation_fleet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CancelCapacityReservationFleetsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -42,8 +43,7 @@ impl CancelCapacityReservationFleetsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -56,31 +56,28 @@ impl CancelCapacityReservationFleetsInputBuilder {
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
     pub fn capacity_reservation_fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capacity_reservation_fleet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.capacity_reservation_fleet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capacity_reservation_fleet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn set_capacity_reservation_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capacity_reservation_fleet_ids = input;
-        self
+    pub fn set_capacity_reservation_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capacity_reservation_fleet_ids = input; self
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn get_capacity_reservation_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_reservation_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capacity_reservation_fleet_ids
     }
     /// Consumes the builder and constructs a [`CancelCapacityReservationFleetsInput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput {
-                dry_run: self.dry_run,
-                capacity_reservation_fleet_ids: self.capacity_reservation_fleet_ids,
-            },
+                dry_run: self.dry_run
+                ,
+                capacity_reservation_fleet_ids: self.capacity_reservation_fleet_ids
+                ,
+            }
         )
     }
 }
+

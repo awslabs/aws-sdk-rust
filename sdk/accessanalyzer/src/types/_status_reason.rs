@@ -3,13 +3,13 @@
 /// <p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusReason {
+pub struct StatusReason  {
     /// <p>The reason code for the current status of the analyzer.</p>
     pub code: crate::types::ReasonCode,
 }
-impl StatusReason {
+impl  StatusReason  {
     /// <p>The reason code for the current status of the analyzer.</p>
-    pub fn code(&self) -> &crate::types::ReasonCode {
+    pub fn code(&self) -> & crate::types::ReasonCode {
         &self.code
     }
 }
@@ -35,8 +35,7 @@ impl StatusReasonBuilder {
     }
     /// <p>The reason code for the current status of the analyzer.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ReasonCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The reason code for the current status of the analyzer.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ReasonCode> {
@@ -46,13 +45,15 @@ impl StatusReasonBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::StatusReasonBuilder::code)
     pub fn build(self) -> ::std::result::Result<crate::types::StatusReason, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StatusReason {
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building StatusReason",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StatusReason {
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building StatusReason")
+                    )?
+                ,
+            }
+        )
     }
 }
+

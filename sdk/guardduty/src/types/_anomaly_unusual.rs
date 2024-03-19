@@ -3,19 +3,13 @@
 /// <p>Contains information about the behavior of the anomaly that is new to GuardDuty.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyUnusual {
+pub struct AnomalyUnusual  {
     /// <p>The behavior of the anomalous activity that caused GuardDuty to generate the finding.</p>
-    pub behavior: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::AnomalyObject>>,
-    >,
+    pub behavior: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::AnomalyObject>>>,
 }
-impl AnomalyUnusual {
+impl  AnomalyUnusual  {
     /// <p>The behavior of the anomalous activity that caused GuardDuty to generate the finding.</p>
-    pub fn behavior(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::AnomalyObject>>,
-    > {
+    pub fn behavior(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::AnomalyObject>>> {
         self.behavior.as_ref()
     }
 }
@@ -30,9 +24,7 @@ impl AnomalyUnusual {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyUnusualBuilder {
-    pub(crate) behavior: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::AnomalyObject>>,
-    >,
+    pub(crate) behavior: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::AnomalyObject>>>,
 }
 impl AnomalyUnusualBuilder {
     /// Adds a key-value pair to `behavior`.
@@ -40,36 +32,26 @@ impl AnomalyUnusualBuilder {
     /// To override the contents of this collection use [`set_behavior`](Self::set_behavior).
     ///
     /// <p>The behavior of the anomalous activity that caused GuardDuty to generate the finding.</p>
-    pub fn behavior(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, crate::types::AnomalyObject>,
-    ) -> Self {
+    pub fn behavior(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, crate::types::AnomalyObject>) -> Self {
         let mut hash_map = self.behavior.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.behavior = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.behavior = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The behavior of the anomalous activity that caused GuardDuty to generate the finding.</p>
-    pub fn set_behavior(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::AnomalyObject>>,
-        >,
-    ) -> Self {
-        self.behavior = input;
-        self
+    pub fn set_behavior(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::AnomalyObject>>>) -> Self {
+        self.behavior = input; self
     }
     /// <p>The behavior of the anomalous activity that caused GuardDuty to generate the finding.</p>
-    pub fn get_behavior(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::AnomalyObject>>,
-    > {
+    pub fn get_behavior(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::AnomalyObject>>> {
         &self.behavior
     }
     /// Consumes the builder and constructs a [`AnomalyUnusual`](crate::types::AnomalyUnusual).
     pub fn build(self) -> crate::types::AnomalyUnusual {
-        crate::types::AnomalyUnusual { behavior: self.behavior }
+        crate::types::AnomalyUnusual {
+            behavior: self.behavior
+            ,
+        }
     }
 }
+

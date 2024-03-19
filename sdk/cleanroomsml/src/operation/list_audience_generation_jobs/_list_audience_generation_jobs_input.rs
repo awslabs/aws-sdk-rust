@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAudienceGenerationJobsInput {
+pub struct ListAudienceGenerationJobsInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -12,9 +12,9 @@ pub struct ListAudienceGenerationJobsInput {
     /// <p>The identifier of the collaboration that contains the audience generation jobs that you are interested in.</p>
     pub collaboration_id: ::std::option::Option<::std::string::String>,
 }
-impl ListAudienceGenerationJobsInput {
+impl  ListAudienceGenerationJobsInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -22,11 +22,11 @@ impl ListAudienceGenerationJobsInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for the audience generation jobs that you are interested in.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
     /// <p>The identifier of the collaboration that contains the audience generation jobs that you are interested in.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> ::std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListAudienceGenerationJobsInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListAudienceGenerationJobsInputBuilder {
     }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListAudienceGenerationJobsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for the audience generation jobs that you are interested in.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for the audience generation jobs that you are interested in.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +93,26 @@ impl ListAudienceGenerationJobsInputBuilder {
     }
     /// <p>The identifier of the collaboration that contains the audience generation jobs that you are interested in.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The identifier of the collaboration that contains the audience generation jobs that you are interested in.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_id
     }
     /// Consumes the builder and constructs a [`ListAudienceGenerationJobsInput`](crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            configured_audience_model_arn: self.configured_audience_model_arn,
-            collaboration_id: self.collaboration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+            }
+        )
     }
 }
+

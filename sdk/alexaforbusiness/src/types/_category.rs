@@ -3,19 +3,19 @@
 /// <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Category {
+pub struct Category  {
     /// <p>The ID of the skill store category.</p>
     pub category_id: ::std::option::Option<i64>,
     /// <p>The name of the skill store category.</p>
     pub category_name: ::std::option::Option<::std::string::String>,
 }
-impl Category {
+impl  Category  {
     /// <p>The ID of the skill store category.</p>
     pub fn category_id(&self) -> ::std::option::Option<i64> {
         self.category_id
     }
     /// <p>The name of the skill store category.</p>
-    pub fn category_name(&self) -> ::std::option::Option<&str> {
+    pub fn category_name(&self) -> ::std::option::Option<& str> {
         self.category_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CategoryBuilder {
     }
     /// <p>The ID of the skill store category.</p>
     pub fn set_category_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.category_id = input;
-        self
+        self.category_id = input; self
     }
     /// <p>The ID of the skill store category.</p>
     pub fn get_category_id(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl CategoryBuilder {
     }
     /// <p>The name of the skill store category.</p>
     pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category_name = input;
-        self
+        self.category_name = input; self
     }
     /// <p>The name of the skill store category.</p>
     pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CategoryBuilder {
     /// Consumes the builder and constructs a [`Category`](crate::types::Category).
     pub fn build(self) -> crate::types::Category {
         crate::types::Category {
-            category_id: self.category_id,
-            category_name: self.category_name,
+            category_id: self.category_id
+            ,
+            category_name: self.category_name
+            ,
         }
     }
 }
+

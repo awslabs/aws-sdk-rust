@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceInput {
+pub struct DeleteInstanceInput  {
     /// <p>The instance ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to delete the instance Elastic IP address.</p>
@@ -10,9 +10,9 @@ pub struct DeleteInstanceInput {
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
     pub delete_volumes: ::std::option::Option<bool>,
 }
-impl DeleteInstanceInput {
+impl  DeleteInstanceInput  {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Whether to delete the instance Elastic IP address.</p>
@@ -48,8 +48,7 @@ impl DeleteInstanceInputBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteInstanceInputBuilder {
     }
     /// <p>Whether to delete the instance Elastic IP address.</p>
     pub fn set_delete_elastic_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_elastic_ip = input;
-        self
+        self.delete_elastic_ip = input; self
     }
     /// <p>Whether to delete the instance Elastic IP address.</p>
     pub fn get_delete_elastic_ip(&self) -> &::std::option::Option<bool> {
@@ -76,21 +74,24 @@ impl DeleteInstanceInputBuilder {
     }
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
     pub fn set_delete_volumes(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_volumes = input;
-        self
+        self.delete_volumes = input; self
     }
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
     pub fn get_delete_volumes(&self) -> &::std::option::Option<bool> {
         &self.delete_volumes
     }
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_instance::DeleteInstanceInput {
-            instance_id: self.instance_id,
-            delete_elastic_ip: self.delete_elastic_ip,
-            delete_volumes: self.delete_volumes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance::DeleteInstanceInput {
+                instance_id: self.instance_id
+                ,
+                delete_elastic_ip: self.delete_elastic_ip
+                ,
+                delete_volumes: self.delete_volumes
+                ,
+            }
+        )
     }
 }
+

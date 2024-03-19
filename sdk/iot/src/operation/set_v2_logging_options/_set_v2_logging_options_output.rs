@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetV2LoggingOptionsOutput {
+pub struct SetV2LoggingOptionsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for SetV2LoggingOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetV2LoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`SetV2LoggingOptionsOutput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput).
     pub fn builder() -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct SetV2LoggingOptionsOutputBuilder {
 }
 impl SetV2LoggingOptionsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetV2LoggingOptionsOutput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput).
     pub fn build(self) -> crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput {
         crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput {
@@ -40,3 +40,4 @@ impl SetV2LoggingOptionsOutputBuilder {
         }
     }
 }
+

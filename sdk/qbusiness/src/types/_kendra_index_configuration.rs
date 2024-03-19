@@ -3,15 +3,14 @@
 /// <p>Stores an Amazon Kendra index as a retriever.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KendraIndexConfiguration {
+pub struct KendraIndexConfiguration  {
     /// <p>The identifier of the Amazon Kendra index.</p>
     pub index_id: ::std::string::String,
 }
-impl KendraIndexConfiguration {
+impl  KendraIndexConfiguration  {
     /// <p>The identifier of the Amazon Kendra index.</p>
-    pub fn index_id(&self) -> &str {
-        use std::ops::Deref;
-        self.index_id.deref()
+    pub fn index_id(&self) -> & str {
+        use std::ops::Deref; self.index_id.deref()
     }
 }
 impl KendraIndexConfiguration {
@@ -36,8 +35,7 @@ impl KendraIndexConfigurationBuilder {
     }
     /// <p>The identifier of the Amazon Kendra index.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the Amazon Kendra index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KendraIndexConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`index_id`](crate::types::builders::KendraIndexConfigurationBuilder::index_id)
     pub fn build(self) -> ::std::result::Result<crate::types::KendraIndexConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KendraIndexConfiguration {
-            index_id: self.index_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_id",
-                    "index_id was not specified but it is required when building KendraIndexConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KendraIndexConfiguration {
+                index_id: self.index_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_id", "index_id was not specified but it is required when building KendraIndexConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

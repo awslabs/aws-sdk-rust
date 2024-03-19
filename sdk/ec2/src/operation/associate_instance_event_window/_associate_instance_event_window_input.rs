@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateInstanceEventWindowInput {
+pub struct AssociateInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the event window.</p>
@@ -10,17 +10,17 @@ pub struct AssociateInstanceEventWindowInput {
     /// <p>One or more targets associated with the specified event window.</p>
     pub association_target: ::std::option::Option<crate::types::InstanceEventWindowAssociationRequest>,
 }
-impl AssociateInstanceEventWindowInput {
+impl  AssociateInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_event_window_id(&self) -> ::std::option::Option<& str> {
         self.instance_event_window_id.as_deref()
     }
     /// <p>One or more targets associated with the specified event window.</p>
-    pub fn association_target(&self) -> ::std::option::Option<&crate::types::InstanceEventWindowAssociationRequest> {
+    pub fn association_target(&self) -> ::std::option::Option<& crate::types::InstanceEventWindowAssociationRequest> {
         self.association_target.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl AssociateInstanceEventWindowInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl AssociateInstanceEventWindowInputBuilder {
     }
     /// <p>The ID of the event window.</p>
     pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_event_window_id = input;
-        self
+        self.instance_event_window_id = input; self
     }
     /// <p>The ID of the event window.</p>
     pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl AssociateInstanceEventWindowInputBuilder {
     }
     /// <p>One or more targets associated with the specified event window.</p>
     pub fn set_association_target(mut self, input: ::std::option::Option<crate::types::InstanceEventWindowAssociationRequest>) -> Self {
-        self.association_target = input;
-        self
+        self.association_target = input; self
     }
     /// <p>One or more targets associated with the specified event window.</p>
     pub fn get_association_target(&self) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationRequest> {
         &self.association_target
     }
     /// Consumes the builder and constructs a [`AssociateInstanceEventWindowInput`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput {
-            dry_run: self.dry_run,
-            instance_event_window_id: self.instance_event_window_id,
-            association_target: self.association_target,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput {
+                dry_run: self.dry_run
+                ,
+                instance_event_window_id: self.instance_event_window_id
+                ,
+                association_target: self.association_target
+                ,
+            }
+        )
     }
 }
+

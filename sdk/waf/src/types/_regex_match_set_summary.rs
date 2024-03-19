@@ -7,24 +7,22 @@
 /// <p>Returned by <code>ListRegexMatchSets</code>. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <code>RegexMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegexMatchSetSummary {
+pub struct RegexMatchSetSummary  {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub regex_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub name: ::std::string::String,
 }
-impl RegexMatchSetSummary {
+impl  RegexMatchSetSummary  {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.regex_match_set_id.deref()
+    pub fn regex_match_set_id(&self) -> & str {
+        use std::ops::Deref; self.regex_match_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl RegexMatchSetSummary {
@@ -52,8 +50,7 @@ impl RegexMatchSetSummaryBuilder {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn set_regex_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.regex_match_set_id = input;
-        self
+        self.regex_match_set_id = input; self
     }
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
@@ -68,8 +65,7 @@ impl RegexMatchSetSummaryBuilder {
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +76,20 @@ impl RegexMatchSetSummaryBuilder {
     /// - [`regex_match_set_id`](crate::types::builders::RegexMatchSetSummaryBuilder::regex_match_set_id)
     /// - [`name`](crate::types::builders::RegexMatchSetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::RegexMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegexMatchSetSummary {
-            regex_match_set_id: self.regex_match_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "regex_match_set_id",
-                    "regex_match_set_id was not specified but it is required when building RegexMatchSetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RegexMatchSetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegexMatchSetSummary {
+                regex_match_set_id: self.regex_match_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("regex_match_set_id", "regex_match_set_id was not specified but it is required when building RegexMatchSetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RegexMatchSetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

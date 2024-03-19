@@ -3,21 +3,21 @@
 /// <p>A safety rule. A safety rule can be an assertion rule or a gating rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
     pub assertion: ::std::option::Option<crate::types::AssertionRule>,
     /// <p>A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
     /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
     pub gating: ::std::option::Option<crate::types::GatingRule>,
 }
-impl Rule {
+impl  Rule  {
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
-    pub fn assertion(&self) -> ::std::option::Option<&crate::types::AssertionRule> {
+    pub fn assertion(&self) -> ::std::option::Option<& crate::types::AssertionRule> {
         self.assertion.as_ref()
     }
     /// <p>A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
     /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
-    pub fn gating(&self) -> ::std::option::Option<&crate::types::GatingRule> {
+    pub fn gating(&self) -> ::std::option::Option<& crate::types::GatingRule> {
         self.gating.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl RuleBuilder {
     }
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
     pub fn set_assertion(mut self, input: ::std::option::Option<crate::types::AssertionRule>) -> Self {
-        self.assertion = input;
-        self
+        self.assertion = input; self
     }
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
     pub fn get_assertion(&self) -> &::std::option::Option<crate::types::AssertionRule> {
@@ -59,8 +58,7 @@ impl RuleBuilder {
     /// <p>A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
     /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
     pub fn set_gating(mut self, input: ::std::option::Option<crate::types::GatingRule>) -> Self {
-        self.gating = input;
-        self
+        self.gating = input; self
     }
     /// <p>A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
     /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
@@ -70,8 +68,11 @@ impl RuleBuilder {
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {
         crate::types::Rule {
-            assertion: self.assertion,
-            gating: self.gating,
+            assertion: self.assertion
+            ,
+            gating: self.gating
+            ,
         }
     }
 }
+

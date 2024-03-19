@@ -3,7 +3,7 @@
 /// <p>An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaMappingSummary {
+pub struct SchemaMappingSummary  {
     /// <p>The name of the schema.</p>
     pub schema_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
@@ -15,23 +15,21 @@ pub struct SchemaMappingSummary {
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
     pub has_workflows: bool,
 }
-impl SchemaMappingSummary {
+impl  SchemaMappingSummary  {
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_name.deref()
+    pub fn schema_name(&self) -> & str {
+        use std::ops::Deref; self.schema_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
-    pub fn schema_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_arn.deref()
+    pub fn schema_arn(&self) -> & str {
+        use std::ops::Deref; self.schema_arn.deref()
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
@@ -65,8 +63,7 @@ impl SchemaMappingSummaryBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl SchemaMappingSummaryBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl SchemaMappingSummaryBuilder {
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +105,7 @@ impl SchemaMappingSummaryBuilder {
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +119,7 @@ impl SchemaMappingSummaryBuilder {
     }
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
     pub fn set_has_workflows(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_workflows = input;
-        self
+        self.has_workflows = input; self
     }
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
     pub fn get_has_workflows(&self) -> &::std::option::Option<bool> {
@@ -140,37 +133,35 @@ impl SchemaMappingSummaryBuilder {
     /// - [`updated_at`](crate::types::builders::SchemaMappingSummaryBuilder::updated_at)
     /// - [`has_workflows`](crate::types::builders::SchemaMappingSummaryBuilder::has_workflows)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaMappingSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SchemaMappingSummary {
-            schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_name",
-                    "schema_name was not specified but it is required when building SchemaMappingSummary",
-                )
-            })?,
-            schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_arn",
-                    "schema_arn was not specified but it is required when building SchemaMappingSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building SchemaMappingSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building SchemaMappingSummary",
-                )
-            })?,
-            has_workflows: self.has_workflows.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "has_workflows",
-                    "has_workflows was not specified but it is required when building SchemaMappingSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SchemaMappingSummary {
+                schema_name: self.schema_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_name", "schema_name was not specified but it is required when building SchemaMappingSummary")
+                    )?
+                ,
+                schema_arn: self.schema_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_arn", "schema_arn was not specified but it is required when building SchemaMappingSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building SchemaMappingSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building SchemaMappingSummary")
+                    )?
+                ,
+                has_workflows: self.has_workflows
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("has_workflows", "has_workflows was not specified but it is required when building SchemaMappingSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

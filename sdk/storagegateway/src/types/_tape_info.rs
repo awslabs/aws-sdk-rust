@@ -3,7 +3,7 @@
 /// <p>Describes a virtual tape.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TapeInfo {
+pub struct TapeInfo  {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The barcode that identifies a specific virtual tape.</p>
@@ -21,13 +21,13 @@ pub struct TapeInfo {
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
     pub pool_entry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl TapeInfo {
+impl  TapeInfo  {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
-    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
     /// <p>The barcode that identifies a specific virtual tape.</p>
-    pub fn tape_barcode(&self) -> ::std::option::Option<&str> {
+    pub fn tape_barcode(&self) -> ::std::option::Option<& str> {
         self.tape_barcode.as_deref()
     }
     /// <p>The size, in bytes, of a virtual tape.</p>
@@ -35,23 +35,23 @@ impl TapeInfo {
         self.tape_size_in_bytes
     }
     /// <p>The status of the tape.</p>
-    pub fn tape_status(&self) -> ::std::option::Option<&str> {
+    pub fn tape_status(&self) -> ::std::option::Option<& str> {
         self.tape_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
-    pub fn retention_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn retention_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
-    pub fn pool_entry_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn pool_entry_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
     pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tape_arn = input;
-        self
+        self.tape_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
     pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The barcode that identifies a specific virtual tape.</p>
     pub fn set_tape_barcode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tape_barcode = input;
-        self
+        self.tape_barcode = input; self
     }
     /// <p>The barcode that identifies a specific virtual tape.</p>
     pub fn get_tape_barcode(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The size, in bytes, of a virtual tape.</p>
     pub fn set_tape_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.tape_size_in_bytes = input;
-        self
+        self.tape_size_in_bytes = input; self
     }
     /// <p>The size, in bytes, of a virtual tape.</p>
     pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -125,8 +122,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The status of the tape.</p>
     pub fn set_tape_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tape_status = input;
-        self
+        self.tape_status = input; self
     }
     /// <p>The status of the tape.</p>
     pub fn get_tape_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
     pub fn set_retention_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.retention_start_date = input;
-        self
+        self.retention_start_date = input; self
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
     pub fn get_retention_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +174,7 @@ impl TapeInfoBuilder {
     }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
     pub fn set_pool_entry_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.pool_entry_date = input;
-        self
+        self.pool_entry_date = input; self
     }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
     pub fn get_pool_entry_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,14 +183,23 @@ impl TapeInfoBuilder {
     /// Consumes the builder and constructs a [`TapeInfo`](crate::types::TapeInfo).
     pub fn build(self) -> crate::types::TapeInfo {
         crate::types::TapeInfo {
-            tape_arn: self.tape_arn,
-            tape_barcode: self.tape_barcode,
-            tape_size_in_bytes: self.tape_size_in_bytes,
-            tape_status: self.tape_status,
-            gateway_arn: self.gateway_arn,
-            pool_id: self.pool_id,
-            retention_start_date: self.retention_start_date,
-            pool_entry_date: self.pool_entry_date,
+            tape_arn: self.tape_arn
+            ,
+            tape_barcode: self.tape_barcode
+            ,
+            tape_size_in_bytes: self.tape_size_in_bytes
+            ,
+            tape_status: self.tape_status
+            ,
+            gateway_arn: self.gateway_arn
+            ,
+            pool_id: self.pool_id
+            ,
+            retention_start_date: self.retention_start_date
+            ,
+            pool_entry_date: self.pool_entry_date
+            ,
         }
     }
 }
+

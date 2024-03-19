@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application provider under which the operation will run.</p>
@@ -14,7 +14,7 @@ pub struct CreateApplicationInput {
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub portal_options: ::std::option::Option<crate::types::PortalOptions>,
     /// <p>Specifies tags to be attached to the application.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
@@ -22,41 +22,42 @@ pub struct CreateApplicationInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
-    pub fn application_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_provider_arn(&self) -> ::std::option::Option<& str> {
         self.application_provider_arn.as_deref()
     }
     /// <p>The name of the .</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the .</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
-    pub fn portal_options(&self) -> ::std::option::Option<&crate::types::PortalOptions> {
+    pub fn portal_options(&self) -> ::std::option::Option<& crate::types::PortalOptions> {
         self.portal_options.as_ref()
     }
     /// <p>Specifies tags to be attached to the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -76,7 +77,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) portal_options: ::std::option::Option<crate::types::PortalOptions>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -89,8 +90,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +104,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub fn set_application_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_provider_arn = input;
-        self
+        self.application_provider_arn = input; self
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub fn get_application_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the .</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the .</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The description of the .</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the .</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub fn set_portal_options(mut self, input: ::std::option::Option<crate::types::PortalOptions>) -> Self {
-        self.portal_options = input;
-        self
+        self.portal_options = input; self
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub fn get_portal_options(&self) -> &::std::option::Option<crate::types::PortalOptions> {
@@ -161,17 +157,16 @@ impl CreateApplicationInputBuilder {
     /// <p>Specifies tags to be attached to the application.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies tags to be attached to the application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies tags to be attached to the application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
@@ -181,8 +176,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
@@ -199,8 +193,7 @@ impl CreateApplicationInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -209,18 +202,27 @@ impl CreateApplicationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            instance_arn: self.instance_arn,
-            application_provider_arn: self.application_provider_arn,
-            name: self.name,
-            description: self.description,
-            portal_options: self.portal_options,
-            tags: self.tags,
-            status: self.status,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                instance_arn: self.instance_arn
+                ,
+                application_provider_arn: self.application_provider_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                portal_options: self.portal_options
+                ,
+                tags: self.tags
+                ,
+                status: self.status
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

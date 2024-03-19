@@ -3,20 +3,19 @@
 /// <p>The name of the attribute, which is one of the values defined in the UserAttribute enumeration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Delegate {
+pub struct Delegate  {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     pub id: ::std::string::String,
     /// <p>The type of the delegate: user or group.</p>
     pub r#type: crate::types::MemberType,
 }
-impl Delegate {
+impl  Delegate  {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of the delegate: user or group.</p>
-    pub fn r#type(&self) -> &crate::types::MemberType {
+    pub fn r#type(&self) -> & crate::types::MemberType {
         &self.r#type
     }
 }
@@ -43,8 +42,7 @@ impl DelegateBuilder {
     }
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl DelegateBuilder {
     }
     /// <p>The type of the delegate: user or group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the delegate: user or group.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MemberType> {
@@ -70,19 +67,20 @@ impl DelegateBuilder {
     /// - [`id`](crate::types::builders::DelegateBuilder::id)
     /// - [`r#type`](crate::types::builders::DelegateBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Delegate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Delegate {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Delegate",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Delegate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Delegate {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Delegate")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Delegate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

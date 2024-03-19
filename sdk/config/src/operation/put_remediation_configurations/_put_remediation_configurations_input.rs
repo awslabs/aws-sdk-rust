@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRemediationConfigurationsInput {
+pub struct PutRemediationConfigurationsInput  {
     /// <p>A list of remediation configuration objects.</p>
-    pub remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub remediation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>,
 }
-impl PutRemediationConfigurationsInput {
+impl  PutRemediationConfigurationsInput  {
     /// <p>A list of remediation configuration objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_configurations.is_none()`.
-    pub fn remediation_configurations(&self) -> &[crate::types::RemediationConfiguration] {
-        self.remediation_configurations.as_deref().unwrap_or_default()
+    pub fn remediation_configurations(&self) -> & [crate::types::RemediationConfiguration] {
+        self.remediation_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutRemediationConfigurationsInput {
@@ -25,7 +26,7 @@ impl PutRemediationConfigurationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRemediationConfigurationsInputBuilder {
-    pub(crate) remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub(crate) remediation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>,
 }
 impl PutRemediationConfigurationsInputBuilder {
     /// Appends an item to `remediation_configurations`.
@@ -35,28 +36,26 @@ impl PutRemediationConfigurationsInputBuilder {
     /// <p>A list of remediation configuration objects.</p>
     pub fn remediation_configurations(mut self, input: crate::types::RemediationConfiguration) -> Self {
         let mut v = self.remediation_configurations.unwrap_or_default();
-        v.push(input);
-        self.remediation_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remediation_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
-        self.remediation_configurations = input;
-        self
+    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>) -> Self {
+        self.remediation_configurations = input; self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>> {
         &self.remediation_configurations
     }
     /// Consumes the builder and constructs a [`PutRemediationConfigurationsInput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput {
-            remediation_configurations: self.remediation_configurations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput {
+                remediation_configurations: self.remediation_configurations
+                ,
+            }
+        )
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::get_bucket_access_keys::_get_bucket_access_keys_input:
 
 impl GetBucketAccessKeysInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_bucket_access_keys();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_bucket_access_keys();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetBucketAccessKeys`.
-///
+/// 
 /// <p>Returns the existing access key IDs for the specified Amazon Lightsail bucket.</p><important>
 /// <p>This action does not return the secret access key value of an access key. You can get a secret access key only when you create it from the response of the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If you lose the secret access key, you must create a new access key.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketAccessKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysInputBuilder,
+                    inner: crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
-    > for GetBucketAccessKeysFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
-            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
+                    crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
+                > for GetBucketAccessKeysFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
+                        crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetBucketAccessKeysFluentBuilder {
     /// Creates a new `GetBucketAccessKeys`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl GetBucketAccessKeysFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_bucket_access_keys::GetBucketAccessKeys::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeys::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_bucket_access_keys::GetBucketAccessKeysError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_bucket_access_keys::GetBucketAccessKeys::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_bucket_access_keys::GetBucketAccessKeys::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput, crate::operation::get_bucket_access_keys::GetBucketAccessKeysError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the bucket for which to return access keys.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
@@ -125,3 +112,4 @@ impl GetBucketAccessKeysFluentBuilder {
         self.inner.get_bucket_name()
     }
 }
+

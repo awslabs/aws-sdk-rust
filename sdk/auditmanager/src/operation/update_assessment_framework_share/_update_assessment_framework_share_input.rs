@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssessmentFrameworkShareInput {
+pub struct UpdateAssessmentFrameworkShareInput  {
     /// <p>The unique identifier for the share request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
@@ -10,17 +10,17 @@ pub struct UpdateAssessmentFrameworkShareInput {
     /// <p>Specifies the update action for the share request.</p>
     pub action: ::std::option::Option<crate::types::ShareRequestAction>,
 }
-impl UpdateAssessmentFrameworkShareInput {
+impl  UpdateAssessmentFrameworkShareInput  {
     /// <p>The unique identifier for the share request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    pub fn request_type(&self) -> ::std::option::Option<&crate::types::ShareRequestType> {
+    pub fn request_type(&self) -> ::std::option::Option<& crate::types::ShareRequestType> {
         self.request_type.as_ref()
     }
     /// <p>Specifies the update action for the share request.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ShareRequestAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::ShareRequestAction> {
         self.action.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
     }
     /// <p>The unique identifier for the share request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The unique identifier for the share request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::ShareRequestType>) -> Self {
-        self.request_type = input;
-        self
+        self.request_type = input; self
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn get_request_type(&self) -> &::std::option::Option<crate::types::ShareRequestType> {
@@ -78,24 +76,24 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
     }
     /// <p>Specifies the update action for the share request.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ShareRequestAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies the update action for the share request.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ShareRequestAction> {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkShareInput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput {
-            request_id: self.request_id,
-            request_type: self.request_type,
-            action: self.action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput {
+                request_id: self.request_id
+                ,
+                request_type: self.request_type
+                ,
+                action: self.action
+                ,
+            }
+        )
     }
 }
+

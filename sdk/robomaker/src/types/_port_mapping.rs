@@ -3,7 +3,7 @@
 /// <p>An object representing a port mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortMapping {
+pub struct PortMapping  {
     /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub job_port: i32,
     /// <p>The port number on the application.</p>
@@ -11,7 +11,7 @@ pub struct PortMapping {
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub enable_on_public_ip: bool,
 }
-impl PortMapping {
+impl  PortMapping  {
     /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub fn job_port(&self) -> i32 {
         self.job_port
@@ -49,8 +49,7 @@ impl PortMappingBuilder {
     }
     /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub fn set_job_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.job_port = input;
-        self
+        self.job_port = input; self
     }
     /// <p>The port number on the simulation job instance to use as a remote connection point.</p>
     pub fn get_job_port(&self) -> &::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl PortMappingBuilder {
     }
     /// <p>The port number on the application.</p>
     pub fn set_application_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_port = input;
-        self
+        self.application_port = input; self
     }
     /// <p>The port number on the application.</p>
     pub fn get_application_port(&self) -> &::std::option::Option<i32> {
@@ -78,8 +76,7 @@ impl PortMappingBuilder {
     }
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub fn set_enable_on_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_on_public_ip = input;
-        self
+        self.enable_on_public_ip = input; self
     }
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub fn get_enable_on_public_ip(&self) -> &::std::option::Option<bool> {
@@ -90,20 +87,23 @@ impl PortMappingBuilder {
     /// - [`job_port`](crate::types::builders::PortMappingBuilder::job_port)
     /// - [`application_port`](crate::types::builders::PortMappingBuilder::application_port)
     pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortMapping {
-            job_port: self.job_port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_port",
-                    "job_port was not specified but it is required when building PortMapping",
-                )
-            })?,
-            application_port: self.application_port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_port",
-                    "application_port was not specified but it is required when building PortMapping",
-                )
-            })?,
-            enable_on_public_ip: self.enable_on_public_ip.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortMapping {
+                job_port: self.job_port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_port", "job_port was not specified but it is required when building PortMapping")
+                    )?
+                ,
+                application_port: self.application_port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_port", "application_port was not specified but it is required when building PortMapping")
+                    )?
+                ,
+                enable_on_public_ip: self.enable_on_public_ip
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

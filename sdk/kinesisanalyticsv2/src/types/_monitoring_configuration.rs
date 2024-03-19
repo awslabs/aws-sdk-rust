@@ -3,7 +3,7 @@
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringConfiguration {
+pub struct MonitoringConfiguration  {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub configuration_type: crate::types::ConfigurationType,
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
@@ -11,17 +11,17 @@ pub struct MonitoringConfiguration {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
-impl MonitoringConfiguration {
+impl  MonitoringConfiguration  {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
-    pub fn configuration_type(&self) -> &crate::types::ConfigurationType {
+    pub fn configuration_type(&self) -> & crate::types::ConfigurationType {
         &self.configuration_type
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
-    pub fn metrics_level(&self) -> ::std::option::Option<&crate::types::MetricsLevel> {
+    pub fn metrics_level(&self) -> ::std::option::Option<& crate::types::MetricsLevel> {
         self.metrics_level.as_ref()
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl MonitoringConfigurationBuilder {
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
-        self.configuration_type = input;
-        self
+        self.configuration_type = input; self
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
@@ -63,8 +62,7 @@ impl MonitoringConfigurationBuilder {
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn set_metrics_level(mut self, input: ::std::option::Option<crate::types::MetricsLevel>) -> Self {
-        self.metrics_level = input;
-        self
+        self.metrics_level = input; self
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn get_metrics_level(&self) -> &::std::option::Option<crate::types::MetricsLevel> {
@@ -77,8 +75,7 @@ impl MonitoringConfigurationBuilder {
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -88,15 +85,19 @@ impl MonitoringConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_type`](crate::types::builders::MonitoringConfigurationBuilder::configuration_type)
     pub fn build(self) -> ::std::result::Result<crate::types::MonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MonitoringConfiguration {
-            configuration_type: self.configuration_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_type",
-                    "configuration_type was not specified but it is required when building MonitoringConfiguration",
-                )
-            })?,
-            metrics_level: self.metrics_level,
-            log_level: self.log_level,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MonitoringConfiguration {
+                configuration_type: self.configuration_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_type", "configuration_type was not specified but it is required when building MonitoringConfiguration")
+                    )?
+                ,
+                metrics_level: self.metrics_level
+                ,
+                log_level: self.log_level
+                ,
+            }
+        )
     }
 }
+

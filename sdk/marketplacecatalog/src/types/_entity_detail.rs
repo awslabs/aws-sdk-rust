@@ -3,7 +3,7 @@
 /// <p>An object that contains metadata and details about the entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityDetail {
+pub struct EntityDetail  {
     /// <p>The entity type of the entity, in the format of <code>EntityType@Version</code>.</p>
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
@@ -15,25 +15,25 @@ pub struct EntityDetail {
     /// <p>An object that contains all the details of the entity.</p>
     pub details_document: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl EntityDetail {
+impl  EntityDetail  {
     /// <p>The entity type of the entity, in the format of <code>EntityType@Version</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn entity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entity_arn(&self) -> ::std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>The ID of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn entity_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn entity_identifier(&self) -> ::std::option::Option<& str> {
         self.entity_identifier.as_deref()
     }
     /// <p>The last time the entity was modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>An object that contains all the details of the entity.</p>
-    pub fn details_document(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn details_document(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.details_document.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EntityDetailBuilder {
     }
     /// <p>The entity type of the entity, in the format of <code>EntityType@Version</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The entity type of the entity, in the format of <code>EntityType@Version</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EntityDetailBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_arn = input;
-        self
+        self.entity_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EntityDetailBuilder {
     }
     /// <p>The ID of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
     pub fn set_entity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_identifier = input;
-        self
+        self.entity_identifier = input; self
     }
     /// <p>The ID of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
     pub fn get_entity_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl EntityDetailBuilder {
     }
     /// <p>The last time the entity was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The last time the entity was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl EntityDetailBuilder {
     }
     /// <p>An object that contains all the details of the entity.</p>
     pub fn set_details_document(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.details_document = input;
-        self
+        self.details_document = input; self
     }
     /// <p>An object that contains all the details of the entity.</p>
     pub fn get_details_document(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -128,11 +123,17 @@ impl EntityDetailBuilder {
     /// Consumes the builder and constructs a [`EntityDetail`](crate::types::EntityDetail).
     pub fn build(self) -> crate::types::EntityDetail {
         crate::types::EntityDetail {
-            entity_type: self.entity_type,
-            entity_arn: self.entity_arn,
-            entity_identifier: self.entity_identifier,
-            last_modified_date: self.last_modified_date,
-            details_document: self.details_document,
+            entity_type: self.entity_type
+            ,
+            entity_arn: self.entity_arn
+            ,
+            entity_identifier: self.entity_identifier
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            details_document: self.details_document
+            ,
         }
     }
 }
+

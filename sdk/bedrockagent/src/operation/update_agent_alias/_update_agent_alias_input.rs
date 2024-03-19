@@ -3,7 +3,7 @@
 /// Update Agent Alias Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgentAliasInput {
+pub struct UpdateAgentAliasInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Id generated at the server side when an Agent Alias is created
@@ -13,30 +13,31 @@ pub struct UpdateAgentAliasInput {
     /// Description of the Resource.
     pub description: ::std::option::Option<::std::string::String>,
     /// Routing configuration for an Agent alias.
-    pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>,
 }
-impl UpdateAgentAliasInput {
+impl  UpdateAgentAliasInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Id generated at the server side when an Agent Alias is created
-    pub fn agent_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_alias_id(&self) -> ::std::option::Option<& str> {
         self.agent_alias_id.as_deref()
     }
     /// Name for a resource.
-    pub fn agent_alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn agent_alias_name(&self) -> ::std::option::Option<& str> {
         self.agent_alias_name.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Routing configuration for an Agent alias.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
-    pub fn routing_configuration(&self) -> &[crate::types::AgentAliasRoutingConfigurationListItem] {
-        self.routing_configuration.as_deref().unwrap_or_default()
+    pub fn routing_configuration(&self) -> & [crate::types::AgentAliasRoutingConfigurationListItem] {
+        self.routing_configuration.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateAgentAliasInput {
@@ -54,7 +55,7 @@ pub struct UpdateAgentAliasInputBuilder {
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>,
 }
 impl UpdateAgentAliasInputBuilder {
     /// Id generated at the server side when an Agent is created
@@ -65,8 +66,7 @@ impl UpdateAgentAliasInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +80,7 @@ impl UpdateAgentAliasInputBuilder {
     }
     /// Id generated at the server side when an Agent Alias is created
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
+        self.agent_alias_id = input; self
     }
     /// Id generated at the server side when an Agent Alias is created
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl UpdateAgentAliasInputBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_name = input;
-        self
+        self.agent_alias_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl UpdateAgentAliasInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,32 +120,34 @@ impl UpdateAgentAliasInputBuilder {
     /// Routing configuration for an Agent alias.
     pub fn routing_configuration(mut self, input: crate::types::AgentAliasRoutingConfigurationListItem) -> Self {
         let mut v = self.routing_configuration.unwrap_or_default();
-        v.push(input);
-        self.routing_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routing_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// Routing configuration for an Agent alias.
-    pub fn set_routing_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
-    ) -> Self {
-        self.routing_configuration = input;
-        self
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>) -> Self {
+        self.routing_configuration = input; self
     }
     /// Routing configuration for an Agent alias.
-    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateAgentAliasInput`](crate::operation::update_agent_alias::UpdateAgentAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_agent_alias::UpdateAgentAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agent_alias::UpdateAgentAliasInput {
-            agent_id: self.agent_id,
-            agent_alias_id: self.agent_alias_id,
-            agent_alias_name: self.agent_alias_name,
-            description: self.description,
-            routing_configuration: self.routing_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agent_alias::UpdateAgentAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_agent_alias::UpdateAgentAliasInput {
+                agent_id: self.agent_id
+                ,
+                agent_alias_id: self.agent_alias_id
+                ,
+                agent_alias_name: self.agent_alias_name
+                ,
+                description: self.description
+                ,
+                routing_configuration: self.routing_configuration
+                ,
+            }
+        )
     }
 }
+

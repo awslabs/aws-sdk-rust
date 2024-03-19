@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigurationSetEventDestinationInput {
+pub struct DeleteConfigurationSetEventDestinationInput  {
     /// ConfigurationSetName
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// EventDestinationName
     pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfigurationSetEventDestinationInput {
+impl  DeleteConfigurationSetEventDestinationInput  {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// EventDestinationName
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
     }
     /// ConfigurationSetName
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// ConfigurationSetName
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
     }
     /// EventDestinationName
     pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_destination_name = input;
-        self
+        self.event_destination_name = input; self
     }
     /// EventDestinationName
     pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_destination_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination_name: self.event_destination_name
+                ,
+            }
         )
     }
 }
+

@@ -3,38 +3,41 @@
 /// <p>Contains the parameters for ValidatePipelineDefinition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatePipelineDefinitionInput {
+pub struct ValidatePipelineDefinitionInput  {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub pipeline_objects: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineObject>>,
     /// <p>The parameter objects used with the pipeline.</p>
-    pub parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
+    pub parameter_objects: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterObject>>,
     /// <p>The parameter values used with the pipeline.</p>
-    pub parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub parameter_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>,
 }
-impl ValidatePipelineDefinitionInput {
+impl  ValidatePipelineDefinitionInput  {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_objects.is_none()`.
-    pub fn pipeline_objects(&self) -> &[crate::types::PipelineObject] {
-        self.pipeline_objects.as_deref().unwrap_or_default()
+    pub fn pipeline_objects(&self) -> & [crate::types::PipelineObject] {
+        self.pipeline_objects.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_objects.is_none()`.
-    pub fn parameter_objects(&self) -> &[crate::types::ParameterObject] {
-        self.parameter_objects.as_deref().unwrap_or_default()
+    pub fn parameter_objects(&self) -> & [crate::types::ParameterObject] {
+        self.parameter_objects.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The parameter values used with the pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_values.is_none()`.
-    pub fn parameter_values(&self) -> &[crate::types::ParameterValue] {
-        self.parameter_values.as_deref().unwrap_or_default()
+    pub fn parameter_values(&self) -> & [crate::types::ParameterValue] {
+        self.parameter_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ValidatePipelineDefinitionInput {
@@ -49,9 +52,9 @@ impl ValidatePipelineDefinitionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    pub(crate) parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineObject>>,
+    pub(crate) parameter_objects: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterObject>>,
+    pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>,
 }
 impl ValidatePipelineDefinitionInputBuilder {
     /// <p>The ID of the pipeline.</p>
@@ -62,8 +65,7 @@ impl ValidatePipelineDefinitionInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,17 +78,16 @@ impl ValidatePipelineDefinitionInputBuilder {
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
     pub fn pipeline_objects(mut self, input: crate::types::PipelineObject) -> Self {
         let mut v = self.pipeline_objects.unwrap_or_default();
-        v.push(input);
-        self.pipeline_objects = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipeline_objects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
-        self.pipeline_objects = input;
-        self
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineObject>>) -> Self {
+        self.pipeline_objects = input; self
     }
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineObject>> {
         &self.pipeline_objects
     }
     /// Appends an item to `parameter_objects`.
@@ -96,17 +97,16 @@ impl ValidatePipelineDefinitionInputBuilder {
     /// <p>The parameter objects used with the pipeline.</p>
     pub fn parameter_objects(mut self, input: crate::types::ParameterObject) -> Self {
         let mut v = self.parameter_objects.unwrap_or_default();
-        v.push(input);
-        self.parameter_objects = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_objects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>) -> Self {
-        self.parameter_objects = input;
-        self
+    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterObject>>) -> Self {
+        self.parameter_objects = input; self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterObject>> {
         &self.parameter_objects
     }
     /// Appends an item to `parameter_values`.
@@ -116,31 +116,32 @@ impl ValidatePipelineDefinitionInputBuilder {
     /// <p>The parameter values used with the pipeline.</p>
     pub fn parameter_values(mut self, input: crate::types::ParameterValue) -> Self {
         let mut v = self.parameter_values.unwrap_or_default();
-        v.push(input);
-        self.parameter_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
-        self.parameter_values = input;
-        self
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>) -> Self {
+        self.parameter_values = input; self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>> {
         &self.parameter_values
     }
     /// Consumes the builder and constructs a [`ValidatePipelineDefinitionInput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput {
-            pipeline_id: self.pipeline_id,
-            pipeline_objects: self.pipeline_objects,
-            parameter_objects: self.parameter_objects,
-            parameter_values: self.parameter_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput {
+                pipeline_id: self.pipeline_id
+                ,
+                pipeline_objects: self.pipeline_objects
+                ,
+                parameter_objects: self.parameter_objects
+                ,
+                parameter_values: self.parameter_values
+                ,
+            }
+        )
     }
 }
+

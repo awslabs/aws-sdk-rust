@@ -3,19 +3,19 @@
 /// <p>Response to a <code>GetFunctionConfiguration</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageConfigResponse {
+pub struct ImageConfigResponse  {
     /// <p>Configuration values that override the container image Dockerfile.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
     pub error: ::std::option::Option<crate::types::ImageConfigError>,
 }
-impl ImageConfigResponse {
+impl  ImageConfigResponse  {
     /// <p>Configuration values that override the container image Dockerfile.</p>
-    pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
+    pub fn image_config(&self) -> ::std::option::Option<& crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
     /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ImageConfigError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ImageConfigError> {
         self.error.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ImageConfigResponseBuilder {
     }
     /// <p>Configuration values that override the container image Dockerfile.</p>
     pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
-        self.image_config = input;
-        self
+        self.image_config = input; self
     }
     /// <p>Configuration values that override the container image Dockerfile.</p>
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
@@ -55,8 +54,7 @@ impl ImageConfigResponseBuilder {
     }
     /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ImageConfigError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ImageConfigError> {
@@ -65,8 +63,11 @@ impl ImageConfigResponseBuilder {
     /// Consumes the builder and constructs a [`ImageConfigResponse`](crate::types::ImageConfigResponse).
     pub fn build(self) -> crate::types::ImageConfigResponse {
         crate::types::ImageConfigResponse {
-            image_config: self.image_config,
-            error: self.error,
+            image_config: self.image_config
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

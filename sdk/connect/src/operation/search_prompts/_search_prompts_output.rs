@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchPromptsOutput {
+pub struct SearchPromptsOutput  {
     /// <p>Information about the prompts.</p>
-    pub prompts: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>,
+    pub prompts: ::std::option::Option<::std::vec::Vec::<crate::types::Prompt>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of quick connects which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl SearchPromptsOutput {
+impl  SearchPromptsOutput  {
     /// <p>Information about the prompts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prompts.is_none()`.
-    pub fn prompts(&self) -> &[crate::types::Prompt] {
-        self.prompts.as_deref().unwrap_or_default()
+    pub fn prompts(&self) -> & [crate::types::Prompt] {
+        self.prompts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of quick connects which matched your search query.</p>
@@ -28,10 +29,10 @@ impl SearchPromptsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchPromptsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchPromptsOutput {
     /// Creates a new builder-style object to manufacture [`SearchPromptsOutput`](crate::operation::search_prompts::SearchPromptsOutput).
     pub fn builder() -> crate::operation::search_prompts::builders::SearchPromptsOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchPromptsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPromptsOutputBuilder {
-    pub(crate) prompts: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>,
+    pub(crate) prompts: ::std::option::Option<::std::vec::Vec::<crate::types::Prompt>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchPromptsOutputBuilder {
     /// <p>Information about the prompts.</p>
     pub fn prompts(mut self, input: crate::types::Prompt) -> Self {
         let mut v = self.prompts.unwrap_or_default();
-        v.push(input);
-        self.prompts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.prompts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the prompts.</p>
-    pub fn set_prompts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>) -> Self {
-        self.prompts = input;
-        self
+    pub fn set_prompts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Prompt>>) -> Self {
+        self.prompts = input; self
     }
     /// <p>Information about the prompts.</p>
-    pub fn get_prompts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Prompt>> {
+    pub fn get_prompts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Prompt>> {
         &self.prompts
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -76,8 +76,7 @@ impl SearchPromptsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchPromptsOutputBuilder {
     }
     /// <p>The total number of quick connects which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input;
-        self
+        self.approximate_total_count = input; self
     }
     /// <p>The total number of quick connects which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchPromptsOutput`](crate::operation::search_prompts::SearchPromptsOutput).
     pub fn build(self) -> crate::operation::search_prompts::SearchPromptsOutput {
         crate::operation::search_prompts::SearchPromptsOutput {
-            prompts: self.prompts,
-            next_token: self.next_token,
-            approximate_total_count: self.approximate_total_count,
+            prompts: self.prompts
+            ,
+            next_token: self.next_token
+            ,
+            approximate_total_count: self.approximate_total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

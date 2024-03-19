@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApnsVoipChannelInput {
+pub struct UpdateApnsVoipChannelInput  {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     pub apns_voip_channel_request: ::std::option::Option<crate::types::ApnsVoipChannelRequest>,
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateApnsVoipChannelInput {
+impl  UpdateApnsVoipChannelInput  {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_request(&self) -> ::std::option::Option<&crate::types::ApnsVoipChannelRequest> {
+    pub fn apns_voip_channel_request(&self) -> ::std::option::Option<& crate::types::ApnsVoipChannelRequest> {
         self.apns_voip_channel_request.as_ref()
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateApnsVoipChannelInputBuilder {
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     pub fn set_apns_voip_channel_request(mut self, input: ::std::option::Option<crate::types::ApnsVoipChannelRequest>) -> Self {
-        self.apns_voip_channel_request = input;
-        self
+        self.apns_voip_channel_request = input; self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     pub fn get_apns_voip_channel_request(&self) -> &::std::option::Option<crate::types::ApnsVoipChannelRequest> {
@@ -56,21 +55,22 @@ impl UpdateApnsVoipChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`UpdateApnsVoipChannelInput`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput {
-            apns_voip_channel_request: self.apns_voip_channel_request,
-            application_id: self.application_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput {
+                apns_voip_channel_request: self.apns_voip_channel_request
+                ,
+                application_id: self.application_id
+                ,
+            }
+        )
     }
 }
+

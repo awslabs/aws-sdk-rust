@@ -3,19 +3,19 @@
 /// <p>An object that contains an error code and error message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeErrorDetail {
+pub struct BatchDescribeErrorDetail  {
     /// <p>The error code returned.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message returned.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchDescribeErrorDetail {
+impl  BatchDescribeErrorDetail  {
     /// <p>The error code returned.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message returned.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BatchDescribeErrorDetailBuilder {
     }
     /// <p>The error code returned.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code returned.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BatchDescribeErrorDetailBuilder {
     }
     /// <p>The error message returned.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message returned.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BatchDescribeErrorDetailBuilder {
     /// Consumes the builder and constructs a [`BatchDescribeErrorDetail`](crate::types::BatchDescribeErrorDetail).
     pub fn build(self) -> crate::types::BatchDescribeErrorDetail {
         crate::types::BatchDescribeErrorDetail {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

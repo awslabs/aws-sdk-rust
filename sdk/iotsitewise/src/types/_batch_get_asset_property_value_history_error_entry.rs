@@ -3,7 +3,7 @@
 /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
+pub struct BatchGetAssetPropertyValueHistoryErrorEntry  {
     /// <p>The error code.</p>
     pub error_code: crate::types::BatchGetAssetPropertyValueHistoryErrorCode,
     /// <p>The associated error message.</p>
@@ -11,20 +11,18 @@ pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The ID of the entry.</p>
     pub entry_id: ::std::string::String,
 }
-impl BatchGetAssetPropertyValueHistoryErrorEntry {
+impl  BatchGetAssetPropertyValueHistoryErrorEntry  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> &crate::types::BatchGetAssetPropertyValueHistoryErrorCode {
+    pub fn error_code(&self) -> & crate::types::BatchGetAssetPropertyValueHistoryErrorCode {
         &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
@@ -51,8 +49,7 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
@@ -66,8 +63,7 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     }
     /// <p>The associated error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The associated error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The ID of the entry.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,28 +88,26 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     /// - [`error_code`](crate::types::builders::BatchGetAssetPropertyValueHistoryErrorEntryBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchGetAssetPropertyValueHistoryErrorEntryBuilder::error_message)
     /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueHistoryErrorEntryBuilder::entry_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueHistoryErrorEntry {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry",
-                )
-            })?,
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchGetAssetPropertyValueHistoryErrorEntry {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry")
+                    )?
+                ,
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

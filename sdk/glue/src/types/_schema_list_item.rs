@@ -3,7 +3,7 @@
 /// <p>An object that contains minimal details for a schema.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaListItem {
+pub struct SchemaListItem  {
     /// <p>the name of the registry where the schema resides.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
@@ -19,33 +19,33 @@ pub struct SchemaListItem {
     /// <p>The date and time that a schema was updated.</p>
     pub updated_time: ::std::option::Option<::std::string::String>,
 }
-impl SchemaListItem {
+impl  SchemaListItem  {
     /// <p>the name of the registry where the schema resides.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>A description for the schema.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the schema.</p>
-    pub fn schema_status(&self) -> ::std::option::Option<&crate::types::SchemaStatus> {
+    pub fn schema_status(&self) -> ::std::option::Option<& crate::types::SchemaStatus> {
         self.schema_status.as_ref()
     }
     /// <p>The date and time that a schema was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>The date and time that a schema was updated.</p>
-    pub fn updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn updated_time(&self) -> ::std::option::Option<& str> {
         self.updated_time.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>the name of the registry where the schema resides.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>the name of the registry where the schema resides.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>A description for the schema.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the schema.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>The status of the schema.</p>
     pub fn set_schema_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
-        self.schema_status = input;
-        self
+        self.schema_status = input; self
     }
     /// <p>The status of the schema.</p>
     pub fn get_schema_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
@@ -146,8 +141,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>The date and time that a schema was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time that a schema was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl SchemaListItemBuilder {
     }
     /// <p>The date and time that a schema was updated.</p>
     pub fn set_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_time = input;
-        self
+        self.updated_time = input; self
     }
     /// <p>The date and time that a schema was updated.</p>
     pub fn get_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl SchemaListItemBuilder {
     /// Consumes the builder and constructs a [`SchemaListItem`](crate::types::SchemaListItem).
     pub fn build(self) -> crate::types::SchemaListItem {
         crate::types::SchemaListItem {
-            registry_name: self.registry_name,
-            schema_name: self.schema_name,
-            schema_arn: self.schema_arn,
-            description: self.description,
-            schema_status: self.schema_status,
-            created_time: self.created_time,
-            updated_time: self.updated_time,
+            registry_name: self.registry_name
+            ,
+            schema_name: self.schema_name
+            ,
+            schema_arn: self.schema_arn
+            ,
+            description: self.description
+            ,
+            schema_status: self.schema_status
+            ,
+            created_time: self.created_time
+            ,
+            updated_time: self.updated_time
+            ,
         }
     }
 }
+

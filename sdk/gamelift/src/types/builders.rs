@@ -118,3 +118,4 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 pub use crate::types::_location_configuration::LocationConfigurationBuilder;
 
 pub use crate::types::_claim_filter_option::ClaimFilterOptionBuilder;
+

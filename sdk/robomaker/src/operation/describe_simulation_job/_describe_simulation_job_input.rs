@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSimulationJobInput {
+pub struct DescribeSimulationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     pub job: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSimulationJobInput {
+impl  DescribeSimulationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-    pub fn job(&self) -> ::std::option::Option<&str> {
+    pub fn job(&self) -> ::std::option::Option<& str> {
         self.job.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeSimulationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
         &self.job
     }
     /// Consumes the builder and constructs a [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_simulation_job::DescribeSimulationJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_simulation_job::DescribeSimulationJobInput { job: self.job })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_simulation_job::DescribeSimulationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_simulation_job::DescribeSimulationJobInput {
+                job: self.job
+                ,
+            }
+        )
     }
 }
+

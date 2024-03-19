@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCheckDetailsInput {
+pub struct ListCheckDetailsInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -19,13 +19,13 @@ pub struct ListCheckDetailsInput {
     /// <p>The ID of a choice.</p>
     pub choice_id: ::std::option::Option<::std::string::String>,
 }
-impl ListCheckDetailsInput {
+impl  ListCheckDetailsInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -33,20 +33,20 @@ impl ListCheckDetailsInput {
         self.max_results
     }
     /// <p>Well-Architected Lens ARN.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> ::std::option::Option<&str> {
+    pub fn choice_id(&self) -> ::std::option::Option<& str> {
         self.choice_id.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl ListCheckDetailsInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListCheckDetailsInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl ListCheckDetailsInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -121,8 +118,7 @@ impl ListCheckDetailsInputBuilder {
     }
     /// <p>Well-Architected Lens ARN.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>Well-Architected Lens ARN.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl ListCheckDetailsInputBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -154,8 +149,7 @@ impl ListCheckDetailsInputBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,25 +163,32 @@ impl ListCheckDetailsInputBuilder {
     }
     /// <p>The ID of a choice.</p>
     pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.choice_id = input;
-        self
+        self.choice_id = input; self
     }
     /// <p>The ID of a choice.</p>
     pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.choice_id
     }
     /// Consumes the builder and constructs a [`ListCheckDetailsInput`](crate::operation::list_check_details::ListCheckDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_check_details::ListCheckDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_check_details::ListCheckDetailsInput {
-            workload_id: self.workload_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            lens_arn: self.lens_arn,
-            pillar_id: self.pillar_id,
-            question_id: self.question_id,
-            choice_id: self.choice_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_check_details::ListCheckDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_check_details::ListCheckDetailsInput {
+                workload_id: self.workload_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                lens_arn: self.lens_arn
+                ,
+                pillar_id: self.pillar_id
+                ,
+                question_id: self.question_id
+                ,
+                choice_id: self.choice_id
+                ,
+            }
+        )
     }
 }
+

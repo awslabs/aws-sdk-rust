@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChannelsOutput {
+pub struct ListChannelsOutput  {
     /// <p>List of the matching channels.</p>
-    pub channels: ::std::vec::Vec<crate::types::ChannelSummary>,
+    pub channels: ::std::vec::Vec::<crate::types::ChannelSummary>,
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListChannelsOutput {
+impl  ListChannelsOutput  {
     /// <p>List of the matching channels.</p>
-    pub fn channels(&self) -> &[crate::types::ChannelSummary] {
-        use std::ops::Deref;
-        self.channels.deref()
+    pub fn channels(&self) -> & [crate::types::ChannelSummary] {
+        use std::ops::Deref; self.channels.deref()
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListChannelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput).
     pub fn builder() -> crate::operation::list_channels::builders::ListChannelsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListChannelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelsOutputBuilder {
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListChannelsOutputBuilder {
     /// <p>List of the matching channels.</p>
     pub fn channels(mut self, input: crate::types::ChannelSummary) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching channels.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelSummary>>) -> Self {
+        self.channels = input; self
     }
     /// <p>List of the matching channels.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelSummary>> {
         &self.channels
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,37 +66,37 @@ impl ListChannelsOutputBuilder {
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`channels`](crate::operation::list_channels::builders::ListChannelsOutputBuilder::channels)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsOutput {
-            channels: self.channels.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channels",
-                    "channels was not specified but it is required when building ListChannelsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels::ListChannelsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_channels::ListChannelsOutput {
+                channels: self.channels
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channels", "channels was not specified but it is required when building ListChannelsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

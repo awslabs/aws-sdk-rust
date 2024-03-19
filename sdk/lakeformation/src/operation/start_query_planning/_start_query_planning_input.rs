@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartQueryPlanningInput {
+pub struct StartQueryPlanningInput  {
     /// <p>A structure containing information about the query plan.</p>
     pub query_planning_context: ::std::option::Option<crate::types::QueryPlanningContext>,
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
 }
-impl StartQueryPlanningInput {
+impl  StartQueryPlanningInput  {
     /// <p>A structure containing information about the query plan.</p>
-    pub fn query_planning_context(&self) -> ::std::option::Option<&crate::types::QueryPlanningContext> {
+    pub fn query_planning_context(&self) -> ::std::option::Option<& crate::types::QueryPlanningContext> {
         self.query_planning_context.as_ref()
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartQueryPlanningInput {
+impl  ::std::fmt::Debug for StartQueryPlanningInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartQueryPlanningInput");
         formatter.field("query_planning_context", &self.query_planning_context);
@@ -49,8 +49,7 @@ impl StartQueryPlanningInputBuilder {
     }
     /// <p>A structure containing information about the query plan.</p>
     pub fn set_query_planning_context(mut self, input: ::std::option::Option<crate::types::QueryPlanningContext>) -> Self {
-        self.query_planning_context = input;
-        self
+        self.query_planning_context = input; self
     }
     /// <p>A structure containing information about the query plan.</p>
     pub fn get_query_planning_context(&self) -> &::std::option::Option<crate::types::QueryPlanningContext> {
@@ -64,22 +63,22 @@ impl StartQueryPlanningInputBuilder {
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
     /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningInput {
-            query_planning_context: self.query_planning_context,
-            query_string: self.query_string,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_query_planning::StartQueryPlanningInput {
+                query_planning_context: self.query_planning_context
+                ,
+                query_string: self.query_string
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartQueryPlanningInputBuilder {
@@ -90,3 +89,4 @@ impl ::std::fmt::Debug for StartQueryPlanningInputBuilder {
         formatter.finish()
     }
 }
+

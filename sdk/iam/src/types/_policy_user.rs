@@ -5,19 +5,19 @@
 /// <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyUser {
+pub struct PolicyUser  {
     /// <p>The name (friendly name, not ARN) identifying the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl PolicyUser {
+impl  PolicyUser  {
     /// <p>The name (friendly name, not ARN) identifying the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PolicyUserBuilder {
     }
     /// <p>The name (friendly name, not ARN) identifying the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name (friendly name, not ARN) identifying the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl PolicyUserBuilder {
     }
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl PolicyUserBuilder {
     /// Consumes the builder and constructs a [`PolicyUser`](crate::types::PolicyUser).
     pub fn build(self) -> crate::types::PolicyUser {
         crate::types::PolicyUser {
-            user_name: self.user_name,
-            user_id: self.user_id,
+            user_name: self.user_name
+            ,
+            user_id: self.user_id
+            ,
         }
     }
 }
+

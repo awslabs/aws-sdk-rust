@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkloadOutput {
+pub struct GetWorkloadOutput  {
     /// <p>Information about the workload.</p>
     pub workload: ::std::option::Option<crate::types::WorkloadData>,
     _request_id: Option<String>,
 }
-impl GetWorkloadOutput {
+impl  GetWorkloadOutput  {
     /// <p>Information about the workload.</p>
-    pub fn workload(&self) -> ::std::option::Option<&crate::types::WorkloadData> {
+    pub fn workload(&self) -> ::std::option::Option<& crate::types::WorkloadData> {
         self.workload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkloadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkloadOutput`](crate::operation::get_workload::GetWorkloadOutput).
     pub fn builder() -> crate::operation::get_workload::builders::GetWorkloadOutputBuilder {
@@ -40,27 +40,28 @@ impl GetWorkloadOutputBuilder {
     }
     /// <p>Information about the workload.</p>
     pub fn set_workload(mut self, input: ::std::option::Option<crate::types::WorkloadData>) -> Self {
-        self.workload = input;
-        self
+        self.workload = input; self
     }
     /// <p>Information about the workload.</p>
     pub fn get_workload(&self) -> &::std::option::Option<crate::types::WorkloadData> {
         &self.workload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWorkloadOutput`](crate::operation::get_workload::GetWorkloadOutput).
     pub fn build(self) -> crate::operation::get_workload::GetWorkloadOutput {
         crate::operation::get_workload::GetWorkloadOutput {
-            workload: self.workload,
+            workload: self.workload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

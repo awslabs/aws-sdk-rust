@@ -3,7 +3,7 @@
 /// <p>Defines a test recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestRecommendation {
+pub struct TestRecommendation  {
     /// <p>Identifier for the test recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Reference identifier for the test recommendation.</p>
@@ -21,66 +21,67 @@ pub struct TestRecommendation {
     /// <p>Description for the test recommendation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The test recommendation items.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationItem>>,
     /// <p>Prerequisite of the test recommendation.</p>
     pub prerequisite: ::std::option::Option<::std::string::String>,
     /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
-    pub depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub depends_on_alarms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Status of the recommended test.</p>
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
-impl TestRecommendation {
+impl  TestRecommendation  {
     /// <p>Identifier for the test recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>Reference identifier for the test recommendation.</p>
-    pub fn reference_id(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_id.deref()
+    pub fn reference_id(&self) -> & str {
+        use std::ops::Deref; self.reference_id.deref()
     }
     /// <p>Name of the Application Component.</p>
-    pub fn app_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_component_name(&self) -> ::std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>Name of the test recommendation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Intent of the test recommendation.</p>
-    pub fn intent(&self) -> ::std::option::Option<&str> {
+    pub fn intent(&self) -> ::std::option::Option<& str> {
         self.intent.as_deref()
     }
     /// <p>Level of risk for this test recommendation.</p>
-    pub fn risk(&self) -> ::std::option::Option<&crate::types::TestRisk> {
+    pub fn risk(&self) -> ::std::option::Option<& crate::types::TestRisk> {
         self.risk.as_ref()
     }
     /// <p>Type of test recommendation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>Description for the test recommendation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The test recommendation items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::RecommendationItem] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::RecommendationItem] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Prerequisite of the test recommendation.</p>
-    pub fn prerequisite(&self) -> ::std::option::Option<&str> {
+    pub fn prerequisite(&self) -> ::std::option::Option<& str> {
         self.prerequisite.as_deref()
     }
     /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on_alarms.is_none()`.
-    pub fn depends_on_alarms(&self) -> &[::std::string::String] {
-        self.depends_on_alarms.as_deref().unwrap_or_default()
+    pub fn depends_on_alarms(&self) -> & [::std::string::String] {
+        self.depends_on_alarms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Status of the recommended test.</p>
-    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<& crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
 }
@@ -103,9 +104,9 @@ pub struct TestRecommendationBuilder {
     pub(crate) risk: ::std::option::Option<crate::types::TestRisk>,
     pub(crate) r#type: ::std::option::Option<crate::types::TestType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationItem>>,
     pub(crate) prerequisite: ::std::option::Option<::std::string::String>,
-    pub(crate) depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) depends_on_alarms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl TestRecommendationBuilder {
@@ -116,8 +117,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Identifier for the test recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>Identifier for the test recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +131,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Reference identifier for the test recommendation.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>Reference identifier for the test recommendation.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +144,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Name of the Application Component.</p>
     pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_component_name = input;
-        self
+        self.app_component_name = input; self
     }
     /// <p>Name of the Application Component.</p>
     pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +157,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Name of the test recommendation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the test recommendation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +170,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Intent of the test recommendation.</p>
     pub fn set_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent = input;
-        self
+        self.intent = input; self
     }
     /// <p>Intent of the test recommendation.</p>
     pub fn get_intent(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +183,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Level of risk for this test recommendation.</p>
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::TestRisk>) -> Self {
-        self.risk = input;
-        self
+        self.risk = input; self
     }
     /// <p>Level of risk for this test recommendation.</p>
     pub fn get_risk(&self) -> &::std::option::Option<crate::types::TestRisk> {
@@ -201,8 +196,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Type of test recommendation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of test recommendation.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TestType> {
@@ -215,8 +209,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Description for the test recommendation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description for the test recommendation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,17 +222,16 @@ impl TestRecommendationBuilder {
     /// <p>The test recommendation items.</p>
     pub fn items(mut self, input: crate::types::RecommendationItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The test recommendation items.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The test recommendation items.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationItem>> {
         &self.items
     }
     /// <p>Prerequisite of the test recommendation.</p>
@@ -249,8 +241,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Prerequisite of the test recommendation.</p>
     pub fn set_prerequisite(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prerequisite = input;
-        self
+        self.prerequisite = input; self
     }
     /// <p>Prerequisite of the test recommendation.</p>
     pub fn get_prerequisite(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,17 +254,16 @@ impl TestRecommendationBuilder {
     /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
     pub fn depends_on_alarms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.depends_on_alarms.unwrap_or_default();
-        v.push(input.into());
-        self.depends_on_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.depends_on_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
-    pub fn set_depends_on_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.depends_on_alarms = input;
-        self
+    pub fn set_depends_on_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.depends_on_alarms = input; self
     }
     /// <p>A list of recommended alarms that are used in the test and must be exported before or with the test.</p>
-    pub fn get_depends_on_alarms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_depends_on_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.depends_on_alarms
     }
     /// <p>Status of the recommended test.</p>
@@ -283,8 +273,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>Status of the recommended test.</p>
     pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
-        self.recommendation_status = input;
-        self
+        self.recommendation_status = input; self
     }
     /// <p>Status of the recommended test.</p>
     pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
@@ -294,24 +283,37 @@ impl TestRecommendationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`reference_id`](crate::types::builders::TestRecommendationBuilder::reference_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TestRecommendation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TestRecommendation {
-            recommendation_id: self.recommendation_id,
-            reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_id",
-                    "reference_id was not specified but it is required when building TestRecommendation",
-                )
-            })?,
-            app_component_name: self.app_component_name,
-            name: self.name,
-            intent: self.intent,
-            risk: self.risk,
-            r#type: self.r#type,
-            description: self.description,
-            items: self.items,
-            prerequisite: self.prerequisite,
-            depends_on_alarms: self.depends_on_alarms,
-            recommendation_status: self.recommendation_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TestRecommendation {
+                recommendation_id: self.recommendation_id
+                ,
+                reference_id: self.reference_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_id", "reference_id was not specified but it is required when building TestRecommendation")
+                    )?
+                ,
+                app_component_name: self.app_component_name
+                ,
+                name: self.name
+                ,
+                intent: self.intent
+                ,
+                risk: self.risk
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                items: self.items
+                ,
+                prerequisite: self.prerequisite
+                ,
+                depends_on_alarms: self.depends_on_alarms
+                ,
+                recommendation_status: self.recommendation_status
+                ,
+            }
+        )
     }
 }
+

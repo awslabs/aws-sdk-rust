@@ -3,19 +3,19 @@
 /// <p>The access configuration information for the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessConfigRequest {
+pub struct CreateAccessConfigRequest  {
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time. The default value is <code>true</code>.</p>
     pub bootstrap_cluster_creator_admin_permissions: ::std::option::Option<bool>,
     /// <p>The desired authentication mode for the cluster. If you create a cluster by using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web Services Management Console, the default value is <code>API_AND_CONFIG_MAP</code>.</p>
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
-impl CreateAccessConfigRequest {
+impl  CreateAccessConfigRequest  {
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time. The default value is <code>true</code>.</p>
     pub fn bootstrap_cluster_creator_admin_permissions(&self) -> ::std::option::Option<bool> {
         self.bootstrap_cluster_creator_admin_permissions
     }
     /// <p>The desired authentication mode for the cluster. If you create a cluster by using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web Services Management Console, the default value is <code>API_AND_CONFIG_MAP</code>.</p>
-    pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> ::std::option::Option<& crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateAccessConfigRequestBuilder {
     }
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time. The default value is <code>true</code>.</p>
     pub fn set_bootstrap_cluster_creator_admin_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bootstrap_cluster_creator_admin_permissions = input;
-        self
+        self.bootstrap_cluster_creator_admin_permissions = input; self
     }
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time. The default value is <code>true</code>.</p>
     pub fn get_bootstrap_cluster_creator_admin_permissions(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl CreateAccessConfigRequestBuilder {
     }
     /// <p>The desired authentication mode for the cluster. If you create a cluster by using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web Services Management Console, the default value is <code>API_AND_CONFIG_MAP</code>.</p>
     pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
-        self.authentication_mode = input;
-        self
+        self.authentication_mode = input; self
     }
     /// <p>The desired authentication mode for the cluster. If you create a cluster by using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web Services Management Console, the default value is <code>API_AND_CONFIG_MAP</code>.</p>
     pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
@@ -65,8 +63,11 @@ impl CreateAccessConfigRequestBuilder {
     /// Consumes the builder and constructs a [`CreateAccessConfigRequest`](crate::types::CreateAccessConfigRequest).
     pub fn build(self) -> crate::types::CreateAccessConfigRequest {
         crate::types::CreateAccessConfigRequest {
-            bootstrap_cluster_creator_admin_permissions: self.bootstrap_cluster_creator_admin_permissions,
-            authentication_mode: self.authentication_mode,
+            bootstrap_cluster_creator_admin_permissions: self.bootstrap_cluster_creator_admin_permissions
+            ,
+            authentication_mode: self.authentication_mode
+            ,
         }
     }
 }
+

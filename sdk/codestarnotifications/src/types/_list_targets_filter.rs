@@ -3,21 +3,20 @@
 /// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTargetsFilter {
+pub struct ListTargetsFilter  {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     pub name: crate::types::ListTargetsFilterName,
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub value: ::std::string::String,
 }
-impl ListTargetsFilter {
+impl  ListTargetsFilter  {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub fn name(&self) -> &crate::types::ListTargetsFilterName {
+    pub fn name(&self) -> & crate::types::ListTargetsFilterName {
         &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ListTargetsFilter {
@@ -43,8 +42,7 @@ impl ListTargetsFilterBuilder {
     }
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListTargetsFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ListTargetsFilterName> {
@@ -58,8 +56,7 @@ impl ListTargetsFilterBuilder {
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl ListTargetsFilterBuilder {
     /// - [`name`](crate::types::builders::ListTargetsFilterBuilder::name)
     /// - [`value`](crate::types::builders::ListTargetsFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ListTargetsFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListTargetsFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ListTargetsFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ListTargetsFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListTargetsFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ListTargetsFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ListTargetsFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

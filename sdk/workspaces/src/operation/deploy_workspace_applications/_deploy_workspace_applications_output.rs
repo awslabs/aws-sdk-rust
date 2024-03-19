@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeployWorkspaceApplicationsOutput {
+pub struct DeployWorkspaceApplicationsOutput  {
     /// <p>The list of deployed associations and information about them.</p>
     pub deployment: ::std::option::Option<crate::types::WorkSpaceApplicationDeployment>,
     _request_id: Option<String>,
 }
-impl DeployWorkspaceApplicationsOutput {
+impl  DeployWorkspaceApplicationsOutput  {
     /// <p>The list of deployed associations and information about them.</p>
-    pub fn deployment(&self) -> ::std::option::Option<&crate::types::WorkSpaceApplicationDeployment> {
+    pub fn deployment(&self) -> ::std::option::Option<& crate::types::WorkSpaceApplicationDeployment> {
         self.deployment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeployWorkspaceApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeployWorkspaceApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DeployWorkspaceApplicationsOutput`](crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsOutput).
     pub fn builder() -> crate::operation::deploy_workspace_applications::builders::DeployWorkspaceApplicationsOutputBuilder {
@@ -40,27 +40,28 @@ impl DeployWorkspaceApplicationsOutputBuilder {
     }
     /// <p>The list of deployed associations and information about them.</p>
     pub fn set_deployment(mut self, input: ::std::option::Option<crate::types::WorkSpaceApplicationDeployment>) -> Self {
-        self.deployment = input;
-        self
+        self.deployment = input; self
     }
     /// <p>The list of deployed associations and information about them.</p>
     pub fn get_deployment(&self) -> &::std::option::Option<crate::types::WorkSpaceApplicationDeployment> {
         &self.deployment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeployWorkspaceApplicationsOutput`](crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsOutput).
     pub fn build(self) -> crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsOutput {
         crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsOutput {
-            deployment: self.deployment,
+            deployment: self.deployment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

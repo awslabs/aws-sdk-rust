@@ -6,7 +6,7 @@
 /// <p>Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Headers {
+pub struct Headers  {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
@@ -26,16 +26,16 @@ pub struct Headers {
     /// </ul>
     pub oversize_handling: crate::types::OversizeHandling,
 }
-impl Headers {
+impl  Headers  {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
-    pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::HeaderMatchPattern> {
+    pub fn match_pattern(&self) -> ::std::option::Option<& crate::types::HeaderMatchPattern> {
         self.match_pattern.as_ref()
     }
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
-    pub fn match_scope(&self) -> &crate::types::MapMatchScope {
+    pub fn match_scope(&self) -> & crate::types::MapMatchScope {
         &self.match_scope
     }
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
@@ -48,7 +48,7 @@ impl Headers {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    pub fn oversize_handling(&self) -> &crate::types::OversizeHandling {
+    pub fn oversize_handling(&self) -> & crate::types::OversizeHandling {
         &self.oversize_handling
     }
 }
@@ -80,8 +80,7 @@ impl HeadersBuilder {
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
     pub fn set_match_pattern(mut self, input: ::std::option::Option<crate::types::HeaderMatchPattern>) -> Self {
-        self.match_pattern = input;
-        self
+        self.match_pattern = input; self
     }
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
@@ -99,8 +98,7 @@ impl HeadersBuilder {
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
     pub fn set_match_scope(mut self, input: ::std::option::Option<crate::types::MapMatchScope>) -> Self {
-        self.match_scope = input;
-        self
+        self.match_scope = input; self
     }
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
@@ -133,8 +131,7 @@ impl HeadersBuilder {
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
-        self.oversize_handling = input;
-        self
+        self.oversize_handling = input; self
     }
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
@@ -154,20 +151,22 @@ impl HeadersBuilder {
     /// - [`match_scope`](crate::types::builders::HeadersBuilder::match_scope)
     /// - [`oversize_handling`](crate::types::builders::HeadersBuilder::oversize_handling)
     pub fn build(self) -> ::std::result::Result<crate::types::Headers, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Headers {
-            match_pattern: self.match_pattern,
-            match_scope: self.match_scope.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_scope",
-                    "match_scope was not specified but it is required when building Headers",
-                )
-            })?,
-            oversize_handling: self.oversize_handling.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "oversize_handling",
-                    "oversize_handling was not specified but it is required when building Headers",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Headers {
+                match_pattern: self.match_pattern
+                ,
+                match_scope: self.match_scope
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_scope", "match_scope was not specified but it is required when building Headers")
+                    )?
+                ,
+                oversize_handling: self.oversize_handling
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("oversize_handling", "oversize_handling was not specified but it is required when building Headers")
+                    )?
+                ,
+            }
+        )
     }
 }
+

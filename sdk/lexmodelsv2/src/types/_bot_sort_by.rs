@@ -3,19 +3,19 @@
 /// <p>Specifies attributes for sorting a list of bots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotSortBy {
+pub struct BotSortBy  {
     /// <p>The attribute to use to sort the list of bots.</p>
     pub attribute: crate::types::BotSortAttribute,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub order: crate::types::SortOrder,
 }
-impl BotSortBy {
+impl  BotSortBy  {
     /// <p>The attribute to use to sort the list of bots.</p>
-    pub fn attribute(&self) -> &crate::types::BotSortAttribute {
+    pub fn attribute(&self) -> & crate::types::BotSortAttribute {
         &self.attribute
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl BotSortByBuilder {
     }
     /// <p>The attribute to use to sort the list of bots.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BotSortAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute to use to sort the list of bots.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::BotSortAttribute> {
@@ -57,8 +56,7 @@ impl BotSortByBuilder {
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl BotSortByBuilder {
     /// - [`attribute`](crate::types::builders::BotSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::BotSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::BotSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building BotSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building BotSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building BotSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building BotSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

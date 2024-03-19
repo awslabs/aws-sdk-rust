@@ -18,3 +18,4 @@ pub use crate::types::error::_type_deprecated_fault::TypeDeprecatedFaultBuilder;
 pub use crate::types::error::_default_undefined_fault::DefaultUndefinedFaultBuilder;
 
 pub use crate::types::error::_domain_deprecated_fault::DomainDeprecatedFaultBuilder;
+

@@ -3,7 +3,7 @@
 /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     pub template_name: ::std::string::String,
     /// <p>The subject line of the email.</p>
@@ -13,22 +13,21 @@ pub struct Template {
     /// <p>The HTML body of the email.</p>
     pub html_part: ::std::option::Option<::std::string::String>,
 }
-impl Template {
+impl  Template  {
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The subject line of the email.</p>
-    pub fn subject_part(&self) -> ::std::option::Option<&str> {
+    pub fn subject_part(&self) -> ::std::option::Option<& str> {
         self.subject_part.as_deref()
     }
     /// <p>The email body that is visible to recipients whose email clients do not display HTML content.</p>
-    pub fn text_part(&self) -> ::std::option::Option<&str> {
+    pub fn text_part(&self) -> ::std::option::Option<& str> {
         self.text_part.as_deref()
     }
     /// <p>The HTML body of the email.</p>
-    pub fn html_part(&self) -> ::std::option::Option<&str> {
+    pub fn html_part(&self) -> ::std::option::Option<& str> {
         self.html_part.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl TemplateBuilder {
     }
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl TemplateBuilder {
     }
     /// <p>The subject line of the email.</p>
     pub fn set_subject_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_part = input;
-        self
+        self.subject_part = input; self
     }
     /// <p>The subject line of the email.</p>
     pub fn get_subject_part(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl TemplateBuilder {
     }
     /// <p>The email body that is visible to recipients whose email clients do not display HTML content.</p>
     pub fn set_text_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_part = input;
-        self
+        self.text_part = input; self
     }
     /// <p>The email body that is visible to recipients whose email clients do not display HTML content.</p>
     pub fn get_text_part(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl TemplateBuilder {
     }
     /// <p>The HTML body of the email.</p>
     pub fn set_html_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.html_part = input;
-        self
+        self.html_part = input; self
     }
     /// <p>The HTML body of the email.</p>
     pub fn get_html_part(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl TemplateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`template_name`](crate::types::builders::TemplateBuilder::template_name)
     pub fn build(self) -> ::std::result::Result<crate::types::Template, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Template {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building Template",
-                )
-            })?,
-            subject_part: self.subject_part,
-            text_part: self.text_part,
-            html_part: self.html_part,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Template {
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building Template")
+                    )?
+                ,
+                subject_part: self.subject_part
+                ,
+                text_part: self.text_part
+                ,
+                html_part: self.html_part
+                ,
+            }
+        )
     }
 }
+

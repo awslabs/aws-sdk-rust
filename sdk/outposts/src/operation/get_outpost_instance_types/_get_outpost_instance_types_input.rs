@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOutpostInstanceTypesInput {
+pub struct GetOutpostInstanceTypesInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token.</p>
@@ -10,13 +10,13 @@ pub struct GetOutpostInstanceTypesInput {
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetOutpostInstanceTypesInput {
+impl  GetOutpostInstanceTypesInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum page size.</p>
@@ -48,8 +48,7 @@ impl GetOutpostInstanceTypesInputBuilder {
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetOutpostInstanceTypesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl GetOutpostInstanceTypesInputBuilder {
     }
     /// <p>The maximum page size.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum page size.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetOutpostInstanceTypesInput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput {
-            outpost_id: self.outpost_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput {
+                outpost_id: self.outpost_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

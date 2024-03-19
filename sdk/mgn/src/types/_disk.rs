@@ -3,15 +3,15 @@
 /// <p>The disk identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Disk {
+pub struct Disk  {
     /// <p>The disk or device name.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
     pub bytes: i64,
 }
-impl Disk {
+impl  Disk  {
     /// <p>The disk or device name.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The amount of storage on the disk in bytes.</p>
@@ -41,8 +41,7 @@ impl DiskBuilder {
     }
     /// <p>The disk or device name.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The disk or device name.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DiskBuilder {
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn get_bytes(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl DiskBuilder {
     /// Consumes the builder and constructs a [`Disk`](crate::types::Disk).
     pub fn build(self) -> crate::types::Disk {
         crate::types::Disk {
-            device_name: self.device_name,
-            bytes: self.bytes.unwrap_or_default(),
+            device_name: self.device_name
+            ,
+            bytes: self.bytes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

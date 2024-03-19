@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSecurityInput {
+pub struct UpdateSecurityInput  {
     /// <p>Includes all client authentication related information.</p>
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -12,21 +12,21 @@ pub struct UpdateSecurityInput {
     /// <p>Includes all encryption-related information.</p>
     pub encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
 }
-impl UpdateSecurityInput {
+impl  UpdateSecurityInput  {
     /// <p>Includes all client authentication related information.</p>
-    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
+    pub fn client_authentication(&self) -> ::std::option::Option<& crate::types::ClientAuthentication> {
         self.client_authentication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn encryption_info(&self) -> ::std::option::Option<&crate::types::EncryptionInfo> {
+    pub fn encryption_info(&self) -> ::std::option::Option<& crate::types::EncryptionInfo> {
         self.encryption_info.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl UpdateSecurityInputBuilder {
     }
     /// <p>Includes all client authentication related information.</p>
     pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
-        self.client_authentication = input;
-        self
+        self.client_authentication = input; self
     }
     /// <p>Includes all client authentication related information.</p>
     pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
@@ -69,8 +68,7 @@ impl UpdateSecurityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateSecurityInputBuilder {
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl UpdateSecurityInputBuilder {
     }
     /// <p>Includes all encryption-related information.</p>
     pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
-        self.encryption_info = input;
-        self
+        self.encryption_info = input; self
     }
     /// <p>Includes all encryption-related information.</p>
     pub fn get_encryption_info(&self) -> &::std::option::Option<crate::types::EncryptionInfo> {
         &self.encryption_info
     }
     /// Consumes the builder and constructs a [`UpdateSecurityInput`](crate::operation::update_security::UpdateSecurityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_security::UpdateSecurityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_security::UpdateSecurityInput {
-            client_authentication: self.client_authentication,
-            cluster_arn: self.cluster_arn,
-            current_version: self.current_version,
-            encryption_info: self.encryption_info,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_security::UpdateSecurityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_security::UpdateSecurityInput {
+                client_authentication: self.client_authentication
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                current_version: self.current_version
+                ,
+                encryption_info: self.encryption_info
+                ,
+            }
+        )
     }
 }
+

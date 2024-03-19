@@ -4,22 +4,23 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KmsKeyConfiguration {
+pub struct KmsKeyConfiguration  {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-    pub key_policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub key_policies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    pub grants: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantConfiguration>>,
+    pub grants: ::std::option::Option<::std::vec::Vec::<crate::types::KmsGrantConfiguration>>,
 }
-impl KmsKeyConfiguration {
+impl  KmsKeyConfiguration  {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-    pub fn key_policies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn key_policies(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.key_policies.as_ref()
     }
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grants.is_none()`.
-    pub fn grants(&self) -> &[crate::types::KmsGrantConfiguration] {
-        self.grants.as_deref().unwrap_or_default()
+    pub fn grants(&self) -> & [crate::types::KmsGrantConfiguration] {
+        self.grants.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KmsKeyConfiguration {
@@ -33,8 +34,8 @@ impl KmsKeyConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KmsKeyConfigurationBuilder {
-    pub(crate) key_policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantConfiguration>>,
+    pub(crate) key_policies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) grants: ::std::option::Option<::std::vec::Vec::<crate::types::KmsGrantConfiguration>>,
 }
 impl KmsKeyConfigurationBuilder {
     /// Adds a key-value pair to `key_policies`.
@@ -44,20 +45,16 @@ impl KmsKeyConfigurationBuilder {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
     pub fn key_policies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.key_policies.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.key_policies = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.key_policies = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-    pub fn set_key_policies(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.key_policies = input;
-        self
+    pub fn set_key_policies(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.key_policies = input; self
     }
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-    pub fn get_key_policies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_key_policies(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.key_policies
     }
     /// Appends an item to `grants`.
@@ -67,24 +64,26 @@ impl KmsKeyConfigurationBuilder {
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
     pub fn grants(mut self, input: crate::types::KmsGrantConfiguration) -> Self {
         let mut v = self.grants.unwrap_or_default();
-        v.push(input);
-        self.grants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantConfiguration>>) -> Self {
-        self.grants = input;
-        self
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KmsGrantConfiguration>>) -> Self {
+        self.grants = input; self
     }
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KmsGrantConfiguration>> {
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KmsGrantConfiguration>> {
         &self.grants
     }
     /// Consumes the builder and constructs a [`KmsKeyConfiguration`](crate::types::KmsKeyConfiguration).
     pub fn build(self) -> crate::types::KmsKeyConfiguration {
         crate::types::KmsKeyConfiguration {
-            key_policies: self.key_policies,
-            grants: self.grants,
+            key_policies: self.key_policies
+            ,
+            grants: self.grants
+            ,
         }
     }
 }
+

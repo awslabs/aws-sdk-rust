@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagOutput {
+pub struct UntagOutput  {
     /// <p>The ARN of the resource group from which tags have been removed.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The keys of the tags that were removed.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UntagOutput {
+impl  UntagOutput  {
     /// <p>The ARN of the resource group from which tags have been removed.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The keys of the tags that were removed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
-    pub fn keys(&self) -> &[::std::string::String] {
-        self.keys.as_deref().unwrap_or_default()
+    pub fn keys(&self) -> & [::std::string::String] {
+        self.keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UntagOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UntagOutput {
     /// Creates a new builder-style object to manufacture [`UntagOutput`](crate::operation::untag::UntagOutput).
     pub fn builder() -> crate::operation::untag::builders::UntagOutputBuilder {
@@ -38,7 +39,7 @@ impl UntagOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UntagOutputBuilder {
@@ -49,8 +50,7 @@ impl UntagOutputBuilder {
     }
     /// <p>The ARN of the resource group from which tags have been removed.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the resource group from which tags have been removed.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl UntagOutputBuilder {
     /// <p>The keys of the tags that were removed.</p>
     pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The keys of the tags that were removed.</p>
-    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The keys of the tags that were removed.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UntagOutput`](crate::operation::untag::UntagOutput).
     pub fn build(self) -> crate::operation::untag::UntagOutput {
         crate::operation::untag::UntagOutput {
-            arn: self.arn,
-            keys: self.keys,
+            arn: self.arn
+            ,
+            keys: self.keys
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

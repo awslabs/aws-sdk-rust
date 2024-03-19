@@ -3,7 +3,7 @@
 /// <p>Describes the settings for the health check that App Runner performs to monitor the health of a service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheckConfiguration {
+pub struct HealthCheckConfiguration  {
     /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
     /// <p>Default: <code>TCP</code></p>
@@ -25,17 +25,17 @@ pub struct HealthCheckConfiguration {
     /// <p>Default: <code>5</code></p>
     pub unhealthy_threshold: ::std::option::Option<i32>,
 }
-impl HealthCheckConfiguration {
+impl  HealthCheckConfiguration  {
     /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
     /// <p>Default: <code>TCP</code></p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::HealthCheckProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::HealthCheckProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The URL that health check requests are sent to.</p>
     /// <p><code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.</p>
     /// <p>Default: <code>"/"</code></p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The time interval, in seconds, between health checks.</p>
@@ -89,8 +89,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
     /// <p>Default: <code>TCP</code></p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
@@ -109,8 +108,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p><code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.</p>
     /// <p>Default: <code>"/"</code></p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The URL that health check requests are sent to.</p>
     /// <p><code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.</p>
@@ -127,8 +125,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p>The time interval, in seconds, between health checks.</p>
     /// <p>Default: <code>5</code></p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The time interval, in seconds, between health checks.</p>
     /// <p>Default: <code>5</code></p>
@@ -144,8 +141,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p>The time, in seconds, to wait for a health check response before deciding it failed.</p>
     /// <p>Default: <code>2</code></p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The time, in seconds, to wait for a health check response before deciding it failed.</p>
     /// <p>Default: <code>2</code></p>
@@ -161,8 +157,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p>The number of consecutive checks that must succeed before App Runner decides that the service is healthy.</p>
     /// <p>Default: <code>1</code></p>
     pub fn set_healthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_threshold = input;
-        self
+        self.healthy_threshold = input; self
     }
     /// <p>The number of consecutive checks that must succeed before App Runner decides that the service is healthy.</p>
     /// <p>Default: <code>1</code></p>
@@ -178,8 +173,7 @@ impl HealthCheckConfigurationBuilder {
     /// <p>The number of consecutive checks that must fail before App Runner decides that the service is unhealthy.</p>
     /// <p>Default: <code>5</code></p>
     pub fn set_unhealthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_threshold = input;
-        self
+        self.unhealthy_threshold = input; self
     }
     /// <p>The number of consecutive checks that must fail before App Runner decides that the service is unhealthy.</p>
     /// <p>Default: <code>5</code></p>
@@ -189,12 +183,19 @@ impl HealthCheckConfigurationBuilder {
     /// Consumes the builder and constructs a [`HealthCheckConfiguration`](crate::types::HealthCheckConfiguration).
     pub fn build(self) -> crate::types::HealthCheckConfiguration {
         crate::types::HealthCheckConfiguration {
-            protocol: self.protocol,
-            path: self.path,
-            interval: self.interval,
-            timeout: self.timeout,
-            healthy_threshold: self.healthy_threshold,
-            unhealthy_threshold: self.unhealthy_threshold,
+            protocol: self.protocol
+            ,
+            path: self.path
+            ,
+            interval: self.interval
+            ,
+            timeout: self.timeout
+            ,
+            healthy_threshold: self.healthy_threshold
+            ,
+            unhealthy_threshold: self.unhealthy_threshold
+            ,
         }
     }
 }
+

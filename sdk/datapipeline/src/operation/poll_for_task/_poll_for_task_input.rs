@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for PollForTask.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PollForTaskInput {
+pub struct PollForTaskInput  {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub worker_group: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name of the calling task runner.</p>
@@ -11,17 +11,17 @@ pub struct PollForTaskInput {
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
     pub instance_identity: ::std::option::Option<crate::types::InstanceIdentity>,
 }
-impl PollForTaskInput {
+impl  PollForTaskInput  {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    pub fn worker_group(&self) -> ::std::option::Option<&str> {
+    pub fn worker_group(&self) -> ::std::option::Option<& str> {
         self.worker_group.as_deref()
     }
     /// <p>The public DNS name of the calling task runner.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-    pub fn instance_identity(&self) -> ::std::option::Option<&crate::types::InstanceIdentity> {
+    pub fn instance_identity(&self) -> ::std::option::Option<& crate::types::InstanceIdentity> {
         self.instance_identity.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl PollForTaskInputBuilder {
     }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn set_worker_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_group = input;
-        self
+        self.worker_group = input; self
     }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn get_worker_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PollForTaskInputBuilder {
     }
     /// <p>The public DNS name of the calling task runner.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The public DNS name of the calling task runner.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl PollForTaskInputBuilder {
     }
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
     pub fn set_instance_identity(mut self, input: ::std::option::Option<crate::types::InstanceIdentity>) -> Self {
-        self.instance_identity = input;
-        self
+        self.instance_identity = input; self
     }
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
     pub fn get_instance_identity(&self) -> &::std::option::Option<crate::types::InstanceIdentity> {
@@ -86,10 +83,16 @@ impl PollForTaskInputBuilder {
     }
     /// Consumes the builder and constructs a [`PollForTaskInput`](crate::operation::poll_for_task::PollForTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_task::PollForTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::poll_for_task::PollForTaskInput {
-            worker_group: self.worker_group,
-            hostname: self.hostname,
-            instance_identity: self.instance_identity,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::poll_for_task::PollForTaskInput {
+                worker_group: self.worker_group
+                ,
+                hostname: self.hostname
+                ,
+                instance_identity: self.instance_identity
+                ,
+            }
+        )
     }
 }
+

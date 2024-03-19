@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUserInput {
+pub struct GetUserInput  {
     /// <p>The identifier of the application connected to the user.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The user email address attached to the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl GetUserInput {
+impl  GetUserInput  {
     /// <p>The identifier of the application connected to the user.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The user email address attached to the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetUserInputBuilder {
     }
     /// <p>The identifier of the application connected to the user.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application connected to the user.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetUserInputBuilder {
     }
     /// <p>The user email address attached to the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user email address attached to the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_user::GetUserInput {
-            application_id: self.application_id,
-            user_id: self.user_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_user::GetUserInput {
+                application_id: self.application_id
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

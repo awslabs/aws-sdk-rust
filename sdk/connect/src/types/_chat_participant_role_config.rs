@@ -3,15 +3,14 @@
 /// <p>Configuration information for the chat participant role.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChatParticipantRoleConfig {
+pub struct ChatParticipantRoleConfig  {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub participant_timer_config_list: ::std::vec::Vec<crate::types::ParticipantTimerConfiguration>,
+    pub participant_timer_config_list: ::std::vec::Vec::<crate::types::ParticipantTimerConfiguration>,
 }
-impl ChatParticipantRoleConfig {
+impl  ChatParticipantRoleConfig  {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn participant_timer_config_list(&self) -> &[crate::types::ParticipantTimerConfiguration] {
-        use std::ops::Deref;
-        self.participant_timer_config_list.deref()
+    pub fn participant_timer_config_list(&self) -> & [crate::types::ParticipantTimerConfiguration] {
+        use std::ops::Deref; self.participant_timer_config_list.deref()
     }
 }
 impl ChatParticipantRoleConfig {
@@ -25,7 +24,7 @@ impl ChatParticipantRoleConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChatParticipantRoleConfigBuilder {
-    pub(crate) participant_timer_config_list: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
+    pub(crate) participant_timer_config_list: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTimerConfiguration>>,
 }
 impl ChatParticipantRoleConfigBuilder {
     /// Appends an item to `participant_timer_config_list`.
@@ -35,33 +34,31 @@ impl ChatParticipantRoleConfigBuilder {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
     pub fn participant_timer_config_list(mut self, input: crate::types::ParticipantTimerConfiguration) -> Self {
         let mut v = self.participant_timer_config_list.unwrap_or_default();
-        v.push(input);
-        self.participant_timer_config_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.participant_timer_config_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn set_participant_timer_config_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
-    ) -> Self {
-        self.participant_timer_config_list = input;
-        self
+    pub fn set_participant_timer_config_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTimerConfiguration>>) -> Self {
+        self.participant_timer_config_list = input; self
     }
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn get_participant_timer_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>> {
+    pub fn get_participant_timer_config_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTimerConfiguration>> {
         &self.participant_timer_config_list
     }
     /// Consumes the builder and constructs a [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`participant_timer_config_list`](crate::types::builders::ChatParticipantRoleConfigBuilder::participant_timer_config_list)
     pub fn build(self) -> ::std::result::Result<crate::types::ChatParticipantRoleConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChatParticipantRoleConfig {
-            participant_timer_config_list: self.participant_timer_config_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_timer_config_list",
-                    "participant_timer_config_list was not specified but it is required when building ChatParticipantRoleConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChatParticipantRoleConfig {
+                participant_timer_config_list: self.participant_timer_config_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_timer_config_list", "participant_timer_config_list was not specified but it is required when building ChatParticipantRoleConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

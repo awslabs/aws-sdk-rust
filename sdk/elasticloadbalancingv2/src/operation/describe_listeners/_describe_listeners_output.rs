@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeListenersOutput {
+pub struct DescribeListenersOutput  {
     /// <p>Information about the listeners.</p>
-    pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
+    pub listeners: ::std::option::Option<::std::vec::Vec::<crate::types::Listener>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeListenersOutput {
+impl  DescribeListenersOutput  {
     /// <p>Information about the listeners.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
-    pub fn listeners(&self) -> &[crate::types::Listener] {
-        self.listeners.as_deref().unwrap_or_default()
+    pub fn listeners(&self) -> & [crate::types::Listener] {
+        self.listeners.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeListenersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeListenersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
     pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeListenersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenersOutputBuilder {
-    pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
+    pub(crate) listeners: ::std::option::Option<::std::vec::Vec::<crate::types::Listener>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeListenersOutputBuilder {
     /// <p>Information about the listeners.</p>
     pub fn listeners(mut self, input: crate::types::Listener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
-        v.push(input);
-        self.listeners = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.listeners = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the listeners.</p>
-    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
-        self.listeners = input;
-        self
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Listener>>) -> Self {
+        self.listeners = input; self
     }
     /// <p>Information about the listeners.</p>
-    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Listener>> {
+    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Listener>> {
         &self.listeners
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -69,28 +69,30 @@ impl DescribeListenersOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
     pub fn build(self) -> crate::operation::describe_listeners::DescribeListenersOutput {
         crate::operation::describe_listeners::DescribeListenersOutput {
-            listeners: self.listeners,
-            next_marker: self.next_marker,
+            listeners: self.listeners
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

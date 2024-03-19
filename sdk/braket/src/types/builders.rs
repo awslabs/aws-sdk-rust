@@ -42,3 +42,4 @@ pub use crate::types::_device_queue_info::DeviceQueueInfoBuilder;
 pub use crate::types::_device_summary::DeviceSummaryBuilder;
 
 pub use crate::types::_search_devices_filter::SearchDevicesFilterBuilder;
+

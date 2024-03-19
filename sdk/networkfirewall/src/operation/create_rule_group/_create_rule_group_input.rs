@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleGroupInput {
+pub struct CreateRuleGroupInput  {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the rule group rules.</p><note>
@@ -38,7 +38,7 @@ pub struct CreateRuleGroupInput {
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group.</p>
     pub capacity: ::std::option::Option<i32>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
@@ -50,30 +50,30 @@ pub struct CreateRuleGroupInput {
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule group for you. To run the stateless rule group analyzer without creating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub analyze_rule_group: ::std::option::Option<bool>,
 }
-impl CreateRuleGroupInput {
+impl  CreateRuleGroupInput  {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_name(&self) -> ::std::option::Option<& str> {
         self.rule_group_name.as_deref()
     }
     /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
-    pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroup> {
+    pub fn rule_group(&self) -> ::std::option::Option<& crate::types::RuleGroup> {
         self.rule_group.as_ref()
     }
     /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
-    pub fn rules(&self) -> ::std::option::Option<&str> {
+    pub fn rules(&self) -> ::std::option::Option<& str> {
         self.rules.as_deref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the rule group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
@@ -98,10 +98,11 @@ impl CreateRuleGroupInput {
         self.capacity
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
@@ -110,11 +111,11 @@ impl CreateRuleGroupInput {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    pub fn source_metadata(&self) -> ::std::option::Option<&crate::types::SourceMetadata> {
+    pub fn source_metadata(&self) -> ::std::option::Option<& crate::types::SourceMetadata> {
         self.source_metadata.as_ref()
     }
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule group for you. To run the stateless rule group analyzer without creating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
@@ -139,7 +140,7 @@ pub struct CreateRuleGroupInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RuleGroupType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) capacity: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
@@ -154,8 +155,7 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_name = input;
-        self
+        self.rule_group_name = input; self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +172,7 @@ impl CreateRuleGroupInputBuilder {
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
-        self.rule_group = input;
-        self
+        self.rule_group = input; self
     }
     /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
@@ -194,8 +193,7 @@ impl CreateRuleGroupInputBuilder {
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rules = input;
-        self
+        self.rules = input; self
     }
     /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
@@ -212,8 +210,7 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
@@ -226,8 +223,7 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>A description of the rule group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the rule group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,8 +271,7 @@ impl CreateRuleGroupInputBuilder {
     /// <p><b>Capacity for a stateful rule group</b></p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p><note>
@@ -306,17 +301,16 @@ impl CreateRuleGroupInputBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
@@ -330,8 +324,7 @@ impl CreateRuleGroupInputBuilder {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
@@ -346,8 +339,7 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -360,8 +352,7 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::SourceMetadata>) -> Self {
-        self.source_metadata = input;
-        self
+        self.source_metadata = input; self
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
@@ -374,29 +365,40 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule group for you. To run the stateless rule group analyzer without creating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub fn set_analyze_rule_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.analyze_rule_group = input;
-        self
+        self.analyze_rule_group = input; self
     }
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule group for you. To run the stateless rule group analyzer without creating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
         &self.analyze_rule_group
     }
     /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_rule_group::CreateRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_rule_group::CreateRuleGroupInput {
-            rule_group_name: self.rule_group_name,
-            rule_group: self.rule_group,
-            rules: self.rules,
-            r#type: self.r#type,
-            description: self.description,
-            capacity: self.capacity,
-            tags: self.tags,
-            dry_run: self.dry_run,
-            encryption_configuration: self.encryption_configuration,
-            source_metadata: self.source_metadata,
-            analyze_rule_group: self.analyze_rule_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule_group::CreateRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_rule_group::CreateRuleGroupInput {
+                rule_group_name: self.rule_group_name
+                ,
+                rule_group: self.rule_group
+                ,
+                rules: self.rules
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                capacity: self.capacity
+                ,
+                tags: self.tags
+                ,
+                dry_run: self.dry_run
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                source_metadata: self.source_metadata
+                ,
+                analyze_rule_group: self.analyze_rule_group
+                ,
+            }
+        )
     }
 }
+

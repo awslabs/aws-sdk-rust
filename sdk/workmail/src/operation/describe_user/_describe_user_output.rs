@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>The identifier for the described user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the user.</p>
@@ -51,53 +51,53 @@ pub struct DescribeUserOutput {
     pub office: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeUserOutput {
+impl  DescribeUserOutput  {
     /// <p>The identifier for the described user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name for the user.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The email of the user.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, SYSTEM_USER, and REMOTE_USER.</p>
-    pub fn user_role(&self) -> ::std::option::Option<&crate::types::UserRole> {
+    pub fn user_role(&self) -> ::std::option::Option<& crate::types::UserRole> {
         self.user_role.as_ref()
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
-    pub fn enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
-    pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
     /// <p>The date when the mailbox was created for the user.</p>
-    pub fn mailbox_provisioned_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn mailbox_provisioned_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.mailbox_provisioned_date.as_ref()
     }
     /// <p>The date when the mailbox was removed for the user.</p>
-    pub fn mailbox_deprovisioned_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn mailbox_deprovisioned_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.mailbox_deprovisioned_date.as_ref()
     }
     /// <p>First name of the user.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>Last name of the user.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>If enabled, the user is hidden from the global address list.</p>
@@ -105,47 +105,47 @@ impl DescribeUserOutput {
         self.hidden_from_global_address_list
     }
     /// <p>Initials of the user.</p>
-    pub fn initials(&self) -> ::std::option::Option<&str> {
+    pub fn initials(&self) -> ::std::option::Option<& str> {
         self.initials.as_deref()
     }
     /// <p>User's contact number.</p>
-    pub fn telephone(&self) -> ::std::option::Option<&str> {
+    pub fn telephone(&self) -> ::std::option::Option<& str> {
         self.telephone.as_deref()
     }
     /// <p>Street where the user is located.</p>
-    pub fn street(&self) -> ::std::option::Option<&str> {
+    pub fn street(&self) -> ::std::option::Option<& str> {
         self.street.as_deref()
     }
     /// <p>Job title of the user.</p>
-    pub fn job_title(&self) -> ::std::option::Option<&str> {
+    pub fn job_title(&self) -> ::std::option::Option<& str> {
         self.job_title.as_deref()
     }
     /// <p>City where the user is located.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>Company of the user.</p>
-    pub fn company(&self) -> ::std::option::Option<&str> {
+    pub fn company(&self) -> ::std::option::Option<& str> {
         self.company.as_deref()
     }
     /// <p>Zip code of the user.</p>
-    pub fn zip_code(&self) -> ::std::option::Option<&str> {
+    pub fn zip_code(&self) -> ::std::option::Option<& str> {
         self.zip_code.as_deref()
     }
     /// <p>Department of the user.</p>
-    pub fn department(&self) -> ::std::option::Option<&str> {
+    pub fn department(&self) -> ::std::option::Option<& str> {
         self.department.as_deref()
     }
     /// <p>Country where the user is located.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>Office where the user is located.</p>
-    pub fn office(&self) -> ::std::option::Option<&str> {
+    pub fn office(&self) -> ::std::option::Option<& str> {
         self.office.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeUserOutput {
+impl  ::std::fmt::Debug for DescribeUserOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserOutput");
         formatter.field("user_id", &self.user_id);
@@ -176,10 +176,10 @@ impl ::std::fmt::Debug for DescribeUserOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -224,8 +224,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The identifier for the described user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier for the described user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +237,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The name for the user.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the user.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +250,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The email of the user.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of the user.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +263,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The display name of the user.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the user.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +276,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
@@ -294,8 +289,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, SYSTEM_USER, and REMOTE_USER.</p>
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
     }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, SYSTEM_USER, and REMOTE_USER.</p>
     pub fn get_user_role(&self) -> &::std::option::Option<crate::types::UserRole> {
@@ -308,8 +302,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enabled_date = input;
-        self
+        self.enabled_date = input; self
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -322,8 +315,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.disabled_date = input;
-        self
+        self.disabled_date = input; self
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -336,8 +328,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The date when the mailbox was created for the user.</p>
     pub fn set_mailbox_provisioned_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.mailbox_provisioned_date = input;
-        self
+        self.mailbox_provisioned_date = input; self
     }
     /// <p>The date when the mailbox was created for the user.</p>
     pub fn get_mailbox_provisioned_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -350,8 +341,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The date when the mailbox was removed for the user.</p>
     pub fn set_mailbox_deprovisioned_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.mailbox_deprovisioned_date = input;
-        self
+        self.mailbox_deprovisioned_date = input; self
     }
     /// <p>The date when the mailbox was removed for the user.</p>
     pub fn get_mailbox_deprovisioned_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -364,8 +354,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>First name of the user.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>First name of the user.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -378,8 +367,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Last name of the user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>Last name of the user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -392,8 +380,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>If enabled, the user is hidden from the global address list.</p>
     pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hidden_from_global_address_list = input;
-        self
+        self.hidden_from_global_address_list = input; self
     }
     /// <p>If enabled, the user is hidden from the global address list.</p>
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
@@ -406,8 +393,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Initials of the user.</p>
     pub fn set_initials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initials = input;
-        self
+        self.initials = input; self
     }
     /// <p>Initials of the user.</p>
     pub fn get_initials(&self) -> &::std::option::Option<::std::string::String> {
@@ -420,8 +406,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>User's contact number.</p>
     pub fn set_telephone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.telephone = input;
-        self
+        self.telephone = input; self
     }
     /// <p>User's contact number.</p>
     pub fn get_telephone(&self) -> &::std::option::Option<::std::string::String> {
@@ -434,8 +419,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Street where the user is located.</p>
     pub fn set_street(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street = input;
-        self
+        self.street = input; self
     }
     /// <p>Street where the user is located.</p>
     pub fn get_street(&self) -> &::std::option::Option<::std::string::String> {
@@ -448,8 +432,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Job title of the user.</p>
     pub fn set_job_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_title = input;
-        self
+        self.job_title = input; self
     }
     /// <p>Job title of the user.</p>
     pub fn get_job_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -462,8 +445,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>City where the user is located.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>City where the user is located.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -476,8 +458,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Company of the user.</p>
     pub fn set_company(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company = input;
-        self
+        self.company = input; self
     }
     /// <p>Company of the user.</p>
     pub fn get_company(&self) -> &::std::option::Option<::std::string::String> {
@@ -490,8 +471,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Zip code of the user.</p>
     pub fn set_zip_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zip_code = input;
-        self
+        self.zip_code = input; self
     }
     /// <p>Zip code of the user.</p>
     pub fn get_zip_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -504,8 +484,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Department of the user.</p>
     pub fn set_department(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.department = input;
-        self
+        self.department = input; self
     }
     /// <p>Department of the user.</p>
     pub fn get_department(&self) -> &::std::option::Option<::std::string::String> {
@@ -518,8 +497,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Country where the user is located.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>Country where the user is located.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -532,48 +510,71 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Office where the user is located.</p>
     pub fn set_office(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.office = input;
-        self
+        self.office = input; self
     }
     /// <p>Office where the user is located.</p>
     pub fn get_office(&self) -> &::std::option::Option<::std::string::String> {
         &self.office
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
-            user_id: self.user_id,
-            name: self.name,
-            email: self.email,
-            display_name: self.display_name,
-            state: self.state,
-            user_role: self.user_role,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
-            mailbox_provisioned_date: self.mailbox_provisioned_date,
-            mailbox_deprovisioned_date: self.mailbox_deprovisioned_date,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            hidden_from_global_address_list: self.hidden_from_global_address_list.unwrap_or_default(),
-            initials: self.initials,
-            telephone: self.telephone,
-            street: self.street,
-            job_title: self.job_title,
-            city: self.city,
-            company: self.company,
-            zip_code: self.zip_code,
-            department: self.department,
-            country: self.country,
-            office: self.office,
+            user_id: self.user_id
+            ,
+            name: self.name
+            ,
+            email: self.email
+            ,
+            display_name: self.display_name
+            ,
+            state: self.state
+            ,
+            user_role: self.user_role
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
+            mailbox_provisioned_date: self.mailbox_provisioned_date
+            ,
+            mailbox_deprovisioned_date: self.mailbox_deprovisioned_date
+            ,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
+            hidden_from_global_address_list: self.hidden_from_global_address_list
+                .unwrap_or_default()
+            ,
+            initials: self.initials
+            ,
+            telephone: self.telephone
+            ,
+            street: self.street
+            ,
+            job_title: self.job_title
+            ,
+            city: self.city
+            ,
+            company: self.company
+            ,
+            zip_code: self.zip_code
+            ,
+            department: self.department
+            ,
+            country: self.country
+            ,
+            office: self.office
+            ,
             _request_id: self._request_id,
         }
     }
@@ -608,3 +609,4 @@ impl ::std::fmt::Debug for DescribeUserOutputBuilder {
         formatter.finish()
     }
 }
+

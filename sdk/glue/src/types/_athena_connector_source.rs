@@ -3,7 +3,7 @@
 /// <p>Specifies a connector to an Amazon Athena data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AthenaConnectorSource {
+pub struct AthenaConnectorSource  {
     /// <p>The name of the data source.</p>
     pub name: ::std::string::String,
     /// <p>The name of the connection that is associated with the connector.</p>
@@ -17,43 +17,39 @@ pub struct AthenaConnectorSource {
     /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
     pub schema_name: ::std::string::String,
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
-impl AthenaConnectorSource {
+impl  AthenaConnectorSource  {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_name.deref()
+    pub fn connection_name(&self) -> & str {
+        use std::ops::Deref; self.connection_name.deref()
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn connector_name(&self) -> &str {
-        use std::ops::Deref;
-        self.connector_name.deref()
+    pub fn connector_name(&self) -> & str {
+        use std::ops::Deref; self.connector_name.deref()
     }
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
-    pub fn connection_type(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_type.deref()
+    pub fn connection_type(&self) -> & str {
+        use std::ops::Deref; self.connection_type.deref()
     }
     /// <p>The name of the table in the data source.</p>
-    pub fn connection_table(&self) -> ::std::option::Option<&str> {
+    pub fn connection_table(&self) -> ::std::option::Option<& str> {
         self.connection_table.as_deref()
     }
     /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
-    pub fn schema_name(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_name.deref()
+    pub fn schema_name(&self) -> & str {
+        use std::ops::Deref; self.schema_name.deref()
     }
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
-    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
-        self.output_schemas.as_deref().unwrap_or_default()
+    pub fn output_schemas(&self) -> & [crate::types::GlueSchema] {
+        self.output_schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AthenaConnectorSource {
@@ -73,7 +69,7 @@ pub struct AthenaConnectorSourceBuilder {
     pub(crate) connection_type: ::std::option::Option<::std::string::String>,
     pub(crate) connection_table: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
-    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
 impl AthenaConnectorSourceBuilder {
     /// <p>The name of the data source.</p>
@@ -84,8 +80,7 @@ impl AthenaConnectorSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl AthenaConnectorSourceBuilder {
     }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl AthenaConnectorSourceBuilder {
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
     pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_name = input;
-        self
+        self.connector_name = input; self
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
     pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +122,7 @@ impl AthenaConnectorSourceBuilder {
     }
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
     pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
     pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +135,7 @@ impl AthenaConnectorSourceBuilder {
     }
     /// <p>The name of the table in the data source.</p>
     pub fn set_connection_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_table = input;
-        self
+        self.connection_table = input; self
     }
     /// <p>The name of the table in the data source.</p>
     pub fn get_connection_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +149,7 @@ impl AthenaConnectorSourceBuilder {
     }
     /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,17 +162,16 @@ impl AthenaConnectorSourceBuilder {
     /// <p>Specifies the data schema for the custom Athena source.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`AthenaConnectorSource`](crate::types::AthenaConnectorSource).
@@ -193,39 +182,39 @@ impl AthenaConnectorSourceBuilder {
     /// - [`connection_type`](crate::types::builders::AthenaConnectorSourceBuilder::connection_type)
     /// - [`schema_name`](crate::types::builders::AthenaConnectorSourceBuilder::schema_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AthenaConnectorSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AthenaConnectorSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AthenaConnectorSource",
-                )
-            })?,
-            connection_name: self.connection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_name",
-                    "connection_name was not specified but it is required when building AthenaConnectorSource",
-                )
-            })?,
-            connector_name: self.connector_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connector_name",
-                    "connector_name was not specified but it is required when building AthenaConnectorSource",
-                )
-            })?,
-            connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_type",
-                    "connection_type was not specified but it is required when building AthenaConnectorSource",
-                )
-            })?,
-            connection_table: self.connection_table,
-            schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_name",
-                    "schema_name was not specified but it is required when building AthenaConnectorSource",
-                )
-            })?,
-            output_schemas: self.output_schemas,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AthenaConnectorSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AthenaConnectorSource")
+                    )?
+                ,
+                connection_name: self.connection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_name", "connection_name was not specified but it is required when building AthenaConnectorSource")
+                    )?
+                ,
+                connector_name: self.connector_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connector_name", "connector_name was not specified but it is required when building AthenaConnectorSource")
+                    )?
+                ,
+                connection_type: self.connection_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_type", "connection_type was not specified but it is required when building AthenaConnectorSource")
+                    )?
+                ,
+                connection_table: self.connection_table
+                ,
+                schema_name: self.schema_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_name", "schema_name was not specified but it is required when building AthenaConnectorSource")
+                    )?
+                ,
+                output_schemas: self.output_schemas
+                ,
+            }
+        )
     }
 }
+

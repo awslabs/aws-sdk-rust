@@ -3,7 +3,7 @@
 /// <p>Parameter input for DescribeDBInstanceAutomatedBackups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbInstanceAutomatedBackupsInput {
+pub struct DescribeDbInstanceAutomatedBackupsInput  {
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
@@ -27,7 +27,7 @@ pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
@@ -36,13 +36,13 @@ pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDbInstanceAutomatedBackupsInput {
+impl  DescribeDbInstanceAutomatedBackupsInput  {
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
-    pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn dbi_resource_id(&self) -> ::std::option::Option<& str> {
         self.dbi_resource_id.as_deref()
     }
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>A filter that specifies which resources to return based on status.</p>
@@ -64,22 +64,23 @@ impl DescribeDbInstanceAutomatedBackupsInput {
     /// <p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn db_instance_automated_backups_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_automated_backups_arn(&self) -> ::std::option::Option<& str> {
         self.db_instance_automated_backups_arn.as_deref()
     }
 }
@@ -96,7 +97,7 @@ impl DescribeDbInstanceAutomatedBackupsInput {
 pub struct DescribeDbInstanceAutomatedBackupsInputBuilder {
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
@@ -109,8 +110,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     }
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dbi_resource_id = input;
-        self
+        self.dbi_resource_id = input; self
     }
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     }
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,9 +154,9 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
@@ -178,9 +177,8 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
@@ -201,7 +199,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -211,8 +209,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -225,8 +222,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +237,7 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_db_instance_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_automated_backups_arn = input;
-        self
+        self.db_instance_automated_backups_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -250,21 +245,23 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
         &self.db_instance_automated_backups_arn
     }
     /// Consumes the builder and constructs a [`DescribeDbInstanceAutomatedBackupsInput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsInput {
-                dbi_resource_id: self.dbi_resource_id,
-                db_instance_identifier: self.db_instance_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
-            },
+                dbi_resource_id: self.dbi_resource_id
+                ,
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                db_instance_automated_backups_arn: self.db_instance_automated_backups_arn
+                ,
+            }
         )
     }
 }
+

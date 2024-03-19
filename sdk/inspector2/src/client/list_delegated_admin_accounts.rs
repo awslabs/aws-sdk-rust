@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDelegatedAdminAccounts`](crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
-    /// - On success, responds with [`ListDelegatedAdminAccountsOutput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput) with field(s):
+                            /// - On success, responds with [`ListDelegatedAdminAccountsOutput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput) with field(s):
     ///   - [`delegated_admin_accounts(Option<Vec::<DelegatedAdminAccount>>)`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput::delegated_admin_accounts): <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    /// - On failure, responds with [`SdkError<ListDelegatedAdminAccountsError>`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError)
-    pub fn list_delegated_admin_accounts(
-        &self,
-    ) -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder {
-        crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDelegatedAdminAccountsError>`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError)
+    pub fn list_delegated_admin_accounts(&self) -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder {
+                                crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

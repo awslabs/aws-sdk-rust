@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDynamicThingGroupInput {
+pub struct CreateDynamicThingGroupInput  {
     /// <p>The dynamic thing group name to create.</p>
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group properties.</p>
@@ -19,39 +19,40 @@ pub struct CreateDynamicThingGroupInput {
     /// </note>
     pub query_version: ::std::option::Option<::std::string::String>,
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDynamicThingGroupInput {
+impl  CreateDynamicThingGroupInput  {
     /// <p>The dynamic thing group name to create.</p>
-    pub fn thing_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> ::std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The dynamic thing group properties.</p>
-    pub fn thing_group_properties(&self) -> ::std::option::Option<&crate::types::ThingGroupProperties> {
+    pub fn thing_group_properties(&self) -> ::std::option::Option<& crate::types::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
     /// <p>The dynamic thing group index name.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The dynamic thing group query version.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
-    pub fn query_version(&self) -> ::std::option::Option<&str> {
+    pub fn query_version(&self) -> ::std::option::Option<& str> {
         self.query_version.as_deref()
     }
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDynamicThingGroupInput {
@@ -70,7 +71,7 @@ pub struct CreateDynamicThingGroupInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) query_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDynamicThingGroupInputBuilder {
     /// <p>The dynamic thing group name to create.</p>
@@ -81,8 +82,7 @@ impl CreateDynamicThingGroupInputBuilder {
     }
     /// <p>The dynamic thing group name to create.</p>
     pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The dynamic thing group name to create.</p>
     pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl CreateDynamicThingGroupInputBuilder {
     }
     /// <p>The dynamic thing group properties.</p>
     pub fn set_thing_group_properties(mut self, input: ::std::option::Option<crate::types::ThingGroupProperties>) -> Self {
-        self.thing_group_properties = input;
-        self
+        self.thing_group_properties = input; self
     }
     /// <p>The dynamic thing group properties.</p>
     pub fn get_thing_group_properties(&self) -> &::std::option::Option<crate::types::ThingGroupProperties> {
@@ -113,8 +112,7 @@ impl CreateDynamicThingGroupInputBuilder {
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The dynamic thing group index name.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
@@ -132,8 +130,7 @@ impl CreateDynamicThingGroupInputBuilder {
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
@@ -151,8 +148,7 @@ impl CreateDynamicThingGroupInputBuilder {
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_version = input;
-        self
+        self.query_version = input; self
     }
     /// <p>The dynamic thing group query version.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
@@ -167,33 +163,36 @@ impl CreateDynamicThingGroupInputBuilder {
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDynamicThingGroupInput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput {
-            thing_group_name: self.thing_group_name,
-            thing_group_properties: self.thing_group_properties,
-            index_name: self.index_name,
-            query_string: self.query_string,
-            query_version: self.query_version,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput {
+                thing_group_name: self.thing_group_name
+                ,
+                thing_group_properties: self.thing_group_properties
+                ,
+                index_name: self.index_name
+                ,
+                query_string: self.query_string
+                ,
+                query_version: self.query_version
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

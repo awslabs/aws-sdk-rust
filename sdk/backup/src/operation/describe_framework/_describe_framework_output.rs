@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFrameworkOutput {
+pub struct DescribeFrameworkOutput  {
     /// <p>The unique name of a framework.</p>
     pub framework_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
@@ -10,7 +10,7 @@ pub struct DescribeFrameworkOutput {
     /// <p>An optional description of the framework.</p>
     pub framework_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
+    pub framework_controls: ::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>>,
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
@@ -32,32 +32,33 @@ pub struct DescribeFrameworkOutput {
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFrameworkOutput {
+impl  DescribeFrameworkOutput  {
     /// <p>The unique name of a framework.</p>
-    pub fn framework_name(&self) -> ::std::option::Option<&str> {
+    pub fn framework_name(&self) -> ::std::option::Option<& str> {
         self.framework_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(&self) -> ::std::option::Option<&str> {
+    pub fn framework_arn(&self) -> ::std::option::Option<& str> {
         self.framework_arn.as_deref()
     }
     /// <p>An optional description of the framework.</p>
-    pub fn framework_description(&self) -> ::std::option::Option<&str> {
+    pub fn framework_description(&self) -> ::std::option::Option<& str> {
         self.framework_description.as_deref()
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.framework_controls.is_none()`.
-    pub fn framework_controls(&self) -> &[crate::types::FrameworkControl] {
-        self.framework_controls.as_deref().unwrap_or_default()
+    pub fn framework_controls(&self) -> & [crate::types::FrameworkControl] {
+        self.framework_controls.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_status(&self) -> ::std::option::Option<& str> {
         self.deployment_status.as_deref()
     }
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
@@ -71,19 +72,19 @@ impl DescribeFrameworkOutput {
     /// <li>
     /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
-    pub fn framework_status(&self) -> ::std::option::Option<&str> {
+    pub fn framework_status(&self) -> ::std::option::Option<& str> {
         self.framework_status.as_deref()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFrameworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFrameworkOutput`](crate::operation::describe_framework::DescribeFrameworkOutput).
     pub fn builder() -> crate::operation::describe_framework::builders::DescribeFrameworkOutputBuilder {
@@ -98,7 +99,7 @@ pub struct DescribeFrameworkOutputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,
     pub(crate) framework_description: ::std::option::Option<::std::string::String>,
-    pub(crate) framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
+    pub(crate) framework_controls: ::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deployment_status: ::std::option::Option<::std::string::String>,
     pub(crate) framework_status: ::std::option::Option<::std::string::String>,
@@ -113,8 +114,7 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>The unique name of a framework.</p>
     pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_name = input;
-        self
+        self.framework_name = input; self
     }
     /// <p>The unique name of a framework.</p>
     pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_arn = input;
-        self
+        self.framework_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn get_framework_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>An optional description of the framework.</p>
     pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_description = input;
-        self
+        self.framework_description = input; self
     }
     /// <p>An optional description of the framework.</p>
     pub fn get_framework_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,17 +153,16 @@ impl DescribeFrameworkOutputBuilder {
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(mut self, input: crate::types::FrameworkControl) -> Self {
         let mut v = self.framework_controls.unwrap_or_default();
-        v.push(input);
-        self.framework_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.framework_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
-        self.framework_controls = input;
-        self
+    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>>) -> Self {
+        self.framework_controls = input; self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>> {
         &self.framework_controls
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
@@ -175,8 +172,7 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,8 +187,7 @@ impl DescribeFrameworkOutputBuilder {
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p><code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code></p>
@@ -226,8 +221,7 @@ impl DescribeFrameworkOutputBuilder {
     /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
     pub fn set_framework_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_status = input;
-        self
+        self.framework_status = input; self
     }
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
@@ -250,34 +244,42 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFrameworkOutput`](crate::operation::describe_framework::DescribeFrameworkOutput).
     pub fn build(self) -> crate::operation::describe_framework::DescribeFrameworkOutput {
         crate::operation::describe_framework::DescribeFrameworkOutput {
-            framework_name: self.framework_name,
-            framework_arn: self.framework_arn,
-            framework_description: self.framework_description,
-            framework_controls: self.framework_controls,
-            creation_time: self.creation_time,
-            deployment_status: self.deployment_status,
-            framework_status: self.framework_status,
-            idempotency_token: self.idempotency_token,
+            framework_name: self.framework_name
+            ,
+            framework_arn: self.framework_arn
+            ,
+            framework_description: self.framework_description
+            ,
+            framework_controls: self.framework_controls
+            ,
+            creation_time: self.creation_time
+            ,
+            deployment_status: self.deployment_status
+            ,
+            framework_status: self.framework_status
+            ,
+            idempotency_token: self.idempotency_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

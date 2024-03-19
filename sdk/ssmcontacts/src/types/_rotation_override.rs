@@ -3,11 +3,11 @@
 /// <p>Information about an override specified for an on-call rotation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RotationOverride {
+pub struct RotationOverride  {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
     pub rotation_override_id: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub new_contact_ids: ::std::vec::Vec<::std::string::String>,
+    pub new_contact_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>The time a rotation override begins.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The time a rotation override ends.</p>
@@ -15,27 +15,25 @@ pub struct RotationOverride {
     /// <p>The time a rotation override was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
 }
-impl RotationOverride {
+impl  RotationOverride  {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
-    pub fn rotation_override_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rotation_override_id.deref()
+    pub fn rotation_override_id(&self) -> & str {
+        use std::ops::Deref; self.rotation_override_id.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub fn new_contact_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.new_contact_ids.deref()
+    pub fn new_contact_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.new_contact_ids.deref()
     }
     /// <p>The time a rotation override begins.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The time a rotation override ends.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
     /// <p>The time a rotation override was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
 }
@@ -51,7 +49,7 @@ impl RotationOverride {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotationOverrideBuilder {
     pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,
-    pub(crate) new_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) new_contact_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -65,8 +63,7 @@ impl RotationOverrideBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
     pub fn set_rotation_override_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_override_id = input;
-        self
+        self.rotation_override_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
     pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,17 +76,16 @@ impl RotationOverrideBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
     pub fn new_contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.new_contact_ids.unwrap_or_default();
-        v.push(input.into());
-        self.new_contact_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.new_contact_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub fn set_new_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.new_contact_ids = input;
-        self
+    pub fn set_new_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.new_contact_ids = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub fn get_new_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_new_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.new_contact_ids
     }
     /// <p>The time a rotation override begins.</p>
@@ -100,8 +96,7 @@ impl RotationOverrideBuilder {
     }
     /// <p>The time a rotation override begins.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time a rotation override begins.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -115,8 +110,7 @@ impl RotationOverrideBuilder {
     }
     /// <p>The time a rotation override ends.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time a rotation override ends.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,8 +124,7 @@ impl RotationOverrideBuilder {
     }
     /// <p>The time a rotation override was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time a rotation override was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,37 +138,35 @@ impl RotationOverrideBuilder {
     /// - [`end_time`](crate::types::builders::RotationOverrideBuilder::end_time)
     /// - [`create_time`](crate::types::builders::RotationOverrideBuilder::create_time)
     pub fn build(self) -> ::std::result::Result<crate::types::RotationOverride, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RotationOverride {
-            rotation_override_id: self.rotation_override_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rotation_override_id",
-                    "rotation_override_id was not specified but it is required when building RotationOverride",
-                )
-            })?,
-            new_contact_ids: self.new_contact_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "new_contact_ids",
-                    "new_contact_ids was not specified but it is required when building RotationOverride",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building RotationOverride",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building RotationOverride",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building RotationOverride",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RotationOverride {
+                rotation_override_id: self.rotation_override_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rotation_override_id", "rotation_override_id was not specified but it is required when building RotationOverride")
+                    )?
+                ,
+                new_contact_ids: self.new_contact_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("new_contact_ids", "new_contact_ids was not specified but it is required when building RotationOverride")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building RotationOverride")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building RotationOverride")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building RotationOverride")
+                    )?
+                ,
+            }
+        )
     }
 }
+

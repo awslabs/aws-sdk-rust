@@ -3,7 +3,7 @@
 /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginRequestPolicyCookiesConfig {
+pub struct OriginRequestPolicyCookiesConfig  {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct OriginRequestPolicyCookiesConfig {
     /// <p>Contains a list of cookie names.</p>
     pub cookies: ::std::option::Option<crate::types::CookieNames>,
 }
-impl OriginRequestPolicyCookiesConfig {
+impl  OriginRequestPolicyCookiesConfig  {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -31,11 +31,11 @@ impl OriginRequestPolicyCookiesConfig {
     /// <li>
     /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
     /// </ul>
-    pub fn cookie_behavior(&self) -> &crate::types::OriginRequestPolicyCookieBehavior {
+    pub fn cookie_behavior(&self) -> & crate::types::OriginRequestPolicyCookieBehavior {
         &self.cookie_behavior
     }
     /// <p>Contains a list of cookie names.</p>
-    pub fn cookies(&self) -> ::std::option::Option<&crate::types::CookieNames> {
+    pub fn cookies(&self) -> ::std::option::Option<& crate::types::CookieNames> {
         self.cookies.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     /// <p><code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p></li>
     /// </ul>
     pub fn set_cookie_behavior(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyCookieBehavior>) -> Self {
-        self.cookie_behavior = input;
-        self
+        self.cookie_behavior = input; self
     }
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -106,8 +105,7 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     }
     /// <p>Contains a list of cookie names.</p>
     pub fn set_cookies(mut self, input: ::std::option::Option<crate::types::CookieNames>) -> Self {
-        self.cookies = input;
-        self
+        self.cookies = input; self
     }
     /// <p>Contains a list of cookie names.</p>
     pub fn get_cookies(&self) -> &::std::option::Option<crate::types::CookieNames> {
@@ -117,14 +115,17 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cookie_behavior`](crate::types::builders::OriginRequestPolicyCookiesConfigBuilder::cookie_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyCookiesConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginRequestPolicyCookiesConfig {
-            cookie_behavior: self.cookie_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cookie_behavior",
-                    "cookie_behavior was not specified but it is required when building OriginRequestPolicyCookiesConfig",
-                )
-            })?,
-            cookies: self.cookies,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginRequestPolicyCookiesConfig {
+                cookie_behavior: self.cookie_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cookie_behavior", "cookie_behavior was not specified but it is required when building OriginRequestPolicyCookiesConfig")
+                    )?
+                ,
+                cookies: self.cookies
+                ,
+            }
+        )
     }
 }
+

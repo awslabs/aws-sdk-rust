@@ -3,7 +3,7 @@
 /// <p>Summary information about a constraint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConstraintSummary {
+pub struct ConstraintSummary  {
     /// <p>The type of constraint.</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct ConstraintSummary {
     /// <p>The description of the constraint.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ConstraintSummary {
+impl  ConstraintSummary  {
     /// <p>The type of constraint.</p>
     /// <ul>
     /// <li>
@@ -31,11 +31,11 @@ impl ConstraintSummary {
     /// <li>
     /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The description of the constraint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl ConstraintSummaryBuilder {
     /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl ConstraintSummaryBuilder {
     }
     /// <p>The description of the constraint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the constraint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,11 @@ impl ConstraintSummaryBuilder {
     /// Consumes the builder and constructs a [`ConstraintSummary`](crate::types::ConstraintSummary).
     pub fn build(self) -> crate::types::ConstraintSummary {
         crate::types::ConstraintSummary {
-            r#type: self.r#type,
-            description: self.description,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

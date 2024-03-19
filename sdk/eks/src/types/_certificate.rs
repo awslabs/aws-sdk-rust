@@ -3,13 +3,13 @@
 /// <p>An object representing the <code>certificate-authority-data</code> for your cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Certificate {
+pub struct Certificate  {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
-impl Certificate {
+impl  Certificate  {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CertificateBuilder {
     }
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CertificateBuilder {
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
-        crate::types::Certificate { data: self.data }
+        crate::types::Certificate {
+            data: self.data
+            ,
+        }
     }
 }
+

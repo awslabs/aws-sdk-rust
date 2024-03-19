@@ -3,7 +3,7 @@
 /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRuleGroupRulesDetails {
+pub struct AwsWafRuleGroupRulesDetails  {
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule.</p>
     pub action: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
@@ -13,9 +13,9 @@ pub struct AwsWafRuleGroupRulesDetails {
     /// <p>The type of rule.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafRuleGroupRulesDetails {
+impl  AwsWafRuleGroupRulesDetails  {
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsWafRuleGroupRulesActionDetails> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::AwsWafRuleGroupRulesActionDetails> {
         self.action.as_ref()
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
@@ -23,11 +23,11 @@ impl AwsWafRuleGroupRulesDetails {
         self.priority
     }
     /// <p>The rule ID for a rule.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The type of rule.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     }
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails> {
@@ -69,8 +68,7 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     }
     /// <p>The rule ID for a rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The rule ID for a rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     }
     /// <p>The type of rule.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of rule.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesDetails`](crate::types::AwsWafRuleGroupRulesDetails).
     pub fn build(self) -> crate::types::AwsWafRuleGroupRulesDetails {
         crate::types::AwsWafRuleGroupRulesDetails {
-            action: self.action,
-            priority: self.priority,
-            rule_id: self.rule_id,
-            r#type: self.r#type,
+            action: self.action
+            ,
+            priority: self.priority
+            ,
+            rule_id: self.rule_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

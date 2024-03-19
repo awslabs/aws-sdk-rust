@@ -3,22 +3,20 @@
 /// <p>The <code>CreateCase</code> action definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCaseActionDefinition {
+pub struct CreateCaseActionDefinition  {
     /// <p>An array of objects with <code>Field ID</code> and <code>Value</code> data.</p>
-    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
+    pub fields: ::std::vec::Vec::<crate::types::FieldValue>,
     /// <p>A unique identifier of a template.</p>
     pub template_id: ::std::string::String,
 }
-impl CreateCaseActionDefinition {
+impl  CreateCaseActionDefinition  {
     /// <p>An array of objects with <code>Field ID</code> and <code>Value</code> data.</p>
-    pub fn fields(&self) -> &[crate::types::FieldValue] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::FieldValue] {
+        use std::ops::Deref; self.fields.deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.template_id.deref()
+    pub fn template_id(&self) -> & str {
+        use std::ops::Deref; self.template_id.deref()
     }
 }
 impl CreateCaseActionDefinition {
@@ -32,7 +30,7 @@ impl CreateCaseActionDefinition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCaseActionDefinitionBuilder {
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCaseActionDefinitionBuilder {
@@ -43,17 +41,16 @@ impl CreateCaseActionDefinitionBuilder {
     /// <p>An array of objects with <code>Field ID</code> and <code>Value</code> data.</p>
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects with <code>Field ID</code> and <code>Value</code> data.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>) -> Self {
+        self.fields = input; self
     }
     /// <p>An array of objects with <code>Field ID</code> and <code>Value</code> data.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>> {
         &self.fields
     }
     /// <p>A unique identifier of a template.</p>
@@ -64,8 +61,7 @@ impl CreateCaseActionDefinitionBuilder {
     }
     /// <p>A unique identifier of a template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>A unique identifier of a template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl CreateCaseActionDefinitionBuilder {
     /// - [`fields`](crate::types::builders::CreateCaseActionDefinitionBuilder::fields)
     /// - [`template_id`](crate::types::builders::CreateCaseActionDefinitionBuilder::template_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateCaseActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateCaseActionDefinition {
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building CreateCaseActionDefinition",
-                )
-            })?,
-            template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_id",
-                    "template_id was not specified but it is required when building CreateCaseActionDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateCaseActionDefinition {
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building CreateCaseActionDefinition")
+                    )?
+                ,
+                template_id: self.template_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_id", "template_id was not specified but it is required when building CreateCaseActionDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

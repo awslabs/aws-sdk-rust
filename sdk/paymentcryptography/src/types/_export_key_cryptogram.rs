@@ -3,7 +3,7 @@
 /// <p>Parameter information for key material export using asymmetric RSA wrap and unwrap key exchange method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ExportKeyCryptogram {
+pub struct ExportKeyCryptogram  {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during RSA wrap and unwrap key export.</p>
     pub certificate_authority_public_key_identifier: ::std::string::String,
     /// <p>The wrapping key certificate in PEM format (base64 encoded). Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
@@ -11,29 +11,24 @@ pub struct ExportKeyCryptogram {
     /// <p>The wrapping spec for the key under export.</p>
     pub wrapping_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
 }
-impl ExportKeyCryptogram {
+impl  ExportKeyCryptogram  {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during RSA wrap and unwrap key export.</p>
-    pub fn certificate_authority_public_key_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_authority_public_key_identifier.deref()
+    pub fn certificate_authority_public_key_identifier(&self) -> & str {
+        use std::ops::Deref; self.certificate_authority_public_key_identifier.deref()
     }
     /// <p>The wrapping key certificate in PEM format (base64 encoded). Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
-    pub fn wrapping_key_certificate(&self) -> &str {
-        use std::ops::Deref;
-        self.wrapping_key_certificate.deref()
+    pub fn wrapping_key_certificate(&self) -> & str {
+        use std::ops::Deref; self.wrapping_key_certificate.deref()
     }
     /// <p>The wrapping spec for the key under export.</p>
-    pub fn wrapping_spec(&self) -> ::std::option::Option<&crate::types::WrappingKeySpec> {
+    pub fn wrapping_spec(&self) -> ::std::option::Option<& crate::types::WrappingKeySpec> {
         self.wrapping_spec.as_ref()
     }
 }
-impl ::std::fmt::Debug for ExportKeyCryptogram {
+impl  ::std::fmt::Debug for ExportKeyCryptogram  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExportKeyCryptogram");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
+        formatter.field("certificate_authority_public_key_identifier", &self.certificate_authority_public_key_identifier);
         formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("wrapping_spec", &self.wrapping_spec);
         formatter.finish()
@@ -63,8 +58,7 @@ impl ExportKeyCryptogramBuilder {
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during RSA wrap and unwrap key export.</p>
     pub fn set_certificate_authority_public_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_public_key_identifier = input;
-        self
+        self.certificate_authority_public_key_identifier = input; self
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during RSA wrap and unwrap key export.</p>
     pub fn get_certificate_authority_public_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +72,7 @@ impl ExportKeyCryptogramBuilder {
     }
     /// <p>The wrapping key certificate in PEM format (base64 encoded). Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
     pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wrapping_key_certificate = input;
-        self
+        self.wrapping_key_certificate = input; self
     }
     /// <p>The wrapping key certificate in PEM format (base64 encoded). Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
     pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +85,7 @@ impl ExportKeyCryptogramBuilder {
     }
     /// <p>The wrapping spec for the key under export.</p>
     pub fn set_wrapping_spec(mut self, input: ::std::option::Option<crate::types::WrappingKeySpec>) -> Self {
-        self.wrapping_spec = input;
-        self
+        self.wrapping_spec = input; self
     }
     /// <p>The wrapping spec for the key under export.</p>
     pub fn get_wrapping_spec(&self) -> &::std::option::Option<crate::types::WrappingKeySpec> {
@@ -104,32 +96,31 @@ impl ExportKeyCryptogramBuilder {
     /// - [`certificate_authority_public_key_identifier`](crate::types::builders::ExportKeyCryptogramBuilder::certificate_authority_public_key_identifier)
     /// - [`wrapping_key_certificate`](crate::types::builders::ExportKeyCryptogramBuilder::wrapping_key_certificate)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportKeyCryptogram, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportKeyCryptogram {
-            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_authority_public_key_identifier",
-                    "certificate_authority_public_key_identifier was not specified but it is required when building ExportKeyCryptogram",
-                )
-            })?,
-            wrapping_key_certificate: self.wrapping_key_certificate.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "wrapping_key_certificate",
-                    "wrapping_key_certificate was not specified but it is required when building ExportKeyCryptogram",
-                )
-            })?,
-            wrapping_spec: self.wrapping_spec,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportKeyCryptogram {
+                certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_authority_public_key_identifier", "certificate_authority_public_key_identifier was not specified but it is required when building ExportKeyCryptogram")
+                    )?
+                ,
+                wrapping_key_certificate: self.wrapping_key_certificate
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("wrapping_key_certificate", "wrapping_key_certificate was not specified but it is required when building ExportKeyCryptogram")
+                    )?
+                ,
+                wrapping_spec: self.wrapping_spec
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ExportKeyCryptogramBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExportKeyCryptogramBuilder");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
+        formatter.field("certificate_authority_public_key_identifier", &self.certificate_authority_public_key_identifier);
         formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("wrapping_spec", &self.wrapping_spec);
         formatter.finish()
     }
 }
+

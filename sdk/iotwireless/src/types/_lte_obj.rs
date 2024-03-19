@@ -3,7 +3,7 @@
 /// <p>LTE object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LteObj {
+pub struct LteObj  {
     /// <p>Mobile Country Code.</p>
     pub mcc: i32,
     /// <p>Mobile Network Code.</p>
@@ -23,9 +23,9 @@ pub struct LteObj {
     /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
     pub nr_capable: bool,
     /// <p>LTE object for network measurement reports.</p>
-    pub lte_nmr: ::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>>,
+    pub lte_nmr: ::std::option::Option<::std::vec::Vec::<crate::types::LteNmrObj>>,
 }
-impl LteObj {
+impl  LteObj  {
     /// <p>Mobile Country Code.</p>
     pub fn mcc(&self) -> i32 {
         self.mcc
@@ -43,7 +43,7 @@ impl LteObj {
         self.tac
     }
     /// <p>LTE local identification (local ID) information.</p>
-    pub fn lte_local_id(&self) -> ::std::option::Option<&crate::types::LteLocalId> {
+    pub fn lte_local_id(&self) -> ::std::option::Option<& crate::types::LteLocalId> {
         self.lte_local_id.as_ref()
     }
     /// <p>LTE timing advance.</p>
@@ -63,10 +63,11 @@ impl LteObj {
         self.nr_capable
     }
     /// <p>LTE object for network measurement reports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lte_nmr.is_none()`.
-    pub fn lte_nmr(&self) -> &[crate::types::LteNmrObj] {
-        self.lte_nmr.as_deref().unwrap_or_default()
+    pub fn lte_nmr(&self) -> & [crate::types::LteNmrObj] {
+        self.lte_nmr.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LteObj {
@@ -89,7 +90,7 @@ pub struct LteObjBuilder {
     pub(crate) rsrp: ::std::option::Option<i32>,
     pub(crate) rsrq: ::std::option::Option<f32>,
     pub(crate) nr_capable: ::std::option::Option<bool>,
-    pub(crate) lte_nmr: ::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>>,
+    pub(crate) lte_nmr: ::std::option::Option<::std::vec::Vec::<crate::types::LteNmrObj>>,
 }
 impl LteObjBuilder {
     /// <p>Mobile Country Code.</p>
@@ -100,8 +101,7 @@ impl LteObjBuilder {
     }
     /// <p>Mobile Country Code.</p>
     pub fn set_mcc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mcc = input;
-        self
+        self.mcc = input; self
     }
     /// <p>Mobile Country Code.</p>
     pub fn get_mcc(&self) -> &::std::option::Option<i32> {
@@ -115,8 +115,7 @@ impl LteObjBuilder {
     }
     /// <p>Mobile Network Code.</p>
     pub fn set_mnc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mnc = input;
-        self
+        self.mnc = input; self
     }
     /// <p>Mobile Network Code.</p>
     pub fn get_mnc(&self) -> &::std::option::Option<i32> {
@@ -130,8 +129,7 @@ impl LteObjBuilder {
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn set_eutran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.eutran_cid = input;
-        self
+        self.eutran_cid = input; self
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn get_eutran_cid(&self) -> &::std::option::Option<i32> {
@@ -144,8 +142,7 @@ impl LteObjBuilder {
     }
     /// <p>LTE tracking area code.</p>
     pub fn set_tac(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tac = input;
-        self
+        self.tac = input; self
     }
     /// <p>LTE tracking area code.</p>
     pub fn get_tac(&self) -> &::std::option::Option<i32> {
@@ -158,8 +155,7 @@ impl LteObjBuilder {
     }
     /// <p>LTE local identification (local ID) information.</p>
     pub fn set_lte_local_id(mut self, input: ::std::option::Option<crate::types::LteLocalId>) -> Self {
-        self.lte_local_id = input;
-        self
+        self.lte_local_id = input; self
     }
     /// <p>LTE local identification (local ID) information.</p>
     pub fn get_lte_local_id(&self) -> &::std::option::Option<crate::types::LteLocalId> {
@@ -172,8 +168,7 @@ impl LteObjBuilder {
     }
     /// <p>LTE timing advance.</p>
     pub fn set_lte_timing_advance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lte_timing_advance = input;
-        self
+        self.lte_timing_advance = input; self
     }
     /// <p>LTE timing advance.</p>
     pub fn get_lte_timing_advance(&self) -> &::std::option::Option<i32> {
@@ -186,8 +181,7 @@ impl LteObjBuilder {
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn set_rsrp(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rsrp = input;
-        self
+        self.rsrp = input; self
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn get_rsrp(&self) -> &::std::option::Option<i32> {
@@ -200,8 +194,7 @@ impl LteObjBuilder {
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn set_rsrq(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.rsrq = input;
-        self
+        self.rsrq = input; self
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn get_rsrq(&self) -> &::std::option::Option<f32> {
@@ -214,8 +207,7 @@ impl LteObjBuilder {
     }
     /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
     pub fn set_nr_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.nr_capable = input;
-        self
+        self.nr_capable = input; self
     }
     /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
     pub fn get_nr_capable(&self) -> &::std::option::Option<bool> {
@@ -228,17 +220,16 @@ impl LteObjBuilder {
     /// <p>LTE object for network measurement reports.</p>
     pub fn lte_nmr(mut self, input: crate::types::LteNmrObj) -> Self {
         let mut v = self.lte_nmr.unwrap_or_default();
-        v.push(input);
-        self.lte_nmr = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lte_nmr = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>LTE object for network measurement reports.</p>
-    pub fn set_lte_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>>) -> Self {
-        self.lte_nmr = input;
-        self
+    pub fn set_lte_nmr(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LteNmrObj>>) -> Self {
+        self.lte_nmr = input; self
     }
     /// <p>LTE object for network measurement reports.</p>
-    pub fn get_lte_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>> {
+    pub fn get_lte_nmr(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LteNmrObj>> {
         &self.lte_nmr
     }
     /// Consumes the builder and constructs a [`LteObj`](crate::types::LteObj).
@@ -247,32 +238,40 @@ impl LteObjBuilder {
     /// - [`mnc`](crate::types::builders::LteObjBuilder::mnc)
     /// - [`eutran_cid`](crate::types::builders::LteObjBuilder::eutran_cid)
     pub fn build(self) -> ::std::result::Result<crate::types::LteObj, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LteObj {
-            mcc: self.mcc.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mcc",
-                    "mcc was not specified but it is required when building LteObj",
-                )
-            })?,
-            mnc: self.mnc.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mnc",
-                    "mnc was not specified but it is required when building LteObj",
-                )
-            })?,
-            eutran_cid: self.eutran_cid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "eutran_cid",
-                    "eutran_cid was not specified but it is required when building LteObj",
-                )
-            })?,
-            tac: self.tac,
-            lte_local_id: self.lte_local_id,
-            lte_timing_advance: self.lte_timing_advance,
-            rsrp: self.rsrp,
-            rsrq: self.rsrq,
-            nr_capable: self.nr_capable.unwrap_or_default(),
-            lte_nmr: self.lte_nmr,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LteObj {
+                mcc: self.mcc
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mcc", "mcc was not specified but it is required when building LteObj")
+                    )?
+                ,
+                mnc: self.mnc
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mnc", "mnc was not specified but it is required when building LteObj")
+                    )?
+                ,
+                eutran_cid: self.eutran_cid
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("eutran_cid", "eutran_cid was not specified but it is required when building LteObj")
+                    )?
+                ,
+                tac: self.tac
+                ,
+                lte_local_id: self.lte_local_id
+                ,
+                lte_timing_advance: self.lte_timing_advance
+                ,
+                rsrp: self.rsrp
+                ,
+                rsrq: self.rsrq
+                ,
+                nr_capable: self.nr_capable
+                    .unwrap_or_default()
+                ,
+                lte_nmr: self.lte_nmr
+                ,
+            }
+        )
     }
 }
+

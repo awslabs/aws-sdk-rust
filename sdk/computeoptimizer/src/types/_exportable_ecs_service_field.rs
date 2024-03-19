@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportableecsservicefield = unimplemented!();
 /// match exportableecsservicefield {
@@ -56,16 +56,14 @@
 /// Specifically, when `exportableecsservicefield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportableEcsServiceField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ExportableEcsServiceField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
@@ -125,212 +123,140 @@ pub enum ExportableEcsServiceField {
     UtilizationMetricsMemoryMaximum,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ExportableEcsServiceField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableEcsServiceField::AccountId,
-            "CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
-            "CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
-            "CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
-            "CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
-            "CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
-            "CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
-            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
-                ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode
-            }
-            "Finding" => ExportableEcsServiceField::Finding,
-            "FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
-            "LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
-            "LaunchType" => ExportableEcsServiceField::LaunchType,
-            "LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
-            "RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
-            "RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
-                ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
-            }
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
-                ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
-            }
-            "RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => {
-                ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum
-            }
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
-                ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
-            }
-            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
-                ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
-            }
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
-            "ServiceArn" => ExportableEcsServiceField::ServiceArn,
-            "Tags" => ExportableEcsServiceField::Tags,
-            "UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
-            "UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
-            other => ExportableEcsServiceField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AccountId" => ExportableEcsServiceField::AccountId,
+"CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
+"CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
+"CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
+"CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
+"CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
+"CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
+"EffectiveRecommendationPreferencesSavingsEstimationMode" => ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode,
+"Finding" => ExportableEcsServiceField::Finding,
+"FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
+"LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
+"LaunchType" => ExportableEcsServiceField::LaunchType,
+"LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
+"RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
+"RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
+"RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
+"RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+"RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
+"ServiceArn" => ExportableEcsServiceField::ServiceArn,
+"Tags" => ExportableEcsServiceField::Tags,
+"UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
+"UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
+other => ExportableEcsServiceField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ExportableEcsServiceField {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ExportableEcsServiceField::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ExportableEcsServiceField::from(s))
+                    }
+                }
 impl ExportableEcsServiceField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableEcsServiceField::AccountId => "AccountId",
-            ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
-            ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
-            ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
-            ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
-            ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
-            ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
-                "EffectiveRecommendationPreferencesSavingsEstimationMode"
-            }
-            ExportableEcsServiceField::Finding => "Finding",
-            ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
-            ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableEcsServiceField::LaunchType => "LaunchType",
-            ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
-            ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
-                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
-            }
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
-                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
-            }
-            ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
-            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
-                "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"
-            }
-            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
-                "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
-            }
-            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
-                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
-            }
-            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableEcsServiceField::ServiceArn => "ServiceArn",
-            ExportableEcsServiceField::Tags => "Tags",
-            ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
-            ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-            ExportableEcsServiceField::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId",
-            "CurrentPerformanceRisk",
-            "CurrentServiceConfigurationAutoScalingConfiguration",
-            "CurrentServiceConfigurationCpu",
-            "CurrentServiceConfigurationMemory",
-            "CurrentServiceConfigurationTaskDefinitionArn",
-            "CurrentServiceContainerConfigurations",
-            "EffectiveRecommendationPreferencesSavingsEstimationMode",
-            "Finding",
-            "FindingReasonCodes",
-            "LastRefreshTimestamp",
-            "LaunchType",
-            "LookbackPeriodInDays",
-            "RecommendationOptionsContainerRecommendations",
-            "RecommendationOptionsCpu",
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
-            "RecommendationOptionsEstimatedMonthlySavingsValue",
-            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
-            "RecommendationOptionsMemory",
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
-            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
-            "RecommendationOptionsSavingsOpportunityPercentage",
-            "ServiceArn",
-            "Tags",
-            "UtilizationMetricsCpuMaximum",
-            "UtilizationMetricsMemoryMaximum",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableEcsServiceField::AccountId => "AccountId",
+    ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
+    ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
+    ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
+    ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
+    ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
+    ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => "EffectiveRecommendationPreferencesSavingsEstimationMode",
+    ExportableEcsServiceField::Finding => "Finding",
+    ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
+    ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableEcsServiceField::LaunchType => "LaunchType",
+    ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
+    ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
+    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
+    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
+    ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+    ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+    ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+    ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
+    ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableEcsServiceField::ServiceArn => "ServiceArn",
+    ExportableEcsServiceField::Tags => "Tags",
+    ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+    ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+    ExportableEcsServiceField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentPerformanceRisk", "CurrentServiceConfigurationAutoScalingConfiguration", "CurrentServiceConfigurationCpu", "CurrentServiceConfigurationMemory", "CurrentServiceConfigurationTaskDefinitionArn", "CurrentServiceContainerConfigurations", "EffectiveRecommendationPreferencesSavingsEstimationMode", "Finding", "FindingReasonCodes", "LastRefreshTimestamp", "LaunchType", "LookbackPeriodInDays", "RecommendationOptionsContainerRecommendations", "RecommendationOptionsCpu", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts", "RecommendationOptionsMemory", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage", "RecommendationOptionsSavingsOpportunityPercentage", "ServiceArn", "Tags", "UtilizationMetricsCpuMaximum", "UtilizationMetricsMemoryMaximum"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ExportableEcsServiceField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ExportableEcsServiceField {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ExportableEcsServiceField {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ExportableEcsServiceField::AccountId => write!(f, "AccountId"),
-            ExportableEcsServiceField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
-            ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => {
-                write!(f, "CurrentServiceConfigurationAutoScalingConfiguration")
-            }
-            ExportableEcsServiceField::CurrentServiceConfigurationCpu => write!(f, "CurrentServiceConfigurationCpu"),
-            ExportableEcsServiceField::CurrentServiceConfigurationMemory => write!(f, "CurrentServiceConfigurationMemory"),
-            ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => write!(f, "CurrentServiceConfigurationTaskDefinitionArn"),
-            ExportableEcsServiceField::CurrentServiceContainerConfigurations => write!(f, "CurrentServiceContainerConfigurations"),
-            ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
-                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
-            }
-            ExportableEcsServiceField::Finding => write!(f, "Finding"),
-            ExportableEcsServiceField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
-            ExportableEcsServiceField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
-            ExportableEcsServiceField::LaunchType => write!(f, "LaunchType"),
-            ExportableEcsServiceField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
-            ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => write!(f, "RecommendationOptionsContainerRecommendations"),
-            ExportableEcsServiceField::RecommendationOptionsCpu => write!(f, "RecommendationOptionsCpu"),
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
-            }
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
-            }
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
-            }
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
-            }
-            ExportableEcsServiceField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
-            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
-                write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")
-            }
-            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
-                write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")
-            }
-            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
-                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
-            }
-            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => {
-                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
-            }
-            ExportableEcsServiceField::ServiceArn => write!(f, "ServiceArn"),
-            ExportableEcsServiceField::Tags => write!(f, "Tags"),
-            ExportableEcsServiceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
-            ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
-            ExportableEcsServiceField::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ExportableEcsServiceField::AccountId => write!(f, "AccountId"),
+ExportableEcsServiceField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => write!(f, "CurrentServiceConfigurationAutoScalingConfiguration"),
+ExportableEcsServiceField::CurrentServiceConfigurationCpu => write!(f, "CurrentServiceConfigurationCpu"),
+ExportableEcsServiceField::CurrentServiceConfigurationMemory => write!(f, "CurrentServiceConfigurationMemory"),
+ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => write!(f, "CurrentServiceConfigurationTaskDefinitionArn"),
+ExportableEcsServiceField::CurrentServiceContainerConfigurations => write!(f, "CurrentServiceContainerConfigurations"),
+ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode"),
+ExportableEcsServiceField::Finding => write!(f, "Finding"),
+ExportableEcsServiceField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
+ExportableEcsServiceField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+ExportableEcsServiceField::LaunchType => write!(f, "LaunchType"),
+ExportableEcsServiceField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => write!(f, "RecommendationOptionsContainerRecommendations"),
+ExportableEcsServiceField::RecommendationOptionsCpu => write!(f, "RecommendationOptionsCpu"),
+ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency"),
+ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"),
+ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue"),
+ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"),
+ExportableEcsServiceField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
+ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"),
+ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"),
+ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"),
+ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => write!(f, "RecommendationOptionsSavingsOpportunityPercentage"),
+ExportableEcsServiceField::ServiceArn => write!(f, "ServiceArn"),
+ExportableEcsServiceField::Tags => write!(f, "Tags"),
+ExportableEcsServiceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
+ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
+ExportableEcsServiceField::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

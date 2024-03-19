@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSubscriptionTargetInput {
+pub struct DeleteSubscriptionTargetInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription target is deleted.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon DataZone environment in which the subscription target is deleted.</p>
@@ -10,17 +10,17 @@ pub struct DeleteSubscriptionTargetInput {
     /// <p>The ID of the subscription target that is deleted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSubscriptionTargetInput {
+impl  DeleteSubscriptionTargetInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription target is deleted.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the Amazon DataZone environment in which the subscription target is deleted.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The ID of the subscription target that is deleted.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteSubscriptionTargetInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription target is deleted.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription target is deleted.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteSubscriptionTargetInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone environment in which the subscription target is deleted.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone environment in which the subscription target is deleted.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteSubscriptionTargetInputBuilder {
     }
     /// <p>The ID of the subscription target that is deleted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the subscription target that is deleted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteSubscriptionTargetInput`](crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput {
-            domain_identifier: self.domain_identifier,
-            environment_identifier: self.environment_identifier,
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput {
+                domain_identifier: self.domain_identifier
+                ,
+                environment_identifier: self.environment_identifier
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

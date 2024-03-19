@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMetadataModelImportsOutput {
+pub struct DescribeMetadataModelImportsOutput  {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A paginated list of metadata model imports.</p>
-    pub requests: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>,
+    pub requests: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaConversionRequest>>,
     _request_id: Option<String>,
 }
-impl DescribeMetadataModelImportsOutput {
+impl  DescribeMetadataModelImportsOutput  {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A paginated list of metadata model imports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requests.is_none()`.
-    pub fn requests(&self) -> &[crate::types::SchemaConversionRequest] {
-        self.requests.as_deref().unwrap_or_default()
+    pub fn requests(&self) -> & [crate::types::SchemaConversionRequest] {
+        self.requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMetadataModelImportsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMetadataModelImportsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetadataModelImportsOutput`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput).
     pub fn builder() -> crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsOutputBuilder {
@@ -40,7 +41,7 @@ impl DescribeMetadataModelImportsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetadataModelImportsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) requests: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>,
+    pub(crate) requests: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaConversionRequest>>,
     _request_id: Option<String>,
 }
 impl DescribeMetadataModelImportsOutputBuilder {
@@ -53,8 +54,7 @@ impl DescribeMetadataModelImportsOutputBuilder {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
@@ -68,34 +68,36 @@ impl DescribeMetadataModelImportsOutputBuilder {
     /// <p>A paginated list of metadata model imports.</p>
     pub fn requests(mut self, input: crate::types::SchemaConversionRequest) -> Self {
         let mut v = self.requests.unwrap_or_default();
-        v.push(input);
-        self.requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A paginated list of metadata model imports.</p>
-    pub fn set_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>) -> Self {
-        self.requests = input;
-        self
+    pub fn set_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaConversionRequest>>) -> Self {
+        self.requests = input; self
     }
     /// <p>A paginated list of metadata model imports.</p>
-    pub fn get_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>> {
+    pub fn get_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaConversionRequest>> {
         &self.requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMetadataModelImportsOutput`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput).
     pub fn build(self) -> crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput {
         crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput {
-            marker: self.marker,
-            requests: self.requests,
+            marker: self.marker
+            ,
+            requests: self.requests
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

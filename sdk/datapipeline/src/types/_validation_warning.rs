@@ -3,22 +3,23 @@
 /// <p>Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationWarning {
+pub struct ValidationWarning  {
     /// <p>The identifier of the object that contains the validation warning.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the validation warning.</p>
-    pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ValidationWarning {
+impl  ValidationWarning  {
     /// <p>The identifier of the object that contains the validation warning.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the validation warning.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
-    pub fn warnings(&self) -> &[::std::string::String] {
-        self.warnings.as_deref().unwrap_or_default()
+    pub fn warnings(&self) -> & [::std::string::String] {
+        self.warnings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ValidationWarning {
@@ -33,7 +34,7 @@ impl ValidationWarning {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationWarningBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ValidationWarningBuilder {
     /// <p>The identifier of the object that contains the validation warning.</p>
@@ -43,8 +44,7 @@ impl ValidationWarningBuilder {
     }
     /// <p>The identifier of the object that contains the validation warning.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the object that contains the validation warning.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ValidationWarningBuilder {
     /// <p>A description of the validation warning.</p>
     pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input.into());
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A description of the validation warning.</p>
-    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>A description of the validation warning.</p>
-    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.warnings
     }
     /// Consumes the builder and constructs a [`ValidationWarning`](crate::types::ValidationWarning).
     pub fn build(self) -> crate::types::ValidationWarning {
         crate::types::ValidationWarning {
-            id: self.id,
-            warnings: self.warnings,
+            id: self.id
+            ,
+            warnings: self.warnings
+            ,
         }
     }
 }
+

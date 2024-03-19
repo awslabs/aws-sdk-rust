@@ -3,24 +3,25 @@
 /// <p>Contains the response to a <code>DescribeVolumes</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVolumesOutput {
+pub struct DescribeVolumesOutput  {
     /// <p>An array of volume IDs.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     _request_id: Option<String>,
 }
-impl DescribeVolumesOutput {
+impl  DescribeVolumesOutput  {
     /// <p>An array of volume IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::Volume] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::Volume] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVolumesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVolumesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput).
     pub fn builder() -> crate::operation::describe_volumes::builders::DescribeVolumesOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeVolumesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumesOutputBuilder {
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumesOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeVolumesOutputBuilder {
     /// <p>An array of volume IDs.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of volume IDs.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>An array of volume IDs.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Volume>> {
         &self.volumes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput).
     pub fn build(self) -> crate::operation::describe_volumes::DescribeVolumesOutput {
         crate::operation::describe_volumes::DescribeVolumesOutput {
-            volumes: self.volumes,
+            volumes: self.volumes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>An object describing the project.</p>
     pub project: ::std::option::Option<crate::types::ProjectDescription>,
     _request_id: Option<String>,
 }
-impl DescribeProjectOutput {
+impl  DescribeProjectOutput  {
     /// <p>An object describing the project.</p>
-    pub fn project(&self) -> ::std::option::Option<&crate::types::ProjectDescription> {
+    pub fn project(&self) -> ::std::option::Option<& crate::types::ProjectDescription> {
         self.project.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn builder() -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>An object describing the project.</p>
     pub fn set_project(mut self, input: ::std::option::Option<crate::types::ProjectDescription>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>An object describing the project.</p>
     pub fn get_project(&self) -> &::std::option::Option<crate::types::ProjectDescription> {
         &self.project
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn build(self) -> crate::operation::describe_project::DescribeProjectOutput {
         crate::operation::describe_project::DescribeProjectOutput {
-            project: self.project,
+            project: self.project
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

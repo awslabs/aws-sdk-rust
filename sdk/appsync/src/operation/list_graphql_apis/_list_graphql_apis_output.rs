@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGraphqlApisOutput {
+pub struct ListGraphqlApisOutput  {
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    pub graphql_apis: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>,
+    pub graphql_apis: ::std::option::Option<::std::vec::Vec::<crate::types::GraphqlApi>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListGraphqlApisOutput {
+impl  ListGraphqlApisOutput  {
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.graphql_apis.is_none()`.
-    pub fn graphql_apis(&self) -> &[crate::types::GraphqlApi] {
-        self.graphql_apis.as_deref().unwrap_or_default()
+    pub fn graphql_apis(&self) -> & [crate::types::GraphqlApi] {
+        self.graphql_apis.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGraphqlApisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGraphqlApisOutput {
     /// Creates a new builder-style object to manufacture [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput).
     pub fn builder() -> crate::operation::list_graphql_apis::builders::ListGraphqlApisOutputBuilder {
@@ -37,7 +38,7 @@ impl ListGraphqlApisOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGraphqlApisOutputBuilder {
-    pub(crate) graphql_apis: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>,
+    pub(crate) graphql_apis: ::std::option::Option<::std::vec::Vec::<crate::types::GraphqlApi>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListGraphqlApisOutputBuilder {
     /// <p>The <code>GraphqlApi</code> objects.</p>
     pub fn graphql_apis(mut self, input: crate::types::GraphqlApi) -> Self {
         let mut v = self.graphql_apis.unwrap_or_default();
-        v.push(input);
-        self.graphql_apis = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.graphql_apis = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    pub fn set_graphql_apis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>) -> Self {
-        self.graphql_apis = input;
-        self
+    pub fn set_graphql_apis(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GraphqlApi>>) -> Self {
+        self.graphql_apis = input; self
     }
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    pub fn get_graphql_apis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>> {
+    pub fn get_graphql_apis(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GraphqlApi>> {
         &self.graphql_apis
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListGraphqlApisOutputBuilder {
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput).
     pub fn build(self) -> crate::operation::list_graphql_apis::ListGraphqlApisOutput {
         crate::operation::list_graphql_apis::ListGraphqlApisOutput {
-            graphql_apis: self.graphql_apis,
-            next_token: self.next_token,
+            graphql_apis: self.graphql_apis
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

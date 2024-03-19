@@ -4,13 +4,13 @@
 /// <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorldCount {
+pub struct WorldCount  {
     /// <p>The number of unique floorplans.</p>
     pub floorplan_count: ::std::option::Option<i32>,
     /// <p>The number of unique interiors per floorplan.</p>
     pub interior_count_per_floorplan: ::std::option::Option<i32>,
 }
-impl WorldCount {
+impl  WorldCount  {
     /// <p>The number of unique floorplans.</p>
     pub fn floorplan_count(&self) -> ::std::option::Option<i32> {
         self.floorplan_count
@@ -42,8 +42,7 @@ impl WorldCountBuilder {
     }
     /// <p>The number of unique floorplans.</p>
     pub fn set_floorplan_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.floorplan_count = input;
-        self
+        self.floorplan_count = input; self
     }
     /// <p>The number of unique floorplans.</p>
     pub fn get_floorplan_count(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl WorldCountBuilder {
     }
     /// <p>The number of unique interiors per floorplan.</p>
     pub fn set_interior_count_per_floorplan(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interior_count_per_floorplan = input;
-        self
+        self.interior_count_per_floorplan = input; self
     }
     /// <p>The number of unique interiors per floorplan.</p>
     pub fn get_interior_count_per_floorplan(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl WorldCountBuilder {
     /// Consumes the builder and constructs a [`WorldCount`](crate::types::WorldCount).
     pub fn build(self) -> crate::types::WorldCount {
         crate::types::WorldCount {
-            floorplan_count: self.floorplan_count,
-            interior_count_per_floorplan: self.interior_count_per_floorplan,
+            floorplan_count: self.floorplan_count
+            ,
+            interior_count_per_floorplan: self.interior_count_per_floorplan
+            ,
         }
     }
 }
+

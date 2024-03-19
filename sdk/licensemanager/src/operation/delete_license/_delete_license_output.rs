@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLicenseOutput {
+pub struct DeleteLicenseOutput  {
     /// <p>License status.</p>
     pub status: ::std::option::Option<crate::types::LicenseDeletionStatus>,
     /// <p>Date when the license is deleted.</p>
     pub deletion_date: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteLicenseOutput {
+impl  DeleteLicenseOutput  {
     /// <p>License status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LicenseDeletionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LicenseDeletionStatus> {
         self.status.as_ref()
     }
     /// <p>Date when the license is deleted.</p>
-    pub fn deletion_date(&self) -> ::std::option::Option<&str> {
+    pub fn deletion_date(&self) -> ::std::option::Option<& str> {
         self.deletion_date.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteLicenseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteLicenseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseOutput`](crate::operation::delete_license::DeleteLicenseOutput).
     pub fn builder() -> crate::operation::delete_license::builders::DeleteLicenseOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteLicenseOutputBuilder {
     }
     /// <p>License status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LicenseDeletionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>License status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LicenseDeletionStatus> {
@@ -61,28 +60,30 @@ impl DeleteLicenseOutputBuilder {
     }
     /// <p>Date when the license is deleted.</p>
     pub fn set_deletion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deletion_date = input;
-        self
+        self.deletion_date = input; self
     }
     /// <p>Date when the license is deleted.</p>
     pub fn get_deletion_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.deletion_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteLicenseOutput`](crate::operation::delete_license::DeleteLicenseOutput).
     pub fn build(self) -> crate::operation::delete_license::DeleteLicenseOutput {
         crate::operation::delete_license::DeleteLicenseOutput {
-            status: self.status,
-            deletion_date: self.deletion_date,
+            status: self.status
+            ,
+            deletion_date: self.deletion_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

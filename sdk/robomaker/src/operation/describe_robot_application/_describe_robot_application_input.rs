@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRobotApplicationInput {
+pub struct DescribeRobotApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the robot application to describe.</p>
     pub application_version: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRobotApplicationInput {
+impl  DescribeRobotApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the robot application to describe.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&str> {
+    pub fn application_version(&self) -> ::std::option::Option<& str> {
         self.application_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeRobotApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DescribeRobotApplicationInputBuilder {
     }
     /// <p>The version of the robot application to describe.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The version of the robot application to describe.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_version
     }
     /// Consumes the builder and constructs a [`DescribeRobotApplicationInput`](crate::operation::describe_robot_application::DescribeRobotApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_robot_application::DescribeRobotApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_robot_application::DescribeRobotApplicationInput {
-            application: self.application,
-            application_version: self.application_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_robot_application::DescribeRobotApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_robot_application::DescribeRobotApplicationInput {
+                application: self.application
+                ,
+                application_version: self.application_version
+                ,
+            }
+        )
     }
 }
+

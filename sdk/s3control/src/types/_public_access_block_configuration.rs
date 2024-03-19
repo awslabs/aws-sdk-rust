@@ -4,7 +4,7 @@
 /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicAccessBlockConfiguration {
+pub struct PublicAccessBlockConfiguration  {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
     /// <li>
@@ -30,7 +30,7 @@ pub struct PublicAccessBlockConfiguration {
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub restrict_public_buckets: ::std::option::Option<bool>,
 }
-impl PublicAccessBlockConfiguration {
+impl  PublicAccessBlockConfiguration  {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
     /// <li>
@@ -108,8 +108,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_block_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_acls = input;
-        self
+        self.block_public_acls = input; self
     }
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
@@ -136,8 +135,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_ignore_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_public_acls = input;
-        self
+        self.ignore_public_acls = input; self
     }
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
@@ -156,8 +154,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_policy = input;
-        self
+        self.block_public_policy = input; self
     }
     /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
@@ -176,8 +173,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.restrict_public_buckets = input;
-        self
+        self.restrict_public_buckets = input; self
     }
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
@@ -188,10 +184,15 @@ impl PublicAccessBlockConfigurationBuilder {
     /// Consumes the builder and constructs a [`PublicAccessBlockConfiguration`](crate::types::PublicAccessBlockConfiguration).
     pub fn build(self) -> crate::types::PublicAccessBlockConfiguration {
         crate::types::PublicAccessBlockConfiguration {
-            block_public_acls: self.block_public_acls,
-            ignore_public_acls: self.ignore_public_acls,
-            block_public_policy: self.block_public_policy,
-            restrict_public_buckets: self.restrict_public_buckets,
+            block_public_acls: self.block_public_acls
+            ,
+            ignore_public_acls: self.ignore_public_acls
+            ,
+            block_public_policy: self.block_public_policy
+            ,
+            restrict_public_buckets: self.restrict_public_buckets
+            ,
         }
     }
 }
+

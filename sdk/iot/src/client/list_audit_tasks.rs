@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAuditTasks`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_time(DateTime)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::set_start_time):<br>required: **true**<br><p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::set_end_time):<br>required: **true**<br><p>The end of the time period.</p><br>
     ///   - [`task_type(AuditTaskType)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::task_type) / [`set_task_type(Option<AuditTaskType>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::set_task_type):<br>required: **false**<br><p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p><br>
     ///   - [`task_status(AuditTaskStatus)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::task_status) / [`set_task_status(Option<AuditTaskStatus>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::set_task_status):<br>required: **false**<br><p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p><br>
-    /// - On success, responds with [`ListAuditTasksOutput`](crate::operation::list_audit_tasks::ListAuditTasksOutput) with field(s):
+                            /// - On success, responds with [`ListAuditTasksOutput`](crate::operation::list_audit_tasks::ListAuditTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec::<AuditTaskMetadata>>)`](crate::operation::list_audit_tasks::ListAuditTasksOutput::tasks): <p>The audits that were performed during the specified time period.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_tasks::ListAuditTasksOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListAuditTasksError>`](crate::operation::list_audit_tasks::ListAuditTasksError)
+                            /// - On failure, responds with [`SdkError<ListAuditTasksError>`](crate::operation::list_audit_tasks::ListAuditTasksError)
     pub fn list_audit_tasks(&self) -> crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder {
-        crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

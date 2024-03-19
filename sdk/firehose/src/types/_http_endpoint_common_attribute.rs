@@ -3,25 +3,23 @@
 /// <p>Describes the metadata that's delivered to the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct HttpEndpointCommonAttribute {
+pub struct HttpEndpointCommonAttribute  {
     /// <p>The name of the HTTP endpoint common attribute.</p>
     pub attribute_name: ::std::string::String,
     /// <p>The value of the HTTP endpoint common attribute.</p>
     pub attribute_value: ::std::string::String,
 }
-impl HttpEndpointCommonAttribute {
+impl  HttpEndpointCommonAttribute  {
     /// <p>The name of the HTTP endpoint common attribute.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
     /// <p>The value of the HTTP endpoint common attribute.</p>
-    pub fn attribute_value(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_value.deref()
+    pub fn attribute_value(&self) -> & str {
+        use std::ops::Deref; self.attribute_value.deref()
     }
 }
-impl ::std::fmt::Debug for HttpEndpointCommonAttribute {
+impl  ::std::fmt::Debug for HttpEndpointCommonAttribute  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HttpEndpointCommonAttribute");
         formatter.field("attribute_name", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl HttpEndpointCommonAttributeBuilder {
     }
     /// <p>The name of the HTTP endpoint common attribute.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the HTTP endpoint common attribute.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl HttpEndpointCommonAttributeBuilder {
     }
     /// <p>The value of the HTTP endpoint common attribute.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of the HTTP endpoint common attribute.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl HttpEndpointCommonAttributeBuilder {
     /// - [`attribute_name`](crate::types::builders::HttpEndpointCommonAttributeBuilder::attribute_name)
     /// - [`attribute_value`](crate::types::builders::HttpEndpointCommonAttributeBuilder::attribute_value)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpEndpointCommonAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HttpEndpointCommonAttribute {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building HttpEndpointCommonAttribute",
-                )
-            })?,
-            attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_value",
-                    "attribute_value was not specified but it is required when building HttpEndpointCommonAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HttpEndpointCommonAttribute {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building HttpEndpointCommonAttribute")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_value", "attribute_value was not specified but it is required when building HttpEndpointCommonAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for HttpEndpointCommonAttributeBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for HttpEndpointCommonAttributeBuilder {
         formatter.finish()
     }
 }
+

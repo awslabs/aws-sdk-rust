@@ -3,22 +3,23 @@
 /// <p>Describes a conditional forwarder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConditionalForwardersInput {
+pub struct DescribeConditionalForwardersInput  {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    pub remote_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remote_domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeConditionalForwardersInput {
+impl  DescribeConditionalForwardersInput  {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_domain_names.is_none()`.
-    pub fn remote_domain_names(&self) -> &[::std::string::String] {
-        self.remote_domain_names.as_deref().unwrap_or_default()
+    pub fn remote_domain_names(&self) -> & [::std::string::String] {
+        self.remote_domain_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeConditionalForwardersInput {
@@ -33,7 +34,7 @@ impl DescribeConditionalForwardersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConditionalForwardersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
-    pub(crate) remote_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remote_domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeConditionalForwardersInputBuilder {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
@@ -44,8 +45,7 @@ impl DescribeConditionalForwardersInputBuilder {
     }
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,29 +58,28 @@ impl DescribeConditionalForwardersInputBuilder {
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
     pub fn remote_domain_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remote_domain_names.unwrap_or_default();
-        v.push(input.into());
-        self.remote_domain_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remote_domain_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    pub fn set_remote_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remote_domain_names = input;
-        self
+    pub fn set_remote_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remote_domain_names = input; self
     }
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    pub fn get_remote_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remote_domain_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remote_domain_names
     }
     /// Consumes the builder and constructs a [`DescribeConditionalForwardersInput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput {
-            directory_id: self.directory_id,
-            remote_domain_names: self.remote_domain_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput {
+                directory_id: self.directory_id
+                ,
+                remote_domain_names: self.remote_domain_names
+                ,
+            }
+        )
     }
 }
+

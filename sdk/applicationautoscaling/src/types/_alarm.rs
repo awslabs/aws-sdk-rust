@@ -3,22 +3,20 @@
 /// <p>Represents a CloudWatch alarm associated with a scaling policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alarm {
+pub struct Alarm  {
     /// <p>The name of the alarm.</p>
     pub alarm_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub alarm_arn: ::std::string::String,
 }
-impl Alarm {
+impl  Alarm  {
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(&self) -> &str {
-        use std::ops::Deref;
-        self.alarm_name.deref()
+    pub fn alarm_name(&self) -> & str {
+        use std::ops::Deref; self.alarm_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    pub fn alarm_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.alarm_arn.deref()
+    pub fn alarm_arn(&self) -> & str {
+        use std::ops::Deref; self.alarm_arn.deref()
     }
 }
 impl Alarm {
@@ -44,8 +42,7 @@ impl AlarmBuilder {
     }
     /// <p>The name of the alarm.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name of the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl AlarmBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn set_alarm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_arn = input;
-        self
+        self.alarm_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn get_alarm_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl AlarmBuilder {
     /// - [`alarm_name`](crate::types::builders::AlarmBuilder::alarm_name)
     /// - [`alarm_arn`](crate::types::builders::AlarmBuilder::alarm_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Alarm, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Alarm {
-            alarm_name: self.alarm_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_name",
-                    "alarm_name was not specified but it is required when building Alarm",
-                )
-            })?,
-            alarm_arn: self.alarm_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_arn",
-                    "alarm_arn was not specified but it is required when building Alarm",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Alarm {
+                alarm_name: self.alarm_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_name", "alarm_name was not specified but it is required when building Alarm")
+                    )?
+                ,
+                alarm_arn: self.alarm_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_arn", "alarm_arn was not specified but it is required when building Alarm")
+                    )?
+                ,
+            }
+        )
     }
 }
+

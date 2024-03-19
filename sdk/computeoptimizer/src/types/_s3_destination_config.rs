@@ -4,19 +4,19 @@
 /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationConfig {
+pub struct S3DestinationConfig  {
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3DestinationConfig {
+impl  S3DestinationConfig  {
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
-    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl S3DestinationConfigBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl S3DestinationConfigBuilder {
     }
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
     }
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
     pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl S3DestinationConfigBuilder {
     /// Consumes the builder and constructs a [`S3DestinationConfig`](crate::types::S3DestinationConfig).
     pub fn build(self) -> crate::types::S3DestinationConfig {
         crate::types::S3DestinationConfig {
-            bucket: self.bucket,
-            key_prefix: self.key_prefix,
+            bucket: self.bucket
+            ,
+            key_prefix: self.key_prefix
+            ,
         }
     }
 }
+

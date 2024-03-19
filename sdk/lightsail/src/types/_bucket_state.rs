@@ -3,7 +3,7 @@
 /// <p>Describes the state of an Amazon Lightsail bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketState {
+pub struct BucketState  {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct BucketState {
     /// <p>A message that describes the state of the bucket.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl BucketState {
+impl  BucketState  {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
@@ -25,11 +25,11 @@ impl BucketState {
     /// <li>
     /// <p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message that describes the state of the bucket.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl BucketStateBuilder {
     /// <p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
@@ -90,8 +89,7 @@ impl BucketStateBuilder {
     }
     /// <p>A message that describes the state of the bucket.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message that describes the state of the bucket.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,11 @@ impl BucketStateBuilder {
     /// Consumes the builder and constructs a [`BucketState`](crate::types::BucketState).
     pub fn build(self) -> crate::types::BucketState {
         crate::types::BucketState {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVerifiedAccessInstanceOutput {
+pub struct ModifyVerifiedAccessInstanceOutput  {
     /// <p>Details about the Verified Access instance.</p>
     pub verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }
-impl ModifyVerifiedAccessInstanceOutput {
+impl  ModifyVerifiedAccessInstanceOutput  {
     /// <p>Details about the Verified Access instance.</p>
-    pub fn verified_access_instance(&self) -> ::std::option::Option<&crate::types::VerifiedAccessInstance> {
+    pub fn verified_access_instance(&self) -> ::std::option::Option<& crate::types::VerifiedAccessInstance> {
         self.verified_access_instance.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyVerifiedAccessInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyVerifiedAccessInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceOutput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput).
     pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyVerifiedAccessInstanceOutputBuilder {
     }
     /// <p>Details about the Verified Access instance.</p>
     pub fn set_verified_access_instance(mut self, input: ::std::option::Option<crate::types::VerifiedAccessInstance>) -> Self {
-        self.verified_access_instance = input;
-        self
+        self.verified_access_instance = input; self
     }
     /// <p>Details about the Verified Access instance.</p>
     pub fn get_verified_access_instance(&self) -> &::std::option::Option<crate::types::VerifiedAccessInstance> {
         &self.verified_access_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceOutput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput).
     pub fn build(self) -> crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput {
         crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput {
-            verified_access_instance: self.verified_access_instance,
+            verified_access_instance: self.verified_access_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

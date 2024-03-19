@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResolverRuleInput {
+pub struct DeleteResolverRuleInput  {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResolverRuleInput {
+impl  DeleteResolverRuleInput  {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
-    pub fn resolver_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_rule_id(&self) -> ::std::option::Option<& str> {
         self.resolver_rule_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteResolverRuleInputBuilder {
     }
     /// <p>The ID of the Resolver rule that you want to delete.</p>
     pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_rule_id = input;
-        self
+        self.resolver_rule_id = input; self
     }
     /// <p>The ID of the Resolver rule that you want to delete.</p>
     pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolver_rule_id
     }
     /// Consumes the builder and constructs a [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_resolver_rule::DeleteResolverRuleInput {
-            resolver_rule_id: self.resolver_rule_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resolver_rule::DeleteResolverRuleInput {
+                resolver_rule_id: self.resolver_rule_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecordsOutput {
+pub struct GetRecordsOutput  {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     pub next_shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRecordsOutput {
+impl  GetRecordsOutput  {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[crate::types::Record] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [crate::types::Record] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
-    pub fn next_shard_iterator(&self) -> ::std::option::Option<&str> {
+    pub fn next_shard_iterator(&self) -> ::std::option::Option<& str> {
         self.next_shard_iterator.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecordsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecordsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
     pub fn builder() -> crate::operation::get_records::builders::GetRecordsOutputBuilder {
@@ -38,7 +39,7 @@ impl GetRecordsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordsOutputBuilder {
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
     pub(crate) next_shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl GetRecordsOutputBuilder {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>) -> Self {
+        self.records = input; self
     }
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Record>> {
         &self.records
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
@@ -70,28 +70,30 @@ impl GetRecordsOutputBuilder {
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     pub fn set_next_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_shard_iterator = input;
-        self
+        self.next_shard_iterator = input; self
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     pub fn get_next_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_shard_iterator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
     pub fn build(self) -> crate::operation::get_records::GetRecordsOutput {
         crate::operation::get_records::GetRecordsOutput {
-            records: self.records,
-            next_shard_iterator: self.next_shard_iterator,
+            records: self.records
+            ,
+            next_shard_iterator: self.next_shard_iterator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

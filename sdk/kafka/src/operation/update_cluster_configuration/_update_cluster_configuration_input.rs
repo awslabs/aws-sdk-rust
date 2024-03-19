@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterConfigurationInput {
+pub struct UpdateClusterConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
@@ -10,17 +10,17 @@ pub struct UpdateClusterConfigurationInput {
     /// <p>The version of the cluster that needs to be updated.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
 }
-impl UpdateClusterConfigurationInput {
+impl  UpdateClusterConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn configuration_info(&self) -> ::std::option::Option<&crate::types::ConfigurationInfo> {
+    pub fn configuration_info(&self) -> ::std::option::Option<& crate::types::ConfigurationInfo> {
         self.configuration_info.as_ref()
     }
     /// <p>The version of the cluster that needs to be updated.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateClusterConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateClusterConfigurationInputBuilder {
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn set_configuration_info(mut self, input: ::std::option::Option<crate::types::ConfigurationInfo>) -> Self {
-        self.configuration_info = input;
-        self
+        self.configuration_info = input; self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn get_configuration_info(&self) -> &::std::option::Option<crate::types::ConfigurationInfo> {
@@ -78,24 +76,24 @@ impl UpdateClusterConfigurationInputBuilder {
     }
     /// <p>The version of the cluster that needs to be updated.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The version of the cluster that needs to be updated.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_version
     }
     /// Consumes the builder and constructs a [`UpdateClusterConfigurationInput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput {
-            cluster_arn: self.cluster_arn,
-            configuration_info: self.configuration_info,
-            current_version: self.current_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput {
+                cluster_arn: self.cluster_arn
+                ,
+                configuration_info: self.configuration_info
+                ,
+                current_version: self.current_version
+                ,
+            }
+        )
     }
 }
+

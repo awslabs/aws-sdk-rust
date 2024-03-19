@@ -3,19 +3,19 @@
 /// <p>The time range of a cost estimation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostEstimationTimeRange {
+pub struct CostEstimationTimeRange  {
     /// <p>The start time of the cost estimation.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the cost estimation.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CostEstimationTimeRange {
+impl  CostEstimationTimeRange  {
     /// <p>The start time of the cost estimation.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the cost estimation.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CostEstimationTimeRangeBuilder {
     }
     /// <p>The start time of the cost estimation.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the cost estimation.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl CostEstimationTimeRangeBuilder {
     }
     /// <p>The end time of the cost estimation.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the cost estimation.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl CostEstimationTimeRangeBuilder {
     /// Consumes the builder and constructs a [`CostEstimationTimeRange`](crate::types::CostEstimationTimeRange).
     pub fn build(self) -> crate::types::CostEstimationTimeRange {
         crate::types::CostEstimationTimeRange {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRepositorySyncDefinitionsInput {
+pub struct ListRepositorySyncDefinitionsInput  {
     /// <p>The ID of the repository link for the sync definition for which you want to retrieve information.</p>
     pub repository_link_id: ::std::option::Option<::std::string::String>,
     /// <p>The sync type of the repository link for the the sync definition for which you want to retrieve information.</p>
     pub sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
 }
-impl ListRepositorySyncDefinitionsInput {
+impl  ListRepositorySyncDefinitionsInput  {
     /// <p>The ID of the repository link for the sync definition for which you want to retrieve information.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
     /// <p>The sync type of the repository link for the the sync definition for which you want to retrieve information.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncConfigurationType> {
+    pub fn sync_type(&self) -> ::std::option::Option<& crate::types::SyncConfigurationType> {
         self.sync_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
     }
     /// <p>The ID of the repository link for the sync definition for which you want to retrieve information.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link for the sync definition for which you want to retrieve information.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ListRepositorySyncDefinitionsInputBuilder {
     }
     /// <p>The sync type of the repository link for the the sync definition for which you want to retrieve information.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncConfigurationType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The sync type of the repository link for the the sync definition for which you want to retrieve information.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
         &self.sync_type
     }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
-            repository_link_id: self.repository_link_id,
-            sync_type: self.sync_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
+                repository_link_id: self.repository_link_id
+                ,
+                sync_type: self.sync_type
+                ,
+            }
+        )
     }
 }
+

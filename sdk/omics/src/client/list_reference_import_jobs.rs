@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReferenceImportJobs`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of jobs to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`reference_store_id(impl Into<String>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::set_reference_store_id):<br>required: **true**<br><p>The job's reference store ID.</p><br>
     ///   - [`filter(ImportReferenceFilter)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::filter) / [`set_filter(Option<ImportReferenceFilter>)`](crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`import_jobs(Option<Vec::<ImportReferenceJobItem>>)`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput::import_jobs): <p>A lis of jobs.</p>
-    /// - On failure, responds with [`SdkError<ListReferenceImportJobsError>`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListReferenceImportJobsError>`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsError)
     pub fn list_reference_import_jobs(&self) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder {
-        crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

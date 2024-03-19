@@ -3,19 +3,19 @@
 /// <p>Contains information on suspicious IP addresses identified as indicators of compromise. This indicator is derived from Amazon Web Services threat intelligence.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlaggedIpAddressDetail {
+pub struct FlaggedIpAddressDetail  {
     /// <p>IP address of the suspicious entity.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Details the reason the IP address was flagged as suspicious.</p>
     pub reason: ::std::option::Option<crate::types::Reason>,
 }
-impl FlaggedIpAddressDetail {
+impl  FlaggedIpAddressDetail  {
     /// <p>IP address of the suspicious entity.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>Details the reason the IP address was flagged as suspicious.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::Reason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::Reason> {
         self.reason.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl FlaggedIpAddressDetailBuilder {
     }
     /// <p>IP address of the suspicious entity.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>IP address of the suspicious entity.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FlaggedIpAddressDetailBuilder {
     }
     /// <p>Details the reason the IP address was flagged as suspicious.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::Reason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Details the reason the IP address was flagged as suspicious.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::Reason> {
@@ -65,8 +63,11 @@ impl FlaggedIpAddressDetailBuilder {
     /// Consumes the builder and constructs a [`FlaggedIpAddressDetail`](crate::types::FlaggedIpAddressDetail).
     pub fn build(self) -> crate::types::FlaggedIpAddressDetail {
         crate::types::FlaggedIpAddressDetail {
-            ip_address: self.ip_address,
-            reason: self.reason,
+            ip_address: self.ip_address
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportDefinition {
+pub struct ReportDefinition  {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub report_name: ::std::string::String,
     /// <p>The length of time covered by the report.</p>
@@ -13,7 +13,7 @@ pub struct ReportDefinition {
     /// <p>The compression format that Amazon Web Services uses for the report.</p>
     pub compression: crate::types::CompressionFormat,
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.</p>
-    pub additional_schema_elements: ::std::vec::Vec<crate::types::SchemaElement>,
+    pub additional_schema_elements: ::std::vec::Vec::<crate::types::SchemaElement>,
     /// <p>The S3 bucket where Amazon Web Services delivers the report.</p>
     pub s3_bucket: ::std::string::String,
     /// <p>The prefix that Amazon Web Services adds to the report name when Amazon Web Services delivers the report. Your prefix can't include spaces.</p>
@@ -21,7 +21,7 @@ pub struct ReportDefinition {
     /// <p>The region of the S3 bucket that Amazon Web Services delivers the report into.</p>
     pub s3_region: crate::types::AwsRegion,
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub additional_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
+    pub additional_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::AdditionalArtifact>>,
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     pub refresh_closed_reports: ::std::option::Option<bool>,
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
@@ -31,63 +31,60 @@ pub struct ReportDefinition {
     /// <p>The status of the report.</p>
     pub report_status: ::std::option::Option<crate::types::ReportStatus>,
 }
-impl ReportDefinition {
+impl  ReportDefinition  {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.</p>
-    pub fn report_name(&self) -> &str {
-        use std::ops::Deref;
-        self.report_name.deref()
+    pub fn report_name(&self) -> & str {
+        use std::ops::Deref; self.report_name.deref()
     }
     /// <p>The length of time covered by the report.</p>
-    pub fn time_unit(&self) -> &crate::types::TimeUnit {
+    pub fn time_unit(&self) -> & crate::types::TimeUnit {
         &self.time_unit
     }
     /// <p>The format that Amazon Web Services saves the report in.</p>
-    pub fn format(&self) -> &crate::types::ReportFormat {
+    pub fn format(&self) -> & crate::types::ReportFormat {
         &self.format
     }
     /// <p>The compression format that Amazon Web Services uses for the report.</p>
-    pub fn compression(&self) -> &crate::types::CompressionFormat {
+    pub fn compression(&self) -> & crate::types::CompressionFormat {
         &self.compression
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.</p>
-    pub fn additional_schema_elements(&self) -> &[crate::types::SchemaElement] {
-        use std::ops::Deref;
-        self.additional_schema_elements.deref()
+    pub fn additional_schema_elements(&self) -> & [crate::types::SchemaElement] {
+        use std::ops::Deref; self.additional_schema_elements.deref()
     }
     /// <p>The S3 bucket where Amazon Web Services delivers the report.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>The prefix that Amazon Web Services adds to the report name when Amazon Web Services delivers the report. Your prefix can't include spaces.</p>
-    pub fn s3_prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_prefix.deref()
+    pub fn s3_prefix(&self) -> & str {
+        use std::ops::Deref; self.s3_prefix.deref()
     }
     /// <p>The region of the S3 bucket that Amazon Web Services delivers the report into.</p>
-    pub fn s3_region(&self) -> &crate::types::AwsRegion {
+    pub fn s3_region(&self) -> & crate::types::AwsRegion {
         &self.s3_region
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_artifacts.is_none()`.
-    pub fn additional_artifacts(&self) -> &[crate::types::AdditionalArtifact] {
-        self.additional_artifacts.as_deref().unwrap_or_default()
+    pub fn additional_artifacts(&self) -> & [crate::types::AdditionalArtifact] {
+        self.additional_artifacts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     pub fn refresh_closed_reports(&self) -> ::std::option::Option<bool> {
         self.refresh_closed_reports
     }
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
-    pub fn report_versioning(&self) -> ::std::option::Option<&crate::types::ReportVersioning> {
+    pub fn report_versioning(&self) -> ::std::option::Option<& crate::types::ReportVersioning> {
         self.report_versioning.as_ref()
     }
     /// <p>The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor service. The <code>BillingViewArn</code> for a billing group can be constructed as: <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code></p>
-    pub fn billing_view_arn(&self) -> ::std::option::Option<&str> {
+    pub fn billing_view_arn(&self) -> ::std::option::Option<& str> {
         self.billing_view_arn.as_deref()
     }
     /// <p>The status of the report.</p>
-    pub fn report_status(&self) -> ::std::option::Option<&crate::types::ReportStatus> {
+    pub fn report_status(&self) -> ::std::option::Option<& crate::types::ReportStatus> {
         self.report_status.as_ref()
     }
 }
@@ -106,11 +103,11 @@ pub struct ReportDefinitionBuilder {
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
     pub(crate) format: ::std::option::Option<crate::types::ReportFormat>,
     pub(crate) compression: ::std::option::Option<crate::types::CompressionFormat>,
-    pub(crate) additional_schema_elements: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
+    pub(crate) additional_schema_elements: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaElement>>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) s3_region: ::std::option::Option<crate::types::AwsRegion>,
-    pub(crate) additional_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
+    pub(crate) additional_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::AdditionalArtifact>>,
     pub(crate) refresh_closed_reports: ::std::option::Option<bool>,
     pub(crate) report_versioning: ::std::option::Option<crate::types::ReportVersioning>,
     pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
@@ -125,8 +122,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_name = input;
-        self
+        self.report_name = input; self
     }
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +136,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The length of time covered by the report.</p>
     pub fn set_time_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
-        self.time_unit = input;
-        self
+        self.time_unit = input; self
     }
     /// <p>The length of time covered by the report.</p>
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
@@ -155,8 +150,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The format that Amazon Web Services saves the report in.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::ReportFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format that Amazon Web Services saves the report in.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
@@ -170,8 +164,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The compression format that Amazon Web Services uses for the report.</p>
     pub fn set_compression(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
-        self.compression = input;
-        self
+        self.compression = input; self
     }
     /// <p>The compression format that Amazon Web Services uses for the report.</p>
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
@@ -184,17 +177,16 @@ impl ReportDefinitionBuilder {
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.</p>
     pub fn additional_schema_elements(mut self, input: crate::types::SchemaElement) -> Self {
         let mut v = self.additional_schema_elements.unwrap_or_default();
-        v.push(input);
-        self.additional_schema_elements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_schema_elements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.</p>
-    pub fn set_additional_schema_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>) -> Self {
-        self.additional_schema_elements = input;
-        self
+    pub fn set_additional_schema_elements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaElement>>) -> Self {
+        self.additional_schema_elements = input; self
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.</p>
-    pub fn get_additional_schema_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>> {
+    pub fn get_additional_schema_elements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaElement>> {
         &self.additional_schema_elements
     }
     /// <p>The S3 bucket where Amazon Web Services delivers the report.</p>
@@ -205,8 +197,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The S3 bucket where Amazon Web Services delivers the report.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The S3 bucket where Amazon Web Services delivers the report.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +211,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The prefix that Amazon Web Services adds to the report name when Amazon Web Services delivers the report. Your prefix can't include spaces.</p>
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// <p>The prefix that Amazon Web Services adds to the report name when Amazon Web Services delivers the report. Your prefix can't include spaces.</p>
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +225,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The region of the S3 bucket that Amazon Web Services delivers the report into.</p>
     pub fn set_s3_region(mut self, input: ::std::option::Option<crate::types::AwsRegion>) -> Self {
-        self.s3_region = input;
-        self
+        self.s3_region = input; self
     }
     /// <p>The region of the S3 bucket that Amazon Web Services delivers the report into.</p>
     pub fn get_s3_region(&self) -> &::std::option::Option<crate::types::AwsRegion> {
@@ -249,17 +238,16 @@ impl ReportDefinitionBuilder {
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
     pub fn additional_artifacts(mut self, input: crate::types::AdditionalArtifact) -> Self {
         let mut v = self.additional_artifacts.unwrap_or_default();
-        v.push(input);
-        self.additional_artifacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_artifacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn set_additional_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>) -> Self {
-        self.additional_artifacts = input;
-        self
+    pub fn set_additional_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdditionalArtifact>>) -> Self {
+        self.additional_artifacts = input; self
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn get_additional_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>> {
+    pub fn get_additional_artifacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdditionalArtifact>> {
         &self.additional_artifacts
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
@@ -269,8 +257,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     pub fn set_refresh_closed_reports(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.refresh_closed_reports = input;
-        self
+        self.refresh_closed_reports = input; self
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     pub fn get_refresh_closed_reports(&self) -> &::std::option::Option<bool> {
@@ -283,8 +270,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
     pub fn set_report_versioning(mut self, input: ::std::option::Option<crate::types::ReportVersioning>) -> Self {
-        self.report_versioning = input;
-        self
+        self.report_versioning = input; self
     }
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
     pub fn get_report_versioning(&self) -> &::std::option::Option<crate::types::ReportVersioning> {
@@ -297,8 +283,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor service. The <code>BillingViewArn</code> for a billing group can be constructed as: <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code></p>
     pub fn set_billing_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_view_arn = input;
-        self
+        self.billing_view_arn = input; self
     }
     /// <p>The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor service. The <code>BillingViewArn</code> for a billing group can be constructed as: <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code></p>
     pub fn get_billing_view_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -311,8 +296,7 @@ impl ReportDefinitionBuilder {
     }
     /// <p>The status of the report.</p>
     pub fn set_report_status(mut self, input: ::std::option::Option<crate::types::ReportStatus>) -> Self {
-        self.report_status = input;
-        self
+        self.report_status = input; self
     }
     /// <p>The status of the report.</p>
     pub fn get_report_status(&self) -> &::std::option::Option<crate::types::ReportStatus> {
@@ -329,60 +313,60 @@ impl ReportDefinitionBuilder {
     /// - [`s3_prefix`](crate::types::builders::ReportDefinitionBuilder::s3_prefix)
     /// - [`s3_region`](crate::types::builders::ReportDefinitionBuilder::s3_region)
     pub fn build(self) -> ::std::result::Result<crate::types::ReportDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReportDefinition {
-            report_name: self.report_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "report_name",
-                    "report_name was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            time_unit: self.time_unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_unit",
-                    "time_unit was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            compression: self.compression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compression",
-                    "compression was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            additional_schema_elements: self.additional_schema_elements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "additional_schema_elements",
-                    "additional_schema_elements was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            s3_prefix: self.s3_prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_prefix",
-                    "s3_prefix was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            s3_region: self.s3_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_region",
-                    "s3_region was not specified but it is required when building ReportDefinition",
-                )
-            })?,
-            additional_artifacts: self.additional_artifacts,
-            refresh_closed_reports: self.refresh_closed_reports,
-            report_versioning: self.report_versioning,
-            billing_view_arn: self.billing_view_arn,
-            report_status: self.report_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReportDefinition {
+                report_name: self.report_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("report_name", "report_name was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                time_unit: self.time_unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_unit", "time_unit was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                compression: self.compression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compression", "compression was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                additional_schema_elements: self.additional_schema_elements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("additional_schema_elements", "additional_schema_elements was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                s3_prefix: self.s3_prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_prefix", "s3_prefix was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                s3_region: self.s3_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_region", "s3_region was not specified but it is required when building ReportDefinition")
+                    )?
+                ,
+                additional_artifacts: self.additional_artifacts
+                ,
+                refresh_closed_reports: self.refresh_closed_reports
+                ,
+                report_versioning: self.report_versioning
+                ,
+                billing_view_arn: self.billing_view_arn
+                ,
+                report_status: self.report_status
+                ,
+            }
+        )
     }
 }
+

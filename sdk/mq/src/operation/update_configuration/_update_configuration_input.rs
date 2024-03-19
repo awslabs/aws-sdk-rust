@@ -3,7 +3,7 @@
 /// <p>Updates the specified configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationInput {
+pub struct UpdateConfigurationInput  {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
@@ -11,17 +11,17 @@ pub struct UpdateConfigurationInput {
     /// <p>The description of the configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConfigurationInput {
+impl  UpdateConfigurationInput  {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl UpdateConfigurationInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl UpdateConfigurationInputBuilder {
     }
     /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl UpdateConfigurationInputBuilder {
     }
     /// <p>The description of the configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
-            configuration_id: self.configuration_id,
-            data: self.data,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_configuration::UpdateConfigurationInput {
+                configuration_id: self.configuration_id
+                ,
+                data: self.data
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

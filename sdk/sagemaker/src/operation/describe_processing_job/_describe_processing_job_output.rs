@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProcessingJobOutput {
+pub struct DescribeProcessingJobOutput  {
     /// <p>The inputs for a processing job.</p>
-    pub processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
+    pub processing_inputs: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>>,
     /// <p>Output configuration for the processing job.</p>
     pub processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -16,7 +16,7 @@ pub struct DescribeProcessingJobOutput {
     /// <p>Configures the processing job to run a specified container image.</p>
     pub app_specification: ::std::option::Option<crate::types::AppSpecification>,
     /// <p>The environment variables set in the Docker container.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Networking options for a processing job.</p>
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
@@ -47,99 +47,100 @@ pub struct DescribeProcessingJobOutput {
     pub training_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeProcessingJobOutput {
+impl  DescribeProcessingJobOutput  {
     /// <p>The inputs for a processing job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_inputs.is_none()`.
-    pub fn processing_inputs(&self) -> &[crate::types::ProcessingInput] {
-        self.processing_inputs.as_deref().unwrap_or_default()
+    pub fn processing_inputs(&self) -> & [crate::types::ProcessingInput] {
+        self.processing_inputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Output configuration for the processing job.</p>
-    pub fn processing_output_config(&self) -> ::std::option::Option<&crate::types::ProcessingOutputConfig> {
+    pub fn processing_output_config(&self) -> ::std::option::Option<& crate::types::ProcessingOutputConfig> {
         self.processing_output_config.as_ref()
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn processing_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn processing_job_name(&self) -> ::std::option::Option<& str> {
         self.processing_job_name.as_deref()
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn processing_resources(&self) -> ::std::option::Option<&crate::types::ProcessingResources> {
+    pub fn processing_resources(&self) -> ::std::option::Option<& crate::types::ProcessingResources> {
         self.processing_resources.as_ref()
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::ProcessingStoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<& crate::types::ProcessingStoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>Configures the processing job to run a specified container image.</p>
-    pub fn app_specification(&self) -> ::std::option::Option<&crate::types::AppSpecification> {
+    pub fn app_specification(&self) -> ::std::option::Option<& crate::types::AppSpecification> {
         self.app_specification.as_ref()
     }
     /// <p>The environment variables set in the Docker container.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>Networking options for a processing job.</p>
-    pub fn network_config(&self) -> ::std::option::Option<&crate::types::NetworkConfig> {
+    pub fn network_config(&self) -> ::std::option::Option<& crate::types::NetworkConfig> {
         self.network_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The configuration information used to create an experiment.</p>
-    pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
+    pub fn experiment_config(&self) -> ::std::option::Option<& crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
-    pub fn processing_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn processing_job_arn(&self) -> ::std::option::Option<& str> {
         self.processing_job_arn.as_deref()
     }
     /// <p>Provides the status of a processing job.</p>
-    pub fn processing_job_status(&self) -> ::std::option::Option<&crate::types::ProcessingJobStatus> {
+    pub fn processing_job_status(&self) -> ::std::option::Option<& crate::types::ProcessingJobStatus> {
         self.processing_job_status.as_ref()
     }
     /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
-    pub fn exit_message(&self) -> ::std::option::Option<&str> {
+    pub fn exit_message(&self) -> ::std::option::Option<& str> {
         self.exit_message.as_deref()
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The time at which the processing job completed.</p>
-    pub fn processing_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn processing_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.processing_end_time.as_ref()
     }
     /// <p>The time at which the processing job started.</p>
-    pub fn processing_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn processing_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.processing_start_time.as_ref()
     }
     /// <p>The time at which the processing job was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The time at which the processing job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
-    pub fn monitoring_schedule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_arn(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_arn.as_deref()
     }
     /// <p>The ARN of an AutoML job associated with this processing job.</p>
-    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<& str> {
         self.auto_ml_job_arn.as_deref()
     }
     /// <p>The ARN of a training job associated with this processing job.</p>
-    pub fn training_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn training_job_arn(&self) -> ::std::option::Option<& str> {
         self.training_job_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProcessingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProcessingJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProcessingJobOutput`](crate::operation::describe_processing_job::DescribeProcessingJobOutput).
     pub fn builder() -> crate::operation::describe_processing_job::builders::DescribeProcessingJobOutputBuilder {
@@ -151,13 +152,13 @@ impl DescribeProcessingJobOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProcessingJobOutputBuilder {
-    pub(crate) processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
+    pub(crate) processing_inputs: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>>,
     pub(crate) processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,
     pub(crate) processing_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) processing_resources: ::std::option::Option<crate::types::ProcessingResources>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::ProcessingStoppingCondition>,
     pub(crate) app_specification: ::std::option::Option<crate::types::AppSpecification>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) network_config: ::std::option::Option<crate::types::NetworkConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
@@ -182,17 +183,16 @@ impl DescribeProcessingJobOutputBuilder {
     /// <p>The inputs for a processing job.</p>
     pub fn processing_inputs(mut self, input: crate::types::ProcessingInput) -> Self {
         let mut v = self.processing_inputs.unwrap_or_default();
-        v.push(input);
-        self.processing_inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processing_inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inputs for a processing job.</p>
-    pub fn set_processing_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>) -> Self {
-        self.processing_inputs = input;
-        self
+    pub fn set_processing_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>>) -> Self {
+        self.processing_inputs = input; self
     }
     /// <p>The inputs for a processing job.</p>
-    pub fn get_processing_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>> {
+    pub fn get_processing_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>> {
         &self.processing_inputs
     }
     /// <p>Output configuration for the processing job.</p>
@@ -202,8 +202,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>Output configuration for the processing job.</p>
     pub fn set_processing_output_config(mut self, input: ::std::option::Option<crate::types::ProcessingOutputConfig>) -> Self {
-        self.processing_output_config = input;
-        self
+        self.processing_output_config = input; self
     }
     /// <p>Output configuration for the processing job.</p>
     pub fn get_processing_output_config(&self) -> &::std::option::Option<crate::types::ProcessingOutputConfig> {
@@ -217,8 +216,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.processing_job_name = input;
-        self
+        self.processing_job_name = input; self
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +230,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
     pub fn set_processing_resources(mut self, input: ::std::option::Option<crate::types::ProcessingResources>) -> Self {
-        self.processing_resources = input;
-        self
+        self.processing_resources = input; self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
     pub fn get_processing_resources(&self) -> &::std::option::Option<crate::types::ProcessingResources> {
@@ -246,8 +243,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::ProcessingStoppingCondition>) -> Self {
-        self.stopping_condition = input;
-        self
+        self.stopping_condition = input; self
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::ProcessingStoppingCondition> {
@@ -261,8 +257,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>Configures the processing job to run a specified container image.</p>
     pub fn set_app_specification(mut self, input: ::std::option::Option<crate::types::AppSpecification>) -> Self {
-        self.app_specification = input;
-        self
+        self.app_specification = input; self
     }
     /// <p>Configures the processing job to run a specified container image.</p>
     pub fn get_app_specification(&self) -> &::std::option::Option<crate::types::AppSpecification> {
@@ -275,20 +270,16 @@ impl DescribeProcessingJobOutputBuilder {
     /// <p>The environment variables set in the Docker container.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables set in the Docker container.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables set in the Docker container.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>Networking options for a processing job.</p>
@@ -298,8 +289,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>Networking options for a processing job.</p>
     pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::NetworkConfig>) -> Self {
-        self.network_config = input;
-        self
+        self.network_config = input; self
     }
     /// <p>Networking options for a processing job.</p>
     pub fn get_network_config(&self) -> &::std::option::Option<crate::types::NetworkConfig> {
@@ -312,8 +302,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +315,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The configuration information used to create an experiment.</p>
     pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
-        self.experiment_config = input;
-        self
+        self.experiment_config = input; self
     }
     /// <p>The configuration information used to create an experiment.</p>
     pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
@@ -341,8 +329,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
     pub fn set_processing_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.processing_job_arn = input;
-        self
+        self.processing_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
     pub fn get_processing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -356,8 +343,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>Provides the status of a processing job.</p>
     pub fn set_processing_job_status(mut self, input: ::std::option::Option<crate::types::ProcessingJobStatus>) -> Self {
-        self.processing_job_status = input;
-        self
+        self.processing_job_status = input; self
     }
     /// <p>Provides the status of a processing job.</p>
     pub fn get_processing_job_status(&self) -> &::std::option::Option<crate::types::ProcessingJobStatus> {
@@ -370,8 +356,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
     pub fn set_exit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exit_message = input;
-        self
+        self.exit_message = input; self
     }
     /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
     pub fn get_exit_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -384,8 +369,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,8 +382,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The time at which the processing job completed.</p>
     pub fn set_processing_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.processing_end_time = input;
-        self
+        self.processing_end_time = input; self
     }
     /// <p>The time at which the processing job completed.</p>
     pub fn get_processing_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -412,8 +395,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The time at which the processing job started.</p>
     pub fn set_processing_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.processing_start_time = input;
-        self
+        self.processing_start_time = input; self
     }
     /// <p>The time at which the processing job started.</p>
     pub fn get_processing_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -426,8 +408,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The time at which the processing job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time at which the processing job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -441,8 +422,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The time at which the processing job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the processing job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -455,8 +435,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
     pub fn set_monitoring_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_arn = input;
-        self
+        self.monitoring_schedule_arn = input; self
     }
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
     pub fn get_monitoring_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -469,8 +448,7 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The ARN of an AutoML job associated with this processing job.</p>
     pub fn set_auto_ml_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_ml_job_arn = input;
-        self
+        self.auto_ml_job_arn = input; self
     }
     /// <p>The ARN of an AutoML job associated with this processing job.</p>
     pub fn get_auto_ml_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -483,47 +461,68 @@ impl DescribeProcessingJobOutputBuilder {
     }
     /// <p>The ARN of a training job associated with this processing job.</p>
     pub fn set_training_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_job_arn = input;
-        self
+        self.training_job_arn = input; self
     }
     /// <p>The ARN of a training job associated with this processing job.</p>
     pub fn get_training_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProcessingJobOutput`](crate::operation::describe_processing_job::DescribeProcessingJobOutput).
     pub fn build(self) -> crate::operation::describe_processing_job::DescribeProcessingJobOutput {
         crate::operation::describe_processing_job::DescribeProcessingJobOutput {
-            processing_inputs: self.processing_inputs,
-            processing_output_config: self.processing_output_config,
-            processing_job_name: self.processing_job_name,
-            processing_resources: self.processing_resources,
-            stopping_condition: self.stopping_condition,
-            app_specification: self.app_specification,
-            environment: self.environment,
-            network_config: self.network_config,
-            role_arn: self.role_arn,
-            experiment_config: self.experiment_config,
-            processing_job_arn: self.processing_job_arn,
-            processing_job_status: self.processing_job_status,
-            exit_message: self.exit_message,
-            failure_reason: self.failure_reason,
-            processing_end_time: self.processing_end_time,
-            processing_start_time: self.processing_start_time,
-            last_modified_time: self.last_modified_time,
-            creation_time: self.creation_time,
-            monitoring_schedule_arn: self.monitoring_schedule_arn,
-            auto_ml_job_arn: self.auto_ml_job_arn,
-            training_job_arn: self.training_job_arn,
+            processing_inputs: self.processing_inputs
+            ,
+            processing_output_config: self.processing_output_config
+            ,
+            processing_job_name: self.processing_job_name
+            ,
+            processing_resources: self.processing_resources
+            ,
+            stopping_condition: self.stopping_condition
+            ,
+            app_specification: self.app_specification
+            ,
+            environment: self.environment
+            ,
+            network_config: self.network_config
+            ,
+            role_arn: self.role_arn
+            ,
+            experiment_config: self.experiment_config
+            ,
+            processing_job_arn: self.processing_job_arn
+            ,
+            processing_job_status: self.processing_job_status
+            ,
+            exit_message: self.exit_message
+            ,
+            failure_reason: self.failure_reason
+            ,
+            processing_end_time: self.processing_end_time
+            ,
+            processing_start_time: self.processing_start_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            creation_time: self.creation_time
+            ,
+            monitoring_schedule_arn: self.monitoring_schedule_arn
+            ,
+            auto_ml_job_arn: self.auto_ml_job_arn
+            ,
+            training_job_arn: self.training_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

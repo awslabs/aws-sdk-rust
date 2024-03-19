@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSubscriptionRequestsInput {
+pub struct ListSubscriptionRequestsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the subscription requests.</p>
@@ -22,33 +22,33 @@ pub struct ListSubscriptionRequestsInput {
     /// <p>When the number of subscription requests is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription requests, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListSubscriptionRequestsInput {
+impl  ListSubscriptionRequestsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>Specifies the status of the subscription requests.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionRequestStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SubscriptionRequestStatus> {
         self.status.as_ref()
     }
     /// <p>The identifier of the subscribed listing.</p>
-    pub fn subscribed_listing_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscribed_listing_id(&self) -> ::std::option::Option<& str> {
         self.subscribed_listing_id.as_deref()
     }
     /// <p>The identifier of the project for the subscription requests.</p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_id(&self) -> ::std::option::Option<& str> {
         self.owning_project_id.as_deref()
     }
     /// <p>The identifier of the subscription request approver's project.</p>
-    pub fn approver_project_id(&self) -> ::std::option::Option<&str> {
+    pub fn approver_project_id(&self) -> ::std::option::Option<& str> {
         self.approver_project_id.as_deref()
     }
     /// <p>Specifies the way to sort the results of this action.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortKey> {
         self.sort_by.as_ref()
     }
     /// <p>Specifies the sort order for the results of this action.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The maximum number of subscription requests to return in a single call to <code>ListSubscriptionRequests</code>. When the number of subscription requests to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
@@ -56,7 +56,7 @@ impl ListSubscriptionRequestsInput {
         self.max_results
     }
     /// <p>When the number of subscription requests is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription requests, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>Specifies the status of the subscription requests.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SubscriptionRequestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the status of the subscription requests.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SubscriptionRequestStatus> {
@@ -118,8 +116,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>The identifier of the subscribed listing.</p>
     pub fn set_subscribed_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscribed_listing_id = input;
-        self
+        self.subscribed_listing_id = input; self
     }
     /// <p>The identifier of the subscribed listing.</p>
     pub fn get_subscribed_listing_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>The identifier of the project for the subscription requests.</p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_id = input;
-        self
+        self.owning_project_id = input; self
     }
     /// <p>The identifier of the project for the subscription requests.</p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>The identifier of the subscription request approver's project.</p>
     pub fn set_approver_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approver_project_id = input;
-        self
+        self.approver_project_id = input; self
     }
     /// <p>The identifier of the subscription request approver's project.</p>
     pub fn get_approver_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>Specifies the way to sort the results of this action.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortKey>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Specifies the way to sort the results of this action.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortKey> {
@@ -174,8 +168,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>Specifies the sort order for the results of this action.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Specifies the sort order for the results of this action.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -188,8 +181,7 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>The maximum number of subscription requests to return in a single call to <code>ListSubscriptionRequests</code>. When the number of subscription requests to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of subscription requests to return in a single call to <code>ListSubscriptionRequests</code>. When the number of subscription requests to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -202,30 +194,36 @@ impl ListSubscriptionRequestsInputBuilder {
     }
     /// <p>When the number of subscription requests is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription requests, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of subscription requests is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription requests, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionRequests</code> to list the next set of subscription requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSubscriptionRequestsInput`](crate::operation::list_subscription_requests::ListSubscriptionRequestsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_subscription_requests::ListSubscriptionRequestsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_subscription_requests::ListSubscriptionRequestsInput {
-            domain_identifier: self.domain_identifier,
-            status: self.status,
-            subscribed_listing_id: self.subscribed_listing_id,
-            owning_project_id: self.owning_project_id,
-            approver_project_id: self.approver_project_id,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_subscription_requests::ListSubscriptionRequestsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_subscription_requests::ListSubscriptionRequestsInput {
+                domain_identifier: self.domain_identifier
+                ,
+                status: self.status
+                ,
+                subscribed_listing_id: self.subscribed_listing_id
+                ,
+                owning_project_id: self.owning_project_id
+                ,
+                approver_project_id: self.approver_project_id
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

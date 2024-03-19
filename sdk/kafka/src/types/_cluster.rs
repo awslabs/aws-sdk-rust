@@ -3,7 +3,7 @@
 /// <p>Returns information about a cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
     pub active_operation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Cluster Type.</p>
@@ -21,55 +21,55 @@ pub struct Cluster {
     /// <p>State Info for the Amazon MSK cluster.</p>
     pub state_info: ::std::option::Option<crate::types::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Information about the provisioned cluster.</p>
     pub provisioned: ::std::option::Option<crate::types::Provisioned>,
     /// <p>Information about the serverless cluster.</p>
     pub serverless: ::std::option::Option<crate::types::Serverless>,
 }
-impl Cluster {
+impl  Cluster  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
-    pub fn active_operation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn active_operation_arn(&self) -> ::std::option::Option<& str> {
         self.active_operation_arn.as_deref()
     }
     /// <p>Cluster Type.</p>
-    pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::ClusterType> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& crate::types::ClusterType> {
         self.cluster_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The time when the cluster was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current version of the MSK cluster.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ClusterState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ClusterState> {
         self.state.as_ref()
     }
     /// <p>State Info for the Amazon MSK cluster.</p>
-    pub fn state_info(&self) -> ::std::option::Option<&crate::types::StateInfo> {
+    pub fn state_info(&self) -> ::std::option::Option<& crate::types::StateInfo> {
         self.state_info.as_ref()
     }
     /// <p>Tags attached to the cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about the provisioned cluster.</p>
-    pub fn provisioned(&self) -> ::std::option::Option<&crate::types::Provisioned> {
+    pub fn provisioned(&self) -> ::std::option::Option<& crate::types::Provisioned> {
         self.provisioned.as_ref()
     }
     /// <p>Information about the serverless cluster.</p>
-    pub fn serverless(&self) -> ::std::option::Option<&crate::types::Serverless> {
+    pub fn serverless(&self) -> ::std::option::Option<& crate::types::Serverless> {
         self.serverless.as_ref()
     }
 }
@@ -92,7 +92,7 @@ pub struct ClusterBuilder {
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ClusterState>,
     pub(crate) state_info: ::std::option::Option<crate::types::StateInfo>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) provisioned: ::std::option::Option<crate::types::Provisioned>,
     pub(crate) serverless: ::std::option::Option<crate::types::Serverless>,
 }
@@ -104,8 +104,7 @@ impl ClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
     pub fn set_active_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.active_operation_arn = input;
-        self
+        self.active_operation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
     pub fn get_active_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl ClusterBuilder {
     }
     /// <p>Cluster Type.</p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::ClusterType>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>Cluster Type.</p>
     pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::ClusterType> {
@@ -132,8 +130,7 @@ impl ClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl ClusterBuilder {
     }
     /// <p>The name of the cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl ClusterBuilder {
     }
     /// <p>The time when the cluster was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the cluster was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +169,7 @@ impl ClusterBuilder {
     }
     /// <p>The current version of the MSK cluster.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The current version of the MSK cluster.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl ClusterBuilder {
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
@@ -202,8 +195,7 @@ impl ClusterBuilder {
     }
     /// <p>State Info for the Amazon MSK cluster.</p>
     pub fn set_state_info(mut self, input: ::std::option::Option<crate::types::StateInfo>) -> Self {
-        self.state_info = input;
-        self
+        self.state_info = input; self
     }
     /// <p>State Info for the Amazon MSK cluster.</p>
     pub fn get_state_info(&self) -> &::std::option::Option<crate::types::StateInfo> {
@@ -216,17 +208,16 @@ impl ClusterBuilder {
     /// <p>Tags attached to the cluster.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags attached to the cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags attached to the cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Information about the provisioned cluster.</p>
@@ -236,8 +227,7 @@ impl ClusterBuilder {
     }
     /// <p>Information about the provisioned cluster.</p>
     pub fn set_provisioned(mut self, input: ::std::option::Option<crate::types::Provisioned>) -> Self {
-        self.provisioned = input;
-        self
+        self.provisioned = input; self
     }
     /// <p>Information about the provisioned cluster.</p>
     pub fn get_provisioned(&self) -> &::std::option::Option<crate::types::Provisioned> {
@@ -250,8 +240,7 @@ impl ClusterBuilder {
     }
     /// <p>Information about the serverless cluster.</p>
     pub fn set_serverless(mut self, input: ::std::option::Option<crate::types::Serverless>) -> Self {
-        self.serverless = input;
-        self
+        self.serverless = input; self
     }
     /// <p>Information about the serverless cluster.</p>
     pub fn get_serverless(&self) -> &::std::option::Option<crate::types::Serverless> {
@@ -260,17 +249,29 @@ impl ClusterBuilder {
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
-            active_operation_arn: self.active_operation_arn,
-            cluster_type: self.cluster_type,
-            cluster_arn: self.cluster_arn,
-            cluster_name: self.cluster_name,
-            creation_time: self.creation_time,
-            current_version: self.current_version,
-            state: self.state,
-            state_info: self.state_info,
-            tags: self.tags,
-            provisioned: self.provisioned,
-            serverless: self.serverless,
+            active_operation_arn: self.active_operation_arn
+            ,
+            cluster_type: self.cluster_type
+            ,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_name: self.cluster_name
+            ,
+            creation_time: self.creation_time
+            ,
+            current_version: self.current_version
+            ,
+            state: self.state
+            ,
+            state_info: self.state_info
+            ,
+            tags: self.tags
+            ,
+            provisioned: self.provisioned
+            ,
+            serverless: self.serverless
+            ,
         }
     }
 }
+

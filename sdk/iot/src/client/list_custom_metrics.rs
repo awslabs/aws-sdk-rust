@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomMetrics`](crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p><br>
-    /// - On success, responds with [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput) with field(s):
     ///   - [`metric_names(Option<Vec::<String>>)`](crate::operation::list_custom_metrics::ListCustomMetricsOutput::metric_names): <p>The name of the custom metric.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_metrics::ListCustomMetricsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListCustomMetricsError>`](crate::operation::list_custom_metrics::ListCustomMetricsError)
+                            /// - On failure, responds with [`SdkError<ListCustomMetricsError>`](crate::operation::list_custom_metrics::ListCustomMetricsError)
     pub fn list_custom_metrics(&self) -> crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder {
-        crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

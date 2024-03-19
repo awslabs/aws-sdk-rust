@@ -22,11 +22,7 @@ impl IotSiteWiseSourceConfigurationFilter {
     /// Tries to convert the enum instance into [`FilterByAsset`](crate::types::IotSiteWiseSourceConfigurationFilter::FilterByAsset), extracting the inner [`FilterByAsset`](crate::types::FilterByAsset).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter_by_asset(&self) -> ::std::result::Result<&crate::types::FilterByAsset, &Self> {
-        if let IotSiteWiseSourceConfigurationFilter::FilterByAsset(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IotSiteWiseSourceConfigurationFilter::FilterByAsset(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FilterByAsset`](crate::types::IotSiteWiseSourceConfigurationFilter::FilterByAsset).
     pub fn is_filter_by_asset(&self) -> bool {
@@ -35,11 +31,7 @@ impl IotSiteWiseSourceConfigurationFilter {
     /// Tries to convert the enum instance into [`FilterByAssetModel`](crate::types::IotSiteWiseSourceConfigurationFilter::FilterByAssetModel), extracting the inner [`FilterByAssetModel`](crate::types::FilterByAssetModel).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter_by_asset_model(&self) -> ::std::result::Result<&crate::types::FilterByAssetModel, &Self> {
-        if let IotSiteWiseSourceConfigurationFilter::FilterByAssetModel(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IotSiteWiseSourceConfigurationFilter::FilterByAssetModel(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FilterByAssetModel`](crate::types::IotSiteWiseSourceConfigurationFilter::FilterByAssetModel).
     pub fn is_filter_by_asset_model(&self) -> bool {
@@ -50,3 +42,4 @@ impl IotSiteWiseSourceConfigurationFilter {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransformerInput {
+pub struct GetTransformerInput  {
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub transformer_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTransformerInput {
+impl  GetTransformerInput  {
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
-    pub fn transformer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transformer_id(&self) -> ::std::option::Option<& str> {
         self.transformer_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetTransformerInputBuilder {
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn set_transformer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_id = input;
-        self
+        self.transformer_id = input; self
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn get_transformer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transformer_id
     }
     /// Consumes the builder and constructs a [`GetTransformerInput`](crate::operation::get_transformer::GetTransformerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_transformer::GetTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_transformer::GetTransformerInput {
-            transformer_id: self.transformer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transformer::GetTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_transformer::GetTransformerInput {
+                transformer_id: self.transformer_id
+                ,
+            }
+        )
     }
 }
+

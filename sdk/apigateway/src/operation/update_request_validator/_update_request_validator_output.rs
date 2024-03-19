@@ -3,7 +3,7 @@
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRequestValidatorOutput {
+pub struct UpdateRequestValidatorOutput  {
     /// <p>The identifier of this RequestValidator.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of this RequestValidator</p>
@@ -14,13 +14,13 @@ pub struct UpdateRequestValidatorOutput {
     pub validate_request_parameters: bool,
     _request_id: Option<String>,
 }
-impl UpdateRequestValidatorOutput {
+impl  UpdateRequestValidatorOutput  {
     /// <p>The identifier of this RequestValidator.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of this RequestValidator</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
@@ -33,10 +33,10 @@ impl UpdateRequestValidatorOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRequestValidatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRequestValidatorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRequestValidatorOutput`](crate::operation::update_request_validator::UpdateRequestValidatorOutput).
     pub fn builder() -> crate::operation::update_request_validator::builders::UpdateRequestValidatorOutputBuilder {
@@ -62,8 +62,7 @@ impl UpdateRequestValidatorOutputBuilder {
     }
     /// <p>The identifier of this RequestValidator.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of this RequestValidator.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateRequestValidatorOutputBuilder {
     }
     /// <p>The name of this RequestValidator</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this RequestValidator</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UpdateRequestValidatorOutputBuilder {
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     pub fn set_validate_request_body(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.validate_request_body = input;
-        self
+        self.validate_request_body = input; self
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     pub fn get_validate_request_body(&self) -> &::std::option::Option<bool> {
@@ -104,30 +101,36 @@ impl UpdateRequestValidatorOutputBuilder {
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn set_validate_request_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.validate_request_parameters = input;
-        self
+        self.validate_request_parameters = input; self
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn get_validate_request_parameters(&self) -> &::std::option::Option<bool> {
         &self.validate_request_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRequestValidatorOutput`](crate::operation::update_request_validator::UpdateRequestValidatorOutput).
     pub fn build(self) -> crate::operation::update_request_validator::UpdateRequestValidatorOutput {
         crate::operation::update_request_validator::UpdateRequestValidatorOutput {
-            id: self.id,
-            name: self.name,
-            validate_request_body: self.validate_request_body.unwrap_or_default(),
-            validate_request_parameters: self.validate_request_parameters.unwrap_or_default(),
+            id: self.id
+            ,
+            name: self.name
+            ,
+            validate_request_body: self.validate_request_body
+                .unwrap_or_default()
+            ,
+            validate_request_parameters: self.validate_request_parameters
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

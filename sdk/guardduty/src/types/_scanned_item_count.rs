@@ -3,7 +3,7 @@
 /// <p>Total number of scanned files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScannedItemCount {
+pub struct ScannedItemCount  {
     /// <p>Total GB of files scanned for malware.</p>
     pub total_gb: ::std::option::Option<i32>,
     /// <p>Number of files scanned.</p>
@@ -11,7 +11,7 @@ pub struct ScannedItemCount {
     /// <p>Total number of scanned volumes.</p>
     pub volumes: ::std::option::Option<i32>,
 }
-impl ScannedItemCount {
+impl  ScannedItemCount  {
     /// <p>Total GB of files scanned for malware.</p>
     pub fn total_gb(&self) -> ::std::option::Option<i32> {
         self.total_gb
@@ -48,8 +48,7 @@ impl ScannedItemCountBuilder {
     }
     /// <p>Total GB of files scanned for malware.</p>
     pub fn set_total_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_gb = input;
-        self
+        self.total_gb = input; self
     }
     /// <p>Total GB of files scanned for malware.</p>
     pub fn get_total_gb(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl ScannedItemCountBuilder {
     }
     /// <p>Number of files scanned.</p>
     pub fn set_files(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.files = input;
-        self
+        self.files = input; self
     }
     /// <p>Number of files scanned.</p>
     pub fn get_files(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ScannedItemCountBuilder {
     }
     /// <p>Total number of scanned volumes.</p>
     pub fn set_volumes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volumes = input;
-        self
+        self.volumes = input; self
     }
     /// <p>Total number of scanned volumes.</p>
     pub fn get_volumes(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ScannedItemCountBuilder {
     /// Consumes the builder and constructs a [`ScannedItemCount`](crate::types::ScannedItemCount).
     pub fn build(self) -> crate::types::ScannedItemCount {
         crate::types::ScannedItemCount {
-            total_gb: self.total_gb,
-            files: self.files,
-            volumes: self.volumes,
+            total_gb: self.total_gb
+            ,
+            files: self.files
+            ,
+            volumes: self.volumes
+            ,
         }
     }
 }
+

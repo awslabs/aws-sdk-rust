@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateModelVersionOutput {
+pub struct CreateModelVersionOutput  {
     /// <p>The model ID.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
@@ -13,29 +13,29 @@ pub struct CreateModelVersionOutput {
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateModelVersionOutput {
+impl  CreateModelVersionOutput  {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number of the model version created.</p>
-    pub fn model_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_number(&self) -> ::std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The model version status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateModelVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelVersionOutput`](crate::operation::create_model_version::CreateModelVersionOutput).
     pub fn builder() -> crate::operation::create_model_version::builders::CreateModelVersionOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateModelVersionOutputBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateModelVersionOutputBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -89,8 +87,7 @@ impl CreateModelVersionOutputBuilder {
     }
     /// <p>The model version number of the model version created.</p>
     pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_number = input;
-        self
+        self.model_version_number = input; self
     }
     /// <p>The model version number of the model version created.</p>
     pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateModelVersionOutputBuilder {
     }
     /// <p>The model version status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The model version status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateModelVersionOutput`](crate::operation::create_model_version::CreateModelVersionOutput).
     pub fn build(self) -> crate::operation::create_model_version::CreateModelVersionOutput {
         crate::operation::create_model_version::CreateModelVersionOutput {
-            model_id: self.model_id,
-            model_type: self.model_type,
-            model_version_number: self.model_version_number,
-            status: self.status,
+            model_id: self.model_id
+            ,
+            model_type: self.model_type
+            ,
+            model_version_number: self.model_version_number
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

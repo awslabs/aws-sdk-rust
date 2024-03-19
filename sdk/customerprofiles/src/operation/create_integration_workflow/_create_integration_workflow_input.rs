@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIntegrationWorkflowInput {
+pub struct CreateIntegrationWorkflowInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
@@ -14,31 +14,31 @@ pub struct CreateIntegrationWorkflowInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateIntegrationWorkflowInput {
+impl  CreateIntegrationWorkflowInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>Configuration data for integration workflow.</p>
-    pub fn integration_config(&self) -> ::std::option::Option<&crate::types::IntegrationConfig> {
+    pub fn integration_config(&self) -> ::std::option::Option<& crate::types::IntegrationConfig> {
         self.integration_config.as_ref()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_type_name(&self) -> ::std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -58,7 +58,7 @@ pub struct CreateIntegrationWorkflowInputBuilder {
     pub(crate) integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationWorkflowInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -69,8 +69,7 @@ impl CreateIntegrationWorkflowInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl CreateIntegrationWorkflowInputBuilder {
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -99,8 +97,7 @@ impl CreateIntegrationWorkflowInputBuilder {
     }
     /// <p>Configuration data for integration workflow.</p>
     pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
-        self.integration_config = input;
-        self
+        self.integration_config = input; self
     }
     /// <p>Configuration data for integration workflow.</p>
     pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
@@ -114,8 +111,7 @@ impl CreateIntegrationWorkflowInputBuilder {
     }
     /// <p>The name of the profile object type.</p>
     pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type_name = input;
-        self
+        self.object_type_name = input; self
     }
     /// <p>The name of the profile object type.</p>
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl CreateIntegrationWorkflowInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,33 +138,36 @@ impl CreateIntegrationWorkflowInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIntegrationWorkflowInput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput {
-            domain_name: self.domain_name,
-            workflow_type: self.workflow_type,
-            integration_config: self.integration_config,
-            object_type_name: self.object_type_name,
-            role_arn: self.role_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput {
+                domain_name: self.domain_name
+                ,
+                workflow_type: self.workflow_type
+                ,
+                integration_config: self.integration_config
+                ,
+                object_type_name: self.object_type_name
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

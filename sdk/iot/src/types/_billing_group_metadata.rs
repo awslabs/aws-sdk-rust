@@ -3,13 +3,13 @@
 /// <p>Additional information about the billing group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BillingGroupMetadata {
+pub struct BillingGroupMetadata  {
     /// <p>The date the billing group was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BillingGroupMetadata {
+impl  BillingGroupMetadata  {
     /// <p>The date the billing group was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl BillingGroupMetadataBuilder {
     }
     /// <p>The date the billing group was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the billing group was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -44,7 +43,9 @@ impl BillingGroupMetadataBuilder {
     /// Consumes the builder and constructs a [`BillingGroupMetadata`](crate::types::BillingGroupMetadata).
     pub fn build(self) -> crate::types::BillingGroupMetadata {
         crate::types::BillingGroupMetadata {
-            creation_date: self.creation_date,
+            creation_date: self.creation_date
+            ,
         }
     }
 }
+

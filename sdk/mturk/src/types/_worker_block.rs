@@ -3,19 +3,19 @@
 /// <p>The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkerBlock {
+pub struct WorkerBlock  {
     /// <p>The ID of the Worker who accepted the HIT.</p>
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining the reason the Worker was blocked.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl WorkerBlock {
+impl  WorkerBlock  {
     /// <p>The ID of the Worker who accepted the HIT.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>A message explaining the reason the Worker was blocked.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl WorkerBlockBuilder {
     }
     /// <p>The ID of the Worker who accepted the HIT.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker who accepted the HIT.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl WorkerBlockBuilder {
     }
     /// <p>A message explaining the reason the Worker was blocked.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A message explaining the reason the Worker was blocked.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl WorkerBlockBuilder {
     /// Consumes the builder and constructs a [`WorkerBlock`](crate::types::WorkerBlock).
     pub fn build(self) -> crate::types::WorkerBlock {
         crate::types::WorkerBlock {
-            worker_id: self.worker_id,
-            reason: self.reason,
+            worker_id: self.worker_id
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

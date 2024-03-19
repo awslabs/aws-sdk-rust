@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointOutput {
+pub struct DescribeEndpointOutput  {
     /// <p>Name of the endpoint.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
@@ -10,7 +10,7 @@ pub struct DescribeEndpointOutput {
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
-    pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfigSummary>,
     /// <p>The status of the endpoint.</p>
@@ -50,30 +50,31 @@ pub struct DescribeEndpointOutput {
     /// <p>The configuration parameters for an explainer.</p>
     pub explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub shadow_production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
     _request_id: Option<String>,
 }
-impl DescribeEndpointOutput {
+impl  DescribeEndpointOutput  {
     /// <p>Name of the endpoint.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
-    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
-    pub fn production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
-        self.production_variants.as_deref().unwrap_or_default()
+    pub fn production_variants(&self) -> & [crate::types::ProductionVariantSummary] {
+        self.production_variants.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
-    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfigSummary> {
+    pub fn data_capture_config(&self) -> ::std::option::Option<& crate::types::DataCaptureConfigSummary> {
         self.data_capture_config.as_ref()
     }
     /// <p>The status of the endpoint.</p>
@@ -97,49 +98,50 @@ impl DescribeEndpointOutput {
     /// <li>
     /// <p><code>UpdateRollbackFailed</code>: Both the rolling deployment and auto-rollback failed. Your endpoint is in service with a mix of the old and new endpoint configurations. For information about how to remedy this issue and restore the endpoint's status to <code>InService</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling Deployments</a>.</p></li>
     /// </ul>
-    pub fn endpoint_status(&self) -> ::std::option::Option<&crate::types::EndpointStatus> {
+    pub fn endpoint_status(&self) -> ::std::option::Option<& crate::types::EndpointStatus> {
         self.endpoint_status.as_ref()
     }
     /// <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>A timestamp that shows when the endpoint was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The most recent deployment configuration for the endpoint.</p>
-    pub fn last_deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
+    pub fn last_deployment_config(&self) -> ::std::option::Option<& crate::types::DeploymentConfig> {
         self.last_deployment_config.as_ref()
     }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
-    pub fn async_inference_config(&self) -> ::std::option::Option<&crate::types::AsyncInferenceConfig> {
+    pub fn async_inference_config(&self) -> ::std::option::Option<& crate::types::AsyncInferenceConfig> {
         self.async_inference_config.as_ref()
     }
     /// <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
-    pub fn pending_deployment_summary(&self) -> ::std::option::Option<&crate::types::PendingDeploymentSummary> {
+    pub fn pending_deployment_summary(&self) -> ::std::option::Option<& crate::types::PendingDeploymentSummary> {
         self.pending_deployment_summary.as_ref()
     }
     /// <p>The configuration parameters for an explainer.</p>
-    pub fn explainer_config(&self) -> ::std::option::Option<&crate::types::ExplainerConfig> {
+    pub fn explainer_config(&self) -> ::std::option::Option<& crate::types::ExplainerConfig> {
         self.explainer_config.as_ref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
-    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
-        self.shadow_production_variants.as_deref().unwrap_or_default()
+    pub fn shadow_production_variants(&self) -> & [crate::types::ProductionVariantSummary] {
+        self.shadow_production_variants.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
     pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder {
@@ -154,7 +156,7 @@ pub struct DescribeEndpointOutputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
-    pub(crate) production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub(crate) production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
     pub(crate) data_capture_config: ::std::option::Option<crate::types::DataCaptureConfigSummary>,
     pub(crate) endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -164,7 +166,7 @@ pub struct DescribeEndpointOutputBuilder {
     pub(crate) async_inference_config: ::std::option::Option<crate::types::AsyncInferenceConfig>,
     pub(crate) pending_deployment_summary: ::std::option::Option<crate::types::PendingDeploymentSummary>,
     pub(crate) explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
-    pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutputBuilder {
@@ -176,8 +178,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>Name of the endpoint.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>Name of the endpoint.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +192,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +205,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
     pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_config_name = input;
-        self
+        self.endpoint_config_name = input; self
     }
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,17 +218,16 @@ impl DescribeEndpointOutputBuilder {
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
     pub fn production_variants(mut self, input: crate::types::ProductionVariantSummary) -> Self {
         let mut v = self.production_variants.unwrap_or_default();
-        v.push(input);
-        self.production_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.production_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
-    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>) -> Self {
-        self.production_variants = input;
-        self
+    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>) -> Self {
+        self.production_variants = input; self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
-    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>> {
         &self.production_variants
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
@@ -239,8 +237,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::DataCaptureConfigSummary>) -> Self {
-        self.data_capture_config = input;
-        self
+        self.data_capture_config = input; self
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfigSummary> {
@@ -294,8 +291,7 @@ impl DescribeEndpointOutputBuilder {
     /// <p><code>UpdateRollbackFailed</code>: Both the rolling deployment and auto-rollback failed. Your endpoint is in service with a mix of the old and new endpoint configurations. For information about how to remedy this issue and restore the endpoint's status to <code>InService</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling Deployments</a>.</p></li>
     /// </ul>
     pub fn set_endpoint_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
-        self.endpoint_status = input;
-        self
+        self.endpoint_status = input; self
     }
     /// <p>The status of the endpoint.</p>
     /// <ul>
@@ -328,8 +324,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -343,8 +338,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>A timestamp that shows when the endpoint was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the endpoint was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -358,8 +352,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -372,8 +365,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>The most recent deployment configuration for the endpoint.</p>
     pub fn set_last_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
-        self.last_deployment_config = input;
-        self
+        self.last_deployment_config = input; self
     }
     /// <p>The most recent deployment configuration for the endpoint.</p>
     pub fn get_last_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
@@ -386,8 +378,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     pub fn set_async_inference_config(mut self, input: ::std::option::Option<crate::types::AsyncInferenceConfig>) -> Self {
-        self.async_inference_config = input;
-        self
+        self.async_inference_config = input; self
     }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     pub fn get_async_inference_config(&self) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
@@ -400,8 +391,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
     pub fn set_pending_deployment_summary(mut self, input: ::std::option::Option<crate::types::PendingDeploymentSummary>) -> Self {
-        self.pending_deployment_summary = input;
-        self
+        self.pending_deployment_summary = input; self
     }
     /// <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
     pub fn get_pending_deployment_summary(&self) -> &::std::option::Option<crate::types::PendingDeploymentSummary> {
@@ -414,8 +404,7 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>The configuration parameters for an explainer.</p>
     pub fn set_explainer_config(mut self, input: ::std::option::Option<crate::types::ExplainerConfig>) -> Self {
-        self.explainer_config = input;
-        self
+        self.explainer_config = input; self
     }
     /// <p>The configuration parameters for an explainer.</p>
     pub fn get_explainer_config(&self) -> &::std::option::Option<crate::types::ExplainerConfig> {
@@ -428,46 +417,60 @@ impl DescribeEndpointOutputBuilder {
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     pub fn shadow_production_variants(mut self, input: crate::types::ProductionVariantSummary) -> Self {
         let mut v = self.shadow_production_variants.unwrap_or_default();
-        v.push(input);
-        self.shadow_production_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shadow_production_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>) -> Self {
-        self.shadow_production_variants = input;
-        self
+    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>) -> Self {
+        self.shadow_production_variants = input; self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>> {
         &self.shadow_production_variants
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
     pub fn build(self) -> crate::operation::describe_endpoint::DescribeEndpointOutput {
         crate::operation::describe_endpoint::DescribeEndpointOutput {
-            endpoint_name: self.endpoint_name,
-            endpoint_arn: self.endpoint_arn,
-            endpoint_config_name: self.endpoint_config_name,
-            production_variants: self.production_variants,
-            data_capture_config: self.data_capture_config,
-            endpoint_status: self.endpoint_status,
-            failure_reason: self.failure_reason,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            last_deployment_config: self.last_deployment_config,
-            async_inference_config: self.async_inference_config,
-            pending_deployment_summary: self.pending_deployment_summary,
-            explainer_config: self.explainer_config,
-            shadow_production_variants: self.shadow_production_variants,
+            endpoint_name: self.endpoint_name
+            ,
+            endpoint_arn: self.endpoint_arn
+            ,
+            endpoint_config_name: self.endpoint_config_name
+            ,
+            production_variants: self.production_variants
+            ,
+            data_capture_config: self.data_capture_config
+            ,
+            endpoint_status: self.endpoint_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_deployment_config: self.last_deployment_config
+            ,
+            async_inference_config: self.async_inference_config
+            ,
+            pending_deployment_summary: self.pending_deployment_summary
+            ,
+            explainer_config: self.explainer_config
+            ,
+            shadow_production_variants: self.shadow_production_variants
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

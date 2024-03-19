@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketLifecycleConfigurationOutput {
+pub struct GetBucketLifecycleConfigurationOutput  {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>>,
     _request_id: Option<String>,
 }
-impl GetBucketLifecycleConfigurationOutput {
+impl  GetBucketLifecycleConfigurationOutput  {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::LifecycleRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::LifecycleRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBucketLifecycleConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput).
     pub fn builder() -> crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationOutputBuilder {
@@ -31,7 +32,7 @@ impl GetBucketLifecycleConfigurationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationOutputBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>>,
     _request_id: Option<String>,
 }
 impl GetBucketLifecycleConfigurationOutputBuilder {
@@ -42,33 +43,34 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
     pub fn rules(mut self, input: crate::types::LifecycleRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>> {
         &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput).
     pub fn build(self) -> crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput {
         crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput {
-            rules: self.rules,
+            rules: self.rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>Contains information about an unused access finding for an action. IAM Access Analyzer charges for unused access analysis based on the number of IAM roles and users analyzed per month. For more details on pricing, see <a href="https://aws.amazon.com/iam/access-analyzer/pricing">IAM Access Analyzer pricing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnusedAction {
+pub struct UnusedAction  {
     /// <p>The action for which the unused access finding was generated.</p>
     pub action: ::std::string::String,
     /// <p>The time at which the action was last accessed.</p>
     pub last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UnusedAction {
+impl  UnusedAction  {
     /// <p>The action for which the unused access finding was generated.</p>
-    pub fn action(&self) -> &str {
-        use std::ops::Deref;
-        self.action.deref()
+    pub fn action(&self) -> & str {
+        use std::ops::Deref; self.action.deref()
     }
     /// <p>The time at which the action was last accessed.</p>
-    pub fn last_accessed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl UnusedActionBuilder {
     }
     /// <p>The action for which the unused access finding was generated.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action for which the unused access finding was generated.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl UnusedActionBuilder {
     }
     /// <p>The time at which the action was last accessed.</p>
     pub fn set_last_accessed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed = input;
-        self
+        self.last_accessed = input; self
     }
     /// <p>The time at which the action was last accessed.</p>
     pub fn get_last_accessed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -68,14 +65,17 @@ impl UnusedActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::UnusedActionBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::UnusedAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UnusedAction {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building UnusedAction",
-                )
-            })?,
-            last_accessed: self.last_accessed,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UnusedAction {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building UnusedAction")
+                    )?
+                ,
+                last_accessed: self.last_accessed
+                ,
+            }
+        )
     }
 }
+

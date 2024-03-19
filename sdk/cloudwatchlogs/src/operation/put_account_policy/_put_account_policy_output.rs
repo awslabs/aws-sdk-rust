@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountPolicyOutput {
+pub struct PutAccountPolicyOutput  {
     /// <p>The account policy that you created.</p>
     pub account_policy: ::std::option::Option<crate::types::AccountPolicy>,
     _request_id: Option<String>,
 }
-impl PutAccountPolicyOutput {
+impl  PutAccountPolicyOutput  {
     /// <p>The account policy that you created.</p>
-    pub fn account_policy(&self) -> ::std::option::Option<&crate::types::AccountPolicy> {
+    pub fn account_policy(&self) -> ::std::option::Option<& crate::types::AccountPolicy> {
         self.account_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutAccountPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutAccountPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountPolicyOutput`](crate::operation::put_account_policy::PutAccountPolicyOutput).
     pub fn builder() -> crate::operation::put_account_policy::builders::PutAccountPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl PutAccountPolicyOutputBuilder {
     }
     /// <p>The account policy that you created.</p>
     pub fn set_account_policy(mut self, input: ::std::option::Option<crate::types::AccountPolicy>) -> Self {
-        self.account_policy = input;
-        self
+        self.account_policy = input; self
     }
     /// <p>The account policy that you created.</p>
     pub fn get_account_policy(&self) -> &::std::option::Option<crate::types::AccountPolicy> {
         &self.account_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutAccountPolicyOutput`](crate::operation::put_account_policy::PutAccountPolicyOutput).
     pub fn build(self) -> crate::operation::put_account_policy::PutAccountPolicyOutput {
         crate::operation::put_account_policy::PutAccountPolicyOutput {
-            account_policy: self.account_policy,
+            account_policy: self.account_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePatchPropertiesInput {
+pub struct DescribePatchPropertiesInput  {
     /// <p>The operating system type for which to list patches.</p>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The patch property for which you want to view patch details.</p>
@@ -14,17 +14,17 @@ pub struct DescribePatchPropertiesInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribePatchPropertiesInput {
+impl  DescribePatchPropertiesInput  {
     /// <p>The operating system type for which to list patches.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>The patch property for which you want to view patch details.</p>
-    pub fn property(&self) -> ::std::option::Option<&crate::types::PatchProperty> {
+    pub fn property(&self) -> ::std::option::Option<& crate::types::PatchProperty> {
         self.property.as_ref()
     }
     /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
-    pub fn patch_set(&self) -> ::std::option::Option<&crate::types::PatchSet> {
+    pub fn patch_set(&self) -> ::std::option::Option<& crate::types::PatchSet> {
         self.patch_set.as_ref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -32,7 +32,7 @@ impl DescribePatchPropertiesInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DescribePatchPropertiesInputBuilder {
     }
     /// <p>The operating system type for which to list patches.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>The operating system type for which to list patches.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
@@ -77,8 +76,7 @@ impl DescribePatchPropertiesInputBuilder {
     }
     /// <p>The patch property for which you want to view patch details.</p>
     pub fn set_property(mut self, input: ::std::option::Option<crate::types::PatchProperty>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
     }
     /// <p>The patch property for which you want to view patch details.</p>
     pub fn get_property(&self) -> &::std::option::Option<crate::types::PatchProperty> {
@@ -91,8 +89,7 @@ impl DescribePatchPropertiesInputBuilder {
     }
     /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
     pub fn set_patch_set(mut self, input: ::std::option::Option<crate::types::PatchSet>) -> Self {
-        self.patch_set = input;
-        self
+        self.patch_set = input; self
     }
     /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
     pub fn get_patch_set(&self) -> &::std::option::Option<crate::types::PatchSet> {
@@ -105,8 +102,7 @@ impl DescribePatchPropertiesInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,26 +115,28 @@ impl DescribePatchPropertiesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribePatchPropertiesInput`](crate::operation::describe_patch_properties::DescribePatchPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_patch_properties::DescribePatchPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_patch_properties::DescribePatchPropertiesInput {
-            operating_system: self.operating_system,
-            property: self.property,
-            patch_set: self.patch_set,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_patch_properties::DescribePatchPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_patch_properties::DescribePatchPropertiesInput {
+                operating_system: self.operating_system
+                ,
+                property: self.property
+                ,
+                patch_set: self.patch_set
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

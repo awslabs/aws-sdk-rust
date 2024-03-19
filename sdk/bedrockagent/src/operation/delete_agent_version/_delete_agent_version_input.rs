@@ -3,7 +3,7 @@
 /// Delete Agent Version Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgentVersionInput {
+pub struct DeleteAgentVersionInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Numerical Agent Version.
@@ -11,13 +11,13 @@ pub struct DeleteAgentVersionInput {
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
-impl DeleteAgentVersionInput {
+impl  DeleteAgentVersionInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Numerical Agent Version.
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
@@ -49,8 +49,7 @@ impl DeleteAgentVersionInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DeleteAgentVersionInputBuilder {
     }
     /// Numerical Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Numerical Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl DeleteAgentVersionInputBuilder {
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input;
-        self
+        self.skip_resource_in_use_check = input; self
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
         &self.skip_resource_in_use_check
     }
     /// Consumes the builder and constructs a [`DeleteAgentVersionInput`](crate::operation::delete_agent_version::DeleteAgentVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_agent_version::DeleteAgentVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_agent_version::DeleteAgentVersionInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            skip_resource_in_use_check: self.skip_resource_in_use_check,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent_version::DeleteAgentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_agent_version::DeleteAgentVersionInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                skip_resource_in_use_check: self.skip_resource_in_use_check
+                ,
+            }
+        )
     }
 }
+

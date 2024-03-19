@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfirmTopicRuleDestinationInput {
+pub struct ConfirmTopicRuleDestinationInput  {
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     pub confirmation_token: ::std::option::Option<::std::string::String>,
 }
-impl ConfirmTopicRuleDestinationInput {
+impl  ConfirmTopicRuleDestinationInput  {
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
-    pub fn confirmation_token(&self) -> ::std::option::Option<&str> {
+    pub fn confirmation_token(&self) -> ::std::option::Option<& str> {
         self.confirmation_token.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl ConfirmTopicRuleDestinationInputBuilder {
     }
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     pub fn set_confirmation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.confirmation_token = input;
-        self
+        self.confirmation_token = input; self
     }
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     pub fn get_confirmation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.confirmation_token
     }
     /// Consumes the builder and constructs a [`ConfirmTopicRuleDestinationInput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput {
-            confirmation_token: self.confirmation_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput {
+                confirmation_token: self.confirmation_token
+                ,
+            }
+        )
     }
 }
+

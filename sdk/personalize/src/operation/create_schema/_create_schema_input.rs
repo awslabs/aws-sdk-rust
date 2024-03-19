@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSchemaInput {
+pub struct CreateSchemaInput  {
     /// <p>The name for the schema.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A schema in Avro JSON format.</p>
@@ -10,17 +10,17 @@ pub struct CreateSchemaInput {
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
-impl CreateSchemaInput {
+impl  CreateSchemaInput  {
     /// <p>The name for the schema.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A schema in Avro JSON format.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
-    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The name for the schema.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the schema.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>A schema in Avro JSON format.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>A schema in Avro JSON format.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
         &self.domain
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput {
-            name: self.name,
-            schema: self.schema,
-            domain: self.domain,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_schema::CreateSchemaInput {
+                name: self.name
+                ,
+                schema: self.schema
+                ,
+                domain: self.domain
+                ,
+            }
+        )
     }
 }
+

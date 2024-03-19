@@ -21,11 +21,7 @@ impl StoreOptions {
     /// Tries to convert the enum instance into [`TsvStoreOptions`](crate::types::StoreOptions::TsvStoreOptions), extracting the inner [`TsvStoreOptions`](crate::types::TsvStoreOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tsv_store_options(&self) -> ::std::result::Result<&crate::types::TsvStoreOptions, &Self> {
-        if let StoreOptions::TsvStoreOptions(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StoreOptions::TsvStoreOptions(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TsvStoreOptions`](crate::types::StoreOptions::TsvStoreOptions).
     pub fn is_tsv_store_options(&self) -> bool {
@@ -36,3 +32,4 @@ impl StoreOptions {
         matches!(self, Self::Unknown)
     }
 }
+

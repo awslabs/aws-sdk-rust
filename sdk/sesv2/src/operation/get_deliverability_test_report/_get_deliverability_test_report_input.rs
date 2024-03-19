@@ -3,13 +3,13 @@
 /// <p>A request to retrieve the results of a predictive inbox placement test.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeliverabilityTestReportInput {
+pub struct GetDeliverabilityTestReportInput  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDeliverabilityTestReportInput {
+impl  GetDeliverabilityTestReportInput  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetDeliverabilityTestReportInputBuilder {
     }
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_id
     }
     /// Consumes the builder and constructs a [`GetDeliverabilityTestReportInput`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput { report_id: self.report_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput {
+                report_id: self.report_id
+                ,
+            }
+        )
     }
 }
+

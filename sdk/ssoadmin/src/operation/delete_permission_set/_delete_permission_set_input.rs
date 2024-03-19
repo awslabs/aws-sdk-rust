@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePermissionSetInput {
+pub struct DeletePermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the permission set that should be deleted.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeletePermissionSetInput {
+impl  DeletePermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set that should be deleted.</p>
-    pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> ::std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeletePermissionSetInputBuilder {
     }
     /// <p>The ARN of the permission set that should be deleted.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_set_arn = input;
-        self
+        self.permission_set_arn = input; self
     }
     /// <p>The ARN of the permission set that should be deleted.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_set_arn
     }
     /// Consumes the builder and constructs a [`DeletePermissionSetInput`](crate::operation::delete_permission_set::DeletePermissionSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_permission_set::DeletePermissionSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_permission_set::DeletePermissionSetInput {
-            instance_arn: self.instance_arn,
-            permission_set_arn: self.permission_set_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_permission_set::DeletePermissionSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_permission_set::DeletePermissionSetInput {
+                instance_arn: self.instance_arn
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+            }
+        )
     }
 }
+

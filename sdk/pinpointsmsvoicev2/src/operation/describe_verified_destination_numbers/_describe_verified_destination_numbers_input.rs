@@ -2,39 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVerifiedDestinationNumbersInput {
+pub struct DescribeVerifiedDestinationNumbersInput  {
     /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
-    pub verified_destination_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub verified_destination_number_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of verified destination phone number, in E.164 format.</p>
-    pub destination_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destination_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of VerifiedDestinationNumberFilter objects to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeVerifiedDestinationNumbersInput {
+impl  DescribeVerifiedDestinationNumbersInput  {
     /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_destination_number_ids.is_none()`.
-    pub fn verified_destination_number_ids(&self) -> &[::std::string::String] {
-        self.verified_destination_number_ids.as_deref().unwrap_or_default()
+    pub fn verified_destination_number_ids(&self) -> & [::std::string::String] {
+        self.verified_destination_number_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of verified destination phone number, in E.164 format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_phone_numbers.is_none()`.
-    pub fn destination_phone_numbers(&self) -> &[::std::string::String] {
-        self.destination_phone_numbers.as_deref().unwrap_or_default()
+    pub fn destination_phone_numbers(&self) -> & [::std::string::String] {
+        self.destination_phone_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of VerifiedDestinationNumberFilter objects to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::VerifiedDestinationNumberFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::VerifiedDestinationNumberFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -53,9 +56,9 @@ impl DescribeVerifiedDestinationNumbersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedDestinationNumbersInputBuilder {
-    pub(crate) verified_destination_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destination_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberFilter>>,
+    pub(crate) verified_destination_number_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) destination_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -67,17 +70,16 @@ impl DescribeVerifiedDestinationNumbersInputBuilder {
     /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
     pub fn verified_destination_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.verified_destination_number_ids.unwrap_or_default();
-        v.push(input.into());
-        self.verified_destination_number_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.verified_destination_number_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
-    pub fn set_verified_destination_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.verified_destination_number_ids = input;
-        self
+    pub fn set_verified_destination_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.verified_destination_number_ids = input; self
     }
     /// <p>An array of VerifiedDestinationNumberid to retreive.</p>
-    pub fn get_verified_destination_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_verified_destination_number_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.verified_destination_number_ids
     }
     /// Appends an item to `destination_phone_numbers`.
@@ -87,17 +89,16 @@ impl DescribeVerifiedDestinationNumbersInputBuilder {
     /// <p>An array of verified destination phone number, in E.164 format.</p>
     pub fn destination_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_phone_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.destination_phone_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destination_phone_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of verified destination phone number, in E.164 format.</p>
-    pub fn set_destination_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.destination_phone_numbers = input;
-        self
+    pub fn set_destination_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.destination_phone_numbers = input; self
     }
     /// <p>An array of verified destination phone number, in E.164 format.</p>
-    pub fn get_destination_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.destination_phone_numbers
     }
     /// Appends an item to `filters`.
@@ -107,17 +108,16 @@ impl DescribeVerifiedDestinationNumbersInputBuilder {
     /// <p>An array of VerifiedDestinationNumberFilter objects to filter the results.</p>
     pub fn filters(mut self, input: crate::types::VerifiedDestinationNumberFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of VerifiedDestinationNumberFilter objects to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of VerifiedDestinationNumberFilter objects to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -127,8 +127,7 @@ impl DescribeVerifiedDestinationNumbersInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,28 +140,28 @@ impl DescribeVerifiedDestinationNumbersInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeVerifiedDestinationNumbersInput`](crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersInput {
-                verified_destination_number_ids: self.verified_destination_number_ids,
-                destination_phone_numbers: self.destination_phone_numbers,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                verified_destination_number_ids: self.verified_destination_number_ids
+                ,
+                destination_phone_numbers: self.destination_phone_numbers
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

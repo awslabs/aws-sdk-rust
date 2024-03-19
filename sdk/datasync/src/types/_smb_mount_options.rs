@@ -3,7 +3,7 @@
 /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmbMountOptions {
+pub struct SmbMountOptions  {
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
     /// <p>These are the following options for configuring the SMB version:</p>
     /// <ul>
@@ -23,7 +23,7 @@ pub struct SmbMountOptions {
     /// </ul>
     pub version: ::std::option::Option<crate::types::SmbVersion>,
 }
-impl SmbMountOptions {
+impl  SmbMountOptions  {
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
     /// <p>These are the following options for configuring the SMB version:</p>
     /// <ul>
@@ -41,7 +41,7 @@ impl SmbMountOptions {
     /// <p>The <code>SMB1</code> option isn't available when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating an Amazon FSx for NetApp ONTAP location</a>.</p>
     /// </note></li>
     /// </ul>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::SmbVersion> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::SmbVersion> {
         self.version.as_ref()
     }
 }
@@ -98,8 +98,7 @@ impl SmbMountOptionsBuilder {
     /// </note></li>
     /// </ul>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::SmbVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
     /// <p>These are the following options for configuring the SMB version:</p>
@@ -123,6 +122,10 @@ impl SmbMountOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`SmbMountOptions`](crate::types::SmbMountOptions).
     pub fn build(self) -> crate::types::SmbMountOptions {
-        crate::types::SmbMountOptions { version: self.version }
+        crate::types::SmbMountOptions {
+            version: self.version
+            ,
+        }
     }
 }
+

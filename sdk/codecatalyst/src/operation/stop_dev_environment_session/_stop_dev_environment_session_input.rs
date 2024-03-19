@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDevEnvironmentSessionInput {
+pub struct StopDevEnvironmentSessionInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
@@ -12,21 +12,21 @@ pub struct StopDevEnvironmentSessionInput {
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl StopDevEnvironmentSessionInput {
+impl  StopDevEnvironmentSessionInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl StopDevEnvironmentSessionInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            id: self.id,
-            session_id: self.session_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

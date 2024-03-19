@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePipelineOutput {
+pub struct UpdatePipelineOutput  {
     /// <p>Container for information about the updated pipeline.</p>
     pub pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,
 }
-impl UpdatePipelineOutput {
+impl  UpdatePipelineOutput  {
     /// <p>Container for information about the updated pipeline.</p>
-    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::Pipeline> {
+    pub fn pipeline(&self) -> ::std::option::Option<& crate::types::Pipeline> {
         self.pipeline.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput).
     pub fn builder() -> crate::operation::update_pipeline::builders::UpdatePipelineOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdatePipelineOutputBuilder {
     }
     /// <p>Container for information about the updated pipeline.</p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::Pipeline>) -> Self {
-        self.pipeline = input;
-        self
+        self.pipeline = input; self
     }
     /// <p>Container for information about the updated pipeline.</p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::Pipeline> {
         &self.pipeline
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput).
     pub fn build(self) -> crate::operation::update_pipeline::UpdatePipelineOutput {
         crate::operation::update_pipeline::UpdatePipelineOutput {
-            pipeline: self.pipeline,
+            pipeline: self.pipeline
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

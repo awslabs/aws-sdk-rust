@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNotebookInput {
+pub struct CreateNotebookInput  {
     /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
@@ -12,19 +12,19 @@ pub struct CreateNotebookInput {
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateNotebookInput {
+impl  CreateNotebookInput  {
     /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
     /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl CreateNotebookInputBuilder {
     }
     /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl CreateNotebookInputBuilder {
     }
     /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateNotebookInputBuilder {
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -95,13 +92,17 @@ impl CreateNotebookInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateNotebookInput`](crate::operation::create_notebook::CreateNotebookInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_notebook::CreateNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_notebook::CreateNotebookInput {
-            work_group: self.work_group,
-            name: self.name,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_notebook::CreateNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_notebook::CreateNotebookInput {
+                work_group: self.work_group
+                ,
+                name: self.name
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

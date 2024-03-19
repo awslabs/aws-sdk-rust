@@ -3,7 +3,7 @@
 /// <p>The POST request to create a usage plan key for adding an existing API key to a usage plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUsagePlanKeyInput {
+pub struct CreateUsagePlanKeyInput  {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
@@ -11,17 +11,17 @@ pub struct CreateUsagePlanKeyInput {
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub key_type: ::std::option::Option<::std::string::String>,
 }
-impl CreateUsagePlanKeyInput {
+impl  CreateUsagePlanKeyInput  {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn usage_plan_id(&self) -> ::std::option::Option<& str> {
         self.usage_plan_id.as_deref()
     }
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
-    pub fn key_type(&self) -> ::std::option::Option<&str> {
+    pub fn key_type(&self) -> ::std::option::Option<& str> {
         self.key_type.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateUsagePlanKeyInputBuilder {
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
     pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_plan_id = input;
-        self
+        self.usage_plan_id = input; self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
     pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateUsagePlanKeyInputBuilder {
     }
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl CreateUsagePlanKeyInputBuilder {
     }
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub fn set_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_type = input;
-        self
+        self.key_type = input; self
     }
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub fn get_key_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_type
     }
     /// Consumes the builder and constructs a [`CreateUsagePlanKeyInput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput {
-            usage_plan_id: self.usage_plan_id,
-            key_id: self.key_id,
-            key_type: self.key_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput {
+                usage_plan_id: self.usage_plan_id
+                ,
+                key_id: self.key_id
+                ,
+                key_type: self.key_type
+                ,
+            }
+        )
     }
 }
+

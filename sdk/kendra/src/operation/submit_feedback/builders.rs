@@ -5,55 +5,51 @@ pub use crate::operation::submit_feedback::_submit_feedback_input::SubmitFeedbac
 
 impl SubmitFeedbackInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::submit_feedback::SubmitFeedbackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::submit_feedback::SubmitFeedbackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.submit_feedback();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::submit_feedback::SubmitFeedbackOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::submit_feedback::SubmitFeedbackError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.submit_feedback();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SubmitFeedback`.
-///
+/// 
 /// <p>Enables you to provide feedback to Amazon Kendra to improve the performance of your index.</p>
 /// <p><code>SubmitFeedback</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder,
+                    inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::submit_feedback::SubmitFeedbackOutput,
-        crate::operation::submit_feedback::SubmitFeedbackError,
-    > for SubmitFeedbackFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::submit_feedback::SubmitFeedbackOutput,
-            crate::operation::submit_feedback::SubmitFeedbackError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::submit_feedback::SubmitFeedbackOutput,
+                    crate::operation::submit_feedback::SubmitFeedbackError,
+                > for SubmitFeedbackFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::submit_feedback::SubmitFeedbackOutput,
+                        crate::operation::submit_feedback::SubmitFeedbackError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SubmitFeedbackFluentBuilder {
     /// Creates a new `SubmitFeedback`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl SubmitFeedbackFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_feedback::SubmitFeedbackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::submit_feedback::SubmitFeedbackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::submit_feedback::SubmitFeedback::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::submit_feedback::SubmitFeedback::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::submit_feedback::SubmitFeedbackOutput,
-        crate::operation::submit_feedback::SubmitFeedbackError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::submit_feedback::SubmitFeedback::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::submit_feedback::SubmitFeedback::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::submit_feedback::SubmitFeedbackOutput, crate::operation::submit_feedback::SubmitFeedbackError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index that was queried.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -147,12 +134,12 @@ impl SubmitFeedbackFluentBuilder {
         self
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
-    pub fn set_click_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>) -> Self {
+    pub fn set_click_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClickFeedback>>) -> Self {
         self.inner = self.inner.set_click_feedback_items(input);
         self
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
-    pub fn get_click_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
+    pub fn get_click_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClickFeedback>> {
         self.inner.get_click_feedback_items()
     }
     /// Appends an item to `RelevanceFeedbackItems`.
@@ -165,12 +152,13 @@ impl SubmitFeedbackFluentBuilder {
         self
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn set_relevance_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>) -> Self {
+    pub fn set_relevance_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelevanceFeedback>>) -> Self {
         self.inner = self.inner.set_relevance_feedback_items(input);
         self
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn get_relevance_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>> {
+    pub fn get_relevance_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelevanceFeedback>> {
         self.inner.get_relevance_feedback_items()
     }
 }
+

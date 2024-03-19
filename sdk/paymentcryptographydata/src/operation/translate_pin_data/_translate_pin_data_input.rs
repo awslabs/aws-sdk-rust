@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TranslatePinDataInput {
+pub struct TranslatePinDataInput  {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
@@ -18,37 +18,37 @@ pub struct TranslatePinDataInput {
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
     pub outgoing_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
 }
-impl TranslatePinDataInput {
+impl  TranslatePinDataInput  {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    pub fn incoming_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn incoming_key_identifier(&self) -> ::std::option::Option<& str> {
         self.incoming_key_identifier.as_deref()
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
-    pub fn outgoing_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn outgoing_key_identifier(&self) -> ::std::option::Option<& str> {
         self.outgoing_key_identifier.as_deref()
     }
     /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
-    pub fn incoming_translation_attributes(&self) -> ::std::option::Option<&crate::types::TranslationIsoFormats> {
+    pub fn incoming_translation_attributes(&self) -> ::std::option::Option<& crate::types::TranslationIsoFormats> {
         self.incoming_translation_attributes.as_ref()
     }
     /// <p>The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_translation_attributes(&self) -> ::std::option::Option<&crate::types::TranslationIsoFormats> {
+    pub fn outgoing_translation_attributes(&self) -> ::std::option::Option<& crate::types::TranslationIsoFormats> {
         self.outgoing_translation_attributes.as_ref()
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
-    pub fn encrypted_pin_block(&self) -> ::std::option::Option<&str> {
+    pub fn encrypted_pin_block(&self) -> ::std::option::Option<& str> {
         self.encrypted_pin_block.as_deref()
     }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block translation.</p>
-    pub fn incoming_dukpt_attributes(&self) -> ::std::option::Option<&crate::types::DukptDerivationAttributes> {
+    pub fn incoming_dukpt_attributes(&self) -> ::std::option::Option<& crate::types::DukptDerivationAttributes> {
         self.incoming_dukpt_attributes.as_ref()
     }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
-    pub fn outgoing_dukpt_attributes(&self) -> ::std::option::Option<&crate::types::DukptDerivationAttributes> {
+    pub fn outgoing_dukpt_attributes(&self) -> ::std::option::Option<& crate::types::DukptDerivationAttributes> {
         self.outgoing_dukpt_attributes.as_ref()
     }
 }
-impl ::std::fmt::Debug for TranslatePinDataInput {
+impl  ::std::fmt::Debug for TranslatePinDataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TranslatePinDataInput");
         formatter.field("incoming_key_identifier", &self.incoming_key_identifier);
@@ -89,8 +89,7 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
     pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incoming_key_identifier = input;
-        self
+        self.incoming_key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
     pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
     pub fn set_outgoing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outgoing_key_identifier = input;
-        self
+        self.outgoing_key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
     pub fn get_outgoing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
     pub fn set_incoming_translation_attributes(mut self, input: ::std::option::Option<crate::types::TranslationIsoFormats>) -> Self {
-        self.incoming_translation_attributes = input;
-        self
+        self.incoming_translation_attributes = input; self
     }
     /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
     pub fn get_incoming_translation_attributes(&self) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
@@ -134,8 +131,7 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.</p>
     pub fn set_outgoing_translation_attributes(mut self, input: ::std::option::Option<crate::types::TranslationIsoFormats>) -> Self {
-        self.outgoing_translation_attributes = input;
-        self
+        self.outgoing_translation_attributes = input; self
     }
     /// <p>The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.</p>
     pub fn get_outgoing_translation_attributes(&self) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
@@ -149,8 +145,7 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
     pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encrypted_pin_block = input;
-        self
+        self.encrypted_pin_block = input; self
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
     pub fn get_encrypted_pin_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +158,7 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block translation.</p>
     pub fn set_incoming_dukpt_attributes(mut self, input: ::std::option::Option<crate::types::DukptDerivationAttributes>) -> Self {
-        self.incoming_dukpt_attributes = input;
-        self
+        self.incoming_dukpt_attributes = input; self
     }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block translation.</p>
     pub fn get_incoming_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
@@ -177,26 +171,32 @@ impl TranslatePinDataInputBuilder {
     }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
     pub fn set_outgoing_dukpt_attributes(mut self, input: ::std::option::Option<crate::types::DukptDerivationAttributes>) -> Self {
-        self.outgoing_dukpt_attributes = input;
-        self
+        self.outgoing_dukpt_attributes = input; self
     }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
     pub fn get_outgoing_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
         &self.outgoing_dukpt_attributes
     }
     /// Consumes the builder and constructs a [`TranslatePinDataInput`](crate::operation::translate_pin_data::TranslatePinDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::translate_pin_data::TranslatePinDataInput {
-            incoming_key_identifier: self.incoming_key_identifier,
-            outgoing_key_identifier: self.outgoing_key_identifier,
-            incoming_translation_attributes: self.incoming_translation_attributes,
-            outgoing_translation_attributes: self.outgoing_translation_attributes,
-            encrypted_pin_block: self.encrypted_pin_block,
-            incoming_dukpt_attributes: self.incoming_dukpt_attributes,
-            outgoing_dukpt_attributes: self.outgoing_dukpt_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::translate_pin_data::TranslatePinDataInput {
+                incoming_key_identifier: self.incoming_key_identifier
+                ,
+                outgoing_key_identifier: self.outgoing_key_identifier
+                ,
+                incoming_translation_attributes: self.incoming_translation_attributes
+                ,
+                outgoing_translation_attributes: self.outgoing_translation_attributes
+                ,
+                encrypted_pin_block: self.encrypted_pin_block
+                ,
+                incoming_dukpt_attributes: self.incoming_dukpt_attributes
+                ,
+                outgoing_dukpt_attributes: self.outgoing_dukpt_attributes
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TranslatePinDataInputBuilder {
@@ -212,3 +212,4 @@ impl ::std::fmt::Debug for TranslatePinDataInputBuilder {
         formatter.finish()
     }
 }
+

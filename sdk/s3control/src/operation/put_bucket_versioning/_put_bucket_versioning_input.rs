@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketVersioningInput {
+pub struct PutBucketVersioningInput  {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
@@ -12,21 +12,21 @@ pub struct PutBucketVersioningInput {
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
     pub versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
 }
-impl PutBucketVersioningInput {
+impl  PutBucketVersioningInput  {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
-    pub fn mfa(&self) -> ::std::option::Option<&str> {
+    pub fn mfa(&self) -> ::std::option::Option<& str> {
         self.mfa.as_deref()
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn versioning_configuration(&self) -> ::std::option::Option<&crate::types::VersioningConfiguration> {
+    pub fn versioning_configuration(&self) -> ::std::option::Option<& crate::types::VersioningConfiguration> {
         self.versioning_configuration.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PutBucketVersioningInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutBucketVersioningInputBuilder {
     }
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PutBucketVersioningInputBuilder {
     }
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub fn set_mfa(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mfa = input;
-        self
+        self.mfa = input; self
     }
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub fn get_mfa(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl PutBucketVersioningInputBuilder {
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
     pub fn set_versioning_configuration(mut self, input: ::std::option::Option<crate::types::VersioningConfiguration>) -> Self {
-        self.versioning_configuration = input;
-        self
+        self.versioning_configuration = input; self
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
     pub fn get_versioning_configuration(&self) -> &::std::option::Option<crate::types::VersioningConfiguration> {
         &self.versioning_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_bucket_versioning::PutBucketVersioningInput {
-            account_id: self.account_id,
-            bucket: self.bucket,
-            mfa: self.mfa,
-            versioning_configuration: self.versioning_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_bucket_versioning::PutBucketVersioningInput {
+                account_id: self.account_id
+                ,
+                bucket: self.bucket
+                ,
+                mfa: self.mfa
+                ,
+                versioning_configuration: self.versioning_configuration
+                ,
+            }
+        )
     }
 }
+

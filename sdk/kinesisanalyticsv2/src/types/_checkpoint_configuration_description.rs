@@ -3,7 +3,7 @@
 /// <p>Describes checkpointing parameters for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckpointConfigurationDescription {
+pub struct CheckpointConfigurationDescription  {
     /// <p>Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
@@ -29,7 +29,7 @@ pub struct CheckpointConfigurationDescription {
     /// </note>
     pub min_pause_between_checkpoints: ::std::option::Option<i64>,
 }
-impl CheckpointConfigurationDescription {
+impl  CheckpointConfigurationDescription  {
     /// <p>Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
@@ -41,7 +41,7 @@ impl CheckpointConfigurationDescription {
     /// <p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
-    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<& crate::types::ConfigurationType> {
         self.configuration_type.as_ref()
     }
     /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
@@ -107,8 +107,7 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// </ul>
     /// </note>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
-        self.configuration_type = input;
-        self
+        self.configuration_type = input; self
     }
     /// <p>Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
@@ -135,8 +134,7 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn set_checkpointing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.checkpointing_enabled = input;
-        self
+        self.checkpointing_enabled = input; self
     }
     /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
@@ -155,8 +153,7 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn set_checkpoint_interval(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.checkpoint_interval = input;
-        self
+        self.checkpoint_interval = input; self
     }
     /// <p>Describes the interval in milliseconds between checkpoint operations.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
@@ -175,8 +172,7 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
     pub fn set_min_pause_between_checkpoints(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.min_pause_between_checkpoints = input;
-        self
+        self.min_pause_between_checkpoints = input; self
     }
     /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
@@ -187,10 +183,15 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// Consumes the builder and constructs a [`CheckpointConfigurationDescription`](crate::types::CheckpointConfigurationDescription).
     pub fn build(self) -> crate::types::CheckpointConfigurationDescription {
         crate::types::CheckpointConfigurationDescription {
-            configuration_type: self.configuration_type,
-            checkpointing_enabled: self.checkpointing_enabled,
-            checkpoint_interval: self.checkpoint_interval,
-            min_pause_between_checkpoints: self.min_pause_between_checkpoints,
+            configuration_type: self.configuration_type
+            ,
+            checkpointing_enabled: self.checkpointing_enabled
+            ,
+            checkpoint_interval: self.checkpoint_interval
+            ,
+            min_pause_between_checkpoints: self.min_pause_between_checkpoints
+            ,
         }
     }
 }
+

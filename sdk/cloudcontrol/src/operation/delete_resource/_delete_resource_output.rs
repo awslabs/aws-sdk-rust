@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceOutput {
+pub struct DeleteResourceOutput  {
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     pub progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
 }
-impl DeleteResourceOutput {
+impl  DeleteResourceOutput  {
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
-    pub fn progress_event(&self) -> ::std::option::Option<&crate::types::ProgressEvent> {
+    pub fn progress_event(&self) -> ::std::option::Option<& crate::types::ProgressEvent> {
         self.progress_event.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteResourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput).
     pub fn builder() -> crate::operation::delete_resource::builders::DeleteResourceOutputBuilder {
@@ -44,8 +44,7 @@ impl DeleteResourceOutputBuilder {
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     pub fn set_progress_event(mut self, input: ::std::option::Option<crate::types::ProgressEvent>) -> Self {
-        self.progress_event = input;
-        self
+        self.progress_event = input; self
     }
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
@@ -53,19 +52,21 @@ impl DeleteResourceOutputBuilder {
         &self.progress_event
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput).
     pub fn build(self) -> crate::operation::delete_resource::DeleteResourceOutput {
         crate::operation::delete_resource::DeleteResourceOutput {
-            progress_event: self.progress_event,
+            progress_event: self.progress_event
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

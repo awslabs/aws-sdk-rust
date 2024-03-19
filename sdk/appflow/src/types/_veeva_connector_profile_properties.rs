@@ -3,15 +3,14 @@
 /// <p>The connector-specific profile properties required when using Veeva.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VeevaConnectorProfileProperties {
+pub struct VeevaConnectorProfileProperties  {
     /// <p>The location of the Veeva resource.</p>
     pub instance_url: ::std::string::String,
 }
-impl VeevaConnectorProfileProperties {
+impl  VeevaConnectorProfileProperties  {
     /// <p>The location of the Veeva resource.</p>
-    pub fn instance_url(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_url.deref()
+    pub fn instance_url(&self) -> & str {
+        use std::ops::Deref; self.instance_url.deref()
     }
 }
 impl VeevaConnectorProfileProperties {
@@ -36,8 +35,7 @@ impl VeevaConnectorProfilePropertiesBuilder {
     }
     /// <p>The location of the Veeva resource.</p>
     pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_url = input;
-        self
+        self.instance_url = input; self
     }
     /// <p>The location of the Veeva resource.</p>
     pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl VeevaConnectorProfilePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::VeevaConnectorProfilePropertiesBuilder::instance_url)
     pub fn build(self) -> ::std::result::Result<crate::types::VeevaConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VeevaConnectorProfileProperties {
-            instance_url: self.instance_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_url",
-                    "instance_url was not specified but it is required when building VeevaConnectorProfileProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VeevaConnectorProfileProperties {
+                instance_url: self.instance_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_url", "instance_url was not specified but it is required when building VeevaConnectorProfileProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

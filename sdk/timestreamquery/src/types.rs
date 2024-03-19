@@ -148,3 +148,4 @@ pub mod builders;
 
 /// Error types that Amazon Timestream Query can respond with.
 pub mod error;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateCalculatedAttributeDefinitionInput {
+pub struct UpdateCalculatedAttributeDefinitionInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the calculated attribute.</p>
@@ -14,29 +14,29 @@ pub struct UpdateCalculatedAttributeDefinitionInput {
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub conditions: ::std::option::Option<crate::types::Conditions>,
 }
-impl UpdateCalculatedAttributeDefinitionInput {
+impl  UpdateCalculatedAttributeDefinitionInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn calculated_attribute_name(&self) -> ::std::option::Option<& str> {
         self.calculated_attribute_name.as_deref()
     }
     /// <p>The display name of the calculated attribute.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the calculated attribute.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&crate::types::Conditions> {
+    pub fn conditions(&self) -> ::std::option::Option<& crate::types::Conditions> {
         self.conditions.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionInput {
+impl  ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCalculatedAttributeDefinitionInput");
         formatter.field("domain_name", &self.domain_name);
@@ -73,8 +73,7 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculated_attribute_name = input;
-        self
+        self.calculated_attribute_name = input; self
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The display name of the calculated attribute.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the calculated attribute.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +113,7 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The description of the calculated attribute.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the calculated attribute.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,28 +126,27 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn set_conditions(mut self, input: ::std::option::Option<crate::types::Conditions>) -> Self {
-        self.conditions = input;
-        self
+        self.conditions = input; self
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`UpdateCalculatedAttributeDefinitionInput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput {
-                domain_name: self.domain_name,
-                calculated_attribute_name: self.calculated_attribute_name,
-                display_name: self.display_name,
-                description: self.description,
-                conditions: self.conditions,
-            },
+                domain_name: self.domain_name
+                ,
+                calculated_attribute_name: self.calculated_attribute_name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                conditions: self.conditions
+                ,
+            }
         )
     }
 }
@@ -166,3 +161,4 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionInputBuilder {
         formatter.finish()
     }
 }
+

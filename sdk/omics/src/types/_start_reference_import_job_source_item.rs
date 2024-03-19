@@ -3,7 +3,7 @@
 /// <p>A source for a reference import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartReferenceImportJobSourceItem {
+pub struct StartReferenceImportJobSourceItem  {
     /// <p>The source file's location in Amazon S3.</p>
     pub source_file: ::std::string::String,
     /// <p>The source's name.</p>
@@ -11,25 +11,23 @@ pub struct StartReferenceImportJobSourceItem {
     /// <p>The source's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartReferenceImportJobSourceItem {
+impl  StartReferenceImportJobSourceItem  {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source_file(&self) -> &str {
-        use std::ops::Deref;
-        self.source_file.deref()
+    pub fn source_file(&self) -> & str {
+        use std::ops::Deref; self.source_file.deref()
     }
     /// <p>The source's name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The source's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The source's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -47,7 +45,7 @@ pub struct StartReferenceImportJobSourceItemBuilder {
     pub(crate) source_file: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartReferenceImportJobSourceItemBuilder {
     /// <p>The source file's location in Amazon S3.</p>
@@ -58,8 +56,7 @@ impl StartReferenceImportJobSourceItemBuilder {
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn set_source_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file = input;
-        self
+        self.source_file = input; self
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn get_source_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl StartReferenceImportJobSourceItemBuilder {
     }
     /// <p>The source's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The source's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl StartReferenceImportJobSourceItemBuilder {
     }
     /// <p>The source's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The source's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,17 +96,16 @@ impl StartReferenceImportJobSourceItemBuilder {
     /// <p>The source's tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The source's tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The source's tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartReferenceImportJobSourceItem`](crate::types::StartReferenceImportJobSourceItem).
@@ -119,21 +113,24 @@ impl StartReferenceImportJobSourceItemBuilder {
     /// - [`source_file`](crate::types::builders::StartReferenceImportJobSourceItemBuilder::source_file)
     /// - [`name`](crate::types::builders::StartReferenceImportJobSourceItemBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::StartReferenceImportJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartReferenceImportJobSourceItem {
-            source_file: self.source_file.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_file",
-                    "source_file was not specified but it is required when building StartReferenceImportJobSourceItem",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StartReferenceImportJobSourceItem",
-                )
-            })?,
-            description: self.description,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StartReferenceImportJobSourceItem {
+                source_file: self.source_file
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_file", "source_file was not specified but it is required when building StartReferenceImportJobSourceItem")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building StartReferenceImportJobSourceItem")
+                    )?
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

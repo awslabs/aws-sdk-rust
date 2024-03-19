@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTableRestoreStatusOutput {
+pub struct ListTableRestoreStatusOutput  {
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub table_restore_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub table_restore_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>>,
     _request_id: Option<String>,
 }
-impl ListTableRestoreStatusOutput {
+impl  ListTableRestoreStatusOutput  {
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_restore_statuses.is_none()`.
-    pub fn table_restore_statuses(&self) -> &[crate::types::TableRestoreStatus] {
-        self.table_restore_statuses.as_deref().unwrap_or_default()
+    pub fn table_restore_statuses(&self) -> & [crate::types::TableRestoreStatus] {
+        self.table_restore_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTableRestoreStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTableRestoreStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput).
     pub fn builder() -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusOutputBuilder {
@@ -38,7 +39,7 @@ impl ListTableRestoreStatusOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableRestoreStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) table_restore_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub(crate) table_restore_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>>,
     _request_id: Option<String>,
 }
 impl ListTableRestoreStatusOutputBuilder {
@@ -49,8 +50,7 @@ impl ListTableRestoreStatusOutputBuilder {
     }
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListTableRestoreStatusOutputBuilder {
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
     pub fn table_restore_statuses(mut self, input: crate::types::TableRestoreStatus) -> Self {
         let mut v = self.table_restore_statuses.unwrap_or_default();
-        v.push(input);
-        self.table_restore_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_restore_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub fn set_table_restore_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>) -> Self {
-        self.table_restore_statuses = input;
-        self
+    pub fn set_table_restore_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>>) -> Self {
+        self.table_restore_statuses = input; self
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub fn get_table_restore_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
+    pub fn get_table_restore_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>> {
         &self.table_restore_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput).
     pub fn build(self) -> crate::operation::list_table_restore_status::ListTableRestoreStatusOutput {
         crate::operation::list_table_restore_status::ListTableRestoreStatusOutput {
-            next_token: self.next_token,
-            table_restore_statuses: self.table_restore_statuses,
+            next_token: self.next_token
+            ,
+            table_restore_statuses: self.table_restore_statuses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

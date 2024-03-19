@@ -3,7 +3,7 @@
 /// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioConfiguration {
+pub struct AudioConfiguration  {
     /// <p>Codec used for the audio encoding.</p>
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -13,9 +13,9 @@ pub struct AudioConfiguration {
     /// <p>Number of audio channels.</p>
     pub channels: i64,
 }
-impl AudioConfiguration {
+impl  AudioConfiguration  {
     /// <p>Codec used for the audio encoding.</p>
-    pub fn codec(&self) -> ::std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -55,8 +55,7 @@ impl AudioConfigurationBuilder {
     }
     /// <p>Codec used for the audio encoding.</p>
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
     }
     /// <p>Codec used for the audio encoding.</p>
     pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AudioConfigurationBuilder {
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn set_target_bitrate(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.target_bitrate = input;
-        self
+        self.target_bitrate = input; self
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn get_target_bitrate(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl AudioConfigurationBuilder {
     }
     /// <p>Number of audio samples recorded per second.</p>
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
     }
     /// <p>Number of audio samples recorded per second.</p>
     pub fn get_sample_rate(&self) -> &::std::option::Option<i64> {
@@ -97,8 +94,7 @@ impl AudioConfigurationBuilder {
     }
     /// <p>Number of audio channels.</p>
     pub fn set_channels(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.channels = input;
-        self
+        self.channels = input; self
     }
     /// <p>Number of audio channels.</p>
     pub fn get_channels(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,18 @@ impl AudioConfigurationBuilder {
     /// Consumes the builder and constructs a [`AudioConfiguration`](crate::types::AudioConfiguration).
     pub fn build(self) -> crate::types::AudioConfiguration {
         crate::types::AudioConfiguration {
-            codec: self.codec,
-            target_bitrate: self.target_bitrate.unwrap_or_default(),
-            sample_rate: self.sample_rate.unwrap_or_default(),
-            channels: self.channels.unwrap_or_default(),
+            codec: self.codec
+            ,
+            target_bitrate: self.target_bitrate
+                .unwrap_or_default()
+            ,
+            sample_rate: self.sample_rate
+                .unwrap_or_default()
+            ,
+            channels: self.channels
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

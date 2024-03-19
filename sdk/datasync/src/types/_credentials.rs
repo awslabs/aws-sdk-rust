@@ -4,25 +4,23 @@
 /// <p>DataSync Discovery stores these credentials in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html">Accessing your on-premises storage system</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Credentials {
+pub struct Credentials  {
     /// <p>Specifies the user name for your storage system's management interface.</p>
     pub username: ::std::string::String,
     /// <p>Specifies the password for your storage system's management interface.</p>
     pub password: ::std::string::String,
 }
-impl Credentials {
+impl  Credentials  {
     /// <p>Specifies the user name for your storage system's management interface.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>Specifies the password for your storage system's management interface.</p>
-    pub fn password(&self) -> &str {
-        use std::ops::Deref;
-        self.password.deref()
+    pub fn password(&self) -> & str {
+        use std::ops::Deref; self.password.deref()
     }
 }
-impl ::std::fmt::Debug for Credentials {
+impl  ::std::fmt::Debug for Credentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Credentials");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -53,8 +51,7 @@ impl CredentialsBuilder {
     }
     /// <p>Specifies the user name for your storage system's management interface.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>Specifies the user name for your storage system's management interface.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +65,7 @@ impl CredentialsBuilder {
     }
     /// <p>Specifies the password for your storage system's management interface.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Specifies the password for your storage system's management interface.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,20 +76,20 @@ impl CredentialsBuilder {
     /// - [`username`](crate::types::builders::CredentialsBuilder::username)
     /// - [`password`](crate::types::builders::CredentialsBuilder::password)
     pub fn build(self) -> ::std::result::Result<crate::types::Credentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Credentials {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building Credentials",
-                )
-            })?,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building Credentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Credentials {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building Credentials")
+                    )?
+                ,
+                password: self.password
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("password", "password was not specified but it is required when building Credentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CredentialsBuilder {
@@ -104,3 +100,4 @@ impl ::std::fmt::Debug for CredentialsBuilder {
         formatter.finish()
     }
 }
+

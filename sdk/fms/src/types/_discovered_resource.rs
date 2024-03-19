@@ -3,7 +3,7 @@
 /// <p>A resource in the organization that's available to be associated with a Firewall Manager resource set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoveredResource {
+pub struct DiscoveredResource  {
     /// <p>The universal resource identifier (URI) of the discovered resource.</p>
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the discovered resource.</p>
@@ -13,21 +13,21 @@ pub struct DiscoveredResource {
     /// <p>The name of the discovered resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DiscoveredResource {
+impl  DiscoveredResource  {
     /// <p>The universal resource identifier (URI) of the discovered resource.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon Web Services account ID associated with the discovered resource.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The type of the discovered resource.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The name of the discovered resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>The universal resource identifier (URI) of the discovered resource.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The universal resource identifier (URI) of the discovered resource.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the discovered resource.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the discovered resource.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>The type of the discovered resource.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the discovered resource.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>The name of the discovered resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the discovered resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DiscoveredResourceBuilder {
     /// Consumes the builder and constructs a [`DiscoveredResource`](crate::types::DiscoveredResource).
     pub fn build(self) -> crate::types::DiscoveredResource {
         crate::types::DiscoveredResource {
-            uri: self.uri,
-            account_id: self.account_id,
-            r#type: self.r#type,
-            name: self.name,
+            uri: self.uri
+            ,
+            account_id: self.account_id
+            ,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

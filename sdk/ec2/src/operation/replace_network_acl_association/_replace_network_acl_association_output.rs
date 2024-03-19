@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplaceNetworkAclAssociationOutput {
+pub struct ReplaceNetworkAclAssociationOutput  {
     /// <p>The ID of the new association.</p>
     pub new_association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ReplaceNetworkAclAssociationOutput {
+impl  ReplaceNetworkAclAssociationOutput  {
     /// <p>The ID of the new association.</p>
-    pub fn new_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn new_association_id(&self) -> ::std::option::Option<& str> {
         self.new_association_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ReplaceNetworkAclAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ReplaceNetworkAclAssociationOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceNetworkAclAssociationOutput`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput).
     pub fn builder() -> crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationOutputBuilder {
@@ -40,27 +40,28 @@ impl ReplaceNetworkAclAssociationOutputBuilder {
     }
     /// <p>The ID of the new association.</p>
     pub fn set_new_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_association_id = input;
-        self
+        self.new_association_id = input; self
     }
     /// <p>The ID of the new association.</p>
     pub fn get_new_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_association_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ReplaceNetworkAclAssociationOutput`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput).
     pub fn build(self) -> crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput {
         crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput {
-            new_association_id: self.new_association_id,
+            new_association_id: self.new_association_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

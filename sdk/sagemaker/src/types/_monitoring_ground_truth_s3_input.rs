@@ -3,13 +3,13 @@
 /// <p>The ground truth labels for the dataset used for the monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringGroundTruthS3Input {
+pub struct MonitoringGroundTruthS3Input  {
     /// <p>The address of the Amazon S3 location of the ground truth labels.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl MonitoringGroundTruthS3Input {
+impl  MonitoringGroundTruthS3Input  {
     /// <p>The address of the Amazon S3 location of the ground truth labels.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl MonitoringGroundTruthS3InputBuilder {
     }
     /// <p>The address of the Amazon S3 location of the ground truth labels.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The address of the Amazon S3 location of the ground truth labels.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl MonitoringGroundTruthS3InputBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringGroundTruthS3Input`](crate::types::MonitoringGroundTruthS3Input).
     pub fn build(self) -> crate::types::MonitoringGroundTruthS3Input {
-        crate::types::MonitoringGroundTruthS3Input { s3_uri: self.s3_uri }
+        crate::types::MonitoringGroundTruthS3Input {
+            s3_uri: self.s3_uri
+            ,
+        }
     }
 }
+

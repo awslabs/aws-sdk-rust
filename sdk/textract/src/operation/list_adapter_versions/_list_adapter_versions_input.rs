@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAdapterVersionsInput {
+pub struct ListAdapterVersionsInput  {
     /// <p>A string containing a unique ID for the adapter to match for when listing adapter versions.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
@@ -14,17 +14,17 @@ pub struct ListAdapterVersionsInput {
     /// <p>Identifies the next page of results to return when listing adapter versions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAdapterVersionsInput {
+impl  ListAdapterVersionsInput  {
     /// <p>A string containing a unique ID for the adapter to match for when listing adapter versions.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
-    pub fn after_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn after_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.after_creation_time.as_ref()
     }
     /// <p>Specifies the upper bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
-    pub fn before_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn before_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.before_creation_time.as_ref()
     }
     /// <p>The maximum number of results to return when listing adapter versions.</p>
@@ -32,7 +32,7 @@ impl ListAdapterVersionsInput {
         self.max_results
     }
     /// <p>Identifies the next page of results to return when listing adapter versions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ListAdapterVersionsInputBuilder {
     }
     /// <p>A string containing a unique ID for the adapter to match for when listing adapter versions.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string containing a unique ID for the adapter to match for when listing adapter versions.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListAdapterVersionsInputBuilder {
     }
     /// <p>Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
     pub fn set_after_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.after_creation_time = input;
-        self
+        self.after_creation_time = input; self
     }
     /// <p>Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
     pub fn get_after_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,8 +87,7 @@ impl ListAdapterVersionsInputBuilder {
     }
     /// <p>Specifies the upper bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
     pub fn set_before_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.before_creation_time = input;
-        self
+        self.before_creation_time = input; self
     }
     /// <p>Specifies the upper bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p>
     pub fn get_before_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,8 +100,7 @@ impl ListAdapterVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return when listing adapter versions.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return when listing adapter versions.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -117,24 +113,28 @@ impl ListAdapterVersionsInputBuilder {
     }
     /// <p>Identifies the next page of results to return when listing adapter versions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return when listing adapter versions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAdapterVersionsInput`](crate::operation::list_adapter_versions::ListAdapterVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_adapter_versions::ListAdapterVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_adapter_versions::ListAdapterVersionsInput {
-            adapter_id: self.adapter_id,
-            after_creation_time: self.after_creation_time,
-            before_creation_time: self.before_creation_time,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_adapter_versions::ListAdapterVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_adapter_versions::ListAdapterVersionsInput {
+                adapter_id: self.adapter_id
+                ,
+                after_creation_time: self.after_creation_time
+                ,
+                before_creation_time: self.before_creation_time
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

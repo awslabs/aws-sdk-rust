@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStorageLensConfigurationTaggingOutput {
+pub struct GetStorageLensConfigurationTaggingOutput  {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::StorageLensTag>>,
     _request_id: Option<String>,
 }
-impl GetStorageLensConfigurationTaggingOutput {
+impl  GetStorageLensConfigurationTaggingOutput  {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::StorageLensTag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::StorageLensTag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStorageLensConfigurationTaggingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput).
     pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder {
@@ -31,7 +32,7 @@ impl GetStorageLensConfigurationTaggingOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingOutputBuilder {
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::StorageLensTag>>,
     _request_id: Option<String>,
 }
 impl GetStorageLensConfigurationTaggingOutputBuilder {
@@ -42,33 +43,34 @@ impl GetStorageLensConfigurationTaggingOutputBuilder {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
     pub fn tags(mut self, input: crate::types::StorageLensTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StorageLensTag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StorageLensTag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingOutput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput).
     pub fn build(self) -> crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput {
         crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput {
-            tags: self.tags,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

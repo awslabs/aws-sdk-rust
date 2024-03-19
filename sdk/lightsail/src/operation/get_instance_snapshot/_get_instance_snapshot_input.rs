@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceSnapshotInput {
+pub struct GetInstanceSnapshotInput  {
     /// <p>The name of the snapshot for which you are requesting information.</p>
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl GetInstanceSnapshotInput {
+impl  GetInstanceSnapshotInput  {
     /// <p>The name of the snapshot for which you are requesting information.</p>
-    pub fn instance_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.instance_snapshot_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetInstanceSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot for which you are requesting information.</p>
     pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_snapshot_name = input;
-        self
+        self.instance_snapshot_name = input; self
     }
     /// <p>The name of the snapshot for which you are requesting information.</p>
     pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_snapshot_name
     }
     /// Consumes the builder and constructs a [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_instance_snapshot::GetInstanceSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_instance_snapshot::GetInstanceSnapshotInput {
-            instance_snapshot_name: self.instance_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_snapshot::GetInstanceSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotInput {
+                instance_snapshot_name: self.instance_snapshot_name
+                ,
+            }
+        )
     }
 }
+

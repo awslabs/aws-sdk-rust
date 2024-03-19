@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcesForWebAclInput {
+pub struct ListResourcesForWebAclInput  {
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
-impl ListResourcesForWebAclInput {
+impl  ListResourcesForWebAclInput  {
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> ::std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ListResourcesForWebAclInputBuilder {
     }
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_id = input;
-        self
+        self.web_acl_id = input; self
     }
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
     pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ListResourcesForWebAclInputBuilder {
     }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`ListResourcesForWebAclInput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput {
-            web_acl_id: self.web_acl_id,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput {
+                web_acl_id: self.web_acl_id
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

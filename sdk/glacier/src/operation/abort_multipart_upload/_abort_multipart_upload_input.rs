@@ -4,7 +4,7 @@
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AbortMultipartUploadInput {
+pub struct AbortMultipartUploadInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
@@ -12,25 +12,25 @@ pub struct AbortMultipartUploadInput {
     /// <p>The upload ID of the multipart upload to delete.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
-impl AbortMultipartUploadInput {
+impl  AbortMultipartUploadInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload to delete.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for AbortMultipartUploadInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl AbortMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
     pub fn builder() -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder {
@@ -55,8 +55,7 @@ impl AbortMultipartUploadInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AbortMultipartUploadInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,22 +83,24 @@ impl AbortMultipartUploadInputBuilder {
     }
     /// <p>The upload ID of the multipart upload to delete.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The upload ID of the multipart upload to delete.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
     /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::abort_multipart_upload::AbortMultipartUploadInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-            upload_id: self.upload_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::abort_multipart_upload::AbortMultipartUploadInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+                upload_id: self.upload_id
+                ,
+            }
+        )
     }
 }
+

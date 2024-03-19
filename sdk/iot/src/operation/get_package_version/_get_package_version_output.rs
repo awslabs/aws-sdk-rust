@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPackageVersionOutput {
+pub struct GetPackageVersionOutput  {
     /// <p>The ARN for the package version.</p>
     pub package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the software package.</p>
@@ -12,7 +12,7 @@ pub struct GetPackageVersionOutput {
     /// <p>The package version description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>Error reason for a package version failure during creation or update.</p>
@@ -23,45 +23,45 @@ pub struct GetPackageVersionOutput {
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPackageVersionOutput {
+impl  GetPackageVersionOutput  {
     /// <p>The ARN for the package version.</p>
-    pub fn package_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn package_version_arn(&self) -> ::std::option::Option<& str> {
         self.package_version_arn.as_deref()
     }
     /// <p>The name of the software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The name of the package version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The package version description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>Error reason for a package version failure during creation or update.</p>
-    pub fn error_reason(&self) -> ::std::option::Option<&str> {
+    pub fn error_reason(&self) -> ::std::option::Option<& str> {
         self.error_reason.as_deref()
     }
     /// <p>The date when the package version was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the package version was last updated.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetPackageVersionOutput {
+impl  ::std::fmt::Debug for GetPackageVersionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageVersionOutput");
         formatter.field("package_version_arn", &self.package_version_arn);
@@ -78,10 +78,10 @@ impl ::std::fmt::Debug for GetPackageVersionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPackageVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionOutput`](crate::operation::get_package_version::GetPackageVersionOutput).
     pub fn builder() -> crate::operation::get_package_version::builders::GetPackageVersionOutputBuilder {
@@ -97,7 +97,7 @@ pub struct GetPackageVersionOutputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -112,8 +112,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The ARN for the package version.</p>
     pub fn set_package_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version_arn = input;
-        self
+        self.package_version_arn = input; self
     }
     /// <p>The ARN for the package version.</p>
     pub fn get_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The name of the software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The name of the package version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name of the package version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The package version description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The package version description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,17 +164,16 @@ impl GetPackageVersionOutputBuilder {
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -188,8 +183,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status associated to the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
@@ -202,8 +196,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>Error reason for a package version failure during creation or update.</p>
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_reason = input;
-        self
+        self.error_reason = input; self
     }
     /// <p>Error reason for a package version failure during creation or update.</p>
     pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +209,7 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The date when the package version was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date when the package version was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -230,34 +222,42 @@ impl GetPackageVersionOutputBuilder {
     }
     /// <p>The date when the package version was last updated.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date when the package version was last updated.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPackageVersionOutput`](crate::operation::get_package_version::GetPackageVersionOutput).
     pub fn build(self) -> crate::operation::get_package_version::GetPackageVersionOutput {
         crate::operation::get_package_version::GetPackageVersionOutput {
-            package_version_arn: self.package_version_arn,
-            package_name: self.package_name,
-            version_name: self.version_name,
-            description: self.description,
-            attributes: self.attributes,
-            status: self.status,
-            error_reason: self.error_reason,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            package_version_arn: self.package_version_arn
+            ,
+            package_name: self.package_name
+            ,
+            version_name: self.version_name
+            ,
+            description: self.description
+            ,
+            attributes: self.attributes
+            ,
+            status: self.status
+            ,
+            error_reason: self.error_reason
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
             _request_id: self._request_id,
         }
     }
@@ -278,3 +278,4 @@ impl ::std::fmt::Debug for GetPackageVersionOutputBuilder {
         formatter.finish()
     }
 }
+

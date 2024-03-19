@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListChannelMembershipsOutput {
+pub struct ListChannelMembershipsOutput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for the requested channel memberships.</p>
-    pub channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipSummary>>,
+    pub channel_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelMembershipSummary>>,
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListChannelMembershipsOutput {
+impl  ListChannelMembershipsOutput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The information for the requested channel memberships.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_memberships.is_none()`.
-    pub fn channel_memberships(&self) -> &[crate::types::ChannelMembershipSummary] {
-        self.channel_memberships.as_deref().unwrap_or_default()
+    pub fn channel_memberships(&self) -> & [crate::types::ChannelMembershipSummary] {
+        self.channel_memberships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListChannelMembershipsOutput {
+impl  ::std::fmt::Debug for ListChannelMembershipsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMembershipsOutput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -38,10 +39,10 @@ impl ::std::fmt::Debug for ListChannelMembershipsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListChannelMembershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListChannelMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelMembershipsOutput`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput).
     pub fn builder() -> crate::operation::list_channel_memberships::builders::ListChannelMembershipsOutputBuilder {
@@ -54,7 +55,7 @@ impl ListChannelMembershipsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListChannelMembershipsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipSummary>>,
+    pub(crate) channel_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelMembershipSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,8 +67,7 @@ impl ListChannelMembershipsOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +80,16 @@ impl ListChannelMembershipsOutputBuilder {
     /// <p>The information for the requested channel memberships.</p>
     pub fn channel_memberships(mut self, input: crate::types::ChannelMembershipSummary) -> Self {
         let mut v = self.channel_memberships.unwrap_or_default();
-        v.push(input);
-        self.channel_memberships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channel_memberships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for the requested channel memberships.</p>
-    pub fn set_channel_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipSummary>>) -> Self {
-        self.channel_memberships = input;
-        self
+    pub fn set_channel_memberships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelMembershipSummary>>) -> Self {
+        self.channel_memberships = input; self
     }
     /// <p>The information for the requested channel memberships.</p>
-    pub fn get_channel_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipSummary>> {
+    pub fn get_channel_memberships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelMembershipSummary>> {
         &self.channel_memberships
     }
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
@@ -100,28 +99,30 @@ impl ListChannelMembershipsOutputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListChannelMembershipsOutput`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput).
     pub fn build(self) -> crate::operation::list_channel_memberships::ListChannelMembershipsOutput {
         crate::operation::list_channel_memberships::ListChannelMembershipsOutput {
-            channel_arn: self.channel_arn,
-            channel_memberships: self.channel_memberships,
-            next_token: self.next_token,
+            channel_arn: self.channel_arn
+            ,
+            channel_memberships: self.channel_memberships
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -136,3 +137,4 @@ impl ::std::fmt::Debug for ListChannelMembershipsOutputBuilder {
         formatter.finish()
     }
 }
+

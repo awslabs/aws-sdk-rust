@@ -3,20 +3,19 @@
 /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaAction {
+pub struct LambdaAction  {
     /// <p>The ARN of the Lambda function that is executed.</p>
     pub function_arn: ::std::string::String,
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
-impl LambdaAction {
+impl  LambdaAction  {
     /// <p>The ARN of the Lambda function that is executed.</p>
-    pub fn function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.function_arn.deref()
+    pub fn function_arn(&self) -> & str {
+        use std::ops::Deref; self.function_arn.deref()
     }
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl LambdaActionBuilder {
     }
     /// <p>The ARN of the Lambda function that is executed.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The ARN of the Lambda function that is executed.</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl LambdaActionBuilder {
     }
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
@@ -68,14 +65,17 @@ impl LambdaActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`function_arn`](crate::types::builders::LambdaActionBuilder::function_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaAction {
-            function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_arn",
-                    "function_arn was not specified but it is required when building LambdaAction",
-                )
-            })?,
-            payload: self.payload,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaAction {
+                function_arn: self.function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_arn", "function_arn was not specified but it is required when building LambdaAction")
+                    )?
+                ,
+                payload: self.payload
+                ,
+            }
+        )
     }
 }
+

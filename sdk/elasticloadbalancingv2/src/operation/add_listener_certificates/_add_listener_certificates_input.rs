@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddListenerCertificatesInput {
+pub struct AddListenerCertificatesInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
 }
-impl AddListenerCertificatesInput {
+impl  AddListenerCertificatesInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
-    pub fn certificates(&self) -> &[crate::types::Certificate] {
-        self.certificates.as_deref().unwrap_or_default()
+    pub fn certificates(&self) -> & [crate::types::Certificate] {
+        self.certificates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddListenerCertificatesInput {
@@ -32,7 +33,7 @@ impl AddListenerCertificatesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
 }
 impl AddListenerCertificatesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -43,8 +44,7 @@ impl AddListenerCertificatesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl AddListenerCertificatesInputBuilder {
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Certificate>> {
         &self.certificates
     }
     /// Consumes the builder and constructs a [`AddListenerCertificatesInput`](crate::operation::add_listener_certificates::AddListenerCertificatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_listener_certificates::AddListenerCertificatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_listener_certificates::AddListenerCertificatesInput {
-            listener_arn: self.listener_arn,
-            certificates: self.certificates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_listener_certificates::AddListenerCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_listener_certificates::AddListenerCertificatesInput {
+                listener_arn: self.listener_arn
+                ,
+                certificates: self.certificates
+                ,
+            }
+        )
     }
 }
+

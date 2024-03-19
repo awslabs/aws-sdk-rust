@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLocalDisksOutput {
+pub struct ListLocalDisksOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object containing the following fields:</p>
@@ -10,12 +10,12 @@ pub struct ListLocalDisksOutput {
     /// <li>
     /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
-    pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
+    pub disks: ::std::option::Option<::std::vec::Vec::<crate::types::Disk>>,
     _request_id: Option<String>,
 }
-impl ListLocalDisksOutput {
+impl  ListLocalDisksOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>A JSON object containing the following fields:</p>
@@ -23,17 +23,18 @@ impl ListLocalDisksOutput {
     /// <li>
     /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
-    pub fn disks(&self) -> &[crate::types::Disk] {
-        self.disks.as_deref().unwrap_or_default()
+    pub fn disks(&self) -> & [crate::types::Disk] {
+        self.disks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLocalDisksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLocalDisksOutput {
     /// Creates a new builder-style object to manufacture [`ListLocalDisksOutput`](crate::operation::list_local_disks::ListLocalDisksOutput).
     pub fn builder() -> crate::operation::list_local_disks::builders::ListLocalDisksOutputBuilder {
@@ -46,7 +47,7 @@ impl ListLocalDisksOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLocalDisksOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
+    pub(crate) disks: ::std::option::Option<::std::vec::Vec::<crate::types::Disk>>,
     _request_id: Option<String>,
 }
 impl ListLocalDisksOutputBuilder {
@@ -57,8 +58,7 @@ impl ListLocalDisksOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,42 +75,44 @@ impl ListLocalDisksOutputBuilder {
     /// </ul>
     pub fn disks(mut self, input: crate::types::Disk) -> Self {
         let mut v = self.disks.unwrap_or_default();
-        v.push(input);
-        self.disks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.disks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
     /// <li>
     /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
-    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>) -> Self {
-        self.disks = input;
-        self
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Disk>>) -> Self {
+        self.disks = input; self
     }
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
     /// <li>
     /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
-    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Disk>> {
         &self.disks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLocalDisksOutput`](crate::operation::list_local_disks::ListLocalDisksOutput).
     pub fn build(self) -> crate::operation::list_local_disks::ListLocalDisksOutput {
         crate::operation::list_local_disks::ListLocalDisksOutput {
-            gateway_arn: self.gateway_arn,
-            disks: self.disks,
+            gateway_arn: self.gateway_arn
+            ,
+            disks: self.disks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

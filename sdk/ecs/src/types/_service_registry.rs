@@ -5,7 +5,7 @@
 /// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts a new deployment. New tasks are registered and deregistered to the updated service registry configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceRegistry {
+pub struct ServiceRegistry  {
     /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port value used if your service discovery service specified an SRV record. This field might be used if both the <code>awsvpc</code> network mode and SRV records are used.</p>
@@ -15,9 +15,9 @@ pub struct ServiceRegistry {
     /// <p>The port value to be used for your service discovery service. It's already specified in the task definition. If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
     pub container_port: ::std::option::Option<i32>,
 }
-impl ServiceRegistry {
+impl  ServiceRegistry  {
     /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registry_arn(&self) -> ::std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The port value used if your service discovery service specified an SRV record. This field might be used if both the <code>awsvpc</code> network mode and SRV records are used.</p>
@@ -25,7 +25,7 @@ impl ServiceRegistry {
         self.port
     }
     /// <p>The container name value to be used for your service discovery service. It's already specified in the task definition. If the task definition that your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition that your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The port value to be used for your service discovery service. It's already specified in the task definition. If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
@@ -57,8 +57,7 @@ impl ServiceRegistryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_arn = input;
-        self
+        self.registry_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ServiceRegistryBuilder {
     }
     /// <p>The port value used if your service discovery service specified an SRV record. This field might be used if both the <code>awsvpc</code> network mode and SRV records are used.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value used if your service discovery service specified an SRV record. This field might be used if both the <code>awsvpc</code> network mode and SRV records are used.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl ServiceRegistryBuilder {
     }
     /// <p>The container name value to be used for your service discovery service. It's already specified in the task definition. If the task definition that your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition that your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The container name value to be used for your service discovery service. It's already specified in the task definition. If the task definition that your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition that your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl ServiceRegistryBuilder {
     }
     /// <p>The port value to be used for your service discovery service. It's already specified in the task definition. If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
     pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.container_port = input;
-        self
+        self.container_port = input; self
     }
     /// <p>The port value to be used for your service discovery service. It's already specified in the task definition. If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value. However, you can't specify both.</p>
     pub fn get_container_port(&self) -> &::std::option::Option<i32> {
@@ -109,10 +105,15 @@ impl ServiceRegistryBuilder {
     /// Consumes the builder and constructs a [`ServiceRegistry`](crate::types::ServiceRegistry).
     pub fn build(self) -> crate::types::ServiceRegistry {
         crate::types::ServiceRegistry {
-            registry_arn: self.registry_arn,
-            port: self.port,
-            container_name: self.container_name,
-            container_port: self.container_port,
+            registry_arn: self.registry_arn
+            ,
+            port: self.port
+            ,
+            container_name: self.container_name
+            ,
+            container_port: self.container_port
+            ,
         }
     }
 }
+

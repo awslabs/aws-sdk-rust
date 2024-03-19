@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDestinationsOutput {
+pub struct DescribeDestinationsOutput  {
     /// <p>The destinations.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDestinationsOutput {
+impl  DescribeDestinationsOutput  {
     /// <p>The destinations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::Destination] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::Destination] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDestinationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDestinationsOutput`](crate::operation::describe_destinations::DescribeDestinationsOutput).
     pub fn builder() -> crate::operation::describe_destinations::builders::DescribeDestinationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeDestinationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDestinationsOutputBuilder {
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeDestinationsOutputBuilder {
     /// <p>The destinations.</p>
     pub fn destinations(mut self, input: crate::types::Destination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destinations.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>The destinations.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Destination>> {
         &self.destinations
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -69,28 +69,30 @@ impl DescribeDestinationsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDestinationsOutput`](crate::operation::describe_destinations::DescribeDestinationsOutput).
     pub fn build(self) -> crate::operation::describe_destinations::DescribeDestinationsOutput {
         crate::operation::describe_destinations::DescribeDestinationsOutput {
-            destinations: self.destinations,
-            next_token: self.next_token,
+            destinations: self.destinations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

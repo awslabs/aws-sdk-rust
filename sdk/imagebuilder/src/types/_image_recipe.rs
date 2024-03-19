@@ -3,7 +3,7 @@
 /// <p>An image recipe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageRecipe {
+pub struct ImageRecipe  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
@@ -19,79 +19,81 @@ pub struct ImageRecipe {
     /// <p>The version of the image recipe.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
+    pub components: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentConfiguration>>,
     /// <p>The base image of the image recipe.</p>
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The date on which this image recipe was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the image recipe.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The working directory to be used during build and test workflows.</p>
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
 }
-impl ImageRecipe {
+impl  ImageRecipe  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the image recipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the image recipe.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The platform of the image recipe.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the image recipe.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The version of the image recipe.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
-    pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
-        self.components.as_deref().unwrap_or_default()
+    pub fn components(&self) -> & [crate::types::ComponentConfiguration] {
+        self.components.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The base image of the image recipe.</p>
-    pub fn parent_image(&self) -> ::std::option::Option<&str> {
+    pub fn parent_image(&self) -> ::std::option::Option<& str> {
         self.parent_image.as_deref()
     }
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date on which this image recipe was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory to be used during build and test workflows.</p>
-    pub fn working_directory(&self) -> ::std::option::Option<&str> {
+    pub fn working_directory(&self) -> ::std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
-    pub fn additional_instance_configuration(&self) -> ::std::option::Option<&crate::types::AdditionalInstanceConfiguration> {
+    pub fn additional_instance_configuration(&self) -> ::std::option::Option<& crate::types::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
     }
 }
@@ -113,11 +115,11 @@ pub struct ImageRecipeBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentConfiguration>>,
     pub(crate) parent_image: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceBlockDeviceMapping>>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
 }
@@ -129,8 +131,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +144,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageType> {
@@ -157,8 +157,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The name of the image recipe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the image recipe.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +170,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The description of the image recipe.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the image recipe.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +183,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The platform of the image recipe.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the image recipe.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
@@ -199,8 +196,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The owner of the image recipe.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the image recipe.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +209,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The version of the image recipe.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the image recipe.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,17 +222,16 @@ impl ImageRecipeBuilder {
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         let mut v = self.components.unwrap_or_default();
-        v.push(input);
-        self.components = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentConfiguration>>) -> Self {
+        self.components = input; self
     }
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentConfiguration>> {
         &self.components
     }
     /// <p>The base image of the image recipe.</p>
@@ -247,8 +241,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The base image of the image recipe.</p>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_image = input;
-        self
+        self.parent_image = input; self
     }
     /// <p>The base image of the image recipe.</p>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,17 +254,16 @@ impl ImageRecipeBuilder {
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
     pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceBlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceBlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>The date on which this image recipe was created.</p>
@@ -281,8 +273,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The date on which this image recipe was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date on which this image recipe was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,17 +286,16 @@ impl ImageRecipeBuilder {
     /// <p>The tags of the image recipe.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The working directory to be used during build and test workflows.</p>
@@ -315,8 +305,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>The working directory to be used during build and test workflows.</p>
     pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.working_directory = input;
-        self
+        self.working_directory = input; self
     }
     /// <p>The working directory to be used during build and test workflows.</p>
     pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +318,7 @@ impl ImageRecipeBuilder {
     }
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
     pub fn set_additional_instance_configuration(mut self, input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>) -> Self {
-        self.additional_instance_configuration = input;
-        self
+        self.additional_instance_configuration = input; self
     }
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
     pub fn get_additional_instance_configuration(&self) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
@@ -339,20 +327,35 @@ impl ImageRecipeBuilder {
     /// Consumes the builder and constructs a [`ImageRecipe`](crate::types::ImageRecipe).
     pub fn build(self) -> crate::types::ImageRecipe {
         crate::types::ImageRecipe {
-            arn: self.arn,
-            r#type: self.r#type,
-            name: self.name,
-            description: self.description,
-            platform: self.platform,
-            owner: self.owner,
-            version: self.version,
-            components: self.components,
-            parent_image: self.parent_image,
-            block_device_mappings: self.block_device_mappings,
-            date_created: self.date_created,
-            tags: self.tags,
-            working_directory: self.working_directory,
-            additional_instance_configuration: self.additional_instance_configuration,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            platform: self.platform
+            ,
+            owner: self.owner
+            ,
+            version: self.version
+            ,
+            components: self.components
+            ,
+            parent_image: self.parent_image
+            ,
+            block_device_mappings: self.block_device_mappings
+            ,
+            date_created: self.date_created
+            ,
+            tags: self.tags
+            ,
+            working_directory: self.working_directory
+            ,
+            additional_instance_configuration: self.additional_instance_configuration
+            ,
         }
     }
 }
+

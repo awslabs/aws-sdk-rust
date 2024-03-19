@@ -3,7 +3,7 @@
 /// <p>An object that contains details about an aggregation response based on Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAggregation {
+pub struct AccountAggregation  {
     /// <p>The type of finding.</p>
     pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     /// <p>The type of resource.</p>
@@ -13,21 +13,21 @@ pub struct AccountAggregation {
     /// <p>The value to sort by.</p>
     pub sort_by: ::std::option::Option<crate::types::AccountSortBy>,
 }
-impl AccountAggregation {
+impl  AccountAggregation  {
     /// <p>The type of finding.</p>
-    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
+    pub fn finding_type(&self) -> ::std::option::Option<& crate::types::AggregationFindingType> {
         self.finding_type.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::AggregationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::AggregationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The sort order (ascending or descending).</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort by.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AccountSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::AccountSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AccountAggregationBuilder {
     }
     /// <p>The type of finding.</p>
     pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
-        self.finding_type = input;
-        self
+        self.finding_type = input; self
     }
     /// <p>The type of finding.</p>
     pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
@@ -69,8 +68,7 @@ impl AccountAggregationBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::AggregationResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
@@ -83,8 +81,7 @@ impl AccountAggregationBuilder {
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -97,8 +94,7 @@ impl AccountAggregationBuilder {
     }
     /// <p>The value to sort by.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AccountSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The value to sort by.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AccountSortBy> {
@@ -107,10 +103,15 @@ impl AccountAggregationBuilder {
     /// Consumes the builder and constructs a [`AccountAggregation`](crate::types::AccountAggregation).
     pub fn build(self) -> crate::types::AccountAggregation {
         crate::types::AccountAggregation {
-            finding_type: self.finding_type,
-            resource_type: self.resource_type,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            finding_type: self.finding_type
+            ,
+            resource_type: self.resource_type
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClientPropertiesInput {
+pub struct DescribeClientPropertiesInput  {
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeClientPropertiesInput {
+impl  DescribeClientPropertiesInput  {
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeClientPropertiesInput {
@@ -25,7 +26,7 @@ impl DescribeClientPropertiesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientPropertiesInputBuilder {
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeClientPropertiesInputBuilder {
     /// Appends an item to `resource_ids`.
@@ -35,28 +36,26 @@ impl DescribeClientPropertiesInputBuilder {
     /// <p>The resource identifier, in the form of directory IDs.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`DescribeClientPropertiesInput`](crate::operation::describe_client_properties::DescribeClientPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_client_properties::DescribeClientPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_client_properties::DescribeClientPropertiesInput {
-            resource_ids: self.resource_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_client_properties::DescribeClientPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_client_properties::DescribeClientPropertiesInput {
+                resource_ids: self.resource_ids
+                ,
+            }
+        )
     }
 }
+

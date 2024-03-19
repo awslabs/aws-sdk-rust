@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewCertificateInput {
+pub struct RenewCertificateInput  {
     /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl RenewCertificateInput {
+impl  RenewCertificateInput  {
     /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl RenewCertificateInputBuilder {
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
@@ -52,11 +51,13 @@ impl RenewCertificateInputBuilder {
         &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`RenewCertificateInput`](crate::operation::renew_certificate::RenewCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::renew_certificate::RenewCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::renew_certificate::RenewCertificateInput {
-            certificate_arn: self.certificate_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::renew_certificate::RenewCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::renew_certificate::RenewCertificateInput {
+                certificate_arn: self.certificate_arn
+                ,
+            }
+        )
     }
 }
+

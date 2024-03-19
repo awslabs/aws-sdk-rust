@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeListenerCertificatesOutput {
+pub struct DescribeListenerCertificatesOutput  {
     /// <p>Information about the certificates.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeListenerCertificatesOutput {
+impl  DescribeListenerCertificatesOutput  {
     /// <p>Information about the certificates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
-    pub fn certificates(&self) -> &[crate::types::Certificate] {
-        self.certificates.as_deref().unwrap_or_default()
+    pub fn certificates(&self) -> & [crate::types::Certificate] {
+        self.certificates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeListenerCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeListenerCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerCertificatesOutput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput).
     pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeListenerCertificatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenerCertificatesOutputBuilder {
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeListenerCertificatesOutputBuilder {
     /// <p>Information about the certificates.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the certificates.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>Information about the certificates.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -69,28 +69,30 @@ impl DescribeListenerCertificatesOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeListenerCertificatesOutput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput).
     pub fn build(self) -> crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput {
         crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput {
-            certificates: self.certificates,
-            next_marker: self.next_marker,
+            certificates: self.certificates
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

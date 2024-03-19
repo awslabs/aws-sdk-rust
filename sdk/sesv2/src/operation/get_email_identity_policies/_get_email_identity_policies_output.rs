@@ -3,22 +3,22 @@
 /// <p>Identity policies associated with email identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEmailIdentityPoliciesOutput {
+pub struct GetEmailIdentityPoliciesOutput  {
     /// <p>A map of policy names to policies.</p>
-    pub policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub policies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetEmailIdentityPoliciesOutput {
+impl  GetEmailIdentityPoliciesOutput  {
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn policies(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.policies.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEmailIdentityPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEmailIdentityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailIdentityPoliciesOutput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput).
     pub fn builder() -> crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesOutputBuilder {
@@ -30,7 +30,7 @@ impl GetEmailIdentityPoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEmailIdentityPoliciesOutputBuilder {
-    pub(crate) policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) policies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEmailIdentityPoliciesOutputBuilder {
@@ -41,33 +41,34 @@ impl GetEmailIdentityPoliciesOutputBuilder {
     /// <p>A map of policy names to policies.</p>
     pub fn policies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.policies.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.policies = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.policies = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn set_policies(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.policies = input; self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn get_policies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEmailIdentityPoliciesOutput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput).
     pub fn build(self) -> crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput {
         crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput {
-            policies: self.policies,
+            policies: self.policies
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

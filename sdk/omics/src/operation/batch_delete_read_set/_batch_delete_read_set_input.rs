@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteReadSetInput {
+pub struct BatchDeleteReadSetInput  {
     /// <p>The read sets' IDs.</p>
-    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The read sets' sequence store ID.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchDeleteReadSetInput {
+impl  BatchDeleteReadSetInput  {
     /// <p>The read sets' IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
-    pub fn ids(&self) -> &[::std::string::String] {
-        self.ids.as_deref().unwrap_or_default()
+    pub fn ids(&self) -> & [::std::string::String] {
+        self.ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The read sets' sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
 }
@@ -31,7 +32,7 @@ impl BatchDeleteReadSetInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteReadSetInputBuilder {
-    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteReadSetInputBuilder {
@@ -42,17 +43,16 @@ impl BatchDeleteReadSetInputBuilder {
     /// <p>The read sets' IDs.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The read sets' IDs.</p>
-    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>The read sets' IDs.</p>
-    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ids
     }
     /// <p>The read sets' sequence store ID.</p>
@@ -63,21 +63,22 @@ impl BatchDeleteReadSetInputBuilder {
     }
     /// <p>The read sets' sequence store ID.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The read sets' sequence store ID.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_store_id
     }
     /// Consumes the builder and constructs a [`BatchDeleteReadSetInput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_read_set::BatchDeleteReadSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_delete_read_set::BatchDeleteReadSetInput {
-            ids: self.ids,
-            sequence_store_id: self.sequence_store_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_read_set::BatchDeleteReadSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_read_set::BatchDeleteReadSetInput {
+                ids: self.ids
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+            }
+        )
     }
 }
+

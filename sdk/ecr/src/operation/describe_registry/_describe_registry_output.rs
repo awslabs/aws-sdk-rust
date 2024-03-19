@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistryOutput {
+pub struct DescribeRegistryOutput  {
     /// <p>The ID of the registry.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The replication configuration for the registry.</p>
     pub replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeRegistryOutput {
+impl  DescribeRegistryOutput  {
     /// <p>The ID of the registry.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The replication configuration for the registry.</p>
-    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<& crate::types::ReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistryOutput`](crate::operation::describe_registry::DescribeRegistryOutput).
     pub fn builder() -> crate::operation::describe_registry::builders::DescribeRegistryOutputBuilder {
@@ -47,8 +47,7 @@ impl DescribeRegistryOutputBuilder {
     }
     /// <p>The ID of the registry.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The ID of the registry.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DescribeRegistryOutputBuilder {
     }
     /// <p>The replication configuration for the registry.</p>
     pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
-        self.replication_configuration = input;
-        self
+        self.replication_configuration = input; self
     }
     /// <p>The replication configuration for the registry.</p>
     pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
         &self.replication_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistryOutput`](crate::operation::describe_registry::DescribeRegistryOutput).
     pub fn build(self) -> crate::operation::describe_registry::DescribeRegistryOutput {
         crate::operation::describe_registry::DescribeRegistryOutput {
-            registry_id: self.registry_id,
-            replication_configuration: self.replication_configuration,
+            registry_id: self.registry_id
+            ,
+            replication_configuration: self.replication_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

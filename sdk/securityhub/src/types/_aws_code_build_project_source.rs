@@ -3,7 +3,7 @@
 /// <p>Information about the build input source code for this build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCodeBuildProjectSource {
+pub struct AwsCodeBuildProjectSource  {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -48,7 +48,7 @@ pub struct AwsCodeBuildProjectSource {
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
     pub insecure_ssl: ::std::option::Option<bool>,
 }
-impl AwsCodeBuildProjectSource {
+impl  AwsCodeBuildProjectSource  {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -66,7 +66,7 @@ impl AwsCodeBuildProjectSource {
     /// <li>
     /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Information about the location of the source code to be built.</p>
@@ -89,7 +89,7 @@ impl AwsCodeBuildProjectSource {
     /// <li>
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>Information about the Git clone depth for the build project.</p>
@@ -157,8 +157,7 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
@@ -225,8 +224,7 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
@@ -258,8 +256,7 @@ impl AwsCodeBuildProjectSourceBuilder {
     }
     /// <p>Information about the Git clone depth for the build project.</p>
     pub fn set_git_clone_depth(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.git_clone_depth = input;
-        self
+        self.git_clone_depth = input; self
     }
     /// <p>Information about the Git clone depth for the build project.</p>
     pub fn get_git_clone_depth(&self) -> &::std::option::Option<i32> {
@@ -272,8 +269,7 @@ impl AwsCodeBuildProjectSourceBuilder {
     }
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
     pub fn set_insecure_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.insecure_ssl = input;
-        self
+        self.insecure_ssl = input; self
     }
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
     pub fn get_insecure_ssl(&self) -> &::std::option::Option<bool> {
@@ -282,10 +278,15 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectSource`](crate::types::AwsCodeBuildProjectSource).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectSource {
         crate::types::AwsCodeBuildProjectSource {
-            r#type: self.r#type,
-            location: self.location,
-            git_clone_depth: self.git_clone_depth,
-            insecure_ssl: self.insecure_ssl,
+            r#type: self.r#type
+            ,
+            location: self.location
+            ,
+            git_clone_depth: self.git_clone_depth
+            ,
+            insecure_ssl: self.insecure_ssl
+            ,
         }
     }
 }
+

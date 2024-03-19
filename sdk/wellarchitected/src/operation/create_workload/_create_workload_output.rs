@@ -3,28 +3,28 @@
 /// <p>Output of a create workload call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkloadOutput {
+pub struct CreateWorkloadOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
     pub workload_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateWorkloadOutput {
+impl  CreateWorkloadOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The ARN for the workload.</p>
-    pub fn workload_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workload_arn(&self) -> ::std::option::Option<& str> {
         self.workload_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorkloadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkloadOutput`](crate::operation::create_workload::CreateWorkloadOutput).
     pub fn builder() -> crate::operation::create_workload::builders::CreateWorkloadOutputBuilder {
@@ -48,8 +48,7 @@ impl CreateWorkloadOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl CreateWorkloadOutputBuilder {
     }
     /// <p>The ARN for the workload.</p>
     pub fn set_workload_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_arn = input;
-        self
+        self.workload_arn = input; self
     }
     /// <p>The ARN for the workload.</p>
     pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWorkloadOutput`](crate::operation::create_workload::CreateWorkloadOutput).
     pub fn build(self) -> crate::operation::create_workload::CreateWorkloadOutput {
         crate::operation::create_workload::CreateWorkloadOutput {
-            workload_id: self.workload_id,
-            workload_arn: self.workload_arn,
+            workload_id: self.workload_id
+            ,
+            workload_arn: self.workload_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

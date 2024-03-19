@@ -3,7 +3,7 @@
 /// <p>Describes a custom method used to code sign a file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomCodeSigning {
+pub struct CustomCodeSigning  {
     /// <p>The signature for the file.</p>
     pub signature: ::std::option::Option<crate::types::CodeSigningSignature>,
     /// <p>The certificate chain.</p>
@@ -13,21 +13,21 @@ pub struct CustomCodeSigning {
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub signature_algorithm: ::std::option::Option<::std::string::String>,
 }
-impl CustomCodeSigning {
+impl  CustomCodeSigning  {
     /// <p>The signature for the file.</p>
-    pub fn signature(&self) -> ::std::option::Option<&crate::types::CodeSigningSignature> {
+    pub fn signature(&self) -> ::std::option::Option<& crate::types::CodeSigningSignature> {
         self.signature.as_ref()
     }
     /// <p>The certificate chain.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&crate::types::CodeSigningCertificateChain> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& crate::types::CodeSigningCertificateChain> {
         self.certificate_chain.as_ref()
     }
     /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
-    pub fn hash_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn hash_algorithm(&self) -> ::std::option::Option<& str> {
         self.hash_algorithm.as_deref()
     }
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
-    pub fn signature_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn signature_algorithm(&self) -> ::std::option::Option<& str> {
         self.signature_algorithm.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CustomCodeSigningBuilder {
     }
     /// <p>The signature for the file.</p>
     pub fn set_signature(mut self, input: ::std::option::Option<crate::types::CodeSigningSignature>) -> Self {
-        self.signature = input;
-        self
+        self.signature = input; self
     }
     /// <p>The signature for the file.</p>
     pub fn get_signature(&self) -> &::std::option::Option<crate::types::CodeSigningSignature> {
@@ -69,8 +68,7 @@ impl CustomCodeSigningBuilder {
     }
     /// <p>The certificate chain.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<crate::types::CodeSigningCertificateChain>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>The certificate chain.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<crate::types::CodeSigningCertificateChain> {
@@ -83,8 +81,7 @@ impl CustomCodeSigningBuilder {
     }
     /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn set_hash_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash_algorithm = input;
-        self
+        self.hash_algorithm = input; self
     }
     /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn get_hash_algorithm(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CustomCodeSigningBuilder {
     }
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn set_signature_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature_algorithm = input;
-        self
+        self.signature_algorithm = input; self
     }
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl CustomCodeSigningBuilder {
     /// Consumes the builder and constructs a [`CustomCodeSigning`](crate::types::CustomCodeSigning).
     pub fn build(self) -> crate::types::CustomCodeSigning {
         crate::types::CustomCodeSigning {
-            signature: self.signature,
-            certificate_chain: self.certificate_chain,
-            hash_algorithm: self.hash_algorithm,
-            signature_algorithm: self.signature_algorithm,
+            signature: self.signature
+            ,
+            certificate_chain: self.certificate_chain
+            ,
+            hash_algorithm: self.hash_algorithm
+            ,
+            signature_algorithm: self.signature_algorithm
+            ,
         }
     }
 }
+

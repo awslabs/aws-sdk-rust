@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfigInput {
+pub struct GetConfigInput  {
     /// <p>The ARN of the client.</p>
     pub client_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client version.</p>
     pub client_version: ::std::option::Option<crate::types::ClientVersion>,
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    pub hapg_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hapg_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetConfigInput {
+impl  GetConfigInput  {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> ::std::option::Option<&str> {
+    pub fn client_arn(&self) -> ::std::option::Option<& str> {
         self.client_arn.as_deref()
     }
     /// <p>The client version.</p>
-    pub fn client_version(&self) -> ::std::option::Option<&crate::types::ClientVersion> {
+    pub fn client_version(&self) -> ::std::option::Option<& crate::types::ClientVersion> {
         self.client_version.as_ref()
     }
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hapg_list.is_none()`.
-    pub fn hapg_list(&self) -> &[::std::string::String] {
-        self.hapg_list.as_deref().unwrap_or_default()
+    pub fn hapg_list(&self) -> & [::std::string::String] {
+        self.hapg_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetConfigInput {
@@ -39,7 +40,7 @@ impl GetConfigInput {
 pub struct GetConfigInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_version: ::std::option::Option<crate::types::ClientVersion>,
-    pub(crate) hapg_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hapg_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetConfigInputBuilder {
     /// <p>The ARN of the client.</p>
@@ -50,8 +51,7 @@ impl GetConfigInputBuilder {
     }
     /// <p>The ARN of the client.</p>
     pub fn set_client_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_arn = input;
-        self
+        self.client_arn = input; self
     }
     /// <p>The ARN of the client.</p>
     pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl GetConfigInputBuilder {
     }
     /// <p>The client version.</p>
     pub fn set_client_version(mut self, input: ::std::option::Option<crate::types::ClientVersion>) -> Self {
-        self.client_version = input;
-        self
+        self.client_version = input; self
     }
     /// <p>The client version.</p>
     pub fn get_client_version(&self) -> &::std::option::Option<crate::types::ClientVersion> {
@@ -79,25 +78,30 @@ impl GetConfigInputBuilder {
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
     pub fn hapg_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hapg_list.unwrap_or_default();
-        v.push(input.into());
-        self.hapg_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hapg_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    pub fn set_hapg_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hapg_list = input;
-        self
+    pub fn set_hapg_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hapg_list = input; self
     }
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    pub fn get_hapg_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hapg_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hapg_list
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_config::GetConfigInput {
-            client_arn: self.client_arn,
-            client_version: self.client_version,
-            hapg_list: self.hapg_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_config::GetConfigInput {
+                client_arn: self.client_arn
+                ,
+                client_version: self.client_version
+                ,
+                hapg_list: self.hapg_list
+                ,
+            }
+        )
     }
 }
+

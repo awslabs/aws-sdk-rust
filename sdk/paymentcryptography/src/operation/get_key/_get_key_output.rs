@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyOutput {
+pub struct GetKeyOutput  {
     /// <p>The key material, including the immutable and mutable data for the key.</p>
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }
-impl GetKeyOutput {
+impl  GetKeyOutput  {
     /// <p>The key material, including the immutable and mutable data for the key.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::Key> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::Key> {
         self.key.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyOutput`](crate::operation::get_key::GetKeyOutput).
     pub fn builder() -> crate::operation::get_key::builders::GetKeyOutputBuilder {
@@ -41,27 +41,28 @@ impl GetKeyOutputBuilder {
     }
     /// <p>The key material, including the immutable and mutable data for the key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Key>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key material, including the immutable and mutable data for the key.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
         &self.key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKeyOutput`](crate::operation::get_key::GetKeyOutput).
     pub fn build(self) -> crate::operation::get_key::GetKeyOutput {
         crate::operation::get_key::GetKeyOutput {
-            key: self.key,
+            key: self.key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

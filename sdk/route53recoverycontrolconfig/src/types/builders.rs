@@ -22,3 +22,4 @@ pub use crate::types::_cluster_endpoint::ClusterEndpointBuilder;
 pub use crate::types::_new_gating_rule::NewGatingRuleBuilder;
 
 pub use crate::types::_new_assertion_rule::NewAssertionRuleBuilder;
+

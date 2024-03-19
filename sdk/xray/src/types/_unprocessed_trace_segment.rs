@@ -3,7 +3,7 @@
 /// <p>Information about a segment that failed processing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedTraceSegment {
+pub struct UnprocessedTraceSegment  {
     /// <p>The segment's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The error that caused processing to fail.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedTraceSegment {
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedTraceSegment {
+impl  UnprocessedTraceSegment  {
     /// <p>The segment's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The error that caused processing to fail.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UnprocessedTraceSegmentBuilder {
     }
     /// <p>The segment's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The segment's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UnprocessedTraceSegmentBuilder {
     }
     /// <p>The error that caused processing to fail.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error that caused processing to fail.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UnprocessedTraceSegmentBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UnprocessedTraceSegmentBuilder {
     /// Consumes the builder and constructs a [`UnprocessedTraceSegment`](crate::types::UnprocessedTraceSegment).
     pub fn build(self) -> crate::types::UnprocessedTraceSegment {
         crate::types::UnprocessedTraceSegment {
-            id: self.id,
-            error_code: self.error_code,
-            message: self.message,
+            id: self.id
+            ,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

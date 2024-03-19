@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecommenderConfigurationInput {
+pub struct UpdateRecommenderConfigurationInput  {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub recommender_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub update_recommender_configuration: ::std::option::Option<crate::types::UpdateRecommenderConfigurationShape>,
 }
-impl UpdateRecommenderConfigurationInput {
+impl  UpdateRecommenderConfigurationInput  {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_id(&self) -> ::std::option::Option<& str> {
         self.recommender_id.as_deref()
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn update_recommender_configuration(&self) -> ::std::option::Option<&crate::types::UpdateRecommenderConfigurationShape> {
+    pub fn update_recommender_configuration(&self) -> ::std::option::Option<& crate::types::UpdateRecommenderConfigurationShape> {
         self.update_recommender_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateRecommenderConfigurationInputBuilder {
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_recommender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_id = input;
-        self
+        self.recommender_id = input; self
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateRecommenderConfigurationInputBuilder {
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub fn set_update_recommender_configuration(mut self, input: ::std::option::Option<crate::types::UpdateRecommenderConfigurationShape>) -> Self {
-        self.update_recommender_configuration = input;
-        self
+        self.update_recommender_configuration = input; self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub fn get_update_recommender_configuration(&self) -> &::std::option::Option<crate::types::UpdateRecommenderConfigurationShape> {
         &self.update_recommender_configuration
     }
     /// Consumes the builder and constructs a [`UpdateRecommenderConfigurationInput`](crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput {
-            recommender_id: self.recommender_id,
-            update_recommender_configuration: self.update_recommender_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput {
+                recommender_id: self.recommender_id
+                ,
+                update_recommender_configuration: self.update_recommender_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateLaunchProfileInput {
+pub struct UpdateLaunchProfileInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
@@ -10,55 +10,57 @@ pub struct UpdateLaunchProfileInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name for the launch profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A configuration for a streaming session.</p>
     pub stream_configuration: ::std::option::Option<crate::types::StreamConfigurationCreate>,
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub studio_component_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub studio_component_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLaunchProfileInput {
+impl  UpdateLaunchProfileInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_profile_protocol_versions.is_none()`.
-    pub fn launch_profile_protocol_versions(&self) -> &[::std::string::String] {
-        self.launch_profile_protocol_versions.as_deref().unwrap_or_default()
+    pub fn launch_profile_protocol_versions(&self) -> & [::std::string::String] {
+        self.launch_profile_protocol_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name for the launch profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A configuration for a streaming session.</p>
-    pub fn stream_configuration(&self) -> ::std::option::Option<&crate::types::StreamConfigurationCreate> {
+    pub fn stream_configuration(&self) -> ::std::option::Option<& crate::types::StreamConfigurationCreate> {
         self.stream_configuration.as_ref()
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.studio_component_ids.is_none()`.
-    pub fn studio_component_ids(&self) -> &[::std::string::String] {
-        self.studio_component_ids.as_deref().unwrap_or_default()
+    pub fn studio_component_ids(&self) -> & [::std::string::String] {
+        self.studio_component_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateLaunchProfileInput {
+impl  ::std::fmt::Debug for UpdateLaunchProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLaunchProfileInput");
         formatter.field("client_token", &self.client_token);
@@ -86,10 +88,10 @@ pub struct UpdateLaunchProfileInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_configuration: ::std::option::Option<crate::types::StreamConfigurationCreate>,
-    pub(crate) studio_component_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) studio_component_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchProfileInputBuilder {
@@ -100,8 +102,7 @@ impl UpdateLaunchProfileInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +115,7 @@ impl UpdateLaunchProfileInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +129,7 @@ impl UpdateLaunchProfileInputBuilder {
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_id = input;
-        self
+        self.launch_profile_id = input; self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,17 +142,16 @@ impl UpdateLaunchProfileInputBuilder {
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn launch_profile_protocol_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_profile_protocol_versions.unwrap_or_default();
-        v.push(input.into());
-        self.launch_profile_protocol_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.launch_profile_protocol_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn set_launch_profile_protocol_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.launch_profile_protocol_versions = input;
-        self
+    pub fn set_launch_profile_protocol_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.launch_profile_protocol_versions = input; self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn get_launch_profile_protocol_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_profile_protocol_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.launch_profile_protocol_versions
     }
     /// <p>The name for the launch profile.</p>
@@ -163,8 +161,7 @@ impl UpdateLaunchProfileInputBuilder {
     }
     /// <p>The name for the launch profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the launch profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +174,7 @@ impl UpdateLaunchProfileInputBuilder {
     }
     /// <p>A configuration for a streaming session.</p>
     pub fn set_stream_configuration(mut self, input: ::std::option::Option<crate::types::StreamConfigurationCreate>) -> Self {
-        self.stream_configuration = input;
-        self
+        self.stream_configuration = input; self
     }
     /// <p>A configuration for a streaming session.</p>
     pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::StreamConfigurationCreate> {
@@ -191,17 +187,16 @@ impl UpdateLaunchProfileInputBuilder {
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub fn studio_component_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.studio_component_ids.unwrap_or_default();
-        v.push(input.into());
-        self.studio_component_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.studio_component_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn set_studio_component_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.studio_component_ids = input;
-        self
+    pub fn set_studio_component_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.studio_component_ids = input; self
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn get_studio_component_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_studio_component_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.studio_component_ids
     }
     /// <p>The studio ID.</p>
@@ -212,28 +207,34 @@ impl UpdateLaunchProfileInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`UpdateLaunchProfileInput`](crate::operation::update_launch_profile::UpdateLaunchProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_launch_profile::UpdateLaunchProfileInput {
-            client_token: self.client_token,
-            description: self.description,
-            launch_profile_id: self.launch_profile_id,
-            launch_profile_protocol_versions: self.launch_profile_protocol_versions,
-            name: self.name,
-            stream_configuration: self.stream_configuration,
-            studio_component_ids: self.studio_component_ids,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_launch_profile::UpdateLaunchProfileInput {
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                launch_profile_id: self.launch_profile_id
+                ,
+                launch_profile_protocol_versions: self.launch_profile_protocol_versions
+                ,
+                name: self.name
+                ,
+                stream_configuration: self.stream_configuration
+                ,
+                studio_component_ids: self.studio_component_ids
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateLaunchProfileInputBuilder {
@@ -250,3 +251,4 @@ impl ::std::fmt::Debug for UpdateLaunchProfileInputBuilder {
         formatter.finish()
     }
 }
+

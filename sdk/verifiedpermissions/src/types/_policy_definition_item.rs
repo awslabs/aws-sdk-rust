@@ -23,11 +23,7 @@ impl PolicyDefinitionItem {
     /// Tries to convert the enum instance into [`Static`](crate::types::PolicyDefinitionItem::Static), extracting the inner [`StaticPolicyDefinitionItem`](crate::types::StaticPolicyDefinitionItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_static(&self) -> ::std::result::Result<&crate::types::StaticPolicyDefinitionItem, &Self> {
-        if let PolicyDefinitionItem::Static(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PolicyDefinitionItem::Static(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Static`](crate::types::PolicyDefinitionItem::Static).
     pub fn is_static(&self) -> bool {
@@ -36,11 +32,7 @@ impl PolicyDefinitionItem {
     /// Tries to convert the enum instance into [`TemplateLinked`](crate::types::PolicyDefinitionItem::TemplateLinked), extracting the inner [`TemplateLinkedPolicyDefinitionItem`](crate::types::TemplateLinkedPolicyDefinitionItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_template_linked(&self) -> ::std::result::Result<&crate::types::TemplateLinkedPolicyDefinitionItem, &Self> {
-        if let PolicyDefinitionItem::TemplateLinked(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PolicyDefinitionItem::TemplateLinked(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TemplateLinked`](crate::types::PolicyDefinitionItem::TemplateLinked).
     pub fn is_template_linked(&self) -> bool {
@@ -51,3 +43,4 @@ impl PolicyDefinitionItem {
         matches!(self, Self::Unknown)
     }
 }
+

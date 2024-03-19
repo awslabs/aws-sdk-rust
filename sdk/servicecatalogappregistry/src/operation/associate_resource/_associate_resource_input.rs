@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateResourceInput {
+pub struct AssociateResourceInput  {
     /// <p>The name, ID, or ARN of the application.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource of which the application will be associated.</p>
@@ -10,26 +10,27 @@ pub struct AssociateResourceInput {
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
+    pub options: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>>,
 }
-impl AssociateResourceInput {
+impl  AssociateResourceInput  {
     /// <p>The name, ID, or ARN of the application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
-    pub fn options(&self) -> &[crate::types::AssociationOption] {
-        self.options.as_deref().unwrap_or_default()
+    pub fn options(&self) -> & [crate::types::AssociationOption] {
+        self.options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssociateResourceInput {
@@ -46,7 +47,7 @@ pub struct AssociateResourceInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>>,
 }
 impl AssociateResourceInputBuilder {
     /// <p>The name, ID, or ARN of the application.</p>
@@ -57,8 +58,7 @@ impl AssociateResourceInputBuilder {
     }
     /// <p>The name, ID, or ARN of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The name, ID, or ARN of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl AssociateResourceInputBuilder {
     }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -87,8 +86,7 @@ impl AssociateResourceInputBuilder {
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,28 +99,32 @@ impl AssociateResourceInputBuilder {
     /// <p>Determines whether an application tag is applied or skipped.</p>
     pub fn options(mut self, input: crate::types::AssociationOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_resource::AssociateResourceInput {
-            application: self.application,
-            resource_type: self.resource_type,
-            resource: self.resource,
-            options: self.options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_resource::AssociateResourceInput {
+                application: self.application
+                ,
+                resource_type: self.resource_type
+                ,
+                resource: self.resource
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

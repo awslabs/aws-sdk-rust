@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResiliencyPolicyOutput {
+pub struct DeleteResiliencyPolicyOutput  {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub policy_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeleteResiliencyPolicyOutput {
+impl  DeleteResiliencyPolicyOutput  {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_arn.deref()
+    pub fn policy_arn(&self) -> & str {
+        use std::ops::Deref; self.policy_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteResiliencyPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResiliencyPolicyOutput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput).
     pub fn builder() -> crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyOutputBuilder {
@@ -42,39 +41,35 @@ impl DeleteResiliencyPolicyOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteResiliencyPolicyOutput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_arn`](crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyOutputBuilder::policy_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput {
-            policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_arn",
-                    "policy_arn was not specified but it is required when building DeleteResiliencyPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput {
+                policy_arn: self.policy_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_arn", "policy_arn was not specified but it is required when building DeleteResiliencyPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

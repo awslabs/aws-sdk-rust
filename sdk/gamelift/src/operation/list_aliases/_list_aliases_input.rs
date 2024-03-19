@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAliasesInput {
+pub struct ListAliasesInput  {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct ListAliasesInput {
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAliasesInput {
+impl  ListAliasesInput  {
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
@@ -28,11 +28,11 @@ impl ListAliasesInput {
     /// <li>
     /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
     /// </ul>
-    pub fn routing_strategy_type(&self) -> ::std::option::Option<&crate::types::RoutingStrategyType> {
+    pub fn routing_strategy_type(&self) -> ::std::option::Option<& crate::types::RoutingStrategyType> {
         self.routing_strategy_type.as_ref()
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -40,7 +40,7 @@ impl ListAliasesInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl ListAliasesInputBuilder {
     /// <p><b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p></li>
     /// </ul>
     pub fn set_routing_strategy_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
-        self.routing_strategy_type = input;
-        self
+        self.routing_strategy_type = input; self
     }
     /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
     /// <p>Possible routing types include the following:</p>
@@ -103,8 +102,7 @@ impl ListAliasesInputBuilder {
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ListAliasesInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -131,8 +128,7 @@ impl ListAliasesInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,11 +136,18 @@ impl ListAliasesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
-            routing_strategy_type: self.routing_strategy_type,
-            name: self.name,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_aliases::ListAliasesInput {
+                routing_strategy_type: self.routing_strategy_type
+                ,
+                name: self.name
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

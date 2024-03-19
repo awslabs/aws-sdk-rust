@@ -3,7 +3,7 @@
 /// <p>Information about the resource of the GuardDuty account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageResource {
+pub struct CoverageResource  {
     /// <p>The unique ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
@@ -19,33 +19,33 @@ pub struct CoverageResource {
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CoverageResource {
+impl  CoverageResource  {
     /// <p>The unique ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The unique ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
-    pub fn resource_details(&self) -> ::std::option::Option<&crate::types::CoverageResourceDetails> {
+    pub fn resource_details(&self) -> ::std::option::Option<& crate::types::CoverageResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Represents the status of the EKS cluster coverage.</p>
-    pub fn coverage_status(&self) -> ::std::option::Option<&crate::types::CoverageStatus> {
+    pub fn coverage_status(&self) -> ::std::option::Option<& crate::types::CoverageStatus> {
         self.coverage_status.as_ref()
     }
     /// <p>Represents the reason why a coverage status was <code>UNHEALTHY</code> for the EKS cluster.</p>
-    pub fn issue(&self) -> ::std::option::Option<&str> {
+    pub fn issue(&self) -> ::std::option::Option<& str> {
         self.issue.as_deref()
     }
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>The unique ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The unique ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>The unique ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The unique ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::CoverageResourceDetails>) -> Self {
-        self.resource_details = input;
-        self
+        self.resource_details = input; self
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::CoverageResourceDetails> {
@@ -132,8 +128,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>Represents the status of the EKS cluster coverage.</p>
     pub fn set_coverage_status(mut self, input: ::std::option::Option<crate::types::CoverageStatus>) -> Self {
-        self.coverage_status = input;
-        self
+        self.coverage_status = input; self
     }
     /// <p>Represents the status of the EKS cluster coverage.</p>
     pub fn get_coverage_status(&self) -> &::std::option::Option<crate::types::CoverageStatus> {
@@ -146,8 +141,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>Represents the reason why a coverage status was <code>UNHEALTHY</code> for the EKS cluster.</p>
     pub fn set_issue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issue = input;
-        self
+        self.issue = input; self
     }
     /// <p>Represents the reason why a coverage status was <code>UNHEALTHY</code> for the EKS cluster.</p>
     pub fn get_issue(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl CoverageResourceBuilder {
     }
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl CoverageResourceBuilder {
     /// Consumes the builder and constructs a [`CoverageResource`](crate::types::CoverageResource).
     pub fn build(self) -> crate::types::CoverageResource {
         crate::types::CoverageResource {
-            resource_id: self.resource_id,
-            detector_id: self.detector_id,
-            account_id: self.account_id,
-            resource_details: self.resource_details,
-            coverage_status: self.coverage_status,
-            issue: self.issue,
-            updated_at: self.updated_at,
+            resource_id: self.resource_id
+            ,
+            detector_id: self.detector_id
+            ,
+            account_id: self.account_id
+            ,
+            resource_details: self.resource_details
+            ,
+            coverage_status: self.coverage_status
+            ,
+            issue: self.issue
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

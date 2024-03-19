@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationDateRangeKpiOutput {
+pub struct GetApplicationDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     pub application_date_range_kpi_response: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     _request_id: Option<String>,
 }
-impl GetApplicationDateRangeKpiOutput {
+impl  GetApplicationDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    pub fn application_date_range_kpi_response(&self) -> ::std::option::Option<&crate::types::ApplicationDateRangeKpiResponse> {
+    pub fn application_date_range_kpi_response(&self) -> ::std::option::Option<& crate::types::ApplicationDateRangeKpiResponse> {
         self.application_date_range_kpi_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationDateRangeKpiOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput).
     pub fn builder() -> crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiOutputBuilder {
@@ -41,27 +41,28 @@ impl GetApplicationDateRangeKpiOutputBuilder {
     }
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     pub fn set_application_date_range_kpi_response(mut self, input: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>) -> Self {
-        self.application_date_range_kpi_response = input;
-        self
+        self.application_date_range_kpi_response = input; self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     pub fn get_application_date_range_kpi_response(&self) -> &::std::option::Option<crate::types::ApplicationDateRangeKpiResponse> {
         &self.application_date_range_kpi_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput).
     pub fn build(self) -> crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput {
         crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput {
-            application_date_range_kpi_response: self.application_date_range_kpi_response,
+            application_date_range_kpi_response: self.application_date_range_kpi_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

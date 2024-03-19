@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLimitsOutput {
+pub struct DescribeLimitsOutput  {
     /// <p>The maximum number of shards.</p>
     pub shard_limit: i32,
     /// <p>The number of open shards.</p>
@@ -13,7 +13,7 @@ pub struct DescribeLimitsOutput {
     pub on_demand_stream_count_limit: i32,
     _request_id: Option<String>,
 }
-impl DescribeLimitsOutput {
+impl  DescribeLimitsOutput  {
     /// <p>The maximum number of shards.</p>
     pub fn shard_limit(&self) -> i32 {
         self.shard_limit
@@ -32,10 +32,10 @@ impl DescribeLimitsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
     pub fn builder() -> crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder {
@@ -62,8 +62,7 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum number of shards.</p>
     pub fn set_shard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_limit = input;
-        self
+        self.shard_limit = input; self
     }
     /// <p>The maximum number of shards.</p>
     pub fn get_shard_limit(&self) -> &::std::option::Option<i32> {
@@ -77,8 +76,7 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The number of open shards.</p>
     pub fn set_open_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_shard_count = input;
-        self
+        self.open_shard_count = input; self
     }
     /// <p>The number of open shards.</p>
     pub fn get_open_shard_count(&self) -> &::std::option::Option<i32> {
@@ -92,8 +90,7 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn set_on_demand_stream_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_stream_count = input;
-        self
+        self.on_demand_stream_count = input; self
     }
     /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn get_on_demand_stream_count(&self) -> &::std::option::Option<i32> {
@@ -107,57 +104,53 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub fn set_on_demand_stream_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_stream_count_limit = input;
-        self
+        self.on_demand_stream_count_limit = input; self
     }
     /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub fn get_on_demand_stream_count_limit(&self) -> &::std::option::Option<i32> {
         &self.on_demand_stream_count_limit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`shard_limit`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::shard_limit)
     /// - [`open_shard_count`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::open_shard_count)
     /// - [`on_demand_stream_count`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::on_demand_stream_count)
     /// - [`on_demand_stream_count_limit`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::on_demand_stream_count_limit)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_limits::DescribeLimitsOutput {
-            shard_limit: self.shard_limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "shard_limit",
-                    "shard_limit was not specified but it is required when building DescribeLimitsOutput",
-                )
-            })?,
-            open_shard_count: self.open_shard_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "open_shard_count",
-                    "open_shard_count was not specified but it is required when building DescribeLimitsOutput",
-                )
-            })?,
-            on_demand_stream_count: self.on_demand_stream_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "on_demand_stream_count",
-                    "on_demand_stream_count was not specified but it is required when building DescribeLimitsOutput",
-                )
-            })?,
-            on_demand_stream_count_limit: self.on_demand_stream_count_limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "on_demand_stream_count_limit",
-                    "on_demand_stream_count_limit was not specified but it is required when building DescribeLimitsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_limits::DescribeLimitsOutput {
+                shard_limit: self.shard_limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("shard_limit", "shard_limit was not specified but it is required when building DescribeLimitsOutput")
+                    )?
+                ,
+                open_shard_count: self.open_shard_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("open_shard_count", "open_shard_count was not specified but it is required when building DescribeLimitsOutput")
+                    )?
+                ,
+                on_demand_stream_count: self.on_demand_stream_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("on_demand_stream_count", "on_demand_stream_count was not specified but it is required when building DescribeLimitsOutput")
+                    )?
+                ,
+                on_demand_stream_count_limit: self.on_demand_stream_count_limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("on_demand_stream_count_limit", "on_demand_stream_count_limit was not specified but it is required when building DescribeLimitsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

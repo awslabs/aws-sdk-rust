@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationInput {
+pub struct DescribeConfigurationInput  {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeConfigurationInput {
+impl  DescribeConfigurationInput  {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeConfigurationInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_id
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_configuration::DescribeConfigurationInput {
-            configuration_id: self.configuration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_configuration::DescribeConfigurationInput {
+                configuration_id: self.configuration_id
+                ,
+            }
+        )
     }
 }
+

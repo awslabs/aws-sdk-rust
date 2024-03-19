@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetParametersForExportOutput {
+pub struct GetParametersForExportOutput  {
     /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub signing_key_certificate: ::std::string::String,
     /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
@@ -15,32 +15,29 @@ pub struct GetParametersForExportOutput {
     pub parameters_valid_until_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetParametersForExportOutput {
+impl  GetParametersForExportOutput  {
     /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
-    pub fn signing_key_certificate(&self) -> &str {
-        use std::ops::Deref;
-        self.signing_key_certificate.deref()
+    pub fn signing_key_certificate(&self) -> & str {
+        use std::ops::Deref; self.signing_key_certificate.deref()
     }
     /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
-    pub fn signing_key_certificate_chain(&self) -> &str {
-        use std::ops::Deref;
-        self.signing_key_certificate_chain.deref()
+    pub fn signing_key_certificate_chain(&self) -> & str {
+        use std::ops::Deref; self.signing_key_certificate_chain.deref()
     }
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-    pub fn signing_key_algorithm(&self) -> &crate::types::KeyAlgorithm {
+    pub fn signing_key_algorithm(&self) -> & crate::types::KeyAlgorithm {
         &self.signing_key_algorithm
     }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
-    pub fn export_token(&self) -> &str {
-        use std::ops::Deref;
-        self.export_token.deref()
+    pub fn export_token(&self) -> & str {
+        use std::ops::Deref; self.export_token.deref()
     }
     /// <p>The validity period of the export token.</p>
-    pub fn parameters_valid_until_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn parameters_valid_until_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.parameters_valid_until_timestamp
     }
 }
-impl ::std::fmt::Debug for GetParametersForExportOutput {
+impl  ::std::fmt::Debug for GetParametersForExportOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForExportOutput");
         formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
@@ -53,10 +50,10 @@ impl ::std::fmt::Debug for GetParametersForExportOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetParametersForExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetParametersForExportOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersForExportOutput`](crate::operation::get_parameters_for_export::GetParametersForExportOutput).
     pub fn builder() -> crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder {
@@ -84,8 +81,7 @@ impl GetParametersForExportOutputBuilder {
     }
     /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signing_key_certificate = input;
-        self
+        self.signing_key_certificate = input; self
     }
     /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl GetParametersForExportOutputBuilder {
     }
     /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub fn set_signing_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signing_key_certificate_chain = input;
-        self
+        self.signing_key_certificate_chain = input; self
     }
     /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub fn get_signing_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +109,7 @@ impl GetParametersForExportOutputBuilder {
     }
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn set_signing_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
-        self.signing_key_algorithm = input;
-        self
+        self.signing_key_algorithm = input; self
     }
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
@@ -129,8 +123,7 @@ impl GetParametersForExportOutputBuilder {
     }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn set_export_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_token = input;
-        self
+        self.export_token = input; self
     }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn get_export_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,22 +137,21 @@ impl GetParametersForExportOutputBuilder {
     }
     /// <p>The validity period of the export token.</p>
     pub fn set_parameters_valid_until_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.parameters_valid_until_timestamp = input;
-        self
+        self.parameters_valid_until_timestamp = input; self
     }
     /// <p>The validity period of the export token.</p>
     pub fn get_parameters_valid_until_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.parameters_valid_until_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetParametersForExportOutput`](crate::operation::get_parameters_for_export::GetParametersForExportOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`signing_key_certificate`](crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder::signing_key_certificate)
@@ -167,45 +159,37 @@ impl GetParametersForExportOutputBuilder {
     /// - [`signing_key_algorithm`](crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder::signing_key_algorithm)
     /// - [`export_token`](crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder::export_token)
     /// - [`parameters_valid_until_timestamp`](crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder::parameters_valid_until_timestamp)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_parameters_for_export::GetParametersForExportOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_parameters_for_export::GetParametersForExportOutput {
-            signing_key_certificate: self.signing_key_certificate.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signing_key_certificate",
-                    "signing_key_certificate was not specified but it is required when building GetParametersForExportOutput",
-                )
-            })?,
-            signing_key_certificate_chain: self.signing_key_certificate_chain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signing_key_certificate_chain",
-                    "signing_key_certificate_chain was not specified but it is required when building GetParametersForExportOutput",
-                )
-            })?,
-            signing_key_algorithm: self.signing_key_algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signing_key_algorithm",
-                    "signing_key_algorithm was not specified but it is required when building GetParametersForExportOutput",
-                )
-            })?,
-            export_token: self.export_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "export_token",
-                    "export_token was not specified but it is required when building GetParametersForExportOutput",
-                )
-            })?,
-            parameters_valid_until_timestamp: self.parameters_valid_until_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameters_valid_until_timestamp",
-                    "parameters_valid_until_timestamp was not specified but it is required when building GetParametersForExportOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_parameters_for_export::GetParametersForExportOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_parameters_for_export::GetParametersForExportOutput {
+                signing_key_certificate: self.signing_key_certificate
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signing_key_certificate", "signing_key_certificate was not specified but it is required when building GetParametersForExportOutput")
+                    )?
+                ,
+                signing_key_certificate_chain: self.signing_key_certificate_chain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signing_key_certificate_chain", "signing_key_certificate_chain was not specified but it is required when building GetParametersForExportOutput")
+                    )?
+                ,
+                signing_key_algorithm: self.signing_key_algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signing_key_algorithm", "signing_key_algorithm was not specified but it is required when building GetParametersForExportOutput")
+                    )?
+                ,
+                export_token: self.export_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("export_token", "export_token was not specified but it is required when building GetParametersForExportOutput")
+                    )?
+                ,
+                parameters_valid_until_timestamp: self.parameters_valid_until_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameters_valid_until_timestamp", "parameters_valid_until_timestamp was not specified but it is required when building GetParametersForExportOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetParametersForExportOutputBuilder {
@@ -220,3 +204,4 @@ impl ::std::fmt::Debug for GetParametersForExportOutputBuilder {
         formatter.finish()
     }
 }
+

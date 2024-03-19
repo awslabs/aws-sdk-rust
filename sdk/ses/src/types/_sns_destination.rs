@@ -4,17 +4,16 @@
 /// <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsDestination {
+pub struct SnsDestination  {
     /// <p>The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::string::String,
 }
-impl SnsDestination {
+impl  SnsDestination  {
     /// <p>The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
-    pub fn topic_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_arn.deref()
+    pub fn topic_arn(&self) -> & str {
+        use std::ops::Deref; self.topic_arn.deref()
     }
 }
 impl SnsDestination {
@@ -41,8 +40,7 @@ impl SnsDestinationBuilder {
     /// <p>The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
@@ -53,13 +51,15 @@ impl SnsDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_arn`](crate::types::builders::SnsDestinationBuilder::topic_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SnsDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnsDestination {
-            topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_arn",
-                    "topic_arn was not specified but it is required when building SnsDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnsDestination {
+                topic_arn: self.topic_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_arn", "topic_arn was not specified but it is required when building SnsDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

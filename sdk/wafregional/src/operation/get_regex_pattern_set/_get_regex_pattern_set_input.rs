@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegexPatternSetInput {
+pub struct GetRegexPatternSetInput  {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub regex_pattern_set_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRegexPatternSetInput {
+impl  GetRegexPatternSetInput  {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn regex_pattern_set_id(&self) -> ::std::option::Option<& str> {
         self.regex_pattern_set_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetRegexPatternSetInputBuilder {
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub fn set_regex_pattern_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.regex_pattern_set_id = input;
-        self
+        self.regex_pattern_set_id = input; self
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub fn get_regex_pattern_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.regex_pattern_set_id
     }
     /// Consumes the builder and constructs a [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_regex_pattern_set::GetRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
-            regex_pattern_set_id: self.regex_pattern_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_regex_pattern_set::GetRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
+                regex_pattern_set_id: self.regex_pattern_set_id
+                ,
+            }
+        )
     }
 }
+

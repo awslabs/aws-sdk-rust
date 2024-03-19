@@ -3,7 +3,7 @@
 /// <p>Information about AwsGroundStationAgentEndpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGroundStationAgentEndpoint {
+pub struct AwsGroundStationAgentEndpoint  {
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
     pub name: ::std::string::String,
     /// <p>The egress address of AgentEndpoint.</p>
@@ -15,26 +15,25 @@ pub struct AwsGroundStationAgentEndpoint {
     /// <p>The results of the audit.</p>
     pub audit_results: ::std::option::Option<crate::types::AuditResults>,
 }
-impl AwsGroundStationAgentEndpoint {
+impl  AwsGroundStationAgentEndpoint  {
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The egress address of AgentEndpoint.</p>
-    pub fn egress_address(&self) -> ::std::option::Option<&crate::types::ConnectionDetails> {
+    pub fn egress_address(&self) -> ::std::option::Option<& crate::types::ConnectionDetails> {
         self.egress_address.as_ref()
     }
     /// <p>The ingress address of AgentEndpoint.</p>
-    pub fn ingress_address(&self) -> ::std::option::Option<&crate::types::RangedConnectionDetails> {
+    pub fn ingress_address(&self) -> ::std::option::Option<& crate::types::RangedConnectionDetails> {
         self.ingress_address.as_ref()
     }
     /// <p>The status of AgentEndpoint.</p>
-    pub fn agent_status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
+    pub fn agent_status(&self) -> ::std::option::Option<& crate::types::AgentStatus> {
         self.agent_status.as_ref()
     }
     /// <p>The results of the audit.</p>
-    pub fn audit_results(&self) -> ::std::option::Option<&crate::types::AuditResults> {
+    pub fn audit_results(&self) -> ::std::option::Option<& crate::types::AuditResults> {
         self.audit_results.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl AwsGroundStationAgentEndpointBuilder {
     }
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl AwsGroundStationAgentEndpointBuilder {
     }
     /// <p>The egress address of AgentEndpoint.</p>
     pub fn set_egress_address(mut self, input: ::std::option::Option<crate::types::ConnectionDetails>) -> Self {
-        self.egress_address = input;
-        self
+        self.egress_address = input; self
     }
     /// <p>The egress address of AgentEndpoint.</p>
     pub fn get_egress_address(&self) -> &::std::option::Option<crate::types::ConnectionDetails> {
@@ -94,8 +91,7 @@ impl AwsGroundStationAgentEndpointBuilder {
     }
     /// <p>The ingress address of AgentEndpoint.</p>
     pub fn set_ingress_address(mut self, input: ::std::option::Option<crate::types::RangedConnectionDetails>) -> Self {
-        self.ingress_address = input;
-        self
+        self.ingress_address = input; self
     }
     /// <p>The ingress address of AgentEndpoint.</p>
     pub fn get_ingress_address(&self) -> &::std::option::Option<crate::types::RangedConnectionDetails> {
@@ -108,8 +104,7 @@ impl AwsGroundStationAgentEndpointBuilder {
     }
     /// <p>The status of AgentEndpoint.</p>
     pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.agent_status = input;
-        self
+        self.agent_status = input; self
     }
     /// <p>The status of AgentEndpoint.</p>
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -122,8 +117,7 @@ impl AwsGroundStationAgentEndpointBuilder {
     }
     /// <p>The results of the audit.</p>
     pub fn set_audit_results(mut self, input: ::std::option::Option<crate::types::AuditResults>) -> Self {
-        self.audit_results = input;
-        self
+        self.audit_results = input; self
     }
     /// <p>The results of the audit.</p>
     pub fn get_audit_results(&self) -> &::std::option::Option<crate::types::AuditResults> {
@@ -133,17 +127,23 @@ impl AwsGroundStationAgentEndpointBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AwsGroundStationAgentEndpointBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsGroundStationAgentEndpoint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsGroundStationAgentEndpoint {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AwsGroundStationAgentEndpoint",
-                )
-            })?,
-            egress_address: self.egress_address,
-            ingress_address: self.ingress_address,
-            agent_status: self.agent_status,
-            audit_results: self.audit_results,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsGroundStationAgentEndpoint {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AwsGroundStationAgentEndpoint")
+                    )?
+                ,
+                egress_address: self.egress_address
+                ,
+                ingress_address: self.ingress_address
+                ,
+                agent_status: self.agent_status
+                ,
+                audit_results: self.audit_results
+                ,
+            }
+        )
     }
 }
+

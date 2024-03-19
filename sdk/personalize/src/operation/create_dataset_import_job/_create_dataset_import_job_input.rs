@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatasetImportJobInput {
+pub struct CreateDatasetImportJobInput  {
     /// <p>The name for the dataset import job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset that receives the imported data.</p>
@@ -12,7 +12,7 @@ pub struct CreateDatasetImportJobInput {
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
     /// <ul>
     /// <li>
@@ -24,28 +24,29 @@ pub struct CreateDatasetImportJobInput {
     /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
     pub publish_attribution_metrics_to_s3: ::std::option::Option<bool>,
 }
-impl CreateDatasetImportJobInput {
+impl  CreateDatasetImportJobInput  {
     /// <p>The name for the dataset import job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The ARN of the dataset that receives the imported data.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
     /// <ul>
@@ -54,7 +55,7 @@ impl CreateDatasetImportJobInput {
     /// <li>
     /// <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p></li>
     /// </ul>
-    pub fn import_mode(&self) -> ::std::option::Option<&crate::types::ImportMode> {
+    pub fn import_mode(&self) -> ::std::option::Option<& crate::types::ImportMode> {
         self.import_mode.as_ref()
     }
     /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
@@ -77,7 +78,7 @@ pub struct CreateDatasetImportJobInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) import_mode: ::std::option::Option<crate::types::ImportMode>,
     pub(crate) publish_attribution_metrics_to_s3: ::std::option::Option<bool>,
 }
@@ -90,8 +91,7 @@ impl CreateDatasetImportJobInputBuilder {
     }
     /// <p>The name for the dataset import job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name for the dataset import job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl CreateDatasetImportJobInputBuilder {
     }
     /// <p>The ARN of the dataset that receives the imported data.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The ARN of the dataset that receives the imported data.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateDatasetImportJobInputBuilder {
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -135,8 +133,7 @@ impl CreateDatasetImportJobInputBuilder {
     }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,17 +146,16 @@ impl CreateDatasetImportJobInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
@@ -181,8 +177,7 @@ impl CreateDatasetImportJobInputBuilder {
     /// <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p></li>
     /// </ul>
     pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
-        self.import_mode = input;
-        self
+        self.import_mode = input; self
     }
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
     /// <ul>
@@ -201,28 +196,32 @@ impl CreateDatasetImportJobInputBuilder {
     }
     /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
     pub fn set_publish_attribution_metrics_to_s3(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish_attribution_metrics_to_s3 = input;
-        self
+        self.publish_attribution_metrics_to_s3 = input; self
     }
     /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
     pub fn get_publish_attribution_metrics_to_s3(&self) -> &::std::option::Option<bool> {
         &self.publish_attribution_metrics_to_s3
     }
     /// Consumes the builder and constructs a [`CreateDatasetImportJobInput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataset_import_job::CreateDatasetImportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_dataset_import_job::CreateDatasetImportJobInput {
-            job_name: self.job_name,
-            dataset_arn: self.dataset_arn,
-            data_source: self.data_source,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            import_mode: self.import_mode,
-            publish_attribution_metrics_to_s3: self.publish_attribution_metrics_to_s3,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dataset_import_job::CreateDatasetImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_dataset_import_job::CreateDatasetImportJobInput {
+                job_name: self.job_name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                data_source: self.data_source
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                import_mode: self.import_mode
+                ,
+                publish_attribution_metrics_to_s3: self.publish_attribution_metrics_to_s3
+                ,
+            }
+        )
     }
 }
+

@@ -3,25 +3,25 @@
 /// <p>Represents information about a provisioned resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ResourceDescription {
+pub struct ResourceDescription  {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of the resource properties and their current values.</p>
     pub properties: ::std::option::Option<::std::string::String>,
 }
-impl ResourceDescription {
+impl  ResourceDescription  {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>A list of the resource properties and their current values.</p>
-    pub fn properties(&self) -> ::std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
-impl ::std::fmt::Debug for ResourceDescription {
+impl  ::std::fmt::Debug for ResourceDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDescription");
         formatter.field("identifier", &self.identifier);
@@ -53,8 +53,7 @@ impl ResourceDescriptionBuilder {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
@@ -68,8 +67,7 @@ impl ResourceDescriptionBuilder {
     }
     /// <p>A list of the resource properties and their current values.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
     }
     /// <p>A list of the resource properties and their current values.</p>
     pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,10 @@ impl ResourceDescriptionBuilder {
     /// Consumes the builder and constructs a [`ResourceDescription`](crate::types::ResourceDescription).
     pub fn build(self) -> crate::types::ResourceDescription {
         crate::types::ResourceDescription {
-            identifier: self.identifier,
-            properties: self.properties,
+            identifier: self.identifier
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
@@ -91,3 +91,4 @@ impl ::std::fmt::Debug for ResourceDescriptionBuilder {
         formatter.finish()
     }
 }
+

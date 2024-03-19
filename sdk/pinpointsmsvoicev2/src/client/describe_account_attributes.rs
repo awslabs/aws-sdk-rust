@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAccountAttributes`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput) with field(s):
+                            /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput) with field(s):
     ///   - [`account_attributes(Option<Vec::<AccountAttribute>>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::account_attributes): <p>An array of AccountAttributes objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::operation::describe_account_attributes::DescribeAccountAttributesError)
+                            /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::operation::describe_account_attributes::DescribeAccountAttributesError)
     pub fn describe_account_attributes(&self) -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder {
-        crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

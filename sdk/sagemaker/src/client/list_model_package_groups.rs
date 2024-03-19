@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelPackageGroups`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only model groups created after the specified time.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only model groups created before the specified time.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p><br>
     ///   - [`sort_by(ModelPackageGroupSortBy)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::sort_by) / [`set_sort_by(Option<ModelPackageGroupSortBy>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort results by. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Ascending</code>.</p><br>
-    /// - On success, responds with [`ListModelPackageGroupsOutput`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListModelPackageGroupsOutput`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput) with field(s):
     ///   - [`model_package_group_summary_list(Option<Vec::<ModelPackageGroupSummary>>)`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput::model_package_group_summary_list): <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListModelPackageGroupsError>`](crate::operation::list_model_package_groups::ListModelPackageGroupsError)
+                            /// - On failure, responds with [`SdkError<ListModelPackageGroupsError>`](crate::operation::list_model_package_groups::ListModelPackageGroupsError)
     pub fn list_model_package_groups(&self) -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder {
-        crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

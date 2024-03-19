@@ -3,13 +3,13 @@
 /// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEmailTemplateInput {
+pub struct DeleteEmailTemplateInput  {
     /// <p>The name of the template to be deleted.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEmailTemplateInput {
+impl  DeleteEmailTemplateInput  {
     /// <p>The name of the template to be deleted.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteEmailTemplateInputBuilder {
     }
     /// <p>The name of the template to be deleted.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the template to be deleted.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`DeleteEmailTemplateInput`](crate::operation::delete_email_template::DeleteEmailTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_email_template::DeleteEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_email_template::DeleteEmailTemplateInput {
-            template_name: self.template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_email_template::DeleteEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_email_template::DeleteEmailTemplateInput {
+                template_name: self.template_name
+                ,
+            }
+        )
     }
 }
+

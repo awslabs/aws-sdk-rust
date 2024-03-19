@@ -3,3 +3,4 @@ pub use ::aws_types::request_id::RequestId;
 
 /// Types for the `ScanSbom` operation.
 pub mod scan_sbom;
+

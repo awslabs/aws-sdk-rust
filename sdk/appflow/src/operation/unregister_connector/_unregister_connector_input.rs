@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnregisterConnectorInput {
+pub struct UnregisterConnectorInput  {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl UnregisterConnectorInput {
+impl  UnregisterConnectorInput  {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn connector_label(&self) -> ::std::option::Option<&str> {
+    pub fn connector_label(&self) -> ::std::option::Option<& str> {
         self.connector_label.as_deref()
     }
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
@@ -41,8 +41,7 @@ impl UnregisterConnectorInputBuilder {
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_label = input;
-        self
+        self.connector_label = input; self
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl UnregisterConnectorInputBuilder {
     }
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::unregister_connector::UnregisterConnectorInput {
-            connector_label: self.connector_label,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unregister_connector::UnregisterConnectorInput {
+                connector_label: self.connector_label
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

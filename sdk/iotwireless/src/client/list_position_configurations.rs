@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPositionConfigurations`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_type(PositionResourceType)`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::set_resource_type):<br>required: **false**<br><p>Resource type for which position configurations are listed.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
-    /// - On success, responds with [`ListPositionConfigurationsOutput`](crate::operation::list_position_configurations::ListPositionConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListPositionConfigurationsOutput`](crate::operation::list_position_configurations::ListPositionConfigurationsOutput) with field(s):
     ///   - [`position_configuration_list(Option<Vec::<PositionConfigurationItem>>)`](crate::operation::list_position_configurations::ListPositionConfigurationsOutput::position_configuration_list): <p>A list of position configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_position_configurations::ListPositionConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListPositionConfigurationsError>`](crate::operation::list_position_configurations::ListPositionConfigurationsError)
+                            /// - On failure, responds with [`SdkError<ListPositionConfigurationsError>`](crate::operation::list_position_configurations::ListPositionConfigurationsError)
     #[deprecated(note = "This operation is no longer supported.")]
     pub fn list_position_configurations(&self) -> crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder {
-        crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

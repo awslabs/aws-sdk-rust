@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateWirelessDeviceFromFuotaTaskInput {
+pub struct DisassociateWirelessDeviceFromFuotaTaskInput  {
     /// <p>The ID of a FUOTA task.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device.</p>
     pub wireless_device_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateWirelessDeviceFromFuotaTaskInput {
+impl  DisassociateWirelessDeviceFromFuotaTaskInput  {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn wireless_device_id(&self) -> ::std::option::Option<& str> {
         self.wireless_device_id.as_deref()
     }
 }
 impl DisassociateWirelessDeviceFromFuotaTaskInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskInput).
-    pub fn builder() -> crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskInputBuilder {
         crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskInputBuilder::default()
     }
 }
@@ -42,8 +41,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,25 +55,22 @@ impl DisassociateWirelessDeviceFromFuotaTaskInputBuilder {
     }
     /// <p>The ID of the wireless device.</p>
     pub fn set_wireless_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wireless_device_id = input;
-        self
+        self.wireless_device_id = input; self
     }
     /// <p>The ID of the wireless device.</p>
     pub fn get_wireless_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wireless_device_id
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskInput {
-                id: self.id,
-                wireless_device_id: self.wireless_device_id,
-            },
+                id: self.id
+                ,
+                wireless_device_id: self.wireless_device_id
+                ,
+            }
         )
     }
 }
+

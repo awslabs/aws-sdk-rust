@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeComments`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`document_id(impl Into<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::document_id) / [`set_document_id(Option<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_document_id):<br>required: **true**<br><p>The ID of the document.</p><br>
     ///   - [`version_id(impl Into<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_version_id):<br>required: **true**<br><p>The ID of the document version.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. This marker was received from a previous call.</p><br>
-    /// - On success, responds with [`DescribeCommentsOutput`](crate::operation::describe_comments::DescribeCommentsOutput) with field(s):
+                            /// - On success, responds with [`DescribeCommentsOutput`](crate::operation::describe_comments::DescribeCommentsOutput) with field(s):
     ///   - [`comments(Option<Vec::<Comment>>)`](crate::operation::describe_comments::DescribeCommentsOutput::comments): <p>The list of comments for the specified document version.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_comments::DescribeCommentsOutput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    /// - On failure, responds with [`SdkError<DescribeCommentsError>`](crate::operation::describe_comments::DescribeCommentsError)
+                            /// - On failure, responds with [`SdkError<DescribeCommentsError>`](crate::operation::describe_comments::DescribeCommentsError)
     pub fn describe_comments(&self) -> crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder {
-        crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_comments::builders::DescribeCommentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

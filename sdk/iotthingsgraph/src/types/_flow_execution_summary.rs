@@ -3,7 +3,7 @@
 /// <p>An object that contains summary information about a flow execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlowExecutionSummary {
+pub struct FlowExecutionSummary  {
     /// <p>The ID of the flow execution.</p>
     pub flow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the flow execution.</p>
@@ -17,29 +17,29 @@ pub struct FlowExecutionSummary {
     /// <p>The date and time when the flow execution summary was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl FlowExecutionSummary {
+impl  FlowExecutionSummary  {
     /// <p>The ID of the flow execution.</p>
-    pub fn flow_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn flow_execution_id(&self) -> ::std::option::Option<& str> {
         self.flow_execution_id.as_deref()
     }
     /// <p>The current status of the flow execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FlowExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FlowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn system_instance_id(&self) -> ::std::option::Option<& str> {
         self.system_instance_id.as_deref()
     }
     /// <p>The ID of the flow.</p>
-    pub fn flow_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn flow_template_id(&self) -> ::std::option::Option<& str> {
         self.flow_template_id.as_deref()
     }
     /// <p>The date and time when the flow execution summary was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl FlowExecutionSummaryBuilder {
     }
     /// <p>The ID of the flow execution.</p>
     pub fn set_flow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_execution_id = input;
-        self
+        self.flow_execution_id = input; self
     }
     /// <p>The ID of the flow execution.</p>
     pub fn get_flow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl FlowExecutionSummaryBuilder {
     }
     /// <p>The current status of the flow execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlowExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the flow execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FlowExecutionStatus> {
@@ -97,8 +95,7 @@ impl FlowExecutionSummaryBuilder {
     }
     /// <p>The ID of the system instance that contains the flow.</p>
     pub fn set_system_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_instance_id = input;
-        self
+        self.system_instance_id = input; self
     }
     /// <p>The ID of the system instance that contains the flow.</p>
     pub fn get_system_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl FlowExecutionSummaryBuilder {
     }
     /// <p>The ID of the flow.</p>
     pub fn set_flow_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_template_id = input;
-        self
+        self.flow_template_id = input; self
     }
     /// <p>The ID of the flow.</p>
     pub fn get_flow_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl FlowExecutionSummaryBuilder {
     }
     /// <p>The date and time when the flow execution summary was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the flow execution summary was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl FlowExecutionSummaryBuilder {
     }
     /// <p>The date and time when the flow execution summary was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time when the flow execution summary was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl FlowExecutionSummaryBuilder {
     /// Consumes the builder and constructs a [`FlowExecutionSummary`](crate::types::FlowExecutionSummary).
     pub fn build(self) -> crate::types::FlowExecutionSummary {
         crate::types::FlowExecutionSummary {
-            flow_execution_id: self.flow_execution_id,
-            status: self.status,
-            system_instance_id: self.system_instance_id,
-            flow_template_id: self.flow_template_id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            flow_execution_id: self.flow_execution_id
+            ,
+            status: self.status
+            ,
+            system_instance_id: self.system_instance_id
+            ,
+            flow_template_id: self.flow_template_id
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

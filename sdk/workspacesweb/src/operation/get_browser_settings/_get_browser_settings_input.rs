@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBrowserSettingsInput {
+pub struct GetBrowserSettingsInput  {
     /// <p>The ARN of the browser settings.</p>
     pub browser_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetBrowserSettingsInput {
+impl  GetBrowserSettingsInput  {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn browser_settings_arn(&self) -> ::std::option::Option<& str> {
         self.browser_settings_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetBrowserSettingsInputBuilder {
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_settings_arn = input;
-        self
+        self.browser_settings_arn = input; self
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.browser_settings_arn
     }
     /// Consumes the builder and constructs a [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_browser_settings::GetBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_browser_settings::GetBrowserSettingsInput {
-            browser_settings_arn: self.browser_settings_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_browser_settings::GetBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_browser_settings::GetBrowserSettingsInput {
+                browser_settings_arn: self.browser_settings_arn
+                ,
+            }
+        )
     }
 }
+

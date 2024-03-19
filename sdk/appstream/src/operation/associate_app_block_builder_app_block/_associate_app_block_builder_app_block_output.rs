@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAppBlockBuilderAppBlockOutput {
+pub struct AssociateAppBlockBuilderAppBlockOutput  {
     /// <p>The list of app block builders associated with app blocks.</p>
     pub app_block_builder_app_block_association: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
     _request_id: Option<String>,
 }
-impl AssociateAppBlockBuilderAppBlockOutput {
+impl  AssociateAppBlockBuilderAppBlockOutput  {
     /// <p>The list of app block builders associated with app blocks.</p>
-    pub fn app_block_builder_app_block_association(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderAppBlockAssociation> {
+    pub fn app_block_builder_app_block_association(&self) -> ::std::option::Option<& crate::types::AppBlockBuilderAppBlockAssociation> {
         self.app_block_builder_app_block_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateAppBlockBuilderAppBlockOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateAppBlockBuilderAppBlockOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput).
     pub fn builder() -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockOutputBuilder {
@@ -39,31 +39,29 @@ impl AssociateAppBlockBuilderAppBlockOutputBuilder {
         self
     }
     /// <p>The list of app block builders associated with app blocks.</p>
-    pub fn set_app_block_builder_app_block_association(
-        mut self,
-        input: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
-    ) -> Self {
-        self.app_block_builder_app_block_association = input;
-        self
+    pub fn set_app_block_builder_app_block_association(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>) -> Self {
+        self.app_block_builder_app_block_association = input; self
     }
     /// <p>The list of app block builders associated with app blocks.</p>
     pub fn get_app_block_builder_app_block_association(&self) -> &::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation> {
         &self.app_block_builder_app_block_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput).
     pub fn build(self) -> crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput {
         crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput {
-            app_block_builder_app_block_association: self.app_block_builder_app_block_association,
+            app_block_builder_app_block_association: self.app_block_builder_app_block_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

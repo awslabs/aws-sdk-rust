@@ -3,7 +3,7 @@
 /// <p>The structure representing the filters supported by a RasterDataCollection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter.</p>
     pub name: ::std::string::String,
     /// <p>The type of the filter being used.</p>
@@ -13,16 +13,14 @@ pub struct Filter {
     /// <p>The maximum value of the filter.</p>
     pub maximum: ::std::option::Option<f32>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of the filter being used.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The minimum value of the filter.</p>
     pub fn minimum(&self) -> ::std::option::Option<f32> {
@@ -58,8 +56,7 @@ impl FilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl FilterBuilder {
     }
     /// <p>The type of the filter being used.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the filter being used.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl FilterBuilder {
     }
     /// <p>The minimum value of the filter.</p>
     pub fn set_minimum(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.minimum = input;
-        self
+        self.minimum = input; self
     }
     /// <p>The minimum value of the filter.</p>
     pub fn get_minimum(&self) -> &::std::option::Option<f32> {
@@ -101,8 +96,7 @@ impl FilterBuilder {
     }
     /// <p>The maximum value of the filter.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// <p>The maximum value of the filter.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<f32> {
@@ -113,21 +107,24 @@ impl FilterBuilder {
     /// - [`name`](crate::types::builders::FilterBuilder::name)
     /// - [`r#type`](crate::types::builders::FilterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Filter",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Filter",
-                )
-            })?,
-            minimum: self.minimum,
-            maximum: self.maximum,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Filter")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Filter")
+                    )?
+                ,
+                minimum: self.minimum
+                ,
+                maximum: self.maximum
+                ,
+            }
+        )
     }
 }
+

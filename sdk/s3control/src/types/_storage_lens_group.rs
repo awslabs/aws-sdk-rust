@@ -3,7 +3,7 @@
 /// <p>A custom grouping of objects that include filters for prefixes, suffixes, object tags, object size, or object age. You can create an S3 Storage Lens group that includes a single filter or multiple filter conditions. To specify multiple filter conditions, you use <code>AND</code> or <code>OR</code> logical operators.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLensGroup {
+pub struct StorageLensGroup  {
     /// <p>Contains the name of the Storage Lens group.</p>
     pub name: ::std::string::String,
     /// <p>Sets the criteria for the Storage Lens group data that is displayed. For multiple filter conditions, the <code>AND</code> or <code>OR</code> logical operator is used.</p>
@@ -11,18 +11,17 @@ pub struct StorageLensGroup {
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
     pub storage_lens_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl StorageLensGroup {
+impl  StorageLensGroup  {
     /// <p>Contains the name of the Storage Lens group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Sets the criteria for the Storage Lens group data that is displayed. For multiple filter conditions, the <code>AND</code> or <code>OR</code> logical operator is used.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::StorageLensGroupFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::StorageLensGroupFilter> {
         self.filter.as_ref()
     }
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
-    pub fn storage_lens_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_lens_group_arn(&self) -> ::std::option::Option<& str> {
         self.storage_lens_group_arn.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl StorageLensGroupBuilder {
     }
     /// <p>Contains the name of the Storage Lens group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Contains the name of the Storage Lens group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl StorageLensGroupBuilder {
     }
     /// <p>Sets the criteria for the Storage Lens group data that is displayed. For multiple filter conditions, the <code>AND</code> or <code>OR</code> logical operator is used.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::StorageLensGroupFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Sets the criteria for the Storage Lens group data that is displayed. For multiple filter conditions, the <code>AND</code> or <code>OR</code> logical operator is used.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::StorageLensGroupFilter> {
@@ -79,8 +76,7 @@ impl StorageLensGroupBuilder {
     }
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
     pub fn set_storage_lens_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_lens_group_arn = input;
-        self
+        self.storage_lens_group_arn = input; self
     }
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
     pub fn get_storage_lens_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,15 +86,19 @@ impl StorageLensGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StorageLensGroupBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::StorageLensGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StorageLensGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StorageLensGroup",
-                )
-            })?,
-            filter: self.filter,
-            storage_lens_group_arn: self.storage_lens_group_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StorageLensGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building StorageLensGroup")
+                    )?
+                ,
+                filter: self.filter
+                ,
+                storage_lens_group_arn: self.storage_lens_group_arn
+                ,
+            }
+        )
     }
 }
+

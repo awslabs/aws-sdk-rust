@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateInstanceEventWindowInput {
+pub struct DisassociateInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the event window.</p>
@@ -10,17 +10,17 @@ pub struct DisassociateInstanceEventWindowInput {
     /// <p>One or more targets to disassociate from the specified event window.</p>
     pub association_target: ::std::option::Option<crate::types::InstanceEventWindowDisassociationRequest>,
 }
-impl DisassociateInstanceEventWindowInput {
+impl  DisassociateInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_event_window_id(&self) -> ::std::option::Option<& str> {
         self.instance_event_window_id.as_deref()
     }
     /// <p>One or more targets to disassociate from the specified event window.</p>
-    pub fn association_target(&self) -> ::std::option::Option<&crate::types::InstanceEventWindowDisassociationRequest> {
+    pub fn association_target(&self) -> ::std::option::Option<& crate::types::InstanceEventWindowDisassociationRequest> {
         self.association_target.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl DisassociateInstanceEventWindowInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl DisassociateInstanceEventWindowInputBuilder {
     }
     /// <p>The ID of the event window.</p>
     pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_event_window_id = input;
-        self
+        self.instance_event_window_id = input; self
     }
     /// <p>The ID of the event window.</p>
     pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl DisassociateInstanceEventWindowInputBuilder {
     }
     /// <p>One or more targets to disassociate from the specified event window.</p>
     pub fn set_association_target(mut self, input: ::std::option::Option<crate::types::InstanceEventWindowDisassociationRequest>) -> Self {
-        self.association_target = input;
-        self
+        self.association_target = input; self
     }
     /// <p>One or more targets to disassociate from the specified event window.</p>
     pub fn get_association_target(&self) -> &::std::option::Option<crate::types::InstanceEventWindowDisassociationRequest> {
         &self.association_target
     }
     /// Consumes the builder and constructs a [`DisassociateInstanceEventWindowInput`](crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowInput {
-                dry_run: self.dry_run,
-                instance_event_window_id: self.instance_event_window_id,
-                association_target: self.association_target,
-            },
+                dry_run: self.dry_run
+                ,
+                instance_event_window_id: self.instance_event_window_id
+                ,
+                association_target: self.association_target
+                ,
+            }
         )
     }
 }
+

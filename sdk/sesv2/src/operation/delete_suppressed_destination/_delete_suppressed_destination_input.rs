@@ -3,13 +3,13 @@
 /// <p>A request to remove an email address from the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSuppressedDestinationInput {
+pub struct DeleteSuppressedDestinationInput  {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSuppressedDestinationInput {
+impl  DeleteSuppressedDestinationInput  {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteSuppressedDestinationInputBuilder {
     }
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
     /// Consumes the builder and constructs a [`DeleteSuppressedDestinationInput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput {
-            email_address: self.email_address,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput {
+                email_address: self.email_address
+                ,
+            }
+        )
     }
 }
+

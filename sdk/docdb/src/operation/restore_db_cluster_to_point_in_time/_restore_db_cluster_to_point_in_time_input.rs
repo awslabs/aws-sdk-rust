@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>RestoreDBClusterToPointInTime</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreDbClusterToPointInTimeInput {
+pub struct RestoreDbClusterToPointInTimeInput  {
     /// <p>The name of the new cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -60,9 +60,9 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Example: <code>mySubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags to be assigned to the restored cluster.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>You can restore to a new cluster and encrypt the new cluster with an KMS key that is different from the KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
@@ -76,7 +76,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is rejected.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The storage type to associate with the DB cluster.</p>
@@ -85,7 +85,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Default value is <code>standard </code></p>
     pub storage_type: ::std::option::Option<::std::string::String>,
 }
-impl RestoreDbClusterToPointInTimeInput {
+impl  RestoreDbClusterToPointInTimeInput  {
     /// <p>The name of the new cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -96,7 +96,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
@@ -108,7 +108,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// </ul>
     /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-    pub fn restore_type(&self) -> ::std::option::Option<&str> {
+    pub fn restore_type(&self) -> ::std::option::Option<& str> {
         self.restore_type.as_deref()
     }
     /// <p>The identifier of the source cluster from which to restore.</p>
@@ -117,7 +117,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <li>
     /// <p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
-    pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.source_db_cluster_identifier.as_deref()
     }
     /// <p>The date and time to restore the cluster to.</p>
@@ -134,7 +134,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Cannot be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
-    pub fn restore_to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn restore_to_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.restore_to_time.as_ref()
     }
     /// <p>A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
@@ -152,20 +152,22 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code></p>
-    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to be assigned to the restored cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -178,14 +180,15 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>If the cluster is not encrypted, then the restored cluster is not encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is rejected.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
-    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
-        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
+    pub fn enable_cloudwatch_logs_exports(&self) -> & [::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -195,7 +198,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
 }
@@ -217,10 +220,10 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) use_latest_restorable_time: ::std::option::Option<bool>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
@@ -251,8 +254,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The name of the new cluster to be created.</p>
     /// <p>Constraints:</p>
@@ -290,8 +292,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     pub fn set_restore_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_type = input;
-        self
+        self.restore_type = input; self
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
@@ -323,8 +324,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_db_cluster_identifier = input;
-        self
+        self.source_db_cluster_identifier = input; self
     }
     /// <p>The identifier of the source cluster from which to restore.</p>
     /// <p>Constraints:</p>
@@ -368,8 +368,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     pub fn set_restore_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.restore_to_time = input;
-        self
+        self.restore_to_time = input; self
     }
     /// <p>The date and time to restore the cluster to.</p>
     /// <p>Valid values: A time in Universal Coordinated Time (UTC) format.</p>
@@ -399,8 +398,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Default: <code>false</code></p>
     /// <p>Constraints: Cannot be specified if the <code>RestoreToTime</code> parameter is provided.</p>
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_latest_restorable_time = input;
-        self
+        self.use_latest_restorable_time = input; self
     }
     /// <p>A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
     /// <p>Default: <code>false</code></p>
@@ -419,8 +417,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>.</p>
     /// <p>Default: The default port for the engine.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number on which the new cluster accepts connections.</p>
     /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>.</p>
@@ -439,8 +436,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_name = input;
-        self
+        self.db_subnet_group_name = input; self
     }
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
@@ -455,17 +451,16 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `tags`.
@@ -475,17 +470,16 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The tags to be assigned to the restored cluster.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be assigned to the restored cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the restored cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
@@ -515,8 +509,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is rejected.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -539,17 +532,16 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-        v.push(input.into());
-        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enable_cloudwatch_logs_exports = input;
-        self
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enable_cloudwatch_logs_exports = input; self
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
@@ -559,8 +551,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -579,8 +570,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
@@ -590,28 +580,37 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         &self.storage_type
     }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                restore_type: self.restore_type,
-                source_db_cluster_identifier: self.source_db_cluster_identifier,
-                restore_to_time: self.restore_to_time,
-                use_latest_restorable_time: self.use_latest_restorable_time,
-                port: self.port,
-                db_subnet_group_name: self.db_subnet_group_name,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                tags: self.tags,
-                kms_key_id: self.kms_key_id,
-                enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
-                deletion_protection: self.deletion_protection,
-                storage_type: self.storage_type,
-            },
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                restore_type: self.restore_type
+                ,
+                source_db_cluster_identifier: self.source_db_cluster_identifier
+                ,
+                restore_to_time: self.restore_to_time
+                ,
+                use_latest_restorable_time: self.use_latest_restorable_time
+                ,
+                port: self.port
+                ,
+                db_subnet_group_name: self.db_subnet_group_name
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                tags: self.tags
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                storage_type: self.storage_type
+                ,
+            }
         )
     }
 }
+

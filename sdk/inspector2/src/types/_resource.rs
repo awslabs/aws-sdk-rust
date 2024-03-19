@@ -3,7 +3,7 @@
 /// <p>Details about the resource involved in a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The type of resource.</p>
     pub r#type: crate::types::ResourceType,
     /// <p>The ID of the resource.</p>
@@ -13,34 +13,33 @@ pub struct Resource {
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> &crate::types::ResourceType {
+    pub fn r#type(&self) -> & crate::types::ResourceType {
         &self.r#type
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The partition of the resource.</p>
-    pub fn partition(&self) -> ::std::option::Option<&str> {
+    pub fn partition(&self) -> ::std::option::Option<& str> {
         self.partition.as_deref()
     }
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The tags attached to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>An object that contains details about the resource involved in a finding.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::ResourceDetails> {
         self.details.as_ref()
     }
 }
@@ -59,7 +58,7 @@ pub struct ResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) details: ::std::option::Option<crate::types::ResourceDetails>,
 }
 impl ResourceBuilder {
@@ -71,8 +70,7 @@ impl ResourceBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of resource.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -86,8 +84,7 @@ impl ResourceBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +97,7 @@ impl ResourceBuilder {
     }
     /// <p>The partition of the resource.</p>
     pub fn set_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
     }
     /// <p>The partition of the resource.</p>
     pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +110,7 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,17 +123,16 @@ impl ResourceBuilder {
     /// <p>The tags attached to the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags attached to the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags attached to the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>An object that contains details about the resource involved in a finding.</p>
@@ -148,8 +142,7 @@ impl ResourceBuilder {
     }
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
@@ -160,23 +153,28 @@ impl ResourceBuilder {
     /// - [`r#type`](crate::types::builders::ResourceBuilder::r#type)
     /// - [`id`](crate::types::builders::ResourceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Resource {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Resource",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Resource",
-                )
-            })?,
-            partition: self.partition,
-            region: self.region,
-            tags: self.tags,
-            details: self.details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Resource {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Resource")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Resource")
+                    )?
+                ,
+                partition: self.partition
+                ,
+                region: self.region
+                ,
+                tags: self.tags
+                ,
+                details: self.details
+                ,
+            }
+        )
     }
 }
+

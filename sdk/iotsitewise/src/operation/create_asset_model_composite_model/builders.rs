@@ -5,23 +5,20 @@ pub use crate::operation::create_asset_model_composite_model::_create_asset_mode
 
 impl CreateAssetModelCompositeModelInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_asset_model_composite_model();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_asset_model_composite_model();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateAssetModelCompositeModel`.
-///
+/// 
 /// <p>Creates a custom composite model from specified property and hierarchy definitions. There are two types of custom composite models, <code>inline</code> and <code>component-model-based</code>.</p>
 /// <p>Use component-model-based custom composite models to define standard, reusable components. A component-model-based custom composite model consists of a name, a description, and the ID of the component model it references. A component-model-based custom composite model has no properties of its own; its referenced component model provides its associated properties to any created assets. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// <p>Use inline custom composite models to organize the properties of an asset model. The properties of inline custom composite models are local to the asset model where they are included and can't be used to create multiple assets.</p>
@@ -30,33 +27,32 @@ impl CreateAssetModelCompositeModelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssetModelCompositeModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelInputBuilder,
+                    inner: crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
-    > for CreateAssetModelCompositeModelFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
+                    crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
+                > for CreateAssetModelCompositeModelFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
+                        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateAssetModelCompositeModelFluentBuilder {
     /// Creates a new `CreateAssetModelCompositeModel`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl CreateAssetModelCompositeModelFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModel::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModel::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModel::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModel::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput, crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the asset model this composite model is a part of.</p>
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
@@ -245,27 +232,25 @@ impl CreateAssetModelCompositeModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_model_properties`](Self::set_asset_model_composite_model_properties).
     ///
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_composite_model_properties(mut self, input: crate::types::AssetModelPropertyDefinition) -> Self {
         self.inner = self.inner.asset_model_composite_model_properties(input);
         self
     }
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_model_composite_model_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
-    ) -> Self {
+    pub fn set_asset_model_composite_model_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyDefinition>>) -> Self {
         self.inner = self.inner.set_asset_model_composite_model_properties(input);
         self
     }
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
+    pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyDefinition>> {
         self.inner.get_asset_model_composite_model_properties()
     }
 }
+

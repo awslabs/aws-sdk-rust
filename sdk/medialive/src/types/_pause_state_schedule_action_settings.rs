@@ -3,16 +3,17 @@
 /// Settings for the action to set pause state of a channel.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PauseStateScheduleActionSettings {
+pub struct PauseStateScheduleActionSettings  {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
+    pub pipelines: ::std::option::Option<::std::vec::Vec::<crate::types::PipelinePauseStateSettings>>,
 }
-impl PauseStateScheduleActionSettings {
+impl  PauseStateScheduleActionSettings  {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipelines.is_none()`.
-    pub fn pipelines(&self) -> &[crate::types::PipelinePauseStateSettings] {
-        self.pipelines.as_deref().unwrap_or_default()
+    pub fn pipelines(&self) -> & [crate::types::PipelinePauseStateSettings] {
+        self.pipelines.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PauseStateScheduleActionSettings {
@@ -26,7 +27,7 @@ impl PauseStateScheduleActionSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PauseStateScheduleActionSettingsBuilder {
-    pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
+    pub(crate) pipelines: ::std::option::Option<::std::vec::Vec::<crate::types::PipelinePauseStateSettings>>,
 }
 impl PauseStateScheduleActionSettingsBuilder {
     /// Appends an item to `pipelines`.
@@ -36,21 +37,24 @@ impl PauseStateScheduleActionSettingsBuilder {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
     pub fn pipelines(mut self, input: crate::types::PipelinePauseStateSettings) -> Self {
         let mut v = self.pipelines.unwrap_or_default();
-        v.push(input);
-        self.pipelines = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipelines = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>) -> Self {
-        self.pipelines = input;
-        self
+    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelinePauseStateSettings>>) -> Self {
+        self.pipelines = input; self
     }
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>> {
+    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelinePauseStateSettings>> {
         &self.pipelines
     }
     /// Consumes the builder and constructs a [`PauseStateScheduleActionSettings`](crate::types::PauseStateScheduleActionSettings).
     pub fn build(self) -> crate::types::PauseStateScheduleActionSettings {
-        crate::types::PauseStateScheduleActionSettings { pipelines: self.pipelines }
+        crate::types::PauseStateScheduleActionSettings {
+            pipelines: self.pipelines
+            ,
+        }
     }
 }
+

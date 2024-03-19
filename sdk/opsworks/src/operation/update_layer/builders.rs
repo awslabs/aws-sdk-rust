@@ -5,55 +5,51 @@ pub use crate::operation::update_layer::_update_layer_input::UpdateLayerInputBui
 
 impl UpdateLayerInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_layer::UpdateLayerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_layer::UpdateLayerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_layer();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_layer::UpdateLayerOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_layer::UpdateLayerError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_layer();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateLayer`.
-///
+/// 
 /// <p>Updates a specified layer.</p>
 /// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLayerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_layer::builders::UpdateLayerInputBuilder,
+                    inner: crate::operation::update_layer::builders::UpdateLayerInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_layer::UpdateLayerOutput,
-        crate::operation::update_layer::UpdateLayerError,
-    > for UpdateLayerFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_layer::UpdateLayerOutput,
-            crate::operation::update_layer::UpdateLayerError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_layer::UpdateLayerOutput,
+                    crate::operation::update_layer::UpdateLayerError,
+                > for UpdateLayerFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_layer::UpdateLayerOutput,
+                        crate::operation::update_layer::UpdateLayerError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateLayerFluentBuilder {
     /// Creates a new `UpdateLayer`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateLayerFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_layer::UpdateLayerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_layer::UpdateLayerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_layer::UpdateLayer::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_layer::UpdateLayer::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_layer::UpdateLayerOutput,
-        crate::operation::update_layer::UpdateLayerError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_layer::UpdateLayerOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_layer::UpdateLayerError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_layer::UpdateLayer::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_layer::UpdateLayer::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_layer::UpdateLayerOutput, crate::operation::update_layer::UpdateLayerError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The layer ID.</p>
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_id(input.into());
@@ -164,15 +151,12 @@ impl UpdateLayerFluentBuilder {
         self
     }
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::LayerAttributesKeys, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::LayerAttributesKeys, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
@@ -227,12 +211,12 @@ impl UpdateLayerFluentBuilder {
         self
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_custom_security_group_ids(input);
         self
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_custom_security_group_ids()
     }
     /// Appends an item to `Packages`.
@@ -245,12 +229,12 @@ impl UpdateLayerFluentBuilder {
         self
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_packages(input);
         self
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_packages()
     }
     /// Appends an item to `VolumeConfigurations`.
@@ -263,12 +247,12 @@ impl UpdateLayerFluentBuilder {
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeConfiguration>>) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeConfiguration>> {
         self.inner.get_volume_configurations()
     }
     /// <p>Whether to disable auto healing for the layer.</p>
@@ -376,3 +360,4 @@ impl UpdateLayerFluentBuilder {
         self.inner.get_lifecycle_event_configuration()
     }
 }
+

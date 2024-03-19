@@ -3,13 +3,13 @@
 /// <p>A collection of log configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogConfigurations {
+pub struct LogConfigurations  {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
     pub cloudwatch: ::std::option::Option<crate::types::LogConfiguration>,
 }
-impl LogConfigurations {
+impl  LogConfigurations  {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-    pub fn cloudwatch(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
+    pub fn cloudwatch(&self) -> ::std::option::Option<& crate::types::LogConfiguration> {
         self.cloudwatch.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LogConfigurationsBuilder {
     }
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
     pub fn set_cloudwatch(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
-        self.cloudwatch = input;
-        self
+        self.cloudwatch = input; self
     }
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
     pub fn get_cloudwatch(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
@@ -43,6 +42,10 @@ impl LogConfigurationsBuilder {
     }
     /// Consumes the builder and constructs a [`LogConfigurations`](crate::types::LogConfigurations).
     pub fn build(self) -> crate::types::LogConfigurations {
-        crate::types::LogConfigurations { cloudwatch: self.cloudwatch }
+        crate::types::LogConfigurations {
+            cloudwatch: self.cloudwatch
+            ,
+        }
     }
 }
+

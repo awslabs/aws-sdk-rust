@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStudioComponentsInput {
+pub struct ListStudioComponentsInput  {
     /// <p>The max number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the request to studio components that are in one of the given states.</p>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentState>>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub types: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentType>>,
 }
-impl ListStudioComponentsInput {
+impl  ListStudioComponentsInput  {
     /// <p>The max number of results to return in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters the request to studio components that are in one of the given states.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::StudioComponentState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::StudioComponentState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[crate::types::StudioComponentType] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [crate::types::StudioComponentType] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListStudioComponentsInput {
@@ -53,9 +55,9 @@ impl ListStudioComponentsInput {
 pub struct ListStudioComponentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentState>>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentType>>,
 }
 impl ListStudioComponentsInputBuilder {
     /// <p>The max number of results to return in the response.</p>
@@ -65,8 +67,7 @@ impl ListStudioComponentsInputBuilder {
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -79,8 +80,7 @@ impl ListStudioComponentsInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +93,16 @@ impl ListStudioComponentsInputBuilder {
     /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn states(mut self, input: crate::types::StudioComponentState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the request to studio components that are in one of the given states.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentState>>) -> Self {
+        self.states = input; self
     }
     /// <p>Filters the request to studio components that are in one of the given states.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentState>> {
         &self.states
     }
     /// <p>The studio ID.</p>
@@ -114,8 +113,7 @@ impl ListStudioComponentsInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,30 +126,34 @@ impl ListStudioComponentsInputBuilder {
     /// <p>Filters the request to studio components that are of one of the given types.</p>
     pub fn types(mut self, input: crate::types::StudioComponentType) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input);
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentType>>) -> Self {
+        self.types = input; self
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentType>> {
         &self.types
     }
     /// Consumes the builder and constructs a [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_studio_components::ListStudioComponentsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_studio_components::ListStudioComponentsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            states: self.states,
-            studio_id: self.studio_id,
-            types: self.types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_studio_components::ListStudioComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_studio_components::ListStudioComponentsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                states: self.states
+                ,
+                studio_id: self.studio_id
+                ,
+                types: self.types
+                ,
+            }
+        )
     }
 }
+

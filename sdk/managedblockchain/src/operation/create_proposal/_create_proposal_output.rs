@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProposalOutput {
+pub struct CreateProposalOutput  {
     /// <p>The unique identifier of the proposal.</p>
     pub proposal_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateProposalOutput {
+impl  CreateProposalOutput  {
     /// <p>The unique identifier of the proposal.</p>
-    pub fn proposal_id(&self) -> ::std::option::Option<&str> {
+    pub fn proposal_id(&self) -> ::std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProposalOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProposalOutput {
     /// Creates a new builder-style object to manufacture [`CreateProposalOutput`](crate::operation::create_proposal::CreateProposalOutput).
     pub fn builder() -> crate::operation::create_proposal::builders::CreateProposalOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateProposalOutputBuilder {
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.proposal_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProposalOutput`](crate::operation::create_proposal::CreateProposalOutput).
     pub fn build(self) -> crate::operation::create_proposal::CreateProposalOutput {
         crate::operation::create_proposal::CreateProposalOutput {
-            proposal_id: self.proposal_id,
+            proposal_id: self.proposal_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

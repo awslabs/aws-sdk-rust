@@ -21,11 +21,7 @@ impl ImportOptions {
     /// Tries to convert the enum instance into [`Neptune`](crate::types::ImportOptions::Neptune), extracting the inner [`NeptuneImportOptions`](crate::types::NeptuneImportOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_neptune(&self) -> ::std::result::Result<&crate::types::NeptuneImportOptions, &Self> {
-        if let ImportOptions::Neptune(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ImportOptions::Neptune(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Neptune`](crate::types::ImportOptions::Neptune).
     pub fn is_neptune(&self) -> bool {
@@ -36,3 +32,4 @@ impl ImportOptions {
         matches!(self, Self::Unknown)
     }
 }
+

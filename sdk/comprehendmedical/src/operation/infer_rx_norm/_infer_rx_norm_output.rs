@@ -2,35 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferRxNormOutput {
+pub struct InferRxNormOutput  {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub entities: ::std::vec::Vec<crate::types::RxNormEntity>,
+    pub entities: ::std::vec::Vec::<crate::types::RxNormEntity>,
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     pub model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl InferRxNormOutput {
+impl  InferRxNormOutput  {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn entities(&self) -> &[crate::types::RxNormEntity] {
-        use std::ops::Deref;
-        self.entities.deref()
+    pub fn entities(&self) -> & [crate::types::RxNormEntity] {
+        use std::ops::Deref; self.entities.deref()
     }
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
-    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InferRxNormOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InferRxNormOutput {
     /// Creates a new builder-style object to manufacture [`InferRxNormOutput`](crate::operation::infer_rx_norm::InferRxNormOutput).
     pub fn builder() -> crate::operation::infer_rx_norm::builders::InferRxNormOutputBuilder {
@@ -42,7 +41,7 @@ impl InferRxNormOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferRxNormOutputBuilder {
-    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::RxNormEntity>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec::<crate::types::RxNormEntity>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -55,17 +54,16 @@ impl InferRxNormOutputBuilder {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     pub fn entities(mut self, input: crate::types::RxNormEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormEntity>>) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RxNormEntity>>) -> Self {
+        self.entities = input; self
     }
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RxNormEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RxNormEntity>> {
         &self.entities
     }
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
@@ -75,8 +73,7 @@ impl InferRxNormOutputBuilder {
     }
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,38 +86,39 @@ impl InferRxNormOutputBuilder {
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::operation::infer_rx_norm::InferRxNormOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::infer_rx_norm::builders::InferRxNormOutputBuilder::entities)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormOutput {
-            entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entities",
-                    "entities was not specified but it is required when building InferRxNormOutput",
-                )
-            })?,
-            pagination_token: self.pagination_token,
-            model_version: self.model_version,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::infer_rx_norm::InferRxNormOutput {
+                entities: self.entities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entities", "entities was not specified but it is required when building InferRxNormOutput")
+                    )?
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

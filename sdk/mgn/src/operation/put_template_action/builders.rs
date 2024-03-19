@@ -5,54 +5,50 @@ pub use crate::operation::put_template_action::_put_template_action_input::PutTe
 
 impl PutTemplateActionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_template_action::PutTemplateActionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_template_action();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_template_action::PutTemplateActionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_template_action::PutTemplateActionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_template_action();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutTemplateAction`.
-///
+/// 
 /// <p>Put template post migration custom action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutTemplateActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_template_action::builders::PutTemplateActionInputBuilder,
+                    inner: crate::operation::put_template_action::builders::PutTemplateActionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_template_action::PutTemplateActionOutput,
-        crate::operation::put_template_action::PutTemplateActionError,
-    > for PutTemplateActionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_template_action::PutTemplateActionOutput,
-            crate::operation::put_template_action::PutTemplateActionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_template_action::PutTemplateActionOutput,
+                    crate::operation::put_template_action::PutTemplateActionError,
+                > for PutTemplateActionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_template_action::PutTemplateActionOutput,
+                        crate::operation::put_template_action::PutTemplateActionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutTemplateActionFluentBuilder {
     /// Creates a new `PutTemplateAction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PutTemplateActionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_template_action::PutTemplateActionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_template_action::PutTemplateActionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_template_action::PutTemplateAction::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_template_action::PutTemplateAction::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_template_action::PutTemplateActionOutput,
-        crate::operation::put_template_action::PutTemplateActionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_template_action::PutTemplateActionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_template_action::PutTemplateAction::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_template_action::PutTemplateAction::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_template_action::PutTemplateActionOutput, crate::operation::put_template_action::PutTemplateActionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Launch configuration template ID.</p>
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
@@ -239,26 +226,17 @@ impl PutTemplateActionFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Template post migration custom action parameters.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::SsmParameterStoreParameter>) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::SsmParameterStoreParameter>>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::SsmParameterStoreParameter>>> {
         self.inner.get_parameters()
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
@@ -285,17 +263,12 @@ impl PutTemplateActionFluentBuilder {
         self
     }
     /// <p>Template post migration custom action external parameters.</p>
-    pub fn set_external_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
-    ) -> Self {
+    pub fn set_external_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::SsmExternalParameter>>) -> Self {
         self.inner = self.inner.set_external_parameters(input);
         self
     }
     /// <p>Template post migration custom action external parameters.</p>
-    pub fn get_external_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
+    pub fn get_external_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::SsmExternalParameter>> {
         self.inner.get_external_parameters()
     }
     /// <p>Template post migration custom action description.</p>
@@ -327,3 +300,4 @@ impl PutTemplateActionFluentBuilder {
         self.inner.get_category()
     }
 }
+

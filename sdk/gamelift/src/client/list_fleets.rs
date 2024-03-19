@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFleets`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`build_id(impl Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::build_id) / [`set_build_id(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_build_id):<br>required: **false**<br><p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p><br>
     ///   - [`script_id(impl Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::script_id) / [`set_script_id(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_script_id):<br>required: **false**<br><p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p><br>
-    /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
+                            /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
     ///   - [`fleet_ids(Option<Vec::<String>>)`](crate::operation::list_fleets::ListFleetsOutput::fleet_ids): <p>A set of fleet IDs that match the list request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fleets::ListFleetsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
+                            /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
     pub fn list_fleets(&self) -> crate::operation::list_fleets::builders::ListFleetsFluentBuilder {
-        crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

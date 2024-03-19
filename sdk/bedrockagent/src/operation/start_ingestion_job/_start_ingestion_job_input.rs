@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartIngestionJobInput {
+pub struct StartIngestionJobInput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// Identifier for a resource.
@@ -12,21 +12,21 @@ pub struct StartIngestionJobInput {
     /// Description of the Resource.
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StartIngestionJobInput {
+impl  StartIngestionJobInput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// Client specified token used for idempotency checks
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartIngestionJobInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartIngestionJobInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl StartIngestionJobInputBuilder {
     }
     /// Client specified token used for idempotency checks
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Client specified token used for idempotency checks
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl StartIngestionJobInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`StartIngestionJobInput`](crate::operation::start_ingestion_job::StartIngestionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_ingestion_job::StartIngestionJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_ingestion_job::StartIngestionJobInput {
-            knowledge_base_id: self.knowledge_base_id,
-            data_source_id: self.data_source_id,
-            client_token: self.client_token,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_ingestion_job::StartIngestionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_ingestion_job::StartIngestionJobInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

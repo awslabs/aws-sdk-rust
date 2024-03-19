@@ -3,15 +3,15 @@
 /// <p>The relevance score of a generated audience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelevanceMetric {
+pub struct RelevanceMetric  {
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub audience_size: ::std::option::Option<crate::types::AudienceSize>,
     /// <p>The relevance score of the generated audience.</p>
     pub score: ::std::option::Option<f64>,
 }
-impl RelevanceMetric {
+impl  RelevanceMetric  {
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
-    pub fn audience_size(&self) -> ::std::option::Option<&crate::types::AudienceSize> {
+    pub fn audience_size(&self) -> ::std::option::Option<& crate::types::AudienceSize> {
         self.audience_size.as_ref()
     }
     /// <p>The relevance score of the generated audience.</p>
@@ -42,8 +42,7 @@ impl RelevanceMetricBuilder {
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub fn set_audience_size(mut self, input: ::std::option::Option<crate::types::AudienceSize>) -> Self {
-        self.audience_size = input;
-        self
+        self.audience_size = input; self
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub fn get_audience_size(&self) -> &::std::option::Option<crate::types::AudienceSize> {
@@ -56,8 +55,7 @@ impl RelevanceMetricBuilder {
     }
     /// <p>The relevance score of the generated audience.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The relevance score of the generated audience.</p>
     pub fn get_score(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl RelevanceMetricBuilder {
     /// Consumes the builder and constructs a [`RelevanceMetric`](crate::types::RelevanceMetric).
     pub fn build(self) -> crate::types::RelevanceMetric {
         crate::types::RelevanceMetric {
-            audience_size: self.audience_size,
-            score: self.score,
+            audience_size: self.audience_size
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

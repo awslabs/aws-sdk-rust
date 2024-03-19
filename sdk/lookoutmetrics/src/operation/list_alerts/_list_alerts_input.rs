@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAlertsInput {
+pub struct ListAlertsInput  {
     /// <p>The ARN of the alert's detector.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -10,13 +10,13 @@ pub struct ListAlertsInput {
     /// <p>The maximum number of results that will be displayed by the request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAlertsInput {
+impl  ListAlertsInput  {
     /// <p>The ARN of the alert's detector.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that will be displayed by the request.</p>
@@ -47,8 +47,7 @@ impl ListAlertsInputBuilder {
     }
     /// <p>The ARN of the alert's detector.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the alert's detector.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListAlertsInputBuilder {
     }
     /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl ListAlertsInputBuilder {
     }
     /// <p>The maximum number of results that will be displayed by the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that will be displayed by the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -84,10 +81,16 @@ impl ListAlertsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAlertsInput`](crate::operation::list_alerts::ListAlertsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_alerts::ListAlertsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_alerts::ListAlertsInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_alerts::ListAlertsInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

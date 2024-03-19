@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateChangeSetInput {
+pub struct GenerateChangeSetInput  {
     /// <p>The ID of the application associated with the change set.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The format for the change set.</p>
     pub changeset_format: ::std::option::Option<crate::types::OutputFormat>,
 }
-impl GenerateChangeSetInput {
+impl  GenerateChangeSetInput  {
     /// <p>The ID of the application associated with the change set.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The format for the change set.</p>
-    pub fn changeset_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
+    pub fn changeset_format(&self) -> ::std::option::Option<& crate::types::OutputFormat> {
         self.changeset_format.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl GenerateChangeSetInputBuilder {
     }
     /// <p>The ID of the application associated with the change set.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the application associated with the change set.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl GenerateChangeSetInputBuilder {
     }
     /// <p>The format for the change set.</p>
     pub fn set_changeset_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
-        self.changeset_format = input;
-        self
+        self.changeset_format = input; self
     }
     /// <p>The format for the change set.</p>
     pub fn get_changeset_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         &self.changeset_format
     }
     /// Consumes the builder and constructs a [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::generate_change_set::GenerateChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::generate_change_set::GenerateChangeSetInput {
-            app_id: self.app_id,
-            changeset_format: self.changeset_format,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_change_set::GenerateChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::generate_change_set::GenerateChangeSetInput {
+                app_id: self.app_id
+                ,
+                changeset_format: self.changeset_format
+                ,
+            }
+        )
     }
 }
+

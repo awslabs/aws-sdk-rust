@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataSourceFromRedshiftInput {
+pub struct CreateDataSourceFromRedshiftInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -43,13 +43,13 @@ pub struct CreateDataSourceFromRedshiftInput {
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
     pub compute_statistics: ::std::option::Option<bool>,
 }
-impl CreateDataSourceFromRedshiftInput {
+impl  CreateDataSourceFromRedshiftInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn data_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_name(&self) -> ::std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
@@ -76,7 +76,7 @@ impl CreateDataSourceFromRedshiftInput {
     /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
     /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
-    pub fn data_spec(&self) -> ::std::option::Option<&crate::types::RedshiftDataSpec> {
+    pub fn data_spec(&self) -> ::std::option::Option<& crate::types::RedshiftDataSpec> {
         self.data_spec.as_ref()
     }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
@@ -86,7 +86,7 @@ impl CreateDataSourceFromRedshiftInput {
     /// <li>
     /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
     /// </ul>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
@@ -120,8 +120,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_name = input;
-        self
+        self.data_source_name = input; self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +193,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn set_data_spec(mut self, input: ::std::option::Option<crate::types::RedshiftDataSpec>) -> Self {
-        self.data_spec = input;
-        self
+        self.data_spec = input; self
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
@@ -245,8 +242,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
     /// </ul>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
     /// <ul>
@@ -265,26 +261,28 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
     pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.compute_statistics = input;
-        self
+        self.compute_statistics = input; self
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
     pub fn get_compute_statistics(&self) -> &::std::option::Option<bool> {
         &self.compute_statistics
     }
     /// Consumes the builder and constructs a [`CreateDataSourceFromRedshiftInput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput {
-            data_source_id: self.data_source_id,
-            data_source_name: self.data_source_name,
-            data_spec: self.data_spec,
-            role_arn: self.role_arn,
-            compute_statistics: self.compute_statistics,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput {
+                data_source_id: self.data_source_id
+                ,
+                data_source_name: self.data_source_name
+                ,
+                data_spec: self.data_spec
+                ,
+                role_arn: self.role_arn
+                ,
+                compute_statistics: self.compute_statistics
+                ,
+            }
+        )
     }
 }
+

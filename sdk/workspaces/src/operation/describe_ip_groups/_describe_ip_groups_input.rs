@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIpGroupsInput {
+pub struct DescribeIpGroupsInput  {
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeIpGroupsInput {
+impl  DescribeIpGroupsInput  {
     /// <p>The identifiers of one or more IP access control groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
-    pub fn group_ids(&self) -> &[::std::string::String] {
-        self.group_ids.as_deref().unwrap_or_default()
+    pub fn group_ids(&self) -> & [::std::string::String] {
+        self.group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -37,7 +38,7 @@ impl DescribeIpGroupsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpGroupsInputBuilder {
-    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl DescribeIpGroupsInputBuilder {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_ids = input;
-        self
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_ids = input; self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_ids
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
@@ -69,8 +69,7 @@ impl DescribeIpGroupsInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,21 +82,24 @@ impl DescribeIpGroupsInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_ip_groups::DescribeIpGroupsInput {
-            group_ids: self.group_ids,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ip_groups::DescribeIpGroupsInput {
+                group_ids: self.group_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

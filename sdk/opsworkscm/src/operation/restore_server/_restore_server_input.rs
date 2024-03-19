@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreServerInput {
+pub struct RestoreServerInput  {
     /// <p>The ID of the backup that you want to use to restore a server.</p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server that you want to restore.</p>
@@ -12,21 +12,21 @@ pub struct RestoreServerInput {
     /// <p>The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key.</p>
     pub key_pair: ::std::option::Option<::std::string::String>,
 }
-impl RestoreServerInput {
+impl  RestoreServerInput  {
     /// <p>The ID of the backup that you want to use to restore a server.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>The name of the server that you want to restore.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key.</p>
-    pub fn key_pair(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair(&self) -> ::std::option::Option<& str> {
         self.key_pair.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl RestoreServerInputBuilder {
     }
     /// <p>The ID of the backup that you want to use to restore a server.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>The ID of the backup that you want to use to restore a server.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl RestoreServerInputBuilder {
     }
     /// <p>The name of the server that you want to restore.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server that you want to restore.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl RestoreServerInputBuilder {
     }
     /// <p>The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl RestoreServerInputBuilder {
     }
     /// <p>The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key.</p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key.</p>
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_pair
     }
     /// Consumes the builder and constructs a [`RestoreServerInput`](crate::operation::restore_server::RestoreServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::restore_server::RestoreServerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::restore_server::RestoreServerInput {
-            backup_id: self.backup_id,
-            server_name: self.server_name,
-            instance_type: self.instance_type,
-            key_pair: self.key_pair,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_server::RestoreServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_server::RestoreServerInput {
+                backup_id: self.backup_id
+                ,
+                server_name: self.server_name
+                ,
+                instance_type: self.instance_type
+                ,
+                key_pair: self.key_pair
+                ,
+            }
+        )
     }
 }
+

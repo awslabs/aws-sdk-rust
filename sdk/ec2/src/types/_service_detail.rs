@@ -3,23 +3,23 @@
 /// <p>Describes a VPC endpoint service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceDetail {
+pub struct ServiceDetail  {
     /// <p>The name of the service.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of service.</p>
-    pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
+    pub service_type: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceTypeDetail>>,
     /// <p>The Availability Zones in which the service is available.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The DNS names for the service.</p>
-    pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The private DNS name for the service.</p>
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
-    pub private_dns_names: ::std::option::Option<::std::vec::Vec<crate::types::PrivateDnsDetails>>,
+    pub private_dns_names: ::std::option::Option<::std::vec::Vec::<crate::types::PrivateDnsDetails>>,
     /// <p>Indicates whether the service supports endpoint policies.</p>
     pub vpc_endpoint_policy_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether VPC endpoint connection requests to the service must be accepted by the service owner.</p>
@@ -29,53 +29,57 @@ pub struct ServiceDetail {
     /// <p>The payer responsibility.</p>
     pub payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
     /// <p>The tags assigned to the service.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.</p>
     pub private_dns_name_verification_state: ::std::option::Option<crate::types::DnsNameState>,
     /// <p>The supported IP address types.</p>
-    pub supported_ip_address_types: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
+    pub supported_ip_address_types: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceConnectivityType>>,
 }
-impl ServiceDetail {
+impl  ServiceDetail  {
     /// <p>The name of the service.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The ID of the endpoint service.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The type of service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_type.is_none()`.
-    pub fn service_type(&self) -> &[crate::types::ServiceTypeDetail] {
-        self.service_type.as_deref().unwrap_or_default()
+    pub fn service_type(&self) -> & [crate::types::ServiceTypeDetail] {
+        self.service_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Availability Zones in which the service is available.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The DNS names for the service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_endpoint_dns_names.is_none()`.
-    pub fn base_endpoint_dns_names(&self) -> &[::std::string::String] {
-        self.base_endpoint_dns_names.as_deref().unwrap_or_default()
+    pub fn base_endpoint_dns_names(&self) -> & [::std::string::String] {
+        self.base_endpoint_dns_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The private DNS name for the service.</p>
-    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_dns_names.is_none()`.
-    pub fn private_dns_names(&self) -> &[crate::types::PrivateDnsDetails] {
-        self.private_dns_names.as_deref().unwrap_or_default()
+    pub fn private_dns_names(&self) -> & [crate::types::PrivateDnsDetails] {
+        self.private_dns_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the service supports endpoint policies.</p>
     pub fn vpc_endpoint_policy_supported(&self) -> ::std::option::Option<bool> {
@@ -90,25 +94,27 @@ impl ServiceDetail {
         self.manages_vpc_endpoints
     }
     /// <p>The payer responsibility.</p>
-    pub fn payer_responsibility(&self) -> ::std::option::Option<&crate::types::PayerResponsibility> {
+    pub fn payer_responsibility(&self) -> ::std::option::Option<& crate::types::PayerResponsibility> {
         self.payer_responsibility.as_ref()
     }
     /// <p>The tags assigned to the service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.</p>
-    pub fn private_dns_name_verification_state(&self) -> ::std::option::Option<&crate::types::DnsNameState> {
+    pub fn private_dns_name_verification_state(&self) -> ::std::option::Option<& crate::types::DnsNameState> {
         self.private_dns_name_verification_state.as_ref()
     }
     /// <p>The supported IP address types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ip_address_types.is_none()`.
-    pub fn supported_ip_address_types(&self) -> &[crate::types::ServiceConnectivityType] {
-        self.supported_ip_address_types.as_deref().unwrap_or_default()
+    pub fn supported_ip_address_types(&self) -> & [crate::types::ServiceConnectivityType] {
+        self.supported_ip_address_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServiceDetail {
@@ -124,19 +130,19 @@ impl ServiceDetail {
 pub struct ServiceDetailBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
-    pub(crate) service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_type: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceTypeDetail>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
-    pub(crate) base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
-    pub(crate) private_dns_names: ::std::option::Option<::std::vec::Vec<crate::types::PrivateDnsDetails>>,
+    pub(crate) private_dns_names: ::std::option::Option<::std::vec::Vec::<crate::types::PrivateDnsDetails>>,
     pub(crate) vpc_endpoint_policy_supported: ::std::option::Option<bool>,
     pub(crate) acceptance_required: ::std::option::Option<bool>,
     pub(crate) manages_vpc_endpoints: ::std::option::Option<bool>,
     pub(crate) payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) private_dns_name_verification_state: ::std::option::Option<crate::types::DnsNameState>,
-    pub(crate) supported_ip_address_types: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
+    pub(crate) supported_ip_address_types: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceConnectivityType>>,
 }
 impl ServiceDetailBuilder {
     /// <p>The name of the service.</p>
@@ -146,8 +152,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +165,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>The ID of the endpoint service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the endpoint service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,17 +178,16 @@ impl ServiceDetailBuilder {
     /// <p>The type of service.</p>
     pub fn service_type(mut self, input: crate::types::ServiceTypeDetail) -> Self {
         let mut v = self.service_type.unwrap_or_default();
-        v.push(input);
-        self.service_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of service.</p>
-    pub fn set_service_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>) -> Self {
-        self.service_type = input;
-        self
+    pub fn set_service_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceTypeDetail>>) -> Self {
+        self.service_type = input; self
     }
     /// <p>The type of service.</p>
-    pub fn get_service_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>> {
+    pub fn get_service_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceTypeDetail>> {
         &self.service_type
     }
     /// Appends an item to `availability_zones`.
@@ -194,17 +197,16 @@ impl ServiceDetailBuilder {
     /// <p>The Availability Zones in which the service is available.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Availability Zones in which the service is available.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The Availability Zones in which the service is available.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
@@ -214,8 +216,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,17 +229,16 @@ impl ServiceDetailBuilder {
     /// <p>The DNS names for the service.</p>
     pub fn base_endpoint_dns_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.base_endpoint_dns_names.unwrap_or_default();
-        v.push(input.into());
-        self.base_endpoint_dns_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.base_endpoint_dns_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The DNS names for the service.</p>
-    pub fn set_base_endpoint_dns_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.base_endpoint_dns_names = input;
-        self
+    pub fn set_base_endpoint_dns_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.base_endpoint_dns_names = input; self
     }
     /// <p>The DNS names for the service.</p>
-    pub fn get_base_endpoint_dns_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_base_endpoint_dns_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.base_endpoint_dns_names
     }
     /// <p>The private DNS name for the service.</p>
@@ -248,8 +248,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>The private DNS name for the service.</p>
     pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_dns_name = input;
-        self
+        self.private_dns_name = input; self
     }
     /// <p>The private DNS name for the service.</p>
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,17 +261,16 @@ impl ServiceDetailBuilder {
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
     pub fn private_dns_names(mut self, input: crate::types::PrivateDnsDetails) -> Self {
         let mut v = self.private_dns_names.unwrap_or_default();
-        v.push(input);
-        self.private_dns_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.private_dns_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
-    pub fn set_private_dns_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateDnsDetails>>) -> Self {
-        self.private_dns_names = input;
-        self
+    pub fn set_private_dns_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PrivateDnsDetails>>) -> Self {
+        self.private_dns_names = input; self
     }
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
-    pub fn get_private_dns_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateDnsDetails>> {
+    pub fn get_private_dns_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PrivateDnsDetails>> {
         &self.private_dns_names
     }
     /// <p>Indicates whether the service supports endpoint policies.</p>
@@ -282,8 +280,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>Indicates whether the service supports endpoint policies.</p>
     pub fn set_vpc_endpoint_policy_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.vpc_endpoint_policy_supported = input;
-        self
+        self.vpc_endpoint_policy_supported = input; self
     }
     /// <p>Indicates whether the service supports endpoint policies.</p>
     pub fn get_vpc_endpoint_policy_supported(&self) -> &::std::option::Option<bool> {
@@ -296,8 +293,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>Indicates whether VPC endpoint connection requests to the service must be accepted by the service owner.</p>
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.acceptance_required = input;
-        self
+        self.acceptance_required = input; self
     }
     /// <p>Indicates whether VPC endpoint connection requests to the service must be accepted by the service owner.</p>
     pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
@@ -310,8 +306,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
     pub fn set_manages_vpc_endpoints(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manages_vpc_endpoints = input;
-        self
+        self.manages_vpc_endpoints = input; self
     }
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
     pub fn get_manages_vpc_endpoints(&self) -> &::std::option::Option<bool> {
@@ -324,8 +319,7 @@ impl ServiceDetailBuilder {
     }
     /// <p>The payer responsibility.</p>
     pub fn set_payer_responsibility(mut self, input: ::std::option::Option<crate::types::PayerResponsibility>) -> Self {
-        self.payer_responsibility = input;
-        self
+        self.payer_responsibility = input; self
     }
     /// <p>The payer responsibility.</p>
     pub fn get_payer_responsibility(&self) -> &::std::option::Option<crate::types::PayerResponsibility> {
@@ -338,17 +332,16 @@ impl ServiceDetailBuilder {
     /// <p>The tags assigned to the service.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the service.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the service.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The verification state of the VPC endpoint service.</p>
@@ -360,8 +353,7 @@ impl ServiceDetailBuilder {
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.</p>
     pub fn set_private_dns_name_verification_state(mut self, input: ::std::option::Option<crate::types::DnsNameState>) -> Self {
-        self.private_dns_name_verification_state = input;
-        self
+        self.private_dns_name_verification_state = input; self
     }
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.</p>
@@ -375,37 +367,52 @@ impl ServiceDetailBuilder {
     /// <p>The supported IP address types.</p>
     pub fn supported_ip_address_types(mut self, input: crate::types::ServiceConnectivityType) -> Self {
         let mut v = self.supported_ip_address_types.unwrap_or_default();
-        v.push(input);
-        self.supported_ip_address_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_ip_address_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported IP address types.</p>
-    pub fn set_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>) -> Self {
-        self.supported_ip_address_types = input;
-        self
+    pub fn set_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceConnectivityType>>) -> Self {
+        self.supported_ip_address_types = input; self
     }
     /// <p>The supported IP address types.</p>
-    pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>> {
+    pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceConnectivityType>> {
         &self.supported_ip_address_types
     }
     /// Consumes the builder and constructs a [`ServiceDetail`](crate::types::ServiceDetail).
     pub fn build(self) -> crate::types::ServiceDetail {
         crate::types::ServiceDetail {
-            service_name: self.service_name,
-            service_id: self.service_id,
-            service_type: self.service_type,
-            availability_zones: self.availability_zones,
-            owner: self.owner,
-            base_endpoint_dns_names: self.base_endpoint_dns_names,
-            private_dns_name: self.private_dns_name,
-            private_dns_names: self.private_dns_names,
-            vpc_endpoint_policy_supported: self.vpc_endpoint_policy_supported,
-            acceptance_required: self.acceptance_required,
-            manages_vpc_endpoints: self.manages_vpc_endpoints,
-            payer_responsibility: self.payer_responsibility,
-            tags: self.tags,
-            private_dns_name_verification_state: self.private_dns_name_verification_state,
-            supported_ip_address_types: self.supported_ip_address_types,
+            service_name: self.service_name
+            ,
+            service_id: self.service_id
+            ,
+            service_type: self.service_type
+            ,
+            availability_zones: self.availability_zones
+            ,
+            owner: self.owner
+            ,
+            base_endpoint_dns_names: self.base_endpoint_dns_names
+            ,
+            private_dns_name: self.private_dns_name
+            ,
+            private_dns_names: self.private_dns_names
+            ,
+            vpc_endpoint_policy_supported: self.vpc_endpoint_policy_supported
+            ,
+            acceptance_required: self.acceptance_required
+            ,
+            manages_vpc_endpoints: self.manages_vpc_endpoints
+            ,
+            payer_responsibility: self.payer_responsibility
+            ,
+            tags: self.tags
+            ,
+            private_dns_name_verification_state: self.private_dns_name_verification_state
+            ,
+            supported_ip_address_types: self.supported_ip_address_types
+            ,
         }
     }
 }
+

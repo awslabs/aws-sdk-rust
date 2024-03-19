@@ -3,19 +3,19 @@
 /// <p>Represents a request to return the details of a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReceiptRuleInput {
+pub struct DescribeReceiptRuleInput  {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the receipt rule.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReceiptRuleInput {
+impl  DescribeReceiptRuleInput  {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
     /// <p>The name of the receipt rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeReceiptRuleInputBuilder {
     }
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl DescribeReceiptRuleInputBuilder {
     }
     /// <p>The name of the receipt rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the receipt rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_name
     }
     /// Consumes the builder and constructs a [`DescribeReceiptRuleInput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_receipt_rule::DescribeReceiptRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_receipt_rule::DescribeReceiptRuleInput {
-            rule_set_name: self.rule_set_name,
-            rule_name: self.rule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_receipt_rule::DescribeReceiptRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_receipt_rule::DescribeReceiptRuleInput {
+                rule_set_name: self.rule_set_name
+                ,
+                rule_name: self.rule_name
+                ,
+            }
+        )
     }
 }
+

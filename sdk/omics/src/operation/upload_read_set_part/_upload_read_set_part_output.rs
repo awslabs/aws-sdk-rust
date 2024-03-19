@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadReadSetPartOutput {
+pub struct UploadReadSetPartOutput  {
     /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
     pub checksum: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UploadReadSetPartOutput {
+impl  UploadReadSetPartOutput  {
     /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
-    pub fn checksum(&self) -> &str {
-        use std::ops::Deref;
-        self.checksum.deref()
+    pub fn checksum(&self) -> & str {
+        use std::ops::Deref; self.checksum.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UploadReadSetPartOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UploadReadSetPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
     pub fn builder() -> crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder {
@@ -42,37 +41,35 @@ impl UploadReadSetPartOutputBuilder {
     }
     /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>An identifier used to confirm that parts are being added to the intended upload.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`checksum`](crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder::checksum)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::upload_read_set_part::UploadReadSetPartOutput {
-            checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checksum",
-                    "checksum was not specified but it is required when building UploadReadSetPartOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_read_set_part::UploadReadSetPartOutput {
+                checksum: self.checksum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checksum", "checksum was not specified but it is required when building UploadReadSetPartOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

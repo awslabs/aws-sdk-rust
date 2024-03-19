@@ -3,13 +3,13 @@
 /// <p>The information needed to configure a delta time session window.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LateDataRuleConfiguration {
+pub struct LateDataRuleConfiguration  {
     /// <p>The information needed to configure a delta time session window.</p>
     pub delta_time_session_window_configuration: ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
 }
-impl LateDataRuleConfiguration {
+impl  LateDataRuleConfiguration  {
     /// <p>The information needed to configure a delta time session window.</p>
-    pub fn delta_time_session_window_configuration(&self) -> ::std::option::Option<&crate::types::DeltaTimeSessionWindowConfiguration> {
+    pub fn delta_time_session_window_configuration(&self) -> ::std::option::Option<& crate::types::DeltaTimeSessionWindowConfiguration> {
         self.delta_time_session_window_configuration.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl LateDataRuleConfigurationBuilder {
         self
     }
     /// <p>The information needed to configure a delta time session window.</p>
-    pub fn set_delta_time_session_window_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
-    ) -> Self {
-        self.delta_time_session_window_configuration = input;
-        self
+    pub fn set_delta_time_session_window_configuration(mut self, input: ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>) -> Self {
+        self.delta_time_session_window_configuration = input; self
     }
     /// <p>The information needed to configure a delta time session window.</p>
     pub fn get_delta_time_session_window_configuration(&self) -> &::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration> {
@@ -47,7 +43,9 @@ impl LateDataRuleConfigurationBuilder {
     /// Consumes the builder and constructs a [`LateDataRuleConfiguration`](crate::types::LateDataRuleConfiguration).
     pub fn build(self) -> crate::types::LateDataRuleConfiguration {
         crate::types::LateDataRuleConfiguration {
-            delta_time_session_window_configuration: self.delta_time_session_window_configuration,
+            delta_time_session_window_configuration: self.delta_time_session_window_configuration
+            ,
         }
     }
 }
+

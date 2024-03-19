@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchIsAuthorizedOutput {
+pub struct BatchIsAuthorizedOutput  {
     /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
-    pub results: ::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>,
+    pub results: ::std::vec::Vec::<crate::types::BatchIsAuthorizedOutputItem>,
     _request_id: Option<String>,
 }
-impl BatchIsAuthorizedOutput {
+impl  BatchIsAuthorizedOutput  {
     /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
-    pub fn results(&self) -> &[crate::types::BatchIsAuthorizedOutputItem] {
-        use std::ops::Deref;
-        self.results.deref()
+    pub fn results(&self) -> & [crate::types::BatchIsAuthorizedOutputItem] {
+        use std::ops::Deref; self.results.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchIsAuthorizedOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchIsAuthorizedOutput {
     /// Creates a new builder-style object to manufacture [`BatchIsAuthorizedOutput`](crate::operation::batch_is_authorized::BatchIsAuthorizedOutput).
     pub fn builder() -> crate::operation::batch_is_authorized::builders::BatchIsAuthorizedOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchIsAuthorizedOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchIsAuthorizedOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::BatchIsAuthorizedOutputItem>>,
     _request_id: Option<String>,
 }
 impl BatchIsAuthorizedOutputBuilder {
@@ -41,42 +40,41 @@ impl BatchIsAuthorizedOutputBuilder {
     /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
     pub fn results(mut self, input: crate::types::BatchIsAuthorizedOutputItem) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchIsAuthorizedOutputItem>>) -> Self {
+        self.results = input; self
     }
     /// <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and the policies that produced them.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchIsAuthorizedOutputItem>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchIsAuthorizedOutput`](crate::operation::batch_is_authorized::BatchIsAuthorizedOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::batch_is_authorized::builders::BatchIsAuthorizedOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_is_authorized::BatchIsAuthorizedOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_is_authorized::BatchIsAuthorizedOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building BatchIsAuthorizedOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_is_authorized::BatchIsAuthorizedOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_is_authorized::BatchIsAuthorizedOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building BatchIsAuthorizedOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

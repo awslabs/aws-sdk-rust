@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSecurityProfilePermissions`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`security_profile_id(impl Into<String>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::set_security_profile_id):<br>required: **true**<br><p>The identifier for the security profle.</p><br>
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput) with field(s):
+                            /// - On success, responds with [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput) with field(s):
     ///   - [`permissions(Option<Vec::<String>>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::permissions): <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
     ///   - [`last_modified_region(Option<String>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
-    /// - On failure, responds with [`SdkError<ListSecurityProfilePermissionsError>`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsError)
-    pub fn list_security_profile_permissions(
-        &self,
-    ) -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder {
-        crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSecurityProfilePermissionsError>`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsError)
+    pub fn list_security_profile_permissions(&self) -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder {
+                                crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

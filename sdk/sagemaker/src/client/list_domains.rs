@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomains`](crate::operation::list_domains::builders::ListDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p><br>
-    /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
     ///   - [`domains(Option<Vec::<DomainDetails>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>The list of domains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
+                            /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
     pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
-        crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

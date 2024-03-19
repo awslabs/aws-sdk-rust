@@ -3,7 +3,7 @@
 /// <p>The subtype containing details about the Codestar connection <code>Type</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeStarParameters {
+pub struct CodeStarParameters  {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
     pub connection_arn: ::std::string::String,
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo."</p>
@@ -13,26 +13,22 @@ pub struct CodeStarParameters {
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json."</p>
     pub artifact_path: ::std::string::String,
 }
-impl CodeStarParameters {
+impl  CodeStarParameters  {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn connection_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_arn.deref()
+    pub fn connection_arn(&self) -> & str {
+        use std::ops::Deref; self.connection_arn.deref()
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo."</p>
-    pub fn repository(&self) -> &str {
-        use std::ops::Deref;
-        self.repository.deref()
+    pub fn repository(&self) -> & str {
+        use std::ops::Deref; self.repository.deref()
     }
     /// <p>The specific branch where the artifact resides.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> & str {
+        use std::ops::Deref; self.branch.deref()
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json."</p>
-    pub fn artifact_path(&self) -> &str {
-        use std::ops::Deref;
-        self.artifact_path.deref()
+    pub fn artifact_path(&self) -> & str {
+        use std::ops::Deref; self.artifact_path.deref()
     }
 }
 impl CodeStarParameters {
@@ -60,8 +56,7 @@ impl CodeStarParametersBuilder {
     }
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl CodeStarParametersBuilder {
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo."</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo."</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl CodeStarParametersBuilder {
     }
     /// <p>The specific branch where the artifact resides.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The specific branch where the artifact resides.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl CodeStarParametersBuilder {
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json."</p>
     pub fn set_artifact_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_path = input;
-        self
+        self.artifact_path = input; self
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json."</p>
     pub fn get_artifact_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl CodeStarParametersBuilder {
     /// - [`branch`](crate::types::builders::CodeStarParametersBuilder::branch)
     /// - [`artifact_path`](crate::types::builders::CodeStarParametersBuilder::artifact_path)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeStarParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeStarParameters {
-            connection_arn: self.connection_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_arn",
-                    "connection_arn was not specified but it is required when building CodeStarParameters",
-                )
-            })?,
-            repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository",
-                    "repository was not specified but it is required when building CodeStarParameters",
-                )
-            })?,
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building CodeStarParameters",
-                )
-            })?,
-            artifact_path: self.artifact_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "artifact_path",
-                    "artifact_path was not specified but it is required when building CodeStarParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeStarParameters {
+                connection_arn: self.connection_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_arn", "connection_arn was not specified but it is required when building CodeStarParameters")
+                    )?
+                ,
+                repository: self.repository
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository", "repository was not specified but it is required when building CodeStarParameters")
+                    )?
+                ,
+                branch: self.branch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("branch", "branch was not specified but it is required when building CodeStarParameters")
+                    )?
+                ,
+                artifact_path: self.artifact_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("artifact_path", "artifact_path was not specified but it is required when building CodeStarParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

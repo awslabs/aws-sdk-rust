@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRelatedItemOutput {
+pub struct CreateRelatedItemOutput  {
     /// <p>The unique identifier of the related item.</p>
     pub related_item_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
     pub related_item_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateRelatedItemOutput {
+impl  CreateRelatedItemOutput  {
     /// <p>The unique identifier of the related item.</p>
-    pub fn related_item_id(&self) -> &str {
-        use std::ops::Deref;
-        self.related_item_id.deref()
+    pub fn related_item_id(&self) -> & str {
+        use std::ops::Deref; self.related_item_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn related_item_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.related_item_arn.deref()
+    pub fn related_item_arn(&self) -> & str {
+        use std::ops::Deref; self.related_item_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRelatedItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
     pub fn builder() -> crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateRelatedItemOutputBuilder {
     }
     /// <p>The unique identifier of the related item.</p>
     pub fn set_related_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_item_id = input;
-        self
+        self.related_item_id = input; self
     }
     /// <p>The unique identifier of the related item.</p>
     pub fn get_related_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,43 +62,41 @@ impl CreateRelatedItemOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
     pub fn set_related_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_item_arn = input;
-        self
+        self.related_item_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
     pub fn get_related_item_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_item_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`related_item_id`](crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder::related_item_id)
     /// - [`related_item_arn`](crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder::related_item_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_related_item::CreateRelatedItemOutput {
-            related_item_id: self.related_item_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "related_item_id",
-                    "related_item_id was not specified but it is required when building CreateRelatedItemOutput",
-                )
-            })?,
-            related_item_arn: self.related_item_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "related_item_arn",
-                    "related_item_arn was not specified but it is required when building CreateRelatedItemOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_related_item::CreateRelatedItemOutput {
+                related_item_id: self.related_item_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("related_item_id", "related_item_id was not specified but it is required when building CreateRelatedItemOutput")
+                    )?
+                ,
+                related_item_arn: self.related_item_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("related_item_arn", "related_item_arn was not specified but it is required when building CreateRelatedItemOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

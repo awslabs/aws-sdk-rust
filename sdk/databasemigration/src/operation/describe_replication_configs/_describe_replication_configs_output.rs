@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationConfigsOutput {
+pub struct DescribeReplicationConfigsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    pub replication_configs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
+    pub replication_configs: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfig>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicationConfigsOutput {
+impl  DescribeReplicationConfigsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_configs.is_none()`.
-    pub fn replication_configs(&self) -> &[crate::types::ReplicationConfig] {
-        self.replication_configs.as_deref().unwrap_or_default()
+    pub fn replication_configs(&self) -> & [crate::types::ReplicationConfig] {
+        self.replication_configs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicationConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicationConfigsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigsOutput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput).
     pub fn builder() -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReplicationConfigsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_configs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
+    pub(crate) replication_configs: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfig>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationConfigsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReplicationConfigsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeReplicationConfigsOutputBuilder {
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
     pub fn replication_configs(mut self, input: crate::types::ReplicationConfig) -> Self {
         let mut v = self.replication_configs.unwrap_or_default();
-        v.push(input);
-        self.replication_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    pub fn set_replication_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>) -> Self {
-        self.replication_configs = input;
-        self
+    pub fn set_replication_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfig>>) -> Self {
+        self.replication_configs = input; self
     }
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    pub fn get_replication_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>> {
+    pub fn get_replication_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfig>> {
         &self.replication_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigsOutput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput).
     pub fn build(self) -> crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput {
         crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput {
-            marker: self.marker,
-            replication_configs: self.replication_configs,
+            marker: self.marker
+            ,
+            replication_configs: self.replication_configs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

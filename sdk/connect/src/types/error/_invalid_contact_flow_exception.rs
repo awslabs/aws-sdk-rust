@@ -3,32 +3,31 @@
 /// <p>The flow is not valid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidContactFlowException {
+pub struct InvalidContactFlowException  {
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    pub problems: ::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>>,
+    pub problems: ::std::option::Option<::std::vec::Vec::<crate::types::ProblemDetail>>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl InvalidContactFlowException {
+impl  InvalidContactFlowException  {
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.problems.is_none()`.
-    pub fn problems(&self) -> &[crate::types::ProblemDetail] {
-        self.problems.as_deref().unwrap_or_default()
+    pub fn problems(&self) -> & [crate::types::ProblemDetail] {
+        self.problems.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InvalidContactFlowException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidContactFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidContactFlowException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +42,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvalidContactF
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidContactFlowException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidContactFlowException {
     /// Creates a new builder-style object to manufacture [`InvalidContactFlowException`](crate::types::error::InvalidContactFlowException).
@@ -58,7 +55,7 @@ impl InvalidContactFlowException {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidContactFlowExceptionBuilder {
-    pub(crate) problems: ::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>>,
+    pub(crate) problems: ::std::option::Option<::std::vec::Vec::<crate::types::ProblemDetail>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
@@ -70,17 +67,16 @@ impl InvalidContactFlowExceptionBuilder {
     /// <p>The problems with the flow. Please fix before trying again.</p>
     pub fn problems(mut self, input: crate::types::ProblemDetail) -> Self {
         let mut v = self.problems.unwrap_or_default();
-        v.push(input);
-        self.problems = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.problems = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    pub fn set_problems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>>) -> Self {
-        self.problems = input;
-        self
+    pub fn set_problems(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProblemDetail>>) -> Self {
+        self.problems = input; self
     }
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    pub fn get_problems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProblemDetail>> {
+    pub fn get_problems(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProblemDetail>> {
         &self.problems
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -90,30 +86,32 @@ impl InvalidContactFlowExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`InvalidContactFlowException`](crate::types::error::InvalidContactFlowException).
     pub fn build(self) -> crate::types::error::InvalidContactFlowException {
         crate::types::error::InvalidContactFlowException {
-            problems: self.problems,
-            message: self.message,
+            problems: self.problems
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDirectories`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
     ///   - [`state(DirectoryState)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::state) / [`set_state(Option<DirectoryState>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_state):<br>required: **false**<br><p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p><br>
-    /// - On success, responds with [`ListDirectoriesOutput`](crate::operation::list_directories::ListDirectoriesOutput) with field(s):
+                            /// - On success, responds with [`ListDirectoriesOutput`](crate::operation::list_directories::ListDirectoriesOutput) with field(s):
     ///   - [`directories(Vec::<Directory>)`](crate::operation::list_directories::ListDirectoriesOutput::directories): <p>Lists all directories that are associated with your account in pagination fashion.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_directories::ListDirectoriesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListDirectoriesError>`](crate::operation::list_directories::ListDirectoriesError)
+                            /// - On failure, responds with [`SdkError<ListDirectoriesError>`](crate::operation::list_directories::ListDirectoriesError)
     pub fn list_directories(&self) -> crate::operation::list_directories::builders::ListDirectoriesFluentBuilder {
-        crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

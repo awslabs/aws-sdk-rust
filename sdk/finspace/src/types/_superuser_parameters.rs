@@ -3,7 +3,7 @@
 /// <p>Configuration information for the superuser.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SuperuserParameters {
+pub struct SuperuserParameters  {
     /// <p>The email address of the superuser.</p>
     pub email_address: ::std::string::String,
     /// <p>The first name of the superuser.</p>
@@ -11,24 +11,21 @@ pub struct SuperuserParameters {
     /// <p>The last name of the superuser.</p>
     pub last_name: ::std::string::String,
 }
-impl SuperuserParameters {
+impl  SuperuserParameters  {
     /// <p>The email address of the superuser.</p>
-    pub fn email_address(&self) -> &str {
-        use std::ops::Deref;
-        self.email_address.deref()
+    pub fn email_address(&self) -> & str {
+        use std::ops::Deref; self.email_address.deref()
     }
     /// <p>The first name of the superuser.</p>
-    pub fn first_name(&self) -> &str {
-        use std::ops::Deref;
-        self.first_name.deref()
+    pub fn first_name(&self) -> & str {
+        use std::ops::Deref; self.first_name.deref()
     }
     /// <p>The last name of the superuser.</p>
-    pub fn last_name(&self) -> &str {
-        use std::ops::Deref;
-        self.last_name.deref()
+    pub fn last_name(&self) -> & str {
+        use std::ops::Deref; self.last_name.deref()
     }
 }
-impl ::std::fmt::Debug for SuperuserParameters {
+impl  ::std::fmt::Debug for SuperuserParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SuperuserParameters");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
@@ -61,8 +58,7 @@ impl SuperuserParametersBuilder {
     }
     /// <p>The email address of the superuser.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address of the superuser.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +72,7 @@ impl SuperuserParametersBuilder {
     }
     /// <p>The first name of the superuser.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name of the superuser.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +86,7 @@ impl SuperuserParametersBuilder {
     }
     /// <p>The last name of the superuser.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name of the superuser.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,26 +98,25 @@ impl SuperuserParametersBuilder {
     /// - [`first_name`](crate::types::builders::SuperuserParametersBuilder::first_name)
     /// - [`last_name`](crate::types::builders::SuperuserParametersBuilder::last_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SuperuserParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SuperuserParameters {
-            email_address: self.email_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "email_address",
-                    "email_address was not specified but it is required when building SuperuserParameters",
-                )
-            })?,
-            first_name: self.first_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "first_name",
-                    "first_name was not specified but it is required when building SuperuserParameters",
-                )
-            })?,
-            last_name: self.last_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_name",
-                    "last_name was not specified but it is required when building SuperuserParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SuperuserParameters {
+                email_address: self.email_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("email_address", "email_address was not specified but it is required when building SuperuserParameters")
+                    )?
+                ,
+                first_name: self.first_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("first_name", "first_name was not specified but it is required when building SuperuserParameters")
+                    )?
+                ,
+                last_name: self.last_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_name", "last_name was not specified but it is required when building SuperuserParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SuperuserParametersBuilder {
@@ -135,3 +128,4 @@ impl ::std::fmt::Debug for SuperuserParametersBuilder {
         formatter.finish()
     }
 }
+

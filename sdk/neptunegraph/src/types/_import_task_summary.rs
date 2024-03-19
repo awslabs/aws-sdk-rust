@@ -3,7 +3,7 @@
 /// <p>Details about an import task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTaskSummary {
+pub struct ImportTaskSummary  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the import task.</p>
@@ -17,32 +17,29 @@ pub struct ImportTaskSummary {
     /// <p>Status of the import task.</p>
     pub status: crate::types::ImportTaskStatus,
 }
-impl ImportTaskSummary {
+impl  ImportTaskSummary  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_id(&self) -> ::std::option::Option<&str> {
+    pub fn graph_id(&self) -> ::std::option::Option<& str> {
         self.graph_id.as_deref()
     }
     /// <p>The unique identifier of the import task.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> & str {
+        use std::ops::Deref; self.task_id.deref()
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>Status of the import task.</p>
-    pub fn status(&self) -> &crate::types::ImportTaskStatus {
+    pub fn status(&self) -> & crate::types::ImportTaskStatus {
         &self.status
     }
 }
@@ -72,8 +69,7 @@ impl ImportTaskSummaryBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_id = input;
-        self
+        self.graph_id = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl ImportTaskSummaryBuilder {
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl ImportTaskSummaryBuilder {
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +110,7 @@ impl ImportTaskSummaryBuilder {
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -131,8 +124,7 @@ impl ImportTaskSummaryBuilder {
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +138,7 @@ impl ImportTaskSummaryBuilder {
     }
     /// <p>Status of the import task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportTaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the import task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportTaskStatus> {
@@ -160,33 +151,34 @@ impl ImportTaskSummaryBuilder {
     /// - [`role_arn`](crate::types::builders::ImportTaskSummaryBuilder::role_arn)
     /// - [`status`](crate::types::builders::ImportTaskSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportTaskSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportTaskSummary {
-            graph_id: self.graph_id,
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building ImportTaskSummary",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building ImportTaskSummary",
-                )
-            })?,
-            format: self.format,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building ImportTaskSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ImportTaskSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportTaskSummary {
+                graph_id: self.graph_id
+                ,
+                task_id: self.task_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_id", "task_id was not specified but it is required when building ImportTaskSummary")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building ImportTaskSummary")
+                    )?
+                ,
+                format: self.format
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building ImportTaskSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ImportTaskSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachClassicLinkVpcInput {
+pub struct AttachClassicLinkVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the EC2-Classic instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl AttachClassicLinkVpcInput {
+impl  AttachClassicLinkVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the EC2-Classic instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl AttachClassicLinkVpcInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachClassicLinkVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -56,8 +57,7 @@ impl AttachClassicLinkVpcInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -70,17 +70,16 @@ impl AttachClassicLinkVpcInputBuilder {
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// <p>The ID of the EC2-Classic instance.</p>
@@ -91,8 +90,7 @@ impl AttachClassicLinkVpcInputBuilder {
     }
     /// <p>The ID of the EC2-Classic instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the EC2-Classic instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,23 +104,26 @@ impl AttachClassicLinkVpcInputBuilder {
     }
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
     /// Consumes the builder and constructs a [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput {
-            dry_run: self.dry_run,
-            groups: self.groups,
-            instance_id: self.instance_id,
-            vpc_id: self.vpc_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput {
+                dry_run: self.dry_run
+                ,
+                groups: self.groups
+                ,
+                instance_id: self.instance_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+            }
+        )
     }
 }
+

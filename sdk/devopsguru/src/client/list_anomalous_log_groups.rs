@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnomalousLogGroups`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`insight_id(impl Into<String>)`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::insight_id) / [`set_insight_id(Option<String>)`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::set_insight_id):<br>required: **true**<br><p>The ID of the insight containing the log groups.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
-    /// - On success, responds with [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput) with field(s):
     ///   - [`insight_id(String)`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput::insight_id): <p>The ID of the insight containing the log groups.</p>
     ///   - [`anomalous_log_groups(Vec::<AnomalousLogGroup>)`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput::anomalous_log_groups): <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListAnomalousLogGroupsError>`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsError)
+                            /// - On failure, responds with [`SdkError<ListAnomalousLogGroupsError>`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsError)
     pub fn list_anomalous_log_groups(&self) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder {
-        crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectPiiEntitiesInput {
+pub struct DetectPiiEntitiesInput  {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
-impl DetectPiiEntitiesInput {
+impl  DetectPiiEntitiesInput  {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DetectPiiEntitiesInputBuilder {
     }
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DetectPiiEntitiesInputBuilder {
     }
     /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`DetectPiiEntitiesInput`](crate::operation::detect_pii_entities::DetectPiiEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detect_pii_entities::DetectPiiEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detect_pii_entities::DetectPiiEntitiesInput {
-            text: self.text,
-            language_code: self.language_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_pii_entities::DetectPiiEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_pii_entities::DetectPiiEntitiesInput {
+                text: self.text
+                ,
+                language_code: self.language_code
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxVolumeInput {
+pub struct GetKxVolumeInput  {
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKxVolumeInput {
+impl  GetKxVolumeInput  {
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the volume.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetKxVolumeInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetKxVolumeInput`](crate::operation::get_kx_volume::GetKxVolumeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_volume::GetKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_volume::GetKxVolumeInput {
-            environment_id: self.environment_id,
-            volume_name: self.volume_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_volume::GetKxVolumeInput {
+                environment_id: self.environment_id
+                ,
+                volume_name: self.volume_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket name.</p>
     pub bucket: ::std::string::String,
     /// <p>The unique name of the object in the bucket.</p>
@@ -11,18 +11,17 @@ pub struct S3Location {
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
     pub bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The unique name of the object in the bucket.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
-    pub fn bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> ::std::option::Option<& str> {
         self.bucket_owner.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl S3LocationBuilder {
     }
     /// <p>The unique name of the object in the bucket.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The unique name of the object in the bucket.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
     pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_owner = input;
-        self
+        self.bucket_owner = input; self
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
     pub fn get_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl S3LocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3LocationBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Location {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3Location",
-                )
-            })?,
-            key: self.key,
-            bucket_owner: self.bucket_owner,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Location {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3Location")
+                    )?
+                ,
+                key: self.key
+                ,
+                bucket_owner: self.bucket_owner
+                ,
+            }
+        )
     }
 }
+

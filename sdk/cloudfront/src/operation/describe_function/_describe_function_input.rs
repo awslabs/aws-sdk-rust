@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFunctionInput {
+pub struct DescribeFunctionInput  {
     /// <p>The name of the function that you are getting information about.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: ::std::option::Option<crate::types::FunctionStage>,
 }
-impl DescribeFunctionInput {
+impl  DescribeFunctionInput  {
     /// <p>The name of the function that you are getting information about.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> ::std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeFunctionInputBuilder {
     }
     /// <p>The name of the function that you are getting information about.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the function that you are getting information about.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeFunctionInputBuilder {
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
         &self.stage
     }
     /// Consumes the builder and constructs a [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_function::DescribeFunctionInput {
-            name: self.name,
-            stage: self.stage,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_function::DescribeFunctionInput {
+                name: self.name
+                ,
+                stage: self.stage
+                ,
+            }
+        )
     }
 }
+

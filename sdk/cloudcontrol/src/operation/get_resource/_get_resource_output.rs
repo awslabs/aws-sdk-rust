@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceOutput {
+pub struct GetResourceOutput  {
     /// <p>The name of the resource type.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about a provisioned resource.</p>
     pub resource_description: ::std::option::Option<crate::types::ResourceDescription>,
     _request_id: Option<String>,
 }
-impl GetResourceOutput {
+impl  GetResourceOutput  {
     /// <p>The name of the resource type.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>Represents information about a provisioned resource.</p>
-    pub fn resource_description(&self) -> ::std::option::Option<&crate::types::ResourceDescription> {
+    pub fn resource_description(&self) -> ::std::option::Option<& crate::types::ResourceDescription> {
         self.resource_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::operation::get_resource::GetResourceOutput).
     pub fn builder() -> crate::operation::get_resource::builders::GetResourceOutputBuilder {
@@ -47,8 +47,7 @@ impl GetResourceOutputBuilder {
     }
     /// <p>The name of the resource type.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the resource type.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetResourceOutputBuilder {
     }
     /// <p>Represents information about a provisioned resource.</p>
     pub fn set_resource_description(mut self, input: ::std::option::Option<crate::types::ResourceDescription>) -> Self {
-        self.resource_description = input;
-        self
+        self.resource_description = input; self
     }
     /// <p>Represents information about a provisioned resource.</p>
     pub fn get_resource_description(&self) -> &::std::option::Option<crate::types::ResourceDescription> {
         &self.resource_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetResourceOutput`](crate::operation::get_resource::GetResourceOutput).
     pub fn build(self) -> crate::operation::get_resource::GetResourceOutput {
         crate::operation::get_resource::GetResourceOutput {
-            type_name: self.type_name,
-            resource_description: self.resource_description,
+            type_name: self.type_name
+            ,
+            resource_description: self.resource_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUserPoolClients`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool where you want to list user pool clients.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results you want the request to return when listing the user pool clients.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput) with field(s):
+                            /// - On success, responds with [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput) with field(s):
     ///   - [`user_pool_clients(Option<Vec::<UserPoolClientDescription>>)`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput::user_pool_clients): <p>The user pool clients in the response that lists user pool clients.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListUserPoolClientsError>`](crate::operation::list_user_pool_clients::ListUserPoolClientsError)
+                            /// - On failure, responds with [`SdkError<ListUserPoolClientsError>`](crate::operation::list_user_pool_clients::ListUserPoolClientsError)
     pub fn list_user_pool_clients(&self) -> crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder {
-        crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_user_pool_clients::builders::ListUserPoolClientsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

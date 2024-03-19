@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceScanResourcesInput {
+pub struct ListResourceScanResourcesInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub resource_scan_id: ::std::option::Option<::std::string::String>,
     /// <p>If specified, the returned resources will have the specified resource identifier (or one of them in the case where the resource has multiple identifiers).</p>
@@ -18,29 +18,29 @@ pub struct ListResourceScanResourcesInput {
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanResources</code> API action will return at most 100 results in each response. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListResourceScanResourcesInput {
+impl  ListResourceScanResourcesInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-    pub fn resource_scan_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_scan_id(&self) -> ::std::option::Option<& str> {
         self.resource_scan_id.as_deref()
     }
     /// <p>If specified, the returned resources will have the specified resource identifier (or one of them in the case where the resource has multiple identifiers).</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>If specified, the returned resources will be of any of the resource types with the specified prefix.</p>
-    pub fn resource_type_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type_prefix(&self) -> ::std::option::Option<& str> {
         self.resource_type_prefix.as_deref()
     }
     /// <p>If specified, the returned resources will have a matching tag key.</p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>If specified, the returned resources will have a matching tag value.</p>
-    pub fn tag_value(&self) -> ::std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<& str> {
         self.tag_value.as_deref()
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanResources</code> API action will return at most 100 results in each response. The maximum value is 100.</p>
@@ -76,8 +76,7 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn set_resource_scan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_scan_id = input;
-        self
+        self.resource_scan_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn get_resource_scan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>If specified, the returned resources will have the specified resource identifier (or one of them in the case where the resource has multiple identifiers).</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>If specified, the returned resources will have the specified resource identifier (or one of them in the case where the resource has multiple identifiers).</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>If specified, the returned resources will be of any of the resource types with the specified prefix.</p>
     pub fn set_resource_type_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type_prefix = input;
-        self
+        self.resource_type_prefix = input; self
     }
     /// <p>If specified, the returned resources will be of any of the resource types with the specified prefix.</p>
     pub fn get_resource_type_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>If specified, the returned resources will have a matching tag key.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>If specified, the returned resources will have a matching tag key.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>If specified, the returned resources will have a matching tag value.</p>
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_value = input;
-        self
+        self.tag_value = input; self
     }
     /// <p>If specified, the returned resources will have a matching tag value.</p>
     pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,28 +154,32 @@ impl ListResourceScanResourcesInputBuilder {
     }
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanResources</code> API action will return at most 100 results in each response. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanResources</code> API action will return at most 100 results in each response. The maximum value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListResourceScanResourcesInput`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_scan_resources::ListResourceScanResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_resource_scan_resources::ListResourceScanResourcesInput {
-            resource_scan_id: self.resource_scan_id,
-            resource_identifier: self.resource_identifier,
-            resource_type_prefix: self.resource_type_prefix,
-            tag_key: self.tag_key,
-            tag_value: self.tag_value,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_scan_resources::ListResourceScanResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_scan_resources::ListResourceScanResourcesInput {
+                resource_scan_id: self.resource_scan_id
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type_prefix: self.resource_type_prefix
+                ,
+                tag_key: self.tag_key
+                ,
+                tag_value: self.tag_value
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

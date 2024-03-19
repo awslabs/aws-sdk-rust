@@ -2,16 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSlackChannelConfigurations`](crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p><br>
-    /// - On success, responds with [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput::next_token): <p>The point where pagination should resume when the response returns only partial results.</p>
     ///   - [`slack_channel_configurations(Vec::<SlackChannelConfiguration>)`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput::slack_channel_configurations): <p>The configurations for a Slack channel.</p>
-    /// - On failure, responds with [`SdkError<ListSlackChannelConfigurationsError>`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError)
-    pub fn list_slack_channel_configurations(
-        &self,
-    ) -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder {
-        crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSlackChannelConfigurationsError>`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError)
+    pub fn list_slack_channel_configurations(&self) -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder {
+                                crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

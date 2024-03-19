@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusters`](crate::operation::list_clusters::builders::ListClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_name_filter(impl Into<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::cluster_name_filter) / [`set_cluster_name_filter(Option<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_cluster_name_filter):<br>required: **false**<br><p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
-    /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
+                            /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
     ///   - [`cluster_info_list(Option<Vec::<ClusterInfo>>)`](crate::operation::list_clusters::ListClustersOutput::cluster_info_list): <p>Information on each of the MSK clusters in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
-    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
+                            /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
     pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

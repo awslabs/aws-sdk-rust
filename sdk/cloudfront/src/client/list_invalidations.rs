@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInvalidations`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`distribution_id(impl Into<String>)`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::set_distribution_id):<br>required: **true**<br><p>The distribution's ID.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::set_marker):<br>required: **false**<br><p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of invalidation batches that you want in the response body.</p><br>
-    /// - On success, responds with [`ListInvalidationsOutput`](crate::operation::list_invalidations::ListInvalidationsOutput) with field(s):
+                            /// - On success, responds with [`ListInvalidationsOutput`](crate::operation::list_invalidations::ListInvalidationsOutput) with field(s):
     ///   - [`invalidation_list(Option<InvalidationList>)`](crate::operation::list_invalidations::ListInvalidationsOutput::invalidation_list): <p>Information about invalidation batches.</p>
-    /// - On failure, responds with [`SdkError<ListInvalidationsError>`](crate::operation::list_invalidations::ListInvalidationsError)
+                            /// - On failure, responds with [`SdkError<ListInvalidationsError>`](crate::operation::list_invalidations::ListInvalidationsError)
     pub fn list_invalidations(&self) -> crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder {
-        crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_invalidations::builders::ListInvalidationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

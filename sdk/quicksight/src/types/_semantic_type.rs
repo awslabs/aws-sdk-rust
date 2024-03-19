@@ -3,57 +3,59 @@
 /// <p>A structure that represents a semantic type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SemanticType {
+pub struct SemanticType  {
     /// <p>The semantic type name.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic type sub type name.</p>
     pub sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic type parameters.</p>
-    pub type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub type_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The semantic type truthy cell value.</p>
     pub truthy_cell_value: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the true cell value.</p>
-    pub truthy_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub truthy_cell_value_synonyms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The semantic type falsey cell value.</p>
     pub falsey_cell_value: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the false cell value.</p>
-    pub falsey_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub falsey_cell_value_synonyms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SemanticType {
+impl  SemanticType  {
     /// <p>The semantic type name.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The semantic type sub type name.</p>
-    pub fn sub_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn sub_type_name(&self) -> ::std::option::Option<& str> {
         self.sub_type_name.as_deref()
     }
     /// <p>The semantic type parameters.</p>
-    pub fn type_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn type_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.type_parameters.as_ref()
     }
     /// <p>The semantic type truthy cell value.</p>
-    pub fn truthy_cell_value(&self) -> ::std::option::Option<&str> {
+    pub fn truthy_cell_value(&self) -> ::std::option::Option<& str> {
         self.truthy_cell_value.as_deref()
     }
     /// <p>The other names or aliases for the true cell value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.truthy_cell_value_synonyms.is_none()`.
-    pub fn truthy_cell_value_synonyms(&self) -> &[::std::string::String] {
-        self.truthy_cell_value_synonyms.as_deref().unwrap_or_default()
+    pub fn truthy_cell_value_synonyms(&self) -> & [::std::string::String] {
+        self.truthy_cell_value_synonyms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The semantic type falsey cell value.</p>
-    pub fn falsey_cell_value(&self) -> ::std::option::Option<&str> {
+    pub fn falsey_cell_value(&self) -> ::std::option::Option<& str> {
         self.falsey_cell_value.as_deref()
     }
     /// <p>The other names or aliases for the false cell value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.falsey_cell_value_synonyms.is_none()`.
-    pub fn falsey_cell_value_synonyms(&self) -> &[::std::string::String] {
-        self.falsey_cell_value_synonyms.as_deref().unwrap_or_default()
+    pub fn falsey_cell_value_synonyms(&self) -> & [::std::string::String] {
+        self.falsey_cell_value_synonyms.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for SemanticType {
+impl  ::std::fmt::Debug for SemanticType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SemanticType");
         formatter.field("type_name", &self.type_name);
@@ -79,11 +81,11 @@ impl SemanticType {
 pub struct SemanticTypeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) sub_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) type_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) truthy_cell_value: ::std::option::Option<::std::string::String>,
-    pub(crate) truthy_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) truthy_cell_value_synonyms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) falsey_cell_value: ::std::option::Option<::std::string::String>,
-    pub(crate) falsey_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) falsey_cell_value_synonyms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SemanticTypeBuilder {
     /// <p>The semantic type name.</p>
@@ -93,8 +95,7 @@ impl SemanticTypeBuilder {
     }
     /// <p>The semantic type name.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The semantic type name.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +108,7 @@ impl SemanticTypeBuilder {
     }
     /// <p>The semantic type sub type name.</p>
     pub fn set_sub_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_type_name = input;
-        self
+        self.sub_type_name = input; self
     }
     /// <p>The semantic type sub type name.</p>
     pub fn get_sub_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,26 +119,18 @@ impl SemanticTypeBuilder {
     /// To override the contents of this collection use [`set_type_parameters`](Self::set_type_parameters).
     ///
     /// <p>The semantic type parameters.</p>
-    pub fn type_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.type_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.type_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.type_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The semantic type parameters.</p>
-    pub fn set_type_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.type_parameters = input;
-        self
+    pub fn set_type_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.type_parameters = input; self
     }
     /// <p>The semantic type parameters.</p>
-    pub fn get_type_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_type_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.type_parameters
     }
     /// <p>The semantic type truthy cell value.</p>
@@ -148,8 +140,7 @@ impl SemanticTypeBuilder {
     }
     /// <p>The semantic type truthy cell value.</p>
     pub fn set_truthy_cell_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.truthy_cell_value = input;
-        self
+        self.truthy_cell_value = input; self
     }
     /// <p>The semantic type truthy cell value.</p>
     pub fn get_truthy_cell_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,17 +153,16 @@ impl SemanticTypeBuilder {
     /// <p>The other names or aliases for the true cell value.</p>
     pub fn truthy_cell_value_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.truthy_cell_value_synonyms.unwrap_or_default();
-        v.push(input.into());
-        self.truthy_cell_value_synonyms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.truthy_cell_value_synonyms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The other names or aliases for the true cell value.</p>
-    pub fn set_truthy_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.truthy_cell_value_synonyms = input;
-        self
+    pub fn set_truthy_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.truthy_cell_value_synonyms = input; self
     }
     /// <p>The other names or aliases for the true cell value.</p>
-    pub fn get_truthy_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_truthy_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.truthy_cell_value_synonyms
     }
     /// <p>The semantic type falsey cell value.</p>
@@ -182,8 +172,7 @@ impl SemanticTypeBuilder {
     }
     /// <p>The semantic type falsey cell value.</p>
     pub fn set_falsey_cell_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.falsey_cell_value = input;
-        self
+        self.falsey_cell_value = input; self
     }
     /// <p>The semantic type falsey cell value.</p>
     pub fn get_falsey_cell_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,29 +185,35 @@ impl SemanticTypeBuilder {
     /// <p>The other names or aliases for the false cell value.</p>
     pub fn falsey_cell_value_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.falsey_cell_value_synonyms.unwrap_or_default();
-        v.push(input.into());
-        self.falsey_cell_value_synonyms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.falsey_cell_value_synonyms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The other names or aliases for the false cell value.</p>
-    pub fn set_falsey_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.falsey_cell_value_synonyms = input;
-        self
+    pub fn set_falsey_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.falsey_cell_value_synonyms = input; self
     }
     /// <p>The other names or aliases for the false cell value.</p>
-    pub fn get_falsey_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_falsey_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.falsey_cell_value_synonyms
     }
     /// Consumes the builder and constructs a [`SemanticType`](crate::types::SemanticType).
     pub fn build(self) -> crate::types::SemanticType {
         crate::types::SemanticType {
-            type_name: self.type_name,
-            sub_type_name: self.sub_type_name,
-            type_parameters: self.type_parameters,
-            truthy_cell_value: self.truthy_cell_value,
-            truthy_cell_value_synonyms: self.truthy_cell_value_synonyms,
-            falsey_cell_value: self.falsey_cell_value,
-            falsey_cell_value_synonyms: self.falsey_cell_value_synonyms,
+            type_name: self.type_name
+            ,
+            sub_type_name: self.sub_type_name
+            ,
+            type_parameters: self.type_parameters
+            ,
+            truthy_cell_value: self.truthy_cell_value
+            ,
+            truthy_cell_value_synonyms: self.truthy_cell_value_synonyms
+            ,
+            falsey_cell_value: self.falsey_cell_value
+            ,
+            falsey_cell_value_synonyms: self.falsey_cell_value_synonyms
+            ,
         }
     }
 }
@@ -235,3 +230,4 @@ impl ::std::fmt::Debug for SemanticTypeBuilder {
         formatter.finish()
     }
 }
+

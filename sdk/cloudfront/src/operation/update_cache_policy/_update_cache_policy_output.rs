@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCachePolicyOutput {
+pub struct UpdateCachePolicyOutput  {
     /// <p>A cache policy.</p>
     pub cache_policy: ::std::option::Option<crate::types::CachePolicy>,
     /// <p>The current version of the cache policy.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateCachePolicyOutput {
+impl  UpdateCachePolicyOutput  {
     /// <p>A cache policy.</p>
-    pub fn cache_policy(&self) -> ::std::option::Option<&crate::types::CachePolicy> {
+    pub fn cache_policy(&self) -> ::std::option::Option<& crate::types::CachePolicy> {
         self.cache_policy.as_ref()
     }
     /// <p>The current version of the cache policy.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateCachePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCachePolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCachePolicyOutput`](crate::operation::update_cache_policy::UpdateCachePolicyOutput).
     pub fn builder() -> crate::operation::update_cache_policy::builders::UpdateCachePolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateCachePolicyOutputBuilder {
     }
     /// <p>A cache policy.</p>
     pub fn set_cache_policy(mut self, input: ::std::option::Option<crate::types::CachePolicy>) -> Self {
-        self.cache_policy = input;
-        self
+        self.cache_policy = input; self
     }
     /// <p>A cache policy.</p>
     pub fn get_cache_policy(&self) -> &::std::option::Option<crate::types::CachePolicy> {
@@ -61,28 +60,30 @@ impl UpdateCachePolicyOutputBuilder {
     }
     /// <p>The current version of the cache policy.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version of the cache policy.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCachePolicyOutput`](crate::operation::update_cache_policy::UpdateCachePolicyOutput).
     pub fn build(self) -> crate::operation::update_cache_policy::UpdateCachePolicyOutput {
         crate::operation::update_cache_policy::UpdateCachePolicyOutput {
-            cache_policy: self.cache_policy,
-            e_tag: self.e_tag,
+            cache_policy: self.cache_policy
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedRuleGroupStatement {
+pub struct ManagedRuleGroupStatement  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub vendor_name: ::std::string::String,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -16,7 +16,7 @@ pub struct ManagedRuleGroupStatement {
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
+    pub excluded_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>>,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
     pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
@@ -29,36 +29,35 @@ pub struct ManagedRuleGroupStatement {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use.</p></li>
     /// </ul>
-    pub managed_rule_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
+    pub managed_rule_group_configs: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleGroupConfig>>,
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
+    pub rule_action_overrides: ::std::option::Option<::std::vec::Vec::<crate::types::RuleActionOverride>>,
 }
-impl ManagedRuleGroupStatement {
+impl  ManagedRuleGroupStatement  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    pub fn vendor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vendor_name.deref()
+    pub fn vendor_name(&self) -> & str {
+        use std::ops::Deref; self.vendor_name.deref()
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_rules.is_none()`.
-    pub fn excluded_rules(&self) -> &[crate::types::ExcludedRule] {
-        self.excluded_rules.as_deref().unwrap_or_default()
+    pub fn excluded_rules(&self) -> & [crate::types::ExcludedRule] {
+        self.excluded_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
-    pub fn scope_down_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn scope_down_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.scope_down_statement.as_deref()
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
@@ -71,17 +70,19 @@ impl ManagedRuleGroupStatement {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rule_group_configs.is_none()`.
-    pub fn managed_rule_group_configs(&self) -> &[crate::types::ManagedRuleGroupConfig] {
-        self.managed_rule_group_configs.as_deref().unwrap_or_default()
+    pub fn managed_rule_group_configs(&self) -> & [crate::types::ManagedRuleGroupConfig] {
+        self.managed_rule_group_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_action_overrides.is_none()`.
-    pub fn rule_action_overrides(&self) -> &[crate::types::RuleActionOverride] {
-        self.rule_action_overrides.as_deref().unwrap_or_default()
+    pub fn rule_action_overrides(&self) -> & [crate::types::RuleActionOverride] {
+        self.rule_action_overrides.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ManagedRuleGroupStatement {
@@ -98,10 +99,10 @@ pub struct ManagedRuleGroupStatementBuilder {
     pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
+    pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>>,
     pub(crate) scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
-    pub(crate) managed_rule_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
-    pub(crate) rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
+    pub(crate) managed_rule_group_configs: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleGroupConfig>>,
+    pub(crate) rule_action_overrides: ::std::option::Option<::std::vec::Vec::<crate::types::RuleActionOverride>>,
 }
 impl ManagedRuleGroupStatementBuilder {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
@@ -112,8 +113,7 @@ impl ManagedRuleGroupStatementBuilder {
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor_name = input;
-        self
+        self.vendor_name = input; self
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl ManagedRuleGroupStatementBuilder {
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl ManagedRuleGroupStatementBuilder {
     }
     /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,21 +155,20 @@ impl ManagedRuleGroupStatementBuilder {
     /// </note>
     pub fn excluded_rules(mut self, input: crate::types::ExcludedRule) -> Self {
         let mut v = self.excluded_rules.unwrap_or_default();
-        v.push(input);
-        self.excluded_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.excluded_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>) -> Self {
-        self.excluded_rules = input;
-        self
+    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>>) -> Self {
+        self.excluded_rules = input; self
     }
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
+    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>> {
         &self.excluded_rules
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
@@ -181,8 +178,7 @@ impl ManagedRuleGroupStatementBuilder {
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
     pub fn set_scope_down_statement(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>) -> Self {
-        self.scope_down_statement = input;
-        self
+        self.scope_down_statement = input; self
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
     pub fn get_scope_down_statement(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
@@ -204,9 +200,9 @@ impl ManagedRuleGroupStatementBuilder {
     /// </ul>
     pub fn managed_rule_group_configs(mut self, input: crate::types::ManagedRuleGroupConfig) -> Self {
         let mut v = self.managed_rule_group_configs.unwrap_or_default();
-        v.push(input);
-        self.managed_rule_group_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_rule_group_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
     /// <p>The rule groups used for intelligent threat mitigation require additional configuration:</p>
@@ -218,9 +214,8 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use.</p></li>
     /// </ul>
-    pub fn set_managed_rule_group_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>) -> Self {
-        self.managed_rule_group_configs = input;
-        self
+    pub fn set_managed_rule_group_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleGroupConfig>>) -> Self {
+        self.managed_rule_group_configs = input; self
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
     /// <p>The rule groups used for intelligent threat mitigation require additional configuration:</p>
@@ -232,7 +227,7 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use.</p></li>
     /// </ul>
-    pub fn get_managed_rule_group_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>> {
+    pub fn get_managed_rule_group_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleGroupConfig>> {
         &self.managed_rule_group_configs
     }
     /// Appends an item to `rule_action_overrides`.
@@ -243,19 +238,18 @@ impl ManagedRuleGroupStatementBuilder {
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     pub fn rule_action_overrides(mut self, input: crate::types::RuleActionOverride) -> Self {
         let mut v = self.rule_action_overrides.unwrap_or_default();
-        v.push(input);
-        self.rule_action_overrides = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_action_overrides = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn set_rule_action_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>) -> Self {
-        self.rule_action_overrides = input;
-        self
+    pub fn set_rule_action_overrides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleActionOverride>>) -> Self {
+        self.rule_action_overrides = input; self
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn get_rule_action_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
+    pub fn get_rule_action_overrides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleActionOverride>> {
         &self.rule_action_overrides
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupStatement`](crate::types::ManagedRuleGroupStatement).
@@ -263,24 +257,30 @@ impl ManagedRuleGroupStatementBuilder {
     /// - [`vendor_name`](crate::types::builders::ManagedRuleGroupStatementBuilder::vendor_name)
     /// - [`name`](crate::types::builders::ManagedRuleGroupStatementBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ManagedRuleGroupStatement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ManagedRuleGroupStatement {
-            vendor_name: self.vendor_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vendor_name",
-                    "vendor_name was not specified but it is required when building ManagedRuleGroupStatement",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ManagedRuleGroupStatement",
-                )
-            })?,
-            version: self.version,
-            excluded_rules: self.excluded_rules,
-            scope_down_statement: self.scope_down_statement,
-            managed_rule_group_configs: self.managed_rule_group_configs,
-            rule_action_overrides: self.rule_action_overrides,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ManagedRuleGroupStatement {
+                vendor_name: self.vendor_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vendor_name", "vendor_name was not specified but it is required when building ManagedRuleGroupStatement")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ManagedRuleGroupStatement")
+                    )?
+                ,
+                version: self.version
+                ,
+                excluded_rules: self.excluded_rules
+                ,
+                scope_down_statement: self.scope_down_statement
+                ,
+                managed_rule_group_configs: self.managed_rule_group_configs
+                ,
+                rule_action_overrides: self.rule_action_overrides
+                ,
+            }
+        )
     }
 }
+

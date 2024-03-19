@@ -3,13 +3,13 @@
 /// <p>Contains information about the data store that you manage, which stores data used by IoT SiteWise.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
+pub struct DatastoreIotSiteWiseMultiLayerStorageSummary  {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
     pub customer_managed_s3_storage: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
 }
-impl DatastoreIotSiteWiseMultiLayerStorageSummary {
+impl  DatastoreIotSiteWiseMultiLayerStorageSummary  {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
-    pub fn customer_managed_s3_storage(&self) -> ::std::option::Option<&crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary> {
+    pub fn customer_managed_s3_storage(&self) -> ::std::option::Option<& crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary> {
         self.customer_managed_s3_storage.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummaryBuilder {
         self
     }
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
-    pub fn set_customer_managed_s3_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
-    ) -> Self {
-        self.customer_managed_s3_storage = input;
-        self
+    pub fn set_customer_managed_s3_storage(mut self, input: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>) -> Self {
+        self.customer_managed_s3_storage = input; self
     }
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
     pub fn get_customer_managed_s3_storage(&self) -> &::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary> {
@@ -47,7 +43,9 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummaryBuilder {
     /// Consumes the builder and constructs a [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary).
     pub fn build(self) -> crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary {
         crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary {
-            customer_managed_s3_storage: self.customer_managed_s3_storage,
+            customer_managed_s3_storage: self.customer_managed_s3_storage
+            ,
         }
     }
 }
+

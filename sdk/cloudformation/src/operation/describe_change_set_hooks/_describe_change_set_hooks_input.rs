@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChangeSetHooksInput {
+pub struct DescribeChangeSetHooksInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
@@ -12,21 +12,21 @@ pub struct DescribeChangeSetHooksInput {
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeChangeSetHooksInput {
+impl  DescribeChangeSetHooksInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeChangeSetHooksInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_set_name = input;
-        self
+        self.change_set_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeChangeSetHooksInputBuilder {
     }
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DescribeChangeSetHooksInputBuilder {
     }
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl DescribeChangeSetHooksInputBuilder {
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logical_resource_id
     }
     /// Consumes the builder and constructs a [`DescribeChangeSetHooksInput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput {
-            change_set_name: self.change_set_name,
-            stack_name: self.stack_name,
-            next_token: self.next_token,
-            logical_resource_id: self.logical_resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput {
+                change_set_name: self.change_set_name
+                ,
+                stack_name: self.stack_name
+                ,
+                next_token: self.next_token
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+            }
+        )
     }
 }
+

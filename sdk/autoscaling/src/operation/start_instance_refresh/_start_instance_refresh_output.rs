@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartInstanceRefreshOutput {
+pub struct StartInstanceRefreshOutput  {
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     pub instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartInstanceRefreshOutput {
+impl  StartInstanceRefreshOutput  {
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
-    pub fn instance_refresh_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_refresh_id(&self) -> ::std::option::Option<& str> {
         self.instance_refresh_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartInstanceRefreshOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartInstanceRefreshOutput {
     /// Creates a new builder-style object to manufacture [`StartInstanceRefreshOutput`](crate::operation::start_instance_refresh::StartInstanceRefreshOutput).
     pub fn builder() -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder {
@@ -40,27 +40,28 @@ impl StartInstanceRefreshOutputBuilder {
     }
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     pub fn set_instance_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_refresh_id = input;
-        self
+        self.instance_refresh_id = input; self
     }
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
     pub fn get_instance_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_refresh_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartInstanceRefreshOutput`](crate::operation::start_instance_refresh::StartInstanceRefreshOutput).
     pub fn build(self) -> crate::operation::start_instance_refresh::StartInstanceRefreshOutput {
         crate::operation::start_instance_refresh::StartInstanceRefreshOutput {
-            instance_refresh_id: self.instance_refresh_id,
+            instance_refresh_id: self.instance_refresh_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

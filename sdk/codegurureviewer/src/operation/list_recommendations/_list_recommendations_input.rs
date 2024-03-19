@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationsInput {
+pub struct ListRecommendationsInput  {
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
@@ -10,9 +10,9 @@ pub struct ListRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub code_review_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListRecommendationsInput {
+impl  ListRecommendationsInput  {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
@@ -20,7 +20,7 @@ impl ListRecommendationsInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
-    pub fn code_review_arn(&self) -> ::std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> ::std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,22 +74,24 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_review_arn = input;
-        self
+        self.code_review_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_review_arn
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_recommendations::ListRecommendationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            code_review_arn: self.code_review_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recommendations::ListRecommendationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                code_review_arn: self.code_review_arn
+                ,
+            }
+        )
     }
 }
+

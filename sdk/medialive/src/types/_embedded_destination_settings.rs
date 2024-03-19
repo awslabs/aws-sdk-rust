@@ -3,7 +3,8 @@
 /// Embedded Destination Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmbeddedDestinationSettings {}
+pub struct EmbeddedDestinationSettings  {
+}
 impl EmbeddedDestinationSettings {
     /// Creates a new builder-style object to manufacture [`EmbeddedDestinationSettings`](crate::types::EmbeddedDestinationSettings).
     pub fn builder() -> crate::types::builders::EmbeddedDestinationSettingsBuilder {
@@ -14,10 +15,13 @@ impl EmbeddedDestinationSettings {
 /// A builder for [`EmbeddedDestinationSettings`](crate::types::EmbeddedDestinationSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EmbeddedDestinationSettingsBuilder {}
+pub struct EmbeddedDestinationSettingsBuilder {
+}
 impl EmbeddedDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`EmbeddedDestinationSettings`](crate::types::EmbeddedDestinationSettings).
     pub fn build(self) -> crate::types::EmbeddedDestinationSettings {
-        crate::types::EmbeddedDestinationSettings {}
+        crate::types::EmbeddedDestinationSettings {
+        }
     }
 }
+

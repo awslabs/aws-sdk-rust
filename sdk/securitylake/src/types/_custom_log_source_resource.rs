@@ -3,7 +3,7 @@
 /// <p>Amazon Security Lake can collect logs and events from third-party custom sources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomLogSourceResource {
+pub struct CustomLogSourceResource  {
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
@@ -13,21 +13,21 @@ pub struct CustomLogSourceResource {
     /// <p>The attributes of a third-party custom source.</p>
     pub attributes: ::std::option::Option<crate::types::CustomLogSourceAttributes>,
 }
-impl CustomLogSourceResource {
+impl  CustomLogSourceResource  {
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>The details of the log provider for a third-party custom source.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::CustomLogSourceProvider> {
+    pub fn provider(&self) -> ::std::option::Option<& crate::types::CustomLogSourceProvider> {
         self.provider.as_ref()
     }
     /// <p>The attributes of a third-party custom source.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&crate::types::CustomLogSourceAttributes> {
+    pub fn attributes(&self) -> ::std::option::Option<& crate::types::CustomLogSourceAttributes> {
         self.attributes.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CustomLogSourceResourceBuilder {
     }
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CustomLogSourceResourceBuilder {
     }
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>The version for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CustomLogSourceResourceBuilder {
     }
     /// <p>The details of the log provider for a third-party custom source.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::CustomLogSourceProvider>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The details of the log provider for a third-party custom source.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::CustomLogSourceProvider> {
@@ -97,8 +94,7 @@ impl CustomLogSourceResourceBuilder {
     }
     /// <p>The attributes of a third-party custom source.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::CustomLogSourceAttributes>) -> Self {
-        self.attributes = input;
-        self
+        self.attributes = input; self
     }
     /// <p>The attributes of a third-party custom source.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::CustomLogSourceAttributes> {
@@ -107,10 +103,15 @@ impl CustomLogSourceResourceBuilder {
     /// Consumes the builder and constructs a [`CustomLogSourceResource`](crate::types::CustomLogSourceResource).
     pub fn build(self) -> crate::types::CustomLogSourceResource {
         crate::types::CustomLogSourceResource {
-            source_name: self.source_name,
-            source_version: self.source_version,
-            provider: self.provider,
-            attributes: self.attributes,
+            source_name: self.source_name
+            ,
+            source_version: self.source_version
+            ,
+            provider: self.provider
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

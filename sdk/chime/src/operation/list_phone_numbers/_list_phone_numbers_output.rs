@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPhoneNumbersOutput {
+pub struct ListPhoneNumbersOutput  {
     /// <p>The phone number details.</p>
-    pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
+    pub phone_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPhoneNumbersOutput {
+impl  ListPhoneNumbersOutput  {
     /// <p>The phone number details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
-    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
-        self.phone_numbers.as_deref().unwrap_or_default()
+    pub fn phone_numbers(&self) -> & [crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPhoneNumbersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
     pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder {
@@ -37,7 +38,7 @@ impl ListPhoneNumbersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersOutputBuilder {
-    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
+    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListPhoneNumbersOutputBuilder {
     /// <p>The phone number details.</p>
     pub fn phone_numbers(mut self, input: crate::types::PhoneNumber) -> Self {
         let mut v = self.phone_numbers.unwrap_or_default();
-        v.push(input);
-        self.phone_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phone_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The phone number details.</p>
-    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
-        self.phone_numbers = input;
-        self
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>>) -> Self {
+        self.phone_numbers = input; self
     }
     /// <p>The phone number details.</p>
-    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListPhoneNumbersOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
     pub fn build(self) -> crate::operation::list_phone_numbers::ListPhoneNumbersOutput {
         crate::operation::list_phone_numbers::ListPhoneNumbersOutput {
-            phone_numbers: self.phone_numbers,
-            next_token: self.next_token,
+            phone_numbers: self.phone_numbers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

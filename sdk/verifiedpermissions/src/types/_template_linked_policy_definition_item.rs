@@ -4,7 +4,7 @@
 /// <p>This</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateLinkedPolicyDefinitionItem {
+pub struct TemplateLinkedPolicyDefinitionItem  {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
     pub policy_template_id: ::std::string::String,
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
@@ -12,18 +12,17 @@ pub struct TemplateLinkedPolicyDefinitionItem {
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
 }
-impl TemplateLinkedPolicyDefinitionItem {
+impl  TemplateLinkedPolicyDefinitionItem  {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
-    pub fn policy_template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_template_id.deref()
+    pub fn policy_template_id(&self) -> & str {
+        use std::ops::Deref; self.policy_template_id.deref()
     }
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.principal.as_ref()
     }
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.resource.as_ref()
     }
 }
@@ -51,8 +50,7 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
     }
     /// <p>The unique identifier of the policy template used to create this policy.</p>
     pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_template_id = input;
-        self
+        self.policy_template_id = input; self
     }
     /// <p>The unique identifier of the policy template used to create this policy.</p>
     pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
     }
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -79,8 +76,7 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
     }
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -90,15 +86,19 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_template_id`](crate::types::builders::TemplateLinkedPolicyDefinitionItemBuilder::policy_template_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TemplateLinkedPolicyDefinitionItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TemplateLinkedPolicyDefinitionItem {
-            policy_template_id: self.policy_template_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_template_id",
-                    "policy_template_id was not specified but it is required when building TemplateLinkedPolicyDefinitionItem",
-                )
-            })?,
-            principal: self.principal,
-            resource: self.resource,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TemplateLinkedPolicyDefinitionItem {
+                policy_template_id: self.policy_template_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_template_id", "policy_template_id was not specified but it is required when building TemplateLinkedPolicyDefinitionItem")
+                    )?
+                ,
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+            }
+        )
     }
 }
+

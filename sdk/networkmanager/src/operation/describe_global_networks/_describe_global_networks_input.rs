@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGlobalNetworksInput {
+pub struct DescribeGlobalNetworksInput  {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub global_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub global_network_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGlobalNetworksInput {
+impl  DescribeGlobalNetworksInput  {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_network_ids.is_none()`.
-    pub fn global_network_ids(&self) -> &[::std::string::String] {
-        self.global_network_ids.as_deref().unwrap_or_default()
+    pub fn global_network_ids(&self) -> & [::std::string::String] {
+        self.global_network_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl DescribeGlobalNetworksInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalNetworksInputBuilder {
-    pub(crate) global_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) global_network_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl DescribeGlobalNetworksInputBuilder {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
     pub fn global_network_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.global_network_ids.unwrap_or_default();
-        v.push(input.into());
-        self.global_network_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.global_network_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn set_global_network_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.global_network_ids = input;
-        self
+    pub fn set_global_network_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.global_network_ids = input; self
     }
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn get_global_network_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_global_network_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.global_network_ids
     }
     /// <p>The maximum number of results to return.</p>
@@ -69,8 +69,7 @@ impl DescribeGlobalNetworksInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,24 +82,24 @@ impl DescribeGlobalNetworksInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_global_networks::DescribeGlobalNetworksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_global_networks::DescribeGlobalNetworksInput {
-            global_network_ids: self.global_network_ids,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_global_networks::DescribeGlobalNetworksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_global_networks::DescribeGlobalNetworksInput {
+                global_network_ids: self.global_network_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

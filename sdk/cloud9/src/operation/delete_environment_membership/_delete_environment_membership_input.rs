@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentMembershipInput {
+pub struct DeleteEnvironmentMembershipInput  {
     /// <p>The ID of the environment to delete the environment member from.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEnvironmentMembershipInput {
+impl  DeleteEnvironmentMembershipInput  {
     /// <p>The ID of the environment to delete the environment member from.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteEnvironmentMembershipInputBuilder {
     }
     /// <p>The ID of the environment to delete the environment member from.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment to delete the environment member from.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteEnvironmentMembershipInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentMembershipInput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput {
-            environment_id: self.environment_id,
-            user_arn: self.user_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput {
+                environment_id: self.environment_id
+                ,
+                user_arn: self.user_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationSource {
+pub struct RecommendationSource  {
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
     pub recommendation_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the recommendation source.</p>
     pub recommendation_source_type: ::std::option::Option<crate::types::RecommendationSourceType>,
 }
-impl RecommendationSource {
+impl  RecommendationSource  {
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-    pub fn recommendation_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_source_arn(&self) -> ::std::option::Option<& str> {
         self.recommendation_source_arn.as_deref()
     }
     /// <p>The resource type of the recommendation source.</p>
-    pub fn recommendation_source_type(&self) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
+    pub fn recommendation_source_type(&self) -> ::std::option::Option<& crate::types::RecommendationSourceType> {
         self.recommendation_source_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RecommendationSourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
     pub fn set_recommendation_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_source_arn = input;
-        self
+        self.recommendation_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
     pub fn get_recommendation_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RecommendationSourceBuilder {
     }
     /// <p>The resource type of the recommendation source.</p>
     pub fn set_recommendation_source_type(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
-        self.recommendation_source_type = input;
-        self
+        self.recommendation_source_type = input; self
     }
     /// <p>The resource type of the recommendation source.</p>
     pub fn get_recommendation_source_type(&self) -> &::std::option::Option<crate::types::RecommendationSourceType> {
@@ -65,8 +63,11 @@ impl RecommendationSourceBuilder {
     /// Consumes the builder and constructs a [`RecommendationSource`](crate::types::RecommendationSource).
     pub fn build(self) -> crate::types::RecommendationSource {
         crate::types::RecommendationSource {
-            recommendation_source_arn: self.recommendation_source_arn,
-            recommendation_source_type: self.recommendation_source_type,
+            recommendation_source_arn: self.recommendation_source_arn
+            ,
+            recommendation_source_type: self.recommendation_source_type
+            ,
         }
     }
 }
+

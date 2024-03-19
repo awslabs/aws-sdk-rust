@@ -3,22 +3,20 @@
 /// <p>Contains the names of the fields used for an exact response to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExactResponseFields {
+pub struct ExactResponseFields  {
     /// <p>The name of the field that contains the query made to the OpenSearch Service database.</p>
     pub question_field: ::std::string::String,
     /// <p>The name of the field that contains the answer to the query made to the OpenSearch Service database.</p>
     pub answer_field: ::std::string::String,
 }
-impl ExactResponseFields {
+impl  ExactResponseFields  {
     /// <p>The name of the field that contains the query made to the OpenSearch Service database.</p>
-    pub fn question_field(&self) -> &str {
-        use std::ops::Deref;
-        self.question_field.deref()
+    pub fn question_field(&self) -> & str {
+        use std::ops::Deref; self.question_field.deref()
     }
     /// <p>The name of the field that contains the answer to the query made to the OpenSearch Service database.</p>
-    pub fn answer_field(&self) -> &str {
-        use std::ops::Deref;
-        self.answer_field.deref()
+    pub fn answer_field(&self) -> & str {
+        use std::ops::Deref; self.answer_field.deref()
     }
 }
 impl ExactResponseFields {
@@ -44,8 +42,7 @@ impl ExactResponseFieldsBuilder {
     }
     /// <p>The name of the field that contains the query made to the OpenSearch Service database.</p>
     pub fn set_question_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_field = input;
-        self
+        self.question_field = input; self
     }
     /// <p>The name of the field that contains the query made to the OpenSearch Service database.</p>
     pub fn get_question_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ExactResponseFieldsBuilder {
     }
     /// <p>The name of the field that contains the answer to the query made to the OpenSearch Service database.</p>
     pub fn set_answer_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.answer_field = input;
-        self
+        self.answer_field = input; self
     }
     /// <p>The name of the field that contains the answer to the query made to the OpenSearch Service database.</p>
     pub fn get_answer_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ExactResponseFieldsBuilder {
     /// - [`question_field`](crate::types::builders::ExactResponseFieldsBuilder::question_field)
     /// - [`answer_field`](crate::types::builders::ExactResponseFieldsBuilder::answer_field)
     pub fn build(self) -> ::std::result::Result<crate::types::ExactResponseFields, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExactResponseFields {
-            question_field: self.question_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "question_field",
-                    "question_field was not specified but it is required when building ExactResponseFields",
-                )
-            })?,
-            answer_field: self.answer_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "answer_field",
-                    "answer_field was not specified but it is required when building ExactResponseFields",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExactResponseFields {
+                question_field: self.question_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("question_field", "question_field was not specified but it is required when building ExactResponseFields")
+                    )?
+                ,
+                answer_field: self.answer_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("answer_field", "answer_field was not specified but it is required when building ExactResponseFields")
+                    )?
+                ,
+            }
+        )
     }
 }
+

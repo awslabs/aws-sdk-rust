@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceDataSyncOutput {
+pub struct ListResourceDataSyncOutput  {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub resource_data_sync_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
+    pub resource_data_sync_items: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDataSyncItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListResourceDataSyncOutput {
+impl  ListResourceDataSyncOutput  {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_data_sync_items.is_none()`.
-    pub fn resource_data_sync_items(&self) -> &[crate::types::ResourceDataSyncItem] {
-        self.resource_data_sync_items.as_deref().unwrap_or_default()
+    pub fn resource_data_sync_items(&self) -> & [crate::types::ResourceDataSyncItem] {
+        self.resource_data_sync_items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResourceDataSyncOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDataSyncOutput`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput).
     pub fn builder() -> crate::operation::list_resource_data_sync::builders::ListResourceDataSyncOutputBuilder {
@@ -37,7 +38,7 @@ impl ListResourceDataSyncOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceDataSyncOutputBuilder {
-    pub(crate) resource_data_sync_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
+    pub(crate) resource_data_sync_items: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDataSyncItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListResourceDataSyncOutputBuilder {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
     pub fn resource_data_sync_items(mut self, input: crate::types::ResourceDataSyncItem) -> Self {
         let mut v = self.resource_data_sync_items.unwrap_or_default();
-        v.push(input);
-        self.resource_data_sync_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_data_sync_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn set_resource_data_sync_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>) -> Self {
-        self.resource_data_sync_items = input;
-        self
+    pub fn set_resource_data_sync_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDataSyncItem>>) -> Self {
+        self.resource_data_sync_items = input; self
     }
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn get_resource_data_sync_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>> {
+    pub fn get_resource_data_sync_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceDataSyncItem>> {
         &self.resource_data_sync_items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListResourceDataSyncOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResourceDataSyncOutput`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput).
     pub fn build(self) -> crate::operation::list_resource_data_sync::ListResourceDataSyncOutput {
         crate::operation::list_resource_data_sync::ListResourceDataSyncOutput {
-            resource_data_sync_items: self.resource_data_sync_items,
-            next_token: self.next_token,
+            resource_data_sync_items: self.resource_data_sync_items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

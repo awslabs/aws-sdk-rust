@@ -3,7 +3,7 @@
 /// <p>Details on recommended instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetInstance {
+pub struct TargetInstance  {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
     pub estimated_monthly_cost: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
@@ -17,19 +17,19 @@ pub struct TargetInstance {
     /// <p>The expected utilization metrics for target instance type.</p>
     pub expected_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
-    pub platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
+    pub platform_differences: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>>,
 }
-impl TargetInstance {
+impl  TargetInstance  {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
-    pub fn estimated_monthly_cost(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_monthly_cost(&self) -> ::std::option::Option<& str> {
         self.estimated_monthly_cost.as_deref()
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<& str> {
         self.estimated_monthly_savings.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
@@ -37,18 +37,19 @@ impl TargetInstance {
         self.default_target_instance
     }
     /// <p>Details on the target instance type.</p>
-    pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> ::std::option::Option<& crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>The expected utilization metrics for target instance type.</p>
-    pub fn expected_resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
+    pub fn expected_resource_utilization(&self) -> ::std::option::Option<& crate::types::ResourceUtilization> {
         self.expected_resource_utilization.as_ref()
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_differences.is_none()`.
-    pub fn platform_differences(&self) -> &[crate::types::PlatformDifference] {
-        self.platform_differences.as_deref().unwrap_or_default()
+    pub fn platform_differences(&self) -> & [crate::types::PlatformDifference] {
+        self.platform_differences.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TargetInstance {
@@ -68,7 +69,7 @@ pub struct TargetInstanceBuilder {
     pub(crate) default_target_instance: ::std::option::Option<bool>,
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     pub(crate) expected_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
-    pub(crate) platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
+    pub(crate) platform_differences: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>>,
 }
 impl TargetInstanceBuilder {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
@@ -78,8 +79,7 @@ impl TargetInstanceBuilder {
     }
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
     pub fn set_estimated_monthly_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_monthly_cost = input;
-        self
+        self.estimated_monthly_cost = input; self
     }
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
     pub fn get_estimated_monthly_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl TargetInstanceBuilder {
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl TargetInstanceBuilder {
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl TargetInstanceBuilder {
     }
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
     pub fn set_default_target_instance(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_target_instance = input;
-        self
+        self.default_target_instance = input; self
     }
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
     pub fn get_default_target_instance(&self) -> &::std::option::Option<bool> {
@@ -134,8 +131,7 @@ impl TargetInstanceBuilder {
     }
     /// <p>Details on the target instance type.</p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input;
-        self
+        self.resource_details = input; self
     }
     /// <p>Details on the target instance type.</p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
@@ -148,8 +144,7 @@ impl TargetInstanceBuilder {
     }
     /// <p>The expected utilization metrics for target instance type.</p>
     pub fn set_expected_resource_utilization(mut self, input: ::std::option::Option<crate::types::ResourceUtilization>) -> Self {
-        self.expected_resource_utilization = input;
-        self
+        self.expected_resource_utilization = input; self
     }
     /// <p>The expected utilization metrics for target instance type.</p>
     pub fn get_expected_resource_utilization(&self) -> &::std::option::Option<crate::types::ResourceUtilization> {
@@ -162,29 +157,37 @@ impl TargetInstanceBuilder {
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
     pub fn platform_differences(mut self, input: crate::types::PlatformDifference) -> Self {
         let mut v = self.platform_differences.unwrap_or_default();
-        v.push(input);
-        self.platform_differences = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platform_differences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
-    pub fn set_platform_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>) -> Self {
-        self.platform_differences = input;
-        self
+    pub fn set_platform_differences(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>>) -> Self {
+        self.platform_differences = input; self
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type.</p>
-    pub fn get_platform_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>> {
+    pub fn get_platform_differences(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>> {
         &self.platform_differences
     }
     /// Consumes the builder and constructs a [`TargetInstance`](crate::types::TargetInstance).
     pub fn build(self) -> crate::types::TargetInstance {
         crate::types::TargetInstance {
-            estimated_monthly_cost: self.estimated_monthly_cost,
-            estimated_monthly_savings: self.estimated_monthly_savings,
-            currency_code: self.currency_code,
-            default_target_instance: self.default_target_instance.unwrap_or_default(),
-            resource_details: self.resource_details,
-            expected_resource_utilization: self.expected_resource_utilization,
-            platform_differences: self.platform_differences,
+            estimated_monthly_cost: self.estimated_monthly_cost
+            ,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
+            currency_code: self.currency_code
+            ,
+            default_target_instance: self.default_target_instance
+                .unwrap_or_default()
+            ,
+            resource_details: self.resource_details
+            ,
+            expected_resource_utilization: self.expected_resource_utilization
+            ,
+            platform_differences: self.platform_differences
+            ,
         }
     }
 }
+

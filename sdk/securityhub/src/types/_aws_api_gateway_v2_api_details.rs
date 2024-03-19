@@ -3,7 +3,7 @@
 /// <p>Contains information about a version 2 API in Amazon API Gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsApiGatewayV2ApiDetails {
+pub struct AwsApiGatewayV2ApiDetails  {
     /// <p>The URI of the API.</p>
     /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
@@ -31,51 +31,51 @@ pub struct AwsApiGatewayV2ApiDetails {
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: ::std::option::Option<crate::types::AwsCorsConfiguration>,
 }
-impl AwsApiGatewayV2ApiDetails {
+impl  AwsApiGatewayV2ApiDetails  {
     /// <p>The URI of the API.</p>
     /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
-    pub fn api_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn api_endpoint(&self) -> ::std::option::Option<& str> {
         self.api_endpoint.as_deref()
     }
     /// <p>The identifier of the API.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
-    pub fn api_key_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_selection_expression(&self) -> ::std::option::Option<& str> {
         self.api_key_selection_expression.as_deref()
     }
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>A description of the API.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version identifier for the API.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The name of the API.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The API protocol for the API.</p>
     /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
-    pub fn protocol_type(&self) -> ::std::option::Option<&str> {
+    pub fn protocol_type(&self) -> ::std::option::Option<& str> {
         self.protocol_type.as_deref()
     }
     /// <p>The route selection expression for the API.</p>
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
     /// <p>For WebSocket APIs, there is no default value.</p>
-    pub fn route_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn route_selection_expression(&self) -> ::std::option::Option<& str> {
         self.route_selection_expression.as_deref()
     }
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
-    pub fn cors_configuration(&self) -> ::std::option::Option<&crate::types::AwsCorsConfiguration> {
+    pub fn cors_configuration(&self) -> ::std::option::Option<& crate::types::AwsCorsConfiguration> {
         self.cors_configuration.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn set_api_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_endpoint = input;
-        self
+        self.api_endpoint = input; self
     }
     /// <p>The URI of the API.</p>
     /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
@@ -129,8 +128,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>The identifier of the API.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The identifier of the API.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
     pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_selection_expression = input;
-        self
+        self.api_key_selection_expression = input; self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
     pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +156,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -174,8 +170,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>A description of the API.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the API.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>The version identifier for the API.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version identifier for the API.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>The name of the API.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the API.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +211,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     /// <p>The API protocol for the API.</p>
     /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol_type = input;
-        self
+        self.protocol_type = input; self
     }
     /// <p>The API protocol for the API.</p>
     /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code></p>
@@ -237,8 +229,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
     /// <p>For WebSocket APIs, there is no default value.</p>
     pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_selection_expression = input;
-        self
+        self.route_selection_expression = input; self
     }
     /// <p>The route selection expression for the API.</p>
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
@@ -253,8 +244,7 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
     pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::AwsCorsConfiguration>) -> Self {
-        self.cors_configuration = input;
-        self
+        self.cors_configuration = input; self
     }
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
     pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::AwsCorsConfiguration> {
@@ -263,16 +253,27 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsApiGatewayV2ApiDetails`](crate::types::AwsApiGatewayV2ApiDetails).
     pub fn build(self) -> crate::types::AwsApiGatewayV2ApiDetails {
         crate::types::AwsApiGatewayV2ApiDetails {
-            api_endpoint: self.api_endpoint,
-            api_id: self.api_id,
-            api_key_selection_expression: self.api_key_selection_expression,
-            created_date: self.created_date,
-            description: self.description,
-            version: self.version,
-            name: self.name,
-            protocol_type: self.protocol_type,
-            route_selection_expression: self.route_selection_expression,
-            cors_configuration: self.cors_configuration,
+            api_endpoint: self.api_endpoint
+            ,
+            api_id: self.api_id
+            ,
+            api_key_selection_expression: self.api_key_selection_expression
+            ,
+            created_date: self.created_date
+            ,
+            description: self.description
+            ,
+            version: self.version
+            ,
+            name: self.name
+            ,
+            protocol_type: self.protocol_type
+            ,
+            route_selection_expression: self.route_selection_expression
+            ,
+            cors_configuration: self.cors_configuration
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Item in a list of <code>DataflowEndpoint</code> groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataflowEndpointListItem {
+pub struct DataflowEndpointListItem  {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DataflowEndpointListItem {
+impl  DataflowEndpointListItem  {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<& str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
     /// <p>ARN of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataflow_endpoint_group_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataflowEndpointListItemBuilder {
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_endpoint_group_id = input;
-        self
+        self.dataflow_endpoint_group_id = input; self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn get_dataflow_endpoint_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataflowEndpointListItemBuilder {
     }
     /// <p>ARN of a dataflow endpoint group.</p>
     pub fn set_dataflow_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_endpoint_group_arn = input;
-        self
+        self.dataflow_endpoint_group_arn = input; self
     }
     /// <p>ARN of a dataflow endpoint group.</p>
     pub fn get_dataflow_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataflowEndpointListItemBuilder {
     /// Consumes the builder and constructs a [`DataflowEndpointListItem`](crate::types::DataflowEndpointListItem).
     pub fn build(self) -> crate::types::DataflowEndpointListItem {
         crate::types::DataflowEndpointListItem {
-            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
-            dataflow_endpoint_group_arn: self.dataflow_endpoint_group_arn,
+            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id
+            ,
+            dataflow_endpoint_group_arn: self.dataflow_endpoint_group_arn
+            ,
         }
     }
 }
+

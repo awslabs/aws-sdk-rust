@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStages`](crate::operation::list_stages::builders::ListStagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stages::builders::ListStagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::set_next_token):<br>required: **false**<br><p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return. Default: 50.</p><br>
-    /// - On success, responds with [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput) with field(s):
+                            /// - On success, responds with [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput) with field(s):
     ///   - [`stages(Vec::<StageSummary>)`](crate::operation::list_stages::ListStagesOutput::stages): <p>List of the matching stages (summary information only).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stages::ListStagesOutput::next_token): <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    /// - On failure, responds with [`SdkError<ListStagesError>`](crate::operation::list_stages::ListStagesError)
+                            /// - On failure, responds with [`SdkError<ListStagesError>`](crate::operation::list_stages::ListStagesError)
     pub fn list_stages(&self) -> crate::operation::list_stages::builders::ListStagesFluentBuilder {
-        crate::operation::list_stages::builders::ListStagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_stages::builders::ListStagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

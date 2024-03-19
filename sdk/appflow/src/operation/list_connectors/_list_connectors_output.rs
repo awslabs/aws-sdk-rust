@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConnectorsOutput {
+pub struct ListConnectorsOutput  {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
+    pub connectors: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorDetail>>,
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListConnectorsOutput {
+impl  ListConnectorsOutput  {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
-    pub fn connectors(&self) -> &[crate::types::ConnectorDetail] {
-        self.connectors.as_deref().unwrap_or_default()
+    pub fn connectors(&self) -> & [crate::types::ConnectorDetail] {
+        self.connectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConnectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput).
     pub fn builder() -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListConnectorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorsOutputBuilder {
-    pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
+    pub(crate) connectors: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListConnectorsOutputBuilder {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
     pub fn connectors(mut self, input: crate::types::ConnectorDetail) -> Self {
         let mut v = self.connectors.unwrap_or_default();
-        v.push(input);
-        self.connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>) -> Self {
-        self.connectors = input;
-        self
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorDetail>>) -> Self {
+        self.connectors = input; self
     }
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConnectorDetail>> {
         &self.connectors
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
@@ -69,28 +69,30 @@ impl ListConnectorsOutputBuilder {
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput).
     pub fn build(self) -> crate::operation::list_connectors::ListConnectorsOutput {
         crate::operation::list_connectors::ListConnectorsOutput {
-            connectors: self.connectors,
-            next_token: self.next_token,
+            connectors: self.connectors
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

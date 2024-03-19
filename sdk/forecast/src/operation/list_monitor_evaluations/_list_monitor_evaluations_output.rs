@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitorEvaluationsOutput {
+pub struct ListMonitorEvaluationsOutput  {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
+    pub predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorMonitorEvaluation>>,
     _request_id: Option<String>,
 }
-impl ListMonitorEvaluationsOutput {
+impl  ListMonitorEvaluationsOutput  {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_monitor_evaluations.is_none()`.
-    pub fn predictor_monitor_evaluations(&self) -> &[crate::types::PredictorMonitorEvaluation] {
-        self.predictor_monitor_evaluations.as_deref().unwrap_or_default()
+    pub fn predictor_monitor_evaluations(&self) -> & [crate::types::PredictorMonitorEvaluation] {
+        self.predictor_monitor_evaluations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMonitorEvaluationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMonitorEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsOutput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput).
     pub fn builder() -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsOutputBuilder {
@@ -40,7 +41,7 @@ impl ListMonitorEvaluationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorEvaluationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
+    pub(crate) predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorMonitorEvaluation>>,
     _request_id: Option<String>,
 }
 impl ListMonitorEvaluationsOutputBuilder {
@@ -51,8 +52,7 @@ impl ListMonitorEvaluationsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,39 +66,38 @@ impl ListMonitorEvaluationsOutputBuilder {
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
     pub fn predictor_monitor_evaluations(mut self, input: crate::types::PredictorMonitorEvaluation) -> Self {
         let mut v = self.predictor_monitor_evaluations.unwrap_or_default();
-        v.push(input);
-        self.predictor_monitor_evaluations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predictor_monitor_evaluations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub fn set_predictor_monitor_evaluations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
-    ) -> Self {
-        self.predictor_monitor_evaluations = input;
-        self
+    pub fn set_predictor_monitor_evaluations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorMonitorEvaluation>>) -> Self {
+        self.predictor_monitor_evaluations = input; self
     }
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub fn get_predictor_monitor_evaluations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>> {
+    pub fn get_predictor_monitor_evaluations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredictorMonitorEvaluation>> {
         &self.predictor_monitor_evaluations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMonitorEvaluationsOutput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput).
     pub fn build(self) -> crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput {
         crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput {
-            next_token: self.next_token,
-            predictor_monitor_evaluations: self.predictor_monitor_evaluations,
+            next_token: self.next_token
+            ,
+            predictor_monitor_evaluations: self.predictor_monitor_evaluations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

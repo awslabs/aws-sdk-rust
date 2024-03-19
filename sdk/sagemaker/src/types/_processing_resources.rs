@@ -3,13 +3,13 @@
 /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessingResources {
+pub struct ProcessingResources  {
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
     pub cluster_config: ::std::option::Option<crate::types::ProcessingClusterConfig>,
 }
-impl ProcessingResources {
+impl  ProcessingResources  {
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
-    pub fn cluster_config(&self) -> ::std::option::Option<&crate::types::ProcessingClusterConfig> {
+    pub fn cluster_config(&self) -> ::std::option::Option<& crate::types::ProcessingClusterConfig> {
         self.cluster_config.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ProcessingResourcesBuilder {
     }
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
     pub fn set_cluster_config(mut self, input: ::std::option::Option<crate::types::ProcessingClusterConfig>) -> Self {
-        self.cluster_config = input;
-        self
+        self.cluster_config = input; self
     }
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
     pub fn get_cluster_config(&self) -> &::std::option::Option<crate::types::ProcessingClusterConfig> {
@@ -45,7 +44,9 @@ impl ProcessingResourcesBuilder {
     /// Consumes the builder and constructs a [`ProcessingResources`](crate::types::ProcessingResources).
     pub fn build(self) -> crate::types::ProcessingResources {
         crate::types::ProcessingResources {
-            cluster_config: self.cluster_config,
+            cluster_config: self.cluster_config
+            ,
         }
     }
 }
+

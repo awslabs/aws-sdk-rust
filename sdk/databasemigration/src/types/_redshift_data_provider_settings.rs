@@ -3,7 +3,7 @@
 /// <p>Provides information that defines an Amazon Redshift data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDataProviderSettings {
+pub struct RedshiftDataProviderSettings  {
     /// <p>The name of the Amazon Redshift server.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value for the Amazon Redshift data provider.</p>
@@ -11,9 +11,9 @@ pub struct RedshiftDataProviderSettings {
     /// <p>The database name on the Amazon Redshift data provider.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
 }
-impl RedshiftDataProviderSettings {
+impl  RedshiftDataProviderSettings  {
     /// <p>The name of the Amazon Redshift server.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The port value for the Amazon Redshift data provider.</p>
@@ -21,7 +21,7 @@ impl RedshiftDataProviderSettings {
         self.port
     }
     /// <p>The database name on the Amazon Redshift data provider.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RedshiftDataProviderSettingsBuilder {
     }
     /// <p>The name of the Amazon Redshift server.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the Amazon Redshift server.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RedshiftDataProviderSettingsBuilder {
     }
     /// <p>The port value for the Amazon Redshift data provider.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value for the Amazon Redshift data provider.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl RedshiftDataProviderSettingsBuilder {
     }
     /// <p>The database name on the Amazon Redshift data provider.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name on the Amazon Redshift data provider.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl RedshiftDataProviderSettingsBuilder {
     /// Consumes the builder and constructs a [`RedshiftDataProviderSettings`](crate::types::RedshiftDataProviderSettings).
     pub fn build(self) -> crate::types::RedshiftDataProviderSettings {
         crate::types::RedshiftDataProviderSettings {
-            server_name: self.server_name,
-            port: self.port,
-            database_name: self.database_name,
+            server_name: self.server_name
+            ,
+            port: self.port
+            ,
+            database_name: self.database_name
+            ,
         }
     }
 }
+

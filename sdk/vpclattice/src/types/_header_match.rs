@@ -3,7 +3,7 @@
 /// <p>Describes the constraints for a header match. Matches incoming requests with rule based on request header value before applying rule action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HeaderMatch {
+pub struct HeaderMatch  {
     /// <p>The name of the header.</p>
     pub name: ::std::string::String,
     /// <p>The header match type.</p>
@@ -11,14 +11,13 @@ pub struct HeaderMatch {
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub case_sensitive: ::std::option::Option<bool>,
 }
-impl HeaderMatch {
+impl  HeaderMatch  {
     /// <p>The name of the header.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The header match type.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::HeaderMatchType> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::HeaderMatchType> {
         self.r#match.as_ref()
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
@@ -50,8 +49,7 @@ impl HeaderMatchBuilder {
     }
     /// <p>The name of the header.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the header.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl HeaderMatchBuilder {
     }
     /// <p>The header match type.</p>
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::HeaderMatchType>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>The header match type.</p>
     pub fn get_match(&self) -> &::std::option::Option<crate::types::HeaderMatchType> {
@@ -79,8 +76,7 @@ impl HeaderMatchBuilder {
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.case_sensitive = input;
-        self
+        self.case_sensitive = input; self
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn get_case_sensitive(&self) -> &::std::option::Option<bool> {
@@ -90,15 +86,19 @@ impl HeaderMatchBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::HeaderMatchBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::HeaderMatch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HeaderMatch {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building HeaderMatch",
-                )
-            })?,
-            r#match: self.r#match,
-            case_sensitive: self.case_sensitive,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HeaderMatch {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building HeaderMatch")
+                    )?
+                ,
+                r#match: self.r#match
+                ,
+                case_sensitive: self.case_sensitive
+                ,
+            }
+        )
     }
 }
+

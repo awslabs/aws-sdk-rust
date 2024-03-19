@@ -3,7 +3,7 @@
 /// <p>The details of a crawl in the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Crawl {
+pub struct Crawl  {
     /// <p>The state of the crawler.</p>
     pub state: ::std::option::Option<crate::types::CrawlState>,
     /// <p>The date and time on which the crawl started.</p>
@@ -17,29 +17,29 @@ pub struct Crawl {
     /// <p>The log stream associated with the crawl.</p>
     pub log_stream: ::std::option::Option<::std::string::String>,
 }
-impl Crawl {
+impl  Crawl  {
     /// <p>The state of the crawler.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CrawlState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CrawlState> {
         self.state.as_ref()
     }
     /// <p>The date and time on which the crawl started.</p>
-    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The date and time on which the crawl completed.</p>
-    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The error message associated with the crawl.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The log group associated with the crawl.</p>
-    pub fn log_group(&self) -> ::std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<& str> {
         self.log_group.as_deref()
     }
     /// <p>The log stream associated with the crawl.</p>
-    pub fn log_stream(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream(&self) -> ::std::option::Option<& str> {
         self.log_stream.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl CrawlBuilder {
     }
     /// <p>The state of the crawler.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CrawlState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the crawler.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CrawlState> {
@@ -83,8 +82,7 @@ impl CrawlBuilder {
     }
     /// <p>The date and time on which the crawl started.</p>
     pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_on = input;
-        self
+        self.started_on = input; self
     }
     /// <p>The date and time on which the crawl started.</p>
     pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +95,7 @@ impl CrawlBuilder {
     }
     /// <p>The date and time on which the crawl completed.</p>
     pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_on = input;
-        self
+        self.completed_on = input; self
     }
     /// <p>The date and time on which the crawl completed.</p>
     pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl CrawlBuilder {
     }
     /// <p>The error message associated with the crawl.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message associated with the crawl.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl CrawlBuilder {
     }
     /// <p>The log group associated with the crawl.</p>
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group = input;
-        self
+        self.log_group = input; self
     }
     /// <p>The log group associated with the crawl.</p>
     pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl CrawlBuilder {
     }
     /// <p>The log stream associated with the crawl.</p>
     pub fn set_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream = input;
-        self
+        self.log_stream = input; self
     }
     /// <p>The log stream associated with the crawl.</p>
     pub fn get_log_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl CrawlBuilder {
     /// Consumes the builder and constructs a [`Crawl`](crate::types::Crawl).
     pub fn build(self) -> crate::types::Crawl {
         crate::types::Crawl {
-            state: self.state,
-            started_on: self.started_on,
-            completed_on: self.completed_on,
-            error_message: self.error_message,
-            log_group: self.log_group,
-            log_stream: self.log_stream,
+            state: self.state
+            ,
+            started_on: self.started_on
+            ,
+            completed_on: self.completed_on
+            ,
+            error_message: self.error_message
+            ,
+            log_group: self.log_group
+            ,
+            log_stream: self.log_stream
+            ,
         }
     }
 }
+

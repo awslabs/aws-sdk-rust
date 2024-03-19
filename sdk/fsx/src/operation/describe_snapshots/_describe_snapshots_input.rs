@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotsInput {
+pub struct DescribeSnapshotsInput  {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
@@ -14,25 +14,27 @@ pub struct DescribeSnapshotsInput {
     /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub include_shared: ::std::option::Option<bool>,
 }
-impl DescribeSnapshotsInput {
+impl  DescribeSnapshotsInput  {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
-    pub fn snapshot_ids(&self) -> &[::std::string::String] {
-        self.snapshot_ids.as_deref().unwrap_or_default()
+    pub fn snapshot_ids(&self) -> & [::std::string::String] {
+        self.snapshot_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::SnapshotFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::SnapshotFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
@@ -51,8 +53,8 @@ impl DescribeSnapshotsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
-    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>,
+    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) include_shared: ::std::option::Option<bool>,
@@ -65,17 +67,16 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_ids.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_ids = input;
-        self
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_ids = input; self
     }
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_ids
     }
     /// Appends an item to `filters`.
@@ -85,17 +86,16 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
     pub fn filters(mut self, input: crate::types::SnapshotFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFilter>> {
         &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -105,8 +105,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,8 +118,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,23 +131,28 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_shared = input;
-        self
+        self.include_shared = input; self
     }
     /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
         &self.include_shared
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
-            snapshot_ids: self.snapshot_ids,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            include_shared: self.include_shared,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshots::DescribeSnapshotsInput {
+                snapshot_ids: self.snapshot_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                include_shared: self.include_shared
+                ,
+            }
+        )
     }
 }
+

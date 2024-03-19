@@ -4,7 +4,7 @@
 /// <p>For more information see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing your storage lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExpiration {
+pub struct LifecycleExpiration  {
     /// <p>Indicates at what date the object is to be moved or deleted. The date value must conform to the ISO 8601 format. The time is always midnight UTC.</p>
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
@@ -12,9 +12,9 @@ pub struct LifecycleExpiration {
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub expired_object_delete_marker: ::std::option::Option<bool>,
 }
-impl LifecycleExpiration {
+impl  LifecycleExpiration  {
     /// <p>Indicates at what date the object is to be moved or deleted. The date value must conform to the ISO 8601 format. The time is always midnight UTC.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
@@ -49,8 +49,7 @@ impl LifecycleExpirationBuilder {
     }
     /// <p>Indicates at what date the object is to be moved or deleted. The date value must conform to the ISO 8601 format. The time is always midnight UTC.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>Indicates at what date the object is to be moved or deleted. The date value must conform to the ISO 8601 format. The time is always midnight UTC.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -63,8 +62,7 @@ impl LifecycleExpirationBuilder {
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub fn get_days(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl LifecycleExpirationBuilder {
     }
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub fn set_expired_object_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.expired_object_delete_marker = input;
-        self
+        self.expired_object_delete_marker = input; self
     }
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub fn get_expired_object_delete_marker(&self) -> &::std::option::Option<bool> {
@@ -87,9 +84,13 @@ impl LifecycleExpirationBuilder {
     /// Consumes the builder and constructs a [`LifecycleExpiration`](crate::types::LifecycleExpiration).
     pub fn build(self) -> crate::types::LifecycleExpiration {
         crate::types::LifecycleExpiration {
-            date: self.date,
-            days: self.days,
-            expired_object_delete_marker: self.expired_object_delete_marker,
+            date: self.date
+            ,
+            days: self.days
+            ,
+            expired_object_delete_marker: self.expired_object_delete_marker
+            ,
         }
     }
 }
+

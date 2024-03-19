@@ -3,7 +3,7 @@
 /// <p>Contains the inputs for the <code>ConnectDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConnectDirectoryInput {
+pub struct ConnectDirectoryInput  {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
@@ -17,41 +17,42 @@ pub struct ConnectDirectoryInput {
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
     pub connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettings>,
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ConnectDirectoryInput {
+impl  ConnectDirectoryInput  {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
-    pub fn short_name(&self) -> ::std::option::Option<&str> {
+    pub fn short_name(&self) -> ::std::option::Option<& str> {
         self.short_name.as_deref()
     }
     /// <p>The password for your self-managed user account.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>A description for the directory.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The size of the directory.</p>
-    pub fn size(&self) -> ::std::option::Option<&crate::types::DirectorySize> {
+    pub fn size(&self) -> ::std::option::Option<& crate::types::DirectorySize> {
         self.size.as_ref()
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn connect_settings(&self) -> ::std::option::Option<&crate::types::DirectoryConnectSettings> {
+    pub fn connect_settings(&self) -> ::std::option::Option<& crate::types::DirectoryConnectSettings> {
         self.connect_settings.as_ref()
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ConnectDirectoryInput {
+impl  ::std::fmt::Debug for ConnectDirectoryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectDirectoryInput");
         formatter.field("name", &self.name);
@@ -81,7 +82,7 @@ pub struct ConnectDirectoryInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<crate::types::DirectorySize>,
     pub(crate) connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettings>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ConnectDirectoryInputBuilder {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
@@ -92,8 +93,7 @@ impl ConnectDirectoryInputBuilder {
     }
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl ConnectDirectoryInputBuilder {
     }
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
     pub fn set_short_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_name = input;
-        self
+        self.short_name = input; self
     }
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
     pub fn get_short_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl ConnectDirectoryInputBuilder {
     }
     /// <p>The password for your self-managed user account.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password for your self-managed user account.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl ConnectDirectoryInputBuilder {
     }
     /// <p>A description for the directory.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the directory.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl ConnectDirectoryInputBuilder {
     }
     /// <p>The size of the directory.</p>
     pub fn set_size(mut self, input: ::std::option::Option<crate::types::DirectorySize>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the directory.</p>
     pub fn get_size(&self) -> &::std::option::Option<crate::types::DirectorySize> {
@@ -165,8 +161,7 @@ impl ConnectDirectoryInputBuilder {
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
     pub fn set_connect_settings(mut self, input: ::std::option::Option<crate::types::DirectoryConnectSettings>) -> Self {
-        self.connect_settings = input;
-        self
+        self.connect_settings = input; self
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
     pub fn get_connect_settings(&self) -> &::std::option::Option<crate::types::DirectoryConnectSettings> {
@@ -179,32 +174,38 @@ impl ConnectDirectoryInputBuilder {
     /// <p>The tags to be assigned to AD Connector.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ConnectDirectoryInput`](crate::operation::connect_directory::ConnectDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::connect_directory::ConnectDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::connect_directory::ConnectDirectoryInput {
-            name: self.name,
-            short_name: self.short_name,
-            password: self.password,
-            description: self.description,
-            size: self.size,
-            connect_settings: self.connect_settings,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::connect_directory::ConnectDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::connect_directory::ConnectDirectoryInput {
+                name: self.name
+                ,
+                short_name: self.short_name
+                ,
+                password: self.password
+                ,
+                description: self.description
+                ,
+                size: self.size
+                ,
+                connect_settings: self.connect_settings
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ConnectDirectoryInputBuilder {
@@ -220,3 +221,4 @@ impl ::std::fmt::Debug for ConnectDirectoryInputBuilder {
         formatter.finish()
     }
 }
+

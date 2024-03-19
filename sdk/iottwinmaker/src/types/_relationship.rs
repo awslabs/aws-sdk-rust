@@ -3,19 +3,19 @@
 /// <p>An object that specifies a relationship with another component type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Relationship {
+pub struct Relationship  {
     /// <p>The ID of the target component type associated with this relationship.</p>
     pub target_component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the relationship.</p>
     pub relationship_type: ::std::option::Option<::std::string::String>,
 }
-impl Relationship {
+impl  Relationship  {
     /// <p>The ID of the target component type associated with this relationship.</p>
-    pub fn target_component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_component_type_id(&self) -> ::std::option::Option<& str> {
         self.target_component_type_id.as_deref()
     }
     /// <p>The type of the relationship.</p>
-    pub fn relationship_type(&self) -> ::std::option::Option<&str> {
+    pub fn relationship_type(&self) -> ::std::option::Option<& str> {
         self.relationship_type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RelationshipBuilder {
     }
     /// <p>The ID of the target component type associated with this relationship.</p>
     pub fn set_target_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_component_type_id = input;
-        self
+        self.target_component_type_id = input; self
     }
     /// <p>The ID of the target component type associated with this relationship.</p>
     pub fn get_target_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RelationshipBuilder {
     }
     /// <p>The type of the relationship.</p>
     pub fn set_relationship_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relationship_type = input;
-        self
+        self.relationship_type = input; self
     }
     /// <p>The type of the relationship.</p>
     pub fn get_relationship_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RelationshipBuilder {
     /// Consumes the builder and constructs a [`Relationship`](crate::types::Relationship).
     pub fn build(self) -> crate::types::Relationship {
         crate::types::Relationship {
-            target_component_type_id: self.target_component_type_id,
-            relationship_type: self.relationship_type,
+            target_component_type_id: self.target_component_type_id
+            ,
+            relationship_type: self.relationship_type
+            ,
         }
     }
 }
+

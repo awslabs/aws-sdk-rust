@@ -21,11 +21,7 @@ impl QuickResponseDataProvider {
     /// Tries to convert the enum instance into [`Content`](crate::types::QuickResponseDataProvider::Content), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let QuickResponseDataProvider::Content(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let QuickResponseDataProvider::Content(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Content`](crate::types::QuickResponseDataProvider::Content).
     pub fn is_content(&self) -> bool {
@@ -44,3 +40,4 @@ impl ::std::fmt::Debug for QuickResponseDataProvider {
         }
     }
 }
+

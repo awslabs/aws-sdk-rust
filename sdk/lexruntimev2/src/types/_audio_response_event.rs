@@ -3,7 +3,7 @@
 /// <p>An event sent from Amazon Lex V2 to your client application containing audio to play to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioResponseEvent {
+pub struct AudioResponseEvent  {
     /// <p>A chunk of the audio to play.</p>
     pub audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The encoding of the audio chunk. This is the same as the encoding configure in the <code>contentType</code> field of the <code>ConfigurationEvent</code>.</p>
@@ -11,17 +11,17 @@ pub struct AudioResponseEvent {
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
 }
-impl AudioResponseEvent {
+impl  AudioResponseEvent  {
     /// <p>A chunk of the audio to play.</p>
-    pub fn audio_chunk(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn audio_chunk(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.audio_chunk.as_ref()
     }
     /// <p>The encoding of the audio chunk. This is the same as the encoding configure in the <code>contentType</code> field of the <code>ConfigurationEvent</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AudioResponseEventBuilder {
     }
     /// <p>A chunk of the audio to play.</p>
     pub fn set_audio_chunk(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.audio_chunk = input;
-        self
+        self.audio_chunk = input; self
     }
     /// <p>A chunk of the audio to play.</p>
     pub fn get_audio_chunk(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -62,8 +61,7 @@ impl AudioResponseEventBuilder {
     }
     /// <p>The encoding of the audio chunk. This is the same as the encoding configure in the <code>contentType</code> field of the <code>ConfigurationEvent</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The encoding of the audio chunk. This is the same as the encoding configure in the <code>contentType</code> field of the <code>ConfigurationEvent</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AudioResponseEventBuilder {
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AudioResponseEventBuilder {
     /// Consumes the builder and constructs a [`AudioResponseEvent`](crate::types::AudioResponseEvent).
     pub fn build(self) -> crate::types::AudioResponseEvent {
         crate::types::AudioResponseEvent {
-            audio_chunk: self.audio_chunk,
-            content_type: self.content_type,
-            event_id: self.event_id,
+            audio_chunk: self.audio_chunk
+            ,
+            content_type: self.content_type
+            ,
+            event_id: self.event_id
+            ,
         }
     }
 }
+

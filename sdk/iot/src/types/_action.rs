@@ -3,7 +3,7 @@
 /// <p>Describes the actions associated with a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>Write to a DynamoDB table.</p>
     pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
@@ -53,99 +53,99 @@ pub struct Action {
     /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
     pub location: ::std::option::Option<crate::types::LocationAction>,
 }
-impl Action {
+impl  Action  {
     /// <p>Write to a DynamoDB table.</p>
-    pub fn dynamo_db(&self) -> ::std::option::Option<&crate::types::DynamoDbAction> {
+    pub fn dynamo_db(&self) -> ::std::option::Option<& crate::types::DynamoDbAction> {
         self.dynamo_db.as_ref()
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    pub fn dynamo_dbv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
+    pub fn dynamo_dbv2(&self) -> ::std::option::Option<& crate::types::DynamoDBv2Action> {
         self.dynamo_dbv2.as_ref()
     }
     /// <p>Invoke a Lambda function.</p>
-    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
+    pub fn lambda(&self) -> ::std::option::Option<& crate::types::LambdaAction> {
         self.lambda.as_ref()
     }
     /// <p>Publish to an Amazon SNS topic.</p>
-    pub fn sns(&self) -> ::std::option::Option<&crate::types::SnsAction> {
+    pub fn sns(&self) -> ::std::option::Option<& crate::types::SnsAction> {
         self.sns.as_ref()
     }
     /// <p>Publish to an Amazon SQS queue.</p>
-    pub fn sqs(&self) -> ::std::option::Option<&crate::types::SqsAction> {
+    pub fn sqs(&self) -> ::std::option::Option<& crate::types::SqsAction> {
         self.sqs.as_ref()
     }
     /// <p>Write data to an Amazon Kinesis stream.</p>
-    pub fn kinesis(&self) -> ::std::option::Option<&crate::types::KinesisAction> {
+    pub fn kinesis(&self) -> ::std::option::Option<& crate::types::KinesisAction> {
         self.kinesis.as_ref()
     }
     /// <p>Publish to another MQTT topic.</p>
-    pub fn republish(&self) -> ::std::option::Option<&crate::types::RepublishAction> {
+    pub fn republish(&self) -> ::std::option::Option<& crate::types::RepublishAction> {
         self.republish.as_ref()
     }
     /// <p>Write to an Amazon S3 bucket.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3Action> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3Action> {
         self.s3.as_ref()
     }
     /// <p>Write to an Amazon Kinesis Firehose stream.</p>
-    pub fn firehose(&self) -> ::std::option::Option<&crate::types::FirehoseAction> {
+    pub fn firehose(&self) -> ::std::option::Option<& crate::types::FirehoseAction> {
         self.firehose.as_ref()
     }
     /// <p>Capture a CloudWatch metric.</p>
-    pub fn cloudwatch_metric(&self) -> ::std::option::Option<&crate::types::CloudwatchMetricAction> {
+    pub fn cloudwatch_metric(&self) -> ::std::option::Option<& crate::types::CloudwatchMetricAction> {
         self.cloudwatch_metric.as_ref()
     }
     /// <p>Change the state of a CloudWatch alarm.</p>
-    pub fn cloudwatch_alarm(&self) -> ::std::option::Option<&crate::types::CloudwatchAlarmAction> {
+    pub fn cloudwatch_alarm(&self) -> ::std::option::Option<& crate::types::CloudwatchAlarmAction> {
         self.cloudwatch_alarm.as_ref()
     }
     /// <p>Send data to CloudWatch Logs.</p>
-    pub fn cloudwatch_logs(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsAction> {
+    pub fn cloudwatch_logs(&self) -> ::std::option::Option<& crate::types::CloudwatchLogsAction> {
         self.cloudwatch_logs.as_ref()
     }
     /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
-    pub fn elasticsearch(&self) -> ::std::option::Option<&crate::types::ElasticsearchAction> {
+    pub fn elasticsearch(&self) -> ::std::option::Option<& crate::types::ElasticsearchAction> {
         self.elasticsearch.as_ref()
     }
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
-    pub fn salesforce(&self) -> ::std::option::Option<&crate::types::SalesforceAction> {
+    pub fn salesforce(&self) -> ::std::option::Option<& crate::types::SalesforceAction> {
         self.salesforce.as_ref()
     }
     /// <p>Sends message data to an IoT Analytics channel.</p>
-    pub fn iot_analytics(&self) -> ::std::option::Option<&crate::types::IotAnalyticsAction> {
+    pub fn iot_analytics(&self) -> ::std::option::Option<& crate::types::IotAnalyticsAction> {
         self.iot_analytics.as_ref()
     }
     /// <p>Sends an input to an IoT Events detector.</p>
-    pub fn iot_events(&self) -> ::std::option::Option<&crate::types::IotEventsAction> {
+    pub fn iot_events(&self) -> ::std::option::Option<& crate::types::IotEventsAction> {
         self.iot_events.as_ref()
     }
     /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
-    pub fn iot_site_wise(&self) -> ::std::option::Option<&crate::types::IotSiteWiseAction> {
+    pub fn iot_site_wise(&self) -> ::std::option::Option<& crate::types::IotSiteWiseAction> {
         self.iot_site_wise.as_ref()
     }
     /// <p>Starts execution of a Step Functions state machine.</p>
-    pub fn step_functions(&self) -> ::std::option::Option<&crate::types::StepFunctionsAction> {
+    pub fn step_functions(&self) -> ::std::option::Option<& crate::types::StepFunctionsAction> {
         self.step_functions.as_ref()
     }
     /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
-    pub fn timestream(&self) -> ::std::option::Option<&crate::types::TimestreamAction> {
+    pub fn timestream(&self) -> ::std::option::Option<& crate::types::TimestreamAction> {
         self.timestream.as_ref()
     }
     /// <p>Send data to an HTTPS endpoint.</p>
-    pub fn http(&self) -> ::std::option::Option<&crate::types::HttpAction> {
+    pub fn http(&self) -> ::std::option::Option<& crate::types::HttpAction> {
         self.http.as_ref()
     }
     /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
-    pub fn kafka(&self) -> ::std::option::Option<&crate::types::KafkaAction> {
+    pub fn kafka(&self) -> ::std::option::Option<& crate::types::KafkaAction> {
         self.kafka.as_ref()
     }
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
-    pub fn open_search(&self) -> ::std::option::Option<&crate::types::OpenSearchAction> {
+    pub fn open_search(&self) -> ::std::option::Option<& crate::types::OpenSearchAction> {
         self.open_search.as_ref()
     }
     /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::LocationAction> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::LocationAction> {
         self.location.as_ref()
     }
 }
@@ -192,8 +192,7 @@ impl ActionBuilder {
     }
     /// <p>Write to a DynamoDB table.</p>
     pub fn set_dynamo_db(mut self, input: ::std::option::Option<crate::types::DynamoDbAction>) -> Self {
-        self.dynamo_db = input;
-        self
+        self.dynamo_db = input; self
     }
     /// <p>Write to a DynamoDB table.</p>
     pub fn get_dynamo_db(&self) -> &::std::option::Option<crate::types::DynamoDbAction> {
@@ -206,8 +205,7 @@ impl ActionBuilder {
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
     pub fn set_dynamo_dbv2(mut self, input: ::std::option::Option<crate::types::DynamoDBv2Action>) -> Self {
-        self.dynamo_dbv2 = input;
-        self
+        self.dynamo_dbv2 = input; self
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
     pub fn get_dynamo_dbv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
@@ -220,8 +218,7 @@ impl ActionBuilder {
     }
     /// <p>Invoke a Lambda function.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// <p>Invoke a Lambda function.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaAction> {
@@ -234,8 +231,7 @@ impl ActionBuilder {
     }
     /// <p>Publish to an Amazon SNS topic.</p>
     pub fn set_sns(mut self, input: ::std::option::Option<crate::types::SnsAction>) -> Self {
-        self.sns = input;
-        self
+        self.sns = input; self
     }
     /// <p>Publish to an Amazon SNS topic.</p>
     pub fn get_sns(&self) -> &::std::option::Option<crate::types::SnsAction> {
@@ -248,8 +244,7 @@ impl ActionBuilder {
     }
     /// <p>Publish to an Amazon SQS queue.</p>
     pub fn set_sqs(mut self, input: ::std::option::Option<crate::types::SqsAction>) -> Self {
-        self.sqs = input;
-        self
+        self.sqs = input; self
     }
     /// <p>Publish to an Amazon SQS queue.</p>
     pub fn get_sqs(&self) -> &::std::option::Option<crate::types::SqsAction> {
@@ -262,8 +257,7 @@ impl ActionBuilder {
     }
     /// <p>Write data to an Amazon Kinesis stream.</p>
     pub fn set_kinesis(mut self, input: ::std::option::Option<crate::types::KinesisAction>) -> Self {
-        self.kinesis = input;
-        self
+        self.kinesis = input; self
     }
     /// <p>Write data to an Amazon Kinesis stream.</p>
     pub fn get_kinesis(&self) -> &::std::option::Option<crate::types::KinesisAction> {
@@ -276,8 +270,7 @@ impl ActionBuilder {
     }
     /// <p>Publish to another MQTT topic.</p>
     pub fn set_republish(mut self, input: ::std::option::Option<crate::types::RepublishAction>) -> Self {
-        self.republish = input;
-        self
+        self.republish = input; self
     }
     /// <p>Publish to another MQTT topic.</p>
     pub fn get_republish(&self) -> &::std::option::Option<crate::types::RepublishAction> {
@@ -290,8 +283,7 @@ impl ActionBuilder {
     }
     /// <p>Write to an Amazon S3 bucket.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3Action>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>Write to an Amazon S3 bucket.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Action> {
@@ -304,8 +296,7 @@ impl ActionBuilder {
     }
     /// <p>Write to an Amazon Kinesis Firehose stream.</p>
     pub fn set_firehose(mut self, input: ::std::option::Option<crate::types::FirehoseAction>) -> Self {
-        self.firehose = input;
-        self
+        self.firehose = input; self
     }
     /// <p>Write to an Amazon Kinesis Firehose stream.</p>
     pub fn get_firehose(&self) -> &::std::option::Option<crate::types::FirehoseAction> {
@@ -318,8 +309,7 @@ impl ActionBuilder {
     }
     /// <p>Capture a CloudWatch metric.</p>
     pub fn set_cloudwatch_metric(mut self, input: ::std::option::Option<crate::types::CloudwatchMetricAction>) -> Self {
-        self.cloudwatch_metric = input;
-        self
+        self.cloudwatch_metric = input; self
     }
     /// <p>Capture a CloudWatch metric.</p>
     pub fn get_cloudwatch_metric(&self) -> &::std::option::Option<crate::types::CloudwatchMetricAction> {
@@ -332,8 +322,7 @@ impl ActionBuilder {
     }
     /// <p>Change the state of a CloudWatch alarm.</p>
     pub fn set_cloudwatch_alarm(mut self, input: ::std::option::Option<crate::types::CloudwatchAlarmAction>) -> Self {
-        self.cloudwatch_alarm = input;
-        self
+        self.cloudwatch_alarm = input; self
     }
     /// <p>Change the state of a CloudWatch alarm.</p>
     pub fn get_cloudwatch_alarm(&self) -> &::std::option::Option<crate::types::CloudwatchAlarmAction> {
@@ -346,8 +335,7 @@ impl ActionBuilder {
     }
     /// <p>Send data to CloudWatch Logs.</p>
     pub fn set_cloudwatch_logs(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsAction>) -> Self {
-        self.cloudwatch_logs = input;
-        self
+        self.cloudwatch_logs = input; self
     }
     /// <p>Send data to CloudWatch Logs.</p>
     pub fn get_cloudwatch_logs(&self) -> &::std::option::Option<crate::types::CloudwatchLogsAction> {
@@ -364,8 +352,7 @@ impl ActionBuilder {
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub fn set_elasticsearch(mut self, input: ::std::option::Option<crate::types::ElasticsearchAction>) -> Self {
-        self.elasticsearch = input;
-        self
+        self.elasticsearch = input; self
     }
     /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
@@ -380,8 +367,7 @@ impl ActionBuilder {
     }
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
     pub fn set_salesforce(mut self, input: ::std::option::Option<crate::types::SalesforceAction>) -> Self {
-        self.salesforce = input;
-        self
+        self.salesforce = input; self
     }
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
     pub fn get_salesforce(&self) -> &::std::option::Option<crate::types::SalesforceAction> {
@@ -394,8 +380,7 @@ impl ActionBuilder {
     }
     /// <p>Sends message data to an IoT Analytics channel.</p>
     pub fn set_iot_analytics(mut self, input: ::std::option::Option<crate::types::IotAnalyticsAction>) -> Self {
-        self.iot_analytics = input;
-        self
+        self.iot_analytics = input; self
     }
     /// <p>Sends message data to an IoT Analytics channel.</p>
     pub fn get_iot_analytics(&self) -> &::std::option::Option<crate::types::IotAnalyticsAction> {
@@ -408,8 +393,7 @@ impl ActionBuilder {
     }
     /// <p>Sends an input to an IoT Events detector.</p>
     pub fn set_iot_events(mut self, input: ::std::option::Option<crate::types::IotEventsAction>) -> Self {
-        self.iot_events = input;
-        self
+        self.iot_events = input; self
     }
     /// <p>Sends an input to an IoT Events detector.</p>
     pub fn get_iot_events(&self) -> &::std::option::Option<crate::types::IotEventsAction> {
@@ -422,8 +406,7 @@ impl ActionBuilder {
     }
     /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
     pub fn set_iot_site_wise(mut self, input: ::std::option::Option<crate::types::IotSiteWiseAction>) -> Self {
-        self.iot_site_wise = input;
-        self
+        self.iot_site_wise = input; self
     }
     /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
     pub fn get_iot_site_wise(&self) -> &::std::option::Option<crate::types::IotSiteWiseAction> {
@@ -436,8 +419,7 @@ impl ActionBuilder {
     }
     /// <p>Starts execution of a Step Functions state machine.</p>
     pub fn set_step_functions(mut self, input: ::std::option::Option<crate::types::StepFunctionsAction>) -> Self {
-        self.step_functions = input;
-        self
+        self.step_functions = input; self
     }
     /// <p>Starts execution of a Step Functions state machine.</p>
     pub fn get_step_functions(&self) -> &::std::option::Option<crate::types::StepFunctionsAction> {
@@ -450,8 +432,7 @@ impl ActionBuilder {
     }
     /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
     pub fn set_timestream(mut self, input: ::std::option::Option<crate::types::TimestreamAction>) -> Self {
-        self.timestream = input;
-        self
+        self.timestream = input; self
     }
     /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
     pub fn get_timestream(&self) -> &::std::option::Option<crate::types::TimestreamAction> {
@@ -464,8 +445,7 @@ impl ActionBuilder {
     }
     /// <p>Send data to an HTTPS endpoint.</p>
     pub fn set_http(mut self, input: ::std::option::Option<crate::types::HttpAction>) -> Self {
-        self.http = input;
-        self
+        self.http = input; self
     }
     /// <p>Send data to an HTTPS endpoint.</p>
     pub fn get_http(&self) -> &::std::option::Option<crate::types::HttpAction> {
@@ -478,8 +458,7 @@ impl ActionBuilder {
     }
     /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
     pub fn set_kafka(mut self, input: ::std::option::Option<crate::types::KafkaAction>) -> Self {
-        self.kafka = input;
-        self
+        self.kafka = input; self
     }
     /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
     pub fn get_kafka(&self) -> &::std::option::Option<crate::types::KafkaAction> {
@@ -492,8 +471,7 @@ impl ActionBuilder {
     }
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
     pub fn set_open_search(mut self, input: ::std::option::Option<crate::types::OpenSearchAction>) -> Self {
-        self.open_search = input;
-        self
+        self.open_search = input; self
     }
     /// <p>Write data to an Amazon OpenSearch Service domain.</p>
     pub fn get_open_search(&self) -> &::std::option::Option<crate::types::OpenSearchAction> {
@@ -506,8 +484,7 @@ impl ActionBuilder {
     }
     /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::LocationAction>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::LocationAction> {
@@ -516,29 +493,53 @@ impl ActionBuilder {
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
-            dynamo_db: self.dynamo_db,
-            dynamo_dbv2: self.dynamo_dbv2,
-            lambda: self.lambda,
-            sns: self.sns,
-            sqs: self.sqs,
-            kinesis: self.kinesis,
-            republish: self.republish,
-            s3: self.s3,
-            firehose: self.firehose,
-            cloudwatch_metric: self.cloudwatch_metric,
-            cloudwatch_alarm: self.cloudwatch_alarm,
-            cloudwatch_logs: self.cloudwatch_logs,
-            elasticsearch: self.elasticsearch,
-            salesforce: self.salesforce,
-            iot_analytics: self.iot_analytics,
-            iot_events: self.iot_events,
-            iot_site_wise: self.iot_site_wise,
-            step_functions: self.step_functions,
-            timestream: self.timestream,
-            http: self.http,
-            kafka: self.kafka,
-            open_search: self.open_search,
-            location: self.location,
+            dynamo_db: self.dynamo_db
+            ,
+            dynamo_dbv2: self.dynamo_dbv2
+            ,
+            lambda: self.lambda
+            ,
+            sns: self.sns
+            ,
+            sqs: self.sqs
+            ,
+            kinesis: self.kinesis
+            ,
+            republish: self.republish
+            ,
+            s3: self.s3
+            ,
+            firehose: self.firehose
+            ,
+            cloudwatch_metric: self.cloudwatch_metric
+            ,
+            cloudwatch_alarm: self.cloudwatch_alarm
+            ,
+            cloudwatch_logs: self.cloudwatch_logs
+            ,
+            elasticsearch: self.elasticsearch
+            ,
+            salesforce: self.salesforce
+            ,
+            iot_analytics: self.iot_analytics
+            ,
+            iot_events: self.iot_events
+            ,
+            iot_site_wise: self.iot_site_wise
+            ,
+            step_functions: self.step_functions
+            ,
+            timestream: self.timestream
+            ,
+            http: self.http
+            ,
+            kafka: self.kafka
+            ,
+            open_search: self.open_search
+            ,
+            location: self.location
+            ,
         }
     }
 }
+

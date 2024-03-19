@@ -10,7 +10,7 @@
 /// <p>Changing the priority order will affect how game sessions are placed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PriorityConfiguration {
+pub struct PriorityConfiguration  {
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
     /// <li>
@@ -22,11 +22,11 @@ pub struct PriorityConfiguration {
     /// <li>
     /// <p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
-    pub priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
+    pub priority_order: ::std::option::Option<::std::vec::Vec::<crate::types::PriorityType>>,
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
-    pub location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub location_order: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PriorityConfiguration {
+impl  PriorityConfiguration  {
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
     /// <li>
@@ -38,16 +38,18 @@ impl PriorityConfiguration {
     /// <li>
     /// <p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.priority_order.is_none()`.
-    pub fn priority_order(&self) -> &[crate::types::PriorityType] {
-        self.priority_order.as_deref().unwrap_or_default()
+    pub fn priority_order(&self) -> & [crate::types::PriorityType] {
+        self.priority_order.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_order.is_none()`.
-    pub fn location_order(&self) -> &[::std::string::String] {
-        self.location_order.as_deref().unwrap_or_default()
+    pub fn location_order(&self) -> & [::std::string::String] {
+        self.location_order.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PriorityConfiguration {
@@ -61,8 +63,8 @@ impl PriorityConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PriorityConfigurationBuilder {
-    pub(crate) priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
-    pub(crate) location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) priority_order: ::std::option::Option<::std::vec::Vec::<crate::types::PriorityType>>,
+    pub(crate) location_order: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PriorityConfigurationBuilder {
     /// Appends an item to `priority_order`.
@@ -82,9 +84,9 @@ impl PriorityConfigurationBuilder {
     /// </ul>
     pub fn priority_order(mut self, input: crate::types::PriorityType) -> Self {
         let mut v = self.priority_order.unwrap_or_default();
-        v.push(input);
-        self.priority_order = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.priority_order = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
@@ -97,9 +99,8 @@ impl PriorityConfigurationBuilder {
     /// <li>
     /// <p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
-    pub fn set_priority_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>) -> Self {
-        self.priority_order = input;
-        self
+    pub fn set_priority_order(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PriorityType>>) -> Self {
+        self.priority_order = input; self
     }
     /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
     /// <ul>
@@ -112,7 +113,7 @@ impl PriorityConfigurationBuilder {
     /// <li>
     /// <p><code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
-    pub fn get_priority_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriorityType>> {
+    pub fn get_priority_order(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PriorityType>> {
         &self.priority_order
     }
     /// Appends an item to `location_order`.
@@ -122,24 +123,26 @@ impl PriorityConfigurationBuilder {
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
     pub fn location_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.location_order.unwrap_or_default();
-        v.push(input.into());
-        self.location_order = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.location_order = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
-    pub fn set_location_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.location_order = input;
-        self
+    pub fn set_location_order(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.location_order = input; self
     }
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once.</p>
-    pub fn get_location_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_location_order(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.location_order
     }
     /// Consumes the builder and constructs a [`PriorityConfiguration`](crate::types::PriorityConfiguration).
     pub fn build(self) -> crate::types::PriorityConfiguration {
         crate::types::PriorityConfiguration {
-            priority_order: self.priority_order,
-            location_order: self.location_order,
+            priority_order: self.priority_order
+            ,
+            location_order: self.location_order
+            ,
         }
     }
 }
+

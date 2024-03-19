@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendChatIntegrationEventOutput {
+pub struct SendChatIntegrationEventOutput  {
     /// <p>Identifier of chat contact used to handle integration event. This may be null if the integration event is not valid without an already existing chat contact.</p>
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether handling the integration event resulted in creating a new chat or acting on existing chat.</p>
     pub new_chat_created: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl SendChatIntegrationEventOutput {
+impl  SendChatIntegrationEventOutput  {
     /// <p>Identifier of chat contact used to handle integration event. This may be null if the integration event is not valid without an already existing chat contact.</p>
-    pub fn initial_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn initial_contact_id(&self) -> ::std::option::Option<& str> {
         self.initial_contact_id.as_deref()
     }
     /// <p>Whether handling the integration event resulted in creating a new chat or acting on existing chat.</p>
@@ -20,10 +20,10 @@ impl SendChatIntegrationEventOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SendChatIntegrationEventOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendChatIntegrationEventOutput {
     /// Creates a new builder-style object to manufacture [`SendChatIntegrationEventOutput`](crate::operation::send_chat_integration_event::SendChatIntegrationEventOutput).
     pub fn builder() -> crate::operation::send_chat_integration_event::builders::SendChatIntegrationEventOutputBuilder {
@@ -47,8 +47,7 @@ impl SendChatIntegrationEventOutputBuilder {
     }
     /// <p>Identifier of chat contact used to handle integration event. This may be null if the integration event is not valid without an already existing chat contact.</p>
     pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_contact_id = input;
-        self
+        self.initial_contact_id = input; self
     }
     /// <p>Identifier of chat contact used to handle integration event. This may be null if the integration event is not valid without an already existing chat contact.</p>
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl SendChatIntegrationEventOutputBuilder {
     }
     /// <p>Whether handling the integration event resulted in creating a new chat or acting on existing chat.</p>
     pub fn set_new_chat_created(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.new_chat_created = input;
-        self
+        self.new_chat_created = input; self
     }
     /// <p>Whether handling the integration event resulted in creating a new chat or acting on existing chat.</p>
     pub fn get_new_chat_created(&self) -> &::std::option::Option<bool> {
         &self.new_chat_created
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendChatIntegrationEventOutput`](crate::operation::send_chat_integration_event::SendChatIntegrationEventOutput).
     pub fn build(self) -> crate::operation::send_chat_integration_event::SendChatIntegrationEventOutput {
         crate::operation::send_chat_integration_event::SendChatIntegrationEventOutput {
-            initial_contact_id: self.initial_contact_id,
-            new_chat_created: self.new_chat_created,
+            initial_contact_id: self.initial_contact_id
+            ,
+            new_chat_created: self.new_chat_created
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

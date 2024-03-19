@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnnotationStoreVersionsInput {
+pub struct DeleteAnnotationStoreVersionsInput  {
     /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The versions of an annotation store to be deleted.</p>
-    pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub force: ::std::option::Option<bool>,
 }
-impl DeleteAnnotationStoreVersionsInput {
+impl  DeleteAnnotationStoreVersionsInput  {
     /// <p>The name of the annotation store from which versions are being deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The versions of an annotation store to be deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
-    pub fn versions(&self) -> &[::std::string::String] {
-        self.versions.as_deref().unwrap_or_default()
+    pub fn versions(&self) -> & [::std::string::String] {
+        self.versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
@@ -38,7 +39,7 @@ impl DeleteAnnotationStoreVersionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl DeleteAnnotationStoreVersionsInputBuilder {
@@ -50,8 +51,7 @@ impl DeleteAnnotationStoreVersionsInputBuilder {
     }
     /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl DeleteAnnotationStoreVersionsInputBuilder {
     /// <p>The versions of an annotation store to be deleted.</p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input.into());
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The versions of an annotation store to be deleted.</p>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.versions = input; self
     }
     /// <p>The versions of an annotation store to be deleted.</p>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.versions
     }
     /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
@@ -84,24 +83,24 @@ impl DeleteAnnotationStoreVersionsInputBuilder {
     }
     /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreVersionsInput`](crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput {
-            name: self.name,
-            versions: self.versions,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput {
+                name: self.name
+                ,
+                versions: self.versions
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

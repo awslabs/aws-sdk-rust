@@ -3,28 +3,26 @@
 /// <p>Defines the criteria of assessment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentTarget {
+pub struct AssessmentTarget  {
     /// <p>Condition of an assessment.</p>
     pub condition: crate::types::Condition,
     /// <p>Name of an assessment.</p>
     pub name: ::std::string::String,
     /// <p>Values of an assessment.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl AssessmentTarget {
+impl  AssessmentTarget  {
     /// <p>Condition of an assessment.</p>
-    pub fn condition(&self) -> &crate::types::Condition {
+    pub fn condition(&self) -> & crate::types::Condition {
         &self.condition
     }
     /// <p>Name of an assessment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Values of an assessment.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl AssessmentTarget {
@@ -40,7 +38,7 @@ impl AssessmentTarget {
 pub struct AssessmentTargetBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AssessmentTargetBuilder {
     /// <p>Condition of an assessment.</p>
@@ -51,8 +49,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>Condition of an assessment.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>Condition of an assessment.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
@@ -66,8 +63,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>Name of an assessment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of an assessment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +76,16 @@ impl AssessmentTargetBuilder {
     /// <p>Values of an assessment.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Values of an assessment.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>Values of an assessment.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`AssessmentTarget`](crate::types::AssessmentTarget).
@@ -99,25 +94,25 @@ impl AssessmentTargetBuilder {
     /// - [`name`](crate::types::builders::AssessmentTargetBuilder::name)
     /// - [`values`](crate::types::builders::AssessmentTargetBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssessmentTarget {
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssessmentTarget {
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An extension that was invoked during a deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppliedExtension {
+pub struct AppliedExtension  {
     /// <p>The system-generated ID of the extension.</p>
     pub extension_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID for the association.</p>
@@ -11,15 +11,15 @@ pub struct AppliedExtension {
     /// <p>The extension version number.</p>
     pub version_number: i32,
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl AppliedExtension {
+impl  AppliedExtension  {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn extension_id(&self) -> ::std::option::Option<&str> {
+    pub fn extension_id(&self) -> ::std::option::Option<& str> {
         self.extension_id.as_deref()
     }
     /// <p>The system-generated ID for the association.</p>
-    pub fn extension_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn extension_association_id(&self) -> ::std::option::Option<& str> {
         self.extension_association_id.as_deref()
     }
     /// <p>The extension version number.</p>
@@ -27,7 +27,7 @@ impl AppliedExtension {
         self.version_number
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct AppliedExtensionBuilder {
     pub(crate) extension_id: ::std::option::Option<::std::string::String>,
     pub(crate) extension_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i32>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl AppliedExtensionBuilder {
     /// <p>The system-generated ID of the extension.</p>
@@ -55,8 +55,7 @@ impl AppliedExtensionBuilder {
     }
     /// <p>The system-generated ID of the extension.</p>
     pub fn set_extension_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_id = input;
-        self
+        self.extension_id = input; self
     }
     /// <p>The system-generated ID of the extension.</p>
     pub fn get_extension_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AppliedExtensionBuilder {
     }
     /// <p>The system-generated ID for the association.</p>
     pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_association_id = input;
-        self
+        self.extension_association_id = input; self
     }
     /// <p>The system-generated ID for the association.</p>
     pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AppliedExtensionBuilder {
     }
     /// <p>The extension version number.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The extension version number.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i32> {
@@ -97,26 +94,31 @@ impl AppliedExtensionBuilder {
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`AppliedExtension`](crate::types::AppliedExtension).
     pub fn build(self) -> crate::types::AppliedExtension {
         crate::types::AppliedExtension {
-            extension_id: self.extension_id,
-            extension_association_id: self.extension_association_id,
-            version_number: self.version_number.unwrap_or_default(),
-            parameters: self.parameters,
+            extension_id: self.extension_id
+            ,
+            extension_association_id: self.extension_association_id
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReorderReceiptRuleSetInput {
+pub struct ReorderReceiptRuleSetInput  {
     /// <p>The name of the receipt rule set to reorder.</p>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The specified receipt rule set's receipt rules, in order.</p>
-    pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ReorderReceiptRuleSetInput {
+impl  ReorderReceiptRuleSetInput  {
     /// <p>The name of the receipt rule set to reorder.</p>
-    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
     /// <p>The specified receipt rule set's receipt rules, in order.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
-    pub fn rule_names(&self) -> &[::std::string::String] {
-        self.rule_names.as_deref().unwrap_or_default()
+    pub fn rule_names(&self) -> & [::std::string::String] {
+        self.rule_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReorderReceiptRuleSetInput {
@@ -33,7 +34,7 @@ impl ReorderReceiptRuleSetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ReorderReceiptRuleSetInputBuilder {
     /// <p>The name of the receipt rule set to reorder.</p>
@@ -44,8 +45,7 @@ impl ReorderReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the receipt rule set to reorder.</p>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// <p>The name of the receipt rule set to reorder.</p>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,27 +58,28 @@ impl ReorderReceiptRuleSetInputBuilder {
     /// <p>The specified receipt rule set's receipt rules, in order.</p>
     pub fn rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specified receipt rule set's receipt rules, in order.</p>
-    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rule_names = input;
-        self
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rule_names = input; self
     }
     /// <p>The specified receipt rule set's receipt rules, in order.</p>
-    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rule_names
     }
     /// Consumes the builder and constructs a [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput {
-            rule_set_name: self.rule_set_name,
-            rule_names: self.rule_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput {
+                rule_set_name: self.rule_set_name
+                ,
+                rule_names: self.rule_names
+                ,
+            }
+        )
     }
 }
+

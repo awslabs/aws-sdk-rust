@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRequestedServiceQuotaChangeInput {
+pub struct GetRequestedServiceQuotaChangeInput  {
     /// <p>Specifies the ID of the quota increase request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRequestedServiceQuotaChangeInput {
+impl  GetRequestedServiceQuotaChangeInput  {
     /// <p>Specifies the ID of the quota increase request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetRequestedServiceQuotaChangeInputBuilder {
     }
     /// <p>Specifies the ID of the quota increase request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>Specifies the ID of the quota increase request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     /// Consumes the builder and constructs a [`GetRequestedServiceQuotaChangeInput`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput { request_id: self.request_id },
+            crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput {
+                request_id: self.request_id
+                ,
+            }
         )
     }
 }
+

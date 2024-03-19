@@ -3,7 +3,7 @@
 /// <p>Information that identifies the noncompliant resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceIdentifier {
+pub struct ResourceIdentifier  {
     /// <p>The ID of the certificate attached to the resource.</p>
     pub device_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the CA certificate used to authorize the certificate.</p>
@@ -25,45 +25,45 @@ pub struct ResourceIdentifier {
     /// <p>The ARN of the identified device certificate.</p>
     pub device_certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl ResourceIdentifier {
+impl  ResourceIdentifier  {
     /// <p>The ID of the certificate attached to the resource.</p>
-    pub fn device_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_certificate_id(&self) -> ::std::option::Option<& str> {
         self.device_certificate_id.as_deref()
     }
     /// <p>The ID of the CA certificate used to authorize the certificate.</p>
-    pub fn ca_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_id(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_id.as_deref()
     }
     /// <p>The ID of the Amazon Cognito identity pool.</p>
-    pub fn cognito_identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn cognito_identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.cognito_identity_pool_id.as_deref()
     }
     /// <p>The client ID.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The version of the policy associated with the resource.</p>
-    pub fn policy_version_identifier(&self) -> ::std::option::Option<&crate::types::PolicyVersionIdentifier> {
+    pub fn policy_version_identifier(&self) -> ::std::option::Option<& crate::types::PolicyVersionIdentifier> {
         self.policy_version_identifier.as_ref()
     }
     /// <p>The account with which the resource is associated.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The ARN of the IAM role that has overly permissive actions.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
-    pub fn role_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_alias_arn(&self) -> ::std::option::Option<& str> {
         self.role_alias_arn.as_deref()
     }
     /// <p>The issuer certificate identifier.</p>
-    pub fn issuer_certificate_identifier(&self) -> ::std::option::Option<&crate::types::IssuerCertificateIdentifier> {
+    pub fn issuer_certificate_identifier(&self) -> ::std::option::Option<& crate::types::IssuerCertificateIdentifier> {
         self.issuer_certificate_identifier.as_ref()
     }
     /// <p>The ARN of the identified device certificate.</p>
-    pub fn device_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.device_certificate_arn.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ID of the certificate attached to the resource.</p>
     pub fn set_device_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_certificate_id = input;
-        self
+        self.device_certificate_id = input; self
     }
     /// <p>The ID of the certificate attached to the resource.</p>
     pub fn get_device_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ID of the CA certificate used to authorize the certificate.</p>
     pub fn set_ca_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_id = input;
-        self
+        self.ca_certificate_id = input; self
     }
     /// <p>The ID of the CA certificate used to authorize the certificate.</p>
     pub fn get_ca_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ID of the Amazon Cognito identity pool.</p>
     pub fn set_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cognito_identity_pool_id = input;
-        self
+        self.cognito_identity_pool_id = input; self
     }
     /// <p>The ID of the Amazon Cognito identity pool.</p>
     pub fn get_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The client ID.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The version of the policy associated with the resource.</p>
     pub fn set_policy_version_identifier(mut self, input: ::std::option::Option<crate::types::PolicyVersionIdentifier>) -> Self {
-        self.policy_version_identifier = input;
-        self
+        self.policy_version_identifier = input; self
     }
     /// <p>The version of the policy associated with the resource.</p>
     pub fn get_policy_version_identifier(&self) -> &::std::option::Option<crate::types::PolicyVersionIdentifier> {
@@ -167,8 +162,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The account with which the resource is associated.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The account with which the resource is associated.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ARN of the IAM role that has overly permissive actions.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that has overly permissive actions.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
     pub fn set_role_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_alias_arn = input;
-        self
+        self.role_alias_arn = input; self
     }
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
     pub fn get_role_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The issuer certificate identifier.</p>
     pub fn set_issuer_certificate_identifier(mut self, input: ::std::option::Option<crate::types::IssuerCertificateIdentifier>) -> Self {
-        self.issuer_certificate_identifier = input;
-        self
+        self.issuer_certificate_identifier = input; self
     }
     /// <p>The issuer certificate identifier.</p>
     pub fn get_issuer_certificate_identifier(&self) -> &::std::option::Option<crate::types::IssuerCertificateIdentifier> {
@@ -223,8 +214,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ARN of the identified device certificate.</p>
     pub fn set_device_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_certificate_arn = input;
-        self
+        self.device_certificate_arn = input; self
     }
     /// <p>The ARN of the identified device certificate.</p>
     pub fn get_device_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,16 +223,27 @@ impl ResourceIdentifierBuilder {
     /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::types::ResourceIdentifier).
     pub fn build(self) -> crate::types::ResourceIdentifier {
         crate::types::ResourceIdentifier {
-            device_certificate_id: self.device_certificate_id,
-            ca_certificate_id: self.ca_certificate_id,
-            cognito_identity_pool_id: self.cognito_identity_pool_id,
-            client_id: self.client_id,
-            policy_version_identifier: self.policy_version_identifier,
-            account: self.account,
-            iam_role_arn: self.iam_role_arn,
-            role_alias_arn: self.role_alias_arn,
-            issuer_certificate_identifier: self.issuer_certificate_identifier,
-            device_certificate_arn: self.device_certificate_arn,
+            device_certificate_id: self.device_certificate_id
+            ,
+            ca_certificate_id: self.ca_certificate_id
+            ,
+            cognito_identity_pool_id: self.cognito_identity_pool_id
+            ,
+            client_id: self.client_id
+            ,
+            policy_version_identifier: self.policy_version_identifier
+            ,
+            account: self.account
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            role_alias_arn: self.role_alias_arn
+            ,
+            issuer_certificate_identifier: self.issuer_certificate_identifier
+            ,
+            device_certificate_arn: self.device_certificate_arn
+            ,
         }
     }
 }
+

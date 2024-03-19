@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessDeviceStatisticsInput {
+pub struct GetWirelessDeviceStatisticsInput  {
     /// <p>The ID of the wireless device for which to get the data.</p>
     pub wireless_device_id: ::std::option::Option<::std::string::String>,
 }
-impl GetWirelessDeviceStatisticsInput {
+impl  GetWirelessDeviceStatisticsInput  {
     /// <p>The ID of the wireless device for which to get the data.</p>
-    pub fn wireless_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn wireless_device_id(&self) -> ::std::option::Option<& str> {
         self.wireless_device_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetWirelessDeviceStatisticsInputBuilder {
     }
     /// <p>The ID of the wireless device for which to get the data.</p>
     pub fn set_wireless_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wireless_device_id = input;
-        self
+        self.wireless_device_id = input; self
     }
     /// <p>The ID of the wireless device for which to get the data.</p>
     pub fn get_wireless_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wireless_device_id
     }
     /// Consumes the builder and constructs a [`GetWirelessDeviceStatisticsInput`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput {
-            wireless_device_id: self.wireless_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput {
+                wireless_device_id: self.wireless_device_id
+                ,
+            }
+        )
     }
 }
+

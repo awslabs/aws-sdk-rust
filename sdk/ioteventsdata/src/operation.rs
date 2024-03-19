@@ -36,3 +36,4 @@ pub mod list_alarms;
 
 /// Types for the `ListDetectors` operation.
 pub mod list_detectors;
+

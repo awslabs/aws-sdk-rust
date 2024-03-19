@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartIdMappingJobOutput {
+pub struct StartIdMappingJobOutput  {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StartIdMappingJobOutput {
+impl  StartIdMappingJobOutput  {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartIdMappingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartIdMappingJobOutput {
     /// Creates a new builder-style object to manufacture [`StartIdMappingJobOutput`](crate::operation::start_id_mapping_job::StartIdMappingJobOutput).
     pub fn builder() -> crate::operation::start_id_mapping_job::builders::StartIdMappingJobOutputBuilder {
@@ -42,37 +41,35 @@ impl StartIdMappingJobOutputBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartIdMappingJobOutput`](crate::operation::start_id_mapping_job::StartIdMappingJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::operation::start_id_mapping_job::builders::StartIdMappingJobOutputBuilder::job_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_id_mapping_job::StartIdMappingJobOutput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building StartIdMappingJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_id_mapping_job::StartIdMappingJobOutput {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building StartIdMappingJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

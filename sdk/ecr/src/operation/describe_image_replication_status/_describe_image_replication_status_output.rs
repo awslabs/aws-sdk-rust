@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImageReplicationStatusOutput {
+pub struct DescribeImageReplicationStatusOutput  {
     /// <p>The repository name associated with the request.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     /// <p>The replication status details for the images in the specified repository.</p>
-    pub replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ImageReplicationStatus>>,
+    pub replication_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::ImageReplicationStatus>>,
     _request_id: Option<String>,
 }
-impl DescribeImageReplicationStatusOutput {
+impl  DescribeImageReplicationStatusOutput  {
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&crate::types::ImageIdentifier> {
+    pub fn image_id(&self) -> ::std::option::Option<& crate::types::ImageIdentifier> {
         self.image_id.as_ref()
     }
     /// <p>The replication status details for the images in the specified repository.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_statuses.is_none()`.
-    pub fn replication_statuses(&self) -> &[crate::types::ImageReplicationStatus] {
-        self.replication_statuses.as_deref().unwrap_or_default()
+    pub fn replication_statuses(&self) -> & [crate::types::ImageReplicationStatus] {
+        self.replication_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeImageReplicationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeImageReplicationStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageReplicationStatusOutput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput).
     pub fn builder() -> crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusOutputBuilder {
@@ -45,7 +46,7 @@ impl DescribeImageReplicationStatusOutput {
 pub struct DescribeImageReplicationStatusOutputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<crate::types::ImageIdentifier>,
-    pub(crate) replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ImageReplicationStatus>>,
+    pub(crate) replication_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::ImageReplicationStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeImageReplicationStatusOutputBuilder {
@@ -56,8 +57,7 @@ impl DescribeImageReplicationStatusOutputBuilder {
     }
     /// <p>The repository name associated with the request.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository name associated with the request.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl DescribeImageReplicationStatusOutputBuilder {
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
@@ -84,35 +83,38 @@ impl DescribeImageReplicationStatusOutputBuilder {
     /// <p>The replication status details for the images in the specified repository.</p>
     pub fn replication_statuses(mut self, input: crate::types::ImageReplicationStatus) -> Self {
         let mut v = self.replication_statuses.unwrap_or_default();
-        v.push(input);
-        self.replication_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The replication status details for the images in the specified repository.</p>
-    pub fn set_replication_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageReplicationStatus>>) -> Self {
-        self.replication_statuses = input;
-        self
+    pub fn set_replication_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageReplicationStatus>>) -> Self {
+        self.replication_statuses = input; self
     }
     /// <p>The replication status details for the images in the specified repository.</p>
-    pub fn get_replication_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageReplicationStatus>> {
+    pub fn get_replication_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageReplicationStatus>> {
         &self.replication_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeImageReplicationStatusOutput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput).
     pub fn build(self) -> crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput {
         crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput {
-            repository_name: self.repository_name,
-            image_id: self.image_id,
-            replication_statuses: self.replication_statuses,
+            repository_name: self.repository_name
+            ,
+            image_id: self.image_id
+            ,
+            replication_statuses: self.replication_statuses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

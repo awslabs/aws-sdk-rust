@@ -3,7 +3,7 @@
 /// <p>Used to specify a stack or deployment command.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentCommand {
+pub struct DeploymentCommand  {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
@@ -45,9 +45,9 @@ pub struct DeploymentCommand {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
-    pub args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub args: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl DeploymentCommand {
+impl  DeploymentCommand  {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
@@ -77,7 +77,7 @@ impl DeploymentCommand {
     /// <li>
     /// <p><code>undeploy</code>: Undeploy the app.</p></li>
     /// </ul>
-    pub fn name(&self) -> &crate::types::DeploymentCommandName {
+    pub fn name(&self) -> & crate::types::DeploymentCommandName {
         &self.name
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
@@ -91,7 +91,7 @@ impl DeploymentCommand {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
-    pub fn args(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn args(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.args.as_ref()
     }
 }
@@ -107,7 +107,7 @@ impl DeploymentCommand {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentCommandBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DeploymentCommandName>,
-    pub(crate) args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) args: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl DeploymentCommandBuilder {
     /// <p>Specifies the operation. You can specify only one command.</p>
@@ -174,8 +174,7 @@ impl DeploymentCommandBuilder {
     /// <p><code>undeploy</code>: Undeploy the app.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::DeploymentCommandName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
@@ -224,11 +223,11 @@ impl DeploymentCommandBuilder {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
-    pub fn args(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn args(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.args.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.args = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.args = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
@@ -241,12 +240,8 @@ impl DeploymentCommandBuilder {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.args = input;
-        self
+    pub fn set_args(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.args = input; self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
@@ -259,21 +254,24 @@ impl DeploymentCommandBuilder {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
-    pub fn get_args(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_args(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.args
     }
     /// Consumes the builder and constructs a [`DeploymentCommand`](crate::types::DeploymentCommand).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DeploymentCommandBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentCommand, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeploymentCommand {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeploymentCommand",
-                )
-            })?,
-            args: self.args,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeploymentCommand {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DeploymentCommand")
+                    )?
+                ,
+                args: self.args
+                ,
+            }
+        )
     }
 }
+

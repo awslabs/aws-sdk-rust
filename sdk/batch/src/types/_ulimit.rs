@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ulimit {
+pub struct Ulimit  {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub hard_limit: ::std::option::Option<i32>,
     /// <p>The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.</p>
@@ -13,13 +13,13 @@ pub struct Ulimit {
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub soft_limit: ::std::option::Option<i32>,
 }
-impl Ulimit {
+impl  Ulimit  {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn hard_limit(&self) -> ::std::option::Option<i32> {
         self.hard_limit
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
@@ -51,8 +51,7 @@ impl UlimitBuilder {
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn set_hard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hard_limit = input;
-        self
+        self.hard_limit = input; self
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn get_hard_limit(&self) -> &::std::option::Option<i32> {
@@ -66,8 +65,7 @@ impl UlimitBuilder {
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl UlimitBuilder {
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.soft_limit = input;
-        self
+        self.soft_limit = input; self
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn get_soft_limit(&self) -> &::std::option::Option<i32> {
@@ -91,9 +88,13 @@ impl UlimitBuilder {
     /// Consumes the builder and constructs a [`Ulimit`](crate::types::Ulimit).
     pub fn build(self) -> crate::types::Ulimit {
         crate::types::Ulimit {
-            hard_limit: self.hard_limit,
-            name: self.name,
-            soft_limit: self.soft_limit,
+            hard_limit: self.hard_limit
+            ,
+            name: self.name
+            ,
+            soft_limit: self.soft_limit
+            ,
         }
     }
 }
+

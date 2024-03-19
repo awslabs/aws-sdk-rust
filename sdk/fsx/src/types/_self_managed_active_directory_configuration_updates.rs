@@ -3,14 +3,14 @@
 /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SelfManagedActiveDirectoryConfigurationUpdates {
+pub struct SelfManagedActiveDirectoryConfigurationUpdates  {
     /// <p>Specifies the updated user name for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     /// <p>This account must have the permissions required to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
@@ -18,36 +18,37 @@ pub struct SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
     pub file_system_administrators_group: ::std::option::Option<::std::string::String>,
 }
-impl SelfManagedActiveDirectoryConfigurationUpdates {
+impl  SelfManagedActiveDirectoryConfigurationUpdates  {
     /// <p>Specifies the updated user name for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     /// <p>This account must have the permissions required to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
-    pub fn dns_ips(&self) -> &[::std::string::String] {
-        self.dns_ips.as_deref().unwrap_or_default()
+    pub fn dns_ips(&self) -> & [::std::string::String] {
+        self.dns_ips.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<& str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
-    pub fn file_system_administrators_group(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_administrators_group(&self) -> ::std::option::Option<& str> {
         self.file_system_administrators_group.as_deref()
     }
 }
-impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
+impl  ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SelfManagedActiveDirectoryConfigurationUpdates");
         formatter.field("user_name", &self.user_name);
@@ -72,7 +73,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdates {
 pub struct SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
-    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_administrators_group: ::std::option::Option<::std::string::String>,
@@ -87,8 +88,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     /// <p>Specifies the updated user name for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     /// <p>This account must have the permissions required to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>Specifies the updated user name for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     /// <p>This account must have the permissions required to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
@@ -102,8 +102,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     }
     /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Specifies the updated password for the service account on your self-managed AD domain. Amazon FSx uses this account to join to your self-managed AD domain.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,17 +115,16 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
     pub fn dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
-        v.push(input.into());
-        self.dns_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns_ips = input;
-        self
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns_ips = input; self
     }
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns_ips
     }
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
@@ -136,8 +134,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     }
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
     pub fn set_organizational_unit_distinguished_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit_distinguished_name = input;
-        self
+        self.organizational_unit_distinguished_name = input; self
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
     pub fn get_organizational_unit_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
     pub fn set_file_system_administrators_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_administrators_group = input;
-        self
+        self.file_system_administrators_group = input; self
     }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
     pub fn get_file_system_administrators_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,12 +169,18 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryConfigurationUpdates {
         crate::types::SelfManagedActiveDirectoryConfigurationUpdates {
-            user_name: self.user_name,
-            password: self.password,
-            dns_ips: self.dns_ips,
-            domain_name: self.domain_name,
-            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
-            file_system_administrators_group: self.file_system_administrators_group,
+            user_name: self.user_name
+            ,
+            password: self.password
+            ,
+            dns_ips: self.dns_ips
+            ,
+            domain_name: self.domain_name
+            ,
+            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name
+            ,
+            file_system_administrators_group: self.file_system_administrators_group
+            ,
         }
     }
 }
@@ -195,3 +196,4 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdatesBuilder
         formatter.finish()
     }
 }
+

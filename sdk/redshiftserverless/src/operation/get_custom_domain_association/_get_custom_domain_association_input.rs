@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCustomDomainAssociationInput {
+pub struct GetCustomDomainAssociationInput  {
     /// <p>The custom domain name associated with the workgroup.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup associated with the database.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCustomDomainAssociationInput {
+impl  GetCustomDomainAssociationInput  {
     /// <p>The custom domain name associated with the workgroup.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetCustomDomainAssociationInputBuilder {
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetCustomDomainAssociationInputBuilder {
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`GetCustomDomainAssociationInput`](crate::operation::get_custom_domain_association::GetCustomDomainAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_custom_domain_association::GetCustomDomainAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_custom_domain_association::GetCustomDomainAssociationInput {
-            custom_domain_name: self.custom_domain_name,
-            workgroup_name: self.workgroup_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_custom_domain_association::GetCustomDomainAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationInput {
+                custom_domain_name: self.custom_domain_name
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+            }
+        )
     }
 }
+

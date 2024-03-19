@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeClientVpnAuthorizationRules`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`client_vpn_endpoint_id(impl Into<String>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::client_vpn_endpoint_id) / [`set_client_vpn_endpoint_id(Option<String>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::set_client_vpn_endpoint_id):<br>required: **true**<br><p>The ID of the Client VPN endpoint.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to retrieve the next page of results.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Filter names and values are case-sensitive.</p> <ul>  <li>   <p><code>description</code> - The description of the authorization rule.</p></li>  <li>   <p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>  <li>   <p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li> </ul><br>
     ///   - [`max_results(i32)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p><br>
-    /// - On success, responds with [`DescribeClientVpnAuthorizationRulesOutput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput) with field(s):
+                            /// - On success, responds with [`DescribeClientVpnAuthorizationRulesOutput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput) with field(s):
     ///   - [`authorization_rules(Option<Vec::<AuthorizationRule>>)`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput::authorization_rules): <p>Information about the authorization rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeClientVpnAuthorizationRulesError>`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesError)
-    pub fn describe_client_vpn_authorization_rules(
-        &self,
-    ) -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder {
-        crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeClientVpnAuthorizationRulesError>`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesError)
+    pub fn describe_client_vpn_authorization_rules(&self) -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder {
+                                crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

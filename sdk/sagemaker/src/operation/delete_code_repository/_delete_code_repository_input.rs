@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCodeRepositoryInput {
+pub struct DeleteCodeRepositoryInput  {
     /// <p>The name of the Git repository to delete.</p>
     pub code_repository_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCodeRepositoryInput {
+impl  DeleteCodeRepositoryInput  {
     /// <p>The name of the Git repository to delete.</p>
-    pub fn code_repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn code_repository_name(&self) -> ::std::option::Option<& str> {
         self.code_repository_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteCodeRepositoryInputBuilder {
     }
     /// <p>The name of the Git repository to delete.</p>
     pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_repository_name = input;
-        self
+        self.code_repository_name = input; self
     }
     /// <p>The name of the Git repository to delete.</p>
     pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_repository_name
     }
     /// Consumes the builder and constructs a [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_code_repository::DeleteCodeRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_code_repository::DeleteCodeRepositoryInput {
-            code_repository_name: self.code_repository_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_code_repository::DeleteCodeRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_code_repository::DeleteCodeRepositoryInput {
+                code_repository_name: self.code_repository_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoSuchEntityException {
+pub struct NoSuchEntityException  {
     /// <p>Details of the exception error.</p>
     pub message: ::std::string::String,
     /// <p>Code that indicates the type of error that is generated.</p>
@@ -12,9 +12,9 @@ pub struct NoSuchEntityException {
     pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl NoSuchEntityException {
+impl  NoSuchEntityException  {
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn error_code(&self) -> &crate::types::NoSuchEntityErrorCode {
+    pub fn error_code(&self) -> & crate::types::NoSuchEntityErrorCode {
         &self.error_code
     }
     /// <p>You can immediately retry your request.</p>
@@ -24,14 +24,12 @@ impl NoSuchEntityException {
 }
 impl NoSuchEntityException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for NoSuchEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "NoSuchEntityException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -45,9 +43,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::NoSuchEntityExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchEntityException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl NoSuchEntityException {
     /// Creates a new builder-style object to manufacture [`NoSuchEntityException`](crate::types::error::NoSuchEntityException).
@@ -74,8 +70,7 @@ impl NoSuchEntityExceptionBuilder {
     }
     /// <p>Details of the exception error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Details of the exception error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl NoSuchEntityExceptionBuilder {
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::NoSuchEntityErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::NoSuchEntityErrorCode> {
@@ -104,50 +98,49 @@ impl NoSuchEntityExceptionBuilder {
     }
     /// <p>You can immediately retry your request.</p>
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_retry = input;
-        self
+        self.can_retry = input; self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
         &self.can_retry
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`NoSuchEntityException`](crate::types::error::NoSuchEntityException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::NoSuchEntityExceptionBuilder::message)
     /// - [`error_code`](crate::types::error::builders::NoSuchEntityExceptionBuilder::error_code)
     /// - [`can_retry`](crate::types::error::builders::NoSuchEntityExceptionBuilder::can_retry)
     pub fn build(self) -> ::std::result::Result<crate::types::error::NoSuchEntityException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::NoSuchEntityException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building NoSuchEntityException",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building NoSuchEntityException",
-                )
-            })?,
-            can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "can_retry",
-                    "can_retry was not specified but it is required when building NoSuchEntityException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::NoSuchEntityException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building NoSuchEntityException")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building NoSuchEntityException")
+                    )?
+                ,
+                can_retry: self.can_retry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("can_retry", "can_retry was not specified but it is required when building NoSuchEntityException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

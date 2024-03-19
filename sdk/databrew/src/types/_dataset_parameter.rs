@@ -3,7 +3,7 @@
 /// <p>Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetParameter {
+pub struct DatasetParameter  {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
     pub name: ::std::string::String,
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
@@ -15,18 +15,17 @@ pub struct DatasetParameter {
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
     pub filter: ::std::option::Option<crate::types::FilterExpression>,
 }
-impl DatasetParameter {
+impl  DatasetParameter  {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
-    pub fn r#type(&self) -> &crate::types::ParameterType {
+    pub fn r#type(&self) -> & crate::types::ParameterType {
         &self.r#type
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
-    pub fn datetime_options(&self) -> ::std::option::Option<&crate::types::DatetimeOptions> {
+    pub fn datetime_options(&self) -> ::std::option::Option<& crate::types::DatetimeOptions> {
         self.datetime_options.as_ref()
     }
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
@@ -34,7 +33,7 @@ impl DatasetParameter {
         self.create_column
     }
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::FilterExpression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::FilterExpression> {
         self.filter.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
@@ -93,8 +90,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
     pub fn set_datetime_options(mut self, input: ::std::option::Option<crate::types::DatetimeOptions>) -> Self {
-        self.datetime_options = input;
-        self
+        self.datetime_options = input; self
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
     pub fn get_datetime_options(&self) -> &::std::option::Option<crate::types::DatetimeOptions> {
@@ -107,8 +103,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
     pub fn set_create_column(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_column = input;
-        self
+        self.create_column = input; self
     }
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
     pub fn get_create_column(&self) -> &::std::option::Option<bool> {
@@ -121,8 +116,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FilterExpression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::FilterExpression> {
@@ -133,22 +127,27 @@ impl DatasetParameterBuilder {
     /// - [`name`](crate::types::builders::DatasetParameterBuilder::name)
     /// - [`r#type`](crate::types::builders::DatasetParameterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DatasetParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatasetParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DatasetParameter",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DatasetParameter",
-                )
-            })?,
-            datetime_options: self.datetime_options,
-            create_column: self.create_column.unwrap_or_default(),
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatasetParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DatasetParameter")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DatasetParameter")
+                    )?
+                ,
+                datetime_options: self.datetime_options
+                ,
+                create_column: self.create_column
+                    .unwrap_or_default()
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

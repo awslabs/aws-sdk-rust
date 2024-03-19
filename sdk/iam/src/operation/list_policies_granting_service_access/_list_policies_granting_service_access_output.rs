@@ -2,35 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPoliciesGrantingServiceAccessOutput {
+pub struct ListPoliciesGrantingServiceAccessOutput  {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub policies_granting_service_access: ::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>,
+    pub policies_granting_service_access: ::std::vec::Vec::<crate::types::ListPoliciesGrantingServiceAccessEntry>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPoliciesGrantingServiceAccessOutput {
+impl  ListPoliciesGrantingServiceAccessOutput  {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub fn policies_granting_service_access(&self) -> &[crate::types::ListPoliciesGrantingServiceAccessEntry] {
-        use std::ops::Deref;
-        self.policies_granting_service_access.deref()
+    pub fn policies_granting_service_access(&self) -> & [crate::types::ListPoliciesGrantingServiceAccessEntry] {
+        use std::ops::Deref; self.policies_granting_service_access.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPoliciesGrantingServiceAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPoliciesGrantingServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesGrantingServiceAccessOutput`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput).
     pub fn builder() -> crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessOutputBuilder {
@@ -42,7 +41,7 @@ impl ListPoliciesGrantingServiceAccessOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessOutputBuilder {
-    pub(crate) policies_granting_service_access: ::std::option::Option<::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>>,
+    pub(crate) policies_granting_service_access: ::std::option::Option<::std::vec::Vec::<crate::types::ListPoliciesGrantingServiceAccessEntry>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -55,22 +54,16 @@ impl ListPoliciesGrantingServiceAccessOutputBuilder {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     pub fn policies_granting_service_access(mut self, input: crate::types::ListPoliciesGrantingServiceAccessEntry) -> Self {
         let mut v = self.policies_granting_service_access.unwrap_or_default();
-        v.push(input);
-        self.policies_granting_service_access = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policies_granting_service_access = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub fn set_policies_granting_service_access(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>>,
-    ) -> Self {
-        self.policies_granting_service_access = input;
-        self
+    pub fn set_policies_granting_service_access(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListPoliciesGrantingServiceAccessEntry>>) -> Self {
+        self.policies_granting_service_access = input; self
     }
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub fn get_policies_granting_service_access(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>> {
+    pub fn get_policies_granting_service_access(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListPoliciesGrantingServiceAccessEntry>> {
         &self.policies_granting_service_access
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -80,8 +73,7 @@ impl ListPoliciesGrantingServiceAccessOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -94,43 +86,40 @@ impl ListPoliciesGrantingServiceAccessOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessOutput`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policies_granting_service_access`](crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessOutputBuilder::policies_granting_service_access)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput {
-                policies_granting_service_access: self.policies_granting_service_access.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "policies_granting_service_access",
-                        "policies_granting_service_access was not specified but it is required when building ListPoliciesGrantingServiceAccessOutput",
-                    )
-                })?,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
+                policies_granting_service_access: self.policies_granting_service_access
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policies_granting_service_access", "policies_granting_service_access was not specified but it is required when building ListPoliciesGrantingServiceAccessOutput")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetActionRecommendationsInput {
+pub struct GetActionRecommendationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe.</p>
     pub campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the user to provide action recommendations for.</p>
@@ -15,15 +15,15 @@ pub struct GetActionRecommendationsInput {
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include actions, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude actions, you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
-    pub filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub filter_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl GetActionRecommendationsInput {
+impl  GetActionRecommendationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe.</p>
-    pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_arn(&self) -> ::std::option::Option<& str> {
         self.campaign_arn.as_deref()
     }
     /// <p>The user ID of the user to provide action recommendations for.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The number of results to return. The default is 5. The maximum is 100.</p>
@@ -32,13 +32,13 @@ impl GetActionRecommendationsInput {
     }
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
-    pub fn filter_arn(&self) -> ::std::option::Option<&str> {
+    pub fn filter_arn(&self) -> ::std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include actions, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude actions, you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
-    pub fn filter_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn filter_values(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.filter_values.as_ref()
     }
 }
@@ -57,7 +57,7 @@ pub struct GetActionRecommendationsInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) filter_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl GetActionRecommendationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe.</p>
@@ -67,8 +67,7 @@ impl GetActionRecommendationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe.</p>
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_arn = input;
-        self
+        self.campaign_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting action recommendations. This campaign must deploy a solution version trained with a PERSONALIZED_ACTIONS recipe.</p>
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl GetActionRecommendationsInputBuilder {
     }
     /// <p>The user ID of the user to provide action recommendations for.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user ID of the user to provide action recommendations for.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl GetActionRecommendationsInputBuilder {
     }
     /// <p>The number of results to return. The default is 5. The maximum is 100.</p>
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// <p>The number of results to return. The default is 5. The maximum is 100.</p>
     pub fn get_num_results(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl GetActionRecommendationsInputBuilder {
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_arn = input;
-        self
+        self.filter_arn = input; self
     }
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
@@ -128,39 +124,38 @@ impl GetActionRecommendationsInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn filter_values(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter_values.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.filter_values = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.filter_values = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include actions, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude actions, you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
-    pub fn set_filter_values(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.filter_values = input;
-        self
+    pub fn set_filter_values(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.filter_values = input; self
     }
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.</p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include actions, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude actions, you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
-    pub fn get_filter_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_filter_values(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.filter_values
     }
     /// Consumes the builder and constructs a [`GetActionRecommendationsInput`](crate::operation::get_action_recommendations::GetActionRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_action_recommendations::GetActionRecommendationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_action_recommendations::GetActionRecommendationsInput {
-            campaign_arn: self.campaign_arn,
-            user_id: self.user_id,
-            num_results: self.num_results,
-            filter_arn: self.filter_arn,
-            filter_values: self.filter_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_action_recommendations::GetActionRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_action_recommendations::GetActionRecommendationsInput {
+                campaign_arn: self.campaign_arn
+                ,
+                user_id: self.user_id
+                ,
+                num_results: self.num_results
+                ,
+                filter_arn: self.filter_arn
+                ,
+                filter_values: self.filter_values
+                ,
+            }
+        )
     }
 }
+

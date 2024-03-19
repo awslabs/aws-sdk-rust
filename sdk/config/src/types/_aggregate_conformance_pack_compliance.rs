@@ -4,7 +4,7 @@
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregateConformancePackCompliance {
+pub struct AggregateConformancePackCompliance  {
     /// <p>The compliance status of the conformance pack.</p>
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>The number of compliant Config Rules.</p>
@@ -14,9 +14,9 @@ pub struct AggregateConformancePackCompliance {
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub total_rule_count: i32,
 }
-impl AggregateConformancePackCompliance {
+impl  AggregateConformancePackCompliance  {
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(&self) -> ::std::option::Option<& crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>The number of compliant Config Rules.</p>
@@ -56,8 +56,7 @@ impl AggregateConformancePackComplianceBuilder {
     }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
@@ -70,8 +69,7 @@ impl AggregateConformancePackComplianceBuilder {
     }
     /// <p>The number of compliant Config Rules.</p>
     pub fn set_compliant_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.compliant_rule_count = input;
-        self
+        self.compliant_rule_count = input; self
     }
     /// <p>The number of compliant Config Rules.</p>
     pub fn get_compliant_rule_count(&self) -> &::std::option::Option<i32> {
@@ -84,8 +82,7 @@ impl AggregateConformancePackComplianceBuilder {
     }
     /// <p>The number of noncompliant Config Rules.</p>
     pub fn set_non_compliant_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.non_compliant_rule_count = input;
-        self
+        self.non_compliant_rule_count = input; self
     }
     /// <p>The number of noncompliant Config Rules.</p>
     pub fn get_non_compliant_rule_count(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl AggregateConformancePackComplianceBuilder {
     }
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub fn set_total_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_rule_count = input;
-        self
+        self.total_rule_count = input; self
     }
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub fn get_total_rule_count(&self) -> &::std::option::Option<i32> {
@@ -108,10 +104,18 @@ impl AggregateConformancePackComplianceBuilder {
     /// Consumes the builder and constructs a [`AggregateConformancePackCompliance`](crate::types::AggregateConformancePackCompliance).
     pub fn build(self) -> crate::types::AggregateConformancePackCompliance {
         crate::types::AggregateConformancePackCompliance {
-            compliance_type: self.compliance_type,
-            compliant_rule_count: self.compliant_rule_count.unwrap_or_default(),
-            non_compliant_rule_count: self.non_compliant_rule_count.unwrap_or_default(),
-            total_rule_count: self.total_rule_count.unwrap_or_default(),
+            compliance_type: self.compliance_type
+            ,
+            compliant_rule_count: self.compliant_rule_count
+                .unwrap_or_default()
+            ,
+            non_compliant_rule_count: self.non_compliant_rule_count
+                .unwrap_or_default()
+            ,
+            total_rule_count: self.total_rule_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

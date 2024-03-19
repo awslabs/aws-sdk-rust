@@ -3,7 +3,7 @@
 /// <p>Result message containing a list of application version descriptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationOptionsInput {
+pub struct DescribeConfigurationOptionsInput  {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
@@ -15,34 +15,35 @@ pub struct DescribeConfigurationOptionsInput {
     /// <p>The ARN of the custom platform.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
+    pub options: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>,
 }
-impl DescribeConfigurationOptionsInput {
+impl  DescribeConfigurationOptionsInput  {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
-    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The ARN of the custom platform.</p>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
-    pub fn options(&self) -> &[crate::types::OptionSpecification] {
-        self.options.as_deref().unwrap_or_default()
+    pub fn options(&self) -> & [crate::types::OptionSpecification] {
+        self.options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeConfigurationOptionsInput {
@@ -61,7 +62,7 @@ pub struct DescribeConfigurationOptionsInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>,
 }
 impl DescribeConfigurationOptionsInputBuilder {
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
@@ -71,8 +72,7 @@ impl DescribeConfigurationOptionsInputBuilder {
     }
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl DescribeConfigurationOptionsInputBuilder {
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl DescribeConfigurationOptionsInputBuilder {
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl DescribeConfigurationOptionsInputBuilder {
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
     pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_stack_name = input;
-        self
+        self.solution_stack_name = input; self
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
     pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl DescribeConfigurationOptionsInputBuilder {
     }
     /// <p>The ARN of the custom platform.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The ARN of the custom platform.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,33 +137,36 @@ impl DescribeConfigurationOptionsInputBuilder {
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
     pub fn options(mut self, input: crate::types::OptionSpecification) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>) -> Self {
+        self.options = input; self
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationOptionsInput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput {
-            application_name: self.application_name,
-            template_name: self.template_name,
-            environment_name: self.environment_name,
-            solution_stack_name: self.solution_stack_name,
-            platform_arn: self.platform_arn,
-            options: self.options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput {
+                application_name: self.application_name
+                ,
+                template_name: self.template_name
+                ,
+                environment_name: self.environment_name
+                ,
+                solution_stack_name: self.solution_stack_name
+                ,
+                platform_arn: self.platform_arn
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

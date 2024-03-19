@@ -3,7 +3,7 @@
 /// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamEvent {
+pub struct StreamEvent  {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Logical group for certain events.</p>
@@ -11,17 +11,17 @@ pub struct StreamEvent {
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl StreamEvent {
+impl  StreamEvent  {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Logical group for certain events.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl StreamEventBuilder {
     }
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StreamEventBuilder {
     }
     /// <p>Logical group for certain events.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Logical group for certain events.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl StreamEventBuilder {
     }
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl StreamEventBuilder {
     /// Consumes the builder and constructs a [`StreamEvent`](crate::types::StreamEvent).
     pub fn build(self) -> crate::types::StreamEvent {
         crate::types::StreamEvent {
-            name: self.name,
-            r#type: self.r#type,
-            event_time: self.event_time,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            event_time: self.event_time
+            ,
         }
     }
 }
+

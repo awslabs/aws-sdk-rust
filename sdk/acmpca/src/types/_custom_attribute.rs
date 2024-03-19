@@ -3,24 +3,22 @@
 /// <p>Defines the X.500 relative distinguished name (RDN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomAttribute {
+pub struct CustomAttribute  {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
     pub object_identifier: ::std::string::String,
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
     pub value: ::std::string::String,
 }
-impl CustomAttribute {
+impl  CustomAttribute  {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
-    pub fn object_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.object_identifier.deref()
+    pub fn object_identifier(&self) -> & str {
+        use std::ops::Deref; self.object_identifier.deref()
     }
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl CustomAttribute {
@@ -46,8 +44,7 @@ impl CustomAttributeBuilder {
     }
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
     pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_identifier = input;
-        self
+        self.object_identifier = input; self
     }
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
     pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +60,7 @@ impl CustomAttributeBuilder {
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
@@ -76,19 +72,20 @@ impl CustomAttributeBuilder {
     /// - [`object_identifier`](crate::types::builders::CustomAttributeBuilder::object_identifier)
     /// - [`value`](crate::types::builders::CustomAttributeBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomAttribute {
-            object_identifier: self.object_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_identifier",
-                    "object_identifier was not specified but it is required when building CustomAttribute",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CustomAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomAttribute {
+                object_identifier: self.object_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_identifier", "object_identifier was not specified but it is required when building CustomAttribute")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CustomAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

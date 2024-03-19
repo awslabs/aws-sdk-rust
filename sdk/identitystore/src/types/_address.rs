@@ -3,7 +3,7 @@
 /// <p>The address associated with the specified user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Address {
+pub struct Address  {
     /// <p>The street of the address.</p>
     pub street_address: ::std::option::Option<::std::string::String>,
     /// <p>A string of the address locality.</p>
@@ -21,33 +21,33 @@ pub struct Address {
     /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
     pub primary: bool,
 }
-impl Address {
+impl  Address  {
     /// <p>The street of the address.</p>
-    pub fn street_address(&self) -> ::std::option::Option<&str> {
+    pub fn street_address(&self) -> ::std::option::Option<& str> {
         self.street_address.as_deref()
     }
     /// <p>A string of the address locality.</p>
-    pub fn locality(&self) -> ::std::option::Option<&str> {
+    pub fn locality(&self) -> ::std::option::Option<& str> {
         self.locality.as_deref()
     }
     /// <p>The region of the address.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The postal code of the address.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The country of the address.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>A string containing a formatted version of the address for display.</p>
-    pub fn formatted(&self) -> ::std::option::Option<&str> {
+    pub fn formatted(&self) -> ::std::option::Option<& str> {
         self.formatted.as_deref()
     }
     /// <p>A string representing the type of address. For example, "Home."</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
@@ -55,7 +55,7 @@ impl Address {
         self.primary
     }
 }
-impl ::std::fmt::Debug for Address {
+impl  ::std::fmt::Debug for Address  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
         formatter.field("street_address", &"*** Sensitive Data Redacted ***");
@@ -97,8 +97,7 @@ impl AddressBuilder {
     }
     /// <p>The street of the address.</p>
     pub fn set_street_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street_address = input;
-        self
+        self.street_address = input; self
     }
     /// <p>The street of the address.</p>
     pub fn get_street_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl AddressBuilder {
     }
     /// <p>A string of the address locality.</p>
     pub fn set_locality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locality = input;
-        self
+        self.locality = input; self
     }
     /// <p>A string of the address locality.</p>
     pub fn get_locality(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl AddressBuilder {
     }
     /// <p>The region of the address.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The region of the address.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl AddressBuilder {
     }
     /// <p>The postal code of the address.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
     }
     /// <p>The postal code of the address.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl AddressBuilder {
     }
     /// <p>The country of the address.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The country of the address.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl AddressBuilder {
     }
     /// <p>A string containing a formatted version of the address for display.</p>
     pub fn set_formatted(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.formatted = input;
-        self
+        self.formatted = input; self
     }
     /// <p>A string containing a formatted version of the address for display.</p>
     pub fn get_formatted(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl AddressBuilder {
     }
     /// <p>A string representing the type of address. For example, "Home."</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A string representing the type of address. For example, "Home."</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl AddressBuilder {
     }
     /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
     pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
     pub fn get_primary(&self) -> &::std::option::Option<bool> {
@@ -205,14 +197,23 @@ impl AddressBuilder {
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
-            street_address: self.street_address,
-            locality: self.locality,
-            region: self.region,
-            postal_code: self.postal_code,
-            country: self.country,
-            formatted: self.formatted,
-            r#type: self.r#type,
-            primary: self.primary.unwrap_or_default(),
+            street_address: self.street_address
+            ,
+            locality: self.locality
+            ,
+            region: self.region
+            ,
+            postal_code: self.postal_code
+            ,
+            country: self.country
+            ,
+            formatted: self.formatted
+            ,
+            r#type: self.r#type
+            ,
+            primary: self.primary
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -230,3 +231,4 @@ impl ::std::fmt::Debug for AddressBuilder {
         formatter.finish()
     }
 }
+

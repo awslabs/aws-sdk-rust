@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAnnotationStoreInput {
+pub struct CreateAnnotationStoreInput  {
     /// <p>The genome reference for the store's annotations.</p>
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>A name for the store.</p>
@@ -10,7 +10,7 @@ pub struct CreateAnnotationStoreInput {
     /// <p>A description for the store.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the store.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
@@ -20,37 +20,37 @@ pub struct CreateAnnotationStoreInput {
     /// <p>File parsing options for the annotation store.</p>
     pub store_options: ::std::option::Option<crate::types::StoreOptions>,
 }
-impl CreateAnnotationStoreInput {
+impl  CreateAnnotationStoreInput  {
     /// <p>The genome reference for the store's annotations.</p>
-    pub fn reference(&self) -> ::std::option::Option<&crate::types::ReferenceItem> {
+    pub fn reference(&self) -> ::std::option::Option<& crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>A name for the store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags for the store.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
-    pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
+    pub fn sse_config(&self) -> ::std::option::Option<& crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn store_format(&self) -> ::std::option::Option<&crate::types::StoreFormat> {
+    pub fn store_format(&self) -> ::std::option::Option<& crate::types::StoreFormat> {
         self.store_format.as_ref()
     }
     /// <p>File parsing options for the annotation store.</p>
-    pub fn store_options(&self) -> ::std::option::Option<&crate::types::StoreOptions> {
+    pub fn store_options(&self) -> ::std::option::Option<& crate::types::StoreOptions> {
         self.store_options.as_ref()
     }
 }
@@ -68,7 +68,7 @@ pub struct CreateAnnotationStoreInputBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
     pub(crate) store_format: ::std::option::Option<crate::types::StoreFormat>,
@@ -82,8 +82,7 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>The genome reference for the store's annotations.</p>
     pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
-        self.reference = input;
-        self
+        self.reference = input; self
     }
     /// <p>The genome reference for the store's annotations.</p>
     pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
@@ -96,8 +95,7 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>A name for the store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>A description for the store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the store.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,17 +121,16 @@ impl CreateAnnotationStoreInputBuilder {
     /// <p>Tags for the store.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the store.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the store.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
@@ -144,8 +140,7 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +153,7 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
-        self.sse_config = input;
-        self
+        self.sse_config = input; self
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
@@ -173,8 +167,7 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>The annotation file format of the store.</p>
     pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
-        self.store_format = input;
-        self
+        self.store_format = input; self
     }
     /// <p>The annotation file format of the store.</p>
     pub fn get_store_format(&self) -> &::std::option::Option<crate::types::StoreFormat> {
@@ -187,27 +180,34 @@ impl CreateAnnotationStoreInputBuilder {
     }
     /// <p>File parsing options for the annotation store.</p>
     pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
-        self.store_options = input;
-        self
+        self.store_options = input; self
     }
     /// <p>File parsing options for the annotation store.</p>
     pub fn get_store_options(&self) -> &::std::option::Option<crate::types::StoreOptions> {
         &self.store_options
     }
     /// Consumes the builder and constructs a [`CreateAnnotationStoreInput`](crate::operation::create_annotation_store::CreateAnnotationStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_annotation_store::CreateAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_annotation_store::CreateAnnotationStoreInput {
-            reference: self.reference,
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
-            version_name: self.version_name,
-            sse_config: self.sse_config,
-            store_format: self.store_format,
-            store_options: self.store_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_annotation_store::CreateAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_annotation_store::CreateAnnotationStoreInput {
+                reference: self.reference
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                version_name: self.version_name
+                ,
+                sse_config: self.sse_config
+                ,
+                store_format: self.store_format
+                ,
+                store_options: self.store_options
+                ,
+            }
+        )
     }
 }
+

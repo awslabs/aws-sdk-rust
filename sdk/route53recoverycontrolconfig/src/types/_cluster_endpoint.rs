@@ -3,21 +3,21 @@
 /// <p>A cluster endpoint. Specify an endpoint when you want to set or retrieve a routing control state in the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterEndpoint {
+pub struct ClusterEndpoint  {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl ClusterEndpoint {
+impl  ClusterEndpoint  {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl ClusterEndpointBuilder {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
@@ -60,8 +59,7 @@ impl ClusterEndpointBuilder {
     }
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,11 @@ impl ClusterEndpointBuilder {
     /// Consumes the builder and constructs a [`ClusterEndpoint`](crate::types::ClusterEndpoint).
     pub fn build(self) -> crate::types::ClusterEndpoint {
         crate::types::ClusterEndpoint {
-            endpoint: self.endpoint,
-            region: self.region,
+            endpoint: self.endpoint
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

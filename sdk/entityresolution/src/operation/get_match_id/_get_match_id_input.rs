@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetMatchIdInput {
+pub struct GetMatchIdInput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The record to fetch the Match ID for.</p>
-    pub record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub record: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl GetMatchIdInput {
+impl  GetMatchIdInput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn record(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn record(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.record.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetMatchIdInput {
+impl  ::std::fmt::Debug for GetMatchIdInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMatchIdInput");
         formatter.field("workflow_name", &self.workflow_name);
@@ -38,7 +38,7 @@ impl GetMatchIdInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetMatchIdInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
-    pub(crate) record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) record: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl GetMatchIdInputBuilder {
     /// <p>The name of the workflow.</p>
@@ -49,8 +49,7 @@ impl GetMatchIdInputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,25 +62,28 @@ impl GetMatchIdInputBuilder {
     /// <p>The record to fetch the Match ID for.</p>
     pub fn record(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.record.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.record = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.record = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn set_record(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.record = input;
-        self
+    pub fn set_record(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.record = input; self
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.record
     }
     /// Consumes the builder and constructs a [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_match_id::GetMatchIdInput {
-            workflow_name: self.workflow_name,
-            record: self.record,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_match_id::GetMatchIdInput {
+                workflow_name: self.workflow_name
+                ,
+                record: self.record
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetMatchIdInputBuilder {
@@ -92,3 +94,4 @@ impl ::std::fmt::Debug for GetMatchIdInputBuilder {
         formatter.finish()
     }
 }
+

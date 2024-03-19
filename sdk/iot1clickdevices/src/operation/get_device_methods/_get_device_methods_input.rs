@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceMethodsInput {
+pub struct GetDeviceMethodsInput  {
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDeviceMethodsInput {
+impl  GetDeviceMethodsInput  {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetDeviceMethodsInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`GetDeviceMethodsInput`](crate::operation::get_device_methods::GetDeviceMethodsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_device_methods::GetDeviceMethodsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_device_methods::GetDeviceMethodsInput { device_id: self.device_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_methods::GetDeviceMethodsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_device_methods::GetDeviceMethodsInput {
+                device_id: self.device_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The schema summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaSummary {
+pub struct SchemaSummary  {
     /// <p>The name for the schema object.</p>
     pub name: ::std::string::String,
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
@@ -19,50 +19,45 @@ pub struct SchemaSummary {
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
     pub collaboration_arn: ::std::string::String,
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub analysis_rule_types: ::std::vec::Vec<crate::types::AnalysisRuleType>,
+    pub analysis_rule_types: ::std::vec::Vec::<crate::types::AnalysisRuleType>,
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
 }
-impl SchemaSummary {
+impl  SchemaSummary  {
     /// <p>The name for the schema object.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
-    pub fn r#type(&self) -> &crate::types::SchemaType {
+    pub fn r#type(&self) -> & crate::types::SchemaType {
         &self.r#type
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    pub fn creator_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.creator_account_id.deref()
+    pub fn creator_account_id(&self) -> & str {
+        use std::ops::Deref; self.creator_account_id.deref()
     }
     /// <p>The time the schema object was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The time the schema object was last updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub fn analysis_rule_types(&self) -> &[crate::types::AnalysisRuleType] {
-        use std::ops::Deref;
-        self.analysis_rule_types.deref()
+    pub fn analysis_rule_types(&self) -> & [crate::types::AnalysisRuleType] {
+        use std::ops::Deref; self.analysis_rule_types.deref()
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
+    pub fn analysis_method(&self) -> ::std::option::Option<& crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
 }
@@ -84,7 +79,7 @@ pub struct SchemaSummaryBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
+    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
 }
 impl SchemaSummaryBuilder {
@@ -96,8 +91,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The name for the schema object.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the schema object.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +105,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
@@ -126,8 +119,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn set_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_account_id = input;
-        self
+        self.creator_account_id = input; self
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +133,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The time the schema object was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time the schema object was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -156,8 +147,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The time the schema object was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The time the schema object was last updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +161,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +175,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,17 +188,16 @@ impl SchemaSummaryBuilder {
     /// <p>The types of analysis rules that are associated with this schema object.</p>
     pub fn analysis_rule_types(mut self, input: crate::types::AnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
-        v.push(input);
-        self.analysis_rule_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_rule_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>) -> Self {
-        self.analysis_rule_types = input;
-        self
+    pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisRuleType>>) -> Self {
+        self.analysis_rule_types = input; self
     }
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
+    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisRuleType>> {
         &self.analysis_rule_types
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -220,8 +207,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
-        self.analysis_method = input;
-        self
+        self.analysis_method = input; self
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
@@ -238,56 +224,52 @@ impl SchemaSummaryBuilder {
     /// - [`collaboration_arn`](crate::types::builders::SchemaSummaryBuilder::collaboration_arn)
     /// - [`analysis_rule_types`](crate::types::builders::SchemaSummaryBuilder::analysis_rule_types)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SchemaSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            creator_account_id: self.creator_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creator_account_id",
-                    "creator_account_id was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_rule_types",
-                    "analysis_rule_types was not specified but it is required when building SchemaSummary",
-                )
-            })?,
-            analysis_method: self.analysis_method,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SchemaSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                creator_account_id: self.creator_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creator_account_id", "creator_account_id was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                analysis_rule_types: self.analysis_rule_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_rule_types", "analysis_rule_types was not specified but it is required when building SchemaSummary")
+                    )?
+                ,
+                analysis_method: self.analysis_method
+                ,
+            }
+        )
     }
 }
+

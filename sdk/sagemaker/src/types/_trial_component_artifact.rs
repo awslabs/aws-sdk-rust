@@ -4,19 +4,19 @@
 /// <p>Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrialComponentArtifact {
+pub struct TrialComponentArtifact  {
     /// <p>The media type of the artifact, which indicates the type of data in the artifact file. The media type consists of a <i>type</i> and a <i>subtype</i> concatenated with a slash (/) character, for example, text/csv, image/jpeg, and s3/uri. The type specifies the category of the media. The subtype specifies the kind of data.</p>
     pub media_type: ::std::option::Option<::std::string::String>,
     /// <p>The location of the artifact.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl TrialComponentArtifact {
+impl  TrialComponentArtifact  {
     /// <p>The media type of the artifact, which indicates the type of data in the artifact file. The media type consists of a <i>type</i> and a <i>subtype</i> concatenated with a slash (/) character, for example, text/csv, image/jpeg, and s3/uri. The type specifies the category of the media. The subtype specifies the kind of data.</p>
-    pub fn media_type(&self) -> ::std::option::Option<&str> {
+    pub fn media_type(&self) -> ::std::option::Option<& str> {
         self.media_type.as_deref()
     }
     /// <p>The location of the artifact.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl TrialComponentArtifactBuilder {
     }
     /// <p>The media type of the artifact, which indicates the type of data in the artifact file. The media type consists of a <i>type</i> and a <i>subtype</i> concatenated with a slash (/) character, for example, text/csv, image/jpeg, and s3/uri. The type specifies the category of the media. The subtype specifies the kind of data.</p>
     pub fn set_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_type = input;
-        self
+        self.media_type = input; self
     }
     /// <p>The media type of the artifact, which indicates the type of data in the artifact file. The media type consists of a <i>type</i> and a <i>subtype</i> concatenated with a slash (/) character, for example, text/csv, image/jpeg, and s3/uri. The type specifies the category of the media. The subtype specifies the kind of data.</p>
     pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl TrialComponentArtifactBuilder {
     }
     /// <p>The location of the artifact.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The location of the artifact.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl TrialComponentArtifactBuilder {
     /// Consumes the builder and constructs a [`TrialComponentArtifact`](crate::types::TrialComponentArtifact).
     pub fn build(self) -> crate::types::TrialComponentArtifact {
         crate::types::TrialComponentArtifact {
-            media_type: self.media_type,
-            value: self.value,
+            media_type: self.media_type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

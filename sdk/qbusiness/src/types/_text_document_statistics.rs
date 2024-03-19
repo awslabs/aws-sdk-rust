@@ -3,13 +3,13 @@
 /// <p>Provides information about text documents in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextDocumentStatistics {
+pub struct TextDocumentStatistics  {
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub indexed_text_bytes: ::std::option::Option<i64>,
     /// <p>The number of text documents indexed.</p>
     pub indexed_text_document_count: ::std::option::Option<i32>,
 }
-impl TextDocumentStatistics {
+impl  TextDocumentStatistics  {
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn indexed_text_bytes(&self) -> ::std::option::Option<i64> {
         self.indexed_text_bytes
@@ -41,8 +41,7 @@ impl TextDocumentStatisticsBuilder {
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn set_indexed_text_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.indexed_text_bytes = input;
-        self
+        self.indexed_text_bytes = input; self
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn get_indexed_text_bytes(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl TextDocumentStatisticsBuilder {
     }
     /// <p>The number of text documents indexed.</p>
     pub fn set_indexed_text_document_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.indexed_text_document_count = input;
-        self
+        self.indexed_text_document_count = input; self
     }
     /// <p>The number of text documents indexed.</p>
     pub fn get_indexed_text_document_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl TextDocumentStatisticsBuilder {
     /// Consumes the builder and constructs a [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
     pub fn build(self) -> crate::types::TextDocumentStatistics {
         crate::types::TextDocumentStatistics {
-            indexed_text_bytes: self.indexed_text_bytes,
-            indexed_text_document_count: self.indexed_text_document_count,
+            indexed_text_bytes: self.indexed_text_bytes
+            ,
+            indexed_text_document_count: self.indexed_text_document_count
+            ,
         }
     }
 }
+

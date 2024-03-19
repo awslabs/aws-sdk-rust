@@ -3,13 +3,13 @@
 /// <p>Launch into existing instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchIntoInstanceProperties {
+pub struct LaunchIntoInstanceProperties  {
     /// <p>Optionally holds EC2 instance ID of an instance to launch into, instead of launching a new instance during drill, recovery or failback.</p>
     pub launch_into_ec2_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl LaunchIntoInstanceProperties {
+impl  LaunchIntoInstanceProperties  {
     /// <p>Optionally holds EC2 instance ID of an instance to launch into, instead of launching a new instance during drill, recovery or failback.</p>
-    pub fn launch_into_ec2_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_into_ec2_instance_id(&self) -> ::std::option::Option<& str> {
         self.launch_into_ec2_instance_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl LaunchIntoInstancePropertiesBuilder {
     }
     /// <p>Optionally holds EC2 instance ID of an instance to launch into, instead of launching a new instance during drill, recovery or failback.</p>
     pub fn set_launch_into_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_into_ec2_instance_id = input;
-        self
+        self.launch_into_ec2_instance_id = input; self
     }
     /// <p>Optionally holds EC2 instance ID of an instance to launch into, instead of launching a new instance during drill, recovery or failback.</p>
     pub fn get_launch_into_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl LaunchIntoInstancePropertiesBuilder {
     /// Consumes the builder and constructs a [`LaunchIntoInstanceProperties`](crate::types::LaunchIntoInstanceProperties).
     pub fn build(self) -> crate::types::LaunchIntoInstanceProperties {
         crate::types::LaunchIntoInstanceProperties {
-            launch_into_ec2_instance_id: self.launch_into_ec2_instance_id,
+            launch_into_ec2_instance_id: self.launch_into_ec2_instance_id
+            ,
         }
     }
 }
+

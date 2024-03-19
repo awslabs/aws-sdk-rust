@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInsightsMetricDataOutput {
+pub struct ListInsightsMetricDataOutput  {
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
@@ -13,53 +13,55 @@ pub struct ListInsightsMetricDataOutput {
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>List of timestamps at intervals corresponding to the specified time period.</p>
-    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>List of values representing the API call rate or error rate at each timestamp. The number of values is equal to the number of timestamps.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<f64>>,
     /// <p>Only returned if the full results could not be returned in a single query. You can set the <code>NextToken</code> parameter in the next request to this value to continue retrieval.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInsightsMetricDataOutput {
+impl  ListInsightsMetricDataOutput  {
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
-    pub fn event_source(&self) -> ::std::option::Option<&str> {
+    pub fn event_source(&self) -> ::std::option::Option<& str> {
         self.event_source.as_deref()
     }
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
-    pub fn event_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_name(&self) -> ::std::option::Option<& str> {
         self.event_name.as_deref()
     }
     /// <p>The type of CloudTrail Insights event, which is either <code>ApiCallRateInsight</code> or <code>ApiErrorRateInsight</code>. The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume. The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes.</p>
-    pub fn insight_type(&self) -> ::std::option::Option<&crate::types::InsightType> {
+    pub fn insight_type(&self) -> ::std::option::Option<& crate::types::InsightType> {
         self.insight_type.as_ref()
     }
     /// <p>Only returned if <code>InsightType</code> parameter was set to <code>ApiErrorRateInsight</code>.</p>
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>List of timestamps at intervals corresponding to the specified time period.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
-    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
-        self.timestamps.as_deref().unwrap_or_default()
+    pub fn timestamps(&self) -> & [::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of values representing the API call rate or error rate at each timestamp. The number of values is equal to the number of timestamps.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[f64] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [f64] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Only returned if the full results could not be returned in a single query. You can set the <code>NextToken</code> parameter in the next request to this value to continue retrieval.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInsightsMetricDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInsightsMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`ListInsightsMetricDataOutput`](crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput).
     pub fn builder() -> crate::operation::list_insights_metric_data::builders::ListInsightsMetricDataOutputBuilder {
@@ -75,8 +77,8 @@ pub struct ListInsightsMetricDataOutputBuilder {
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
     pub(crate) insight_type: ::std::option::Option<crate::types::InsightType>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
-    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<f64>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -88,8 +90,7 @@ impl ListInsightsMetricDataOutputBuilder {
     }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source = input;
-        self
+        self.event_source = input; self
     }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +103,7 @@ impl ListInsightsMetricDataOutputBuilder {
     }
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
     pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_name = input;
-        self
+        self.event_name = input; self
     }
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
     pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +116,7 @@ impl ListInsightsMetricDataOutputBuilder {
     }
     /// <p>The type of CloudTrail Insights event, which is either <code>ApiCallRateInsight</code> or <code>ApiErrorRateInsight</code>. The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume. The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes.</p>
     pub fn set_insight_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
-        self.insight_type = input;
-        self
+        self.insight_type = input; self
     }
     /// <p>The type of CloudTrail Insights event, which is either <code>ApiCallRateInsight</code> or <code>ApiErrorRateInsight</code>. The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume. The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes.</p>
     pub fn get_insight_type(&self) -> &::std::option::Option<crate::types::InsightType> {
@@ -132,8 +131,7 @@ impl ListInsightsMetricDataOutputBuilder {
     /// <p>Only returned if <code>InsightType</code> parameter was set to <code>ApiErrorRateInsight</code>.</p>
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Only returned if <code>InsightType</code> parameter was set to <code>ApiErrorRateInsight</code>.</p>
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
@@ -147,17 +145,16 @@ impl ListInsightsMetricDataOutputBuilder {
     /// <p>List of timestamps at intervals corresponding to the specified time period.</p>
     pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of timestamps at intervals corresponding to the specified time period.</p>
-    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>List of timestamps at intervals corresponding to the specified time period.</p>
-    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.
@@ -167,17 +164,16 @@ impl ListInsightsMetricDataOutputBuilder {
     /// <p>List of values representing the API call rate or error rate at each timestamp. The number of values is equal to the number of timestamps.</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of values representing the API call rate or error rate at each timestamp. The number of values is equal to the number of timestamps.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.values = input; self
     }
     /// <p>List of values representing the API call rate or error rate at each timestamp. The number of values is equal to the number of timestamps.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.values
     }
     /// <p>Only returned if the full results could not be returned in a single query. You can set the <code>NextToken</code> parameter in the next request to this value to continue retrieval.</p>
@@ -187,33 +183,40 @@ impl ListInsightsMetricDataOutputBuilder {
     }
     /// <p>Only returned if the full results could not be returned in a single query. You can set the <code>NextToken</code> parameter in the next request to this value to continue retrieval.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Only returned if the full results could not be returned in a single query. You can set the <code>NextToken</code> parameter in the next request to this value to continue retrieval.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInsightsMetricDataOutput`](crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput).
     pub fn build(self) -> crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput {
         crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput {
-            event_source: self.event_source,
-            event_name: self.event_name,
-            insight_type: self.insight_type,
-            error_code: self.error_code,
-            timestamps: self.timestamps,
-            values: self.values,
-            next_token: self.next_token,
+            event_source: self.event_source
+            ,
+            event_name: self.event_name
+            ,
+            insight_type: self.insight_type
+            ,
+            error_code: self.error_code
+            ,
+            timestamps: self.timestamps
+            ,
+            values: self.values
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

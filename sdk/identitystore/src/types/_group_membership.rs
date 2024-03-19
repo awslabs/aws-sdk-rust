@@ -3,7 +3,7 @@
 /// <p>Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupMembership {
+pub struct GroupMembership  {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
@@ -13,22 +13,21 @@ pub struct GroupMembership {
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub member_id: ::std::option::Option<crate::types::MemberId>,
 }
-impl GroupMembership {
+impl  GroupMembership  {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> & str {
+        use std::ops::Deref; self.identity_store_id.deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
+    pub fn membership_id(&self) -> ::std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&crate::types::MemberId> {
+    pub fn member_id(&self) -> ::std::option::Option<& crate::types::MemberId> {
         self.member_id.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl GroupMembershipBuilder {
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl GroupMembershipBuilder {
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl GroupMembershipBuilder {
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl GroupMembershipBuilder {
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
@@ -110,16 +105,21 @@ impl GroupMembershipBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_store_id`](crate::types::builders::GroupMembershipBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::types::GroupMembership, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GroupMembership {
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building GroupMembership",
-                )
-            })?,
-            membership_id: self.membership_id,
-            group_id: self.group_id,
-            member_id: self.member_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GroupMembership {
+                identity_store_id: self.identity_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identity_store_id", "identity_store_id was not specified but it is required when building GroupMembership")
+                    )?
+                ,
+                membership_id: self.membership_id
+                ,
+                group_id: self.group_id
+                ,
+                member_id: self.member_id
+                ,
+            }
+        )
     }
 }
+

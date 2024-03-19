@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTestSetsInput {
+pub struct ListTestSetsInput  {
     /// <p>The sort order for the list of test sets.</p>
     pub sort_by: ::std::option::Option<crate::types::TestSetSortBy>,
     /// <p>The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -10,9 +10,9 @@ pub struct ListTestSetsInput {
     /// <p>If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTestSetsInput {
+impl  ListTestSetsInput  {
     /// <p>The sort order for the list of test sets.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::TestSetSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::TestSetSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -20,7 +20,7 @@ impl ListTestSetsInput {
         self.max_results
     }
     /// <p>If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListTestSetsInputBuilder {
     }
     /// <p>The sort order for the list of test sets.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TestSetSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The sort order for the list of test sets.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TestSetSortBy> {
@@ -61,8 +60,7 @@ impl ListTestSetsInputBuilder {
     }
     /// <p>The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListTestSetsInputBuilder {
     }
     /// <p>If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestSetsInput`](crate::operation::list_test_sets::ListTestSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_test_sets::ListTestSetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_test_sets::ListTestSetsInput {
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_test_sets::ListTestSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_test_sets::ListTestSetsInput {
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,50 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCellOutput {
+pub struct UpdateCellOutput  {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     pub cell_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cell.</p>
     pub cell_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cell ARNs.</p>
-    pub cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cells: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub parent_readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub parent_readiness_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Tags on the resources.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateCellOutput {
+impl  UpdateCellOutput  {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
-    pub fn cell_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cell_arn(&self) -> ::std::option::Option<& str> {
         self.cell_arn.as_deref()
     }
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> ::std::option::Option<&str> {
+    pub fn cell_name(&self) -> ::std::option::Option<& str> {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
-    pub fn cells(&self) -> &[::std::string::String] {
-        self.cells.as_deref().unwrap_or_default()
+    pub fn cells(&self) -> & [::std::string::String] {
+        self.cells.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_readiness_scopes.is_none()`.
-    pub fn parent_readiness_scopes(&self) -> &[::std::string::String] {
-        self.parent_readiness_scopes.as_deref().unwrap_or_default()
+    pub fn parent_readiness_scopes(&self) -> & [::std::string::String] {
+        self.parent_readiness_scopes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags on the resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateCellOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCellOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCellOutput`](crate::operation::update_cell::UpdateCellOutput).
     pub fn builder() -> crate::operation::update_cell::builders::UpdateCellOutputBuilder {
@@ -59,9 +61,9 @@ impl UpdateCellOutput {
 pub struct UpdateCellOutputBuilder {
     pub(crate) cell_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) parent_readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) parent_readiness_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateCellOutputBuilder {
@@ -72,8 +74,7 @@ impl UpdateCellOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     pub fn set_cell_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cell_arn = input;
-        self
+        self.cell_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     pub fn get_cell_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +87,7 @@ impl UpdateCellOutputBuilder {
     }
     /// <p>The name of the cell.</p>
     pub fn set_cell_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cell_name = input;
-        self
+        self.cell_name = input; self
     }
     /// <p>The name of the cell.</p>
     pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +100,16 @@ impl UpdateCellOutputBuilder {
     /// <p>A list of cell ARNs.</p>
     pub fn cells(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cells.unwrap_or_default();
-        v.push(input.into());
-        self.cells = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cells = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cells = input;
-        self
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cells = input; self
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cells
     }
     /// Appends an item to `parent_readiness_scopes`.
@@ -120,17 +119,16 @@ impl UpdateCellOutputBuilder {
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
     pub fn parent_readiness_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parent_readiness_scopes.unwrap_or_default();
-        v.push(input.into());
-        self.parent_readiness_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.parent_readiness_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn set_parent_readiness_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.parent_readiness_scopes = input;
-        self
+    pub fn set_parent_readiness_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.parent_readiness_scopes = input; self
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn get_parent_readiness_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parent_readiness_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.parent_readiness_scopes
     }
     /// Adds a key-value pair to `tags`.
@@ -140,37 +138,42 @@ impl UpdateCellOutputBuilder {
     /// <p>Tags on the resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags on the resources.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags on the resources.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCellOutput`](crate::operation::update_cell::UpdateCellOutput).
     pub fn build(self) -> crate::operation::update_cell::UpdateCellOutput {
         crate::operation::update_cell::UpdateCellOutput {
-            cell_arn: self.cell_arn,
-            cell_name: self.cell_name,
-            cells: self.cells,
-            parent_readiness_scopes: self.parent_readiness_scopes,
-            tags: self.tags,
+            cell_arn: self.cell_arn
+            ,
+            cell_name: self.cell_name
+            ,
+            cells: self.cells
+            ,
+            parent_readiness_scopes: self.parent_readiness_scopes
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

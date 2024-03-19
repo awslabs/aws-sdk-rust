@@ -5,56 +5,52 @@ pub use crate::operation::register_task_definition::_register_task_definition_in
 
 impl RegisterTaskDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_task_definition::RegisterTaskDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.register_task_definition();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::register_task_definition::RegisterTaskDefinitionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.register_task_definition();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RegisterTaskDefinition`.
-///
+/// 
 /// <p>Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>. Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more information about task definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>You can specify a role for your task with the <code>taskRoleArn</code> parameter. When you specify a role for a task, its containers can then use the latest versions of the CLI or SDKs to make API requests to the Amazon Web Services services that are specified in the policy that's associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>You can specify a Docker networking mode for the containers in your task definition with the <code>networkMode</code> parameter. The available network modes correspond to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTaskDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::register_task_definition::builders::RegisterTaskDefinitionInputBuilder,
+                    inner: crate::operation::register_task_definition::builders::RegisterTaskDefinitionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-        crate::operation::register_task_definition::RegisterTaskDefinitionError,
-    > for RegisterTaskDefinitionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-            crate::operation::register_task_definition::RegisterTaskDefinitionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
+                    crate::operation::register_task_definition::RegisterTaskDefinitionError,
+                > for RegisterTaskDefinitionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
+                        crate::operation::register_task_definition::RegisterTaskDefinitionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RegisterTaskDefinitionFluentBuilder {
     /// Creates a new `RegisterTaskDefinition`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl RegisterTaskDefinitionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_task_definition::RegisterTaskDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::register_task_definition::RegisterTaskDefinition::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::register_task_definition::RegisterTaskDefinition::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-        crate::operation::register_task_definition::RegisterTaskDefinitionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::register_task_definition::RegisterTaskDefinitionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_task_definition::RegisterTaskDefinitionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::register_task_definition::RegisterTaskDefinition::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::register_task_definition::RegisterTaskDefinition::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::register_task_definition::RegisterTaskDefinitionOutput, crate::operation::register_task_definition::RegisterTaskDefinitionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.family(input.into());
@@ -197,12 +184,12 @@ impl RegisterTaskDefinitionFluentBuilder {
         self
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
-    pub fn set_container_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
+    pub fn set_container_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerDefinition>>) -> Self {
         self.inner = self.inner.set_container_definitions(input);
         self
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
-    pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+    pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerDefinition>> {
         self.inner.get_container_definitions()
     }
     /// Appends an item to `volumes`.
@@ -215,12 +202,12 @@ impl RegisterTaskDefinitionFluentBuilder {
         self
     }
     /// <p>A list of volume definitions in JSON format that containers in your task might use.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>) -> Self {
         self.inner = self.inner.set_volumes(input);
         self
     }
     /// <p>A list of volume definitions in JSON format that containers in your task might use.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Volume>> {
         self.inner.get_volumes()
     }
     /// Appends an item to `placementConstraints`.
@@ -233,15 +220,12 @@ impl RegisterTaskDefinitionFluentBuilder {
         self
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn set_placement_constraints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
-    ) -> Self {
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskDefinitionPlacementConstraint>>) -> Self {
         self.inner = self.inner.set_placement_constraints(input);
         self
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskDefinitionPlacementConstraint>> {
         self.inner.get_placement_constraints()
     }
     /// Appends an item to `requiresCompatibilities`.
@@ -254,12 +238,12 @@ impl RegisterTaskDefinitionFluentBuilder {
         self
     }
     /// <p>The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter is omitted from the response.</p>
-    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
+    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>) -> Self {
         self.inner = self.inner.set_requires_compatibilities(input);
         self
     }
     /// <p>The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter is omitted from the response.</p>
-    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
+    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>> {
         self.inner.get_requires_compatibilities()
     }
     /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are converted to an integer indicating the CPU units when the task definition is registered.</p><note>
@@ -472,7 +456,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -494,7 +478,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
@@ -606,12 +590,12 @@ impl RegisterTaskDefinitionFluentBuilder {
         self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>) -> Self {
+    pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceAccelerator>>) -> Self {
         self.inner = self.inner.set_inference_accelerators(input);
         self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
+    pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferenceAccelerator>> {
         self.inner.get_inference_accelerators()
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p><note>
@@ -670,3 +654,4 @@ impl RegisterTaskDefinitionFluentBuilder {
         self.inner.get_runtime_platform()
     }
 }
+

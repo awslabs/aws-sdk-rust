@@ -3,13 +3,13 @@
 /// <p>Contains the vault access policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VaultAccessPolicy {
+pub struct VaultAccessPolicy  {
     /// <p>The vault access policy.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl VaultAccessPolicy {
+impl  VaultAccessPolicy  {
     /// <p>The vault access policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl VaultAccessPolicyBuilder {
     }
     /// <p>The vault access policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The vault access policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl VaultAccessPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`VaultAccessPolicy`](crate::types::VaultAccessPolicy).
     pub fn build(self) -> crate::types::VaultAccessPolicy {
-        crate::types::VaultAccessPolicy { policy: self.policy }
+        crate::types::VaultAccessPolicy {
+            policy: self.policy
+            ,
+        }
     }
 }
+

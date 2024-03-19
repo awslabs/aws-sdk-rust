@@ -3,7 +3,7 @@
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightImpactGraphService {
+pub struct InsightImpactGraphService  {
     /// <p>Identifier for the service. Unique within the service map.</p>
     pub reference_id: ::std::option::Option<i32>,
     /// <p>Identifier for the service. Unique within the service map.</p>
@@ -21,13 +21,13 @@ pub struct InsightImpactGraphService {
     /// <p>The canonical name of the service.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Connections to downstream services.</p>
-    pub edges: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>>,
+    pub edges: ::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphEdge>>,
 }
-impl InsightImpactGraphService {
+impl  InsightImpactGraphService  {
     /// <p>Identifier for the service. Unique within the service map.</p>
     pub fn reference_id(&self) -> ::std::option::Option<i32> {
         self.reference_id
@@ -43,28 +43,30 @@ impl InsightImpactGraphService {
     /// <li>
     /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The canonical name of the service.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
-    pub fn names(&self) -> &[::std::string::String] {
-        self.names.as_deref().unwrap_or_default()
+    pub fn names(&self) -> & [::std::string::String] {
+        self.names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Connections to downstream services.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
-    pub fn edges(&self) -> &[crate::types::InsightImpactGraphEdge] {
-        self.edges.as_deref().unwrap_or_default()
+    pub fn edges(&self) -> & [crate::types::InsightImpactGraphEdge] {
+        self.edges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InsightImpactGraphService {
@@ -81,9 +83,9 @@ pub struct InsightImpactGraphServiceBuilder {
     pub(crate) reference_id: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) edges: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>>,
+    pub(crate) edges: ::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphEdge>>,
 }
 impl InsightImpactGraphServiceBuilder {
     /// <p>Identifier for the service. Unique within the service map.</p>
@@ -93,8 +95,7 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<i32> {
@@ -127,8 +128,7 @@ impl InsightImpactGraphServiceBuilder {
     /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
@@ -151,8 +151,7 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>The canonical name of the service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The canonical name of the service.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,17 +164,16 @@ impl InsightImpactGraphServiceBuilder {
     /// <p>A list of names for the service, including the canonical name.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.names
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
@@ -185,8 +183,7 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,28 +196,34 @@ impl InsightImpactGraphServiceBuilder {
     /// <p>Connections to downstream services.</p>
     pub fn edges(mut self, input: crate::types::InsightImpactGraphEdge) -> Self {
         let mut v = self.edges.unwrap_or_default();
-        v.push(input);
-        self.edges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.edges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Connections to downstream services.</p>
-    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>>) -> Self {
-        self.edges = input;
-        self
+    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphEdge>>) -> Self {
+        self.edges = input; self
     }
     /// <p>Connections to downstream services.</p>
-    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>> {
+    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphEdge>> {
         &self.edges
     }
     /// Consumes the builder and constructs a [`InsightImpactGraphService`](crate::types::InsightImpactGraphService).
     pub fn build(self) -> crate::types::InsightImpactGraphService {
         crate::types::InsightImpactGraphService {
-            reference_id: self.reference_id,
-            r#type: self.r#type,
-            name: self.name,
-            names: self.names,
-            account_id: self.account_id,
-            edges: self.edges,
+            reference_id: self.reference_id
+            ,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            names: self.names
+            ,
+            account_id: self.account_id
+            ,
+            edges: self.edges
+            ,
         }
     }
 }
+

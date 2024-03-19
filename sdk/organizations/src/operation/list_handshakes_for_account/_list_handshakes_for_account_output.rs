@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHandshakesForAccountOutput {
+pub struct ListHandshakesForAccountOutput  {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    pub handshakes: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>,
+    pub handshakes: ::std::option::Option<::std::vec::Vec::<crate::types::Handshake>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListHandshakesForAccountOutput {
+impl  ListHandshakesForAccountOutput  {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.handshakes.is_none()`.
-    pub fn handshakes(&self) -> &[crate::types::Handshake] {
-        self.handshakes.as_deref().unwrap_or_default()
+    pub fn handshakes(&self) -> & [crate::types::Handshake] {
+        self.handshakes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListHandshakesForAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListHandshakesForAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListHandshakesForAccountOutput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput).
     pub fn builder() -> crate::operation::list_handshakes_for_account::builders::ListHandshakesForAccountOutputBuilder {
@@ -37,7 +38,7 @@ impl ListHandshakesForAccountOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHandshakesForAccountOutputBuilder {
-    pub(crate) handshakes: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>,
+    pub(crate) handshakes: ::std::option::Option<::std::vec::Vec::<crate::types::Handshake>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListHandshakesForAccountOutputBuilder {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
     pub fn handshakes(mut self, input: crate::types::Handshake) -> Self {
         let mut v = self.handshakes.unwrap_or_default();
-        v.push(input);
-        self.handshakes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.handshakes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    pub fn set_handshakes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>) -> Self {
-        self.handshakes = input;
-        self
+    pub fn set_handshakes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Handshake>>) -> Self {
+        self.handshakes = input; self
     }
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    pub fn get_handshakes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Handshake>> {
+    pub fn get_handshakes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Handshake>> {
         &self.handshakes
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -69,28 +69,30 @@ impl ListHandshakesForAccountOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListHandshakesForAccountOutput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput).
     pub fn build(self) -> crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput {
         crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput {
-            handshakes: self.handshakes,
-            next_token: self.next_token,
+            handshakes: self.handshakes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

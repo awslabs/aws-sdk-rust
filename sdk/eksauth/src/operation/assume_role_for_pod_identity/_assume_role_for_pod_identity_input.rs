@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssumeRoleForPodIdentityInput {
+pub struct AssumeRoleForPodIdentityInput  {
     /// <p>The name of the cluster for the request.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The token of the Kubernetes service account for the pod.</p>
     pub token: ::std::option::Option<::std::string::String>,
 }
-impl AssumeRoleForPodIdentityInput {
+impl  AssumeRoleForPodIdentityInput  {
     /// <p>The name of the cluster for the request.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The token of the Kubernetes service account for the pod.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssumeRoleForPodIdentityInput {
+impl  ::std::fmt::Debug for AssumeRoleForPodIdentityInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssumeRoleForPodIdentityInput");
         formatter.field("cluster_name", &self.cluster_name);
@@ -49,8 +49,7 @@ impl AssumeRoleForPodIdentityInputBuilder {
     }
     /// <p>The name of the cluster for the request.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster for the request.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,24 +63,22 @@ impl AssumeRoleForPodIdentityInputBuilder {
     }
     /// <p>The token of the Kubernetes service account for the pod.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The token of the Kubernetes service account for the pod.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
     /// Consumes the builder and constructs a [`AssumeRoleForPodIdentityInput`](crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput {
-            cluster_name: self.cluster_name,
-            token: self.token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput {
+                cluster_name: self.cluster_name
+                ,
+                token: self.token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AssumeRoleForPodIdentityInputBuilder {
@@ -92,3 +89,4 @@ impl ::std::fmt::Debug for AssumeRoleForPodIdentityInputBuilder {
         formatter.finish()
     }
 }
+

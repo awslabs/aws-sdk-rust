@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRepositoriesInput {
+pub struct ListRepositoriesInput  {
     /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
     pub repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -10,9 +10,9 @@ pub struct ListRepositoriesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRepositoriesInput {
+impl  ListRepositoriesInput  {
     /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
-    pub fn repository_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn repository_prefix(&self) -> ::std::option::Option<& str> {
         self.repository_prefix.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -20,7 +20,7 @@ impl ListRepositoriesInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListRepositoriesInputBuilder {
     }
     /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
     pub fn set_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_prefix = input;
-        self
+        self.repository_prefix = input; self
     }
     /// <p>A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
     pub fn get_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListRepositoriesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListRepositoriesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_repositories::ListRepositoriesInput {
-            repository_prefix: self.repository_prefix,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_repositories::ListRepositoriesInput {
+                repository_prefix: self.repository_prefix
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

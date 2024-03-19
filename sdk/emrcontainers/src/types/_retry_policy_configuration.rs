@@ -3,11 +3,11 @@
 /// <p>The configuration of the retry policy that the job runs on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryPolicyConfiguration {
+pub struct RetryPolicyConfiguration  {
     /// <p>The maximum number of attempts on the job's driver.</p>
     pub max_attempts: i32,
 }
-impl RetryPolicyConfiguration {
+impl  RetryPolicyConfiguration  {
     /// <p>The maximum number of attempts on the job's driver.</p>
     pub fn max_attempts(&self) -> i32 {
         self.max_attempts
@@ -35,8 +35,7 @@ impl RetryPolicyConfigurationBuilder {
     }
     /// <p>The maximum number of attempts on the job's driver.</p>
     pub fn set_max_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_attempts = input;
-        self
+        self.max_attempts = input; self
     }
     /// <p>The maximum number of attempts on the job's driver.</p>
     pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl RetryPolicyConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_attempts`](crate::types::builders::RetryPolicyConfigurationBuilder::max_attempts)
     pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetryPolicyConfiguration {
-            max_attempts: self.max_attempts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_attempts",
-                    "max_attempts was not specified but it is required when building RetryPolicyConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetryPolicyConfiguration {
+                max_attempts: self.max_attempts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_attempts", "max_attempts was not specified but it is required when building RetryPolicyConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

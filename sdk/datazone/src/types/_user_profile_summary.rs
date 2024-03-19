@@ -3,7 +3,7 @@
 /// <p>The details of the user profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserProfileSummary {
+pub struct UserProfileSummary  {
     /// <p>The ID of the Amazon DataZone domain of the user profile.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user profile.</p>
@@ -15,25 +15,25 @@ pub struct UserProfileSummary {
     /// <p>The details of the user profile.</p>
     pub details: ::std::option::Option<crate::types::UserProfileDetails>,
 }
-impl UserProfileSummary {
+impl  UserProfileSummary  {
     /// <p>The ID of the Amazon DataZone domain of the user profile.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The ID of the user profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the user profile.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserProfileType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserProfileType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the user profile.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UserProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UserProfileStatus> {
         self.status.as_ref()
     }
     /// <p>The details of the user profile.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::UserProfileDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::UserProfileDetails> {
         self.details.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain of the user profile.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain of the user profile.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The ID of the user profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the user profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The type of the user profile.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserProfileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the user profile.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserProfileType> {
@@ -104,8 +101,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The status of the user profile.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the user profile.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserProfileStatus> {
@@ -118,8 +114,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The details of the user profile.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::UserProfileDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>The details of the user profile.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::UserProfileDetails> {
@@ -128,11 +123,17 @@ impl UserProfileSummaryBuilder {
     /// Consumes the builder and constructs a [`UserProfileSummary`](crate::types::UserProfileSummary).
     pub fn build(self) -> crate::types::UserProfileSummary {
         crate::types::UserProfileSummary {
-            domain_id: self.domain_id,
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            details: self.details,
+            domain_id: self.domain_id
+            ,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

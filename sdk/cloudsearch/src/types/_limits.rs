@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Limits {
+pub struct Limits  {
     #[allow(missing_docs)] // documentation missing in model
     pub maximum_replication_count: i32,
     #[allow(missing_docs)] // documentation missing in model
     pub maximum_partition_count: i32,
 }
-impl Limits {
+impl  Limits  {
     #[allow(missing_docs)] // documentation missing in model
     pub fn maximum_replication_count(&self) -> i32 {
         self.maximum_replication_count
@@ -41,8 +41,7 @@ impl LimitsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_maximum_replication_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_replication_count = input;
-        self
+        self.maximum_replication_count = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_maximum_replication_count(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl LimitsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_maximum_partition_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_partition_count = input;
-        self
+        self.maximum_partition_count = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_maximum_partition_count(&self) -> &::std::option::Option<i32> {
@@ -68,19 +66,20 @@ impl LimitsBuilder {
     /// - [`maximum_replication_count`](crate::types::builders::LimitsBuilder::maximum_replication_count)
     /// - [`maximum_partition_count`](crate::types::builders::LimitsBuilder::maximum_partition_count)
     pub fn build(self) -> ::std::result::Result<crate::types::Limits, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Limits {
-            maximum_replication_count: self.maximum_replication_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "maximum_replication_count",
-                    "maximum_replication_count was not specified but it is required when building Limits",
-                )
-            })?,
-            maximum_partition_count: self.maximum_partition_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "maximum_partition_count",
-                    "maximum_partition_count was not specified but it is required when building Limits",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Limits {
+                maximum_replication_count: self.maximum_replication_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("maximum_replication_count", "maximum_replication_count was not specified but it is required when building Limits")
+                    )?
+                ,
+                maximum_partition_count: self.maximum_partition_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("maximum_partition_count", "maximum_partition_count was not specified but it is required when building Limits")
+                    )?
+                ,
+            }
+        )
     }
 }
+

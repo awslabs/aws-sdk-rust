@@ -3,25 +3,23 @@
 /// <p>List item for key value pair to put.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutKeyRequestListItem {
+pub struct PutKeyRequestListItem  {
     /// <p>The key of the key value pair list item to put.</p>
     pub key: ::std::string::String,
     /// <p>The value for the key value pair to put.</p>
     pub value: ::std::string::String,
 }
-impl PutKeyRequestListItem {
+impl  PutKeyRequestListItem  {
     /// <p>The key of the key value pair list item to put.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value for the key value pair to put.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
-impl ::std::fmt::Debug for PutKeyRequestListItem {
+impl  ::std::fmt::Debug for PutKeyRequestListItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutKeyRequestListItem");
         formatter.field("key", &self.key);
@@ -52,8 +50,7 @@ impl PutKeyRequestListItemBuilder {
     }
     /// <p>The key of the key value pair list item to put.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the key value pair list item to put.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl PutKeyRequestListItemBuilder {
     }
     /// <p>The value for the key value pair to put.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the key value pair to put.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl PutKeyRequestListItemBuilder {
     /// - [`key`](crate::types::builders::PutKeyRequestListItemBuilder::key)
     /// - [`value`](crate::types::builders::PutKeyRequestListItemBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::PutKeyRequestListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PutKeyRequestListItem {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building PutKeyRequestListItem",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building PutKeyRequestListItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PutKeyRequestListItem {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building PutKeyRequestListItem")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building PutKeyRequestListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutKeyRequestListItemBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for PutKeyRequestListItemBuilder {
         formatter.finish()
     }
 }
+

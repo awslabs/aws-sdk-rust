@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventsByEventTypeInput {
+pub struct DeleteEventsByEventTypeInput  {
     /// <p>The name of the event type.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEventsByEventTypeInput {
+impl  DeleteEventsByEventTypeInput  {
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteEventsByEventTypeInputBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The name of the event type.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type_name
     }
     /// Consumes the builder and constructs a [`DeleteEventsByEventTypeInput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput {
-            event_type_name: self.event_type_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput {
+                event_type_name: self.event_type_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomLineItemVersions`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) for the custom line item.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of custom line item versions to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p><br>
     ///   - [`filters(ListCustomLineItemVersionsFilter)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::filters) / [`set_filters(Option<ListCustomLineItemVersionsFilter>)`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::set_filters):<br>required: **false**<br><p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p><br>
-    /// - On success, responds with [`ListCustomLineItemVersionsOutput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomLineItemVersionsOutput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput) with field(s):
     ///   - [`custom_line_item_versions(Option<Vec::<CustomLineItemVersionListElement>>)`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput::custom_line_item_versions): <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput::next_token): <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    /// - On failure, responds with [`SdkError<ListCustomLineItemVersionsError>`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError)
-    pub fn list_custom_line_item_versions(
-        &self,
-    ) -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder {
-        crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomLineItemVersionsError>`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError)
+    pub fn list_custom_line_item_versions(&self) -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder {
+                                crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

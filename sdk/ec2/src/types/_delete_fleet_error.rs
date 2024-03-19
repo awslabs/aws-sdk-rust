@@ -3,19 +3,19 @@
 /// <p>Describes an EC2 Fleet error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetError {
+pub struct DeleteFleetError  {
     /// <p>The error code.</p>
     pub code: ::std::option::Option<crate::types::DeleteFleetErrorCode>,
     /// <p>The description for the error code.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFleetError {
+impl  DeleteFleetError  {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::DeleteFleetErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::DeleteFleetErrorCode> {
         self.code.as_ref()
     }
     /// <p>The description for the error code.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteFleetErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::DeleteFleetErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::DeleteFleetErrorCode> {
@@ -55,8 +54,7 @@ impl DeleteFleetErrorBuilder {
     }
     /// <p>The description for the error code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The description for the error code.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DeleteFleetErrorBuilder {
     /// Consumes the builder and constructs a [`DeleteFleetError`](crate::types::DeleteFleetError).
     pub fn build(self) -> crate::types::DeleteFleetError {
         crate::types::DeleteFleetError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

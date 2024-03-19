@@ -3,20 +3,19 @@
 /// <p>The field sort options for a pivot table sort configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotFieldSortOptions {
+pub struct PivotFieldSortOptions  {
     /// <p>The field ID for the field sort options.</p>
     pub field_id: ::std::string::String,
     /// <p>The sort by field for the field sort options.</p>
     pub sort_by: ::std::option::Option<crate::types::PivotTableSortBy>,
 }
-impl PivotFieldSortOptions {
+impl  PivotFieldSortOptions  {
     /// <p>The field ID for the field sort options.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The sort by field for the field sort options.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::PivotTableSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::PivotTableSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl PivotFieldSortOptionsBuilder {
     }
     /// <p>The field ID for the field sort options.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID for the field sort options.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl PivotFieldSortOptionsBuilder {
     }
     /// <p>The sort by field for the field sort options.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::PivotTableSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The sort by field for the field sort options.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::PivotTableSortBy> {
@@ -69,14 +66,17 @@ impl PivotFieldSortOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::PivotFieldSortOptionsBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::PivotFieldSortOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PivotFieldSortOptions {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building PivotFieldSortOptions",
-                )
-            })?,
-            sort_by: self.sort_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PivotFieldSortOptions {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building PivotFieldSortOptions")
+                    )?
+                ,
+                sort_by: self.sort_by
+                ,
+            }
+        )
     }
 }
+

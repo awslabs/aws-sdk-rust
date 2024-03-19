@@ -3,15 +3,14 @@
 /// <p>The input for the Lambda endpoint type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaEndpointInput {
+pub struct LambdaEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     pub arn: ::std::string::String,
 }
-impl LambdaEndpointInput {
+impl  LambdaEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl LambdaEndpointInput {
@@ -36,8 +35,7 @@ impl LambdaEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LambdaEndpointInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::LambdaEndpointInputBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaEndpointInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building LambdaEndpointInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaEndpointInput {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building LambdaEndpointInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,24 +3,25 @@
 /// <p>Represents the response from the server for the request to update user attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserAttributesOutput {
+pub struct UpdateUserAttributesOutput  {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
-    pub code_delivery_details_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
+    pub code_delivery_details_list: ::std::option::Option<::std::vec::Vec::<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,
 }
-impl UpdateUserAttributesOutput {
+impl  UpdateUserAttributesOutput  {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_delivery_details_list.is_none()`.
-    pub fn code_delivery_details_list(&self) -> &[crate::types::CodeDeliveryDetailsType] {
-        self.code_delivery_details_list.as_deref().unwrap_or_default()
+    pub fn code_delivery_details_list(&self) -> & [crate::types::CodeDeliveryDetailsType] {
+        self.code_delivery_details_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateUserAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserAttributesOutput`](crate::operation::update_user_attributes::UpdateUserAttributesOutput).
     pub fn builder() -> crate::operation::update_user_attributes::builders::UpdateUserAttributesOutputBuilder {
@@ -32,7 +33,7 @@ impl UpdateUserAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserAttributesOutputBuilder {
-    pub(crate) code_delivery_details_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
+    pub(crate) code_delivery_details_list: ::std::option::Option<::std::vec::Vec::<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,
 }
 impl UpdateUserAttributesOutputBuilder {
@@ -43,33 +44,34 @@ impl UpdateUserAttributesOutputBuilder {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
     pub fn code_delivery_details_list(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
         let mut v = self.code_delivery_details_list.unwrap_or_default();
-        v.push(input);
-        self.code_delivery_details_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_delivery_details_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
-    pub fn set_code_delivery_details_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>) -> Self {
-        self.code_delivery_details_list = input;
-        self
+    pub fn set_code_delivery_details_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeDeliveryDetailsType>>) -> Self {
+        self.code_delivery_details_list = input; self
     }
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
-    pub fn get_code_delivery_details_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>> {
+    pub fn get_code_delivery_details_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeDeliveryDetailsType>> {
         &self.code_delivery_details_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateUserAttributesOutput`](crate::operation::update_user_attributes::UpdateUserAttributesOutput).
     pub fn build(self) -> crate::operation::update_user_attributes::UpdateUserAttributesOutput {
         crate::operation::update_user_attributes::UpdateUserAttributesOutput {
-            code_delivery_details_list: self.code_delivery_details_list,
+            code_delivery_details_list: self.code_delivery_details_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

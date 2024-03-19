@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>DescribeInboundCrossClusterSearchConnections</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInboundCrossClusterSearchConnectionsInput {
+pub struct DescribeInboundCrossClusterSearchConnectionsInput  {
     /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
@@ -13,13 +13,13 @@ pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInboundCrossClusterSearchConnectionsInput {
+impl  DescribeInboundCrossClusterSearchConnectionsInput  {
     /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
@@ -29,24 +29,24 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeInboundCrossClusterSearchConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder {
         crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder::default()
     }
 }
@@ -55,7 +55,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -75,9 +75,9 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     /// <p></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
     /// <ul>
@@ -88,9 +88,8 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are:</p>
     /// <ul>
@@ -101,7 +100,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -111,8 +110,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -125,26 +123,24 @@ impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

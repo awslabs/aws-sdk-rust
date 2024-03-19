@@ -3,7 +3,7 @@
 /// <p>A validated address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Address {
+pub struct Address  {
     /// <p>The address street, such as <code>8th Avenue</code>.</p>
     pub street_name: ::std::option::Option<::std::string::String>,
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
@@ -25,49 +25,49 @@ pub struct Address {
     /// <p>The country of an address.</p>
     pub country: ::std::option::Option<::std::string::String>,
 }
-impl Address {
+impl  Address  {
     /// <p>The address street, such as <code>8th Avenue</code>.</p>
-    pub fn street_name(&self) -> ::std::option::Option<&str> {
+    pub fn street_name(&self) -> ::std::option::Option<& str> {
         self.street_name.as_deref()
     }
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
-    pub fn street_suffix(&self) -> ::std::option::Option<&str> {
+    pub fn street_suffix(&self) -> ::std::option::Option<& str> {
         self.street_suffix.as_deref()
     }
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
-    pub fn post_directional(&self) -> ::std::option::Option<&str> {
+    pub fn post_directional(&self) -> ::std::option::Option<& str> {
         self.post_directional.as_deref()
     }
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
-    pub fn pre_directional(&self) -> ::std::option::Option<&str> {
+    pub fn pre_directional(&self) -> ::std::option::Option<& str> {
         self.pre_directional.as_deref()
     }
     /// <p>The numeric portion of an address.</p>
-    pub fn street_number(&self) -> ::std::option::Option<&str> {
+    pub fn street_number(&self) -> ::std::option::Option<& str> {
         self.street_number.as_deref()
     }
     /// <p>The city of an address.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state of an address.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The postal code of an address.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The zip + 4 or postal code + 4 of an address.</p>
-    pub fn postal_code_plus4(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code_plus4(&self) -> ::std::option::Option<& str> {
         self.postal_code_plus4.as_deref()
     }
     /// <p>The country of an address.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
 }
-impl ::std::fmt::Debug for Address {
+impl  ::std::fmt::Debug for Address  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
         formatter.field("street_name", &"*** Sensitive Data Redacted ***");
@@ -113,8 +113,7 @@ impl AddressBuilder {
     }
     /// <p>The address street, such as <code>8th Avenue</code>.</p>
     pub fn set_street_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street_name = input;
-        self
+        self.street_name = input; self
     }
     /// <p>The address street, such as <code>8th Avenue</code>.</p>
     pub fn get_street_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl AddressBuilder {
     }
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
     pub fn set_street_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street_suffix = input;
-        self
+        self.street_suffix = input; self
     }
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
     pub fn get_street_suffix(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl AddressBuilder {
     }
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
     pub fn set_post_directional(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.post_directional = input;
-        self
+        self.post_directional = input; self
     }
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
     pub fn get_post_directional(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl AddressBuilder {
     }
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub fn set_pre_directional(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_directional = input;
-        self
+        self.pre_directional = input; self
     }
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code></p>
     pub fn get_pre_directional(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl AddressBuilder {
     }
     /// <p>The numeric portion of an address.</p>
     pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street_number = input;
-        self
+        self.street_number = input; self
     }
     /// <p>The numeric portion of an address.</p>
     pub fn get_street_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +178,7 @@ impl AddressBuilder {
     }
     /// <p>The city of an address.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>The city of an address.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +191,7 @@ impl AddressBuilder {
     }
     /// <p>The state of an address.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of an address.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +204,7 @@ impl AddressBuilder {
     }
     /// <p>The postal code of an address.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
     }
     /// <p>The postal code of an address.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +217,7 @@ impl AddressBuilder {
     }
     /// <p>The zip + 4 or postal code + 4 of an address.</p>
     pub fn set_postal_code_plus4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code_plus4 = input;
-        self
+        self.postal_code_plus4 = input; self
     }
     /// <p>The zip + 4 or postal code + 4 of an address.</p>
     pub fn get_postal_code_plus4(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +230,7 @@ impl AddressBuilder {
     }
     /// <p>The country of an address.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The country of an address.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,16 +239,26 @@ impl AddressBuilder {
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
-            street_name: self.street_name,
-            street_suffix: self.street_suffix,
-            post_directional: self.post_directional,
-            pre_directional: self.pre_directional,
-            street_number: self.street_number,
-            city: self.city,
-            state: self.state,
-            postal_code: self.postal_code,
-            postal_code_plus4: self.postal_code_plus4,
-            country: self.country,
+            street_name: self.street_name
+            ,
+            street_suffix: self.street_suffix
+            ,
+            post_directional: self.post_directional
+            ,
+            pre_directional: self.pre_directional
+            ,
+            street_number: self.street_number
+            ,
+            city: self.city
+            ,
+            state: self.state
+            ,
+            postal_code: self.postal_code
+            ,
+            postal_code_plus4: self.postal_code_plus4
+            ,
+            country: self.country
+            ,
         }
     }
 }
@@ -278,3 +278,4 @@ impl ::std::fmt::Debug for AddressBuilder {
         formatter.finish()
     }
 }
+

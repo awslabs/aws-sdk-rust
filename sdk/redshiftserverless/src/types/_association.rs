@@ -3,7 +3,7 @@
 /// <p>An object that represents the custom domain name association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Association {
+pub struct Association  {
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time for the certificate.</p>
@@ -13,21 +13,21 @@ pub struct Association {
     /// <p>The name of the workgroup associated with the database.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
-impl Association {
+impl  Association  {
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
     /// <p>The expiration time for the certificate.</p>
-    pub fn custom_domain_certificate_expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn custom_domain_certificate_expiry_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.custom_domain_certificate_expiry_time.as_ref()
     }
     /// <p>The custom domain name associated with the workgroup.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AssociationBuilder {
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AssociationBuilder {
     }
     /// <p>The expiration time for the certificate.</p>
     pub fn set_custom_domain_certificate_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.custom_domain_certificate_expiry_time = input;
-        self
+        self.custom_domain_certificate_expiry_time = input; self
     }
     /// <p>The expiration time for the certificate.</p>
     pub fn get_custom_domain_certificate_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +81,7 @@ impl AssociationBuilder {
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AssociationBuilder {
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AssociationBuilder {
     /// Consumes the builder and constructs a [`Association`](crate::types::Association).
     pub fn build(self) -> crate::types::Association {
         crate::types::Association {
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-            custom_domain_certificate_expiry_time: self.custom_domain_certificate_expiry_time,
-            custom_domain_name: self.custom_domain_name,
-            workgroup_name: self.workgroup_name,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn
+            ,
+            custom_domain_certificate_expiry_time: self.custom_domain_certificate_expiry_time
+            ,
+            custom_domain_name: self.custom_domain_name
+            ,
+            workgroup_name: self.workgroup_name
+            ,
         }
     }
 }
+

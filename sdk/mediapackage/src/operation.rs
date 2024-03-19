@@ -57,3 +57,4 @@ pub mod update_channel;
 
 /// Types for the `UpdateOriginEndpoint` operation.
 pub mod update_origin_endpoint;
+

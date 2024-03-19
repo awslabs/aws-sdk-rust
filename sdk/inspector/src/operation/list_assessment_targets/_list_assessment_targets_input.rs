@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentTargetsInput {
+pub struct ListAssessmentTargetsInput  {
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub filter: ::std::option::Option<crate::types::AssessmentTargetFilter>,
@@ -11,14 +11,14 @@ pub struct ListAssessmentTargetsInput {
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAssessmentTargetsInput {
+impl  ListAssessmentTargetsInput  {
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::AssessmentTargetFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::AssessmentTargetFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -51,8 +51,7 @@ impl ListAssessmentTargetsInputBuilder {
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AssessmentTargetFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
@@ -66,8 +65,7 @@ impl ListAssessmentTargetsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,22 +78,24 @@ impl ListAssessmentTargetsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentTargetsInput`](crate::operation::list_assessment_targets::ListAssessmentTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_assessment_targets::ListAssessmentTargetsInput {
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_assessment_targets::ListAssessmentTargetsInput {
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

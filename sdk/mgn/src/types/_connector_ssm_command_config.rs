@@ -3,7 +3,7 @@
 /// <p>Connector SSM command config.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorSsmCommandConfig {
+pub struct ConnectorSsmCommandConfig  {
     /// <p>Connector SSM command config S3 output enabled.</p>
     pub s3_output_enabled: bool,
     /// <p>Connector SSM command config output S3 bucket name.</p>
@@ -13,13 +13,13 @@ pub struct ConnectorSsmCommandConfig {
     /// <p>Connector SSM command config CloudWatch log group name.</p>
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
 }
-impl ConnectorSsmCommandConfig {
+impl  ConnectorSsmCommandConfig  {
     /// <p>Connector SSM command config S3 output enabled.</p>
     pub fn s3_output_enabled(&self) -> bool {
         self.s3_output_enabled
     }
     /// <p>Connector SSM command config output S3 bucket name.</p>
-    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>Connector SSM command config CloudWatch output enabled.</p>
@@ -27,7 +27,7 @@ impl ConnectorSsmCommandConfig {
         self.cloud_watch_output_enabled
     }
     /// <p>Connector SSM command config CloudWatch log group name.</p>
-    pub fn cloud_watch_log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_log_group_name(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_log_group_name.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl ConnectorSsmCommandConfigBuilder {
     }
     /// <p>Connector SSM command config S3 output enabled.</p>
     pub fn set_s3_output_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.s3_output_enabled = input;
-        self
+        self.s3_output_enabled = input; self
     }
     /// <p>Connector SSM command config S3 output enabled.</p>
     pub fn get_s3_output_enabled(&self) -> &::std::option::Option<bool> {
@@ -70,8 +69,7 @@ impl ConnectorSsmCommandConfigBuilder {
     }
     /// <p>Connector SSM command config output S3 bucket name.</p>
     pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_bucket_name = input;
-        self
+        self.output_s3_bucket_name = input; self
     }
     /// <p>Connector SSM command config output S3 bucket name.</p>
     pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ConnectorSsmCommandConfigBuilder {
     }
     /// <p>Connector SSM command config CloudWatch output enabled.</p>
     pub fn set_cloud_watch_output_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cloud_watch_output_enabled = input;
-        self
+        self.cloud_watch_output_enabled = input; self
     }
     /// <p>Connector SSM command config CloudWatch output enabled.</p>
     pub fn get_cloud_watch_output_enabled(&self) -> &::std::option::Option<bool> {
@@ -99,8 +96,7 @@ impl ConnectorSsmCommandConfigBuilder {
     }
     /// <p>Connector SSM command config CloudWatch log group name.</p>
     pub fn set_cloud_watch_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_log_group_name = input;
-        self
+        self.cloud_watch_log_group_name = input; self
     }
     /// <p>Connector SSM command config CloudWatch log group name.</p>
     pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,21 +107,24 @@ impl ConnectorSsmCommandConfigBuilder {
     /// - [`s3_output_enabled`](crate::types::builders::ConnectorSsmCommandConfigBuilder::s3_output_enabled)
     /// - [`cloud_watch_output_enabled`](crate::types::builders::ConnectorSsmCommandConfigBuilder::cloud_watch_output_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectorSsmCommandConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectorSsmCommandConfig {
-            s3_output_enabled: self.s3_output_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_output_enabled",
-                    "s3_output_enabled was not specified but it is required when building ConnectorSsmCommandConfig",
-                )
-            })?,
-            output_s3_bucket_name: self.output_s3_bucket_name,
-            cloud_watch_output_enabled: self.cloud_watch_output_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cloud_watch_output_enabled",
-                    "cloud_watch_output_enabled was not specified but it is required when building ConnectorSsmCommandConfig",
-                )
-            })?,
-            cloud_watch_log_group_name: self.cloud_watch_log_group_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectorSsmCommandConfig {
+                s3_output_enabled: self.s3_output_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_output_enabled", "s3_output_enabled was not specified but it is required when building ConnectorSsmCommandConfig")
+                    )?
+                ,
+                output_s3_bucket_name: self.output_s3_bucket_name
+                ,
+                cloud_watch_output_enabled: self.cloud_watch_output_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cloud_watch_output_enabled", "cloud_watch_output_enabled was not specified but it is required when building ConnectorSsmCommandConfig")
+                    )?
+                ,
+                cloud_watch_log_group_name: self.cloud_watch_log_group_name
+                ,
+            }
+        )
     }
 }
+

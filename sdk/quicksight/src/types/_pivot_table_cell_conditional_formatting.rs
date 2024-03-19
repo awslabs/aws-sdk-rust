@@ -3,7 +3,7 @@
 /// <p>The cell conditional formatting option for a pivot table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableCellConditionalFormatting {
+pub struct PivotTableCellConditionalFormatting  {
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub field_id: ::std::string::String,
     /// <p>The text format of the cell for conditional formatting.</p>
@@ -11,27 +11,27 @@ pub struct PivotTableCellConditionalFormatting {
     /// <p>The scope of the cell for conditional formatting.</p>
     pub scope: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>,
     /// <p>A list of cell scopes for conditional formatting.</p>
-    pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
+    pub scopes: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableConditionalFormattingScope>>,
 }
-impl PivotTableCellConditionalFormatting {
+impl  PivotTableCellConditionalFormatting  {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The text format of the cell for conditional formatting.</p>
-    pub fn text_format(&self) -> ::std::option::Option<&crate::types::TextConditionalFormat> {
+    pub fn text_format(&self) -> ::std::option::Option<& crate::types::TextConditionalFormat> {
         self.text_format.as_ref()
     }
     /// <p>The scope of the cell for conditional formatting.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::PivotTableConditionalFormattingScope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::PivotTableConditionalFormattingScope> {
         self.scope.as_ref()
     }
     /// <p>A list of cell scopes for conditional formatting.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
-    pub fn scopes(&self) -> &[crate::types::PivotTableConditionalFormattingScope] {
-        self.scopes.as_deref().unwrap_or_default()
+    pub fn scopes(&self) -> & [crate::types::PivotTableConditionalFormattingScope] {
+        self.scopes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PivotTableCellConditionalFormatting {
@@ -48,7 +48,7 @@ pub struct PivotTableCellConditionalFormattingBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
     pub(crate) scope: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>,
-    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableConditionalFormattingScope>>,
 }
 impl PivotTableCellConditionalFormattingBuilder {
     /// <p>The field ID of the cell for conditional formatting.</p>
@@ -59,8 +59,7 @@ impl PivotTableCellConditionalFormattingBuilder {
     }
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl PivotTableCellConditionalFormattingBuilder {
     }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn set_text_format(mut self, input: ::std::option::Option<crate::types::TextConditionalFormat>) -> Self {
-        self.text_format = input;
-        self
+        self.text_format = input; self
     }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn get_text_format(&self) -> &::std::option::Option<crate::types::TextConditionalFormat> {
@@ -87,8 +85,7 @@ impl PivotTableCellConditionalFormattingBuilder {
     }
     /// <p>The scope of the cell for conditional formatting.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The scope of the cell for conditional formatting.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScope> {
@@ -101,33 +98,37 @@ impl PivotTableCellConditionalFormattingBuilder {
     /// <p>A list of cell scopes for conditional formatting.</p>
     pub fn scopes(mut self, input: crate::types::PivotTableConditionalFormattingScope) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cell scopes for conditional formatting.</p>
-    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableConditionalFormattingScope>>) -> Self {
+        self.scopes = input; self
     }
     /// <p>A list of cell scopes for conditional formatting.</p>
-    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PivotTableConditionalFormattingScope>> {
         &self.scopes
     }
     /// Consumes the builder and constructs a [`PivotTableCellConditionalFormatting`](crate::types::PivotTableCellConditionalFormatting).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::PivotTableCellConditionalFormattingBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::PivotTableCellConditionalFormatting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PivotTableCellConditionalFormatting {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building PivotTableCellConditionalFormatting",
-                )
-            })?,
-            text_format: self.text_format,
-            scope: self.scope,
-            scopes: self.scopes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PivotTableCellConditionalFormatting {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building PivotTableCellConditionalFormatting")
+                    )?
+                ,
+                text_format: self.text_format
+                ,
+                scope: self.scope
+                ,
+                scopes: self.scopes
+                ,
+            }
+        )
     }
 }
+

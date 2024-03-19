@@ -3,11 +3,11 @@
 /// <p>The BGP options for the Connect attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayConnectRequestBgpOptions {
+pub struct TransitGatewayConnectRequestBgpOptions  {
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub peer_asn: ::std::option::Option<i64>,
 }
-impl TransitGatewayConnectRequestBgpOptions {
+impl  TransitGatewayConnectRequestBgpOptions  {
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn peer_asn(&self) -> ::std::option::Option<i64> {
         self.peer_asn
@@ -34,8 +34,7 @@ impl TransitGatewayConnectRequestBgpOptionsBuilder {
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn set_peer_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.peer_asn = input;
-        self
+        self.peer_asn = input; self
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn get_peer_asn(&self) -> &::std::option::Option<i64> {
@@ -43,6 +42,10 @@ impl TransitGatewayConnectRequestBgpOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`TransitGatewayConnectRequestBgpOptions`](crate::types::TransitGatewayConnectRequestBgpOptions).
     pub fn build(self) -> crate::types::TransitGatewayConnectRequestBgpOptions {
-        crate::types::TransitGatewayConnectRequestBgpOptions { peer_asn: self.peer_asn }
+        crate::types::TransitGatewayConnectRequestBgpOptions {
+            peer_asn: self.peer_asn
+            ,
+        }
     }
 }
+

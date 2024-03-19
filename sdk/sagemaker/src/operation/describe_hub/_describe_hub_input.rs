@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHubInput {
+pub struct DescribeHubInput  {
     /// <p>The name of the hub to describe.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeHubInput {
+impl  DescribeHubInput  {
     /// <p>The name of the hub to describe.</p>
-    pub fn hub_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_name(&self) -> ::std::option::Option<& str> {
         self.hub_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DescribeHubInputBuilder {
     }
     /// <p>The name of the hub to describe.</p>
     pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The name of the hub to describe.</p>
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DescribeHubInputBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeHubInput`](crate::operation::describe_hub::DescribeHubInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_hub::DescribeHubInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_hub::DescribeHubInput { hub_name: self.hub_name })
+        ::std::result::Result::Ok(
+            crate::operation::describe_hub::DescribeHubInput {
+                hub_name: self.hub_name
+                ,
+            }
+        )
     }
 }
+

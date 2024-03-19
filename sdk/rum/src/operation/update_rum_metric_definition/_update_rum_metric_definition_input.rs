@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRumMetricDefinitionInput {
+pub struct UpdateRumMetricDefinitionInput  {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
@@ -15,26 +15,26 @@ pub struct UpdateRumMetricDefinitionInput {
     /// <p>The ID of the metric definition to update.</p>
     pub metric_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRumMetricDefinitionInput {
+impl  UpdateRumMetricDefinitionInput  {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
-    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_monitor_name(&self) -> ::std::option::Option<& str> {
         self.app_monitor_name.as_deref()
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::MetricDestination> {
         self.destination.as_ref()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
-    pub fn metric_definition(&self) -> ::std::option::Option<&crate::types::MetricDefinitionRequest> {
+    pub fn metric_definition(&self) -> ::std::option::Option<& crate::types::MetricDefinitionRequest> {
         self.metric_definition.as_ref()
     }
     /// <p>The ID of the metric definition to update.</p>
-    pub fn metric_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn metric_definition_id(&self) -> ::std::option::Option<& str> {
         self.metric_definition_id.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
     }
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
     pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_monitor_name = input;
-        self
+        self.app_monitor_name = input; self
     }
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
     pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
@@ -95,8 +93,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
@@ -111,8 +108,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
     pub fn set_metric_definition(mut self, input: ::std::option::Option<crate::types::MetricDefinitionRequest>) -> Self {
-        self.metric_definition = input;
-        self
+        self.metric_definition = input; self
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
     pub fn get_metric_definition(&self) -> &::std::option::Option<crate::types::MetricDefinitionRequest> {
@@ -126,26 +122,28 @@ impl UpdateRumMetricDefinitionInputBuilder {
     }
     /// <p>The ID of the metric definition to update.</p>
     pub fn set_metric_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_definition_id = input;
-        self
+        self.metric_definition_id = input; self
     }
     /// <p>The ID of the metric definition to update.</p>
     pub fn get_metric_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_definition_id
     }
     /// Consumes the builder and constructs a [`UpdateRumMetricDefinitionInput`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
-            app_monitor_name: self.app_monitor_name,
-            destination: self.destination,
-            destination_arn: self.destination_arn,
-            metric_definition: self.metric_definition,
-            metric_definition_id: self.metric_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
+                app_monitor_name: self.app_monitor_name
+                ,
+                destination: self.destination
+                ,
+                destination_arn: self.destination_arn
+                ,
+                metric_definition: self.metric_definition
+                ,
+                metric_definition_id: self.metric_definition_id
+                ,
+            }
+        )
     }
 }
+

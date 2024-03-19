@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThingGroupInput {
+pub struct UpdateThingGroupInput  {
     /// <p>The thing group to update.</p>
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing group properties.</p>
@@ -10,13 +10,13 @@ pub struct UpdateThingGroupInput {
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub expected_version: ::std::option::Option<i64>,
 }
-impl UpdateThingGroupInput {
+impl  UpdateThingGroupInput  {
     /// <p>The thing group to update.</p>
-    pub fn thing_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> ::std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The thing group properties.</p>
-    pub fn thing_group_properties(&self) -> ::std::option::Option<&crate::types::ThingGroupProperties> {
+    pub fn thing_group_properties(&self) -> ::std::option::Option<& crate::types::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
@@ -48,8 +48,7 @@ impl UpdateThingGroupInputBuilder {
     }
     /// <p>The thing group to update.</p>
     pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The thing group to update.</p>
     pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateThingGroupInputBuilder {
     }
     /// <p>The thing group properties.</p>
     pub fn set_thing_group_properties(mut self, input: ::std::option::Option<crate::types::ThingGroupProperties>) -> Self {
-        self.thing_group_properties = input;
-        self
+        self.thing_group_properties = input; self
     }
     /// <p>The thing group properties.</p>
     pub fn get_thing_group_properties(&self) -> &::std::option::Option<crate::types::ThingGroupProperties> {
@@ -77,21 +75,24 @@ impl UpdateThingGroupInputBuilder {
     }
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
         &self.expected_version
     }
     /// Consumes the builder and constructs a [`UpdateThingGroupInput`](crate::operation::update_thing_group::UpdateThingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_thing_group::UpdateThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_thing_group::UpdateThingGroupInput {
-            thing_group_name: self.thing_group_name,
-            thing_group_properties: self.thing_group_properties,
-            expected_version: self.expected_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing_group::UpdateThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_thing_group::UpdateThingGroupInput {
+                thing_group_name: self.thing_group_name
+                ,
+                thing_group_properties: self.thing_group_properties
+                ,
+                expected_version: self.expected_version
+                ,
+            }
+        )
     }
 }
+

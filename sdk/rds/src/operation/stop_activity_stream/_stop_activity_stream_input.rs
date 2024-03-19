@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopActivityStreamInput {
+pub struct StopActivityStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.</p>
     pub apply_immediately: ::std::option::Option<bool>,
 }
-impl StopActivityStreamInput {
+impl  StopActivityStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.</p>
@@ -41,8 +41,7 @@ impl StopActivityStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl StopActivityStreamInputBuilder {
     }
     /// <p>Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_activity_stream::StopActivityStreamInput {
-            resource_arn: self.resource_arn,
-            apply_immediately: self.apply_immediately,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_activity_stream::StopActivityStreamInput {
+                resource_arn: self.resource_arn
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+            }
+        )
     }
 }
+

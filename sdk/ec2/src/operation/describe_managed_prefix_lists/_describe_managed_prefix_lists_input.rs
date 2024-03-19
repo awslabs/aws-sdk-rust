@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeManagedPrefixListsInput {
+pub struct DescribeManagedPrefixListsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more filters.</p>
@@ -14,15 +14,15 @@ pub struct DescribeManagedPrefixListsInput {
     /// <li>
     /// <p><code>prefix-list-name</code> - The name of the prefix list.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more prefix list IDs.</p>
-    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeManagedPrefixListsInput {
+impl  DescribeManagedPrefixListsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -36,24 +36,26 @@ impl DescribeManagedPrefixListsInput {
     /// <li>
     /// <p><code>prefix-list-name</code> - The name of the prefix list.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>One or more prefix list IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
-    pub fn prefix_list_ids(&self) -> &[::std::string::String] {
-        self.prefix_list_ids.as_deref().unwrap_or_default()
+    pub fn prefix_list_ids(&self) -> & [::std::string::String] {
+        self.prefix_list_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeManagedPrefixListsInput {
@@ -68,10 +70,10 @@ impl DescribeManagedPrefixListsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedPrefixListsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeManagedPrefixListsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -81,8 +83,7 @@ impl DescribeManagedPrefixListsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -103,9 +104,9 @@ impl DescribeManagedPrefixListsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -116,9 +117,8 @@ impl DescribeManagedPrefixListsInputBuilder {
     /// <li>
     /// <p><code>prefix-list-name</code> - The name of the prefix list.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -129,7 +129,7 @@ impl DescribeManagedPrefixListsInputBuilder {
     /// <li>
     /// <p><code>prefix-list-name</code> - The name of the prefix list.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -139,8 +139,7 @@ impl DescribeManagedPrefixListsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -153,8 +152,7 @@ impl DescribeManagedPrefixListsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,32 +165,34 @@ impl DescribeManagedPrefixListsInputBuilder {
     /// <p>One or more prefix list IDs.</p>
     pub fn prefix_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
-        v.push(input.into());
-        self.prefix_list_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.prefix_list_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.prefix_list_ids = input;
-        self
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.prefix_list_ids = input; self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.prefix_list_ids
     }
     /// Consumes the builder and constructs a [`DescribeManagedPrefixListsInput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput {
-            dry_run: self.dry_run,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            prefix_list_ids: self.prefix_list_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput {
+                dry_run: self.dry_run
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                prefix_list_ids: self.prefix_list_ids
+                ,
+            }
+        )
     }
 }
+

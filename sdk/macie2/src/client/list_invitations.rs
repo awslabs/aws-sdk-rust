@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInvitations`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
+                            /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
     ///   - [`invitations(Option<Vec::<Invitation>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>An array of objects, one for each invitation that was received by the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
+                            /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
     pub fn list_invitations(&self) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
-        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

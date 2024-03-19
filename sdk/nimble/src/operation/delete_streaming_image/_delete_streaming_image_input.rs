@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStreamingImageInput {
+pub struct DeleteStreamingImageInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The streaming image ID.</p>
@@ -10,17 +10,17 @@ pub struct DeleteStreamingImageInput {
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStreamingImageInput {
+impl  DeleteStreamingImageInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn streaming_image_id(&self) -> ::std::option::Option<& str> {
         self.streaming_image_id.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteStreamingImageInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteStreamingImageInputBuilder {
     }
     /// <p>The streaming image ID.</p>
     pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.streaming_image_id = input;
-        self
+        self.streaming_image_id = input; self
     }
     /// <p>The streaming image ID.</p>
     pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DeleteStreamingImageInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`DeleteStreamingImageInput`](crate::operation::delete_streaming_image::DeleteStreamingImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_streaming_image::DeleteStreamingImageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_streaming_image::DeleteStreamingImageInput {
-            client_token: self.client_token,
-            streaming_image_id: self.streaming_image_id,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_streaming_image::DeleteStreamingImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_streaming_image::DeleteStreamingImageInput {
+                client_token: self.client_token
+                ,
+                streaming_image_id: self.streaming_image_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

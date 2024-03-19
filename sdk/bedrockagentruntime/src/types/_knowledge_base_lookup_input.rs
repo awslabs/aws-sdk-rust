@@ -3,23 +3,23 @@
 /// <p>Contains details about the knowledge base to look up and the query to be made.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct KnowledgeBaseLookupInput {
+pub struct KnowledgeBaseLookupInput  {
     /// <p>The query made to the knowledge base.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the knowledge base to look up.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl KnowledgeBaseLookupInput {
+impl  KnowledgeBaseLookupInput  {
     /// <p>The query made to the knowledge base.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The unique identifier of the knowledge base to look up.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for KnowledgeBaseLookupInput {
+impl  ::std::fmt::Debug for KnowledgeBaseLookupInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KnowledgeBaseLookupInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl KnowledgeBaseLookupInputBuilder {
     }
     /// <p>The query made to the knowledge base.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The query made to the knowledge base.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl KnowledgeBaseLookupInputBuilder {
     }
     /// <p>The unique identifier of the knowledge base to look up.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The unique identifier of the knowledge base to look up.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl KnowledgeBaseLookupInputBuilder {
     /// Consumes the builder and constructs a [`KnowledgeBaseLookupInput`](crate::types::KnowledgeBaseLookupInput).
     pub fn build(self) -> crate::types::KnowledgeBaseLookupInput {
         crate::types::KnowledgeBaseLookupInput {
-            text: self.text,
-            knowledge_base_id: self.knowledge_base_id,
+            text: self.text
+            ,
+            knowledge_base_id: self.knowledge_base_id
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for KnowledgeBaseLookupInputBuilder {
         formatter.finish()
     }
 }
+

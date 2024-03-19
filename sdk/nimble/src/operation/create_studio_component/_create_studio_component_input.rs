@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateStudioComponentInput {
+pub struct CreateStudioComponentInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
@@ -10,19 +10,19 @@ pub struct CreateStudioComponentInput {
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
-    pub initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub initialization_scripts: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentInitializationScript>>,
     /// <p>The name for the studio component.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
-    pub script_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub script_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ScriptParameterKeyValue>>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
     pub subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The type of the studio component.</p>
     pub r#type: ::std::option::Option<crate::types::StudioComponentType>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
@@ -30,67 +30,70 @@ pub struct CreateStudioComponentInput {
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateStudioComponentInput {
+impl  CreateStudioComponentInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::StudioComponentConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::StudioComponentConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_group_ids.is_none()`.
-    pub fn ec2_security_group_ids(&self) -> &[::std::string::String] {
-        self.ec2_security_group_ids.as_deref().unwrap_or_default()
+    pub fn ec2_security_group_ids(&self) -> & [::std::string::String] {
+        self.ec2_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Initialization scripts for studio components.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.initialization_scripts.is_none()`.
-    pub fn initialization_scripts(&self) -> &[crate::types::StudioComponentInitializationScript] {
-        self.initialization_scripts.as_deref().unwrap_or_default()
+    pub fn initialization_scripts(&self) -> & [crate::types::StudioComponentInitializationScript] {
+        self.initialization_scripts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name for the studio component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Parameters for the studio component scripts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.script_parameters.is_none()`.
-    pub fn script_parameters(&self) -> &[crate::types::ScriptParameterKeyValue] {
-        self.script_parameters.as_deref().unwrap_or_default()
+    pub fn script_parameters(&self) -> & [crate::types::ScriptParameterKeyValue] {
+        self.script_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn subtype(&self) -> ::std::option::Option<&crate::types::StudioComponentSubtype> {
+    pub fn subtype(&self) -> ::std::option::Option<& crate::types::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the studio component.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StudioComponentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::StudioComponentType> {
         self.r#type.as_ref()
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secure_initialization_role_arn(&self) -> ::std::option::Option<& str> {
         self.secure_initialization_role_arn.as_deref()
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
-    pub fn runtime_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn runtime_role_arn(&self) -> ::std::option::Option<& str> {
         self.runtime_role_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateStudioComponentInput {
+impl  ::std::fmt::Debug for CreateStudioComponentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioComponentInput");
         formatter.field("client_token", &self.client_token);
@@ -123,13 +126,13 @@ pub struct CreateStudioComponentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub(crate) ec2_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) initialization_scripts: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentInitializationScript>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) script_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub(crate) script_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ScriptParameterKeyValue>>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::StudioComponentType>,
     pub(crate) secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_role_arn: ::std::option::Option<::std::string::String>,
@@ -142,8 +145,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +158,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::StudioComponentConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::StudioComponentConfiguration> {
@@ -170,8 +171,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,17 +184,16 @@ impl CreateStudioComponentInputBuilder {
     /// <p>The EC2 security groups that control access to the studio component.</p>
     pub fn ec2_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.ec2_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ec2_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ec2_security_group_ids = input;
-        self
+    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ec2_security_group_ids = input; self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ec2_security_group_ids
     }
     /// Appends an item to `initialization_scripts`.
@@ -204,20 +203,16 @@ impl CreateStudioComponentInputBuilder {
     /// <p>Initialization scripts for studio components.</p>
     pub fn initialization_scripts(mut self, input: crate::types::StudioComponentInitializationScript) -> Self {
         let mut v = self.initialization_scripts.unwrap_or_default();
-        v.push(input);
-        self.initialization_scripts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.initialization_scripts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn set_initialization_scripts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
-    ) -> Self {
-        self.initialization_scripts = input;
-        self
+    pub fn set_initialization_scripts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentInitializationScript>>) -> Self {
+        self.initialization_scripts = input; self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn get_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>> {
+    pub fn get_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentInitializationScript>> {
         &self.initialization_scripts
     }
     /// <p>The name for the studio component.</p>
@@ -228,8 +223,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>The name for the studio component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the studio component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,17 +236,16 @@ impl CreateStudioComponentInputBuilder {
     /// <p>Parameters for the studio component scripts.</p>
     pub fn script_parameters(mut self, input: crate::types::ScriptParameterKeyValue) -> Self {
         let mut v = self.script_parameters.unwrap_or_default();
-        v.push(input);
-        self.script_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.script_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn set_script_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>) -> Self {
-        self.script_parameters = input;
-        self
+    pub fn set_script_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScriptParameterKeyValue>>) -> Self {
+        self.script_parameters = input; self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn get_script_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
+    pub fn get_script_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScriptParameterKeyValue>> {
         &self.script_parameters
     }
     /// <p>The studio ID.</p>
@@ -263,8 +256,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +269,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StudioComponentSubtype>) -> Self {
-        self.subtype = input;
-        self
+        self.subtype = input; self
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn get_subtype(&self) -> &::std::option::Option<crate::types::StudioComponentSubtype> {
@@ -291,17 +282,16 @@ impl CreateStudioComponentInputBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The type of the studio component.</p>
@@ -312,8 +302,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>The type of the studio component.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::StudioComponentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the studio component.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StudioComponentType> {
@@ -326,8 +315,7 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn set_secure_initialization_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secure_initialization_role_arn = input;
-        self
+        self.secure_initialization_role_arn = input; self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn get_secure_initialization_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,33 +328,44 @@ impl CreateStudioComponentInputBuilder {
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
     pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime_role_arn = input;
-        self
+        self.runtime_role_arn = input; self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running.</p>
     pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_role_arn
     }
     /// Consumes the builder and constructs a [`CreateStudioComponentInput`](crate::operation::create_studio_component::CreateStudioComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_studio_component::CreateStudioComponentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_studio_component::CreateStudioComponentInput {
-            client_token: self.client_token,
-            configuration: self.configuration,
-            description: self.description,
-            ec2_security_group_ids: self.ec2_security_group_ids,
-            initialization_scripts: self.initialization_scripts,
-            name: self.name,
-            script_parameters: self.script_parameters,
-            studio_id: self.studio_id,
-            subtype: self.subtype,
-            tags: self.tags,
-            r#type: self.r#type,
-            secure_initialization_role_arn: self.secure_initialization_role_arn,
-            runtime_role_arn: self.runtime_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_studio_component::CreateStudioComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_studio_component::CreateStudioComponentInput {
+                client_token: self.client_token
+                ,
+                configuration: self.configuration
+                ,
+                description: self.description
+                ,
+                ec2_security_group_ids: self.ec2_security_group_ids
+                ,
+                initialization_scripts: self.initialization_scripts
+                ,
+                name: self.name
+                ,
+                script_parameters: self.script_parameters
+                ,
+                studio_id: self.studio_id
+                ,
+                subtype: self.subtype
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+                secure_initialization_role_arn: self.secure_initialization_role_arn
+                ,
+                runtime_role_arn: self.runtime_role_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateStudioComponentInputBuilder {
@@ -388,3 +387,4 @@ impl ::std::fmt::Debug for CreateStudioComponentInputBuilder {
         formatter.finish()
     }
 }
+

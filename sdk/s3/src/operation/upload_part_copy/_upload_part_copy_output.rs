@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UploadPartCopyOutput {
+pub struct UploadPartCopyOutput  {
     /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
@@ -36,39 +36,39 @@ pub struct UploadPartCopyOutput {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl UploadPartCopyOutput {
+impl  UploadPartCopyOutput  {
     /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
-    pub fn copy_source_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_version_id(&self) -> ::std::option::Option<& str> {
         self.copy_source_version_id.as_deref()
     }
     /// <p>Container for all response elements.</p>
-    pub fn copy_part_result(&self) -> ::std::option::Option<&crate::types::CopyPartResult> {
+    pub fn copy_part_result(&self) -> ::std::option::Option<& crate::types::CopyPartResult> {
         self.copy_part_result.as_ref()
     }
     /// <p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
-    pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(&self) -> ::std::option::Option<& crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to confirm the encryption algorithm that's used.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<& str> {
         self.sse_customer_algorithm.as_deref()
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide the round-trip message integrity verification of the customer-provided encryption key.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<& str> {
         self.sse_customer_key_md5.as_deref()
     }
     /// <p>If present, indicates the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn ssekms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssekms_key_id(&self) -> ::std::option::Option<& str> {
         self.ssekms_key_id.as_deref()
     }
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p><note>
@@ -80,11 +80,11 @@ impl UploadPartCopyOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> ::std::option::Option<& crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
 }
-impl ::std::fmt::Debug for UploadPartCopyOutput {
+impl  ::std::fmt::Debug for UploadPartCopyOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UploadPartCopyOutput");
         formatter.field("copy_source_version_id", &self.copy_source_version_id);
@@ -101,15 +101,15 @@ impl ::std::fmt::Debug for UploadPartCopyOutput {
     }
 }
 impl crate::s3_request_id::RequestIdExt for UploadPartCopyOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for UploadPartCopyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UploadPartCopyOutput {
     /// Creates a new builder-style object to manufacture [`UploadPartCopyOutput`](crate::operation::upload_part_copy::UploadPartCopyOutput).
     pub fn builder() -> crate::operation::upload_part_copy::builders::UploadPartCopyOutputBuilder {
@@ -144,8 +144,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
     pub fn set_copy_source_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_version_id = input;
-        self
+        self.copy_source_version_id = input; self
     }
     /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
@@ -160,8 +159,7 @@ impl UploadPartCopyOutputBuilder {
     }
     /// <p>Container for all response elements.</p>
     pub fn set_copy_part_result(mut self, input: ::std::option::Option<crate::types::CopyPartResult>) -> Self {
-        self.copy_part_result = input;
-        self
+        self.copy_part_result = input; self
     }
     /// <p>Container for all response elements.</p>
     pub fn get_copy_part_result(&self) -> &::std::option::Option<crate::types::CopyPartResult> {
@@ -178,8 +176,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
-        self.server_side_encryption = input;
-        self
+        self.server_side_encryption = input; self
     }
     /// <p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
@@ -198,8 +195,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_algorithm = input;
-        self
+        self.sse_customer_algorithm = input; self
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to confirm the encryption algorithm that's used.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -218,8 +214,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_key_md5 = input;
-        self
+        self.sse_customer_key_md5 = input; self
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide the round-trip message integrity verification of the customer-provided encryption key.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -238,8 +233,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssekms_key_id = input;
-        self
+        self.ssekms_key_id = input; self
     }
     /// <p>If present, indicates the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -258,8 +252,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bucket_key_enabled = input;
-        self
+        self.bucket_key_enabled = input; self
     }
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -278,8 +271,7 @@ impl UploadPartCopyOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
-        self.request_charged = input;
-        self
+        self.request_charged = input; self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -288,34 +280,42 @@ impl UploadPartCopyOutputBuilder {
         &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UploadPartCopyOutput`](crate::operation::upload_part_copy::UploadPartCopyOutput).
     pub fn build(self) -> crate::operation::upload_part_copy::UploadPartCopyOutput {
         crate::operation::upload_part_copy::UploadPartCopyOutput {
-            copy_source_version_id: self.copy_source_version_id,
-            copy_part_result: self.copy_part_result,
-            server_side_encryption: self.server_side_encryption,
-            sse_customer_algorithm: self.sse_customer_algorithm,
-            sse_customer_key_md5: self.sse_customer_key_md5,
-            ssekms_key_id: self.ssekms_key_id,
-            bucket_key_enabled: self.bucket_key_enabled,
-            request_charged: self.request_charged,
+            copy_source_version_id: self.copy_source_version_id
+            ,
+            copy_part_result: self.copy_part_result
+            ,
+            server_side_encryption: self.server_side_encryption
+            ,
+            sse_customer_algorithm: self.sse_customer_algorithm
+            ,
+            sse_customer_key_md5: self.sse_customer_key_md5
+            ,
+            ssekms_key_id: self.ssekms_key_id
+            ,
+            bucket_key_enabled: self.bucket_key_enabled
+            ,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
@@ -337,3 +337,4 @@ impl ::std::fmt::Debug for UploadPartCopyOutputBuilder {
         formatter.finish()
     }
 }
+

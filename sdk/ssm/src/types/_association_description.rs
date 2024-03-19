@@ -3,7 +3,7 @@
 /// <p>Describes the parameters for a document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssociationDescription {
+pub struct AssociationDescription  {
     /// <p>The name of the SSM document.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p>
@@ -23,11 +23,11 @@ pub struct AssociationDescription {
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameters for a document.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The association ID.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The managed nodes targeted by the request.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>An S3 bucket where you want to store the output details of the request.</p>
@@ -53,110 +53,110 @@ pub struct AssociationDescription {
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub calendar_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
-    pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub target_locations: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
     pub duration: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub target_maps:
-        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
+    pub target_maps: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked during the association.</p>
-    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>>,
 }
-impl AssociationDescription {
+impl  AssociationDescription  {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The managed node ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The association version.</p>
-    pub fn association_version(&self) -> ::std::option::Option<&str> {
+    pub fn association_version(&self) -> ::std::option::Option<& str> {
         self.association_version.as_deref()
     }
     /// <p>The date when the association was made.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The date when the association was last updated.</p>
-    pub fn last_update_association_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_association_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_association_date.as_ref()
     }
     /// <p>The association status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AssociationStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the association.</p>
-    pub fn overview(&self) -> ::std::option::Option<&crate::types::AssociationOverview> {
+    pub fn overview(&self) -> ::std::option::Option<& crate::types::AssociationOverview> {
         self.overview.as_ref()
     }
     /// <p>The document version.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn automation_target_parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn automation_target_parameter_name(&self) -> ::std::option::Option<& str> {
         self.automation_target_parameter_name.as_deref()
     }
     /// <p>A description of the parameters for a document.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The association ID.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The managed nodes targeted by the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>An S3 bucket where you want to store the output details of the request.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::InstanceAssociationOutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::InstanceAssociationOutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The date on which the association was last run.</p>
-    pub fn last_execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_execution_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_execution_date.as_ref()
     }
     /// <p>The last date on which the association was successfully run.</p>
-    pub fn last_successful_execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_execution_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_successful_execution_date.as_ref()
     }
     /// <p>The association name.</p>
-    pub fn association_name(&self) -> ::std::option::Option<&str> {
+    pub fn association_name(&self) -> ::std::option::Option<& str> {
         self.association_name.as_deref()
     }
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
-    pub fn max_errors(&self) -> ::std::option::Option<&str> {
+    pub fn max_errors(&self) -> ::std::option::Option<& str> {
         self.max_errors.as_deref()
     }
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
-    pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> ::std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The severity level that is assigned to the association.</p>
-    pub fn compliance_severity(&self) -> ::std::option::Option<&crate::types::AssociationComplianceSeverity> {
+    pub fn compliance_severity(&self) -> ::std::option::Option<& crate::types::AssociationComplianceSeverity> {
         self.compliance_severity.as_ref()
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-    pub fn sync_compliance(&self) -> ::std::option::Option<&crate::types::AssociationSyncCompliance> {
+    pub fn sync_compliance(&self) -> ::std::option::Option<& crate::types::AssociationSyncCompliance> {
         self.sync_compliance.as_ref()
     }
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
@@ -164,16 +164,18 @@ impl AssociationDescription {
         self.apply_only_at_cron_interval
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calendar_names.is_none()`.
-    pub fn calendar_names(&self) -> &[::std::string::String] {
-        self.calendar_names.as_deref().unwrap_or_default()
+    pub fn calendar_names(&self) -> & [::std::string::String] {
+        self.calendar_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
-    pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
-        self.target_locations.as_deref().unwrap_or_default()
+    pub fn target_locations(&self) -> & [crate::types::TargetLocation] {
+        self.target_locations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
@@ -184,23 +186,25 @@ impl AssociationDescription {
         self.duration
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
-    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
-        self.target_maps.as_deref().unwrap_or_default()
+    pub fn target_maps(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>] {
+        self.target_maps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> ::std::option::Option<& crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked during the association.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
-    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
-        self.triggered_alarms.as_deref().unwrap_or_default()
+    pub fn triggered_alarms(&self) -> & [crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AssociationDescription {
+impl  ::std::fmt::Debug for AssociationDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssociationDescription");
         formatter.field("name", &self.name);
@@ -255,9 +259,9 @@ pub struct AssociationDescriptionBuilder {
     pub(crate) overview: ::std::option::Option<crate::types::AssociationOverview>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) automation_target_parameter_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
     pub(crate) last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -268,14 +272,13 @@ pub struct AssociationDescriptionBuilder {
     pub(crate) compliance_severity: ::std::option::Option<crate::types::AssociationComplianceSeverity>,
     pub(crate) sync_compliance: ::std::option::Option<crate::types::AssociationSyncCompliance>,
     pub(crate) apply_only_at_cron_interval: ::std::option::Option<bool>,
-    pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>,
     pub(crate) schedule_offset: ::std::option::Option<i32>,
     pub(crate) duration: ::std::option::Option<i32>,
-    pub(crate) target_maps:
-        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
+    pub(crate) target_maps: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>>,
 }
 impl AssociationDescriptionBuilder {
     /// <p>The name of the SSM document.</p>
@@ -285,8 +288,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the SSM document.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +301,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The managed node ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The managed node ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +314,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The association version.</p>
     pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_version = input;
-        self
+        self.association_version = input; self
     }
     /// <p>The association version.</p>
     pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,8 +327,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The date when the association was made.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date when the association was made.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -341,8 +340,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The date when the association was last updated.</p>
     pub fn set_last_update_association_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_association_date = input;
-        self
+        self.last_update_association_date = input; self
     }
     /// <p>The date when the association was last updated.</p>
     pub fn get_last_update_association_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -355,8 +353,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The association status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The association status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
@@ -369,8 +366,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>Information about the association.</p>
     pub fn set_overview(mut self, input: ::std::option::Option<crate::types::AssociationOverview>) -> Self {
-        self.overview = input;
-        self
+        self.overview = input; self
     }
     /// <p>Information about the association.</p>
     pub fn get_overview(&self) -> &::std::option::Option<crate::types::AssociationOverview> {
@@ -383,8 +379,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The document version.</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The document version.</p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -397,8 +392,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     pub fn set_automation_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.automation_target_parameter_name = input;
-        self
+        self.automation_target_parameter_name = input; self
     }
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     pub fn get_automation_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -409,24 +403,18 @@ impl AssociationDescriptionBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A description of the parameters for a document.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A description of the parameters for a document.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A description of the parameters for a document.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.parameters
     }
     /// <p>The association ID.</p>
@@ -436,8 +424,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The association ID.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The association ID.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -450,17 +437,16 @@ impl AssociationDescriptionBuilder {
     /// <p>The managed nodes targeted by the request.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The managed nodes targeted by the request.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The managed nodes targeted by the request.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
@@ -470,8 +456,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -484,8 +469,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>An S3 bucket where you want to store the output details of the request.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>An S3 bucket where you want to store the output details of the request.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::InstanceAssociationOutputLocation> {
@@ -498,8 +482,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The date on which the association was last run.</p>
     pub fn set_last_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_execution_date = input;
-        self
+        self.last_execution_date = input; self
     }
     /// <p>The date on which the association was last run.</p>
     pub fn get_last_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -512,8 +495,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The last date on which the association was successfully run.</p>
     pub fn set_last_successful_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_successful_execution_date = input;
-        self
+        self.last_successful_execution_date = input; self
     }
     /// <p>The last date on which the association was successfully run.</p>
     pub fn get_last_successful_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -526,8 +508,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The association name.</p>
     pub fn set_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_name = input;
-        self
+        self.association_name = input; self
     }
     /// <p>The association name.</p>
     pub fn get_association_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -542,8 +523,7 @@ impl AssociationDescriptionBuilder {
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_errors = input;
-        self
+        self.max_errors = input; self
     }
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
@@ -559,8 +539,7 @@ impl AssociationDescriptionBuilder {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
@@ -574,8 +553,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The severity level that is assigned to the association.</p>
     pub fn set_compliance_severity(mut self, input: ::std::option::Option<crate::types::AssociationComplianceSeverity>) -> Self {
-        self.compliance_severity = input;
-        self
+        self.compliance_severity = input; self
     }
     /// <p>The severity level that is assigned to the association.</p>
     pub fn get_compliance_severity(&self) -> &::std::option::Option<crate::types::AssociationComplianceSeverity> {
@@ -592,8 +570,7 @@ impl AssociationDescriptionBuilder {
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub fn set_sync_compliance(mut self, input: ::std::option::Option<crate::types::AssociationSyncCompliance>) -> Self {
-        self.sync_compliance = input;
-        self
+        self.sync_compliance = input; self
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
@@ -608,8 +585,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
     pub fn set_apply_only_at_cron_interval(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_only_at_cron_interval = input;
-        self
+        self.apply_only_at_cron_interval = input; self
     }
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
     pub fn get_apply_only_at_cron_interval(&self) -> &::std::option::Option<bool> {
@@ -622,17 +598,16 @@ impl AssociationDescriptionBuilder {
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calendar_names.unwrap_or_default();
-        v.push(input.into());
-        self.calendar_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.calendar_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.calendar_names = input;
-        self
+    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.calendar_names = input; self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.calendar_names
     }
     /// Appends an item to `target_locations`.
@@ -642,17 +617,16 @@ impl AssociationDescriptionBuilder {
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
     pub fn target_locations(mut self, input: crate::types::TargetLocation) -> Self {
         let mut v = self.target_locations.unwrap_or_default();
-        v.push(input);
-        self.target_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
-    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
-        self.target_locations = input;
-        self
+    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>) -> Self {
+        self.target_locations = input; self
     }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association.</p>
-    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>> {
         &self.target_locations
     }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
@@ -662,8 +636,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.schedule_offset = input;
-        self
+        self.schedule_offset = input; self
     }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
@@ -676,8 +649,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -688,24 +660,18 @@ impl AssociationDescriptionBuilder {
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
     ///
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn target_maps(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>) -> Self {
         let mut v = self.target_maps.unwrap_or_default();
-        v.push(input);
-        self.target_maps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_maps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn set_target_maps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
-    ) -> Self {
-        self.target_maps = input;
-        self
+    pub fn set_target_maps(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>) -> Self {
+        self.target_maps = input; self
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn get_target_maps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
+    pub fn get_target_maps(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>> {
         &self.target_maps
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
@@ -715,8 +681,7 @@ impl AssociationDescriptionBuilder {
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
-        self.alarm_configuration = input;
-        self
+        self.alarm_configuration = input; self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
@@ -729,51 +694,80 @@ impl AssociationDescriptionBuilder {
     /// <p>The CloudWatch alarm that was invoked during the association.</p>
     pub fn triggered_alarms(mut self, input: crate::types::AlarmStateInformation) -> Self {
         let mut v = self.triggered_alarms.unwrap_or_default();
-        v.push(input);
-        self.triggered_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggered_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CloudWatch alarm that was invoked during the association.</p>
-    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
-        self.triggered_alarms = input;
-        self
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>>) -> Self {
+        self.triggered_alarms = input; self
     }
     /// <p>The CloudWatch alarm that was invoked during the association.</p>
-    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`AssociationDescription`](crate::types::AssociationDescription).
     pub fn build(self) -> crate::types::AssociationDescription {
         crate::types::AssociationDescription {
-            name: self.name,
-            instance_id: self.instance_id,
-            association_version: self.association_version,
-            date: self.date,
-            last_update_association_date: self.last_update_association_date,
-            status: self.status,
-            overview: self.overview,
-            document_version: self.document_version,
-            automation_target_parameter_name: self.automation_target_parameter_name,
-            parameters: self.parameters,
-            association_id: self.association_id,
-            targets: self.targets,
-            schedule_expression: self.schedule_expression,
-            output_location: self.output_location,
-            last_execution_date: self.last_execution_date,
-            last_successful_execution_date: self.last_successful_execution_date,
-            association_name: self.association_name,
-            max_errors: self.max_errors,
-            max_concurrency: self.max_concurrency,
-            compliance_severity: self.compliance_severity,
-            sync_compliance: self.sync_compliance,
-            apply_only_at_cron_interval: self.apply_only_at_cron_interval.unwrap_or_default(),
-            calendar_names: self.calendar_names,
-            target_locations: self.target_locations,
-            schedule_offset: self.schedule_offset,
-            duration: self.duration,
-            target_maps: self.target_maps,
-            alarm_configuration: self.alarm_configuration,
-            triggered_alarms: self.triggered_alarms,
+            name: self.name
+            ,
+            instance_id: self.instance_id
+            ,
+            association_version: self.association_version
+            ,
+            date: self.date
+            ,
+            last_update_association_date: self.last_update_association_date
+            ,
+            status: self.status
+            ,
+            overview: self.overview
+            ,
+            document_version: self.document_version
+            ,
+            automation_target_parameter_name: self.automation_target_parameter_name
+            ,
+            parameters: self.parameters
+            ,
+            association_id: self.association_id
+            ,
+            targets: self.targets
+            ,
+            schedule_expression: self.schedule_expression
+            ,
+            output_location: self.output_location
+            ,
+            last_execution_date: self.last_execution_date
+            ,
+            last_successful_execution_date: self.last_successful_execution_date
+            ,
+            association_name: self.association_name
+            ,
+            max_errors: self.max_errors
+            ,
+            max_concurrency: self.max_concurrency
+            ,
+            compliance_severity: self.compliance_severity
+            ,
+            sync_compliance: self.sync_compliance
+            ,
+            apply_only_at_cron_interval: self.apply_only_at_cron_interval
+                .unwrap_or_default()
+            ,
+            calendar_names: self.calendar_names
+            ,
+            target_locations: self.target_locations
+            ,
+            schedule_offset: self.schedule_offset
+            ,
+            duration: self.duration
+            ,
+            target_maps: self.target_maps
+            ,
+            alarm_configuration: self.alarm_configuration
+            ,
+            triggered_alarms: self.triggered_alarms
+            ,
         }
     }
 }
@@ -812,3 +806,4 @@ impl ::std::fmt::Debug for AssociationDescriptionBuilder {
         formatter.finish()
     }
 }
+

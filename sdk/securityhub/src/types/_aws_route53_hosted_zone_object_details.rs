@@ -3,7 +3,7 @@
 /// <p>An object that contains information about an Amazon Route&nbsp;53 hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRoute53HostedZoneObjectDetails {
+pub struct AwsRoute53HostedZoneObjectDetails  {
     /// <p>The ID that Route&nbsp;53 assigns to the hosted zone when you create it.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
@@ -11,17 +11,17 @@ pub struct AwsRoute53HostedZoneObjectDetails {
     /// <p>An object that includes the <code>Comment</code> element.</p>
     pub config: ::std::option::Option<crate::types::AwsRoute53HostedZoneConfigDetails>,
 }
-impl AwsRoute53HostedZoneObjectDetails {
+impl  AwsRoute53HostedZoneObjectDetails  {
     /// <p>The ID that Route&nbsp;53 assigns to the hosted zone when you create it.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An object that includes the <code>Comment</code> element.</p>
-    pub fn config(&self) -> ::std::option::Option<&crate::types::AwsRoute53HostedZoneConfigDetails> {
+    pub fn config(&self) -> ::std::option::Option<& crate::types::AwsRoute53HostedZoneConfigDetails> {
         self.config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsRoute53HostedZoneObjectDetailsBuilder {
     }
     /// <p>The ID that Route&nbsp;53 assigns to the hosted zone when you create it.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID that Route&nbsp;53 assigns to the hosted zone when you create it.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AwsRoute53HostedZoneObjectDetailsBuilder {
     }
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsRoute53HostedZoneObjectDetailsBuilder {
     }
     /// <p>An object that includes the <code>Comment</code> element.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::AwsRoute53HostedZoneConfigDetails>) -> Self {
-        self.config = input;
-        self
+        self.config = input; self
     }
     /// <p>An object that includes the <code>Comment</code> element.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::AwsRoute53HostedZoneConfigDetails> {
@@ -86,9 +83,13 @@ impl AwsRoute53HostedZoneObjectDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsRoute53HostedZoneObjectDetails`](crate::types::AwsRoute53HostedZoneObjectDetails).
     pub fn build(self) -> crate::types::AwsRoute53HostedZoneObjectDetails {
         crate::types::AwsRoute53HostedZoneObjectDetails {
-            id: self.id,
-            name: self.name,
-            config: self.config,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            config: self.config
+            ,
         }
     }
 }
+

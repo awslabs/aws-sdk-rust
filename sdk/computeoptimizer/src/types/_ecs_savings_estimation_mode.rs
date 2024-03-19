@@ -3,13 +3,13 @@
 /// <p>Describes the savings estimation mode used for calculating savings opportunity for Amazon ECS services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsSavingsEstimationMode {
+pub struct EcsSavingsEstimationMode  {
     /// <p>Describes the source for calculating the savings opportunity for Amazon ECS services.</p>
     pub source: ::std::option::Option<crate::types::EcsSavingsEstimationModeSource>,
 }
-impl EcsSavingsEstimationMode {
+impl  EcsSavingsEstimationMode  {
     /// <p>Describes the source for calculating the savings opportunity for Amazon ECS services.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::EcsSavingsEstimationModeSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::EcsSavingsEstimationModeSource> {
         self.source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EcsSavingsEstimationModeBuilder {
     }
     /// <p>Describes the source for calculating the savings opportunity for Amazon ECS services.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::EcsSavingsEstimationModeSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Describes the source for calculating the savings opportunity for Amazon ECS services.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::EcsSavingsEstimationModeSource> {
@@ -43,6 +42,10 @@ impl EcsSavingsEstimationModeBuilder {
     }
     /// Consumes the builder and constructs a [`EcsSavingsEstimationMode`](crate::types::EcsSavingsEstimationMode).
     pub fn build(self) -> crate::types::EcsSavingsEstimationMode {
-        crate::types::EcsSavingsEstimationMode { source: self.source }
+        crate::types::EcsSavingsEstimationMode {
+            source: self.source
+            ,
+        }
     }
 }
+

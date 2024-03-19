@@ -2,42 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSchemaOutput {
+pub struct PutSchemaOutput  {
     /// <p>The unique ID of the policy store that contains the schema.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>Identifies the namespaces of the entities referenced by this schema.</p>
-    pub namespaces: ::std::vec::Vec<::std::string::String>,
+    pub namespaces: ::std::vec::Vec::<::std::string::String>,
     /// <p>The date and time that the schema was originally created.</p>
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the schema was last updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl PutSchemaOutput {
+impl  PutSchemaOutput  {
     /// <p>The unique ID of the policy store that contains the schema.</p>
-    pub fn policy_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_store_id.deref()
+    pub fn policy_store_id(&self) -> & str {
+        use std::ops::Deref; self.policy_store_id.deref()
     }
     /// <p>Identifies the namespaces of the entities referenced by this schema.</p>
-    pub fn namespaces(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.namespaces.deref()
+    pub fn namespaces(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.namespaces.deref()
     }
     /// <p>The date and time that the schema was originally created.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
     /// <p>The date and time that the schema was last updated.</p>
-    pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
 }
 impl ::aws_types::request_id::RequestId for PutSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutSchemaOutput {
     /// Creates a new builder-style object to manufacture [`PutSchemaOutput`](crate::operation::put_schema::PutSchemaOutput).
     pub fn builder() -> crate::operation::put_schema::builders::PutSchemaOutputBuilder {
@@ -50,7 +48,7 @@ impl PutSchemaOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSchemaOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
-    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -64,8 +62,7 @@ impl PutSchemaOutputBuilder {
     }
     /// <p>The unique ID of the policy store that contains the schema.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>The unique ID of the policy store that contains the schema.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +75,16 @@ impl PutSchemaOutputBuilder {
     /// <p>Identifies the namespaces of the entities referenced by this schema.</p>
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
-        v.push(input.into());
-        self.namespaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.namespaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifies the namespaces of the entities referenced by this schema.</p>
-    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.namespaces = input;
-        self
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.namespaces = input; self
     }
     /// <p>Identifies the namespaces of the entities referenced by this schema.</p>
-    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.namespaces
     }
     /// <p>The date and time that the schema was originally created.</p>
@@ -99,8 +95,7 @@ impl PutSchemaOutputBuilder {
     }
     /// <p>The date and time that the schema was originally created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time that the schema was originally created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -114,22 +109,21 @@ impl PutSchemaOutputBuilder {
     }
     /// <p>The date and time that the schema was last updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date and time that the schema was last updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutSchemaOutput`](crate::operation::put_schema::PutSchemaOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::operation::put_schema::builders::PutSchemaOutputBuilder::policy_store_id)
@@ -137,32 +131,31 @@ impl PutSchemaOutputBuilder {
     /// - [`created_date`](crate::operation::put_schema::builders::PutSchemaOutputBuilder::created_date)
     /// - [`last_updated_date`](crate::operation::put_schema::builders::PutSchemaOutputBuilder::last_updated_date)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_schema::PutSchemaOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_schema::PutSchemaOutput {
-            policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_store_id",
-                    "policy_store_id was not specified but it is required when building PutSchemaOutput",
-                )
-            })?,
-            namespaces: self.namespaces.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespaces",
-                    "namespaces was not specified but it is required when building PutSchemaOutput",
-                )
-            })?,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building PutSchemaOutput",
-                )
-            })?,
-            last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_date",
-                    "last_updated_date was not specified but it is required when building PutSchemaOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_schema::PutSchemaOutput {
+                policy_store_id: self.policy_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_store_id", "policy_store_id was not specified but it is required when building PutSchemaOutput")
+                    )?
+                ,
+                namespaces: self.namespaces
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespaces", "namespaces was not specified but it is required when building PutSchemaOutput")
+                    )?
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building PutSchemaOutput")
+                    )?
+                ,
+                last_updated_date: self.last_updated_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_date", "last_updated_date was not specified but it is required when building PutSchemaOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

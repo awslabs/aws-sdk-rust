@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBlueGreenDeploymentOutput {
+pub struct DeleteBlueGreenDeploymentOutput  {
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub blue_green_deployment: ::std::option::Option<crate::types::BlueGreenDeployment>,
     _request_id: Option<String>,
 }
-impl DeleteBlueGreenDeploymentOutput {
+impl  DeleteBlueGreenDeploymentOutput  {
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn blue_green_deployment(&self) -> ::std::option::Option<&crate::types::BlueGreenDeployment> {
+    pub fn blue_green_deployment(&self) -> ::std::option::Option<& crate::types::BlueGreenDeployment> {
         self.blue_green_deployment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteBlueGreenDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteBlueGreenDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBlueGreenDeploymentOutput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput).
     pub fn builder() -> crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentOutputBuilder {
@@ -44,8 +44,7 @@ impl DeleteBlueGreenDeploymentOutputBuilder {
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_blue_green_deployment(mut self, input: ::std::option::Option<crate::types::BlueGreenDeployment>) -> Self {
-        self.blue_green_deployment = input;
-        self
+        self.blue_green_deployment = input; self
     }
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -53,19 +52,21 @@ impl DeleteBlueGreenDeploymentOutputBuilder {
         &self.blue_green_deployment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteBlueGreenDeploymentOutput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput).
     pub fn build(self) -> crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput {
         crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput {
-            blue_green_deployment: self.blue_green_deployment,
+            blue_green_deployment: self.blue_green_deployment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

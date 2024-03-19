@@ -3,7 +3,7 @@
 /// <p>Details about a read set export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportReadSetJobDetail {
+pub struct ExportReadSetJobDetail  {
     /// <p>The job's ID.</p>
     pub id: ::std::string::String,
     /// <p>The job's sequence store ID.</p>
@@ -17,32 +17,29 @@ pub struct ExportReadSetJobDetail {
     /// <p>When the job completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ExportReadSetJobDetail {
+impl  ExportReadSetJobDetail  {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sequence_store_id.deref()
+    pub fn sequence_store_id(&self) -> & str {
+        use std::ops::Deref; self.sequence_store_id.deref()
     }
     /// <p>The job's destination in Amazon S3.</p>
-    pub fn destination(&self) -> &str {
-        use std::ops::Deref;
-        self.destination.deref()
+    pub fn destination(&self) -> & str {
+        use std::ops::Deref; self.destination.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> &crate::types::ReadSetExportJobStatus {
+    pub fn status(&self) -> & crate::types::ReadSetExportJobStatus {
         &self.status
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
 }
@@ -73,8 +70,7 @@ impl ExportReadSetJobDetailBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The job's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl ExportReadSetJobDetailBuilder {
     }
     /// <p>The job's sequence store ID.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The job's sequence store ID.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl ExportReadSetJobDetailBuilder {
     }
     /// <p>The job's destination in Amazon S3.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The job's destination in Amazon S3.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl ExportReadSetJobDetailBuilder {
     }
     /// <p>The job's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetExportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The job's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetExportJobStatus> {
@@ -133,8 +126,7 @@ impl ExportReadSetJobDetailBuilder {
     }
     /// <p>When the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -147,8 +139,7 @@ impl ExportReadSetJobDetailBuilder {
     }
     /// <p>When the job completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>When the job completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,38 +153,37 @@ impl ExportReadSetJobDetailBuilder {
     /// - [`status`](crate::types::builders::ExportReadSetJobDetailBuilder::status)
     /// - [`creation_time`](crate::types::builders::ExportReadSetJobDetailBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSetJobDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportReadSetJobDetail {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ExportReadSetJobDetail",
-                )
-            })?,
-            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sequence_store_id",
-                    "sequence_store_id was not specified but it is required when building ExportReadSetJobDetail",
-                )
-            })?,
-            destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination",
-                    "destination was not specified but it is required when building ExportReadSetJobDetail",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ExportReadSetJobDetail",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ExportReadSetJobDetail",
-                )
-            })?,
-            completion_time: self.completion_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportReadSetJobDetail {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ExportReadSetJobDetail")
+                    )?
+                ,
+                sequence_store_id: self.sequence_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sequence_store_id", "sequence_store_id was not specified but it is required when building ExportReadSetJobDetail")
+                    )?
+                ,
+                destination: self.destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination", "destination was not specified but it is required when building ExportReadSetJobDetail")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ExportReadSetJobDetail")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ExportReadSetJobDetail")
+                    )?
+                ,
+                completion_time: self.completion_time
+                ,
+            }
+        )
     }
 }
+

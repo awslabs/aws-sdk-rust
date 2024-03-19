@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCertificateInput {
+pub struct DescribeCertificateInput  {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCertificateInput {
+impl  DescribeCertificateInput  {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeCertificateInputBuilder {
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_id
     }
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
-            certificate_id: self.certificate_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_certificate::DescribeCertificateInput {
+                certificate_id: self.certificate_id
+                ,
+            }
+        )
     }
 }
+

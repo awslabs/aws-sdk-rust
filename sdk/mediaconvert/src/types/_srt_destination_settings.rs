@@ -3,13 +3,13 @@
 /// Settings related to SRT captions. SRT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SrtDestinationSettings {
+pub struct SrtDestinationSettings  {
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub style_passthrough: ::std::option::Option<crate::types::SrtStylePassthrough>,
 }
-impl SrtDestinationSettings {
+impl  SrtDestinationSettings  {
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
-    pub fn style_passthrough(&self) -> ::std::option::Option<&crate::types::SrtStylePassthrough> {
+    pub fn style_passthrough(&self) -> ::std::option::Option<& crate::types::SrtStylePassthrough> {
         self.style_passthrough.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SrtDestinationSettingsBuilder {
     }
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub fn set_style_passthrough(mut self, input: ::std::option::Option<crate::types::SrtStylePassthrough>) -> Self {
-        self.style_passthrough = input;
-        self
+        self.style_passthrough = input; self
     }
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub fn get_style_passthrough(&self) -> &::std::option::Option<crate::types::SrtStylePassthrough> {
@@ -44,7 +43,9 @@ impl SrtDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`SrtDestinationSettings`](crate::types::SrtDestinationSettings).
     pub fn build(self) -> crate::types::SrtDestinationSettings {
         crate::types::SrtDestinationSettings {
-            style_passthrough: self.style_passthrough,
+            style_passthrough: self.style_passthrough
+            ,
         }
     }
 }
+

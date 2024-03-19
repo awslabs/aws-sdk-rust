@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVoiceProfileDomainInput {
+pub struct GetVoiceProfileDomainInput  {
     /// <p>The voice profile domain ID.</p>
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
 }
-impl GetVoiceProfileDomainInput {
+impl  GetVoiceProfileDomainInput  {
     /// <p>The voice profile domain ID.</p>
-    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<& str> {
         self.voice_profile_domain_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetVoiceProfileDomainInputBuilder {
     }
     /// <p>The voice profile domain ID.</p>
     pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_profile_domain_id = input;
-        self
+        self.voice_profile_domain_id = input; self
     }
     /// <p>The voice profile domain ID.</p>
     pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_profile_domain_id
     }
     /// Consumes the builder and constructs a [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput {
-            voice_profile_domain_id: self.voice_profile_domain_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput {
+                voice_profile_domain_id: self.voice_profile_domain_id
+                ,
+            }
+        )
     }
 }
+

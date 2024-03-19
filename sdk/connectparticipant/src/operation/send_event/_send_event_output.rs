@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendEventOutput {
+pub struct SendEventOutput  {
     /// <p>The ID of the response.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the event was sent.</p>
@@ -10,22 +10,22 @@ pub struct SendEventOutput {
     pub absolute_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SendEventOutput {
+impl  SendEventOutput  {
     /// <p>The ID of the response.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The time when the event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn absolute_time(&self) -> ::std::option::Option<&str> {
+    pub fn absolute_time(&self) -> ::std::option::Option<& str> {
         self.absolute_time.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendEventOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendEventOutput {
     /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::operation::send_event::SendEventOutput).
     pub fn builder() -> crate::operation::send_event::builders::SendEventOutputBuilder {
@@ -49,8 +49,7 @@ impl SendEventOutputBuilder {
     }
     /// <p>The ID of the response.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the response.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl SendEventOutputBuilder {
     /// <p>The time when the event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn set_absolute_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.absolute_time = input;
-        self
+        self.absolute_time = input; self
     }
     /// <p>The time when the event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
@@ -74,20 +72,23 @@ impl SendEventOutputBuilder {
         &self.absolute_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendEventOutput`](crate::operation::send_event::SendEventOutput).
     pub fn build(self) -> crate::operation::send_event::SendEventOutput {
         crate::operation::send_event::SendEventOutput {
-            id: self.id,
-            absolute_time: self.absolute_time,
+            id: self.id
+            ,
+            absolute_time: self.absolute_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

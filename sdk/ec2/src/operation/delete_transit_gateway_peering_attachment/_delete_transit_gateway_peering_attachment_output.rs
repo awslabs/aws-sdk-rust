@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTransitGatewayPeeringAttachmentOutput {
+pub struct DeleteTransitGatewayPeeringAttachmentOutput  {
     /// <p>The transit gateway peering attachment.</p>
     pub transit_gateway_peering_attachment: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
     _request_id: Option<String>,
 }
-impl DeleteTransitGatewayPeeringAttachmentOutput {
+impl  DeleteTransitGatewayPeeringAttachmentOutput  {
     /// <p>The transit gateway peering attachment.</p>
-    pub fn transit_gateway_peering_attachment(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachment> {
+    pub fn transit_gateway_peering_attachment(&self) -> ::std::option::Option<& crate::types::TransitGatewayPeeringAttachment> {
         self.transit_gateway_peering_attachment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteTransitGatewayPeeringAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteTransitGatewayPeeringAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPeeringAttachmentOutput`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentOutput).
     pub fn builder() -> crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteTransitGatewayPeeringAttachmentOutputBuilder {
     }
     /// <p>The transit gateway peering attachment.</p>
     pub fn set_transit_gateway_peering_attachment(mut self, input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>) -> Self {
-        self.transit_gateway_peering_attachment = input;
-        self
+        self.transit_gateway_peering_attachment = input; self
     }
     /// <p>The transit gateway peering attachment.</p>
     pub fn get_transit_gateway_peering_attachment(&self) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachment> {
         &self.transit_gateway_peering_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayPeeringAttachmentOutput`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentOutput).
     pub fn build(self) -> crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentOutput {
         crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentOutput {
-            transit_gateway_peering_attachment: self.transit_gateway_peering_attachment,
+            transit_gateway_peering_attachment: self.transit_gateway_peering_attachment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,54 +2,58 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePracticeRunConfigurationInput {
+pub struct UpdatePracticeRunConfigurationInput  {
     /// <p>The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
-    pub blocked_windows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blocked_windows: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Add, change, or remove blocked dates for a practice run in zonal autoshift.</p>
     /// <p>Optionally, you can block practice runs for specific calendar dates. The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
-    pub blocked_dates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blocked_dates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
-    pub blocking_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
+    pub blocking_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>>,
     /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
-    pub outcome_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
+    pub outcome_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>>,
 }
-impl UpdatePracticeRunConfigurationInput {
+impl  UpdatePracticeRunConfigurationInput  {
     /// <p>The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_windows.is_none()`.
-    pub fn blocked_windows(&self) -> &[::std::string::String] {
-        self.blocked_windows.as_deref().unwrap_or_default()
+    pub fn blocked_windows(&self) -> & [::std::string::String] {
+        self.blocked_windows.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Add, change, or remove blocked dates for a practice run in zonal autoshift.</p>
     /// <p>Optionally, you can block practice runs for specific calendar dates. The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_dates.is_none()`.
-    pub fn blocked_dates(&self) -> &[::std::string::String] {
-        self.blocked_dates.as_deref().unwrap_or_default()
+    pub fn blocked_dates(&self) -> & [::std::string::String] {
+        self.blocked_dates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocking_alarms.is_none()`.
-    pub fn blocking_alarms(&self) -> &[crate::types::ControlCondition] {
-        self.blocking_alarms.as_deref().unwrap_or_default()
+    pub fn blocking_alarms(&self) -> & [crate::types::ControlCondition] {
+        self.blocking_alarms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcome_alarms.is_none()`.
-    pub fn outcome_alarms(&self) -> &[crate::types::ControlCondition] {
-        self.outcome_alarms.as_deref().unwrap_or_default()
+    pub fn outcome_alarms(&self) -> & [crate::types::ControlCondition] {
+        self.outcome_alarms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdatePracticeRunConfigurationInput {
@@ -64,10 +68,10 @@ impl UpdatePracticeRunConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePracticeRunConfigurationInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) blocked_windows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) blocked_dates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) blocking_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
-    pub(crate) outcome_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
+    pub(crate) blocked_windows: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) blocked_dates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) blocking_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>>,
+    pub(crate) outcome_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>>,
 }
 impl UpdatePracticeRunConfigurationInputBuilder {
     /// <p>The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
@@ -78,8 +82,7 @@ impl UpdatePracticeRunConfigurationInputBuilder {
     }
     /// <p>The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,21 +97,20 @@ impl UpdatePracticeRunConfigurationInputBuilder {
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn blocked_windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_windows.unwrap_or_default();
-        v.push(input.into());
-        self.blocked_windows = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blocked_windows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
-    pub fn set_blocked_windows(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blocked_windows = input;
-        self
+    pub fn set_blocked_windows(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blocked_windows = input; self
     }
     /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
-    pub fn get_blocked_windows(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blocked_windows(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blocked_windows
     }
     /// Appends an item to `blocked_dates`.
@@ -120,21 +122,20 @@ impl UpdatePracticeRunConfigurationInputBuilder {
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
     pub fn blocked_dates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_dates.unwrap_or_default();
-        v.push(input.into());
-        self.blocked_dates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blocked_dates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Add, change, or remove blocked dates for a practice run in zonal autoshift.</p>
     /// <p>Optionally, you can block practice runs for specific calendar dates. The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
-    pub fn set_blocked_dates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blocked_dates = input;
-        self
+    pub fn set_blocked_dates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blocked_dates = input; self
     }
     /// <p>Add, change, or remove blocked dates for a practice run in zonal autoshift.</p>
     /// <p>Optionally, you can block practice runs for specific calendar dates. The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
-    pub fn get_blocked_dates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blocked_dates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blocked_dates
     }
     /// Appends an item to `blocking_alarms`.
@@ -144,17 +145,16 @@ impl UpdatePracticeRunConfigurationInputBuilder {
     /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
     pub fn blocking_alarms(mut self, input: crate::types::ControlCondition) -> Self {
         let mut v = self.blocking_alarms.unwrap_or_default();
-        v.push(input);
-        self.blocking_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.blocking_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
-    pub fn set_blocking_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>) -> Self {
-        self.blocking_alarms = input;
-        self
+    pub fn set_blocking_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>>) -> Self {
+        self.blocking_alarms = input; self
     }
     /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
-    pub fn get_blocking_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
+    pub fn get_blocking_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>> {
         &self.blocking_alarms
     }
     /// Appends an item to `outcome_alarms`.
@@ -164,32 +164,34 @@ impl UpdatePracticeRunConfigurationInputBuilder {
     /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
     pub fn outcome_alarms(mut self, input: crate::types::ControlCondition) -> Self {
         let mut v = self.outcome_alarms.unwrap_or_default();
-        v.push(input);
-        self.outcome_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outcome_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
-    pub fn set_outcome_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>) -> Self {
-        self.outcome_alarms = input;
-        self
+    pub fn set_outcome_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>>) -> Self {
+        self.outcome_alarms = input; self
     }
     /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
-    pub fn get_outcome_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
+    pub fn get_outcome_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ControlCondition>> {
         &self.outcome_alarms
     }
     /// Consumes the builder and constructs a [`UpdatePracticeRunConfigurationInput`](crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationInput {
-            resource_identifier: self.resource_identifier,
-            blocked_windows: self.blocked_windows,
-            blocked_dates: self.blocked_dates,
-            blocking_alarms: self.blocking_alarms,
-            outcome_alarms: self.outcome_alarms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationInput {
+                resource_identifier: self.resource_identifier
+                ,
+                blocked_windows: self.blocked_windows
+                ,
+                blocked_dates: self.blocked_dates
+                ,
+                blocking_alarms: self.blocking_alarms
+                ,
+                outcome_alarms: self.outcome_alarms
+                ,
+            }
+        )
     }
 }
+

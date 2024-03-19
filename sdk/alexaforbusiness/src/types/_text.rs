@@ -3,21 +3,20 @@
 /// <p>The text message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Text {
+pub struct Text  {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     pub locale: crate::types::Locale,
     /// <p>The value of the text message.</p>
     pub value: ::std::string::String,
 }
-impl Text {
+impl  Text  {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> &crate::types::Locale {
+    pub fn locale(&self) -> & crate::types::Locale {
         &self.locale
     }
     /// <p>The value of the text message.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Text {
@@ -43,8 +42,7 @@ impl TextBuilder {
     }
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
@@ -58,8 +56,7 @@ impl TextBuilder {
     }
     /// <p>The value of the text message.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the text message.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl TextBuilder {
     /// - [`locale`](crate::types::builders::TextBuilder::locale)
     /// - [`value`](crate::types::builders::TextBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Text, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Text {
-            locale: self.locale.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "locale",
-                    "locale was not specified but it is required when building Text",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Text",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Text {
+                locale: self.locale
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("locale", "locale was not specified but it is required when building Text")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Text")
+                    )?
+                ,
+            }
+        )
     }
 }
+

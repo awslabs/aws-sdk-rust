@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkflowStepGroupInput {
+pub struct DeleteWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group you want to delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkflowStepGroupInput {
+impl  DeleteWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group you want to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteWorkflowStepGroupInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteWorkflowStepGroupInputBuilder {
     }
     /// <p>The ID of the step group you want to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the step group you want to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupInput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
-            workflow_id: self.workflow_id,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
+                workflow_id: self.workflow_id
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanProvisionedProductsInput {
+pub struct ScanProvisionedProductsInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct ScanProvisionedProductsInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl ScanProvisionedProductsInput {
+impl  ScanProvisionedProductsInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -26,11 +26,11 @@ impl ScanProvisionedProductsInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn access_level_filter(&self) -> ::std::option::Option<&crate::types::AccessLevelFilter> {
+    pub fn access_level_filter(&self) -> ::std::option::Option<& crate::types::AccessLevelFilter> {
         self.access_level_filter.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -38,7 +38,7 @@ impl ScanProvisionedProductsInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl ScanProvisionedProductsInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -98,8 +97,7 @@ impl ScanProvisionedProductsInputBuilder {
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
-        self.access_level_filter = input;
-        self
+        self.access_level_filter = input; self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
@@ -112,8 +110,7 @@ impl ScanProvisionedProductsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -126,25 +123,26 @@ impl ScanProvisionedProductsInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`ScanProvisionedProductsInput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::scan_provisioned_products::ScanProvisionedProductsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::scan_provisioned_products::ScanProvisionedProductsInput {
-            accept_language: self.accept_language,
-            access_level_filter: self.access_level_filter,
-            page_size: self.page_size,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::scan_provisioned_products::ScanProvisionedProductsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::scan_provisioned_products::ScanProvisionedProductsInput {
+                accept_language: self.accept_language
+                ,
+                access_level_filter: self.access_level_filter
+                ,
+                page_size: self.page_size
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

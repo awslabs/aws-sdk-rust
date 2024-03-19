@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnomalyDetectorInput {
+pub struct DeleteAnomalyDetectorInput  {
     /// <p>The ARN of the detector to delete.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAnomalyDetectorInput {
+impl  DeleteAnomalyDetectorInput  {
     /// <p>The ARN of the detector to delete.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteAnomalyDetectorInputBuilder {
     }
     /// <p>The ARN of the detector to delete.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the detector to delete.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.anomaly_detector_arn
     }
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+            }
+        )
     }
 }
+

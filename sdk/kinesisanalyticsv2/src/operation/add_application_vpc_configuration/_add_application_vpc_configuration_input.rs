@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationVpcConfigurationInput {
+pub struct AddApplicationVpcConfigurationInput  {
     /// <p>The name of an existing application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
@@ -12,9 +12,9 @@ pub struct AddApplicationVpcConfigurationInput {
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: ::std::option::Option<::std::string::String>,
 }
-impl AddApplicationVpcConfigurationInput {
+impl  AddApplicationVpcConfigurationInput  {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
@@ -22,11 +22,11 @@ impl AddApplicationVpcConfigurationInput {
         self.current_application_version_id
     }
     /// <p>Description of the VPC to add to the application.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(&self) -> ::std::option::Option<&str> {
+    pub fn conditional_token(&self) -> ::std::option::Option<& str> {
         self.conditional_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AddApplicationVpcConfigurationInputBuilder {
     }
     /// <p>The name of an existing application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an existing application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AddApplicationVpcConfigurationInputBuilder {
     }
     /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -84,8 +82,7 @@ impl AddApplicationVpcConfigurationInputBuilder {
     }
     /// <p>Description of the VPC to add to the application.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>Description of the VPC to add to the application.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
@@ -98,25 +95,26 @@ impl AddApplicationVpcConfigurationInputBuilder {
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conditional_token = input;
-        self
+        self.conditional_token = input; self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.conditional_token
     }
     /// Consumes the builder and constructs a [`AddApplicationVpcConfigurationInput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput {
-            application_name: self.application_name,
-            current_application_version_id: self.current_application_version_id,
-            vpc_configuration: self.vpc_configuration,
-            conditional_token: self.conditional_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput {
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                conditional_token: self.conditional_token
+                ,
+            }
+        )
     }
 }
+

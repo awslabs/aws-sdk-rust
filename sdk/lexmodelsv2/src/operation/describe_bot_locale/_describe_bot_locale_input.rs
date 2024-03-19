@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotLocaleInput {
+pub struct DescribeBotLocaleInput  {
     /// <p>The identifier of the bot associated with the locale.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the locale.</p>
@@ -10,17 +10,17 @@ pub struct DescribeBotLocaleInput {
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBotLocaleInput {
+impl  DescribeBotLocaleInput  {
     /// <p>The identifier of the bot associated with the locale.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the locale.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeBotLocaleInputBuilder {
     }
     /// <p>The identifier of the bot associated with the locale.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot associated with the locale.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeBotLocaleInputBuilder {
     }
     /// <p>The version of the bot associated with the locale.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot associated with the locale.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl DescribeBotLocaleInputBuilder {
     }
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_bot_locale::DescribeBotLocaleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_bot_locale::DescribeBotLocaleInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot_locale::DescribeBotLocaleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bot_locale::DescribeBotLocaleInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
+        )
     }
 }
+

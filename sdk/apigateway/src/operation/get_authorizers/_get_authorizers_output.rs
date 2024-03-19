@@ -3,30 +3,31 @@
 /// <p>Represents a collection of Authorizer resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthorizersOutput {
+pub struct GetAuthorizersOutput  {
     /// <p>The current page of elements from this collection.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Authorizer>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::Authorizer>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAuthorizersOutput {
+impl  GetAuthorizersOutput  {
     /// <p>The current page of elements from this collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::Authorizer] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::Authorizer] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAuthorizersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAuthorizersOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizersOutput`](crate::operation::get_authorizers::GetAuthorizersOutput).
     pub fn builder() -> crate::operation::get_authorizers::builders::GetAuthorizersOutputBuilder {
@@ -38,7 +39,7 @@ impl GetAuthorizersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizersOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Authorizer>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::Authorizer>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl GetAuthorizersOutputBuilder {
     /// <p>The current page of elements from this collection.</p>
     pub fn items(mut self, input: crate::types::Authorizer) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Authorizer>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Authorizer>>) -> Self {
+        self.items = input; self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Authorizer>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Authorizer>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>
@@ -70,28 +70,30 @@ impl GetAuthorizersOutputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
         &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAuthorizersOutput`](crate::operation::get_authorizers::GetAuthorizersOutput).
     pub fn build(self) -> crate::operation::get_authorizers::GetAuthorizersOutput {
         crate::operation::get_authorizers::GetAuthorizersOutput {
-            items: self.items,
-            position: self.position,
+            items: self.items
+            ,
+            position: self.position
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

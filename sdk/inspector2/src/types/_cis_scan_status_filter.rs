@@ -3,19 +3,19 @@
 /// <p>The CIS scan status filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisScanStatusFilter {
+pub struct CisScanStatusFilter  {
     /// <p>The filter comparison value.</p>
     pub comparison: crate::types::CisScanStatusComparison,
     /// <p>The filter value.</p>
     pub value: crate::types::CisScanStatus,
 }
-impl CisScanStatusFilter {
+impl  CisScanStatusFilter  {
     /// <p>The filter comparison value.</p>
-    pub fn comparison(&self) -> &crate::types::CisScanStatusComparison {
+    pub fn comparison(&self) -> & crate::types::CisScanStatusComparison {
         &self.comparison
     }
     /// <p>The filter value.</p>
-    pub fn value(&self) -> &crate::types::CisScanStatus {
+    pub fn value(&self) -> & crate::types::CisScanStatus {
         &self.value
     }
 }
@@ -42,8 +42,7 @@ impl CisScanStatusFilterBuilder {
     }
     /// <p>The filter comparison value.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CisScanStatusComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The filter comparison value.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CisScanStatusComparison> {
@@ -57,8 +56,7 @@ impl CisScanStatusFilterBuilder {
     }
     /// <p>The filter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::CisScanStatus>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The filter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::CisScanStatus> {
@@ -69,19 +67,20 @@ impl CisScanStatusFilterBuilder {
     /// - [`comparison`](crate::types::builders::CisScanStatusFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::CisScanStatusFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CisScanStatusFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisScanStatusFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building CisScanStatusFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CisScanStatusFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisScanStatusFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building CisScanStatusFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CisScanStatusFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataSourceFromRdsInput {
+pub struct CreateDataSourceFromRdsInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -44,13 +44,13 @@ pub struct CreateDataSourceFromRdsInput {
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub compute_statistics: ::std::option::Option<bool>,
 }
-impl CreateDataSourceFromRdsInput {
+impl  CreateDataSourceFromRdsInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn data_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_name(&self) -> ::std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
@@ -83,12 +83,12 @@ impl CreateDataSourceFromRdsInput {
     /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
     /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
-    pub fn rds_data(&self) -> ::std::option::Option<&crate::types::RdsDataSpec> {
+    pub fn rds_data(&self) -> ::std::option::Option<& crate::types::RdsDataSpec> {
         self.rds_data.as_ref()
     }
     /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
@@ -122,8 +122,7 @@ impl CreateDataSourceFromRdsInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl CreateDataSourceFromRdsInputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_name = input;
-        self
+        self.data_source_name = input; self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +207,7 @@ impl CreateDataSourceFromRdsInputBuilder {
     /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn set_rds_data(mut self, input: ::std::option::Option<crate::types::RdsDataSpec>) -> Self {
-        self.rds_data = input;
-        self
+        self.rds_data = input; self
     }
     /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
     /// <ul>
@@ -255,8 +252,7 @@ impl CreateDataSourceFromRdsInputBuilder {
     /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
@@ -270,26 +266,28 @@ impl CreateDataSourceFromRdsInputBuilder {
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.compute_statistics = input;
-        self
+        self.compute_statistics = input; self
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub fn get_compute_statistics(&self) -> &::std::option::Option<bool> {
         &self.compute_statistics
     }
     /// Consumes the builder and constructs a [`CreateDataSourceFromRdsInput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput {
-            data_source_id: self.data_source_id,
-            data_source_name: self.data_source_name,
-            rds_data: self.rds_data,
-            role_arn: self.role_arn,
-            compute_statistics: self.compute_statistics,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput {
+                data_source_id: self.data_source_id
+                ,
+                data_source_name: self.data_source_name
+                ,
+                rds_data: self.rds_data
+                ,
+                role_arn: self.role_arn
+                ,
+                compute_statistics: self.compute_statistics
+                ,
+            }
+        )
     }
 }
+

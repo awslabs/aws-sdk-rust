@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InviteMembersOutput {
+pub struct InviteMembersOutput  {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
-impl InviteMembersOutput {
+impl  InviteMembersOutput  {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
-    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
-        self.unprocessed_accounts.as_deref().unwrap_or_default()
+    pub fn unprocessed_accounts(&self) -> & [crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for InviteMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InviteMembersOutput {
     /// Creates a new builder-style object to manufacture [`InviteMembersOutput`](crate::operation::invite_members::InviteMembersOutput).
     pub fn builder() -> crate::operation::invite_members::builders::InviteMembersOutputBuilder {
@@ -31,7 +32,7 @@ impl InviteMembersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteMembersOutputBuilder {
-    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl InviteMembersOutputBuilder {
@@ -42,33 +43,34 @@ impl InviteMembersOutputBuilder {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
-        self.unprocessed_accounts = input;
-        self
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>) -> Self {
+        self.unprocessed_accounts = input; self
     }
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InviteMembersOutput`](crate::operation::invite_members::InviteMembersOutput).
     pub fn build(self) -> crate::operation::invite_members::InviteMembersOutput {
         crate::operation::invite_members::InviteMembersOutput {
-            unprocessed_accounts: self.unprocessed_accounts,
+            unprocessed_accounts: self.unprocessed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

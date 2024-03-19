@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaVersionsDiffOutput {
+pub struct GetSchemaVersionsDiffOutput  {
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
     pub diff: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSchemaVersionsDiffOutput {
+impl  GetSchemaVersionsDiffOutput  {
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
-    pub fn diff(&self) -> ::std::option::Option<&str> {
+    pub fn diff(&self) -> ::std::option::Option<& str> {
         self.diff.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSchemaVersionsDiffOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSchemaVersionsDiffOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionsDiffOutput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput).
     pub fn builder() -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffOutputBuilder {
@@ -40,27 +40,28 @@ impl GetSchemaVersionsDiffOutputBuilder {
     }
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
     pub fn set_diff(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.diff = input;
-        self
+        self.diff = input; self
     }
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
     pub fn get_diff(&self) -> &::std::option::Option<::std::string::String> {
         &self.diff
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSchemaVersionsDiffOutput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput).
     pub fn build(self) -> crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput {
         crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput {
-            diff: self.diff,
+            diff: self.diff
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

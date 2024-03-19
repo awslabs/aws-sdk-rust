@@ -3,7 +3,7 @@
 /// <p>The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThirdPartyJobDetails {
+pub struct ThirdPartyJobDetails  {
     /// <p>The identifier used to identify the job details in CodePipeline.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data to be returned by the third party job worker.</p>
@@ -11,17 +11,17 @@ pub struct ThirdPartyJobDetails {
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub nonce: ::std::option::Option<::std::string::String>,
 }
-impl ThirdPartyJobDetails {
+impl  ThirdPartyJobDetails  {
     /// <p>The identifier used to identify the job details in CodePipeline.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The data to be returned by the third party job worker.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::ThirdPartyJobData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::ThirdPartyJobData> {
         self.data.as_ref()
     }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
-    pub fn nonce(&self) -> ::std::option::Option<&str> {
+    pub fn nonce(&self) -> ::std::option::Option<& str> {
         self.nonce.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ThirdPartyJobDetailsBuilder {
     }
     /// <p>The identifier used to identify the job details in CodePipeline.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier used to identify the job details in CodePipeline.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ThirdPartyJobDetailsBuilder {
     }
     /// <p>The data to be returned by the third party job worker.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::ThirdPartyJobData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The data to be returned by the third party job worker.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::ThirdPartyJobData> {
@@ -76,8 +74,7 @@ impl ThirdPartyJobDetailsBuilder {
     }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nonce = input;
-        self
+        self.nonce = input; self
     }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ThirdPartyJobDetailsBuilder {
     /// Consumes the builder and constructs a [`ThirdPartyJobDetails`](crate::types::ThirdPartyJobDetails).
     pub fn build(self) -> crate::types::ThirdPartyJobDetails {
         crate::types::ThirdPartyJobDetails {
-            id: self.id,
-            data: self.data,
-            nonce: self.nonce,
+            id: self.id
+            ,
+            data: self.data
+            ,
+            nonce: self.nonce
+            ,
         }
     }
 }
+

@@ -3,28 +3,29 @@
 /// <p>Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteImageInput {
+pub struct BatchDeleteImageInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository that contains the image to delete.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
+    pub image_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>>,
 }
-impl BatchDeleteImageInput {
+impl  BatchDeleteImageInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository that contains the image to delete.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
-    pub fn image_ids(&self) -> &[crate::types::ImageIdentifier] {
-        self.image_ids.as_deref().unwrap_or_default()
+    pub fn image_ids(&self) -> & [crate::types::ImageIdentifier] {
+        self.image_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteImageInput {
@@ -40,7 +41,7 @@ impl BatchDeleteImageInput {
 pub struct BatchDeleteImageInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
-    pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
+    pub(crate) image_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>>,
 }
 impl BatchDeleteImageInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
@@ -50,8 +51,7 @@ impl BatchDeleteImageInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl BatchDeleteImageInputBuilder {
     }
     /// <p>The repository that contains the image to delete.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository that contains the image to delete.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,27 +78,30 @@ impl BatchDeleteImageInputBuilder {
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub fn image_ids(mut self, input: crate::types::ImageIdentifier) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
-        v.push(input);
-        self.image_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
-        self.image_ids = input;
-        self
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>>) -> Self {
+        self.image_ids = input; self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>> {
         &self.image_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteImageInput`](crate::operation::batch_delete_image::BatchDeleteImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_image::BatchDeleteImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_delete_image::BatchDeleteImageInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_ids: self.image_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_image::BatchDeleteImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_image::BatchDeleteImageInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                image_ids: self.image_ids
+                ,
+            }
+        )
     }
 }
+

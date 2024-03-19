@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionProductInput {
+pub struct ProvisionProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -26,17 +26,17 @@ pub struct ProvisionProductInput {
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>>,
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub provisioning_preferences: ::std::option::Option<crate::types::ProvisioningPreferences>,
     /// <p>One or more tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
     pub provision_token: ::std::option::Option<::std::string::String>,
 }
-impl ProvisionProductInput {
+impl  ProvisionProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -44,61 +44,64 @@ impl ProvisionProductInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_name(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_name(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_name.as_deref()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    pub fn path_id(&self) -> ::std::option::Option<&str> {
+    pub fn path_id(&self) -> ::std::option::Option<& str> {
         self.path_id.as_deref()
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-    pub fn path_name(&self) -> ::std::option::Option<&str> {
+    pub fn path_name(&self) -> ::std::option::Option<& str> {
         self.path_name.as_deref()
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn provisioned_product_name(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_product_name(&self) -> ::std::option::Option<& str> {
         self.provisioned_product_name.as_deref()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
-    pub fn provisioning_parameters(&self) -> &[crate::types::ProvisioningParameter] {
-        self.provisioning_parameters.as_deref().unwrap_or_default()
+    pub fn provisioning_parameters(&self) -> & [crate::types::ProvisioningParameter] {
+        self.provisioning_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    pub fn provisioning_preferences(&self) -> ::std::option::Option<&crate::types::ProvisioningPreferences> {
+    pub fn provisioning_preferences(&self) -> ::std::option::Option<& crate::types::ProvisioningPreferences> {
         self.provisioning_preferences.as_ref()
     }
     /// <p>One or more tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
-    pub fn notification_arns(&self) -> &[::std::string::String] {
-        self.notification_arns.as_deref().unwrap_or_default()
+    pub fn notification_arns(&self) -> & [::std::string::String] {
+        self.notification_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-    pub fn provision_token(&self) -> ::std::option::Option<&str> {
+    pub fn provision_token(&self) -> ::std::option::Option<& str> {
         self.provision_token.as_deref()
     }
 }
@@ -121,10 +124,10 @@ pub struct ProvisionProductInputBuilder {
     pub(crate) path_id: ::std::option::Option<::std::string::String>,
     pub(crate) path_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_name: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>>,
     pub(crate) provisioning_preferences: ::std::option::Option<crate::types::ProvisioningPreferences>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) provision_token: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionProductInputBuilder {
@@ -147,8 +150,7 @@ impl ProvisionProductInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -167,8 +169,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +182,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +195,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +208,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn set_provisioning_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_name = input;
-        self
+        self.provisioning_artifact_name = input; self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn get_provisioning_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +221,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path_id = input;
-        self
+        self.path_id = input; self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +234,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub fn set_path_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path_name = input;
-        self
+        self.path_name = input; self
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub fn get_path_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +248,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_product_name = input;
-        self
+        self.provisioned_product_name = input; self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,17 +261,16 @@ impl ProvisionProductInputBuilder {
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn provisioning_parameters(mut self, input: crate::types::ProvisioningParameter) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
-        v.push(input);
-        self.provisioning_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>) -> Self {
-        self.provisioning_parameters = input;
-        self
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>>) -> Self {
+        self.provisioning_parameters = input; self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>> {
         &self.provisioning_parameters
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
@@ -286,8 +280,7 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub fn set_provisioning_preferences(mut self, input: ::std::option::Option<crate::types::ProvisioningPreferences>) -> Self {
-        self.provisioning_preferences = input;
-        self
+        self.provisioning_preferences = input; self
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub fn get_provisioning_preferences(&self) -> &::std::option::Option<crate::types::ProvisioningPreferences> {
@@ -300,17 +293,16 @@ impl ProvisionProductInputBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `notification_arns`.
@@ -320,17 +312,16 @@ impl ProvisionProductInputBuilder {
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
-        v.push(input.into());
-        self.notification_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.notification_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_arns = input;
-        self
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.notification_arns = input; self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.notification_arns
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
@@ -341,31 +332,44 @@ impl ProvisionProductInputBuilder {
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
     pub fn set_provision_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_token = input;
-        self
+        self.provision_token = input; self
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
     pub fn get_provision_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.provision_token
     }
     /// Consumes the builder and constructs a [`ProvisionProductInput`](crate::operation::provision_product::ProvisionProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::provision_product::ProvisionProductInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::provision_product::ProvisionProductInput {
-            accept_language: self.accept_language,
-            product_id: self.product_id,
-            product_name: self.product_name,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-            provisioning_artifact_name: self.provisioning_artifact_name,
-            path_id: self.path_id,
-            path_name: self.path_name,
-            provisioned_product_name: self.provisioned_product_name,
-            provisioning_parameters: self.provisioning_parameters,
-            provisioning_preferences: self.provisioning_preferences,
-            tags: self.tags,
-            notification_arns: self.notification_arns,
-            provision_token: self.provision_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::provision_product::ProvisionProductInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::provision_product::ProvisionProductInput {
+                accept_language: self.accept_language
+                ,
+                product_id: self.product_id
+                ,
+                product_name: self.product_name
+                ,
+                provisioning_artifact_id: self.provisioning_artifact_id
+                ,
+                provisioning_artifact_name: self.provisioning_artifact_name
+                ,
+                path_id: self.path_id
+                ,
+                path_name: self.path_name
+                ,
+                provisioned_product_name: self.provisioned_product_name
+                ,
+                provisioning_parameters: self.provisioning_parameters
+                ,
+                provisioning_preferences: self.provisioning_preferences
+                ,
+                tags: self.tags
+                ,
+                notification_arns: self.notification_arns
+                ,
+                provision_token: self.provision_token
+                ,
+            }
+        )
     }
 }
+

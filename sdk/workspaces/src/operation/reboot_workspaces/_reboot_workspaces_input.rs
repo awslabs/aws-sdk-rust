@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebootWorkspacesInput {
+pub struct RebootWorkspacesInput  {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub reboot_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>>,
+    pub reboot_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::RebootRequest>>,
 }
-impl RebootWorkspacesInput {
+impl  RebootWorkspacesInput  {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reboot_workspace_requests.is_none()`.
-    pub fn reboot_workspace_requests(&self) -> &[crate::types::RebootRequest] {
-        self.reboot_workspace_requests.as_deref().unwrap_or_default()
+    pub fn reboot_workspace_requests(&self) -> & [crate::types::RebootRequest] {
+        self.reboot_workspace_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RebootWorkspacesInput {
@@ -25,7 +26,7 @@ impl RebootWorkspacesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootWorkspacesInputBuilder {
-    pub(crate) reboot_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>>,
+    pub(crate) reboot_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::RebootRequest>>,
 }
 impl RebootWorkspacesInputBuilder {
     /// Appends an item to `reboot_workspace_requests`.
@@ -35,25 +36,26 @@ impl RebootWorkspacesInputBuilder {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
     pub fn reboot_workspace_requests(mut self, input: crate::types::RebootRequest) -> Self {
         let mut v = self.reboot_workspace_requests.unwrap_or_default();
-        v.push(input);
-        self.reboot_workspace_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reboot_workspace_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_reboot_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>>) -> Self {
-        self.reboot_workspace_requests = input;
-        self
+    pub fn set_reboot_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RebootRequest>>) -> Self {
+        self.reboot_workspace_requests = input; self
     }
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_reboot_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>> {
+    pub fn get_reboot_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RebootRequest>> {
         &self.reboot_workspace_requests
     }
     /// Consumes the builder and constructs a [`RebootWorkspacesInput`](crate::operation::reboot_workspaces::RebootWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reboot_workspaces::RebootWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reboot_workspaces::RebootWorkspacesInput {
-            reboot_workspace_requests: self.reboot_workspace_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_workspaces::RebootWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reboot_workspaces::RebootWorkspacesInput {
+                reboot_workspace_requests: self.reboot_workspace_requests
+                ,
+            }
+        )
     }
 }
+

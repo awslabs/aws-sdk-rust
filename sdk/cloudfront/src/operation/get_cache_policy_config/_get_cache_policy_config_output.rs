@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCachePolicyConfigOutput {
+pub struct GetCachePolicyConfigOutput  {
     /// <p>The cache policy configuration.</p>
     pub cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
     /// <p>The current version of the cache policy.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetCachePolicyConfigOutput {
+impl  GetCachePolicyConfigOutput  {
     /// <p>The cache policy configuration.</p>
-    pub fn cache_policy_config(&self) -> ::std::option::Option<&crate::types::CachePolicyConfig> {
+    pub fn cache_policy_config(&self) -> ::std::option::Option<& crate::types::CachePolicyConfig> {
         self.cache_policy_config.as_ref()
     }
     /// <p>The current version of the cache policy.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCachePolicyConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCachePolicyConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetCachePolicyConfigOutput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput).
     pub fn builder() -> crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigOutputBuilder {
@@ -47,8 +47,7 @@ impl GetCachePolicyConfigOutputBuilder {
     }
     /// <p>The cache policy configuration.</p>
     pub fn set_cache_policy_config(mut self, input: ::std::option::Option<crate::types::CachePolicyConfig>) -> Self {
-        self.cache_policy_config = input;
-        self
+        self.cache_policy_config = input; self
     }
     /// <p>The cache policy configuration.</p>
     pub fn get_cache_policy_config(&self) -> &::std::option::Option<crate::types::CachePolicyConfig> {
@@ -61,28 +60,30 @@ impl GetCachePolicyConfigOutputBuilder {
     }
     /// <p>The current version of the cache policy.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version of the cache policy.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCachePolicyConfigOutput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput).
     pub fn build(self) -> crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput {
         crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput {
-            cache_policy_config: self.cache_policy_config,
-            e_tag: self.e_tag,
+            cache_policy_config: self.cache_policy_config
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

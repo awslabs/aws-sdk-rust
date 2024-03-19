@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFaqs`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::set_index_id):<br>required: **true**<br><p>The index that contains the FAQ lists.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_faqs::builders::ListFaqsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p><br>
-    /// - On success, responds with [`ListFaqsOutput`](crate::operation::list_faqs::ListFaqsOutput) with field(s):
+                            /// - On success, responds with [`ListFaqsOutput`](crate::operation::list_faqs::ListFaqsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_faqs::ListFaqsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
     ///   - [`faq_summary_items(Option<Vec::<FaqSummary>>)`](crate::operation::list_faqs::ListFaqsOutput::faq_summary_items): <p>information about the FAQs associated with the specified index.</p>
-    /// - On failure, responds with [`SdkError<ListFaqsError>`](crate::operation::list_faqs::ListFaqsError)
+                            /// - On failure, responds with [`SdkError<ListFaqsError>`](crate::operation::list_faqs::ListFaqsError)
     pub fn list_faqs(&self) -> crate::operation::list_faqs::builders::ListFaqsFluentBuilder {
-        crate::operation::list_faqs::builders::ListFaqsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_faqs::builders::ListFaqsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

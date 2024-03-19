@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSipRuleInput {
+pub struct UpdateSipRuleInput  {
     /// <p>The SIP rule ID.</p>
     pub sip_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the specified SIP rule.</p>
@@ -10,15 +10,15 @@ pub struct UpdateSipRuleInput {
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
     pub disabled: ::std::option::Option<bool>,
     /// <p>The new value of the list of target applications.</p>
-    pub target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub target_applications: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>,
 }
-impl UpdateSipRuleInput {
+impl  UpdateSipRuleInput  {
     /// <p>The SIP rule ID.</p>
-    pub fn sip_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_rule_id(&self) -> ::std::option::Option<& str> {
         self.sip_rule_id.as_deref()
     }
     /// <p>The new name for the specified SIP rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
@@ -26,10 +26,11 @@ impl UpdateSipRuleInput {
         self.disabled
     }
     /// <p>The new value of the list of target applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_applications.is_none()`.
-    pub fn target_applications(&self) -> &[crate::types::SipRuleTargetApplication] {
-        self.target_applications.as_deref().unwrap_or_default()
+    pub fn target_applications(&self) -> & [crate::types::SipRuleTargetApplication] {
+        self.target_applications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateSipRuleInput {
@@ -46,7 +47,7 @@ pub struct UpdateSipRuleInputBuilder {
     pub(crate) sip_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) disabled: ::std::option::Option<bool>,
-    pub(crate) target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub(crate) target_applications: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>,
 }
 impl UpdateSipRuleInputBuilder {
     /// <p>The SIP rule ID.</p>
@@ -57,8 +58,7 @@ impl UpdateSipRuleInputBuilder {
     }
     /// <p>The SIP rule ID.</p>
     pub fn set_sip_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sip_rule_id = input;
-        self
+        self.sip_rule_id = input; self
     }
     /// <p>The SIP rule ID.</p>
     pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl UpdateSipRuleInputBuilder {
     }
     /// <p>The new name for the specified SIP rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name for the specified SIP rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl UpdateSipRuleInputBuilder {
     }
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
@@ -100,28 +98,32 @@ impl UpdateSipRuleInputBuilder {
     /// <p>The new value of the list of target applications.</p>
     pub fn target_applications(mut self, input: crate::types::SipRuleTargetApplication) -> Self {
         let mut v = self.target_applications.unwrap_or_default();
-        v.push(input);
-        self.target_applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new value of the list of target applications.</p>
-    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
-        self.target_applications = input;
-        self
+    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>) -> Self {
+        self.target_applications = input; self
     }
     /// <p>The new value of the list of target applications.</p>
-    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>> {
         &self.target_applications
     }
     /// Consumes the builder and constructs a [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_sip_rule::UpdateSipRuleInput {
-            sip_rule_id: self.sip_rule_id,
-            name: self.name,
-            disabled: self.disabled,
-            target_applications: self.target_applications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sip_rule::UpdateSipRuleInput {
+                sip_rule_id: self.sip_rule_id
+                ,
+                name: self.name
+                ,
+                disabled: self.disabled
+                ,
+                target_applications: self.target_applications
+                ,
+            }
+        )
     }
 }
+

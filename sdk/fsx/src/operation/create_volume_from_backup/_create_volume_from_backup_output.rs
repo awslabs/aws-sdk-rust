@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVolumeFromBackupOutput {
+pub struct CreateVolumeFromBackupOutput  {
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
     pub volume: ::std::option::Option<crate::types::Volume>,
     _request_id: Option<String>,
 }
-impl CreateVolumeFromBackupOutput {
+impl  CreateVolumeFromBackupOutput  {
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
-    pub fn volume(&self) -> ::std::option::Option<&crate::types::Volume> {
+    pub fn volume(&self) -> ::std::option::Option<& crate::types::Volume> {
         self.volume.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateVolumeFromBackupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateVolumeFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput).
     pub fn builder() -> crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateVolumeFromBackupOutputBuilder {
     }
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::Volume>) -> Self {
-        self.volume = input;
-        self
+        self.volume = input; self
     }
     /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
     pub fn get_volume(&self) -> &::std::option::Option<crate::types::Volume> {
         &self.volume
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput).
     pub fn build(self) -> crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput {
         crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput {
-            volume: self.volume,
+            volume: self.volume
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

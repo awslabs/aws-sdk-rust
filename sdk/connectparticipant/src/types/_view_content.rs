@@ -3,31 +3,32 @@
 /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ViewContent {
+pub struct ViewContent  {
     /// <p>The schema representing the input data that the view template must be supplied to render.</p>
     pub input_schema: ::std::option::Option<::std::string::String>,
     /// <p>The view template representing the structure of the view.</p>
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>A list of actions possible from the view</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ViewContent {
+impl  ViewContent  {
     /// <p>The schema representing the input data that the view template must be supplied to render.</p>
-    pub fn input_schema(&self) -> ::std::option::Option<&str> {
+    pub fn input_schema(&self) -> ::std::option::Option<& str> {
         self.input_schema.as_deref()
     }
     /// <p>The view template representing the structure of the view.</p>
-    pub fn template(&self) -> ::std::option::Option<&str> {
+    pub fn template(&self) -> ::std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>A list of actions possible from the view</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[::std::string::String] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [::std::string::String] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ViewContent {
+impl  ::std::fmt::Debug for ViewContent  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ViewContent");
         formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
@@ -49,7 +50,7 @@ impl ViewContent {
 pub struct ViewContentBuilder {
     pub(crate) input_schema: ::std::option::Option<::std::string::String>,
     pub(crate) template: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ViewContentBuilder {
     /// <p>The schema representing the input data that the view template must be supplied to render.</p>
@@ -59,8 +60,7 @@ impl ViewContentBuilder {
     }
     /// <p>The schema representing the input data that the view template must be supplied to render.</p>
     pub fn set_input_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_schema = input;
-        self
+        self.input_schema = input; self
     }
     /// <p>The schema representing the input data that the view template must be supplied to render.</p>
     pub fn get_input_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +73,7 @@ impl ViewContentBuilder {
     }
     /// <p>The view template representing the structure of the view.</p>
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The view template representing the structure of the view.</p>
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,25 +86,27 @@ impl ViewContentBuilder {
     /// <p>A list of actions possible from the view</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input.into());
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of actions possible from the view</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.actions = input; self
     }
     /// <p>A list of actions possible from the view</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`ViewContent`](crate::types::ViewContent).
     pub fn build(self) -> crate::types::ViewContent {
         crate::types::ViewContent {
-            input_schema: self.input_schema,
-            template: self.template,
-            actions: self.actions,
+            input_schema: self.input_schema
+            ,
+            template: self.template
+            ,
+            actions: self.actions
+            ,
         }
     }
 }
@@ -118,3 +119,4 @@ impl ::std::fmt::Debug for ViewContentBuilder {
         formatter.finish()
     }
 }
+

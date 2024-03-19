@@ -3,7 +3,7 @@
 /// <p>An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Variable {
+pub struct Variable  {
     /// <p>The name of the variable.</p>
     pub name: ::std::string::String,
     /// <p>The value of the variable as a string.</p>
@@ -15,14 +15,13 @@ pub struct Variable {
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
     pub output_file_uri_value: ::std::option::Option<crate::types::OutputFileUriValue>,
 }
-impl Variable {
+impl  Variable  {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the variable as a string.</p>
-    pub fn string_value(&self) -> ::std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<& str> {
         self.string_value.as_deref()
     }
     /// <p>The value of the variable as a double (numeric).</p>
@@ -30,11 +29,11 @@ impl Variable {
         self.double_value
     }
     /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
-    pub fn dataset_content_version_value(&self) -> ::std::option::Option<&crate::types::DatasetContentVersionValue> {
+    pub fn dataset_content_version_value(&self) -> ::std::option::Option<& crate::types::DatasetContentVersionValue> {
         self.dataset_content_version_value.as_ref()
     }
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
-    pub fn output_file_uri_value(&self) -> ::std::option::Option<&crate::types::OutputFileUriValue> {
+    pub fn output_file_uri_value(&self) -> ::std::option::Option<& crate::types::OutputFileUriValue> {
         self.output_file_uri_value.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl VariableBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl VariableBuilder {
     }
     /// <p>The value of the variable as a string.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>The value of the variable as a string.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl VariableBuilder {
     }
     /// <p>The value of the variable as a double (numeric).</p>
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.double_value = input;
-        self
+        self.double_value = input; self
     }
     /// <p>The value of the variable as a double (numeric).</p>
     pub fn get_double_value(&self) -> &::std::option::Option<f64> {
@@ -106,8 +102,7 @@ impl VariableBuilder {
     }
     /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
     pub fn set_dataset_content_version_value(mut self, input: ::std::option::Option<crate::types::DatasetContentVersionValue>) -> Self {
-        self.dataset_content_version_value = input;
-        self
+        self.dataset_content_version_value = input; self
     }
     /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
     pub fn get_dataset_content_version_value(&self) -> &::std::option::Option<crate::types::DatasetContentVersionValue> {
@@ -120,8 +115,7 @@ impl VariableBuilder {
     }
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
     pub fn set_output_file_uri_value(mut self, input: ::std::option::Option<crate::types::OutputFileUriValue>) -> Self {
-        self.output_file_uri_value = input;
-        self
+        self.output_file_uri_value = input; self
     }
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
     pub fn get_output_file_uri_value(&self) -> &::std::option::Option<crate::types::OutputFileUriValue> {
@@ -131,17 +125,23 @@ impl VariableBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::VariableBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Variable, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Variable {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Variable",
-                )
-            })?,
-            string_value: self.string_value,
-            double_value: self.double_value,
-            dataset_content_version_value: self.dataset_content_version_value,
-            output_file_uri_value: self.output_file_uri_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Variable {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Variable")
+                    )?
+                ,
+                string_value: self.string_value
+                ,
+                double_value: self.double_value
+                ,
+                dataset_content_version_value: self.dataset_content_version_value
+                ,
+                output_file_uri_value: self.output_file_uri_value
+                ,
+            }
+        )
     }
 }
+

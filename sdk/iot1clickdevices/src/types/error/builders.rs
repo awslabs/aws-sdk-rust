@@ -12,3 +12,4 @@ pub use crate::types::error::_resource_conflict_exception::ResourceConflictExcep
 pub use crate::types::error::_precondition_failed_exception::PreconditionFailedExceptionBuilder;
 
 pub use crate::types::error::_forbidden_exception::ForbiddenExceptionBuilder;
+

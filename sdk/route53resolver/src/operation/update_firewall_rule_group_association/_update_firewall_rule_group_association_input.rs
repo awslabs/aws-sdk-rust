@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFirewallRuleGroupAssociationInput {
+pub struct UpdateFirewallRuleGroupAssociationInput  {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
@@ -13,9 +13,9 @@ pub struct UpdateFirewallRuleGroupAssociationInput {
     /// <p>The name of the rule group association.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateFirewallRuleGroupAssociationInput {
+impl  UpdateFirewallRuleGroupAssociationInput  {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
-    pub fn firewall_rule_group_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_rule_group_association_id(&self) -> ::std::option::Option<& str> {
         self.firewall_rule_group_association_id.as_deref()
     }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
@@ -24,11 +24,11 @@ impl UpdateFirewallRuleGroupAssociationInput {
         self.priority
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
-    pub fn mutation_protection(&self) -> ::std::option::Option<&crate::types::MutationProtectionStatus> {
+    pub fn mutation_protection(&self) -> ::std::option::Option<& crate::types::MutationProtectionStatus> {
         self.mutation_protection.as_ref()
     }
     /// <p>The name of the rule group association.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_rule_group_association_id = input;
-        self
+        self.firewall_rule_group_association_id = input; self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.</p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
@@ -88,8 +86,7 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
     pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
-        self.mutation_protection = input;
-        self
+        self.mutation_protection = input; self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.</p>
     pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
@@ -102,27 +99,26 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
     }
     /// <p>The name of the rule group association.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule group association.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateFirewallRuleGroupAssociationInput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput {
-                firewall_rule_group_association_id: self.firewall_rule_group_association_id,
-                priority: self.priority,
-                mutation_protection: self.mutation_protection,
-                name: self.name,
-            },
+                firewall_rule_group_association_id: self.firewall_rule_group_association_id
+                ,
+                priority: self.priority
+                ,
+                mutation_protection: self.mutation_protection
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

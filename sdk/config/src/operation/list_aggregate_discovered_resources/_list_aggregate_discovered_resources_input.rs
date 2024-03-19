@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAggregateDiscoveredResourcesInput {
+pub struct ListAggregateDiscoveredResourcesInput  {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resources that you want Config to list in the response.</p>
@@ -14,17 +14,17 @@ pub struct ListAggregateDiscoveredResourcesInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAggregateDiscoveredResourcesInput {
+impl  ListAggregateDiscoveredResourcesInput  {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ResourceFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ResourceFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -32,7 +32,7 @@ impl ListAggregateDiscoveredResourcesInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+        self.configuration_aggregator_name = input; self
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -91,8 +89,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ResourceFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourceFilters> {
@@ -105,8 +102,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -119,28 +115,28 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAggregateDiscoveredResourcesInput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput {
-                configuration_aggregator_name: self.configuration_aggregator_name,
-                resource_type: self.resource_type,
-                filters: self.filters,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                configuration_aggregator_name: self.configuration_aggregator_name
+                ,
+                resource_type: self.resource_type
+                ,
+                filters: self.filters
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

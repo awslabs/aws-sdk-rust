@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceEvaluationSummaryInput {
+pub struct GetResourceEvaluationSummaryInput  {
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetResourceEvaluationSummaryInput {
+impl  GetResourceEvaluationSummaryInput  {
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
-    pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_evaluation_id(&self) -> ::std::option::Option<& str> {
         self.resource_evaluation_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetResourceEvaluationSummaryInputBuilder {
     }
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_evaluation_id = input;
-        self
+        self.resource_evaluation_id = input; self
     }
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
     pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_evaluation_id
     }
     /// Consumes the builder and constructs a [`GetResourceEvaluationSummaryInput`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput {
-            resource_evaluation_id: self.resource_evaluation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput {
+                resource_evaluation_id: self.resource_evaluation_id
+                ,
+            }
+        )
     }
 }
+

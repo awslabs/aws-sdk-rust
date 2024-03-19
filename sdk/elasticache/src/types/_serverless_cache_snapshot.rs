@@ -3,7 +3,7 @@
 /// <p>The resource representing a serverless cache snapshot. Available for Redis only.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerlessCacheSnapshot {
+pub struct ServerlessCacheSnapshot  {
     /// <p>The identifier of a serverless cache snapshot. Available for Redis only.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for Redis only.</p>
@@ -23,41 +23,41 @@ pub struct ServerlessCacheSnapshot {
     /// <p>The configuration of the serverless cache, at the time the snapshot was taken. Available for Redis only.</p>
     pub serverless_cache_configuration: ::std::option::Option<crate::types::ServerlessCacheConfiguration>,
 }
-impl ServerlessCacheSnapshot {
+impl  ServerlessCacheSnapshot  {
     /// <p>The identifier of a serverless cache snapshot. Available for Redis only.</p>
-    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for Redis only.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key of a serverless cache snapshot. Available for Redis only.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The type of snapshot of serverless cache. Available for Redis only.</p>
-    pub fn snapshot_type(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> ::std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
     /// <p>The current status of the serverless cache. Available for Redis only.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time that the source serverless cache's metadata and cache data set was obtained for the snapshot. Available for Redis only.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time that the serverless cache snapshot will expire. Available for Redis only.</p>
-    pub fn expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiry_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The total size of a serverless cache snapshot, in bytes. Available for Redis only.</p>
-    pub fn bytes_used_for_cache(&self) -> ::std::option::Option<&str> {
+    pub fn bytes_used_for_cache(&self) -> ::std::option::Option<& str> {
         self.bytes_used_for_cache.as_deref()
     }
     /// <p>The configuration of the serverless cache, at the time the snapshot was taken. Available for Redis only.</p>
-    pub fn serverless_cache_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessCacheConfiguration> {
+    pub fn serverless_cache_configuration(&self) -> ::std::option::Option<& crate::types::ServerlessCacheConfiguration> {
         self.serverless_cache_configuration.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The identifier of a serverless cache snapshot. Available for Redis only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_snapshot_name = input;
-        self
+        self.serverless_cache_snapshot_name = input; self
     }
     /// <p>The identifier of a serverless cache snapshot. Available for Redis only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for Redis only.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for Redis only.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key of a serverless cache snapshot. Available for Redis only.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key of a serverless cache snapshot. Available for Redis only.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The type of snapshot of serverless cache. Available for Redis only.</p>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_type = input;
-        self
+        self.snapshot_type = input; self
     }
     /// <p>The type of snapshot of serverless cache. Available for Redis only.</p>
     pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The current status of the serverless cache. Available for Redis only.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the serverless cache. Available for Redis only.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The date and time that the source serverless cache's metadata and cache data set was obtained for the snapshot. Available for Redis only.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The date and time that the source serverless cache's metadata and cache data set was obtained for the snapshot. Available for Redis only.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +168,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The time that the serverless cache snapshot will expire. Available for Redis only.</p>
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiry_time = input;
-        self
+        self.expiry_time = input; self
     }
     /// <p>The time that the serverless cache snapshot will expire. Available for Redis only.</p>
     pub fn get_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +181,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The total size of a serverless cache snapshot, in bytes. Available for Redis only.</p>
     pub fn set_bytes_used_for_cache(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bytes_used_for_cache = input;
-        self
+        self.bytes_used_for_cache = input; self
     }
     /// <p>The total size of a serverless cache snapshot, in bytes. Available for Redis only.</p>
     pub fn get_bytes_used_for_cache(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl ServerlessCacheSnapshotBuilder {
     }
     /// <p>The configuration of the serverless cache, at the time the snapshot was taken. Available for Redis only.</p>
     pub fn set_serverless_cache_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessCacheConfiguration>) -> Self {
-        self.serverless_cache_configuration = input;
-        self
+        self.serverless_cache_configuration = input; self
     }
     /// <p>The configuration of the serverless cache, at the time the snapshot was taken. Available for Redis only.</p>
     pub fn get_serverless_cache_configuration(&self) -> &::std::option::Option<crate::types::ServerlessCacheConfiguration> {
@@ -212,15 +203,25 @@ impl ServerlessCacheSnapshotBuilder {
     /// Consumes the builder and constructs a [`ServerlessCacheSnapshot`](crate::types::ServerlessCacheSnapshot).
     pub fn build(self) -> crate::types::ServerlessCacheSnapshot {
         crate::types::ServerlessCacheSnapshot {
-            serverless_cache_snapshot_name: self.serverless_cache_snapshot_name,
-            arn: self.arn,
-            kms_key_id: self.kms_key_id,
-            snapshot_type: self.snapshot_type,
-            status: self.status,
-            create_time: self.create_time,
-            expiry_time: self.expiry_time,
-            bytes_used_for_cache: self.bytes_used_for_cache,
-            serverless_cache_configuration: self.serverless_cache_configuration,
+            serverless_cache_snapshot_name: self.serverless_cache_snapshot_name
+            ,
+            arn: self.arn
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            snapshot_type: self.snapshot_type
+            ,
+            status: self.status
+            ,
+            create_time: self.create_time
+            ,
+            expiry_time: self.expiry_time
+            ,
+            bytes_used_for_cache: self.bytes_used_for_cache
+            ,
+            serverless_cache_configuration: self.serverless_cache_configuration
+            ,
         }
     }
 }
+

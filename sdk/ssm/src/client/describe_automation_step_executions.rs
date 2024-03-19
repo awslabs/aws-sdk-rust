@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAutomationStepExecutions`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`automation_execution_id(impl Into<String>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::automation_execution_id) / [`set_automation_execution_id(Option<String>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::set_automation_execution_id):<br>required: **true**<br><p>The Automation execution ID for which you want step execution descriptions.</p><br>
     ///   - [`filters(StepExecutionFilter)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::filters) / [`set_filters(Option<Vec::<StepExecutionFilter>>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters to limit the number of step executions returned by the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`reverse_order(bool)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::reverse_order) / [`set_reverse_order(Option<bool>)`](crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::set_reverse_order):<br>required: **false**<br><p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p><br>
-    /// - On success, responds with [`DescribeAutomationStepExecutionsOutput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeAutomationStepExecutionsOutput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput) with field(s):
     ///   - [`step_executions(Option<Vec::<StepExecution>>)`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput::step_executions): <p>A list of details about the current state of all steps that make up an execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeAutomationStepExecutionsError>`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError)
-    pub fn describe_automation_step_executions(
-        &self,
-    ) -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder {
-        crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeAutomationStepExecutionsError>`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError)
+    pub fn describe_automation_step_executions(&self) -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder {
+                                crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterDomainInput {
+pub struct RegisterDomainInput  {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -14,30 +14,31 @@ pub struct RegisterDomainInput {
     pub workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
-impl RegisterDomainInput {
+impl  RegisterDomainInput  {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A text description of the domain.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn workflow_execution_retention_period_in_days(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_execution_retention_period_in_days(&self) -> ::std::option::Option<& str> {
         self.workflow_execution_retention_period_in_days.as_deref()
     }
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::ResourceTag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::ResourceTag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegisterDomainInput {
@@ -54,7 +55,7 @@ pub struct RegisterDomainInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
 impl RegisterDomainInputBuilder {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
@@ -67,8 +68,7 @@ impl RegisterDomainInputBuilder {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -82,8 +82,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>A text description of the domain.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A text description of the domain.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl RegisterDomainInputBuilder {
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn set_workflow_execution_retention_period_in_days(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_execution_retention_period_in_days = input;
-        self
+        self.workflow_execution_retention_period_in_days = input; self
     }
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
@@ -118,30 +116,34 @@ impl RegisterDomainInputBuilder {
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
-            name: self.name,
-            description: self.description,
-            workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_domain::RegisterDomainInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

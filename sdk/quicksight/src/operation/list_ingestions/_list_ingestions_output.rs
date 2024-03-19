@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIngestionsOutput {
+pub struct ListIngestionsOutput  {
     /// <p>A list of the ingestions.</p>
-    pub ingestions: ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>>,
+    pub ingestions: ::std::option::Option<::std::vec::Vec::<crate::types::Ingestion>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -13,19 +13,20 @@ pub struct ListIngestionsOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl ListIngestionsOutput {
+impl  ListIngestionsOutput  {
     /// <p>A list of the ingestions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingestions.is_none()`.
-    pub fn ingestions(&self) -> &[crate::types::Ingestion] {
-        self.ingestions.as_deref().unwrap_or_default()
+    pub fn ingestions(&self) -> & [crate::types::Ingestion] {
+        self.ingestions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -34,10 +35,10 @@ impl ListIngestionsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListIngestionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIngestionsOutput {
     /// Creates a new builder-style object to manufacture [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput).
     pub fn builder() -> crate::operation::list_ingestions::builders::ListIngestionsOutputBuilder {
@@ -49,7 +50,7 @@ impl ListIngestionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIngestionsOutputBuilder {
-    pub(crate) ingestions: ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>>,
+    pub(crate) ingestions: ::std::option::Option<::std::vec::Vec::<crate::types::Ingestion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -63,17 +64,16 @@ impl ListIngestionsOutputBuilder {
     /// <p>A list of the ingestions.</p>
     pub fn ingestions(mut self, input: crate::types::Ingestion) -> Self {
         let mut v = self.ingestions.unwrap_or_default();
-        v.push(input);
-        self.ingestions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ingestions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the ingestions.</p>
-    pub fn set_ingestions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>>) -> Self {
-        self.ingestions = input;
-        self
+    pub fn set_ingestions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ingestion>>) -> Self {
+        self.ingestions = input; self
     }
     /// <p>A list of the ingestions.</p>
-    pub fn get_ingestions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ingestion>> {
+    pub fn get_ingestions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ingestion>> {
         &self.ingestions
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -83,8 +83,7 @@ impl ListIngestionsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ListIngestionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,30 +109,35 @@ impl ListIngestionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput).
     pub fn build(self) -> crate::operation::list_ingestions::ListIngestionsOutput {
         crate::operation::list_ingestions::ListIngestionsOutput {
-            ingestions: self.ingestions,
-            next_token: self.next_token,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            ingestions: self.ingestions
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

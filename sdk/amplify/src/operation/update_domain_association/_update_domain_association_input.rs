@@ -3,7 +3,7 @@
 /// <p>The request structure for the update domain association request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainAssociationInput {
+pub struct UpdateDomainAssociationInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
@@ -11,21 +11,21 @@ pub struct UpdateDomainAssociationInput {
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub enable_auto_sub_domain: ::std::option::Option<bool>,
     /// <p>Describes the settings for the subdomain.</p>
-    pub sub_domain_settings: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
+    pub sub_domain_settings: ::std::option::Option<::std::vec::Vec::<crate::types::SubDomainSetting>>,
     /// <p>Sets the branch patterns for automatic subdomain creation.</p>
-    pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
     pub certificate_settings: ::std::option::Option<crate::types::CertificateSettings>,
 }
-impl UpdateDomainAssociationInput {
+impl  UpdateDomainAssociationInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Enables the automated creation of subdomains for branches.</p>
@@ -33,23 +33,25 @@ impl UpdateDomainAssociationInput {
         self.enable_auto_sub_domain
     }
     /// <p>Describes the settings for the subdomain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_domain_settings.is_none()`.
-    pub fn sub_domain_settings(&self) -> &[crate::types::SubDomainSetting] {
-        self.sub_domain_settings.as_deref().unwrap_or_default()
+    pub fn sub_domain_settings(&self) -> & [crate::types::SubDomainSetting] {
+        self.sub_domain_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Sets the branch patterns for automatic subdomain creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_sub_domain_creation_patterns.is_none()`.
-    pub fn auto_sub_domain_creation_patterns(&self) -> &[::std::string::String] {
-        self.auto_sub_domain_creation_patterns.as_deref().unwrap_or_default()
+    pub fn auto_sub_domain_creation_patterns(&self) -> & [::std::string::String] {
+        self.auto_sub_domain_creation_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
-    pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<& str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
     /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
-    pub fn certificate_settings(&self) -> ::std::option::Option<&crate::types::CertificateSettings> {
+    pub fn certificate_settings(&self) -> ::std::option::Option<& crate::types::CertificateSettings> {
         self.certificate_settings.as_ref()
     }
 }
@@ -67,8 +69,8 @@ pub struct UpdateDomainAssociationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_auto_sub_domain: ::std::option::Option<bool>,
-    pub(crate) sub_domain_settings: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
-    pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sub_domain_settings: ::std::option::Option<::std::vec::Vec::<crate::types::SubDomainSetting>>,
+    pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_settings: ::std::option::Option<crate::types::CertificateSettings>,
 }
@@ -81,8 +83,7 @@ impl UpdateDomainAssociationInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +97,7 @@ impl UpdateDomainAssociationInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +110,7 @@ impl UpdateDomainAssociationInputBuilder {
     }
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub fn set_enable_auto_sub_domain(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_auto_sub_domain = input;
-        self
+        self.enable_auto_sub_domain = input; self
     }
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub fn get_enable_auto_sub_domain(&self) -> &::std::option::Option<bool> {
@@ -124,17 +123,16 @@ impl UpdateDomainAssociationInputBuilder {
     /// <p>Describes the settings for the subdomain.</p>
     pub fn sub_domain_settings(mut self, input: crate::types::SubDomainSetting) -> Self {
         let mut v = self.sub_domain_settings.unwrap_or_default();
-        v.push(input);
-        self.sub_domain_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_domain_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the settings for the subdomain.</p>
-    pub fn set_sub_domain_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>) -> Self {
-        self.sub_domain_settings = input;
-        self
+    pub fn set_sub_domain_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubDomainSetting>>) -> Self {
+        self.sub_domain_settings = input; self
     }
     /// <p>Describes the settings for the subdomain.</p>
-    pub fn get_sub_domain_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>> {
+    pub fn get_sub_domain_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubDomainSetting>> {
         &self.sub_domain_settings
     }
     /// Appends an item to `auto_sub_domain_creation_patterns`.
@@ -144,17 +142,16 @@ impl UpdateDomainAssociationInputBuilder {
     /// <p>Sets the branch patterns for automatic subdomain creation.</p>
     pub fn auto_sub_domain_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_sub_domain_creation_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.auto_sub_domain_creation_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_sub_domain_creation_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Sets the branch patterns for automatic subdomain creation.</p>
-    pub fn set_auto_sub_domain_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.auto_sub_domain_creation_patterns = input;
-        self
+    pub fn set_auto_sub_domain_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.auto_sub_domain_creation_patterns = input; self
     }
     /// <p>Sets the branch patterns for automatic subdomain creation.</p>
-    pub fn get_auto_sub_domain_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_sub_domain_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.auto_sub_domain_creation_patterns
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
@@ -164,8 +161,7 @@ impl UpdateDomainAssociationInputBuilder {
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub fn set_auto_sub_domain_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_sub_domain_iam_role = input;
-        self
+        self.auto_sub_domain_iam_role = input; self
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,28 +174,32 @@ impl UpdateDomainAssociationInputBuilder {
     }
     /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
     pub fn set_certificate_settings(mut self, input: ::std::option::Option<crate::types::CertificateSettings>) -> Self {
-        self.certificate_settings = input;
-        self
+        self.certificate_settings = input; self
     }
     /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
     pub fn get_certificate_settings(&self) -> &::std::option::Option<crate::types::CertificateSettings> {
         &self.certificate_settings
     }
     /// Consumes the builder and constructs a [`UpdateDomainAssociationInput`](crate::operation::update_domain_association::UpdateDomainAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_association::UpdateDomainAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_domain_association::UpdateDomainAssociationInput {
-            app_id: self.app_id,
-            domain_name: self.domain_name,
-            enable_auto_sub_domain: self.enable_auto_sub_domain,
-            sub_domain_settings: self.sub_domain_settings,
-            auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
-            auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
-            certificate_settings: self.certificate_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain_association::UpdateDomainAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain_association::UpdateDomainAssociationInput {
+                app_id: self.app_id
+                ,
+                domain_name: self.domain_name
+                ,
+                enable_auto_sub_domain: self.enable_auto_sub_domain
+                ,
+                sub_domain_settings: self.sub_domain_settings
+                ,
+                auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns
+                ,
+                auto_sub_domain_iam_role: self.auto_sub_domain_iam_role
+                ,
+                certificate_settings: self.certificate_settings
+                ,
+            }
+        )
     }
 }
+

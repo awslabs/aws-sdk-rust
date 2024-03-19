@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RollbackApplicationInput {
+pub struct RollbackApplicationInput  {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     pub current_application_version_id: ::std::option::Option<i64>,
 }
-impl RollbackApplicationInput {
+impl  RollbackApplicationInput  {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
@@ -41,8 +41,7 @@ impl RollbackApplicationInputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl RollbackApplicationInputBuilder {
     }
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.current_application_version_id
     }
     /// Consumes the builder and constructs a [`RollbackApplicationInput`](crate::operation::rollback_application::RollbackApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::rollback_application::RollbackApplicationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::rollback_application::RollbackApplicationInput {
-            application_name: self.application_name,
-            current_application_version_id: self.current_application_version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rollback_application::RollbackApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rollback_application::RollbackApplicationInput {
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+            }
+        )
     }
 }
+

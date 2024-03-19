@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRestoreJobs`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be returned.</p><br>
     ///   - [`by_account_id(impl Into<String>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::by_account_id) / [`set_by_account_id(Option<String>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::set_by_account_id):<br>required: **false**<br><p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`by_complete_before(DateTime)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::set_by_complete_before):<br>required: **false**<br><p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p><br>
     ///   - [`by_complete_after(DateTime)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::by_complete_after) / [`set_by_complete_after(Option<DateTime>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::set_by_complete_after):<br>required: **false**<br><p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p><br>
     ///   - [`by_restore_testing_plan_arn(impl Into<String>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::by_restore_testing_plan_arn) / [`set_by_restore_testing_plan_arn(Option<String>)`](crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::set_by_restore_testing_plan_arn):<br>required: **false**<br><p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p><br>
-    /// - On success, responds with [`ListRestoreJobsOutput`](crate::operation::list_restore_jobs::ListRestoreJobsOutput) with field(s):
+                            /// - On success, responds with [`ListRestoreJobsOutput`](crate::operation::list_restore_jobs::ListRestoreJobsOutput) with field(s):
     ///   - [`restore_jobs(Option<Vec::<RestoreJobsListMember>>)`](crate::operation::list_restore_jobs::ListRestoreJobsOutput::restore_jobs): <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_restore_jobs::ListRestoreJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    /// - On failure, responds with [`SdkError<ListRestoreJobsError>`](crate::operation::list_restore_jobs::ListRestoreJobsError)
+                            /// - On failure, responds with [`SdkError<ListRestoreJobsError>`](crate::operation::list_restore_jobs::ListRestoreJobsError)
     pub fn list_restore_jobs(&self) -> crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder {
-        crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

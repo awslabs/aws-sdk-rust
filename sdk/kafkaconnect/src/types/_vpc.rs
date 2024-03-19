@@ -3,23 +3,23 @@
 /// <p>Information about the VPC in which the connector resides.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Vpc {
+pub struct Vpc  {
     /// <p>The security groups for the connector.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The subnets for the connector.</p>
-    pub subnets: ::std::vec::Vec<::std::string::String>,
+    pub subnets: ::std::vec::Vec::<::std::string::String>,
 }
-impl Vpc {
+impl  Vpc  {
     /// <p>The security groups for the connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The subnets for the connector.</p>
-    pub fn subnets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnets.deref()
+    pub fn subnets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnets.deref()
     }
 }
 impl Vpc {
@@ -33,8 +33,8 @@ impl Vpc {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcBuilder {
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl VpcBuilder {
     /// Appends an item to `security_groups`.
@@ -44,17 +44,16 @@ impl VpcBuilder {
     /// <p>The security groups for the connector.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups for the connector.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The security groups for the connector.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// Appends an item to `subnets`.
@@ -64,31 +63,33 @@ impl VpcBuilder {
     /// <p>The subnets for the connector.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnets for the connector.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>The subnets for the connector.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnets
     }
     /// Consumes the builder and constructs a [`Vpc`](crate::types::Vpc).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnets`](crate::types::builders::VpcBuilder::subnets)
     pub fn build(self) -> ::std::result::Result<crate::types::Vpc, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Vpc {
-            security_groups: self.security_groups,
-            subnets: self.subnets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnets",
-                    "subnets was not specified but it is required when building Vpc",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Vpc {
+                security_groups: self.security_groups
+                ,
+                subnets: self.subnets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnets", "subnets was not specified but it is required when building Vpc")
+                    )?
+                ,
+            }
+        )
     }
 }
+

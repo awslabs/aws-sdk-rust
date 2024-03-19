@@ -3,13 +3,13 @@
 /// <p>Contains information on the status of CloudTrail as a data source for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudTrailConfigurationResult {
+pub struct CloudTrailConfigurationResult  {
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
-impl CloudTrailConfigurationResult {
+impl  CloudTrailConfigurationResult  {
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl CloudTrailConfigurationResultBuilder {
     }
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -44,6 +43,10 @@ impl CloudTrailConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`CloudTrailConfigurationResult`](crate::types::CloudTrailConfigurationResult).
     pub fn build(self) -> crate::types::CloudTrailConfigurationResult {
-        crate::types::CloudTrailConfigurationResult { status: self.status }
+        crate::types::CloudTrailConfigurationResult {
+            status: self.status
+            ,
+        }
     }
 }
+

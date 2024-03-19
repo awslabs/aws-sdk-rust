@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWebsiteCertificateAuthorities`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`fleet_arn(impl Into<String>)`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
-    /// - On success, responds with [`ListWebsiteCertificateAuthoritiesOutput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput) with field(s):
+                            /// - On success, responds with [`ListWebsiteCertificateAuthoritiesOutput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput) with field(s):
     ///   - [`website_certificate_authorities(Option<Vec::<WebsiteCaSummary>>)`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput::website_certificate_authorities): <p>Information about the certificates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListWebsiteCertificateAuthoritiesError>`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError)
+                            /// - On failure, responds with [`SdkError<ListWebsiteCertificateAuthoritiesError>`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
-    pub fn list_website_certificate_authorities(
-        &self,
-    ) -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder {
-        crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::new(self.handle.clone())
-    }
+    pub fn list_website_certificate_authorities(&self) -> crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder {
+                                crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

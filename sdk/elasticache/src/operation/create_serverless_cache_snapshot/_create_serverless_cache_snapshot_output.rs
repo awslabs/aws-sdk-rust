@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServerlessCacheSnapshotOutput {
+pub struct CreateServerlessCacheSnapshotOutput  {
     /// <p>The state of a serverless cache snapshot at a specific point in time, to the millisecond. Available for Redis only.</p>
     pub serverless_cache_snapshot: ::std::option::Option<crate::types::ServerlessCacheSnapshot>,
     _request_id: Option<String>,
 }
-impl CreateServerlessCacheSnapshotOutput {
+impl  CreateServerlessCacheSnapshotOutput  {
     /// <p>The state of a serverless cache snapshot at a specific point in time, to the millisecond. Available for Redis only.</p>
-    pub fn serverless_cache_snapshot(&self) -> ::std::option::Option<&crate::types::ServerlessCacheSnapshot> {
+    pub fn serverless_cache_snapshot(&self) -> ::std::option::Option<& crate::types::ServerlessCacheSnapshot> {
         self.serverless_cache_snapshot.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServerlessCacheSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateServerlessCacheSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateServerlessCacheSnapshotOutput`](crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotOutput).
     pub fn builder() -> crate::operation::create_serverless_cache_snapshot::builders::CreateServerlessCacheSnapshotOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateServerlessCacheSnapshotOutputBuilder {
     }
     /// <p>The state of a serverless cache snapshot at a specific point in time, to the millisecond. Available for Redis only.</p>
     pub fn set_serverless_cache_snapshot(mut self, input: ::std::option::Option<crate::types::ServerlessCacheSnapshot>) -> Self {
-        self.serverless_cache_snapshot = input;
-        self
+        self.serverless_cache_snapshot = input; self
     }
     /// <p>The state of a serverless cache snapshot at a specific point in time, to the millisecond. Available for Redis only.</p>
     pub fn get_serverless_cache_snapshot(&self) -> &::std::option::Option<crate::types::ServerlessCacheSnapshot> {
         &self.serverless_cache_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateServerlessCacheSnapshotOutput`](crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotOutput).
     pub fn build(self) -> crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotOutput {
         crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotOutput {
-            serverless_cache_snapshot: self.serverless_cache_snapshot,
+            serverless_cache_snapshot: self.serverless_cache_snapshot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

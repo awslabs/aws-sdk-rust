@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSensitivityInspectionTemplateOutput {
+pub struct GetSensitivityInspectionTemplateOutput  {
     /// <p>The custom description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
@@ -15,33 +15,33 @@ pub struct GetSensitivityInspectionTemplateOutput {
     pub sensitivity_inspection_template_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSensitivityInspectionTemplateOutput {
+impl  GetSensitivityInspectionTemplateOutput  {
     /// <p>The custom description of the template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateExcludes> {
+    pub fn excludes(&self) -> ::std::option::Option<& crate::types::SensitivityInspectionTemplateExcludes> {
         self.excludes.as_ref()
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
-    pub fn includes(&self) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateIncludes> {
+    pub fn includes(&self) -> ::std::option::Option<& crate::types::SensitivityInspectionTemplateIncludes> {
         self.includes.as_ref()
     }
     /// <p>The name of the template: automated-sensitive-data-discovery.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the template.</p>
-    pub fn sensitivity_inspection_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn sensitivity_inspection_template_id(&self) -> ::std::option::Option<& str> {
         self.sensitivity_inspection_template_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSensitivityInspectionTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSensitivityInspectionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateOutput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput).
     pub fn builder() -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateOutputBuilder {
@@ -68,8 +68,7 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
     }
     /// <p>The custom description of the template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The custom description of the template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
     }
     /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
     pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>) -> Self {
-        self.excludes = input;
-        self
+        self.excludes = input; self
     }
     /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
     pub fn get_excludes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes> {
@@ -96,8 +94,7 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>) -> Self {
-        self.includes = input;
-        self
+        self.includes = input; self
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
     pub fn get_includes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes> {
@@ -110,8 +107,7 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
     }
     /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,36 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
     }
     /// <p>The unique identifier for the template.</p>
     pub fn set_sensitivity_inspection_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sensitivity_inspection_template_id = input;
-        self
+        self.sensitivity_inspection_template_id = input; self
     }
     /// <p>The unique identifier for the template.</p>
     pub fn get_sensitivity_inspection_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sensitivity_inspection_template_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateOutput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput).
     pub fn build(self) -> crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput {
         crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput {
-            description: self.description,
-            excludes: self.excludes,
-            includes: self.includes,
-            name: self.name,
-            sensitivity_inspection_template_id: self.sensitivity_inspection_template_id,
+            description: self.description
+            ,
+            excludes: self.excludes
+            ,
+            includes: self.includes
+            ,
+            name: self.name
+            ,
+            sensitivity_inspection_template_id: self.sensitivity_inspection_template_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

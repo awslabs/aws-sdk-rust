@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCodeSigningConfigOutput {
+pub struct GetCodeSigningConfigOutput  {
     /// <p>The code signing configuration</p>
     pub code_signing_config: ::std::option::Option<crate::types::CodeSigningConfig>,
     _request_id: Option<String>,
 }
-impl GetCodeSigningConfigOutput {
+impl  GetCodeSigningConfigOutput  {
     /// <p>The code signing configuration</p>
-    pub fn code_signing_config(&self) -> ::std::option::Option<&crate::types::CodeSigningConfig> {
+    pub fn code_signing_config(&self) -> ::std::option::Option<& crate::types::CodeSigningConfig> {
         self.code_signing_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCodeSigningConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetCodeSigningConfigOutput`](crate::operation::get_code_signing_config::GetCodeSigningConfigOutput).
     pub fn builder() -> crate::operation::get_code_signing_config::builders::GetCodeSigningConfigOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCodeSigningConfigOutputBuilder {
     }
     /// <p>The code signing configuration</p>
     pub fn set_code_signing_config(mut self, input: ::std::option::Option<crate::types::CodeSigningConfig>) -> Self {
-        self.code_signing_config = input;
-        self
+        self.code_signing_config = input; self
     }
     /// <p>The code signing configuration</p>
     pub fn get_code_signing_config(&self) -> &::std::option::Option<crate::types::CodeSigningConfig> {
         &self.code_signing_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCodeSigningConfigOutput`](crate::operation::get_code_signing_config::GetCodeSigningConfigOutput).
     pub fn build(self) -> crate::operation::get_code_signing_config::GetCodeSigningConfigOutput {
         crate::operation::get_code_signing_config::GetCodeSigningConfigOutput {
-            code_signing_config: self.code_signing_config,
+            code_signing_config: self.code_signing_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

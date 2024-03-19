@@ -5,23 +5,20 @@ pub use crate::operation::start_ml_labeling_set_generation_task_run::_start_ml_l
 
 impl StartMlLabelingSetGenerationTaskRunInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_ml_labeling_set_generation_task_run();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_ml_labeling_set_generation_task_run();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartMLLabelingSetGenerationTaskRun`.
-///
+/// 
 /// <p>Starts the active learning workflow for your machine learning transform to improve the transform's quality by generating label sets and adding labels.</p>
 /// <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have generated a "labeling set" or a set of questions for humans to answer.</p>
 /// <p>In the case of the <code>FindMatches</code> transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?”</p>
@@ -29,91 +26,78 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMLLabelingSetGenerationTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder,
+                    inner: crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
-    > for StartMLLabelingSetGenerationTaskRunFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
-            crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
+                    crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
+                > for StartMLLabelingSetGenerationTaskRunFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
+                        crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartMLLabelingSetGenerationTaskRunFluentBuilder {
     /// Creates a new `StartMLLabelingSetGenerationTaskRun`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the StartMLLabelingSetGenerationTaskRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRun::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRun::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput,
-        crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRun::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRun::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput, crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transform_id(input.into());
@@ -143,3 +127,4 @@ impl StartMLLabelingSetGenerationTaskRunFluentBuilder {
         self.inner.get_output_s3_path()
     }
 }
+

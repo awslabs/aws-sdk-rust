@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWebExperienceInput {
+pub struct UpdateWebExperienceInput  {
     /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q web experience.</p>
@@ -18,33 +18,33 @@ pub struct UpdateWebExperienceInput {
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
 }
-impl UpdateWebExperienceInput {
+impl  UpdateWebExperienceInput  {
     /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q web experience.</p>
-    pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_experience_id(&self) -> ::std::option::Option<& str> {
         self.web_experience_id.as_deref()
     }
     /// <p>The authentication configuration of the Amazon Q web experience.</p>
-    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::WebExperienceAuthConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<& crate::types::WebExperienceAuthConfiguration> {
         self.authentication_configuration.as_ref()
     }
     /// <p>The title of the Amazon Q web experience.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The subtitle of the Amazon Q web experience.</p>
-    pub fn subtitle(&self) -> ::std::option::Option<&str> {
+    pub fn subtitle(&self) -> ::std::option::Option<& str> {
         self.subtitle.as_deref()
     }
     /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
-    pub fn welcome_message(&self) -> ::std::option::Option<&str> {
+    pub fn welcome_message(&self) -> ::std::option::Option<& str> {
         self.welcome_message.as_deref()
     }
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
-    pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<&crate::types::WebExperienceSamplePromptsControlMode> {
+    pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<& crate::types::WebExperienceSamplePromptsControlMode> {
         self.sample_prompts_control_mode.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_experience_id = input;
-        self
+        self.web_experience_id = input; self
     }
     /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>The authentication configuration of the Amazon Q web experience.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>) -> Self {
-        self.authentication_configuration = input;
-        self
+        self.authentication_configuration = input; self
     }
     /// <p>The authentication configuration of the Amazon Q web experience.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::WebExperienceAuthConfiguration> {
@@ -119,8 +116,7 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>The title of the Amazon Q web experience.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the Amazon Q web experience.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>The subtitle of the Amazon Q web experience.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subtitle = input;
-        self
+        self.subtitle = input; self
     }
     /// <p>The subtitle of the Amazon Q web experience.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
     pub fn set_welcome_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.welcome_message = input;
-        self
+        self.welcome_message = input; self
     }
     /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
     pub fn get_welcome_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,26 +155,32 @@ impl UpdateWebExperienceInputBuilder {
     }
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub fn set_sample_prompts_control_mode(mut self, input: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>) -> Self {
-        self.sample_prompts_control_mode = input;
-        self
+        self.sample_prompts_control_mode = input; self
     }
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         &self.sample_prompts_control_mode
     }
     /// Consumes the builder and constructs a [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_web_experience::UpdateWebExperienceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_web_experience::UpdateWebExperienceInput {
-            application_id: self.application_id,
-            web_experience_id: self.web_experience_id,
-            authentication_configuration: self.authentication_configuration,
-            title: self.title,
-            subtitle: self.subtitle,
-            welcome_message: self.welcome_message,
-            sample_prompts_control_mode: self.sample_prompts_control_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_web_experience::UpdateWebExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_web_experience::UpdateWebExperienceInput {
+                application_id: self.application_id
+                ,
+                web_experience_id: self.web_experience_id
+                ,
+                authentication_configuration: self.authentication_configuration
+                ,
+                title: self.title
+                ,
+                subtitle: self.subtitle
+                ,
+                welcome_message: self.welcome_message
+                ,
+                sample_prompts_control_mode: self.sample_prompts_control_mode
+                ,
+            }
+        )
     }
 }
+

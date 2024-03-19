@@ -3,19 +3,19 @@
 /// <p>Object that represents EIRP.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Eirp {
+pub struct Eirp  {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     pub value: f64,
     /// <p>Units of an EIRP.</p>
     pub units: crate::types::EirpUnits,
 }
-impl Eirp {
+impl  Eirp  {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     pub fn value(&self) -> f64 {
         self.value
     }
     /// <p>Units of an EIRP.</p>
-    pub fn units(&self) -> &crate::types::EirpUnits {
+    pub fn units(&self) -> & crate::types::EirpUnits {
         &self.units
     }
 }
@@ -42,8 +42,7 @@ impl EirpBuilder {
     }
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl EirpBuilder {
     }
     /// <p>Units of an EIRP.</p>
     pub fn set_units(mut self, input: ::std::option::Option<crate::types::EirpUnits>) -> Self {
-        self.units = input;
-        self
+        self.units = input; self
     }
     /// <p>Units of an EIRP.</p>
     pub fn get_units(&self) -> &::std::option::Option<crate::types::EirpUnits> {
@@ -69,19 +67,20 @@ impl EirpBuilder {
     /// - [`value`](crate::types::builders::EirpBuilder::value)
     /// - [`units`](crate::types::builders::EirpBuilder::units)
     pub fn build(self) -> ::std::result::Result<crate::types::Eirp, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Eirp {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Eirp",
-                )
-            })?,
-            units: self.units.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "units",
-                    "units was not specified but it is required when building Eirp",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Eirp {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Eirp")
+                    )?
+                ,
+                units: self.units
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("units", "units was not specified but it is required when building Eirp")
+                    )?
+                ,
+            }
+        )
     }
 }
+

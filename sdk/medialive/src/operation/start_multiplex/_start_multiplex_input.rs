@@ -3,13 +3,13 @@
 /// Placeholder documentation for StartMultiplexRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMultiplexInput {
+pub struct StartMultiplexInput  {
     /// The ID of the multiplex.
     pub multiplex_id: ::std::option::Option<::std::string::String>,
 }
-impl StartMultiplexInput {
+impl  StartMultiplexInput  {
     /// The ID of the multiplex.
-    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<& str> {
         self.multiplex_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl StartMultiplexInputBuilder {
     }
     /// The ID of the multiplex.
     pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multiplex_id = input;
-        self
+        self.multiplex_id = input; self
     }
     /// The ID of the multiplex.
     pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.multiplex_id
     }
     /// Consumes the builder and constructs a [`StartMultiplexInput`](crate::operation::start_multiplex::StartMultiplexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_multiplex::StartMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_multiplex::StartMultiplexInput {
-            multiplex_id: self.multiplex_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_multiplex::StartMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_multiplex::StartMultiplexInput {
+                multiplex_id: self.multiplex_id
+                ,
+            }
+        )
     }
 }
+

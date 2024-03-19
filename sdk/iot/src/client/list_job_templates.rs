@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListJobTemplates`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to return the next set of results in the list.</p><br>
-    /// - On success, responds with [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput) with field(s):
     ///   - [`job_templates(Option<Vec::<JobTemplateSummary>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::job_templates): <p>A list of objects that contain information about the job templates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::next_token): <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
     pub fn list_job_templates(&self) -> crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder {
-        crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

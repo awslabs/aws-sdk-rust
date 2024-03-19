@@ -5,112 +5,96 @@ pub use crate::operation::configure_logs_for_playback_configuration::_configure_
 
 impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.configure_logs_for_playback_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.configure_logs_for_playback_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ConfigureLogsForPlaybackConfiguration`.
-///
+/// 
 /// <p>Amazon CloudWatch log settings for a playback configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfigureLogsForPlaybackConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationInputBuilder,
+                    inner: crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
-    > for ConfigureLogsForPlaybackConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
+                    crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
+                > for ConfigureLogsForPlaybackConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
+                        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ConfigureLogsForPlaybackConfigurationFluentBuilder {
     /// Creates a new `ConfigureLogsForPlaybackConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the ConfigureLogsForPlaybackConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput, crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub fn percent_enabled(mut self, input: i32) -> Self {
@@ -143,3 +127,4 @@ impl ConfigureLogsForPlaybackConfigurationFluentBuilder {
         self.inner.get_playback_configuration_name()
     }
 }
+

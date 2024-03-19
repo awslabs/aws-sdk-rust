@@ -3,7 +3,7 @@
 /// <p>Describes a storage volume object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeInfo {
+pub struct VolumeInfo  {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
     /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
@@ -24,29 +24,29 @@ pub struct VolumeInfo {
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub volume_attachment_status: ::std::option::Option<::std::string::String>,
 }
-impl VolumeInfo {
+impl  VolumeInfo  {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
     /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -55,7 +55,7 @@ impl VolumeInfo {
         self.volume_size_in_bytes
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_attachment_status(&self) -> ::std::option::Option<&str> {
+    pub fn volume_attachment_status(&self) -> ::std::option::Option<& str> {
         self.volume_attachment_status.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl VolumeInfoBuilder {
     /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
     /// <p><code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code></p>
@@ -108,8 +107,7 @@ impl VolumeInfoBuilder {
     /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
@@ -123,8 +121,7 @@ impl VolumeInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl VolumeInfoBuilder {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
@@ -154,8 +150,7 @@ impl VolumeInfoBuilder {
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl VolumeInfoBuilder {
     /// <p>The size of the volume in bytes.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.volume_size_in_bytes = input;
-        self
+        self.volume_size_in_bytes = input; self
     }
     /// <p>The size of the volume in bytes.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
@@ -185,8 +179,7 @@ impl VolumeInfoBuilder {
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub fn set_volume_attachment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_attachment_status = input;
-        self
+        self.volume_attachment_status = input; self
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub fn get_volume_attachment_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,13 +188,22 @@ impl VolumeInfoBuilder {
     /// Consumes the builder and constructs a [`VolumeInfo`](crate::types::VolumeInfo).
     pub fn build(self) -> crate::types::VolumeInfo {
         crate::types::VolumeInfo {
-            volume_arn: self.volume_arn,
-            volume_id: self.volume_id,
-            gateway_arn: self.gateway_arn,
-            gateway_id: self.gateway_id,
-            volume_type: self.volume_type,
-            volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-            volume_attachment_status: self.volume_attachment_status,
+            volume_arn: self.volume_arn
+            ,
+            volume_id: self.volume_id
+            ,
+            gateway_arn: self.gateway_arn
+            ,
+            gateway_id: self.gateway_id
+            ,
+            volume_type: self.volume_type
+            ,
+            volume_size_in_bytes: self.volume_size_in_bytes
+                .unwrap_or_default()
+            ,
+            volume_attachment_status: self.volume_attachment_status
+            ,
         }
     }
 }
+

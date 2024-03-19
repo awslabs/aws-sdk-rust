@@ -3,11 +3,11 @@
 /// <p>Configures ENA Express for UDP network traffic from your launch template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnaSrdUdpSpecificationRequest {
+pub struct EnaSrdUdpSpecificationRequest  {
     /// <p>Indicates whether UDP traffic uses ENA Express for your instance. To ensure that UDP traffic can use ENA Express when you launch an instance, you must also set <b>EnaSrdEnabled</b> in the <b>EnaSrdSpecificationRequest</b> to <code>true</code> in your launch template.</p>
     pub ena_srd_udp_enabled: ::std::option::Option<bool>,
 }
-impl EnaSrdUdpSpecificationRequest {
+impl  EnaSrdUdpSpecificationRequest  {
     /// <p>Indicates whether UDP traffic uses ENA Express for your instance. To ensure that UDP traffic can use ENA Express when you launch an instance, you must also set <b>EnaSrdEnabled</b> in the <b>EnaSrdSpecificationRequest</b> to <code>true</code> in your launch template.</p>
     pub fn ena_srd_udp_enabled(&self) -> ::std::option::Option<bool> {
         self.ena_srd_udp_enabled
@@ -34,8 +34,7 @@ impl EnaSrdUdpSpecificationRequestBuilder {
     }
     /// <p>Indicates whether UDP traffic uses ENA Express for your instance. To ensure that UDP traffic can use ENA Express when you launch an instance, you must also set <b>EnaSrdEnabled</b> in the <b>EnaSrdSpecificationRequest</b> to <code>true</code> in your launch template.</p>
     pub fn set_ena_srd_udp_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ena_srd_udp_enabled = input;
-        self
+        self.ena_srd_udp_enabled = input; self
     }
     /// <p>Indicates whether UDP traffic uses ENA Express for your instance. To ensure that UDP traffic can use ENA Express when you launch an instance, you must also set <b>EnaSrdEnabled</b> in the <b>EnaSrdSpecificationRequest</b> to <code>true</code> in your launch template.</p>
     pub fn get_ena_srd_udp_enabled(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl EnaSrdUdpSpecificationRequestBuilder {
     /// Consumes the builder and constructs a [`EnaSrdUdpSpecificationRequest`](crate::types::EnaSrdUdpSpecificationRequest).
     pub fn build(self) -> crate::types::EnaSrdUdpSpecificationRequest {
         crate::types::EnaSrdUdpSpecificationRequest {
-            ena_srd_udp_enabled: self.ena_srd_udp_enabled,
+            ena_srd_udp_enabled: self.ena_srd_udp_enabled
+            ,
         }
     }
 }
+

@@ -21,22 +21,21 @@
 /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamoDBv2Action {
+pub struct DynamoDBv2Action  {
     /// <p>The name of the DynamoDB table.</p>
     pub table_name: ::std::string::String,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
-impl DynamoDBv2Action {
+impl  DynamoDBv2Action  {
     /// <p>The name of the DynamoDB table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -63,8 +62,7 @@ impl DynamoDBv2ActionBuilder {
     }
     /// <p>The name of the DynamoDB table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the DynamoDB table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl DynamoDBv2ActionBuilder {
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
@@ -91,14 +88,17 @@ impl DynamoDBv2ActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`table_name`](crate::types::builders::DynamoDBv2ActionBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamoDBv2Action, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamoDBv2Action {
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building DynamoDBv2Action",
-                )
-            })?,
-            payload: self.payload,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamoDBv2Action {
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building DynamoDBv2Action")
+                    )?
+                ,
+                payload: self.payload
+                ,
+            }
+        )
     }
 }
+

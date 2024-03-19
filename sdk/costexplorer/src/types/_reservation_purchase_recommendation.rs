@@ -3,7 +3,7 @@
 /// <p>A specific reservation that Amazon Web Services recommends for purchase.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendation {
+pub struct ReservationPurchaseRecommendation  {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
     pub account_scope: ::std::option::Option<crate::types::AccountScope>,
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
@@ -15,39 +15,40 @@ pub struct ReservationPurchaseRecommendation {
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
     pub service_specification: ::std::option::Option<crate::types::ServiceSpecification>,
     /// <p>Details about the recommended purchases.</p>
-    pub recommendation_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendationDetail>>,
+    pub recommendation_details: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationPurchaseRecommendationDetail>>,
     /// <p>A summary about the recommended purchase.</p>
     pub recommendation_summary: ::std::option::Option<crate::types::ReservationPurchaseRecommendationSummary>,
 }
-impl ReservationPurchaseRecommendation {
+impl  ReservationPurchaseRecommendation  {
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
-    pub fn account_scope(&self) -> ::std::option::Option<&crate::types::AccountScope> {
+    pub fn account_scope(&self) -> ::std::option::Option<& crate::types::AccountScope> {
         self.account_scope.as_ref()
     }
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    pub fn lookback_period_in_days(&self) -> ::std::option::Option<&crate::types::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> ::std::option::Option<& crate::types::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
-    pub fn term_in_years(&self) -> ::std::option::Option<&crate::types::TermInYears> {
+    pub fn term_in_years(&self) -> ::std::option::Option<& crate::types::TermInYears> {
         self.term_in_years.as_ref()
     }
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<& crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
-    pub fn service_specification(&self) -> ::std::option::Option<&crate::types::ServiceSpecification> {
+    pub fn service_specification(&self) -> ::std::option::Option<& crate::types::ServiceSpecification> {
         self.service_specification.as_ref()
     }
     /// <p>Details about the recommended purchases.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_details.is_none()`.
-    pub fn recommendation_details(&self) -> &[crate::types::ReservationPurchaseRecommendationDetail] {
-        self.recommendation_details.as_deref().unwrap_or_default()
+    pub fn recommendation_details(&self) -> & [crate::types::ReservationPurchaseRecommendationDetail] {
+        self.recommendation_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A summary about the recommended purchase.</p>
-    pub fn recommendation_summary(&self) -> ::std::option::Option<&crate::types::ReservationPurchaseRecommendationSummary> {
+    pub fn recommendation_summary(&self) -> ::std::option::Option<& crate::types::ReservationPurchaseRecommendationSummary> {
         self.recommendation_summary.as_ref()
     }
 }
@@ -67,7 +68,7 @@ pub struct ReservationPurchaseRecommendationBuilder {
     pub(crate) term_in_years: ::std::option::Option<crate::types::TermInYears>,
     pub(crate) payment_option: ::std::option::Option<crate::types::PaymentOption>,
     pub(crate) service_specification: ::std::option::Option<crate::types::ServiceSpecification>,
-    pub(crate) recommendation_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendationDetail>>,
+    pub(crate) recommendation_details: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationPurchaseRecommendationDetail>>,
     pub(crate) recommendation_summary: ::std::option::Option<crate::types::ReservationPurchaseRecommendationSummary>,
 }
 impl ReservationPurchaseRecommendationBuilder {
@@ -78,8 +79,7 @@ impl ReservationPurchaseRecommendationBuilder {
     }
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
     pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
-        self.account_scope = input;
-        self
+        self.account_scope = input; self
     }
     /// <p>The account scope that Amazon Web Services recommends that you purchase this instance for. For example, you can purchase this reservation for an entire organization in Amazon Web Services Organizations.</p>
     pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
@@ -92,8 +92,7 @@ impl ReservationPurchaseRecommendationBuilder {
     }
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
     pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<crate::types::LookbackPeriodInDays>) -> Self {
-        self.lookback_period_in_days = input;
-        self
+        self.lookback_period_in_days = input; self
     }
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
     pub fn get_lookback_period_in_days(&self) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
@@ -106,8 +105,7 @@ impl ReservationPurchaseRecommendationBuilder {
     }
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
     pub fn set_term_in_years(mut self, input: ::std::option::Option<crate::types::TermInYears>) -> Self {
-        self.term_in_years = input;
-        self
+        self.term_in_years = input; self
     }
     /// <p>The term of the reservation that you want recommendations for, in years.</p>
     pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
@@ -120,8 +118,7 @@ impl ReservationPurchaseRecommendationBuilder {
     }
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
@@ -134,8 +131,7 @@ impl ReservationPurchaseRecommendationBuilder {
     }
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
     pub fn set_service_specification(mut self, input: ::std::option::Option<crate::types::ServiceSpecification>) -> Self {
-        self.service_specification = input;
-        self
+        self.service_specification = input; self
     }
     /// <p>Hardware specifications for the service that you want recommendations for.</p>
     pub fn get_service_specification(&self) -> &::std::option::Option<crate::types::ServiceSpecification> {
@@ -148,20 +144,16 @@ impl ReservationPurchaseRecommendationBuilder {
     /// <p>Details about the recommended purchases.</p>
     pub fn recommendation_details(mut self, input: crate::types::ReservationPurchaseRecommendationDetail) -> Self {
         let mut v = self.recommendation_details.unwrap_or_default();
-        v.push(input);
-        self.recommendation_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendation_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the recommended purchases.</p>
-    pub fn set_recommendation_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendationDetail>>,
-    ) -> Self {
-        self.recommendation_details = input;
-        self
+    pub fn set_recommendation_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationPurchaseRecommendationDetail>>) -> Self {
+        self.recommendation_details = input; self
     }
     /// <p>Details about the recommended purchases.</p>
-    pub fn get_recommendation_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendationDetail>> {
+    pub fn get_recommendation_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservationPurchaseRecommendationDetail>> {
         &self.recommendation_details
     }
     /// <p>A summary about the recommended purchase.</p>
@@ -171,8 +163,7 @@ impl ReservationPurchaseRecommendationBuilder {
     }
     /// <p>A summary about the recommended purchase.</p>
     pub fn set_recommendation_summary(mut self, input: ::std::option::Option<crate::types::ReservationPurchaseRecommendationSummary>) -> Self {
-        self.recommendation_summary = input;
-        self
+        self.recommendation_summary = input; self
     }
     /// <p>A summary about the recommended purchase.</p>
     pub fn get_recommendation_summary(&self) -> &::std::option::Option<crate::types::ReservationPurchaseRecommendationSummary> {
@@ -181,13 +172,21 @@ impl ReservationPurchaseRecommendationBuilder {
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendation`](crate::types::ReservationPurchaseRecommendation).
     pub fn build(self) -> crate::types::ReservationPurchaseRecommendation {
         crate::types::ReservationPurchaseRecommendation {
-            account_scope: self.account_scope,
-            lookback_period_in_days: self.lookback_period_in_days,
-            term_in_years: self.term_in_years,
-            payment_option: self.payment_option,
-            service_specification: self.service_specification,
-            recommendation_details: self.recommendation_details,
-            recommendation_summary: self.recommendation_summary,
+            account_scope: self.account_scope
+            ,
+            lookback_period_in_days: self.lookback_period_in_days
+            ,
+            term_in_years: self.term_in_years
+            ,
+            payment_option: self.payment_option
+            ,
+            service_specification: self.service_specification
+            ,
+            recommendation_details: self.recommendation_details
+            ,
+            recommendation_summary: self.recommendation_summary
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The dimension type field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionField {
+pub struct DimensionField  {
     /// <p>The dimension type field with numerical type columns.</p>
     pub numerical_dimension_field: ::std::option::Option<crate::types::NumericalDimensionField>,
     /// <p>The dimension type field with categorical type columns.</p>
@@ -11,17 +11,17 @@ pub struct DimensionField {
     /// <p>The dimension type field with date type columns.</p>
     pub date_dimension_field: ::std::option::Option<crate::types::DateDimensionField>,
 }
-impl DimensionField {
+impl  DimensionField  {
     /// <p>The dimension type field with numerical type columns.</p>
-    pub fn numerical_dimension_field(&self) -> ::std::option::Option<&crate::types::NumericalDimensionField> {
+    pub fn numerical_dimension_field(&self) -> ::std::option::Option<& crate::types::NumericalDimensionField> {
         self.numerical_dimension_field.as_ref()
     }
     /// <p>The dimension type field with categorical type columns.</p>
-    pub fn categorical_dimension_field(&self) -> ::std::option::Option<&crate::types::CategoricalDimensionField> {
+    pub fn categorical_dimension_field(&self) -> ::std::option::Option<& crate::types::CategoricalDimensionField> {
         self.categorical_dimension_field.as_ref()
     }
     /// <p>The dimension type field with date type columns.</p>
-    pub fn date_dimension_field(&self) -> ::std::option::Option<&crate::types::DateDimensionField> {
+    pub fn date_dimension_field(&self) -> ::std::option::Option<& crate::types::DateDimensionField> {
         self.date_dimension_field.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DimensionFieldBuilder {
     }
     /// <p>The dimension type field with numerical type columns.</p>
     pub fn set_numerical_dimension_field(mut self, input: ::std::option::Option<crate::types::NumericalDimensionField>) -> Self {
-        self.numerical_dimension_field = input;
-        self
+        self.numerical_dimension_field = input; self
     }
     /// <p>The dimension type field with numerical type columns.</p>
     pub fn get_numerical_dimension_field(&self) -> &::std::option::Option<crate::types::NumericalDimensionField> {
@@ -62,8 +61,7 @@ impl DimensionFieldBuilder {
     }
     /// <p>The dimension type field with categorical type columns.</p>
     pub fn set_categorical_dimension_field(mut self, input: ::std::option::Option<crate::types::CategoricalDimensionField>) -> Self {
-        self.categorical_dimension_field = input;
-        self
+        self.categorical_dimension_field = input; self
     }
     /// <p>The dimension type field with categorical type columns.</p>
     pub fn get_categorical_dimension_field(&self) -> &::std::option::Option<crate::types::CategoricalDimensionField> {
@@ -76,8 +74,7 @@ impl DimensionFieldBuilder {
     }
     /// <p>The dimension type field with date type columns.</p>
     pub fn set_date_dimension_field(mut self, input: ::std::option::Option<crate::types::DateDimensionField>) -> Self {
-        self.date_dimension_field = input;
-        self
+        self.date_dimension_field = input; self
     }
     /// <p>The dimension type field with date type columns.</p>
     pub fn get_date_dimension_field(&self) -> &::std::option::Option<crate::types::DateDimensionField> {
@@ -86,9 +83,13 @@ impl DimensionFieldBuilder {
     /// Consumes the builder and constructs a [`DimensionField`](crate::types::DimensionField).
     pub fn build(self) -> crate::types::DimensionField {
         crate::types::DimensionField {
-            numerical_dimension_field: self.numerical_dimension_field,
-            categorical_dimension_field: self.categorical_dimension_field,
-            date_dimension_field: self.date_dimension_field,
+            numerical_dimension_field: self.numerical_dimension_field
+            ,
+            categorical_dimension_field: self.categorical_dimension_field
+            ,
+            date_dimension_field: self.date_dimension_field
+            ,
         }
     }
 }
+

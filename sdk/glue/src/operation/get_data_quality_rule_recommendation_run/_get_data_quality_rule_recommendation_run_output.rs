@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataQualityRuleRecommendationRunOutput {
+pub struct GetDataQualityRuleRecommendationRunOutput  {
     /// <p>The unique run identifier associated with this run.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The data source (an Glue table) associated with this run.</p>
@@ -31,17 +31,17 @@ pub struct GetDataQualityRuleRecommendationRunOutput {
     pub created_ruleset_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDataQualityRuleRecommendationRunOutput {
+impl  GetDataQualityRuleRecommendationRunOutput  {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The data source (an Glue table) associated with this run.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
@@ -53,23 +53,23 @@ impl GetDataQualityRuleRecommendationRunOutput {
         self.timeout
     }
     /// <p>The status for this run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskStatusType> {
         self.status.as_ref()
     }
     /// <p>The error strings that are associated with the run.</p>
-    pub fn error_string(&self) -> ::std::option::Option<&str> {
+    pub fn error_string(&self) -> ::std::option::Option<& str> {
         self.error_string.as_deref()
     }
     /// <p>The date and time when this run started.</p>
-    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
-    pub fn last_modified_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>The date and time when this run was completed.</p>
-    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
@@ -77,19 +77,19 @@ impl GetDataQualityRuleRecommendationRunOutput {
         self.execution_time
     }
     /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
-    pub fn recommended_ruleset(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_ruleset(&self) -> ::std::option::Option<& str> {
         self.recommended_ruleset.as_deref()
     }
     /// <p>The name of the ruleset that was created by the run.</p>
-    pub fn created_ruleset_name(&self) -> ::std::option::Option<&str> {
+    pub fn created_ruleset_name(&self) -> ::std::option::Option<& str> {
         self.created_ruleset_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataQualityRuleRecommendationRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataQualityRuleRecommendationRunOutput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput).
     pub fn builder() -> crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunOutputBuilder {
@@ -124,8 +124,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The data source (an Glue table) associated with this run.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The data source (an Glue table) associated with this run.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -152,8 +150,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +163,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_workers = input;
-        self
+        self.number_of_workers = input; self
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
@@ -180,8 +176,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
@@ -194,8 +189,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The status for this run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status for this run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatusType> {
@@ -208,8 +202,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The error strings that are associated with the run.</p>
     pub fn set_error_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_string = input;
-        self
+        self.error_string = input; self
     }
     /// <p>The error strings that are associated with the run.</p>
     pub fn get_error_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +215,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The date and time when this run started.</p>
     pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_on = input;
-        self
+        self.started_on = input; self
     }
     /// <p>The date and time when this run started.</p>
     pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +228,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
     pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_on = input;
-        self
+        self.last_modified_on = input; self
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
     pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,8 +241,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The date and time when this run was completed.</p>
     pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_on = input;
-        self
+        self.completed_on = input; self
     }
     /// <p>The date and time when this run was completed.</p>
     pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -264,8 +254,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
     pub fn set_execution_time(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_time = input;
-        self
+        self.execution_time = input; self
     }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
     pub fn get_execution_time(&self) -> &::std::option::Option<i32> {
@@ -278,8 +267,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
     pub fn set_recommended_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_ruleset = input;
-        self
+        self.recommended_ruleset = input; self
     }
     /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
     pub fn get_recommended_ruleset(&self) -> &::std::option::Option<::std::string::String> {
@@ -292,39 +280,53 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     }
     /// <p>The name of the ruleset that was created by the run.</p>
     pub fn set_created_ruleset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_ruleset_name = input;
-        self
+        self.created_ruleset_name = input; self
     }
     /// <p>The name of the ruleset that was created by the run.</p>
     pub fn get_created_ruleset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_ruleset_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput).
     pub fn build(self) -> crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput {
         crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput {
-            run_id: self.run_id,
-            data_source: self.data_source,
-            role: self.role,
-            number_of_workers: self.number_of_workers,
-            timeout: self.timeout,
-            status: self.status,
-            error_string: self.error_string,
-            started_on: self.started_on,
-            last_modified_on: self.last_modified_on,
-            completed_on: self.completed_on,
-            execution_time: self.execution_time.unwrap_or_default(),
-            recommended_ruleset: self.recommended_ruleset,
-            created_ruleset_name: self.created_ruleset_name,
+            run_id: self.run_id
+            ,
+            data_source: self.data_source
+            ,
+            role: self.role
+            ,
+            number_of_workers: self.number_of_workers
+            ,
+            timeout: self.timeout
+            ,
+            status: self.status
+            ,
+            error_string: self.error_string
+            ,
+            started_on: self.started_on
+            ,
+            last_modified_on: self.last_modified_on
+            ,
+            completed_on: self.completed_on
+            ,
+            execution_time: self.execution_time
+                .unwrap_or_default()
+            ,
+            recommended_ruleset: self.recommended_ruleset
+            ,
+            created_ruleset_name: self.created_ruleset_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

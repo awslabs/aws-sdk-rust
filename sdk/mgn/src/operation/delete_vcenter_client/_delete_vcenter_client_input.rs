@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVcenterClientInput {
+pub struct DeleteVcenterClientInput  {
     /// <p>ID of resource to be deleted.</p>
     pub vcenter_client_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVcenterClientInput {
+impl  DeleteVcenterClientInput  {
     /// <p>ID of resource to be deleted.</p>
-    pub fn vcenter_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> ::std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteVcenterClientInputBuilder {
     }
     /// <p>ID of resource to be deleted.</p>
     pub fn set_vcenter_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vcenter_client_id = input;
-        self
+        self.vcenter_client_id = input; self
     }
     /// <p>ID of resource to be deleted.</p>
     pub fn get_vcenter_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vcenter_client_id
     }
     /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
-            vcenter_client_id: self.vcenter_client_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
+                vcenter_client_id: self.vcenter_client_id
+                ,
+            }
+        )
     }
 }
+

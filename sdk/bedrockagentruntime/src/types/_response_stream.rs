@@ -22,11 +22,7 @@ impl ResponseStream {
     /// Tries to convert the enum instance into [`Chunk`](crate::types::ResponseStream::Chunk), extracting the inner [`PayloadPart`](crate::types::PayloadPart).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_chunk(&self) -> ::std::result::Result<&crate::types::PayloadPart, &Self> {
-        if let ResponseStream::Chunk(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResponseStream::Chunk(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Chunk`](crate::types::ResponseStream::Chunk).
     pub fn is_chunk(&self) -> bool {
@@ -35,11 +31,7 @@ impl ResponseStream {
     /// Tries to convert the enum instance into [`Trace`](crate::types::ResponseStream::Trace), extracting the inner [`TracePart`](crate::types::TracePart).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_trace(&self) -> ::std::result::Result<&crate::types::TracePart, &Self> {
-        if let ResponseStream::Trace(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResponseStream::Trace(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Trace`](crate::types::ResponseStream::Trace).
     pub fn is_trace(&self) -> bool {
@@ -59,3 +51,4 @@ impl ::std::fmt::Debug for ResponseStream {
         }
     }
 }
+

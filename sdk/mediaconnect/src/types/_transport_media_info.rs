@@ -3,16 +3,17 @@
 /// The metadata of the transport stream in the current flow's source.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransportMediaInfo {
+pub struct TransportMediaInfo  {
     /// The list of transport stream programs in the current flow's source.
-    pub programs: ::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>>,
+    pub programs: ::std::option::Option<::std::vec::Vec::<crate::types::TransportStreamProgram>>,
 }
-impl TransportMediaInfo {
+impl  TransportMediaInfo  {
     /// The list of transport stream programs in the current flow's source.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.programs.is_none()`.
-    pub fn programs(&self) -> &[crate::types::TransportStreamProgram] {
-        self.programs.as_deref().unwrap_or_default()
+    pub fn programs(&self) -> & [crate::types::TransportStreamProgram] {
+        self.programs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransportMediaInfo {
@@ -26,7 +27,7 @@ impl TransportMediaInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransportMediaInfoBuilder {
-    pub(crate) programs: ::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>>,
+    pub(crate) programs: ::std::option::Option<::std::vec::Vec::<crate::types::TransportStreamProgram>>,
 }
 impl TransportMediaInfoBuilder {
     /// Appends an item to `programs`.
@@ -36,21 +37,24 @@ impl TransportMediaInfoBuilder {
     /// The list of transport stream programs in the current flow's source.
     pub fn programs(mut self, input: crate::types::TransportStreamProgram) -> Self {
         let mut v = self.programs.unwrap_or_default();
-        v.push(input);
-        self.programs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.programs = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of transport stream programs in the current flow's source.
-    pub fn set_programs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>>) -> Self {
-        self.programs = input;
-        self
+    pub fn set_programs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransportStreamProgram>>) -> Self {
+        self.programs = input; self
     }
     /// The list of transport stream programs in the current flow's source.
-    pub fn get_programs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>> {
+    pub fn get_programs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransportStreamProgram>> {
         &self.programs
     }
     /// Consumes the builder and constructs a [`TransportMediaInfo`](crate::types::TransportMediaInfo).
     pub fn build(self) -> crate::types::TransportMediaInfo {
-        crate::types::TransportMediaInfo { programs: self.programs }
+        crate::types::TransportMediaInfo {
+            programs: self.programs
+            ,
+        }
     }
 }
+

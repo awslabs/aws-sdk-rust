@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClusterSnapshotInput {
+pub struct GetClusterSnapshotInput  {
     /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetClusterSnapshotInput {
+impl  GetClusterSnapshotInput  {
     /// <p>The ARN identifier of the elastic cluster snapshot.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetClusterSnapshotInputBuilder {
     }
     /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cluster_snapshot::GetClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_cluster_snapshot::GetClusterSnapshotInput {
-            snapshot_arn: self.snapshot_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster_snapshot::GetClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cluster_snapshot::GetClusterSnapshotInput {
+                snapshot_arn: self.snapshot_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetVpcEndpointOutput {
+pub struct BatchGetVpcEndpointOutput  {
     /// <p>Details about the specified VPC endpoint.</p>
-    pub vpc_endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>>,
+    pub vpc_endpoint_details: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointDetail>>,
     /// <p>Error information for a failed request.</p>
-    pub vpc_endpoint_error_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>>,
+    pub vpc_endpoint_error_details: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointErrorDetail>>,
     _request_id: Option<String>,
 }
-impl BatchGetVpcEndpointOutput {
+impl  BatchGetVpcEndpointOutput  {
     /// <p>Details about the specified VPC endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_details.is_none()`.
-    pub fn vpc_endpoint_details(&self) -> &[crate::types::VpcEndpointDetail] {
-        self.vpc_endpoint_details.as_deref().unwrap_or_default()
+    pub fn vpc_endpoint_details(&self) -> & [crate::types::VpcEndpointDetail] {
+        self.vpc_endpoint_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Error information for a failed request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_error_details.is_none()`.
-    pub fn vpc_endpoint_error_details(&self) -> &[crate::types::VpcEndpointErrorDetail] {
-        self.vpc_endpoint_error_details.as_deref().unwrap_or_default()
+    pub fn vpc_endpoint_error_details(&self) -> & [crate::types::VpcEndpointErrorDetail] {
+        self.vpc_endpoint_error_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetVpcEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetVpcEndpointOutput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput).
     pub fn builder() -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetVpcEndpointOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetVpcEndpointOutputBuilder {
-    pub(crate) vpc_endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>>,
-    pub(crate) vpc_endpoint_error_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>>,
+    pub(crate) vpc_endpoint_details: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointDetail>>,
+    pub(crate) vpc_endpoint_error_details: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchGetVpcEndpointOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetVpcEndpointOutputBuilder {
     /// <p>Details about the specified VPC endpoint.</p>
     pub fn vpc_endpoint_details(mut self, input: crate::types::VpcEndpointDetail) -> Self {
         let mut v = self.vpc_endpoint_details.unwrap_or_default();
-        v.push(input);
-        self.vpc_endpoint_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_endpoint_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the specified VPC endpoint.</p>
-    pub fn set_vpc_endpoint_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>>) -> Self {
-        self.vpc_endpoint_details = input;
-        self
+    pub fn set_vpc_endpoint_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointDetail>>) -> Self {
+        self.vpc_endpoint_details = input; self
     }
     /// <p>Details about the specified VPC endpoint.</p>
-    pub fn get_vpc_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>> {
+    pub fn get_vpc_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointDetail>> {
         &self.vpc_endpoint_details
     }
     /// Appends an item to `vpc_endpoint_error_details`.
@@ -71,34 +72,36 @@ impl BatchGetVpcEndpointOutputBuilder {
     /// <p>Error information for a failed request.</p>
     pub fn vpc_endpoint_error_details(mut self, input: crate::types::VpcEndpointErrorDetail) -> Self {
         let mut v = self.vpc_endpoint_error_details.unwrap_or_default();
-        v.push(input);
-        self.vpc_endpoint_error_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_endpoint_error_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Error information for a failed request.</p>
-    pub fn set_vpc_endpoint_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>>) -> Self {
-        self.vpc_endpoint_error_details = input;
-        self
+    pub fn set_vpc_endpoint_error_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointErrorDetail>>) -> Self {
+        self.vpc_endpoint_error_details = input; self
     }
     /// <p>Error information for a failed request.</p>
-    pub fn get_vpc_endpoint_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>> {
+    pub fn get_vpc_endpoint_error_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpointErrorDetail>> {
         &self.vpc_endpoint_error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointOutput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput).
     pub fn build(self) -> crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput {
         crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput {
-            vpc_endpoint_details: self.vpc_endpoint_details,
-            vpc_endpoint_error_details: self.vpc_endpoint_error_details,
+            vpc_endpoint_details: self.vpc_endpoint_details
+            ,
+            vpc_endpoint_error_details: self.vpc_endpoint_error_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkgroups`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p><br>
     ///   - [`owner_account(impl Into<String>)`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::owner_account) / [`set_owner_account(Option<String>)`](crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::set_owner_account):<br>required: **false**<br><p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p><br>
-    /// - On success, responds with [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workgroups::ListWorkgroupsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     ///   - [`workgroups(Vec::<Workgroup>)`](crate::operation::list_workgroups::ListWorkgroupsOutput::workgroups): <p>The returned array of workgroups.</p>
-    /// - On failure, responds with [`SdkError<ListWorkgroupsError>`](crate::operation::list_workgroups::ListWorkgroupsError)
+                            /// - On failure, responds with [`SdkError<ListWorkgroupsError>`](crate::operation::list_workgroups::ListWorkgroupsError)
     pub fn list_workgroups(&self) -> crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder {
-        crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

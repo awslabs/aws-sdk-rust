@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterResourceInput {
+pub struct DeregisterResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterResourceInput {
+impl  DeregisterResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeregisterResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_resource::DeregisterResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deregister_resource::DeregisterResourceInput {
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_resource::DeregisterResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_resource::DeregisterResourceInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

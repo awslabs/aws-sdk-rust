@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSets`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
     ///   - [`data_set_summaries(Option<Vec::<DataSetSummary>>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_set_summaries): <p>The list of dataset summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_data_sets::ListDataSetsOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
+                            /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
     pub fn list_data_sets(&self) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
-        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

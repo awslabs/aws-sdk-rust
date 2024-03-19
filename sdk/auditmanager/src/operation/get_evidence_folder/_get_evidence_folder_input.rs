@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEvidenceFolderInput {
+pub struct GetEvidenceFolderInput  {
     /// <p>The unique identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the control set.</p>
@@ -10,17 +10,17 @@ pub struct GetEvidenceFolderInput {
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
 }
-impl GetEvidenceFolderInput {
+impl  GetEvidenceFolderInput  {
     /// <p>The unique identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The unique identifier for the control set.</p>
-    pub fn control_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_id(&self) -> ::std::option::Option<& str> {
         self.control_set_id.as_deref()
     }
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
-    pub fn evidence_folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn evidence_folder_id(&self) -> ::std::option::Option<& str> {
         self.evidence_folder_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetEvidenceFolderInputBuilder {
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetEvidenceFolderInputBuilder {
     }
     /// <p>The unique identifier for the control set.</p>
     pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_set_id = input;
-        self
+        self.control_set_id = input; self
     }
     /// <p>The unique identifier for the control set.</p>
     pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetEvidenceFolderInputBuilder {
     }
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evidence_folder_id = input;
-        self
+        self.evidence_folder_id = input; self
     }
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evidence_folder_id
     }
     /// Consumes the builder and constructs a [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_evidence_folder::GetEvidenceFolderInput {
-            assessment_id: self.assessment_id,
-            control_set_id: self.control_set_id,
-            evidence_folder_id: self.evidence_folder_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_evidence_folder::GetEvidenceFolderInput {
+                assessment_id: self.assessment_id
+                ,
+                control_set_id: self.control_set_id
+                ,
+                evidence_folder_id: self.evidence_folder_id
+                ,
+            }
+        )
     }
 }
+

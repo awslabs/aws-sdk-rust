@@ -3,12 +3,12 @@
 /// <p>Describes whether monitoring is enabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotFleetMonitoring {
+pub struct SpotFleetMonitoring  {
     /// <p>Enables monitoring for the instance.</p>
     /// <p>Default: <code>false</code></p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl SpotFleetMonitoring {
+impl  SpotFleetMonitoring  {
     /// <p>Enables monitoring for the instance.</p>
     /// <p>Default: <code>false</code></p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -38,8 +38,7 @@ impl SpotFleetMonitoringBuilder {
     /// <p>Enables monitoring for the instance.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enables monitoring for the instance.</p>
     /// <p>Default: <code>false</code></p>
@@ -48,6 +47,10 @@ impl SpotFleetMonitoringBuilder {
     }
     /// Consumes the builder and constructs a [`SpotFleetMonitoring`](crate::types::SpotFleetMonitoring).
     pub fn build(self) -> crate::types::SpotFleetMonitoring {
-        crate::types::SpotFleetMonitoring { enabled: self.enabled }
+        crate::types::SpotFleetMonitoring {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

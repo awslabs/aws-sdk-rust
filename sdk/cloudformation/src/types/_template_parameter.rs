@@ -3,7 +3,7 @@
 /// <p>The TemplateParameter data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateParameter {
+pub struct TemplateParameter  {
     /// <p>The name associated with the parameter.</p>
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value associated with the parameter.</p>
@@ -13,13 +13,13 @@ pub struct TemplateParameter {
     /// <p>User defined description associated with the parameter.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl TemplateParameter {
+impl  TemplateParameter  {
     /// <p>The name associated with the parameter.</p>
-    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_key(&self) -> ::std::option::Option<& str> {
         self.parameter_key.as_deref()
     }
     /// <p>The default value associated with the parameter.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
@@ -27,7 +27,7 @@ impl TemplateParameter {
         self.no_echo
     }
     /// <p>User defined description associated with the parameter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TemplateParameterBuilder {
     }
     /// <p>The name associated with the parameter.</p>
     pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_key = input;
-        self
+        self.parameter_key = input; self
     }
     /// <p>The name associated with the parameter.</p>
     pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TemplateParameterBuilder {
     }
     /// <p>The default value associated with the parameter.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value associated with the parameter.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TemplateParameterBuilder {
     }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_echo = input;
-        self
+        self.no_echo = input; self
     }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     pub fn get_no_echo(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl TemplateParameterBuilder {
     }
     /// <p>User defined description associated with the parameter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>User defined description associated with the parameter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl TemplateParameterBuilder {
     /// Consumes the builder and constructs a [`TemplateParameter`](crate::types::TemplateParameter).
     pub fn build(self) -> crate::types::TemplateParameter {
         crate::types::TemplateParameter {
-            parameter_key: self.parameter_key,
-            default_value: self.default_value,
-            no_echo: self.no_echo,
-            description: self.description,
+            parameter_key: self.parameter_key
+            ,
+            default_value: self.default_value
+            ,
+            no_echo: self.no_echo
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

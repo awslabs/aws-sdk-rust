@@ -3,9 +3,9 @@
 /// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StillWaitingResponseSpecification {
+pub struct StillWaitingResponseSpecification  {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub message_groups: ::std::vec::Vec<crate::types::MessageGroup>,
+    pub message_groups: ::std::vec::Vec::<crate::types::MessageGroup>,
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub frequency_in_seconds: i32,
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
@@ -13,11 +13,10 @@ pub struct StillWaitingResponseSpecification {
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub allow_interrupt: ::std::option::Option<bool>,
 }
-impl StillWaitingResponseSpecification {
+impl  StillWaitingResponseSpecification  {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn message_groups(&self) -> &[crate::types::MessageGroup] {
-        use std::ops::Deref;
-        self.message_groups.deref()
+    pub fn message_groups(&self) -> & [crate::types::MessageGroup] {
+        use std::ops::Deref; self.message_groups.deref()
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn frequency_in_seconds(&self) -> i32 {
@@ -43,7 +42,7 @@ impl StillWaitingResponseSpecification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StillWaitingResponseSpecificationBuilder {
-    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>>,
     pub(crate) frequency_in_seconds: ::std::option::Option<i32>,
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) allow_interrupt: ::std::option::Option<bool>,
@@ -56,17 +55,16 @@ impl StillWaitingResponseSpecificationBuilder {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
-        v.push(input);
-        self.message_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.message_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>) -> Self {
-        self.message_groups = input;
-        self
+    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>>) -> Self {
+        self.message_groups = input; self
     }
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>> {
         &self.message_groups
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
@@ -77,8 +75,7 @@ impl StillWaitingResponseSpecificationBuilder {
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn set_frequency_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.frequency_in_seconds = input;
-        self
+        self.frequency_in_seconds = input; self
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn get_frequency_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -92,8 +89,7 @@ impl StillWaitingResponseSpecificationBuilder {
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -106,8 +102,7 @@ impl StillWaitingResponseSpecificationBuilder {
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_interrupt = input;
-        self
+        self.allow_interrupt = input; self
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
@@ -119,26 +114,27 @@ impl StillWaitingResponseSpecificationBuilder {
     /// - [`frequency_in_seconds`](crate::types::builders::StillWaitingResponseSpecificationBuilder::frequency_in_seconds)
     /// - [`timeout_in_seconds`](crate::types::builders::StillWaitingResponseSpecificationBuilder::timeout_in_seconds)
     pub fn build(self) -> ::std::result::Result<crate::types::StillWaitingResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StillWaitingResponseSpecification {
-            message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_groups",
-                    "message_groups was not specified but it is required when building StillWaitingResponseSpecification",
-                )
-            })?,
-            frequency_in_seconds: self.frequency_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "frequency_in_seconds",
-                    "frequency_in_seconds was not specified but it is required when building StillWaitingResponseSpecification",
-                )
-            })?,
-            timeout_in_seconds: self.timeout_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timeout_in_seconds",
-                    "timeout_in_seconds was not specified but it is required when building StillWaitingResponseSpecification",
-                )
-            })?,
-            allow_interrupt: self.allow_interrupt,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StillWaitingResponseSpecification {
+                message_groups: self.message_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_groups", "message_groups was not specified but it is required when building StillWaitingResponseSpecification")
+                    )?
+                ,
+                frequency_in_seconds: self.frequency_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("frequency_in_seconds", "frequency_in_seconds was not specified but it is required when building StillWaitingResponseSpecification")
+                    )?
+                ,
+                timeout_in_seconds: self.timeout_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timeout_in_seconds", "timeout_in_seconds was not specified but it is required when building StillWaitingResponseSpecification")
+                    )?
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
+            }
+        )
     }
 }
+

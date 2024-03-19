@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomActionTypeInput {
+pub struct DeleteCustomActionTypeInput  {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
@@ -11,17 +11,17 @@ pub struct DeleteCustomActionTypeInput {
     /// <p>The version of the custom action to delete.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCustomActionTypeInput {
+impl  DeleteCustomActionTypeInput  {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::ActionCategory> {
         self.category.as_ref()
     }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>The version of the custom action to delete.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DeleteCustomActionTypeInputBuilder {
     }
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
@@ -64,8 +63,7 @@ impl DeleteCustomActionTypeInputBuilder {
     }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,24 +77,24 @@ impl DeleteCustomActionTypeInputBuilder {
     }
     /// <p>The version of the custom action to delete.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the custom action to delete.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     /// Consumes the builder and constructs a [`DeleteCustomActionTypeInput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput {
-            category: self.category,
-            provider: self.provider,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput {
+                category: self.category
+                ,
+                provider: self.provider
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

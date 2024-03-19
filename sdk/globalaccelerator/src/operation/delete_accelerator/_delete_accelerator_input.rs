@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAcceleratorInput {
+pub struct DeleteAcceleratorInput  {
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAcceleratorInput {
+impl  DeleteAcceleratorInput  {
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
-    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteAcceleratorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
     pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
     pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.accelerator_arn
     }
     /// Consumes the builder and constructs a [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_accelerator::DeleteAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_accelerator::DeleteAcceleratorInput {
-            accelerator_arn: self.accelerator_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_accelerator::DeleteAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_accelerator::DeleteAcceleratorInput {
+                accelerator_arn: self.accelerator_arn
+                ,
+            }
+        )
     }
 }
+

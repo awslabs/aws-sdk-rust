@@ -3,15 +3,14 @@
 /// <p>Information about the number of aggregation functions that the member who can query can run given the epsilon and noise parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacyPrivacyImpact {
+pub struct DifferentialPrivacyPrivacyImpact  {
     /// <p>The number of aggregation functions that you can perform.</p>
-    pub aggregations: ::std::vec::Vec<crate::types::DifferentialPrivacyPreviewAggregation>,
+    pub aggregations: ::std::vec::Vec::<crate::types::DifferentialPrivacyPreviewAggregation>,
 }
-impl DifferentialPrivacyPrivacyImpact {
+impl  DifferentialPrivacyPrivacyImpact  {
     /// <p>The number of aggregation functions that you can perform.</p>
-    pub fn aggregations(&self) -> &[crate::types::DifferentialPrivacyPreviewAggregation] {
-        use std::ops::Deref;
-        self.aggregations.deref()
+    pub fn aggregations(&self) -> & [crate::types::DifferentialPrivacyPreviewAggregation] {
+        use std::ops::Deref; self.aggregations.deref()
     }
 }
 impl DifferentialPrivacyPrivacyImpact {
@@ -25,7 +24,7 @@ impl DifferentialPrivacyPrivacyImpact {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DifferentialPrivacyPrivacyImpactBuilder {
-    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPreviewAggregation>>,
+    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec::<crate::types::DifferentialPrivacyPreviewAggregation>>,
 }
 impl DifferentialPrivacyPrivacyImpactBuilder {
     /// Appends an item to `aggregations`.
@@ -35,30 +34,31 @@ impl DifferentialPrivacyPrivacyImpactBuilder {
     /// <p>The number of aggregation functions that you can perform.</p>
     pub fn aggregations(mut self, input: crate::types::DifferentialPrivacyPreviewAggregation) -> Self {
         let mut v = self.aggregations.unwrap_or_default();
-        v.push(input);
-        self.aggregations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The number of aggregation functions that you can perform.</p>
-    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPreviewAggregation>>) -> Self {
-        self.aggregations = input;
-        self
+    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DifferentialPrivacyPreviewAggregation>>) -> Self {
+        self.aggregations = input; self
     }
     /// <p>The number of aggregation functions that you can perform.</p>
-    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPreviewAggregation>> {
+    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DifferentialPrivacyPreviewAggregation>> {
         &self.aggregations
     }
     /// Consumes the builder and constructs a [`DifferentialPrivacyPrivacyImpact`](crate::types::DifferentialPrivacyPrivacyImpact).
     /// This method will fail if any of the following fields are not set:
     /// - [`aggregations`](crate::types::builders::DifferentialPrivacyPrivacyImpactBuilder::aggregations)
     pub fn build(self) -> ::std::result::Result<crate::types::DifferentialPrivacyPrivacyImpact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DifferentialPrivacyPrivacyImpact {
-            aggregations: self.aggregations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregations",
-                    "aggregations was not specified but it is required when building DifferentialPrivacyPrivacyImpact",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DifferentialPrivacyPrivacyImpact {
+                aggregations: self.aggregations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregations", "aggregations was not specified but it is required when building DifferentialPrivacyPrivacyImpact")
+                    )?
+                ,
+            }
+        )
     }
 }
+

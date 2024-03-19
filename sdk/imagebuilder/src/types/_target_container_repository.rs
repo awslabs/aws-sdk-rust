@@ -3,21 +3,20 @@
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetContainerRepository {
+pub struct TargetContainerRepository  {
     /// <p>Specifies the service in which this image was registered.</p>
     pub service: crate::types::ContainerRepositoryService,
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub repository_name: ::std::string::String,
 }
-impl TargetContainerRepository {
+impl  TargetContainerRepository  {
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn service(&self) -> &crate::types::ContainerRepositoryService {
+    pub fn service(&self) -> & crate::types::ContainerRepositoryService {
         &self.service
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> & str {
+        use std::ops::Deref; self.repository_name.deref()
     }
 }
 impl TargetContainerRepository {
@@ -43,8 +42,7 @@ impl TargetContainerRepositoryBuilder {
     }
     /// <p>Specifies the service in which this image was registered.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::ContainerRepositoryService>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>Specifies the service in which this image was registered.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ContainerRepositoryService> {
@@ -58,8 +56,7 @@ impl TargetContainerRepositoryBuilder {
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl TargetContainerRepositoryBuilder {
     /// - [`service`](crate::types::builders::TargetContainerRepositoryBuilder::service)
     /// - [`repository_name`](crate::types::builders::TargetContainerRepositoryBuilder::repository_name)
     pub fn build(self) -> ::std::result::Result<crate::types::TargetContainerRepository, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TargetContainerRepository {
-            service: self.service.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service",
-                    "service was not specified but it is required when building TargetContainerRepository",
-                )
-            })?,
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building TargetContainerRepository",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TargetContainerRepository {
+                service: self.service
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service", "service was not specified but it is required when building TargetContainerRepository")
+                    )?
+                ,
+                repository_name: self.repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_name", "repository_name was not specified but it is required when building TargetContainerRepository")
+                    )?
+                ,
+            }
+        )
     }
 }
+

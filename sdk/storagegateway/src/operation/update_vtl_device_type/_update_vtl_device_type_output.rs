@@ -3,22 +3,22 @@
 /// <p>UpdateVTLDeviceTypeOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVtlDeviceTypeOutput {
+pub struct UpdateVtlDeviceTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
     pub vtl_device_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateVtlDeviceTypeOutput {
+impl  UpdateVtlDeviceTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
-    pub fn vtl_device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vtl_device_arn(&self) -> ::std::option::Option<& str> {
         self.vtl_device_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateVtlDeviceTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateVtlDeviceTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVtlDeviceTypeOutput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput).
     pub fn builder() -> crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateVtlDeviceTypeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
     pub fn set_vtl_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vtl_device_arn = input;
-        self
+        self.vtl_device_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
     pub fn get_vtl_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.vtl_device_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateVtlDeviceTypeOutput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput).
     pub fn build(self) -> crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput {
         crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput {
-            vtl_device_arn: self.vtl_device_arn,
+            vtl_device_arn: self.vtl_device_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualGatewayTlsValidationContextAcmTrust {
+pub struct VirtualGatewayTlsValidationContextAcmTrust  {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub certificate_authority_arns: ::std::vec::Vec<::std::string::String>,
+    pub certificate_authority_arns: ::std::vec::Vec::<::std::string::String>,
 }
-impl VirtualGatewayTlsValidationContextAcmTrust {
+impl  VirtualGatewayTlsValidationContextAcmTrust  {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn certificate_authority_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.certificate_authority_arns.deref()
+    pub fn certificate_authority_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.certificate_authority_arns.deref()
     }
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {
@@ -25,7 +24,7 @@ impl VirtualGatewayTlsValidationContextAcmTrust {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextAcmTrustBuilder {
-    pub(crate) certificate_authority_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_authority_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl VirtualGatewayTlsValidationContextAcmTrustBuilder {
     /// Appends an item to `certificate_authority_arns`.
@@ -35,32 +34,31 @@ impl VirtualGatewayTlsValidationContextAcmTrustBuilder {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     pub fn certificate_authority_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_authority_arns.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_authority_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_authority_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn set_certificate_authority_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.certificate_authority_arns = input;
-        self
+    pub fn set_certificate_authority_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.certificate_authority_arns = input; self
     }
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn get_certificate_authority_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_authority_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.certificate_authority_arns
     }
     /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextAcmTrust`](crate::types::VirtualGatewayTlsValidationContextAcmTrust).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_authority_arns`](crate::types::builders::VirtualGatewayTlsValidationContextAcmTrustBuilder::certificate_authority_arns)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextAcmTrust, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualGatewayTlsValidationContextAcmTrust {
-            certificate_authority_arns: self.certificate_authority_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_authority_arns",
-                    "certificate_authority_arns was not specified but it is required when building VirtualGatewayTlsValidationContextAcmTrust",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextAcmTrust, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::VirtualGatewayTlsValidationContextAcmTrust {
+                certificate_authority_arns: self.certificate_authority_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_authority_arns", "certificate_authority_arns was not specified but it is required when building VirtualGatewayTlsValidationContextAcmTrust")
+                    )?
+                ,
+            }
+        )
     }
 }
+

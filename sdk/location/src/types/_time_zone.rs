@@ -3,17 +3,16 @@
 /// <p>Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeZone {
+pub struct TimeZone  {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     pub name: ::std::string::String,
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub offset: ::std::option::Option<i32>,
 }
-impl TimeZone {
+impl  TimeZone  {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn offset(&self) -> ::std::option::Option<i32> {
@@ -43,8 +42,7 @@ impl TimeZoneBuilder {
     }
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl TimeZoneBuilder {
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn get_offset(&self) -> &::std::option::Option<i32> {
@@ -68,14 +65,17 @@ impl TimeZoneBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TimeZoneBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeZone, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeZone {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TimeZone",
-                )
-            })?,
-            offset: self.offset,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeZone {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TimeZone")
+                    )?
+                ,
+                offset: self.offset
+                ,
+            }
+        )
     }
 }
+

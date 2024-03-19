@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecoveryPointLifecycleOutput {
+pub struct UpdateRecoveryPointLifecycleOutput  {
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -15,31 +15,31 @@ pub struct UpdateRecoveryPointLifecycleOutput {
     pub calculated_lifecycle: ::std::option::Option<crate::types::CalculatedLifecycle>,
     _request_id: Option<String>,
 }
-impl UpdateRecoveryPointLifecycleOutput {
+impl  UpdateRecoveryPointLifecycleOutput  {
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_point_arn.as_deref()
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::Lifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::Lifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    pub fn calculated_lifecycle(&self) -> ::std::option::Option<&crate::types::CalculatedLifecycle> {
+    pub fn calculated_lifecycle(&self) -> ::std::option::Option<& crate::types::CalculatedLifecycle> {
         self.calculated_lifecycle.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRecoveryPointLifecycleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRecoveryPointLifecycleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryPointLifecycleOutput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput).
     pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleOutputBuilder {
@@ -65,8 +65,7 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
     }
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_arn = input;
-        self
+        self.backup_vault_arn = input; self
     }
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_arn = input;
-        self
+        self.recovery_point_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::Lifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
@@ -113,30 +110,34 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
     pub fn set_calculated_lifecycle(mut self, input: ::std::option::Option<crate::types::CalculatedLifecycle>) -> Self {
-        self.calculated_lifecycle = input;
-        self
+        self.calculated_lifecycle = input; self
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
     pub fn get_calculated_lifecycle(&self) -> &::std::option::Option<crate::types::CalculatedLifecycle> {
         &self.calculated_lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRecoveryPointLifecycleOutput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput).
     pub fn build(self) -> crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput {
         crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput {
-            backup_vault_arn: self.backup_vault_arn,
-            recovery_point_arn: self.recovery_point_arn,
-            lifecycle: self.lifecycle,
-            calculated_lifecycle: self.calculated_lifecycle,
+            backup_vault_arn: self.backup_vault_arn
+            ,
+            recovery_point_arn: self.recovery_point_arn
+            ,
+            lifecycle: self.lifecycle
+            ,
+            calculated_lifecycle: self.calculated_lifecycle
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopAppReplicationOutput {
+pub struct StopAppReplicationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for StopAppReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopAppReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput).
     pub fn builder() -> crate::operation::stop_app_replication::builders::StopAppReplicationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct StopAppReplicationOutputBuilder {
 }
 impl StopAppReplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput).
     pub fn build(self) -> crate::operation::stop_app_replication::StopAppReplicationOutput {
         crate::operation::stop_app_replication::StopAppReplicationOutput {
@@ -40,3 +40,4 @@ impl StopAppReplicationOutputBuilder {
         }
     }
 }
+

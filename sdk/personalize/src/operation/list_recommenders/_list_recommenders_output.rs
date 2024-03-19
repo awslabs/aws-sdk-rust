@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendersOutput {
+pub struct ListRecommendersOutput  {
     /// <p>A list of the recommenders.</p>
-    pub recommenders: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>,
+    pub recommenders: ::std::option::Option<::std::vec::Vec::<crate::types::RecommenderSummary>>,
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRecommendersOutput {
+impl  ListRecommendersOutput  {
     /// <p>A list of the recommenders.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommenders.is_none()`.
-    pub fn recommenders(&self) -> &[crate::types::RecommenderSummary] {
-        self.recommenders.as_deref().unwrap_or_default()
+    pub fn recommenders(&self) -> & [crate::types::RecommenderSummary] {
+        self.recommenders.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecommendersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecommendersOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendersOutput`](crate::operation::list_recommenders::ListRecommendersOutput).
     pub fn builder() -> crate::operation::list_recommenders::builders::ListRecommendersOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRecommendersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendersOutputBuilder {
-    pub(crate) recommenders: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>,
+    pub(crate) recommenders: ::std::option::Option<::std::vec::Vec::<crate::types::RecommenderSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRecommendersOutputBuilder {
     /// <p>A list of the recommenders.</p>
     pub fn recommenders(mut self, input: crate::types::RecommenderSummary) -> Self {
         let mut v = self.recommenders.unwrap_or_default();
-        v.push(input);
-        self.recommenders = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommenders = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the recommenders.</p>
-    pub fn set_recommenders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>) -> Self {
-        self.recommenders = input;
-        self
+    pub fn set_recommenders(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommenderSummary>>) -> Self {
+        self.recommenders = input; self
     }
     /// <p>A list of the recommenders.</p>
-    pub fn get_recommenders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>> {
+    pub fn get_recommenders(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommenderSummary>> {
         &self.recommenders
     }
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
@@ -69,28 +69,30 @@ impl ListRecommendersOutputBuilder {
     }
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecommendersOutput`](crate::operation::list_recommenders::ListRecommendersOutput).
     pub fn build(self) -> crate::operation::list_recommenders::ListRecommendersOutput {
         crate::operation::list_recommenders::ListRecommendersOutput {
-            recommenders: self.recommenders,
-            next_token: self.next_token,
+            recommenders: self.recommenders
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

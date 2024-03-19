@@ -3,19 +3,19 @@
 /// The video configuration for each program in a multiplex.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiplexVideoSettings {
+pub struct MultiplexVideoSettings  {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     pub constant_bitrate: ::std::option::Option<i32>,
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
     pub statmux_settings: ::std::option::Option<crate::types::MultiplexStatmuxVideoSettings>,
 }
-impl MultiplexVideoSettings {
+impl  MultiplexVideoSettings  {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     pub fn constant_bitrate(&self) -> ::std::option::Option<i32> {
         self.constant_bitrate
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
-    pub fn statmux_settings(&self) -> ::std::option::Option<&crate::types::MultiplexStatmuxVideoSettings> {
+    pub fn statmux_settings(&self) -> ::std::option::Option<& crate::types::MultiplexStatmuxVideoSettings> {
         self.statmux_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MultiplexVideoSettingsBuilder {
     }
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     pub fn set_constant_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.constant_bitrate = input;
-        self
+        self.constant_bitrate = input; self
     }
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     pub fn get_constant_bitrate(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl MultiplexVideoSettingsBuilder {
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
     pub fn set_statmux_settings(mut self, input: ::std::option::Option<crate::types::MultiplexStatmuxVideoSettings>) -> Self {
-        self.statmux_settings = input;
-        self
+        self.statmux_settings = input; self
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
     pub fn get_statmux_settings(&self) -> &::std::option::Option<crate::types::MultiplexStatmuxVideoSettings> {
@@ -65,8 +63,11 @@ impl MultiplexVideoSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexVideoSettings`](crate::types::MultiplexVideoSettings).
     pub fn build(self) -> crate::types::MultiplexVideoSettings {
         crate::types::MultiplexVideoSettings {
-            constant_bitrate: self.constant_bitrate,
-            statmux_settings: self.statmux_settings,
+            constant_bitrate: self.constant_bitrate
+            ,
+            statmux_settings: self.statmux_settings
+            ,
         }
     }
 }
+

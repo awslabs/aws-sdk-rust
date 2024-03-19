@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLocationNfsInput {
+pub struct UpdateLocationNfsInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
@@ -13,22 +13,22 @@ pub struct UpdateLocationNfsInput {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }
-impl UpdateLocationNfsInput {
+impl  UpdateLocationNfsInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
-    pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
+    pub fn on_prem_config(&self) -> ::std::option::Option<& crate::types::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::NfsMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<& crate::types::NfsMountOptions> {
         self.mount_options.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateLocationNfsInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl UpdateLocationNfsInputBuilder {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
@@ -88,8 +86,7 @@ impl UpdateLocationNfsInputBuilder {
     }
     /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
-        self.on_prem_config = input;
-        self
+        self.on_prem_config = input; self
     }
     /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
@@ -102,22 +99,26 @@ impl UpdateLocationNfsInputBuilder {
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
-        self.mount_options = input;
-        self
+        self.mount_options = input; self
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::NfsMountOptions> {
         &self.mount_options
     }
     /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_location_nfs::UpdateLocationNfsInput {
-            location_arn: self.location_arn,
-            subdirectory: self.subdirectory,
-            on_prem_config: self.on_prem_config,
-            mount_options: self.mount_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_location_nfs::UpdateLocationNfsInput {
+                location_arn: self.location_arn
+                ,
+                subdirectory: self.subdirectory
+                ,
+                on_prem_config: self.on_prem_config
+                ,
+                mount_options: self.mount_options
+                ,
+            }
+        )
     }
 }
+

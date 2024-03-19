@@ -10,22 +10,23 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationRuleAndOperator {
+pub struct ReplicationRuleAndOperator  {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags that contain key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
 }
-impl ReplicationRuleAndOperator {
+impl  ReplicationRuleAndOperator  {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>An array of tags that contain key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::S3Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::S3Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReplicationRuleAndOperator {
@@ -40,7 +41,7 @@ impl ReplicationRuleAndOperator {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationRuleAndOperatorBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
 }
 impl ReplicationRuleAndOperatorBuilder {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p>
@@ -50,8 +51,7 @@ impl ReplicationRuleAndOperatorBuilder {
     }
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,24 +64,26 @@ impl ReplicationRuleAndOperatorBuilder {
     /// <p>An array of tags that contain key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags that contain key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tags that contain key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
     pub fn build(self) -> crate::types::ReplicationRuleAndOperator {
         crate::types::ReplicationRuleAndOperator {
-            prefix: self.prefix,
-            tags: self.tags,
+            prefix: self.prefix
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

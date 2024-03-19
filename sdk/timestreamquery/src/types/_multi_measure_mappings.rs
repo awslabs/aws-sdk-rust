@@ -3,21 +3,20 @@
 /// <p>Only one of MixedMeasureMappings or MultiMeasureMappings is to be provided. MultiMeasureMappings can be used to ingest data as multi measures in the derived table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiMeasureMappings {
+pub struct MultiMeasureMappings  {
     /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
     pub target_multi_measure_name: ::std::option::Option<::std::string::String>,
     /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
-    pub multi_measure_attribute_mappings: ::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>,
+    pub multi_measure_attribute_mappings: ::std::vec::Vec::<crate::types::MultiMeasureAttributeMapping>,
 }
-impl MultiMeasureMappings {
+impl  MultiMeasureMappings  {
     /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
-    pub fn target_multi_measure_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_multi_measure_name(&self) -> ::std::option::Option<& str> {
         self.target_multi_measure_name.as_deref()
     }
     /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
-    pub fn multi_measure_attribute_mappings(&self) -> &[crate::types::MultiMeasureAttributeMapping] {
-        use std::ops::Deref;
-        self.multi_measure_attribute_mappings.deref()
+    pub fn multi_measure_attribute_mappings(&self) -> & [crate::types::MultiMeasureAttributeMapping] {
+        use std::ops::Deref; self.multi_measure_attribute_mappings.deref()
     }
 }
 impl MultiMeasureMappings {
@@ -32,7 +31,7 @@ impl MultiMeasureMappings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiMeasureMappingsBuilder {
     pub(crate) target_multi_measure_name: ::std::option::Option<::std::string::String>,
-    pub(crate) multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
+    pub(crate) multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MultiMeasureMappingsBuilder {
     /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
@@ -42,8 +41,7 @@ impl MultiMeasureMappingsBuilder {
     }
     /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
     pub fn set_target_multi_measure_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_multi_measure_name = input;
-        self
+        self.target_multi_measure_name = input; self
     }
     /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
     pub fn get_target_multi_measure_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,34 +54,33 @@ impl MultiMeasureMappingsBuilder {
     /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
     pub fn multi_measure_attribute_mappings(mut self, input: crate::types::MultiMeasureAttributeMapping) -> Self {
         let mut v = self.multi_measure_attribute_mappings.unwrap_or_default();
-        v.push(input);
-        self.multi_measure_attribute_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.multi_measure_attribute_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
-    pub fn set_multi_measure_attribute_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
-    ) -> Self {
-        self.multi_measure_attribute_mappings = input;
-        self
+    pub fn set_multi_measure_attribute_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MultiMeasureAttributeMapping>>) -> Self {
+        self.multi_measure_attribute_mappings = input; self
     }
     /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
-    pub fn get_multi_measure_attribute_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
+    pub fn get_multi_measure_attribute_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MultiMeasureAttributeMapping>> {
         &self.multi_measure_attribute_mappings
     }
     /// Consumes the builder and constructs a [`MultiMeasureMappings`](crate::types::MultiMeasureMappings).
     /// This method will fail if any of the following fields are not set:
     /// - [`multi_measure_attribute_mappings`](crate::types::builders::MultiMeasureMappingsBuilder::multi_measure_attribute_mappings)
     pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureMappings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MultiMeasureMappings {
-            target_multi_measure_name: self.target_multi_measure_name,
-            multi_measure_attribute_mappings: self.multi_measure_attribute_mappings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "multi_measure_attribute_mappings",
-                    "multi_measure_attribute_mappings was not specified but it is required when building MultiMeasureMappings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MultiMeasureMappings {
+                target_multi_measure_name: self.target_multi_measure_name
+                ,
+                multi_measure_attribute_mappings: self.multi_measure_attribute_mappings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("multi_measure_attribute_mappings", "multi_measure_attribute_mappings was not specified but it is required when building MultiMeasureMappings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

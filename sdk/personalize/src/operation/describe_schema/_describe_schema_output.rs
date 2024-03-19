@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSchemaOutput {
+pub struct DescribeSchemaOutput  {
     /// <p>The requested schema.</p>
     pub schema: ::std::option::Option<crate::types::DatasetSchema>,
     _request_id: Option<String>,
 }
-impl DescribeSchemaOutput {
+impl  DescribeSchemaOutput  {
     /// <p>The requested schema.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::DatasetSchema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::DatasetSchema> {
         self.schema.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSchemaOutput`](crate::operation::describe_schema::DescribeSchemaOutput).
     pub fn builder() -> crate::operation::describe_schema::builders::DescribeSchemaOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The requested schema.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The requested schema.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
         &self.schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSchemaOutput`](crate::operation::describe_schema::DescribeSchemaOutput).
     pub fn build(self) -> crate::operation::describe_schema::DescribeSchemaOutput {
         crate::operation::describe_schema::DescribeSchemaOutput {
-            schema: self.schema,
+            schema: self.schema
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

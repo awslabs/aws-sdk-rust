@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParticipantInput {
+pub struct CreateParticipantInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
@@ -15,24 +15,24 @@ pub struct CreateParticipantInput {
     /// </important>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetailsToAdd>,
 }
-impl CreateParticipantInput {
+impl  CreateParticipantInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
-    pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetailsToAdd> {
+    pub fn participant_details(&self) -> ::std::option::Option<& crate::types::ParticipantDetailsToAdd> {
         self.participant_details.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl CreateParticipantInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateParticipantInputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CreateParticipantInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl CreateParticipantInputBuilder {
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>) -> Self {
-        self.participant_details = input;
-        self
+        self.participant_details = input; self
     }
     /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
@@ -122,14 +118,19 @@ impl CreateParticipantInputBuilder {
         &self.participant_details
     }
     /// Consumes the builder and constructs a [`CreateParticipantInput`](crate::operation::create_participant::CreateParticipantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_participant::CreateParticipantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_participant::CreateParticipantInput {
-            instance_id: self.instance_id,
-            contact_id: self.contact_id,
-            client_token: self.client_token,
-            participant_details: self.participant_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_participant::CreateParticipantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_participant::CreateParticipantInput {
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                client_token: self.client_token
+                ,
+                participant_details: self.participant_details
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a batch build group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildSummary {
+pub struct BuildSummary  {
     /// <p>The batch build ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>When the build was started, expressed in Unix time format.</p>
@@ -51,15 +51,15 @@ pub struct BuildSummary {
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
     pub primary_artifact: ::std::option::Option<crate::types::ResolvedArtifact>,
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>,
+    pub secondary_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedArtifact>>,
 }
-impl BuildSummary {
+impl  BuildSummary  {
     /// <p>The batch build ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>When the build was started, expressed in Unix time format.</p>
-    pub fn requested_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn requested_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.requested_on.as_ref()
     }
     /// <p>The status of the build group.</p>
@@ -101,18 +101,19 @@ impl BuildSummary {
     /// <p>The build group timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn build_status(&self) -> ::std::option::Option<&crate::types::StatusType> {
+    pub fn build_status(&self) -> ::std::option::Option<& crate::types::StatusType> {
         self.build_status.as_ref()
     }
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
-    pub fn primary_artifact(&self) -> ::std::option::Option<&crate::types::ResolvedArtifact> {
+    pub fn primary_artifact(&self) -> ::std::option::Option<& crate::types::ResolvedArtifact> {
         self.primary_artifact.as_ref()
     }
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
-    pub fn secondary_artifacts(&self) -> &[crate::types::ResolvedArtifact] {
-        self.secondary_artifacts.as_deref().unwrap_or_default()
+    pub fn secondary_artifacts(&self) -> & [crate::types::ResolvedArtifact] {
+        self.secondary_artifacts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BuildSummary {
@@ -130,7 +131,7 @@ pub struct BuildSummaryBuilder {
     pub(crate) requested_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) build_status: ::std::option::Option<crate::types::StatusType>,
     pub(crate) primary_artifact: ::std::option::Option<crate::types::ResolvedArtifact>,
-    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>,
+    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedArtifact>>,
 }
 impl BuildSummaryBuilder {
     /// <p>The batch build ARN.</p>
@@ -140,8 +141,7 @@ impl BuildSummaryBuilder {
     }
     /// <p>The batch build ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The batch build ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +154,7 @@ impl BuildSummaryBuilder {
     }
     /// <p>When the build was started, expressed in Unix time format.</p>
     pub fn set_requested_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.requested_on = input;
-        self
+        self.requested_on = input; self
     }
     /// <p>When the build was started, expressed in Unix time format.</p>
     pub fn get_requested_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -244,8 +243,7 @@ impl BuildSummaryBuilder {
     /// </dd>
     /// </dl>
     pub fn set_build_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.build_status = input;
-        self
+        self.build_status = input; self
     }
     /// <p>The status of the build group.</p>
     /// <dl>
@@ -296,8 +294,7 @@ impl BuildSummaryBuilder {
     }
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
     pub fn set_primary_artifact(mut self, input: ::std::option::Option<crate::types::ResolvedArtifact>) -> Self {
-        self.primary_artifact = input;
-        self
+        self.primary_artifact = input; self
     }
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
     pub fn get_primary_artifact(&self) -> &::std::option::Option<crate::types::ResolvedArtifact> {
@@ -310,27 +307,32 @@ impl BuildSummaryBuilder {
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
     pub fn secondary_artifacts(mut self, input: crate::types::ResolvedArtifact) -> Self {
         let mut v = self.secondary_artifacts.unwrap_or_default();
-        v.push(input);
-        self.secondary_artifacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.secondary_artifacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>) -> Self {
-        self.secondary_artifacts = input;
-        self
+    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedArtifact>>) -> Self {
+        self.secondary_artifacts = input; self
     }
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>> {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResolvedArtifact>> {
         &self.secondary_artifacts
     }
     /// Consumes the builder and constructs a [`BuildSummary`](crate::types::BuildSummary).
     pub fn build(self) -> crate::types::BuildSummary {
         crate::types::BuildSummary {
-            arn: self.arn,
-            requested_on: self.requested_on,
-            build_status: self.build_status,
-            primary_artifact: self.primary_artifact,
-            secondary_artifacts: self.secondary_artifacts,
+            arn: self.arn
+            ,
+            requested_on: self.requested_on
+            ,
+            build_status: self.build_status
+            ,
+            primary_artifact: self.primary_artifact
+            ,
+            secondary_artifacts: self.secondary_artifacts
+            ,
         }
     }
 }
+

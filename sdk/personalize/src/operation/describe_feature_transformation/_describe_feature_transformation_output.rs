@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFeatureTransformationOutput {
+pub struct DescribeFeatureTransformationOutput  {
     /// <p>A listing of the FeatureTransformation properties.</p>
     pub feature_transformation: ::std::option::Option<crate::types::FeatureTransformation>,
     _request_id: Option<String>,
 }
-impl DescribeFeatureTransformationOutput {
+impl  DescribeFeatureTransformationOutput  {
     /// <p>A listing of the FeatureTransformation properties.</p>
-    pub fn feature_transformation(&self) -> ::std::option::Option<&crate::types::FeatureTransformation> {
+    pub fn feature_transformation(&self) -> ::std::option::Option<& crate::types::FeatureTransformation> {
         self.feature_transformation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFeatureTransformationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFeatureTransformationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureTransformationOutput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput).
     pub fn builder() -> crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeFeatureTransformationOutputBuilder {
     }
     /// <p>A listing of the FeatureTransformation properties.</p>
     pub fn set_feature_transformation(mut self, input: ::std::option::Option<crate::types::FeatureTransformation>) -> Self {
-        self.feature_transformation = input;
-        self
+        self.feature_transformation = input; self
     }
     /// <p>A listing of the FeatureTransformation properties.</p>
     pub fn get_feature_transformation(&self) -> &::std::option::Option<crate::types::FeatureTransformation> {
         &self.feature_transformation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFeatureTransformationOutput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput).
     pub fn build(self) -> crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput {
         crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput {
-            feature_transformation: self.feature_transformation,
+            feature_transformation: self.feature_transformation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

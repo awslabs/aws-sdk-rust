@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let studiostate = unimplemented!();
 /// match studiostate {
@@ -36,16 +36,14 @@
 /// Specifically, when `studiostate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StudioState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StudioState {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -65,88 +63,80 @@ pub enum StudioState {
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StudioState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StudioState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StudioState::CreateInProgress,
-            "DELETED" => StudioState::Deleted,
-            "DELETE_FAILED" => StudioState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StudioState::DeleteInProgress,
-            "READY" => StudioState::Ready,
-            "UPDATE_FAILED" => StudioState::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => StudioState::UpdateInProgress,
-            other => StudioState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATE_FAILED" => StudioState::CreateFailed,
+"CREATE_IN_PROGRESS" => StudioState::CreateInProgress,
+"DELETED" => StudioState::Deleted,
+"DELETE_FAILED" => StudioState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StudioState::DeleteInProgress,
+"READY" => StudioState::Ready,
+"UPDATE_FAILED" => StudioState::UpdateFailed,
+"UPDATE_IN_PROGRESS" => StudioState::UpdateInProgress,
+other => StudioState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StudioState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StudioState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StudioState::from(s))
+                    }
+                }
 impl StudioState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioState::CreateFailed => "CREATE_FAILED",
-            StudioState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StudioState::Deleted => "DELETED",
-            StudioState::DeleteFailed => "DELETE_FAILED",
-            StudioState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StudioState::Ready => "READY",
-            StudioState::UpdateFailed => "UPDATE_FAILED",
-            StudioState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            StudioState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "READY",
-            "UPDATE_FAILED",
-            "UPDATE_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioState::CreateFailed => "CREATE_FAILED",
+    StudioState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StudioState::Deleted => "DELETED",
+    StudioState::DeleteFailed => "DELETE_FAILED",
+    StudioState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StudioState::Ready => "READY",
+    StudioState::UpdateFailed => "UPDATE_FAILED",
+    StudioState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    StudioState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StudioState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StudioState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StudioState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StudioState::CreateFailed => write!(f, "CREATE_FAILED"),
-            StudioState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
-            StudioState::Deleted => write!(f, "DELETED"),
-            StudioState::DeleteFailed => write!(f, "DELETE_FAILED"),
-            StudioState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            StudioState::Ready => write!(f, "READY"),
-            StudioState::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            StudioState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            StudioState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StudioState::CreateFailed => write!(f, "CREATE_FAILED"),
+StudioState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+StudioState::Deleted => write!(f, "DELETED"),
+StudioState::DeleteFailed => write!(f, "DELETE_FAILED"),
+StudioState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+StudioState::Ready => write!(f, "READY"),
+StudioState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+StudioState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+StudioState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

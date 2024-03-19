@@ -4,19 +4,19 @@
 /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SentimentResponse {
+pub struct SentimentResponse  {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
     pub sentiment_label: ::std::option::Option<::std::string::String>,
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
     pub sentiment_score: ::std::option::Option<::std::string::String>,
 }
-impl SentimentResponse {
+impl  SentimentResponse  {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
-    pub fn sentiment_label(&self) -> ::std::option::Option<&str> {
+    pub fn sentiment_label(&self) -> ::std::option::Option<& str> {
         self.sentiment_label.as_deref()
     }
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
-    pub fn sentiment_score(&self) -> ::std::option::Option<&str> {
+    pub fn sentiment_score(&self) -> ::std::option::Option<& str> {
         self.sentiment_score.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SentimentResponseBuilder {
     }
     /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
     pub fn set_sentiment_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sentiment_label = input;
-        self
+        self.sentiment_label = input; self
     }
     /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
     pub fn get_sentiment_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SentimentResponseBuilder {
     }
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
     pub fn set_sentiment_score(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sentiment_score = input;
-        self
+        self.sentiment_score = input; self
     }
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
     pub fn get_sentiment_score(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl SentimentResponseBuilder {
     /// Consumes the builder and constructs a [`SentimentResponse`](crate::types::SentimentResponse).
     pub fn build(self) -> crate::types::SentimentResponse {
         crate::types::SentimentResponse {
-            sentiment_label: self.sentiment_label,
-            sentiment_score: self.sentiment_score,
+            sentiment_label: self.sentiment_label
+            ,
+            sentiment_score: self.sentiment_score
+            ,
         }
     }
 }
+

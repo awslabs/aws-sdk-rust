@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChangeTokenStatusInput {
+pub struct GetChangeTokenStatusInput  {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
 }
-impl GetChangeTokenStatusInput {
+impl  GetChangeTokenStatusInput  {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetChangeTokenStatusInputBuilder {
     }
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`GetChangeTokenStatusInput`](crate::operation::get_change_token_status::GetChangeTokenStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_change_token_status::GetChangeTokenStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_change_token_status::GetChangeTokenStatusInput {
-            change_token: self.change_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_change_token_status::GetChangeTokenStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_change_token_status::GetChangeTokenStatusInput {
+                change_token: self.change_token
+                ,
+            }
+        )
     }
 }
+

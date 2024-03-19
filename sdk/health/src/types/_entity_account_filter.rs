@@ -3,7 +3,7 @@
 /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityAccountFilter {
+pub struct EntityAccountFilter  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
@@ -11,25 +11,25 @@ pub struct EntityAccountFilter {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of entity status codes.</p>
-    pub status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
+    pub status_codes: ::std::option::Option<::std::vec::Vec::<crate::types::EntityStatusCode>>,
 }
-impl EntityAccountFilter {
+impl  EntityAccountFilter  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
-    pub fn event_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.event_arn.deref()
+    pub fn event_arn(&self) -> & str {
+        use std::ops::Deref; self.event_arn.deref()
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A list of entity status codes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_codes.is_none()`.
-    pub fn status_codes(&self) -> &[crate::types::EntityStatusCode] {
-        self.status_codes.as_deref().unwrap_or_default()
+    pub fn status_codes(&self) -> & [crate::types::EntityStatusCode] {
+        self.status_codes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EntityAccountFilter {
@@ -45,7 +45,7 @@ impl EntityAccountFilter {
 pub struct EntityAccountFilterBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
+    pub(crate) status_codes: ::std::option::Option<::std::vec::Vec::<crate::types::EntityStatusCode>>,
 }
 impl EntityAccountFilterBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -60,8 +60,7 @@ impl EntityAccountFilterBuilder {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -76,8 +75,7 @@ impl EntityAccountFilterBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,32 +88,35 @@ impl EntityAccountFilterBuilder {
     /// <p>A list of entity status codes.</p>
     pub fn status_codes(mut self, input: crate::types::EntityStatusCode) -> Self {
         let mut v = self.status_codes.unwrap_or_default();
-        v.push(input);
-        self.status_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of entity status codes.</p>
-    pub fn set_status_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>) -> Self {
-        self.status_codes = input;
-        self
+    pub fn set_status_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityStatusCode>>) -> Self {
+        self.status_codes = input; self
     }
     /// <p>A list of entity status codes.</p>
-    pub fn get_status_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>> {
+    pub fn get_status_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityStatusCode>> {
         &self.status_codes
     }
     /// Consumes the builder and constructs a [`EntityAccountFilter`](crate::types::EntityAccountFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_arn`](crate::types::builders::EntityAccountFilterBuilder::event_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityAccountFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityAccountFilter {
-            event_arn: self.event_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_arn",
-                    "event_arn was not specified but it is required when building EntityAccountFilter",
-                )
-            })?,
-            aws_account_id: self.aws_account_id,
-            status_codes: self.status_codes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityAccountFilter {
+                event_arn: self.event_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_arn", "event_arn was not specified but it is required when building EntityAccountFilter")
+                    )?
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                status_codes: self.status_codes
+                ,
+            }
+        )
     }
 }
+

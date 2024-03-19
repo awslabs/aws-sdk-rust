@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartSyncExecutionInput {
+pub struct StartSyncExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
@@ -16,13 +16,13 @@ pub struct StartSyncExecutionInput {
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub trace_header: ::std::option::Option<::std::string::String>,
 }
-impl StartSyncExecutionInput {
+impl  StartSyncExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The name of the execution.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
@@ -30,15 +30,15 @@ impl StartSyncExecutionInput {
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    pub fn trace_header(&self) -> ::std::option::Option<&str> {
+    pub fn trace_header(&self) -> ::std::option::Option<& str> {
         self.trace_header.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartSyncExecutionInput {
+impl  ::std::fmt::Debug for StartSyncExecutionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartSyncExecutionInput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -73,8 +73,7 @@ impl StartSyncExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl StartSyncExecutionInputBuilder {
     }
     /// <p>The name of the execution.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the execution.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl StartSyncExecutionInputBuilder {
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
@@ -127,24 +124,26 @@ impl StartSyncExecutionInputBuilder {
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
         &self.trace_header
     }
     /// Consumes the builder and constructs a [`StartSyncExecutionInput`](crate::operation::start_sync_execution::StartSyncExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_sync_execution::StartSyncExecutionInput {
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            input: self.input,
-            trace_header: self.trace_header,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_sync_execution::StartSyncExecutionInput {
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                input: self.input
+                ,
+                trace_header: self.trace_header
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartSyncExecutionInputBuilder {
@@ -157,3 +156,4 @@ impl ::std::fmt::Debug for StartSyncExecutionInputBuilder {
         formatter.finish()
     }
 }
+

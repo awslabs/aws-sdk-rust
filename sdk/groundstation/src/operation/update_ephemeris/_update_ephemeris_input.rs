@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEphemerisInput {
+pub struct UpdateEphemerisInput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
@@ -14,9 +14,9 @@ pub struct UpdateEphemerisInput {
     /// <p>Priority must be 1 or greater</p>
     pub priority: ::std::option::Option<i32>,
 }
-impl UpdateEphemerisInput {
+impl  UpdateEphemerisInput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
@@ -24,7 +24,7 @@ impl UpdateEphemerisInput {
         self.enabled
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
@@ -59,8 +59,7 @@ impl UpdateEphemerisInputBuilder {
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ephemeris_id = input;
-        self
+        self.ephemeris_id = input; self
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl UpdateEphemerisInputBuilder {
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -88,8 +86,7 @@ impl UpdateEphemerisInputBuilder {
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl UpdateEphemerisInputBuilder {
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -116,14 +112,19 @@ impl UpdateEphemerisInputBuilder {
         &self.priority
     }
     /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_ephemeris::UpdateEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_ephemeris::UpdateEphemerisInput {
-            ephemeris_id: self.ephemeris_id,
-            enabled: self.enabled,
-            name: self.name,
-            priority: self.priority,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ephemeris::UpdateEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_ephemeris::UpdateEphemerisInput {
+                ephemeris_id: self.ephemeris_id
+                ,
+                enabled: self.enabled
+                ,
+                name: self.name
+                ,
+                priority: self.priority
+                ,
+            }
+        )
     }
 }
+

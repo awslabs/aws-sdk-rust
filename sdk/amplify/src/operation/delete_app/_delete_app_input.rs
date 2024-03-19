@@ -3,13 +3,13 @@
 /// <p>Describes the request structure for the delete app request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppInput {
+pub struct DeleteAppInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAppInput {
+impl  DeleteAppInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl DeleteAppInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl DeleteAppInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_app::DeleteAppInput { app_id: self.app_id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_app::DeleteAppInput {
+                app_id: self.app_id
+                ,
+            }
+        )
     }
 }
+

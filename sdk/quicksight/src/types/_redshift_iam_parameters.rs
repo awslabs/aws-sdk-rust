@@ -3,32 +3,31 @@
 /// <p>A structure that grants Amazon QuickSight access to your cluster and make a call to the <code>redshift:GetClusterCredentials</code> API. For more information on the <code>redshift:GetClusterCredentials</code> API, see <a href="https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html"> <code>GetClusterCredentials</code> </a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftIamParameters {
+pub struct RedshiftIamParameters  {
     /// <p>Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call <code>redshift:GetClusterCredentials</code> on your cluster. The calling principal must have <code>iam:PassRole</code> access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.</p>
     pub role_arn: ::std::string::String,
     /// <p>The user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to create a new user with PUBLIC permissions.</p>
     pub database_user: ::std::string::String,
     /// <p>A list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter, the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.</p>
-    pub database_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub database_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>, set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>, Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you use for this operation must grant access to <code>redshift:CreateClusterUser</code> to successfully create the user.</p>
     pub auto_create_database_user: bool,
 }
-impl RedshiftIamParameters {
+impl  RedshiftIamParameters  {
     /// <p>Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call <code>redshift:GetClusterCredentials</code> on your cluster. The calling principal must have <code>iam:PassRole</code> access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to create a new user with PUBLIC permissions.</p>
-    pub fn database_user(&self) -> &str {
-        use std::ops::Deref;
-        self.database_user.deref()
+    pub fn database_user(&self) -> & str {
+        use std::ops::Deref; self.database_user.deref()
     }
     /// <p>A list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter, the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_groups.is_none()`.
-    pub fn database_groups(&self) -> &[::std::string::String] {
-        self.database_groups.as_deref().unwrap_or_default()
+    pub fn database_groups(&self) -> & [::std::string::String] {
+        self.database_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>, set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>, Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you use for this operation must grant access to <code>redshift:CreateClusterUser</code> to successfully create the user.</p>
     pub fn auto_create_database_user(&self) -> bool {
@@ -48,7 +47,7 @@ impl RedshiftIamParameters {
 pub struct RedshiftIamParametersBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_user: ::std::option::Option<::std::string::String>,
-    pub(crate) database_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) database_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) auto_create_database_user: ::std::option::Option<bool>,
 }
 impl RedshiftIamParametersBuilder {
@@ -60,8 +59,7 @@ impl RedshiftIamParametersBuilder {
     }
     /// <p>Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call <code>redshift:GetClusterCredentials</code> on your cluster. The calling principal must have <code>iam:PassRole</code> access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call <code>redshift:GetClusterCredentials</code> on your cluster. The calling principal must have <code>iam:PassRole</code> access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl RedshiftIamParametersBuilder {
     }
     /// <p>The user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to create a new user with PUBLIC permissions.</p>
     pub fn set_database_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_user = input;
-        self
+        self.database_user = input; self
     }
     /// <p>The user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to create a new user with PUBLIC permissions.</p>
     pub fn get_database_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,17 +86,16 @@ impl RedshiftIamParametersBuilder {
     /// <p>A list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter, the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.</p>
     pub fn database_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.database_groups.unwrap_or_default();
-        v.push(input.into());
-        self.database_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.database_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter, the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.</p>
-    pub fn set_database_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.database_groups = input;
-        self
+    pub fn set_database_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.database_groups = input; self
     }
     /// <p>A list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter, the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.</p>
-    pub fn get_database_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_database_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.database_groups
     }
     /// <p>Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>, set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>, Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you use for this operation must grant access to <code>redshift:CreateClusterUser</code> to successfully create the user.</p>
@@ -109,8 +105,7 @@ impl RedshiftIamParametersBuilder {
     }
     /// <p>Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>, set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>, Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you use for this operation must grant access to <code>redshift:CreateClusterUser</code> to successfully create the user.</p>
     pub fn set_auto_create_database_user(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_create_database_user = input;
-        self
+        self.auto_create_database_user = input; self
     }
     /// <p>Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>, set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>, Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you use for this operation must grant access to <code>redshift:CreateClusterUser</code> to successfully create the user.</p>
     pub fn get_auto_create_database_user(&self) -> &::std::option::Option<bool> {
@@ -121,21 +116,25 @@ impl RedshiftIamParametersBuilder {
     /// - [`role_arn`](crate::types::builders::RedshiftIamParametersBuilder::role_arn)
     /// - [`database_user`](crate::types::builders::RedshiftIamParametersBuilder::database_user)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftIamParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftIamParameters {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building RedshiftIamParameters",
-                )
-            })?,
-            database_user: self.database_user.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_user",
-                    "database_user was not specified but it is required when building RedshiftIamParameters",
-                )
-            })?,
-            database_groups: self.database_groups,
-            auto_create_database_user: self.auto_create_database_user.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftIamParameters {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building RedshiftIamParameters")
+                    )?
+                ,
+                database_user: self.database_user
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_user", "database_user was not specified but it is required when building RedshiftIamParameters")
+                    )?
+                ,
+                database_groups: self.database_groups
+                ,
+                auto_create_database_user: self.auto_create_database_user
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

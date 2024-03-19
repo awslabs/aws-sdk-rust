@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDocumentAnalysisInput {
+pub struct StartDocumentAnalysisInput  {
     /// <p>The location of the document to be processed.</p>
     pub document_location: ::std::option::Option<crate::types::DocumentLocation>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
-    pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
@@ -22,43 +22,44 @@ pub struct StartDocumentAnalysisInput {
     /// <p>Specifies the adapter to be used when analyzing a document.</p>
     pub adapters_config: ::std::option::Option<crate::types::AdaptersConfig>,
 }
-impl StartDocumentAnalysisInput {
+impl  StartDocumentAnalysisInput  {
     /// <p>The location of the document to be processed.</p>
-    pub fn document_location(&self) -> ::std::option::Option<&crate::types::DocumentLocation> {
+    pub fn document_location(&self) -> ::std::option::Option<& crate::types::DocumentLocation> {
         self.document_location.as_ref()
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
-    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
-        self.feature_types.as_deref().unwrap_or_default()
+    pub fn feature_types(&self) -> & [crate::types::FeatureType] {
+        self.feature_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    pub fn job_tag(&self) -> ::std::option::Option<&str> {
+    pub fn job_tag(&self) -> ::std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
-    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<& crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p></p>
-    pub fn queries_config(&self) -> ::std::option::Option<&crate::types::QueriesConfig> {
+    pub fn queries_config(&self) -> ::std::option::Option<& crate::types::QueriesConfig> {
         self.queries_config.as_ref()
     }
     /// <p>Specifies the adapter to be used when analyzing a document.</p>
-    pub fn adapters_config(&self) -> ::std::option::Option<&crate::types::AdaptersConfig> {
+    pub fn adapters_config(&self) -> ::std::option::Option<& crate::types::AdaptersConfig> {
         self.adapters_config.as_ref()
     }
 }
@@ -74,7 +75,7 @@ impl StartDocumentAnalysisInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDocumentAnalysisInputBuilder {
     pub(crate) document_location: ::std::option::Option<crate::types::DocumentLocation>,
-    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
     pub(crate) notification_channel: ::std::option::Option<crate::types::NotificationChannel>,
@@ -92,8 +93,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>The location of the document to be processed.</p>
     pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
-        self.document_location = input;
-        self
+        self.document_location = input; self
     }
     /// <p>The location of the document to be processed.</p>
     pub fn get_document_location(&self) -> &::std::option::Option<crate::types::DocumentLocation> {
@@ -106,17 +106,16 @@ impl StartDocumentAnalysisInputBuilder {
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
-        v.push(input);
-        self.feature_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.feature_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
-    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
-        self.feature_types = input;
-        self
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>) -> Self {
+        self.feature_types = input; self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
-    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>> {
         &self.feature_types
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
@@ -126,8 +125,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
-        self.notification_channel = input;
-        self
+        self.notification_channel = input; self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
@@ -168,8 +164,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
@@ -182,8 +177,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +190,7 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p></p>
     pub fn set_queries_config(mut self, input: ::std::option::Option<crate::types::QueriesConfig>) -> Self {
-        self.queries_config = input;
-        self
+        self.queries_config = input; self
     }
     /// <p></p>
     pub fn get_queries_config(&self) -> &::std::option::Option<crate::types::QueriesConfig> {
@@ -210,28 +203,36 @@ impl StartDocumentAnalysisInputBuilder {
     }
     /// <p>Specifies the adapter to be used when analyzing a document.</p>
     pub fn set_adapters_config(mut self, input: ::std::option::Option<crate::types::AdaptersConfig>) -> Self {
-        self.adapters_config = input;
-        self
+        self.adapters_config = input; self
     }
     /// <p>Specifies the adapter to be used when analyzing a document.</p>
     pub fn get_adapters_config(&self) -> &::std::option::Option<crate::types::AdaptersConfig> {
         &self.adapters_config
     }
     /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_document_analysis::StartDocumentAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_document_analysis::StartDocumentAnalysisInput {
-            document_location: self.document_location,
-            feature_types: self.feature_types,
-            client_request_token: self.client_request_token,
-            job_tag: self.job_tag,
-            notification_channel: self.notification_channel,
-            output_config: self.output_config,
-            kms_key_id: self.kms_key_id,
-            queries_config: self.queries_config,
-            adapters_config: self.adapters_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_document_analysis::StartDocumentAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_document_analysis::StartDocumentAnalysisInput {
+                document_location: self.document_location
+                ,
+                feature_types: self.feature_types
+                ,
+                client_request_token: self.client_request_token
+                ,
+                job_tag: self.job_tag
+                ,
+                notification_channel: self.notification_channel
+                ,
+                output_config: self.output_config
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                queries_config: self.queries_config
+                ,
+                adapters_config: self.adapters_config
+                ,
+            }
+        )
     }
 }
+

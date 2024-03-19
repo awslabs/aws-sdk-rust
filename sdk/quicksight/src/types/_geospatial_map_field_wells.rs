@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeospatialMapFieldWells {
+pub struct GeospatialMapFieldWells  {
     /// <p>The aggregated field well for a geospatial map.</p>
     pub geospatial_map_aggregated_field_wells: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }
-impl GeospatialMapFieldWells {
+impl  GeospatialMapFieldWells  {
     /// <p>The aggregated field well for a geospatial map.</p>
-    pub fn geospatial_map_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::GeospatialMapAggregatedFieldWells> {
+    pub fn geospatial_map_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::GeospatialMapAggregatedFieldWells> {
         self.geospatial_map_aggregated_field_wells.as_ref()
     }
 }
@@ -34,12 +34,8 @@ impl GeospatialMapFieldWellsBuilder {
         self
     }
     /// <p>The aggregated field well for a geospatial map.</p>
-    pub fn set_geospatial_map_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
-    ) -> Self {
-        self.geospatial_map_aggregated_field_wells = input;
-        self
+    pub fn set_geospatial_map_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>) -> Self {
+        self.geospatial_map_aggregated_field_wells = input; self
     }
     /// <p>The aggregated field well for a geospatial map.</p>
     pub fn get_geospatial_map_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells> {
@@ -48,7 +44,9 @@ impl GeospatialMapFieldWellsBuilder {
     /// Consumes the builder and constructs a [`GeospatialMapFieldWells`](crate::types::GeospatialMapFieldWells).
     pub fn build(self) -> crate::types::GeospatialMapFieldWells {
         crate::types::GeospatialMapFieldWells {
-            geospatial_map_aggregated_field_wells: self.geospatial_map_aggregated_field_wells,
+            geospatial_map_aggregated_field_wells: self.geospatial_map_aggregated_field_wells
+            ,
         }
     }
 }
+

@@ -3,7 +3,8 @@
 /// <p>Container for Parquet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParquetInput {}
+pub struct ParquetInput  {
+}
 impl ParquetInput {
     /// Creates a new builder-style object to manufacture [`ParquetInput`](crate::types::ParquetInput).
     pub fn builder() -> crate::types::builders::ParquetInputBuilder {
@@ -14,10 +15,13 @@ impl ParquetInput {
 /// A builder for [`ParquetInput`](crate::types::ParquetInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ParquetInputBuilder {}
+pub struct ParquetInputBuilder {
+}
 impl ParquetInputBuilder {
     /// Consumes the builder and constructs a [`ParquetInput`](crate::types::ParquetInput).
     pub fn build(self) -> crate::types::ParquetInput {
-        crate::types::ParquetInput {}
+        crate::types::ParquetInput {
+        }
     }
 }
+

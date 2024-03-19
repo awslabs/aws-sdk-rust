@@ -3,19 +3,19 @@
 /// <p>The list of metric sources required to generate recommendations for commercial software licenses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricSource {
+pub struct MetricSource  {
     /// <p>The name of the metric source provider.</p>
     pub provider: ::std::option::Option<crate::types::MetricSourceProvider>,
     /// <p>The ARN of the metric source provider.</p>
     pub provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl MetricSource {
+impl  MetricSource  {
     /// <p>The name of the metric source provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::MetricSourceProvider> {
+    pub fn provider(&self) -> ::std::option::Option<& crate::types::MetricSourceProvider> {
         self.provider.as_ref()
     }
     /// <p>The ARN of the metric source provider.</p>
-    pub fn provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn provider_arn(&self) -> ::std::option::Option<& str> {
         self.provider_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MetricSourceBuilder {
     }
     /// <p>The name of the metric source provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::MetricSourceProvider>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The name of the metric source provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::MetricSourceProvider> {
@@ -55,8 +54,7 @@ impl MetricSourceBuilder {
     }
     /// <p>The ARN of the metric source provider.</p>
     pub fn set_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_arn = input;
-        self
+        self.provider_arn = input; self
     }
     /// <p>The ARN of the metric source provider.</p>
     pub fn get_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MetricSourceBuilder {
     /// Consumes the builder and constructs a [`MetricSource`](crate::types::MetricSource).
     pub fn build(self) -> crate::types::MetricSource {
         crate::types::MetricSource {
-            provider: self.provider,
-            provider_arn: self.provider_arn,
+            provider: self.provider
+            ,
+            provider_arn: self.provider_arn
+            ,
         }
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::create_container_service_deployment::_create_container
 
 impl CreateContainerServiceDeploymentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_container_service_deployment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_container_service_deployment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateContainerServiceDeployment`.
-///
+/// 
 /// <p>Creates a deployment for your Amazon Lightsail container service.</p>
 /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
 /// <p>You can deploy containers to your container service using container images from a public registry such as Amazon ECR Public, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContainerServiceDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder,
+                    inner: crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
-    > for CreateContainerServiceDeploymentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
-            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
+                    crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
+                > for CreateContainerServiceDeploymentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
+                        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateContainerServiceDeploymentFluentBuilder {
     /// Creates a new `CreateContainerServiceDeployment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_container_service_deployment::CreateContainerServiceDeployment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeployment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput,
-        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_container_service_deployment::CreateContainerServiceDeployment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_container_service_deployment::CreateContainerServiceDeployment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput, crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the container service for which to create the deployment.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
@@ -134,15 +121,12 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         self
     }
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Container>>) -> Self {
         self.inner = self.inner.set_containers(input);
         self
     }
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn get_containers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Container>> {
         self.inner.get_containers()
     }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
@@ -160,3 +144,4 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         self.inner.get_public_endpoint()
     }
 }
+

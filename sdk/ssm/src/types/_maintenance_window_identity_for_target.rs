@@ -3,19 +3,19 @@
 /// <p>The maintenance window to which the specified target belongs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaintenanceWindowIdentityForTarget {
+pub struct MaintenanceWindowIdentityForTarget  {
     /// <p>The ID of the maintenance window.</p>
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance window.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl MaintenanceWindowIdentityForTarget {
+impl  MaintenanceWindowIdentityForTarget  {
     /// <p>The ID of the maintenance window.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MaintenanceWindowIdentityForTargetBuilder {
     }
     /// <p>The ID of the maintenance window.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The ID of the maintenance window.</p>
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MaintenanceWindowIdentityForTargetBuilder {
     }
     /// <p>The name of the maintenance window.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the maintenance window.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MaintenanceWindowIdentityForTargetBuilder {
     /// Consumes the builder and constructs a [`MaintenanceWindowIdentityForTarget`](crate::types::MaintenanceWindowIdentityForTarget).
     pub fn build(self) -> crate::types::MaintenanceWindowIdentityForTarget {
         crate::types::MaintenanceWindowIdentityForTarget {
-            window_id: self.window_id,
-            name: self.name,
+            window_id: self.window_id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

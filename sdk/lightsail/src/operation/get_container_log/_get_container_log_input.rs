@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerLogInput {
+pub struct GetContainerLogInput  {
     /// <p>The name of the container service for which to get a container log.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
@@ -48,13 +48,13 @@ pub struct GetContainerLogInput {
     /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetContainerLogInput {
+impl  GetContainerLogInput  {
     /// <p>The name of the container service for which to get a container log.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The start of the time interval for which to get log data.</p>
@@ -67,7 +67,7 @@ impl GetContainerLogInput {
     /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval for which to get log data.</p>
@@ -80,7 +80,7 @@ impl GetContainerLogInput {
     /// <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
@@ -97,12 +97,12 @@ impl GetContainerLogInput {
     /// <li>
     /// <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p></li>
     /// </ul>
-    pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> ::std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -133,8 +133,7 @@ impl GetContainerLogInputBuilder {
     }
     /// <p>The name of the container service for which to get a container log.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the container service for which to get a container log.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl GetContainerLogInputBuilder {
     }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +178,7 @@ impl GetContainerLogInputBuilder {
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
@@ -221,8 +218,7 @@ impl GetContainerLogInputBuilder {
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
@@ -270,8 +266,7 @@ impl GetContainerLogInputBuilder {
     /// <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p></li>
     /// </ul>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_pattern = input;
-        self
+        self.filter_pattern = input; self
     }
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
     /// <p>The following are a few examples of filter patterns that you can specify:</p>
@@ -299,8 +294,7 @@ impl GetContainerLogInputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -308,16 +302,23 @@ impl GetContainerLogInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetContainerLogInput`](crate::operation::get_container_log::GetContainerLogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_container_log::GetContainerLogInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_container_log::GetContainerLogInput {
-            service_name: self.service_name,
-            container_name: self.container_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            filter_pattern: self.filter_pattern,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_container_log::GetContainerLogInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_container_log::GetContainerLogInput {
+                service_name: self.service_name
+                ,
+                container_name: self.container_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

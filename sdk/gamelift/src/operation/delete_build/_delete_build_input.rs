@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBuildInput {
+pub struct DeleteBuildInput  {
     /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBuildInput {
+impl  DeleteBuildInput  {
     /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
-    pub fn build_id(&self) -> ::std::option::Option<&str> {
+    pub fn build_id(&self) -> ::std::option::Option<& str> {
         self.build_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteBuildInputBuilder {
     }
     /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.build_id = input;
-        self
+        self.build_id = input; self
     }
     /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteBuildInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteBuildInput`](crate::operation::delete_build::DeleteBuildInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_build::DeleteBuildInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_build::DeleteBuildInput { build_id: self.build_id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_build::DeleteBuildInput {
+                build_id: self.build_id
+                ,
+            }
+        )
     }
 }
+

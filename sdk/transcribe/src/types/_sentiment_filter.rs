@@ -15,9 +15,9 @@
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for post-call categories</a> for usage examples.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SentimentFilter {
+pub struct SentimentFilter  {
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub sentiments: ::std::vec::Vec<crate::types::SentimentValue>,
+    pub sentiments: ::std::vec::Vec::<crate::types::SentimentValue>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
@@ -27,22 +27,21 @@ pub struct SentimentFilter {
     /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
     pub negate: ::std::option::Option<bool>,
 }
-impl SentimentFilter {
+impl  SentimentFilter  {
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub fn sentiments(&self) -> &[crate::types::SentimentValue] {
-        use std::ops::Deref;
-        self.sentiments.deref()
+    pub fn sentiments(&self) -> & [crate::types::SentimentValue] {
+        use std::ops::Deref; self.sentiments.deref()
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
-    pub fn absolute_time_range(&self) -> ::std::option::Option<&crate::types::AbsoluteTimeRange> {
+    pub fn absolute_time_range(&self) -> ::std::option::Option<& crate::types::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
-    pub fn relative_time_range(&self) -> ::std::option::Option<&crate::types::RelativeTimeRange> {
+    pub fn relative_time_range(&self) -> ::std::option::Option<& crate::types::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<& crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
@@ -61,7 +60,7 @@ impl SentimentFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SentimentFilterBuilder {
-    pub(crate) sentiments: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>,
+    pub(crate) sentiments: ::std::option::Option<::std::vec::Vec::<crate::types::SentimentValue>>,
     pub(crate) absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     pub(crate) relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
@@ -75,17 +74,16 @@ impl SentimentFilterBuilder {
     /// <p>Specify the sentiments that you want to flag.</p>
     pub fn sentiments(mut self, input: crate::types::SentimentValue) -> Self {
         let mut v = self.sentiments.unwrap_or_default();
-        v.push(input);
-        self.sentiments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sentiments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub fn set_sentiments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>) -> Self {
-        self.sentiments = input;
-        self
+    pub fn set_sentiments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SentimentValue>>) -> Self {
+        self.sentiments = input; self
     }
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub fn get_sentiments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>> {
+    pub fn get_sentiments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SentimentValue>> {
         &self.sentiments
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
@@ -95,8 +93,7 @@ impl SentimentFilterBuilder {
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn set_absolute_time_range(mut self, input: ::std::option::Option<crate::types::AbsoluteTimeRange>) -> Self {
-        self.absolute_time_range = input;
-        self
+        self.absolute_time_range = input; self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn get_absolute_time_range(&self) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
@@ -109,8 +106,7 @@ impl SentimentFilterBuilder {
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn set_relative_time_range(mut self, input: ::std::option::Option<crate::types::RelativeTimeRange>) -> Self {
-        self.relative_time_range = input;
-        self
+        self.relative_time_range = input; self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn get_relative_time_range(&self) -> &::std::option::Option<crate::types::RelativeTimeRange> {
@@ -123,8 +119,7 @@ impl SentimentFilterBuilder {
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -137,8 +132,7 @@ impl SentimentFilterBuilder {
     }
     /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.negate = input;
-        self
+        self.negate = input; self
     }
     /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
     pub fn get_negate(&self) -> &::std::option::Option<bool> {
@@ -148,17 +142,23 @@ impl SentimentFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sentiments`](crate::types::builders::SentimentFilterBuilder::sentiments)
     pub fn build(self) -> ::std::result::Result<crate::types::SentimentFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SentimentFilter {
-            sentiments: self.sentiments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sentiments",
-                    "sentiments was not specified but it is required when building SentimentFilter",
-                )
-            })?,
-            absolute_time_range: self.absolute_time_range,
-            relative_time_range: self.relative_time_range,
-            participant_role: self.participant_role,
-            negate: self.negate,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SentimentFilter {
+                sentiments: self.sentiments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sentiments", "sentiments was not specified but it is required when building SentimentFilter")
+                    )?
+                ,
+                absolute_time_range: self.absolute_time_range
+                ,
+                relative_time_range: self.relative_time_range
+                ,
+                participant_role: self.participant_role
+                ,
+                negate: self.negate
+                ,
+            }
+        )
     }
 }
+

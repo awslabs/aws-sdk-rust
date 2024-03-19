@@ -5,55 +5,51 @@ pub use crate::operation::associate_user_to_permission_group::_associate_user_to
 
 impl AssociateUserToPermissionGroupInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.associate_user_to_permission_group();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.associate_user_to_permission_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssociateUserToPermissionGroup`.
-///
+/// 
 /// <p>Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace.</p>
 #[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder,
+                    inner: crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
-    > for AssociateUserToPermissionGroupFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
-            crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
+                    crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
+                > for AssociateUserToPermissionGroupFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
+                        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssociateUserToPermissionGroupFluentBuilder {
     /// Creates a new `AssociateUserToPermissionGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl AssociateUserToPermissionGroupFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroup::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroup::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput,
-        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroup::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroup::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput, crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier for the permission group.</p>
     pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_group_id(input.into());
@@ -152,3 +139,4 @@ impl AssociateUserToPermissionGroupFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

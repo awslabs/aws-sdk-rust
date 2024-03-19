@@ -3,33 +3,34 @@
 /// <p>Information about the server that hosts application components.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SystemInfo {
+pub struct SystemInfo  {
     /// <p>Operating system corresponding to a server.</p>
     pub os_info: ::std::option::Option<crate::types::OsInfo>,
     /// <p>File system type for the server.</p>
     pub file_system_type: ::std::option::Option<::std::string::String>,
     /// <p>Networking information related to a server.</p>
-    pub network_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>>,
+    pub network_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInfo>>,
     /// <p>CPU architecture type for the server.</p>
     pub cpu_architecture: ::std::option::Option<::std::string::String>,
 }
-impl SystemInfo {
+impl  SystemInfo  {
     /// <p>Operating system corresponding to a server.</p>
-    pub fn os_info(&self) -> ::std::option::Option<&crate::types::OsInfo> {
+    pub fn os_info(&self) -> ::std::option::Option<& crate::types::OsInfo> {
         self.os_info.as_ref()
     }
     /// <p>File system type for the server.</p>
-    pub fn file_system_type(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_type(&self) -> ::std::option::Option<& str> {
         self.file_system_type.as_deref()
     }
     /// <p>Networking information related to a server.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_info_list.is_none()`.
-    pub fn network_info_list(&self) -> &[crate::types::NetworkInfo] {
-        self.network_info_list.as_deref().unwrap_or_default()
+    pub fn network_info_list(&self) -> & [crate::types::NetworkInfo] {
+        self.network_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>CPU architecture type for the server.</p>
-    pub fn cpu_architecture(&self) -> ::std::option::Option<&str> {
+    pub fn cpu_architecture(&self) -> ::std::option::Option<& str> {
         self.cpu_architecture.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl SystemInfo {
 pub struct SystemInfoBuilder {
     pub(crate) os_info: ::std::option::Option<crate::types::OsInfo>,
     pub(crate) file_system_type: ::std::option::Option<::std::string::String>,
-    pub(crate) network_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>>,
+    pub(crate) network_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInfo>>,
     pub(crate) cpu_architecture: ::std::option::Option<::std::string::String>,
 }
 impl SystemInfoBuilder {
@@ -57,8 +58,7 @@ impl SystemInfoBuilder {
     }
     /// <p>Operating system corresponding to a server.</p>
     pub fn set_os_info(mut self, input: ::std::option::Option<crate::types::OsInfo>) -> Self {
-        self.os_info = input;
-        self
+        self.os_info = input; self
     }
     /// <p>Operating system corresponding to a server.</p>
     pub fn get_os_info(&self) -> &::std::option::Option<crate::types::OsInfo> {
@@ -71,8 +71,7 @@ impl SystemInfoBuilder {
     }
     /// <p>File system type for the server.</p>
     pub fn set_file_system_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_type = input;
-        self
+        self.file_system_type = input; self
     }
     /// <p>File system type for the server.</p>
     pub fn get_file_system_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl SystemInfoBuilder {
     /// <p>Networking information related to a server.</p>
     pub fn network_info_list(mut self, input: crate::types::NetworkInfo) -> Self {
         let mut v = self.network_info_list.unwrap_or_default();
-        v.push(input);
-        self.network_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Networking information related to a server.</p>
-    pub fn set_network_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>>) -> Self {
-        self.network_info_list = input;
-        self
+    pub fn set_network_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInfo>>) -> Self {
+        self.network_info_list = input; self
     }
     /// <p>Networking information related to a server.</p>
-    pub fn get_network_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>> {
+    pub fn get_network_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NetworkInfo>> {
         &self.network_info_list
     }
     /// <p>CPU architecture type for the server.</p>
@@ -105,8 +103,7 @@ impl SystemInfoBuilder {
     }
     /// <p>CPU architecture type for the server.</p>
     pub fn set_cpu_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu_architecture = input;
-        self
+        self.cpu_architecture = input; self
     }
     /// <p>CPU architecture type for the server.</p>
     pub fn get_cpu_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl SystemInfoBuilder {
     /// Consumes the builder and constructs a [`SystemInfo`](crate::types::SystemInfo).
     pub fn build(self) -> crate::types::SystemInfo {
         crate::types::SystemInfo {
-            os_info: self.os_info,
-            file_system_type: self.file_system_type,
-            network_info_list: self.network_info_list,
-            cpu_architecture: self.cpu_architecture,
+            os_info: self.os_info
+            ,
+            file_system_type: self.file_system_type
+            ,
+            network_info_list: self.network_info_list
+            ,
+            cpu_architecture: self.cpu_architecture
+            ,
         }
     }
 }
+

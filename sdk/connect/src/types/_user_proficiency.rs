@@ -3,7 +3,7 @@
 /// <p>Information about proficiency of a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserProficiency {
+pub struct UserProficiency  {
     /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
     pub attribute_name: ::std::string::String,
     /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
@@ -11,16 +11,14 @@ pub struct UserProficiency {
     /// <p>The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.</p>
     pub level: f32,
 }
-impl UserProficiency {
+impl  UserProficiency  {
     /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
     /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
-    pub fn attribute_value(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_value.deref()
+    pub fn attribute_value(&self) -> & str {
+        use std::ops::Deref; self.attribute_value.deref()
     }
     /// <p>The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.</p>
     pub fn level(&self) -> f32 {
@@ -51,8 +49,7 @@ impl UserProficiencyBuilder {
     }
     /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of user's proficiency. You must use name of predefined attribute present in the Amazon Connect instance.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl UserProficiencyBuilder {
     }
     /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of user's proficiency. You must use value of predefined attribute present in the Amazon Connect instance.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl UserProficiencyBuilder {
     }
     /// <p>The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.</p>
     pub fn set_level(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.</p>
     pub fn get_level(&self) -> &::std::option::Option<f32> {
@@ -93,20 +88,23 @@ impl UserProficiencyBuilder {
     /// - [`attribute_name`](crate::types::builders::UserProficiencyBuilder::attribute_name)
     /// - [`attribute_value`](crate::types::builders::UserProficiencyBuilder::attribute_value)
     pub fn build(self) -> ::std::result::Result<crate::types::UserProficiency, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserProficiency {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building UserProficiency",
-                )
-            })?,
-            attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_value",
-                    "attribute_value was not specified but it is required when building UserProficiency",
-                )
-            })?,
-            level: self.level.unwrap_or(1_f32),
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserProficiency {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building UserProficiency")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_value", "attribute_value was not specified but it is required when building UserProficiency")
+                    )?
+                ,
+                level: self.level
+                    .unwrap_or(1_f32)
+                ,
+            }
+        )
     }
 }
+

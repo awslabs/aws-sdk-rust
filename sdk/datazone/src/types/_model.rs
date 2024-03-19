@@ -21,11 +21,7 @@ impl Model {
     /// Tries to convert the enum instance into [`Smithy`](crate::types::Model::Smithy), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_smithy(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Model::Smithy(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Model::Smithy(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Smithy`](crate::types::Model::Smithy).
     pub fn is_smithy(&self) -> bool {
@@ -37,7 +33,8 @@ impl Model {
     }
 }
 impl ::std::fmt::Debug for Model {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    ::std::write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
+

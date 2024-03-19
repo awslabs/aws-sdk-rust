@@ -3,19 +3,19 @@
 /// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskRunSortCriteria {
+pub struct TaskRunSortCriteria  {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     pub column: crate::types::TaskRunSortColumnType,
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub sort_direction: crate::types::SortDirectionType,
 }
-impl TaskRunSortCriteria {
+impl  TaskRunSortCriteria  {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn column(&self) -> &crate::types::TaskRunSortColumnType {
+    pub fn column(&self) -> & crate::types::TaskRunSortColumnType {
         &self.column
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn sort_direction(&self) -> &crate::types::SortDirectionType {
+    pub fn sort_direction(&self) -> & crate::types::SortDirectionType {
         &self.sort_direction
     }
 }
@@ -42,8 +42,7 @@ impl TaskRunSortCriteriaBuilder {
     }
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::TaskRunSortColumnType>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::TaskRunSortColumnType> {
@@ -57,8 +56,7 @@ impl TaskRunSortCriteriaBuilder {
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn set_sort_direction(mut self, input: ::std::option::Option<crate::types::SortDirectionType>) -> Self {
-        self.sort_direction = input;
-        self
+        self.sort_direction = input; self
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn get_sort_direction(&self) -> &::std::option::Option<crate::types::SortDirectionType> {
@@ -69,19 +67,20 @@ impl TaskRunSortCriteriaBuilder {
     /// - [`column`](crate::types::builders::TaskRunSortCriteriaBuilder::column)
     /// - [`sort_direction`](crate::types::builders::TaskRunSortCriteriaBuilder::sort_direction)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskRunSortCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TaskRunSortCriteria {
-            column: self.column.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column",
-                    "column was not specified but it is required when building TaskRunSortCriteria",
-                )
-            })?,
-            sort_direction: self.sort_direction.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sort_direction",
-                    "sort_direction was not specified but it is required when building TaskRunSortCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TaskRunSortCriteria {
+                column: self.column
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column", "column was not specified but it is required when building TaskRunSortCriteria")
+                    )?
+                ,
+                sort_direction: self.sort_direction
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sort_direction", "sort_direction was not specified but it is required when building TaskRunSortCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+

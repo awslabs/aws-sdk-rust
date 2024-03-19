@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProfileInput {
+pub struct UpdateProfileInput  {
     /// <p>The identifier of the profile object that you are updating.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub certificate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateProfileInput {
+impl  UpdateProfileInput  {
     /// <p>The identifier of the profile object that you are updating.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_ids.is_none()`.
-    pub fn certificate_ids(&self) -> &[::std::string::String] {
-        self.certificate_ids.as_deref().unwrap_or_default()
+    pub fn certificate_ids(&self) -> & [::std::string::String] {
+        self.certificate_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateProfileInput {
@@ -32,7 +33,7 @@ impl UpdateProfileInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateProfileInputBuilder {
     /// <p>The identifier of the profile object that you are updating.</p>
@@ -43,8 +44,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The identifier of the profile object that you are updating.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The identifier of the profile object that you are updating.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl UpdateProfileInputBuilder {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn certificate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_ids.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.certificate_ids = input;
-        self
+    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.certificate_ids = input; self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.certificate_ids
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
-            profile_id: self.profile_id,
-            certificate_ids: self.certificate_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_profile::UpdateProfileInput {
+                profile_id: self.profile_id
+                ,
+                certificate_ids: self.certificate_ids
+                ,
+            }
+        )
     }
 }
+

@@ -3,32 +3,32 @@
 /// <p>The information about job driver for Spark submit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SparkSubmitJobDriver {
+pub struct SparkSubmitJobDriver  {
     /// <p>The entry point of job application.</p>
     pub entry_point: ::std::string::String,
     /// <p>The arguments for job application.</p>
-    pub entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entry_point_arguments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub spark_submit_parameters: ::std::option::Option<::std::string::String>,
 }
-impl SparkSubmitJobDriver {
+impl  SparkSubmitJobDriver  {
     /// <p>The entry point of job application.</p>
-    pub fn entry_point(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_point.deref()
+    pub fn entry_point(&self) -> & str {
+        use std::ops::Deref; self.entry_point.deref()
     }
     /// <p>The arguments for job application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entry_point_arguments.is_none()`.
-    pub fn entry_point_arguments(&self) -> &[::std::string::String] {
-        self.entry_point_arguments.as_deref().unwrap_or_default()
+    pub fn entry_point_arguments(&self) -> & [::std::string::String] {
+        self.entry_point_arguments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn spark_submit_parameters(&self) -> ::std::option::Option<&str> {
+    pub fn spark_submit_parameters(&self) -> ::std::option::Option<& str> {
         self.spark_submit_parameters.as_deref()
     }
 }
-impl ::std::fmt::Debug for SparkSubmitJobDriver {
+impl  ::std::fmt::Debug for SparkSubmitJobDriver  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitJobDriver");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
@@ -49,7 +49,7 @@ impl SparkSubmitJobDriver {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SparkSubmitJobDriverBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,
-    pub(crate) entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entry_point_arguments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) spark_submit_parameters: ::std::option::Option<::std::string::String>,
 }
 impl SparkSubmitJobDriverBuilder {
@@ -61,8 +61,7 @@ impl SparkSubmitJobDriverBuilder {
     }
     /// <p>The entry point of job application.</p>
     pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_point = input;
-        self
+        self.entry_point = input; self
     }
     /// <p>The entry point of job application.</p>
     pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,17 +74,16 @@ impl SparkSubmitJobDriverBuilder {
     /// <p>The arguments for job application.</p>
     pub fn entry_point_arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entry_point_arguments.unwrap_or_default();
-        v.push(input.into());
-        self.entry_point_arguments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entry_point_arguments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The arguments for job application.</p>
-    pub fn set_entry_point_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entry_point_arguments = input;
-        self
+    pub fn set_entry_point_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entry_point_arguments = input; self
     }
     /// <p>The arguments for job application.</p>
-    pub fn get_entry_point_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entry_point_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entry_point_arguments
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
@@ -95,8 +93,7 @@ impl SparkSubmitJobDriverBuilder {
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub fn set_spark_submit_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spark_submit_parameters = input;
-        self
+        self.spark_submit_parameters = input; self
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub fn get_spark_submit_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,16 +103,19 @@ impl SparkSubmitJobDriverBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_point`](crate::types::builders::SparkSubmitJobDriverBuilder::entry_point)
     pub fn build(self) -> ::std::result::Result<crate::types::SparkSubmitJobDriver, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SparkSubmitJobDriver {
-            entry_point: self.entry_point.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_point",
-                    "entry_point was not specified but it is required when building SparkSubmitJobDriver",
-                )
-            })?,
-            entry_point_arguments: self.entry_point_arguments,
-            spark_submit_parameters: self.spark_submit_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SparkSubmitJobDriver {
+                entry_point: self.entry_point
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_point", "entry_point was not specified but it is required when building SparkSubmitJobDriver")
+                    )?
+                ,
+                entry_point_arguments: self.entry_point_arguments
+                ,
+                spark_submit_parameters: self.spark_submit_parameters
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SparkSubmitJobDriverBuilder {
@@ -127,3 +127,4 @@ impl ::std::fmt::Debug for SparkSubmitJobDriverBuilder {
         formatter.finish()
     }
 }
+

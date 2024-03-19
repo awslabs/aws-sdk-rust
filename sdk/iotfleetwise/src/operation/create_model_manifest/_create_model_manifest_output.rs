@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateModelManifestOutput {
+pub struct CreateModelManifestOutput  {
     /// <p>The name of the created vehicle model.</p>
     pub name: ::std::string::String,
     /// <p>The ARN of the created vehicle model.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateModelManifestOutput {
+impl  CreateModelManifestOutput  {
     /// <p>The name of the created vehicle model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The ARN of the created vehicle model.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateModelManifestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateModelManifestOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelManifestOutput`](crate::operation::create_model_manifest::CreateModelManifestOutput).
     pub fn builder() -> crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateModelManifestOutputBuilder {
     }
     /// <p>The name of the created vehicle model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the created vehicle model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,44 +62,41 @@ impl CreateModelManifestOutputBuilder {
     }
     /// <p>The ARN of the created vehicle model.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the created vehicle model.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateModelManifestOutput`](crate::operation::create_model_manifest::CreateModelManifestOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder::name)
     /// - [`arn`](crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_model_manifest::CreateModelManifestOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateModelManifestOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CreateModelManifestOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_model_manifest::CreateModelManifestOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateModelManifestOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreateModelManifestOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

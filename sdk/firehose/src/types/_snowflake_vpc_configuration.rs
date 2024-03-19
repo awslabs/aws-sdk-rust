@@ -3,18 +3,17 @@
 /// <p>Configure a Snowflake VPC</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SnowflakeVpcConfiguration {
+pub struct SnowflakeVpcConfiguration  {
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub private_link_vpce_id: ::std::string::String,
 }
-impl SnowflakeVpcConfiguration {
+impl  SnowflakeVpcConfiguration  {
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
-    pub fn private_link_vpce_id(&self) -> &str {
-        use std::ops::Deref;
-        self.private_link_vpce_id.deref()
+    pub fn private_link_vpce_id(&self) -> & str {
+        use std::ops::Deref; self.private_link_vpce_id.deref()
     }
 }
-impl ::std::fmt::Debug for SnowflakeVpcConfiguration {
+impl  ::std::fmt::Debug for SnowflakeVpcConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeVpcConfiguration");
         formatter.field("private_link_vpce_id", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl SnowflakeVpcConfigurationBuilder {
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub fn set_private_link_vpce_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_link_vpce_id = input;
-        self
+        self.private_link_vpce_id = input; self
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub fn get_private_link_vpce_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl SnowflakeVpcConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`private_link_vpce_id`](crate::types::builders::SnowflakeVpcConfigurationBuilder::private_link_vpce_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeVpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnowflakeVpcConfiguration {
-            private_link_vpce_id: self.private_link_vpce_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "private_link_vpce_id",
-                    "private_link_vpce_id was not specified but it is required when building SnowflakeVpcConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnowflakeVpcConfiguration {
+                private_link_vpce_id: self.private_link_vpce_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("private_link_vpce_id", "private_link_vpce_id was not specified but it is required when building SnowflakeVpcConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SnowflakeVpcConfigurationBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for SnowflakeVpcConfigurationBuilder {
         formatter.finish()
     }
 }
+

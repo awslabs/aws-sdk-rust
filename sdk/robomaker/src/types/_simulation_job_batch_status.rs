@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjobbatchstatus = unimplemented!();
 /// match simulationjobbatchstatus {
@@ -37,16 +37,14 @@
 /// Specifically, when `simulationjobbatchstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobBatchStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SimulationJobBatchStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -68,92 +66,83 @@ pub enum SimulationJobBatchStatus {
     TimingOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SimulationJobBatchStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => SimulationJobBatchStatus::Canceled,
-            "Canceling" => SimulationJobBatchStatus::Canceling,
-            "Completed" => SimulationJobBatchStatus::Completed,
-            "Completing" => SimulationJobBatchStatus::Completing,
-            "Failed" => SimulationJobBatchStatus::Failed,
-            "InProgress" => SimulationJobBatchStatus::InProgress,
-            "Pending" => SimulationJobBatchStatus::Pending,
-            "TimedOut" => SimulationJobBatchStatus::TimedOut,
-            "TimingOut" => SimulationJobBatchStatus::TimingOut,
-            other => SimulationJobBatchStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Canceled" => SimulationJobBatchStatus::Canceled,
+"Canceling" => SimulationJobBatchStatus::Canceling,
+"Completed" => SimulationJobBatchStatus::Completed,
+"Completing" => SimulationJobBatchStatus::Completing,
+"Failed" => SimulationJobBatchStatus::Failed,
+"InProgress" => SimulationJobBatchStatus::InProgress,
+"Pending" => SimulationJobBatchStatus::Pending,
+"TimedOut" => SimulationJobBatchStatus::TimedOut,
+"TimingOut" => SimulationJobBatchStatus::TimingOut,
+other => SimulationJobBatchStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SimulationJobBatchStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SimulationJobBatchStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SimulationJobBatchStatus::from(s))
+                    }
+                }
 impl SimulationJobBatchStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobBatchStatus::Canceled => "Canceled",
-            SimulationJobBatchStatus::Canceling => "Canceling",
-            SimulationJobBatchStatus::Completed => "Completed",
-            SimulationJobBatchStatus::Completing => "Completing",
-            SimulationJobBatchStatus::Failed => "Failed",
-            SimulationJobBatchStatus::InProgress => "InProgress",
-            SimulationJobBatchStatus::Pending => "Pending",
-            SimulationJobBatchStatus::TimedOut => "TimedOut",
-            SimulationJobBatchStatus::TimingOut => "TimingOut",
-            SimulationJobBatchStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled",
-            "Canceling",
-            "Completed",
-            "Completing",
-            "Failed",
-            "InProgress",
-            "Pending",
-            "TimedOut",
-            "TimingOut",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobBatchStatus::Canceled => "Canceled",
+    SimulationJobBatchStatus::Canceling => "Canceling",
+    SimulationJobBatchStatus::Completed => "Completed",
+    SimulationJobBatchStatus::Completing => "Completing",
+    SimulationJobBatchStatus::Failed => "Failed",
+    SimulationJobBatchStatus::InProgress => "InProgress",
+    SimulationJobBatchStatus::Pending => "Pending",
+    SimulationJobBatchStatus::TimedOut => "TimedOut",
+    SimulationJobBatchStatus::TimingOut => "TimingOut",
+    SimulationJobBatchStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Canceling", "Completed", "Completing", "Failed", "InProgress", "Pending", "TimedOut", "TimingOut"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SimulationJobBatchStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SimulationJobBatchStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SimulationJobBatchStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SimulationJobBatchStatus::Canceled => write!(f, "Canceled"),
-            SimulationJobBatchStatus::Canceling => write!(f, "Canceling"),
-            SimulationJobBatchStatus::Completed => write!(f, "Completed"),
-            SimulationJobBatchStatus::Completing => write!(f, "Completing"),
-            SimulationJobBatchStatus::Failed => write!(f, "Failed"),
-            SimulationJobBatchStatus::InProgress => write!(f, "InProgress"),
-            SimulationJobBatchStatus::Pending => write!(f, "Pending"),
-            SimulationJobBatchStatus::TimedOut => write!(f, "TimedOut"),
-            SimulationJobBatchStatus::TimingOut => write!(f, "TimingOut"),
-            SimulationJobBatchStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SimulationJobBatchStatus::Canceled => write!(f, "Canceled"),
+SimulationJobBatchStatus::Canceling => write!(f, "Canceling"),
+SimulationJobBatchStatus::Completed => write!(f, "Completed"),
+SimulationJobBatchStatus::Completing => write!(f, "Completing"),
+SimulationJobBatchStatus::Failed => write!(f, "Failed"),
+SimulationJobBatchStatus::InProgress => write!(f, "InProgress"),
+SimulationJobBatchStatus::Pending => write!(f, "Pending"),
+SimulationJobBatchStatus::TimedOut => write!(f, "TimedOut"),
+SimulationJobBatchStatus::TimingOut => write!(f, "TimingOut"),
+SimulationJobBatchStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

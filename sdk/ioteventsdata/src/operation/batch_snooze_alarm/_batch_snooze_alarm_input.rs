@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchSnoozeAlarmInput {
+pub struct BatchSnoozeAlarmInput  {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub snooze_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
+    pub snooze_action_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SnoozeAlarmActionRequest>>,
 }
-impl BatchSnoozeAlarmInput {
+impl  BatchSnoozeAlarmInput  {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snooze_action_requests.is_none()`.
-    pub fn snooze_action_requests(&self) -> &[crate::types::SnoozeAlarmActionRequest] {
-        self.snooze_action_requests.as_deref().unwrap_or_default()
+    pub fn snooze_action_requests(&self) -> & [crate::types::SnoozeAlarmActionRequest] {
+        self.snooze_action_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchSnoozeAlarmInput {
@@ -25,7 +26,7 @@ impl BatchSnoozeAlarmInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchSnoozeAlarmInputBuilder {
-    pub(crate) snooze_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
+    pub(crate) snooze_action_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SnoozeAlarmActionRequest>>,
 }
 impl BatchSnoozeAlarmInputBuilder {
     /// Appends an item to `snooze_action_requests`.
@@ -35,25 +36,26 @@ impl BatchSnoozeAlarmInputBuilder {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
     pub fn snooze_action_requests(mut self, input: crate::types::SnoozeAlarmActionRequest) -> Self {
         let mut v = self.snooze_action_requests.unwrap_or_default();
-        v.push(input);
-        self.snooze_action_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.snooze_action_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_snooze_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>) -> Self {
-        self.snooze_action_requests = input;
-        self
+    pub fn set_snooze_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnoozeAlarmActionRequest>>) -> Self {
+        self.snooze_action_requests = input; self
     }
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_snooze_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>> {
+    pub fn get_snooze_action_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnoozeAlarmActionRequest>> {
         &self.snooze_action_requests
     }
     /// Consumes the builder and constructs a [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput {
-            snooze_action_requests: self.snooze_action_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput {
+                snooze_action_requests: self.snooze_action_requests
+                ,
+            }
+        )
     }
 }
+

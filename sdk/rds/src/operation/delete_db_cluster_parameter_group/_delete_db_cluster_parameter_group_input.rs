@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbClusterParameterGroupInput {
+pub struct DeleteDbClusterParameterGroupInput  {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct DeleteDbClusterParameterGroupInput {
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbClusterParameterGroupInput {
+impl  DeleteDbClusterParameterGroupInput  {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -27,7 +27,7 @@ impl DeleteDbClusterParameterGroupInput {
     /// <li>
     /// <p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <p>Can't be associated with any DB clusters.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
+        self.db_cluster_parameter_group_name = input; self
     }
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -88,14 +87,13 @@ impl DeleteDbClusterParameterGroupInputBuilder {
         &self.db_cluster_parameter_group_name
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput {
-            db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput {
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
+            }
+        )
     }
 }
+

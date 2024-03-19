@@ -3,19 +3,19 @@
 /// <p>The CIS finding status filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisFindingStatusFilter {
+pub struct CisFindingStatusFilter  {
     /// <p>The comparison value of the CIS finding status filter.</p>
     pub comparison: crate::types::CisFindingStatusComparison,
     /// <p>The value of the CIS finding status filter.</p>
     pub value: crate::types::CisFindingStatus,
 }
-impl CisFindingStatusFilter {
+impl  CisFindingStatusFilter  {
     /// <p>The comparison value of the CIS finding status filter.</p>
-    pub fn comparison(&self) -> &crate::types::CisFindingStatusComparison {
+    pub fn comparison(&self) -> & crate::types::CisFindingStatusComparison {
         &self.comparison
     }
     /// <p>The value of the CIS finding status filter.</p>
-    pub fn value(&self) -> &crate::types::CisFindingStatus {
+    pub fn value(&self) -> & crate::types::CisFindingStatus {
         &self.value
     }
 }
@@ -42,8 +42,7 @@ impl CisFindingStatusFilterBuilder {
     }
     /// <p>The comparison value of the CIS finding status filter.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CisFindingStatusComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The comparison value of the CIS finding status filter.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CisFindingStatusComparison> {
@@ -57,8 +56,7 @@ impl CisFindingStatusFilterBuilder {
     }
     /// <p>The value of the CIS finding status filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::CisFindingStatus>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the CIS finding status filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::CisFindingStatus> {
@@ -69,19 +67,20 @@ impl CisFindingStatusFilterBuilder {
     /// - [`comparison`](crate::types::builders::CisFindingStatusFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::CisFindingStatusFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CisFindingStatusFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisFindingStatusFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building CisFindingStatusFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CisFindingStatusFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisFindingStatusFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building CisFindingStatusFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CisFindingStatusFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

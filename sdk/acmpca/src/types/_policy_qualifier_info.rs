@@ -3,19 +3,19 @@
 /// <p>Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. Amazon Web Services Private CA supports the certification practice statement (CPS) qualifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyQualifierInfo {
+pub struct PolicyQualifierInfo  {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
     pub policy_qualifier_id: crate::types::PolicyQualifierId,
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub qualifier: ::std::option::Option<crate::types::Qualifier>,
 }
-impl PolicyQualifierInfo {
+impl  PolicyQualifierInfo  {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
-    pub fn policy_qualifier_id(&self) -> &crate::types::PolicyQualifierId {
+    pub fn policy_qualifier_id(&self) -> & crate::types::PolicyQualifierId {
         &self.policy_qualifier_id
     }
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&crate::types::Qualifier> {
+    pub fn qualifier(&self) -> ::std::option::Option<& crate::types::Qualifier> {
         self.qualifier.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PolicyQualifierInfoBuilder {
     }
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
     pub fn set_policy_qualifier_id(mut self, input: ::std::option::Option<crate::types::PolicyQualifierId>) -> Self {
-        self.policy_qualifier_id = input;
-        self
+        self.policy_qualifier_id = input; self
     }
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
     pub fn get_policy_qualifier_id(&self) -> &::std::option::Option<crate::types::PolicyQualifierId> {
@@ -57,8 +56,7 @@ impl PolicyQualifierInfoBuilder {
     }
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<crate::types::Qualifier>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<crate::types::Qualifier> {
@@ -68,14 +66,17 @@ impl PolicyQualifierInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_qualifier_id`](crate::types::builders::PolicyQualifierInfoBuilder::policy_qualifier_id)
     pub fn build(self) -> ::std::result::Result<crate::types::PolicyQualifierInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PolicyQualifierInfo {
-            policy_qualifier_id: self.policy_qualifier_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_qualifier_id",
-                    "policy_qualifier_id was not specified but it is required when building PolicyQualifierInfo",
-                )
-            })?,
-            qualifier: self.qualifier,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PolicyQualifierInfo {
+                policy_qualifier_id: self.policy_qualifier_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_qualifier_id", "policy_qualifier_id was not specified but it is required when building PolicyQualifierInfo")
+                    )?
+                ,
+                qualifier: self.qualifier
+                ,
+            }
+        )
     }
 }
+

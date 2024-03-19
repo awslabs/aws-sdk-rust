@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDecoderManifests`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_manifest_arn(impl Into<String>)`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::model_manifest_arn) / [`set_model_manifest_arn(Option<String>)`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::set_model_manifest_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next set of results.</p> <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return, between 1 and 100, inclusive.</p><br>
-    /// - On success, responds with [`ListDecoderManifestsOutput`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput) with field(s):
+                            /// - On success, responds with [`ListDecoderManifestsOutput`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput) with field(s):
     ///   - [`summaries(Option<Vec::<DecoderManifestSummary>>)`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput::summaries): <p>A list of information about each decoder manifest.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListDecoderManifestsError>`](crate::operation::list_decoder_manifests::ListDecoderManifestsError)
+                            /// - On failure, responds with [`SdkError<ListDecoderManifestsError>`](crate::operation::list_decoder_manifests::ListDecoderManifestsError)
     pub fn list_decoder_manifests(&self) -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder {
-        crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

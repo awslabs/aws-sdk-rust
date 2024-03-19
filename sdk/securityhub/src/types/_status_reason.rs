@@ -3,19 +3,19 @@
 /// <p>Provides additional context for the value of <code>Compliance.Status</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusReason {
+pub struct StatusReason  {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
     pub reason_code: ::std::option::Option<::std::string::String>,
     /// <p>The corresponding description for the status reason code.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StatusReason {
+impl  StatusReason  {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
-    pub fn reason_code(&self) -> ::std::option::Option<&str> {
+    pub fn reason_code(&self) -> ::std::option::Option<& str> {
         self.reason_code.as_deref()
     }
     /// <p>The corresponding description for the status reason code.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl StatusReasonBuilder {
     }
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason_code = input;
-        self
+        self.reason_code = input; self
     }
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl StatusReasonBuilder {
     }
     /// <p>The corresponding description for the status reason code.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The corresponding description for the status reason code.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl StatusReasonBuilder {
     /// Consumes the builder and constructs a [`StatusReason`](crate::types::StatusReason).
     pub fn build(self) -> crate::types::StatusReason {
         crate::types::StatusReason {
-            reason_code: self.reason_code,
-            description: self.description,
+            reason_code: self.reason_code
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

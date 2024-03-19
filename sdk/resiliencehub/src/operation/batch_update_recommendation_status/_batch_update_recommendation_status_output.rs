@@ -2,37 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateRecommendationStatusOutput {
+pub struct BatchUpdateRecommendationStatusOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>A list of items that were included or excluded.</p>
-    pub successful_entries: ::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>,
+    pub successful_entries: ::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>,
     /// <p>A list of items with error details about each item, which could not be included or excluded.</p>
-    pub failed_entries: ::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusFailedEntry>,
+    pub failed_entries: ::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusFailedEntry>,
     _request_id: Option<String>,
 }
-impl BatchUpdateRecommendationStatusOutput {
+impl  BatchUpdateRecommendationStatusOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>A list of items that were included or excluded.</p>
-    pub fn successful_entries(&self) -> &[crate::types::BatchUpdateRecommendationStatusSuccessfulEntry] {
-        use std::ops::Deref;
-        self.successful_entries.deref()
+    pub fn successful_entries(&self) -> & [crate::types::BatchUpdateRecommendationStatusSuccessfulEntry] {
+        use std::ops::Deref; self.successful_entries.deref()
     }
     /// <p>A list of items with error details about each item, which could not be included or excluded.</p>
-    pub fn failed_entries(&self) -> &[crate::types::BatchUpdateRecommendationStatusFailedEntry] {
-        use std::ops::Deref;
-        self.failed_entries.deref()
+    pub fn failed_entries(&self) -> & [crate::types::BatchUpdateRecommendationStatusFailedEntry] {
+        use std::ops::Deref; self.failed_entries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchUpdateRecommendationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchUpdateRecommendationStatusOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateRecommendationStatusOutput`](crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusOutput).
     pub fn builder() -> crate::operation::batch_update_recommendation_status::builders::BatchUpdateRecommendationStatusOutputBuilder {
@@ -45,8 +42,8 @@ impl BatchUpdateRecommendationStatusOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateRecommendationStatusOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) successful_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>>,
-    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusFailedEntry>>,
+    pub(crate) successful_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>>,
+    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusFailedEntry>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateRecommendationStatusOutputBuilder {
@@ -58,8 +55,7 @@ impl BatchUpdateRecommendationStatusOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,20 +68,16 @@ impl BatchUpdateRecommendationStatusOutputBuilder {
     /// <p>A list of items that were included or excluded.</p>
     pub fn successful_entries(mut self, input: crate::types::BatchUpdateRecommendationStatusSuccessfulEntry) -> Self {
         let mut v = self.successful_entries.unwrap_or_default();
-        v.push(input);
-        self.successful_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of items that were included or excluded.</p>
-    pub fn set_successful_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>>,
-    ) -> Self {
-        self.successful_entries = input;
-        self
+    pub fn set_successful_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>>) -> Self {
+        self.successful_entries = input; self
     }
     /// <p>A list of items that were included or excluded.</p>
-    pub fn get_successful_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>> {
+    pub fn get_successful_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>> {
         &self.successful_entries
     }
     /// Appends an item to `failed_entries`.
@@ -95,64 +87,53 @@ impl BatchUpdateRecommendationStatusOutputBuilder {
     /// <p>A list of items with error details about each item, which could not be included or excluded.</p>
     pub fn failed_entries(mut self, input: crate::types::BatchUpdateRecommendationStatusFailedEntry) -> Self {
         let mut v = self.failed_entries.unwrap_or_default();
-        v.push(input);
-        self.failed_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of items with error details about each item, which could not be included or excluded.</p>
-    pub fn set_failed_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusFailedEntry>>,
-    ) -> Self {
-        self.failed_entries = input;
-        self
+    pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusFailedEntry>>) -> Self {
+        self.failed_entries = input; self
     }
     /// <p>A list of items with error details about each item, which could not be included or excluded.</p>
-    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusFailedEntry>> {
+    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateRecommendationStatusFailedEntry>> {
         &self.failed_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchUpdateRecommendationStatusOutput`](crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::batch_update_recommendation_status::builders::BatchUpdateRecommendationStatusOutputBuilder::app_arn)
     /// - [`successful_entries`](crate::operation::batch_update_recommendation_status::builders::BatchUpdateRecommendationStatusOutputBuilder::successful_entries)
     /// - [`failed_entries`](crate::operation::batch_update_recommendation_status::builders::BatchUpdateRecommendationStatusOutputBuilder::failed_entries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusOutput {
-                app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "app_arn",
-                        "app_arn was not specified but it is required when building BatchUpdateRecommendationStatusOutput",
-                    )
-                })?,
-                successful_entries: self.successful_entries.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "successful_entries",
-                        "successful_entries was not specified but it is required when building BatchUpdateRecommendationStatusOutput",
-                    )
-                })?,
-                failed_entries: self.failed_entries.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "failed_entries",
-                        "failed_entries was not specified but it is required when building BatchUpdateRecommendationStatusOutput",
-                    )
-                })?,
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building BatchUpdateRecommendationStatusOutput")
+                    )?
+                ,
+                successful_entries: self.successful_entries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("successful_entries", "successful_entries was not specified but it is required when building BatchUpdateRecommendationStatusOutput")
+                    )?
+                ,
+                failed_entries: self.failed_entries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failed_entries", "failed_entries was not specified but it is required when building BatchUpdateRecommendationStatusOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The summary of skills.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SkillSummary {
+pub struct SkillSummary  {
     /// <p>The ARN of the skill summary.</p>
     pub skill_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the skill.</p>
@@ -15,13 +15,13 @@ pub struct SkillSummary {
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub skill_type: ::std::option::Option<crate::types::SkillType>,
 }
-impl SkillSummary {
+impl  SkillSummary  {
     /// <p>The ARN of the skill summary.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The name of the skill.</p>
-    pub fn skill_name(&self) -> ::std::option::Option<&str> {
+    pub fn skill_name(&self) -> ::std::option::Option<& str> {
         self.skill_name.as_deref()
     }
     /// <p>Linking support for a skill.</p>
@@ -29,11 +29,11 @@ impl SkillSummary {
         self.supports_linking
     }
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
-    pub fn enablement_type(&self) -> ::std::option::Option<&crate::types::EnablementType> {
+    pub fn enablement_type(&self) -> ::std::option::Option<& crate::types::EnablementType> {
         self.enablement_type.as_ref()
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
-    pub fn skill_type(&self) -> ::std::option::Option<&crate::types::SkillType> {
+    pub fn skill_type(&self) -> ::std::option::Option<& crate::types::SkillType> {
         self.skill_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SkillSummaryBuilder {
     }
     /// <p>The ARN of the skill summary.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The ARN of the skill summary.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl SkillSummaryBuilder {
     }
     /// <p>The name of the skill.</p>
     pub fn set_skill_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_name = input;
-        self
+        self.skill_name = input; self
     }
     /// <p>The name of the skill.</p>
     pub fn get_skill_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl SkillSummaryBuilder {
     }
     /// <p>Linking support for a skill.</p>
     pub fn set_supports_linking(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_linking = input;
-        self
+        self.supports_linking = input; self
     }
     /// <p>Linking support for a skill.</p>
     pub fn get_supports_linking(&self) -> &::std::option::Option<bool> {
@@ -104,8 +101,7 @@ impl SkillSummaryBuilder {
     }
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
     pub fn set_enablement_type(mut self, input: ::std::option::Option<crate::types::EnablementType>) -> Self {
-        self.enablement_type = input;
-        self
+        self.enablement_type = input; self
     }
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
     pub fn get_enablement_type(&self) -> &::std::option::Option<crate::types::EnablementType> {
@@ -118,8 +114,7 @@ impl SkillSummaryBuilder {
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub fn set_skill_type(mut self, input: ::std::option::Option<crate::types::SkillType>) -> Self {
-        self.skill_type = input;
-        self
+        self.skill_type = input; self
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub fn get_skill_type(&self) -> &::std::option::Option<crate::types::SkillType> {
@@ -128,11 +123,18 @@ impl SkillSummaryBuilder {
     /// Consumes the builder and constructs a [`SkillSummary`](crate::types::SkillSummary).
     pub fn build(self) -> crate::types::SkillSummary {
         crate::types::SkillSummary {
-            skill_id: self.skill_id,
-            skill_name: self.skill_name,
-            supports_linking: self.supports_linking.unwrap_or_default(),
-            enablement_type: self.enablement_type,
-            skill_type: self.skill_type,
+            skill_id: self.skill_id
+            ,
+            skill_name: self.skill_name
+            ,
+            supports_linking: self.supports_linking
+                .unwrap_or_default()
+            ,
+            enablement_type: self.enablement_type
+            ,
+            skill_type: self.skill_type
+            ,
         }
     }
 }
+

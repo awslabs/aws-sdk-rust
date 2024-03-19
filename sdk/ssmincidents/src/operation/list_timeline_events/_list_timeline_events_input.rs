@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTimelineEventsInput {
+pub struct ListTimelineEventsInput  {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
@@ -23,7 +23,7 @@ pub struct ListTimelineEventsInput {
     /// <li>
     /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>Sort timeline events by the specified key value pair.</p>
     pub sort_by: ::std::option::Option<crate::types::TimelineEventSort>,
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
@@ -33,9 +33,9 @@ pub struct ListTimelineEventsInput {
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTimelineEventsInput {
+impl  ListTimelineEventsInput  {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> ::std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
@@ -56,17 +56,18 @@ impl ListTimelineEventsInput {
     /// <li>
     /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::TimelineEventSort> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::TimelineEventSort> {
         self.sort_by.as_ref()
     }
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The maximum number of results per page.</p>
@@ -74,7 +75,7 @@ impl ListTimelineEventsInput {
         self.max_results
     }
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -90,7 +91,7 @@ impl ListTimelineEventsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTimelineEventsInputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) sort_by: ::std::option::Option<crate::types::TimelineEventSort>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -105,8 +106,7 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_record_arn = input;
-        self
+        self.incident_record_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,9 +136,9 @@ impl ListTimelineEventsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
@@ -158,9 +158,8 @@ impl ListTimelineEventsInputBuilder {
     /// <li>
     /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
@@ -180,7 +179,7 @@ impl ListTimelineEventsInputBuilder {
     /// <li>
     /// <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
@@ -190,8 +189,7 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TimelineEventSort>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TimelineEventSort> {
@@ -204,8 +202,7 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -218,8 +215,7 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>The maximum number of results per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -232,25 +228,30 @@ impl ListTimelineEventsInputBuilder {
     }
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_timeline_events::ListTimelineEventsInput {
-            incident_record_arn: self.incident_record_arn,
-            filters: self.filters,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_timeline_events::ListTimelineEventsInput {
+                incident_record_arn: self.incident_record_arn
+                ,
+                filters: self.filters
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

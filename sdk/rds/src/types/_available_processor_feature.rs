@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailableProcessorFeature {
+pub struct AvailableProcessorFeature  {
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default value for the processor feature of the DB instance class.</p>
@@ -12,17 +12,17 @@ pub struct AvailableProcessorFeature {
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
 }
-impl AvailableProcessorFeature {
+impl  AvailableProcessorFeature  {
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The default value for the processor feature of the DB instance class.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<& str> {
         self.allowed_values.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl AvailableProcessorFeatureBuilder {
     }
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AvailableProcessorFeatureBuilder {
     }
     /// <p>The default value for the processor feature of the DB instance class.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value for the processor feature of the DB instance class.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl AvailableProcessorFeatureBuilder {
     }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
     pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allowed_values = input;
-        self
+        self.allowed_values = input; self
     }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl AvailableProcessorFeatureBuilder {
     /// Consumes the builder and constructs a [`AvailableProcessorFeature`](crate::types::AvailableProcessorFeature).
     pub fn build(self) -> crate::types::AvailableProcessorFeature {
         crate::types::AvailableProcessorFeature {
-            name: self.name,
-            default_value: self.default_value,
-            allowed_values: self.allowed_values,
+            name: self.name
+            ,
+            default_value: self.default_value
+            ,
+            allowed_values: self.allowed_values
+            ,
         }
     }
 }
+

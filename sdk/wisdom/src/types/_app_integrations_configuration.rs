@@ -3,7 +3,7 @@
 /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppIntegrationsConfiguration {
+pub struct AppIntegrationsConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
     /// <ul>
     /// <li>
@@ -30,9 +30,9 @@ pub struct AppIntegrationsConfiguration {
     /// <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>.</p></li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations.</p>
-    pub object_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub object_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AppIntegrationsConfiguration {
+impl  AppIntegrationsConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
     /// <ul>
     /// <li>
@@ -48,9 +48,8 @@ impl AppIntegrationsConfiguration {
     /// <p>The bucket policy of the corresponding S3 bucket must allow the Amazon Web Services principal <code>app-integrations.amazonaws.com</code> to perform <code>s3:ListBucket</code>, <code>s3:GetObject</code>, and <code>s3:GetBucketLocation</code> against the bucket.</p>
     /// </important></li>
     /// </ul>
-    pub fn app_integration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_integration_arn.deref()
+    pub fn app_integration_arn(&self) -> & str {
+        use std::ops::Deref; self.app_integration_arn.deref()
     }
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
@@ -62,10 +61,11 @@ impl AppIntegrationsConfiguration {
     /// <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>.</p></li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_fields.is_none()`.
-    pub fn object_fields(&self) -> &[::std::string::String] {
-        self.object_fields.as_deref().unwrap_or_default()
+    pub fn object_fields(&self) -> & [::std::string::String] {
+        self.object_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AppIntegrationsConfiguration {
@@ -80,7 +80,7 @@ impl AppIntegrationsConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppIntegrationsConfigurationBuilder {
     pub(crate) app_integration_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) object_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) object_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AppIntegrationsConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
@@ -119,8 +119,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// </important></li>
     /// </ul>
     pub fn set_app_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_integration_arn = input;
-        self
+        self.app_integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
     /// <ul>
@@ -156,9 +155,9 @@ impl AppIntegrationsConfigurationBuilder {
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations.</p>
     pub fn object_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.object_fields.unwrap_or_default();
-        v.push(input.into());
-        self.object_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.object_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
@@ -170,9 +169,8 @@ impl AppIntegrationsConfigurationBuilder {
     /// <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>.</p></li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations.</p>
-    pub fn set_object_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.object_fields = input;
-        self
+    pub fn set_object_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.object_fields = input; self
     }
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
@@ -184,21 +182,24 @@ impl AppIntegrationsConfigurationBuilder {
     /// <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>.</p></li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations.</p>
-    pub fn get_object_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_object_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.object_fields
     }
     /// Consumes the builder and constructs a [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_integration_arn`](crate::types::builders::AppIntegrationsConfigurationBuilder::app_integration_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AppIntegrationsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppIntegrationsConfiguration {
-            app_integration_arn: self.app_integration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_integration_arn",
-                    "app_integration_arn was not specified but it is required when building AppIntegrationsConfiguration",
-                )
-            })?,
-            object_fields: self.object_fields,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppIntegrationsConfiguration {
+                app_integration_arn: self.app_integration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_integration_arn", "app_integration_arn was not specified but it is required when building AppIntegrationsConfiguration")
+                    )?
+                ,
+                object_fields: self.object_fields
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of the register on-premises instance operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterOnPremisesInstanceInput {
+pub struct RegisterOnPremisesInstanceInput  {
     /// <p>The name of the on-premises instance to register.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
@@ -11,17 +11,17 @@ pub struct RegisterOnPremisesInstanceInput {
     /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
 }
-impl RegisterOnPremisesInstanceInput {
+impl  RegisterOnPremisesInstanceInput  {
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn iam_session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_session_arn(&self) -> ::std::option::Option<& str> {
         self.iam_session_arn.as_deref()
     }
     /// <p>The ARN of the user to associate with the on-premises instance.</p>
-    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl RegisterOnPremisesInstanceInputBuilder {
     }
     /// <p>The name of the on-premises instance to register.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the on-premises instance to register.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RegisterOnPremisesInstanceInputBuilder {
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
     pub fn set_iam_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_session_arn = input;
-        self
+        self.iam_session_arn = input; self
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
     pub fn get_iam_session_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl RegisterOnPremisesInstanceInputBuilder {
     }
     /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_user_arn = input;
-        self
+        self.iam_user_arn = input; self
     }
     /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_user_arn
     }
     /// Consumes the builder and constructs a [`RegisterOnPremisesInstanceInput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput {
-            instance_name: self.instance_name,
-            iam_session_arn: self.iam_session_arn,
-            iam_user_arn: self.iam_user_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput {
+                instance_name: self.instance_name
+                ,
+                iam_session_arn: self.iam_session_arn
+                ,
+                iam_user_arn: self.iam_user_arn
+                ,
+            }
+        )
     }
 }
+

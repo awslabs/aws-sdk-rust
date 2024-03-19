@@ -3,3 +3,4 @@ pub use ::aws_types::request_id::RequestId;
 
 /// Types for the `AssumeRoleForPodIdentity` operation.
 pub mod assume_role_for_pod_identity;
+

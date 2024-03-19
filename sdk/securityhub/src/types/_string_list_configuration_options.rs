@@ -3,9 +3,9 @@
 /// <p>The options for customizing a security control parameter that is a list of strings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringListConfigurationOptions {
+pub struct StringListConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a list of strings.</p>
-    pub default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub default_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided list of strings for a control parameter.</p>
     pub re2_expression: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of list items that a string list control parameter can accept.</p>
@@ -13,15 +13,16 @@ pub struct StringListConfigurationOptions {
     /// <p>The description of the RE2 regular expression.</p>
     pub expression_description: ::std::option::Option<::std::string::String>,
 }
-impl StringListConfigurationOptions {
+impl  StringListConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a list of strings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_value.is_none()`.
-    pub fn default_value(&self) -> &[::std::string::String] {
-        self.default_value.as_deref().unwrap_or_default()
+    pub fn default_value(&self) -> & [::std::string::String] {
+        self.default_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided list of strings for a control parameter.</p>
-    pub fn re2_expression(&self) -> ::std::option::Option<&str> {
+    pub fn re2_expression(&self) -> ::std::option::Option<& str> {
         self.re2_expression.as_deref()
     }
     /// <p>The maximum number of list items that a string list control parameter can accept.</p>
@@ -29,7 +30,7 @@ impl StringListConfigurationOptions {
         self.max_items
     }
     /// <p>The description of the RE2 regular expression.</p>
-    pub fn expression_description(&self) -> ::std::option::Option<&str> {
+    pub fn expression_description(&self) -> ::std::option::Option<& str> {
         self.expression_description.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl StringListConfigurationOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringListConfigurationOptionsBuilder {
-    pub(crate) default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) default_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) re2_expression: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) expression_description: ::std::option::Option<::std::string::String>,
@@ -57,17 +58,16 @@ impl StringListConfigurationOptionsBuilder {
     /// <p>The Security Hub default value for a control parameter that is a list of strings.</p>
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.default_value.unwrap_or_default();
-        v.push(input.into());
-        self.default_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.default_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Security Hub default value for a control parameter that is a list of strings.</p>
-    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.default_value = input;
-        self
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a control parameter that is a list of strings.</p>
-    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.default_value
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided list of strings for a control parameter.</p>
@@ -77,8 +77,7 @@ impl StringListConfigurationOptionsBuilder {
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided list of strings for a control parameter.</p>
     pub fn set_re2_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.re2_expression = input;
-        self
+        self.re2_expression = input; self
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided list of strings for a control parameter.</p>
     pub fn get_re2_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl StringListConfigurationOptionsBuilder {
     }
     /// <p>The maximum number of list items that a string list control parameter can accept.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of list items that a string list control parameter can accept.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -105,8 +103,7 @@ impl StringListConfigurationOptionsBuilder {
     }
     /// <p>The description of the RE2 regular expression.</p>
     pub fn set_expression_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression_description = input;
-        self
+        self.expression_description = input; self
     }
     /// <p>The description of the RE2 regular expression.</p>
     pub fn get_expression_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl StringListConfigurationOptionsBuilder {
     /// Consumes the builder and constructs a [`StringListConfigurationOptions`](crate::types::StringListConfigurationOptions).
     pub fn build(self) -> crate::types::StringListConfigurationOptions {
         crate::types::StringListConfigurationOptions {
-            default_value: self.default_value,
-            re2_expression: self.re2_expression,
-            max_items: self.max_items,
-            expression_description: self.expression_description,
+            default_value: self.default_value
+            ,
+            re2_expression: self.re2_expression
+            ,
+            max_items: self.max_items
+            ,
+            expression_description: self.expression_description
+            ,
         }
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCostEstimation`](crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
-    /// - On success, responds with [`GetCostEstimationOutput`](crate::operation::get_cost_estimation::GetCostEstimationOutput) with field(s):
+                            /// - On success, responds with [`GetCostEstimationOutput`](crate::operation::get_cost_estimation::GetCostEstimationOutput) with field(s):
     ///   - [`resource_collection(Option<CostEstimationResourceCollectionFilter>)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::resource_collection): <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
     ///   - [`status(Option<CostEstimationStatus>)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::status): <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
     ///   - [`costs(Option<Vec::<ServiceResourceCost>>)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::costs): <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
     ///   - [`time_range(Option<CostEstimationTimeRange>)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::time_range): <p>The start and end time of the cost estimation.</p>
     ///   - [`total_cost(f64)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::total_cost): <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<GetCostEstimationError>`](crate::operation::get_cost_estimation::GetCostEstimationError)
+                            /// - On failure, responds with [`SdkError<GetCostEstimationError>`](crate::operation::get_cost_estimation::GetCostEstimationError)
     pub fn get_cost_estimation(&self) -> crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder {
-        crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

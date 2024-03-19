@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTestGridSessionActions`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`session_arn(impl Into<String>)`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::session_arn) / [`set_session_arn(Option<String>)`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::set_session_arn):<br>required: **true**<br><p>The ARN of the session to retrieve.</p><br>
     ///   - [`max_result(i32)`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::max_result) / [`set_max_result(Option<i32>)`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::set_max_result):<br>required: **false**<br><p>The maximum number of sessions to return per response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`ListTestGridSessionActionsOutput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput) with field(s):
+                            /// - On success, responds with [`ListTestGridSessionActionsOutput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput) with field(s):
     ///   - [`actions(Option<Vec::<TestGridSessionAction>>)`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput::actions): <p>The action taken by the session.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListTestGridSessionActionsError>`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError)
-    pub fn list_test_grid_session_actions(
-        &self,
-    ) -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder {
-        crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListTestGridSessionActionsError>`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError)
+    pub fn list_test_grid_session_actions(&self) -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder {
+                                crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

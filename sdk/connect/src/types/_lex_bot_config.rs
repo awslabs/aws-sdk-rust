@@ -3,19 +3,19 @@
 /// <p>Configuration information of an Amazon Lex or Amazon Lex V2 bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LexBotConfig {
+pub struct LexBotConfig  {
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub lex_bot: ::std::option::Option<crate::types::LexBot>,
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub lex_v2_bot: ::std::option::Option<crate::types::LexV2Bot>,
 }
-impl LexBotConfig {
+impl  LexBotConfig  {
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    pub fn lex_bot(&self) -> ::std::option::Option<&crate::types::LexBot> {
+    pub fn lex_bot(&self) -> ::std::option::Option<& crate::types::LexBot> {
         self.lex_bot.as_ref()
     }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
-    pub fn lex_v2_bot(&self) -> ::std::option::Option<&crate::types::LexV2Bot> {
+    pub fn lex_v2_bot(&self) -> ::std::option::Option<& crate::types::LexV2Bot> {
         self.lex_v2_bot.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LexBotConfigBuilder {
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn set_lex_bot(mut self, input: ::std::option::Option<crate::types::LexBot>) -> Self {
-        self.lex_bot = input;
-        self
+        self.lex_bot = input; self
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn get_lex_bot(&self) -> &::std::option::Option<crate::types::LexBot> {
@@ -55,8 +54,7 @@ impl LexBotConfigBuilder {
     }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub fn set_lex_v2_bot(mut self, input: ::std::option::Option<crate::types::LexV2Bot>) -> Self {
-        self.lex_v2_bot = input;
-        self
+        self.lex_v2_bot = input; self
     }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub fn get_lex_v2_bot(&self) -> &::std::option::Option<crate::types::LexV2Bot> {
@@ -65,8 +63,11 @@ impl LexBotConfigBuilder {
     /// Consumes the builder and constructs a [`LexBotConfig`](crate::types::LexBotConfig).
     pub fn build(self) -> crate::types::LexBotConfig {
         crate::types::LexBotConfig {
-            lex_bot: self.lex_bot,
-            lex_v2_bot: self.lex_v2_bot,
+            lex_bot: self.lex_bot
+            ,
+            lex_v2_bot: self.lex_v2_bot
+            ,
         }
     }
 }
+

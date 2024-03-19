@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3LogDestinationParameters {
+pub struct S3LogDestinationParameters  {
     /// <p>Specifies the name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub bucket_name: ::std::string::String,
     /// <p>Specifies the Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
@@ -22,16 +22,14 @@ pub struct S3LogDestinationParameters {
     /// <p>You can use prefixes to organize the data that you store in Amazon S3 buckets. A prefix is a string of characters at the beginning of the object key name. A prefix can be any length, subject to the maximum length of the object key name (1,024 bytes). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3LogDestinationParameters {
+impl  S3LogDestinationParameters  {
     /// <p>Specifies the name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>Specifies the Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
-    pub fn bucket_owner(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_owner.deref()
+    pub fn bucket_owner(&self) -> & str {
+        use std::ops::Deref; self.bucket_owner.deref()
     }
     /// <p>How EventBridge should format the log records.</p>
     /// <ul>
@@ -42,12 +40,12 @@ impl S3LogDestinationParameters {
     /// <li>
     /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
-    pub fn output_format(&self) -> ::std::option::Option<&crate::types::S3OutputFormat> {
+    pub fn output_format(&self) -> ::std::option::Option<& crate::types::S3OutputFormat> {
         self.output_format.as_ref()
     }
     /// <p>Specifies any prefix text with which to begin Amazon S3 log object names.</p>
     /// <p>You can use prefixes to organize the data that you store in Amazon S3 buckets. A prefix is a string of characters at the beginning of the object key name. A prefix can be any length, subject to the maximum length of the object key name (1,024 bytes). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -76,8 +74,7 @@ impl S3LogDestinationParametersBuilder {
     }
     /// <p>Specifies the name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>Specifies the name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl S3LogDestinationParametersBuilder {
     }
     /// <p>Specifies the Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_owner = input;
-        self
+        self.bucket_owner = input; self
     }
     /// <p>Specifies the Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn get_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +117,7 @@ impl S3LogDestinationParametersBuilder {
     /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::S3OutputFormat>) -> Self {
-        self.output_format = input;
-        self
+        self.output_format = input; self
     }
     /// <p>How EventBridge should format the log records.</p>
     /// <ul>
@@ -145,8 +140,7 @@ impl S3LogDestinationParametersBuilder {
     /// <p>Specifies any prefix text with which to begin Amazon S3 log object names.</p>
     /// <p>You can use prefixes to organize the data that you store in Amazon S3 buckets. A prefix is a string of characters at the beginning of the object key name. A prefix can be any length, subject to the maximum length of the object key name (1,024 bytes). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Specifies any prefix text with which to begin Amazon S3 log object names.</p>
     /// <p>You can use prefixes to organize the data that you store in Amazon S3 buckets. A prefix is a string of characters at the beginning of the object key name. A prefix can be any length, subject to the maximum length of the object key name (1,024 bytes). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
@@ -158,21 +152,24 @@ impl S3LogDestinationParametersBuilder {
     /// - [`bucket_name`](crate::types::builders::S3LogDestinationParametersBuilder::bucket_name)
     /// - [`bucket_owner`](crate::types::builders::S3LogDestinationParametersBuilder::bucket_owner)
     pub fn build(self) -> ::std::result::Result<crate::types::S3LogDestinationParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3LogDestinationParameters {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3LogDestinationParameters",
-                )
-            })?,
-            bucket_owner: self.bucket_owner.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_owner",
-                    "bucket_owner was not specified but it is required when building S3LogDestinationParameters",
-                )
-            })?,
-            output_format: self.output_format,
-            prefix: self.prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3LogDestinationParameters {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3LogDestinationParameters")
+                    )?
+                ,
+                bucket_owner: self.bucket_owner
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_owner", "bucket_owner was not specified but it is required when building S3LogDestinationParameters")
+                    )?
+                ,
+                output_format: self.output_format
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

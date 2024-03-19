@@ -3,7 +3,7 @@
 /// <p>The inventory data for installed Migration Evaluator collectors.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerMeCollectorInfo {
+pub struct CustomerMeCollectorInfo  {
     /// <p>The number of active Migration Evaluator collectors.</p>
     pub active_me_collectors: i32,
     /// <p>The number of healthy Migration Evaluator collectors.</p>
@@ -19,7 +19,7 @@ pub struct CustomerMeCollectorInfo {
     /// <p>The number of unknown Migration Evaluator collectors.</p>
     pub unknown_me_collectors: i32,
 }
-impl CustomerMeCollectorInfo {
+impl  CustomerMeCollectorInfo  {
     /// <p>The number of active Migration Evaluator collectors.</p>
     pub fn active_me_collectors(&self) -> i32 {
         self.active_me_collectors
@@ -77,8 +77,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The number of active Migration Evaluator collectors.</p>
     pub fn set_active_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.active_me_collectors = input;
-        self
+        self.active_me_collectors = input; self
     }
     /// <p>The number of active Migration Evaluator collectors.</p>
     pub fn get_active_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -92,8 +91,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The number of healthy Migration Evaluator collectors.</p>
     pub fn set_healthy_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_me_collectors = input;
-        self
+        self.healthy_me_collectors = input; self
     }
     /// <p>The number of healthy Migration Evaluator collectors.</p>
     pub fn get_healthy_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The number of deny-listed Migration Evaluator collectors.</p>
     pub fn set_deny_listed_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.deny_listed_me_collectors = input;
-        self
+        self.deny_listed_me_collectors = input; self
     }
     /// <p>The number of deny-listed Migration Evaluator collectors.</p>
     pub fn get_deny_listed_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -122,8 +119,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status.</p>
     pub fn set_shutdown_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shutdown_me_collectors = input;
-        self
+        self.shutdown_me_collectors = input; self
     }
     /// <p>The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status.</p>
     pub fn get_shutdown_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -137,8 +133,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The number of unhealthy Migration Evaluator collectors.</p>
     pub fn set_unhealthy_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_me_collectors = input;
-        self
+        self.unhealthy_me_collectors = input; self
     }
     /// <p>The number of unhealthy Migration Evaluator collectors.</p>
     pub fn get_unhealthy_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -152,8 +147,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The total number of Migration Evaluator collectors.</p>
     pub fn set_total_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_me_collectors = input;
-        self
+        self.total_me_collectors = input; self
     }
     /// <p>The total number of Migration Evaluator collectors.</p>
     pub fn get_total_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -167,8 +161,7 @@ impl CustomerMeCollectorInfoBuilder {
     }
     /// <p>The number of unknown Migration Evaluator collectors.</p>
     pub fn set_unknown_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unknown_me_collectors = input;
-        self
+        self.unknown_me_collectors = input; self
     }
     /// <p>The number of unknown Migration Evaluator collectors.</p>
     pub fn get_unknown_me_collectors(&self) -> &::std::option::Option<i32> {
@@ -177,13 +170,28 @@ impl CustomerMeCollectorInfoBuilder {
     /// Consumes the builder and constructs a [`CustomerMeCollectorInfo`](crate::types::CustomerMeCollectorInfo).
     pub fn build(self) -> crate::types::CustomerMeCollectorInfo {
         crate::types::CustomerMeCollectorInfo {
-            active_me_collectors: self.active_me_collectors.unwrap_or_default(),
-            healthy_me_collectors: self.healthy_me_collectors.unwrap_or_default(),
-            deny_listed_me_collectors: self.deny_listed_me_collectors.unwrap_or_default(),
-            shutdown_me_collectors: self.shutdown_me_collectors.unwrap_or_default(),
-            unhealthy_me_collectors: self.unhealthy_me_collectors.unwrap_or_default(),
-            total_me_collectors: self.total_me_collectors.unwrap_or_default(),
-            unknown_me_collectors: self.unknown_me_collectors.unwrap_or_default(),
+            active_me_collectors: self.active_me_collectors
+                .unwrap_or_default()
+            ,
+            healthy_me_collectors: self.healthy_me_collectors
+                .unwrap_or_default()
+            ,
+            deny_listed_me_collectors: self.deny_listed_me_collectors
+                .unwrap_or_default()
+            ,
+            shutdown_me_collectors: self.shutdown_me_collectors
+                .unwrap_or_default()
+            ,
+            unhealthy_me_collectors: self.unhealthy_me_collectors
+                .unwrap_or_default()
+            ,
+            total_me_collectors: self.total_me_collectors
+                .unwrap_or_default()
+            ,
+            unknown_me_collectors: self.unknown_me_collectors
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

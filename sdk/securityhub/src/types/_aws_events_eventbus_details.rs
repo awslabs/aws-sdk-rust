@@ -3,7 +3,7 @@
 /// <p>Provides details about Amazon EventBridge event bus. An event bus is a router that receives events and delivers them to zero or more destinations, or targets. This can be a custom event bus which you can use to receive events from your custom applications and services, or it can be a partner event bus which can be matched to a partner event source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEventbusDetails {
+pub struct AwsEventsEventbusDetails  {
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event bus.</p>
@@ -11,17 +11,17 @@ pub struct AwsEventsEventbusDetails {
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventsEventbusDetails {
+impl  AwsEventsEventbusDetails  {
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the event bus.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsEventsEventbusDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AwsEventsEventbusDetailsBuilder {
     }
     /// <p>The name of the event bus.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event bus.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsEventsEventbusDetailsBuilder {
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AwsEventsEventbusDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventsEventbusDetails`](crate::types::AwsEventsEventbusDetails).
     pub fn build(self) -> crate::types::AwsEventsEventbusDetails {
         crate::types::AwsEventsEventbusDetails {
-            arn: self.arn,
-            name: self.name,
-            policy: self.policy,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            policy: self.policy
+            ,
         }
     }
 }
+

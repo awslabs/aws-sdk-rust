@@ -3,7 +3,7 @@
 /// <p>Information about a quota.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceQuota {
+pub struct ServiceQuota  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the service name.</p>
@@ -33,25 +33,25 @@ pub struct ServiceQuota {
     /// <p>The context for this service quota.</p>
     pub quota_context: ::std::option::Option<crate::types::QuotaContextInfo>,
 }
-impl ServiceQuota {
+impl  ServiceQuota  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>Specifies the service name.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    pub fn quota_arn(&self) -> ::std::option::Option<&str> {
+    pub fn quota_arn(&self) -> ::std::option::Option<& str> {
         self.quota_arn.as_deref()
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Specifies the quota name.</p>
-    pub fn quota_name(&self) -> ::std::option::Option<&str> {
+    pub fn quota_name(&self) -> ::std::option::Option<& str> {
         self.quota_name.as_deref()
     }
     /// <p>The quota value.</p>
@@ -59,7 +59,7 @@ impl ServiceQuota {
         self.value
     }
     /// <p>The unit of measurement.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>Indicates whether the quota value can be increased.</p>
@@ -71,23 +71,23 @@ impl ServiceQuota {
         self.global_quota
     }
     /// <p>Information about the measurement.</p>
-    pub fn usage_metric(&self) -> ::std::option::Option<&crate::types::MetricInfo> {
+    pub fn usage_metric(&self) -> ::std::option::Option<& crate::types::MetricInfo> {
         self.usage_metric.as_ref()
     }
     /// <p>The period of time.</p>
-    pub fn period(&self) -> ::std::option::Option<&crate::types::QuotaPeriod> {
+    pub fn period(&self) -> ::std::option::Option<& crate::types::QuotaPeriod> {
         self.period.as_ref()
     }
     /// <p>The error code and error reason.</p>
-    pub fn error_reason(&self) -> ::std::option::Option<&crate::types::ErrorReason> {
+    pub fn error_reason(&self) -> ::std::option::Option<& crate::types::ErrorReason> {
         self.error_reason.as_ref()
     }
     /// <p>Specifies at which level of granularity that the quota value is applied.</p>
-    pub fn quota_applied_at_level(&self) -> ::std::option::Option<&crate::types::AppliedLevelEnum> {
+    pub fn quota_applied_at_level(&self) -> ::std::option::Option<& crate::types::AppliedLevelEnum> {
         self.quota_applied_at_level.as_ref()
     }
     /// <p>The context for this service quota.</p>
-    pub fn quota_context(&self) -> ::std::option::Option<&crate::types::QuotaContextInfo> {
+    pub fn quota_context(&self) -> ::std::option::Option<& crate::types::QuotaContextInfo> {
         self.quota_context.as_ref()
     }
 }
@@ -125,8 +125,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Specifies the service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>Specifies the service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +151,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
     pub fn set_quota_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_arn = input;
-        self
+        self.quota_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
     pub fn get_quota_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +164,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Specifies the quota name.</p>
     pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_name = input;
-        self
+        self.quota_name = input; self
     }
     /// <p>Specifies the quota name.</p>
     pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +190,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>The quota value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The quota value.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -209,8 +203,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>The unit of measurement.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measurement.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +216,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Indicates whether the quota value can be increased.</p>
     pub fn set_adjustable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.adjustable = input;
-        self
+        self.adjustable = input; self
     }
     /// <p>Indicates whether the quota value can be increased.</p>
     pub fn get_adjustable(&self) -> &::std::option::Option<bool> {
@@ -237,8 +229,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn set_global_quota(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.global_quota = input;
-        self
+        self.global_quota = input; self
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn get_global_quota(&self) -> &::std::option::Option<bool> {
@@ -251,8 +242,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Information about the measurement.</p>
     pub fn set_usage_metric(mut self, input: ::std::option::Option<crate::types::MetricInfo>) -> Self {
-        self.usage_metric = input;
-        self
+        self.usage_metric = input; self
     }
     /// <p>Information about the measurement.</p>
     pub fn get_usage_metric(&self) -> &::std::option::Option<crate::types::MetricInfo> {
@@ -265,8 +255,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>The period of time.</p>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::QuotaPeriod>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The period of time.</p>
     pub fn get_period(&self) -> &::std::option::Option<crate::types::QuotaPeriod> {
@@ -279,8 +268,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>The error code and error reason.</p>
     pub fn set_error_reason(mut self, input: ::std::option::Option<crate::types::ErrorReason>) -> Self {
-        self.error_reason = input;
-        self
+        self.error_reason = input; self
     }
     /// <p>The error code and error reason.</p>
     pub fn get_error_reason(&self) -> &::std::option::Option<crate::types::ErrorReason> {
@@ -293,8 +281,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>Specifies at which level of granularity that the quota value is applied.</p>
     pub fn set_quota_applied_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
-        self.quota_applied_at_level = input;
-        self
+        self.quota_applied_at_level = input; self
     }
     /// <p>Specifies at which level of granularity that the quota value is applied.</p>
     pub fn get_quota_applied_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
@@ -307,8 +294,7 @@ impl ServiceQuotaBuilder {
     }
     /// <p>The context for this service quota.</p>
     pub fn set_quota_context(mut self, input: ::std::option::Option<crate::types::QuotaContextInfo>) -> Self {
-        self.quota_context = input;
-        self
+        self.quota_context = input; self
     }
     /// <p>The context for this service quota.</p>
     pub fn get_quota_context(&self) -> &::std::option::Option<crate::types::QuotaContextInfo> {
@@ -317,20 +303,37 @@ impl ServiceQuotaBuilder {
     /// Consumes the builder and constructs a [`ServiceQuota`](crate::types::ServiceQuota).
     pub fn build(self) -> crate::types::ServiceQuota {
         crate::types::ServiceQuota {
-            service_code: self.service_code,
-            service_name: self.service_name,
-            quota_arn: self.quota_arn,
-            quota_code: self.quota_code,
-            quota_name: self.quota_name,
-            value: self.value,
-            unit: self.unit,
-            adjustable: self.adjustable.unwrap_or_default(),
-            global_quota: self.global_quota.unwrap_or_default(),
-            usage_metric: self.usage_metric,
-            period: self.period,
-            error_reason: self.error_reason,
-            quota_applied_at_level: self.quota_applied_at_level,
-            quota_context: self.quota_context,
+            service_code: self.service_code
+            ,
+            service_name: self.service_name
+            ,
+            quota_arn: self.quota_arn
+            ,
+            quota_code: self.quota_code
+            ,
+            quota_name: self.quota_name
+            ,
+            value: self.value
+            ,
+            unit: self.unit
+            ,
+            adjustable: self.adjustable
+                .unwrap_or_default()
+            ,
+            global_quota: self.global_quota
+                .unwrap_or_default()
+            ,
+            usage_metric: self.usage_metric
+            ,
+            period: self.period
+            ,
+            error_reason: self.error_reason
+            ,
+            quota_applied_at_level: self.quota_applied_at_level
+            ,
+            quota_context: self.quota_context
+            ,
         }
     }
 }
+

@@ -3,24 +3,23 @@
 /// <p>Specifies whether the attribute is standard or custom.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AttributeType {
+pub struct AttributeType  {
     /// <p>The name of the attribute.</p>
     pub name: ::std::string::String,
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AttributeType {
+impl  AttributeType  {
     /// <p>The name of the attribute.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl ::std::fmt::Debug for AttributeType {
+impl  ::std::fmt::Debug for AttributeType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeType");
         formatter.field("name", &self.name);
@@ -51,8 +50,7 @@ impl AttributeTypeBuilder {
     }
     /// <p>The name of the attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl AttributeTypeBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl AttributeTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AttributeTypeBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeType {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AttributeType",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeType {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AttributeType")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AttributeTypeBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for AttributeTypeBuilder {
         formatter.finish()
     }
 }
+

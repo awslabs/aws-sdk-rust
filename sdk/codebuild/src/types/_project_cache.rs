@@ -3,7 +3,7 @@
 /// <p>Information about the cache for the build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectCache {
+pub struct ProjectCache  {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -61,9 +61,9 @@ pub struct ProjectCache {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
+    pub modes: ::std::option::Option<::std::vec::Vec::<crate::types::CacheMode>>,
 }
-impl ProjectCache {
+impl  ProjectCache  {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -73,7 +73,7 @@ impl ProjectCache {
     /// <li>
     /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::CacheType {
+    pub fn r#type(&self) -> & crate::types::CacheType {
         &self.r#type
     }
     /// <p>Information about the cache location:</p>
@@ -83,7 +83,7 @@ impl ProjectCache {
     /// <li>
     /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
@@ -125,10 +125,11 @@ impl ProjectCache {
     /// </ul>
     /// </dd>
     /// </dl>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modes.is_none()`.
-    pub fn modes(&self) -> &[crate::types::CacheMode] {
-        self.modes.as_deref().unwrap_or_default()
+    pub fn modes(&self) -> & [crate::types::CacheMode] {
+        self.modes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProjectCache {
@@ -144,7 +145,7 @@ impl ProjectCache {
 pub struct ProjectCacheBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CacheType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
-    pub(crate) modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
+    pub(crate) modes: ::std::option::Option<::std::vec::Vec::<crate::types::CacheMode>>,
 }
 impl ProjectCacheBuilder {
     /// <p>The type of cache used by the build project. Valid values include:</p>
@@ -171,8 +172,7 @@ impl ProjectCacheBuilder {
     /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CacheType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
@@ -205,8 +205,7 @@ impl ProjectCacheBuilder {
     /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Information about the cache location:</p>
     /// <ul>
@@ -263,9 +262,9 @@ impl ProjectCacheBuilder {
     /// </dl>
     pub fn modes(mut self, input: crate::types::CacheMode) -> Self {
         let mut v = self.modes.unwrap_or_default();
-        v.push(input);
-        self.modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
     /// <p>Possible values are:</p>
@@ -306,9 +305,8 @@ impl ProjectCacheBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn set_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>) -> Self {
-        self.modes = input;
-        self
+    pub fn set_modes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CacheMode>>) -> Self {
+        self.modes = input; self
     }
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
     /// <p>Possible values are:</p>
@@ -349,22 +347,26 @@ impl ProjectCacheBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn get_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheMode>> {
+    pub fn get_modes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CacheMode>> {
         &self.modes
     }
     /// Consumes the builder and constructs a [`ProjectCache`](crate::types::ProjectCache).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProjectCacheBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectCache, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectCache {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ProjectCache",
-                )
-            })?,
-            location: self.location,
-            modes: self.modes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectCache {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ProjectCache")
+                    )?
+                ,
+                location: self.location
+                ,
+                modes: self.modes
+                ,
+            }
+        )
     }
 }
+

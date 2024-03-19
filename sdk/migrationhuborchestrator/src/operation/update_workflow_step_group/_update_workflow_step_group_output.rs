@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkflowStepGroupOutput {
+pub struct UpdateWorkflowStepGroupOutput  {
     /// <p>The ID of the migration workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
@@ -12,60 +12,63 @@ pub struct UpdateWorkflowStepGroupOutput {
     /// <p>The description of the step group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
+    pub tools: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>,
     /// <p>The next step group.</p>
-    pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The previous step group.</p>
-    pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time at which the step group was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateWorkflowStepGroupOutput {
+impl  UpdateWorkflowStepGroupOutput  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the step group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
-    pub fn tools(&self) -> &[crate::types::Tool] {
-        self.tools.as_deref().unwrap_or_default()
+    pub fn tools(&self) -> & [crate::types::Tool] {
+        self.tools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next step group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
-    pub fn next(&self) -> &[::std::string::String] {
-        self.next.as_deref().unwrap_or_default()
+    pub fn next(&self) -> & [::std::string::String] {
+        self.next.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The previous step group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
-    pub fn previous(&self) -> &[::std::string::String] {
-        self.previous.as_deref().unwrap_or_default()
+    pub fn previous(&self) -> & [::std::string::String] {
+        self.previous.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the step group was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateWorkflowStepGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateWorkflowStepGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepGroupOutput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput).
     pub fn builder() -> crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupOutputBuilder {
@@ -81,9 +84,9 @@ pub struct UpdateWorkflowStepGroupOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tools: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -95,8 +98,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +111,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The name of the step group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +124,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the step group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +137,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The description of the step group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the step group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,17 +150,16 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     /// <p>List of AWS services utilized in a migration workflow.</p>
     pub fn tools(mut self, input: crate::types::Tool) -> Self {
         let mut v = self.tools.unwrap_or_default();
-        v.push(input);
-        self.tools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
-        self.tools = input;
-        self
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>) -> Self {
+        self.tools = input; self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tool>> {
         &self.tools
     }
     /// Appends an item to `next`.
@@ -171,17 +169,16 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     /// <p>The next step group.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
-        v.push(input.into());
-        self.next = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.next = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.next = input;
-        self
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.next = input; self
     }
     /// <p>The next step group.</p>
-    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.next
     }
     /// Appends an item to `previous`.
@@ -191,17 +188,16 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     /// <p>The previous step group.</p>
     pub fn previous(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
-        v.push(input.into());
-        self.previous = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.previous = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.previous = input;
-        self
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.previous = input; self
     }
     /// <p>The previous step group.</p>
-    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.previous
     }
     /// <p>The time at which the step group was last modified.</p>
@@ -211,34 +207,42 @@ impl UpdateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The time at which the step group was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time at which the step group was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateWorkflowStepGroupOutput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput).
     pub fn build(self) -> crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput {
         crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput {
-            workflow_id: self.workflow_id,
-            name: self.name,
-            id: self.id,
-            description: self.description,
-            tools: self.tools,
-            next: self.next,
-            previous: self.previous,
-            last_modified_time: self.last_modified_time,
+            workflow_id: self.workflow_id
+            ,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            description: self.description
+            ,
+            tools: self.tools
+            ,
+            next: self.next
+            ,
+            previous: self.previous
+            ,
+            last_modified_time: self.last_modified_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnownGender {
+pub struct KnownGender  {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     pub r#type: ::std::option::Option<crate::types::KnownGenderType>,
 }
-impl KnownGender {
+impl  KnownGender  {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::KnownGenderType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::KnownGenderType> {
         self.r#type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl KnownGenderBuilder {
     }
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KnownGenderType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KnownGenderType> {
@@ -43,6 +42,10 @@ impl KnownGenderBuilder {
     }
     /// Consumes the builder and constructs a [`KnownGender`](crate::types::KnownGender).
     pub fn build(self) -> crate::types::KnownGender {
-        crate::types::KnownGender { r#type: self.r#type }
+        crate::types::KnownGender {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An application instance on a device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationInstance {
+pub struct ApplicationInstance  {
     /// <p>The application instance's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's ID.</p>
@@ -25,60 +25,61 @@ pub struct ApplicationInstance {
     /// <p>The application instance's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The application's state.</p>
-    pub runtime_context_states: ::std::option::Option<::std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
+    pub runtime_context_states: ::std::option::Option<::std::vec::Vec::<crate::types::ReportedRuntimeContextState>>,
 }
-impl ApplicationInstance {
+impl  ApplicationInstance  {
     /// <p>The application instance's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> ::std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
     /// <p>The device's ID.</p>
-    pub fn default_runtime_context_device(&self) -> ::std::option::Option<&str> {
+    pub fn default_runtime_context_device(&self) -> ::std::option::Option<& str> {
         self.default_runtime_context_device.as_deref()
     }
     /// <p>The device's name.</p>
-    pub fn default_runtime_context_device_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_runtime_context_device_name(&self) -> ::std::option::Option<& str> {
         self.default_runtime_context_device_name.as_deref()
     }
     /// <p>The application instance's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The application instance's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationInstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApplicationInstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The application instance's health status.</p>
-    pub fn health_status(&self) -> ::std::option::Option<&crate::types::ApplicationInstanceHealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<& crate::types::ApplicationInstanceHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>The application instance's status description.</p>
-    pub fn status_description(&self) -> ::std::option::Option<&str> {
+    pub fn status_description(&self) -> ::std::option::Option<& str> {
         self.status_description.as_deref()
     }
     /// <p>When the application instance was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The application instance's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The application instance's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The application's state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_context_states.is_none()`.
-    pub fn runtime_context_states(&self) -> &[crate::types::ReportedRuntimeContextState] {
-        self.runtime_context_states.as_deref().unwrap_or_default()
+    pub fn runtime_context_states(&self) -> & [crate::types::ReportedRuntimeContextState] {
+        self.runtime_context_states.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ApplicationInstance {
@@ -102,8 +103,8 @@ pub struct ApplicationInstanceBuilder {
     pub(crate) status_description: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) runtime_context_states: ::std::option::Option<::std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) runtime_context_states: ::std::option::Option<::std::vec::Vec::<crate::types::ReportedRuntimeContextState>>,
 }
 impl ApplicationInstanceBuilder {
     /// <p>The application instance's name.</p>
@@ -113,8 +114,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The application instance's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's ID.</p>
     pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_instance_id = input;
-        self
+        self.application_instance_id = input; self
     }
     /// <p>The application instance's ID.</p>
     pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The device's ID.</p>
     pub fn set_default_runtime_context_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_runtime_context_device = input;
-        self
+        self.default_runtime_context_device = input; self
     }
     /// <p>The device's ID.</p>
     pub fn get_default_runtime_context_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The device's name.</p>
     pub fn set_default_runtime_context_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_runtime_context_device_name = input;
-        self
+        self.default_runtime_context_device_name = input; self
     }
     /// <p>The device's name.</p>
     pub fn get_default_runtime_context_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The application instance's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationInstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The application instance's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationInstanceStatus> {
@@ -197,8 +192,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's health status.</p>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::ApplicationInstanceHealthStatus>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>The application instance's health status.</p>
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::ApplicationInstanceHealthStatus> {
@@ -211,8 +205,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's status description.</p>
     pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_description = input;
-        self
+        self.status_description = input; self
     }
     /// <p>The application instance's status description.</p>
     pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +218,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>When the application instance was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>When the application instance was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -239,8 +231,7 @@ impl ApplicationInstanceBuilder {
     }
     /// <p>The application instance's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The application instance's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,17 +244,16 @@ impl ApplicationInstanceBuilder {
     /// <p>The application instance's tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The application instance's tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The application instance's tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `runtime_context_states`.
@@ -273,34 +263,46 @@ impl ApplicationInstanceBuilder {
     /// <p>The application's state.</p>
     pub fn runtime_context_states(mut self, input: crate::types::ReportedRuntimeContextState) -> Self {
         let mut v = self.runtime_context_states.unwrap_or_default();
-        v.push(input);
-        self.runtime_context_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.runtime_context_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The application's state.</p>
-    pub fn set_runtime_context_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportedRuntimeContextState>>) -> Self {
-        self.runtime_context_states = input;
-        self
+    pub fn set_runtime_context_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReportedRuntimeContextState>>) -> Self {
+        self.runtime_context_states = input; self
     }
     /// <p>The application's state.</p>
-    pub fn get_runtime_context_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportedRuntimeContextState>> {
+    pub fn get_runtime_context_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReportedRuntimeContextState>> {
         &self.runtime_context_states
     }
     /// Consumes the builder and constructs a [`ApplicationInstance`](crate::types::ApplicationInstance).
     pub fn build(self) -> crate::types::ApplicationInstance {
         crate::types::ApplicationInstance {
-            name: self.name,
-            application_instance_id: self.application_instance_id,
-            default_runtime_context_device: self.default_runtime_context_device,
-            default_runtime_context_device_name: self.default_runtime_context_device_name,
-            description: self.description,
-            status: self.status,
-            health_status: self.health_status,
-            status_description: self.status_description,
-            created_time: self.created_time,
-            arn: self.arn,
-            tags: self.tags,
-            runtime_context_states: self.runtime_context_states,
+            name: self.name
+            ,
+            application_instance_id: self.application_instance_id
+            ,
+            default_runtime_context_device: self.default_runtime_context_device
+            ,
+            default_runtime_context_device_name: self.default_runtime_context_device_name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            health_status: self.health_status
+            ,
+            status_description: self.status_description
+            ,
+            created_time: self.created_time
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
+            runtime_context_states: self.runtime_context_states
+            ,
         }
     }
 }
+

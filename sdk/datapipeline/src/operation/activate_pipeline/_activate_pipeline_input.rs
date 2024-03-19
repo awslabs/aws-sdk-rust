@@ -3,27 +3,28 @@
 /// <p>Contains the parameters for ActivatePipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivatePipelineInput {
+pub struct ActivatePipelineInput  {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub parameter_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>,
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ActivatePipelineInput {
+impl  ActivatePipelineInput  {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_values.is_none()`.
-    pub fn parameter_values(&self) -> &[crate::types::ParameterValue] {
-        self.parameter_values.as_deref().unwrap_or_default()
+    pub fn parameter_values(&self) -> & [crate::types::ParameterValue] {
+        self.parameter_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl ActivatePipelineInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivatePipelineInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>,
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActivatePipelineInputBuilder {
@@ -51,8 +52,7 @@ impl ActivatePipelineInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +65,16 @@ impl ActivatePipelineInputBuilder {
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
     pub fn parameter_values(mut self, input: crate::types::ParameterValue) -> Self {
         let mut v = self.parameter_values.unwrap_or_default();
-        v.push(input);
-        self.parameter_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
-        self.parameter_values = input;
-        self
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>) -> Self {
+        self.parameter_values = input; self
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>> {
         &self.parameter_values
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
@@ -85,21 +84,24 @@ impl ActivatePipelineInputBuilder {
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_timestamp = input;
-        self
+        self.start_timestamp = input; self
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_timestamp
     }
     /// Consumes the builder and constructs a [`ActivatePipelineInput`](crate::operation::activate_pipeline::ActivatePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::activate_pipeline::ActivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::activate_pipeline::ActivatePipelineInput {
-            pipeline_id: self.pipeline_id,
-            parameter_values: self.parameter_values,
-            start_timestamp: self.start_timestamp,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::activate_pipeline::ActivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::activate_pipeline::ActivatePipelineInput {
+                pipeline_id: self.pipeline_id
+                ,
+                parameter_values: self.parameter_values
+                ,
+                start_timestamp: self.start_timestamp
+                ,
+            }
+        )
     }
 }
+

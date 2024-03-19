@@ -3,7 +3,7 @@
 /// <p>A view resource object. Contains metadata and content necessary to render the view.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct View {
+pub struct View  {
     /// <p>The identifier of the view.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
@@ -23,7 +23,7 @@ pub struct View {
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     pub content: ::std::option::Option<crate::types::ViewContent>,
     /// <p>The tags associated with the view resource (not specific to view version).</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp of when the view was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Latest timestamp of the <code>UpdateViewContent</code> or <code>CreateViewVersion</code> operations.</p>
@@ -31,29 +31,29 @@ pub struct View {
     /// <p>Indicates the checksum value of the latest published view content.</p>
     pub view_content_sha256: ::std::option::Option<::std::string::String>,
 }
-impl View {
+impl  View  {
     /// <p>The identifier of the view.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the view.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ViewStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ViewStatus> {
         self.status.as_ref()
     }
     /// <p>The type of the view - <code>CUSTOMER_MANAGED</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ViewType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ViewType> {
         self.r#type.as_ref()
     }
     /// <p>The description of the view.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Current version of the view.</p>
@@ -61,31 +61,31 @@ impl View {
         self.version
     }
     /// <p>The description of the version.</p>
-    pub fn version_description(&self) -> ::std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<& str> {
         self.version_description.as_deref()
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::ViewContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::ViewContent> {
         self.content.as_ref()
     }
     /// <p>The tags associated with the view resource (not specific to view version).</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp of when the view was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Latest timestamp of the <code>UpdateViewContent</code> or <code>CreateViewVersion</code> operations.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Indicates the checksum value of the latest published view content.</p>
-    pub fn view_content_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn view_content_sha256(&self) -> ::std::option::Option<& str> {
         self.view_content_sha256.as_deref()
     }
 }
-impl ::std::fmt::Debug for View {
+impl  ::std::fmt::Debug for View  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("View");
         formatter.field("id", &self.id);
@@ -124,7 +124,7 @@ pub struct ViewBuilder {
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::ViewContent>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) view_content_sha256: ::std::option::Option<::std::string::String>,
@@ -137,8 +137,7 @@ impl ViewBuilder {
     }
     /// <p>The identifier of the view.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the view.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +150,7 @@ impl ViewBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +163,7 @@ impl ViewBuilder {
     }
     /// <p>The name of the view.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +176,7 @@ impl ViewBuilder {
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ViewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ViewStatus> {
@@ -193,8 +189,7 @@ impl ViewBuilder {
     }
     /// <p>The type of the view - <code>CUSTOMER_MANAGED</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ViewType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the view - <code>CUSTOMER_MANAGED</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ViewType> {
@@ -207,8 +202,7 @@ impl ViewBuilder {
     }
     /// <p>The description of the view.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the view.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +215,7 @@ impl ViewBuilder {
     }
     /// <p>Current version of the view.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Current version of the view.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -235,8 +228,7 @@ impl ViewBuilder {
     }
     /// <p>The description of the version.</p>
     pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_description = input;
-        self
+        self.version_description = input; self
     }
     /// <p>The description of the version.</p>
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +241,7 @@ impl ViewBuilder {
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::ViewContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::ViewContent> {
@@ -263,17 +254,16 @@ impl ViewBuilder {
     /// <p>The tags associated with the view resource (not specific to view version).</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the view resource (not specific to view version).</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the view resource (not specific to view version).</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The timestamp of when the view was created.</p>
@@ -283,8 +273,7 @@ impl ViewBuilder {
     }
     /// <p>The timestamp of when the view was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp of when the view was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -297,8 +286,7 @@ impl ViewBuilder {
     }
     /// <p>Latest timestamp of the <code>UpdateViewContent</code> or <code>CreateViewVersion</code> operations.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>Latest timestamp of the <code>UpdateViewContent</code> or <code>CreateViewVersion</code> operations.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -311,8 +299,7 @@ impl ViewBuilder {
     }
     /// <p>Indicates the checksum value of the latest published view content.</p>
     pub fn set_view_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_content_sha256 = input;
-        self
+        self.view_content_sha256 = input; self
     }
     /// <p>Indicates the checksum value of the latest published view content.</p>
     pub fn get_view_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,19 +308,33 @@ impl ViewBuilder {
     /// Consumes the builder and constructs a [`View`](crate::types::View).
     pub fn build(self) -> crate::types::View {
         crate::types::View {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            status: self.status,
-            r#type: self.r#type,
-            description: self.description,
-            version: self.version.unwrap_or_default(),
-            version_description: self.version_description,
-            content: self.content,
-            tags: self.tags,
-            created_time: self.created_time,
-            last_modified_time: self.last_modified_time,
-            view_content_sha256: self.view_content_sha256,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            version_description: self.version_description
+            ,
+            content: self.content
+            ,
+            tags: self.tags
+            ,
+            created_time: self.created_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            view_content_sha256: self.view_content_sha256
+            ,
         }
     }
 }
@@ -356,3 +357,4 @@ impl ::std::fmt::Debug for ViewBuilder {
         formatter.finish()
     }
 }
+

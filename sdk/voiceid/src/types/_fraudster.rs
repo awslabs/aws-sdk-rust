@@ -3,7 +3,7 @@
 /// <p>Contains all the information about a fraudster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Fraudster {
+pub struct Fraudster  {
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier for the fraudster.</p>
@@ -11,26 +11,27 @@ pub struct Fraudster {
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    pub watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub watchlist_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Fraudster {
+impl  Fraudster  {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The service-generated identifier for the fraudster.</p>
-    pub fn generated_fraudster_id(&self) -> ::std::option::Option<&str> {
+    pub fn generated_fraudster_id(&self) -> ::std::option::Option<& str> {
         self.generated_fraudster_id.as_deref()
     }
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watchlist_ids.is_none()`.
-    pub fn watchlist_ids(&self) -> &[::std::string::String] {
-        self.watchlist_ids.as_deref().unwrap_or_default()
+    pub fn watchlist_ids(&self) -> & [::std::string::String] {
+        self.watchlist_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Fraudster {
@@ -47,7 +48,7 @@ pub struct FraudsterBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) generated_fraudster_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) watchlist_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FraudsterBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
@@ -57,8 +58,7 @@ impl FraudsterBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl FraudsterBuilder {
     }
     /// <p>The service-generated identifier for the fraudster.</p>
     pub fn set_generated_fraudster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_fraudster_id = input;
-        self
+        self.generated_fraudster_id = input; self
     }
     /// <p>The service-generated identifier for the fraudster.</p>
     pub fn get_generated_fraudster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl FraudsterBuilder {
     }
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,26 +97,30 @@ impl FraudsterBuilder {
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
     pub fn watchlist_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
-        v.push(input.into());
-        self.watchlist_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.watchlist_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    pub fn set_watchlist_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.watchlist_ids = input;
-        self
+    pub fn set_watchlist_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.watchlist_ids = input; self
     }
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    pub fn get_watchlist_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_watchlist_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.watchlist_ids
     }
     /// Consumes the builder and constructs a [`Fraudster`](crate::types::Fraudster).
     pub fn build(self) -> crate::types::Fraudster {
         crate::types::Fraudster {
-            domain_id: self.domain_id,
-            generated_fraudster_id: self.generated_fraudster_id,
-            created_at: self.created_at,
-            watchlist_ids: self.watchlist_ids,
+            domain_id: self.domain_id
+            ,
+            generated_fraudster_id: self.generated_fraudster_id
+            ,
+            created_at: self.created_at
+            ,
+            watchlist_ids: self.watchlist_ids
+            ,
         }
     }
 }
+

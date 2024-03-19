@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetExclusionsPreview`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`assessment_template_arn(impl Into<String>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::set_assessment_template_arn):<br>required: **true**<br><p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p><br>
     ///   - [`preview_token(impl Into<String>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::preview_token) / [`set_preview_token(Option<String>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::set_preview_token):<br>required: **true**<br><p>The unique identifier associated of the exclusions preview.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::set_next_token):<br>required: **false**<br><p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::set_max_results):<br>required: **false**<br><p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p><br>
     ///   - [`locale(Locale)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::locale) / [`set_locale(Option<Locale>)`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::set_locale):<br>required: **false**<br><p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p><br>
-    /// - On success, responds with [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput) with field(s):
+                            /// - On success, responds with [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput) with field(s):
     ///   - [`preview_status(PreviewStatus)`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput::preview_status): <p>Specifies the status of the request to generate an exclusions preview.</p>
     ///   - [`exclusion_previews(Option<Vec::<ExclusionPreview>>)`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput::exclusion_previews): <p>Information about the exclusions included in the preview.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput::next_token): <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    /// - On failure, responds with [`SdkError<GetExclusionsPreviewError>`](crate::operation::get_exclusions_preview::GetExclusionsPreviewError)
+                            /// - On failure, responds with [`SdkError<GetExclusionsPreviewError>`](crate::operation::get_exclusions_preview::GetExclusionsPreviewError)
     pub fn get_exclusions_preview(&self) -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder {
-        crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::new(self.handle.clone())
+                            }
 }
+

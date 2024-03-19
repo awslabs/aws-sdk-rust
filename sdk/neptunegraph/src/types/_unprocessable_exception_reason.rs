@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unprocessableexceptionreason = unimplemented!();
 /// match unprocessableexceptionreason {
@@ -33,16 +33,14 @@
 /// Specifically, when `unprocessableexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UnprocessableExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UnprocessableExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InternalLimitExceeded,
@@ -56,76 +54,71 @@ pub enum UnprocessableExceptionReason {
     StorageLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UnprocessableExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "INTERNAL_LIMIT_EXCEEDED" => UnprocessableExceptionReason::InternalLimitExceeded,
-            "MEMORY_LIMIT_EXCEEDED" => UnprocessableExceptionReason::MemoryLimitExceeded,
-            "PARTITION_FULL" => UnprocessableExceptionReason::PartitionFull,
-            "QUERY_TIMEOUT" => UnprocessableExceptionReason::QueryTimeout,
-            "STORAGE_LIMIT_EXCEEDED" => UnprocessableExceptionReason::StorageLimitExceeded,
-            other => UnprocessableExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "INTERNAL_LIMIT_EXCEEDED" => UnprocessableExceptionReason::InternalLimitExceeded,
+"MEMORY_LIMIT_EXCEEDED" => UnprocessableExceptionReason::MemoryLimitExceeded,
+"PARTITION_FULL" => UnprocessableExceptionReason::PartitionFull,
+"QUERY_TIMEOUT" => UnprocessableExceptionReason::QueryTimeout,
+"STORAGE_LIMIT_EXCEEDED" => UnprocessableExceptionReason::StorageLimitExceeded,
+other => UnprocessableExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UnprocessableExceptionReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UnprocessableExceptionReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UnprocessableExceptionReason::from(s))
+                    }
+                }
 impl UnprocessableExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UnprocessableExceptionReason::InternalLimitExceeded => "INTERNAL_LIMIT_EXCEEDED",
-            UnprocessableExceptionReason::MemoryLimitExceeded => "MEMORY_LIMIT_EXCEEDED",
-            UnprocessableExceptionReason::PartitionFull => "PARTITION_FULL",
-            UnprocessableExceptionReason::QueryTimeout => "QUERY_TIMEOUT",
-            UnprocessableExceptionReason::StorageLimitExceeded => "STORAGE_LIMIT_EXCEEDED",
-            UnprocessableExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INTERNAL_LIMIT_EXCEEDED",
-            "MEMORY_LIMIT_EXCEEDED",
-            "PARTITION_FULL",
-            "QUERY_TIMEOUT",
-            "STORAGE_LIMIT_EXCEEDED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UnprocessableExceptionReason::InternalLimitExceeded => "INTERNAL_LIMIT_EXCEEDED",
+    UnprocessableExceptionReason::MemoryLimitExceeded => "MEMORY_LIMIT_EXCEEDED",
+    UnprocessableExceptionReason::PartitionFull => "PARTITION_FULL",
+    UnprocessableExceptionReason::QueryTimeout => "QUERY_TIMEOUT",
+    UnprocessableExceptionReason::StorageLimitExceeded => "STORAGE_LIMIT_EXCEEDED",
+    UnprocessableExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INTERNAL_LIMIT_EXCEEDED", "MEMORY_LIMIT_EXCEEDED", "PARTITION_FULL", "QUERY_TIMEOUT", "STORAGE_LIMIT_EXCEEDED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UnprocessableExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UnprocessableExceptionReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UnprocessableExceptionReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UnprocessableExceptionReason::InternalLimitExceeded => write!(f, "INTERNAL_LIMIT_EXCEEDED"),
-            UnprocessableExceptionReason::MemoryLimitExceeded => write!(f, "MEMORY_LIMIT_EXCEEDED"),
-            UnprocessableExceptionReason::PartitionFull => write!(f, "PARTITION_FULL"),
-            UnprocessableExceptionReason::QueryTimeout => write!(f, "QUERY_TIMEOUT"),
-            UnprocessableExceptionReason::StorageLimitExceeded => write!(f, "STORAGE_LIMIT_EXCEEDED"),
-            UnprocessableExceptionReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UnprocessableExceptionReason::InternalLimitExceeded => write!(f, "INTERNAL_LIMIT_EXCEEDED"),
+UnprocessableExceptionReason::MemoryLimitExceeded => write!(f, "MEMORY_LIMIT_EXCEEDED"),
+UnprocessableExceptionReason::PartitionFull => write!(f, "PARTITION_FULL"),
+UnprocessableExceptionReason::QueryTimeout => write!(f, "QUERY_TIMEOUT"),
+UnprocessableExceptionReason::StorageLimitExceeded => write!(f, "STORAGE_LIMIT_EXCEEDED"),
+UnprocessableExceptionReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

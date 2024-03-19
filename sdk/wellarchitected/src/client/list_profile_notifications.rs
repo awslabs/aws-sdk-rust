@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProfileNotifications`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::set_workload_id):<br>required: **false**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
-    /// - On success, responds with [`ListProfileNotificationsOutput`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput) with field(s):
+                            /// - On success, responds with [`ListProfileNotificationsOutput`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput) with field(s):
     ///   - [`notification_summaries(Option<Vec::<ProfileNotificationSummary>>)`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput::notification_summaries): <p>Notification summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProfileNotificationsError>`](crate::operation::list_profile_notifications::ListProfileNotificationsError)
+                            /// - On failure, responds with [`SdkError<ListProfileNotificationsError>`](crate::operation::list_profile_notifications::ListProfileNotificationsError)
     pub fn list_profile_notifications(&self) -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder {
-        crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

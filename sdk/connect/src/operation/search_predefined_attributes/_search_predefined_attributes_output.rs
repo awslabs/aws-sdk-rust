@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchPredefinedAttributesOutput {
+pub struct SearchPredefinedAttributesOutput  {
     /// <p>Predefined attributes matched by the search criteria.</p>
-    pub predefined_attributes: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>>,
+    pub predefined_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttribute>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The approximate number of predefined attributes which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl SearchPredefinedAttributesOutput {
+impl  SearchPredefinedAttributesOutput  {
     /// <p>Predefined attributes matched by the search criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predefined_attributes.is_none()`.
-    pub fn predefined_attributes(&self) -> &[crate::types::PredefinedAttribute] {
-        self.predefined_attributes.as_deref().unwrap_or_default()
+    pub fn predefined_attributes(&self) -> & [crate::types::PredefinedAttribute] {
+        self.predefined_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The approximate number of predefined attributes which matched your search query.</p>
@@ -28,10 +29,10 @@ impl SearchPredefinedAttributesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchPredefinedAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchPredefinedAttributesOutput {
     /// Creates a new builder-style object to manufacture [`SearchPredefinedAttributesOutput`](crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput).
     pub fn builder() -> crate::operation::search_predefined_attributes::builders::SearchPredefinedAttributesOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchPredefinedAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPredefinedAttributesOutputBuilder {
-    pub(crate) predefined_attributes: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>>,
+    pub(crate) predefined_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchPredefinedAttributesOutputBuilder {
     /// <p>Predefined attributes matched by the search criteria.</p>
     pub fn predefined_attributes(mut self, input: crate::types::PredefinedAttribute) -> Self {
         let mut v = self.predefined_attributes.unwrap_or_default();
-        v.push(input);
-        self.predefined_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predefined_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Predefined attributes matched by the search criteria.</p>
-    pub fn set_predefined_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>>) -> Self {
-        self.predefined_attributes = input;
-        self
+    pub fn set_predefined_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttribute>>) -> Self {
+        self.predefined_attributes = input; self
     }
     /// <p>Predefined attributes matched by the search criteria.</p>
-    pub fn get_predefined_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>> {
+    pub fn get_predefined_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttribute>> {
         &self.predefined_attributes
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -76,8 +76,7 @@ impl SearchPredefinedAttributesOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchPredefinedAttributesOutputBuilder {
     }
     /// <p>The approximate number of predefined attributes which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input;
-        self
+        self.approximate_total_count = input; self
     }
     /// <p>The approximate number of predefined attributes which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchPredefinedAttributesOutput`](crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput).
     pub fn build(self) -> crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput {
         crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput {
-            predefined_attributes: self.predefined_attributes,
-            next_token: self.next_token,
-            approximate_total_count: self.approximate_total_count,
+            predefined_attributes: self.predefined_attributes
+            ,
+            next_token: self.next_token
+            ,
+            approximate_total_count: self.approximate_total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

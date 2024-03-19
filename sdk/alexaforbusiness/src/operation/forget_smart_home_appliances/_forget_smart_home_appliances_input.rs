@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ForgetSmartHomeAppliancesInput {
+pub struct ForgetSmartHomeAppliancesInput  {
     /// <p>The room that the appliances are associated with.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
-impl ForgetSmartHomeAppliancesInput {
+impl  ForgetSmartHomeAppliancesInput  {
     /// <p>The room that the appliances are associated with.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl ForgetSmartHomeAppliancesInputBuilder {
     }
     /// <p>The room that the appliances are associated with.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The room that the appliances are associated with.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_arn
     }
     /// Consumes the builder and constructs a [`ForgetSmartHomeAppliancesInput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput { room_arn: self.room_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput {
+                room_arn: self.room_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTargetGroupOutput {
+pub struct GetTargetGroupOutput  {
     /// <p>The ID of the target group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -20,66 +20,67 @@ pub struct GetTargetGroupOutput {
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::TargetGroupStatus>,
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub service_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The failure message.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
     pub failure_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetTargetGroupOutput {
+impl  GetTargetGroupOutput  {
     /// <p>The ID of the target group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the target group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The target group type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetGroupType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TargetGroupType> {
         self.r#type.as_ref()
     }
     /// <p>The target group configuration.</p>
-    pub fn config(&self) -> ::std::option::Option<&crate::types::TargetGroupConfig> {
+    pub fn config(&self) -> ::std::option::Option<& crate::types::TargetGroupConfig> {
         self.config.as_ref()
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TargetGroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TargetGroupStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_arns.is_none()`.
-    pub fn service_arns(&self) -> &[::std::string::String] {
-        self.service_arns.as_deref().unwrap_or_default()
+    pub fn service_arns(&self) -> & [::std::string::String] {
+        self.service_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTargetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetTargetGroupOutput`](crate::operation::get_target_group::GetTargetGroupOutput).
     pub fn builder() -> crate::operation::get_target_group::builders::GetTargetGroupOutputBuilder {
@@ -99,7 +100,7 @@ pub struct GetTargetGroupOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::TargetGroupStatus>,
-    pub(crate) service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -112,8 +113,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The ID of the target group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the target group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +126,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The name of the target group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the target group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +152,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The target group type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetGroupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The target group type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
@@ -168,8 +165,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The target group configuration.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
-        self.config = input;
-        self
+        self.config = input; self
     }
     /// <p>The target group configuration.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::TargetGroupConfig> {
@@ -182,8 +178,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,8 +191,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -210,8 +204,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetGroupStatus> {
@@ -224,17 +217,16 @@ impl GetTargetGroupOutputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
     pub fn service_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_arns.unwrap_or_default();
-        v.push(input.into());
-        self.service_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.service_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.service_arns = input;
-        self
+    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.service_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.service_arns
     }
     /// <p>The failure message.</p>
@@ -244,8 +236,7 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The failure message.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The failure message.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,37 +249,48 @@ impl GetTargetGroupOutputBuilder {
     }
     /// <p>The failure code.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTargetGroupOutput`](crate::operation::get_target_group::GetTargetGroupOutput).
     pub fn build(self) -> crate::operation::get_target_group::GetTargetGroupOutput {
         crate::operation::get_target_group::GetTargetGroupOutput {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            config: self.config,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            status: self.status,
-            service_arns: self.service_arns,
-            failure_message: self.failure_message,
-            failure_code: self.failure_code,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            config: self.config
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            status: self.status
+            ,
+            service_arns: self.service_arns
+            ,
+            failure_message: self.failure_message
+            ,
+            failure_code: self.failure_code
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

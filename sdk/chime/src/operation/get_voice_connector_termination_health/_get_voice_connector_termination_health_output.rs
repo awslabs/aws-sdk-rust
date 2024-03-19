@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVoiceConnectorTerminationHealthOutput {
+pub struct GetVoiceConnectorTerminationHealthOutput  {
     /// <p>The termination health details.</p>
     pub termination_health: ::std::option::Option<crate::types::TerminationHealth>,
     _request_id: Option<String>,
 }
-impl GetVoiceConnectorTerminationHealthOutput {
+impl  GetVoiceConnectorTerminationHealthOutput  {
     /// <p>The termination health details.</p>
-    pub fn termination_health(&self) -> ::std::option::Option<&crate::types::TerminationHealth> {
+    pub fn termination_health(&self) -> ::std::option::Option<& crate::types::TerminationHealth> {
         self.termination_health.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetVoiceConnectorTerminationHealthOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetVoiceConnectorTerminationHealthOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorTerminationHealthOutput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput).
     pub fn builder() -> crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthOutputBuilder {
@@ -40,27 +40,28 @@ impl GetVoiceConnectorTerminationHealthOutputBuilder {
     }
     /// <p>The termination health details.</p>
     pub fn set_termination_health(mut self, input: ::std::option::Option<crate::types::TerminationHealth>) -> Self {
-        self.termination_health = input;
-        self
+        self.termination_health = input; self
     }
     /// <p>The termination health details.</p>
     pub fn get_termination_health(&self) -> &::std::option::Option<crate::types::TerminationHealth> {
         &self.termination_health
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetVoiceConnectorTerminationHealthOutput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput).
     pub fn build(self) -> crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput {
         crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput {
-            termination_health: self.termination_health,
+            termination_health: self.termination_health
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

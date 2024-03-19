@@ -3,13 +3,13 @@
 /// <p>Details multiple activities as they related to a potential security event. Detective uses graph analysis technique that infers relationships between findings and entities, and groups them together as a finding group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedFindingGroupDetail {
+pub struct RelatedFindingGroupDetail  {
     /// <p>The unique identifier for the finding group.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl RelatedFindingGroupDetail {
+impl  RelatedFindingGroupDetail  {
     /// <p>The unique identifier for the finding group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RelatedFindingGroupDetailBuilder {
     }
     /// <p>The unique identifier for the finding group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the finding group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl RelatedFindingGroupDetailBuilder {
     }
     /// Consumes the builder and constructs a [`RelatedFindingGroupDetail`](crate::types::RelatedFindingGroupDetail).
     pub fn build(self) -> crate::types::RelatedFindingGroupDetail {
-        crate::types::RelatedFindingGroupDetail { id: self.id }
+        crate::types::RelatedFindingGroupDetail {
+            id: self.id
+            ,
+        }
     }
 }
+

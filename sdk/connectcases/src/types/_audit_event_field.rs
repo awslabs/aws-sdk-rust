@@ -3,7 +3,7 @@
 /// <p>Fields for audit event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditEventField {
+pub struct AuditEventField  {
     /// <p>Unique identifier of field in an Audit History entry.</p>
     pub event_field_id: ::std::string::String,
     /// <p>Union of potential field value types.</p>
@@ -11,18 +11,17 @@ pub struct AuditEventField {
     /// <p>Union of potential field value types.</p>
     pub new_value: ::std::option::Option<crate::types::AuditEventFieldValueUnion>,
 }
-impl AuditEventField {
+impl  AuditEventField  {
     /// <p>Unique identifier of field in an Audit History entry.</p>
-    pub fn event_field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_field_id.deref()
+    pub fn event_field_id(&self) -> & str {
+        use std::ops::Deref; self.event_field_id.deref()
     }
     /// <p>Union of potential field value types.</p>
-    pub fn old_value(&self) -> ::std::option::Option<&crate::types::AuditEventFieldValueUnion> {
+    pub fn old_value(&self) -> ::std::option::Option<& crate::types::AuditEventFieldValueUnion> {
         self.old_value.as_ref()
     }
     /// <p>Union of potential field value types.</p>
-    pub fn new_value(&self) -> ::std::option::Option<&crate::types::AuditEventFieldValueUnion> {
+    pub fn new_value(&self) -> ::std::option::Option<& crate::types::AuditEventFieldValueUnion> {
         self.new_value.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl AuditEventFieldBuilder {
     }
     /// <p>Unique identifier of field in an Audit History entry.</p>
     pub fn set_event_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_field_id = input;
-        self
+        self.event_field_id = input; self
     }
     /// <p>Unique identifier of field in an Audit History entry.</p>
     pub fn get_event_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl AuditEventFieldBuilder {
     }
     /// <p>Union of potential field value types.</p>
     pub fn set_old_value(mut self, input: ::std::option::Option<crate::types::AuditEventFieldValueUnion>) -> Self {
-        self.old_value = input;
-        self
+        self.old_value = input; self
     }
     /// <p>Union of potential field value types.</p>
     pub fn get_old_value(&self) -> &::std::option::Option<crate::types::AuditEventFieldValueUnion> {
@@ -79,8 +76,7 @@ impl AuditEventFieldBuilder {
     }
     /// <p>Union of potential field value types.</p>
     pub fn set_new_value(mut self, input: ::std::option::Option<crate::types::AuditEventFieldValueUnion>) -> Self {
-        self.new_value = input;
-        self
+        self.new_value = input; self
     }
     /// <p>Union of potential field value types.</p>
     pub fn get_new_value(&self) -> &::std::option::Option<crate::types::AuditEventFieldValueUnion> {
@@ -90,15 +86,19 @@ impl AuditEventFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_field_id`](crate::types::builders::AuditEventFieldBuilder::event_field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AuditEventField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuditEventField {
-            event_field_id: self.event_field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_field_id",
-                    "event_field_id was not specified but it is required when building AuditEventField",
-                )
-            })?,
-            old_value: self.old_value,
-            new_value: self.new_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuditEventField {
+                event_field_id: self.event_field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_field_id", "event_field_id was not specified but it is required when building AuditEventField")
+                    )?
+                ,
+                old_value: self.old_value
+                ,
+                new_value: self.new_value
+                ,
+            }
+        )
     }
 }
+

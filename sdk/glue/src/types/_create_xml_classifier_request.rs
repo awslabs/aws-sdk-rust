@@ -3,7 +3,7 @@
 /// <p>Specifies an XML classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateXmlClassifierRequest {
+pub struct CreateXmlClassifierRequest  {
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub classification: ::std::string::String,
     /// <p>The name of the classifier.</p>
@@ -11,19 +11,17 @@ pub struct CreateXmlClassifierRequest {
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code><row item_a="A" item_b="B" /></code> is okay, but <code><row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: ::std::option::Option<::std::string::String>,
 }
-impl CreateXmlClassifierRequest {
+impl  CreateXmlClassifierRequest  {
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(&self) -> &str {
-        use std::ops::Deref;
-        self.classification.deref()
+    pub fn classification(&self) -> & str {
+        use std::ops::Deref; self.classification.deref()
     }
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code><row item_a="A" item_b="B" /></code> is okay, but <code><row item_a="A" item_b="B" /></code> is not).</p>
-    pub fn row_tag(&self) -> ::std::option::Option<&str> {
+    pub fn row_tag(&self) -> ::std::option::Option<& str> {
         self.row_tag.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl CreateXmlClassifierRequestBuilder {
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classification = input;
-        self
+        self.classification = input; self
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl CreateXmlClassifierRequestBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the classifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl CreateXmlClassifierRequestBuilder {
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code><row item_a="A" item_b="B" /></code> is okay, but <code><row item_a="A" item_b="B" /></code> is not).</p>
     pub fn set_row_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.row_tag = input;
-        self
+        self.row_tag = input; self
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code><row item_a="A" item_b="B" /></code> is okay, but <code><row item_a="A" item_b="B" /></code> is not).</p>
     pub fn get_row_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl CreateXmlClassifierRequestBuilder {
     /// - [`classification`](crate::types::builders::CreateXmlClassifierRequestBuilder::classification)
     /// - [`name`](crate::types::builders::CreateXmlClassifierRequestBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateXmlClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateXmlClassifierRequest {
-            classification: self.classification.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "classification",
-                    "classification was not specified but it is required when building CreateXmlClassifierRequest",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateXmlClassifierRequest",
-                )
-            })?,
-            row_tag: self.row_tag,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateXmlClassifierRequest {
+                classification: self.classification
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("classification", "classification was not specified but it is required when building CreateXmlClassifierRequest")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateXmlClassifierRequest")
+                    )?
+                ,
+                row_tag: self.row_tag
+                ,
+            }
+        )
     }
 }
+

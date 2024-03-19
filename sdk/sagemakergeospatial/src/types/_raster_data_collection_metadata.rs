@@ -3,7 +3,7 @@
 /// <p>Response object containing details for a specific RasterDataCollection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RasterDataCollectionMetadata {
+pub struct RasterDataCollectionMetadata  {
     /// <p>The name of the raster data collection.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
@@ -15,41 +15,37 @@ pub struct RasterDataCollectionMetadata {
     /// <p>The description URL of the raster data collection.</p>
     pub description_page_url: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub supported_filters: ::std::vec::Vec<crate::types::Filter>,
+    pub supported_filters: ::std::vec::Vec::<crate::types::Filter>,
     /// <p>Each tag consists of a key and a value.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RasterDataCollectionMetadata {
+impl  RasterDataCollectionMetadata  {
     /// <p>The name of the raster data collection.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The type of raster data collection.</p>
-    pub fn r#type(&self) -> &crate::types::DataCollectionType {
+    pub fn r#type(&self) -> & crate::types::DataCollectionType {
         &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The description URL of the raster data collection.</p>
-    pub fn description_page_url(&self) -> ::std::option::Option<&str> {
+    pub fn description_page_url(&self) -> ::std::option::Option<& str> {
         self.description_page_url.as_deref()
     }
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub fn supported_filters(&self) -> &[crate::types::Filter] {
-        use std::ops::Deref;
-        self.supported_filters.deref()
+    pub fn supported_filters(&self) -> & [crate::types::Filter] {
+        use std::ops::Deref; self.supported_filters.deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -69,8 +65,8 @@ pub struct RasterDataCollectionMetadataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataCollectionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) description_page_url: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) supported_filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RasterDataCollectionMetadataBuilder {
     /// <p>The name of the raster data collection.</p>
@@ -81,8 +77,7 @@ impl RasterDataCollectionMetadataBuilder {
     }
     /// <p>The name of the raster data collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the raster data collection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl RasterDataCollectionMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +105,7 @@ impl RasterDataCollectionMetadataBuilder {
     }
     /// <p>The type of raster data collection.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCollectionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of raster data collection.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCollectionType> {
@@ -126,8 +119,7 @@ impl RasterDataCollectionMetadataBuilder {
     }
     /// <p>A description of the raster data collection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the raster data collection.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +132,7 @@ impl RasterDataCollectionMetadataBuilder {
     }
     /// <p>The description URL of the raster data collection.</p>
     pub fn set_description_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description_page_url = input;
-        self
+        self.description_page_url = input; self
     }
     /// <p>The description URL of the raster data collection.</p>
     pub fn get_description_page_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +145,16 @@ impl RasterDataCollectionMetadataBuilder {
     /// <p>The list of filters supported by the raster data collection.</p>
     pub fn supported_filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.supported_filters.unwrap_or_default();
-        v.push(input);
-        self.supported_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub fn set_supported_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.supported_filters = input;
-        self
+    pub fn set_supported_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.supported_filters = input; self
     }
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub fn get_supported_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_supported_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.supported_filters
     }
     /// Adds a key-value pair to `tags`.
@@ -174,17 +164,16 @@ impl RasterDataCollectionMetadataBuilder {
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionMetadata`](crate::types::RasterDataCollectionMetadata).
@@ -195,39 +184,39 @@ impl RasterDataCollectionMetadataBuilder {
     /// - [`description`](crate::types::builders::RasterDataCollectionMetadataBuilder::description)
     /// - [`supported_filters`](crate::types::builders::RasterDataCollectionMetadataBuilder::supported_filters)
     pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RasterDataCollectionMetadata {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RasterDataCollectionMetadata",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RasterDataCollectionMetadata",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building RasterDataCollectionMetadata",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building RasterDataCollectionMetadata",
-                )
-            })?,
-            description_page_url: self.description_page_url,
-            supported_filters: self.supported_filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "supported_filters",
-                    "supported_filters was not specified but it is required when building RasterDataCollectionMetadata",
-                )
-            })?,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RasterDataCollectionMetadata {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RasterDataCollectionMetadata")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RasterDataCollectionMetadata")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building RasterDataCollectionMetadata")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building RasterDataCollectionMetadata")
+                    )?
+                ,
+                description_page_url: self.description_page_url
+                ,
+                supported_filters: self.supported_filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("supported_filters", "supported_filters was not specified but it is required when building RasterDataCollectionMetadata")
+                    )?
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

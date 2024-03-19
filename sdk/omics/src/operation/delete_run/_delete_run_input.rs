@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRunInput {
+pub struct DeleteRunInput  {
     /// <p>The run's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRunInput {
+impl  DeleteRunInput  {
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteRunInputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The run's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteRunInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_run::DeleteRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_run::DeleteRunInput { id: self.id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_run::DeleteRunInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>Represents the input of a <code>DeleteCacheSecurityGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCacheSecurityGroupInput {
+pub struct DeleteCacheSecurityGroupInput  {
     /// <p>The name of the cache security group to delete.</p><note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub cache_security_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCacheSecurityGroupInput {
+impl  DeleteCacheSecurityGroupInput  {
     /// <p>The name of the cache security group to delete.</p><note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
-    pub fn cache_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_security_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_security_group_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DeleteCacheSecurityGroupInputBuilder {
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_security_group_name = input;
-        self
+        self.cache_security_group_name = input; self
     }
     /// <p>The name of the cache security group to delete.</p><note>
     /// <p>You cannot delete the default security group.</p>
@@ -53,14 +52,13 @@ impl DeleteCacheSecurityGroupInputBuilder {
         &self.cache_security_group_name
     }
     /// Consumes the builder and constructs a [`DeleteCacheSecurityGroupInput`](crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput {
-            cache_security_group_name: self.cache_security_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput {
+                cache_security_group_name: self.cache_security_group_name
+                ,
+            }
+        )
     }
 }
+

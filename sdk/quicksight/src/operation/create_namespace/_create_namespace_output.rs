@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNamespaceOutput {
+pub struct CreateNamespaceOutput  {
     /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
@@ -19,29 +19,29 @@ pub struct CreateNamespaceOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl CreateNamespaceOutput {
+impl  CreateNamespaceOutput  {
     /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the new namespace that you created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
-    pub fn capacity_region(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_region(&self) -> ::std::option::Option<& str> {
         self.capacity_region.as_deref()
     }
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
-    pub fn creation_status(&self) -> ::std::option::Option<&crate::types::NamespaceStatus> {
+    pub fn creation_status(&self) -> ::std::option::Option<& crate::types::NamespaceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn identity_store(&self) -> ::std::option::Option<&crate::types::IdentityStore> {
+    pub fn identity_store(&self) -> ::std::option::Option<& crate::types::IdentityStore> {
         self.identity_store.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -50,10 +50,10 @@ impl CreateNamespaceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNamespaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateNamespaceOutput`](crate::operation::create_namespace::CreateNamespaceOutput).
     pub fn builder() -> crate::operation::create_namespace::builders::CreateNamespaceOutputBuilder {
@@ -82,8 +82,7 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>The name of the new namespace that you created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new namespace that you created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub fn set_capacity_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_region = input;
-        self
+        self.capacity_region = input; self
     }
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub fn get_capacity_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
     pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::NamespaceStatus>) -> Self {
-        self.creation_status = input;
-        self
+        self.creation_status = input; self
     }
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
     pub fn get_creation_status(&self) -> &::std::option::Option<crate::types::NamespaceStatus> {
@@ -138,8 +134,7 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn set_identity_store(mut self, input: ::std::option::Option<crate::types::IdentityStore>) -> Self {
-        self.identity_store = input;
-        self
+        self.identity_store = input; self
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn get_identity_store(&self) -> &::std::option::Option<crate::types::IdentityStore> {
@@ -152,8 +147,7 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,33 +160,41 @@ impl CreateNamespaceOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNamespaceOutput`](crate::operation::create_namespace::CreateNamespaceOutput).
     pub fn build(self) -> crate::operation::create_namespace::CreateNamespaceOutput {
         crate::operation::create_namespace::CreateNamespaceOutput {
-            arn: self.arn,
-            name: self.name,
-            capacity_region: self.capacity_region,
-            creation_status: self.creation_status,
-            identity_store: self.identity_store,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            capacity_region: self.capacity_region
+            ,
+            creation_status: self.creation_status
+            ,
+            identity_store: self.identity_store
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stac
 
 impl BatchAssociateUserStackInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_associate_user_stack();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_associate_user_stack();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchAssociateUserStack`.
-///
+/// 
 /// <p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateUserStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder,
+                    inner: crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
-    > for BatchAssociateUserStackFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
-            crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
+                    crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
+                > for BatchAssociateUserStackFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
+                        crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchAssociateUserStackFluentBuilder {
     /// Creates a new `BatchAssociateUserStack`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl BatchAssociateUserStackFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_associate_user_stack::BatchAssociateUserStack::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStack::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_associate_user_stack::BatchAssociateUserStackError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_associate_user_stack::BatchAssociateUserStack::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_associate_user_stack::BatchAssociateUserStack::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput, crate::operation::batch_associate_user_stack::BatchAssociateUserStackError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `UserStackAssociations`.
     ///
     /// To override the contents of this collection use [`set_user_stack_associations`](Self::set_user_stack_associations).
@@ -118,12 +105,13 @@ impl BatchAssociateUserStackFluentBuilder {
         self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn set_user_stack_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>) -> Self {
+    pub fn set_user_stack_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserStackAssociation>>) -> Self {
         self.inner = self.inner.set_user_stack_associations(input);
         self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn get_user_stack_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
+    pub fn get_user_stack_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserStackAssociation>> {
         self.inner.get_user_stack_associations()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the resources, including machine learning (ML) compute instances and ML storage volumes, to use for model training.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceConfig {
+pub struct ResourceConfig  {
     /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
@@ -43,9 +43,9 @@ pub struct ResourceConfig {
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
     pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
+    pub instance_groups: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceGroup>>,
 }
-impl ResourceConfig {
+impl  ResourceConfig  {
     /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
@@ -57,7 +57,7 @@ impl ResourceConfig {
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::TrainingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::TrainingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1.</p>
@@ -87,7 +87,7 @@ impl ResourceConfig {
     /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
     /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
-    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
@@ -95,10 +95,11 @@ impl ResourceConfig {
         self.keep_alive_period_in_seconds
     }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
-    pub fn instance_groups(&self) -> &[crate::types::InstanceGroup] {
-        self.instance_groups.as_deref().unwrap_or_default()
+    pub fn instance_groups(&self) -> & [crate::types::InstanceGroup] {
+        self.instance_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceConfig {
@@ -117,7 +118,7 @@ pub struct ResourceConfigBuilder {
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
-    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceGroup>>,
 }
 impl ResourceConfigBuilder {
     /// <p>The ML compute instance type.</p><note>
@@ -147,8 +148,7 @@ impl ResourceConfigBuilder {
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::TrainingInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
@@ -171,8 +171,7 @@ impl ResourceConfigBuilder {
     }
     /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -196,8 +195,7 @@ impl ResourceConfigBuilder {
     /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
     /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
     }
     /// <p>The size of the ML storage volume that you want to provision.</p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification.</p>
@@ -241,8 +239,7 @@ impl ResourceConfigBuilder {
     /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_kms_key_id = input;
-        self
+        self.volume_kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
@@ -268,8 +265,7 @@ impl ResourceConfigBuilder {
     }
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
     pub fn set_keep_alive_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.keep_alive_period_in_seconds = input;
-        self
+        self.keep_alive_period_in_seconds = input; self
     }
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
     pub fn get_keep_alive_period_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -282,28 +278,34 @@ impl ResourceConfigBuilder {
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
     pub fn instance_groups(mut self, input: crate::types::InstanceGroup) -> Self {
         let mut v = self.instance_groups.unwrap_or_default();
-        v.push(input);
-        self.instance_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>) -> Self {
-        self.instance_groups = input;
-        self
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceGroup>>) -> Self {
+        self.instance_groups = input; self
     }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceGroup>> {
         &self.instance_groups
     }
     /// Consumes the builder and constructs a [`ResourceConfig`](crate::types::ResourceConfig).
     pub fn build(self) -> crate::types::ResourceConfig {
         crate::types::ResourceConfig {
-            instance_type: self.instance_type,
-            instance_count: self.instance_count,
-            volume_size_in_gb: self.volume_size_in_gb,
-            volume_kms_key_id: self.volume_kms_key_id,
-            keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,
-            instance_groups: self.instance_groups,
+            instance_type: self.instance_type
+            ,
+            instance_count: self.instance_count
+            ,
+            volume_size_in_gb: self.volume_size_in_gb
+            ,
+            volume_kms_key_id: self.volume_kms_key_id
+            ,
+            keep_alive_period_in_seconds: self.keep_alive_period_in_seconds
+            ,
+            instance_groups: self.instance_groups
+            ,
         }
     }
 }
+

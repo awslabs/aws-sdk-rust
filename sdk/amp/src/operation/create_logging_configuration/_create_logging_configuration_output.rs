@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>CreateLoggingConfiguration</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLoggingConfigurationOutput {
+pub struct CreateLoggingConfigurationOutput  {
     /// <p>A structure that displays the current status of the logging configuration.</p>
     pub status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     _request_id: Option<String>,
 }
-impl CreateLoggingConfigurationOutput {
+impl  CreateLoggingConfigurationOutput  {
     /// <p>A structure that displays the current status of the logging configuration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LoggingConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LoggingConfigurationStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLoggingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput).
     pub fn builder() -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateLoggingConfigurationOutputBuilder {
     }
     /// <p>A structure that displays the current status of the logging configuration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A structure that displays the current status of the logging configuration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LoggingConfigurationStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput).
     pub fn build(self) -> crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput {
         crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterResourceInput {
+pub struct RegisterResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
@@ -15,9 +15,9 @@ pub struct RegisterResourceInput {
     /// <p>Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub hybrid_access_enabled: ::std::option::Option<bool>,
 }
-impl RegisterResourceInput {
+impl  RegisterResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
@@ -26,7 +26,7 @@ impl RegisterResourceInput {
         self.use_service_linked_role
     }
     /// <p>The identifier for the role that registers the resource.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Whether or not the resource is a federated resource.</p>
@@ -64,8 +64,7 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl RegisterResourceInputBuilder {
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn set_use_service_linked_role(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_service_linked_role = input;
-        self
+        self.use_service_linked_role = input; self
     }
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
@@ -95,8 +93,7 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.with_federation = input;
-        self
+        self.with_federation = input; self
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
@@ -123,23 +119,28 @@ impl RegisterResourceInputBuilder {
     }
     /// <p>Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub fn set_hybrid_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hybrid_access_enabled = input;
-        self
+        self.hybrid_access_enabled = input; self
     }
     /// <p>Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
         &self.hybrid_access_enabled
     }
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_resource::RegisterResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_resource::RegisterResourceInput {
-            resource_arn: self.resource_arn,
-            use_service_linked_role: self.use_service_linked_role,
-            role_arn: self.role_arn,
-            with_federation: self.with_federation,
-            hybrid_access_enabled: self.hybrid_access_enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_resource::RegisterResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_resource::RegisterResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                use_service_linked_role: self.use_service_linked_role
+                ,
+                role_arn: self.role_arn
+                ,
+                with_federation: self.with_federation
+                ,
+                hybrid_access_enabled: self.hybrid_access_enabled
+                ,
+            }
+        )
     }
 }
+

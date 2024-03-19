@@ -126,3 +126,4 @@ pub mod update_knowledge_base_template_uri;
 
 /// Types for the `UpdateQuickResponse` operation.
 pub mod update_quick_response;
+

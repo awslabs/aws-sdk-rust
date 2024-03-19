@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotebookInstanceInput {
+pub struct DescribeNotebookInstanceInput  {
     /// <p>The name of the notebook instance that you want information about.</p>
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeNotebookInstanceInput {
+impl  DescribeNotebookInstanceInput  {
     /// <p>The name of the notebook instance that you want information about.</p>
-    pub fn notebook_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_name(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeNotebookInstanceInputBuilder {
     }
     /// <p>The name of the notebook instance that you want information about.</p>
     pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_instance_name = input;
-        self
+        self.notebook_instance_name = input; self
     }
     /// <p>The name of the notebook instance that you want information about.</p>
     pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_name
     }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
-            notebook_instance_name: self.notebook_instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
+                notebook_instance_name: self.notebook_instance_name
+                ,
+            }
+        )
     }
 }
+

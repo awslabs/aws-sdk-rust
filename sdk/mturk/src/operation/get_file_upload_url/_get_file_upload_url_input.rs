@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFileUploadUrlInput {
+pub struct GetFileUploadUrlInput  {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub question_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetFileUploadUrlInput {
+impl  GetFileUploadUrlInput  {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
-    pub fn assignment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_id(&self) -> ::std::option::Option<& str> {
         self.assignment_id.as_deref()
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
-    pub fn question_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn question_identifier(&self) -> ::std::option::Option<& str> {
         self.question_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetFileUploadUrlInputBuilder {
     }
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
     pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assignment_id = input;
-        self
+        self.assignment_id = input; self
     }
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
     pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetFileUploadUrlInputBuilder {
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub fn set_question_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_identifier = input;
-        self
+        self.question_identifier = input; self
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub fn get_question_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.question_identifier
     }
     /// Consumes the builder and constructs a [`GetFileUploadUrlInput`](crate::operation::get_file_upload_url::GetFileUploadUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_file_upload_url::GetFileUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_file_upload_url::GetFileUploadUrlInput {
-            assignment_id: self.assignment_id,
-            question_identifier: self.question_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_file_upload_url::GetFileUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_file_upload_url::GetFileUploadUrlInput {
+                assignment_id: self.assignment_id
+                ,
+                question_identifier: self.question_identifier
+                ,
+            }
+        )
     }
 }
+

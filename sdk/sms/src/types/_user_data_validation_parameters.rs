@@ -3,19 +3,19 @@
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserDataValidationParameters {
+pub struct UserDataValidationParameters  {
     /// <p>The location of the validation script.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The type of validation script.</p>
     pub script_type: ::std::option::Option<crate::types::ScriptType>,
 }
-impl UserDataValidationParameters {
+impl  UserDataValidationParameters  {
     /// <p>The location of the validation script.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The type of validation script.</p>
-    pub fn script_type(&self) -> ::std::option::Option<&crate::types::ScriptType> {
+    pub fn script_type(&self) -> ::std::option::Option<& crate::types::ScriptType> {
         self.script_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UserDataValidationParametersBuilder {
     }
     /// <p>The location of the validation script.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The location of the validation script.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -55,8 +54,7 @@ impl UserDataValidationParametersBuilder {
     }
     /// <p>The type of validation script.</p>
     pub fn set_script_type(mut self, input: ::std::option::Option<crate::types::ScriptType>) -> Self {
-        self.script_type = input;
-        self
+        self.script_type = input; self
     }
     /// <p>The type of validation script.</p>
     pub fn get_script_type(&self) -> &::std::option::Option<crate::types::ScriptType> {
@@ -65,8 +63,11 @@ impl UserDataValidationParametersBuilder {
     /// Consumes the builder and constructs a [`UserDataValidationParameters`](crate::types::UserDataValidationParameters).
     pub fn build(self) -> crate::types::UserDataValidationParameters {
         crate::types::UserDataValidationParameters {
-            source: self.source,
-            script_type: self.script_type,
+            source: self.source
+            ,
+            script_type: self.script_type
+            ,
         }
     }
 }
+

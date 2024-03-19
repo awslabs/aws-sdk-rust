@@ -3,23 +3,23 @@
 /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirelensConfiguration {
+pub struct FirelensConfiguration  {
     /// <p>The log router to use. The valid values are <code>fluentd</code> or <code>fluentbit</code>.</p>
     pub r#type: crate::types::FirelensConfigurationType,
     /// <p>The options to use when configuring the log router. This field is optional and can be used to specify a custom configuration file or to add additional metadata, such as the task, task definition, cluster, and container instance details to the log event. If specified, the syntax to use is <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file type.</p>
     /// </note>
-    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl FirelensConfiguration {
+impl  FirelensConfiguration  {
     /// <p>The log router to use. The valid values are <code>fluentd</code> or <code>fluentbit</code>.</p>
-    pub fn r#type(&self) -> &crate::types::FirelensConfigurationType {
+    pub fn r#type(&self) -> & crate::types::FirelensConfigurationType {
         &self.r#type
     }
     /// <p>The options to use when configuring the log router. This field is optional and can be used to specify a custom configuration file or to add additional metadata, such as the task, task definition, cluster, and container instance details to the log event. If specified, the syntax to use is <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file type.</p>
     /// </note>
-    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
     }
 }
@@ -35,7 +35,7 @@ impl FirelensConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirelensConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FirelensConfigurationType>,
-    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl FirelensConfigurationBuilder {
     /// <p>The log router to use. The valid values are <code>fluentd</code> or <code>fluentbit</code>.</p>
@@ -46,8 +46,7 @@ impl FirelensConfigurationBuilder {
     }
     /// <p>The log router to use. The valid values are <code>fluentd</code> or <code>fluentbit</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FirelensConfigurationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The log router to use. The valid values are <code>fluentd</code> or <code>fluentbit</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FirelensConfigurationType> {
@@ -62,35 +61,37 @@ impl FirelensConfigurationBuilder {
     /// </note>
     pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The options to use when configuring the log router. This field is optional and can be used to specify a custom configuration file or to add additional metadata, such as the task, task definition, cluster, and container instance details to the log event. If specified, the syntax to use is <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file type.</p>
     /// </note>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.options = input; self
     }
     /// <p>The options to use when configuring the log router. This field is optional and can be used to specify a custom configuration file or to add additional metadata, such as the task, task definition, cluster, and container instance details to the log event. If specified, the syntax to use is <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file type.</p>
     /// </note>
-    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`FirelensConfiguration`](crate::types::FirelensConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FirelensConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FirelensConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FirelensConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FirelensConfiguration",
-                )
-            })?,
-            options: self.options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FirelensConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FirelensConfiguration")
+                    )?
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

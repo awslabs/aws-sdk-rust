@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAutoshiftsInput {
+pub struct ListAutoshiftsInput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The status of the autoshift.</p>
@@ -10,13 +10,13 @@ pub struct ListAutoshiftsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAutoshiftsInput {
+impl  ListAutoshiftsInput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The status of the autoshift.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AutoshiftExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AutoshiftExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The number of objects that you want to return with this call.</p>
@@ -47,8 +47,7 @@ impl ListAutoshiftsInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListAutoshiftsInputBuilder {
     }
     /// <p>The status of the autoshift.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoshiftExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the autoshift.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoshiftExecutionStatus> {
@@ -75,21 +73,24 @@ impl ListAutoshiftsInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAutoshiftsInput`](crate::operation::list_autoshifts::ListAutoshiftsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_autoshifts::ListAutoshiftsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_autoshifts::ListAutoshiftsInput {
-            next_token: self.next_token,
-            status: self.status,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_autoshifts::ListAutoshiftsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_autoshifts::ListAutoshiftsInput {
+                next_token: self.next_token
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

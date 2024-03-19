@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeRangeFilterValue {
+pub struct TimeRangeFilterValue  {
     /// <p>The static input value.</p>
     pub static_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The rolling date input value.</p>
@@ -12,17 +12,17 @@ pub struct TimeRangeFilterValue {
     /// <p>The parameter type input value.</p>
     pub parameter: ::std::option::Option<::std::string::String>,
 }
-impl TimeRangeFilterValue {
+impl  TimeRangeFilterValue  {
     /// <p>The static input value.</p>
-    pub fn static_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn static_value(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.static_value.as_ref()
     }
     /// <p>The rolling date input value.</p>
-    pub fn rolling_date(&self) -> ::std::option::Option<&crate::types::RollingDateConfiguration> {
+    pub fn rolling_date(&self) -> ::std::option::Option<& crate::types::RollingDateConfiguration> {
         self.rolling_date.as_ref()
     }
     /// <p>The parameter type input value.</p>
-    pub fn parameter(&self) -> ::std::option::Option<&str> {
+    pub fn parameter(&self) -> ::std::option::Option<& str> {
         self.parameter.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl TimeRangeFilterValueBuilder {
     }
     /// <p>The static input value.</p>
     pub fn set_static_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.static_value = input;
-        self
+        self.static_value = input; self
     }
     /// <p>The static input value.</p>
     pub fn get_static_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -63,8 +62,7 @@ impl TimeRangeFilterValueBuilder {
     }
     /// <p>The rolling date input value.</p>
     pub fn set_rolling_date(mut self, input: ::std::option::Option<crate::types::RollingDateConfiguration>) -> Self {
-        self.rolling_date = input;
-        self
+        self.rolling_date = input; self
     }
     /// <p>The rolling date input value.</p>
     pub fn get_rolling_date(&self) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
@@ -77,8 +75,7 @@ impl TimeRangeFilterValueBuilder {
     }
     /// <p>The parameter type input value.</p>
     pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter = input;
-        self
+        self.parameter = input; self
     }
     /// <p>The parameter type input value.</p>
     pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl TimeRangeFilterValueBuilder {
     /// Consumes the builder and constructs a [`TimeRangeFilterValue`](crate::types::TimeRangeFilterValue).
     pub fn build(self) -> crate::types::TimeRangeFilterValue {
         crate::types::TimeRangeFilterValue {
-            static_value: self.static_value,
-            rolling_date: self.rolling_date,
-            parameter: self.parameter,
+            static_value: self.static_value
+            ,
+            rolling_date: self.rolling_date
+            ,
+            parameter: self.parameter
+            ,
         }
     }
 }
+

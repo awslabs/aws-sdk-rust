@@ -3,27 +3,28 @@
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkingStorageOutput {
+pub struct DescribeWorkingStorageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub disk_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub working_storage_used_in_bytes: i64,
     /// <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub working_storage_allocated_in_bytes: i64,
     _request_id: Option<String>,
 }
-impl DescribeWorkingStorageOutput {
+impl  DescribeWorkingStorageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_ids.is_none()`.
-    pub fn disk_ids(&self) -> &[::std::string::String] {
-        self.disk_ids.as_deref().unwrap_or_default()
+    pub fn disk_ids(&self) -> & [::std::string::String] {
+        self.disk_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub fn working_storage_used_in_bytes(&self) -> i64 {
@@ -35,10 +36,10 @@ impl DescribeWorkingStorageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorkingStorageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorkingStorageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkingStorageOutput`](crate::operation::describe_working_storage::DescribeWorkingStorageOutput).
     pub fn builder() -> crate::operation::describe_working_storage::builders::DescribeWorkingStorageOutputBuilder {
@@ -51,7 +52,7 @@ impl DescribeWorkingStorageOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkingStorageOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) working_storage_used_in_bytes: ::std::option::Option<i64>,
     pub(crate) working_storage_allocated_in_bytes: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -64,8 +65,7 @@ impl DescribeWorkingStorageOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl DescribeWorkingStorageOutputBuilder {
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
     pub fn disk_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disk_ids.unwrap_or_default();
-        v.push(input.into());
-        self.disk_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.disk_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.disk_ids = input;
-        self
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.disk_ids = input; self
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.disk_ids
     }
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
@@ -98,8 +97,7 @@ impl DescribeWorkingStorageOutputBuilder {
     }
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub fn set_working_storage_used_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.working_storage_used_in_bytes = input;
-        self
+        self.working_storage_used_in_bytes = input; self
     }
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub fn get_working_storage_used_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -112,30 +110,36 @@ impl DescribeWorkingStorageOutputBuilder {
     }
     /// <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub fn set_working_storage_allocated_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.working_storage_allocated_in_bytes = input;
-        self
+        self.working_storage_allocated_in_bytes = input; self
     }
     /// <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub fn get_working_storage_allocated_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.working_storage_allocated_in_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorkingStorageOutput`](crate::operation::describe_working_storage::DescribeWorkingStorageOutput).
     pub fn build(self) -> crate::operation::describe_working_storage::DescribeWorkingStorageOutput {
         crate::operation::describe_working_storage::DescribeWorkingStorageOutput {
-            gateway_arn: self.gateway_arn,
-            disk_ids: self.disk_ids,
-            working_storage_used_in_bytes: self.working_storage_used_in_bytes.unwrap_or_default(),
-            working_storage_allocated_in_bytes: self.working_storage_allocated_in_bytes.unwrap_or_default(),
+            gateway_arn: self.gateway_arn
+            ,
+            disk_ids: self.disk_ids
+            ,
+            working_storage_used_in_bytes: self.working_storage_used_in_bytes
+                .unwrap_or_default()
+            ,
+            working_storage_allocated_in_bytes: self.working_storage_allocated_in_bytes
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

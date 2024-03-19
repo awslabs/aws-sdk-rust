@@ -3,19 +3,19 @@
 /// <p>A request to delete an <code>XssMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteXssMatchSetInput {
+pub struct DeleteXssMatchSetInput  {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub xss_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteXssMatchSetInput {
+impl  DeleteXssMatchSetInput  {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn xss_match_set_id(&self) -> ::std::option::Option<& str> {
         self.xss_match_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteXssMatchSetInputBuilder {
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xss_match_set_id = input;
-        self
+        self.xss_match_set_id = input; self
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn get_xss_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl DeleteXssMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteXssMatchSetInput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_xss_match_set::DeleteXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_xss_match_set::DeleteXssMatchSetInput {
-            xss_match_set_id: self.xss_match_set_id,
-            change_token: self.change_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_xss_match_set::DeleteXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_xss_match_set::DeleteXssMatchSetInput {
+                xss_match_set_id: self.xss_match_set_id
+                ,
+                change_token: self.change_token
+                ,
+            }
+        )
     }
 }
+

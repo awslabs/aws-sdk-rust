@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEphemerisOutput {
+pub struct DescribeEphemerisOutput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
@@ -20,24 +20,24 @@ pub struct DescribeEphemerisOutput {
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to an ephemeris.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Supplied ephemeris data.</p>
     pub supplied_data: ::std::option::Option<crate::types::EphemerisTypeDescription>,
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
     pub invalid_reason: ::std::option::Option<crate::types::EphemerisInvalidReason>,
     _request_id: Option<String>,
 }
-impl DescribeEphemerisOutput {
+impl  DescribeEphemerisOutput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
-    pub fn satellite_id(&self) -> ::std::option::Option<&str> {
+    pub fn satellite_id(&self) -> ::std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
     /// <p>The status of the ephemeris.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EphemerisStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EphemerisStatus> {
         self.status.as_ref()
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
@@ -47,7 +47,7 @@ impl DescribeEphemerisOutput {
         self.priority
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Whether or not the ephemeris is enabled.</p>
@@ -55,27 +55,27 @@ impl DescribeEphemerisOutput {
         self.enabled
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Supplied ephemeris data.</p>
-    pub fn supplied_data(&self) -> ::std::option::Option<&crate::types::EphemerisTypeDescription> {
+    pub fn supplied_data(&self) -> ::std::option::Option<& crate::types::EphemerisTypeDescription> {
         self.supplied_data.as_ref()
     }
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
-    pub fn invalid_reason(&self) -> ::std::option::Option<&crate::types::EphemerisInvalidReason> {
+    pub fn invalid_reason(&self) -> ::std::option::Option<& crate::types::EphemerisInvalidReason> {
         self.invalid_reason.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEphemerisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEphemerisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEphemerisOutput`](crate::operation::describe_ephemeris::DescribeEphemerisOutput).
     pub fn builder() -> crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder {
@@ -94,7 +94,7 @@ pub struct DescribeEphemerisOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) supplied_data: ::std::option::Option<crate::types::EphemerisTypeDescription>,
     pub(crate) invalid_reason: ::std::option::Option<crate::types::EphemerisInvalidReason>,
     _request_id: Option<String>,
@@ -107,8 +107,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ephemeris_id = input;
-        self
+        self.ephemeris_id = input; self
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
     pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.satellite_id = input;
-        self
+        self.satellite_id = input; self
     }
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
     pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>The status of the ephemeris.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EphemerisStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the ephemeris.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EphemerisStatus> {
@@ -153,8 +150,7 @@ impl DescribeEphemerisOutputBuilder {
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -169,8 +165,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,8 +178,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -197,8 +191,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,17 +204,16 @@ impl DescribeEphemerisOutputBuilder {
     /// <p>Tags assigned to an ephemeris.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Supplied ephemeris data.</p>
@@ -231,8 +223,7 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>Supplied ephemeris data.</p>
     pub fn set_supplied_data(mut self, input: ::std::option::Option<crate::types::EphemerisTypeDescription>) -> Self {
-        self.supplied_data = input;
-        self
+        self.supplied_data = input; self
     }
     /// <p>Supplied ephemeris data.</p>
     pub fn get_supplied_data(&self) -> &::std::option::Option<crate::types::EphemerisTypeDescription> {
@@ -245,36 +236,46 @@ impl DescribeEphemerisOutputBuilder {
     }
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
     pub fn set_invalid_reason(mut self, input: ::std::option::Option<crate::types::EphemerisInvalidReason>) -> Self {
-        self.invalid_reason = input;
-        self
+        self.invalid_reason = input; self
     }
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
     pub fn get_invalid_reason(&self) -> &::std::option::Option<crate::types::EphemerisInvalidReason> {
         &self.invalid_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEphemerisOutput`](crate::operation::describe_ephemeris::DescribeEphemerisOutput).
     pub fn build(self) -> crate::operation::describe_ephemeris::DescribeEphemerisOutput {
         crate::operation::describe_ephemeris::DescribeEphemerisOutput {
-            ephemeris_id: self.ephemeris_id,
-            satellite_id: self.satellite_id,
-            status: self.status,
-            priority: self.priority,
-            creation_time: self.creation_time,
-            enabled: self.enabled,
-            name: self.name,
-            tags: self.tags,
-            supplied_data: self.supplied_data,
-            invalid_reason: self.invalid_reason,
+            ephemeris_id: self.ephemeris_id
+            ,
+            satellite_id: self.satellite_id
+            ,
+            status: self.status
+            ,
+            priority: self.priority
+            ,
+            creation_time: self.creation_time
+            ,
+            enabled: self.enabled
+            ,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
+            supplied_data: self.supplied_data
+            ,
+            invalid_reason: self.invalid_reason
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

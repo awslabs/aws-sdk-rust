@@ -3,7 +3,7 @@
 /// <p>Specifies whether any account- or bucket-level access errors occurred when a classification job ran. For information about using logging data to investigate these errors, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-monitor-cw-logs.html">Monitoring sensitive data discovery jobs</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LastRunErrorStatus {
+pub struct LastRunErrorStatus  {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct LastRunErrorStatus {
     /// </ul>
     pub code: ::std::option::Option<crate::types::LastRunErrorStatusCode>,
 }
-impl LastRunErrorStatus {
+impl  LastRunErrorStatus  {
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl LastRunErrorStatus {
     /// <li>
     /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::LastRunErrorStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::LastRunErrorStatusCode> {
         self.code.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl LastRunErrorStatusBuilder {
     /// <p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::LastRunErrorStatusCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
     /// <ul>
@@ -73,6 +72,10 @@ impl LastRunErrorStatusBuilder {
     }
     /// Consumes the builder and constructs a [`LastRunErrorStatus`](crate::types::LastRunErrorStatus).
     pub fn build(self) -> crate::types::LastRunErrorStatus {
-        crate::types::LastRunErrorStatus { code: self.code }
+        crate::types::LastRunErrorStatus {
+            code: self.code
+            ,
+        }
     }
 }
+

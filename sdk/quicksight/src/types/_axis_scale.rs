@@ -4,19 +4,19 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AxisScale {
+pub struct AxisScale  {
     /// <p>The linear axis scale setup.</p>
     pub linear: ::std::option::Option<crate::types::AxisLinearScale>,
     /// <p>The logarithmic axis scale setup.</p>
     pub logarithmic: ::std::option::Option<crate::types::AxisLogarithmicScale>,
 }
-impl AxisScale {
+impl  AxisScale  {
     /// <p>The linear axis scale setup.</p>
-    pub fn linear(&self) -> ::std::option::Option<&crate::types::AxisLinearScale> {
+    pub fn linear(&self) -> ::std::option::Option<& crate::types::AxisLinearScale> {
         self.linear.as_ref()
     }
     /// <p>The logarithmic axis scale setup.</p>
-    pub fn logarithmic(&self) -> ::std::option::Option<&crate::types::AxisLogarithmicScale> {
+    pub fn logarithmic(&self) -> ::std::option::Option<& crate::types::AxisLogarithmicScale> {
         self.logarithmic.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AxisScaleBuilder {
     }
     /// <p>The linear axis scale setup.</p>
     pub fn set_linear(mut self, input: ::std::option::Option<crate::types::AxisLinearScale>) -> Self {
-        self.linear = input;
-        self
+        self.linear = input; self
     }
     /// <p>The linear axis scale setup.</p>
     pub fn get_linear(&self) -> &::std::option::Option<crate::types::AxisLinearScale> {
@@ -56,8 +55,7 @@ impl AxisScaleBuilder {
     }
     /// <p>The logarithmic axis scale setup.</p>
     pub fn set_logarithmic(mut self, input: ::std::option::Option<crate::types::AxisLogarithmicScale>) -> Self {
-        self.logarithmic = input;
-        self
+        self.logarithmic = input; self
     }
     /// <p>The logarithmic axis scale setup.</p>
     pub fn get_logarithmic(&self) -> &::std::option::Option<crate::types::AxisLogarithmicScale> {
@@ -66,8 +64,11 @@ impl AxisScaleBuilder {
     /// Consumes the builder and constructs a [`AxisScale`](crate::types::AxisScale).
     pub fn build(self) -> crate::types::AxisScale {
         crate::types::AxisScale {
-            linear: self.linear,
-            logarithmic: self.logarithmic,
+            linear: self.linear
+            ,
+            logarithmic: self.logarithmic
+            ,
         }
     }
 }
+

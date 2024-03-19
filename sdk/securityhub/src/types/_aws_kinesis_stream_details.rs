@@ -3,7 +3,7 @@
 /// <p>Provides information about an Amazon Kinesis data stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsKinesisStreamDetails {
+pub struct AwsKinesisStreamDetails  {
     /// <p>The name of the Kinesis stream. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the stream name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
@@ -15,17 +15,17 @@ pub struct AwsKinesisStreamDetails {
     /// <p>The number of hours for the data records that are stored in shards to remain accessible.</p>
     pub retention_period_hours: ::std::option::Option<i32>,
 }
-impl AwsKinesisStreamDetails {
+impl  AwsKinesisStreamDetails  {
     /// <p>The name of the Kinesis stream. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the stream name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.</p>
-    pub fn stream_encryption(&self) -> ::std::option::Option<&crate::types::AwsKinesisStreamStreamEncryptionDetails> {
+    pub fn stream_encryption(&self) -> ::std::option::Option<& crate::types::AwsKinesisStreamStreamEncryptionDetails> {
         self.stream_encryption.as_ref()
     }
     /// <p>The number of shards that the stream uses.</p>
@@ -62,8 +62,7 @@ impl AwsKinesisStreamDetailsBuilder {
     }
     /// <p>The name of the Kinesis stream. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the stream name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Kinesis stream. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the stream name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl AwsKinesisStreamDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl AwsKinesisStreamDetailsBuilder {
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.</p>
     pub fn set_stream_encryption(mut self, input: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>) -> Self {
-        self.stream_encryption = input;
-        self
+        self.stream_encryption = input; self
     }
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.</p>
     pub fn get_stream_encryption(&self) -> &::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails> {
@@ -104,8 +101,7 @@ impl AwsKinesisStreamDetailsBuilder {
     }
     /// <p>The number of shards that the stream uses.</p>
     pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_count = input;
-        self
+        self.shard_count = input; self
     }
     /// <p>The number of shards that the stream uses.</p>
     pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl AwsKinesisStreamDetailsBuilder {
     }
     /// <p>The number of hours for the data records that are stored in shards to remain accessible.</p>
     pub fn set_retention_period_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period_hours = input;
-        self
+        self.retention_period_hours = input; self
     }
     /// <p>The number of hours for the data records that are stored in shards to remain accessible.</p>
     pub fn get_retention_period_hours(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl AwsKinesisStreamDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsKinesisStreamDetails`](crate::types::AwsKinesisStreamDetails).
     pub fn build(self) -> crate::types::AwsKinesisStreamDetails {
         crate::types::AwsKinesisStreamDetails {
-            name: self.name,
-            arn: self.arn,
-            stream_encryption: self.stream_encryption,
-            shard_count: self.shard_count,
-            retention_period_hours: self.retention_period_hours,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            stream_encryption: self.stream_encryption
+            ,
+            shard_count: self.shard_count
+            ,
+            retention_period_hours: self.retention_period_hours
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Allows to sort offers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferSort {
+pub struct OfferSort  {
     /// <p>Allows to sort offers.</p>
     pub sort_by: ::std::option::Option<crate::types::OfferSortBy>,
     /// <p>Allows to sort offers.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl OfferSort {
+impl  OfferSort  {
     /// <p>Allows to sort offers.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::OfferSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::OfferSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Allows to sort offers.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl OfferSortBuilder {
     }
     /// <p>Allows to sort offers.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::OfferSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Allows to sort offers.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::OfferSortBy> {
@@ -55,8 +54,7 @@ impl OfferSortBuilder {
     }
     /// <p>Allows to sort offers.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Allows to sort offers.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl OfferSortBuilder {
     /// Consumes the builder and constructs a [`OfferSort`](crate::types::OfferSort).
     pub fn build(self) -> crate::types::OfferSort {
         crate::types::OfferSort {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
+            sort_by: self.sort_by
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

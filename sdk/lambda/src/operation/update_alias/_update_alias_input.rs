@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAliasInput {
+pub struct UpdateAliasInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct UpdateAliasInput {
     /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAliasInput {
+impl  UpdateAliasInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -38,27 +38,27 @@ impl UpdateAliasInput {
     /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(&self) -> ::std::option::Option<&str> {
+    pub fn function_version(&self) -> ::std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
-    pub fn routing_config(&self) -> ::std::option::Option<&crate::types::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> ::std::option::Option<& crate::types::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -109,8 +109,7 @@ impl UpdateAliasInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -134,8 +133,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>The name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn set_function_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_version = input;
-        self
+        self.function_version = input; self
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +159,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>A description of the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +172,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::AliasRoutingConfiguration>) -> Self {
-        self.routing_config = input;
-        self
+        self.routing_config = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
@@ -190,8 +185,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,13 +193,22 @@ impl UpdateAliasInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
-            function_name: self.function_name,
-            name: self.name,
-            function_version: self.function_version,
-            description: self.description,
-            routing_config: self.routing_config,
-            revision_id: self.revision_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_alias::UpdateAliasInput {
+                function_name: self.function_name
+                ,
+                name: self.name
+                ,
+                function_version: self.function_version
+                ,
+                description: self.description
+                ,
+                routing_config: self.routing_config
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

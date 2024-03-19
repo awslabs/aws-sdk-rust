@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateSubscriptionRequestInput {
+pub struct UpdateSubscriptionRequestInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subscription request that is to be updated.</p>
@@ -10,21 +10,21 @@ pub struct UpdateSubscriptionRequestInput {
     /// <p>The reason for the <code>UpdateSubscriptionRequest</code> action.</p>
     pub request_reason: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSubscriptionRequestInput {
+impl  UpdateSubscriptionRequestInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the subscription request that is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The reason for the <code>UpdateSubscriptionRequest</code> action.</p>
-    pub fn request_reason(&self) -> ::std::option::Option<&str> {
+    pub fn request_reason(&self) -> ::std::option::Option<& str> {
         self.request_reason.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateSubscriptionRequestInput {
+impl  ::std::fmt::Debug for UpdateSubscriptionRequestInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubscriptionRequestInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -57,8 +57,7 @@ impl UpdateSubscriptionRequestInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl UpdateSubscriptionRequestInputBuilder {
     }
     /// <p>The identifier of the subscription request that is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the subscription request that is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,25 +85,24 @@ impl UpdateSubscriptionRequestInputBuilder {
     }
     /// <p>The reason for the <code>UpdateSubscriptionRequest</code> action.</p>
     pub fn set_request_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_reason = input;
-        self
+        self.request_reason = input; self
     }
     /// <p>The reason for the <code>UpdateSubscriptionRequest</code> action.</p>
     pub fn get_request_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_reason
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionRequestInput`](crate::operation::update_subscription_request::UpdateSubscriptionRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_subscription_request::UpdateSubscriptionRequestInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_subscription_request::UpdateSubscriptionRequestInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            request_reason: self.request_reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscription_request::UpdateSubscriptionRequestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscription_request::UpdateSubscriptionRequestInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                request_reason: self.request_reason
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateSubscriptionRequestInputBuilder {
@@ -117,3 +114,4 @@ impl ::std::fmt::Debug for UpdateSubscriptionRequestInputBuilder {
         formatter.finish()
     }
 }
+

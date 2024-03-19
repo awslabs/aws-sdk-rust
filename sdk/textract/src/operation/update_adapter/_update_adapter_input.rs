@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAdapterInput {
+pub struct UpdateAdapterInput  {
     /// <p>A string containing a unique ID for the adapter that will be updated.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>The new description to be applied to the adapter.</p>
@@ -12,21 +12,21 @@ pub struct UpdateAdapterInput {
     /// <p>The new auto-update status to be applied to the adapter.</p>
     pub auto_update: ::std::option::Option<crate::types::AutoUpdate>,
 }
-impl UpdateAdapterInput {
+impl  UpdateAdapterInput  {
     /// <p>A string containing a unique ID for the adapter that will be updated.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>The new description to be applied to the adapter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The new name to be applied to the adapter.</p>
-    pub fn adapter_name(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_name(&self) -> ::std::option::Option<& str> {
         self.adapter_name.as_deref()
     }
     /// <p>The new auto-update status to be applied to the adapter.</p>
-    pub fn auto_update(&self) -> ::std::option::Option<&crate::types::AutoUpdate> {
+    pub fn auto_update(&self) -> ::std::option::Option<& crate::types::AutoUpdate> {
         self.auto_update.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateAdapterInputBuilder {
     }
     /// <p>A string containing a unique ID for the adapter that will be updated.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string containing a unique ID for the adapter that will be updated.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateAdapterInputBuilder {
     }
     /// <p>The new description to be applied to the adapter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description to be applied to the adapter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateAdapterInputBuilder {
     }
     /// <p>The new name to be applied to the adapter.</p>
     pub fn set_adapter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_name = input;
-        self
+        self.adapter_name = input; self
     }
     /// <p>The new name to be applied to the adapter.</p>
     pub fn get_adapter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl UpdateAdapterInputBuilder {
     }
     /// <p>The new auto-update status to be applied to the adapter.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::AutoUpdate>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>The new auto-update status to be applied to the adapter.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::AutoUpdate> {
         &self.auto_update
     }
     /// Consumes the builder and constructs a [`UpdateAdapterInput`](crate::operation::update_adapter::UpdateAdapterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_adapter::UpdateAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_adapter::UpdateAdapterInput {
-            adapter_id: self.adapter_id,
-            description: self.description,
-            adapter_name: self.adapter_name,
-            auto_update: self.auto_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_adapter::UpdateAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_adapter::UpdateAdapterInput {
+                adapter_id: self.adapter_id
+                ,
+                description: self.description
+                ,
+                adapter_name: self.adapter_name
+                ,
+                auto_update: self.auto_update
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Returns the transaction log of the specified offerings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOfferingTransactionsOutput {
+pub struct ListOfferingTransactionsOutput  {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub offering_transactions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
+    pub offering_transactions: ::std::option::Option<::std::vec::Vec::<crate::types::OfferingTransaction>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOfferingTransactionsOutput {
+impl  ListOfferingTransactionsOutput  {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offering_transactions.is_none()`.
-    pub fn offering_transactions(&self) -> &[crate::types::OfferingTransaction] {
-        self.offering_transactions.as_deref().unwrap_or_default()
+    pub fn offering_transactions(&self) -> & [crate::types::OfferingTransaction] {
+        self.offering_transactions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOfferingTransactionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOfferingTransactionsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
     pub fn builder() -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListOfferingTransactionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingTransactionsOutputBuilder {
-    pub(crate) offering_transactions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
+    pub(crate) offering_transactions: ::std::option::Option<::std::vec::Vec::<crate::types::OfferingTransaction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListOfferingTransactionsOutputBuilder {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     pub fn offering_transactions(mut self, input: crate::types::OfferingTransaction) -> Self {
         let mut v = self.offering_transactions.unwrap_or_default();
-        v.push(input);
-        self.offering_transactions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.offering_transactions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub fn set_offering_transactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>) -> Self {
-        self.offering_transactions = input;
-        self
+    pub fn set_offering_transactions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OfferingTransaction>>) -> Self {
+        self.offering_transactions = input; self
     }
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub fn get_offering_transactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>> {
+    pub fn get_offering_transactions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OfferingTransaction>> {
         &self.offering_transactions
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -70,28 +70,30 @@ impl ListOfferingTransactionsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
     pub fn build(self) -> crate::operation::list_offering_transactions::ListOfferingTransactionsOutput {
         crate::operation::list_offering_transactions::ListOfferingTransactionsOutput {
-            offering_transactions: self.offering_transactions,
-            next_token: self.next_token,
+            offering_transactions: self.offering_transactions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

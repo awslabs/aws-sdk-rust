@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVolumes`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`volume_ids(impl Into<String>)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::volume_ids) / [`set_volume_ids(Option<Vec::<String>>)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::set_volume_ids):<br>required: **false**<br><p>The IDs of the volumes whose descriptions you want to retrieve.</p><br>
     ///   - [`filters(VolumeFilter)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::filters) / [`set_filters(Option<Vec::<VolumeFilter>>)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::set_filters):<br>required: **false**<br><p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p><br>
-    /// - On success, responds with [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput) with field(s):
+                            /// - On success, responds with [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput) with field(s):
     ///   - [`volumes(Option<Vec::<Volume>>)`](crate::operation::describe_volumes::DescribeVolumesOutput::volumes): <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_volumes::DescribeVolumesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    /// - On failure, responds with [`SdkError<DescribeVolumesError>`](crate::operation::describe_volumes::DescribeVolumesError)
+                            /// - On failure, responds with [`SdkError<DescribeVolumesError>`](crate::operation::describe_volumes::DescribeVolumesError)
     pub fn describe_volumes(&self) -> crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder {
-        crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

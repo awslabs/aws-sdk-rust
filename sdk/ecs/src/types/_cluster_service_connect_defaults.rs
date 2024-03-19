@@ -4,13 +4,13 @@
 /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterServiceConnectDefaults {
+pub struct ClusterServiceConnectDefaults  {
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl ClusterServiceConnectDefaults {
+impl  ClusterServiceConnectDefaults  {
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl ClusterServiceConnectDefaultsBuilder {
     }
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl ClusterServiceConnectDefaultsBuilder {
     }
     /// Consumes the builder and constructs a [`ClusterServiceConnectDefaults`](crate::types::ClusterServiceConnectDefaults).
     pub fn build(self) -> crate::types::ClusterServiceConnectDefaults {
-        crate::types::ClusterServiceConnectDefaults { namespace: self.namespace }
+        crate::types::ClusterServiceConnectDefaults {
+            namespace: self.namespace
+            ,
+        }
     }
 }
+

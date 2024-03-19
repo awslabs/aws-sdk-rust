@@ -3,7 +3,7 @@
 /// <p>A structure containing information about one error encountered while performing an <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateError {
+pub struct UpdateError  {
     /// <p>The error code.</p>
     pub code: i32,
     /// <p>The message for this error.</p>
@@ -11,18 +11,17 @@ pub struct UpdateError {
     /// <p>Specifies which permission update caused the error.</p>
     pub caused_by: ::std::option::Option<crate::types::UpdateInstruction>,
 }
-impl UpdateError {
+impl  UpdateError  {
     /// <p>The error code.</p>
     pub fn code(&self) -> i32 {
         self.code
     }
     /// <p>The message for this error.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>Specifies which permission update caused the error.</p>
-    pub fn caused_by(&self) -> ::std::option::Option<&crate::types::UpdateInstruction> {
+    pub fn caused_by(&self) -> ::std::option::Option<& crate::types::UpdateInstruction> {
         self.caused_by.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>The message for this error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message for this error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>Specifies which permission update caused the error.</p>
     pub fn set_caused_by(mut self, input: ::std::option::Option<crate::types::UpdateInstruction>) -> Self {
-        self.caused_by = input;
-        self
+        self.caused_by = input; self
     }
     /// <p>Specifies which permission update caused the error.</p>
     pub fn get_caused_by(&self) -> &::std::option::Option<crate::types::UpdateInstruction> {
@@ -92,20 +88,22 @@ impl UpdateErrorBuilder {
     /// - [`code`](crate::types::builders::UpdateErrorBuilder::code)
     /// - [`message`](crate::types::builders::UpdateErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateError {
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building UpdateError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building UpdateError",
-                )
-            })?,
-            caused_by: self.caused_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateError {
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building UpdateError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building UpdateError")
+                    )?
+                ,
+                caused_by: self.caused_by
+                ,
+            }
+        )
     }
 }
+

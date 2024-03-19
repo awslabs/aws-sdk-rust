@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAliasesOutput {
+pub struct ListAliasesOutput  {
     /// <p>A collection of alias resources that match the request parameters.</p>
-    pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec::<crate::types::Alias>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAliasesOutput {
+impl  ListAliasesOutput  {
     /// <p>A collection of alias resources that match the request parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
-    pub fn aliases(&self) -> &[crate::types::Alias] {
-        self.aliases.as_deref().unwrap_or_default()
+    pub fn aliases(&self) -> & [crate::types::Alias] {
+        self.aliases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
     pub fn builder() -> crate::operation::list_aliases::builders::ListAliasesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAliasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAliasesOutputBuilder {
-    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec::<crate::types::Alias>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAliasesOutputBuilder {
     /// <p>A collection of alias resources that match the request parameters.</p>
     pub fn aliases(mut self, input: crate::types::Alias) -> Self {
         let mut v = self.aliases.unwrap_or_default();
-        v.push(input);
-        self.aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of alias resources that match the request parameters.</p>
-    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>) -> Self {
-        self.aliases = input;
-        self
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Alias>>) -> Self {
+        self.aliases = input; self
     }
     /// <p>A collection of alias resources that match the request parameters.</p>
-    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alias>> {
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Alias>> {
         &self.aliases
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -69,28 +69,30 @@ impl ListAliasesOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
     pub fn build(self) -> crate::operation::list_aliases::ListAliasesOutput {
         crate::operation::list_aliases::ListAliasesOutput {
-            aliases: self.aliases,
-            next_token: self.next_token,
+            aliases: self.aliases
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

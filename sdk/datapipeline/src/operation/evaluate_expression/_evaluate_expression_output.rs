@@ -3,23 +3,22 @@
 /// <p>Contains the output of EvaluateExpression.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluateExpressionOutput {
+pub struct EvaluateExpressionOutput  {
     /// <p>The evaluated expression.</p>
     pub evaluated_expression: ::std::string::String,
     _request_id: Option<String>,
 }
-impl EvaluateExpressionOutput {
+impl  EvaluateExpressionOutput  {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluated_expression.deref()
+    pub fn evaluated_expression(&self) -> & str {
+        use std::ops::Deref; self.evaluated_expression.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for EvaluateExpressionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EvaluateExpressionOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
     pub fn builder() -> crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder {
@@ -43,37 +42,35 @@ impl EvaluateExpressionOutputBuilder {
     }
     /// <p>The evaluated expression.</p>
     pub fn set_evaluated_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluated_expression = input;
-        self
+        self.evaluated_expression = input; self
     }
     /// <p>The evaluated expression.</p>
     pub fn get_evaluated_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluated_expression
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluated_expression`](crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder::evaluated_expression)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::evaluate_expression::EvaluateExpressionOutput {
-            evaluated_expression: self.evaluated_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluated_expression",
-                    "evaluated_expression was not specified but it is required when building EvaluateExpressionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::evaluate_expression::EvaluateExpressionOutput {
+                evaluated_expression: self.evaluated_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluated_expression", "evaluated_expression was not specified but it is required when building EvaluateExpressionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

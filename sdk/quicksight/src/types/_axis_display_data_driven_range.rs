@@ -3,7 +3,8 @@
 /// <p>The options that are saved for future extension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AxisDisplayDataDrivenRange {}
+pub struct AxisDisplayDataDrivenRange  {
+}
 impl AxisDisplayDataDrivenRange {
     /// Creates a new builder-style object to manufacture [`AxisDisplayDataDrivenRange`](crate::types::AxisDisplayDataDrivenRange).
     pub fn builder() -> crate::types::builders::AxisDisplayDataDrivenRangeBuilder {
@@ -14,10 +15,13 @@ impl AxisDisplayDataDrivenRange {
 /// A builder for [`AxisDisplayDataDrivenRange`](crate::types::AxisDisplayDataDrivenRange).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AxisDisplayDataDrivenRangeBuilder {}
+pub struct AxisDisplayDataDrivenRangeBuilder {
+}
 impl AxisDisplayDataDrivenRangeBuilder {
     /// Consumes the builder and constructs a [`AxisDisplayDataDrivenRange`](crate::types::AxisDisplayDataDrivenRange).
     pub fn build(self) -> crate::types::AxisDisplayDataDrivenRange {
-        crate::types::AxisDisplayDataDrivenRange {}
+        crate::types::AxisDisplayDataDrivenRange {
+        }
     }
 }
+

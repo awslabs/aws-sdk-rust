@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReadinessChecks`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`ListReadinessChecksOutput`](crate::operation::list_readiness_checks::ListReadinessChecksOutput) with field(s):
+                            /// - On success, responds with [`ListReadinessChecksOutput`](crate::operation::list_readiness_checks::ListReadinessChecksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_readiness_checks::ListReadinessChecksOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness_checks(Option<Vec::<ReadinessCheckOutput>>)`](crate::operation::list_readiness_checks::ListReadinessChecksOutput::readiness_checks): <p>A list of readiness checks associated with the account.</p>
-    /// - On failure, responds with [`SdkError<ListReadinessChecksError>`](crate::operation::list_readiness_checks::ListReadinessChecksError)
+                            /// - On failure, responds with [`SdkError<ListReadinessChecksError>`](crate::operation::list_readiness_checks::ListReadinessChecksError)
     pub fn list_readiness_checks(&self) -> crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder {
-        crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

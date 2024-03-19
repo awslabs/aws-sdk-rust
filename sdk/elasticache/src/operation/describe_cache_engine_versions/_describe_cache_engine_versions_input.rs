@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DescribeCacheEngineVersions</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCacheEngineVersionsInput {
+pub struct DescribeCacheEngineVersionsInput  {
     /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The cache engine version to return.</p>
@@ -30,14 +30,14 @@ pub struct DescribeCacheEngineVersionsInput {
     /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub default_only: ::std::option::Option<bool>,
 }
-impl DescribeCacheEngineVersionsInput {
+impl  DescribeCacheEngineVersionsInput  {
     /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code></p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of a specific cache parameter group family to return details for.</p>
@@ -51,7 +51,7 @@ impl DescribeCacheEngineVersionsInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    pub fn cache_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_family.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -61,7 +61,7 @@ impl DescribeCacheEngineVersionsInput {
         self.max_records
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
@@ -95,8 +95,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     }
     /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code></p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code></p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The cache engine version to return.</p>
     /// <p>Example: <code>1.4.14</code></p>
@@ -146,8 +144,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_family = input;
-        self
+        self.cache_parameter_group_family = input; self
     }
     /// <p>The name of a specific cache parameter group family to return details for.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code></p>
@@ -174,8 +171,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -190,8 +186,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,27 +199,30 @@ impl DescribeCacheEngineVersionsInputBuilder {
     }
     /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub fn set_default_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_only = input;
-        self
+        self.default_only = input; self
     }
     /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     pub fn get_default_only(&self) -> &::std::option::Option<bool> {
         &self.default_only
     }
     /// Consumes the builder and constructs a [`DescribeCacheEngineVersionsInput`](crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            cache_parameter_group_family: self.cache_parameter_group_family,
-            max_records: self.max_records,
-            marker: self.marker,
-            default_only: self.default_only,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsInput {
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                cache_parameter_group_family: self.cache_parameter_group_family
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                default_only: self.default_only
+                ,
+            }
+        )
     }
 }
+

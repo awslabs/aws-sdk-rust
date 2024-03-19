@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCollectionOutput {
+pub struct BatchGetCollectionOutput  {
     /// <p>Details about each collection.</p>
-    pub collection_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
+    pub collection_details: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionDetail>>,
     /// <p>Error information for the request.</p>
-    pub collection_error_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
+    pub collection_error_details: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionErrorDetail>>,
     _request_id: Option<String>,
 }
-impl BatchGetCollectionOutput {
+impl  BatchGetCollectionOutput  {
     /// <p>Details about each collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_details.is_none()`.
-    pub fn collection_details(&self) -> &[crate::types::CollectionDetail] {
-        self.collection_details.as_deref().unwrap_or_default()
+    pub fn collection_details(&self) -> & [crate::types::CollectionDetail] {
+        self.collection_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Error information for the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_error_details.is_none()`.
-    pub fn collection_error_details(&self) -> &[crate::types::CollectionErrorDetail] {
-        self.collection_error_details.as_deref().unwrap_or_default()
+    pub fn collection_error_details(&self) -> & [crate::types::CollectionErrorDetail] {
+        self.collection_error_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetCollectionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCollectionOutput`](crate::operation::batch_get_collection::BatchGetCollectionOutput).
     pub fn builder() -> crate::operation::batch_get_collection::builders::BatchGetCollectionOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetCollectionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCollectionOutputBuilder {
-    pub(crate) collection_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
-    pub(crate) collection_error_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
+    pub(crate) collection_details: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionDetail>>,
+    pub(crate) collection_error_details: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchGetCollectionOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetCollectionOutputBuilder {
     /// <p>Details about each collection.</p>
     pub fn collection_details(mut self, input: crate::types::CollectionDetail) -> Self {
         let mut v = self.collection_details.unwrap_or_default();
-        v.push(input);
-        self.collection_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collection_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about each collection.</p>
-    pub fn set_collection_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>) -> Self {
-        self.collection_details = input;
-        self
+    pub fn set_collection_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionDetail>>) -> Self {
+        self.collection_details = input; self
     }
     /// <p>Details about each collection.</p>
-    pub fn get_collection_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>> {
+    pub fn get_collection_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollectionDetail>> {
         &self.collection_details
     }
     /// Appends an item to `collection_error_details`.
@@ -71,34 +72,36 @@ impl BatchGetCollectionOutputBuilder {
     /// <p>Error information for the request.</p>
     pub fn collection_error_details(mut self, input: crate::types::CollectionErrorDetail) -> Self {
         let mut v = self.collection_error_details.unwrap_or_default();
-        v.push(input);
-        self.collection_error_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collection_error_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Error information for the request.</p>
-    pub fn set_collection_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>) -> Self {
-        self.collection_error_details = input;
-        self
+    pub fn set_collection_error_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollectionErrorDetail>>) -> Self {
+        self.collection_error_details = input; self
     }
     /// <p>Error information for the request.</p>
-    pub fn get_collection_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>> {
+    pub fn get_collection_error_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollectionErrorDetail>> {
         &self.collection_error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetCollectionOutput`](crate::operation::batch_get_collection::BatchGetCollectionOutput).
     pub fn build(self) -> crate::operation::batch_get_collection::BatchGetCollectionOutput {
         crate::operation::batch_get_collection::BatchGetCollectionOutput {
-            collection_details: self.collection_details,
-            collection_error_details: self.collection_error_details,
+            collection_details: self.collection_details
+            ,
+            collection_error_details: self.collection_error_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

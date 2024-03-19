@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRegistryPolicyInput {
+pub struct PutRegistryPolicyInput  {
     /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub policy_text: ::std::option::Option<::std::string::String>,
 }
-impl PutRegistryPolicyInput {
+impl  PutRegistryPolicyInput  {
     /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    pub fn policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn policy_text(&self) -> ::std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl PutRegistryPolicyInputBuilder {
     }
     /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_text = input;
-        self
+        self.policy_text = input; self
     }
     /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_text
     }
     /// Consumes the builder and constructs a [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_registry_policy::PutRegistryPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_registry_policy::PutRegistryPolicyInput {
-            policy_text: self.policy_text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_registry_policy::PutRegistryPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_registry_policy::PutRegistryPolicyInput {
+                policy_text: self.policy_text
+                ,
+            }
+        )
     }
 }
+

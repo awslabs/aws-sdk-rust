@@ -3,7 +3,7 @@
 /// <p>Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkConfig {
+pub struct NetworkConfig  {
     /// <p>Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed processing jobs, but the processing might take longer.</p>
     pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>Whether to allow inbound and outbound network calls to and from the containers used for the processing job.</p>
@@ -11,7 +11,7 @@ pub struct NetworkConfig {
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl NetworkConfig {
+impl  NetworkConfig  {
     /// <p>Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed processing jobs, but the processing might take longer.</p>
     pub fn enable_inter_container_traffic_encryption(&self) -> ::std::option::Option<bool> {
         self.enable_inter_container_traffic_encryption
@@ -21,7 +21,7 @@ impl NetworkConfig {
         self.enable_network_isolation
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl NetworkConfigBuilder {
     }
     /// <p>Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed processing jobs, but the processing might take longer.</p>
     pub fn set_enable_inter_container_traffic_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_inter_container_traffic_encryption = input;
-        self
+        self.enable_inter_container_traffic_encryption = input; self
     }
     /// <p>Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed processing jobs, but the processing might take longer.</p>
     pub fn get_enable_inter_container_traffic_encryption(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl NetworkConfigBuilder {
     }
     /// <p>Whether to allow inbound and outbound network calls to and from the containers used for the processing job.</p>
     pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_network_isolation = input;
-        self
+        self.enable_network_isolation = input; self
     }
     /// <p>Whether to allow inbound and outbound network calls to and from the containers used for the processing job.</p>
     pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl NetworkConfigBuilder {
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -86,9 +83,13 @@ impl NetworkConfigBuilder {
     /// Consumes the builder and constructs a [`NetworkConfig`](crate::types::NetworkConfig).
     pub fn build(self) -> crate::types::NetworkConfig {
         crate::types::NetworkConfig {
-            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption,
-            enable_network_isolation: self.enable_network_isolation,
-            vpc_config: self.vpc_config,
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption
+            ,
+            enable_network_isolation: self.enable_network_isolation
+            ,
+            vpc_config: self.vpc_config
+            ,
         }
     }
 }
+

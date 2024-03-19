@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetByteMatchSetOutput {
+pub struct GetByteMatchSetOutput  {
     /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct GetByteMatchSetOutput {
     pub byte_match_set: ::std::option::Option<crate::types::ByteMatchSet>,
     _request_id: Option<String>,
 }
-impl GetByteMatchSetOutput {
+impl  GetByteMatchSetOutput  {
     /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -25,15 +25,15 @@ impl GetByteMatchSetOutput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn byte_match_set(&self) -> ::std::option::Option<&crate::types::ByteMatchSet> {
+    pub fn byte_match_set(&self) -> ::std::option::Option<& crate::types::ByteMatchSet> {
         self.byte_match_set.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetByteMatchSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetByteMatchSetOutput`](crate::operation::get_byte_match_set::GetByteMatchSetOutput).
     pub fn builder() -> crate::operation::get_byte_match_set::builders::GetByteMatchSetOutputBuilder {
@@ -72,8 +72,7 @@ impl GetByteMatchSetOutputBuilder {
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn set_byte_match_set(mut self, input: ::std::option::Option<crate::types::ByteMatchSet>) -> Self {
-        self.byte_match_set = input;
-        self
+        self.byte_match_set = input; self
     }
     /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -88,19 +87,21 @@ impl GetByteMatchSetOutputBuilder {
         &self.byte_match_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetByteMatchSetOutput`](crate::operation::get_byte_match_set::GetByteMatchSetOutput).
     pub fn build(self) -> crate::operation::get_byte_match_set::GetByteMatchSetOutput {
         crate::operation::get_byte_match_set::GetByteMatchSetOutput {
-            byte_match_set: self.byte_match_set,
+            byte_match_set: self.byte_match_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LockSnapshotOutput {
+pub struct LockSnapshotOutput  {
     /// <p>The ID of the snapshot</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the snapshot lock. Valid states include:</p>
@@ -31,9 +31,9 @@ pub struct LockSnapshotOutput {
     pub lock_duration_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl LockSnapshotOutput {
+impl  LockSnapshotOutput  {
     /// <p>The ID of the snapshot</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
@@ -47,7 +47,7 @@ impl LockSnapshotOutput {
     /// <li>
     /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
     /// </ul>
-    pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
+    pub fn lock_state(&self) -> ::std::option::Option<& crate::types::LockState> {
         self.lock_state.as_ref()
     }
     /// <p>The period of time for which the snapshot is locked, in days.</p>
@@ -59,27 +59,27 @@ impl LockSnapshotOutput {
         self.cool_off_period
     }
     /// <p>The date and time at which the compliance mode cooling-off period expires, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn cool_off_period_expires_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cool_off_period_expires_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cool_off_period_expires_on.as_ref()
     }
     /// <p>The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn lock_created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_created_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_created_on.as_ref()
     }
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn lock_expires_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_expires_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_expires_on.as_ref()
     }
     /// <p>The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn lock_duration_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_duration_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_duration_start_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for LockSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl LockSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`LockSnapshotOutput`](crate::operation::lock_snapshot::LockSnapshotOutput).
     pub fn builder() -> crate::operation::lock_snapshot::builders::LockSnapshotOutputBuilder {
@@ -109,8 +109,7 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The ID of the snapshot</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl LockSnapshotOutputBuilder {
     /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
     /// </ul>
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
-        self.lock_state = input;
-        self
+        self.lock_state = input; self
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
@@ -167,8 +165,7 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The period of time for which the snapshot is locked, in days.</p>
     pub fn set_lock_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lock_duration = input;
-        self
+        self.lock_duration = input; self
     }
     /// <p>The period of time for which the snapshot is locked, in days.</p>
     pub fn get_lock_duration(&self) -> &::std::option::Option<i32> {
@@ -181,8 +178,7 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The compliance mode cooling-off period, in hours.</p>
     pub fn set_cool_off_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cool_off_period = input;
-        self
+        self.cool_off_period = input; self
     }
     /// <p>The compliance mode cooling-off period, in hours.</p>
     pub fn get_cool_off_period(&self) -> &::std::option::Option<i32> {
@@ -195,8 +191,7 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The date and time at which the compliance mode cooling-off period expires, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_cool_off_period_expires_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cool_off_period_expires_on = input;
-        self
+        self.cool_off_period_expires_on = input; self
     }
     /// <p>The date and time at which the compliance mode cooling-off period expires, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_cool_off_period_expires_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -209,8 +204,7 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_lock_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_created_on = input;
-        self
+        self.lock_created_on = input; self
     }
     /// <p>The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_lock_created_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +217,7 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_lock_expires_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_expires_on = input;
-        self
+        self.lock_expires_on = input; self
     }
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_lock_expires_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -237,34 +230,42 @@ impl LockSnapshotOutputBuilder {
     }
     /// <p>The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_lock_duration_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_duration_start_time = input;
-        self
+        self.lock_duration_start_time = input; self
     }
     /// <p>The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_lock_duration_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.lock_duration_start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`LockSnapshotOutput`](crate::operation::lock_snapshot::LockSnapshotOutput).
     pub fn build(self) -> crate::operation::lock_snapshot::LockSnapshotOutput {
         crate::operation::lock_snapshot::LockSnapshotOutput {
-            snapshot_id: self.snapshot_id,
-            lock_state: self.lock_state,
-            lock_duration: self.lock_duration,
-            cool_off_period: self.cool_off_period,
-            cool_off_period_expires_on: self.cool_off_period_expires_on,
-            lock_created_on: self.lock_created_on,
-            lock_expires_on: self.lock_expires_on,
-            lock_duration_start_time: self.lock_duration_start_time,
+            snapshot_id: self.snapshot_id
+            ,
+            lock_state: self.lock_state
+            ,
+            lock_duration: self.lock_duration
+            ,
+            cool_off_period: self.cool_off_period
+            ,
+            cool_off_period_expires_on: self.cool_off_period_expires_on
+            ,
+            lock_created_on: self.lock_created_on
+            ,
+            lock_expires_on: self.lock_expires_on
+            ,
+            lock_duration_start_time: self.lock_duration_start_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

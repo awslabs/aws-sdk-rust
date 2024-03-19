@@ -3,7 +3,7 @@
 /// <p>Filters to be applied to search results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSearchFilter {
+pub struct UserSearchFilter  {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct UserSearchFilter {
     /// </note>
     pub user_attribute_filter: ::std::option::Option<crate::types::ControlPlaneUserAttributeFilter>,
 }
-impl UserSearchFilter {
+impl  UserSearchFilter  {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
     /// <ul>
     /// <li>
@@ -32,7 +32,7 @@ impl UserSearchFilter {
     /// <li>
     /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
     /// </ul>
-    pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::ControlPlaneTagFilter> {
+    pub fn tag_filter(&self) -> ::std::option::Option<& crate::types::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
     }
     /// <p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the SearchFilter.</p>
@@ -45,7 +45,7 @@ impl UserSearchFilter {
     /// </ul><note>
     /// <p>Only one field can be populated. This object can’t be used along with TagFilter. Request can either contain TagFilter or UserAttributeFilter if SearchFilter is specified, combination of both is not supported and such request will throw AccessDeniedException.</p>
     /// </note>
-    pub fn user_attribute_filter(&self) -> ::std::option::Option<&crate::types::ControlPlaneUserAttributeFilter> {
+    pub fn user_attribute_filter(&self) -> ::std::option::Option<& crate::types::ControlPlaneUserAttributeFilter> {
         self.user_attribute_filter.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl UserSearchFilterBuilder {
     /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
     /// </ul>
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::ControlPlaneTagFilter>) -> Self {
-        self.tag_filter = input;
-        self
+        self.tag_filter = input; self
     }
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
     /// <ul>
@@ -121,8 +120,7 @@ impl UserSearchFilterBuilder {
     /// <p>Only one field can be populated. This object can’t be used along with TagFilter. Request can either contain TagFilter or UserAttributeFilter if SearchFilter is specified, combination of both is not supported and such request will throw AccessDeniedException.</p>
     /// </note>
     pub fn set_user_attribute_filter(mut self, input: ::std::option::Option<crate::types::ControlPlaneUserAttributeFilter>) -> Self {
-        self.user_attribute_filter = input;
-        self
+        self.user_attribute_filter = input; self
     }
     /// <p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the SearchFilter.</p>
     /// <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
@@ -140,8 +138,11 @@ impl UserSearchFilterBuilder {
     /// Consumes the builder and constructs a [`UserSearchFilter`](crate::types::UserSearchFilter).
     pub fn build(self) -> crate::types::UserSearchFilter {
         crate::types::UserSearchFilter {
-            tag_filter: self.tag_filter,
-            user_attribute_filter: self.user_attribute_filter,
+            tag_filter: self.tag_filter
+            ,
+            user_attribute_filter: self.user_attribute_filter
+            ,
         }
     }
 }
+

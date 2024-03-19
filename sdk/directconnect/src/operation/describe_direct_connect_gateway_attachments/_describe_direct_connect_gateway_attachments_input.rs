@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAttachmentsInput {
+pub struct DescribeDirectConnectGatewayAttachmentsInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface.</p>
@@ -13,13 +13,13 @@ pub struct DescribeDirectConnectGatewayAttachmentsInput {
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDirectConnectGatewayAttachmentsInput {
+impl  DescribeDirectConnectGatewayAttachmentsInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -28,7 +28,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         self.max_results
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
@@ -101,27 +98,26 @@ impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsInput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                virtual_interface_id: self.virtual_interface_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

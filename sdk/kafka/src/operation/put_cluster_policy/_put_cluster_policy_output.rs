@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutClusterPolicyOutput {
+pub struct PutClusterPolicyOutput  {
     /// <p>The policy version.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutClusterPolicyOutput {
+impl  PutClusterPolicyOutput  {
     /// <p>The policy version.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutClusterPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutClusterPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutClusterPolicyOutput`](crate::operation::put_cluster_policy::PutClusterPolicyOutput).
     pub fn builder() -> crate::operation::put_cluster_policy::builders::PutClusterPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl PutClusterPolicyOutputBuilder {
     }
     /// <p>The policy version.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The policy version.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutClusterPolicyOutput`](crate::operation::put_cluster_policy::PutClusterPolicyOutput).
     pub fn build(self) -> crate::operation::put_cluster_policy::PutClusterPolicyOutput {
         crate::operation::put_cluster_policy::PutClusterPolicyOutput {
-            current_version: self.current_version,
+            current_version: self.current_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

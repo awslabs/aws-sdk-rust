@@ -3,22 +3,23 @@
 /// <p>Object for updating the FPorts information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFPorts {
+pub struct UpdateFPorts  {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     pub positioning: ::std::option::Option<crate::types::Positioning>,
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub applications: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationConfig>>,
 }
-impl UpdateFPorts {
+impl  UpdateFPorts  {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-    pub fn positioning(&self) -> ::std::option::Option<&crate::types::Positioning> {
+    pub fn positioning(&self) -> ::std::option::Option<& crate::types::Positioning> {
         self.positioning.as_ref()
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
-    pub fn applications(&self) -> &[crate::types::ApplicationConfig] {
-        self.applications.as_deref().unwrap_or_default()
+    pub fn applications(&self) -> & [crate::types::ApplicationConfig] {
+        self.applications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateFPorts {
@@ -33,7 +34,7 @@ impl UpdateFPorts {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFPortsBuilder {
     pub(crate) positioning: ::std::option::Option<crate::types::Positioning>,
-    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationConfig>>,
 }
 impl UpdateFPortsBuilder {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
@@ -43,8 +44,7 @@ impl UpdateFPortsBuilder {
     }
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::Positioning>) -> Self {
-        self.positioning = input;
-        self
+        self.positioning = input; self
     }
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::Positioning> {
@@ -57,24 +57,26 @@ impl UpdateFPortsBuilder {
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
     pub fn applications(mut self, input: crate::types::ApplicationConfig) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationConfig>>) -> Self {
+        self.applications = input; self
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationConfig>> {
         &self.applications
     }
     /// Consumes the builder and constructs a [`UpdateFPorts`](crate::types::UpdateFPorts).
     pub fn build(self) -> crate::types::UpdateFPorts {
         crate::types::UpdateFPorts {
-            positioning: self.positioning,
-            applications: self.applications,
+            positioning: self.positioning
+            ,
+            applications: self.applications
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDbInstanceInput {
+pub struct UpdateDbInstanceInput  {
     /// <p>The id of the DB instance.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
@@ -10,17 +10,17 @@ pub struct UpdateDbInstanceInput {
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDbInstanceInput {
+impl  UpdateDbInstanceInput  {
     /// <p>The id of the DB instance.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
-    pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
+    pub fn log_delivery_configuration(&self) -> ::std::option::Option<& crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
     }
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
-    pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateDbInstanceInputBuilder {
     }
     /// <p>The id of the DB instance.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The id of the DB instance.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateDbInstanceInputBuilder {
     }
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub fn set_log_delivery_configuration(mut self, input: ::std::option::Option<crate::types::LogDeliveryConfiguration>) -> Self {
-        self.log_delivery_configuration = input;
-        self
+        self.log_delivery_configuration = input; self
     }
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
@@ -76,21 +74,24 @@ impl UpdateDbInstanceInputBuilder {
     }
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub fn set_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_identifier = input;
-        self
+        self.db_parameter_group_identifier = input; self
     }
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub fn get_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_identifier
     }
     /// Consumes the builder and constructs a [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_db_instance::UpdateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_db_instance::UpdateDbInstanceInput {
-            identifier: self.identifier,
-            log_delivery_configuration: self.log_delivery_configuration,
-            db_parameter_group_identifier: self.db_parameter_group_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_db_instance::UpdateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_db_instance::UpdateDbInstanceInput {
+                identifier: self.identifier
+                ,
+                log_delivery_configuration: self.log_delivery_configuration
+                ,
+                db_parameter_group_identifier: self.db_parameter_group_identifier
+                ,
+            }
+        )
     }
 }
+

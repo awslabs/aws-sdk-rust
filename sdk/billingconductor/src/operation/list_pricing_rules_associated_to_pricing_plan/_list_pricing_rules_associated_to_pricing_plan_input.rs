@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricingRulesAssociatedToPricingPlanInput {
+pub struct ListPricingRulesAssociatedToPricingPlanInput  {
     /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
@@ -12,13 +12,13 @@ pub struct ListPricingRulesAssociatedToPricingPlanInput {
     /// <p>The optional pagination token returned by a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPricingRulesAssociatedToPricingPlanInput {
+impl  ListPricingRulesAssociatedToPricingPlanInput  {
     /// <p>The billing period for which the pricing rule associations are to be listed.</p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    pub fn pricing_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_plan_arn(&self) -> ::std::option::Option<& str> {
         self.pricing_plan_arn.as_deref()
     }
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
@@ -26,14 +26,13 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
         self.max_results
     }
     /// <p>The optional pagination token returned by a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListPricingRulesAssociatedToPricingPlanInput {
     /// Creates a new builder-style object to manufacture [`ListPricingRulesAssociatedToPricingPlanInput`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput).
-    pub fn builder() -> crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder {
         crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder::default()
     }
 }
@@ -55,8 +54,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     }
     /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn set_pricing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pricing_plan_arn = input;
-        self
+        self.pricing_plan_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn get_pricing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +81,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     }
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,27 +94,26 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     }
     /// <p>The optional pagination token returned by a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The optional pagination token returned by a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPricingRulesAssociatedToPricingPlanInput`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput {
-                billing_period: self.billing_period,
-                pricing_plan_arn: self.pricing_plan_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                billing_period: self.billing_period
+                ,
+                pricing_plan_arn: self.pricing_plan_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

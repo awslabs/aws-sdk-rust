@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetLandingZoneOutput {
+pub struct ResetLandingZoneOutput  {
     /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub operation_identifier: ::std::string::String,
     _request_id: Option<String>,
 }
-impl ResetLandingZoneOutput {
+impl  ResetLandingZoneOutput  {
     /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
-    pub fn operation_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_identifier.deref()
+    pub fn operation_identifier(&self) -> & str {
+        use std::ops::Deref; self.operation_identifier.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ResetLandingZoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResetLandingZoneOutput {
     /// Creates a new builder-style object to manufacture [`ResetLandingZoneOutput`](crate::operation::reset_landing_zone::ResetLandingZoneOutput).
     pub fn builder() -> crate::operation::reset_landing_zone::builders::ResetLandingZoneOutputBuilder {
@@ -42,36 +41,35 @@ impl ResetLandingZoneOutputBuilder {
     }
     /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResetLandingZoneOutput`](crate::operation::reset_landing_zone::ResetLandingZoneOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`operation_identifier`](crate::operation::reset_landing_zone::builders::ResetLandingZoneOutputBuilder::operation_identifier)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_landing_zone::ResetLandingZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reset_landing_zone::ResetLandingZoneOutput {
-            operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_identifier",
-                    "operation_identifier was not specified but it is required when building ResetLandingZoneOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_landing_zone::ResetLandingZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_landing_zone::ResetLandingZoneOutput {
+                operation_identifier: self.operation_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_identifier", "operation_identifier was not specified but it is required when building ResetLandingZoneOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

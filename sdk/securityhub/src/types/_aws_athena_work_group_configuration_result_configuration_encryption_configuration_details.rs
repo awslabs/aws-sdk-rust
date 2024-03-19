@@ -3,19 +3,19 @@
 /// <p>Specifies the method used to encrypt the user’s data stores in the Athena workgroup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
+pub struct AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails  {
     /// <p>Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used.</p>
     pub encryption_option: ::std::option::Option<::std::string::String>,
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key Amazon Resource Name (ARN) or ID.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
-impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
+impl  AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails  {
     /// <p>Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used.</p>
-    pub fn encryption_option(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_option(&self) -> ::std::option::Option<& str> {
         self.encryption_option.as_deref()
     }
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key Amazon Resource Name (ARN) or ID.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDe
     }
     /// <p>Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used.</p>
     pub fn set_encryption_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_option = input;
-        self
+        self.encryption_option = input; self
     }
     /// <p>Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used.</p>
     pub fn get_encryption_option(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDe
     }
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key Amazon Resource Name (ARN) or ID.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key Amazon Resource Name (ARN) or ID.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDe
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails).
     pub fn build(self) -> crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
         crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
-            encryption_option: self.encryption_option,
-            kms_key: self.kms_key,
+            encryption_option: self.encryption_option
+            ,
+            kms_key: self.kms_key
+            ,
         }
     }
 }
+

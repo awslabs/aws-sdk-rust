@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSecurityPolicyInput {
+pub struct GetSecurityPolicyInput  {
     /// <p>The type of security policy.</p>
     pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>The name of the security policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetSecurityPolicyInput {
+impl  GetSecurityPolicyInput  {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the security policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSecurityPolicyInputBuilder {
     }
     /// <p>The type of security policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of security policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
@@ -56,20 +55,22 @@ impl GetSecurityPolicyInputBuilder {
     }
     /// <p>The name of the security policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the security policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_security_policy::GetSecurityPolicyInput {
-            r#type: self.r#type,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_security_policy::GetSecurityPolicyInput {
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

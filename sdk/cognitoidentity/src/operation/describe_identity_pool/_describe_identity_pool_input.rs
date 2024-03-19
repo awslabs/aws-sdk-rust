@@ -3,13 +3,13 @@
 /// <p>Input to the DescribeIdentityPool action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIdentityPoolInput {
+pub struct DescribeIdentityPoolInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeIdentityPoolInput {
+impl  DescribeIdentityPoolInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeIdentityPoolInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_pool_id
     }
     /// Consumes the builder and constructs a [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_identity_pool::DescribeIdentityPoolInput {
-            identity_pool_id: self.identity_pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_identity_pool::DescribeIdentityPoolInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+            }
+        )
     }
 }
+

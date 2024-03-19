@@ -3,7 +3,7 @@
 /// <p>The configuration applied to an organization's folders by its retention policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FolderConfiguration {
+pub struct FolderConfiguration  {
     /// <p>The folder name.</p>
     pub name: crate::types::FolderName,
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
@@ -11,13 +11,13 @@ pub struct FolderConfiguration {
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub period: ::std::option::Option<i32>,
 }
-impl FolderConfiguration {
+impl  FolderConfiguration  {
     /// <p>The folder name.</p>
-    pub fn name(&self) -> &crate::types::FolderName {
+    pub fn name(&self) -> & crate::types::FolderName {
         &self.name
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn action(&self) -> &crate::types::RetentionAction {
+    pub fn action(&self) -> & crate::types::RetentionAction {
         &self.action
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
@@ -49,8 +49,7 @@ impl FolderConfigurationBuilder {
     }
     /// <p>The folder name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::FolderName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The folder name.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::FolderName> {
@@ -64,8 +63,7 @@ impl FolderConfigurationBuilder {
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RetentionAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RetentionAction> {
@@ -78,8 +76,7 @@ impl FolderConfigurationBuilder {
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -90,20 +87,22 @@ impl FolderConfigurationBuilder {
     /// - [`name`](crate::types::builders::FolderConfigurationBuilder::name)
     /// - [`action`](crate::types::builders::FolderConfigurationBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::FolderConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FolderConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FolderConfiguration",
-                )
-            })?,
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building FolderConfiguration",
-                )
-            })?,
-            period: self.period,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FolderConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FolderConfiguration")
+                    )?
+                ,
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building FolderConfiguration")
+                    )?
+                ,
+                period: self.period
+                ,
+            }
+        )
     }
 }
+

@@ -12,36 +12,38 @@
 /// <p>If you provide both, an exception is thrown.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserContext {
+pub struct UserContext  {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    pub data_source_groups: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>,
+    pub data_source_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceGroup>>,
 }
-impl UserContext {
+impl  UserContext  {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_source_groups.is_none()`.
-    pub fn data_source_groups(&self) -> &[crate::types::DataSourceGroup] {
-        self.data_source_groups.as_deref().unwrap_or_default()
+    pub fn data_source_groups(&self) -> & [crate::types::DataSourceGroup] {
+        self.data_source_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UserContext {
@@ -57,8 +59,8 @@ impl UserContext {
 pub struct UserContextBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) data_source_groups: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) data_source_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceGroup>>,
 }
 impl UserContextBuilder {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
@@ -68,8 +70,7 @@ impl UserContextBuilder {
     }
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +83,7 @@ impl UserContextBuilder {
     }
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user you want to filter search results based on their access to documents.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,17 +96,16 @@ impl UserContextBuilder {
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// Appends an item to `data_source_groups`.
@@ -116,26 +115,30 @@ impl UserContextBuilder {
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
     pub fn data_source_groups(mut self, input: crate::types::DataSourceGroup) -> Self {
         let mut v = self.data_source_groups.unwrap_or_default();
-        v.push(input);
-        self.data_source_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_source_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    pub fn set_data_source_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>) -> Self {
-        self.data_source_groups = input;
-        self
+    pub fn set_data_source_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceGroup>>) -> Self {
+        self.data_source_groups = input; self
     }
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    pub fn get_data_source_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>> {
+    pub fn get_data_source_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceGroup>> {
         &self.data_source_groups
     }
     /// Consumes the builder and constructs a [`UserContext`](crate::types::UserContext).
     pub fn build(self) -> crate::types::UserContext {
         crate::types::UserContext {
-            token: self.token,
-            user_id: self.user_id,
-            groups: self.groups,
-            data_source_groups: self.data_source_groups,
+            token: self.token
+            ,
+            user_id: self.user_id
+            ,
+            groups: self.groups
+            ,
+            data_source_groups: self.data_source_groups
+            ,
         }
     }
 }
+

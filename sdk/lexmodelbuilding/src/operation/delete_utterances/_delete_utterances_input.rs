@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUtterancesInput {
+pub struct DeleteUtterancesInput  {
     /// <p>The name of the bot that stored the utterances.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUtterancesInput {
+impl  DeleteUtterancesInput  {
     /// <p>The name of the bot that stored the utterances.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteUtterancesInputBuilder {
     }
     /// <p>The name of the bot that stored the utterances.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the bot that stored the utterances.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteUtterancesInputBuilder {
     }
     /// <p>The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DeleteUtterancesInput`](crate::operation::delete_utterances::DeleteUtterancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_utterances::DeleteUtterancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_utterances::DeleteUtterancesInput {
-            bot_name: self.bot_name,
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_utterances::DeleteUtterancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_utterances::DeleteUtterancesInput {
+                bot_name: self.bot_name
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

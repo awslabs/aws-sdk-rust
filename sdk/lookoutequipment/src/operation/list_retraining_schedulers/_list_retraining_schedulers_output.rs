@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRetrainingSchedulersOutput {
+pub struct ListRetrainingSchedulersOutput  {
     /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
-    pub retraining_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>>,
+    pub retraining_scheduler_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::RetrainingSchedulerSummary>>,
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRetrainingSchedulersOutput {
+impl  ListRetrainingSchedulersOutput  {
     /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retraining_scheduler_summaries.is_none()`.
-    pub fn retraining_scheduler_summaries(&self) -> &[crate::types::RetrainingSchedulerSummary] {
-        self.retraining_scheduler_summaries.as_deref().unwrap_or_default()
+    pub fn retraining_scheduler_summaries(&self) -> & [crate::types::RetrainingSchedulerSummary] {
+        self.retraining_scheduler_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRetrainingSchedulersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRetrainingSchedulersOutput {
     /// Creates a new builder-style object to manufacture [`ListRetrainingSchedulersOutput`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput).
     pub fn builder() -> crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRetrainingSchedulersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRetrainingSchedulersOutputBuilder {
-    pub(crate) retraining_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>>,
+    pub(crate) retraining_scheduler_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::RetrainingSchedulerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListRetrainingSchedulersOutputBuilder {
     /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     pub fn retraining_scheduler_summaries(mut self, input: crate::types::RetrainingSchedulerSummary) -> Self {
         let mut v = self.retraining_scheduler_summaries.unwrap_or_default();
-        v.push(input);
-        self.retraining_scheduler_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.retraining_scheduler_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
-    pub fn set_retraining_scheduler_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>>,
-    ) -> Self {
-        self.retraining_scheduler_summaries = input;
-        self
+    pub fn set_retraining_scheduler_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RetrainingSchedulerSummary>>) -> Self {
+        self.retraining_scheduler_summaries = input; self
     }
     /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
-    pub fn get_retraining_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>> {
+    pub fn get_retraining_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RetrainingSchedulerSummary>> {
         &self.retraining_scheduler_summaries
     }
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
@@ -72,28 +69,30 @@ impl ListRetrainingSchedulersOutputBuilder {
     }
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRetrainingSchedulersOutput`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput).
     pub fn build(self) -> crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput {
         crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput {
-            retraining_scheduler_summaries: self.retraining_scheduler_summaries,
-            next_token: self.next_token,
+            retraining_scheduler_summaries: self.retraining_scheduler_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

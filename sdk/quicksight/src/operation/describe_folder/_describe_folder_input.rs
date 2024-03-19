@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFolderInput {
+pub struct DescribeFolderInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFolderInput {
+impl  DescribeFolderInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeFolderInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeFolderInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.folder_id
     }
     /// Consumes the builder and constructs a [`DescribeFolderInput`](crate::operation::describe_folder::DescribeFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_folder::DescribeFolderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_folder::DescribeFolderInput {
-            aws_account_id: self.aws_account_id,
-            folder_id: self.folder_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_folder::DescribeFolderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_folder::DescribeFolderInput {
+                aws_account_id: self.aws_account_id
+                ,
+                folder_id: self.folder_id
+                ,
+            }
+        )
     }
 }
+

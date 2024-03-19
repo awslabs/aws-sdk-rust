@@ -3,7 +3,7 @@
 /// <p>Provides information from a specified run of a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyRunResponse {
+pub struct JourneyRunResponse  {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
@@ -13,21 +13,21 @@ pub struct JourneyRunResponse {
     /// <p>The current status of the journey run.</p>
     pub status: ::std::option::Option<crate::types::JourneyRunStatus>,
 }
-impl JourneyRunResponse {
+impl  JourneyRunResponse  {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& str> {
         self.last_update_time.as_deref()
     }
     /// <p>The unique identifier for the run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The current status of the journey run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JourneyRunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JourneyRunStatus> {
         self.status.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl JourneyRunResponseBuilder {
     }
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl JourneyRunResponseBuilder {
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl JourneyRunResponseBuilder {
     }
     /// <p>The unique identifier for the run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The unique identifier for the run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl JourneyRunResponseBuilder {
     }
     /// <p>The current status of the journey run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JourneyRunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the journey run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JourneyRunStatus> {
@@ -111,10 +107,15 @@ impl JourneyRunResponseBuilder {
     /// Consumes the builder and constructs a [`JourneyRunResponse`](crate::types::JourneyRunResponse).
     pub fn build(self) -> crate::types::JourneyRunResponse {
         crate::types::JourneyRunResponse {
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            run_id: self.run_id,
-            status: self.status,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            run_id: self.run_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -3,26 +3,25 @@
 /// <p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActiveContext {
+pub struct ActiveContext  {
     /// <p>The name of the context.</p>
     pub name: ::std::string::String,
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub parameters: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
 }
-impl ActiveContext {
+impl  ActiveContext  {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
-    pub fn time_to_live(&self) -> ::std::option::Option<&crate::types::ActiveContextTimeToLive> {
+    pub fn time_to_live(&self) -> ::std::option::Option<& crate::types::ActiveContextTimeToLive> {
         self.time_to_live.as_ref()
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn parameters(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.parameters
     }
 }
@@ -39,7 +38,7 @@ impl ActiveContext {
 pub struct ActiveContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContextBuilder {
     /// <p>The name of the context.</p>
@@ -50,8 +49,7 @@ impl ActiveContextBuilder {
     }
     /// <p>The name of the context.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the context.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ActiveContextBuilder {
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn set_time_to_live(mut self, input: ::std::option::Option<crate::types::ActiveContextTimeToLive>) -> Self {
-        self.time_to_live = input;
-        self
+        self.time_to_live = input; self
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn get_time_to_live(&self) -> &::std::option::Option<crate::types::ActiveContextTimeToLive> {
@@ -79,17 +76,16 @@ impl ActiveContextBuilder {
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ActiveContext`](crate::types::ActiveContext).
@@ -97,20 +93,22 @@ impl ActiveContextBuilder {
     /// - [`name`](crate::types::builders::ActiveContextBuilder::name)
     /// - [`parameters`](crate::types::builders::ActiveContextBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::ActiveContext, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActiveContext {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ActiveContext",
-                )
-            })?,
-            time_to_live: self.time_to_live,
-            parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameters",
-                    "parameters was not specified but it is required when building ActiveContext",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActiveContext {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ActiveContext")
+                    )?
+                ,
+                time_to_live: self.time_to_live
+                ,
+                parameters: self.parameters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameters", "parameters was not specified but it is required when building ActiveContext")
+                    )?
+                ,
+            }
+        )
     }
 }
+

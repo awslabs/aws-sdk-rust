@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLayoutInput {
+pub struct UpdateLayoutInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the layout.</p>
@@ -12,21 +12,21 @@ pub struct UpdateLayoutInput {
     /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub content: ::std::option::Option<crate::types::LayoutContent>,
 }
-impl UpdateLayoutInput {
+impl  UpdateLayoutInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> ::std::option::Option<&str> {
+    pub fn layout_id(&self) -> ::std::option::Option<& str> {
         self.layout_id.as_deref()
     }
     /// <p>The name of the layout. It must be unique per domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::LayoutContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::LayoutContent> {
         self.content.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateLayoutInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateLayoutInputBuilder {
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn set_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_id = input;
-        self
+        self.layout_id = input; self
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateLayoutInputBuilder {
     }
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl UpdateLayoutInputBuilder {
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
         &self.content
     }
     /// Consumes the builder and constructs a [`UpdateLayoutInput`](crate::operation::update_layout::UpdateLayoutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_layout::UpdateLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_layout::UpdateLayoutInput {
-            domain_id: self.domain_id,
-            layout_id: self.layout_id,
-            name: self.name,
-            content: self.content,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_layout::UpdateLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_layout::UpdateLayoutInput {
+                domain_id: self.domain_id
+                ,
+                layout_id: self.layout_id
+                ,
+                name: self.name
+                ,
+                content: self.content
+                ,
+            }
+        )
     }
 }
+

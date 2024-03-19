@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifySnapshotScheduleInput {
+pub struct ModifySnapshotScheduleInput  {
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub schedule_definitions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifySnapshotScheduleInput {
+impl  ModifySnapshotScheduleInput  {
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
-    pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> ::std::option::Option<& str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_definitions.is_none()`.
-    pub fn schedule_definitions(&self) -> &[::std::string::String] {
-        self.schedule_definitions.as_deref().unwrap_or_default()
+    pub fn schedule_definitions(&self) -> & [::std::string::String] {
+        self.schedule_definitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifySnapshotScheduleInput {
@@ -32,7 +33,7 @@ impl ModifySnapshotScheduleInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySnapshotScheduleInputBuilder {
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifySnapshotScheduleInputBuilder {
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
@@ -43,8 +44,7 @@ impl ModifySnapshotScheduleInputBuilder {
     }
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
     pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_identifier = input;
-        self
+        self.schedule_identifier = input; self
     }
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
     pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl ModifySnapshotScheduleInputBuilder {
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn schedule_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.schedule_definitions.unwrap_or_default();
-        v.push(input.into());
-        self.schedule_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.schedule_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.schedule_definitions = input;
-        self
+    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.schedule_definitions = input; self
     }
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.schedule_definitions
     }
     /// Consumes the builder and constructs a [`ModifySnapshotScheduleInput`](crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput {
-            schedule_identifier: self.schedule_identifier,
-            schedule_definitions: self.schedule_definitions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput {
+                schedule_identifier: self.schedule_identifier
+                ,
+                schedule_definitions: self.schedule_definitions
+                ,
+            }
+        )
     }
 }
+

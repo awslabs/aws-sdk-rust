@@ -3,7 +3,7 @@
 /// <p>An object that provides the current value of a security control parameter and identifies whether it has been customized.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterConfiguration {
+pub struct ParameterConfiguration  {
     /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
@@ -11,15 +11,15 @@ pub struct ParameterConfiguration {
     /// <p>The current value of a control parameter.</p>
     pub value: ::std::option::Option<crate::types::ParameterValue>,
 }
-impl ParameterConfiguration {
+impl  ParameterConfiguration  {
     /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::ParameterValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<& crate::types::ParameterValueType> {
         self.value_type.as_ref()
     }
     /// <p>The current value of a control parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::ParameterValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::ParameterValue> {
         self.value.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl ParameterConfigurationBuilder {
     /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ParameterValueType>) -> Self {
-        self.value_type = input;
-        self
+        self.value_type = input; self
     }
     /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
@@ -66,8 +65,7 @@ impl ParameterConfigurationBuilder {
     }
     /// <p>The current value of a control parameter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::ParameterValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The current value of a control parameter.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::ParameterValue> {
@@ -76,8 +74,11 @@ impl ParameterConfigurationBuilder {
     /// Consumes the builder and constructs a [`ParameterConfiguration`](crate::types::ParameterConfiguration).
     pub fn build(self) -> crate::types::ParameterConfiguration {
         crate::types::ParameterConfiguration {
-            value_type: self.value_type,
-            value: self.value,
+            value_type: self.value_type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

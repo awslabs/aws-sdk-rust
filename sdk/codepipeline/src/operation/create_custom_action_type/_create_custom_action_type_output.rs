@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>CreateCustomActionType</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomActionTypeOutput {
+pub struct CreateCustomActionTypeOutput  {
     /// <p>Returns information about the details of an action type.</p>
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>Specifies the tags applied to the custom action.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl CreateCustomActionTypeOutput {
+impl  CreateCustomActionTypeOutput  {
     /// <p>Returns information about the details of an action type.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>Specifies the tags applied to the custom action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCustomActionTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCustomActionTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomActionTypeOutput`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput).
     pub fn builder() -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeOutputBuilder {
@@ -39,7 +40,7 @@ impl CreateCustomActionTypeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeOutputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreateCustomActionTypeOutputBuilder {
@@ -51,8 +52,7 @@ impl CreateCustomActionTypeOutputBuilder {
     }
     /// <p>Returns information about the details of an action type.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>Returns information about the details of an action type.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
@@ -65,34 +65,36 @@ impl CreateCustomActionTypeOutputBuilder {
     /// <p>Specifies the tags applied to the custom action.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the tags applied to the custom action.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the tags applied to the custom action.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCustomActionTypeOutput`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput).
     pub fn build(self) -> crate::operation::create_custom_action_type::CreateCustomActionTypeOutput {
         crate::operation::create_custom_action_type::CreateCustomActionTypeOutput {
-            action_type: self.action_type,
-            tags: self.tags,
+            action_type: self.action_type
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

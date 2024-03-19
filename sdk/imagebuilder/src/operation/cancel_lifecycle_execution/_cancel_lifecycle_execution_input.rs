@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelLifecycleExecutionInput {
+pub struct CancelLifecycleExecutionInput  {
     /// <p>Identifies the specific runtime instance of the image lifecycle to cancel.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CancelLifecycleExecutionInput {
+impl  CancelLifecycleExecutionInput  {
     /// <p>Identifies the specific runtime instance of the image lifecycle to cancel.</p>
-    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<& str> {
         self.lifecycle_execution_id.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CancelLifecycleExecutionInputBuilder {
     }
     /// <p>Identifies the specific runtime instance of the image lifecycle to cancel.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_execution_id = input;
-        self
+        self.lifecycle_execution_id = input; self
     }
     /// <p>Identifies the specific runtime instance of the image lifecycle to cancel.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CancelLifecycleExecutionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CancelLifecycleExecutionInput`](crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionInput {
-            lifecycle_execution_id: self.lifecycle_execution_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionInput {
+                lifecycle_execution_id: self.lifecycle_execution_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

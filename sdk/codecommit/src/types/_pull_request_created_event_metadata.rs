@@ -3,7 +3,7 @@
 /// <p>Metadata about the pull request that is used when comparing the pull request source with its destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PullRequestCreatedEventMetadata {
+pub struct PullRequestCreatedEventMetadata  {
     /// <p>The name of the repository where the pull request was created.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
@@ -13,21 +13,21 @@ pub struct PullRequestCreatedEventMetadata {
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub merge_base: ::std::option::Option<::std::string::String>,
 }
-impl PullRequestCreatedEventMetadata {
+impl  PullRequestCreatedEventMetadata  {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
-    pub fn source_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_commit_id(&self) -> ::std::option::Option<& str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
-    pub fn destination_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_commit_id(&self) -> ::std::option::Option<& str> {
         self.destination_commit_id.as_deref()
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    pub fn merge_base(&self) -> ::std::option::Option<&str> {
+    pub fn merge_base(&self) -> ::std::option::Option<& str> {
         self.merge_base.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PullRequestCreatedEventMetadataBuilder {
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PullRequestCreatedEventMetadataBuilder {
     }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
     pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_commit_id = input;
-        self
+        self.source_commit_id = input; self
     }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
     pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PullRequestCreatedEventMetadataBuilder {
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
     pub fn set_destination_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_commit_id = input;
-        self
+        self.destination_commit_id = input; self
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
     pub fn get_destination_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl PullRequestCreatedEventMetadataBuilder {
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn set_merge_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.merge_base = input;
-        self
+        self.merge_base = input; self
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn get_merge_base(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PullRequestCreatedEventMetadataBuilder {
     /// Consumes the builder and constructs a [`PullRequestCreatedEventMetadata`](crate::types::PullRequestCreatedEventMetadata).
     pub fn build(self) -> crate::types::PullRequestCreatedEventMetadata {
         crate::types::PullRequestCreatedEventMetadata {
-            repository_name: self.repository_name,
-            source_commit_id: self.source_commit_id,
-            destination_commit_id: self.destination_commit_id,
-            merge_base: self.merge_base,
+            repository_name: self.repository_name
+            ,
+            source_commit_id: self.source_commit_id
+            ,
+            destination_commit_id: self.destination_commit_id
+            ,
+            merge_base: self.merge_base
+            ,
         }
     }
 }
+

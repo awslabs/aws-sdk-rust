@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MoveByoipCidrToIpamInput {
+pub struct MoveByoipCidrToIpamInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The BYOIP CIDR.</p>
@@ -12,21 +12,21 @@ pub struct MoveByoipCidrToIpamInput {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
     pub ipam_pool_owner: ::std::option::Option<::std::string::String>,
 }
-impl MoveByoipCidrToIpamInput {
+impl  MoveByoipCidrToIpamInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The BYOIP CIDR.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The IPAM pool ID.</p>
-    pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_pool_id(&self) -> ::std::option::Option<& str> {
         self.ipam_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
-    pub fn ipam_pool_owner(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_pool_owner(&self) -> ::std::option::Option<& str> {
         self.ipam_pool_owner.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl MoveByoipCidrToIpamInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl MoveByoipCidrToIpamInputBuilder {
     }
     /// <p>The BYOIP CIDR.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The BYOIP CIDR.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl MoveByoipCidrToIpamInputBuilder {
     }
     /// <p>The IPAM pool ID.</p>
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_pool_id = input;
-        self
+        self.ipam_pool_id = input; self
     }
     /// <p>The IPAM pool ID.</p>
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl MoveByoipCidrToIpamInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
     pub fn set_ipam_pool_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_pool_owner = input;
-        self
+        self.ipam_pool_owner = input; self
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
     pub fn get_ipam_pool_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_pool_owner
     }
     /// Consumes the builder and constructs a [`MoveByoipCidrToIpamInput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput {
-            dry_run: self.dry_run,
-            cidr: self.cidr,
-            ipam_pool_id: self.ipam_pool_id,
-            ipam_pool_owner: self.ipam_pool_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput {
+                dry_run: self.dry_run
+                ,
+                cidr: self.cidr
+                ,
+                ipam_pool_id: self.ipam_pool_id
+                ,
+                ipam_pool_owner: self.ipam_pool_owner
+                ,
+            }
+        )
     }
 }
+

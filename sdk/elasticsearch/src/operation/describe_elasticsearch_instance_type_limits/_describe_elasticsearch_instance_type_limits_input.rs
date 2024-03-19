@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to <code> <code>DescribeElasticsearchInstanceTypeLimits</code> </code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeElasticsearchInstanceTypeLimitsInput {
+pub struct DescribeElasticsearchInstanceTypeLimitsInput  {
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
@@ -11,17 +11,17 @@ pub struct DescribeElasticsearchInstanceTypeLimitsInput {
     /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
 }
-impl DescribeElasticsearchInstanceTypeLimitsInput {
+impl  DescribeElasticsearchInstanceTypeLimitsInput  {
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::EsPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::EsPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
-    pub fn elasticsearch_version(&self) -> ::std::option::Option<&str> {
+    pub fn elasticsearch_version(&self) -> ::std::option::Option<& str> {
         self.elasticsearch_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     }
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     }
     /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
@@ -78,26 +76,24 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     }
     /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
     pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elasticsearch_version = input;
-        self
+        self.elasticsearch_version = input; self
     }
     /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
     pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.elasticsearch_version
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput {
-                domain_name: self.domain_name,
-                instance_type: self.instance_type,
-                elasticsearch_version: self.elasticsearch_version,
-            },
+                domain_name: self.domain_name
+                ,
+                instance_type: self.instance_type
+                ,
+                elasticsearch_version: self.elasticsearch_version
+                ,
+            }
         )
     }
 }
+

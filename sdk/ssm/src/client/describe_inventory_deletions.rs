@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInventoryDeletions`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`deletion_id(impl Into<String>)`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::deletion_id) / [`set_deletion_id(Option<String>)`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::set_deletion_id):<br>required: **false**<br><p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
-    /// - On success, responds with [`DescribeInventoryDeletionsOutput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeInventoryDeletionsOutput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput) with field(s):
     ///   - [`inventory_deletions(Option<Vec::<InventoryDeletionStatusItem>>)`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput::inventory_deletions): <p>A list of status items for deleted inventory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeInventoryDeletionsError>`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError)
+                            /// - On failure, responds with [`SdkError<DescribeInventoryDeletionsError>`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError)
     pub fn describe_inventory_deletions(&self) -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder {
-        crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

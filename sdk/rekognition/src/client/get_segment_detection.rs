@@ -2,12 +2,12 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetSegmentDetection`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::set_job_id):<br>required: **true**<br><p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p><br>
-    /// - On success, responds with [`GetSegmentDetectionOutput`](crate::operation::get_segment_detection::GetSegmentDetectionOutput) with field(s):
+                            /// - On success, responds with [`GetSegmentDetectionOutput`](crate::operation::get_segment_detection::GetSegmentDetectionOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::operation::get_segment_detection::GetSegmentDetectionOutput::job_status): <p>Current status of the segment detection job.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_segment_detection::GetSegmentDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     ///   - [`video_metadata(Option<Vec::<VideoMetadata>>)`](crate::operation::get_segment_detection::GetSegmentDetectionOutput::video_metadata): <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
@@ -18,8 +18,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::get_segment_detection::GetSegmentDetectionOutput::job_id): <p>Job identifier for the segment detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartSegmentDetection.</p>
     ///   - [`video(Option<Video>)`](crate::operation::get_segment_detection::GetSegmentDetectionOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_segment_detection::GetSegmentDetectionOutput::job_tag): <p>A job identifier specified in the call to StartSegmentDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    /// - On failure, responds with [`SdkError<GetSegmentDetectionError>`](crate::operation::get_segment_detection::GetSegmentDetectionError)
+                            /// - On failure, responds with [`SdkError<GetSegmentDetectionError>`](crate::operation::get_segment_detection::GetSegmentDetectionError)
     pub fn get_segment_detection(&self) -> crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder {
-        crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_segment_detection::builders::GetSegmentDetectionFluentBuilder::new(self.handle.clone())
+                            }
 }
+

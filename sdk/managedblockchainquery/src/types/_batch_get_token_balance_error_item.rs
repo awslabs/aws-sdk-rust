@@ -3,7 +3,7 @@
 /// <p>Error generated from a failed <code>BatchGetTokenBalance</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTokenBalanceErrorItem {
+pub struct BatchGetTokenBalanceErrorItem  {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
@@ -19,33 +19,31 @@ pub struct BatchGetTokenBalanceErrorItem {
     /// <p>The type of error.</p>
     pub error_type: crate::types::ErrorType,
 }
-impl BatchGetTokenBalanceErrorItem {
+impl  BatchGetTokenBalanceErrorItem  {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
-    pub fn token_identifier(&self) -> ::std::option::Option<&crate::types::TokenIdentifier> {
+    pub fn token_identifier(&self) -> ::std::option::Option<& crate::types::TokenIdentifier> {
         self.token_identifier.as_ref()
     }
     /// <p>The container for the owner identifier.</p>
-    pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
+    pub fn owner_identifier(&self) -> ::std::option::Option<& crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn at_blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.at_blockchain_instant.as_ref()
     }
     /// <p>The error code associated with the error.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The message associated with the error.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
     /// <p>The type of error.</p>
-    pub fn error_type(&self) -> &crate::types::ErrorType {
+    pub fn error_type(&self) -> & crate::types::ErrorType {
         &self.error_type
     }
 }
@@ -79,8 +77,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
-        self.token_identifier = input;
-        self
+        self.token_identifier = input; self
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
@@ -95,8 +92,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     }
     /// <p>The container for the owner identifier.</p>
     pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
-        self.owner_identifier = input;
-        self
+        self.owner_identifier = input; self
     }
     /// <p>The container for the owner identifier.</p>
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
@@ -109,8 +105,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.at_blockchain_instant = input;
-        self
+        self.at_blockchain_instant = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -124,8 +119,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     }
     /// <p>The error code associated with the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code associated with the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +133,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     }
     /// <p>The message associated with the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message associated with the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +147,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     }
     /// <p>The type of error.</p>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::ErrorType>) -> Self {
-        self.error_type = input;
-        self
+        self.error_type = input; self
     }
     /// <p>The type of error.</p>
     pub fn get_error_type(&self) -> &::std::option::Option<crate::types::ErrorType> {
@@ -167,28 +159,31 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     /// - [`error_message`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_message)
     /// - [`error_type`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_type)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetTokenBalanceErrorItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetTokenBalanceErrorItem {
-            token_identifier: self.token_identifier,
-            owner_identifier: self.owner_identifier,
-            at_blockchain_instant: self.at_blockchain_instant,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchGetTokenBalanceErrorItem",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchGetTokenBalanceErrorItem",
-                )
-            })?,
-            error_type: self.error_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_type",
-                    "error_type was not specified but it is required when building BatchGetTokenBalanceErrorItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetTokenBalanceErrorItem {
+                token_identifier: self.token_identifier
+                ,
+                owner_identifier: self.owner_identifier
+                ,
+                at_blockchain_instant: self.at_blockchain_instant
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchGetTokenBalanceErrorItem")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchGetTokenBalanceErrorItem")
+                    )?
+                ,
+                error_type: self.error_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_type", "error_type was not specified but it is required when building BatchGetTokenBalanceErrorItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

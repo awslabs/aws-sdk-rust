@@ -3,7 +3,7 @@
 /// <p>The parameters for using a Kinesis stream as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePipeSourceKinesisStreamParameters {
+pub struct UpdatePipeSourceKinesisStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     pub batch_size: ::std::option::Option<i32>,
     /// <p>Define the target queue to send dead-letter queue events to.</p>
@@ -19,17 +19,17 @@ pub struct UpdatePipeSourceKinesisStreamParameters {
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: ::std::option::Option<i32>,
 }
-impl UpdatePipeSourceKinesisStreamParameters {
+impl  UpdatePipeSourceKinesisStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> ::std::option::Option<& crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(&self) -> ::std::option::Option<&crate::types::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> ::std::option::Option<& crate::types::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -76,8 +76,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
@@ -90,8 +89,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
     pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
-        self.dead_letter_config = input;
-        self
+        self.dead_letter_config = input; self
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
@@ -104,8 +102,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     pub fn set_on_partial_batch_item_failure(mut self, input: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>) -> Self {
-        self.on_partial_batch_item_failure = input;
-        self
+        self.on_partial_batch_item_failure = input; self
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     pub fn get_on_partial_batch_item_failure(&self) -> &::std::option::Option<crate::types::OnPartialBatchItemFailureStreams> {
@@ -118,8 +115,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_batching_window_in_seconds = input;
-        self
+        self.maximum_batching_window_in_seconds = input; self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub fn set_maximum_record_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_record_age_in_seconds = input;
-        self
+        self.maximum_record_age_in_seconds = input; self
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub fn get_maximum_record_age_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
     pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_retry_attempts = input;
-        self
+        self.maximum_retry_attempts = input; self
     }
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
     pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
@@ -160,8 +154,7 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     }
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub fn set_parallelization_factor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.parallelization_factor = input;
-        self
+        self.parallelization_factor = input; self
     }
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub fn get_parallelization_factor(&self) -> &::std::option::Option<i32> {
@@ -170,13 +163,21 @@ impl UpdatePipeSourceKinesisStreamParametersBuilder {
     /// Consumes the builder and constructs a [`UpdatePipeSourceKinesisStreamParameters`](crate::types::UpdatePipeSourceKinesisStreamParameters).
     pub fn build(self) -> crate::types::UpdatePipeSourceKinesisStreamParameters {
         crate::types::UpdatePipeSourceKinesisStreamParameters {
-            batch_size: self.batch_size,
-            dead_letter_config: self.dead_letter_config,
-            on_partial_batch_item_failure: self.on_partial_batch_item_failure,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-            maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-            maximum_retry_attempts: self.maximum_retry_attempts,
-            parallelization_factor: self.parallelization_factor,
+            batch_size: self.batch_size
+            ,
+            dead_letter_config: self.dead_letter_config
+            ,
+            on_partial_batch_item_failure: self.on_partial_batch_item_failure
+            ,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+            ,
+            maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+            ,
+            maximum_retry_attempts: self.maximum_retry_attempts
+            ,
+            parallelization_factor: self.parallelization_factor
+            ,
         }
     }
 }
+

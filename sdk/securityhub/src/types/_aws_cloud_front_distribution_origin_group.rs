@@ -3,13 +3,13 @@
 /// <p>Information about an origin group for the CloudFront distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOriginGroup {
+pub struct AwsCloudFrontDistributionOriginGroup  {
     /// <p>Provides the criteria for an origin group to fail over.</p>
     pub failover_criteria: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailover>,
 }
-impl AwsCloudFrontDistributionOriginGroup {
+impl  AwsCloudFrontDistributionOriginGroup  {
     /// <p>Provides the criteria for an origin group to fail over.</p>
-    pub fn failover_criteria(&self) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginGroupFailover> {
+    pub fn failover_criteria(&self) -> ::std::option::Option<& crate::types::AwsCloudFrontDistributionOriginGroupFailover> {
         self.failover_criteria.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsCloudFrontDistributionOriginGroupBuilder {
     }
     /// <p>Provides the criteria for an origin group to fail over.</p>
     pub fn set_failover_criteria(mut self, input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailover>) -> Self {
-        self.failover_criteria = input;
-        self
+        self.failover_criteria = input; self
     }
     /// <p>Provides the criteria for an origin group to fail over.</p>
     pub fn get_failover_criteria(&self) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailover> {
@@ -44,7 +43,9 @@ impl AwsCloudFrontDistributionOriginGroupBuilder {
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroup`](crate::types::AwsCloudFrontDistributionOriginGroup).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginGroup {
         crate::types::AwsCloudFrontDistributionOriginGroup {
-            failover_criteria: self.failover_criteria,
+            failover_criteria: self.failover_criteria
+            ,
         }
     }
 }
+

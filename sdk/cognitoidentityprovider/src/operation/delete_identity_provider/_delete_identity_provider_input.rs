@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIdentityProviderInput {
+pub struct DeleteIdentityProviderInput  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The IdP name.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIdentityProviderInput {
+impl  DeleteIdentityProviderInput  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteIdentityProviderInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteIdentityProviderInputBuilder {
     }
     /// <p>The IdP name.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The IdP name.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
-            user_pool_id: self.user_pool_id,
-            provider_name: self.provider_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
+                user_pool_id: self.user_pool_id
+                ,
+                provider_name: self.provider_name
+                ,
+            }
+        )
     }
 }
+

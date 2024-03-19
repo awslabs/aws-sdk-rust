@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DownloadDbLogFilePortionInput {
+pub struct DownloadDbLogFilePortionInput  {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -29,22 +29,22 @@ pub struct DownloadDbLogFilePortionInput {
     /// </ul>
     pub number_of_lines: ::std::option::Option<i32>,
 }
-impl DownloadDbLogFilePortionInput {
+impl  DownloadDbLogFilePortionInput  {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The name of the log file to be downloaded.</p>
-    pub fn log_file_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_file_name(&self) -> ::std::option::Option<& str> {
         self.log_file_name.as_deref()
     }
     /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
@@ -98,8 +98,7 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
@@ -118,8 +117,7 @@ impl DownloadDbLogFilePortionInputBuilder {
     }
     /// <p>The name of the log file to be downloaded.</p>
     pub fn set_log_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_file_name = input;
-        self
+        self.log_file_name = input; self
     }
     /// <p>The name of the log file to be downloaded.</p>
     pub fn get_log_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl DownloadDbLogFilePortionInputBuilder {
     }
     /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +165,7 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
     /// </ul>
     pub fn set_number_of_lines(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_lines = input;
-        self
+        self.number_of_lines = input; self
     }
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
     /// <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p>
@@ -187,17 +183,19 @@ impl DownloadDbLogFilePortionInputBuilder {
         &self.number_of_lines
     }
     /// Consumes the builder and constructs a [`DownloadDbLogFilePortionInput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput {
-            db_instance_identifier: self.db_instance_identifier,
-            log_file_name: self.log_file_name,
-            marker: self.marker,
-            number_of_lines: self.number_of_lines,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                log_file_name: self.log_file_name
+                ,
+                marker: self.marker
+                ,
+                number_of_lines: self.number_of_lines
+                ,
+            }
+        )
     }
 }
+

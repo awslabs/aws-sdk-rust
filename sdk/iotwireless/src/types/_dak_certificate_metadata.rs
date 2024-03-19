@@ -3,7 +3,7 @@
 /// <p>The device attestation key (DAK) information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DakCertificateMetadata {
+pub struct DakCertificateMetadata  {
     /// <p>The certificate ID for the DAK.</p>
     pub certificate_id: ::std::string::String,
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
@@ -15,11 +15,10 @@ pub struct DakCertificateMetadata {
     /// <p>The device type ID that's used for prototyping applications.</p>
     pub device_type_id: ::std::option::Option<::std::string::String>,
 }
-impl DakCertificateMetadata {
+impl  DakCertificateMetadata  {
     /// <p>The certificate ID for the DAK.</p>
-    pub fn certificate_id(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_id.deref()
+    pub fn certificate_id(&self) -> & str {
+        use std::ops::Deref; self.certificate_id.deref()
     }
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
     pub fn max_allowed_signature(&self) -> ::std::option::Option<i32> {
@@ -30,11 +29,11 @@ impl DakCertificateMetadata {
         self.factory_support
     }
     /// <p>The advertised product ID (APID) that's used for pre-production and production applications.</p>
-    pub fn ap_id(&self) -> ::std::option::Option<&str> {
+    pub fn ap_id(&self) -> ::std::option::Option<& str> {
         self.ap_id.as_deref()
     }
     /// <p>The device type ID that's used for prototyping applications.</p>
-    pub fn device_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_type_id(&self) -> ::std::option::Option<& str> {
         self.device_type_id.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl DakCertificateMetadataBuilder {
     }
     /// <p>The certificate ID for the DAK.</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The certificate ID for the DAK.</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl DakCertificateMetadataBuilder {
     }
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
     pub fn set_max_allowed_signature(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_allowed_signature = input;
-        self
+        self.max_allowed_signature = input; self
     }
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
     pub fn get_max_allowed_signature(&self) -> &::std::option::Option<i32> {
@@ -92,8 +89,7 @@ impl DakCertificateMetadataBuilder {
     }
     /// <p>Whether factory support has been enabled.</p>
     pub fn set_factory_support(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.factory_support = input;
-        self
+        self.factory_support = input; self
     }
     /// <p>Whether factory support has been enabled.</p>
     pub fn get_factory_support(&self) -> &::std::option::Option<bool> {
@@ -106,8 +102,7 @@ impl DakCertificateMetadataBuilder {
     }
     /// <p>The advertised product ID (APID) that's used for pre-production and production applications.</p>
     pub fn set_ap_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ap_id = input;
-        self
+        self.ap_id = input; self
     }
     /// <p>The advertised product ID (APID) that's used for pre-production and production applications.</p>
     pub fn get_ap_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +115,7 @@ impl DakCertificateMetadataBuilder {
     }
     /// <p>The device type ID that's used for prototyping applications.</p>
     pub fn set_device_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_type_id = input;
-        self
+        self.device_type_id = input; self
     }
     /// <p>The device type ID that's used for prototyping applications.</p>
     pub fn get_device_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +125,23 @@ impl DakCertificateMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_id`](crate::types::builders::DakCertificateMetadataBuilder::certificate_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DakCertificateMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DakCertificateMetadata {
-            certificate_id: self.certificate_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_id",
-                    "certificate_id was not specified but it is required when building DakCertificateMetadata",
-                )
-            })?,
-            max_allowed_signature: self.max_allowed_signature,
-            factory_support: self.factory_support,
-            ap_id: self.ap_id,
-            device_type_id: self.device_type_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DakCertificateMetadata {
+                certificate_id: self.certificate_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_id", "certificate_id was not specified but it is required when building DakCertificateMetadata")
+                    )?
+                ,
+                max_allowed_signature: self.max_allowed_signature
+                ,
+                factory_support: self.factory_support
+                ,
+                ap_id: self.ap_id
+                ,
+                device_type_id: self.device_type_id
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationcategory = unimplemented!();
 /// match recommendationcategory {
@@ -39,16 +39,14 @@
 /// Specifically, when `recommendationcategory` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationCategory::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RecommendationCategory {
     #[allow(missing_docs)] // documentation missing in model
     AwsBestPractices,
@@ -74,100 +72,89 @@ pub enum RecommendationCategory {
     SecurityIssues,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RecommendationCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSBestPractices" => RecommendationCategory::AwsBestPractices,
-            "AWSCloudFormationIssues" => RecommendationCategory::AwsCloudformationIssues,
-            "CodeInconsistencies" => RecommendationCategory::CodeInconsistencies,
-            "CodeMaintenanceIssues" => RecommendationCategory::CodeMaintenanceIssues,
-            "ConcurrencyIssues" => RecommendationCategory::ConcurrencyIssues,
-            "DuplicateCode" => RecommendationCategory::DuplicateCode,
-            "InputValidations" => RecommendationCategory::InputValidations,
-            "JavaBestPractices" => RecommendationCategory::JavaBestPractices,
-            "PythonBestPractices" => RecommendationCategory::PythonBestPractices,
-            "ResourceLeaks" => RecommendationCategory::ResourceLeaks,
-            "SecurityIssues" => RecommendationCategory::SecurityIssues,
-            other => RecommendationCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AWSBestPractices" => RecommendationCategory::AwsBestPractices,
+"AWSCloudFormationIssues" => RecommendationCategory::AwsCloudformationIssues,
+"CodeInconsistencies" => RecommendationCategory::CodeInconsistencies,
+"CodeMaintenanceIssues" => RecommendationCategory::CodeMaintenanceIssues,
+"ConcurrencyIssues" => RecommendationCategory::ConcurrencyIssues,
+"DuplicateCode" => RecommendationCategory::DuplicateCode,
+"InputValidations" => RecommendationCategory::InputValidations,
+"JavaBestPractices" => RecommendationCategory::JavaBestPractices,
+"PythonBestPractices" => RecommendationCategory::PythonBestPractices,
+"ResourceLeaks" => RecommendationCategory::ResourceLeaks,
+"SecurityIssues" => RecommendationCategory::SecurityIssues,
+other => RecommendationCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RecommendationCategory {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RecommendationCategory::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RecommendationCategory::from(s))
+                    }
+                }
 impl RecommendationCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecommendationCategory::AwsBestPractices => "AWSBestPractices",
-            RecommendationCategory::AwsCloudformationIssues => "AWSCloudFormationIssues",
-            RecommendationCategory::CodeInconsistencies => "CodeInconsistencies",
-            RecommendationCategory::CodeMaintenanceIssues => "CodeMaintenanceIssues",
-            RecommendationCategory::ConcurrencyIssues => "ConcurrencyIssues",
-            RecommendationCategory::DuplicateCode => "DuplicateCode",
-            RecommendationCategory::InputValidations => "InputValidations",
-            RecommendationCategory::JavaBestPractices => "JavaBestPractices",
-            RecommendationCategory::PythonBestPractices => "PythonBestPractices",
-            RecommendationCategory::ResourceLeaks => "ResourceLeaks",
-            RecommendationCategory::SecurityIssues => "SecurityIssues",
-            RecommendationCategory::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSBestPractices",
-            "AWSCloudFormationIssues",
-            "CodeInconsistencies",
-            "CodeMaintenanceIssues",
-            "ConcurrencyIssues",
-            "DuplicateCode",
-            "InputValidations",
-            "JavaBestPractices",
-            "PythonBestPractices",
-            "ResourceLeaks",
-            "SecurityIssues",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecommendationCategory::AwsBestPractices => "AWSBestPractices",
+    RecommendationCategory::AwsCloudformationIssues => "AWSCloudFormationIssues",
+    RecommendationCategory::CodeInconsistencies => "CodeInconsistencies",
+    RecommendationCategory::CodeMaintenanceIssues => "CodeMaintenanceIssues",
+    RecommendationCategory::ConcurrencyIssues => "ConcurrencyIssues",
+    RecommendationCategory::DuplicateCode => "DuplicateCode",
+    RecommendationCategory::InputValidations => "InputValidations",
+    RecommendationCategory::JavaBestPractices => "JavaBestPractices",
+    RecommendationCategory::PythonBestPractices => "PythonBestPractices",
+    RecommendationCategory::ResourceLeaks => "ResourceLeaks",
+    RecommendationCategory::SecurityIssues => "SecurityIssues",
+    RecommendationCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSBestPractices", "AWSCloudFormationIssues", "CodeInconsistencies", "CodeMaintenanceIssues", "ConcurrencyIssues", "DuplicateCode", "InputValidations", "JavaBestPractices", "PythonBestPractices", "ResourceLeaks", "SecurityIssues"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RecommendationCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RecommendationCategory {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RecommendationCategory {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RecommendationCategory::AwsBestPractices => write!(f, "AWSBestPractices"),
-            RecommendationCategory::AwsCloudformationIssues => write!(f, "AWSCloudFormationIssues"),
-            RecommendationCategory::CodeInconsistencies => write!(f, "CodeInconsistencies"),
-            RecommendationCategory::CodeMaintenanceIssues => write!(f, "CodeMaintenanceIssues"),
-            RecommendationCategory::ConcurrencyIssues => write!(f, "ConcurrencyIssues"),
-            RecommendationCategory::DuplicateCode => write!(f, "DuplicateCode"),
-            RecommendationCategory::InputValidations => write!(f, "InputValidations"),
-            RecommendationCategory::JavaBestPractices => write!(f, "JavaBestPractices"),
-            RecommendationCategory::PythonBestPractices => write!(f, "PythonBestPractices"),
-            RecommendationCategory::ResourceLeaks => write!(f, "ResourceLeaks"),
-            RecommendationCategory::SecurityIssues => write!(f, "SecurityIssues"),
-            RecommendationCategory::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RecommendationCategory::AwsBestPractices => write!(f, "AWSBestPractices"),
+RecommendationCategory::AwsCloudformationIssues => write!(f, "AWSCloudFormationIssues"),
+RecommendationCategory::CodeInconsistencies => write!(f, "CodeInconsistencies"),
+RecommendationCategory::CodeMaintenanceIssues => write!(f, "CodeMaintenanceIssues"),
+RecommendationCategory::ConcurrencyIssues => write!(f, "ConcurrencyIssues"),
+RecommendationCategory::DuplicateCode => write!(f, "DuplicateCode"),
+RecommendationCategory::InputValidations => write!(f, "InputValidations"),
+RecommendationCategory::JavaBestPractices => write!(f, "JavaBestPractices"),
+RecommendationCategory::PythonBestPractices => write!(f, "PythonBestPractices"),
+RecommendationCategory::ResourceLeaks => write!(f, "ResourceLeaks"),
+RecommendationCategory::SecurityIssues => write!(f, "SecurityIssues"),
+RecommendationCategory::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

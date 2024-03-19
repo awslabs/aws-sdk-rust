@@ -3,15 +3,14 @@
 /// <p>The <code>UpdateCase</code> action definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCaseActionDefinition {
+pub struct UpdateCaseActionDefinition  {
     /// <p>An array of objects with <code>Field ID</code> and Value data.</p>
-    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
+    pub fields: ::std::vec::Vec::<crate::types::FieldValue>,
 }
-impl UpdateCaseActionDefinition {
+impl  UpdateCaseActionDefinition  {
     /// <p>An array of objects with <code>Field ID</code> and Value data.</p>
-    pub fn fields(&self) -> &[crate::types::FieldValue] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::FieldValue] {
+        use std::ops::Deref; self.fields.deref()
     }
 }
 impl UpdateCaseActionDefinition {
@@ -25,7 +24,7 @@ impl UpdateCaseActionDefinition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCaseActionDefinitionBuilder {
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>,
 }
 impl UpdateCaseActionDefinitionBuilder {
     /// Appends an item to `fields`.
@@ -35,30 +34,31 @@ impl UpdateCaseActionDefinitionBuilder {
     /// <p>An array of objects with <code>Field ID</code> and Value data.</p>
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects with <code>Field ID</code> and Value data.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>) -> Self {
+        self.fields = input; self
     }
     /// <p>An array of objects with <code>Field ID</code> and Value data.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateCaseActionDefinition`](crate::types::UpdateCaseActionDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::UpdateCaseActionDefinitionBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateCaseActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateCaseActionDefinition {
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building UpdateCaseActionDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateCaseActionDefinition {
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building UpdateCaseActionDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,22 @@
 /// <p>Provides an array of phrases that should be given preference when resolving values for a slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuntimeHintDetails {
+pub struct RuntimeHintDetails  {
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    pub runtime_hint_values: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeHintValue>>,
+    pub runtime_hint_values: ::std::option::Option<::std::vec::Vec::<crate::types::RuntimeHintValue>>,
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-    pub sub_slot_hints: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
+    pub sub_slot_hints: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>,
 }
-impl RuntimeHintDetails {
+impl  RuntimeHintDetails  {
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_hint_values.is_none()`.
-    pub fn runtime_hint_values(&self) -> &[crate::types::RuntimeHintValue] {
-        self.runtime_hint_values.as_deref().unwrap_or_default()
+    pub fn runtime_hint_values(&self) -> & [crate::types::RuntimeHintValue] {
+        self.runtime_hint_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-    pub fn sub_slot_hints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>> {
+    pub fn sub_slot_hints(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>> {
         self.sub_slot_hints.as_ref()
     }
 }
@@ -32,8 +33,8 @@ impl RuntimeHintDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeHintDetailsBuilder {
-    pub(crate) runtime_hint_values: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeHintValue>>,
-    pub(crate) sub_slot_hints: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
+    pub(crate) runtime_hint_values: ::std::option::Option<::std::vec::Vec::<crate::types::RuntimeHintValue>>,
+    pub(crate) sub_slot_hints: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>,
 }
 impl RuntimeHintDetailsBuilder {
     /// Appends an item to `runtime_hint_values`.
@@ -43,17 +44,16 @@ impl RuntimeHintDetailsBuilder {
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
     pub fn runtime_hint_values(mut self, input: crate::types::RuntimeHintValue) -> Self {
         let mut v = self.runtime_hint_values.unwrap_or_default();
-        v.push(input);
-        self.runtime_hint_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.runtime_hint_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    pub fn set_runtime_hint_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeHintValue>>) -> Self {
-        self.runtime_hint_values = input;
-        self
+    pub fn set_runtime_hint_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuntimeHintValue>>) -> Self {
+        self.runtime_hint_values = input; self
     }
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    pub fn get_runtime_hint_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuntimeHintValue>> {
+    pub fn get_runtime_hint_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuntimeHintValue>> {
         &self.runtime_hint_values
     }
     /// Adds a key-value pair to `sub_slot_hints`.
@@ -63,27 +63,26 @@ impl RuntimeHintDetailsBuilder {
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
     pub fn sub_slot_hints(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RuntimeHintDetails) -> Self {
         let mut hash_map = self.sub_slot_hints.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.sub_slot_hints = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.sub_slot_hints = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-    pub fn set_sub_slot_hints(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
-    ) -> Self {
-        self.sub_slot_hints = input;
-        self
+    pub fn set_sub_slot_hints(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>) -> Self {
+        self.sub_slot_hints = input; self
     }
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-    pub fn get_sub_slot_hints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>> {
+    pub fn get_sub_slot_hints(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>> {
         &self.sub_slot_hints
     }
     /// Consumes the builder and constructs a [`RuntimeHintDetails`](crate::types::RuntimeHintDetails).
     pub fn build(self) -> crate::types::RuntimeHintDetails {
         crate::types::RuntimeHintDetails {
-            runtime_hint_values: self.runtime_hint_values,
-            sub_slot_hints: self.sub_slot_hints,
+            runtime_hint_values: self.runtime_hint_values
+            ,
+            sub_slot_hints: self.sub_slot_hints
+            ,
         }
     }
 }
+

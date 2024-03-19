@@ -93,3 +93,4 @@ pub mod update_media_insights_pipeline_status;
 
 /// Types for the `UpdateMediaPipelineKinesisVideoStreamPool` operation.
 pub mod update_media_pipeline_kinesis_video_stream_pool;
+

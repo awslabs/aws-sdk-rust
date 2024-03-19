@@ -3,25 +3,26 @@
 /// <p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AppflowIntegration {
+pub struct AppflowIntegration  {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub batches: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,
+    pub batches: ::std::option::Option<::std::vec::Vec::<crate::types::Batch>>,
 }
-impl AppflowIntegration {
+impl  AppflowIntegration  {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
-    pub fn flow_definition(&self) -> ::std::option::Option<&crate::types::FlowDefinition> {
+    pub fn flow_definition(&self) -> ::std::option::Option<& crate::types::FlowDefinition> {
         self.flow_definition.as_ref()
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batches.is_none()`.
-    pub fn batches(&self) -> &[crate::types::Batch] {
-        self.batches.as_deref().unwrap_or_default()
+    pub fn batches(&self) -> & [crate::types::Batch] {
+        self.batches.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AppflowIntegration {
+impl  ::std::fmt::Debug for AppflowIntegration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppflowIntegration");
         formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
@@ -41,7 +42,7 @@ impl AppflowIntegration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AppflowIntegrationBuilder {
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
-    pub(crate) batches: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,
+    pub(crate) batches: ::std::option::Option<::std::vec::Vec::<crate::types::Batch>>,
 }
 impl AppflowIntegrationBuilder {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
@@ -52,8 +53,7 @@ impl AppflowIntegrationBuilder {
     }
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
     pub fn set_flow_definition(mut self, input: ::std::option::Option<crate::types::FlowDefinition>) -> Self {
-        self.flow_definition = input;
-        self
+        self.flow_definition = input; self
     }
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
     pub fn get_flow_definition(&self) -> &::std::option::Option<crate::types::FlowDefinition> {
@@ -66,24 +66,25 @@ impl AppflowIntegrationBuilder {
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
     pub fn batches(mut self, input: crate::types::Batch) -> Self {
         let mut v = self.batches.unwrap_or_default();
-        v.push(input);
-        self.batches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.batches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub fn set_batches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>) -> Self {
-        self.batches = input;
-        self
+    pub fn set_batches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Batch>>) -> Self {
+        self.batches = input; self
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub fn get_batches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Batch>> {
+    pub fn get_batches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Batch>> {
         &self.batches
     }
     /// Consumes the builder and constructs a [`AppflowIntegration`](crate::types::AppflowIntegration).
     pub fn build(self) -> crate::types::AppflowIntegration {
         crate::types::AppflowIntegration {
-            flow_definition: self.flow_definition,
-            batches: self.batches,
+            flow_definition: self.flow_definition
+            ,
+            batches: self.batches
+            ,
         }
     }
 }
@@ -95,3 +96,4 @@ impl ::std::fmt::Debug for AppflowIntegrationBuilder {
         formatter.finish()
     }
 }
+

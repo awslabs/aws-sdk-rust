@@ -3,23 +3,22 @@
 /// <p>The properties of a custom SMS sender Lambda trigger.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomSmsLambdaVersionConfigType {
+pub struct CustomSmsLambdaVersionConfigType  {
     /// <p>The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered versions add fields that support new features.</p>
     /// <p>You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.</p>
     pub lambda_version: crate::types::CustomSmsSenderLambdaVersionType,
     /// <p>The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
     pub lambda_arn: ::std::string::String,
 }
-impl CustomSmsLambdaVersionConfigType {
+impl  CustomSmsLambdaVersionConfigType  {
     /// <p>The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered versions add fields that support new features.</p>
     /// <p>You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.</p>
-    pub fn lambda_version(&self) -> &crate::types::CustomSmsSenderLambdaVersionType {
+    pub fn lambda_version(&self) -> & crate::types::CustomSmsSenderLambdaVersionType {
         &self.lambda_version
     }
     /// <p>The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
-    pub fn lambda_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_arn.deref()
+    pub fn lambda_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_arn.deref()
     }
 }
 impl CustomSmsLambdaVersionConfigType {
@@ -47,8 +46,7 @@ impl CustomSmsLambdaVersionConfigTypeBuilder {
     /// <p>The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered versions add fields that support new features.</p>
     /// <p>You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.</p>
     pub fn set_lambda_version(mut self, input: ::std::option::Option<crate::types::CustomSmsSenderLambdaVersionType>) -> Self {
-        self.lambda_version = input;
-        self
+        self.lambda_version = input; self
     }
     /// <p>The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered versions add fields that support new features.</p>
     /// <p>You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.</p>
@@ -63,8 +61,7 @@ impl CustomSmsLambdaVersionConfigTypeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,19 +72,20 @@ impl CustomSmsLambdaVersionConfigTypeBuilder {
     /// - [`lambda_version`](crate::types::builders::CustomSmsLambdaVersionConfigTypeBuilder::lambda_version)
     /// - [`lambda_arn`](crate::types::builders::CustomSmsLambdaVersionConfigTypeBuilder::lambda_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomSmsLambdaVersionConfigType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomSmsLambdaVersionConfigType {
-            lambda_version: self.lambda_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_version",
-                    "lambda_version was not specified but it is required when building CustomSmsLambdaVersionConfigType",
-                )
-            })?,
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building CustomSmsLambdaVersionConfigType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomSmsLambdaVersionConfigType {
+                lambda_version: self.lambda_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_version", "lambda_version was not specified but it is required when building CustomSmsLambdaVersionConfigType")
+                    )?
+                ,
+                lambda_arn: self.lambda_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_arn", "lambda_arn was not specified but it is required when building CustomSmsLambdaVersionConfigType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

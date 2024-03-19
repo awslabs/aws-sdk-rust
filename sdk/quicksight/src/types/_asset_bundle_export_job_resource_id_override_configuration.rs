@@ -3,11 +3,11 @@
 /// <p>An optional structure that configures resource ID overrides for the export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleExportJobResourceIdOverrideConfiguration {
+pub struct AssetBundleExportJobResourceIdOverrideConfiguration  {
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub prefix_for_all_resources: bool,
 }
-impl AssetBundleExportJobResourceIdOverrideConfiguration {
+impl  AssetBundleExportJobResourceIdOverrideConfiguration  {
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub fn prefix_for_all_resources(&self) -> bool {
         self.prefix_for_all_resources
@@ -34,8 +34,7 @@ impl AssetBundleExportJobResourceIdOverrideConfigurationBuilder {
     }
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub fn set_prefix_for_all_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.prefix_for_all_resources = input;
-        self
+        self.prefix_for_all_resources = input; self
     }
     /// <p>An option to request a CloudFormation variable for a prefix to be prepended to each resource's ID before import. The prefix is only added to the asset IDs and does not change the name of the asset.</p>
     pub fn get_prefix_for_all_resources(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl AssetBundleExportJobResourceIdOverrideConfigurationBuilder {
     /// Consumes the builder and constructs a [`AssetBundleExportJobResourceIdOverrideConfiguration`](crate::types::AssetBundleExportJobResourceIdOverrideConfiguration).
     pub fn build(self) -> crate::types::AssetBundleExportJobResourceIdOverrideConfiguration {
         crate::types::AssetBundleExportJobResourceIdOverrideConfiguration {
-            prefix_for_all_resources: self.prefix_for_all_resources.unwrap_or_default(),
+            prefix_for_all_resources: self.prefix_for_all_resources
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

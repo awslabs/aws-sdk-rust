@@ -3,14 +3,14 @@
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCustomVerificationEmailTemplateOutput {
+pub struct UpdateCustomVerificationEmailTemplateOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateCustomVerificationEmailTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCustomVerificationEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateOutput`](crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateOutput).
     pub fn builder() -> crate::operation::update_custom_verification_email_template::builders::UpdateCustomVerificationEmailTemplateOutputBuilder {
@@ -26,14 +26,14 @@ pub struct UpdateCustomVerificationEmailTemplateOutputBuilder {
 }
 impl UpdateCustomVerificationEmailTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCustomVerificationEmailTemplateOutput`](crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateOutput).
     pub fn build(self) -> crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateOutput {
         crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateOutput {
@@ -41,3 +41,4 @@ impl UpdateCustomVerificationEmailTemplateOutputBuilder {
         }
     }
 }
+

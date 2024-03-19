@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelMembershipInput {
+pub struct DescribeChannelMembershipInput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
@@ -14,23 +14,23 @@ pub struct DescribeChannelMembershipInput {
     /// </note>
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeChannelMembershipInput {
+impl  DescribeChannelMembershipInput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
-    pub fn member_arn(&self) -> ::std::option::Option<&str> {
+    pub fn member_arn(&self) -> ::std::option::Option<& str> {
         self.member_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
     /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p><note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
-    pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> ::std::option::Option<& str> {
         self.sub_channel_id.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl DescribeChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl DescribeChannelMembershipInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
     pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_arn = input;
-        self
+        self.member_arn = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
     pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DescribeChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl DescribeChannelMembershipInputBuilder {
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_channel_id = input;
-        self
+        self.sub_channel_id = input; self
     }
     /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p><note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
@@ -117,17 +113,19 @@ impl DescribeChannelMembershipInputBuilder {
         &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`DescribeChannelMembershipInput`](crate::operation::describe_channel_membership::DescribeChannelMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_channel_membership::DescribeChannelMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_channel_membership::DescribeChannelMembershipInput {
-            channel_arn: self.channel_arn,
-            member_arn: self.member_arn,
-            chime_bearer: self.chime_bearer,
-            sub_channel_id: self.sub_channel_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_channel_membership::DescribeChannelMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_channel_membership::DescribeChannelMembershipInput {
+                channel_arn: self.channel_arn
+                ,
+                member_arn: self.member_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+                sub_channel_id: self.sub_channel_id
+                ,
+            }
+        )
     }
 }
+

@@ -121,3 +121,4 @@ pub fn de_user(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
     }
     Ok(builder.build())
 }
+

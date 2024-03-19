@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let studiocomponentstatuscode = unimplemented!();
 /// match studiocomponentstatuscode {
@@ -38,7 +38,7 @@
 /// Specifically, when `studiocomponentstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StudioComponentStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -50,9 +50,7 @@
 /// <code>DELETE_FAILED</code> state, the status code signals what went wrong and why
 /// the mutation failed.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StudioComponentStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     ActiveDirectoryAlreadyExists,
@@ -76,96 +74,86 @@ pub enum StudioComponentStatusCode {
     StudioComponentUpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StudioComponentStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE_DIRECTORY_ALREADY_EXISTS" => StudioComponentStatusCode::ActiveDirectoryAlreadyExists,
-            "ENCRYPTION_KEY_ACCESS_DENIED" => StudioComponentStatusCode::EncryptionKeyAccessDenied,
-            "ENCRYPTION_KEY_NOT_FOUND" => StudioComponentStatusCode::EncryptionKeyNotFound,
-            "INTERNAL_ERROR" => StudioComponentStatusCode::InternalError,
-            "STUDIO_COMPONENT_CREATED" => StudioComponentStatusCode::StudioComponentCreated,
-            "STUDIO_COMPONENT_CREATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentCreateInProgress,
-            "STUDIO_COMPONENT_DELETED" => StudioComponentStatusCode::StudioComponentDeleted,
-            "STUDIO_COMPONENT_DELETE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentDeleteInProgress,
-            "STUDIO_COMPONENT_UPDATED" => StudioComponentStatusCode::StudioComponentUpdated,
-            "STUDIO_COMPONENT_UPDATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentUpdateInProgress,
-            other => StudioComponentStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE_DIRECTORY_ALREADY_EXISTS" => StudioComponentStatusCode::ActiveDirectoryAlreadyExists,
+"ENCRYPTION_KEY_ACCESS_DENIED" => StudioComponentStatusCode::EncryptionKeyAccessDenied,
+"ENCRYPTION_KEY_NOT_FOUND" => StudioComponentStatusCode::EncryptionKeyNotFound,
+"INTERNAL_ERROR" => StudioComponentStatusCode::InternalError,
+"STUDIO_COMPONENT_CREATED" => StudioComponentStatusCode::StudioComponentCreated,
+"STUDIO_COMPONENT_CREATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentCreateInProgress,
+"STUDIO_COMPONENT_DELETED" => StudioComponentStatusCode::StudioComponentDeleted,
+"STUDIO_COMPONENT_DELETE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentDeleteInProgress,
+"STUDIO_COMPONENT_UPDATED" => StudioComponentStatusCode::StudioComponentUpdated,
+"STUDIO_COMPONENT_UPDATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentUpdateInProgress,
+other => StudioComponentStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StudioComponentStatusCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StudioComponentStatusCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StudioComponentStatusCode::from(s))
+                    }
+                }
 impl StudioComponentStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentStatusCode::ActiveDirectoryAlreadyExists => "ACTIVE_DIRECTORY_ALREADY_EXISTS",
-            StudioComponentStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
-            StudioComponentStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
-            StudioComponentStatusCode::InternalError => "INTERNAL_ERROR",
-            StudioComponentStatusCode::StudioComponentCreated => "STUDIO_COMPONENT_CREATED",
-            StudioComponentStatusCode::StudioComponentCreateInProgress => "STUDIO_COMPONENT_CREATE_IN_PROGRESS",
-            StudioComponentStatusCode::StudioComponentDeleted => "STUDIO_COMPONENT_DELETED",
-            StudioComponentStatusCode::StudioComponentDeleteInProgress => "STUDIO_COMPONENT_DELETE_IN_PROGRESS",
-            StudioComponentStatusCode::StudioComponentUpdated => "STUDIO_COMPONENT_UPDATED",
-            StudioComponentStatusCode::StudioComponentUpdateInProgress => "STUDIO_COMPONENT_UPDATE_IN_PROGRESS",
-            StudioComponentStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE_DIRECTORY_ALREADY_EXISTS",
-            "ENCRYPTION_KEY_ACCESS_DENIED",
-            "ENCRYPTION_KEY_NOT_FOUND",
-            "INTERNAL_ERROR",
-            "STUDIO_COMPONENT_CREATED",
-            "STUDIO_COMPONENT_CREATE_IN_PROGRESS",
-            "STUDIO_COMPONENT_DELETED",
-            "STUDIO_COMPONENT_DELETE_IN_PROGRESS",
-            "STUDIO_COMPONENT_UPDATED",
-            "STUDIO_COMPONENT_UPDATE_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentStatusCode::ActiveDirectoryAlreadyExists => "ACTIVE_DIRECTORY_ALREADY_EXISTS",
+    StudioComponentStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
+    StudioComponentStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
+    StudioComponentStatusCode::InternalError => "INTERNAL_ERROR",
+    StudioComponentStatusCode::StudioComponentCreated => "STUDIO_COMPONENT_CREATED",
+    StudioComponentStatusCode::StudioComponentCreateInProgress => "STUDIO_COMPONENT_CREATE_IN_PROGRESS",
+    StudioComponentStatusCode::StudioComponentDeleted => "STUDIO_COMPONENT_DELETED",
+    StudioComponentStatusCode::StudioComponentDeleteInProgress => "STUDIO_COMPONENT_DELETE_IN_PROGRESS",
+    StudioComponentStatusCode::StudioComponentUpdated => "STUDIO_COMPONENT_UPDATED",
+    StudioComponentStatusCode::StudioComponentUpdateInProgress => "STUDIO_COMPONENT_UPDATE_IN_PROGRESS",
+    StudioComponentStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE_DIRECTORY_ALREADY_EXISTS", "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "STUDIO_COMPONENT_CREATED", "STUDIO_COMPONENT_CREATE_IN_PROGRESS", "STUDIO_COMPONENT_DELETED", "STUDIO_COMPONENT_DELETE_IN_PROGRESS", "STUDIO_COMPONENT_UPDATED", "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StudioComponentStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StudioComponentStatusCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StudioComponentStatusCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StudioComponentStatusCode::ActiveDirectoryAlreadyExists => write!(f, "ACTIVE_DIRECTORY_ALREADY_EXISTS"),
-            StudioComponentStatusCode::EncryptionKeyAccessDenied => write!(f, "ENCRYPTION_KEY_ACCESS_DENIED"),
-            StudioComponentStatusCode::EncryptionKeyNotFound => write!(f, "ENCRYPTION_KEY_NOT_FOUND"),
-            StudioComponentStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
-            StudioComponentStatusCode::StudioComponentCreated => write!(f, "STUDIO_COMPONENT_CREATED"),
-            StudioComponentStatusCode::StudioComponentCreateInProgress => write!(f, "STUDIO_COMPONENT_CREATE_IN_PROGRESS"),
-            StudioComponentStatusCode::StudioComponentDeleted => write!(f, "STUDIO_COMPONENT_DELETED"),
-            StudioComponentStatusCode::StudioComponentDeleteInProgress => write!(f, "STUDIO_COMPONENT_DELETE_IN_PROGRESS"),
-            StudioComponentStatusCode::StudioComponentUpdated => write!(f, "STUDIO_COMPONENT_UPDATED"),
-            StudioComponentStatusCode::StudioComponentUpdateInProgress => write!(f, "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"),
-            StudioComponentStatusCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StudioComponentStatusCode::ActiveDirectoryAlreadyExists => write!(f, "ACTIVE_DIRECTORY_ALREADY_EXISTS"),
+StudioComponentStatusCode::EncryptionKeyAccessDenied => write!(f, "ENCRYPTION_KEY_ACCESS_DENIED"),
+StudioComponentStatusCode::EncryptionKeyNotFound => write!(f, "ENCRYPTION_KEY_NOT_FOUND"),
+StudioComponentStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+StudioComponentStatusCode::StudioComponentCreated => write!(f, "STUDIO_COMPONENT_CREATED"),
+StudioComponentStatusCode::StudioComponentCreateInProgress => write!(f, "STUDIO_COMPONENT_CREATE_IN_PROGRESS"),
+StudioComponentStatusCode::StudioComponentDeleted => write!(f, "STUDIO_COMPONENT_DELETED"),
+StudioComponentStatusCode::StudioComponentDeleteInProgress => write!(f, "STUDIO_COMPONENT_DELETE_IN_PROGRESS"),
+StudioComponentStatusCode::StudioComponentUpdated => write!(f, "STUDIO_COMPONENT_UPDATED"),
+StudioComponentStatusCode::StudioComponentUpdateInProgress => write!(f, "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"),
+StudioComponentStatusCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

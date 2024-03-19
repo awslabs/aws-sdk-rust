@@ -3,19 +3,19 @@
 /// <p>The conditional formatting for the comparison value of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiComparisonValueConditionalFormatting {
+pub struct KpiComparisonValueConditionalFormatting  {
     /// <p>The conditional formatting of the comparison value's text color.</p>
     pub text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     /// <p>The conditional formatting of the comparison value's icon.</p>
     pub icon: ::std::option::Option<crate::types::ConditionalFormattingIcon>,
 }
-impl KpiComparisonValueConditionalFormatting {
+impl  KpiComparisonValueConditionalFormatting  {
     /// <p>The conditional formatting of the comparison value's text color.</p>
-    pub fn text_color(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
+    pub fn text_color(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingColor> {
         self.text_color.as_ref()
     }
     /// <p>The conditional formatting of the comparison value's icon.</p>
-    pub fn icon(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingIcon> {
+    pub fn icon(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingIcon> {
         self.icon.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl KpiComparisonValueConditionalFormattingBuilder {
     }
     /// <p>The conditional formatting of the comparison value's text color.</p>
     pub fn set_text_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
-        self.text_color = input;
-        self
+        self.text_color = input; self
     }
     /// <p>The conditional formatting of the comparison value's text color.</p>
     pub fn get_text_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
@@ -55,8 +54,7 @@ impl KpiComparisonValueConditionalFormattingBuilder {
     }
     /// <p>The conditional formatting of the comparison value's icon.</p>
     pub fn set_icon(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingIcon>) -> Self {
-        self.icon = input;
-        self
+        self.icon = input; self
     }
     /// <p>The conditional formatting of the comparison value's icon.</p>
     pub fn get_icon(&self) -> &::std::option::Option<crate::types::ConditionalFormattingIcon> {
@@ -65,8 +63,11 @@ impl KpiComparisonValueConditionalFormattingBuilder {
     /// Consumes the builder and constructs a [`KpiComparisonValueConditionalFormatting`](crate::types::KpiComparisonValueConditionalFormatting).
     pub fn build(self) -> crate::types::KpiComparisonValueConditionalFormatting {
         crate::types::KpiComparisonValueConditionalFormatting {
-            text_color: self.text_color,
-            icon: self.icon,
+            text_color: self.text_color
+            ,
+            icon: self.icon
+            ,
         }
     }
 }
+

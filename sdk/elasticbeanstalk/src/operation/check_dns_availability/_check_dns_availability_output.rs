@@ -3,7 +3,7 @@
 /// <p>Indicates if the specified CNAME is available.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckDnsAvailabilityOutput {
+pub struct CheckDnsAvailabilityOutput  {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct CheckDnsAvailabilityOutput {
     pub fully_qualified_cname: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CheckDnsAvailabilityOutput {
+impl  CheckDnsAvailabilityOutput  {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
     /// <li>
@@ -28,15 +28,15 @@ impl CheckDnsAvailabilityOutput {
         self.available
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
-    pub fn fully_qualified_cname(&self) -> ::std::option::Option<&str> {
+    pub fn fully_qualified_cname(&self) -> ::std::option::Option<& str> {
         self.fully_qualified_cname.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CheckDnsAvailabilityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CheckDnsAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput).
     pub fn builder() -> crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder {
@@ -72,8 +72,7 @@ impl CheckDnsAvailabilityOutputBuilder {
     /// <p><code>false</code> : The CNAME is not available.</p></li>
     /// </ul>
     pub fn set_available(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.available = input;
-        self
+        self.available = input; self
     }
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
@@ -92,28 +91,30 @@ impl CheckDnsAvailabilityOutputBuilder {
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     pub fn set_fully_qualified_cname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_cname = input;
-        self
+        self.fully_qualified_cname = input; self
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     pub fn get_fully_qualified_cname(&self) -> &::std::option::Option<::std::string::String> {
         &self.fully_qualified_cname
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput).
     pub fn build(self) -> crate::operation::check_dns_availability::CheckDnsAvailabilityOutput {
         crate::operation::check_dns_availability::CheckDnsAvailabilityOutput {
-            available: self.available,
-            fully_qualified_cname: self.fully_qualified_cname,
+            available: self.available
+            ,
+            fully_qualified_cname: self.fully_qualified_cname
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

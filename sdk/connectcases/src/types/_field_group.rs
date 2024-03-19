@@ -3,21 +3,20 @@
 /// <p>Object for a group of fields and associated properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldGroup {
+pub struct FieldGroup  {
     /// <p>Name of the field group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fields: ::std::vec::Vec<crate::types::FieldItem>,
+    pub fields: ::std::vec::Vec::<crate::types::FieldItem>,
 }
-impl FieldGroup {
+impl  FieldGroup  {
     /// <p>Name of the field group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn fields(&self) -> &[crate::types::FieldItem] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::FieldItem] {
+        use std::ops::Deref; self.fields.deref()
     }
 }
 impl FieldGroup {
@@ -32,7 +31,7 @@ impl FieldGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldItem>>,
 }
 impl FieldGroupBuilder {
     /// <p>Name of the field group.</p>
@@ -42,8 +41,7 @@ impl FieldGroupBuilder {
     }
     /// <p>Name of the field group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the field group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,31 +54,33 @@ impl FieldGroupBuilder {
     /// <p>Represents an ordered list containing field related information.</p>
     pub fn fields(mut self, input: crate::types::FieldItem) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldItem>>) -> Self {
+        self.fields = input; self
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldItem>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldItem>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`FieldGroup`](crate::types::FieldGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::FieldGroupBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldGroup {
-            name: self.name,
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building FieldGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldGroup {
+                name: self.name
+                ,
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building FieldGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendDataSetNotificationInput {
+pub struct SendDataSetNotificationInput  {
     /// <p>Affected scope of this notification such as the underlying resources affected by the notification event.</p>
     pub scope: ::std::option::Option<crate::types::ScopeDetails>,
     /// <p>Idempotency key for the notification, this key allows us to deduplicate notifications that are sent in quick succession erroneously.</p>
@@ -16,29 +16,29 @@ pub struct SendDataSetNotificationInput {
     /// <p>The type of the notification. Describing the kind of event the notification is alerting you to.</p>
     pub r#type: ::std::option::Option<crate::types::NotificationType>,
 }
-impl SendDataSetNotificationInput {
+impl  SendDataSetNotificationInput  {
     /// <p>Affected scope of this notification such as the underlying resources affected by the notification event.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::ScopeDetails> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::ScopeDetails> {
         self.scope.as_ref()
     }
     /// <p>Idempotency key for the notification, this key allows us to deduplicate notifications that are sent in quick succession erroneously.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Free-form text field for providers to add information about their notifications.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>Affected data set of the notification.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>Extra details specific to this notification type.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::NotificationDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::NotificationDetails> {
         self.details.as_ref()
     }
     /// <p>The type of the notification. Describing the kind of event the notification is alerting you to.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::NotificationType> {
         self.r#type.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl SendDataSetNotificationInputBuilder {
     }
     /// <p>Affected scope of this notification such as the underlying resources affected by the notification event.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ScopeDetails>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Affected scope of this notification such as the underlying resources affected by the notification event.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::ScopeDetails> {
@@ -82,8 +81,7 @@ impl SendDataSetNotificationInputBuilder {
     }
     /// <p>Idempotency key for the notification, this key allows us to deduplicate notifications that are sent in quick succession erroneously.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Idempotency key for the notification, this key allows us to deduplicate notifications that are sent in quick succession erroneously.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl SendDataSetNotificationInputBuilder {
     }
     /// <p>Free-form text field for providers to add information about their notifications.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>Free-form text field for providers to add information about their notifications.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl SendDataSetNotificationInputBuilder {
     }
     /// <p>Affected data set of the notification.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>Affected data set of the notification.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl SendDataSetNotificationInputBuilder {
     }
     /// <p>Extra details specific to this notification type.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::NotificationDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Extra details specific to this notification type.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::NotificationDetails> {
@@ -140,27 +135,30 @@ impl SendDataSetNotificationInputBuilder {
     }
     /// <p>The type of the notification. Describing the kind of event the notification is alerting you to.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the notification. Describing the kind of event the notification is alerting you to.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`SendDataSetNotificationInput`](crate::operation::send_data_set_notification::SendDataSetNotificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_data_set_notification::SendDataSetNotificationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_data_set_notification::SendDataSetNotificationInput {
-            scope: self.scope,
-            client_token: self.client_token,
-            comment: self.comment,
-            data_set_id: self.data_set_id,
-            details: self.details,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_data_set_notification::SendDataSetNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_data_set_notification::SendDataSetNotificationInput {
+                scope: self.scope
+                ,
+                client_token: self.client_token
+                ,
+                comment: self.comment
+                ,
+                data_set_id: self.data_set_id
+                ,
+                details: self.details
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

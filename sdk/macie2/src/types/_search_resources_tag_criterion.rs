@@ -3,22 +3,23 @@
 /// <p>Specifies a tag-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchResourcesTagCriterion {
+pub struct SearchResourcesTagCriterion  {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub comparator: ::std::option::Option<crate::types::SearchResourcesComparator>,
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub tag_values: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesTagCriterionPair>>,
+    pub tag_values: ::std::option::Option<::std::vec::Vec::<crate::types::SearchResourcesTagCriterionPair>>,
 }
-impl SearchResourcesTagCriterion {
+impl  SearchResourcesTagCriterion  {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::SearchResourcesComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<& crate::types::SearchResourcesComparator> {
         self.comparator.as_ref()
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
-    pub fn tag_values(&self) -> &[crate::types::SearchResourcesTagCriterionPair] {
-        self.tag_values.as_deref().unwrap_or_default()
+    pub fn tag_values(&self) -> & [crate::types::SearchResourcesTagCriterionPair] {
+        self.tag_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchResourcesTagCriterion {
@@ -33,7 +34,7 @@ impl SearchResourcesTagCriterion {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesTagCriterionBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::SearchResourcesComparator>,
-    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesTagCriterionPair>>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec::<crate::types::SearchResourcesTagCriterionPair>>,
 }
 impl SearchResourcesTagCriterionBuilder {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
@@ -43,8 +44,7 @@ impl SearchResourcesTagCriterionBuilder {
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::SearchResourcesComparator>) -> Self {
-        self.comparator = input;
-        self
+        self.comparator = input; self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub fn get_comparator(&self) -> &::std::option::Option<crate::types::SearchResourcesComparator> {
@@ -57,24 +57,26 @@ impl SearchResourcesTagCriterionBuilder {
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
     pub fn tag_values(mut self, input: crate::types::SearchResourcesTagCriterionPair) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input);
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesTagCriterionPair>>) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchResourcesTagCriterionPair>>) -> Self {
+        self.tag_values = input; self
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesTagCriterionPair>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchResourcesTagCriterionPair>> {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`SearchResourcesTagCriterion`](crate::types::SearchResourcesTagCriterion).
     pub fn build(self) -> crate::types::SearchResourcesTagCriterion {
         crate::types::SearchResourcesTagCriterion {
-            comparator: self.comparator,
-            tag_values: self.tag_values,
+            comparator: self.comparator
+            ,
+            tag_values: self.tag_values
+            ,
         }
     }
 }
+

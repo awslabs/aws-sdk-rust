@@ -3,7 +3,7 @@
 /// <p>Summary of ingestion statistics like whether data exists, number of missing values, number of invalid values and so on related to the particular sensor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SensorStatisticsSummary {
+pub struct SensorStatisticsSummary  {
     /// <p>Name of the component to which the particular sensor belongs for which the statistics belong to.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the sensor that the statistics belong to.</p>
@@ -31,13 +31,13 @@ pub struct SensorStatisticsSummary {
     /// <p>Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to.</p>
     pub data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SensorStatisticsSummary {
+impl  SensorStatisticsSummary  {
     /// <p>Name of the component to which the particular sensor belongs for which the statistics belong to.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>Name of the sensor that the statistics belong to.</p>
-    pub fn sensor_name(&self) -> ::std::option::Option<&str> {
+    pub fn sensor_name(&self) -> ::std::option::Option<& str> {
         self.sensor_name.as_deref()
     }
     /// <p>Parameter that indicates whether data exists for the sensor that the statistics belong to.</p>
@@ -45,43 +45,43 @@ impl SensorStatisticsSummary {
         self.data_exists
     }
     /// <p>Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to.</p>
-    pub fn missing_values(&self) -> ::std::option::Option<&crate::types::CountPercent> {
+    pub fn missing_values(&self) -> ::std::option::Option<& crate::types::CountPercent> {
         self.missing_values.as_ref()
     }
     /// <p>Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to.</p>
-    pub fn invalid_values(&self) -> ::std::option::Option<&crate::types::CountPercent> {
+    pub fn invalid_values(&self) -> ::std::option::Option<& crate::types::CountPercent> {
         self.invalid_values.as_ref()
     }
     /// <p>Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to.</p>
-    pub fn invalid_date_entries(&self) -> ::std::option::Option<&crate::types::CountPercent> {
+    pub fn invalid_date_entries(&self) -> ::std::option::Option<& crate::types::CountPercent> {
         self.invalid_date_entries.as_ref()
     }
     /// <p>Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to.</p>
-    pub fn duplicate_timestamps(&self) -> ::std::option::Option<&crate::types::CountPercent> {
+    pub fn duplicate_timestamps(&self) -> ::std::option::Option<& crate::types::CountPercent> {
         self.duplicate_timestamps.as_ref()
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor is categorical.</p>
-    pub fn categorical_values(&self) -> ::std::option::Option<&crate::types::CategoricalValues> {
+    pub fn categorical_values(&self) -> ::std::option::Option<& crate::types::CategoricalValues> {
         self.categorical_values.as_ref()
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode.</p>
-    pub fn multiple_operating_modes(&self) -> ::std::option::Option<&crate::types::MultipleOperatingModes> {
+    pub fn multiple_operating_modes(&self) -> ::std::option::Option<& crate::types::MultipleOperatingModes> {
         self.multiple_operating_modes.as_ref()
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps.</p>
-    pub fn large_timestamp_gaps(&self) -> ::std::option::Option<&crate::types::LargeTimestampGaps> {
+    pub fn large_timestamp_gaps(&self) -> ::std::option::Option<& crate::types::LargeTimestampGaps> {
         self.large_timestamp_gaps.as_ref()
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic.</p>
-    pub fn monotonic_values(&self) -> ::std::option::Option<&crate::types::MonotonicValues> {
+    pub fn monotonic_values(&self) -> ::std::option::Option<& crate::types::MonotonicValues> {
         self.monotonic_values.as_ref()
     }
     /// <p>Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to.</p>
-    pub fn data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p>Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to.</p>
-    pub fn data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Name of the component to which the particular sensor belongs for which the statistics belong to.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>Name of the component to which the particular sensor belongs for which the statistics belong to.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Name of the sensor that the statistics belong to.</p>
     pub fn set_sensor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sensor_name = input;
-        self
+        self.sensor_name = input; self
     }
     /// <p>Name of the sensor that the statistics belong to.</p>
     pub fn get_sensor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that indicates whether data exists for the sensor that the statistics belong to.</p>
     pub fn set_data_exists(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_exists = input;
-        self
+        self.data_exists = input; self
     }
     /// <p>Parameter that indicates whether data exists for the sensor that the statistics belong to.</p>
     pub fn get_data_exists(&self) -> &::std::option::Option<bool> {
@@ -160,8 +157,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to.</p>
     pub fn set_missing_values(mut self, input: ::std::option::Option<crate::types::CountPercent>) -> Self {
-        self.missing_values = input;
-        self
+        self.missing_values = input; self
     }
     /// <p>Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to.</p>
     pub fn get_missing_values(&self) -> &::std::option::Option<crate::types::CountPercent> {
@@ -174,8 +170,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to.</p>
     pub fn set_invalid_values(mut self, input: ::std::option::Option<crate::types::CountPercent>) -> Self {
-        self.invalid_values = input;
-        self
+        self.invalid_values = input; self
     }
     /// <p>Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to.</p>
     pub fn get_invalid_values(&self) -> &::std::option::Option<crate::types::CountPercent> {
@@ -188,8 +183,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to.</p>
     pub fn set_invalid_date_entries(mut self, input: ::std::option::Option<crate::types::CountPercent>) -> Self {
-        self.invalid_date_entries = input;
-        self
+        self.invalid_date_entries = input; self
     }
     /// <p>Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to.</p>
     pub fn get_invalid_date_entries(&self) -> &::std::option::Option<crate::types::CountPercent> {
@@ -202,8 +196,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to.</p>
     pub fn set_duplicate_timestamps(mut self, input: ::std::option::Option<crate::types::CountPercent>) -> Self {
-        self.duplicate_timestamps = input;
-        self
+        self.duplicate_timestamps = input; self
     }
     /// <p>Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to.</p>
     pub fn get_duplicate_timestamps(&self) -> &::std::option::Option<crate::types::CountPercent> {
@@ -216,8 +209,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor is categorical.</p>
     pub fn set_categorical_values(mut self, input: ::std::option::Option<crate::types::CategoricalValues>) -> Self {
-        self.categorical_values = input;
-        self
+        self.categorical_values = input; self
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor is categorical.</p>
     pub fn get_categorical_values(&self) -> &::std::option::Option<crate::types::CategoricalValues> {
@@ -230,8 +222,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode.</p>
     pub fn set_multiple_operating_modes(mut self, input: ::std::option::Option<crate::types::MultipleOperatingModes>) -> Self {
-        self.multiple_operating_modes = input;
-        self
+        self.multiple_operating_modes = input; self
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode.</p>
     pub fn get_multiple_operating_modes(&self) -> &::std::option::Option<crate::types::MultipleOperatingModes> {
@@ -244,8 +235,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps.</p>
     pub fn set_large_timestamp_gaps(mut self, input: ::std::option::Option<crate::types::LargeTimestampGaps>) -> Self {
-        self.large_timestamp_gaps = input;
-        self
+        self.large_timestamp_gaps = input; self
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps.</p>
     pub fn get_large_timestamp_gaps(&self) -> &::std::option::Option<crate::types::LargeTimestampGaps> {
@@ -258,8 +248,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic.</p>
     pub fn set_monotonic_values(mut self, input: ::std::option::Option<crate::types::MonotonicValues>) -> Self {
-        self.monotonic_values = input;
-        self
+        self.monotonic_values = input; self
     }
     /// <p>Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic.</p>
     pub fn get_monotonic_values(&self) -> &::std::option::Option<crate::types::MonotonicValues> {
@@ -272,8 +261,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to.</p>
     pub fn set_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_start_time = input;
-        self
+        self.data_start_time = input; self
     }
     /// <p>Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to.</p>
     pub fn get_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -286,8 +274,7 @@ impl SensorStatisticsSummaryBuilder {
     }
     /// <p>Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to.</p>
     pub fn set_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_end_time = input;
-        self
+        self.data_end_time = input; self
     }
     /// <p>Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to.</p>
     pub fn get_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -296,19 +283,34 @@ impl SensorStatisticsSummaryBuilder {
     /// Consumes the builder and constructs a [`SensorStatisticsSummary`](crate::types::SensorStatisticsSummary).
     pub fn build(self) -> crate::types::SensorStatisticsSummary {
         crate::types::SensorStatisticsSummary {
-            component_name: self.component_name,
-            sensor_name: self.sensor_name,
-            data_exists: self.data_exists.unwrap_or_default(),
-            missing_values: self.missing_values,
-            invalid_values: self.invalid_values,
-            invalid_date_entries: self.invalid_date_entries,
-            duplicate_timestamps: self.duplicate_timestamps,
-            categorical_values: self.categorical_values,
-            multiple_operating_modes: self.multiple_operating_modes,
-            large_timestamp_gaps: self.large_timestamp_gaps,
-            monotonic_values: self.monotonic_values,
-            data_start_time: self.data_start_time,
-            data_end_time: self.data_end_time,
+            component_name: self.component_name
+            ,
+            sensor_name: self.sensor_name
+            ,
+            data_exists: self.data_exists
+                .unwrap_or_default()
+            ,
+            missing_values: self.missing_values
+            ,
+            invalid_values: self.invalid_values
+            ,
+            invalid_date_entries: self.invalid_date_entries
+            ,
+            duplicate_timestamps: self.duplicate_timestamps
+            ,
+            categorical_values: self.categorical_values
+            ,
+            multiple_operating_modes: self.multiple_operating_modes
+            ,
+            large_timestamp_gaps: self.large_timestamp_gaps
+            ,
+            monotonic_values: self.monotonic_values
+            ,
+            data_start_time: self.data_start_time
+            ,
+            data_end_time: self.data_end_time
+            ,
         }
     }
 }
+

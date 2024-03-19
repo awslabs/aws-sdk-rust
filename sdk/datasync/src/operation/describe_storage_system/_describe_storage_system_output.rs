@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStorageSystemOutput {
+pub struct DescribeStorageSystemOutput  {
     /// <p>The ARN of the on-premises storage system that the discovery job looked at.</p>
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The server name and network port required to connect with your on-premises storage system's management interface.</p>
@@ -12,7 +12,7 @@ pub struct DescribeStorageSystemOutput {
     /// </note>
     pub system_type: ::std::option::Option<crate::types::DiscoverySystemType>,
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the connectivity error that the DataSync agent is encountering with your on-premises storage system.</p>
@@ -27,57 +27,58 @@ pub struct DescribeStorageSystemOutput {
     pub secrets_manager_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeStorageSystemOutput {
+impl  DescribeStorageSystemOutput  {
     /// <p>The ARN of the on-premises storage system that the discovery job looked at.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_system_arn(&self) -> ::std::option::Option<& str> {
         self.storage_system_arn.as_deref()
     }
     /// <p>The server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn server_configuration(&self) -> ::std::option::Option<&crate::types::DiscoveryServerConfiguration> {
+    pub fn server_configuration(&self) -> ::std::option::Option<& crate::types::DiscoveryServerConfiguration> {
         self.server_configuration.as_ref()
     }
     /// <p>The type of on-premises storage system.</p><note>
     /// <p>DataSync Discovery currently only supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
-    pub fn system_type(&self) -> ::std::option::Option<&crate::types::DiscoverySystemType> {
+    pub fn system_type(&self) -> ::std::option::Option<& crate::types::DiscoverySystemType> {
         self.system_type.as_ref()
     }
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        self.agent_arns.as_deref().unwrap_or_default()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        self.agent_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes the connectivity error that the DataSync agent is encountering with your on-premises storage system.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Indicates whether your DataSync agent can connect to your on-premises storage system.</p>
-    pub fn connectivity_status(&self) -> ::std::option::Option<&crate::types::StorageSystemConnectivityStatus> {
+    pub fn connectivity_status(&self) -> ::std::option::Option<& crate::types::StorageSystemConnectivityStatus> {
         self.connectivity_status.as_ref()
     }
     /// <p>The ARN of the Amazon CloudWatch log group that's used to monitor and log discovery job events.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The time when you added the on-premises storage system to DataSync Discovery.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the secret that stores your on-premises storage system's credentials. DataSync Discovery stores these credentials in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html#discovery-add-storage">Secrets Manager</a>.</p>
-    pub fn secrets_manager_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStorageSystemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStorageSystemOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemOutput`](crate::operation::describe_storage_system::DescribeStorageSystemOutput).
     pub fn builder() -> crate::operation::describe_storage_system::builders::DescribeStorageSystemOutputBuilder {
@@ -92,7 +93,7 @@ pub struct DescribeStorageSystemOutputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
     pub(crate) system_type: ::std::option::Option<crate::types::DiscoverySystemType>,
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) connectivity_status: ::std::option::Option<crate::types::StorageSystemConnectivityStatus>,
@@ -109,8 +110,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>The ARN of the on-premises storage system that the discovery job looked at.</p>
     pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_system_arn = input;
-        self
+        self.storage_system_arn = input; self
     }
     /// <p>The ARN of the on-premises storage system that the discovery job looked at.</p>
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>The server name and network port required to connect with your on-premises storage system's management interface.</p>
     pub fn set_server_configuration(mut self, input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>) -> Self {
-        self.server_configuration = input;
-        self
+        self.server_configuration = input; self
     }
     /// <p>The server name and network port required to connect with your on-premises storage system's management interface.</p>
     pub fn get_server_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
@@ -141,8 +140,7 @@ impl DescribeStorageSystemOutputBuilder {
     /// <p>DataSync Discovery currently only supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
     pub fn set_system_type(mut self, input: ::std::option::Option<crate::types::DiscoverySystemType>) -> Self {
-        self.system_type = input;
-        self
+        self.system_type = input; self
     }
     /// <p>The type of on-premises storage system.</p><note>
     /// <p>DataSync Discovery currently only supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
@@ -157,17 +155,16 @@ impl DescribeStorageSystemOutputBuilder {
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
@@ -177,8 +174,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +187,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>Describes the connectivity error that the DataSync agent is encountering with your on-premises storage system.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Describes the connectivity error that the DataSync agent is encountering with your on-premises storage system.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +200,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>Indicates whether your DataSync agent can connect to your on-premises storage system.</p>
     pub fn set_connectivity_status(mut self, input: ::std::option::Option<crate::types::StorageSystemConnectivityStatus>) -> Self {
-        self.connectivity_status = input;
-        self
+        self.connectivity_status = input; self
     }
     /// <p>Indicates whether your DataSync agent can connect to your on-premises storage system.</p>
     pub fn get_connectivity_status(&self) -> &::std::option::Option<crate::types::StorageSystemConnectivityStatus> {
@@ -219,8 +213,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>The ARN of the Amazon CloudWatch log group that's used to monitor and log discovery job events.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_log_group_arn = input;
-        self
+        self.cloud_watch_log_group_arn = input; self
     }
     /// <p>The ARN of the Amazon CloudWatch log group that's used to monitor and log discovery job events.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +226,7 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>The time when you added the on-premises storage system to DataSync Discovery.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when you added the on-premises storage system to DataSync Discovery.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -247,36 +239,46 @@ impl DescribeStorageSystemOutputBuilder {
     }
     /// <p>The ARN of the secret that stores your on-premises storage system's credentials. DataSync Discovery stores these credentials in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html#discovery-add-storage">Secrets Manager</a>.</p>
     pub fn set_secrets_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_arn = input;
-        self
+        self.secrets_manager_arn = input; self
     }
     /// <p>The ARN of the secret that stores your on-premises storage system's credentials. DataSync Discovery stores these credentials in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html#discovery-add-storage">Secrets Manager</a>.</p>
     pub fn get_secrets_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStorageSystemOutput`](crate::operation::describe_storage_system::DescribeStorageSystemOutput).
     pub fn build(self) -> crate::operation::describe_storage_system::DescribeStorageSystemOutput {
         crate::operation::describe_storage_system::DescribeStorageSystemOutput {
-            storage_system_arn: self.storage_system_arn,
-            server_configuration: self.server_configuration,
-            system_type: self.system_type,
-            agent_arns: self.agent_arns,
-            name: self.name,
-            error_message: self.error_message,
-            connectivity_status: self.connectivity_status,
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-            creation_time: self.creation_time,
-            secrets_manager_arn: self.secrets_manager_arn,
+            storage_system_arn: self.storage_system_arn
+            ,
+            server_configuration: self.server_configuration
+            ,
+            system_type: self.system_type
+            ,
+            agent_arns: self.agent_arns
+            ,
+            name: self.name
+            ,
+            error_message: self.error_message
+            ,
+            connectivity_status: self.connectivity_status
+            ,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            secrets_manager_arn: self.secrets_manager_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Contains the results of the <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotOutput {
+pub struct CreateSnapshotOutput  {
     /// <p>The identifier of the snapshot that was created.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateSnapshotOutput {
+impl  CreateSnapshotOutput  {
     /// <p>The identifier of the snapshot that was created.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
     pub fn builder() -> crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateSnapshotOutputBuilder {
     }
     /// <p>The identifier of the snapshot that was created.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The identifier of the snapshot that was created.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
     pub fn build(self) -> crate::operation::create_snapshot::CreateSnapshotOutput {
         crate::operation::create_snapshot::CreateSnapshotOutput {
-            snapshot_id: self.snapshot_id,
+            snapshot_id: self.snapshot_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

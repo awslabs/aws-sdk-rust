@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOriginEndpoints`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_id(impl Into<String>)`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::set_channel_id):<br>required: **false**<br>When specified, the request will return only OriginEndpoints associated with the given Channel ID.<br>
     ///   - [`max_results(i32)`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::set_max_results):<br>required: **false**<br>The upper bound on the number of records to return.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
-    /// - On success, responds with [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput) with field(s):
+                            /// - On success, responds with [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`origin_endpoints(Option<Vec::<OriginEndpoint>>)`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput::origin_endpoints): A list of OriginEndpoint records.
-    /// - On failure, responds with [`SdkError<ListOriginEndpointsError>`](crate::operation::list_origin_endpoints::ListOriginEndpointsError)
+                            /// - On failure, responds with [`SdkError<ListOriginEndpointsError>`](crate::operation::list_origin_endpoints::ListOriginEndpointsError)
     pub fn list_origin_endpoints(&self) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

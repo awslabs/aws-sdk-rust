@@ -3,23 +3,23 @@
 /// <p>Contains metadata about a sources cited for the generated response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrievedReference {
+pub struct RetrievedReference  {
     /// <p>Contains the cited text from the data source.</p>
     pub content: ::std::option::Option<crate::types::RetrievalResultContent>,
     /// <p>Contains information about the location of the data source.</p>
     pub location: ::std::option::Option<crate::types::RetrievalResultLocation>,
 }
-impl RetrievedReference {
+impl  RetrievedReference  {
     /// <p>Contains the cited text from the data source.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::RetrievalResultContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::RetrievalResultContent> {
         self.content.as_ref()
     }
     /// <p>Contains information about the location of the data source.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::RetrievalResultLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::RetrievalResultLocation> {
         self.location.as_ref()
     }
 }
-impl ::std::fmt::Debug for RetrievedReference {
+impl  ::std::fmt::Debug for RetrievedReference  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrievedReference");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl RetrievedReferenceBuilder {
     }
     /// <p>Contains the cited text from the data source.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::RetrievalResultContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Contains the cited text from the data source.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RetrievalResultContent> {
@@ -63,8 +62,7 @@ impl RetrievedReferenceBuilder {
     }
     /// <p>Contains information about the location of the data source.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Contains information about the location of the data source.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::RetrievalResultLocation> {
@@ -73,8 +71,10 @@ impl RetrievedReferenceBuilder {
     /// Consumes the builder and constructs a [`RetrievedReference`](crate::types::RetrievedReference).
     pub fn build(self) -> crate::types::RetrievedReference {
         crate::types::RetrievedReference {
-            content: self.content,
-            location: self.location,
+            content: self.content
+            ,
+            location: self.location
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for RetrievedReferenceBuilder {
         formatter.finish()
     }
 }
+

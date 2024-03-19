@@ -3,15 +3,14 @@
 /// <p>The name of an HTTP header that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyRemoveHeader {
+pub struct ResponseHeadersPolicyRemoveHeader  {
     /// <p>The HTTP header name.</p>
     pub header: ::std::string::String,
 }
-impl ResponseHeadersPolicyRemoveHeader {
+impl  ResponseHeadersPolicyRemoveHeader  {
     /// <p>The HTTP header name.</p>
-    pub fn header(&self) -> &str {
-        use std::ops::Deref;
-        self.header.deref()
+    pub fn header(&self) -> & str {
+        use std::ops::Deref; self.header.deref()
     }
 }
 impl ResponseHeadersPolicyRemoveHeader {
@@ -36,8 +35,7 @@ impl ResponseHeadersPolicyRemoveHeaderBuilder {
     }
     /// <p>The HTTP header name.</p>
     pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>The HTTP header name.</p>
     pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ResponseHeadersPolicyRemoveHeaderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header`](crate::types::builders::ResponseHeadersPolicyRemoveHeaderBuilder::header)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyRemoveHeader, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyRemoveHeader {
-            header: self.header.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header",
-                    "header was not specified but it is required when building ResponseHeadersPolicyRemoveHeader",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyRemoveHeader {
+                header: self.header
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header", "header was not specified but it is required when building ResponseHeadersPolicyRemoveHeader")
+                    )?
+                ,
+            }
+        )
     }
 }
+

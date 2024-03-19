@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDirectoryConfigOutput {
+pub struct DeleteDirectoryConfigOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteDirectoryConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDirectoryConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectoryConfigOutput`](crate::operation::delete_directory_config::DeleteDirectoryConfigOutput).
     pub fn builder() -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteDirectoryConfigOutputBuilder {
 }
 impl DeleteDirectoryConfigOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDirectoryConfigOutput`](crate::operation::delete_directory_config::DeleteDirectoryConfigOutput).
     pub fn build(self) -> crate::operation::delete_directory_config::DeleteDirectoryConfigOutput {
         crate::operation::delete_directory_config::DeleteDirectoryConfigOutput {
@@ -40,3 +40,4 @@ impl DeleteDirectoryConfigOutputBuilder {
         }
     }
 }
+

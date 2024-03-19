@@ -3,25 +3,23 @@
 /// <p>The database credentials to connect to a database on an RDS DB instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RdsDatabaseCredentials {
+pub struct RdsDatabaseCredentials  {
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub username: ::std::string::String,
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub password: ::std::string::String,
 }
-impl RdsDatabaseCredentials {
+impl  RdsDatabaseCredentials  {
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
-    pub fn password(&self) -> &str {
-        use std::ops::Deref;
-        self.password.deref()
+    pub fn password(&self) -> & str {
+        use std::ops::Deref; self.password.deref()
     }
 }
-impl ::std::fmt::Debug for RdsDatabaseCredentials {
+impl  ::std::fmt::Debug for RdsDatabaseCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RdsDatabaseCredentials");
         formatter.field("username", &self.username);
@@ -52,8 +50,7 @@ impl RdsDatabaseCredentialsBuilder {
     }
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl RdsDatabaseCredentialsBuilder {
     }
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl RdsDatabaseCredentialsBuilder {
     /// - [`username`](crate::types::builders::RdsDatabaseCredentialsBuilder::username)
     /// - [`password`](crate::types::builders::RdsDatabaseCredentialsBuilder::password)
     pub fn build(self) -> ::std::result::Result<crate::types::RdsDatabaseCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RdsDatabaseCredentials {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building RdsDatabaseCredentials",
-                )
-            })?,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building RdsDatabaseCredentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RdsDatabaseCredentials {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building RdsDatabaseCredentials")
+                    )?
+                ,
+                password: self.password
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("password", "password was not specified but it is required when building RdsDatabaseCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RdsDatabaseCredentialsBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for RdsDatabaseCredentialsBuilder {
         formatter.finish()
     }
 }
+

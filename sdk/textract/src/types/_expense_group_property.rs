@@ -3,21 +3,22 @@
 /// <p>Shows the group that a certain key belongs to. This helps differentiate between names and addresses for different organizations, that can be hard to determine via JSON response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpenseGroupProperty {
+pub struct ExpenseGroupProperty  {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl ExpenseGroupProperty {
+impl  ExpenseGroupProperty  {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[::std::string::String] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [::std::string::String] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl ExpenseGroupProperty {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpenseGroupPropertyBuilder {
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl ExpenseGroupPropertyBuilder {
@@ -43,17 +44,16 @@ impl ExpenseGroupPropertyBuilder {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.types = input; self
     }
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.types
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
@@ -63,8 +63,7 @@ impl ExpenseGroupPropertyBuilder {
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl ExpenseGroupPropertyBuilder {
     /// Consumes the builder and constructs a [`ExpenseGroupProperty`](crate::types::ExpenseGroupProperty).
     pub fn build(self) -> crate::types::ExpenseGroupProperty {
         crate::types::ExpenseGroupProperty {
-            types: self.types,
-            id: self.id,
+            types: self.types
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

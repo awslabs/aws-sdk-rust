@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMaintenanceWindowSchedule`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`window_id(impl Into<String>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::set_window_id):<br>required: **false**<br><p>The ID of the maintenance window to retrieve information about.</p><br>
     ///   - [`targets(Target)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::targets) / [`set_targets(Option<Vec::<Target>>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::set_targets):<br>required: **false**<br><p>The managed node ID or key-value pair to retrieve information about.</p><br>
     ///   - [`resource_type(MaintenanceWindowResourceType)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::resource_type) / [`set_resource_type(Option<MaintenanceWindowResourceType>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::set_resource_type):<br>required: **false**<br><p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p><br>
     ///   - [`filters(PatchOrchestratorFilter)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::filters) / [`set_filters(Option<Vec::<PatchOrchestratorFilter>>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::set_filters):<br>required: **false**<br><p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeMaintenanceWindowScheduleOutput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput) with field(s):
+                            /// - On success, responds with [`DescribeMaintenanceWindowScheduleOutput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput) with field(s):
     ///   - [`scheduled_window_executions(Option<Vec::<ScheduledWindowExecution>>)`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput::scheduled_window_executions): <p>Information about maintenance window executions scheduled for the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowScheduleError>`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError)
-    pub fn describe_maintenance_window_schedule(
-        &self,
-    ) -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder {
-        crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowScheduleError>`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError)
+    pub fn describe_maintenance_window_schedule(&self) -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder {
+                                crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleFluentBuilder::new(self.handle.clone())
+                            }
 }
+

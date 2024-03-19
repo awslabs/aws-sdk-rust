@@ -3,20 +3,19 @@
 /// <p>Creates CIS targets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCisTargets {
+pub struct CreateCisTargets  {
     /// <p>The CIS target account ids.</p>
-    pub account_ids: ::std::vec::Vec<::std::string::String>,
+    pub account_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>The CIS target resource tags.</p>
-    pub target_resource_tags: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    pub target_resource_tags: ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateCisTargets {
+impl  CreateCisTargets  {
     /// <p>The CIS target account ids.</p>
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.account_ids.deref()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.account_ids.deref()
     }
     /// <p>The CIS target resource tags.</p>
-    pub fn target_resource_tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>> {
+    pub fn target_resource_tags(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>> {
         &self.target_resource_tags
     }
 }
@@ -31,9 +30,8 @@ impl CreateCisTargets {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCisTargetsBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_resource_tags:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) target_resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl CreateCisTargetsBuilder {
     /// Appends an item to `account_ids`.
@@ -43,17 +41,16 @@ impl CreateCisTargetsBuilder {
     /// <p>The CIS target account ids.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CIS target account ids.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The CIS target account ids.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Adds a key-value pair to `target_resource_tags`.
@@ -61,24 +58,18 @@ impl CreateCisTargetsBuilder {
     /// To override the contents of this collection use [`set_target_resource_tags`](Self::set_target_resource_tags).
     ///
     /// <p>The CIS target resource tags.</p>
-    pub fn target_resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn target_resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.target_resource_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.target_resource_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.target_resource_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The CIS target resource tags.</p>
-    pub fn set_target_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.target_resource_tags = input;
-        self
+    pub fn set_target_resource_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.target_resource_tags = input; self
     }
     /// <p>The CIS target resource tags.</p>
-    pub fn get_target_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_target_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.target_resource_tags
     }
     /// Consumes the builder and constructs a [`CreateCisTargets`](crate::types::CreateCisTargets).
@@ -86,19 +77,20 @@ impl CreateCisTargetsBuilder {
     /// - [`account_ids`](crate::types::builders::CreateCisTargetsBuilder::account_ids)
     /// - [`target_resource_tags`](crate::types::builders::CreateCisTargetsBuilder::target_resource_tags)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateCisTargets, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateCisTargets {
-            account_ids: self.account_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_ids",
-                    "account_ids was not specified but it is required when building CreateCisTargets",
-                )
-            })?,
-            target_resource_tags: self.target_resource_tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_resource_tags",
-                    "target_resource_tags was not specified but it is required when building CreateCisTargets",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateCisTargets {
+                account_ids: self.account_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_ids", "account_ids was not specified but it is required when building CreateCisTargets")
+                    )?
+                ,
+                target_resource_tags: self.target_resource_tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_resource_tags", "target_resource_tags was not specified but it is required when building CreateCisTargets")
+                    )?
+                ,
+            }
+        )
     }
 }
+

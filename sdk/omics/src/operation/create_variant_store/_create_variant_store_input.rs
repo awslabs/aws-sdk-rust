@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVariantStoreInput {
+pub struct CreateVariantStoreInput  {
     /// <p>The genome reference for the store's variants.</p>
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>A name for the store.</p>
@@ -10,29 +10,29 @@ pub struct CreateVariantStoreInput {
     /// <p>A description for the store.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the store.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
 }
-impl CreateVariantStoreInput {
+impl  CreateVariantStoreInput  {
     /// <p>The genome reference for the store's variants.</p>
-    pub fn reference(&self) -> ::std::option::Option<&crate::types::ReferenceItem> {
+    pub fn reference(&self) -> ::std::option::Option<& crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>A name for the store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags for the store.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
-    pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
+    pub fn sse_config(&self) -> ::std::option::Option<& crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
 }
@@ -50,7 +50,7 @@ pub struct CreateVariantStoreInputBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
 }
 impl CreateVariantStoreInputBuilder {
@@ -62,8 +62,7 @@ impl CreateVariantStoreInputBuilder {
     }
     /// <p>The genome reference for the store's variants.</p>
     pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
-        self.reference = input;
-        self
+        self.reference = input; self
     }
     /// <p>The genome reference for the store's variants.</p>
     pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
@@ -76,8 +75,7 @@ impl CreateVariantStoreInputBuilder {
     }
     /// <p>A name for the store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CreateVariantStoreInputBuilder {
     }
     /// <p>A description for the store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the store.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,17 +101,16 @@ impl CreateVariantStoreInputBuilder {
     /// <p>Tags for the store.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the store.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the store.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
@@ -124,24 +120,28 @@ impl CreateVariantStoreInputBuilder {
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
-        self.sse_config = input;
-        self
+        self.sse_config = input; self
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
         &self.sse_config
     }
     /// Consumes the builder and constructs a [`CreateVariantStoreInput`](crate::operation::create_variant_store::CreateVariantStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_variant_store::CreateVariantStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_variant_store::CreateVariantStoreInput {
-            reference: self.reference,
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
-            sse_config: self.sse_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_variant_store::CreateVariantStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_variant_store::CreateVariantStoreInput {
+                reference: self.reference
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                sse_config: self.sse_config
+                ,
+            }
+        )
     }
 }
+

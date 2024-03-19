@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIngestionJobInput {
+pub struct GetIngestionJobInput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// Identifier for a resource.
@@ -10,17 +10,17 @@ pub struct GetIngestionJobInput {
     /// Identifier for a resource.
     pub ingestion_job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIngestionJobInput {
+impl  GetIngestionJobInput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// Identifier for a resource.
-    pub fn ingestion_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn ingestion_job_id(&self) -> ::std::option::Option<& str> {
         self.ingestion_job_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetIngestionJobInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetIngestionJobInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetIngestionJobInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_job_id = input;
-        self
+        self.ingestion_job_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingestion_job_id
     }
     /// Consumes the builder and constructs a [`GetIngestionJobInput`](crate::operation::get_ingestion_job::GetIngestionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_ingestion_job::GetIngestionJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ingestion_job::GetIngestionJobInput {
-            knowledge_base_id: self.knowledge_base_id,
-            data_source_id: self.data_source_id,
-            ingestion_job_id: self.ingestion_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ingestion_job::GetIngestionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ingestion_job::GetIngestionJobInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                ingestion_job_id: self.ingestion_job_id
+                ,
+            }
+        )
     }
 }
+

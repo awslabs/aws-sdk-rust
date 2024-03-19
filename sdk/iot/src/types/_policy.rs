@@ -3,19 +3,19 @@
 /// <p>Describes an IoT policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Policy {
+pub struct Policy  {
     /// <p>The policy name.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy ARN.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl Policy {
+impl  Policy  {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PolicyBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The policy name.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PolicyBuilder {
     }
     /// <p>The policy ARN.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The policy ARN.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PolicyBuilder {
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {
         crate::types::Policy {
-            policy_name: self.policy_name,
-            policy_arn: self.policy_arn,
+            policy_name: self.policy_name
+            ,
+            policy_arn: self.policy_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ArchiveApplicationOutput {
+pub struct ArchiveApplicationOutput  {
     /// <p>Application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Application ARN.</p>
@@ -20,26 +20,26 @@ pub struct ArchiveApplicationOutput {
     /// <p>Application last modified dateTime.</p>
     pub last_modified_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Application tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Application wave ID.</p>
     pub wave_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ArchiveApplicationOutput {
+impl  ArchiveApplicationOutput  {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Application ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Application archival status.</p>
@@ -47,27 +47,27 @@ impl ArchiveApplicationOutput {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(&self) -> ::std::option::Option<&crate::types::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> ::std::option::Option<& crate::types::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> ::std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for ArchiveApplicationOutput {
+impl  ::std::fmt::Debug for ArchiveApplicationOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ArchiveApplicationOutput");
         formatter.field("application_id", &self.application_id);
@@ -85,10 +85,10 @@ impl ::std::fmt::Debug for ArchiveApplicationOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ArchiveApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ArchiveApplicationOutput {
     /// Creates a new builder-style object to manufacture [`ArchiveApplicationOutput`](crate::operation::archive_application::ArchiveApplicationOutput).
     pub fn builder() -> crate::operation::archive_application::builders::ArchiveApplicationOutputBuilder {
@@ -108,7 +108,7 @@ pub struct ArchiveApplicationOutputBuilder {
     pub(crate) application_aggregated_status: ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -120,8 +120,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Application ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Application name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +159,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Application description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +172,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application archival status.</p>
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
     }
     /// <p>Application archival status.</p>
     pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
@@ -190,8 +185,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application aggregated status.</p>
     pub fn set_application_aggregated_status(mut self, input: ::std::option::Option<crate::types::ApplicationAggregatedStatus>) -> Self {
-        self.application_aggregated_status = input;
-        self
+        self.application_aggregated_status = input; self
     }
     /// <p>Application aggregated status.</p>
     pub fn get_application_aggregated_status(&self) -> &::std::option::Option<crate::types::ApplicationAggregatedStatus> {
@@ -204,8 +198,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application creation dateTime.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>Application creation dateTime.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +211,7 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application last modified dateTime.</p>
     pub fn set_last_modified_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date_time = input;
-        self
+        self.last_modified_date_time = input; self
     }
     /// <p>Application last modified dateTime.</p>
     pub fn get_last_modified_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,17 +224,16 @@ impl ArchiveApplicationOutputBuilder {
     /// <p>Application tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Application tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Application tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Application wave ID.</p>
@@ -252,35 +243,44 @@ impl ArchiveApplicationOutputBuilder {
     }
     /// <p>Application wave ID.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// <p>Application wave ID.</p>
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wave_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ArchiveApplicationOutput`](crate::operation::archive_application::ArchiveApplicationOutput).
     pub fn build(self) -> crate::operation::archive_application::ArchiveApplicationOutput {
         crate::operation::archive_application::ArchiveApplicationOutput {
-            application_id: self.application_id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            is_archived: self.is_archived,
-            application_aggregated_status: self.application_aggregated_status,
-            creation_date_time: self.creation_date_time,
-            last_modified_date_time: self.last_modified_date_time,
-            tags: self.tags,
-            wave_id: self.wave_id,
+            application_id: self.application_id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            is_archived: self.is_archived
+            ,
+            application_aggregated_status: self.application_aggregated_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_modified_date_time: self.last_modified_date_time
+            ,
+            tags: self.tags
+            ,
+            wave_id: self.wave_id
+            ,
             _request_id: self._request_id,
         }
     }
@@ -302,3 +302,4 @@ impl ::std::fmt::Debug for ArchiveApplicationOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DistributeDatasetEntriesInput {
+pub struct DistributeDatasetEntriesInput  {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
-    pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
+    pub datasets: ::std::option::Option<::std::vec::Vec::<crate::types::DistributeDataset>>,
 }
-impl DistributeDatasetEntriesInput {
+impl  DistributeDatasetEntriesInput  {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
-    pub fn datasets(&self) -> &[crate::types::DistributeDataset] {
-        self.datasets.as_deref().unwrap_or_default()
+    pub fn datasets(&self) -> & [crate::types::DistributeDataset] {
+        self.datasets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DistributeDatasetEntriesInput {
@@ -25,7 +26,7 @@ impl DistributeDatasetEntriesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesInputBuilder {
-    pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
+    pub(crate) datasets: ::std::option::Option<::std::vec::Vec::<crate::types::DistributeDataset>>,
 }
 impl DistributeDatasetEntriesInputBuilder {
     /// Appends an item to `datasets`.
@@ -35,26 +36,26 @@ impl DistributeDatasetEntriesInputBuilder {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
     pub fn datasets(mut self, input: crate::types::DistributeDataset) -> Self {
         let mut v = self.datasets.unwrap_or_default();
-        v.push(input);
-        self.datasets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datasets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
-    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
-        self.datasets = input;
-        self
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DistributeDataset>>) -> Self {
+        self.datasets = input; self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
-    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DistributeDataset>> {
         &self.datasets
     }
     /// Consumes the builder and constructs a [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput { datasets: self.datasets })
+    pub fn build(self) -> ::std::result::Result<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput {
+                datasets: self.datasets
+                ,
+            }
+        )
     }
 }
+

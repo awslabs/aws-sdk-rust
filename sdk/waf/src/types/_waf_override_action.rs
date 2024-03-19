@@ -7,13 +7,13 @@
 /// <p>The action to take if any rule within the <code>RuleGroup</code> matches a request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WafOverrideAction {
+pub struct WafOverrideAction  {
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     pub r#type: crate::types::WafOverrideActionType,
 }
-impl WafOverrideAction {
+impl  WafOverrideAction  {
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-    pub fn r#type(&self) -> &crate::types::WafOverrideActionType {
+    pub fn r#type(&self) -> & crate::types::WafOverrideActionType {
         &self.r#type
     }
 }
@@ -39,8 +39,7 @@ impl WafOverrideActionBuilder {
     }
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WafOverrideActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WafOverrideActionType> {
@@ -50,13 +49,15 @@ impl WafOverrideActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::WafOverrideActionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::WafOverrideAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WafOverrideAction {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building WafOverrideAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WafOverrideAction {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building WafOverrideAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBatchLoadTaskOutput {
+pub struct CreateBatchLoadTaskOutput  {
     /// <p>The ID of the batch load task.</p>
     pub task_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateBatchLoadTaskOutput {
+impl  CreateBatchLoadTaskOutput  {
     /// <p>The ID of the batch load task.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> & str {
+        use std::ops::Deref; self.task_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBatchLoadTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBatchLoadTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchLoadTaskOutput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput).
     pub fn builder() -> crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskOutputBuilder {
@@ -42,37 +41,35 @@ impl CreateBatchLoadTaskOutputBuilder {
     }
     /// <p>The ID of the batch load task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the batch load task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBatchLoadTaskOutput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_id`](crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskOutputBuilder::task_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput {
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building CreateBatchLoadTaskOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput {
+                task_id: self.task_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_id", "task_id was not specified but it is required when building CreateBatchLoadTaskOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

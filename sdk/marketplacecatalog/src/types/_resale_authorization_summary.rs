@@ -3,7 +3,7 @@
 /// <p>Summarized information about a Resale Authorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResaleAuthorizationSummary {
+pub struct ResaleAuthorizationSummary  {
     /// <p>The name of the ResaleAuthorization.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The product ID of the ResaleAuthorization.</p>
@@ -27,49 +27,49 @@ pub struct ResaleAuthorizationSummary {
     /// <p>The availability end date of the ResaleAuthorization.</p>
     pub availability_end_date: ::std::option::Option<::std::string::String>,
 }
-impl ResaleAuthorizationSummary {
+impl  ResaleAuthorizationSummary  {
     /// <p>The name of the ResaleAuthorization.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The product ID of the ResaleAuthorization.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The product name of the ResaleAuthorization.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>The manufacturer account ID of the ResaleAuthorization.</p>
-    pub fn manufacturer_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer_account_id(&self) -> ::std::option::Option<& str> {
         self.manufacturer_account_id.as_deref()
     }
     /// <p>The manufacturer legal name of the ResaleAuthorization.</p>
-    pub fn manufacturer_legal_name(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer_legal_name(&self) -> ::std::option::Option<& str> {
         self.manufacturer_legal_name.as_deref()
     }
     /// <p>The reseller account ID of the ResaleAuthorization.</p>
-    pub fn reseller_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn reseller_account_id(&self) -> ::std::option::Option<& str> {
         self.reseller_account_id.as_deref()
     }
     /// <p>The reseller legal name of the ResaleAuthorization</p>
-    pub fn reseller_legal_name(&self) -> ::std::option::Option<&str> {
+    pub fn reseller_legal_name(&self) -> ::std::option::Option<& str> {
         self.reseller_legal_name.as_deref()
     }
     /// <p>The status of the ResaleAuthorization.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationStatusString> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationStatusString> {
         self.status.as_ref()
     }
     /// <p>The offer extended status of the ResaleAuthorization</p>
-    pub fn offer_extended_status(&self) -> ::std::option::Option<&str> {
+    pub fn offer_extended_status(&self) -> ::std::option::Option<& str> {
         self.offer_extended_status.as_deref()
     }
     /// <p>The created date of the ResaleAuthorization.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The availability end date of the ResaleAuthorization.</p>
-    pub fn availability_end_date(&self) -> ::std::option::Option<&str> {
+    pub fn availability_end_date(&self) -> ::std::option::Option<& str> {
         self.availability_end_date.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The name of the ResaleAuthorization.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ResaleAuthorization.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The product ID of the ResaleAuthorization.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product ID of the ResaleAuthorization.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The product name of the ResaleAuthorization.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>The product name of the ResaleAuthorization.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The manufacturer account ID of the ResaleAuthorization.</p>
     pub fn set_manufacturer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer_account_id = input;
-        self
+        self.manufacturer_account_id = input; self
     }
     /// <p>The manufacturer account ID of the ResaleAuthorization.</p>
     pub fn get_manufacturer_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The manufacturer legal name of the ResaleAuthorization.</p>
     pub fn set_manufacturer_legal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer_legal_name = input;
-        self
+        self.manufacturer_legal_name = input; self
     }
     /// <p>The manufacturer legal name of the ResaleAuthorization.</p>
     pub fn get_manufacturer_legal_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +169,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The reseller account ID of the ResaleAuthorization.</p>
     pub fn set_reseller_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reseller_account_id = input;
-        self
+        self.reseller_account_id = input; self
     }
     /// <p>The reseller account ID of the ResaleAuthorization.</p>
     pub fn get_reseller_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The reseller legal name of the ResaleAuthorization</p>
     pub fn set_reseller_legal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reseller_legal_name = input;
-        self
+        self.reseller_legal_name = input; self
     }
     /// <p>The reseller legal name of the ResaleAuthorization</p>
     pub fn get_reseller_legal_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The status of the ResaleAuthorization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationStatusString>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the ResaleAuthorization.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationStatusString> {
@@ -216,8 +208,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The offer extended status of the ResaleAuthorization</p>
     pub fn set_offer_extended_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offer_extended_status = input;
-        self
+        self.offer_extended_status = input; self
     }
     /// <p>The offer extended status of the ResaleAuthorization</p>
     pub fn get_offer_extended_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +221,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The created date of the ResaleAuthorization.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The created date of the ResaleAuthorization.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl ResaleAuthorizationSummaryBuilder {
     }
     /// <p>The availability end date of the ResaleAuthorization.</p>
     pub fn set_availability_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_end_date = input;
-        self
+        self.availability_end_date = input; self
     }
     /// <p>The availability end date of the ResaleAuthorization.</p>
     pub fn get_availability_end_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl ResaleAuthorizationSummaryBuilder {
     /// Consumes the builder and constructs a [`ResaleAuthorizationSummary`](crate::types::ResaleAuthorizationSummary).
     pub fn build(self) -> crate::types::ResaleAuthorizationSummary {
         crate::types::ResaleAuthorizationSummary {
-            name: self.name,
-            product_id: self.product_id,
-            product_name: self.product_name,
-            manufacturer_account_id: self.manufacturer_account_id,
-            manufacturer_legal_name: self.manufacturer_legal_name,
-            reseller_account_id: self.reseller_account_id,
-            reseller_legal_name: self.reseller_legal_name,
-            status: self.status,
-            offer_extended_status: self.offer_extended_status,
-            created_date: self.created_date,
-            availability_end_date: self.availability_end_date,
+            name: self.name
+            ,
+            product_id: self.product_id
+            ,
+            product_name: self.product_name
+            ,
+            manufacturer_account_id: self.manufacturer_account_id
+            ,
+            manufacturer_legal_name: self.manufacturer_legal_name
+            ,
+            reseller_account_id: self.reseller_account_id
+            ,
+            reseller_legal_name: self.reseller_legal_name
+            ,
+            status: self.status
+            ,
+            offer_extended_status: self.offer_extended_status
+            ,
+            created_date: self.created_date
+            ,
+            availability_end_date: self.availability_end_date
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasetExportJobs`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_arn(impl Into<String>)`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::set_dataset_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of dataset export jobs to return.</p><br>
-    /// - On success, responds with [`ListDatasetExportJobsOutput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListDatasetExportJobsOutput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput) with field(s):
     ///   - [`dataset_export_jobs(Option<Vec::<DatasetExportJobSummary>>)`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput::dataset_export_jobs): <p>The list of dataset export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput::next_token): <p>A token for getting the next set of dataset export jobs (if they exist).</p>
-    /// - On failure, responds with [`SdkError<ListDatasetExportJobsError>`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsError)
+                            /// - On failure, responds with [`SdkError<ListDatasetExportJobsError>`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsError)
     pub fn list_dataset_export_jobs(&self) -> crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder {
-        crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,22 +3,23 @@
 /// <p>Processing options for the CSV file being imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsvOptions {
+pub struct CsvOptions  {
     /// <p>The delimiter used for separating items in the CSV file being imported.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header.</p>
-    pub header_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub header_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CsvOptions {
+impl  CsvOptions  {
     /// <p>The delimiter used for separating items in the CSV file being imported.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header_list.is_none()`.
-    pub fn header_list(&self) -> &[::std::string::String] {
-        self.header_list.as_deref().unwrap_or_default()
+    pub fn header_list(&self) -> & [::std::string::String] {
+        self.header_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CsvOptions {
@@ -33,7 +34,7 @@ impl CsvOptions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvOptionsBuilder {
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
-    pub(crate) header_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) header_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CsvOptionsBuilder {
     /// <p>The delimiter used for separating items in the CSV file being imported.</p>
@@ -43,8 +44,7 @@ impl CsvOptionsBuilder {
     }
     /// <p>The delimiter used for separating items in the CSV file being imported.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>The delimiter used for separating items in the CSV file being imported.</p>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl CsvOptionsBuilder {
     /// <p>List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header.</p>
     pub fn header_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.header_list.unwrap_or_default();
-        v.push(input.into());
-        self.header_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.header_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header.</p>
-    pub fn set_header_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.header_list = input;
-        self
+    pub fn set_header_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.header_list = input; self
     }
     /// <p>List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header.</p>
-    pub fn get_header_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_header_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.header_list
     }
     /// Consumes the builder and constructs a [`CsvOptions`](crate::types::CsvOptions).
     pub fn build(self) -> crate::types::CsvOptions {
         crate::types::CsvOptions {
-            delimiter: self.delimiter,
-            header_list: self.header_list,
+            delimiter: self.delimiter
+            ,
+            header_list: self.header_list
+            ,
         }
     }
 }
+

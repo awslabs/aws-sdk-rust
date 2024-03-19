@@ -5,38 +5,41 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EffectivePreferredResource {
+pub struct EffectivePreferredResource  {
     /// <p>The name of the preferred resource list.</p>
     pub name: ::std::option::Option<crate::types::PreferredResourceName>,
     /// <p>The list of preferred resource values that you want considered as rightsizing recommendation candidates.</p>
-    pub include_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub include_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The expanded version of your preferred resource's include list.</p>
-    pub effective_include_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub effective_include_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of preferred resources values that you want excluded from rightsizing recommendation candidates.</p>
-    pub exclude_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclude_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EffectivePreferredResource {
+impl  EffectivePreferredResource  {
     /// <p>The name of the preferred resource list.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::PreferredResourceName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::PreferredResourceName> {
         self.name.as_ref()
     }
     /// <p>The list of preferred resource values that you want considered as rightsizing recommendation candidates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_list.is_none()`.
-    pub fn include_list(&self) -> &[::std::string::String] {
-        self.include_list.as_deref().unwrap_or_default()
+    pub fn include_list(&self) -> & [::std::string::String] {
+        self.include_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The expanded version of your preferred resource's include list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.effective_include_list.is_none()`.
-    pub fn effective_include_list(&self) -> &[::std::string::String] {
-        self.effective_include_list.as_deref().unwrap_or_default()
+    pub fn effective_include_list(&self) -> & [::std::string::String] {
+        self.effective_include_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of preferred resources values that you want excluded from rightsizing recommendation candidates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_list.is_none()`.
-    pub fn exclude_list(&self) -> &[::std::string::String] {
-        self.exclude_list.as_deref().unwrap_or_default()
+    pub fn exclude_list(&self) -> & [::std::string::String] {
+        self.exclude_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EffectivePreferredResource {
@@ -51,9 +54,9 @@ impl EffectivePreferredResource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EffectivePreferredResourceBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PreferredResourceName>,
-    pub(crate) include_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) effective_include_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) exclude_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) effective_include_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) exclude_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EffectivePreferredResourceBuilder {
     /// <p>The name of the preferred resource list.</p>
@@ -63,8 +66,7 @@ impl EffectivePreferredResourceBuilder {
     }
     /// <p>The name of the preferred resource list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::PreferredResourceName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the preferred resource list.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::PreferredResourceName> {
@@ -77,17 +79,16 @@ impl EffectivePreferredResourceBuilder {
     /// <p>The list of preferred resource values that you want considered as rightsizing recommendation candidates.</p>
     pub fn include_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.include_list.unwrap_or_default();
-        v.push(input.into());
-        self.include_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.include_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of preferred resource values that you want considered as rightsizing recommendation candidates.</p>
-    pub fn set_include_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.include_list = input;
-        self
+    pub fn set_include_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.include_list = input; self
     }
     /// <p>The list of preferred resource values that you want considered as rightsizing recommendation candidates.</p>
-    pub fn get_include_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_include_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.include_list
     }
     /// Appends an item to `effective_include_list`.
@@ -97,17 +98,16 @@ impl EffectivePreferredResourceBuilder {
     /// <p>The expanded version of your preferred resource's include list.</p>
     pub fn effective_include_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.effective_include_list.unwrap_or_default();
-        v.push(input.into());
-        self.effective_include_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.effective_include_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The expanded version of your preferred resource's include list.</p>
-    pub fn set_effective_include_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.effective_include_list = input;
-        self
+    pub fn set_effective_include_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.effective_include_list = input; self
     }
     /// <p>The expanded version of your preferred resource's include list.</p>
-    pub fn get_effective_include_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_effective_include_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.effective_include_list
     }
     /// Appends an item to `exclude_list`.
@@ -117,26 +117,30 @@ impl EffectivePreferredResourceBuilder {
     /// <p>The list of preferred resources values that you want excluded from rightsizing recommendation candidates.</p>
     pub fn exclude_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclude_list.unwrap_or_default();
-        v.push(input.into());
-        self.exclude_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclude_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of preferred resources values that you want excluded from rightsizing recommendation candidates.</p>
-    pub fn set_exclude_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclude_list = input;
-        self
+    pub fn set_exclude_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclude_list = input; self
     }
     /// <p>The list of preferred resources values that you want excluded from rightsizing recommendation candidates.</p>
-    pub fn get_exclude_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclude_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclude_list
     }
     /// Consumes the builder and constructs a [`EffectivePreferredResource`](crate::types::EffectivePreferredResource).
     pub fn build(self) -> crate::types::EffectivePreferredResource {
         crate::types::EffectivePreferredResource {
-            name: self.name,
-            include_list: self.include_list,
-            effective_include_list: self.effective_include_list,
-            exclude_list: self.exclude_list,
+            name: self.name
+            ,
+            include_list: self.include_list
+            ,
+            effective_include_list: self.effective_include_list
+            ,
+            exclude_list: self.exclude_list
+            ,
         }
     }
 }
+

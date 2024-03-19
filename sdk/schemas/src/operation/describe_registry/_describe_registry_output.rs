@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistryOutput {
+pub struct DescribeRegistryOutput  {
     /// <p>The description of the registry.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the registry.</p>
@@ -10,32 +10,32 @@ pub struct DescribeRegistryOutput {
     /// <p>The name of the registry.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the registry.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeRegistryOutput {
+impl  DescribeRegistryOutput  {
     /// <p>The description of the registry.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the registry.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registry_arn(&self) -> ::std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>Tags associated with the registry.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistryOutput`](crate::operation::describe_registry::DescribeRegistryOutput).
     pub fn builder() -> crate::operation::describe_registry::builders::DescribeRegistryOutputBuilder {
@@ -50,7 +50,7 @@ pub struct DescribeRegistryOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeRegistryOutputBuilder {
@@ -61,8 +61,7 @@ impl DescribeRegistryOutputBuilder {
     }
     /// <p>The description of the registry.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the registry.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeRegistryOutputBuilder {
     }
     /// <p>The ARN of the registry.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_arn = input;
-        self
+        self.registry_arn = input; self
     }
     /// <p>The ARN of the registry.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DescribeRegistryOutputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,36 +100,40 @@ impl DescribeRegistryOutputBuilder {
     /// <p>Tags associated with the registry.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the registry.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with the registry.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistryOutput`](crate::operation::describe_registry::DescribeRegistryOutput).
     pub fn build(self) -> crate::operation::describe_registry::DescribeRegistryOutput {
         crate::operation::describe_registry::DescribeRegistryOutput {
-            description: self.description,
-            registry_arn: self.registry_arn,
-            registry_name: self.registry_name,
-            tags: self.tags,
+            description: self.description
+            ,
+            registry_arn: self.registry_arn
+            ,
+            registry_name: self.registry_name
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

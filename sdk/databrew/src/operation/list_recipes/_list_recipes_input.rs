@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecipesInput {
+pub struct ListRecipesInput  {
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -11,18 +11,18 @@ pub struct ListRecipesInput {
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
-impl ListRecipesInput {
+impl  ListRecipesInput  {
     /// <p>The maximum number of results to return in this request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
-    pub fn recipe_version(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_version(&self) -> ::std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,8 +62,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl ListRecipesInputBuilder {
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_version = input;
-        self
+        self.recipe_version = input; self
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code></p>
@@ -89,10 +86,16 @@ impl ListRecipesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRecipesInput`](crate::operation::list_recipes::ListRecipesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_recipes::ListRecipesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_recipes::ListRecipesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            recipe_version: self.recipe_version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_recipes::ListRecipesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                recipe_version: self.recipe_version
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let relationshipstatus = unimplemented!();
 /// match relationshipstatus {
@@ -40,16 +40,14 @@
 /// Specifically, when `relationshipstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RelationshipStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RelationshipStatus {
     #[allow(missing_docs)] // documentation missing in model
     AccountSuspended,
@@ -77,104 +75,92 @@ pub enum RelationshipStatus {
     Resigned,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RelationshipStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_SUSPENDED" => RelationshipStatus::AccountSuspended,
-            "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER" => RelationshipStatus::CannotCreateDetectorInOrgMaster,
-            "CREATED" => RelationshipStatus::Created,
-            "DELETED" => RelationshipStatus::Deleted,
-            "DISABLED" => RelationshipStatus::Disabled,
-            "EMAIL_VERIFICATION_FAILED" => RelationshipStatus::EmailVerificationFailed,
-            "EMAIL_VERIFICATION_IN_PROGRESS" => RelationshipStatus::EmailVerificationInProgress,
-            "ENABLED" => RelationshipStatus::Enabled,
-            "INVITED" => RelationshipStatus::Invited,
-            "REGION_DISABLED" => RelationshipStatus::RegionDisabled,
-            "REMOVED" => RelationshipStatus::Removed,
-            "RESIGNED" => RelationshipStatus::Resigned,
-            other => RelationshipStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCOUNT_SUSPENDED" => RelationshipStatus::AccountSuspended,
+"CANNOT_CREATE_DETECTOR_IN_ORG_MASTER" => RelationshipStatus::CannotCreateDetectorInOrgMaster,
+"CREATED" => RelationshipStatus::Created,
+"DELETED" => RelationshipStatus::Deleted,
+"DISABLED" => RelationshipStatus::Disabled,
+"EMAIL_VERIFICATION_FAILED" => RelationshipStatus::EmailVerificationFailed,
+"EMAIL_VERIFICATION_IN_PROGRESS" => RelationshipStatus::EmailVerificationInProgress,
+"ENABLED" => RelationshipStatus::Enabled,
+"INVITED" => RelationshipStatus::Invited,
+"REGION_DISABLED" => RelationshipStatus::RegionDisabled,
+"REMOVED" => RelationshipStatus::Removed,
+"RESIGNED" => RelationshipStatus::Resigned,
+other => RelationshipStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RelationshipStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RelationshipStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RelationshipStatus::from(s))
+                    }
+                }
 impl RelationshipStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RelationshipStatus::AccountSuspended => "ACCOUNT_SUSPENDED",
-            RelationshipStatus::CannotCreateDetectorInOrgMaster => "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER",
-            RelationshipStatus::Created => "CREATED",
-            RelationshipStatus::Deleted => "DELETED",
-            RelationshipStatus::Disabled => "DISABLED",
-            RelationshipStatus::EmailVerificationFailed => "EMAIL_VERIFICATION_FAILED",
-            RelationshipStatus::EmailVerificationInProgress => "EMAIL_VERIFICATION_IN_PROGRESS",
-            RelationshipStatus::Enabled => "ENABLED",
-            RelationshipStatus::Invited => "INVITED",
-            RelationshipStatus::RegionDisabled => "REGION_DISABLED",
-            RelationshipStatus::Removed => "REMOVED",
-            RelationshipStatus::Resigned => "RESIGNED",
-            RelationshipStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_SUSPENDED",
-            "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER",
-            "CREATED",
-            "DELETED",
-            "DISABLED",
-            "EMAIL_VERIFICATION_FAILED",
-            "EMAIL_VERIFICATION_IN_PROGRESS",
-            "ENABLED",
-            "INVITED",
-            "REGION_DISABLED",
-            "REMOVED",
-            "RESIGNED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RelationshipStatus::AccountSuspended => "ACCOUNT_SUSPENDED",
+    RelationshipStatus::CannotCreateDetectorInOrgMaster => "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER",
+    RelationshipStatus::Created => "CREATED",
+    RelationshipStatus::Deleted => "DELETED",
+    RelationshipStatus::Disabled => "DISABLED",
+    RelationshipStatus::EmailVerificationFailed => "EMAIL_VERIFICATION_FAILED",
+    RelationshipStatus::EmailVerificationInProgress => "EMAIL_VERIFICATION_IN_PROGRESS",
+    RelationshipStatus::Enabled => "ENABLED",
+    RelationshipStatus::Invited => "INVITED",
+    RelationshipStatus::RegionDisabled => "REGION_DISABLED",
+    RelationshipStatus::Removed => "REMOVED",
+    RelationshipStatus::Resigned => "RESIGNED",
+    RelationshipStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_SUSPENDED", "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER", "CREATED", "DELETED", "DISABLED", "EMAIL_VERIFICATION_FAILED", "EMAIL_VERIFICATION_IN_PROGRESS", "ENABLED", "INVITED", "REGION_DISABLED", "REMOVED", "RESIGNED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RelationshipStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RelationshipStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RelationshipStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RelationshipStatus::AccountSuspended => write!(f, "ACCOUNT_SUSPENDED"),
-            RelationshipStatus::CannotCreateDetectorInOrgMaster => write!(f, "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER"),
-            RelationshipStatus::Created => write!(f, "CREATED"),
-            RelationshipStatus::Deleted => write!(f, "DELETED"),
-            RelationshipStatus::Disabled => write!(f, "DISABLED"),
-            RelationshipStatus::EmailVerificationFailed => write!(f, "EMAIL_VERIFICATION_FAILED"),
-            RelationshipStatus::EmailVerificationInProgress => write!(f, "EMAIL_VERIFICATION_IN_PROGRESS"),
-            RelationshipStatus::Enabled => write!(f, "ENABLED"),
-            RelationshipStatus::Invited => write!(f, "INVITED"),
-            RelationshipStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
-            RelationshipStatus::Removed => write!(f, "REMOVED"),
-            RelationshipStatus::Resigned => write!(f, "RESIGNED"),
-            RelationshipStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RelationshipStatus::AccountSuspended => write!(f, "ACCOUNT_SUSPENDED"),
+RelationshipStatus::CannotCreateDetectorInOrgMaster => write!(f, "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER"),
+RelationshipStatus::Created => write!(f, "CREATED"),
+RelationshipStatus::Deleted => write!(f, "DELETED"),
+RelationshipStatus::Disabled => write!(f, "DISABLED"),
+RelationshipStatus::EmailVerificationFailed => write!(f, "EMAIL_VERIFICATION_FAILED"),
+RelationshipStatus::EmailVerificationInProgress => write!(f, "EMAIL_VERIFICATION_IN_PROGRESS"),
+RelationshipStatus::Enabled => write!(f, "ENABLED"),
+RelationshipStatus::Invited => write!(f, "INVITED"),
+RelationshipStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
+RelationshipStatus::Removed => write!(f, "REMOVED"),
+RelationshipStatus::Resigned => write!(f, "RESIGNED"),
+RelationshipStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

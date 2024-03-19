@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMediaStreamPipelineOutput {
+pub struct CreateMediaStreamPipelineOutput  {
     /// <p>The requested media pipeline.</p>
     pub media_stream_pipeline: ::std::option::Option<crate::types::MediaStreamPipeline>,
     _request_id: Option<String>,
 }
-impl CreateMediaStreamPipelineOutput {
+impl  CreateMediaStreamPipelineOutput  {
     /// <p>The requested media pipeline.</p>
-    pub fn media_stream_pipeline(&self) -> ::std::option::Option<&crate::types::MediaStreamPipeline> {
+    pub fn media_stream_pipeline(&self) -> ::std::option::Option<& crate::types::MediaStreamPipeline> {
         self.media_stream_pipeline.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMediaStreamPipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMediaStreamPipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaStreamPipelineOutput`](crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput).
     pub fn builder() -> crate::operation::create_media_stream_pipeline::builders::CreateMediaStreamPipelineOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateMediaStreamPipelineOutputBuilder {
     }
     /// <p>The requested media pipeline.</p>
     pub fn set_media_stream_pipeline(mut self, input: ::std::option::Option<crate::types::MediaStreamPipeline>) -> Self {
-        self.media_stream_pipeline = input;
-        self
+        self.media_stream_pipeline = input; self
     }
     /// <p>The requested media pipeline.</p>
     pub fn get_media_stream_pipeline(&self) -> &::std::option::Option<crate::types::MediaStreamPipeline> {
         &self.media_stream_pipeline
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMediaStreamPipelineOutput`](crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput).
     pub fn build(self) -> crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput {
         crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput {
-            media_stream_pipeline: self.media_stream_pipeline,
+            media_stream_pipeline: self.media_stream_pipeline
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

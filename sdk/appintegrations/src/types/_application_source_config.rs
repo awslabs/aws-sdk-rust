@@ -3,13 +3,13 @@
 /// <p>The configuration for where the application should be loaded from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSourceConfig {
+pub struct ApplicationSourceConfig  {
     /// <p>The external URL source for the application.</p>
     pub external_url_config: ::std::option::Option<crate::types::ExternalUrlConfig>,
 }
-impl ApplicationSourceConfig {
+impl  ApplicationSourceConfig  {
     /// <p>The external URL source for the application.</p>
-    pub fn external_url_config(&self) -> ::std::option::Option<&crate::types::ExternalUrlConfig> {
+    pub fn external_url_config(&self) -> ::std::option::Option<& crate::types::ExternalUrlConfig> {
         self.external_url_config.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ApplicationSourceConfigBuilder {
     }
     /// <p>The external URL source for the application.</p>
     pub fn set_external_url_config(mut self, input: ::std::option::Option<crate::types::ExternalUrlConfig>) -> Self {
-        self.external_url_config = input;
-        self
+        self.external_url_config = input; self
     }
     /// <p>The external URL source for the application.</p>
     pub fn get_external_url_config(&self) -> &::std::option::Option<crate::types::ExternalUrlConfig> {
@@ -44,7 +43,9 @@ impl ApplicationSourceConfigBuilder {
     /// Consumes the builder and constructs a [`ApplicationSourceConfig`](crate::types::ApplicationSourceConfig).
     pub fn build(self) -> crate::types::ApplicationSourceConfig {
         crate::types::ApplicationSourceConfig {
-            external_url_config: self.external_url_config,
+            external_url_config: self.external_url_config
+            ,
         }
     }
 }
+

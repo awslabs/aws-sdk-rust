@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLedgerInput {
+pub struct CreateLedgerInput  {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
     /// <ul>
     /// <li>
@@ -49,14 +49,14 @@ pub struct CreateLedgerInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
-impl CreateLedgerInput {
+impl  CreateLedgerInput  {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
@@ -70,7 +70,7 @@ impl CreateLedgerInput {
     /// </ul><note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    pub fn permissions_mode(&self) -> ::std::option::Option<&crate::types::PermissionsMode> {
+    pub fn permissions_mode(&self) -> ::std::option::Option<& crate::types::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
@@ -102,7 +102,7 @@ impl CreateLedgerInput {
     /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
 }
@@ -118,7 +118,7 @@ impl CreateLedgerInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLedgerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
@@ -134,8 +134,7 @@ impl CreateLedgerInputBuilder {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
@@ -149,22 +148,16 @@ impl CreateLedgerInputBuilder {
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
@@ -195,8 +188,7 @@ impl CreateLedgerInputBuilder {
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
     pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
-        self.permissions_mode = input;
-        self
+        self.permissions_mode = input; self
     }
     /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
     /// <ul>
@@ -221,8 +213,7 @@ impl CreateLedgerInputBuilder {
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
@@ -282,8 +273,7 @@ impl CreateLedgerInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
@@ -313,15 +303,21 @@ impl CreateLedgerInputBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`CreateLedgerInput`](crate::operation::create_ledger::CreateLedgerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_ledger::CreateLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_ledger::CreateLedgerInput {
-            name: self.name,
-            tags: self.tags,
-            permissions_mode: self.permissions_mode,
-            deletion_protection: self.deletion_protection,
-            kms_key: self.kms_key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ledger::CreateLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_ledger::CreateLedgerInput {
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+                permissions_mode: self.permissions_mode
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                kms_key: self.kms_key
+                ,
+            }
+        )
     }
 }
+

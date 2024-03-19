@@ -3,16 +3,17 @@
 /// <p>Details for an Amazon S3 filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketNotificationConfigurationS3KeyFilter {
+pub struct AwsS3BucketNotificationConfigurationS3KeyFilter  {
     /// <p>The filter rules for the filter.</p>
-    pub filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
+    pub filter_rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
 }
-impl AwsS3BucketNotificationConfigurationS3KeyFilter {
+impl  AwsS3BucketNotificationConfigurationS3KeyFilter  {
     /// <p>The filter rules for the filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_rules.is_none()`.
-    pub fn filter_rules(&self) -> &[crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule] {
-        self.filter_rules.as_deref().unwrap_or_default()
+    pub fn filter_rules(&self) -> & [crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule] {
+        self.filter_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilter {
@@ -26,7 +27,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationS3KeyFilterBuilder {
-    pub(crate) filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
+    pub(crate) filter_rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilterBuilder {
     /// Appends an item to `filter_rules`.
@@ -36,26 +37,24 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterBuilder {
     /// <p>The filter rules for the filter.</p>
     pub fn filter_rules(mut self, input: crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule) -> Self {
         let mut v = self.filter_rules.unwrap_or_default();
-        v.push(input);
-        self.filter_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter rules for the filter.</p>
-    pub fn set_filter_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
-    ) -> Self {
-        self.filter_rules = input;
-        self
+    pub fn set_filter_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>) -> Self {
+        self.filter_rules = input; self
     }
     /// <p>The filter rules for the filter.</p>
-    pub fn get_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>> {
+    pub fn get_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>> {
         &self.filter_rules
     }
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter {
         crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter {
-            filter_rules: self.filter_rules,
+            filter_rules: self.filter_rules
+            ,
         }
     }
 }
+

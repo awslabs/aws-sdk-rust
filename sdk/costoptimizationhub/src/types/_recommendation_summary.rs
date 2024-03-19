@@ -3,7 +3,7 @@
 /// <p>The summary of rightsizing recommendations, including de-duped savings from all types of recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationSummary {
+pub struct RecommendationSummary  {
     /// <p>The grouping of recommendations.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
@@ -11,9 +11,9 @@ pub struct RecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
     pub recommendation_count: ::std::option::Option<i32>,
 }
-impl RecommendationSummary {
+impl  RecommendationSummary  {
     /// <p>The grouping of recommendations.</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
@@ -48,8 +48,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>The grouping of recommendations.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The grouping of recommendations.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>The total number of instance recommendations.</p>
     pub fn set_recommendation_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.recommendation_count = input;
-        self
+        self.recommendation_count = input; self
     }
     /// <p>The total number of instance recommendations.</p>
     pub fn get_recommendation_count(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl RecommendationSummaryBuilder {
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).
     pub fn build(self) -> crate::types::RecommendationSummary {
         crate::types::RecommendationSummary {
-            group: self.group,
-            estimated_monthly_savings: self.estimated_monthly_savings,
-            recommendation_count: self.recommendation_count,
+            group: self.group
+            ,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
+            recommendation_count: self.recommendation_count
+            ,
         }
     }
 }
+

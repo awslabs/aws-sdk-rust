@@ -3,22 +3,23 @@
 /// <p>Provides information about the Regions that are configured for multi-Region replication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegionsInfo {
+pub struct RegionsInfo  {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub additional_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RegionsInfo {
+impl  RegionsInfo  {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+    pub fn primary_region(&self) -> ::std::option::Option<& str> {
         self.primary_region.as_deref()
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_regions.is_none()`.
-    pub fn additional_regions(&self) -> &[::std::string::String] {
-        self.additional_regions.as_deref().unwrap_or_default()
+    pub fn additional_regions(&self) -> & [::std::string::String] {
+        self.additional_regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegionsInfo {
@@ -33,7 +34,7 @@ impl RegionsInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionsInfoBuilder {
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RegionsInfoBuilder {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
@@ -43,8 +44,7 @@ impl RegionsInfoBuilder {
     }
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_region = input;
-        self
+        self.primary_region = input; self
     }
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl RegionsInfoBuilder {
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
     pub fn additional_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_regions.unwrap_or_default();
-        v.push(input.into());
-        self.additional_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.additional_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub fn set_additional_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.additional_regions = input;
-        self
+    pub fn set_additional_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.additional_regions = input; self
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub fn get_additional_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.additional_regions
     }
     /// Consumes the builder and constructs a [`RegionsInfo`](crate::types::RegionsInfo).
     pub fn build(self) -> crate::types::RegionsInfo {
         crate::types::RegionsInfo {
-            primary_region: self.primary_region,
-            additional_regions: self.additional_regions,
+            primary_region: self.primary_region
+            ,
+            additional_regions: self.additional_regions
+            ,
         }
     }
 }
+

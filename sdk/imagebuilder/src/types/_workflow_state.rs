@@ -3,19 +3,19 @@
 /// <p>A group of fields that describe the current status of workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowState {
+pub struct WorkflowState  {
     /// <p>The current state of the workflow.</p>
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
     /// <p>Describes how or why the workflow changed state.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl WorkflowState {
+impl  WorkflowState  {
     /// <p>The current state of the workflow.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>Describes how or why the workflow changed state.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl WorkflowStateBuilder {
     }
     /// <p>The current state of the workflow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the workflow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
@@ -55,8 +54,7 @@ impl WorkflowStateBuilder {
     }
     /// <p>Describes how or why the workflow changed state.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Describes how or why the workflow changed state.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl WorkflowStateBuilder {
     /// Consumes the builder and constructs a [`WorkflowState`](crate::types::WorkflowState).
     pub fn build(self) -> crate::types::WorkflowState {
         crate::types::WorkflowState {
-            status: self.status,
-            reason: self.reason,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

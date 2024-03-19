@@ -3,7 +3,7 @@
 /// <p>The details that are available for an export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Export {
+pub struct Export  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub export_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of this specific data export.</p>
@@ -17,30 +17,29 @@ pub struct Export {
     /// <p>The cadence for Amazon Web Services to update the export in your S3 bucket.</p>
     pub refresh_cadence: ::std::option::Option<crate::types::RefreshCadence>,
 }
-impl Export {
+impl  Export  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
-    pub fn export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn export_arn(&self) -> ::std::option::Option<& str> {
         self.export_arn.as_deref()
     }
     /// <p>The name of this specific data export.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description for this specific data export.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The data query for this specific data export.</p>
-    pub fn data_query(&self) -> ::std::option::Option<&crate::types::DataQuery> {
+    pub fn data_query(&self) -> ::std::option::Option<& crate::types::DataQuery> {
         self.data_query.as_ref()
     }
     /// <p>The destination configuration for this specific data export.</p>
-    pub fn destination_configurations(&self) -> ::std::option::Option<&crate::types::DestinationConfigurations> {
+    pub fn destination_configurations(&self) -> ::std::option::Option<& crate::types::DestinationConfigurations> {
         self.destination_configurations.as_ref()
     }
     /// <p>The cadence for Amazon Web Services to update the export in your S3 bucket.</p>
-    pub fn refresh_cadence(&self) -> ::std::option::Option<&crate::types::RefreshCadence> {
+    pub fn refresh_cadence(&self) -> ::std::option::Option<& crate::types::RefreshCadence> {
         self.refresh_cadence.as_ref()
     }
 }
@@ -70,8 +69,7 @@ impl ExportBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn set_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_arn = input;
-        self
+        self.export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn get_export_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ExportBuilder {
     }
     /// <p>The name of this specific data export.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this specific data export.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl ExportBuilder {
     }
     /// <p>The description for this specific data export.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for this specific data export.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +110,7 @@ impl ExportBuilder {
     }
     /// <p>The data query for this specific data export.</p>
     pub fn set_data_query(mut self, input: ::std::option::Option<crate::types::DataQuery>) -> Self {
-        self.data_query = input;
-        self
+        self.data_query = input; self
     }
     /// <p>The data query for this specific data export.</p>
     pub fn get_data_query(&self) -> &::std::option::Option<crate::types::DataQuery> {
@@ -129,8 +124,7 @@ impl ExportBuilder {
     }
     /// <p>The destination configuration for this specific data export.</p>
     pub fn set_destination_configurations(mut self, input: ::std::option::Option<crate::types::DestinationConfigurations>) -> Self {
-        self.destination_configurations = input;
-        self
+        self.destination_configurations = input; self
     }
     /// <p>The destination configuration for this specific data export.</p>
     pub fn get_destination_configurations(&self) -> &::std::option::Option<crate::types::DestinationConfigurations> {
@@ -144,8 +138,7 @@ impl ExportBuilder {
     }
     /// <p>The cadence for Amazon Web Services to update the export in your S3 bucket.</p>
     pub fn set_refresh_cadence(mut self, input: ::std::option::Option<crate::types::RefreshCadence>) -> Self {
-        self.refresh_cadence = input;
-        self
+        self.refresh_cadence = input; self
     }
     /// <p>The cadence for Amazon Web Services to update the export in your S3 bucket.</p>
     pub fn get_refresh_cadence(&self) -> &::std::option::Option<crate::types::RefreshCadence> {
@@ -155,18 +148,25 @@ impl ExportBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ExportBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Export, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Export {
-            export_arn: self.export_arn,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Export",
-                )
-            })?,
-            description: self.description,
-            data_query: self.data_query,
-            destination_configurations: self.destination_configurations,
-            refresh_cadence: self.refresh_cadence,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Export {
+                export_arn: self.export_arn
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Export")
+                    )?
+                ,
+                description: self.description
+                ,
+                data_query: self.data_query
+                ,
+                destination_configurations: self.destination_configurations
+                ,
+                refresh_cadence: self.refresh_cadence
+                ,
+            }
+        )
     }
 }
+

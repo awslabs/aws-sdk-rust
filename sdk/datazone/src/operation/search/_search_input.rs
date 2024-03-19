@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchInput {
+pub struct SearchInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the owning project specified for the search.</p>
@@ -16,21 +16,21 @@ pub struct SearchInput {
     /// <p>Specifies the text for which to search.</p>
     pub search_text: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub search_in: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>,
+    pub search_in: ::std::option::Option<::std::vec::Vec::<crate::types::SearchInItem>>,
     /// <p>Specifies the search filters.</p>
     pub filters: ::std::option::Option<crate::types::FilterClause>,
     /// <p>Specifies the way in which the search results are to be sorted.</p>
     pub sort: ::std::option::Option<crate::types::SearchSort>,
     /// <p>Specifies additional attributes for the <code>Search</code> action.</p>
-    pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>>,
+    pub additional_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::SearchOutputAdditionalAttribute>>,
 }
-impl SearchInput {
+impl  SearchInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the owning project specified for the search.</p>
-    pub fn owning_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_identifier(&self) -> ::std::option::Option<& str> {
         self.owning_project_identifier.as_deref()
     }
     /// <p>The maximum number of results to return in a single call to <code>Search</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>Search</code> to list the next set of results.</p>
@@ -38,36 +38,38 @@ impl SearchInput {
         self.max_results
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>Search</code> to list the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The scope of the search.</p>
-    pub fn search_scope(&self) -> ::std::option::Option<&crate::types::InventorySearchScope> {
+    pub fn search_scope(&self) -> ::std::option::Option<& crate::types::InventorySearchScope> {
         self.search_scope.as_ref()
     }
     /// <p>Specifies the text for which to search.</p>
-    pub fn search_text(&self) -> ::std::option::Option<&str> {
+    pub fn search_text(&self) -> ::std::option::Option<& str> {
         self.search_text.as_deref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_in.is_none()`.
-    pub fn search_in(&self) -> &[crate::types::SearchInItem] {
-        self.search_in.as_deref().unwrap_or_default()
+    pub fn search_in(&self) -> & [crate::types::SearchInItem] {
+        self.search_in.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the search filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::FilterClause> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::FilterClause> {
         self.filters.as_ref()
     }
     /// <p>Specifies the way in which the search results are to be sorted.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::SearchSort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::SearchSort> {
         self.sort.as_ref()
     }
     /// <p>Specifies additional attributes for the <code>Search</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attributes.is_none()`.
-    pub fn additional_attributes(&self) -> &[crate::types::SearchOutputAdditionalAttribute] {
-        self.additional_attributes.as_deref().unwrap_or_default()
+    pub fn additional_attributes(&self) -> & [crate::types::SearchOutputAdditionalAttribute] {
+        self.additional_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchInput {
@@ -87,10 +89,10 @@ pub struct SearchInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) search_scope: ::std::option::Option<crate::types::InventorySearchScope>,
     pub(crate) search_text: ::std::option::Option<::std::string::String>,
-    pub(crate) search_in: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>,
+    pub(crate) search_in: ::std::option::Option<::std::vec::Vec::<crate::types::SearchInItem>>,
     pub(crate) filters: ::std::option::Option<crate::types::FilterClause>,
     pub(crate) sort: ::std::option::Option<crate::types::SearchSort>,
-    pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>>,
+    pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::SearchOutputAdditionalAttribute>>,
 }
 impl SearchInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
@@ -101,8 +103,7 @@ impl SearchInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +116,7 @@ impl SearchInputBuilder {
     }
     /// <p>The identifier of the owning project specified for the search.</p>
     pub fn set_owning_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_identifier = input;
-        self
+        self.owning_project_identifier = input; self
     }
     /// <p>The identifier of the owning project specified for the search.</p>
     pub fn get_owning_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +129,7 @@ impl SearchInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call to <code>Search</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>Search</code> to list the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call to <code>Search</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>Search</code> to list the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -143,8 +142,7 @@ impl SearchInputBuilder {
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>Search</code> to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>Search</code> to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +156,7 @@ impl SearchInputBuilder {
     }
     /// <p>The scope of the search.</p>
     pub fn set_search_scope(mut self, input: ::std::option::Option<crate::types::InventorySearchScope>) -> Self {
-        self.search_scope = input;
-        self
+        self.search_scope = input; self
     }
     /// <p>The scope of the search.</p>
     pub fn get_search_scope(&self) -> &::std::option::Option<crate::types::InventorySearchScope> {
@@ -172,8 +169,7 @@ impl SearchInputBuilder {
     }
     /// <p>Specifies the text for which to search.</p>
     pub fn set_search_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_text = input;
-        self
+        self.search_text = input; self
     }
     /// <p>Specifies the text for which to search.</p>
     pub fn get_search_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,17 +182,16 @@ impl SearchInputBuilder {
     /// <p></p>
     pub fn search_in(mut self, input: crate::types::SearchInItem) -> Self {
         let mut v = self.search_in.unwrap_or_default();
-        v.push(input);
-        self.search_in = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.search_in = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>) -> Self {
-        self.search_in = input;
-        self
+    pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchInItem>>) -> Self {
+        self.search_in = input; self
     }
     /// <p></p>
-    pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>> {
+    pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchInItem>> {
         &self.search_in
     }
     /// <p>Specifies the search filters.</p>
@@ -206,8 +201,7 @@ impl SearchInputBuilder {
     }
     /// <p>Specifies the search filters.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::FilterClause>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Specifies the search filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::FilterClause> {
@@ -220,8 +214,7 @@ impl SearchInputBuilder {
     }
     /// <p>Specifies the way in which the search results are to be sorted.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SearchSort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>Specifies the way in which the search results are to be sorted.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SearchSort> {
@@ -234,32 +227,44 @@ impl SearchInputBuilder {
     /// <p>Specifies additional attributes for the <code>Search</code> action.</p>
     pub fn additional_attributes(mut self, input: crate::types::SearchOutputAdditionalAttribute) -> Self {
         let mut v = self.additional_attributes.unwrap_or_default();
-        v.push(input);
-        self.additional_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies additional attributes for the <code>Search</code> action.</p>
-    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>>) -> Self {
-        self.additional_attributes = input;
-        self
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchOutputAdditionalAttribute>>) -> Self {
+        self.additional_attributes = input; self
     }
     /// <p>Specifies additional attributes for the <code>Search</code> action.</p>
-    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>> {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchOutputAdditionalAttribute>> {
         &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search::SearchInput {
-            domain_identifier: self.domain_identifier,
-            owning_project_identifier: self.owning_project_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            search_scope: self.search_scope,
-            search_text: self.search_text,
-            search_in: self.search_in,
-            filters: self.filters,
-            sort: self.sort,
-            additional_attributes: self.additional_attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::search::SearchInput {
+                domain_identifier: self.domain_identifier
+                ,
+                owning_project_identifier: self.owning_project_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                search_scope: self.search_scope
+                ,
+                search_text: self.search_text
+                ,
+                search_in: self.search_in
+                ,
+                filters: self.filters
+                ,
+                sort: self.sort
+                ,
+                additional_attributes: self.additional_attributes
+                ,
+            }
+        )
     }
 }
+

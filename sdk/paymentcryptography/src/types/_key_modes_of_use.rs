@@ -3,7 +3,7 @@
 /// <p>The list of cryptographic operations that you can perform using the key. The modes of use are deﬁned in section A.5.3 of the TR-31 spec.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyModesOfUse {
+pub struct KeyModesOfUse  {
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to encrypt data.</p>
     pub encrypt: bool,
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to decrypt data.</p>
@@ -23,7 +23,7 @@ pub struct KeyModesOfUse {
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions other than the restrictions implied by <code>KeyUsage</code>.</p>
     pub no_restrictions: bool,
 }
-impl KeyModesOfUse {
+impl  KeyModesOfUse  {
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to encrypt data.</p>
     pub fn encrypt(&self) -> bool {
         self.encrypt
@@ -90,8 +90,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to encrypt data.</p>
     pub fn set_encrypt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypt = input;
-        self
+        self.encrypt = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to encrypt data.</p>
     pub fn get_encrypt(&self) -> &::std::option::Option<bool> {
@@ -104,8 +103,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to decrypt data.</p>
     pub fn set_decrypt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.decrypt = input;
-        self
+        self.decrypt = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to decrypt data.</p>
     pub fn get_decrypt(&self) -> &::std::option::Option<bool> {
@@ -118,8 +116,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to wrap other keys.</p>
     pub fn set_wrap(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.wrap = input;
-        self
+        self.wrap = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to wrap other keys.</p>
     pub fn get_wrap(&self) -> &::std::option::Option<bool> {
@@ -132,8 +129,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to unwrap other keys.</p>
     pub fn set_unwrap(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unwrap = input;
-        self
+        self.unwrap = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to unwrap other keys.</p>
     pub fn get_unwrap(&self) -> &::std::option::Option<bool> {
@@ -146,8 +142,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to generate and verify other card and PIN verification keys.</p>
     pub fn set_generate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.generate = input;
-        self
+        self.generate = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to generate and verify other card and PIN verification keys.</p>
     pub fn get_generate(&self) -> &::std::option::Option<bool> {
@@ -160,8 +155,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used for signing.</p>
     pub fn set_sign(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sign = input;
-        self
+        self.sign = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used for signing.</p>
     pub fn get_sign(&self) -> &::std::option::Option<bool> {
@@ -174,8 +168,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to verify signatures.</p>
     pub fn set_verify(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verify = input;
-        self
+        self.verify = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to verify signatures.</p>
     pub fn get_verify(&self) -> &::std::option::Option<bool> {
@@ -188,8 +181,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to derive new keys.</p>
     pub fn set_derive_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.derive_key = input;
-        self
+        self.derive_key = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used to derive new keys.</p>
     pub fn get_derive_key(&self) -> &::std::option::Option<bool> {
@@ -202,8 +194,7 @@ impl KeyModesOfUseBuilder {
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions other than the restrictions implied by <code>KeyUsage</code>.</p>
     pub fn set_no_restrictions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_restrictions = input;
-        self
+        self.no_restrictions = input; self
     }
     /// <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions other than the restrictions implied by <code>KeyUsage</code>.</p>
     pub fn get_no_restrictions(&self) -> &::std::option::Option<bool> {
@@ -212,15 +203,34 @@ impl KeyModesOfUseBuilder {
     /// Consumes the builder and constructs a [`KeyModesOfUse`](crate::types::KeyModesOfUse).
     pub fn build(self) -> crate::types::KeyModesOfUse {
         crate::types::KeyModesOfUse {
-            encrypt: self.encrypt.unwrap_or_default(),
-            decrypt: self.decrypt.unwrap_or_default(),
-            wrap: self.wrap.unwrap_or_default(),
-            unwrap: self.unwrap.unwrap_or_default(),
-            generate: self.generate.unwrap_or_default(),
-            sign: self.sign.unwrap_or_default(),
-            verify: self.verify.unwrap_or_default(),
-            derive_key: self.derive_key.unwrap_or_default(),
-            no_restrictions: self.no_restrictions.unwrap_or_default(),
+            encrypt: self.encrypt
+                .unwrap_or_default()
+            ,
+            decrypt: self.decrypt
+                .unwrap_or_default()
+            ,
+            wrap: self.wrap
+                .unwrap_or_default()
+            ,
+            unwrap: self.unwrap
+                .unwrap_or_default()
+            ,
+            generate: self.generate
+                .unwrap_or_default()
+            ,
+            sign: self.sign
+                .unwrap_or_default()
+            ,
+            verify: self.verify
+                .unwrap_or_default()
+            ,
+            derive_key: self.derive_key
+                .unwrap_or_default()
+            ,
+            no_restrictions: self.no_restrictions
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

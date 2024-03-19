@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMatchmakingConfigurationOutput {
+pub struct CreateMatchmakingConfigurationOutput  {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
     pub configuration: ::std::option::Option<crate::types::MatchmakingConfiguration>,
     _request_id: Option<String>,
 }
-impl CreateMatchmakingConfigurationOutput {
+impl  CreateMatchmakingConfigurationOutput  {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::MatchmakingConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::MatchmakingConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMatchmakingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMatchmakingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingConfigurationOutput`](crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput).
     pub fn builder() -> crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateMatchmakingConfigurationOutputBuilder {
     }
     /// <p>Object that describes the newly created matchmaking configuration.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MatchmakingConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Object that describes the newly created matchmaking configuration.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::MatchmakingConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMatchmakingConfigurationOutput`](crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput).
     pub fn build(self) -> crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput {
         crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput {
-            configuration: self.configuration,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

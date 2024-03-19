@@ -3,7 +3,7 @@
 /// A new MediaPackage VOD PackagingGroup resource configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePackagingGroupInput {
+pub struct CreatePackagingGroupInput  {
     /// CDN Authorization credentials
     pub authorization: ::std::option::Option<crate::types::Authorization>,
     /// Configure egress access logging.
@@ -11,23 +11,23 @@ pub struct CreatePackagingGroupInput {
     /// The ID of the PackagingGroup.
     pub id: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreatePackagingGroupInput {
+impl  CreatePackagingGroupInput  {
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> ::std::option::Option<&crate::types::Authorization> {
+    pub fn authorization(&self) -> ::std::option::Option<& crate::types::Authorization> {
         self.authorization.as_ref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> ::std::option::Option<&crate::types::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> ::std::option::Option<& crate::types::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct CreatePackagingGroupInputBuilder {
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
     pub(crate) egress_access_logs: ::std::option::Option<crate::types::EgressAccessLogs>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreatePackagingGroupInputBuilder {
     /// CDN Authorization credentials
@@ -55,8 +55,7 @@ impl CreatePackagingGroupInputBuilder {
     }
     /// CDN Authorization credentials
     pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::Authorization>) -> Self {
-        self.authorization = input;
-        self
+        self.authorization = input; self
     }
     /// CDN Authorization credentials
     pub fn get_authorization(&self) -> &::std::option::Option<crate::types::Authorization> {
@@ -69,8 +68,7 @@ impl CreatePackagingGroupInputBuilder {
     }
     /// Configure egress access logging.
     pub fn set_egress_access_logs(mut self, input: ::std::option::Option<crate::types::EgressAccessLogs>) -> Self {
-        self.egress_access_logs = input;
-        self
+        self.egress_access_logs = input; self
     }
     /// Configure egress access logging.
     pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
@@ -84,8 +82,7 @@ impl CreatePackagingGroupInputBuilder {
     }
     /// The ID of the PackagingGroup.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the PackagingGroup.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,29 +95,32 @@ impl CreatePackagingGroupInputBuilder {
     /// A collection of tags associated with a resource
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePackagingGroupInput`](crate::operation::create_packaging_group::CreatePackagingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_packaging_group::CreatePackagingGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_packaging_group::CreatePackagingGroupInput {
-            authorization: self.authorization,
-            egress_access_logs: self.egress_access_logs,
-            id: self.id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_packaging_group::CreatePackagingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_packaging_group::CreatePackagingGroupInput {
+                authorization: self.authorization
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

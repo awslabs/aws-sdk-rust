@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBucketInput {
+pub struct DeleteBucketInput  {
     /// <p>The name of the bucket to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
@@ -22,10 +22,10 @@ pub struct DeleteBucketInput {
     /// </important>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DeleteBucketInput {
+impl  DeleteBucketInput  {
     /// <p>The name of the bucket to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
@@ -71,8 +71,7 @@ impl DeleteBucketInputBuilder {
     /// <p>The name of the bucket to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the bucket to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
@@ -112,8 +111,7 @@ impl DeleteBucketInputBuilder {
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
@@ -133,12 +131,15 @@ impl DeleteBucketInputBuilder {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteBucketInput`](crate::operation::delete_bucket::DeleteBucketInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket::DeleteBucketInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_bucket::DeleteBucketInput {
-            bucket_name: self.bucket_name,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket::DeleteBucketInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bucket::DeleteBucketInput {
+                bucket_name: self.bucket_name
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

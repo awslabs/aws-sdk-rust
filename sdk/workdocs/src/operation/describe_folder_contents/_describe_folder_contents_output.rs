@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFolderContentsOutput {
+pub struct DescribeFolderContentsOutput  {
     /// <p>The subfolders in the specified folder.</p>
-    pub folders: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
+    pub folders: ::std::option::Option<::std::vec::Vec::<crate::types::FolderMetadata>>,
     /// <p>The documents in the specified folder.</p>
-    pub documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>,
+    pub documents: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFolderContentsOutput {
+impl  DescribeFolderContentsOutput  {
     /// <p>The subfolders in the specified folder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folders.is_none()`.
-    pub fn folders(&self) -> &[crate::types::FolderMetadata] {
-        self.folders.as_deref().unwrap_or_default()
+    pub fn folders(&self) -> & [crate::types::FolderMetadata] {
+        self.folders.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The documents in the specified folder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
-    pub fn documents(&self) -> &[crate::types::DocumentMetadata] {
-        self.documents.as_deref().unwrap_or_default()
+    pub fn documents(&self) -> & [crate::types::DocumentMetadata] {
+        self.documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFolderContentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFolderContentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderContentsOutput`](crate::operation::describe_folder_contents::DescribeFolderContentsOutput).
     pub fn builder() -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsOutputBuilder {
@@ -45,8 +47,8 @@ impl DescribeFolderContentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFolderContentsOutputBuilder {
-    pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
-    pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>,
+    pub(crate) folders: ::std::option::Option<::std::vec::Vec::<crate::types::FolderMetadata>>,
+    pub(crate) documents: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl DescribeFolderContentsOutputBuilder {
     /// <p>The subfolders in the specified folder.</p>
     pub fn folders(mut self, input: crate::types::FolderMetadata) -> Self {
         let mut v = self.folders.unwrap_or_default();
-        v.push(input);
-        self.folders = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.folders = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subfolders in the specified folder.</p>
-    pub fn set_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>) -> Self {
-        self.folders = input;
-        self
+    pub fn set_folders(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FolderMetadata>>) -> Self {
+        self.folders = input; self
     }
     /// <p>The subfolders in the specified folder.</p>
-    pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
+    pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FolderMetadata>> {
         &self.folders
     }
     /// Appends an item to `documents`.
@@ -78,17 +79,16 @@ impl DescribeFolderContentsOutputBuilder {
     /// <p>The documents in the specified folder.</p>
     pub fn documents(mut self, input: crate::types::DocumentMetadata) -> Self {
         let mut v = self.documents.unwrap_or_default();
-        v.push(input);
-        self.documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The documents in the specified folder.</p>
-    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>) -> Self {
-        self.documents = input;
-        self
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentMetadata>>) -> Self {
+        self.documents = input; self
     }
     /// <p>The documents in the specified folder.</p>
-    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>> {
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentMetadata>> {
         &self.documents
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -98,29 +98,32 @@ impl DescribeFolderContentsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFolderContentsOutput`](crate::operation::describe_folder_contents::DescribeFolderContentsOutput).
     pub fn build(self) -> crate::operation::describe_folder_contents::DescribeFolderContentsOutput {
         crate::operation::describe_folder_contents::DescribeFolderContentsOutput {
-            folders: self.folders,
-            documents: self.documents,
-            marker: self.marker,
+            folders: self.folders
+            ,
+            documents: self.documents
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

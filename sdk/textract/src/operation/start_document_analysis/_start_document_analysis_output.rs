@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDocumentAnalysisOutput {
+pub struct StartDocumentAnalysisOutput  {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartDocumentAnalysisOutput {
+impl  StartDocumentAnalysisOutput  {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDocumentAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDocumentAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::operation::start_document_analysis::StartDocumentAnalysisOutput).
     pub fn builder() -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisOutputBuilder {
@@ -40,27 +40,28 @@ impl StartDocumentAnalysisOutputBuilder {
     }
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDocumentAnalysisOutput`](crate::operation::start_document_analysis::StartDocumentAnalysisOutput).
     pub fn build(self) -> crate::operation::start_document_analysis::StartDocumentAnalysisOutput {
         crate::operation::start_document_analysis::StartDocumentAnalysisOutput {
-            job_id: self.job_id,
+            job_id: self.job_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

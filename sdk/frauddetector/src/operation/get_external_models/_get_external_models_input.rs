@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExternalModelsInput {
+pub struct GetExternalModelsInput  {
     /// <p>The Amazon SageMaker model endpoint.</p>
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The next page token for the request.</p>
@@ -10,13 +10,13 @@ pub struct GetExternalModelsInput {
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetExternalModelsInput {
+impl  GetExternalModelsInput  {
     /// <p>The Amazon SageMaker model endpoint.</p>
-    pub fn model_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn model_endpoint(&self) -> ::std::option::Option<& str> {
         self.model_endpoint.as_deref()
     }
     /// <p>The next page token for the request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return for the request.</p>
@@ -47,8 +47,7 @@ impl GetExternalModelsInputBuilder {
     }
     /// <p>The Amazon SageMaker model endpoint.</p>
     pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_endpoint = input;
-        self
+        self.model_endpoint = input; self
     }
     /// <p>The Amazon SageMaker model endpoint.</p>
     pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetExternalModelsInputBuilder {
     }
     /// <p>The next page token for the request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next page token for the request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl GetExternalModelsInputBuilder {
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetExternalModelsInput`](crate::operation::get_external_models::GetExternalModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_external_models::GetExternalModelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_external_models::GetExternalModelsInput {
-            model_endpoint: self.model_endpoint,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_external_models::GetExternalModelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_external_models::GetExternalModelsInput {
+                model_endpoint: self.model_endpoint
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

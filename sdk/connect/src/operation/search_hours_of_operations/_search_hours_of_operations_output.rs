@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchHoursOfOperationsOutput {
+pub struct SearchHoursOfOperationsOutput  {
     /// <p>Information about the hours of operations.</p>
-    pub hours_of_operations: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>,
+    pub hours_of_operations: ::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperation>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of hours of operations which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl SearchHoursOfOperationsOutput {
+impl  SearchHoursOfOperationsOutput  {
     /// <p>Information about the hours of operations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hours_of_operations.is_none()`.
-    pub fn hours_of_operations(&self) -> &[crate::types::HoursOfOperation] {
-        self.hours_of_operations.as_deref().unwrap_or_default()
+    pub fn hours_of_operations(&self) -> & [crate::types::HoursOfOperation] {
+        self.hours_of_operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of hours of operations which matched your search query.</p>
@@ -28,10 +29,10 @@ impl SearchHoursOfOperationsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchHoursOfOperationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchHoursOfOperationsOutput {
     /// Creates a new builder-style object to manufacture [`SearchHoursOfOperationsOutput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput).
     pub fn builder() -> crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchHoursOfOperationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchHoursOfOperationsOutputBuilder {
-    pub(crate) hours_of_operations: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>,
+    pub(crate) hours_of_operations: ::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchHoursOfOperationsOutputBuilder {
     /// <p>Information about the hours of operations.</p>
     pub fn hours_of_operations(mut self, input: crate::types::HoursOfOperation) -> Self {
         let mut v = self.hours_of_operations.unwrap_or_default();
-        v.push(input);
-        self.hours_of_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hours_of_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the hours of operations.</p>
-    pub fn set_hours_of_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>) -> Self {
-        self.hours_of_operations = input;
-        self
+    pub fn set_hours_of_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperation>>) -> Self {
+        self.hours_of_operations = input; self
     }
     /// <p>Information about the hours of operations.</p>
-    pub fn get_hours_of_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
+    pub fn get_hours_of_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperation>> {
         &self.hours_of_operations
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -76,8 +76,7 @@ impl SearchHoursOfOperationsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchHoursOfOperationsOutputBuilder {
     }
     /// <p>The total number of hours of operations which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input;
-        self
+        self.approximate_total_count = input; self
     }
     /// <p>The total number of hours of operations which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchHoursOfOperationsOutput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput).
     pub fn build(self) -> crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput {
         crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput {
-            hours_of_operations: self.hours_of_operations,
-            next_token: self.next_token,
-            approximate_total_count: self.approximate_total_count,
+            hours_of_operations: self.hours_of_operations
+            ,
+            next_token: self.next_token
+            ,
+            approximate_total_count: self.approximate_total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

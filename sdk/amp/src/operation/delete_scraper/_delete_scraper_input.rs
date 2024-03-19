@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>DeleteScraper</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScraperInput {
+pub struct DeleteScraperInput  {
     /// <p>The ID of the scraper to delete.</p>
     pub scraper_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteScraperInput {
+impl  DeleteScraperInput  {
     /// <p>The ID of the scraper to delete.</p>
-    pub fn scraper_id(&self) -> ::std::option::Option<&str> {
+    pub fn scraper_id(&self) -> ::std::option::Option<& str> {
         self.scraper_id.as_deref()
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteScraperInputBuilder {
     }
     /// <p>The ID of the scraper to delete.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scraper_id = input;
-        self
+        self.scraper_id = input; self
     }
     /// <p>The ID of the scraper to delete.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteScraperInputBuilder {
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteScraperInput`](crate::operation::delete_scraper::DeleteScraperInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_scraper::DeleteScraperInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_scraper::DeleteScraperInput {
-            scraper_id: self.scraper_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scraper::DeleteScraperInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scraper::DeleteScraperInput {
+                scraper_id: self.scraper_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteActionInput {
+pub struct ExecuteActionInput  {
     /// <p>The resource the action will be taken on.</p>
     pub target_resource: ::std::option::Option<crate::types::TargetResource>,
     /// <p>The ID of the action definition.</p>
@@ -12,21 +12,21 @@ pub struct ExecuteActionInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl ExecuteActionInput {
+impl  ExecuteActionInput  {
     /// <p>The resource the action will be taken on.</p>
-    pub fn target_resource(&self) -> ::std::option::Option<&crate::types::TargetResource> {
+    pub fn target_resource(&self) -> ::std::option::Option<& crate::types::TargetResource> {
         self.target_resource.as_ref()
     }
     /// <p>The ID of the action definition.</p>
-    pub fn action_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_definition_id(&self) -> ::std::option::Option<& str> {
         self.action_definition_id.as_deref()
     }
     /// <p>The JSON payload of the action.</p>
-    pub fn action_payload(&self) -> ::std::option::Option<&crate::types::ActionPayload> {
+    pub fn action_payload(&self) -> ::std::option::Option<& crate::types::ActionPayload> {
         self.action_payload.as_ref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ExecuteActionInputBuilder {
     }
     /// <p>The resource the action will be taken on.</p>
     pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::TargetResource>) -> Self {
-        self.target_resource = input;
-        self
+        self.target_resource = input; self
     }
     /// <p>The resource the action will be taken on.</p>
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::TargetResource> {
@@ -70,8 +69,7 @@ impl ExecuteActionInputBuilder {
     }
     /// <p>The ID of the action definition.</p>
     pub fn set_action_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_definition_id = input;
-        self
+        self.action_definition_id = input; self
     }
     /// <p>The ID of the action definition.</p>
     pub fn get_action_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ExecuteActionInputBuilder {
     }
     /// <p>The JSON payload of the action.</p>
     pub fn set_action_payload(mut self, input: ::std::option::Option<crate::types::ActionPayload>) -> Self {
-        self.action_payload = input;
-        self
+        self.action_payload = input; self
     }
     /// <p>The JSON payload of the action.</p>
     pub fn get_action_payload(&self) -> &::std::option::Option<crate::types::ActionPayload> {
@@ -99,22 +96,26 @@ impl ExecuteActionInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ExecuteActionInput`](crate::operation::execute_action::ExecuteActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_action::ExecuteActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_action::ExecuteActionInput {
-            target_resource: self.target_resource,
-            action_definition_id: self.action_definition_id,
-            action_payload: self.action_payload,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_action::ExecuteActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_action::ExecuteActionInput {
+                target_resource: self.target_resource
+                ,
+                action_definition_id: self.action_definition_id
+                ,
+                action_payload: self.action_payload
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

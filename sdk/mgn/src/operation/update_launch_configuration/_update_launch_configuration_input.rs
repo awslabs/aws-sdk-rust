@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLaunchConfigurationInput {
+pub struct UpdateLaunchConfigurationInput  {
     /// <p>Update Launch configuration by Source Server ID request.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Update Launch configuration name request.</p>
@@ -28,21 +28,21 @@ pub struct UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLaunchConfigurationInput {
+impl  UpdateLaunchConfigurationInput  {
     /// <p>Update Launch configuration by Source Server ID request.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Update Launch configuration name request.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Update Launch configuration launch disposition request.</p>
-    pub fn launch_disposition(&self) -> ::std::option::Option<&crate::types::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> ::std::option::Option<& crate::types::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Update Launch configuration Target instance right sizing request.</p>
-    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<& crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Update Launch configuration copy Private IP request.</p>
@@ -54,15 +54,15 @@ impl UpdateLaunchConfigurationInput {
         self.copy_tags
     }
     /// <p>Update Launch configuration licensing request.</p>
-    pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
+    pub fn licensing(&self) -> ::std::option::Option<& crate::types::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Update Launch configuration boot mode request.</p>
-    pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::BootMode> {
+    pub fn boot_mode(&self) -> ::std::option::Option<& crate::types::BootMode> {
         self.boot_mode.as_ref()
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    pub fn post_launch_actions(&self) -> ::std::option::Option<&crate::types::PostLaunchActions> {
+    pub fn post_launch_actions(&self) -> ::std::option::Option<& crate::types::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
     /// <p>Enable map auto tagging.</p>
@@ -70,11 +70,11 @@ impl UpdateLaunchConfigurationInput {
         self.enable_map_auto_tagging
     }
     /// <p>Launch configuration map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<&str> {
+    pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<& str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
     /// <p>Update Launch configuration Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -111,8 +111,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration by Source Server ID request.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Update Launch configuration by Source Server ID request.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration name request.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Update Launch configuration name request.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration launch disposition request.</p>
     pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
-        self.launch_disposition = input;
-        self
+        self.launch_disposition = input; self
     }
     /// <p>Update Launch configuration launch disposition request.</p>
     pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
@@ -152,12 +149,8 @@ impl UpdateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>Update Launch configuration Target instance right sizing request.</p>
-    pub fn set_target_instance_type_right_sizing_method(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
-    ) -> Self {
-        self.target_instance_type_right_sizing_method = input;
-        self
+    pub fn set_target_instance_type_right_sizing_method(mut self, input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>) -> Self {
+        self.target_instance_type_right_sizing_method = input; self
     }
     /// <p>Update Launch configuration Target instance right sizing request.</p>
     pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
@@ -170,8 +163,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration copy Private IP request.</p>
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_private_ip = input;
-        self
+        self.copy_private_ip = input; self
     }
     /// <p>Update Launch configuration copy Private IP request.</p>
     pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
@@ -184,8 +176,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration copy Tags request.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p>Update Launch configuration copy Tags request.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
@@ -198,8 +189,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration licensing request.</p>
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
-        self.licensing = input;
-        self
+        self.licensing = input; self
     }
     /// <p>Update Launch configuration licensing request.</p>
     pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
@@ -212,8 +202,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration boot mode request.</p>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootMode>) -> Self {
-        self.boot_mode = input;
-        self
+        self.boot_mode = input; self
     }
     /// <p>Update Launch configuration boot mode request.</p>
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootMode> {
@@ -226,8 +215,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
     pub fn set_post_launch_actions(mut self, input: ::std::option::Option<crate::types::PostLaunchActions>) -> Self {
-        self.post_launch_actions = input;
-        self
+        self.post_launch_actions = input; self
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
     pub fn get_post_launch_actions(&self) -> &::std::option::Option<crate::types::PostLaunchActions> {
@@ -240,8 +228,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Enable map auto tagging.</p>
     pub fn set_enable_map_auto_tagging(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_map_auto_tagging = input;
-        self
+        self.enable_map_auto_tagging = input; self
     }
     /// <p>Enable map auto tagging.</p>
     pub fn get_enable_map_auto_tagging(&self) -> &::std::option::Option<bool> {
@@ -254,8 +241,7 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Launch configuration map auto tagging MPE ID.</p>
     pub fn set_map_auto_tagging_mpe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_auto_tagging_mpe_id = input;
-        self
+        self.map_auto_tagging_mpe_id = input; self
     }
     /// <p>Launch configuration map auto tagging MPE ID.</p>
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,33 +254,42 @@ impl UpdateLaunchConfigurationInputBuilder {
     }
     /// <p>Update Launch configuration Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Update Launch configuration Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationInput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput {
-            source_server_id: self.source_server_id,
-            name: self.name,
-            launch_disposition: self.launch_disposition,
-            target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
-            copy_private_ip: self.copy_private_ip,
-            copy_tags: self.copy_tags,
-            licensing: self.licensing,
-            boot_mode: self.boot_mode,
-            post_launch_actions: self.post_launch_actions,
-            enable_map_auto_tagging: self.enable_map_auto_tagging,
-            map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput {
+                source_server_id: self.source_server_id
+                ,
+                name: self.name
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                boot_mode: self.boot_mode
+                ,
+                post_launch_actions: self.post_launch_actions
+                ,
+                enable_map_auto_tagging: self.enable_map_auto_tagging
+                ,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

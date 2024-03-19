@@ -3,7 +3,7 @@
 /// <p>Contains summary information about all the replication statuses applicable for global resiliency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotReplicaSummary {
+pub struct BotReplicaSummary  {
     /// <p>The replica region used in the replication statuses summary.</p>
     pub replica_region: ::std::option::Option<::std::string::String>,
     /// <p>The creation time and date for the replicated bots.</p>
@@ -11,26 +11,27 @@ pub struct BotReplicaSummary {
     /// <p>The operation status for the replicated bot applicable.</p>
     pub bot_replica_status: ::std::option::Option<crate::types::BotReplicaStatus>,
     /// <p>The reasons for the failure for the replicated bot.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BotReplicaSummary {
+impl  BotReplicaSummary  {
     /// <p>The replica region used in the replication statuses summary.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>The creation time and date for the replicated bots.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The operation status for the replicated bot applicable.</p>
-    pub fn bot_replica_status(&self) -> ::std::option::Option<&crate::types::BotReplicaStatus> {
+    pub fn bot_replica_status(&self) -> ::std::option::Option<& crate::types::BotReplicaStatus> {
         self.bot_replica_status.as_ref()
     }
     /// <p>The reasons for the failure for the replicated bot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BotReplicaSummary {
@@ -47,7 +48,7 @@ pub struct BotReplicaSummaryBuilder {
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) bot_replica_status: ::std::option::Option<crate::types::BotReplicaStatus>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BotReplicaSummaryBuilder {
     /// <p>The replica region used in the replication statuses summary.</p>
@@ -57,8 +58,7 @@ impl BotReplicaSummaryBuilder {
     }
     /// <p>The replica region used in the replication statuses summary.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The replica region used in the replication statuses summary.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl BotReplicaSummaryBuilder {
     }
     /// <p>The creation time and date for the replicated bots.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation time and date for the replicated bots.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -85,8 +84,7 @@ impl BotReplicaSummaryBuilder {
     }
     /// <p>The operation status for the replicated bot applicable.</p>
     pub fn set_bot_replica_status(mut self, input: ::std::option::Option<crate::types::BotReplicaStatus>) -> Self {
-        self.bot_replica_status = input;
-        self
+        self.bot_replica_status = input; self
     }
     /// <p>The operation status for the replicated bot applicable.</p>
     pub fn get_bot_replica_status(&self) -> &::std::option::Option<crate::types::BotReplicaStatus> {
@@ -99,26 +97,30 @@ impl BotReplicaSummaryBuilder {
     /// <p>The reasons for the failure for the replicated bot.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reasons for the failure for the replicated bot.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>The reasons for the failure for the replicated bot.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// Consumes the builder and constructs a [`BotReplicaSummary`](crate::types::BotReplicaSummary).
     pub fn build(self) -> crate::types::BotReplicaSummary {
         crate::types::BotReplicaSummary {
-            replica_region: self.replica_region,
-            creation_date_time: self.creation_date_time,
-            bot_replica_status: self.bot_replica_status,
-            failure_reasons: self.failure_reasons,
+            replica_region: self.replica_region
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            bot_replica_status: self.bot_replica_status
+            ,
+            failure_reasons: self.failure_reasons
+            ,
         }
     }
 }
+

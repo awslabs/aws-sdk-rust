@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServerlessCachesInput {
+pub struct DescribeServerlessCachesInput  {
     /// <p>The identifier for the serverless cache. If this parameter is specified, only information about that specific serverless cache is returned. Default: NULL</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records in the response. If more records exist than the specified max-records value, the next token is included in the response so that remaining results can be retrieved. The default is 50.</p>
@@ -10,9 +10,9 @@ pub struct DescribeServerlessCachesInput {
     /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxResults.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeServerlessCachesInput {
+impl  DescribeServerlessCachesInput  {
     /// <p>The identifier for the serverless cache. If this parameter is specified, only information about that specific serverless cache is returned. Default: NULL</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>The maximum number of records in the response. If more records exist than the specified max-records value, the next token is included in the response so that remaining results can be retrieved. The default is 50.</p>
@@ -20,7 +20,7 @@ impl DescribeServerlessCachesInput {
         self.max_results
     }
     /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxResults.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DescribeServerlessCachesInputBuilder {
     }
     /// <p>The identifier for the serverless cache. If this parameter is specified, only information about that specific serverless cache is returned. Default: NULL</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>The identifier for the serverless cache. If this parameter is specified, only information about that specific serverless cache is returned. Default: NULL</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DescribeServerlessCachesInputBuilder {
     }
     /// <p>The maximum number of records in the response. If more records exist than the specified max-records value, the next token is included in the response so that remaining results can be retrieved. The default is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of records in the response. If more records exist than the specified max-records value, the next token is included in the response so that remaining results can be retrieved. The default is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl DescribeServerlessCachesInputBuilder {
     }
     /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxResults.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeServerlessCachesInput`](crate::operation::describe_serverless_caches::DescribeServerlessCachesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_serverless_caches::DescribeServerlessCachesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_serverless_caches::DescribeServerlessCachesInput {
-            serverless_cache_name: self.serverless_cache_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_serverless_caches::DescribeServerlessCachesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_serverless_caches::DescribeServerlessCachesInput {
+                serverless_cache_name: self.serverless_cache_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

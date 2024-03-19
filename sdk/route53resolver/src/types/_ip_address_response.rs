@@ -3,7 +3,7 @@
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a> request, information about the IP addresses that the Resolver endpoint uses for DNS queries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpAddressResponse {
+pub struct IpAddressResponse  {
     /// <p>The ID of one IP address.</p>
     pub ip_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of one subnet.</p>
@@ -21,37 +21,37 @@ pub struct IpAddressResponse {
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
-impl IpAddressResponse {
+impl  IpAddressResponse  {
     /// <p>The ID of one IP address.</p>
-    pub fn ip_id(&self) -> ::std::option::Option<&str> {
+    pub fn ip_id(&self) -> ::std::option::Option<& str> {
         self.ip_id.as_deref()
     }
     /// <p>The ID of one subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
-    pub fn ip(&self) -> ::std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
-    pub fn ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6(&self) -> ::std::option::Option<& str> {
         self.ipv6.as_deref()
     }
     /// <p>A status code that gives the current status of the request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IpAddressStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IpAddressStatus> {
         self.status.as_ref()
     }
     /// <p>A message that provides additional information about the status of the request.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date and time that the IP address was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(&self) -> ::std::option::Option<&str> {
+    pub fn modification_time(&self) -> ::std::option::Option<& str> {
         self.modification_time.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>The ID of one IP address.</p>
     pub fn set_ip_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_id = input;
-        self
+        self.ip_id = input; self
     }
     /// <p>The ID of one IP address.</p>
     pub fn get_ip_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>The ID of one subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of one subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
     }
     /// <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6 = input;
-        self
+        self.ipv6 = input; self
     }
     /// <p>One IPv6 address that the Resolver endpoint uses for DNS queries.</p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>A status code that gives the current status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IpAddressStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A status code that gives the current status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IpAddressStatus> {
@@ -153,8 +148,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>A message that provides additional information about the status of the request.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A message that provides additional information about the status of the request.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>The date and time that the IP address was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the IP address was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl IpAddressResponseBuilder {
     }
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.modification_time = input;
-        self
+        self.modification_time = input; self
     }
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl IpAddressResponseBuilder {
     /// Consumes the builder and constructs a [`IpAddressResponse`](crate::types::IpAddressResponse).
     pub fn build(self) -> crate::types::IpAddressResponse {
         crate::types::IpAddressResponse {
-            ip_id: self.ip_id,
-            subnet_id: self.subnet_id,
-            ip: self.ip,
-            ipv6: self.ipv6,
-            status: self.status,
-            status_message: self.status_message,
-            creation_time: self.creation_time,
-            modification_time: self.modification_time,
+            ip_id: self.ip_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            ip: self.ip
+            ,
+            ipv6: self.ipv6
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            creation_time: self.creation_time
+            ,
+            modification_time: self.modification_time
+            ,
         }
     }
 }
+

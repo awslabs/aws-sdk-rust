@@ -3,23 +3,23 @@
 /// <p>A set of credentials that allow remote access to an instance in an EC2 managed fleet. These credentials are returned in response to a call to <code>GetInstanceAccess</code>, which requests access for instances that are running game servers with the Amazon GameLift server SDK version 4.x or earlier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InstanceCredentials {
+pub struct InstanceCredentials  {
     /// <p>A user name for logging in.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it's a private key for use with SSH.</p>
     pub secret: ::std::option::Option<::std::string::String>,
 }
-impl InstanceCredentials {
+impl  InstanceCredentials  {
     /// <p>A user name for logging in.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it's a private key for use with SSH.</p>
-    pub fn secret(&self) -> ::std::option::Option<&str> {
+    pub fn secret(&self) -> ::std::option::Option<& str> {
         self.secret.as_deref()
     }
 }
-impl ::std::fmt::Debug for InstanceCredentials {
+impl  ::std::fmt::Debug for InstanceCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceCredentials");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl InstanceCredentialsBuilder {
     }
     /// <p>A user name for logging in.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A user name for logging in.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl InstanceCredentialsBuilder {
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it's a private key for use with SSH.</p>
     pub fn set_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret = input;
-        self
+        self.secret = input; self
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it's a private key for use with SSH.</p>
     pub fn get_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl InstanceCredentialsBuilder {
     /// Consumes the builder and constructs a [`InstanceCredentials`](crate::types::InstanceCredentials).
     pub fn build(self) -> crate::types::InstanceCredentials {
         crate::types::InstanceCredentials {
-            user_name: self.user_name,
-            secret: self.secret,
+            user_name: self.user_name
+            ,
+            secret: self.secret
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for InstanceCredentialsBuilder {
         formatter.finish()
     }
 }
+

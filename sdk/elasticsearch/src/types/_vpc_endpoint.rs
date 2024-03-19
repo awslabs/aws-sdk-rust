@@ -3,7 +3,7 @@
 /// <p>The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcEndpoint {
+pub struct VpcEndpoint  {
     /// <p>The unique identifier of the endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The creator of the endpoint.</p>
@@ -17,29 +17,29 @@ pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting to the domain.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
 }
-impl VpcEndpoint {
+impl  VpcEndpoint  {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn vpc_endpoint_owner(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_owner(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_owner.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
+    pub fn domain_arn(&self) -> ::std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
-    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcDerivedInfo> {
+    pub fn vpc_options(&self) -> ::std::option::Option<& crate::types::VpcDerivedInfo> {
         self.vpc_options.as_ref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The connection endpoint ID for connecting to the domain.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The creator of the endpoint.</p>
     pub fn set_vpc_endpoint_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_owner = input;
-        self
+        self.vpc_endpoint_owner = input; self
     }
     /// <p>The creator of the endpoint.</p>
     pub fn get_vpc_endpoint_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
     pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcDerivedInfo>) -> Self {
-        self.vpc_options = input;
-        self
+        self.vpc_options = input; self
     }
     /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcDerivedInfo> {
@@ -125,8 +121,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The current status of the endpoint.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
@@ -139,8 +134,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The connection endpoint ID for connecting to the domain.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The connection endpoint ID for connecting to the domain.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl VpcEndpointBuilder {
     /// Consumes the builder and constructs a [`VpcEndpoint`](crate::types::VpcEndpoint).
     pub fn build(self) -> crate::types::VpcEndpoint {
         crate::types::VpcEndpoint {
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            vpc_endpoint_owner: self.vpc_endpoint_owner,
-            domain_arn: self.domain_arn,
-            vpc_options: self.vpc_options,
-            status: self.status,
-            endpoint: self.endpoint,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            vpc_endpoint_owner: self.vpc_endpoint_owner
+            ,
+            domain_arn: self.domain_arn
+            ,
+            vpc_options: self.vpc_options
+            ,
+            status: self.status
+            ,
+            endpoint: self.endpoint
+            ,
         }
     }
 }
+

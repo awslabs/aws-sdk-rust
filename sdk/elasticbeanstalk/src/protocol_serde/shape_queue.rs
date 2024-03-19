@@ -36,3 +36,4 @@ pub fn de_queue(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     }
     Ok(builder.build())
 }
+

@@ -3,7 +3,7 @@
 /// Placeholder documentation for DescribeReservationResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservationOutput {
+pub struct DescribeReservationOutput  {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     pub arn: ::std::option::Option<::std::string::String>,
     /// Number of reserved resources
@@ -39,14 +39,14 @@ pub struct DescribeReservationOutput {
     /// Current state of reservation, e.g. 'ACTIVE'
     pub state: ::std::option::Option<crate::types::ReservationState>,
     /// A collection of key-value pairs
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub usage_price: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
-impl DescribeReservationOutput {
+impl  DescribeReservationOutput  {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Number of reserved resources
@@ -54,7 +54,7 @@ impl DescribeReservationOutput {
         self.count
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
@@ -62,11 +62,11 @@ impl DescribeReservationOutput {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn duration_units(&self) -> ::std::option::Option<&crate::types::OfferingDurationUnits> {
+    pub fn duration_units(&self) -> ::std::option::Option<& crate::types::OfferingDurationUnits> {
         self.duration_units.as_ref()
     }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
-    pub fn end(&self) -> ::std::option::Option<&str> {
+    pub fn end(&self) -> ::std::option::Option<& str> {
         self.end.as_deref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
@@ -74,47 +74,47 @@ impl DescribeReservationOutput {
         self.fixed_price
     }
     /// User specified reservation name
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(&self) -> ::std::option::Option<&str> {
+    pub fn offering_description(&self) -> ::std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn offering_type(&self) -> ::std::option::Option<&crate::types::OfferingType> {
+    pub fn offering_type(&self) -> ::std::option::Option<& crate::types::OfferingType> {
         self.offering_type.as_ref()
     }
     /// AWS region, e.g. 'us-west-2'
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// Renewal settings for the reservation
-    pub fn renewal_settings(&self) -> ::std::option::Option<&crate::types::RenewalSettings> {
+    pub fn renewal_settings(&self) -> ::std::option::Option<& crate::types::RenewalSettings> {
         self.renewal_settings.as_ref()
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ReservationResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<& crate::types::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
-    pub fn start(&self) -> ::std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<& str> {
         self.start.as_deref()
     }
     /// Current state of reservation, e.g. 'ACTIVE'
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ReservationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ReservationState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -123,10 +123,10 @@ impl DescribeReservationOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput).
     pub fn builder() -> crate::operation::describe_reservation::builders::DescribeReservationOutputBuilder {
@@ -155,7 +155,7 @@ pub struct DescribeReservationOutputBuilder {
     pub(crate) resource_specification: ::std::option::Option<crate::types::ReservationResourceSpecification>,
     pub(crate) start: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReservationState>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) usage_price: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
@@ -167,8 +167,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +180,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Number of reserved resources
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// Number of reserved resources
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -195,8 +193,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +206,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Lease duration, e.g. '12'
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// Lease duration, e.g. '12'
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -223,8 +219,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Units for duration, e.g. 'MONTHS'
     pub fn set_duration_units(mut self, input: ::std::option::Option<crate::types::OfferingDurationUnits>) -> Self {
-        self.duration_units = input;
-        self
+        self.duration_units = input; self
     }
     /// Units for duration, e.g. 'MONTHS'
     pub fn get_duration_units(&self) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
@@ -237,8 +232,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
     pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +245,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fixed_price = input;
-        self
+        self.fixed_price = input; self
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
@@ -265,8 +258,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// User specified reservation name
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// User specified reservation name
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +271,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     pub fn set_offering_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_description = input;
-        self
+        self.offering_description = input; self
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     pub fn get_offering_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +284,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Unique offering ID, e.g. '87654321'
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// Unique offering ID, e.g. '87654321'
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +297,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Offering type, e.g. 'NO_UPFRONT'
     pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingType>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// Offering type, e.g. 'NO_UPFRONT'
     pub fn get_offering_type(&self) -> &::std::option::Option<crate::types::OfferingType> {
@@ -321,8 +310,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// AWS region, e.g. 'us-west-2'
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// AWS region, e.g. 'us-west-2'
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +323,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Renewal settings for the reservation
     pub fn set_renewal_settings(mut self, input: ::std::option::Option<crate::types::RenewalSettings>) -> Self {
-        self.renewal_settings = input;
-        self
+        self.renewal_settings = input; self
     }
     /// Renewal settings for the reservation
     pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
@@ -349,8 +336,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_id = input;
-        self
+        self.reservation_id = input; self
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,8 +349,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Resource configuration details
     pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ReservationResourceSpecification>) -> Self {
-        self.resource_specification = input;
-        self
+        self.resource_specification = input; self
     }
     /// Resource configuration details
     pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
@@ -377,8 +362,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
@@ -391,8 +375,7 @@ impl DescribeReservationOutputBuilder {
     }
     /// Current state of reservation, e.g. 'ACTIVE'
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReservationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Current state of reservation, e.g. 'ACTIVE'
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ReservationState> {
@@ -405,17 +388,16 @@ impl DescribeReservationOutputBuilder {
     /// A collection of key-value pairs
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of key-value pairs
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -425,45 +407,64 @@ impl DescribeReservationOutputBuilder {
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.usage_price = input;
-        self
+        self.usage_price = input; self
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
         &self.usage_price
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput).
     pub fn build(self) -> crate::operation::describe_reservation::DescribeReservationOutput {
         crate::operation::describe_reservation::DescribeReservationOutput {
-            arn: self.arn,
-            count: self.count,
-            currency_code: self.currency_code,
-            duration: self.duration,
-            duration_units: self.duration_units,
-            end: self.end,
-            fixed_price: self.fixed_price,
-            name: self.name,
-            offering_description: self.offering_description,
-            offering_id: self.offering_id,
-            offering_type: self.offering_type,
-            region: self.region,
-            renewal_settings: self.renewal_settings,
-            reservation_id: self.reservation_id,
-            resource_specification: self.resource_specification,
-            start: self.start,
-            state: self.state,
-            tags: self.tags,
-            usage_price: self.usage_price,
+            arn: self.arn
+            ,
+            count: self.count
+            ,
+            currency_code: self.currency_code
+            ,
+            duration: self.duration
+            ,
+            duration_units: self.duration_units
+            ,
+            end: self.end
+            ,
+            fixed_price: self.fixed_price
+            ,
+            name: self.name
+            ,
+            offering_description: self.offering_description
+            ,
+            offering_id: self.offering_id
+            ,
+            offering_type: self.offering_type
+            ,
+            region: self.region
+            ,
+            renewal_settings: self.renewal_settings
+            ,
+            reservation_id: self.reservation_id
+            ,
+            resource_specification: self.resource_specification
+            ,
+            start: self.start
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
+            usage_price: self.usage_price
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

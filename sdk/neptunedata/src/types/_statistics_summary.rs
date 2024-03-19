@@ -3,7 +3,7 @@
 /// <p>Information about the characteristic sets generated in the statistics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatisticsSummary {
+pub struct StatisticsSummary  {
     /// <p>The total number of signatures across all characteristic sets.</p>
     pub signature_count: ::std::option::Option<i32>,
     /// <p>The total number of characteristic-set instances.</p>
@@ -11,7 +11,7 @@ pub struct StatisticsSummary {
     /// <p>The total number of unique predicates.</p>
     pub predicate_count: ::std::option::Option<i32>,
 }
-impl StatisticsSummary {
+impl  StatisticsSummary  {
     /// <p>The total number of signatures across all characteristic sets.</p>
     pub fn signature_count(&self) -> ::std::option::Option<i32> {
         self.signature_count
@@ -48,8 +48,7 @@ impl StatisticsSummaryBuilder {
     }
     /// <p>The total number of signatures across all characteristic sets.</p>
     pub fn set_signature_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.signature_count = input;
-        self
+        self.signature_count = input; self
     }
     /// <p>The total number of signatures across all characteristic sets.</p>
     pub fn get_signature_count(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl StatisticsSummaryBuilder {
     }
     /// <p>The total number of characteristic-set instances.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The total number of characteristic-set instances.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl StatisticsSummaryBuilder {
     }
     /// <p>The total number of unique predicates.</p>
     pub fn set_predicate_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.predicate_count = input;
-        self
+        self.predicate_count = input; self
     }
     /// <p>The total number of unique predicates.</p>
     pub fn get_predicate_count(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl StatisticsSummaryBuilder {
     /// Consumes the builder and constructs a [`StatisticsSummary`](crate::types::StatisticsSummary).
     pub fn build(self) -> crate::types::StatisticsSummary {
         crate::types::StatisticsSummary {
-            signature_count: self.signature_count,
-            instance_count: self.instance_count,
-            predicate_count: self.predicate_count,
+            signature_count: self.signature_count
+            ,
+            instance_count: self.instance_count
+            ,
+            predicate_count: self.predicate_count
+            ,
         }
     }
 }
+

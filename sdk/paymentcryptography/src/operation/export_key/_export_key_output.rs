@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportKeyOutput {
+pub struct ExportKeyOutput  {
     /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
     pub wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     _request_id: Option<String>,
 }
-impl ExportKeyOutput {
+impl  ExportKeyOutput  {
     /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
-    pub fn wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+    pub fn wrapped_key(&self) -> ::std::option::Option<& crate::types::WrappedKey> {
         self.wrapped_key.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportKeyOutput {
     /// Creates a new builder-style object to manufacture [`ExportKeyOutput`](crate::operation::export_key::ExportKeyOutput).
     pub fn builder() -> crate::operation::export_key::builders::ExportKeyOutputBuilder {
@@ -40,27 +40,28 @@ impl ExportKeyOutputBuilder {
     }
     /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
     pub fn set_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
-        self.wrapped_key = input;
-        self
+        self.wrapped_key = input; self
     }
     /// <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
     pub fn get_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
         &self.wrapped_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportKeyOutput`](crate::operation::export_key::ExportKeyOutput).
     pub fn build(self) -> crate::operation::export_key::ExportKeyOutput {
         crate::operation::export_key::ExportKeyOutput {
-            wrapped_key: self.wrapped_key,
+            wrapped_key: self.wrapped_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

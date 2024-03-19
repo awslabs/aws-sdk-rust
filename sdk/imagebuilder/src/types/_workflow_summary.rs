@@ -3,7 +3,7 @@
 /// <p>Contains metadata about the workflow resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowSummary {
+pub struct WorkflowSummary  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow.</p>
@@ -23,47 +23,47 @@ pub struct WorkflowSummary {
     /// <p>The original creation date of the workflow resource.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of tags that are defined for the workflow.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl WorkflowSummary {
+impl  WorkflowSummary  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the workflow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the workflow.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Describes the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description for the current version of the workflow resource.</p>
-    pub fn change_description(&self) -> ::std::option::Option<&str> {
+    pub fn change_description(&self) -> ::std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>The owner of the workflow resource.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>Describes the current state of the workflow resource.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkflowState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::WorkflowState> {
         self.state.as_ref()
     }
     /// <p>The original creation date of the workflow resource.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>Contains a list of tags that are defined for the workflow.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -87,7 +87,7 @@ pub struct WorkflowSummaryBuilder {
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::WorkflowState>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl WorkflowSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
@@ -97,8 +97,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The version of the workflow.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the workflow.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>Describes the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Describes the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The change description for the current version of the workflow resource.</p>
     pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_description = input;
-        self
+        self.change_description = input; self
     }
     /// <p>The change description for the current version of the workflow resource.</p>
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -181,8 +175,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The owner of the workflow resource.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the workflow resource.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>Describes the current state of the workflow resource.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkflowState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Describes the current state of the workflow resource.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkflowState> {
@@ -209,8 +201,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The original creation date of the workflow resource.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The original creation date of the workflow resource.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,32 +214,42 @@ impl WorkflowSummaryBuilder {
     /// <p>Contains a list of tags that are defined for the workflow.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains a list of tags that are defined for the workflow.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Contains a list of tags that are defined for the workflow.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`WorkflowSummary`](crate::types::WorkflowSummary).
     pub fn build(self) -> crate::types::WorkflowSummary {
         crate::types::WorkflowSummary {
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            description: self.description,
-            change_description: self.change_description,
-            r#type: self.r#type,
-            owner: self.owner,
-            state: self.state,
-            date_created: self.date_created,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            description: self.description
+            ,
+            change_description: self.change_description
+            ,
+            r#type: self.r#type
+            ,
+            owner: self.owner
+            ,
+            state: self.state
+            ,
+            date_created: self.date_created
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

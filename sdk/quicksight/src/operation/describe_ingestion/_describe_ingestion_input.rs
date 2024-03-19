@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIngestionInput {
+pub struct DescribeIngestionInput  {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dataset used in the ingestion.</p>
@@ -10,17 +10,17 @@ pub struct DescribeIngestionInput {
     /// <p>An ID for the ingestion.</p>
     pub ingestion_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeIngestionInput {
+impl  DescribeIngestionInput  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn ingestion_id(&self) -> ::std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> ::std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeIngestionInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeIngestionInputBuilder {
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl DescribeIngestionInputBuilder {
     }
     /// <p>An ID for the ingestion.</p>
     pub fn set_ingestion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_id = input;
-        self
+        self.ingestion_id = input; self
     }
     /// <p>An ID for the ingestion.</p>
     pub fn get_ingestion_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingestion_id
     }
     /// Consumes the builder and constructs a [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ingestion::DescribeIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_ingestion::DescribeIngestionInput {
-            aws_account_id: self.aws_account_id,
-            data_set_id: self.data_set_id,
-            ingestion_id: self.ingestion_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ingestion::DescribeIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ingestion::DescribeIngestionInput {
+                aws_account_id: self.aws_account_id
+                ,
+                data_set_id: self.data_set_id
+                ,
+                ingestion_id: self.ingestion_id
+                ,
+            }
+        )
     }
 }
+

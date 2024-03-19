@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePluginInput {
+pub struct UpdatePluginInput  {
     /// <p>The identifier of the application the plugin is attached to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the plugin.</p>
@@ -16,29 +16,29 @@ pub struct UpdatePluginInput {
     /// <p>The authentication configuration the plugin is using.</p>
     pub auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
 }
-impl UpdatePluginInput {
+impl  UpdatePluginInput  {
     /// <p>The identifier of the application the plugin is attached to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the plugin.</p>
-    pub fn plugin_id(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_id(&self) -> ::std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
     /// <p>The name of the plugin.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The status of the plugin.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PluginState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PluginState> {
         self.state.as_ref()
     }
     /// <p>The source URL used for plugin configuration.</p>
-    pub fn server_url(&self) -> ::std::option::Option<&str> {
+    pub fn server_url(&self) -> ::std::option::Option<& str> {
         self.server_url.as_deref()
     }
     /// <p>The authentication configuration the plugin is using.</p>
-    pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
+    pub fn auth_configuration(&self) -> ::std::option::Option<& crate::types::PluginAuthConfiguration> {
         self.auth_configuration.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdatePluginInputBuilder {
     }
     /// <p>The identifier of the application the plugin is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application the plugin is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdatePluginInputBuilder {
     }
     /// <p>The identifier of the plugin.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
     }
     /// <p>The identifier of the plugin.</p>
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl UpdatePluginInputBuilder {
     }
     /// <p>The name of the plugin.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the plugin.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl UpdatePluginInputBuilder {
     }
     /// <p>The status of the plugin.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PluginState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of the plugin.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PluginState> {
@@ -126,8 +122,7 @@ impl UpdatePluginInputBuilder {
     }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_url = input;
-        self
+        self.server_url = input; self
     }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,24 +135,30 @@ impl UpdatePluginInputBuilder {
     }
     /// <p>The authentication configuration the plugin is using.</p>
     pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
-        self.auth_configuration = input;
-        self
+        self.auth_configuration = input; self
     }
     /// <p>The authentication configuration the plugin is using.</p>
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
         &self.auth_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePluginInput`](crate::operation::update_plugin::UpdatePluginInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_plugin::UpdatePluginInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_plugin::UpdatePluginInput {
-            application_id: self.application_id,
-            plugin_id: self.plugin_id,
-            display_name: self.display_name,
-            state: self.state,
-            server_url: self.server_url,
-            auth_configuration: self.auth_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_plugin::UpdatePluginInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_plugin::UpdatePluginInput {
+                application_id: self.application_id
+                ,
+                plugin_id: self.plugin_id
+                ,
+                display_name: self.display_name
+                ,
+                state: self.state
+                ,
+                server_url: self.server_url
+                ,
+                auth_configuration: self.auth_configuration
+                ,
+            }
+        )
     }
 }
+

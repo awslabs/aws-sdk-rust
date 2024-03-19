@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPoolOriginationIdentities`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pool_id(impl Into<String>)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::set_pool_id):<br>required: **true**<br><p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><br>
     ///   - [`filters(PoolOriginationIdentitiesFilter)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::filters) / [`set_filters(Option<Vec::<PoolOriginationIdentitiesFilter>>)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::set_filters):<br>required: **false**<br><p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`ListPoolOriginationIdentitiesOutput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput) with field(s):
+                            /// - On success, responds with [`ListPoolOriginationIdentitiesOutput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput) with field(s):
     ///   - [`pool_arn(Option<String>)`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput::pool_arn): <p>The Amazon Resource Name (ARN) for the pool.</p>
     ///   - [`pool_id(Option<String>)`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput::pool_id): <p>The unique PoolId of the pool.</p>
     ///   - [`origination_identities(Option<Vec::<OriginationIdentityMetadata>>)`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput::origination_identities): <p>An array of any OriginationIdentityMetadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListPoolOriginationIdentitiesError>`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError)
-    pub fn list_pool_origination_identities(
-        &self,
-    ) -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder {
-        crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListPoolOriginationIdentitiesError>`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError)
+    pub fn list_pool_origination_identities(&self) -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder {
+                                crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

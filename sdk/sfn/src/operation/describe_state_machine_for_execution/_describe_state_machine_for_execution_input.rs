@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStateMachineForExecutionInput {
+pub struct DescribeStateMachineForExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     pub execution_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStateMachineForExecutionInput {
+impl  DescribeStateMachineForExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_arn(&self) -> ::std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DescribeStateMachineForExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_arn
     }
     /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionInput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput {
-                execution_arn: self.execution_arn,
-            },
+                execution_arn: self.execution_arn
+                ,
+            }
         )
     }
 }
+

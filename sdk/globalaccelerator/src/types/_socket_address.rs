@@ -3,15 +3,15 @@
 /// <p>An IP address/port combination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SocketAddress {
+pub struct SocketAddress  {
     /// <p>The IP address for the socket address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The port for the socket address.</p>
     pub port: ::std::option::Option<i32>,
 }
-impl SocketAddress {
+impl  SocketAddress  {
     /// <p>The IP address for the socket address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The port for the socket address.</p>
@@ -41,8 +41,7 @@ impl SocketAddressBuilder {
     }
     /// <p>The IP address for the socket address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address for the socket address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SocketAddressBuilder {
     }
     /// <p>The port for the socket address.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port for the socket address.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl SocketAddressBuilder {
     /// Consumes the builder and constructs a [`SocketAddress`](crate::types::SocketAddress).
     pub fn build(self) -> crate::types::SocketAddress {
         crate::types::SocketAddress {
-            ip_address: self.ip_address,
-            port: self.port,
+            ip_address: self.ip_address
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

@@ -5,12 +5,12 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationTimeValue {
+pub struct ReplicationTimeValue  {
     /// <p>Contains an integer that specifies the time period in minutes.</p>
     /// <p>Valid value: 15</p>
     pub minutes: ::std::option::Option<i32>,
 }
-impl ReplicationTimeValue {
+impl  ReplicationTimeValue  {
     /// <p>Contains an integer that specifies the time period in minutes.</p>
     /// <p>Valid value: 15</p>
     pub fn minutes(&self) -> ::std::option::Option<i32> {
@@ -40,8 +40,7 @@ impl ReplicationTimeValueBuilder {
     /// <p>Contains an integer that specifies the time period in minutes.</p>
     /// <p>Valid value: 15</p>
     pub fn set_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minutes = input;
-        self
+        self.minutes = input; self
     }
     /// <p>Contains an integer that specifies the time period in minutes.</p>
     /// <p>Valid value: 15</p>
@@ -50,6 +49,10 @@ impl ReplicationTimeValueBuilder {
     }
     /// Consumes the builder and constructs a [`ReplicationTimeValue`](crate::types::ReplicationTimeValue).
     pub fn build(self) -> crate::types::ReplicationTimeValue {
-        crate::types::ReplicationTimeValue { minutes: self.minutes }
+        crate::types::ReplicationTimeValue {
+            minutes: self.minutes
+            ,
+        }
     }
 }
+

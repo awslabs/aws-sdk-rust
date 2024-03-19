@@ -3,20 +3,19 @@
 /// <p>Object specifying a channel as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelDestinationConfiguration {
+pub struct ChannelDestinationConfiguration  {
     /// <p>ARN of the channel to use for broadcasting. The channel and stage resources must be in the same AWS account and region. The channel must be offline (not broadcasting).</p>
     pub channel_arn: ::std::string::String,
     /// <p>ARN of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
     pub encoder_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl ChannelDestinationConfiguration {
+impl  ChannelDestinationConfiguration  {
     /// <p>ARN of the channel to use for broadcasting. The channel and stage resources must be in the same AWS account and region. The channel must be offline (not broadcasting).</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> & str {
+        use std::ops::Deref; self.channel_arn.deref()
     }
     /// <p>ARN of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
-    pub fn encoder_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encoder_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.encoder_configuration_arn.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ChannelDestinationConfigurationBuilder {
     }
     /// <p>ARN of the channel to use for broadcasting. The channel and stage resources must be in the same AWS account and region. The channel must be offline (not broadcasting).</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>ARN of the channel to use for broadcasting. The channel and stage resources must be in the same AWS account and region. The channel must be offline (not broadcasting).</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ChannelDestinationConfigurationBuilder {
     }
     /// <p>ARN of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
     pub fn set_encoder_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoder_configuration_arn = input;
-        self
+        self.encoder_configuration_arn = input; self
     }
     /// <p>ARN of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
     pub fn get_encoder_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ChannelDestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`channel_arn`](crate::types::builders::ChannelDestinationConfigurationBuilder::channel_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ChannelDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChannelDestinationConfiguration {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building ChannelDestinationConfiguration",
-                )
-            })?,
-            encoder_configuration_arn: self.encoder_configuration_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChannelDestinationConfiguration {
+                channel_arn: self.channel_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_arn", "channel_arn was not specified but it is required when building ChannelDestinationConfiguration")
+                    )?
+                ,
+                encoder_configuration_arn: self.encoder_configuration_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a version of a file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileVersion {
+pub struct FileVersion  {
     /// <p>Returns information about a specific commit.</p>
     pub commit: ::std::option::Option<crate::types::Commit>,
     /// <p>The blob ID of the object that represents the content of the file in this version.</p>
@@ -11,26 +11,27 @@ pub struct FileVersion {
     /// <p>The name and path of the file at which this blob is indexed which contains the data for this version of the file. This value will vary between file versions if a file is renamed or if its path changes.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>An array of commit IDs that contain more recent versions of this file. If there are no additional versions of the file, this array will be empty.</p>
-    pub revision_children: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub revision_children: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl FileVersion {
+impl  FileVersion  {
     /// <p>Returns information about a specific commit.</p>
-    pub fn commit(&self) -> ::std::option::Option<&crate::types::Commit> {
+    pub fn commit(&self) -> ::std::option::Option<& crate::types::Commit> {
         self.commit.as_ref()
     }
     /// <p>The blob ID of the object that represents the content of the file in this version.</p>
-    pub fn blob_id(&self) -> ::std::option::Option<&str> {
+    pub fn blob_id(&self) -> ::std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The name and path of the file at which this blob is indexed which contains the data for this version of the file. This value will vary between file versions if a file is renamed or if its path changes.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>An array of commit IDs that contain more recent versions of this file. If there are no additional versions of the file, this array will be empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revision_children.is_none()`.
-    pub fn revision_children(&self) -> &[::std::string::String] {
-        self.revision_children.as_deref().unwrap_or_default()
+    pub fn revision_children(&self) -> & [::std::string::String] {
+        self.revision_children.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FileVersion {
@@ -47,7 +48,7 @@ pub struct FileVersionBuilder {
     pub(crate) commit: ::std::option::Option<crate::types::Commit>,
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) revision_children: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) revision_children: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FileVersionBuilder {
     /// <p>Returns information about a specific commit.</p>
@@ -57,8 +58,7 @@ impl FileVersionBuilder {
     }
     /// <p>Returns information about a specific commit.</p>
     pub fn set_commit(mut self, input: ::std::option::Option<crate::types::Commit>) -> Self {
-        self.commit = input;
-        self
+        self.commit = input; self
     }
     /// <p>Returns information about a specific commit.</p>
     pub fn get_commit(&self) -> &::std::option::Option<crate::types::Commit> {
@@ -71,8 +71,7 @@ impl FileVersionBuilder {
     }
     /// <p>The blob ID of the object that represents the content of the file in this version.</p>
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blob_id = input;
-        self
+        self.blob_id = input; self
     }
     /// <p>The blob ID of the object that represents the content of the file in this version.</p>
     pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl FileVersionBuilder {
     }
     /// <p>The name and path of the file at which this blob is indexed which contains the data for this version of the file. This value will vary between file versions if a file is renamed or if its path changes.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The name and path of the file at which this blob is indexed which contains the data for this version of the file. This value will vary between file versions if a file is renamed or if its path changes.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl FileVersionBuilder {
     /// <p>An array of commit IDs that contain more recent versions of this file. If there are no additional versions of the file, this array will be empty.</p>
     pub fn revision_children(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.revision_children.unwrap_or_default();
-        v.push(input.into());
-        self.revision_children = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.revision_children = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of commit IDs that contain more recent versions of this file. If there are no additional versions of the file, this array will be empty.</p>
-    pub fn set_revision_children(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.revision_children = input;
-        self
+    pub fn set_revision_children(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.revision_children = input; self
     }
     /// <p>An array of commit IDs that contain more recent versions of this file. If there are no additional versions of the file, this array will be empty.</p>
-    pub fn get_revision_children(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_revision_children(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.revision_children
     }
     /// Consumes the builder and constructs a [`FileVersion`](crate::types::FileVersion).
     pub fn build(self) -> crate::types::FileVersion {
         crate::types::FileVersion {
-            commit: self.commit,
-            blob_id: self.blob_id,
-            path: self.path,
-            revision_children: self.revision_children,
+            commit: self.commit
+            ,
+            blob_id: self.blob_id
+            ,
+            path: self.path
+            ,
+            revision_children: self.revision_children
+            ,
         }
     }
 }
+

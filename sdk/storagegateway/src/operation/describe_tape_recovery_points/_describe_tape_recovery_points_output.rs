@@ -3,38 +3,39 @@
 /// <p>DescribeTapeRecoveryPointsOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTapeRecoveryPointsOutput {
+pub struct DescribeTapeRecoveryPointsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
+    pub tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec::<crate::types::TapeRecoveryPointInfo>>,
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTapeRecoveryPointsOutput {
+impl  DescribeTapeRecoveryPointsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_recovery_point_infos.is_none()`.
-    pub fn tape_recovery_point_infos(&self) -> &[crate::types::TapeRecoveryPointInfo] {
-        self.tape_recovery_point_infos.as_deref().unwrap_or_default()
+    pub fn tape_recovery_point_infos(&self) -> & [crate::types::TapeRecoveryPointInfo] {
+        self.tape_recovery_point_infos.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTapeRecoveryPointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTapeRecoveryPointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeRecoveryPointsOutput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput).
     pub fn builder() -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsOutputBuilder {
@@ -47,7 +48,7 @@ impl DescribeTapeRecoveryPointsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
+    pub(crate) tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec::<crate::types::TapeRecoveryPointInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,8 +60,7 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +73,16 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
     pub fn tape_recovery_point_infos(mut self, input: crate::types::TapeRecoveryPointInfo) -> Self {
         let mut v = self.tape_recovery_point_infos.unwrap_or_default();
-        v.push(input);
-        self.tape_recovery_point_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tape_recovery_point_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub fn set_tape_recovery_point_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>) -> Self {
-        self.tape_recovery_point_infos = input;
-        self
+    pub fn set_tape_recovery_point_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TapeRecoveryPointInfo>>) -> Self {
+        self.tape_recovery_point_infos = input; self
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub fn get_tape_recovery_point_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>> {
+    pub fn get_tape_recovery_point_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TapeRecoveryPointInfo>> {
         &self.tape_recovery_point_infos
     }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
@@ -95,8 +94,7 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
@@ -104,21 +102,25 @@ impl DescribeTapeRecoveryPointsOutputBuilder {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTapeRecoveryPointsOutput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput).
     pub fn build(self) -> crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput {
         crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput {
-            gateway_arn: self.gateway_arn,
-            tape_recovery_point_infos: self.tape_recovery_point_infos,
-            marker: self.marker,
+            gateway_arn: self.gateway_arn
+            ,
+            tape_recovery_point_infos: self.tape_recovery_point_infos
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

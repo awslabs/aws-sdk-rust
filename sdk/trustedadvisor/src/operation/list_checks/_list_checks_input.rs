@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChecksInput {
+pub struct ListChecksInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -16,9 +16,9 @@ pub struct ListChecksInput {
     /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
     pub language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
-impl ListChecksInput {
+impl  ListChecksInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -26,19 +26,19 @@ impl ListChecksInput {
         self.max_results
     }
     /// <p>The pillar of the check</p>
-    pub fn pillar(&self) -> ::std::option::Option<&crate::types::RecommendationPillar> {
+    pub fn pillar(&self) -> ::std::option::Option<& crate::types::RecommendationPillar> {
         self.pillar.as_ref()
     }
     /// <p>The aws service associated with the check</p>
-    pub fn aws_service(&self) -> ::std::option::Option<&str> {
+    pub fn aws_service(&self) -> ::std::option::Option<& str> {
         self.aws_service.as_deref()
     }
     /// <p>The source of the check</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::RecommendationSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::RecommendationSource> {
         self.source.as_ref()
     }
     /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
-    pub fn language(&self) -> ::std::option::Option<&crate::types::RecommendationLanguage> {
+    pub fn language(&self) -> ::std::option::Option<& crate::types::RecommendationLanguage> {
         self.language.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl ListChecksInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl ListChecksInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,8 +94,7 @@ impl ListChecksInputBuilder {
     }
     /// <p>The pillar of the check</p>
     pub fn set_pillar(mut self, input: ::std::option::Option<crate::types::RecommendationPillar>) -> Self {
-        self.pillar = input;
-        self
+        self.pillar = input; self
     }
     /// <p>The pillar of the check</p>
     pub fn get_pillar(&self) -> &::std::option::Option<crate::types::RecommendationPillar> {
@@ -110,8 +107,7 @@ impl ListChecksInputBuilder {
     }
     /// <p>The aws service associated with the check</p>
     pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_service = input;
-        self
+        self.aws_service = input; self
     }
     /// <p>The aws service associated with the check</p>
     pub fn get_aws_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +120,7 @@ impl ListChecksInputBuilder {
     }
     /// <p>The source of the check</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the check</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::RecommendationSource> {
@@ -138,8 +133,7 @@ impl ListChecksInputBuilder {
     }
     /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::RecommendationLanguage>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The ISO 639-1 code for the language that you want your checks to appear in.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::RecommendationLanguage> {
@@ -147,13 +141,22 @@ impl ListChecksInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListChecksInput`](crate::operation::list_checks::ListChecksInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_checks::ListChecksInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_checks::ListChecksInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            pillar: self.pillar,
-            aws_service: self.aws_service,
-            source: self.source,
-            language: self.language,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_checks::ListChecksInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                pillar: self.pillar
+                ,
+                aws_service: self.aws_service
+                ,
+                source: self.source
+                ,
+                language: self.language
+                ,
+            }
+        )
     }
 }
+

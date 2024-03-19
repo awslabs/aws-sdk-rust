@@ -3,19 +3,19 @@
 /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3RepositoryDetails {
+pub struct S3RepositoryDetails  {
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub code_artifacts: ::std::option::Option<crate::types::CodeArtifacts>,
 }
-impl S3RepositoryDetails {
+impl  S3RepositoryDetails  {
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-    pub fn code_artifacts(&self) -> ::std::option::Option<&crate::types::CodeArtifacts> {
+    pub fn code_artifacts(&self) -> ::std::option::Option<& crate::types::CodeArtifacts> {
         self.code_artifacts.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl S3RepositoryDetailsBuilder {
     }
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3RepositoryDetailsBuilder {
     }
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub fn set_code_artifacts(mut self, input: ::std::option::Option<crate::types::CodeArtifacts>) -> Self {
-        self.code_artifacts = input;
-        self
+        self.code_artifacts = input; self
     }
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub fn get_code_artifacts(&self) -> &::std::option::Option<crate::types::CodeArtifacts> {
@@ -65,8 +63,11 @@ impl S3RepositoryDetailsBuilder {
     /// Consumes the builder and constructs a [`S3RepositoryDetails`](crate::types::S3RepositoryDetails).
     pub fn build(self) -> crate::types::S3RepositoryDetails {
         crate::types::S3RepositoryDetails {
-            bucket_name: self.bucket_name,
-            code_artifacts: self.code_artifacts,
+            bucket_name: self.bucket_name
+            ,
+            code_artifacts: self.code_artifacts
+            ,
         }
     }
 }
+

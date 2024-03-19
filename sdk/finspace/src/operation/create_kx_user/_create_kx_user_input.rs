@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxUserInput {
+pub struct CreateKxUserInput  {
     /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the user.</p>
@@ -10,29 +10,29 @@ pub struct CreateKxUserInput {
     /// <p>The IAM role ARN that will be associated with the user.</p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateKxUserInput {
+impl  CreateKxUserInput  {
     /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The IAM role ARN that will be associated with the user.</p>
-    pub fn iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role(&self) -> ::std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -50,7 +50,7 @@ pub struct CreateKxUserInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxUserInputBuilder {
@@ -62,8 +62,7 @@ impl CreateKxUserInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateKxUserInputBuilder {
     }
     /// <p>A unique identifier for the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique identifier for the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateKxUserInputBuilder {
     }
     /// <p>The IAM role ARN that will be associated with the user.</p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// <p>The IAM role ARN that will be associated with the user.</p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +103,16 @@ impl CreateKxUserInputBuilder {
     /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -126,23 +122,28 @@ impl CreateKxUserInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateKxUserInput`](crate::operation::create_kx_user::CreateKxUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_kx_user::CreateKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_kx_user::CreateKxUserInput {
-            environment_id: self.environment_id,
-            user_name: self.user_name,
-            iam_role: self.iam_role,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_kx_user::CreateKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_kx_user::CreateKxUserInput {
+                environment_id: self.environment_id
+                ,
+                user_name: self.user_name
+                ,
+                iam_role: self.iam_role
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,46 +3,50 @@
 /// <p>Describes a header. Reflects any changes made by a component as traffic passes through. The fields of an inbound header are null except for the first component of a path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisPacketHeader {
+pub struct AnalysisPacketHeader  {
     /// <p>The destination addresses.</p>
-    pub destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destination_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The destination port ranges.</p>
-    pub destination_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub destination_port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
     /// <p>The protocol.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The source addresses.</p>
-    pub source_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The source port ranges.</p>
-    pub source_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub source_port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
 }
-impl AnalysisPacketHeader {
+impl  AnalysisPacketHeader  {
     /// <p>The destination addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_addresses.is_none()`.
-    pub fn destination_addresses(&self) -> &[::std::string::String] {
-        self.destination_addresses.as_deref().unwrap_or_default()
+    pub fn destination_addresses(&self) -> & [::std::string::String] {
+        self.destination_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The destination port ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_port_ranges.is_none()`.
-    pub fn destination_port_ranges(&self) -> &[crate::types::PortRange] {
-        self.destination_port_ranges.as_deref().unwrap_or_default()
+    pub fn destination_port_ranges(&self) -> & [crate::types::PortRange] {
+        self.destination_port_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The source addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_addresses.is_none()`.
-    pub fn source_addresses(&self) -> &[::std::string::String] {
-        self.source_addresses.as_deref().unwrap_or_default()
+    pub fn source_addresses(&self) -> & [::std::string::String] {
+        self.source_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The source port ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_port_ranges.is_none()`.
-    pub fn source_port_ranges(&self) -> &[crate::types::PortRange] {
-        self.source_port_ranges.as_deref().unwrap_or_default()
+    pub fn source_port_ranges(&self) -> & [crate::types::PortRange] {
+        self.source_port_ranges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnalysisPacketHeader {
@@ -56,11 +60,11 @@ impl AnalysisPacketHeader {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisPacketHeaderBuilder {
-    pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destination_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) destination_port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
-    pub(crate) source_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) source_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) source_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) source_port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
 }
 impl AnalysisPacketHeaderBuilder {
     /// Appends an item to `destination_addresses`.
@@ -70,17 +74,16 @@ impl AnalysisPacketHeaderBuilder {
     /// <p>The destination addresses.</p>
     pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.destination_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destination_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination addresses.</p>
-    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.destination_addresses = input;
-        self
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.destination_addresses = input; self
     }
     /// <p>The destination addresses.</p>
-    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.destination_addresses
     }
     /// Appends an item to `destination_port_ranges`.
@@ -90,17 +93,16 @@ impl AnalysisPacketHeaderBuilder {
     /// <p>The destination port ranges.</p>
     pub fn destination_port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.destination_port_ranges.unwrap_or_default();
-        v.push(input);
-        self.destination_port_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_port_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination port ranges.</p>
-    pub fn set_destination_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.destination_port_ranges = input;
-        self
+    pub fn set_destination_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.destination_port_ranges = input; self
     }
     /// <p>The destination port ranges.</p>
-    pub fn get_destination_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_destination_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.destination_port_ranges
     }
     /// <p>The protocol.</p>
@@ -110,8 +112,7 @@ impl AnalysisPacketHeaderBuilder {
     }
     /// <p>The protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,17 +125,16 @@ impl AnalysisPacketHeaderBuilder {
     /// <p>The source addresses.</p>
     pub fn source_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.source_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source addresses.</p>
-    pub fn set_source_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_addresses = input;
-        self
+    pub fn set_source_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_addresses = input; self
     }
     /// <p>The source addresses.</p>
-    pub fn get_source_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_addresses
     }
     /// Appends an item to `source_port_ranges`.
@@ -144,27 +144,32 @@ impl AnalysisPacketHeaderBuilder {
     /// <p>The source port ranges.</p>
     pub fn source_port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.source_port_ranges.unwrap_or_default();
-        v.push(input);
-        self.source_port_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_port_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source port ranges.</p>
-    pub fn set_source_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.source_port_ranges = input;
-        self
+    pub fn set_source_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.source_port_ranges = input; self
     }
     /// <p>The source port ranges.</p>
-    pub fn get_source_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_source_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.source_port_ranges
     }
     /// Consumes the builder and constructs a [`AnalysisPacketHeader`](crate::types::AnalysisPacketHeader).
     pub fn build(self) -> crate::types::AnalysisPacketHeader {
         crate::types::AnalysisPacketHeader {
-            destination_addresses: self.destination_addresses,
-            destination_port_ranges: self.destination_port_ranges,
-            protocol: self.protocol,
-            source_addresses: self.source_addresses,
-            source_port_ranges: self.source_port_ranges,
+            destination_addresses: self.destination_addresses
+            ,
+            destination_port_ranges: self.destination_port_ranges
+            ,
+            protocol: self.protocol
+            ,
+            source_addresses: self.source_addresses
+            ,
+            source_port_ranges: self.source_port_ranges
+            ,
         }
     }
 }
+

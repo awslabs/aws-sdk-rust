@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachClassicLinkVpcInput {
+pub struct DetachClassicLinkVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance to unlink from the VPC.</p>
@@ -10,17 +10,17 @@ pub struct DetachClassicLinkVpcInput {
     /// <p>The ID of the VPC to which the instance is linked.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl DetachClassicLinkVpcInput {
+impl  DetachClassicLinkVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the instance to unlink from the VPC.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of the VPC to which the instance is linked.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DetachClassicLinkVpcInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl DetachClassicLinkVpcInputBuilder {
     }
     /// <p>The ID of the instance to unlink from the VPC.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance to unlink from the VPC.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DetachClassicLinkVpcInputBuilder {
     }
     /// <p>The ID of the VPC to which the instance is linked.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC to which the instance is linked.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
     /// Consumes the builder and constructs a [`DetachClassicLinkVpcInput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput {
-            dry_run: self.dry_run,
-            instance_id: self.instance_id,
-            vpc_id: self.vpc_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput {
+                dry_run: self.dry_run
+                ,
+                instance_id: self.instance_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+            }
+        )
     }
 }
+

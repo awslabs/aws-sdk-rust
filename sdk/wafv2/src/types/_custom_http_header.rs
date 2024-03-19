@@ -3,24 +3,22 @@
 /// <p>A custom header for custom request and response handling. This is used in <code>CustomResponse</code> and <code>CustomRequestHandling</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomHttpHeader {
+pub struct CustomHttpHeader  {
     /// <p>The name of the custom header.</p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     pub name: ::std::string::String,
     /// <p>The value of the custom header.</p>
     pub value: ::std::string::String,
 }
-impl CustomHttpHeader {
+impl  CustomHttpHeader  {
     /// <p>The name of the custom header.</p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the custom header.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl CustomHttpHeader {
@@ -48,8 +46,7 @@ impl CustomHttpHeaderBuilder {
     /// <p>The name of the custom header.</p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom header.</p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
@@ -64,8 +61,7 @@ impl CustomHttpHeaderBuilder {
     }
     /// <p>The value of the custom header.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the custom header.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl CustomHttpHeaderBuilder {
     /// - [`name`](crate::types::builders::CustomHttpHeaderBuilder::name)
     /// - [`value`](crate::types::builders::CustomHttpHeaderBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomHttpHeader, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomHttpHeader {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CustomHttpHeader",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CustomHttpHeader",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomHttpHeader {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CustomHttpHeader")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CustomHttpHeader")
+                    )?
+                ,
+            }
+        )
     }
 }
+

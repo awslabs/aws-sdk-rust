@@ -3,7 +3,7 @@
 /// <p>A structure that describes the details of a topic, such as its name, description, and associated data sets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicDetails {
+pub struct TopicDetails  {
     /// <p>The name of the topic.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the topic.</p>
@@ -11,26 +11,27 @@ pub struct TopicDetails {
     /// <p>The user experience version of a topic.</p>
     pub user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
     /// <p>The data sets that the topic is associated with.</p>
-    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>,
 }
-impl TopicDetails {
+impl  TopicDetails  {
     /// <p>The name of the topic.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the topic.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The user experience version of a topic.</p>
-    pub fn user_experience_version(&self) -> ::std::option::Option<&crate::types::TopicUserExperienceVersion> {
+    pub fn user_experience_version(&self) -> ::std::option::Option<& crate::types::TopicUserExperienceVersion> {
         self.user_experience_version.as_ref()
     }
     /// <p>The data sets that the topic is associated with.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
-    pub fn data_sets(&self) -> &[crate::types::DatasetMetadata] {
-        self.data_sets.as_deref().unwrap_or_default()
+    pub fn data_sets(&self) -> & [crate::types::DatasetMetadata] {
+        self.data_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TopicDetails {
@@ -47,7 +48,7 @@ pub struct TopicDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
-    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>,
 }
 impl TopicDetailsBuilder {
     /// <p>The name of the topic.</p>
@@ -57,8 +58,7 @@ impl TopicDetailsBuilder {
     }
     /// <p>The name of the topic.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the topic.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl TopicDetailsBuilder {
     }
     /// <p>The description of the topic.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the topic.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl TopicDetailsBuilder {
     }
     /// <p>The user experience version of a topic.</p>
     pub fn set_user_experience_version(mut self, input: ::std::option::Option<crate::types::TopicUserExperienceVersion>) -> Self {
-        self.user_experience_version = input;
-        self
+        self.user_experience_version = input; self
     }
     /// <p>The user experience version of a topic.</p>
     pub fn get_user_experience_version(&self) -> &::std::option::Option<crate::types::TopicUserExperienceVersion> {
@@ -99,26 +97,30 @@ impl TopicDetailsBuilder {
     /// <p>The data sets that the topic is associated with.</p>
     pub fn data_sets(mut self, input: crate::types::DatasetMetadata) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
-        v.push(input);
-        self.data_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data sets that the topic is associated with.</p>
-    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>) -> Self {
-        self.data_sets = input;
-        self
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>) -> Self {
+        self.data_sets = input; self
     }
     /// <p>The data sets that the topic is associated with.</p>
-    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>> {
         &self.data_sets
     }
     /// Consumes the builder and constructs a [`TopicDetails`](crate::types::TopicDetails).
     pub fn build(self) -> crate::types::TopicDetails {
         crate::types::TopicDetails {
-            name: self.name,
-            description: self.description,
-            user_experience_version: self.user_experience_version,
-            data_sets: self.data_sets,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            user_experience_version: self.user_experience_version
+            ,
+            data_sets: self.data_sets
+            ,
         }
     }
 }
+

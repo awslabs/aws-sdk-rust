@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDeploymentStrategyInput {
+pub struct CreateDeploymentStrategyInput  {
     /// <p>A name for the deployment strategy.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the deployment strategy.</p>
@@ -24,15 +24,15 @@ pub struct CreateDeploymentStrategyInput {
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: ::std::option::Option<crate::types::ReplicateTo>,
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateDeploymentStrategyInput {
+impl  CreateDeploymentStrategyInput  {
     /// <p>A name for the deployment strategy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the deployment strategy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time for a deployment to last.</p>
@@ -54,15 +54,15 @@ impl CreateDeploymentStrategyInput {
     /// <p><code>2*(2^1)</code></p>
     /// <p><code>2*(2^2)</code></p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn growth_type(&self) -> ::std::option::Option<&crate::types::GrowthType> {
+    pub fn growth_type(&self) -> ::std::option::Option<& crate::types::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn replicate_to(&self) -> ::std::option::Option<&crate::types::ReplicateTo> {
+    pub fn replicate_to(&self) -> ::std::option::Option<& crate::types::ReplicateTo> {
         self.replicate_to.as_ref()
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -84,7 +84,7 @@ pub struct CreateDeploymentStrategyInputBuilder {
     pub(crate) growth_factor: ::std::option::Option<f32>,
     pub(crate) growth_type: ::std::option::Option<crate::types::GrowthType>,
     pub(crate) replicate_to: ::std::option::Option<crate::types::ReplicateTo>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeploymentStrategyInputBuilder {
     /// <p>A name for the deployment strategy.</p>
@@ -95,8 +95,7 @@ impl CreateDeploymentStrategyInputBuilder {
     }
     /// <p>A name for the deployment strategy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the deployment strategy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +108,7 @@ impl CreateDeploymentStrategyInputBuilder {
     }
     /// <p>A description of the deployment strategy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the deployment strategy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl CreateDeploymentStrategyInputBuilder {
     }
     /// <p>Total amount of time for a deployment to last.</p>
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.deployment_duration_in_minutes = input;
-        self
+        self.deployment_duration_in_minutes = input; self
     }
     /// <p>Total amount of time for a deployment to last.</p>
     pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -138,8 +135,7 @@ impl CreateDeploymentStrategyInputBuilder {
     }
     /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.final_bake_time_in_minutes = input;
-        self
+        self.final_bake_time_in_minutes = input; self
     }
     /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -153,8 +149,7 @@ impl CreateDeploymentStrategyInputBuilder {
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn set_growth_factor(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.growth_factor = input;
-        self
+        self.growth_factor = input; self
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
@@ -179,8 +174,7 @@ impl CreateDeploymentStrategyInputBuilder {
     /// <p><code>2*(2^2)</code></p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
-        self.growth_type = input;
-        self
+        self.growth_type = input; self
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
     /// <p><b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
@@ -199,8 +193,7 @@ impl CreateDeploymentStrategyInputBuilder {
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn set_replicate_to(mut self, input: ::std::option::Option<crate::types::ReplicateTo>) -> Self {
-        self.replicate_to = input;
-        self
+        self.replicate_to = input; self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn get_replicate_to(&self) -> &::std::option::Option<crate::types::ReplicateTo> {
@@ -213,35 +206,40 @@ impl CreateDeploymentStrategyInputBuilder {
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeploymentStrategyInput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput {
-            name: self.name,
-            description: self.description,
-            deployment_duration_in_minutes: self.deployment_duration_in_minutes,
-            final_bake_time_in_minutes: self.final_bake_time_in_minutes,
-            growth_factor: self.growth_factor,
-            growth_type: self.growth_type,
-            replicate_to: self.replicate_to,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                ,
+                growth_factor: self.growth_factor
+                ,
+                growth_type: self.growth_type
+                ,
+                replicate_to: self.replicate_to
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

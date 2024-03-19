@@ -3,7 +3,8 @@
 /// <p>A structure that defines configuration settings for an application that supports the OAuth 2.0 Refresh Token Grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RefreshTokenGrant {}
+pub struct RefreshTokenGrant  {
+}
 impl RefreshTokenGrant {
     /// Creates a new builder-style object to manufacture [`RefreshTokenGrant`](crate::types::RefreshTokenGrant).
     pub fn builder() -> crate::types::builders::RefreshTokenGrantBuilder {
@@ -14,10 +15,13 @@ impl RefreshTokenGrant {
 /// A builder for [`RefreshTokenGrant`](crate::types::RefreshTokenGrant).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct RefreshTokenGrantBuilder {}
+pub struct RefreshTokenGrantBuilder {
+}
 impl RefreshTokenGrantBuilder {
     /// Consumes the builder and constructs a [`RefreshTokenGrant`](crate::types::RefreshTokenGrant).
     pub fn build(self) -> crate::types::RefreshTokenGrant {
-        crate::types::RefreshTokenGrant {}
+        crate::types::RefreshTokenGrant {
+        }
     }
 }
+

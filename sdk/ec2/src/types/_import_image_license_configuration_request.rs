@@ -3,13 +3,13 @@
 /// <p>The request information of license configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportImageLicenseConfigurationRequest {
+pub struct ImportImageLicenseConfigurationRequest  {
     /// <p>The ARN of a license configuration.</p>
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl ImportImageLicenseConfigurationRequest {
+impl  ImportImageLicenseConfigurationRequest  {
     /// <p>The ARN of a license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ImportImageLicenseConfigurationRequestBuilder {
     }
     /// <p>The ARN of a license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>The ARN of a license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ImportImageLicenseConfigurationRequestBuilder {
     /// Consumes the builder and constructs a [`ImportImageLicenseConfigurationRequest`](crate::types::ImportImageLicenseConfigurationRequest).
     pub fn build(self) -> crate::types::ImportImageLicenseConfigurationRequest {
         crate::types::ImportImageLicenseConfigurationRequest {
-            license_configuration_arn: self.license_configuration_arn,
+            license_configuration_arn: self.license_configuration_arn
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Contains a numeric value in decimal format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecimalNumber {
+pub struct DecimalNumber  {
     /// <p>The unscaled numeric value.</p>
     pub unscaled_value: ::aws_smithy_types::Blob,
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub scale: i32,
 }
-impl DecimalNumber {
+impl  DecimalNumber  {
     /// <p>The unscaled numeric value.</p>
-    pub fn unscaled_value(&self) -> &::aws_smithy_types::Blob {
+    pub fn unscaled_value(&self) -> & ::aws_smithy_types::Blob {
         &self.unscaled_value
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
@@ -42,8 +42,7 @@ impl DecimalNumberBuilder {
     }
     /// <p>The unscaled numeric value.</p>
     pub fn set_unscaled_value(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.unscaled_value = input;
-        self
+        self.unscaled_value = input; self
     }
     /// <p>The unscaled numeric value.</p>
     pub fn get_unscaled_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -57,8 +56,7 @@ impl DecimalNumberBuilder {
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn get_scale(&self) -> &::std::option::Option<i32> {
@@ -68,14 +66,18 @@ impl DecimalNumberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`unscaled_value`](crate::types::builders::DecimalNumberBuilder::unscaled_value)
     pub fn build(self) -> ::std::result::Result<crate::types::DecimalNumber, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DecimalNumber {
-            unscaled_value: self.unscaled_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unscaled_value",
-                    "unscaled_value was not specified but it is required when building DecimalNumber",
-                )
-            })?,
-            scale: self.scale.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::DecimalNumber {
+                unscaled_value: self.unscaled_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unscaled_value", "unscaled_value was not specified but it is required when building DecimalNumber")
+                    )?
+                ,
+                scale: self.scale
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

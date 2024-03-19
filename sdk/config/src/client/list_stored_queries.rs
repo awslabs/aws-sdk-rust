@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStoredQueries`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned with a single call.</p><br>
-    /// - On success, responds with [`ListStoredQueriesOutput`](crate::operation::list_stored_queries::ListStoredQueriesOutput) with field(s):
+                            /// - On success, responds with [`ListStoredQueriesOutput`](crate::operation::list_stored_queries::ListStoredQueriesOutput) with field(s):
     ///   - [`stored_query_metadata(Option<Vec::<StoredQueryMetadata>>)`](crate::operation::list_stored_queries::ListStoredQueriesOutput::stored_query_metadata): <p>A list of <code>StoredQueryMetadata</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stored_queries::ListStoredQueriesOutput::next_token): <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    /// - On failure, responds with [`SdkError<ListStoredQueriesError>`](crate::operation::list_stored_queries::ListStoredQueriesError)
+                            /// - On failure, responds with [`SdkError<ListStoredQueriesError>`](crate::operation::list_stored_queries::ListStoredQueriesError)
     pub fn list_stored_queries(&self) -> crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder {
-        crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

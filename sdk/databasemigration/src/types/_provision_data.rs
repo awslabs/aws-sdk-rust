@@ -3,7 +3,7 @@
 /// <p>Information about provisioning resources for an DMS serverless replication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionData {
+pub struct ProvisionData  {
     /// <p>The current provisioning state</p>
     pub provision_state: ::std::option::Option<::std::string::String>,
     /// <p>The number of capacity units the replication is using.</p>
@@ -17,9 +17,9 @@ pub struct ProvisionData {
     /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
     pub reason_for_new_provisioning_data: ::std::option::Option<::std::string::String>,
 }
-impl ProvisionData {
+impl  ProvisionData  {
     /// <p>The current provisioning state</p>
-    pub fn provision_state(&self) -> ::std::option::Option<&str> {
+    pub fn provision_state(&self) -> ::std::option::Option<& str> {
         self.provision_state.as_deref()
     }
     /// <p>The number of capacity units the replication is using.</p>
@@ -27,7 +27,7 @@ impl ProvisionData {
         self.provisioned_capacity_units
     }
     /// <p>The timestamp when DMS provisioned replication resources.</p>
-    pub fn date_provisioned(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_provisioned(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_provisioned.as_ref()
     }
     /// <p>Whether the new provisioning is available to the replication.</p>
@@ -35,11 +35,11 @@ impl ProvisionData {
         self.is_new_provisioning_available
     }
     /// <p>The timestamp when provisioning became available.</p>
-    pub fn date_new_provisioning_data_available(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_new_provisioning_data_available(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_new_provisioning_data_available.as_ref()
     }
     /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
-    pub fn reason_for_new_provisioning_data(&self) -> ::std::option::Option<&str> {
+    pub fn reason_for_new_provisioning_data(&self) -> ::std::option::Option<& str> {
         self.reason_for_new_provisioning_data.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl ProvisionDataBuilder {
     }
     /// <p>The current provisioning state</p>
     pub fn set_provision_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_state = input;
-        self
+        self.provision_state = input; self
     }
     /// <p>The current provisioning state</p>
     pub fn get_provision_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ProvisionDataBuilder {
     }
     /// <p>The number of capacity units the replication is using.</p>
     pub fn set_provisioned_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_capacity_units = input;
-        self
+        self.provisioned_capacity_units = input; self
     }
     /// <p>The number of capacity units the replication is using.</p>
     pub fn get_provisioned_capacity_units(&self) -> &::std::option::Option<i32> {
@@ -97,8 +95,7 @@ impl ProvisionDataBuilder {
     }
     /// <p>The timestamp when DMS provisioned replication resources.</p>
     pub fn set_date_provisioned(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_provisioned = input;
-        self
+        self.date_provisioned = input; self
     }
     /// <p>The timestamp when DMS provisioned replication resources.</p>
     pub fn get_date_provisioned(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl ProvisionDataBuilder {
     }
     /// <p>Whether the new provisioning is available to the replication.</p>
     pub fn set_is_new_provisioning_available(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_new_provisioning_available = input;
-        self
+        self.is_new_provisioning_available = input; self
     }
     /// <p>Whether the new provisioning is available to the replication.</p>
     pub fn get_is_new_provisioning_available(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl ProvisionDataBuilder {
     }
     /// <p>The timestamp when provisioning became available.</p>
     pub fn set_date_new_provisioning_data_available(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_new_provisioning_data_available = input;
-        self
+        self.date_new_provisioning_data_available = input; self
     }
     /// <p>The timestamp when provisioning became available.</p>
     pub fn get_date_new_provisioning_data_available(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl ProvisionDataBuilder {
     }
     /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
     pub fn set_reason_for_new_provisioning_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason_for_new_provisioning_data = input;
-        self
+        self.reason_for_new_provisioning_data = input; self
     }
     /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
     pub fn get_reason_for_new_provisioning_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,21 @@ impl ProvisionDataBuilder {
     /// Consumes the builder and constructs a [`ProvisionData`](crate::types::ProvisionData).
     pub fn build(self) -> crate::types::ProvisionData {
         crate::types::ProvisionData {
-            provision_state: self.provision_state,
-            provisioned_capacity_units: self.provisioned_capacity_units.unwrap_or_default(),
-            date_provisioned: self.date_provisioned,
-            is_new_provisioning_available: self.is_new_provisioning_available.unwrap_or_default(),
-            date_new_provisioning_data_available: self.date_new_provisioning_data_available,
-            reason_for_new_provisioning_data: self.reason_for_new_provisioning_data,
+            provision_state: self.provision_state
+            ,
+            provisioned_capacity_units: self.provisioned_capacity_units
+                .unwrap_or_default()
+            ,
+            date_provisioned: self.date_provisioned
+            ,
+            is_new_provisioning_available: self.is_new_provisioning_available
+                .unwrap_or_default()
+            ,
+            date_new_provisioning_data_available: self.date_new_provisioning_data_available
+            ,
+            reason_for_new_provisioning_data: self.reason_for_new_provisioning_data
+            ,
         }
     }
 }
+

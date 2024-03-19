@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReplicationConfigurationTemplates`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`replication_configuration_template_ids(impl Into<String>)`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::replication_configuration_template_ids) / [`set_replication_configuration_template_ids(Option<Vec::<String>>)`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::set_replication_configuration_template_ids):<br>required: **false**<br><p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Replication Configuration Templates to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Replication Configuration Template to retrieve.</p><br>
-    /// - On success, responds with [`DescribeReplicationConfigurationTemplatesOutput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput) with field(s):
+                            /// - On success, responds with [`DescribeReplicationConfigurationTemplatesOutput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput) with field(s):
     ///   - [`items(Option<Vec::<ReplicationConfigurationTemplate>>)`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput::items): <p>An array of Replication Configuration Templates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput::next_token): <p>The token of the next Replication Configuration Template to retrieve.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationTemplatesError>`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError)
-    pub fn describe_replication_configuration_templates(
-        &self,
-    ) -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder {
-        crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationTemplatesError>`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError)
+    pub fn describe_replication_configuration_templates(&self) -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder {
+                                crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

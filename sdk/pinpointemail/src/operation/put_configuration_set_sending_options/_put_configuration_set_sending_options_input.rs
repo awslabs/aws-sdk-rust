@@ -3,15 +3,15 @@
 /// <p>A request to enable or disable the ability of Amazon Pinpoint to send emails that use a specific configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigurationSetSendingOptionsInput {
+pub struct PutConfigurationSetSendingOptionsInput  {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub sending_enabled: ::std::option::Option<bool>,
 }
-impl PutConfigurationSetSendingOptionsInput {
+impl  PutConfigurationSetSendingOptionsInput  {
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
@@ -42,8 +42,7 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
     }
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set that you want to enable or disable email sending for.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sending_enabled = input;
-        self
+        self.sending_enabled = input; self
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
         &self.sending_enabled
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsInput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                sending_enabled: self.sending_enabled,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                sending_enabled: self.sending_enabled
+                ,
+            }
         )
     }
 }
+

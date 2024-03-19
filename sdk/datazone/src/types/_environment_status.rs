@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentstatus = unimplemented!();
 /// match environmentstatus {
@@ -41,16 +41,14 @@
 /// Specifically, when `environmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -80,108 +78,95 @@ pub enum EnvironmentStatus {
     ValidationFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EnvironmentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => EnvironmentStatus::Active,
-            "CREATE_FAILED" => EnvironmentStatus::CreateFailed,
-            "CREATING" => EnvironmentStatus::Creating,
-            "DELETED" => EnvironmentStatus::Deleted,
-            "DELETE_FAILED" => EnvironmentStatus::DeleteFailed,
-            "DELETING" => EnvironmentStatus::Deleting,
-            "DISABLED" => EnvironmentStatus::Disabled,
-            "EXPIRED" => EnvironmentStatus::Expired,
-            "INACCESSIBLE" => EnvironmentStatus::Inaccessible,
-            "SUSPENDED" => EnvironmentStatus::Suspended,
-            "UPDATE_FAILED" => EnvironmentStatus::UpdateFailed,
-            "UPDATING" => EnvironmentStatus::Updating,
-            "VALIDATION_FAILED" => EnvironmentStatus::ValidationFailed,
-            other => EnvironmentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE" => EnvironmentStatus::Active,
+"CREATE_FAILED" => EnvironmentStatus::CreateFailed,
+"CREATING" => EnvironmentStatus::Creating,
+"DELETED" => EnvironmentStatus::Deleted,
+"DELETE_FAILED" => EnvironmentStatus::DeleteFailed,
+"DELETING" => EnvironmentStatus::Deleting,
+"DISABLED" => EnvironmentStatus::Disabled,
+"EXPIRED" => EnvironmentStatus::Expired,
+"INACCESSIBLE" => EnvironmentStatus::Inaccessible,
+"SUSPENDED" => EnvironmentStatus::Suspended,
+"UPDATE_FAILED" => EnvironmentStatus::UpdateFailed,
+"UPDATING" => EnvironmentStatus::Updating,
+"VALIDATION_FAILED" => EnvironmentStatus::ValidationFailed,
+other => EnvironmentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EnvironmentStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EnvironmentStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EnvironmentStatus::from(s))
+                    }
+                }
 impl EnvironmentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentStatus::Active => "ACTIVE",
-            EnvironmentStatus::CreateFailed => "CREATE_FAILED",
-            EnvironmentStatus::Creating => "CREATING",
-            EnvironmentStatus::Deleted => "DELETED",
-            EnvironmentStatus::DeleteFailed => "DELETE_FAILED",
-            EnvironmentStatus::Deleting => "DELETING",
-            EnvironmentStatus::Disabled => "DISABLED",
-            EnvironmentStatus::Expired => "EXPIRED",
-            EnvironmentStatus::Inaccessible => "INACCESSIBLE",
-            EnvironmentStatus::Suspended => "SUSPENDED",
-            EnvironmentStatus::UpdateFailed => "UPDATE_FAILED",
-            EnvironmentStatus::Updating => "UPDATING",
-            EnvironmentStatus::ValidationFailed => "VALIDATION_FAILED",
-            EnvironmentStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETING",
-            "DISABLED",
-            "EXPIRED",
-            "INACCESSIBLE",
-            "SUSPENDED",
-            "UPDATE_FAILED",
-            "UPDATING",
-            "VALIDATION_FAILED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentStatus::Active => "ACTIVE",
+    EnvironmentStatus::CreateFailed => "CREATE_FAILED",
+    EnvironmentStatus::Creating => "CREATING",
+    EnvironmentStatus::Deleted => "DELETED",
+    EnvironmentStatus::DeleteFailed => "DELETE_FAILED",
+    EnvironmentStatus::Deleting => "DELETING",
+    EnvironmentStatus::Disabled => "DISABLED",
+    EnvironmentStatus::Expired => "EXPIRED",
+    EnvironmentStatus::Inaccessible => "INACCESSIBLE",
+    EnvironmentStatus::Suspended => "SUSPENDED",
+    EnvironmentStatus::UpdateFailed => "UPDATE_FAILED",
+    EnvironmentStatus::Updating => "UPDATING",
+    EnvironmentStatus::ValidationFailed => "VALIDATION_FAILED",
+    EnvironmentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETED", "DELETE_FAILED", "DELETING", "DISABLED", "EXPIRED", "INACCESSIBLE", "SUSPENDED", "UPDATE_FAILED", "UPDATING", "VALIDATION_FAILED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EnvironmentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EnvironmentStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EnvironmentStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EnvironmentStatus::Active => write!(f, "ACTIVE"),
-            EnvironmentStatus::CreateFailed => write!(f, "CREATE_FAILED"),
-            EnvironmentStatus::Creating => write!(f, "CREATING"),
-            EnvironmentStatus::Deleted => write!(f, "DELETED"),
-            EnvironmentStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
-            EnvironmentStatus::Deleting => write!(f, "DELETING"),
-            EnvironmentStatus::Disabled => write!(f, "DISABLED"),
-            EnvironmentStatus::Expired => write!(f, "EXPIRED"),
-            EnvironmentStatus::Inaccessible => write!(f, "INACCESSIBLE"),
-            EnvironmentStatus::Suspended => write!(f, "SUSPENDED"),
-            EnvironmentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            EnvironmentStatus::Updating => write!(f, "UPDATING"),
-            EnvironmentStatus::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EnvironmentStatus::Active => write!(f, "ACTIVE"),
+EnvironmentStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+EnvironmentStatus::Creating => write!(f, "CREATING"),
+EnvironmentStatus::Deleted => write!(f, "DELETED"),
+EnvironmentStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+EnvironmentStatus::Deleting => write!(f, "DELETING"),
+EnvironmentStatus::Disabled => write!(f, "DISABLED"),
+EnvironmentStatus::Expired => write!(f, "EXPIRED"),
+EnvironmentStatus::Inaccessible => write!(f, "INACCESSIBLE"),
+EnvironmentStatus::Suspended => write!(f, "SUSPENDED"),
+EnvironmentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+EnvironmentStatus::Updating => write!(f, "UPDATING"),
+EnvironmentStatus::ValidationFailed => write!(f, "VALIDATION_FAILED"),
+EnvironmentStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMissionProfileInput {
+pub struct GetMissionProfileInput  {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMissionProfileInput {
+impl  GetMissionProfileInput  {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> ::std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl GetMissionProfileInputBuilder {
     }
     /// <p>UUID of a mission profile.</p>
     pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mission_profile_id = input;
-        self
+        self.mission_profile_id = input; self
     }
     /// <p>UUID of a mission profile.</p>
     pub fn get_mission_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.mission_profile_id
     }
     /// Consumes the builder and constructs a [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_mission_profile::GetMissionProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_mission_profile::GetMissionProfileInput {
-            mission_profile_id: self.mission_profile_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mission_profile::GetMissionProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_mission_profile::GetMissionProfileInput {
+                mission_profile_id: self.mission_profile_id
+                ,
+            }
+        )
     }
 }
+

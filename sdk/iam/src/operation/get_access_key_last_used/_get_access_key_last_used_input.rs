@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessKeyLastUsedInput {
+pub struct GetAccessKeyLastUsedInput  {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAccessKeyLastUsedInput {
+impl  GetAccessKeyLastUsedInput  {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl GetAccessKeyLastUsedInputBuilder {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
@@ -47,12 +46,13 @@ impl GetAccessKeyLastUsedInputBuilder {
         &self.access_key_id
     }
     /// Consumes the builder and constructs a [`GetAccessKeyLastUsedInput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput {
-            access_key_id: self.access_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput {
+                access_key_id: self.access_key_id
+                ,
+            }
+        )
     }
 }
+

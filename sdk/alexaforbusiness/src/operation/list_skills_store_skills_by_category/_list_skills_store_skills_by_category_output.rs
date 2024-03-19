@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSkillsStoreSkillsByCategoryOutput {
+pub struct ListSkillsStoreSkillsByCategoryOutput  {
     /// <p>The skill store skills.</p>
-    pub skills_store_skills: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>,
+    pub skills_store_skills: ::std::option::Option<::std::vec::Vec::<crate::types::SkillsStoreSkill>>,
     /// <p>The tokens used for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSkillsStoreSkillsByCategoryOutput {
+impl  ListSkillsStoreSkillsByCategoryOutput  {
     /// <p>The skill store skills.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skills_store_skills.is_none()`.
-    pub fn skills_store_skills(&self) -> &[crate::types::SkillsStoreSkill] {
-        self.skills_store_skills.as_deref().unwrap_or_default()
+    pub fn skills_store_skills(&self) -> & [crate::types::SkillsStoreSkill] {
+        self.skills_store_skills.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tokens used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSkillsStoreSkillsByCategoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSkillsStoreSkillsByCategoryOutput {
     /// Creates a new builder-style object to manufacture [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput).
     pub fn builder() -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSkillsStoreSkillsByCategoryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsStoreSkillsByCategoryOutputBuilder {
-    pub(crate) skills_store_skills: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>,
+    pub(crate) skills_store_skills: ::std::option::Option<::std::vec::Vec::<crate::types::SkillsStoreSkill>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSkillsStoreSkillsByCategoryOutputBuilder {
     /// <p>The skill store skills.</p>
     pub fn skills_store_skills(mut self, input: crate::types::SkillsStoreSkill) -> Self {
         let mut v = self.skills_store_skills.unwrap_or_default();
-        v.push(input);
-        self.skills_store_skills = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.skills_store_skills = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The skill store skills.</p>
-    pub fn set_skills_store_skills(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>) -> Self {
-        self.skills_store_skills = input;
-        self
+    pub fn set_skills_store_skills(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SkillsStoreSkill>>) -> Self {
+        self.skills_store_skills = input; self
     }
     /// <p>The skill store skills.</p>
-    pub fn get_skills_store_skills(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>> {
+    pub fn get_skills_store_skills(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SkillsStoreSkill>> {
         &self.skills_store_skills
     }
     /// <p>The tokens used for pagination.</p>
@@ -69,28 +69,30 @@ impl ListSkillsStoreSkillsByCategoryOutputBuilder {
     }
     /// <p>The tokens used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The tokens used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput).
     pub fn build(self) -> crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput {
         crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput {
-            skills_store_skills: self.skills_store_skills,
-            next_token: self.next_token,
+            skills_store_skills: self.skills_store_skills
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

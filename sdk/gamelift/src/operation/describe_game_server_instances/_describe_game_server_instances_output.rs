@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGameServerInstancesOutput {
+pub struct DescribeGameServerInstancesOutput  {
     /// <p>The collection of requested game server instances.</p>
-    pub game_server_instances: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
+    pub game_server_instances: ::std::option::Option<::std::vec::Vec::<crate::types::GameServerInstance>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeGameServerInstancesOutput {
+impl  DescribeGameServerInstancesOutput  {
     /// <p>The collection of requested game server instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_server_instances.is_none()`.
-    pub fn game_server_instances(&self) -> &[crate::types::GameServerInstance] {
-        self.game_server_instances.as_deref().unwrap_or_default()
+    pub fn game_server_instances(&self) -> & [crate::types::GameServerInstance] {
+        self.game_server_instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeGameServerInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeGameServerInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInstancesOutput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput).
     pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeGameServerInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameServerInstancesOutputBuilder {
-    pub(crate) game_server_instances: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>,
+    pub(crate) game_server_instances: ::std::option::Option<::std::vec::Vec::<crate::types::GameServerInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeGameServerInstancesOutputBuilder {
     /// <p>The collection of requested game server instances.</p>
     pub fn game_server_instances(mut self, input: crate::types::GameServerInstance) -> Self {
         let mut v = self.game_server_instances.unwrap_or_default();
-        v.push(input);
-        self.game_server_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.game_server_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The collection of requested game server instances.</p>
-    pub fn set_game_server_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>>) -> Self {
-        self.game_server_instances = input;
-        self
+    pub fn set_game_server_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameServerInstance>>) -> Self {
+        self.game_server_instances = input; self
     }
     /// <p>The collection of requested game server instances.</p>
-    pub fn get_game_server_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>> {
+    pub fn get_game_server_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameServerInstance>> {
         &self.game_server_instances
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -69,28 +69,30 @@ impl DescribeGameServerInstancesOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeGameServerInstancesOutput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput).
     pub fn build(self) -> crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput {
         crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput {
-            game_server_instances: self.game_server_instances,
-            next_token: self.next_token,
+            game_server_instances: self.game_server_instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

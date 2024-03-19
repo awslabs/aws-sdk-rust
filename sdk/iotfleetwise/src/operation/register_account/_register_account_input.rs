@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAccountInput {
+pub struct RegisterAccountInput  {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
     pub timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
@@ -10,15 +10,15 @@ pub struct RegisterAccountInput {
     #[deprecated(note = "iamResources is no longer used or needed as input")]
     pub iam_resources: ::std::option::Option<crate::types::IamResources>,
 }
-impl RegisterAccountInput {
+impl  RegisterAccountInput  {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    pub fn timestream_resources(&self) -> ::std::option::Option<&crate::types::TimestreamResources> {
+    pub fn timestream_resources(&self) -> ::std::option::Option<& crate::types::TimestreamResources> {
         self.timestream_resources.as_ref()
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
-    pub fn iam_resources(&self) -> ::std::option::Option<&crate::types::IamResources> {
+    pub fn iam_resources(&self) -> ::std::option::Option<& crate::types::IamResources> {
         self.iam_resources.as_ref()
     }
 }
@@ -46,8 +46,7 @@ impl RegisterAccountInputBuilder {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
     pub fn set_timestream_resources(mut self, input: ::std::option::Option<crate::types::TimestreamResources>) -> Self {
-        self.timestream_resources = input;
-        self
+        self.timestream_resources = input; self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
@@ -63,8 +62,7 @@ impl RegisterAccountInputBuilder {
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
     pub fn set_iam_resources(mut self, input: ::std::option::Option<crate::types::IamResources>) -> Self {
-        self.iam_resources = input;
-        self
+        self.iam_resources = input; self
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
@@ -72,12 +70,15 @@ impl RegisterAccountInputBuilder {
         &self.iam_resources
     }
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountInput {
-            timestream_resources: self.timestream_resources,
-            iam_resources: self.iam_resources,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_account::RegisterAccountInput {
+                timestream_resources: self.timestream_resources
+                ,
+                iam_resources: self.iam_resources
+                ,
+            }
+        )
     }
 }
+

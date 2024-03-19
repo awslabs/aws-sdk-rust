@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAssessmentReportEvidenceFolderInput {
+pub struct DisassociateAssessmentReportEvidenceFolderInput  {
     /// <p>The unique identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateAssessmentReportEvidenceFolderInput {
+impl  DisassociateAssessmentReportEvidenceFolderInput  {
     /// <p>The unique identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
-    pub fn evidence_folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn evidence_folder_id(&self) -> ::std::option::Option<& str> {
         self.evidence_folder_id.as_deref()
     }
 }
 impl DisassociateAssessmentReportEvidenceFolderInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAssessmentReportEvidenceFolderInput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderInputBuilder {
         crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderInputBuilder::default()
     }
 }
@@ -42,8 +41,7 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,25 +55,22 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
     }
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evidence_folder_id = input;
-        self
+        self.evidence_folder_id = input; self
     }
     /// <p>The unique identifier for the folder that the evidence is stored in.</p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evidence_folder_id
     }
     /// Consumes the builder and constructs a [`DisassociateAssessmentReportEvidenceFolderInput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput {
-                assessment_id: self.assessment_id,
-                evidence_folder_id: self.evidence_folder_id,
-            },
+                assessment_id: self.assessment_id
+                ,
+                evidence_folder_id: self.evidence_folder_id
+                ,
+            }
         )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAdminAccountInput {
+pub struct PutAdminAccountInput  {
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
     pub admin_account: ::std::option::Option<::std::string::String>,
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
     pub admin_scope: ::std::option::Option<crate::types::AdminScope>,
 }
-impl PutAdminAccountInput {
+impl  PutAdminAccountInput  {
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
-    pub fn admin_account(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account(&self) -> ::std::option::Option<& str> {
         self.admin_account.as_deref()
     }
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
-    pub fn admin_scope(&self) -> ::std::option::Option<&crate::types::AdminScope> {
+    pub fn admin_scope(&self) -> ::std::option::Option<& crate::types::AdminScope> {
         self.admin_scope.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PutAdminAccountInputBuilder {
     }
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
     pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_account = input;
-        self
+        self.admin_account = input; self
     }
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
     pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl PutAdminAccountInputBuilder {
     }
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
     pub fn set_admin_scope(mut self, input: ::std::option::Option<crate::types::AdminScope>) -> Self {
-        self.admin_scope = input;
-        self
+        self.admin_scope = input; self
     }
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
     pub fn get_admin_scope(&self) -> &::std::option::Option<crate::types::AdminScope> {
         &self.admin_scope
     }
     /// Consumes the builder and constructs a [`PutAdminAccountInput`](crate::operation::put_admin_account::PutAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_admin_account::PutAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_admin_account::PutAdminAccountInput {
-            admin_account: self.admin_account,
-            admin_scope: self.admin_scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_admin_account::PutAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_admin_account::PutAdminAccountInput {
+                admin_account: self.admin_account
+                ,
+                admin_scope: self.admin_scope
+                ,
+            }
+        )
     }
 }
+

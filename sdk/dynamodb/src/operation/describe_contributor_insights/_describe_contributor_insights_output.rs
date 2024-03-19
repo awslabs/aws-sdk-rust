@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContributorInsightsOutput {
+pub struct DescribeContributorInsightsOutput  {
     /// <p>The name of the table being described.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the global secondary index being described.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub contributor_insights_rule_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub contributor_insights_rule_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Current status of contributor insights.</p>
     pub contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
     /// <p>Timestamp of the last time the status was changed.</p>
@@ -28,27 +28,28 @@ pub struct DescribeContributorInsightsOutput {
     pub failure_exception: ::std::option::Option<crate::types::FailureException>,
     _request_id: Option<String>,
 }
-impl DescribeContributorInsightsOutput {
+impl  DescribeContributorInsightsOutput  {
     /// <p>The name of the table being described.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the global secondary index being described.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contributor_insights_rule_list.is_none()`.
-    pub fn contributor_insights_rule_list(&self) -> &[::std::string::String] {
-        self.contributor_insights_rule_list.as_deref().unwrap_or_default()
+    pub fn contributor_insights_rule_list(&self) -> & [::std::string::String] {
+        self.contributor_insights_rule_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Current status of contributor insights.</p>
-    pub fn contributor_insights_status(&self) -> ::std::option::Option<&crate::types::ContributorInsightsStatus> {
+    pub fn contributor_insights_status(&self) -> ::std::option::Option<& crate::types::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
     }
     /// <p>Timestamp of the last time the status was changed.</p>
-    pub fn last_update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_date_time.as_ref()
     }
     /// <p>Returns information about the last failure that was encountered.</p>
@@ -63,15 +64,15 @@ impl DescribeContributorInsightsOutput {
     /// <li>
     /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
-    pub fn failure_exception(&self) -> ::std::option::Option<&crate::types::FailureException> {
+    pub fn failure_exception(&self) -> ::std::option::Option<& crate::types::FailureException> {
         self.failure_exception.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeContributorInsightsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeContributorInsightsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsOutput`](crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput).
     pub fn builder() -> crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsOutputBuilder {
@@ -85,7 +86,7 @@ impl DescribeContributorInsightsOutput {
 pub struct DescribeContributorInsightsOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
-    pub(crate) contributor_insights_rule_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) contributor_insights_rule_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
     pub(crate) last_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_exception: ::std::option::Option<crate::types::FailureException>,
@@ -99,8 +100,7 @@ impl DescribeContributorInsightsOutputBuilder {
     }
     /// <p>The name of the table being described.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table being described.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl DescribeContributorInsightsOutputBuilder {
     }
     /// <p>The name of the global secondary index being described.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the global secondary index being described.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +126,16 @@ impl DescribeContributorInsightsOutputBuilder {
     /// <p>List of names of the associated contributor insights rules.</p>
     pub fn contributor_insights_rule_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contributor_insights_rule_list.unwrap_or_default();
-        v.push(input.into());
-        self.contributor_insights_rule_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.contributor_insights_rule_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub fn set_contributor_insights_rule_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.contributor_insights_rule_list = input;
-        self
+    pub fn set_contributor_insights_rule_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.contributor_insights_rule_list = input; self
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub fn get_contributor_insights_rule_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contributor_insights_rule_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.contributor_insights_rule_list
     }
     /// <p>Current status of contributor insights.</p>
@@ -147,8 +145,7 @@ impl DescribeContributorInsightsOutputBuilder {
     }
     /// <p>Current status of contributor insights.</p>
     pub fn set_contributor_insights_status(mut self, input: ::std::option::Option<crate::types::ContributorInsightsStatus>) -> Self {
-        self.contributor_insights_status = input;
-        self
+        self.contributor_insights_status = input; self
     }
     /// <p>Current status of contributor insights.</p>
     pub fn get_contributor_insights_status(&self) -> &::std::option::Option<crate::types::ContributorInsightsStatus> {
@@ -161,8 +158,7 @@ impl DescribeContributorInsightsOutputBuilder {
     }
     /// <p>Timestamp of the last time the status was changed.</p>
     pub fn set_last_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date_time = input;
-        self
+        self.last_update_date_time = input; self
     }
     /// <p>Timestamp of the last time the status was changed.</p>
     pub fn get_last_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -197,8 +193,7 @@ impl DescribeContributorInsightsOutputBuilder {
     /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub fn set_failure_exception(mut self, input: ::std::option::Option<crate::types::FailureException>) -> Self {
-        self.failure_exception = input;
-        self
+        self.failure_exception = input; self
     }
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
@@ -216,24 +211,31 @@ impl DescribeContributorInsightsOutputBuilder {
         &self.failure_exception
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeContributorInsightsOutput`](crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput).
     pub fn build(self) -> crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput {
         crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput {
-            table_name: self.table_name,
-            index_name: self.index_name,
-            contributor_insights_rule_list: self.contributor_insights_rule_list,
-            contributor_insights_status: self.contributor_insights_status,
-            last_update_date_time: self.last_update_date_time,
-            failure_exception: self.failure_exception,
+            table_name: self.table_name
+            ,
+            index_name: self.index_name
+            ,
+            contributor_insights_rule_list: self.contributor_insights_rule_list
+            ,
+            contributor_insights_status: self.contributor_insights_status
+            ,
+            last_update_date_time: self.last_update_date_time
+            ,
+            failure_exception: self.failure_exception
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Start export request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExportInput {
+pub struct StartExportInput  {
     /// <p>Start export request s3 bucket.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Start export request s3key.</p>
@@ -11,17 +11,17 @@ pub struct StartExportInput {
     /// <p>Start export request s3 bucket owner.</p>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl StartExportInput {
+impl  StartExportInput  {
     /// <p>Start export request s3 bucket.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>Start export request s3key.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>Start export request s3 bucket owner.</p>
-    pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_owner.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl StartExportInputBuilder {
     }
     /// <p>Start export request s3 bucket.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>Start export request s3 bucket.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl StartExportInputBuilder {
     }
     /// <p>Start export request s3key.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>Start export request s3key.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl StartExportInputBuilder {
     }
     /// <p>Start export request s3 bucket owner.</p>
     pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_owner = input;
-        self
+        self.s3_bucket_owner = input; self
     }
     /// <p>Start export request s3 bucket owner.</p>
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl StartExportInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_export::StartExportInput {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            s3_bucket_owner: self.s3_bucket_owner,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_export::StartExportInput {
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                s3_bucket_owner: self.s3_bucket_owner
+                ,
+            }
+        )
     }
 }
+

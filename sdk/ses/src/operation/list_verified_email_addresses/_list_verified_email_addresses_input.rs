@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVerifiedEmailAddressesInput {}
+pub struct ListVerifiedEmailAddressesInput  {
+}
 impl ListVerifiedEmailAddressesInput {
     /// Creates a new builder-style object to manufacture [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
     pub fn builder() -> crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesInputBuilder {
@@ -13,15 +14,15 @@ impl ListVerifiedEmailAddressesInput {
 /// A builder for [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ListVerifiedEmailAddressesInputBuilder {}
+pub struct ListVerifiedEmailAddressesInputBuilder {
+}
 impl ListVerifiedEmailAddressesInputBuilder {
     /// Consumes the builder and constructs a [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput {
+            }
+        )
     }
 }
+

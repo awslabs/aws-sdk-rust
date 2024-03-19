@@ -3,7 +3,7 @@
 /// <p>Describes the placement of an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Placement {
+pub struct Placement  {
     /// <p>The Availability Zone of the instance.</p>
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
@@ -31,20 +31,20 @@ pub struct Placement {
     /// <p>The ID of the placement group that the instance is in. If you specify <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl Placement {
+impl  Placement  {
     /// <p>The Availability Zone of the instance.</p>
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The affinity setting for the instance on the Dedicated Host.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
-    pub fn affinity(&self) -> ::std::option::Option<&str> {
+    pub fn affinity(&self) -> ::std::option::Option<& str> {
         self.affinity.as_deref()
     }
     /// <p>The name of the placement group that the instance is in. If you specify <code>GroupName</code>, you can't specify <code>GroupId</code>.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The number of the partition that the instance is in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
@@ -54,26 +54,26 @@ impl Placement {
     }
     /// <p>The ID of the Dedicated Host on which the instance resides.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
-    pub fn host_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<& str> {
         self.host_id.as_deref()
     }
     /// <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>. The <code>host</code> tenancy is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> or for T3 instances that are configured for the <code>unlimited</code> CPU credit option.</p>
-    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::Tenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<& crate::types::Tenancy> {
         self.tenancy.as_ref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn spread_domain(&self) -> ::std::option::Option<&str> {
+    pub fn spread_domain(&self) -> ::std::option::Option<& str> {
         self.spread_domain.as_deref()
     }
     /// <p>The ARN of the host resource group in which to launch the instances.</p>
     /// <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    pub fn host_resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.host_resource_group_arn.as_deref()
     }
     /// <p>The ID of the placement group that the instance is in. If you specify <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -110,8 +110,7 @@ impl PlacementBuilder {
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of the instance.</p>
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
@@ -128,8 +127,7 @@ impl PlacementBuilder {
     /// <p>The affinity setting for the instance on the Dedicated Host.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
     pub fn set_affinity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.affinity = input;
-        self
+        self.affinity = input; self
     }
     /// <p>The affinity setting for the instance on the Dedicated Host.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
@@ -143,8 +141,7 @@ impl PlacementBuilder {
     }
     /// <p>The name of the placement group that the instance is in. If you specify <code>GroupName</code>, you can't specify <code>GroupId</code>.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the placement group that the instance is in. If you specify <code>GroupName</code>, you can't specify <code>GroupId</code>.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +156,7 @@ impl PlacementBuilder {
     /// <p>The number of the partition that the instance is in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
     pub fn set_partition_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.partition_number = input;
-        self
+        self.partition_number = input; self
     }
     /// <p>The number of the partition that the instance is in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
@@ -176,8 +172,7 @@ impl PlacementBuilder {
     /// <p>The ID of the Dedicated Host on which the instance resides.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_id = input;
-        self
+        self.host_id = input; self
     }
     /// <p>The ID of the Dedicated Host on which the instance resides.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
@@ -193,8 +188,7 @@ impl PlacementBuilder {
     /// <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>. The <code>host</code> tenancy is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> or for T3 instances that are configured for the <code>unlimited</code> CPU credit option.</p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>. The <code>host</code> tenancy is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> or for T3 instances that are configured for the <code>unlimited</code> CPU credit option.</p>
@@ -208,8 +202,7 @@ impl PlacementBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_spread_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spread_domain = input;
-        self
+        self.spread_domain = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_spread_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +219,7 @@ impl PlacementBuilder {
     /// <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
     pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_resource_group_arn = input;
-        self
+        self.host_resource_group_arn = input; self
     }
     /// <p>The ARN of the host resource group in which to launch the instances.</p>
     /// <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
@@ -242,8 +234,7 @@ impl PlacementBuilder {
     }
     /// <p>The ID of the placement group that the instance is in. If you specify <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The ID of the placement group that the instance is in. If you specify <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,15 +243,25 @@ impl PlacementBuilder {
     /// Consumes the builder and constructs a [`Placement`](crate::types::Placement).
     pub fn build(self) -> crate::types::Placement {
         crate::types::Placement {
-            availability_zone: self.availability_zone,
-            affinity: self.affinity,
-            group_name: self.group_name,
-            partition_number: self.partition_number,
-            host_id: self.host_id,
-            tenancy: self.tenancy,
-            spread_domain: self.spread_domain,
-            host_resource_group_arn: self.host_resource_group_arn,
-            group_id: self.group_id,
+            availability_zone: self.availability_zone
+            ,
+            affinity: self.affinity
+            ,
+            group_name: self.group_name
+            ,
+            partition_number: self.partition_number
+            ,
+            host_id: self.host_id
+            ,
+            tenancy: self.tenancy
+            ,
+            spread_domain: self.spread_domain
+            ,
+            host_resource_group_arn: self.host_resource_group_arn
+            ,
+            group_id: self.group_id
+            ,
         }
     }
 }
+

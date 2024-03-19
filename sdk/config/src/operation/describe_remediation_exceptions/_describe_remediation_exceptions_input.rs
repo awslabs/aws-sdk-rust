@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRemediationExceptionsInput {
+pub struct DescribeRemediationExceptionsInput  {
     /// <p>The name of the Config rule.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>,
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRemediationExceptionsInput {
+impl  DescribeRemediationExceptionsInput  {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
-    pub fn resource_keys(&self) -> &[crate::types::RemediationExceptionResourceKey] {
-        self.resource_keys.as_deref().unwrap_or_default()
+    pub fn resource_keys(&self) -> & [crate::types::RemediationExceptionResourceKey] {
+        self.resource_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl DescribeRemediationExceptionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRemediationExceptionsInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -57,8 +58,7 @@ impl DescribeRemediationExceptionsInputBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeRemediationExceptionsInputBuilder {
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
     pub fn resource_keys(mut self, input: crate::types::RemediationExceptionResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>) -> Self {
+        self.resource_keys = input; self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>> {
         &self.resource_keys
     }
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
@@ -91,8 +90,7 @@ impl DescribeRemediationExceptionsInputBuilder {
     }
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -105,25 +103,26 @@ impl DescribeRemediationExceptionsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRemediationExceptionsInput`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput {
-            config_rule_name: self.config_rule_name,
-            resource_keys: self.resource_keys,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput {
+                config_rule_name: self.config_rule_name
+                ,
+                resource_keys: self.resource_keys
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

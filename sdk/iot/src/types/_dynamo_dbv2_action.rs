@@ -4,7 +4,7 @@
 /// <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamoDBv2Action {
+pub struct DynamoDBv2Action  {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub role_arn: ::std::string::String,
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
@@ -12,16 +12,15 @@ pub struct DynamoDBv2Action {
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     pub put_item: ::std::option::Option<crate::types::PutItemInput>,
 }
-impl DynamoDBv2Action {
+impl  DynamoDBv2Action  {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p><code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code></p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
-    pub fn put_item(&self) -> ::std::option::Option<&crate::types::PutItemInput> {
+    pub fn put_item(&self) -> ::std::option::Option<& crate::types::PutItemInput> {
         self.put_item.as_ref()
     }
 }
@@ -48,8 +47,7 @@ impl DynamoDBv2ActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,7 @@ impl DynamoDBv2ActionBuilder {
     /// <p><code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code></p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     pub fn set_put_item(mut self, input: ::std::option::Option<crate::types::PutItemInput>) -> Self {
-        self.put_item = input;
-        self
+        self.put_item = input; self
     }
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p><code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code></p>
@@ -80,14 +77,17 @@ impl DynamoDBv2ActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::DynamoDBv2ActionBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamoDBv2Action, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamoDBv2Action {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building DynamoDBv2Action",
-                )
-            })?,
-            put_item: self.put_item,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamoDBv2Action {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building DynamoDBv2Action")
+                    )?
+                ,
+                put_item: self.put_item
+                ,
+            }
+        )
     }
 }
+

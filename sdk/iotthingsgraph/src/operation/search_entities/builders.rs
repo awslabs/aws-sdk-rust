@@ -5,55 +5,51 @@ pub use crate::operation::search_entities::_search_entities_input::SearchEntitie
 
 impl SearchEntitiesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::search_entities::SearchEntitiesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_entities::SearchEntitiesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.search_entities();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::search_entities::SearchEntitiesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::search_entities::SearchEntitiesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.search_entities();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SearchEntities`.
-///
+/// 
 /// <p>Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you're tracking.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchEntitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_entities::builders::SearchEntitiesInputBuilder,
+                    inner: crate::operation::search_entities::builders::SearchEntitiesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::search_entities::SearchEntitiesOutput,
-        crate::operation::search_entities::SearchEntitiesError,
-    > for SearchEntitiesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::search_entities::SearchEntitiesOutput,
-            crate::operation::search_entities::SearchEntitiesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::search_entities::SearchEntitiesOutput,
+                    crate::operation::search_entities::SearchEntitiesError,
+                > for SearchEntitiesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::search_entities::SearchEntitiesOutput,
+                        crate::operation::search_entities::SearchEntitiesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SearchEntitiesFluentBuilder {
     /// Creates a new `SearchEntities`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl SearchEntitiesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_entities::SearchEntitiesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_entities::SearchEntitiesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::search_entities::SearchEntities::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::search_entities::SearchEntities::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::search_entities::SearchEntitiesOutput,
-        crate::operation::search_entities::SearchEntitiesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::search_entities::SearchEntitiesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_entities::SearchEntitiesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::search_entities::SearchEntities::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::search_entities::SearchEntities::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::search_entities::SearchEntitiesOutput, crate::operation::search_entities::SearchEntitiesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_entities::paginator::SearchEntitiesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::search_entities::paginator::SearchEntitiesPaginator {
-        crate::operation::search_entities::paginator::SearchEntitiesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_entities::paginator::SearchEntitiesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::search_entities::paginator::SearchEntitiesPaginator {
+                                crate::operation::search_entities::paginator::SearchEntitiesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `entityTypes`.
     ///
     /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
@@ -125,12 +112,12 @@ impl SearchEntitiesFluentBuilder {
         self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>) -> Self {
         self.inner = self.inner.set_entity_types(input);
         self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityType>> {
         self.inner.get_entity_types()
     }
     /// Appends an item to `filters`.
@@ -145,13 +132,13 @@ impl SearchEntitiesFluentBuilder {
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityFilter>> {
         self.inner.get_filters()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -197,3 +184,4 @@ impl SearchEntitiesFluentBuilder {
         self.inner.get_namespace_version()
     }
 }
+

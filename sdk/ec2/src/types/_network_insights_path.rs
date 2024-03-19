@@ -3,7 +3,7 @@
 /// <p>Describes a path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInsightsPath {
+pub struct NetworkInsightsPath  {
     /// <p>The ID of the path.</p>
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the path.</p>
@@ -27,51 +27,51 @@ pub struct NetworkInsightsPath {
     /// <p>The destination port.</p>
     pub destination_port: ::std::option::Option<i32>,
     /// <p>The tags associated with the path.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
     pub filter_at_source: ::std::option::Option<crate::types::PathFilter>,
     /// <p>Scopes the analysis to network paths that match specific filters at the destination.</p>
     pub filter_at_destination: ::std::option::Option<crate::types::PathFilter>,
 }
-impl NetworkInsightsPath {
+impl  NetworkInsightsPath  {
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_path_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_path_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the path.</p>
-    pub fn network_insights_path_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_path_arn(&self) -> ::std::option::Option<& str> {
         self.network_insights_path_arn.as_deref()
     }
     /// <p>The time stamp when the path was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The ID of the source.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The ID of the destination.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The IP address of the source.</p>
-    pub fn source_ip(&self) -> ::std::option::Option<&str> {
+    pub fn source_ip(&self) -> ::std::option::Option<& str> {
         self.source_ip.as_deref()
     }
     /// <p>The IP address of the destination.</p>
-    pub fn destination_ip(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ip(&self) -> ::std::option::Option<& str> {
         self.destination_ip.as_deref()
     }
     /// <p>The protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// <p>The destination port.</p>
@@ -79,17 +79,18 @@ impl NetworkInsightsPath {
         self.destination_port
     }
     /// <p>The tags associated with the path.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
-    pub fn filter_at_source(&self) -> ::std::option::Option<&crate::types::PathFilter> {
+    pub fn filter_at_source(&self) -> ::std::option::Option<& crate::types::PathFilter> {
         self.filter_at_source.as_ref()
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination.</p>
-    pub fn filter_at_destination(&self) -> ::std::option::Option<&crate::types::PathFilter> {
+    pub fn filter_at_destination(&self) -> ::std::option::Option<& crate::types::PathFilter> {
         self.filter_at_destination.as_ref()
     }
 }
@@ -115,7 +116,7 @@ pub struct NetworkInsightsPathBuilder {
     pub(crate) destination_ip: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
     pub(crate) destination_port: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) filter_at_source: ::std::option::Option<crate::types::PathFilter>,
     pub(crate) filter_at_destination: ::std::option::Option<crate::types::PathFilter>,
 }
@@ -127,8 +128,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The ID of the path.</p>
     pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_path_id = input;
-        self
+        self.network_insights_path_id = input; self
     }
     /// <p>The ID of the path.</p>
     pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +141,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the path.</p>
     pub fn set_network_insights_path_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_path_arn = input;
-        self
+        self.network_insights_path_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the path.</p>
     pub fn get_network_insights_path_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The time stamp when the path was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The time stamp when the path was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +167,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The ID of the source.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The ID of the source.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +180,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The ID of the destination.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The ID of the destination.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +193,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +206,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +219,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The IP address of the source.</p>
     pub fn set_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_ip = input;
-        self
+        self.source_ip = input; self
     }
     /// <p>The IP address of the source.</p>
     pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +232,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The IP address of the destination.</p>
     pub fn set_destination_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_ip = input;
-        self
+        self.destination_ip = input; self
     }
     /// <p>The IP address of the destination.</p>
     pub fn get_destination_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +245,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -267,8 +258,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>The destination port.</p>
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.destination_port = input;
-        self
+        self.destination_port = input; self
     }
     /// <p>The destination port.</p>
     pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
@@ -281,17 +271,16 @@ impl NetworkInsightsPathBuilder {
     /// <p>The tags associated with the path.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the path.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the path.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
@@ -301,8 +290,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
     pub fn set_filter_at_source(mut self, input: ::std::option::Option<crate::types::PathFilter>) -> Self {
-        self.filter_at_source = input;
-        self
+        self.filter_at_source = input; self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
     pub fn get_filter_at_source(&self) -> &::std::option::Option<crate::types::PathFilter> {
@@ -315,8 +303,7 @@ impl NetworkInsightsPathBuilder {
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination.</p>
     pub fn set_filter_at_destination(mut self, input: ::std::option::Option<crate::types::PathFilter>) -> Self {
-        self.filter_at_destination = input;
-        self
+        self.filter_at_destination = input; self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination.</p>
     pub fn get_filter_at_destination(&self) -> &::std::option::Option<crate::types::PathFilter> {
@@ -325,20 +312,35 @@ impl NetworkInsightsPathBuilder {
     /// Consumes the builder and constructs a [`NetworkInsightsPath`](crate::types::NetworkInsightsPath).
     pub fn build(self) -> crate::types::NetworkInsightsPath {
         crate::types::NetworkInsightsPath {
-            network_insights_path_id: self.network_insights_path_id,
-            network_insights_path_arn: self.network_insights_path_arn,
-            created_date: self.created_date,
-            source: self.source,
-            destination: self.destination,
-            source_arn: self.source_arn,
-            destination_arn: self.destination_arn,
-            source_ip: self.source_ip,
-            destination_ip: self.destination_ip,
-            protocol: self.protocol,
-            destination_port: self.destination_port,
-            tags: self.tags,
-            filter_at_source: self.filter_at_source,
-            filter_at_destination: self.filter_at_destination,
+            network_insights_path_id: self.network_insights_path_id
+            ,
+            network_insights_path_arn: self.network_insights_path_arn
+            ,
+            created_date: self.created_date
+            ,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            source_arn: self.source_arn
+            ,
+            destination_arn: self.destination_arn
+            ,
+            source_ip: self.source_ip
+            ,
+            destination_ip: self.destination_ip
+            ,
+            protocol: self.protocol
+            ,
+            destination_port: self.destination_port
+            ,
+            tags: self.tags
+            ,
+            filter_at_source: self.filter_at_source
+            ,
+            filter_at_destination: self.filter_at_destination
+            ,
         }
     }
 }
+

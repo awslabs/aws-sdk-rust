@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateCustomLineItemInput {
+pub struct UpdateCustomLineItemInput  {
     /// <p>The ARN of the custom line item to be updated.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the custom line item.</p>
@@ -14,29 +14,29 @@ pub struct UpdateCustomLineItemInput {
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
-impl UpdateCustomLineItemInput {
+impl  UpdateCustomLineItemInput  {
     /// <p>The ARN of the custom line item to be updated.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The new name for the custom line item.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new line item description of the custom line item.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item.</p>
-    pub fn charge_details(&self) -> ::std::option::Option<&crate::types::UpdateCustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> ::std::option::Option<& crate::types::UpdateCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> ::std::option::Option<& crate::types::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateCustomLineItemInput {
+impl  ::std::fmt::Debug for UpdateCustomLineItemInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomLineItemInput");
         formatter.field("arn", &self.arn);
@@ -73,8 +73,7 @@ impl UpdateCustomLineItemInputBuilder {
     }
     /// <p>The ARN of the custom line item to be updated.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the custom line item to be updated.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl UpdateCustomLineItemInputBuilder {
     }
     /// <p>The new name for the custom line item.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name for the custom line item.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl UpdateCustomLineItemInputBuilder {
     }
     /// <p>The new line item description of the custom line item.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new line item description of the custom line item.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl UpdateCustomLineItemInputBuilder {
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item.</p>
     pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails>) -> Self {
-        self.charge_details = input;
-        self
+        self.charge_details = input; self
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item.</p>
     pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails> {
@@ -129,25 +125,28 @@ impl UpdateCustomLineItemInputBuilder {
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
-        self.billing_period_range = input;
-        self
+        self.billing_period_range = input; self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemInput`](crate::operation::update_custom_line_item::UpdateCustomLineItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_custom_line_item::UpdateCustomLineItemInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_custom_line_item::UpdateCustomLineItemInput {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            charge_details: self.charge_details,
-            billing_period_range: self.billing_period_range,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_custom_line_item::UpdateCustomLineItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_custom_line_item::UpdateCustomLineItemInput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                charge_details: self.charge_details
+                ,
+                billing_period_range: self.billing_period_range
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateCustomLineItemInputBuilder {
@@ -161,3 +160,4 @@ impl ::std::fmt::Debug for UpdateCustomLineItemInputBuilder {
         formatter.finish()
     }
 }
+

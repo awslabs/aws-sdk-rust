@@ -3,25 +3,23 @@
 /// <p>The details of the import of the metadata form type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Import {
+pub struct Import  {
     /// <p>The name of the import.</p>
     pub name: ::std::string::String,
     /// <p>The revision of the import.</p>
     pub revision: ::std::string::String,
 }
-impl Import {
+impl  Import  {
     /// <p>The name of the import.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The revision of the import.</p>
-    pub fn revision(&self) -> &str {
-        use std::ops::Deref;
-        self.revision.deref()
+    pub fn revision(&self) -> & str {
+        use std::ops::Deref; self.revision.deref()
     }
 }
-impl ::std::fmt::Debug for Import {
+impl  ::std::fmt::Debug for Import  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Import");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl ImportBuilder {
     }
     /// <p>The name of the import.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the import.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl ImportBuilder {
     }
     /// <p>The revision of the import.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the import.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl ImportBuilder {
     /// - [`name`](crate::types::builders::ImportBuilder::name)
     /// - [`revision`](crate::types::builders::ImportBuilder::revision)
     pub fn build(self) -> ::std::result::Result<crate::types::Import, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Import {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Import",
-                )
-            })?,
-            revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision",
-                    "revision was not specified but it is required when building Import",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Import {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Import")
+                    )?
+                ,
+                revision: self.revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision", "revision was not specified but it is required when building Import")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ImportBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for ImportBuilder {
         formatter.finish()
     }
 }
+

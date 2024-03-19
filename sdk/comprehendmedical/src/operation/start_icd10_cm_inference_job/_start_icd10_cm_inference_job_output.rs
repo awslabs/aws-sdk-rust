@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartIcd10CmInferenceJobOutput {
+pub struct StartIcd10CmInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartIcd10CmInferenceJobOutput {
+impl  StartIcd10CmInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartIcd10CmInferenceJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartIcd10CmInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobOutput`](crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput).
     pub fn builder() -> crate::operation::start_icd10_cm_inference_job::builders::StartIcd10CmInferenceJobOutputBuilder {
@@ -40,27 +40,28 @@ impl StartIcd10CmInferenceJobOutputBuilder {
     }
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartIcd10CmInferenceJobOutput`](crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput).
     pub fn build(self) -> crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput {
         crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput {
-            job_id: self.job_id,
+            job_id: self.job_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

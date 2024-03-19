@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketNotificationConfigurationInput {
+pub struct PutBucketNotificationConfigurationInput  {
     /// <p>The name of the bucket.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
@@ -12,17 +12,17 @@ pub struct PutBucketNotificationConfigurationInput {
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     pub skip_destination_validation: ::std::option::Option<bool>,
 }
-impl PutBucketNotificationConfigurationInput {
+impl  PutBucketNotificationConfigurationInput  {
     /// <p>The name of the bucket.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
@@ -55,8 +55,7 @@ impl PutBucketNotificationConfigurationInputBuilder {
     }
     /// <p>The name of the bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutBucketNotificationConfigurationInputBuilder {
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
@@ -84,8 +82,7 @@ impl PutBucketNotificationConfigurationInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl PutBucketNotificationConfigurationInputBuilder {
     }
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     pub fn set_skip_destination_validation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_destination_validation = input;
-        self
+        self.skip_destination_validation = input; self
     }
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     pub fn get_skip_destination_validation(&self) -> &::std::option::Option<bool> {
         &self.skip_destination_validation
     }
     /// Consumes the builder and constructs a [`PutBucketNotificationConfigurationInput`](crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationInput {
-                bucket: self.bucket,
-                notification_configuration: self.notification_configuration,
-                expected_bucket_owner: self.expected_bucket_owner,
-                skip_destination_validation: self.skip_destination_validation,
-            },
+                bucket: self.bucket
+                ,
+                notification_configuration: self.notification_configuration
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+                skip_destination_validation: self.skip_destination_validation
+                ,
+            }
         )
     }
 }
+

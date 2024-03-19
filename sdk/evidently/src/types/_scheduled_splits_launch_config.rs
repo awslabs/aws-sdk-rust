@@ -3,15 +3,14 @@
 /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledSplitsLaunchConfig {
+pub struct ScheduledSplitsLaunchConfig  {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub steps: ::std::vec::Vec<crate::types::ScheduledSplitConfig>,
+    pub steps: ::std::vec::Vec::<crate::types::ScheduledSplitConfig>,
 }
-impl ScheduledSplitsLaunchConfig {
+impl  ScheduledSplitsLaunchConfig  {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn steps(&self) -> &[crate::types::ScheduledSplitConfig] {
-        use std::ops::Deref;
-        self.steps.deref()
+    pub fn steps(&self) -> & [crate::types::ScheduledSplitConfig] {
+        use std::ops::Deref; self.steps.deref()
     }
 }
 impl ScheduledSplitsLaunchConfig {
@@ -25,7 +24,7 @@ impl ScheduledSplitsLaunchConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledSplitsLaunchConfigBuilder {
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplitConfig>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledSplitConfig>>,
 }
 impl ScheduledSplitsLaunchConfigBuilder {
     /// Appends an item to `steps`.
@@ -35,30 +34,31 @@ impl ScheduledSplitsLaunchConfigBuilder {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub fn steps(mut self, input: crate::types::ScheduledSplitConfig) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplitConfig>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledSplitConfig>>) -> Self {
+        self.steps = input; self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplitConfig>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduledSplitConfig>> {
         &self.steps
     }
     /// Consumes the builder and constructs a [`ScheduledSplitsLaunchConfig`](crate::types::ScheduledSplitsLaunchConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`steps`](crate::types::builders::ScheduledSplitsLaunchConfigBuilder::steps)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplitsLaunchConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduledSplitsLaunchConfig {
-            steps: self.steps.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "steps",
-                    "steps was not specified but it is required when building ScheduledSplitsLaunchConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduledSplitsLaunchConfig {
+                steps: self.steps
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("steps", "steps was not specified but it is required when building ScheduledSplitsLaunchConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

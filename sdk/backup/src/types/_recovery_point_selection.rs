@@ -3,31 +3,33 @@
 /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryPointSelection {
+pub struct RecoveryPointSelection  {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vault_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub date_range: ::std::option::Option<crate::types::DateRange>,
 }
-impl RecoveryPointSelection {
+impl  RecoveryPointSelection  {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vault_names.is_none()`.
-    pub fn vault_names(&self) -> &[::std::string::String] {
-        self.vault_names.as_deref().unwrap_or_default()
+    pub fn vault_names(&self) -> & [::std::string::String] {
+        self.vault_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
-    pub fn resource_identifiers(&self) -> &[::std::string::String] {
-        self.resource_identifiers.as_deref().unwrap_or_default()
+    pub fn resource_identifiers(&self) -> & [::std::string::String] {
+        self.resource_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::DateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::DateRange> {
         self.date_range.as_ref()
     }
 }
@@ -42,8 +44,8 @@ impl RecoveryPointSelection {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryPointSelectionBuilder {
-    pub(crate) vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vault_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) date_range: ::std::option::Option<crate::types::DateRange>,
 }
 impl RecoveryPointSelectionBuilder {
@@ -54,17 +56,16 @@ impl RecoveryPointSelectionBuilder {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
     pub fn vault_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vault_names.unwrap_or_default();
-        v.push(input.into());
-        self.vault_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vault_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn set_vault_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vault_names = input;
-        self
+    pub fn set_vault_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vault_names = input; self
     }
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn get_vault_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vault_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vault_names
     }
     /// Appends an item to `resource_identifiers`.
@@ -74,17 +75,16 @@ impl RecoveryPointSelectionBuilder {
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
     pub fn resource_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.resource_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_identifiers = input;
-        self
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_identifiers = input; self
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_identifiers
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
@@ -96,8 +96,7 @@ impl RecoveryPointSelectionBuilder {
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::DateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -107,9 +106,13 @@ impl RecoveryPointSelectionBuilder {
     /// Consumes the builder and constructs a [`RecoveryPointSelection`](crate::types::RecoveryPointSelection).
     pub fn build(self) -> crate::types::RecoveryPointSelection {
         crate::types::RecoveryPointSelection {
-            vault_names: self.vault_names,
-            resource_identifiers: self.resource_identifiers,
-            date_range: self.date_range,
+            vault_names: self.vault_names
+            ,
+            resource_identifiers: self.resource_identifiers
+            ,
+            date_range: self.date_range
+            ,
         }
     }
 }
+

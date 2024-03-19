@@ -3,17 +3,17 @@
 /// <p>Describes a core network edge.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkEdge {
+pub struct CoreNetworkEdge  {
     /// <p>The Region where a core network edge is located.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The ASN of a core network edge.</p>
     pub asn: ::std::option::Option<i64>,
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CoreNetworkEdge {
+impl  CoreNetworkEdge  {
     /// <p>The Region where a core network edge is located.</p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>The ASN of a core network edge.</p>
@@ -21,10 +21,11 @@ impl CoreNetworkEdge {
         self.asn
     }
     /// <p>The inside IP addresses used for core network edges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
-    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
-        self.inside_cidr_blocks.as_deref().unwrap_or_default()
+    pub fn inside_cidr_blocks(&self) -> & [::std::string::String] {
+        self.inside_cidr_blocks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoreNetworkEdge {
@@ -40,7 +41,7 @@ impl CoreNetworkEdge {
 pub struct CoreNetworkEdgeBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i64>,
-    pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CoreNetworkEdgeBuilder {
     /// <p>The Region where a core network edge is located.</p>
@@ -50,8 +51,7 @@ impl CoreNetworkEdgeBuilder {
     }
     /// <p>The Region where a core network edge is located.</p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_location = input;
-        self
+        self.edge_location = input; self
     }
     /// <p>The Region where a core network edge is located.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CoreNetworkEdgeBuilder {
     }
     /// <p>The ASN of a core network edge.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The ASN of a core network edge.</p>
     pub fn get_asn(&self) -> &::std::option::Option<i64> {
@@ -78,25 +77,28 @@ impl CoreNetworkEdgeBuilder {
     /// <p>The inside IP addresses used for core network edges.</p>
     pub fn inside_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inside_cidr_blocks.unwrap_or_default();
-        v.push(input.into());
-        self.inside_cidr_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inside_cidr_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inside_cidr_blocks = input;
-        self
+    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inside_cidr_blocks = input; self
     }
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inside_cidr_blocks
     }
     /// Consumes the builder and constructs a [`CoreNetworkEdge`](crate::types::CoreNetworkEdge).
     pub fn build(self) -> crate::types::CoreNetworkEdge {
         crate::types::CoreNetworkEdge {
-            edge_location: self.edge_location,
-            asn: self.asn,
-            inside_cidr_blocks: self.inside_cidr_blocks,
+            edge_location: self.edge_location
+            ,
+            asn: self.asn
+            ,
+            inside_cidr_blocks: self.inside_cidr_blocks
+            ,
         }
     }
 }
+

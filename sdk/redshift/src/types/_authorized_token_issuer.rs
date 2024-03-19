@@ -3,22 +3,23 @@
 /// <p>The authorized token issuer for the Amazon Redshift IAM Identity Center application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizedTokenIssuer {
+pub struct AuthorizedTokenIssuer  {
     /// <p>The ARN for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
     pub trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of audiences for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
-    pub authorized_audiences_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_audiences_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AuthorizedTokenIssuer {
+impl  AuthorizedTokenIssuer  {
     /// <p>The ARN for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
-    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<& str> {
         self.trusted_token_issuer_arn.as_deref()
     }
     /// <p>The list of audiences for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_audiences_list.is_none()`.
-    pub fn authorized_audiences_list(&self) -> &[::std::string::String] {
-        self.authorized_audiences_list.as_deref().unwrap_or_default()
+    pub fn authorized_audiences_list(&self) -> & [::std::string::String] {
+        self.authorized_audiences_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AuthorizedTokenIssuer {
@@ -33,7 +34,7 @@ impl AuthorizedTokenIssuer {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizedTokenIssuerBuilder {
     pub(crate) trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) authorized_audiences_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_audiences_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AuthorizedTokenIssuerBuilder {
     /// <p>The ARN for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
@@ -43,8 +44,7 @@ impl AuthorizedTokenIssuerBuilder {
     }
     /// <p>The ARN for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
     pub fn set_trusted_token_issuer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trusted_token_issuer_arn = input;
-        self
+        self.trusted_token_issuer_arn = input; self
     }
     /// <p>The ARN for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
     pub fn get_trusted_token_issuer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl AuthorizedTokenIssuerBuilder {
     /// <p>The list of audiences for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
     pub fn authorized_audiences_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_audiences_list.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_audiences_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_audiences_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of audiences for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
-    pub fn set_authorized_audiences_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_audiences_list = input;
-        self
+    pub fn set_authorized_audiences_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_audiences_list = input; self
     }
     /// <p>The list of audiences for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>
-    pub fn get_authorized_audiences_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_audiences_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_audiences_list
     }
     /// Consumes the builder and constructs a [`AuthorizedTokenIssuer`](crate::types::AuthorizedTokenIssuer).
     pub fn build(self) -> crate::types::AuthorizedTokenIssuer {
         crate::types::AuthorizedTokenIssuer {
-            trusted_token_issuer_arn: self.trusted_token_issuer_arn,
-            authorized_audiences_list: self.authorized_audiences_list,
+            trusted_token_issuer_arn: self.trusted_token_issuer_arn
+            ,
+            authorized_audiences_list: self.authorized_audiences_list
+            ,
         }
     }
 }
+

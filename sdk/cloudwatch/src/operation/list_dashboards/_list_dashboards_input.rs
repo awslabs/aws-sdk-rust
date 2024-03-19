@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDashboardsInput {
+pub struct ListDashboardsInput  {
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
     pub dashboard_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDashboardsInput {
+impl  ListDashboardsInput  {
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
-    pub fn dashboard_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_name_prefix(&self) -> ::std::option::Option<& str> {
         self.dashboard_name_prefix.as_deref()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListDashboardsInputBuilder {
     }
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
     pub fn set_dashboard_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_name_prefix = input;
-        self
+        self.dashboard_name_prefix = input; self
     }
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".</p>
     pub fn get_dashboard_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl ListDashboardsInputBuilder {
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDashboardsInput`](crate::operation::list_dashboards::ListDashboardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_dashboards::ListDashboardsInput {
-            dashboard_name_prefix: self.dashboard_name_prefix,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_dashboards::ListDashboardsInput {
+                dashboard_name_prefix: self.dashboard_name_prefix
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

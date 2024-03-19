@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriptionInput {}
+pub struct CreateSubscriptionInput  {
+}
 impl CreateSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionInput`](crate::operation::create_subscription::CreateSubscriptionInput).
     pub fn builder() -> crate::operation::create_subscription::builders::CreateSubscriptionInputBuilder {
@@ -13,12 +14,15 @@ impl CreateSubscriptionInput {
 /// A builder for [`CreateSubscriptionInput`](crate::operation::create_subscription::CreateSubscriptionInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct CreateSubscriptionInputBuilder {}
+pub struct CreateSubscriptionInputBuilder {
+}
 impl CreateSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubscriptionInput`](crate::operation::create_subscription::CreateSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_subscription::CreateSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_subscription::CreateSubscriptionInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription::CreateSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subscription::CreateSubscriptionInput {
+            }
+        )
     }
 }
+

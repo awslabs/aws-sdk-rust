@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSourcesOutput {
+pub struct ListDataSourcesOutput  {
     /// list of data source summaries
-    pub data_source_summaries: ::std::vec::Vec<crate::types::DataSourceSummary>,
+    pub data_source_summaries: ::std::vec::Vec::<crate::types::DataSourceSummary>,
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDataSourcesOutput {
+impl  ListDataSourcesOutput  {
     /// list of data source summaries
-    pub fn data_source_summaries(&self) -> &[crate::types::DataSourceSummary] {
-        use std::ops::Deref;
-        self.data_source_summaries.deref()
+    pub fn data_source_summaries(&self) -> & [crate::types::DataSourceSummary] {
+        use std::ops::Deref; self.data_source_summaries.deref()
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataSourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
     pub fn builder() -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListDataSourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutputBuilder {
-    pub(crate) data_source_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
+    pub(crate) data_source_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListDataSourcesOutputBuilder {
     /// list of data source summaries
     pub fn data_source_summaries(mut self, input: crate::types::DataSourceSummary) -> Self {
         let mut v = self.data_source_summaries.unwrap_or_default();
-        v.push(input);
-        self.data_source_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_source_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// list of data source summaries
-    pub fn set_data_source_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>) -> Self {
-        self.data_source_summaries = input;
-        self
+    pub fn set_data_source_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSummary>>) -> Self {
+        self.data_source_summaries = input; self
     }
     /// list of data source summaries
-    pub fn get_data_source_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
+    pub fn get_data_source_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSummary>> {
         &self.data_source_summaries
     }
     /// Opaque continuation token of previous paginated response.
@@ -68,37 +66,37 @@ impl ListDataSourcesOutputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_summaries`](crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder::data_source_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesOutput {
-            data_source_summaries: self.data_source_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_summaries",
-                    "data_source_summaries was not specified but it is required when building ListDataSourcesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_sources::ListDataSourcesOutput {
+                data_source_summaries: self.data_source_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_summaries", "data_source_summaries was not specified but it is required when building ListDataSourcesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

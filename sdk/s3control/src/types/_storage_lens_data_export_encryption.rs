@@ -3,19 +3,19 @@
 /// <p>A container for the encryption of the S3 Storage Lens metrics exports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLensDataExportEncryption {
+pub struct StorageLensDataExportEncryption  {
     /// <p></p>
     pub sses3: ::std::option::Option<crate::types::Sses3>,
     /// <p></p>
     pub ssekms: ::std::option::Option<crate::types::Ssekms>,
 }
-impl StorageLensDataExportEncryption {
+impl  StorageLensDataExportEncryption  {
     /// <p></p>
-    pub fn sses3(&self) -> ::std::option::Option<&crate::types::Sses3> {
+    pub fn sses3(&self) -> ::std::option::Option<& crate::types::Sses3> {
         self.sses3.as_ref()
     }
     /// <p></p>
-    pub fn ssekms(&self) -> ::std::option::Option<&crate::types::Ssekms> {
+    pub fn ssekms(&self) -> ::std::option::Option<& crate::types::Ssekms> {
         self.ssekms.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StorageLensDataExportEncryptionBuilder {
     }
     /// <p></p>
     pub fn set_sses3(mut self, input: ::std::option::Option<crate::types::Sses3>) -> Self {
-        self.sses3 = input;
-        self
+        self.sses3 = input; self
     }
     /// <p></p>
     pub fn get_sses3(&self) -> &::std::option::Option<crate::types::Sses3> {
@@ -55,8 +54,7 @@ impl StorageLensDataExportEncryptionBuilder {
     }
     /// <p></p>
     pub fn set_ssekms(mut self, input: ::std::option::Option<crate::types::Ssekms>) -> Self {
-        self.ssekms = input;
-        self
+        self.ssekms = input; self
     }
     /// <p></p>
     pub fn get_ssekms(&self) -> &::std::option::Option<crate::types::Ssekms> {
@@ -65,8 +63,11 @@ impl StorageLensDataExportEncryptionBuilder {
     /// Consumes the builder and constructs a [`StorageLensDataExportEncryption`](crate::types::StorageLensDataExportEncryption).
     pub fn build(self) -> crate::types::StorageLensDataExportEncryption {
         crate::types::StorageLensDataExportEncryption {
-            sses3: self.sses3,
-            ssekms: self.ssekms,
+            sses3: self.sses3
+            ,
+            ssekms: self.ssekms
+            ,
         }
     }
 }
+

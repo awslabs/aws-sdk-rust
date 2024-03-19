@@ -3,15 +3,14 @@
 /// <p>A string to string map of the configuration details for theme generation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldsForThemeGeneration {
+pub struct FieldsForThemeGeneration  {
     /// <p>The name of the Items dataset column that stores the name of each item in the dataset.</p>
     pub item_name: ::std::string::String,
 }
-impl FieldsForThemeGeneration {
+impl  FieldsForThemeGeneration  {
     /// <p>The name of the Items dataset column that stores the name of each item in the dataset.</p>
-    pub fn item_name(&self) -> &str {
-        use std::ops::Deref;
-        self.item_name.deref()
+    pub fn item_name(&self) -> & str {
+        use std::ops::Deref; self.item_name.deref()
     }
 }
 impl FieldsForThemeGeneration {
@@ -36,8 +35,7 @@ impl FieldsForThemeGenerationBuilder {
     }
     /// <p>The name of the Items dataset column that stores the name of each item in the dataset.</p>
     pub fn set_item_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.item_name = input;
-        self
+        self.item_name = input; self
     }
     /// <p>The name of the Items dataset column that stores the name of each item in the dataset.</p>
     pub fn get_item_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl FieldsForThemeGenerationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`item_name`](crate::types::builders::FieldsForThemeGenerationBuilder::item_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldsForThemeGeneration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldsForThemeGeneration {
-            item_name: self.item_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "item_name",
-                    "item_name was not specified but it is required when building FieldsForThemeGeneration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldsForThemeGeneration {
+                item_name: self.item_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("item_name", "item_name was not specified but it is required when building FieldsForThemeGeneration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

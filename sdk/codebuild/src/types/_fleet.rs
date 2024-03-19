@@ -3,7 +3,7 @@
 /// <p>A set of dedicated instances for your build environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Fleet {
+pub struct Fleet  {
     /// <p>The ARN of the compute fleet.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute fleet.</p>
@@ -78,31 +78,31 @@ pub struct Fleet {
     pub overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl Fleet {
+impl  Fleet  {
     /// <p>The ARN of the compute fleet.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the compute fleet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the compute fleet.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The time at which the compute fleet was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The time at which the compute fleet was last modified.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The status of the compute fleet.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FleetStatus> {
         self.status.as_ref()
     }
     /// <p>The initial number of machines allocated to the compute ﬂeet, which deﬁnes the number of builds that can run in parallel.</p>
@@ -123,7 +123,7 @@ impl Fleet {
     /// <p>The environment type <code>WINDOWS_SERVER_2022_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Sydney), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (São Paulo) and Asia Pacific (Mumbai).</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
-    pub fn environment_type(&self) -> ::std::option::Option<&crate::types::EnvironmentType> {
+    pub fn environment_type(&self) -> ::std::option::Option<& crate::types::EnvironmentType> {
         self.environment_type.as_ref()
     }
     /// <p>Information about the compute resources the compute fleet uses. Available values include:</p>
@@ -158,11 +158,11 @@ impl Fleet {
     /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide.</i></p>
-    pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
+    pub fn compute_type(&self) -> ::std::option::Option<& crate::types::ComputeType> {
         self.compute_type.as_ref()
     }
     /// <p>The scaling configuration of the compute fleet.</p>
-    pub fn scaling_configuration(&self) -> ::std::option::Option<&crate::types::ScalingConfigurationOutput> {
+    pub fn scaling_configuration(&self) -> ::std::option::Option<& crate::types::ScalingConfigurationOutput> {
         self.scaling_configuration.as_ref()
     }
     /// <p>The compute fleet overflow behavior.</p>
@@ -172,15 +172,16 @@ impl Fleet {
     /// <li>
     /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
     /// </ul>
-    pub fn overflow_behavior(&self) -> ::std::option::Option<&crate::types::FleetOverflowBehavior> {
+    pub fn overflow_behavior(&self) -> ::std::option::Option<& crate::types::FleetOverflowBehavior> {
         self.overflow_behavior.as_ref()
     }
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Fleet {
@@ -205,7 +206,7 @@ pub struct FleetBuilder {
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfigurationOutput>,
     pub(crate) overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl FleetBuilder {
     /// <p>The ARN of the compute fleet.</p>
@@ -215,8 +216,7 @@ impl FleetBuilder {
     }
     /// <p>The ARN of the compute fleet.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the compute fleet.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +229,7 @@ impl FleetBuilder {
     }
     /// <p>The name of the compute fleet.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the compute fleet.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +242,7 @@ impl FleetBuilder {
     }
     /// <p>The ID of the compute fleet.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the compute fleet.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +255,7 @@ impl FleetBuilder {
     }
     /// <p>The time at which the compute fleet was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The time at which the compute fleet was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -271,8 +268,7 @@ impl FleetBuilder {
     }
     /// <p>The time at which the compute fleet was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The time at which the compute fleet was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -285,8 +281,7 @@ impl FleetBuilder {
     }
     /// <p>The status of the compute fleet.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the compute fleet.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
@@ -299,8 +294,7 @@ impl FleetBuilder {
     }
     /// <p>The initial number of machines allocated to the compute ﬂeet, which deﬁnes the number of builds that can run in parallel.</p>
     pub fn set_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.base_capacity = input;
-        self
+        self.base_capacity = input; self
     }
     /// <p>The initial number of machines allocated to the compute ﬂeet, which deﬁnes the number of builds that can run in parallel.</p>
     pub fn get_base_capacity(&self) -> &::std::option::Option<i32> {
@@ -339,8 +333,7 @@ impl FleetBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn set_environment_type(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
-        self.environment_type = input;
-        self
+        self.environment_type = input; self
     }
     /// <p>The environment type of the compute fleet.</p>
     /// <ul>
@@ -428,8 +421,7 @@ impl FleetBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide.</i></p>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
-        self.compute_type = input;
-        self
+        self.compute_type = input; self
     }
     /// <p>Information about the compute resources the compute fleet uses. Available values include:</p>
     /// <ul>
@@ -473,8 +465,7 @@ impl FleetBuilder {
     }
     /// <p>The scaling configuration of the compute fleet.</p>
     pub fn set_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ScalingConfigurationOutput>) -> Self {
-        self.scaling_configuration = input;
-        self
+        self.scaling_configuration = input; self
     }
     /// <p>The scaling configuration of the compute fleet.</p>
     pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfigurationOutput> {
@@ -499,8 +490,7 @@ impl FleetBuilder {
     /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
     /// </ul>
     pub fn set_overflow_behavior(mut self, input: ::std::option::Option<crate::types::FleetOverflowBehavior>) -> Self {
-        self.overflow_behavior = input;
-        self
+        self.overflow_behavior = input; self
     }
     /// <p>The compute fleet overflow behavior.</p>
     /// <ul>
@@ -520,36 +510,48 @@ impl FleetBuilder {
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Fleet`](crate::types::Fleet).
     pub fn build(self) -> crate::types::Fleet {
         crate::types::Fleet {
-            arn: self.arn,
-            name: self.name,
-            id: self.id,
-            created: self.created,
-            last_modified: self.last_modified,
-            status: self.status,
-            base_capacity: self.base_capacity,
-            environment_type: self.environment_type,
-            compute_type: self.compute_type,
-            scaling_configuration: self.scaling_configuration,
-            overflow_behavior: self.overflow_behavior,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            created: self.created
+            ,
+            last_modified: self.last_modified
+            ,
+            status: self.status
+            ,
+            base_capacity: self.base_capacity
+            ,
+            environment_type: self.environment_type
+            ,
+            compute_type: self.compute_type
+            ,
+            scaling_configuration: self.scaling_configuration
+            ,
+            overflow_behavior: self.overflow_behavior
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

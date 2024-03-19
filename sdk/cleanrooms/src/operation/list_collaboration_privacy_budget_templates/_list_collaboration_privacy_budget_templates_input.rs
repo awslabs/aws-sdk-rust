@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCollaborationPrivacyBudgetTemplatesInput {
+pub struct ListCollaborationPrivacyBudgetTemplatesInput  {
     /// <p>A unique identifier for one of your collaborations.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ListCollaborationPrivacyBudgetTemplatesInput {
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCollaborationPrivacyBudgetTemplatesInput {
+impl  ListCollaborationPrivacyBudgetTemplatesInput  {
     /// <p>A unique identifier for one of your collaborations.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
@@ -48,8 +48,7 @@ impl ListCollaborationPrivacyBudgetTemplatesInputBuilder {
     }
     /// <p>A unique identifier for one of your collaborations.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for one of your collaborations.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListCollaborationPrivacyBudgetTemplatesInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListCollaborationPrivacyBudgetTemplatesInputBuilder {
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCollaborationPrivacyBudgetTemplatesInput`](crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesInput {
-                collaboration_identifier: self.collaboration_identifier,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of a share.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShareDetails {
+pub struct ShareDetails  {
     /// <p>The ID for a share offer for an analytics store .</p>
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource Arn of the analytics store being shared.</p>
@@ -23,41 +23,41 @@ pub struct ShareDetails {
     /// <p>The timestamp of the share update.</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ShareDetails {
+impl  ShareDetails  {
     /// <p>The ID for a share offer for an analytics store .</p>
-    pub fn share_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<& str> {
         self.share_id.as_deref()
     }
     /// <p>The resource Arn of the analytics store being shared.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The principal subscriber is the account the analytics store data is being shared with.</p>
-    pub fn principal_subscriber(&self) -> ::std::option::Option<&str> {
+    pub fn principal_subscriber(&self) -> ::std::option::Option<& str> {
         self.principal_subscriber.as_deref()
     }
     /// <p>The account ID for the data owner. The owner creates the share offer.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The status of a share.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ShareStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for a share. It provides more details on the status of the share.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The name of the share.</p>
-    pub fn share_name(&self) -> ::std::option::Option<&str> {
+    pub fn share_name(&self) -> ::std::option::Option<& str> {
         self.share_name.as_deref()
     }
     /// <p>The timestamp for when the share was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp of the share update.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The ID for a share offer for an analytics store .</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The ID for a share offer for an analytics store .</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The resource Arn of the analytics store being shared.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The resource Arn of the analytics store being shared.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The principal subscriber is the account the analytics store data is being shared with.</p>
     pub fn set_principal_subscriber(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_subscriber = input;
-        self
+        self.principal_subscriber = input; self
     }
     /// <p>The principal subscriber is the account the analytics store data is being shared with.</p>
     pub fn get_principal_subscriber(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The account ID for the data owner. The owner creates the share offer.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The account ID for the data owner. The owner creates the share offer.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The status of a share.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a share.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
@@ -160,8 +155,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The status message for a share. It provides more details on the status of the share.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for a share. It provides more details on the status of the share.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The name of the share.</p>
     pub fn set_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_name = input;
-        self
+        self.share_name = input; self
     }
     /// <p>The name of the share.</p>
     pub fn get_share_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The timestamp for when the share was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp for when the share was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -202,8 +194,7 @@ impl ShareDetailsBuilder {
     }
     /// <p>The timestamp of the share update.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp of the share update.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -212,15 +203,25 @@ impl ShareDetailsBuilder {
     /// Consumes the builder and constructs a [`ShareDetails`](crate::types::ShareDetails).
     pub fn build(self) -> crate::types::ShareDetails {
         crate::types::ShareDetails {
-            share_id: self.share_id,
-            resource_arn: self.resource_arn,
-            principal_subscriber: self.principal_subscriber,
-            owner_id: self.owner_id,
-            status: self.status,
-            status_message: self.status_message,
-            share_name: self.share_name,
-            creation_time: self.creation_time,
-            update_time: self.update_time,
+            share_id: self.share_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            principal_subscriber: self.principal_subscriber
+            ,
+            owner_id: self.owner_id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            share_name: self.share_name
+            ,
+            creation_time: self.creation_time
+            ,
+            update_time: self.update_time
+            ,
         }
     }
 }
+

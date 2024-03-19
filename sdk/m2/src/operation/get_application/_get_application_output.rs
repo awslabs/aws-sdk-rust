@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The unique identifier of the application.</p>
     pub name: ::std::string::String,
     /// <p>The description of the application.</p>
@@ -20,21 +20,21 @@ pub struct GetApplicationOutput {
     /// <p>The type of the target platform for the application.</p>
     pub engine_type: crate::types::EngineType,
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    pub log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>,
+    pub log_groups: ::std::option::Option<::std::vec::Vec::<crate::types::LogGroupSummary>>,
     /// <p>The timestamp when this application was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    pub target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    pub listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub listener_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
-    pub listener_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub listener_ports: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
     pub load_balancer_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the reported status.</p>
@@ -45,104 +45,105 @@ pub struct GetApplicationOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetApplicationOutput {
+impl  GetApplicationOutput  {
     /// <p>The unique identifier of the application.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.application_arn.deref()
+    pub fn application_arn(&self) -> & str {
+        use std::ops::Deref; self.application_arn.deref()
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> &crate::types::ApplicationLifecycle {
+    pub fn status(&self) -> & crate::types::ApplicationLifecycle {
         &self.status
     }
     /// <p>The latest version of the application.</p>
-    pub fn latest_version(&self) -> ::std::option::Option<&crate::types::ApplicationVersionSummary> {
+    pub fn latest_version(&self) -> ::std::option::Option<& crate::types::ApplicationVersionSummary> {
         self.latest_version.as_ref()
     }
     /// <p>The version of the application that is deployed.</p>
-    pub fn deployed_version(&self) -> ::std::option::Option<&crate::types::DeployedVersionSummary> {
+    pub fn deployed_version(&self) -> ::std::option::Option<& crate::types::DeployedVersionSummary> {
         self.deployed_version.as_ref()
     }
     /// <p>The type of the target platform for the application.</p>
-    pub fn engine_type(&self) -> &crate::types::EngineType {
+    pub fn engine_type(&self) -> & crate::types::EngineType {
         &self.engine_type
     }
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_groups.is_none()`.
-    pub fn log_groups(&self) -> &[crate::types::LogGroupSummary] {
-        self.log_groups.as_deref().unwrap_or_default()
+    pub fn log_groups(&self) -> & [crate::types::LogGroupSummary] {
+        self.log_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp when this application was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    pub fn last_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_start_time.as_ref()
     }
     /// <p>A list of tags associated with the application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_arns.is_none()`.
-    pub fn target_group_arns(&self) -> &[::std::string::String] {
-        self.target_group_arns.as_deref().unwrap_or_default()
+    pub fn target_group_arns(&self) -> & [::std::string::String] {
+        self.target_group_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_arns.is_none()`.
-    pub fn listener_arns(&self) -> &[::std::string::String] {
-        self.listener_arns.as_deref().unwrap_or_default()
+    pub fn listener_arns(&self) -> & [::std::string::String] {
+        self.listener_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_ports.is_none()`.
-    pub fn listener_ports(&self) -> &[i32] {
-        self.listener_ports.as_deref().unwrap_or_default()
+    pub fn listener_ports(&self) -> & [i32] {
+        self.listener_ports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
-    pub fn load_balancer_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_dns_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_dns_name.as_deref()
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The identifier of a customer managed key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn builder() -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
@@ -162,14 +163,14 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) latest_version: ::std::option::Option<crate::types::ApplicationVersionSummary>,
     pub(crate) deployed_version: ::std::option::Option<crate::types::DeployedVersionSummary>,
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
-    pub(crate) log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>,
+    pub(crate) log_groups: ::std::option::Option<::std::vec::Vec::<crate::types::LogGroupSummary>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) listener_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) target_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) listener_ports: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) load_balancer_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -185,8 +186,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique identifier of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +199,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +213,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +227,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +241,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The status of the application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationLifecycle> {
@@ -259,8 +255,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The latest version of the application.</p>
     pub fn set_latest_version(mut self, input: ::std::option::Option<crate::types::ApplicationVersionSummary>) -> Self {
-        self.latest_version = input;
-        self
+        self.latest_version = input; self
     }
     /// <p>The latest version of the application.</p>
     pub fn get_latest_version(&self) -> &::std::option::Option<crate::types::ApplicationVersionSummary> {
@@ -273,8 +268,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The version of the application that is deployed.</p>
     pub fn set_deployed_version(mut self, input: ::std::option::Option<crate::types::DeployedVersionSummary>) -> Self {
-        self.deployed_version = input;
-        self
+        self.deployed_version = input; self
     }
     /// <p>The version of the application that is deployed.</p>
     pub fn get_deployed_version(&self) -> &::std::option::Option<crate::types::DeployedVersionSummary> {
@@ -288,8 +282,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The type of the target platform for the application.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The type of the target platform for the application.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -302,17 +295,16 @@ impl GetApplicationOutputBuilder {
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
     pub fn log_groups(mut self, input: crate::types::LogGroupSummary) -> Self {
         let mut v = self.log_groups.unwrap_or_default();
-        v.push(input);
-        self.log_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    pub fn set_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>) -> Self {
-        self.log_groups = input;
-        self
+    pub fn set_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogGroupSummary>>) -> Self {
+        self.log_groups = input; self
     }
     /// <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    pub fn get_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>> {
+    pub fn get_log_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogGroupSummary>> {
         &self.log_groups
     }
     /// <p>The timestamp when this application was created.</p>
@@ -323,8 +315,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The timestamp when this application was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when this application was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -337,8 +328,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub fn set_last_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_start_time = input;
-        self
+        self.last_start_time = input; self
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub fn get_last_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -351,17 +341,16 @@ impl GetApplicationOutputBuilder {
     /// <p>A list of tags associated with the application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags associated with the application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with the application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
@@ -371,8 +360,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The identifier of the runtime environment where you want to deploy the application.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -385,17 +373,16 @@ impl GetApplicationOutputBuilder {
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
     pub fn target_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_group_arns.unwrap_or_default();
-        v.push(input.into());
-        self.target_group_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_group_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    pub fn set_target_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_group_arns = input;
-        self
+    pub fn set_target_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_group_arns = input; self
     }
     /// <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    pub fn get_target_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_group_arns
     }
     /// Appends an item to `listener_arns`.
@@ -405,17 +392,16 @@ impl GetApplicationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
     pub fn listener_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.listener_arns.unwrap_or_default();
-        v.push(input.into());
-        self.listener_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.listener_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.listener_arns = input;
-        self
+    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.listener_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.listener_arns
     }
     /// Appends an item to `listener_ports`.
@@ -425,17 +411,16 @@ impl GetApplicationOutputBuilder {
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
     pub fn listener_ports(mut self, input: i32) -> Self {
         let mut v = self.listener_ports.unwrap_or_default();
-        v.push(input);
-        self.listener_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.listener_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
-    pub fn set_listener_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.listener_ports = input;
-        self
+    pub fn set_listener_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.listener_ports = input; self
     }
     /// <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
-    pub fn get_listener_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_listener_ports(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.listener_ports
     }
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
@@ -445,8 +430,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
     pub fn set_load_balancer_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_dns_name = input;
-        self
+        self.load_balancer_dns_name = input; self
     }
     /// <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
     pub fn get_load_balancer_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -459,8 +443,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the reported status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -473,8 +456,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -487,22 +469,21 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::get_application::builders::GetApplicationOutputBuilder::name)
@@ -511,61 +492,70 @@ impl GetApplicationOutputBuilder {
     /// - [`status`](crate::operation::get_application::builders::GetApplicationOutputBuilder::status)
     /// - [`engine_type`](crate::operation::get_application::builders::GetApplicationOutputBuilder::engine_type)
     /// - [`creation_time`](crate::operation::get_application::builders::GetApplicationOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_application::GetApplicationOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetApplicationOutput",
-                )
-            })?,
-            description: self.description,
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetApplicationOutput",
-                )
-            })?,
-            application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_arn",
-                    "application_arn was not specified but it is required when building GetApplicationOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetApplicationOutput",
-                )
-            })?,
-            latest_version: self.latest_version,
-            deployed_version: self.deployed_version,
-            engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engine_type",
-                    "engine_type was not specified but it is required when building GetApplicationOutput",
-                )
-            })?,
-            log_groups: self.log_groups,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetApplicationOutput",
-                )
-            })?,
-            last_start_time: self.last_start_time,
-            tags: self.tags,
-            environment_id: self.environment_id,
-            target_group_arns: self.target_group_arns,
-            listener_arns: self.listener_arns,
-            listener_ports: self.listener_ports,
-            load_balancer_dns_name: self.load_balancer_dns_name,
-            status_reason: self.status_reason,
-            kms_key_id: self.kms_key_id,
-            role_arn: self.role_arn,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application::GetApplicationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_application::GetApplicationOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetApplicationOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building GetApplicationOutput")
+                    )?
+                ,
+                application_arn: self.application_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_arn", "application_arn was not specified but it is required when building GetApplicationOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetApplicationOutput")
+                    )?
+                ,
+                latest_version: self.latest_version
+                ,
+                deployed_version: self.deployed_version
+                ,
+                engine_type: self.engine_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engine_type", "engine_type was not specified but it is required when building GetApplicationOutput")
+                    )?
+                ,
+                log_groups: self.log_groups
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetApplicationOutput")
+                    )?
+                ,
+                last_start_time: self.last_start_time
+                ,
+                tags: self.tags
+                ,
+                environment_id: self.environment_id
+                ,
+                target_group_arns: self.target_group_arns
+                ,
+                listener_arns: self.listener_arns
+                ,
+                listener_ports: self.listener_ports
+                ,
+                load_balancer_dns_name: self.load_balancer_dns_name
+                ,
+                status_reason: self.status_reason
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                role_arn: self.role_arn
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

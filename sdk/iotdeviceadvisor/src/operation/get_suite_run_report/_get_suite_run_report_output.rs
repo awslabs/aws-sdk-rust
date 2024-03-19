@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSuiteRunReportOutput {
+pub struct GetSuiteRunReportOutput  {
     /// <p>Download URL of the qualification report.</p>
     pub qualification_report_download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSuiteRunReportOutput {
+impl  GetSuiteRunReportOutput  {
     /// <p>Download URL of the qualification report.</p>
-    pub fn qualification_report_download_url(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_report_download_url(&self) -> ::std::option::Option<& str> {
         self.qualification_report_download_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSuiteRunReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSuiteRunReportOutput {
     /// Creates a new builder-style object to manufacture [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput).
     pub fn builder() -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportOutputBuilder {
@@ -40,27 +40,28 @@ impl GetSuiteRunReportOutputBuilder {
     }
     /// <p>Download URL of the qualification report.</p>
     pub fn set_qualification_report_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_report_download_url = input;
-        self
+        self.qualification_report_download_url = input; self
     }
     /// <p>Download URL of the qualification report.</p>
     pub fn get_qualification_report_download_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualification_report_download_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput).
     pub fn build(self) -> crate::operation::get_suite_run_report::GetSuiteRunReportOutput {
         crate::operation::get_suite_run_report::GetSuiteRunReportOutput {
-            qualification_report_download_url: self.qualification_report_download_url,
+            qualification_report_download_url: self.qualification_report_download_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKxDatabases`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
-    /// - On success, responds with [`ListKxDatabasesOutput`](crate::operation::list_kx_databases::ListKxDatabasesOutput) with field(s):
+                            /// - On success, responds with [`ListKxDatabasesOutput`](crate::operation::list_kx_databases::ListKxDatabasesOutput) with field(s):
     ///   - [`kx_databases(Option<Vec::<KxDatabaseListEntry>>)`](crate::operation::list_kx_databases::ListKxDatabasesOutput::kx_databases): <p>A list of databases in the kdb environment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_databases::ListKxDatabasesOutput::next_token): <p>A token that indicates where a results page should begin.</p>
-    /// - On failure, responds with [`SdkError<ListKxDatabasesError>`](crate::operation::list_kx_databases::ListKxDatabasesError)
+                            /// - On failure, responds with [`SdkError<ListKxDatabasesError>`](crate::operation::list_kx_databases::ListKxDatabasesError)
     pub fn list_kx_databases(&self) -> crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder {
-        crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

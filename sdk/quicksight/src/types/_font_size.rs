@@ -3,13 +3,13 @@
 /// <p>The option that determines the text display size.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FontSize {
+pub struct FontSize  {
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
     pub relative: ::std::option::Option<crate::types::RelativeFontSize>,
 }
-impl FontSize {
+impl  FontSize  {
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
-    pub fn relative(&self) -> ::std::option::Option<&crate::types::RelativeFontSize> {
+    pub fn relative(&self) -> ::std::option::Option<& crate::types::RelativeFontSize> {
         self.relative.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl FontSizeBuilder {
     }
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
     pub fn set_relative(mut self, input: ::std::option::Option<crate::types::RelativeFontSize>) -> Self {
-        self.relative = input;
-        self
+        self.relative = input; self
     }
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
     pub fn get_relative(&self) -> &::std::option::Option<crate::types::RelativeFontSize> {
@@ -43,6 +42,10 @@ impl FontSizeBuilder {
     }
     /// Consumes the builder and constructs a [`FontSize`](crate::types::FontSize).
     pub fn build(self) -> crate::types::FontSize {
-        crate::types::FontSize { relative: self.relative }
+        crate::types::FontSize {
+            relative: self.relative
+            ,
+        }
     }
 }
+

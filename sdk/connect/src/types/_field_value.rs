@@ -3,20 +3,19 @@
 /// <p>Object for case field values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldValue {
+pub struct FieldValue  {
     /// <p>Unique identifier of a field.</p>
     pub id: ::std::string::String,
     /// <p>Union of potential field value types.</p>
     pub value: ::std::option::Option<crate::types::FieldValueUnion>,
 }
-impl FieldValue {
+impl  FieldValue  {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Union of potential field value types.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::FieldValueUnion> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::FieldValueUnion> {
         self.value.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl FieldValueBuilder {
     }
     /// <p>Unique identifier of a field.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique identifier of a field.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl FieldValueBuilder {
     }
     /// <p>Union of potential field value types.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::FieldValueUnion>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Union of potential field value types.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::FieldValueUnion> {
@@ -69,14 +66,17 @@ impl FieldValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::FieldValueBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldValue {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FieldValue",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldValue {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FieldValue")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

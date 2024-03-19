@@ -6,3 +6,4 @@ pub mod invoke_model;
 
 /// Types for the `InvokeModelWithResponseStream` operation.
 pub mod invoke_model_with_response_stream;
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLoaderJobsInput {
+pub struct ListLoaderJobsInput  {
     /// <p>The number of load IDs to list. Must be a positive integer greater than zero and not more than <code>100</code> (which is the default).</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>An optional parameter that can be used to exclude the load IDs of queued load requests when requesting a list of load IDs by setting the parameter to <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
     pub include_queued_loads: ::std::option::Option<bool>,
 }
-impl ListLoaderJobsInput {
+impl  ListLoaderJobsInput  {
     /// <p>The number of load IDs to list. Must be a positive integer greater than zero and not more than <code>100</code> (which is the default).</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
@@ -40,8 +40,7 @@ impl ListLoaderJobsInputBuilder {
     }
     /// <p>The number of load IDs to list. Must be a positive integer greater than zero and not more than <code>100</code> (which is the default).</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The number of load IDs to list. Must be a positive integer greater than zero and not more than <code>100</code> (which is the default).</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -54,20 +53,22 @@ impl ListLoaderJobsInputBuilder {
     }
     /// <p>An optional parameter that can be used to exclude the load IDs of queued load requests when requesting a list of load IDs by setting the parameter to <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
     pub fn set_include_queued_loads(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_queued_loads = input;
-        self
+        self.include_queued_loads = input; self
     }
     /// <p>An optional parameter that can be used to exclude the load IDs of queued load requests when requesting a list of load IDs by setting the parameter to <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
     pub fn get_include_queued_loads(&self) -> &::std::option::Option<bool> {
         &self.include_queued_loads
     }
     /// Consumes the builder and constructs a [`ListLoaderJobsInput`](crate::operation::list_loader_jobs::ListLoaderJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_loader_jobs::ListLoaderJobsInput {
-            limit: self.limit,
-            include_queued_loads: self.include_queued_loads,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_loader_jobs::ListLoaderJobsInput {
+                limit: self.limit
+                ,
+                include_queued_loads: self.include_queued_loads
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>The description of the scale-in policy for the connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScaleInPolicyDescription {
+pub struct ScaleInPolicyDescription  {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub cpu_utilization_percentage: i32,
 }
-impl ScaleInPolicyDescription {
+impl  ScaleInPolicyDescription  {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub fn cpu_utilization_percentage(&self) -> i32 {
         self.cpu_utilization_percentage
@@ -34,8 +34,7 @@ impl ScaleInPolicyDescriptionBuilder {
     }
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub fn set_cpu_utilization_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu_utilization_percentage = input;
-        self
+        self.cpu_utilization_percentage = input; self
     }
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub fn get_cpu_utilization_percentage(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,10 @@ impl ScaleInPolicyDescriptionBuilder {
     /// Consumes the builder and constructs a [`ScaleInPolicyDescription`](crate::types::ScaleInPolicyDescription).
     pub fn build(self) -> crate::types::ScaleInPolicyDescription {
         crate::types::ScaleInPolicyDescription {
-            cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+            cpu_utilization_percentage: self.cpu_utilization_percentage
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

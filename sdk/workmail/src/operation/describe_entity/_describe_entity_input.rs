@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityInput {
+pub struct DescribeEntityInput  {
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The email under which the entity exists.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEntityInput {
+impl  DescribeEntityInput  {
     /// <p>The identifier for the organization under which the entity exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The email under which the entity exists.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeEntityInputBuilder {
     }
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeEntityInputBuilder {
     }
     /// <p>The email under which the entity exists.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email under which the entity exists.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.email
     }
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_entity::DescribeEntityInput {
-            organization_id: self.organization_id,
-            email: self.email,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_entity::DescribeEntityInput {
+                organization_id: self.organization_id
+                ,
+                email: self.email
+                ,
+            }
+        )
     }
 }
+

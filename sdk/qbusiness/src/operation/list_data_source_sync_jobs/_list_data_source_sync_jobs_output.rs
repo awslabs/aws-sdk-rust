@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSourceSyncJobsOutput {
+pub struct ListDataSourceSyncJobsOutput  {
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    pub history: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
+    pub history: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSyncJob>>,
     /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDataSourceSyncJobsOutput {
+impl  ListDataSourceSyncJobsOutput  {
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.history.is_none()`.
-    pub fn history(&self) -> &[crate::types::DataSourceSyncJob] {
-        self.history.as_deref().unwrap_or_default()
+    pub fn history(&self) -> & [crate::types::DataSourceSyncJob] {
+        self.history.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataSourceSyncJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataSourceSyncJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput).
     pub fn builder() -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListDataSourceSyncJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsOutputBuilder {
-    pub(crate) history: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
+    pub(crate) history: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSyncJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListDataSourceSyncJobsOutputBuilder {
     /// <p>A history of synchronization jobs for the data source connector.</p>
     pub fn history(mut self, input: crate::types::DataSourceSyncJob) -> Self {
         let mut v = self.history.unwrap_or_default();
-        v.push(input);
-        self.history = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.history = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    pub fn set_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>) -> Self {
-        self.history = input;
-        self
+    pub fn set_history(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSyncJob>>) -> Self {
+        self.history = input; self
     }
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    pub fn get_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>> {
+    pub fn get_history(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceSyncJob>> {
         &self.history
     }
     /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
@@ -69,28 +69,30 @@ impl ListDataSourceSyncJobsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput).
     pub fn build(self) -> crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput {
         crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput {
-            history: self.history,
-            next_token: self.next_token,
+            history: self.history
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

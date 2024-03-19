@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationsInput {
+pub struct ListRecommendationsInput  {
     /// <p>The ID of the requested insight.</p>
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -12,21 +12,21 @@ pub struct ListRecommendationsInput {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListRecommendationsInput {
+impl  ListRecommendationsInput  {
     /// <p>The ID of the requested insight.</p>
-    pub fn insight_id(&self) -> ::std::option::Option<&str> {
+    pub fn insight_id(&self) -> ::std::option::Option<& str> {
         self.insight_id.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A locale that specifies the language to use for recommendations.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The ID of the requested insight.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
     }
     /// <p>The ID of the requested insight.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
@@ -97,23 +94,26 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_recommendations::ListRecommendationsInput {
-            insight_id: self.insight_id,
-            next_token: self.next_token,
-            locale: self.locale,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recommendations::ListRecommendationsInput {
+                insight_id: self.insight_id
+                ,
+                next_token: self.next_token
+                ,
+                locale: self.locale
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

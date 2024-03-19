@@ -3,7 +3,7 @@
 /// <p>The parameters that are required to connect to a Databricks data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabricksParameters {
+pub struct DatabricksParameters  {
     /// <p>The host name of the Databricks data source.</p>
     pub host: ::std::string::String,
     /// <p>The port for the Databricks data source.</p>
@@ -11,20 +11,18 @@ pub struct DatabricksParameters {
     /// <p>The HTTP path of the Databricks data source.</p>
     pub sql_endpoint_path: ::std::string::String,
 }
-impl DatabricksParameters {
+impl  DatabricksParameters  {
     /// <p>The host name of the Databricks data source.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port for the Databricks data source.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The HTTP path of the Databricks data source.</p>
-    pub fn sql_endpoint_path(&self) -> &str {
-        use std::ops::Deref;
-        self.sql_endpoint_path.deref()
+    pub fn sql_endpoint_path(&self) -> & str {
+        use std::ops::Deref; self.sql_endpoint_path.deref()
     }
 }
 impl DatabricksParameters {
@@ -51,8 +49,7 @@ impl DatabricksParametersBuilder {
     }
     /// <p>The host name of the Databricks data source.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The host name of the Databricks data source.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl DatabricksParametersBuilder {
     }
     /// <p>The port for the Databricks data source.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port for the Databricks data source.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -81,8 +77,7 @@ impl DatabricksParametersBuilder {
     }
     /// <p>The HTTP path of the Databricks data source.</p>
     pub fn set_sql_endpoint_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_endpoint_path = input;
-        self
+        self.sql_endpoint_path = input; self
     }
     /// <p>The HTTP path of the Databricks data source.</p>
     pub fn get_sql_endpoint_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl DatabricksParametersBuilder {
     /// - [`port`](crate::types::builders::DatabricksParametersBuilder::port)
     /// - [`sql_endpoint_path`](crate::types::builders::DatabricksParametersBuilder::sql_endpoint_path)
     pub fn build(self) -> ::std::result::Result<crate::types::DatabricksParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatabricksParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building DatabricksParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building DatabricksParameters",
-                )
-            })?,
-            sql_endpoint_path: self.sql_endpoint_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql_endpoint_path",
-                    "sql_endpoint_path was not specified but it is required when building DatabricksParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatabricksParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building DatabricksParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building DatabricksParameters")
+                    )?
+                ,
+                sql_endpoint_path: self.sql_endpoint_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql_endpoint_path", "sql_endpoint_path was not specified but it is required when building DatabricksParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

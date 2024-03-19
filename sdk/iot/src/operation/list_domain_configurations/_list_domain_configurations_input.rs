@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainConfigurationsInput {
+pub struct ListDomainConfigurationsInput  {
     /// <p>The marker for the next set of results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
@@ -10,9 +10,9 @@ pub struct ListDomainConfigurationsInput {
     /// <p>The type of service delivered by the endpoint.</p>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
 }
-impl ListDomainConfigurationsInput {
+impl  ListDomainConfigurationsInput  {
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The result page size.</p>
@@ -20,7 +20,7 @@ impl ListDomainConfigurationsInput {
         self.page_size
     }
     /// <p>The type of service delivered by the endpoint.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service_type.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ListDomainConfigurationsInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListDomainConfigurationsInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The result page size.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl ListDomainConfigurationsInputBuilder {
     }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
         &self.service_type
     }
     /// Consumes the builder and constructs a [`ListDomainConfigurationsInput`](crate::operation::list_domain_configurations::ListDomainConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domain_configurations::ListDomainConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_domain_configurations::ListDomainConfigurationsInput {
-            marker: self.marker,
-            page_size: self.page_size,
-            service_type: self.service_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_configurations::ListDomainConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_domain_configurations::ListDomainConfigurationsInput {
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+                service_type: self.service_type
+                ,
+            }
+        )
     }
 }
+

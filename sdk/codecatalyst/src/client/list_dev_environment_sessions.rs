@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDevEnvironmentSessions`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`space_name(impl Into<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     ///   - [`project_name(impl Into<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::set_project_name):<br>required: **true**<br><p>The name of the project in the space.</p><br>
     ///   - [`dev_environment_id(impl Into<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::dev_environment_id) / [`set_dev_environment_id(Option<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::set_dev_environment_id):<br>required: **true**<br><p>The system-generated unique ID of the Dev Environment.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput) with field(s):
+                            /// - On success, responds with [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput) with field(s):
     ///   - [`items(Vec::<DevEnvironmentSessionSummary>)`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput::items): <p>Information about each session retrieved in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On failure, responds with [`SdkError<ListDevEnvironmentSessionsError>`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError)
-    pub fn list_dev_environment_sessions(
-        &self,
-    ) -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder {
-        crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDevEnvironmentSessionsError>`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError)
+    pub fn list_dev_environment_sessions(&self) -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder {
+                                crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

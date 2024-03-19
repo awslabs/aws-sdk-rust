@@ -4,22 +4,23 @@
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDeliverabilityDashboardOptionInput {
+pub struct PutDeliverabilityDashboardOptionInput  {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     pub dashboard_enabled: ::std::option::Option<bool>,
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub subscribed_domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
+    pub subscribed_domains: ::std::option::Option<::std::vec::Vec::<crate::types::DomainDeliverabilityTrackingOption>>,
 }
-impl PutDeliverabilityDashboardOptionInput {
+impl  PutDeliverabilityDashboardOptionInput  {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     pub fn dashboard_enabled(&self) -> ::std::option::Option<bool> {
         self.dashboard_enabled
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_domains.is_none()`.
-    pub fn subscribed_domains(&self) -> &[crate::types::DomainDeliverabilityTrackingOption] {
-        self.subscribed_domains.as_deref().unwrap_or_default()
+    pub fn subscribed_domains(&self) -> & [crate::types::DomainDeliverabilityTrackingOption] {
+        self.subscribed_domains.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutDeliverabilityDashboardOptionInput {
@@ -34,7 +35,7 @@ impl PutDeliverabilityDashboardOptionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionInputBuilder {
     pub(crate) dashboard_enabled: ::std::option::Option<bool>,
-    pub(crate) subscribed_domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
+    pub(crate) subscribed_domains: ::std::option::Option<::std::vec::Vec::<crate::types::DomainDeliverabilityTrackingOption>>,
 }
 impl PutDeliverabilityDashboardOptionInputBuilder {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
@@ -45,8 +46,7 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
     }
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     pub fn set_dashboard_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dashboard_enabled = input;
-        self
+        self.dashboard_enabled = input; self
     }
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
     pub fn get_dashboard_enabled(&self) -> &::std::option::Option<bool> {
@@ -59,31 +59,28 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     pub fn subscribed_domains(mut self, input: crate::types::DomainDeliverabilityTrackingOption) -> Self {
         let mut v = self.subscribed_domains.unwrap_or_default();
-        v.push(input);
-        self.subscribed_domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribed_domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn set_subscribed_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>) -> Self {
-        self.subscribed_domains = input;
-        self
+    pub fn set_subscribed_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainDeliverabilityTrackingOption>>) -> Self {
+        self.subscribed_domains = input; self
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn get_subscribed_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>> {
+    pub fn get_subscribed_domains(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainDeliverabilityTrackingOption>> {
         &self.subscribed_domains
     }
     /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionInput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput {
-                dashboard_enabled: self.dashboard_enabled,
-                subscribed_domains: self.subscribed_domains,
-            },
+                dashboard_enabled: self.dashboard_enabled
+                ,
+                subscribed_domains: self.subscribed_domains
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information about a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringJobDefinitionSummary {
+pub struct MonitoringJobDefinitionSummary  {
     /// <p>The name of the monitoring job.</p>
     pub monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
@@ -13,21 +13,21 @@ pub struct MonitoringJobDefinitionSummary {
     /// <p>The name of the endpoint that the job monitors.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
-impl MonitoringJobDefinitionSummary {
+impl  MonitoringJobDefinitionSummary  {
     /// <p>The name of the monitoring job.</p>
-    pub fn monitoring_job_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_job_definition_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_job_definition_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
-    pub fn monitoring_job_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_job_definition_arn(&self) -> ::std::option::Option<& str> {
         self.monitoring_job_definition_arn.as_deref()
     }
     /// <p>The time that the monitoring job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The name of the endpoint that the job monitors.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
     }
     /// <p>The name of the monitoring job.</p>
     pub fn set_monitoring_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_job_definition_name = input;
-        self
+        self.monitoring_job_definition_name = input; self
     }
     /// <p>The name of the monitoring job.</p>
     pub fn get_monitoring_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
     pub fn set_monitoring_job_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_job_definition_arn = input;
-        self
+        self.monitoring_job_definition_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
     pub fn get_monitoring_job_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
     }
     /// <p>The time that the monitoring job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the monitoring job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +98,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
     }
     /// <p>The name of the endpoint that the job monitors.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of the endpoint that the job monitors.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,10 +107,15 @@ impl MonitoringJobDefinitionSummaryBuilder {
     /// Consumes the builder and constructs a [`MonitoringJobDefinitionSummary`](crate::types::MonitoringJobDefinitionSummary).
     pub fn build(self) -> crate::types::MonitoringJobDefinitionSummary {
         crate::types::MonitoringJobDefinitionSummary {
-            monitoring_job_definition_name: self.monitoring_job_definition_name,
-            monitoring_job_definition_arn: self.monitoring_job_definition_arn,
-            creation_time: self.creation_time,
-            endpoint_name: self.endpoint_name,
+            monitoring_job_definition_name: self.monitoring_job_definition_name
+            ,
+            monitoring_job_definition_arn: self.monitoring_job_definition_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            endpoint_name: self.endpoint_name
+            ,
         }
     }
 }
+

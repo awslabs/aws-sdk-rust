@@ -3,7 +3,7 @@
 /// <p>Represents a scaling plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingPlan {
+pub struct ScalingPlan  {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: ::std::string::String,
     /// <p>The version number of the scaling plan.</p>
@@ -11,7 +11,7 @@ pub struct ScalingPlan {
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     pub application_source: ::std::option::Option<crate::types::ApplicationSource>,
     /// <p>The scaling instructions.</p>
-    pub scaling_instructions: ::std::vec::Vec<crate::types::ScalingInstruction>,
+    pub scaling_instructions: ::std::vec::Vec::<crate::types::ScalingInstruction>,
     /// <p>The status of the scaling plan.</p>
     /// <ul>
     /// <li>
@@ -39,24 +39,22 @@ pub struct ScalingPlan {
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ScalingPlan {
+impl  ScalingPlan  {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scaling_plan_name.deref()
+    pub fn scaling_plan_name(&self) -> & str {
+        use std::ops::Deref; self.scaling_plan_name.deref()
     }
     /// <p>The version number of the scaling plan.</p>
     pub fn scaling_plan_version(&self) -> i64 {
         self.scaling_plan_version
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
-    pub fn application_source(&self) -> ::std::option::Option<&crate::types::ApplicationSource> {
+    pub fn application_source(&self) -> ::std::option::Option<& crate::types::ApplicationSource> {
         self.application_source.as_ref()
     }
     /// <p>The scaling instructions.</p>
-    pub fn scaling_instructions(&self) -> &[crate::types::ScalingInstruction] {
-        use std::ops::Deref;
-        self.scaling_instructions.deref()
+    pub fn scaling_instructions(&self) -> & [crate::types::ScalingInstruction] {
+        use std::ops::Deref; self.scaling_instructions.deref()
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
@@ -77,19 +75,19 @@ impl ScalingPlan {
     /// <li>
     /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
     /// </ul>
-    pub fn status_code(&self) -> &crate::types::ScalingPlanStatusCode {
+    pub fn status_code(&self) -> & crate::types::ScalingPlanStatusCode {
         &self.status_code
     }
     /// <p>A simple message about the current status of the scaling plan.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    pub fn status_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn status_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.status_start_time.as_ref()
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -107,7 +105,7 @@ pub struct ScalingPlanBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
     pub(crate) application_source: ::std::option::Option<crate::types::ApplicationSource>,
-    pub(crate) scaling_instructions: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
+    pub(crate) scaling_instructions: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingInstruction>>,
     pub(crate) status_code: ::std::option::Option<crate::types::ScalingPlanStatusCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) status_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -122,8 +120,7 @@ impl ScalingPlanBuilder {
     }
     /// <p>The name of the scaling plan.</p>
     pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_plan_name = input;
-        self
+        self.scaling_plan_name = input; self
     }
     /// <p>The name of the scaling plan.</p>
     pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +134,7 @@ impl ScalingPlanBuilder {
     }
     /// <p>The version number of the scaling plan.</p>
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scaling_plan_version = input;
-        self
+        self.scaling_plan_version = input; self
     }
     /// <p>The version number of the scaling plan.</p>
     pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
@@ -152,8 +148,7 @@ impl ScalingPlanBuilder {
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     pub fn set_application_source(mut self, input: ::std::option::Option<crate::types::ApplicationSource>) -> Self {
-        self.application_source = input;
-        self
+        self.application_source = input; self
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     pub fn get_application_source(&self) -> &::std::option::Option<crate::types::ApplicationSource> {
@@ -166,17 +161,16 @@ impl ScalingPlanBuilder {
     /// <p>The scaling instructions.</p>
     pub fn scaling_instructions(mut self, input: crate::types::ScalingInstruction) -> Self {
         let mut v = self.scaling_instructions.unwrap_or_default();
-        v.push(input);
-        self.scaling_instructions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scaling_instructions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scaling instructions.</p>
-    pub fn set_scaling_instructions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>) -> Self {
-        self.scaling_instructions = input;
-        self
+    pub fn set_scaling_instructions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingInstruction>>) -> Self {
+        self.scaling_instructions = input; self
     }
     /// <p>The scaling instructions.</p>
-    pub fn get_scaling_instructions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+    pub fn get_scaling_instructions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScalingInstruction>> {
         &self.scaling_instructions
     }
     /// <p>The status of the scaling plan.</p>
@@ -223,8 +217,7 @@ impl ScalingPlanBuilder {
     /// <p><code>UpdateFailed</code> - The scaling plan could not be updated.</p></li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ScalingPlanStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
@@ -255,8 +248,7 @@ impl ScalingPlanBuilder {
     }
     /// <p>A simple message about the current status of the scaling plan.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A simple message about the current status of the scaling plan.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,8 +261,7 @@ impl ScalingPlanBuilder {
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
     pub fn set_status_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.status_start_time = input;
-        self
+        self.status_start_time = input; self
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
     pub fn get_status_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -283,8 +274,7 @@ impl ScalingPlanBuilder {
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -297,35 +287,38 @@ impl ScalingPlanBuilder {
     /// - [`scaling_instructions`](crate::types::builders::ScalingPlanBuilder::scaling_instructions)
     /// - [`status_code`](crate::types::builders::ScalingPlanBuilder::status_code)
     pub fn build(self) -> ::std::result::Result<crate::types::ScalingPlan, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScalingPlan {
-            scaling_plan_name: self.scaling_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scaling_plan_name",
-                    "scaling_plan_name was not specified but it is required when building ScalingPlan",
-                )
-            })?,
-            scaling_plan_version: self.scaling_plan_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scaling_plan_version",
-                    "scaling_plan_version was not specified but it is required when building ScalingPlan",
-                )
-            })?,
-            application_source: self.application_source,
-            scaling_instructions: self.scaling_instructions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scaling_instructions",
-                    "scaling_instructions was not specified but it is required when building ScalingPlan",
-                )
-            })?,
-            status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_code",
-                    "status_code was not specified but it is required when building ScalingPlan",
-                )
-            })?,
-            status_message: self.status_message,
-            status_start_time: self.status_start_time,
-            creation_time: self.creation_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScalingPlan {
+                scaling_plan_name: self.scaling_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scaling_plan_name", "scaling_plan_name was not specified but it is required when building ScalingPlan")
+                    )?
+                ,
+                scaling_plan_version: self.scaling_plan_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scaling_plan_version", "scaling_plan_version was not specified but it is required when building ScalingPlan")
+                    )?
+                ,
+                application_source: self.application_source
+                ,
+                scaling_instructions: self.scaling_instructions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scaling_instructions", "scaling_instructions was not specified but it is required when building ScalingPlan")
+                    )?
+                ,
+                status_code: self.status_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_code", "status_code was not specified but it is required when building ScalingPlan")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                status_start_time: self.status_start_time
+                ,
+                creation_time: self.creation_time
+                ,
+            }
+        )
     }
 }
+

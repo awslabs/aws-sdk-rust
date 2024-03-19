@@ -3,19 +3,19 @@
 /// <p>Defines the customer support available for the acceptors when they purchase the software.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportTerm {
+pub struct SupportTerm  {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
     pub refund_policy: ::std::option::Option<::std::string::String>,
 }
-impl SupportTerm {
+impl  SupportTerm  {
     /// <p>Category of the term being updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
-    pub fn refund_policy(&self) -> ::std::option::Option<&str> {
+    pub fn refund_policy(&self) -> ::std::option::Option<& str> {
         self.refund_policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SupportTermBuilder {
     }
     /// <p>Category of the term being updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SupportTermBuilder {
     }
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
     pub fn set_refund_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.refund_policy = input;
-        self
+        self.refund_policy = input; self
     }
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
     pub fn get_refund_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SupportTermBuilder {
     /// Consumes the builder and constructs a [`SupportTerm`](crate::types::SupportTerm).
     pub fn build(self) -> crate::types::SupportTerm {
         crate::types::SupportTerm {
-            r#type: self.r#type,
-            refund_policy: self.refund_policy,
+            r#type: self.r#type
+            ,
+            refund_policy: self.refund_policy
+            ,
         }
     }
 }
+

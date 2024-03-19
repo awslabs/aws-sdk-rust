@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVocabularyInput {
+pub struct DeleteVocabularyInput  {
     /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVocabularyInput {
+impl  DeleteVocabularyInput  {
     /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteVocabularyInputBuilder {
     }
     /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_name
     }
     /// Consumes the builder and constructs a [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_vocabulary::DeleteVocabularyInput {
-            vocabulary_name: self.vocabulary_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vocabulary::DeleteVocabularyInput {
+                vocabulary_name: self.vocabulary_name
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyXssProtection {
+pub struct ResponseHeadersPolicyXssProtection  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub r#override: bool,
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
@@ -18,7 +18,7 @@ pub struct ResponseHeadersPolicyXssProtection {
     /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub report_uri: ::std::option::Option<::std::string::String>,
 }
-impl ResponseHeadersPolicyXssProtection {
+impl  ResponseHeadersPolicyXssProtection  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(&self) -> bool {
         self.r#override
@@ -36,7 +36,7 @@ impl ResponseHeadersPolicyXssProtection {
     /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.</p>
     /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
-    pub fn report_uri(&self) -> ::std::option::Option<&str> {
+    pub fn report_uri(&self) -> ::std::option::Option<& str> {
         self.report_uri.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<bool> {
@@ -82,8 +81,7 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn set_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.protection = input;
-        self
+        self.protection = input; self
     }
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
@@ -99,8 +97,7 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn set_mode_block(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mode_block = input;
-        self
+        self.mode_block = input; self
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
@@ -118,8 +115,7 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.</p>
     /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn set_report_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_uri = input;
-        self
+        self.report_uri = input; self
     }
     /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.</p>
@@ -132,21 +128,24 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::r#override)
     /// - [`protection`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::protection)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyXssProtection {
-            r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#override",
-                    "r#override was not specified but it is required when building ResponseHeadersPolicyXssProtection",
-                )
-            })?,
-            protection: self.protection.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protection",
-                    "protection was not specified but it is required when building ResponseHeadersPolicyXssProtection",
-                )
-            })?,
-            mode_block: self.mode_block,
-            report_uri: self.report_uri,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyXssProtection {
+                r#override: self.r#override
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#override", "r#override was not specified but it is required when building ResponseHeadersPolicyXssProtection")
+                    )?
+                ,
+                protection: self.protection
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protection", "protection was not specified but it is required when building ResponseHeadersPolicyXssProtection")
+                    )?
+                ,
+                mode_block: self.mode_block
+                ,
+                report_uri: self.report_uri
+                ,
+            }
+        )
     }
 }
+

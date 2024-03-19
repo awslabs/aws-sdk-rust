@@ -3,7 +3,7 @@
 /// <p>Information about a specific CodeDeploy deployment or CloudFormation stack creation or update that occurred around the time of a reported incident. These activities can be investigated as a potential cause of the incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Finding {
+pub struct Finding  {
     /// <p>The ID assigned to the finding.</p>
     pub id: ::std::string::String,
     /// <p>The timestamp for when a finding was created.</p>
@@ -13,22 +13,21 @@ pub struct Finding {
     /// <p>Details about the finding.</p>
     pub details: ::std::option::Option<crate::types::FindingDetails>,
 }
-impl Finding {
+impl  Finding  {
     /// <p>The ID assigned to the finding.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The timestamp for when a finding was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The timestamp for when the finding was most recently updated with additional information.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>Details about the finding.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::FindingDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::FindingDetails> {
         self.details.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl FindingBuilder {
     }
     /// <p>The ID assigned to the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID assigned to the finding.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl FindingBuilder {
     }
     /// <p>The timestamp for when a finding was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp for when a finding was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,8 +84,7 @@ impl FindingBuilder {
     }
     /// <p>The timestamp for when the finding was most recently updated with additional information.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp for when the finding was most recently updated with additional information.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +97,7 @@ impl FindingBuilder {
     }
     /// <p>Details about the finding.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::FindingDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details about the finding.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::FindingDetails> {
@@ -114,23 +109,27 @@ impl FindingBuilder {
     /// - [`creation_time`](crate::types::builders::FindingBuilder::creation_time)
     /// - [`last_modified_time`](crate::types::builders::FindingBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Finding {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Finding")
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building Finding",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building Finding",
-                )
-            })?,
-            details: self.details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Finding {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Finding")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building Finding")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building Finding")
+                    )?
+                ,
+                details: self.details
+                ,
+            }
+        )
     }
 }
+

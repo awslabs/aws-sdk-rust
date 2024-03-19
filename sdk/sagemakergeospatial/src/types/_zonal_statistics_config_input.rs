@@ -3,13 +3,13 @@
 /// <p>The structure representing input configuration of ZonalStatistics operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZonalStatisticsConfigInput {
+pub struct ZonalStatisticsConfigInput  {
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
     pub zone_s3_path: ::std::string::String,
     /// <p>List of zonal statistics to compute.</p>
-    pub statistics: ::std::vec::Vec<crate::types::ZonalStatistics>,
+    pub statistics: ::std::vec::Vec::<crate::types::ZonalStatistics>,
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
@@ -23,22 +23,21 @@ pub struct ZonalStatisticsConfigInput {
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub zone_s3_path_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl ZonalStatisticsConfigInput {
+impl  ZonalStatisticsConfigInput  {
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
-    pub fn zone_s3_path(&self) -> &str {
-        use std::ops::Deref;
-        self.zone_s3_path.deref()
+    pub fn zone_s3_path(&self) -> & str {
+        use std::ops::Deref; self.zone_s3_path.deref()
     }
     /// <p>List of zonal statistics to compute.</p>
-    pub fn statistics(&self) -> &[crate::types::ZonalStatistics] {
-        use std::ops::Deref;
-        self.statistics.deref()
+    pub fn statistics(&self) -> & [crate::types::ZonalStatistics] {
+        use std::ops::Deref; self.statistics.deref()
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
-    pub fn target_bands(&self) -> &[::std::string::String] {
-        self.target_bands.as_deref().unwrap_or_default()
+    pub fn target_bands(&self) -> & [::std::string::String] {
+        self.target_bands.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
@@ -51,7 +50,7 @@ impl ZonalStatisticsConfigInput {
     /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    pub fn zone_s3_path_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn zone_s3_path_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.zone_s3_path_kms_key_id.as_deref()
     }
 }
@@ -67,8 +66,8 @@ impl ZonalStatisticsConfigInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZonalStatisticsConfigInputBuilder {
     pub(crate) zone_s3_path: ::std::option::Option<::std::string::String>,
-    pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>,
-    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) statistics: ::std::option::Option<::std::vec::Vec::<crate::types::ZonalStatistics>>,
+    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) zone_s3_path_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ZonalStatisticsConfigInputBuilder {
@@ -80,8 +79,7 @@ impl ZonalStatisticsConfigInputBuilder {
     }
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
     pub fn set_zone_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zone_s3_path = input;
-        self
+        self.zone_s3_path = input; self
     }
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
     pub fn get_zone_s3_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +92,16 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p>List of zonal statistics to compute.</p>
     pub fn statistics(mut self, input: crate::types::ZonalStatistics) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-        v.push(input);
-        self.statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of zonal statistics to compute.</p>
-    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ZonalStatistics>>) -> Self {
+        self.statistics = input; self
     }
     /// <p>List of zonal statistics to compute.</p>
-    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ZonalStatistics>> {
         &self.statistics
     }
     /// Appends an item to `target_bands`.
@@ -114,17 +111,16 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
     pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
-        v.push(input.into());
-        self.target_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_bands = input;
-        self
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_bands = input; self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_bands
     }
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
@@ -154,8 +150,7 @@ impl ZonalStatisticsConfigInputBuilder {
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn set_zone_s3_path_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zone_s3_path_kms_key_id = input;
-        self
+        self.zone_s3_path_kms_key_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
@@ -176,21 +171,24 @@ impl ZonalStatisticsConfigInputBuilder {
     /// - [`zone_s3_path`](crate::types::builders::ZonalStatisticsConfigInputBuilder::zone_s3_path)
     /// - [`statistics`](crate::types::builders::ZonalStatisticsConfigInputBuilder::statistics)
     pub fn build(self) -> ::std::result::Result<crate::types::ZonalStatisticsConfigInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ZonalStatisticsConfigInput {
-            zone_s3_path: self.zone_s3_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "zone_s3_path",
-                    "zone_s3_path was not specified but it is required when building ZonalStatisticsConfigInput",
-                )
-            })?,
-            statistics: self.statistics.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statistics",
-                    "statistics was not specified but it is required when building ZonalStatisticsConfigInput",
-                )
-            })?,
-            target_bands: self.target_bands,
-            zone_s3_path_kms_key_id: self.zone_s3_path_kms_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ZonalStatisticsConfigInput {
+                zone_s3_path: self.zone_s3_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zone_s3_path", "zone_s3_path was not specified but it is required when building ZonalStatisticsConfigInput")
+                    )?
+                ,
+                statistics: self.statistics
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statistics", "statistics was not specified but it is required when building ZonalStatisticsConfigInput")
+                    )?
+                ,
+                target_bands: self.target_bands
+                ,
+                zone_s3_path_kms_key_id: self.zone_s3_path_kms_key_id
+                ,
+            }
+        )
     }
 }
+

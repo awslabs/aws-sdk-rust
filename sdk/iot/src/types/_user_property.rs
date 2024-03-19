@@ -3,22 +3,20 @@
 /// <p>A key-value pair that you define in the header. Both the key and the value are either literal strings or valid <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserProperty {
+pub struct UserProperty  {
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
     pub key: ::std::string::String,
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
     pub value: ::std::string::String,
 }
-impl UserProperty {
+impl  UserProperty  {
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl UserProperty {
@@ -44,8 +42,7 @@ impl UserPropertyBuilder {
     }
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl UserPropertyBuilder {
     }
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl UserPropertyBuilder {
     /// - [`key`](crate::types::builders::UserPropertyBuilder::key)
     /// - [`value`](crate::types::builders::UserPropertyBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::UserProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserProperty {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building UserProperty",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building UserProperty",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserProperty {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building UserProperty")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building UserProperty")
+                    )?
+                ,
+            }
+        )
     }
 }
+

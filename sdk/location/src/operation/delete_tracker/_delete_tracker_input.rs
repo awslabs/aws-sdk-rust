@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrackerInput {
+pub struct DeleteTrackerInput  {
     /// <p>The name of the tracker resource to be deleted.</p>
     pub tracker_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTrackerInput {
+impl  DeleteTrackerInput  {
     /// <p>The name of the tracker resource to be deleted.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracker_name(&self) -> ::std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteTrackerInputBuilder {
     }
     /// <p>The name of the tracker resource to be deleted.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The name of the tracker resource to be deleted.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.tracker_name
     }
     /// Consumes the builder and constructs a [`DeleteTrackerInput`](crate::operation::delete_tracker::DeleteTrackerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_tracker::DeleteTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_tracker::DeleteTrackerInput {
-            tracker_name: self.tracker_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tracker::DeleteTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_tracker::DeleteTrackerInput {
+                tracker_name: self.tracker_name
+                ,
+            }
+        )
     }
 }
+

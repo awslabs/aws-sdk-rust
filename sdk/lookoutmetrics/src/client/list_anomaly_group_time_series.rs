@@ -2,23 +2,22 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnomalyGroupTimeSeries`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::set_anomaly_detector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the anomaly detector.</p><br>
     ///   - [`anomaly_group_id(impl Into<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::anomaly_group_id) / [`set_anomaly_group_id(Option<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::set_anomaly_group_id):<br>required: **true**<br><p>The ID of the anomaly group.</p><br>
     ///   - [`metric_name(impl Into<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::set_metric_name):<br>required: **true**<br><p>The name of the measure field.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput) with field(s):
+                            /// - On success, responds with [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput) with field(s):
     ///   - [`anomaly_group_id(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::anomaly_group_id): <p>The ID of the anomaly group.</p>
     ///   - [`metric_name(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::metric_name): <p>The name of the measure field.</p>
     ///   - [`timestamp_list(Option<Vec::<String>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::timestamp_list): <p>Timestamps for the anomalous metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     ///   - [`time_series_list(Option<Vec::<TimeSeries>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::time_series_list): <p>A list of anomalous metrics.</p>
-    /// - On failure, responds with [`SdkError<ListAnomalyGroupTimeSeriesError>`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError)
-    pub fn list_anomaly_group_time_series(
-        &self,
-    ) -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder {
-        crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAnomalyGroupTimeSeriesError>`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError)
+    pub fn list_anomaly_group_time_series(&self) -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder {
+                                crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

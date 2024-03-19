@@ -3,13 +3,13 @@
 /// The frame resolution used by the video stream.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameResolution {
+pub struct FrameResolution  {
     /// The number of pixels in the height of the video frame.
     pub frame_height: ::std::option::Option<i32>,
     /// The number of pixels in the width of the video frame.
     pub frame_width: ::std::option::Option<i32>,
 }
-impl FrameResolution {
+impl  FrameResolution  {
     /// The number of pixels in the height of the video frame.
     pub fn frame_height(&self) -> ::std::option::Option<i32> {
         self.frame_height
@@ -42,8 +42,7 @@ impl FrameResolutionBuilder {
     }
     /// The number of pixels in the height of the video frame.
     pub fn set_frame_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.frame_height = input;
-        self
+        self.frame_height = input; self
     }
     /// The number of pixels in the height of the video frame.
     pub fn get_frame_height(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl FrameResolutionBuilder {
     }
     /// The number of pixels in the width of the video frame.
     pub fn set_frame_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.frame_width = input;
-        self
+        self.frame_width = input; self
     }
     /// The number of pixels in the width of the video frame.
     pub fn get_frame_width(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,11 @@ impl FrameResolutionBuilder {
     /// Consumes the builder and constructs a [`FrameResolution`](crate::types::FrameResolution).
     pub fn build(self) -> crate::types::FrameResolution {
         crate::types::FrameResolution {
-            frame_height: self.frame_height,
-            frame_width: self.frame_width,
+            frame_height: self.frame_height
+            ,
+            frame_width: self.frame_width
+            ,
         }
     }
 }
+

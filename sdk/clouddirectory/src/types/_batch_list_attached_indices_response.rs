@@ -3,21 +3,22 @@
 /// <p>Represents the output of a <code>ListAttachedIndices</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListAttachedIndicesResponse {
+pub struct BatchListAttachedIndicesResponse  {
     /// <p>The indices attached to the specified object.</p>
-    pub index_attachments: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
+    pub index_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::IndexAttachment>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchListAttachedIndicesResponse {
+impl  BatchListAttachedIndicesResponse  {
     /// <p>The indices attached to the specified object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.index_attachments.is_none()`.
-    pub fn index_attachments(&self) -> &[crate::types::IndexAttachment] {
-        self.index_attachments.as_deref().unwrap_or_default()
+    pub fn index_attachments(&self) -> & [crate::types::IndexAttachment] {
+        self.index_attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl BatchListAttachedIndicesResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListAttachedIndicesResponseBuilder {
-    pub(crate) index_attachments: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
+    pub(crate) index_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::IndexAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListAttachedIndicesResponseBuilder {
@@ -43,17 +44,16 @@ impl BatchListAttachedIndicesResponseBuilder {
     /// <p>The indices attached to the specified object.</p>
     pub fn index_attachments(mut self, input: crate::types::IndexAttachment) -> Self {
         let mut v = self.index_attachments.unwrap_or_default();
-        v.push(input);
-        self.index_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.index_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The indices attached to the specified object.</p>
-    pub fn set_index_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>) -> Self {
-        self.index_attachments = input;
-        self
+    pub fn set_index_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IndexAttachment>>) -> Self {
+        self.index_attachments = input; self
     }
     /// <p>The indices attached to the specified object.</p>
-    pub fn get_index_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>> {
+    pub fn get_index_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IndexAttachment>> {
         &self.index_attachments
     }
     /// <p>The pagination token.</p>
@@ -63,8 +63,7 @@ impl BatchListAttachedIndicesResponseBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl BatchListAttachedIndicesResponseBuilder {
     /// Consumes the builder and constructs a [`BatchListAttachedIndicesResponse`](crate::types::BatchListAttachedIndicesResponse).
     pub fn build(self) -> crate::types::BatchListAttachedIndicesResponse {
         crate::types::BatchListAttachedIndicesResponse {
-            index_attachments: self.index_attachments,
-            next_token: self.next_token,
+            index_attachments: self.index_attachments
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

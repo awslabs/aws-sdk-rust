@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>CreateOutboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOutboundConnectionInput {
+pub struct CreateOutboundConnectionInput  {
     /// <p>Name and Region of the source (local) domain.</p>
     pub local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>Name and Region of the destination (remote) domain.</p>
@@ -15,25 +15,25 @@ pub struct CreateOutboundConnectionInput {
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
     pub connection_properties: ::std::option::Option<crate::types::ConnectionProperties>,
 }
-impl CreateOutboundConnectionInput {
+impl  CreateOutboundConnectionInput  {
     /// <p>Name and Region of the source (local) domain.</p>
-    pub fn local_domain_info(&self) -> ::std::option::Option<&crate::types::DomainInformationContainer> {
+    pub fn local_domain_info(&self) -> ::std::option::Option<& crate::types::DomainInformationContainer> {
         self.local_domain_info.as_ref()
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
-    pub fn remote_domain_info(&self) -> ::std::option::Option<&crate::types::DomainInformationContainer> {
+    pub fn remote_domain_info(&self) -> ::std::option::Option<& crate::types::DomainInformationContainer> {
         self.remote_domain_info.as_ref()
     }
     /// <p>Name of the connection.</p>
-    pub fn connection_alias(&self) -> ::std::option::Option<&str> {
+    pub fn connection_alias(&self) -> ::std::option::Option<& str> {
         self.connection_alias.as_deref()
     }
     /// <p>The connection mode.</p>
-    pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
+    pub fn connection_mode(&self) -> ::std::option::Option<& crate::types::ConnectionMode> {
         self.connection_mode.as_ref()
     }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
-    pub fn connection_properties(&self) -> ::std::option::Option<&crate::types::ConnectionProperties> {
+    pub fn connection_properties(&self) -> ::std::option::Option<& crate::types::ConnectionProperties> {
         self.connection_properties.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl CreateOutboundConnectionInputBuilder {
     }
     /// <p>Name and Region of the source (local) domain.</p>
     pub fn set_local_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformationContainer>) -> Self {
-        self.local_domain_info = input;
-        self
+        self.local_domain_info = input; self
     }
     /// <p>Name and Region of the source (local) domain.</p>
     pub fn get_local_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformationContainer> {
@@ -78,8 +77,7 @@ impl CreateOutboundConnectionInputBuilder {
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
     pub fn set_remote_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformationContainer>) -> Self {
-        self.remote_domain_info = input;
-        self
+        self.remote_domain_info = input; self
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
     pub fn get_remote_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformationContainer> {
@@ -93,8 +91,7 @@ impl CreateOutboundConnectionInputBuilder {
     }
     /// <p>Name of the connection.</p>
     pub fn set_connection_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_alias = input;
-        self
+        self.connection_alias = input; self
     }
     /// <p>Name of the connection.</p>
     pub fn get_connection_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl CreateOutboundConnectionInputBuilder {
     }
     /// <p>The connection mode.</p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
-        self.connection_mode = input;
-        self
+        self.connection_mode = input; self
     }
     /// <p>The connection mode.</p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
@@ -121,26 +117,28 @@ impl CreateOutboundConnectionInputBuilder {
     }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
     pub fn set_connection_properties(mut self, input: ::std::option::Option<crate::types::ConnectionProperties>) -> Self {
-        self.connection_properties = input;
-        self
+        self.connection_properties = input; self
     }
     /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
     pub fn get_connection_properties(&self) -> &::std::option::Option<crate::types::ConnectionProperties> {
         &self.connection_properties
     }
     /// Consumes the builder and constructs a [`CreateOutboundConnectionInput`](crate::operation::create_outbound_connection::CreateOutboundConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_outbound_connection::CreateOutboundConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_outbound_connection::CreateOutboundConnectionInput {
-            local_domain_info: self.local_domain_info,
-            remote_domain_info: self.remote_domain_info,
-            connection_alias: self.connection_alias,
-            connection_mode: self.connection_mode,
-            connection_properties: self.connection_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_outbound_connection::CreateOutboundConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_outbound_connection::CreateOutboundConnectionInput {
+                local_domain_info: self.local_domain_info
+                ,
+                remote_domain_info: self.remote_domain_info
+                ,
+                connection_alias: self.connection_alias
+                ,
+                connection_mode: self.connection_mode
+                ,
+                connection_properties: self.connection_properties
+                ,
+            }
+        )
     }
 }
+

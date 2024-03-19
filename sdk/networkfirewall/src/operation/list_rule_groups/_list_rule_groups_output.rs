@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRuleGroupsOutput {
+pub struct ListRuleGroupsOutput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list.</p>
-    pub rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>>,
+    pub rule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupMetadata>>,
     _request_id: Option<String>,
 }
-impl ListRuleGroupsOutput {
+impl  ListRuleGroupsOutput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_groups.is_none()`.
-    pub fn rule_groups(&self) -> &[crate::types::RuleGroupMetadata] {
-        self.rule_groups.as_deref().unwrap_or_default()
+    pub fn rule_groups(&self) -> & [crate::types::RuleGroupMetadata] {
+        self.rule_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRuleGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::operation::list_rule_groups::ListRuleGroupsOutput).
     pub fn builder() -> crate::operation::list_rule_groups::builders::ListRuleGroupsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListRuleGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>>,
+    pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupMetadata>>,
     _request_id: Option<String>,
 }
 impl ListRuleGroupsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListRuleGroupsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListRuleGroupsOutputBuilder {
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list.</p>
     pub fn rule_groups(mut self, input: crate::types::RuleGroupMetadata) -> Self {
         let mut v = self.rule_groups.unwrap_or_default();
-        v.push(input);
-        self.rule_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list.</p>
-    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>>) -> Self {
-        self.rule_groups = input;
-        self
+    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupMetadata>>) -> Self {
+        self.rule_groups = input; self
     }
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list.</p>
-    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>> {
+    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupMetadata>> {
         &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::operation::list_rule_groups::ListRuleGroupsOutput).
     pub fn build(self) -> crate::operation::list_rule_groups::ListRuleGroupsOutput {
         crate::operation::list_rule_groups::ListRuleGroupsOutput {
-            next_token: self.next_token,
-            rule_groups: self.rule_groups,
+            next_token: self.next_token
+            ,
+            rule_groups: self.rule_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

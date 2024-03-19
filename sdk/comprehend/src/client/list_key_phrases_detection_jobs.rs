@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKeyPhrasesDetectionJobs`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(KeyPhrasesDetectionJobFilter)`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::filter) / [`set_filter(Option<KeyPhrasesDetectionJobFilter>)`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListKeyPhrasesDetectionJobsOutput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput) with field(s):
+                            /// - On success, responds with [`ListKeyPhrasesDetectionJobsOutput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput) with field(s):
     ///   - [`key_phrases_detection_job_properties_list(Option<Vec::<KeyPhrasesDetectionJobProperties>>)`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput::key_phrases_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListKeyPhrasesDetectionJobsError>`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError)
-    pub fn list_key_phrases_detection_jobs(
-        &self,
-    ) -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder {
-        crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListKeyPhrasesDetectionJobsError>`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError)
+    pub fn list_key_phrases_detection_jobs(&self) -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder {
+                                crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Gets the documentation versions of an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDocumentationVersionsInput {
+pub struct GetDocumentationVersionsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
@@ -11,13 +11,13 @@ pub struct GetDocumentationVersionsInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl GetDocumentationVersionsInput {
+impl  GetDocumentationVersionsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -49,8 +49,7 @@ impl GetDocumentationVersionsInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetDocumentationVersionsInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl GetDocumentationVersionsInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetDocumentationVersionsInput`](crate::operation::get_documentation_versions::GetDocumentationVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_documentation_versions::GetDocumentationVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_documentation_versions::GetDocumentationVersionsInput {
-            rest_api_id: self.rest_api_id,
-            position: self.position,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_documentation_versions::GetDocumentationVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_documentation_versions::GetDocumentationVersionsInput {
+                rest_api_id: self.rest_api_id
+                ,
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

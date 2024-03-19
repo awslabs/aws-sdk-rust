@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CreateCustomerGateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomerGatewayInput {
+pub struct CreateCustomerGatewayInput  {
     /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
     pub bgp_asn: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct CreateCustomerGatewayInput {
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
     pub r#type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The tags to apply to the customer gateway.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
@@ -23,37 +23,38 @@ pub struct CreateCustomerGatewayInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CreateCustomerGatewayInput {
+impl  CreateCustomerGatewayInput  {
     /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
     pub fn bgp_asn(&self) -> ::std::option::Option<i32> {
         self.bgp_asn
     }
     /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::GatewayType> {
         self.r#type.as_ref()
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -76,7 +77,7 @@ pub struct CreateCustomerGatewayInputBuilder {
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GatewayType>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -91,8 +92,7 @@ impl CreateCustomerGatewayInputBuilder {
     /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
     pub fn set_bgp_asn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bgp_asn = input;
-        self
+        self.bgp_asn = input; self
     }
     /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
@@ -106,8 +106,7 @@ impl CreateCustomerGatewayInputBuilder {
     }
     /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateCustomerGatewayInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl CreateCustomerGatewayInputBuilder {
     }
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
@@ -149,17 +146,16 @@ impl CreateCustomerGatewayInputBuilder {
     /// <p>The tags to apply to the customer gateway.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A name for the customer gateway device.</p>
@@ -171,8 +167,7 @@ impl CreateCustomerGatewayInputBuilder {
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
@@ -186,8 +181,7 @@ impl CreateCustomerGatewayInputBuilder {
     }
     /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,27 +194,34 @@ impl CreateCustomerGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_customer_gateway::CreateCustomerGatewayInput {
-            bgp_asn: self.bgp_asn,
-            public_ip: self.public_ip,
-            certificate_arn: self.certificate_arn,
-            r#type: self.r#type,
-            tag_specifications: self.tag_specifications,
-            device_name: self.device_name,
-            ip_address: self.ip_address,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_customer_gateway::CreateCustomerGatewayInput {
+                bgp_asn: self.bgp_asn
+                ,
+                public_ip: self.public_ip
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                r#type: self.r#type
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                device_name: self.device_name
+                ,
+                ip_address: self.ip_address
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that describes a target table for resource linking.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableIdentifier {
+pub struct TableIdentifier  {
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database that contains the target table.</p>
@@ -13,21 +13,21 @@ pub struct TableIdentifier {
     /// <p>Region of the target table.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl TableIdentifier {
+impl  TableIdentifier  {
     /// <p>The ID of the Data Catalog in which the table resides.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database that contains the target table.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the target table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Region of the target table.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TableIdentifierBuilder {
     }
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TableIdentifierBuilder {
     }
     /// <p>The name of the catalog database that contains the target table.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database that contains the target table.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TableIdentifierBuilder {
     }
     /// <p>The name of the target table.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the target table.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl TableIdentifierBuilder {
     }
     /// <p>Region of the target table.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Region of the target table.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl TableIdentifierBuilder {
     /// Consumes the builder and constructs a [`TableIdentifier`](crate::types::TableIdentifier).
     pub fn build(self) -> crate::types::TableIdentifier {
         crate::types::TableIdentifier {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            name: self.name,
-            region: self.region,
+            catalog_id: self.catalog_id
+            ,
+            database_name: self.database_name
+            ,
+            name: self.name
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

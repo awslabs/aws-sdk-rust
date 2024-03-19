@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorldTemplateInput {
+pub struct DeleteWorldTemplateInput  {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     pub template: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorldTemplateInput {
+impl  DeleteWorldTemplateInput  {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-    pub fn template(&self) -> ::std::option::Option<&str> {
+    pub fn template(&self) -> ::std::option::Option<& str> {
         self.template.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteWorldTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.template
     }
     /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_world_template::DeleteWorldTemplateInput { template: self.template })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_world_template::DeleteWorldTemplateInput {
+                template: self.template
+                ,
+            }
+        )
     }
 }
+

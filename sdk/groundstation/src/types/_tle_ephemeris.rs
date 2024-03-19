@@ -3,22 +3,23 @@
 /// <p>Two-line element set (TLE) ephemeris.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TleEphemeris {
+pub struct TleEphemeris  {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    pub tle_data: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
+    pub tle_data: ::std::option::Option<::std::vec::Vec::<crate::types::TleData>>,
 }
-impl TleEphemeris {
+impl  TleEphemeris  {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
-    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.s3_object.as_ref()
     }
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tle_data.is_none()`.
-    pub fn tle_data(&self) -> &[crate::types::TleData] {
-        self.tle_data.as_deref().unwrap_or_default()
+    pub fn tle_data(&self) -> & [crate::types::TleData] {
+        self.tle_data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TleEphemeris {
@@ -33,7 +34,7 @@ impl TleEphemeris {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TleEphemerisBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
-    pub(crate) tle_data: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
+    pub(crate) tle_data: ::std::option::Option<::std::vec::Vec::<crate::types::TleData>>,
 }
 impl TleEphemerisBuilder {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
@@ -43,8 +44,7 @@ impl TleEphemerisBuilder {
     }
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.s3_object = input;
-        self
+        self.s3_object = input; self
     }
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -57,24 +57,26 @@ impl TleEphemerisBuilder {
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
     pub fn tle_data(mut self, input: crate::types::TleData) -> Self {
         let mut v = self.tle_data.unwrap_or_default();
-        v.push(input);
-        self.tle_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tle_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    pub fn set_tle_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>) -> Self {
-        self.tle_data = input;
-        self
+    pub fn set_tle_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TleData>>) -> Self {
+        self.tle_data = input; self
     }
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    pub fn get_tle_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TleData>> {
+    pub fn get_tle_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TleData>> {
         &self.tle_data
     }
     /// Consumes the builder and constructs a [`TleEphemeris`](crate::types::TleEphemeris).
     pub fn build(self) -> crate::types::TleEphemeris {
         crate::types::TleEphemeris {
-            s3_object: self.s3_object,
-            tle_data: self.tle_data,
+            s3_object: self.s3_object
+            ,
+            tle_data: self.tle_data
+            ,
         }
     }
 }
+

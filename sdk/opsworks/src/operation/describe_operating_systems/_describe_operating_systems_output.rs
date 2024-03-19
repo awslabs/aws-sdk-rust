@@ -3,24 +3,25 @@
 /// <p>The response to a <code>DescribeOperatingSystems</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOperatingSystemsOutput {
+pub struct DescribeOperatingSystemsOutput  {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
+    pub operating_systems: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystem>>,
     _request_id: Option<String>,
 }
-impl DescribeOperatingSystemsOutput {
+impl  DescribeOperatingSystemsOutput  {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
-    pub fn operating_systems(&self) -> &[crate::types::OperatingSystem] {
-        self.operating_systems.as_deref().unwrap_or_default()
+    pub fn operating_systems(&self) -> & [crate::types::OperatingSystem] {
+        self.operating_systems.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeOperatingSystemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeOperatingSystemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput).
     pub fn builder() -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeOperatingSystemsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsOutputBuilder {
-    pub(crate) operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
+    pub(crate) operating_systems: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystem>>,
     _request_id: Option<String>,
 }
 impl DescribeOperatingSystemsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeOperatingSystemsOutputBuilder {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
     pub fn operating_systems(mut self, input: crate::types::OperatingSystem) -> Self {
         let mut v = self.operating_systems.unwrap_or_default();
-        v.push(input);
-        self.operating_systems = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operating_systems = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>) -> Self {
-        self.operating_systems = input;
-        self
+    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystem>>) -> Self {
+        self.operating_systems = input; self
     }
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>> {
+    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystem>> {
         &self.operating_systems
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput).
     pub fn build(self) -> crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput {
         crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput {
-            operating_systems: self.operating_systems,
+            operating_systems: self.operating_systems
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

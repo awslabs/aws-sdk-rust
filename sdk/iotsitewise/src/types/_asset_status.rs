@@ -3,19 +3,19 @@
 /// <p>Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetStatus {
+pub struct AssetStatus  {
     /// <p>The current status of the asset.</p>
     pub state: crate::types::AssetState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl AssetStatus {
+impl  AssetStatus  {
     /// <p>The current status of the asset.</p>
-    pub fn state(&self) -> &crate::types::AssetState {
+    pub fn state(&self) -> & crate::types::AssetState {
         &self.state
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AssetStatusBuilder {
     }
     /// <p>The current status of the asset.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssetState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current status of the asset.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AssetState> {
@@ -56,8 +55,7 @@ impl AssetStatusBuilder {
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -67,14 +65,17 @@ impl AssetStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::AssetStatusBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetStatus {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building AssetStatus",
-                )
-            })?,
-            error: self.error,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetStatus {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building AssetStatus")
+                    )?
+                ,
+                error: self.error
+                ,
+            }
+        )
     }
 }
+

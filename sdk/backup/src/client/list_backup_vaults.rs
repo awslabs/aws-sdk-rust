@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBackupVaults`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`by_vault_type(VaultType)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::by_vault_type) / [`set_by_vault_type(Option<VaultType>)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::set_by_vault_type):<br>required: **false**<br><p>This parameter will sort the list of vaults by vault type.</p><br>
     ///   - [`by_shared(bool)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::by_shared) / [`set_by_shared(Option<bool>)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::set_by_shared):<br>required: **false**<br><p>This parameter will sort the list of vaults by shared vaults.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be returned.</p><br>
-    /// - On success, responds with [`ListBackupVaultsOutput`](crate::operation::list_backup_vaults::ListBackupVaultsOutput) with field(s):
+                            /// - On success, responds with [`ListBackupVaultsOutput`](crate::operation::list_backup_vaults::ListBackupVaultsOutput) with field(s):
     ///   - [`backup_vault_list(Option<Vec::<BackupVaultListMember>>)`](crate::operation::list_backup_vaults::ListBackupVaultsOutput::backup_vault_list): <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backup_vaults::ListBackupVaultsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    /// - On failure, responds with [`SdkError<ListBackupVaultsError>`](crate::operation::list_backup_vaults::ListBackupVaultsError)
+                            /// - On failure, responds with [`SdkError<ListBackupVaultsError>`](crate::operation::list_backup_vaults::ListBackupVaultsError)
     pub fn list_backup_vaults(&self) -> crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder {
-        crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

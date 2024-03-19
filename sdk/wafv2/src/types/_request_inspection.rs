@@ -5,7 +5,7 @@
 /// <p>In these settings, you specify how your application accepts login attempts by providing the request payload type and the names of the fields within the request body where the username and password are provided.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestInspection {
+pub struct RequestInspection  {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     pub payload_type: crate::types::PayloadType,
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
@@ -31,9 +31,9 @@ pub struct RequestInspection {
     /// </ul>
     pub password_field: ::std::option::Option<crate::types::PasswordField>,
 }
-impl RequestInspection {
+impl  RequestInspection  {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-    pub fn payload_type(&self) -> &crate::types::PayloadType {
+    pub fn payload_type(&self) -> & crate::types::PayloadType {
         &self.payload_type
     }
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
@@ -46,7 +46,7 @@ impl RequestInspection {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
-    pub fn username_field(&self) -> ::std::option::Option<&crate::types::UsernameField> {
+    pub fn username_field(&self) -> ::std::option::Option<& crate::types::UsernameField> {
         self.username_field.as_ref()
     }
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
@@ -59,7 +59,7 @@ impl RequestInspection {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
-    pub fn password_field(&self) -> ::std::option::Option<&crate::types::PasswordField> {
+    pub fn password_field(&self) -> ::std::option::Option<& crate::types::PasswordField> {
         self.password_field.as_ref()
     }
 }
@@ -87,8 +87,7 @@ impl RequestInspectionBuilder {
     }
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     pub fn set_payload_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
-        self.payload_type = input;
-        self
+        self.payload_type = input; self
     }
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     pub fn get_payload_type(&self) -> &::std::option::Option<crate::types::PayloadType> {
@@ -120,8 +119,7 @@ impl RequestInspectionBuilder {
     /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub fn set_username_field(mut self, input: ::std::option::Option<crate::types::UsernameField>) -> Self {
-        self.username_field = input;
-        self
+        self.username_field = input; self
     }
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -162,8 +160,7 @@ impl RequestInspectionBuilder {
     /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub fn set_password_field(mut self, input: ::std::option::Option<crate::types::PasswordField>) -> Self {
-        self.password_field = input;
-        self
+        self.password_field = input; self
     }
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -182,15 +179,19 @@ impl RequestInspectionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`payload_type`](crate::types::builders::RequestInspectionBuilder::payload_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RequestInspection, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RequestInspection {
-            payload_type: self.payload_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload_type",
-                    "payload_type was not specified but it is required when building RequestInspection",
-                )
-            })?,
-            username_field: self.username_field,
-            password_field: self.password_field,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RequestInspection {
+                payload_type: self.payload_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload_type", "payload_type was not specified but it is required when building RequestInspection")
+                    )?
+                ,
+                username_field: self.username_field
+                ,
+                password_field: self.password_field
+                ,
+            }
+        )
     }
 }
+

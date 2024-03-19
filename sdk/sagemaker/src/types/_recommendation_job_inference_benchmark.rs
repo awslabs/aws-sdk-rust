@@ -3,7 +3,7 @@
 /// <p>The details for a specific benchmark from an Inference Recommender job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationJobInferenceBenchmark {
+pub struct RecommendationJobInferenceBenchmark  {
     /// <p>The metrics of recommendations.</p>
     pub metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
@@ -19,33 +19,33 @@ pub struct RecommendationJobInferenceBenchmark {
     /// <p>A timestamp that shows when the benchmark started.</p>
     pub invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RecommendationJobInferenceBenchmark {
+impl  RecommendationJobInferenceBenchmark  {
     /// <p>The metrics of recommendations.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&crate::types::RecommendationMetrics> {
+    pub fn metrics(&self) -> ::std::option::Option<& crate::types::RecommendationMetrics> {
         self.metrics.as_ref()
     }
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub fn endpoint_metrics(&self) -> ::std::option::Option<&crate::types::InferenceMetrics> {
+    pub fn endpoint_metrics(&self) -> ::std::option::Option<& crate::types::InferenceMetrics> {
         self.endpoint_metrics.as_ref()
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
-    pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
+    pub fn endpoint_configuration(&self) -> ::std::option::Option<& crate::types::EndpointOutputConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
-    pub fn model_configuration(&self) -> ::std::option::Option<&crate::types::ModelConfiguration> {
+    pub fn model_configuration(&self) -> ::std::option::Option<& crate::types::ModelConfiguration> {
         self.model_configuration.as_ref()
     }
     /// <p>The reason why a benchmark failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
-    pub fn invocation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn invocation_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.invocation_end_time.as_ref()
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
-    pub fn invocation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn invocation_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.invocation_start_time.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>The metrics of recommendations.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::RecommendationMetrics>) -> Self {
-        self.metrics = input;
-        self
+        self.metrics = input; self
     }
     /// <p>The metrics of recommendations.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::RecommendationMetrics> {
@@ -90,8 +89,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
     pub fn set_endpoint_metrics(mut self, input: ::std::option::Option<crate::types::InferenceMetrics>) -> Self {
-        self.endpoint_metrics = input;
-        self
+        self.endpoint_metrics = input; self
     }
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
     pub fn get_endpoint_metrics(&self) -> &::std::option::Option<crate::types::InferenceMetrics> {
@@ -104,8 +102,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointOutputConfiguration>) -> Self {
-        self.endpoint_configuration = input;
-        self
+        self.endpoint_configuration = input; self
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointOutputConfiguration> {
@@ -119,8 +116,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
     pub fn set_model_configuration(mut self, input: ::std::option::Option<crate::types::ModelConfiguration>) -> Self {
-        self.model_configuration = input;
-        self
+        self.model_configuration = input; self
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
     pub fn get_model_configuration(&self) -> &::std::option::Option<crate::types::ModelConfiguration> {
@@ -133,8 +129,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>The reason why a benchmark failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason why a benchmark failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub fn set_invocation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.invocation_end_time = input;
-        self
+        self.invocation_end_time = input; self
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub fn get_invocation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,8 +155,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
     pub fn set_invocation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.invocation_start_time = input;
-        self
+        self.invocation_start_time = input; self
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
     pub fn get_invocation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,13 +164,21 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     /// Consumes the builder and constructs a [`RecommendationJobInferenceBenchmark`](crate::types::RecommendationJobInferenceBenchmark).
     pub fn build(self) -> crate::types::RecommendationJobInferenceBenchmark {
         crate::types::RecommendationJobInferenceBenchmark {
-            metrics: self.metrics,
-            endpoint_metrics: self.endpoint_metrics,
-            endpoint_configuration: self.endpoint_configuration,
-            model_configuration: self.model_configuration,
-            failure_reason: self.failure_reason,
-            invocation_end_time: self.invocation_end_time,
-            invocation_start_time: self.invocation_start_time,
+            metrics: self.metrics
+            ,
+            endpoint_metrics: self.endpoint_metrics
+            ,
+            endpoint_configuration: self.endpoint_configuration
+            ,
+            model_configuration: self.model_configuration
+            ,
+            failure_reason: self.failure_reason
+            ,
+            invocation_end_time: self.invocation_end_time
+            ,
+            invocation_start_time: self.invocation_start_time
+            ,
         }
     }
 }
+

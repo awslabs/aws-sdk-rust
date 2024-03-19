@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomPluginInput {
+pub struct DescribeCustomPluginInput  {
     /// <p>Returns information about a custom plugin.</p>
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCustomPluginInput {
+impl  DescribeCustomPluginInput  {
     /// <p>Returns information about a custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeCustomPluginInputBuilder {
     }
     /// <p>Returns information about a custom plugin.</p>
     pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_plugin_arn = input;
-        self
+        self.custom_plugin_arn = input; self
     }
     /// <p>Returns information about a custom plugin.</p>
     pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_plugin_arn
     }
     /// Consumes the builder and constructs a [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_plugin::DescribeCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_custom_plugin::DescribeCustomPluginInput {
-            custom_plugin_arn: self.custom_plugin_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_plugin::DescribeCustomPluginInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_custom_plugin::DescribeCustomPluginInput {
+                custom_plugin_arn: self.custom_plugin_arn
+                ,
+            }
+        )
     }
 }
+

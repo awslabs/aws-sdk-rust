@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct QueryAssistantInput {
+pub struct QueryAssistantInput  {
     /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The text to search for.</p>
@@ -14,19 +14,19 @@ pub struct QueryAssistantInput {
     /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about how to query content.</p>
-    pub query_condition: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>,
+    pub query_condition: ::std::option::Option<::std::vec::Vec::<crate::types::QueryCondition>>,
 }
-impl QueryAssistantInput {
+impl  QueryAssistantInput  {
     /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The text to search for.</p>
-    pub fn query_text(&self) -> ::std::option::Option<&str> {
+    pub fn query_text(&self) -> ::std::option::Option<& str> {
         self.query_text.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -34,17 +34,18 @@ impl QueryAssistantInput {
         self.max_results
     }
     /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Information about how to query content.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_condition.is_none()`.
-    pub fn query_condition(&self) -> &[crate::types::QueryCondition] {
-        self.query_condition.as_deref().unwrap_or_default()
+    pub fn query_condition(&self) -> & [crate::types::QueryCondition] {
+        self.query_condition.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for QueryAssistantInput {
+impl  ::std::fmt::Debug for QueryAssistantInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("QueryAssistantInput");
         formatter.field("assistant_id", &self.assistant_id);
@@ -72,7 +73,7 @@ pub struct QueryAssistantInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) query_condition: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>,
+    pub(crate) query_condition: ::std::option::Option<::std::vec::Vec::<crate::types::QueryCondition>>,
 }
 impl QueryAssistantInputBuilder {
     /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -83,8 +84,7 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The text to search for.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_text = input;
-        self
+        self.query_text = input; self
     }
     /// <p>The text to search for.</p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -140,8 +137,7 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,31 +150,36 @@ impl QueryAssistantInputBuilder {
     /// <p>Information about how to query content.</p>
     pub fn query_condition(mut self, input: crate::types::QueryCondition) -> Self {
         let mut v = self.query_condition.unwrap_or_default();
-        v.push(input);
-        self.query_condition = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.query_condition = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about how to query content.</p>
-    pub fn set_query_condition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>) -> Self {
-        self.query_condition = input;
-        self
+    pub fn set_query_condition(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QueryCondition>>) -> Self {
+        self.query_condition = input; self
     }
     /// <p>Information about how to query content.</p>
-    pub fn get_query_condition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>> {
+    pub fn get_query_condition(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QueryCondition>> {
         &self.query_condition
     }
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::query_assistant::QueryAssistantInput {
-            assistant_id: self.assistant_id,
-            query_text: self.query_text,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            session_id: self.session_id,
-            query_condition: self.query_condition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::query_assistant::QueryAssistantInput {
+                assistant_id: self.assistant_id
+                ,
+                query_text: self.query_text
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                session_id: self.session_id
+                ,
+                query_condition: self.query_condition
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for QueryAssistantInputBuilder {
@@ -193,3 +194,4 @@ impl ::std::fmt::Debug for QueryAssistantInputBuilder {
         formatter.finish()
     }
 }
+

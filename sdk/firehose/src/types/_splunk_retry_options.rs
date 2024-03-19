@@ -3,11 +3,11 @@
 /// <p>Configures retry behavior in case Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SplunkRetryOptions {
+pub struct SplunkRetryOptions  {
     /// <p>The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk after each attempt.</p>
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
-impl SplunkRetryOptions {
+impl  SplunkRetryOptions  {
     /// <p>The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk after each attempt.</p>
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
@@ -34,8 +34,7 @@ impl SplunkRetryOptionsBuilder {
     }
     /// <p>The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk after each attempt.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk after each attempt.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl SplunkRetryOptionsBuilder {
     /// Consumes the builder and constructs a [`SplunkRetryOptions`](crate::types::SplunkRetryOptions).
     pub fn build(self) -> crate::types::SplunkRetryOptions {
         crate::types::SplunkRetryOptions {
-            duration_in_seconds: self.duration_in_seconds,
+            duration_in_seconds: self.duration_in_seconds
+            ,
         }
     }
 }
+

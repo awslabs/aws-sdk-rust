@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchQuickConnects`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`search_filter(QuickConnectSearchFilter)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::search_filter) / [`set_search_filter(Option<QuickConnectSearchFilter>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::set_search_filter):<br>required: **false**<br><p>Filters to be applied to search results.</p><br>
     ///   - [`search_criteria(QuickConnectSearchCriteria)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::search_criteria) / [`set_search_criteria(Option<QuickConnectSearchCriteria>)`](crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::set_search_criteria):<br>required: **false**<br><p>The search criteria to be used to return quick connects.</p><br>
-    /// - On success, responds with [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput) with field(s):
+                            /// - On success, responds with [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput) with field(s):
     ///   - [`quick_connects(Option<Vec::<QuickConnect>>)`](crate::operation::search_quick_connects::SearchQuickConnectsOutput::quick_connects): <p>Information about the quick connects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_quick_connects::SearchQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_quick_connects::SearchQuickConnectsOutput::approximate_total_count): <p>The total number of quick connects which matched your search query.</p>
-    /// - On failure, responds with [`SdkError<SearchQuickConnectsError>`](crate::operation::search_quick_connects::SearchQuickConnectsError)
+                            /// - On failure, responds with [`SdkError<SearchQuickConnectsError>`](crate::operation::search_quick_connects::SearchQuickConnectsError)
     pub fn search_quick_connects(&self) -> crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder {
-        crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

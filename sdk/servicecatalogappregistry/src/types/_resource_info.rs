@@ -3,7 +3,7 @@
 /// <p>The information about the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceInfo {
+pub struct ResourceInfo  {
     /// <p>The name of the resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
@@ -13,30 +13,31 @@ pub struct ResourceInfo {
     /// <p>The details related to the resource.</p>
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
+    pub options: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>>,
 }
-impl ResourceInfo {
+impl  ResourceInfo  {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Provides information about the Service Catalog App Registry resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The details related to the resource.</p>
-    pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> ::std::option::Option<& crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
-    pub fn options(&self) -> &[crate::types::AssociationOption] {
-        self.options.as_deref().unwrap_or_default()
+    pub fn options(&self) -> & [crate::types::AssociationOption] {
+        self.options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceInfo {
@@ -54,7 +55,7 @@ pub struct ResourceInfoBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>>,
 }
 impl ResourceInfoBuilder {
     /// <p>The name of the resource.</p>
@@ -64,8 +65,7 @@ impl ResourceInfoBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ResourceInfoBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ResourceInfoBuilder {
     }
     /// <p>Provides information about the Service Catalog App Registry resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Provides information about the Service Catalog App Registry resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -106,8 +104,7 @@ impl ResourceInfoBuilder {
     }
     /// <p>The details related to the resource.</p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input;
-        self
+        self.resource_details = input; self
     }
     /// <p>The details related to the resource.</p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
@@ -120,27 +117,32 @@ impl ResourceInfoBuilder {
     /// <p>Determines whether an application tag is applied or skipped.</p>
     pub fn options(mut self, input: crate::types::AssociationOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>Determines whether an application tag is applied or skipped.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociationOption>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
-            name: self.name,
-            arn: self.arn,
-            resource_type: self.resource_type,
-            resource_details: self.resource_details,
-            options: self.options,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_details: self.resource_details
+            ,
+            options: self.options
+            ,
         }
     }
 }
+

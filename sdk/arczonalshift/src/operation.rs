@@ -33,3 +33,4 @@ pub mod update_zonal_autoshift_configuration;
 
 /// Types for the `UpdateZonalShift` operation.
 pub mod update_zonal_shift;
+

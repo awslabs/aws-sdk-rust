@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEnvironments`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain.</p><br>
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_aws_account_id):<br>required: **false**<br><p>The identifier of the Amazon Web Services account where you want to list environments.</p><br>
     ///   - [`status(EnvironmentStatus)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::status) / [`set_status(Option<EnvironmentStatus>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the environments that you want to list.</p><br>
@@ -15,11 +15,12 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_name):<br>required: **false**<br><p></p><br>
     ///   - [`max_results(i32)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of environments to return in a single call to <code>ListEnvironments</code>. When the number of environments to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironments</code> to list the next set of environments.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of environments is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environments, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironments</code> to list the next set of environments.</p><br>
-    /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
+                            /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
     ///   - [`items(Vec::<EnvironmentSummary>)`](crate::operation::list_environments::ListEnvironmentsOutput::items): <p>The results of the <code>ListEnvironments</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>When the number of environments is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environments, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironments</code> to list the next set of environments.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
+                            /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
     pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

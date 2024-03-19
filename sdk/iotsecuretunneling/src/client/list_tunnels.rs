@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTunnels`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`thing_name(impl Into<String>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::set_thing_name):<br>required: **false**<br><p>The name of the IoT thing associated with the destination device.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at once.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p><br>
-    /// - On success, responds with [`ListTunnelsOutput`](crate::operation::list_tunnels::ListTunnelsOutput) with field(s):
+                            /// - On success, responds with [`ListTunnelsOutput`](crate::operation::list_tunnels::ListTunnelsOutput) with field(s):
     ///   - [`tunnel_summaries(Option<Vec::<TunnelSummary>>)`](crate::operation::list_tunnels::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tunnels::ListTunnelsOutput::next_token): <p>The token to use to get the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::operation::list_tunnels::ListTunnelsError)
+                            /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::operation::list_tunnels::ListTunnelsError)
     pub fn list_tunnels(&self) -> crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder {
-        crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

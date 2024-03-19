@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchTablesByLfTagsOutput {
+pub struct SearchTablesByLfTagsOutput  {
     /// <p>A continuation token, present if the current list segment is not the last. On the first run, if you include a not null (a value) token you can get empty pages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of tables that meet the LF-tag conditions.</p>
-    pub table_list: ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>>,
+    pub table_list: ::std::option::Option<::std::vec::Vec::<crate::types::TaggedTable>>,
     _request_id: Option<String>,
 }
-impl SearchTablesByLfTagsOutput {
+impl  SearchTablesByLfTagsOutput  {
     /// <p>A continuation token, present if the current list segment is not the last. On the first run, if you include a not null (a value) token you can get empty pages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of tables that meet the LF-tag conditions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_list.is_none()`.
-    pub fn table_list(&self) -> &[crate::types::TaggedTable] {
-        self.table_list.as_deref().unwrap_or_default()
+    pub fn table_list(&self) -> & [crate::types::TaggedTable] {
+        self.table_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchTablesByLfTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchTablesByLfTagsOutput {
     /// Creates a new builder-style object to manufacture [`SearchTablesByLfTagsOutput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput).
     pub fn builder() -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsOutputBuilder {
@@ -38,7 +39,7 @@ impl SearchTablesByLfTagsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTablesByLfTagsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) table_list: ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>>,
+    pub(crate) table_list: ::std::option::Option<::std::vec::Vec::<crate::types::TaggedTable>>,
     _request_id: Option<String>,
 }
 impl SearchTablesByLfTagsOutputBuilder {
@@ -49,8 +50,7 @@ impl SearchTablesByLfTagsOutputBuilder {
     }
     /// <p>A continuation token, present if the current list segment is not the last. On the first run, if you include a not null (a value) token you can get empty pages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, present if the current list segment is not the last. On the first run, if you include a not null (a value) token you can get empty pages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl SearchTablesByLfTagsOutputBuilder {
     /// <p>A list of tables that meet the LF-tag conditions.</p>
     pub fn table_list(mut self, input: crate::types::TaggedTable) -> Self {
         let mut v = self.table_list.unwrap_or_default();
-        v.push(input);
-        self.table_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tables that meet the LF-tag conditions.</p>
-    pub fn set_table_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>>) -> Self {
-        self.table_list = input;
-        self
+    pub fn set_table_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaggedTable>>) -> Self {
+        self.table_list = input; self
     }
     /// <p>A list of tables that meet the LF-tag conditions.</p>
-    pub fn get_table_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>> {
+    pub fn get_table_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaggedTable>> {
         &self.table_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchTablesByLfTagsOutput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput).
     pub fn build(self) -> crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput {
         crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput {
-            next_token: self.next_token,
-            table_list: self.table_list,
+            next_token: self.next_token
+            ,
+            table_list: self.table_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

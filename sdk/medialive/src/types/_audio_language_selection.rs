@@ -3,19 +3,19 @@
 /// Audio Language Selection
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioLanguageSelection {
+pub struct AudioLanguageSelection  {
     /// Selects a specific three-letter language code from within an audio source.
     pub language_code: ::std::option::Option<::std::string::String>,
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
     pub language_selection_policy: ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
 }
-impl AudioLanguageSelection {
+impl  AudioLanguageSelection  {
     /// Selects a specific three-letter language code from within an audio source.
-    pub fn language_code(&self) -> ::std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<& str> {
         self.language_code.as_deref()
     }
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
-    pub fn language_selection_policy(&self) -> ::std::option::Option<&crate::types::AudioLanguageSelectionPolicy> {
+    pub fn language_selection_policy(&self) -> ::std::option::Option<& crate::types::AudioLanguageSelectionPolicy> {
         self.language_selection_policy.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AudioLanguageSelectionBuilder {
     }
     /// Selects a specific three-letter language code from within an audio source.
     pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// Selects a specific three-letter language code from within an audio source.
     pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl AudioLanguageSelectionBuilder {
     }
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
     pub fn set_language_selection_policy(mut self, input: ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>) -> Self {
-        self.language_selection_policy = input;
-        self
+        self.language_selection_policy = input; self
     }
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
     pub fn get_language_selection_policy(&self) -> &::std::option::Option<crate::types::AudioLanguageSelectionPolicy> {
@@ -66,8 +64,11 @@ impl AudioLanguageSelectionBuilder {
     /// Consumes the builder and constructs a [`AudioLanguageSelection`](crate::types::AudioLanguageSelection).
     pub fn build(self) -> crate::types::AudioLanguageSelection {
         crate::types::AudioLanguageSelection {
-            language_code: self.language_code,
-            language_selection_policy: self.language_selection_policy,
+            language_code: self.language_code
+            ,
+            language_selection_policy: self.language_selection_policy
+            ,
         }
     }
 }
+

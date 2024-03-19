@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationSnapshotInput {
+pub struct DescribeApplicationSnapshotInput  {
     /// <p>The name of an existing application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeApplicationSnapshotInput {
+impl  DescribeApplicationSnapshotInput  {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeApplicationSnapshotInputBuilder {
     }
     /// <p>The name of an existing application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an existing application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeApplicationSnapshotInputBuilder {
     }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_name
     }
     /// Consumes the builder and constructs a [`DescribeApplicationSnapshotInput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput {
-            application_name: self.application_name,
-            snapshot_name: self.snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput {
+                application_name: self.application_name
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+            }
+        )
     }
 }
+

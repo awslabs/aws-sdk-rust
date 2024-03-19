@@ -3,7 +3,7 @@
 /// <p>Contains information about a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the contact.</p>
@@ -49,67 +49,67 @@ pub struct Contact {
     /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
     pub queue_priority: ::std::option::Option<i64>,
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Contact {
+impl  Contact  {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier for the contact.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
-    pub fn initial_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn initial_contact_id(&self) -> ::std::option::Option<& str> {
         self.initial_contact_id.as_deref()
     }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
-    pub fn previous_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn previous_contact_id(&self) -> ::std::option::Option<& str> {
         self.previous_contact_id.as_deref()
     }
     /// <p>Indicates how the contact was initiated.</p>
-    pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
+    pub fn initiation_method(&self) -> ::std::option::Option<& crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
     }
     /// <p>The name of the contact.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the contact.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>How the contact reached your contact center.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>If this contact was queued, this contains information about the queue.</p>
-    pub fn queue_info(&self) -> ::std::option::Option<&crate::types::QueueInfo> {
+    pub fn queue_info(&self) -> ::std::option::Option<& crate::types::QueueInfo> {
         self.queue_info.as_ref()
     }
     /// <p>Information about the agent who accepted the contact.</p>
-    pub fn agent_info(&self) -> ::std::option::Option<&crate::types::AgentInfo> {
+    pub fn agent_info(&self) -> ::std::option::Option<& crate::types::AgentInfo> {
         self.agent_info.as_ref()
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
-    pub fn initiation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn initiation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.initiation_timestamp.as_ref()
     }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
-    pub fn disconnect_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disconnect_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disconnect_timestamp.as_ref()
     }
     /// <p>The timestamp when contact was last updated.</p>
-    pub fn last_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>The timestamp when the contact was last paused.</p>
-    pub fn last_paused_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_paused_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_paused_timestamp.as_ref()
     }
     /// <p>The timestamp when the contact was last resumed.</p>
-    pub fn last_resumed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_resumed_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_resumed_timestamp.as_ref()
     }
     /// <p>Total pause count for a contact.</p>
@@ -121,15 +121,15 @@ impl Contact {
         self.total_pause_duration_in_seconds
     }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
-    pub fn scheduled_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scheduled_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
     }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
-    pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn related_contact_id(&self) -> ::std::option::Option<& str> {
         self.related_contact_id.as_deref()
     }
     /// <p>Information about Amazon Connect Wisdom.</p>
-    pub fn wisdom_info(&self) -> ::std::option::Option<&crate::types::WisdomInfo> {
+    pub fn wisdom_info(&self) -> ::std::option::Option<& crate::types::WisdomInfo> {
         self.wisdom_info.as_ref()
     }
     /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
@@ -141,11 +141,11 @@ impl Contact {
         self.queue_priority
     }
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for Contact {
+impl  ::std::fmt::Debug for Contact  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Contact");
         formatter.field("arn", &self.arn);
@@ -207,7 +207,7 @@ pub struct ContactBuilder {
     pub(crate) wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
     pub(crate) queue_time_adjustment_seconds: ::std::option::Option<i32>,
     pub(crate) queue_priority: ::std::option::Option<i64>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -217,8 +217,7 @@ impl ContactBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +230,7 @@ impl ContactBuilder {
     }
     /// <p>The identifier for the contact.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the contact.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +243,7 @@ impl ContactBuilder {
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
     pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_contact_id = input;
-        self
+        self.initial_contact_id = input; self
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +256,7 @@ impl ContactBuilder {
     }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
     pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.previous_contact_id = input;
-        self
+        self.previous_contact_id = input; self
     }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
     pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +269,7 @@ impl ContactBuilder {
     }
     /// <p>Indicates how the contact was initiated.</p>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
-        self.initiation_method = input;
-        self
+        self.initiation_method = input; self
     }
     /// <p>Indicates how the contact was initiated.</p>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
@@ -287,8 +282,7 @@ impl ContactBuilder {
     }
     /// <p>The name of the contact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the contact.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +295,7 @@ impl ContactBuilder {
     }
     /// <p>The description of the contact.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the contact.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +308,7 @@ impl ContactBuilder {
     }
     /// <p>How the contact reached your contact center.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>How the contact reached your contact center.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -329,8 +321,7 @@ impl ContactBuilder {
     }
     /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::QueueInfo>) -> Self {
-        self.queue_info = input;
-        self
+        self.queue_info = input; self
     }
     /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::QueueInfo> {
@@ -343,8 +334,7 @@ impl ContactBuilder {
     }
     /// <p>Information about the agent who accepted the contact.</p>
     pub fn set_agent_info(mut self, input: ::std::option::Option<crate::types::AgentInfo>) -> Self {
-        self.agent_info = input;
-        self
+        self.agent_info = input; self
     }
     /// <p>Information about the agent who accepted the contact.</p>
     pub fn get_agent_info(&self) -> &::std::option::Option<crate::types::AgentInfo> {
@@ -357,8 +347,7 @@ impl ContactBuilder {
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn set_initiation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.initiation_timestamp = input;
-        self
+        self.initiation_timestamp = input; self
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn get_initiation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -371,8 +360,7 @@ impl ContactBuilder {
     }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub fn set_disconnect_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.disconnect_timestamp = input;
-        self
+        self.disconnect_timestamp = input; self
     }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub fn get_disconnect_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -385,8 +373,7 @@ impl ContactBuilder {
     }
     /// <p>The timestamp when contact was last updated.</p>
     pub fn set_last_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_timestamp = input;
-        self
+        self.last_update_timestamp = input; self
     }
     /// <p>The timestamp when contact was last updated.</p>
     pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -399,8 +386,7 @@ impl ContactBuilder {
     }
     /// <p>The timestamp when the contact was last paused.</p>
     pub fn set_last_paused_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_paused_timestamp = input;
-        self
+        self.last_paused_timestamp = input; self
     }
     /// <p>The timestamp when the contact was last paused.</p>
     pub fn get_last_paused_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -413,8 +399,7 @@ impl ContactBuilder {
     }
     /// <p>The timestamp when the contact was last resumed.</p>
     pub fn set_last_resumed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_resumed_timestamp = input;
-        self
+        self.last_resumed_timestamp = input; self
     }
     /// <p>The timestamp when the contact was last resumed.</p>
     pub fn get_last_resumed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -427,8 +412,7 @@ impl ContactBuilder {
     }
     /// <p>Total pause count for a contact.</p>
     pub fn set_total_pause_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_pause_count = input;
-        self
+        self.total_pause_count = input; self
     }
     /// <p>Total pause count for a contact.</p>
     pub fn get_total_pause_count(&self) -> &::std::option::Option<i32> {
@@ -441,8 +425,7 @@ impl ContactBuilder {
     }
     /// <p>Total pause duration for a contact in seconds.</p>
     pub fn set_total_pause_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_pause_duration_in_seconds = input;
-        self
+        self.total_pause_duration_in_seconds = input; self
     }
     /// <p>Total pause duration for a contact in seconds.</p>
     pub fn get_total_pause_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -455,8 +438,7 @@ impl ContactBuilder {
     }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn set_scheduled_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scheduled_timestamp = input;
-        self
+        self.scheduled_timestamp = input; self
     }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn get_scheduled_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -469,8 +451,7 @@ impl ContactBuilder {
     }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_contact_id = input;
-        self
+        self.related_contact_id = input; self
     }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -483,8 +464,7 @@ impl ContactBuilder {
     }
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub fn set_wisdom_info(mut self, input: ::std::option::Option<crate::types::WisdomInfo>) -> Self {
-        self.wisdom_info = input;
-        self
+        self.wisdom_info = input; self
     }
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
@@ -497,8 +477,7 @@ impl ContactBuilder {
     }
     /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
     pub fn set_queue_time_adjustment_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.queue_time_adjustment_seconds = input;
-        self
+        self.queue_time_adjustment_seconds = input; self
     }
     /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
     pub fn get_queue_time_adjustment_seconds(&self) -> &::std::option::Option<i32> {
@@ -511,8 +490,7 @@ impl ContactBuilder {
     }
     /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
     pub fn set_queue_priority(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.queue_priority = input;
-        self
+        self.queue_priority = input; self
     }
     /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
     pub fn get_queue_priority(&self) -> &::std::option::Option<i64> {
@@ -525,45 +503,67 @@ impl ContactBuilder {
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
-            arn: self.arn,
-            id: self.id,
-            initial_contact_id: self.initial_contact_id,
-            previous_contact_id: self.previous_contact_id,
-            initiation_method: self.initiation_method,
-            name: self.name,
-            description: self.description,
-            channel: self.channel,
-            queue_info: self.queue_info,
-            agent_info: self.agent_info,
-            initiation_timestamp: self.initiation_timestamp,
-            disconnect_timestamp: self.disconnect_timestamp,
-            last_update_timestamp: self.last_update_timestamp,
-            last_paused_timestamp: self.last_paused_timestamp,
-            last_resumed_timestamp: self.last_resumed_timestamp,
-            total_pause_count: self.total_pause_count,
-            total_pause_duration_in_seconds: self.total_pause_duration_in_seconds,
-            scheduled_timestamp: self.scheduled_timestamp,
-            related_contact_id: self.related_contact_id,
-            wisdom_info: self.wisdom_info,
-            queue_time_adjustment_seconds: self.queue_time_adjustment_seconds,
-            queue_priority: self.queue_priority,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            initial_contact_id: self.initial_contact_id
+            ,
+            previous_contact_id: self.previous_contact_id
+            ,
+            initiation_method: self.initiation_method
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            channel: self.channel
+            ,
+            queue_info: self.queue_info
+            ,
+            agent_info: self.agent_info
+            ,
+            initiation_timestamp: self.initiation_timestamp
+            ,
+            disconnect_timestamp: self.disconnect_timestamp
+            ,
+            last_update_timestamp: self.last_update_timestamp
+            ,
+            last_paused_timestamp: self.last_paused_timestamp
+            ,
+            last_resumed_timestamp: self.last_resumed_timestamp
+            ,
+            total_pause_count: self.total_pause_count
+            ,
+            total_pause_duration_in_seconds: self.total_pause_duration_in_seconds
+            ,
+            scheduled_timestamp: self.scheduled_timestamp
+            ,
+            related_contact_id: self.related_contact_id
+            ,
+            wisdom_info: self.wisdom_info
+            ,
+            queue_time_adjustment_seconds: self.queue_time_adjustment_seconds
+            ,
+            queue_priority: self.queue_priority
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
@@ -596,3 +596,4 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.finish()
     }
 }
+

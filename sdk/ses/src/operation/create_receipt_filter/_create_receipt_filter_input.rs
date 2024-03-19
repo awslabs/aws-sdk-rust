@@ -3,13 +3,13 @@
 /// <p>Represents a request to create a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReceiptFilterInput {
+pub struct CreateReceiptFilterInput  {
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub filter: ::std::option::Option<crate::types::ReceiptFilter>,
 }
-impl CreateReceiptFilterInput {
+impl  CreateReceiptFilterInput  {
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ReceiptFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ReceiptFilter> {
         self.filter.as_ref()
     }
 }
@@ -35,18 +35,20 @@ impl CreateReceiptFilterInputBuilder {
     }
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReceiptFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReceiptFilter> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_receipt_filter::CreateReceiptFilterInput { filter: self.filter })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_receipt_filter::CreateReceiptFilterInput {
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

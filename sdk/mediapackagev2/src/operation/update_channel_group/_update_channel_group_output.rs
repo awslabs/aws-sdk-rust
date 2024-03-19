@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelGroupOutput {
+pub struct UpdateChannelGroupOutput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -18,51 +18,48 @@ pub struct UpdateChannelGroupOutput {
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateChannelGroupOutput {
+impl  UpdateChannelGroupOutput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_group_name.deref()
+    pub fn channel_group_name(&self) -> & str {
+        use std::ops::Deref; self.channel_group_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The output domain where the source stream is sent. Integrate the domain with a downstream CDN (such as Amazon CloudFront) or playback device.</p>
-    pub fn egress_domain(&self) -> &str {
-        use std::ops::Deref;
-        self.egress_domain.deref()
+    pub fn egress_domain(&self) -> & str {
+        use std::ops::Deref; self.egress_domain.deref()
     }
     /// <p>The date and time the channel group was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time the channel group was modified.</p>
-    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.modified_at
     }
     /// <p>The description for your channel group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateChannelGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateChannelGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelGroupOutput`](crate::operation::update_channel_group::UpdateChannelGroupOutput).
     pub fn builder() -> crate::operation::update_channel_group::builders::UpdateChannelGroupOutputBuilder {
@@ -81,7 +78,7 @@ pub struct UpdateChannelGroupOutputBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateChannelGroupOutputBuilder {
@@ -93,8 +90,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +118,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The output domain where the source stream is sent. Integrate the domain with a downstream CDN (such as Amazon CloudFront) or playback device.</p>
     pub fn set_egress_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.egress_domain = input;
-        self
+        self.egress_domain = input; self
     }
     /// <p>The output domain where the source stream is sent. Integrate the domain with a downstream CDN (such as Amazon CloudFront) or playback device.</p>
     pub fn get_egress_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +132,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The date and time the channel group was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time the channel group was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +146,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The date and time the channel group was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The date and time the channel group was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +159,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The description for your channel group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for your channel group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +172,7 @@ impl UpdateChannelGroupOutputBuilder {
     }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,28 +185,27 @@ impl UpdateChannelGroupOutputBuilder {
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateChannelGroupOutput`](crate::operation::update_channel_group::UpdateChannelGroupOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`channel_group_name`](crate::operation::update_channel_group::builders::UpdateChannelGroupOutputBuilder::channel_group_name)
@@ -224,45 +213,43 @@ impl UpdateChannelGroupOutputBuilder {
     /// - [`egress_domain`](crate::operation::update_channel_group::builders::UpdateChannelGroupOutputBuilder::egress_domain)
     /// - [`created_at`](crate::operation::update_channel_group::builders::UpdateChannelGroupOutputBuilder::created_at)
     /// - [`modified_at`](crate::operation::update_channel_group::builders::UpdateChannelGroupOutputBuilder::modified_at)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_channel_group::UpdateChannelGroupOutput {
-            channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_group_name",
-                    "channel_group_name was not specified but it is required when building UpdateChannelGroupOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateChannelGroupOutput",
-                )
-            })?,
-            egress_domain: self.egress_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "egress_domain",
-                    "egress_domain was not specified but it is required when building UpdateChannelGroupOutput",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building UpdateChannelGroupOutput",
-                )
-            })?,
-            modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "modified_at",
-                    "modified_at was not specified but it is required when building UpdateChannelGroupOutput",
-                )
-            })?,
-            description: self.description,
-            e_tag: self.e_tag,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_channel_group::UpdateChannelGroupOutput {
+                channel_group_name: self.channel_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_group_name", "channel_group_name was not specified but it is required when building UpdateChannelGroupOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building UpdateChannelGroupOutput")
+                    )?
+                ,
+                egress_domain: self.egress_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("egress_domain", "egress_domain was not specified but it is required when building UpdateChannelGroupOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building UpdateChannelGroupOutput")
+                    )?
+                ,
+                modified_at: self.modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("modified_at", "modified_at was not specified but it is required when building UpdateChannelGroupOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                e_tag: self.e_tag
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_
 
 impl CreateLbCookieStickinessPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_lb_cookie_stickiness_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_lb_cookie_stickiness_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateLBCookieStickinessPolicy`.
-///
+/// 
 /// <p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p>
 /// <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p>
 /// <p>A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.</p>
@@ -29,33 +26,32 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLBCookieStickinessPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder,
+                    inner: crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-    > for CreateLBCookieStickinessPolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
+                    crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
+                > for CreateLBCookieStickinessPolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
+                        crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateLBCookieStickinessPolicyFluentBuilder {
     /// Creates a new `CreateLBCookieStickinessPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateLBCookieStickinessPolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput,
-        crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput, crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the load balancer.</p>
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
@@ -154,3 +141,4 @@ impl CreateLBCookieStickinessPolicyFluentBuilder {
         self.inner.get_cookie_expiration_period()
     }
 }
+

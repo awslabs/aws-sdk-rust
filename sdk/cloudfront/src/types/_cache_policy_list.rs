@@ -3,7 +3,7 @@
 /// <p>A list of cache policies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CachePolicyList {
+pub struct CachePolicyList  {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of cache policies requested.</p>
@@ -11,11 +11,11 @@ pub struct CachePolicyList {
     /// <p>The total number of cache policies returned in the response.</p>
     pub quantity: i32,
     /// <p>Contains the cache policies in the list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::CachePolicySummary>>,
 }
-impl CachePolicyList {
+impl  CachePolicyList  {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of cache policies requested.</p>
@@ -27,10 +27,11 @@ impl CachePolicyList {
         self.quantity
     }
     /// <p>Contains the cache policies in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::CachePolicySummary] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::CachePolicySummary] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CachePolicyList {
@@ -47,7 +48,7 @@ pub struct CachePolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::CachePolicySummary>>,
 }
 impl CachePolicyListBuilder {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
@@ -57,8 +58,7 @@ impl CachePolicyListBuilder {
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CachePolicyListBuilder {
     }
     /// <p>The maximum number of cache policies requested.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of cache policies requested.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -87,8 +86,7 @@ impl CachePolicyListBuilder {
     }
     /// <p>The total number of cache policies returned in the response.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The total number of cache policies returned in the response.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -101,17 +99,16 @@ impl CachePolicyListBuilder {
     /// <p>Contains the cache policies in the list.</p>
     pub fn items(mut self, input: crate::types::CachePolicySummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the cache policies in the list.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CachePolicySummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>Contains the cache policies in the list.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CachePolicySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CachePolicyList`](crate::types::CachePolicyList).
@@ -119,21 +116,24 @@ impl CachePolicyListBuilder {
     /// - [`max_items`](crate::types::builders::CachePolicyListBuilder::max_items)
     /// - [`quantity`](crate::types::builders::CachePolicyListBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CachePolicyList {
-            next_marker: self.next_marker,
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building CachePolicyList",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building CachePolicyList",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CachePolicyList {
+                next_marker: self.next_marker
+                ,
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building CachePolicyList")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building CachePolicyList")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

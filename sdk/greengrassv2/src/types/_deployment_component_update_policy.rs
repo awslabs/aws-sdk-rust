@@ -4,7 +4,7 @@
 /// <p>Each component on a device can report whether or not it's ready to update. After a component and its dependencies are ready, they can apply the update in the deployment. You can configure whether or not the deployment notifies components of an update and waits for a response. You specify the amount of time each component has to respond to the update notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentComponentUpdatePolicy {
+pub struct DeploymentComponentUpdatePolicy  {
     /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
     /// <p>Default: <code>60</code></p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
@@ -18,7 +18,7 @@ pub struct DeploymentComponentUpdatePolicy {
     /// <p>Default: <code>NOTIFY_COMPONENTS</code></p>
     pub action: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>,
 }
-impl DeploymentComponentUpdatePolicy {
+impl  DeploymentComponentUpdatePolicy  {
     /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
     /// <p>Default: <code>60</code></p>
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -32,7 +32,7 @@ impl DeploymentComponentUpdatePolicy {
     /// <p><code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p></li>
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code></p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::DeploymentComponentUpdatePolicyAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::DeploymentComponentUpdatePolicyAction> {
         self.action.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl DeploymentComponentUpdatePolicyBuilder {
     /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
     /// <p>Default: <code>60</code></p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
     }
     /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
     /// <p>Default: <code>60</code></p>
@@ -89,8 +88,7 @@ impl DeploymentComponentUpdatePolicyBuilder {
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code></p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
     /// <ul>
@@ -106,8 +104,11 @@ impl DeploymentComponentUpdatePolicyBuilder {
     /// Consumes the builder and constructs a [`DeploymentComponentUpdatePolicy`](crate::types::DeploymentComponentUpdatePolicy).
     pub fn build(self) -> crate::types::DeploymentComponentUpdatePolicy {
         crate::types::DeploymentComponentUpdatePolicy {
-            timeout_in_seconds: self.timeout_in_seconds,
-            action: self.action,
+            timeout_in_seconds: self.timeout_in_seconds
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

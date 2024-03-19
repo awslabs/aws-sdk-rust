@@ -3,7 +3,7 @@
 /// <p>Describes a resource entitled for use with a license.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// <p>Entitlement name.</p>
     pub name: ::std::string::String,
     /// <p>Entitlement resource. Use only if the unit is None.</p>
@@ -17,14 +17,13 @@ pub struct Entitlement {
     /// <p>Indicates whether check-ins are allowed.</p>
     pub allow_check_in: ::std::option::Option<bool>,
 }
-impl Entitlement {
+impl  Entitlement  {
     /// <p>Entitlement name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
@@ -36,7 +35,7 @@ impl Entitlement {
         self.overage
     }
     /// <p>Entitlement unit.</p>
-    pub fn unit(&self) -> &crate::types::EntitlementUnit {
+    pub fn unit(&self) -> & crate::types::EntitlementUnit {
         &self.unit
     }
     /// <p>Indicates whether check-ins are allowed.</p>
@@ -71,8 +70,7 @@ impl EntitlementBuilder {
     }
     /// <p>Entitlement name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Entitlement name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl EntitlementBuilder {
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl EntitlementBuilder {
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     pub fn set_max_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     pub fn get_max_count(&self) -> &::std::option::Option<i64> {
@@ -113,8 +109,7 @@ impl EntitlementBuilder {
     }
     /// <p>Indicates whether overages are allowed.</p>
     pub fn set_overage(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.overage = input;
-        self
+        self.overage = input; self
     }
     /// <p>Indicates whether overages are allowed.</p>
     pub fn get_overage(&self) -> &::std::option::Option<bool> {
@@ -128,8 +123,7 @@ impl EntitlementBuilder {
     }
     /// <p>Entitlement unit.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EntitlementUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Entitlement unit.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::EntitlementUnit> {
@@ -142,8 +136,7 @@ impl EntitlementBuilder {
     }
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn set_allow_check_in(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_check_in = input;
-        self
+        self.allow_check_in = input; self
     }
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn get_allow_check_in(&self) -> &::std::option::Option<bool> {
@@ -154,23 +147,28 @@ impl EntitlementBuilder {
     /// - [`name`](crate::types::builders::EntitlementBuilder::name)
     /// - [`unit`](crate::types::builders::EntitlementBuilder::unit)
     pub fn build(self) -> ::std::result::Result<crate::types::Entitlement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Entitlement {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Entitlement",
-                )
-            })?,
-            value: self.value,
-            max_count: self.max_count,
-            overage: self.overage,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building Entitlement",
-                )
-            })?,
-            allow_check_in: self.allow_check_in,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Entitlement {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Entitlement")
+                    )?
+                ,
+                value: self.value
+                ,
+                max_count: self.max_count
+                ,
+                overage: self.overage
+                ,
+                unit: self.unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unit", "unit was not specified but it is required when building Entitlement")
+                    )?
+                ,
+                allow_check_in: self.allow_check_in
+                ,
+            }
+        )
     }
 }
+

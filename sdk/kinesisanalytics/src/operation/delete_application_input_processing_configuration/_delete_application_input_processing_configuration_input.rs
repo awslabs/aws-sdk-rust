@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationInputProcessingConfigurationInput {
+pub struct DeleteApplicationInputProcessingConfigurationInput  {
     /// <p>The Kinesis Analytics application name.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -10,9 +10,9 @@ pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub input_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteApplicationInputProcessingConfigurationInput {
+impl  DeleteApplicationInputProcessingConfigurationInput  {
     /// <p>The Kinesis Analytics application name.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -20,15 +20,13 @@ impl DeleteApplicationInputProcessingConfigurationInput {
         self.current_application_version_id
     }
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_id(&self) -> ::std::option::Option<& str> {
         self.input_id.as_deref()
     }
 }
 impl DeleteApplicationInputProcessingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder {
         crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder::default()
     }
 }
@@ -50,8 +48,7 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
     }
     /// <p>The Kinesis Analytics application name.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The Kinesis Analytics application name.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -80,26 +76,24 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
     }
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                input_id: self.input_id,
-            },
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                input_id: self.input_id
+                ,
+            }
         )
     }
 }
+

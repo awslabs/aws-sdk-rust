@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateManagedRuleSetVersionExpiryDateInput {
+pub struct UpdateManagedRuleSetVersionExpiryDateInput  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -25,10 +25,10 @@ pub struct UpdateManagedRuleSetVersionExpiryDateInput {
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
     pub expiry_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UpdateManagedRuleSetVersionExpiryDateInput {
+impl  UpdateManagedRuleSetVersionExpiryDateInput  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -39,24 +39,24 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group.</p>
-    pub fn version_to_expire(&self) -> ::std::option::Option<&str> {
+    pub fn version_to_expire(&self) -> ::std::option::Option<& str> {
         self.version_to_expire.as_deref()
     }
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
-    pub fn expiry_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiry_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiry_timestamp.as_ref()
     }
 }
@@ -89,8 +89,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
@@ -119,8 +118,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -141,8 +139,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +167,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group.</p>
     pub fn set_version_to_expire(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_to_expire = input;
-        self
+        self.version_to_expire = input; self
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group.</p>
     pub fn get_version_to_expire(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
     pub fn set_expiry_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiry_timestamp = input;
-        self
+        self.expiry_timestamp = input; self
     }
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z".</p>
@@ -197,21 +191,23 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         &self.expiry_timestamp
     }
     /// Consumes the builder and constructs a [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput {
-                name: self.name,
-                scope: self.scope,
-                id: self.id,
-                lock_token: self.lock_token,
-                version_to_expire: self.version_to_expire,
-                expiry_timestamp: self.expiry_timestamp,
-            },
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                id: self.id
+                ,
+                lock_token: self.lock_token
+                ,
+                version_to_expire: self.version_to_expire
+                ,
+                expiry_timestamp: self.expiry_timestamp
+                ,
+            }
         )
     }
 }
+

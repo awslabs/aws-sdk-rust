@@ -3,7 +3,7 @@
 /// <p>Information about a static IP address for a load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerAddress {
+pub struct LoadBalancerAddress  {
     /// <p>The static IP address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
@@ -13,21 +13,21 @@ pub struct LoadBalancerAddress {
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
-impl LoadBalancerAddress {
+impl  LoadBalancerAddress  {
     /// <p>The static IP address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
-    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<& str> {
         self.allocation_id.as_deref()
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
-    pub fn private_ipv4_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ipv4_address(&self) -> ::std::option::Option<& str> {
         self.private_ipv4_address.as_deref()
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
-    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LoadBalancerAddressBuilder {
     }
     /// <p>The static IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The static IP address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LoadBalancerAddressBuilder {
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allocation_id = input;
-        self
+        self.allocation_id = input; self
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LoadBalancerAddressBuilder {
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub fn set_private_ipv4_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ipv4_address = input;
-        self
+        self.private_ipv4_address = input; self
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub fn get_private_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl LoadBalancerAddressBuilder {
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl LoadBalancerAddressBuilder {
     /// Consumes the builder and constructs a [`LoadBalancerAddress`](crate::types::LoadBalancerAddress).
     pub fn build(self) -> crate::types::LoadBalancerAddress {
         crate::types::LoadBalancerAddress {
-            ip_address: self.ip_address,
-            allocation_id: self.allocation_id,
-            private_ipv4_address: self.private_ipv4_address,
-            ipv6_address: self.ipv6_address,
+            ip_address: self.ip_address
+            ,
+            allocation_id: self.allocation_id
+            ,
+            private_ipv4_address: self.private_ipv4_address
+            ,
+            ipv6_address: self.ipv6_address
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the audience model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceModelSummary {
+pub struct AudienceModelSummary  {
     /// <p>The time at which the audience model was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the audience model was updated.</p>
@@ -19,36 +19,33 @@ pub struct AudienceModelSummary {
     /// <p>The description of the audience model.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl AudienceModelSummary {
+impl  AudienceModelSummary  {
     /// <p>The time at which the audience model was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the audience model was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model.</p>
-    pub fn audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_model_arn.deref()
+    pub fn audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_model_arn.deref()
     }
     /// <p>The name of the audience model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that was used for the audience model.</p>
-    pub fn training_dataset_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.training_dataset_arn.deref()
+    pub fn training_dataset_arn(&self) -> & str {
+        use std::ops::Deref; self.training_dataset_arn.deref()
     }
     /// <p>The status of the audience model.</p>
-    pub fn status(&self) -> &crate::types::AudienceModelStatus {
+    pub fn status(&self) -> & crate::types::AudienceModelStatus {
         &self.status
     }
     /// <p>The description of the audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -80,8 +77,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The time at which the audience model was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the audience model was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -95,8 +91,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The most recent time at which the audience model was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the audience model was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +105,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The name of the audience model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +133,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that was used for the audience model.</p>
     pub fn set_training_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_dataset_arn = input;
-        self
+        self.training_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that was used for the audience model.</p>
     pub fn get_training_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +147,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The status of the audience model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AudienceModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the audience model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AudienceModelStatus> {
@@ -169,8 +160,7 @@ impl AudienceModelSummaryBuilder {
     }
     /// <p>The description of the audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,44 +175,42 @@ impl AudienceModelSummaryBuilder {
     /// - [`training_dataset_arn`](crate::types::builders::AudienceModelSummaryBuilder::training_dataset_arn)
     /// - [`status`](crate::types::builders::AudienceModelSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceModelSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceModelSummary {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building AudienceModelSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building AudienceModelSummary",
-                )
-            })?,
-            audience_model_arn: self.audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_model_arn",
-                    "audience_model_arn was not specified but it is required when building AudienceModelSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AudienceModelSummary",
-                )
-            })?,
-            training_dataset_arn: self.training_dataset_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "training_dataset_arn",
-                    "training_dataset_arn was not specified but it is required when building AudienceModelSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AudienceModelSummary",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceModelSummary {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building AudienceModelSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building AudienceModelSummary")
+                    )?
+                ,
+                audience_model_arn: self.audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_model_arn", "audience_model_arn was not specified but it is required when building AudienceModelSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AudienceModelSummary")
+                    )?
+                ,
+                training_dataset_arn: self.training_dataset_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("training_dataset_arn", "training_dataset_arn was not specified but it is required when building AudienceModelSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AudienceModelSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

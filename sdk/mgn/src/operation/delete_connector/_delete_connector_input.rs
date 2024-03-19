@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectorInput {
+pub struct DeleteConnectorInput  {
     /// <p>Delete Connector request connector ID.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectorInput {
+impl  DeleteConnectorInput  {
     /// <p>Delete Connector request connector ID.</p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<& str> {
         self.connector_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteConnectorInputBuilder {
     }
     /// <p>Delete Connector request connector ID.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
     }
     /// <p>Delete Connector request connector ID.</p>
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_connector::DeleteConnectorInput {
-            connector_id: self.connector_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connector::DeleteConnectorInput {
+                connector_id: self.connector_id
+                ,
+            }
+        )
     }
 }
+

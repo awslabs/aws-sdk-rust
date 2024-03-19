@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrainingDatasetInput {
+pub struct GetTrainingDatasetInput  {
     /// <p>The Amazon Resource Name (ARN) of the training dataset that you are interested in.</p>
     pub training_dataset_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetTrainingDatasetInput {
+impl  GetTrainingDatasetInput  {
     /// <p>The Amazon Resource Name (ARN) of the training dataset that you are interested in.</p>
-    pub fn training_dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn training_dataset_arn(&self) -> ::std::option::Option<& str> {
         self.training_dataset_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetTrainingDatasetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that you are interested in.</p>
     pub fn set_training_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_dataset_arn = input;
-        self
+        self.training_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that you are interested in.</p>
     pub fn get_training_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_dataset_arn
     }
     /// Consumes the builder and constructs a [`GetTrainingDatasetInput`](crate::operation::get_training_dataset::GetTrainingDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_training_dataset::GetTrainingDatasetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_training_dataset::GetTrainingDatasetInput {
-            training_dataset_arn: self.training_dataset_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_training_dataset::GetTrainingDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_training_dataset::GetTrainingDatasetInput {
+                training_dataset_arn: self.training_dataset_arn
+                ,
+            }
+        )
     }
 }
+

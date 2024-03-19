@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThingRegistrationTaskOutput {
+pub struct DescribeThingRegistrationTaskOutput  {
     /// <p>The task ID.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The task creation date.</p>
@@ -29,41 +29,41 @@ pub struct DescribeThingRegistrationTaskOutput {
     pub percentage_progress: i32,
     _request_id: Option<String>,
 }
-impl DescribeThingRegistrationTaskOutput {
+impl  DescribeThingRegistrationTaskOutput  {
     /// <p>The task ID.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The task creation date.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the task was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The task's template.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn input_file_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn input_file_bucket(&self) -> ::std::option::Option<& str> {
         self.input_file_bucket.as_deref()
     }
     /// <p>The input file key.</p>
-    pub fn input_file_key(&self) -> ::std::option::Option<&str> {
+    pub fn input_file_key(&self) -> ::std::option::Option<& str> {
         self.input_file_key.as_deref()
     }
     /// <p>The role ARN that grants access to the input file bucket.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the bulk thing provisioning task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The number of things successfully provisioned.</p>
@@ -80,10 +80,10 @@ impl DescribeThingRegistrationTaskOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeThingRegistrationTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeThingRegistrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThingRegistrationTaskOutput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput).
     pub fn builder() -> crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskOutputBuilder {
@@ -117,8 +117,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The task ID.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The task ID.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The task creation date.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The task creation date.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +143,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The date when the task was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date when the task was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +156,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The task's template.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The task's template.</p>
     pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +169,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The S3 bucket that contains the input file.</p>
     pub fn set_input_file_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_file_bucket = input;
-        self
+        self.input_file_bucket = input; self
     }
     /// <p>The S3 bucket that contains the input file.</p>
     pub fn get_input_file_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +182,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The input file key.</p>
     pub fn set_input_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_file_key = input;
-        self
+        self.input_file_key = input; self
     }
     /// <p>The input file key.</p>
     pub fn get_input_file_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +195,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The role ARN that grants access to the input file bucket.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role ARN that grants access to the input file bucket.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +208,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The status of the bulk thing provisioning task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the bulk thing provisioning task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -229,8 +221,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +234,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The number of things successfully provisioned.</p>
     pub fn set_success_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.success_count = input;
-        self
+        self.success_count = input; self
     }
     /// <p>The number of things successfully provisioned.</p>
     pub fn get_success_count(&self) -> &::std::option::Option<i32> {
@@ -257,8 +247,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The number of things that failed to be provisioned.</p>
     pub fn set_failure_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_count = input;
-        self
+        self.failure_count = input; self
     }
     /// <p>The number of things that failed to be provisioned.</p>
     pub fn get_failure_count(&self) -> &::std::option::Option<i32> {
@@ -271,38 +260,53 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     }
     /// <p>The progress of the bulk provisioning task expressed as a percentage.</p>
     pub fn set_percentage_progress(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percentage_progress = input;
-        self
+        self.percentage_progress = input; self
     }
     /// <p>The progress of the bulk provisioning task expressed as a percentage.</p>
     pub fn get_percentage_progress(&self) -> &::std::option::Option<i32> {
         &self.percentage_progress
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeThingRegistrationTaskOutput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput).
     pub fn build(self) -> crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput {
         crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput {
-            task_id: self.task_id,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
-            template_body: self.template_body,
-            input_file_bucket: self.input_file_bucket,
-            input_file_key: self.input_file_key,
-            role_arn: self.role_arn,
-            status: self.status,
-            message: self.message,
-            success_count: self.success_count.unwrap_or_default(),
-            failure_count: self.failure_count.unwrap_or_default(),
-            percentage_progress: self.percentage_progress.unwrap_or_default(),
+            task_id: self.task_id
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            template_body: self.template_body
+            ,
+            input_file_bucket: self.input_file_bucket
+            ,
+            input_file_key: self.input_file_key
+            ,
+            role_arn: self.role_arn
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
+            success_count: self.success_count
+                .unwrap_or_default()
+            ,
+            failure_count: self.failure_count
+                .unwrap_or_default()
+            ,
+            percentage_progress: self.percentage_progress
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

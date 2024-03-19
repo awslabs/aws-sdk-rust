@@ -3,7 +3,7 @@
 /// <p>An operation performed by the control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlOperation {
+pub struct ControlOperation  {
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
     pub operation_type: ::std::option::Option<crate::types::ControlOperationType>,
     /// <p>The time that the operation began.</p>
@@ -15,25 +15,25 @@ pub struct ControlOperation {
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl ControlOperation {
+impl  ControlOperation  {
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
-    pub fn operation_type(&self) -> ::std::option::Option<&crate::types::ControlOperationType> {
+    pub fn operation_type(&self) -> ::std::option::Option<& crate::types::ControlOperationType> {
         self.operation_type.as_ref()
     }
     /// <p>The time that the operation began.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the operation finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ControlOperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ControlOperationStatus> {
         self.status.as_ref()
     }
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ControlOperationBuilder {
     }
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::ControlOperationType>) -> Self {
-        self.operation_type = input;
-        self
+        self.operation_type = input; self
     }
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::ControlOperationType> {
@@ -76,8 +75,7 @@ impl ControlOperationBuilder {
     }
     /// <p>The time that the operation began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time that the operation began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl ControlOperationBuilder {
     }
     /// <p>The time that the operation finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time that the operation finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl ControlOperationBuilder {
     }
     /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ControlOperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlOperationStatus> {
@@ -118,8 +114,7 @@ impl ControlOperationBuilder {
     }
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl ControlOperationBuilder {
     /// Consumes the builder and constructs a [`ControlOperation`](crate::types::ControlOperation).
     pub fn build(self) -> crate::types::ControlOperation {
         crate::types::ControlOperation {
-            operation_type: self.operation_type,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            status: self.status,
-            status_message: self.status_message,
+            operation_type: self.operation_type
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFunctionDefinitionInput {
+pub struct GetFunctionDefinitionInput  {
     /// The ID of the Lambda function definition.
     pub function_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl GetFunctionDefinitionInput {
+impl  GetFunctionDefinitionInput  {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_definition_id(&self) -> ::std::option::Option<& str> {
         self.function_definition_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetFunctionDefinitionInputBuilder {
     }
     /// The ID of the Lambda function definition.
     pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_definition_id = input;
-        self
+        self.function_definition_id = input; self
     }
     /// The ID of the Lambda function definition.
     pub fn get_function_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_definition_id
     }
     /// Consumes the builder and constructs a [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_function_definition::GetFunctionDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_function_definition::GetFunctionDefinitionInput {
-            function_definition_id: self.function_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_function_definition::GetFunctionDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_function_definition::GetFunctionDefinitionInput {
+                function_definition_id: self.function_definition_id
+                ,
+            }
+        )
     }
 }
+

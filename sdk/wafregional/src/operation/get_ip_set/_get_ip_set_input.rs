@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIpSetInput {
+pub struct GetIpSetInput  {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub ip_set_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIpSetInput {
+impl  GetIpSetInput  {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    pub fn ip_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn ip_set_id(&self) -> ::std::option::Option<& str> {
         self.ip_set_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetIpSetInputBuilder {
     }
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn set_ip_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_set_id = input;
-        self
+        self.ip_set_id = input; self
     }
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetIpSetInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_set::GetIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ip_set::GetIpSetInput { ip_set_id: self.ip_set_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_ip_set::GetIpSetInput {
+                ip_set_id: self.ip_set_id
+                ,
+            }
+        )
     }
 }
+

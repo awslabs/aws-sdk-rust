@@ -3,7 +3,7 @@
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AbortCriteria {
+pub struct AbortCriteria  {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
     pub failure_type: crate::types::JobExecutionFailureType,
     /// <p>The type of job action to take to initiate the job abort.</p>
@@ -14,13 +14,13 @@ pub struct AbortCriteria {
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub min_number_of_executed_things: i32,
 }
-impl AbortCriteria {
+impl  AbortCriteria  {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn failure_type(&self) -> &crate::types::JobExecutionFailureType {
+    pub fn failure_type(&self) -> & crate::types::JobExecutionFailureType {
         &self.failure_type
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
-    pub fn action(&self) -> &crate::types::AbortAction {
+    pub fn action(&self) -> & crate::types::AbortAction {
         &self.action
     }
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
@@ -58,8 +58,7 @@ impl AbortCriteriaBuilder {
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
     pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::JobExecutionFailureType>) -> Self {
-        self.failure_type = input;
-        self
+        self.failure_type = input; self
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
     pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::JobExecutionFailureType> {
@@ -73,8 +72,7 @@ impl AbortCriteriaBuilder {
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::AbortAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::AbortAction> {
@@ -90,8 +88,7 @@ impl AbortCriteriaBuilder {
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub fn set_threshold_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold_percentage = input;
-        self
+        self.threshold_percentage = input; self
     }
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
@@ -106,8 +103,7 @@ impl AbortCriteriaBuilder {
     }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn set_min_number_of_executed_things(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_number_of_executed_things = input;
-        self
+        self.min_number_of_executed_things = input; self
     }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn get_min_number_of_executed_things(&self) -> &::std::option::Option<i32> {
@@ -120,31 +116,30 @@ impl AbortCriteriaBuilder {
     /// - [`threshold_percentage`](crate::types::builders::AbortCriteriaBuilder::threshold_percentage)
     /// - [`min_number_of_executed_things`](crate::types::builders::AbortCriteriaBuilder::min_number_of_executed_things)
     pub fn build(self) -> ::std::result::Result<crate::types::AbortCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AbortCriteria {
-            failure_type: self.failure_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failure_type",
-                    "failure_type was not specified but it is required when building AbortCriteria",
-                )
-            })?,
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building AbortCriteria",
-                )
-            })?,
-            threshold_percentage: self.threshold_percentage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "threshold_percentage",
-                    "threshold_percentage was not specified but it is required when building AbortCriteria",
-                )
-            })?,
-            min_number_of_executed_things: self.min_number_of_executed_things.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_number_of_executed_things",
-                    "min_number_of_executed_things was not specified but it is required when building AbortCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AbortCriteria {
+                failure_type: self.failure_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failure_type", "failure_type was not specified but it is required when building AbortCriteria")
+                    )?
+                ,
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building AbortCriteria")
+                    )?
+                ,
+                threshold_percentage: self.threshold_percentage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("threshold_percentage", "threshold_percentage was not specified but it is required when building AbortCriteria")
+                    )?
+                ,
+                min_number_of_executed_things: self.min_number_of_executed_things
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_number_of_executed_things", "min_number_of_executed_things was not specified but it is required when building AbortCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+

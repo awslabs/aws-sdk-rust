@@ -124,3 +124,4 @@ pub mod builders;
 
 /// Error types that Amazon WorkSpaces Web can respond with.
 pub mod error;
+

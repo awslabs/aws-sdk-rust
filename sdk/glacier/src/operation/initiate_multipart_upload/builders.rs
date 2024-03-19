@@ -5,23 +5,20 @@ pub use crate::operation::initiate_multipart_upload::_initiate_multipart_upload_
 
 impl InitiateMultipartUploadInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.initiate_multipart_upload();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.initiate_multipart_upload();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `InitiateMultipartUpload`.
-///
+/// 
 /// <p>This operation initiates a multipart upload. Amazon S3 Glacier creates a multipart upload resource and returns its ID in the response. The multipart upload ID is used in subsequent requests to upload parts of an archive (see <code>UploadMultipartPart</code>).</p>
 /// <p>When you initiate a multipart upload, you specify the part size in number of bytes. The part size must be a megabyte (1024 KB) multiplied by a power of 2-for example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB.</p>
 /// <p>Every part you upload to this resource (see <code>UploadMultipartPart</code>), except the last one, must have the same size. The last one can be the same size or smaller. For example, suppose you want to upload a 16.2 MB file. If you initiate the multipart upload with a part size of 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB.</p><note>
@@ -33,33 +30,32 @@ impl InitiateMultipartUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder,
+                    inner: crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-    > for InitiateMultipartUploadFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
+                    crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
+                > for InitiateMultipartUploadFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
+                        crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl InitiateMultipartUploadFluentBuilder {
     /// Creates a new `InitiateMultipartUpload`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -68,53 +64,44 @@ impl InitiateMultipartUploadFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::initiate_multipart_upload::InitiateMultipartUpload::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::initiate_multipart_upload::InitiateMultipartUpload::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::initiate_multipart_upload::InitiateMultipartUpload::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::initiate_multipart_upload::InitiateMultipartUpload::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput, crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -175,3 +162,4 @@ impl InitiateMultipartUploadFluentBuilder {
         self.inner.get_part_size()
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Specifies the details of the page to be fetched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FetchPageRequest {
+pub struct FetchPageRequest  {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     pub transaction_id: ::std::string::String,
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub next_page_token: ::std::string::String,
 }
-impl FetchPageRequest {
+impl  FetchPageRequest  {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
-    pub fn transaction_id(&self) -> &str {
-        use std::ops::Deref;
-        self.transaction_id.deref()
+    pub fn transaction_id(&self) -> & str {
+        use std::ops::Deref; self.transaction_id.deref()
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
-    pub fn next_page_token(&self) -> &str {
-        use std::ops::Deref;
-        self.next_page_token.deref()
+    pub fn next_page_token(&self) -> & str {
+        use std::ops::Deref; self.next_page_token.deref()
     }
 }
 impl FetchPageRequest {
@@ -44,8 +42,7 @@ impl FetchPageRequestBuilder {
     }
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl FetchPageRequestBuilder {
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl FetchPageRequestBuilder {
     /// - [`transaction_id`](crate::types::builders::FetchPageRequestBuilder::transaction_id)
     /// - [`next_page_token`](crate::types::builders::FetchPageRequestBuilder::next_page_token)
     pub fn build(self) -> ::std::result::Result<crate::types::FetchPageRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FetchPageRequest {
-            transaction_id: self.transaction_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transaction_id",
-                    "transaction_id was not specified but it is required when building FetchPageRequest",
-                )
-            })?,
-            next_page_token: self.next_page_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "next_page_token",
-                    "next_page_token was not specified but it is required when building FetchPageRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FetchPageRequest {
+                transaction_id: self.transaction_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transaction_id", "transaction_id was not specified but it is required when building FetchPageRequest")
+                    )?
+                ,
+                next_page_token: self.next_page_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("next_page_token", "next_page_token was not specified but it is required when building FetchPageRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

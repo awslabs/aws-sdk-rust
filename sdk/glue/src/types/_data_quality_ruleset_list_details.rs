@@ -3,7 +3,7 @@
 /// <p>Describes a data quality ruleset returned by <code>GetDataQualityRuleset</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityRulesetListDetails {
+pub struct DataQualityRulesetListDetails  {
     /// <p>The name of the data quality ruleset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data quality ruleset.</p>
@@ -19,29 +19,29 @@ pub struct DataQualityRulesetListDetails {
     /// <p>The number of rules in the ruleset.</p>
     pub rule_count: ::std::option::Option<i32>,
 }
-impl DataQualityRulesetListDetails {
+impl  DataQualityRulesetListDetails  {
     /// <p>The name of the data quality ruleset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the data quality ruleset.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time the data quality ruleset was created.</p>
-    pub fn created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The date and time the data quality ruleset was last modified.</p>
-    pub fn last_modified_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>An object representing an Glue table.</p>
-    pub fn target_table(&self) -> ::std::option::Option<&crate::types::DataQualityTargetTable> {
+    pub fn target_table(&self) -> ::std::option::Option<& crate::types::DataQualityTargetTable> {
         self.target_table.as_ref()
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
-    pub fn recommendation_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_run_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_run_id.as_deref()
     }
     /// <p>The number of rules in the ruleset.</p>
@@ -76,8 +76,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>The name of the data quality ruleset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data quality ruleset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>A description of the data quality ruleset.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the data quality ruleset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>The date and time the data quality ruleset was created.</p>
     pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_on = input;
-        self
+        self.created_on = input; self
     }
     /// <p>The date and time the data quality ruleset was created.</p>
     pub fn get_created_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>The date and time the data quality ruleset was last modified.</p>
     pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_on = input;
-        self
+        self.last_modified_on = input; self
     }
     /// <p>The date and time the data quality ruleset was last modified.</p>
     pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>An object representing an Glue table.</p>
     pub fn set_target_table(mut self, input: ::std::option::Option<crate::types::DataQualityTargetTable>) -> Self {
-        self.target_table = input;
-        self
+        self.target_table = input; self
     }
     /// <p>An object representing an Glue table.</p>
     pub fn get_target_table(&self) -> &::std::option::Option<crate::types::DataQualityTargetTable> {
@@ -146,8 +141,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
     pub fn set_recommendation_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_run_id = input;
-        self
+        self.recommendation_run_id = input; self
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
     pub fn get_recommendation_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl DataQualityRulesetListDetailsBuilder {
     }
     /// <p>The number of rules in the ruleset.</p>
     pub fn set_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_count = input;
-        self
+        self.rule_count = input; self
     }
     /// <p>The number of rules in the ruleset.</p>
     pub fn get_rule_count(&self) -> &::std::option::Option<i32> {
@@ -170,13 +163,21 @@ impl DataQualityRulesetListDetailsBuilder {
     /// Consumes the builder and constructs a [`DataQualityRulesetListDetails`](crate::types::DataQualityRulesetListDetails).
     pub fn build(self) -> crate::types::DataQualityRulesetListDetails {
         crate::types::DataQualityRulesetListDetails {
-            name: self.name,
-            description: self.description,
-            created_on: self.created_on,
-            last_modified_on: self.last_modified_on,
-            target_table: self.target_table,
-            recommendation_run_id: self.recommendation_run_id,
-            rule_count: self.rule_count,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            created_on: self.created_on
+            ,
+            last_modified_on: self.last_modified_on
+            ,
+            target_table: self.target_table
+            ,
+            recommendation_run_id: self.recommendation_run_id
+            ,
+            rule_count: self.rule_count
+            ,
         }
     }
 }
+

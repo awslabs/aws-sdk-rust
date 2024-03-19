@@ -21,11 +21,7 @@ impl MembershipProtectedQueryOutputConfiguration {
     /// Tries to convert the enum instance into [`S3`](crate::types::MembershipProtectedQueryOutputConfiguration::S3), extracting the inner [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&crate::types::ProtectedQueryS3OutputConfiguration, &Self> {
-        if let MembershipProtectedQueryOutputConfiguration::S3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MembershipProtectedQueryOutputConfiguration::S3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::MembershipProtectedQueryOutputConfiguration::S3).
     pub fn is_s3(&self) -> bool {
@@ -36,3 +32,4 @@ impl MembershipProtectedQueryOutputConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

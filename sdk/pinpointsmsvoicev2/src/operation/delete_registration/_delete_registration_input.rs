@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRegistrationInput {
+pub struct DeleteRegistrationInput  {
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRegistrationInput {
+impl  DeleteRegistrationInput  {
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_id(&self) -> ::std::option::Option<& str> {
         self.registration_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteRegistrationInputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_id
     }
     /// Consumes the builder and constructs a [`DeleteRegistrationInput`](crate::operation::delete_registration::DeleteRegistrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_registration::DeleteRegistrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_registration::DeleteRegistrationInput {
-            registration_id: self.registration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_registration::DeleteRegistrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_registration::DeleteRegistrationInput {
+                registration_id: self.registration_id
+                ,
+            }
+        )
     }
 }
+

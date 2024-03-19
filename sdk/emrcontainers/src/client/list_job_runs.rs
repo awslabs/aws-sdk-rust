@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListJobRuns`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`virtual_cluster_id(impl Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::virtual_cluster_id) / [`set_virtual_cluster_id(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_virtual_cluster_id):<br>required: **true**<br><p>The ID of the virtual cluster for which to list the job run.</p><br>
     ///   - [`created_before(DateTime)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::created_before) / [`set_created_before(Option<DateTime>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_created_before):<br>required: **false**<br><p>The date and time before which the job runs were submitted.</p><br>
     ///   - [`created_after(DateTime)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_created_after):<br>required: **false**<br><p>The date and time after which the job runs were submitted.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`states(JobRunState)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::states) / [`set_states(Option<Vec::<JobRunState>>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_states):<br>required: **false**<br><p>The states of the job run.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of job runs that can be listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of job runs to return.</p><br>
-    /// - On success, responds with [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput) with field(s):
+                            /// - On success, responds with [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput) with field(s):
     ///   - [`job_runs(Option<Vec::<JobRun>>)`](crate::operation::list_job_runs::ListJobRunsOutput::job_runs): <p>This output lists information about the specified job runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_runs::ListJobRunsOutput::next_token): <p>This output displays the token for the next set of job runs.</p>
-    /// - On failure, responds with [`SdkError<ListJobRunsError>`](crate::operation::list_job_runs::ListJobRunsError)
+                            /// - On failure, responds with [`SdkError<ListJobRunsError>`](crate::operation::list_job_runs::ListJobRunsError)
     pub fn list_job_runs(&self) -> crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder {
-        crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

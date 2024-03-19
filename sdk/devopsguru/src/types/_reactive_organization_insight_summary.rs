@@ -3,7 +3,7 @@
 /// <p>Information about a reactive insight. This object is returned by <code>DescribeInsight</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReactiveOrganizationInsightSummary {
+pub struct ReactiveOrganizationInsightSummary  {
     /// <p>The ID of the insight summary.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
@@ -23,41 +23,41 @@ pub struct ReactiveOrganizationInsightSummary {
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub service_collection: ::std::option::Option<crate::types::ServiceCollection>,
 }
-impl ReactiveOrganizationInsightSummary {
+impl  ReactiveOrganizationInsightSummary  {
     /// <p>The ID of the insight summary.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<& str> {
         self.organizational_unit_id.as_deref()
     }
     /// <p>The name of the insight summary.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::InsightSeverity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::InsightSeverity> {
         self.severity.as_ref()
     }
     /// <p>An array of status values used to search for insights.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InsightStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InsightStatus> {
         self.status.as_ref()
     }
     /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
-    pub fn insight_time_range(&self) -> ::std::option::Option<&crate::types::InsightTimeRange> {
+    pub fn insight_time_range(&self) -> ::std::option::Option<& crate::types::InsightTimeRange> {
         self.insight_time_range.as_ref()
     }
     /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
-    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> ::std::option::Option<& crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    pub fn service_collection(&self) -> ::std::option::Option<&crate::types::ServiceCollection> {
+    pub fn service_collection(&self) -> ::std::option::Option<& crate::types::ServiceCollection> {
         self.service_collection.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>The ID of the insight summary.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the insight summary.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>The ID of the organizational unit.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit_id = input;
-        self
+        self.organizational_unit_id = input; self
     }
     /// <p>The ID of the organizational unit.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>The name of the insight summary.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the insight summary.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::InsightSeverity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>An array of severity values used to search for insights. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::InsightSeverity> {
@@ -160,8 +155,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>An array of status values used to search for insights.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>An array of status values used to search for insights.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
@@ -174,8 +168,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
     pub fn set_insight_time_range(mut self, input: ::std::option::Option<crate::types::InsightTimeRange>) -> Self {
-        self.insight_time_range = input;
-        self
+        self.insight_time_range = input; self
     }
     /// <p>A time ranged that specifies when the observed behavior in an insight started and ended.</p>
     pub fn get_insight_time_range(&self) -> &::std::option::Option<crate::types::InsightTimeRange> {
@@ -188,8 +181,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
     pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
-        self.resource_collection = input;
-        self
+        self.resource_collection = input; self
     }
     /// <p>A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
     pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
@@ -202,8 +194,7 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn set_service_collection(mut self, input: ::std::option::Option<crate::types::ServiceCollection>) -> Self {
-        self.service_collection = input;
-        self
+        self.service_collection = input; self
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn get_service_collection(&self) -> &::std::option::Option<crate::types::ServiceCollection> {
@@ -212,15 +203,25 @@ impl ReactiveOrganizationInsightSummaryBuilder {
     /// Consumes the builder and constructs a [`ReactiveOrganizationInsightSummary`](crate::types::ReactiveOrganizationInsightSummary).
     pub fn build(self) -> crate::types::ReactiveOrganizationInsightSummary {
         crate::types::ReactiveOrganizationInsightSummary {
-            id: self.id,
-            account_id: self.account_id,
-            organizational_unit_id: self.organizational_unit_id,
-            name: self.name,
-            severity: self.severity,
-            status: self.status,
-            insight_time_range: self.insight_time_range,
-            resource_collection: self.resource_collection,
-            service_collection: self.service_collection,
+            id: self.id
+            ,
+            account_id: self.account_id
+            ,
+            organizational_unit_id: self.organizational_unit_id
+            ,
+            name: self.name
+            ,
+            severity: self.severity
+            ,
+            status: self.status
+            ,
+            insight_time_range: self.insight_time_range
+            ,
+            resource_collection: self.resource_collection
+            ,
+            service_collection: self.service_collection
+            ,
         }
     }
 }
+

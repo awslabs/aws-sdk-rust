@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteMultipartReadSetUploadOutput {
+pub struct CompleteMultipartReadSetUploadOutput  {
     /// <p>The read set ID created for an uploaded read set.</p>
     pub read_set_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CompleteMultipartReadSetUploadOutput {
+impl  CompleteMultipartReadSetUploadOutput  {
     /// <p>The read set ID created for an uploaded read set.</p>
-    pub fn read_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.read_set_id.deref()
+    pub fn read_set_id(&self) -> & str {
+        use std::ops::Deref; self.read_set_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CompleteMultipartReadSetUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CompleteMultipartReadSetUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput).
     pub fn builder() -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder {
@@ -42,41 +41,35 @@ impl CompleteMultipartReadSetUploadOutputBuilder {
     }
     /// <p>The read set ID created for an uploaded read set.</p>
     pub fn set_read_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.read_set_id = input;
-        self
+        self.read_set_id = input; self
     }
     /// <p>The read set ID created for an uploaded read set.</p>
     pub fn get_read_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.read_set_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`read_set_id`](crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder::read_set_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput {
-                read_set_id: self.read_set_id.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "read_set_id",
-                        "read_set_id was not specified but it is required when building CompleteMultipartReadSetUploadOutput",
-                    )
-                })?,
+                read_set_id: self.read_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("read_set_id", "read_set_id was not specified but it is required when building CompleteMultipartReadSetUploadOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

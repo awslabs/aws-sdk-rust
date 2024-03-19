@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBotAliasOutput {
+pub struct PutBotAliasOutput  {
     /// <p>The name of the alias.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the alias.</p>
@@ -20,54 +20,55 @@ pub struct PutBotAliasOutput {
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
     pub conversation_logs: ::std::option::Option<crate::types::ConversationLogsResponse>,
     /// <p>A list of tags associated with a bot.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl PutBotAliasOutput {
+impl  PutBotAliasOutput  {
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot that the alias points to.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The name of the bot that the alias points to.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot alias was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The checksum for the current version of the alias.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-    pub fn conversation_logs(&self) -> ::std::option::Option<&crate::types::ConversationLogsResponse> {
+    pub fn conversation_logs(&self) -> ::std::option::Option<& crate::types::ConversationLogsResponse> {
         self.conversation_logs.as_ref()
     }
     /// <p>A list of tags associated with a bot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutBotAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`PutBotAliasOutput`](crate::operation::put_bot_alias::PutBotAliasOutput).
     pub fn builder() -> crate::operation::put_bot_alias::builders::PutBotAliasOutputBuilder {
@@ -87,7 +88,7 @@ pub struct PutBotAliasOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) conversation_logs: ::std::option::Option<crate::types::ConversationLogsResponse>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl PutBotAliasOutputBuilder {
@@ -98,8 +99,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +112,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>A description of the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The version of the bot that the alias points to.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot that the alias points to.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The name of the bot that the alias points to.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the bot that the alias points to.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +164,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The date that the bot alias was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date that the bot alias was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +177,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The checksum for the current version of the alias.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The checksum for the current version of the alias.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +190,7 @@ impl PutBotAliasOutputBuilder {
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
     pub fn set_conversation_logs(mut self, input: ::std::option::Option<crate::types::ConversationLogsResponse>) -> Self {
-        self.conversation_logs = input;
-        self
+        self.conversation_logs = input; self
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
     pub fn get_conversation_logs(&self) -> &::std::option::Option<crate::types::ConversationLogsResponse> {
@@ -210,41 +203,50 @@ impl PutBotAliasOutputBuilder {
     /// <p>A list of tags associated with a bot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags associated with a bot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with a bot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutBotAliasOutput`](crate::operation::put_bot_alias::PutBotAliasOutput).
     pub fn build(self) -> crate::operation::put_bot_alias::PutBotAliasOutput {
         crate::operation::put_bot_alias::PutBotAliasOutput {
-            name: self.name,
-            description: self.description,
-            bot_version: self.bot_version,
-            bot_name: self.bot_name,
-            last_updated_date: self.last_updated_date,
-            created_date: self.created_date,
-            checksum: self.checksum,
-            conversation_logs: self.conversation_logs,
-            tags: self.tags,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            bot_version: self.bot_version
+            ,
+            bot_name: self.bot_name
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            created_date: self.created_date
+            ,
+            checksum: self.checksum
+            ,
+            conversation_logs: self.conversation_logs
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

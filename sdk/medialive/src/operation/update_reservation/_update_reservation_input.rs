@@ -3,7 +3,7 @@
 /// Request to update a reservation
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReservationInput {
+pub struct UpdateReservationInput  {
     /// Name of the reservation
     pub name: ::std::option::Option<::std::string::String>,
     /// Renewal settings for the reservation
@@ -11,17 +11,17 @@ pub struct UpdateReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateReservationInput {
+impl  UpdateReservationInput  {
     /// Name of the reservation
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Renewal settings for the reservation
-    pub fn renewal_settings(&self) -> ::std::option::Option<&crate::types::RenewalSettings> {
+    pub fn renewal_settings(&self) -> ::std::option::Option<& crate::types::RenewalSettings> {
         self.renewal_settings.as_ref()
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateReservationInputBuilder {
     }
     /// Name of the reservation
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name of the reservation
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateReservationInputBuilder {
     }
     /// Renewal settings for the reservation
     pub fn set_renewal_settings(mut self, input: ::std::option::Option<crate::types::RenewalSettings>) -> Self {
-        self.renewal_settings = input;
-        self
+        self.renewal_settings = input; self
     }
     /// Renewal settings for the reservation
     pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
@@ -77,21 +75,24 @@ impl UpdateReservationInputBuilder {
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_id = input;
-        self
+        self.reservation_id = input; self
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reservation_id
     }
     /// Consumes the builder and constructs a [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_reservation::UpdateReservationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_reservation::UpdateReservationInput {
-            name: self.name,
-            renewal_settings: self.renewal_settings,
-            reservation_id: self.reservation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_reservation::UpdateReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_reservation::UpdateReservationInput {
+                name: self.name
+                ,
+                renewal_settings: self.renewal_settings
+                ,
+                reservation_id: self.reservation_id
+                ,
+            }
+        )
     }
 }
+

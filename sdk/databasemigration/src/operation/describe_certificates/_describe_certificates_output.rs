@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCertificatesOutput {
+pub struct DescribeCertificatesOutput  {
     /// <p>The pagination token.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
     _request_id: Option<String>,
 }
-impl DescribeCertificatesOutput {
+impl  DescribeCertificatesOutput  {
     /// <p>The pagination token.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
-    pub fn certificates(&self) -> &[crate::types::Certificate] {
-        self.certificates.as_deref().unwrap_or_default()
+    pub fn certificates(&self) -> & [crate::types::Certificate] {
+        self.certificates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
     pub fn builder() -> crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeCertificatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
     _request_id: Option<String>,
 }
 impl DescribeCertificatesOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeCertificatesOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeCertificatesOutputBuilder {
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Certificate>> {
         &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
     pub fn build(self) -> crate::operation::describe_certificates::DescribeCertificatesOutput {
         crate::operation::describe_certificates::DescribeCertificatesOutput {
-            marker: self.marker,
-            certificates: self.certificates,
+            marker: self.marker
+            ,
+            certificates: self.certificates
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

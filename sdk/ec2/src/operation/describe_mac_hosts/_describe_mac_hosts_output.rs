@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMacHostsOutput {
+pub struct DescribeMacHostsOutput  {
     /// <p>Information about the EC2 Mac Dedicated Hosts.</p>
-    pub mac_hosts: ::std::option::Option<::std::vec::Vec<crate::types::MacHost>>,
+    pub mac_hosts: ::std::option::Option<::std::vec::Vec::<crate::types::MacHost>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMacHostsOutput {
+impl  DescribeMacHostsOutput  {
     /// <p>Information about the EC2 Mac Dedicated Hosts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_hosts.is_none()`.
-    pub fn mac_hosts(&self) -> &[crate::types::MacHost] {
-        self.mac_hosts.as_deref().unwrap_or_default()
+    pub fn mac_hosts(&self) -> & [crate::types::MacHost] {
+        self.mac_hosts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMacHostsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMacHostsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMacHostsOutput`](crate::operation::describe_mac_hosts::DescribeMacHostsOutput).
     pub fn builder() -> crate::operation::describe_mac_hosts::builders::DescribeMacHostsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeMacHostsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMacHostsOutputBuilder {
-    pub(crate) mac_hosts: ::std::option::Option<::std::vec::Vec<crate::types::MacHost>>,
+    pub(crate) mac_hosts: ::std::option::Option<::std::vec::Vec::<crate::types::MacHost>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeMacHostsOutputBuilder {
     /// <p>Information about the EC2 Mac Dedicated Hosts.</p>
     pub fn mac_hosts(mut self, input: crate::types::MacHost) -> Self {
         let mut v = self.mac_hosts.unwrap_or_default();
-        v.push(input);
-        self.mac_hosts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mac_hosts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the EC2 Mac Dedicated Hosts.</p>
-    pub fn set_mac_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacHost>>) -> Self {
-        self.mac_hosts = input;
-        self
+    pub fn set_mac_hosts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MacHost>>) -> Self {
+        self.mac_hosts = input; self
     }
     /// <p>Information about the EC2 Mac Dedicated Hosts.</p>
-    pub fn get_mac_hosts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacHost>> {
+    pub fn get_mac_hosts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MacHost>> {
         &self.mac_hosts
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl DescribeMacHostsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMacHostsOutput`](crate::operation::describe_mac_hosts::DescribeMacHostsOutput).
     pub fn build(self) -> crate::operation::describe_mac_hosts::DescribeMacHostsOutput {
         crate::operation::describe_mac_hosts::DescribeMacHostsOutput {
-            mac_hosts: self.mac_hosts,
-            next_token: self.next_token,
+            mac_hosts: self.mac_hosts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

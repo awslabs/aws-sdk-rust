@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEndpointGroups`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`listener_arn(impl Into<String>)`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::listener_arn) / [`set_listener_arn(Option<String>)`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::set_listener_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the listener.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListEndpointGroupsOutput`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListEndpointGroupsOutput`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput) with field(s):
     ///   - [`endpoint_groups(Option<Vec::<EndpointGroup>>)`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput::endpoint_groups): <p>The list of the endpoint groups associated with a listener.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListEndpointGroupsError>`](crate::operation::list_endpoint_groups::ListEndpointGroupsError)
+                            /// - On failure, responds with [`SdkError<ListEndpointGroupsError>`](crate::operation::list_endpoint_groups::ListEndpointGroupsError)
     pub fn list_endpoint_groups(&self) -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder {
-        crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_endpoint_groups::builders::ListEndpointGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

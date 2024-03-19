@@ -3,20 +3,19 @@
 /// <p>An object that represents a virtual service backend for a virtual node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualServiceBackend {
+pub struct VirtualServiceBackend  {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     pub virtual_service_name: ::std::string::String,
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }
-impl VirtualServiceBackend {
+impl  VirtualServiceBackend  {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    pub fn virtual_service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_service_name.deref()
+    pub fn virtual_service_name(&self) -> & str {
+        use std::ops::Deref; self.virtual_service_name.deref()
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
-    pub fn client_policy(&self) -> ::std::option::Option<&crate::types::ClientPolicy> {
+    pub fn client_policy(&self) -> ::std::option::Option<& crate::types::ClientPolicy> {
         self.client_policy.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl VirtualServiceBackendBuilder {
     }
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_service_name = input;
-        self
+        self.virtual_service_name = input; self
     }
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     pub fn get_virtual_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl VirtualServiceBackendBuilder {
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub fn set_client_policy(mut self, input: ::std::option::Option<crate::types::ClientPolicy>) -> Self {
-        self.client_policy = input;
-        self
+        self.client_policy = input; self
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub fn get_client_policy(&self) -> &::std::option::Option<crate::types::ClientPolicy> {
@@ -68,14 +65,17 @@ impl VirtualServiceBackendBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_service_name`](crate::types::builders::VirtualServiceBackendBuilder::virtual_service_name)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualServiceBackend, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualServiceBackend {
-            virtual_service_name: self.virtual_service_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_service_name",
-                    "virtual_service_name was not specified but it is required when building VirtualServiceBackend",
-                )
-            })?,
-            client_policy: self.client_policy,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualServiceBackend {
+                virtual_service_name: self.virtual_service_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_service_name", "virtual_service_name was not specified but it is required when building VirtualServiceBackend")
+                    )?
+                ,
+                client_policy: self.client_policy
+                ,
+            }
+        )
     }
 }
+

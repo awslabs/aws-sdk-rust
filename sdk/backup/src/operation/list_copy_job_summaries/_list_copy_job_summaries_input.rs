@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCopyJobSummariesInput {
+pub struct ListCopyJobSummariesInput  {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
@@ -38,32 +38,32 @@ pub struct ListCopyJobSummariesInput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListCopyJobSummariesInput {
+impl  ListCopyJobSummariesInput  {
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CopyJobStatus> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CopyJobStatus> {
         self.state.as_ref()
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
-    pub fn message_category(&self) -> ::std::option::Option<&str> {
+    pub fn message_category(&self) -> ::std::option::Option<& str> {
         self.message_category.as_deref()
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
@@ -75,7 +75,7 @@ impl ListCopyJobSummariesInput {
     /// <li>
     /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
-    pub fn aggregation_period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
+    pub fn aggregation_period(&self) -> ::std::option::Option<& crate::types::AggregationPeriod> {
         self.aggregation_period.as_ref()
     }
     /// <p>This parameter sets the maximum number of items to be returned.</p>
@@ -84,7 +84,7 @@ impl ListCopyJobSummariesInput {
         self.max_results
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -121,8 +121,7 @@ impl ListCopyJobSummariesInputBuilder {
     /// <p>Root, admin, and delegated administrator accounts can use the value ANY to return job counts from every account in the organization.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Returns the job count for the specified account.</p>
     /// <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>
@@ -142,8 +141,7 @@ impl ListCopyJobSummariesInputBuilder {
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CopyJobStatus>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
@@ -164,8 +162,7 @@ impl ListCopyJobSummariesInputBuilder {
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
@@ -187,8 +184,7 @@ impl ListCopyJobSummariesInputBuilder {
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_category = input;
-        self
+        self.message_category = input; self
     }
     /// <p>This parameter returns the job count for the specified message category.</p>
     /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
@@ -220,8 +216,7 @@ impl ListCopyJobSummariesInputBuilder {
     /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
@@ -244,8 +239,7 @@ impl ListCopyJobSummariesInputBuilder {
     /// <p>This parameter sets the maximum number of items to be returned.</p>
     /// <p>The value is an integer. Range of accepted values is from 1 to 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>This parameter sets the maximum number of items to be returned.</p>
     /// <p>The value is an integer. Range of accepted values is from 1 to 500.</p>
@@ -259,26 +253,32 @@ impl ListCopyJobSummariesInputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCopyJobSummariesInput`](crate::operation::list_copy_job_summaries::ListCopyJobSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_copy_job_summaries::ListCopyJobSummariesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_copy_job_summaries::ListCopyJobSummariesInput {
-            account_id: self.account_id,
-            state: self.state,
-            resource_type: self.resource_type,
-            message_category: self.message_category,
-            aggregation_period: self.aggregation_period,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_copy_job_summaries::ListCopyJobSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_copy_job_summaries::ListCopyJobSummariesInput {
+                account_id: self.account_id
+                ,
+                state: self.state
+                ,
+                resource_type: self.resource_type
+                ,
+                message_category: self.message_category
+                ,
+                aggregation_period: self.aggregation_period
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

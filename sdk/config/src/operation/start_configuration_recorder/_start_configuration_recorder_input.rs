@@ -3,13 +3,13 @@
 /// <p>The input for the <code>StartConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartConfigurationRecorderInput {
+pub struct StartConfigurationRecorderInput  {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }
-impl StartConfigurationRecorderInput {
+impl  StartConfigurationRecorderInput  {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
-    pub fn configuration_recorder_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_recorder_name(&self) -> ::std::option::Option<& str> {
         self.configuration_recorder_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl StartConfigurationRecorderInputBuilder {
     }
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub fn set_configuration_recorder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_recorder_name = input;
-        self
+        self.configuration_recorder_name = input; self
     }
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_recorder_name
     }
     /// Consumes the builder and constructs a [`StartConfigurationRecorderInput`](crate::operation::start_configuration_recorder::StartConfigurationRecorderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_configuration_recorder::StartConfigurationRecorderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_configuration_recorder::StartConfigurationRecorderInput {
-            configuration_recorder_name: self.configuration_recorder_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_configuration_recorder::StartConfigurationRecorderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderInput {
+                configuration_recorder_name: self.configuration_recorder_name
+                ,
+            }
+        )
     }
 }
+

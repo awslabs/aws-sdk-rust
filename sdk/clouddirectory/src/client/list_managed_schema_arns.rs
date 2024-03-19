@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListManagedSchemaArns`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`schema_arn(impl Into<String>)`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::set_schema_arn):<br>required: **false**<br><p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
-    /// - On success, responds with [`ListManagedSchemaArnsOutput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput) with field(s):
+                            /// - On success, responds with [`ListManagedSchemaArnsOutput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput) with field(s):
     ///   - [`schema_arns(Option<Vec::<String>>)`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput::schema_arns): <p>The ARNs for all AWS managed schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListManagedSchemaArnsError>`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError)
+                            /// - On failure, responds with [`SdkError<ListManagedSchemaArnsError>`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError)
     pub fn list_managed_schema_arns(&self) -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder {
-        crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

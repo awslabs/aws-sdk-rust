@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServiceNetworkServiceAssociations`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::set_service_network_identifier):<br>required: **false**<br><p>The ID or Amazon Resource Name (ARN) of the service network.</p><br>
     ///   - [`service_identifier(impl Into<String>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::set_service_identifier):<br>required: **false**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
-    /// - On success, responds with [`ListServiceNetworkServiceAssociationsOutput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListServiceNetworkServiceAssociationsOutput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput) with field(s):
     ///   - [`items(Vec::<ServiceNetworkServiceAssociationSummary>)`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput::items): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListServiceNetworkServiceAssociationsError>`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError)
-    pub fn list_service_network_service_associations(
-        &self,
-    ) -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder {
-        crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListServiceNetworkServiceAssociationsError>`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError)
+    pub fn list_service_network_service_associations(&self) -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder {
+                                crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

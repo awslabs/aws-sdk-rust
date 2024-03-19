@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetDefaultPermissionVersionInput {
+pub struct SetDefaultPermissionVersionInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
     pub permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
@@ -12,9 +12,9 @@ pub struct SetDefaultPermissionVersionInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl SetDefaultPermissionVersionInput {
+impl  SetDefaultPermissionVersionInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
-    pub fn permission_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_arn(&self) -> ::std::option::Option<& str> {
         self.permission_arn.as_deref()
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
@@ -24,7 +24,7 @@ impl SetDefaultPermissionVersionInput {
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl SetDefaultPermissionVersionInputBuilder {
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
     pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_arn = input;
-        self
+        self.permission_arn = input; self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
     pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl SetDefaultPermissionVersionInputBuilder {
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
     pub fn set_permission_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.permission_version = input;
-        self
+        self.permission_version = input; self
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
     pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl SetDefaultPermissionVersionInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -95,16 +92,17 @@ impl SetDefaultPermissionVersionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`SetDefaultPermissionVersionInput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput {
-            permission_arn: self.permission_arn,
-            permission_version: self.permission_version,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput {
+                permission_arn: self.permission_arn
+                ,
+                permission_version: self.permission_version
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

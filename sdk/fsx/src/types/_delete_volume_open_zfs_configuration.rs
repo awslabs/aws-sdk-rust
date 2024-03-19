@@ -3,16 +3,17 @@
 /// <p>A value that specifies whether to delete all child volumes and snapshots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVolumeOpenZfsConfiguration {
+pub struct DeleteVolumeOpenZfsConfiguration  {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>>,
+    pub options: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteOpenZfsVolumeOption>>,
 }
-impl DeleteVolumeOpenZfsConfiguration {
+impl  DeleteVolumeOpenZfsConfiguration  {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
-    pub fn options(&self) -> &[crate::types::DeleteOpenZfsVolumeOption] {
-        self.options.as_deref().unwrap_or_default()
+    pub fn options(&self) -> & [crate::types::DeleteOpenZfsVolumeOption] {
+        self.options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteVolumeOpenZfsConfiguration {
@@ -26,7 +27,7 @@ impl DeleteVolumeOpenZfsConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVolumeOpenZfsConfigurationBuilder {
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteOpenZfsVolumeOption>>,
 }
 impl DeleteVolumeOpenZfsConfigurationBuilder {
     /// Appends an item to `options`.
@@ -36,21 +37,24 @@ impl DeleteVolumeOpenZfsConfigurationBuilder {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     pub fn options(mut self, input: crate::types::DeleteOpenZfsVolumeOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteOpenZfsVolumeOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteOpenZfsVolumeOption>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`DeleteVolumeOpenZfsConfiguration`](crate::types::DeleteVolumeOpenZfsConfiguration).
     pub fn build(self) -> crate::types::DeleteVolumeOpenZfsConfiguration {
-        crate::types::DeleteVolumeOpenZfsConfiguration { options: self.options }
+        crate::types::DeleteVolumeOpenZfsConfiguration {
+            options: self.options
+            ,
+        }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkspaces`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.</p> <p>For example, if your initial request has <code>maxResults</code> of 10, and there are 12 workspaces to return, then your initial request will return 10 and a <code>nextToken</code>. Using the next token in a subsequent call will return the remaining 2 workspaces.</p><br>
     ///   - [`alias(impl Into<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_alias):<br>required: **false**<br><p>If this is included, it filters the results to only the workspaces with names that start with the value that you specify here.</p> <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of workspaces to return per request. The default is 100.</p><br>
-    /// - On success, responds with [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput) with field(s):
+                            /// - On success, responds with [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput) with field(s):
     ///   - [`workspaces(Vec::<WorkspaceSummary>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspaces): <p>An array of <code>WorkspaceSummary</code> structures containing information about the workspaces requested.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workspaces::ListWorkspacesOutput::next_token): <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListWorkspaces</code> request to retrieve those results.</p>
-    /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
+                            /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
     pub fn list_workspaces(&self) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {
-        crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

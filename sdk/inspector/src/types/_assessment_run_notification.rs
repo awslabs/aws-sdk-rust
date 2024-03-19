@@ -3,7 +3,7 @@
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentRunNotification {
+pub struct AssessmentRunNotification  {
     /// <p>The date of the notification.</p>
     pub date: ::aws_smithy_types::DateTime,
     /// <p>The event for which a notification is sent.</p>
@@ -17,17 +17,17 @@ pub struct AssessmentRunNotification {
     /// <p>The status code of the SNS notification.</p>
     pub sns_publish_status_code: ::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
 }
-impl AssessmentRunNotification {
+impl  AssessmentRunNotification  {
     /// <p>The date of the notification.</p>
-    pub fn date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn date(&self) -> & ::aws_smithy_types::DateTime {
         &self.date
     }
     /// <p>The event for which a notification is sent.</p>
-    pub fn event(&self) -> &crate::types::InspectorEvent {
+    pub fn event(&self) -> & crate::types::InspectorEvent {
         &self.event
     }
     /// <p>The message included in the notification.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
@@ -35,11 +35,11 @@ impl AssessmentRunNotification {
         self.error
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The status code of the SNS notification.</p>
-    pub fn sns_publish_status_code(&self) -> ::std::option::Option<&crate::types::AssessmentRunNotificationSnsStatusCode> {
+    pub fn sns_publish_status_code(&self) -> ::std::option::Option<& crate::types::AssessmentRunNotificationSnsStatusCode> {
         self.sns_publish_status_code.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl AssessmentRunNotificationBuilder {
     }
     /// <p>The date of the notification.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date of the notification.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -85,8 +84,7 @@ impl AssessmentRunNotificationBuilder {
     }
     /// <p>The event for which a notification is sent.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::InspectorEvent>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The event for which a notification is sent.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::InspectorEvent> {
@@ -99,8 +97,7 @@ impl AssessmentRunNotificationBuilder {
     }
     /// <p>The message included in the notification.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message included in the notification.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl AssessmentRunNotificationBuilder {
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
     pub fn get_error(&self) -> &::std::option::Option<bool> {
@@ -128,8 +124,7 @@ impl AssessmentRunNotificationBuilder {
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +137,7 @@ impl AssessmentRunNotificationBuilder {
     }
     /// <p>The status code of the SNS notification.</p>
     pub fn set_sns_publish_status_code(mut self, input: ::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>) -> Self {
-        self.sns_publish_status_code = input;
-        self
+        self.sns_publish_status_code = input; self
     }
     /// <p>The status code of the SNS notification.</p>
     pub fn get_sns_publish_status_code(&self) -> &::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode> {
@@ -155,28 +149,31 @@ impl AssessmentRunNotificationBuilder {
     /// - [`event`](crate::types::builders::AssessmentRunNotificationBuilder::event)
     /// - [`error`](crate::types::builders::AssessmentRunNotificationBuilder::error)
     pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunNotification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssessmentRunNotification {
-            date: self.date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "date",
-                    "date was not specified but it is required when building AssessmentRunNotification",
-                )
-            })?,
-            event: self.event.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event",
-                    "event was not specified but it is required when building AssessmentRunNotification",
-                )
-            })?,
-            message: self.message,
-            error: self.error.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error",
-                    "error was not specified but it is required when building AssessmentRunNotification",
-                )
-            })?,
-            sns_topic_arn: self.sns_topic_arn,
-            sns_publish_status_code: self.sns_publish_status_code,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssessmentRunNotification {
+                date: self.date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("date", "date was not specified but it is required when building AssessmentRunNotification")
+                    )?
+                ,
+                event: self.event
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event", "event was not specified but it is required when building AssessmentRunNotification")
+                    )?
+                ,
+                message: self.message
+                ,
+                error: self.error
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error", "error was not specified but it is required when building AssessmentRunNotification")
+                    )?
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                sns_publish_status_code: self.sns_publish_status_code
+                ,
+            }
+        )
     }
 }
+

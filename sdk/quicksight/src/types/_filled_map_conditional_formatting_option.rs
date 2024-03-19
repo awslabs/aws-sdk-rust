@@ -3,13 +3,13 @@
 /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilledMapConditionalFormattingOption {
+pub struct FilledMapConditionalFormattingOption  {
     /// <p>The conditional formatting that determines the shape of the filled map.</p>
     pub shape: ::std::option::Option<crate::types::FilledMapShapeConditionalFormatting>,
 }
-impl FilledMapConditionalFormattingOption {
+impl  FilledMapConditionalFormattingOption  {
     /// <p>The conditional formatting that determines the shape of the filled map.</p>
-    pub fn shape(&self) -> ::std::option::Option<&crate::types::FilledMapShapeConditionalFormatting> {
+    pub fn shape(&self) -> ::std::option::Option<& crate::types::FilledMapShapeConditionalFormatting> {
         self.shape.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl FilledMapConditionalFormattingOptionBuilder {
     }
     /// <p>The conditional formatting that determines the shape of the filled map.</p>
     pub fn set_shape(mut self, input: ::std::option::Option<crate::types::FilledMapShapeConditionalFormatting>) -> Self {
-        self.shape = input;
-        self
+        self.shape = input; self
     }
     /// <p>The conditional formatting that determines the shape of the filled map.</p>
     pub fn get_shape(&self) -> &::std::option::Option<crate::types::FilledMapShapeConditionalFormatting> {
@@ -44,6 +43,10 @@ impl FilledMapConditionalFormattingOptionBuilder {
     }
     /// Consumes the builder and constructs a [`FilledMapConditionalFormattingOption`](crate::types::FilledMapConditionalFormattingOption).
     pub fn build(self) -> crate::types::FilledMapConditionalFormattingOption {
-        crate::types::FilledMapConditionalFormattingOption { shape: self.shape }
+        crate::types::FilledMapConditionalFormattingOption {
+            shape: self.shape
+            ,
+        }
     }
 }
+

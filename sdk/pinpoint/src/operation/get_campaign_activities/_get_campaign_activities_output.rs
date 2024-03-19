@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignActivitiesOutput {
+pub struct GetCampaignActivitiesOutput  {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
     pub activities_response: ::std::option::Option<crate::types::ActivitiesResponse>,
     _request_id: Option<String>,
 }
-impl GetCampaignActivitiesOutput {
+impl  GetCampaignActivitiesOutput  {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
-    pub fn activities_response(&self) -> ::std::option::Option<&crate::types::ActivitiesResponse> {
+    pub fn activities_response(&self) -> ::std::option::Option<& crate::types::ActivitiesResponse> {
         self.activities_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCampaignActivitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCampaignActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignActivitiesOutput`](crate::operation::get_campaign_activities::GetCampaignActivitiesOutput).
     pub fn builder() -> crate::operation::get_campaign_activities::builders::GetCampaignActivitiesOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCampaignActivitiesOutputBuilder {
     }
     /// <p>Provides information about the activities that were performed by a campaign.</p>
     pub fn set_activities_response(mut self, input: ::std::option::Option<crate::types::ActivitiesResponse>) -> Self {
-        self.activities_response = input;
-        self
+        self.activities_response = input; self
     }
     /// <p>Provides information about the activities that were performed by a campaign.</p>
     pub fn get_activities_response(&self) -> &::std::option::Option<crate::types::ActivitiesResponse> {
         &self.activities_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCampaignActivitiesOutput`](crate::operation::get_campaign_activities::GetCampaignActivitiesOutput).
     pub fn build(self) -> crate::operation::get_campaign_activities::GetCampaignActivitiesOutput {
         crate::operation::get_campaign_activities::GetCampaignActivitiesOutput {
-            activities_response: self.activities_response,
+            activities_response: self.activities_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

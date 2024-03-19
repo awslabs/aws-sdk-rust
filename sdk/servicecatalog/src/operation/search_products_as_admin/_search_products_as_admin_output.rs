@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchProductsAsAdminOutput {
+pub struct SearchProductsAsAdminOutput  {
     /// <p>Information about the product views.</p>
-    pub product_view_details: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewDetail>>,
+    pub product_view_details: ::std::option::Option<::std::vec::Vec::<crate::types::ProductViewDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchProductsAsAdminOutput {
+impl  SearchProductsAsAdminOutput  {
     /// <p>Information about the product views.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_view_details.is_none()`.
-    pub fn product_view_details(&self) -> &[crate::types::ProductViewDetail] {
-        self.product_view_details.as_deref().unwrap_or_default()
+    pub fn product_view_details(&self) -> & [crate::types::ProductViewDetail] {
+        self.product_view_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchProductsAsAdminOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchProductsAsAdminOutput {
     /// Creates a new builder-style object to manufacture [`SearchProductsAsAdminOutput`](crate::operation::search_products_as_admin::SearchProductsAsAdminOutput).
     pub fn builder() -> crate::operation::search_products_as_admin::builders::SearchProductsAsAdminOutputBuilder {
@@ -37,7 +38,7 @@ impl SearchProductsAsAdminOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProductsAsAdminOutputBuilder {
-    pub(crate) product_view_details: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewDetail>>,
+    pub(crate) product_view_details: ::std::option::Option<::std::vec::Vec::<crate::types::ProductViewDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl SearchProductsAsAdminOutputBuilder {
     /// <p>Information about the product views.</p>
     pub fn product_view_details(mut self, input: crate::types::ProductViewDetail) -> Self {
         let mut v = self.product_view_details.unwrap_or_default();
-        v.push(input);
-        self.product_view_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_view_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the product views.</p>
-    pub fn set_product_view_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewDetail>>) -> Self {
-        self.product_view_details = input;
-        self
+    pub fn set_product_view_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductViewDetail>>) -> Self {
+        self.product_view_details = input; self
     }
     /// <p>Information about the product views.</p>
-    pub fn get_product_view_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductViewDetail>> {
+    pub fn get_product_view_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductViewDetail>> {
         &self.product_view_details
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -69,28 +69,30 @@ impl SearchProductsAsAdminOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchProductsAsAdminOutput`](crate::operation::search_products_as_admin::SearchProductsAsAdminOutput).
     pub fn build(self) -> crate::operation::search_products_as_admin::SearchProductsAsAdminOutput {
         crate::operation::search_products_as_admin::SearchProductsAsAdminOutput {
-            product_view_details: self.product_view_details,
-            next_page_token: self.next_page_token,
+            product_view_details: self.product_view_details
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

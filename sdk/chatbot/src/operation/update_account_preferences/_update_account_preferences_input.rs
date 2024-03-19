@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountPreferencesInput {
+pub struct UpdateAccountPreferencesInput  {
     /// Enables use of a user role requirement in your chat configuration.
     pub user_authorization_required: ::std::option::Option<bool>,
     /// Turns on training data collection. This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
     pub training_data_collection_enabled: ::std::option::Option<bool>,
 }
-impl UpdateAccountPreferencesInput {
+impl  UpdateAccountPreferencesInput  {
     /// Enables use of a user role requirement in your chat configuration.
     pub fn user_authorization_required(&self) -> ::std::option::Option<bool> {
         self.user_authorization_required
@@ -40,8 +40,7 @@ impl UpdateAccountPreferencesInputBuilder {
     }
     /// Enables use of a user role requirement in your chat configuration.
     pub fn set_user_authorization_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_authorization_required = input;
-        self
+        self.user_authorization_required = input; self
     }
     /// Enables use of a user role requirement in your chat configuration.
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
@@ -54,23 +53,22 @@ impl UpdateAccountPreferencesInputBuilder {
     }
     /// Turns on training data collection. This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
     pub fn set_training_data_collection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.training_data_collection_enabled = input;
-        self
+        self.training_data_collection_enabled = input; self
     }
     /// Turns on training data collection. This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
     pub fn get_training_data_collection_enabled(&self) -> &::std::option::Option<bool> {
         &self.training_data_collection_enabled
     }
     /// Consumes the builder and constructs a [`UpdateAccountPreferencesInput`](crate::operation::update_account_preferences::UpdateAccountPreferencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_preferences::UpdateAccountPreferencesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_account_preferences::UpdateAccountPreferencesInput {
-            user_authorization_required: self.user_authorization_required,
-            training_data_collection_enabled: self.training_data_collection_enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account_preferences::UpdateAccountPreferencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account_preferences::UpdateAccountPreferencesInput {
+                user_authorization_required: self.user_authorization_required
+                ,
+                training_data_collection_enabled: self.training_data_collection_enabled
+                ,
+            }
+        )
     }
 }
+

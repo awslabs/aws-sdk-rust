@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizeClientVpnIngressInput {
+pub struct AuthorizeClientVpnIngressInput  {
     /// <p>The ID of the Client VPN endpoint.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
@@ -18,17 +18,17 @@ pub struct AuthorizeClientVpnIngressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl AuthorizeClientVpnIngressInput {
+impl  AuthorizeClientVpnIngressInput  {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
-    pub fn target_network_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn target_network_cidr(&self) -> ::std::option::Option<& str> {
         self.target_network_cidr.as_deref()
     }
     /// <p>The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
-    pub fn access_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_group_id(&self) -> ::std::option::Option<& str> {
         self.access_group_id.as_deref()
     }
     /// <p>Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not specified.</p>
@@ -36,11 +36,11 @@ impl AuthorizeClientVpnIngressInput {
         self.authorize_all_groups
     }
     /// <p>A brief description of the authorization rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -76,8 +76,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>The ID of the Client VPN endpoint.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
     pub fn set_target_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_network_cidr = input;
-        self
+        self.target_network_cidr = input; self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
     pub fn get_target_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
     pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_group_id = input;
-        self
+        self.access_group_id = input; self
     }
     /// <p>The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group. Required if <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
     pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not specified.</p>
     pub fn set_authorize_all_groups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.authorize_all_groups = input;
-        self
+        self.authorize_all_groups = input; self
     }
     /// <p>Indicates whether to grant access to all clients. Specify <code>true</code> to grant all clients who successfully establish a VPN connection access to the network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not specified.</p>
     pub fn get_authorize_all_groups(&self) -> &::std::option::Option<bool> {
@@ -133,8 +129,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>A brief description of the authorization rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the authorization rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,28 +155,32 @@ impl AuthorizeClientVpnIngressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AuthorizeClientVpnIngressInput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            target_network_cidr: self.target_network_cidr,
-            access_group_id: self.access_group_id,
-            authorize_all_groups: self.authorize_all_groups,
-            description: self.description,
-            client_token: self.client_token,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput {
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                target_network_cidr: self.target_network_cidr
+                ,
+                access_group_id: self.access_group_id
+                ,
+                authorize_all_groups: self.authorize_all_groups
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

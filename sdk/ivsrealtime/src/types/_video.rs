@@ -3,7 +3,7 @@
 /// <p>Settings for video.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Video {
+pub struct Video  {
     /// <p>Video-resolution width. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.</p>
     pub width: ::std::option::Option<i32>,
     /// <p>Video-resolution height. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 720.</p>
@@ -13,7 +13,7 @@ pub struct Video {
     /// <p>Bitrate for generated output, in bps. Default: 2500000.</p>
     pub bitrate: ::std::option::Option<i32>,
 }
-impl Video {
+impl  Video  {
     /// <p>Video-resolution width. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.</p>
     pub fn width(&self) -> ::std::option::Option<i32> {
         self.width
@@ -55,8 +55,7 @@ impl VideoBuilder {
     }
     /// <p>Video-resolution width. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.</p>
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// <p>Video-resolution width. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.</p>
     pub fn get_width(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl VideoBuilder {
     }
     /// <p>Video-resolution height. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 720.</p>
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
     /// <p>Video-resolution height. Note that the maximum value is determined by <code>width</code> times <code>height</code>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 720.</p>
     pub fn get_height(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl VideoBuilder {
     }
     /// <p>Video frame rate, in fps. Default: 30.</p>
     pub fn set_framerate(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.framerate = input;
-        self
+        self.framerate = input; self
     }
     /// <p>Video frame rate, in fps. Default: 30.</p>
     pub fn get_framerate(&self) -> &::std::option::Option<f32> {
@@ -97,8 +94,7 @@ impl VideoBuilder {
     }
     /// <p>Bitrate for generated output, in bps. Default: 2500000.</p>
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// <p>Bitrate for generated output, in bps. Default: 2500000.</p>
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl VideoBuilder {
     /// Consumes the builder and constructs a [`Video`](crate::types::Video).
     pub fn build(self) -> crate::types::Video {
         crate::types::Video {
-            width: self.width,
-            height: self.height,
-            framerate: self.framerate,
-            bitrate: self.bitrate,
+            width: self.width
+            ,
+            height: self.height
+            ,
+            framerate: self.framerate
+            ,
+            bitrate: self.bitrate
+            ,
         }
     }
 }
+

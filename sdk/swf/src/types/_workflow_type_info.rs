@@ -3,7 +3,7 @@
 /// <p>Contains information about a workflow type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowTypeInfo {
+pub struct WorkflowTypeInfo  {
     /// <p>The workflow type this information is about.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The current status of the workflow type.</p>
@@ -15,25 +15,25 @@ pub struct WorkflowTypeInfo {
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
     pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl WorkflowTypeInfo {
+impl  WorkflowTypeInfo  {
     /// <p>The workflow type this information is about.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The current status of the workflow type.</p>
-    pub fn status(&self) -> &crate::types::RegistrationStatus {
+    pub fn status(&self) -> & crate::types::RegistrationStatus {
         &self.status
     }
     /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date when this type was registered.</p>
-    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date
     }
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-    pub fn deprecation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deprecation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl WorkflowTypeInfoBuilder {
     }
     /// <p>The workflow type this information is about.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The workflow type this information is about.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -78,8 +77,7 @@ impl WorkflowTypeInfoBuilder {
     }
     /// <p>The current status of the workflow type.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the workflow type.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
@@ -92,8 +90,7 @@ impl WorkflowTypeInfoBuilder {
     }
     /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl WorkflowTypeInfoBuilder {
     }
     /// <p>The date when this type was registered.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date when this type was registered.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -121,8 +117,7 @@ impl WorkflowTypeInfoBuilder {
     }
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
     pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deprecation_date = input;
-        self
+        self.deprecation_date = input; self
     }
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
     pub fn get_deprecation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -133,22 +128,26 @@ impl WorkflowTypeInfoBuilder {
     /// - [`status`](crate::types::builders::WorkflowTypeInfoBuilder::status)
     /// - [`creation_date`](crate::types::builders::WorkflowTypeInfoBuilder::creation_date)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowTypeInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowTypeInfo {
-            workflow_type: self.workflow_type,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building WorkflowTypeInfo",
-                )
-            })?,
-            description: self.description,
-            creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date",
-                    "creation_date was not specified but it is required when building WorkflowTypeInfo",
-                )
-            })?,
-            deprecation_date: self.deprecation_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowTypeInfo {
+                workflow_type: self.workflow_type
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building WorkflowTypeInfo")
+                    )?
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date", "creation_date was not specified but it is required when building WorkflowTypeInfo")
+                    )?
+                ,
+                deprecation_date: self.deprecation_date
+                ,
+            }
+        )
     }
 }
+

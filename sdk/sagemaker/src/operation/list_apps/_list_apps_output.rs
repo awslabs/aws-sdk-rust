@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppsOutput {
+pub struct ListAppsOutput  {
     /// <p>The list of apps.</p>
-    pub apps: ::std::option::Option<::std::vec::Vec<crate::types::AppDetails>>,
+    pub apps: ::std::option::Option<::std::vec::Vec::<crate::types::AppDetails>>,
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppsOutput {
+impl  ListAppsOutput  {
     /// <p>The list of apps.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.apps.is_none()`.
-    pub fn apps(&self) -> &[crate::types::AppDetails] {
-        self.apps.as_deref().unwrap_or_default()
+    pub fn apps(&self) -> & [crate::types::AppDetails] {
+        self.apps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn builder() -> crate::operation::list_apps::builders::ListAppsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAppsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsOutputBuilder {
-    pub(crate) apps: ::std::option::Option<::std::vec::Vec<crate::types::AppDetails>>,
+    pub(crate) apps: ::std::option::Option<::std::vec::Vec::<crate::types::AppDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAppsOutputBuilder {
     /// <p>The list of apps.</p>
     pub fn apps(mut self, input: crate::types::AppDetails) -> Self {
         let mut v = self.apps.unwrap_or_default();
-        v.push(input);
-        self.apps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.apps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of apps.</p>
-    pub fn set_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppDetails>>) -> Self {
-        self.apps = input;
-        self
+    pub fn set_apps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppDetails>>) -> Self {
+        self.apps = input; self
     }
     /// <p>The list of apps.</p>
-    pub fn get_apps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppDetails>> {
+    pub fn get_apps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppDetails>> {
         &self.apps
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListAppsOutputBuilder {
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn build(self) -> crate::operation::list_apps::ListAppsOutput {
         crate::operation::list_apps::ListAppsOutput {
-            apps: self.apps,
-            next_token: self.next_token,
+            apps: self.apps
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

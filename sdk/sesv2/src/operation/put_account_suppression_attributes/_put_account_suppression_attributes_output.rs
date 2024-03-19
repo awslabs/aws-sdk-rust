@@ -3,14 +3,14 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountSuppressionAttributesOutput {
+pub struct PutAccountSuppressionAttributesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutAccountSuppressionAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutAccountSuppressionAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
     pub fn builder() -> crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesOutputBuilder {
@@ -26,14 +26,14 @@ pub struct PutAccountSuppressionAttributesOutputBuilder {
 }
 impl PutAccountSuppressionAttributesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
     pub fn build(self) -> crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput {
         crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput {
@@ -41,3 +41,4 @@ impl PutAccountSuppressionAttributesOutputBuilder {
         }
     }
 }
+

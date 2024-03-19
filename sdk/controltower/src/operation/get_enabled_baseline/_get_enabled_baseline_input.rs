@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnabledBaselineInput {
+pub struct GetEnabledBaselineInput  {
     /// <p>Identifier of the <code>EnabledBaseline</code> resource to be retrieved, in ARN format.</p>
     pub enabled_baseline_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetEnabledBaselineInput {
+impl  GetEnabledBaselineInput  {
     /// <p>Identifier of the <code>EnabledBaseline</code> resource to be retrieved, in ARN format.</p>
-    pub fn enabled_baseline_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn enabled_baseline_identifier(&self) -> ::std::option::Option<& str> {
         self.enabled_baseline_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetEnabledBaselineInputBuilder {
     }
     /// <p>Identifier of the <code>EnabledBaseline</code> resource to be retrieved, in ARN format.</p>
     pub fn set_enabled_baseline_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enabled_baseline_identifier = input;
-        self
+        self.enabled_baseline_identifier = input; self
     }
     /// <p>Identifier of the <code>EnabledBaseline</code> resource to be retrieved, in ARN format.</p>
     pub fn get_enabled_baseline_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.enabled_baseline_identifier
     }
     /// Consumes the builder and constructs a [`GetEnabledBaselineInput`](crate::operation::get_enabled_baseline::GetEnabledBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_enabled_baseline::GetEnabledBaselineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_enabled_baseline::GetEnabledBaselineInput {
-            enabled_baseline_identifier: self.enabled_baseline_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_enabled_baseline::GetEnabledBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_enabled_baseline::GetEnabledBaselineInput {
+                enabled_baseline_identifier: self.enabled_baseline_identifier
+                ,
+            }
+        )
     }
 }
+

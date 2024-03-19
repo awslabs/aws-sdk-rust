@@ -3,7 +3,7 @@
 /// <p>Details about a measure affected by an anomaly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricLevelImpact {
+pub struct MetricLevelImpact  {
     /// <p>The name of the measure.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of anomalous metrics for the measure.</p>
@@ -11,9 +11,9 @@ pub struct MetricLevelImpact {
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub contribution_matrix: ::std::option::Option<crate::types::ContributionMatrix>,
 }
-impl MetricLevelImpact {
+impl  MetricLevelImpact  {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The number of anomalous metrics for the measure.</p>
@@ -21,7 +21,7 @@ impl MetricLevelImpact {
         self.num_time_series
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
-    pub fn contribution_matrix(&self) -> ::std::option::Option<&crate::types::ContributionMatrix> {
+    pub fn contribution_matrix(&self) -> ::std::option::Option<& crate::types::ContributionMatrix> {
         self.contribution_matrix.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl MetricLevelImpactBuilder {
     }
     /// <p>The name of the measure.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the measure.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl MetricLevelImpactBuilder {
     }
     /// <p>The number of anomalous metrics for the measure.</p>
     pub fn set_num_time_series(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_time_series = input;
-        self
+        self.num_time_series = input; self
     }
     /// <p>The number of anomalous metrics for the measure.</p>
     pub fn get_num_time_series(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl MetricLevelImpactBuilder {
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub fn set_contribution_matrix(mut self, input: ::std::option::Option<crate::types::ContributionMatrix>) -> Self {
-        self.contribution_matrix = input;
-        self
+        self.contribution_matrix = input; self
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub fn get_contribution_matrix(&self) -> &::std::option::Option<crate::types::ContributionMatrix> {
@@ -86,9 +83,14 @@ impl MetricLevelImpactBuilder {
     /// Consumes the builder and constructs a [`MetricLevelImpact`](crate::types::MetricLevelImpact).
     pub fn build(self) -> crate::types::MetricLevelImpact {
         crate::types::MetricLevelImpact {
-            metric_name: self.metric_name,
-            num_time_series: self.num_time_series.unwrap_or_default(),
-            contribution_matrix: self.contribution_matrix,
+            metric_name: self.metric_name
+            ,
+            num_time_series: self.num_time_series
+                .unwrap_or_default()
+            ,
+            contribution_matrix: self.contribution_matrix
+            ,
         }
     }
 }
+

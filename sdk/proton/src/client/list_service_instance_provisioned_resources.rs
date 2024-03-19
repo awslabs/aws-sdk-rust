@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServiceInstanceProvisionedResources`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_name(impl Into<String>)`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::set_service_name):<br>required: **true**<br><p>The name of the service that <code>serviceInstanceName</code> is associated to.</p><br>
     ///   - [`service_instance_name(impl Into<String>)`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::set_service_instance_name):<br>required: **true**<br><p>The name of the service instance whose provisioned resources you want.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p><br>
-    /// - On success, responds with [`ListServiceInstanceProvisionedResourcesOutput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListServiceInstanceProvisionedResourcesOutput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     ///   - [`provisioned_resources(Vec::<ProvisionedResource>)`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a service instance.</p>
-    /// - On failure, responds with [`SdkError<ListServiceInstanceProvisionedResourcesError>`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesError)
-    pub fn list_service_instance_provisioned_resources(
-        &self,
-    ) -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder {
-        crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListServiceInstanceProvisionedResourcesError>`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesError)
+    pub fn list_service_instance_provisioned_resources(&self) -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder {
+                                crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

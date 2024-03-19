@@ -3,28 +3,29 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterSubnetGroupInput {
+pub struct ModifyClusterSubnetGroupInput  {
     /// <p>The name of the subnet group to be modified.</p>
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A text description of the subnet group to be modified.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyClusterSubnetGroupInput {
+impl  ModifyClusterSubnetGroupInput  {
     /// <p>The name of the subnet group to be modified.</p>
-    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>A text description of the subnet group to be modified.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyClusterSubnetGroupInput {
@@ -40,7 +41,7 @@ impl ModifyClusterSubnetGroupInput {
 pub struct ModifyClusterSubnetGroupInputBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyClusterSubnetGroupInputBuilder {
     /// <p>The name of the subnet group to be modified.</p>
@@ -51,8 +52,7 @@ impl ModifyClusterSubnetGroupInputBuilder {
     }
     /// <p>The name of the subnet group to be modified.</p>
     pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_subnet_group_name = input;
-        self
+        self.cluster_subnet_group_name = input; self
     }
     /// <p>The name of the subnet group to be modified.</p>
     pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl ModifyClusterSubnetGroupInputBuilder {
     }
     /// <p>A text description of the subnet group to be modified.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A text description of the subnet group to be modified.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl ModifyClusterSubnetGroupInputBuilder {
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`ModifyClusterSubnetGroupInput`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput {
-            cluster_subnet_group_name: self.cluster_subnet_group_name,
-            description: self.description,
-            subnet_ids: self.subnet_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput {
+                cluster_subnet_group_name: self.cluster_subnet_group_name
+                ,
+                description: self.description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+            }
+        )
     }
 }
+

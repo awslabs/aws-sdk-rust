@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListVectorEnrichmentJobsInput {
+pub struct ListVectorEnrichmentJobsInput  {
     /// <p>A filter that retrieves only jobs with a specific status.</p>
     pub status_equals: ::std::option::Option<::std::string::String>,
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
@@ -14,21 +14,21 @@ pub struct ListVectorEnrichmentJobsInput {
     /// <p>The maximum number of items to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListVectorEnrichmentJobsInput {
+impl  ListVectorEnrichmentJobsInput  {
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&str> {
+    pub fn status_equals(&self) -> ::std::option::Option<& str> {
         self.status_equals.as_deref()
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The parameter by which to sort the results.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&str> {
+    pub fn sort_by(&self) -> ::std::option::Option<& str> {
         self.sort_by.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -36,7 +36,7 @@ impl ListVectorEnrichmentJobsInput {
         self.max_results
     }
 }
-impl ::std::fmt::Debug for ListVectorEnrichmentJobsInput {
+impl  ::std::fmt::Debug for ListVectorEnrichmentJobsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListVectorEnrichmentJobsInput");
         formatter.field("status_equals", &self.status_equals);
@@ -72,8 +72,7 @@ impl ListVectorEnrichmentJobsInputBuilder {
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl ListVectorEnrichmentJobsInputBuilder {
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -100,8 +98,7 @@ impl ListVectorEnrichmentJobsInputBuilder {
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl ListVectorEnrichmentJobsInputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,27 +124,28 @@ impl ListVectorEnrichmentJobsInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListVectorEnrichmentJobsInput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput {
-            status_equals: self.status_equals,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput {
+                status_equals: self.status_equals
+                ,
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListVectorEnrichmentJobsInputBuilder {
@@ -162,3 +159,4 @@ impl ::std::fmt::Debug for ListVectorEnrichmentJobsInputBuilder {
         formatter.finish()
     }
 }
+

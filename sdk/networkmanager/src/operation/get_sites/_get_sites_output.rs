@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSitesOutput {
+pub struct GetSitesOutput  {
     /// <p>The sites.</p>
-    pub sites: ::std::option::Option<::std::vec::Vec<crate::types::Site>>,
+    pub sites: ::std::option::Option<::std::vec::Vec::<crate::types::Site>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSitesOutput {
+impl  GetSitesOutput  {
     /// <p>The sites.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sites.is_none()`.
-    pub fn sites(&self) -> &[crate::types::Site] {
-        self.sites.as_deref().unwrap_or_default()
+    pub fn sites(&self) -> & [crate::types::Site] {
+        self.sites.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSitesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSitesOutput {
     /// Creates a new builder-style object to manufacture [`GetSitesOutput`](crate::operation::get_sites::GetSitesOutput).
     pub fn builder() -> crate::operation::get_sites::builders::GetSitesOutputBuilder {
@@ -37,7 +38,7 @@ impl GetSitesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSitesOutputBuilder {
-    pub(crate) sites: ::std::option::Option<::std::vec::Vec<crate::types::Site>>,
+    pub(crate) sites: ::std::option::Option<::std::vec::Vec::<crate::types::Site>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetSitesOutputBuilder {
     /// <p>The sites.</p>
     pub fn sites(mut self, input: crate::types::Site) -> Self {
         let mut v = self.sites.unwrap_or_default();
-        v.push(input);
-        self.sites = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sites = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sites.</p>
-    pub fn set_sites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Site>>) -> Self {
-        self.sites = input;
-        self
+    pub fn set_sites(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Site>>) -> Self {
+        self.sites = input; self
     }
     /// <p>The sites.</p>
-    pub fn get_sites(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Site>> {
+    pub fn get_sites(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Site>> {
         &self.sites
     }
     /// <p>The token for the next page of results.</p>
@@ -69,28 +69,30 @@ impl GetSitesOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSitesOutput`](crate::operation::get_sites::GetSitesOutput).
     pub fn build(self) -> crate::operation::get_sites::GetSitesOutput {
         crate::operation::get_sites::GetSitesOutput {
-            sites: self.sites,
-            next_token: self.next_token,
+            sites: self.sites
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

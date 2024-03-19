@@ -3,20 +3,19 @@
 /// <p>The configured access rules for the domain's search endpoint, and the current status of those rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPoliciesStatus {
+pub struct AccessPoliciesStatus  {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
     pub options: ::std::string::String,
     /// <p>The status of the access policy for the domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl AccessPoliciesStatus {
+impl  AccessPoliciesStatus  {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
-    pub fn options(&self) -> &str {
-        use std::ops::Deref;
-        self.options.deref()
+    pub fn options(&self) -> & str {
+        use std::ops::Deref; self.options.deref()
     }
     /// <p>The status of the access policy for the domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
     pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The status of the access policy for the domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the access policy for the domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -69,14 +66,17 @@ impl AccessPoliciesStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::AccessPoliciesStatusBuilder::options)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessPoliciesStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessPoliciesStatus {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building AccessPoliciesStatus",
-                )
-            })?,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessPoliciesStatus {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building AccessPoliciesStatus")
+                    )?
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

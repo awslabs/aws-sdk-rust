@@ -3,19 +3,19 @@
 /// <p>The structure representing the errors in an export EarthObservationJob operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportErrorDetailsOutput {
+pub struct ExportErrorDetailsOutput  {
     /// <p>The type of error in an export EarthObservationJob operation.</p>
     pub r#type: ::std::option::Option<crate::types::ExportErrorType>,
     /// <p>A detailed message describing the error in an export EarthObservationJob operation.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ExportErrorDetailsOutput {
+impl  ExportErrorDetailsOutput  {
     /// <p>The type of error in an export EarthObservationJob operation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExportErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ExportErrorType> {
         self.r#type.as_ref()
     }
     /// <p>A detailed message describing the error in an export EarthObservationJob operation.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExportErrorDetailsOutputBuilder {
     }
     /// <p>The type of error in an export EarthObservationJob operation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExportErrorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of error in an export EarthObservationJob operation.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ExportErrorType> {
@@ -55,8 +54,7 @@ impl ExportErrorDetailsOutputBuilder {
     }
     /// <p>A detailed message describing the error in an export EarthObservationJob operation.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A detailed message describing the error in an export EarthObservationJob operation.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ExportErrorDetailsOutputBuilder {
     /// Consumes the builder and constructs a [`ExportErrorDetailsOutput`](crate::types::ExportErrorDetailsOutput).
     pub fn build(self) -> crate::types::ExportErrorDetailsOutput {
         crate::types::ExportErrorDetailsOutput {
-            r#type: self.r#type,
-            message: self.message,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

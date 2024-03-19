@@ -5,112 +5,96 @@ pub use crate::operation::send_destination_number_verification_code::_send_desti
 
 impl SendDestinationNumberVerificationCodeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.send_destination_number_verification_code();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.send_destination_number_verification_code();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SendDestinationNumberVerificationCode`.
-///
+/// 
 /// <p>Before you can send test messages to a verified destination phone number you need to opt-in the verified destination phone number. Creates a new text message with a verification code and send it to a verified destination phone number. Once you have the verification code use <code>VerifyDestinationNumber</code> to opt-in the verified destination phone number to receive messages.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendDestinationNumberVerificationCodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeInputBuilder,
+                    inner: crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
-    > for SendDestinationNumberVerificationCodeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
-            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
+                    crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
+                > for SendDestinationNumberVerificationCodeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
+                        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SendDestinationNumberVerificationCodeFluentBuilder {
     /// Creates a new `SendDestinationNumberVerificationCode`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the SendDestinationNumberVerificationCode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCode::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCode::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput,
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCode::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCode::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeOutput, crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn verified_destination_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_destination_number_id(input.into());
@@ -191,12 +175,12 @@ impl SendDestinationNumberVerificationCodeFluentBuilder {
         self
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_context()
     }
     /// Adds a key-value pair to `DestinationCountryParameters`.
@@ -204,26 +188,18 @@ impl SendDestinationNumberVerificationCodeFluentBuilder {
     /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).
     ///
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn destination_country_parameters(
-        mut self,
-        k: crate::types::DestinationCountryParameterKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_country_parameters(mut self, k: crate::types::DestinationCountryParameterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_country_parameters(k, v.into());
         self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn set_destination_country_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_country_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_destination_country_parameters(input);
         self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn get_destination_country_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
+    pub fn get_destination_country_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
         self.inner.get_destination_country_parameters()
     }
 }
+

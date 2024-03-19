@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcePoliciesInput {
+pub struct GetResourcePoliciesInput  {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resource policies to display for each page of results.</p>
@@ -10,9 +10,9 @@ pub struct GetResourcePoliciesInput {
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetResourcePoliciesInput {
+impl  GetResourcePoliciesInput  {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The maximum number of resource policies to display for each page of results.</p>
@@ -20,7 +20,7 @@ impl GetResourcePoliciesInput {
         self.max_results
     }
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetResourcePoliciesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetResourcePoliciesInputBuilder {
     }
     /// <p>The maximum number of resource policies to display for each page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of resource policies to display for each page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,22 +74,24 @@ impl GetResourcePoliciesInputBuilder {
     }
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesInput {
-            resource_arn: self.resource_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_policies::GetResourcePoliciesInput {
+                resource_arn: self.resource_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

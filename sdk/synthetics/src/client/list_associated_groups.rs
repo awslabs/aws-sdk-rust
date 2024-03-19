@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssociatedGroups`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p><br>
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The ARN of the canary that you want to view groups for.</p><br>
-    /// - On success, responds with [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec::<GroupSummary>>)`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput::groups): <p>An array of structures that contain information about the groups that this canary is associated with.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAssociatedGroupsError>`](crate::operation::list_associated_groups::ListAssociatedGroupsError)
+                            /// - On failure, responds with [`SdkError<ListAssociatedGroupsError>`](crate::operation::list_associated_groups::ListAssociatedGroupsError)
     pub fn list_associated_groups(&self) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder {
-        crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_associated_groups::builders::ListAssociatedGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

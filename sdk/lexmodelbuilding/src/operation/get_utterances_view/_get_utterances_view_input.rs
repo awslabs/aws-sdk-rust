@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUtterancesViewInput {
+pub struct GetUtterancesViewInput  {
     /// <p>The name of the bot for which utterance information should be returned.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    pub bot_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bot_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
     pub status_type: ::std::option::Option<crate::types::StatusType>,
 }
-impl GetUtterancesViewInput {
+impl  GetUtterancesViewInput  {
     /// <p>The name of the bot for which utterance information should be returned.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_versions.is_none()`.
-    pub fn bot_versions(&self) -> &[::std::string::String] {
-        self.bot_versions.as_deref().unwrap_or_default()
+    pub fn bot_versions(&self) -> & [::std::string::String] {
+        self.bot_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
-    pub fn status_type(&self) -> ::std::option::Option<&crate::types::StatusType> {
+    pub fn status_type(&self) -> ::std::option::Option<& crate::types::StatusType> {
         self.status_type.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl GetUtterancesViewInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUtterancesViewInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bot_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status_type: ::std::option::Option<crate::types::StatusType>,
 }
 impl GetUtterancesViewInputBuilder {
@@ -50,8 +51,7 @@ impl GetUtterancesViewInputBuilder {
     }
     /// <p>The name of the bot for which utterance information should be returned.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the bot for which utterance information should be returned.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl GetUtterancesViewInputBuilder {
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
     pub fn bot_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bot_versions.unwrap_or_default();
-        v.push(input.into());
-        self.bot_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bot_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    pub fn set_bot_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bot_versions = input;
-        self
+    pub fn set_bot_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bot_versions = input; self
     }
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    pub fn get_bot_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bot_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bot_versions
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
@@ -85,21 +84,24 @@ impl GetUtterancesViewInputBuilder {
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
     pub fn set_status_type(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.status_type = input;
-        self
+        self.status_type = input; self
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
     pub fn get_status_type(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.status_type
     }
     /// Consumes the builder and constructs a [`GetUtterancesViewInput`](crate::operation::get_utterances_view::GetUtterancesViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_utterances_view::GetUtterancesViewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_utterances_view::GetUtterancesViewInput {
-            bot_name: self.bot_name,
-            bot_versions: self.bot_versions,
-            status_type: self.status_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_utterances_view::GetUtterancesViewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_utterances_view::GetUtterancesViewInput {
+                bot_name: self.bot_name
+                ,
+                bot_versions: self.bot_versions
+                ,
+                status_type: self.status_type
+                ,
+            }
+        )
     }
 }
+

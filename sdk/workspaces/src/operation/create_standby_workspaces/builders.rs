@@ -5,54 +5,50 @@ pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_
 
 impl CreateStandbyWorkspacesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_standby_workspaces();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_standby_workspaces();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateStandbyWorkspaces`.
-///
+/// 
 /// <p>Creates a standby WorkSpace in a secondary Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder,
+                    inner: crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-    > for CreateStandbyWorkspacesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
+                    crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
+                > for CreateStandbyWorkspacesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
+                        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateStandbyWorkspacesFluentBuilder {
     /// Creates a new `CreateStandbyWorkspaces`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateStandbyWorkspacesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_standby_workspaces::CreateStandbyWorkspaces::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspaces::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_standby_workspaces::CreateStandbyWorkspaces::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_standby_workspaces::CreateStandbyWorkspaces::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput, crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Region of the primary WorkSpace.</p>
     pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_region(input.into());
@@ -132,12 +119,13 @@ impl CreateStandbyWorkspacesFluentBuilder {
         self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn set_standby_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>) -> Self {
+    pub fn set_standby_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StandbyWorkspace>>) -> Self {
         self.inner = self.inner.set_standby_workspaces(input);
         self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn get_standby_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
+    pub fn get_standby_workspaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StandbyWorkspace>> {
         self.inner.get_standby_workspaces()
     }
 }
+

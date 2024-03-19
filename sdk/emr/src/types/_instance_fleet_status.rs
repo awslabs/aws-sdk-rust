@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceFleetStatus {
+pub struct InstanceFleetStatus  {
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ pub struct InstanceFleetStatus {
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
     pub timeline: ::std::option::Option<crate::types::InstanceFleetTimeline>,
 }
-impl InstanceFleetStatus {
+impl  InstanceFleetStatus  {
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
     /// <li>
@@ -47,15 +47,15 @@ impl InstanceFleetStatus {
     /// <li>
     /// <p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceFleetState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::InstanceFleetState> {
         self.state.as_ref()
     }
     /// <p>Provides status change reason details for the instance fleet.</p>
-    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::InstanceFleetStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<& crate::types::InstanceFleetStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
-    pub fn timeline(&self) -> ::std::option::Option<&crate::types::InstanceFleetTimeline> {
+    pub fn timeline(&self) -> ::std::option::Option<& crate::types::InstanceFleetTimeline> {
         self.timeline.as_ref()
     }
 }
@@ -114,8 +114,7 @@ impl InstanceFleetStatusBuilder {
     /// <p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceFleetState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
@@ -144,8 +143,7 @@ impl InstanceFleetStatusBuilder {
     }
     /// <p>Provides status change reason details for the instance fleet.</p>
     pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::InstanceFleetStateChangeReason>) -> Self {
-        self.state_change_reason = input;
-        self
+        self.state_change_reason = input; self
     }
     /// <p>Provides status change reason details for the instance fleet.</p>
     pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::InstanceFleetStateChangeReason> {
@@ -158,8 +156,7 @@ impl InstanceFleetStatusBuilder {
     }
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
     pub fn set_timeline(mut self, input: ::std::option::Option<crate::types::InstanceFleetTimeline>) -> Self {
-        self.timeline = input;
-        self
+        self.timeline = input; self
     }
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
     pub fn get_timeline(&self) -> &::std::option::Option<crate::types::InstanceFleetTimeline> {
@@ -168,9 +165,13 @@ impl InstanceFleetStatusBuilder {
     /// Consumes the builder and constructs a [`InstanceFleetStatus`](crate::types::InstanceFleetStatus).
     pub fn build(self) -> crate::types::InstanceFleetStatus {
         crate::types::InstanceFleetStatus {
-            state: self.state,
-            state_change_reason: self.state_change_reason,
-            timeline: self.timeline,
+            state: self.state
+            ,
+            state_change_reason: self.state_change_reason
+            ,
+            timeline: self.timeline
+            ,
         }
     }
 }
+

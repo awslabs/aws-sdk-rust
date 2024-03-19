@@ -3,22 +3,23 @@
 /// <p>Information about where an object (<code>DetectCustomLabels</code>) or text (<code>DetectText</code>) is located on an image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Geometry {
+pub struct Geometry  {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
+    pub polygon: ::std::option::Option<::std::vec::Vec::<crate::types::Point>>,
 }
-impl Geometry {
+impl  Geometry  {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
-    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
-    pub fn polygon(&self) -> &[crate::types::Point] {
-        self.polygon.as_deref().unwrap_or_default()
+    pub fn polygon(&self) -> & [crate::types::Point] {
+        self.polygon.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Geometry {
@@ -33,7 +34,7 @@ impl Geometry {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeometryBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
-    pub(crate) polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
+    pub(crate) polygon: ::std::option::Option<::std::vec::Vec::<crate::types::Point>>,
 }
 impl GeometryBuilder {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
@@ -43,8 +44,7 @@ impl GeometryBuilder {
     }
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
-        self.bounding_box = input;
-        self
+        self.bounding_box = input; self
     }
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
@@ -57,24 +57,26 @@ impl GeometryBuilder {
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
     pub fn polygon(mut self, input: crate::types::Point) -> Self {
         let mut v = self.polygon.unwrap_or_default();
-        v.push(input);
-        self.polygon = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.polygon = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>) -> Self {
-        self.polygon = input;
-        self
+    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Point>>) -> Self {
+        self.polygon = input; self
     }
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
+    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Point>> {
         &self.polygon
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     pub fn build(self) -> crate::types::Geometry {
         crate::types::Geometry {
-            bounding_box: self.bounding_box,
-            polygon: self.polygon,
+            bounding_box: self.bounding_box
+            ,
+            polygon: self.polygon
+            ,
         }
     }
 }
+

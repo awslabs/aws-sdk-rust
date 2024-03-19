@@ -3,21 +3,21 @@
 /// <p>Configures Amazon CloudWatch log settings for a playback configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigureLogsForPlaybackConfigurationInput {
+pub struct ConfigureLogsForPlaybackConfigurationInput  {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub percent_enabled: ::std::option::Option<i32>,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
 }
-impl ConfigureLogsForPlaybackConfigurationInput {
+impl  ConfigureLogsForPlaybackConfigurationInput  {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub fn percent_enabled(&self) -> ::std::option::Option<i32> {
         self.percent_enabled
     }
     /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn playback_configuration_name(&self) -> ::std::option::Option<& str> {
         self.playback_configuration_name.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub fn set_percent_enabled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percent_enabled = input;
-        self
+        self.percent_enabled = input; self
     }
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
@@ -62,25 +61,22 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     }
     /// <p>The name of the playback configuration.</p>
     pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.playback_configuration_name = input;
-        self
+        self.playback_configuration_name = input; self
     }
     /// <p>The name of the playback configuration.</p>
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_configuration_name
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationInput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput {
-                percent_enabled: self.percent_enabled,
-                playback_configuration_name: self.playback_configuration_name,
-            },
+                percent_enabled: self.percent_enabled
+                ,
+                playback_configuration_name: self.playback_configuration_name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides details about where a code vulnerability is located in your Lambda function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeVulnerabilitiesFilePath {
+pub struct CodeVulnerabilitiesFilePath  {
     /// <p>The line number of the last line of code in which the vulnerability is located.</p>
     pub end_line: ::std::option::Option<i32>,
     /// <p>The name of the file in which the code vulnerability is located.</p>
@@ -13,17 +13,17 @@ pub struct CodeVulnerabilitiesFilePath {
     /// <p>The line number of the first line of code in which the vulnerability is located.</p>
     pub start_line: ::std::option::Option<i32>,
 }
-impl CodeVulnerabilitiesFilePath {
+impl  CodeVulnerabilitiesFilePath  {
     /// <p>The line number of the last line of code in which the vulnerability is located.</p>
     pub fn end_line(&self) -> ::std::option::Option<i32> {
         self.end_line
     }
     /// <p>The name of the file in which the code vulnerability is located.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
     /// <p>The file path to the code in which the vulnerability is located.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The line number of the first line of code in which the vulnerability is located.</p>
@@ -55,8 +55,7 @@ impl CodeVulnerabilitiesFilePathBuilder {
     }
     /// <p>The line number of the last line of code in which the vulnerability is located.</p>
     pub fn set_end_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_line = input;
-        self
+        self.end_line = input; self
     }
     /// <p>The line number of the last line of code in which the vulnerability is located.</p>
     pub fn get_end_line(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl CodeVulnerabilitiesFilePathBuilder {
     }
     /// <p>The name of the file in which the code vulnerability is located.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The name of the file in which the code vulnerability is located.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CodeVulnerabilitiesFilePathBuilder {
     }
     /// <p>The file path to the code in which the vulnerability is located.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The file path to the code in which the vulnerability is located.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CodeVulnerabilitiesFilePathBuilder {
     }
     /// <p>The line number of the first line of code in which the vulnerability is located.</p>
     pub fn set_start_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_line = input;
-        self
+        self.start_line = input; self
     }
     /// <p>The line number of the first line of code in which the vulnerability is located.</p>
     pub fn get_start_line(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl CodeVulnerabilitiesFilePathBuilder {
     /// Consumes the builder and constructs a [`CodeVulnerabilitiesFilePath`](crate::types::CodeVulnerabilitiesFilePath).
     pub fn build(self) -> crate::types::CodeVulnerabilitiesFilePath {
         crate::types::CodeVulnerabilitiesFilePath {
-            end_line: self.end_line,
-            file_name: self.file_name,
-            file_path: self.file_path,
-            start_line: self.start_line,
+            end_line: self.end_line
+            ,
+            file_name: self.file_name
+            ,
+            file_path: self.file_path
+            ,
+            start_line: self.start_line
+            ,
         }
     }
 }
+

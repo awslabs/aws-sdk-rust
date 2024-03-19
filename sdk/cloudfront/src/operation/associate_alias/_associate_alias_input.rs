@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAliasInput {
+pub struct AssociateAliasInput  {
     /// <p>The ID of the distribution that you're associating the alias with.</p>
     pub target_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub alias: ::std::option::Option<::std::string::String>,
 }
-impl AssociateAliasInput {
+impl  AssociateAliasInput  {
     /// <p>The ID of the distribution that you're associating the alias with.</p>
-    pub fn target_distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_distribution_id(&self) -> ::std::option::Option<& str> {
         self.target_distribution_id.as_deref()
     }
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateAliasInputBuilder {
     }
     /// <p>The ID of the distribution that you're associating the alias with.</p>
     pub fn set_target_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_distribution_id = input;
-        self
+        self.target_distribution_id = input; self
     }
     /// <p>The ID of the distribution that you're associating the alias with.</p>
     pub fn get_target_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl AssociateAliasInputBuilder {
     }
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
     /// Consumes the builder and constructs a [`AssociateAliasInput`](crate::operation::associate_alias::AssociateAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_alias::AssociateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_alias::AssociateAliasInput {
-            target_distribution_id: self.target_distribution_id,
-            alias: self.alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_alias::AssociateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_alias::AssociateAliasInput {
+                target_distribution_id: self.target_distribution_id
+                ,
+                alias: self.alias
+                ,
+            }
+        )
     }
 }
+

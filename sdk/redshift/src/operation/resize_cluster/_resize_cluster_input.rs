@@ -3,7 +3,7 @@
 /// <p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResizeClusterInput {
+pub struct ResizeClusterInput  {
     /// <p>The unique identifier for the cluster to resize.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new cluster type for the specified cluster.</p>
@@ -19,17 +19,17 @@ pub struct ResizeClusterInput {
     /// <p>The identifier of the target reserved node offering.</p>
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
-impl ResizeClusterInput {
+impl  ResizeClusterInput  {
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The new cluster type for the specified cluster.</p>
-    pub fn cluster_type(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& str> {
         self.cluster_type.as_deref()
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
@@ -41,11 +41,11 @@ impl ResizeClusterInput {
         self.classic
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn reserved_node_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_node_id(&self) -> ::std::option::Option<& str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_reserved_node_offering_id(&self) -> ::std::option::Option<& str> {
         self.target_reserved_node_offering_id.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>The unique identifier for the cluster to resize.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier for the cluster to resize.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>The new cluster type for the specified cluster.</p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>The new cluster type for the specified cluster.</p>
     pub fn get_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_nodes = input;
-        self
+        self.number_of_nodes = input; self
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
     pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
@@ -133,8 +129,7 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic.</p>
     pub fn set_classic(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.classic = input;
-        self
+        self.classic = input; self
     }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic.</p>
     pub fn get_classic(&self) -> &::std::option::Option<bool> {
@@ -147,8 +142,7 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>The identifier of the reserved node.</p>
     pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_node_id = input;
-        self
+        self.reserved_node_id = input; self
     }
     /// <p>The identifier of the reserved node.</p>
     pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,25 +155,32 @@ impl ResizeClusterInputBuilder {
     }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_reserved_node_offering_id = input;
-        self
+        self.target_reserved_node_offering_id = input; self
     }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_reserved_node_offering_id
     }
     /// Consumes the builder and constructs a [`ResizeClusterInput`](crate::operation::resize_cluster::ResizeClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::resize_cluster::ResizeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::resize_cluster::ResizeClusterInput {
-            cluster_identifier: self.cluster_identifier,
-            cluster_type: self.cluster_type,
-            node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes,
-            classic: self.classic,
-            reserved_node_id: self.reserved_node_id,
-            target_reserved_node_offering_id: self.target_reserved_node_offering_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resize_cluster::ResizeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resize_cluster::ResizeClusterInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                cluster_type: self.cluster_type
+                ,
+                node_type: self.node_type
+                ,
+                number_of_nodes: self.number_of_nodes
+                ,
+                classic: self.classic
+                ,
+                reserved_node_id: self.reserved_node_id
+                ,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id
+                ,
+            }
+        )
     }
 }
+

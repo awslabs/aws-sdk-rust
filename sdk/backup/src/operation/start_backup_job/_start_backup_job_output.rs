@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBackupJobOutput {
+pub struct StartBackupJobOutput  {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
@@ -14,18 +14,18 @@ pub struct StartBackupJobOutput {
     pub is_parent: bool,
     _request_id: Option<String>,
 }
-impl StartBackupJobOutput {
+impl  StartBackupJobOutput  {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_job_id(&self) -> ::std::option::Option<& str> {
         self.backup_job_id.as_deref()
     }
     /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_point_arn.as_deref()
     }
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
@@ -34,10 +34,10 @@ impl StartBackupJobOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for StartBackupJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartBackupJobOutput {
     /// Creates a new builder-style object to manufacture [`StartBackupJobOutput`](crate::operation::start_backup_job::StartBackupJobOutput).
     pub fn builder() -> crate::operation::start_backup_job::builders::StartBackupJobOutputBuilder {
@@ -63,8 +63,7 @@ impl StartBackupJobOutputBuilder {
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_job_id = input;
-        self
+        self.backup_job_id = input; self
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl StartBackupJobOutputBuilder {
     /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_arn = input;
-        self
+        self.recovery_point_arn = input; self
     }
     /// <p><i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i></p>
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -94,8 +92,7 @@ impl StartBackupJobOutputBuilder {
     }
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -108,30 +105,35 @@ impl StartBackupJobOutputBuilder {
     }
     /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
     pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_parent = input;
-        self
+        self.is_parent = input; self
     }
     /// <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
     pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
         &self.is_parent
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartBackupJobOutput`](crate::operation::start_backup_job::StartBackupJobOutput).
     pub fn build(self) -> crate::operation::start_backup_job::StartBackupJobOutput {
         crate::operation::start_backup_job::StartBackupJobOutput {
-            backup_job_id: self.backup_job_id,
-            recovery_point_arn: self.recovery_point_arn,
-            creation_date: self.creation_date,
-            is_parent: self.is_parent.unwrap_or_default(),
+            backup_job_id: self.backup_job_id
+            ,
+            recovery_point_arn: self.recovery_point_arn
+            ,
+            creation_date: self.creation_date
+            ,
+            is_parent: self.is_parent
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

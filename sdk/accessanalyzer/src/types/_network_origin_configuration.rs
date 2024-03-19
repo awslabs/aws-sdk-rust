@@ -22,11 +22,7 @@ impl NetworkOriginConfiguration {
     /// Tries to convert the enum instance into [`InternetConfiguration`](crate::types::NetworkOriginConfiguration::InternetConfiguration), extracting the inner [`InternetConfiguration`](crate::types::InternetConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_internet_configuration(&self) -> ::std::result::Result<&crate::types::InternetConfiguration, &Self> {
-        if let NetworkOriginConfiguration::InternetConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let NetworkOriginConfiguration::InternetConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`InternetConfiguration`](crate::types::NetworkOriginConfiguration::InternetConfiguration).
     pub fn is_internet_configuration(&self) -> bool {
@@ -35,11 +31,7 @@ impl NetworkOriginConfiguration {
     /// Tries to convert the enum instance into [`VpcConfiguration`](crate::types::NetworkOriginConfiguration::VpcConfiguration), extracting the inner [`VpcConfiguration`](crate::types::VpcConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vpc_configuration(&self) -> ::std::result::Result<&crate::types::VpcConfiguration, &Self> {
-        if let NetworkOriginConfiguration::VpcConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let NetworkOriginConfiguration::VpcConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VpcConfiguration`](crate::types::NetworkOriginConfiguration::VpcConfiguration).
     pub fn is_vpc_configuration(&self) -> bool {
@@ -50,3 +42,4 @@ impl NetworkOriginConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

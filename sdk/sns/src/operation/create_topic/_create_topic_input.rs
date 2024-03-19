@@ -3,7 +3,7 @@
 /// <p>Input for CreateTopic action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTopicInput {
+pub struct CreateTopicInput  {
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix.</p>
@@ -45,22 +45,22 @@ pub struct CreateTopicInput {
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
     /// </ul>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The list of tags to add to a new topic.</p><note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
     /// <p>The policy must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
     pub data_protection_policy: ::std::option::Option<::std::string::String>,
 }
-impl CreateTopicInput {
+impl  CreateTopicInput  {
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A map of attributes with their corresponding values.</p>
@@ -100,22 +100,23 @@ impl CreateTopicInput {
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The list of tags to add to a new topic.</p><note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
     /// <p>The policy must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    pub fn data_protection_policy(&self) -> ::std::option::Option<&str> {
+    pub fn data_protection_policy(&self) -> ::std::option::Option<& str> {
         self.data_protection_policy.as_deref()
     }
 }
@@ -131,8 +132,8 @@ impl CreateTopicInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTopicInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) data_protection_policy: ::std::option::Option<::std::string::String>,
 }
 impl CreateTopicInputBuilder {
@@ -148,8 +149,7 @@ impl CreateTopicInputBuilder {
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
@@ -200,9 +200,9 @@ impl CreateTopicInputBuilder {
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
@@ -241,9 +241,8 @@ impl CreateTopicInputBuilder {
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
@@ -282,7 +281,7 @@ impl CreateTopicInputBuilder {
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Appends an item to `tags`.
@@ -294,21 +293,20 @@ impl CreateTopicInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags to add to a new topic.</p><note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags to add to a new topic.</p><note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The body of the policy document you want to use for this topic.</p>
@@ -324,8 +322,7 @@ impl CreateTopicInputBuilder {
     /// <p>The policy must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
     pub fn set_data_protection_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_protection_policy = input;
-        self
+        self.data_protection_policy = input; self
     }
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
@@ -336,11 +333,18 @@ impl CreateTopicInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
-            name: self.name,
-            attributes: self.attributes,
-            tags: self.tags,
-            data_protection_policy: self.data_protection_policy,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_topic::CreateTopicInput {
+                name: self.name
+                ,
+                attributes: self.attributes
+                ,
+                tags: self.tags
+                ,
+                data_protection_policy: self.data_protection_policy
+                ,
+            }
+        )
     }
 }
+

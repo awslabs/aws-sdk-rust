@@ -3,13 +3,13 @@
 /// <p>Determines the icon display configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionalFormattingIconDisplayConfiguration {
+pub struct ConditionalFormattingIconDisplayConfiguration  {
     /// <p>Determines the icon display configuration.</p>
     pub icon_display_option: ::std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
 }
-impl ConditionalFormattingIconDisplayConfiguration {
+impl  ConditionalFormattingIconDisplayConfiguration  {
     /// <p>Determines the icon display configuration.</p>
-    pub fn icon_display_option(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingIconDisplayOption> {
+    pub fn icon_display_option(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingIconDisplayOption> {
         self.icon_display_option.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ConditionalFormattingIconDisplayConfigurationBuilder {
     }
     /// <p>Determines the icon display configuration.</p>
     pub fn set_icon_display_option(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>) -> Self {
-        self.icon_display_option = input;
-        self
+        self.icon_display_option = input; self
     }
     /// <p>Determines the icon display configuration.</p>
     pub fn get_icon_display_option(&self) -> &::std::option::Option<crate::types::ConditionalFormattingIconDisplayOption> {
@@ -44,7 +43,9 @@ impl ConditionalFormattingIconDisplayConfigurationBuilder {
     /// Consumes the builder and constructs a [`ConditionalFormattingIconDisplayConfiguration`](crate::types::ConditionalFormattingIconDisplayConfiguration).
     pub fn build(self) -> crate::types::ConditionalFormattingIconDisplayConfiguration {
         crate::types::ConditionalFormattingIconDisplayConfiguration {
-            icon_display_option: self.icon_display_option,
+            icon_display_option: self.icon_display_option
+            ,
         }
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Specifies the CloudWatch alarm specification to use in an instance refresh.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmSpecification {
+pub struct AlarmSpecification  {
     /// <p>The names of one or more CloudWatch alarms to monitor for the instance refresh. You can specify up to 10 alarms.</p>
-    pub alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AlarmSpecification {
+impl  AlarmSpecification  {
     /// <p>The names of one or more CloudWatch alarms to monitor for the instance refresh. You can specify up to 10 alarms.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
-    pub fn alarms(&self) -> &[::std::string::String] {
-        self.alarms.as_deref().unwrap_or_default()
+    pub fn alarms(&self) -> & [::std::string::String] {
+        self.alarms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AlarmSpecification {
@@ -26,7 +27,7 @@ impl AlarmSpecification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmSpecificationBuilder {
-    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AlarmSpecificationBuilder {
     /// Appends an item to `alarms`.
@@ -36,21 +37,24 @@ impl AlarmSpecificationBuilder {
     /// <p>The names of one or more CloudWatch alarms to monitor for the instance refresh. You can specify up to 10 alarms.</p>
     pub fn alarms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input.into());
-        self.alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of one or more CloudWatch alarms to monitor for the instance refresh. You can specify up to 10 alarms.</p>
-    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alarms = input; self
     }
     /// <p>The names of one or more CloudWatch alarms to monitor for the instance refresh. You can specify up to 10 alarms.</p>
-    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`AlarmSpecification`](crate::types::AlarmSpecification).
     pub fn build(self) -> crate::types::AlarmSpecification {
-        crate::types::AlarmSpecification { alarms: self.alarms }
+        crate::types::AlarmSpecification {
+            alarms: self.alarms
+            ,
+        }
     }
 }
+

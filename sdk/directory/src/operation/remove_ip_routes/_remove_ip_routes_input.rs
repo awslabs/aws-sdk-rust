@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveIpRoutesInput {
+pub struct RemoveIpRoutesInput  {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address blocks that you want to remove.</p>
-    pub cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cidr_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoveIpRoutesInput {
+impl  RemoveIpRoutesInput  {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>IP address blocks that you want to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_ips.is_none()`.
-    pub fn cidr_ips(&self) -> &[::std::string::String] {
-        self.cidr_ips.as_deref().unwrap_or_default()
+    pub fn cidr_ips(&self) -> & [::std::string::String] {
+        self.cidr_ips.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveIpRoutesInput {
@@ -32,7 +33,7 @@ impl RemoveIpRoutesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
-    pub(crate) cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cidr_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoveIpRoutesInputBuilder {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
@@ -43,8 +44,7 @@ impl RemoveIpRoutesInputBuilder {
     }
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl RemoveIpRoutesInputBuilder {
     /// <p>IP address blocks that you want to remove.</p>
     pub fn cidr_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_ips.unwrap_or_default();
-        v.push(input.into());
-        self.cidr_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cidr_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn set_cidr_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cidr_ips = input;
-        self
+    pub fn set_cidr_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cidr_ips = input; self
     }
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn get_cidr_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cidr_ips
     }
     /// Consumes the builder and constructs a [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_ip_routes::RemoveIpRoutesInput {
-            directory_id: self.directory_id,
-            cidr_ips: self.cidr_ips,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_ip_routes::RemoveIpRoutesInput {
+                directory_id: self.directory_id
+                ,
+                cidr_ips: self.cidr_ips
+                ,
+            }
+        )
     }
 }
+

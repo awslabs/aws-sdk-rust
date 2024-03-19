@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusters`](crate::operation::list_clusters::builders::ListClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>  <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note><br>
     ///   - [`include(impl Into<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::include) / [`set_include(Option<Vec::<String>>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_include):<br>required: **false**<br><p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html">https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html</a>connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p><br>
-    /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
+                            /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
     ///   - [`clusters(Option<Vec::<String>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>A list of all of the clusters for your account in the specified Amazon Web Services Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>  <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
+                            /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
     pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

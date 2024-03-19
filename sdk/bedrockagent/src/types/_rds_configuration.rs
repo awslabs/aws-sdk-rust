@@ -3,7 +3,7 @@
 /// Contains the configurations to use RDS to store knowledge base data.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsConfiguration {
+pub struct RdsConfiguration  {
     /// Arn of a RDS Resource.
     pub resource_arn: ::std::string::String,
     /// Arn of a SecretsManager Secret.
@@ -15,29 +15,25 @@ pub struct RdsConfiguration {
     /// A mapping of Bedrock Knowledge Base fields to RDS column names
     pub field_mapping: ::std::option::Option<crate::types::RdsFieldMapping>,
 }
-impl RdsConfiguration {
+impl  RdsConfiguration  {
     /// Arn of a RDS Resource.
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// Arn of a SecretsManager Secret.
-    pub fn credentials_secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.credentials_secret_arn.deref()
+    pub fn credentials_secret_arn(&self) -> & str {
+        use std::ops::Deref; self.credentials_secret_arn.deref()
     }
     /// Name of the database within RDS
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// Name of the table within RDS
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// A mapping of Bedrock Knowledge Base fields to RDS column names
-    pub fn field_mapping(&self) -> ::std::option::Option<&crate::types::RdsFieldMapping> {
+    pub fn field_mapping(&self) -> ::std::option::Option<& crate::types::RdsFieldMapping> {
         self.field_mapping.as_ref()
     }
 }
@@ -67,8 +63,7 @@ impl RdsConfigurationBuilder {
     }
     /// Arn of a RDS Resource.
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Arn of a RDS Resource.
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl RdsConfigurationBuilder {
     }
     /// Arn of a SecretsManager Secret.
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_secret_arn = input;
-        self
+        self.credentials_secret_arn = input; self
     }
     /// Arn of a SecretsManager Secret.
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl RdsConfigurationBuilder {
     }
     /// Name of the database within RDS
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// Name of the database within RDS
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl RdsConfigurationBuilder {
     }
     /// Name of the table within RDS
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Name of the table within RDS
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +119,7 @@ impl RdsConfigurationBuilder {
     }
     /// A mapping of Bedrock Knowledge Base fields to RDS column names
     pub fn set_field_mapping(mut self, input: ::std::option::Option<crate::types::RdsFieldMapping>) -> Self {
-        self.field_mapping = input;
-        self
+        self.field_mapping = input; self
     }
     /// A mapping of Bedrock Knowledge Base fields to RDS column names
     pub fn get_field_mapping(&self) -> &::std::option::Option<crate::types::RdsFieldMapping> {
@@ -141,32 +132,32 @@ impl RdsConfigurationBuilder {
     /// - [`database_name`](crate::types::builders::RdsConfigurationBuilder::database_name)
     /// - [`table_name`](crate::types::builders::RdsConfigurationBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RdsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RdsConfiguration {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building RdsConfiguration",
-                )
-            })?,
-            credentials_secret_arn: self.credentials_secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credentials_secret_arn",
-                    "credentials_secret_arn was not specified but it is required when building RdsConfiguration",
-                )
-            })?,
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building RdsConfiguration",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building RdsConfiguration",
-                )
-            })?,
-            field_mapping: self.field_mapping,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RdsConfiguration {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building RdsConfiguration")
+                    )?
+                ,
+                credentials_secret_arn: self.credentials_secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credentials_secret_arn", "credentials_secret_arn was not specified but it is required when building RdsConfiguration")
+                    )?
+                ,
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building RdsConfiguration")
+                    )?
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building RdsConfiguration")
+                    )?
+                ,
+                field_mapping: self.field_mapping
+                ,
+            }
+        )
     }
 }
+

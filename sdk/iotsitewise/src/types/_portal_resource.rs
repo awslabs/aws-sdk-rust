@@ -3,15 +3,14 @@
 /// <p>Identifies an IoT SiteWise Monitor portal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortalResource {
+pub struct PortalResource  {
     /// <p>The ID of the portal.</p>
     pub id: ::std::string::String,
 }
-impl PortalResource {
+impl  PortalResource  {
     /// <p>The ID of the portal.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl PortalResource {
@@ -36,8 +35,7 @@ impl PortalResourceBuilder {
     }
     /// <p>The ID of the portal.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the portal.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PortalResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::PortalResourceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::PortalResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortalResource {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PortalResource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortalResource {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PortalResource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

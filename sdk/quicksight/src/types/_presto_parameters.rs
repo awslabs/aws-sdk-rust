@@ -3,7 +3,7 @@
 /// <p>The parameters for Presto.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrestoParameters {
+pub struct PrestoParameters  {
     /// <p>Host.</p>
     pub host: ::std::string::String,
     /// <p>Port.</p>
@@ -11,20 +11,18 @@ pub struct PrestoParameters {
     /// <p>Catalog.</p>
     pub catalog: ::std::string::String,
 }
-impl PrestoParameters {
+impl  PrestoParameters  {
     /// <p>Host.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>Port.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>Catalog.</p>
-    pub fn catalog(&self) -> &str {
-        use std::ops::Deref;
-        self.catalog.deref()
+    pub fn catalog(&self) -> & str {
+        use std::ops::Deref; self.catalog.deref()
     }
 }
 impl PrestoParameters {
@@ -51,8 +49,7 @@ impl PrestoParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>Host.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl PrestoParametersBuilder {
     }
     /// <p>Port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Port.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -81,8 +77,7 @@ impl PrestoParametersBuilder {
     }
     /// <p>Catalog.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>Catalog.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl PrestoParametersBuilder {
     /// - [`port`](crate::types::builders::PrestoParametersBuilder::port)
     /// - [`catalog`](crate::types::builders::PrestoParametersBuilder::catalog)
     pub fn build(self) -> ::std::result::Result<crate::types::PrestoParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrestoParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building PrestoParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building PrestoParameters",
-                )
-            })?,
-            catalog: self.catalog.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "catalog",
-                    "catalog was not specified but it is required when building PrestoParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrestoParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building PrestoParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building PrestoParameters")
+                    )?
+                ,
+                catalog: self.catalog
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("catalog", "catalog was not specified but it is required when building PrestoParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

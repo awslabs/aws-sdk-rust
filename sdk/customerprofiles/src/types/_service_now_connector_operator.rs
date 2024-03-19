@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicenowconnectoroperator = unimplemented!();
 /// match servicenowconnectoroperator {
@@ -49,16 +49,14 @@
 /// Specifically, when `servicenowconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceNowConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ServiceNowConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -104,140 +102,119 @@ pub enum ServiceNowConnectorOperator {
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ServiceNowConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => ServiceNowConnectorOperator::Addition,
-            "BETWEEN" => ServiceNowConnectorOperator::Between,
-            "CONTAINS" => ServiceNowConnectorOperator::Contains,
-            "DIVISION" => ServiceNowConnectorOperator::Division,
-            "EQUAL_TO" => ServiceNowConnectorOperator::EqualTo,
-            "GREATER_THAN" => ServiceNowConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => ServiceNowConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => ServiceNowConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => ServiceNowConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => ServiceNowConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => ServiceNowConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => ServiceNowConnectorOperator::NotEqualTo,
-            "NO_OP" => ServiceNowConnectorOperator::NoOp,
-            "PROJECTION" => ServiceNowConnectorOperator::Projection,
-            "SUBTRACTION" => ServiceNowConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => ServiceNowConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => ServiceNowConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => ServiceNowConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => ServiceNowConnectorOperator::ValidateNumeric,
-            other => ServiceNowConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITION" => ServiceNowConnectorOperator::Addition,
+"BETWEEN" => ServiceNowConnectorOperator::Between,
+"CONTAINS" => ServiceNowConnectorOperator::Contains,
+"DIVISION" => ServiceNowConnectorOperator::Division,
+"EQUAL_TO" => ServiceNowConnectorOperator::EqualTo,
+"GREATER_THAN" => ServiceNowConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => ServiceNowConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => ServiceNowConnectorOperator::MaskAll,
+"MASK_FIRST_N" => ServiceNowConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => ServiceNowConnectorOperator::MaskLastN,
+"MULTIPLICATION" => ServiceNowConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => ServiceNowConnectorOperator::NotEqualTo,
+"NO_OP" => ServiceNowConnectorOperator::NoOp,
+"PROJECTION" => ServiceNowConnectorOperator::Projection,
+"SUBTRACTION" => ServiceNowConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => ServiceNowConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => ServiceNowConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => ServiceNowConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => ServiceNowConnectorOperator::ValidateNumeric,
+other => ServiceNowConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ServiceNowConnectorOperator {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ServiceNowConnectorOperator::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ServiceNowConnectorOperator::from(s))
+                    }
+                }
 impl ServiceNowConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceNowConnectorOperator::Addition => "ADDITION",
-            ServiceNowConnectorOperator::Between => "BETWEEN",
-            ServiceNowConnectorOperator::Contains => "CONTAINS",
-            ServiceNowConnectorOperator::Division => "DIVISION",
-            ServiceNowConnectorOperator::EqualTo => "EQUAL_TO",
-            ServiceNowConnectorOperator::GreaterThan => "GREATER_THAN",
-            ServiceNowConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            ServiceNowConnectorOperator::LessThan => "LESS_THAN",
-            ServiceNowConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            ServiceNowConnectorOperator::MaskAll => "MASK_ALL",
-            ServiceNowConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            ServiceNowConnectorOperator::MaskLastN => "MASK_LAST_N",
-            ServiceNowConnectorOperator::Multiplication => "MULTIPLICATION",
-            ServiceNowConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            ServiceNowConnectorOperator::NoOp => "NO_OP",
-            ServiceNowConnectorOperator::Projection => "PROJECTION",
-            ServiceNowConnectorOperator::Subtraction => "SUBTRACTION",
-            ServiceNowConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            ServiceNowConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            ServiceNowConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            ServiceNowConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            ServiceNowConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "CONTAINS",
-            "DIVISION",
-            "EQUAL_TO",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL_TO",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NOT_EQUAL_TO",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceNowConnectorOperator::Addition => "ADDITION",
+    ServiceNowConnectorOperator::Between => "BETWEEN",
+    ServiceNowConnectorOperator::Contains => "CONTAINS",
+    ServiceNowConnectorOperator::Division => "DIVISION",
+    ServiceNowConnectorOperator::EqualTo => "EQUAL_TO",
+    ServiceNowConnectorOperator::GreaterThan => "GREATER_THAN",
+    ServiceNowConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    ServiceNowConnectorOperator::LessThan => "LESS_THAN",
+    ServiceNowConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    ServiceNowConnectorOperator::MaskAll => "MASK_ALL",
+    ServiceNowConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    ServiceNowConnectorOperator::MaskLastN => "MASK_LAST_N",
+    ServiceNowConnectorOperator::Multiplication => "MULTIPLICATION",
+    ServiceNowConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    ServiceNowConnectorOperator::NoOp => "NO_OP",
+    ServiceNowConnectorOperator::Projection => "PROJECTION",
+    ServiceNowConnectorOperator::Subtraction => "SUBTRACTION",
+    ServiceNowConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    ServiceNowConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    ServiceNowConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    ServiceNowConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    ServiceNowConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ServiceNowConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ServiceNowConnectorOperator {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ServiceNowConnectorOperator {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ServiceNowConnectorOperator::Addition => write!(f, "ADDITION"),
-            ServiceNowConnectorOperator::Between => write!(f, "BETWEEN"),
-            ServiceNowConnectorOperator::Contains => write!(f, "CONTAINS"),
-            ServiceNowConnectorOperator::Division => write!(f, "DIVISION"),
-            ServiceNowConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
-            ServiceNowConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
-            ServiceNowConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
-            ServiceNowConnectorOperator::LessThan => write!(f, "LESS_THAN"),
-            ServiceNowConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
-            ServiceNowConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
-            ServiceNowConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
-            ServiceNowConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
-            ServiceNowConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
-            ServiceNowConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
-            ServiceNowConnectorOperator::NoOp => write!(f, "NO_OP"),
-            ServiceNowConnectorOperator::Projection => write!(f, "PROJECTION"),
-            ServiceNowConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
-            ServiceNowConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
-            ServiceNowConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
-            ServiceNowConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
-            ServiceNowConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            ServiceNowConnectorOperator::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ServiceNowConnectorOperator::Addition => write!(f, "ADDITION"),
+ServiceNowConnectorOperator::Between => write!(f, "BETWEEN"),
+ServiceNowConnectorOperator::Contains => write!(f, "CONTAINS"),
+ServiceNowConnectorOperator::Division => write!(f, "DIVISION"),
+ServiceNowConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+ServiceNowConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+ServiceNowConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+ServiceNowConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+ServiceNowConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+ServiceNowConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+ServiceNowConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+ServiceNowConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+ServiceNowConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+ServiceNowConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+ServiceNowConnectorOperator::NoOp => write!(f, "NO_OP"),
+ServiceNowConnectorOperator::Projection => write!(f, "PROJECTION"),
+ServiceNowConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+ServiceNowConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+ServiceNowConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+ServiceNowConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+ServiceNowConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+ServiceNowConnectorOperator::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

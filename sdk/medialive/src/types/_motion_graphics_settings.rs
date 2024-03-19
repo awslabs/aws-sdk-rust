@@ -3,13 +3,13 @@
 /// Motion Graphics Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MotionGraphicsSettings {
+pub struct MotionGraphicsSettings  {
     /// Html Motion Graphics Settings
     pub html_motion_graphics_settings: ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
 }
-impl MotionGraphicsSettings {
+impl  MotionGraphicsSettings  {
     /// Html Motion Graphics Settings
-    pub fn html_motion_graphics_settings(&self) -> ::std::option::Option<&crate::types::HtmlMotionGraphicsSettings> {
+    pub fn html_motion_graphics_settings(&self) -> ::std::option::Option<& crate::types::HtmlMotionGraphicsSettings> {
         self.html_motion_graphics_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MotionGraphicsSettingsBuilder {
     }
     /// Html Motion Graphics Settings
     pub fn set_html_motion_graphics_settings(mut self, input: ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>) -> Self {
-        self.html_motion_graphics_settings = input;
-        self
+        self.html_motion_graphics_settings = input; self
     }
     /// Html Motion Graphics Settings
     pub fn get_html_motion_graphics_settings(&self) -> &::std::option::Option<crate::types::HtmlMotionGraphicsSettings> {
@@ -44,7 +43,9 @@ impl MotionGraphicsSettingsBuilder {
     /// Consumes the builder and constructs a [`MotionGraphicsSettings`](crate::types::MotionGraphicsSettings).
     pub fn build(self) -> crate::types::MotionGraphicsSettings {
         crate::types::MotionGraphicsSettings {
-            html_motion_graphics_settings: self.html_motion_graphics_settings,
+            html_motion_graphics_settings: self.html_motion_graphics_settings
+            ,
         }
     }
 }
+

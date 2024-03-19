@@ -3,11 +3,11 @@
 /// <p>Contains server-side performance information for a command. Amazon QLDB captures timing information between the times when it receives the request and when it sends the corresponding response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimingInformation {
+pub struct TimingInformation  {
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     pub processing_time_milliseconds: i64,
 }
-impl TimingInformation {
+impl  TimingInformation  {
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     pub fn processing_time_milliseconds(&self) -> i64 {
         self.processing_time_milliseconds
@@ -34,8 +34,7 @@ impl TimingInformationBuilder {
     }
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     pub fn set_processing_time_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.processing_time_milliseconds = input;
-        self
+        self.processing_time_milliseconds = input; self
     }
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     pub fn get_processing_time_milliseconds(&self) -> &::std::option::Option<i64> {
@@ -44,7 +43,10 @@ impl TimingInformationBuilder {
     /// Consumes the builder and constructs a [`TimingInformation`](crate::types::TimingInformation).
     pub fn build(self) -> crate::types::TimingInformation {
         crate::types::TimingInformation {
-            processing_time_milliseconds: self.processing_time_milliseconds.unwrap_or_default(),
+            processing_time_milliseconds: self.processing_time_milliseconds
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

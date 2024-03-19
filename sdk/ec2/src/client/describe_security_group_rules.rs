@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSecurityGroupRules`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(Filter)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters.</p> <ul>  <li>   <p><code>group-id</code> - The ID of the security group.</p></li>  <li>   <p><code>security-group-rule-id</code> - The ID of the security group rule.</p></li>  <li>   <p><code>tag</code>:<key>     - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key      <code>Owner</code> and the value      <code>TeamA</code>, specify      <code>tag:Owner</code> for the filter name and      <code>TeamA</code> for the filter value.    </key></p></li> </ul><br>
     ///   - [`security_group_rule_ids(impl Into<String>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::security_group_rule_ids) / [`set_security_group_rule_ids(Option<Vec::<String>>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::set_security_group_rule_ids):<br>required: **false**<br><p>The IDs of the security group rules.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then all items are returned. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p><br>
-    /// - On success, responds with [`DescribeSecurityGroupRulesOutput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput) with field(s):
+                            /// - On success, responds with [`DescribeSecurityGroupRulesOutput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput) with field(s):
     ///   - [`security_group_rules(Option<Vec::<SecurityGroupRule>>)`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput::security_group_rules): <p>Information about security group rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeSecurityGroupRulesError>`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError)
-    pub fn describe_security_group_rules(
-        &self,
-    ) -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder {
-        crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeSecurityGroupRulesError>`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError)
+    pub fn describe_security_group_rules(&self) -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder {
+                                crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

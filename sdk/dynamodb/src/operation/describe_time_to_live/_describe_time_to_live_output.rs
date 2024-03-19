@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTimeToLiveOutput {
+pub struct DescribeTimeToLiveOutput  {
     /// <p></p>
     pub time_to_live_description: ::std::option::Option<crate::types::TimeToLiveDescription>,
     _request_id: Option<String>,
 }
-impl DescribeTimeToLiveOutput {
+impl  DescribeTimeToLiveOutput  {
     /// <p></p>
-    pub fn time_to_live_description(&self) -> ::std::option::Option<&crate::types::TimeToLiveDescription> {
+    pub fn time_to_live_description(&self) -> ::std::option::Option<& crate::types::TimeToLiveDescription> {
         self.time_to_live_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTimeToLiveOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTimeToLiveOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveOutput`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput).
     pub fn builder() -> crate::operation::describe_time_to_live::builders::DescribeTimeToLiveOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeTimeToLiveOutputBuilder {
     }
     /// <p></p>
     pub fn set_time_to_live_description(mut self, input: ::std::option::Option<crate::types::TimeToLiveDescription>) -> Self {
-        self.time_to_live_description = input;
-        self
+        self.time_to_live_description = input; self
     }
     /// <p></p>
     pub fn get_time_to_live_description(&self) -> &::std::option::Option<crate::types::TimeToLiveDescription> {
         &self.time_to_live_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTimeToLiveOutput`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput).
     pub fn build(self) -> crate::operation::describe_time_to_live::DescribeTimeToLiveOutput {
         crate::operation::describe_time_to_live::DescribeTimeToLiveOutput {
-            time_to_live_description: self.time_to_live_description,
+            time_to_live_description: self.time_to_live_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

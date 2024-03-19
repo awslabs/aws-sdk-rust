@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestExecutionInput {
+pub struct DescribeTestExecutionInput  {
     /// <p>The execution Id of the test set execution.</p>
     pub test_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTestExecutionInput {
+impl  DescribeTestExecutionInput  {
     /// <p>The execution Id of the test set execution.</p>
-    pub fn test_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_execution_id(&self) -> ::std::option::Option<& str> {
         self.test_execution_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeTestExecutionInputBuilder {
     }
     /// <p>The execution Id of the test set execution.</p>
     pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_execution_id = input;
-        self
+        self.test_execution_id = input; self
     }
     /// <p>The execution Id of the test set execution.</p>
     pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_execution_id
     }
     /// Consumes the builder and constructs a [`DescribeTestExecutionInput`](crate::operation::describe_test_execution::DescribeTestExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_test_execution::DescribeTestExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_test_execution::DescribeTestExecutionInput {
-            test_execution_id: self.test_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_test_execution::DescribeTestExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_test_execution::DescribeTestExecutionInput {
+                test_execution_id: self.test_execution_id
+                ,
+            }
+        )
     }
 }
+

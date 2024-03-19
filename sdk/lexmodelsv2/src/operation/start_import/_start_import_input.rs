@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartImportInput {
+pub struct StartImportInput  {
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
@@ -12,25 +12,25 @@ pub struct StartImportInput {
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub file_password: ::std::option::Option<::std::string::String>,
 }
-impl StartImportInput {
+impl  StartImportInput  {
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
-    pub fn import_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ImportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<& crate::types::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn merge_strategy(&self) -> ::std::option::Option<&crate::types::MergeStrategy> {
+    pub fn merge_strategy(&self) -> ::std::option::Option<& crate::types::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn file_password(&self) -> ::std::option::Option<&str> {
+    pub fn file_password(&self) -> ::std::option::Option<& str> {
         self.file_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartImportInput {
+impl  ::std::fmt::Debug for StartImportInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartImportInput");
         formatter.field("import_id", &self.import_id);
@@ -65,8 +65,7 @@ impl StartImportInputBuilder {
     }
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl StartImportInputBuilder {
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
     pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ImportResourceSpecification>) -> Self {
-        self.resource_specification = input;
-        self
+        self.resource_specification = input; self
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
     pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
@@ -95,8 +93,7 @@ impl StartImportInputBuilder {
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
-        self.merge_strategy = input;
-        self
+        self.merge_strategy = input; self
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
@@ -109,8 +106,7 @@ impl StartImportInputBuilder {
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub fn set_file_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_password = input;
-        self
+        self.file_password = input; self
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,12 +114,18 @@ impl StartImportInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
-            import_id: self.import_id,
-            resource_specification: self.resource_specification,
-            merge_strategy: self.merge_strategy,
-            file_password: self.file_password,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_import::StartImportInput {
+                import_id: self.import_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                file_password: self.file_password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartImportInputBuilder {
@@ -136,3 +138,4 @@ impl ::std::fmt::Debug for StartImportInputBuilder {
         formatter.finish()
     }
 }
+

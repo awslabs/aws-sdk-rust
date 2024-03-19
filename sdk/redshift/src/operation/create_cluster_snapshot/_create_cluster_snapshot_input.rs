@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterSnapshotInput {
+pub struct CreateClusterSnapshotInput  {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -25,9 +25,9 @@ pub struct CreateClusterSnapshotInput {
     /// <p>The default value is -1.</p>
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateClusterSnapshotInput {
+impl  CreateClusterSnapshotInput  {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -41,11 +41,11 @@ impl CreateClusterSnapshotInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
@@ -55,10 +55,11 @@ impl CreateClusterSnapshotInput {
         self.manual_snapshot_retention_period
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateClusterSnapshotInput {
@@ -75,7 +76,7 @@ pub struct CreateClusterSnapshotInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
@@ -110,8 +111,7 @@ impl CreateClusterSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
@@ -137,8 +137,7 @@ impl CreateClusterSnapshotInputBuilder {
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input;
-        self
+        self.manual_snapshot_retention_period = input; self
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -171,29 +169,32 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
-            snapshot_identifier: self.snapshot_identifier,
-            cluster_identifier: self.cluster_identifier,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

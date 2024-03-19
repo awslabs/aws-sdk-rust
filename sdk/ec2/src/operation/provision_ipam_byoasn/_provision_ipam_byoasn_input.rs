@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionIpamByoasnInput {
+pub struct ProvisionIpamByoasnInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>An IPAM ID.</p>
@@ -12,21 +12,21 @@ pub struct ProvisionIpamByoasnInput {
     /// <p>An ASN authorization context.</p>
     pub asn_authorization_context: ::std::option::Option<crate::types::AsnAuthorizationContext>,
 }
-impl ProvisionIpamByoasnInput {
+impl  ProvisionIpamByoasnInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>An IPAM ID.</p>
-    pub fn ipam_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_id(&self) -> ::std::option::Option<& str> {
         self.ipam_id.as_deref()
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
     /// <p>An ASN authorization context.</p>
-    pub fn asn_authorization_context(&self) -> ::std::option::Option<&crate::types::AsnAuthorizationContext> {
+    pub fn asn_authorization_context(&self) -> ::std::option::Option<& crate::types::AsnAuthorizationContext> {
         self.asn_authorization_context.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ProvisionIpamByoasnInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl ProvisionIpamByoasnInputBuilder {
     }
     /// <p>An IPAM ID.</p>
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_id = input;
-        self
+        self.ipam_id = input; self
     }
     /// <p>An IPAM ID.</p>
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ProvisionIpamByoasnInputBuilder {
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl ProvisionIpamByoasnInputBuilder {
     }
     /// <p>An ASN authorization context.</p>
     pub fn set_asn_authorization_context(mut self, input: ::std::option::Option<crate::types::AsnAuthorizationContext>) -> Self {
-        self.asn_authorization_context = input;
-        self
+        self.asn_authorization_context = input; self
     }
     /// <p>An ASN authorization context.</p>
     pub fn get_asn_authorization_context(&self) -> &::std::option::Option<crate::types::AsnAuthorizationContext> {
         &self.asn_authorization_context
     }
     /// Consumes the builder and constructs a [`ProvisionIpamByoasnInput`](crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnInput {
-            dry_run: self.dry_run,
-            ipam_id: self.ipam_id,
-            asn: self.asn,
-            asn_authorization_context: self.asn_authorization_context,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnInput {
+                dry_run: self.dry_run
+                ,
+                ipam_id: self.ipam_id
+                ,
+                asn: self.asn
+                ,
+                asn_authorization_context: self.asn_authorization_context
+                ,
+            }
+        )
     }
 }
+

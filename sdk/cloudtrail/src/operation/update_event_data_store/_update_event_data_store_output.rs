@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventDataStoreOutput {
+pub struct UpdateEventDataStoreOutput  {
     /// <p>The ARN of the event data store.</p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event data store.</p>
@@ -10,7 +10,7 @@ pub struct UpdateEventDataStoreOutput {
     /// <p>The status of an event data store.</p>
     pub status: ::std::option::Option<crate::types::EventDataStoreStatus>,
     /// <p>The advanced event selectors that are applied to the event data store.</p>
-    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
@@ -34,24 +34,25 @@ pub struct UpdateEventDataStoreOutput {
     pub federation_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateEventDataStoreOutput {
+impl  UpdateEventDataStoreOutput  {
     /// <p>The ARN of the event data store.</p>
-    pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store_arn(&self) -> ::std::option::Option<& str> {
         self.event_data_store_arn.as_deref()
     }
     /// <p>The name of the event data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of an event data store.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EventDataStoreStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EventDataStoreStatus> {
         self.status.as_ref()
     }
     /// <p>The advanced event selectors that are applied to the event data store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
-    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
-        self.advanced_event_selectors.as_deref().unwrap_or_default()
+    pub fn advanced_event_selectors(&self) -> & [crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
@@ -70,36 +71,36 @@ impl UpdateEventDataStoreOutput {
         self.termination_protection_enabled
     }
     /// <p>The timestamp that shows when an event data store was first created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The billing mode for the event data store.</p>
-    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+    pub fn billing_mode(&self) -> ::std::option::Option<& crate::types::BillingMode> {
         self.billing_mode.as_ref()
     }
     /// <p>Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>.</p>
-    pub fn federation_status(&self) -> ::std::option::Option<&crate::types::FederationStatus> {
+    pub fn federation_status(&self) -> ::std::option::Option<& crate::types::FederationStatus> {
         self.federation_status.as_ref()
     }
     /// <p>If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store.</p>
-    pub fn federation_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn federation_role_arn(&self) -> ::std::option::Option<& str> {
         self.federation_role_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateEventDataStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateEventDataStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreOutput`](crate::operation::update_event_data_store::UpdateEventDataStoreOutput).
     pub fn builder() -> crate::operation::update_event_data_store::builders::UpdateEventDataStoreOutputBuilder {
@@ -114,7 +115,7 @@ pub struct UpdateEventDataStoreOutputBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EventDataStoreStatus>,
-    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>,
     pub(crate) multi_region_enabled: ::std::option::Option<bool>,
     pub(crate) organization_enabled: ::std::option::Option<bool>,
     pub(crate) retention_period: ::std::option::Option<i32>,
@@ -135,8 +136,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The ARN of the event data store.</p>
     pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store_arn = input;
-        self
+        self.event_data_store_arn = input; self
     }
     /// <p>The ARN of the event data store.</p>
     pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +149,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The name of the event data store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event data store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +162,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The status of an event data store.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventDataStoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an event data store.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EventDataStoreStatus> {
@@ -177,17 +175,16 @@ impl UpdateEventDataStoreOutputBuilder {
     /// <p>The advanced event selectors that are applied to the event data store.</p>
     pub fn advanced_event_selectors(mut self, input: crate::types::AdvancedEventSelector) -> Self {
         let mut v = self.advanced_event_selectors.unwrap_or_default();
-        v.push(input);
-        self.advanced_event_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.advanced_event_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The advanced event selectors that are applied to the event data store.</p>
-    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
-        self.advanced_event_selectors = input;
-        self
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>) -> Self {
+        self.advanced_event_selectors = input; self
     }
     /// <p>The advanced event selectors that are applied to the event data store.</p>
-    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
@@ -197,8 +194,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_region_enabled = input;
-        self
+        self.multi_region_enabled = input; self
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
@@ -211,8 +207,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
     pub fn set_organization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.organization_enabled = input;
-        self
+        self.organization_enabled = input; self
     }
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
     pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
@@ -225,8 +220,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The retention period, in days.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The retention period, in days.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
@@ -239,8 +233,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>Indicates whether termination protection is enabled for the event data store.</p>
     pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.termination_protection_enabled = input;
-        self
+        self.termination_protection_enabled = input; self
     }
     /// <p>Indicates whether termination protection is enabled for the event data store.</p>
     pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
@@ -253,8 +246,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The timestamp that shows when an event data store was first created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp that shows when an event data store was first created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,8 +259,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input;
-        self
+        self.updated_timestamp = input; self
     }
     /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -283,8 +274,7 @@ impl UpdateEventDataStoreOutputBuilder {
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
@@ -298,8 +288,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>The billing mode for the event data store.</p>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
-        self.billing_mode = input;
-        self
+        self.billing_mode = input; self
     }
     /// <p>The billing mode for the event data store.</p>
     pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
@@ -312,8 +301,7 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>.</p>
     pub fn set_federation_status(mut self, input: ::std::option::Option<crate::types::FederationStatus>) -> Self {
-        self.federation_status = input;
-        self
+        self.federation_status = input; self
     }
     /// <p>Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>.</p>
     pub fn get_federation_status(&self) -> &::std::option::Option<crate::types::FederationStatus> {
@@ -326,40 +314,54 @@ impl UpdateEventDataStoreOutputBuilder {
     }
     /// <p>If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store.</p>
     pub fn set_federation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.federation_role_arn = input;
-        self
+        self.federation_role_arn = input; self
     }
     /// <p>If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store.</p>
     pub fn get_federation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.federation_role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateEventDataStoreOutput`](crate::operation::update_event_data_store::UpdateEventDataStoreOutput).
     pub fn build(self) -> crate::operation::update_event_data_store::UpdateEventDataStoreOutput {
         crate::operation::update_event_data_store::UpdateEventDataStoreOutput {
-            event_data_store_arn: self.event_data_store_arn,
-            name: self.name,
-            status: self.status,
-            advanced_event_selectors: self.advanced_event_selectors,
-            multi_region_enabled: self.multi_region_enabled,
-            organization_enabled: self.organization_enabled,
-            retention_period: self.retention_period,
-            termination_protection_enabled: self.termination_protection_enabled,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
-            kms_key_id: self.kms_key_id,
-            billing_mode: self.billing_mode,
-            federation_status: self.federation_status,
-            federation_role_arn: self.federation_role_arn,
+            event_data_store_arn: self.event_data_store_arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            advanced_event_selectors: self.advanced_event_selectors
+            ,
+            multi_region_enabled: self.multi_region_enabled
+            ,
+            organization_enabled: self.organization_enabled
+            ,
+            retention_period: self.retention_period
+            ,
+            termination_protection_enabled: self.termination_protection_enabled
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            billing_mode: self.billing_mode
+            ,
+            federation_status: self.federation_status
+            ,
+            federation_role_arn: self.federation_role_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

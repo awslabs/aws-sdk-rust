@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDocumentInput {
+pub struct CreateDocumentInput  {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
@@ -15,9 +15,9 @@ pub struct CreateDocumentInput {
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
+    pub requires: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRequires>>,
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentsSource>>,
     /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
@@ -51,9 +51,9 @@ pub struct CreateDocumentInput {
     /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDocumentInput {
+impl  CreateDocumentInput  {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
@@ -64,20 +64,22 @@ impl CreateDocumentInput {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires.is_none()`.
-    pub fn requires(&self) -> &[crate::types::DocumentRequires] {
-        self.requires.as_deref().unwrap_or_default()
+    pub fn requires(&self) -> & [crate::types::DocumentRequires] {
+        self.requires.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
-    pub fn attachments(&self) -> &[crate::types::AttachmentsSource] {
-        self.attachments.as_deref().unwrap_or_default()
+    pub fn attachments(&self) -> & [crate::types::AttachmentsSource] {
+        self.attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
@@ -90,29 +92,29 @@ impl CreateDocumentInput {
     /// <p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
-    pub fn document_type(&self) -> ::std::option::Option<&crate::types::DocumentType> {
+    pub fn document_type(&self) -> ::std::option::Option<& crate::types::DocumentType> {
         self.document_type.as_ref()
     }
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
-    pub fn document_format(&self) -> ::std::option::Option<&crate::types::DocumentFormat> {
+    pub fn document_format(&self) -> ::std::option::Option<& crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&str> {
+    pub fn target_type(&self) -> ::std::option::Option<& str> {
         self.target_type.as_deref()
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
@@ -124,10 +126,11 @@ impl CreateDocumentInput {
     /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDocumentInput {
@@ -142,15 +145,15 @@ impl CreateDocumentInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentInputBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
-    pub(crate) requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
-    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
+    pub(crate) requires: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRequires>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentsSource>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_type: ::std::option::Option<crate::types::DocumentType>,
     pub(crate) document_format: ::std::option::Option<crate::types::DocumentFormat>,
     pub(crate) target_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
@@ -179,8 +182,7 @@ impl CreateDocumentInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -202,17 +204,16 @@ impl CreateDocumentInputBuilder {
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn requires(mut self, input: crate::types::DocumentRequires) -> Self {
         let mut v = self.requires.unwrap_or_default();
-        v.push(input);
-        self.requires = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.requires = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_requires(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
-        self.requires = input;
-        self
+    pub fn set_requires(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRequires>>) -> Self {
+        self.requires = input; self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+    pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentRequires>> {
         &self.requires
     }
     /// Appends an item to `attachments`.
@@ -222,17 +223,16 @@ impl CreateDocumentInputBuilder {
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
     pub fn attachments(mut self, input: crate::types::AttachmentsSource) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentsSource>>) -> Self {
+        self.attachments = input; self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttachmentsSource>> {
         &self.attachments
     }
     /// <p>A name for the SSM document.</p><important>
@@ -263,8 +263,7 @@ impl CreateDocumentInputBuilder {
     /// </ul>
     /// </important>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
@@ -287,8 +286,7 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +299,7 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,8 +316,7 @@ impl CreateDocumentInputBuilder {
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
-        self.document_type = input;
-        self
+        self.document_type = input; self
     }
     /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
@@ -335,8 +331,7 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
-        self.document_format = input;
-        self
+        self.document_format = input; self
     }
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
@@ -349,8 +344,7 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,9 +365,9 @@ impl CreateDocumentInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -384,9 +378,8 @@ impl CreateDocumentInputBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -397,24 +390,35 @@ impl CreateDocumentInputBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDocumentInput`](crate::operation::create_document::CreateDocumentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_document::CreateDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_document::CreateDocumentInput {
-            content: self.content,
-            requires: self.requires,
-            attachments: self.attachments,
-            name: self.name,
-            display_name: self.display_name,
-            version_name: self.version_name,
-            document_type: self.document_type,
-            document_format: self.document_format,
-            target_type: self.target_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_document::CreateDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_document::CreateDocumentInput {
+                content: self.content
+                ,
+                requires: self.requires
+                ,
+                attachments: self.attachments
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                version_name: self.version_name
+                ,
+                document_type: self.document_type
+                ,
+                document_format: self.document_format
+                ,
+                target_type: self.target_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

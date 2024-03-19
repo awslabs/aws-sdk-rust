@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCoreNetworkChangeSet`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`core_network_id(impl Into<String>)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::set_core_network_id):<br>required: **true**<br><p>The ID of a core network.</p><br>
     ///   - [`policy_version_id(i32)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<i32>)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::set_policy_version_id):<br>required: **true**<br><p>The ID of the policy version.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetCoreNetworkChangeSetOutput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput) with field(s):
+                            /// - On success, responds with [`GetCoreNetworkChangeSetOutput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput) with field(s):
     ///   - [`core_network_changes(Option<Vec::<CoreNetworkChange>>)`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput::core_network_changes): <p>Describes a core network changes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetCoreNetworkChangeSetError>`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetError)
+                            /// - On failure, responds with [`SdkError<GetCoreNetworkChangeSetError>`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetError)
     pub fn get_core_network_change_set(&self) -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder {
-        crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetFluentBuilder::new(self.handle.clone())
+                            }
 }
+

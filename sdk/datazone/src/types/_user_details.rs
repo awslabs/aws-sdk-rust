@@ -3,15 +3,14 @@
 /// <p>The user details of a project member.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserDetails {
+pub struct UserDetails  {
     /// <p>The identifier of the Amazon DataZone user.</p>
     pub user_id: ::std::string::String,
 }
-impl UserDetails {
+impl  UserDetails  {
     /// <p>The identifier of the Amazon DataZone user.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
 }
 impl UserDetails {
@@ -36,8 +35,7 @@ impl UserDetailsBuilder {
     }
     /// <p>The identifier of the Amazon DataZone user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the Amazon DataZone user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl UserDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::types::builders::UserDetailsBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UserDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserDetails {
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building UserDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserDetails {
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building UserDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

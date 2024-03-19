@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountOutput {
+pub struct UpdateAccountOutput  {
     /// <p>The updated Amazon Chime account details.</p>
     pub account: ::std::option::Option<crate::types::Account>,
     _request_id: Option<String>,
 }
-impl UpdateAccountOutput {
+impl  UpdateAccountOutput  {
     /// <p>The updated Amazon Chime account details.</p>
-    pub fn account(&self) -> ::std::option::Option<&crate::types::Account> {
+    pub fn account(&self) -> ::std::option::Option<& crate::types::Account> {
         self.account.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAccountOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountOutput`](crate::operation::update_account::UpdateAccountOutput).
     pub fn builder() -> crate::operation::update_account::builders::UpdateAccountOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateAccountOutputBuilder {
     }
     /// <p>The updated Amazon Chime account details.</p>
     pub fn set_account(mut self, input: ::std::option::Option<crate::types::Account>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The updated Amazon Chime account details.</p>
     pub fn get_account(&self) -> &::std::option::Option<crate::types::Account> {
         &self.account
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAccountOutput`](crate::operation::update_account::UpdateAccountOutput).
     pub fn build(self) -> crate::operation::update_account::UpdateAccountOutput {
         crate::operation::update_account::UpdateAccountOutput {
-            account: self.account,
+            account: self.account
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

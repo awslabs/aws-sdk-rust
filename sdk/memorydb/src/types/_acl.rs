@@ -3,53 +3,55 @@
 /// <p>An Access Control List. You can authenticate users with Access Contol Lists. ACLs enable you to control cluster access by grouping users. These Access control lists are designed as a way to organize access to clusters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Acl {
+pub struct Acl  {
     /// <p>The name of the Access Control List</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The list of user names that belong to the ACL.</p>
-    pub user_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The minimum engine version supported for the ACL</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of updates being applied to the ACL.</p>
     pub pending_changes: ::std::option::Option<crate::types::AclPendingChanges>,
     /// <p>A list of clusters associated with the ACL.</p>
-    pub clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub clusters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl Acl {
+impl  Acl  {
     /// <p>The name of the Access Control List</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names.is_none()`.
-    pub fn user_names(&self) -> &[::std::string::String] {
-        self.user_names.as_deref().unwrap_or_default()
+    pub fn user_names(&self) -> & [::std::string::String] {
+        self.user_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The minimum engine version supported for the ACL</p>
-    pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> ::std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of updates being applied to the ACL.</p>
-    pub fn pending_changes(&self) -> ::std::option::Option<&crate::types::AclPendingChanges> {
+    pub fn pending_changes(&self) -> ::std::option::Option<& crate::types::AclPendingChanges> {
         self.pending_changes.as_ref()
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
-    pub fn clusters(&self) -> &[::std::string::String] {
-        self.clusters.as_deref().unwrap_or_default()
+    pub fn clusters(&self) -> & [::std::string::String] {
+        self.clusters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -66,10 +68,10 @@ impl Acl {
 pub struct AclBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) user_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) pending_changes: ::std::option::Option<crate::types::AclPendingChanges>,
-    pub(crate) clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) clusters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl AclBuilder {
@@ -80,8 +82,7 @@ impl AclBuilder {
     }
     /// <p>The name of the Access Control List</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Access Control List</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl AclBuilder {
     }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,17 +108,16 @@ impl AclBuilder {
     /// <p>The list of user names that belong to the ACL.</p>
     pub fn user_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_names.unwrap_or_default();
-        v.push(input.into());
-        self.user_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    pub fn set_user_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_names = input;
-        self
+    pub fn set_user_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_names = input; self
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    pub fn get_user_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_names
     }
     /// <p>The minimum engine version supported for the ACL</p>
@@ -128,8 +127,7 @@ impl AclBuilder {
     }
     /// <p>The minimum engine version supported for the ACL</p>
     pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.minimum_engine_version = input;
-        self
+        self.minimum_engine_version = input; self
     }
     /// <p>The minimum engine version supported for the ACL</p>
     pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl AclBuilder {
     }
     /// <p>A list of updates being applied to the ACL.</p>
     pub fn set_pending_changes(mut self, input: ::std::option::Option<crate::types::AclPendingChanges>) -> Self {
-        self.pending_changes = input;
-        self
+        self.pending_changes = input; self
     }
     /// <p>A list of updates being applied to the ACL.</p>
     pub fn get_pending_changes(&self) -> &::std::option::Option<crate::types::AclPendingChanges> {
@@ -156,17 +153,16 @@ impl AclBuilder {
     /// <p>A list of clusters associated with the ACL.</p>
     pub fn clusters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.clusters.unwrap_or_default();
-        v.push(input.into());
-        self.clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.clusters = input;
-        self
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.clusters = input; self
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.clusters
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
@@ -176,8 +172,7 @@ impl AclBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,13 +181,21 @@ impl AclBuilder {
     /// Consumes the builder and constructs a [`Acl`](crate::types::Acl).
     pub fn build(self) -> crate::types::Acl {
         crate::types::Acl {
-            name: self.name,
-            status: self.status,
-            user_names: self.user_names,
-            minimum_engine_version: self.minimum_engine_version,
-            pending_changes: self.pending_changes,
-            clusters: self.clusters,
-            arn: self.arn,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            user_names: self.user_names
+            ,
+            minimum_engine_version: self.minimum_engine_version
+            ,
+            pending_changes: self.pending_changes
+            ,
+            clusters: self.clusters
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your Amazon FSx for NetApp ONTAP file system. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Accessing FSx for ONTAP file systems</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FsxProtocolSmb {
+pub struct FsxProtocolSmb  {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this setting makes sure that DataSync connects to the right SVM.</p>
     pub domain: ::std::option::Option<::std::string::String>,
@@ -15,29 +15,27 @@ pub struct FsxProtocolSmb {
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using the SMB protocol</a>.</p>
     pub user: ::std::string::String,
 }
-impl FsxProtocolSmb {
+impl  FsxProtocolSmb  {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this setting makes sure that DataSync connects to the right SVM.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::SmbMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<& crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
-    pub fn password(&self) -> &str {
-        use std::ops::Deref;
-        self.password.deref()
+    pub fn password(&self) -> & str {
+        use std::ops::Deref; self.password.deref()
     }
     /// <p>Specifies a user that can mount and access the files, folders, and metadata in your SVM.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using the SMB protocol</a>.</p>
-    pub fn user(&self) -> &str {
-        use std::ops::Deref;
-        self.user.deref()
+    pub fn user(&self) -> & str {
+        use std::ops::Deref; self.user.deref()
     }
 }
-impl ::std::fmt::Debug for FsxProtocolSmb {
+impl  ::std::fmt::Debug for FsxProtocolSmb  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FsxProtocolSmb");
         formatter.field("domain", &self.domain);
@@ -73,8 +71,7 @@ impl FsxProtocolSmbBuilder {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this setting makes sure that DataSync connects to the right SVM.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this setting makes sure that DataSync connects to the right SVM.</p>
@@ -88,8 +85,7 @@ impl FsxProtocolSmbBuilder {
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
-        self.mount_options = input;
-        self
+        self.mount_options = input; self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
@@ -103,8 +99,7 @@ impl FsxProtocolSmbBuilder {
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +115,7 @@ impl FsxProtocolSmbBuilder {
     /// <p>Specifies a user that can mount and access the files, folders, and metadata in your SVM.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using the SMB protocol</a>.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Specifies a user that can mount and access the files, folders, and metadata in your SVM.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using the SMB protocol</a>.</p>
@@ -133,22 +127,24 @@ impl FsxProtocolSmbBuilder {
     /// - [`password`](crate::types::builders::FsxProtocolSmbBuilder::password)
     /// - [`user`](crate::types::builders::FsxProtocolSmbBuilder::user)
     pub fn build(self) -> ::std::result::Result<crate::types::FsxProtocolSmb, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FsxProtocolSmb {
-            domain: self.domain,
-            mount_options: self.mount_options,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building FsxProtocolSmb",
-                )
-            })?,
-            user: self.user.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user",
-                    "user was not specified but it is required when building FsxProtocolSmb",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FsxProtocolSmb {
+                domain: self.domain
+                ,
+                mount_options: self.mount_options
+                ,
+                password: self.password
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("password", "password was not specified but it is required when building FsxProtocolSmb")
+                    )?
+                ,
+                user: self.user
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user", "user was not specified but it is required when building FsxProtocolSmb")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for FsxProtocolSmbBuilder {
@@ -161,3 +157,4 @@ impl ::std::fmt::Debug for FsxProtocolSmbBuilder {
         formatter.finish()
     }
 }
+

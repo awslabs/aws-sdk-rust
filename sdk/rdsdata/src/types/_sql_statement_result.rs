@@ -5,15 +5,15 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlStatementResult {
+pub struct SqlStatementResult  {
     /// <p>The result set of the SQL statement.</p>
     pub result_frame: ::std::option::Option<crate::types::ResultFrame>,
     /// <p>The number of records updated by a SQL statement.</p>
     pub number_of_records_updated: i64,
 }
-impl SqlStatementResult {
+impl  SqlStatementResult  {
     /// <p>The result set of the SQL statement.</p>
-    pub fn result_frame(&self) -> ::std::option::Option<&crate::types::ResultFrame> {
+    pub fn result_frame(&self) -> ::std::option::Option<& crate::types::ResultFrame> {
         self.result_frame.as_ref()
     }
     /// <p>The number of records updated by a SQL statement.</p>
@@ -43,8 +43,7 @@ impl SqlStatementResultBuilder {
     }
     /// <p>The result set of the SQL statement.</p>
     pub fn set_result_frame(mut self, input: ::std::option::Option<crate::types::ResultFrame>) -> Self {
-        self.result_frame = input;
-        self
+        self.result_frame = input; self
     }
     /// <p>The result set of the SQL statement.</p>
     pub fn get_result_frame(&self) -> &::std::option::Option<crate::types::ResultFrame> {
@@ -57,8 +56,7 @@ impl SqlStatementResultBuilder {
     }
     /// <p>The number of records updated by a SQL statement.</p>
     pub fn set_number_of_records_updated(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_records_updated = input;
-        self
+        self.number_of_records_updated = input; self
     }
     /// <p>The number of records updated by a SQL statement.</p>
     pub fn get_number_of_records_updated(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,12 @@ impl SqlStatementResultBuilder {
     /// Consumes the builder and constructs a [`SqlStatementResult`](crate::types::SqlStatementResult).
     pub fn build(self) -> crate::types::SqlStatementResult {
         crate::types::SqlStatementResult {
-            result_frame: self.result_frame,
-            number_of_records_updated: self.number_of_records_updated.unwrap_or_default(),
+            result_frame: self.result_frame
+            ,
+            number_of_records_updated: self.number_of_records_updated
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

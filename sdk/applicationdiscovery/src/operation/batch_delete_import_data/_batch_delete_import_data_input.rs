@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteImportDataInput {
+pub struct BatchDeleteImportDataInput  {
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub import_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub import_task_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
     pub delete_history: ::std::option::Option<bool>,
 }
-impl BatchDeleteImportDataInput {
+impl  BatchDeleteImportDataInput  {
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_task_ids.is_none()`.
-    pub fn import_task_ids(&self) -> &[::std::string::String] {
-        self.import_task_ids.as_deref().unwrap_or_default()
+    pub fn import_task_ids(&self) -> & [::std::string::String] {
+        self.import_task_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
     pub fn delete_history(&self) -> ::std::option::Option<bool> {
@@ -31,7 +32,7 @@ impl BatchDeleteImportDataInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataInputBuilder {
-    pub(crate) import_task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) import_task_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) delete_history: ::std::option::Option<bool>,
 }
 impl BatchDeleteImportDataInputBuilder {
@@ -42,17 +43,16 @@ impl BatchDeleteImportDataInputBuilder {
     /// <p>The IDs for the import tasks that you want to delete.</p>
     pub fn import_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_task_ids.unwrap_or_default();
-        v.push(input.into());
-        self.import_task_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.import_task_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn set_import_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.import_task_ids = input;
-        self
+    pub fn set_import_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.import_task_ids = input; self
     }
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.import_task_ids
     }
     /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
@@ -62,21 +62,22 @@ impl BatchDeleteImportDataInputBuilder {
     }
     /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
     pub fn set_delete_history(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_history = input;
-        self
+        self.delete_history = input; self
     }
     /// <p>Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>.</p>
     pub fn get_delete_history(&self) -> &::std::option::Option<bool> {
         &self.delete_history
     }
     /// Consumes the builder and constructs a [`BatchDeleteImportDataInput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_delete_import_data::BatchDeleteImportDataInput {
-            import_task_ids: self.import_task_ids,
-            delete_history: self.delete_history,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataInput {
+                import_task_ids: self.import_task_ids
+                ,
+                delete_history: self.delete_history
+                ,
+            }
+        )
     }
 }
+

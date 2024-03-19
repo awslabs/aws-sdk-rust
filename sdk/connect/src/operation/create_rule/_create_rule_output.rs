@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleOutput {
+pub struct CreateRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub rule_arn: ::std::string::String,
     /// <p>A unique identifier for the rule.</p>
     pub rule_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateRuleOutput {
+impl  CreateRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_arn.deref()
+    pub fn rule_arn(&self) -> & str {
+        use std::ops::Deref; self.rule_arn.deref()
     }
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
     pub fn builder() -> crate::operation::create_rule::builders::CreateRuleOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,41 +62,41 @@ impl CreateRuleOutputBuilder {
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_arn`](crate::operation::create_rule::builders::CreateRuleOutputBuilder::rule_arn)
     /// - [`rule_id`](crate::operation::create_rule::builders::CreateRuleOutputBuilder::rule_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleOutput {
-            rule_arn: self.rule_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_arn",
-                    "rule_arn was not specified but it is required when building CreateRuleOutput",
-                )
-            })?,
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building CreateRuleOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_rule::CreateRuleOutput {
+                rule_arn: self.rule_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_arn", "rule_arn was not specified but it is required when building CreateRuleOutput")
+                    )?
+                ,
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building CreateRuleOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about the progress of a batch load task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchLoadProgressReport {
+pub struct BatchLoadProgressReport  {
     /// <p></p>
     pub records_processed: i64,
     /// <p></p>
@@ -17,7 +17,7 @@ pub struct BatchLoadProgressReport {
     /// <p></p>
     pub bytes_metered: i64,
 }
-impl BatchLoadProgressReport {
+impl  BatchLoadProgressReport  {
     /// <p></p>
     pub fn records_processed(&self) -> i64 {
         self.records_processed
@@ -69,8 +69,7 @@ impl BatchLoadProgressReportBuilder {
     }
     /// <p></p>
     pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.records_processed = input;
-        self
+        self.records_processed = input; self
     }
     /// <p></p>
     pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
@@ -83,8 +82,7 @@ impl BatchLoadProgressReportBuilder {
     }
     /// <p></p>
     pub fn set_records_ingested(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.records_ingested = input;
-        self
+        self.records_ingested = input; self
     }
     /// <p></p>
     pub fn get_records_ingested(&self) -> &::std::option::Option<i64> {
@@ -97,8 +95,7 @@ impl BatchLoadProgressReportBuilder {
     }
     /// <p></p>
     pub fn set_parse_failures(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.parse_failures = input;
-        self
+        self.parse_failures = input; self
     }
     /// <p></p>
     pub fn get_parse_failures(&self) -> &::std::option::Option<i64> {
@@ -111,8 +108,7 @@ impl BatchLoadProgressReportBuilder {
     }
     /// <p></p>
     pub fn set_record_ingestion_failures(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.record_ingestion_failures = input;
-        self
+        self.record_ingestion_failures = input; self
     }
     /// <p></p>
     pub fn get_record_ingestion_failures(&self) -> &::std::option::Option<i64> {
@@ -125,8 +121,7 @@ impl BatchLoadProgressReportBuilder {
     }
     /// <p></p>
     pub fn set_file_failures(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.file_failures = input;
-        self
+        self.file_failures = input; self
     }
     /// <p></p>
     pub fn get_file_failures(&self) -> &::std::option::Option<i64> {
@@ -139,8 +134,7 @@ impl BatchLoadProgressReportBuilder {
     }
     /// <p></p>
     pub fn set_bytes_metered(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_metered = input;
-        self
+        self.bytes_metered = input; self
     }
     /// <p></p>
     pub fn get_bytes_metered(&self) -> &::std::option::Option<i64> {
@@ -149,12 +143,25 @@ impl BatchLoadProgressReportBuilder {
     /// Consumes the builder and constructs a [`BatchLoadProgressReport`](crate::types::BatchLoadProgressReport).
     pub fn build(self) -> crate::types::BatchLoadProgressReport {
         crate::types::BatchLoadProgressReport {
-            records_processed: self.records_processed.unwrap_or_default(),
-            records_ingested: self.records_ingested.unwrap_or_default(),
-            parse_failures: self.parse_failures.unwrap_or_default(),
-            record_ingestion_failures: self.record_ingestion_failures.unwrap_or_default(),
-            file_failures: self.file_failures.unwrap_or_default(),
-            bytes_metered: self.bytes_metered.unwrap_or_default(),
+            records_processed: self.records_processed
+                .unwrap_or_default()
+            ,
+            records_ingested: self.records_ingested
+                .unwrap_or_default()
+            ,
+            parse_failures: self.parse_failures
+                .unwrap_or_default()
+            ,
+            record_ingestion_failures: self.record_ingestion_failures
+                .unwrap_or_default()
+            ,
+            file_failures: self.file_failures
+                .unwrap_or_default()
+            ,
+            bytes_metered: self.bytes_metered
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

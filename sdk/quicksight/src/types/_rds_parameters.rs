@@ -3,22 +3,20 @@
 /// <p>The parameters for Amazon RDS.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsParameters {
+pub struct RdsParameters  {
     /// <p>Instance ID.</p>
     pub instance_id: ::std::string::String,
     /// <p>Database.</p>
     pub database: ::std::string::String,
 }
-impl RdsParameters {
+impl  RdsParameters  {
     /// <p>Instance ID.</p>
-    pub fn instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_id.deref()
+    pub fn instance_id(&self) -> & str {
+        use std::ops::Deref; self.instance_id.deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
 }
 impl RdsParameters {
@@ -44,8 +42,7 @@ impl RdsParametersBuilder {
     }
     /// <p>Instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>Instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl RdsParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>Database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl RdsParametersBuilder {
     /// - [`instance_id`](crate::types::builders::RdsParametersBuilder::instance_id)
     /// - [`database`](crate::types::builders::RdsParametersBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::RdsParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RdsParameters {
-            instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_id",
-                    "instance_id was not specified but it is required when building RdsParameters",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building RdsParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RdsParameters {
+                instance_id: self.instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_id", "instance_id was not specified but it is required when building RdsParameters")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building RdsParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

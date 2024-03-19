@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataLakeOrganizationConfigurationInput {}
+pub struct GetDataLakeOrganizationConfigurationInput  {
+}
 impl GetDataLakeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeOrganizationConfigurationInput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput).
     pub fn builder() -> crate::operation::get_data_lake_organization_configuration::builders::GetDataLakeOrganizationConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetDataLakeOrganizationConfigurationInput {
 /// A builder for [`GetDataLakeOrganizationConfigurationInput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetDataLakeOrganizationConfigurationInputBuilder {}
+pub struct GetDataLakeOrganizationConfigurationInputBuilder {
+}
 impl GetDataLakeOrganizationConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetDataLakeOrganizationConfigurationInput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput {
+            }
+        )
     }
 }
+

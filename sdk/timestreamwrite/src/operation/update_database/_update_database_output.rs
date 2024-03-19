@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatabaseOutput {
+pub struct UpdateDatabaseOutput  {
     /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
     pub database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,
 }
-impl UpdateDatabaseOutput {
+impl  UpdateDatabaseOutput  {
     /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
-    pub fn database(&self) -> ::std::option::Option<&crate::types::Database> {
+    pub fn database(&self) -> ::std::option::Option<& crate::types::Database> {
         self.database.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDatabaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatabaseOutput`](crate::operation::update_database::UpdateDatabaseOutput).
     pub fn builder() -> crate::operation::update_database::builders::UpdateDatabaseOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateDatabaseOutputBuilder {
     }
     /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
     pub fn set_database(mut self, input: ::std::option::Option<crate::types::Database>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
     pub fn get_database(&self) -> &::std::option::Option<crate::types::Database> {
         &self.database
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDatabaseOutput`](crate::operation::update_database::UpdateDatabaseOutput).
     pub fn build(self) -> crate::operation::update_database::UpdateDatabaseOutput {
         crate::operation::update_database::UpdateDatabaseOutput {
-            database: self.database,
+            database: self.database
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

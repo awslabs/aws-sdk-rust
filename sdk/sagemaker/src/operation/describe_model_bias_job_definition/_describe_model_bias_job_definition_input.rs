@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeModelBiasJobDefinitionInput {
+pub struct DescribeModelBiasJobDefinitionInput  {
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub job_definition_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeModelBiasJobDefinitionInput {
+impl  DescribeModelBiasJobDefinitionInput  {
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition_name(&self) -> ::std::option::Option<& str> {
         self.job_definition_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DescribeModelBiasJobDefinitionInputBuilder {
     }
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_definition_name = input;
-        self
+        self.job_definition_name = input; self
     }
     /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_definition_name
     }
     /// Consumes the builder and constructs a [`DescribeModelBiasJobDefinitionInput`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput {
-                job_definition_name: self.job_definition_name,
-            },
+                job_definition_name: self.job_definition_name
+                ,
+            }
         )
     }
 }
+

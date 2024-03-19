@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AttributeValueList {
     /// <p>The list of integer values that the filter matches.</p>
-    IntegerValues(::std::vec::Vec<i32>),
+    IntegerValues(::std::vec::Vec::<i32>),
     /// <p>The list of string values that the filter matches.</p>
-    StringValues(::std::vec::Vec<::std::string::String>),
+    StringValues(::std::vec::Vec::<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,12 +21,8 @@ pub enum AttributeValueList {
 impl AttributeValueList {
     /// Tries to convert the enum instance into [`IntegerValues`](crate::types::AttributeValueList::IntegerValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_integer_values(&self) -> ::std::result::Result<&::std::vec::Vec<i32>, &Self> {
-        if let AttributeValueList::IntegerValues(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_integer_values(&self) -> ::std::result::Result<&::std::vec::Vec::<i32>, &Self> {
+        if let AttributeValueList::IntegerValues(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IntegerValues`](crate::types::AttributeValueList::IntegerValues).
     pub fn is_integer_values(&self) -> bool {
@@ -34,12 +30,8 @@ impl AttributeValueList {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::types::AttributeValueList::StringValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let AttributeValueList::StringValues(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let AttributeValueList::StringValues(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValues`](crate::types::AttributeValueList::StringValues).
     pub fn is_string_values(&self) -> bool {
@@ -50,3 +42,4 @@ impl AttributeValueList {
         matches!(self, Self::Unknown)
     }
 }
+

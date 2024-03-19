@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTableInput {
+pub struct DeleteTableInput  {
     /// <p>The name of the database where the Timestream database is to be deleted.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table to be deleted.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTableInput {
+impl  DeleteTableInput  {
     /// <p>The name of the database where the Timestream database is to be deleted.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the Timestream table to be deleted.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The name of the database where the Timestream database is to be deleted.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where the Timestream database is to be deleted.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The name of the Timestream table to be deleted.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the Timestream table to be deleted.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DeleteTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_table::DeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_table::DeleteTableInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_table::DeleteTableInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

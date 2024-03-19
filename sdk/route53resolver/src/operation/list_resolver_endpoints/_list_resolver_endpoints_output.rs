@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolverEndpointsOutput {
+pub struct ListResolverEndpointsOutput  {
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub resolver_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>,
+    pub resolver_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::ResolverEndpoint>>,
     _request_id: Option<String>,
 }
-impl ListResolverEndpointsOutput {
+impl  ListResolverEndpointsOutput  {
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -21,17 +21,18 @@ impl ListResolverEndpointsOutput {
         self.max_results
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_endpoints.is_none()`.
-    pub fn resolver_endpoints(&self) -> &[crate::types::ResolverEndpoint] {
-        self.resolver_endpoints.as_deref().unwrap_or_default()
+    pub fn resolver_endpoints(&self) -> & [crate::types::ResolverEndpoint] {
+        self.resolver_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResolverEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResolverEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointsOutput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput).
     pub fn builder() -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsOutputBuilder {
@@ -45,7 +46,7 @@ impl ListResolverEndpointsOutput {
 pub struct ListResolverEndpointsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) resolver_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>,
+    pub(crate) resolver_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::ResolverEndpoint>>,
     _request_id: Option<String>,
 }
 impl ListResolverEndpointsOutputBuilder {
@@ -56,8 +57,7 @@ impl ListResolverEndpointsOutputBuilder {
     }
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl ListResolverEndpointsOutputBuilder {
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -84,35 +83,38 @@ impl ListResolverEndpointsOutputBuilder {
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     pub fn resolver_endpoints(mut self, input: crate::types::ResolverEndpoint) -> Self {
         let mut v = self.resolver_endpoints.unwrap_or_default();
-        v.push(input);
-        self.resolver_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resolver_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn set_resolver_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>) -> Self {
-        self.resolver_endpoints = input;
-        self
+    pub fn set_resolver_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResolverEndpoint>>) -> Self {
+        self.resolver_endpoints = input; self
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn get_resolver_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>> {
+    pub fn get_resolver_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResolverEndpoint>> {
         &self.resolver_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResolverEndpointsOutput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput).
     pub fn build(self) -> crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput {
         crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            resolver_endpoints: self.resolver_endpoints,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
+            resolver_endpoints: self.resolver_endpoints
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

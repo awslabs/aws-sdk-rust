@@ -3,7 +3,7 @@
 /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     /// <p>The number of seconds the caller should wait before retrying.</p>
     pub retry_after_seconds: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -14,31 +14,29 @@ pub struct TooManyRequestsException {
     pub reason: ::std::option::Option<crate::types::ThrottleReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl TooManyRequestsException {
+impl  TooManyRequestsException  {
     /// <p>The number of seconds the caller should wait before retrying.</p>
-    pub fn retry_after_seconds(&self) -> ::std::option::Option<&str> {
+    pub fn retry_after_seconds(&self) -> ::std::option::Option<& str> {
         self.retry_after_seconds.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ThrottleReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::ThrottleReason> {
         self.reason.as_ref()
     }
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "TooManyRequestsException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -53,9 +51,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::TooManyRequests
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::types::error::TooManyRequestsException).
@@ -82,8 +78,7 @@ impl TooManyRequestsExceptionBuilder {
     }
     /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retry_after_seconds = input;
-        self
+        self.retry_after_seconds = input; self
     }
     /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn get_retry_after_seconds(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl TooManyRequestsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl TooManyRequestsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,32 +117,36 @@ impl TooManyRequestsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ThrottleReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ThrottleReason> {
         &self.reason
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::types::error::TooManyRequestsException).
     pub fn build(self) -> crate::types::error::TooManyRequestsException {
         crate::types::error::TooManyRequestsException {
-            retry_after_seconds: self.retry_after_seconds,
-            r#type: self.r#type,
-            message: self.message,
-            reason: self.reason,
+            retry_after_seconds: self.retry_after_seconds
+            ,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
+            reason: self.reason
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

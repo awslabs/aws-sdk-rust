@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLifecyclePoliciesOutput {
+pub struct ListLifecyclePoliciesOutput  {
     /// <p>Details about the requested lifecycle policies.</p>
-    pub lifecycle_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>>,
+    pub lifecycle_policy_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicySummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLifecyclePoliciesOutput {
+impl  ListLifecyclePoliciesOutput  {
     /// <p>Details about the requested lifecycle policies.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policy_summaries.is_none()`.
-    pub fn lifecycle_policy_summaries(&self) -> &[crate::types::LifecyclePolicySummary] {
-        self.lifecycle_policy_summaries.as_deref().unwrap_or_default()
+    pub fn lifecycle_policy_summaries(&self) -> & [crate::types::LifecyclePolicySummary] {
+        self.lifecycle_policy_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLifecyclePoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLifecyclePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListLifecyclePoliciesOutput`](crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput).
     pub fn builder() -> crate::operation::list_lifecycle_policies::builders::ListLifecyclePoliciesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListLifecyclePoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLifecyclePoliciesOutputBuilder {
-    pub(crate) lifecycle_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>>,
+    pub(crate) lifecycle_policy_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListLifecyclePoliciesOutputBuilder {
     /// <p>Details about the requested lifecycle policies.</p>
     pub fn lifecycle_policy_summaries(mut self, input: crate::types::LifecyclePolicySummary) -> Self {
         let mut v = self.lifecycle_policy_summaries.unwrap_or_default();
-        v.push(input);
-        self.lifecycle_policy_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lifecycle_policy_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the requested lifecycle policies.</p>
-    pub fn set_lifecycle_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>>) -> Self {
-        self.lifecycle_policy_summaries = input;
-        self
+    pub fn set_lifecycle_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicySummary>>) -> Self {
+        self.lifecycle_policy_summaries = input; self
     }
     /// <p>Details about the requested lifecycle policies.</p>
-    pub fn get_lifecycle_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>> {
+    pub fn get_lifecycle_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicySummary>> {
         &self.lifecycle_policy_summaries
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -69,28 +69,30 @@ impl ListLifecyclePoliciesOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLifecyclePoliciesOutput`](crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput).
     pub fn build(self) -> crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput {
         crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput {
-            lifecycle_policy_summaries: self.lifecycle_policy_summaries,
-            next_token: self.next_token,
+            lifecycle_policy_summaries: self.lifecycle_policy_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes an Amazon WorkSpaces client.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientProperties {
+pub struct ClientProperties  {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
 }
-impl ClientProperties {
+impl  ClientProperties  {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
-    pub fn reconnect_enabled(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+    pub fn reconnect_enabled(&self) -> ::std::option::Option<& crate::types::ReconnectEnum> {
         self.reconnect_enabled.as_ref()
     }
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
-    pub fn log_upload_enabled(&self) -> ::std::option::Option<&crate::types::LogUploadEnum> {
+    pub fn log_upload_enabled(&self) -> ::std::option::Option<& crate::types::LogUploadEnum> {
         self.log_upload_enabled.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ClientPropertiesBuilder {
     }
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub fn set_reconnect_enabled(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
-        self.reconnect_enabled = input;
-        self
+        self.reconnect_enabled = input; self
     }
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
     pub fn get_reconnect_enabled(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
@@ -55,8 +54,7 @@ impl ClientPropertiesBuilder {
     }
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub fn set_log_upload_enabled(mut self, input: ::std::option::Option<crate::types::LogUploadEnum>) -> Self {
-        self.log_upload_enabled = input;
-        self
+        self.log_upload_enabled = input; self
     }
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub fn get_log_upload_enabled(&self) -> &::std::option::Option<crate::types::LogUploadEnum> {
@@ -65,8 +63,11 @@ impl ClientPropertiesBuilder {
     /// Consumes the builder and constructs a [`ClientProperties`](crate::types::ClientProperties).
     pub fn build(self) -> crate::types::ClientProperties {
         crate::types::ClientProperties {
-            reconnect_enabled: self.reconnect_enabled,
-            log_upload_enabled: self.log_upload_enabled,
+            reconnect_enabled: self.reconnect_enabled
+            ,
+            log_upload_enabled: self.log_upload_enabled
+            ,
         }
     }
 }
+

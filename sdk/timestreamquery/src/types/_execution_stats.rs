@@ -3,7 +3,7 @@
 /// <p>Statistics for a single scheduled query run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionStats {
+pub struct ExecutionStats  {
     /// <p>Total time, measured in milliseconds, that was needed for the scheduled query run to complete.</p>
     pub execution_time_in_millis: i64,
     /// <p>Data writes metered for records ingested in a single scheduled query run.</p>
@@ -15,7 +15,7 @@ pub struct ExecutionStats {
     /// <p>Number of rows present in the output from running a query before ingestion to destination data source.</p>
     pub query_result_rows: i64,
 }
-impl ExecutionStats {
+impl  ExecutionStats  {
     /// <p>Total time, measured in milliseconds, that was needed for the scheduled query run to complete.</p>
     pub fn execution_time_in_millis(&self) -> i64 {
         self.execution_time_in_millis
@@ -62,8 +62,7 @@ impl ExecutionStatsBuilder {
     }
     /// <p>Total time, measured in milliseconds, that was needed for the scheduled query run to complete.</p>
     pub fn set_execution_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.execution_time_in_millis = input;
-        self
+        self.execution_time_in_millis = input; self
     }
     /// <p>Total time, measured in milliseconds, that was needed for the scheduled query run to complete.</p>
     pub fn get_execution_time_in_millis(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl ExecutionStatsBuilder {
     }
     /// <p>Data writes metered for records ingested in a single scheduled query run.</p>
     pub fn set_data_writes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.data_writes = input;
-        self
+        self.data_writes = input; self
     }
     /// <p>Data writes metered for records ingested in a single scheduled query run.</p>
     pub fn get_data_writes(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl ExecutionStatsBuilder {
     }
     /// <p>Bytes metered for a single scheduled query run.</p>
     pub fn set_bytes_metered(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_metered = input;
-        self
+        self.bytes_metered = input; self
     }
     /// <p>Bytes metered for a single scheduled query run.</p>
     pub fn get_bytes_metered(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl ExecutionStatsBuilder {
     }
     /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn set_records_ingested(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.records_ingested = input;
-        self
+        self.records_ingested = input; self
     }
     /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn get_records_ingested(&self) -> &::std::option::Option<i64> {
@@ -118,8 +114,7 @@ impl ExecutionStatsBuilder {
     }
     /// <p>Number of rows present in the output from running a query before ingestion to destination data source.</p>
     pub fn set_query_result_rows(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.query_result_rows = input;
-        self
+        self.query_result_rows = input; self
     }
     /// <p>Number of rows present in the output from running a query before ingestion to destination data source.</p>
     pub fn get_query_result_rows(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,22 @@ impl ExecutionStatsBuilder {
     /// Consumes the builder and constructs a [`ExecutionStats`](crate::types::ExecutionStats).
     pub fn build(self) -> crate::types::ExecutionStats {
         crate::types::ExecutionStats {
-            execution_time_in_millis: self.execution_time_in_millis.unwrap_or_default(),
-            data_writes: self.data_writes.unwrap_or_default(),
-            bytes_metered: self.bytes_metered.unwrap_or_default(),
-            records_ingested: self.records_ingested.unwrap_or_default(),
-            query_result_rows: self.query_result_rows.unwrap_or_default(),
+            execution_time_in_millis: self.execution_time_in_millis
+                .unwrap_or_default()
+            ,
+            data_writes: self.data_writes
+                .unwrap_or_default()
+            ,
+            bytes_metered: self.bytes_metered
+                .unwrap_or_default()
+            ,
+            records_ingested: self.records_ingested
+                .unwrap_or_default()
+            ,
+            query_result_rows: self.query_result_rows
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>A structure for a data location object where permissions are granted or revoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLocationResource {
+pub struct DataLocationResource  {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub resource_arn: ::std::string::String,
 }
-impl DataLocationResource {
+impl  DataLocationResource  {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
 }
 impl DataLocationResource {
@@ -42,8 +41,7 @@ impl DataLocationResourceBuilder {
     }
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DataLocationResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl DataLocationResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::DataLocationResourceBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DataLocationResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataLocationResource {
-            catalog_id: self.catalog_id,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building DataLocationResource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataLocationResource {
+                catalog_id: self.catalog_id
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building DataLocationResource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

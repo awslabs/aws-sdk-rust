@@ -3,7 +3,7 @@
 /// <p>The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentItem {
+pub struct AttachmentItem  {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the attachment.</p>
@@ -13,21 +13,21 @@ pub struct AttachmentItem {
     /// <p>Status of the attachment.</p>
     pub status: ::std::option::Option<crate::types::ArtifactStatus>,
 }
-impl AttachmentItem {
+impl  AttachmentItem  {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn attachment_name(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_name(&self) -> ::std::option::Option<& str> {
         self.attachment_name.as_deref()
     }
     /// <p>Status of the attachment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ArtifactStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ArtifactStatus> {
         self.status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AttachmentItemBuilder {
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AttachmentItemBuilder {
     }
     /// <p>A unique identifier for the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>A unique identifier for the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AttachmentItemBuilder {
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
     pub fn set_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_name = input;
-        self
+        self.attachment_name = input; self
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
     pub fn get_attachment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AttachmentItemBuilder {
     }
     /// <p>Status of the attachment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ArtifactStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the attachment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ArtifactStatus> {
@@ -107,10 +103,15 @@ impl AttachmentItemBuilder {
     /// Consumes the builder and constructs a [`AttachmentItem`](crate::types::AttachmentItem).
     pub fn build(self) -> crate::types::AttachmentItem {
         crate::types::AttachmentItem {
-            content_type: self.content_type,
-            attachment_id: self.attachment_id,
-            attachment_name: self.attachment_name,
-            status: self.status,
+            content_type: self.content_type
+            ,
+            attachment_id: self.attachment_id
+            ,
+            attachment_name: self.attachment_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

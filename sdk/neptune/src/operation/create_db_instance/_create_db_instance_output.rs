@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbInstanceOutput {
+pub struct CreateDbInstanceOutput  {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
 }
-impl CreateDbInstanceOutput {
+impl  CreateDbInstanceOutput  {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
-    pub fn db_instance(&self) -> ::std::option::Option<&crate::types::DbInstance> {
+    pub fn db_instance(&self) -> ::std::option::Option<& crate::types::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDbInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::operation::create_db_instance::CreateDbInstanceOutput).
     pub fn builder() -> crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder {
@@ -44,8 +44,7 @@ impl CreateDbInstanceOutputBuilder {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
-        self.db_instance = input;
-        self
+        self.db_instance = input; self
     }
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
@@ -53,19 +52,21 @@ impl CreateDbInstanceOutputBuilder {
         &self.db_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDbInstanceOutput`](crate::operation::create_db_instance::CreateDbInstanceOutput).
     pub fn build(self) -> crate::operation::create_db_instance::CreateDbInstanceOutput {
         crate::operation::create_db_instance::CreateDbInstanceOutput {
-            db_instance: self.db_instance,
+            db_instance: self.db_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A summary of the resource scan. This is returned by the <code>ListResourceScan</code> API action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceScanSummary {
+pub struct ResourceScanSummary  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub resource_scan_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the resource scan.</p>
@@ -43,9 +43,9 @@ pub struct ResourceScanSummary {
     /// <p>The percentage of the resource scan that has been completed.</p>
     pub percentage_completed: ::std::option::Option<f64>,
 }
-impl ResourceScanSummary {
+impl  ResourceScanSummary  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-    pub fn resource_scan_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_scan_id(&self) -> ::std::option::Option<& str> {
         self.resource_scan_id.as_deref()
     }
     /// <p>Status of the resource scan.</p>
@@ -75,19 +75,19 @@ impl ResourceScanSummary {
     /// <p>The resource scan has failed.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceScanStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceScanStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the resource scan status, providing more information if a failure happened.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The time that the resource scan was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the resource scan was finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The percentage of the resource scan that has been completed.</p>
@@ -121,8 +121,7 @@ impl ResourceScanSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn set_resource_scan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_scan_id = input;
-        self
+        self.resource_scan_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn get_resource_scan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +186,7 @@ impl ResourceScanSummaryBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceScanStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the resource scan.</p>
     /// <dl>
@@ -227,8 +225,7 @@ impl ResourceScanSummaryBuilder {
     }
     /// <p>The reason for the resource scan status, providing more information if a failure happened.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the resource scan status, providing more information if a failure happened.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +238,7 @@ impl ResourceScanSummaryBuilder {
     }
     /// <p>The time that the resource scan was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time that the resource scan was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -255,8 +251,7 @@ impl ResourceScanSummaryBuilder {
     }
     /// <p>The time that the resource scan was finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time that the resource scan was finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -269,8 +264,7 @@ impl ResourceScanSummaryBuilder {
     }
     /// <p>The percentage of the resource scan that has been completed.</p>
     pub fn set_percentage_completed(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.percentage_completed = input;
-        self
+        self.percentage_completed = input; self
     }
     /// <p>The percentage of the resource scan that has been completed.</p>
     pub fn get_percentage_completed(&self) -> &::std::option::Option<f64> {
@@ -279,12 +273,19 @@ impl ResourceScanSummaryBuilder {
     /// Consumes the builder and constructs a [`ResourceScanSummary`](crate::types::ResourceScanSummary).
     pub fn build(self) -> crate::types::ResourceScanSummary {
         crate::types::ResourceScanSummary {
-            resource_scan_id: self.resource_scan_id,
-            status: self.status,
-            status_reason: self.status_reason,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            percentage_completed: self.percentage_completed,
+            resource_scan_id: self.resource_scan_id
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            percentage_completed: self.percentage_completed
+            ,
         }
     }
 }
+

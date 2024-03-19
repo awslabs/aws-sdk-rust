@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowExecutionsInput {
+pub struct DescribeMaintenanceWindowExecutionsInput  {
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
@@ -12,15 +12,15 @@ pub struct DescribeMaintenanceWindowExecutionsInput {
     /// <li>
     /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMaintenanceWindowExecutionsInput {
+impl  DescribeMaintenanceWindowExecutionsInput  {
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>Each entry in the array is a structure containing:</p>
@@ -30,17 +30,18 @@ impl DescribeMaintenanceWindowExecutionsInput {
     /// <li>
     /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::MaintenanceWindowFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::MaintenanceWindowFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,7 +57,7 @@ impl DescribeMaintenanceWindowExecutionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -69,8 +70,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     }
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +89,9 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::MaintenanceWindowFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
@@ -100,9 +100,8 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// <li>
     /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
@@ -111,7 +110,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// <li>
     /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -121,8 +120,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -135,27 +133,26 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionsInput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput {
-                window_id: self.window_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                window_id: self.window_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

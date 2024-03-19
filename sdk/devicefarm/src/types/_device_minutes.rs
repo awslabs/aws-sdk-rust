@@ -3,7 +3,7 @@
 /// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceMinutes {
+pub struct DeviceMinutes  {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub total: ::std::option::Option<f64>,
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
@@ -11,7 +11,7 @@ pub struct DeviceMinutes {
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub unmetered: ::std::option::Option<f64>,
 }
-impl DeviceMinutes {
+impl  DeviceMinutes  {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub fn total(&self) -> ::std::option::Option<f64> {
         self.total
@@ -48,8 +48,7 @@ impl DeviceMinutesBuilder {
     }
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub fn get_total(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl DeviceMinutesBuilder {
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn set_metered(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.metered = input;
-        self
+        self.metered = input; self
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn get_metered(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl DeviceMinutesBuilder {
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn set_unmetered(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.unmetered = input;
-        self
+        self.unmetered = input; self
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn get_unmetered(&self) -> &::std::option::Option<f64> {
@@ -86,9 +83,13 @@ impl DeviceMinutesBuilder {
     /// Consumes the builder and constructs a [`DeviceMinutes`](crate::types::DeviceMinutes).
     pub fn build(self) -> crate::types::DeviceMinutes {
         crate::types::DeviceMinutes {
-            total: self.total,
-            metered: self.metered,
-            unmetered: self.unmetered,
+            total: self.total
+            ,
+            metered: self.metered
+            ,
+            unmetered: self.unmetered
+            ,
         }
     }
 }
+

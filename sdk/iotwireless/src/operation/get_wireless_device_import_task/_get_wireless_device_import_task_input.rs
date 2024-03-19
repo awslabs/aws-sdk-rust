@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessDeviceImportTaskInput {
+pub struct GetWirelessDeviceImportTaskInput  {
     /// <p>The identifier of the import task for which information is requested.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetWirelessDeviceImportTaskInput {
+impl  GetWirelessDeviceImportTaskInput  {
     /// <p>The identifier of the import task for which information is requested.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The identifier of the import task for which information is requested.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the import task for which information is requested.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessDeviceImportTaskInput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>A request to change information about the BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBasePathMappingInput {
+pub struct UpdateBasePathMappingInput  {
     /// <p>The domain name of the BasePathMapping resource to change.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub base_path: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
-impl UpdateBasePathMappingInput {
+impl  UpdateBasePathMappingInput  {
     /// <p>The domain name of the BasePathMapping resource to change.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-    pub fn base_path(&self) -> ::std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<& str> {
         self.base_path.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
-    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
-        self.patch_operations.as_deref().unwrap_or_default()
+    pub fn patch_operations(&self) -> & [crate::types::PatchOperation] {
+        self.patch_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateBasePathMappingInput {
@@ -42,7 +43,7 @@ impl UpdateBasePathMappingInput {
 pub struct UpdateBasePathMappingInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
 impl UpdateBasePathMappingInputBuilder {
     /// <p>The domain name of the BasePathMapping resource to change.</p>
@@ -53,8 +54,7 @@ impl UpdateBasePathMappingInputBuilder {
     }
     /// <p>The domain name of the BasePathMapping resource to change.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of the BasePathMapping resource to change.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl UpdateBasePathMappingInputBuilder {
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_path = input;
-        self
+        self.base_path = input; self
     }
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
@@ -85,28 +84,30 @@ impl UpdateBasePathMappingInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateBasePathMappingInput`](crate::operation::update_base_path_mapping::UpdateBasePathMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_base_path_mapping::UpdateBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_base_path_mapping::UpdateBasePathMappingInput {
-            domain_name: self.domain_name,
-            base_path: self.base_path,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_base_path_mapping::UpdateBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_base_path_mapping::UpdateBasePathMappingInput {
+                domain_name: self.domain_name
+                ,
+                base_path: self.base_path
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

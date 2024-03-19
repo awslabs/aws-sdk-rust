@@ -3,7 +3,7 @@
 /// Aac Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AacSettings {
+pub struct AacSettings  {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
     pub bitrate: ::std::option::Option<f64>,
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
@@ -23,29 +23,29 @@ pub struct AacSettings {
     /// VBR Quality Level - Only used if rateControlMode is VBR.
     pub vbr_quality: ::std::option::Option<crate::types::AacVbrQuality>,
 }
-impl AacSettings {
+impl  AacSettings  {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
     pub fn bitrate(&self) -> ::std::option::Option<f64> {
         self.bitrate
     }
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
-    pub fn coding_mode(&self) -> ::std::option::Option<&crate::types::AacCodingMode> {
+    pub fn coding_mode(&self) -> ::std::option::Option<& crate::types::AacCodingMode> {
         self.coding_mode.as_ref()
     }
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
-    pub fn input_type(&self) -> ::std::option::Option<&crate::types::AacInputType> {
+    pub fn input_type(&self) -> ::std::option::Option<& crate::types::AacInputType> {
         self.input_type.as_ref()
     }
     /// AAC Profile.
-    pub fn profile(&self) -> ::std::option::Option<&crate::types::AacProfile> {
+    pub fn profile(&self) -> ::std::option::Option<& crate::types::AacProfile> {
         self.profile.as_ref()
     }
     /// Rate Control Mode.
-    pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::AacRateControlMode> {
+    pub fn rate_control_mode(&self) -> ::std::option::Option<& crate::types::AacRateControlMode> {
         self.rate_control_mode.as_ref()
     }
     /// Sets LATM / LOAS AAC output for raw containers.
-    pub fn raw_format(&self) -> ::std::option::Option<&crate::types::AacRawFormat> {
+    pub fn raw_format(&self) -> ::std::option::Option<& crate::types::AacRawFormat> {
         self.raw_format.as_ref()
     }
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
@@ -53,11 +53,11 @@ impl AacSettings {
         self.sample_rate
     }
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::AacSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::AacSpec> {
         self.spec.as_ref()
     }
     /// VBR Quality Level - Only used if rateControlMode is VBR.
-    pub fn vbr_quality(&self) -> ::std::option::Option<&crate::types::AacVbrQuality> {
+    pub fn vbr_quality(&self) -> ::std::option::Option<& crate::types::AacVbrQuality> {
         self.vbr_quality.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl AacSettingsBuilder {
     }
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
     pub fn set_bitrate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
     pub fn get_bitrate(&self) -> &::std::option::Option<f64> {
@@ -104,8 +103,7 @@ impl AacSettingsBuilder {
     }
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
     pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::AacCodingMode>) -> Self {
-        self.coding_mode = input;
-        self
+        self.coding_mode = input; self
     }
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
     pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::AacCodingMode> {
@@ -118,8 +116,7 @@ impl AacSettingsBuilder {
     }
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
     pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::AacInputType>) -> Self {
-        self.input_type = input;
-        self
+        self.input_type = input; self
     }
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to "normal" when input does not contain pre-mixed audio + AD.
     pub fn get_input_type(&self) -> &::std::option::Option<crate::types::AacInputType> {
@@ -132,8 +129,7 @@ impl AacSettingsBuilder {
     }
     /// AAC Profile.
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::AacProfile>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
     }
     /// AAC Profile.
     pub fn get_profile(&self) -> &::std::option::Option<crate::types::AacProfile> {
@@ -146,8 +142,7 @@ impl AacSettingsBuilder {
     }
     /// Rate Control Mode.
     pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::AacRateControlMode>) -> Self {
-        self.rate_control_mode = input;
-        self
+        self.rate_control_mode = input; self
     }
     /// Rate Control Mode.
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::AacRateControlMode> {
@@ -160,8 +155,7 @@ impl AacSettingsBuilder {
     }
     /// Sets LATM / LOAS AAC output for raw containers.
     pub fn set_raw_format(mut self, input: ::std::option::Option<crate::types::AacRawFormat>) -> Self {
-        self.raw_format = input;
-        self
+        self.raw_format = input; self
     }
     /// Sets LATM / LOAS AAC output for raw containers.
     pub fn get_raw_format(&self) -> &::std::option::Option<crate::types::AacRawFormat> {
@@ -174,8 +168,7 @@ impl AacSettingsBuilder {
     }
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
     pub fn set_sample_rate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
     }
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
     pub fn get_sample_rate(&self) -> &::std::option::Option<f64> {
@@ -188,8 +181,7 @@ impl AacSettingsBuilder {
     }
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::AacSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::AacSpec> {
@@ -202,8 +194,7 @@ impl AacSettingsBuilder {
     }
     /// VBR Quality Level - Only used if rateControlMode is VBR.
     pub fn set_vbr_quality(mut self, input: ::std::option::Option<crate::types::AacVbrQuality>) -> Self {
-        self.vbr_quality = input;
-        self
+        self.vbr_quality = input; self
     }
     /// VBR Quality Level - Only used if rateControlMode is VBR.
     pub fn get_vbr_quality(&self) -> &::std::option::Option<crate::types::AacVbrQuality> {
@@ -212,15 +203,25 @@ impl AacSettingsBuilder {
     /// Consumes the builder and constructs a [`AacSettings`](crate::types::AacSettings).
     pub fn build(self) -> crate::types::AacSettings {
         crate::types::AacSettings {
-            bitrate: self.bitrate,
-            coding_mode: self.coding_mode,
-            input_type: self.input_type,
-            profile: self.profile,
-            rate_control_mode: self.rate_control_mode,
-            raw_format: self.raw_format,
-            sample_rate: self.sample_rate,
-            spec: self.spec,
-            vbr_quality: self.vbr_quality,
+            bitrate: self.bitrate
+            ,
+            coding_mode: self.coding_mode
+            ,
+            input_type: self.input_type
+            ,
+            profile: self.profile
+            ,
+            rate_control_mode: self.rate_control_mode
+            ,
+            raw_format: self.raw_format
+            ,
+            sample_rate: self.sample_rate
+            ,
+            spec: self.spec
+            ,
+            vbr_quality: self.vbr_quality
+            ,
         }
     }
 }
+

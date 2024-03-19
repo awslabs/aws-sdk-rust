@@ -3,7 +3,7 @@
 /// <p>A structure that contains some information about a private re:Post in the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SpaceData {
+pub struct SpaceData  {
     /// <p>The unique ID of the private re:Post.</p>
     pub space_id: ::std::string::String,
     /// <p>The ARN of the private re:Post.</p>
@@ -37,51 +37,45 @@ pub struct SpaceData {
     /// <p>The content size of the private re:Post.</p>
     pub content_size: ::std::option::Option<i64>,
 }
-impl SpaceData {
+impl  SpaceData  {
     /// <p>The unique ID of the private re:Post.</p>
-    pub fn space_id(&self) -> &str {
-        use std::ops::Deref;
-        self.space_id.deref()
+    pub fn space_id(&self) -> & str {
+        use std::ops::Deref; self.space_id.deref()
     }
     /// <p>The ARN of the private re:Post.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name for the private re:Post.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description for the private re:Post. This is used only to help you identify this private re:Post.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The creation/deletion status of the private re:Post.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The configuration status of the private re:Post.</p>
-    pub fn configuration_status(&self) -> &crate::types::ConfigurationStatus {
+    pub fn configuration_status(&self) -> & crate::types::ConfigurationStatus {
         &self.configuration_status
     }
     /// <p>This approval status of the custom subdomain.</p>
-    pub fn vanity_domain_status(&self) -> &crate::types::VanityDomainStatus {
+    pub fn vanity_domain_status(&self) -> & crate::types::VanityDomainStatus {
         &self.vanity_domain_status
     }
     /// <p>This custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
-    pub fn vanity_domain(&self) -> &str {
-        use std::ops::Deref;
-        self.vanity_domain.deref()
+    pub fn vanity_domain(&self) -> & str {
+        use std::ops::Deref; self.vanity_domain.deref()
     }
     /// <p>The AWS generated subdomain of the private re:Post.</p>
-    pub fn random_domain(&self) -> &str {
-        use std::ops::Deref;
-        self.random_domain.deref()
+    pub fn random_domain(&self) -> & str {
+        use std::ops::Deref; self.random_domain.deref()
     }
     /// <p>The pricing tier of the private re:Post.</p>
-    pub fn tier(&self) -> &crate::types::TierLevel {
+    pub fn tier(&self) -> & crate::types::TierLevel {
         &self.tier
     }
     /// <p>The storage limit of the private re:Post.</p>
@@ -89,15 +83,15 @@ impl SpaceData {
         self.storage_limit
     }
     /// <p>The date when the private re:Post was created.</p>
-    pub fn create_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_date_time
     }
     /// <p>The date when the private re:Post was deleted.</p>
-    pub fn delete_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_date_time.as_ref()
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
-    pub fn user_kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn user_kms_key(&self) -> ::std::option::Option<& str> {
         self.user_kms_key.as_deref()
     }
     /// <p>The number of onboarded users to the private re:Post.</p>
@@ -109,7 +103,7 @@ impl SpaceData {
         self.content_size
     }
 }
-impl ::std::fmt::Debug for SpaceData {
+impl  ::std::fmt::Debug for SpaceData  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SpaceData");
         formatter.field("space_id", &self.space_id);
@@ -168,8 +162,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The unique ID of the private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The unique ID of the private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +176,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The ARN of the private re:Post.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the private re:Post.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +190,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The name for the private re:Post.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the private re:Post.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +203,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The description for the private re:Post. This is used only to help you identify this private re:Post.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the private re:Post. This is used only to help you identify this private re:Post.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +217,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The creation/deletion status of the private re:Post.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The creation/deletion status of the private re:Post.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +231,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The configuration status of the private re:Post.</p>
     pub fn set_configuration_status(mut self, input: ::std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.configuration_status = input;
-        self
+        self.configuration_status = input; self
     }
     /// <p>The configuration status of the private re:Post.</p>
     pub fn get_configuration_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
@@ -257,8 +245,7 @@ impl SpaceDataBuilder {
     }
     /// <p>This approval status of the custom subdomain.</p>
     pub fn set_vanity_domain_status(mut self, input: ::std::option::Option<crate::types::VanityDomainStatus>) -> Self {
-        self.vanity_domain_status = input;
-        self
+        self.vanity_domain_status = input; self
     }
     /// <p>This approval status of the custom subdomain.</p>
     pub fn get_vanity_domain_status(&self) -> &::std::option::Option<crate::types::VanityDomainStatus> {
@@ -272,8 +259,7 @@ impl SpaceDataBuilder {
     }
     /// <p>This custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
     pub fn set_vanity_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vanity_domain = input;
-        self
+        self.vanity_domain = input; self
     }
     /// <p>This custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
     pub fn get_vanity_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +273,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The AWS generated subdomain of the private re:Post.</p>
     pub fn set_random_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.random_domain = input;
-        self
+        self.random_domain = input; self
     }
     /// <p>The AWS generated subdomain of the private re:Post.</p>
     pub fn get_random_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +287,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The pricing tier of the private re:Post.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::TierLevel>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The pricing tier of the private re:Post.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::TierLevel> {
@@ -317,8 +301,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The storage limit of the private re:Post.</p>
     pub fn set_storage_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.storage_limit = input;
-        self
+        self.storage_limit = input; self
     }
     /// <p>The storage limit of the private re:Post.</p>
     pub fn get_storage_limit(&self) -> &::std::option::Option<i64> {
@@ -332,8 +315,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The date when the private re:Post was created.</p>
     pub fn set_create_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date_time = input;
-        self
+        self.create_date_time = input; self
     }
     /// <p>The date when the private re:Post was created.</p>
     pub fn get_create_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -346,8 +328,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The date when the private re:Post was deleted.</p>
     pub fn set_delete_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delete_date_time = input;
-        self
+        self.delete_date_time = input; self
     }
     /// <p>The date when the private re:Post was deleted.</p>
     pub fn get_delete_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -360,8 +341,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub fn set_user_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_kms_key = input;
-        self
+        self.user_kms_key = input; self
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub fn get_user_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -374,8 +354,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The number of onboarded users to the private re:Post.</p>
     pub fn set_user_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.user_count = input;
-        self
+        self.user_count = input; self
     }
     /// <p>The number of onboarded users to the private re:Post.</p>
     pub fn get_user_count(&self) -> &::std::option::Option<i32> {
@@ -388,8 +367,7 @@ impl SpaceDataBuilder {
     }
     /// <p>The content size of the private re:Post.</p>
     pub fn set_content_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.content_size = input;
-        self
+        self.content_size = input; self
     }
     /// <p>The content size of the private re:Post.</p>
     pub fn get_content_size(&self) -> &::std::option::Option<i64> {
@@ -409,79 +387,75 @@ impl SpaceDataBuilder {
     /// - [`storage_limit`](crate::types::builders::SpaceDataBuilder::storage_limit)
     /// - [`create_date_time`](crate::types::builders::SpaceDataBuilder::create_date_time)
     pub fn build(self) -> ::std::result::Result<crate::types::SpaceData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SpaceData {
-            space_id: self.space_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "space_id",
-                    "space_id was not specified but it is required when building SpaceData",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building SpaceData",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SpaceData",
-                )
-            })?,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building SpaceData",
-                )
-            })?,
-            configuration_status: self.configuration_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_status",
-                    "configuration_status was not specified but it is required when building SpaceData",
-                )
-            })?,
-            vanity_domain_status: self.vanity_domain_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vanity_domain_status",
-                    "vanity_domain_status was not specified but it is required when building SpaceData",
-                )
-            })?,
-            vanity_domain: self.vanity_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vanity_domain",
-                    "vanity_domain was not specified but it is required when building SpaceData",
-                )
-            })?,
-            random_domain: self.random_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "random_domain",
-                    "random_domain was not specified but it is required when building SpaceData",
-                )
-            })?,
-            tier: self.tier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tier",
-                    "tier was not specified but it is required when building SpaceData",
-                )
-            })?,
-            storage_limit: self.storage_limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "storage_limit",
-                    "storage_limit was not specified but it is required when building SpaceData",
-                )
-            })?,
-            create_date_time: self.create_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_date_time",
-                    "create_date_time was not specified but it is required when building SpaceData",
-                )
-            })?,
-            delete_date_time: self.delete_date_time,
-            user_kms_key: self.user_kms_key,
-            user_count: self.user_count,
-            content_size: self.content_size,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SpaceData {
+                space_id: self.space_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("space_id", "space_id was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                configuration_status: self.configuration_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_status", "configuration_status was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                vanity_domain_status: self.vanity_domain_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vanity_domain_status", "vanity_domain_status was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                vanity_domain: self.vanity_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vanity_domain", "vanity_domain was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                random_domain: self.random_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("random_domain", "random_domain was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                tier: self.tier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tier", "tier was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                storage_limit: self.storage_limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("storage_limit", "storage_limit was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                create_date_time: self.create_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_date_time", "create_date_time was not specified but it is required when building SpaceData")
+                    )?
+                ,
+                delete_date_time: self.delete_date_time
+                ,
+                user_kms_key: self.user_kms_key
+                ,
+                user_count: self.user_count
+                ,
+                content_size: self.content_size
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SpaceDataBuilder {
@@ -506,3 +480,4 @@ impl ::std::fmt::Debug for SpaceDataBuilder {
         formatter.finish()
     }
 }
+

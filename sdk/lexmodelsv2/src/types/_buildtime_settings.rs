@@ -3,19 +3,19 @@
 /// <p>Contains specifications about the Amazon Lex build time generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildtimeSettings {
+pub struct BuildtimeSettings  {
     /// <p>An object containing specifications for the descriptive bot building feature.</p>
     pub descriptive_bot_builder: ::std::option::Option<crate::types::DescriptiveBotBuilderSpecification>,
     /// <p>Contains specifications for the sample utterance generation feature.</p>
     pub sample_utterance_generation: ::std::option::Option<crate::types::SampleUtteranceGenerationSpecification>,
 }
-impl BuildtimeSettings {
+impl  BuildtimeSettings  {
     /// <p>An object containing specifications for the descriptive bot building feature.</p>
-    pub fn descriptive_bot_builder(&self) -> ::std::option::Option<&crate::types::DescriptiveBotBuilderSpecification> {
+    pub fn descriptive_bot_builder(&self) -> ::std::option::Option<& crate::types::DescriptiveBotBuilderSpecification> {
         self.descriptive_bot_builder.as_ref()
     }
     /// <p>Contains specifications for the sample utterance generation feature.</p>
-    pub fn sample_utterance_generation(&self) -> ::std::option::Option<&crate::types::SampleUtteranceGenerationSpecification> {
+    pub fn sample_utterance_generation(&self) -> ::std::option::Option<& crate::types::SampleUtteranceGenerationSpecification> {
         self.sample_utterance_generation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl BuildtimeSettingsBuilder {
     }
     /// <p>An object containing specifications for the descriptive bot building feature.</p>
     pub fn set_descriptive_bot_builder(mut self, input: ::std::option::Option<crate::types::DescriptiveBotBuilderSpecification>) -> Self {
-        self.descriptive_bot_builder = input;
-        self
+        self.descriptive_bot_builder = input; self
     }
     /// <p>An object containing specifications for the descriptive bot building feature.</p>
     pub fn get_descriptive_bot_builder(&self) -> &::std::option::Option<crate::types::DescriptiveBotBuilderSpecification> {
@@ -55,8 +54,7 @@ impl BuildtimeSettingsBuilder {
     }
     /// <p>Contains specifications for the sample utterance generation feature.</p>
     pub fn set_sample_utterance_generation(mut self, input: ::std::option::Option<crate::types::SampleUtteranceGenerationSpecification>) -> Self {
-        self.sample_utterance_generation = input;
-        self
+        self.sample_utterance_generation = input; self
     }
     /// <p>Contains specifications for the sample utterance generation feature.</p>
     pub fn get_sample_utterance_generation(&self) -> &::std::option::Option<crate::types::SampleUtteranceGenerationSpecification> {
@@ -65,8 +63,11 @@ impl BuildtimeSettingsBuilder {
     /// Consumes the builder and constructs a [`BuildtimeSettings`](crate::types::BuildtimeSettings).
     pub fn build(self) -> crate::types::BuildtimeSettings {
         crate::types::BuildtimeSettings {
-            descriptive_bot_builder: self.descriptive_bot_builder,
-            sample_utterance_generation: self.sample_utterance_generation,
+            descriptive_bot_builder: self.descriptive_bot_builder
+            ,
+            sample_utterance_generation: self.sample_utterance_generation
+            ,
         }
     }
 }
+

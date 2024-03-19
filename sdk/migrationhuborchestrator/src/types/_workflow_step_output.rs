@@ -3,7 +3,7 @@
 /// <p>The output of a step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowStepOutput {
+pub struct WorkflowStepOutput  {
     /// <p>The name of the step.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the output.</p>
@@ -13,13 +13,13 @@ pub struct WorkflowStepOutput {
     /// <p>The value of the output.</p>
     pub value: ::std::option::Option<crate::types::WorkflowStepOutputUnion>,
 }
-impl WorkflowStepOutput {
+impl  WorkflowStepOutput  {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the output.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an output is required from a step.</p>
@@ -27,7 +27,7 @@ impl WorkflowStepOutput {
         self.required
     }
     /// <p>The value of the output.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::WorkflowStepOutputUnion> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::WorkflowStepOutputUnion> {
         self.value.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl WorkflowStepOutputBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl WorkflowStepOutputBuilder {
     }
     /// <p>The data type of the output.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the output.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
@@ -83,8 +81,7 @@ impl WorkflowStepOutputBuilder {
     }
     /// <p>Determine if an output is required from a step.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Determine if an output is required from a step.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl WorkflowStepOutputBuilder {
     }
     /// <p>The value of the output.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::WorkflowStepOutputUnion>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the output.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::WorkflowStepOutputUnion> {
@@ -107,10 +103,15 @@ impl WorkflowStepOutputBuilder {
     /// Consumes the builder and constructs a [`WorkflowStepOutput`](crate::types::WorkflowStepOutput).
     pub fn build(self) -> crate::types::WorkflowStepOutput {
         crate::types::WorkflowStepOutput {
-            name: self.name,
-            data_type: self.data_type,
-            required: self.required,
-            value: self.value,
+            name: self.name
+            ,
+            data_type: self.data_type
+            ,
+            required: self.required
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

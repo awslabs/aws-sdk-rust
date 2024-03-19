@@ -3,13 +3,13 @@
 /// Failover Condition settings. There can be multiple failover conditions inside AutomaticInputFailoverSettings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverCondition {
+pub struct FailoverCondition  {
     /// Failover condition type-specific settings.
     pub failover_condition_settings: ::std::option::Option<crate::types::FailoverConditionSettings>,
 }
-impl FailoverCondition {
+impl  FailoverCondition  {
     /// Failover condition type-specific settings.
-    pub fn failover_condition_settings(&self) -> ::std::option::Option<&crate::types::FailoverConditionSettings> {
+    pub fn failover_condition_settings(&self) -> ::std::option::Option<& crate::types::FailoverConditionSettings> {
         self.failover_condition_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl FailoverConditionBuilder {
     }
     /// Failover condition type-specific settings.
     pub fn set_failover_condition_settings(mut self, input: ::std::option::Option<crate::types::FailoverConditionSettings>) -> Self {
-        self.failover_condition_settings = input;
-        self
+        self.failover_condition_settings = input; self
     }
     /// Failover condition type-specific settings.
     pub fn get_failover_condition_settings(&self) -> &::std::option::Option<crate::types::FailoverConditionSettings> {
@@ -44,7 +43,9 @@ impl FailoverConditionBuilder {
     /// Consumes the builder and constructs a [`FailoverCondition`](crate::types::FailoverCondition).
     pub fn build(self) -> crate::types::FailoverCondition {
         crate::types::FailoverCondition {
-            failover_condition_settings: self.failover_condition_settings,
+            failover_condition_settings: self.failover_condition_settings
+            ,
         }
     }
 }
+

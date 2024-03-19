@@ -3,7 +3,7 @@
 /// <p>An object that represents a gateway route specification. Specify one gateway route type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayRouteSpec {
+pub struct GatewayRouteSpec  {
     /// <p>The ordering of the gateway routes spec.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
@@ -13,21 +13,21 @@ pub struct GatewayRouteSpec {
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
     pub grpc_route: ::std::option::Option<crate::types::GrpcGatewayRoute>,
 }
-impl GatewayRouteSpec {
+impl  GatewayRouteSpec  {
     /// <p>The ordering of the gateway routes spec.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
-    pub fn http_route(&self) -> ::std::option::Option<&crate::types::HttpGatewayRoute> {
+    pub fn http_route(&self) -> ::std::option::Option<& crate::types::HttpGatewayRoute> {
         self.http_route.as_ref()
     }
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
-    pub fn http2_route(&self) -> ::std::option::Option<&crate::types::HttpGatewayRoute> {
+    pub fn http2_route(&self) -> ::std::option::Option<& crate::types::HttpGatewayRoute> {
         self.http2_route.as_ref()
     }
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
-    pub fn grpc_route(&self) -> ::std::option::Option<&crate::types::GrpcGatewayRoute> {
+    pub fn grpc_route(&self) -> ::std::option::Option<& crate::types::GrpcGatewayRoute> {
         self.grpc_route.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl GatewayRouteSpecBuilder {
     }
     /// <p>The ordering of the gateway routes spec.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The ordering of the gateway routes spec.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl GatewayRouteSpecBuilder {
     }
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
     pub fn set_http_route(mut self, input: ::std::option::Option<crate::types::HttpGatewayRoute>) -> Self {
-        self.http_route = input;
-        self
+        self.http_route = input; self
     }
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
     pub fn get_http_route(&self) -> &::std::option::Option<crate::types::HttpGatewayRoute> {
@@ -83,8 +81,7 @@ impl GatewayRouteSpecBuilder {
     }
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
     pub fn set_http2_route(mut self, input: ::std::option::Option<crate::types::HttpGatewayRoute>) -> Self {
-        self.http2_route = input;
-        self
+        self.http2_route = input; self
     }
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
     pub fn get_http2_route(&self) -> &::std::option::Option<crate::types::HttpGatewayRoute> {
@@ -97,8 +94,7 @@ impl GatewayRouteSpecBuilder {
     }
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
     pub fn set_grpc_route(mut self, input: ::std::option::Option<crate::types::GrpcGatewayRoute>) -> Self {
-        self.grpc_route = input;
-        self
+        self.grpc_route = input; self
     }
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
     pub fn get_grpc_route(&self) -> &::std::option::Option<crate::types::GrpcGatewayRoute> {
@@ -107,10 +103,15 @@ impl GatewayRouteSpecBuilder {
     /// Consumes the builder and constructs a [`GatewayRouteSpec`](crate::types::GatewayRouteSpec).
     pub fn build(self) -> crate::types::GatewayRouteSpec {
         crate::types::GatewayRouteSpec {
-            priority: self.priority,
-            http_route: self.http_route,
-            http2_route: self.http2_route,
-            grpc_route: self.grpc_route,
+            priority: self.priority
+            ,
+            http_route: self.http_route
+            ,
+            http2_route: self.http2_route
+            ,
+            grpc_route: self.grpc_route
+            ,
         }
     }
 }
+

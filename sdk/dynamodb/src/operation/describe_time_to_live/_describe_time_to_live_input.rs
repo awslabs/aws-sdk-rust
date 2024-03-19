@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTimeToLiveInput {
+pub struct DescribeTimeToLiveInput  {
     /// <p>The name of the table to be described.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTimeToLiveInput {
+impl  DescribeTimeToLiveInput  {
     /// <p>The name of the table to be described.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeTimeToLiveInputBuilder {
     }
     /// <p>The name of the table to be described.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table to be described.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_time_to_live::DescribeTimeToLiveInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_time_to_live::DescribeTimeToLiveInput { table_name: self.table_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_time_to_live::DescribeTimeToLiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_time_to_live::DescribeTimeToLiveInput {
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

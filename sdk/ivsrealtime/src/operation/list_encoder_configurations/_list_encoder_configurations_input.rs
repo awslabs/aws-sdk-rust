@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEncoderConfigurationsInput {
+pub struct ListEncoderConfigurationsInput  {
     /// <p>The first encoder configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return. Default: 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEncoderConfigurationsInput {
+impl  ListEncoderConfigurationsInput  {
     /// <p>The first encoder configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return. Default: 100.</p>
@@ -40,8 +40,7 @@ impl ListEncoderConfigurationsInputBuilder {
     }
     /// <p>The first encoder configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The first encoder configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,23 +53,22 @@ impl ListEncoderConfigurationsInputBuilder {
     }
     /// <p>Maximum number of results to return. Default: 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return. Default: 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEncoderConfigurationsInput`](crate::operation::list_encoder_configurations::ListEncoderConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_encoder_configurations::ListEncoderConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_encoder_configurations::ListEncoderConfigurationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_encoder_configurations::ListEncoderConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_encoder_configurations::ListEncoderConfigurationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

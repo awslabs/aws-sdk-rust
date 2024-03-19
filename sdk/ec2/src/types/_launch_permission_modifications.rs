@@ -3,24 +3,26 @@
 /// <p>Describes a launch permission modification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchPermissionModifications {
+pub struct LaunchPermissionModifications  {
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the list of launch permissions for the AMI.</p>
-    pub add: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
+    pub add: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>,
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove from the list of launch permissions for the AMI.</p>
-    pub remove: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
+    pub remove: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>,
 }
-impl LaunchPermissionModifications {
+impl  LaunchPermissionModifications  {
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the list of launch permissions for the AMI.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add.is_none()`.
-    pub fn add(&self) -> &[crate::types::LaunchPermission] {
-        self.add.as_deref().unwrap_or_default()
+    pub fn add(&self) -> & [crate::types::LaunchPermission] {
+        self.add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove from the list of launch permissions for the AMI.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove.is_none()`.
-    pub fn remove(&self) -> &[crate::types::LaunchPermission] {
-        self.remove.as_deref().unwrap_or_default()
+    pub fn remove(&self) -> & [crate::types::LaunchPermission] {
+        self.remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LaunchPermissionModifications {
@@ -34,8 +36,8 @@ impl LaunchPermissionModifications {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchPermissionModificationsBuilder {
-    pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
-    pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
+    pub(crate) add: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>,
+    pub(crate) remove: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>,
 }
 impl LaunchPermissionModificationsBuilder {
     /// Appends an item to `add`.
@@ -45,17 +47,16 @@ impl LaunchPermissionModificationsBuilder {
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the list of launch permissions for the AMI.</p>
     pub fn add(mut self, input: crate::types::LaunchPermission) -> Self {
         let mut v = self.add.unwrap_or_default();
-        v.push(input);
-        self.add = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the list of launch permissions for the AMI.</p>
-    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>) -> Self {
-        self.add = input;
-        self
+    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>) -> Self {
+        self.add = input; self
     }
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the list of launch permissions for the AMI.</p>
-    pub fn get_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>> {
+    pub fn get_add(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>> {
         &self.add
     }
     /// Appends an item to `remove`.
@@ -65,24 +66,26 @@ impl LaunchPermissionModificationsBuilder {
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove from the list of launch permissions for the AMI.</p>
     pub fn remove(mut self, input: crate::types::LaunchPermission) -> Self {
         let mut v = self.remove.unwrap_or_default();
-        v.push(input);
-        self.remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove from the list of launch permissions for the AMI.</p>
-    pub fn set_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>) -> Self {
-        self.remove = input;
-        self
+    pub fn set_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>) -> Self {
+        self.remove = input; self
     }
     /// <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove from the list of launch permissions for the AMI.</p>
-    pub fn get_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>> {
+    pub fn get_remove(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>> {
         &self.remove
     }
     /// Consumes the builder and constructs a [`LaunchPermissionModifications`](crate::types::LaunchPermissionModifications).
     pub fn build(self) -> crate::types::LaunchPermissionModifications {
         crate::types::LaunchPermissionModifications {
-            add: self.add,
-            remove: self.remove,
+            add: self.add
+            ,
+            remove: self.remove
+            ,
         }
     }
 }
+

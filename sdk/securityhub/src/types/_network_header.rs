@@ -3,7 +3,7 @@
 /// <p>Details about a network path component that occurs before or after the current component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkHeader {
+pub struct NetworkHeader  {
     /// <p>The protocol used for the component.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Information about the destination of the component.</p>
@@ -11,17 +11,17 @@ pub struct NetworkHeader {
     /// <p>Information about the origin of the component.</p>
     pub source: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
 }
-impl NetworkHeader {
+impl  NetworkHeader  {
     /// <p>The protocol used for the component.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>Information about the destination of the component.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::NetworkPathComponentDetails> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::NetworkPathComponentDetails> {
         self.destination.as_ref()
     }
     /// <p>Information about the origin of the component.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::NetworkPathComponentDetails> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::NetworkPathComponentDetails> {
         self.source.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl NetworkHeaderBuilder {
     }
     /// <p>The protocol used for the component.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used for the component.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl NetworkHeaderBuilder {
     }
     /// <p>Information about the destination of the component.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::NetworkPathComponentDetails>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Information about the destination of the component.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::NetworkPathComponentDetails> {
@@ -76,8 +74,7 @@ impl NetworkHeaderBuilder {
     }
     /// <p>Information about the origin of the component.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::NetworkPathComponentDetails>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Information about the origin of the component.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::NetworkPathComponentDetails> {
@@ -86,9 +83,13 @@ impl NetworkHeaderBuilder {
     /// Consumes the builder and constructs a [`NetworkHeader`](crate::types::NetworkHeader).
     pub fn build(self) -> crate::types::NetworkHeader {
         crate::types::NetworkHeader {
-            protocol: self.protocol,
-            destination: self.destination,
-            source: self.source,
+            protocol: self.protocol
+            ,
+            destination: self.destination
+            ,
+            source: self.source
+            ,
         }
     }
 }
+

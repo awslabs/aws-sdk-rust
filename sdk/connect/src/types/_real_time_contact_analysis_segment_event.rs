@@ -3,7 +3,7 @@
 /// <p>Segment type describing a contact event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisSegmentEvent {
+pub struct RealTimeContactAnalysisSegmentEvent  {
     /// <p>The identifier of the contact event.</p>
     pub id: ::std::string::String,
     /// <p>The identifier of the participant.</p>
@@ -17,31 +17,29 @@ pub struct RealTimeContactAnalysisSegmentEvent {
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub time: ::std::option::Option<crate::types::RealTimeContactAnalysisTimeData>,
 }
-impl RealTimeContactAnalysisSegmentEvent {
+impl  RealTimeContactAnalysisSegmentEvent  {
     /// <p>The identifier of the contact event.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<& crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>The display name of the participant. Can be redacted.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Type of the event. For example, <code>application/vnd.amazonaws.connect.event.participant.left</code>.</p>
-    pub fn event_type(&self) -> &str {
-        use std::ops::Deref;
-        self.event_type.deref()
+    pub fn event_type(&self) -> & str {
+        use std::ops::Deref; self.event_type.deref()
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
-    pub fn time(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisTimeData> {
+    pub fn time(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisTimeData> {
         self.time.as_ref()
     }
 }
@@ -72,8 +70,7 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     }
     /// <p>The identifier of the contact event.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the contact event.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     }
     /// <p>The identifier of the participant.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>The identifier of the participant.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +96,7 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -114,8 +109,7 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     }
     /// <p>The display name of the participant. Can be redacted.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the participant. Can be redacted.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +123,7 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     }
     /// <p>Type of the event. For example, <code>application/vnd.amazonaws.connect.event.participant.left</code>.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>Type of the event. For example, <code>application/vnd.amazonaws.connect.event.participant.left</code>.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +137,7 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisTimeData>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub fn get_time(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisTimeData> {
@@ -156,23 +148,28 @@ impl RealTimeContactAnalysisSegmentEventBuilder {
     /// - [`id`](crate::types::builders::RealTimeContactAnalysisSegmentEventBuilder::id)
     /// - [`event_type`](crate::types::builders::RealTimeContactAnalysisSegmentEventBuilder::event_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisSegmentEvent {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RealTimeContactAnalysisSegmentEvent",
-                )
-            })?,
-            participant_id: self.participant_id,
-            participant_role: self.participant_role,
-            display_name: self.display_name,
-            event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_type",
-                    "event_type was not specified but it is required when building RealTimeContactAnalysisSegmentEvent",
-                )
-            })?,
-            time: self.time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisSegmentEvent {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RealTimeContactAnalysisSegmentEvent")
+                    )?
+                ,
+                participant_id: self.participant_id
+                ,
+                participant_role: self.participant_role
+                ,
+                display_name: self.display_name
+                ,
+                event_type: self.event_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_type", "event_type was not specified but it is required when building RealTimeContactAnalysisSegmentEvent")
+                    )?
+                ,
+                time: self.time
+                ,
+            }
+        )
     }
 }
+

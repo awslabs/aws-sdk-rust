@@ -3,11 +3,11 @@
 /// <p>Limits settings on protection groups with arbitrary pattern type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectionGroupArbitraryPatternLimits {
+pub struct ProtectionGroupArbitraryPatternLimits  {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     pub max_members: i64,
 }
-impl ProtectionGroupArbitraryPatternLimits {
+impl  ProtectionGroupArbitraryPatternLimits  {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     pub fn max_members(&self) -> i64 {
         self.max_members
@@ -35,8 +35,7 @@ impl ProtectionGroupArbitraryPatternLimitsBuilder {
     }
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     pub fn set_max_members(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_members = input;
-        self
+        self.max_members = input; self
     }
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     pub fn get_max_members(&self) -> &::std::option::Option<i64> {
@@ -45,7 +44,10 @@ impl ProtectionGroupArbitraryPatternLimitsBuilder {
     /// Consumes the builder and constructs a [`ProtectionGroupArbitraryPatternLimits`](crate::types::ProtectionGroupArbitraryPatternLimits).
     pub fn build(self) -> crate::types::ProtectionGroupArbitraryPatternLimits {
         crate::types::ProtectionGroupArbitraryPatternLimits {
-            max_members: self.max_members.unwrap_or_default(),
+            max_members: self.max_members
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

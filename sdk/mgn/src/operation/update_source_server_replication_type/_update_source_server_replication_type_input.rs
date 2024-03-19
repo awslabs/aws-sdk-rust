@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSourceServerReplicationTypeInput {
+pub struct UpdateSourceServerReplicationTypeInput  {
     /// <p>ID of source server on which to update replication type.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Replication type to which to update source server.</p>
@@ -10,17 +10,17 @@ pub struct UpdateSourceServerReplicationTypeInput {
     /// <p>Account ID on which to update replication type.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSourceServerReplicationTypeInput {
+impl  UpdateSourceServerReplicationTypeInput  {
     /// <p>ID of source server on which to update replication type.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Replication type to which to update source server.</p>
-    pub fn replication_type(&self) -> ::std::option::Option<&crate::types::ReplicationType> {
+    pub fn replication_type(&self) -> ::std::option::Option<& crate::types::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Account ID on which to update replication type.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
     }
     /// <p>ID of source server on which to update replication type.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>ID of source server on which to update replication type.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
     }
     /// <p>Replication type to which to update source server.</p>
     pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::ReplicationType>) -> Self {
-        self.replication_type = input;
-        self
+        self.replication_type = input; self
     }
     /// <p>Replication type to which to update source server.</p>
     pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::ReplicationType> {
@@ -77,26 +75,24 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
     }
     /// <p>Account ID on which to update replication type.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID on which to update replication type.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeInput`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput {
-                source_server_id: self.source_server_id,
-                replication_type: self.replication_type,
-                account_id: self.account_id,
-            },
+                source_server_id: self.source_server_id
+                ,
+                replication_type: self.replication_type
+                ,
+                account_id: self.account_id
+                ,
+            }
         )
     }
 }
+

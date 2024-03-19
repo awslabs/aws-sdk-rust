@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveRoleFromDbInstanceInput {
+pub struct RemoveRoleFromDbInstanceInput  {
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
@@ -10,17 +10,17 @@ pub struct RemoveRoleFromDbInstanceInput {
     /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
-impl RemoveRoleFromDbInstanceInput {
+impl  RemoveRoleFromDbInstanceInput  {
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
-    pub fn feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<& str> {
         self.feature_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RemoveRoleFromDbInstanceInputBuilder {
     }
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RemoveRoleFromDbInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl RemoveRoleFromDbInstanceInputBuilder {
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_name = input;
-        self
+        self.feature_name = input; self
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }
     /// Consumes the builder and constructs a [`RemoveRoleFromDbInstanceInput`](crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput {
-            db_instance_identifier: self.db_instance_identifier,
-            role_arn: self.role_arn,
-            feature_name: self.feature_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                role_arn: self.role_arn
+                ,
+                feature_name: self.feature_name
+                ,
+            }
+        )
     }
 }
+

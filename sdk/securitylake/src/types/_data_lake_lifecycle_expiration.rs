@@ -3,11 +3,11 @@
 /// <p>Provide expiration lifecycle details of Amazon Security Lake object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeLifecycleExpiration {
+pub struct DataLakeLifecycleExpiration  {
     /// <p>Number of days before data expires in the Amazon Security Lake object.</p>
     pub days: ::std::option::Option<i32>,
 }
-impl DataLakeLifecycleExpiration {
+impl  DataLakeLifecycleExpiration  {
     /// <p>Number of days before data expires in the Amazon Security Lake object.</p>
     pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
@@ -34,8 +34,7 @@ impl DataLakeLifecycleExpirationBuilder {
     }
     /// <p>Number of days before data expires in the Amazon Security Lake object.</p>
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>Number of days before data expires in the Amazon Security Lake object.</p>
     pub fn get_days(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl DataLakeLifecycleExpirationBuilder {
     }
     /// Consumes the builder and constructs a [`DataLakeLifecycleExpiration`](crate::types::DataLakeLifecycleExpiration).
     pub fn build(self) -> crate::types::DataLakeLifecycleExpiration {
-        crate::types::DataLakeLifecycleExpiration { days: self.days }
+        crate::types::DataLakeLifecycleExpiration {
+            days: self.days
+            ,
+        }
     }
 }
+

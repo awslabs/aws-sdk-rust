@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchResourceTagsInput {
+pub struct SearchResourceTagsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -14,19 +14,20 @@ pub struct SearchResourceTagsInput {
     /// <p>The search criteria to be used to return tags.</p>
     pub search_criteria: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>,
 }
-impl SearchResourceTagsInput {
+impl  SearchResourceTagsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[::std::string::String] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [::std::string::String] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -34,7 +35,7 @@ impl SearchResourceTagsInput {
         self.max_results
     }
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::ResourceTagsSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<& crate::types::ResourceTagsSearchCriteria> {
         self.search_criteria.as_ref()
     }
 }
@@ -50,7 +51,7 @@ impl SearchResourceTagsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourceTagsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) search_criteria: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>,
@@ -64,8 +65,7 @@ impl SearchResourceTagsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl SearchResourceTagsInputBuilder {
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_types
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -98,8 +97,7 @@ impl SearchResourceTagsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl SearchResourceTagsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -126,24 +123,28 @@ impl SearchResourceTagsInputBuilder {
     }
     /// <p>The search criteria to be used to return tags.</p>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>) -> Self {
-        self.search_criteria = input;
-        self
+        self.search_criteria = input; self
     }
     /// <p>The search criteria to be used to return tags.</p>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::ResourceTagsSearchCriteria> {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchResourceTagsInput`](crate::operation::search_resource_tags::SearchResourceTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::search_resource_tags::SearchResourceTagsInput {
-            instance_id: self.instance_id,
-            resource_types: self.resource_types,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            search_criteria: self.search_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_resource_tags::SearchResourceTagsInput {
+                instance_id: self.instance_id
+                ,
+                resource_types: self.resource_types
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                search_criteria: self.search_criteria
+                ,
+            }
+        )
     }
 }
+

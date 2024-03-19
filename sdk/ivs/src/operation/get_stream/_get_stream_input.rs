@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamInput {
+pub struct GetStreamInput  {
     /// <p>Channel ARN for stream to be accessed.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetStreamInput {
+impl  GetStreamInput  {
     /// <p>Channel ARN for stream to be accessed.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetStreamInputBuilder {
     }
     /// <p>Channel ARN for stream to be accessed.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>Channel ARN for stream to be accessed.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetStreamInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetStreamInput`](crate::operation::get_stream::GetStreamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_stream::GetStreamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stream::GetStreamInput {
-            channel_arn: self.channel_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_stream::GetStreamInput {
+                channel_arn: self.channel_arn
+                ,
+            }
+        )
     }
 }
+

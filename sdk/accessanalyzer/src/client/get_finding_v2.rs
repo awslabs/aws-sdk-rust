@@ -2,13 +2,13 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetFindingV2`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`analyzer_arn(impl Into<String>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::set_analyzer_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p><br>
     ///   - [`id(impl Into<String>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::set_id):<br>required: **true**<br><p>The ID of the finding to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
-    /// - On success, responds with [`GetFindingV2Output`](crate::operation::get_finding_v2::GetFindingV2Output) with field(s):
+                            /// - On success, responds with [`GetFindingV2Output`](crate::operation::get_finding_v2::GetFindingV2Output) with field(s):
     ///   - [`analyzed_at(DateTime)`](crate::operation::get_finding_v2::GetFindingV2Output::analyzed_at): <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_finding_v2::GetFindingV2Output::created_at): <p>The time at which the finding was created.</p>
     ///   - [`error(Option<String>)`](crate::operation::get_finding_v2::GetFindingV2Output::error): <p>An error.</p>
@@ -21,8 +21,9 @@ impl super::Client {
     ///   - [`updated_at(DateTime)`](crate::operation::get_finding_v2::GetFindingV2Output::updated_at): <p>The time at which the finding was updated.</p>
     ///   - [`finding_details(Vec::<FindingDetails>)`](crate::operation::get_finding_v2::GetFindingV2Output::finding_details): <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     ///   - [`finding_type(Option<FindingType>)`](crate::operation::get_finding_v2::GetFindingV2Output::finding_type): <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
-    /// - On failure, responds with [`SdkError<GetFindingV2Error>`](crate::operation::get_finding_v2::GetFindingV2Error)
+                            /// - On failure, responds with [`SdkError<GetFindingV2Error>`](crate::operation::get_finding_v2::GetFindingV2Error)
     pub fn get_finding_v2(&self) -> crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder {
-        crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -53,7 +53,7 @@
 /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateBasedStatement {
+pub struct RateBasedStatement  {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
@@ -95,9 +95,9 @@ pub struct RateBasedStatement {
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
     pub forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
     /// <p>Specifies the aggregate keys to use in a rate-base rule.</p>
-    pub custom_keys: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
+    pub custom_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RateBasedStatementCustomKey>>,
 }
-impl RateBasedStatement {
+impl  RateBasedStatement  {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
@@ -134,25 +134,26 @@ impl RateBasedStatement {
     /// <p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p>
     /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
-    pub fn aggregate_key_type(&self) -> &crate::types::RateBasedStatementAggregateKeyType {
+    pub fn aggregate_key_type(&self) -> & crate::types::RateBasedStatementAggregateKeyType {
         &self.aggregate_key_type
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
-    pub fn scope_down_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn scope_down_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.scope_down_statement.as_deref()
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
-    pub fn forwarded_ip_config(&self) -> ::std::option::Option<&crate::types::ForwardedIpConfig> {
+    pub fn forwarded_ip_config(&self) -> ::std::option::Option<& crate::types::ForwardedIpConfig> {
         self.forwarded_ip_config.as_ref()
     }
     /// <p>Specifies the aggregate keys to use in a rate-base rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_keys.is_none()`.
-    pub fn custom_keys(&self) -> &[crate::types::RateBasedStatementCustomKey] {
-        self.custom_keys.as_deref().unwrap_or_default()
+    pub fn custom_keys(&self) -> & [crate::types::RateBasedStatementCustomKey] {
+        self.custom_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RateBasedStatement {
@@ -171,7 +172,7 @@ pub struct RateBasedStatementBuilder {
     pub(crate) aggregate_key_type: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
     pub(crate) scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     pub(crate) forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
-    pub(crate) custom_keys: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
+    pub(crate) custom_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RateBasedStatementCustomKey>>,
 }
 impl RateBasedStatementBuilder {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
@@ -196,8 +197,7 @@ impl RateBasedStatementBuilder {
     /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     pub fn set_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
@@ -221,8 +221,7 @@ impl RateBasedStatementBuilder {
     /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
     /// <p>Default: <code>300</code> (5 minutes)</p>
     pub fn set_evaluation_window_sec(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.evaluation_window_sec = input;
-        self
+        self.evaluation_window_sec = input; self
     }
     /// <p>The amount of time, in seconds, that WAF should include in its request counts, looking back from the current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600.</p>
     /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
@@ -274,8 +273,7 @@ impl RateBasedStatementBuilder {
     /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
     pub fn set_aggregate_key_type(mut self, input: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>) -> Self {
-        self.aggregate_key_type = input;
-        self
+        self.aggregate_key_type = input; self
     }
     /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
@@ -306,8 +304,7 @@ impl RateBasedStatementBuilder {
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
     pub fn set_scope_down_statement(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>) -> Self {
-        self.scope_down_statement = input;
-        self
+        self.scope_down_statement = input; self
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
     pub fn get_scope_down_statement(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
@@ -326,8 +323,7 @@ impl RateBasedStatementBuilder {
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
     pub fn set_forwarded_ip_config(mut self, input: ::std::option::Option<crate::types::ForwardedIpConfig>) -> Self {
-        self.forwarded_ip_config = input;
-        self
+        self.forwarded_ip_config = input; self
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -343,17 +339,16 @@ impl RateBasedStatementBuilder {
     /// <p>Specifies the aggregate keys to use in a rate-base rule.</p>
     pub fn custom_keys(mut self, input: crate::types::RateBasedStatementCustomKey) -> Self {
         let mut v = self.custom_keys.unwrap_or_default();
-        v.push(input);
-        self.custom_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the aggregate keys to use in a rate-base rule.</p>
-    pub fn set_custom_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>) -> Self {
-        self.custom_keys = input;
-        self
+    pub fn set_custom_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RateBasedStatementCustomKey>>) -> Self {
+        self.custom_keys = input; self
     }
     /// <p>Specifies the aggregate keys to use in a rate-base rule.</p>
-    pub fn get_custom_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>> {
+    pub fn get_custom_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RateBasedStatementCustomKey>> {
         &self.custom_keys
     }
     /// Consumes the builder and constructs a [`RateBasedStatement`](crate::types::RateBasedStatement).
@@ -361,23 +356,29 @@ impl RateBasedStatementBuilder {
     /// - [`limit`](crate::types::builders::RateBasedStatementBuilder::limit)
     /// - [`aggregate_key_type`](crate::types::builders::RateBasedStatementBuilder::aggregate_key_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RateBasedStatement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RateBasedStatement {
-            limit: self.limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "limit",
-                    "limit was not specified but it is required when building RateBasedStatement",
-                )
-            })?,
-            evaluation_window_sec: self.evaluation_window_sec.unwrap_or_default(),
-            aggregate_key_type: self.aggregate_key_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregate_key_type",
-                    "aggregate_key_type was not specified but it is required when building RateBasedStatement",
-                )
-            })?,
-            scope_down_statement: self.scope_down_statement,
-            forwarded_ip_config: self.forwarded_ip_config,
-            custom_keys: self.custom_keys,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RateBasedStatement {
+                limit: self.limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("limit", "limit was not specified but it is required when building RateBasedStatement")
+                    )?
+                ,
+                evaluation_window_sec: self.evaluation_window_sec
+                    .unwrap_or_default()
+                ,
+                aggregate_key_type: self.aggregate_key_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregate_key_type", "aggregate_key_type was not specified but it is required when building RateBasedStatement")
+                    )?
+                ,
+                scope_down_statement: self.scope_down_statement
+                ,
+                forwarded_ip_config: self.forwarded_ip_config
+                ,
+                custom_keys: self.custom_keys
+                ,
+            }
+        )
     }
 }
+

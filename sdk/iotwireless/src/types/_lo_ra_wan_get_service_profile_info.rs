@@ -3,7 +3,7 @@
 /// <p>LoRaWANGetServiceProfileInfo object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanGetServiceProfileInfo {
+pub struct LoRaWanGetServiceProfileInfo  {
     /// <p>The ULRate value.</p>
     pub ul_rate: ::std::option::Option<i32>,
     /// <p>The ULBucketSize value.</p>
@@ -43,7 +43,7 @@ pub struct LoRaWanGetServiceProfileInfo {
     /// <p>The MinGwDiversity value.</p>
     pub min_gw_diversity: ::std::option::Option<i32>,
 }
-impl LoRaWanGetServiceProfileInfo {
+impl  LoRaWanGetServiceProfileInfo  {
     /// <p>The ULRate value.</p>
     pub fn ul_rate(&self) -> ::std::option::Option<i32> {
         self.ul_rate
@@ -53,7 +53,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.ul_bucket_size
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn ul_rate_policy(&self) -> ::std::option::Option<&str> {
+    pub fn ul_rate_policy(&self) -> ::std::option::Option<& str> {
         self.ul_rate_policy.as_deref()
     }
     /// <p>The DLRate value.</p>
@@ -65,7 +65,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.dl_bucket_size
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn dl_rate_policy(&self) -> ::std::option::Option<&str> {
+    pub fn dl_rate_policy(&self) -> ::std::option::Option<& str> {
         self.dl_rate_policy.as_deref()
     }
     /// <p>The AddGWMetaData value.</p>
@@ -93,7 +93,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.dr_max
     }
     /// <p>The ChannelMask value.</p>
-    pub fn channel_mask(&self) -> ::std::option::Option<&str> {
+    pub fn channel_mask(&self) -> ::std::option::Option<& str> {
         self.channel_mask.as_deref()
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
@@ -160,8 +160,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The ULRate value.</p>
     pub fn set_ul_rate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ul_rate = input;
-        self
+        self.ul_rate = input; self
     }
     /// <p>The ULRate value.</p>
     pub fn get_ul_rate(&self) -> &::std::option::Option<i32> {
@@ -174,8 +173,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The ULBucketSize value.</p>
     pub fn set_ul_bucket_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ul_bucket_size = input;
-        self
+        self.ul_bucket_size = input; self
     }
     /// <p>The ULBucketSize value.</p>
     pub fn get_ul_bucket_size(&self) -> &::std::option::Option<i32> {
@@ -188,8 +186,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The ULRatePolicy value.</p>
     pub fn set_ul_rate_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ul_rate_policy = input;
-        self
+        self.ul_rate_policy = input; self
     }
     /// <p>The ULRatePolicy value.</p>
     pub fn get_ul_rate_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +199,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The DLRate value.</p>
     pub fn set_dl_rate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dl_rate = input;
-        self
+        self.dl_rate = input; self
     }
     /// <p>The DLRate value.</p>
     pub fn get_dl_rate(&self) -> &::std::option::Option<i32> {
@@ -216,8 +212,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The DLBucketSize value.</p>
     pub fn set_dl_bucket_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dl_bucket_size = input;
-        self
+        self.dl_bucket_size = input; self
     }
     /// <p>The DLBucketSize value.</p>
     pub fn get_dl_bucket_size(&self) -> &::std::option::Option<i32> {
@@ -230,8 +225,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The DLRatePolicy value.</p>
     pub fn set_dl_rate_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dl_rate_policy = input;
-        self
+        self.dl_rate_policy = input; self
     }
     /// <p>The DLRatePolicy value.</p>
     pub fn get_dl_rate_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +238,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The AddGWMetaData value.</p>
     pub fn set_add_gw_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.add_gw_metadata = input;
-        self
+        self.add_gw_metadata = input; self
     }
     /// <p>The AddGWMetaData value.</p>
     pub fn get_add_gw_metadata(&self) -> &::std::option::Option<bool> {
@@ -258,8 +251,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The DevStatusReqFreq value.</p>
     pub fn set_dev_status_req_freq(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dev_status_req_freq = input;
-        self
+        self.dev_status_req_freq = input; self
     }
     /// <p>The DevStatusReqFreq value.</p>
     pub fn get_dev_status_req_freq(&self) -> &::std::option::Option<i32> {
@@ -272,8 +264,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The ReportDevStatusBattery value.</p>
     pub fn set_report_dev_status_battery(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.report_dev_status_battery = input;
-        self
+        self.report_dev_status_battery = input; self
     }
     /// <p>The ReportDevStatusBattery value.</p>
     pub fn get_report_dev_status_battery(&self) -> &::std::option::Option<bool> {
@@ -286,8 +277,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The ReportDevStatusMargin value.</p>
     pub fn set_report_dev_status_margin(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.report_dev_status_margin = input;
-        self
+        self.report_dev_status_margin = input; self
     }
     /// <p>The ReportDevStatusMargin value.</p>
     pub fn get_report_dev_status_margin(&self) -> &::std::option::Option<bool> {
@@ -300,8 +290,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The DRMin value.</p>
     pub fn set_dr_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dr_min = input;
-        self
+        self.dr_min = input; self
     }
     /// <p>The DRMin value.</p>
     pub fn get_dr_min(&self) -> &::std::option::Option<i32> {
@@ -314,8 +303,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The DRMax value.</p>
     pub fn set_dr_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dr_max = input;
-        self
+        self.dr_max = input; self
     }
     /// <p>The DRMax value.</p>
     pub fn get_dr_max(&self) -> &::std::option::Option<i32> {
@@ -328,8 +316,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The ChannelMask value.</p>
     pub fn set_channel_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_mask = input;
-        self
+        self.channel_mask = input; self
     }
     /// <p>The ChannelMask value.</p>
     pub fn get_channel_mask(&self) -> &::std::option::Option<::std::string::String> {
@@ -342,8 +329,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn set_pr_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.pr_allowed = input;
-        self
+        self.pr_allowed = input; self
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn get_pr_allowed(&self) -> &::std::option::Option<bool> {
@@ -356,8 +342,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
     pub fn set_hr_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hr_allowed = input;
-        self
+        self.hr_allowed = input; self
     }
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
     pub fn get_hr_allowed(&self) -> &::std::option::Option<bool> {
@@ -370,8 +355,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn set_ra_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ra_allowed = input;
-        self
+        self.ra_allowed = input; self
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn get_ra_allowed(&self) -> &::std::option::Option<bool> {
@@ -384,8 +368,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The NwkGeoLoc value.</p>
     pub fn set_nwk_geo_loc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.nwk_geo_loc = input;
-        self
+        self.nwk_geo_loc = input; self
     }
     /// <p>The NwkGeoLoc value.</p>
     pub fn get_nwk_geo_loc(&self) -> &::std::option::Option<bool> {
@@ -398,8 +381,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The TargetPER value.</p>
     pub fn set_target_per(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_per = input;
-        self
+        self.target_per = input; self
     }
     /// <p>The TargetPER value.</p>
     pub fn get_target_per(&self) -> &::std::option::Option<i32> {
@@ -412,8 +394,7 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     }
     /// <p>The MinGwDiversity value.</p>
     pub fn set_min_gw_diversity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_gw_diversity = input;
-        self
+        self.min_gw_diversity = input; self
     }
     /// <p>The MinGwDiversity value.</p>
     pub fn get_min_gw_diversity(&self) -> &::std::option::Option<i32> {
@@ -422,25 +403,55 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     /// Consumes the builder and constructs a [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
     pub fn build(self) -> crate::types::LoRaWanGetServiceProfileInfo {
         crate::types::LoRaWanGetServiceProfileInfo {
-            ul_rate: self.ul_rate,
-            ul_bucket_size: self.ul_bucket_size,
-            ul_rate_policy: self.ul_rate_policy,
-            dl_rate: self.dl_rate,
-            dl_bucket_size: self.dl_bucket_size,
-            dl_rate_policy: self.dl_rate_policy,
-            add_gw_metadata: self.add_gw_metadata.unwrap_or_default(),
-            dev_status_req_freq: self.dev_status_req_freq,
-            report_dev_status_battery: self.report_dev_status_battery.unwrap_or_default(),
-            report_dev_status_margin: self.report_dev_status_margin.unwrap_or_default(),
-            dr_min: self.dr_min.unwrap_or_default(),
-            dr_max: self.dr_max.unwrap_or_default(),
-            channel_mask: self.channel_mask,
-            pr_allowed: self.pr_allowed.unwrap_or_default(),
-            hr_allowed: self.hr_allowed.unwrap_or_default(),
-            ra_allowed: self.ra_allowed.unwrap_or_default(),
-            nwk_geo_loc: self.nwk_geo_loc.unwrap_or_default(),
-            target_per: self.target_per.unwrap_or_default(),
-            min_gw_diversity: self.min_gw_diversity,
+            ul_rate: self.ul_rate
+            ,
+            ul_bucket_size: self.ul_bucket_size
+            ,
+            ul_rate_policy: self.ul_rate_policy
+            ,
+            dl_rate: self.dl_rate
+            ,
+            dl_bucket_size: self.dl_bucket_size
+            ,
+            dl_rate_policy: self.dl_rate_policy
+            ,
+            add_gw_metadata: self.add_gw_metadata
+                .unwrap_or_default()
+            ,
+            dev_status_req_freq: self.dev_status_req_freq
+            ,
+            report_dev_status_battery: self.report_dev_status_battery
+                .unwrap_or_default()
+            ,
+            report_dev_status_margin: self.report_dev_status_margin
+                .unwrap_or_default()
+            ,
+            dr_min: self.dr_min
+                .unwrap_or_default()
+            ,
+            dr_max: self.dr_max
+                .unwrap_or_default()
+            ,
+            channel_mask: self.channel_mask
+            ,
+            pr_allowed: self.pr_allowed
+                .unwrap_or_default()
+            ,
+            hr_allowed: self.hr_allowed
+                .unwrap_or_default()
+            ,
+            ra_allowed: self.ra_allowed
+                .unwrap_or_default()
+            ,
+            nwk_geo_loc: self.nwk_geo_loc
+                .unwrap_or_default()
+            ,
+            target_per: self.target_per
+                .unwrap_or_default()
+            ,
+            min_gw_diversity: self.min_gw_diversity
+            ,
         }
     }
 }
+

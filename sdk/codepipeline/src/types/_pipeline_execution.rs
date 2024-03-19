@@ -3,7 +3,7 @@
 /// <p>Represents information about an execution of a pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineExecution {
+pub struct PipelineExecution  {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
@@ -31,17 +31,17 @@ pub struct PipelineExecution {
     /// <p>A summary that contains a description of the pipeline execution status.</p>
     pub status_summary: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    pub artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
+    pub artifact_revisions: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactRevision>>,
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
+    pub variables: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedPipelineVariable>>,
     /// <p>The interaction or event that started a pipeline execution.</p>
     pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
 }
-impl PipelineExecution {
+impl  PipelineExecution  {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
@@ -49,7 +49,7 @@ impl PipelineExecution {
         self.pipeline_version
     }
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The status of the pipeline execution.</p>
@@ -69,31 +69,33 @@ impl PipelineExecution {
     /// <li>
     /// <p>Failed: The pipeline execution was not completed successfully.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PipelineExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
-    pub fn status_summary(&self) -> ::std::option::Option<&str> {
+    pub fn status_summary(&self) -> ::std::option::Option<& str> {
         self.status_summary.as_deref()
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifact_revisions.is_none()`.
-    pub fn artifact_revisions(&self) -> &[crate::types::ArtifactRevision] {
-        self.artifact_revisions.as_deref().unwrap_or_default()
+    pub fn artifact_revisions(&self) -> & [crate::types::ArtifactRevision] {
+        self.artifact_revisions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
-    pub fn variables(&self) -> &[crate::types::ResolvedPipelineVariable] {
-        self.variables.as_deref().unwrap_or_default()
+    pub fn variables(&self) -> & [crate::types::ResolvedPipelineVariable] {
+        self.variables.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The interaction or event that started a pipeline execution.</p>
-    pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {
+    pub fn trigger(&self) -> ::std::option::Option<& crate::types::ExecutionTrigger> {
         self.trigger.as_ref()
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
-    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+    pub fn execution_mode(&self) -> ::std::option::Option<& crate::types::ExecutionMode> {
         self.execution_mode.as_ref()
     }
 }
@@ -113,8 +115,8 @@ pub struct PipelineExecutionBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     pub(crate) status_summary: ::std::option::Option<::std::string::String>,
-    pub(crate) artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
-    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
+    pub(crate) artifact_revisions: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactRevision>>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedPipelineVariable>>,
     pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
 }
@@ -126,8 +128,7 @@ impl PipelineExecutionBuilder {
     }
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +141,7 @@ impl PipelineExecutionBuilder {
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
     pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pipeline_version = input;
-        self
+        self.pipeline_version = input; self
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
     pub fn get_pipeline_version(&self) -> &::std::option::Option<i32> {
@@ -154,8 +154,7 @@ impl PipelineExecutionBuilder {
     }
     /// <p>The ID of the pipeline execution.</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The ID of the pipeline execution.</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +199,7 @@ impl PipelineExecutionBuilder {
     /// <p>Failed: The pipeline execution was not completed successfully.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
@@ -230,8 +228,7 @@ impl PipelineExecutionBuilder {
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
     pub fn set_status_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_summary = input;
-        self
+        self.status_summary = input; self
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
     pub fn get_status_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,17 +241,16 @@ impl PipelineExecutionBuilder {
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
     pub fn artifact_revisions(mut self, input: crate::types::ArtifactRevision) -> Self {
         let mut v = self.artifact_revisions.unwrap_or_default();
-        v.push(input);
-        self.artifact_revisions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.artifact_revisions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    pub fn set_artifact_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>) -> Self {
-        self.artifact_revisions = input;
-        self
+    pub fn set_artifact_revisions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactRevision>>) -> Self {
+        self.artifact_revisions = input; self
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    pub fn get_artifact_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>> {
+    pub fn get_artifact_revisions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ArtifactRevision>> {
         &self.artifact_revisions
     }
     /// Appends an item to `variables`.
@@ -264,17 +260,16 @@ impl PipelineExecutionBuilder {
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
     pub fn variables(mut self, input: crate::types::ResolvedPipelineVariable) -> Self {
         let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedPipelineVariable>>) -> Self {
+        self.variables = input; self
     }
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResolvedPipelineVariable>> {
         &self.variables
     }
     /// <p>The interaction or event that started a pipeline execution.</p>
@@ -284,8 +279,7 @@ impl PipelineExecutionBuilder {
     }
     /// <p>The interaction or event that started a pipeline execution.</p>
     pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::ExecutionTrigger>) -> Self {
-        self.trigger = input;
-        self
+        self.trigger = input; self
     }
     /// <p>The interaction or event that started a pipeline execution.</p>
     pub fn get_trigger(&self) -> &::std::option::Option<crate::types::ExecutionTrigger> {
@@ -298,8 +292,7 @@ impl PipelineExecutionBuilder {
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
-        self.execution_mode = input;
-        self
+        self.execution_mode = input; self
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
@@ -308,15 +301,25 @@ impl PipelineExecutionBuilder {
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {
         crate::types::PipelineExecution {
-            pipeline_name: self.pipeline_name,
-            pipeline_version: self.pipeline_version,
-            pipeline_execution_id: self.pipeline_execution_id,
-            status: self.status,
-            status_summary: self.status_summary,
-            artifact_revisions: self.artifact_revisions,
-            variables: self.variables,
-            trigger: self.trigger,
-            execution_mode: self.execution_mode,
+            pipeline_name: self.pipeline_name
+            ,
+            pipeline_version: self.pipeline_version
+            ,
+            pipeline_execution_id: self.pipeline_execution_id
+            ,
+            status: self.status
+            ,
+            status_summary: self.status_summary
+            ,
+            artifact_revisions: self.artifact_revisions
+            ,
+            variables: self.variables
+            ,
+            trigger: self.trigger
+            ,
+            execution_mode: self.execution_mode
+            ,
         }
     }
 }
+

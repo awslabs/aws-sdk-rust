@@ -134,32 +134,31 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransactionCanceledException {
+pub struct TransactionCanceledException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A list of cancellation reasons.</p>
-    pub cancellation_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CancellationReason>>,
+    pub cancellation_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::CancellationReason>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl TransactionCanceledException {
+impl  TransactionCanceledException  {
     /// <p>A list of cancellation reasons.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cancellation_reasons.is_none()`.
-    pub fn cancellation_reasons(&self) -> &[crate::types::CancellationReason] {
-        self.cancellation_reasons.as_deref().unwrap_or_default()
+    pub fn cancellation_reasons(&self) -> & [crate::types::CancellationReason] {
+        self.cancellation_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransactionCanceledException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for TransactionCanceledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "TransactionCanceledException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -174,9 +173,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::TransactionCanc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TransactionCanceledException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl TransactionCanceledException {
     /// Creates a new builder-style object to manufacture [`TransactionCanceledException`](crate::types::error::TransactionCanceledException).
@@ -190,7 +187,7 @@ impl TransactionCanceledException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactionCanceledExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) cancellation_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CancellationReason>>,
+    pub(crate) cancellation_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::CancellationReason>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl TransactionCanceledExceptionBuilder {
@@ -201,8 +198,7 @@ impl TransactionCanceledExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,36 +211,38 @@ impl TransactionCanceledExceptionBuilder {
     /// <p>A list of cancellation reasons.</p>
     pub fn cancellation_reasons(mut self, input: crate::types::CancellationReason) -> Self {
         let mut v = self.cancellation_reasons.unwrap_or_default();
-        v.push(input);
-        self.cancellation_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cancellation_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cancellation reasons.</p>
-    pub fn set_cancellation_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CancellationReason>>) -> Self {
-        self.cancellation_reasons = input;
-        self
+    pub fn set_cancellation_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CancellationReason>>) -> Self {
+        self.cancellation_reasons = input; self
     }
     /// <p>A list of cancellation reasons.</p>
-    pub fn get_cancellation_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CancellationReason>> {
+    pub fn get_cancellation_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CancellationReason>> {
         &self.cancellation_reasons
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`TransactionCanceledException`](crate::types::error::TransactionCanceledException).
     pub fn build(self) -> crate::types::error::TransactionCanceledException {
         crate::types::error::TransactionCanceledException {
-            message: self.message,
-            cancellation_reasons: self.cancellation_reasons,
+            message: self.message
+            ,
+            cancellation_reasons: self.cancellation_reasons
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

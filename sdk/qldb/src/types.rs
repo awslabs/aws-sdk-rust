@@ -68,3 +68,4 @@ pub mod builders;
 
 /// Error types that Amazon QLDB can respond with.
 pub mod error;
+

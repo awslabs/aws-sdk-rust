@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let attribute = unimplemented!();
 /// match attribute {
@@ -42,16 +42,14 @@
 /// Specifically, when `attribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Attribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Attribute {
     #[allow(missing_docs)] // documentation missing in model
     AgeRange,
@@ -83,112 +81,98 @@ pub enum Attribute {
     Sunglasses,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Attribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGE_RANGE" => Attribute::AgeRange,
-            "ALL" => Attribute::All,
-            "BEARD" => Attribute::Beard,
-            "DEFAULT" => Attribute::Default,
-            "EMOTIONS" => Attribute::Emotions,
-            "EYEGLASSES" => Attribute::Eyeglasses,
-            "EYES_OPEN" => Attribute::EyesOpen,
-            "EYE_DIRECTION" => Attribute::EyeDirection,
-            "FACE_OCCLUDED" => Attribute::FaceOccluded,
-            "GENDER" => Attribute::Gender,
-            "MOUTH_OPEN" => Attribute::MouthOpen,
-            "MUSTACHE" => Attribute::Mustache,
-            "SMILE" => Attribute::Smile,
-            "SUNGLASSES" => Attribute::Sunglasses,
-            other => Attribute::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AGE_RANGE" => Attribute::AgeRange,
+"ALL" => Attribute::All,
+"BEARD" => Attribute::Beard,
+"DEFAULT" => Attribute::Default,
+"EMOTIONS" => Attribute::Emotions,
+"EYEGLASSES" => Attribute::Eyeglasses,
+"EYES_OPEN" => Attribute::EyesOpen,
+"EYE_DIRECTION" => Attribute::EyeDirection,
+"FACE_OCCLUDED" => Attribute::FaceOccluded,
+"GENDER" => Attribute::Gender,
+"MOUTH_OPEN" => Attribute::MouthOpen,
+"MUSTACHE" => Attribute::Mustache,
+"SMILE" => Attribute::Smile,
+"SUNGLASSES" => Attribute::Sunglasses,
+other => Attribute::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Attribute {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Attribute::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Attribute::from(s))
+                    }
+                }
 impl Attribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Attribute::AgeRange => "AGE_RANGE",
-            Attribute::All => "ALL",
-            Attribute::Beard => "BEARD",
-            Attribute::Default => "DEFAULT",
-            Attribute::Emotions => "EMOTIONS",
-            Attribute::Eyeglasses => "EYEGLASSES",
-            Attribute::EyesOpen => "EYES_OPEN",
-            Attribute::EyeDirection => "EYE_DIRECTION",
-            Attribute::FaceOccluded => "FACE_OCCLUDED",
-            Attribute::Gender => "GENDER",
-            Attribute::MouthOpen => "MOUTH_OPEN",
-            Attribute::Mustache => "MUSTACHE",
-            Attribute::Smile => "SMILE",
-            Attribute::Sunglasses => "SUNGLASSES",
-            Attribute::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGE_RANGE",
-            "ALL",
-            "BEARD",
-            "DEFAULT",
-            "EMOTIONS",
-            "EYEGLASSES",
-            "EYES_OPEN",
-            "EYE_DIRECTION",
-            "FACE_OCCLUDED",
-            "GENDER",
-            "MOUTH_OPEN",
-            "MUSTACHE",
-            "SMILE",
-            "SUNGLASSES",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Attribute::AgeRange => "AGE_RANGE",
+    Attribute::All => "ALL",
+    Attribute::Beard => "BEARD",
+    Attribute::Default => "DEFAULT",
+    Attribute::Emotions => "EMOTIONS",
+    Attribute::Eyeglasses => "EYEGLASSES",
+    Attribute::EyesOpen => "EYES_OPEN",
+    Attribute::EyeDirection => "EYE_DIRECTION",
+    Attribute::FaceOccluded => "FACE_OCCLUDED",
+    Attribute::Gender => "GENDER",
+    Attribute::MouthOpen => "MOUTH_OPEN",
+    Attribute::Mustache => "MUSTACHE",
+    Attribute::Smile => "SMILE",
+    Attribute::Sunglasses => "SUNGLASSES",
+    Attribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGE_RANGE", "ALL", "BEARD", "DEFAULT", "EMOTIONS", "EYEGLASSES", "EYES_OPEN", "EYE_DIRECTION", "FACE_OCCLUDED", "GENDER", "MOUTH_OPEN", "MUSTACHE", "SMILE", "SUNGLASSES"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Attribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Attribute {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Attribute {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Attribute::AgeRange => write!(f, "AGE_RANGE"),
-            Attribute::All => write!(f, "ALL"),
-            Attribute::Beard => write!(f, "BEARD"),
-            Attribute::Default => write!(f, "DEFAULT"),
-            Attribute::Emotions => write!(f, "EMOTIONS"),
-            Attribute::Eyeglasses => write!(f, "EYEGLASSES"),
-            Attribute::EyesOpen => write!(f, "EYES_OPEN"),
-            Attribute::EyeDirection => write!(f, "EYE_DIRECTION"),
-            Attribute::FaceOccluded => write!(f, "FACE_OCCLUDED"),
-            Attribute::Gender => write!(f, "GENDER"),
-            Attribute::MouthOpen => write!(f, "MOUTH_OPEN"),
-            Attribute::Mustache => write!(f, "MUSTACHE"),
-            Attribute::Smile => write!(f, "SMILE"),
-            Attribute::Sunglasses => write!(f, "SUNGLASSES"),
-            Attribute::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Attribute::AgeRange => write!(f, "AGE_RANGE"),
+Attribute::All => write!(f, "ALL"),
+Attribute::Beard => write!(f, "BEARD"),
+Attribute::Default => write!(f, "DEFAULT"),
+Attribute::Emotions => write!(f, "EMOTIONS"),
+Attribute::Eyeglasses => write!(f, "EYEGLASSES"),
+Attribute::EyesOpen => write!(f, "EYES_OPEN"),
+Attribute::EyeDirection => write!(f, "EYE_DIRECTION"),
+Attribute::FaceOccluded => write!(f, "FACE_OCCLUDED"),
+Attribute::Gender => write!(f, "GENDER"),
+Attribute::MouthOpen => write!(f, "MOUTH_OPEN"),
+Attribute::Mustache => write!(f, "MUSTACHE"),
+Attribute::Smile => write!(f, "SMILE"),
+Attribute::Sunglasses => write!(f, "SUNGLASSES"),
+Attribute::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

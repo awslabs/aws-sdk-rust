@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOpenIdConnectProviderInput {
+pub struct GetOpenIdConnectProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetOpenIdConnectProviderInput {
+impl  GetOpenIdConnectProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn open_id_connect_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_connect_provider_arn(&self) -> ::std::option::Option<& str> {
         self.open_id_connect_provider_arn.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl GetOpenIdConnectProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.open_id_connect_provider_arn = input;
-        self
+        self.open_id_connect_provider_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -47,14 +46,13 @@ impl GetOpenIdConnectProviderInputBuilder {
         &self.open_id_connect_provider_arn
     }
     /// Consumes the builder and constructs a [`GetOpenIdConnectProviderInput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput {
-            open_id_connect_provider_arn: self.open_id_connect_provider_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput {
+                open_id_connect_provider_arn: self.open_id_connect_provider_arn
+                ,
+            }
+        )
     }
 }
+

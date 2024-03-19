@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotReplicaOutput {
+pub struct DeleteBotReplicaOutput  {
     /// <p>The unique bot ID of the replicated bot generated.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The region of the replicated bot generated.</p>
@@ -11,25 +11,25 @@ pub struct DeleteBotReplicaOutput {
     pub bot_replica_status: ::std::option::Option<crate::types::BotReplicaStatus>,
     _request_id: Option<String>,
 }
-impl DeleteBotReplicaOutput {
+impl  DeleteBotReplicaOutput  {
     /// <p>The unique bot ID of the replicated bot generated.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The region of the replicated bot generated.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>The operational status of the replicated bot generated.</p>
-    pub fn bot_replica_status(&self) -> ::std::option::Option<&crate::types::BotReplicaStatus> {
+    pub fn bot_replica_status(&self) -> ::std::option::Option<& crate::types::BotReplicaStatus> {
         self.bot_replica_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteBotReplicaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteBotReplicaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotReplicaOutput`](crate::operation::delete_bot_replica::DeleteBotReplicaOutput).
     pub fn builder() -> crate::operation::delete_bot_replica::builders::DeleteBotReplicaOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteBotReplicaOutputBuilder {
     }
     /// <p>The unique bot ID of the replicated bot generated.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique bot ID of the replicated bot generated.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteBotReplicaOutputBuilder {
     }
     /// <p>The region of the replicated bot generated.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The region of the replicated bot generated.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteBotReplicaOutputBuilder {
     }
     /// <p>The operational status of the replicated bot generated.</p>
     pub fn set_bot_replica_status(mut self, input: ::std::option::Option<crate::types::BotReplicaStatus>) -> Self {
-        self.bot_replica_status = input;
-        self
+        self.bot_replica_status = input; self
     }
     /// <p>The operational status of the replicated bot generated.</p>
     pub fn get_bot_replica_status(&self) -> &::std::option::Option<crate::types::BotReplicaStatus> {
         &self.bot_replica_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteBotReplicaOutput`](crate::operation::delete_bot_replica::DeleteBotReplicaOutput).
     pub fn build(self) -> crate::operation::delete_bot_replica::DeleteBotReplicaOutput {
         crate::operation::delete_bot_replica::DeleteBotReplicaOutput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-            bot_replica_status: self.bot_replica_status,
+            bot_id: self.bot_id
+            ,
+            replica_region: self.replica_region
+            ,
+            bot_replica_status: self.bot_replica_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

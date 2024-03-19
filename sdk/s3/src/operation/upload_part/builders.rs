@@ -5,23 +5,20 @@ pub use crate::operation::upload_part::_upload_part_input::UploadPartInputBuilde
 
 impl UploadPartInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::upload_part::UploadPartOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::upload_part::UploadPartError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.upload_part();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::upload_part::UploadPartOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::upload_part::UploadPartError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.upload_part();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UploadPart`.
-///
+/// 
 /// <p>Uploads a part in a multipart upload.</p><note>
 /// <p>In this operation, you provide new data as a part of an object in your request. However, you have an option to specify your existing Amazon S3 object as a data source for the part you are uploading. To upload a part from an existing object, you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a> operation.</p>
 /// </note>
@@ -115,33 +112,32 @@ impl UploadPartInputBuilder {
 #[derive(::std::fmt::Debug)]
 pub struct UploadPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::upload_part::builders::UploadPartInputBuilder,
+                    inner: crate::operation::upload_part::builders::UploadPartInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::upload_part::UploadPartOutput,
-        crate::operation::upload_part::UploadPartError,
-    > for UploadPartFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::upload_part::UploadPartOutput,
-            crate::operation::upload_part::UploadPartError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::upload_part::UploadPartOutput,
+                    crate::operation::upload_part::UploadPartError,
+                > for UploadPartFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::upload_part::UploadPartOutput,
+                        crate::operation::upload_part::UploadPartError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UploadPartFluentBuilder {
     /// Creates a new `UploadPart`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -150,104 +146,81 @@ impl UploadPartFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_part::UploadPartOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::upload_part::UploadPartError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::upload_part::UploadPart::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::upload_part::UploadPart::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::upload_part::UploadPartOutput,
-        crate::operation::upload_part::UploadPartError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
-    ///
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::upload_part::UploadPartOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_part::UploadPartError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::upload_part::UploadPart::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::upload_part::UploadPart::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::upload_part::UploadPartOutput, crate::operation::upload_part::UploadPartError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
+    /// 
     /// Creates a presigned request for this operation.
-    ///
+    /// 
     /// The `presigning_config` provides additional presigning-specific config values, such as the
     /// amount of time the request should be valid for after creation.
-    ///
+    /// 
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
-    ///
+    /// 
     /// _Important:_ If you're using credentials that can expire, such as those from STS AssumeRole or SSO, then
     /// the presigned request can only be valid for as long as the credentials used to create it are.
-    ///
+    /// 
     #[allow(unused_mut)]
-    pub async fn presigned(
-        mut self,
-        presigning_config: crate::presigning::PresigningConfig,
-    ) -> ::std::result::Result<
-        crate::presigning::PresignedRequest,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::upload_part::UploadPartError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let runtime_plugins = crate::operation::upload_part::UploadPart::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        )
-        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(
-            presigning_config,
-            ::aws_sigv4::http_request::SignableBody::UnsignedPayload,
-        ));
-
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let mut context = crate::operation::upload_part::UploadPart::orchestrate_with_stop_point(
-            &runtime_plugins,
-            input,
-            ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit,
-        )
-        .await
-        .map_err(|err| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::upload_part::UploadPartError>()
-                    .expect("correct error type")
-            })
-        })?;
-        let request = context.take_request().expect("request set before transmit");
-        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                        pub async fn presigned(
+                            mut self,
+                            presigning_config: crate::presigning::PresigningConfig,
+                        ) -> ::std::result::Result<crate::presigning::PresignedRequest, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_part::UploadPartError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+        
+        
+                    let runtime_plugins = crate::operation::upload_part::UploadPart::operation_runtime_plugins(
+                        self.handle.runtime_plugins.clone(),
+                        &self.handle.conf,
+                        self.config_override,
+                    )
+                        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(presigning_config, ::aws_sigv4::http_request::SignableBody::UnsignedPayload))
+                        ;
+        
+                    let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                    let mut context = crate::operation::upload_part::UploadPart::orchestrate_with_stop_point(&runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit)
+                        .await
+                        .map_err(|err| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::upload_part::UploadPartError>().expect("correct error type")
+                            })
+                        })?;
+                    let request = context.take_request().expect("request set before transmit");
+                    crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
     }
     /// <p>Object data.</p>
     pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
@@ -540,14 +513,22 @@ impl UploadPartFluentBuilder {
     }
 }
 
-impl crate::client::customize::internal::CustomizablePresigned<crate::operation::upload_part::UploadPartError> for UploadPartFluentBuilder {
-    fn presign(
-        self,
-        config_override: crate::config::Builder,
-        presigning_config: crate::presigning::PresigningConfig,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::presigning::PresignedRequest, crate::operation::upload_part::UploadPartError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
-    }
-}
+impl
+                    crate::client::customize::internal::CustomizablePresigned<
+                        crate::operation::upload_part::UploadPartError,
+                    > for UploadPartFluentBuilder
+                {
+                    fn presign(
+                        self,
+                        config_override: crate::config::Builder,
+                        presigning_config: crate::presigning::PresigningConfig
+                    ) -> crate::client::customize::internal::BoxFuture<
+                        crate::client::customize::internal::SendResult<
+                            crate::presigning::PresignedRequest,
+                            crate::operation::upload_part::UploadPartError,
+                        >,
+                    > {
+                        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
+                    }
+                }
+

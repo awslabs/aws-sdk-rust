@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetConformancePackComplianceDetails`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`conformance_pack_name(impl Into<String>)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::set_conformance_pack_name):<br>required: **true**<br><p>Name of the conformance pack.</p><br>
     ///   - [`filters(ConformancePackEvaluationFilters)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::filters) / [`set_filters(Option<ConformancePackEvaluationFilters>)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::set_filters):<br>required: **false**<br><p>A <code>ConformancePackEvaluationFilters</code> object.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`GetConformancePackComplianceDetailsOutput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput) with field(s):
+                            /// - On success, responds with [`GetConformancePackComplianceDetailsOutput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput) with field(s):
     ///   - [`conformance_pack_name(String)`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput::conformance_pack_name): <p>Name of the conformance pack.</p>
     ///   - [`conformance_pack_rule_evaluation_results(Option<Vec::<ConformancePackEvaluationResult>>)`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput::conformance_pack_rule_evaluation_results): <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<GetConformancePackComplianceDetailsError>`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError)
-    pub fn get_conformance_pack_compliance_details(
-        &self,
-    ) -> crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder {
-        crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<GetConformancePackComplianceDetailsError>`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError)
+    pub fn get_conformance_pack_compliance_details(&self) -> crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder {
+                                crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

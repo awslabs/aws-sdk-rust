@@ -3,7 +3,7 @@
 /// <p>Additional parameter included in the body. You can include up to 100 additional body parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConnectionBodyParameter {
+pub struct ConnectionBodyParameter  {
     /// <p>The key for the parameter.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the key.</p>
@@ -11,13 +11,13 @@ pub struct ConnectionBodyParameter {
     /// <p>Specified whether the value is secret.</p>
     pub is_value_secret: bool,
 }
-impl ConnectionBodyParameter {
+impl  ConnectionBodyParameter  {
     /// <p>The key for the parameter.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value associated with the key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Specified whether the value is secret.</p>
@@ -25,7 +25,7 @@ impl ConnectionBodyParameter {
         self.is_value_secret
     }
 }
-impl ::std::fmt::Debug for ConnectionBodyParameter {
+impl  ::std::fmt::Debug for ConnectionBodyParameter  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionBodyParameter");
         formatter.field("key", &self.key);
@@ -57,8 +57,7 @@ impl ConnectionBodyParameterBuilder {
     }
     /// <p>The key for the parameter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key for the parameter.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ConnectionBodyParameterBuilder {
     }
     /// <p>The value associated with the key.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value associated with the key.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ConnectionBodyParameterBuilder {
     }
     /// <p>Specified whether the value is secret.</p>
     pub fn set_is_value_secret(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_value_secret = input;
-        self
+        self.is_value_secret = input; self
     }
     /// <p>Specified whether the value is secret.</p>
     pub fn get_is_value_secret(&self) -> &::std::option::Option<bool> {
@@ -95,9 +92,13 @@ impl ConnectionBodyParameterBuilder {
     /// Consumes the builder and constructs a [`ConnectionBodyParameter`](crate::types::ConnectionBodyParameter).
     pub fn build(self) -> crate::types::ConnectionBodyParameter {
         crate::types::ConnectionBodyParameter {
-            key: self.key,
-            value: self.value,
-            is_value_secret: self.is_value_secret.unwrap_or_default(),
+            key: self.key
+            ,
+            value: self.value
+            ,
+            is_value_secret: self.is_value_secret
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -110,3 +111,4 @@ impl ::std::fmt::Debug for ConnectionBodyParameterBuilder {
         formatter.finish()
     }
 }
+

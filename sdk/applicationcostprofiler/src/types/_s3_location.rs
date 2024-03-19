@@ -3,22 +3,20 @@
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where AWS Application Cost Profiler reports are generated and then written to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>Name of the S3 bucket.</p>
     pub bucket: ::std::string::String,
     /// <p>Prefix for the location to write to.</p>
     pub prefix: ::std::string::String,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>Prefix for the location to write to.</p>
-    pub fn prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.prefix.deref()
+    pub fn prefix(&self) -> & str {
+        use std::ops::Deref; self.prefix.deref()
     }
 }
 impl S3Location {
@@ -44,8 +42,7 @@ impl S3LocationBuilder {
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl S3LocationBuilder {
     }
     /// <p>Prefix for the location to write to.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Prefix for the location to write to.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl S3LocationBuilder {
     /// - [`bucket`](crate::types::builders::S3LocationBuilder::bucket)
     /// - [`prefix`](crate::types::builders::S3LocationBuilder::prefix)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Location {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3Location",
-                )
-            })?,
-            prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "prefix",
-                    "prefix was not specified but it is required when building S3Location",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Location {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3Location")
+                    )?
+                ,
+                prefix: self.prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("prefix", "prefix was not specified but it is required when building S3Location")
+                    )?
+                ,
+            }
+        )
     }
 }
+

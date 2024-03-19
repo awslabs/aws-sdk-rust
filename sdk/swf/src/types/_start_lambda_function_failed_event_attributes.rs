@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartLambdaFunctionFailedEventAttributes {
+pub struct StartLambdaFunctionFailedEventAttributes  {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub scheduled_event_id: i64,
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
@@ -13,7 +13,7 @@ pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>A description that can help diagnose the cause of the fault.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl StartLambdaFunctionFailedEventAttributes {
+impl  StartLambdaFunctionFailedEventAttributes  {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(&self) -> i64 {
         self.scheduled_event_id
@@ -21,11 +21,11 @@ impl StartLambdaFunctionFailedEventAttributes {
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn cause(&self) -> ::std::option::Option<&crate::types::StartLambdaFunctionFailedCause> {
+    pub fn cause(&self) -> ::std::option::Option<& crate::types::StartLambdaFunctionFailedCause> {
         self.cause.as_ref()
     }
     /// <p>A description that can help diagnose the cause of the fault.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl StartLambdaFunctionFailedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
@@ -70,8 +69,7 @@ impl StartLambdaFunctionFailedEventAttributesBuilder {
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn set_cause(mut self, input: ::std::option::Option<crate::types::StartLambdaFunctionFailedCause>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -86,8 +84,7 @@ impl StartLambdaFunctionFailedEventAttributesBuilder {
     }
     /// <p>A description that can help diagnose the cause of the fault.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description that can help diagnose the cause of the fault.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +93,14 @@ impl StartLambdaFunctionFailedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`StartLambdaFunctionFailedEventAttributes`](crate::types::StartLambdaFunctionFailedEventAttributes).
     pub fn build(self) -> crate::types::StartLambdaFunctionFailedEventAttributes {
         crate::types::StartLambdaFunctionFailedEventAttributes {
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
-            cause: self.cause,
-            message: self.message,
+            scheduled_event_id: self.scheduled_event_id
+                .unwrap_or_default()
+            ,
+            cause: self.cause
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

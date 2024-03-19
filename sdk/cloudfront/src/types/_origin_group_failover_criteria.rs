@@ -3,13 +3,13 @@
 /// <p>A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginGroupFailoverCriteria {
+pub struct OriginGroupFailoverCriteria  {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
     pub status_codes: ::std::option::Option<crate::types::StatusCodes>,
 }
-impl OriginGroupFailoverCriteria {
+impl  OriginGroupFailoverCriteria  {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
-    pub fn status_codes(&self) -> ::std::option::Option<&crate::types::StatusCodes> {
+    pub fn status_codes(&self) -> ::std::option::Option<& crate::types::StatusCodes> {
         self.status_codes.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl OriginGroupFailoverCriteriaBuilder {
     }
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
     pub fn set_status_codes(mut self, input: ::std::option::Option<crate::types::StatusCodes>) -> Self {
-        self.status_codes = input;
-        self
+        self.status_codes = input; self
     }
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
     pub fn get_status_codes(&self) -> &::std::option::Option<crate::types::StatusCodes> {
@@ -45,7 +44,9 @@ impl OriginGroupFailoverCriteriaBuilder {
     /// Consumes the builder and constructs a [`OriginGroupFailoverCriteria`](crate::types::OriginGroupFailoverCriteria).
     pub fn build(self) -> crate::types::OriginGroupFailoverCriteria {
         crate::types::OriginGroupFailoverCriteria {
-            status_codes: self.status_codes,
+            status_codes: self.status_codes
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotAttributeInput {
+pub struct DescribeSnapshotAttributeInput  {
     /// <p>The snapshot attribute you would like to view.</p>
     pub attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
     /// <p>The ID of the EBS snapshot.</p>
@@ -10,13 +10,13 @@ pub struct DescribeSnapshotAttributeInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeSnapshotAttributeInput {
+impl  DescribeSnapshotAttributeInput  {
     /// <p>The snapshot attribute you would like to view.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::SnapshotAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::SnapshotAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the EBS snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl DescribeSnapshotAttributeInputBuilder {
     }
     /// <p>The snapshot attribute you would like to view.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The snapshot attribute you would like to view.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SnapshotAttributeName> {
@@ -63,8 +62,7 @@ impl DescribeSnapshotAttributeInputBuilder {
     }
     /// <p>The ID of the EBS snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the EBS snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl DescribeSnapshotAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotAttributeInput`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput {
-            attribute: self.attribute,
-            snapshot_id: self.snapshot_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput {
+                attribute: self.attribute
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

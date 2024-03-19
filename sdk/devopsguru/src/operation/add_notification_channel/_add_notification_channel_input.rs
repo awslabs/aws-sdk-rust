@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddNotificationChannelInput {
+pub struct AddNotificationChannelInput  {
     /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
-impl AddNotificationChannelInput {
+impl  AddNotificationChannelInput  {
     /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
-    pub fn config(&self) -> ::std::option::Option<&crate::types::NotificationChannelConfig> {
+    pub fn config(&self) -> ::std::option::Option<& crate::types::NotificationChannelConfig> {
         self.config.as_ref()
     }
 }
@@ -34,20 +34,20 @@ impl AddNotificationChannelInputBuilder {
     }
     /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::NotificationChannelConfig>) -> Self {
-        self.config = input;
-        self
+        self.config = input; self
     }
     /// <p>A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::NotificationChannelConfig> {
         &self.config
     }
     /// Consumes the builder and constructs a [`AddNotificationChannelInput`](crate::operation::add_notification_channel::AddNotificationChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_notification_channel::AddNotificationChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_notification_channel::AddNotificationChannelInput { config: self.config })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_notification_channel::AddNotificationChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_notification_channel::AddNotificationChannelInput {
+                config: self.config
+                ,
+            }
+        )
     }
 }
+

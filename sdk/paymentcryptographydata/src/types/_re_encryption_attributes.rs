@@ -22,11 +22,7 @@ impl ReEncryptionAttributes {
     /// Tries to convert the enum instance into [`Dukpt`](crate::types::ReEncryptionAttributes::Dukpt), extracting the inner [`DukptEncryptionAttributes`](crate::types::DukptEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dukpt(&self) -> ::std::result::Result<&crate::types::DukptEncryptionAttributes, &Self> {
-        if let ReEncryptionAttributes::Dukpt(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ReEncryptionAttributes::Dukpt(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Dukpt`](crate::types::ReEncryptionAttributes::Dukpt).
     pub fn is_dukpt(&self) -> bool {
@@ -35,11 +31,7 @@ impl ReEncryptionAttributes {
     /// Tries to convert the enum instance into [`Symmetric`](crate::types::ReEncryptionAttributes::Symmetric), extracting the inner [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_symmetric(&self) -> ::std::result::Result<&crate::types::SymmetricEncryptionAttributes, &Self> {
-        if let ReEncryptionAttributes::Symmetric(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ReEncryptionAttributes::Symmetric(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Symmetric`](crate::types::ReEncryptionAttributes::Symmetric).
     pub fn is_symmetric(&self) -> bool {
@@ -50,3 +42,4 @@ impl ReEncryptionAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

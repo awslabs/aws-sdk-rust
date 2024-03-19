@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataLakeExceptionSubscriptionOutput {
+pub struct GetDataLakeExceptionSubscriptionOutput  {
     /// <p>The subscription protocol to which exception notifications are posted.</p>
     pub subscription_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
@@ -11,13 +11,13 @@ pub struct GetDataLakeExceptionSubscriptionOutput {
     pub exception_time_to_live: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl GetDataLakeExceptionSubscriptionOutput {
+impl  GetDataLakeExceptionSubscriptionOutput  {
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn subscription_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_protocol(&self) -> ::std::option::Option<& str> {
         self.subscription_protocol.as_deref()
     }
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
-    pub fn notification_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn notification_endpoint(&self) -> ::std::option::Option<& str> {
         self.notification_endpoint.as_deref()
     }
     /// <p>The expiration period and time-to-live (TTL).</p>
@@ -26,10 +26,10 @@ impl GetDataLakeExceptionSubscriptionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataLakeExceptionSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataLakeExceptionSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput).
     pub fn builder() -> crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionOutputBuilder {
@@ -54,8 +54,7 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
     }
     /// <p>The subscription protocol to which exception notifications are posted.</p>
     pub fn set_subscription_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_protocol = input;
-        self
+        self.subscription_protocol = input; self
     }
     /// <p>The subscription protocol to which exception notifications are posted.</p>
     pub fn get_subscription_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
     }
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
     pub fn set_notification_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_endpoint = input;
-        self
+        self.notification_endpoint = input; self
     }
     /// <p>The Amazon Web Services account where you receive exception notifications.</p>
     pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetDataLakeExceptionSubscriptionOutputBuilder {
     }
     /// <p>The expiration period and time-to-live (TTL).</p>
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.exception_time_to_live = input;
-        self
+        self.exception_time_to_live = input; self
     }
     /// <p>The expiration period and time-to-live (TTL).</p>
     pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
         &self.exception_time_to_live
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput).
     pub fn build(self) -> crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput {
         crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput {
-            subscription_protocol: self.subscription_protocol,
-            notification_endpoint: self.notification_endpoint,
-            exception_time_to_live: self.exception_time_to_live,
+            subscription_protocol: self.subscription_protocol
+            ,
+            notification_endpoint: self.notification_endpoint
+            ,
+            exception_time_to_live: self.exception_time_to_live
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

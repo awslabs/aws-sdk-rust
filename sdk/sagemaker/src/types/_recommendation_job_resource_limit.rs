@@ -3,13 +3,13 @@
 /// <p>Specifies the maximum number of jobs that can run in parallel and the maximum number of jobs that can run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationJobResourceLimit {
+pub struct RecommendationJobResourceLimit  {
     /// <p>Defines the maximum number of load tests.</p>
     pub max_number_of_tests: ::std::option::Option<i32>,
     /// <p>Defines the maximum number of parallel load tests.</p>
     pub max_parallel_of_tests: ::std::option::Option<i32>,
 }
-impl RecommendationJobResourceLimit {
+impl  RecommendationJobResourceLimit  {
     /// <p>Defines the maximum number of load tests.</p>
     pub fn max_number_of_tests(&self) -> ::std::option::Option<i32> {
         self.max_number_of_tests
@@ -41,8 +41,7 @@ impl RecommendationJobResourceLimitBuilder {
     }
     /// <p>Defines the maximum number of load tests.</p>
     pub fn set_max_number_of_tests(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_number_of_tests = input;
-        self
+        self.max_number_of_tests = input; self
     }
     /// <p>Defines the maximum number of load tests.</p>
     pub fn get_max_number_of_tests(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl RecommendationJobResourceLimitBuilder {
     }
     /// <p>Defines the maximum number of parallel load tests.</p>
     pub fn set_max_parallel_of_tests(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_parallel_of_tests = input;
-        self
+        self.max_parallel_of_tests = input; self
     }
     /// <p>Defines the maximum number of parallel load tests.</p>
     pub fn get_max_parallel_of_tests(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl RecommendationJobResourceLimitBuilder {
     /// Consumes the builder and constructs a [`RecommendationJobResourceLimit`](crate::types::RecommendationJobResourceLimit).
     pub fn build(self) -> crate::types::RecommendationJobResourceLimit {
         crate::types::RecommendationJobResourceLimit {
-            max_number_of_tests: self.max_number_of_tests,
-            max_parallel_of_tests: self.max_parallel_of_tests,
+            max_number_of_tests: self.max_number_of_tests
+            ,
+            max_parallel_of_tests: self.max_parallel_of_tests
+            ,
         }
     }
 }
+

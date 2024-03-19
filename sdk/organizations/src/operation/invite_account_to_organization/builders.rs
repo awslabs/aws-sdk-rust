@@ -5,23 +5,20 @@ pub use crate::operation::invite_account_to_organization::_invite_account_to_org
 
 impl InviteAccountToOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.invite_account_to_organization();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.invite_account_to_organization();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `InviteAccountToOrganization`.
-///
+/// 
 /// <p>Sends an invitation to another account to join your organization as a member account. Organizations sends email on your behalf to the email address that is associated with the other account's owner. The invitation is implemented as a <code>Handshake</code> whose details are in the response.</p><important>
 /// <ul>
 /// <li>
@@ -35,33 +32,32 @@ impl InviteAccountToOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InviteAccountToOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder,
+                    inner: crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-        crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-    > for InviteAccountToOrganizationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
+                    crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
+                > for InviteAccountToOrganizationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
+                        crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl InviteAccountToOrganizationFluentBuilder {
     /// Creates a new `InviteAccountToOrganization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl InviteAccountToOrganizationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::invite_account_to_organization::InviteAccountToOrganization::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::invite_account_to_organization::InviteAccountToOrganization::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-        crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invite_account_to_organization::InviteAccountToOrganizationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::invite_account_to_organization::InviteAccountToOrganization::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::invite_account_to_organization::InviteAccountToOrganization::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput, crate::operation::invite_account_to_organization::InviteAccountToOrganizationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
     /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
@@ -178,7 +165,7 @@ impl InviteAccountToOrganizationFluentBuilder {
     /// </important> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -187,7 +174,8 @@ impl InviteAccountToOrganizationFluentBuilder {
     /// </important> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

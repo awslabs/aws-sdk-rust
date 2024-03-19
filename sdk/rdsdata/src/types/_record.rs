@@ -5,16 +5,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>The values returned in the record.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<crate::types::Value>>,
 }
-impl Record {
+impl  Record  {
     /// <p>The values returned in the record.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[crate::types::Value] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [crate::types::Value] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Record {
@@ -28,7 +29,7 @@ impl Record {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::Value>>,
 }
 impl RecordBuilder {
     /// Appends an item to `values`.
@@ -38,21 +39,24 @@ impl RecordBuilder {
     /// <p>The values returned in the record.</p>
     pub fn values(mut self, input: crate::types::Value) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values returned in the record.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Value>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values returned in the record.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Value>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Value>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
-        crate::types::Record { values: self.values }
+        crate::types::Record {
+            values: self.values
+            ,
+        }
     }
 }
+

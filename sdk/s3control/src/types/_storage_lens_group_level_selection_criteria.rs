@@ -3,24 +3,26 @@
 /// <p>Indicates which Storage Lens group ARNs to include or exclude in the Storage Lens group aggregation. You can only attach Storage Lens groups to your Storage Lens dashboard if they're included in your Storage Lens group aggregation. If this value is left null, then all Storage Lens groups are selected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLensGroupLevelSelectionCriteria {
+pub struct StorageLensGroupLevelSelectionCriteria  {
     /// <p>Indicates which Storage Lens group ARNs to include in the Storage Lens group aggregation.</p>
-    pub include: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub include: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates which Storage Lens group ARNs to exclude from the Storage Lens group aggregation.</p>
-    pub exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclude: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StorageLensGroupLevelSelectionCriteria {
+impl  StorageLensGroupLevelSelectionCriteria  {
     /// <p>Indicates which Storage Lens group ARNs to include in the Storage Lens group aggregation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
-    pub fn include(&self) -> &[::std::string::String] {
-        self.include.as_deref().unwrap_or_default()
+    pub fn include(&self) -> & [::std::string::String] {
+        self.include.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates which Storage Lens group ARNs to exclude from the Storage Lens group aggregation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude.is_none()`.
-    pub fn exclude(&self) -> &[::std::string::String] {
-        self.exclude.as_deref().unwrap_or_default()
+    pub fn exclude(&self) -> & [::std::string::String] {
+        self.exclude.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StorageLensGroupLevelSelectionCriteria {
@@ -34,8 +36,8 @@ impl StorageLensGroupLevelSelectionCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageLensGroupLevelSelectionCriteriaBuilder {
-    pub(crate) include: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) exclude: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StorageLensGroupLevelSelectionCriteriaBuilder {
     /// Appends an item to `include`.
@@ -45,17 +47,16 @@ impl StorageLensGroupLevelSelectionCriteriaBuilder {
     /// <p>Indicates which Storage Lens group ARNs to include in the Storage Lens group aggregation.</p>
     pub fn include(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input.into());
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates which Storage Lens group ARNs to include in the Storage Lens group aggregation.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.include = input; self
     }
     /// <p>Indicates which Storage Lens group ARNs to include in the Storage Lens group aggregation.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.include
     }
     /// Appends an item to `exclude`.
@@ -65,24 +66,26 @@ impl StorageLensGroupLevelSelectionCriteriaBuilder {
     /// <p>Indicates which Storage Lens group ARNs to exclude from the Storage Lens group aggregation.</p>
     pub fn exclude(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclude.unwrap_or_default();
-        v.push(input.into());
-        self.exclude = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclude = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates which Storage Lens group ARNs to exclude from the Storage Lens group aggregation.</p>
-    pub fn set_exclude(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclude = input;
-        self
+    pub fn set_exclude(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclude = input; self
     }
     /// <p>Indicates which Storage Lens group ARNs to exclude from the Storage Lens group aggregation.</p>
-    pub fn get_exclude(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclude(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclude
     }
     /// Consumes the builder and constructs a [`StorageLensGroupLevelSelectionCriteria`](crate::types::StorageLensGroupLevelSelectionCriteria).
     pub fn build(self) -> crate::types::StorageLensGroupLevelSelectionCriteria {
         crate::types::StorageLensGroupLevelSelectionCriteria {
-            include: self.include,
-            exclude: self.exclude,
+            include: self.include
+            ,
+            exclude: self.exclude
+            ,
         }
     }
 }
+

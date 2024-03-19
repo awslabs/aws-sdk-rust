@@ -3,11 +3,11 @@
 /// <p>A structure that holds information regarding a detected signature on a page.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectedSignature {
+pub struct DetectedSignature  {
     /// <p>The page a detected signature was found on.</p>
     pub page: ::std::option::Option<i32>,
 }
-impl DetectedSignature {
+impl  DetectedSignature  {
     /// <p>The page a detected signature was found on.</p>
     pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
@@ -34,8 +34,7 @@ impl DetectedSignatureBuilder {
     }
     /// <p>The page a detected signature was found on.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// <p>The page a detected signature was found on.</p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl DetectedSignatureBuilder {
     }
     /// Consumes the builder and constructs a [`DetectedSignature`](crate::types::DetectedSignature).
     pub fn build(self) -> crate::types::DetectedSignature {
-        crate::types::DetectedSignature { page: self.page }
+        crate::types::DetectedSignature {
+            page: self.page
+            ,
+        }
     }
 }
+

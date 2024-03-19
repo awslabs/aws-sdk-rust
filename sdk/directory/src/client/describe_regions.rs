@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRegions`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
     ///   - [`region_name(impl Into<String>)`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::region_name) / [`set_region_name(Option<String>)`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::set_region_name):<br>required: **false**<br><p>The name of the Region. For example, <code>us-east-1</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p><br>
-    /// - On success, responds with [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput) with field(s):
     ///   - [`regions_description(Option<Vec::<RegionDescription>>)`](crate::operation::describe_regions::DescribeRegionsOutput::regions_description): <p>List of Region information related to the directory for each replicated Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_regions::DescribeRegionsOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<DescribeRegionsError>`](crate::operation::describe_regions::DescribeRegionsError)
+                            /// - On failure, responds with [`SdkError<DescribeRegionsError>`](crate::operation::describe_regions::DescribeRegionsError)
     pub fn describe_regions(&self) -> crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder {
-        crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

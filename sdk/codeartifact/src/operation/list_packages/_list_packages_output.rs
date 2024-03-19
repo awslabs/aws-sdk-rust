@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPackagesOutput {
+pub struct ListPackagesOutput  {
     /// <p>The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects.</p>
-    pub packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
+    pub packages: ::std::option::Option<::std::vec::Vec::<crate::types::PackageSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPackagesOutput {
+impl  ListPackagesOutput  {
     /// <p>The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.packages.is_none()`.
-    pub fn packages(&self) -> &[crate::types::PackageSummary] {
-        self.packages.as_deref().unwrap_or_default()
+    pub fn packages(&self) -> & [crate::types::PackageSummary] {
+        self.packages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPackagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput).
     pub fn builder() -> crate::operation::list_packages::builders::ListPackagesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListPackagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagesOutputBuilder {
-    pub(crate) packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
+    pub(crate) packages: ::std::option::Option<::std::vec::Vec::<crate::types::PackageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListPackagesOutputBuilder {
     /// <p>The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects.</p>
     pub fn packages(mut self, input: crate::types::PackageSummary) -> Self {
         let mut v = self.packages.unwrap_or_default();
-        v.push(input);
-        self.packages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.packages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects.</p>
-    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>) -> Self {
-        self.packages = input;
-        self
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PackageSummary>>) -> Self {
+        self.packages = input; self
     }
     /// <p>The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects.</p>
-    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PackageSummary>> {
         &self.packages
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListPackagesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput).
     pub fn build(self) -> crate::operation::list_packages::ListPackagesOutput {
         crate::operation::list_packages::ListPackagesOutput {
-            packages: self.packages,
-            next_token: self.next_token,
+            packages: self.packages
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

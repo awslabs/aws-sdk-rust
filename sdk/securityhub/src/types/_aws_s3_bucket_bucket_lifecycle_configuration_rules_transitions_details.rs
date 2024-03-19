@@ -3,7 +3,7 @@
 /// <p>A rule for when objects transition to specific storage classes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails  {
     /// <p>A date on which to transition objects to the specified storage class. If you provide <code>Date</code>, you cannot provide <code>Days</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub date: ::std::option::Option<::std::string::String>,
@@ -24,10 +24,10 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// </ul>
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
+impl  AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails  {
     /// <p>A date on which to transition objects to the specified storage class. If you provide <code>Date</code>, you cannot provide <code>Days</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn date(&self) -> ::std::option::Option<&str> {
+    pub fn date(&self) -> ::std::option::Option<& str> {
         self.date.as_deref()
     }
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
@@ -47,7 +47,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// <li>
     /// <p><code>STANDARD_IA</code></p></li>
     /// </ul>
-    pub fn storage_class(&self) -> ::std::option::Option<&str> {
+    pub fn storage_class(&self) -> ::std::option::Option<& str> {
         self.storage_class.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     /// <p>A date on which to transition objects to the specified storage class. If you provide <code>Date</code>, you cannot provide <code>Days</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>A date on which to transition objects to the specified storage class. If you provide <code>Date</code>, you cannot provide <code>Days</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -91,8 +90,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     }
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
     pub fn get_days(&self) -> &::std::option::Option<i32> {
@@ -129,8 +127,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     /// <p><code>STANDARD_IA</code></p></li>
     /// </ul>
     pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
@@ -151,9 +148,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
-            date: self.date,
-            days: self.days,
-            storage_class: self.storage_class,
+            date: self.date
+            ,
+            days: self.days
+            ,
+            storage_class: self.storage_class
+            ,
         }
     }
 }
+

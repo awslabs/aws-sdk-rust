@@ -4,7 +4,7 @@
 /// <p>This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PasswordField {
+pub struct PasswordField  {
     /// <p>The name of the password field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -17,7 +17,7 @@ pub struct PasswordField {
     /// </ul>
     pub identifier: ::std::string::String,
 }
-impl PasswordField {
+impl  PasswordField  {
     /// <p>The name of the password field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -28,9 +28,8 @@ impl PasswordField {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
 }
 impl PasswordField {
@@ -73,8 +72,7 @@ impl PasswordFieldBuilder {
     /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The name of the password field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -93,13 +91,15 @@ impl PasswordFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::PasswordFieldBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::PasswordField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PasswordField {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building PasswordField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PasswordField {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building PasswordField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

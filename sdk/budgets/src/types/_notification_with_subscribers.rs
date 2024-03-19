@@ -3,21 +3,20 @@
 /// <p>A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationWithSubscribers {
+pub struct NotificationWithSubscribers  {
     /// <p>The notification that's associated with a budget.</p>
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub subscribers: ::std::vec::Vec<crate::types::Subscriber>,
+    pub subscribers: ::std::vec::Vec::<crate::types::Subscriber>,
 }
-impl NotificationWithSubscribers {
+impl  NotificationWithSubscribers  {
     /// <p>The notification that's associated with a budget.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
-        use std::ops::Deref;
-        self.subscribers.deref()
+    pub fn subscribers(&self) -> & [crate::types::Subscriber] {
+        use std::ops::Deref; self.subscribers.deref()
     }
 }
 impl NotificationWithSubscribers {
@@ -32,7 +31,7 @@ impl NotificationWithSubscribers {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationWithSubscribersBuilder {
     pub(crate) notification: ::std::option::Option<crate::types::Notification>,
-    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
+    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>>,
 }
 impl NotificationWithSubscribersBuilder {
     /// <p>The notification that's associated with a budget.</p>
@@ -43,8 +42,7 @@ impl NotificationWithSubscribersBuilder {
     }
     /// <p>The notification that's associated with a budget.</p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input;
-        self
+        self.notification = input; self
     }
     /// <p>The notification that's associated with a budget.</p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
@@ -57,31 +55,33 @@ impl NotificationWithSubscribersBuilder {
     /// <p>A list of subscribers who are subscribed to this notification.</p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-        v.push(input);
-        self.subscribers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
-        self.subscribers = input;
-        self
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>>) -> Self {
+        self.subscribers = input; self
     }
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`NotificationWithSubscribers`](crate::types::NotificationWithSubscribers).
     /// This method will fail if any of the following fields are not set:
     /// - [`subscribers`](crate::types::builders::NotificationWithSubscribersBuilder::subscribers)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationWithSubscribers, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationWithSubscribers {
-            notification: self.notification,
-            subscribers: self.subscribers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscribers",
-                    "subscribers was not specified but it is required when building NotificationWithSubscribers",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationWithSubscribers {
+                notification: self.notification
+                ,
+                subscribers: self.subscribers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscribers", "subscribers was not specified but it is required when building NotificationWithSubscribers")
+                    )?
+                ,
+            }
+        )
     }
 }
+

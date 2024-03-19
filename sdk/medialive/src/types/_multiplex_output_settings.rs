@@ -3,13 +3,13 @@
 /// Multiplex Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiplexOutputSettings {
+pub struct MultiplexOutputSettings  {
     /// Destination is a Multiplex.
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
-impl MultiplexOutputSettings {
+impl  MultiplexOutputSettings  {
     /// Destination is a Multiplex.
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl MultiplexOutputSettingsBuilder {
     }
     /// Destination is a Multiplex.
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// Destination is a Multiplex.
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
@@ -45,7 +44,9 @@ impl MultiplexOutputSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexOutputSettings`](crate::types::MultiplexOutputSettings).
     pub fn build(self) -> crate::types::MultiplexOutputSettings {
         crate::types::MultiplexOutputSettings {
-            destination: self.destination,
+            destination: self.destination
+            ,
         }
     }
 }
+

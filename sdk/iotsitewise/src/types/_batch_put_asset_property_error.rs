@@ -3,28 +3,26 @@
 /// <p>Contains error information from updating a batch of asset property values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutAssetPropertyError {
+pub struct BatchPutAssetPropertyError  {
     /// <p>The error code.</p>
     pub error_code: crate::types::BatchPutAssetPropertyValueErrorCode,
     /// <p>The associated error message.</p>
     pub error_message: ::std::string::String,
     /// <p>A list of timestamps for each error, if any.</p>
-    pub timestamps: ::std::vec::Vec<crate::types::TimeInNanos>,
+    pub timestamps: ::std::vec::Vec::<crate::types::TimeInNanos>,
 }
-impl BatchPutAssetPropertyError {
+impl  BatchPutAssetPropertyError  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> &crate::types::BatchPutAssetPropertyValueErrorCode {
+    pub fn error_code(&self) -> & crate::types::BatchPutAssetPropertyValueErrorCode {
         &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
     /// <p>A list of timestamps for each error, if any.</p>
-    pub fn timestamps(&self) -> &[crate::types::TimeInNanos] {
-        use std::ops::Deref;
-        self.timestamps.deref()
+    pub fn timestamps(&self) -> & [crate::types::TimeInNanos] {
+        use std::ops::Deref; self.timestamps.deref()
     }
 }
 impl BatchPutAssetPropertyError {
@@ -40,7 +38,7 @@ impl BatchPutAssetPropertyError {
 pub struct BatchPutAssetPropertyErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
-    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<crate::types::TimeInNanos>>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec::<crate::types::TimeInNanos>>,
 }
 impl BatchPutAssetPropertyErrorBuilder {
     /// <p>The error code.</p>
@@ -51,8 +49,7 @@ impl BatchPutAssetPropertyErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode> {
@@ -66,8 +63,7 @@ impl BatchPutAssetPropertyErrorBuilder {
     }
     /// <p>The associated error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The associated error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +76,16 @@ impl BatchPutAssetPropertyErrorBuilder {
     /// <p>A list of timestamps for each error, if any.</p>
     pub fn timestamps(mut self, input: crate::types::TimeInNanos) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of timestamps for each error, if any.</p>
-    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeInNanos>>) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TimeInNanos>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>A list of timestamps for each error, if any.</p>
-    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeInNanos>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TimeInNanos>> {
         &self.timestamps
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyError`](crate::types::BatchPutAssetPropertyError).
@@ -99,25 +94,25 @@ impl BatchPutAssetPropertyErrorBuilder {
     /// - [`error_message`](crate::types::builders::BatchPutAssetPropertyErrorBuilder::error_message)
     /// - [`timestamps`](crate::types::builders::BatchPutAssetPropertyErrorBuilder::timestamps)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchPutAssetPropertyError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchPutAssetPropertyError {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchPutAssetPropertyError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchPutAssetPropertyError",
-                )
-            })?,
-            timestamps: self.timestamps.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamps",
-                    "timestamps was not specified but it is required when building BatchPutAssetPropertyError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchPutAssetPropertyError {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchPutAssetPropertyError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchPutAssetPropertyError")
+                    )?
+                ,
+                timestamps: self.timestamps
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamps", "timestamps was not specified but it is required when building BatchPutAssetPropertyError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStateMachineAliasOutput {
+pub struct UpdateStateMachineAliasOutput  {
     /// <p>The date and time the state machine alias was updated.</p>
     pub update_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl UpdateStateMachineAliasOutput {
+impl  UpdateStateMachineAliasOutput  {
     /// <p>The date and time the state machine alias was updated.</p>
-    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateStateMachineAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
     pub fn builder() -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasOutputBuilder {
@@ -41,39 +41,35 @@ impl UpdateStateMachineAliasOutputBuilder {
     }
     /// <p>The date and time the state machine alias was updated.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input;
-        self
+        self.update_date = input; self
     }
     /// <p>The date and time the state machine alias was updated.</p>
     pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_date`](crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasOutputBuilder::update_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
-            update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date",
-                    "update_date was not specified but it is required when building UpdateStateMachineAliasOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
+                update_date: self.update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date", "update_date was not specified but it is required when building UpdateStateMachineAliasOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

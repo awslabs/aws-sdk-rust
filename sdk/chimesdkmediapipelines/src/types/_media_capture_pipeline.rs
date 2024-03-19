@@ -3,7 +3,7 @@
 /// <p>A media pipeline object consisting of an ID, source type, source ARN, a sink type, a sink ARN, and a configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MediaCapturePipeline {
+pub struct MediaCapturePipeline  {
     /// <p>The ID of a media pipeline.</p>
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the media capture pipeline</p>
@@ -25,49 +25,49 @@ pub struct MediaCapturePipeline {
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
 }
-impl MediaCapturePipeline {
+impl  MediaCapturePipeline  {
     /// <p>The ID of a media pipeline.</p>
-    pub fn media_pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
     /// <p>The ARN of the media capture pipeline</p>
-    pub fn media_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_arn.as_deref()
     }
     /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::MediaPipelineSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::MediaPipelineSourceType> {
         self.source_type.as_ref()
     }
     /// <p>ARN of the source from which the media artifacts are saved.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The status of the media pipeline.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MediaPipelineStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MediaPipelineStatus> {
         self.status.as_ref()
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
-    pub fn sink_type(&self) -> ::std::option::Option<&crate::types::MediaPipelineSinkType> {
+    pub fn sink_type(&self) -> ::std::option::Option<& crate::types::MediaPipelineSinkType> {
         self.sink_type.as_ref()
     }
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
-    pub fn sink_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sink_arn(&self) -> ::std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The time at which the pipeline was created, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the pipeline was updated, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConfiguration> {
+    pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<& crate::types::ChimeSdkMeetingConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for MediaCapturePipeline {
+impl  ::std::fmt::Debug for MediaCapturePipeline  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaCapturePipeline");
         formatter.field("media_pipeline_id", &self.media_pipeline_id);
@@ -113,8 +113,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>The ID of a media pipeline.</p>
     pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_pipeline_id = input;
-        self
+        self.media_pipeline_id = input; self
     }
     /// <p>The ID of a media pipeline.</p>
     pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>The ARN of the media capture pipeline</p>
     pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_pipeline_arn = input;
-        self
+        self.media_pipeline_arn = input; self
     }
     /// <p>The ARN of the media capture pipeline</p>
     pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::MediaPipelineSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSourceType> {
@@ -155,8 +152,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>ARN of the source from which the media artifacts are saved.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>ARN of the source from which the media artifacts are saved.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>The status of the media pipeline.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the media pipeline.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaPipelineStatus> {
@@ -183,8 +178,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
     pub fn set_sink_type(mut self, input: ::std::option::Option<crate::types::MediaPipelineSinkType>) -> Self {
-        self.sink_type = input;
-        self
+        self.sink_type = input; self
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
     pub fn get_sink_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSinkType> {
@@ -197,8 +191,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_arn = input;
-        self
+        self.sink_arn = input; self
     }
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
     pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +204,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>The time at which the pipeline was created, in ISO 8601 format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time at which the pipeline was created, in ISO 8601 format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -225,8 +217,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>The time at which the pipeline was updated, in ISO 8601 format.</p>
     pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input;
-        self
+        self.updated_timestamp = input; self
     }
     /// <p>The time at which the pipeline was updated, in ISO 8601 format.</p>
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -239,8 +230,7 @@ impl MediaCapturePipelineBuilder {
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub fn set_chime_sdk_meeting_configuration(mut self, input: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>) -> Self {
-        self.chime_sdk_meeting_configuration = input;
-        self
+        self.chime_sdk_meeting_configuration = input; self
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
@@ -249,16 +239,26 @@ impl MediaCapturePipelineBuilder {
     /// Consumes the builder and constructs a [`MediaCapturePipeline`](crate::types::MediaCapturePipeline).
     pub fn build(self) -> crate::types::MediaCapturePipeline {
         crate::types::MediaCapturePipeline {
-            media_pipeline_id: self.media_pipeline_id,
-            media_pipeline_arn: self.media_pipeline_arn,
-            source_type: self.source_type,
-            source_arn: self.source_arn,
-            status: self.status,
-            sink_type: self.sink_type,
-            sink_arn: self.sink_arn,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
-            chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
+            media_pipeline_id: self.media_pipeline_id
+            ,
+            media_pipeline_arn: self.media_pipeline_arn
+            ,
+            source_type: self.source_type
+            ,
+            source_arn: self.source_arn
+            ,
+            status: self.status
+            ,
+            sink_type: self.sink_type
+            ,
+            sink_arn: self.sink_arn
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
+            chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration
+            ,
         }
     }
 }
@@ -278,3 +278,4 @@ impl ::std::fmt::Debug for MediaCapturePipelineBuilder {
         formatter.finish()
     }
 }
+

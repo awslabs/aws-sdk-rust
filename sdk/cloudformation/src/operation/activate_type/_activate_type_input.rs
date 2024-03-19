@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateTypeInput {
+pub struct ActivateTypeInput  {
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
@@ -37,30 +37,30 @@ pub struct ActivateTypeInput {
     /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
     pub major_version: ::std::option::Option<i64>,
 }
-impl ActivateTypeInput {
+impl  ActivateTypeInput  {
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThirdPartyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ThirdPartyType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the public extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
-    pub fn public_type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn public_type_arn(&self) -> ::std::option::Option<& str> {
         self.public_type_arn.as_deref()
     }
     /// <p>The ID of the extension publisher.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
-    pub fn type_name_alias(&self) -> ::std::option::Option<&str> {
+    pub fn type_name_alias(&self) -> ::std::option::Option<& str> {
         self.type_name_alias.as_deref()
     }
     /// <p>Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
@@ -69,11 +69,11 @@ impl ActivateTypeInput {
         self.auto_update
     }
     /// <p>Contains logging configuration information for an extension.</p>
-    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
+    pub fn logging_config(&self) -> ::std::option::Option<& crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The name of the IAM execution role to use to activate the extension.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
@@ -83,7 +83,7 @@ impl ActivateTypeInput {
     /// <li>
     /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
-    pub fn version_bump(&self) -> ::std::option::Option<&crate::types::VersionBump> {
+    pub fn version_bump(&self) -> ::std::option::Option<& crate::types::VersionBump> {
         self.version_bump.as_ref()
     }
     /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
@@ -124,8 +124,7 @@ impl ActivateTypeInputBuilder {
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThirdPartyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
@@ -141,8 +140,7 @@ impl ActivateTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the public extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
     pub fn set_public_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_type_arn = input;
-        self
+        self.public_type_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the public extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
@@ -158,8 +156,7 @@ impl ActivateTypeInputBuilder {
     /// <p>The ID of the extension publisher.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The ID of the extension publisher.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
@@ -175,8 +172,7 @@ impl ActivateTypeInputBuilder {
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
@@ -192,8 +188,7 @@ impl ActivateTypeInputBuilder {
     /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
     pub fn set_type_name_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name_alias = input;
-        self
+        self.type_name_alias = input; self
     }
     /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
@@ -209,8 +204,7 @@ impl ActivateTypeInputBuilder {
     /// <p>Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
     /// <p>The default is <code>true</code>.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
     /// <p>The default is <code>true</code>.</p>
@@ -224,8 +218,7 @@ impl ActivateTypeInputBuilder {
     }
     /// <p>Contains logging configuration information for an extension.</p>
     pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
-        self.logging_config = input;
-        self
+        self.logging_config = input; self
     }
     /// <p>Contains logging configuration information for an extension.</p>
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
@@ -238,8 +231,7 @@ impl ActivateTypeInputBuilder {
     }
     /// <p>The name of the IAM execution role to use to activate the extension.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The name of the IAM execution role to use to activate the extension.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +256,7 @@ impl ActivateTypeInputBuilder {
     /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn set_version_bump(mut self, input: ::std::option::Option<crate::types::VersionBump>) -> Self {
-        self.version_bump = input;
-        self
+        self.version_bump = input; self
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
@@ -286,8 +277,7 @@ impl ActivateTypeInputBuilder {
     /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
     /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
     pub fn set_major_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
     /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
@@ -295,20 +285,31 @@ impl ActivateTypeInputBuilder {
         &self.major_version
     }
     /// Consumes the builder and constructs a [`ActivateTypeInput`](crate::operation::activate_type::ActivateTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::activate_type::ActivateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::activate_type::ActivateTypeInput {
-            r#type: self.r#type,
-            public_type_arn: self.public_type_arn,
-            publisher_id: self.publisher_id,
-            type_name: self.type_name,
-            type_name_alias: self.type_name_alias,
-            auto_update: self.auto_update,
-            logging_config: self.logging_config,
-            execution_role_arn: self.execution_role_arn,
-            version_bump: self.version_bump,
-            major_version: self.major_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::activate_type::ActivateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::activate_type::ActivateTypeInput {
+                r#type: self.r#type
+                ,
+                public_type_arn: self.public_type_arn
+                ,
+                publisher_id: self.publisher_id
+                ,
+                type_name: self.type_name
+                ,
+                type_name_alias: self.type_name_alias
+                ,
+                auto_update: self.auto_update
+                ,
+                logging_config: self.logging_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                version_bump: self.version_bump
+                ,
+                major_version: self.major_version
+                ,
+            }
+        )
     }
 }
+

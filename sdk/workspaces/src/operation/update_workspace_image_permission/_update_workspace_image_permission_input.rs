@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkspaceImagePermissionInput {
+pub struct UpdateWorkspaceImagePermissionInput  {
     /// <p>The identifier of the image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
@@ -12,9 +12,9 @@ pub struct UpdateWorkspaceImagePermissionInput {
     /// </important>
     pub shared_account_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateWorkspaceImagePermissionInput {
+impl  UpdateWorkspaceImagePermissionInput  {
     /// <p>The identifier of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
@@ -24,7 +24,7 @@ impl UpdateWorkspaceImagePermissionInput {
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
-    pub fn shared_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn shared_account_id(&self) -> ::std::option::Option<& str> {
         self.shared_account_id.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     }
     /// <p>The identifier of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The identifier of the image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn set_allow_copy_image(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_copy_image = input;
-        self
+        self.allow_copy_image = input; self
     }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn get_allow_copy_image(&self) -> &::std::option::Option<bool> {
@@ -86,8 +84,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shared_account_id = input;
-        self
+        self.shared_account_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p><important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
@@ -96,16 +93,17 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
         &self.shared_account_id
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceImagePermissionInput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput {
-            image_id: self.image_id,
-            allow_copy_image: self.allow_copy_image,
-            shared_account_id: self.shared_account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput {
+                image_id: self.image_id
+                ,
+                allow_copy_image: self.allow_copy_image
+                ,
+                shared_account_id: self.shared_account_id
+                ,
+            }
+        )
     }
 }
+

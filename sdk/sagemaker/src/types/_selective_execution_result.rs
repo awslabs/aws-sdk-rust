@@ -3,13 +3,13 @@
 /// <p>The ARN from an execution of the current pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectiveExecutionResult {
+pub struct SelectiveExecutionResult  {
     /// <p>The ARN from an execution of the current pipeline.</p>
     pub source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
-impl SelectiveExecutionResult {
+impl  SelectiveExecutionResult  {
     /// <p>The ARN from an execution of the current pipeline.</p>
-    pub fn source_pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.source_pipeline_execution_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SelectiveExecutionResultBuilder {
     }
     /// <p>The ARN from an execution of the current pipeline.</p>
     pub fn set_source_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_pipeline_execution_arn = input;
-        self
+        self.source_pipeline_execution_arn = input; self
     }
     /// <p>The ARN from an execution of the current pipeline.</p>
     pub fn get_source_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl SelectiveExecutionResultBuilder {
     /// Consumes the builder and constructs a [`SelectiveExecutionResult`](crate::types::SelectiveExecutionResult).
     pub fn build(self) -> crate::types::SelectiveExecutionResult {
         crate::types::SelectiveExecutionResult {
-            source_pipeline_execution_arn: self.source_pipeline_execution_arn,
+            source_pipeline_execution_arn: self.source_pipeline_execution_arn
+            ,
         }
     }
 }
+

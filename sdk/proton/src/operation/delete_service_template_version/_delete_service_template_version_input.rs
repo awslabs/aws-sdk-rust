@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceTemplateVersionInput {
+pub struct DeleteServiceTemplateVersionInput  {
     /// <p>The name of the service template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The service template major version to delete.</p>
@@ -10,17 +10,17 @@ pub struct DeleteServiceTemplateVersionInput {
     /// <p>The service template minor version to delete.</p>
     pub minor_version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServiceTemplateVersionInput {
+impl  DeleteServiceTemplateVersionInput  {
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The service template major version to delete.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_version(&self) -> ::std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The service template minor version to delete.</p>
-    pub fn minor_version(&self) -> ::std::option::Option<&str> {
+    pub fn minor_version(&self) -> ::std::option::Option<& str> {
         self.minor_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteServiceTemplateVersionInputBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the service template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteServiceTemplateVersionInputBuilder {
     }
     /// <p>The service template major version to delete.</p>
     pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>The service template major version to delete.</p>
     pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteServiceTemplateVersionInputBuilder {
     }
     /// <p>The service template minor version to delete.</p>
     pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// <p>The service template minor version to delete.</p>
     pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.minor_version
     }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateVersionInput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput {
-            template_name: self.template_name,
-            major_version: self.major_version,
-            minor_version: self.minor_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput {
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+                minor_version: self.minor_version
+                ,
+            }
+        )
     }
 }
+

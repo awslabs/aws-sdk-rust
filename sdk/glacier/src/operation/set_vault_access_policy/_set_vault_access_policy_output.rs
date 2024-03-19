@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetVaultAccessPolicyOutput {
+pub struct SetVaultAccessPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for SetVaultAccessPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyOutput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput).
     pub fn builder() -> crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct SetVaultAccessPolicyOutputBuilder {
 }
 impl SetVaultAccessPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetVaultAccessPolicyOutput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput).
     pub fn build(self) -> crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput {
         crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput {
@@ -40,3 +40,4 @@ impl SetVaultAccessPolicyOutputBuilder {
         }
     }
 }
+

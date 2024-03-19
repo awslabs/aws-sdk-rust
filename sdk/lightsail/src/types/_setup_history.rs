@@ -4,7 +4,7 @@
 /// <p>The status of each command is also returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetupHistory {
+pub struct SetupHistory  {
     /// <p>A GUID that's used to identify the operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the specified request.</p>
@@ -12,31 +12,32 @@ pub struct SetupHistory {
     /// <p>The target resource name for the request.</p>
     pub resource: ::std::option::Option<crate::types::SetupHistoryResource>,
     /// <p>Describes the full details of the request.</p>
-    pub execution_details: ::std::option::Option<::std::vec::Vec<crate::types::SetupExecutionDetails>>,
+    pub execution_details: ::std::option::Option<::std::vec::Vec::<crate::types::SetupExecutionDetails>>,
     /// <p>The status of the request.</p>
     pub status: ::std::option::Option<crate::types::SetupStatus>,
 }
-impl SetupHistory {
+impl  SetupHistory  {
     /// <p>A GUID that's used to identify the operation.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
     /// <p>Information about the specified request.</p>
-    pub fn request(&self) -> ::std::option::Option<&crate::types::SetupRequest> {
+    pub fn request(&self) -> ::std::option::Option<& crate::types::SetupRequest> {
         self.request.as_ref()
     }
     /// <p>The target resource name for the request.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::SetupHistoryResource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::SetupHistoryResource> {
         self.resource.as_ref()
     }
     /// <p>Describes the full details of the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_details.is_none()`.
-    pub fn execution_details(&self) -> &[crate::types::SetupExecutionDetails] {
-        self.execution_details.as_deref().unwrap_or_default()
+    pub fn execution_details(&self) -> & [crate::types::SetupExecutionDetails] {
+        self.execution_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SetupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SetupStatus> {
         self.status.as_ref()
     }
 }
@@ -54,7 +55,7 @@ pub struct SetupHistoryBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) request: ::std::option::Option<crate::types::SetupRequest>,
     pub(crate) resource: ::std::option::Option<crate::types::SetupHistoryResource>,
-    pub(crate) execution_details: ::std::option::Option<::std::vec::Vec<crate::types::SetupExecutionDetails>>,
+    pub(crate) execution_details: ::std::option::Option<::std::vec::Vec::<crate::types::SetupExecutionDetails>>,
     pub(crate) status: ::std::option::Option<crate::types::SetupStatus>,
 }
 impl SetupHistoryBuilder {
@@ -65,8 +66,7 @@ impl SetupHistoryBuilder {
     }
     /// <p>A GUID that's used to identify the operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>A GUID that's used to identify the operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl SetupHistoryBuilder {
     }
     /// <p>Information about the specified request.</p>
     pub fn set_request(mut self, input: ::std::option::Option<crate::types::SetupRequest>) -> Self {
-        self.request = input;
-        self
+        self.request = input; self
     }
     /// <p>Information about the specified request.</p>
     pub fn get_request(&self) -> &::std::option::Option<crate::types::SetupRequest> {
@@ -93,8 +92,7 @@ impl SetupHistoryBuilder {
     }
     /// <p>The target resource name for the request.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::SetupHistoryResource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The target resource name for the request.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::SetupHistoryResource> {
@@ -107,17 +105,16 @@ impl SetupHistoryBuilder {
     /// <p>Describes the full details of the request.</p>
     pub fn execution_details(mut self, input: crate::types::SetupExecutionDetails) -> Self {
         let mut v = self.execution_details.unwrap_or_default();
-        v.push(input);
-        self.execution_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.execution_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the full details of the request.</p>
-    pub fn set_execution_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetupExecutionDetails>>) -> Self {
-        self.execution_details = input;
-        self
+    pub fn set_execution_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SetupExecutionDetails>>) -> Self {
+        self.execution_details = input; self
     }
     /// <p>Describes the full details of the request.</p>
-    pub fn get_execution_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetupExecutionDetails>> {
+    pub fn get_execution_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SetupExecutionDetails>> {
         &self.execution_details
     }
     /// <p>The status of the request.</p>
@@ -127,8 +124,7 @@ impl SetupHistoryBuilder {
     }
     /// <p>The status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SetupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SetupStatus> {
@@ -137,11 +133,17 @@ impl SetupHistoryBuilder {
     /// Consumes the builder and constructs a [`SetupHistory`](crate::types::SetupHistory).
     pub fn build(self) -> crate::types::SetupHistory {
         crate::types::SetupHistory {
-            operation_id: self.operation_id,
-            request: self.request,
-            resource: self.resource,
-            execution_details: self.execution_details,
-            status: self.status,
+            operation_id: self.operation_id
+            ,
+            request: self.request
+            ,
+            resource: self.resource
+            ,
+            execution_details: self.execution_details
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

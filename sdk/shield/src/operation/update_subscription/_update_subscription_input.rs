@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSubscriptionInput {
+pub struct UpdateSubscriptionInput  {
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
     pub auto_renew: ::std::option::Option<crate::types::AutoRenew>,
 }
-impl UpdateSubscriptionInput {
+impl  UpdateSubscriptionInput  {
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
-    pub fn auto_renew(&self) -> ::std::option::Option<&crate::types::AutoRenew> {
+    pub fn auto_renew(&self) -> ::std::option::Option<& crate::types::AutoRenew> {
         self.auto_renew.as_ref()
     }
 }
@@ -33,17 +33,20 @@ impl UpdateSubscriptionInputBuilder {
     }
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<crate::types::AutoRenew>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
     }
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
     pub fn get_auto_renew(&self) -> &::std::option::Option<crate::types::AutoRenew> {
         &self.auto_renew
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionInput`](crate::operation::update_subscription::UpdateSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_subscription::UpdateSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_subscription::UpdateSubscriptionInput { auto_renew: self.auto_renew })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscription::UpdateSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscription::UpdateSubscriptionInput {
+                auto_renew: self.auto_renew
+                ,
+            }
+        )
     }
 }
+

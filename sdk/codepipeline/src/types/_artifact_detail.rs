@@ -3,19 +3,19 @@
 /// <p>Artifact details for the action execution, such as the artifact location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArtifactDetail {
+pub struct ArtifactDetail  {
     /// <p>The artifact object name for the action execution.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
-impl ArtifactDetail {
+impl  ArtifactDetail  {
     /// <p>The artifact object name for the action execution.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ArtifactDetailBuilder {
     }
     /// <p>The artifact object name for the action execution.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The artifact object name for the action execution.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ArtifactDetailBuilder {
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -65,8 +63,11 @@ impl ArtifactDetailBuilder {
     /// Consumes the builder and constructs a [`ArtifactDetail`](crate::types::ArtifactDetail).
     pub fn build(self) -> crate::types::ArtifactDetail {
         crate::types::ArtifactDetail {
-            name: self.name,
-            s3_location: self.s3_location,
+            name: self.name
+            ,
+            s3_location: self.s3_location
+            ,
         }
     }
 }
+

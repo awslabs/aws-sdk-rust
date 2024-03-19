@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventSourcesInput {
+pub struct ListEventSourcesInput  {
     /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListEventSourcesInput {
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl ListEventSourcesInput {
+impl  ListEventSourcesInput  {
     /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -47,8 +47,7 @@ impl ListEventSourcesInputBuilder {
     }
     /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListEventSourcesInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl ListEventSourcesInputBuilder {
     }
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListEventSourcesInput`](crate::operation::list_event_sources::ListEventSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_event_sources::ListEventSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_event_sources::ListEventSourcesInput {
-            name_prefix: self.name_prefix,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_sources::ListEventSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_event_sources::ListEventSourcesInput {
+                name_prefix: self.name_prefix
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,20 @@
 /// <p>The search criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchCriteria {
+pub struct SearchCriteria  {
     /// <p>The filters for the search criteria.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>>,
 }
-impl SearchCriteria {
+impl  SearchCriteria  {
     /// <p>The filters for the search criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::SearchFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::SearchFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for SearchCriteria {
+impl  ::std::fmt::Debug for SearchCriteria  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchCriteria");
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
@@ -33,7 +34,7 @@ impl SearchCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchCriteriaBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>>,
 }
 impl SearchCriteriaBuilder {
     /// Appends an item to `filters`.
@@ -43,22 +44,24 @@ impl SearchCriteriaBuilder {
     /// <p>The filters for the search criteria.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters for the search criteria.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters for the search criteria.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     pub fn build(self) -> crate::types::SearchCriteria {
-        crate::types::SearchCriteria { filters: self.filters }
+        crate::types::SearchCriteria {
+            filters: self.filters
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for SearchCriteriaBuilder {
@@ -68,3 +71,4 @@ impl ::std::fmt::Debug for SearchCriteriaBuilder {
         formatter.finish()
     }
 }
+

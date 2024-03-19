@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSecurityConfigOutput {
+pub struct UpdateSecurityConfigOutput  {
     /// <p>Details about the updated security configuration.</p>
     pub security_config_detail: ::std::option::Option<crate::types::SecurityConfigDetail>,
     _request_id: Option<String>,
 }
-impl UpdateSecurityConfigOutput {
+impl  UpdateSecurityConfigOutput  {
     /// <p>Details about the updated security configuration.</p>
-    pub fn security_config_detail(&self) -> ::std::option::Option<&crate::types::SecurityConfigDetail> {
+    pub fn security_config_detail(&self) -> ::std::option::Option<& crate::types::SecurityConfigDetail> {
         self.security_config_detail.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSecurityConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSecurityConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityConfigOutput`](crate::operation::update_security_config::UpdateSecurityConfigOutput).
     pub fn builder() -> crate::operation::update_security_config::builders::UpdateSecurityConfigOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateSecurityConfigOutputBuilder {
     }
     /// <p>Details about the updated security configuration.</p>
     pub fn set_security_config_detail(mut self, input: ::std::option::Option<crate::types::SecurityConfigDetail>) -> Self {
-        self.security_config_detail = input;
-        self
+        self.security_config_detail = input; self
     }
     /// <p>Details about the updated security configuration.</p>
     pub fn get_security_config_detail(&self) -> &::std::option::Option<crate::types::SecurityConfigDetail> {
         &self.security_config_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSecurityConfigOutput`](crate::operation::update_security_config::UpdateSecurityConfigOutput).
     pub fn build(self) -> crate::operation::update_security_config::UpdateSecurityConfigOutput {
         crate::operation::update_security_config::UpdateSecurityConfigOutput {
-            security_config_detail: self.security_config_detail,
+            security_config_detail: self.security_config_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

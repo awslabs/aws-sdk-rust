@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendCisSessionTelemetryInput {
+pub struct SendCisSessionTelemetryInput  {
     /// <p>A unique identifier for the scan job.</p>
     pub scan_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique token that identifies the CIS session.</p>
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>The CIS session telemetry messages.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::CisSessionMessage>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<crate::types::CisSessionMessage>>,
 }
-impl SendCisSessionTelemetryInput {
+impl  SendCisSessionTelemetryInput  {
     /// <p>A unique identifier for the scan job.</p>
-    pub fn scan_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn scan_job_id(&self) -> ::std::option::Option<& str> {
         self.scan_job_id.as_deref()
     }
     /// <p>The unique token that identifies the CIS session.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The CIS session telemetry messages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[crate::types::CisSessionMessage] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [crate::types::CisSessionMessage] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SendCisSessionTelemetryInput {
@@ -39,7 +40,7 @@ impl SendCisSessionTelemetryInput {
 pub struct SendCisSessionTelemetryInputBuilder {
     pub(crate) scan_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_token: ::std::option::Option<::std::string::String>,
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::CisSessionMessage>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<crate::types::CisSessionMessage>>,
 }
 impl SendCisSessionTelemetryInputBuilder {
     /// <p>A unique identifier for the scan job.</p>
@@ -50,8 +51,7 @@ impl SendCisSessionTelemetryInputBuilder {
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn set_scan_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_job_id = input;
-        self
+        self.scan_job_id = input; self
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn get_scan_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl SendCisSessionTelemetryInputBuilder {
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl SendCisSessionTelemetryInputBuilder {
     /// <p>The CIS session telemetry messages.</p>
     pub fn messages(mut self, input: crate::types::CisSessionMessage) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input);
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CIS session telemetry messages.</p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CisSessionMessage>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CisSessionMessage>>) -> Self {
+        self.messages = input; self
     }
     /// <p>The CIS session telemetry messages.</p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CisSessionMessage>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CisSessionMessage>> {
         &self.messages
     }
     /// Consumes the builder and constructs a [`SendCisSessionTelemetryInput`](crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryInput {
-            scan_job_id: self.scan_job_id,
-            session_token: self.session_token,
-            messages: self.messages,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryInput {
+                scan_job_id: self.scan_job_id
+                ,
+                session_token: self.session_token
+                ,
+                messages: self.messages
+                ,
+            }
+        )
     }
 }
+

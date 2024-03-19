@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBudgetsForResourceOutput {
+pub struct ListBudgetsForResourceOutput  {
     /// <p>Information about the associated budgets.</p>
-    pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
+    pub budgets: ::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBudgetsForResourceOutput {
+impl  ListBudgetsForResourceOutput  {
     /// <p>Information about the associated budgets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgets.is_none()`.
-    pub fn budgets(&self) -> &[crate::types::BudgetDetail] {
-        self.budgets.as_deref().unwrap_or_default()
+    pub fn budgets(&self) -> & [crate::types::BudgetDetail] {
+        self.budgets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBudgetsForResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBudgetsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
     pub fn builder() -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder {
@@ -37,7 +38,7 @@ impl ListBudgetsForResourceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBudgetsForResourceOutputBuilder {
-    pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
+    pub(crate) budgets: ::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListBudgetsForResourceOutputBuilder {
     /// <p>Information about the associated budgets.</p>
     pub fn budgets(mut self, input: crate::types::BudgetDetail) -> Self {
         let mut v = self.budgets.unwrap_or_default();
-        v.push(input);
-        self.budgets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.budgets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
-        self.budgets = input;
-        self
+    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>>) -> Self {
+        self.budgets = input; self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>> {
         &self.budgets
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -69,28 +69,30 @@ impl ListBudgetsForResourceOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
     pub fn build(self) -> crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
         crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
-            budgets: self.budgets,
-            next_page_token: self.next_page_token,
+            budgets: self.budgets
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

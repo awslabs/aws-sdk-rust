@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteJobExecutionInput {
+pub struct DeleteJobExecutionInput  {
     /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing whose job execution will be deleted.</p>
@@ -21,13 +21,13 @@ pub struct DeleteJobExecutionInput {
     /// </note>
     pub namespace_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteJobExecutionInput {
+impl  DeleteJobExecutionInput  {
     /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the thing whose job execution will be deleted.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
@@ -46,7 +46,7 @@ impl DeleteJobExecutionInput {
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
     /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
-    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_id(&self) -> ::std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl DeleteJobExecutionInputBuilder {
     }
     /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl DeleteJobExecutionInputBuilder {
     }
     /// <p>The name of the thing whose job execution will be deleted.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing whose job execution will be deleted.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl DeleteJobExecutionInputBuilder {
     /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
     /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.execution_number = input;
-        self
+        self.execution_number = input; self
     }
     /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
     /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
@@ -127,8 +124,7 @@ impl DeleteJobExecutionInputBuilder {
     /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     /// </note>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p><note>
     /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
@@ -151,8 +147,7 @@ impl DeleteJobExecutionInputBuilder {
     /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -163,16 +158,21 @@ impl DeleteJobExecutionInputBuilder {
         &self.namespace_id
     }
     /// Consumes the builder and constructs a [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_job_execution::DeleteJobExecutionInput {
-            job_id: self.job_id,
-            thing_name: self.thing_name,
-            execution_number: self.execution_number,
-            force: self.force,
-            namespace_id: self.namespace_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_job_execution::DeleteJobExecutionInput {
+                job_id: self.job_id
+                ,
+                thing_name: self.thing_name
+                ,
+                execution_number: self.execution_number
+                ,
+                force: self.force
+                ,
+                namespace_id: self.namespace_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides options to add an archive to a vault.</p>
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct UploadArchiveInput {
+pub struct UploadArchiveInput  {
     /// <p>The name of the vault.</p>
     pub vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -15,33 +15,33 @@ pub struct UploadArchiveInput {
     /// <p>The data to upload.</p>
     pub body: ::aws_smithy_types::byte_stream::ByteStream,
 }
-impl UploadArchiveInput {
+impl  UploadArchiveInput  {
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The optional description of the archive you are uploading.</p>
-    pub fn archive_description(&self) -> ::std::option::Option<&str> {
+    pub fn archive_description(&self) -> ::std::option::Option<& str> {
         self.archive_description.as_deref()
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The data to upload.</p>
-    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn body(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for UploadArchiveInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl UploadArchiveInput {
     /// Creates a new builder-style object to manufacture [`UploadArchiveInput`](crate::operation::upload_archive::UploadArchiveInput).
     pub fn builder() -> crate::operation::upload_archive::builders::UploadArchiveInputBuilder {
@@ -68,8 +68,7 @@ impl UploadArchiveInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UploadArchiveInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl UploadArchiveInputBuilder {
     }
     /// <p>The optional description of the archive you are uploading.</p>
     pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_description = input;
-        self
+        self.archive_description = input; self
     }
     /// <p>The optional description of the archive you are uploading.</p>
     pub fn get_archive_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl UploadArchiveInputBuilder {
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,23 +121,29 @@ impl UploadArchiveInputBuilder {
     }
     /// <p>The data to upload.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The data to upload.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// Consumes the builder and constructs a [`UploadArchiveInput`](crate::operation::upload_archive::UploadArchiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_archive::UploadArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::upload_archive::UploadArchiveInput {
-            vault_name: self.vault_name,
-            account_id: self.account_id,
-            archive_description: self.archive_description,
-            checksum: self.checksum,
-            body: self.body.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_archive::UploadArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_archive::UploadArchiveInput {
+                vault_name: self.vault_name
+                ,
+                account_id: self.account_id
+                ,
+                archive_description: self.archive_description
+                ,
+                checksum: self.checksum
+                ,
+                body: self.body
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

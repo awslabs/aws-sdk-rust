@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSchemasOutput {
+pub struct ListSchemasOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of schema summaries.</p>
-    pub schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>,
+    pub schemas: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaSummary>>,
     _request_id: Option<String>,
 }
-impl ListSchemasOutput {
+impl  ListSchemasOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of schema summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schemas.is_none()`.
-    pub fn schemas(&self) -> &[crate::types::SchemaSummary] {
-        self.schemas.as_deref().unwrap_or_default()
+    pub fn schemas(&self) -> & [crate::types::SchemaSummary] {
+        self.schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSchemasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSchemasOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
     pub fn builder() -> crate::operation::list_schemas::builders::ListSchemasOutputBuilder {
@@ -38,7 +39,7 @@ impl ListSchemasOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>,
+    pub(crate) schemas: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaSummary>>,
     _request_id: Option<String>,
 }
 impl ListSchemasOutputBuilder {
@@ -49,8 +50,7 @@ impl ListSchemasOutputBuilder {
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListSchemasOutputBuilder {
     /// <p>An array of schema summaries.</p>
     pub fn schemas(mut self, input: crate::types::SchemaSummary) -> Self {
         let mut v = self.schemas.unwrap_or_default();
-        v.push(input);
-        self.schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of schema summaries.</p>
-    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>) -> Self {
-        self.schemas = input;
-        self
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaSummary>>) -> Self {
+        self.schemas = input; self
     }
     /// <p>An array of schema summaries.</p>
-    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaSummary>> {
         &self.schemas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
     pub fn build(self) -> crate::operation::list_schemas::ListSchemasOutput {
         crate::operation::list_schemas::ListSchemasOutput {
-            next_token: self.next_token,
-            schemas: self.schemas,
+            next_token: self.next_token
+            ,
+            schemas: self.schemas
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

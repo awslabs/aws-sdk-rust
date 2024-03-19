@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSipMediaApplicationInput {
+pub struct CreateSipMediaApplicationInput  {
     /// <p>The AWS Region assigned to the SIP media application.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The SIP media application name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::SipMediaApplicationEndpoint>>,
 }
-impl CreateSipMediaApplicationInput {
+impl  CreateSipMediaApplicationInput  {
     /// <p>The AWS Region assigned to the SIP media application.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The SIP media application name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
-    pub fn endpoints(&self) -> &[crate::types::SipMediaApplicationEndpoint] {
-        self.endpoints.as_deref().unwrap_or_default()
+    pub fn endpoints(&self) -> & [crate::types::SipMediaApplicationEndpoint] {
+        self.endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSipMediaApplicationInput {
@@ -39,7 +40,7 @@ impl CreateSipMediaApplicationInput {
 pub struct CreateSipMediaApplicationInputBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInputBuilder {
     /// <p>The AWS Region assigned to the SIP media application.</p>
@@ -50,8 +51,7 @@ impl CreateSipMediaApplicationInputBuilder {
     }
     /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl CreateSipMediaApplicationInputBuilder {
     }
     /// <p>The SIP media application name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The SIP media application name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl CreateSipMediaApplicationInputBuilder {
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SipMediaApplicationEndpoint>>) -> Self {
+        self.endpoints = input; self
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SipMediaApplicationEndpoint>> {
         &self.endpoints
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
-            aws_region: self.aws_region,
-            name: self.name,
-            endpoints: self.endpoints,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sip_media_application::CreateSipMediaApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
+                aws_region: self.aws_region
+                ,
+                name: self.name
+                ,
+                endpoints: self.endpoints
+                ,
+            }
+        )
     }
 }
+

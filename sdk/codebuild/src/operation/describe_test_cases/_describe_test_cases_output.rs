@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestCasesOutput {
+pub struct DescribeTestCasesOutput  {
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned list of test cases.</p>
-    pub test_cases: ::std::option::Option<::std::vec::Vec<crate::types::TestCase>>,
+    pub test_cases: ::std::option::Option<::std::vec::Vec::<crate::types::TestCase>>,
     _request_id: Option<String>,
 }
-impl DescribeTestCasesOutput {
+impl  DescribeTestCasesOutput  {
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The returned list of test cases.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_cases.is_none()`.
-    pub fn test_cases(&self) -> &[crate::types::TestCase] {
-        self.test_cases.as_deref().unwrap_or_default()
+    pub fn test_cases(&self) -> & [crate::types::TestCase] {
+        self.test_cases.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTestCasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTestCasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTestCasesOutput`](crate::operation::describe_test_cases::DescribeTestCasesOutput).
     pub fn builder() -> crate::operation::describe_test_cases::builders::DescribeTestCasesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeTestCasesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestCasesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) test_cases: ::std::option::Option<::std::vec::Vec<crate::types::TestCase>>,
+    pub(crate) test_cases: ::std::option::Option<::std::vec::Vec::<crate::types::TestCase>>,
     _request_id: Option<String>,
 }
 impl DescribeTestCasesOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeTestCasesOutputBuilder {
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeTestCasesOutputBuilder {
     /// <p>The returned list of test cases.</p>
     pub fn test_cases(mut self, input: crate::types::TestCase) -> Self {
         let mut v = self.test_cases.unwrap_or_default();
-        v.push(input);
-        self.test_cases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.test_cases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned list of test cases.</p>
-    pub fn set_test_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestCase>>) -> Self {
-        self.test_cases = input;
-        self
+    pub fn set_test_cases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TestCase>>) -> Self {
+        self.test_cases = input; self
     }
     /// <p>The returned list of test cases.</p>
-    pub fn get_test_cases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCase>> {
+    pub fn get_test_cases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TestCase>> {
         &self.test_cases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTestCasesOutput`](crate::operation::describe_test_cases::DescribeTestCasesOutput).
     pub fn build(self) -> crate::operation::describe_test_cases::DescribeTestCasesOutput {
         crate::operation::describe_test_cases::DescribeTestCasesOutput {
-            next_token: self.next_token,
-            test_cases: self.test_cases,
+            next_token: self.next_token
+            ,
+            test_cases: self.test_cases
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

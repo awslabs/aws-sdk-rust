@@ -80,3 +80,4 @@ pub mod builders;
 
 /// Error types that Amazon HealthLake can respond with.
 pub mod error;
+

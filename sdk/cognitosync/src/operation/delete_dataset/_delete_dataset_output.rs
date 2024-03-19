@@ -3,22 +3,22 @@
 /// Response to a successful DeleteDataset request.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDatasetOutput {
+pub struct DeleteDatasetOutput  {
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     pub dataset: ::std::option::Option<crate::types::Dataset>,
     _request_id: Option<String>,
 }
-impl DeleteDatasetOutput {
+impl  DeleteDatasetOutput  {
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    pub fn dataset(&self) -> ::std::option::Option<&crate::types::Dataset> {
+    pub fn dataset(&self) -> ::std::option::Option<& crate::types::Dataset> {
         self.dataset.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDatasetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput).
     pub fn builder() -> crate::operation::delete_dataset::builders::DeleteDatasetOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteDatasetOutputBuilder {
     }
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     pub fn set_dataset(mut self, input: ::std::option::Option<crate::types::Dataset>) -> Self {
-        self.dataset = input;
-        self
+        self.dataset = input; self
     }
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     pub fn get_dataset(&self) -> &::std::option::Option<crate::types::Dataset> {
         &self.dataset
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput).
     pub fn build(self) -> crate::operation::delete_dataset::DeleteDatasetOutput {
         crate::operation::delete_dataset::DeleteDatasetOutput {
-            dataset: self.dataset,
+            dataset: self.dataset
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

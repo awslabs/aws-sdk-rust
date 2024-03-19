@@ -3,7 +3,7 @@
 /// <p>The information about the resource group integration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceGroup {
+pub struct ResourceGroup  {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
     /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
     /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
@@ -17,7 +17,7 @@ pub struct ResourceGroup {
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl ResourceGroup {
+impl  ResourceGroup  {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
     /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
     /// <p><code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
@@ -25,15 +25,15 @@ impl ResourceGroup {
     /// <p><code>UPDATING</code> if the resource group is in the process of being updated.</p>
     /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ResourceGroupState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ResourceGroupState> {
         self.state.as_ref()
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -72,8 +72,7 @@ impl ResourceGroupBuilder {
     /// <p><code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p><code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ResourceGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
     /// <p><code>CREATING </code>if the resource group is in the process of being created.</p>
@@ -92,8 +91,7 @@ impl ResourceGroupBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl ResourceGroupBuilder {
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,9 +113,13 @@ impl ResourceGroupBuilder {
     /// Consumes the builder and constructs a [`ResourceGroup`](crate::types::ResourceGroup).
     pub fn build(self) -> crate::types::ResourceGroup {
         crate::types::ResourceGroup {
-            state: self.state,
-            arn: self.arn,
-            error_message: self.error_message,
+            state: self.state
+            ,
+            arn: self.arn
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

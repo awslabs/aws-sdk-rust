@@ -3,22 +3,22 @@
 /// <p>Represents the response from the server to the request to update the user pool client.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserPoolClientOutput {
+pub struct UpdateUserPoolClientOutput  {
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     pub user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,
 }
-impl UpdateUserPoolClientOutput {
+impl  UpdateUserPoolClientOutput  {
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
-    pub fn user_pool_client(&self) -> ::std::option::Option<&crate::types::UserPoolClientType> {
+    pub fn user_pool_client(&self) -> ::std::option::Option<& crate::types::UserPoolClientType> {
         self.user_pool_client.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserPoolClientOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateUserPoolClientOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolClientOutput`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput).
     pub fn builder() -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateUserPoolClientOutputBuilder {
     }
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     pub fn set_user_pool_client(mut self, input: ::std::option::Option<crate::types::UserPoolClientType>) -> Self {
-        self.user_pool_client = input;
-        self
+        self.user_pool_client = input; self
     }
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     pub fn get_user_pool_client(&self) -> &::std::option::Option<crate::types::UserPoolClientType> {
         &self.user_pool_client
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateUserPoolClientOutput`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput).
     pub fn build(self) -> crate::operation::update_user_pool_client::UpdateUserPoolClientOutput {
         crate::operation::update_user_pool_client::UpdateUserPoolClientOutput {
-            user_pool_client: self.user_pool_client,
+            user_pool_client: self.user_pool_client
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

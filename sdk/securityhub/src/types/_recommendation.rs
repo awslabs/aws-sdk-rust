@@ -3,19 +3,19 @@
 /// <p>A recommendation on how to remediate the issue identified in a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>Describes the recommended steps to take to remediate an issue identified in a finding.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>A URL to a page or site that contains information about how to remediate a finding.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl Recommendation {
+impl  Recommendation  {
     /// <p>Describes the recommended steps to take to remediate an issue identified in a finding.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>A URL to a page or site that contains information about how to remediate a finding.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RecommendationBuilder {
     }
     /// <p>Describes the recommended steps to take to remediate an issue identified in a finding.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>Describes the recommended steps to take to remediate an issue identified in a finding.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RecommendationBuilder {
     }
     /// <p>A URL to a page or site that contains information about how to remediate a finding.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>A URL to a page or site that contains information about how to remediate a finding.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RecommendationBuilder {
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            text: self.text,
-            url: self.url,
+            text: self.text
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

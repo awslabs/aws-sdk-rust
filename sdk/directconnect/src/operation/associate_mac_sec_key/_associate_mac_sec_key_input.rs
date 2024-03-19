@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateMacSecKeyInput {
+pub struct AssociateMacSecKeyInput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
@@ -21,30 +21,30 @@ pub struct AssociateMacSecKeyInput {
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub cak: ::std::option::Option<::std::string::String>,
 }
-impl AssociateMacSecKeyInput {
+impl  AssociateMacSecKeyInput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
     /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
     /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
-    pub fn ckn(&self) -> ::std::option::Option<&str> {
+    pub fn ckn(&self) -> ::std::option::Option<& str> {
         self.ckn.as_deref()
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
     /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
-    pub fn cak(&self) -> ::std::option::Option<&str> {
+    pub fn cak(&self) -> ::std::option::Option<& str> {
         self.cak.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl AssociateMacSecKeyInputBuilder {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
@@ -94,8 +93,7 @@ impl AssociateMacSecKeyInputBuilder {
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
     /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
@@ -116,8 +114,7 @@ impl AssociateMacSecKeyInputBuilder {
     /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn set_ckn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ckn = input;
-        self
+        self.ckn = input; self
     }
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
@@ -139,8 +136,7 @@ impl AssociateMacSecKeyInputBuilder {
     /// <p>The valid values are 64 hexadecimal characters (0-9, A-E).</p>
     /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
     pub fn set_cak(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cak = input;
-        self
+        self.cak = input; self
     }
     /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
     /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
@@ -150,15 +146,19 @@ impl AssociateMacSecKeyInputBuilder {
         &self.cak
     }
     /// Consumes the builder and constructs a [`AssociateMacSecKeyInput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput {
-            connection_id: self.connection_id,
-            secret_arn: self.secret_arn,
-            ckn: self.ckn,
-            cak: self.cak,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput {
+                connection_id: self.connection_id
+                ,
+                secret_arn: self.secret_arn
+                ,
+                ckn: self.ckn
+                ,
+                cak: self.cak
+                ,
+            }
+        )
     }
 }
+

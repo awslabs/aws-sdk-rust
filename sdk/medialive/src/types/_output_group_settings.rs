@@ -3,7 +3,7 @@
 /// Output Group Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputGroupSettings {
+pub struct OutputGroupSettings  {
     /// Archive Group Settings
     pub archive_group_settings: ::std::option::Option<crate::types::ArchiveGroupSettings>,
     /// Frame Capture Group Settings
@@ -21,37 +21,37 @@ pub struct OutputGroupSettings {
     /// Udp Group Settings
     pub udp_group_settings: ::std::option::Option<crate::types::UdpGroupSettings>,
 }
-impl OutputGroupSettings {
+impl  OutputGroupSettings  {
     /// Archive Group Settings
-    pub fn archive_group_settings(&self) -> ::std::option::Option<&crate::types::ArchiveGroupSettings> {
+    pub fn archive_group_settings(&self) -> ::std::option::Option<& crate::types::ArchiveGroupSettings> {
         self.archive_group_settings.as_ref()
     }
     /// Frame Capture Group Settings
-    pub fn frame_capture_group_settings(&self) -> ::std::option::Option<&crate::types::FrameCaptureGroupSettings> {
+    pub fn frame_capture_group_settings(&self) -> ::std::option::Option<& crate::types::FrameCaptureGroupSettings> {
         self.frame_capture_group_settings.as_ref()
     }
     /// Hls Group Settings
-    pub fn hls_group_settings(&self) -> ::std::option::Option<&crate::types::HlsGroupSettings> {
+    pub fn hls_group_settings(&self) -> ::std::option::Option<& crate::types::HlsGroupSettings> {
         self.hls_group_settings.as_ref()
     }
     /// Media Package Group Settings
-    pub fn media_package_group_settings(&self) -> ::std::option::Option<&crate::types::MediaPackageGroupSettings> {
+    pub fn media_package_group_settings(&self) -> ::std::option::Option<& crate::types::MediaPackageGroupSettings> {
         self.media_package_group_settings.as_ref()
     }
     /// Ms Smooth Group Settings
-    pub fn ms_smooth_group_settings(&self) -> ::std::option::Option<&crate::types::MsSmoothGroupSettings> {
+    pub fn ms_smooth_group_settings(&self) -> ::std::option::Option<& crate::types::MsSmoothGroupSettings> {
         self.ms_smooth_group_settings.as_ref()
     }
     /// Multiplex Group Settings
-    pub fn multiplex_group_settings(&self) -> ::std::option::Option<&crate::types::MultiplexGroupSettings> {
+    pub fn multiplex_group_settings(&self) -> ::std::option::Option<& crate::types::MultiplexGroupSettings> {
         self.multiplex_group_settings.as_ref()
     }
     /// Rtmp Group Settings
-    pub fn rtmp_group_settings(&self) -> ::std::option::Option<&crate::types::RtmpGroupSettings> {
+    pub fn rtmp_group_settings(&self) -> ::std::option::Option<& crate::types::RtmpGroupSettings> {
         self.rtmp_group_settings.as_ref()
     }
     /// Udp Group Settings
-    pub fn udp_group_settings(&self) -> ::std::option::Option<&crate::types::UdpGroupSettings> {
+    pub fn udp_group_settings(&self) -> ::std::option::Option<& crate::types::UdpGroupSettings> {
         self.udp_group_settings.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Archive Group Settings
     pub fn set_archive_group_settings(mut self, input: ::std::option::Option<crate::types::ArchiveGroupSettings>) -> Self {
-        self.archive_group_settings = input;
-        self
+        self.archive_group_settings = input; self
     }
     /// Archive Group Settings
     pub fn get_archive_group_settings(&self) -> &::std::option::Option<crate::types::ArchiveGroupSettings> {
@@ -97,8 +96,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Frame Capture Group Settings
     pub fn set_frame_capture_group_settings(mut self, input: ::std::option::Option<crate::types::FrameCaptureGroupSettings>) -> Self {
-        self.frame_capture_group_settings = input;
-        self
+        self.frame_capture_group_settings = input; self
     }
     /// Frame Capture Group Settings
     pub fn get_frame_capture_group_settings(&self) -> &::std::option::Option<crate::types::FrameCaptureGroupSettings> {
@@ -111,8 +109,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Hls Group Settings
     pub fn set_hls_group_settings(mut self, input: ::std::option::Option<crate::types::HlsGroupSettings>) -> Self {
-        self.hls_group_settings = input;
-        self
+        self.hls_group_settings = input; self
     }
     /// Hls Group Settings
     pub fn get_hls_group_settings(&self) -> &::std::option::Option<crate::types::HlsGroupSettings> {
@@ -125,8 +122,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Media Package Group Settings
     pub fn set_media_package_group_settings(mut self, input: ::std::option::Option<crate::types::MediaPackageGroupSettings>) -> Self {
-        self.media_package_group_settings = input;
-        self
+        self.media_package_group_settings = input; self
     }
     /// Media Package Group Settings
     pub fn get_media_package_group_settings(&self) -> &::std::option::Option<crate::types::MediaPackageGroupSettings> {
@@ -139,8 +135,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Ms Smooth Group Settings
     pub fn set_ms_smooth_group_settings(mut self, input: ::std::option::Option<crate::types::MsSmoothGroupSettings>) -> Self {
-        self.ms_smooth_group_settings = input;
-        self
+        self.ms_smooth_group_settings = input; self
     }
     /// Ms Smooth Group Settings
     pub fn get_ms_smooth_group_settings(&self) -> &::std::option::Option<crate::types::MsSmoothGroupSettings> {
@@ -153,8 +148,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Multiplex Group Settings
     pub fn set_multiplex_group_settings(mut self, input: ::std::option::Option<crate::types::MultiplexGroupSettings>) -> Self {
-        self.multiplex_group_settings = input;
-        self
+        self.multiplex_group_settings = input; self
     }
     /// Multiplex Group Settings
     pub fn get_multiplex_group_settings(&self) -> &::std::option::Option<crate::types::MultiplexGroupSettings> {
@@ -167,8 +161,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Rtmp Group Settings
     pub fn set_rtmp_group_settings(mut self, input: ::std::option::Option<crate::types::RtmpGroupSettings>) -> Self {
-        self.rtmp_group_settings = input;
-        self
+        self.rtmp_group_settings = input; self
     }
     /// Rtmp Group Settings
     pub fn get_rtmp_group_settings(&self) -> &::std::option::Option<crate::types::RtmpGroupSettings> {
@@ -181,8 +174,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Udp Group Settings
     pub fn set_udp_group_settings(mut self, input: ::std::option::Option<crate::types::UdpGroupSettings>) -> Self {
-        self.udp_group_settings = input;
-        self
+        self.udp_group_settings = input; self
     }
     /// Udp Group Settings
     pub fn get_udp_group_settings(&self) -> &::std::option::Option<crate::types::UdpGroupSettings> {
@@ -191,14 +183,23 @@ impl OutputGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::types::OutputGroupSettings).
     pub fn build(self) -> crate::types::OutputGroupSettings {
         crate::types::OutputGroupSettings {
-            archive_group_settings: self.archive_group_settings,
-            frame_capture_group_settings: self.frame_capture_group_settings,
-            hls_group_settings: self.hls_group_settings,
-            media_package_group_settings: self.media_package_group_settings,
-            ms_smooth_group_settings: self.ms_smooth_group_settings,
-            multiplex_group_settings: self.multiplex_group_settings,
-            rtmp_group_settings: self.rtmp_group_settings,
-            udp_group_settings: self.udp_group_settings,
+            archive_group_settings: self.archive_group_settings
+            ,
+            frame_capture_group_settings: self.frame_capture_group_settings
+            ,
+            hls_group_settings: self.hls_group_settings
+            ,
+            media_package_group_settings: self.media_package_group_settings
+            ,
+            ms_smooth_group_settings: self.ms_smooth_group_settings
+            ,
+            multiplex_group_settings: self.multiplex_group_settings
+            ,
+            rtmp_group_settings: self.rtmp_group_settings
+            ,
+            udp_group_settings: self.udp_group_settings
+            ,
         }
     }
 }
+

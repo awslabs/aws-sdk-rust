@@ -3,7 +3,7 @@
 /// <p>Provides information about an extracted medical entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Entity {
+pub struct Entity  {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub id: ::std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
@@ -19,11 +19,11 @@ pub struct Entity {
     /// <p>Describes the specific type of entity with category of entities.</p>
     pub r#type: ::std::option::Option<crate::types::EntitySubType>,
     /// <p>Contextual information for the entity.</p>
-    pub traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
+    pub traits: ::std::option::Option<::std::vec::Vec::<crate::types::Trait>>,
     /// <p>The extracted attributes that relate to this entity.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
-impl Entity {
+impl  Entity  {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(&self) -> ::std::option::Option<i32> {
         self.id
@@ -41,28 +41,30 @@ impl Entity {
         self.score
     }
     /// <p>The segment of input text extracted as this entity.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The category of the entity.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.category.as_ref()
     }
     /// <p>Describes the specific type of entity with category of entities.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EntitySubType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EntitySubType> {
         self.r#type.as_ref()
     }
     /// <p>Contextual information for the entity.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
-    pub fn traits(&self) -> &[crate::types::Trait] {
-        self.traits.as_deref().unwrap_or_default()
+    pub fn traits(&self) -> & [crate::types::Trait] {
+        self.traits.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The extracted attributes that relate to this entity.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Entity {
@@ -83,8 +85,8 @@ pub struct EntityBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::EntityType>,
     pub(crate) r#type: ::std::option::Option<crate::types::EntitySubType>,
-    pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) traits: ::std::option::Option<::std::vec::Vec::<crate::types::Trait>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
 impl EntityBuilder {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
@@ -94,8 +96,7 @@ impl EntityBuilder {
     }
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<i32> {
@@ -108,8 +109,7 @@ impl EntityBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
@@ -122,8 +122,7 @@ impl EntityBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
@@ -136,8 +135,7 @@ impl EntityBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn get_score(&self) -> &::std::option::Option<f32> {
@@ -150,8 +148,7 @@ impl EntityBuilder {
     }
     /// <p>The segment of input text extracted as this entity.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The segment of input text extracted as this entity.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +161,7 @@ impl EntityBuilder {
     }
     /// <p>The category of the entity.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of the entity.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -178,8 +174,7 @@ impl EntityBuilder {
     }
     /// <p>Describes the specific type of entity with category of entities.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntitySubType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Describes the specific type of entity with category of entities.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EntitySubType> {
@@ -192,17 +187,16 @@ impl EntityBuilder {
     /// <p>Contextual information for the entity.</p>
     pub fn traits(mut self, input: crate::types::Trait) -> Self {
         let mut v = self.traits.unwrap_or_default();
-        v.push(input);
-        self.traits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contextual information for the entity.</p>
-    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>) -> Self {
-        self.traits = input;
-        self
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Trait>>) -> Self {
+        self.traits = input; self
     }
     /// <p>Contextual information for the entity.</p>
-    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Trait>> {
         &self.traits
     }
     /// Appends an item to `attributes`.
@@ -212,31 +206,40 @@ impl EntityBuilder {
     /// <p>The extracted attributes that relate to this entity.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The extracted attributes that relate to this entity.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The extracted attributes that relate to this entity.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {
         crate::types::Entity {
-            id: self.id,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
-            score: self.score,
-            text: self.text,
-            category: self.category,
-            r#type: self.r#type,
-            traits: self.traits,
-            attributes: self.attributes,
+            id: self.id
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
+            score: self.score
+            ,
+            text: self.text
+            ,
+            category: self.category
+            ,
+            r#type: self.r#type
+            ,
+            traits: self.traits
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

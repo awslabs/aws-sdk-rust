@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectLabelsInput {
+pub struct DetectLabelsInput  {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: ::std::option::Option<crate::types::Image>,
@@ -12,14 +12,14 @@ pub struct DetectLabelsInput {
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub features: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
+    pub features: ::std::option::Option<::std::vec::Vec::<crate::types::DetectLabelsFeatureName>>,
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub settings: ::std::option::Option<crate::types::DetectLabelsSettings>,
 }
-impl DetectLabelsInput {
+impl  DetectLabelsInput  {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
     /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
@@ -32,13 +32,14 @@ impl DetectLabelsInput {
         self.min_confidence
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
-    pub fn features(&self) -> &[crate::types::DetectLabelsFeatureName] {
-        self.features.as_deref().unwrap_or_default()
+    pub fn features(&self) -> & [crate::types::DetectLabelsFeatureName] {
+        self.features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::DetectLabelsSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::DetectLabelsSettings> {
         self.settings.as_ref()
     }
 }
@@ -56,7 +57,7 @@ pub struct DetectLabelsInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) max_labels: ::std::option::Option<i32>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
-    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec::<crate::types::DetectLabelsFeatureName>>,
     pub(crate) settings: ::std::option::Option<crate::types::DetectLabelsSettings>,
 }
 impl DetectLabelsInputBuilder {
@@ -70,8 +71,7 @@ impl DetectLabelsInputBuilder {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -85,8 +85,7 @@ impl DetectLabelsInputBuilder {
     }
     /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn set_max_labels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_labels = input;
-        self
+        self.max_labels = input; self
     }
     /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn get_max_labels(&self) -> &::std::option::Option<i32> {
@@ -101,8 +100,7 @@ impl DetectLabelsInputBuilder {
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
@@ -116,17 +114,16 @@ impl DetectLabelsInputBuilder {
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
     pub fn features(mut self, input: crate::types::DetectLabelsFeatureName) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input);
-        self.features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DetectLabelsFeatureName>>) -> Self {
+        self.features = input; self
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DetectLabelsFeatureName>> {
         &self.features
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
@@ -136,23 +133,28 @@ impl DetectLabelsInputBuilder {
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::DetectLabelsSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::DetectLabelsSettings> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`DetectLabelsInput`](crate::operation::detect_labels::DetectLabelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detect_labels::DetectLabelsInput {
-            image: self.image,
-            max_labels: self.max_labels,
-            min_confidence: self.min_confidence,
-            features: self.features,
-            settings: self.settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_labels::DetectLabelsInput {
+                image: self.image
+                ,
+                max_labels: self.max_labels
+                ,
+                min_confidence: self.min_confidence
+                ,
+                features: self.features
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

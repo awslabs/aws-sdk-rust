@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAgentInput {
+pub struct RegisterAgentInput  {
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
     pub discovery_data: ::std::option::Option<crate::types::DiscoveryData>,
     /// <p>Detailed information about the agent being registered.</p>
     pub agent_details: ::std::option::Option<crate::types::AgentDetails>,
 }
-impl RegisterAgentInput {
+impl  RegisterAgentInput  {
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
-    pub fn discovery_data(&self) -> ::std::option::Option<&crate::types::DiscoveryData> {
+    pub fn discovery_data(&self) -> ::std::option::Option<& crate::types::DiscoveryData> {
         self.discovery_data.as_ref()
     }
     /// <p>Detailed information about the agent being registered.</p>
-    pub fn agent_details(&self) -> ::std::option::Option<&crate::types::AgentDetails> {
+    pub fn agent_details(&self) -> ::std::option::Option<& crate::types::AgentDetails> {
         self.agent_details.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RegisterAgentInputBuilder {
     }
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
     pub fn set_discovery_data(mut self, input: ::std::option::Option<crate::types::DiscoveryData>) -> Self {
-        self.discovery_data = input;
-        self
+        self.discovery_data = input; self
     }
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
     pub fn get_discovery_data(&self) -> &::std::option::Option<crate::types::DiscoveryData> {
@@ -56,20 +55,22 @@ impl RegisterAgentInputBuilder {
     }
     /// <p>Detailed information about the agent being registered.</p>
     pub fn set_agent_details(mut self, input: ::std::option::Option<crate::types::AgentDetails>) -> Self {
-        self.agent_details = input;
-        self
+        self.agent_details = input; self
     }
     /// <p>Detailed information about the agent being registered.</p>
     pub fn get_agent_details(&self) -> &::std::option::Option<crate::types::AgentDetails> {
         &self.agent_details
     }
     /// Consumes the builder and constructs a [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_agent::RegisterAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_agent::RegisterAgentInput {
-            discovery_data: self.discovery_data,
-            agent_details: self.agent_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_agent::RegisterAgentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_agent::RegisterAgentInput {
+                discovery_data: self.discovery_data
+                ,
+                agent_details: self.agent_details
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReservationPurchaseRecommendationInput {
+pub struct GetReservationPurchaseRecommendationInput  {
     /// <p>The account ID that's associated with the recommendation.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific service that you want recommendations for.</p>
@@ -76,13 +76,13 @@ pub struct GetReservationPurchaseRecommendationInput {
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetReservationPurchaseRecommendationInput {
+impl  GetReservationPurchaseRecommendationInput  {
     /// <p>The account ID that's associated with the recommendation.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The specific service that you want recommendations for.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
@@ -138,27 +138,27 @@ impl GetReservationPurchaseRecommendationInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    pub fn account_scope(&self) -> ::std::option::Option<&crate::types::AccountScope> {
+    pub fn account_scope(&self) -> ::std::option::Option<& crate::types::AccountScope> {
         self.account_scope.as_ref()
     }
     /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
-    pub fn lookback_period_in_days(&self) -> ::std::option::Option<&crate::types::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> ::std::option::Option<& crate::types::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>The reservation term that you want recommendations for.</p>
-    pub fn term_in_years(&self) -> ::std::option::Option<&crate::types::TermInYears> {
+    pub fn term_in_years(&self) -> ::std::option::Option<& crate::types::TermInYears> {
         self.term_in_years.as_ref()
     }
     /// <p>The reservation purchase option that you want recommendations for.</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<& crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
-    pub fn service_specification(&self) -> ::std::option::Option<&crate::types::ServiceSpecification> {
+    pub fn service_specification(&self) -> ::std::option::Option<& crate::types::ServiceSpecification> {
         self.service_specification.as_ref()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -166,7 +166,7 @@ impl GetReservationPurchaseRecommendationInput {
         self.page_size
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
@@ -200,8 +200,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The account ID that's associated with the recommendation.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID that's associated with the recommendation.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +214,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The specific service that you want recommendations for.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The specific service that you want recommendations for.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +331,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -399,8 +396,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
-        self.account_scope = input;
-        self
+        self.account_scope = input; self
     }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
@@ -413,8 +409,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
     pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<crate::types::LookbackPeriodInDays>) -> Self {
-        self.lookback_period_in_days = input;
-        self
+        self.lookback_period_in_days = input; self
     }
     /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
     pub fn get_lookback_period_in_days(&self) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
@@ -427,8 +422,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The reservation term that you want recommendations for.</p>
     pub fn set_term_in_years(mut self, input: ::std::option::Option<crate::types::TermInYears>) -> Self {
-        self.term_in_years = input;
-        self
+        self.term_in_years = input; self
     }
     /// <p>The reservation term that you want recommendations for.</p>
     pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
@@ -441,8 +435,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The reservation purchase option that you want recommendations for.</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>The reservation purchase option that you want recommendations for.</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
@@ -455,8 +448,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
     pub fn set_service_specification(mut self, input: ::std::option::Option<crate::types::ServiceSpecification>) -> Self {
-        self.service_specification = input;
-        self
+        self.service_specification = input; self
     }
     /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
     pub fn get_service_specification(&self) -> &::std::option::Option<crate::types::ServiceSpecification> {
@@ -469,8 +461,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -483,33 +474,38 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     /// Consumes the builder and constructs a [`GetReservationPurchaseRecommendationInput`](crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput {
-                account_id: self.account_id,
-                service: self.service,
-                filter: self.filter,
-                account_scope: self.account_scope,
-                lookback_period_in_days: self.lookback_period_in_days,
-                term_in_years: self.term_in_years,
-                payment_option: self.payment_option,
-                service_specification: self.service_specification,
-                page_size: self.page_size,
-                next_page_token: self.next_page_token,
-            },
+                account_id: self.account_id
+                ,
+                service: self.service
+                ,
+                filter: self.filter
+                ,
+                account_scope: self.account_scope
+                ,
+                lookback_period_in_days: self.lookback_period_in_days
+                ,
+                term_in_years: self.term_in_years
+                ,
+                payment_option: self.payment_option
+                ,
+                service_specification: self.service_specification
+                ,
+                page_size: self.page_size
+                ,
+                next_page_token: self.next_page_token
+                ,
+            }
         )
     }
 }
+

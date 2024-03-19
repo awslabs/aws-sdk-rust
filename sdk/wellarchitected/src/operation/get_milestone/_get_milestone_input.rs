@@ -3,16 +3,16 @@
 /// <p>Input to get a milestone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMilestoneInput {
+pub struct GetMilestoneInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: ::std::option::Option<i32>,
 }
-impl GetMilestoneInput {
+impl  GetMilestoneInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -44,8 +44,7 @@ impl GetMilestoneInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetMilestoneInputBuilder {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.milestone_number = input;
-        self
+        self.milestone_number = input; self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -70,12 +68,15 @@ impl GetMilestoneInputBuilder {
         &self.milestone_number
     }
     /// Consumes the builder and constructs a [`GetMilestoneInput`](crate::operation::get_milestone::GetMilestoneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_milestone::GetMilestoneInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_milestone::GetMilestoneInput {
-            workload_id: self.workload_id,
-            milestone_number: self.milestone_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_milestone::GetMilestoneInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_milestone::GetMilestoneInput {
+                workload_id: self.workload_id
+                ,
+                milestone_number: self.milestone_number
+                ,
+            }
+        )
     }
 }
+

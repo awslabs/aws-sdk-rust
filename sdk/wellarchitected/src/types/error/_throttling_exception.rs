@@ -3,7 +3,7 @@
 /// <p>Request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     /// <p>Description of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Service Quotas requirement to identify originating quota.</p>
@@ -12,27 +12,25 @@ pub struct ThrottlingException {
     pub service_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ThrottlingException {
+impl  ThrottlingException  {
     /// <p>Service Quotas requirement to identify originating quota.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Service Quotas requirement to identify originating service.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ThrottlingException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -47,9 +45,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ThrottlingExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::types::error::ThrottlingException).
@@ -76,8 +72,7 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>Description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +85,7 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>Service Quotas requirement to identify originating quota.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Service Quotas requirement to identify originating quota.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,31 +98,34 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>Service Quotas requirement to identify originating service.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Service Quotas requirement to identify originating service.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
     pub fn build(self) -> crate::types::error::ThrottlingException {
         crate::types::error::ThrottlingException {
-            message: self.message,
-            quota_code: self.quota_code,
-            service_code: self.service_code,
+            message: self.message
+            ,
+            quota_code: self.quota_code
+            ,
+            service_code: self.service_code
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

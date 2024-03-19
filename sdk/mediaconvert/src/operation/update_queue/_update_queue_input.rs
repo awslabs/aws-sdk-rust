@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateQueueInput {
+pub struct UpdateQueueInput  {
     /// The new description for the queue, if you are changing it.
     pub description: ::std::option::Option<::std::string::String>,
     /// The name of the queue that you are modifying.
@@ -12,21 +12,21 @@ pub struct UpdateQueueInput {
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub status: ::std::option::Option<crate::types::QueueStatus>,
 }
-impl UpdateQueueInput {
+impl  UpdateQueueInput  {
     /// The new description for the queue, if you are changing it.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The name of the queue that you are modifying.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn reservation_plan_settings(&self) -> ::std::option::Option<&crate::types::ReservationPlanSettings> {
+    pub fn reservation_plan_settings(&self) -> ::std::option::Option<& crate::types::ReservationPlanSettings> {
         self.reservation_plan_settings.as_ref()
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QueueStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::QueueStatus> {
         self.status.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl UpdateQueueInputBuilder {
     }
     /// The new description for the queue, if you are changing it.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// The new description for the queue, if you are changing it.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateQueueInputBuilder {
     }
     /// The name of the queue that you are modifying.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the queue that you are modifying.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateQueueInputBuilder {
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
     pub fn set_reservation_plan_settings(mut self, input: ::std::option::Option<crate::types::ReservationPlanSettings>) -> Self {
-        self.reservation_plan_settings = input;
-        self
+        self.reservation_plan_settings = input; self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
     pub fn get_reservation_plan_settings(&self) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
@@ -97,8 +94,7 @@ impl UpdateQueueInputBuilder {
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
@@ -106,11 +102,18 @@ impl UpdateQueueInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_queue::UpdateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_queue::UpdateQueueInput {
-            description: self.description,
-            name: self.name,
-            reservation_plan_settings: self.reservation_plan_settings,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_queue::UpdateQueueInput {
+                description: self.description
+                ,
+                name: self.name
+                ,
+                reservation_plan_settings: self.reservation_plan_settings
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

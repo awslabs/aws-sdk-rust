@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateDataKeyWithoutPlaintextOutput {
+pub struct GenerateDataKeyWithoutPlaintextOutput  {
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GenerateDataKeyWithoutPlaintextOutput {
+impl  GenerateDataKeyWithoutPlaintextOutput  {
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn ciphertext_blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn ciphertext_blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.ciphertext_blob.as_ref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateDataKeyWithoutPlaintextOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GenerateDataKeyWithoutPlaintextOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyWithoutPlaintextOutput`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput).
     pub fn builder() -> crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextOutputBuilder {
@@ -47,8 +47,7 @@ impl GenerateDataKeyWithoutPlaintextOutputBuilder {
     }
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn set_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.ciphertext_blob = input;
-        self
+        self.ciphertext_blob = input; self
     }
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn get_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -61,28 +60,30 @@ impl GenerateDataKeyWithoutPlaintextOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextOutput`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput).
     pub fn build(self) -> crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput {
         crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput {
-            ciphertext_blob: self.ciphertext_blob,
-            key_id: self.key_id,
+            ciphertext_blob: self.ciphertext_blob
+            ,
+            key_id: self.key_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

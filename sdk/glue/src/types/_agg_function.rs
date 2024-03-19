@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggfunction = unimplemented!();
 /// match aggfunction {
@@ -43,16 +43,14 @@
 /// Specifically, when `aggfunction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggFunction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AggFunction {
     #[allow(missing_docs)] // documentation missing in model
     Avg,
@@ -86,116 +84,101 @@ pub enum AggFunction {
     VarSamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AggFunction {
-    fn from(s: &str) -> Self {
-        match s {
-            "avg" => AggFunction::Avg,
-            "count" => AggFunction::Count,
-            "countDistinct" => AggFunction::CountDistinct,
-            "first" => AggFunction::First,
-            "kurtosis" => AggFunction::Kurtosis,
-            "last" => AggFunction::Last,
-            "max" => AggFunction::Max,
-            "min" => AggFunction::Min,
-            "skewness" => AggFunction::Skewness,
-            "stddev_pop" => AggFunction::StddevPop,
-            "stddev_samp" => AggFunction::StddevSamp,
-            "sum" => AggFunction::Sum,
-            "sumDistinct" => AggFunction::SumDistinct,
-            "var_pop" => AggFunction::VarPop,
-            "var_samp" => AggFunction::VarSamp,
-            other => AggFunction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "avg" => AggFunction::Avg,
+"count" => AggFunction::Count,
+"countDistinct" => AggFunction::CountDistinct,
+"first" => AggFunction::First,
+"kurtosis" => AggFunction::Kurtosis,
+"last" => AggFunction::Last,
+"max" => AggFunction::Max,
+"min" => AggFunction::Min,
+"skewness" => AggFunction::Skewness,
+"stddev_pop" => AggFunction::StddevPop,
+"stddev_samp" => AggFunction::StddevSamp,
+"sum" => AggFunction::Sum,
+"sumDistinct" => AggFunction::SumDistinct,
+"var_pop" => AggFunction::VarPop,
+"var_samp" => AggFunction::VarSamp,
+other => AggFunction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AggFunction {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AggFunction::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AggFunction::from(s))
+                    }
+                }
 impl AggFunction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AggFunction::Avg => "avg",
-            AggFunction::Count => "count",
-            AggFunction::CountDistinct => "countDistinct",
-            AggFunction::First => "first",
-            AggFunction::Kurtosis => "kurtosis",
-            AggFunction::Last => "last",
-            AggFunction::Max => "max",
-            AggFunction::Min => "min",
-            AggFunction::Skewness => "skewness",
-            AggFunction::StddevPop => "stddev_pop",
-            AggFunction::StddevSamp => "stddev_samp",
-            AggFunction::Sum => "sum",
-            AggFunction::SumDistinct => "sumDistinct",
-            AggFunction::VarPop => "var_pop",
-            AggFunction::VarSamp => "var_samp",
-            AggFunction::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "avg",
-            "count",
-            "countDistinct",
-            "first",
-            "kurtosis",
-            "last",
-            "max",
-            "min",
-            "skewness",
-            "stddev_pop",
-            "stddev_samp",
-            "sum",
-            "sumDistinct",
-            "var_pop",
-            "var_samp",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AggFunction::Avg => "avg",
+    AggFunction::Count => "count",
+    AggFunction::CountDistinct => "countDistinct",
+    AggFunction::First => "first",
+    AggFunction::Kurtosis => "kurtosis",
+    AggFunction::Last => "last",
+    AggFunction::Max => "max",
+    AggFunction::Min => "min",
+    AggFunction::Skewness => "skewness",
+    AggFunction::StddevPop => "stddev_pop",
+    AggFunction::StddevSamp => "stddev_samp",
+    AggFunction::Sum => "sum",
+    AggFunction::SumDistinct => "sumDistinct",
+    AggFunction::VarPop => "var_pop",
+    AggFunction::VarSamp => "var_samp",
+    AggFunction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["avg", "count", "countDistinct", "first", "kurtosis", "last", "max", "min", "skewness", "stddev_pop", "stddev_samp", "sum", "sumDistinct", "var_pop", "var_samp"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AggFunction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AggFunction {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AggFunction {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AggFunction::Avg => write!(f, "avg"),
-            AggFunction::Count => write!(f, "count"),
-            AggFunction::CountDistinct => write!(f, "countDistinct"),
-            AggFunction::First => write!(f, "first"),
-            AggFunction::Kurtosis => write!(f, "kurtosis"),
-            AggFunction::Last => write!(f, "last"),
-            AggFunction::Max => write!(f, "max"),
-            AggFunction::Min => write!(f, "min"),
-            AggFunction::Skewness => write!(f, "skewness"),
-            AggFunction::StddevPop => write!(f, "stddev_pop"),
-            AggFunction::StddevSamp => write!(f, "stddev_samp"),
-            AggFunction::Sum => write!(f, "sum"),
-            AggFunction::SumDistinct => write!(f, "sumDistinct"),
-            AggFunction::VarPop => write!(f, "var_pop"),
-            AggFunction::VarSamp => write!(f, "var_samp"),
-            AggFunction::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AggFunction::Avg => write!(f, "avg"),
+AggFunction::Count => write!(f, "count"),
+AggFunction::CountDistinct => write!(f, "countDistinct"),
+AggFunction::First => write!(f, "first"),
+AggFunction::Kurtosis => write!(f, "kurtosis"),
+AggFunction::Last => write!(f, "last"),
+AggFunction::Max => write!(f, "max"),
+AggFunction::Min => write!(f, "min"),
+AggFunction::Skewness => write!(f, "skewness"),
+AggFunction::StddevPop => write!(f, "stddev_pop"),
+AggFunction::StddevSamp => write!(f, "stddev_samp"),
+AggFunction::Sum => write!(f, "sum"),
+AggFunction::SumDistinct => write!(f, "sumDistinct"),
+AggFunction::VarPop => write!(f, "var_pop"),
+AggFunction::VarSamp => write!(f, "var_samp"),
+AggFunction::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,19 +3,19 @@
 /// <p>Provides the details of a policy finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyDetails {
+pub struct PolicyDetails  {
     /// <p>The action that produced the finding.</p>
     pub action: ::std::option::Option<crate::types::FindingAction>,
     /// <p>The entity that performed the action that produced the finding.</p>
     pub actor: ::std::option::Option<crate::types::FindingActor>,
 }
-impl PolicyDetails {
+impl  PolicyDetails  {
     /// <p>The action that produced the finding.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::FindingAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::FindingAction> {
         self.action.as_ref()
     }
     /// <p>The entity that performed the action that produced the finding.</p>
-    pub fn actor(&self) -> ::std::option::Option<&crate::types::FindingActor> {
+    pub fn actor(&self) -> ::std::option::Option<& crate::types::FindingActor> {
         self.actor.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PolicyDetailsBuilder {
     }
     /// <p>The action that produced the finding.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action that produced the finding.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::FindingAction> {
@@ -55,8 +54,7 @@ impl PolicyDetailsBuilder {
     }
     /// <p>The entity that performed the action that produced the finding.</p>
     pub fn set_actor(mut self, input: ::std::option::Option<crate::types::FindingActor>) -> Self {
-        self.actor = input;
-        self
+        self.actor = input; self
     }
     /// <p>The entity that performed the action that produced the finding.</p>
     pub fn get_actor(&self) -> &::std::option::Option<crate::types::FindingActor> {
@@ -65,8 +63,11 @@ impl PolicyDetailsBuilder {
     /// Consumes the builder and constructs a [`PolicyDetails`](crate::types::PolicyDetails).
     pub fn build(self) -> crate::types::PolicyDetails {
         crate::types::PolicyDetails {
-            action: self.action,
-            actor: self.actor,
+            action: self.action
+            ,
+            actor: self.actor
+            ,
         }
     }
 }
+

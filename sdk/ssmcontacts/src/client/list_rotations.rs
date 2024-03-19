@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRotations`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`rotation_name_prefix(impl Into<String>)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::rotation_name_prefix) / [`set_rotation_name_prefix(Option<String>)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::set_rotation_name_prefix):<br>required: **false**<br><p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rotations::builders::ListRotationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
-    /// - On success, responds with [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput) with field(s):
+                            /// - On success, responds with [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_rotations::ListRotationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     ///   - [`rotations(Vec::<Rotation>)`](crate::operation::list_rotations::ListRotationsOutput::rotations): <p>Information about rotations that meet the filter criteria.</p>
-    /// - On failure, responds with [`SdkError<ListRotationsError>`](crate::operation::list_rotations::ListRotationsError)
+                            /// - On failure, responds with [`SdkError<ListRotationsError>`](crate::operation::list_rotations::ListRotationsError)
     pub fn list_rotations(&self) -> crate::operation::list_rotations::builders::ListRotationsFluentBuilder {
-        crate::operation::list_rotations::builders::ListRotationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rotations::builders::ListRotationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about a hierarchy group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HierarchyGroup {
+pub struct HierarchyGroup  {
     /// <p>The identifier of the hierarchy group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
@@ -15,43 +15,43 @@ pub struct HierarchyGroup {
     /// <p>Information about the levels in the hierarchy group.</p>
     pub hierarchy_path: ::std::option::Option<crate::types::HierarchyPath>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
-impl HierarchyGroup {
+impl  HierarchyGroup  {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the hierarchy group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the level in the hierarchy group.</p>
-    pub fn level_id(&self) -> ::std::option::Option<&str> {
+    pub fn level_id(&self) -> ::std::option::Option<& str> {
         self.level_id.as_deref()
     }
     /// <p>Information about the levels in the hierarchy group.</p>
-    pub fn hierarchy_path(&self) -> ::std::option::Option<&crate::types::HierarchyPath> {
+    pub fn hierarchy_path(&self) -> ::std::option::Option<& crate::types::HierarchyPath> {
         self.hierarchy_path.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp when this resource was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
@@ -71,7 +71,7 @@ pub struct HierarchyGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) level_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_path: ::std::option::Option<crate::types::HierarchyPath>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
@@ -83,8 +83,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>The identifier of the hierarchy group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the hierarchy group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>The name of the hierarchy group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the hierarchy group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>The identifier of the level in the hierarchy group.</p>
     pub fn set_level_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.level_id = input;
-        self
+        self.level_id = input; self
     }
     /// <p>The identifier of the level in the hierarchy group.</p>
     pub fn get_level_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>Information about the levels in the hierarchy group.</p>
     pub fn set_hierarchy_path(mut self, input: ::std::option::Option<crate::types::HierarchyPath>) -> Self {
-        self.hierarchy_path = input;
-        self
+        self.hierarchy_path = input; self
     }
     /// <p>Information about the levels in the hierarchy group.</p>
     pub fn get_hierarchy_path(&self) -> &::std::option::Option<crate::types::HierarchyPath> {
@@ -153,17 +148,16 @@ impl HierarchyGroupBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The timestamp when this resource was last modified.</p>
@@ -173,8 +167,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +180,7 @@ impl HierarchyGroupBuilder {
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,14 +189,23 @@ impl HierarchyGroupBuilder {
     /// Consumes the builder and constructs a [`HierarchyGroup`](crate::types::HierarchyGroup).
     pub fn build(self) -> crate::types::HierarchyGroup {
         crate::types::HierarchyGroup {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            level_id: self.level_id,
-            hierarchy_path: self.hierarchy_path,
-            tags: self.tags,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            level_id: self.level_id
+            ,
+            hierarchy_path: self.hierarchy_path
+            ,
+            tags: self.tags
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
         }
     }
 }
+

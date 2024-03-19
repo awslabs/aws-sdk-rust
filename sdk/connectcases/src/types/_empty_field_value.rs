@@ -4,7 +4,8 @@
 /// <p>This structure will never have any data members. It signifies an empty value on a case field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmptyFieldValue {}
+pub struct EmptyFieldValue  {
+}
 impl EmptyFieldValue {
     /// Creates a new builder-style object to manufacture [`EmptyFieldValue`](crate::types::EmptyFieldValue).
     pub fn builder() -> crate::types::builders::EmptyFieldValueBuilder {
@@ -15,10 +16,13 @@ impl EmptyFieldValue {
 /// A builder for [`EmptyFieldValue`](crate::types::EmptyFieldValue).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EmptyFieldValueBuilder {}
+pub struct EmptyFieldValueBuilder {
+}
 impl EmptyFieldValueBuilder {
     /// Consumes the builder and constructs a [`EmptyFieldValue`](crate::types::EmptyFieldValue).
     pub fn build(self) -> crate::types::EmptyFieldValue {
-        crate::types::EmptyFieldValue {}
+        crate::types::EmptyFieldValue {
+        }
     }
 }
+

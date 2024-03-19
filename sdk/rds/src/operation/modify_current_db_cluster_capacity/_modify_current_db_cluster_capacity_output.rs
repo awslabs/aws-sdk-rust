@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyCurrentDbClusterCapacityOutput {
+pub struct ModifyCurrentDbClusterCapacityOutput  {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
@@ -15,9 +15,9 @@ pub struct ModifyCurrentDbClusterCapacityOutput {
     pub timeout_action: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ModifyCurrentDbClusterCapacityOutput {
+impl  ModifyCurrentDbClusterCapacityOutput  {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
@@ -33,15 +33,15 @@ impl ModifyCurrentDbClusterCapacityOutput {
         self.seconds_before_timeout
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    pub fn timeout_action(&self) -> ::std::option::Option<&str> {
+    pub fn timeout_action(&self) -> ::std::option::Option<& str> {
         self.timeout_action.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyCurrentDbClusterCapacityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyCurrentDbClusterCapacityOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityOutput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput).
     pub fn builder() -> crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityOutputBuilder {
@@ -68,8 +68,7 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     }
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     }
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
     pub fn set_pending_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_capacity = input;
-        self
+        self.pending_capacity = input; self
     }
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
     pub fn get_pending_capacity(&self) -> &::std::option::Option<i32> {
@@ -96,8 +94,7 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     }
     /// <p>The current capacity of the DB cluster.</p>
     pub fn set_current_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_capacity = input;
-        self
+        self.current_capacity = input; self
     }
     /// <p>The current capacity of the DB cluster.</p>
     pub fn get_current_capacity(&self) -> &::std::option::Option<i32> {
@@ -110,8 +107,7 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     }
     /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
     pub fn set_seconds_before_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seconds_before_timeout = input;
-        self
+        self.seconds_before_timeout = input; self
     }
     /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
     pub fn get_seconds_before_timeout(&self) -> &::std::option::Option<i32> {
@@ -124,31 +120,36 @@ impl ModifyCurrentDbClusterCapacityOutputBuilder {
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timeout_action = input;
-        self
+        self.timeout_action = input; self
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     pub fn get_timeout_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.timeout_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyCurrentDbClusterCapacityOutput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput).
     pub fn build(self) -> crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput {
         crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput {
-            db_cluster_identifier: self.db_cluster_identifier,
-            pending_capacity: self.pending_capacity,
-            current_capacity: self.current_capacity,
-            seconds_before_timeout: self.seconds_before_timeout,
-            timeout_action: self.timeout_action,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            pending_capacity: self.pending_capacity
+            ,
+            current_capacity: self.current_capacity
+            ,
+            seconds_before_timeout: self.seconds_before_timeout
+            ,
+            timeout_action: self.timeout_action
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

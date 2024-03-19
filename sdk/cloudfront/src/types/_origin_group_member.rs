@@ -3,15 +3,14 @@
 /// <p>An origin in an origin group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginGroupMember {
+pub struct OriginGroupMember  {
     /// <p>The ID for an origin in an origin group.</p>
     pub origin_id: ::std::string::String,
 }
-impl OriginGroupMember {
+impl  OriginGroupMember  {
     /// <p>The ID for an origin in an origin group.</p>
-    pub fn origin_id(&self) -> &str {
-        use std::ops::Deref;
-        self.origin_id.deref()
+    pub fn origin_id(&self) -> & str {
+        use std::ops::Deref; self.origin_id.deref()
     }
 }
 impl OriginGroupMember {
@@ -36,8 +35,7 @@ impl OriginGroupMemberBuilder {
     }
     /// <p>The ID for an origin in an origin group.</p>
     pub fn set_origin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_id = input;
-        self
+        self.origin_id = input; self
     }
     /// <p>The ID for an origin in an origin group.</p>
     pub fn get_origin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl OriginGroupMemberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`origin_id`](crate::types::builders::OriginGroupMemberBuilder::origin_id)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginGroupMember, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginGroupMember {
-            origin_id: self.origin_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin_id",
-                    "origin_id was not specified but it is required when building OriginGroupMember",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginGroupMember {
+                origin_id: self.origin_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin_id", "origin_id was not specified but it is required when building OriginGroupMember")
+                    )?
+                ,
+            }
+        )
     }
 }
+

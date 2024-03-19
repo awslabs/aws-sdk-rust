@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVoiceConnectorGroups`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
-    /// - On success, responds with [`ListVoiceConnectorGroupsOutput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListVoiceConnectorGroupsOutput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput) with field(s):
     ///   - [`voice_connector_groups(Option<Vec::<VoiceConnectorGroup>>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::voice_connector_groups): <p>The details of the Amazon Chime Voice Connector groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListVoiceConnectorGroupsError>`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError)
+                            /// - On failure, responds with [`SdkError<ListVoiceConnectorGroupsError>`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError)
     #[deprecated(note = "Replaced by ListVoiceConnectorGroups in the Amazon Chime SDK Voice Namespace")]
     pub fn list_voice_connector_groups(&self) -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder {
-        crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

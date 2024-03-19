@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOriginEndpointInput {
+pub struct UpdateOriginEndpointInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
@@ -18,35 +18,35 @@ pub struct UpdateOriginEndpointInput {
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
-impl UpdateOriginEndpointInput {
+impl  UpdateOriginEndpointInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_group_name(&self) -> ::std::option::Option<& str> {
         self.channel_group_name.as_deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn origin_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn origin_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.origin_endpoint_name.as_deref()
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
-    pub fn container_type(&self) -> ::std::option::Option<&crate::types::ContainerType> {
+    pub fn container_type(&self) -> ::std::option::Option<& crate::types::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
-    pub fn segment(&self) -> ::std::option::Option<&crate::types::Segment> {
+    pub fn segment(&self) -> ::std::option::Option<& crate::types::Segment> {
         self.segment.as_ref()
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
@@ -54,19 +54,21 @@ impl UpdateOriginEndpointInput {
         self.startover_window_seconds
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
-    pub fn hls_manifests(&self) -> &[crate::types::CreateHlsManifestConfiguration] {
-        self.hls_manifests.as_deref().unwrap_or_default()
+    pub fn hls_manifests(&self) -> & [crate::types::CreateHlsManifestConfiguration] {
+        self.hls_manifests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.low_latency_hls_manifests.is_none()`.
-    pub fn low_latency_hls_manifests(&self) -> &[crate::types::CreateLowLatencyHlsManifestConfiguration] {
-        self.low_latency_hls_manifests.as_deref().unwrap_or_default()
+    pub fn low_latency_hls_manifests(&self) -> & [crate::types::CreateLowLatencyHlsManifestConfiguration] {
+        self.low_latency_hls_manifests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
@@ -88,8 +90,8 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) segment: ::std::option::Option<crate::types::Segment>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
-    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
-    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>>,
+    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInputBuilder {
@@ -101,8 +103,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +117,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +131,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_endpoint_name = input;
-        self
+        self.origin_endpoint_name = input; self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
     pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
-        self.container_type = input;
-        self
+        self.container_type = input; self
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
     pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
@@ -160,8 +158,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<crate::types::Segment>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
     }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     pub fn get_segment(&self) -> &::std::option::Option<crate::types::Segment> {
@@ -174,8 +171,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +184,7 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub fn set_startover_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.startover_window_seconds = input;
-        self
+        self.startover_window_seconds = input; self
     }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
@@ -202,17 +197,16 @@ impl UpdateOriginEndpointInputBuilder {
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
     pub fn hls_manifests(mut self, input: crate::types::CreateHlsManifestConfiguration) -> Self {
         let mut v = self.hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>) -> Self {
-        self.hls_manifests = input;
-        self
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>>) -> Self {
+        self.hls_manifests = input; self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateHlsManifestConfiguration>> {
         &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
@@ -222,20 +216,16 @@ impl UpdateOriginEndpointInputBuilder {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn low_latency_hls_manifests(mut self, input: crate::types::CreateLowLatencyHlsManifestConfiguration) -> Self {
         let mut v = self.low_latency_hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.low_latency_hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.low_latency_hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn set_low_latency_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
-    ) -> Self {
-        self.low_latency_hls_manifests = input;
-        self
+    pub fn set_low_latency_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>>) -> Self {
+        self.low_latency_hls_manifests = input; self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
@@ -245,29 +235,38 @@ impl UpdateOriginEndpointInputBuilder {
     }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     /// Consumes the builder and constructs a [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_origin_endpoint::UpdateOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_origin_endpoint::UpdateOriginEndpointInput {
-            channel_group_name: self.channel_group_name,
-            channel_name: self.channel_name,
-            origin_endpoint_name: self.origin_endpoint_name,
-            container_type: self.container_type,
-            segment: self.segment,
-            description: self.description,
-            startover_window_seconds: self.startover_window_seconds,
-            hls_manifests: self.hls_manifests,
-            low_latency_hls_manifests: self.low_latency_hls_manifests,
-            e_tag: self.e_tag,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_origin_endpoint::UpdateOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_origin_endpoint::UpdateOriginEndpointInput {
+                channel_group_name: self.channel_group_name
+                ,
+                channel_name: self.channel_name
+                ,
+                origin_endpoint_name: self.origin_endpoint_name
+                ,
+                container_type: self.container_type
+                ,
+                segment: self.segment
+                ,
+                description: self.description
+                ,
+                startover_window_seconds: self.startover_window_seconds
+                ,
+                hls_manifests: self.hls_manifests
+                ,
+                low_latency_hls_manifests: self.low_latency_hls_manifests
+                ,
+                e_tag: self.e_tag
+                ,
+            }
+        )
     }
 }
+

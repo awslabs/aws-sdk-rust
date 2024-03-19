@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGroupResources`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p><br>
     ///   - [`group_identifier(impl Into<String>)`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::group_identifier) / [`set_group_identifier(Option<String>)`](crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::set_group_identifier):<br>required: **true**<br><p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p><br>
-    /// - On success, responds with [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput) with field(s):
     ///   - [`resources(Option<Vec::<String>>)`](crate::operation::list_group_resources::ListGroupResourcesOutput::resources): <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_resources::ListGroupResourcesOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListGroupResourcesError>`](crate::operation::list_group_resources::ListGroupResourcesError)
+                            /// - On failure, responds with [`SdkError<ListGroupResourcesError>`](crate::operation::list_group_resources::ListGroupResourcesError)
     pub fn list_group_resources(&self) -> crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder {
-        crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

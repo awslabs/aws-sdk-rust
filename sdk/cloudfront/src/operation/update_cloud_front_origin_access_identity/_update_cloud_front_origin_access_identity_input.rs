@@ -3,7 +3,7 @@
 /// <p>The request to update an origin access identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCloudFrontOriginAccessIdentityInput {
+pub struct UpdateCloudFrontOriginAccessIdentityInput  {
     /// <p>The identity's configuration information.</p>
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The identity's id.</p>
@@ -11,17 +11,17 @@ pub struct UpdateCloudFrontOriginAccessIdentityInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateCloudFrontOriginAccessIdentityInput {
+impl  UpdateCloudFrontOriginAccessIdentityInput  {
     /// <p>The identity's configuration information.</p>
-    pub fn cloud_front_origin_access_identity_config(&self) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
+    pub fn cloud_front_origin_access_identity_config(&self) -> ::std::option::Option<& crate::types::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
     /// <p>The identity's id.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -48,12 +48,8 @@ impl UpdateCloudFrontOriginAccessIdentityInputBuilder {
         self
     }
     /// <p>The identity's configuration information.</p>
-    pub fn set_cloud_front_origin_access_identity_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
-    ) -> Self {
-        self.cloud_front_origin_access_identity_config = input;
-        self
+    pub fn set_cloud_front_origin_access_identity_config(mut self, input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>) -> Self {
+        self.cloud_front_origin_access_identity_config = input; self
     }
     /// <p>The identity's configuration information.</p>
     pub fn get_cloud_front_origin_access_identity_config(&self) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
@@ -67,8 +63,7 @@ impl UpdateCloudFrontOriginAccessIdentityInputBuilder {
     }
     /// <p>The identity's id.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identity's id.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,26 +76,24 @@ impl UpdateCloudFrontOriginAccessIdentityInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateCloudFrontOriginAccessIdentityInput`](crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityInput {
-                cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
+                cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

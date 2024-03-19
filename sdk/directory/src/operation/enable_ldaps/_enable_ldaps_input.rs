@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableLdapsInput {
+pub struct EnableLdapsInput  {
     /// <p>The identifier of the directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub r#type: ::std::option::Option<crate::types::LdapsType>,
 }
-impl EnableLdapsInput {
+impl  EnableLdapsInput  {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LdapsType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LdapsType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EnableLdapsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl EnableLdapsInputBuilder {
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LdapsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LdapsType> {
@@ -65,9 +63,14 @@ impl EnableLdapsInputBuilder {
     }
     /// Consumes the builder and constructs a [`EnableLdapsInput`](crate::operation::enable_ldaps::EnableLdapsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::enable_ldaps::EnableLdapsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_ldaps::EnableLdapsInput {
-            directory_id: self.directory_id,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::enable_ldaps::EnableLdapsInput {
+                directory_id: self.directory_id
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

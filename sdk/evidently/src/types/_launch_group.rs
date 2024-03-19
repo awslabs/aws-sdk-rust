@@ -3,26 +3,25 @@
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchGroup {
+pub struct LaunchGroup  {
     /// <p>The name of the launch group.</p>
     pub name: ::std::string::String,
     /// <p>A description of the launch group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub feature_variations: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub feature_variations: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
 }
-impl LaunchGroup {
+impl  LaunchGroup  {
     /// <p>The name of the launch group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the launch group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn feature_variations(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn feature_variations(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.feature_variations
     }
 }
@@ -39,7 +38,7 @@ impl LaunchGroup {
 pub struct LaunchGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) feature_variations: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) feature_variations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl LaunchGroupBuilder {
     /// <p>The name of the launch group.</p>
@@ -50,8 +49,7 @@ impl LaunchGroupBuilder {
     }
     /// <p>The name of the launch group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the launch group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl LaunchGroupBuilder {
     }
     /// <p>A description of the launch group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the launch group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +73,18 @@ impl LaunchGroupBuilder {
     /// To override the contents of this collection use [`set_feature_variations`](Self::set_feature_variations).
     ///
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn feature_variations(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_variations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.feature_variations.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.feature_variations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.feature_variations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn set_feature_variations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.feature_variations = input;
-        self
+    pub fn set_feature_variations(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.feature_variations = input; self
     }
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn get_feature_variations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_feature_variations(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.feature_variations
     }
     /// Consumes the builder and constructs a [`LaunchGroup`](crate::types::LaunchGroup).
@@ -103,20 +92,22 @@ impl LaunchGroupBuilder {
     /// - [`name`](crate::types::builders::LaunchGroupBuilder::name)
     /// - [`feature_variations`](crate::types::builders::LaunchGroupBuilder::feature_variations)
     pub fn build(self) -> ::std::result::Result<crate::types::LaunchGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LaunchGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building LaunchGroup",
-                )
-            })?,
-            description: self.description,
-            feature_variations: self.feature_variations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "feature_variations",
-                    "feature_variations was not specified but it is required when building LaunchGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LaunchGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building LaunchGroup")
+                    )?
+                ,
+                description: self.description
+                ,
+                feature_variations: self.feature_variations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("feature_variations", "feature_variations was not specified but it is required when building LaunchGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

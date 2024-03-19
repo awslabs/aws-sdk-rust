@@ -28,11 +28,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::types::GrpcRouteMetadataMatchMethod::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Exact(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Exact(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Exact`](crate::types::GrpcRouteMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
@@ -41,11 +37,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::GrpcRouteMetadataMatchMethod::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::types::GrpcRouteMetadataMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -54,11 +46,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Range`](crate::types::GrpcRouteMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::types::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> ::std::result::Result<&crate::types::MatchRange, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Range(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Range(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Range`](crate::types::GrpcRouteMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
@@ -67,11 +55,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Regex`](crate::types::GrpcRouteMetadataMatchMethod::Regex), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Regex(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Regex(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Regex`](crate::types::GrpcRouteMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
@@ -80,11 +64,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Suffix`](crate::types::GrpcRouteMetadataMatchMethod::Suffix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Suffix`](crate::types::GrpcRouteMetadataMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
@@ -95,3 +75,4 @@ impl GrpcRouteMetadataMatchMethod {
         matches!(self, Self::Unknown)
     }
 }
+

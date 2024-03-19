@@ -3,13 +3,13 @@
 /// <p>A prefix list ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2SecurityGroupPrefixListId {
+pub struct AwsEc2SecurityGroupPrefixListId  {
     /// <p>The ID of the prefix.</p>
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2SecurityGroupPrefixListId {
+impl  AwsEc2SecurityGroupPrefixListId  {
     /// <p>The ID of the prefix.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2SecurityGroupPrefixListIdBuilder {
     }
     /// <p>The ID of the prefix.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2SecurityGroupPrefixListIdBuilder {
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupPrefixListId`](crate::types::AwsEc2SecurityGroupPrefixListId).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupPrefixListId {
         crate::types::AwsEc2SecurityGroupPrefixListId {
-            prefix_list_id: self.prefix_list_id,
+            prefix_list_id: self.prefix_list_id
+            ,
         }
     }
 }
+

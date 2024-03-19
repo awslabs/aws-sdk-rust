@@ -3,21 +3,21 @@
 /// <p>The configuration settings related to a given connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorConfiguration {
+pub struct ConnectorConfiguration  {
     /// <p>Specifies whether the connector can be used as a source.</p>
     pub can_use_as_source: bool,
     /// <p>Specifies whether the connector can be used as a destination.</p>
     pub can_use_as_destination: bool,
     /// <p>Lists the connectors that are available for use as destinations.</p>
-    pub supported_destination_connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
+    pub supported_destination_connectors: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorType>>,
     /// <p>Specifies the supported flow frequency for that connector.</p>
-    pub supported_scheduling_frequencies: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleFrequencyType>>,
+    pub supported_scheduling_frequencies: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleFrequencyType>>,
     /// <p>Specifies if PrivateLink is enabled for that connector.</p>
     pub is_private_link_enabled: bool,
     /// <p>Specifies if a PrivateLink endpoint URL is required.</p>
     pub is_private_link_endpoint_url_required: bool,
     /// <p>Specifies the supported trigger types for the flow.</p>
-    pub supported_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::TriggerType>>,
+    pub supported_trigger_types: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerType>>,
     /// <p>Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.</p>
     pub connector_metadata: ::std::option::Option<crate::types::ConnectorMetadata>,
     /// <p>The connector type.</p>
@@ -35,17 +35,17 @@ pub struct ConnectorConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the registered connector.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connection modes that the connector supports.</p>
-    pub connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connector_modes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The authentication config required for the connector.</p>
     pub authentication_config: ::std::option::Option<crate::types::AuthenticationConfig>,
     /// <p>The required connector runtime settings.</p>
-    pub connector_runtime_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorRuntimeSetting>>,
+    pub connector_runtime_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorRuntimeSetting>>,
     /// <p>A list of API versions that are supported by the connector.</p>
-    pub supported_api_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_api_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of operators supported by the connector.</p>
-    pub supported_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operators>>,
+    pub supported_operators: ::std::option::Option<::std::vec::Vec::<crate::types::Operators>>,
     /// <p>A list of write operations supported by the connector.</p>
-    pub supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
+    pub supported_write_operations: ::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>>,
     /// <p>The provisioning type used to register the connector.</p>
     pub connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     /// <p>The configuration required for registering the connector.</p>
@@ -71,11 +71,11 @@ pub struct ConnectorConfiguration {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub supported_data_transfer_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    pub supported_data_transfer_types: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedDataTransferType>>,
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
-    pub supported_data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>,
+    pub supported_data_transfer_apis: ::std::option::Option<::std::vec::Vec::<crate::types::DataTransferApi>>,
 }
-impl ConnectorConfiguration {
+impl  ConnectorConfiguration  {
     /// <p>Specifies whether the connector can be used as a source.</p>
     pub fn can_use_as_source(&self) -> bool {
         self.can_use_as_source
@@ -85,16 +85,18 @@ impl ConnectorConfiguration {
         self.can_use_as_destination
     }
     /// <p>Lists the connectors that are available for use as destinations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_destination_connectors.is_none()`.
-    pub fn supported_destination_connectors(&self) -> &[crate::types::ConnectorType] {
-        self.supported_destination_connectors.as_deref().unwrap_or_default()
+    pub fn supported_destination_connectors(&self) -> & [crate::types::ConnectorType] {
+        self.supported_destination_connectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the supported flow frequency for that connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_scheduling_frequencies.is_none()`.
-    pub fn supported_scheduling_frequencies(&self) -> &[crate::types::ScheduleFrequencyType] {
-        self.supported_scheduling_frequencies.as_deref().unwrap_or_default()
+    pub fn supported_scheduling_frequencies(&self) -> & [crate::types::ScheduleFrequencyType] {
+        self.supported_scheduling_frequencies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies if PrivateLink is enabled for that connector.</p>
     pub fn is_private_link_enabled(&self) -> bool {
@@ -105,95 +107,101 @@ impl ConnectorConfiguration {
         self.is_private_link_endpoint_url_required
     }
     /// <p>Specifies the supported trigger types for the flow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_trigger_types.is_none()`.
-    pub fn supported_trigger_types(&self) -> &[crate::types::TriggerType] {
-        self.supported_trigger_types.as_deref().unwrap_or_default()
+    pub fn supported_trigger_types(&self) -> & [crate::types::TriggerType] {
+        self.supported_trigger_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.</p>
-    pub fn connector_metadata(&self) -> ::std::option::Option<&crate::types::ConnectorMetadata> {
+    pub fn connector_metadata(&self) -> ::std::option::Option<& crate::types::ConnectorMetadata> {
         self.connector_metadata.as_ref()
     }
     /// <p>The connector type.</p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> ::std::option::Option<& crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The label used for registering the connector.</p>
-    pub fn connector_label(&self) -> ::std::option::Option<&str> {
+    pub fn connector_label(&self) -> ::std::option::Option<& str> {
         self.connector_label.as_deref()
     }
     /// <p>A description about the connector.</p>
-    pub fn connector_description(&self) -> ::std::option::Option<&str> {
+    pub fn connector_description(&self) -> ::std::option::Option<& str> {
         self.connector_description.as_deref()
     }
     /// <p>The owner who developed the connector.</p>
-    pub fn connector_owner(&self) -> ::std::option::Option<&str> {
+    pub fn connector_owner(&self) -> ::std::option::Option<& str> {
         self.connector_owner.as_deref()
     }
     /// <p>The connector name.</p>
-    pub fn connector_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_name(&self) -> ::std::option::Option<& str> {
         self.connector_name.as_deref()
     }
     /// <p>The connector version.</p>
-    pub fn connector_version(&self) -> ::std::option::Option<&str> {
+    pub fn connector_version(&self) -> ::std::option::Option<& str> {
         self.connector_version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the registered connector.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>The connection modes that the connector supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_modes.is_none()`.
-    pub fn connector_modes(&self) -> &[::std::string::String] {
-        self.connector_modes.as_deref().unwrap_or_default()
+    pub fn connector_modes(&self) -> & [::std::string::String] {
+        self.connector_modes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The authentication config required for the connector.</p>
-    pub fn authentication_config(&self) -> ::std::option::Option<&crate::types::AuthenticationConfig> {
+    pub fn authentication_config(&self) -> ::std::option::Option<& crate::types::AuthenticationConfig> {
         self.authentication_config.as_ref()
     }
     /// <p>The required connector runtime settings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_runtime_settings.is_none()`.
-    pub fn connector_runtime_settings(&self) -> &[crate::types::ConnectorRuntimeSetting] {
-        self.connector_runtime_settings.as_deref().unwrap_or_default()
+    pub fn connector_runtime_settings(&self) -> & [crate::types::ConnectorRuntimeSetting] {
+        self.connector_runtime_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of API versions that are supported by the connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_api_versions.is_none()`.
-    pub fn supported_api_versions(&self) -> &[::std::string::String] {
-        self.supported_api_versions.as_deref().unwrap_or_default()
+    pub fn supported_api_versions(&self) -> & [::std::string::String] {
+        self.supported_api_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of operators supported by the connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_operators.is_none()`.
-    pub fn supported_operators(&self) -> &[crate::types::Operators] {
-        self.supported_operators.as_deref().unwrap_or_default()
+    pub fn supported_operators(&self) -> & [crate::types::Operators] {
+        self.supported_operators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of write operations supported by the connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_write_operations.is_none()`.
-    pub fn supported_write_operations(&self) -> &[crate::types::WriteOperationType] {
-        self.supported_write_operations.as_deref().unwrap_or_default()
+    pub fn supported_write_operations(&self) -> & [crate::types::WriteOperationType] {
+        self.supported_write_operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The provisioning type used to register the connector.</p>
-    pub fn connector_provisioning_type(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
+    pub fn connector_provisioning_type(&self) -> ::std::option::Option<& crate::types::ConnectorProvisioningType> {
         self.connector_provisioning_type.as_ref()
     }
     /// <p>The configuration required for registering the connector.</p>
-    pub fn connector_provisioning_config(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningConfig> {
+    pub fn connector_provisioning_config(&self) -> ::std::option::Option<& crate::types::ConnectorProvisioningConfig> {
         self.connector_provisioning_config.as_ref()
     }
     /// <p>Logo URL of the connector.</p>
-    pub fn logo_url(&self) -> ::std::option::Option<&str> {
+    pub fn logo_url(&self) -> ::std::option::Option<& str> {
         self.logo_url.as_deref()
     }
     /// <p>The date on which the connector was registered.</p>
-    pub fn registered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn registered_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.registered_at.as_ref()
     }
     /// <p>Information about who registered the connector.</p>
-    pub fn registered_by(&self) -> ::std::option::Option<&str> {
+    pub fn registered_by(&self) -> ::std::option::Option<& str> {
         self.registered_by.as_deref()
     }
     /// <p>The data transfer types that the connector supports.</p>
@@ -211,16 +219,18 @@ impl ConnectorConfiguration {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_data_transfer_types.is_none()`.
-    pub fn supported_data_transfer_types(&self) -> &[crate::types::SupportedDataTransferType] {
-        self.supported_data_transfer_types.as_deref().unwrap_or_default()
+    pub fn supported_data_transfer_types(&self) -> & [crate::types::SupportedDataTransferType] {
+        self.supported_data_transfer_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_data_transfer_apis.is_none()`.
-    pub fn supported_data_transfer_apis(&self) -> &[crate::types::DataTransferApi] {
-        self.supported_data_transfer_apis.as_deref().unwrap_or_default()
+    pub fn supported_data_transfer_apis(&self) -> & [crate::types::DataTransferApi] {
+        self.supported_data_transfer_apis.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConnectorConfiguration {
@@ -236,11 +246,11 @@ impl ConnectorConfiguration {
 pub struct ConnectorConfigurationBuilder {
     pub(crate) can_use_as_source: ::std::option::Option<bool>,
     pub(crate) can_use_as_destination: ::std::option::Option<bool>,
-    pub(crate) supported_destination_connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
-    pub(crate) supported_scheduling_frequencies: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleFrequencyType>>,
+    pub(crate) supported_destination_connectors: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorType>>,
+    pub(crate) supported_scheduling_frequencies: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleFrequencyType>>,
     pub(crate) is_private_link_enabled: ::std::option::Option<bool>,
     pub(crate) is_private_link_endpoint_url_required: ::std::option::Option<bool>,
-    pub(crate) supported_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::TriggerType>>,
+    pub(crate) supported_trigger_types: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerType>>,
     pub(crate) connector_metadata: ::std::option::Option<crate::types::ConnectorMetadata>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
@@ -249,19 +259,19 @@ pub struct ConnectorConfigurationBuilder {
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,
     pub(crate) connector_version: ::std::option::Option<::std::string::String>,
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_modes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) authentication_config: ::std::option::Option<crate::types::AuthenticationConfig>,
-    pub(crate) connector_runtime_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorRuntimeSetting>>,
-    pub(crate) supported_api_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operators>>,
-    pub(crate) supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
+    pub(crate) connector_runtime_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorRuntimeSetting>>,
+    pub(crate) supported_api_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supported_operators: ::std::option::Option<::std::vec::Vec::<crate::types::Operators>>,
+    pub(crate) supported_write_operations: ::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>>,
     pub(crate) connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     pub(crate) connector_provisioning_config: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
     pub(crate) logo_url: ::std::option::Option<::std::string::String>,
     pub(crate) registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registered_by: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_data_transfer_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
-    pub(crate) supported_data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>,
+    pub(crate) supported_data_transfer_types: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedDataTransferType>>,
+    pub(crate) supported_data_transfer_apis: ::std::option::Option<::std::vec::Vec::<crate::types::DataTransferApi>>,
 }
 impl ConnectorConfigurationBuilder {
     /// <p>Specifies whether the connector can be used as a source.</p>
@@ -271,8 +281,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Specifies whether the connector can be used as a source.</p>
     pub fn set_can_use_as_source(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_use_as_source = input;
-        self
+        self.can_use_as_source = input; self
     }
     /// <p>Specifies whether the connector can be used as a source.</p>
     pub fn get_can_use_as_source(&self) -> &::std::option::Option<bool> {
@@ -285,8 +294,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Specifies whether the connector can be used as a destination.</p>
     pub fn set_can_use_as_destination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_use_as_destination = input;
-        self
+        self.can_use_as_destination = input; self
     }
     /// <p>Specifies whether the connector can be used as a destination.</p>
     pub fn get_can_use_as_destination(&self) -> &::std::option::Option<bool> {
@@ -299,17 +307,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>Lists the connectors that are available for use as destinations.</p>
     pub fn supported_destination_connectors(mut self, input: crate::types::ConnectorType) -> Self {
         let mut v = self.supported_destination_connectors.unwrap_or_default();
-        v.push(input);
-        self.supported_destination_connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_destination_connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the connectors that are available for use as destinations.</p>
-    pub fn set_supported_destination_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>) -> Self {
-        self.supported_destination_connectors = input;
-        self
+    pub fn set_supported_destination_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorType>>) -> Self {
+        self.supported_destination_connectors = input; self
     }
     /// <p>Lists the connectors that are available for use as destinations.</p>
-    pub fn get_supported_destination_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>> {
+    pub fn get_supported_destination_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConnectorType>> {
         &self.supported_destination_connectors
     }
     /// Appends an item to `supported_scheduling_frequencies`.
@@ -319,20 +326,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>Specifies the supported flow frequency for that connector.</p>
     pub fn supported_scheduling_frequencies(mut self, input: crate::types::ScheduleFrequencyType) -> Self {
         let mut v = self.supported_scheduling_frequencies.unwrap_or_default();
-        v.push(input);
-        self.supported_scheduling_frequencies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_scheduling_frequencies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the supported flow frequency for that connector.</p>
-    pub fn set_supported_scheduling_frequencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleFrequencyType>>,
-    ) -> Self {
-        self.supported_scheduling_frequencies = input;
-        self
+    pub fn set_supported_scheduling_frequencies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleFrequencyType>>) -> Self {
+        self.supported_scheduling_frequencies = input; self
     }
     /// <p>Specifies the supported flow frequency for that connector.</p>
-    pub fn get_supported_scheduling_frequencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleFrequencyType>> {
+    pub fn get_supported_scheduling_frequencies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduleFrequencyType>> {
         &self.supported_scheduling_frequencies
     }
     /// <p>Specifies if PrivateLink is enabled for that connector.</p>
@@ -342,8 +345,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Specifies if PrivateLink is enabled for that connector.</p>
     pub fn set_is_private_link_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_private_link_enabled = input;
-        self
+        self.is_private_link_enabled = input; self
     }
     /// <p>Specifies if PrivateLink is enabled for that connector.</p>
     pub fn get_is_private_link_enabled(&self) -> &::std::option::Option<bool> {
@@ -356,8 +358,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Specifies if a PrivateLink endpoint URL is required.</p>
     pub fn set_is_private_link_endpoint_url_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_private_link_endpoint_url_required = input;
-        self
+        self.is_private_link_endpoint_url_required = input; self
     }
     /// <p>Specifies if a PrivateLink endpoint URL is required.</p>
     pub fn get_is_private_link_endpoint_url_required(&self) -> &::std::option::Option<bool> {
@@ -370,17 +371,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>Specifies the supported trigger types for the flow.</p>
     pub fn supported_trigger_types(mut self, input: crate::types::TriggerType) -> Self {
         let mut v = self.supported_trigger_types.unwrap_or_default();
-        v.push(input);
-        self.supported_trigger_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_trigger_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the supported trigger types for the flow.</p>
-    pub fn set_supported_trigger_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerType>>) -> Self {
-        self.supported_trigger_types = input;
-        self
+    pub fn set_supported_trigger_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerType>>) -> Self {
+        self.supported_trigger_types = input; self
     }
     /// <p>Specifies the supported trigger types for the flow.</p>
-    pub fn get_supported_trigger_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerType>> {
+    pub fn get_supported_trigger_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TriggerType>> {
         &self.supported_trigger_types
     }
     /// <p>Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.</p>
@@ -390,8 +390,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.</p>
     pub fn set_connector_metadata(mut self, input: ::std::option::Option<crate::types::ConnectorMetadata>) -> Self {
-        self.connector_metadata = input;
-        self
+        self.connector_metadata = input; self
     }
     /// <p>Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.</p>
     pub fn get_connector_metadata(&self) -> &::std::option::Option<crate::types::ConnectorMetadata> {
@@ -404,8 +403,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The connector type.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
-        self.connector_type = input;
-        self
+        self.connector_type = input; self
     }
     /// <p>The connector type.</p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
@@ -418,8 +416,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The label used for registering the connector.</p>
     pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_label = input;
-        self
+        self.connector_label = input; self
     }
     /// <p>The label used for registering the connector.</p>
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -432,8 +429,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>A description about the connector.</p>
     pub fn set_connector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_description = input;
-        self
+        self.connector_description = input; self
     }
     /// <p>A description about the connector.</p>
     pub fn get_connector_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -446,8 +442,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The owner who developed the connector.</p>
     pub fn set_connector_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_owner = input;
-        self
+        self.connector_owner = input; self
     }
     /// <p>The owner who developed the connector.</p>
     pub fn get_connector_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -460,8 +455,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The connector name.</p>
     pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_name = input;
-        self
+        self.connector_name = input; self
     }
     /// <p>The connector name.</p>
     pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -474,8 +468,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The connector version.</p>
     pub fn set_connector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_version = input;
-        self
+        self.connector_version = input; self
     }
     /// <p>The connector version.</p>
     pub fn get_connector_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -488,8 +481,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the registered connector.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the registered connector.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -502,17 +494,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>The connection modes that the connector supports.</p>
     pub fn connector_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_modes.unwrap_or_default();
-        v.push(input.into());
-        self.connector_modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connector_modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The connection modes that the connector supports.</p>
-    pub fn set_connector_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.connector_modes = input;
-        self
+    pub fn set_connector_modes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.connector_modes = input; self
     }
     /// <p>The connection modes that the connector supports.</p>
-    pub fn get_connector_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_modes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.connector_modes
     }
     /// <p>The authentication config required for the connector.</p>
@@ -522,8 +513,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The authentication config required for the connector.</p>
     pub fn set_authentication_config(mut self, input: ::std::option::Option<crate::types::AuthenticationConfig>) -> Self {
-        self.authentication_config = input;
-        self
+        self.authentication_config = input; self
     }
     /// <p>The authentication config required for the connector.</p>
     pub fn get_authentication_config(&self) -> &::std::option::Option<crate::types::AuthenticationConfig> {
@@ -536,17 +526,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>The required connector runtime settings.</p>
     pub fn connector_runtime_settings(mut self, input: crate::types::ConnectorRuntimeSetting) -> Self {
         let mut v = self.connector_runtime_settings.unwrap_or_default();
-        v.push(input);
-        self.connector_runtime_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connector_runtime_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The required connector runtime settings.</p>
-    pub fn set_connector_runtime_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorRuntimeSetting>>) -> Self {
-        self.connector_runtime_settings = input;
-        self
+    pub fn set_connector_runtime_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorRuntimeSetting>>) -> Self {
+        self.connector_runtime_settings = input; self
     }
     /// <p>The required connector runtime settings.</p>
-    pub fn get_connector_runtime_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorRuntimeSetting>> {
+    pub fn get_connector_runtime_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConnectorRuntimeSetting>> {
         &self.connector_runtime_settings
     }
     /// Appends an item to `supported_api_versions`.
@@ -556,17 +545,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>A list of API versions that are supported by the connector.</p>
     pub fn supported_api_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_api_versions.unwrap_or_default();
-        v.push(input.into());
-        self.supported_api_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_api_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of API versions that are supported by the connector.</p>
-    pub fn set_supported_api_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_api_versions = input;
-        self
+    pub fn set_supported_api_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_api_versions = input; self
     }
     /// <p>A list of API versions that are supported by the connector.</p>
-    pub fn get_supported_api_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_api_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_api_versions
     }
     /// Appends an item to `supported_operators`.
@@ -576,17 +564,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>A list of operators supported by the connector.</p>
     pub fn supported_operators(mut self, input: crate::types::Operators) -> Self {
         let mut v = self.supported_operators.unwrap_or_default();
-        v.push(input);
-        self.supported_operators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_operators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of operators supported by the connector.</p>
-    pub fn set_supported_operators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operators>>) -> Self {
-        self.supported_operators = input;
-        self
+    pub fn set_supported_operators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operators>>) -> Self {
+        self.supported_operators = input; self
     }
     /// <p>A list of operators supported by the connector.</p>
-    pub fn get_supported_operators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operators>> {
+    pub fn get_supported_operators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operators>> {
         &self.supported_operators
     }
     /// Appends an item to `supported_write_operations`.
@@ -596,17 +583,16 @@ impl ConnectorConfigurationBuilder {
     /// <p>A list of write operations supported by the connector.</p>
     pub fn supported_write_operations(mut self, input: crate::types::WriteOperationType) -> Self {
         let mut v = self.supported_write_operations.unwrap_or_default();
-        v.push(input);
-        self.supported_write_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_write_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of write operations supported by the connector.</p>
-    pub fn set_supported_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>) -> Self {
-        self.supported_write_operations = input;
-        self
+    pub fn set_supported_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>>) -> Self {
+        self.supported_write_operations = input; self
     }
     /// <p>A list of write operations supported by the connector.</p>
-    pub fn get_supported_write_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>> {
+    pub fn get_supported_write_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>> {
         &self.supported_write_operations
     }
     /// <p>The provisioning type used to register the connector.</p>
@@ -616,8 +602,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The provisioning type used to register the connector.</p>
     pub fn set_connector_provisioning_type(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningType>) -> Self {
-        self.connector_provisioning_type = input;
-        self
+        self.connector_provisioning_type = input; self
     }
     /// <p>The provisioning type used to register the connector.</p>
     pub fn get_connector_provisioning_type(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
@@ -630,8 +615,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The configuration required for registering the connector.</p>
     pub fn set_connector_provisioning_config(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningConfig>) -> Self {
-        self.connector_provisioning_config = input;
-        self
+        self.connector_provisioning_config = input; self
     }
     /// <p>The configuration required for registering the connector.</p>
     pub fn get_connector_provisioning_config(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
@@ -644,8 +628,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Logo URL of the connector.</p>
     pub fn set_logo_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logo_url = input;
-        self
+        self.logo_url = input; self
     }
     /// <p>Logo URL of the connector.</p>
     pub fn get_logo_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -658,8 +641,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>The date on which the connector was registered.</p>
     pub fn set_registered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.registered_at = input;
-        self
+        self.registered_at = input; self
     }
     /// <p>The date on which the connector was registered.</p>
     pub fn get_registered_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -672,8 +654,7 @@ impl ConnectorConfigurationBuilder {
     }
     /// <p>Information about who registered the connector.</p>
     pub fn set_registered_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_by = input;
-        self
+        self.registered_by = input; self
     }
     /// <p>Information about who registered the connector.</p>
     pub fn get_registered_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -700,9 +681,9 @@ impl ConnectorConfigurationBuilder {
     /// </dl>
     pub fn supported_data_transfer_types(mut self, input: crate::types::SupportedDataTransferType) -> Self {
         let mut v = self.supported_data_transfer_types.unwrap_or_default();
-        v.push(input);
-        self.supported_data_transfer_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_data_transfer_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data transfer types that the connector supports.</p>
     /// <dl>
@@ -719,12 +700,8 @@ impl ConnectorConfigurationBuilder {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn set_supported_data_transfer_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
-    ) -> Self {
-        self.supported_data_transfer_types = input;
-        self
+    pub fn set_supported_data_transfer_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedDataTransferType>>) -> Self {
+        self.supported_data_transfer_types = input; self
     }
     /// <p>The data transfer types that the connector supports.</p>
     /// <dl>
@@ -741,7 +718,7 @@ impl ConnectorConfigurationBuilder {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn get_supported_data_transfer_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>> {
+    pub fn get_supported_data_transfer_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedDataTransferType>> {
         &self.supported_data_transfer_types
     }
     /// Appends an item to `supported_data_transfer_apis`.
@@ -751,50 +728,82 @@ impl ConnectorConfigurationBuilder {
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
     pub fn supported_data_transfer_apis(mut self, input: crate::types::DataTransferApi) -> Self {
         let mut v = self.supported_data_transfer_apis.unwrap_or_default();
-        v.push(input);
-        self.supported_data_transfer_apis = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_data_transfer_apis = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
-    pub fn set_supported_data_transfer_apis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>) -> Self {
-        self.supported_data_transfer_apis = input;
-        self
+    pub fn set_supported_data_transfer_apis(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataTransferApi>>) -> Self {
+        self.supported_data_transfer_apis = input; self
     }
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
-    pub fn get_supported_data_transfer_apis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>> {
+    pub fn get_supported_data_transfer_apis(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataTransferApi>> {
         &self.supported_data_transfer_apis
     }
     /// Consumes the builder and constructs a [`ConnectorConfiguration`](crate::types::ConnectorConfiguration).
     pub fn build(self) -> crate::types::ConnectorConfiguration {
         crate::types::ConnectorConfiguration {
-            can_use_as_source: self.can_use_as_source.unwrap_or_default(),
-            can_use_as_destination: self.can_use_as_destination.unwrap_or_default(),
-            supported_destination_connectors: self.supported_destination_connectors,
-            supported_scheduling_frequencies: self.supported_scheduling_frequencies,
-            is_private_link_enabled: self.is_private_link_enabled.unwrap_or_default(),
-            is_private_link_endpoint_url_required: self.is_private_link_endpoint_url_required.unwrap_or_default(),
-            supported_trigger_types: self.supported_trigger_types,
-            connector_metadata: self.connector_metadata,
-            connector_type: self.connector_type,
-            connector_label: self.connector_label,
-            connector_description: self.connector_description,
-            connector_owner: self.connector_owner,
-            connector_name: self.connector_name,
-            connector_version: self.connector_version,
-            connector_arn: self.connector_arn,
-            connector_modes: self.connector_modes,
-            authentication_config: self.authentication_config,
-            connector_runtime_settings: self.connector_runtime_settings,
-            supported_api_versions: self.supported_api_versions,
-            supported_operators: self.supported_operators,
-            supported_write_operations: self.supported_write_operations,
-            connector_provisioning_type: self.connector_provisioning_type,
-            connector_provisioning_config: self.connector_provisioning_config,
-            logo_url: self.logo_url,
-            registered_at: self.registered_at,
-            registered_by: self.registered_by,
-            supported_data_transfer_types: self.supported_data_transfer_types,
-            supported_data_transfer_apis: self.supported_data_transfer_apis,
+            can_use_as_source: self.can_use_as_source
+                .unwrap_or_default()
+            ,
+            can_use_as_destination: self.can_use_as_destination
+                .unwrap_or_default()
+            ,
+            supported_destination_connectors: self.supported_destination_connectors
+            ,
+            supported_scheduling_frequencies: self.supported_scheduling_frequencies
+            ,
+            is_private_link_enabled: self.is_private_link_enabled
+                .unwrap_or_default()
+            ,
+            is_private_link_endpoint_url_required: self.is_private_link_endpoint_url_required
+                .unwrap_or_default()
+            ,
+            supported_trigger_types: self.supported_trigger_types
+            ,
+            connector_metadata: self.connector_metadata
+            ,
+            connector_type: self.connector_type
+            ,
+            connector_label: self.connector_label
+            ,
+            connector_description: self.connector_description
+            ,
+            connector_owner: self.connector_owner
+            ,
+            connector_name: self.connector_name
+            ,
+            connector_version: self.connector_version
+            ,
+            connector_arn: self.connector_arn
+            ,
+            connector_modes: self.connector_modes
+            ,
+            authentication_config: self.authentication_config
+            ,
+            connector_runtime_settings: self.connector_runtime_settings
+            ,
+            supported_api_versions: self.supported_api_versions
+            ,
+            supported_operators: self.supported_operators
+            ,
+            supported_write_operations: self.supported_write_operations
+            ,
+            connector_provisioning_type: self.connector_provisioning_type
+            ,
+            connector_provisioning_config: self.connector_provisioning_config
+            ,
+            logo_url: self.logo_url
+            ,
+            registered_at: self.registered_at
+            ,
+            registered_by: self.registered_by
+            ,
+            supported_data_transfer_types: self.supported_data_transfer_types
+            ,
+            supported_data_transfer_apis: self.supported_data_transfer_apis
+            ,
         }
     }
 }
+

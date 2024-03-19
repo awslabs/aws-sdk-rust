@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecipeVersions`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::set_name):<br>required: **true**<br><p>The name of the recipe for which to return version information.</p><br>
-    /// - On success, responds with [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     ///   - [`recipes(Vec::<Recipe>)`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput::recipes): <p>A list of versions for the specified recipe.</p>
-    /// - On failure, responds with [`SdkError<ListRecipeVersionsError>`](crate::operation::list_recipe_versions::ListRecipeVersionsError)
+                            /// - On failure, responds with [`SdkError<ListRecipeVersionsError>`](crate::operation::list_recipe_versions::ListRecipeVersionsError)
     pub fn list_recipe_versions(&self) -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder {
-        crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

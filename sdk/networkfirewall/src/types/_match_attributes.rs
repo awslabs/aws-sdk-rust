@@ -3,60 +3,66 @@
 /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchAttributes {
+pub struct MatchAttributes  {
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>,
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>,
     /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    pub source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub source_ports: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
     /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub destination_ports: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
-    pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
-    pub tcp_flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlagField>>,
+    pub tcp_flags: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlagField>>,
 }
-impl MatchAttributes {
+impl  MatchAttributes  {
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::Address] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::Address] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::Address] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::Address] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
-    pub fn source_ports(&self) -> &[crate::types::PortRange] {
-        self.source_ports.as_deref().unwrap_or_default()
+    pub fn source_ports(&self) -> & [crate::types::PortRange] {
+        self.source_ports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
-    pub fn destination_ports(&self) -> &[crate::types::PortRange] {
-        self.destination_ports.as_deref().unwrap_or_default()
+    pub fn destination_ports(&self) -> & [crate::types::PortRange] {
+        self.destination_ports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[i32] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [i32] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tcp_flags.is_none()`.
-    pub fn tcp_flags(&self) -> &[crate::types::TcpFlagField] {
-        self.tcp_flags.as_deref().unwrap_or_default()
+    pub fn tcp_flags(&self) -> & [crate::types::TcpFlagField] {
+        self.tcp_flags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MatchAttributes {
@@ -70,12 +76,12 @@ impl MatchAttributes {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchAttributesBuilder {
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    pub(crate) source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    pub(crate) destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) tcp_flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlagField>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>,
+    pub(crate) source_ports: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
+    pub(crate) destination_ports: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<i32>>,
+    pub(crate) tcp_flags: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlagField>>,
 }
 impl MatchAttributesBuilder {
     /// Appends an item to `sources`.
@@ -85,17 +91,16 @@ impl MatchAttributesBuilder {
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address.</p>
     pub fn sources(mut self, input: crate::types::Address) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Address>> {
         &self.sources
     }
     /// Appends an item to `destinations`.
@@ -105,17 +110,16 @@ impl MatchAttributesBuilder {
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address.</p>
     pub fn destinations(mut self, input: crate::types::Address) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Address>> {
         &self.destinations
     }
     /// Appends an item to `source_ports`.
@@ -126,19 +130,18 @@ impl MatchAttributesBuilder {
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
     pub fn source_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.source_ports.unwrap_or_default();
-        v.push(input);
-        self.source_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    pub fn set_source_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.source_ports = input;
-        self
+    pub fn set_source_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.source_ports = input; self
     }
     /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    pub fn get_source_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_source_ports(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.source_ports
     }
     /// Appends an item to `destination_ports`.
@@ -149,19 +152,18 @@ impl MatchAttributesBuilder {
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
     pub fn destination_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.destination_ports.unwrap_or_default();
-        v.push(input);
-        self.destination_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.destination_ports = input;
-        self
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.destination_ports = input; self
     }
     /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
-    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.destination_ports
     }
     /// Appends an item to `protocols`.
@@ -171,17 +173,16 @@ impl MatchAttributesBuilder {
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
     pub fn protocols(mut self, input: i32) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.protocols
     }
     /// Appends an item to `tcp_flags`.
@@ -191,28 +192,34 @@ impl MatchAttributesBuilder {
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
     pub fn tcp_flags(mut self, input: crate::types::TcpFlagField) -> Self {
         let mut v = self.tcp_flags.unwrap_or_default();
-        v.push(input);
-        self.tcp_flags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tcp_flags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
-    pub fn set_tcp_flags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlagField>>) -> Self {
-        self.tcp_flags = input;
-        self
+    pub fn set_tcp_flags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlagField>>) -> Self {
+        self.tcp_flags = input; self
     }
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
-    pub fn get_tcp_flags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpFlagField>> {
+    pub fn get_tcp_flags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TcpFlagField>> {
         &self.tcp_flags
     }
     /// Consumes the builder and constructs a [`MatchAttributes`](crate::types::MatchAttributes).
     pub fn build(self) -> crate::types::MatchAttributes {
         crate::types::MatchAttributes {
-            sources: self.sources,
-            destinations: self.destinations,
-            source_ports: self.source_ports,
-            destination_ports: self.destination_ports,
-            protocols: self.protocols,
-            tcp_flags: self.tcp_flags,
+            sources: self.sources
+            ,
+            destinations: self.destinations
+            ,
+            source_ports: self.source_ports
+            ,
+            destination_ports: self.destination_ports
+            ,
+            protocols: self.protocols
+            ,
+            tcp_flags: self.tcp_flags
+            ,
         }
     }
 }
+

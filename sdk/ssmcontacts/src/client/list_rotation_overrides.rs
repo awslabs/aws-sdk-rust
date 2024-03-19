@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRotationOverrides`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`rotation_id(impl Into<String>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::set_rotation_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the rotation to retrieve information about.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::set_start_time):<br>required: **true**<br><p>The date and time for the beginning of a time range for listing overrides.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::set_end_time):<br>required: **true**<br><p>The date and time for the end of a time range for listing overrides.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
-    /// - On success, responds with [`ListRotationOverridesOutput`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput) with field(s):
+                            /// - On success, responds with [`ListRotationOverridesOutput`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput) with field(s):
     ///   - [`rotation_overrides(Option<Vec::<RotationOverride>>)`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput::rotation_overrides): <p>A list of rotation overrides in the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListRotationOverridesError>`](crate::operation::list_rotation_overrides::ListRotationOverridesError)
+                            /// - On failure, responds with [`SdkError<ListRotationOverridesError>`](crate::operation::list_rotation_overrides::ListRotationOverridesError)
     pub fn list_rotation_overrides(&self) -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder {
-        crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

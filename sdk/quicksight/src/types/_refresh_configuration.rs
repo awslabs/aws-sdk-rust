@@ -3,13 +3,13 @@
 /// <p>The refresh configuration of a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RefreshConfiguration {
+pub struct RefreshConfiguration  {
     /// <p>The incremental refresh for the dataset.</p>
     pub incremental_refresh: ::std::option::Option<crate::types::IncrementalRefresh>,
 }
-impl RefreshConfiguration {
+impl  RefreshConfiguration  {
     /// <p>The incremental refresh for the dataset.</p>
-    pub fn incremental_refresh(&self) -> ::std::option::Option<&crate::types::IncrementalRefresh> {
+    pub fn incremental_refresh(&self) -> ::std::option::Option<& crate::types::IncrementalRefresh> {
         self.incremental_refresh.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl RefreshConfigurationBuilder {
     }
     /// <p>The incremental refresh for the dataset.</p>
     pub fn set_incremental_refresh(mut self, input: ::std::option::Option<crate::types::IncrementalRefresh>) -> Self {
-        self.incremental_refresh = input;
-        self
+        self.incremental_refresh = input; self
     }
     /// <p>The incremental refresh for the dataset.</p>
     pub fn get_incremental_refresh(&self) -> &::std::option::Option<crate::types::IncrementalRefresh> {
@@ -45,7 +44,9 @@ impl RefreshConfigurationBuilder {
     /// Consumes the builder and constructs a [`RefreshConfiguration`](crate::types::RefreshConfiguration).
     pub fn build(self) -> crate::types::RefreshConfiguration {
         crate::types::RefreshConfiguration {
-            incremental_refresh: self.incremental_refresh,
+            incremental_refresh: self.incremental_refresh
+            ,
         }
     }
 }
+

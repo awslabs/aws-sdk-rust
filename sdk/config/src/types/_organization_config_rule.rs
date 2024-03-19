@@ -3,7 +3,7 @@
 /// <p>An organization Config rule that has information about Config rules that Config creates in member accounts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationConfigRule {
+pub struct OrganizationConfigRule  {
     /// <p>The name that you assign to organization Config rule.</p>
     pub organization_config_rule_name: ::std::string::String,
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
@@ -13,43 +13,42 @@ pub struct OrganizationConfigRule {
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
     pub organization_custom_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>,
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
-    pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     pub organization_custom_policy_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy>,
 }
-impl OrganizationConfigRule {
+impl  OrganizationConfigRule  {
     /// <p>The name that you assign to organization Config rule.</p>
-    pub fn organization_config_rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_config_rule_name.deref()
+    pub fn organization_config_rule_name(&self) -> & str {
+        use std::ops::Deref; self.organization_config_rule_name.deref()
     }
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
-    pub fn organization_config_rule_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_config_rule_arn.deref()
+    pub fn organization_config_rule_arn(&self) -> & str {
+        use std::ops::Deref; self.organization_config_rule_arn.deref()
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
-    pub fn organization_managed_rule_metadata(&self) -> ::std::option::Option<&crate::types::OrganizationManagedRuleMetadata> {
+    pub fn organization_managed_rule_metadata(&self) -> ::std::option::Option<& crate::types::OrganizationManagedRuleMetadata> {
         self.organization_managed_rule_metadata.as_ref()
     }
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
-    pub fn organization_custom_rule_metadata(&self) -> ::std::option::Option<&crate::types::OrganizationCustomRuleMetadata> {
+    pub fn organization_custom_rule_metadata(&self) -> ::std::option::Option<& crate::types::OrganizationCustomRuleMetadata> {
         self.organization_custom_rule_metadata.as_ref()
     }
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_accounts.is_none()`.
-    pub fn excluded_accounts(&self) -> &[::std::string::String] {
-        self.excluded_accounts.as_deref().unwrap_or_default()
+    pub fn excluded_accounts(&self) -> & [::std::string::String] {
+        self.excluded_accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp of the last update.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
-    pub fn organization_custom_policy_rule_metadata(&self) -> ::std::option::Option<&crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy> {
+    pub fn organization_custom_policy_rule_metadata(&self) -> ::std::option::Option<& crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy> {
         self.organization_custom_policy_rule_metadata.as_ref()
     }
 }
@@ -68,7 +67,7 @@ pub struct OrganizationConfigRuleBuilder {
     pub(crate) organization_config_rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) organization_managed_rule_metadata: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>,
     pub(crate) organization_custom_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>,
-    pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) organization_custom_policy_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy>,
 }
@@ -81,8 +80,7 @@ impl OrganizationConfigRuleBuilder {
     }
     /// <p>The name that you assign to organization Config rule.</p>
     pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_config_rule_name = input;
-        self
+        self.organization_config_rule_name = input; self
     }
     /// <p>The name that you assign to organization Config rule.</p>
     pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl OrganizationConfigRuleBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
     pub fn set_organization_config_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_config_rule_arn = input;
-        self
+        self.organization_config_rule_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
     pub fn get_organization_config_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl OrganizationConfigRuleBuilder {
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
     pub fn set_organization_managed_rule_metadata(mut self, input: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>) -> Self {
-        self.organization_managed_rule_metadata = input;
-        self
+        self.organization_managed_rule_metadata = input; self
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
     pub fn get_organization_managed_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationManagedRuleMetadata> {
@@ -124,8 +120,7 @@ impl OrganizationConfigRuleBuilder {
     }
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
     pub fn set_organization_custom_rule_metadata(mut self, input: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>) -> Self {
-        self.organization_custom_rule_metadata = input;
-        self
+        self.organization_custom_rule_metadata = input; self
     }
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
     pub fn get_organization_custom_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationCustomRuleMetadata> {
@@ -138,17 +133,16 @@ impl OrganizationConfigRuleBuilder {
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
     pub fn excluded_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
-    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_accounts = input;
-        self
+    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_accounts = input; self
     }
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
-    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_accounts
     }
     /// <p>The timestamp of the last update.</p>
@@ -158,8 +152,7 @@ impl OrganizationConfigRuleBuilder {
     }
     /// <p>The timestamp of the last update.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The timestamp of the last update.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,12 +164,8 @@ impl OrganizationConfigRuleBuilder {
         self
     }
     /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
-    pub fn set_organization_custom_policy_rule_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy>,
-    ) -> Self {
-        self.organization_custom_policy_rule_metadata = input;
-        self
+    pub fn set_organization_custom_policy_rule_metadata(mut self, input: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy>) -> Self {
+        self.organization_custom_policy_rule_metadata = input; self
     }
     /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     pub fn get_organization_custom_policy_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy> {
@@ -187,24 +176,30 @@ impl OrganizationConfigRuleBuilder {
     /// - [`organization_config_rule_name`](crate::types::builders::OrganizationConfigRuleBuilder::organization_config_rule_name)
     /// - [`organization_config_rule_arn`](crate::types::builders::OrganizationConfigRuleBuilder::organization_config_rule_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConfigRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrganizationConfigRule {
-            organization_config_rule_name: self.organization_config_rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_config_rule_name",
-                    "organization_config_rule_name was not specified but it is required when building OrganizationConfigRule",
-                )
-            })?,
-            organization_config_rule_arn: self.organization_config_rule_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_config_rule_arn",
-                    "organization_config_rule_arn was not specified but it is required when building OrganizationConfigRule",
-                )
-            })?,
-            organization_managed_rule_metadata: self.organization_managed_rule_metadata,
-            organization_custom_rule_metadata: self.organization_custom_rule_metadata,
-            excluded_accounts: self.excluded_accounts,
-            last_update_time: self.last_update_time,
-            organization_custom_policy_rule_metadata: self.organization_custom_policy_rule_metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrganizationConfigRule {
+                organization_config_rule_name: self.organization_config_rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_config_rule_name", "organization_config_rule_name was not specified but it is required when building OrganizationConfigRule")
+                    )?
+                ,
+                organization_config_rule_arn: self.organization_config_rule_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_config_rule_arn", "organization_config_rule_arn was not specified but it is required when building OrganizationConfigRule")
+                    )?
+                ,
+                organization_managed_rule_metadata: self.organization_managed_rule_metadata
+                ,
+                organization_custom_rule_metadata: self.organization_custom_rule_metadata
+                ,
+                excluded_accounts: self.excluded_accounts
+                ,
+                last_update_time: self.last_update_time
+                ,
+                organization_custom_policy_rule_metadata: self.organization_custom_policy_rule_metadata
+                ,
+            }
+        )
     }
 }
+

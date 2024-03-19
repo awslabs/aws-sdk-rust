@@ -3,19 +3,19 @@
 /// <p>Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainChangeProgressInput {
+pub struct DescribeDomainChangeProgressInput  {
     /// <p>The name of the domain to get progress information for.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
     pub change_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDomainChangeProgressInput {
+impl  DescribeDomainChangeProgressInput  {
     /// <p>The name of the domain to get progress information for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
-    pub fn change_id(&self) -> ::std::option::Option<&str> {
+    pub fn change_id(&self) -> ::std::option::Option<& str> {
         self.change_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeDomainChangeProgressInputBuilder {
     }
     /// <p>The name of the domain to get progress information for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain to get progress information for.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeDomainChangeProgressInputBuilder {
     }
     /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
     pub fn set_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_id = input;
-        self
+        self.change_id = input; self
     }
     /// <p>The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.</p>
     pub fn get_change_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_id
     }
     /// Consumes the builder and constructs a [`DescribeDomainChangeProgressInput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput {
-            domain_name: self.domain_name,
-            change_id: self.change_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput {
+                domain_name: self.domain_name
+                ,
+                change_id: self.change_id
+                ,
+            }
+        )
     }
 }
+

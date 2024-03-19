@@ -3,7 +3,7 @@
 /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PermissionModel {
+pub struct PermissionModel  {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
     pub r#type: crate::types::PermissionModelType,
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p><note>
@@ -23,11 +23,11 @@ pub struct PermissionModel {
     /// <p>These roles must have a trust policy with <code>iam:AssumeRole</code> permission to the invoker role in the primary account.</p></li>
     /// </ul>
     /// </note>
-    pub cross_account_role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cross_account_role_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PermissionModel {
+impl  PermissionModel  {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
-    pub fn r#type(&self) -> &crate::types::PermissionModelType {
+    pub fn r#type(&self) -> & crate::types::PermissionModelType {
         &self.r#type
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p><note>
@@ -38,7 +38,7 @@ impl PermissionModel {
     /// <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p></li>
     /// </ul>
     /// </note>
-    pub fn invoker_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn invoker_role_name(&self) -> ::std::option::Option<& str> {
         self.invoker_role_name.as_deref()
     }
     /// <p>Defines a list of role Amazon Resource Names (ARNs) to be used in other accounts. These ARNs are used for querying purposes while importing resources and assessing your application.</p><note>
@@ -49,10 +49,11 @@ impl PermissionModel {
     /// <p>These roles must have a trust policy with <code>iam:AssumeRole</code> permission to the invoker role in the primary account.</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_role_arns.is_none()`.
-    pub fn cross_account_role_arns(&self) -> &[::std::string::String] {
-        self.cross_account_role_arns.as_deref().unwrap_or_default()
+    pub fn cross_account_role_arns(&self) -> & [::std::string::String] {
+        self.cross_account_role_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PermissionModel {
@@ -68,7 +69,7 @@ impl PermissionModel {
 pub struct PermissionModelBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PermissionModelType>,
     pub(crate) invoker_role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cross_account_role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cross_account_role_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PermissionModelBuilder {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
@@ -79,8 +80,7 @@ impl PermissionModelBuilder {
     }
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PermissionModelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PermissionModelType> {
@@ -107,8 +107,7 @@ impl PermissionModelBuilder {
     /// </ul>
     /// </note>
     pub fn set_invoker_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invoker_role_name = input;
-        self
+        self.invoker_role_name = input; self
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p><note>
     /// <ul>
@@ -135,9 +134,9 @@ impl PermissionModelBuilder {
     /// </note>
     pub fn cross_account_role_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cross_account_role_arns.unwrap_or_default();
-        v.push(input.into());
-        self.cross_account_role_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cross_account_role_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines a list of role Amazon Resource Names (ARNs) to be used in other accounts. These ARNs are used for querying purposes while importing resources and assessing your application.</p><note>
     /// <ul>
@@ -147,9 +146,8 @@ impl PermissionModelBuilder {
     /// <p>These roles must have a trust policy with <code>iam:AssumeRole</code> permission to the invoker role in the primary account.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_cross_account_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cross_account_role_arns = input;
-        self
+    pub fn set_cross_account_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cross_account_role_arns = input; self
     }
     /// <p>Defines a list of role Amazon Resource Names (ARNs) to be used in other accounts. These ARNs are used for querying purposes while importing resources and assessing your application.</p><note>
     /// <ul>
@@ -159,22 +157,26 @@ impl PermissionModelBuilder {
     /// <p>These roles must have a trust policy with <code>iam:AssumeRole</code> permission to the invoker role in the primary account.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_cross_account_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cross_account_role_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cross_account_role_arns
     }
     /// Consumes the builder and constructs a [`PermissionModel`](crate::types::PermissionModel).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::PermissionModelBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::PermissionModel, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PermissionModel {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building PermissionModel",
-                )
-            })?,
-            invoker_role_name: self.invoker_role_name,
-            cross_account_role_arns: self.cross_account_role_arns,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PermissionModel {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building PermissionModel")
+                    )?
+                ,
+                invoker_role_name: self.invoker_role_name
+                ,
+                cross_account_role_arns: self.cross_account_role_arns
+                ,
+            }
+        )
     }
 }
+

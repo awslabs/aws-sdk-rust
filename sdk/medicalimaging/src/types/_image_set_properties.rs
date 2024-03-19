@@ -3,7 +3,7 @@
 /// <p>The image set properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageSetProperties {
+pub struct ImageSetProperties  {
     /// <p>The image set identifier.</p>
     pub image_set_id: ::std::string::String,
     /// <p>The image set version identifier.</p>
@@ -21,39 +21,37 @@ pub struct ImageSetProperties {
     /// <p>The error message thrown if an image set action fails.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ImageSetProperties {
+impl  ImageSetProperties  {
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.image_set_id.deref()
+    pub fn image_set_id(&self) -> & str {
+        use std::ops::Deref; self.image_set_id.deref()
     }
     /// <p>The image set version identifier.</p>
-    pub fn version_id(&self) -> &str {
-        use std::ops::Deref;
-        self.version_id.deref()
+    pub fn version_id(&self) -> & str {
+        use std::ops::Deref; self.version_id.deref()
     }
     /// <p>The image set state.</p>
-    pub fn image_set_state(&self) -> &crate::types::ImageSetState {
+    pub fn image_set_state(&self) -> & crate::types::ImageSetState {
         &self.image_set_state
     }
     /// <p>The image set workflow status.</p>
-    pub fn image_set_workflow_status(&self) -> ::std::option::Option<&crate::types::ImageSetWorkflowStatus> {
+    pub fn image_set_workflow_status(&self) -> ::std::option::Option<& crate::types::ImageSetWorkflowStatus> {
         self.image_set_workflow_status.as_ref()
     }
     /// <p>The timestamp when the image set properties were created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp when the image set properties were updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The timestamp when the image set properties were deleted.</p>
-    pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deleted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
     /// <p>The error message thrown if an image set action fails.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -86,8 +84,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The image set identifier.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The image set version identifier.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The image set version identifier.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +112,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The image set state.</p>
     pub fn set_image_set_state(mut self, input: ::std::option::Option<crate::types::ImageSetState>) -> Self {
-        self.image_set_state = input;
-        self
+        self.image_set_state = input; self
     }
     /// <p>The image set state.</p>
     pub fn get_image_set_state(&self) -> &::std::option::Option<crate::types::ImageSetState> {
@@ -130,8 +125,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The image set workflow status.</p>
     pub fn set_image_set_workflow_status(mut self, input: ::std::option::Option<crate::types::ImageSetWorkflowStatus>) -> Self {
-        self.image_set_workflow_status = input;
-        self
+        self.image_set_workflow_status = input; self
     }
     /// <p>The image set workflow status.</p>
     pub fn get_image_set_workflow_status(&self) -> &::std::option::Option<crate::types::ImageSetWorkflowStatus> {
@@ -144,8 +138,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The timestamp when the image set properties were created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the image set properties were created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -158,8 +151,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The timestamp when the image set properties were updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp when the image set properties were updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,8 +164,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The timestamp when the image set properties were deleted.</p>
     pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deleted_at = input;
-        self
+        self.deleted_at = input; self
     }
     /// <p>The timestamp when the image set properties were deleted.</p>
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -186,8 +177,7 @@ impl ImageSetPropertiesBuilder {
     }
     /// <p>The error message thrown if an image set action fails.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message thrown if an image set action fails.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,30 +189,35 @@ impl ImageSetPropertiesBuilder {
     /// - [`version_id`](crate::types::builders::ImageSetPropertiesBuilder::version_id)
     /// - [`image_set_state`](crate::types::builders::ImageSetPropertiesBuilder::image_set_state)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageSetProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImageSetProperties {
-            image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_set_id",
-                    "image_set_id was not specified but it is required when building ImageSetProperties",
-                )
-            })?,
-            version_id: self.version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version_id",
-                    "version_id was not specified but it is required when building ImageSetProperties",
-                )
-            })?,
-            image_set_state: self.image_set_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_set_state",
-                    "image_set_state was not specified but it is required when building ImageSetProperties",
-                )
-            })?,
-            image_set_workflow_status: self.image_set_workflow_status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            deleted_at: self.deleted_at,
-            message: self.message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImageSetProperties {
+                image_set_id: self.image_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_set_id", "image_set_id was not specified but it is required when building ImageSetProperties")
+                    )?
+                ,
+                version_id: self.version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version_id", "version_id was not specified but it is required when building ImageSetProperties")
+                    )?
+                ,
+                image_set_state: self.image_set_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_set_state", "image_set_state was not specified but it is required when building ImageSetProperties")
+                    )?
+                ,
+                image_set_workflow_status: self.image_set_workflow_status
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                deleted_at: self.deleted_at
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

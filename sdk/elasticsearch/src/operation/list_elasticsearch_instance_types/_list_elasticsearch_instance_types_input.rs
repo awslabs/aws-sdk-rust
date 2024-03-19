@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code> <code>ListElasticsearchInstanceTypes</code> </code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListElasticsearchInstanceTypesInput {
+pub struct ListElasticsearchInstanceTypesInput  {
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
@@ -13,13 +13,13 @@ pub struct ListElasticsearchInstanceTypesInput {
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListElasticsearchInstanceTypesInput {
+impl  ListElasticsearchInstanceTypesInput  {
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
-    pub fn elasticsearch_version(&self) -> ::std::option::Option<&str> {
+    pub fn elasticsearch_version(&self) -> ::std::option::Option<& str> {
         self.elasticsearch_version.as_deref()
     }
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.</p>
@@ -27,7 +27,7 @@ impl ListElasticsearchInstanceTypesInput {
         self.max_results
     }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl ListElasticsearchInstanceTypesInputBuilder {
     }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
     pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elasticsearch_version = input;
-        self
+        self.elasticsearch_version = input; self
     }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
     pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListElasticsearchInstanceTypesInputBuilder {
     }
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListElasticsearchInstanceTypesInputBuilder {
     }
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,25 +95,26 @@ impl ListElasticsearchInstanceTypesInputBuilder {
     }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListElasticsearchInstanceTypesInput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput {
-            elasticsearch_version: self.elasticsearch_version,
-            domain_name: self.domain_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput {
+                elasticsearch_version: self.elasticsearch_version
+                ,
+                domain_name: self.domain_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

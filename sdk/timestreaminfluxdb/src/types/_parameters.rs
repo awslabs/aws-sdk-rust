@@ -21,11 +21,7 @@ impl Parameters {
     /// Tries to convert the enum instance into [`InfluxDBv2`](crate::types::Parameters::InfluxDBv2), extracting the inner [`InfluxDBv2Parameters`](crate::types::InfluxDBv2Parameters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_influx_dbv2(&self) -> ::std::result::Result<&crate::types::InfluxDBv2Parameters, &Self> {
-        if let Parameters::InfluxDBv2(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Parameters::InfluxDBv2(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`InfluxDBv2`](crate::types::Parameters::InfluxDBv2).
     pub fn is_influx_dbv2(&self) -> bool {
@@ -36,3 +32,4 @@ impl Parameters {
         matches!(self, Self::Unknown)
     }
 }
+

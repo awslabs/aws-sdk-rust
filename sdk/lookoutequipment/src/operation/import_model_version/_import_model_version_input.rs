@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportModelVersionInput {
+pub struct ImportModelVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the model version to import.</p>
     pub source_model_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the machine learning model to be created. If the model already exists, Amazon Lookout for Equipment creates a new version. If you do not specify this field, it is filled with the name of the source model.</p>
@@ -18,7 +18,7 @@ pub struct ImportModelVersionInput {
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the machine learning model to be created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
     /// <li>
@@ -30,40 +30,41 @@ pub struct ImportModelVersionInput {
     /// </ul>
     pub inference_data_import_strategy: ::std::option::Option<crate::types::InferenceDataImportStrategy>,
 }
-impl ImportModelVersionInput {
+impl  ImportModelVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the model version to import.</p>
-    pub fn source_model_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_model_version_arn(&self) -> ::std::option::Option<& str> {
         self.source_model_version_arn.as_deref()
     }
     /// <p>The name for the machine learning model to be created. If the model already exists, Amazon Lookout for Equipment creates a new version. If you do not specify this field, it is filled with the name of the source model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the dataset for the machine learning model being imported.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
-    pub fn labels_input_configuration(&self) -> ::std::option::Option<&crate::types::LabelsInputConfiguration> {
+    pub fn labels_input_configuration(&self) -> ::std::option::Option<& crate::types::LabelsInputConfiguration> {
         self.labels_input_configuration.as_ref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
-    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>The tags associated with the machine learning model to be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
@@ -74,7 +75,7 @@ impl ImportModelVersionInput {
     /// <li>
     /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
-    pub fn inference_data_import_strategy(&self) -> ::std::option::Option<&crate::types::InferenceDataImportStrategy> {
+    pub fn inference_data_import_strategy(&self) -> ::std::option::Option<& crate::types::InferenceDataImportStrategy> {
         self.inference_data_import_strategy.as_ref()
     }
 }
@@ -96,7 +97,7 @@ pub struct ImportModelVersionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) inference_data_import_strategy: ::std::option::Option<crate::types::InferenceDataImportStrategy>,
 }
 impl ImportModelVersionInputBuilder {
@@ -108,8 +109,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model version to import.</p>
     pub fn set_source_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_model_version_arn = input;
-        self
+        self.source_model_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version to import.</p>
     pub fn get_source_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>The name for the machine learning model to be created. If the model already exists, Amazon Lookout for Equipment creates a new version. If you do not specify this field, it is filled with the name of the source model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name for the machine learning model to be created. If the model already exists, Amazon Lookout for Equipment creates a new version. If you do not specify this field, it is filled with the name of the source model.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +136,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>The name of the dataset for the machine learning model being imported.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset for the machine learning model being imported.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +149,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
-        self.labels_input_configuration = input;
-        self
+        self.labels_input_configuration = input; self
     }
     /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
@@ -166,8 +163,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +176,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_side_kms_key_id = input;
-        self
+        self.server_side_kms_key_id = input; self
     }
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,17 +202,16 @@ impl ImportModelVersionInputBuilder {
     /// <p>The tags associated with the machine learning model to be created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the machine learning model to be created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the machine learning model to be created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
@@ -244,8 +237,7 @@ impl ImportModelVersionInputBuilder {
     /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
     pub fn set_inference_data_import_strategy(mut self, input: ::std::option::Option<crate::types::InferenceDataImportStrategy>) -> Self {
-        self.inference_data_import_strategy = input;
-        self
+        self.inference_data_import_strategy = input; self
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
@@ -260,20 +252,29 @@ impl ImportModelVersionInputBuilder {
         &self.inference_data_import_strategy
     }
     /// Consumes the builder and constructs a [`ImportModelVersionInput`](crate::operation::import_model_version::ImportModelVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_model_version::ImportModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_model_version::ImportModelVersionInput {
-            source_model_version_arn: self.source_model_version_arn,
-            model_name: self.model_name,
-            dataset_name: self.dataset_name,
-            labels_input_configuration: self.labels_input_configuration,
-            client_token: self.client_token,
-            role_arn: self.role_arn,
-            server_side_kms_key_id: self.server_side_kms_key_id,
-            tags: self.tags,
-            inference_data_import_strategy: self.inference_data_import_strategy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_model_version::ImportModelVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_model_version::ImportModelVersionInput {
+                source_model_version_arn: self.source_model_version_arn
+                ,
+                model_name: self.model_name
+                ,
+                dataset_name: self.dataset_name
+                ,
+                labels_input_configuration: self.labels_input_configuration
+                ,
+                client_token: self.client_token
+                ,
+                role_arn: self.role_arn
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                tags: self.tags
+                ,
+                inference_data_import_strategy: self.inference_data_import_strategy
+                ,
+            }
+        )
     }
 }
+

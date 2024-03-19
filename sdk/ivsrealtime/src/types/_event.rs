@@ -3,7 +3,7 @@
 /// <p>An occurrence during a stage session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The name of the event.</p>
     pub name: ::std::option::Option<crate::types::EventName>,
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
@@ -15,25 +15,25 @@ pub struct Event {
     /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
     pub error_code: ::std::option::Option<crate::types::EventErrorCode>,
 }
-impl Event {
+impl  Event  {
     /// <p>The name of the event.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::EventName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::EventName> {
         self.name.as_ref()
     }
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
-    pub fn remote_participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn remote_participant_id(&self) -> ::std::option::Option<& str> {
         self.remote_participant_id.as_deref()
     }
     /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::EventErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::EventErrorCode> {
         self.error_code.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EventBuilder {
     }
     /// <p>The name of the event.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EventName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::EventName> {
@@ -76,8 +75,7 @@ impl EventBuilder {
     }
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>Unique identifier for the participant who triggered the event. This is assigned by IVS.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EventBuilder {
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl EventBuilder {
     }
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
     pub fn set_remote_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_participant_id = input;
-        self
+        self.remote_participant_id = input; self
     }
     /// <p>Unique identifier for the remote participant. For a subscribe event, this is the publisher. For a publish or join event, this is null. This is assigned by IVS.</p>
     pub fn get_remote_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl EventBuilder {
     }
     /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::EventErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>If the event is an error event, the error code is provided to give insight into the specific error that occurred. If the event is not an error event, this field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take an action that the participant’s token is not allowed to do. For more information about participant capabilities, see the <code>capabilities</code> field in <code>CreateParticipantToken</code>. <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried to subscribe to a publisher that doesn’t exist.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::EventErrorCode> {
@@ -128,11 +123,17 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            name: self.name,
-            participant_id: self.participant_id,
-            event_time: self.event_time,
-            remote_participant_id: self.remote_participant_id,
-            error_code: self.error_code,
+            name: self.name
+            ,
+            participant_id: self.participant_id
+            ,
+            event_time: self.event_time
+            ,
+            remote_participant_id: self.remote_participant_id
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

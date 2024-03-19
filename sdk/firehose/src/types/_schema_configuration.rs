@@ -3,7 +3,7 @@
 /// <p>Specifies the schema to which you want Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaConfiguration {
+pub struct SchemaConfiguration  {
     /// <p>The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Firehose. Cross-account roles aren't allowed.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
@@ -23,35 +23,35 @@ pub struct SchemaConfiguration {
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl SchemaConfiguration {
+impl  SchemaConfiguration  {
     /// <p>The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Firehose. Cross-account roles aren't allowed.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>If you don't specify an Amazon Web Services Region, the default is the current Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -85,8 +85,7 @@ impl SchemaConfigurationBuilder {
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Firehose. Cross-account roles aren't allowed.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
@@ -101,8 +100,7 @@ impl SchemaConfigurationBuilder {
     }
     /// <p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl SchemaConfigurationBuilder {
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
@@ -139,8 +136,7 @@ impl SchemaConfigurationBuilder {
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p><important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
@@ -155,8 +151,7 @@ impl SchemaConfigurationBuilder {
     }
     /// <p>If you don't specify an Amazon Web Services Region, the default is the current Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>If you don't specify an Amazon Web Services Region, the default is the current Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl SchemaConfigurationBuilder {
     }
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,12 +173,19 @@ impl SchemaConfigurationBuilder {
     /// Consumes the builder and constructs a [`SchemaConfiguration`](crate::types::SchemaConfiguration).
     pub fn build(self) -> crate::types::SchemaConfiguration {
         crate::types::SchemaConfiguration {
-            role_arn: self.role_arn,
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            region: self.region,
-            version_id: self.version_id,
+            role_arn: self.role_arn
+            ,
+            catalog_id: self.catalog_id
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            region: self.region
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

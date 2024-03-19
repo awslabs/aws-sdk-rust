@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetUserDefinedFunctions`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::set_database_name):<br>required: **false**<br><p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p><br>
     ///   - [`pattern(impl Into<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::pattern) / [`set_pattern(Option<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::set_pattern):<br>required: **true**<br><p>An optional function-name pattern string that filters the function definitions returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of functions to return in one response.</p><br>
-    /// - On success, responds with [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput) with field(s):
+                            /// - On success, responds with [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput) with field(s):
     ///   - [`user_defined_functions(Option<Vec::<UserDefinedFunction>>)`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput::user_defined_functions): <p>A list of requested function definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput::next_token): <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
-    /// - On failure, responds with [`SdkError<GetUserDefinedFunctionsError>`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError)
+                            /// - On failure, responds with [`SdkError<GetUserDefinedFunctionsError>`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError)
     pub fn get_user_defined_functions(&self) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder {
-        crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

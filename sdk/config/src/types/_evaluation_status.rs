@@ -3,19 +3,19 @@
 /// <p>Returns status details of an evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationStatus {
+pub struct EvaluationStatus  {
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub status: crate::types::ResourceEvaluationStatus,
     /// <p>An explanation for failed execution status.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationStatus {
+impl  EvaluationStatus  {
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
-    pub fn status(&self) -> &crate::types::ResourceEvaluationStatus {
+    pub fn status(&self) -> & crate::types::ResourceEvaluationStatus {
         &self.status
     }
     /// <p>An explanation for failed execution status.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl EvaluationStatusBuilder {
     }
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceEvaluationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceEvaluationStatus> {
@@ -56,8 +55,7 @@ impl EvaluationStatusBuilder {
     }
     /// <p>An explanation for failed execution status.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>An explanation for failed execution status.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl EvaluationStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::EvaluationStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationStatus {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EvaluationStatus",
-                )
-            })?,
-            failure_reason: self.failure_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationStatus {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EvaluationStatus")
+                    )?
+                ,
+                failure_reason: self.failure_reason
+                ,
+            }
+        )
     }
 }
+

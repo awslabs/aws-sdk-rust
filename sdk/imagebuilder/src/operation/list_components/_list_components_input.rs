@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentsInput {
+pub struct ListComponentsInput  {
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
@@ -20,7 +20,7 @@ pub struct ListComponentsInput {
     /// <li>
     /// <p><code>version</code></p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>Returns the list of components for the specified name.</p>
     pub by_name: ::std::option::Option<bool>,
     /// <p>The maximum items to return in a request.</p>
@@ -28,9 +28,9 @@ pub struct ListComponentsInput {
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListComponentsInput {
+impl  ListComponentsInput  {
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::Ownership> {
+    pub fn owner(&self) -> ::std::option::Option<& crate::types::Ownership> {
         self.owner.as_ref()
     }
     /// <p>Use the following filters to streamline results:</p>
@@ -48,10 +48,11 @@ impl ListComponentsInput {
     /// <li>
     /// <p><code>version</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns the list of components for the specified name.</p>
     pub fn by_name(&self) -> ::std::option::Option<bool> {
@@ -62,7 +63,7 @@ impl ListComponentsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -78,7 +79,7 @@ impl ListComponentsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) by_name: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,8 +92,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
@@ -119,9 +119,9 @@ impl ListComponentsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -138,9 +138,8 @@ impl ListComponentsInputBuilder {
     /// <li>
     /// <p><code>version</code></p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -157,7 +156,7 @@ impl ListComponentsInputBuilder {
     /// <li>
     /// <p><code>version</code></p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>Returns the list of components for the specified name.</p>
@@ -167,8 +166,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>Returns the list of components for the specified name.</p>
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.by_name = input;
-        self
+        self.by_name = input; self
     }
     /// <p>Returns the list of components for the specified name.</p>
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
@@ -181,8 +179,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -195,23 +192,28 @@ impl ListComponentsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_components::ListComponentsInput {
-            owner: self.owner,
-            filters: self.filters,
-            by_name: self.by_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_components::ListComponentsInput {
+                owner: self.owner
+                ,
+                filters: self.filters
+                ,
+                by_name: self.by_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

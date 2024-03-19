@@ -4,27 +4,28 @@
 /// <p>This data type is used as an input parameter to <code>SimulateCustomPolicy</code> and <code>SimulatePrincipalPolicy</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContextEntry {
+pub struct ContextEntry  {
     /// <p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
     pub context_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
-    pub context_key_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub context_key_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
     pub context_key_type: ::std::option::Option<crate::types::ContextKeyTypeEnum>,
 }
-impl ContextEntry {
+impl  ContextEntry  {
     /// <p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
-    pub fn context_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn context_key_name(&self) -> ::std::option::Option<& str> {
         self.context_key_name.as_deref()
     }
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_key_values.is_none()`.
-    pub fn context_key_values(&self) -> &[::std::string::String] {
-        self.context_key_values.as_deref().unwrap_or_default()
+    pub fn context_key_values(&self) -> & [::std::string::String] {
+        self.context_key_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
-    pub fn context_key_type(&self) -> ::std::option::Option<&crate::types::ContextKeyTypeEnum> {
+    pub fn context_key_type(&self) -> ::std::option::Option<& crate::types::ContextKeyTypeEnum> {
         self.context_key_type.as_ref()
     }
 }
@@ -40,7 +41,7 @@ impl ContextEntry {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContextEntryBuilder {
     pub(crate) context_key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) context_key_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) context_key_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) context_key_type: ::std::option::Option<crate::types::ContextKeyTypeEnum>,
 }
 impl ContextEntryBuilder {
@@ -51,8 +52,7 @@ impl ContextEntryBuilder {
     }
     /// <p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
     pub fn set_context_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context_key_name = input;
-        self
+        self.context_key_name = input; self
     }
     /// <p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
     pub fn get_context_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +65,16 @@ impl ContextEntryBuilder {
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
     pub fn context_key_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.context_key_values.unwrap_or_default();
-        v.push(input.into());
-        self.context_key_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.context_key_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
-    pub fn set_context_key_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.context_key_values = input;
-        self
+    pub fn set_context_key_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.context_key_values = input; self
     }
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
-    pub fn get_context_key_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_context_key_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.context_key_values
     }
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
@@ -85,8 +84,7 @@ impl ContextEntryBuilder {
     }
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
     pub fn set_context_key_type(mut self, input: ::std::option::Option<crate::types::ContextKeyTypeEnum>) -> Self {
-        self.context_key_type = input;
-        self
+        self.context_key_type = input; self
     }
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
     pub fn get_context_key_type(&self) -> &::std::option::Option<crate::types::ContextKeyTypeEnum> {
@@ -95,9 +93,13 @@ impl ContextEntryBuilder {
     /// Consumes the builder and constructs a [`ContextEntry`](crate::types::ContextEntry).
     pub fn build(self) -> crate::types::ContextEntry {
         crate::types::ContextEntry {
-            context_key_name: self.context_key_name,
-            context_key_values: self.context_key_values,
-            context_key_type: self.context_key_type,
+            context_key_name: self.context_key_name
+            ,
+            context_key_values: self.context_key_values
+            ,
+            context_key_type: self.context_key_type
+            ,
         }
     }
 }
+

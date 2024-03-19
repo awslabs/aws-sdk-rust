@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMatchmakingRuleSets`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`names(impl Into<String>)`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::set_names):<br>required: **false**<br><p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p><br>
-    /// - On success, responds with [`DescribeMatchmakingRuleSetsOutput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput) with field(s):
+                            /// - On success, responds with [`DescribeMatchmakingRuleSetsOutput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput) with field(s):
     ///   - [`rule_sets(Option<Vec::<MatchmakingRuleSet>>)`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput::rule_sets): <p>A collection of requested matchmaking rule set objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    /// - On failure, responds with [`SdkError<DescribeMatchmakingRuleSetsError>`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError)
-    pub fn describe_matchmaking_rule_sets(
-        &self,
-    ) -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder {
-        crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMatchmakingRuleSetsError>`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError)
+    pub fn describe_matchmaking_rule_sets(&self) -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder {
+                                crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A genome reference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceListItem {
+pub struct ReferenceListItem  {
     /// <p>The reference's ID.</p>
     pub id: ::std::string::String,
     /// <p>The reference's ARN.</p>
@@ -23,45 +23,41 @@ pub struct ReferenceListItem {
     /// <p>When the reference was updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl ReferenceListItem {
+impl  ReferenceListItem  {
     /// <p>The reference's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The reference's ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_store_id.deref()
+    pub fn reference_store_id(&self) -> & str {
+        use std::ops::Deref; self.reference_store_id.deref()
     }
     /// <p>The reference's MD5 checksum.</p>
-    pub fn md5(&self) -> &str {
-        use std::ops::Deref;
-        self.md5.deref()
+    pub fn md5(&self) -> & str {
+        use std::ops::Deref; self.md5.deref()
     }
     /// <p>The reference's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReferenceStatus> {
         self.status.as_ref()
     }
     /// <p>The reference's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The reference's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the reference was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>When the reference was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -95,8 +91,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The reference's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The reference's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's store ID.</p>
     pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_store_id = input;
-        self
+        self.reference_store_id = input; self
     }
     /// <p>The reference's store ID.</p>
     pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +133,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's MD5 checksum.</p>
     pub fn set_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5 = input;
-        self
+        self.md5 = input; self
     }
     /// <p>The reference's MD5 checksum.</p>
     pub fn get_md5(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +146,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The reference's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
@@ -168,8 +159,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The reference's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +172,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>The reference's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The reference's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +186,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>When the reference was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the reference was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -212,8 +200,7 @@ impl ReferenceListItemBuilder {
     }
     /// <p>When the reference was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>When the reference was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -228,46 +215,46 @@ impl ReferenceListItemBuilder {
     /// - [`creation_time`](crate::types::builders::ReferenceListItemBuilder::creation_time)
     /// - [`update_time`](crate::types::builders::ReferenceListItemBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ReferenceListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReferenceListItem {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ReferenceListItem",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ReferenceListItem",
-                )
-            })?,
-            reference_store_id: self.reference_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_store_id",
-                    "reference_store_id was not specified but it is required when building ReferenceListItem",
-                )
-            })?,
-            md5: self.md5.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "md5",
-                    "md5 was not specified but it is required when building ReferenceListItem",
-                )
-            })?,
-            status: self.status,
-            name: self.name,
-            description: self.description,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ReferenceListItem",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ReferenceListItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReferenceListItem {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ReferenceListItem")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ReferenceListItem")
+                    )?
+                ,
+                reference_store_id: self.reference_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_store_id", "reference_store_id was not specified but it is required when building ReferenceListItem")
+                    )?
+                ,
+                md5: self.md5
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("md5", "md5 was not specified but it is required when building ReferenceListItem")
+                    )?
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ReferenceListItem")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ReferenceListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

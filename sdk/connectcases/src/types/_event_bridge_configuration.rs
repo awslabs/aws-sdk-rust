@@ -3,19 +3,19 @@
 /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventBridgeConfiguration {
+pub struct EventBridgeConfiguration  {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     pub enabled: bool,
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub included_data: ::std::option::Option<crate::types::EventIncludedData>,
 }
-impl EventBridgeConfiguration {
+impl  EventBridgeConfiguration  {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
-    pub fn included_data(&self) -> ::std::option::Option<&crate::types::EventIncludedData> {
+    pub fn included_data(&self) -> ::std::option::Option<& crate::types::EventIncludedData> {
         self.included_data.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl EventBridgeConfigurationBuilder {
     }
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl EventBridgeConfigurationBuilder {
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::EventIncludedData>) -> Self {
-        self.included_data = input;
-        self
+        self.included_data = input; self
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub fn get_included_data(&self) -> &::std::option::Option<crate::types::EventIncludedData> {
@@ -67,14 +65,17 @@ impl EventBridgeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::EventBridgeConfigurationBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventBridgeConfiguration {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building EventBridgeConfiguration",
-                )
-            })?,
-            included_data: self.included_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventBridgeConfiguration {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building EventBridgeConfiguration")
+                    )?
+                ,
+                included_data: self.included_data
+                ,
+            }
+        )
     }
 }
+

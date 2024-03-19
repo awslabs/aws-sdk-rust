@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGameSessionQueuesOutput {
+pub struct DescribeGameSessionQueuesOutput  {
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub game_session_queues: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>,
+    pub game_session_queues: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueue>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeGameSessionQueuesOutput {
+impl  DescribeGameSessionQueuesOutput  {
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_session_queues.is_none()`.
-    pub fn game_session_queues(&self) -> &[crate::types::GameSessionQueue] {
-        self.game_session_queues.as_deref().unwrap_or_default()
+    pub fn game_session_queues(&self) -> & [crate::types::GameSessionQueue] {
+        self.game_session_queues.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeGameSessionQueuesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeGameSessionQueuesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionQueuesOutput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput).
     pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeGameSessionQueuesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesOutputBuilder {
-    pub(crate) game_session_queues: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>,
+    pub(crate) game_session_queues: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeGameSessionQueuesOutputBuilder {
     /// <p>A collection of objects that describe the requested game session queues.</p>
     pub fn game_session_queues(mut self, input: crate::types::GameSessionQueue) -> Self {
         let mut v = self.game_session_queues.unwrap_or_default();
-        v.push(input);
-        self.game_session_queues = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.game_session_queues = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub fn set_game_session_queues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>) -> Self {
-        self.game_session_queues = input;
-        self
+    pub fn set_game_session_queues(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueue>>) -> Self {
+        self.game_session_queues = input; self
     }
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub fn get_game_session_queues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>> {
+    pub fn get_game_session_queues(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueue>> {
         &self.game_session_queues
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -69,28 +69,30 @@ impl DescribeGameSessionQueuesOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeGameSessionQueuesOutput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput).
     pub fn build(self) -> crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput {
         crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput {
-            game_session_queues: self.game_session_queues,
-            next_token: self.next_token,
+            game_session_queues: self.game_session_queues
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

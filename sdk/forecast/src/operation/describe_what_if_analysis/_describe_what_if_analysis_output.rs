@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWhatIfAnalysisOutput {
+pub struct DescribeWhatIfAnalysisOutput  {
     /// <p>The name of the what-if analysis.</p>
     pub what_if_analysis_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
@@ -56,17 +56,17 @@ pub struct DescribeWhatIfAnalysisOutput {
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     _request_id: Option<String>,
 }
-impl DescribeWhatIfAnalysisOutput {
+impl  DescribeWhatIfAnalysisOutput  {
     /// <p>The name of the what-if analysis.</p>
-    pub fn what_if_analysis_name(&self) -> ::std::option::Option<&str> {
+    pub fn what_if_analysis_name(&self) -> ::std::option::Option<& str> {
         self.what_if_analysis_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn what_if_analysis_arn(&self) -> ::std::option::Option<&str> {
+    pub fn what_if_analysis_arn(&self) -> ::std::option::Option<& str> {
         self.what_if_analysis_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
     /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
@@ -86,15 +86,15 @@ impl DescribeWhatIfAnalysisOutput {
     /// </ul><note>
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>When the what-if analysis was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
@@ -110,7 +110,7 @@ impl DescribeWhatIfAnalysisOutput {
     /// <li>
     /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
@@ -123,15 +123,15 @@ impl DescribeWhatIfAnalysisOutput {
     /// <li>
     /// <p><code>Schema</code></p></li>
     /// </ul>
-    pub fn time_series_selector(&self) -> ::std::option::Option<&crate::types::TimeSeriesSelector> {
+    pub fn time_series_selector(&self) -> ::std::option::Option<& crate::types::TimeSeriesSelector> {
         self.time_series_selector.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWhatIfAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWhatIfAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfAnalysisOutput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput).
     pub fn builder() -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisOutputBuilder {
@@ -162,8 +162,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The name of the what-if analysis.</p>
     pub fn set_what_if_analysis_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.what_if_analysis_name = input;
-        self
+        self.what_if_analysis_name = input; self
     }
     /// <p>The name of the what-if analysis.</p>
     pub fn get_what_if_analysis_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +175,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.what_if_analysis_arn = input;
-        self
+        self.what_if_analysis_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +188,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +201,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
     pub fn set_estimated_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.estimated_time_remaining_in_minutes = input;
-        self
+        self.estimated_time_remaining_in_minutes = input; self
     }
     /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
     pub fn get_estimated_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
@@ -242,8 +238,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
@@ -268,8 +263,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,8 +276,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     }
     /// <p>When the what-if analysis was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the what-if analysis was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -320,8 +313,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -364,8 +356,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
-        self.time_series_selector = input;
-        self
+        self.time_series_selector = input; self
     }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -381,27 +372,37 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         &self.time_series_selector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWhatIfAnalysisOutput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput).
     pub fn build(self) -> crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput {
         crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput {
-            what_if_analysis_name: self.what_if_analysis_name,
-            what_if_analysis_arn: self.what_if_analysis_arn,
-            forecast_arn: self.forecast_arn,
-            estimated_time_remaining_in_minutes: self.estimated_time_remaining_in_minutes,
-            status: self.status,
-            message: self.message,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
-            time_series_selector: self.time_series_selector,
+            what_if_analysis_name: self.what_if_analysis_name
+            ,
+            what_if_analysis_arn: self.what_if_analysis_arn
+            ,
+            forecast_arn: self.forecast_arn
+            ,
+            estimated_time_remaining_in_minutes: self.estimated_time_remaining_in_minutes
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modification_time: self.last_modification_time
+            ,
+            time_series_selector: self.time_series_selector
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

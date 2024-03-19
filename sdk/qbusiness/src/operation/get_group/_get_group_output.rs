@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupOutput {
+pub struct GetGroupOutput  {
     /// <p>The current status of the group.</p>
     pub status: ::std::option::Option<crate::types::GroupStatusDetail>,
     /// <p>The status history of the group.</p>
-    pub status_history: ::std::option::Option<::std::vec::Vec<crate::types::GroupStatusDetail>>,
+    pub status_history: ::std::option::Option<::std::vec::Vec::<crate::types::GroupStatusDetail>>,
     _request_id: Option<String>,
 }
-impl GetGroupOutput {
+impl  GetGroupOutput  {
     /// <p>The current status of the group.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GroupStatusDetail> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GroupStatusDetail> {
         self.status.as_ref()
     }
     /// <p>The status history of the group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_history.is_none()`.
-    pub fn status_history(&self) -> &[crate::types::GroupStatusDetail] {
-        self.status_history.as_deref().unwrap_or_default()
+    pub fn status_history(&self) -> & [crate::types::GroupStatusDetail] {
+        self.status_history.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput).
     pub fn builder() -> crate::operation::get_group::builders::GetGroupOutputBuilder {
@@ -38,7 +39,7 @@ impl GetGroupOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::GroupStatusDetail>,
-    pub(crate) status_history: ::std::option::Option<::std::vec::Vec<crate::types::GroupStatusDetail>>,
+    pub(crate) status_history: ::std::option::Option<::std::vec::Vec::<crate::types::GroupStatusDetail>>,
     _request_id: Option<String>,
 }
 impl GetGroupOutputBuilder {
@@ -49,8 +50,7 @@ impl GetGroupOutputBuilder {
     }
     /// <p>The current status of the group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GroupStatusDetail>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the group.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupStatusDetail> {
@@ -63,34 +63,36 @@ impl GetGroupOutputBuilder {
     /// <p>The status history of the group.</p>
     pub fn status_history(mut self, input: crate::types::GroupStatusDetail) -> Self {
         let mut v = self.status_history.unwrap_or_default();
-        v.push(input);
-        self.status_history = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status_history = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status history of the group.</p>
-    pub fn set_status_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupStatusDetail>>) -> Self {
-        self.status_history = input;
-        self
+    pub fn set_status_history(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupStatusDetail>>) -> Self {
+        self.status_history = input; self
     }
     /// <p>The status history of the group.</p>
-    pub fn get_status_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupStatusDetail>> {
+    pub fn get_status_history(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupStatusDetail>> {
         &self.status_history
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput).
     pub fn build(self) -> crate::operation::get_group::GetGroupOutput {
         crate::operation::get_group::GetGroupOutput {
-            status: self.status,
-            status_history: self.status_history,
+            status: self.status
+            ,
+            status_history: self.status_history
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

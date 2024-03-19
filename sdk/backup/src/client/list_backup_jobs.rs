@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBackupJobs`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be returned.</p><br>
     ///   - [`by_resource_arn(impl Into<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::by_resource_arn) / [`set_by_resource_arn(Option<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::set_by_resource_arn):<br>required: **false**<br><p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p><br>
@@ -17,11 +17,12 @@ impl super::Client {
     ///   - [`by_complete_before(DateTime)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::by_complete_before) / [`set_by_complete_before(Option<DateTime>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::set_by_complete_before):<br>required: **false**<br><p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p><br>
     ///   - [`by_parent_job_id(impl Into<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::by_parent_job_id) / [`set_by_parent_job_id(Option<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::set_by_parent_job_id):<br>required: **false**<br><p>This is a filter to list child (nested) jobs based on parent job ID.</p><br>
     ///   - [`by_message_category(impl Into<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::by_message_category) / [`set_by_message_category(Option<String>)`](crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::set_by_message_category):<br>required: **false**<br><p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p> <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p> <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a></p> <p>The wildcard () returns count of all message categories.</p> <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p><br>
-    /// - On success, responds with [`ListBackupJobsOutput`](crate::operation::list_backup_jobs::ListBackupJobsOutput) with field(s):
+                            /// - On success, responds with [`ListBackupJobsOutput`](crate::operation::list_backup_jobs::ListBackupJobsOutput) with field(s):
     ///   - [`backup_jobs(Option<Vec::<BackupJob>>)`](crate::operation::list_backup_jobs::ListBackupJobsOutput::backup_jobs): <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backup_jobs::ListBackupJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    /// - On failure, responds with [`SdkError<ListBackupJobsError>`](crate::operation::list_backup_jobs::ListBackupJobsError)
+                            /// - On failure, responds with [`SdkError<ListBackupJobsError>`](crate::operation::list_backup_jobs::ListBackupJobsError)
     pub fn list_backup_jobs(&self) -> crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder {
-        crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_backup_jobs::builders::ListBackupJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

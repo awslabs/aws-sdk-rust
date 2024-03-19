@@ -3,33 +3,31 @@
 /// <p>Details about the export revisions to Amazon S3 response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportRevisionsToS3ResponseDetails {
+pub struct ExportRevisionsToS3ResponseDetails  {
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub data_set_id: ::std::string::String,
     /// <p>Encryption configuration of the export job.</p>
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub revision_destinations: ::std::vec::Vec<crate::types::RevisionDestinationEntry>,
+    pub revision_destinations: ::std::vec::Vec::<crate::types::RevisionDestinationEntry>,
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     pub event_action_arn: ::std::option::Option<::std::string::String>,
 }
-impl ExportRevisionsToS3ResponseDetails {
+impl  ExportRevisionsToS3ResponseDetails  {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>Encryption configuration of the export job.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::ExportServerSideEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::ExportServerSideEncryption> {
         self.encryption.as_ref()
     }
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub fn revision_destinations(&self) -> &[crate::types::RevisionDestinationEntry] {
-        use std::ops::Deref;
-        self.revision_destinations.deref()
+    pub fn revision_destinations(&self) -> & [crate::types::RevisionDestinationEntry] {
+        use std::ops::Deref; self.revision_destinations.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
-    pub fn event_action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_action_arn(&self) -> ::std::option::Option<& str> {
         self.event_action_arn.as_deref()
     }
 }
@@ -46,7 +44,7 @@ impl ExportRevisionsToS3ResponseDetails {
 pub struct ExportRevisionsToS3ResponseDetailsBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
-    pub(crate) revision_destinations: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    pub(crate) revision_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionDestinationEntry>>,
     pub(crate) event_action_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExportRevisionsToS3ResponseDetailsBuilder {
@@ -58,8 +56,7 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     }
     /// <p>Encryption configuration of the export job.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::ExportServerSideEncryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>Encryption configuration of the export job.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
@@ -86,17 +82,16 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
     pub fn revision_destinations(mut self, input: crate::types::RevisionDestinationEntry) -> Self {
         let mut v = self.revision_destinations.unwrap_or_default();
-        v.push(input);
-        self.revision_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revision_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub fn set_revision_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>) -> Self {
-        self.revision_destinations = input;
-        self
+    pub fn set_revision_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionDestinationEntry>>) -> Self {
+        self.revision_destinations = input; self
     }
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub fn get_revision_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>> {
+    pub fn get_revision_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RevisionDestinationEntry>> {
         &self.revision_destinations
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
@@ -106,8 +101,7 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     pub fn set_event_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_action_arn = input;
-        self
+        self.event_action_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     pub fn get_event_action_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,21 +112,24 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     /// - [`data_set_id`](crate::types::builders::ExportRevisionsToS3ResponseDetailsBuilder::data_set_id)
     /// - [`revision_destinations`](crate::types::builders::ExportRevisionsToS3ResponseDetailsBuilder::revision_destinations)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportRevisionsToS3ResponseDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportRevisionsToS3ResponseDetails {
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building ExportRevisionsToS3ResponseDetails",
-                )
-            })?,
-            encryption: self.encryption,
-            revision_destinations: self.revision_destinations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_destinations",
-                    "revision_destinations was not specified but it is required when building ExportRevisionsToS3ResponseDetails",
-                )
-            })?,
-            event_action_arn: self.event_action_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportRevisionsToS3ResponseDetails {
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ExportRevisionsToS3ResponseDetails")
+                    )?
+                ,
+                encryption: self.encryption
+                ,
+                revision_destinations: self.revision_destinations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_destinations", "revision_destinations was not specified but it is required when building ExportRevisionsToS3ResponseDetails")
+                    )?
+                ,
+                event_action_arn: self.event_action_arn
+                ,
+            }
+        )
     }
 }
+

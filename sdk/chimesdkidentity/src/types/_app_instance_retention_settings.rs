@@ -3,13 +3,13 @@
 /// <p>The details of the data-retention settings for an <code>AppInstance</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppInstanceRetentionSettings {
+pub struct AppInstanceRetentionSettings  {
     /// <p>The length of time in days to retain the messages in a channel.</p>
     pub channel_retention_settings: ::std::option::Option<crate::types::ChannelRetentionSettings>,
 }
-impl AppInstanceRetentionSettings {
+impl  AppInstanceRetentionSettings  {
     /// <p>The length of time in days to retain the messages in a channel.</p>
-    pub fn channel_retention_settings(&self) -> ::std::option::Option<&crate::types::ChannelRetentionSettings> {
+    pub fn channel_retention_settings(&self) -> ::std::option::Option<& crate::types::ChannelRetentionSettings> {
         self.channel_retention_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AppInstanceRetentionSettingsBuilder {
     }
     /// <p>The length of time in days to retain the messages in a channel.</p>
     pub fn set_channel_retention_settings(mut self, input: ::std::option::Option<crate::types::ChannelRetentionSettings>) -> Self {
-        self.channel_retention_settings = input;
-        self
+        self.channel_retention_settings = input; self
     }
     /// <p>The length of time in days to retain the messages in a channel.</p>
     pub fn get_channel_retention_settings(&self) -> &::std::option::Option<crate::types::ChannelRetentionSettings> {
@@ -44,7 +43,9 @@ impl AppInstanceRetentionSettingsBuilder {
     /// Consumes the builder and constructs a [`AppInstanceRetentionSettings`](crate::types::AppInstanceRetentionSettings).
     pub fn build(self) -> crate::types::AppInstanceRetentionSettings {
         crate::types::AppInstanceRetentionSettings {
-            channel_retention_settings: self.channel_retention_settings,
+            channel_retention_settings: self.channel_retention_settings
+            ,
         }
     }
 }
+

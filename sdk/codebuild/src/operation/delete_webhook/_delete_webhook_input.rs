@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWebhookInput {
+pub struct DeleteWebhookInput  {
     /// <p>The name of the CodeBuild project.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWebhookInput {
+impl  DeleteWebhookInput  {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteWebhookInputBuilder {
     }
     /// <p>The name of the CodeBuild project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the CodeBuild project.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
     /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::operation::delete_webhook::DeleteWebhookInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_webhook::DeleteWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_webhook::DeleteWebhookInput {
-            project_name: self.project_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_webhook::DeleteWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_webhook::DeleteWebhookInput {
+                project_name: self.project_name
+                ,
+            }
+        )
     }
 }
+

@@ -6,7 +6,7 @@
 /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CookiePreference {
+pub struct CookiePreference  {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -21,13 +21,13 @@ pub struct CookiePreference {
     /// <p>For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub whitelisted_names: ::std::option::Option<crate::types::CookieNames>,
 }
-impl CookiePreference {
+impl  CookiePreference  {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
-    pub fn forward(&self) -> &crate::types::ItemSelection {
+    pub fn forward(&self) -> & crate::types::ItemSelection {
         &self.forward
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -36,7 +36,7 @@ impl CookiePreference {
     /// <p>Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if you want to forward selected cookies, the names of those cookies.</p>
     /// <p>If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.</p>
     /// <p>For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn whitelisted_names(&self) -> ::std::option::Option<&crate::types::CookieNames> {
+    pub fn whitelisted_names(&self) -> ::std::option::Option<& crate::types::CookieNames> {
         self.whitelisted_names.as_ref()
     }
 }
@@ -71,8 +71,7 @@ impl CookiePreferenceBuilder {
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
     pub fn set_forward(mut self, input: ::std::option::Option<crate::types::ItemSelection>) -> Self {
-        self.forward = input;
-        self
+        self.forward = input; self
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -99,8 +98,7 @@ impl CookiePreferenceBuilder {
     /// <p>If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.</p>
     /// <p>For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_whitelisted_names(mut self, input: ::std::option::Option<crate::types::CookieNames>) -> Self {
-        self.whitelisted_names = input;
-        self
+        self.whitelisted_names = input; self
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -115,14 +113,17 @@ impl CookiePreferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`forward`](crate::types::builders::CookiePreferenceBuilder::forward)
     pub fn build(self) -> ::std::result::Result<crate::types::CookiePreference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CookiePreference {
-            forward: self.forward.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "forward",
-                    "forward was not specified but it is required when building CookiePreference",
-                )
-            })?,
-            whitelisted_names: self.whitelisted_names,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CookiePreference {
+                forward: self.forward
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("forward", "forward was not specified but it is required when building CookiePreference")
+                    )?
+                ,
+                whitelisted_names: self.whitelisted_names
+                ,
+            }
+        )
     }
 }
+

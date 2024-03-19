@@ -3,22 +3,20 @@
 /// <p>An object that contains a list of tags to be assigned to a list of analysis IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobAnalysisOverrideTags {
+pub struct AssetBundleImportJobAnalysisOverrideTags  {
     /// <p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>
-    pub analysis_ids: ::std::vec::Vec<::std::string::String>,
+    pub analysis_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of tags for the analyses that you want to apply overrides to.</p>
-    pub tags: ::std::vec::Vec<crate::types::Tag>,
+    pub tags: ::std::vec::Vec::<crate::types::Tag>,
 }
-impl AssetBundleImportJobAnalysisOverrideTags {
+impl  AssetBundleImportJobAnalysisOverrideTags  {
     /// <p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>
-    pub fn analysis_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.analysis_ids.deref()
+    pub fn analysis_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.analysis_ids.deref()
     }
     /// <p>A list of tags for the analyses that you want to apply overrides to.</p>
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        use std::ops::Deref;
-        self.tags.deref()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        use std::ops::Deref; self.tags.deref()
     }
 }
 impl AssetBundleImportJobAnalysisOverrideTags {
@@ -32,8 +30,8 @@ impl AssetBundleImportJobAnalysisOverrideTags {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobAnalysisOverrideTagsBuilder {
-    pub(crate) analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) analysis_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AssetBundleImportJobAnalysisOverrideTagsBuilder {
     /// Appends an item to `analysis_ids`.
@@ -43,17 +41,16 @@ impl AssetBundleImportJobAnalysisOverrideTagsBuilder {
     /// <p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>
     pub fn analysis_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.analysis_ids.unwrap_or_default();
-        v.push(input.into());
-        self.analysis_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.analysis_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>
-    pub fn set_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.analysis_ids = input;
-        self
+    pub fn set_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.analysis_ids = input; self
     }
     /// <p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>
-    pub fn get_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.analysis_ids
     }
     /// Appends an item to `tags`.
@@ -63,39 +60,37 @@ impl AssetBundleImportJobAnalysisOverrideTagsBuilder {
     /// <p>A list of tags for the analyses that you want to apply overrides to.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags for the analyses that you want to apply overrides to.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags for the analyses that you want to apply overrides to.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobAnalysisOverrideTags`](crate::types::AssetBundleImportJobAnalysisOverrideTags).
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_ids`](crate::types::builders::AssetBundleImportJobAnalysisOverrideTagsBuilder::analysis_ids)
     /// - [`tags`](crate::types::builders::AssetBundleImportJobAnalysisOverrideTagsBuilder::tags)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobAnalysisOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobAnalysisOverrideTags {
-            analysis_ids: self.analysis_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_ids",
-                    "analysis_ids was not specified but it is required when building AssetBundleImportJobAnalysisOverrideTags",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building AssetBundleImportJobAnalysisOverrideTags",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobAnalysisOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobAnalysisOverrideTags {
+                analysis_ids: self.analysis_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_ids", "analysis_ids was not specified but it is required when building AssetBundleImportJobAnalysisOverrideTags")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building AssetBundleImportJobAnalysisOverrideTags")
+                    )?
+                ,
+            }
+        )
     }
 }
+

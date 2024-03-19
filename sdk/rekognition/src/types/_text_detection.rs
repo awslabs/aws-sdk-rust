@@ -6,7 +6,7 @@
 /// <p>For more information, see Detecting text in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextDetection {
+pub struct TextDetection  {
     /// <p>The word or line of text recognized by Amazon Rekognition.</p>
     pub detected_text: ::std::option::Option<::std::string::String>,
     /// <p>The type of text that was detected.</p>
@@ -20,13 +20,13 @@ pub struct TextDetection {
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
     pub geometry: ::std::option::Option<crate::types::Geometry>,
 }
-impl TextDetection {
+impl  TextDetection  {
     /// <p>The word or line of text recognized by Amazon Rekognition.</p>
-    pub fn detected_text(&self) -> ::std::option::Option<&str> {
+    pub fn detected_text(&self) -> ::std::option::Option<& str> {
         self.detected_text.as_deref()
     }
     /// <p>The type of text that was detected.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TextTypes> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TextTypes> {
         self.r#type.as_ref()
     }
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>.</p>
@@ -42,7 +42,7 @@ impl TextDetection {
         self.confidence
     }
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::Geometry> {
         self.geometry.as_ref()
     }
 }
@@ -72,8 +72,7 @@ impl TextDetectionBuilder {
     }
     /// <p>The word or line of text recognized by Amazon Rekognition.</p>
     pub fn set_detected_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detected_text = input;
-        self
+        self.detected_text = input; self
     }
     /// <p>The word or line of text recognized by Amazon Rekognition.</p>
     pub fn get_detected_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl TextDetectionBuilder {
     }
     /// <p>The type of text that was detected.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TextTypes>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of text that was detected.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TextTypes> {
@@ -100,8 +98,7 @@ impl TextDetectionBuilder {
     }
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<i32> {
@@ -114,8 +111,7 @@ impl TextDetectionBuilder {
     }
     /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.parent_id = input;
-        self
+        self.parent_id = input; self
     }
     /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>.</p>
     pub fn get_parent_id(&self) -> &::std::option::Option<i32> {
@@ -128,8 +124,7 @@ impl TextDetectionBuilder {
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -142,8 +137,7 @@ impl TextDetectionBuilder {
     }
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
@@ -152,12 +146,19 @@ impl TextDetectionBuilder {
     /// Consumes the builder and constructs a [`TextDetection`](crate::types::TextDetection).
     pub fn build(self) -> crate::types::TextDetection {
         crate::types::TextDetection {
-            detected_text: self.detected_text,
-            r#type: self.r#type,
-            id: self.id,
-            parent_id: self.parent_id,
-            confidence: self.confidence,
-            geometry: self.geometry,
+            detected_text: self.detected_text
+            ,
+            r#type: self.r#type
+            ,
+            id: self.id
+            ,
+            parent_id: self.parent_id
+            ,
+            confidence: self.confidence
+            ,
+            geometry: self.geometry
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Provides details for client authentication using SASL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoClientAuthenticationSaslDetails {
+pub struct AwsMskClusterClusterInfoClientAuthenticationSaslDetails  {
     /// <p>Provides details for SASL client authentication using IAM.</p>
     pub iam: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails>,
     /// <p>Details for SASL client authentication using SCRAM.</p>
     pub scram: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails>,
 }
-impl AwsMskClusterClusterInfoClientAuthenticationSaslDetails {
+impl  AwsMskClusterClusterInfoClientAuthenticationSaslDetails  {
     /// <p>Provides details for SASL client authentication using IAM.</p>
-    pub fn iam(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails> {
+    pub fn iam(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails> {
         self.iam.as_ref()
     }
     /// <p>Details for SASL client authentication using SCRAM.</p>
-    pub fn scram(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails> {
+    pub fn scram(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails> {
         self.scram.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationSaslDetailsBuilder {
     }
     /// <p>Provides details for SASL client authentication using IAM.</p>
     pub fn set_iam(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails>) -> Self {
-        self.iam = input;
-        self
+        self.iam = input; self
     }
     /// <p>Provides details for SASL client authentication using IAM.</p>
     pub fn get_iam(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails> {
@@ -55,8 +54,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationSaslDetailsBuilder {
     }
     /// <p>Details for SASL client authentication using SCRAM.</p>
     pub fn set_scram(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails>) -> Self {
-        self.scram = input;
-        self
+        self.scram = input; self
     }
     /// <p>Details for SASL client authentication using SCRAM.</p>
     pub fn get_scram(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails> {
@@ -65,8 +63,11 @@ impl AwsMskClusterClusterInfoClientAuthenticationSaslDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoClientAuthenticationSaslDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails {
         crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails {
-            iam: self.iam,
-            scram: self.scram,
+            iam: self.iam
+            ,
+            scram: self.scram
+            ,
         }
     }
 }
+

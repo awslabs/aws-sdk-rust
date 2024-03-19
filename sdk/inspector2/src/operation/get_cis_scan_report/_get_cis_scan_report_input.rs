@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCisScanReportInput {
+pub struct GetCisScanReportInput  {
     /// <p>The scan ARN.</p>
     pub scan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The target accounts.</p>
-    pub target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetCisScanReportInput {
+impl  GetCisScanReportInput  {
     /// <p>The scan ARN.</p>
-    pub fn scan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scan_arn(&self) -> ::std::option::Option<& str> {
         self.scan_arn.as_deref()
     }
     /// <p>The target accounts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_accounts.is_none()`.
-    pub fn target_accounts(&self) -> &[::std::string::String] {
-        self.target_accounts.as_deref().unwrap_or_default()
+    pub fn target_accounts(&self) -> & [::std::string::String] {
+        self.target_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetCisScanReportInput {
@@ -32,7 +33,7 @@ impl GetCisScanReportInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCisScanReportInputBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetCisScanReportInputBuilder {
     /// <p>The scan ARN.</p>
@@ -43,8 +44,7 @@ impl GetCisScanReportInputBuilder {
     }
     /// <p>The scan ARN.</p>
     pub fn set_scan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_arn = input;
-        self
+        self.scan_arn = input; self
     }
     /// <p>The scan ARN.</p>
     pub fn get_scan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl GetCisScanReportInputBuilder {
     /// <p>The target accounts.</p>
     pub fn target_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.target_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target accounts.</p>
-    pub fn set_target_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_accounts = input;
-        self
+    pub fn set_target_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_accounts = input; self
     }
     /// <p>The target accounts.</p>
-    pub fn get_target_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_accounts
     }
     /// Consumes the builder and constructs a [`GetCisScanReportInput`](crate::operation::get_cis_scan_report::GetCisScanReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cis_scan_report::GetCisScanReportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cis_scan_report::GetCisScanReportInput {
-            scan_arn: self.scan_arn,
-            target_accounts: self.target_accounts,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cis_scan_report::GetCisScanReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cis_scan_report::GetCisScanReportInput {
+                scan_arn: self.scan_arn
+                ,
+                target_accounts: self.target_accounts
+                ,
+            }
+        )
     }
 }
+

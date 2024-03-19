@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDataLakeInput {
+pub struct DeleteDataLakeInput  {
     /// <p>The list of Regions where Security Lake is enabled.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteDataLakeInput {
+impl  DeleteDataLakeInput  {
     /// <p>The list of Regions where Security Lake is enabled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteDataLakeInput {
@@ -25,7 +26,7 @@ impl DeleteDataLakeInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataLakeInputBuilder {
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteDataLakeInputBuilder {
     /// Appends an item to `regions`.
@@ -35,23 +36,26 @@ impl DeleteDataLakeInputBuilder {
     /// <p>The list of Regions where Security Lake is enabled.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Regions where Security Lake is enabled.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>The list of Regions where Security Lake is enabled.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// Consumes the builder and constructs a [`DeleteDataLakeInput`](crate::operation::delete_data_lake::DeleteDataLakeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_data_lake::DeleteDataLakeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_data_lake::DeleteDataLakeInput { regions: self.regions })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_lake::DeleteDataLakeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_data_lake::DeleteDataLakeInput {
+                regions: self.regions
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A list of <code>ProviderService</code> objects, each of which contain the fields <code>providerName</code>, <code>providerServiceArn</code>, <code>providerServiceName</code>, and <code>providerServiceType</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProviderServiceSummary {
+pub struct ProviderServiceSummary  {
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>providerService</code>.</p>
     pub provider_service_arn: ::std::string::String,
     /// <p>The name of the provider. This name is typically the company name.</p>
@@ -15,29 +15,25 @@ pub struct ProviderServiceSummary {
     /// <p>The type of provider service.</p>
     pub provider_service_type: crate::types::ServiceType,
 }
-impl ProviderServiceSummary {
+impl  ProviderServiceSummary  {
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>providerService</code>.</p>
-    pub fn provider_service_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_service_arn.deref()
+    pub fn provider_service_arn(&self) -> & str {
+        use std::ops::Deref; self.provider_service_arn.deref()
     }
     /// <p>The name of the provider. This name is typically the company name.</p>
-    pub fn provider_name(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_name.deref()
+    pub fn provider_name(&self) -> & str {
+        use std::ops::Deref; self.provider_name.deref()
     }
     /// <p>The display name of the provider service.</p>
-    pub fn provider_service_display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_service_display_name.deref()
+    pub fn provider_service_display_name(&self) -> & str {
+        use std::ops::Deref; self.provider_service_display_name.deref()
     }
     /// <p>The name of the product that the provider service provides.</p>
-    pub fn provider_service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_service_name.deref()
+    pub fn provider_service_name(&self) -> & str {
+        use std::ops::Deref; self.provider_service_name.deref()
     }
     /// <p>The type of provider service.</p>
-    pub fn provider_service_type(&self) -> &crate::types::ServiceType {
+    pub fn provider_service_type(&self) -> & crate::types::ServiceType {
         &self.provider_service_type
     }
 }
@@ -67,8 +63,7 @@ impl ProviderServiceSummaryBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>providerService</code>.</p>
     pub fn set_provider_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_service_arn = input;
-        self
+        self.provider_service_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>providerService</code>.</p>
     pub fn get_provider_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ProviderServiceSummaryBuilder {
     }
     /// <p>The name of the provider. This name is typically the company name.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the provider. This name is typically the company name.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl ProviderServiceSummaryBuilder {
     }
     /// <p>The display name of the provider service.</p>
     pub fn set_provider_service_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_service_display_name = input;
-        self
+        self.provider_service_display_name = input; self
     }
     /// <p>The display name of the provider service.</p>
     pub fn get_provider_service_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl ProviderServiceSummaryBuilder {
     }
     /// <p>The name of the product that the provider service provides.</p>
     pub fn set_provider_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_service_name = input;
-        self
+        self.provider_service_name = input; self
     }
     /// <p>The name of the product that the provider service provides.</p>
     pub fn get_provider_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +119,7 @@ impl ProviderServiceSummaryBuilder {
     }
     /// <p>The type of provider service.</p>
     pub fn set_provider_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.provider_service_type = input;
-        self
+        self.provider_service_type = input; self
     }
     /// <p>The type of provider service.</p>
     pub fn get_provider_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -142,37 +133,35 @@ impl ProviderServiceSummaryBuilder {
     /// - [`provider_service_name`](crate::types::builders::ProviderServiceSummaryBuilder::provider_service_name)
     /// - [`provider_service_type`](crate::types::builders::ProviderServiceSummaryBuilder::provider_service_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProviderServiceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProviderServiceSummary {
-            provider_service_arn: self.provider_service_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_service_arn",
-                    "provider_service_arn was not specified but it is required when building ProviderServiceSummary",
-                )
-            })?,
-            provider_name: self.provider_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_name",
-                    "provider_name was not specified but it is required when building ProviderServiceSummary",
-                )
-            })?,
-            provider_service_display_name: self.provider_service_display_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_service_display_name",
-                    "provider_service_display_name was not specified but it is required when building ProviderServiceSummary",
-                )
-            })?,
-            provider_service_name: self.provider_service_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_service_name",
-                    "provider_service_name was not specified but it is required when building ProviderServiceSummary",
-                )
-            })?,
-            provider_service_type: self.provider_service_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_service_type",
-                    "provider_service_type was not specified but it is required when building ProviderServiceSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProviderServiceSummary {
+                provider_service_arn: self.provider_service_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_service_arn", "provider_service_arn was not specified but it is required when building ProviderServiceSummary")
+                    )?
+                ,
+                provider_name: self.provider_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_name", "provider_name was not specified but it is required when building ProviderServiceSummary")
+                    )?
+                ,
+                provider_service_display_name: self.provider_service_display_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_service_display_name", "provider_service_display_name was not specified but it is required when building ProviderServiceSummary")
+                    )?
+                ,
+                provider_service_name: self.provider_service_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_service_name", "provider_service_name was not specified but it is required when building ProviderServiceSummary")
+                    )?
+                ,
+                provider_service_type: self.provider_service_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_service_type", "provider_service_type was not specified but it is required when building ProviderServiceSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

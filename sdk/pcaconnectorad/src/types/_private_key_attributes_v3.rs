@@ -3,39 +3,40 @@
 /// <p>Defines the attributes of the private key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateKeyAttributesV3 {
+pub struct PrivateKeyAttributesV3  {
     /// <p>Set the minimum key length of the private key.</p>
     pub minimal_key_length: i32,
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
     pub key_spec: crate::types::KeySpec,
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub crypto_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub crypto_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
     pub key_usage_property: ::std::option::Option<crate::types::KeyUsageProperty>,
     /// <p>Defines the algorithm used to generate the private key.</p>
     pub algorithm: crate::types::PrivateKeyAlgorithm,
 }
-impl PrivateKeyAttributesV3 {
+impl  PrivateKeyAttributesV3  {
     /// <p>Set the minimum key length of the private key.</p>
     pub fn minimal_key_length(&self) -> i32 {
         self.minimal_key_length
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
-    pub fn key_spec(&self) -> &crate::types::KeySpec {
+    pub fn key_spec(&self) -> & crate::types::KeySpec {
         &self.key_spec
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crypto_providers.is_none()`.
-    pub fn crypto_providers(&self) -> &[::std::string::String] {
-        self.crypto_providers.as_deref().unwrap_or_default()
+    pub fn crypto_providers(&self) -> & [::std::string::String] {
+        self.crypto_providers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
-    pub fn key_usage_property(&self) -> ::std::option::Option<&crate::types::KeyUsageProperty> {
+    pub fn key_usage_property(&self) -> ::std::option::Option<& crate::types::KeyUsageProperty> {
         self.key_usage_property.as_ref()
     }
     /// <p>Defines the algorithm used to generate the private key.</p>
-    pub fn algorithm(&self) -> &crate::types::PrivateKeyAlgorithm {
+    pub fn algorithm(&self) -> & crate::types::PrivateKeyAlgorithm {
         &self.algorithm
     }
 }
@@ -52,7 +53,7 @@ impl PrivateKeyAttributesV3 {
 pub struct PrivateKeyAttributesV3Builder {
     pub(crate) minimal_key_length: ::std::option::Option<i32>,
     pub(crate) key_spec: ::std::option::Option<crate::types::KeySpec>,
-    pub(crate) crypto_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) crypto_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) key_usage_property: ::std::option::Option<crate::types::KeyUsageProperty>,
     pub(crate) algorithm: ::std::option::Option<crate::types::PrivateKeyAlgorithm>,
 }
@@ -65,8 +66,7 @@ impl PrivateKeyAttributesV3Builder {
     }
     /// <p>Set the minimum key length of the private key.</p>
     pub fn set_minimal_key_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimal_key_length = input;
-        self
+        self.minimal_key_length = input; self
     }
     /// <p>Set the minimum key length of the private key.</p>
     pub fn get_minimal_key_length(&self) -> &::std::option::Option<i32> {
@@ -80,8 +80,7 @@ impl PrivateKeyAttributesV3Builder {
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
     pub fn set_key_spec(mut self, input: ::std::option::Option<crate::types::KeySpec>) -> Self {
-        self.key_spec = input;
-        self
+        self.key_spec = input; self
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
     pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::KeySpec> {
@@ -94,17 +93,16 @@ impl PrivateKeyAttributesV3Builder {
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
     pub fn crypto_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.crypto_providers.unwrap_or_default();
-        v.push(input.into());
-        self.crypto_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.crypto_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub fn set_crypto_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.crypto_providers = input;
-        self
+    pub fn set_crypto_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.crypto_providers = input; self
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub fn get_crypto_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_crypto_providers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.crypto_providers
     }
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
@@ -115,8 +113,7 @@ impl PrivateKeyAttributesV3Builder {
     }
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
     pub fn set_key_usage_property(mut self, input: ::std::option::Option<crate::types::KeyUsageProperty>) -> Self {
-        self.key_usage_property = input;
-        self
+        self.key_usage_property = input; self
     }
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
     pub fn get_key_usage_property(&self) -> &::std::option::Option<crate::types::KeyUsageProperty> {
@@ -130,8 +127,7 @@ impl PrivateKeyAttributesV3Builder {
     }
     /// <p>Defines the algorithm used to generate the private key.</p>
     pub fn set_algorithm(mut self, input: ::std::option::Option<crate::types::PrivateKeyAlgorithm>) -> Self {
-        self.algorithm = input;
-        self
+        self.algorithm = input; self
     }
     /// <p>Defines the algorithm used to generate the private key.</p>
     pub fn get_algorithm(&self) -> &::std::option::Option<crate::types::PrivateKeyAlgorithm> {
@@ -143,27 +139,29 @@ impl PrivateKeyAttributesV3Builder {
     /// - [`key_spec`](crate::types::builders::PrivateKeyAttributesV3Builder::key_spec)
     /// - [`algorithm`](crate::types::builders::PrivateKeyAttributesV3Builder::algorithm)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV3, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrivateKeyAttributesV3 {
-            minimal_key_length: self.minimal_key_length.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minimal_key_length",
-                    "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV3",
-                )
-            })?,
-            key_spec: self.key_spec.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_spec",
-                    "key_spec was not specified but it is required when building PrivateKeyAttributesV3",
-                )
-            })?,
-            crypto_providers: self.crypto_providers,
-            key_usage_property: self.key_usage_property,
-            algorithm: self.algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "algorithm",
-                    "algorithm was not specified but it is required when building PrivateKeyAttributesV3",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrivateKeyAttributesV3 {
+                minimal_key_length: self.minimal_key_length
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minimal_key_length", "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV3")
+                    )?
+                ,
+                key_spec: self.key_spec
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_spec", "key_spec was not specified but it is required when building PrivateKeyAttributesV3")
+                    )?
+                ,
+                crypto_providers: self.crypto_providers
+                ,
+                key_usage_property: self.key_usage_property
+                ,
+                algorithm: self.algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("algorithm", "algorithm was not specified but it is required when building PrivateKeyAttributesV3")
+                    )?
+                ,
+            }
+        )
     }
 }
+

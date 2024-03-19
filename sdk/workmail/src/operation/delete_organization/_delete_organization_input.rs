@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOrganizationInput {
+pub struct DeleteOrganizationInput  {
     /// <p>The idempotency token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The organization ID.</p>
@@ -12,13 +12,13 @@ pub struct DeleteOrganizationInput {
     /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DeleteOrganizationInput {
+impl  DeleteOrganizationInput  {
     /// <p>The idempotency token associated with the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
@@ -54,8 +54,7 @@ impl DeleteOrganizationInputBuilder {
     }
     /// <p>The idempotency token associated with the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency token associated with the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteOrganizationInputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The organization ID.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DeleteOrganizationInputBuilder {
     }
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
     pub fn set_delete_directory(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_directory = input;
-        self
+        self.delete_directory = input; self
     }
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
     pub fn get_delete_directory(&self) -> &::std::option::Option<bool> {
@@ -98,22 +95,26 @@ impl DeleteOrganizationInputBuilder {
     }
     /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_organization::DeleteOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_organization::DeleteOrganizationInput {
-            client_token: self.client_token,
-            organization_id: self.organization_id,
-            delete_directory: self.delete_directory,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_organization::DeleteOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_organization::DeleteOrganizationInput {
+                client_token: self.client_token
+                ,
+                organization_id: self.organization_id
+                ,
+                delete_directory: self.delete_directory
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

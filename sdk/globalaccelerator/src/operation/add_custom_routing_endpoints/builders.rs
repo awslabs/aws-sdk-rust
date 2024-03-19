@@ -5,23 +5,20 @@ pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endp
 
 impl AddCustomRoutingEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_custom_routing_endpoints();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_custom_routing_endpoints();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddCustomRoutingEndpoints`.
-///
+/// 
 /// <p>Associate a virtual private cloud (VPC) subnet endpoint with your custom routing accelerator.</p>
 /// <p>The listener port range must be large enough to support the number of IP addresses that can be specified in your subnet. The number of ports required is: subnet size times the number of ports per destination EC2 instances. For example, a subnet defined as /24 requires a listener port range of at least 255 ports.</p>
 /// <p>Note: You must have enough remaining listener ports available to map to the subnet ports, or the call will fail with a LimitExceededException.</p>
@@ -29,33 +26,32 @@ impl AddCustomRoutingEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder,
+                    inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-    > for AddCustomRoutingEndpointsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
+                    crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
+                > for AddCustomRoutingEndpointsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
+                        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddCustomRoutingEndpointsFluentBuilder {
     /// Creates a new `AddCustomRoutingEndpoints`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput, crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `EndpointConfigurations`.
     ///
     /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
@@ -121,15 +108,12 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         self
     }
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn set_endpoint_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
-    ) -> Self {
+    pub fn set_endpoint_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingEndpointConfiguration>>) -> Self {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
     }
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>> {
+    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingEndpointConfiguration>> {
         self.inner.get_endpoint_configurations()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
@@ -147,3 +131,4 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         self.inner.get_endpoint_group_arn()
     }
 }
+

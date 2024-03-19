@@ -3,13 +3,13 @@
 /// <p>A structure that identifies a resource that is currently pending addition to the group as a member. Adding a resource to a resource group happens asynchronously as a background task and this one isn't completed yet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PendingResource {
+pub struct PendingResource  {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl PendingResource {
+impl  PendingResource  {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PendingResourceBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PendingResourceBuilder {
     /// Consumes the builder and constructs a [`PendingResource`](crate::types::PendingResource).
     pub fn build(self) -> crate::types::PendingResource {
         crate::types::PendingResource {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

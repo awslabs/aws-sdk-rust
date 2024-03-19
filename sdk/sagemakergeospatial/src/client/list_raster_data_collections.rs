@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRasterDataCollections`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return.</p><br>
-    /// - On success, responds with [`ListRasterDataCollectionsOutput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput) with field(s):
+                            /// - On success, responds with [`ListRasterDataCollectionsOutput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput) with field(s):
     ///   - [`raster_data_collection_summaries(Vec::<RasterDataCollectionMetadata>)`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput::raster_data_collection_summaries): <p>Contains summary information about the raster data collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListRasterDataCollectionsError>`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsError)
+                            /// - On failure, responds with [`SdkError<ListRasterDataCollectionsError>`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsError)
     pub fn list_raster_data_collections(&self) -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder {
-        crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

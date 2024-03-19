@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLicenseInput {
+pub struct DeleteLicenseInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>Current version of the license.</p>
     pub source_version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLicenseInput {
+impl  DeleteLicenseInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_arn(&self) -> ::std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Current version of the license.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteLicenseInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteLicenseInputBuilder {
     }
     /// <p>Current version of the license.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>Current version of the license.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_version
     }
     /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::operation::delete_license::DeleteLicenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_license::DeleteLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_license::DeleteLicenseInput {
-            license_arn: self.license_arn,
-            source_version: self.source_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_license::DeleteLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_license::DeleteLicenseInput {
+                license_arn: self.license_arn
+                ,
+                source_version: self.source_version
+                ,
+            }
+        )
     }
 }
+

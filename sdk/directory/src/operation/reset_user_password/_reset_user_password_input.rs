@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ResetUserPasswordInput {
+pub struct ResetUserPasswordInput  {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user whose password will be reset.</p>
@@ -10,21 +10,21 @@ pub struct ResetUserPasswordInput {
     /// <p>The new password that will be reset.</p>
     pub new_password: ::std::option::Option<::std::string::String>,
 }
-impl ResetUserPasswordInput {
+impl  ResetUserPasswordInput  {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The user name of the user whose password will be reset.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The new password that will be reset.</p>
-    pub fn new_password(&self) -> ::std::option::Option<&str> {
+    pub fn new_password(&self) -> ::std::option::Option<& str> {
         self.new_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for ResetUserPasswordInput {
+impl  ::std::fmt::Debug for ResetUserPasswordInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResetUserPasswordInput");
         formatter.field("directory_id", &self.directory_id);
@@ -57,8 +57,7 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>The user name of the user whose password will be reset.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The user name of the user whose password will be reset.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,22 +85,24 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>The new password that will be reset.</p>
     pub fn set_new_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_password = input;
-        self
+        self.new_password = input; self
     }
     /// <p>The new password that will be reset.</p>
     pub fn get_new_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_password
     }
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reset_user_password::ResetUserPasswordInput {
-            directory_id: self.directory_id,
-            user_name: self.user_name,
-            new_password: self.new_password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_user_password::ResetUserPasswordInput {
+                directory_id: self.directory_id
+                ,
+                user_name: self.user_name
+                ,
+                new_password: self.new_password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ResetUserPasswordInputBuilder {
@@ -114,3 +114,4 @@ impl ::std::fmt::Debug for ResetUserPasswordInputBuilder {
         formatter.finish()
     }
 }
+

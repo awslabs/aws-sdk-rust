@@ -3,36 +3,36 @@
 /// <p>The response to respond to the authentication challenge.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RespondToAuthChallengeOutput {
+pub struct RespondToAuthChallengeOutput  {
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub challenge_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
-impl RespondToAuthChallengeOutput {
+impl  RespondToAuthChallengeOutput  {
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
+    pub fn challenge_name(&self) -> ::std::option::Option<& crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(&self) -> ::std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<& str> {
         self.session.as_deref()
     }
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    pub fn challenge_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn challenge_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.challenge_parameters.as_ref()
     }
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
-    pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
+    pub fn authentication_result(&self) -> ::std::option::Option<& crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
 }
-impl ::std::fmt::Debug for RespondToAuthChallengeOutput {
+impl  ::std::fmt::Debug for RespondToAuthChallengeOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RespondToAuthChallengeOutput");
         formatter.field("challenge_name", &self.challenge_name);
@@ -44,10 +44,10 @@ impl ::std::fmt::Debug for RespondToAuthChallengeOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RespondToAuthChallengeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RespondToAuthChallengeOutput {
     /// Creates a new builder-style object to manufacture [`RespondToAuthChallengeOutput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput).
     pub fn builder() -> crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeOutputBuilder {
@@ -61,7 +61,7 @@ impl RespondToAuthChallengeOutput {
 pub struct RespondToAuthChallengeOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
-    pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
@@ -73,8 +73,7 @@ impl RespondToAuthChallengeOutputBuilder {
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
-        self.challenge_name = input;
-        self
+        self.challenge_name = input; self
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
@@ -87,8 +86,7 @@ impl RespondToAuthChallengeOutputBuilder {
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,18 @@ impl RespondToAuthChallengeOutputBuilder {
     /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
     ///
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    pub fn challenge_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn challenge_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.challenge_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.challenge_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.challenge_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    pub fn set_challenge_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.challenge_parameters = input;
-        self
+    pub fn set_challenge_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.challenge_parameters = input; self
     }
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.challenge_parameters
     }
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
@@ -128,29 +118,32 @@ impl RespondToAuthChallengeOutputBuilder {
     }
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
     pub fn set_authentication_result(mut self, input: ::std::option::Option<crate::types::AuthenticationResultType>) -> Self {
-        self.authentication_result = input;
-        self
+        self.authentication_result = input; self
     }
     /// <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RespondToAuthChallengeOutput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput).
     pub fn build(self) -> crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput {
         crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput {
-            challenge_name: self.challenge_name,
-            session: self.session,
-            challenge_parameters: self.challenge_parameters,
-            authentication_result: self.authentication_result,
+            challenge_name: self.challenge_name
+            ,
+            session: self.session
+            ,
+            challenge_parameters: self.challenge_parameters
+            ,
+            authentication_result: self.authentication_result
+            ,
             _request_id: self._request_id,
         }
     }
@@ -166,3 +159,4 @@ impl ::std::fmt::Debug for RespondToAuthChallengeOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsTimestampRange {
+pub struct HlsTimestampRange  {
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head.</p>
@@ -16,11 +16,11 @@ pub struct HlsTimestampRange {
     /// </note>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl HlsTimestampRange {
+impl  HlsTimestampRange  {
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head.</p>
-    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
@@ -28,7 +28,7 @@ impl HlsTimestampRange {
     /// <p>The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly ingested fragments until the session expires.</p><note>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
     /// </note>
-    pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl HlsTimestampRangeBuilder {
     /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head.</p>
     pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_timestamp = input;
-        self
+        self.start_timestamp = input; self
     }
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
@@ -82,8 +81,7 @@ impl HlsTimestampRangeBuilder {
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.</p>
     /// </note>
     pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_timestamp = input;
-        self
+        self.end_timestamp = input; self
     }
     /// <p>The end of the timestamp range for the requested media. This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
     /// <p>If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p>
@@ -96,8 +94,11 @@ impl HlsTimestampRangeBuilder {
     /// Consumes the builder and constructs a [`HlsTimestampRange`](crate::types::HlsTimestampRange).
     pub fn build(self) -> crate::types::HlsTimestampRange {
         crate::types::HlsTimestampRange {
-            start_timestamp: self.start_timestamp,
-            end_timestamp: self.end_timestamp,
+            start_timestamp: self.start_timestamp
+            ,
+            end_timestamp: self.end_timestamp
+            ,
         }
     }
 }
+

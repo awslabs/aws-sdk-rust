@@ -3,7 +3,7 @@
 /// <p>The outcome.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Outcome {
+pub struct Outcome  {
     /// <p>The outcome name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The outcome description.</p>
@@ -15,25 +15,25 @@ pub struct Outcome {
     /// <p>The outcome ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl Outcome {
+impl  Outcome  {
     /// <p>The outcome name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The outcome description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp when the outcome was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The timestamp when the outcome was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>The outcome ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl OutcomeBuilder {
     }
     /// <p>The outcome name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The outcome name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl OutcomeBuilder {
     }
     /// <p>The outcome description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The outcome description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl OutcomeBuilder {
     }
     /// <p>The timestamp when the outcome was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The timestamp when the outcome was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl OutcomeBuilder {
     }
     /// <p>The timestamp when the outcome was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp when the outcome was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl OutcomeBuilder {
     }
     /// <p>The outcome ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The outcome ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl OutcomeBuilder {
     /// Consumes the builder and constructs a [`Outcome`](crate::types::Outcome).
     pub fn build(self) -> crate::types::Outcome {
         crate::types::Outcome {
-            name: self.name,
-            description: self.description,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
-            arn: self.arn,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_time: self.created_time
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

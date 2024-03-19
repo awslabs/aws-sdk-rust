@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCertificates`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`certificate_statuses(CertificateStatus)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::certificate_statuses) / [`set_certificate_statuses(Option<Vec::<CertificateStatus>>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_certificate_statuses):<br>required: **false**<br><p>Filter the certificate list by status value.</p><br>
     ///   - [`includes(Filters)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::includes) / [`set_includes(Option<Filters>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_includes):<br>required: **false**<br><p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_next_token):<br>required: **false**<br><p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_max_items):<br>required: **false**<br><p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p><br>
     ///   - [`sort_by(SortBy)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_sort_by):<br>required: **false**<br><p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_sort_order):<br>required: **false**<br><p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p><br>
-    /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
+                            /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_token): <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     ///   - [`certificate_summary_list(Option<Vec::<CertificateSummary>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificate_summary_list): <p>A list of ACM certificates.</p>
-    /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
+                            /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
     pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
-        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

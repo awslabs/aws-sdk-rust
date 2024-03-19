@@ -3,7 +3,7 @@
 /// <p>Information about the access grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessGrantEntry {
+pub struct ListAccessGrantEntry  {
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
@@ -31,21 +31,21 @@ pub struct ListAccessGrantEntry {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListAccessGrantEntry {
+impl  ListAccessGrantEntry  {
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
-    pub fn access_grant_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grant_id(&self) -> ::std::option::Option<& str> {
         self.access_grant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access grant.</p>
-    pub fn access_grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_grant_arn(&self) -> ::std::option::Option<& str> {
         self.access_grant_arn.as_deref()
     }
     /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
+    pub fn grantee(&self) -> ::std::option::Option<& crate::types::Grantee> {
         self.grantee.as_ref()
     }
     /// <p>The type of access granted to your S3 data, which can be set to one of the following values:</p>
@@ -57,23 +57,23 @@ impl ListAccessGrantEntry {
     /// <li>
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
-    pub fn access_grants_location_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_location_id(&self) -> ::std::option::Option<& str> {
         self.access_grants_location_id.as_deref()
     }
     /// <p>The configuration options of the grant location. The grant location is the S3 path to the data to which you are granting access.</p>
-    pub fn access_grants_location_configuration(&self) -> ::std::option::Option<&crate::types::AccessGrantsLocationConfiguration> {
+    pub fn access_grants_location_configuration(&self) -> ::std::option::Option<& crate::types::AccessGrantsLocationConfiguration> {
         self.access_grants_location_configuration.as_ref()
     }
     /// <p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p>
-    pub fn grant_scope(&self) -> ::std::option::Option<&str> {
+    pub fn grant_scope(&self) -> ::std::option::Option<& str> {
         self.grant_scope.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
@@ -106,8 +106,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -120,8 +119,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
     pub fn set_access_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grant_id = input;
-        self
+        self.access_grant_id = input; self
     }
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
     pub fn get_access_grant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the access grant.</p>
     pub fn set_access_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grant_arn = input;
-        self
+        self.access_grant_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the access grant.</p>
     pub fn get_access_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +145,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::Grantee>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
@@ -178,8 +174,7 @@ impl ListAccessGrantEntryBuilder {
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The type of access granted to your S3 data, which can be set to one of the following values:</p>
     /// <ul>
@@ -200,8 +195,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub fn set_access_grants_location_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_location_id = input;
-        self
+        self.access_grants_location_id = input; self
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub fn get_access_grants_location_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +208,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The configuration options of the grant location. The grant location is the S3 path to the data to which you are granting access.</p>
     pub fn set_access_grants_location_configuration(mut self, input: ::std::option::Option<crate::types::AccessGrantsLocationConfiguration>) -> Self {
-        self.access_grants_location_configuration = input;
-        self
+        self.access_grants_location_configuration = input; self
     }
     /// <p>The configuration options of the grant location. The grant location is the S3 path to the data to which you are granting access.</p>
     pub fn get_access_grants_location_configuration(&self) -> &::std::option::Option<crate::types::AccessGrantsLocationConfiguration> {
@@ -228,8 +221,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p>
     pub fn set_grant_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_scope = input;
-        self
+        self.grant_scope = input; self
     }
     /// <p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p>
     pub fn get_grant_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +234,7 @@ impl ListAccessGrantEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,15 +243,25 @@ impl ListAccessGrantEntryBuilder {
     /// Consumes the builder and constructs a [`ListAccessGrantEntry`](crate::types::ListAccessGrantEntry).
     pub fn build(self) -> crate::types::ListAccessGrantEntry {
         crate::types::ListAccessGrantEntry {
-            created_at: self.created_at,
-            access_grant_id: self.access_grant_id,
-            access_grant_arn: self.access_grant_arn,
-            grantee: self.grantee,
-            permission: self.permission,
-            access_grants_location_id: self.access_grants_location_id,
-            access_grants_location_configuration: self.access_grants_location_configuration,
-            grant_scope: self.grant_scope,
-            application_arn: self.application_arn,
+            created_at: self.created_at
+            ,
+            access_grant_id: self.access_grant_id
+            ,
+            access_grant_arn: self.access_grant_arn
+            ,
+            grantee: self.grantee
+            ,
+            permission: self.permission
+            ,
+            access_grants_location_id: self.access_grants_location_id
+            ,
+            access_grants_location_configuration: self.access_grants_location_configuration
+            ,
+            grant_scope: self.grant_scope
+            ,
+            application_arn: self.application_arn
+            ,
         }
     }
 }
+

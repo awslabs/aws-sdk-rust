@@ -3,7 +3,7 @@
 /// <p>The details of an alert manager definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlertManagerDefinitionDescription {
+pub struct AlertManagerDefinitionDescription  {
     /// <p>A structure that displays the current status of the alert manager definition..</p>
     pub status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     /// <p>The actual alert manager definition.</p>
@@ -14,22 +14,22 @@ pub struct AlertManagerDefinitionDescription {
     /// <p>The date and time that the alert manager definition was most recently changed.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
 }
-impl AlertManagerDefinitionDescription {
+impl  AlertManagerDefinitionDescription  {
     /// <p>A structure that displays the current status of the alert manager definition..</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
     /// <p>The actual alert manager definition.</p>
     /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-    pub fn data(&self) -> &::aws_smithy_types::Blob {
+    pub fn data(&self) -> & ::aws_smithy_types::Blob {
         &self.data
     }
     /// <p>The date and time that the alert manager definition was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time that the alert manager definition was most recently changed.</p>
-    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.modified_at
     }
 }
@@ -58,8 +58,7 @@ impl AlertManagerDefinitionDescriptionBuilder {
     }
     /// <p>A structure that displays the current status of the alert manager definition..</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A structure that displays the current status of the alert manager definition..</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AlertManagerDefinitionStatus> {
@@ -75,8 +74,7 @@ impl AlertManagerDefinitionDescriptionBuilder {
     /// <p>The actual alert manager definition.</p>
     /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The actual alert manager definition.</p>
     /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
@@ -91,8 +89,7 @@ impl AlertManagerDefinitionDescriptionBuilder {
     }
     /// <p>The date and time that the alert manager definition was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the alert manager definition was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -106,8 +103,7 @@ impl AlertManagerDefinitionDescriptionBuilder {
     }
     /// <p>The date and time that the alert manager definition was most recently changed.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The date and time that the alert manager definition was most recently changed.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,26 +115,27 @@ impl AlertManagerDefinitionDescriptionBuilder {
     /// - [`created_at`](crate::types::builders::AlertManagerDefinitionDescriptionBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::AlertManagerDefinitionDescriptionBuilder::modified_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AlertManagerDefinitionDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AlertManagerDefinitionDescription {
-            status: self.status,
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building AlertManagerDefinitionDescription",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AlertManagerDefinitionDescription",
-                )
-            })?,
-            modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "modified_at",
-                    "modified_at was not specified but it is required when building AlertManagerDefinitionDescription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AlertManagerDefinitionDescription {
+                status: self.status
+                ,
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building AlertManagerDefinitionDescription")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AlertManagerDefinitionDescription")
+                    )?
+                ,
+                modified_at: self.modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("modified_at", "modified_at was not specified but it is required when building AlertManagerDefinitionDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

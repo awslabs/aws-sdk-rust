@@ -3,7 +3,7 @@
 /// <p>A structure that describes the context for a service quota. The context identifies what the quota applies to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuotaContextInfo {
+pub struct QuotaContextInfo  {
     /// <p>Specifies whether the quota applies to an Amazon Web Services account, or to a resource.</p>
     pub context_scope: ::std::option::Option<crate::types::QuotaContextScope>,
     /// <p>When the <code>ContextScope</code> is <code>RESOURCE</code>, then this specifies the resource type of the specified resource.</p>
@@ -11,17 +11,17 @@ pub struct QuotaContextInfo {
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
     pub context_id: ::std::option::Option<::std::string::String>,
 }
-impl QuotaContextInfo {
+impl  QuotaContextInfo  {
     /// <p>Specifies whether the quota applies to an Amazon Web Services account, or to a resource.</p>
-    pub fn context_scope(&self) -> ::std::option::Option<&crate::types::QuotaContextScope> {
+    pub fn context_scope(&self) -> ::std::option::Option<& crate::types::QuotaContextScope> {
         self.context_scope.as_ref()
     }
     /// <p>When the <code>ContextScope</code> is <code>RESOURCE</code>, then this specifies the resource type of the specified resource.</p>
-    pub fn context_scope_type(&self) -> ::std::option::Option<&str> {
+    pub fn context_scope_type(&self) -> ::std::option::Option<& str> {
         self.context_scope_type.as_deref()
     }
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
-    pub fn context_id(&self) -> ::std::option::Option<&str> {
+    pub fn context_id(&self) -> ::std::option::Option<& str> {
         self.context_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl QuotaContextInfoBuilder {
     }
     /// <p>Specifies whether the quota applies to an Amazon Web Services account, or to a resource.</p>
     pub fn set_context_scope(mut self, input: ::std::option::Option<crate::types::QuotaContextScope>) -> Self {
-        self.context_scope = input;
-        self
+        self.context_scope = input; self
     }
     /// <p>Specifies whether the quota applies to an Amazon Web Services account, or to a resource.</p>
     pub fn get_context_scope(&self) -> &::std::option::Option<crate::types::QuotaContextScope> {
@@ -62,8 +61,7 @@ impl QuotaContextInfoBuilder {
     }
     /// <p>When the <code>ContextScope</code> is <code>RESOURCE</code>, then this specifies the resource type of the specified resource.</p>
     pub fn set_context_scope_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context_scope_type = input;
-        self
+        self.context_scope_type = input; self
     }
     /// <p>When the <code>ContextScope</code> is <code>RESOURCE</code>, then this specifies the resource type of the specified resource.</p>
     pub fn get_context_scope_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl QuotaContextInfoBuilder {
     }
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
     pub fn set_context_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context_id = input;
-        self
+        self.context_id = input; self
     }
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl QuotaContextInfoBuilder {
     /// Consumes the builder and constructs a [`QuotaContextInfo`](crate::types::QuotaContextInfo).
     pub fn build(self) -> crate::types::QuotaContextInfo {
         crate::types::QuotaContextInfo {
-            context_scope: self.context_scope,
-            context_scope_type: self.context_scope_type,
-            context_id: self.context_id,
+            context_scope: self.context_scope
+            ,
+            context_scope_type: self.context_scope_type
+            ,
+            context_id: self.context_id
+            ,
         }
     }
 }
+

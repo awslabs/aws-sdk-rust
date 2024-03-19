@@ -3,7 +3,7 @@
 /// An object that contains a voice message and information about the recipient that you want to send it to.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceMessageContent {
+pub struct VoiceMessageContent  {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     pub call_instructions_message: ::std::option::Option<crate::types::CallInstructionsMessageType>,
     /// An object that defines a message that contains unformatted text.
@@ -11,17 +11,17 @@ pub struct VoiceMessageContent {
     /// An object that defines a message that contains SSML-formatted text.
     pub ssml_message: ::std::option::Option<crate::types::SsmlMessageType>,
 }
-impl VoiceMessageContent {
+impl  VoiceMessageContent  {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
-    pub fn call_instructions_message(&self) -> ::std::option::Option<&crate::types::CallInstructionsMessageType> {
+    pub fn call_instructions_message(&self) -> ::std::option::Option<& crate::types::CallInstructionsMessageType> {
         self.call_instructions_message.as_ref()
     }
     /// An object that defines a message that contains unformatted text.
-    pub fn plain_text_message(&self) -> ::std::option::Option<&crate::types::PlainTextMessageType> {
+    pub fn plain_text_message(&self) -> ::std::option::Option<& crate::types::PlainTextMessageType> {
         self.plain_text_message.as_ref()
     }
     /// An object that defines a message that contains SSML-formatted text.
-    pub fn ssml_message(&self) -> ::std::option::Option<&crate::types::SsmlMessageType> {
+    pub fn ssml_message(&self) -> ::std::option::Option<& crate::types::SsmlMessageType> {
         self.ssml_message.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl VoiceMessageContentBuilder {
     }
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     pub fn set_call_instructions_message(mut self, input: ::std::option::Option<crate::types::CallInstructionsMessageType>) -> Self {
-        self.call_instructions_message = input;
-        self
+        self.call_instructions_message = input; self
     }
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     pub fn get_call_instructions_message(&self) -> &::std::option::Option<crate::types::CallInstructionsMessageType> {
@@ -62,8 +61,7 @@ impl VoiceMessageContentBuilder {
     }
     /// An object that defines a message that contains unformatted text.
     pub fn set_plain_text_message(mut self, input: ::std::option::Option<crate::types::PlainTextMessageType>) -> Self {
-        self.plain_text_message = input;
-        self
+        self.plain_text_message = input; self
     }
     /// An object that defines a message that contains unformatted text.
     pub fn get_plain_text_message(&self) -> &::std::option::Option<crate::types::PlainTextMessageType> {
@@ -76,8 +74,7 @@ impl VoiceMessageContentBuilder {
     }
     /// An object that defines a message that contains SSML-formatted text.
     pub fn set_ssml_message(mut self, input: ::std::option::Option<crate::types::SsmlMessageType>) -> Self {
-        self.ssml_message = input;
-        self
+        self.ssml_message = input; self
     }
     /// An object that defines a message that contains SSML-formatted text.
     pub fn get_ssml_message(&self) -> &::std::option::Option<crate::types::SsmlMessageType> {
@@ -86,9 +83,13 @@ impl VoiceMessageContentBuilder {
     /// Consumes the builder and constructs a [`VoiceMessageContent`](crate::types::VoiceMessageContent).
     pub fn build(self) -> crate::types::VoiceMessageContent {
         crate::types::VoiceMessageContent {
-            call_instructions_message: self.call_instructions_message,
-            plain_text_message: self.plain_text_message,
-            ssml_message: self.ssml_message,
+            call_instructions_message: self.call_instructions_message
+            ,
+            plain_text_message: self.plain_text_message
+            ,
+            ssml_message: self.ssml_message
+            ,
         }
     }
 }
+

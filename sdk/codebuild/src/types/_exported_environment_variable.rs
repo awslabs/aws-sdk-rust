@@ -6,19 +6,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportedEnvironmentVariable {
+pub struct ExportedEnvironmentVariable  {
     /// <p>The name of the exported environment variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value assigned to the exported environment variable.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ExportedEnvironmentVariable {
+impl  ExportedEnvironmentVariable  {
     /// <p>The name of the exported environment variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value assigned to the exported environment variable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl ExportedEnvironmentVariableBuilder {
     }
     /// <p>The name of the exported environment variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the exported environment variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +57,7 @@ impl ExportedEnvironmentVariableBuilder {
     }
     /// <p>The value assigned to the exported environment variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value assigned to the exported environment variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +66,11 @@ impl ExportedEnvironmentVariableBuilder {
     /// Consumes the builder and constructs a [`ExportedEnvironmentVariable`](crate::types::ExportedEnvironmentVariable).
     pub fn build(self) -> crate::types::ExportedEnvironmentVariable {
         crate::types::ExportedEnvironmentVariable {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

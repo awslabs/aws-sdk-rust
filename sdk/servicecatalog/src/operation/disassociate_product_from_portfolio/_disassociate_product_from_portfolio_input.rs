@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateProductFromPortfolioInput {
+pub struct DisassociateProductFromPortfolioInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct DisassociateProductFromPortfolioInput {
     /// <p>The portfolio identifier.</p>
     pub portfolio_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateProductFromPortfolioInput {
+impl  DisassociateProductFromPortfolioInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -24,15 +24,15 @@ impl DisassociateProductFromPortfolioInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> ::std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -92,8 +91,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,26 +105,24 @@ impl DisassociateProductFromPortfolioInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.portfolio_id
     }
     /// Consumes the builder and constructs a [`DisassociateProductFromPortfolioInput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput {
-                accept_language: self.accept_language,
-                product_id: self.product_id,
-                portfolio_id: self.portfolio_id,
-            },
+                accept_language: self.accept_language
+                ,
+                product_id: self.product_id
+                ,
+                portfolio_id: self.portfolio_id
+                ,
+            }
         )
     }
 }
+

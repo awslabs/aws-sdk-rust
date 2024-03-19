@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServerOutput {
+pub struct DescribeServerOutput  {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     pub server: ::std::option::Option<crate::types::DescribedServer>,
     _request_id: Option<String>,
 }
-impl DescribeServerOutput {
+impl  DescribeServerOutput  {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
-    pub fn server(&self) -> ::std::option::Option<&crate::types::DescribedServer> {
+    pub fn server(&self) -> ::std::option::Option<& crate::types::DescribedServer> {
         self.server.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeServerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServerOutput`](crate::operation::describe_server::DescribeServerOutput).
     pub fn builder() -> crate::operation::describe_server::builders::DescribeServerOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeServerOutputBuilder {
     }
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::DescribedServer>) -> Self {
-        self.server = input;
-        self
+        self.server = input; self
     }
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::DescribedServer> {
         &self.server
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeServerOutput`](crate::operation::describe_server::DescribeServerOutput).
     pub fn build(self) -> crate::operation::describe_server::DescribeServerOutput {
         crate::operation::describe_server::DescribeServerOutput {
-            server: self.server,
+            server: self.server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

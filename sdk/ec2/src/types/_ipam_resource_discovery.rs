@@ -3,7 +3,7 @@
 /// <p>A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamResourceDiscovery {
+pub struct IpamResourceDiscovery  {
     /// <p>The ID of the owner.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery ID.</p>
@@ -15,7 +15,7 @@ pub struct IpamResourceDiscovery {
     /// <p>The resource discovery description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>>,
+    pub operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::IpamOperatingRegion>>,
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
     pub is_default: ::std::option::Option<bool>,
     /// <p>The lifecycle state of the resource discovery.</p>
@@ -47,34 +47,35 @@ pub struct IpamResourceDiscovery {
     /// </ul>
     pub state: ::std::option::Option<crate::types::IpamResourceDiscoveryState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl IpamResourceDiscovery {
+impl  IpamResourceDiscovery  {
     /// <p>The ID of the owner.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>The resource discovery Amazon Resource Name (ARN).</p>
-    pub fn ipam_resource_discovery_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_arn(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_arn.as_deref()
     }
     /// <p>The resource discovery Region.</p>
-    pub fn ipam_resource_discovery_region(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_region(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_region.as_deref()
     }
     /// <p>The resource discovery description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_regions.is_none()`.
-    pub fn operating_regions(&self) -> &[crate::types::IpamOperatingRegion] {
-        self.operating_regions.as_deref().unwrap_or_default()
+    pub fn operating_regions(&self) -> & [crate::types::IpamOperatingRegion] {
+        self.operating_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
     pub fn is_default(&self) -> ::std::option::Option<bool> {
@@ -107,14 +108,15 @@ impl IpamResourceDiscovery {
     /// <li>
     /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IpamResourceDiscoveryState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IpamResourceDiscoveryState> {
         self.state.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IpamResourceDiscovery {
@@ -133,10 +135,10 @@ pub struct IpamResourceDiscoveryBuilder {
     pub(crate) ipam_resource_discovery_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_resource_discovery_region: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>>,
+    pub(crate) operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::IpamOperatingRegion>>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) state: ::std::option::Option<crate::types::IpamResourceDiscoveryState>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl IpamResourceDiscoveryBuilder {
     /// <p>The ID of the owner.</p>
@@ -146,8 +148,7 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The ID of the owner.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the owner.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +161,7 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The resource discovery ID.</p>
     pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input;
-        self
+        self.ipam_resource_discovery_id = input; self
     }
     /// <p>The resource discovery ID.</p>
     pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +174,7 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The resource discovery Amazon Resource Name (ARN).</p>
     pub fn set_ipam_resource_discovery_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_arn = input;
-        self
+        self.ipam_resource_discovery_arn = input; self
     }
     /// <p>The resource discovery Amazon Resource Name (ARN).</p>
     pub fn get_ipam_resource_discovery_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +187,7 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The resource discovery Region.</p>
     pub fn set_ipam_resource_discovery_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_region = input;
-        self
+        self.ipam_resource_discovery_region = input; self
     }
     /// <p>The resource discovery Region.</p>
     pub fn get_ipam_resource_discovery_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +200,7 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>The resource discovery description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The resource discovery description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,17 +213,16 @@ impl IpamResourceDiscoveryBuilder {
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     pub fn operating_regions(mut self, input: crate::types::IpamOperatingRegion) -> Self {
         let mut v = self.operating_regions.unwrap_or_default();
-        v.push(input);
-        self.operating_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operating_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn set_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>>) -> Self {
-        self.operating_regions = input;
-        self
+    pub fn set_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpamOperatingRegion>>) -> Self {
+        self.operating_regions = input; self
     }
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn get_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>> {
+    pub fn get_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpamOperatingRegion>> {
         &self.operating_regions
     }
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
@@ -236,8 +232,7 @@ impl IpamResourceDiscoveryBuilder {
     }
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -302,8 +297,7 @@ impl IpamResourceDiscoveryBuilder {
     /// <p><code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamResourceDiscoveryState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
@@ -342,31 +336,40 @@ impl IpamResourceDiscoveryBuilder {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`IpamResourceDiscovery`](crate::types::IpamResourceDiscovery).
     pub fn build(self) -> crate::types::IpamResourceDiscovery {
         crate::types::IpamResourceDiscovery {
-            owner_id: self.owner_id,
-            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
-            ipam_resource_discovery_arn: self.ipam_resource_discovery_arn,
-            ipam_resource_discovery_region: self.ipam_resource_discovery_region,
-            description: self.description,
-            operating_regions: self.operating_regions,
-            is_default: self.is_default,
-            state: self.state,
-            tags: self.tags,
+            owner_id: self.owner_id
+            ,
+            ipam_resource_discovery_id: self.ipam_resource_discovery_id
+            ,
+            ipam_resource_discovery_arn: self.ipam_resource_discovery_arn
+            ,
+            ipam_resource_discovery_region: self.ipam_resource_discovery_region
+            ,
+            description: self.description
+            ,
+            operating_regions: self.operating_regions
+            ,
+            is_default: self.is_default
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

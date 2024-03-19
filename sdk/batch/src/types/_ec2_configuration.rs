@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2Configuration {
+pub struct Ec2Configuration  {
     /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
     /// <dl>
     /// <dt>
@@ -71,7 +71,7 @@ pub struct Ec2Configuration {
     /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
     pub image_kubernetes_version: ::std::option::Option<::std::string::String>,
 }
-impl Ec2Configuration {
+impl  Ec2Configuration  {
     /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
     /// <dl>
     /// <dt>
@@ -129,17 +129,17 @@ impl Ec2Configuration {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn image_type(&self) -> ::std::option::Option<&str> {
+    pub fn image_type(&self) -> ::std::option::Option<& str> {
         self.image_type.as_deref()
     }
     /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p><note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    pub fn image_id_override(&self) -> ::std::option::Option<&str> {
+    pub fn image_id_override(&self) -> ::std::option::Option<& str> {
         self.image_id_override.as_deref()
     }
     /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
-    pub fn image_kubernetes_version(&self) -> ::std::option::Option<&str> {
+    pub fn image_kubernetes_version(&self) -> ::std::option::Option<& str> {
         self.image_kubernetes_version.as_deref()
     }
 }
@@ -279,8 +279,7 @@ impl Ec2ConfigurationBuilder {
     /// </dd>
     /// </dl>
     pub fn set_image_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_type = input;
-        self
+        self.image_type = input; self
     }
     /// <p>The image type to match with the instance type to select an AMI. The supported values are different for <code>ECS</code> and <code>EKS</code> resources.</p>
     /// <dl>
@@ -353,8 +352,7 @@ impl Ec2ConfigurationBuilder {
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
     pub fn set_image_id_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id_override = input;
-        self
+        self.image_id_override = input; self
     }
     /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p><note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -369,8 +367,7 @@ impl Ec2ConfigurationBuilder {
     }
     /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
     pub fn set_image_kubernetes_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_kubernetes_version = input;
-        self
+        self.image_kubernetes_version = input; self
     }
     /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
     pub fn get_image_kubernetes_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -379,9 +376,13 @@ impl Ec2ConfigurationBuilder {
     /// Consumes the builder and constructs a [`Ec2Configuration`](crate::types::Ec2Configuration).
     pub fn build(self) -> crate::types::Ec2Configuration {
         crate::types::Ec2Configuration {
-            image_type: self.image_type,
-            image_id_override: self.image_id_override,
-            image_kubernetes_version: self.image_kubernetes_version,
+            image_type: self.image_type
+            ,
+            image_id_override: self.image_id_override
+            ,
+            image_kubernetes_version: self.image_kubernetes_version
+            ,
         }
     }
 }
+

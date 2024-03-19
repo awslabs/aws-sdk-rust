@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVerifiedAccessEndpointPolicyInput {
+pub struct GetVerifiedAccessEndpointPolicyInput  {
     /// <p>The ID of the Verified Access endpoint.</p>
     pub verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl GetVerifiedAccessEndpointPolicyInput {
+impl  GetVerifiedAccessEndpointPolicyInput  {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_endpoint_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl GetVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>The ID of the Verified Access endpoint.</p>
     pub fn set_verified_access_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_access_endpoint_id = input;
-        self
+        self.verified_access_endpoint_id = input; self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
     pub fn get_verified_access_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl GetVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetVerifiedAccessEndpointPolicyInput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput {
-                verified_access_endpoint_id: self.verified_access_endpoint_id,
-                dry_run: self.dry_run,
-            },
+                verified_access_endpoint_id: self.verified_access_endpoint_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Aliases attached to a user id within an Amazon Q application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserAlias {
+pub struct UserAlias  {
     /// <p>The identifier of the index that the user aliases are associated with.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source that the user aliases are associated with.</p>
@@ -11,19 +11,18 @@ pub struct UserAlias {
     /// <p>The identifier of the user id associated with the user aliases.</p>
     pub user_id: ::std::string::String,
 }
-impl UserAlias {
+impl  UserAlias  {
     /// <p>The identifier of the index that the user aliases are associated with.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source that the user aliases are associated with.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The identifier of the user id associated with the user aliases.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
 }
 impl UserAlias {
@@ -49,8 +48,7 @@ impl UserAliasBuilder {
     }
     /// <p>The identifier of the index that the user aliases are associated with.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index that the user aliases are associated with.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +61,7 @@ impl UserAliasBuilder {
     }
     /// <p>The identifier of the data source that the user aliases are associated with.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source that the user aliases are associated with.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl UserAliasBuilder {
     }
     /// <p>The identifier of the user id associated with the user aliases.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user id associated with the user aliases.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl UserAliasBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::types::builders::UserAliasBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UserAlias, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserAlias {
-            index_id: self.index_id,
-            data_source_id: self.data_source_id,
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building UserAlias",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserAlias {
+                index_id: self.index_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building UserAlias")
+                    )?
+                ,
+            }
+        )
     }
 }
+

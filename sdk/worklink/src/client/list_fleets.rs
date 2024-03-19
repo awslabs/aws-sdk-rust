@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFleets`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
+                            /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
     ///   - [`fleet_summary_list(Option<Vec::<FleetSummary>>)`](crate::operation::list_fleets::ListFleetsOutput::fleet_summary_list): <p>The summary list of the fleets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fleets::ListFleetsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
+                            /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
     pub fn list_fleets(&self) -> crate::operation::list_fleets::builders::ListFleetsFluentBuilder {
-        crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

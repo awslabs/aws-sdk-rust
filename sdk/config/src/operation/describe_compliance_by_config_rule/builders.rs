@@ -5,23 +5,20 @@ pub use crate::operation::describe_compliance_by_config_rule::_describe_complian
 
 impl DescribeComplianceByConfigRuleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_compliance_by_config_rule();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_compliance_by_config_rule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeComplianceByConfigRule`.
-///
+/// 
 /// <p>Indicates whether the specified Config rules are compliant. If a rule is noncompliant, this action returns the number of Amazon Web Services resources that do not comply with the rule.</p>
 /// <p>A rule is compliant if all of the evaluated resources comply with it. It is noncompliant if any of these resources do not comply.</p>
 /// <p>If Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions:</p>
@@ -36,33 +33,32 @@ impl DescribeComplianceByConfigRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComplianceByConfigRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleInputBuilder,
+                    inner: crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
-    > for DescribeComplianceByConfigRuleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
-            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
+                    crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
+                > for DescribeComplianceByConfigRuleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
+                        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeComplianceByConfigRuleFluentBuilder {
     /// Creates a new `DescribeComplianceByConfigRule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,59 +67,50 @@ impl DescribeComplianceByConfigRuleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRule::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRule::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput,
-        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRule::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRule::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput, crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_compliance_by_config_rule::paginator::DescribeComplianceByConfigRulePaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_compliance_by_config_rule::paginator::DescribeComplianceByConfigRulePaginator {
-        crate::operation::describe_compliance_by_config_rule::paginator::DescribeComplianceByConfigRulePaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_compliance_by_config_rule::paginator::DescribeComplianceByConfigRulePaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_compliance_by_config_rule::paginator::DescribeComplianceByConfigRulePaginator {
+                                crate::operation::describe_compliance_by_config_rule::paginator::DescribeComplianceByConfigRulePaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
@@ -134,12 +121,12 @@ impl DescribeComplianceByConfigRuleFluentBuilder {
         self
     }
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_config_rule_names()
     }
     /// Appends an item to `ComplianceTypes`.
@@ -152,12 +139,12 @@ impl DescribeComplianceByConfigRuleFluentBuilder {
         self
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>>) -> Self {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>> {
         self.inner.get_compliance_types()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -175,3 +162,4 @@ impl DescribeComplianceByConfigRuleFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

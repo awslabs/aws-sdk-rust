@@ -5,23 +5,20 @@ pub use crate::operation::batch_put_document::_batch_put_document_input::BatchPu
 
 impl BatchPutDocumentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_document::BatchPutDocumentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_put_document();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_put_document::BatchPutDocumentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_put_document::BatchPutDocumentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_put_document();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchPutDocument`.
-///
+/// 
 /// <p>Adds one or more documents to an index.</p>
 /// <p>The <code>BatchPutDocument</code> API enables you to ingest inline documents or a set of documents stored in an Amazon S3 bucket. Use this API to ingest your text and unstructured text into an index, add custom attributes to the documents, and to attach an access control list to the documents added to the index.</p>
 /// <p>The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch log. You can also use the <code>BatchGetDocumentStatus</code> API to monitor the progress of indexing your documents.</p>
@@ -29,33 +26,32 @@ impl BatchPutDocumentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutDocumentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder,
+                    inner: crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_put_document::BatchPutDocumentOutput,
-        crate::operation::batch_put_document::BatchPutDocumentError,
-    > for BatchPutDocumentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_put_document::BatchPutDocumentOutput,
-            crate::operation::batch_put_document::BatchPutDocumentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_put_document::BatchPutDocumentOutput,
+                    crate::operation::batch_put_document::BatchPutDocumentError,
+                > for BatchPutDocumentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_put_document::BatchPutDocumentOutput,
+                        crate::operation::batch_put_document::BatchPutDocumentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchPutDocumentFluentBuilder {
     /// Creates a new `BatchPutDocument`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl BatchPutDocumentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_document::BatchPutDocumentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_put_document::BatchPutDocumentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_put_document::BatchPutDocument::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_put_document::BatchPutDocument::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_put_document::BatchPutDocumentOutput,
-        crate::operation::batch_put_document::BatchPutDocumentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_put_document::BatchPutDocumentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_document::BatchPutDocumentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_put_document::BatchPutDocument::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_put_document::BatchPutDocument::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_put_document::BatchPutDocumentOutput, crate::operation::batch_put_document::BatchPutDocumentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -165,7 +152,7 @@ impl BatchPutDocumentFluentBuilder {
     /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Document>>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
@@ -178,7 +165,7 @@ impl BatchPutDocumentFluentBuilder {
     /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Document>> {
         self.inner.get_documents()
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
@@ -189,10 +176,7 @@ impl BatchPutDocumentFluentBuilder {
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn set_custom_document_enrichment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
-    ) -> Self {
+    pub fn set_custom_document_enrichment_configuration(mut self, input: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>) -> Self {
         self.inner = self.inner.set_custom_document_enrichment_configuration(input);
         self
     }
@@ -202,3 +186,4 @@ impl BatchPutDocumentFluentBuilder {
         self.inner.get_custom_document_enrichment_configuration()
     }
 }
+

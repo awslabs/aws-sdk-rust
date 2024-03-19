@@ -3,18 +3,17 @@
 /// <p>The attributes for the Amazon EC2 instance types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails  {
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
     pub accelerator_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
-    pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The accelerators that must be on the instance type.</p>
-    pub accelerator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accelerator_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
-    pub accelerator_total_memory_mib:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
+    pub accelerator_total_memory_mib: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
     /// <p>The accelerator types that must be on the instance type.</p>
-    pub accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accelerator_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     pub bare_metal: ::std::option::Option<::std::string::String>,
     /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -22,15 +21,15 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub burstable_performance: ::std::option::Option<::std::string::String>,
     /// <p>The CPU manufacturers to include.</p>
-    pub cpu_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cpu_manufacturers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The instance types to exclude.</p>
-    pub excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether current or previous generation instance types are included.</p>
-    pub instance_generations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_generations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub local_storage: ::std::option::Option<::std::string::String>,
     /// <p>The type of local storage that is required.</p>
-    pub local_storage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub local_storage_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     pub memory_gib_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
@@ -52,89 +51,90 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p>The minimum and maximum number of vCPUs.</p>
     pub v_cpu_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails>,
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
+impl  AwsEc2LaunchTemplateDataInstanceRequirementsDetails  {
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
-    pub fn accelerator_count(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails> {
+    pub fn accelerator_count(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails> {
         self.accelerator_count.as_ref()
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_manufacturers.is_none()`.
-    pub fn accelerator_manufacturers(&self) -> &[::std::string::String] {
-        self.accelerator_manufacturers.as_deref().unwrap_or_default()
+    pub fn accelerator_manufacturers(&self) -> & [::std::string::String] {
+        self.accelerator_manufacturers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The accelerators that must be on the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_names.is_none()`.
-    pub fn accelerator_names(&self) -> &[::std::string::String] {
-        self.accelerator_names.as_deref().unwrap_or_default()
+    pub fn accelerator_names(&self) -> & [::std::string::String] {
+        self.accelerator_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
-    pub fn accelerator_total_memory_mib(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails> {
+    pub fn accelerator_total_memory_mib(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails> {
         self.accelerator_total_memory_mib.as_ref()
     }
     /// <p>The accelerator types that must be on the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
-    pub fn accelerator_types(&self) -> &[::std::string::String] {
-        self.accelerator_types.as_deref().unwrap_or_default()
+    pub fn accelerator_types(&self) -> & [::std::string::String] {
+        self.accelerator_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
-    pub fn bare_metal(&self) -> ::std::option::Option<&str> {
+    pub fn bare_metal(&self) -> ::std::option::Option<& str> {
         self.bare_metal.as_deref()
     }
     /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn baseline_ebs_bandwidth_mbps(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails> {
+    pub fn baseline_ebs_bandwidth_mbps(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails> {
         self.baseline_ebs_bandwidth_mbps.as_ref()
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn burstable_performance(&self) -> ::std::option::Option<&str> {
+    pub fn burstable_performance(&self) -> ::std::option::Option<& str> {
         self.burstable_performance.as_deref()
     }
     /// <p>The CPU manufacturers to include.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_manufacturers.is_none()`.
-    pub fn cpu_manufacturers(&self) -> &[::std::string::String] {
-        self.cpu_manufacturers.as_deref().unwrap_or_default()
+    pub fn cpu_manufacturers(&self) -> & [::std::string::String] {
+        self.cpu_manufacturers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The instance types to exclude.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_instance_types.is_none()`.
-    pub fn excluded_instance_types(&self) -> &[::std::string::String] {
-        self.excluded_instance_types.as_deref().unwrap_or_default()
+    pub fn excluded_instance_types(&self) -> & [::std::string::String] {
+        self.excluded_instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether current or previous generation instance types are included.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_generations.is_none()`.
-    pub fn instance_generations(&self) -> &[::std::string::String] {
-        self.instance_generations.as_deref().unwrap_or_default()
+    pub fn instance_generations(&self) -> & [::std::string::String] {
+        self.instance_generations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn local_storage(&self) -> ::std::option::Option<&str> {
+    pub fn local_storage(&self) -> ::std::option::Option<& str> {
         self.local_storage.as_deref()
     }
     /// <p>The type of local storage that is required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_storage_types.is_none()`.
-    pub fn local_storage_types(&self) -> &[::std::string::String] {
-        self.local_storage_types.as_deref().unwrap_or_default()
+    pub fn local_storage_types(&self) -> & [::std::string::String] {
+        self.local_storage_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
-    pub fn memory_gib_per_v_cpu(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
+    pub fn memory_gib_per_v_cpu(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
         self.memory_gib_per_v_cpu.as_ref()
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub fn memory_mib(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
+    pub fn memory_mib(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
         self.memory_mib.as_ref()
     }
     /// <p>The minimum and maximum number of network interfaces.</p>
-    pub fn network_interface_count(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails> {
+    pub fn network_interface_count(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails> {
         self.network_interface_count.as_ref()
     }
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
@@ -154,13 +154,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.spot_max_price_percentage_over_lowest_price
     }
     /// <p>The minimum and maximum amount of total local storage, in GB.</p>
-    pub fn total_local_storage_gb(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails> {
+    pub fn total_local_storage_gb(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails> {
         self.total_local_storage_gb.as_ref()
     }
     /// <p>The minimum and maximum number of vCPUs.</p>
-    pub fn v_cpu_count(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails> {
+    pub fn v_cpu_count(&self) -> ::std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails> {
         self.v_cpu_count.as_ref()
     }
 }
@@ -176,20 +174,18 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     pub(crate) accelerator_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
-    pub(crate) accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) accelerator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) accelerator_total_memory_mib:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
-    pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accelerator_manufacturers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) accelerator_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) accelerator_total_memory_mib: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
+    pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) bare_metal: ::std::option::Option<::std::string::String>,
-    pub(crate) baseline_ebs_bandwidth_mbps:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails>,
+    pub(crate) baseline_ebs_bandwidth_mbps: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails>,
     pub(crate) burstable_performance: ::std::option::Option<::std::string::String>,
-    pub(crate) cpu_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) instance_generations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cpu_manufacturers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) instance_generations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) local_storage: ::std::option::Option<::std::string::String>,
-    pub(crate) local_storage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_storage_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) memory_gib_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
     pub(crate) memory_mib: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
     pub(crate) network_interface_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails>,
@@ -206,12 +202,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self
     }
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
-    pub fn set_accelerator_count(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
-    ) -> Self {
-        self.accelerator_count = input;
-        self
+    pub fn set_accelerator_count(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>) -> Self {
+        self.accelerator_count = input; self
     }
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
     pub fn get_accelerator_count(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails> {
@@ -224,17 +216,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     pub fn accelerator_manufacturers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accelerator_manufacturers.unwrap_or_default();
-        v.push(input.into());
-        self.accelerator_manufacturers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accelerator_manufacturers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
-    pub fn set_accelerator_manufacturers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accelerator_manufacturers = input;
-        self
+    pub fn set_accelerator_manufacturers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accelerator_manufacturers = input; self
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
-    pub fn get_accelerator_manufacturers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_manufacturers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accelerator_manufacturers
     }
     /// Appends an item to `accelerator_names`.
@@ -244,39 +235,29 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The accelerators that must be on the instance type.</p>
     pub fn accelerator_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accelerator_names.unwrap_or_default();
-        v.push(input.into());
-        self.accelerator_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accelerator_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The accelerators that must be on the instance type.</p>
-    pub fn set_accelerator_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accelerator_names = input;
-        self
+    pub fn set_accelerator_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accelerator_names = input; self
     }
     /// <p>The accelerators that must be on the instance type.</p>
-    pub fn get_accelerator_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accelerator_names
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
-    pub fn accelerator_total_memory_mib(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails,
-    ) -> Self {
+    pub fn accelerator_total_memory_mib(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails) -> Self {
         self.accelerator_total_memory_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
-    pub fn set_accelerator_total_memory_mib(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
-    ) -> Self {
-        self.accelerator_total_memory_mib = input;
-        self
+    pub fn set_accelerator_total_memory_mib(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>) -> Self {
+        self.accelerator_total_memory_mib = input; self
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
-    pub fn get_accelerator_total_memory_mib(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails> {
+    pub fn get_accelerator_total_memory_mib(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails> {
         &self.accelerator_total_memory_mib
     }
     /// Appends an item to `accelerator_types`.
@@ -286,17 +267,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The accelerator types that must be on the instance type.</p>
     pub fn accelerator_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
-        v.push(input.into());
-        self.accelerator_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accelerator_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The accelerator types that must be on the instance type.</p>
-    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accelerator_types = input;
-        self
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accelerator_types = input; self
     }
     /// <p>The accelerator types that must be on the instance type.</p>
-    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accelerator_types
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
@@ -306,33 +286,23 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     pub fn set_bare_metal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bare_metal = input;
-        self
+        self.bare_metal = input; self
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     pub fn get_bare_metal(&self) -> &::std::option::Option<::std::string::String> {
         &self.bare_metal
     }
     /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn baseline_ebs_bandwidth_mbps(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails,
-    ) -> Self {
+    pub fn baseline_ebs_bandwidth_mbps(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails) -> Self {
         self.baseline_ebs_bandwidth_mbps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_baseline_ebs_bandwidth_mbps(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails>,
-    ) -> Self {
-        self.baseline_ebs_bandwidth_mbps = input;
-        self
+    pub fn set_baseline_ebs_bandwidth_mbps(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails>) -> Self {
+        self.baseline_ebs_bandwidth_mbps = input; self
     }
     /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_baseline_ebs_bandwidth_mbps(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails> {
+    pub fn get_baseline_ebs_bandwidth_mbps(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails> {
         &self.baseline_ebs_bandwidth_mbps
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -342,8 +312,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_burstable_performance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.burstable_performance = input;
-        self
+        self.burstable_performance = input; self
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_burstable_performance(&self) -> &::std::option::Option<::std::string::String> {
@@ -356,17 +325,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The CPU manufacturers to include.</p>
     pub fn cpu_manufacturers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cpu_manufacturers.unwrap_or_default();
-        v.push(input.into());
-        self.cpu_manufacturers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cpu_manufacturers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CPU manufacturers to include.</p>
-    pub fn set_cpu_manufacturers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cpu_manufacturers = input;
-        self
+    pub fn set_cpu_manufacturers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cpu_manufacturers = input; self
     }
     /// <p>The CPU manufacturers to include.</p>
-    pub fn get_cpu_manufacturers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cpu_manufacturers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cpu_manufacturers
     }
     /// Appends an item to `excluded_instance_types`.
@@ -376,17 +344,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The instance types to exclude.</p>
     pub fn excluded_instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance types to exclude.</p>
-    pub fn set_excluded_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_instance_types = input;
-        self
+    pub fn set_excluded_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_instance_types = input; self
     }
     /// <p>The instance types to exclude.</p>
-    pub fn get_excluded_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_instance_types
     }
     /// Appends an item to `instance_generations`.
@@ -396,17 +363,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     pub fn instance_generations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_generations.unwrap_or_default();
-        v.push(input.into());
-        self.instance_generations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_generations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates whether current or previous generation instance types are included.</p>
-    pub fn set_instance_generations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_generations = input;
-        self
+    pub fn set_instance_generations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_generations = input; self
     }
     /// <p>Indicates whether current or previous generation instance types are included.</p>
-    pub fn get_instance_generations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_generations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_generations
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -416,8 +382,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_local_storage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_storage = input;
-        self
+        self.local_storage = input; self
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_local_storage(&self) -> &::std::option::Option<::std::string::String> {
@@ -430,17 +395,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The type of local storage that is required.</p>
     pub fn local_storage_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.local_storage_types.unwrap_or_default();
-        v.push(input.into());
-        self.local_storage_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.local_storage_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of local storage that is required.</p>
-    pub fn set_local_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.local_storage_types = input;
-        self
+    pub fn set_local_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.local_storage_types = input; self
     }
     /// <p>The type of local storage that is required.</p>
-    pub fn get_local_storage_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_local_storage_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.local_storage_types
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
@@ -449,17 +413,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
-    pub fn set_memory_gib_per_v_cpu(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
-    ) -> Self {
-        self.memory_gib_per_v_cpu = input;
-        self
+    pub fn set_memory_gib_per_v_cpu(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>) -> Self {
+        self.memory_gib_per_v_cpu = input; self
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
-    pub fn get_memory_gib_per_v_cpu(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
+    pub fn get_memory_gib_per_v_cpu(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
         &self.memory_gib_per_v_cpu
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
@@ -468,12 +426,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub fn set_memory_mib(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
-    ) -> Self {
-        self.memory_mib = input;
-        self
+    pub fn set_memory_mib(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>) -> Self {
+        self.memory_mib = input; self
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
     pub fn get_memory_mib(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
@@ -485,17 +439,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self
     }
     /// <p>The minimum and maximum number of network interfaces.</p>
-    pub fn set_network_interface_count(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails>,
-    ) -> Self {
-        self.network_interface_count = input;
-        self
+    pub fn set_network_interface_count(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails>) -> Self {
+        self.network_interface_count = input; self
     }
     /// <p>The minimum and maximum number of network interfaces.</p>
-    pub fn get_network_interface_count(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails> {
+    pub fn get_network_interface_count(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails> {
         &self.network_interface_count
     }
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
@@ -509,8 +457,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn set_on_demand_max_price_percentage_over_lowest_price(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_max_price_percentage_over_lowest_price = input;
-        self
+        self.on_demand_max_price_percentage_over_lowest_price = input; self
     }
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
@@ -525,8 +472,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     pub fn set_require_hibernate_support(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_hibernate_support = input;
-        self
+        self.require_hibernate_support = input; self
     }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     pub fn get_require_hibernate_support(&self) -> &::std::option::Option<bool> {
@@ -543,8 +489,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
     pub fn set_spot_max_price_percentage_over_lowest_price(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.spot_max_price_percentage_over_lowest_price = input;
-        self
+        self.spot_max_price_percentage_over_lowest_price = input; self
     }
     /// <p>The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
@@ -558,17 +503,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self
     }
     /// <p>The minimum and maximum amount of total local storage, in GB.</p>
-    pub fn set_total_local_storage_gb(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails>,
-    ) -> Self {
-        self.total_local_storage_gb = input;
-        self
+    pub fn set_total_local_storage_gb(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails>) -> Self {
+        self.total_local_storage_gb = input; self
     }
     /// <p>The minimum and maximum amount of total local storage, in GB.</p>
-    pub fn get_total_local_storage_gb(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails> {
+    pub fn get_total_local_storage_gb(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails> {
         &self.total_local_storage_gb
     }
     /// <p>The minimum and maximum number of vCPUs.</p>
@@ -577,12 +516,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         self
     }
     /// <p>The minimum and maximum number of vCPUs.</p>
-    pub fn set_v_cpu_count(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails>,
-    ) -> Self {
-        self.v_cpu_count = input;
-        self
+    pub fn set_v_cpu_count(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails>) -> Self {
+        self.v_cpu_count = input; self
     }
     /// <p>The minimum and maximum number of vCPUs.</p>
     pub fn get_v_cpu_count(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails> {
@@ -591,27 +526,49 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
-            accelerator_count: self.accelerator_count,
-            accelerator_manufacturers: self.accelerator_manufacturers,
-            accelerator_names: self.accelerator_names,
-            accelerator_total_memory_mib: self.accelerator_total_memory_mib,
-            accelerator_types: self.accelerator_types,
-            bare_metal: self.bare_metal,
-            baseline_ebs_bandwidth_mbps: self.baseline_ebs_bandwidth_mbps,
-            burstable_performance: self.burstable_performance,
-            cpu_manufacturers: self.cpu_manufacturers,
-            excluded_instance_types: self.excluded_instance_types,
-            instance_generations: self.instance_generations,
-            local_storage: self.local_storage,
-            local_storage_types: self.local_storage_types,
-            memory_gib_per_v_cpu: self.memory_gib_per_v_cpu,
-            memory_mib: self.memory_mib,
-            network_interface_count: self.network_interface_count,
-            on_demand_max_price_percentage_over_lowest_price: self.on_demand_max_price_percentage_over_lowest_price,
-            require_hibernate_support: self.require_hibernate_support,
-            spot_max_price_percentage_over_lowest_price: self.spot_max_price_percentage_over_lowest_price,
-            total_local_storage_gb: self.total_local_storage_gb,
-            v_cpu_count: self.v_cpu_count,
+            accelerator_count: self.accelerator_count
+            ,
+            accelerator_manufacturers: self.accelerator_manufacturers
+            ,
+            accelerator_names: self.accelerator_names
+            ,
+            accelerator_total_memory_mib: self.accelerator_total_memory_mib
+            ,
+            accelerator_types: self.accelerator_types
+            ,
+            bare_metal: self.bare_metal
+            ,
+            baseline_ebs_bandwidth_mbps: self.baseline_ebs_bandwidth_mbps
+            ,
+            burstable_performance: self.burstable_performance
+            ,
+            cpu_manufacturers: self.cpu_manufacturers
+            ,
+            excluded_instance_types: self.excluded_instance_types
+            ,
+            instance_generations: self.instance_generations
+            ,
+            local_storage: self.local_storage
+            ,
+            local_storage_types: self.local_storage_types
+            ,
+            memory_gib_per_v_cpu: self.memory_gib_per_v_cpu
+            ,
+            memory_mib: self.memory_mib
+            ,
+            network_interface_count: self.network_interface_count
+            ,
+            on_demand_max_price_percentage_over_lowest_price: self.on_demand_max_price_percentage_over_lowest_price
+            ,
+            require_hibernate_support: self.require_hibernate_support
+            ,
+            spot_max_price_percentage_over_lowest_price: self.spot_max_price_percentage_over_lowest_price
+            ,
+            total_local_storage_gb: self.total_local_storage_gb
+            ,
+            v_cpu_count: self.v_cpu_count
+            ,
         }
     }
 }
+

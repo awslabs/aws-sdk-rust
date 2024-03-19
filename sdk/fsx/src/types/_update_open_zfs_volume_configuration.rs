@@ -3,7 +3,7 @@
 /// <p>Used to specify changes to the OpenZFS configuration for the volume that you are updating.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOpenZfsVolumeConfiguration {
+pub struct UpdateOpenZfsVolumeConfiguration  {
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     pub storage_capacity_reservation_gib: ::std::option::Option<i32>,
     /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
@@ -21,13 +21,13 @@ pub struct UpdateOpenZfsVolumeConfiguration {
     /// </ul>
     pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
+    pub nfs_exports: ::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsUserOrGroupQuota>>,
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub read_only: ::std::option::Option<bool>,
 }
-impl UpdateOpenZfsVolumeConfiguration {
+impl  UpdateOpenZfsVolumeConfiguration  {
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     pub fn storage_capacity_reservation_gib(&self) -> ::std::option::Option<i32> {
         self.storage_capacity_reservation_gib
@@ -49,20 +49,22 @@ impl UpdateOpenZfsVolumeConfiguration {
     /// <li>
     /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
-    pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
+    pub fn data_compression_type(&self) -> ::std::option::Option<& crate::types::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nfs_exports.is_none()`.
-    pub fn nfs_exports(&self) -> &[crate::types::OpenZfsNfsExport] {
-        self.nfs_exports.as_deref().unwrap_or_default()
+    pub fn nfs_exports(&self) -> & [crate::types::OpenZfsNfsExport] {
+        self.nfs_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_and_group_quotas.is_none()`.
-    pub fn user_and_group_quotas(&self) -> &[crate::types::OpenZfsUserOrGroupQuota] {
-        self.user_and_group_quotas.as_deref().unwrap_or_default()
+    pub fn user_and_group_quotas(&self) -> & [crate::types::OpenZfsUserOrGroupQuota] {
+        self.user_and_group_quotas.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub fn read_only(&self) -> ::std::option::Option<bool> {
@@ -84,8 +86,8 @@ pub struct UpdateOpenZfsVolumeConfigurationBuilder {
     pub(crate) storage_capacity_quota_gib: ::std::option::Option<i32>,
     pub(crate) record_size_kib: ::std::option::Option<i32>,
     pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
-    pub(crate) nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
-    pub(crate) user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub(crate) nfs_exports: ::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsNfsExport>>,
+    pub(crate) user_and_group_quotas: ::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsUserOrGroupQuota>>,
     pub(crate) read_only: ::std::option::Option<bool>,
 }
 impl UpdateOpenZfsVolumeConfigurationBuilder {
@@ -96,8 +98,7 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     pub fn set_storage_capacity_reservation_gib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_reservation_gib = input;
-        self
+        self.storage_capacity_reservation_gib = input; self
     }
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     pub fn get_storage_capacity_reservation_gib(&self) -> &::std::option::Option<i32> {
@@ -110,8 +111,7 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
     pub fn set_storage_capacity_quota_gib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_quota_gib = input;
-        self
+        self.storage_capacity_quota_gib = input; self
     }
     /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
     pub fn get_storage_capacity_quota_gib(&self) -> &::std::option::Option<i32> {
@@ -124,8 +124,7 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn set_record_size_kib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.record_size_kib = input;
-        self
+        self.record_size_kib = input; self
     }
     /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn get_record_size_kib(&self) -> &::std::option::Option<i32> {
@@ -154,8 +153,7 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     /// <p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
     pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>) -> Self {
-        self.data_compression_type = input;
-        self
+        self.data_compression_type = input; self
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -176,17 +174,16 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
     pub fn nfs_exports(mut self, input: crate::types::OpenZfsNfsExport) -> Self {
         let mut v = self.nfs_exports.unwrap_or_default();
-        v.push(input);
-        self.nfs_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nfs_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub fn set_nfs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>) -> Self {
-        self.nfs_exports = input;
-        self
+    pub fn set_nfs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsNfsExport>>) -> Self {
+        self.nfs_exports = input; self
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub fn get_nfs_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>> {
+    pub fn get_nfs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsNfsExport>> {
         &self.nfs_exports
     }
     /// Appends an item to `user_and_group_quotas`.
@@ -196,17 +193,16 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub fn user_and_group_quotas(mut self, input: crate::types::OpenZfsUserOrGroupQuota) -> Self {
         let mut v = self.user_and_group_quotas.unwrap_or_default();
-        v.push(input);
-        self.user_and_group_quotas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_and_group_quotas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn set_user_and_group_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>) -> Self {
-        self.user_and_group_quotas = input;
-        self
+    pub fn set_user_and_group_quotas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsUserOrGroupQuota>>) -> Self {
+        self.user_and_group_quotas = input; self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn get_user_and_group_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
+    pub fn get_user_and_group_quotas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpenZfsUserOrGroupQuota>> {
         &self.user_and_group_quotas
     }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
@@ -216,8 +212,7 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_only = input;
-        self
+        self.read_only = input; self
     }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub fn get_read_only(&self) -> &::std::option::Option<bool> {
@@ -226,13 +221,21 @@ impl UpdateOpenZfsVolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`UpdateOpenZfsVolumeConfiguration`](crate::types::UpdateOpenZfsVolumeConfiguration).
     pub fn build(self) -> crate::types::UpdateOpenZfsVolumeConfiguration {
         crate::types::UpdateOpenZfsVolumeConfiguration {
-            storage_capacity_reservation_gib: self.storage_capacity_reservation_gib,
-            storage_capacity_quota_gib: self.storage_capacity_quota_gib,
-            record_size_kib: self.record_size_kib,
-            data_compression_type: self.data_compression_type,
-            nfs_exports: self.nfs_exports,
-            user_and_group_quotas: self.user_and_group_quotas,
-            read_only: self.read_only,
+            storage_capacity_reservation_gib: self.storage_capacity_reservation_gib
+            ,
+            storage_capacity_quota_gib: self.storage_capacity_quota_gib
+            ,
+            record_size_kib: self.record_size_kib
+            ,
+            data_compression_type: self.data_compression_type
+            ,
+            nfs_exports: self.nfs_exports
+            ,
+            user_and_group_quotas: self.user_and_group_quotas
+            ,
+            read_only: self.read_only
+            ,
         }
     }
 }
+

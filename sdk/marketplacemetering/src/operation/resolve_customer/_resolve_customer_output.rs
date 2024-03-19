@@ -3,7 +3,7 @@
 /// <p>The result of the <code>ResolveCustomer</code> operation. Contains the <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveCustomerOutput {
+pub struct ResolveCustomerOutput  {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
     pub customer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
@@ -12,25 +12,25 @@ pub struct ResolveCustomerOutput {
     pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ResolveCustomerOutput {
+impl  ResolveCustomerOutput  {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
-    pub fn customer_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn customer_identifier(&self) -> ::std::option::Option<& str> {
         self.customer_identifier.as_deref()
     }
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
-    pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_aws_account_id(&self) -> ::std::option::Option<& str> {
         self.customer_aws_account_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ResolveCustomerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResolveCustomerOutput {
     /// Creates a new builder-style object to manufacture [`ResolveCustomerOutput`](crate::operation::resolve_customer::ResolveCustomerOutput).
     pub fn builder() -> crate::operation::resolve_customer::builders::ResolveCustomerOutputBuilder {
@@ -55,8 +55,7 @@ impl ResolveCustomerOutputBuilder {
     }
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
     pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_identifier = input;
-        self
+        self.customer_identifier = input; self
     }
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ResolveCustomerOutputBuilder {
     }
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,29 +81,32 @@ impl ResolveCustomerOutputBuilder {
     }
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_aws_account_id = input;
-        self
+        self.customer_aws_account_id = input; self
     }
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_aws_account_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResolveCustomerOutput`](crate::operation::resolve_customer::ResolveCustomerOutput).
     pub fn build(self) -> crate::operation::resolve_customer::ResolveCustomerOutput {
         crate::operation::resolve_customer::ResolveCustomerOutput {
-            customer_identifier: self.customer_identifier,
-            product_code: self.product_code,
-            customer_aws_account_id: self.customer_aws_account_id,
+            customer_identifier: self.customer_identifier
+            ,
+            product_code: self.product_code
+            ,
+            customer_aws_account_id: self.customer_aws_account_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

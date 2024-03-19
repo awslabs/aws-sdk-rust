@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCertificateProviderInput {
+pub struct CreateCertificateProviderInput  {
     /// <p>The name of the certificate provider.</p>
     pub certificate_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Lambda function that defines the authentication logic.</p>
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub account_default_for_operations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
+    pub account_default_for_operations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>,
     /// <p>A string that you can optionally pass in the <code>CreateCertificateProvider</code> request to make sure the request is idempotent.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Metadata which can be used to manage the certificate provider.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateCertificateProviderInput {
+impl  CreateCertificateProviderInput  {
     /// <p>The name of the certificate provider.</p>
-    pub fn certificate_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_name(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_name.as_deref()
     }
     /// <p>The ARN of the Lambda function that defines the authentication logic.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_default_for_operations.is_none()`.
-    pub fn account_default_for_operations(&self) -> &[crate::types::CertificateProviderOperation] {
-        self.account_default_for_operations.as_deref().unwrap_or_default()
+    pub fn account_default_for_operations(&self) -> & [crate::types::CertificateProviderOperation] {
+        self.account_default_for_operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that you can optionally pass in the <code>CreateCertificateProvider</code> request to make sure the request is idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Metadata which can be used to manage the certificate provider.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCertificateProviderInput {
@@ -53,9 +55,9 @@ impl CreateCertificateProviderInput {
 pub struct CreateCertificateProviderInputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) account_default_for_operations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
+    pub(crate) account_default_for_operations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateCertificateProviderInputBuilder {
     /// <p>The name of the certificate provider.</p>
@@ -66,8 +68,7 @@ impl CreateCertificateProviderInputBuilder {
     }
     /// <p>The name of the certificate provider.</p>
     pub fn set_certificate_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_name = input;
-        self
+        self.certificate_provider_name = input; self
     }
     /// <p>The name of the certificate provider.</p>
     pub fn get_certificate_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +82,7 @@ impl CreateCertificateProviderInputBuilder {
     }
     /// <p>The ARN of the Lambda function that defines the authentication logic.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>The ARN of the Lambda function that defines the authentication logic.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,20 +95,16 @@ impl CreateCertificateProviderInputBuilder {
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
     pub fn account_default_for_operations(mut self, input: crate::types::CertificateProviderOperation) -> Self {
         let mut v = self.account_default_for_operations.unwrap_or_default();
-        v.push(input);
-        self.account_default_for_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_default_for_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub fn set_account_default_for_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
-    ) -> Self {
-        self.account_default_for_operations = input;
-        self
+    pub fn set_account_default_for_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>) -> Self {
+        self.account_default_for_operations = input; self
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub fn get_account_default_for_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>> {
+    pub fn get_account_default_for_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>> {
         &self.account_default_for_operations
     }
     /// <p>A string that you can optionally pass in the <code>CreateCertificateProvider</code> request to make sure the request is idempotent.</p>
@@ -118,8 +114,7 @@ impl CreateCertificateProviderInputBuilder {
     }
     /// <p>A string that you can optionally pass in the <code>CreateCertificateProvider</code> request to make sure the request is idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A string that you can optionally pass in the <code>CreateCertificateProvider</code> request to make sure the request is idempotent.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,32 +127,34 @@ impl CreateCertificateProviderInputBuilder {
     /// <p>Metadata which can be used to manage the certificate provider.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the certificate provider.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata which can be used to manage the certificate provider.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCertificateProviderInput`](crate::operation::create_certificate_provider::CreateCertificateProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_certificate_provider::CreateCertificateProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_certificate_provider::CreateCertificateProviderInput {
-            certificate_provider_name: self.certificate_provider_name,
-            lambda_function_arn: self.lambda_function_arn,
-            account_default_for_operations: self.account_default_for_operations,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_certificate_provider::CreateCertificateProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_certificate_provider::CreateCertificateProviderInput {
+                certificate_provider_name: self.certificate_provider_name
+                ,
+                lambda_function_arn: self.lambda_function_arn
+                ,
+                account_default_for_operations: self.account_default_for_operations
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

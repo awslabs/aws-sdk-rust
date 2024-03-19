@@ -3,20 +3,19 @@
 /// <p>The container path, mount options, and size of the tmpfs mount.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tmpfs {
+pub struct Tmpfs  {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
     pub container_path: ::std::string::String,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub size: i32,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code></p>
-    pub mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub mount_options: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Tmpfs {
+impl  Tmpfs  {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    pub fn container_path(&self) -> &str {
-        use std::ops::Deref;
-        self.container_path.deref()
+    pub fn container_path(&self) -> & str {
+        use std::ops::Deref; self.container_path.deref()
     }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub fn size(&self) -> i32 {
@@ -24,10 +23,11 @@ impl Tmpfs {
     }
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_options.is_none()`.
-    pub fn mount_options(&self) -> &[::std::string::String] {
-        self.mount_options.as_deref().unwrap_or_default()
+    pub fn mount_options(&self) -> & [::std::string::String] {
+        self.mount_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Tmpfs {
@@ -43,7 +43,7 @@ impl Tmpfs {
 pub struct TmpfsBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i32>,
-    pub(crate) mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) mount_options: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TmpfsBuilder {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
@@ -54,8 +54,7 @@ impl TmpfsBuilder {
     }
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
     pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_path = input;
-        self
+        self.container_path = input; self
     }
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
     pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TmpfsBuilder {
     }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -84,34 +82,38 @@ impl TmpfsBuilder {
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code></p>
     pub fn mount_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.mount_options.unwrap_or_default();
-        v.push(input.into());
-        self.mount_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.mount_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code></p>
-    pub fn set_mount_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.mount_options = input;
-        self
+    pub fn set_mount_options(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.mount_options = input; self
     }
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code></p>
-    pub fn get_mount_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_mount_options(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.mount_options
     }
     /// Consumes the builder and constructs a [`Tmpfs`](crate::types::Tmpfs).
     /// This method will fail if any of the following fields are not set:
     /// - [`container_path`](crate::types::builders::TmpfsBuilder::container_path)
     pub fn build(self) -> ::std::result::Result<crate::types::Tmpfs, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Tmpfs {
-            container_path: self.container_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "container_path",
-                    "container_path was not specified but it is required when building Tmpfs",
-                )
-            })?,
-            size: self.size.unwrap_or_default(),
-            mount_options: self.mount_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Tmpfs {
+                container_path: self.container_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("container_path", "container_path was not specified but it is required when building Tmpfs")
+                    )?
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
+                mount_options: self.mount_options
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetSecurityConfigurations`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput) with field(s):
     ///   - [`security_configurations(Option<Vec::<SecurityConfiguration>>)`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput::security_configurations): <p>A list of security configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput::next_token): <p>A continuation token, if there are more security configurations to return.</p>
-    /// - On failure, responds with [`SdkError<GetSecurityConfigurationsError>`](crate::operation::get_security_configurations::GetSecurityConfigurationsError)
+                            /// - On failure, responds with [`SdkError<GetSecurityConfigurationsError>`](crate::operation::get_security_configurations::GetSecurityConfigurationsError)
     pub fn get_security_configurations(&self) -> crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder {
-        crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

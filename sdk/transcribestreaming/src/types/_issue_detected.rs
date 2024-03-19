@@ -3,13 +3,13 @@
 /// <p>Lists the issues that were identified in your audio segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IssueDetected {
+pub struct IssueDetected  {
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
     pub character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }
-impl IssueDetected {
+impl  IssueDetected  {
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
-    pub fn character_offsets(&self) -> ::std::option::Option<&crate::types::CharacterOffsets> {
+    pub fn character_offsets(&self) -> ::std::option::Option<& crate::types::CharacterOffsets> {
         self.character_offsets.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl IssueDetectedBuilder {
     }
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
     pub fn set_character_offsets(mut self, input: ::std::option::Option<crate::types::CharacterOffsets>) -> Self {
-        self.character_offsets = input;
-        self
+        self.character_offsets = input; self
     }
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
     pub fn get_character_offsets(&self) -> &::std::option::Option<crate::types::CharacterOffsets> {
@@ -44,7 +43,9 @@ impl IssueDetectedBuilder {
     /// Consumes the builder and constructs a [`IssueDetected`](crate::types::IssueDetected).
     pub fn build(self) -> crate::types::IssueDetected {
         crate::types::IssueDetected {
-            character_offsets: self.character_offsets,
+            character_offsets: self.character_offsets
+            ,
         }
     }
 }
+

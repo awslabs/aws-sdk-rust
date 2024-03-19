@@ -2,35 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataRepositoryTasksInput {
+pub struct DescribeDataRepositoryTasksInput  {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    pub task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub task_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::DataRepositoryTaskFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDataRepositoryTasksInput {
+impl  DescribeDataRepositoryTasksInput  {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_ids.is_none()`.
-    pub fn task_ids(&self) -> &[::std::string::String] {
-        self.task_ids.as_deref().unwrap_or_default()
+    pub fn task_ids(&self) -> & [::std::string::String] {
+        self.task_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::DataRepositoryTaskFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::DataRepositoryTaskFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -45,8 +47,8 @@ impl DescribeDataRepositoryTasksInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksInputBuilder {
-    pub(crate) task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
+    pub(crate) task_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::DataRepositoryTaskFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -58,17 +60,16 @@ impl DescribeDataRepositoryTasksInputBuilder {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
     pub fn task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.task_ids.unwrap_or_default();
-        v.push(input.into());
-        self.task_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.task_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    pub fn set_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.task_ids = input;
-        self
+    pub fn set_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.task_ids = input; self
     }
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    pub fn get_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.task_ids
     }
     /// Appends an item to `filters`.
@@ -78,17 +79,16 @@ impl DescribeDataRepositoryTasksInputBuilder {
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
     pub fn filters(mut self, input: crate::types::DataRepositoryTaskFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataRepositoryTaskFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataRepositoryTaskFilter>> {
         &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -98,8 +98,7 @@ impl DescribeDataRepositoryTasksInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -112,25 +111,26 @@ impl DescribeDataRepositoryTasksInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryTasksInput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput {
-            task_ids: self.task_ids,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput {
+                task_ids: self.task_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

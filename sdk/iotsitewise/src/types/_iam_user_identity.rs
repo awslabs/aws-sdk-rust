@@ -3,19 +3,18 @@
 /// <p>Contains information about an Identity and Access Management user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamUserIdentity {
+pub struct IamUserIdentity  {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
     pub arn: ::std::string::String,
 }
-impl IamUserIdentity {
+impl  IamUserIdentity  {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl IamUserIdentity {
@@ -44,8 +43,7 @@ impl IamUserIdentityBuilder {
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
@@ -57,13 +55,15 @@ impl IamUserIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::IamUserIdentityBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IamUserIdentity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IamUserIdentity {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building IamUserIdentity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IamUserIdentity {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IamUserIdentity")
+                    )?
+                ,
+            }
+        )
     }
 }
+

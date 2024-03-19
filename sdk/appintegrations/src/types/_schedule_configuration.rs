@@ -3,7 +3,7 @@
 /// <p>The name of the data and how often it should be pulled from the source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleConfiguration {
+pub struct ScheduleConfiguration  {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     pub first_execution_from: ::std::option::Option<::std::string::String>,
     /// <p>The name of the object to pull from the data source.</p>
@@ -11,19 +11,18 @@ pub struct ScheduleConfiguration {
     /// <p>How often the data should be pulled from data source.</p>
     pub schedule_expression: ::std::string::String,
 }
-impl ScheduleConfiguration {
+impl  ScheduleConfiguration  {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
-    pub fn first_execution_from(&self) -> ::std::option::Option<&str> {
+    pub fn first_execution_from(&self) -> ::std::option::Option<& str> {
         self.first_execution_from.as_deref()
     }
     /// <p>The name of the object to pull from the data source.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
     /// <p>How often the data should be pulled from data source.</p>
-    pub fn schedule_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule_expression.deref()
+    pub fn schedule_expression(&self) -> & str {
+        use std::ops::Deref; self.schedule_expression.deref()
     }
 }
 impl ScheduleConfiguration {
@@ -49,8 +48,7 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     pub fn set_first_execution_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_execution_from = input;
-        self
+        self.first_execution_from = input; self
     }
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     pub fn get_first_execution_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +61,7 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>The name of the object to pull from the data source.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>The name of the object to pull from the data source.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>How often the data should be pulled from data source.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>How often the data should be pulled from data source.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl ScheduleConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_expression`](crate::types::builders::ScheduleConfigurationBuilder::schedule_expression)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduleConfiguration {
-            first_execution_from: self.first_execution_from,
-            object: self.object,
-            schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_expression",
-                    "schedule_expression was not specified but it is required when building ScheduleConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduleConfiguration {
+                first_execution_from: self.first_execution_from
+                ,
+                object: self.object
+                ,
+                schedule_expression: self.schedule_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_expression", "schedule_expression was not specified but it is required when building ScheduleConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

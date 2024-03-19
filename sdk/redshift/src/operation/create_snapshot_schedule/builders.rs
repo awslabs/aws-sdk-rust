@@ -5,54 +5,50 @@ pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_in
 
 impl CreateSnapshotScheduleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_snapshot_schedule();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_snapshot_schedule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSnapshotSchedule`.
-///
+/// 
 /// <p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder,
+                    inner: crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-    > for CreateSnapshotScheduleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
+                    crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
+                > for CreateSnapshotScheduleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
+                        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSnapshotScheduleFluentBuilder {
     /// Creates a new `CreateSnapshotSchedule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateSnapshotScheduleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_snapshot_schedule::CreateSnapshotSchedule::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_snapshot_schedule::CreateSnapshotSchedule::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_snapshot_schedule::CreateSnapshotSchedule::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_snapshot_schedule::CreateSnapshotSchedule::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput, crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `ScheduleDefinitions`.
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
@@ -118,12 +105,12 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_schedule_definitions(input);
         self
     }
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_schedule_definitions()
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
@@ -164,12 +151,12 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p></p>
@@ -201,3 +188,4 @@ impl CreateSnapshotScheduleFluentBuilder {
         self.inner.get_next_invocations()
     }
 }
+

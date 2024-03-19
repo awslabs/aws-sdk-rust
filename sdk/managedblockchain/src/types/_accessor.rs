@@ -3,7 +3,7 @@
 /// <p>The properties of the Accessor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Accessor {
+pub struct Accessor  {
     /// <p>The unique identifier of the accessor.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the accessor.</p><note>
@@ -20,44 +20,44 @@ pub struct Accessor {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Accessor.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The blockchain network that the Accessor token is created for.</p>
     pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
-impl Accessor {
+impl  Accessor  {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the accessor.</p><note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AccessorType> {
         self.r#type.as_ref()
     }
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
-    pub fn billing_token(&self) -> ::std::option::Option<&str> {
+    pub fn billing_token(&self) -> ::std::option::Option<& str> {
         self.billing_token.as_deref()
     }
     /// <p>The current status of the accessor.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AccessorStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AccessorStatus> {
         self.status.as_ref()
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The tags assigned to the Accessor.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
-    pub fn network_type(&self) -> ::std::option::Option<&crate::types::AccessorNetworkType> {
+    pub fn network_type(&self) -> ::std::option::Option<& crate::types::AccessorNetworkType> {
         self.network_type.as_ref()
     }
 }
@@ -78,7 +78,7 @@ pub struct AccessorBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccessorStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
 impl AccessorBuilder {
@@ -89,8 +89,7 @@ impl AccessorBuilder {
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +106,7 @@ impl AccessorBuilder {
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the accessor.</p><note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
@@ -123,8 +121,7 @@ impl AccessorBuilder {
     }
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn set_billing_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_token = input;
-        self
+        self.billing_token = input; self
     }
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn get_billing_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +134,7 @@ impl AccessorBuilder {
     }
     /// <p>The current status of the accessor.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccessorStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the accessor.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccessorStatus> {
@@ -151,8 +147,7 @@ impl AccessorBuilder {
     }
     /// <p>The creation date and time of the accessor.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date and time of the accessor.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,8 +160,7 @@ impl AccessorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,19 +174,18 @@ impl AccessorBuilder {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the Accessor.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the Accessor.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
@@ -202,8 +195,7 @@ impl AccessorBuilder {
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {
@@ -212,14 +204,23 @@ impl AccessorBuilder {
     /// Consumes the builder and constructs a [`Accessor`](crate::types::Accessor).
     pub fn build(self) -> crate::types::Accessor {
         crate::types::Accessor {
-            id: self.id,
-            r#type: self.r#type,
-            billing_token: self.billing_token,
-            status: self.status,
-            creation_date: self.creation_date,
-            arn: self.arn,
-            tags: self.tags,
-            network_type: self.network_type,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            billing_token: self.billing_token
+            ,
+            status: self.status
+            ,
+            creation_date: self.creation_date
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
+            network_type: self.network_type
+            ,
         }
     }
 }
+

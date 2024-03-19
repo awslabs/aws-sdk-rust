@@ -3,7 +3,7 @@
 /// <p>The information about the agent turn in a test set execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentTurnResult {
+pub struct AgentTurnResult  {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
     pub expected_agent_prompt: ::std::string::String,
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
@@ -15,26 +15,25 @@ pub struct AgentTurnResult {
     /// <p>The actual intent for the agent turn in a test set execution.</p>
     pub actual_intent: ::std::option::Option<::std::string::String>,
 }
-impl AgentTurnResult {
+impl  AgentTurnResult  {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
-    pub fn expected_agent_prompt(&self) -> &str {
-        use std::ops::Deref;
-        self.expected_agent_prompt.deref()
+    pub fn expected_agent_prompt(&self) -> & str {
+        use std::ops::Deref; self.expected_agent_prompt.deref()
     }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
-    pub fn actual_agent_prompt(&self) -> ::std::option::Option<&str> {
+    pub fn actual_agent_prompt(&self) -> ::std::option::Option<& str> {
         self.actual_agent_prompt.as_deref()
     }
     /// <p>Details about an error in an execution of a test set.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ExecutionErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ExecutionErrorDetails> {
         self.error_details.as_ref()
     }
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
-    pub fn actual_elicited_slot(&self) -> ::std::option::Option<&str> {
+    pub fn actual_elicited_slot(&self) -> ::std::option::Option<& str> {
         self.actual_elicited_slot.as_deref()
     }
     /// <p>The actual intent for the agent turn in a test set execution.</p>
-    pub fn actual_intent(&self) -> ::std::option::Option<&str> {
+    pub fn actual_intent(&self) -> ::std::option::Option<& str> {
         self.actual_intent.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl AgentTurnResultBuilder {
     }
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
     pub fn set_expected_agent_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_agent_prompt = input;
-        self
+        self.expected_agent_prompt = input; self
     }
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
     pub fn get_expected_agent_prompt(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl AgentTurnResultBuilder {
     }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
     pub fn set_actual_agent_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actual_agent_prompt = input;
-        self
+        self.actual_agent_prompt = input; self
     }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
     pub fn get_actual_agent_prompt(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl AgentTurnResultBuilder {
     }
     /// <p>Details about an error in an execution of a test set.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ExecutionErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>Details about an error in an execution of a test set.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ExecutionErrorDetails> {
@@ -106,8 +102,7 @@ impl AgentTurnResultBuilder {
     }
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
     pub fn set_actual_elicited_slot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actual_elicited_slot = input;
-        self
+        self.actual_elicited_slot = input; self
     }
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
     pub fn get_actual_elicited_slot(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +115,7 @@ impl AgentTurnResultBuilder {
     }
     /// <p>The actual intent for the agent turn in a test set execution.</p>
     pub fn set_actual_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actual_intent = input;
-        self
+        self.actual_intent = input; self
     }
     /// <p>The actual intent for the agent turn in a test set execution.</p>
     pub fn get_actual_intent(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +125,23 @@ impl AgentTurnResultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expected_agent_prompt`](crate::types::builders::AgentTurnResultBuilder::expected_agent_prompt)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnResult, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentTurnResult {
-            expected_agent_prompt: self.expected_agent_prompt.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expected_agent_prompt",
-                    "expected_agent_prompt was not specified but it is required when building AgentTurnResult",
-                )
-            })?,
-            actual_agent_prompt: self.actual_agent_prompt,
-            error_details: self.error_details,
-            actual_elicited_slot: self.actual_elicited_slot,
-            actual_intent: self.actual_intent,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentTurnResult {
+                expected_agent_prompt: self.expected_agent_prompt
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expected_agent_prompt", "expected_agent_prompt was not specified but it is required when building AgentTurnResult")
+                    )?
+                ,
+                actual_agent_prompt: self.actual_agent_prompt
+                ,
+                error_details: self.error_details
+                ,
+                actual_elicited_slot: self.actual_elicited_slot
+                ,
+                actual_intent: self.actual_intent
+                ,
+            }
+        )
     }
 }
+

@@ -14,7 +14,13 @@ use crate::endpoint_lib::diagnostic::DiagnosticCollector;
 /// - When `reverse` is false, indexes are evaluated from the beginning of the string
 /// - When `reverse` is true, indexes are evaluated from the end of the string (however, the result
 ///   will still be "forwards" and `start` MUST be less than `end`.
-pub(crate) fn substring<'a>(input: &'a str, start: usize, stop: usize, reverse: bool, e: &mut DiagnosticCollector) -> Option<&'a str> {
+pub(crate) fn substring<'a>(
+    input: &'a str,
+    start: usize,
+    stop: usize,
+    reverse: bool,
+    e: &mut DiagnosticCollector,
+) -> Option<&'a str> {
     if start >= stop {
         e.capture(Err("start > stop"))?;
     }
@@ -39,15 +45,36 @@ mod test {
 
     #[test]
     fn substring_forwards() {
-        assert_eq!(substring("hello", 0, 2, false, &mut DiagnosticCollector::new()), Some("he"));
-        assert_eq!(substring("hello", 0, 0, false, &mut DiagnosticCollector::new()), None);
-        assert_eq!(substring("hello", 0, 5, false, &mut DiagnosticCollector::new()), Some("hello"));
-        assert_eq!(substring("hello", 0, 6, false, &mut DiagnosticCollector::new()), None);
+        assert_eq!(
+            substring("hello", 0, 2, false, &mut DiagnosticCollector::new()),
+            Some("he")
+        );
+        assert_eq!(
+            substring("hello", 0, 0, false, &mut DiagnosticCollector::new()),
+            None
+        );
+        assert_eq!(
+            substring("hello", 0, 5, false, &mut DiagnosticCollector::new()),
+            Some("hello")
+        );
+        assert_eq!(
+            substring("hello", 0, 6, false, &mut DiagnosticCollector::new()),
+            None
+        );
     }
     fn substring_backwards() {
-        assert_eq!(substring("hello", 0, 2, true, &mut DiagnosticCollector::new()), Some("lo"));
-        assert_eq!(substring("hello", 0, 0, true, &mut DiagnosticCollector::new()), None);
-        assert_eq!(substring("hello", 0, 5, true, &mut DiagnosticCollector::new()), Some("hello"))
+        assert_eq!(
+            substring("hello", 0, 2, true, &mut DiagnosticCollector::new()),
+            Some("lo")
+        );
+        assert_eq!(
+            substring("hello", 0, 0, true, &mut DiagnosticCollector::new()),
+            None
+        );
+        assert_eq!(
+            substring("hello", 0, 5, true, &mut DiagnosticCollector::new()),
+            Some("hello")
+        )
     }
 
     // substring doesn't support unicode, it always returns none
@@ -56,7 +83,12 @@ mod test {
         let mut collector = DiagnosticCollector::new();
         assert_eq!(substring("a🐱b", 0, 2, false, &mut collector), None);
         assert_eq!(
-            format!("{}", collector.take_last_error().expect("last error should be set")),
+            format!(
+                "{}",
+                collector
+                    .take_last_error()
+                    .expect("last error should be set")
+            ),
             "the input to substring was not ascii"
         );
     }
@@ -80,3 +112,4 @@ mod test {
         }
     }
 }
+

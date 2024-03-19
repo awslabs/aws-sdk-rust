@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSlots`](crate::operation::list_slots::builders::ListSlotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier of the bot that contains the slot.</p><br>
     ///   - [`bot_version(impl Into<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::bot_version) / [`set_bot_version(Option<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::set_bot_version):<br>required: **true**<br><p>The version of the bot that contains the slot.</p><br>
     ///   - [`locale_id(impl Into<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::set_locale_id):<br>required: **true**<br><p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p><br>
@@ -12,15 +12,16 @@ impl super::Client {
     ///   - [`filters(SlotFilter)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::filters) / [`set_filters(Option<Vec::<SlotFilter>>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::set_filters):<br>required: **false**<br><p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_slots::builders::ListSlotsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListSlotsOutput`](crate::operation::list_slots::ListSlotsOutput) with field(s):
+                            /// - On success, responds with [`ListSlotsOutput`](crate::operation::list_slots::ListSlotsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_slots::ListSlotsOutput::bot_id): <p>The identifier of the bot that contains the slots.</p>
     ///   - [`bot_version(Option<String>)`](crate::operation::list_slots::ListSlotsOutput::bot_version): <p>The version of the bot that contains the slots.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_slots::ListSlotsOutput::locale_id): <p>The language and locale of the slots in the list.</p>
     ///   - [`intent_id(Option<String>)`](crate::operation::list_slots::ListSlotsOutput::intent_id): <p>The identifier of the intent that contains the slots.</p>
     ///   - [`slot_summaries(Option<Vec::<SlotSummary>>)`](crate::operation::list_slots::ListSlotsOutput::slot_summaries): <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_slots::ListSlotsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSlotsError>`](crate::operation::list_slots::ListSlotsError)
+                            /// - On failure, responds with [`SdkError<ListSlotsError>`](crate::operation::list_slots::ListSlotsError)
     pub fn list_slots(&self) -> crate::operation::list_slots::builders::ListSlotsFluentBuilder {
-        crate::operation::list_slots::builders::ListSlotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_slots::builders::ListSlotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

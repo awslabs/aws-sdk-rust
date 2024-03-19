@@ -3,7 +3,7 @@
 /// <p>Extra details specific to the affected scope in this Redshift data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDataShareDetails {
+pub struct RedshiftDataShareDetails  {
     /// <p>The ARN of the underlying Redshift data share that is being affected by this notification.</p>
     pub arn: ::std::string::String,
     /// <p>The database name in the Redshift data share that is being affected by this notification.</p>
@@ -17,31 +17,29 @@ pub struct RedshiftDataShareDetails {
     /// <p>A view name in the Redshift database that is being affected by this notification.</p>
     pub view: ::std::option::Option<::std::string::String>,
 }
-impl RedshiftDataShareDetails {
+impl  RedshiftDataShareDetails  {
     /// <p>The ARN of the underlying Redshift data share that is being affected by this notification.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The database name in the Redshift data share that is being affected by this notification.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>A function name in the Redshift database that is being affected by this notification.</p>
-    pub fn function(&self) -> ::std::option::Option<&str> {
+    pub fn function(&self) -> ::std::option::Option<& str> {
         self.function.as_deref()
     }
     /// <p>A table name in the Redshift database that is being affected by this notification.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<& str> {
         self.table.as_deref()
     }
     /// <p>A schema name in the Redshift database that is being affected by this notification.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>A view name in the Redshift database that is being affected by this notification.</p>
-    pub fn view(&self) -> ::std::option::Option<&str> {
+    pub fn view(&self) -> ::std::option::Option<& str> {
         self.view.as_deref()
     }
 }
@@ -72,8 +70,7 @@ impl RedshiftDataShareDetailsBuilder {
     }
     /// <p>The ARN of the underlying Redshift data share that is being affected by this notification.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the underlying Redshift data share that is being affected by this notification.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl RedshiftDataShareDetailsBuilder {
     }
     /// <p>The database name in the Redshift data share that is being affected by this notification.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database name in the Redshift data share that is being affected by this notification.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl RedshiftDataShareDetailsBuilder {
     }
     /// <p>A function name in the Redshift database that is being affected by this notification.</p>
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function = input;
-        self
+        self.function = input; self
     }
     /// <p>A function name in the Redshift database that is being affected by this notification.</p>
     pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +110,7 @@ impl RedshiftDataShareDetailsBuilder {
     }
     /// <p>A table name in the Redshift database that is being affected by this notification.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>A table name in the Redshift database that is being affected by this notification.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +123,7 @@ impl RedshiftDataShareDetailsBuilder {
     }
     /// <p>A schema name in the Redshift database that is being affected by this notification.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>A schema name in the Redshift database that is being affected by this notification.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +136,7 @@ impl RedshiftDataShareDetailsBuilder {
     }
     /// <p>A view name in the Redshift database that is being affected by this notification.</p>
     pub fn set_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view = input;
-        self
+        self.view = input; self
     }
     /// <p>A view name in the Redshift database that is being affected by this notification.</p>
     pub fn get_view(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,23 +147,28 @@ impl RedshiftDataShareDetailsBuilder {
     /// - [`arn`](crate::types::builders::RedshiftDataShareDetailsBuilder::arn)
     /// - [`database`](crate::types::builders::RedshiftDataShareDetailsBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDataShareDetails {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RedshiftDataShareDetails",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building RedshiftDataShareDetails",
-                )
-            })?,
-            function: self.function,
-            table: self.table,
-            schema: self.schema,
-            view: self.view,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDataShareDetails {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RedshiftDataShareDetails")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building RedshiftDataShareDetails")
+                    )?
+                ,
+                function: self.function
+                ,
+                table: self.table
+                ,
+                schema: self.schema
+                ,
+                view: self.view
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Configuration {
+pub struct Configuration  {
     /// <p>True to enable the configuration.</p>
     pub enabled: bool,
 }
-impl Configuration {
+impl  Configuration  {
     /// <p>True to enable the configuration.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -34,8 +34,7 @@ impl ConfigurationBuilder {
     }
     /// <p>True to enable the configuration.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True to enable the configuration.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl ConfigurationBuilder {
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     pub fn build(self) -> crate::types::Configuration {
         crate::types::Configuration {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

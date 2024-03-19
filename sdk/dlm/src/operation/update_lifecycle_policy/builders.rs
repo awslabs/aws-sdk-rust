@@ -5,55 +5,51 @@ pub use crate::operation::update_lifecycle_policy::_update_lifecycle_policy_inpu
 
 impl UpdateLifecyclePolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_lifecycle_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_lifecycle_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateLifecyclePolicy`.
-///
+/// 
 /// <p>Updates the specified lifecycle policy.</p>
 /// <p>For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle policies</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLifecyclePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder,
+                    inner: crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-    > for UpdateLifecyclePolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
+                    crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
+                > for UpdateLifecyclePolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
+                        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateLifecyclePolicyFluentBuilder {
     /// Creates a new `UpdateLifecyclePolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateLifecyclePolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_lifecycle_policy::UpdateLifecyclePolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput,
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_lifecycle_policy::UpdateLifecyclePolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput, crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
@@ -272,12 +259,12 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self
     }
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
-    pub fn set_cross_region_copy_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>) -> Self {
+    pub fn set_cross_region_copy_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyTarget>>) -> Self {
         self.inner = self.inner.set_cross_region_copy_targets(input);
         self
     }
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
-    pub fn get_cross_region_copy_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>> {
+    pub fn get_cross_region_copy_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyTarget>> {
         self.inner.get_cross_region_copy_targets()
     }
     /// <p><b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
@@ -295,3 +282,4 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self.inner.get_exclusions()
     }
 }
+

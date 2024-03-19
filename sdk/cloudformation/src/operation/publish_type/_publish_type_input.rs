@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishTypeInput {
+pub struct PublishTypeInput  {
     /// <p>The type of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
@@ -20,20 +20,20 @@ pub struct PublishTypeInput {
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
     pub public_version_number: ::std::option::Option<::std::string::String>,
 }
-impl PublishTypeInput {
+impl  PublishTypeInput  {
     /// <p>The type of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThirdPartyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ThirdPartyType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The version number to assign to this version of the extension.</p>
@@ -42,7 +42,7 @@ impl PublishTypeInput {
     /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
     /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
-    pub fn public_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn public_version_number(&self) -> ::std::option::Option<& str> {
         self.public_version_number.as_deref()
     }
 }
@@ -72,8 +72,7 @@ impl PublishTypeInputBuilder {
     /// <p>The type of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThirdPartyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -89,8 +88,7 @@ impl PublishTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -106,8 +104,7 @@ impl PublishTypeInputBuilder {
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -131,8 +128,7 @@ impl PublishTypeInputBuilder {
     /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
     pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_version_number = input;
-        self
+        self.public_version_number = input; self
     }
     /// <p>The version number to assign to this version of the extension.</p>
     /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension:</p>
@@ -145,11 +141,18 @@ impl PublishTypeInputBuilder {
     }
     /// Consumes the builder and constructs a [`PublishTypeInput`](crate::operation::publish_type::PublishTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::publish_type::PublishTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::publish_type::PublishTypeInput {
-            r#type: self.r#type,
-            arn: self.arn,
-            type_name: self.type_name,
-            public_version_number: self.public_version_number,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::publish_type::PublishTypeInput {
+                r#type: self.r#type
+                ,
+                arn: self.arn
+                ,
+                type_name: self.type_name
+                ,
+                public_version_number: self.public_version_number
+                ,
+            }
+        )
     }
 }
+

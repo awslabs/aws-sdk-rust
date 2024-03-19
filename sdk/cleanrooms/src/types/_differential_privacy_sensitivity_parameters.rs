@@ -3,7 +3,7 @@
 /// <p>Provides the sensitivity parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacySensitivityParameters {
+pub struct DifferentialPrivacySensitivityParameters  {
     /// <p>The type of aggregation function that was run.</p>
     pub aggregation_type: crate::types::DifferentialPrivacyAggregationType,
     /// <p>The aggregation expression that was run.</p>
@@ -15,15 +15,14 @@ pub struct DifferentialPrivacySensitivityParameters {
     /// <p>The upper bound of the aggregation expression.</p>
     pub max_column_value: ::std::option::Option<f32>,
 }
-impl DifferentialPrivacySensitivityParameters {
+impl  DifferentialPrivacySensitivityParameters  {
     /// <p>The type of aggregation function that was run.</p>
-    pub fn aggregation_type(&self) -> &crate::types::DifferentialPrivacyAggregationType {
+    pub fn aggregation_type(&self) -> & crate::types::DifferentialPrivacyAggregationType {
         &self.aggregation_type
     }
     /// <p>The aggregation expression that was run.</p>
-    pub fn aggregation_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.aggregation_expression.deref()
+    pub fn aggregation_expression(&self) -> & str {
+        use std::ops::Deref; self.aggregation_expression.deref()
     }
     /// <p>The maximum number of rows contributed by a user in a SQL query.</p>
     pub fn user_contribution_limit(&self) -> i32 {
@@ -64,8 +63,7 @@ impl DifferentialPrivacySensitivityParametersBuilder {
     }
     /// <p>The type of aggregation function that was run.</p>
     pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::DifferentialPrivacyAggregationType>) -> Self {
-        self.aggregation_type = input;
-        self
+        self.aggregation_type = input; self
     }
     /// <p>The type of aggregation function that was run.</p>
     pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::DifferentialPrivacyAggregationType> {
@@ -79,8 +77,7 @@ impl DifferentialPrivacySensitivityParametersBuilder {
     }
     /// <p>The aggregation expression that was run.</p>
     pub fn set_aggregation_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aggregation_expression = input;
-        self
+        self.aggregation_expression = input; self
     }
     /// <p>The aggregation expression that was run.</p>
     pub fn get_aggregation_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl DifferentialPrivacySensitivityParametersBuilder {
     }
     /// <p>The maximum number of rows contributed by a user in a SQL query.</p>
     pub fn set_user_contribution_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.user_contribution_limit = input;
-        self
+        self.user_contribution_limit = input; self
     }
     /// <p>The maximum number of rows contributed by a user in a SQL query.</p>
     pub fn get_user_contribution_limit(&self) -> &::std::option::Option<i32> {
@@ -108,8 +104,7 @@ impl DifferentialPrivacySensitivityParametersBuilder {
     }
     /// <p>The lower bound of the aggregation expression.</p>
     pub fn set_min_column_value(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_column_value = input;
-        self
+        self.min_column_value = input; self
     }
     /// <p>The lower bound of the aggregation expression.</p>
     pub fn get_min_column_value(&self) -> &::std::option::Option<f32> {
@@ -122,8 +117,7 @@ impl DifferentialPrivacySensitivityParametersBuilder {
     }
     /// <p>The upper bound of the aggregation expression.</p>
     pub fn set_max_column_value(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.max_column_value = input;
-        self
+        self.max_column_value = input; self
     }
     /// <p>The upper bound of the aggregation expression.</p>
     pub fn get_max_column_value(&self) -> &::std::option::Option<f32> {
@@ -134,30 +128,30 @@ impl DifferentialPrivacySensitivityParametersBuilder {
     /// - [`aggregation_type`](crate::types::builders::DifferentialPrivacySensitivityParametersBuilder::aggregation_type)
     /// - [`aggregation_expression`](crate::types::builders::DifferentialPrivacySensitivityParametersBuilder::aggregation_expression)
     /// - [`user_contribution_limit`](crate::types::builders::DifferentialPrivacySensitivityParametersBuilder::user_contribution_limit)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DifferentialPrivacySensitivityParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DifferentialPrivacySensitivityParameters {
-            aggregation_type: self.aggregation_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_type",
-                    "aggregation_type was not specified but it is required when building DifferentialPrivacySensitivityParameters",
-                )
-            })?,
-            aggregation_expression: self.aggregation_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_expression",
-                    "aggregation_expression was not specified but it is required when building DifferentialPrivacySensitivityParameters",
-                )
-            })?,
-            user_contribution_limit: self.user_contribution_limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_contribution_limit",
-                    "user_contribution_limit was not specified but it is required when building DifferentialPrivacySensitivityParameters",
-                )
-            })?,
-            min_column_value: self.min_column_value,
-            max_column_value: self.max_column_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DifferentialPrivacySensitivityParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DifferentialPrivacySensitivityParameters {
+                aggregation_type: self.aggregation_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_type", "aggregation_type was not specified but it is required when building DifferentialPrivacySensitivityParameters")
+                    )?
+                ,
+                aggregation_expression: self.aggregation_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_expression", "aggregation_expression was not specified but it is required when building DifferentialPrivacySensitivityParameters")
+                    )?
+                ,
+                user_contribution_limit: self.user_contribution_limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_contribution_limit", "user_contribution_limit was not specified but it is required when building DifferentialPrivacySensitivityParameters")
+                    )?
+                ,
+                min_column_value: self.min_column_value
+                ,
+                max_column_value: self.max_column_value
+                ,
+            }
+        )
     }
 }
+

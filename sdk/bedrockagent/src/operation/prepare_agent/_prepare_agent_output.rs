@@ -3,7 +3,7 @@
 /// PrepareAgent Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrepareAgentOutput {
+pub struct PrepareAgentOutput  {
     /// Identifier for a resource.
     pub agent_id: ::std::string::String,
     /// Schema Type for Action APIs.
@@ -14,31 +14,29 @@ pub struct PrepareAgentOutput {
     pub prepared_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl PrepareAgentOutput {
+impl  PrepareAgentOutput  {
     /// Identifier for a resource.
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// Schema Type for Action APIs.
-    pub fn agent_status(&self) -> &crate::types::AgentStatus {
+    pub fn agent_status(&self) -> & crate::types::AgentStatus {
         &self.agent_status
     }
     /// Agent Version.
-    pub fn agent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_version.deref()
+    pub fn agent_version(&self) -> & str {
+        use std::ops::Deref; self.agent_version.deref()
     }
     /// Time Stamp.
-    pub fn prepared_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn prepared_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.prepared_at
     }
 }
 impl ::aws_types::request_id::RequestId for PrepareAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PrepareAgentOutput {
     /// Creates a new builder-style object to manufacture [`PrepareAgentOutput`](crate::operation::prepare_agent::PrepareAgentOutput).
     pub fn builder() -> crate::operation::prepare_agent::builders::PrepareAgentOutputBuilder {
@@ -65,8 +63,7 @@ impl PrepareAgentOutputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl PrepareAgentOutputBuilder {
     }
     /// Schema Type for Action APIs.
     pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.agent_status = input;
-        self
+        self.agent_status = input; self
     }
     /// Schema Type for Action APIs.
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -95,8 +91,7 @@ impl PrepareAgentOutputBuilder {
     }
     /// Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,57 +105,53 @@ impl PrepareAgentOutputBuilder {
     }
     /// Time Stamp.
     pub fn set_prepared_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.prepared_at = input;
-        self
+        self.prepared_at = input; self
     }
     /// Time Stamp.
     pub fn get_prepared_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.prepared_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PrepareAgentOutput`](crate::operation::prepare_agent::PrepareAgentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::operation::prepare_agent::builders::PrepareAgentOutputBuilder::agent_id)
     /// - [`agent_status`](crate::operation::prepare_agent::builders::PrepareAgentOutputBuilder::agent_status)
     /// - [`agent_version`](crate::operation::prepare_agent::builders::PrepareAgentOutputBuilder::agent_version)
     /// - [`prepared_at`](crate::operation::prepare_agent::builders::PrepareAgentOutputBuilder::prepared_at)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::prepare_agent::PrepareAgentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::prepare_agent::PrepareAgentOutput {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building PrepareAgentOutput",
-                )
-            })?,
-            agent_status: self.agent_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_status",
-                    "agent_status was not specified but it is required when building PrepareAgentOutput",
-                )
-            })?,
-            agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_version",
-                    "agent_version was not specified but it is required when building PrepareAgentOutput",
-                )
-            })?,
-            prepared_at: self.prepared_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "prepared_at",
-                    "prepared_at was not specified but it is required when building PrepareAgentOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::prepare_agent::PrepareAgentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::prepare_agent::PrepareAgentOutput {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building PrepareAgentOutput")
+                    )?
+                ,
+                agent_status: self.agent_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_status", "agent_status was not specified but it is required when building PrepareAgentOutput")
+                    )?
+                ,
+                agent_version: self.agent_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_version", "agent_version was not specified but it is required when building PrepareAgentOutput")
+                    )?
+                ,
+                prepared_at: self.prepared_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("prepared_at", "prepared_at was not specified but it is required when building PrepareAgentOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

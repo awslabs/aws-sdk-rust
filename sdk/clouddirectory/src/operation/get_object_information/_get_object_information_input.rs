@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetObjectInformationInput {
+pub struct GetObjectInformationInput  {
     /// <p>The ARN of the directory being retrieved.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the object.</p>
@@ -10,17 +10,17 @@ pub struct GetObjectInformationInput {
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
-impl GetObjectInformationInput {
+impl  GetObjectInformationInput  {
     /// <p>The ARN of the directory being retrieved.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A reference to the object.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
-    pub fn consistency_level(&self) -> ::std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> ::std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GetObjectInformationInputBuilder {
     }
     /// <p>The ARN of the directory being retrieved.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory being retrieved.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetObjectInformationInputBuilder {
     }
     /// <p>A reference to the object.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>A reference to the object.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -77,22 +75,24 @@ impl GetObjectInformationInputBuilder {
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
-        self.consistency_level = input;
-        self
+        self.consistency_level = input; self
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
         &self.consistency_level
     }
     /// Consumes the builder and constructs a [`GetObjectInformationInput`](crate::operation::get_object_information::GetObjectInformationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_object_information::GetObjectInformationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_object_information::GetObjectInformationInput {
-            directory_arn: self.directory_arn,
-            object_reference: self.object_reference,
-            consistency_level: self.consistency_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_object_information::GetObjectInformationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_object_information::GetObjectInformationInput {
+                directory_arn: self.directory_arn
+                ,
+                object_reference: self.object_reference
+                ,
+                consistency_level: self.consistency_level
+                ,
+            }
+        )
     }
 }
+

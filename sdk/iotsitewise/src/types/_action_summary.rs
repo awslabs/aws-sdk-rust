@@ -3,7 +3,7 @@
 /// <p>Contains the summary of the actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionSummary {
+pub struct ActionSummary  {
     /// <p>The ID of the action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the action definition.</p>
@@ -11,17 +11,17 @@ pub struct ActionSummary {
     /// <p>The resource the action will be taken on.</p>
     pub target_resource: ::std::option::Option<crate::types::TargetResource>,
 }
-impl ActionSummary {
+impl  ActionSummary  {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The ID of the action definition.</p>
-    pub fn action_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_definition_id(&self) -> ::std::option::Option<& str> {
         self.action_definition_id.as_deref()
     }
     /// <p>The resource the action will be taken on.</p>
-    pub fn target_resource(&self) -> ::std::option::Option<&crate::types::TargetResource> {
+    pub fn target_resource(&self) -> ::std::option::Option<& crate::types::TargetResource> {
         self.target_resource.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ActionSummaryBuilder {
     }
     /// <p>The ID of the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID of the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ActionSummaryBuilder {
     }
     /// <p>The ID of the action definition.</p>
     pub fn set_action_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_definition_id = input;
-        self
+        self.action_definition_id = input; self
     }
     /// <p>The ID of the action definition.</p>
     pub fn get_action_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ActionSummaryBuilder {
     }
     /// <p>The resource the action will be taken on.</p>
     pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::TargetResource>) -> Self {
-        self.target_resource = input;
-        self
+        self.target_resource = input; self
     }
     /// <p>The resource the action will be taken on.</p>
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::TargetResource> {
@@ -86,9 +83,13 @@ impl ActionSummaryBuilder {
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
     pub fn build(self) -> crate::types::ActionSummary {
         crate::types::ActionSummary {
-            action_id: self.action_id,
-            action_definition_id: self.action_definition_id,
-            target_resource: self.target_resource,
+            action_id: self.action_id
+            ,
+            action_definition_id: self.action_definition_id
+            ,
+            target_resource: self.target_resource
+            ,
         }
     }
 }
+

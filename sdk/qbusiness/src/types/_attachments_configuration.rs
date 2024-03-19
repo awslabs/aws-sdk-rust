@@ -3,13 +3,13 @@
 /// <p>Configuration information for the file upload during chat feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentsConfiguration {
+pub struct AttachmentsConfiguration  {
     /// <p>Status information about whether file upload functionality is activated or deactivated for your end user.</p>
     pub attachments_control_mode: crate::types::AttachmentsControlMode,
 }
-impl AttachmentsConfiguration {
+impl  AttachmentsConfiguration  {
     /// <p>Status information about whether file upload functionality is activated or deactivated for your end user.</p>
-    pub fn attachments_control_mode(&self) -> &crate::types::AttachmentsControlMode {
+    pub fn attachments_control_mode(&self) -> & crate::types::AttachmentsControlMode {
         &self.attachments_control_mode
     }
 }
@@ -35,8 +35,7 @@ impl AttachmentsConfigurationBuilder {
     }
     /// <p>Status information about whether file upload functionality is activated or deactivated for your end user.</p>
     pub fn set_attachments_control_mode(mut self, input: ::std::option::Option<crate::types::AttachmentsControlMode>) -> Self {
-        self.attachments_control_mode = input;
-        self
+        self.attachments_control_mode = input; self
     }
     /// <p>Status information about whether file upload functionality is activated or deactivated for your end user.</p>
     pub fn get_attachments_control_mode(&self) -> &::std::option::Option<crate::types::AttachmentsControlMode> {
@@ -46,13 +45,15 @@ impl AttachmentsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attachments_control_mode`](crate::types::builders::AttachmentsConfigurationBuilder::attachments_control_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::AttachmentsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttachmentsConfiguration {
-            attachments_control_mode: self.attachments_control_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attachments_control_mode",
-                    "attachments_control_mode was not specified but it is required when building AttachmentsConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttachmentsConfiguration {
+                attachments_control_mode: self.attachments_control_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attachments_control_mode", "attachments_control_mode was not specified but it is required when building AttachmentsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleRunTest {
+pub struct ScheduleRunTest  {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -134,9 +134,9 @@ pub struct ScheduleRunTest {
     /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ScheduleRunTest {
+impl  ScheduleRunTest  {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -177,19 +177,19 @@ impl ScheduleRunTest {
     /// <li>
     /// <p>XCTEST_UI</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::TestType {
+    pub fn r#type(&self) -> & crate::types::TestType {
         &self.r#type
     }
     /// <p>The ARN of the uploaded test to be run.</p>
-    pub fn test_package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn test_package_arn(&self) -> ::std::option::Option<& str> {
         self.test_package_arn.as_deref()
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    pub fn test_spec_arn(&self) -> ::std::option::Option<&str> {
+    pub fn test_spec_arn(&self) -> ::std::option::Option<& str> {
         self.test_spec_arn.as_deref()
     }
     /// <p>The test's filter.</p>
-    pub fn filter(&self) -> ::std::option::Option<&str> {
+    pub fn filter(&self) -> ::std::option::Option<& str> {
         self.filter.as_deref()
     }
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
@@ -275,7 +275,7 @@ impl ScheduleRunTest {
     /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -294,7 +294,7 @@ pub struct ScheduleRunTestBuilder {
     pub(crate) test_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) test_spec_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ScheduleRunTestBuilder {
     /// <p>The test's type.</p>
@@ -383,8 +383,7 @@ impl ScheduleRunTestBuilder {
     /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -436,8 +435,7 @@ impl ScheduleRunTestBuilder {
     }
     /// <p>The ARN of the uploaded test to be run.</p>
     pub fn set_test_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_package_arn = input;
-        self
+        self.test_package_arn = input; self
     }
     /// <p>The ARN of the uploaded test to be run.</p>
     pub fn get_test_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -450,8 +448,7 @@ impl ScheduleRunTestBuilder {
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
     pub fn set_test_spec_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_spec_arn = input;
-        self
+        self.test_spec_arn = input; self
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
     pub fn get_test_spec_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -464,8 +461,7 @@ impl ScheduleRunTestBuilder {
     }
     /// <p>The test's filter.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The test's filter.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -560,9 +556,9 @@ impl ScheduleRunTestBuilder {
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
@@ -647,9 +643,8 @@ impl ScheduleRunTestBuilder {
     /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
@@ -734,24 +729,30 @@ impl ScheduleRunTestBuilder {
     /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ScheduleRunTest`](crate::types::ScheduleRunTest).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ScheduleRunTestBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduleRunTest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduleRunTest {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ScheduleRunTest",
-                )
-            })?,
-            test_package_arn: self.test_package_arn,
-            test_spec_arn: self.test_spec_arn,
-            filter: self.filter,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduleRunTest {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ScheduleRunTest")
+                    )?
+                ,
+                test_package_arn: self.test_package_arn
+                ,
+                test_spec_arn: self.test_spec_arn
+                ,
+                filter: self.filter
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

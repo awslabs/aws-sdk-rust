@@ -3,13 +3,13 @@
 /// <p>Has audio-specific configurations as the operating parameter for Echo Reduction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioFeatures {
+pub struct AudioFeatures  {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     pub echo_reduction: ::std::option::Option<crate::types::MeetingFeatureStatus>,
 }
-impl AudioFeatures {
+impl  AudioFeatures  {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
-    pub fn echo_reduction(&self) -> ::std::option::Option<&crate::types::MeetingFeatureStatus> {
+    pub fn echo_reduction(&self) -> ::std::option::Option<& crate::types::MeetingFeatureStatus> {
         self.echo_reduction.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AudioFeaturesBuilder {
     }
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     pub fn set_echo_reduction(mut self, input: ::std::option::Option<crate::types::MeetingFeatureStatus>) -> Self {
-        self.echo_reduction = input;
-        self
+        self.echo_reduction = input; self
     }
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     pub fn get_echo_reduction(&self) -> &::std::option::Option<crate::types::MeetingFeatureStatus> {
@@ -44,7 +43,9 @@ impl AudioFeaturesBuilder {
     /// Consumes the builder and constructs a [`AudioFeatures`](crate::types::AudioFeatures).
     pub fn build(self) -> crate::types::AudioFeatures {
         crate::types::AudioFeatures {
-            echo_reduction: self.echo_reduction,
+            echo_reduction: self.echo_reduction
+            ,
         }
     }
 }
+

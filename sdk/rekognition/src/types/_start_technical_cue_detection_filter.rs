@@ -3,21 +3,21 @@
 /// <p>Filters for the technical segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTechnicalCueDetectionFilter {
+pub struct StartTechnicalCueDetectionFilter  {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub min_segment_confidence: ::std::option::Option<f32>,
     /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub black_frame: ::std::option::Option<crate::types::BlackFrame>,
 }
-impl StartTechnicalCueDetectionFilter {
+impl  StartTechnicalCueDetectionFilter  {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn min_segment_confidence(&self) -> ::std::option::Option<f32> {
         self.min_segment_confidence
     }
     /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
-    pub fn black_frame(&self) -> ::std::option::Option<&crate::types::BlackFrame> {
+    pub fn black_frame(&self) -> ::std::option::Option<& crate::types::BlackFrame> {
         self.black_frame.as_ref()
     }
 }
@@ -45,8 +45,7 @@ impl StartTechnicalCueDetectionFilterBuilder {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn set_min_segment_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_segment_confidence = input;
-        self
+        self.min_segment_confidence = input; self
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
@@ -60,8 +59,7 @@ impl StartTechnicalCueDetectionFilterBuilder {
     }
     /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub fn set_black_frame(mut self, input: ::std::option::Option<crate::types::BlackFrame>) -> Self {
-        self.black_frame = input;
-        self
+        self.black_frame = input; self
     }
     /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub fn get_black_frame(&self) -> &::std::option::Option<crate::types::BlackFrame> {
@@ -70,8 +68,11 @@ impl StartTechnicalCueDetectionFilterBuilder {
     /// Consumes the builder and constructs a [`StartTechnicalCueDetectionFilter`](crate::types::StartTechnicalCueDetectionFilter).
     pub fn build(self) -> crate::types::StartTechnicalCueDetectionFilter {
         crate::types::StartTechnicalCueDetectionFilter {
-            min_segment_confidence: self.min_segment_confidence,
-            black_frame: self.black_frame,
+            min_segment_confidence: self.min_segment_confidence
+            ,
+            black_frame: self.black_frame
+            ,
         }
     }
 }
+

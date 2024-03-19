@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMetadataTransferJobInput {
+pub struct CreateMetadataTransferJobInput  {
     /// <p>The metadata transfer job Id.</p>
     pub metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata transfer job description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata transfer job sources.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>>,
     /// <p>The metadata transfer job destination.</p>
     pub destination: ::std::option::Option<crate::types::DestinationConfiguration>,
 }
-impl CreateMetadataTransferJobInput {
+impl  CreateMetadataTransferJobInput  {
     /// <p>The metadata transfer job Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_transfer_job_id(&self) -> ::std::option::Option<& str> {
         self.metadata_transfer_job_id.as_deref()
     }
     /// <p>The metadata transfer job description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The metadata transfer job sources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::SourceConfiguration] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::SourceConfiguration] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata transfer job destination.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::DestinationConfiguration> {
         self.destination.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl CreateMetadataTransferJobInput {
 pub struct CreateMetadataTransferJobInputBuilder {
     pub(crate) metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>>,
     pub(crate) destination: ::std::option::Option<crate::types::DestinationConfiguration>,
 }
 impl CreateMetadataTransferJobInputBuilder {
@@ -56,8 +57,7 @@ impl CreateMetadataTransferJobInputBuilder {
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl CreateMetadataTransferJobInputBuilder {
     }
     /// <p>The metadata transfer job description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The metadata transfer job description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,17 +83,16 @@ impl CreateMetadataTransferJobInputBuilder {
     /// <p>The metadata transfer job sources.</p>
     pub fn sources(mut self, input: crate::types::SourceConfiguration) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata transfer job sources.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The metadata transfer job sources.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>> {
         &self.sources
     }
     /// <p>The metadata transfer job destination.</p>
@@ -105,25 +103,26 @@ impl CreateMetadataTransferJobInputBuilder {
     }
     /// <p>The metadata transfer job destination.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The metadata transfer job destination.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination
     }
     /// Consumes the builder and constructs a [`CreateMetadataTransferJobInput`](crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobInput {
-            metadata_transfer_job_id: self.metadata_transfer_job_id,
-            description: self.description,
-            sources: self.sources,
-            destination: self.destination,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobInput {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                ,
+                description: self.description
+                ,
+                sources: self.sources
+                ,
+                destination: self.destination
+                ,
+            }
+        )
     }
 }
+

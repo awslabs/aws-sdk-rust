@@ -3,33 +3,31 @@
 /// <p>The inventory item schema definition. Users can use this to compose inventory query filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryItemSchema {
+pub struct InventoryItemSchema  {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     pub type_name: ::std::string::String,
     /// <p>The schema version for the inventory item.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub attributes: ::std::vec::Vec<crate::types::InventoryItemAttribute>,
+    pub attributes: ::std::vec::Vec::<crate::types::InventoryItemAttribute>,
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl InventoryItemSchema {
+impl  InventoryItemSchema  {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> & str {
+        use std::ops::Deref; self.type_name.deref()
     }
     /// <p>The schema version for the inventory item.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub fn attributes(&self) -> &[crate::types::InventoryItemAttribute] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [crate::types::InventoryItemAttribute] {
+        use std::ops::Deref; self.attributes.deref()
     }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -46,7 +44,7 @@ impl InventoryItemSchema {
 pub struct InventoryItemSchemaBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryItemAttribute>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl InventoryItemSchemaBuilder {
@@ -58,8 +56,7 @@ impl InventoryItemSchemaBuilder {
     }
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl InventoryItemSchemaBuilder {
     }
     /// <p>The schema version for the inventory item.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The schema version for the inventory item.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +82,16 @@ impl InventoryItemSchemaBuilder {
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
     pub fn attributes(mut self, input: crate::types::InventoryItemAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryItemAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InventoryItemAttribute>> {
         &self.attributes
     }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
@@ -106,8 +101,7 @@ impl InventoryItemSchemaBuilder {
     }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,21 +112,24 @@ impl InventoryItemSchemaBuilder {
     /// - [`type_name`](crate::types::builders::InventoryItemSchemaBuilder::type_name)
     /// - [`attributes`](crate::types::builders::InventoryItemSchemaBuilder::attributes)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryItemSchema, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryItemSchema {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building InventoryItemSchema",
-                )
-            })?,
-            version: self.version,
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building InventoryItemSchema",
-                )
-            })?,
-            display_name: self.display_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryItemSchema {
+                type_name: self.type_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_name", "type_name was not specified but it is required when building InventoryItemSchema")
+                    )?
+                ,
+                version: self.version
+                ,
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building InventoryItemSchema")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+            }
+        )
     }
 }
+

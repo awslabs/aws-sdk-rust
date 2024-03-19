@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelJobInput {
+pub struct CancelJobInput  {
     /// The Job ID of the job to be cancelled.
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl CancelJobInput {
+impl  CancelJobInput  {
     /// The Job ID of the job to be cancelled.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CancelJobInputBuilder {
     }
     /// The Job ID of the job to be cancelled.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The Job ID of the job to be cancelled.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl CancelJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput { id: self.id })
+        ::std::result::Result::Ok(
+            crate::operation::cancel_job::CancelJobInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

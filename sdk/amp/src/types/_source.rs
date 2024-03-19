@@ -21,11 +21,7 @@ impl Source {
     /// Tries to convert the enum instance into [`EksConfiguration`](crate::types::Source::EksConfiguration), extracting the inner [`EksConfiguration`](crate::types::EksConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_eks_configuration(&self) -> ::std::result::Result<&crate::types::EksConfiguration, &Self> {
-        if let Source::EksConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Source::EksConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EksConfiguration`](crate::types::Source::EksConfiguration).
     pub fn is_eks_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl Source {
         matches!(self, Self::Unknown)
     }
 }
+

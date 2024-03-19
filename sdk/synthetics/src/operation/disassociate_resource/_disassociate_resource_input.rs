@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateResourceInput {
+pub struct DisassociateResourceInput  {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateResourceInput {
+impl  DisassociateResourceInput  {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_identifier(&self) -> ::std::option::Option<& str> {
         self.group_identifier.as_deref()
     }
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateResourceInputBuilder {
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_identifier = input;
-        self
+        self.group_identifier = input; self
     }
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DisassociateResourceInputBuilder {
     }
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_resource::DisassociateResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_resource::DisassociateResourceInput {
-            group_identifier: self.group_identifier,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_resource::DisassociateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_resource::DisassociateResourceInput {
+                group_identifier: self.group_identifier
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExperimentInput {
+pub struct DeleteExperimentInput  {
     /// <p>The name of the experiment to delete.</p>
     pub experiment_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteExperimentInput {
+impl  DeleteExperimentInput  {
     /// <p>The name of the experiment to delete.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteExperimentInputBuilder {
     }
     /// <p>The name of the experiment to delete.</p>
     pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>The name of the experiment to delete.</p>
     pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.experiment_name
     }
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_experiment::DeleteExperimentInput {
-            experiment_name: self.experiment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_experiment::DeleteExperimentInput {
+                experiment_name: self.experiment_name
+                ,
+            }
+        )
     }
 }
+

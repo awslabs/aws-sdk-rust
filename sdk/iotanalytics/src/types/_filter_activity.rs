@@ -3,7 +3,7 @@
 /// <p>An activity that filters a message based on its attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterActivity {
+pub struct FilterActivity  {
     /// <p>The name of the filter activity.</p>
     pub name: ::std::string::String,
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
@@ -11,19 +11,17 @@ pub struct FilterActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
-impl FilterActivity {
+impl  FilterActivity  {
     /// <p>The name of the filter activity.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
-    pub fn filter(&self) -> &str {
-        use std::ops::Deref;
-        self.filter.deref()
+    pub fn filter(&self) -> & str {
+        use std::ops::Deref; self.filter.deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> ::std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl FilterActivityBuilder {
     }
     /// <p>The name of the filter activity.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter activity.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FilterActivityBuilder {
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl FilterActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl FilterActivityBuilder {
     /// - [`name`](crate::types::builders::FilterActivityBuilder::name)
     /// - [`filter`](crate::types::builders::FilterActivityBuilder::filter)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterActivity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterActivity {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FilterActivity",
-                )
-            })?,
-            filter: self.filter.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter",
-                    "filter was not specified but it is required when building FilterActivity",
-                )
-            })?,
-            next: self.next,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterActivity {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FilterActivity")
+                    )?
+                ,
+                filter: self.filter
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter", "filter was not specified but it is required when building FilterActivity")
+                    )?
+                ,
+                next: self.next
+                ,
+            }
+        )
     }
 }
+

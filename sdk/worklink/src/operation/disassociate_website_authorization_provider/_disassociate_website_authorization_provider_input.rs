@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateWebsiteAuthorizationProviderInput {
+pub struct DisassociateWebsiteAuthorizationProviderInput  {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the authorization provider.</p>
     pub authorization_provider_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateWebsiteAuthorizationProviderInput {
+impl  DisassociateWebsiteAuthorizationProviderInput  {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(&self) -> ::std::option::Option<&str> {
+    pub fn authorization_provider_id(&self) -> ::std::option::Option<& str> {
         self.authorization_provider_id.as_deref()
     }
 }
 impl DisassociateWebsiteAuthorizationProviderInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebsiteAuthorizationProviderInput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput).
-    pub fn builder() -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderInputBuilder {
         crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderInputBuilder::default()
     }
 }
@@ -42,8 +41,7 @@ impl DisassociateWebsiteAuthorizationProviderInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The ARN of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,25 +55,22 @@ impl DisassociateWebsiteAuthorizationProviderInputBuilder {
     }
     /// <p>A unique identifier for the authorization provider.</p>
     pub fn set_authorization_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorization_provider_id = input;
-        self
+        self.authorization_provider_id = input; self
     }
     /// <p>A unique identifier for the authorization provider.</p>
     pub fn get_authorization_provider_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorization_provider_id
     }
     /// Consumes the builder and constructs a [`DisassociateWebsiteAuthorizationProviderInput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput {
-                fleet_arn: self.fleet_arn,
-                authorization_provider_id: self.authorization_provider_id,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+                authorization_provider_id: self.authorization_provider_id
+                ,
+            }
         )
     }
 }
+

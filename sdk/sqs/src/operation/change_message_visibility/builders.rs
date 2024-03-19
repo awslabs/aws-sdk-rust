@@ -5,23 +5,20 @@ pub use crate::operation::change_message_visibility::_change_message_visibility_
 
 impl ChangeMessageVisibilityInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.change_message_visibility();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.change_message_visibility();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ChangeMessageVisibility`.
-///
+/// 
 /// <p>Changes the visibility timeout of a specified message in a queue to a new value. The default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <p>For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code> set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code> call. Thus, any attempt to change the visibility timeout or to delete that message 10 seconds after you initially change the visibility timeout (a total of 25 seconds) might result in an error.</p>
 /// <p>An Amazon SQS message has three basic states:</p>
@@ -43,33 +40,32 @@ impl ChangeMessageVisibilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder,
+                    inner: crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-        crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-    > for ChangeMessageVisibilityFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
+                    crate::operation::change_message_visibility::ChangeMessageVisibilityError,
+                > for ChangeMessageVisibilityFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
+                        crate::operation::change_message_visibility::ChangeMessageVisibilityError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ChangeMessageVisibilityFluentBuilder {
     /// Creates a new `ChangeMessageVisibility`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -78,53 +74,44 @@ impl ChangeMessageVisibilityFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::change_message_visibility::ChangeMessageVisibility::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::change_message_visibility::ChangeMessageVisibility::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-        crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::change_message_visibility::ChangeMessageVisibilityOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::change_message_visibility::ChangeMessageVisibility::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::change_message_visibility::ChangeMessageVisibility::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::change_message_visibility::ChangeMessageVisibilityOutput, crate::operation::change_message_visibility::ChangeMessageVisibilityError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,3 +158,4 @@ impl ChangeMessageVisibilityFluentBuilder {
         self.inner.get_visibility_timeout()
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>Details about the response from the Lambda parsing of the output from the post-processing step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PostProcessingParsedResponse {
+pub struct PostProcessingParsedResponse  {
     /// <p>The text returned by the parser.</p>
     pub text: ::std::option::Option<::std::string::String>,
 }
-impl PostProcessingParsedResponse {
+impl  PostProcessingParsedResponse  {
     /// <p>The text returned by the parser.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
-impl ::std::fmt::Debug for PostProcessingParsedResponse {
+impl  ::std::fmt::Debug for PostProcessingParsedResponse  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostProcessingParsedResponse");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl PostProcessingParsedResponseBuilder {
     }
     /// <p>The text returned by the parser.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text returned by the parser.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl PostProcessingParsedResponseBuilder {
     }
     /// Consumes the builder and constructs a [`PostProcessingParsedResponse`](crate::types::PostProcessingParsedResponse).
     pub fn build(self) -> crate::types::PostProcessingParsedResponse {
-        crate::types::PostProcessingParsedResponse { text: self.text }
+        crate::types::PostProcessingParsedResponse {
+            text: self.text
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for PostProcessingParsedResponseBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for PostProcessingParsedResponseBuilder {
         formatter.finish()
     }
 }
+

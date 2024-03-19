@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVocabularyOutput {
+pub struct DeleteVocabularyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     pub vocabulary_arn: ::std::string::String,
     /// <p>The identifier of the custom vocabulary.</p>
@@ -11,27 +11,25 @@ pub struct DeleteVocabularyOutput {
     pub state: crate::types::VocabularyState,
     _request_id: Option<String>,
 }
-impl DeleteVocabularyOutput {
+impl  DeleteVocabularyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-    pub fn vocabulary_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.vocabulary_arn.deref()
+    pub fn vocabulary_arn(&self) -> & str {
+        use std::ops::Deref; self.vocabulary_arn.deref()
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vocabulary_id.deref()
+    pub fn vocabulary_id(&self) -> & str {
+        use std::ops::Deref; self.vocabulary_id.deref()
     }
     /// <p>The current state of the custom vocabulary.</p>
-    pub fn state(&self) -> &crate::types::VocabularyState {
+    pub fn state(&self) -> & crate::types::VocabularyState {
         &self.state
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyOutput`](crate::operation::delete_vocabulary::DeleteVocabularyOutput).
     pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder {
@@ -57,8 +55,7 @@ impl DeleteVocabularyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     pub fn set_vocabulary_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_arn = input;
-        self
+        self.vocabulary_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     pub fn get_vocabulary_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl DeleteVocabularyOutputBuilder {
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_id = input;
-        self
+        self.vocabulary_id = input; self
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn get_vocabulary_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,50 +83,47 @@ impl DeleteVocabularyOutputBuilder {
     }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVocabularyOutput`](crate::operation::delete_vocabulary::DeleteVocabularyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`vocabulary_arn`](crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder::vocabulary_arn)
     /// - [`vocabulary_id`](crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder::vocabulary_id)
     /// - [`state`](crate::operation::delete_vocabulary::builders::DeleteVocabularyOutputBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_vocabulary::DeleteVocabularyOutput {
-            vocabulary_arn: self.vocabulary_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vocabulary_arn",
-                    "vocabulary_arn was not specified but it is required when building DeleteVocabularyOutput",
-                )
-            })?,
-            vocabulary_id: self.vocabulary_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vocabulary_id",
-                    "vocabulary_id was not specified but it is required when building DeleteVocabularyOutput",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building DeleteVocabularyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vocabulary::DeleteVocabularyOutput {
+                vocabulary_arn: self.vocabulary_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vocabulary_arn", "vocabulary_arn was not specified but it is required when building DeleteVocabularyOutput")
+                    )?
+                ,
+                vocabulary_id: self.vocabulary_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vocabulary_id", "vocabulary_id was not specified but it is required when building DeleteVocabularyOutput")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building DeleteVocabularyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

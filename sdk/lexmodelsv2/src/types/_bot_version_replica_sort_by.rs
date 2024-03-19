@@ -3,19 +3,19 @@
 /// <p>The sort category for the version replicated bots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotVersionReplicaSortBy {
+pub struct BotVersionReplicaSortBy  {
     /// <p>The attribute of the sort category for the version replicated bots.</p>
     pub attribute: crate::types::BotVersionReplicaSortAttribute,
     /// <p>The order of the sort category for the version replicated bots.</p>
     pub order: crate::types::SortOrder,
 }
-impl BotVersionReplicaSortBy {
+impl  BotVersionReplicaSortBy  {
     /// <p>The attribute of the sort category for the version replicated bots.</p>
-    pub fn attribute(&self) -> &crate::types::BotVersionReplicaSortAttribute {
+    pub fn attribute(&self) -> & crate::types::BotVersionReplicaSortAttribute {
         &self.attribute
     }
     /// <p>The order of the sort category for the version replicated bots.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl BotVersionReplicaSortByBuilder {
     }
     /// <p>The attribute of the sort category for the version replicated bots.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BotVersionReplicaSortAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute of the sort category for the version replicated bots.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::BotVersionReplicaSortAttribute> {
@@ -57,8 +56,7 @@ impl BotVersionReplicaSortByBuilder {
     }
     /// <p>The order of the sort category for the version replicated bots.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order of the sort category for the version replicated bots.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl BotVersionReplicaSortByBuilder {
     /// - [`attribute`](crate::types::builders::BotVersionReplicaSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::BotVersionReplicaSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::BotVersionReplicaSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotVersionReplicaSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building BotVersionReplicaSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building BotVersionReplicaSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotVersionReplicaSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building BotVersionReplicaSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building BotVersionReplicaSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

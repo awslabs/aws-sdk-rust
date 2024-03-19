@@ -3,7 +3,7 @@
 /// <p>Describes a workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkloadData {
+pub struct WorkloadData  {
     /// <p>The name of the workload.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a workload.</p>
@@ -19,33 +19,33 @@ pub struct WorkloadData {
     /// <p>The message about a workload's status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl WorkloadData {
+impl  WorkloadData  {
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The display name of a workload.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of a workload.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL of a workload document.</p>
-    pub fn documentation_url(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_url(&self) -> ::std::option::Option<& str> {
         self.documentation_url.as_deref()
     }
     /// <p>The URL of a workload icon.</p>
-    pub fn icon_url(&self) -> ::std::option::Option<&str> {
+    pub fn icon_url(&self) -> ::std::option::Option<& str> {
         self.icon_url.as_deref()
     }
     /// <p>The status of a workload.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkloadStatus> {
         self.status.as_ref()
     }
     /// <p>The message about a workload's status.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The display name of a workload.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of a workload.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The description of a workload.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a workload.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The URL of a workload document.</p>
     pub fn set_documentation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_url = input;
-        self
+        self.documentation_url = input; self
     }
     /// <p>The URL of a workload document.</p>
     pub fn get_documentation_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The URL of a workload icon.</p>
     pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.icon_url = input;
-        self
+        self.icon_url = input; self
     }
     /// <p>The URL of a workload icon.</p>
     pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The status of a workload.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkloadStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a workload.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadStatus> {
@@ -160,8 +154,7 @@ impl WorkloadDataBuilder {
     }
     /// <p>The message about a workload's status.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The message about a workload's status.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl WorkloadDataBuilder {
     /// Consumes the builder and constructs a [`WorkloadData`](crate::types::WorkloadData).
     pub fn build(self) -> crate::types::WorkloadData {
         crate::types::WorkloadData {
-            workload_name: self.workload_name,
-            display_name: self.display_name,
-            description: self.description,
-            documentation_url: self.documentation_url,
-            icon_url: self.icon_url,
-            status: self.status,
-            status_message: self.status_message,
+            workload_name: self.workload_name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
+            documentation_url: self.documentation_url
+            ,
+            icon_url: self.icon_url
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

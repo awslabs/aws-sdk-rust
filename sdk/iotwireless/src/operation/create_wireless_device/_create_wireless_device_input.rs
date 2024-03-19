@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWirelessDeviceInput {
+pub struct CreateWirelessDeviceInput  {
     /// <p>The wireless device type.</p>
     pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The name of the new resource.</p>
@@ -16,49 +16,50 @@ pub struct CreateWirelessDeviceInput {
     /// <p>The device configuration information to use to create the wireless device.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDevice>,
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
 }
-impl CreateWirelessDeviceInput {
+impl  CreateWirelessDeviceInput  {
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WirelessDeviceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WirelessDeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the new resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the destination to assign to the new wireless device.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The device configuration information to use to create the wireless device.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanDevice> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanDevice> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
+    pub fn positioning(&self) -> ::std::option::Option<& crate::types::PositioningConfigStatus> {
         self.positioning.as_ref()
     }
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkCreateWirelessDevice> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkCreateWirelessDevice> {
         self.sidewalk.as_ref()
     }
 }
@@ -79,7 +80,7 @@ pub struct CreateWirelessDeviceInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDevice>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
 }
@@ -92,8 +93,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>The wireless device type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The wireless device type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
@@ -106,8 +106,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>The name of the new resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>The name of the destination to assign to the new wireless device.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>The name of the destination to assign to the new wireless device.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +146,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>The device configuration information to use to create the wireless device.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanDevice>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>The device configuration information to use to create the wireless device.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDevice> {
@@ -177,17 +172,16 @@ impl CreateWirelessDeviceInputBuilder {
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
@@ -197,8 +191,7 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
-        self.positioning = input;
-        self
+        self.positioning = input; self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
@@ -211,28 +204,36 @@ impl CreateWirelessDeviceInputBuilder {
     }
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkCreateWirelessDevice>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkCreateWirelessDevice> {
         &self.sidewalk
     }
     /// Consumes the builder and constructs a [`CreateWirelessDeviceInput`](crate::operation::create_wireless_device::CreateWirelessDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_wireless_device::CreateWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_wireless_device::CreateWirelessDeviceInput {
-            r#type: self.r#type,
-            name: self.name,
-            description: self.description,
-            destination_name: self.destination_name,
-            client_request_token: self.client_request_token,
-            lo_ra_wan: self.lo_ra_wan,
-            tags: self.tags,
-            positioning: self.positioning,
-            sidewalk: self.sidewalk,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_wireless_device::CreateWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_wireless_device::CreateWirelessDeviceInput {
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                destination_name: self.destination_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                tags: self.tags
+                ,
+                positioning: self.positioning
+                ,
+                sidewalk: self.sidewalk
+                ,
+            }
+        )
     }
 }
+

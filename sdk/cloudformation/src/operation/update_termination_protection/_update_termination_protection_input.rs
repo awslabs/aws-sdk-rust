@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTerminationProtectionInput {
+pub struct UpdateTerminationProtectionInput  {
     /// <p>Whether to enable termination protection on the specified stack.</p>
     pub enable_termination_protection: ::std::option::Option<bool>,
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTerminationProtectionInput {
+impl  UpdateTerminationProtectionInput  {
     /// <p>Whether to enable termination protection on the specified stack.</p>
     pub fn enable_termination_protection(&self) -> ::std::option::Option<bool> {
         self.enable_termination_protection
     }
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateTerminationProtectionInputBuilder {
     }
     /// <p>Whether to enable termination protection on the specified stack.</p>
     pub fn set_enable_termination_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_termination_protection = input;
-        self
+        self.enable_termination_protection = input; self
     }
     /// <p>Whether to enable termination protection on the specified stack.</p>
     pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
@@ -56,23 +55,22 @@ impl UpdateTerminationProtectionInputBuilder {
     }
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
     /// Consumes the builder and constructs a [`UpdateTerminationProtectionInput`](crate::operation::update_termination_protection::UpdateTerminationProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_termination_protection::UpdateTerminationProtectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_termination_protection::UpdateTerminationProtectionInput {
-            enable_termination_protection: self.enable_termination_protection,
-            stack_name: self.stack_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_termination_protection::UpdateTerminationProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_termination_protection::UpdateTerminationProtectionInput {
+                enable_termination_protection: self.enable_termination_protection
+                ,
+                stack_name: self.stack_name
+                ,
+            }
+        )
     }
 }
+

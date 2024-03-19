@@ -4,7 +4,7 @@
 /// <p>The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RowLevelPermissionDataSet {
+pub struct RowLevelPermissionDataSet  {
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
@@ -17,27 +17,26 @@ pub struct RowLevelPermissionDataSet {
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub status: ::std::option::Option<crate::types::Status>,
 }
-impl RowLevelPermissionDataSet {
+impl  RowLevelPermissionDataSet  {
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
-    pub fn permission_policy(&self) -> &crate::types::RowLevelPermissionPolicy {
+    pub fn permission_policy(&self) -> & crate::types::RowLevelPermissionPolicy {
         &self.permission_policy
     }
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
-    pub fn format_version(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionFormatVersion> {
+    pub fn format_version(&self) -> ::std::option::Option<& crate::types::RowLevelPermissionFormatVersion> {
         self.format_version.as_ref()
     }
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -66,8 +65,7 @@ impl RowLevelPermissionDataSetBuilder {
     }
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl RowLevelPermissionDataSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl RowLevelPermissionDataSetBuilder {
     }
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
     pub fn set_permission_policy(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionPolicy>) -> Self {
-        self.permission_policy = input;
-        self
+        self.permission_policy = input; self
     }
     /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
     pub fn get_permission_policy(&self) -> &::std::option::Option<crate::types::RowLevelPermissionPolicy> {
@@ -112,8 +108,7 @@ impl RowLevelPermissionDataSetBuilder {
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
     pub fn set_format_version(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionFormatVersion>) -> Self {
-        self.format_version = input;
-        self
+        self.format_version = input; self
     }
     /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
     /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
@@ -127,8 +122,7 @@ impl RowLevelPermissionDataSetBuilder {
     }
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -139,22 +133,26 @@ impl RowLevelPermissionDataSetBuilder {
     /// - [`arn`](crate::types::builders::RowLevelPermissionDataSetBuilder::arn)
     /// - [`permission_policy`](crate::types::builders::RowLevelPermissionDataSetBuilder::permission_policy)
     pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionDataSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RowLevelPermissionDataSet {
-            namespace: self.namespace,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RowLevelPermissionDataSet",
-                )
-            })?,
-            permission_policy: self.permission_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "permission_policy",
-                    "permission_policy was not specified but it is required when building RowLevelPermissionDataSet",
-                )
-            })?,
-            format_version: self.format_version,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RowLevelPermissionDataSet {
+                namespace: self.namespace
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RowLevelPermissionDataSet")
+                    )?
+                ,
+                permission_policy: self.permission_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("permission_policy", "permission_policy was not specified but it is required when building RowLevelPermissionDataSet")
+                    )?
+                ,
+                format_version: self.format_version
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

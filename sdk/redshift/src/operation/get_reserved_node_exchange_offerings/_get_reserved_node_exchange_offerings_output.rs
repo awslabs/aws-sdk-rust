@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReservedNodeExchangeOfferingsOutput {
+pub struct GetReservedNodeExchangeOfferingsOutput  {
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
-    pub reserved_node_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,
+    pub reserved_node_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodeOffering>>,
     _request_id: Option<String>,
 }
-impl GetReservedNodeExchangeOfferingsOutput {
+impl  GetReservedNodeExchangeOfferingsOutput  {
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_node_offerings.is_none()`.
-    pub fn reserved_node_offerings(&self) -> &[crate::types::ReservedNodeOffering] {
-        self.reserved_node_offerings.as_deref().unwrap_or_default()
+    pub fn reserved_node_offerings(&self) -> & [crate::types::ReservedNodeOffering] {
+        self.reserved_node_offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReservedNodeExchangeOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReservedNodeExchangeOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeOfferingsOutput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput).
     pub fn builder() -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsOutputBuilder {
@@ -38,7 +39,7 @@ impl GetReservedNodeExchangeOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservedNodeExchangeOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_node_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,
+    pub(crate) reserved_node_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodeOffering>>,
     _request_id: Option<String>,
 }
 impl GetReservedNodeExchangeOfferingsOutputBuilder {
@@ -49,8 +50,7 @@ impl GetReservedNodeExchangeOfferingsOutputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl GetReservedNodeExchangeOfferingsOutputBuilder {
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
     pub fn reserved_node_offerings(mut self, input: crate::types::ReservedNodeOffering) -> Self {
         let mut v = self.reserved_node_offerings.unwrap_or_default();
-        v.push(input);
-        self.reserved_node_offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_node_offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
-    pub fn set_reserved_node_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>) -> Self {
-        self.reserved_node_offerings = input;
-        self
+    pub fn set_reserved_node_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodeOffering>>) -> Self {
+        self.reserved_node_offerings = input; self
     }
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
-    pub fn get_reserved_node_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>> {
+    pub fn get_reserved_node_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodeOffering>> {
         &self.reserved_node_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeOfferingsOutput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput).
     pub fn build(self) -> crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput {
         crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput {
-            marker: self.marker,
-            reserved_node_offerings: self.reserved_node_offerings,
+            marker: self.marker
+            ,
+            reserved_node_offerings: self.reserved_node_offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

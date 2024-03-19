@@ -3,7 +3,7 @@
 /// <p>Confirms the device request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConfirmDeviceInput {
+pub struct ConfirmDeviceInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The device key.</p>
@@ -13,25 +13,25 @@ pub struct ConfirmDeviceInput {
     /// <p>The device name.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
 }
-impl ConfirmDeviceInput {
+impl  ConfirmDeviceInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> ::std::option::Option<&str> {
+    pub fn device_key(&self) -> ::std::option::Option<& str> {
         self.device_key.as_deref()
     }
     /// <p>The configuration of the device secret verifier.</p>
-    pub fn device_secret_verifier_config(&self) -> ::std::option::Option<&crate::types::DeviceSecretVerifierConfigType> {
+    pub fn device_secret_verifier_config(&self) -> ::std::option::Option<& crate::types::DeviceSecretVerifierConfigType> {
         self.device_secret_verifier_config.as_ref()
     }
     /// <p>The device name.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for ConfirmDeviceInput {
+impl  ::std::fmt::Debug for ConfirmDeviceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmDeviceInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -66,8 +66,7 @@ impl ConfirmDeviceInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl ConfirmDeviceInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_key = input;
-        self
+        self.device_key = input; self
     }
     /// <p>The device key.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl ConfirmDeviceInputBuilder {
     }
     /// <p>The configuration of the device secret verifier.</p>
     pub fn set_device_secret_verifier_config(mut self, input: ::std::option::Option<crate::types::DeviceSecretVerifierConfigType>) -> Self {
-        self.device_secret_verifier_config = input;
-        self
+        self.device_secret_verifier_config = input; self
     }
     /// <p>The configuration of the device secret verifier.</p>
     pub fn get_device_secret_verifier_config(&self) -> &::std::option::Option<crate::types::DeviceSecretVerifierConfigType> {
@@ -109,23 +106,26 @@ impl ConfirmDeviceInputBuilder {
     }
     /// <p>The device name.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The device name.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
     /// Consumes the builder and constructs a [`ConfirmDeviceInput`](crate::operation::confirm_device::ConfirmDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::confirm_device::ConfirmDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::confirm_device::ConfirmDeviceInput {
-            access_token: self.access_token,
-            device_key: self.device_key,
-            device_secret_verifier_config: self.device_secret_verifier_config,
-            device_name: self.device_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::confirm_device::ConfirmDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::confirm_device::ConfirmDeviceInput {
+                access_token: self.access_token
+                ,
+                device_key: self.device_key
+                ,
+                device_secret_verifier_config: self.device_secret_verifier_config
+                ,
+                device_name: self.device_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ConfirmDeviceInputBuilder {
@@ -138,3 +138,4 @@ impl ::std::fmt::Debug for ConfirmDeviceInputBuilder {
         formatter.finish()
     }
 }
+

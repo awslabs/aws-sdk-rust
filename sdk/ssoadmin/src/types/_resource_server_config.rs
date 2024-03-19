@@ -3,13 +3,13 @@
 /// <p>A structure that describes the configuration of a resource server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceServerConfig {
+pub struct ResourceServerConfig  {
     /// <p>A list of the IAM Identity Center access scopes that are associated with this resource server.</p>
-    pub scopes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResourceServerScopeDetails>>,
+    pub scopes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ResourceServerScopeDetails>>,
 }
-impl ResourceServerConfig {
+impl  ResourceServerConfig  {
     /// <p>A list of the IAM Identity Center access scopes that are associated with this resource server.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ResourceServerScopeDetails>> {
+    pub fn scopes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ResourceServerScopeDetails>> {
         self.scopes.as_ref()
     }
 }
@@ -24,7 +24,7 @@ impl ResourceServerConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceServerConfigBuilder {
-    pub(crate) scopes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResourceServerScopeDetails>>,
+    pub(crate) scopes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ResourceServerScopeDetails>>,
 }
 impl ResourceServerConfigBuilder {
     /// Adds a key-value pair to `scopes`.
@@ -34,24 +34,24 @@ impl ResourceServerConfigBuilder {
     /// <p>A list of the IAM Identity Center access scopes that are associated with this resource server.</p>
     pub fn scopes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ResourceServerScopeDetails) -> Self {
         let mut hash_map = self.scopes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.scopes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.scopes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of the IAM Identity Center access scopes that are associated with this resource server.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResourceServerScopeDetails>>,
-    ) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ResourceServerScopeDetails>>) -> Self {
+        self.scopes = input; self
     }
     /// <p>A list of the IAM Identity Center access scopes that are associated with this resource server.</p>
-    pub fn get_scopes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ResourceServerScopeDetails>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ResourceServerScopeDetails>> {
         &self.scopes
     }
     /// Consumes the builder and constructs a [`ResourceServerConfig`](crate::types::ResourceServerConfig).
     pub fn build(self) -> crate::types::ResourceServerConfig {
-        crate::types::ResourceServerConfig { scopes: self.scopes }
+        crate::types::ResourceServerConfig {
+            scopes: self.scopes
+            ,
+        }
     }
 }
+

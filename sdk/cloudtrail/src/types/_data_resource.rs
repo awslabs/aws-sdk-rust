@@ -26,7 +26,7 @@
 /// </ol>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataResource {
+pub struct DataResource  {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
     /// <li>
@@ -59,9 +59,9 @@ pub struct DataResource {
     /// <li>
     /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p></li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DataResource {
+impl  DataResource  {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
     /// <li>
@@ -72,7 +72,7 @@ impl DataResource {
     /// <p><code>AWS::S3::Object</code></p></li>
     /// </ul>
     /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
@@ -96,10 +96,11 @@ impl DataResource {
     /// <li>
     /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataResource {
@@ -114,7 +115,7 @@ impl DataResource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataResourceBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DataResourceBuilder {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
@@ -142,8 +143,7 @@ impl DataResourceBuilder {
     /// </ul>
     /// <p>Additional resource types are available through <i>advanced</i> event selectors. For more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
@@ -185,9 +185,9 @@ impl DataResourceBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
@@ -210,9 +210,8 @@ impl DataResourceBuilder {
     /// <li>
     /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
@@ -235,14 +234,17 @@ impl DataResourceBuilder {
     /// <li>
     /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`DataResource`](crate::types::DataResource).
     pub fn build(self) -> crate::types::DataResource {
         crate::types::DataResource {
-            r#type: self.r#type,
-            values: self.values,
+            r#type: self.r#type
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

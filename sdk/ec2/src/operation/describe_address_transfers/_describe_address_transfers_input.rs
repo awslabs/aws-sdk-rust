@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddressTransfersInput {
+pub struct DescribeAddressTransfersInput  {
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of address transfers to return in one page of results.</p>
@@ -12,15 +12,16 @@ pub struct DescribeAddressTransfersInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeAddressTransfersInput {
+impl  DescribeAddressTransfersInput  {
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_ids.is_none()`.
-    pub fn allocation_ids(&self) -> &[::std::string::String] {
-        self.allocation_ids.as_deref().unwrap_or_default()
+    pub fn allocation_ids(&self) -> & [::std::string::String] {
+        self.allocation_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of address transfers to return in one page of results.</p>
@@ -43,7 +44,7 @@ impl DescribeAddressTransfersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressTransfersInputBuilder {
-    pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -56,17 +57,16 @@ impl DescribeAddressTransfersInputBuilder {
     /// <p>The allocation IDs of Elastic IP addresses.</p>
     pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.allocation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allocation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allocation_ids = input;
-        self
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allocation_ids = input; self
     }
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allocation_ids
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -76,8 +76,7 @@ impl DescribeAddressTransfersInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DescribeAddressTransfersInputBuilder {
     }
     /// <p>The maximum number of address transfers to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of address transfers to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -104,25 +102,26 @@ impl DescribeAddressTransfersInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAddressTransfersInput`](crate::operation::describe_address_transfers::DescribeAddressTransfersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_address_transfers::DescribeAddressTransfersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_address_transfers::DescribeAddressTransfersInput {
-            allocation_ids: self.allocation_ids,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_address_transfers::DescribeAddressTransfersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_address_transfers::DescribeAddressTransfersInput {
+                allocation_ids: self.allocation_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

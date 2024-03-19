@@ -3,7 +3,7 @@
 /// <p>The error Secrets Manager encountered while retrieving an individual secret as part of <code>BatchGetSecretValue</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApiErrorType {
+pub struct ApiErrorType  {
     /// <p>The ARN or name of the secret.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The error Secrets Manager encountered while retrieving an individual secret as part of <code>BatchGetSecretValue</code>, for example <code>ResourceNotFoundException</code>,<code>InvalidParameterException</code>, <code>InvalidRequestException</code>, <code>DecryptionFailure</code>, or <code>AccessDeniedException</code>.</p>
@@ -11,17 +11,17 @@ pub struct ApiErrorType {
     /// <p>A message describing the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ApiErrorType {
+impl  ApiErrorType  {
     /// <p>The ARN or name of the secret.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
     /// <p>The error Secrets Manager encountered while retrieving an individual secret as part of <code>BatchGetSecretValue</code>, for example <code>ResourceNotFoundException</code>,<code>InvalidParameterException</code>, <code>InvalidRequestException</code>, <code>DecryptionFailure</code>, or <code>AccessDeniedException</code>.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A message describing the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ApiErrorTypeBuilder {
     }
     /// <p>The ARN or name of the secret.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN or name of the secret.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ApiErrorTypeBuilder {
     }
     /// <p>The error Secrets Manager encountered while retrieving an individual secret as part of <code>BatchGetSecretValue</code>, for example <code>ResourceNotFoundException</code>,<code>InvalidParameterException</code>, <code>InvalidRequestException</code>, <code>DecryptionFailure</code>, or <code>AccessDeniedException</code>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error Secrets Manager encountered while retrieving an individual secret as part of <code>BatchGetSecretValue</code>, for example <code>ResourceNotFoundException</code>,<code>InvalidParameterException</code>, <code>InvalidRequestException</code>, <code>DecryptionFailure</code>, or <code>AccessDeniedException</code>.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ApiErrorTypeBuilder {
     }
     /// <p>A message describing the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message describing the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ApiErrorTypeBuilder {
     /// Consumes the builder and constructs a [`ApiErrorType`](crate::types::ApiErrorType).
     pub fn build(self) -> crate::types::ApiErrorType {
         crate::types::ApiErrorType {
-            secret_id: self.secret_id,
-            error_code: self.error_code,
-            message: self.message,
+            secret_id: self.secret_id
+            ,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

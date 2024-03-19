@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterDataLakeDelegatedAdministratorInput {
+pub struct RegisterDataLakeDelegatedAdministratorInput  {
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl RegisterDataLakeDelegatedAdministratorInput {
+impl  RegisterDataLakeDelegatedAdministratorInput  {
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl RegisterDataLakeDelegatedAdministratorInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`RegisterDataLakeDelegatedAdministratorInput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput { account_id: self.account_id },
+            crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput {
+                account_id: self.account_id
+                ,
+            }
         )
     }
 }
+

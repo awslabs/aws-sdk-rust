@@ -3,16 +3,17 @@
 /// <p>Contains information about the observed behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Observations {
+pub struct Observations  {
     /// <p>The text that was unusual.</p>
-    pub text: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub text: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Observations {
+impl  Observations  {
     /// <p>The text that was unusual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text.is_none()`.
-    pub fn text(&self) -> &[::std::string::String] {
-        self.text.as_deref().unwrap_or_default()
+    pub fn text(&self) -> & [::std::string::String] {
+        self.text.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Observations {
@@ -26,7 +27,7 @@ impl Observations {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObservationsBuilder {
-    pub(crate) text: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) text: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ObservationsBuilder {
     /// Appends an item to `text`.
@@ -36,21 +37,24 @@ impl ObservationsBuilder {
     /// <p>The text that was unusual.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.text.unwrap_or_default();
-        v.push(input.into());
-        self.text = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.text = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The text that was unusual.</p>
-    pub fn set_text(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.text = input;
-        self
+    pub fn set_text(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.text = input; self
     }
     /// <p>The text that was unusual.</p>
-    pub fn get_text(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_text(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.text
     }
     /// Consumes the builder and constructs a [`Observations`](crate::types::Observations).
     pub fn build(self) -> crate::types::Observations {
-        crate::types::Observations { text: self.text }
+        crate::types::Observations {
+            text: self.text
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventBusInput {
+pub struct CreateEventBusInput  {
     /// <p>The name of the new event bus.</p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
@@ -10,24 +10,25 @@ pub struct CreateEventBusInput {
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
     pub event_source_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the event bus.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateEventBusInput {
+impl  CreateEventBusInput  {
     /// <p>The name of the new event bus.</p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn event_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_name(&self) -> ::std::option::Option<& str> {
         self.event_source_name.as_deref()
     }
     /// <p>Tags to associate with the event bus.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateEventBusInput {
@@ -43,7 +44,7 @@ impl CreateEventBusInput {
 pub struct CreateEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateEventBusInputBuilder {
     /// <p>The name of the new event bus.</p>
@@ -58,8 +59,7 @@ impl CreateEventBusInputBuilder {
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new event bus.</p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
@@ -74,8 +74,7 @@ impl CreateEventBusInputBuilder {
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
     pub fn set_event_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source_name = input;
-        self
+        self.event_source_name = input; self
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
     pub fn get_event_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,27 +87,30 @@ impl CreateEventBusInputBuilder {
     /// <p>Tags to associate with the event bus.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to associate with the event bus.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to associate with the event bus.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_event_bus::CreateEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_event_bus::CreateEventBusInput {
-            name: self.name,
-            event_source_name: self.event_source_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_event_bus::CreateEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_event_bus::CreateEventBusInput {
+                name: self.name
+                ,
+                event_source_name: self.event_source_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

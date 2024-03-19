@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseMetricDataInput {
+pub struct GetRelationalDatabaseMetricDataInput  {
     /// <p>The name of your database from which to get metric data.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
@@ -73,11 +73,11 @@ pub struct GetRelationalDatabaseMetricDataInput {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
+    pub statistics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>,
 }
-impl GetRelationalDatabaseMetricDataInput {
+impl  GetRelationalDatabaseMetricDataInput  {
     /// <p>The name of your database from which to get metric data.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The metric for which you want to return information.</p>
@@ -108,7 +108,7 @@ impl GetRelationalDatabaseMetricDataInput {
     /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p></li>
     /// </ul>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::RelationalDatabaseMetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::RelationalDatabaseMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -125,7 +125,7 @@ impl GetRelationalDatabaseMetricDataInput {
     /// <p>Specified in the Unix time format.</p>
     /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval from which to get metric data.</p>
@@ -137,11 +137,11 @@ impl GetRelationalDatabaseMetricDataInput {
     /// <p>Specified in the Unix time format.</p>
     /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::MetricUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::MetricUnit> {
         self.unit.as_ref()
     }
     /// <p>The statistic for the metric.</p>
@@ -158,10 +158,11 @@ impl GetRelationalDatabaseMetricDataInput {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
-    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
-        self.statistics.as_deref().unwrap_or_default()
+    pub fn statistics(&self) -> & [crate::types::MetricStatistic] {
+        self.statistics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetRelationalDatabaseMetricDataInput {
@@ -181,7 +182,7 @@ pub struct GetRelationalDatabaseMetricDataInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) unit: ::std::option::Option<crate::types::MetricUnit>,
-    pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
+    pub(crate) statistics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>,
 }
 impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <p>The name of your database from which to get metric data.</p>
@@ -192,8 +193,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     }
     /// <p>The name of your database from which to get metric data.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of your database from which to get metric data.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,8 +261,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <p><code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseMetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid relational database metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value. All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
@@ -305,8 +304,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
@@ -337,8 +335,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time interval from which to get metric data.</p>
     /// <p>Constraints:</p>
@@ -376,8 +373,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time interval from which to get metric data.</p>
     /// <p>Constraints:</p>
@@ -399,8 +395,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::MetricUnit> {
@@ -426,9 +421,9 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// </ul>
     pub fn statistics(mut self, input: crate::types::MetricStatistic) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-        v.push(input);
-        self.statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -444,9 +439,8 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>) -> Self {
+        self.statistics = input; self
     }
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -462,26 +456,29 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>> {
         &self.statistics
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseMetricDataInput`](crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput {
-                relational_database_name: self.relational_database_name,
-                metric_name: self.metric_name,
-                period: self.period,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                unit: self.unit,
-                statistics: self.statistics,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                metric_name: self.metric_name
+                ,
+                period: self.period
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                unit: self.unit
+                ,
+                statistics: self.statistics
+                ,
+            }
         )
     }
 }
+

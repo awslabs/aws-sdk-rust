@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleasePhoneNumberInput {
+pub struct ReleasePhoneNumberInput  {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
-impl ReleasePhoneNumberInput {
+impl  ReleasePhoneNumberInput  {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl ReleasePhoneNumberInputBuilder {
     }
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_id
     }
     /// Consumes the builder and constructs a [`ReleasePhoneNumberInput`](crate::operation::release_phone_number::ReleasePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::release_phone_number::ReleasePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::release_phone_number::ReleasePhoneNumberInput {
-            phone_number_id: self.phone_number_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::release_phone_number::ReleasePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::release_phone_number::ReleasePhoneNumberInput {
+                phone_number_id: self.phone_number_id
+                ,
+            }
+        )
     }
 }
+

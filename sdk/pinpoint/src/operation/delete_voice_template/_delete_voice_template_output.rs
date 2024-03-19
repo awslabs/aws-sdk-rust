@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVoiceTemplateOutput {
+pub struct DeleteVoiceTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
 }
-impl DeleteVoiceTemplateOutput {
+impl  DeleteVoiceTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> ::std::option::Option<&crate::types::MessageBody> {
+    pub fn message_body(&self) -> ::std::option::Option<& crate::types::MessageBody> {
         self.message_body.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteVoiceTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceTemplateOutput`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput).
     pub fn builder() -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteVoiceTemplateOutputBuilder {
     }
     /// <p>Provides information about an API request or response.</p>
     pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
-        self.message_body = input;
-        self
+        self.message_body = input; self
     }
     /// <p>Provides information about an API request or response.</p>
     pub fn get_message_body(&self) -> &::std::option::Option<crate::types::MessageBody> {
         &self.message_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVoiceTemplateOutput`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput).
     pub fn build(self) -> crate::operation::delete_voice_template::DeleteVoiceTemplateOutput {
         crate::operation::delete_voice_template::DeleteVoiceTemplateOutput {
-            message_body: self.message_body,
+            message_body: self.message_body
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

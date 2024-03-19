@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPackageConfigurationOutput {
+pub struct GetPackageConfigurationOutput  {
     /// <p>The version that is associated to a specific job.</p>
     pub version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     _request_id: Option<String>,
 }
-impl GetPackageConfigurationOutput {
+impl  GetPackageConfigurationOutput  {
     /// <p>The version that is associated to a specific job.</p>
-    pub fn version_update_by_jobs_config(&self) -> ::std::option::Option<&crate::types::VersionUpdateByJobsConfig> {
+    pub fn version_update_by_jobs_config(&self) -> ::std::option::Option<& crate::types::VersionUpdateByJobsConfig> {
         self.version_update_by_jobs_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPackageConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPackageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput).
     pub fn builder() -> crate::operation::get_package_configuration::builders::GetPackageConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPackageConfigurationOutputBuilder {
     }
     /// <p>The version that is associated to a specific job.</p>
     pub fn set_version_update_by_jobs_config(mut self, input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>) -> Self {
-        self.version_update_by_jobs_config = input;
-        self
+        self.version_update_by_jobs_config = input; self
     }
     /// <p>The version that is associated to a specific job.</p>
     pub fn get_version_update_by_jobs_config(&self) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
         &self.version_update_by_jobs_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput).
     pub fn build(self) -> crate::operation::get_package_configuration::GetPackageConfigurationOutput {
         crate::operation::get_package_configuration::GetPackageConfigurationOutput {
-            version_update_by_jobs_config: self.version_update_by_jobs_config,
+            version_update_by_jobs_config: self.version_update_by_jobs_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

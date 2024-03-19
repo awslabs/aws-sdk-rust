@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBatchPredictionJobsInput {
+pub struct GetBatchPredictionJobsInput  {
     /// <p>The batch prediction job for which to get the details.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
@@ -10,9 +10,9 @@ pub struct GetBatchPredictionJobsInput {
     /// <p>The next token from the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetBatchPredictionJobsInput {
+impl  GetBatchPredictionJobsInput  {
     /// <p>The batch prediction job for which to get the details.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of objects to return for the request.</p>
@@ -20,7 +20,7 @@ impl GetBatchPredictionJobsInput {
         self.max_results
     }
     /// <p>The next token from the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetBatchPredictionJobsInputBuilder {
     }
     /// <p>The batch prediction job for which to get the details.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The batch prediction job for which to get the details.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetBatchPredictionJobsInputBuilder {
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl GetBatchPredictionJobsInputBuilder {
     }
     /// <p>The next token from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetBatchPredictionJobsInput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput {
-            job_id: self.job_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput {
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

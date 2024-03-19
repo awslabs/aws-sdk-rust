@@ -2,50 +2,53 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestAuthorizationInput {
+pub struct TestAuthorizationInput  {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The Cognito identity pool ID.</p>
     pub cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub auth_infos: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>,
+    pub auth_infos: ::std::option::Option<::std::vec::Vec::<crate::types::AuthInfo>>,
     /// <p>The MQTT client ID.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub policy_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub policy_names_to_skip: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names_to_skip: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TestAuthorizationInput {
+impl  TestAuthorizationInput  {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn cognito_identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.cognito_identity_pool_id.as_deref()
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_infos.is_none()`.
-    pub fn auth_infos(&self) -> &[crate::types::AuthInfo] {
-        self.auth_infos.as_deref().unwrap_or_default()
+    pub fn auth_infos(&self) -> & [crate::types::AuthInfo] {
+        self.auth_infos.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The MQTT client ID.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names_to_add.is_none()`.
-    pub fn policy_names_to_add(&self) -> &[::std::string::String] {
-        self.policy_names_to_add.as_deref().unwrap_or_default()
+    pub fn policy_names_to_add(&self) -> & [::std::string::String] {
+        self.policy_names_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names_to_skip.is_none()`.
-    pub fn policy_names_to_skip(&self) -> &[::std::string::String] {
-        self.policy_names_to_skip.as_deref().unwrap_or_default()
+    pub fn policy_names_to_skip(&self) -> & [::std::string::String] {
+        self.policy_names_to_skip.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TestAuthorizationInput {
@@ -61,10 +64,10 @@ impl TestAuthorizationInput {
 pub struct TestAuthorizationInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) auth_infos: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>,
+    pub(crate) auth_infos: ::std::option::Option<::std::vec::Vec::<crate::types::AuthInfo>>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) policy_names_to_skip: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_names_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) policy_names_to_skip: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TestAuthorizationInputBuilder {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
@@ -74,8 +77,7 @@ impl TestAuthorizationInputBuilder {
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +90,7 @@ impl TestAuthorizationInputBuilder {
     }
     /// <p>The Cognito identity pool ID.</p>
     pub fn set_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cognito_identity_pool_id = input;
-        self
+        self.cognito_identity_pool_id = input; self
     }
     /// <p>The Cognito identity pool ID.</p>
     pub fn get_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,17 +103,16 @@ impl TestAuthorizationInputBuilder {
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
     pub fn auth_infos(mut self, input: crate::types::AuthInfo) -> Self {
         let mut v = self.auth_infos.unwrap_or_default();
-        v.push(input);
-        self.auth_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auth_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn set_auth_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>) -> Self {
-        self.auth_infos = input;
-        self
+    pub fn set_auth_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthInfo>>) -> Self {
+        self.auth_infos = input; self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn get_auth_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>> {
+    pub fn get_auth_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthInfo>> {
         &self.auth_infos
     }
     /// <p>The MQTT client ID.</p>
@@ -122,8 +122,7 @@ impl TestAuthorizationInputBuilder {
     }
     /// <p>The MQTT client ID.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The MQTT client ID.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +135,16 @@ impl TestAuthorizationInputBuilder {
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
     pub fn policy_names_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names_to_add = input;
-        self
+    pub fn set_policy_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names_to_add = input; self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn get_policy_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names_to_add
     }
     /// Appends an item to `policy_names_to_skip`.
@@ -156,30 +154,36 @@ impl TestAuthorizationInputBuilder {
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     pub fn policy_names_to_skip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names_to_skip.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names_to_skip = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names_to_skip = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names_to_skip = input;
-        self
+    pub fn set_policy_names_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names_to_skip = input; self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn get_policy_names_to_skip(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names_to_skip(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names_to_skip
     }
     /// Consumes the builder and constructs a [`TestAuthorizationInput`](crate::operation::test_authorization::TestAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_authorization::TestAuthorizationInput {
-            principal: self.principal,
-            cognito_identity_pool_id: self.cognito_identity_pool_id,
-            auth_infos: self.auth_infos,
-            client_id: self.client_id,
-            policy_names_to_add: self.policy_names_to_add,
-            policy_names_to_skip: self.policy_names_to_skip,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_authorization::TestAuthorizationInput {
+                principal: self.principal
+                ,
+                cognito_identity_pool_id: self.cognito_identity_pool_id
+                ,
+                auth_infos: self.auth_infos
+                ,
+                client_id: self.client_id
+                ,
+                policy_names_to_add: self.policy_names_to_add
+                ,
+                policy_names_to_skip: self.policy_names_to_skip
+                ,
+            }
+        )
     }
 }
+

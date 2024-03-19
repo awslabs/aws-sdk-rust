@@ -3,19 +3,19 @@
 /// <p>Represents one level between a property and the root of the asset model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetModelPropertyPathSegment {
+pub struct AssetModelPropertyPathSegment  {
     /// <p>The ID of the path segment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the path segment.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AssetModelPropertyPathSegment {
+impl  AssetModelPropertyPathSegment  {
     /// <p>The ID of the path segment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the path segment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssetModelPropertyPathSegmentBuilder {
     }
     /// <p>The ID of the path segment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the path segment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AssetModelPropertyPathSegmentBuilder {
     }
     /// <p>The name of the path segment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the path segment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AssetModelPropertyPathSegmentBuilder {
     /// Consumes the builder and constructs a [`AssetModelPropertyPathSegment`](crate::types::AssetModelPropertyPathSegment).
     pub fn build(self) -> crate::types::AssetModelPropertyPathSegment {
         crate::types::AssetModelPropertyPathSegment {
-            id: self.id,
-            name: self.name,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

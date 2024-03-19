@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketEncryptionOutput {
+pub struct GetBucketEncryptionOutput  {
     /// <p>Specifies the default server-side-encryption configuration.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl GetBucketEncryptionOutput {
+impl  GetBucketEncryptionOutput  {
     /// <p>Specifies the default server-side-encryption configuration.</p>
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketEncryptionOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for GetBucketEncryptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBucketEncryptionOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketEncryptionOutput`](crate::operation::get_bucket_encryption::GetBucketEncryptionOutput).
     pub fn builder() -> crate::operation::get_bucket_encryption::builders::GetBucketEncryptionOutputBuilder {
@@ -47,37 +47,38 @@ impl GetBucketEncryptionOutputBuilder {
     }
     /// <p>Specifies the default server-side-encryption configuration.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// <p>Specifies the default server-side-encryption configuration.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBucketEncryptionOutput`](crate::operation::get_bucket_encryption::GetBucketEncryptionOutput).
     pub fn build(self) -> crate::operation::get_bucket_encryption::GetBucketEncryptionOutput {
         crate::operation::get_bucket_encryption::GetBucketEncryptionOutput {
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
+            server_side_encryption_configuration: self.server_side_encryption_configuration
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

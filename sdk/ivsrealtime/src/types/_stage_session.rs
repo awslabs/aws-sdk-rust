@@ -3,7 +3,7 @@
 /// <p>A stage session begins when the first participant joins a stage and ends after the last participant leaves the stage. A stage session helps with debugging stages by grouping events and participants into shorter periods of time (i.e., a session), which is helpful when stages are used over long periods of time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StageSession {
+pub struct StageSession  {
     /// <p>ID of the session within the stage.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
@@ -11,17 +11,17 @@ pub struct StageSession {
     /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl StageSession {
+impl  StageSession  {
     /// <p>ID of the session within the stage.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl StageSessionBuilder {
     }
     /// <p>ID of the session within the stage.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>ID of the session within the stage.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StageSessionBuilder {
     }
     /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>ISO 8601 timestamp (returned as a string) when this stage session began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl StageSessionBuilder {
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This is null if the stage is active.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl StageSessionBuilder {
     /// Consumes the builder and constructs a [`StageSession`](crate::types::StageSession).
     pub fn build(self) -> crate::types::StageSession {
         crate::types::StageSession {
-            session_id: self.session_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            session_id: self.session_id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

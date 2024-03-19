@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableSnapshotBlockPublicAccessOutput {
+pub struct EnableSnapshotBlockPublicAccessOutput  {
     /// <p>The state of block public access for snapshots for the account and Region. Returns either <code>block-all-sharing</code> or <code>block-new-sharing</code> if the request succeeds.</p>
     pub state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
     _request_id: Option<String>,
 }
-impl EnableSnapshotBlockPublicAccessOutput {
+impl  EnableSnapshotBlockPublicAccessOutput  {
     /// <p>The state of block public access for snapshots for the account and Region. Returns either <code>block-all-sharing</code> or <code>block-new-sharing</code> if the request succeeds.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotBlockPublicAccessState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SnapshotBlockPublicAccessState> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableSnapshotBlockPublicAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableSnapshotBlockPublicAccessOutput {
     /// Creates a new builder-style object to manufacture [`EnableSnapshotBlockPublicAccessOutput`](crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessOutput).
     pub fn builder() -> crate::operation::enable_snapshot_block_public_access::builders::EnableSnapshotBlockPublicAccessOutputBuilder {
@@ -40,27 +40,28 @@ impl EnableSnapshotBlockPublicAccessOutputBuilder {
     }
     /// <p>The state of block public access for snapshots for the account and Region. Returns either <code>block-all-sharing</code> or <code>block-new-sharing</code> if the request succeeds.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of block public access for snapshots for the account and Region. Returns either <code>block-all-sharing</code> or <code>block-new-sharing</code> if the request succeeds.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotBlockPublicAccessState> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableSnapshotBlockPublicAccessOutput`](crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessOutput).
     pub fn build(self) -> crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessOutput {
         crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessOutput {
-            state: self.state,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

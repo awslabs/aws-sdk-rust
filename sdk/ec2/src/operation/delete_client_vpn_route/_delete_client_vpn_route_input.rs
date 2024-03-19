@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClientVpnRouteInput {
+pub struct DeleteClientVpnRouteInput  {
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target subnet used by the route.</p>
@@ -12,17 +12,17 @@ pub struct DeleteClientVpnRouteInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DeleteClientVpnRouteInput {
+impl  DeleteClientVpnRouteInput  {
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The ID of the target subnet used by the route.</p>
-    pub fn target_vpc_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_vpc_subnet_id(&self) -> ::std::option::Option<& str> {
         self.target_vpc_subnet_id.as_deref()
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -55,8 +55,7 @@ impl DeleteClientVpnRouteInputBuilder {
     }
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteClientVpnRouteInputBuilder {
     }
     /// <p>The ID of the target subnet used by the route.</p>
     pub fn set_target_vpc_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_vpc_subnet_id = input;
-        self
+        self.target_vpc_subnet_id = input; self
     }
     /// <p>The ID of the target subnet used by the route.</p>
     pub fn get_target_vpc_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DeleteClientVpnRouteInputBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl DeleteClientVpnRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteClientVpnRouteInput`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            target_vpc_subnet_id: self.target_vpc_subnet_id,
-            destination_cidr_block: self.destination_cidr_block,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput {
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                target_vpc_subnet_id: self.target_vpc_subnet_id
+                ,
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

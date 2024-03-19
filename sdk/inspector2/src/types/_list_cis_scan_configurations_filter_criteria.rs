@@ -3,32 +3,35 @@
 /// <p>A list of CIS scan configurations filter criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCisScanConfigurationsFilterCriteria {
+pub struct ListCisScanConfigurationsFilterCriteria  {
     /// <p>The list of scan name filters.</p>
-    pub scan_name_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,
+    pub scan_name_filters: ::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>>,
     /// <p>The list of target resource tag filters.</p>
-    pub target_resource_tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
+    pub target_resource_tag_filters: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>,
     /// <p>The list of scan configuration ARN filters.</p>
-    pub scan_configuration_arn_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,
+    pub scan_configuration_arn_filters: ::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>>,
 }
-impl ListCisScanConfigurationsFilterCriteria {
+impl  ListCisScanConfigurationsFilterCriteria  {
     /// <p>The list of scan name filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_name_filters.is_none()`.
-    pub fn scan_name_filters(&self) -> &[crate::types::CisStringFilter] {
-        self.scan_name_filters.as_deref().unwrap_or_default()
+    pub fn scan_name_filters(&self) -> & [crate::types::CisStringFilter] {
+        self.scan_name_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of target resource tag filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_resource_tag_filters.is_none()`.
-    pub fn target_resource_tag_filters(&self) -> &[crate::types::TagFilter] {
-        self.target_resource_tag_filters.as_deref().unwrap_or_default()
+    pub fn target_resource_tag_filters(&self) -> & [crate::types::TagFilter] {
+        self.target_resource_tag_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of scan configuration ARN filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_configuration_arn_filters.is_none()`.
-    pub fn scan_configuration_arn_filters(&self) -> &[crate::types::CisStringFilter] {
-        self.scan_configuration_arn_filters.as_deref().unwrap_or_default()
+    pub fn scan_configuration_arn_filters(&self) -> & [crate::types::CisStringFilter] {
+        self.scan_configuration_arn_filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListCisScanConfigurationsFilterCriteria {
@@ -42,9 +45,9 @@ impl ListCisScanConfigurationsFilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCisScanConfigurationsFilterCriteriaBuilder {
-    pub(crate) scan_name_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,
-    pub(crate) target_resource_tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    pub(crate) scan_configuration_arn_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,
+    pub(crate) scan_name_filters: ::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>>,
+    pub(crate) target_resource_tag_filters: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>,
+    pub(crate) scan_configuration_arn_filters: ::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>>,
 }
 impl ListCisScanConfigurationsFilterCriteriaBuilder {
     /// Appends an item to `scan_name_filters`.
@@ -54,17 +57,16 @@ impl ListCisScanConfigurationsFilterCriteriaBuilder {
     /// <p>The list of scan name filters.</p>
     pub fn scan_name_filters(mut self, input: crate::types::CisStringFilter) -> Self {
         let mut v = self.scan_name_filters.unwrap_or_default();
-        v.push(input);
-        self.scan_name_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scan_name_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of scan name filters.</p>
-    pub fn set_scan_name_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>) -> Self {
-        self.scan_name_filters = input;
-        self
+    pub fn set_scan_name_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>>) -> Self {
+        self.scan_name_filters = input; self
     }
     /// <p>The list of scan name filters.</p>
-    pub fn get_scan_name_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>> {
+    pub fn get_scan_name_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>> {
         &self.scan_name_filters
     }
     /// Appends an item to `target_resource_tag_filters`.
@@ -74,17 +76,16 @@ impl ListCisScanConfigurationsFilterCriteriaBuilder {
     /// <p>The list of target resource tag filters.</p>
     pub fn target_resource_tag_filters(mut self, input: crate::types::TagFilter) -> Self {
         let mut v = self.target_resource_tag_filters.unwrap_or_default();
-        v.push(input);
-        self.target_resource_tag_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_resource_tag_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of target resource tag filters.</p>
-    pub fn set_target_resource_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
-        self.target_resource_tag_filters = input;
-        self
+    pub fn set_target_resource_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>) -> Self {
+        self.target_resource_tag_filters = input; self
     }
     /// <p>The list of target resource tag filters.</p>
-    pub fn get_target_resource_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_target_resource_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>> {
         &self.target_resource_tag_filters
     }
     /// Appends an item to `scan_configuration_arn_filters`.
@@ -94,25 +95,28 @@ impl ListCisScanConfigurationsFilterCriteriaBuilder {
     /// <p>The list of scan configuration ARN filters.</p>
     pub fn scan_configuration_arn_filters(mut self, input: crate::types::CisStringFilter) -> Self {
         let mut v = self.scan_configuration_arn_filters.unwrap_or_default();
-        v.push(input);
-        self.scan_configuration_arn_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scan_configuration_arn_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of scan configuration ARN filters.</p>
-    pub fn set_scan_configuration_arn_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>) -> Self {
-        self.scan_configuration_arn_filters = input;
-        self
+    pub fn set_scan_configuration_arn_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>>) -> Self {
+        self.scan_configuration_arn_filters = input; self
     }
     /// <p>The list of scan configuration ARN filters.</p>
-    pub fn get_scan_configuration_arn_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>> {
+    pub fn get_scan_configuration_arn_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CisStringFilter>> {
         &self.scan_configuration_arn_filters
     }
     /// Consumes the builder and constructs a [`ListCisScanConfigurationsFilterCriteria`](crate::types::ListCisScanConfigurationsFilterCriteria).
     pub fn build(self) -> crate::types::ListCisScanConfigurationsFilterCriteria {
         crate::types::ListCisScanConfigurationsFilterCriteria {
-            scan_name_filters: self.scan_name_filters,
-            target_resource_tag_filters: self.target_resource_tag_filters,
-            scan_configuration_arn_filters: self.scan_configuration_arn_filters,
+            scan_name_filters: self.scan_name_filters
+            ,
+            target_resource_tag_filters: self.target_resource_tag_filters
+            ,
+            scan_configuration_arn_filters: self.scan_configuration_arn_filters
+            ,
         }
     }
 }
+

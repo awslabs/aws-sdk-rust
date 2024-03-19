@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChimeWebhookConfigurationsOutput {
+pub struct DescribeChimeWebhookConfigurationsOutput  {
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of Chime webhooks associated with the account.
-    pub webhook_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>>,
+    pub webhook_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ChimeWebhookConfiguration>>,
     _request_id: Option<String>,
 }
-impl DescribeChimeWebhookConfigurationsOutput {
+impl  DescribeChimeWebhookConfigurationsOutput  {
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of Chime webhooks associated with the account.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.webhook_configurations.is_none()`.
-    pub fn webhook_configurations(&self) -> &[crate::types::ChimeWebhookConfiguration] {
-        self.webhook_configurations.as_deref().unwrap_or_default()
+    pub fn webhook_configurations(&self) -> & [crate::types::ChimeWebhookConfiguration] {
+        self.webhook_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeChimeWebhookConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeChimeWebhookConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChimeWebhookConfigurationsOutput`](crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_chime_webhook_configurations::builders::DescribeChimeWebhookConfigurationsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeChimeWebhookConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChimeWebhookConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) webhook_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>>,
+    pub(crate) webhook_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ChimeWebhookConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeChimeWebhookConfigurationsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeChimeWebhookConfigurationsOutputBuilder {
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeChimeWebhookConfigurationsOutputBuilder {
     /// A list of Chime webhooks associated with the account.
     pub fn webhook_configurations(mut self, input: crate::types::ChimeWebhookConfiguration) -> Self {
         let mut v = self.webhook_configurations.unwrap_or_default();
-        v.push(input);
-        self.webhook_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.webhook_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of Chime webhooks associated with the account.
-    pub fn set_webhook_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>>) -> Self {
-        self.webhook_configurations = input;
-        self
+    pub fn set_webhook_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChimeWebhookConfiguration>>) -> Self {
+        self.webhook_configurations = input; self
     }
     /// A list of Chime webhooks associated with the account.
-    pub fn get_webhook_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>> {
+    pub fn get_webhook_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChimeWebhookConfiguration>> {
         &self.webhook_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeChimeWebhookConfigurationsOutput`](crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsOutput {
         crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsOutput {
-            next_token: self.next_token,
-            webhook_configurations: self.webhook_configurations,
+            next_token: self.next_token
+            ,
+            webhook_configurations: self.webhook_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

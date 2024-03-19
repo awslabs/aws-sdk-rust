@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInfrastructureConfigurationInput {
+pub struct DeleteInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInfrastructureConfigurationInput {
+impl  DeleteInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteInfrastructureConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.infrastructure_configuration_arn = input;
-        self
+        self.infrastructure_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     /// Consumes the builder and constructs a [`DeleteInfrastructureConfigurationInput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput {
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-            },
+                infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                ,
+            }
         )
     }
 }
+

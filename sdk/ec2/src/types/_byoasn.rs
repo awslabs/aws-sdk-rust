@@ -3,7 +3,7 @@
 /// <p>The Autonomous System Number (ASN) and BYOIP CIDR association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Byoasn {
+pub struct Byoasn  {
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub asn: ::std::option::Option<::std::string::String>,
     /// <p>An IPAM ID.</p>
@@ -13,21 +13,21 @@ pub struct Byoasn {
     /// <p>The provisioning state of the BYOASN.</p>
     pub state: ::std::option::Option<crate::types::AsnState>,
 }
-impl Byoasn {
+impl  Byoasn  {
     /// <p>A public 2-byte or 4-byte ASN.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
     /// <p>An IPAM ID.</p>
-    pub fn ipam_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_id(&self) -> ::std::option::Option<& str> {
         self.ipam_id.as_deref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The provisioning state of the BYOASN.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AsnState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AsnState> {
         self.state.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ByoasnBuilder {
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ByoasnBuilder {
     }
     /// <p>An IPAM ID.</p>
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_id = input;
-        self
+        self.ipam_id = input; self
     }
     /// <p>An IPAM ID.</p>
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ByoasnBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ByoasnBuilder {
     }
     /// <p>The provisioning state of the BYOASN.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AsnState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The provisioning state of the BYOASN.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AsnState> {
@@ -107,10 +103,15 @@ impl ByoasnBuilder {
     /// Consumes the builder and constructs a [`Byoasn`](crate::types::Byoasn).
     pub fn build(self) -> crate::types::Byoasn {
         crate::types::Byoasn {
-            asn: self.asn,
-            ipam_id: self.ipam_id,
-            status_message: self.status_message,
-            state: self.state,
+            asn: self.asn
+            ,
+            ipam_id: self.ipam_id
+            ,
+            status_message: self.status_message
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

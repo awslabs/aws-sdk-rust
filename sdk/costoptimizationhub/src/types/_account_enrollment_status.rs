@@ -3,7 +3,7 @@
 /// <p>Describes the enrollment status of an organization's member accounts in Cost Optimization Hub.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountEnrollmentStatus {
+pub struct AccountEnrollmentStatus  {
     /// <p>The Amazon Web Services account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The account enrollment status.</p>
@@ -13,21 +13,21 @@ pub struct AccountEnrollmentStatus {
     /// <p>The time when the account enrollment status was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AccountEnrollmentStatus {
+impl  AccountEnrollmentStatus  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The account enrollment status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnrollmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnrollmentStatus> {
         self.status.as_ref()
     }
     /// <p>The time when the account enrollment status was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The time when the account enrollment status was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AccountEnrollmentStatusBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AccountEnrollmentStatusBuilder {
     }
     /// <p>The account enrollment status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnrollmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The account enrollment status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnrollmentStatus> {
@@ -83,8 +81,7 @@ impl AccountEnrollmentStatusBuilder {
     }
     /// <p>The time when the account enrollment status was last updated.</p>
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// <p>The time when the account enrollment status was last updated.</p>
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl AccountEnrollmentStatusBuilder {
     }
     /// <p>The time when the account enrollment status was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the account enrollment status was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl AccountEnrollmentStatusBuilder {
     /// Consumes the builder and constructs a [`AccountEnrollmentStatus`](crate::types::AccountEnrollmentStatus).
     pub fn build(self) -> crate::types::AccountEnrollmentStatus {
         crate::types::AccountEnrollmentStatus {
-            account_id: self.account_id,
-            status: self.status,
-            last_updated_timestamp: self.last_updated_timestamp,
-            created_timestamp: self.created_timestamp,
+            account_id: self.account_id
+            ,
+            status: self.status
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            created_timestamp: self.created_timestamp
+            ,
         }
     }
 }
+

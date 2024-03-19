@@ -5,13 +5,13 @@
 /// <p>PartitionedPrefix defaults to EventTime delivery when server access logs are delivered.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionedPrefix {
+pub struct PartitionedPrefix  {
     /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
     pub partition_date_source: ::std::option::Option<crate::types::PartitionDateSource>,
 }
-impl PartitionedPrefix {
+impl  PartitionedPrefix  {
     /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
-    pub fn partition_date_source(&self) -> ::std::option::Option<&crate::types::PartitionDateSource> {
+    pub fn partition_date_source(&self) -> ::std::option::Option<& crate::types::PartitionDateSource> {
         self.partition_date_source.as_ref()
     }
 }
@@ -36,8 +36,7 @@ impl PartitionedPrefixBuilder {
     }
     /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
     pub fn set_partition_date_source(mut self, input: ::std::option::Option<crate::types::PartitionDateSource>) -> Self {
-        self.partition_date_source = input;
-        self
+        self.partition_date_source = input; self
     }
     /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
     pub fn get_partition_date_source(&self) -> &::std::option::Option<crate::types::PartitionDateSource> {
@@ -46,7 +45,9 @@ impl PartitionedPrefixBuilder {
     /// Consumes the builder and constructs a [`PartitionedPrefix`](crate::types::PartitionedPrefix).
     pub fn build(self) -> crate::types::PartitionedPrefix {
         crate::types::PartitionedPrefix {
-            partition_date_source: self.partition_date_source,
+            partition_date_source: self.partition_date_source
+            ,
         }
     }
 }
+

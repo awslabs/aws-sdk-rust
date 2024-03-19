@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyPairOutput {
+pub struct DeleteKeyPairOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
 }
-impl DeleteKeyPairOutput {
+impl  DeleteKeyPairOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::Operation> {
+    pub fn operation(&self) -> ::std::option::Option<& crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
     pub fn builder() -> crate::operation::delete_key_pair::builders::DeleteKeyPairOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteKeyPairOutputBuilder {
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
         &self.operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
     pub fn build(self) -> crate::operation::delete_key_pair::DeleteKeyPairOutput {
         crate::operation::delete_key_pair::DeleteKeyPairOutput {
-            operation: self.operation,
+            operation: self.operation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetectKeyPhrasesOutput {
+pub struct DetectKeyPhrasesOutput  {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
+    pub key_phrases: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>>,
     _request_id: Option<String>,
 }
-impl DetectKeyPhrasesOutput {
+impl  DetectKeyPhrasesOutput  {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_phrases.is_none()`.
-    pub fn key_phrases(&self) -> &[crate::types::KeyPhrase] {
-        self.key_phrases.as_deref().unwrap_or_default()
+    pub fn key_phrases(&self) -> & [crate::types::KeyPhrase] {
+        self.key_phrases.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for DetectKeyPhrasesOutput {
+impl  ::std::fmt::Debug for DetectKeyPhrasesOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetectKeyPhrasesOutput");
         formatter.field("key_phrases", &"*** Sensitive Data Redacted ***");
@@ -24,10 +25,10 @@ impl ::std::fmt::Debug for DetectKeyPhrasesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DetectKeyPhrasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectKeyPhrasesOutput {
     /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesOutput`](crate::operation::detect_key_phrases::DetectKeyPhrasesOutput).
     pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesOutputBuilder {
@@ -39,7 +40,7 @@ impl DetectKeyPhrasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DetectKeyPhrasesOutputBuilder {
-    pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
+    pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>>,
     _request_id: Option<String>,
 }
 impl DetectKeyPhrasesOutputBuilder {
@@ -50,32 +51,32 @@ impl DetectKeyPhrasesOutputBuilder {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn key_phrases(mut self, input: crate::types::KeyPhrase) -> Self {
         let mut v = self.key_phrases.unwrap_or_default();
-        v.push(input);
-        self.key_phrases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_phrases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>) -> Self {
-        self.key_phrases = input;
-        self
+    pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>>) -> Self {
+        self.key_phrases = input; self
     }
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
+    pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>> {
         &self.key_phrases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectKeyPhrasesOutput`](crate::operation::detect_key_phrases::DetectKeyPhrasesOutput).
     pub fn build(self) -> crate::operation::detect_key_phrases::DetectKeyPhrasesOutput {
         crate::operation::detect_key_phrases::DetectKeyPhrasesOutput {
-            key_phrases: self.key_phrases,
+            key_phrases: self.key_phrases
+            ,
             _request_id: self._request_id,
         }
     }
@@ -88,3 +89,4 @@ impl ::std::fmt::Debug for DetectKeyPhrasesOutputBuilder {
         formatter.finish()
     }
 }
+

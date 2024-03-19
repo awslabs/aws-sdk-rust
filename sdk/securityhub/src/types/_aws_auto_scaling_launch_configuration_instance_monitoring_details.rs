@@ -3,12 +3,12 @@
 /// <p>Information about the type of monitoring for instances in the group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails  {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+impl  AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails  {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -38,8 +38,7 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
@@ -48,6 +47,10 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
-        crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails { enabled: self.enabled }
+        crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

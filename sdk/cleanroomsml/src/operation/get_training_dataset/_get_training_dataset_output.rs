@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrainingDatasetOutput {
+pub struct GetTrainingDatasetOutput  {
     /// <p>The time at which the training dataset was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the training dataset was updated.</p>
@@ -12,64 +12,60 @@ pub struct GetTrainingDatasetOutput {
     /// <p>The name of the training dataset.</p>
     pub name: ::std::string::String,
     /// <p>Metadata about the requested training data.</p>
-    pub training_data: ::std::vec::Vec<crate::types::Dataset>,
+    pub training_data: ::std::vec::Vec::<crate::types::Dataset>,
     /// <p>The status of the training dataset.</p>
     pub status: crate::types::TrainingDatasetStatus,
     /// <p>The IAM role used to read the training data.</p>
     pub role_arn: ::std::string::String,
     /// <p>The tags that are assigned to this training dataset.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The description of the training dataset.</p>
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetTrainingDatasetOutput {
+impl  GetTrainingDatasetOutput  {
     /// <p>The time at which the training dataset was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the training dataset was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset.</p>
-    pub fn training_dataset_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.training_dataset_arn.deref()
+    pub fn training_dataset_arn(&self) -> & str {
+        use std::ops::Deref; self.training_dataset_arn.deref()
     }
     /// <p>The name of the training dataset.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Metadata about the requested training data.</p>
-    pub fn training_data(&self) -> &[crate::types::Dataset] {
-        use std::ops::Deref;
-        self.training_data.deref()
+    pub fn training_data(&self) -> & [crate::types::Dataset] {
+        use std::ops::Deref; self.training_data.deref()
     }
     /// <p>The status of the training dataset.</p>
-    pub fn status(&self) -> &crate::types::TrainingDatasetStatus {
+    pub fn status(&self) -> & crate::types::TrainingDatasetStatus {
         &self.status
     }
     /// <p>The IAM role used to read the training data.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The tags that are assigned to this training dataset.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The description of the training dataset.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTrainingDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTrainingDatasetOutput {
     /// Creates a new builder-style object to manufacture [`GetTrainingDatasetOutput`](crate::operation::get_training_dataset::GetTrainingDatasetOutput).
     pub fn builder() -> crate::operation::get_training_dataset::builders::GetTrainingDatasetOutputBuilder {
@@ -85,10 +81,10 @@ pub struct GetTrainingDatasetOutputBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) training_data: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
+    pub(crate) training_data: ::std::option::Option<::std::vec::Vec::<crate::types::Dataset>>,
     pub(crate) status: ::std::option::Option<crate::types::TrainingDatasetStatus>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -101,8 +97,7 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The time at which the training dataset was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the training dataset was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -116,8 +111,7 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The most recent time at which the training dataset was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the training dataset was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +125,7 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset.</p>
     pub fn set_training_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_dataset_arn = input;
-        self
+        self.training_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset.</p>
     pub fn get_training_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +139,7 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The name of the training dataset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the training dataset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,17 +152,16 @@ impl GetTrainingDatasetOutputBuilder {
     /// <p>Metadata about the requested training data.</p>
     pub fn training_data(mut self, input: crate::types::Dataset) -> Self {
         let mut v = self.training_data.unwrap_or_default();
-        v.push(input);
-        self.training_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.training_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata about the requested training data.</p>
-    pub fn set_training_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>) -> Self {
-        self.training_data = input;
-        self
+    pub fn set_training_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dataset>>) -> Self {
+        self.training_data = input; self
     }
     /// <p>Metadata about the requested training data.</p>
-    pub fn get_training_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dataset>> {
+    pub fn get_training_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dataset>> {
         &self.training_data
     }
     /// <p>The status of the training dataset.</p>
@@ -181,8 +172,7 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The status of the training dataset.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TrainingDatasetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the training dataset.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TrainingDatasetStatus> {
@@ -196,8 +186,7 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The IAM role used to read the training data.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The IAM role used to read the training data.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,17 +199,16 @@ impl GetTrainingDatasetOutputBuilder {
     /// <p>The tags that are assigned to this training dataset.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that are assigned to this training dataset.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that are assigned to this training dataset.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The description of the training dataset.</p>
@@ -230,22 +218,21 @@ impl GetTrainingDatasetOutputBuilder {
     }
     /// <p>The description of the training dataset.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the training dataset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTrainingDatasetOutput`](crate::operation::get_training_dataset::GetTrainingDatasetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`create_time`](crate::operation::get_training_dataset::builders::GetTrainingDatasetOutputBuilder::create_time)
@@ -255,56 +242,51 @@ impl GetTrainingDatasetOutputBuilder {
     /// - [`training_data`](crate::operation::get_training_dataset::builders::GetTrainingDatasetOutputBuilder::training_data)
     /// - [`status`](crate::operation::get_training_dataset::builders::GetTrainingDatasetOutputBuilder::status)
     /// - [`role_arn`](crate::operation::get_training_dataset::builders::GetTrainingDatasetOutputBuilder::role_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_training_dataset::GetTrainingDatasetOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_training_dataset::GetTrainingDatasetOutput {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            training_dataset_arn: self.training_dataset_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "training_dataset_arn",
-                    "training_dataset_arn was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            training_data: self.training_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "training_data",
-                    "training_data was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building GetTrainingDatasetOutput",
-                )
-            })?,
-            tags: self.tags,
-            description: self.description,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_training_dataset::GetTrainingDatasetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_training_dataset::GetTrainingDatasetOutput {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                training_dataset_arn: self.training_dataset_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("training_dataset_arn", "training_dataset_arn was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                training_data: self.training_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("training_data", "training_data was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building GetTrainingDatasetOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                description: self.description
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

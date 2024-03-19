@@ -3,13 +3,13 @@
 /// <p>Statistics information about the channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelStatistics {
+pub struct ChannelStatistics  {
     /// <p>The estimated size of the channel.</p>
     pub size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }
-impl ChannelStatistics {
+impl  ChannelStatistics  {
     /// <p>The estimated size of the channel.</p>
-    pub fn size(&self) -> ::std::option::Option<&crate::types::EstimatedResourceSize> {
+    pub fn size(&self) -> ::std::option::Option<& crate::types::EstimatedResourceSize> {
         self.size.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ChannelStatisticsBuilder {
     }
     /// <p>The estimated size of the channel.</p>
     pub fn set_size(mut self, input: ::std::option::Option<crate::types::EstimatedResourceSize>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The estimated size of the channel.</p>
     pub fn get_size(&self) -> &::std::option::Option<crate::types::EstimatedResourceSize> {
@@ -43,6 +42,10 @@ impl ChannelStatisticsBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelStatistics`](crate::types::ChannelStatistics).
     pub fn build(self) -> crate::types::ChannelStatistics {
-        crate::types::ChannelStatistics { size: self.size }
+        crate::types::ChannelStatistics {
+            size: self.size
+            ,
+        }
     }
 }
+

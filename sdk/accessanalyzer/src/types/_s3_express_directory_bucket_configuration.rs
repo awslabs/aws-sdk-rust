@@ -3,13 +3,13 @@
 /// <p>Proposed access control configuration for an Amazon S3 directory bucket. You can propose a configuration for a new Amazon S3 directory bucket or an existing Amazon S3 directory bucket that you own by specifying the Amazon S3 bucket policy. If the configuration is for an existing Amazon S3 directory bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the directory bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes an directory bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about Amazon S3 directory bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example directory bucket policies for S3 Express One Zone</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ExpressDirectoryBucketConfiguration {
+pub struct S3ExpressDirectoryBucketConfiguration  {
     /// <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
     pub bucket_policy: ::std::option::Option<::std::string::String>,
 }
-impl S3ExpressDirectoryBucketConfiguration {
+impl  S3ExpressDirectoryBucketConfiguration  {
     /// <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-    pub fn bucket_policy(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_policy(&self) -> ::std::option::Option<& str> {
         self.bucket_policy.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl S3ExpressDirectoryBucketConfigurationBuilder {
     }
     /// <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
     pub fn set_bucket_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_policy = input;
-        self
+        self.bucket_policy = input; self
     }
     /// <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
     pub fn get_bucket_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl S3ExpressDirectoryBucketConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3ExpressDirectoryBucketConfiguration`](crate::types::S3ExpressDirectoryBucketConfiguration).
     pub fn build(self) -> crate::types::S3ExpressDirectoryBucketConfiguration {
         crate::types::S3ExpressDirectoryBucketConfiguration {
-            bucket_policy: self.bucket_policy,
+            bucket_policy: self.bucket_policy
+            ,
         }
     }
 }
+

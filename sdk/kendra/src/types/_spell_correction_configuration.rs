@@ -5,11 +5,11 @@
 /// <p>This feature is designed with certain defaults or limits. For information on the current limits and how to request more support for some limits, see the <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-spell-check.html">Spell Checker documentation</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpellCorrectionConfiguration {
+pub struct SpellCorrectionConfiguration  {
     /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
     pub include_query_spell_check_suggestions: bool,
 }
-impl SpellCorrectionConfiguration {
+impl  SpellCorrectionConfiguration  {
     /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn include_query_spell_check_suggestions(&self) -> bool {
         self.include_query_spell_check_suggestions
@@ -37,8 +37,7 @@ impl SpellCorrectionConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn set_include_query_spell_check_suggestions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_query_spell_check_suggestions = input;
-        self
+        self.include_query_spell_check_suggestions = input; self
     }
     /// <p><code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn get_include_query_spell_check_suggestions(&self) -> &::std::option::Option<bool> {
@@ -47,7 +46,10 @@ impl SpellCorrectionConfigurationBuilder {
     /// Consumes the builder and constructs a [`SpellCorrectionConfiguration`](crate::types::SpellCorrectionConfiguration).
     pub fn build(self) -> crate::types::SpellCorrectionConfiguration {
         crate::types::SpellCorrectionConfiguration {
-            include_query_spell_check_suggestions: self.include_query_spell_check_suggestions.unwrap_or_default(),
+            include_query_spell_check_suggestions: self.include_query_spell_check_suggestions
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

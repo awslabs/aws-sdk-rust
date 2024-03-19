@@ -3,7 +3,7 @@
 /// <p>A key value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetKeyOutput {
+pub struct GetKeyOutput  {
     /// <p>The key of the key value pair.</p>
     pub key: ::std::string::String,
     /// <p>The value of the key value pair.</p>
@@ -14,16 +14,14 @@ pub struct GetKeyOutput {
     pub total_size_in_bytes: i64,
     _request_id: Option<String>,
 }
-impl GetKeyOutput {
+impl  GetKeyOutput  {
     /// <p>The key of the key value pair.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value of the key value pair.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub fn item_count(&self) -> i32 {
@@ -34,7 +32,7 @@ impl GetKeyOutput {
         self.total_size_in_bytes
     }
 }
-impl ::std::fmt::Debug for GetKeyOutput {
+impl  ::std::fmt::Debug for GetKeyOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyOutput");
         formatter.field("key", &self.key);
@@ -46,10 +44,10 @@ impl ::std::fmt::Debug for GetKeyOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyOutput`](crate::operation::get_key::GetKeyOutput).
     pub fn builder() -> crate::operation::get_key::builders::GetKeyOutputBuilder {
@@ -76,8 +74,7 @@ impl GetKeyOutputBuilder {
     }
     /// <p>The key of the key value pair.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the key value pair.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl GetKeyOutputBuilder {
     }
     /// <p>The value of the key value pair.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the key value pair.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl GetKeyOutputBuilder {
     }
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -121,22 +116,21 @@ impl GetKeyOutputBuilder {
     }
     /// <p>Total size of the Key Value Store in bytes.</p>
     pub fn set_total_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_size_in_bytes = input;
-        self
+        self.total_size_in_bytes = input; self
     }
     /// <p>Total size of the Key Value Store in bytes.</p>
     pub fn get_total_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.total_size_in_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKeyOutput`](crate::operation::get_key::GetKeyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::operation::get_key::builders::GetKeyOutputBuilder::key)
@@ -144,33 +138,31 @@ impl GetKeyOutputBuilder {
     /// - [`item_count`](crate::operation::get_key::builders::GetKeyOutputBuilder::item_count)
     /// - [`total_size_in_bytes`](crate::operation::get_key::builders::GetKeyOutputBuilder::total_size_in_bytes)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_key::GetKeyOutput {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building GetKeyOutput",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building GetKeyOutput",
-                )
-            })?,
-            item_count: self.item_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "item_count",
-                    "item_count was not specified but it is required when building GetKeyOutput",
-                )
-            })?,
-            total_size_in_bytes: self.total_size_in_bytes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_size_in_bytes",
-                    "total_size_in_bytes was not specified but it is required when building GetKeyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_key::GetKeyOutput {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building GetKeyOutput")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building GetKeyOutput")
+                    )?
+                ,
+                item_count: self.item_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("item_count", "item_count was not specified but it is required when building GetKeyOutput")
+                    )?
+                ,
+                total_size_in_bytes: self.total_size_in_bytes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_size_in_bytes", "total_size_in_bytes was not specified but it is required when building GetKeyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetKeyOutputBuilder {
@@ -184,3 +176,4 @@ impl ::std::fmt::Debug for GetKeyOutputBuilder {
         formatter.finish()
     }
 }
+

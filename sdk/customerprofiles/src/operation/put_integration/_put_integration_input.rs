@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutIntegrationInput {
+pub struct PutIntegrationInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -10,39 +10,39 @@ pub struct PutIntegrationInput {
     /// <p>The name of the profile object type.</p>
     pub object_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub object_type_names: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutIntegrationInput {
+impl  PutIntegrationInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_type_name(&self) -> ::std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
-    pub fn flow_definition(&self) -> ::std::option::Option<&crate::types::FlowDefinition> {
+    pub fn flow_definition(&self) -> ::std::option::Option<& crate::types::FlowDefinition> {
         self.flow_definition.as_ref()
     }
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn object_type_names(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn object_type_names(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.object_type_names.as_ref()
     }
 }
-impl ::std::fmt::Debug for PutIntegrationInput {
+impl  ::std::fmt::Debug for PutIntegrationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutIntegrationInput");
         formatter.field("domain_name", &self.domain_name);
@@ -68,9 +68,9 @@ pub struct PutIntegrationInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
-    pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutIntegrationInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -81,8 +81,7 @@ impl PutIntegrationInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl PutIntegrationInputBuilder {
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl PutIntegrationInputBuilder {
     }
     /// <p>The name of the profile object type.</p>
     pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type_name = input;
-        self
+        self.object_type_name = input; self
     }
     /// <p>The name of the profile object type.</p>
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,17 +120,16 @@ impl PutIntegrationInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
@@ -143,8 +139,7 @@ impl PutIntegrationInputBuilder {
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn set_flow_definition(mut self, input: ::std::option::Option<crate::types::FlowDefinition>) -> Self {
-        self.flow_definition = input;
-        self
+        self.flow_definition = input; self
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn get_flow_definition(&self) -> &::std::option::Option<crate::types::FlowDefinition> {
@@ -155,40 +150,38 @@ impl PutIntegrationInputBuilder {
     /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
     ///
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn object_type_names(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_names(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.object_type_names.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.object_type_names = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.object_type_names = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn set_object_type_names(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.object_type_names = input;
-        self
+    pub fn set_object_type_names(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.object_type_names = input; self
     }
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn get_object_type_names(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_object_type_names(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.object_type_names
     }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_integration::PutIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_integration::PutIntegrationInput {
-            domain_name: self.domain_name,
-            uri: self.uri,
-            object_type_name: self.object_type_name,
-            tags: self.tags,
-            flow_definition: self.flow_definition,
-            object_type_names: self.object_type_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_integration::PutIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_integration::PutIntegrationInput {
+                domain_name: self.domain_name
+                ,
+                uri: self.uri
+                ,
+                object_type_name: self.object_type_name
+                ,
+                tags: self.tags
+                ,
+                flow_definition: self.flow_definition
+                ,
+                object_type_names: self.object_type_names
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutIntegrationInputBuilder {
@@ -203,3 +196,4 @@ impl ::std::fmt::Debug for PutIntegrationInputBuilder {
         formatter.finish()
     }
 }
+

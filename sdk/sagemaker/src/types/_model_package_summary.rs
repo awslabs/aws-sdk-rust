@@ -3,7 +3,7 @@
 /// <p>Provides summary information about a model package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelPackageSummary {
+pub struct ModelPackageSummary  {
     /// <p>The name of the model package.</p>
     pub model_package_name: ::std::option::Option<::std::string::String>,
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
@@ -29,13 +29,13 @@ pub struct ModelPackageSummary {
     /// </ul>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
 }
-impl ModelPackageSummary {
+impl  ModelPackageSummary  {
     /// <p>The name of the model package.</p>
-    pub fn model_package_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_name(&self) -> ::std::option::Option<& str> {
         self.model_package_name.as_deref()
     }
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
-    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>If the model package is a versioned model, the version of the model.</p>
@@ -43,19 +43,19 @@ impl ModelPackageSummary {
         self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn model_package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_arn(&self) -> ::std::option::Option<& str> {
         self.model_package_arn.as_deref()
     }
     /// <p>A brief description of the model package.</p>
-    pub fn model_package_description(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_description(&self) -> ::std::option::Option<& str> {
         self.model_package_description.as_deref()
     }
     /// <p>A timestamp that shows when the model package was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The overall status of the model package.</p>
-    pub fn model_package_status(&self) -> ::std::option::Option<&crate::types::ModelPackageStatus> {
+    pub fn model_package_status(&self) -> ::std::option::Option<& crate::types::ModelPackageStatus> {
         self.model_package_status.as_ref()
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
@@ -67,7 +67,7 @@ impl ModelPackageSummary {
     /// <li>
     /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
-    pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<& crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>The name of the model package.</p>
     pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_name = input;
-        self
+        self.model_package_name = input; self
     }
     /// <p>The name of the model package.</p>
     pub fn get_model_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_name = input;
-        self
+        self.model_package_group_name = input; self
     }
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>If the model package is a versioned model, the version of the model.</p>
     pub fn set_model_package_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_package_version = input;
-        self
+        self.model_package_version = input; self
     }
     /// <p>If the model package is a versioned model, the version of the model.</p>
     pub fn get_model_package_version(&self) -> &::std::option::Option<i32> {
@@ -142,8 +139,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_arn = input;
-        self
+        self.model_package_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn get_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +152,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>A brief description of the model package.</p>
     pub fn set_model_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_description = input;
-        self
+        self.model_package_description = input; self
     }
     /// <p>A brief description of the model package.</p>
     pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +166,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>A timestamp that shows when the model package was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the model package was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -186,8 +180,7 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>The overall status of the model package.</p>
     pub fn set_model_package_status(mut self, input: ::std::option::Option<crate::types::ModelPackageStatus>) -> Self {
-        self.model_package_status = input;
-        self
+        self.model_package_status = input; self
     }
     /// <p>The overall status of the model package.</p>
     pub fn get_model_package_status(&self) -> &::std::option::Option<crate::types::ModelPackageStatus> {
@@ -216,8 +209,7 @@ impl ModelPackageSummaryBuilder {
     /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
-        self.model_approval_status = input;
-        self
+        self.model_approval_status = input; self
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
@@ -234,14 +226,23 @@ impl ModelPackageSummaryBuilder {
     /// Consumes the builder and constructs a [`ModelPackageSummary`](crate::types::ModelPackageSummary).
     pub fn build(self) -> crate::types::ModelPackageSummary {
         crate::types::ModelPackageSummary {
-            model_package_name: self.model_package_name,
-            model_package_group_name: self.model_package_group_name,
-            model_package_version: self.model_package_version,
-            model_package_arn: self.model_package_arn,
-            model_package_description: self.model_package_description,
-            creation_time: self.creation_time,
-            model_package_status: self.model_package_status,
-            model_approval_status: self.model_approval_status,
+            model_package_name: self.model_package_name
+            ,
+            model_package_group_name: self.model_package_group_name
+            ,
+            model_package_version: self.model_package_version
+            ,
+            model_package_arn: self.model_package_arn
+            ,
+            model_package_description: self.model_package_description
+            ,
+            creation_time: self.creation_time
+            ,
+            model_package_status: self.model_package_status
+            ,
+            model_approval_status: self.model_approval_status
+            ,
         }
     }
 }
+

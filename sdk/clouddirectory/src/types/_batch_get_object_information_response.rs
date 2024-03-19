@@ -3,21 +3,22 @@
 /// <p>Represents the output of a <code>GetObjectInformation</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetObjectInformationResponse {
+pub struct BatchGetObjectInformationResponse  {
     /// <p>The facets attached to the specified object.</p>
-    pub schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
+    pub schema_facets: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub object_identifier: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetObjectInformationResponse {
+impl  BatchGetObjectInformationResponse  {
     /// <p>The facets attached to the specified object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_facets.is_none()`.
-    pub fn schema_facets(&self) -> &[crate::types::SchemaFacet] {
-        self.schema_facets.as_deref().unwrap_or_default()
+    pub fn schema_facets(&self) -> & [crate::types::SchemaFacet] {
+        self.schema_facets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl BatchGetObjectInformationResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetObjectInformationResponseBuilder {
-    pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
+    pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetObjectInformationResponseBuilder {
@@ -43,17 +44,16 @@ impl BatchGetObjectInformationResponseBuilder {
     /// <p>The facets attached to the specified object.</p>
     pub fn schema_facets(mut self, input: crate::types::SchemaFacet) -> Self {
         let mut v = self.schema_facets.unwrap_or_default();
-        v.push(input);
-        self.schema_facets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema_facets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The facets attached to the specified object.</p>
-    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>) -> Self {
-        self.schema_facets = input;
-        self
+    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>>) -> Self {
+        self.schema_facets = input; self
     }
     /// <p>The facets attached to the specified object.</p>
-    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>> {
         &self.schema_facets
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
@@ -63,8 +63,7 @@ impl BatchGetObjectInformationResponseBuilder {
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_identifier = input;
-        self
+        self.object_identifier = input; self
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl BatchGetObjectInformationResponseBuilder {
     /// Consumes the builder and constructs a [`BatchGetObjectInformationResponse`](crate::types::BatchGetObjectInformationResponse).
     pub fn build(self) -> crate::types::BatchGetObjectInformationResponse {
         crate::types::BatchGetObjectInformationResponse {
-            schema_facets: self.schema_facets,
-            object_identifier: self.object_identifier,
+            schema_facets: self.schema_facets
+            ,
+            object_identifier: self.object_identifier
+            ,
         }
     }
 }
+

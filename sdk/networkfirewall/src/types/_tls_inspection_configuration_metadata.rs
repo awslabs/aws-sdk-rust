@@ -3,19 +3,19 @@
 /// <p>High-level information about a TLS inspection configuration, returned by <code>ListTLSInspectionConfigurations</code>. You can use the information provided in the metadata to retrieve and manage a TLS configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsInspectionConfigurationMetadata {
+pub struct TlsInspectionConfigurationMetadata  {
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl TlsInspectionConfigurationMetadata {
+impl  TlsInspectionConfigurationMetadata  {
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TlsInspectionConfigurationMetadataBuilder {
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TlsInspectionConfigurationMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TlsInspectionConfigurationMetadataBuilder {
     /// Consumes the builder and constructs a [`TlsInspectionConfigurationMetadata`](crate::types::TlsInspectionConfigurationMetadata).
     pub fn build(self) -> crate::types::TlsInspectionConfigurationMetadata {
         crate::types::TlsInspectionConfigurationMetadata {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

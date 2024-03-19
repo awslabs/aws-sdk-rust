@@ -3,19 +3,19 @@
 /// <p>The result of the sort operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSortResult {
+pub struct SearchSortResult  {
     /// <p>Sort search results based on this field name.</p>
     pub field: ::std::option::Option<crate::types::OrderByFieldType>,
     /// <p>Sort direction.</p>
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl SearchSortResult {
+impl  SearchSortResult  {
     /// <p>Sort search results based on this field name.</p>
-    pub fn field(&self) -> ::std::option::Option<&crate::types::OrderByFieldType> {
+    pub fn field(&self) -> ::std::option::Option<& crate::types::OrderByFieldType> {
         self.field.as_ref()
     }
     /// <p>Sort direction.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SearchSortResultBuilder {
     }
     /// <p>Sort search results based on this field name.</p>
     pub fn set_field(mut self, input: ::std::option::Option<crate::types::OrderByFieldType>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>Sort search results based on this field name.</p>
     pub fn get_field(&self) -> &::std::option::Option<crate::types::OrderByFieldType> {
@@ -55,8 +54,7 @@ impl SearchSortResultBuilder {
     }
     /// <p>Sort direction.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Sort direction.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl SearchSortResultBuilder {
     /// Consumes the builder and constructs a [`SearchSortResult`](crate::types::SearchSortResult).
     pub fn build(self) -> crate::types::SearchSortResult {
         crate::types::SearchSortResult {
-            field: self.field,
-            order: self.order,
+            field: self.field
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

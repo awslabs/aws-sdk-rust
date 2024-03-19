@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountSettingsOutput {
+pub struct GetAccountSettingsOutput  {
     /// <p>Limits that are related to concurrency and code storage.</p>
     pub account_limit: ::std::option::Option<crate::types::AccountLimit>,
     /// <p>The number of functions and amount of storage in use.</p>
     pub account_usage: ::std::option::Option<crate::types::AccountUsage>,
     _request_id: Option<String>,
 }
-impl GetAccountSettingsOutput {
+impl  GetAccountSettingsOutput  {
     /// <p>Limits that are related to concurrency and code storage.</p>
-    pub fn account_limit(&self) -> ::std::option::Option<&crate::types::AccountLimit> {
+    pub fn account_limit(&self) -> ::std::option::Option<& crate::types::AccountLimit> {
         self.account_limit.as_ref()
     }
     /// <p>The number of functions and amount of storage in use.</p>
-    pub fn account_usage(&self) -> ::std::option::Option<&crate::types::AccountUsage> {
+    pub fn account_usage(&self) -> ::std::option::Option<& crate::types::AccountUsage> {
         self.account_usage.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccountSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
     pub fn builder() -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
@@ -47,8 +47,7 @@ impl GetAccountSettingsOutputBuilder {
     }
     /// <p>Limits that are related to concurrency and code storage.</p>
     pub fn set_account_limit(mut self, input: ::std::option::Option<crate::types::AccountLimit>) -> Self {
-        self.account_limit = input;
-        self
+        self.account_limit = input; self
     }
     /// <p>Limits that are related to concurrency and code storage.</p>
     pub fn get_account_limit(&self) -> &::std::option::Option<crate::types::AccountLimit> {
@@ -61,28 +60,30 @@ impl GetAccountSettingsOutputBuilder {
     }
     /// <p>The number of functions and amount of storage in use.</p>
     pub fn set_account_usage(mut self, input: ::std::option::Option<crate::types::AccountUsage>) -> Self {
-        self.account_usage = input;
-        self
+        self.account_usage = input; self
     }
     /// <p>The number of functions and amount of storage in use.</p>
     pub fn get_account_usage(&self) -> &::std::option::Option<crate::types::AccountUsage> {
         &self.account_usage
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
     pub fn build(self) -> crate::operation::get_account_settings::GetAccountSettingsOutput {
         crate::operation::get_account_settings::GetAccountSettingsOutput {
-            account_limit: self.account_limit,
-            account_usage: self.account_usage,
+            account_limit: self.account_limit
+            ,
+            account_usage: self.account_usage
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

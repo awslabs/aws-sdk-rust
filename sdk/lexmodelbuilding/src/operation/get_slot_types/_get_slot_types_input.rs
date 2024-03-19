@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSlotTypesInput {
+pub struct GetSlotTypesInput  {
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
@@ -10,9 +10,9 @@ pub struct GetSlotTypesInput {
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
 }
-impl GetSlotTypesInput {
+impl  GetSlotTypesInput  {
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
@@ -20,7 +20,7 @@ impl GetSlotTypesInput {
         self.max_results
     }
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetSlotTypesInputBuilder {
     }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetSlotTypesInputBuilder {
     }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl GetSlotTypesInputBuilder {
     }
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_contains
     }
     /// Consumes the builder and constructs a [`GetSlotTypesInput`](crate::operation::get_slot_types::GetSlotTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_slot_types::GetSlotTypesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_slot_types::GetSlotTypesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_contains: self.name_contains,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_slot_types::GetSlotTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_slot_types::GetSlotTypesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+            }
+        )
     }
 }
+

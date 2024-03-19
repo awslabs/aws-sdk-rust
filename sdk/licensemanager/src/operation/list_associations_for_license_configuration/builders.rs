@@ -5,114 +5,97 @@ pub use crate::operation::list_associations_for_license_configuration::_list_ass
 
 impl ListAssociationsForLicenseConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_associations_for_license_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_associations_for_license_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListAssociationsForLicenseConfiguration`.
-///
+/// 
 /// <p>Lists the resource associations for the specified license configuration.</p>
 /// <p>Resource associations need not consume licenses from a license configuration. For example, an AMI or a stopped instance might not consume a license (depending on the license rules).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder,
+                    inner: crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
-    > for ListAssociationsForLicenseConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
-            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
+                    crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
+                > for ListAssociationsForLicenseConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
+                        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListAssociationsForLicenseConfigurationFluentBuilder {
     /// Creates a new `ListAssociationsForLicenseConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the ListAssociationsForLicenseConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfiguration::orchestrate(&runtime_plugins, input)
-            .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput,
-        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput, crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_configuration_arn(input.into());
@@ -156,3 +139,4 @@ impl ListAssociationsForLicenseConfigurationFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

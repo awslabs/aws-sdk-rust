@@ -5,55 +5,51 @@ pub use crate::operation::describe_workspace_bundles::_describe_workspace_bundle
 
 impl DescribeWorkspaceBundlesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_workspace_bundles();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_workspace_bundles();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeWorkspaceBundles`.
-///
+/// 
 /// <p>Retrieves a list that describes the available WorkSpace bundles.</p>
 /// <p>You can filter the results using either bundle ID or owner, but not both.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder,
+                    inner: crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-    > for DescribeWorkspaceBundlesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
+                    crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
+                > for DescribeWorkspaceBundlesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
+                        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeWorkspaceBundlesFluentBuilder {
     /// Creates a new `DescribeWorkspaceBundles`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_workspace_bundles::DescribeWorkspaceBundles::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundles::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_workspace_bundles::DescribeWorkspaceBundles::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundles::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput, crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator {
-        crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator {
+                                crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `BundleIds`.
     ///
     /// To override the contents of this collection use [`set_bundle_ids`](Self::set_bundle_ids).
@@ -125,12 +112,12 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         self
     }
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_bundle_ids(input);
         self
     }
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_bundle_ids()
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
@@ -165,3 +152,4 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowInput {
+pub struct GetWorkflowInput  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkflowInput {
+impl  GetWorkflowInput  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
-    pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.workflow_build_version_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetWorkflowInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
     pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_build_version_arn = input;
-        self
+        self.workflow_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetWorkflowInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
-            workflow_build_version_arn: self.workflow_build_version_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow::GetWorkflowInput {
+                workflow_build_version_arn: self.workflow_build_version_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Request structure used in requests to export project configuration details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportProjectInput {
+pub struct ExportProjectInput  {
     /// <p>Unique project identifier.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
 }
-impl ExportProjectInput {
+impl  ExportProjectInput  {
     /// <p>Unique project identifier.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl ExportProjectInputBuilder {
     }
     /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_id
     }
     /// Consumes the builder and constructs a [`ExportProjectInput`](crate::operation::export_project::ExportProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::export_project::ExportProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::export_project::ExportProjectInput { project_id: self.project_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_project::ExportProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_project::ExportProjectInput {
+                project_id: self.project_id
+                ,
+            }
+        )
     }
 }
+

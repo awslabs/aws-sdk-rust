@@ -3,13 +3,13 @@
 /// <p>The matched category rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisSegmentCategories {
+pub struct RealTimeContactAnalysisSegmentCategories  {
     /// <p>Map between the name of the matched rule and RealTimeContactAnalysisCategoryDetails.</p>
-    pub matched_details: ::std::collections::HashMap<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>,
+    pub matched_details: ::std::collections::HashMap::<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>,
 }
-impl RealTimeContactAnalysisSegmentCategories {
+impl  RealTimeContactAnalysisSegmentCategories  {
     /// <p>Map between the name of the matched rule and RealTimeContactAnalysisCategoryDetails.</p>
-    pub fn matched_details(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails> {
+    pub fn matched_details(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails> {
         &self.matched_details
     }
 }
@@ -24,8 +24,7 @@ impl RealTimeContactAnalysisSegmentCategories {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisSegmentCategoriesBuilder {
-    pub(crate) matched_details:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>>,
+    pub(crate) matched_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>>,
 }
 impl RealTimeContactAnalysisSegmentCategoriesBuilder {
     /// Adds a key-value pair to `matched_details`.
@@ -33,43 +32,33 @@ impl RealTimeContactAnalysisSegmentCategoriesBuilder {
     /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
     ///
     /// <p>Map between the name of the matched rule and RealTimeContactAnalysisCategoryDetails.</p>
-    pub fn matched_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RealTimeContactAnalysisCategoryDetails,
-    ) -> Self {
+    pub fn matched_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RealTimeContactAnalysisCategoryDetails) -> Self {
         let mut hash_map = self.matched_details.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.matched_details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.matched_details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Map between the name of the matched rule and RealTimeContactAnalysisCategoryDetails.</p>
-    pub fn set_matched_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>>,
-    ) -> Self {
-        self.matched_details = input;
-        self
+    pub fn set_matched_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>>) -> Self {
+        self.matched_details = input; self
     }
     /// <p>Map between the name of the matched rule and RealTimeContactAnalysisCategoryDetails.</p>
-    pub fn get_matched_details(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>> {
+    pub fn get_matched_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RealTimeContactAnalysisCategoryDetails>> {
         &self.matched_details
     }
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisSegmentCategories`](crate::types::RealTimeContactAnalysisSegmentCategories).
     /// This method will fail if any of the following fields are not set:
     /// - [`matched_details`](crate::types::builders::RealTimeContactAnalysisSegmentCategoriesBuilder::matched_details)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentCategories, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisSegmentCategories {
-            matched_details: self.matched_details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "matched_details",
-                    "matched_details was not specified but it is required when building RealTimeContactAnalysisSegmentCategories",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentCategories, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisSegmentCategories {
+                matched_details: self.matched_details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("matched_details", "matched_details was not specified but it is required when building RealTimeContactAnalysisSegmentCategories")
+                    )?
+                ,
+            }
+        )
     }
 }
+

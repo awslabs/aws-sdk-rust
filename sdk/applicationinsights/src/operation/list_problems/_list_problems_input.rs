@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProblemsInput {
+pub struct ListProblemsInput  {
     /// <p>The AWS account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group.</p>
@@ -20,21 +20,21 @@ pub struct ListProblemsInput {
     /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl ListProblemsInput {
+impl  ListProblemsInput  {
     /// <p>The AWS account ID for the resource group owner.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -42,15 +42,15 @@ impl ListProblemsInput {
         self.max_results
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +121,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,8 +134,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -152,8 +147,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,26 +173,34 @@ impl ListProblemsInputBuilder {
     }
     /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
     }
     /// Consumes the builder and constructs a [`ListProblemsInput`](crate::operation::list_problems::ListProblemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_problems::ListProblemsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_problems::ListProblemsInput {
-            account_id: self.account_id,
-            resource_group_name: self.resource_group_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            component_name: self.component_name,
-            visibility: self.visibility,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_problems::ListProblemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_problems::ListProblemsInput {
+                account_id: self.account_id
+                ,
+                resource_group_name: self.resource_group_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                component_name: self.component_name
+                ,
+                visibility: self.visibility
+                ,
+            }
+        )
     }
 }
+

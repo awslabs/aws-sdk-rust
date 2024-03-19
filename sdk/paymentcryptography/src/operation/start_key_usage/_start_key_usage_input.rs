@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartKeyUsageInput {
+pub struct StartKeyUsageInput  {
     /// <p>The <code>KeyArn</code> of the key.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
 }
-impl StartKeyUsageInput {
+impl  StartKeyUsageInput  {
     /// <p>The <code>KeyArn</code> of the key.</p>
-    pub fn key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn key_identifier(&self) -> ::std::option::Option<& str> {
         self.key_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StartKeyUsageInputBuilder {
     }
     /// <p>The <code>KeyArn</code> of the key.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_identifier = input;
-        self
+        self.key_identifier = input; self
     }
     /// <p>The <code>KeyArn</code> of the key.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_key_usage::StartKeyUsageInput {
-            key_identifier: self.key_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_key_usage::StartKeyUsageInput {
+                key_identifier: self.key_identifier
+                ,
+            }
+        )
     }
 }
+

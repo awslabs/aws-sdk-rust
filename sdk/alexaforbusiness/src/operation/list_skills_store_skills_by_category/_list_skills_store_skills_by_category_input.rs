@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSkillsStoreSkillsByCategoryInput {
+pub struct ListSkillsStoreSkillsByCategoryInput  {
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub category_id: ::std::option::Option<i64>,
     /// <p>The tokens used for pagination.</p>
@@ -10,13 +10,13 @@ pub struct ListSkillsStoreSkillsByCategoryInput {
     /// <p>The maximum number of skills returned per paginated calls.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSkillsStoreSkillsByCategoryInput {
+impl  ListSkillsStoreSkillsByCategoryInput  {
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub fn category_id(&self) -> ::std::option::Option<i64> {
         self.category_id
     }
     /// <p>The tokens used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of skills returned per paginated calls.</p>
@@ -48,8 +48,7 @@ impl ListSkillsStoreSkillsByCategoryInputBuilder {
     }
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub fn set_category_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.category_id = input;
-        self
+        self.category_id = input; self
     }
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub fn get_category_id(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl ListSkillsStoreSkillsByCategoryInputBuilder {
     }
     /// <p>The tokens used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The tokens used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListSkillsStoreSkillsByCategoryInputBuilder {
     }
     /// <p>The maximum number of skills returned per paginated calls.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of skills returned per paginated calls.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSkillsStoreSkillsByCategoryInput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput {
-                category_id: self.category_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                category_id: self.category_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FacetAttributeReference {
+pub struct FacetAttributeReference  {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub target_facet_name: ::std::string::String,
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub target_attribute_name: ::std::string::String,
 }
-impl FacetAttributeReference {
+impl  FacetAttributeReference  {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn target_facet_name(&self) -> &str {
-        use std::ops::Deref;
-        self.target_facet_name.deref()
+    pub fn target_facet_name(&self) -> & str {
+        use std::ops::Deref; self.target_facet_name.deref()
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn target_attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.target_attribute_name.deref()
+    pub fn target_attribute_name(&self) -> & str {
+        use std::ops::Deref; self.target_attribute_name.deref()
     }
 }
 impl FacetAttributeReference {
@@ -44,8 +42,7 @@ impl FacetAttributeReferenceBuilder {
     }
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn set_target_facet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_facet_name = input;
-        self
+        self.target_facet_name = input; self
     }
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn get_target_facet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl FacetAttributeReferenceBuilder {
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn set_target_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_attribute_name = input;
-        self
+        self.target_attribute_name = input; self
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn get_target_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl FacetAttributeReferenceBuilder {
     /// - [`target_facet_name`](crate::types::builders::FacetAttributeReferenceBuilder::target_facet_name)
     /// - [`target_attribute_name`](crate::types::builders::FacetAttributeReferenceBuilder::target_attribute_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FacetAttributeReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FacetAttributeReference {
-            target_facet_name: self.target_facet_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_facet_name",
-                    "target_facet_name was not specified but it is required when building FacetAttributeReference",
-                )
-            })?,
-            target_attribute_name: self.target_attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_attribute_name",
-                    "target_attribute_name was not specified but it is required when building FacetAttributeReference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FacetAttributeReference {
+                target_facet_name: self.target_facet_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_facet_name", "target_facet_name was not specified but it is required when building FacetAttributeReference")
+                    )?
+                ,
+                target_attribute_name: self.target_attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_attribute_name", "target_attribute_name was not specified but it is required when building FacetAttributeReference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

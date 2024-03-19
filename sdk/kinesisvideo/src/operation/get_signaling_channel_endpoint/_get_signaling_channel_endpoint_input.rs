@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSignalingChannelEndpointInput {
+pub struct GetSignalingChannelEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub single_master_channel_endpoint_configuration: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>,
 }
-impl GetSignalingChannelEndpointInput {
+impl  GetSignalingChannelEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_channel_endpoint_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterChannelEndpointConfiguration> {
+    pub fn single_master_channel_endpoint_configuration(&self) -> ::std::option::Option<& crate::types::SingleMasterChannelEndpointConfiguration> {
         self.single_master_channel_endpoint_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSignalingChannelEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,27 +53,23 @@ impl GetSignalingChannelEndpointInputBuilder {
         self
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn set_single_master_channel_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>,
-    ) -> Self {
-        self.single_master_channel_endpoint_configuration = input;
-        self
+    pub fn set_single_master_channel_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>) -> Self {
+        self.single_master_channel_endpoint_configuration = input; self
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn get_single_master_channel_endpoint_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration> {
         &self.single_master_channel_endpoint_configuration
     }
     /// Consumes the builder and constructs a [`GetSignalingChannelEndpointInput`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput {
-            channel_arn: self.channel_arn,
-            single_master_channel_endpoint_configuration: self.single_master_channel_endpoint_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput {
+                channel_arn: self.channel_arn
+                ,
+                single_master_channel_endpoint_configuration: self.single_master_channel_endpoint_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayGroupInput {
+pub struct UpdateGatewayGroupInput  {
     /// <p>The ARN of the gateway group to update.</p>
     pub gateway_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the gateway group.</p>
@@ -10,17 +10,17 @@ pub struct UpdateGatewayGroupInput {
     /// <p>The updated description of the gateway group.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGatewayGroupInput {
+impl  UpdateGatewayGroupInput  {
     /// <p>The ARN of the gateway group to update.</p>
-    pub fn gateway_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_group_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_group_arn.as_deref()
     }
     /// <p>The updated name of the gateway group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated description of the gateway group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateGatewayGroupInputBuilder {
     }
     /// <p>The ARN of the gateway group to update.</p>
     pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_group_arn = input;
-        self
+        self.gateway_group_arn = input; self
     }
     /// <p>The ARN of the gateway group to update.</p>
     pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateGatewayGroupInputBuilder {
     }
     /// <p>The updated name of the gateway group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated name of the gateway group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateGatewayGroupInputBuilder {
     }
     /// <p>The updated description of the gateway group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of the gateway group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGatewayGroupInput`](crate::operation::update_gateway_group::UpdateGatewayGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_gateway_group::UpdateGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_gateway_group::UpdateGatewayGroupInput {
-            gateway_group_arn: self.gateway_group_arn,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway_group::UpdateGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_gateway_group::UpdateGatewayGroupInput {
+                gateway_group_arn: self.gateway_group_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

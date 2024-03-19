@@ -2,47 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIdMappingWorkflowInput {
+pub struct UpdateIdMappingWorkflowInput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>,
+    pub input_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
+    pub output_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>>,
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateIdMappingWorkflowInput {
+impl  UpdateIdMappingWorkflowInput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>A description of the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_source_config.is_none()`.
-    pub fn input_source_config(&self) -> &[crate::types::IdMappingWorkflowInputSource] {
-        self.input_source_config.as_deref().unwrap_or_default()
+    pub fn input_source_config(&self) -> & [crate::types::IdMappingWorkflowInputSource] {
+        self.input_source_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
-    pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
-        self.output_source_config.as_deref().unwrap_or_default()
+    pub fn output_source_config(&self) -> & [crate::types::IdMappingWorkflowOutputSource] {
+        self.output_source_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
-    pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
+    pub fn id_mapping_techniques(&self) -> ::std::option::Option<& crate::types::IdMappingTechniques> {
         self.id_mapping_techniques.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -59,8 +61,8 @@ impl UpdateIdMappingWorkflowInput {
 pub struct UpdateIdMappingWorkflowInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>,
-    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
+    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>>,
     pub(crate) id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -73,8 +75,7 @@ impl UpdateIdMappingWorkflowInputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +88,7 @@ impl UpdateIdMappingWorkflowInputBuilder {
     }
     /// <p>A description of the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,17 +101,16 @@ impl UpdateIdMappingWorkflowInputBuilder {
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub fn input_source_config(mut self, input: crate::types::IdMappingWorkflowInputSource) -> Self {
         let mut v = self.input_source_config.unwrap_or_default();
-        v.push(input);
-        self.input_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>) -> Self {
-        self.input_source_config = input;
-        self
+    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>>) -> Self {
+        self.input_source_config = input; self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>> {
+    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>> {
         &self.input_source_config
     }
     /// Appends an item to `output_source_config`.
@@ -121,17 +120,16 @@ impl UpdateIdMappingWorkflowInputBuilder {
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::IdMappingWorkflowOutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
-        v.push(input);
-        self.output_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>) -> Self {
-        self.output_source_config = input;
-        self
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>>) -> Self {
+        self.output_source_config = input; self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>> {
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>> {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
@@ -142,8 +140,7 @@ impl UpdateIdMappingWorkflowInputBuilder {
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn set_id_mapping_techniques(mut self, input: ::std::option::Option<crate::types::IdMappingTechniques>) -> Self {
-        self.id_mapping_techniques = input;
-        self
+        self.id_mapping_techniques = input; self
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
@@ -157,27 +154,30 @@ impl UpdateIdMappingWorkflowInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateIdMappingWorkflowInput`](crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput {
-            workflow_name: self.workflow_name,
-            description: self.description,
-            input_source_config: self.input_source_config,
-            output_source_config: self.output_source_config,
-            id_mapping_techniques: self.id_mapping_techniques,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput {
+                workflow_name: self.workflow_name
+                ,
+                description: self.description
+                ,
+                input_source_config: self.input_source_config
+                ,
+                output_source_config: self.output_source_config
+                ,
+                id_mapping_techniques: self.id_mapping_techniques
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

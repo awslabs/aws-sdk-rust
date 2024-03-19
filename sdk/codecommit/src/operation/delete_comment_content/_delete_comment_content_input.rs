@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCommentContentInput {
+pub struct DeleteCommentContentInput  {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub comment_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCommentContentInput {
+impl  DeleteCommentContentInput  {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
-    pub fn comment_id(&self) -> ::std::option::Option<&str> {
+    pub fn comment_id(&self) -> ::std::option::Option<& str> {
         self.comment_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteCommentContentInputBuilder {
     }
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub fn set_comment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment_id = input;
-        self
+        self.comment_id = input; self
     }
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment_id
     }
     /// Consumes the builder and constructs a [`DeleteCommentContentInput`](crate::operation::delete_comment_content::DeleteCommentContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_comment_content::DeleteCommentContentInput { comment_id: self.comment_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_comment_content::DeleteCommentContentInput {
+                comment_id: self.comment_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPipelineBlueprintOutput {
+pub struct GetPipelineBlueprintOutput  {
     /// <p>The requested blueprint in YAML format.</p>
     pub blueprint: ::std::option::Option<crate::types::PipelineBlueprint>,
     _request_id: Option<String>,
 }
-impl GetPipelineBlueprintOutput {
+impl  GetPipelineBlueprintOutput  {
     /// <p>The requested blueprint in YAML format.</p>
-    pub fn blueprint(&self) -> ::std::option::Option<&crate::types::PipelineBlueprint> {
+    pub fn blueprint(&self) -> ::std::option::Option<& crate::types::PipelineBlueprint> {
         self.blueprint.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPipelineBlueprintOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPipelineBlueprintOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput).
     pub fn builder() -> crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPipelineBlueprintOutputBuilder {
     }
     /// <p>The requested blueprint in YAML format.</p>
     pub fn set_blueprint(mut self, input: ::std::option::Option<crate::types::PipelineBlueprint>) -> Self {
-        self.blueprint = input;
-        self
+        self.blueprint = input; self
     }
     /// <p>The requested blueprint in YAML format.</p>
     pub fn get_blueprint(&self) -> &::std::option::Option<crate::types::PipelineBlueprint> {
         &self.blueprint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput).
     pub fn build(self) -> crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput {
         crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput {
-            blueprint: self.blueprint,
+            blueprint: self.blueprint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

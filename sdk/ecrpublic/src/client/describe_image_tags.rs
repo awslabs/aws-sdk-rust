@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImageTags`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`registry_id(impl Into<String>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::registry_id) / [`set_registry_id(Option<String>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::set_registry_id):<br>required: **false**<br><p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p><br>
     ///   - [`repository_name(impl Into<String>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository that contains the image tag details to describe.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of repository results that's returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p><br>
-    /// - On success, responds with [`DescribeImageTagsOutput`](crate::operation::describe_image_tags::DescribeImageTagsOutput) with field(s):
+                            /// - On success, responds with [`DescribeImageTagsOutput`](crate::operation::describe_image_tags::DescribeImageTagsOutput) with field(s):
     ///   - [`image_tag_details(Option<Vec::<ImageTagDetail>>)`](crate::operation::describe_image_tags::DescribeImageTagsOutput::image_tag_details): <p>The image tag details for the images in the requested repository.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_image_tags::DescribeImageTagsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeImageTagsError>`](crate::operation::describe_image_tags::DescribeImageTagsError)
+                            /// - On failure, responds with [`SdkError<DescribeImageTagsError>`](crate::operation::describe_image_tags::DescribeImageTagsError)
     pub fn describe_image_tags(&self) -> crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder {
-        crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_image_tags::builders::DescribeImageTagsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

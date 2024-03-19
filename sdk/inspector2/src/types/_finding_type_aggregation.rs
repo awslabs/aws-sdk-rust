@@ -3,7 +3,7 @@
 /// <p>The details that define an aggregation based on finding type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingTypeAggregation {
+pub struct FindingTypeAggregation  {
     /// <p>The finding type to aggregate.</p>
     pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     /// <p>The resource type to aggregate.</p>
@@ -13,21 +13,21 @@ pub struct FindingTypeAggregation {
     /// <p>The value to sort results by.</p>
     pub sort_by: ::std::option::Option<crate::types::FindingTypeSortBy>,
 }
-impl FindingTypeAggregation {
+impl  FindingTypeAggregation  {
     /// <p>The finding type to aggregate.</p>
-    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
+    pub fn finding_type(&self) -> ::std::option::Option<& crate::types::AggregationFindingType> {
         self.finding_type.as_ref()
     }
     /// <p>The resource type to aggregate.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::AggregationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::AggregationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::FindingTypeSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::FindingTypeSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl FindingTypeAggregationBuilder {
     }
     /// <p>The finding type to aggregate.</p>
     pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
-        self.finding_type = input;
-        self
+        self.finding_type = input; self
     }
     /// <p>The finding type to aggregate.</p>
     pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
@@ -69,8 +68,7 @@ impl FindingTypeAggregationBuilder {
     }
     /// <p>The resource type to aggregate.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::AggregationResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type to aggregate.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
@@ -83,8 +81,7 @@ impl FindingTypeAggregationBuilder {
     }
     /// <p>The order to sort results by.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order to sort results by.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -97,8 +94,7 @@ impl FindingTypeAggregationBuilder {
     }
     /// <p>The value to sort results by.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::FindingTypeSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The value to sort results by.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::FindingTypeSortBy> {
@@ -107,10 +103,15 @@ impl FindingTypeAggregationBuilder {
     /// Consumes the builder and constructs a [`FindingTypeAggregation`](crate::types::FindingTypeAggregation).
     pub fn build(self) -> crate::types::FindingTypeAggregation {
         crate::types::FindingTypeAggregation {
-            finding_type: self.finding_type,
-            resource_type: self.resource_type,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            finding_type: self.finding_type
+            ,
+            resource_type: self.resource_type
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnomalyGroupSummaries`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::set_anomaly_detector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the anomaly detector.</p><br>
     ///   - [`sensitivity_threshold(i32)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::sensitivity_threshold) / [`set_sensitivity_threshold(Option<i32>)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::set_sensitivity_threshold):<br>required: **true**<br><p>The minimum severity score for inclusion in the output.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput) with field(s):
+                            /// - On success, responds with [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput) with field(s):
     ///   - [`anomaly_group_summary_list(Option<Vec::<AnomalyGroupSummary>>)`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput::anomaly_group_summary_list): <p>A list of anomaly group summaries.</p>
     ///   - [`anomaly_group_statistics(Option<AnomalyGroupStatistics>)`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput::anomaly_group_statistics): <p>Aggregated details about the anomaly groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListAnomalyGroupSummariesError>`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesError)
+                            /// - On failure, responds with [`SdkError<ListAnomalyGroupSummariesError>`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesError)
     pub fn list_anomaly_group_summaries(&self) -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder {
-        crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

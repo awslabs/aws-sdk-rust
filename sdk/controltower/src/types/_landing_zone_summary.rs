@@ -3,13 +3,13 @@
 /// <p>Returns a summary of information about a landing zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LandingZoneSummary {
+pub struct LandingZoneSummary  {
     /// <p>The ARN of the landing zone.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl LandingZoneSummary {
+impl  LandingZoneSummary  {
     /// <p>The ARN of the landing zone.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl LandingZoneSummaryBuilder {
     }
     /// <p>The ARN of the landing zone.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the landing zone.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl LandingZoneSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`LandingZoneSummary`](crate::types::LandingZoneSummary).
     pub fn build(self) -> crate::types::LandingZoneSummary {
-        crate::types::LandingZoneSummary { arn: self.arn }
+        crate::types::LandingZoneSummary {
+            arn: self.arn
+            ,
+        }
     }
 }
+

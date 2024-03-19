@@ -14,7 +14,7 @@
 /// <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbClusterEndpointOutput {
+pub struct CreateDbClusterEndpointOutput  {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -30,64 +30,66 @@ pub struct CreateDbClusterEndpointOutput {
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub custom_endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub static_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub static_members: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub excluded_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_members: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDbClusterEndpointOutput {
+impl  CreateDbClusterEndpointOutput  {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn db_cluster_endpoint_resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_endpoint_resource_identifier.as_deref()
     }
     /// <p>The DNS address of the endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    pub fn endpoint_type(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn custom_endpoint_type(&self) -> ::std::option::Option<&str> {
+    pub fn custom_endpoint_type(&self) -> ::std::option::Option<& str> {
         self.custom_endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_members.is_none()`.
-    pub fn static_members(&self) -> &[::std::string::String] {
-        self.static_members.as_deref().unwrap_or_default()
+    pub fn static_members(&self) -> & [::std::string::String] {
+        self.static_members.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_members.is_none()`.
-    pub fn excluded_members(&self) -> &[::std::string::String] {
-        self.excluded_members.as_deref().unwrap_or_default()
+    pub fn excluded_members(&self) -> & [::std::string::String] {
+        self.excluded_members.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    pub fn db_cluster_endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDbClusterEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDbClusterEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointOutput`](crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput).
     pub fn builder() -> crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointOutputBuilder {
@@ -106,8 +108,8 @@ pub struct CreateDbClusterEndpointOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_type: ::std::option::Option<::std::string::String>,
     pub(crate) custom_endpoint_type: ::std::option::Option<::std::string::String>,
-    pub(crate) static_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) excluded_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) static_members: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) excluded_members: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) db_cluster_endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -119,8 +121,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn set_db_cluster_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_endpoint_identifier = input;
-        self
+        self.db_cluster_endpoint_identifier = input; self
     }
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn get_db_cluster_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +134,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +147,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
     pub fn set_db_cluster_endpoint_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_endpoint_resource_identifier = input;
-        self
+        self.db_cluster_endpoint_resource_identifier = input; self
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
     pub fn get_db_cluster_endpoint_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +160,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The DNS address of the endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The DNS address of the endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +173,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +186,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_type = input;
-        self
+        self.endpoint_type = input; self
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +199,7 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn set_custom_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_endpoint_type = input;
-        self
+        self.custom_endpoint_type = input; self
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn get_custom_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,17 +212,16 @@ impl CreateDbClusterEndpointOutputBuilder {
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
     pub fn static_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.static_members.unwrap_or_default();
-        v.push(input.into());
-        self.static_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.static_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.static_members = input;
-        self
+    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.static_members = input; self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.static_members
     }
     /// Appends an item to `excluded_members`.
@@ -237,17 +231,16 @@ impl CreateDbClusterEndpointOutputBuilder {
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     pub fn excluded_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_members.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_members = input;
-        self
+    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_members = input; self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_members
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
@@ -257,36 +250,46 @@ impl CreateDbClusterEndpointOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub fn set_db_cluster_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_endpoint_arn = input;
-        self
+        self.db_cluster_endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub fn get_db_cluster_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_endpoint_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDbClusterEndpointOutput`](crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput).
     pub fn build(self) -> crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput {
         crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput {
-            db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
-            db_cluster_identifier: self.db_cluster_identifier,
-            db_cluster_endpoint_resource_identifier: self.db_cluster_endpoint_resource_identifier,
-            endpoint: self.endpoint,
-            status: self.status,
-            endpoint_type: self.endpoint_type,
-            custom_endpoint_type: self.custom_endpoint_type,
-            static_members: self.static_members,
-            excluded_members: self.excluded_members,
-            db_cluster_endpoint_arn: self.db_cluster_endpoint_arn,
+            db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            db_cluster_endpoint_resource_identifier: self.db_cluster_endpoint_resource_identifier
+            ,
+            endpoint: self.endpoint
+            ,
+            status: self.status
+            ,
+            endpoint_type: self.endpoint_type
+            ,
+            custom_endpoint_type: self.custom_endpoint_type
+            ,
+            static_members: self.static_members
+            ,
+            excluded_members: self.excluded_members
+            ,
+            db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

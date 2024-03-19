@@ -3,13 +3,13 @@
 /// <p>Describes a value of an account attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAttributeValue {
+pub struct AccountAttributeValue  {
     /// <p>The value of the attribute.</p>
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
-impl AccountAttributeValue {
+impl  AccountAttributeValue  {
     /// <p>The value of the attribute.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AccountAttributeValueBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AccountAttributeValueBuilder {
     /// Consumes the builder and constructs a [`AccountAttributeValue`](crate::types::AccountAttributeValue).
     pub fn build(self) -> crate::types::AccountAttributeValue {
         crate::types::AccountAttributeValue {
-            attribute_value: self.attribute_value,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
+

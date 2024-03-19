@@ -3,7 +3,7 @@
 /// <p>The override configuration of the rendering rules of a sheet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SheetElementConfigurationOverrides {
+pub struct SheetElementConfigurationOverrides  {
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct SheetElementConfigurationOverrides {
     /// </ul>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl SheetElementConfigurationOverrides {
+impl  SheetElementConfigurationOverrides  {
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl SheetElementConfigurationOverrides {
     /// <li>
     /// <p><code>HIDDEN</code></p></li>
     /// </ul>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl SheetElementConfigurationOverridesBuilder {
     /// <p><code>HIDDEN</code></p></li>
     /// </ul>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
     /// <ul>
@@ -73,6 +72,10 @@ impl SheetElementConfigurationOverridesBuilder {
     }
     /// Consumes the builder and constructs a [`SheetElementConfigurationOverrides`](crate::types::SheetElementConfigurationOverrides).
     pub fn build(self) -> crate::types::SheetElementConfigurationOverrides {
-        crate::types::SheetElementConfigurationOverrides { visibility: self.visibility }
+        crate::types::SheetElementConfigurationOverrides {
+            visibility: self.visibility
+            ,
+        }
     }
 }
+

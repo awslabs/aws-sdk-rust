@@ -3,7 +3,7 @@
 /// <p>Lens upgrade summary return object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LensUpgradeSummary {
+pub struct LensUpgradeSummary  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workload.</p>
@@ -26,42 +26,42 @@ pub struct LensUpgradeSummary {
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
-impl LensUpgradeSummary {
+impl  LensUpgradeSummary  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The current version of the lens.</p>
-    pub fn current_lens_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_lens_version(&self) -> ::std::option::Option<& str> {
         self.current_lens_version.as_deref()
     }
     /// <p>The latest version of the lens.</p>
-    pub fn latest_lens_version(&self) -> ::std::option::Option<&str> {
+    pub fn latest_lens_version(&self) -> ::std::option::Option<& str> {
         self.latest_lens_version.as_deref()
     }
     /// <p><code>ResourceArn</code> of the lens being upgraded</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -93,8 +93,7 @@ impl LensUpgradeSummaryBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +108,7 @@ impl LensUpgradeSummaryBuilder {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -130,8 +128,7 @@ impl LensUpgradeSummaryBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -147,8 +144,7 @@ impl LensUpgradeSummaryBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The ARN for the lens.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl LensUpgradeSummaryBuilder {
     }
     /// <p>The current version of the lens.</p>
     pub fn set_current_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_lens_version = input;
-        self
+        self.current_lens_version = input; self
     }
     /// <p>The current version of the lens.</p>
     pub fn get_current_lens_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl LensUpgradeSummaryBuilder {
     }
     /// <p>The latest version of the lens.</p>
     pub fn set_latest_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_lens_version = input;
-        self
+        self.latest_lens_version = input; self
     }
     /// <p>The latest version of the lens.</p>
     pub fn get_latest_lens_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +183,7 @@ impl LensUpgradeSummaryBuilder {
     }
     /// <p><code>ResourceArn</code> of the lens being upgraded</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p><code>ResourceArn</code> of the lens being upgraded</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +198,7 @@ impl LensUpgradeSummaryBuilder {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -216,14 +208,23 @@ impl LensUpgradeSummaryBuilder {
     /// Consumes the builder and constructs a [`LensUpgradeSummary`](crate::types::LensUpgradeSummary).
     pub fn build(self) -> crate::types::LensUpgradeSummary {
         crate::types::LensUpgradeSummary {
-            workload_id: self.workload_id,
-            workload_name: self.workload_name,
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            current_lens_version: self.current_lens_version,
-            latest_lens_version: self.latest_lens_version,
-            resource_arn: self.resource_arn,
-            resource_name: self.resource_name,
+            workload_id: self.workload_id
+            ,
+            workload_name: self.workload_name
+            ,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            current_lens_version: self.current_lens_version
+            ,
+            latest_lens_version: self.latest_lens_version
+            ,
+            resource_arn: self.resource_arn
+            ,
+            resource_name: self.resource_name
+            ,
         }
     }
 }
+

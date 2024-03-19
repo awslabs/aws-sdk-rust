@@ -3,7 +3,7 @@
 /// <p>The GET request to get all the usage plan keys representing the API keys added to a specified usage plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUsagePlanKeysInput {
+pub struct GetUsagePlanKeysInput  {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
@@ -13,13 +13,13 @@ pub struct GetUsagePlanKeysInput {
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
     pub name_query: ::std::option::Option<::std::string::String>,
 }
-impl GetUsagePlanKeysInput {
+impl  GetUsagePlanKeysInput  {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn usage_plan_id(&self) -> ::std::option::Option<& str> {
         self.usage_plan_id.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -27,7 +27,7 @@ impl GetUsagePlanKeysInput {
         self.limit
     }
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
-    pub fn name_query(&self) -> ::std::option::Option<&str> {
+    pub fn name_query(&self) -> ::std::option::Option<& str> {
         self.name_query.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl GetUsagePlanKeysInputBuilder {
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_plan_id = input;
-        self
+        self.usage_plan_id = input; self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl GetUsagePlanKeysInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl GetUsagePlanKeysInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -98,22 +95,26 @@ impl GetUsagePlanKeysInputBuilder {
     }
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
     pub fn set_name_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_query = input;
-        self
+        self.name_query = input; self
     }
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
     pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_query
     }
     /// Consumes the builder and constructs a [`GetUsagePlanKeysInput`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_usage_plan_keys::GetUsagePlanKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_usage_plan_keys::GetUsagePlanKeysInput {
-            usage_plan_id: self.usage_plan_id,
-            position: self.position,
-            limit: self.limit,
-            name_query: self.name_query,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage_plan_keys::GetUsagePlanKeysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_usage_plan_keys::GetUsagePlanKeysInput {
+                usage_plan_id: self.usage_plan_id
+                ,
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+                name_query: self.name_query
+                ,
+            }
+        )
     }
 }
+

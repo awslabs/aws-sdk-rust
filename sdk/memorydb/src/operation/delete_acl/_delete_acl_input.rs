@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAclInput {
+pub struct DeleteAclInput  {
     /// <p>The name of the Access Control List to delete</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAclInput {
+impl  DeleteAclInput  {
     /// <p>The name of the Access Control List to delete</p>
-    pub fn acl_name(&self) -> ::std::option::Option<&str> {
+    pub fn acl_name(&self) -> ::std::option::Option<& str> {
         self.acl_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteAclInputBuilder {
     }
     /// <p>The name of the Access Control List to delete</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.acl_name = input;
-        self
+        self.acl_name = input; self
     }
     /// <p>The name of the Access Control List to delete</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteAclInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteAclInput`](crate::operation::delete_acl::DeleteAclInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_acl::DeleteAclInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_acl::DeleteAclInput { acl_name: self.acl_name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_acl::DeleteAclInput {
+                acl_name: self.acl_name
+                ,
+            }
+        )
     }
 }
+

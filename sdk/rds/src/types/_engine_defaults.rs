@@ -3,28 +3,29 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EngineDefaults {
+pub struct EngineDefaults  {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of engine default parameters.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
-impl EngineDefaults {
+impl  EngineDefaults  {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
-    pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of engine default parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EngineDefaults {
@@ -40,7 +41,7 @@ impl EngineDefaults {
 pub struct EngineDefaultsBuilder {
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
 impl EngineDefaultsBuilder {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
@@ -50,8 +51,7 @@ impl EngineDefaultsBuilder {
     }
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_family = input;
-        self
+        self.db_parameter_group_family = input; self
     }
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl EngineDefaultsBuilder {
     }
     /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl EngineDefaultsBuilder {
     /// <p>Contains a list of engine default parameters.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`EngineDefaults`](crate::types::EngineDefaults).
     pub fn build(self) -> crate::types::EngineDefaults {
         crate::types::EngineDefaults {
-            db_parameter_group_family: self.db_parameter_group_family,
-            marker: self.marker,
-            parameters: self.parameters,
+            db_parameter_group_family: self.db_parameter_group_family
+            ,
+            marker: self.marker
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a provisioned product.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedProductAttribute {
+pub struct ProvisionedProductAttribute  {
     /// <p>The user-friendly name of the provisioned product.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the provisioned product.</p>
@@ -59,7 +59,7 @@ pub struct ProvisionedProductAttribute {
     /// </ul>
     pub last_successful_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
     pub physical_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
@@ -75,21 +75,21 @@ pub struct ProvisionedProductAttribute {
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     pub user_arn_session: ::std::option::Option<::std::string::String>,
 }
-impl ProvisionedProductAttribute {
+impl  ProvisionedProductAttribute  {
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the provisioned product.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current status of the provisioned product.</p>
@@ -105,23 +105,23 @@ impl ProvisionedProductAttribute {
     /// <li>
     /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedProductStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProvisionedProductStatus> {
         self.status.as_ref()
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn last_record_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_record_id(&self) -> ::std::option::Option<& str> {
         self.last_record_id.as_deref()
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
@@ -135,7 +135,7 @@ impl ProvisionedProductAttribute {
     /// <li>
     /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
-    pub fn last_provisioning_record_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_provisioning_record_id(&self) -> ::std::option::Option<& str> {
         self.last_provisioning_record_id.as_deref()
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
@@ -149,41 +149,42 @@ impl ProvisionedProductAttribute {
     /// <li>
     /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
-    pub fn last_successful_provisioning_record_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_successful_provisioning_record_id(&self) -> ::std::option::Option<& str> {
         self.last_successful_provisioning_record_id.as_deref()
     }
     /// <p>One or more tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
-    pub fn physical_id(&self) -> ::std::option::Option<&str> {
+    pub fn physical_id(&self) -> ::std::option::Option<& str> {
         self.physical_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn provisioning_artifact_name(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_name(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
-    pub fn user_arn_session(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn_session(&self) -> ::std::option::Option<& str> {
         self.user_arn_session.as_deref()
     }
 }
@@ -209,7 +210,7 @@ pub struct ProvisionedProductAttributeBuilder {
     pub(crate) last_record_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_provisioning_record_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_successful_provisioning_record_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) physical_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,
@@ -226,8 +227,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +240,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The ARN of the provisioned product.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the provisioned product.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +253,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +266,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +303,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedProductStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
@@ -332,8 +328,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The current status message of the provisioned product.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The current status message of the provisioned product.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -346,8 +341,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -360,8 +354,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -374,8 +367,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub fn set_last_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_record_id = input;
-        self
+        self.last_record_id = input; self
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub fn get_last_record_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -408,8 +400,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn set_last_provisioning_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_provisioning_record_id = input;
-        self
+        self.last_provisioning_record_id = input; self
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -452,8 +443,7 @@ impl ProvisionedProductAttributeBuilder {
     /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn set_last_successful_provisioning_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_successful_provisioning_record_id = input;
-        self
+        self.last_successful_provisioning_record_id = input; self
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -476,17 +466,16 @@ impl ProvisionedProductAttributeBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
@@ -496,8 +485,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
     pub fn set_physical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.physical_id = input;
-        self
+        self.physical_id = input; self
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
     pub fn get_physical_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -510,8 +498,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -524,8 +511,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The name of the product.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>The name of the product.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -538,8 +524,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -552,8 +537,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_name = input;
-        self
+        self.provisioning_artifact_name = input; self
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -566,8 +550,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -580,8 +563,7 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     pub fn set_user_arn_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn_session = input;
-        self
+        self.user_arn_session = input; self
     }
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
     pub fn get_user_arn_session(&self) -> &::std::option::Option<::std::string::String> {
@@ -590,25 +572,45 @@ impl ProvisionedProductAttributeBuilder {
     /// Consumes the builder and constructs a [`ProvisionedProductAttribute`](crate::types::ProvisionedProductAttribute).
     pub fn build(self) -> crate::types::ProvisionedProductAttribute {
         crate::types::ProvisionedProductAttribute {
-            name: self.name,
-            arn: self.arn,
-            r#type: self.r#type,
-            id: self.id,
-            status: self.status,
-            status_message: self.status_message,
-            created_time: self.created_time,
-            idempotency_token: self.idempotency_token,
-            last_record_id: self.last_record_id,
-            last_provisioning_record_id: self.last_provisioning_record_id,
-            last_successful_provisioning_record_id: self.last_successful_provisioning_record_id,
-            tags: self.tags,
-            physical_id: self.physical_id,
-            product_id: self.product_id,
-            product_name: self.product_name,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-            provisioning_artifact_name: self.provisioning_artifact_name,
-            user_arn: self.user_arn,
-            user_arn_session: self.user_arn_session,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            created_time: self.created_time
+            ,
+            idempotency_token: self.idempotency_token
+            ,
+            last_record_id: self.last_record_id
+            ,
+            last_provisioning_record_id: self.last_provisioning_record_id
+            ,
+            last_successful_provisioning_record_id: self.last_successful_provisioning_record_id
+            ,
+            tags: self.tags
+            ,
+            physical_id: self.physical_id
+            ,
+            product_id: self.product_id
+            ,
+            product_name: self.product_name
+            ,
+            provisioning_artifact_id: self.provisioning_artifact_id
+            ,
+            provisioning_artifact_name: self.provisioning_artifact_name
+            ,
+            user_arn: self.user_arn
+            ,
+            user_arn_session: self.user_arn_session
+            ,
         }
     }
 }
+

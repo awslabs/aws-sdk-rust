@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInventoryDeletionsOutput {
+pub struct DescribeInventoryDeletionsOutput  {
     /// <p>A list of status items for deleted inventory.</p>
-    pub inventory_deletions: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionStatusItem>>,
+    pub inventory_deletions: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryDeletionStatusItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInventoryDeletionsOutput {
+impl  DescribeInventoryDeletionsOutput  {
     /// <p>A list of status items for deleted inventory.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inventory_deletions.is_none()`.
-    pub fn inventory_deletions(&self) -> &[crate::types::InventoryDeletionStatusItem] {
-        self.inventory_deletions.as_deref().unwrap_or_default()
+    pub fn inventory_deletions(&self) -> & [crate::types::InventoryDeletionStatusItem] {
+        self.inventory_deletions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInventoryDeletionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInventoryDeletionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInventoryDeletionsOutput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput).
     pub fn builder() -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeInventoryDeletionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInventoryDeletionsOutputBuilder {
-    pub(crate) inventory_deletions: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionStatusItem>>,
+    pub(crate) inventory_deletions: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryDeletionStatusItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeInventoryDeletionsOutputBuilder {
     /// <p>A list of status items for deleted inventory.</p>
     pub fn inventory_deletions(mut self, input: crate::types::InventoryDeletionStatusItem) -> Self {
         let mut v = self.inventory_deletions.unwrap_or_default();
-        v.push(input);
-        self.inventory_deletions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inventory_deletions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of status items for deleted inventory.</p>
-    pub fn set_inventory_deletions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionStatusItem>>) -> Self {
-        self.inventory_deletions = input;
-        self
+    pub fn set_inventory_deletions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryDeletionStatusItem>>) -> Self {
+        self.inventory_deletions = input; self
     }
     /// <p>A list of status items for deleted inventory.</p>
-    pub fn get_inventory_deletions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryDeletionStatusItem>> {
+    pub fn get_inventory_deletions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InventoryDeletionStatusItem>> {
         &self.inventory_deletions
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -69,28 +69,30 @@ impl DescribeInventoryDeletionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInventoryDeletionsOutput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput).
     pub fn build(self) -> crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput {
         crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput {
-            inventory_deletions: self.inventory_deletions,
-            next_token: self.next_token,
+            inventory_deletions: self.inventory_deletions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about where to publish the analytics results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsS3BucketDestination {
+pub struct AnalyticsS3BucketDestination  {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
     pub format: crate::types::AnalyticsS3ExportFileFormat,
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
@@ -15,24 +15,23 @@ pub struct AnalyticsS3BucketDestination {
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsS3BucketDestination {
+impl  AnalyticsS3BucketDestination  {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
-    pub fn format(&self) -> &crate::types::AnalyticsS3ExportFileFormat {
+    pub fn format(&self) -> & crate::types::AnalyticsS3ExportFileFormat {
         &self.format
     }
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
     /// </note>
-    pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_account_id(&self) -> ::std::option::Option<& str> {
         self.bucket_account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -61,8 +60,7 @@ impl AnalyticsS3BucketDestinationBuilder {
     }
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::AnalyticsS3ExportFileFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalyticsS3ExportFileFormat> {
@@ -79,8 +77,7 @@ impl AnalyticsS3BucketDestinationBuilder {
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
     /// </note>
     pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_account_id = input;
-        self
+        self.bucket_account_id = input; self
     }
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
@@ -96,8 +93,7 @@ impl AnalyticsS3BucketDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +106,7 @@ impl AnalyticsS3BucketDestinationBuilder {
     }
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,21 +117,24 @@ impl AnalyticsS3BucketDestinationBuilder {
     /// - [`format`](crate::types::builders::AnalyticsS3BucketDestinationBuilder::format)
     /// - [`bucket`](crate::types::builders::AnalyticsS3BucketDestinationBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsS3BucketDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsS3BucketDestination {
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building AnalyticsS3BucketDestination",
-                )
-            })?,
-            bucket_account_id: self.bucket_account_id,
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building AnalyticsS3BucketDestination",
-                )
-            })?,
-            prefix: self.prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsS3BucketDestination {
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building AnalyticsS3BucketDestination")
+                    )?
+                ,
+                bucket_account_id: self.bucket_account_id
+                ,
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building AnalyticsS3BucketDestination")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

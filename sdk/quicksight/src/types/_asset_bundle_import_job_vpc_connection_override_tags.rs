@@ -3,22 +3,20 @@
 /// <p>An object that contains a list of tags to be assigned to a list of VPC connection IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobVpcConnectionOverrideTags {
+pub struct AssetBundleImportJobVpcConnectionOverrideTags  {
     /// <p>A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code> to override all VPC connections in this asset bundle.</p>
-    pub vpc_connection_ids: ::std::vec::Vec<::std::string::String>,
+    pub vpc_connection_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of tags for the VPC connections that you want to apply overrides to.</p>
-    pub tags: ::std::vec::Vec<crate::types::Tag>,
+    pub tags: ::std::vec::Vec::<crate::types::Tag>,
 }
-impl AssetBundleImportJobVpcConnectionOverrideTags {
+impl  AssetBundleImportJobVpcConnectionOverrideTags  {
     /// <p>A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code> to override all VPC connections in this asset bundle.</p>
-    pub fn vpc_connection_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.vpc_connection_ids.deref()
+    pub fn vpc_connection_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.vpc_connection_ids.deref()
     }
     /// <p>A list of tags for the VPC connections that you want to apply overrides to.</p>
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        use std::ops::Deref;
-        self.tags.deref()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        use std::ops::Deref; self.tags.deref()
     }
 }
 impl AssetBundleImportJobVpcConnectionOverrideTags {
@@ -32,8 +30,8 @@ impl AssetBundleImportJobVpcConnectionOverrideTags {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobVpcConnectionOverrideTagsBuilder {
-    pub(crate) vpc_connection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_connection_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AssetBundleImportJobVpcConnectionOverrideTagsBuilder {
     /// Appends an item to `vpc_connection_ids`.
@@ -43,17 +41,16 @@ impl AssetBundleImportJobVpcConnectionOverrideTagsBuilder {
     /// <p>A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code> to override all VPC connections in this asset bundle.</p>
     pub fn vpc_connection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_connection_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_connection_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_connection_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code> to override all VPC connections in this asset bundle.</p>
-    pub fn set_vpc_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_connection_ids = input;
-        self
+    pub fn set_vpc_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_connection_ids = input; self
     }
     /// <p>A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code> to override all VPC connections in this asset bundle.</p>
-    pub fn get_vpc_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_connection_ids
     }
     /// Appends an item to `tags`.
@@ -63,39 +60,37 @@ impl AssetBundleImportJobVpcConnectionOverrideTagsBuilder {
     /// <p>A list of tags for the VPC connections that you want to apply overrides to.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags for the VPC connections that you want to apply overrides to.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags for the VPC connections that you want to apply overrides to.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobVpcConnectionOverrideTags`](crate::types::AssetBundleImportJobVpcConnectionOverrideTags).
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_connection_ids`](crate::types::builders::AssetBundleImportJobVpcConnectionOverrideTagsBuilder::vpc_connection_ids)
     /// - [`tags`](crate::types::builders::AssetBundleImportJobVpcConnectionOverrideTagsBuilder::tags)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobVpcConnectionOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobVpcConnectionOverrideTags {
-            vpc_connection_ids: self.vpc_connection_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_connection_ids",
-                    "vpc_connection_ids was not specified but it is required when building AssetBundleImportJobVpcConnectionOverrideTags",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building AssetBundleImportJobVpcConnectionOverrideTags",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobVpcConnectionOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobVpcConnectionOverrideTags {
+                vpc_connection_ids: self.vpc_connection_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_connection_ids", "vpc_connection_ids was not specified but it is required when building AssetBundleImportJobVpcConnectionOverrideTags")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building AssetBundleImportJobVpcConnectionOverrideTags")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRelatedResourcesForAuditFindingInput {
+pub struct ListRelatedResourcesForAuditFindingInput  {
     /// <p>The finding Id.</p>
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -10,13 +10,13 @@ pub struct ListRelatedResourcesForAuditFindingInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRelatedResourcesForAuditFindingInput {
+impl  ListRelatedResourcesForAuditFindingInput  {
     /// <p>The finding Id.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<& str> {
         self.finding_id.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -48,8 +48,7 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
     }
     /// <p>The finding Id.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The finding Id.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRelatedResourcesForAuditFindingInput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput {
-                finding_id: self.finding_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                finding_id: self.finding_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

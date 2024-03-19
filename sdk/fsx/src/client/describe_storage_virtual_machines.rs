@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStorageVirtualMachines`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`storage_virtual_machine_ids(impl Into<String>)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::storage_virtual_machine_ids) / [`set_storage_virtual_machine_ids(Option<Vec::<String>>)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::set_storage_virtual_machine_ids):<br>required: **false**<br><p>Enter the ID of one or more SVMs that you want to view.</p><br>
     ///   - [`filters(StorageVirtualMachineFilter)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::filters) / [`set_filters(Option<Vec::<StorageVirtualMachineFilter>>)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::set_filters):<br>required: **false**<br><p>Enter a filter name:value pair to view a select set of SVMs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p><br>
-    /// - On success, responds with [`DescribeStorageVirtualMachinesOutput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput) with field(s):
+                            /// - On success, responds with [`DescribeStorageVirtualMachinesOutput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput) with field(s):
     ///   - [`storage_virtual_machines(Option<Vec::<StorageVirtualMachine>>)`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput::storage_virtual_machines): <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    /// - On failure, responds with [`SdkError<DescribeStorageVirtualMachinesError>`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesError)
-    pub fn describe_storage_virtual_machines(
-        &self,
-    ) -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder {
-        crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeStorageVirtualMachinesError>`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesError)
+    pub fn describe_storage_virtual_machines(&self) -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder {
+                                crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

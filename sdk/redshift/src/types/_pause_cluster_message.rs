@@ -3,13 +3,13 @@
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PauseClusterMessage {
+pub struct PauseClusterMessage  {
     /// <p>The identifier of the cluster to be paused.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl PauseClusterMessage {
+impl  PauseClusterMessage  {
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl PauseClusterMessageBuilder {
     }
     /// <p>The identifier of the cluster to be paused.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster to be paused.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl PauseClusterMessageBuilder {
     /// Consumes the builder and constructs a [`PauseClusterMessage`](crate::types::PauseClusterMessage).
     pub fn build(self) -> crate::types::PauseClusterMessage {
         crate::types::PauseClusterMessage {
-            cluster_identifier: self.cluster_identifier,
+            cluster_identifier: self.cluster_identifier
+            ,
         }
     }
 }
+

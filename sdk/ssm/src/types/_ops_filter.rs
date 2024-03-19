@@ -3,27 +3,25 @@
 /// <p>A filter for viewing OpsData summaries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpsFilter {
+pub struct OpsFilter  {
     /// <p>The name of the filter.</p>
     pub key: ::std::string::String,
     /// <p>The filter value.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The type of filter.</p>
     pub r#type: ::std::option::Option<crate::types::OpsFilterOperatorType>,
 }
-impl OpsFilter {
+impl  OpsFilter  {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The filter value.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The type of filter.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OpsFilterOperatorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OpsFilterOperatorType> {
         self.r#type.as_ref()
     }
 }
@@ -39,7 +37,7 @@ impl OpsFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsFilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::OpsFilterOperatorType>,
 }
 impl OpsFilterBuilder {
@@ -51,8 +49,7 @@ impl OpsFilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl OpsFilterBuilder {
     /// <p>The filter value.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter value.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The filter value.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The type of filter.</p>
@@ -85,8 +81,7 @@ impl OpsFilterBuilder {
     }
     /// <p>The type of filter.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OpsFilterOperatorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of filter.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OpsFilterOperatorType> {
@@ -97,20 +92,22 @@ impl OpsFilterBuilder {
     /// - [`key`](crate::types::builders::OpsFilterBuilder::key)
     /// - [`values`](crate::types::builders::OpsFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::OpsFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OpsFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building OpsFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building OpsFilter",
-                )
-            })?,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OpsFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building OpsFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building OpsFilter")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

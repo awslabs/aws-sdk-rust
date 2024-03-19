@@ -24,11 +24,7 @@ impl AnnotationValue {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::types::AnnotationValue::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> ::std::result::Result<&bool, &Self> {
-        if let AnnotationValue::BooleanValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnnotationValue::BooleanValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::AnnotationValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -37,11 +33,7 @@ impl AnnotationValue {
     /// Tries to convert the enum instance into [`NumberValue`](crate::types::AnnotationValue::NumberValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> ::std::result::Result<&f64, &Self> {
-        if let AnnotationValue::NumberValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnnotationValue::NumberValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NumberValue`](crate::types::AnnotationValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
@@ -50,11 +42,7 @@ impl AnnotationValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::AnnotationValue::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AnnotationValue::StringValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnnotationValue::StringValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::AnnotationValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -65,3 +53,4 @@ impl AnnotationValue {
         matches!(self, Self::Unknown)
     }
 }
+

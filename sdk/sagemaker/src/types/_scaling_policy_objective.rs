@@ -3,13 +3,13 @@
 /// <p>An object where you specify the anticipated traffic pattern for an endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingPolicyObjective {
+pub struct ScalingPolicyObjective  {
     /// <p>The minimum number of expected requests to your endpoint per minute.</p>
     pub min_invocations_per_minute: ::std::option::Option<i32>,
     /// <p>The maximum number of expected requests to your endpoint per minute.</p>
     pub max_invocations_per_minute: ::std::option::Option<i32>,
 }
-impl ScalingPolicyObjective {
+impl  ScalingPolicyObjective  {
     /// <p>The minimum number of expected requests to your endpoint per minute.</p>
     pub fn min_invocations_per_minute(&self) -> ::std::option::Option<i32> {
         self.min_invocations_per_minute
@@ -41,8 +41,7 @@ impl ScalingPolicyObjectiveBuilder {
     }
     /// <p>The minimum number of expected requests to your endpoint per minute.</p>
     pub fn set_min_invocations_per_minute(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_invocations_per_minute = input;
-        self
+        self.min_invocations_per_minute = input; self
     }
     /// <p>The minimum number of expected requests to your endpoint per minute.</p>
     pub fn get_min_invocations_per_minute(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ScalingPolicyObjectiveBuilder {
     }
     /// <p>The maximum number of expected requests to your endpoint per minute.</p>
     pub fn set_max_invocations_per_minute(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_invocations_per_minute = input;
-        self
+        self.max_invocations_per_minute = input; self
     }
     /// <p>The maximum number of expected requests to your endpoint per minute.</p>
     pub fn get_max_invocations_per_minute(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ScalingPolicyObjectiveBuilder {
     /// Consumes the builder and constructs a [`ScalingPolicyObjective`](crate::types::ScalingPolicyObjective).
     pub fn build(self) -> crate::types::ScalingPolicyObjective {
         crate::types::ScalingPolicyObjective {
-            min_invocations_per_minute: self.min_invocations_per_minute,
-            max_invocations_per_minute: self.max_invocations_per_minute,
+            min_invocations_per_minute: self.min_invocations_per_minute
+            ,
+            max_invocations_per_minute: self.max_invocations_per_minute
+            ,
         }
     }
 }
+

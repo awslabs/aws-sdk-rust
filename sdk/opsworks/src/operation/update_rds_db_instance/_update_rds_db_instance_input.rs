@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRdsDbInstanceInput {
+pub struct UpdateRdsDbInstanceInput  {
     /// <p>The Amazon RDS instance's ARN.</p>
     pub rds_db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The master user name.</p>
@@ -10,17 +10,17 @@ pub struct UpdateRdsDbInstanceInput {
     /// <p>The database password.</p>
     pub db_password: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRdsDbInstanceInput {
+impl  UpdateRdsDbInstanceInput  {
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rds_db_instance_arn(&self) -> ::std::option::Option<& str> {
         self.rds_db_instance_arn.as_deref()
     }
     /// <p>The master user name.</p>
-    pub fn db_user(&self) -> ::std::option::Option<&str> {
+    pub fn db_user(&self) -> ::std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The database password.</p>
-    pub fn db_password(&self) -> ::std::option::Option<&str> {
+    pub fn db_password(&self) -> ::std::option::Option<& str> {
         self.db_password.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateRdsDbInstanceInputBuilder {
     }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rds_db_instance_arn = input;
-        self
+        self.rds_db_instance_arn = input; self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn get_rds_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateRdsDbInstanceInputBuilder {
     }
     /// <p>The master user name.</p>
     pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The master user name.</p>
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateRdsDbInstanceInputBuilder {
     }
     /// <p>The database password.</p>
     pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_password = input;
-        self
+        self.db_password = input; self
     }
     /// <p>The database password.</p>
     pub fn get_db_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_password
     }
     /// Consumes the builder and constructs a [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput {
-            rds_db_instance_arn: self.rds_db_instance_arn,
-            db_user: self.db_user,
-            db_password: self.db_password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput {
+                rds_db_instance_arn: self.rds_db_instance_arn
+                ,
+                db_user: self.db_user
+                ,
+                db_password: self.db_password
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectorInput {
+pub struct DescribeConnectorInput  {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub connector_label: ::std::option::Option<::std::string::String>,
 }
-impl DescribeConnectorInput {
+impl  DescribeConnectorInput  {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> ::std::option::Option<& crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(&self) -> ::std::option::Option<&str> {
+    pub fn connector_label(&self) -> ::std::option::Option<& str> {
         self.connector_label.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeConnectorInputBuilder {
     }
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
-        self.connector_type = input;
-        self
+        self.connector_type = input; self
     }
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::ConnectorType> {
@@ -55,20 +54,22 @@ impl DescribeConnectorInputBuilder {
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_label = input;
-        self
+        self.connector_label = input; self
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_label
     }
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_connector::DescribeConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_connector::DescribeConnectorInput {
-            connector_type: self.connector_type,
-            connector_label: self.connector_label,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connector::DescribeConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_connector::DescribeConnectorInput {
+                connector_type: self.connector_type
+                ,
+                connector_label: self.connector_label
+                ,
+            }
+        )
     }
 }
+

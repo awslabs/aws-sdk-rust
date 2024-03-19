@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSimulationJobOutput {
+pub struct CreateSimulationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the simulation job.</p>
@@ -114,38 +114,38 @@ pub struct CreateSimulationJobOutput {
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The robot application used by the simulation job.</p>
-    pub robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
+    pub robot_applications: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationConfig>>,
     /// <p>The simulation application used by the simulation job.</p>
-    pub simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
+    pub simulation_applications: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSource>>,
     /// <p>The list of all tags added to the simulation job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Information about the vpc configuration.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     /// <p>Compute information for the simulation job.</p>
     pub compute: ::std::option::Option<crate::types::ComputeResponse>,
     _request_id: Option<String>,
 }
-impl CreateSimulationJobOutput {
+impl  CreateSimulationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the simulation job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SimulationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SimulationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
-    pub fn last_started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>the failure behavior for the simulation job.</p>
-    pub fn failure_behavior(&self) -> ::std::option::Option<&crate::types::FailureBehavior> {
+    pub fn failure_behavior(&self) -> ::std::option::Option<& crate::types::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
     /// <p>The failure code of the simulation job if it failed:</p>
@@ -235,19 +235,19 @@ impl CreateSimulationJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::SimulationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Simulation job output files location.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The logging configuration.</p>
-    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
+    pub fn logging_config(&self) -> ::std::option::Option<& crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The maximum simulation job duration in seconds.</p>
@@ -259,45 +259,48 @@ impl CreateSimulationJobOutput {
         self.simulation_time_millis
     }
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
-    pub fn iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role(&self) -> ::std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>The robot application used by the simulation job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_applications.is_none()`.
-    pub fn robot_applications(&self) -> &[crate::types::RobotApplicationConfig] {
-        self.robot_applications.as_deref().unwrap_or_default()
+    pub fn robot_applications(&self) -> & [crate::types::RobotApplicationConfig] {
+        self.robot_applications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The simulation application used by the simulation job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulation_applications.is_none()`.
-    pub fn simulation_applications(&self) -> &[crate::types::SimulationApplicationConfig] {
-        self.simulation_applications.as_deref().unwrap_or_default()
+    pub fn simulation_applications(&self) -> & [crate::types::SimulationApplicationConfig] {
+        self.simulation_applications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The data sources for the simulation job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::DataSource] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::DataSource] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of all tags added to the simulation job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about the vpc configuration.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>Compute information for the simulation job.</p>
-    pub fn compute(&self) -> ::std::option::Option<&crate::types::ComputeResponse> {
+    pub fn compute(&self) -> ::std::option::Option<& crate::types::ComputeResponse> {
         self.compute.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSimulationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSimulationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateSimulationJobOutput`](crate::operation::create_simulation_job::CreateSimulationJobOutput).
     pub fn builder() -> crate::operation::create_simulation_job::builders::CreateSimulationJobOutputBuilder {
@@ -321,10 +324,10 @@ pub struct CreateSimulationJobOutputBuilder {
     pub(crate) max_job_duration_in_seconds: ::std::option::Option<i64>,
     pub(crate) simulation_time_millis: ::std::option::Option<i64>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
-    pub(crate) robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
-    pub(crate) simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) robot_applications: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationConfig>>,
+    pub(crate) simulation_applications: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationApplicationConfig>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSource>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     pub(crate) compute: ::std::option::Option<crate::types::ComputeResponse>,
     _request_id: Option<String>,
@@ -337,8 +340,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -351,8 +353,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The status of the simulation job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the simulation job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationJobStatus> {
@@ -365,8 +366,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub fn set_last_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_started_at = input;
-        self
+        self.last_started_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub fn get_last_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -379,8 +379,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -393,8 +392,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>the failure behavior for the simulation job.</p>
     pub fn set_failure_behavior(mut self, input: ::std::option::Option<crate::types::FailureBehavior>) -> Self {
-        self.failure_behavior = input;
-        self
+        self.failure_behavior = input; self
     }
     /// <p>the failure behavior for the simulation job.</p>
     pub fn get_failure_behavior(&self) -> &::std::option::Option<crate::types::FailureBehavior> {
@@ -579,8 +577,7 @@ impl CreateSimulationJobOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::SimulationJobErrorCode>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
@@ -679,8 +676,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -693,8 +689,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>Simulation job output files location.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>Simulation job output files location.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
@@ -707,8 +702,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The logging configuration.</p>
     pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
-        self.logging_config = input;
-        self
+        self.logging_config = input; self
     }
     /// <p>The logging configuration.</p>
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
@@ -721,8 +715,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The maximum simulation job duration in seconds.</p>
     pub fn set_max_job_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_job_duration_in_seconds = input;
-        self
+        self.max_job_duration_in_seconds = input; self
     }
     /// <p>The maximum simulation job duration in seconds.</p>
     pub fn get_max_job_duration_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -735,8 +728,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub fn set_simulation_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.simulation_time_millis = input;
-        self
+        self.simulation_time_millis = input; self
     }
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub fn get_simulation_time_millis(&self) -> &::std::option::Option<i64> {
@@ -749,8 +741,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -763,17 +754,16 @@ impl CreateSimulationJobOutputBuilder {
     /// <p>The robot application used by the simulation job.</p>
     pub fn robot_applications(mut self, input: crate::types::RobotApplicationConfig) -> Self {
         let mut v = self.robot_applications.unwrap_or_default();
-        v.push(input);
-        self.robot_applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.robot_applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The robot application used by the simulation job.</p>
-    pub fn set_robot_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>) -> Self {
-        self.robot_applications = input;
-        self
+    pub fn set_robot_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationConfig>>) -> Self {
+        self.robot_applications = input; self
     }
     /// <p>The robot application used by the simulation job.</p>
-    pub fn get_robot_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>> {
+    pub fn get_robot_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationConfig>> {
         &self.robot_applications
     }
     /// Appends an item to `simulation_applications`.
@@ -783,17 +773,16 @@ impl CreateSimulationJobOutputBuilder {
     /// <p>The simulation application used by the simulation job.</p>
     pub fn simulation_applications(mut self, input: crate::types::SimulationApplicationConfig) -> Self {
         let mut v = self.simulation_applications.unwrap_or_default();
-        v.push(input);
-        self.simulation_applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.simulation_applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The simulation application used by the simulation job.</p>
-    pub fn set_simulation_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>) -> Self {
-        self.simulation_applications = input;
-        self
+    pub fn set_simulation_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationApplicationConfig>>) -> Self {
+        self.simulation_applications = input; self
     }
     /// <p>The simulation application used by the simulation job.</p>
-    pub fn get_simulation_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>> {
+    pub fn get_simulation_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SimulationApplicationConfig>> {
         &self.simulation_applications
     }
     /// Appends an item to `data_sources`.
@@ -803,17 +792,16 @@ impl CreateSimulationJobOutputBuilder {
     /// <p>The data sources for the simulation job.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data sources for the simulation job.</p>
-    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSource>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>The data sources for the simulation job.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSource>> {
         &self.data_sources
     }
     /// Adds a key-value pair to `tags`.
@@ -823,17 +811,16 @@ impl CreateSimulationJobOutputBuilder {
     /// <p>The list of all tags added to the simulation job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of all tags added to the simulation job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of all tags added to the simulation job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Information about the vpc configuration.</p>
@@ -843,8 +830,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>Information about the vpc configuration.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigResponse>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Information about the vpc configuration.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigResponse> {
@@ -857,44 +843,64 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>Compute information for the simulation job.</p>
     pub fn set_compute(mut self, input: ::std::option::Option<crate::types::ComputeResponse>) -> Self {
-        self.compute = input;
-        self
+        self.compute = input; self
     }
     /// <p>Compute information for the simulation job.</p>
     pub fn get_compute(&self) -> &::std::option::Option<crate::types::ComputeResponse> {
         &self.compute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSimulationJobOutput`](crate::operation::create_simulation_job::CreateSimulationJobOutput).
     pub fn build(self) -> crate::operation::create_simulation_job::CreateSimulationJobOutput {
         crate::operation::create_simulation_job::CreateSimulationJobOutput {
-            arn: self.arn,
-            status: self.status,
-            last_started_at: self.last_started_at,
-            last_updated_at: self.last_updated_at,
-            failure_behavior: self.failure_behavior,
-            failure_code: self.failure_code,
-            client_request_token: self.client_request_token,
-            output_location: self.output_location,
-            logging_config: self.logging_config,
-            max_job_duration_in_seconds: self.max_job_duration_in_seconds.unwrap_or_default(),
-            simulation_time_millis: self.simulation_time_millis.unwrap_or_default(),
-            iam_role: self.iam_role,
-            robot_applications: self.robot_applications,
-            simulation_applications: self.simulation_applications,
-            data_sources: self.data_sources,
-            tags: self.tags,
-            vpc_config: self.vpc_config,
-            compute: self.compute,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            last_started_at: self.last_started_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            failure_behavior: self.failure_behavior
+            ,
+            failure_code: self.failure_code
+            ,
+            client_request_token: self.client_request_token
+            ,
+            output_location: self.output_location
+            ,
+            logging_config: self.logging_config
+            ,
+            max_job_duration_in_seconds: self.max_job_duration_in_seconds
+                .unwrap_or_default()
+            ,
+            simulation_time_millis: self.simulation_time_millis
+                .unwrap_or_default()
+            ,
+            iam_role: self.iam_role
+            ,
+            robot_applications: self.robot_applications
+            ,
+            simulation_applications: self.simulation_applications
+            ,
+            data_sources: self.data_sources
+            ,
+            tags: self.tags
+            ,
+            vpc_config: self.vpc_config
+            ,
+            compute: self.compute
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

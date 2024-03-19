@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAppInstanceUserEndpointInput {
+pub struct UpdateAppInstanceUserEndpointInput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -12,25 +12,25 @@ pub struct UpdateAppInstanceUserEndpointInput {
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub allow_messages: ::std::option::Option<crate::types::AllowMessages>,
 }
-impl UpdateAppInstanceUserEndpointInput {
+impl  UpdateAppInstanceUserEndpointInput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn allow_messages(&self) -> ::std::option::Option<&crate::types::AllowMessages> {
+    pub fn allow_messages(&self) -> ::std::option::Option<& crate::types::AllowMessages> {
         self.allow_messages.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
+impl  ::std::fmt::Debug for UpdateAppInstanceUserEndpointInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointInput");
         formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
@@ -65,8 +65,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,26 +105,26 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn set_allow_messages(mut self, input: ::std::option::Option<crate::types::AllowMessages>) -> Self {
-        self.allow_messages = input;
-        self
+        self.allow_messages = input; self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn get_allow_messages(&self) -> &::std::option::Option<crate::types::AllowMessages> {
         &self.allow_messages
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointInput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput {
-            app_instance_user_arn: self.app_instance_user_arn,
-            endpoint_id: self.endpoint_id,
-            name: self.name,
-            allow_messages: self.allow_messages,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput {
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                endpoint_id: self.endpoint_id
+                ,
+                name: self.name
+                ,
+                allow_messages: self.allow_messages
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInputBuilder {
@@ -140,3 +137,4 @@ impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInputBuilder {
         formatter.finish()
     }
 }
+

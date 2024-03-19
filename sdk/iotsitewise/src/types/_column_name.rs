@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let columnname = unimplemented!();
 /// match columnname {
@@ -36,16 +36,14 @@
 /// Specifically, when `columnname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ColumnName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ColumnName {
     #[allow(missing_docs)] // documentation missing in model
     Alias,
@@ -65,88 +63,80 @@ pub enum ColumnName {
     Value,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ColumnName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALIAS" => ColumnName::Alias,
-            "ASSET_ID" => ColumnName::AssetId,
-            "DATA_TYPE" => ColumnName::DataType,
-            "PROPERTY_ID" => ColumnName::PropertyId,
-            "QUALITY" => ColumnName::Quality,
-            "TIMESTAMP_NANO_OFFSET" => ColumnName::TimestampNanoOffset,
-            "TIMESTAMP_SECONDS" => ColumnName::TimestampSeconds,
-            "VALUE" => ColumnName::Value,
-            other => ColumnName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ALIAS" => ColumnName::Alias,
+"ASSET_ID" => ColumnName::AssetId,
+"DATA_TYPE" => ColumnName::DataType,
+"PROPERTY_ID" => ColumnName::PropertyId,
+"QUALITY" => ColumnName::Quality,
+"TIMESTAMP_NANO_OFFSET" => ColumnName::TimestampNanoOffset,
+"TIMESTAMP_SECONDS" => ColumnName::TimestampSeconds,
+"VALUE" => ColumnName::Value,
+other => ColumnName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ColumnName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ColumnName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ColumnName::from(s))
+                    }
+                }
 impl ColumnName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ColumnName::Alias => "ALIAS",
-            ColumnName::AssetId => "ASSET_ID",
-            ColumnName::DataType => "DATA_TYPE",
-            ColumnName::PropertyId => "PROPERTY_ID",
-            ColumnName::Quality => "QUALITY",
-            ColumnName::TimestampNanoOffset => "TIMESTAMP_NANO_OFFSET",
-            ColumnName::TimestampSeconds => "TIMESTAMP_SECONDS",
-            ColumnName::Value => "VALUE",
-            ColumnName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALIAS",
-            "ASSET_ID",
-            "DATA_TYPE",
-            "PROPERTY_ID",
-            "QUALITY",
-            "TIMESTAMP_NANO_OFFSET",
-            "TIMESTAMP_SECONDS",
-            "VALUE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ColumnName::Alias => "ALIAS",
+    ColumnName::AssetId => "ASSET_ID",
+    ColumnName::DataType => "DATA_TYPE",
+    ColumnName::PropertyId => "PROPERTY_ID",
+    ColumnName::Quality => "QUALITY",
+    ColumnName::TimestampNanoOffset => "TIMESTAMP_NANO_OFFSET",
+    ColumnName::TimestampSeconds => "TIMESTAMP_SECONDS",
+    ColumnName::Value => "VALUE",
+    ColumnName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALIAS", "ASSET_ID", "DATA_TYPE", "PROPERTY_ID", "QUALITY", "TIMESTAMP_NANO_OFFSET", "TIMESTAMP_SECONDS", "VALUE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ColumnName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ColumnName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ColumnName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ColumnName::Alias => write!(f, "ALIAS"),
-            ColumnName::AssetId => write!(f, "ASSET_ID"),
-            ColumnName::DataType => write!(f, "DATA_TYPE"),
-            ColumnName::PropertyId => write!(f, "PROPERTY_ID"),
-            ColumnName::Quality => write!(f, "QUALITY"),
-            ColumnName::TimestampNanoOffset => write!(f, "TIMESTAMP_NANO_OFFSET"),
-            ColumnName::TimestampSeconds => write!(f, "TIMESTAMP_SECONDS"),
-            ColumnName::Value => write!(f, "VALUE"),
-            ColumnName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ColumnName::Alias => write!(f, "ALIAS"),
+ColumnName::AssetId => write!(f, "ASSET_ID"),
+ColumnName::DataType => write!(f, "DATA_TYPE"),
+ColumnName::PropertyId => write!(f, "PROPERTY_ID"),
+ColumnName::Quality => write!(f, "QUALITY"),
+ColumnName::TimestampNanoOffset => write!(f, "TIMESTAMP_NANO_OFFSET"),
+ColumnName::TimestampSeconds => write!(f, "TIMESTAMP_SECONDS"),
+ColumnName::Value => write!(f, "VALUE"),
+ColumnName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

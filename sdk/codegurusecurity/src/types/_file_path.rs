@@ -3,7 +3,7 @@
 /// <p>Information about the location of security vulnerabilities that Amazon CodeGuru Security detected in your code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilePath {
+pub struct FilePath  {
     /// <p>The name of the file.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the resource with the security vulnerability.</p>
@@ -13,15 +13,15 @@ pub struct FilePath {
     /// <p>The last line number of the code snippet where the security vulnerability appears in your code.</p>
     pub end_line: ::std::option::Option<i32>,
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    pub code_snippet: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>,
+    pub code_snippet: ::std::option::Option<::std::vec::Vec::<crate::types::CodeLine>>,
 }
-impl FilePath {
+impl  FilePath  {
     /// <p>The name of the file.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path to the resource with the security vulnerability.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The first line number of the code snippet where the security vulnerability appears in your code.</p>
@@ -33,10 +33,11 @@ impl FilePath {
         self.end_line
     }
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_snippet.is_none()`.
-    pub fn code_snippet(&self) -> &[crate::types::CodeLine] {
-        self.code_snippet.as_deref().unwrap_or_default()
+    pub fn code_snippet(&self) -> & [crate::types::CodeLine] {
+        self.code_snippet.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FilePath {
@@ -54,7 +55,7 @@ pub struct FilePathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) start_line: ::std::option::Option<i32>,
     pub(crate) end_line: ::std::option::Option<i32>,
-    pub(crate) code_snippet: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>,
+    pub(crate) code_snippet: ::std::option::Option<::std::vec::Vec::<crate::types::CodeLine>>,
 }
 impl FilePathBuilder {
     /// <p>The name of the file.</p>
@@ -64,8 +65,7 @@ impl FilePathBuilder {
     }
     /// <p>The name of the file.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the file.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl FilePathBuilder {
     }
     /// <p>The path to the resource with the security vulnerability.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path to the resource with the security vulnerability.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl FilePathBuilder {
     }
     /// <p>The first line number of the code snippet where the security vulnerability appears in your code.</p>
     pub fn set_start_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_line = input;
-        self
+        self.start_line = input; self
     }
     /// <p>The first line number of the code snippet where the security vulnerability appears in your code.</p>
     pub fn get_start_line(&self) -> &::std::option::Option<i32> {
@@ -106,8 +104,7 @@ impl FilePathBuilder {
     }
     /// <p>The last line number of the code snippet where the security vulnerability appears in your code.</p>
     pub fn set_end_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_line = input;
-        self
+        self.end_line = input; self
     }
     /// <p>The last line number of the code snippet where the security vulnerability appears in your code.</p>
     pub fn get_end_line(&self) -> &::std::option::Option<i32> {
@@ -120,27 +117,32 @@ impl FilePathBuilder {
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
     pub fn code_snippet(mut self, input: crate::types::CodeLine) -> Self {
         let mut v = self.code_snippet.unwrap_or_default();
-        v.push(input);
-        self.code_snippet = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_snippet = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    pub fn set_code_snippet(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>) -> Self {
-        self.code_snippet = input;
-        self
+    pub fn set_code_snippet(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeLine>>) -> Self {
+        self.code_snippet = input; self
     }
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    pub fn get_code_snippet(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
+    pub fn get_code_snippet(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeLine>> {
         &self.code_snippet
     }
     /// Consumes the builder and constructs a [`FilePath`](crate::types::FilePath).
     pub fn build(self) -> crate::types::FilePath {
         crate::types::FilePath {
-            name: self.name,
-            path: self.path,
-            start_line: self.start_line,
-            end_line: self.end_line,
-            code_snippet: self.code_snippet,
+            name: self.name
+            ,
+            path: self.path
+            ,
+            start_line: self.start_line
+            ,
+            end_line: self.end_line
+            ,
+            code_snippet: self.code_snippet
+            ,
         }
     }
 }
+

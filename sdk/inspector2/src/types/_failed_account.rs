@@ -3,7 +3,7 @@
 /// <p>An object with details on why an account failed to enable Amazon Inspector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedAccount {
+pub struct FailedAccount  {
     /// <p>The Amazon Web Services account ID.</p>
     pub account_id: ::std::string::String,
     /// <p>The status of Amazon Inspector for the account.</p>
@@ -15,28 +15,26 @@ pub struct FailedAccount {
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub error_message: ::std::string::String,
 }
-impl FailedAccount {
+impl  FailedAccount  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    pub fn resource_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub fn error_code(&self) -> &crate::types::ErrorCode {
+    pub fn error_code(&self) -> & crate::types::ErrorCode {
         &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl FailedAccount {
@@ -65,8 +63,7 @@ impl FailedAccountBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl FailedAccountBuilder {
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -93,8 +89,7 @@ impl FailedAccountBuilder {
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.resource_status = input;
-        self
+        self.resource_status = input; self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -108,8 +103,7 @@ impl FailedAccountBuilder {
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -123,8 +117,7 @@ impl FailedAccountBuilder {
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,27 +129,29 @@ impl FailedAccountBuilder {
     /// - [`error_code`](crate::types::builders::FailedAccountBuilder::error_code)
     /// - [`error_message`](crate::types::builders::FailedAccountBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::FailedAccount, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FailedAccount {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building FailedAccount",
-                )
-            })?,
-            status: self.status,
-            resource_status: self.resource_status,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building FailedAccount",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building FailedAccount",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FailedAccount {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building FailedAccount")
+                    )?
+                ,
+                status: self.status
+                ,
+                resource_status: self.resource_status
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building FailedAccount")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building FailedAccount")
+                    )?
+                ,
+            }
+        )
     }
 }
+

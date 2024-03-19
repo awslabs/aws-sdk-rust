@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluateSessionOutput {
+pub struct EvaluateSessionOutput  {
     /// <p>The identifier of the domain that contains the session.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier of the session.</p>
@@ -17,37 +17,37 @@ pub struct EvaluateSessionOutput {
     pub fraud_detection_result: ::std::option::Option<crate::types::FraudDetectionResult>,
     _request_id: Option<String>,
 }
-impl EvaluateSessionOutput {
+impl  EvaluateSessionOutput  {
     /// <p>The identifier of the domain that contains the session.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The service-generated identifier of the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The client-provided name of the session.</p>
-    pub fn session_name(&self) -> ::std::option::Option<&str> {
+    pub fn session_name(&self) -> ::std::option::Option<& str> {
         self.session_name.as_deref()
     }
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
-    pub fn streaming_status(&self) -> ::std::option::Option<&crate::types::StreamingStatus> {
+    pub fn streaming_status(&self) -> ::std::option::Option<& crate::types::StreamingStatus> {
         self.streaming_status.as_ref()
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-    pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResult> {
+    pub fn authentication_result(&self) -> ::std::option::Option<& crate::types::AuthenticationResult> {
         self.authentication_result.as_ref()
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-    pub fn fraud_detection_result(&self) -> ::std::option::Option<&crate::types::FraudDetectionResult> {
+    pub fn fraud_detection_result(&self) -> ::std::option::Option<& crate::types::FraudDetectionResult> {
         self.fraud_detection_result.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for EvaluateSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EvaluateSessionOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateSessionOutput`](crate::operation::evaluate_session::EvaluateSessionOutput).
     pub fn builder() -> crate::operation::evaluate_session::builders::EvaluateSessionOutputBuilder {
@@ -75,8 +75,7 @@ impl EvaluateSessionOutputBuilder {
     }
     /// <p>The identifier of the domain that contains the session.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the session.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl EvaluateSessionOutputBuilder {
     }
     /// <p>The service-generated identifier of the session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The service-generated identifier of the session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl EvaluateSessionOutputBuilder {
     }
     /// <p>The client-provided name of the session.</p>
     pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_name = input;
-        self
+        self.session_name = input; self
     }
     /// <p>The client-provided name of the session.</p>
     pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl EvaluateSessionOutputBuilder {
     }
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
     pub fn set_streaming_status(mut self, input: ::std::option::Option<crate::types::StreamingStatus>) -> Self {
-        self.streaming_status = input;
-        self
+        self.streaming_status = input; self
     }
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
     pub fn get_streaming_status(&self) -> &::std::option::Option<crate::types::StreamingStatus> {
@@ -131,8 +127,7 @@ impl EvaluateSessionOutputBuilder {
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
     pub fn set_authentication_result(mut self, input: ::std::option::Option<crate::types::AuthenticationResult>) -> Self {
-        self.authentication_result = input;
-        self
+        self.authentication_result = input; self
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResult> {
@@ -145,32 +140,38 @@ impl EvaluateSessionOutputBuilder {
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
     pub fn set_fraud_detection_result(mut self, input: ::std::option::Option<crate::types::FraudDetectionResult>) -> Self {
-        self.fraud_detection_result = input;
-        self
+        self.fraud_detection_result = input; self
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
     pub fn get_fraud_detection_result(&self) -> &::std::option::Option<crate::types::FraudDetectionResult> {
         &self.fraud_detection_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EvaluateSessionOutput`](crate::operation::evaluate_session::EvaluateSessionOutput).
     pub fn build(self) -> crate::operation::evaluate_session::EvaluateSessionOutput {
         crate::operation::evaluate_session::EvaluateSessionOutput {
-            domain_id: self.domain_id,
-            session_id: self.session_id,
-            session_name: self.session_name,
-            streaming_status: self.streaming_status,
-            authentication_result: self.authentication_result,
-            fraud_detection_result: self.fraud_detection_result,
+            domain_id: self.domain_id
+            ,
+            session_id: self.session_id
+            ,
+            session_name: self.session_name
+            ,
+            streaming_status: self.streaming_status
+            ,
+            authentication_result: self.authentication_result
+            ,
+            fraud_detection_result: self.fraud_detection_result
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAgentsOutput {
+pub struct DescribeAgentsOutput  {
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
-    pub agents_info: ::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>>,
+    pub agents_info: ::std::option::Option<::std::vec::Vec::<crate::types::AgentInfo>>,
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAgentsOutput {
+impl  DescribeAgentsOutput  {
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agents_info.is_none()`.
-    pub fn agents_info(&self) -> &[crate::types::AgentInfo] {
-        self.agents_info.as_deref().unwrap_or_default()
+    pub fn agents_info(&self) -> & [crate::types::AgentInfo] {
+        self.agents_info.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAgentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAgentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentsOutput`](crate::operation::describe_agents::DescribeAgentsOutput).
     pub fn builder() -> crate::operation::describe_agents::builders::DescribeAgentsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAgentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentsOutputBuilder {
-    pub(crate) agents_info: ::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>>,
+    pub(crate) agents_info: ::std::option::Option<::std::vec::Vec::<crate::types::AgentInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAgentsOutputBuilder {
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
     pub fn agents_info(mut self, input: crate::types::AgentInfo) -> Self {
         let mut v = self.agents_info.unwrap_or_default();
-        v.push(input);
-        self.agents_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.agents_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
-    pub fn set_agents_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>>) -> Self {
-        self.agents_info = input;
-        self
+    pub fn set_agents_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentInfo>>) -> Self {
+        self.agents_info = input; self
     }
     /// <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
-    pub fn get_agents_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentInfo>> {
+    pub fn get_agents_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentInfo>> {
         &self.agents_info
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
@@ -69,28 +69,30 @@ impl DescribeAgentsOutputBuilder {
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAgentsOutput`](crate::operation::describe_agents::DescribeAgentsOutput).
     pub fn build(self) -> crate::operation::describe_agents::DescribeAgentsOutput {
         crate::operation::describe_agents::DescribeAgentsOutput {
-            agents_info: self.agents_info,
-            next_token: self.next_token,
+            agents_info: self.agents_info
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

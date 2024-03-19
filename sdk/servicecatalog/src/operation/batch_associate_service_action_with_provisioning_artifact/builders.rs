@@ -5,23 +5,20 @@ pub use crate::operation::batch_associate_service_action_with_provisioning_artif
 
 impl BatchAssociateServiceActionWithProvisioningArtifactInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_associate_service_action_with_provisioning_artifact();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_associate_service_action_with_provisioning_artifact();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchAssociateServiceActionWithProvisioningArtifact`.
-///
+/// 
 /// <p>Associates multiple self-service actions with provisioning artifacts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
@@ -30,88 +27,74 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
-    > for BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
-            crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
+                    crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
+                > for BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
+                        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
     /// Creates a new `BatchAssociateServiceActionWithProvisioningArtifact`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the BatchAssociateServiceActionWithProvisioningArtifact as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifact::operation_runtime_plugins(
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifact::operation_runtime_plugins(
                             self.handle.runtime_plugins.clone(),
                             &self.handle.conf,
                             self.config_override,
                         );
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifact::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput,
-        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                        crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifact::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput, crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `ServiceActionAssociations`.
     ///
     /// To override the contents of this collection use [`set_service_action_associations`](Self::set_service_action_associations).
@@ -122,12 +105,12 @@ impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
         self
     }
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn set_service_action_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>) -> Self {
+    pub fn set_service_action_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceActionAssociation>>) -> Self {
         self.inner = self.inner.set_service_action_associations(input);
         self
     }
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn get_service_action_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>> {
+    pub fn get_service_action_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceActionAssociation>> {
         self.inner.get_service_action_associations()
     }
     /// <p>The language code.</p>
@@ -163,3 +146,4 @@ impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
         self.inner.get_accept_language()
     }
 }
+

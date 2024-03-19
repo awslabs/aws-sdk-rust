@@ -3,7 +3,7 @@
 /// <p>Information about an anomalous log event found within a log group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogAnomalyClass {
+pub struct LogAnomalyClass  {
     /// <p>The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source.</p>
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of log anomaly that has been detected.</p>
@@ -19,25 +19,25 @@ pub struct LogAnomalyClass {
     /// <p>The time of the first occurrence of the anomalous log event.</p>
     pub log_event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LogAnomalyClass {
+impl  LogAnomalyClass  {
     /// <p>The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source.</p>
-    pub fn log_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> ::std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The type of log anomaly that has been detected.</p>
-    pub fn log_anomaly_type(&self) -> ::std::option::Option<&crate::types::LogAnomalyType> {
+    pub fn log_anomaly_type(&self) -> ::std::option::Option<& crate::types::LogAnomalyType> {
         self.log_anomaly_type.as_ref()
     }
     /// <p>The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies.</p>
-    pub fn log_anomaly_token(&self) -> ::std::option::Option<&str> {
+    pub fn log_anomaly_token(&self) -> ::std::option::Option<& str> {
         self.log_anomaly_token.as_deref()
     }
     /// <p>The ID of the log event.</p>
-    pub fn log_event_id(&self) -> ::std::option::Option<&str> {
+    pub fn log_event_id(&self) -> ::std::option::Option<& str> {
         self.log_event_id.as_deref()
     }
     /// <p>The explanation for why the log event is considered an anomaly.</p>
-    pub fn explanation(&self) -> ::std::option::Option<&str> {
+    pub fn explanation(&self) -> ::std::option::Option<& str> {
         self.explanation.as_deref()
     }
     /// <p>The number of log lines where this anomalous log event occurs.</p>
@@ -45,7 +45,7 @@ impl LogAnomalyClass {
         self.number_of_log_lines_occurrences
     }
     /// <p>The time of the first occurrence of the anomalous log event.</p>
-    pub fn log_event_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn log_event_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.log_event_timestamp.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source.</p>
     pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name = input;
-        self
+        self.log_stream_name = input; self
     }
     /// <p>The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source.</p>
     pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The type of log anomaly that has been detected.</p>
     pub fn set_log_anomaly_type(mut self, input: ::std::option::Option<crate::types::LogAnomalyType>) -> Self {
-        self.log_anomaly_type = input;
-        self
+        self.log_anomaly_type = input; self
     }
     /// <p>The type of log anomaly that has been detected.</p>
     pub fn get_log_anomaly_type(&self) -> &::std::option::Option<crate::types::LogAnomalyType> {
@@ -104,8 +102,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies.</p>
     pub fn set_log_anomaly_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_anomaly_token = input;
-        self
+        self.log_anomaly_token = input; self
     }
     /// <p>The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies.</p>
     pub fn get_log_anomaly_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The ID of the log event.</p>
     pub fn set_log_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_event_id = input;
-        self
+        self.log_event_id = input; self
     }
     /// <p>The ID of the log event.</p>
     pub fn get_log_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The explanation for why the log event is considered an anomaly.</p>
     pub fn set_explanation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explanation = input;
-        self
+        self.explanation = input; self
     }
     /// <p>The explanation for why the log event is considered an anomaly.</p>
     pub fn get_explanation(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The number of log lines where this anomalous log event occurs.</p>
     pub fn set_number_of_log_lines_occurrences(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_log_lines_occurrences = input;
-        self
+        self.number_of_log_lines_occurrences = input; self
     }
     /// <p>The number of log lines where this anomalous log event occurs.</p>
     pub fn get_number_of_log_lines_occurrences(&self) -> &::std::option::Option<i32> {
@@ -160,8 +154,7 @@ impl LogAnomalyClassBuilder {
     }
     /// <p>The time of the first occurrence of the anomalous log event.</p>
     pub fn set_log_event_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.log_event_timestamp = input;
-        self
+        self.log_event_timestamp = input; self
     }
     /// <p>The time of the first occurrence of the anomalous log event.</p>
     pub fn get_log_event_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,22 @@ impl LogAnomalyClassBuilder {
     /// Consumes the builder and constructs a [`LogAnomalyClass`](crate::types::LogAnomalyClass).
     pub fn build(self) -> crate::types::LogAnomalyClass {
         crate::types::LogAnomalyClass {
-            log_stream_name: self.log_stream_name,
-            log_anomaly_type: self.log_anomaly_type,
-            log_anomaly_token: self.log_anomaly_token,
-            log_event_id: self.log_event_id,
-            explanation: self.explanation,
-            number_of_log_lines_occurrences: self.number_of_log_lines_occurrences.unwrap_or_default(),
-            log_event_timestamp: self.log_event_timestamp,
+            log_stream_name: self.log_stream_name
+            ,
+            log_anomaly_type: self.log_anomaly_type
+            ,
+            log_anomaly_token: self.log_anomaly_token
+            ,
+            log_event_id: self.log_event_id
+            ,
+            explanation: self.explanation
+            ,
+            number_of_log_lines_occurrences: self.number_of_log_lines_occurrences
+                .unwrap_or_default()
+            ,
+            log_event_timestamp: self.log_event_timestamp
+            ,
         }
     }
 }
+

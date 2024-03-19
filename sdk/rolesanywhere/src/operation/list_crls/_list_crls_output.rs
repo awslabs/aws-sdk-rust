@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrlsOutput {
+pub struct ListCrlsOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of certificate revocation lists (CRL).</p>
-    pub crls: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>,
+    pub crls: ::std::option::Option<::std::vec::Vec::<crate::types::CrlDetail>>,
     _request_id: Option<String>,
 }
-impl ListCrlsOutput {
+impl  ListCrlsOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of certificate revocation lists (CRL).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crls.is_none()`.
-    pub fn crls(&self) -> &[crate::types::CrlDetail] {
-        self.crls.as_deref().unwrap_or_default()
+    pub fn crls(&self) -> & [crate::types::CrlDetail] {
+        self.crls.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCrlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCrlsOutput {
     /// Creates a new builder-style object to manufacture [`ListCrlsOutput`](crate::operation::list_crls::ListCrlsOutput).
     pub fn builder() -> crate::operation::list_crls::builders::ListCrlsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListCrlsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrlsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) crls: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>,
+    pub(crate) crls: ::std::option::Option<::std::vec::Vec::<crate::types::CrlDetail>>,
     _request_id: Option<String>,
 }
 impl ListCrlsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListCrlsOutputBuilder {
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListCrlsOutputBuilder {
     /// <p>A list of certificate revocation lists (CRL).</p>
     pub fn crls(mut self, input: crate::types::CrlDetail) -> Self {
         let mut v = self.crls.unwrap_or_default();
-        v.push(input);
-        self.crls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.crls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of certificate revocation lists (CRL).</p>
-    pub fn set_crls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>) -> Self {
-        self.crls = input;
-        self
+    pub fn set_crls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CrlDetail>>) -> Self {
+        self.crls = input; self
     }
     /// <p>A list of certificate revocation lists (CRL).</p>
-    pub fn get_crls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>> {
+    pub fn get_crls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CrlDetail>> {
         &self.crls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCrlsOutput`](crate::operation::list_crls::ListCrlsOutput).
     pub fn build(self) -> crate::operation::list_crls::ListCrlsOutput {
         crate::operation::list_crls::ListCrlsOutput {
-            next_token: self.next_token,
-            crls: self.crls,
+            next_token: self.next_token
+            ,
+            crls: self.crls
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPersonalizedRankingOutput {
+pub struct GetPersonalizedRankingOutput  {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    pub personalized_ranking: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
+    pub personalized_ranking: ::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPersonalizedRankingOutput {
+impl  GetPersonalizedRankingOutput  {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personalized_ranking.is_none()`.
-    pub fn personalized_ranking(&self) -> &[crate::types::PredictedItem] {
-        self.personalized_ranking.as_deref().unwrap_or_default()
+    pub fn personalized_ranking(&self) -> & [crate::types::PredictedItem] {
+        self.personalized_ranking.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPersonalizedRankingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPersonalizedRankingOutput {
     /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingOutput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput).
     pub fn builder() -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingOutputBuilder {
@@ -37,7 +38,7 @@ impl GetPersonalizedRankingOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPersonalizedRankingOutputBuilder {
-    pub(crate) personalized_ranking: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
+    pub(crate) personalized_ranking: ::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetPersonalizedRankingOutputBuilder {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
     pub fn personalized_ranking(mut self, input: crate::types::PredictedItem) -> Self {
         let mut v = self.personalized_ranking.unwrap_or_default();
-        v.push(input);
-        self.personalized_ranking = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.personalized_ranking = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    pub fn set_personalized_ranking(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>) -> Self {
-        self.personalized_ranking = input;
-        self
+    pub fn set_personalized_ranking(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>>) -> Self {
+        self.personalized_ranking = input; self
     }
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    pub fn get_personalized_ranking(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
+    pub fn get_personalized_ranking(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>> {
         &self.personalized_ranking
     }
     /// <p>The ID of the recommendation.</p>
@@ -69,28 +69,30 @@ impl GetPersonalizedRankingOutputBuilder {
     }
     /// <p>The ID of the recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The ID of the recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPersonalizedRankingOutput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput).
     pub fn build(self) -> crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput {
         crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput {
-            personalized_ranking: self.personalized_ranking,
-            recommendation_id: self.recommendation_id,
+            personalized_ranking: self.personalized_ranking
+            ,
+            recommendation_id: self.recommendation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

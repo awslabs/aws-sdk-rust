@@ -3,7 +3,7 @@
 /// <p>Describes the attack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttackVectorDescription {
+pub struct AttackVectorDescription  {
     /// <p>The attack type. Valid values:</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ pub struct AttackVectorDescription {
     /// </ul>
     pub vector_type: ::std::string::String,
 }
-impl AttackVectorDescription {
+impl  AttackVectorDescription  {
     /// <p>The attack type. Valid values:</p>
     /// <ul>
     /// <li>
@@ -85,9 +85,8 @@ impl AttackVectorDescription {
     /// <li>
     /// <p>MEMCACHED_REFLECTION</p></li>
     /// </ul>
-    pub fn vector_type(&self) -> &str {
-        use std::ops::Deref;
-        self.vector_type.deref()
+    pub fn vector_type(&self) -> & str {
+        use std::ops::Deref; self.vector_type.deref()
     }
 }
 impl AttackVectorDescription {
@@ -188,8 +187,7 @@ impl AttackVectorDescriptionBuilder {
     /// <p>MEMCACHED_REFLECTION</p></li>
     /// </ul>
     pub fn set_vector_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vector_type = input;
-        self
+        self.vector_type = input; self
     }
     /// <p>The attack type. Valid values:</p>
     /// <ul>
@@ -237,13 +235,15 @@ impl AttackVectorDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vector_type`](crate::types::builders::AttackVectorDescriptionBuilder::vector_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AttackVectorDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttackVectorDescription {
-            vector_type: self.vector_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vector_type",
-                    "vector_type was not specified but it is required when building AttackVectorDescription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttackVectorDescription {
+                vector_type: self.vector_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vector_type", "vector_type was not specified but it is required when building AttackVectorDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

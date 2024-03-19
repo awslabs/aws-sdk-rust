@@ -3,11 +3,11 @@
 /// <p>Structure of a property graph record.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertygraphRecord {
+pub struct PropertygraphRecord  {
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub commit_timestamp_in_millis: i64,
     /// <p>The sequence identifier of the stream change record.</p>
-    pub event_id: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub event_id: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>The serialized Gremlin or openCypher change record.</p>
     pub data: ::std::option::Option<crate::types::PropertygraphData>,
     /// <p>The operation that created the change.</p>
@@ -15,23 +15,22 @@ pub struct PropertygraphRecord {
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub is_last_op: ::std::option::Option<bool>,
 }
-impl PropertygraphRecord {
+impl  PropertygraphRecord  {
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn commit_timestamp_in_millis(&self) -> i64 {
         self.commit_timestamp_in_millis
     }
     /// <p>The sequence identifier of the stream change record.</p>
-    pub fn event_id(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn event_id(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.event_id
     }
     /// <p>The serialized Gremlin or openCypher change record.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::PropertygraphData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::PropertygraphData> {
         self.data.as_ref()
     }
     /// <p>The operation that created the change.</p>
-    pub fn op(&self) -> &str {
-        use std::ops::Deref;
-        self.op.deref()
+    pub fn op(&self) -> & str {
+        use std::ops::Deref; self.op.deref()
     }
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub fn is_last_op(&self) -> ::std::option::Option<bool> {
@@ -50,7 +49,7 @@ impl PropertygraphRecord {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertygraphRecordBuilder {
     pub(crate) commit_timestamp_in_millis: ::std::option::Option<i64>,
-    pub(crate) event_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) event_id: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) data: ::std::option::Option<crate::types::PropertygraphData>,
     pub(crate) op: ::std::option::Option<::std::string::String>,
     pub(crate) is_last_op: ::std::option::Option<bool>,
@@ -64,8 +63,7 @@ impl PropertygraphRecordBuilder {
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn set_commit_timestamp_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.commit_timestamp_in_millis = input;
-        self
+        self.commit_timestamp_in_millis = input; self
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn get_commit_timestamp_in_millis(&self) -> &::std::option::Option<i64> {
@@ -78,17 +76,16 @@ impl PropertygraphRecordBuilder {
     /// <p>The sequence identifier of the stream change record.</p>
     pub fn event_id(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.event_id.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.event_id = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.event_id = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The sequence identifier of the stream change record.</p>
-    pub fn set_event_id(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.event_id = input;
-        self
+    pub fn set_event_id(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.event_id = input; self
     }
     /// <p>The sequence identifier of the stream change record.</p>
-    pub fn get_event_id(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.event_id
     }
     /// <p>The serialized Gremlin or openCypher change record.</p>
@@ -99,8 +96,7 @@ impl PropertygraphRecordBuilder {
     }
     /// <p>The serialized Gremlin or openCypher change record.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::PropertygraphData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The serialized Gremlin or openCypher change record.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::PropertygraphData> {
@@ -114,8 +110,7 @@ impl PropertygraphRecordBuilder {
     }
     /// <p>The operation that created the change.</p>
     pub fn set_op(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.op = input;
-        self
+        self.op = input; self
     }
     /// <p>The operation that created the change.</p>
     pub fn get_op(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +123,7 @@ impl PropertygraphRecordBuilder {
     }
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub fn set_is_last_op(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_last_op = input;
-        self
+        self.is_last_op = input; self
     }
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub fn get_is_last_op(&self) -> &::std::option::Option<bool> {
@@ -141,27 +135,29 @@ impl PropertygraphRecordBuilder {
     /// - [`event_id`](crate::types::builders::PropertygraphRecordBuilder::event_id)
     /// - [`op`](crate::types::builders::PropertygraphRecordBuilder::op)
     pub fn build(self) -> ::std::result::Result<crate::types::PropertygraphRecord, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PropertygraphRecord {
-            commit_timestamp_in_millis: self.commit_timestamp_in_millis.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_timestamp_in_millis",
-                    "commit_timestamp_in_millis was not specified but it is required when building PropertygraphRecord",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building PropertygraphRecord",
-                )
-            })?,
-            data: self.data,
-            op: self.op.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "op",
-                    "op was not specified but it is required when building PropertygraphRecord",
-                )
-            })?,
-            is_last_op: self.is_last_op,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PropertygraphRecord {
+                commit_timestamp_in_millis: self.commit_timestamp_in_millis
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_timestamp_in_millis", "commit_timestamp_in_millis was not specified but it is required when building PropertygraphRecord")
+                    )?
+                ,
+                event_id: self.event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_id", "event_id was not specified but it is required when building PropertygraphRecord")
+                    )?
+                ,
+                data: self.data
+                ,
+                op: self.op
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("op", "op was not specified but it is required when building PropertygraphRecord")
+                    )?
+                ,
+                is_last_op: self.is_last_op
+                ,
+            }
+        )
     }
 }
+

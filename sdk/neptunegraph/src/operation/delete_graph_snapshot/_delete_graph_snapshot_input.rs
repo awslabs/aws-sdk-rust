@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGraphSnapshotInput {
+pub struct DeleteGraphSnapshotInput  {
     /// <p>ID of the graph snapshot to be deleted.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGraphSnapshotInput {
+impl  DeleteGraphSnapshotInput  {
     /// <p>ID of the graph snapshot to be deleted.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteGraphSnapshotInputBuilder {
     }
     /// <p>ID of the graph snapshot to be deleted.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>ID of the graph snapshot to be deleted.</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteGraphSnapshotInput`](crate::operation::delete_graph_snapshot::DeleteGraphSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_graph_snapshot::DeleteGraphSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_graph_snapshot::DeleteGraphSnapshotInput {
-            snapshot_identifier: self.snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_graph_snapshot::DeleteGraphSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_graph_snapshot::DeleteGraphSnapshotInput {
+                snapshot_identifier: self.snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

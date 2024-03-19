@@ -3,20 +3,19 @@
 /// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelevanceFeedback {
+pub struct RelevanceFeedback  {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     pub result_id: ::std::string::String,
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     pub relevance_value: crate::types::RelevanceType,
 }
-impl RelevanceFeedback {
+impl  RelevanceFeedback  {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub fn result_id(&self) -> &str {
-        use std::ops::Deref;
-        self.result_id.deref()
+    pub fn result_id(&self) -> & str {
+        use std::ops::Deref; self.result_id.deref()
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
-    pub fn relevance_value(&self) -> &crate::types::RelevanceType {
+    pub fn relevance_value(&self) -> & crate::types::RelevanceType {
         &self.relevance_value
     }
 }
@@ -43,8 +42,7 @@ impl RelevanceFeedbackBuilder {
     }
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl RelevanceFeedbackBuilder {
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     pub fn set_relevance_value(mut self, input: ::std::option::Option<crate::types::RelevanceType>) -> Self {
-        self.relevance_value = input;
-        self
+        self.relevance_value = input; self
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     pub fn get_relevance_value(&self) -> &::std::option::Option<crate::types::RelevanceType> {
@@ -70,19 +67,20 @@ impl RelevanceFeedbackBuilder {
     /// - [`result_id`](crate::types::builders::RelevanceFeedbackBuilder::result_id)
     /// - [`relevance_value`](crate::types::builders::RelevanceFeedbackBuilder::relevance_value)
     pub fn build(self) -> ::std::result::Result<crate::types::RelevanceFeedback, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RelevanceFeedback {
-            result_id: self.result_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "result_id",
-                    "result_id was not specified but it is required when building RelevanceFeedback",
-                )
-            })?,
-            relevance_value: self.relevance_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relevance_value",
-                    "relevance_value was not specified but it is required when building RelevanceFeedback",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RelevanceFeedback {
+                result_id: self.result_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("result_id", "result_id was not specified but it is required when building RelevanceFeedback")
+                    )?
+                ,
+                relevance_value: self.relevance_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relevance_value", "relevance_value was not specified but it is required when building RelevanceFeedback")
+                    )?
+                ,
+            }
+        )
     }
 }
+

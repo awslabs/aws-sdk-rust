@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateCommentInput {
+pub struct CreateCommentInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
@@ -20,33 +20,33 @@ pub struct CreateCommentInput {
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub notify_collaborators: ::std::option::Option<bool>,
 }
-impl CreateCommentInput {
+impl  CreateCommentInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The ID of the document version.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The ID of the parent comment.</p>
-    pub fn parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<& str> {
         self.parent_id.as_deref()
     }
     /// <p>The ID of the root comment in the thread.</p>
-    pub fn thread_id(&self) -> ::std::option::Option<&str> {
+    pub fn thread_id(&self) -> ::std::option::Option<& str> {
         self.thread_id.as_deref()
     }
     /// <p>The text of the comment.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::CommentVisibilityType> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::CommentVisibilityType> {
         self.visibility.as_ref()
     }
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
@@ -54,7 +54,7 @@ impl CreateCommentInput {
         self.notify_collaborators
     }
 }
-impl ::std::fmt::Debug for CreateCommentInput {
+impl  ::std::fmt::Debug for CreateCommentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCommentInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -96,8 +96,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The ID of the document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>The ID of the document version.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The ID of the document version.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>The ID of the parent comment.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_id = input;
-        self
+        self.parent_id = input; self
     }
     /// <p>The ID of the parent comment.</p>
     pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +150,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>The ID of the root comment in the thread.</p>
     pub fn set_thread_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thread_id = input;
-        self
+        self.thread_id = input; self
     }
     /// <p>The ID of the root comment in the thread.</p>
     pub fn get_thread_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>The text of the comment.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text of the comment.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +177,7 @@ impl CreateCommentInputBuilder {
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::CommentVisibilityType>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::CommentVisibilityType> {
@@ -197,27 +190,34 @@ impl CreateCommentInputBuilder {
     }
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub fn set_notify_collaborators(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.notify_collaborators = input;
-        self
+        self.notify_collaborators = input; self
     }
     /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub fn get_notify_collaborators(&self) -> &::std::option::Option<bool> {
         &self.notify_collaborators
     }
     /// Consumes the builder and constructs a [`CreateCommentInput`](crate::operation::create_comment::CreateCommentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_comment::CreateCommentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_comment::CreateCommentInput {
-            authentication_token: self.authentication_token,
-            document_id: self.document_id,
-            version_id: self.version_id,
-            parent_id: self.parent_id,
-            thread_id: self.thread_id,
-            text: self.text,
-            visibility: self.visibility,
-            notify_collaborators: self.notify_collaborators,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_comment::CreateCommentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_comment::CreateCommentInput {
+                authentication_token: self.authentication_token
+                ,
+                document_id: self.document_id
+                ,
+                version_id: self.version_id
+                ,
+                parent_id: self.parent_id
+                ,
+                thread_id: self.thread_id
+                ,
+                text: self.text
+                ,
+                visibility: self.visibility
+                ,
+                notify_collaborators: self.notify_collaborators
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateCommentInputBuilder {
@@ -234,3 +234,4 @@ impl ::std::fmt::Debug for CreateCommentInputBuilder {
         formatter.finish()
     }
 }
+

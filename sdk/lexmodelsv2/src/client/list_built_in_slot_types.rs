@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBuiltInSlotTypes`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`locale_id(impl Into<String>)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::set_locale_id):<br>required: **true**<br><p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p><br>
     ///   - [`sort_by(BuiltInSlotTypeSortBy)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::sort_by) / [`set_sort_by(Option<BuiltInSlotTypeSortBy>)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::set_sort_by):<br>required: **false**<br><p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListBuiltInSlotTypesOutput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput) with field(s):
+                            /// - On success, responds with [`ListBuiltInSlotTypesOutput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput) with field(s):
     ///   - [`built_in_slot_type_summaries(Option<Vec::<BuiltInSlotTypeSummary>>)`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput::built_in_slot_type_summaries): <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput::locale_id): <p>The language and locale of the slot types in the list.</p>
-    /// - On failure, responds with [`SdkError<ListBuiltInSlotTypesError>`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError)
+                            /// - On failure, responds with [`SdkError<ListBuiltInSlotTypesError>`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError)
     pub fn list_built_in_slot_types(&self) -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder {
-        crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

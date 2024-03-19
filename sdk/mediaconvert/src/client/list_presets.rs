@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPresets`](crate::operation::list_presets::builders::ListPresetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`category(impl Into<String>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::category) / [`set_category(Option<String>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::set_category):<br>required: **false**<br>Optionally, specify a preset category to limit responses to only presets from that category.<br>
     ///   - [`list_by(PresetListBy)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::list_by) / [`set_list_by(Option<PresetListBy>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::set_list_by):<br>required: **false**<br>Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.<br>
     ///   - [`max_results(i32)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::set_max_results):<br>required: **false**<br>Optional. Number of presets, up to twenty, that will be returned at one time<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::set_next_token):<br>required: **false**<br>Use this string, provided with the response to a previous request, to request the next batch of presets.<br>
     ///   - [`order(Order)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_presets::builders::ListPresetsFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
-    /// - On success, responds with [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput) with field(s):
+                            /// - On success, responds with [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_presets::ListPresetsOutput::next_token): Use this string to request the next batch of presets.
     ///   - [`presets(Option<Vec::<Preset>>)`](crate::operation::list_presets::ListPresetsOutput::presets): List of presets
-    /// - On failure, responds with [`SdkError<ListPresetsError>`](crate::operation::list_presets::ListPresetsError)
+                            /// - On failure, responds with [`SdkError<ListPresetsError>`](crate::operation::list_presets::ListPresetsError)
     pub fn list_presets(&self) -> crate::operation::list_presets::builders::ListPresetsFluentBuilder {
-        crate::operation::list_presets::builders::ListPresetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_presets::builders::ListPresetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

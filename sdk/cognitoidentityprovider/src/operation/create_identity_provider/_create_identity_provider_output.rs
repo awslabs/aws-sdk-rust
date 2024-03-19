@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIdentityProviderOutput {
+pub struct CreateIdentityProviderOutput  {
     /// <p>The newly created IdP object.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,
 }
-impl CreateIdentityProviderOutput {
+impl  CreateIdentityProviderOutput  {
     /// <p>The newly created IdP object.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateIdentityProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
     pub fn builder() -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateIdentityProviderOutputBuilder {
     }
     /// <p>The newly created IdP object.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
-        self.identity_provider = input;
-        self
+        self.identity_provider = input; self
     }
     /// <p>The newly created IdP object.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
     pub fn build(self) -> crate::operation::create_identity_provider::CreateIdentityProviderOutput {
         crate::operation::create_identity_provider::CreateIdentityProviderOutput {
-            identity_provider: self.identity_provider,
+            identity_provider: self.identity_provider
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

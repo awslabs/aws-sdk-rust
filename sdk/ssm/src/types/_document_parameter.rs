@@ -3,7 +3,7 @@
 /// <p>Parameters specified in a Systems Manager document that run on the server when the command is run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentParameter {
+pub struct DocumentParameter  {
     /// <p>The name of the parameter.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter. The type can be either String or StringList.</p>
@@ -13,21 +13,21 @@ pub struct DocumentParameter {
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
 }
-impl DocumentParameter {
+impl  DocumentParameter  {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of parameter. The type can be either String or StringList.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentParameterType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DocumentParameterType> {
         self.r#type.as_ref()
     }
     /// <p>A description of what the parameter does, how to use it, the default value, and whether or not the parameter is optional.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DocumentParameterBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parameter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DocumentParameterBuilder {
     }
     /// <p>The type of parameter. The type can be either String or StringList.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentParameterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of parameter. The type can be either String or StringList.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentParameterType> {
@@ -83,8 +81,7 @@ impl DocumentParameterBuilder {
     }
     /// <p>A description of what the parameter does, how to use it, the default value, and whether or not the parameter is optional.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of what the parameter does, how to use it, the default value, and whether or not the parameter is optional.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DocumentParameterBuilder {
     }
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DocumentParameterBuilder {
     /// Consumes the builder and constructs a [`DocumentParameter`](crate::types::DocumentParameter).
     pub fn build(self) -> crate::types::DocumentParameter {
         crate::types::DocumentParameter {
-            name: self.name,
-            r#type: self.r#type,
-            description: self.description,
-            default_value: self.default_value,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
+            default_value: self.default_value
+            ,
         }
     }
 }
+

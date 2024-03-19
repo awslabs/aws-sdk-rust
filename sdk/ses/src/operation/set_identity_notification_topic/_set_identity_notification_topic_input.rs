@@ -3,7 +3,7 @@
 /// <p>Represents a request to specify the Amazon SNS topic to which Amazon SES publishes bounce, complaint, or delivery notifications for emails sent with that identity as the source. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetIdentityNotificationTopicInput {
+pub struct SetIdentityNotificationTopicInput  {
     /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
@@ -14,20 +14,20 @@ pub struct SetIdentityNotificationTopicInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     pub sns_topic: ::std::option::Option<::std::string::String>,
 }
-impl SetIdentityNotificationTopicInput {
+impl  SetIdentityNotificationTopicInput  {
     /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>The type of notifications that are published to the specified Amazon SNS topic.</p>
-    pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
+    pub fn notification_type(&self) -> ::std::option::Option<& crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
-    pub fn sns_topic(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic(&self) -> ::std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl SetIdentityNotificationTopicInputBuilder {
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
     /// <p>You can only specify a verified identity for this parameter.</p>
@@ -79,8 +78,7 @@ impl SetIdentityNotificationTopicInputBuilder {
     }
     /// <p>The type of notifications that are published to the specified Amazon SNS topic.</p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
-        self.notification_type = input;
-        self
+        self.notification_type = input; self
     }
     /// <p>The type of notifications that are published to the specified Amazon SNS topic.</p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
@@ -93,24 +91,24 @@ impl SetIdentityNotificationTopicInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic = input;
-        self
+        self.sns_topic = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic
     }
     /// Consumes the builder and constructs a [`SetIdentityNotificationTopicInput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput {
-            identity: self.identity,
-            notification_type: self.notification_type,
-            sns_topic: self.sns_topic,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput {
+                identity: self.identity
+                ,
+                notification_type: self.notification_type
+                ,
+                sns_topic: self.sns_topic
+                ,
+            }
+        )
     }
 }
+

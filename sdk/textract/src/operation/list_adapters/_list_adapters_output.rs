@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAdaptersOutput {
+pub struct ListAdaptersOutput  {
     /// <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
-    pub adapters: ::std::option::Option<::std::vec::Vec<crate::types::AdapterOverview>>,
+    pub adapters: ::std::option::Option<::std::vec::Vec::<crate::types::AdapterOverview>>,
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAdaptersOutput {
+impl  ListAdaptersOutput  {
     /// <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adapters.is_none()`.
-    pub fn adapters(&self) -> &[crate::types::AdapterOverview] {
-        self.adapters.as_deref().unwrap_or_default()
+    pub fn adapters(&self) -> & [crate::types::AdapterOverview] {
+        self.adapters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAdaptersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAdaptersOutput {
     /// Creates a new builder-style object to manufacture [`ListAdaptersOutput`](crate::operation::list_adapters::ListAdaptersOutput).
     pub fn builder() -> crate::operation::list_adapters::builders::ListAdaptersOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAdaptersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAdaptersOutputBuilder {
-    pub(crate) adapters: ::std::option::Option<::std::vec::Vec<crate::types::AdapterOverview>>,
+    pub(crate) adapters: ::std::option::Option<::std::vec::Vec::<crate::types::AdapterOverview>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAdaptersOutputBuilder {
     /// <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
     pub fn adapters(mut self, input: crate::types::AdapterOverview) -> Self {
         let mut v = self.adapters.unwrap_or_default();
-        v.push(input);
-        self.adapters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.adapters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
-    pub fn set_adapters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdapterOverview>>) -> Self {
-        self.adapters = input;
-        self
+    pub fn set_adapters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdapterOverview>>) -> Self {
+        self.adapters = input; self
     }
     /// <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
-    pub fn get_adapters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdapterOverview>> {
+    pub fn get_adapters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdapterOverview>> {
         &self.adapters
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
@@ -69,28 +69,30 @@ impl ListAdaptersOutputBuilder {
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAdaptersOutput`](crate::operation::list_adapters::ListAdaptersOutput).
     pub fn build(self) -> crate::operation::list_adapters::ListAdaptersOutput {
         crate::operation::list_adapters::ListAdaptersOutput {
-            adapters: self.adapters,
-            next_token: self.next_token,
+            adapters: self.adapters
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

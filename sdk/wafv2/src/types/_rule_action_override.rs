@@ -4,20 +4,19 @@
 /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleActionOverride {
+pub struct RuleActionOverride  {
     /// <p>The name of the rule to override.</p>
     pub name: ::std::string::String,
     /// <p>The override action to use, in place of the configured action of the rule in the rule group.</p>
     pub action_to_use: ::std::option::Option<crate::types::RuleAction>,
 }
-impl RuleActionOverride {
+impl  RuleActionOverride  {
     /// <p>The name of the rule to override.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group.</p>
-    pub fn action_to_use(&self) -> ::std::option::Option<&crate::types::RuleAction> {
+    pub fn action_to_use(&self) -> ::std::option::Option<& crate::types::RuleAction> {
         self.action_to_use.as_ref()
     }
 }
@@ -44,8 +43,7 @@ impl RuleActionOverrideBuilder {
     }
     /// <p>The name of the rule to override.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule to override.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +57,7 @@ impl RuleActionOverrideBuilder {
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group.</p>
     pub fn set_action_to_use(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
-        self.action_to_use = input;
-        self
+        self.action_to_use = input; self
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group.</p>
     pub fn get_action_to_use(&self) -> &::std::option::Option<crate::types::RuleAction> {
@@ -70,14 +67,17 @@ impl RuleActionOverrideBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RuleActionOverrideBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleActionOverride, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleActionOverride {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RuleActionOverride",
-                )
-            })?,
-            action_to_use: self.action_to_use,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleActionOverride {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RuleActionOverride")
+                    )?
+                ,
+                action_to_use: self.action_to_use
+                ,
+            }
+        )
     }
 }
+

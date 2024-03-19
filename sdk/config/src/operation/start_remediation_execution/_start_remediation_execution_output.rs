@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRemediationExecutionOutput {
+pub struct StartRemediationExecutionOutput  {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
+    pub failed_items: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }
-impl StartRemediationExecutionOutput {
+impl  StartRemediationExecutionOutput  {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_items.is_none()`.
-    pub fn failed_items(&self) -> &[crate::types::ResourceKey] {
-        self.failed_items.as_deref().unwrap_or_default()
+    pub fn failed_items(&self) -> & [crate::types::ResourceKey] {
+        self.failed_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for StartRemediationExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartRemediationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartRemediationExecutionOutput`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput).
     pub fn builder() -> crate::operation::start_remediation_execution::builders::StartRemediationExecutionOutputBuilder {
@@ -38,7 +39,7 @@ impl StartRemediationExecutionOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRemediationExecutionOutputBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
+    pub(crate) failed_items: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }
 impl StartRemediationExecutionOutputBuilder {
@@ -49,8 +50,7 @@ impl StartRemediationExecutionOutputBuilder {
     }
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl StartRemediationExecutionOutputBuilder {
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
     pub fn failed_items(mut self, input: crate::types::ResourceKey) -> Self {
         let mut v = self.failed_items.unwrap_or_default();
-        v.push(input);
-        self.failed_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>) -> Self {
+        self.failed_items = input; self
     }
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartRemediationExecutionOutput`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput).
     pub fn build(self) -> crate::operation::start_remediation_execution::StartRemediationExecutionOutput {
         crate::operation::start_remediation_execution::StartRemediationExecutionOutput {
-            failure_message: self.failure_message,
-            failed_items: self.failed_items,
+            failure_message: self.failure_message
+            ,
+            failed_items: self.failed_items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetInventorySchema`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`type_name(impl Into<String>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::set_type_name):<br>required: **false**<br><p>The type of inventory item to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`aggregator(bool)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::aggregator) / [`set_aggregator(Option<bool>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::set_aggregator):<br>required: **false**<br><p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p><br>
     ///   - [`sub_type(bool)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::sub_type) / [`set_sub_type(Option<bool>)`](crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::set_sub_type):<br>required: **false**<br><p>Returns the sub-type schema for a specified inventory type.</p><br>
-    /// - On success, responds with [`GetInventorySchemaOutput`](crate::operation::get_inventory_schema::GetInventorySchemaOutput) with field(s):
+                            /// - On success, responds with [`GetInventorySchemaOutput`](crate::operation::get_inventory_schema::GetInventorySchemaOutput) with field(s):
     ///   - [`schemas(Option<Vec::<InventoryItemSchema>>)`](crate::operation::get_inventory_schema::GetInventorySchemaOutput::schemas): <p>Inventory schemas returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_inventory_schema::GetInventorySchemaOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<GetInventorySchemaError>`](crate::operation::get_inventory_schema::GetInventorySchemaError)
+                            /// - On failure, responds with [`SdkError<GetInventorySchemaError>`](crate::operation::get_inventory_schema::GetInventorySchemaError)
     pub fn get_inventory_schema(&self) -> crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder {
-        crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_inventory_schema::builders::GetInventorySchemaFluentBuilder::new(self.handle.clone())
+                            }
 }
+

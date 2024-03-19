@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTableRestoreStatusOutput {
+pub struct DescribeTableRestoreStatusOutput  {
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub table_restore_status_details: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub table_restore_status_details: ::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>>,
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTableRestoreStatusOutput {
+impl  DescribeTableRestoreStatusOutput  {
     /// <p>A list of status details for one or more table restore requests.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_restore_status_details.is_none()`.
-    pub fn table_restore_status_details(&self) -> &[crate::types::TableRestoreStatus] {
-        self.table_restore_status_details.as_deref().unwrap_or_default()
+    pub fn table_restore_status_details(&self) -> & [crate::types::TableRestoreStatus] {
+        self.table_restore_status_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTableRestoreStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTableRestoreStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput).
     pub fn builder() -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeTableRestoreStatusOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusOutputBuilder {
-    pub(crate) table_restore_status_details: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub(crate) table_restore_status_details: ::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeTableRestoreStatusOutputBuilder {
     /// <p>A list of status details for one or more table restore requests.</p>
     pub fn table_restore_status_details(mut self, input: crate::types::TableRestoreStatus) -> Self {
         let mut v = self.table_restore_status_details.unwrap_or_default();
-        v.push(input);
-        self.table_restore_status_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_restore_status_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub fn set_table_restore_status_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>) -> Self {
-        self.table_restore_status_details = input;
-        self
+    pub fn set_table_restore_status_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>>) -> Self {
+        self.table_restore_status_details = input; self
     }
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub fn get_table_restore_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
+    pub fn get_table_restore_status_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableRestoreStatus>> {
         &self.table_restore_status_details
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
@@ -70,28 +70,30 @@ impl DescribeTableRestoreStatusOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput).
     pub fn build(self) -> crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput {
         crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput {
-            table_restore_status_details: self.table_restore_status_details,
-            marker: self.marker,
+            table_restore_status_details: self.table_restore_status_details
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

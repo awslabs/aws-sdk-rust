@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIdentityProviderConfigInput {
+pub struct DescribeIdentityProviderConfigInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing an identity provider configuration.</p>
     pub identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,
 }
-impl DescribeIdentityProviderConfigInput {
+impl  DescribeIdentityProviderConfigInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>An object representing an identity provider configuration.</p>
-    pub fn identity_provider_config(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfig> {
+    pub fn identity_provider_config(&self) -> ::std::option::Option<& crate::types::IdentityProviderConfig> {
         self.identity_provider_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeIdentityProviderConfigInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeIdentityProviderConfigInputBuilder {
     }
     /// <p>An object representing an identity provider configuration.</p>
     pub fn set_identity_provider_config(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfig>) -> Self {
-        self.identity_provider_config = input;
-        self
+        self.identity_provider_config = input; self
     }
     /// <p>An object representing an identity provider configuration.</p>
     pub fn get_identity_provider_config(&self) -> &::std::option::Option<crate::types::IdentityProviderConfig> {
         &self.identity_provider_config
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigInput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput {
-            cluster_name: self.cluster_name,
-            identity_provider_config: self.identity_provider_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput {
+                cluster_name: self.cluster_name
+                ,
+                identity_provider_config: self.identity_provider_config
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rrtype = unimplemented!();
 /// match rrtype {
@@ -41,16 +41,14 @@
 /// Specifically, when `rrtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RrType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RrType {
     #[allow(missing_docs)] // documentation missing in model
     A,
@@ -80,94 +78,95 @@ pub enum RrType {
     Txt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RrType {
-    fn from(s: &str) -> Self {
-        match s {
-            "A" => RrType::A,
-            "AAAA" => RrType::Aaaa,
-            "CAA" => RrType::Caa,
-            "CNAME" => RrType::Cname,
-            "DS" => RrType::Ds,
-            "MX" => RrType::Mx,
-            "NAPTR" => RrType::Naptr,
-            "NS" => RrType::Ns,
-            "PTR" => RrType::Ptr,
-            "SOA" => RrType::Soa,
-            "SPF" => RrType::Spf,
-            "SRV" => RrType::Srv,
-            "TXT" => RrType::Txt,
-            other => RrType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "A" => RrType::A,
+"AAAA" => RrType::Aaaa,
+"CAA" => RrType::Caa,
+"CNAME" => RrType::Cname,
+"DS" => RrType::Ds,
+"MX" => RrType::Mx,
+"NAPTR" => RrType::Naptr,
+"NS" => RrType::Ns,
+"PTR" => RrType::Ptr,
+"SOA" => RrType::Soa,
+"SPF" => RrType::Spf,
+"SRV" => RrType::Srv,
+"TXT" => RrType::Txt,
+other => RrType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RrType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RrType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RrType::from(s))
+                    }
+                }
 impl RrType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RrType::A => "A",
-            RrType::Aaaa => "AAAA",
-            RrType::Caa => "CAA",
-            RrType::Cname => "CNAME",
-            RrType::Ds => "DS",
-            RrType::Mx => "MX",
-            RrType::Naptr => "NAPTR",
-            RrType::Ns => "NS",
-            RrType::Ptr => "PTR",
-            RrType::Soa => "SOA",
-            RrType::Spf => "SPF",
-            RrType::Srv => "SRV",
-            RrType::Txt => "TXT",
-            RrType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "TXT"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RrType::A => "A",
+    RrType::Aaaa => "AAAA",
+    RrType::Caa => "CAA",
+    RrType::Cname => "CNAME",
+    RrType::Ds => "DS",
+    RrType::Mx => "MX",
+    RrType::Naptr => "NAPTR",
+    RrType::Ns => "NS",
+    RrType::Ptr => "PTR",
+    RrType::Soa => "SOA",
+    RrType::Spf => "SPF",
+    RrType::Srv => "SRV",
+    RrType::Txt => "TXT",
+    RrType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "TXT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RrType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RrType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RrType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RrType::A => write!(f, "A"),
-            RrType::Aaaa => write!(f, "AAAA"),
-            RrType::Caa => write!(f, "CAA"),
-            RrType::Cname => write!(f, "CNAME"),
-            RrType::Ds => write!(f, "DS"),
-            RrType::Mx => write!(f, "MX"),
-            RrType::Naptr => write!(f, "NAPTR"),
-            RrType::Ns => write!(f, "NS"),
-            RrType::Ptr => write!(f, "PTR"),
-            RrType::Soa => write!(f, "SOA"),
-            RrType::Spf => write!(f, "SPF"),
-            RrType::Srv => write!(f, "SRV"),
-            RrType::Txt => write!(f, "TXT"),
-            RrType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RrType::A => write!(f, "A"),
+RrType::Aaaa => write!(f, "AAAA"),
+RrType::Caa => write!(f, "CAA"),
+RrType::Cname => write!(f, "CNAME"),
+RrType::Ds => write!(f, "DS"),
+RrType::Mx => write!(f, "MX"),
+RrType::Naptr => write!(f, "NAPTR"),
+RrType::Ns => write!(f, "NS"),
+RrType::Ptr => write!(f, "PTR"),
+RrType::Soa => write!(f, "SOA"),
+RrType::Spf => write!(f, "SPF"),
+RrType::Srv => write!(f, "SRV"),
+RrType::Txt => write!(f, "TXT"),
+RrType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

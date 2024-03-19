@@ -3,7 +3,7 @@
 /// <p>Updating or deleting a resource causes an inconsistent state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     /// Identifier of the resource in use
@@ -11,37 +11,34 @@ pub struct ConflictException {
     /// Type of the resource in use
     pub resource_type: ::std::string::String,
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
-    pub dependent_entities: ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>,
+    pub dependent_entities: ::std::option::Option<::std::vec::Vec::<crate::types::DependentEntity>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ConflictException {
+impl  ConflictException  {
     /// Identifier of the resource in use
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// Type of the resource in use
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependent_entities.is_none()`.
-    pub fn dependent_entities(&self) -> &[crate::types::DependentEntity] {
-        self.dependent_entities.as_deref().unwrap_or_default()
+    pub fn dependent_entities(&self) -> & [crate::types::DependentEntity] {
+        self.dependent_entities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -55,9 +52,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConflictExcepti
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -73,7 +68,7 @@ pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) dependent_entities: ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>,
+    pub(crate) dependent_entities: ::std::option::Option<::std::vec::Vec::<crate::types::DependentEntity>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -85,8 +80,7 @@ impl ConflictExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +94,7 @@ impl ConflictExceptionBuilder {
     }
     /// Identifier of the resource in use
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// Identifier of the resource in use
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +108,7 @@ impl ConflictExceptionBuilder {
     }
     /// Type of the resource in use
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// Type of the resource in use
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,57 +121,57 @@ impl ConflictExceptionBuilder {
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
     pub fn dependent_entities(mut self, input: crate::types::DependentEntity) -> Self {
         let mut v = self.dependent_entities.unwrap_or_default();
-        v.push(input);
-        self.dependent_entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dependent_entities = ::std::option::Option::Some(v);
+                        self
     }
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
-    pub fn set_dependent_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>) -> Self {
-        self.dependent_entities = input;
-        self
+    pub fn set_dependent_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DependentEntity>>) -> Self {
+        self.dependent_entities = input; self
     }
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
-    pub fn get_dependent_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>> {
+    pub fn get_dependent_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DependentEntity>> {
         &self.dependent_entities
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
     /// - [`resource_id`](crate::types::error::builders::ConflictExceptionBuilder::resource_id)
     /// - [`resource_type`](crate::types::error::builders::ConflictExceptionBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ConflictException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ConflictException",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ConflictException",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building ConflictException",
-                )
-            })?,
-            dependent_entities: self.dependent_entities,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::ConflictException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ConflictException")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ConflictException")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building ConflictException")
+                    )?
+                ,
+                dependent_entities: self.dependent_entities
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

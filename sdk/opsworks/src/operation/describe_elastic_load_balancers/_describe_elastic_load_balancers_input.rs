@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeElasticLoadBalancersInput {
+pub struct DescribeElasticLoadBalancersInput  {
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub layer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeElasticLoadBalancersInput {
+impl  DescribeElasticLoadBalancersInput  {
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
-    pub fn layer_ids(&self) -> &[::std::string::String] {
-        self.layer_ids.as_deref().unwrap_or_default()
+    pub fn layer_ids(&self) -> & [::std::string::String] {
+        self.layer_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeElasticLoadBalancersInput {
@@ -32,7 +33,7 @@ impl DescribeElasticLoadBalancersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
-    pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeElasticLoadBalancersInputBuilder {
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
@@ -42,8 +43,7 @@ impl DescribeElasticLoadBalancersInputBuilder {
     }
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,29 +56,28 @@ impl DescribeElasticLoadBalancersInputBuilder {
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
     pub fn layer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layer_ids.unwrap_or_default();
-        v.push(input.into());
-        self.layer_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.layer_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.layer_ids = input;
-        self
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.layer_ids = input; self
     }
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.layer_ids
     }
     /// Consumes the builder and constructs a [`DescribeElasticLoadBalancersInput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput {
-            stack_id: self.stack_id,
-            layer_ids: self.layer_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput {
+                stack_id: self.stack_id
+                ,
+                layer_ids: self.layer_ids
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAutoSnapshotsInput {
+pub struct GetAutoSnapshotsInput  {
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
-impl GetAutoSnapshotsInput {
+impl  GetAutoSnapshotsInput  {
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetAutoSnapshotsInputBuilder {
     }
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
     /// Consumes the builder and constructs a [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_auto_snapshots::GetAutoSnapshotsInput {
-            resource_name: self.resource_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsInput {
+                resource_name: self.resource_name
+                ,
+            }
+        )
     }
 }
+

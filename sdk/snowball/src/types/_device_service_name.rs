@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceservicename = unimplemented!();
 /// match deviceservicename {
@@ -30,16 +30,14 @@
 /// Specifically, when `deviceservicename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceServiceName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeviceServiceName {
     #[allow(missing_docs)] // documentation missing in model
     NfsOnDeviceService,
@@ -47,61 +45,62 @@ pub enum DeviceServiceName {
     S3OnDeviceService,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeviceServiceName {
-    fn from(s: &str) -> Self {
-        match s {
-            "NFS_ON_DEVICE_SERVICE" => DeviceServiceName::NfsOnDeviceService,
-            "S3_ON_DEVICE_SERVICE" => DeviceServiceName::S3OnDeviceService,
-            other => DeviceServiceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "NFS_ON_DEVICE_SERVICE" => DeviceServiceName::NfsOnDeviceService,
+"S3_ON_DEVICE_SERVICE" => DeviceServiceName::S3OnDeviceService,
+other => DeviceServiceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeviceServiceName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeviceServiceName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeviceServiceName::from(s))
+                    }
+                }
 impl DeviceServiceName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceServiceName::NfsOnDeviceService => "NFS_ON_DEVICE_SERVICE",
-            DeviceServiceName::S3OnDeviceService => "S3_ON_DEVICE_SERVICE",
-            DeviceServiceName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["NFS_ON_DEVICE_SERVICE", "S3_ON_DEVICE_SERVICE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceServiceName::NfsOnDeviceService => "NFS_ON_DEVICE_SERVICE",
+    DeviceServiceName::S3OnDeviceService => "S3_ON_DEVICE_SERVICE",
+    DeviceServiceName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NFS_ON_DEVICE_SERVICE", "S3_ON_DEVICE_SERVICE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeviceServiceName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeviceServiceName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeviceServiceName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeviceServiceName::NfsOnDeviceService => write!(f, "NFS_ON_DEVICE_SERVICE"),
-            DeviceServiceName::S3OnDeviceService => write!(f, "S3_ON_DEVICE_SERVICE"),
-            DeviceServiceName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeviceServiceName::NfsOnDeviceService => write!(f, "NFS_ON_DEVICE_SERVICE"),
+DeviceServiceName::S3OnDeviceService => write!(f, "S3_ON_DEVICE_SERVICE"),
+DeviceServiceName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

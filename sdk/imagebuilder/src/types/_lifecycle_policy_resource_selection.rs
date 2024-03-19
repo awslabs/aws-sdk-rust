@@ -3,21 +3,22 @@
 /// <p>Resource selection criteria for the lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyResourceSelection {
+pub struct LifecyclePolicyResourceSelection  {
     /// <p>A list of recipes that are used as selection criteria for the output images that the lifecycle policy applies to.</p>
-    pub recipes: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceSelectionRecipe>>,
+    pub recipes: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceSelectionRecipe>>,
     /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
-    pub tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tag_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl LifecyclePolicyResourceSelection {
+impl  LifecyclePolicyResourceSelection  {
     /// <p>A list of recipes that are used as selection criteria for the output images that the lifecycle policy applies to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipes.is_none()`.
-    pub fn recipes(&self) -> &[crate::types::LifecyclePolicyResourceSelectionRecipe] {
-        self.recipes.as_deref().unwrap_or_default()
+    pub fn recipes(&self) -> & [crate::types::LifecyclePolicyResourceSelectionRecipe] {
+        self.recipes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
-    pub fn tag_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tag_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tag_map.as_ref()
     }
 }
@@ -32,8 +33,8 @@ impl LifecyclePolicyResourceSelection {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecyclePolicyResourceSelectionBuilder {
-    pub(crate) recipes: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceSelectionRecipe>>,
-    pub(crate) tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) recipes: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceSelectionRecipe>>,
+    pub(crate) tag_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl LifecyclePolicyResourceSelectionBuilder {
     /// Appends an item to `recipes`.
@@ -43,17 +44,16 @@ impl LifecyclePolicyResourceSelectionBuilder {
     /// <p>A list of recipes that are used as selection criteria for the output images that the lifecycle policy applies to.</p>
     pub fn recipes(mut self, input: crate::types::LifecyclePolicyResourceSelectionRecipe) -> Self {
         let mut v = self.recipes.unwrap_or_default();
-        v.push(input);
-        self.recipes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recipes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of recipes that are used as selection criteria for the output images that the lifecycle policy applies to.</p>
-    pub fn set_recipes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceSelectionRecipe>>) -> Self {
-        self.recipes = input;
-        self
+    pub fn set_recipes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceSelectionRecipe>>) -> Self {
+        self.recipes = input; self
     }
     /// <p>A list of recipes that are used as selection criteria for the output images that the lifecycle policy applies to.</p>
-    pub fn get_recipes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceSelectionRecipe>> {
+    pub fn get_recipes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceSelectionRecipe>> {
         &self.recipes
     }
     /// Adds a key-value pair to `tag_map`.
@@ -63,24 +63,26 @@ impl LifecyclePolicyResourceSelectionBuilder {
     /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
     pub fn tag_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tag_map.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tag_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tag_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
-    pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tag_map = input;
-        self
+    pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tag_map = input; self
     }
     /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
-    pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tag_map
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyResourceSelection`](crate::types::LifecyclePolicyResourceSelection).
     pub fn build(self) -> crate::types::LifecyclePolicyResourceSelection {
         crate::types::LifecyclePolicyResourceSelection {
-            recipes: self.recipes,
-            tag_map: self.tag_map,
+            recipes: self.recipes
+            ,
+            tag_map: self.tag_map
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The current status of the search domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainStatus {
+pub struct DomainStatus  {
     /// <p>An internally generated unique identifier for a domain.</p>
     pub domain_id: ::std::string::String,
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -31,19 +31,17 @@ pub struct DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     pub limits: ::std::option::Option<crate::types::Limits>,
 }
-impl DomainStatus {
+impl  DomainStatus  {
     /// <p>An internally generated unique identifier for a domain.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
@@ -55,11 +53,11 @@ impl DomainStatus {
         self.deleted
     }
     /// <p>The service endpoint for updating documents in a search domain.</p>
-    pub fn doc_service(&self) -> ::std::option::Option<&crate::types::ServiceEndpoint> {
+    pub fn doc_service(&self) -> ::std::option::Option<& crate::types::ServiceEndpoint> {
         self.doc_service.as_ref()
     }
     /// <p>The service endpoint for requesting search results from a search domain.</p>
-    pub fn search_service(&self) -> ::std::option::Option<&crate::types::ServiceEndpoint> {
+    pub fn search_service(&self) -> ::std::option::Option<& crate::types::ServiceEndpoint> {
         self.search_service.as_ref()
     }
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
@@ -71,7 +69,7 @@ impl DomainStatus {
         self.processing
     }
     /// <p>The instance type that is being used to process search requests.</p>
-    pub fn search_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn search_instance_type(&self) -> ::std::option::Option<& str> {
         self.search_instance_type.as_deref()
     }
     /// <p>The number of partitions across which the search index is spread.</p>
@@ -83,7 +81,7 @@ impl DomainStatus {
         self.search_instance_count
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn limits(&self) -> ::std::option::Option<&crate::types::Limits> {
+    pub fn limits(&self) -> ::std::option::Option<& crate::types::Limits> {
         self.limits.as_ref()
     }
 }
@@ -121,8 +119,7 @@ impl DomainStatusBuilder {
     }
     /// <p>An internally generated unique identifier for a domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>An internally generated unique identifier for a domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl DomainStatusBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +146,7 @@ impl DomainStatusBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +159,7 @@ impl DomainStatusBuilder {
     }
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
     pub fn set_created(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
     pub fn get_created(&self) -> &::std::option::Option<bool> {
@@ -178,8 +172,7 @@ impl DomainStatusBuilder {
     }
     /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
     pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deleted = input;
-        self
+        self.deleted = input; self
     }
     /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
     pub fn get_deleted(&self) -> &::std::option::Option<bool> {
@@ -192,8 +185,7 @@ impl DomainStatusBuilder {
     }
     /// <p>The service endpoint for updating documents in a search domain.</p>
     pub fn set_doc_service(mut self, input: ::std::option::Option<crate::types::ServiceEndpoint>) -> Self {
-        self.doc_service = input;
-        self
+        self.doc_service = input; self
     }
     /// <p>The service endpoint for updating documents in a search domain.</p>
     pub fn get_doc_service(&self) -> &::std::option::Option<crate::types::ServiceEndpoint> {
@@ -206,8 +198,7 @@ impl DomainStatusBuilder {
     }
     /// <p>The service endpoint for requesting search results from a search domain.</p>
     pub fn set_search_service(mut self, input: ::std::option::Option<crate::types::ServiceEndpoint>) -> Self {
-        self.search_service = input;
-        self
+        self.search_service = input; self
     }
     /// <p>The service endpoint for requesting search results from a search domain.</p>
     pub fn get_search_service(&self) -> &::std::option::Option<crate::types::ServiceEndpoint> {
@@ -221,8 +212,7 @@ impl DomainStatusBuilder {
     }
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
     pub fn set_requires_index_documents(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.requires_index_documents = input;
-        self
+        self.requires_index_documents = input; self
     }
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
     pub fn get_requires_index_documents(&self) -> &::std::option::Option<bool> {
@@ -235,8 +225,7 @@ impl DomainStatusBuilder {
     }
     /// <p>True if processing is being done to activate the current domain configuration.</p>
     pub fn set_processing(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.processing = input;
-        self
+        self.processing = input; self
     }
     /// <p>True if processing is being done to activate the current domain configuration.</p>
     pub fn get_processing(&self) -> &::std::option::Option<bool> {
@@ -249,8 +238,7 @@ impl DomainStatusBuilder {
     }
     /// <p>The instance type that is being used to process search requests.</p>
     pub fn set_search_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_instance_type = input;
-        self
+        self.search_instance_type = input; self
     }
     /// <p>The instance type that is being used to process search requests.</p>
     pub fn get_search_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +251,7 @@ impl DomainStatusBuilder {
     }
     /// <p>The number of partitions across which the search index is spread.</p>
     pub fn set_search_partition_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.search_partition_count = input;
-        self
+        self.search_partition_count = input; self
     }
     /// <p>The number of partitions across which the search index is spread.</p>
     pub fn get_search_partition_count(&self) -> &::std::option::Option<i32> {
@@ -277,8 +264,7 @@ impl DomainStatusBuilder {
     }
     /// <p>The number of search instances that are available to process search requests.</p>
     pub fn set_search_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.search_instance_count = input;
-        self
+        self.search_instance_count = input; self
     }
     /// <p>The number of search instances that are available to process search requests.</p>
     pub fn get_search_instance_count(&self) -> &::std::option::Option<i32> {
@@ -291,8 +277,7 @@ impl DomainStatusBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_limits(mut self, input: ::std::option::Option<crate::types::Limits>) -> Self {
-        self.limits = input;
-        self
+        self.limits = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_limits(&self) -> &::std::option::Option<crate::types::Limits> {
@@ -304,35 +289,45 @@ impl DomainStatusBuilder {
     /// - [`domain_name`](crate::types::builders::DomainStatusBuilder::domain_name)
     /// - [`requires_index_documents`](crate::types::builders::DomainStatusBuilder::requires_index_documents)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainStatus {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DomainStatus",
-                )
-            })?,
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building DomainStatus",
-                )
-            })?,
-            arn: self.arn,
-            created: self.created,
-            deleted: self.deleted,
-            doc_service: self.doc_service,
-            search_service: self.search_service,
-            requires_index_documents: self.requires_index_documents.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "requires_index_documents",
-                    "requires_index_documents was not specified but it is required when building DomainStatus",
-                )
-            })?,
-            processing: self.processing,
-            search_instance_type: self.search_instance_type,
-            search_partition_count: self.search_partition_count,
-            search_instance_count: self.search_instance_count,
-            limits: self.limits,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainStatus {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building DomainStatus")
+                    )?
+                ,
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building DomainStatus")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                created: self.created
+                ,
+                deleted: self.deleted
+                ,
+                doc_service: self.doc_service
+                ,
+                search_service: self.search_service
+                ,
+                requires_index_documents: self.requires_index_documents
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("requires_index_documents", "requires_index_documents was not specified but it is required when building DomainStatus")
+                    )?
+                ,
+                processing: self.processing
+                ,
+                search_instance_type: self.search_instance_type
+                ,
+                search_partition_count: self.search_partition_count
+                ,
+                search_instance_count: self.search_instance_count
+                ,
+                limits: self.limits
+                ,
+            }
+        )
     }
 }
+

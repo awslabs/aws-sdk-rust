@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectMembershipInput {
+pub struct DeleteProjectMembershipInput  {
     /// <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
@@ -10,17 +10,17 @@ pub struct DeleteProjectMembershipInput {
     /// <p>The project member whose project membership is deleted.</p>
     pub member: ::std::option::Option<crate::types::Member>,
 }
-impl DeleteProjectMembershipInput {
+impl  DeleteProjectMembershipInput  {
     /// <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn project_identifier(&self) -> ::std::option::Option<& str> {
         self.project_identifier.as_deref()
     }
     /// <p>The project member whose project membership is deleted.</p>
-    pub fn member(&self) -> ::std::option::Option<&crate::types::Member> {
+    pub fn member(&self) -> ::std::option::Option<& crate::types::Member> {
         self.member.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteProjectMembershipInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteProjectMembershipInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
     pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_identifier = input;
-        self
+        self.project_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteProjectMembershipInputBuilder {
     }
     /// <p>The project member whose project membership is deleted.</p>
     pub fn set_member(mut self, input: ::std::option::Option<crate::types::Member>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     /// <p>The project member whose project membership is deleted.</p>
     pub fn get_member(&self) -> &::std::option::Option<crate::types::Member> {
         &self.member
     }
     /// Consumes the builder and constructs a [`DeleteProjectMembershipInput`](crate::operation::delete_project_membership::DeleteProjectMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_project_membership::DeleteProjectMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_project_membership::DeleteProjectMembershipInput {
-            domain_identifier: self.domain_identifier,
-            project_identifier: self.project_identifier,
-            member: self.member,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project_membership::DeleteProjectMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project_membership::DeleteProjectMembershipInput {
+                domain_identifier: self.domain_identifier
+                ,
+                project_identifier: self.project_identifier
+                ,
+                member: self.member
+                ,
+            }
+        )
     }
 }
+

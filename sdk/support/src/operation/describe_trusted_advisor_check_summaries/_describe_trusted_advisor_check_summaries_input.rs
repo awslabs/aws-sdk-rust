@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckSummariesInput {
+pub struct DescribeTrustedAdvisorCheckSummariesInput  {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub check_ids: ::std::option::Option<::std::vec::Vec::<::std::option::Option<::std::string::String>>>,
 }
-impl DescribeTrustedAdvisorCheckSummariesInput {
+impl  DescribeTrustedAdvisorCheckSummariesInput  {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.check_ids.is_none()`.
-    pub fn check_ids(&self) -> &[::std::option::Option<::std::string::String>] {
-        self.check_ids.as_deref().unwrap_or_default()
+    pub fn check_ids(&self) -> & [::std::option::Option<::std::string::String>] {
+        self.check_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
@@ -25,7 +26,7 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesInputBuilder {
-    pub(crate) check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub(crate) check_ids: ::std::option::Option<::std::vec::Vec::<::std::option::Option<::std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// Appends an item to `check_ids`.
@@ -35,28 +36,26 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     pub fn check_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         let mut v = self.check_ids.unwrap_or_default();
-        v.push(input);
-        self.check_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.check_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn set_check_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>) -> Self {
-        self.check_ids = input;
-        self
+    pub fn set_check_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::option::Option<::std::string::String>>>) -> Self {
+        self.check_ids = input; self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn get_check_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+    pub fn get_check_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::option::Option<::std::string::String>>> {
         &self.check_ids
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput { check_ids: self.check_ids },
+            crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput {
+                check_ids: self.check_ids
+                ,
+            }
         )
     }
 }
+

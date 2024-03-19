@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFirewallConfigInput {
+pub struct UpdateFirewallConfigInput  {
     /// <p>The ID of the VPC that the configuration is for.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply.</p>
@@ -15,9 +15,9 @@ pub struct UpdateFirewallConfigInput {
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.</p>
     pub firewall_fail_open: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
 }
-impl UpdateFirewallConfigInput {
+impl  UpdateFirewallConfigInput  {
     /// <p>The ID of the VPC that the configuration is for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply.</p>
@@ -28,7 +28,7 @@ impl UpdateFirewallConfigInput {
     /// <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them.</p></li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.</p>
-    pub fn firewall_fail_open(&self) -> ::std::option::Option<&crate::types::FirewallFailOpenStatus> {
+    pub fn firewall_fail_open(&self) -> ::std::option::Option<& crate::types::FirewallFailOpenStatus> {
         self.firewall_fail_open.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateFirewallConfigInputBuilder {
     }
     /// <p>The ID of the VPC that the configuration is for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the VPC that the configuration is for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdateFirewallConfigInputBuilder {
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.</p>
     pub fn set_firewall_fail_open(mut self, input: ::std::option::Option<crate::types::FirewallFailOpenStatus>) -> Self {
-        self.firewall_fail_open = input;
-        self
+        self.firewall_fail_open = input; self
     }
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply.</p>
     /// <ul>
@@ -99,13 +97,15 @@ impl UpdateFirewallConfigInputBuilder {
         &self.firewall_fail_open
     }
     /// Consumes the builder and constructs a [`UpdateFirewallConfigInput`](crate::operation::update_firewall_config::UpdateFirewallConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_firewall_config::UpdateFirewallConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_firewall_config::UpdateFirewallConfigInput {
-            resource_id: self.resource_id,
-            firewall_fail_open: self.firewall_fail_open,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_firewall_config::UpdateFirewallConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_firewall_config::UpdateFirewallConfigInput {
+                resource_id: self.resource_id
+                ,
+                firewall_fail_open: self.firewall_fail_open
+                ,
+            }
+        )
     }
 }
+

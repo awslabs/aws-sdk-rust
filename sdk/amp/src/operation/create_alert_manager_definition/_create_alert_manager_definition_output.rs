@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>CreateAlertManagerDefinition</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAlertManagerDefinitionOutput {
+pub struct CreateAlertManagerDefinitionOutput  {
     /// <p>A structure that displays the current status of the alert manager definition.</p>
     pub status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     _request_id: Option<String>,
 }
-impl CreateAlertManagerDefinitionOutput {
+impl  CreateAlertManagerDefinitionOutput  {
     /// <p>A structure that displays the current status of the alert manager definition.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAlertManagerDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAlertManagerDefinitionOutput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput).
     pub fn builder() -> crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateAlertManagerDefinitionOutputBuilder {
     }
     /// <p>A structure that displays the current status of the alert manager definition.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A structure that displays the current status of the alert manager definition.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AlertManagerDefinitionStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAlertManagerDefinitionOutput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput).
     pub fn build(self) -> crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput {
         crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

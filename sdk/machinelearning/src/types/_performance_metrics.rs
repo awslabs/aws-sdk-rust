@@ -12,13 +12,13 @@
 /// <p>For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceMetrics {
+pub struct PerformanceMetrics  {
     #[allow(missing_docs)] // documentation missing in model
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PerformanceMetrics {
+impl  PerformanceMetrics  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
 }
@@ -33,7 +33,7 @@ impl PerformanceMetrics {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceMetricsBuilder {
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PerformanceMetricsBuilder {
     /// Adds a key-value pair to `properties`.
@@ -42,21 +42,24 @@ impl PerformanceMetricsBuilder {
     ///
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.properties = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`PerformanceMetrics`](crate::types::PerformanceMetrics).
     pub fn build(self) -> crate::types::PerformanceMetrics {
-        crate::types::PerformanceMetrics { properties: self.properties }
+        crate::types::PerformanceMetrics {
+            properties: self.properties
+            ,
+        }
     }
 }
+

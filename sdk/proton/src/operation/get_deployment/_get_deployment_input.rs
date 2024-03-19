@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentInput {
+pub struct GetDeploymentInput  {
     /// <p>The ID of the deployment that you want to get the detailed data for.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a environment that you want to get the detailed data for.</p>
@@ -14,25 +14,25 @@ pub struct GetDeploymentInput {
     /// <p>The name of a component that you want to get the detailed data for.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDeploymentInput {
+impl  GetDeploymentInput  {
     /// <p>The ID of the deployment that you want to get the detailed data for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a environment that you want to get the detailed data for.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service associated with the given deployment ID.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance associated with the given deployment ID. <code>serviceName</code> must be specified to identify the service instance.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The name of a component that you want to get the detailed data for.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The ID of the deployment that you want to get the detailed data for.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the deployment that you want to get the detailed data for.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The name of a environment that you want to get the detailed data for.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of a environment that you want to get the detailed data for.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The name of the service associated with the given deployment ID.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service associated with the given deployment ID.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The name of the service instance associated with the given deployment ID. <code>serviceName</code> must be specified to identify the service instance.</p>
     pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_instance_name = input;
-        self
+        self.service_instance_name = input; self
     }
     /// <p>The name of the service instance associated with the given deployment ID. <code>serviceName</code> must be specified to identify the service instance.</p>
     pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,23 +114,28 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The name of a component that you want to get the detailed data for.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of a component that you want to get the detailed data for.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentInput {
-            id: self.id,
-            environment_name: self.environment_name,
-            service_name: self.service_name,
-            service_instance_name: self.service_instance_name,
-            component_name: self.component_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deployment::GetDeploymentInput {
+                id: self.id
+                ,
+                environment_name: self.environment_name
+                ,
+                service_name: self.service_name
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                component_name: self.component_name
+                ,
+            }
+        )
     }
 }
+

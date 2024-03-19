@@ -3,20 +3,19 @@
 /// <p>Contains information about the intent that is output for the turn by the test execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserTurnIntentOutput {
+pub struct UserTurnIntentOutput  {
     /// <p>The name of the intent.</p>
     pub name: ::std::string::String,
     /// <p>The slots associated with the intent.</p>
-    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
+    pub slots: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
-impl UserTurnIntentOutput {
+impl  UserTurnIntentOutput  {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The slots associated with the intent.</p>
-    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
+    pub fn slots(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::UserTurnSlotOutput>> {
         self.slots.as_ref()
     }
 }
@@ -32,7 +31,7 @@ impl UserTurnIntentOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnIntentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnIntentOutputBuilder {
     /// <p>The name of the intent.</p>
@@ -43,8 +42,7 @@ impl UserTurnIntentOutputBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the intent.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,34 +55,33 @@ impl UserTurnIntentOutputBuilder {
     /// <p>The slots associated with the intent.</p>
     pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UserTurnSlotOutput) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.slots = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.slots = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The slots associated with the intent.</p>
-    pub fn set_slots(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
-    ) -> Self {
-        self.slots = input;
-        self
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UserTurnSlotOutput>>) -> Self {
+        self.slots = input; self
     }
     /// <p>The slots associated with the intent.</p>
-    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UserTurnSlotOutput>> {
         &self.slots
     }
     /// Consumes the builder and constructs a [`UserTurnIntentOutput`](crate::types::UserTurnIntentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::UserTurnIntentOutputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::UserTurnIntentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserTurnIntentOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UserTurnIntentOutput",
-                )
-            })?,
-            slots: self.slots,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserTurnIntentOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UserTurnIntentOutput")
+                    )?
+                ,
+                slots: self.slots
+                ,
+            }
+        )
     }
 }
+

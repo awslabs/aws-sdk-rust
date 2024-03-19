@@ -3,7 +3,7 @@
 /// <p>A lineage entity connected to the starting entity(ies).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Vertex {
+pub struct Vertex  {
     /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
@@ -11,17 +11,17 @@ pub struct Vertex {
     /// <p>The type of resource of the lineage entity.</p>
     pub lineage_type: ::std::option::Option<crate::types::LineageType>,
 }
-impl Vertex {
+impl  Vertex  {
     /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The type of resource of the lineage entity.</p>
-    pub fn lineage_type(&self) -> ::std::option::Option<&crate::types::LineageType> {
+    pub fn lineage_type(&self) -> ::std::option::Option<& crate::types::LineageType> {
         self.lineage_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl VertexBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl VertexBuilder {
     }
     /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl VertexBuilder {
     }
     /// <p>The type of resource of the lineage entity.</p>
     pub fn set_lineage_type(mut self, input: ::std::option::Option<crate::types::LineageType>) -> Self {
-        self.lineage_type = input;
-        self
+        self.lineage_type = input; self
     }
     /// <p>The type of resource of the lineage entity.</p>
     pub fn get_lineage_type(&self) -> &::std::option::Option<crate::types::LineageType> {
@@ -86,9 +83,13 @@ impl VertexBuilder {
     /// Consumes the builder and constructs a [`Vertex`](crate::types::Vertex).
     pub fn build(self) -> crate::types::Vertex {
         crate::types::Vertex {
-            arn: self.arn,
-            r#type: self.r#type,
-            lineage_type: self.lineage_type,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            lineage_type: self.lineage_type
+            ,
         }
     }
 }
+

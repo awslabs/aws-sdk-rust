@@ -3,7 +3,7 @@
 /// <p>A request to UnsubscribeFromDataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsubscribeFromDatasetInput {
+pub struct UnsubscribeFromDatasetInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique ID for this identity.</p>
@@ -13,21 +13,21 @@ pub struct UnsubscribeFromDatasetInput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
 }
-impl UnsubscribeFromDatasetInput {
+impl  UnsubscribeFromDatasetInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>Unique ID for this identity.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the dataset from which to unsubcribe.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl UnsubscribeFromDatasetInputBuilder {
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UnsubscribeFromDatasetInputBuilder {
     }
     /// <p>Unique ID for this identity.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>Unique ID for this identity.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl UnsubscribeFromDatasetInputBuilder {
     }
     /// <p>The name of the dataset from which to unsubcribe.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset from which to unsubcribe.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,25 +98,26 @@ impl UnsubscribeFromDatasetInputBuilder {
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`UnsubscribeFromDatasetInput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput {
-            identity_pool_id: self.identity_pool_id,
-            identity_id: self.identity_id,
-            dataset_name: self.dataset_name,
-            device_id: self.device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+                identity_id: self.identity_id
+                ,
+                dataset_name: self.dataset_name
+                ,
+                device_id: self.device_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPackageVersionAssetInput {
+pub struct GetPackageVersionAssetInput  {
     /// <p>The name of the domain that contains the repository that contains the package version with the requested asset.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -32,21 +32,21 @@ pub struct GetPackageVersionAssetInput {
     /// <p>The name of the package version revision that contains the requested asset.</p>
     pub package_version_revision: ::std::option::Option<::std::string::String>,
 }
-impl GetPackageVersionAssetInput {
+impl  GetPackageVersionAssetInput  {
     /// <p>The name of the domain that contains the repository that contains the package version with the requested asset.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The repository that contains the package version with the requested asset.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -60,23 +60,23 @@ impl GetPackageVersionAssetInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package that contains the requested asset.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The name of the requested asset.</p>
-    pub fn asset(&self) -> ::std::option::Option<&str> {
+    pub fn asset(&self) -> ::std::option::Option<& str> {
         self.asset.as_deref()
     }
     /// <p>The name of the package version revision that contains the requested asset.</p>
-    pub fn package_version_revision(&self) -> ::std::option::Option<&str> {
+    pub fn package_version_revision(&self) -> ::std::option::Option<& str> {
         self.package_version_revision.as_deref()
     }
 }
@@ -110,8 +110,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>The name of the domain that contains the repository that contains the package version with the requested asset.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the repository that contains the package version with the requested asset.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>The repository that contains the package version with the requested asset.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The repository that contains the package version with the requested asset.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -188,8 +184,7 @@ impl GetPackageVersionAssetInputBuilder {
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -213,8 +208,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>The name of the package that contains the requested asset.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package that contains the requested asset.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +222,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +236,7 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>The name of the requested asset.</p>
     pub fn set_asset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset = input;
-        self
+        self.asset = input; self
     }
     /// <p>The name of the requested asset.</p>
     pub fn get_asset(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,30 +249,36 @@ impl GetPackageVersionAssetInputBuilder {
     }
     /// <p>The name of the package version revision that contains the requested asset.</p>
     pub fn set_package_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version_revision = input;
-        self
+        self.package_version_revision = input; self
     }
     /// <p>The name of the package version revision that contains the requested asset.</p>
     pub fn get_package_version_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version_revision
     }
     /// Consumes the builder and constructs a [`GetPackageVersionAssetInput`](crate::operation::get_package_version_asset::GetPackageVersionAssetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_package_version_asset::GetPackageVersionAssetInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            package_version: self.package_version,
-            asset: self.asset,
-            package_version_revision: self.package_version_revision,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_package_version_asset::GetPackageVersionAssetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_package_version_asset::GetPackageVersionAssetInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                package_version: self.package_version
+                ,
+                asset: self.asset
+                ,
+                package_version_revision: self.package_version_revision
+                ,
+            }
+        )
     }
 }
+

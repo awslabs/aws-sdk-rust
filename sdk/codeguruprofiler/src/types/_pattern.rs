@@ -3,7 +3,7 @@
 /// <p>A set of rules used to make a recommendation during an analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Pattern {
+pub struct Pattern  {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name for this pattern.</p>
@@ -13,44 +13,46 @@ pub struct Pattern {
     /// <p>A string that contains the steps recommended to address the potential inefficiency.</p>
     pub resolution_steps: ::std::option::Option<::std::string::String>,
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    pub target_frames: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub target_frames: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     /// <p>The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis.</p>
     pub threshold_percent: f64,
     /// <p>A list of the different counters used to determine if there is a match.</p>
-    pub counters_to_aggregate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub counters_to_aggregate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Pattern {
+impl  Pattern  {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name for this pattern.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A string that contains the steps recommended to address the potential inefficiency.</p>
-    pub fn resolution_steps(&self) -> ::std::option::Option<&str> {
+    pub fn resolution_steps(&self) -> ::std::option::Option<& str> {
         self.resolution_steps.as_deref()
     }
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_frames.is_none()`.
-    pub fn target_frames(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        self.target_frames.as_deref().unwrap_or_default()
+    pub fn target_frames(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        self.target_frames.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis.</p>
     pub fn threshold_percent(&self) -> f64 {
         self.threshold_percent
     }
     /// <p>A list of the different counters used to determine if there is a match.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.counters_to_aggregate.is_none()`.
-    pub fn counters_to_aggregate(&self) -> &[::std::string::String] {
-        self.counters_to_aggregate.as_deref().unwrap_or_default()
+    pub fn counters_to_aggregate(&self) -> & [::std::string::String] {
+        self.counters_to_aggregate.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Pattern {
@@ -68,9 +70,9 @@ pub struct PatternBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) resolution_steps: ::std::option::Option<::std::string::String>,
-    pub(crate) target_frames: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) target_frames: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     pub(crate) threshold_percent: ::std::option::Option<f64>,
-    pub(crate) counters_to_aggregate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) counters_to_aggregate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PatternBuilder {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
@@ -80,8 +82,7 @@ impl PatternBuilder {
     }
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl PatternBuilder {
     }
     /// <p>The name for this pattern.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for this pattern.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl PatternBuilder {
     }
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl PatternBuilder {
     }
     /// <p>A string that contains the steps recommended to address the potential inefficiency.</p>
     pub fn set_resolution_steps(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolution_steps = input;
-        self
+        self.resolution_steps = input; self
     }
     /// <p>A string that contains the steps recommended to address the potential inefficiency.</p>
     pub fn get_resolution_steps(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,19 +132,18 @@ impl PatternBuilder {
     /// To override the contents of this collection use [`set_target_frames`](Self::set_target_frames).
     ///
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    pub fn target_frames(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn target_frames(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.target_frames.unwrap_or_default();
-        v.push(input);
-        self.target_frames = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_frames = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    pub fn set_target_frames(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.target_frames = input;
-        self
+    pub fn set_target_frames(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.target_frames = input; self
     }
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    pub fn get_target_frames(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_target_frames(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.target_frames
     }
     /// <p>The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis.</p>
@@ -156,8 +153,7 @@ impl PatternBuilder {
     }
     /// <p>The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis.</p>
     pub fn set_threshold_percent(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold_percent = input;
-        self
+        self.threshold_percent = input; self
     }
     /// <p>The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis.</p>
     pub fn get_threshold_percent(&self) -> &::std::option::Option<f64> {
@@ -170,29 +166,37 @@ impl PatternBuilder {
     /// <p>A list of the different counters used to determine if there is a match.</p>
     pub fn counters_to_aggregate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.counters_to_aggregate.unwrap_or_default();
-        v.push(input.into());
-        self.counters_to_aggregate = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.counters_to_aggregate = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the different counters used to determine if there is a match.</p>
-    pub fn set_counters_to_aggregate(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.counters_to_aggregate = input;
-        self
+    pub fn set_counters_to_aggregate(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.counters_to_aggregate = input; self
     }
     /// <p>A list of the different counters used to determine if there is a match.</p>
-    pub fn get_counters_to_aggregate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_counters_to_aggregate(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.counters_to_aggregate
     }
     /// Consumes the builder and constructs a [`Pattern`](crate::types::Pattern).
     pub fn build(self) -> crate::types::Pattern {
         crate::types::Pattern {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            resolution_steps: self.resolution_steps,
-            target_frames: self.target_frames,
-            threshold_percent: self.threshold_percent.unwrap_or_default(),
-            counters_to_aggregate: self.counters_to_aggregate,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            resolution_steps: self.resolution_steps
+            ,
+            target_frames: self.target_frames
+            ,
+            threshold_percent: self.threshold_percent
+                .unwrap_or_default()
+            ,
+            counters_to_aggregate: self.counters_to_aggregate
+            ,
         }
     }
 }
+

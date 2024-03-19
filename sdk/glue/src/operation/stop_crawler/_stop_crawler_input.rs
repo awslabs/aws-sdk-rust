@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCrawlerInput {
+pub struct StopCrawlerInput  {
     /// <p>Name of the crawler to stop.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StopCrawlerInput {
+impl  StopCrawlerInput  {
     /// <p>Name of the crawler to stop.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StopCrawlerInputBuilder {
     }
     /// <p>Name of the crawler to stop.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the crawler to stop.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl StopCrawlerInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopCrawlerInput`](crate::operation::stop_crawler::StopCrawlerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_crawler::StopCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_crawler::StopCrawlerInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::stop_crawler::StopCrawlerInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

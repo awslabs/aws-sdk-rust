@@ -63,3 +63,4 @@ pub fn de_byoasn(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

@@ -3,7 +3,7 @@
 /// <p>LoRaWAN object for update functions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanUpdateDevice {
+pub struct LoRaWanUpdateDevice  {
     /// <p>The ID of the device profile for the wireless device.</p>
     pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service profile.</p>
@@ -15,25 +15,25 @@ pub struct LoRaWanUpdateDevice {
     /// <p>FPorts object for the positioning information of the device.</p>
     pub f_ports: ::std::option::Option<crate::types::UpdateFPorts>,
 }
-impl LoRaWanUpdateDevice {
+impl  LoRaWanUpdateDevice  {
     /// <p>The ID of the device profile for the wireless device.</p>
-    pub fn device_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> ::std::option::Option<& str> {
         self.device_profile_id.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_profile_id(&self) -> ::std::option::Option<& str> {
         self.service_profile_id.as_deref()
     }
     /// <p>ABP device object for update APIs for v1.1</p>
-    pub fn abp_v1_1(&self) -> ::std::option::Option<&crate::types::UpdateAbpV11> {
+    pub fn abp_v1_1(&self) -> ::std::option::Option<& crate::types::UpdateAbpV11> {
         self.abp_v1_1.as_ref()
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
-    pub fn abp_v1_0_x(&self) -> ::std::option::Option<&crate::types::UpdateAbpV10X> {
+    pub fn abp_v1_0_x(&self) -> ::std::option::Option<& crate::types::UpdateAbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
     /// <p>FPorts object for the positioning information of the device.</p>
-    pub fn f_ports(&self) -> ::std::option::Option<&crate::types::UpdateFPorts> {
+    pub fn f_ports(&self) -> ::std::option::Option<& crate::types::UpdateFPorts> {
         self.f_ports.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl LoRaWanUpdateDeviceBuilder {
     }
     /// <p>The ID of the device profile for the wireless device.</p>
     pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_profile_id = input;
-        self
+        self.device_profile_id = input; self
     }
     /// <p>The ID of the device profile for the wireless device.</p>
     pub fn get_device_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl LoRaWanUpdateDeviceBuilder {
     }
     /// <p>The ID of the service profile.</p>
     pub fn set_service_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_profile_id = input;
-        self
+        self.service_profile_id = input; self
     }
     /// <p>The ID of the service profile.</p>
     pub fn get_service_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl LoRaWanUpdateDeviceBuilder {
     }
     /// <p>ABP device object for update APIs for v1.1</p>
     pub fn set_abp_v1_1(mut self, input: ::std::option::Option<crate::types::UpdateAbpV11>) -> Self {
-        self.abp_v1_1 = input;
-        self
+        self.abp_v1_1 = input; self
     }
     /// <p>ABP device object for update APIs for v1.1</p>
     pub fn get_abp_v1_1(&self) -> &::std::option::Option<crate::types::UpdateAbpV11> {
@@ -104,8 +101,7 @@ impl LoRaWanUpdateDeviceBuilder {
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
     pub fn set_abp_v1_0_x(mut self, input: ::std::option::Option<crate::types::UpdateAbpV10X>) -> Self {
-        self.abp_v1_0_x = input;
-        self
+        self.abp_v1_0_x = input; self
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
     pub fn get_abp_v1_0_x(&self) -> &::std::option::Option<crate::types::UpdateAbpV10X> {
@@ -118,8 +114,7 @@ impl LoRaWanUpdateDeviceBuilder {
     }
     /// <p>FPorts object for the positioning information of the device.</p>
     pub fn set_f_ports(mut self, input: ::std::option::Option<crate::types::UpdateFPorts>) -> Self {
-        self.f_ports = input;
-        self
+        self.f_ports = input; self
     }
     /// <p>FPorts object for the positioning information of the device.</p>
     pub fn get_f_ports(&self) -> &::std::option::Option<crate::types::UpdateFPorts> {
@@ -128,11 +123,17 @@ impl LoRaWanUpdateDeviceBuilder {
     /// Consumes the builder and constructs a [`LoRaWanUpdateDevice`](crate::types::LoRaWanUpdateDevice).
     pub fn build(self) -> crate::types::LoRaWanUpdateDevice {
         crate::types::LoRaWanUpdateDevice {
-            device_profile_id: self.device_profile_id,
-            service_profile_id: self.service_profile_id,
-            abp_v1_1: self.abp_v1_1,
-            abp_v1_0_x: self.abp_v1_0_x,
-            f_ports: self.f_ports,
+            device_profile_id: self.device_profile_id
+            ,
+            service_profile_id: self.service_profile_id
+            ,
+            abp_v1_1: self.abp_v1_1
+            ,
+            abp_v1_0_x: self.abp_v1_0_x
+            ,
+            f_ports: self.f_ports
+            ,
         }
     }
 }
+

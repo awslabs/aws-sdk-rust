@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbSnapshotsInput {
+pub struct DescribeDbSnapshotsInput  {
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -52,7 +52,7 @@ pub struct DescribeDbSnapshotsInput {
     /// <li>
     /// <p><code>engine</code> - Accepts names of database engines.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -70,14 +70,14 @@ pub struct DescribeDbSnapshotsInput {
     /// <p>A specific DB resource ID to describe.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDbSnapshotsInput {
+impl  DescribeDbSnapshotsInput  {
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
@@ -88,7 +88,7 @@ impl DescribeDbSnapshotsInput {
     /// <li>
     /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
-    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_snapshot_identifier.as_deref()
     }
     /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
@@ -108,7 +108,7 @@ impl DescribeDbSnapshotsInput {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> ::std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
@@ -125,10 +125,11 @@ impl DescribeDbSnapshotsInput {
     /// <li>
     /// <p><code>engine</code> - Accepts names of database engines.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -137,7 +138,7 @@ impl DescribeDbSnapshotsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
@@ -153,7 +154,7 @@ impl DescribeDbSnapshotsInput {
         self.include_public
     }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn dbi_resource_id(&self) -> ::std::option::Option<& str> {
         self.dbi_resource_id.as_deref()
     }
 }
@@ -171,7 +172,7 @@ pub struct DescribeDbSnapshotsInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_type: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) include_shared: ::std::option::Option<bool>,
@@ -196,8 +197,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -229,8 +229,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_snapshot_identifier = input;
-        self
+        self.db_snapshot_identifier = input; self
     }
     /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -282,8 +281,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_type = input;
-        self
+        self.snapshot_type = input; self
     }
     /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -325,9 +323,9 @@ impl DescribeDbSnapshotsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
     /// <p>Supported filters:</p>
@@ -343,9 +341,8 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <li>
     /// <p><code>engine</code> - Accepts names of database engines.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies one or more DB snapshots to describe.</p>
     /// <p>Supported filters:</p>
@@ -361,7 +358,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <li>
     /// <p><code>engine</code> - Accepts names of database engines.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -375,8 +372,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -391,8 +387,7 @@ impl DescribeDbSnapshotsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -409,8 +404,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_shared = input;
-        self
+        self.include_shared = input; self
     }
     /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
@@ -429,8 +423,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_public = input;
-        self
+        self.include_public = input; self
     }
     /// <p>Specifies whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
@@ -445,28 +438,36 @@ impl DescribeDbSnapshotsInputBuilder {
     }
     /// <p>A specific DB resource ID to describe.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dbi_resource_id = input;
-        self
+        self.dbi_resource_id = input; self
     }
     /// <p>A specific DB resource ID to describe.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dbi_resource_id
     }
     /// Consumes the builder and constructs a [`DescribeDbSnapshotsInput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput {
-            db_instance_identifier: self.db_instance_identifier,
-            db_snapshot_identifier: self.db_snapshot_identifier,
-            snapshot_type: self.snapshot_type,
-            filters: self.filters,
-            max_records: self.max_records,
-            marker: self.marker,
-            include_shared: self.include_shared,
-            include_public: self.include_public,
-            dbi_resource_id: self.dbi_resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                db_snapshot_identifier: self.db_snapshot_identifier
+                ,
+                snapshot_type: self.snapshot_type
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                include_shared: self.include_shared
+                ,
+                include_public: self.include_public
+                ,
+                dbi_resource_id: self.dbi_resource_id
+                ,
+            }
+        )
     }
 }
+

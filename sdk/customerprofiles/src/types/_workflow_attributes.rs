@@ -3,13 +3,13 @@
 /// <p>Structure to hold workflow attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowAttributes {
+pub struct WorkflowAttributes  {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
 }
-impl WorkflowAttributes {
+impl  WorkflowAttributes  {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(&self) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowAttributes> {
+    pub fn appflow_integration(&self) -> ::std::option::Option<& crate::types::AppflowIntegrationWorkflowAttributes> {
         self.appflow_integration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl WorkflowAttributesBuilder {
     }
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_appflow_integration(mut self, input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>) -> Self {
-        self.appflow_integration = input;
-        self
+        self.appflow_integration = input; self
     }
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_appflow_integration(&self) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes> {
@@ -44,7 +43,9 @@ impl WorkflowAttributesBuilder {
     /// Consumes the builder and constructs a [`WorkflowAttributes`](crate::types::WorkflowAttributes).
     pub fn build(self) -> crate::types::WorkflowAttributes {
         crate::types::WorkflowAttributes {
-            appflow_integration: self.appflow_integration,
+            appflow_integration: self.appflow_integration
+            ,
         }
     }
 }
+

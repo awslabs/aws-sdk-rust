@@ -3,13 +3,13 @@
 /// <p>Describes bandwidth information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Bandwidth {
+pub struct Bandwidth  {
     /// <p>Upload speed in Mbps.</p>
     pub upload_speed: ::std::option::Option<i32>,
     /// <p>Download speed in Mbps.</p>
     pub download_speed: ::std::option::Option<i32>,
 }
-impl Bandwidth {
+impl  Bandwidth  {
     /// <p>Upload speed in Mbps.</p>
     pub fn upload_speed(&self) -> ::std::option::Option<i32> {
         self.upload_speed
@@ -41,8 +41,7 @@ impl BandwidthBuilder {
     }
     /// <p>Upload speed in Mbps.</p>
     pub fn set_upload_speed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.upload_speed = input;
-        self
+        self.upload_speed = input; self
     }
     /// <p>Upload speed in Mbps.</p>
     pub fn get_upload_speed(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl BandwidthBuilder {
     }
     /// <p>Download speed in Mbps.</p>
     pub fn set_download_speed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.download_speed = input;
-        self
+        self.download_speed = input; self
     }
     /// <p>Download speed in Mbps.</p>
     pub fn get_download_speed(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl BandwidthBuilder {
     /// Consumes the builder and constructs a [`Bandwidth`](crate::types::Bandwidth).
     pub fn build(self) -> crate::types::Bandwidth {
         crate::types::Bandwidth {
-            upload_speed: self.upload_speed,
-            download_speed: self.download_speed,
+            upload_speed: self.upload_speed
+            ,
+            download_speed: self.download_speed
+            ,
         }
     }
 }
+

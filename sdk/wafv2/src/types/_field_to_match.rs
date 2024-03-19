@@ -19,7 +19,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldToMatch {
+pub struct FieldToMatch  {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code></p>
     /// <p>Alternately, you can filter and inspect all headers with the <code>Headers</code> <code>FieldToMatch</code> setting.</p>
@@ -70,28 +70,28 @@ pub struct FieldToMatch {
     /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
     pub ja3_fingerprint: ::std::option::Option<crate::types::Ja3Fingerprint>,
 }
-impl FieldToMatch {
+impl  FieldToMatch  {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code></p>
     /// <p>Alternately, you can filter and inspect all headers with the <code>Headers</code> <code>FieldToMatch</code> setting.</p>
-    pub fn single_header(&self) -> ::std::option::Option<&crate::types::SingleHeader> {
+    pub fn single_header(&self) -> ::std::option::Option<& crate::types::SingleHeader> {
         self.single_header.as_ref()
     }
     /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code></p>
-    pub fn single_query_argument(&self) -> ::std::option::Option<&crate::types::SingleQueryArgument> {
+    pub fn single_query_argument(&self) -> ::std::option::Option<& crate::types::SingleQueryArgument> {
         self.single_query_argument.as_ref()
     }
     /// <p>Inspect all query arguments.</p>
-    pub fn all_query_arguments(&self) -> ::std::option::Option<&crate::types::AllQueryArguments> {
+    pub fn all_query_arguments(&self) -> ::std::option::Option<& crate::types::AllQueryArguments> {
         self.all_query_arguments.as_ref()
     }
     /// <p>Inspect the request URI path. This is the part of the web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
-    pub fn uri_path(&self) -> ::std::option::Option<&crate::types::UriPath> {
+    pub fn uri_path(&self) -> ::std::option::Option<& crate::types::UriPath> {
         self.uri_path.as_ref()
     }
     /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&crate::types::QueryString> {
+    pub fn query_string(&self) -> ::std::option::Option<& crate::types::QueryString> {
         self.query_string.as_ref()
     }
     /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form.</p>
@@ -103,11 +103,11 @@ impl FieldToMatch {
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
-    pub fn body(&self) -> ::std::option::Option<&crate::types::Body> {
+    pub fn body(&self) -> ::std::option::Option<& crate::types::Body> {
         self.body.as_ref()
     }
     /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.</p>
-    pub fn method(&self) -> ::std::option::Option<&crate::types::Method> {
+    pub fn method(&self) -> ::std::option::Option<& crate::types::Method> {
         self.method.as_ref()
     }
     /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form.</p>
@@ -119,21 +119,21 @@ impl FieldToMatch {
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
-    pub fn json_body(&self) -> ::std::option::Option<&crate::types::JsonBody> {
+    pub fn json_body(&self) -> ::std::option::Option<& crate::types::JsonBody> {
         self.json_body.as_ref()
     }
     /// <p>Inspect the request headers. You must configure scope and pattern matching filters in the <code>Headers</code> object, to define the set of headers to and the parts of the headers that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's headers and only the first 200 headers are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize header content in the <code>Headers</code> object. WAF applies the pattern matching filters to the headers that it receives from the underlying host service.</p>
-    pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
+    pub fn headers(&self) -> ::std::option::Option<& crate::types::Headers> {
         self.headers.as_ref()
     }
     /// <p>Inspect the request cookies. You must configure scope and pattern matching filters in the <code>Cookies</code> object, to define the set of cookies and the parts of the cookies that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's cookies and only the first 200 cookies are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize cookie content in the <code>Cookies</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
-    pub fn cookies(&self) -> ::std::option::Option<&crate::types::Cookies> {
+    pub fn cookies(&self) -> ::std::option::Option<& crate::types::Cookies> {
         self.cookies.as_ref()
     }
     /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
-    pub fn header_order(&self) -> ::std::option::Option<&crate::types::HeaderOrder> {
+    pub fn header_order(&self) -> ::std::option::Option<& crate::types::HeaderOrder> {
         self.header_order.as_ref()
     }
     /// <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
@@ -141,7 +141,7 @@ impl FieldToMatch {
     /// </note>
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
-    pub fn ja3_fingerprint(&self) -> ::std::option::Option<&crate::types::Ja3Fingerprint> {
+    pub fn ja3_fingerprint(&self) -> ::std::option::Option<& crate::types::Ja3Fingerprint> {
         self.ja3_fingerprint.as_ref()
     }
 }
@@ -181,8 +181,7 @@ impl FieldToMatchBuilder {
     /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code></p>
     /// <p>Alternately, you can filter and inspect all headers with the <code>Headers</code> <code>FieldToMatch</code> setting.</p>
     pub fn set_single_header(mut self, input: ::std::option::Option<crate::types::SingleHeader>) -> Self {
-        self.single_header = input;
-        self
+        self.single_header = input; self
     }
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code></p>
@@ -199,8 +198,7 @@ impl FieldToMatchBuilder {
     /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code></p>
     pub fn set_single_query_argument(mut self, input: ::std::option::Option<crate::types::SingleQueryArgument>) -> Self {
-        self.single_query_argument = input;
-        self
+        self.single_query_argument = input; self
     }
     /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.</p>
     /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code></p>
@@ -214,8 +212,7 @@ impl FieldToMatchBuilder {
     }
     /// <p>Inspect all query arguments.</p>
     pub fn set_all_query_arguments(mut self, input: ::std::option::Option<crate::types::AllQueryArguments>) -> Self {
-        self.all_query_arguments = input;
-        self
+        self.all_query_arguments = input; self
     }
     /// <p>Inspect all query arguments.</p>
     pub fn get_all_query_arguments(&self) -> &::std::option::Option<crate::types::AllQueryArguments> {
@@ -228,8 +225,7 @@ impl FieldToMatchBuilder {
     }
     /// <p>Inspect the request URI path. This is the part of the web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn set_uri_path(mut self, input: ::std::option::Option<crate::types::UriPath>) -> Self {
-        self.uri_path = input;
-        self
+        self.uri_path = input; self
     }
     /// <p>Inspect the request URI path. This is the part of the web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn get_uri_path(&self) -> &::std::option::Option<crate::types::UriPath> {
@@ -242,8 +238,7 @@ impl FieldToMatchBuilder {
     }
     /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<crate::types::QueryString>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<crate::types::QueryString> {
@@ -272,8 +267,7 @@ impl FieldToMatchBuilder {
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
     pub fn set_body(mut self, input: ::std::option::Option<crate::types::Body>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
@@ -294,8 +288,7 @@ impl FieldToMatchBuilder {
     }
     /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.</p>
     pub fn set_method(mut self, input: ::std::option::Option<crate::types::Method>) -> Self {
-        self.method = input;
-        self
+        self.method = input; self
     }
     /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.</p>
     pub fn get_method(&self) -> &::std::option::Option<crate::types::Method> {
@@ -324,8 +317,7 @@ impl FieldToMatchBuilder {
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
     pub fn set_json_body(mut self, input: ::std::option::Option<crate::types::JsonBody>) -> Self {
-        self.json_body = input;
-        self
+        self.json_body = input; self
     }
     /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
@@ -348,8 +340,7 @@ impl FieldToMatchBuilder {
     /// <p>Inspect the request headers. You must configure scope and pattern matching filters in the <code>Headers</code> object, to define the set of headers to and the parts of the headers that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's headers and only the first 200 headers are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize header content in the <code>Headers</code> object. WAF applies the pattern matching filters to the headers that it receives from the underlying host service.</p>
     pub fn set_headers(mut self, input: ::std::option::Option<crate::types::Headers>) -> Self {
-        self.headers = input;
-        self
+        self.headers = input; self
     }
     /// <p>Inspect the request headers. You must configure scope and pattern matching filters in the <code>Headers</code> object, to define the set of headers to and the parts of the headers that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's headers and only the first 200 headers are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize header content in the <code>Headers</code> object. WAF applies the pattern matching filters to the headers that it receives from the underlying host service.</p>
@@ -365,8 +356,7 @@ impl FieldToMatchBuilder {
     /// <p>Inspect the request cookies. You must configure scope and pattern matching filters in the <code>Cookies</code> object, to define the set of cookies and the parts of the cookies that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's cookies and only the first 200 cookies are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize cookie content in the <code>Cookies</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
     pub fn set_cookies(mut self, input: ::std::option::Option<crate::types::Cookies>) -> Self {
-        self.cookies = input;
-        self
+        self.cookies = input; self
     }
     /// <p>Inspect the request cookies. You must configure scope and pattern matching filters in the <code>Cookies</code> object, to define the set of cookies and the parts of the cookies that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's cookies and only the first 200 cookies are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize cookie content in the <code>Cookies</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
@@ -380,8 +370,7 @@ impl FieldToMatchBuilder {
     }
     /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
     pub fn set_header_order(mut self, input: ::std::option::Option<crate::types::HeaderOrder>) -> Self {
-        self.header_order = input;
-        self
+        self.header_order = input; self
     }
     /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
     pub fn get_header_order(&self) -> &::std::option::Option<crate::types::HeaderOrder> {
@@ -402,8 +391,7 @@ impl FieldToMatchBuilder {
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
     pub fn set_ja3_fingerprint(mut self, input: ::std::option::Option<crate::types::Ja3Fingerprint>) -> Self {
-        self.ja3_fingerprint = input;
-        self
+        self.ja3_fingerprint = input; self
     }
     /// <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
     /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
@@ -416,18 +404,31 @@ impl FieldToMatchBuilder {
     /// Consumes the builder and constructs a [`FieldToMatch`](crate::types::FieldToMatch).
     pub fn build(self) -> crate::types::FieldToMatch {
         crate::types::FieldToMatch {
-            single_header: self.single_header,
-            single_query_argument: self.single_query_argument,
-            all_query_arguments: self.all_query_arguments,
-            uri_path: self.uri_path,
-            query_string: self.query_string,
-            body: self.body,
-            method: self.method,
-            json_body: self.json_body,
-            headers: self.headers,
-            cookies: self.cookies,
-            header_order: self.header_order,
-            ja3_fingerprint: self.ja3_fingerprint,
+            single_header: self.single_header
+            ,
+            single_query_argument: self.single_query_argument
+            ,
+            all_query_arguments: self.all_query_arguments
+            ,
+            uri_path: self.uri_path
+            ,
+            query_string: self.query_string
+            ,
+            body: self.body
+            ,
+            method: self.method
+            ,
+            json_body: self.json_body
+            ,
+            headers: self.headers
+            ,
+            cookies: self.cookies
+            ,
+            header_order: self.header_order
+            ,
+            ja3_fingerprint: self.ja3_fingerprint
+            ,
         }
     }
 }
+

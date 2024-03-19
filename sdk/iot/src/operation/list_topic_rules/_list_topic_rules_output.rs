@@ -3,30 +3,31 @@
 /// <p>The output from the ListTopicRules operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTopicRulesOutput {
+pub struct ListTopicRulesOutput  {
     /// <p>The rules.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::TopicRuleListItem>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTopicRulesOutput {
+impl  ListTopicRulesOutput  {
     /// <p>The rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::TopicRuleListItem] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::TopicRuleListItem] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTopicRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTopicRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput).
     pub fn builder() -> crate::operation::list_topic_rules::builders::ListTopicRulesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListTopicRulesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRulesOutputBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::TopicRuleListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListTopicRulesOutputBuilder {
     /// <p>The rules.</p>
     pub fn rules(mut self, input: crate::types::TopicRuleListItem) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rules.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TopicRuleListItem>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The rules.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TopicRuleListItem>> {
         &self.rules
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -70,28 +70,30 @@ impl ListTopicRulesOutputBuilder {
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput).
     pub fn build(self) -> crate::operation::list_topic_rules::ListTopicRulesOutput {
         crate::operation::list_topic_rules::ListTopicRulesOutput {
-            rules: self.rules,
-            next_token: self.next_token,
+            rules: self.rules
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>The network configuration for a task or service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkConfiguration {
+pub struct NetworkConfiguration  {
     /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
-impl NetworkConfiguration {
+impl  NetworkConfiguration  {
     /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
-    pub fn awsvpc_configuration(&self) -> ::std::option::Option<&crate::types::AwsVpcConfiguration> {
+    pub fn awsvpc_configuration(&self) -> ::std::option::Option<& crate::types::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl NetworkConfigurationBuilder {
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
     pub fn set_awsvpc_configuration(mut self, input: ::std::option::Option<crate::types::AwsVpcConfiguration>) -> Self {
-        self.awsvpc_configuration = input;
-        self
+        self.awsvpc_configuration = input; self
     }
     /// <p>The VPC subnets and security groups that are associated with a task.</p><note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
@@ -54,7 +53,9 @@ impl NetworkConfigurationBuilder {
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {
         crate::types::NetworkConfiguration {
-            awsvpc_configuration: self.awsvpc_configuration,
+            awsvpc_configuration: self.awsvpc_configuration
+            ,
         }
     }
 }
+

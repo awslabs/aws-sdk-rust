@@ -3,20 +3,19 @@
 /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Monitor {
+pub struct Monitor  {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
     pub alarm_arn: ::std::string::String,
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub alarm_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl Monitor {
+impl  Monitor  {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
-    pub fn alarm_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.alarm_arn.deref()
+    pub fn alarm_arn(&self) -> & str {
+        use std::ops::Deref; self.alarm_arn.deref()
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
-    pub fn alarm_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_role_arn(&self) -> ::std::option::Option<& str> {
         self.alarm_role_arn.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl MonitorBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
     pub fn set_alarm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_arn = input;
-        self
+        self.alarm_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
     pub fn get_alarm_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl MonitorBuilder {
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub fn set_alarm_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_role_arn = input;
-        self
+        self.alarm_role_arn = input; self
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub fn get_alarm_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl MonitorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_arn`](crate::types::builders::MonitorBuilder::alarm_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Monitor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Monitor {
-            alarm_arn: self.alarm_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_arn",
-                    "alarm_arn was not specified but it is required when building Monitor",
-                )
-            })?,
-            alarm_role_arn: self.alarm_role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Monitor {
+                alarm_arn: self.alarm_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_arn", "alarm_arn was not specified but it is required when building Monitor")
+                    )?
+                ,
+                alarm_role_arn: self.alarm_role_arn
+                ,
+            }
+        )
     }
 }
+

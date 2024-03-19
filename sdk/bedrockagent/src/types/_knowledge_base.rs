@@ -3,7 +3,7 @@
 /// Contains the information of a knowledge base.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBase {
+pub struct KnowledgeBase  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::string::String,
     /// Name for a resource.
@@ -25,58 +25,55 @@ pub struct KnowledgeBase {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
     /// Failure Reasons for Error.
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl KnowledgeBase {
+impl  KnowledgeBase  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// Name for a resource.
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// ARN of a KnowledgeBase
-    pub fn knowledge_base_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_arn.deref()
+    pub fn knowledge_base_arn(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_arn.deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// ARN of a IAM role.
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// Configures a bedrock knowledge base.
-    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseConfiguration> {
+    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseConfiguration> {
         self.knowledge_base_configuration.as_ref()
     }
     /// Configures the physical storage of ingested data in a knowledge base.
-    pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+    pub fn storage_configuration(&self) -> ::std::option::Option<& crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
     /// The status of a knowledge base.
-    pub fn status(&self) -> &crate::types::KnowledgeBaseStatus {
+    pub fn status(&self) -> & crate::types::KnowledgeBaseStatus {
         &self.status
     }
     /// Time Stamp.
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// Failure Reasons for Error.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KnowledgeBase {
@@ -100,7 +97,7 @@ pub struct KnowledgeBaseBuilder {
     pub(crate) status: ::std::option::Option<crate::types::KnowledgeBaseStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl KnowledgeBaseBuilder {
     /// Identifier for a resource.
@@ -111,8 +108,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Name for a resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for a resource.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl KnowledgeBaseBuilder {
     }
     /// ARN of a KnowledgeBase
     pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_arn = input;
-        self
+        self.knowledge_base_arn = input; self
     }
     /// ARN of a KnowledgeBase
     pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +149,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +163,7 @@ impl KnowledgeBaseBuilder {
     }
     /// ARN of a IAM role.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// ARN of a IAM role.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +177,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Configures a bedrock knowledge base.
     pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>) -> Self {
-        self.knowledge_base_configuration = input;
-        self
+        self.knowledge_base_configuration = input; self
     }
     /// Configures a bedrock knowledge base.
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseConfiguration> {
@@ -200,8 +191,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Configures the physical storage of ingested data in a knowledge base.
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
-        self.storage_configuration = input;
-        self
+        self.storage_configuration = input; self
     }
     /// Configures the physical storage of ingested data in a knowledge base.
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
@@ -215,8 +205,7 @@ impl KnowledgeBaseBuilder {
     }
     /// The status of a knowledge base.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The status of a knowledge base.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStatus> {
@@ -230,8 +219,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Time Stamp.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// Time Stamp.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -245,8 +233,7 @@ impl KnowledgeBaseBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -259,17 +246,16 @@ impl KnowledgeBaseBuilder {
     /// Failure Reasons for Error.
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// Failure Reasons for Error.
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// Failure Reasons for Error.
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// Consumes the builder and constructs a [`KnowledgeBase`](crate::types::KnowledgeBase).
@@ -282,53 +268,53 @@ impl KnowledgeBaseBuilder {
     /// - [`created_at`](crate::types::builders::KnowledgeBaseBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::KnowledgeBaseBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBase, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KnowledgeBase {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            knowledge_base_arn: self.knowledge_base_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_arn",
-                    "knowledge_base_arn was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            description: self.description,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            knowledge_base_configuration: self.knowledge_base_configuration,
-            storage_configuration: self.storage_configuration,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building KnowledgeBase",
-                )
-            })?,
-            failure_reasons: self.failure_reasons,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KnowledgeBase {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_arn", "knowledge_base_arn was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                knowledge_base_configuration: self.knowledge_base_configuration
+                ,
+                storage_configuration: self.storage_configuration
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building KnowledgeBase")
+                    )?
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+            }
+        )
     }
 }
+

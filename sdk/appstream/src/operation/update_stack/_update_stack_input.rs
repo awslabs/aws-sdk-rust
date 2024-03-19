@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStackInput {
+pub struct UpdateStackInput  {
     /// <p>The stack name to display.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
@@ -10,7 +10,7 @@ pub struct UpdateStackInput {
     /// <p>The name of the stack.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The storage connectors to enable.</p>
-    pub storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
+    pub storage_connectors: ::std::option::Option<::std::vec::Vec::<crate::types::StorageConnector>>,
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
     pub delete_storage_connectors: ::std::option::Option<bool>,
@@ -19,36 +19,37 @@ pub struct UpdateStackInput {
     /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     pub feedback_url: ::std::option::Option<::std::string::String>,
     /// <p>The stack attributes to delete.</p>
-    pub attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>>,
+    pub attributes_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::StackAttribute>>,
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
+    pub user_settings: ::std::option::Option<::std::vec::Vec::<crate::types::UserSetting>>,
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettings>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub embed_host_domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
-impl UpdateStackInput {
+impl  UpdateStackInput  {
     /// <p>The stack name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the stack.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The storage connectors to enable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_connectors.is_none()`.
-    pub fn storage_connectors(&self) -> &[crate::types::StorageConnector] {
-        self.storage_connectors.as_deref().unwrap_or_default()
+    pub fn storage_connectors(&self) -> & [crate::types::StorageConnector] {
+        self.storage_connectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
@@ -56,43 +57,47 @@ impl UpdateStackInput {
         self.delete_storage_connectors
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn redirect_url(&self) -> ::std::option::Option<&str> {
+    pub fn redirect_url(&self) -> ::std::option::Option<& str> {
         self.redirect_url.as_deref()
     }
     /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn feedback_url(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_url(&self) -> ::std::option::Option<& str> {
         self.feedback_url.as_deref()
     }
     /// <p>The stack attributes to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_delete.is_none()`.
-    pub fn attributes_to_delete(&self) -> &[crate::types::StackAttribute] {
-        self.attributes_to_delete.as_deref().unwrap_or_default()
+    pub fn attributes_to_delete(&self) -> & [crate::types::StackAttribute] {
+        self.attributes_to_delete.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_settings.is_none()`.
-    pub fn user_settings(&self) -> &[crate::types::UserSetting] {
-        self.user_settings.as_deref().unwrap_or_default()
+    pub fn user_settings(&self) -> & [crate::types::UserSetting] {
+        self.user_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    pub fn application_settings(&self) -> ::std::option::Option<&crate::types::ApplicationSettings> {
+    pub fn application_settings(&self) -> ::std::option::Option<& crate::types::ApplicationSettings> {
         self.application_settings.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
-    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
-        self.access_endpoints.as_deref().unwrap_or_default()
+    pub fn access_endpoints(&self) -> & [crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.embed_host_domains.is_none()`.
-    pub fn embed_host_domains(&self) -> &[::std::string::String] {
-        self.embed_host_domains.as_deref().unwrap_or_default()
+    pub fn embed_host_domains(&self) -> & [::std::string::String] {
+        self.embed_host_domains.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn streaming_experience_settings(&self) -> ::std::option::Option<&crate::types::StreamingExperienceSettings> {
+    pub fn streaming_experience_settings(&self) -> ::std::option::Option<& crate::types::StreamingExperienceSettings> {
         self.streaming_experience_settings.as_ref()
     }
 }
@@ -110,15 +115,15 @@ pub struct UpdateStackInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
+    pub(crate) storage_connectors: ::std::option::Option<::std::vec::Vec::<crate::types::StorageConnector>>,
     pub(crate) delete_storage_connectors: ::std::option::Option<bool>,
     pub(crate) redirect_url: ::std::option::Option<::std::string::String>,
     pub(crate) feedback_url: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>>,
-    pub(crate) user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
+    pub(crate) attributes_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::StackAttribute>>,
+    pub(crate) user_settings: ::std::option::Option<::std::vec::Vec::<crate::types::UserSetting>>,
     pub(crate) application_settings: ::std::option::Option<crate::types::ApplicationSettings>,
-    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
+    pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
 impl UpdateStackInputBuilder {
@@ -129,8 +134,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The stack name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The stack name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +147,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The description to display.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to display.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +161,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The name of the stack.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the stack.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,17 +174,16 @@ impl UpdateStackInputBuilder {
     /// <p>The storage connectors to enable.</p>
     pub fn storage_connectors(mut self, input: crate::types::StorageConnector) -> Self {
         let mut v = self.storage_connectors.unwrap_or_default();
-        v.push(input);
-        self.storage_connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn set_storage_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>) -> Self {
-        self.storage_connectors = input;
-        self
+    pub fn set_storage_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StorageConnector>>) -> Self {
+        self.storage_connectors = input; self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
+    pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StorageConnector>> {
         &self.storage_connectors
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
@@ -194,8 +195,7 @@ impl UpdateStackInputBuilder {
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
     pub fn set_delete_storage_connectors(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_storage_connectors = input;
-        self
+        self.delete_storage_connectors = input; self
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
     #[deprecated]
@@ -209,8 +209,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     pub fn set_redirect_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redirect_url = input;
-        self
+        self.redirect_url = input; self
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     pub fn get_redirect_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +222,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     pub fn set_feedback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feedback_url = input;
-        self
+        self.feedback_url = input; self
     }
     /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     pub fn get_feedback_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,17 +235,16 @@ impl UpdateStackInputBuilder {
     /// <p>The stack attributes to delete.</p>
     pub fn attributes_to_delete(mut self, input: crate::types::StackAttribute) -> Self {
         let mut v = self.attributes_to_delete.unwrap_or_default();
-        v.push(input);
-        self.attributes_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The stack attributes to delete.</p>
-    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>>) -> Self {
-        self.attributes_to_delete = input;
-        self
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StackAttribute>>) -> Self {
+        self.attributes_to_delete = input; self
     }
     /// <p>The stack attributes to delete.</p>
-    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>> {
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StackAttribute>> {
         &self.attributes_to_delete
     }
     /// Appends an item to `user_settings`.
@@ -257,17 +254,16 @@ impl UpdateStackInputBuilder {
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
     pub fn user_settings(mut self, input: crate::types::UserSetting) -> Self {
         let mut v = self.user_settings.unwrap_or_default();
-        v.push(input);
-        self.user_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>) -> Self {
-        self.user_settings = input;
-        self
+    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserSetting>>) -> Self {
+        self.user_settings = input; self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
+    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserSetting>> {
         &self.user_settings
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -277,8 +273,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub fn set_application_settings(mut self, input: ::std::option::Option<crate::types::ApplicationSettings>) -> Self {
-        self.application_settings = input;
-        self
+        self.application_settings = input; self
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub fn get_application_settings(&self) -> &::std::option::Option<crate::types::ApplicationSettings> {
@@ -291,17 +286,16 @@ impl UpdateStackInputBuilder {
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     pub fn access_endpoints(mut self, input: crate::types::AccessEndpoint) -> Self {
         let mut v = self.access_endpoints.unwrap_or_default();
-        v.push(input);
-        self.access_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
-        self.access_endpoints = input;
-        self
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>) -> Self {
+        self.access_endpoints = input; self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Appends an item to `embed_host_domains`.
@@ -311,17 +305,16 @@ impl UpdateStackInputBuilder {
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
     pub fn embed_host_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.embed_host_domains.unwrap_or_default();
-        v.push(input.into());
-        self.embed_host_domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.embed_host_domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.embed_host_domains = input;
-        self
+    pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.embed_host_domains = input; self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.embed_host_domains
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
@@ -331,8 +324,7 @@ impl UpdateStackInputBuilder {
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn set_streaming_experience_settings(mut self, input: ::std::option::Option<crate::types::StreamingExperienceSettings>) -> Self {
-        self.streaming_experience_settings = input;
-        self
+        self.streaming_experience_settings = input; self
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn get_streaming_experience_settings(&self) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
@@ -340,20 +332,36 @@ impl UpdateStackInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_stack::UpdateStackInput {
-            display_name: self.display_name,
-            description: self.description,
-            name: self.name,
-            storage_connectors: self.storage_connectors,
-            delete_storage_connectors: self.delete_storage_connectors,
-            redirect_url: self.redirect_url,
-            feedback_url: self.feedback_url,
-            attributes_to_delete: self.attributes_to_delete,
-            user_settings: self.user_settings,
-            application_settings: self.application_settings,
-            access_endpoints: self.access_endpoints,
-            embed_host_domains: self.embed_host_domains,
-            streaming_experience_settings: self.streaming_experience_settings,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_stack::UpdateStackInput {
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                storage_connectors: self.storage_connectors
+                ,
+                delete_storage_connectors: self.delete_storage_connectors
+                ,
+                redirect_url: self.redirect_url
+                ,
+                feedback_url: self.feedback_url
+                ,
+                attributes_to_delete: self.attributes_to_delete
+                ,
+                user_settings: self.user_settings
+                ,
+                application_settings: self.application_settings
+                ,
+                access_endpoints: self.access_endpoints
+                ,
+                embed_host_domains: self.embed_host_domains
+                ,
+                streaming_experience_settings: self.streaming_experience_settings
+                ,
+            }
+        )
     }
 }
+

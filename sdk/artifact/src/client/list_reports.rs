@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReports`](crate::operation::list_reports::builders::ListReportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_reports::builders::ListReportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_reports::builders::ListReportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_reports::builders::ListReportsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of resources to return in the paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_reports::builders::ListReportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_reports::builders::ListReportsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token to request the next page of resources.</p><br>
-    /// - On success, responds with [`ListReportsOutput`](crate::operation::list_reports::ListReportsOutput) with field(s):
+                            /// - On success, responds with [`ListReportsOutput`](crate::operation::list_reports::ListReportsOutput) with field(s):
     ///   - [`reports(Option<Vec::<ReportSummary>>)`](crate::operation::list_reports::ListReportsOutput::reports): <p>List of report resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_reports::ListReportsOutput::next_token): <p>Pagination token to request the next page of resources.</p>
-    /// - On failure, responds with [`SdkError<ListReportsError>`](crate::operation::list_reports::ListReportsError)
+                            /// - On failure, responds with [`SdkError<ListReportsError>`](crate::operation::list_reports::ListReportsError)
     pub fn list_reports(&self) -> crate::operation::list_reports::builders::ListReportsFluentBuilder {
-        crate::operation::list_reports::builders::ListReportsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_reports::builders::ListReportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

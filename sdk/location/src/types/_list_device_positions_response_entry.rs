@@ -3,43 +3,41 @@
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListDevicePositionsResponseEntry {
+pub struct ListDevicePositionsResponseEntry  {
     /// <p>The ID of the device for this position.</p>
     pub device_id: ::std::string::String,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub position: ::std::vec::Vec<f64>,
+    pub position: ::std::vec::Vec::<f64>,
     /// <p>The accuracy of the device position.</p>
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
-    pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub position_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ListDevicePositionsResponseEntry {
+impl  ListDevicePositionsResponseEntry  {
     /// <p>The ID of the device for this position.</p>
-    pub fn device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.device_id.deref()
+    pub fn device_id(&self) -> & str {
+        use std::ops::Deref; self.device_id.deref()
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn sample_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.sample_time
     }
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub fn position(&self) -> &[f64] {
-        use std::ops::Deref;
-        self.position.deref()
+    pub fn position(&self) -> & [f64] {
+        use std::ops::Deref; self.position.deref()
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn accuracy(&self) -> ::std::option::Option<&crate::types::PositionalAccuracy> {
+    pub fn accuracy(&self) -> ::std::option::Option<& crate::types::PositionalAccuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn position_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.position_properties.as_ref()
     }
 }
-impl ::std::fmt::Debug for ListDevicePositionsResponseEntry {
+impl  ::std::fmt::Debug for ListDevicePositionsResponseEntry  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicePositionsResponseEntry");
         formatter.field("device_id", &self.device_id);
@@ -63,9 +61,9 @@ impl ListDevicePositionsResponseEntry {
 pub struct ListDevicePositionsResponseEntryBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) position: ::std::option::Option<::std::vec::Vec::<f64>>,
     pub(crate) accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
-    pub(crate) position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) position_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ListDevicePositionsResponseEntryBuilder {
     /// <p>The ID of the device for this position.</p>
@@ -76,8 +74,7 @@ impl ListDevicePositionsResponseEntryBuilder {
     }
     /// <p>The ID of the device for this position.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The ID of the device for this position.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl ListDevicePositionsResponseEntryBuilder {
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.sample_time = input;
-        self
+        self.sample_time = input; self
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -105,17 +101,16 @@ impl ListDevicePositionsResponseEntryBuilder {
     /// <p>The last known device position. Empty if no positions currently stored.</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
-        v.push(input);
-        self.position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.position = input;
-        self
+    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.position = input; self
     }
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.position
     }
     /// <p>The accuracy of the device position.</p>
@@ -125,8 +120,7 @@ impl ListDevicePositionsResponseEntryBuilder {
     }
     /// <p>The accuracy of the device position.</p>
     pub fn set_accuracy(mut self, input: ::std::option::Option<crate::types::PositionalAccuracy>) -> Self {
-        self.accuracy = input;
-        self
+        self.accuracy = input; self
     }
     /// <p>The accuracy of the device position.</p>
     pub fn get_accuracy(&self) -> &::std::option::Option<crate::types::PositionalAccuracy> {
@@ -137,26 +131,18 @@ impl ListDevicePositionsResponseEntryBuilder {
     /// To override the contents of this collection use [`set_position_properties`](Self::set_position_properties).
     ///
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn position_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.position_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.position_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.position_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The properties associated with the position.</p>
-    pub fn set_position_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.position_properties = input;
-        self
+    pub fn set_position_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.position_properties = input; self
     }
     /// <p>The properties associated with the position.</p>
-    pub fn get_position_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_position_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.position_properties
     }
     /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::types::ListDevicePositionsResponseEntry).
@@ -165,28 +151,29 @@ impl ListDevicePositionsResponseEntryBuilder {
     /// - [`sample_time`](crate::types::builders::ListDevicePositionsResponseEntryBuilder::sample_time)
     /// - [`position`](crate::types::builders::ListDevicePositionsResponseEntryBuilder::position)
     pub fn build(self) -> ::std::result::Result<crate::types::ListDevicePositionsResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListDevicePositionsResponseEntry {
-            device_id: self.device_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_id",
-                    "device_id was not specified but it is required when building ListDevicePositionsResponseEntry",
-                )
-            })?,
-            sample_time: self.sample_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sample_time",
-                    "sample_time was not specified but it is required when building ListDevicePositionsResponseEntry",
-                )
-            })?,
-            position: self.position.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "position",
-                    "position was not specified but it is required when building ListDevicePositionsResponseEntry",
-                )
-            })?,
-            accuracy: self.accuracy,
-            position_properties: self.position_properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListDevicePositionsResponseEntry {
+                device_id: self.device_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_id", "device_id was not specified but it is required when building ListDevicePositionsResponseEntry")
+                    )?
+                ,
+                sample_time: self.sample_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sample_time", "sample_time was not specified but it is required when building ListDevicePositionsResponseEntry")
+                    )?
+                ,
+                position: self.position
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("position", "position was not specified but it is required when building ListDevicePositionsResponseEntry")
+                    )?
+                ,
+                accuracy: self.accuracy
+                ,
+                position_properties: self.position_properties
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListDevicePositionsResponseEntryBuilder {
@@ -200,3 +187,4 @@ impl ::std::fmt::Debug for ListDevicePositionsResponseEntryBuilder {
         formatter.finish()
     }
 }
+

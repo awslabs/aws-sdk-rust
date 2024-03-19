@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceScansOutput {
+pub struct ListResourceScansOutput  {
     /// <p>The list of scans returned.</p>
-    pub resource_scan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanSummary>>,
+    pub resource_scan_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceScanSummary>>,
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScans</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListResourceScansOutput {
+impl  ListResourceScansOutput  {
     /// <p>The list of scans returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_scan_summaries.is_none()`.
-    pub fn resource_scan_summaries(&self) -> &[crate::types::ResourceScanSummary] {
-        self.resource_scan_summaries.as_deref().unwrap_or_default()
+    pub fn resource_scan_summaries(&self) -> & [crate::types::ResourceScanSummary] {
+        self.resource_scan_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScans</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResourceScansOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResourceScansOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceScansOutput`](crate::operation::list_resource_scans::ListResourceScansOutput).
     pub fn builder() -> crate::operation::list_resource_scans::builders::ListResourceScansOutputBuilder {
@@ -37,7 +38,7 @@ impl ListResourceScansOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceScansOutputBuilder {
-    pub(crate) resource_scan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanSummary>>,
+    pub(crate) resource_scan_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceScanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListResourceScansOutputBuilder {
     /// <p>The list of scans returned.</p>
     pub fn resource_scan_summaries(mut self, input: crate::types::ResourceScanSummary) -> Self {
         let mut v = self.resource_scan_summaries.unwrap_or_default();
-        v.push(input);
-        self.resource_scan_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_scan_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of scans returned.</p>
-    pub fn set_resource_scan_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanSummary>>) -> Self {
-        self.resource_scan_summaries = input;
-        self
+    pub fn set_resource_scan_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceScanSummary>>) -> Self {
+        self.resource_scan_summaries = input; self
     }
     /// <p>The list of scans returned.</p>
-    pub fn get_resource_scan_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanSummary>> {
+    pub fn get_resource_scan_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceScanSummary>> {
         &self.resource_scan_summaries
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScans</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
@@ -69,28 +69,30 @@ impl ListResourceScansOutputBuilder {
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScans</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScans</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResourceScansOutput`](crate::operation::list_resource_scans::ListResourceScansOutput).
     pub fn build(self) -> crate::operation::list_resource_scans::ListResourceScansOutput {
         crate::operation::list_resource_scans::ListResourceScansOutput {
-            resource_scan_summaries: self.resource_scan_summaries,
-            next_token: self.next_token,
+            resource_scan_summaries: self.resource_scan_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

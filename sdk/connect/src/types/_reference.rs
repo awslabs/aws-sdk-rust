@@ -3,20 +3,19 @@
 /// <p>Well-formed data on a contact, used by agents to complete a contact request. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Reference {
+pub struct Reference  {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
     pub value: ::std::string::String,
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
     pub r#type: crate::types::ReferenceType,
 }
-impl Reference {
+impl  Reference  {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
-    pub fn r#type(&self) -> &crate::types::ReferenceType {
+    pub fn r#type(&self) -> & crate::types::ReferenceType {
         &self.r#type
     }
 }
@@ -43,8 +42,7 @@ impl ReferenceBuilder {
     }
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ReferenceBuilder {
     }
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReferenceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
@@ -70,19 +67,20 @@ impl ReferenceBuilder {
     /// - [`value`](crate::types::builders::ReferenceBuilder::value)
     /// - [`r#type`](crate::types::builders::ReferenceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Reference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Reference {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Reference",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Reference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Reference {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Reference")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Reference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

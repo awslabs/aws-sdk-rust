@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRecoveryInstances`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(DescribeRecoveryInstancesRequestFilters)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::filters) / [`set_filters(Option<DescribeRecoveryInstancesRequestFilters>)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::set_filters):<br>required: **false**<br><p>A set of filters by which to return Recovery Instances.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Recovery Instances to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Recovery Instance to retrieve.</p><br>
-    /// - On success, responds with [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput) with field(s):
+                            /// - On success, responds with [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput::next_token): <p>The token of the next Recovery Instance to retrieve.</p>
     ///   - [`items(Option<Vec::<RecoveryInstance>>)`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput::items): <p>An array of Recovery Instances.</p>
-    /// - On failure, responds with [`SdkError<DescribeRecoveryInstancesError>`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError)
+                            /// - On failure, responds with [`SdkError<DescribeRecoveryInstancesError>`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesError)
     pub fn describe_recovery_instances(&self) -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder {
-        crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

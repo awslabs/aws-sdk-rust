@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRoutingControlStateOutput {
+pub struct GetRoutingControlStateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
     pub routing_control_arn: ::std::string::String,
     /// <p>The state of the routing control.</p>
@@ -11,26 +11,25 @@ pub struct GetRoutingControlStateOutput {
     pub routing_control_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRoutingControlStateOutput {
+impl  GetRoutingControlStateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
-    pub fn routing_control_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.routing_control_arn.deref()
+    pub fn routing_control_arn(&self) -> & str {
+        use std::ops::Deref; self.routing_control_arn.deref()
     }
     /// <p>The state of the routing control.</p>
-    pub fn routing_control_state(&self) -> &crate::types::RoutingControlState {
+    pub fn routing_control_state(&self) -> & crate::types::RoutingControlState {
         &self.routing_control_state
     }
     /// <p>The routing control name.</p>
-    pub fn routing_control_name(&self) -> ::std::option::Option<&str> {
+    pub fn routing_control_name(&self) -> ::std::option::Option<& str> {
         self.routing_control_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRoutingControlStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRoutingControlStateOutput {
     /// Creates a new builder-style object to manufacture [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
     pub fn builder() -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder {
@@ -56,8 +55,7 @@ impl GetRoutingControlStateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
     pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_control_arn = input;
-        self
+        self.routing_control_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
     pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl GetRoutingControlStateOutputBuilder {
     }
     /// <p>The state of the routing control.</p>
     pub fn set_routing_control_state(mut self, input: ::std::option::Option<crate::types::RoutingControlState>) -> Self {
-        self.routing_control_state = input;
-        self
+        self.routing_control_state = input; self
     }
     /// <p>The state of the routing control.</p>
     pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
@@ -85,47 +82,43 @@ impl GetRoutingControlStateOutputBuilder {
     }
     /// <p>The routing control name.</p>
     pub fn set_routing_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_control_name = input;
-        self
+        self.routing_control_name = input; self
     }
     /// <p>The routing control name.</p>
     pub fn get_routing_control_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_control_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`routing_control_arn`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder::routing_control_arn)
     /// - [`routing_control_state`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder::routing_control_state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_routing_control_state::GetRoutingControlStateOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
-            routing_control_arn: self.routing_control_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "routing_control_arn",
-                    "routing_control_arn was not specified but it is required when building GetRoutingControlStateOutput",
-                )
-            })?,
-            routing_control_state: self.routing_control_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "routing_control_state",
-                    "routing_control_state was not specified but it is required when building GetRoutingControlStateOutput",
-                )
-            })?,
-            routing_control_name: self.routing_control_name,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_routing_control_state::GetRoutingControlStateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
+                routing_control_arn: self.routing_control_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("routing_control_arn", "routing_control_arn was not specified but it is required when building GetRoutingControlStateOutput")
+                    )?
+                ,
+                routing_control_state: self.routing_control_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("routing_control_state", "routing_control_state was not specified but it is required when building GetRoutingControlStateOutput")
+                    )?
+                ,
+                routing_control_name: self.routing_control_name
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

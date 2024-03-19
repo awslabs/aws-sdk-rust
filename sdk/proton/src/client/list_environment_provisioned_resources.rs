@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEnvironmentProvisionedResources`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`environment_name(impl Into<String>)`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::set_environment_name):<br>required: **true**<br><p>The environment name.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p><br>
-    /// - On success, responds with [`ListEnvironmentProvisionedResourcesOutput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListEnvironmentProvisionedResourcesOutput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     ///   - [`provisioned_resources(Vec::<ProvisionedResource>)`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput::provisioned_resources): <p>An array of environment provisioned resources.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentProvisionedResourcesError>`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesError)
-    pub fn list_environment_provisioned_resources(
-        &self,
-    ) -> crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder {
-        crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListEnvironmentProvisionedResourcesError>`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesError)
+    pub fn list_environment_provisioned_resources(&self) -> crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder {
+                                crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

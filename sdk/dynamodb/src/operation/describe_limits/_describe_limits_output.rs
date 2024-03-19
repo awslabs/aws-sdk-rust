@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>DescribeLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLimitsOutput {
+pub struct DescribeLimitsOutput  {
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub account_max_read_capacity_units: ::std::option::Option<i64>,
     /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
@@ -14,7 +14,7 @@ pub struct DescribeLimitsOutput {
     pub table_max_write_capacity_units: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DescribeLimitsOutput {
+impl  DescribeLimitsOutput  {
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub fn account_max_read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.account_max_read_capacity_units
@@ -33,10 +33,10 @@ impl DescribeLimitsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
     pub fn builder() -> crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder {
@@ -62,8 +62,7 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub fn set_account_max_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.account_max_read_capacity_units = input;
-        self
+        self.account_max_read_capacity_units = input; self
     }
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub fn get_account_max_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub fn set_account_max_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.account_max_write_capacity_units = input;
-        self
+        self.account_max_write_capacity_units = input; self
     }
     /// <p>The maximum total write capacity units that your account allows you to provision across all of your tables in this Region.</p>
     pub fn get_account_max_write_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
     pub fn set_table_max_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.table_max_read_capacity_units = input;
-        self
+        self.table_max_read_capacity_units = input; self
     }
     /// <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
     pub fn get_table_max_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -104,30 +101,34 @@ impl DescribeLimitsOutputBuilder {
     }
     /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
     pub fn set_table_max_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.table_max_write_capacity_units = input;
-        self
+        self.table_max_write_capacity_units = input; self
     }
     /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
     pub fn get_table_max_write_capacity_units(&self) -> &::std::option::Option<i64> {
         &self.table_max_write_capacity_units
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
     pub fn build(self) -> crate::operation::describe_limits::DescribeLimitsOutput {
         crate::operation::describe_limits::DescribeLimitsOutput {
-            account_max_read_capacity_units: self.account_max_read_capacity_units,
-            account_max_write_capacity_units: self.account_max_write_capacity_units,
-            table_max_read_capacity_units: self.table_max_read_capacity_units,
-            table_max_write_capacity_units: self.table_max_write_capacity_units,
+            account_max_read_capacity_units: self.account_max_read_capacity_units
+            ,
+            account_max_write_capacity_units: self.account_max_write_capacity_units
+            ,
+            table_max_read_capacity_units: self.table_max_read_capacity_units
+            ,
+            table_max_write_capacity_units: self.table_max_write_capacity_units
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

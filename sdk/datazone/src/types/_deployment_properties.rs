@@ -3,13 +3,13 @@
 /// <p>The deployment properties of the Amazon DataZone blueprint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentProperties {
+pub struct DeploymentProperties  {
     /// <p>The start timeout of the environment blueprint deployment.</p>
     pub start_timeout_minutes: ::std::option::Option<i32>,
     /// <p>The end timeout of the environment blueprint deployment.</p>
     pub end_timeout_minutes: ::std::option::Option<i32>,
 }
-impl DeploymentProperties {
+impl  DeploymentProperties  {
     /// <p>The start timeout of the environment blueprint deployment.</p>
     pub fn start_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.start_timeout_minutes
@@ -41,8 +41,7 @@ impl DeploymentPropertiesBuilder {
     }
     /// <p>The start timeout of the environment blueprint deployment.</p>
     pub fn set_start_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_timeout_minutes = input;
-        self
+        self.start_timeout_minutes = input; self
     }
     /// <p>The start timeout of the environment blueprint deployment.</p>
     pub fn get_start_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl DeploymentPropertiesBuilder {
     }
     /// <p>The end timeout of the environment blueprint deployment.</p>
     pub fn set_end_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_timeout_minutes = input;
-        self
+        self.end_timeout_minutes = input; self
     }
     /// <p>The end timeout of the environment blueprint deployment.</p>
     pub fn get_end_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl DeploymentPropertiesBuilder {
     /// Consumes the builder and constructs a [`DeploymentProperties`](crate::types::DeploymentProperties).
     pub fn build(self) -> crate::types::DeploymentProperties {
         crate::types::DeploymentProperties {
-            start_timeout_minutes: self.start_timeout_minutes,
-            end_timeout_minutes: self.end_timeout_minutes,
+            start_timeout_minutes: self.start_timeout_minutes
+            ,
+            end_timeout_minutes: self.end_timeout_minutes
+            ,
         }
     }
 }
+

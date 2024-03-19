@@ -3,30 +3,31 @@
 /// <p>Represents a collection of Model resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetModelsOutput {
+pub struct GetModelsOutput  {
     /// <p>The current page of elements from this collection.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::Model>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetModelsOutput {
+impl  GetModelsOutput  {
     /// <p>The current page of elements from this collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::Model] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::Model] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput).
     pub fn builder() -> crate::operation::get_models::builders::GetModelsOutputBuilder {
@@ -38,7 +39,7 @@ impl GetModelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::Model>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl GetModelsOutputBuilder {
     /// <p>The current page of elements from this collection.</p>
     pub fn items(mut self, input: crate::types::Model) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Model>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Model>>) -> Self {
+        self.items = input; self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Model>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Model>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>
@@ -70,28 +70,30 @@ impl GetModelsOutputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
         &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput).
     pub fn build(self) -> crate::operation::get_models::GetModelsOutput {
         crate::operation::get_models::GetModelsOutput {
-            items: self.items,
-            position: self.position,
+            items: self.items
+            ,
+            position: self.position
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

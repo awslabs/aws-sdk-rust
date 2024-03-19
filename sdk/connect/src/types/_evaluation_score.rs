@@ -3,7 +3,7 @@
 /// <p>Information about scores of a contact evaluation item (section or question).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationScore {
+pub struct EvaluationScore  {
     /// <p>The score percentage for an item in a contact evaluation.</p>
     pub percentage: f64,
     /// <p>The flag to mark the item as not applicable for scoring.</p>
@@ -11,7 +11,7 @@ pub struct EvaluationScore {
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub automatic_fail: bool,
 }
-impl EvaluationScore {
+impl  EvaluationScore  {
     /// <p>The score percentage for an item in a contact evaluation.</p>
     pub fn percentage(&self) -> f64 {
         self.percentage
@@ -48,8 +48,7 @@ impl EvaluationScoreBuilder {
     }
     /// <p>The score percentage for an item in a contact evaluation.</p>
     pub fn set_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.percentage = input;
-        self
+        self.percentage = input; self
     }
     /// <p>The score percentage for an item in a contact evaluation.</p>
     pub fn get_percentage(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl EvaluationScoreBuilder {
     }
     /// <p>The flag to mark the item as not applicable for scoring.</p>
     pub fn set_not_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.not_applicable = input;
-        self
+        self.not_applicable = input; self
     }
     /// <p>The flag to mark the item as not applicable for scoring.</p>
     pub fn get_not_applicable(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl EvaluationScoreBuilder {
     }
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.automatic_fail = input;
-        self
+        self.automatic_fail = input; self
     }
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,16 @@ impl EvaluationScoreBuilder {
     /// Consumes the builder and constructs a [`EvaluationScore`](crate::types::EvaluationScore).
     pub fn build(self) -> crate::types::EvaluationScore {
         crate::types::EvaluationScore {
-            percentage: self.percentage.unwrap_or_default(),
-            not_applicable: self.not_applicable.unwrap_or_default(),
-            automatic_fail: self.automatic_fail.unwrap_or_default(),
+            percentage: self.percentage
+                .unwrap_or_default()
+            ,
+            not_applicable: self.not_applicable
+                .unwrap_or_default()
+            ,
+            automatic_fail: self.automatic_fail
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

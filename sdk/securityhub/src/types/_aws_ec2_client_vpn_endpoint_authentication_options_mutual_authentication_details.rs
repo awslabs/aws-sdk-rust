@@ -3,13 +3,13 @@
 /// <p>Information about the client certificate used for authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails {
+pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails  {
     /// <p>The Amazon Resource Name (ARN) of the client certificate.</p>
     pub client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails {
+impl  AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails  {
     /// <p>The Amazon Resource Name (ARN) of the client certificate.</p>
-    pub fn client_root_certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn client_root_certificate_chain(&self) -> ::std::option::Option<& str> {
         self.client_root_certificate_chain.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsBuil
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate.</p>
     pub fn set_client_root_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_root_certificate_chain = input;
-        self
+        self.client_root_certificate_chain = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate.</p>
     pub fn get_client_root_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsBuil
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails`](crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails {
         crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails {
-            client_root_certificate_chain: self.client_root_certificate_chain,
+            client_root_certificate_chain: self.client_root_certificate_chain
+            ,
         }
     }
 }
+

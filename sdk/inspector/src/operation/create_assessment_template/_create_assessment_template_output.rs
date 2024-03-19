@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssessmentTemplateOutput {
+pub struct CreateAssessmentTemplateOutput  {
     /// <p>The ARN that specifies the assessment template that is created.</p>
     pub assessment_template_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateAssessmentTemplateOutput {
+impl  CreateAssessmentTemplateOutput  {
     /// <p>The ARN that specifies the assessment template that is created.</p>
-    pub fn assessment_template_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_template_arn.deref()
+    pub fn assessment_template_arn(&self) -> & str {
+        use std::ops::Deref; self.assessment_template_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAssessmentTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAssessmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentTemplateOutput`](crate::operation::create_assessment_template::CreateAssessmentTemplateOutput).
     pub fn builder() -> crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder {
@@ -42,39 +41,35 @@ impl CreateAssessmentTemplateOutputBuilder {
     }
     /// <p>The ARN that specifies the assessment template that is created.</p>
     pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_template_arn = input;
-        self
+        self.assessment_template_arn = input; self
     }
     /// <p>The ARN that specifies the assessment template that is created.</p>
     pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_template_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAssessmentTemplateOutput`](crate::operation::create_assessment_template::CreateAssessmentTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`assessment_template_arn`](crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder::assessment_template_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_assessment_template::CreateAssessmentTemplateOutput {
-            assessment_template_arn: self.assessment_template_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_template_arn",
-                    "assessment_template_arn was not specified but it is required when building CreateAssessmentTemplateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_assessment_template::CreateAssessmentTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_assessment_template::CreateAssessmentTemplateOutput {
+                assessment_template_arn: self.assessment_template_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_template_arn", "assessment_template_arn was not specified but it is required when building CreateAssessmentTemplateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,32 +3,34 @@
 /// <p>Specifies an Apache Iceberg data source where Iceberg tables are stored in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IcebergTarget {
+pub struct IcebergTarget  {
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclusions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub maximum_traversal_depth: ::std::option::Option<i32>,
 }
-impl IcebergTarget {
+impl  IcebergTarget  {
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
-    pub fn paths(&self) -> &[::std::string::String] {
-        self.paths.as_deref().unwrap_or_default()
+    pub fn paths(&self) -> & [::std::string::String] {
+        self.paths.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
-    pub fn exclusions(&self) -> &[::std::string::String] {
-        self.exclusions.as_deref().unwrap_or_default()
+    pub fn exclusions(&self) -> & [::std::string::String] {
+        self.exclusions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn maximum_traversal_depth(&self) -> ::std::option::Option<i32> {
@@ -46,9 +48,9 @@ impl IcebergTarget {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IcebergTargetBuilder {
-    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
-    pub(crate) exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) exclusions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) maximum_traversal_depth: ::std::option::Option<i32>,
 }
 impl IcebergTargetBuilder {
@@ -59,17 +61,16 @@ impl IcebergTargetBuilder {
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
     pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.paths.unwrap_or_default();
-        v.push(input.into());
-        self.paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
-    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.paths = input;
-        self
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.paths = input; self
     }
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
-    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.paths
     }
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
@@ -79,8 +80,7 @@ impl IcebergTargetBuilder {
     }
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +93,16 @@ impl IcebergTargetBuilder {
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub fn exclusions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusions.unwrap_or_default();
-        v.push(input.into());
-        self.exclusions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclusions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclusions = input;
-        self
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclusions = input; self
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclusions
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
@@ -113,8 +112,7 @@ impl IcebergTargetBuilder {
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn set_maximum_traversal_depth(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_traversal_depth = input;
-        self
+        self.maximum_traversal_depth = input; self
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn get_maximum_traversal_depth(&self) -> &::std::option::Option<i32> {
@@ -123,10 +121,15 @@ impl IcebergTargetBuilder {
     /// Consumes the builder and constructs a [`IcebergTarget`](crate::types::IcebergTarget).
     pub fn build(self) -> crate::types::IcebergTarget {
         crate::types::IcebergTarget {
-            paths: self.paths,
-            connection_name: self.connection_name,
-            exclusions: self.exclusions,
-            maximum_traversal_depth: self.maximum_traversal_depth,
+            paths: self.paths
+            ,
+            connection_name: self.connection_name
+            ,
+            exclusions: self.exclusions
+            ,
+            maximum_traversal_depth: self.maximum_traversal_depth
+            ,
         }
     }
 }
+

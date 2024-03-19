@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetSecurityGroupsOutput {
+pub struct SetSecurityGroupsOutput  {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
-    pub enforce_security_group_inbound_rules_on_private_link_traffic:
-        ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
+    pub enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
     _request_id: Option<String>,
 }
-impl SetSecurityGroupsOutput {
+impl  SetSecurityGroupsOutput  {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
-    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
+    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(&self) -> ::std::option::Option<& crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
         self.enforce_security_group_inbound_rules_on_private_link_traffic.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SetSecurityGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`SetSecurityGroupsOutput`](crate::operation::set_security_groups::SetSecurityGroupsOutput).
     pub fn builder() -> crate::operation::set_security_groups::builders::SetSecurityGroupsOutputBuilder {
@@ -40,9 +38,8 @@ impl SetSecurityGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetSecurityGroupsOutputBuilder {
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic:
-        ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
     _request_id: Option<String>,
 }
 impl SetSecurityGroupsOutputBuilder {
@@ -53,56 +50,49 @@ impl SetSecurityGroupsOutputBuilder {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
-    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
-        mut self,
-        input: crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum,
-    ) -> Self {
+    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(mut self, input: crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum) -> Self {
         self.enforce_security_group_inbound_rules_on_private_link_traffic = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
-    pub fn set_enforce_security_group_inbound_rules_on_private_link_traffic(
-        mut self,
-        input: ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
-    ) -> Self {
-        self.enforce_security_group_inbound_rules_on_private_link_traffic = input;
-        self
+    pub fn set_enforce_security_group_inbound_rules_on_private_link_traffic(mut self, input: ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>) -> Self {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic = input; self
     }
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
-    pub fn get_enforce_security_group_inbound_rules_on_private_link_traffic(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
+    pub fn get_enforce_security_group_inbound_rules_on_private_link_traffic(&self) -> &::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
         &self.enforce_security_group_inbound_rules_on_private_link_traffic
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetSecurityGroupsOutput`](crate::operation::set_security_groups::SetSecurityGroupsOutput).
     pub fn build(self) -> crate::operation::set_security_groups::SetSecurityGroupsOutput {
         crate::operation::set_security_groups::SetSecurityGroupsOutput {
-            security_group_ids: self.security_group_ids,
-            enforce_security_group_inbound_rules_on_private_link_traffic: self.enforce_security_group_inbound_rules_on_private_link_traffic,
+            security_group_ids: self.security_group_ids
+            ,
+            enforce_security_group_inbound_rules_on_private_link_traffic: self.enforce_security_group_inbound_rules_on_private_link_traffic
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

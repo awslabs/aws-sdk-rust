@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDevicesInput {
+pub struct UpdateDevicesInput  {
     /// <p>The name of the fleet the devices belong to.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
+    pub devices: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>,
 }
-impl UpdateDevicesInput {
+impl  UpdateDevicesInput  {
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
-    pub fn devices(&self) -> &[crate::types::Device] {
-        self.devices.as_deref().unwrap_or_default()
+    pub fn devices(&self) -> & [crate::types::Device] {
+        self.devices.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateDevicesInput {
@@ -32,7 +33,7 @@ impl UpdateDevicesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
-    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>,
 }
 impl UpdateDevicesInputBuilder {
     /// <p>The name of the fleet the devices belong to.</p>
@@ -43,8 +44,7 @@ impl UpdateDevicesInputBuilder {
     }
     /// <p>The name of the fleet the devices belong to.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet the devices belong to.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl UpdateDevicesInputBuilder {
     /// <p>List of devices to register with Edge Manager agent.</p>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>) -> Self {
+        self.devices = input; self
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Device>> {
         &self.devices
     }
     /// Consumes the builder and constructs a [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_devices::UpdateDevicesInput {
-            device_fleet_name: self.device_fleet_name,
-            devices: self.devices,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_devices::UpdateDevicesInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+                devices: self.devices
+                ,
+            }
+        )
     }
 }
+

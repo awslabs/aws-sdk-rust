@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetFpgaImageAttributeInput {
+pub struct ResetFpgaImageAttributeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the AFI.</p>
@@ -10,17 +10,17 @@ pub struct ResetFpgaImageAttributeInput {
     /// <p>The attribute.</p>
     pub attribute: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>,
 }
-impl ResetFpgaImageAttributeInput {
+impl  ResetFpgaImageAttributeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_id.as_deref()
     }
     /// <p>The attribute.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::ResetFpgaImageAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::ResetFpgaImageAttributeName> {
         self.attribute.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ResetFpgaImageAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl ResetFpgaImageAttributeInputBuilder {
     }
     /// <p>The ID of the AFI.</p>
     pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fpga_image_id = input;
-        self
+        self.fpga_image_id = input; self
     }
     /// <p>The ID of the AFI.</p>
     pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ResetFpgaImageAttributeInputBuilder {
     }
     /// <p>The attribute.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResetFpgaImageAttributeName> {
         &self.attribute
     }
     /// Consumes the builder and constructs a [`ResetFpgaImageAttributeInput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput {
-            dry_run: self.dry_run,
-            fpga_image_id: self.fpga_image_id,
-            attribute: self.attribute,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput {
+                dry_run: self.dry_run
+                ,
+                fpga_image_id: self.fpga_image_id
+                ,
+                attribute: self.attribute
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>This object continuously inspects your account's cost data for anomalies. It's based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyMonitor {
+pub struct AnomalyMonitor  {
     /// <p>The Amazon Resource Name (ARN) value.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitor.</p>
@@ -75,34 +75,33 @@ pub struct AnomalyMonitor {
     /// <p>The value for evaluated dimensions.</p>
     pub dimensional_value_count: i32,
 }
-impl AnomalyMonitor {
+impl  AnomalyMonitor  {
     /// <p>The Amazon Resource Name (ARN) value.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> & str {
+        use std::ops::Deref; self.monitor_name.deref()
     }
     /// <p>The date when the monitor was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The date when the monitor was last updated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& str> {
         self.last_updated_date.as_deref()
     }
     /// <p>The date when the monitor last evaluated for anomalies.</p>
-    pub fn last_evaluated_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_evaluated_date(&self) -> ::std::option::Option<& str> {
         self.last_evaluated_date.as_deref()
     }
     /// <p>The possible type values.</p>
-    pub fn monitor_type(&self) -> &crate::types::MonitorType {
+    pub fn monitor_type(&self) -> & crate::types::MonitorType {
         &self.monitor_type
     }
     /// <p>The dimensions to evaluate.</p>
-    pub fn monitor_dimension(&self) -> ::std::option::Option<&crate::types::MonitorDimension> {
+    pub fn monitor_dimension(&self) -> ::std::option::Option<& crate::types::MonitorDimension> {
         self.monitor_dimension.as_ref()
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
@@ -158,7 +157,7 @@ impl AnomalyMonitor {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn monitor_specification(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn monitor_specification(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.monitor_specification.as_ref()
     }
     /// <p>The value for evaluated dimensions.</p>
@@ -195,8 +194,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) value.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) value.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +208,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +221,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The date when the monitor was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date when the monitor was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +234,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The date when the monitor was last updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date when the monitor was last updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +247,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The date when the monitor last evaluated for anomalies.</p>
     pub fn set_last_evaluated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_evaluated_date = input;
-        self
+        self.last_evaluated_date = input; self
     }
     /// <p>The date when the monitor last evaluated for anomalies.</p>
     pub fn get_last_evaluated_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,8 +261,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The possible type values.</p>
     pub fn set_monitor_type(mut self, input: ::std::option::Option<crate::types::MonitorType>) -> Self {
-        self.monitor_type = input;
-        self
+        self.monitor_type = input; self
     }
     /// <p>The possible type values.</p>
     pub fn get_monitor_type(&self) -> &::std::option::Option<crate::types::MonitorType> {
@@ -281,8 +274,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The dimensions to evaluate.</p>
     pub fn set_monitor_dimension(mut self, input: ::std::option::Option<crate::types::MonitorDimension>) -> Self {
-        self.monitor_dimension = input;
-        self
+        self.monitor_dimension = input; self
     }
     /// <p>The dimensions to evaluate.</p>
     pub fn get_monitor_dimension(&self) -> &::std::option::Option<crate::types::MonitorDimension> {
@@ -399,8 +391,7 @@ impl AnomalyMonitorBuilder {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub fn set_monitor_specification(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.monitor_specification = input;
-        self
+        self.monitor_specification = input; self
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -465,8 +456,7 @@ impl AnomalyMonitorBuilder {
     }
     /// <p>The value for evaluated dimensions.</p>
     pub fn set_dimensional_value_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dimensional_value_count = input;
-        self
+        self.dimensional_value_count = input; self
     }
     /// <p>The value for evaluated dimensions.</p>
     pub fn get_dimensional_value_count(&self) -> &::std::option::Option<i32> {
@@ -477,26 +467,35 @@ impl AnomalyMonitorBuilder {
     /// - [`monitor_name`](crate::types::builders::AnomalyMonitorBuilder::monitor_name)
     /// - [`monitor_type`](crate::types::builders::AnomalyMonitorBuilder::monitor_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AnomalyMonitor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnomalyMonitor {
-            monitor_arn: self.monitor_arn,
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building AnomalyMonitor",
-                )
-            })?,
-            creation_date: self.creation_date,
-            last_updated_date: self.last_updated_date,
-            last_evaluated_date: self.last_evaluated_date,
-            monitor_type: self.monitor_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_type",
-                    "monitor_type was not specified but it is required when building AnomalyMonitor",
-                )
-            })?,
-            monitor_dimension: self.monitor_dimension,
-            monitor_specification: self.monitor_specification,
-            dimensional_value_count: self.dimensional_value_count.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnomalyMonitor {
+                monitor_arn: self.monitor_arn
+                ,
+                monitor_name: self.monitor_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_name", "monitor_name was not specified but it is required when building AnomalyMonitor")
+                    )?
+                ,
+                creation_date: self.creation_date
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                last_evaluated_date: self.last_evaluated_date
+                ,
+                monitor_type: self.monitor_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_type", "monitor_type was not specified but it is required when building AnomalyMonitor")
+                    )?
+                ,
+                monitor_dimension: self.monitor_dimension
+                ,
+                monitor_specification: self.monitor_specification
+                ,
+                dimensional_value_count: self.dimensional_value_count
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

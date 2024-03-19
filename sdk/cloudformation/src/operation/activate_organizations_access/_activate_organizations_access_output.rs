@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateOrganizationsAccessOutput {
+pub struct ActivateOrganizationsAccessOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for ActivateOrganizationsAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ActivateOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`ActivateOrganizationsAccessOutput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput).
     pub fn builder() -> crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessOutputBuilder {
@@ -25,14 +25,14 @@ pub struct ActivateOrganizationsAccessOutputBuilder {
 }
 impl ActivateOrganizationsAccessOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ActivateOrganizationsAccessOutput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput).
     pub fn build(self) -> crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput {
         crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput {
@@ -40,3 +40,4 @@ impl ActivateOrganizationsAccessOutputBuilder {
         }
     }
 }
+

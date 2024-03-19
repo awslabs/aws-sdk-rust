@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssessmentTargetInput {
+pub struct CreateAssessmentTargetInput  {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
     pub assessment_target_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     pub resource_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateAssessmentTargetInput {
+impl  CreateAssessmentTargetInput  {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-    pub fn assessment_target_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_target_name(&self) -> ::std::option::Option<& str> {
         self.assessment_target_name.as_deref()
     }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
-    pub fn resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateAssessmentTargetInputBuilder {
     }
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
     pub fn set_assessment_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_target_name = input;
-        self
+        self.assessment_target_name = input; self
     }
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
     pub fn get_assessment_target_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl CreateAssessmentTargetInputBuilder {
     }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_arn = input;
-        self
+        self.resource_group_arn = input; self
     }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_arn
     }
     /// Consumes the builder and constructs a [`CreateAssessmentTargetInput`](crate::operation::create_assessment_target::CreateAssessmentTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_assessment_target::CreateAssessmentTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_assessment_target::CreateAssessmentTargetInput {
-            assessment_target_name: self.assessment_target_name,
-            resource_group_arn: self.resource_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_assessment_target::CreateAssessmentTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_assessment_target::CreateAssessmentTargetInput {
+                assessment_target_name: self.assessment_target_name
+                ,
+                resource_group_arn: self.resource_group_arn
+                ,
+            }
+        )
     }
 }
+

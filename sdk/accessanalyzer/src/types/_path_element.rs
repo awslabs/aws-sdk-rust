@@ -26,11 +26,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Index`](crate::types::PathElement::Index), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_index(&self) -> ::std::result::Result<&i32, &Self> {
-        if let PathElement::Index(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PathElement::Index(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Index`](crate::types::PathElement::Index).
     pub fn is_index(&self) -> bool {
@@ -39,11 +35,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Key`](crate::types::PathElement::Key), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_key(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let PathElement::Key(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PathElement::Key(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Key`](crate::types::PathElement::Key).
     pub fn is_key(&self) -> bool {
@@ -52,11 +44,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Substring`](crate::types::PathElement::Substring), extracting the inner [`Substring`](crate::types::Substring).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_substring(&self) -> ::std::result::Result<&crate::types::Substring, &Self> {
-        if let PathElement::Substring(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PathElement::Substring(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Substring`](crate::types::PathElement::Substring).
     pub fn is_substring(&self) -> bool {
@@ -65,11 +53,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Value`](crate::types::PathElement::Value), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let PathElement::Value(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PathElement::Value(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Value`](crate::types::PathElement::Value).
     pub fn is_value(&self) -> bool {
@@ -80,3 +64,4 @@ impl PathElement {
         matches!(self, Self::Unknown)
     }
 }
+

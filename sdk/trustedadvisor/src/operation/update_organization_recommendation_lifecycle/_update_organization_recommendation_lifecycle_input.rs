@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateOrganizationRecommendationLifecycleInput {
+pub struct UpdateOrganizationRecommendationLifecycleInput  {
     /// <p>The new lifecycle stage</p>
     pub lifecycle_stage: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStage>,
     /// <p>Reason for the lifecycle stage change</p>
@@ -12,25 +12,25 @@ pub struct UpdateOrganizationRecommendationLifecycleInput {
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
     pub organization_recommendation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl UpdateOrganizationRecommendationLifecycleInput {
+impl  UpdateOrganizationRecommendationLifecycleInput  {
     /// <p>The new lifecycle stage</p>
-    pub fn lifecycle_stage(&self) -> ::std::option::Option<&crate::types::UpdateRecommendationLifecycleStage> {
+    pub fn lifecycle_stage(&self) -> ::std::option::Option<& crate::types::UpdateRecommendationLifecycleStage> {
         self.lifecycle_stage.as_ref()
     }
     /// <p>Reason for the lifecycle stage change</p>
-    pub fn update_reason(&self) -> ::std::option::Option<&str> {
+    pub fn update_reason(&self) -> ::std::option::Option<& str> {
         self.update_reason.as_deref()
     }
     /// <p>Reason code for the lifecycle state change</p>
-    pub fn update_reason_code(&self) -> ::std::option::Option<&crate::types::UpdateRecommendationLifecycleStageReasonCode> {
+    pub fn update_reason_code(&self) -> ::std::option::Option<& crate::types::UpdateRecommendationLifecycleStageReasonCode> {
         self.update_reason_code.as_ref()
     }
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
-    pub fn organization_recommendation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn organization_recommendation_identifier(&self) -> ::std::option::Option<& str> {
         self.organization_recommendation_identifier.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateOrganizationRecommendationLifecycleInput {
+impl  ::std::fmt::Debug for UpdateOrganizationRecommendationLifecycleInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOrganizationRecommendationLifecycleInput");
         formatter.field("lifecycle_stage", &self.lifecycle_stage);
@@ -42,8 +42,7 @@ impl ::std::fmt::Debug for UpdateOrganizationRecommendationLifecycleInput {
 }
 impl UpdateOrganizationRecommendationLifecycleInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationRecommendationLifecycleInput`](crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleInput).
-    pub fn builder() -> crate::operation::update_organization_recommendation_lifecycle::builders::UpdateOrganizationRecommendationLifecycleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_organization_recommendation_lifecycle::builders::UpdateOrganizationRecommendationLifecycleInputBuilder {
         crate::operation::update_organization_recommendation_lifecycle::builders::UpdateOrganizationRecommendationLifecycleInputBuilder::default()
     }
 }
@@ -66,8 +65,7 @@ impl UpdateOrganizationRecommendationLifecycleInputBuilder {
     }
     /// <p>The new lifecycle stage</p>
     pub fn set_lifecycle_stage(mut self, input: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStage>) -> Self {
-        self.lifecycle_stage = input;
-        self
+        self.lifecycle_stage = input; self
     }
     /// <p>The new lifecycle stage</p>
     pub fn get_lifecycle_stage(&self) -> &::std::option::Option<crate::types::UpdateRecommendationLifecycleStage> {
@@ -80,8 +78,7 @@ impl UpdateOrganizationRecommendationLifecycleInputBuilder {
     }
     /// <p>Reason for the lifecycle stage change</p>
     pub fn set_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_reason = input;
-        self
+        self.update_reason = input; self
     }
     /// <p>Reason for the lifecycle stage change</p>
     pub fn get_update_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl UpdateOrganizationRecommendationLifecycleInputBuilder {
     }
     /// <p>Reason code for the lifecycle state change</p>
     pub fn set_update_reason_code(mut self, input: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStageReasonCode>) -> Self {
-        self.update_reason_code = input;
-        self
+        self.update_reason_code = input; self
     }
     /// <p>Reason code for the lifecycle state change</p>
     pub fn get_update_reason_code(&self) -> &::std::option::Option<crate::types::UpdateRecommendationLifecycleStageReasonCode> {
@@ -109,27 +105,25 @@ impl UpdateOrganizationRecommendationLifecycleInputBuilder {
     }
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
     pub fn set_organization_recommendation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_recommendation_identifier = input;
-        self
+        self.organization_recommendation_identifier = input; self
     }
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
     pub fn get_organization_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_recommendation_identifier
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationRecommendationLifecycleInput`](crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleInput {
-                lifecycle_stage: self.lifecycle_stage,
-                update_reason: self.update_reason,
-                update_reason_code: self.update_reason_code,
-                organization_recommendation_identifier: self.organization_recommendation_identifier,
-            },
+                lifecycle_stage: self.lifecycle_stage
+                ,
+                update_reason: self.update_reason
+                ,
+                update_reason_code: self.update_reason_code
+                ,
+                organization_recommendation_identifier: self.organization_recommendation_identifier
+                ,
+            }
         )
     }
 }
@@ -143,3 +137,4 @@ impl ::std::fmt::Debug for UpdateOrganizationRecommendationLifecycleInputBuilder
         formatter.finish()
     }
 }
+

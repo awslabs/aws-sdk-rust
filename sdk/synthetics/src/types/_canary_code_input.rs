@@ -3,7 +3,7 @@
 /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanaryCodeInput {
+pub struct CanaryCodeInput  {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
@@ -16,28 +16,27 @@ pub struct CanaryCodeInput {
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
     pub handler: ::std::string::String,
 }
-impl CanaryCodeInput {
+impl  CanaryCodeInput  {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The S3 version ID of your script.</p>
-    pub fn s3_version(&self) -> ::std::option::Option<&str> {
+    pub fn s3_version(&self) -> ::std::option::Option<& str> {
         self.s3_version.as_deref()
     }
     /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
-    pub fn zip_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
-    pub fn handler(&self) -> &str {
-        use std::ops::Deref;
-        self.handler.deref()
+    pub fn handler(&self) -> & str {
+        use std::ops::Deref; self.handler.deref()
     }
 }
 impl CanaryCodeInput {
@@ -65,8 +64,7 @@ impl CanaryCodeInputBuilder {
     }
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl CanaryCodeInputBuilder {
     }
     /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl CanaryCodeInputBuilder {
     }
     /// <p>The S3 version ID of your script.</p>
     pub fn set_s3_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_version = input;
-        self
+        self.s3_version = input; self
     }
     /// <p>The S3 version ID of your script.</p>
     pub fn get_s3_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl CanaryCodeInputBuilder {
     /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
     pub fn set_zip_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.zip_file = input;
-        self
+        self.zip_file = input; self
     }
     /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
@@ -125,8 +120,7 @@ impl CanaryCodeInputBuilder {
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
     pub fn set_handler(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.handler = input;
-        self
+        self.handler = input; self
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
     pub fn get_handler(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +130,23 @@ impl CanaryCodeInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`handler`](crate::types::builders::CanaryCodeInputBuilder::handler)
     pub fn build(self) -> ::std::result::Result<crate::types::CanaryCodeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CanaryCodeInput {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            s3_version: self.s3_version,
-            zip_file: self.zip_file,
-            handler: self.handler.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "handler",
-                    "handler was not specified but it is required when building CanaryCodeInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CanaryCodeInput {
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                s3_version: self.s3_version
+                ,
+                zip_file: self.zip_file
+                ,
+                handler: self.handler
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("handler", "handler was not specified but it is required when building CanaryCodeInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

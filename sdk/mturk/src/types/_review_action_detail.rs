@@ -3,7 +3,7 @@
 /// <p>Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewActionDetail {
+pub struct ReviewActionDetail  {
     /// <p>The unique identifier for the action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary.</p>
@@ -21,37 +21,37 @@ pub struct ReviewActionDetail {
     /// <p>Present only when the Results have a FAILED Status.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
 }
-impl ReviewActionDetail {
+impl  ReviewActionDetail  {
     /// <p>The unique identifier for the action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The specific HITId or AssignmentID targeted by the action.</p>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The type of object in TargetId.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&str> {
+    pub fn target_type(&self) -> ::std::option::Option<& str> {
         self.target_type.as_deref()
     }
     /// <p>The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReviewActionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReviewActionStatus> {
         self.status.as_ref()
     }
     /// <p>The date when the action was completed.</p>
-    pub fn complete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn complete_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.complete_time.as_ref()
     }
     /// <p>A description of the outcome of the review.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>Present only when the Results have a FAILED Status.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>The unique identifier for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The unique identifier for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>The specific HITId or AssignmentID targeted by the action.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>The specific HITId or AssignmentID targeted by the action.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>The type of object in TargetId.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The type of object in TargetId.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewActionStatus> {
@@ -153,8 +148,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>The date when the action was completed.</p>
     pub fn set_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.complete_time = input;
-        self
+        self.complete_time = input; self
     }
     /// <p>The date when the action was completed.</p>
     pub fn get_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +161,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>A description of the outcome of the review.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>A description of the outcome of the review.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl ReviewActionDetailBuilder {
     }
     /// <p>Present only when the Results have a FAILED Status.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Present only when the Results have a FAILED Status.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl ReviewActionDetailBuilder {
     /// Consumes the builder and constructs a [`ReviewActionDetail`](crate::types::ReviewActionDetail).
     pub fn build(self) -> crate::types::ReviewActionDetail {
         crate::types::ReviewActionDetail {
-            action_id: self.action_id,
-            action_name: self.action_name,
-            target_id: self.target_id,
-            target_type: self.target_type,
-            status: self.status,
-            complete_time: self.complete_time,
-            result: self.result,
-            error_code: self.error_code,
+            action_id: self.action_id
+            ,
+            action_name: self.action_name
+            ,
+            target_id: self.target_id
+            ,
+            target_type: self.target_type
+            ,
+            status: self.status
+            ,
+            complete_time: self.complete_time
+            ,
+            result: self.result
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

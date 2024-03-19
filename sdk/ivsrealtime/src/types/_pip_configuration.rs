@@ -3,7 +3,7 @@
 /// <p>Configuration information specific to Picture-in-Picture (PiP) layout, for <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/server-side-composition.html">server-side composition</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipConfiguration {
+pub struct PipConfiguration  {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
     pub featured_participant_attribute: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
@@ -25,9 +25,9 @@ pub struct PipConfiguration {
     /// <p>Specifies the height of the PiP window in pixels. When this is not set explicitly, <code>pipHeight</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
     pub pip_height: ::std::option::Option<i32>,
 }
-impl PipConfiguration {
+impl  PipConfiguration  {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
-    pub fn featured_participant_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn featured_participant_attribute(&self) -> ::std::option::Option<& str> {
         self.featured_participant_attribute.as_deref()
     }
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
@@ -35,7 +35,7 @@ impl PipConfiguration {
         self.omit_stopped_video
     }
     /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
-    pub fn video_fill_mode(&self) -> ::std::option::Option<&crate::types::VideoFillMode> {
+    pub fn video_fill_mode(&self) -> ::std::option::Option<& crate::types::VideoFillMode> {
         self.video_fill_mode.as_ref()
     }
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>0</code>.</p>
@@ -43,11 +43,11 @@ impl PipConfiguration {
         self.grid_gap
     }
     /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
-    pub fn pip_participant_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn pip_participant_attribute(&self) -> ::std::option::Option<& str> {
         self.pip_participant_attribute.as_deref()
     }
     /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
-    pub fn pip_behavior(&self) -> ::std::option::Option<&crate::types::PipBehavior> {
+    pub fn pip_behavior(&self) -> ::std::option::Option<& crate::types::PipBehavior> {
         self.pip_behavior.as_ref()
     }
     /// <p>Sets the PiP window’s offset position in pixels from the closest edges determined by <code>PipPosition</code>. Default: <code>0</code>.</p>
@@ -55,7 +55,7 @@ impl PipConfiguration {
         self.pip_offset
     }
     /// <p>Determines the corner position of the PiP window. Default: <code>BOTTOM_RIGHT</code>.</p>
-    pub fn pip_position(&self) -> ::std::option::Option<&crate::types::PipPosition> {
+    pub fn pip_position(&self) -> ::std::option::Option<& crate::types::PipPosition> {
         self.pip_position.as_ref()
     }
     /// <p>Specifies the width of the PiP window in pixels. When this is not set explicitly, <code>pipWidth</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
@@ -97,8 +97,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
     pub fn set_featured_participant_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.featured_participant_attribute = input;
-        self
+        self.featured_participant_attribute = input; self
     }
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
     pub fn get_featured_participant_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
     pub fn set_omit_stopped_video(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.omit_stopped_video = input;
-        self
+        self.omit_stopped_video = input; self
     }
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
     pub fn get_omit_stopped_video(&self) -> &::std::option::Option<bool> {
@@ -125,8 +123,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
     pub fn set_video_fill_mode(mut self, input: ::std::option::Option<crate::types::VideoFillMode>) -> Self {
-        self.video_fill_mode = input;
-        self
+        self.video_fill_mode = input; self
     }
     /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
     pub fn get_video_fill_mode(&self) -> &::std::option::Option<crate::types::VideoFillMode> {
@@ -139,8 +136,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>0</code>.</p>
     pub fn set_grid_gap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.grid_gap = input;
-        self
+        self.grid_gap = input; self
     }
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>0</code>.</p>
     pub fn get_grid_gap(&self) -> &::std::option::Option<i32> {
@@ -153,8 +149,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
     pub fn set_pip_participant_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pip_participant_attribute = input;
-        self
+        self.pip_participant_attribute = input; self
     }
     /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
     pub fn get_pip_participant_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
     pub fn set_pip_behavior(mut self, input: ::std::option::Option<crate::types::PipBehavior>) -> Self {
-        self.pip_behavior = input;
-        self
+        self.pip_behavior = input; self
     }
     /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
     pub fn get_pip_behavior(&self) -> &::std::option::Option<crate::types::PipBehavior> {
@@ -181,8 +175,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Sets the PiP window’s offset position in pixels from the closest edges determined by <code>PipPosition</code>. Default: <code>0</code>.</p>
     pub fn set_pip_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pip_offset = input;
-        self
+        self.pip_offset = input; self
     }
     /// <p>Sets the PiP window’s offset position in pixels from the closest edges determined by <code>PipPosition</code>. Default: <code>0</code>.</p>
     pub fn get_pip_offset(&self) -> &::std::option::Option<i32> {
@@ -195,8 +188,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Determines the corner position of the PiP window. Default: <code>BOTTOM_RIGHT</code>.</p>
     pub fn set_pip_position(mut self, input: ::std::option::Option<crate::types::PipPosition>) -> Self {
-        self.pip_position = input;
-        self
+        self.pip_position = input; self
     }
     /// <p>Determines the corner position of the PiP window. Default: <code>BOTTOM_RIGHT</code>.</p>
     pub fn get_pip_position(&self) -> &::std::option::Option<crate::types::PipPosition> {
@@ -209,8 +201,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Specifies the width of the PiP window in pixels. When this is not set explicitly, <code>pipWidth</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
     pub fn set_pip_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pip_width = input;
-        self
+        self.pip_width = input; self
     }
     /// <p>Specifies the width of the PiP window in pixels. When this is not set explicitly, <code>pipWidth</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
     pub fn get_pip_width(&self) -> &::std::option::Option<i32> {
@@ -223,8 +214,7 @@ impl PipConfigurationBuilder {
     }
     /// <p>Specifies the height of the PiP window in pixels. When this is not set explicitly, <code>pipHeight</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
     pub fn set_pip_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pip_height = input;
-        self
+        self.pip_height = input; self
     }
     /// <p>Specifies the height of the PiP window in pixels. When this is not set explicitly, <code>pipHeight</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
     pub fn get_pip_height(&self) -> &::std::option::Option<i32> {
@@ -233,16 +223,30 @@ impl PipConfigurationBuilder {
     /// Consumes the builder and constructs a [`PipConfiguration`](crate::types::PipConfiguration).
     pub fn build(self) -> crate::types::PipConfiguration {
         crate::types::PipConfiguration {
-            featured_participant_attribute: self.featured_participant_attribute,
-            omit_stopped_video: self.omit_stopped_video.unwrap_or_default(),
-            video_fill_mode: self.video_fill_mode,
-            grid_gap: self.grid_gap.unwrap_or_default(),
-            pip_participant_attribute: self.pip_participant_attribute,
-            pip_behavior: self.pip_behavior,
-            pip_offset: self.pip_offset.unwrap_or_default(),
-            pip_position: self.pip_position,
-            pip_width: self.pip_width,
-            pip_height: self.pip_height,
+            featured_participant_attribute: self.featured_participant_attribute
+            ,
+            omit_stopped_video: self.omit_stopped_video
+                .unwrap_or_default()
+            ,
+            video_fill_mode: self.video_fill_mode
+            ,
+            grid_gap: self.grid_gap
+                .unwrap_or_default()
+            ,
+            pip_participant_attribute: self.pip_participant_attribute
+            ,
+            pip_behavior: self.pip_behavior
+            ,
+            pip_offset: self.pip_offset
+                .unwrap_or_default()
+            ,
+            pip_position: self.pip_position
+            ,
+            pip_width: self.pip_width
+            ,
+            pip_height: self.pip_height
+            ,
         }
     }
 }
+

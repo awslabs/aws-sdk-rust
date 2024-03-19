@@ -4,11 +4,11 @@
 /// <p>For more information about publishing S3 Storage Lens metrics to CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_view_metrics_cloudwatch.html">Monitor S3 Storage Lens metrics in CloudWatch</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchMetrics {
+pub struct CloudWatchMetrics  {
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
     pub is_enabled: bool,
 }
-impl CloudWatchMetrics {
+impl  CloudWatchMetrics  {
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
@@ -36,8 +36,7 @@ impl CloudWatchMetricsBuilder {
     }
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,7 +45,10 @@ impl CloudWatchMetricsBuilder {
     /// Consumes the builder and constructs a [`CloudWatchMetrics`](crate::types::CloudWatchMetrics).
     pub fn build(self) -> crate::types::CloudWatchMetrics {
         crate::types::CloudWatchMetrics {
-            is_enabled: self.is_enabled.unwrap_or_default(),
+            is_enabled: self.is_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

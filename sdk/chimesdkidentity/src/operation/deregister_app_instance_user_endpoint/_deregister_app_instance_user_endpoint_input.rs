@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterAppInstanceUserEndpointInput {
+pub struct DeregisterAppInstanceUserEndpointInput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterAppInstanceUserEndpointInput {
+impl  DeregisterAppInstanceUserEndpointInput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeregisterAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeregisterAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }
     /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointInput`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointInput {
-                app_instance_user_arn: self.app_instance_user_arn,
-                endpoint_id: self.endpoint_id,
-            },
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                endpoint_id: self.endpoint_id
+                ,
+            }
         )
     }
 }
+

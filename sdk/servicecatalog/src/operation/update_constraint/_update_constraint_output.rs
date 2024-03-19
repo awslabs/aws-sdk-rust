@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConstraintOutput {
+pub struct UpdateConstraintOutput  {
     /// <p>Information about the constraint.</p>
     pub constraint_detail: ::std::option::Option<crate::types::ConstraintDetail>,
     /// <p>The constraint parameters.</p>
@@ -11,25 +11,25 @@ pub struct UpdateConstraintOutput {
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
-impl UpdateConstraintOutput {
+impl  UpdateConstraintOutput  {
     /// <p>Information about the constraint.</p>
-    pub fn constraint_detail(&self) -> ::std::option::Option<&crate::types::ConstraintDetail> {
+    pub fn constraint_detail(&self) -> ::std::option::Option<& crate::types::ConstraintDetail> {
         self.constraint_detail.as_ref()
     }
     /// <p>The constraint parameters.</p>
-    pub fn constraint_parameters(&self) -> ::std::option::Option<&str> {
+    pub fn constraint_parameters(&self) -> ::std::option::Option<& str> {
         self.constraint_parameters.as_deref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateConstraintOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateConstraintOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConstraintOutput`](crate::operation::update_constraint::UpdateConstraintOutput).
     pub fn builder() -> crate::operation::update_constraint::builders::UpdateConstraintOutputBuilder {
@@ -54,8 +54,7 @@ impl UpdateConstraintOutputBuilder {
     }
     /// <p>Information about the constraint.</p>
     pub fn set_constraint_detail(mut self, input: ::std::option::Option<crate::types::ConstraintDetail>) -> Self {
-        self.constraint_detail = input;
-        self
+        self.constraint_detail = input; self
     }
     /// <p>Information about the constraint.</p>
     pub fn get_constraint_detail(&self) -> &::std::option::Option<crate::types::ConstraintDetail> {
@@ -68,8 +67,7 @@ impl UpdateConstraintOutputBuilder {
     }
     /// <p>The constraint parameters.</p>
     pub fn set_constraint_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.constraint_parameters = input;
-        self
+        self.constraint_parameters = input; self
     }
     /// <p>The constraint parameters.</p>
     pub fn get_constraint_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl UpdateConstraintOutputBuilder {
     }
     /// <p>The status of the current request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the current request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateConstraintOutput`](crate::operation::update_constraint::UpdateConstraintOutput).
     pub fn build(self) -> crate::operation::update_constraint::UpdateConstraintOutput {
         crate::operation::update_constraint::UpdateConstraintOutput {
-            constraint_detail: self.constraint_detail,
-            constraint_parameters: self.constraint_parameters,
-            status: self.status,
+            constraint_detail: self.constraint_detail
+            ,
+            constraint_parameters: self.constraint_parameters
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

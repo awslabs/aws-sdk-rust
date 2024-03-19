@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPullRequestOverrideStateOutput {
+pub struct GetPullRequestOverrideStateOutput  {
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
     pub overridden: bool,
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
     pub overrider: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPullRequestOverrideStateOutput {
+impl  GetPullRequestOverrideStateOutput  {
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
     pub fn overridden(&self) -> bool {
         self.overridden
     }
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
-    pub fn overrider(&self) -> ::std::option::Option<&str> {
+    pub fn overrider(&self) -> ::std::option::Option<& str> {
         self.overrider.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPullRequestOverrideStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPullRequestOverrideStateOutput {
     /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateOutput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput).
     pub fn builder() -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateOutputBuilder {
@@ -47,8 +47,7 @@ impl GetPullRequestOverrideStateOutputBuilder {
     }
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
     pub fn set_overridden(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.overridden = input;
-        self
+        self.overridden = input; self
     }
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
     pub fn get_overridden(&self) -> &::std::option::Option<bool> {
@@ -61,28 +60,31 @@ impl GetPullRequestOverrideStateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
     pub fn set_overrider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.overrider = input;
-        self
+        self.overrider = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
     pub fn get_overrider(&self) -> &::std::option::Option<::std::string::String> {
         &self.overrider
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPullRequestOverrideStateOutput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput).
     pub fn build(self) -> crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput {
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput {
-            overridden: self.overridden.unwrap_or_default(),
-            overrider: self.overrider,
+            overridden: self.overridden
+                .unwrap_or_default()
+            ,
+            overrider: self.overrider
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

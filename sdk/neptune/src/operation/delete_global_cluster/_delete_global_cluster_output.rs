@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalClusterOutput {
+pub struct DeleteGlobalClusterOutput  {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     pub global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
 }
-impl DeleteGlobalClusterOutput {
+impl  DeleteGlobalClusterOutput  {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
-    pub fn global_cluster(&self) -> ::std::option::Option<&crate::types::GlobalCluster> {
+    pub fn global_cluster(&self) -> ::std::option::Option<& crate::types::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteGlobalClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::operation::delete_global_cluster::DeleteGlobalClusterOutput).
     pub fn builder() -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterOutputBuilder {
@@ -44,8 +44,7 @@ impl DeleteGlobalClusterOutputBuilder {
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
-        self.global_cluster = input;
-        self
+        self.global_cluster = input; self
     }
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
@@ -53,19 +52,21 @@ impl DeleteGlobalClusterOutputBuilder {
         &self.global_cluster
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::operation::delete_global_cluster::DeleteGlobalClusterOutput).
     pub fn build(self) -> crate::operation::delete_global_cluster::DeleteGlobalClusterOutput {
         crate::operation::delete_global_cluster::DeleteGlobalClusterOutput {
-            global_cluster: self.global_cluster,
+            global_cluster: self.global_cluster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

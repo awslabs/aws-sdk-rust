@@ -3,11 +3,11 @@
 /// Video Selector Program Id
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoSelectorProgramId {
+pub struct VideoSelectorProgramId  {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     pub program_id: ::std::option::Option<i32>,
 }
-impl VideoSelectorProgramId {
+impl  VideoSelectorProgramId  {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     pub fn program_id(&self) -> ::std::option::Option<i32> {
         self.program_id
@@ -34,8 +34,7 @@ impl VideoSelectorProgramIdBuilder {
     }
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     pub fn set_program_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_id = input;
-        self
+        self.program_id = input; self
     }
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     pub fn get_program_id(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl VideoSelectorProgramIdBuilder {
     }
     /// Consumes the builder and constructs a [`VideoSelectorProgramId`](crate::types::VideoSelectorProgramId).
     pub fn build(self) -> crate::types::VideoSelectorProgramId {
-        crate::types::VideoSelectorProgramId { program_id: self.program_id }
+        crate::types::VideoSelectorProgramId {
+            program_id: self.program_id
+            ,
+        }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioLogDestination {
+pub struct AudioLogDestination  {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
     pub s3_bucket: ::std::option::Option<crate::types::S3BucketLogDestination>,
 }
-impl AudioLogDestination {
+impl  AudioLogDestination  {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&crate::types::S3BucketLogDestination> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& crate::types::S3BucketLogDestination> {
         self.s3_bucket.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl AudioLogDestinationBuilder {
     }
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<crate::types::S3BucketLogDestination>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<crate::types::S3BucketLogDestination> {
@@ -44,6 +43,10 @@ impl AudioLogDestinationBuilder {
     }
     /// Consumes the builder and constructs a [`AudioLogDestination`](crate::types::AudioLogDestination).
     pub fn build(self) -> crate::types::AudioLogDestination {
-        crate::types::AudioLogDestination { s3_bucket: self.s3_bucket }
+        crate::types::AudioLogDestination {
+            s3_bucket: self.s3_bucket
+            ,
+        }
     }
 }
+

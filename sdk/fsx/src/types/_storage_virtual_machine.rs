@@ -3,7 +3,7 @@
 /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageVirtualMachine {
+pub struct StorageVirtualMachine  {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
     pub active_directory_configuration: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
@@ -39,27 +39,27 @@ pub struct StorageVirtualMachine {
     /// <p>The SVM's UUID (universally unique identifier).</p>
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Describes why the SVM lifecycle state changed.</p>
     pub lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     /// <p>The security style of the root volume of the SVM.</p>
     pub root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
-impl StorageVirtualMachine {
+impl  StorageVirtualMachine  {
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
-    pub fn active_directory_configuration(&self) -> ::std::option::Option<&crate::types::SvmActiveDirectoryConfiguration> {
+    pub fn active_directory_configuration(&self) -> ::std::option::Option<& crate::types::SvmActiveDirectoryConfiguration> {
         self.active_directory_configuration.as_ref()
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&crate::types::SvmEndpoints> {
+    pub fn endpoints(&self) -> ::std::option::Option<& crate::types::SvmEndpoints> {
         self.endpoints.as_ref()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>Describes the SVM's lifecycle status.</p>
@@ -77,41 +77,42 @@ impl StorageVirtualMachine {
     /// <li>
     /// <p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::StorageVirtualMachineLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The name of the SVM, if provisioned.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The SVM's system generated unique ID.</p>
-    pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<& str> {
         self.storage_virtual_machine_id.as_deref()
     }
     /// <p>Describes the SVM's subtype.</p>
-    pub fn subtype(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineSubtype> {
+    pub fn subtype(&self) -> ::std::option::Option<& crate::types::StorageVirtualMachineSubtype> {
         self.subtype.as_ref()
     }
     /// <p>The SVM's UUID (universally unique identifier).</p>
-    pub fn uuid(&self) -> ::std::option::Option<&str> {
+    pub fn uuid(&self) -> ::std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
-    pub fn lifecycle_transition_reason(&self) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
+    pub fn lifecycle_transition_reason(&self) -> ::std::option::Option<& crate::types::LifecycleTransitionReason> {
         self.lifecycle_transition_reason.as_ref()
     }
     /// <p>The security style of the root volume of the SVM.</p>
-    pub fn root_volume_security_style(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+    pub fn root_volume_security_style(&self) -> ::std::option::Option<& crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         self.root_volume_security_style.as_ref()
     }
 }
@@ -136,7 +137,7 @@ pub struct StorageVirtualMachineBuilder {
     pub(crate) storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     pub(crate) subtype: ::std::option::Option<crate::types::StorageVirtualMachineSubtype>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     pub(crate) root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
@@ -148,8 +149,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
     pub fn set_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>) -> Self {
-        self.active_directory_configuration = input;
-        self
+        self.active_directory_configuration = input; self
     }
     /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
     pub fn get_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SvmActiveDirectoryConfiguration> {
@@ -162,8 +162,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -176,8 +175,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
     pub fn set_endpoints(mut self, input: ::std::option::Option<crate::types::SvmEndpoints>) -> Self {
-        self.endpoints = input;
-        self
+        self.endpoints = input; self
     }
     /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
     pub fn get_endpoints(&self) -> &::std::option::Option<crate::types::SvmEndpoints> {
@@ -190,8 +188,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +229,7 @@ impl StorageVirtualMachineBuilder {
     /// <p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
@@ -260,8 +256,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The name of the SVM, if provisioned.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the SVM, if provisioned.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +269,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +282,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The SVM's system generated unique ID.</p>
     pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_virtual_machine_id = input;
-        self
+        self.storage_virtual_machine_id = input; self
     }
     /// <p>The SVM's system generated unique ID.</p>
     pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +295,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>Describes the SVM's subtype.</p>
     pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineSubtype>) -> Self {
-        self.subtype = input;
-        self
+        self.subtype = input; self
     }
     /// <p>Describes the SVM's subtype.</p>
     pub fn get_subtype(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineSubtype> {
@@ -316,8 +308,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>The SVM's UUID (universally unique identifier).</p>
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uuid = input;
-        self
+        self.uuid = input; self
     }
     /// <p>The SVM's UUID (universally unique identifier).</p>
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,17 +321,16 @@ impl StorageVirtualMachineBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
@@ -350,8 +340,7 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
     pub fn set_lifecycle_transition_reason(mut self, input: ::std::option::Option<crate::types::LifecycleTransitionReason>) -> Self {
-        self.lifecycle_transition_reason = input;
-        self
+        self.lifecycle_transition_reason = input; self
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
     pub fn get_lifecycle_transition_reason(&self) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
@@ -363,12 +352,8 @@ impl StorageVirtualMachineBuilder {
         self
     }
     /// <p>The security style of the root volume of the SVM.</p>
-    pub fn set_root_volume_security_style(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
-    ) -> Self {
-        self.root_volume_security_style = input;
-        self
+    pub fn set_root_volume_security_style(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>) -> Self {
+        self.root_volume_security_style = input; self
     }
     /// <p>The security style of the root volume of the SVM.</p>
     pub fn get_root_volume_security_style(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
@@ -377,19 +362,33 @@ impl StorageVirtualMachineBuilder {
     /// Consumes the builder and constructs a [`StorageVirtualMachine`](crate::types::StorageVirtualMachine).
     pub fn build(self) -> crate::types::StorageVirtualMachine {
         crate::types::StorageVirtualMachine {
-            active_directory_configuration: self.active_directory_configuration,
-            creation_time: self.creation_time,
-            endpoints: self.endpoints,
-            file_system_id: self.file_system_id,
-            lifecycle: self.lifecycle,
-            name: self.name,
-            resource_arn: self.resource_arn,
-            storage_virtual_machine_id: self.storage_virtual_machine_id,
-            subtype: self.subtype,
-            uuid: self.uuid,
-            tags: self.tags,
-            lifecycle_transition_reason: self.lifecycle_transition_reason,
-            root_volume_security_style: self.root_volume_security_style,
+            active_directory_configuration: self.active_directory_configuration
+            ,
+            creation_time: self.creation_time
+            ,
+            endpoints: self.endpoints
+            ,
+            file_system_id: self.file_system_id
+            ,
+            lifecycle: self.lifecycle
+            ,
+            name: self.name
+            ,
+            resource_arn: self.resource_arn
+            ,
+            storage_virtual_machine_id: self.storage_virtual_machine_id
+            ,
+            subtype: self.subtype
+            ,
+            uuid: self.uuid
+            ,
+            tags: self.tags
+            ,
+            lifecycle_transition_reason: self.lifecycle_transition_reason
+            ,
+            root_volume_security_style: self.root_volume_security_style
+            ,
         }
     }
 }
+

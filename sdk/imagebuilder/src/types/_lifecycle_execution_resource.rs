@@ -3,7 +3,7 @@
 /// <p>Contains details for a resource that the runtime instance of the lifecycle policy identified for action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExecutionResource {
+pub struct LifecycleExecutionResource  {
     /// <p>The account that owns the impacted resource.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
@@ -23,17 +23,17 @@ pub struct LifecycleExecutionResource {
     /// <p>The Amazon Web Services Region where the lifecycle execution resource is stored.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A list of associated resource snapshots for the impacted resource if it’s an AMI.</p>
-    pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionSnapshotResource>>,
+    pub snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleExecutionSnapshotResource>>,
     /// <p>For an impacted container image, this identifies a list of URIs for associated container images distributed to ECR repositories.</p>
-    pub image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub image_uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LifecycleExecutionResource {
+impl  LifecycleExecutionResource  {
     /// <p>The account that owns the impacted resource.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
@@ -45,39 +45,41 @@ impl LifecycleExecutionResource {
     /// <li>
     /// <p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The runtime state for the lifecycle execution.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::LifecycleExecutionResourceState> {
         self.state.as_ref()
     }
     /// <p>The action to take for the identified resource.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::LifecycleExecutionResourceAction> {
         self.action.as_ref()
     }
     /// <p>The Amazon Web Services Region where the lifecycle execution resource is stored.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A list of associated resource snapshots for the impacted resource if it’s an AMI.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
-    pub fn snapshots(&self) -> &[crate::types::LifecycleExecutionSnapshotResource] {
-        self.snapshots.as_deref().unwrap_or_default()
+    pub fn snapshots(&self) -> & [crate::types::LifecycleExecutionSnapshotResource] {
+        self.snapshots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For an impacted container image, this identifies a list of URIs for associated container images distributed to ECR repositories.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_uris.is_none()`.
-    pub fn image_uris(&self) -> &[::std::string::String] {
-        self.image_uris.as_deref().unwrap_or_default()
+    pub fn image_uris(&self) -> & [::std::string::String] {
+        self.image_uris.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -97,8 +99,8 @@ pub struct LifecycleExecutionResourceBuilder {
     pub(crate) state: ::std::option::Option<crate::types::LifecycleExecutionResourceState>,
     pub(crate) action: ::std::option::Option<crate::types::LifecycleExecutionResourceAction>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionSnapshotResource>>,
-    pub(crate) image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleExecutionSnapshotResource>>,
+    pub(crate) image_uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -110,8 +112,7 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>The account that owns the impacted resource.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account that owns the impacted resource.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +141,7 @@ impl LifecycleExecutionResourceBuilder {
     /// <p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Identifies the impacted resource. The resource ID depends on the type of resource, as follows.</p>
     /// <ul>
@@ -162,8 +162,7 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>The runtime state for the lifecycle execution.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The runtime state for the lifecycle execution.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceState> {
@@ -176,8 +175,7 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>The action to take for the identified resource.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action to take for the identified resource.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceAction> {
@@ -190,8 +188,7 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>The Amazon Web Services Region where the lifecycle execution resource is stored.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region where the lifecycle execution resource is stored.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,17 +201,16 @@ impl LifecycleExecutionResourceBuilder {
     /// <p>A list of associated resource snapshots for the impacted resource if it’s an AMI.</p>
     pub fn snapshots(mut self, input: crate::types::LifecycleExecutionSnapshotResource) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
-        v.push(input);
-        self.snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of associated resource snapshots for the impacted resource if it’s an AMI.</p>
-    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionSnapshotResource>>) -> Self {
-        self.snapshots = input;
-        self
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleExecutionSnapshotResource>>) -> Self {
+        self.snapshots = input; self
     }
     /// <p>A list of associated resource snapshots for the impacted resource if it’s an AMI.</p>
-    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionSnapshotResource>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecycleExecutionSnapshotResource>> {
         &self.snapshots
     }
     /// Appends an item to `image_uris`.
@@ -224,17 +220,16 @@ impl LifecycleExecutionResourceBuilder {
     /// <p>For an impacted container image, this identifies a list of URIs for associated container images distributed to ECR repositories.</p>
     pub fn image_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_uris.unwrap_or_default();
-        v.push(input.into());
-        self.image_uris = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_uris = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For an impacted container image, this identifies a list of URIs for associated container images distributed to ECR repositories.</p>
-    pub fn set_image_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_uris = input;
-        self
+    pub fn set_image_uris(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.image_uris = input; self
     }
     /// <p>For an impacted container image, this identifies a list of URIs for associated container images distributed to ECR repositories.</p>
-    pub fn get_image_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_uris(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.image_uris
     }
     /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
@@ -244,8 +239,7 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +252,7 @@ impl LifecycleExecutionResourceBuilder {
     }
     /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -268,15 +261,25 @@ impl LifecycleExecutionResourceBuilder {
     /// Consumes the builder and constructs a [`LifecycleExecutionResource`](crate::types::LifecycleExecutionResource).
     pub fn build(self) -> crate::types::LifecycleExecutionResource {
         crate::types::LifecycleExecutionResource {
-            account_id: self.account_id,
-            resource_id: self.resource_id,
-            state: self.state,
-            action: self.action,
-            region: self.region,
-            snapshots: self.snapshots,
-            image_uris: self.image_uris,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            account_id: self.account_id
+            ,
+            resource_id: self.resource_id
+            ,
+            state: self.state
+            ,
+            action: self.action
+            ,
+            region: self.region
+            ,
+            snapshots: self.snapshots
+            ,
+            image_uris: self.image_uris
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

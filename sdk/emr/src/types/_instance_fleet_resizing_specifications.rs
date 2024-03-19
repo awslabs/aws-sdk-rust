@@ -3,19 +3,19 @@
 /// <p>The resize specification for On-Demand and Spot Instances in the fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceFleetResizingSpecifications {
+pub struct InstanceFleetResizingSpecifications  {
     /// <p>The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period.</p>
     pub spot_resize_specification: ::std::option::Option<crate::types::SpotResizingSpecification>,
     /// <p>The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period.</p>
     pub on_demand_resize_specification: ::std::option::Option<crate::types::OnDemandResizingSpecification>,
 }
-impl InstanceFleetResizingSpecifications {
+impl  InstanceFleetResizingSpecifications  {
     /// <p>The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period.</p>
-    pub fn spot_resize_specification(&self) -> ::std::option::Option<&crate::types::SpotResizingSpecification> {
+    pub fn spot_resize_specification(&self) -> ::std::option::Option<& crate::types::SpotResizingSpecification> {
         self.spot_resize_specification.as_ref()
     }
     /// <p>The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period.</p>
-    pub fn on_demand_resize_specification(&self) -> ::std::option::Option<&crate::types::OnDemandResizingSpecification> {
+    pub fn on_demand_resize_specification(&self) -> ::std::option::Option<& crate::types::OnDemandResizingSpecification> {
         self.on_demand_resize_specification.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl InstanceFleetResizingSpecificationsBuilder {
     }
     /// <p>The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period.</p>
     pub fn set_spot_resize_specification(mut self, input: ::std::option::Option<crate::types::SpotResizingSpecification>) -> Self {
-        self.spot_resize_specification = input;
-        self
+        self.spot_resize_specification = input; self
     }
     /// <p>The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period.</p>
     pub fn get_spot_resize_specification(&self) -> &::std::option::Option<crate::types::SpotResizingSpecification> {
@@ -55,8 +54,7 @@ impl InstanceFleetResizingSpecificationsBuilder {
     }
     /// <p>The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period.</p>
     pub fn set_on_demand_resize_specification(mut self, input: ::std::option::Option<crate::types::OnDemandResizingSpecification>) -> Self {
-        self.on_demand_resize_specification = input;
-        self
+        self.on_demand_resize_specification = input; self
     }
     /// <p>The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period.</p>
     pub fn get_on_demand_resize_specification(&self) -> &::std::option::Option<crate::types::OnDemandResizingSpecification> {
@@ -65,8 +63,11 @@ impl InstanceFleetResizingSpecificationsBuilder {
     /// Consumes the builder and constructs a [`InstanceFleetResizingSpecifications`](crate::types::InstanceFleetResizingSpecifications).
     pub fn build(self) -> crate::types::InstanceFleetResizingSpecifications {
         crate::types::InstanceFleetResizingSpecifications {
-            spot_resize_specification: self.spot_resize_specification,
-            on_demand_resize_specification: self.on_demand_resize_specification,
+            spot_resize_specification: self.spot_resize_specification
+            ,
+            on_demand_resize_specification: self.on_demand_resize_specification
+            ,
         }
     }
 }
+

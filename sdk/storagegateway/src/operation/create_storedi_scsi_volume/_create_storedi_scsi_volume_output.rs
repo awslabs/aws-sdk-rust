@@ -3,7 +3,7 @@
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStorediScsiVolumeOutput {
+pub struct CreateStorediScsiVolumeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
@@ -12,9 +12,9 @@ pub struct CreateStorediScsiVolumeOutput {
     pub target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateStorediScsiVolumeOutput {
+impl  CreateStorediScsiVolumeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -22,15 +22,15 @@ impl CreateStorediScsiVolumeOutput {
         self.volume_size_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateStorediScsiVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateStorediScsiVolumeOutput {
     /// Creates a new builder-style object to manufacture [`CreateStorediScsiVolumeOutput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput).
     pub fn builder() -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeOutputBuilder {
@@ -55,8 +55,7 @@ impl CreateStorediScsiVolumeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateStorediScsiVolumeOutputBuilder {
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.volume_size_in_bytes = input;
-        self
+        self.volume_size_in_bytes = input; self
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -83,29 +81,33 @@ impl CreateStorediScsiVolumeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateStorediScsiVolumeOutput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput).
     pub fn build(self) -> crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput {
         crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput {
-            volume_arn: self.volume_arn,
-            volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-            target_arn: self.target_arn,
+            volume_arn: self.volume_arn
+            ,
+            volume_size_in_bytes: self.volume_size_in_bytes
+                .unwrap_or_default()
+            ,
+            target_arn: self.target_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

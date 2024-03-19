@@ -3,16 +3,17 @@
 /// <p>A complex type that contains information about origins and origin groups for this CloudFront distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOrigins {
+pub struct AwsCloudFrontDistributionOrigins  {
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::AwsCloudFrontDistributionOriginItem>>,
 }
-impl AwsCloudFrontDistributionOrigins {
+impl  AwsCloudFrontDistributionOrigins  {
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::AwsCloudFrontDistributionOriginItem] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::AwsCloudFrontDistributionOriginItem] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsCloudFrontDistributionOrigins {
@@ -26,7 +27,7 @@ impl AwsCloudFrontDistributionOrigins {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginsBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::AwsCloudFrontDistributionOriginItem>>,
 }
 impl AwsCloudFrontDistributionOriginsBuilder {
     /// Appends an item to `items`.
@@ -36,21 +37,24 @@ impl AwsCloudFrontDistributionOriginsBuilder {
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
     pub fn items(mut self, input: crate::types::AwsCloudFrontDistributionOriginItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsCloudFrontDistributionOriginItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsCloudFrontDistributionOriginItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOrigins`](crate::types::AwsCloudFrontDistributionOrigins).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOrigins {
-        crate::types::AwsCloudFrontDistributionOrigins { items: self.items }
+        crate::types::AwsCloudFrontDistributionOrigins {
+            items: self.items
+            ,
+        }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLaunchProfileMemberOutput {
+pub struct DeleteLaunchProfileMemberOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteLaunchProfileMemberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteLaunchProfileMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput).
     pub fn builder() -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteLaunchProfileMemberOutputBuilder {
 }
 impl DeleteLaunchProfileMemberOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput).
     pub fn build(self) -> crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput {
         crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput {
@@ -40,3 +40,4 @@ impl DeleteLaunchProfileMemberOutputBuilder {
         }
     }
 }
+

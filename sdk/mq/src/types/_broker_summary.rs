@@ -3,7 +3,7 @@
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BrokerSummary {
+pub struct BrokerSummary  {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub broker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -21,37 +21,37 @@ pub struct BrokerSummary {
     /// <p>The broker's instance type.</p>
     pub host_instance_type: ::std::option::Option<::std::string::String>,
 }
-impl BrokerSummary {
+impl  BrokerSummary  {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
-    pub fn broker_arn(&self) -> ::std::option::Option<&str> {
+    pub fn broker_arn(&self) -> ::std::option::Option<& str> {
         self.broker_arn.as_deref()
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    pub fn broker_name(&self) -> ::std::option::Option<&str> {
+    pub fn broker_name(&self) -> ::std::option::Option<& str> {
         self.broker_name.as_deref()
     }
     /// <p>The broker's status.</p>
-    pub fn broker_state(&self) -> ::std::option::Option<&crate::types::BrokerState> {
+    pub fn broker_state(&self) -> ::std::option::Option<& crate::types::BrokerState> {
         self.broker_state.as_ref()
     }
     /// <p>The time when the broker was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The broker's deployment mode.</p>
-    pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
+    pub fn deployment_mode(&self) -> ::std::option::Option<& crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
     /// <p>The type of broker engine.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The broker's instance type.</p>
-    pub fn host_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> ::std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub fn set_broker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_arn = input;
-        self
+        self.broker_arn = input; self
     }
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub fn get_broker_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_name = input;
-        self
+        self.broker_name = input; self
     }
     /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn get_broker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The broker's status.</p>
     pub fn set_broker_state(mut self, input: ::std::option::Option<crate::types::BrokerState>) -> Self {
-        self.broker_state = input;
-        self
+        self.broker_state = input; self
     }
     /// <p>The broker's status.</p>
     pub fn get_broker_state(&self) -> &::std::option::Option<crate::types::BrokerState> {
@@ -139,8 +135,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The time when the broker was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The time when the broker was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,8 +149,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The broker's deployment mode.</p>
     pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
-        self.deployment_mode = input;
-        self
+        self.deployment_mode = input; self
     }
     /// <p>The broker's deployment mode.</p>
     pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
@@ -169,8 +163,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The type of broker engine.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The type of broker engine.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -183,8 +176,7 @@ impl BrokerSummaryBuilder {
     }
     /// <p>The broker's instance type.</p>
     pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_instance_type = input;
-        self
+        self.host_instance_type = input; self
     }
     /// <p>The broker's instance type.</p>
     pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,14 +185,23 @@ impl BrokerSummaryBuilder {
     /// Consumes the builder and constructs a [`BrokerSummary`](crate::types::BrokerSummary).
     pub fn build(self) -> crate::types::BrokerSummary {
         crate::types::BrokerSummary {
-            broker_arn: self.broker_arn,
-            broker_id: self.broker_id,
-            broker_name: self.broker_name,
-            broker_state: self.broker_state,
-            created: self.created,
-            deployment_mode: self.deployment_mode,
-            engine_type: self.engine_type,
-            host_instance_type: self.host_instance_type,
+            broker_arn: self.broker_arn
+            ,
+            broker_id: self.broker_id
+            ,
+            broker_name: self.broker_name
+            ,
+            broker_state: self.broker_state
+            ,
+            created: self.created
+            ,
+            deployment_mode: self.deployment_mode
+            ,
+            engine_type: self.engine_type
+            ,
+            host_instance_type: self.host_instance_type
+            ,
         }
     }
 }
+

@@ -3,34 +3,35 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p>Account quota information.</p>
-    pub account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
+    pub account_quotas: ::std::option::Option<::std::vec::Vec::<crate::types::AccountQuota>>,
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p><note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub unique_account_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAccountAttributesOutput {
+impl  DescribeAccountAttributesOutput  {
     /// <p>Account quota information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_quotas.is_none()`.
-    pub fn account_quotas(&self) -> &[crate::types::AccountQuota] {
-        self.account_quotas.as_deref().unwrap_or_default()
+    pub fn account_quotas(&self) -> & [crate::types::AccountQuota] {
+        self.account_quotas.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p><note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    pub fn unique_account_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn unique_account_identifier(&self) -> ::std::option::Option<& str> {
         self.unique_account_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
     pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
@@ -42,7 +43,7 @@ impl DescribeAccountAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutputBuilder {
-    pub(crate) account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
+    pub(crate) account_quotas: ::std::option::Option<::std::vec::Vec::<crate::types::AccountQuota>>,
     pub(crate) unique_account_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +55,16 @@ impl DescribeAccountAttributesOutputBuilder {
     /// <p>Account quota information.</p>
     pub fn account_quotas(mut self, input: crate::types::AccountQuota) -> Self {
         let mut v = self.account_quotas.unwrap_or_default();
-        v.push(input);
-        self.account_quotas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_quotas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Account quota information.</p>
-    pub fn set_account_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>) -> Self {
-        self.account_quotas = input;
-        self
+    pub fn set_account_quotas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountQuota>>) -> Self {
+        self.account_quotas = input; self
     }
     /// <p>Account quota information.</p>
-    pub fn get_account_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>> {
+    pub fn get_account_quotas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountQuota>> {
         &self.account_quotas
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p><note>
@@ -78,8 +78,7 @@ impl DescribeAccountAttributesOutputBuilder {
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn set_unique_account_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unique_account_identifier = input;
-        self
+        self.unique_account_identifier = input; self
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p><note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
@@ -88,20 +87,23 @@ impl DescribeAccountAttributesOutputBuilder {
         &self.unique_account_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
     pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
-            account_quotas: self.account_quotas,
-            unique_account_identifier: self.unique_account_identifier,
+            account_quotas: self.account_quotas
+            ,
+            unique_account_identifier: self.unique_account_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

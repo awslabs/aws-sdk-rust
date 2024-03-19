@@ -3,7 +3,7 @@
 /// <p>Information about the resource for each individual EKS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageResourceDetails {
+pub struct CoverageResourceDetails  {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     pub eks_cluster_details: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
     /// <p>The type of Amazon Web Services resource.</p>
@@ -16,24 +16,24 @@ pub struct CoverageResourceDetails {
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub ec2_instance_details: ::std::option::Option<crate::types::CoverageEc2InstanceDetails>,
 }
-impl CoverageResourceDetails {
+impl  CoverageResourceDetails  {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    pub fn eks_cluster_details(&self) -> ::std::option::Option<&crate::types::CoverageEksClusterDetails> {
+    pub fn eks_cluster_details(&self) -> ::std::option::Option<& crate::types::CoverageEksClusterDetails> {
         self.eks_cluster_details.as_ref()
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
-    pub fn ecs_cluster_details(&self) -> ::std::option::Option<&crate::types::CoverageEcsClusterDetails> {
+    pub fn ecs_cluster_details(&self) -> ::std::option::Option<& crate::types::CoverageEcsClusterDetails> {
         self.ecs_cluster_details.as_ref()
     }
     /// <note>
     /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
     /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
-    pub fn ec2_instance_details(&self) -> ::std::option::Option<&crate::types::CoverageEc2InstanceDetails> {
+    pub fn ec2_instance_details(&self) -> ::std::option::Option<& crate::types::CoverageEc2InstanceDetails> {
         self.ec2_instance_details.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl CoverageResourceDetailsBuilder {
     }
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     pub fn set_eks_cluster_details(mut self, input: ::std::option::Option<crate::types::CoverageEksClusterDetails>) -> Self {
-        self.eks_cluster_details = input;
-        self
+        self.eks_cluster_details = input; self
     }
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     pub fn get_eks_cluster_details(&self) -> &::std::option::Option<crate::types::CoverageEksClusterDetails> {
@@ -75,8 +74,7 @@ impl CoverageResourceDetailsBuilder {
     }
     /// <p>The type of Amazon Web Services resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -89,8 +87,7 @@ impl CoverageResourceDetailsBuilder {
     }
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
     pub fn set_ecs_cluster_details(mut self, input: ::std::option::Option<crate::types::CoverageEcsClusterDetails>) -> Self {
-        self.ecs_cluster_details = input;
-        self
+        self.ecs_cluster_details = input; self
     }
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
     pub fn get_ecs_cluster_details(&self) -> &::std::option::Option<crate::types::CoverageEcsClusterDetails> {
@@ -109,8 +106,7 @@ impl CoverageResourceDetailsBuilder {
     /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub fn set_ec2_instance_details(mut self, input: ::std::option::Option<crate::types::CoverageEc2InstanceDetails>) -> Self {
-        self.ec2_instance_details = input;
-        self
+        self.ec2_instance_details = input; self
     }
     /// <note>
     /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
@@ -122,10 +118,15 @@ impl CoverageResourceDetailsBuilder {
     /// Consumes the builder and constructs a [`CoverageResourceDetails`](crate::types::CoverageResourceDetails).
     pub fn build(self) -> crate::types::CoverageResourceDetails {
         crate::types::CoverageResourceDetails {
-            eks_cluster_details: self.eks_cluster_details,
-            resource_type: self.resource_type,
-            ecs_cluster_details: self.ecs_cluster_details,
-            ec2_instance_details: self.ec2_instance_details,
+            eks_cluster_details: self.eks_cluster_details
+            ,
+            resource_type: self.resource_type
+            ,
+            ecs_cluster_details: self.ecs_cluster_details
+            ,
+            ec2_instance_details: self.ec2_instance_details
+            ,
         }
     }
 }
+

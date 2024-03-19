@@ -2,33 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExtensionInput {
+pub struct UpdateExtensionInput  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information about the extension.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions defined in the extension.</p>
-    pub actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
+    pub actions: ::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>>,
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>>,
     /// <p>The extension version number.</p>
     pub version_number: ::std::option::Option<i32>,
 }
-impl UpdateExtensionInput {
+impl  UpdateExtensionInput  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn extension_identifier(&self) -> ::std::option::Option<& str> {
         self.extension_identifier.as_deref()
     }
     /// <p>Information about the extension.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>> {
+    pub fn actions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>> {
         self.actions.as_ref()
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Parameter>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Parameter>> {
         self.parameters.as_ref()
     }
     /// <p>The extension version number.</p>
@@ -49,8 +49,8 @@ impl UpdateExtensionInput {
 pub struct UpdateExtensionInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
+    pub(crate) actions: ::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>>,
     pub(crate) version_number: ::std::option::Option<i32>,
 }
 impl UpdateExtensionInputBuilder {
@@ -62,8 +62,7 @@ impl UpdateExtensionInputBuilder {
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_identifier = input;
-        self
+        self.extension_identifier = input; self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateExtensionInputBuilder {
     }
     /// <p>Information about the extension.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Information about the extension.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,24 +86,18 @@ impl UpdateExtensionInputBuilder {
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(mut self, k: crate::types::ActionPoint, v: ::std::vec::Vec<crate::types::Action>) -> Self {
+    pub fn actions(mut self, k: crate::types::ActionPoint, v: ::std::vec::Vec::<crate::types::Action>) -> Self {
         let mut hash_map = self.actions.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.actions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.actions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>> {
         &self.actions
     }
     /// Adds a key-value pair to `parameters`.
@@ -115,20 +107,16 @@ impl UpdateExtensionInputBuilder {
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Parameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>The extension version number.</p>
@@ -138,23 +126,28 @@ impl UpdateExtensionInputBuilder {
     }
     /// <p>The extension version number.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The extension version number.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i32> {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`UpdateExtensionInput`](crate::operation::update_extension::UpdateExtensionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_extension::UpdateExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_extension::UpdateExtensionInput {
-            extension_identifier: self.extension_identifier,
-            description: self.description,
-            actions: self.actions,
-            parameters: self.parameters,
-            version_number: self.version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_extension::UpdateExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_extension::UpdateExtensionInput {
+                extension_identifier: self.extension_identifier
+                ,
+                description: self.description
+                ,
+                actions: self.actions
+                ,
+                parameters: self.parameters
+                ,
+                version_number: self.version_number
+                ,
+            }
+        )
     }
 }
+

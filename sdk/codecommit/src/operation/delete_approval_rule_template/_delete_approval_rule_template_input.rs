@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApprovalRuleTemplateInput {
+pub struct DeleteApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template to delete.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteApprovalRuleTemplateInput {
+impl  DeleteApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template to delete.</p>
-    pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteApprovalRuleTemplateInputBuilder {
     }
     /// <p>The name of the approval rule template to delete.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_name = input;
-        self
+        self.approval_rule_template_name = input; self
     }
     /// <p>The name of the approval rule template to delete.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_name
     }
     /// Consumes the builder and constructs a [`DeleteApprovalRuleTemplateInput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput {
-            approval_rule_template_name: self.approval_rule_template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput {
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+            }
+        )
     }
 }
+

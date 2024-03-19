@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplications`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_items(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_items):<br>required: **false**<br><p>The total number of items to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating.</p><br>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec::<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>An array of application summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>The token to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
+                            /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

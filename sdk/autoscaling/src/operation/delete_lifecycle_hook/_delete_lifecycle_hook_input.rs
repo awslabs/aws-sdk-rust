@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLifecycleHookInput {
+pub struct DeleteLifecycleHookInput  {
     /// <p>The name of the lifecycle hook.</p>
     pub lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLifecycleHookInput {
+impl  DeleteLifecycleHookInput  {
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_hook_name(&self) -> ::std::option::Option<& str> {
         self.lifecycle_hook_name.as_deref()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteLifecycleHookInputBuilder {
     }
     /// <p>The name of the lifecycle hook.</p>
     pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_hook_name = input;
-        self
+        self.lifecycle_hook_name = input; self
     }
     /// <p>The name of the lifecycle hook.</p>
     pub fn get_lifecycle_hook_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteLifecycleHookInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_name
     }
     /// Consumes the builder and constructs a [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput {
-            lifecycle_hook_name: self.lifecycle_hook_name,
-            auto_scaling_group_name: self.auto_scaling_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput {
+                lifecycle_hook_name: self.lifecycle_hook_name
+                ,
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+            }
+        )
     }
 }
+

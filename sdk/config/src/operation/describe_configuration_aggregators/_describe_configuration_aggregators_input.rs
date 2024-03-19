@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationAggregatorsInput {
+pub struct DescribeConfigurationAggregatorsInput  {
     /// <p>The name of the configuration aggregators.</p>
-    pub configuration_aggregator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configuration_aggregator_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeConfigurationAggregatorsInput {
+impl  DescribeConfigurationAggregatorsInput  {
     /// <p>The name of the configuration aggregators.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_aggregator_names.is_none()`.
-    pub fn configuration_aggregator_names(&self) -> &[::std::string::String] {
-        self.configuration_aggregator_names.as_deref().unwrap_or_default()
+    pub fn configuration_aggregator_names(&self) -> & [::std::string::String] {
+        self.configuration_aggregator_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -37,7 +38,7 @@ impl DescribeConfigurationAggregatorsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorsInputBuilder {
-    pub(crate) configuration_aggregator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_aggregator_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl DescribeConfigurationAggregatorsInputBuilder {
     /// <p>The name of the configuration aggregators.</p>
     pub fn configuration_aggregator_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_aggregator_names.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_aggregator_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_aggregator_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the configuration aggregators.</p>
-    pub fn set_configuration_aggregator_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.configuration_aggregator_names = input;
-        self
+    pub fn set_configuration_aggregator_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.configuration_aggregator_names = input; self
     }
     /// <p>The name of the configuration aggregators.</p>
-    pub fn get_configuration_aggregator_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_aggregator_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.configuration_aggregator_names
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -69,8 +69,7 @@ impl DescribeConfigurationAggregatorsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,26 +82,24 @@ impl DescribeConfigurationAggregatorsInputBuilder {
     }
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationAggregatorsInput`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput {
-                configuration_aggregator_names: self.configuration_aggregator_names,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                configuration_aggregator_names: self.configuration_aggregator_names
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

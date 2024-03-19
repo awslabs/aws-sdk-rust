@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMobileDeviceAccessOverrideInput {
+pub struct DeleteMobileDeviceAccessOverrideInput  {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
@@ -18,9 +18,9 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMobileDeviceAccessOverrideInput {
+impl  DeleteMobileDeviceAccessOverrideInput  {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
@@ -32,11 +32,11 @@ impl DeleteMobileDeviceAccessOverrideInput {
     /// <li>
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
@@ -118,26 +116,24 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput {
-                organization_id: self.organization_id,
-                user_id: self.user_id,
-                device_id: self.device_id,
-            },
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+                device_id: self.device_id
+                ,
+            }
         )
     }
 }
+

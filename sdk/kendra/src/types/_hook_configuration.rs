@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HookConfiguration {
+pub struct HookConfiguration  {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
     pub invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
@@ -13,21 +13,19 @@ pub struct HookConfiguration {
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
     pub s3_bucket: ::std::string::String,
 }
-impl HookConfiguration {
+impl  HookConfiguration  {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
-    pub fn invocation_condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
+    pub fn invocation_condition(&self) -> ::std::option::Option<& crate::types::DocumentAttributeCondition> {
         self.invocation_condition.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    pub fn lambda_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_arn.deref()
+    pub fn lambda_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_arn.deref()
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
 }
 impl HookConfiguration {
@@ -55,8 +53,7 @@ impl HookConfigurationBuilder {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
     pub fn set_invocation_condition(mut self, input: ::std::option::Option<crate::types::DocumentAttributeCondition>) -> Self {
-        self.invocation_condition = input;
-        self
+        self.invocation_condition = input; self
     }
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
@@ -71,8 +68,7 @@ impl HookConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +82,7 @@ impl HookConfigurationBuilder {
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,20 +93,22 @@ impl HookConfigurationBuilder {
     /// - [`lambda_arn`](crate::types::builders::HookConfigurationBuilder::lambda_arn)
     /// - [`s3_bucket`](crate::types::builders::HookConfigurationBuilder::s3_bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::HookConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HookConfiguration {
-            invocation_condition: self.invocation_condition,
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building HookConfiguration",
-                )
-            })?,
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building HookConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HookConfiguration {
+                invocation_condition: self.invocation_condition
+                ,
+                lambda_arn: self.lambda_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_arn", "lambda_arn was not specified but it is required when building HookConfiguration")
+                    )?
+                ,
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building HookConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

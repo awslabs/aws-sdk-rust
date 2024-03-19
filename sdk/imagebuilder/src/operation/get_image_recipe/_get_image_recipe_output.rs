@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImageRecipeOutput {
+pub struct GetImageRecipeOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The image recipe object.</p>
     pub image_recipe: ::std::option::Option<crate::types::ImageRecipe>,
     _request_id: Option<String>,
 }
-impl GetImageRecipeOutput {
+impl  GetImageRecipeOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The image recipe object.</p>
-    pub fn image_recipe(&self) -> ::std::option::Option<&crate::types::ImageRecipe> {
+    pub fn image_recipe(&self) -> ::std::option::Option<& crate::types::ImageRecipe> {
         self.image_recipe.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImageRecipeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetImageRecipeOutput {
     /// Creates a new builder-style object to manufacture [`GetImageRecipeOutput`](crate::operation::get_image_recipe::GetImageRecipeOutput).
     pub fn builder() -> crate::operation::get_image_recipe::builders::GetImageRecipeOutputBuilder {
@@ -47,8 +47,7 @@ impl GetImageRecipeOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetImageRecipeOutputBuilder {
     }
     /// <p>The image recipe object.</p>
     pub fn set_image_recipe(mut self, input: ::std::option::Option<crate::types::ImageRecipe>) -> Self {
-        self.image_recipe = input;
-        self
+        self.image_recipe = input; self
     }
     /// <p>The image recipe object.</p>
     pub fn get_image_recipe(&self) -> &::std::option::Option<crate::types::ImageRecipe> {
         &self.image_recipe
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetImageRecipeOutput`](crate::operation::get_image_recipe::GetImageRecipeOutput).
     pub fn build(self) -> crate::operation::get_image_recipe::GetImageRecipeOutput {
         crate::operation::get_image_recipe::GetImageRecipeOutput {
-            request_id: self.request_id,
-            image_recipe: self.image_recipe,
+            request_id: self.request_id
+            ,
+            image_recipe: self.image_recipe
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDocumentClassificationJobsInput {
+pub struct ListDocumentClassificationJobsInput  {
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: ::std::option::Option<crate::types::DocumentClassificationJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
@@ -10,13 +10,13 @@ pub struct ListDocumentClassificationJobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDocumentClassificationJobsInput {
+impl  ListDocumentClassificationJobsInput  {
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::DocumentClassificationJobFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::DocumentClassificationJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -47,8 +47,7 @@ impl ListDocumentClassificationJobsInputBuilder {
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DocumentClassificationJobFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::DocumentClassificationJobFilter> {
@@ -61,8 +60,7 @@ impl ListDocumentClassificationJobsInputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl ListDocumentClassificationJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput {
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput {
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

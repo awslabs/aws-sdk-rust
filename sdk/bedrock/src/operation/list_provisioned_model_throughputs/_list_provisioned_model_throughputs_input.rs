@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisionedModelThroughputsInput {
+pub struct ListProvisionedModelThroughputsInput  {
     /// <p>Return provisioned capacities created after the specified time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return provisioned capacities created before the specified time.</p>
@@ -22,25 +22,25 @@ pub struct ListProvisionedModelThroughputsInput {
     /// <p>The sort order of the results.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListProvisionedModelThroughputsInput {
+impl  ListProvisionedModelThroughputsInput  {
     /// <p>Return provisioned capacities created after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Return provisioned capacities created before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Return the list of provisioned capacities that match the specified status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::ProvisionedModelStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::ProvisionedModelStatus> {
         self.status_equals.as_ref()
     }
     /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
-    pub fn model_arn_equals(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn_equals(&self) -> ::std::option::Option<& str> {
         self.model_arn_equals.as_deref()
     }
     /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>THe maximum number of results to return in the response.</p>
@@ -48,15 +48,15 @@ impl ListProvisionedModelThroughputsInput {
         self.max_results
     }
     /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The field to sort by in the returned list of provisioned capacities.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortByProvisionedModels> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortByProvisionedModels> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order of the results.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -89,8 +89,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>Return provisioned capacities created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Return provisioned capacities created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,8 +102,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>Return provisioned capacities created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Return provisioned capacities created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +115,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>Return the list of provisioned capacities that match the specified status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ProvisionedModelStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>Return the list of provisioned capacities that match the specified status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::ProvisionedModelStatus> {
@@ -131,8 +128,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
     pub fn set_model_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn_equals = input;
-        self
+        self.model_arn_equals = input; self
     }
     /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
     pub fn get_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>THe maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>THe maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -173,8 +167,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +180,7 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>The field to sort by in the returned list of provisioned capacities.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortByProvisionedModels>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field to sort by in the returned list of provisioned capacities.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortByProvisionedModels> {
@@ -201,32 +193,36 @@ impl ListProvisionedModelThroughputsInputBuilder {
     }
     /// <p>The sort order of the results.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order of the results.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListProvisionedModelThroughputsInput`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                status_equals: self.status_equals,
-                model_arn_equals: self.model_arn_equals,
-                name_contains: self.name_contains,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                status_equals: self.status_equals
+                ,
+                model_arn_equals: self.model_arn_equals
+                ,
+                name_contains: self.name_contains
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
         )
     }
 }
+

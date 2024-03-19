@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorldTemplateBodyInput {
+pub struct GetWorldTemplateBodyInput  {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub generation_job: ::std::option::Option<::std::string::String>,
 }
-impl GetWorldTemplateBodyInput {
+impl  GetWorldTemplateBodyInput  {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> ::std::option::Option<&str> {
+    pub fn template(&self) -> ::std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn generation_job(&self) -> ::std::option::Option<&str> {
+    pub fn generation_job(&self) -> ::std::option::Option<& str> {
         self.generation_job.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl GetWorldTemplateBodyInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl GetWorldTemplateBodyInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub fn set_generation_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_job = input;
-        self
+        self.generation_job = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub fn get_generation_job(&self) -> &::std::option::Option<::std::string::String> {
         &self.generation_job
     }
     /// Consumes the builder and constructs a [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_world_template_body::GetWorldTemplateBodyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_world_template_body::GetWorldTemplateBodyInput {
-            template: self.template,
-            generation_job: self.generation_job,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_world_template_body::GetWorldTemplateBodyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_world_template_body::GetWorldTemplateBodyInput {
+                template: self.template
+                ,
+                generation_job: self.generation_job
+                ,
+            }
+        )
     }
 }
+

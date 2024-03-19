@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImports`](crate::operation::list_imports::builders::ListImportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_imports::builders::ListImportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of imports to display on a single page.</p><br>
     ///   - [`destination(impl Into<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::destination) / [`set_destination(Option<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_destination):<br>required: **false**<br><p>The ARN of the destination event data store.</p><br>
     ///   - [`import_status(ImportStatus)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::import_status) / [`set_import_status(Option<ImportStatus>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_import_status):<br>required: **false**<br><p>The status of the import.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token you can use to get the next page of import results.</p><br>
-    /// - On success, responds with [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput) with field(s):
+                            /// - On success, responds with [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput) with field(s):
     ///   - [`imports(Option<Vec::<ImportsListItem>>)`](crate::operation::list_imports::ListImportsOutput::imports): <p>The list of returned imports.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p>A token you can use to get the next page of import results.</p>
-    /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
+                            /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
     pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
-        crate::operation::list_imports::builders::ListImportsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_imports::builders::ListImportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

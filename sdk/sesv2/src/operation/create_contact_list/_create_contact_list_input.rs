@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContactListInput {
+pub struct CreateContactListInput  {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
+    pub topics: ::std::option::Option<::std::vec::Vec::<crate::types::Topic>>,
     /// <p>A description of what the contact list is about.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with a contact list.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateContactListInput {
+impl  CreateContactListInput  {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> ::std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics.is_none()`.
-    pub fn topics(&self) -> &[crate::types::Topic] {
-        self.topics.as_deref().unwrap_or_default()
+    pub fn topics(&self) -> & [crate::types::Topic] {
+        self.topics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A description of what the contact list is about.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags associated with a contact list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateContactListInput {
@@ -46,9 +48,9 @@ impl CreateContactListInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContactListInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
+    pub(crate) topics: ::std::option::Option<::std::vec::Vec::<crate::types::Topic>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateContactListInputBuilder {
     /// <p>The name of the contact list.</p>
@@ -59,8 +61,7 @@ impl CreateContactListInputBuilder {
     }
     /// <p>The name of the contact list.</p>
     pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_list_name = input;
-        self
+        self.contact_list_name = input; self
     }
     /// <p>The name of the contact list.</p>
     pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +74,16 @@ impl CreateContactListInputBuilder {
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub fn topics(mut self, input: crate::types::Topic) -> Self {
         let mut v = self.topics.unwrap_or_default();
-        v.push(input);
-        self.topics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.topics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>) -> Self {
-        self.topics = input;
-        self
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Topic>>) -> Self {
+        self.topics = input; self
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Topic>> {
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Topic>> {
         &self.topics
     }
     /// <p>A description of what the contact list is about.</p>
@@ -93,8 +93,7 @@ impl CreateContactListInputBuilder {
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,28 +106,32 @@ impl CreateContactListInputBuilder {
     /// <p>The tags associated with a contact list.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with a contact list.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with a contact list.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateContactListInput`](crate::operation::create_contact_list::CreateContactListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_contact_list::CreateContactListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_contact_list::CreateContactListInput {
-            contact_list_name: self.contact_list_name,
-            topics: self.topics,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_contact_list::CreateContactListInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_contact_list::CreateContactListInput {
+                contact_list_name: self.contact_list_name
+                ,
+                topics: self.topics
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

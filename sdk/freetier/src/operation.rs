@@ -3,3 +3,4 @@ pub use ::aws_types::request_id::RequestId;
 
 /// Types for the `GetFreeTierUsage` operation.
 pub mod get_free_tier_usage;
+

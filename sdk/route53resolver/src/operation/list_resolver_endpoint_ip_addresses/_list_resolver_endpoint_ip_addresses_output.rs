@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolverEndpointIpAddressesOutput {
+pub struct ListResolverEndpointIpAddressesOutput  {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressResponse>>,
     _request_id: Option<String>,
 }
-impl ListResolverEndpointIpAddressesOutput {
+impl  ListResolverEndpointIpAddressesOutput  {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -21,17 +21,18 @@ impl ListResolverEndpointIpAddressesOutput {
         self.max_results
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
-    pub fn ip_addresses(&self) -> &[crate::types::IpAddressResponse] {
-        self.ip_addresses.as_deref().unwrap_or_default()
+    pub fn ip_addresses(&self) -> & [crate::types::IpAddressResponse] {
+        self.ip_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResolverEndpointIpAddressesOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
     pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder {
@@ -45,7 +46,7 @@ impl ListResolverEndpointIpAddressesOutput {
 pub struct ListResolverEndpointIpAddressesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressResponse>>,
     _request_id: Option<String>,
 }
 impl ListResolverEndpointIpAddressesOutputBuilder {
@@ -56,8 +57,7 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     }
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -84,35 +83,38 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
     pub fn ip_addresses(mut self, input: crate::types::IpAddressResponse) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressResponse>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpAddressResponse>> {
         &self.ip_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
     pub fn build(self) -> crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput {
         crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            ip_addresses: self.ip_addresses,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
+            ip_addresses: self.ip_addresses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Request for which contact was successfully created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuccessfulRequest {
+pub struct SuccessfulRequest  {
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
     pub request_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The contactId of the contact that was created successfully.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
-impl SuccessfulRequest {
+impl  SuccessfulRequest  {
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
-    pub fn request_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn request_identifier(&self) -> ::std::option::Option<& str> {
         self.request_identifier.as_deref()
     }
     /// <p>The contactId of the contact that was created successfully.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SuccessfulRequestBuilder {
     }
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
     pub fn set_request_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_identifier = input;
-        self
+        self.request_identifier = input; self
     }
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
     pub fn get_request_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SuccessfulRequestBuilder {
     }
     /// <p>The contactId of the contact that was created successfully.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The contactId of the contact that was created successfully.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SuccessfulRequestBuilder {
     /// Consumes the builder and constructs a [`SuccessfulRequest`](crate::types::SuccessfulRequest).
     pub fn build(self) -> crate::types::SuccessfulRequest {
         crate::types::SuccessfulRequest {
-            request_identifier: self.request_identifier,
-            contact_id: self.contact_id,
+            request_identifier: self.request_identifier
+            ,
+            contact_id: self.contact_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The output of the CreatePolicyVersion operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePolicyVersionOutput {
+pub struct CreatePolicyVersionOutput  {
     /// <p>The policy ARN.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
@@ -14,17 +14,17 @@ pub struct CreatePolicyVersionOutput {
     pub is_default_version: bool,
     _request_id: Option<String>,
 }
-impl CreatePolicyVersionOutput {
+impl  CreatePolicyVersionOutput  {
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_version_id(&self) -> ::std::option::Option<& str> {
         self.policy_version_id.as_deref()
     }
     /// <p>Specifies whether the policy version is the default.</p>
@@ -33,10 +33,10 @@ impl CreatePolicyVersionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePolicyVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyVersionOutput`](crate::operation::create_policy_version::CreatePolicyVersionOutput).
     pub fn builder() -> crate::operation::create_policy_version::builders::CreatePolicyVersionOutputBuilder {
@@ -62,8 +62,7 @@ impl CreatePolicyVersionOutputBuilder {
     }
     /// <p>The policy ARN.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The policy ARN.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreatePolicyVersionOutputBuilder {
     }
     /// <p>The JSON document that describes the policy.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The JSON document that describes the policy.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CreatePolicyVersionOutputBuilder {
     }
     /// <p>The policy version ID.</p>
     pub fn set_policy_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
     }
     /// <p>The policy version ID.</p>
     pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,30 +101,35 @@ impl CreatePolicyVersionOutputBuilder {
     }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default_version = input;
-        self
+        self.is_default_version = input; self
     }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
         &self.is_default_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePolicyVersionOutput`](crate::operation::create_policy_version::CreatePolicyVersionOutput).
     pub fn build(self) -> crate::operation::create_policy_version::CreatePolicyVersionOutput {
         crate::operation::create_policy_version::CreatePolicyVersionOutput {
-            policy_arn: self.policy_arn,
-            policy_document: self.policy_document,
-            policy_version_id: self.policy_version_id,
-            is_default_version: self.is_default_version.unwrap_or_default(),
+            policy_arn: self.policy_arn
+            ,
+            policy_document: self.policy_document
+            ,
+            policy_version_id: self.policy_version_id
+            ,
+            is_default_version: self.is_default_version
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

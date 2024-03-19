@@ -3,7 +3,7 @@
 /// <p>Configuration information for SageMaker Debugger rules for debugging. To learn more about how to configure the <code>DebugRuleConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DebugRuleConfiguration {
+pub struct DebugRuleConfiguration  {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
     pub rule_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
@@ -17,27 +17,27 @@ pub struct DebugRuleConfiguration {
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
     pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>Runtime configuration for rule container.</p>
-    pub rule_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub rule_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DebugRuleConfiguration {
+impl  DebugRuleConfiguration  {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
-    pub fn rule_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_configuration_name(&self) -> ::std::option::Option<& str> {
         self.rule_configuration_name.as_deref()
     }
     /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
     /// <p>Path to Amazon S3 storage location for rules.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
     /// <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
-    pub fn rule_evaluator_image(&self) -> ::std::option::Option<&str> {
+    pub fn rule_evaluator_image(&self) -> ::std::option::Option<& str> {
         self.rule_evaluator_image.as_deref()
     }
     /// <p>The instance type to deploy a custom rule for debugging a training job.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProcessingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::ProcessingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
@@ -45,7 +45,7 @@ impl DebugRuleConfiguration {
         self.volume_size_in_gb
     }
     /// <p>Runtime configuration for rule container.</p>
-    pub fn rule_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn rule_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.rule_parameters.as_ref()
     }
 }
@@ -66,7 +66,7 @@ pub struct DebugRuleConfigurationBuilder {
     pub(crate) rule_evaluator_image: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
-    pub(crate) rule_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) rule_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DebugRuleConfigurationBuilder {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
@@ -77,8 +77,7 @@ impl DebugRuleConfigurationBuilder {
     }
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
     pub fn set_rule_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_configuration_name = input;
-        self
+        self.rule_configuration_name = input; self
     }
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
     pub fn get_rule_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl DebugRuleConfigurationBuilder {
     }
     /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
     }
     /// <p>Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.</p>
     pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl DebugRuleConfigurationBuilder {
     }
     /// <p>Path to Amazon S3 storage location for rules.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_path = input;
-        self
+        self.s3_output_path = input; self
     }
     /// <p>Path to Amazon S3 storage location for rules.</p>
     pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl DebugRuleConfigurationBuilder {
     }
     /// <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
     pub fn set_rule_evaluator_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_evaluator_image = input;
-        self
+        self.rule_evaluator_image = input; self
     }
     /// <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
     pub fn get_rule_evaluator_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl DebugRuleConfigurationBuilder {
     }
     /// <p>The instance type to deploy a custom rule for debugging a training job.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProcessingInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type to deploy a custom rule for debugging a training job.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
@@ -148,8 +143,7 @@ impl DebugRuleConfigurationBuilder {
     }
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
     }
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -160,38 +154,38 @@ impl DebugRuleConfigurationBuilder {
     /// To override the contents of this collection use [`set_rule_parameters`](Self::set_rule_parameters).
     ///
     /// <p>Runtime configuration for rule container.</p>
-    pub fn rule_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.rule_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.rule_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.rule_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Runtime configuration for rule container.</p>
-    pub fn set_rule_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.rule_parameters = input;
-        self
+    pub fn set_rule_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.rule_parameters = input; self
     }
     /// <p>Runtime configuration for rule container.</p>
-    pub fn get_rule_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_rule_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.rule_parameters
     }
     /// Consumes the builder and constructs a [`DebugRuleConfiguration`](crate::types::DebugRuleConfiguration).
     pub fn build(self) -> crate::types::DebugRuleConfiguration {
         crate::types::DebugRuleConfiguration {
-            rule_configuration_name: self.rule_configuration_name,
-            local_path: self.local_path,
-            s3_output_path: self.s3_output_path,
-            rule_evaluator_image: self.rule_evaluator_image,
-            instance_type: self.instance_type,
-            volume_size_in_gb: self.volume_size_in_gb,
-            rule_parameters: self.rule_parameters,
+            rule_configuration_name: self.rule_configuration_name
+            ,
+            local_path: self.local_path
+            ,
+            s3_output_path: self.s3_output_path
+            ,
+            rule_evaluator_image: self.rule_evaluator_image
+            ,
+            instance_type: self.instance_type
+            ,
+            volume_size_in_gb: self.volume_size_in_gb
+            ,
+            rule_parameters: self.rule_parameters
+            ,
         }
     }
 }
+

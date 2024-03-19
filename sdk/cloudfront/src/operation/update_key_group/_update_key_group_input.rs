@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKeyGroupInput {
+pub struct UpdateKeyGroupInput  {
     /// <p>The key group configuration.</p>
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     /// <p>The identifier of the key group that you are updating.</p>
@@ -10,17 +10,17 @@ pub struct UpdateKeyGroupInput {
     /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateKeyGroupInput {
+impl  UpdateKeyGroupInput  {
     /// <p>The key group configuration.</p>
-    pub fn key_group_config(&self) -> ::std::option::Option<&crate::types::KeyGroupConfig> {
+    pub fn key_group_config(&self) -> ::std::option::Option<& crate::types::KeyGroupConfig> {
         self.key_group_config.as_ref()
     }
     /// <p>The identifier of the key group that you are updating.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateKeyGroupInputBuilder {
     }
     /// <p>The key group configuration.</p>
     pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
-        self.key_group_config = input;
-        self
+        self.key_group_config = input; self
     }
     /// <p>The key group configuration.</p>
     pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
@@ -63,8 +62,7 @@ impl UpdateKeyGroupInputBuilder {
     }
     /// <p>The identifier of the key group that you are updating.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the key group that you are updating.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl UpdateKeyGroupInputBuilder {
     }
     /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateKeyGroupInput`](crate::operation::update_key_group::UpdateKeyGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_key_group::UpdateKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_key_group::UpdateKeyGroupInput {
-            key_group_config: self.key_group_config,
-            id: self.id,
-            if_match: self.if_match,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_key_group::UpdateKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_key_group::UpdateKeyGroupInput {
+                key_group_config: self.key_group_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomRoutingAcceleratorsInput {
+pub struct ListCustomRoutingAcceleratorsInput  {
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListCustomRoutingAcceleratorsInput {
+impl  ListCustomRoutingAcceleratorsInput  {
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
     }
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -54,23 +53,22 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingAcceleratorsInput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

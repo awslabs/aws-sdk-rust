@@ -3,24 +3,22 @@
 /// <p>An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionConfig {
+pub struct EncryptionConfig  {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     pub role_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
     pub kms_key_arn: ::std::string::String,
 }
-impl EncryptionConfig {
+impl  EncryptionConfig  {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
-    pub fn kms_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_arn.deref()
+    pub fn kms_key_arn(&self) -> & str {
+        use std::ops::Deref; self.kms_key_arn.deref()
     }
 }
 impl EncryptionConfig {
@@ -48,8 +46,7 @@ impl EncryptionConfigBuilder {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
@@ -64,8 +61,7 @@ impl EncryptionConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl EncryptionConfigBuilder {
     /// - [`role_arn`](crate::types::builders::EncryptionConfigBuilder::role_arn)
     /// - [`kms_key_arn`](crate::types::builders::EncryptionConfigBuilder::kms_key_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionConfig {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building EncryptionConfig",
-                )
-            })?,
-            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_arn",
-                    "kms_key_arn was not specified but it is required when building EncryptionConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionConfig {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building EncryptionConfig")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_arn", "kms_key_arn was not specified but it is required when building EncryptionConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

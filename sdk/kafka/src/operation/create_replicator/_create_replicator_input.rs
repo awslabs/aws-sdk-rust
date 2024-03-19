@@ -3,47 +3,49 @@
 /// <p>Creates a replicator using the specified configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReplicatorInput {
+pub struct CreateReplicatorInput  {
     /// <p>A summary description of the replicator.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Kafka Clusters to use in setting up sources / targets for replication.</p>
-    pub kafka_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KafkaCluster>>,
+    pub kafka_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaCluster>>,
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub replication_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfo>>,
+    pub replication_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfo>>,
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
     pub replicator_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of tags to attach to created Replicator.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateReplicatorInput {
+impl  CreateReplicatorInput  {
     /// <p>A summary description of the replicator.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Kafka Clusters to use in setting up sources / targets for replication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_clusters.is_none()`.
-    pub fn kafka_clusters(&self) -> &[crate::types::KafkaCluster] {
-        self.kafka_clusters.as_deref().unwrap_or_default()
+    pub fn kafka_clusters(&self) -> & [crate::types::KafkaCluster] {
+        self.kafka_clusters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_info_list.is_none()`.
-    pub fn replication_info_list(&self) -> &[crate::types::ReplicationInfo] {
-        self.replication_info_list.as_deref().unwrap_or_default()
+    pub fn replication_info_list(&self) -> & [crate::types::ReplicationInfo] {
+        self.replication_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
-    pub fn replicator_name(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_name(&self) -> ::std::option::Option<& str> {
         self.replicator_name.as_deref()
     }
     /// <p>The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
-    pub fn service_execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_execution_role_arn.as_deref()
     }
     /// <p>List of tags to attach to created Replicator.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -59,11 +61,11 @@ impl CreateReplicatorInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicatorInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) kafka_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KafkaCluster>>,
-    pub(crate) replication_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfo>>,
+    pub(crate) kafka_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaCluster>>,
+    pub(crate) replication_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfo>>,
     pub(crate) replicator_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateReplicatorInputBuilder {
     /// <p>A summary description of the replicator.</p>
@@ -73,8 +75,7 @@ impl CreateReplicatorInputBuilder {
     }
     /// <p>A summary description of the replicator.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A summary description of the replicator.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +88,16 @@ impl CreateReplicatorInputBuilder {
     /// <p>Kafka Clusters to use in setting up sources / targets for replication.</p>
     pub fn kafka_clusters(mut self, input: crate::types::KafkaCluster) -> Self {
         let mut v = self.kafka_clusters.unwrap_or_default();
-        v.push(input);
-        self.kafka_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kafka_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Kafka Clusters to use in setting up sources / targets for replication.</p>
-    pub fn set_kafka_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaCluster>>) -> Self {
-        self.kafka_clusters = input;
-        self
+    pub fn set_kafka_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaCluster>>) -> Self {
+        self.kafka_clusters = input; self
     }
     /// <p>Kafka Clusters to use in setting up sources / targets for replication.</p>
-    pub fn get_kafka_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaCluster>> {
+    pub fn get_kafka_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KafkaCluster>> {
         &self.kafka_clusters
     }
     /// Appends an item to `replication_info_list`.
@@ -107,17 +107,16 @@ impl CreateReplicatorInputBuilder {
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
     pub fn replication_info_list(mut self, input: crate::types::ReplicationInfo) -> Self {
         let mut v = self.replication_info_list.unwrap_or_default();
-        v.push(input);
-        self.replication_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub fn set_replication_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfo>>) -> Self {
-        self.replication_info_list = input;
-        self
+    pub fn set_replication_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfo>>) -> Self {
+        self.replication_info_list = input; self
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub fn get_replication_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfo>> {
+    pub fn get_replication_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfo>> {
         &self.replication_info_list
     }
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
@@ -128,8 +127,7 @@ impl CreateReplicatorInputBuilder {
     }
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
     pub fn set_replicator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_name = input;
-        self
+        self.replicator_name = input; self
     }
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
     pub fn get_replicator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl CreateReplicatorInputBuilder {
     }
     /// <p>The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     pub fn set_service_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_execution_role_arn = input;
-        self
+        self.service_execution_role_arn = input; self
     }
     /// <p>The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     pub fn get_service_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,30 +154,36 @@ impl CreateReplicatorInputBuilder {
     /// <p>List of tags to attach to created Replicator.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>List of tags to attach to created Replicator.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>List of tags to attach to created Replicator.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReplicatorInput`](crate::operation::create_replicator::CreateReplicatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_replicator::CreateReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_replicator::CreateReplicatorInput {
-            description: self.description,
-            kafka_clusters: self.kafka_clusters,
-            replication_info_list: self.replication_info_list,
-            replicator_name: self.replicator_name,
-            service_execution_role_arn: self.service_execution_role_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_replicator::CreateReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_replicator::CreateReplicatorInput {
+                description: self.description
+                ,
+                kafka_clusters: self.kafka_clusters
+                ,
+                replication_info_list: self.replication_info_list
+                ,
+                replicator_name: self.replicator_name
+                ,
+                service_execution_role_arn: self.service_execution_role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

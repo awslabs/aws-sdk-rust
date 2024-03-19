@@ -3,7 +3,7 @@
 /// <p>Trusted Advisor check summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckSummary {
+pub struct CheckSummary  {
     /// <p>Trusted Advisor check ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Trusted Advisor check name.</p>
@@ -26,52 +26,52 @@ pub struct CheckSummary {
     /// <p>Status associated to the check.</p>
     pub status: ::std::option::Option<crate::types::CheckStatus>,
     /// <p>Account summary associated to the check.</p>
-    pub account_summary: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
+    pub account_summary: ::std::option::Option<::std::collections::HashMap::<crate::types::CheckStatus, i32>>,
 }
-impl CheckSummary {
+impl  CheckSummary  {
     /// <p>Trusted Advisor check ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Trusted Advisor check name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Provider of the check related to the best practice.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::CheckProvider> {
+    pub fn provider(&self) -> ::std::option::Option<& crate::types::CheckProvider> {
         self.provider.as_ref()
     }
     /// <p>Trusted Advisor check description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> ::std::option::Option<&str> {
+    pub fn choice_id(&self) -> ::std::option::Option<& str> {
         self.choice_id.as_deref()
     }
     /// <p>Status associated to the check.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CheckStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CheckStatus> {
         self.status.as_ref()
     }
     /// <p>Account summary associated to the check.</p>
-    pub fn account_summary(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::CheckStatus, i32>> {
+    pub fn account_summary(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::CheckStatus, i32>> {
         self.account_summary.as_ref()
     }
 }
@@ -96,7 +96,7 @@ pub struct CheckSummaryBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) choice_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CheckStatus>,
-    pub(crate) account_summary: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
+    pub(crate) account_summary: ::std::option::Option<::std::collections::HashMap::<crate::types::CheckStatus, i32>>,
 }
 impl CheckSummaryBuilder {
     /// <p>Trusted Advisor check ID.</p>
@@ -106,8 +106,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>Trusted Advisor check ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Trusted Advisor check ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>Trusted Advisor check name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Trusted Advisor check name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>Provider of the check related to the best practice.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::CheckProvider>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>Provider of the check related to the best practice.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::CheckProvider> {
@@ -148,8 +145,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>Trusted Advisor check description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Trusted Advisor check description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +158,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -176,8 +171,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +186,7 @@ impl CheckSummaryBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -207,8 +200,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +213,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The ID of a choice.</p>
     pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.choice_id = input;
-        self
+        self.choice_id = input; self
     }
     /// <p>The ID of a choice.</p>
     pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +226,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>Status associated to the check.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CheckStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status associated to the check.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CheckStatus> {
@@ -249,33 +239,44 @@ impl CheckSummaryBuilder {
     /// <p>Account summary associated to the check.</p>
     pub fn account_summary(mut self, k: crate::types::CheckStatus, v: i32) -> Self {
         let mut hash_map = self.account_summary.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.account_summary = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.account_summary = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Account summary associated to the check.</p>
-    pub fn set_account_summary(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>) -> Self {
-        self.account_summary = input;
-        self
+    pub fn set_account_summary(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::CheckStatus, i32>>) -> Self {
+        self.account_summary = input; self
     }
     /// <p>Account summary associated to the check.</p>
-    pub fn get_account_summary(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>> {
+    pub fn get_account_summary(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::CheckStatus, i32>> {
         &self.account_summary
     }
     /// Consumes the builder and constructs a [`CheckSummary`](crate::types::CheckSummary).
     pub fn build(self) -> crate::types::CheckSummary {
         crate::types::CheckSummary {
-            id: self.id,
-            name: self.name,
-            provider: self.provider,
-            description: self.description,
-            updated_at: self.updated_at,
-            lens_arn: self.lens_arn,
-            pillar_id: self.pillar_id,
-            question_id: self.question_id,
-            choice_id: self.choice_id,
-            status: self.status,
-            account_summary: self.account_summary,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            provider: self.provider
+            ,
+            description: self.description
+            ,
+            updated_at: self.updated_at
+            ,
+            lens_arn: self.lens_arn
+            ,
+            pillar_id: self.pillar_id
+            ,
+            question_id: self.question_id
+            ,
+            choice_id: self.choice_id
+            ,
+            status: self.status
+            ,
+            account_summary: self.account_summary
+            ,
         }
     }
 }
+

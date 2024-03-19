@@ -5,7 +5,7 @@
 /// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <code>RuleVariables</code> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RulesSourceList {
+pub struct RulesSourceList  {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
     /// <li>
@@ -13,13 +13,13 @@ pub struct RulesSourceList {
     /// <li>
     /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
-    pub targets: ::std::vec::Vec<::std::string::String>,
+    pub targets: ::std::vec::Vec::<::std::string::String>,
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
-    pub target_types: ::std::vec::Vec<crate::types::TargetType>,
+    pub target_types: ::std::vec::Vec::<crate::types::TargetType>,
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub generated_rules_type: crate::types::GeneratedRulesType,
 }
-impl RulesSourceList {
+impl  RulesSourceList  {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
     /// <li>
@@ -27,17 +27,15 @@ impl RulesSourceList {
     /// <li>
     /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
-    pub fn targets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.targets.deref()
+    pub fn targets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.targets.deref()
     }
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
-    pub fn target_types(&self) -> &[crate::types::TargetType] {
-        use std::ops::Deref;
-        self.target_types.deref()
+    pub fn target_types(&self) -> & [crate::types::TargetType] {
+        use std::ops::Deref; self.target_types.deref()
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
-    pub fn generated_rules_type(&self) -> &crate::types::GeneratedRulesType {
+    pub fn generated_rules_type(&self) -> & crate::types::GeneratedRulesType {
         &self.generated_rules_type
     }
 }
@@ -52,8 +50,8 @@ impl RulesSourceList {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RulesSourceListBuilder {
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) target_types: ::std::option::Option<::std::vec::Vec::<crate::types::TargetType>>,
     pub(crate) generated_rules_type: ::std::option::Option<crate::types::GeneratedRulesType>,
 }
 impl RulesSourceListBuilder {
@@ -70,9 +68,9 @@ impl RulesSourceListBuilder {
     /// </ul>
     pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input.into());
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
@@ -81,9 +79,8 @@ impl RulesSourceListBuilder {
     /// <li>
     /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
@@ -92,7 +89,7 @@ impl RulesSourceListBuilder {
     /// <li>
     /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.targets
     }
     /// Appends an item to `target_types`.
@@ -102,17 +99,16 @@ impl RulesSourceListBuilder {
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
     pub fn target_types(mut self, input: crate::types::TargetType) -> Self {
         let mut v = self.target_types.unwrap_or_default();
-        v.push(input);
-        self.target_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
-    pub fn set_target_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>) -> Self {
-        self.target_types = input;
-        self
+    pub fn set_target_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetType>>) -> Self {
+        self.target_types = input; self
     }
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
-    pub fn get_target_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetType>> {
+    pub fn get_target_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetType>> {
         &self.target_types
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
@@ -123,8 +119,7 @@ impl RulesSourceListBuilder {
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub fn set_generated_rules_type(mut self, input: ::std::option::Option<crate::types::GeneratedRulesType>) -> Self {
-        self.generated_rules_type = input;
-        self
+        self.generated_rules_type = input; self
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub fn get_generated_rules_type(&self) -> &::std::option::Option<crate::types::GeneratedRulesType> {
@@ -136,25 +131,25 @@ impl RulesSourceListBuilder {
     /// - [`target_types`](crate::types::builders::RulesSourceListBuilder::target_types)
     /// - [`generated_rules_type`](crate::types::builders::RulesSourceListBuilder::generated_rules_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RulesSourceList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RulesSourceList {
-            targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "targets",
-                    "targets was not specified but it is required when building RulesSourceList",
-                )
-            })?,
-            target_types: self.target_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_types",
-                    "target_types was not specified but it is required when building RulesSourceList",
-                )
-            })?,
-            generated_rules_type: self.generated_rules_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "generated_rules_type",
-                    "generated_rules_type was not specified but it is required when building RulesSourceList",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RulesSourceList {
+                targets: self.targets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("targets", "targets was not specified but it is required when building RulesSourceList")
+                    )?
+                ,
+                target_types: self.target_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_types", "target_types was not specified but it is required when building RulesSourceList")
+                    )?
+                ,
+                generated_rules_type: self.generated_rules_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("generated_rules_type", "generated_rules_type was not specified but it is required when building RulesSourceList")
+                    )?
+                ,
+            }
+        )
     }
 }
+

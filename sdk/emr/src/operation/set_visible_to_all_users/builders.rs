@@ -5,23 +5,20 @@ pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_in
 
 impl SetVisibleToAllUsersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.set_visible_to_all_users();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.set_visible_to_all_users();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SetVisibleToAllUsers`.
-///
+/// 
 /// <important>
 /// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access Management for Amazon EMR</a>.</p>
 /// </important>
@@ -31,33 +28,32 @@ impl SetVisibleToAllUsersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetVisibleToAllUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder,
+                    inner: crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-    > for SetVisibleToAllUsersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
+                    crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
+                > for SetVisibleToAllUsersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
+                        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SetVisibleToAllUsersFluentBuilder {
     /// Creates a new `SetVisibleToAllUsers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl SetVisibleToAllUsersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::set_visible_to_all_users::SetVisibleToAllUsers::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsers::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::set_visible_to_all_users::SetVisibleToAllUsers::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::set_visible_to_all_users::SetVisibleToAllUsers::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput, crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `JobFlowIds`.
     ///
     /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
@@ -123,12 +110,12 @@ impl SetVisibleToAllUsersFluentBuilder {
         self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
@@ -146,3 +133,4 @@ impl SetVisibleToAllUsersFluentBuilder {
         self.inner.get_visible_to_all_users()
     }
 }
+

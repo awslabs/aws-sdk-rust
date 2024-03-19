@@ -3,15 +3,14 @@
 /// <p>The published asset for which the subscription grant is to be created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscribedListingInput {
+pub struct SubscribedListingInput  {
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
     pub identifier: ::std::string::String,
 }
-impl SubscribedListingInput {
+impl  SubscribedListingInput  {
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
 }
 impl SubscribedListingInput {
@@ -36,8 +35,7 @@ impl SubscribedListingInputBuilder {
     }
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SubscribedListingInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::SubscribedListingInputBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SubscribedListingInput {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building SubscribedListingInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SubscribedListingInput {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building SubscribedListingInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

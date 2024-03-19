@@ -5,54 +5,50 @@ pub use crate::operation::update_provisioned_product_properties::_update_provisi
 
 impl UpdateProvisionedProductPropertiesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_provisioned_product_properties();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_provisioned_product_properties();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateProvisionedProductProperties`.
-///
+/// 
 /// <p>Requests updates to the properties of the specified provisioned product.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder,
+                    inner: crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
-    > for UpdateProvisionedProductPropertiesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
-            crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
+                    crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
+                > for UpdateProvisionedProductPropertiesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
+                        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// Creates a new `UpdateProvisionedProductProperties`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput,
-        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput, crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -172,10 +159,7 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// <p>The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
     /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
-    pub fn set_provisioned_product_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_provisioned_product_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::PropertyKey, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_provisioned_product_properties(input);
         self
     }
@@ -184,9 +168,7 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// <p>The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
     /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
-    pub fn get_provisioned_product_properties(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>> {
+    pub fn get_provisioned_product_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::PropertyKey, ::std::string::String>> {
         self.inner.get_provisioned_product_properties()
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
@@ -204,3 +186,4 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
         self.inner.get_idempotency_token()
     }
 }
+

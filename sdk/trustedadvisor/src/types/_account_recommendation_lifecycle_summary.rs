@@ -3,7 +3,7 @@
 /// <p>Summary of an AccountRecommendationLifecycle for an Organization Recommendation</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AccountRecommendationLifecycleSummary {
+pub struct AccountRecommendationLifecycleSummary  {
     /// <p>The AWS account ID</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Recommendation ARN</p>
@@ -21,41 +21,41 @@ pub struct AccountRecommendationLifecycleSummary {
     /// <p>When the Recommendation was last updated</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AccountRecommendationLifecycleSummary {
+impl  AccountRecommendationLifecycleSummary  {
     /// <p>The AWS account ID</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Recommendation ARN</p>
-    pub fn account_recommendation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn account_recommendation_arn(&self) -> ::std::option::Option<& str> {
         self.account_recommendation_arn.as_deref()
     }
     /// <p>The lifecycle stage from AWS Trusted Advisor Priority</p>
-    pub fn lifecycle_stage(&self) -> ::std::option::Option<&crate::types::RecommendationLifecycleStage> {
+    pub fn lifecycle_stage(&self) -> ::std::option::Option<& crate::types::RecommendationLifecycleStage> {
         self.lifecycle_stage.as_ref()
     }
     /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
-    pub fn updated_on_behalf_of(&self) -> ::std::option::Option<&str> {
+    pub fn updated_on_behalf_of(&self) -> ::std::option::Option<& str> {
         self.updated_on_behalf_of.as_deref()
     }
     /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
-    pub fn updated_on_behalf_of_job_title(&self) -> ::std::option::Option<&str> {
+    pub fn updated_on_behalf_of_job_title(&self) -> ::std::option::Option<& str> {
         self.updated_on_behalf_of_job_title.as_deref()
     }
     /// <p>Reason for the lifecycle stage change</p>
-    pub fn update_reason(&self) -> ::std::option::Option<&str> {
+    pub fn update_reason(&self) -> ::std::option::Option<& str> {
         self.update_reason.as_deref()
     }
     /// <p>Reason code for the lifecycle state change</p>
-    pub fn update_reason_code(&self) -> ::std::option::Option<&crate::types::UpdateRecommendationLifecycleStageReasonCode> {
+    pub fn update_reason_code(&self) -> ::std::option::Option<& crate::types::UpdateRecommendationLifecycleStageReasonCode> {
         self.update_reason_code.as_ref()
     }
     /// <p>When the Recommendation was last updated</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for AccountRecommendationLifecycleSummary {
+impl  ::std::fmt::Debug for AccountRecommendationLifecycleSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountRecommendationLifecycleSummary");
         formatter.field("account_id", &self.account_id);
@@ -97,8 +97,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>The AWS account ID</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>The Recommendation ARN</p>
     pub fn set_account_recommendation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_recommendation_arn = input;
-        self
+        self.account_recommendation_arn = input; self
     }
     /// <p>The Recommendation ARN</p>
     pub fn get_account_recommendation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>The lifecycle stage from AWS Trusted Advisor Priority</p>
     pub fn set_lifecycle_stage(mut self, input: ::std::option::Option<crate::types::RecommendationLifecycleStage>) -> Self {
-        self.lifecycle_stage = input;
-        self
+        self.lifecycle_stage = input; self
     }
     /// <p>The lifecycle stage from AWS Trusted Advisor Priority</p>
     pub fn get_lifecycle_stage(&self) -> &::std::option::Option<crate::types::RecommendationLifecycleStage> {
@@ -139,8 +136,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn set_updated_on_behalf_of(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_on_behalf_of = input;
-        self
+        self.updated_on_behalf_of = input; self
     }
     /// <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn get_updated_on_behalf_of(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn set_updated_on_behalf_of_job_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_on_behalf_of_job_title = input;
-        self
+        self.updated_on_behalf_of_job_title = input; self
     }
     /// <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority</p>
     pub fn get_updated_on_behalf_of_job_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>Reason for the lifecycle stage change</p>
     pub fn set_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_reason = input;
-        self
+        self.update_reason = input; self
     }
     /// <p>Reason for the lifecycle stage change</p>
     pub fn get_update_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>Reason code for the lifecycle state change</p>
     pub fn set_update_reason_code(mut self, input: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStageReasonCode>) -> Self {
-        self.update_reason_code = input;
-        self
+        self.update_reason_code = input; self
     }
     /// <p>Reason code for the lifecycle state change</p>
     pub fn get_update_reason_code(&self) -> &::std::option::Option<crate::types::UpdateRecommendationLifecycleStageReasonCode> {
@@ -195,8 +188,7 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     }
     /// <p>When the Recommendation was last updated</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>When the Recommendation was last updated</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -205,14 +197,22 @@ impl AccountRecommendationLifecycleSummaryBuilder {
     /// Consumes the builder and constructs a [`AccountRecommendationLifecycleSummary`](crate::types::AccountRecommendationLifecycleSummary).
     pub fn build(self) -> crate::types::AccountRecommendationLifecycleSummary {
         crate::types::AccountRecommendationLifecycleSummary {
-            account_id: self.account_id,
-            account_recommendation_arn: self.account_recommendation_arn,
-            lifecycle_stage: self.lifecycle_stage,
-            updated_on_behalf_of: self.updated_on_behalf_of,
-            updated_on_behalf_of_job_title: self.updated_on_behalf_of_job_title,
-            update_reason: self.update_reason,
-            update_reason_code: self.update_reason_code,
-            last_updated_at: self.last_updated_at,
+            account_id: self.account_id
+            ,
+            account_recommendation_arn: self.account_recommendation_arn
+            ,
+            lifecycle_stage: self.lifecycle_stage
+            ,
+            updated_on_behalf_of: self.updated_on_behalf_of
+            ,
+            updated_on_behalf_of_job_title: self.updated_on_behalf_of_job_title
+            ,
+            update_reason: self.update_reason
+            ,
+            update_reason_code: self.update_reason_code
+            ,
+            last_updated_at: self.last_updated_at
+            ,
         }
     }
 }
@@ -230,3 +230,4 @@ impl ::std::fmt::Debug for AccountRecommendationLifecycleSummaryBuilder {
         formatter.finish()
     }
 }
+

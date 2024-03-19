@@ -3,7 +3,7 @@
 /// <p>The summary of attributes associated with a job run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobRunSummary {
+pub struct JobRunSummary  {
     /// <p>The ID of the application the job is running on.</p>
     pub application_id: ::std::string::String,
     /// <p>The ID of the job run.</p>
@@ -29,60 +29,53 @@ pub struct JobRunSummary {
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl JobRunSummary {
+impl  JobRunSummary  {
     /// <p>The ID of the application the job is running on.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The ID of the job run.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the job run.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The user who created the job run.</p>
-    pub fn created_by(&self) -> &str {
-        use std::ops::Deref;
-        self.created_by.deref()
+    pub fn created_by(&self) -> & str {
+        use std::ops::Deref; self.created_by.deref()
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time when the job run was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role.deref()
+    pub fn execution_role(&self) -> & str {
+        use std::ops::Deref; self.execution_role.deref()
     }
     /// <p>The state of the job run.</p>
-    pub fn state(&self) -> &crate::types::JobRunState {
+    pub fn state(&self) -> & crate::types::JobRunState {
         &self.state
     }
     /// <p>The state details of the job run.</p>
-    pub fn state_details(&self) -> &str {
-        use std::ops::Deref;
-        self.state_details.deref()
+    pub fn state_details(&self) -> & str {
+        use std::ops::Deref; self.state_details.deref()
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
-    pub fn release_label(&self) -> &str {
-        use std::ops::Deref;
-        self.release_label.deref()
+    pub fn release_label(&self) -> & str {
+        use std::ops::Deref; self.release_label.deref()
     }
     /// <p>The type of job run, such as Spark or Hive.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -119,8 +112,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The ID of the application the job is running on.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application the job is running on.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +126,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The ID of the job run.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the job run.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +139,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +153,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The ARN of the job run.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the job run.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +167,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The user who created the job run.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The user who created the job run.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +181,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The date and time when the job run was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the job run was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +195,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The date and time when the job run was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time when the job run was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +209,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The execution role ARN of the job run.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The execution role ARN of the job run.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +223,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The state of the job run.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobRunState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the job run.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::JobRunState> {
@@ -253,8 +237,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The state details of the job run.</p>
     pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_details = input;
-        self
+        self.state_details = input; self
     }
     /// <p>The state details of the job run.</p>
     pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +251,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,8 +264,7 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,69 +283,64 @@ impl JobRunSummaryBuilder {
     /// - [`state_details`](crate::types::builders::JobRunSummaryBuilder::state_details)
     /// - [`release_label`](crate::types::builders::JobRunSummaryBuilder::release_label)
     pub fn build(self) -> ::std::result::Result<crate::types::JobRunSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobRunSummary {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            name: self.name,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            execution_role: self.execution_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role",
-                    "execution_role was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            state_details: self.state_details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_details",
-                    "state_details was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            release_label: self.release_label.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "release_label",
-                    "release_label was not specified but it is required when building JobRunSummary",
-                )
-            })?,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobRunSummary {
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                created_by: self.created_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_by", "created_by was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                execution_role: self.execution_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_role", "execution_role was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                state_details: self.state_details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_details", "state_details was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                release_label: self.release_label
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("release_label", "release_label was not specified but it is required when building JobRunSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

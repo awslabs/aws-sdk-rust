@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateSourceNetworkInput {
+pub struct CreateSourceNetworkInput  {
     /// <p>Which VPC ID to protect.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Account containing the VPC to protect.</p>
@@ -10,27 +10,27 @@ pub struct CreateSourceNetworkInput {
     /// <p>Region containing the VPC to protect.</p>
     pub origin_region: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateSourceNetworkInput {
+impl  CreateSourceNetworkInput  {
     /// <p>Which VPC ID to protect.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Account containing the VPC to protect.</p>
-    pub fn origin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_account_id(&self) -> ::std::option::Option<& str> {
         self.origin_account_id.as_deref()
     }
     /// <p>Region containing the VPC to protect.</p>
-    pub fn origin_region(&self) -> ::std::option::Option<&str> {
+    pub fn origin_region(&self) -> ::std::option::Option<& str> {
         self.origin_region.as_deref()
     }
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateSourceNetworkInput {
+impl  ::std::fmt::Debug for CreateSourceNetworkInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSourceNetworkInput");
         formatter.field("vpc_id", &self.vpc_id);
@@ -54,7 +54,7 @@ pub struct CreateSourceNetworkInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_region: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateSourceNetworkInputBuilder {
     /// <p>Which VPC ID to protect.</p>
@@ -65,8 +65,7 @@ impl CreateSourceNetworkInputBuilder {
     }
     /// <p>Which VPC ID to protect.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>Which VPC ID to protect.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CreateSourceNetworkInputBuilder {
     }
     /// <p>Account containing the VPC to protect.</p>
     pub fn set_origin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_account_id = input;
-        self
+        self.origin_account_id = input; self
     }
     /// <p>Account containing the VPC to protect.</p>
     pub fn get_origin_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl CreateSourceNetworkInputBuilder {
     }
     /// <p>Region containing the VPC to protect.</p>
     pub fn set_origin_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_region = input;
-        self
+        self.origin_region = input; self
     }
     /// <p>Region containing the VPC to protect.</p>
     pub fn get_origin_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,30 +106,32 @@ impl CreateSourceNetworkInputBuilder {
     /// <p>A set of tags to be associated with the Source Network resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSourceNetworkInput`](crate::operation::create_source_network::CreateSourceNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_source_network::CreateSourceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_source_network::CreateSourceNetworkInput {
-            vpc_id: self.vpc_id,
-            origin_account_id: self.origin_account_id,
-            origin_region: self.origin_region,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_source_network::CreateSourceNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_source_network::CreateSourceNetworkInput {
+                vpc_id: self.vpc_id
+                ,
+                origin_account_id: self.origin_account_id
+                ,
+                origin_region: self.origin_region
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateSourceNetworkInputBuilder {
@@ -145,3 +144,4 @@ impl ::std::fmt::Debug for CreateSourceNetworkInputBuilder {
         formatter.finish()
     }
 }
+

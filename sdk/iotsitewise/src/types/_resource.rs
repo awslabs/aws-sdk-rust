@@ -3,19 +3,19 @@
 /// <p>Contains an IoT SiteWise Monitor resource ID for a portal or project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>A portal resource.</p>
     pub portal: ::std::option::Option<crate::types::PortalResource>,
     /// <p>A project resource.</p>
     pub project: ::std::option::Option<crate::types::ProjectResource>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>A portal resource.</p>
-    pub fn portal(&self) -> ::std::option::Option<&crate::types::PortalResource> {
+    pub fn portal(&self) -> ::std::option::Option<& crate::types::PortalResource> {
         self.portal.as_ref()
     }
     /// <p>A project resource.</p>
-    pub fn project(&self) -> ::std::option::Option<&crate::types::ProjectResource> {
+    pub fn project(&self) -> ::std::option::Option<& crate::types::ProjectResource> {
         self.project.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ResourceBuilder {
     }
     /// <p>A portal resource.</p>
     pub fn set_portal(mut self, input: ::std::option::Option<crate::types::PortalResource>) -> Self {
-        self.portal = input;
-        self
+        self.portal = input; self
     }
     /// <p>A portal resource.</p>
     pub fn get_portal(&self) -> &::std::option::Option<crate::types::PortalResource> {
@@ -55,8 +54,7 @@ impl ResourceBuilder {
     }
     /// <p>A project resource.</p>
     pub fn set_project(mut self, input: ::std::option::Option<crate::types::ProjectResource>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>A project resource.</p>
     pub fn get_project(&self) -> &::std::option::Option<crate::types::ProjectResource> {
@@ -65,8 +63,11 @@ impl ResourceBuilder {
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            portal: self.portal,
-            project: self.project,
+            portal: self.portal
+            ,
+            project: self.project
+            ,
         }
     }
 }
+

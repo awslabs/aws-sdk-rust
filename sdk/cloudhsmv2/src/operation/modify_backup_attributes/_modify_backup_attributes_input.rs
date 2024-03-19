@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyBackupAttributesInput {
+pub struct ModifyBackupAttributesInput  {
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub never_expires: ::std::option::Option<bool>,
 }
-impl ModifyBackupAttributesInput {
+impl  ModifyBackupAttributesInput  {
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
@@ -41,8 +41,7 @@ impl ModifyBackupAttributesInputBuilder {
     }
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ModifyBackupAttributesInputBuilder {
     }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn set_never_expires(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.never_expires = input;
-        self
+        self.never_expires = input; self
     }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn get_never_expires(&self) -> &::std::option::Option<bool> {
         &self.never_expires
     }
     /// Consumes the builder and constructs a [`ModifyBackupAttributesInput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_backup_attributes::ModifyBackupAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_backup_attributes::ModifyBackupAttributesInput {
-            backup_id: self.backup_id,
-            never_expires: self.never_expires,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_backup_attributes::ModifyBackupAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_backup_attributes::ModifyBackupAttributesInput {
+                backup_id: self.backup_id
+                ,
+                never_expires: self.never_expires
+                ,
+            }
+        )
     }
 }
+

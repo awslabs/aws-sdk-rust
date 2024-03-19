@@ -21,11 +21,7 @@ impl ProviderEndpointConfiguration {
     /// Tries to convert the enum instance into [`MarketplaceConfiguration`](crate::types::ProviderEndpointConfiguration::MarketplaceConfiguration), extracting the inner [`ProviderMarketplaceConfiguration`](crate::types::ProviderMarketplaceConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_marketplace_configuration(&self) -> ::std::result::Result<&crate::types::ProviderMarketplaceConfiguration, &Self> {
-        if let ProviderEndpointConfiguration::MarketplaceConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ProviderEndpointConfiguration::MarketplaceConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MarketplaceConfiguration`](crate::types::ProviderEndpointConfiguration::MarketplaceConfiguration).
     pub fn is_marketplace_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl ProviderEndpointConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

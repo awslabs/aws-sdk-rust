@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>PutRecord</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRecordInput {
+pub struct PutRecordInput  {
     /// <p>The name of the stream to put the data record into.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
@@ -17,29 +17,29 @@ pub struct PutRecordInput {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutRecordInput {
+impl  PutRecordInput  {
     /// <p>The name of the stream to put the data record into.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(&self) -> ::std::option::Option<&str> {
+    pub fn partition_key(&self) -> ::std::option::Option<& str> {
         self.partition_key.as_deref()
     }
     /// <p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>
-    pub fn explicit_hash_key(&self) -> ::std::option::Option<&str> {
+    pub fn explicit_hash_key(&self) -> ::std::option::Option<& str> {
         self.explicit_hash_key.as_deref()
     }
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
-    pub fn sequence_number_for_ordering(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_number_for_ordering(&self) -> ::std::option::Option<& str> {
         self.sequence_number_for_ordering.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl PutRecordInputBuilder {
     }
     /// <p>The name of the stream to put the data record into.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream to put the data record into.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl PutRecordInputBuilder {
     }
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -99,8 +97,7 @@ impl PutRecordInputBuilder {
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub fn set_partition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition_key = input;
-        self
+        self.partition_key = input; self
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub fn get_partition_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl PutRecordInputBuilder {
     }
     /// <p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>
     pub fn set_explicit_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explicit_hash_key = input;
-        self
+        self.explicit_hash_key = input; self
     }
     /// <p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>
     pub fn get_explicit_hash_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl PutRecordInputBuilder {
     }
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
     pub fn set_sequence_number_for_ordering(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_number_for_ordering = input;
-        self
+        self.sequence_number_for_ordering = input; self
     }
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
     pub fn get_sequence_number_for_ordering(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl PutRecordInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,13 +144,22 @@ impl PutRecordInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_record::PutRecordInput {
-            stream_name: self.stream_name,
-            data: self.data,
-            partition_key: self.partition_key,
-            explicit_hash_key: self.explicit_hash_key,
-            sequence_number_for_ordering: self.sequence_number_for_ordering,
-            stream_arn: self.stream_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_record::PutRecordInput {
+                stream_name: self.stream_name
+                ,
+                data: self.data
+                ,
+                partition_key: self.partition_key
+                ,
+                explicit_hash_key: self.explicit_hash_key
+                ,
+                sequence_number_for_ordering: self.sequence_number_for_ordering
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

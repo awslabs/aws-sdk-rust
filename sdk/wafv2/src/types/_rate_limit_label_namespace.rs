@@ -5,15 +5,14 @@
 /// <p>For information about label namespaces and names, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateLimitLabelNamespace {
+pub struct RateLimitLabelNamespace  {
     /// <p>The namespace to use for aggregation.</p>
     pub namespace: ::std::string::String,
 }
-impl RateLimitLabelNamespace {
+impl  RateLimitLabelNamespace  {
     /// <p>The namespace to use for aggregation.</p>
-    pub fn namespace(&self) -> &str {
-        use std::ops::Deref;
-        self.namespace.deref()
+    pub fn namespace(&self) -> & str {
+        use std::ops::Deref; self.namespace.deref()
     }
 }
 impl RateLimitLabelNamespace {
@@ -38,8 +37,7 @@ impl RateLimitLabelNamespaceBuilder {
     }
     /// <p>The namespace to use for aggregation.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace to use for aggregation.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -49,13 +47,15 @@ impl RateLimitLabelNamespaceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::RateLimitLabelNamespaceBuilder::namespace)
     pub fn build(self) -> ::std::result::Result<crate::types::RateLimitLabelNamespace, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RateLimitLabelNamespace {
-            namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace",
-                    "namespace was not specified but it is required when building RateLimitLabelNamespace",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RateLimitLabelNamespace {
+                namespace: self.namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "namespace was not specified but it is required when building RateLimitLabelNamespace")
+                    )?
+                ,
+            }
+        )
     }
 }
+

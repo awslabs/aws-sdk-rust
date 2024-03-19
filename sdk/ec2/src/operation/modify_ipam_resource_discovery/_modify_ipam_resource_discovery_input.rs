@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyIpamResourceDiscoveryInput {
+pub struct ModifyIpamResourceDiscoveryInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A resource discovery ID.</p>
@@ -10,34 +10,36 @@ pub struct ModifyIpamResourceDiscoveryInput {
     /// <p>A resource discovery description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
+    pub add_operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>>,
     /// <p>Remove operating Regions.</p>
-    pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    pub remove_operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::RemoveIpamOperatingRegion>>,
 }
-impl ModifyIpamResourceDiscoveryInput {
+impl  ModifyIpamResourceDiscoveryInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>A resource discovery description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_operating_regions.is_none()`.
-    pub fn add_operating_regions(&self) -> &[crate::types::AddIpamOperatingRegion] {
-        self.add_operating_regions.as_deref().unwrap_or_default()
+    pub fn add_operating_regions(&self) -> & [crate::types::AddIpamOperatingRegion] {
+        self.add_operating_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Remove operating Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_operating_regions.is_none()`.
-    pub fn remove_operating_regions(&self) -> &[crate::types::RemoveIpamOperatingRegion] {
-        self.remove_operating_regions.as_deref().unwrap_or_default()
+    pub fn remove_operating_regions(&self) -> & [crate::types::RemoveIpamOperatingRegion] {
+        self.remove_operating_regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyIpamResourceDiscoveryInput {
@@ -54,8 +56,8 @@ pub struct ModifyIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    pub(crate) add_operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>>,
+    pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::RemoveIpamOperatingRegion>>,
 }
 impl ModifyIpamResourceDiscoveryInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -65,8 +67,7 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -80,8 +81,7 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A resource discovery ID.</p>
     pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input;
-        self
+        self.ipam_resource_discovery_id = input; self
     }
     /// <p>A resource discovery ID.</p>
     pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +94,7 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A resource discovery description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A resource discovery description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,17 +107,16 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     pub fn add_operating_regions(mut self, input: crate::types::AddIpamOperatingRegion) -> Self {
         let mut v = self.add_operating_regions.unwrap_or_default();
-        v.push(input);
-        self.add_operating_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_operating_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn set_add_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
-        self.add_operating_regions = input;
-        self
+    pub fn set_add_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>>) -> Self {
+        self.add_operating_regions = input; self
     }
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn get_add_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_add_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>> {
         &self.add_operating_regions
     }
     /// Appends an item to `remove_operating_regions`.
@@ -128,32 +126,34 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
     /// <p>Remove operating Regions.</p>
     pub fn remove_operating_regions(mut self, input: crate::types::RemoveIpamOperatingRegion) -> Self {
         let mut v = self.remove_operating_regions.unwrap_or_default();
-        v.push(input);
-        self.remove_operating_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remove_operating_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Remove operating Regions.</p>
-    pub fn set_remove_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>) -> Self {
-        self.remove_operating_regions = input;
-        self
+    pub fn set_remove_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemoveIpamOperatingRegion>>) -> Self {
+        self.remove_operating_regions = input; self
     }
     /// <p>Remove operating Regions.</p>
-    pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+    pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemoveIpamOperatingRegion>> {
         &self.remove_operating_regions
     }
     /// Consumes the builder and constructs a [`ModifyIpamResourceDiscoveryInput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput {
-            dry_run: self.dry_run,
-            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
-            description: self.description,
-            add_operating_regions: self.add_operating_regions,
-            remove_operating_regions: self.remove_operating_regions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput {
+                dry_run: self.dry_run
+                ,
+                ipam_resource_discovery_id: self.ipam_resource_discovery_id
+                ,
+                description: self.description
+                ,
+                add_operating_regions: self.add_operating_regions
+                ,
+                remove_operating_regions: self.remove_operating_regions
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Volume used by the Kubernetes workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Volume {
+pub struct Volume  {
     /// <p>Volume name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     pub host_path: ::std::option::Option<crate::types::HostPath>,
 }
-impl Volume {
+impl  Volume  {
     /// <p>Volume name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    pub fn host_path(&self) -> ::std::option::Option<&crate::types::HostPath> {
+    pub fn host_path(&self) -> ::std::option::Option<& crate::types::HostPath> {
         self.host_path.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VolumeBuilder {
     }
     /// <p>Volume name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Volume name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VolumeBuilder {
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     pub fn set_host_path(mut self, input: ::std::option::Option<crate::types::HostPath>) -> Self {
-        self.host_path = input;
-        self
+        self.host_path = input; self
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     pub fn get_host_path(&self) -> &::std::option::Option<crate::types::HostPath> {
@@ -65,8 +63,11 @@ impl VolumeBuilder {
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).
     pub fn build(self) -> crate::types::Volume {
         crate::types::Volume {
-            name: self.name,
-            host_path: self.host_path,
+            name: self.name
+            ,
+            host_path: self.host_path
+            ,
         }
     }
 }
+

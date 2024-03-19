@@ -12,3 +12,4 @@ pub mod builders;
 
 /// Error types that Amazon Bedrock Runtime can respond with.
 pub mod error;
+

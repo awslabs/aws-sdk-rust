@@ -3,22 +3,22 @@
 /// <p>The structure representing the configureAgentResponse.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigureAgentOutput {
+pub struct ConfigureAgentOutput  {
     /// <p>An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data.</p>
     pub configuration: ::std::option::Option<crate::types::AgentConfiguration>,
     _request_id: Option<String>,
 }
-impl ConfigureAgentOutput {
+impl  ConfigureAgentOutput  {
     /// <p>An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AgentConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::AgentConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ConfigureAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ConfigureAgentOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureAgentOutput`](crate::operation::configure_agent::ConfigureAgentOutput).
     pub fn builder() -> crate::operation::configure_agent::builders::ConfigureAgentOutputBuilder {
@@ -42,27 +42,28 @@ impl ConfigureAgentOutputBuilder {
     }
     /// <p>An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AgentConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AgentConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ConfigureAgentOutput`](crate::operation::configure_agent::ConfigureAgentOutput).
     pub fn build(self) -> crate::operation::configure_agent::ConfigureAgentOutput {
         crate::operation::configure_agent::ConfigureAgentOutput {
-            configuration: self.configuration,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

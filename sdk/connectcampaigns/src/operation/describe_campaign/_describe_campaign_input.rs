@@ -3,13 +3,13 @@
 /// DescribeCampaignRequests
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCampaignInput {
+pub struct DescribeCampaignInput  {
     /// Identifier representing a Campaign
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCampaignInput {
+impl  DescribeCampaignInput  {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DescribeCampaignInputBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Identifier representing a Campaign
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_campaign::DescribeCampaignInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_campaign::DescribeCampaignInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

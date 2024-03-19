@@ -21,11 +21,7 @@ impl ContentFeedbackData {
     /// Tries to convert the enum instance into [`GenerativeContentFeedbackData`](crate::types::ContentFeedbackData::GenerativeContentFeedbackData), extracting the inner [`GenerativeContentFeedbackData`](crate::types::GenerativeContentFeedbackData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_generative_content_feedback_data(&self) -> ::std::result::Result<&crate::types::GenerativeContentFeedbackData, &Self> {
-        if let ContentFeedbackData::GenerativeContentFeedbackData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ContentFeedbackData::GenerativeContentFeedbackData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GenerativeContentFeedbackData`](crate::types::ContentFeedbackData::GenerativeContentFeedbackData).
     pub fn is_generative_content_feedback_data(&self) -> bool {
@@ -36,3 +32,4 @@ impl ContentFeedbackData {
         matches!(self, Self::Unknown)
     }
 }
+

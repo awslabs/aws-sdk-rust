@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTags`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(TagFilter)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::filters) / [`set_filters(Option<Vec::<TagFilter>>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_filters):<br>required: **false**<br><p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in a single page of output. The maximum value is 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
-    /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
+                            /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`tags(Option<Vec::<ConfigurationTag>>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::next_token): <p>The call returns a token. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
+                            /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
     pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

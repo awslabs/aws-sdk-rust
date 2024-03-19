@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateScheduleInput {
+pub struct UpdateScheduleInput  {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateScheduleInput {
+impl  UpdateScheduleInput  {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
-    pub fn job_names(&self) -> &[::std::string::String] {
-        self.job_names.as_deref().unwrap_or_default()
+    pub fn job_names(&self) -> & [::std::string::String] {
+        self.job_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
     /// <p>The name of the schedule to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl UpdateScheduleInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScheduleInputBuilder {
-    pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl UpdateScheduleInputBuilder {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
     pub fn job_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_names.unwrap_or_default();
-        v.push(input.into());
-        self.job_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_names = input;
-        self
+    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_names = input; self
     }
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_names
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
@@ -70,8 +70,7 @@ impl UpdateScheduleInputBuilder {
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression = input;
-        self
+        self.cron_expression = input; self
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,21 +84,24 @@ impl UpdateScheduleInputBuilder {
     }
     /// <p>The name of the schedule to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schedule to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_schedule::UpdateScheduleInput {
-            job_names: self.job_names,
-            cron_expression: self.cron_expression,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_schedule::UpdateScheduleInput {
+                job_names: self.job_names
+                ,
+                cron_expression: self.cron_expression
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

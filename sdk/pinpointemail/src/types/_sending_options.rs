@@ -3,11 +3,11 @@
 /// <p>Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendingOptions {
+pub struct SendingOptions  {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub sending_enabled: bool,
 }
-impl SendingOptions {
+impl  SendingOptions  {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
@@ -34,8 +34,7 @@ impl SendingOptionsBuilder {
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sending_enabled = input;
-        self
+        self.sending_enabled = input; self
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl SendingOptionsBuilder {
     /// Consumes the builder and constructs a [`SendingOptions`](crate::types::SendingOptions).
     pub fn build(self) -> crate::types::SendingOptions {
         crate::types::SendingOptions {
-            sending_enabled: self.sending_enabled.unwrap_or_default(),
+            sending_enabled: self.sending_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

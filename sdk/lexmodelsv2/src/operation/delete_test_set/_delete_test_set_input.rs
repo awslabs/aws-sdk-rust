@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTestSetInput {
+pub struct DeleteTestSetInput  {
     /// <p>The test set Id of the test set to be deleted.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTestSetInput {
+impl  DeleteTestSetInput  {
     /// <p>The test set Id of the test set to be deleted.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteTestSetInputBuilder {
     }
     /// <p>The test set Id of the test set to be deleted.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id of the test set to be deleted.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_set_id
     }
     /// Consumes the builder and constructs a [`DeleteTestSetInput`](crate::operation::delete_test_set::DeleteTestSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_test_set::DeleteTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_test_set::DeleteTestSetInput {
-            test_set_id: self.test_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_test_set::DeleteTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_test_set::DeleteTestSetInput {
+                test_set_id: self.test_set_id
+                ,
+            }
+        )
     }
 }
+

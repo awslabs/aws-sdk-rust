@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGroupProfileInput {
+pub struct CreateGroupProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which the group profile is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the group for which the group profile is created.</p>
@@ -10,17 +10,17 @@ pub struct CreateGroupProfileInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateGroupProfileInput {
+impl  CreateGroupProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which the group profile is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the group for which the group profile is created.</p>
-    pub fn group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_identifier(&self) -> ::std::option::Option<& str> {
         self.group_identifier.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateGroupProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which the group profile is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which the group profile is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateGroupProfileInputBuilder {
     }
     /// <p>The identifier of the group for which the group profile is created.</p>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_identifier = input;
-        self
+        self.group_identifier = input; self
     }
     /// <p>The identifier of the group for which the group profile is created.</p>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl CreateGroupProfileInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateGroupProfileInput`](crate::operation::create_group_profile::CreateGroupProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_group_profile::CreateGroupProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_group_profile::CreateGroupProfileInput {
-            domain_identifier: self.domain_identifier,
-            group_identifier: self.group_identifier,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group_profile::CreateGroupProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_group_profile::CreateGroupProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                group_identifier: self.group_identifier
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Describes the memory available to the inference accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceDeviceMemoryInfo {
+pub struct InferenceDeviceMemoryInfo  {
     /// <p>The size of the memory available to the inference accelerator, in MiB.</p>
     pub size_in_mib: ::std::option::Option<i32>,
 }
-impl InferenceDeviceMemoryInfo {
+impl  InferenceDeviceMemoryInfo  {
     /// <p>The size of the memory available to the inference accelerator, in MiB.</p>
     pub fn size_in_mib(&self) -> ::std::option::Option<i32> {
         self.size_in_mib
@@ -34,8 +34,7 @@ impl InferenceDeviceMemoryInfoBuilder {
     }
     /// <p>The size of the memory available to the inference accelerator, in MiB.</p>
     pub fn set_size_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mib = input;
-        self
+        self.size_in_mib = input; self
     }
     /// <p>The size of the memory available to the inference accelerator, in MiB.</p>
     pub fn get_size_in_mib(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl InferenceDeviceMemoryInfoBuilder {
     /// Consumes the builder and constructs a [`InferenceDeviceMemoryInfo`](crate::types::InferenceDeviceMemoryInfo).
     pub fn build(self) -> crate::types::InferenceDeviceMemoryInfo {
         crate::types::InferenceDeviceMemoryInfo {
-            size_in_mib: self.size_in_mib,
+            size_in_mib: self.size_in_mib
+            ,
         }
     }
 }
+

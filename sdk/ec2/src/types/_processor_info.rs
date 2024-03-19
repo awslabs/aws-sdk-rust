@@ -3,35 +3,37 @@
 /// <p>Describes the processor used by the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessorInfo {
+pub struct ProcessorInfo  {
     /// <p>The architectures supported by the instance type.</p>
-    pub supported_architectures: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
+    pub supported_architectures: ::std::option::Option<::std::vec::Vec::<crate::types::ArchitectureType>>,
     /// <p>The speed of the processor, in GHz.</p>
     pub sustained_clock_speed_in_ghz: ::std::option::Option<f64>,
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
-    pub supported_features: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
+    pub supported_features: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedAdditionalProcessorFeature>>,
     /// <p>The manufacturer of the processor.</p>
     pub manufacturer: ::std::option::Option<::std::string::String>,
 }
-impl ProcessorInfo {
+impl  ProcessorInfo  {
     /// <p>The architectures supported by the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_architectures.is_none()`.
-    pub fn supported_architectures(&self) -> &[crate::types::ArchitectureType] {
-        self.supported_architectures.as_deref().unwrap_or_default()
+    pub fn supported_architectures(&self) -> & [crate::types::ArchitectureType] {
+        self.supported_architectures.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn sustained_clock_speed_in_ghz(&self) -> ::std::option::Option<f64> {
         self.sustained_clock_speed_in_ghz
     }
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_features.is_none()`.
-    pub fn supported_features(&self) -> &[crate::types::SupportedAdditionalProcessorFeature] {
-        self.supported_features.as_deref().unwrap_or_default()
+    pub fn supported_features(&self) -> & [crate::types::SupportedAdditionalProcessorFeature] {
+        self.supported_features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The manufacturer of the processor.</p>
-    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<& str> {
         self.manufacturer.as_deref()
     }
 }
@@ -46,9 +48,9 @@ impl ProcessorInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessorInfoBuilder {
-    pub(crate) supported_architectures: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
+    pub(crate) supported_architectures: ::std::option::Option<::std::vec::Vec::<crate::types::ArchitectureType>>,
     pub(crate) sustained_clock_speed_in_ghz: ::std::option::Option<f64>,
-    pub(crate) supported_features: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
+    pub(crate) supported_features: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedAdditionalProcessorFeature>>,
     pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
 }
 impl ProcessorInfoBuilder {
@@ -59,17 +61,16 @@ impl ProcessorInfoBuilder {
     /// <p>The architectures supported by the instance type.</p>
     pub fn supported_architectures(mut self, input: crate::types::ArchitectureType) -> Self {
         let mut v = self.supported_architectures.unwrap_or_default();
-        v.push(input);
-        self.supported_architectures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_architectures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The architectures supported by the instance type.</p>
-    pub fn set_supported_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>) -> Self {
-        self.supported_architectures = input;
-        self
+    pub fn set_supported_architectures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ArchitectureType>>) -> Self {
+        self.supported_architectures = input; self
     }
     /// <p>The architectures supported by the instance type.</p>
-    pub fn get_supported_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
+    pub fn get_supported_architectures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ArchitectureType>> {
         &self.supported_architectures
     }
     /// <p>The speed of the processor, in GHz.</p>
@@ -79,8 +80,7 @@ impl ProcessorInfoBuilder {
     }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn set_sustained_clock_speed_in_ghz(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sustained_clock_speed_in_ghz = input;
-        self
+        self.sustained_clock_speed_in_ghz = input; self
     }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn get_sustained_clock_speed_in_ghz(&self) -> &::std::option::Option<f64> {
@@ -93,20 +93,16 @@ impl ProcessorInfoBuilder {
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
     pub fn supported_features(mut self, input: crate::types::SupportedAdditionalProcessorFeature) -> Self {
         let mut v = self.supported_features.unwrap_or_default();
-        v.push(input);
-        self.supported_features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
-    pub fn set_supported_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
-    ) -> Self {
-        self.supported_features = input;
-        self
+    pub fn set_supported_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedAdditionalProcessorFeature>>) -> Self {
+        self.supported_features = input; self
     }
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
-    pub fn get_supported_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>> {
+    pub fn get_supported_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedAdditionalProcessorFeature>> {
         &self.supported_features
     }
     /// <p>The manufacturer of the processor.</p>
@@ -116,8 +112,7 @@ impl ProcessorInfoBuilder {
     }
     /// <p>The manufacturer of the processor.</p>
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer = input;
-        self
+        self.manufacturer = input; self
     }
     /// <p>The manufacturer of the processor.</p>
     pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,10 +121,15 @@ impl ProcessorInfoBuilder {
     /// Consumes the builder and constructs a [`ProcessorInfo`](crate::types::ProcessorInfo).
     pub fn build(self) -> crate::types::ProcessorInfo {
         crate::types::ProcessorInfo {
-            supported_architectures: self.supported_architectures,
-            sustained_clock_speed_in_ghz: self.sustained_clock_speed_in_ghz,
-            supported_features: self.supported_features,
-            manufacturer: self.manufacturer,
+            supported_architectures: self.supported_architectures
+            ,
+            sustained_clock_speed_in_ghz: self.sustained_clock_speed_in_ghz
+            ,
+            supported_features: self.supported_features
+            ,
+            manufacturer: self.manufacturer
+            ,
         }
     }
 }
+

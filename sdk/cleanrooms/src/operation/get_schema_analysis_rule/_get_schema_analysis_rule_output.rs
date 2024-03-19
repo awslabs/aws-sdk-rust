@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaAnalysisRuleOutput {
+pub struct GetSchemaAnalysisRuleOutput  {
     /// <p>A specification about how data from the configured table can be used.</p>
     pub analysis_rule: ::std::option::Option<crate::types::AnalysisRule>,
     _request_id: Option<String>,
 }
-impl GetSchemaAnalysisRuleOutput {
+impl  GetSchemaAnalysisRuleOutput  {
     /// <p>A specification about how data from the configured table can be used.</p>
-    pub fn analysis_rule(&self) -> ::std::option::Option<&crate::types::AnalysisRule> {
+    pub fn analysis_rule(&self) -> ::std::option::Option<& crate::types::AnalysisRule> {
         self.analysis_rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSchemaAnalysisRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSchemaAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAnalysisRuleOutput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput).
     pub fn builder() -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder {
@@ -41,27 +41,28 @@ impl GetSchemaAnalysisRuleOutputBuilder {
     }
     /// <p>A specification about how data from the configured table can be used.</p>
     pub fn set_analysis_rule(mut self, input: ::std::option::Option<crate::types::AnalysisRule>) -> Self {
-        self.analysis_rule = input;
-        self
+        self.analysis_rule = input; self
     }
     /// <p>A specification about how data from the configured table can be used.</p>
     pub fn get_analysis_rule(&self) -> &::std::option::Option<crate::types::AnalysisRule> {
         &self.analysis_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleOutput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput).
     pub fn build(self) -> crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput {
         crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput {
-            analysis_rule: self.analysis_rule,
+            analysis_rule: self.analysis_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

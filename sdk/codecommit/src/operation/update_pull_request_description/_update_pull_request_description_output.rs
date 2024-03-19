@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePullRequestDescriptionOutput {
+pub struct UpdatePullRequestDescriptionOutput  {
     /// <p>Information about the updated pull request.</p>
     pub pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
 }
-impl UpdatePullRequestDescriptionOutput {
+impl  UpdatePullRequestDescriptionOutput  {
     /// <p>Information about the updated pull request.</p>
-    pub fn pull_request(&self) -> ::std::option::Option<&crate::types::PullRequest> {
+    pub fn pull_request(&self) -> ::std::option::Option<& crate::types::PullRequest> {
         self.pull_request.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePullRequestDescriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePullRequestDescriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionOutput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput).
     pub fn builder() -> crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdatePullRequestDescriptionOutputBuilder {
     }
     /// <p>Information about the updated pull request.</p>
     pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
-        self.pull_request = input;
-        self
+        self.pull_request = input; self
     }
     /// <p>Information about the updated pull request.</p>
     pub fn get_pull_request(&self) -> &::std::option::Option<crate::types::PullRequest> {
         &self.pull_request
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePullRequestDescriptionOutput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput).
     pub fn build(self) -> crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput {
         crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput {
-            pull_request: self.pull_request,
+            pull_request: self.pull_request
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -36,3 +36,4 @@ pub fn de_ip_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

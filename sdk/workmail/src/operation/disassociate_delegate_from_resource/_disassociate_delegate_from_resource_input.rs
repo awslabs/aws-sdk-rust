@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateDelegateFromResourceInput {
+pub struct DisassociateDelegateFromResourceInput  {
     /// <p>The identifier for the organization under which the resource exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource from which delegates' set members are removed.</p>
@@ -28,9 +28,9 @@ pub struct DisassociateDelegateFromResourceInput {
     /// </ul>
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateDelegateFromResourceInput {
+impl  DisassociateDelegateFromResourceInput  {
     /// <p>The identifier for the organization under which the resource exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the resource from which delegates' set members are removed.</p>
@@ -43,7 +43,7 @@ impl DisassociateDelegateFromResourceInput {
     /// <li>
     /// <p>Resource name: resource</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
@@ -56,7 +56,7 @@ impl DisassociateDelegateFromResourceInput {
     /// <li>
     /// <p>Entity: entity</p></li>
     /// </ul>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
@@ -84,8 +84,7 @@ impl DisassociateDelegateFromResourceInputBuilder {
     }
     /// <p>The identifier for the organization under which the resource exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the resource exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>Resource name: resource</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource from which delegates' set members are removed.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -159,8 +157,7 @@ impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>Entity: entity</p></li>
     /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
@@ -176,18 +173,17 @@ impl DisassociateDelegateFromResourceInputBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput {
-                organization_id: self.organization_id,
-                resource_id: self.resource_id,
-                entity_id: self.entity_id,
-            },
+                organization_id: self.organization_id
+                ,
+                resource_id: self.resource_id
+                ,
+                entity_id: self.entity_id
+                ,
+            }
         )
     }
 }
+

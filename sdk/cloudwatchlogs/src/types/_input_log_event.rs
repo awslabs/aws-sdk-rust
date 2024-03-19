@@ -3,21 +3,20 @@
 /// <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputLogEvent {
+pub struct InputLogEvent  {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub timestamp: i64,
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub message: ::std::string::String,
 }
-impl InputLogEvent {
+impl  InputLogEvent  {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl InputLogEvent {
@@ -43,8 +42,7 @@ impl InputLogEventBuilder {
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
@@ -58,8 +56,7 @@ impl InputLogEventBuilder {
     }
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl InputLogEventBuilder {
     /// - [`timestamp`](crate::types::builders::InputLogEventBuilder::timestamp)
     /// - [`message`](crate::types::builders::InputLogEventBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::InputLogEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputLogEvent {
-            timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp",
-                    "timestamp was not specified but it is required when building InputLogEvent",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building InputLogEvent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputLogEvent {
+                timestamp: self.timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp", "timestamp was not specified but it is required when building InputLogEvent")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building InputLogEvent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

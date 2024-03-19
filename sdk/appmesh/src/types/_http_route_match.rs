@@ -3,50 +3,52 @@
 /// <p>An object that represents the requirements for a route to match HTTP requests for a virtual router.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpRouteMatch {
+pub struct HttpRouteMatch  {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The client request path to match on.</p>
     pub path: ::std::option::Option<crate::types::HttpPathMatch>,
     /// <p>The client request query parameters to match on.</p>
-    pub query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
+    pub query_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::HttpQueryParameter>>,
     /// <p>The client request method to match on. Specify only one.</p>
     pub method: ::std::option::Option<crate::types::HttpMethod>,
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
     pub scheme: ::std::option::Option<crate::types::HttpScheme>,
     /// <p>The client request headers to match on.</p>
-    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpRouteHeader>>,
+    pub headers: ::std::option::Option<::std::vec::Vec::<crate::types::HttpRouteHeader>>,
     /// <p>The port number to match on.</p>
     pub port: ::std::option::Option<i32>,
 }
-impl HttpRouteMatch {
+impl  HttpRouteMatch  {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The client request path to match on.</p>
-    pub fn path(&self) -> ::std::option::Option<&crate::types::HttpPathMatch> {
+    pub fn path(&self) -> ::std::option::Option<& crate::types::HttpPathMatch> {
         self.path.as_ref()
     }
     /// <p>The client request query parameters to match on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_parameters.is_none()`.
-    pub fn query_parameters(&self) -> &[crate::types::HttpQueryParameter] {
-        self.query_parameters.as_deref().unwrap_or_default()
+    pub fn query_parameters(&self) -> & [crate::types::HttpQueryParameter] {
+        self.query_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The client request method to match on. Specify only one.</p>
-    pub fn method(&self) -> ::std::option::Option<&crate::types::HttpMethod> {
+    pub fn method(&self) -> ::std::option::Option<& crate::types::HttpMethod> {
         self.method.as_ref()
     }
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
-    pub fn scheme(&self) -> ::std::option::Option<&crate::types::HttpScheme> {
+    pub fn scheme(&self) -> ::std::option::Option<& crate::types::HttpScheme> {
         self.scheme.as_ref()
     }
     /// <p>The client request headers to match on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
-    pub fn headers(&self) -> &[crate::types::HttpRouteHeader] {
-        self.headers.as_deref().unwrap_or_default()
+    pub fn headers(&self) -> & [crate::types::HttpRouteHeader] {
+        self.headers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
@@ -66,10 +68,10 @@ impl HttpRouteMatch {
 pub struct HttpRouteMatchBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<crate::types::HttpPathMatch>,
-    pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
+    pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::HttpQueryParameter>>,
     pub(crate) method: ::std::option::Option<crate::types::HttpMethod>,
     pub(crate) scheme: ::std::option::Option<crate::types::HttpScheme>,
-    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpRouteHeader>>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec::<crate::types::HttpRouteHeader>>,
     pub(crate) port: ::std::option::Option<i32>,
 }
 impl HttpRouteMatchBuilder {
@@ -80,8 +82,7 @@ impl HttpRouteMatchBuilder {
     }
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl HttpRouteMatchBuilder {
     }
     /// <p>The client request path to match on.</p>
     pub fn set_path(mut self, input: ::std::option::Option<crate::types::HttpPathMatch>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The client request path to match on.</p>
     pub fn get_path(&self) -> &::std::option::Option<crate::types::HttpPathMatch> {
@@ -108,17 +108,16 @@ impl HttpRouteMatchBuilder {
     /// <p>The client request query parameters to match on.</p>
     pub fn query_parameters(mut self, input: crate::types::HttpQueryParameter) -> Self {
         let mut v = self.query_parameters.unwrap_or_default();
-        v.push(input);
-        self.query_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.query_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The client request query parameters to match on.</p>
-    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>) -> Self {
-        self.query_parameters = input;
-        self
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HttpQueryParameter>>) -> Self {
+        self.query_parameters = input; self
     }
     /// <p>The client request query parameters to match on.</p>
-    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HttpQueryParameter>> {
         &self.query_parameters
     }
     /// <p>The client request method to match on. Specify only one.</p>
@@ -128,8 +127,7 @@ impl HttpRouteMatchBuilder {
     }
     /// <p>The client request method to match on. Specify only one.</p>
     pub fn set_method(mut self, input: ::std::option::Option<crate::types::HttpMethod>) -> Self {
-        self.method = input;
-        self
+        self.method = input; self
     }
     /// <p>The client request method to match on. Specify only one.</p>
     pub fn get_method(&self) -> &::std::option::Option<crate::types::HttpMethod> {
@@ -142,8 +140,7 @@ impl HttpRouteMatchBuilder {
     }
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
     pub fn set_scheme(mut self, input: ::std::option::Option<crate::types::HttpScheme>) -> Self {
-        self.scheme = input;
-        self
+        self.scheme = input; self
     }
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
     pub fn get_scheme(&self) -> &::std::option::Option<crate::types::HttpScheme> {
@@ -156,17 +153,16 @@ impl HttpRouteMatchBuilder {
     /// <p>The client request headers to match on.</p>
     pub fn headers(mut self, input: crate::types::HttpRouteHeader) -> Self {
         let mut v = self.headers.unwrap_or_default();
-        v.push(input);
-        self.headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The client request headers to match on.</p>
-    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpRouteHeader>>) -> Self {
-        self.headers = input;
-        self
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HttpRouteHeader>>) -> Self {
+        self.headers = input; self
     }
     /// <p>The client request headers to match on.</p>
-    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpRouteHeader>> {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HttpRouteHeader>> {
         &self.headers
     }
     /// <p>The port number to match on.</p>
@@ -176,8 +172,7 @@ impl HttpRouteMatchBuilder {
     }
     /// <p>The port number to match on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number to match on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -186,13 +181,21 @@ impl HttpRouteMatchBuilder {
     /// Consumes the builder and constructs a [`HttpRouteMatch`](crate::types::HttpRouteMatch).
     pub fn build(self) -> crate::types::HttpRouteMatch {
         crate::types::HttpRouteMatch {
-            prefix: self.prefix,
-            path: self.path,
-            query_parameters: self.query_parameters,
-            method: self.method,
-            scheme: self.scheme,
-            headers: self.headers,
-            port: self.port,
+            prefix: self.prefix
+            ,
+            path: self.path
+            ,
+            query_parameters: self.query_parameters
+            ,
+            method: self.method
+            ,
+            scheme: self.scheme
+            ,
+            headers: self.headers
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

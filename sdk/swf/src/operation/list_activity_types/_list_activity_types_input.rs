@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActivityTypesInput {
+pub struct ListActivityTypesInput  {
     /// <p>The name of the domain in which the activity types have been registered.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>If specified, only lists the activity types that have this name.</p>
@@ -17,22 +17,22 @@ pub struct ListActivityTypesInput {
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
     pub reverse_order: ::std::option::Option<bool>,
 }
-impl ListActivityTypesInput {
+impl  ListActivityTypesInput  {
     /// <p>The name of the domain in which the activity types have been registered.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>If specified, only lists the activity types that have this name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the registration status of the activity types to list.</p>
-    pub fn registration_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn registration_status(&self) -> ::std::option::Option<& crate::types::RegistrationStatus> {
         self.registration_status.as_ref()
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
@@ -71,8 +71,7 @@ impl ListActivityTypesInputBuilder {
     }
     /// <p>The name of the domain in which the activity types have been registered.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain in which the activity types have been registered.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ListActivityTypesInputBuilder {
     }
     /// <p>If specified, only lists the activity types that have this name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>If specified, only lists the activity types that have this name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl ListActivityTypesInputBuilder {
     }
     /// <p>Specifies the registration status of the activity types to list.</p>
     pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.registration_status = input;
-        self
+        self.registration_status = input; self
     }
     /// <p>Specifies the registration status of the activity types to list.</p>
     pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
@@ -116,8 +113,7 @@ impl ListActivityTypesInputBuilder {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -131,8 +127,7 @@ impl ListActivityTypesInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn set_maximum_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_page_size = input;
-        self
+        self.maximum_page_size = input; self
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
@@ -145,24 +140,30 @@ impl ListActivityTypesInputBuilder {
     }
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reverse_order = input;
-        self
+        self.reverse_order = input; self
     }
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         &self.reverse_order
     }
     /// Consumes the builder and constructs a [`ListActivityTypesInput`](crate::operation::list_activity_types::ListActivityTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_activity_types::ListActivityTypesInput {
-            domain: self.domain,
-            name: self.name,
-            registration_status: self.registration_status,
-            next_page_token: self.next_page_token,
-            maximum_page_size: self.maximum_page_size,
-            reverse_order: self.reverse_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_activity_types::ListActivityTypesInput {
+                domain: self.domain
+                ,
+                name: self.name
+                ,
+                registration_status: self.registration_status
+                ,
+                next_page_token: self.next_page_token
+                ,
+                maximum_page_size: self.maximum_page_size
+                ,
+                reverse_order: self.reverse_order
+                ,
+            }
+        )
     }
 }
+

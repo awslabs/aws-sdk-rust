@@ -3,13 +3,13 @@
 /// <p>Provides geographic coordinates that indicate where a specified IP address originated from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpGeoLocation {
+pub struct IpGeoLocation  {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     pub lat: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     pub lon: ::std::option::Option<f64>,
 }
-impl IpGeoLocation {
+impl  IpGeoLocation  {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     pub fn lat(&self) -> ::std::option::Option<f64> {
         self.lat
@@ -41,8 +41,7 @@ impl IpGeoLocationBuilder {
     }
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     pub fn set_lat(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lat = input;
-        self
+        self.lat = input; self
     }
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     pub fn get_lat(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl IpGeoLocationBuilder {
     }
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     pub fn set_lon(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lon = input;
-        self
+        self.lon = input; self
     }
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     pub fn get_lon(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl IpGeoLocationBuilder {
     /// Consumes the builder and constructs a [`IpGeoLocation`](crate::types::IpGeoLocation).
     pub fn build(self) -> crate::types::IpGeoLocation {
         crate::types::IpGeoLocation {
-            lat: self.lat,
-            lon: self.lon,
+            lat: self.lat
+            ,
+            lon: self.lon
+            ,
         }
     }
 }
+

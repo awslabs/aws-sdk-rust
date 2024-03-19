@@ -3,7 +3,7 @@
 /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct State {
+pub struct State  {
     /// <p>The status of Amazon Inspector for the account.</p>
     pub status: crate::types::Status,
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
@@ -11,19 +11,18 @@ pub struct State {
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub error_message: ::std::string::String,
 }
-impl State {
+impl  State  {
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub fn error_code(&self) -> &crate::types::ErrorCode {
+    pub fn error_code(&self) -> & crate::types::ErrorCode {
         &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl State {
@@ -50,8 +49,7 @@ impl StateBuilder {
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -65,8 +63,7 @@ impl StateBuilder {
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -80,8 +77,7 @@ impl StateBuilder {
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl StateBuilder {
     /// - [`error_code`](crate::types::builders::StateBuilder::error_code)
     /// - [`error_message`](crate::types::builders::StateBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::State {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building State",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building State",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building State",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::State {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building State")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building State")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building State")
+                    )?
+                ,
+            }
+        )
     }
 }
+

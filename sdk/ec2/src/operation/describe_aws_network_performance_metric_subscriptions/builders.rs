@@ -5,23 +5,20 @@ pub use crate::operation::describe_aws_network_performance_metric_subscriptions:
 
 impl DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_aws_network_performance_metric_subscriptions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_aws_network_performance_metric_subscriptions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeAwsNetworkPerformanceMetricSubscriptions`.
-///
+/// 
 /// <p>Describes the current Infrastructure Performance metric subscriptions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
@@ -30,97 +27,80 @@ pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
-    > for DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
-            crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
+                    crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
+                > for DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
+                        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
     /// Creates a new `DescribeAwsNetworkPerformanceMetricSubscriptions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the DescribeAwsNetworkPerformanceMetricSubscriptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptions::operation_runtime_plugins(
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptions::operation_runtime_plugins(
                             self.handle.runtime_plugins.clone(),
                             &self.handle.conf,
                             self.config_override,
                         );
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptions::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
-        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput, crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_aws_network_performance_metric_subscriptions::paginator::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_aws_network_performance_metric_subscriptions::paginator::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator
-    {
-        crate::operation::describe_aws_network_performance_metric_subscriptions::paginator::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_aws_network_performance_metric_subscriptions::paginator::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_aws_network_performance_metric_subscriptions::paginator::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator {
+                                crate::operation::describe_aws_network_performance_metric_subscriptions::paginator::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -159,12 +139,12 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
         self
     }
     /// <p>One or more filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -182,3 +162,4 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The settings of a chart's single axis configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleAxisOptions {
+pub struct SingleAxisOptions  {
     /// <p>The Y axis options of a single axis configuration.</p>
     pub y_axis_options: ::std::option::Option<crate::types::YAxisOptions>,
 }
-impl SingleAxisOptions {
+impl  SingleAxisOptions  {
     /// <p>The Y axis options of a single axis configuration.</p>
-    pub fn y_axis_options(&self) -> ::std::option::Option<&crate::types::YAxisOptions> {
+    pub fn y_axis_options(&self) -> ::std::option::Option<& crate::types::YAxisOptions> {
         self.y_axis_options.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SingleAxisOptionsBuilder {
     }
     /// <p>The Y axis options of a single axis configuration.</p>
     pub fn set_y_axis_options(mut self, input: ::std::option::Option<crate::types::YAxisOptions>) -> Self {
-        self.y_axis_options = input;
-        self
+        self.y_axis_options = input; self
     }
     /// <p>The Y axis options of a single axis configuration.</p>
     pub fn get_y_axis_options(&self) -> &::std::option::Option<crate::types::YAxisOptions> {
@@ -44,7 +43,9 @@ impl SingleAxisOptionsBuilder {
     /// Consumes the builder and constructs a [`SingleAxisOptions`](crate::types::SingleAxisOptions).
     pub fn build(self) -> crate::types::SingleAxisOptions {
         crate::types::SingleAxisOptions {
-            y_axis_options: self.y_axis_options,
+            y_axis_options: self.y_axis_options
+            ,
         }
     }
 }
+

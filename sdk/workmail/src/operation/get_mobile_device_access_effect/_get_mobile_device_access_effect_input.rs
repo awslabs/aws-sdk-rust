@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMobileDeviceAccessEffectInput {
+pub struct GetMobileDeviceAccessEffectInput  {
     /// <p>The WorkMail organization to simulate the access effect for.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>Device type the simulated user will report.</p>
@@ -14,25 +14,25 @@ pub struct GetMobileDeviceAccessEffectInput {
     /// <p>Device user agent the simulated user will report.</p>
     pub device_user_agent: ::std::option::Option<::std::string::String>,
 }
-impl GetMobileDeviceAccessEffectInput {
+impl  GetMobileDeviceAccessEffectInput  {
     /// <p>The WorkMail organization to simulate the access effect for.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>Device type the simulated user will report.</p>
-    pub fn device_type(&self) -> ::std::option::Option<&str> {
+    pub fn device_type(&self) -> ::std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>Device model the simulated user will report.</p>
-    pub fn device_model(&self) -> ::std::option::Option<&str> {
+    pub fn device_model(&self) -> ::std::option::Option<& str> {
         self.device_model.as_deref()
     }
     /// <p>Device operating system the simulated user will report.</p>
-    pub fn device_operating_system(&self) -> ::std::option::Option<&str> {
+    pub fn device_operating_system(&self) -> ::std::option::Option<& str> {
         self.device_operating_system.as_deref()
     }
     /// <p>Device user agent the simulated user will report.</p>
-    pub fn device_user_agent(&self) -> ::std::option::Option<&str> {
+    pub fn device_user_agent(&self) -> ::std::option::Option<& str> {
         self.device_user_agent.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     }
     /// <p>The WorkMail organization to simulate the access effect for.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization to simulate the access effect for.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     }
     /// <p>Device type the simulated user will report.</p>
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
     }
     /// <p>Device type the simulated user will report.</p>
     pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     }
     /// <p>Device model the simulated user will report.</p>
     pub fn set_device_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_model = input;
-        self
+        self.device_model = input; self
     }
     /// <p>Device model the simulated user will report.</p>
     pub fn get_device_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     }
     /// <p>Device operating system the simulated user will report.</p>
     pub fn set_device_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_operating_system = input;
-        self
+        self.device_operating_system = input; self
     }
     /// <p>Device operating system the simulated user will report.</p>
     pub fn get_device_operating_system(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,26 +114,28 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     }
     /// <p>Device user agent the simulated user will report.</p>
     pub fn set_device_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_user_agent = input;
-        self
+        self.device_user_agent = input; self
     }
     /// <p>Device user agent the simulated user will report.</p>
     pub fn get_device_user_agent(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_user_agent
     }
     /// Consumes the builder and constructs a [`GetMobileDeviceAccessEffectInput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput {
-            organization_id: self.organization_id,
-            device_type: self.device_type,
-            device_model: self.device_model,
-            device_operating_system: self.device_operating_system,
-            device_user_agent: self.device_user_agent,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput {
+                organization_id: self.organization_id
+                ,
+                device_type: self.device_type
+                ,
+                device_model: self.device_model
+                ,
+                device_operating_system: self.device_operating_system
+                ,
+                device_user_agent: self.device_user_agent
+                ,
+            }
+        )
     }
 }
+

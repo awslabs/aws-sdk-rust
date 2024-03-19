@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::client::http::body::minimum_throughput::MinimumThroughputBody;
+use crate::client::http::body::minimum_throughput::{
+    options::MinimumThroughputBodyOptions, MinimumThroughputDownloadBody, ThroughputReadingBody,
+    UploadThroughput,
+};
 use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
@@ -64,17 +67,27 @@ impl Intercept for StalledStreamProtectionInterceptor {
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         if self.enable_for_request_body {
-            if let Some(cfg) = cfg.load::<StalledStreamProtectionConfig>() {
-                if cfg.is_enabled() {
-                    let (async_sleep, time_source) =
+            if let Some(sspcfg) = cfg.load::<StalledStreamProtectionConfig>().cloned() {
+                if sspcfg.is_enabled() {
+                    let (_async_sleep, time_source) =
                         get_runtime_component_deps(runtime_components)?;
+                    let now = time_source.now();
+
+                    let options: MinimumThroughputBodyOptions = sspcfg.into();
+                    let throughput = UploadThroughput::new(options.check_window(), now);
+                    cfg.interceptor_state().store_put(throughput.clone());
+
                     tracing::trace!("adding stalled stream protection to request body");
-                    add_stalled_stream_protection_to_body(
-                        context.request_mut().body_mut(),
-                        cfg,
-                        async_sleep,
-                        time_source,
-                    );
+                    let it = mem::replace(context.request_mut().body_mut(), SdkBody::taken());
+                    let it = it.map_preserve_contents(move |body| {
+                        let time_source = time_source.clone();
+                        SdkBody::from_body_0_4(ThroughputReadingBody::new(
+                            time_source,
+                            throughput.clone(),
+                            body,
+                        ))
+                    });
+                    let _ = mem::replace(context.request_mut().body_mut(), it);
                 }
             }
         }
@@ -89,17 +102,26 @@ impl Intercept for StalledStreamProtectionInterceptor {
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         if self.enable_for_response_body {
-            if let Some(cfg) = cfg.load::<StalledStreamProtectionConfig>() {
-                if cfg.is_enabled() {
+            if let Some(sspcfg) = cfg.load::<StalledStreamProtectionConfig>() {
+                if sspcfg.is_enabled() {
                     let (async_sleep, time_source) =
                         get_runtime_component_deps(runtime_components)?;
                     tracing::trace!("adding stalled stream protection to response body");
-                    add_stalled_stream_protection_to_body(
-                        context.response_mut().body_mut(),
-                        cfg,
-                        async_sleep,
-                        time_source,
-                    );
+                    let sspcfg = sspcfg.clone();
+                    let it = mem::replace(context.response_mut().body_mut(), SdkBody::taken());
+                    let it = it.map_preserve_contents(move |body| {
+                        let sspcfg = sspcfg.clone();
+                        let async_sleep = async_sleep.clone();
+                        let time_source = time_source.clone();
+                        let mtb = MinimumThroughputDownloadBody::new(
+                            time_source,
+                            async_sleep,
+                            body,
+                            sspcfg.into(),
+                        );
+                        SdkBody::from_body_0_4(mtb)
+                    });
+                    let _ = mem::replace(context.response_mut().body_mut(), it);
                 }
             }
         }
@@ -117,22 +139,4 @@ fn get_runtime_component_deps(
         .time_source()
         .ok_or("A time source is required when stalled stream protection is enabled")?;
     Ok((async_sleep, time_source))
-}
-
-fn add_stalled_stream_protection_to_body(
-    body: &mut SdkBody,
-    cfg: &StalledStreamProtectionConfig,
-    async_sleep: SharedAsyncSleep,
-    time_source: SharedTimeSource,
-) {
-    let cfg = cfg.clone();
-    let it = mem::replace(body, SdkBody::taken());
-    let it = it.map_preserve_contents(move |body| {
-        let cfg = cfg.clone();
-        let async_sleep = async_sleep.clone();
-        let time_source = time_source.clone();
-        let mtb = MinimumThroughputBody::new(time_source, async_sleep, body, cfg.into());
-        SdkBody::from_body_0_4(mtb)
-    });
-    let _ = mem::replace(body, it);
 }

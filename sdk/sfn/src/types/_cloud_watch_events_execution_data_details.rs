@@ -3,11 +3,11 @@
 /// <p>Provides details about execution input or output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchEventsExecutionDataDetails {
+pub struct CloudWatchEventsExecutionDataDetails  {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls.</p>
     pub included: bool,
 }
-impl CloudWatchEventsExecutionDataDetails {
+impl  CloudWatchEventsExecutionDataDetails  {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls.</p>
     pub fn included(&self) -> bool {
         self.included
@@ -34,8 +34,7 @@ impl CloudWatchEventsExecutionDataDetailsBuilder {
     }
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls.</p>
     pub fn set_included(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.included = input;
-        self
+        self.included = input; self
     }
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls.</p>
     pub fn get_included(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl CloudWatchEventsExecutionDataDetailsBuilder {
     /// Consumes the builder and constructs a [`CloudWatchEventsExecutionDataDetails`](crate::types::CloudWatchEventsExecutionDataDetails).
     pub fn build(self) -> crate::types::CloudWatchEventsExecutionDataDetails {
         crate::types::CloudWatchEventsExecutionDataDetails {
-            included: self.included.unwrap_or_default(),
+            included: self.included
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

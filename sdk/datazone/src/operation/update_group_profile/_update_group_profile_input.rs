@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupProfileInput {
+pub struct UpdateGroupProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the group profile that is updated.</p>
@@ -10,17 +10,17 @@ pub struct UpdateGroupProfileInput {
     /// <p>The status of the group profile that is updated.</p>
     pub status: ::std::option::Option<crate::types::GroupProfileStatus>,
 }
-impl UpdateGroupProfileInput {
+impl  UpdateGroupProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the group profile that is updated.</p>
-    pub fn group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_identifier(&self) -> ::std::option::Option<& str> {
         self.group_identifier.as_deref()
     }
     /// <p>The status of the group profile that is updated.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GroupProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GroupProfileStatus> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateGroupProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateGroupProfileInputBuilder {
     }
     /// <p>The identifier of the group profile that is updated.</p>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_identifier = input;
-        self
+        self.group_identifier = input; self
     }
     /// <p>The identifier of the group profile that is updated.</p>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl UpdateGroupProfileInputBuilder {
     }
     /// <p>The status of the group profile that is updated.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GroupProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the group profile that is updated.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupProfileStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateGroupProfileInput`](crate::operation::update_group_profile::UpdateGroupProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_group_profile::UpdateGroupProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_group_profile::UpdateGroupProfileInput {
-            domain_identifier: self.domain_identifier,
-            group_identifier: self.group_identifier,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group_profile::UpdateGroupProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_group_profile::UpdateGroupProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                group_identifier: self.group_identifier
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMigrationProjectOutput {
+pub struct CreateMigrationProjectOutput  {
     /// <p>The migration project that was created.</p>
     pub migration_project: ::std::option::Option<crate::types::MigrationProject>,
     _request_id: Option<String>,
 }
-impl CreateMigrationProjectOutput {
+impl  CreateMigrationProjectOutput  {
     /// <p>The migration project that was created.</p>
-    pub fn migration_project(&self) -> ::std::option::Option<&crate::types::MigrationProject> {
+    pub fn migration_project(&self) -> ::std::option::Option<& crate::types::MigrationProject> {
         self.migration_project.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMigrationProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMigrationProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateMigrationProjectOutput`](crate::operation::create_migration_project::CreateMigrationProjectOutput).
     pub fn builder() -> crate::operation::create_migration_project::builders::CreateMigrationProjectOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateMigrationProjectOutputBuilder {
     }
     /// <p>The migration project that was created.</p>
     pub fn set_migration_project(mut self, input: ::std::option::Option<crate::types::MigrationProject>) -> Self {
-        self.migration_project = input;
-        self
+        self.migration_project = input; self
     }
     /// <p>The migration project that was created.</p>
     pub fn get_migration_project(&self) -> &::std::option::Option<crate::types::MigrationProject> {
         &self.migration_project
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMigrationProjectOutput`](crate::operation::create_migration_project::CreateMigrationProjectOutput).
     pub fn build(self) -> crate::operation::create_migration_project::CreateMigrationProjectOutput {
         crate::operation::create_migration_project::CreateMigrationProjectOutput {
-            migration_project: self.migration_project,
+            migration_project: self.migration_project
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

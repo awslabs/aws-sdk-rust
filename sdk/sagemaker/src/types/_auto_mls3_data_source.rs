@@ -3,7 +3,7 @@
 /// <p>Describes the Amazon S3 data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMls3DataSource {
+pub struct AutoMls3DataSource  {
     /// <p>The data type.</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct AutoMls3DataSource {
     /// <p>The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the data type.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl AutoMls3DataSource {
+impl  AutoMls3DataSource  {
     /// <p>The data type.</p>
     /// <ul>
     /// <li>
@@ -49,11 +49,11 @@ impl AutoMls3DataSource {
     /// <p><code>"label-metadata": {"class-name": "cat"</code> }</p>
     /// <p>For more information on <code>AugmentedManifestFile</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to Training Jobs with an Augmented Manifest File</a>.</p></li>
     /// </ul>
-    pub fn s3_data_type(&self) -> ::std::option::Option<&crate::types::AutoMls3DataType> {
+    pub fn s3_data_type(&self) -> ::std::option::Option<& crate::types::AutoMls3DataType> {
         self.s3_data_type.as_ref()
     }
     /// <p>The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the data type.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -118,8 +118,7 @@ impl AutoMls3DataSourceBuilder {
     /// <p>For more information on <code>AugmentedManifestFile</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to Training Jobs with an Augmented Manifest File</a>.</p></li>
     /// </ul>
     pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::AutoMls3DataType>) -> Self {
-        self.s3_data_type = input;
-        self
+        self.s3_data_type = input; self
     }
     /// <p>The data type.</p>
     /// <ul>
@@ -152,8 +151,7 @@ impl AutoMls3DataSourceBuilder {
     }
     /// <p>The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the data type.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the data type.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,11 @@ impl AutoMls3DataSourceBuilder {
     /// Consumes the builder and constructs a [`AutoMls3DataSource`](crate::types::AutoMls3DataSource).
     pub fn build(self) -> crate::types::AutoMls3DataSource {
         crate::types::AutoMls3DataSource {
-            s3_data_type: self.s3_data_type,
-            s3_uri: self.s3_uri,
+            s3_data_type: self.s3_data_type
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

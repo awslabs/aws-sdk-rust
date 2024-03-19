@@ -3,47 +3,49 @@
 /// <p>Describes a target for an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTarget {
+pub struct ExperimentTarget  {
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags for the target resources.</p>
-    pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTargetFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentTargetFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: ::std::option::Option<::std::string::String>,
     /// <p>The resource type parameters.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ExperimentTarget {
+impl  ExperimentTarget  {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn resource_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ExperimentTargetFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ExperimentTargetFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub fn selection_mode(&self) -> ::std::option::Option<&str> {
+    pub fn selection_mode(&self) -> ::std::option::Option<& str> {
         self.selection_mode.as_deref()
     }
     /// <p>The resource type parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -59,11 +61,11 @@ impl ExperimentTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTargetBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTargetFilter>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentTargetFilter>>,
     pub(crate) selection_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ExperimentTargetBuilder {
     /// <p>The resource type.</p>
@@ -73,8 +75,7 @@ impl ExperimentTargetBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +88,16 @@ impl ExperimentTargetBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// Adds a key-value pair to `resource_tags`.
@@ -107,20 +107,16 @@ impl ExperimentTargetBuilder {
     /// <p>The tags for the target resources.</p>
     pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for the target resources.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>The tags for the target resources.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.resource_tags
     }
     /// Appends an item to `filters`.
@@ -130,17 +126,16 @@ impl ExperimentTargetBuilder {
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     pub fn filters(mut self, input: crate::types::ExperimentTargetFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTargetFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentTargetFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentTargetFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperimentTargetFilter>> {
         &self.filters
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
@@ -150,8 +145,7 @@ impl ExperimentTargetBuilder {
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub fn set_selection_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_mode = input;
-        self
+        self.selection_mode = input; self
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub fn get_selection_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,28 +158,34 @@ impl ExperimentTargetBuilder {
     /// <p>The resource type parameters.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The resource type parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The resource type parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ExperimentTarget`](crate::types::ExperimentTarget).
     pub fn build(self) -> crate::types::ExperimentTarget {
         crate::types::ExperimentTarget {
-            resource_type: self.resource_type,
-            resource_arns: self.resource_arns,
-            resource_tags: self.resource_tags,
-            filters: self.filters,
-            selection_mode: self.selection_mode,
-            parameters: self.parameters,
+            resource_type: self.resource_type
+            ,
+            resource_arns: self.resource_arns
+            ,
+            resource_tags: self.resource_tags
+            ,
+            filters: self.filters
+            ,
+            selection_mode: self.selection_mode
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

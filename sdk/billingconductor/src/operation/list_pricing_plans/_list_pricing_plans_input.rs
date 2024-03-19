@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricingPlansInput {
+pub struct ListPricingPlansInput  {
     /// <p>The preferred billing period to get pricing plan.</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
@@ -12,13 +12,13 @@ pub struct ListPricingPlansInput {
     /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPricingPlansInput {
+impl  ListPricingPlansInput  {
     /// <p>The preferred billing period to get pricing plan.</p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListPricingPlansFilter> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListPricingPlansFilter> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of pricing plans to retrieve.</p>
@@ -26,7 +26,7 @@ impl ListPricingPlansInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListPricingPlansInputBuilder {
     }
     /// <p>The preferred billing period to get pricing plan.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p>The preferred billing period to get pricing plan.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListPricingPlansInputBuilder {
     }
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListPricingPlansFilter>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListPricingPlansFilter> {
@@ -82,8 +80,7 @@ impl ListPricingPlansInputBuilder {
     }
     /// <p>The maximum number of pricing plans to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of pricing plans to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,22 +93,26 @@ impl ListPricingPlansInputBuilder {
     }
     /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPricingPlansInput`](crate::operation::list_pricing_plans::ListPricingPlansInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_pricing_plans::ListPricingPlansInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_pricing_plans::ListPricingPlansInput {
-            billing_period: self.billing_period,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pricing_plans::ListPricingPlansInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pricing_plans::ListPricingPlansInput {
+                billing_period: self.billing_period
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

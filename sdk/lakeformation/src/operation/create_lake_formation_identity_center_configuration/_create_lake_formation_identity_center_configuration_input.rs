@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLakeFormationIdentityCenterConfigurationInput {
+pub struct CreateLakeFormationIdentityCenterConfigurationInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM Identity Center instance for which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the Amazon Web Services General Reference.</p>
@@ -10,25 +10,23 @@ pub struct CreateLakeFormationIdentityCenterConfigurationInput {
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
 }
-impl CreateLakeFormationIdentityCenterConfigurationInput {
+impl  CreateLakeFormationIdentityCenterConfigurationInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The ARN of the IAM Identity Center instance for which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the Amazon Web Services General Reference.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
-    pub fn external_filtering(&self) -> ::std::option::Option<&crate::types::ExternalFilteringConfiguration> {
+    pub fn external_filtering(&self) -> ::std::option::Option<& crate::types::ExternalFilteringConfiguration> {
         self.external_filtering.as_ref()
     }
 }
 impl CreateLakeFormationIdentityCenterConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateLakeFormationIdentityCenterConfigurationInput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationInputBuilder {
         crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationInputBuilder::default()
     }
 }
@@ -49,8 +47,7 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +60,7 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance for which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the Amazon Web Services General Reference.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance for which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the Amazon Web Services General Reference.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +73,24 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn set_external_filtering(mut self, input: ::std::option::Option<crate::types::ExternalFilteringConfiguration>) -> Self {
-        self.external_filtering = input;
-        self
+        self.external_filtering = input; self
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         &self.external_filtering
     }
     /// Consumes the builder and constructs a [`CreateLakeFormationIdentityCenterConfigurationInput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput {
-                catalog_id: self.catalog_id,
-                instance_arn: self.instance_arn,
-                external_filtering: self.external_filtering,
-            },
+                catalog_id: self.catalog_id
+                ,
+                instance_arn: self.instance_arn
+                ,
+                external_filtering: self.external_filtering
+                ,
+            }
         )
     }
 }
+

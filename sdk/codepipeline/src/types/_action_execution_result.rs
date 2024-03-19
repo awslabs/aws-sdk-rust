@@ -3,7 +3,7 @@
 /// <p>Execution result information, such as the external execution ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionExecutionResult {
+pub struct ActionExecutionResult  {
     /// <p>The action provider's external ID for the action execution.</p>
     pub external_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The action provider's summary for the action execution.</p>
@@ -13,21 +13,21 @@ pub struct ActionExecutionResult {
     /// <p>Represents information about an error in CodePipeline.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl ActionExecutionResult {
+impl  ActionExecutionResult  {
     /// <p>The action provider's external ID for the action execution.</p>
-    pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> ::std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
     /// <p>The action provider's summary for the action execution.</p>
-    pub fn external_execution_summary(&self) -> ::std::option::Option<&str> {
+    pub fn external_execution_summary(&self) -> ::std::option::Option<& str> {
         self.external_execution_summary.as_deref()
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
-    pub fn external_execution_url(&self) -> ::std::option::Option<&str> {
+    pub fn external_execution_url(&self) -> ::std::option::Option<& str> {
         self.external_execution_url.as_deref()
     }
     /// <p>Represents information about an error in CodePipeline.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ActionExecutionResultBuilder {
     }
     /// <p>The action provider's external ID for the action execution.</p>
     pub fn set_external_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_execution_id = input;
-        self
+        self.external_execution_id = input; self
     }
     /// <p>The action provider's external ID for the action execution.</p>
     pub fn get_external_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ActionExecutionResultBuilder {
     }
     /// <p>The action provider's summary for the action execution.</p>
     pub fn set_external_execution_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_execution_summary = input;
-        self
+        self.external_execution_summary = input; self
     }
     /// <p>The action provider's summary for the action execution.</p>
     pub fn get_external_execution_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ActionExecutionResultBuilder {
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     pub fn set_external_execution_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_execution_url = input;
-        self
+        self.external_execution_url = input; self
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     pub fn get_external_execution_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ActionExecutionResultBuilder {
     }
     /// <p>Represents information about an error in CodePipeline.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>Represents information about an error in CodePipeline.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -107,10 +103,15 @@ impl ActionExecutionResultBuilder {
     /// Consumes the builder and constructs a [`ActionExecutionResult`](crate::types::ActionExecutionResult).
     pub fn build(self) -> crate::types::ActionExecutionResult {
         crate::types::ActionExecutionResult {
-            external_execution_id: self.external_execution_id,
-            external_execution_summary: self.external_execution_summary,
-            external_execution_url: self.external_execution_url,
-            error_details: self.error_details,
+            external_execution_id: self.external_execution_id
+            ,
+            external_execution_summary: self.external_execution_summary
+            ,
+            external_execution_url: self.external_execution_url
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAnomalyDetectionExecutionsOutput {
+pub struct DescribeAnomalyDetectionExecutionsOutput  {
     /// <p>A list of detection jobs.</p>
-    pub execution_list: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
+    pub execution_list: ::std::option::Option<::std::vec::Vec::<crate::types::ExecutionStatus>>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAnomalyDetectionExecutionsOutput {
+impl  DescribeAnomalyDetectionExecutionsOutput  {
     /// <p>A list of detection jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_list.is_none()`.
-    pub fn execution_list(&self) -> &[crate::types::ExecutionStatus] {
-        self.execution_list.as_deref().unwrap_or_default()
+    pub fn execution_list(&self) -> & [crate::types::ExecutionStatus] {
+        self.execution_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAnomalyDetectionExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAnomalyDetectionExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput).
     pub fn builder() -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAnomalyDetectionExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectionExecutionsOutputBuilder {
-    pub(crate) execution_list: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
+    pub(crate) execution_list: ::std::option::Option<::std::vec::Vec::<crate::types::ExecutionStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAnomalyDetectionExecutionsOutputBuilder {
     /// <p>A list of detection jobs.</p>
     pub fn execution_list(mut self, input: crate::types::ExecutionStatus) -> Self {
         let mut v = self.execution_list.unwrap_or_default();
-        v.push(input);
-        self.execution_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.execution_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of detection jobs.</p>
-    pub fn set_execution_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>) -> Self {
-        self.execution_list = input;
-        self
+    pub fn set_execution_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExecutionStatus>>) -> Self {
+        self.execution_list = input; self
     }
     /// <p>A list of detection jobs.</p>
-    pub fn get_execution_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
+    pub fn get_execution_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExecutionStatus>> {
         &self.execution_list
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -69,28 +69,30 @@ impl DescribeAnomalyDetectionExecutionsOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput).
     pub fn build(self) -> crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput {
         crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput {
-            execution_list: self.execution_list,
-            next_token: self.next_token,
+            execution_list: self.execution_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

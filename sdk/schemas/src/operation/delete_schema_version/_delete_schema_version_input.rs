@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaVersionInput {
+pub struct DeleteSchemaVersionInput  {
     /// <p>The name of the registry.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
@@ -10,17 +10,17 @@ pub struct DeleteSchemaVersionInput {
     /// The version number of the schema
     pub schema_version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSchemaVersionInput {
+impl  DeleteSchemaVersionInput  {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// The version number of the schema
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<& str> {
         self.schema_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteSchemaVersionInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteSchemaVersionInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl DeleteSchemaVersionInputBuilder {
     }
     /// The version number of the schema
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// The version number of the schema
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_version
     }
     /// Consumes the builder and constructs a [`DeleteSchemaVersionInput`](crate::operation::delete_schema_version::DeleteSchemaVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_version::DeleteSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_schema_version::DeleteSchemaVersionInput {
-            registry_name: self.registry_name,
-            schema_name: self.schema_name,
-            schema_version: self.schema_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema_version::DeleteSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_schema_version::DeleteSchemaVersionInput {
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+            }
+        )
     }
 }
+

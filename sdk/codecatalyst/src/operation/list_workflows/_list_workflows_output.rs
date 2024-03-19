@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkflowsOutput {
+pub struct ListWorkflowsOutput  {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the workflows in a project.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSummary>>,
     _request_id: Option<String>,
 }
-impl ListWorkflowsOutput {
+impl  ListWorkflowsOutput  {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the workflows in a project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::WorkflowSummary] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::WorkflowSummary] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkflowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
     pub fn builder() -> crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListWorkflowsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListWorkflowsOutputBuilder {
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListWorkflowsOutputBuilder {
     /// <p>Information about the workflows in a project.</p>
     pub fn items(mut self, input: crate::types::WorkflowSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the workflows in a project.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>Information about the workflows in a project.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSummary>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
     pub fn build(self) -> crate::operation::list_workflows::ListWorkflowsOutput {
         crate::operation::list_workflows::ListWorkflowsOutput {
-            next_token: self.next_token,
-            items: self.items,
+            next_token: self.next_token
+            ,
+            items: self.items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

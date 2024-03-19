@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPackageVersionDependenciesOutput {
+pub struct ListPackageVersionDependenciesOutput  {
     /// <p>A format that specifies the type of the package that contains the returned dependencies.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -24,12 +24,12 @@ pub struct ListPackageVersionDependenciesOutput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.</p>
-    pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::PackageDependency>>,
+    pub dependencies: ::std::option::Option<::std::vec::Vec::<crate::types::PackageDependency>>,
     _request_id: Option<String>,
 }
-impl ListPackageVersionDependenciesOutput {
+impl  ListPackageVersionDependenciesOutput  {
     /// <p>A format that specifies the type of the package that contains the returned dependencies.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -41,37 +41,38 @@ impl ListPackageVersionDependenciesOutput {
     /// <li>
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package that contains the returned package versions dependencies.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>The version of the package that is specified in the request.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The current revision associated with the package version.</p>
-    pub fn version_revision(&self) -> ::std::option::Option<&str> {
+    pub fn version_revision(&self) -> ::std::option::Option<& str> {
         self.version_revision.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
-    pub fn dependencies(&self) -> &[crate::types::PackageDependency] {
-        self.dependencies.as_deref().unwrap_or_default()
+    pub fn dependencies(&self) -> & [crate::types::PackageDependency] {
+        self.dependencies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPackageVersionDependenciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPackageVersionDependenciesOutput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionDependenciesOutput`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput).
     pub fn builder() -> crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesOutputBuilder {
@@ -89,7 +90,7 @@ pub struct ListPackageVersionDependenciesOutputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) version_revision: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::PackageDependency>>,
+    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec::<crate::types::PackageDependency>>,
     _request_id: Option<String>,
 }
 impl ListPackageVersionDependenciesOutputBuilder {
@@ -100,8 +101,7 @@ impl ListPackageVersionDependenciesOutputBuilder {
     }
     /// <p>A format that specifies the type of the package that contains the returned dependencies.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>A format that specifies the type of the package that contains the returned dependencies.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -130,8 +130,7 @@ impl ListPackageVersionDependenciesOutputBuilder {
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -152,8 +151,7 @@ impl ListPackageVersionDependenciesOutputBuilder {
     }
     /// <p>The name of the package that contains the returned package versions dependencies.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package that contains the returned package versions dependencies.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +164,7 @@ impl ListPackageVersionDependenciesOutputBuilder {
     }
     /// <p>The version of the package that is specified in the request.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the package that is specified in the request.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +177,7 @@ impl ListPackageVersionDependenciesOutputBuilder {
     }
     /// <p>The current revision associated with the package version.</p>
     pub fn set_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_revision = input;
-        self
+        self.version_revision = input; self
     }
     /// <p>The current revision associated with the package version.</p>
     pub fn get_version_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +190,7 @@ impl ListPackageVersionDependenciesOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,39 +203,46 @@ impl ListPackageVersionDependenciesOutputBuilder {
     /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.</p>
     pub fn dependencies(mut self, input: crate::types::PackageDependency) -> Self {
         let mut v = self.dependencies.unwrap_or_default();
-        v.push(input);
-        self.dependencies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dependencies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.</p>
-    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageDependency>>) -> Self {
-        self.dependencies = input;
-        self
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PackageDependency>>) -> Self {
+        self.dependencies = input; self
     }
     /// <p>The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.</p>
-    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageDependency>> {
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PackageDependency>> {
         &self.dependencies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPackageVersionDependenciesOutput`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput).
     pub fn build(self) -> crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput {
         crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput {
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            version: self.version,
-            version_revision: self.version_revision,
-            next_token: self.next_token,
-            dependencies: self.dependencies,
+            format: self.format
+            ,
+            namespace: self.namespace
+            ,
+            package: self.package
+            ,
+            version: self.version
+            ,
+            version_revision: self.version_revision
+            ,
+            next_token: self.next_token
+            ,
+            dependencies: self.dependencies
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

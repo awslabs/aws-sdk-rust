@@ -3,13 +3,13 @@
 /// <p>A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParentHyperParameterTuningJob {
+pub struct ParentHyperParameterTuningJob  {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
-impl ParentHyperParameterTuningJob {
+impl  ParentHyperParameterTuningJob  {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<& str> {
         self.hyper_parameter_tuning_job_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ParentHyperParameterTuningJobBuilder {
     }
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hyper_parameter_tuning_job_name = input;
-        self
+        self.hyper_parameter_tuning_job_name = input; self
     }
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
     pub fn get_hyper_parameter_tuning_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ParentHyperParameterTuningJobBuilder {
     /// Consumes the builder and constructs a [`ParentHyperParameterTuningJob`](crate::types::ParentHyperParameterTuningJob).
     pub fn build(self) -> crate::types::ParentHyperParameterTuningJob {
         crate::types::ParentHyperParameterTuningJob {
-            hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
+            hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name
+            ,
         }
     }
 }
+

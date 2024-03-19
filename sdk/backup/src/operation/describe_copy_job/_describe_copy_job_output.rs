@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCopyJobOutput {
+pub struct DescribeCopyJobOutput  {
     /// <p>Contains detailed information about a copy job.</p>
     pub copy_job: ::std::option::Option<crate::types::CopyJob>,
     _request_id: Option<String>,
 }
-impl DescribeCopyJobOutput {
+impl  DescribeCopyJobOutput  {
     /// <p>Contains detailed information about a copy job.</p>
-    pub fn copy_job(&self) -> ::std::option::Option<&crate::types::CopyJob> {
+    pub fn copy_job(&self) -> ::std::option::Option<& crate::types::CopyJob> {
         self.copy_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCopyJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCopyJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput).
     pub fn builder() -> crate::operation::describe_copy_job::builders::DescribeCopyJobOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeCopyJobOutputBuilder {
     }
     /// <p>Contains detailed information about a copy job.</p>
     pub fn set_copy_job(mut self, input: ::std::option::Option<crate::types::CopyJob>) -> Self {
-        self.copy_job = input;
-        self
+        self.copy_job = input; self
     }
     /// <p>Contains detailed information about a copy job.</p>
     pub fn get_copy_job(&self) -> &::std::option::Option<crate::types::CopyJob> {
         &self.copy_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput).
     pub fn build(self) -> crate::operation::describe_copy_job::DescribeCopyJobOutput {
         crate::operation::describe_copy_job::DescribeCopyJobOutput {
-            copy_job: self.copy_job,
+            copy_job: self.copy_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

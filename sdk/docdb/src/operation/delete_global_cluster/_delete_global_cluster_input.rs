@@ -3,13 +3,13 @@
 /// <p>Represents the input to <code>DeleteGlobalCluster</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalClusterInput {
+pub struct DeleteGlobalClusterInput  {
     /// <p>The cluster identifier of the global cluster being deleted.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGlobalClusterInput {
+impl  DeleteGlobalClusterInput  {
     /// <p>The cluster identifier of the global cluster being deleted.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteGlobalClusterInputBuilder {
     }
     /// <p>The cluster identifier of the global cluster being deleted.</p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>The cluster identifier of the global cluster being deleted.</p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
     /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_global_cluster::DeleteGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_global_cluster::DeleteGlobalClusterInput {
-            global_cluster_identifier: self.global_cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_global_cluster::DeleteGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_global_cluster::DeleteGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+            }
+        )
     }
 }
+

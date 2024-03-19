@@ -3,11 +3,11 @@
 /// <p>Options for the <code>GetTemplateSummary</code> API action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateSummaryConfig {
+pub struct TemplateSummaryConfig  {
     /// <p>If set to <code>True</code>, any unrecognized resource types generate warnings and not an error. Any unrecognized resource types are returned in the <code>Warnings</code> output parameter.</p>
     pub treat_unrecognized_resource_types_as_warnings: ::std::option::Option<bool>,
 }
-impl TemplateSummaryConfig {
+impl  TemplateSummaryConfig  {
     /// <p>If set to <code>True</code>, any unrecognized resource types generate warnings and not an error. Any unrecognized resource types are returned in the <code>Warnings</code> output parameter.</p>
     pub fn treat_unrecognized_resource_types_as_warnings(&self) -> ::std::option::Option<bool> {
         self.treat_unrecognized_resource_types_as_warnings
@@ -34,8 +34,7 @@ impl TemplateSummaryConfigBuilder {
     }
     /// <p>If set to <code>True</code>, any unrecognized resource types generate warnings and not an error. Any unrecognized resource types are returned in the <code>Warnings</code> output parameter.</p>
     pub fn set_treat_unrecognized_resource_types_as_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.treat_unrecognized_resource_types_as_warnings = input;
-        self
+        self.treat_unrecognized_resource_types_as_warnings = input; self
     }
     /// <p>If set to <code>True</code>, any unrecognized resource types generate warnings and not an error. Any unrecognized resource types are returned in the <code>Warnings</code> output parameter.</p>
     pub fn get_treat_unrecognized_resource_types_as_warnings(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl TemplateSummaryConfigBuilder {
     /// Consumes the builder and constructs a [`TemplateSummaryConfig`](crate::types::TemplateSummaryConfig).
     pub fn build(self) -> crate::types::TemplateSummaryConfig {
         crate::types::TemplateSummaryConfig {
-            treat_unrecognized_resource_types_as_warnings: self.treat_unrecognized_resource_types_as_warnings,
+            treat_unrecognized_resource_types_as_warnings: self.treat_unrecognized_resource_types_as_warnings
+            ,
         }
     }
 }
+

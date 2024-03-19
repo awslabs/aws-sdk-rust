@@ -3,7 +3,7 @@
 /// <p>Information about Kafka Cluster used as source / target for replication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaClusterDescription {
+pub struct KafkaClusterDescription  {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
@@ -11,17 +11,17 @@ pub struct KafkaClusterDescription {
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub vpc_config: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>,
 }
-impl KafkaClusterDescription {
+impl  KafkaClusterDescription  {
     /// <p>Details of an Amazon MSK Cluster.</p>
-    pub fn amazon_msk_cluster(&self) -> ::std::option::Option<&crate::types::AmazonMskCluster> {
+    pub fn amazon_msk_cluster(&self) -> ::std::option::Option<& crate::types::AmazonMskCluster> {
         self.amazon_msk_cluster.as_ref()
     }
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
-    pub fn kafka_cluster_alias(&self) -> ::std::option::Option<&str> {
+    pub fn kafka_cluster_alias(&self) -> ::std::option::Option<& str> {
         self.kafka_cluster_alias.as_deref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::KafkaClusterClientVpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::KafkaClusterClientVpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl KafkaClusterDescriptionBuilder {
     }
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn set_amazon_msk_cluster(mut self, input: ::std::option::Option<crate::types::AmazonMskCluster>) -> Self {
-        self.amazon_msk_cluster = input;
-        self
+        self.amazon_msk_cluster = input; self
     }
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn get_amazon_msk_cluster(&self) -> &::std::option::Option<crate::types::AmazonMskCluster> {
@@ -62,8 +61,7 @@ impl KafkaClusterDescriptionBuilder {
     }
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
     pub fn set_kafka_cluster_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kafka_cluster_alias = input;
-        self
+        self.kafka_cluster_alias = input; self
     }
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
     pub fn get_kafka_cluster_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl KafkaClusterDescriptionBuilder {
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::KafkaClusterClientVpcConfig> {
@@ -86,9 +83,13 @@ impl KafkaClusterDescriptionBuilder {
     /// Consumes the builder and constructs a [`KafkaClusterDescription`](crate::types::KafkaClusterDescription).
     pub fn build(self) -> crate::types::KafkaClusterDescription {
         crate::types::KafkaClusterDescription {
-            amazon_msk_cluster: self.amazon_msk_cluster,
-            kafka_cluster_alias: self.kafka_cluster_alias,
-            vpc_config: self.vpc_config,
+            amazon_msk_cluster: self.amazon_msk_cluster
+            ,
+            kafka_cluster_alias: self.kafka_cluster_alias
+            ,
+            vpc_config: self.vpc_config
+            ,
         }
     }
 }
+

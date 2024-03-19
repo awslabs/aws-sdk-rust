@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExclusionsOutput {
+pub struct DescribeExclusionsOutput  {
     /// <p>Information about the exclusions.</p>
-    pub exclusions: ::std::collections::HashMap<::std::string::String, crate::types::Exclusion>,
+    pub exclusions: ::std::collections::HashMap::<::std::string::String, crate::types::Exclusion>,
     /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
+    pub failed_items: ::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
-impl DescribeExclusionsOutput {
+impl  DescribeExclusionsOutput  {
     /// <p>Information about the exclusions.</p>
-    pub fn exclusions(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::Exclusion> {
+    pub fn exclusions(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::Exclusion> {
         &self.exclusions
     }
     /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+    pub fn failed_items(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails> {
         &self.failed_items
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeExclusionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeExclusionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExclusionsOutput`](crate::operation::describe_exclusions::DescribeExclusionsOutput).
     pub fn builder() -> crate::operation::describe_exclusions::builders::DescribeExclusionsOutputBuilder {
@@ -35,8 +35,8 @@ impl DescribeExclusionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExclusionsOutputBuilder {
-    pub(crate) exclusions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Exclusion>>,
-    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub(crate) exclusions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Exclusion>>,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeExclusionsOutputBuilder {
@@ -47,20 +47,16 @@ impl DescribeExclusionsOutputBuilder {
     /// <p>Information about the exclusions.</p>
     pub fn exclusions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Exclusion) -> Self {
         let mut hash_map = self.exclusions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.exclusions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.exclusions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Information about the exclusions.</p>
-    pub fn set_exclusions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Exclusion>>,
-    ) -> Self {
-        self.exclusions = input;
-        self
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Exclusion>>) -> Self {
+        self.exclusions = input; self
     }
     /// <p>Information about the exclusions.</p>
-    pub fn get_exclusions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Exclusion>> {
+    pub fn get_exclusions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Exclusion>> {
         &self.exclusions
     }
     /// Adds a key-value pair to `failed_items`.
@@ -70,53 +66,47 @@ impl DescribeExclusionsOutputBuilder {
     /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.failed_items = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.failed_items = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
-    ) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>>) -> Self {
+        self.failed_items = input; self
     }
     /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeExclusionsOutput`](crate::operation::describe_exclusions::DescribeExclusionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`exclusions`](crate::operation::describe_exclusions::builders::DescribeExclusionsOutputBuilder::exclusions)
     /// - [`failed_items`](crate::operation::describe_exclusions::builders::DescribeExclusionsOutputBuilder::failed_items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_exclusions::DescribeExclusionsOutput {
-            exclusions: self.exclusions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "exclusions",
-                    "exclusions was not specified but it is required when building DescribeExclusionsOutput",
-                )
-            })?,
-            failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failed_items",
-                    "failed_items was not specified but it is required when building DescribeExclusionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_exclusions::DescribeExclusionsOutput {
+                exclusions: self.exclusions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("exclusions", "exclusions was not specified but it is required when building DescribeExclusionsOutput")
+                    )?
+                ,
+                failed_items: self.failed_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failed_items", "failed_items was not specified but it is required when building DescribeExclusionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

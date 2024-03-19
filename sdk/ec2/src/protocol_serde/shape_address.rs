@@ -190,3 +190,4 @@ pub fn de_address(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
     }
     Ok(builder.build())
 }
+

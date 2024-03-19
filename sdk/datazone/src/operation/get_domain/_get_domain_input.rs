@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainInput {
+pub struct GetDomainInput  {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetDomainInput {
+impl  GetDomainInput  {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetDomainInputBuilder {
     }
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetDomainInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput { identifier: self.identifier })
+        ::std::result::Result::Ok(
+            crate::operation::get_domain::GetDomainInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationOutput {
+pub struct DescribeApplicationOutput  {
     /// <p>Specifies the ARN of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application provider under which the operation will run.</p>
@@ -23,49 +23,49 @@ pub struct DescribeApplicationOutput {
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeApplicationOutput {
+impl  DescribeApplicationOutput  {
     /// <p>Specifies the ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
-    pub fn application_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_provider_arn(&self) -> ::std::option::Option<& str> {
         self.application_provider_arn.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The account ID.</p>
-    pub fn application_account(&self) -> ::std::option::Option<&str> {
+    pub fn application_account(&self) -> ::std::option::Option<& str> {
         self.application_account.as_deref()
     }
     /// <p>The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
-    pub fn portal_options(&self) -> ::std::option::Option<&crate::types::PortalOptions> {
+    pub fn portal_options(&self) -> ::std::option::Option<& crate::types::PortalOptions> {
         self.portal_options.as_ref()
     }
     /// <p>The description of the .</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the application was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
     pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
@@ -96,8 +96,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>Specifies the ARN of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub fn set_application_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_provider_arn = input;
-        self
+        self.application_provider_arn = input; self
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub fn get_application_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The application name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The application name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The account ID.</p>
     pub fn set_application_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_account = input;
-        self
+        self.application_account = input; self
     }
     /// <p>The account ID.</p>
     pub fn get_application_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +148,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
@@ -180,8 +174,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub fn set_portal_options(mut self, input: ::std::option::Option<crate::types::PortalOptions>) -> Self {
-        self.portal_options = input;
-        self
+        self.portal_options = input; self
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub fn get_portal_options(&self) -> &::std::option::Option<crate::types::PortalOptions> {
@@ -194,8 +187,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The description of the .</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the .</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,35 +200,44 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The date the application was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the application was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
     pub fn build(self) -> crate::operation::describe_application::DescribeApplicationOutput {
         crate::operation::describe_application::DescribeApplicationOutput {
-            application_arn: self.application_arn,
-            application_provider_arn: self.application_provider_arn,
-            name: self.name,
-            application_account: self.application_account,
-            instance_arn: self.instance_arn,
-            status: self.status,
-            portal_options: self.portal_options,
-            description: self.description,
-            created_date: self.created_date,
+            application_arn: self.application_arn
+            ,
+            application_provider_arn: self.application_provider_arn
+            ,
+            name: self.name
+            ,
+            application_account: self.application_account
+            ,
+            instance_arn: self.instance_arn
+            ,
+            status: self.status
+            ,
+            portal_options: self.portal_options
+            ,
+            description: self.description
+            ,
+            created_date: self.created_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

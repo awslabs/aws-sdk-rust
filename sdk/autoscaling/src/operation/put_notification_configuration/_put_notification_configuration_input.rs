@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutNotificationConfigurationInput {
+pub struct PutNotificationConfigurationInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PutNotificationConfigurationInput {
+impl  PutNotificationConfigurationInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_types.is_none()`.
-    pub fn notification_types(&self) -> &[::std::string::String] {
-        self.notification_types.as_deref().unwrap_or_default()
+    pub fn notification_types(&self) -> & [::std::string::String] {
+        self.notification_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutNotificationConfigurationInput {
@@ -39,7 +40,7 @@ impl PutNotificationConfigurationInput {
 pub struct PutNotificationConfigurationInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PutNotificationConfigurationInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -50,8 +51,7 @@ impl PutNotificationConfigurationInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl PutNotificationConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl PutNotificationConfigurationInputBuilder {
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
     pub fn notification_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_types.unwrap_or_default();
-        v.push(input.into());
-        self.notification_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.notification_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn set_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_types = input;
-        self
+    pub fn set_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.notification_types = input; self
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn get_notification_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.notification_types
     }
     /// Consumes the builder and constructs a [`PutNotificationConfigurationInput`](crate::operation::put_notification_configuration::PutNotificationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_notification_configuration::PutNotificationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_notification_configuration::PutNotificationConfigurationInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            topic_arn: self.topic_arn,
-            notification_types: self.notification_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_notification_configuration::PutNotificationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_notification_configuration::PutNotificationConfigurationInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                topic_arn: self.topic_arn
+                ,
+                notification_types: self.notification_types
+                ,
+            }
+        )
     }
 }
+

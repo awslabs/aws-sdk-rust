@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTimeBasedAutoScalingInput {
+pub struct SetTimeBasedAutoScalingInput  {
     /// <p>The instance ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     pub auto_scaling_schedule: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
 }
-impl SetTimeBasedAutoScalingInput {
+impl  SetTimeBasedAutoScalingInput  {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
-    pub fn auto_scaling_schedule(&self) -> ::std::option::Option<&crate::types::WeeklyAutoScalingSchedule> {
+    pub fn auto_scaling_schedule(&self) -> ::std::option::Option<& crate::types::WeeklyAutoScalingSchedule> {
         self.auto_scaling_schedule.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SetTimeBasedAutoScalingInputBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl SetTimeBasedAutoScalingInputBuilder {
     }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     pub fn set_auto_scaling_schedule(mut self, input: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>) -> Self {
-        self.auto_scaling_schedule = input;
-        self
+        self.auto_scaling_schedule = input; self
     }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     pub fn get_auto_scaling_schedule(&self) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
         &self.auto_scaling_schedule
     }
     /// Consumes the builder and constructs a [`SetTimeBasedAutoScalingInput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput {
-            instance_id: self.instance_id,
-            auto_scaling_schedule: self.auto_scaling_schedule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput {
+                instance_id: self.instance_id
+                ,
+                auto_scaling_schedule: self.auto_scaling_schedule
+                ,
+            }
+        )
     }
 }
+

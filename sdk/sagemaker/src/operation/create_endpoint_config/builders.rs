@@ -5,23 +5,20 @@ pub use crate::operation::create_endpoint_config::_create_endpoint_config_input:
 
 impl CreateEndpointConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_endpoint_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_endpoint_config::CreateEndpointConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_endpoint_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateEndpointConfig`.
-///
+/// 
 /// <p>Creates an endpoint configuration that SageMaker hosting services uses to deploy models. In the configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the resources that you want SageMaker to provision. Then you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> API.</p><note>
 /// <p>Use this API if you want to use SageMaker hosting services to deploy models into production.</p>
 /// </note>
@@ -32,33 +29,32 @@ impl CreateEndpointConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEndpointConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder,
+                    inner: crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        crate::operation::create_endpoint_config::CreateEndpointConfigError,
-    > for CreateEndpointConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
+                    crate::operation::create_endpoint_config::CreateEndpointConfigError,
+                > for CreateEndpointConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
+                        crate::operation::create_endpoint_config::CreateEndpointConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateEndpointConfigFluentBuilder {
     /// Creates a new `CreateEndpointConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl CreateEndpointConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_endpoint_config::CreateEndpointConfig::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_endpoint_config::CreateEndpointConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        crate::operation::create_endpoint_config::CreateEndpointConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_endpoint_config::CreateEndpointConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_endpoint_config::CreateEndpointConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_endpoint_config::CreateEndpointConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_endpoint_config::CreateEndpointConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_endpoint_config::CreateEndpointConfigOutput, crate::operation::create_endpoint_config::CreateEndpointConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request.</p>
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_config_name(input.into());
@@ -138,12 +125,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>) -> Self {
+    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>) -> Self {
         self.inner = self.inner.set_production_variants(input);
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>> {
         self.inner.get_production_variants()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
@@ -170,12 +157,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
@@ -278,12 +265,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
-    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>) -> Self {
+    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>) -> Self {
         self.inner = self.inner.set_shadow_production_variants(input);
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
-    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>> {
         self.inner.get_shadow_production_variants()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.</p><note>
@@ -335,3 +322,4 @@ impl CreateEndpointConfigFluentBuilder {
         self.inner.get_enable_network_isolation()
     }
 }
+

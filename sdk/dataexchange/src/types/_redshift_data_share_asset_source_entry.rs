@@ -3,15 +3,14 @@
 /// <p>The source of the Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDataShareAssetSourceEntry {
+pub struct RedshiftDataShareAssetSourceEntry  {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub data_share_arn: ::std::string::String,
 }
-impl RedshiftDataShareAssetSourceEntry {
+impl  RedshiftDataShareAssetSourceEntry  {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-    pub fn data_share_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_share_arn.deref()
+    pub fn data_share_arn(&self) -> & str {
+        use std::ops::Deref; self.data_share_arn.deref()
     }
 }
 impl RedshiftDataShareAssetSourceEntry {
@@ -36,8 +35,7 @@ impl RedshiftDataShareAssetSourceEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_share_arn = input;
-        self
+        self.data_share_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RedshiftDataShareAssetSourceEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_share_arn`](crate::types::builders::RedshiftDataShareAssetSourceEntryBuilder::data_share_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareAssetSourceEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDataShareAssetSourceEntry {
-            data_share_arn: self.data_share_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_share_arn",
-                    "data_share_arn was not specified but it is required when building RedshiftDataShareAssetSourceEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDataShareAssetSourceEntry {
+                data_share_arn: self.data_share_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_share_arn", "data_share_arn was not specified but it is required when building RedshiftDataShareAssetSourceEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

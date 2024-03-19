@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEksAnywhereSubscriptionInput {
+pub struct DescribeEksAnywhereSubscriptionInput  {
     /// <p>The ID of the subscription.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEksAnywhereSubscriptionInput {
+impl  DescribeEksAnywhereSubscriptionInput  {
     /// <p>The ID of the subscription.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>The ID of the subscription.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the subscription.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DescribeEksAnywhereSubscriptionInput`](crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

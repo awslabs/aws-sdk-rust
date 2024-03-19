@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVirtualServiceOutput {
+pub struct DescribeVirtualServiceOutput  {
     /// <p>The full description of your virtual service.</p>
     pub virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,
 }
-impl DescribeVirtualServiceOutput {
+impl  DescribeVirtualServiceOutput  {
     /// <p>The full description of your virtual service.</p>
-    pub fn virtual_service(&self) -> ::std::option::Option<&crate::types::VirtualServiceData> {
+    pub fn virtual_service(&self) -> ::std::option::Option<& crate::types::VirtualServiceData> {
         self.virtual_service.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVirtualServiceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceOutput`](crate::operation::describe_virtual_service::DescribeVirtualServiceOutput).
     pub fn builder() -> crate::operation::describe_virtual_service::builders::DescribeVirtualServiceOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeVirtualServiceOutputBuilder {
     }
     /// <p>The full description of your virtual service.</p>
     pub fn set_virtual_service(mut self, input: ::std::option::Option<crate::types::VirtualServiceData>) -> Self {
-        self.virtual_service = input;
-        self
+        self.virtual_service = input; self
     }
     /// <p>The full description of your virtual service.</p>
     pub fn get_virtual_service(&self) -> &::std::option::Option<crate::types::VirtualServiceData> {
         &self.virtual_service
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVirtualServiceOutput`](crate::operation::describe_virtual_service::DescribeVirtualServiceOutput).
     pub fn build(self) -> crate::operation::describe_virtual_service::DescribeVirtualServiceOutput {
         crate::operation::describe_virtual_service::DescribeVirtualServiceOutput {
-            virtual_service: self.virtual_service,
+            virtual_service: self.virtual_service
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

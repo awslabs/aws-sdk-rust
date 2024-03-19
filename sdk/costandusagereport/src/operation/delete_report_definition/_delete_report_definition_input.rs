@@ -3,13 +3,13 @@
 /// <p>Deletes the specified report.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReportDefinitionInput {
+pub struct DeleteReportDefinitionInput  {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub report_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReportDefinitionInput {
+impl  DeleteReportDefinitionInput  {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
-    pub fn report_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_name(&self) -> ::std::option::Option<& str> {
         self.report_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteReportDefinitionInputBuilder {
     }
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_name = input;
-        self
+        self.report_name = input; self
     }
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_name
     }
     /// Consumes the builder and constructs a [`DeleteReportDefinitionInput`](crate::operation::delete_report_definition::DeleteReportDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_report_definition::DeleteReportDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_report_definition::DeleteReportDefinitionInput {
-            report_name: self.report_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_report_definition::DeleteReportDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_report_definition::DeleteReportDefinitionInput {
+                report_name: self.report_name
+                ,
+            }
+        )
     }
 }
+

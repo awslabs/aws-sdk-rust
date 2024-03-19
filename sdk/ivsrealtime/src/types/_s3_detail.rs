@@ -3,15 +3,14 @@
 /// <p>Complex data type that defines S3Detail objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Detail {
+pub struct S3Detail  {
     /// <p>The S3 bucket prefix under which the recording is stored.</p>
     pub recording_prefix: ::std::string::String,
 }
-impl S3Detail {
+impl  S3Detail  {
     /// <p>The S3 bucket prefix under which the recording is stored.</p>
-    pub fn recording_prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.recording_prefix.deref()
+    pub fn recording_prefix(&self) -> & str {
+        use std::ops::Deref; self.recording_prefix.deref()
     }
 }
 impl S3Detail {
@@ -36,8 +35,7 @@ impl S3DetailBuilder {
     }
     /// <p>The S3 bucket prefix under which the recording is stored.</p>
     pub fn set_recording_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recording_prefix = input;
-        self
+        self.recording_prefix = input; self
     }
     /// <p>The S3 bucket prefix under which the recording is stored.</p>
     pub fn get_recording_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl S3DetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`recording_prefix`](crate::types::builders::S3DetailBuilder::recording_prefix)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Detail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Detail {
-            recording_prefix: self.recording_prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recording_prefix",
-                    "recording_prefix was not specified but it is required when building S3Detail",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Detail {
+                recording_prefix: self.recording_prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recording_prefix", "recording_prefix was not specified but it is required when building S3Detail")
+                    )?
+                ,
+            }
+        )
     }
 }
+

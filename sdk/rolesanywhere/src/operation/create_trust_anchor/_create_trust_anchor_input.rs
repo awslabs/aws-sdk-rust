@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrustAnchorInput {
+pub struct CreateTrustAnchorInput  {
     /// <p>The name of the trust anchor.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
@@ -10,17 +10,17 @@ pub struct CreateTrustAnchorInput {
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The tags to attach to the trust anchor.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
+    pub notification_settings: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>>,
 }
-impl CreateTrustAnchorInput {
+impl  CreateTrustAnchorInput  {
     /// <p>The name of the trust anchor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The trust anchor type and its related certificate data.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>Specifies whether the trust anchor is enabled.</p>
@@ -28,16 +28,18 @@ impl CreateTrustAnchorInput {
         self.enabled
     }
     /// <p>The tags to attach to the trust anchor.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_settings.is_none()`.
-    pub fn notification_settings(&self) -> &[crate::types::NotificationSetting] {
-        self.notification_settings.as_deref().unwrap_or_default()
+    pub fn notification_settings(&self) -> & [crate::types::NotificationSetting] {
+        self.notification_settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateTrustAnchorInput {
@@ -54,8 +56,8 @@ pub struct CreateTrustAnchorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>>,
 }
 impl CreateTrustAnchorInputBuilder {
     /// <p>The name of the trust anchor.</p>
@@ -66,8 +68,7 @@ impl CreateTrustAnchorInputBuilder {
     }
     /// <p>The name of the trust anchor.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trust anchor.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +82,7 @@ impl CreateTrustAnchorInputBuilder {
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -95,8 +95,7 @@ impl CreateTrustAnchorInputBuilder {
     }
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -109,17 +108,16 @@ impl CreateTrustAnchorInputBuilder {
     /// <p>The tags to attach to the trust anchor.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to attach to the trust anchor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to attach to the trust anchor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `notification_settings`.
@@ -129,29 +127,34 @@ impl CreateTrustAnchorInputBuilder {
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
     pub fn notification_settings(mut self, input: crate::types::NotificationSetting) -> Self {
         let mut v = self.notification_settings.unwrap_or_default();
-        v.push(input);
-        self.notification_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notification_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn set_notification_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>) -> Self {
-        self.notification_settings = input;
-        self
+    pub fn set_notification_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>>) -> Self {
+        self.notification_settings = input; self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+    pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>> {
         &self.notification_settings
     }
     /// Consumes the builder and constructs a [`CreateTrustAnchorInput`](crate::operation::create_trust_anchor::CreateTrustAnchorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_trust_anchor::CreateTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_trust_anchor::CreateTrustAnchorInput {
-            name: self.name,
-            source: self.source,
-            enabled: self.enabled,
-            tags: self.tags,
-            notification_settings: self.notification_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trust_anchor::CreateTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_trust_anchor::CreateTrustAnchorInput {
+                name: self.name
+                ,
+                source: self.source
+                ,
+                enabled: self.enabled
+                ,
+                tags: self.tags
+                ,
+                notification_settings: self.notification_settings
+                ,
+            }
+        )
     }
 }
+

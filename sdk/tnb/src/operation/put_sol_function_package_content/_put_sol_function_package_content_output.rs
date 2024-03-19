@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSolFunctionPackageContentOutput {
+pub struct PutSolFunctionPackageContentOutput  {
     /// <p>Function package ID.</p>
     pub id: ::std::string::String,
     /// <p>Function package descriptor ID.</p>
@@ -17,42 +17,37 @@ pub struct PutSolFunctionPackageContentOutput {
     pub metadata: ::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata>,
     _request_id: Option<String>,
 }
-impl PutSolFunctionPackageContentOutput {
+impl  PutSolFunctionPackageContentOutput  {
     /// <p>Function package ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Function package descriptor ID.</p>
-    pub fn vnfd_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vnfd_id.deref()
+    pub fn vnfd_id(&self) -> & str {
+        use std::ops::Deref; self.vnfd_id.deref()
     }
     /// <p>Function product name.</p>
-    pub fn vnf_product_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vnf_product_name.deref()
+    pub fn vnf_product_name(&self) -> & str {
+        use std::ops::Deref; self.vnf_product_name.deref()
     }
     /// <p>Function provider.</p>
-    pub fn vnf_provider(&self) -> &str {
-        use std::ops::Deref;
-        self.vnf_provider.deref()
+    pub fn vnf_provider(&self) -> & str {
+        use std::ops::Deref; self.vnf_provider.deref()
     }
     /// <p>Function package descriptor version.</p>
-    pub fn vnfd_version(&self) -> &str {
-        use std::ops::Deref;
-        self.vnfd_version.deref()
+    pub fn vnfd_version(&self) -> & str {
+        use std::ops::Deref; self.vnfd_version.deref()
     }
     /// <p>Function package metadata.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::PutSolFunctionPackageContentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::PutSolFunctionPackageContentMetadata> {
         self.metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutSolFunctionPackageContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutSolFunctionPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`PutSolFunctionPackageContentOutput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput).
     pub fn builder() -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder {
@@ -81,8 +76,7 @@ impl PutSolFunctionPackageContentOutputBuilder {
     }
     /// <p>Function package ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Function package ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +90,7 @@ impl PutSolFunctionPackageContentOutputBuilder {
     }
     /// <p>Function package descriptor ID.</p>
     pub fn set_vnfd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_id = input;
-        self
+        self.vnfd_id = input; self
     }
     /// <p>Function package descriptor ID.</p>
     pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +104,7 @@ impl PutSolFunctionPackageContentOutputBuilder {
     }
     /// <p>Function product name.</p>
     pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_product_name = input;
-        self
+        self.vnf_product_name = input; self
     }
     /// <p>Function product name.</p>
     pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl PutSolFunctionPackageContentOutputBuilder {
     }
     /// <p>Function provider.</p>
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_provider = input;
-        self
+        self.vnf_provider = input; self
     }
     /// <p>Function provider.</p>
     pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +132,7 @@ impl PutSolFunctionPackageContentOutputBuilder {
     }
     /// <p>Function package descriptor version.</p>
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_version = input;
-        self
+        self.vnfd_version = input; self
     }
     /// <p>Function package descriptor version.</p>
     pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,22 +146,21 @@ impl PutSolFunctionPackageContentOutputBuilder {
     }
     /// <p>Function package metadata.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Function package metadata.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutSolFunctionPackageContentOutput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder::id)
@@ -179,45 +168,39 @@ impl PutSolFunctionPackageContentOutputBuilder {
     /// - [`vnf_product_name`](crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder::vnf_product_name)
     /// - [`vnf_provider`](crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder::vnf_provider)
     /// - [`vnfd_version`](crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder::vnfd_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PutSolFunctionPackageContentOutput",
-                )
-            })?,
-            vnfd_id: self.vnfd_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnfd_id",
-                    "vnfd_id was not specified but it is required when building PutSolFunctionPackageContentOutput",
-                )
-            })?,
-            vnf_product_name: self.vnf_product_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnf_product_name",
-                    "vnf_product_name was not specified but it is required when building PutSolFunctionPackageContentOutput",
-                )
-            })?,
-            vnf_provider: self.vnf_provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnf_provider",
-                    "vnf_provider was not specified but it is required when building PutSolFunctionPackageContentOutput",
-                )
-            })?,
-            vnfd_version: self.vnfd_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnfd_version",
-                    "vnfd_version was not specified but it is required when building PutSolFunctionPackageContentOutput",
-                )
-            })?,
-            metadata: self.metadata,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PutSolFunctionPackageContentOutput")
+                    )?
+                ,
+                vnfd_id: self.vnfd_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnfd_id", "vnfd_id was not specified but it is required when building PutSolFunctionPackageContentOutput")
+                    )?
+                ,
+                vnf_product_name: self.vnf_product_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnf_product_name", "vnf_product_name was not specified but it is required when building PutSolFunctionPackageContentOutput")
+                    )?
+                ,
+                vnf_provider: self.vnf_provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnf_provider", "vnf_provider was not specified but it is required when building PutSolFunctionPackageContentOutput")
+                    )?
+                ,
+                vnfd_version: self.vnfd_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnfd_version", "vnfd_version was not specified but it is required when building PutSolFunctionPackageContentOutput")
+                    )?
+                ,
+                metadata: self.metadata
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A summary of the metrics of a trial component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrialComponentMetricSummary {
+pub struct TrialComponentMetricSummary  {
     /// <p>The name of the metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
@@ -23,17 +23,17 @@ pub struct TrialComponentMetricSummary {
     /// <p>The standard deviation of the metric.</p>
     pub std_dev: ::std::option::Option<f64>,
 }
-impl TrialComponentMetricSummary {
+impl  TrialComponentMetricSummary  {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>When the metric was last updated.</p>
-    pub fn time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
     /// <p>The maximum value of the metric.</p>
@@ -90,8 +90,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>When the metric was last updated.</p>
     pub fn set_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time_stamp = input;
-        self
+        self.time_stamp = input; self
     }
     /// <p>When the metric was last updated.</p>
     pub fn get_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +129,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The maximum value of the metric.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum value of the metric.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -146,8 +142,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The minimum value of the metric.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum value of the metric.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -160,8 +155,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The most recent value of the metric.</p>
     pub fn set_last(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.last = input;
-        self
+        self.last = input; self
     }
     /// <p>The most recent value of the metric.</p>
     pub fn get_last(&self) -> &::std::option::Option<f64> {
@@ -174,8 +168,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The number of samples used to generate the metric.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of samples used to generate the metric.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -188,8 +181,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The average value of the metric.</p>
     pub fn set_avg(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.avg = input;
-        self
+        self.avg = input; self
     }
     /// <p>The average value of the metric.</p>
     pub fn get_avg(&self) -> &::std::option::Option<f64> {
@@ -202,8 +194,7 @@ impl TrialComponentMetricSummaryBuilder {
     }
     /// <p>The standard deviation of the metric.</p>
     pub fn set_std_dev(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.std_dev = input;
-        self
+        self.std_dev = input; self
     }
     /// <p>The standard deviation of the metric.</p>
     pub fn get_std_dev(&self) -> &::std::option::Option<f64> {
@@ -212,15 +203,25 @@ impl TrialComponentMetricSummaryBuilder {
     /// Consumes the builder and constructs a [`TrialComponentMetricSummary`](crate::types::TrialComponentMetricSummary).
     pub fn build(self) -> crate::types::TrialComponentMetricSummary {
         crate::types::TrialComponentMetricSummary {
-            metric_name: self.metric_name,
-            source_arn: self.source_arn,
-            time_stamp: self.time_stamp,
-            max: self.max,
-            min: self.min,
-            last: self.last,
-            count: self.count,
-            avg: self.avg,
-            std_dev: self.std_dev,
+            metric_name: self.metric_name
+            ,
+            source_arn: self.source_arn
+            ,
+            time_stamp: self.time_stamp
+            ,
+            max: self.max
+            ,
+            min: self.min
+            ,
+            last: self.last
+            ,
+            count: self.count
+            ,
+            avg: self.avg
+            ,
+            std_dev: self.std_dev
+            ,
         }
     }
 }
+

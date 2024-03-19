@@ -3,7 +3,7 @@
 /// <p>Detailed data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Service {
+pub struct Service  {
     /// <p>The name of the service.</p>
     pub name: ::std::string::String,
     /// <p>A description of the service.</p>
@@ -31,65 +31,61 @@ pub struct Service {
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
-impl Service {
+impl  Service  {
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the service.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_at
     }
     /// <p>The status of the service.</p>
-    pub fn status(&self) -> &crate::types::ServiceStatus {
+    pub fn status(&self) -> & crate::types::ServiceStatus {
         &self.status
     }
     /// <p>A service status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The formatted specification that defines the service.</p>
-    pub fn spec(&self) -> &str {
-        use std::ops::Deref;
-        self.spec.deref()
+    pub fn spec(&self) -> & str {
+        use std::ops::Deref; self.spec.deref()
     }
     /// <p>The service pipeline detail data.</p>
-    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::ServicePipeline> {
+    pub fn pipeline(&self) -> ::std::option::Option<& crate::types::ServicePipeline> {
         self.pipeline.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn repository_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn repository_connection_arn(&self) -> ::std::option::Option<& str> {
         self.repository_connection_arn.as_deref()
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn repository_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<& str> {
         self.repository_id.as_deref()
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for Service {
+impl  ::std::fmt::Debug for Service  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
         formatter.field("name", &self.name);
@@ -142,8 +138,7 @@ impl ServiceBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +151,7 @@ impl ServiceBuilder {
     }
     /// <p>A description of the service.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the service.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +165,7 @@ impl ServiceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +179,7 @@ impl ServiceBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the service template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +193,7 @@ impl ServiceBuilder {
     }
     /// <p>The time when the service was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the service was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -216,8 +207,7 @@ impl ServiceBuilder {
     }
     /// <p>The time when the service was last modified.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>The time when the service was last modified.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,8 +221,7 @@ impl ServiceBuilder {
     }
     /// <p>The status of the service.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the service.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
@@ -245,8 +234,7 @@ impl ServiceBuilder {
     }
     /// <p>A service status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A service status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +248,7 @@ impl ServiceBuilder {
     }
     /// <p>The formatted specification that defines the service.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The formatted specification that defines the service.</p>
     pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +261,7 @@ impl ServiceBuilder {
     }
     /// <p>The service pipeline detail data.</p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::ServicePipeline>) -> Self {
-        self.pipeline = input;
-        self
+        self.pipeline = input; self
     }
     /// <p>The service pipeline detail data.</p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::ServicePipeline> {
@@ -288,8 +274,7 @@ impl ServiceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_repository_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_connection_arn = input;
-        self
+        self.repository_connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
     pub fn get_repository_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +287,7 @@ impl ServiceBuilder {
     }
     /// <p>The ID of the source code repository.</p>
     pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_id = input;
-        self
+        self.repository_id = input; self
     }
     /// <p>The ID of the source code repository.</p>
     pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +300,7 @@ impl ServiceBuilder {
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,56 +316,57 @@ impl ServiceBuilder {
     /// - [`status`](crate::types::builders::ServiceBuilder::status)
     /// - [`spec`](crate::types::builders::ServiceBuilder::spec)
     pub fn build(self) -> ::std::result::Result<crate::types::Service, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Service {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Service",
-                )
-            })?,
-            description: self.description,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Service",
-                )
-            })?,
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building Service",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building Service",
-                )
-            })?,
-            last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_at",
-                    "last_modified_at was not specified but it is required when building Service",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Service",
-                )
-            })?,
-            status_message: self.status_message,
-            spec: self.spec.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "spec",
-                    "spec was not specified but it is required when building Service",
-                )
-            })?,
-            pipeline: self.pipeline,
-            repository_connection_arn: self.repository_connection_arn,
-            repository_id: self.repository_id,
-            branch_name: self.branch_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Service {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Service")
+                    )?
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Service")
+                    )?
+                ,
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building Service")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building Service")
+                    )?
+                ,
+                last_modified_at: self.last_modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_at", "last_modified_at was not specified but it is required when building Service")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Service")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                spec: self.spec
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("spec", "spec was not specified but it is required when building Service")
+                    )?
+                ,
+                pipeline: self.pipeline
+                ,
+                repository_connection_arn: self.repository_connection_arn
+                ,
+                repository_id: self.repository_id
+                ,
+                branch_name: self.branch_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ServiceBuilder {
@@ -404,3 +388,4 @@ impl ::std::fmt::Debug for ServiceBuilder {
         formatter.finish()
     }
 }
+

@@ -21,11 +21,7 @@ impl Matcher {
     /// Tries to convert the enum instance into [`HttpCode`](crate::types::Matcher::HttpCode), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http_code(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Matcher::HttpCode(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Matcher::HttpCode(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`HttpCode`](crate::types::Matcher::HttpCode).
     pub fn is_http_code(&self) -> bool {
@@ -36,3 +32,4 @@ impl Matcher {
         matches!(self, Self::Unknown)
     }
 }
+

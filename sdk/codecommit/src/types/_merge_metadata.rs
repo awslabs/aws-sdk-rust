@@ -3,7 +3,7 @@
 /// <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MergeMetadata {
+pub struct MergeMetadata  {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     pub is_merged: bool,
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
@@ -13,21 +13,21 @@ pub struct MergeMetadata {
     /// <p>The merge strategy used in the merge.</p>
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
 }
-impl MergeMetadata {
+impl  MergeMetadata  {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     pub fn is_merged(&self) -> bool {
         self.is_merged
     }
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
-    pub fn merged_by(&self) -> ::std::option::Option<&str> {
+    pub fn merged_by(&self) -> ::std::option::Option<& str> {
         self.merged_by.as_deref()
     }
     /// <p>The commit ID for the merge commit, if any.</p>
-    pub fn merge_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn merge_commit_id(&self) -> ::std::option::Option<& str> {
         self.merge_commit_id.as_deref()
     }
     /// <p>The merge strategy used in the merge.</p>
-    pub fn merge_option(&self) -> ::std::option::Option<&crate::types::MergeOptionTypeEnum> {
+    pub fn merge_option(&self) -> ::std::option::Option<& crate::types::MergeOptionTypeEnum> {
         self.merge_option.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MergeMetadataBuilder {
     }
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     pub fn set_is_merged(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_merged = input;
-        self
+        self.is_merged = input; self
     }
     /// <p>A Boolean value indicating whether the merge has been made.</p>
     pub fn get_is_merged(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl MergeMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
     pub fn set_merged_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.merged_by = input;
-        self
+        self.merged_by = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
     pub fn get_merged_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl MergeMetadataBuilder {
     }
     /// <p>The commit ID for the merge commit, if any.</p>
     pub fn set_merge_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.merge_commit_id = input;
-        self
+        self.merge_commit_id = input; self
     }
     /// <p>The commit ID for the merge commit, if any.</p>
     pub fn get_merge_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl MergeMetadataBuilder {
     }
     /// <p>The merge strategy used in the merge.</p>
     pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
-        self.merge_option = input;
-        self
+        self.merge_option = input; self
     }
     /// <p>The merge strategy used in the merge.</p>
     pub fn get_merge_option(&self) -> &::std::option::Option<crate::types::MergeOptionTypeEnum> {
@@ -107,10 +103,16 @@ impl MergeMetadataBuilder {
     /// Consumes the builder and constructs a [`MergeMetadata`](crate::types::MergeMetadata).
     pub fn build(self) -> crate::types::MergeMetadata {
         crate::types::MergeMetadata {
-            is_merged: self.is_merged.unwrap_or_default(),
-            merged_by: self.merged_by,
-            merge_commit_id: self.merge_commit_id,
-            merge_option: self.merge_option,
+            is_merged: self.is_merged
+                .unwrap_or_default()
+            ,
+            merged_by: self.merged_by
+            ,
+            merge_commit_id: self.merge_commit_id
+            ,
+            merge_option: self.merge_option
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Specify YUV limits and RGB tolerances when you set Sample range conversion to Limited range clip.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClipLimits {
+pub struct ClipLimits  {
     /// Specify the Maximum RGB color sample range tolerance for your output. MediaConvert corrects any YUV values that, when converted to RGB, would be outside the upper tolerance that you specify. Enter an integer from 90 to 105 as an offset percentage to the maximum possible value. Leave blank to use the default value 100. When you specify a value for Maximum RGB tolerance, you must set Sample range conversion to Limited range clip.
     pub maximum_rgb_tolerance: ::std::option::Option<i32>,
     /// Specify the Maximum YUV color sample limit. MediaConvert conforms any pixels in your input above the value that you specify to typical limited range bounds. Enter an integer from 920 to 1023. Leave blank to use the default value 940. The value that you enter applies to 10-bit ranges. For 8-bit ranges, MediaConvert automatically scales this value down. When you specify a value for Maximum YUV, you must set Sample range conversion to Limited range clip.
@@ -13,7 +13,7 @@ pub struct ClipLimits {
     /// Specify the Minimum YUV color sample limit. MediaConvert conforms any pixels in your input below the value that you specify to typical limited range bounds. Enter an integer from 0 to 128. Leave blank to use the default value 64. The value that you enter applies to 10-bit ranges. For 8-bit ranges, MediaConvert automatically scales this value down. When you specify a value for Minumum YUV, you must set Sample range conversion to Limited range clip.
     pub minimum_yuv: ::std::option::Option<i32>,
 }
-impl ClipLimits {
+impl  ClipLimits  {
     /// Specify the Maximum RGB color sample range tolerance for your output. MediaConvert corrects any YUV values that, when converted to RGB, would be outside the upper tolerance that you specify. Enter an integer from 90 to 105 as an offset percentage to the maximum possible value. Leave blank to use the default value 100. When you specify a value for Maximum RGB tolerance, you must set Sample range conversion to Limited range clip.
     pub fn maximum_rgb_tolerance(&self) -> ::std::option::Option<i32> {
         self.maximum_rgb_tolerance
@@ -55,8 +55,7 @@ impl ClipLimitsBuilder {
     }
     /// Specify the Maximum RGB color sample range tolerance for your output. MediaConvert corrects any YUV values that, when converted to RGB, would be outside the upper tolerance that you specify. Enter an integer from 90 to 105 as an offset percentage to the maximum possible value. Leave blank to use the default value 100. When you specify a value for Maximum RGB tolerance, you must set Sample range conversion to Limited range clip.
     pub fn set_maximum_rgb_tolerance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_rgb_tolerance = input;
-        self
+        self.maximum_rgb_tolerance = input; self
     }
     /// Specify the Maximum RGB color sample range tolerance for your output. MediaConvert corrects any YUV values that, when converted to RGB, would be outside the upper tolerance that you specify. Enter an integer from 90 to 105 as an offset percentage to the maximum possible value. Leave blank to use the default value 100. When you specify a value for Maximum RGB tolerance, you must set Sample range conversion to Limited range clip.
     pub fn get_maximum_rgb_tolerance(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl ClipLimitsBuilder {
     }
     /// Specify the Maximum YUV color sample limit. MediaConvert conforms any pixels in your input above the value that you specify to typical limited range bounds. Enter an integer from 920 to 1023. Leave blank to use the default value 940. The value that you enter applies to 10-bit ranges. For 8-bit ranges, MediaConvert automatically scales this value down. When you specify a value for Maximum YUV, you must set Sample range conversion to Limited range clip.
     pub fn set_maximum_yuv(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_yuv = input;
-        self
+        self.maximum_yuv = input; self
     }
     /// Specify the Maximum YUV color sample limit. MediaConvert conforms any pixels in your input above the value that you specify to typical limited range bounds. Enter an integer from 920 to 1023. Leave blank to use the default value 940. The value that you enter applies to 10-bit ranges. For 8-bit ranges, MediaConvert automatically scales this value down. When you specify a value for Maximum YUV, you must set Sample range conversion to Limited range clip.
     pub fn get_maximum_yuv(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ClipLimitsBuilder {
     }
     /// Specify the Minimum RGB color sample range tolerance for your output. MediaConvert corrects any YUV values that, when converted to RGB, would be outside the lower tolerance that you specify. Enter an integer from -5 to 10 as an offset percentage to the minimum possible value. Leave blank to use the default value 0. When you specify a value for Minimum RGB tolerance, you must set Sample range conversion to Limited range clip.
     pub fn set_minimum_rgb_tolerance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_rgb_tolerance = input;
-        self
+        self.minimum_rgb_tolerance = input; self
     }
     /// Specify the Minimum RGB color sample range tolerance for your output. MediaConvert corrects any YUV values that, when converted to RGB, would be outside the lower tolerance that you specify. Enter an integer from -5 to 10 as an offset percentage to the minimum possible value. Leave blank to use the default value 0. When you specify a value for Minimum RGB tolerance, you must set Sample range conversion to Limited range clip.
     pub fn get_minimum_rgb_tolerance(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl ClipLimitsBuilder {
     }
     /// Specify the Minimum YUV color sample limit. MediaConvert conforms any pixels in your input below the value that you specify to typical limited range bounds. Enter an integer from 0 to 128. Leave blank to use the default value 64. The value that you enter applies to 10-bit ranges. For 8-bit ranges, MediaConvert automatically scales this value down. When you specify a value for Minumum YUV, you must set Sample range conversion to Limited range clip.
     pub fn set_minimum_yuv(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_yuv = input;
-        self
+        self.minimum_yuv = input; self
     }
     /// Specify the Minimum YUV color sample limit. MediaConvert conforms any pixels in your input below the value that you specify to typical limited range bounds. Enter an integer from 0 to 128. Leave blank to use the default value 64. The value that you enter applies to 10-bit ranges. For 8-bit ranges, MediaConvert automatically scales this value down. When you specify a value for Minumum YUV, you must set Sample range conversion to Limited range clip.
     pub fn get_minimum_yuv(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl ClipLimitsBuilder {
     /// Consumes the builder and constructs a [`ClipLimits`](crate::types::ClipLimits).
     pub fn build(self) -> crate::types::ClipLimits {
         crate::types::ClipLimits {
-            maximum_rgb_tolerance: self.maximum_rgb_tolerance,
-            maximum_yuv: self.maximum_yuv,
-            minimum_rgb_tolerance: self.minimum_rgb_tolerance,
-            minimum_yuv: self.minimum_yuv,
+            maximum_rgb_tolerance: self.maximum_rgb_tolerance
+            ,
+            maximum_yuv: self.maximum_yuv
+            ,
+            minimum_rgb_tolerance: self.minimum_rgb_tolerance
+            ,
+            minimum_yuv: self.minimum_yuv
+            ,
         }
     }
 }
+

@@ -3,16 +3,16 @@
 /// <p>A complex type that contains the requested limit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHostedZoneLimitOutput {
+pub struct GetHostedZoneLimitOutput  {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
     pub limit: ::std::option::Option<crate::types::HostedZoneLimit>,
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
     pub count: i64,
     _request_id: Option<String>,
 }
-impl GetHostedZoneLimitOutput {
+impl  GetHostedZoneLimitOutput  {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
-    pub fn limit(&self) -> ::std::option::Option<&crate::types::HostedZoneLimit> {
+    pub fn limit(&self) -> ::std::option::Option<& crate::types::HostedZoneLimit> {
         self.limit.as_ref()
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
@@ -21,10 +21,10 @@ impl GetHostedZoneLimitOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetHostedZoneLimitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetHostedZoneLimitOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitOutput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput).
     pub fn builder() -> crate::operation::get_hosted_zone_limit::builders::GetHostedZoneLimitOutputBuilder {
@@ -49,8 +49,7 @@ impl GetHostedZoneLimitOutputBuilder {
     }
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<crate::types::HostedZoneLimit>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
     pub fn get_limit(&self) -> &::std::option::Option<crate::types::HostedZoneLimit> {
@@ -64,28 +63,31 @@ impl GetHostedZoneLimitOutputBuilder {
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
         &self.count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetHostedZoneLimitOutput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput).
     pub fn build(self) -> crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput {
         crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput {
-            limit: self.limit,
-            count: self.count.unwrap_or_default(),
+            limit: self.limit
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

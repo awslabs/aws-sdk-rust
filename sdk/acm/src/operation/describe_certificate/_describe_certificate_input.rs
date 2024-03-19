@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCertificateInput {
+pub struct DescribeCertificateInput  {
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCertificateInput {
+impl  DescribeCertificateInput  {
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeCertificateInputBuilder {
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
@@ -52,12 +51,13 @@ impl DescribeCertificateInputBuilder {
         &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
-            certificate_arn: self.certificate_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_certificate::DescribeCertificateInput {
+                certificate_arn: self.certificate_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverGlobalReplicationGroupInput {
+pub struct FailoverGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
@@ -10,17 +10,17 @@ pub struct FailoverGlobalReplicationGroupInput {
     /// <p>The name of the primary replication group</p>
     pub primary_replication_group_id: ::std::option::Option<::std::string::String>,
 }
-impl FailoverGlobalReplicationGroupInput {
+impl  FailoverGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_replication_group_id(&self) -> ::std::option::Option<& str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+    pub fn primary_region(&self) -> ::std::option::Option<& str> {
         self.primary_region.as_deref()
     }
     /// <p>The name of the primary replication group</p>
-    pub fn primary_replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn primary_replication_group_id(&self) -> ::std::option::Option<& str> {
         self.primary_replication_group_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailoverGlobalReplicationGroupInputBuilder {
     }
     /// <p>The name of the Global datastore</p>
     pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_replication_group_id = input;
-        self
+        self.global_replication_group_id = input; self
     }
     /// <p>The name of the Global datastore</p>
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl FailoverGlobalReplicationGroupInputBuilder {
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
     pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_region = input;
-        self
+        self.primary_region = input; self
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
     pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl FailoverGlobalReplicationGroupInputBuilder {
     }
     /// <p>The name of the primary replication group</p>
     pub fn set_primary_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_replication_group_id = input;
-        self
+        self.primary_replication_group_id = input; self
     }
     /// <p>The name of the primary replication group</p>
     pub fn get_primary_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_replication_group_id
     }
     /// Consumes the builder and constructs a [`FailoverGlobalReplicationGroupInput`](crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput {
-            global_replication_group_id: self.global_replication_group_id,
-            primary_region: self.primary_region,
-            primary_replication_group_id: self.primary_replication_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput {
+                global_replication_group_id: self.global_replication_group_id
+                ,
+                primary_region: self.primary_region
+                ,
+                primary_replication_group_id: self.primary_replication_group_id
+                ,
+            }
+        )
     }
 }
+

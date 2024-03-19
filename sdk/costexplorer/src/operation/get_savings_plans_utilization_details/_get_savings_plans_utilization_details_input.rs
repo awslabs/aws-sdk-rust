@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSavingsPlansUtilizationDetailsInput {
+pub struct GetSavingsPlansUtilizationDetailsInput  {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
@@ -21,7 +21,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <p><code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The data type.</p>
-    pub data_type: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
+    pub data_type: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlansDataType>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
@@ -47,9 +47,9 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
 }
-impl GetSavingsPlansUtilizationDetailsInput {
+impl  GetSavingsPlansUtilizationDetailsInput  {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
@@ -66,17 +66,18 @@ impl GetSavingsPlansUtilizationDetailsInput {
     /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_type.is_none()`.
-    pub fn data_type(&self) -> &[crate::types::SavingsPlansDataType] {
-        self.data_type.as_deref().unwrap_or_default()
+    pub fn data_type(&self) -> & [crate::types::SavingsPlansDataType] {
+        self.data_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
@@ -102,7 +103,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
     /// <p><code>AmortizedUpfrontCommitment</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortDefinition> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortDefinition> {
         self.sort_by.as_ref()
     }
 }
@@ -119,7 +120,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
 pub struct GetSavingsPlansUtilizationDetailsInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
-    pub(crate) data_type: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
+    pub(crate) data_type: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlansDataType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortDefinition>,
@@ -133,8 +134,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -173,8 +173,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// </ul>
     /// <p><code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -200,17 +199,16 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// <p>The data type.</p>
     pub fn data_type(mut self, input: crate::types::SavingsPlansDataType) -> Self {
         let mut v = self.data_type.unwrap_or_default();
-        v.push(input);
-        self.data_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data type.</p>
-    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>) -> Self {
-        self.data_type = input;
-        self
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlansDataType>>) -> Self {
+        self.data_type = input; self
     }
     /// <p>The data type.</p>
-    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlansDataType>> {
         &self.data_type
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -220,8 +218,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +231,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     }
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -284,8 +280,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -310,21 +305,23 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
         &self.sort_by
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsInput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput {
-                time_period: self.time_period,
-                filter: self.filter,
-                data_type: self.data_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_by: self.sort_by,
-            },
+                time_period: self.time_period
+                ,
+                filter: self.filter
+                ,
+                data_type: self.data_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sort_by: self.sort_by
+                ,
+            }
         )
     }
 }
+

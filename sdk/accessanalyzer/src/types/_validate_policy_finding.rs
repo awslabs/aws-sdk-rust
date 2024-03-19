@@ -3,7 +3,7 @@
 /// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatePolicyFinding {
+pub struct ValidatePolicyFinding  {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub finding_details: ::std::string::String,
     /// <p>The impact of the finding.</p>
@@ -17,36 +17,32 @@ pub struct ValidatePolicyFinding {
     /// <p>A link to additional documentation about the type of finding.</p>
     pub learn_more_link: ::std::string::String,
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub locations: ::std::vec::Vec<crate::types::Location>,
+    pub locations: ::std::vec::Vec::<crate::types::Location>,
 }
-impl ValidatePolicyFinding {
+impl  ValidatePolicyFinding  {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn finding_details(&self) -> &str {
-        use std::ops::Deref;
-        self.finding_details.deref()
+    pub fn finding_details(&self) -> & str {
+        use std::ops::Deref; self.finding_details.deref()
     }
     /// <p>The impact of the finding.</p>
     /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
     /// <p>Errors report when a part of the policy is not functional.</p>
     /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    pub fn finding_type(&self) -> &crate::types::ValidatePolicyFindingType {
+    pub fn finding_type(&self) -> & crate::types::ValidatePolicyFindingType {
         &self.finding_type
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
-    pub fn issue_code(&self) -> &str {
-        use std::ops::Deref;
-        self.issue_code.deref()
+    pub fn issue_code(&self) -> & str {
+        use std::ops::Deref; self.issue_code.deref()
     }
     /// <p>A link to additional documentation about the type of finding.</p>
-    pub fn learn_more_link(&self) -> &str {
-        use std::ops::Deref;
-        self.learn_more_link.deref()
+    pub fn learn_more_link(&self) -> & str {
+        use std::ops::Deref; self.learn_more_link.deref()
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn locations(&self) -> &[crate::types::Location] {
-        use std::ops::Deref;
-        self.locations.deref()
+    pub fn locations(&self) -> & [crate::types::Location] {
+        use std::ops::Deref; self.locations.deref()
     }
 }
 impl ValidatePolicyFinding {
@@ -64,7 +60,7 @@ pub struct ValidatePolicyFindingBuilder {
     pub(crate) finding_type: ::std::option::Option<crate::types::ValidatePolicyFindingType>,
     pub(crate) issue_code: ::std::option::Option<::std::string::String>,
     pub(crate) learn_more_link: ::std::option::Option<::std::string::String>,
-    pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::Location>>,
+    pub(crate) locations: ::std::option::Option<::std::vec::Vec::<crate::types::Location>>,
 }
 impl ValidatePolicyFindingBuilder {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
@@ -75,8 +71,7 @@ impl ValidatePolicyFindingBuilder {
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub fn set_finding_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_details = input;
-        self
+        self.finding_details = input; self
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub fn get_finding_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +93,7 @@ impl ValidatePolicyFindingBuilder {
     /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
     pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::ValidatePolicyFindingType>) -> Self {
-        self.finding_type = input;
-        self
+        self.finding_type = input; self
     }
     /// <p>The impact of the finding.</p>
     /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
@@ -117,8 +111,7 @@ impl ValidatePolicyFindingBuilder {
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
     pub fn set_issue_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issue_code = input;
-        self
+        self.issue_code = input; self
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
     pub fn get_issue_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +125,7 @@ impl ValidatePolicyFindingBuilder {
     }
     /// <p>A link to additional documentation about the type of finding.</p>
     pub fn set_learn_more_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.learn_more_link = input;
-        self
+        self.learn_more_link = input; self
     }
     /// <p>A link to additional documentation about the type of finding.</p>
     pub fn get_learn_more_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,17 +138,16 @@ impl ValidatePolicyFindingBuilder {
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
     pub fn locations(mut self, input: crate::types::Location) -> Self {
         let mut v = self.locations.unwrap_or_default();
-        v.push(input);
-        self.locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Location>>) -> Self {
-        self.locations = input;
-        self
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Location>>) -> Self {
+        self.locations = input; self
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Location>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Location>> {
         &self.locations
     }
     /// Consumes the builder and constructs a [`ValidatePolicyFinding`](crate::types::ValidatePolicyFinding).
@@ -167,37 +158,35 @@ impl ValidatePolicyFindingBuilder {
     /// - [`learn_more_link`](crate::types::builders::ValidatePolicyFindingBuilder::learn_more_link)
     /// - [`locations`](crate::types::builders::ValidatePolicyFindingBuilder::locations)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidatePolicyFinding, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidatePolicyFinding {
-            finding_details: self.finding_details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_details",
-                    "finding_details was not specified but it is required when building ValidatePolicyFinding",
-                )
-            })?,
-            finding_type: self.finding_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_type",
-                    "finding_type was not specified but it is required when building ValidatePolicyFinding",
-                )
-            })?,
-            issue_code: self.issue_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "issue_code",
-                    "issue_code was not specified but it is required when building ValidatePolicyFinding",
-                )
-            })?,
-            learn_more_link: self.learn_more_link.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "learn_more_link",
-                    "learn_more_link was not specified but it is required when building ValidatePolicyFinding",
-                )
-            })?,
-            locations: self.locations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "locations",
-                    "locations was not specified but it is required when building ValidatePolicyFinding",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidatePolicyFinding {
+                finding_details: self.finding_details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_details", "finding_details was not specified but it is required when building ValidatePolicyFinding")
+                    )?
+                ,
+                finding_type: self.finding_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_type", "finding_type was not specified but it is required when building ValidatePolicyFinding")
+                    )?
+                ,
+                issue_code: self.issue_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("issue_code", "issue_code was not specified but it is required when building ValidatePolicyFinding")
+                    )?
+                ,
+                learn_more_link: self.learn_more_link
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("learn_more_link", "learn_more_link was not specified but it is required when building ValidatePolicyFinding")
+                    )?
+                ,
+                locations: self.locations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("locations", "locations was not specified but it is required when building ValidatePolicyFinding")
+                    )?
+                ,
+            }
+        )
     }
 }
+

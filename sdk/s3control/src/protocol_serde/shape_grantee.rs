@@ -38,20 +38,22 @@ pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
     Ok(builder.build())
 }
 
-pub fn ser_grantee(
-    input: &crate::types::Grantee,
-    writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+pub fn ser_grantee(input: &crate::types::Grantee, writer: ::aws_smithy_xml::encode::ElWriter) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.grantee_type {
         let mut inner_writer = scope.start_el("GranteeType").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(
+            var_3.as_str()
+        );
     }
     if let Some(var_4) = &input.grantee_identifier {
         let mut inner_writer = scope.start_el("GranteeIdentifier").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(
+            var_4.as_str()
+        );
     }
     scope.finish();
     Ok(())
 }
+

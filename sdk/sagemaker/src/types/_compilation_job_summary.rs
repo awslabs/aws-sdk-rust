@@ -3,7 +3,7 @@
 /// <p>A summary of a model compilation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompilationJobSummary {
+pub struct CompilationJobSummary  {
     /// <p>The name of the model compilation job that you want a summary for.</p>
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
@@ -27,49 +27,49 @@ pub struct CompilationJobSummary {
     /// <p>The status of the model compilation job.</p>
     pub compilation_job_status: ::std::option::Option<crate::types::CompilationJobStatus>,
 }
-impl CompilationJobSummary {
+impl  CompilationJobSummary  {
     /// <p>The name of the model compilation job that you want a summary for.</p>
-    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<& str> {
         self.compilation_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
-    pub fn compilation_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_arn(&self) -> ::std::option::Option<& str> {
         self.compilation_job_arn.as_deref()
     }
     /// <p>The time when the model compilation job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the model compilation job started.</p>
-    pub fn compilation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn compilation_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.compilation_start_time.as_ref()
     }
     /// <p>The time when the model compilation job completed.</p>
-    pub fn compilation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn compilation_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.compilation_end_time.as_ref()
     }
     /// <p>The type of device that the model will run on after the compilation job has completed.</p>
-    pub fn compilation_target_device(&self) -> ::std::option::Option<&crate::types::TargetDevice> {
+    pub fn compilation_target_device(&self) -> ::std::option::Option<& crate::types::TargetDevice> {
         self.compilation_target_device.as_ref()
     }
     /// <p>The type of OS that the model will run on after the compilation job has completed.</p>
-    pub fn compilation_target_platform_os(&self) -> ::std::option::Option<&crate::types::TargetPlatformOs> {
+    pub fn compilation_target_platform_os(&self) -> ::std::option::Option<& crate::types::TargetPlatformOs> {
         self.compilation_target_platform_os.as_ref()
     }
     /// <p>The type of architecture that the model will run on after the compilation job has completed.</p>
-    pub fn compilation_target_platform_arch(&self) -> ::std::option::Option<&crate::types::TargetPlatformArch> {
+    pub fn compilation_target_platform_arch(&self) -> ::std::option::Option<& crate::types::TargetPlatformArch> {
         self.compilation_target_platform_arch.as_ref()
     }
     /// <p>The type of accelerator that the model will run on after the compilation job has completed.</p>
-    pub fn compilation_target_platform_accelerator(&self) -> ::std::option::Option<&crate::types::TargetPlatformAccelerator> {
+    pub fn compilation_target_platform_accelerator(&self) -> ::std::option::Option<& crate::types::TargetPlatformAccelerator> {
         self.compilation_target_platform_accelerator.as_ref()
     }
     /// <p>The time when the model compilation job was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The status of the model compilation job.</p>
-    pub fn compilation_job_status(&self) -> ::std::option::Option<&crate::types::CompilationJobStatus> {
+    pub fn compilation_job_status(&self) -> ::std::option::Option<& crate::types::CompilationJobStatus> {
         self.compilation_job_status.as_ref()
     }
 }
@@ -105,8 +105,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The name of the model compilation job that you want a summary for.</p>
     pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_name = input;
-        self
+        self.compilation_job_name = input; self
     }
     /// <p>The name of the model compilation job that you want a summary for.</p>
     pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
     pub fn set_compilation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_arn = input;
-        self
+        self.compilation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
     pub fn get_compilation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The time when the model compilation job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the model compilation job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,8 +146,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The time when the model compilation job started.</p>
     pub fn set_compilation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.compilation_start_time = input;
-        self
+        self.compilation_start_time = input; self
     }
     /// <p>The time when the model compilation job started.</p>
     pub fn get_compilation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -163,8 +159,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The time when the model compilation job completed.</p>
     pub fn set_compilation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.compilation_end_time = input;
-        self
+        self.compilation_end_time = input; self
     }
     /// <p>The time when the model compilation job completed.</p>
     pub fn get_compilation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -177,8 +172,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The type of device that the model will run on after the compilation job has completed.</p>
     pub fn set_compilation_target_device(mut self, input: ::std::option::Option<crate::types::TargetDevice>) -> Self {
-        self.compilation_target_device = input;
-        self
+        self.compilation_target_device = input; self
     }
     /// <p>The type of device that the model will run on after the compilation job has completed.</p>
     pub fn get_compilation_target_device(&self) -> &::std::option::Option<crate::types::TargetDevice> {
@@ -191,8 +185,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The type of OS that the model will run on after the compilation job has completed.</p>
     pub fn set_compilation_target_platform_os(mut self, input: ::std::option::Option<crate::types::TargetPlatformOs>) -> Self {
-        self.compilation_target_platform_os = input;
-        self
+        self.compilation_target_platform_os = input; self
     }
     /// <p>The type of OS that the model will run on after the compilation job has completed.</p>
     pub fn get_compilation_target_platform_os(&self) -> &::std::option::Option<crate::types::TargetPlatformOs> {
@@ -205,8 +198,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The type of architecture that the model will run on after the compilation job has completed.</p>
     pub fn set_compilation_target_platform_arch(mut self, input: ::std::option::Option<crate::types::TargetPlatformArch>) -> Self {
-        self.compilation_target_platform_arch = input;
-        self
+        self.compilation_target_platform_arch = input; self
     }
     /// <p>The type of architecture that the model will run on after the compilation job has completed.</p>
     pub fn get_compilation_target_platform_arch(&self) -> &::std::option::Option<crate::types::TargetPlatformArch> {
@@ -219,8 +211,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The type of accelerator that the model will run on after the compilation job has completed.</p>
     pub fn set_compilation_target_platform_accelerator(mut self, input: ::std::option::Option<crate::types::TargetPlatformAccelerator>) -> Self {
-        self.compilation_target_platform_accelerator = input;
-        self
+        self.compilation_target_platform_accelerator = input; self
     }
     /// <p>The type of accelerator that the model will run on after the compilation job has completed.</p>
     pub fn get_compilation_target_platform_accelerator(&self) -> &::std::option::Option<crate::types::TargetPlatformAccelerator> {
@@ -233,8 +224,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The time when the model compilation job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time when the model compilation job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -248,8 +238,7 @@ impl CompilationJobSummaryBuilder {
     }
     /// <p>The status of the model compilation job.</p>
     pub fn set_compilation_job_status(mut self, input: ::std::option::Option<crate::types::CompilationJobStatus>) -> Self {
-        self.compilation_job_status = input;
-        self
+        self.compilation_job_status = input; self
     }
     /// <p>The status of the model compilation job.</p>
     pub fn get_compilation_job_status(&self) -> &::std::option::Option<crate::types::CompilationJobStatus> {
@@ -258,17 +247,29 @@ impl CompilationJobSummaryBuilder {
     /// Consumes the builder and constructs a [`CompilationJobSummary`](crate::types::CompilationJobSummary).
     pub fn build(self) -> crate::types::CompilationJobSummary {
         crate::types::CompilationJobSummary {
-            compilation_job_name: self.compilation_job_name,
-            compilation_job_arn: self.compilation_job_arn,
-            creation_time: self.creation_time,
-            compilation_start_time: self.compilation_start_time,
-            compilation_end_time: self.compilation_end_time,
-            compilation_target_device: self.compilation_target_device,
-            compilation_target_platform_os: self.compilation_target_platform_os,
-            compilation_target_platform_arch: self.compilation_target_platform_arch,
-            compilation_target_platform_accelerator: self.compilation_target_platform_accelerator,
-            last_modified_time: self.last_modified_time,
-            compilation_job_status: self.compilation_job_status,
+            compilation_job_name: self.compilation_job_name
+            ,
+            compilation_job_arn: self.compilation_job_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            compilation_start_time: self.compilation_start_time
+            ,
+            compilation_end_time: self.compilation_end_time
+            ,
+            compilation_target_device: self.compilation_target_device
+            ,
+            compilation_target_platform_os: self.compilation_target_platform_os
+            ,
+            compilation_target_platform_arch: self.compilation_target_platform_arch
+            ,
+            compilation_target_platform_accelerator: self.compilation_target_platform_accelerator
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            compilation_job_status: self.compilation_job_status
+            ,
         }
     }
 }
+

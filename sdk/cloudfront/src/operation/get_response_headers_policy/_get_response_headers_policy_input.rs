@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResponseHeadersPolicyInput {
+pub struct GetResponseHeadersPolicyInput  {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetResponseHeadersPolicyInput {
+impl  GetResponseHeadersPolicyInput  {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl GetResponseHeadersPolicyInputBuilder {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
@@ -47,12 +46,13 @@ impl GetResponseHeadersPolicyInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetResponseHeadersPolicyInput`](crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

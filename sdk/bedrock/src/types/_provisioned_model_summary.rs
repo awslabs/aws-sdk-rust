@@ -3,7 +3,7 @@
 /// <p>Set of fields associated with a provisioned throughput.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedModelSummary {
+pub struct ProvisionedModelSummary  {
     /// <p>The name of the provisioned throughput.</p>
     pub provisioned_model_name: ::std::string::String,
     /// <p>The ARN of the provisioned throughput.</p>
@@ -29,31 +29,26 @@ pub struct ProvisionedModelSummary {
     /// <p>The time that this provisioned throughput was last modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
 }
-impl ProvisionedModelSummary {
+impl  ProvisionedModelSummary  {
     /// <p>The name of the provisioned throughput.</p>
-    pub fn provisioned_model_name(&self) -> &str {
-        use std::ops::Deref;
-        self.provisioned_model_name.deref()
+    pub fn provisioned_model_name(&self) -> & str {
+        use std::ops::Deref; self.provisioned_model_name.deref()
     }
     /// <p>The ARN of the provisioned throughput.</p>
-    pub fn provisioned_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.provisioned_model_arn.deref()
+    pub fn provisioned_model_arn(&self) -> & str {
+        use std::ops::Deref; self.provisioned_model_arn.deref()
     }
     /// <p>The ARN of the model associated with this provisioned throughput.</p>
-    pub fn model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.model_arn.deref()
+    pub fn model_arn(&self) -> & str {
+        use std::ops::Deref; self.model_arn.deref()
     }
     /// <p>Desired model ARN.</p>
-    pub fn desired_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.desired_model_arn.deref()
+    pub fn desired_model_arn(&self) -> & str {
+        use std::ops::Deref; self.desired_model_arn.deref()
     }
     /// <p>Foundation model ARN.</p>
-    pub fn foundation_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.foundation_model_arn.deref()
+    pub fn foundation_model_arn(&self) -> & str {
+        use std::ops::Deref; self.foundation_model_arn.deref()
     }
     /// <p>The number of model units allocated.</p>
     pub fn model_units(&self) -> i32 {
@@ -64,23 +59,23 @@ impl ProvisionedModelSummary {
         self.desired_model_units
     }
     /// <p>Status of the provisioned throughput.</p>
-    pub fn status(&self) -> &crate::types::ProvisionedModelStatus {
+    pub fn status(&self) -> & crate::types::ProvisionedModelStatus {
         &self.status
     }
     /// <p>Commitment duration for the provisioned throughput.</p>
-    pub fn commitment_duration(&self) -> ::std::option::Option<&crate::types::CommitmentDuration> {
+    pub fn commitment_duration(&self) -> ::std::option::Option<& crate::types::CommitmentDuration> {
         self.commitment_duration.as_ref()
     }
     /// <p>Commitment expiration time for the provisioned throughput.</p>
-    pub fn commitment_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn commitment_expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.commitment_expiration_time.as_ref()
     }
     /// <p>The time that this provisioned throughput was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The time that this provisioned throughput was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
 }
@@ -117,8 +112,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>The name of the provisioned throughput.</p>
     pub fn set_provisioned_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_model_name = input;
-        self
+        self.provisioned_model_name = input; self
     }
     /// <p>The name of the provisioned throughput.</p>
     pub fn get_provisioned_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +126,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>The ARN of the provisioned throughput.</p>
     pub fn set_provisioned_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_model_arn = input;
-        self
+        self.provisioned_model_arn = input; self
     }
     /// <p>The ARN of the provisioned throughput.</p>
     pub fn get_provisioned_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +140,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>The ARN of the model associated with this provisioned throughput.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The ARN of the model associated with this provisioned throughput.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +154,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>Desired model ARN.</p>
     pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_model_arn = input;
-        self
+        self.desired_model_arn = input; self
     }
     /// <p>Desired model ARN.</p>
     pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +168,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>Foundation model ARN.</p>
     pub fn set_foundation_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.foundation_model_arn = input;
-        self
+        self.foundation_model_arn = input; self
     }
     /// <p>Foundation model ARN.</p>
     pub fn get_foundation_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +182,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>The number of model units allocated.</p>
     pub fn set_model_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_units = input;
-        self
+        self.model_units = input; self
     }
     /// <p>The number of model units allocated.</p>
     pub fn get_model_units(&self) -> &::std::option::Option<i32> {
@@ -207,8 +196,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>Desired model units.</p>
     pub fn set_desired_model_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_model_units = input;
-        self
+        self.desired_model_units = input; self
     }
     /// <p>Desired model units.</p>
     pub fn get_desired_model_units(&self) -> &::std::option::Option<i32> {
@@ -222,8 +210,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>Status of the provisioned throughput.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the provisioned throughput.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProvisionedModelStatus> {
@@ -236,8 +223,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>Commitment duration for the provisioned throughput.</p>
     pub fn set_commitment_duration(mut self, input: ::std::option::Option<crate::types::CommitmentDuration>) -> Self {
-        self.commitment_duration = input;
-        self
+        self.commitment_duration = input; self
     }
     /// <p>Commitment duration for the provisioned throughput.</p>
     pub fn get_commitment_duration(&self) -> &::std::option::Option<crate::types::CommitmentDuration> {
@@ -250,8 +236,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>Commitment expiration time for the provisioned throughput.</p>
     pub fn set_commitment_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.commitment_expiration_time = input;
-        self
+        self.commitment_expiration_time = input; self
     }
     /// <p>Commitment expiration time for the provisioned throughput.</p>
     pub fn get_commitment_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -265,8 +250,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>The time that this provisioned throughput was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that this provisioned throughput was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -280,8 +264,7 @@ impl ProvisionedModelSummaryBuilder {
     }
     /// <p>The time that this provisioned throughput was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time that this provisioned throughput was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -300,69 +283,64 @@ impl ProvisionedModelSummaryBuilder {
     /// - [`creation_time`](crate::types::builders::ProvisionedModelSummaryBuilder::creation_time)
     /// - [`last_modified_time`](crate::types::builders::ProvisionedModelSummaryBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ProvisionedModelSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProvisionedModelSummary {
-            provisioned_model_name: self.provisioned_model_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provisioned_model_name",
-                    "provisioned_model_name was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            provisioned_model_arn: self.provisioned_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provisioned_model_arn",
-                    "provisioned_model_arn was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_arn",
-                    "model_arn was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            desired_model_arn: self.desired_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "desired_model_arn",
-                    "desired_model_arn was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            foundation_model_arn: self.foundation_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "foundation_model_arn",
-                    "foundation_model_arn was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            model_units: self.model_units.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_units",
-                    "model_units was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            desired_model_units: self.desired_model_units.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "desired_model_units",
-                    "desired_model_units was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            commitment_duration: self.commitment_duration,
-            commitment_expiration_time: self.commitment_expiration_time,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building ProvisionedModelSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProvisionedModelSummary {
+                provisioned_model_name: self.provisioned_model_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provisioned_model_name", "provisioned_model_name was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                provisioned_model_arn: self.provisioned_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provisioned_model_arn", "provisioned_model_arn was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                model_arn: self.model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_arn", "model_arn was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                desired_model_arn: self.desired_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("desired_model_arn", "desired_model_arn was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                foundation_model_arn: self.foundation_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("foundation_model_arn", "foundation_model_arn was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                model_units: self.model_units
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_units", "model_units was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                desired_model_units: self.desired_model_units
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("desired_model_units", "desired_model_units was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                commitment_duration: self.commitment_duration
+                ,
+                commitment_expiration_time: self.commitment_expiration_time
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building ProvisionedModelSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

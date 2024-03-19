@@ -3,61 +3,65 @@
 /// <p>A structure of search criteria to be used to return contacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchCriteria {
+pub struct SearchCriteria  {
     /// <p>The identifiers of agents who handled the contacts.</p>
-    pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The agent hierarchy groups of the agent at the time of handling the contact.</p>
     pub agent_hierarchy_groups: ::std::option::Option<crate::types::AgentHierarchyGroups>,
     /// <p>The list of channels associated with contacts.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub channels: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>,
     /// <p>Search criteria based on analysis outputs from Amazon Connect Contact Lens.</p>
     pub contact_analysis: ::std::option::Option<crate::types::ContactAnalysis>,
     /// <p>The list of initiation methods associated with contacts.</p>
-    pub initiation_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactInitiationMethod>>,
+    pub initiation_methods: ::std::option::Option<::std::vec::Vec::<crate::types::ContactInitiationMethod>>,
     /// <p>The list of queue IDs associated with contacts.</p>
-    pub queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub queue_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
 }
-impl SearchCriteria {
+impl  SearchCriteria  {
     /// <p>The identifiers of agents who handled the contacts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
-    pub fn agent_ids(&self) -> &[::std::string::String] {
-        self.agent_ids.as_deref().unwrap_or_default()
+    pub fn agent_ids(&self) -> & [::std::string::String] {
+        self.agent_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The agent hierarchy groups of the agent at the time of handling the contact.</p>
-    pub fn agent_hierarchy_groups(&self) -> ::std::option::Option<&crate::types::AgentHierarchyGroups> {
+    pub fn agent_hierarchy_groups(&self) -> ::std::option::Option<& crate::types::AgentHierarchyGroups> {
         self.agent_hierarchy_groups.as_ref()
     }
     /// <p>The list of channels associated with contacts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
-    pub fn channels(&self) -> &[crate::types::Channel] {
-        self.channels.as_deref().unwrap_or_default()
+    pub fn channels(&self) -> & [crate::types::Channel] {
+        self.channels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Search criteria based on analysis outputs from Amazon Connect Contact Lens.</p>
-    pub fn contact_analysis(&self) -> ::std::option::Option<&crate::types::ContactAnalysis> {
+    pub fn contact_analysis(&self) -> ::std::option::Option<& crate::types::ContactAnalysis> {
         self.contact_analysis.as_ref()
     }
     /// <p>The list of initiation methods associated with contacts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.initiation_methods.is_none()`.
-    pub fn initiation_methods(&self) -> &[crate::types::ContactInitiationMethod] {
-        self.initiation_methods.as_deref().unwrap_or_default()
+    pub fn initiation_methods(&self) -> & [crate::types::ContactInitiationMethod] {
+        self.initiation_methods.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of queue IDs associated with contacts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_ids.is_none()`.
-    pub fn queue_ids(&self) -> &[::std::string::String] {
-        self.queue_ids.as_deref().unwrap_or_default()
+    pub fn queue_ids(&self) -> & [::std::string::String] {
+        self.queue_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
-    pub fn searchable_contact_attributes(&self) -> ::std::option::Option<&crate::types::SearchableContactAttributes> {
+    pub fn searchable_contact_attributes(&self) -> ::std::option::Option<& crate::types::SearchableContactAttributes> {
         self.searchable_contact_attributes.as_ref()
     }
 }
@@ -72,12 +76,12 @@ impl SearchCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchCriteriaBuilder {
-    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) agent_hierarchy_groups: ::std::option::Option<crate::types::AgentHierarchyGroups>,
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>,
     pub(crate) contact_analysis: ::std::option::Option<crate::types::ContactAnalysis>,
-    pub(crate) initiation_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactInitiationMethod>>,
-    pub(crate) queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) initiation_methods: ::std::option::Option<::std::vec::Vec::<crate::types::ContactInitiationMethod>>,
+    pub(crate) queue_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
 }
 impl SearchCriteriaBuilder {
@@ -88,17 +92,16 @@ impl SearchCriteriaBuilder {
     /// <p>The identifiers of agents who handled the contacts.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
-        v.push(input.into());
-        self.agent_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of agents who handled the contacts.</p>
-    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_ids = input;
-        self
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_ids = input; self
     }
     /// <p>The identifiers of agents who handled the contacts.</p>
-    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_ids
     }
     /// <p>The agent hierarchy groups of the agent at the time of handling the contact.</p>
@@ -108,8 +111,7 @@ impl SearchCriteriaBuilder {
     }
     /// <p>The agent hierarchy groups of the agent at the time of handling the contact.</p>
     pub fn set_agent_hierarchy_groups(mut self, input: ::std::option::Option<crate::types::AgentHierarchyGroups>) -> Self {
-        self.agent_hierarchy_groups = input;
-        self
+        self.agent_hierarchy_groups = input; self
     }
     /// <p>The agent hierarchy groups of the agent at the time of handling the contact.</p>
     pub fn get_agent_hierarchy_groups(&self) -> &::std::option::Option<crate::types::AgentHierarchyGroups> {
@@ -122,17 +124,16 @@ impl SearchCriteriaBuilder {
     /// <p>The list of channels associated with contacts.</p>
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of channels associated with contacts.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>) -> Self {
+        self.channels = input; self
     }
     /// <p>The list of channels associated with contacts.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Channel>> {
         &self.channels
     }
     /// <p>Search criteria based on analysis outputs from Amazon Connect Contact Lens.</p>
@@ -142,8 +143,7 @@ impl SearchCriteriaBuilder {
     }
     /// <p>Search criteria based on analysis outputs from Amazon Connect Contact Lens.</p>
     pub fn set_contact_analysis(mut self, input: ::std::option::Option<crate::types::ContactAnalysis>) -> Self {
-        self.contact_analysis = input;
-        self
+        self.contact_analysis = input; self
     }
     /// <p>Search criteria based on analysis outputs from Amazon Connect Contact Lens.</p>
     pub fn get_contact_analysis(&self) -> &::std::option::Option<crate::types::ContactAnalysis> {
@@ -156,17 +156,16 @@ impl SearchCriteriaBuilder {
     /// <p>The list of initiation methods associated with contacts.</p>
     pub fn initiation_methods(mut self, input: crate::types::ContactInitiationMethod) -> Self {
         let mut v = self.initiation_methods.unwrap_or_default();
-        v.push(input);
-        self.initiation_methods = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.initiation_methods = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of initiation methods associated with contacts.</p>
-    pub fn set_initiation_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactInitiationMethod>>) -> Self {
-        self.initiation_methods = input;
-        self
+    pub fn set_initiation_methods(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactInitiationMethod>>) -> Self {
+        self.initiation_methods = input; self
     }
     /// <p>The list of initiation methods associated with contacts.</p>
-    pub fn get_initiation_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactInitiationMethod>> {
+    pub fn get_initiation_methods(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactInitiationMethod>> {
         &self.initiation_methods
     }
     /// Appends an item to `queue_ids`.
@@ -176,17 +175,16 @@ impl SearchCriteriaBuilder {
     /// <p>The list of queue IDs associated with contacts.</p>
     pub fn queue_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queue_ids.unwrap_or_default();
-        v.push(input.into());
-        self.queue_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.queue_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of queue IDs associated with contacts.</p>
-    pub fn set_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.queue_ids = input;
-        self
+    pub fn set_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.queue_ids = input; self
     }
     /// <p>The list of queue IDs associated with contacts.</p>
-    pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.queue_ids
     }
     /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
@@ -200,8 +198,7 @@ impl SearchCriteriaBuilder {
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub fn set_searchable_contact_attributes(mut self, input: ::std::option::Option<crate::types::SearchableContactAttributes>) -> Self {
-        self.searchable_contact_attributes = input;
-        self
+        self.searchable_contact_attributes = input; self
     }
     /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
@@ -212,13 +209,21 @@ impl SearchCriteriaBuilder {
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     pub fn build(self) -> crate::types::SearchCriteria {
         crate::types::SearchCriteria {
-            agent_ids: self.agent_ids,
-            agent_hierarchy_groups: self.agent_hierarchy_groups,
-            channels: self.channels,
-            contact_analysis: self.contact_analysis,
-            initiation_methods: self.initiation_methods,
-            queue_ids: self.queue_ids,
-            searchable_contact_attributes: self.searchable_contact_attributes,
+            agent_ids: self.agent_ids
+            ,
+            agent_hierarchy_groups: self.agent_hierarchy_groups
+            ,
+            channels: self.channels
+            ,
+            contact_analysis: self.contact_analysis
+            ,
+            initiation_methods: self.initiation_methods
+            ,
+            queue_ids: self.queue_ids
+            ,
+            searchable_contact_attributes: self.searchable_contact_attributes
+            ,
         }
     }
 }
+

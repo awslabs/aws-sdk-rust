@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingsMetricsInput {
+pub struct ListFindingsMetricsInput  {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
@@ -12,9 +12,9 @@ pub struct ListFindingsMetricsInput {
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListFindingsMetricsInput {
+impl  ListFindingsMetricsInput  {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
@@ -22,11 +22,11 @@ impl ListFindingsMetricsInput {
         self.max_results
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListFindingsMetricsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListFindingsMetricsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListFindingsMetricsInputBuilder {
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -98,23 +95,26 @@ impl ListFindingsMetricsInputBuilder {
     }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }
     /// Consumes the builder and constructs a [`ListFindingsMetricsInput`](crate::operation::list_findings_metrics::ListFindingsMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_findings_metrics::ListFindingsMetricsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_findings_metrics::ListFindingsMetricsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            start_date: self.start_date,
-            end_date: self.end_date,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings_metrics::ListFindingsMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_findings_metrics::ListFindingsMetricsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+            }
+        )
     }
 }
+

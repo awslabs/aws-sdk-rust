@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datareplicationinitiationstepname = unimplemented!();
 /// match datareplicationinitiationstepname {
@@ -39,16 +39,14 @@
 /// Specifically, when `datareplicationinitiationstepname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataReplicationInitiationStepName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
     AttachStagingDisks,
@@ -74,100 +72,89 @@ pub enum DataReplicationInitiationStepName {
     Wait,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DataReplicationInitiationStepName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ATTACH_STAGING_DISKS" => DataReplicationInitiationStepName::AttachStagingDisks,
-            "AUTHENTICATE_WITH_SERVICE" => DataReplicationInitiationStepName::AuthenticateWithService,
-            "BOOT_REPLICATION_SERVER" => DataReplicationInitiationStepName::BootReplicationServer,
-            "CONNECT_AGENT_TO_REPLICATION_SERVER" => DataReplicationInitiationStepName::ConnectAgentToReplicationServer,
-            "CREATE_SECURITY_GROUP" => DataReplicationInitiationStepName::CreateSecurityGroup,
-            "CREATE_STAGING_DISKS" => DataReplicationInitiationStepName::CreateStagingDisks,
-            "DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationInitiationStepName::DownloadReplicationSoftware,
-            "LAUNCH_REPLICATION_SERVER" => DataReplicationInitiationStepName::LaunchReplicationServer,
-            "PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationInitiationStepName::PairReplicationServerWithAgent,
-            "START_DATA_TRANSFER" => DataReplicationInitiationStepName::StartDataTransfer,
-            "WAIT" => DataReplicationInitiationStepName::Wait,
-            other => DataReplicationInitiationStepName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ATTACH_STAGING_DISKS" => DataReplicationInitiationStepName::AttachStagingDisks,
+"AUTHENTICATE_WITH_SERVICE" => DataReplicationInitiationStepName::AuthenticateWithService,
+"BOOT_REPLICATION_SERVER" => DataReplicationInitiationStepName::BootReplicationServer,
+"CONNECT_AGENT_TO_REPLICATION_SERVER" => DataReplicationInitiationStepName::ConnectAgentToReplicationServer,
+"CREATE_SECURITY_GROUP" => DataReplicationInitiationStepName::CreateSecurityGroup,
+"CREATE_STAGING_DISKS" => DataReplicationInitiationStepName::CreateStagingDisks,
+"DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationInitiationStepName::DownloadReplicationSoftware,
+"LAUNCH_REPLICATION_SERVER" => DataReplicationInitiationStepName::LaunchReplicationServer,
+"PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationInitiationStepName::PairReplicationServerWithAgent,
+"START_DATA_TRANSFER" => DataReplicationInitiationStepName::StartDataTransfer,
+"WAIT" => DataReplicationInitiationStepName::Wait,
+other => DataReplicationInitiationStepName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DataReplicationInitiationStepName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DataReplicationInitiationStepName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DataReplicationInitiationStepName::from(s))
+                    }
+                }
 impl DataReplicationInitiationStepName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
-            DataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
-            DataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
-            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
-            DataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
-            DataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
-            DataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
-            DataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
-            DataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
-            DataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
-            DataReplicationInitiationStepName::Wait => "WAIT",
-            DataReplicationInitiationStepName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ATTACH_STAGING_DISKS",
-            "AUTHENTICATE_WITH_SERVICE",
-            "BOOT_REPLICATION_SERVER",
-            "CONNECT_AGENT_TO_REPLICATION_SERVER",
-            "CREATE_SECURITY_GROUP",
-            "CREATE_STAGING_DISKS",
-            "DOWNLOAD_REPLICATION_SOFTWARE",
-            "LAUNCH_REPLICATION_SERVER",
-            "PAIR_REPLICATION_SERVER_WITH_AGENT",
-            "START_DATA_TRANSFER",
-            "WAIT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
+    DataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
+    DataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
+    DataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
+    DataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
+    DataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
+    DataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
+    DataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
+    DataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
+    DataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
+    DataReplicationInitiationStepName::Wait => "WAIT",
+    DataReplicationInitiationStepName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ATTACH_STAGING_DISKS", "AUTHENTICATE_WITH_SERVICE", "BOOT_REPLICATION_SERVER", "CONNECT_AGENT_TO_REPLICATION_SERVER", "CREATE_SECURITY_GROUP", "CREATE_STAGING_DISKS", "DOWNLOAD_REPLICATION_SOFTWARE", "LAUNCH_REPLICATION_SERVER", "PAIR_REPLICATION_SERVER_WITH_AGENT", "START_DATA_TRANSFER", "WAIT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DataReplicationInitiationStepName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DataReplicationInitiationStepName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DataReplicationInitiationStepName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DataReplicationInitiationStepName::AttachStagingDisks => write!(f, "ATTACH_STAGING_DISKS"),
-            DataReplicationInitiationStepName::AuthenticateWithService => write!(f, "AUTHENTICATE_WITH_SERVICE"),
-            DataReplicationInitiationStepName::BootReplicationServer => write!(f, "BOOT_REPLICATION_SERVER"),
-            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => write!(f, "CONNECT_AGENT_TO_REPLICATION_SERVER"),
-            DataReplicationInitiationStepName::CreateSecurityGroup => write!(f, "CREATE_SECURITY_GROUP"),
-            DataReplicationInitiationStepName::CreateStagingDisks => write!(f, "CREATE_STAGING_DISKS"),
-            DataReplicationInitiationStepName::DownloadReplicationSoftware => write!(f, "DOWNLOAD_REPLICATION_SOFTWARE"),
-            DataReplicationInitiationStepName::LaunchReplicationServer => write!(f, "LAUNCH_REPLICATION_SERVER"),
-            DataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
-            DataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
-            DataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
-            DataReplicationInitiationStepName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DataReplicationInitiationStepName::AttachStagingDisks => write!(f, "ATTACH_STAGING_DISKS"),
+DataReplicationInitiationStepName::AuthenticateWithService => write!(f, "AUTHENTICATE_WITH_SERVICE"),
+DataReplicationInitiationStepName::BootReplicationServer => write!(f, "BOOT_REPLICATION_SERVER"),
+DataReplicationInitiationStepName::ConnectAgentToReplicationServer => write!(f, "CONNECT_AGENT_TO_REPLICATION_SERVER"),
+DataReplicationInitiationStepName::CreateSecurityGroup => write!(f, "CREATE_SECURITY_GROUP"),
+DataReplicationInitiationStepName::CreateStagingDisks => write!(f, "CREATE_STAGING_DISKS"),
+DataReplicationInitiationStepName::DownloadReplicationSoftware => write!(f, "DOWNLOAD_REPLICATION_SOFTWARE"),
+DataReplicationInitiationStepName::LaunchReplicationServer => write!(f, "LAUNCH_REPLICATION_SERVER"),
+DataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
+DataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
+DataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
+DataReplicationInitiationStepName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

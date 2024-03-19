@@ -3,13 +3,13 @@
 /// The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionDefaultConfig {
+pub struct FunctionDefaultConfig  {
     /// Configuration information that specifies how a Lambda function runs.
     pub execution: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
 }
-impl FunctionDefaultConfig {
+impl  FunctionDefaultConfig  {
     /// Configuration information that specifies how a Lambda function runs.
-    pub fn execution(&self) -> ::std::option::Option<&crate::types::FunctionDefaultExecutionConfig> {
+    pub fn execution(&self) -> ::std::option::Option<& crate::types::FunctionDefaultExecutionConfig> {
         self.execution.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl FunctionDefaultConfigBuilder {
     }
     /// Configuration information that specifies how a Lambda function runs.
     pub fn set_execution(mut self, input: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>) -> Self {
-        self.execution = input;
-        self
+        self.execution = input; self
     }
     /// Configuration information that specifies how a Lambda function runs.
     pub fn get_execution(&self) -> &::std::option::Option<crate::types::FunctionDefaultExecutionConfig> {
@@ -43,6 +42,10 @@ impl FunctionDefaultConfigBuilder {
     }
     /// Consumes the builder and constructs a [`FunctionDefaultConfig`](crate::types::FunctionDefaultConfig).
     pub fn build(self) -> crate::types::FunctionDefaultConfig {
-        crate::types::FunctionDefaultConfig { execution: self.execution }
+        crate::types::FunctionDefaultConfig {
+            execution: self.execution
+            ,
+        }
     }
 }
+

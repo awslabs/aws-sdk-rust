@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIndexInput {
+pub struct DescribeIndexInput  {
     /// <p>The index name.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeIndexInput {
+impl  DescribeIndexInput  {
     /// <p>The index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeIndexInputBuilder {
     }
     /// <p>The index name.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The index name.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
     /// Consumes the builder and constructs a [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_index::DescribeIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_index::DescribeIndexInput { index_name: self.index_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_index::DescribeIndexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_index::DescribeIndexInput {
+                index_name: self.index_name
+                ,
+            }
+        )
     }
 }
+

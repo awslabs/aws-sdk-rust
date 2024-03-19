@@ -16,3 +16,4 @@ pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
 pub use crate::types::error::_bad_gateway_exception::BadGatewayExceptionBuilder;
 
 pub use crate::types::error::_unprocessable_entity_exception::UnprocessableEntityExceptionBuilder;
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventdatastorestatus = unimplemented!();
 /// match eventdatastorestatus {
@@ -34,16 +34,14 @@
 /// Specifically, when `eventdatastorestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventDataStoreStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EventDataStoreStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -59,80 +57,74 @@ pub enum EventDataStoreStatus {
     StoppingIngestion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EventDataStoreStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => EventDataStoreStatus::Created,
-            "ENABLED" => EventDataStoreStatus::Enabled,
-            "PENDING_DELETION" => EventDataStoreStatus::PendingDeletion,
-            "STARTING_INGESTION" => EventDataStoreStatus::StartingIngestion,
-            "STOPPED_INGESTION" => EventDataStoreStatus::StoppedIngestion,
-            "STOPPING_INGESTION" => EventDataStoreStatus::StoppingIngestion,
-            other => EventDataStoreStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATED" => EventDataStoreStatus::Created,
+"ENABLED" => EventDataStoreStatus::Enabled,
+"PENDING_DELETION" => EventDataStoreStatus::PendingDeletion,
+"STARTING_INGESTION" => EventDataStoreStatus::StartingIngestion,
+"STOPPED_INGESTION" => EventDataStoreStatus::StoppedIngestion,
+"STOPPING_INGESTION" => EventDataStoreStatus::StoppingIngestion,
+other => EventDataStoreStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EventDataStoreStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EventDataStoreStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EventDataStoreStatus::from(s))
+                    }
+                }
 impl EventDataStoreStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventDataStoreStatus::Created => "CREATED",
-            EventDataStoreStatus::Enabled => "ENABLED",
-            EventDataStoreStatus::PendingDeletion => "PENDING_DELETION",
-            EventDataStoreStatus::StartingIngestion => "STARTING_INGESTION",
-            EventDataStoreStatus::StoppedIngestion => "STOPPED_INGESTION",
-            EventDataStoreStatus::StoppingIngestion => "STOPPING_INGESTION",
-            EventDataStoreStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED",
-            "ENABLED",
-            "PENDING_DELETION",
-            "STARTING_INGESTION",
-            "STOPPED_INGESTION",
-            "STOPPING_INGESTION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventDataStoreStatus::Created => "CREATED",
+    EventDataStoreStatus::Enabled => "ENABLED",
+    EventDataStoreStatus::PendingDeletion => "PENDING_DELETION",
+    EventDataStoreStatus::StartingIngestion => "STARTING_INGESTION",
+    EventDataStoreStatus::StoppedIngestion => "STOPPED_INGESTION",
+    EventDataStoreStatus::StoppingIngestion => "STOPPING_INGESTION",
+    EventDataStoreStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "ENABLED", "PENDING_DELETION", "STARTING_INGESTION", "STOPPED_INGESTION", "STOPPING_INGESTION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EventDataStoreStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EventDataStoreStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EventDataStoreStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EventDataStoreStatus::Created => write!(f, "CREATED"),
-            EventDataStoreStatus::Enabled => write!(f, "ENABLED"),
-            EventDataStoreStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
-            EventDataStoreStatus::StartingIngestion => write!(f, "STARTING_INGESTION"),
-            EventDataStoreStatus::StoppedIngestion => write!(f, "STOPPED_INGESTION"),
-            EventDataStoreStatus::StoppingIngestion => write!(f, "STOPPING_INGESTION"),
-            EventDataStoreStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EventDataStoreStatus::Created => write!(f, "CREATED"),
+EventDataStoreStatus::Enabled => write!(f, "ENABLED"),
+EventDataStoreStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+EventDataStoreStatus::StartingIngestion => write!(f, "STARTING_INGESTION"),
+EventDataStoreStatus::StoppedIngestion => write!(f, "STOPPED_INGESTION"),
+EventDataStoreStatus::StoppingIngestion => write!(f, "STOPPING_INGESTION"),
+EventDataStoreStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

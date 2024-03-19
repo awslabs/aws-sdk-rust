@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThemes`](crate::operation::list_themes::builders::ListThemesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_themes::builders::ListThemesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     ///   - [`r#type(ThemeType)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::type) / [`set_type(Option<ThemeType>)`](crate::operation::list_themes::builders::ListThemesFluentBuilder::set_type):<br>required: **false**<br><p>The type of themes that you want to list. Valid options include the following:</p> <ul>  <li>   <p><code>ALL (default)</code>- Display all existing themes.</p></li>  <li>   <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>  <li>   <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p></li> </ul><br>
-    /// - On success, responds with [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput) with field(s):
+                            /// - On success, responds with [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput) with field(s):
     ///   - [`theme_summary_list(Option<Vec::<ThemeSummary>>)`](crate::operation::list_themes::ListThemesOutput::theme_summary_list): <p>Information about the themes in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_themes::ListThemesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`status(i32)`](crate::operation::list_themes::ListThemesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_themes::ListThemesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListThemesError>`](crate::operation::list_themes::ListThemesError)
+                            /// - On failure, responds with [`SdkError<ListThemesError>`](crate::operation::list_themes::ListThemesError)
     pub fn list_themes(&self) -> crate::operation::list_themes::builders::ListThemesFluentBuilder {
-        crate::operation::list_themes::builders::ListThemesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_themes::builders::ListThemesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The defining characteristics of a specific version of an Image Builder image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageVersion {
+pub struct ImageVersion  {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
@@ -65,7 +65,7 @@ pub struct ImageVersion {
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
 }
-impl ImageVersion {
+impl  ImageVersion  {
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
@@ -83,15 +83,15 @@ impl ImageVersion {
     /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of this specific version of an Image Builder image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
@@ -111,23 +111,23 @@ impl ImageVersion {
     /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    pub fn os_version(&self) -> ::std::option::Option<&str> {
+    pub fn os_version(&self) -> ::std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>The owner of the image version.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -139,11 +139,11 @@ impl ImageVersion {
     /// <li>
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
-    pub fn build_type(&self) -> ::std::option::Option<&crate::types::BuildType> {
+    pub fn build_type(&self) -> ::std::option::Option<& crate::types::BuildType> {
         self.build_type.as_ref()
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn image_source(&self) -> ::std::option::Option<&crate::types::ImageSource> {
+    pub fn image_source(&self) -> ::std::option::Option<& crate::types::ImageSource> {
         self.image_source.as_ref()
     }
 }
@@ -209,8 +209,7 @@ impl ImageVersionBuilder {
     /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
@@ -239,8 +238,7 @@ impl ImageVersionBuilder {
     }
     /// <p>The name of this specific version of an Image Builder image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this specific version of an Image Builder image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +251,7 @@ impl ImageVersionBuilder {
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageType> {
@@ -299,8 +296,7 @@ impl ImageVersionBuilder {
     /// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
@@ -329,8 +325,7 @@ impl ImageVersionBuilder {
     }
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
@@ -343,8 +338,7 @@ impl ImageVersionBuilder {
     }
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os_version = input;
-        self
+        self.os_version = input; self
     }
     /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -357,8 +351,7 @@ impl ImageVersionBuilder {
     }
     /// <p>The owner of the image version.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the image version.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,8 +364,7 @@ impl ImageVersionBuilder {
     }
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date on which this specific version of the Image Builder image was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -401,8 +393,7 @@ impl ImageVersionBuilder {
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::BuildType>) -> Self {
-        self.build_type = input;
-        self
+        self.build_type = input; self
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
@@ -423,8 +414,7 @@ impl ImageVersionBuilder {
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub fn set_image_source(mut self, input: ::std::option::Option<crate::types::ImageSource>) -> Self {
-        self.image_source = input;
-        self
+        self.image_source = input; self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub fn get_image_source(&self) -> &::std::option::Option<crate::types::ImageSource> {
@@ -433,16 +423,27 @@ impl ImageVersionBuilder {
     /// Consumes the builder and constructs a [`ImageVersion`](crate::types::ImageVersion).
     pub fn build(self) -> crate::types::ImageVersion {
         crate::types::ImageVersion {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            version: self.version,
-            platform: self.platform,
-            os_version: self.os_version,
-            owner: self.owner,
-            date_created: self.date_created,
-            build_type: self.build_type,
-            image_source: self.image_source,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            version: self.version
+            ,
+            platform: self.platform
+            ,
+            os_version: self.os_version
+            ,
+            owner: self.owner
+            ,
+            date_created: self.date_created
+            ,
+            build_type: self.build_type
+            ,
+            image_source: self.image_source
+            ,
         }
     }
 }
+

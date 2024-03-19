@@ -3,13 +3,13 @@
 /// <p>Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReceiptFilterInput {
+pub struct DeleteReceiptFilterInput  {
     /// <p>The name of the IP address filter to delete.</p>
     pub filter_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReceiptFilterInput {
+impl  DeleteReceiptFilterInput  {
     /// <p>The name of the IP address filter to delete.</p>
-    pub fn filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn filter_name(&self) -> ::std::option::Option<& str> {
         self.filter_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteReceiptFilterInputBuilder {
     }
     /// <p>The name of the IP address filter to delete.</p>
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_name = input;
-        self
+        self.filter_name = input; self
     }
     /// <p>The name of the IP address filter to delete.</p>
     pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_name
     }
     /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
-            filter_name: self.filter_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
+                filter_name: self.filter_name
+                ,
+            }
+        )
     }
 }
+

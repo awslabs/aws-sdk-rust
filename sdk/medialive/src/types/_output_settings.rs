@@ -3,7 +3,7 @@
 /// Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputSettings {
+pub struct OutputSettings  {
     /// Archive Output Settings
     pub archive_output_settings: ::std::option::Option<crate::types::ArchiveOutputSettings>,
     /// Frame Capture Output Settings
@@ -21,37 +21,37 @@ pub struct OutputSettings {
     /// Udp Output Settings
     pub udp_output_settings: ::std::option::Option<crate::types::UdpOutputSettings>,
 }
-impl OutputSettings {
+impl  OutputSettings  {
     /// Archive Output Settings
-    pub fn archive_output_settings(&self) -> ::std::option::Option<&crate::types::ArchiveOutputSettings> {
+    pub fn archive_output_settings(&self) -> ::std::option::Option<& crate::types::ArchiveOutputSettings> {
         self.archive_output_settings.as_ref()
     }
     /// Frame Capture Output Settings
-    pub fn frame_capture_output_settings(&self) -> ::std::option::Option<&crate::types::FrameCaptureOutputSettings> {
+    pub fn frame_capture_output_settings(&self) -> ::std::option::Option<& crate::types::FrameCaptureOutputSettings> {
         self.frame_capture_output_settings.as_ref()
     }
     /// Hls Output Settings
-    pub fn hls_output_settings(&self) -> ::std::option::Option<&crate::types::HlsOutputSettings> {
+    pub fn hls_output_settings(&self) -> ::std::option::Option<& crate::types::HlsOutputSettings> {
         self.hls_output_settings.as_ref()
     }
     /// Media Package Output Settings
-    pub fn media_package_output_settings(&self) -> ::std::option::Option<&crate::types::MediaPackageOutputSettings> {
+    pub fn media_package_output_settings(&self) -> ::std::option::Option<& crate::types::MediaPackageOutputSettings> {
         self.media_package_output_settings.as_ref()
     }
     /// Ms Smooth Output Settings
-    pub fn ms_smooth_output_settings(&self) -> ::std::option::Option<&crate::types::MsSmoothOutputSettings> {
+    pub fn ms_smooth_output_settings(&self) -> ::std::option::Option<& crate::types::MsSmoothOutputSettings> {
         self.ms_smooth_output_settings.as_ref()
     }
     /// Multiplex Output Settings
-    pub fn multiplex_output_settings(&self) -> ::std::option::Option<&crate::types::MultiplexOutputSettings> {
+    pub fn multiplex_output_settings(&self) -> ::std::option::Option<& crate::types::MultiplexOutputSettings> {
         self.multiplex_output_settings.as_ref()
     }
     /// Rtmp Output Settings
-    pub fn rtmp_output_settings(&self) -> ::std::option::Option<&crate::types::RtmpOutputSettings> {
+    pub fn rtmp_output_settings(&self) -> ::std::option::Option<& crate::types::RtmpOutputSettings> {
         self.rtmp_output_settings.as_ref()
     }
     /// Udp Output Settings
-    pub fn udp_output_settings(&self) -> ::std::option::Option<&crate::types::UdpOutputSettings> {
+    pub fn udp_output_settings(&self) -> ::std::option::Option<& crate::types::UdpOutputSettings> {
         self.udp_output_settings.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl OutputSettingsBuilder {
     }
     /// Archive Output Settings
     pub fn set_archive_output_settings(mut self, input: ::std::option::Option<crate::types::ArchiveOutputSettings>) -> Self {
-        self.archive_output_settings = input;
-        self
+        self.archive_output_settings = input; self
     }
     /// Archive Output Settings
     pub fn get_archive_output_settings(&self) -> &::std::option::Option<crate::types::ArchiveOutputSettings> {
@@ -97,8 +96,7 @@ impl OutputSettingsBuilder {
     }
     /// Frame Capture Output Settings
     pub fn set_frame_capture_output_settings(mut self, input: ::std::option::Option<crate::types::FrameCaptureOutputSettings>) -> Self {
-        self.frame_capture_output_settings = input;
-        self
+        self.frame_capture_output_settings = input; self
     }
     /// Frame Capture Output Settings
     pub fn get_frame_capture_output_settings(&self) -> &::std::option::Option<crate::types::FrameCaptureOutputSettings> {
@@ -111,8 +109,7 @@ impl OutputSettingsBuilder {
     }
     /// Hls Output Settings
     pub fn set_hls_output_settings(mut self, input: ::std::option::Option<crate::types::HlsOutputSettings>) -> Self {
-        self.hls_output_settings = input;
-        self
+        self.hls_output_settings = input; self
     }
     /// Hls Output Settings
     pub fn get_hls_output_settings(&self) -> &::std::option::Option<crate::types::HlsOutputSettings> {
@@ -125,8 +122,7 @@ impl OutputSettingsBuilder {
     }
     /// Media Package Output Settings
     pub fn set_media_package_output_settings(mut self, input: ::std::option::Option<crate::types::MediaPackageOutputSettings>) -> Self {
-        self.media_package_output_settings = input;
-        self
+        self.media_package_output_settings = input; self
     }
     /// Media Package Output Settings
     pub fn get_media_package_output_settings(&self) -> &::std::option::Option<crate::types::MediaPackageOutputSettings> {
@@ -139,8 +135,7 @@ impl OutputSettingsBuilder {
     }
     /// Ms Smooth Output Settings
     pub fn set_ms_smooth_output_settings(mut self, input: ::std::option::Option<crate::types::MsSmoothOutputSettings>) -> Self {
-        self.ms_smooth_output_settings = input;
-        self
+        self.ms_smooth_output_settings = input; self
     }
     /// Ms Smooth Output Settings
     pub fn get_ms_smooth_output_settings(&self) -> &::std::option::Option<crate::types::MsSmoothOutputSettings> {
@@ -153,8 +148,7 @@ impl OutputSettingsBuilder {
     }
     /// Multiplex Output Settings
     pub fn set_multiplex_output_settings(mut self, input: ::std::option::Option<crate::types::MultiplexOutputSettings>) -> Self {
-        self.multiplex_output_settings = input;
-        self
+        self.multiplex_output_settings = input; self
     }
     /// Multiplex Output Settings
     pub fn get_multiplex_output_settings(&self) -> &::std::option::Option<crate::types::MultiplexOutputSettings> {
@@ -167,8 +161,7 @@ impl OutputSettingsBuilder {
     }
     /// Rtmp Output Settings
     pub fn set_rtmp_output_settings(mut self, input: ::std::option::Option<crate::types::RtmpOutputSettings>) -> Self {
-        self.rtmp_output_settings = input;
-        self
+        self.rtmp_output_settings = input; self
     }
     /// Rtmp Output Settings
     pub fn get_rtmp_output_settings(&self) -> &::std::option::Option<crate::types::RtmpOutputSettings> {
@@ -181,8 +174,7 @@ impl OutputSettingsBuilder {
     }
     /// Udp Output Settings
     pub fn set_udp_output_settings(mut self, input: ::std::option::Option<crate::types::UdpOutputSettings>) -> Self {
-        self.udp_output_settings = input;
-        self
+        self.udp_output_settings = input; self
     }
     /// Udp Output Settings
     pub fn get_udp_output_settings(&self) -> &::std::option::Option<crate::types::UdpOutputSettings> {
@@ -191,14 +183,23 @@ impl OutputSettingsBuilder {
     /// Consumes the builder and constructs a [`OutputSettings`](crate::types::OutputSettings).
     pub fn build(self) -> crate::types::OutputSettings {
         crate::types::OutputSettings {
-            archive_output_settings: self.archive_output_settings,
-            frame_capture_output_settings: self.frame_capture_output_settings,
-            hls_output_settings: self.hls_output_settings,
-            media_package_output_settings: self.media_package_output_settings,
-            ms_smooth_output_settings: self.ms_smooth_output_settings,
-            multiplex_output_settings: self.multiplex_output_settings,
-            rtmp_output_settings: self.rtmp_output_settings,
-            udp_output_settings: self.udp_output_settings,
+            archive_output_settings: self.archive_output_settings
+            ,
+            frame_capture_output_settings: self.frame_capture_output_settings
+            ,
+            hls_output_settings: self.hls_output_settings
+            ,
+            media_package_output_settings: self.media_package_output_settings
+            ,
+            ms_smooth_output_settings: self.ms_smooth_output_settings
+            ,
+            multiplex_output_settings: self.multiplex_output_settings
+            ,
+            rtmp_output_settings: self.rtmp_output_settings
+            ,
+            udp_output_settings: self.udp_output_settings
+            ,
         }
     }
 }
+

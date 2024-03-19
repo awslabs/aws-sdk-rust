@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMediaPipelineKinesisVideoStreamPoolOutput {
+pub struct CreateMediaPipelineKinesisVideoStreamPoolOutput  {
     /// <p>The configuration for the Kinesis video stream pool.</p>
     pub kinesis_video_stream_pool_configuration: ::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration>,
     _request_id: Option<String>,
 }
-impl CreateMediaPipelineKinesisVideoStreamPoolOutput {
+impl  CreateMediaPipelineKinesisVideoStreamPoolOutput  {
     /// <p>The configuration for the Kinesis video stream pool.</p>
-    pub fn kinesis_video_stream_pool_configuration(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamPoolConfiguration> {
+    pub fn kinesis_video_stream_pool_configuration(&self) -> ::std::option::Option<& crate::types::KinesisVideoStreamPoolConfiguration> {
         self.kinesis_video_stream_pool_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMediaPipelineKinesisVideoStreamPoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMediaPipelineKinesisVideoStreamPoolOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaPipelineKinesisVideoStreamPoolOutput`](crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolOutput).
-    pub fn builder(
-    ) -> crate::operation::create_media_pipeline_kinesis_video_stream_pool::builders::CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder {
+    pub fn builder() -> crate::operation::create_media_pipeline_kinesis_video_stream_pool::builders::CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder {
         crate::operation::create_media_pipeline_kinesis_video_stream_pool::builders::CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder::default()
     }
 }
@@ -40,31 +39,29 @@ impl CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder {
         self
     }
     /// <p>The configuration for the Kinesis video stream pool.</p>
-    pub fn set_kinesis_video_stream_pool_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration>,
-    ) -> Self {
-        self.kinesis_video_stream_pool_configuration = input;
-        self
+    pub fn set_kinesis_video_stream_pool_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration>) -> Self {
+        self.kinesis_video_stream_pool_configuration = input; self
     }
     /// <p>The configuration for the Kinesis video stream pool.</p>
     pub fn get_kinesis_video_stream_pool_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration> {
         &self.kinesis_video_stream_pool_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMediaPipelineKinesisVideoStreamPoolOutput`](crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolOutput).
     pub fn build(self) -> crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolOutput {
         crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolOutput {
-            kinesis_video_stream_pool_configuration: self.kinesis_video_stream_pool_configuration,
+            kinesis_video_stream_pool_configuration: self.kinesis_video_stream_pool_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

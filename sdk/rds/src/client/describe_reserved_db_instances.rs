@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservedDBInstances`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reserved_db_instance_id(impl Into<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::reserved_db_instance_id) / [`set_reserved_db_instance_id(Option<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::set_reserved_db_instance_id):<br>required: **false**<br><p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p><br>
     ///   - [`reserved_db_instances_offering_id(impl Into<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::reserved_db_instances_offering_id) / [`set_reserved_db_instances_offering_id(Option<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::set_reserved_db_instances_offering_id):<br>required: **false**<br><p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p><br>
     ///   - [`db_instance_class(impl Into<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::set_db_instance_class):<br>required: **false**<br><p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p><br>
@@ -15,13 +15,12 @@ impl super::Client {
     ///   - [`filters(Filter)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::set_filters):<br>required: **false**<br><p>This parameter isn't currently supported.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput) with field(s):
+                            /// - On success, responds with [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`reserved_db_instances(Option<Vec::<ReservedDbInstance>>)`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput::reserved_db_instances): <p>A list of reserved DB instances.</p>
-    /// - On failure, responds with [`SdkError<DescribeReservedDBInstancesError>`](crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError)
-    pub fn describe_reserved_db_instances(
-        &self,
-    ) -> crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder {
-        crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReservedDBInstancesError>`](crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError)
+    pub fn describe_reserved_db_instances(&self) -> crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder {
+                                crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

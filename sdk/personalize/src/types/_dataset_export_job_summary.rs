@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetExportJobSummary {
+pub struct DatasetExportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub dataset_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset export job.</p>
@@ -22,13 +22,13 @@ pub struct DatasetExportJobSummary {
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl DatasetExportJobSummary {
+impl  DatasetExportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn dataset_export_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_export_job_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_export_job_arn.as_deref()
     }
     /// <p>The name of the dataset export job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The status of the dataset export job.</p>
@@ -37,19 +37,19 @@ impl DatasetExportJobSummary {
     /// <li>
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -79,8 +79,7 @@ impl DatasetExportJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub fn set_dataset_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_export_job_arn = input;
-        self
+        self.dataset_export_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub fn get_dataset_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl DatasetExportJobSummaryBuilder {
     }
     /// <p>The name of the dataset export job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the dataset export job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl DatasetExportJobSummaryBuilder {
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
@@ -136,8 +133,7 @@ impl DatasetExportJobSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +146,7 @@ impl DatasetExportJobSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -164,8 +159,7 @@ impl DatasetExportJobSummaryBuilder {
     }
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,12 +168,19 @@ impl DatasetExportJobSummaryBuilder {
     /// Consumes the builder and constructs a [`DatasetExportJobSummary`](crate::types::DatasetExportJobSummary).
     pub fn build(self) -> crate::types::DatasetExportJobSummary {
         crate::types::DatasetExportJobSummary {
-            dataset_export_job_arn: self.dataset_export_job_arn,
-            job_name: self.job_name,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            failure_reason: self.failure_reason,
+            dataset_export_job_arn: self.dataset_export_job_arn
+            ,
+            job_name: self.job_name
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

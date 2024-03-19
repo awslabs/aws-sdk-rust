@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableKinesisStreamingDestinationOutput {
+pub struct DisableKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being modified.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the specific Kinesis data stream.</p>
@@ -13,29 +13,29 @@ pub struct DisableKinesisStreamingDestinationOutput {
     pub enable_kinesis_streaming_configuration: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
     _request_id: Option<String>,
 }
-impl DisableKinesisStreamingDestinationOutput {
+impl  DisableKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being modified.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The ARN for the specific Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The current status of the replication.</p>
-    pub fn destination_status(&self) -> ::std::option::Option<&crate::types::DestinationStatus> {
+    pub fn destination_status(&self) -> ::std::option::Option<& crate::types::DestinationStatus> {
         self.destination_status.as_ref()
     }
     /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
-    pub fn enable_kinesis_streaming_configuration(&self) -> ::std::option::Option<&crate::types::EnableKinesisStreamingConfiguration> {
+    pub fn enable_kinesis_streaming_configuration(&self) -> ::std::option::Option<& crate::types::EnableKinesisStreamingConfiguration> {
         self.enable_kinesis_streaming_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisableKinesisStreamingDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisableKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationOutput`](crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput).
     pub fn builder() -> crate::operation::disable_kinesis_streaming_destination::builders::DisableKinesisStreamingDestinationOutputBuilder {
@@ -61,8 +61,7 @@ impl DisableKinesisStreamingDestinationOutputBuilder {
     }
     /// <p>The name of the table being modified.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table being modified.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DisableKinesisStreamingDestinationOutputBuilder {
     }
     /// <p>The ARN for the specific Kinesis data stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN for the specific Kinesis data stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DisableKinesisStreamingDestinationOutputBuilder {
     }
     /// <p>The current status of the replication.</p>
     pub fn set_destination_status(mut self, input: ::std::option::Option<crate::types::DestinationStatus>) -> Self {
-        self.destination_status = input;
-        self
+        self.destination_status = input; self
     }
     /// <p>The current status of the replication.</p>
     pub fn get_destination_status(&self) -> &::std::option::Option<crate::types::DestinationStatus> {
@@ -102,34 +99,35 @@ impl DisableKinesisStreamingDestinationOutputBuilder {
         self
     }
     /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
-    pub fn set_enable_kinesis_streaming_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
-    ) -> Self {
-        self.enable_kinesis_streaming_configuration = input;
-        self
+    pub fn set_enable_kinesis_streaming_configuration(mut self, input: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>) -> Self {
+        self.enable_kinesis_streaming_configuration = input; self
     }
     /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
     pub fn get_enable_kinesis_streaming_configuration(&self) -> &::std::option::Option<crate::types::EnableKinesisStreamingConfiguration> {
         &self.enable_kinesis_streaming_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationOutput`](crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput).
     pub fn build(self) -> crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput {
         crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput {
-            table_name: self.table_name,
-            stream_arn: self.stream_arn,
-            destination_status: self.destination_status,
-            enable_kinesis_streaming_configuration: self.enable_kinesis_streaming_configuration,
+            table_name: self.table_name
+            ,
+            stream_arn: self.stream_arn
+            ,
+            destination_status: self.destination_status
+            ,
+            enable_kinesis_streaming_configuration: self.enable_kinesis_streaming_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

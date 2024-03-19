@@ -14,15 +14,14 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelTimerDecisionAttributes {
+pub struct CancelTimerDecisionAttributes  {
     /// <p>The unique ID of the timer to cancel.</p>
     pub timer_id: ::std::string::String,
 }
-impl CancelTimerDecisionAttributes {
+impl  CancelTimerDecisionAttributes  {
     /// <p>The unique ID of the timer to cancel.</p>
-    pub fn timer_id(&self) -> &str {
-        use std::ops::Deref;
-        self.timer_id.deref()
+    pub fn timer_id(&self) -> & str {
+        use std::ops::Deref; self.timer_id.deref()
     }
 }
 impl CancelTimerDecisionAttributes {
@@ -47,8 +46,7 @@ impl CancelTimerDecisionAttributesBuilder {
     }
     /// <p>The unique ID of the timer to cancel.</p>
     pub fn set_timer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timer_id = input;
-        self
+        self.timer_id = input; self
     }
     /// <p>The unique ID of the timer to cancel.</p>
     pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,13 +56,15 @@ impl CancelTimerDecisionAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_id`](crate::types::builders::CancelTimerDecisionAttributesBuilder::timer_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CancelTimerDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CancelTimerDecisionAttributes {
-            timer_id: self.timer_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timer_id",
-                    "timer_id was not specified but it is required when building CancelTimerDecisionAttributes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CancelTimerDecisionAttributes {
+                timer_id: self.timer_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timer_id", "timer_id was not specified but it is required when building CancelTimerDecisionAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

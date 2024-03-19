@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAnomalyDetectorInput {
+pub struct CreateAnomalyDetectorInput  {
     /// <p>The name of the detector.</p>
     pub anomaly_detector_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the detector.</p>
@@ -12,27 +12,27 @@ pub struct CreateAnomalyDetectorInput {
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateAnomalyDetectorInput {
+impl  CreateAnomalyDetectorInput  {
     /// <p>The name of the detector.</p>
-    pub fn anomaly_detector_name(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_name(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_name.as_deref()
     }
     /// <p>A description of the detector.</p>
-    pub fn anomaly_detector_description(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_description(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_description.as_deref()
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
-    pub fn anomaly_detector_config(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfig> {
+    pub fn anomaly_detector_config(&self) -> ::std::option::Option<& crate::types::AnomalyDetectorConfig> {
         self.anomaly_detector_config.as_ref()
     }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub struct CreateAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_description: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_config: ::std::option::Option<crate::types::AnomalyDetectorConfig>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateAnomalyDetectorInputBuilder {
     /// <p>The name of the detector.</p>
@@ -62,8 +62,7 @@ impl CreateAnomalyDetectorInputBuilder {
     }
     /// <p>The name of the detector.</p>
     pub fn set_anomaly_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_name = input;
-        self
+        self.anomaly_detector_name = input; self
     }
     /// <p>The name of the detector.</p>
     pub fn get_anomaly_detector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateAnomalyDetectorInputBuilder {
     }
     /// <p>A description of the detector.</p>
     pub fn set_anomaly_detector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_description = input;
-        self
+        self.anomaly_detector_description = input; self
     }
     /// <p>A description of the detector.</p>
     pub fn get_anomaly_detector_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateAnomalyDetectorInputBuilder {
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
     pub fn set_anomaly_detector_config(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorConfig>) -> Self {
-        self.anomaly_detector_config = input;
-        self
+        self.anomaly_detector_config = input; self
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
     pub fn get_anomaly_detector_config(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
@@ -105,8 +102,7 @@ impl CreateAnomalyDetectorInputBuilder {
     }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,30 +115,34 @@ impl CreateAnomalyDetectorInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAnomalyDetectorInput`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput {
-            anomaly_detector_name: self.anomaly_detector_name,
-            anomaly_detector_description: self.anomaly_detector_description,
-            anomaly_detector_config: self.anomaly_detector_config,
-            kms_key_arn: self.kms_key_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput {
+                anomaly_detector_name: self.anomaly_detector_name
+                ,
+                anomaly_detector_description: self.anomaly_detector_description
+                ,
+                anomaly_detector_config: self.anomaly_detector_config
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

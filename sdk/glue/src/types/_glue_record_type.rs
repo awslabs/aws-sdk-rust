@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gluerecordtype = unimplemented!();
 /// match gluerecordtype {
@@ -38,16 +38,14 @@
 /// Specifically, when `gluerecordtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GlueRecordType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum GlueRecordType {
     #[allow(missing_docs)] // documentation missing in model
     Bigdecimal,
@@ -71,96 +69,86 @@ pub enum GlueRecordType {
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for GlueRecordType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BIGDECIMAL" => GlueRecordType::Bigdecimal,
-            "BYTE" => GlueRecordType::Byte,
-            "DATE" => GlueRecordType::Date,
-            "DOUBLE" => GlueRecordType::Double,
-            "FLOAT" => GlueRecordType::Float,
-            "INT" => GlueRecordType::Int,
-            "LONG" => GlueRecordType::Long,
-            "SHORT" => GlueRecordType::Short,
-            "STRING" => GlueRecordType::String,
-            "TIMESTAMP" => GlueRecordType::Timestamp,
-            other => GlueRecordType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BIGDECIMAL" => GlueRecordType::Bigdecimal,
+"BYTE" => GlueRecordType::Byte,
+"DATE" => GlueRecordType::Date,
+"DOUBLE" => GlueRecordType::Double,
+"FLOAT" => GlueRecordType::Float,
+"INT" => GlueRecordType::Int,
+"LONG" => GlueRecordType::Long,
+"SHORT" => GlueRecordType::Short,
+"STRING" => GlueRecordType::String,
+"TIMESTAMP" => GlueRecordType::Timestamp,
+other => GlueRecordType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for GlueRecordType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(GlueRecordType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(GlueRecordType::from(s))
+                    }
+                }
 impl GlueRecordType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GlueRecordType::Bigdecimal => "BIGDECIMAL",
-            GlueRecordType::Byte => "BYTE",
-            GlueRecordType::Date => "DATE",
-            GlueRecordType::Double => "DOUBLE",
-            GlueRecordType::Float => "FLOAT",
-            GlueRecordType::Int => "INT",
-            GlueRecordType::Long => "LONG",
-            GlueRecordType::Short => "SHORT",
-            GlueRecordType::String => "STRING",
-            GlueRecordType::Timestamp => "TIMESTAMP",
-            GlueRecordType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BIGDECIMAL",
-            "BYTE",
-            "DATE",
-            "DOUBLE",
-            "FLOAT",
-            "INT",
-            "LONG",
-            "SHORT",
-            "STRING",
-            "TIMESTAMP",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GlueRecordType::Bigdecimal => "BIGDECIMAL",
+    GlueRecordType::Byte => "BYTE",
+    GlueRecordType::Date => "DATE",
+    GlueRecordType::Double => "DOUBLE",
+    GlueRecordType::Float => "FLOAT",
+    GlueRecordType::Int => "INT",
+    GlueRecordType::Long => "LONG",
+    GlueRecordType::Short => "SHORT",
+    GlueRecordType::String => "STRING",
+    GlueRecordType::Timestamp => "TIMESTAMP",
+    GlueRecordType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BIGDECIMAL", "BYTE", "DATE", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for GlueRecordType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl GlueRecordType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for GlueRecordType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            GlueRecordType::Bigdecimal => write!(f, "BIGDECIMAL"),
-            GlueRecordType::Byte => write!(f, "BYTE"),
-            GlueRecordType::Date => write!(f, "DATE"),
-            GlueRecordType::Double => write!(f, "DOUBLE"),
-            GlueRecordType::Float => write!(f, "FLOAT"),
-            GlueRecordType::Int => write!(f, "INT"),
-            GlueRecordType::Long => write!(f, "LONG"),
-            GlueRecordType::Short => write!(f, "SHORT"),
-            GlueRecordType::String => write!(f, "STRING"),
-            GlueRecordType::Timestamp => write!(f, "TIMESTAMP"),
-            GlueRecordType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                GlueRecordType::Bigdecimal => write!(f, "BIGDECIMAL"),
+GlueRecordType::Byte => write!(f, "BYTE"),
+GlueRecordType::Date => write!(f, "DATE"),
+GlueRecordType::Double => write!(f, "DOUBLE"),
+GlueRecordType::Float => write!(f, "FLOAT"),
+GlueRecordType::Int => write!(f, "INT"),
+GlueRecordType::Long => write!(f, "LONG"),
+GlueRecordType::Short => write!(f, "SHORT"),
+GlueRecordType::String => write!(f, "STRING"),
+GlueRecordType::Timestamp => write!(f, "TIMESTAMP"),
+GlueRecordType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

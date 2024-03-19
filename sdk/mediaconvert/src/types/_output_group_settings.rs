@@ -3,7 +3,7 @@
 /// Output Group settings, including type
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputGroupSettings {
+pub struct OutputGroupSettings  {
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub cmaf_group_settings: ::std::option::Option<crate::types::CmafGroupSettings>,
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
@@ -17,29 +17,29 @@ pub struct OutputGroupSettings {
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub r#type: ::std::option::Option<crate::types::OutputGroupType>,
 }
-impl OutputGroupSettings {
+impl  OutputGroupSettings  {
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    pub fn cmaf_group_settings(&self) -> ::std::option::Option<&crate::types::CmafGroupSettings> {
+    pub fn cmaf_group_settings(&self) -> ::std::option::Option<& crate::types::CmafGroupSettings> {
         self.cmaf_group_settings.as_ref()
     }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    pub fn dash_iso_group_settings(&self) -> ::std::option::Option<&crate::types::DashIsoGroupSettings> {
+    pub fn dash_iso_group_settings(&self) -> ::std::option::Option<& crate::types::DashIsoGroupSettings> {
         self.dash_iso_group_settings.as_ref()
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package.
-    pub fn file_group_settings(&self) -> ::std::option::Option<&crate::types::FileGroupSettings> {
+    pub fn file_group_settings(&self) -> ::std::option::Option<& crate::types::FileGroupSettings> {
         self.file_group_settings.as_ref()
     }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    pub fn hls_group_settings(&self) -> ::std::option::Option<&crate::types::HlsGroupSettings> {
+    pub fn hls_group_settings(&self) -> ::std::option::Option<& crate::types::HlsGroupSettings> {
         self.hls_group_settings.as_ref()
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    pub fn ms_smooth_group_settings(&self) -> ::std::option::Option<&crate::types::MsSmoothGroupSettings> {
+    pub fn ms_smooth_group_settings(&self) -> ::std::option::Option<& crate::types::MsSmoothGroupSettings> {
         self.ms_smooth_group_settings.as_ref()
     }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OutputGroupType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OutputGroupType> {
         self.r#type.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn set_cmaf_group_settings(mut self, input: ::std::option::Option<crate::types::CmafGroupSettings>) -> Self {
-        self.cmaf_group_settings = input;
-        self
+        self.cmaf_group_settings = input; self
     }
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn get_cmaf_group_settings(&self) -> &::std::option::Option<crate::types::CmafGroupSettings> {
@@ -83,8 +82,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn set_dash_iso_group_settings(mut self, input: ::std::option::Option<crate::types::DashIsoGroupSettings>) -> Self {
-        self.dash_iso_group_settings = input;
-        self
+        self.dash_iso_group_settings = input; self
     }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn get_dash_iso_group_settings(&self) -> &::std::option::Option<crate::types::DashIsoGroupSettings> {
@@ -97,8 +95,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package.
     pub fn set_file_group_settings(mut self, input: ::std::option::Option<crate::types::FileGroupSettings>) -> Self {
-        self.file_group_settings = input;
-        self
+        self.file_group_settings = input; self
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package.
     pub fn get_file_group_settings(&self) -> &::std::option::Option<crate::types::FileGroupSettings> {
@@ -111,8 +108,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn set_hls_group_settings(mut self, input: ::std::option::Option<crate::types::HlsGroupSettings>) -> Self {
-        self.hls_group_settings = input;
-        self
+        self.hls_group_settings = input; self
     }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn get_hls_group_settings(&self) -> &::std::option::Option<crate::types::HlsGroupSettings> {
@@ -125,8 +121,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn set_ms_smooth_group_settings(mut self, input: ::std::option::Option<crate::types::MsSmoothGroupSettings>) -> Self {
-        self.ms_smooth_group_settings = input;
-        self
+        self.ms_smooth_group_settings = input; self
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn get_ms_smooth_group_settings(&self) -> &::std::option::Option<crate::types::MsSmoothGroupSettings> {
@@ -139,8 +134,7 @@ impl OutputGroupSettingsBuilder {
     }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OutputGroupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OutputGroupType> {
@@ -149,12 +143,19 @@ impl OutputGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::types::OutputGroupSettings).
     pub fn build(self) -> crate::types::OutputGroupSettings {
         crate::types::OutputGroupSettings {
-            cmaf_group_settings: self.cmaf_group_settings,
-            dash_iso_group_settings: self.dash_iso_group_settings,
-            file_group_settings: self.file_group_settings,
-            hls_group_settings: self.hls_group_settings,
-            ms_smooth_group_settings: self.ms_smooth_group_settings,
-            r#type: self.r#type,
+            cmaf_group_settings: self.cmaf_group_settings
+            ,
+            dash_iso_group_settings: self.dash_iso_group_settings
+            ,
+            file_group_settings: self.file_group_settings
+            ,
+            hls_group_settings: self.hls_group_settings
+            ,
+            ms_smooth_group_settings: self.ms_smooth_group_settings
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

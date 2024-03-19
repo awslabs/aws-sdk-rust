@@ -3,13 +3,13 @@
 /// <p>Reports progress on replacing instances that are in the warm pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceRefreshWarmPoolProgress {
+pub struct InstanceRefreshWarmPoolProgress  {
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     pub percentage_complete: ::std::option::Option<i32>,
     /// <p>The number of instances remaining to update.</p>
     pub instances_to_update: ::std::option::Option<i32>,
 }
-impl InstanceRefreshWarmPoolProgress {
+impl  InstanceRefreshWarmPoolProgress  {
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     pub fn percentage_complete(&self) -> ::std::option::Option<i32> {
         self.percentage_complete
@@ -41,8 +41,7 @@ impl InstanceRefreshWarmPoolProgressBuilder {
     }
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     pub fn set_percentage_complete(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percentage_complete = input;
-        self
+        self.percentage_complete = input; self
     }
     /// <p>The percentage of instances in the warm pool that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
     pub fn get_percentage_complete(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl InstanceRefreshWarmPoolProgressBuilder {
     }
     /// <p>The number of instances remaining to update.</p>
     pub fn set_instances_to_update(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instances_to_update = input;
-        self
+        self.instances_to_update = input; self
     }
     /// <p>The number of instances remaining to update.</p>
     pub fn get_instances_to_update(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl InstanceRefreshWarmPoolProgressBuilder {
     /// Consumes the builder and constructs a [`InstanceRefreshWarmPoolProgress`](crate::types::InstanceRefreshWarmPoolProgress).
     pub fn build(self) -> crate::types::InstanceRefreshWarmPoolProgress {
         crate::types::InstanceRefreshWarmPoolProgress {
-            percentage_complete: self.percentage_complete,
-            instances_to_update: self.instances_to_update,
+            percentage_complete: self.percentage_complete
+            ,
+            instances_to_update: self.instances_to_update
+            ,
         }
     }
 }
+

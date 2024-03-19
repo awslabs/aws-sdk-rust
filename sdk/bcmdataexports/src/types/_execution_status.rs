@@ -3,7 +3,7 @@
 /// <p>The status of the execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionStatus {
+pub struct ExecutionStatus  {
     /// <p>The code for the status of the execution.</p>
     pub status_code: ::std::option::Option<crate::types::ExecutionStatusCode>,
     /// <p>The reason for the failed status.</p>
@@ -15,25 +15,25 @@ pub struct ExecutionStatus {
     /// <p>The time when the execution was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ExecutionStatus {
+impl  ExecutionStatus  {
     /// <p>The code for the status of the execution.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ExecutionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::ExecutionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The reason for the failed status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::ExecutionStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::ExecutionStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>The time when the execution was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the execution was completed.</p>
-    pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>The time when the execution was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The code for the status of the execution.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ExecutionStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The code for the status of the execution.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ExecutionStatusCode> {
@@ -76,8 +75,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The reason for the failed status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::ExecutionStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the failed status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::ExecutionStatusReason> {
@@ -90,8 +88,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The time when the execution was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the execution was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The time when the execution was completed.</p>
     pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_at = input;
-        self
+        self.completed_at = input; self
     }
     /// <p>The time when the execution was completed.</p>
     pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The time when the execution was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time when the execution was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl ExecutionStatusBuilder {
     /// Consumes the builder and constructs a [`ExecutionStatus`](crate::types::ExecutionStatus).
     pub fn build(self) -> crate::types::ExecutionStatus {
         crate::types::ExecutionStatus {
-            status_code: self.status_code,
-            status_reason: self.status_reason,
-            created_at: self.created_at,
-            completed_at: self.completed_at,
-            last_updated_at: self.last_updated_at,
+            status_code: self.status_code
+            ,
+            status_reason: self.status_reason
+            ,
+            created_at: self.created_at
+            ,
+            completed_at: self.completed_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
         }
     }
 }
+

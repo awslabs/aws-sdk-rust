@@ -5,13 +5,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseKmsEncryptedObjects {
+pub struct SseKmsEncryptedObjects  {
     /// <p>Specifies whether Amazon S3 replicates objects that are created with server-side encryption by using an KMS key stored in Key Management Service.</p>
     pub status: crate::types::SseKmsEncryptedObjectsStatus,
 }
-impl SseKmsEncryptedObjects {
+impl  SseKmsEncryptedObjects  {
     /// <p>Specifies whether Amazon S3 replicates objects that are created with server-side encryption by using an KMS key stored in Key Management Service.</p>
-    pub fn status(&self) -> &crate::types::SseKmsEncryptedObjectsStatus {
+    pub fn status(&self) -> & crate::types::SseKmsEncryptedObjectsStatus {
         &self.status
     }
 }
@@ -37,8 +37,7 @@ impl SseKmsEncryptedObjectsBuilder {
     }
     /// <p>Specifies whether Amazon S3 replicates objects that are created with server-side encryption by using an KMS key stored in Key Management Service.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether Amazon S3 replicates objects that are created with server-side encryption by using an KMS key stored in Key Management Service.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus> {
@@ -48,13 +47,15 @@ impl SseKmsEncryptedObjectsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::SseKmsEncryptedObjectsBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::SseKmsEncryptedObjects, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SseKmsEncryptedObjects {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building SseKmsEncryptedObjects",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SseKmsEncryptedObjects {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building SseKmsEncryptedObjects")
+                    )?
+                ,
+            }
+        )
     }
 }
+

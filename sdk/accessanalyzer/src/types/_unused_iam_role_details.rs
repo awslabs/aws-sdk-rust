@@ -3,13 +3,13 @@
 /// <p>Contains information about an unused access finding for an IAM role. IAM Access Analyzer charges for unused access analysis based on the number of IAM roles and users analyzed per month. For more details on pricing, see <a href="https://aws.amazon.com/iam/access-analyzer/pricing">IAM Access Analyzer pricing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnusedIamRoleDetails {
+pub struct UnusedIamRoleDetails  {
     /// <p>The time at which the role was last accessed.</p>
     pub last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UnusedIamRoleDetails {
+impl  UnusedIamRoleDetails  {
     /// <p>The time at which the role was last accessed.</p>
-    pub fn last_accessed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl UnusedIamRoleDetailsBuilder {
     }
     /// <p>The time at which the role was last accessed.</p>
     pub fn set_last_accessed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed = input;
-        self
+        self.last_accessed = input; self
     }
     /// <p>The time at which the role was last accessed.</p>
     pub fn get_last_accessed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -44,7 +43,9 @@ impl UnusedIamRoleDetailsBuilder {
     /// Consumes the builder and constructs a [`UnusedIamRoleDetails`](crate::types::UnusedIamRoleDetails).
     pub fn build(self) -> crate::types::UnusedIamRoleDetails {
         crate::types::UnusedIamRoleDetails {
-            last_accessed: self.last_accessed,
+            last_accessed: self.last_accessed
+            ,
         }
     }
 }
+

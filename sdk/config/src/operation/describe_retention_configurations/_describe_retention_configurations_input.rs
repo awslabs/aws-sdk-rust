@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRetentionConfigurationsInput {
+pub struct DescribeRetentionConfigurationsInput  {
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    pub retention_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub retention_configuration_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRetentionConfigurationsInput {
+impl  DescribeRetentionConfigurationsInput  {
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retention_configuration_names.is_none()`.
-    pub fn retention_configuration_names(&self) -> &[::std::string::String] {
-        self.retention_configuration_names.as_deref().unwrap_or_default()
+    pub fn retention_configuration_names(&self) -> & [::std::string::String] {
+        self.retention_configuration_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -35,7 +36,7 @@ impl DescribeRetentionConfigurationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRetentionConfigurationsInputBuilder {
-    pub(crate) retention_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) retention_configuration_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRetentionConfigurationsInputBuilder {
@@ -48,21 +49,20 @@ impl DescribeRetentionConfigurationsInputBuilder {
     /// </note>
     pub fn retention_configuration_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.retention_configuration_names.unwrap_or_default();
-        v.push(input.into());
-        self.retention_configuration_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.retention_configuration_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    pub fn set_retention_configuration_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.retention_configuration_names = input;
-        self
+    pub fn set_retention_configuration_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.retention_configuration_names = input; self
     }
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    pub fn get_retention_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_retention_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.retention_configuration_names
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -72,25 +72,22 @@ impl DescribeRetentionConfigurationsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRetentionConfigurationsInput`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsInput {
-                retention_configuration_names: self.retention_configuration_names,
-                next_token: self.next_token,
-            },
+                retention_configuration_names: self.retention_configuration_names
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

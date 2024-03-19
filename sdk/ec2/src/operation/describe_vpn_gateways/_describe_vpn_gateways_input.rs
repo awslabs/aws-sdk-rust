@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeVpnGateways.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpnGatewaysInput {
+pub struct DescribeVpnGatewaysInput  {
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -18,10 +18,10 @@ pub struct DescribeVpnGatewaysInput {
     /// <p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -31,14 +31,14 @@ pub struct DescribeVpnGatewaysInput {
     /// <li>
     /// <p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub vpn_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpn_gateway_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeVpnGatewaysInput {
+impl  DescribeVpnGatewaysInput  {
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -53,10 +53,10 @@ impl DescribeVpnGatewaysInput {
     /// <p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -66,17 +66,19 @@ impl DescribeVpnGatewaysInput {
     /// <li>
     /// <p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpn_gateway_ids.is_none()`.
-    pub fn vpn_gateway_ids(&self) -> &[::std::string::String] {
-        self.vpn_gateway_ids.as_deref().unwrap_or_default()
+    pub fn vpn_gateway_ids(&self) -> & [::std::string::String] {
+        self.vpn_gateway_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -94,8 +96,8 @@ impl DescribeVpnGatewaysInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpnGatewaysInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) vpn_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
+    pub(crate) vpn_gateway_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeVpnGatewaysInputBuilder {
@@ -117,10 +119,10 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -132,9 +134,9 @@ impl DescribeVpnGatewaysInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -150,10 +152,10 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -163,9 +165,8 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <li>
     /// <p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -181,10 +182,10 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -194,7 +195,7 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <li>
     /// <p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Appends an item to `vpn_gateway_ids`.
@@ -205,19 +206,18 @@ impl DescribeVpnGatewaysInputBuilder {
     /// <p>Default: Describes all your virtual private gateways.</p>
     pub fn vpn_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpn_gateway_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpn_gateway_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpn_gateway_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub fn set_vpn_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpn_gateway_ids = input;
-        self
+    pub fn set_vpn_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpn_gateway_ids = input; self
     }
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub fn get_vpn_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpn_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpn_gateway_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -227,22 +227,24 @@ impl DescribeVpnGatewaysInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput {
-            filters: self.filters,
-            vpn_gateway_ids: self.vpn_gateway_ids,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput {
+                filters: self.filters
+                ,
+                vpn_gateway_ids: self.vpn_gateway_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

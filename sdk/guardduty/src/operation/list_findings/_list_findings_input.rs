@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingsInput {
+pub struct ListFindingsInput  {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
@@ -116,9 +116,9 @@ pub struct ListFindingsInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListFindingsInput {
+impl  ListFindingsInput  {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
@@ -224,11 +224,11 @@ impl ListFindingsInput {
     /// <p>updatedAt</p>
     /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
     /// </ul>
-    pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> ::std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
     /// <p>Represents the criteria used for sorting findings.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::SortCriteria> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<& crate::types::SortCriteria> {
         self.sort_criteria.as_ref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
@@ -236,7 +236,7 @@ impl ListFindingsInput {
         self.max_results
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -266,8 +266,7 @@ impl ListFindingsInputBuilder {
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -484,8 +483,7 @@ impl ListFindingsInputBuilder {
     /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p></li>
     /// </ul>
     pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
-        self.finding_criteria = input;
-        self
+        self.finding_criteria = input; self
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
@@ -600,8 +598,7 @@ impl ListFindingsInputBuilder {
     }
     /// <p>Represents the criteria used for sorting findings.</p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
-        self.sort_criteria = input;
-        self
+        self.sort_criteria = input; self
     }
     /// <p>Represents the criteria used for sorting findings.</p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
@@ -614,8 +611,7 @@ impl ListFindingsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -628,23 +624,28 @@ impl ListFindingsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
-            detector_id: self.detector_id,
-            finding_criteria: self.finding_criteria,
-            sort_criteria: self.sort_criteria,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_findings::ListFindingsInput {
+                detector_id: self.detector_id
+                ,
+                finding_criteria: self.finding_criteria
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

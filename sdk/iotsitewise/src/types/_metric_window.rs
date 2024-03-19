@@ -3,13 +3,13 @@
 /// <p>Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricWindow {
+pub struct MetricWindow  {
     /// <p>The tumbling time interval window.</p>
     pub tumbling: ::std::option::Option<crate::types::TumblingWindow>,
 }
-impl MetricWindow {
+impl  MetricWindow  {
     /// <p>The tumbling time interval window.</p>
-    pub fn tumbling(&self) -> ::std::option::Option<&crate::types::TumblingWindow> {
+    pub fn tumbling(&self) -> ::std::option::Option<& crate::types::TumblingWindow> {
         self.tumbling.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MetricWindowBuilder {
     }
     /// <p>The tumbling time interval window.</p>
     pub fn set_tumbling(mut self, input: ::std::option::Option<crate::types::TumblingWindow>) -> Self {
-        self.tumbling = input;
-        self
+        self.tumbling = input; self
     }
     /// <p>The tumbling time interval window.</p>
     pub fn get_tumbling(&self) -> &::std::option::Option<crate::types::TumblingWindow> {
@@ -43,6 +42,10 @@ impl MetricWindowBuilder {
     }
     /// Consumes the builder and constructs a [`MetricWindow`](crate::types::MetricWindow).
     pub fn build(self) -> crate::types::MetricWindow {
-        crate::types::MetricWindow { tumbling: self.tumbling }
+        crate::types::MetricWindow {
+            tumbling: self.tumbling
+            ,
+        }
     }
 }
+

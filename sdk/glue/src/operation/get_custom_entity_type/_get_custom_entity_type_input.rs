@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCustomEntityTypeInput {
+pub struct GetCustomEntityTypeInput  {
     /// <p>The name of the custom pattern that you want to retrieve.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetCustomEntityTypeInput {
+impl  GetCustomEntityTypeInput  {
     /// <p>The name of the custom pattern that you want to retrieve.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetCustomEntityTypeInputBuilder {
     }
     /// <p>The name of the custom pattern that you want to retrieve.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom pattern that you want to retrieve.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_custom_entity_type::GetCustomEntityTypeInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_custom_entity_type::GetCustomEntityTypeInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

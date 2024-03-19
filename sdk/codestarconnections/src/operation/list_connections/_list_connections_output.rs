@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConnectionsOutput {
+pub struct ListConnectionsOutput  {
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub connections: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>,
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListConnectionsOutput {
+impl  ListConnectionsOutput  {
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
-    pub fn connections(&self) -> &[crate::types::Connection] {
-        self.connections.as_deref().unwrap_or_default()
+    pub fn connections(&self) -> & [crate::types::Connection] {
+        self.connections.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConnectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput).
     pub fn builder() -> crate::operation::list_connections::builders::ListConnectionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListConnectionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectionsOutputBuilder {
-    pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub(crate) connections: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListConnectionsOutputBuilder {
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
     pub fn connections(mut self, input: crate::types::Connection) -> Self {
         let mut v = self.connections.unwrap_or_default();
-        v.push(input);
-        self.connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
-        self.connections = input;
-        self
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>) -> Self {
+        self.connections = input; self
     }
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Connection>> {
         &self.connections
     }
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
@@ -69,28 +69,30 @@ impl ListConnectionsOutputBuilder {
     }
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput).
     pub fn build(self) -> crate::operation::list_connections::ListConnectionsOutput {
         crate::operation::list_connections::ListConnectionsOutput {
-            connections: self.connections,
-            next_token: self.next_token,
+            connections: self.connections
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserProfileInput {
+pub struct UpdateUserProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user whose user profile is to be updated.</p>
@@ -12,21 +12,21 @@ pub struct UpdateUserProfileInput {
     /// <p>The status of the user profile that are to be updated.</p>
     pub status: ::std::option::Option<crate::types::UserProfileStatus>,
 }
-impl UpdateUserProfileInput {
+impl  UpdateUserProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the user whose user profile is to be updated.</p>
-    pub fn user_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn user_identifier(&self) -> ::std::option::Option<& str> {
         self.user_identifier.as_deref()
     }
     /// <p>The type of the user profile that are to be updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserProfileType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserProfileType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the user profile that are to be updated.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UserProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UserProfileStatus> {
         self.status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The identifier of the user whose user profile is to be updated.</p>
     pub fn set_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_identifier = input;
-        self
+        self.user_identifier = input; self
     }
     /// <p>The identifier of the user whose user profile is to be updated.</p>
     pub fn get_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The type of the user profile that are to be updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserProfileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the user profile that are to be updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserProfileType> {
@@ -99,22 +96,26 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The status of the user profile that are to be updated.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the user profile that are to be updated.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserProfileStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileInput {
-            domain_identifier: self.domain_identifier,
-            user_identifier: self.user_identifier,
-            r#type: self.r#type,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_user_profile::UpdateUserProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                user_identifier: self.user_identifier
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

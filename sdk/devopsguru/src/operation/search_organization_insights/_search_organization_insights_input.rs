@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchOrganizationInsightsInput {
+pub struct SearchOrganizationInsightsInput  {
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A time range used to specify when the behavior of an insight or anomaly started.</p>
     pub start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     /// <p>A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
@@ -16,19 +16,20 @@ pub struct SearchOrganizationInsightsInput {
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub r#type: ::std::option::Option<crate::types::InsightType>,
 }
-impl SearchOrganizationInsightsInput {
+impl  SearchOrganizationInsightsInput  {
     /// <p>The ID of the Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A time range used to specify when the behavior of an insight or anomaly started.</p>
-    pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::StartTimeRange> {
+    pub fn start_time_range(&self) -> ::std::option::Option<& crate::types::StartTimeRange> {
         self.start_time_range.as_ref()
     }
     /// <p>A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::SearchOrganizationInsightsFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::SearchOrganizationInsightsFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -36,11 +37,11 @@ impl SearchOrganizationInsightsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InsightType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::InsightType> {
         self.r#type.as_ref()
     }
 }
@@ -55,7 +56,7 @@ impl SearchOrganizationInsightsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchOrganizationInsightsInputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchOrganizationInsightsFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,17 +71,16 @@ impl SearchOrganizationInsightsInputBuilder {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// <p>A time range used to specify when the behavior of an insight or anomaly started.</p>
@@ -91,8 +91,7 @@ impl SearchOrganizationInsightsInputBuilder {
     }
     /// <p>A time range used to specify when the behavior of an insight or anomaly started.</p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
-        self.start_time_range = input;
-        self
+        self.start_time_range = input; self
     }
     /// <p>A time range used to specify when the behavior of an insight or anomaly started.</p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
@@ -105,8 +104,7 @@ impl SearchOrganizationInsightsInputBuilder {
     }
     /// <p>A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchOrganizationInsightsFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchOrganizationInsightsFilters> {
@@ -119,8 +117,7 @@ impl SearchOrganizationInsightsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -133,8 +130,7 @@ impl SearchOrganizationInsightsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,27 +144,30 @@ impl SearchOrganizationInsightsInputBuilder {
     }
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`SearchOrganizationInsightsInput`](crate::operation::search_organization_insights::SearchOrganizationInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_organization_insights::SearchOrganizationInsightsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_organization_insights::SearchOrganizationInsightsInput {
-            account_ids: self.account_ids,
-            start_time_range: self.start_time_range,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_organization_insights::SearchOrganizationInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_organization_insights::SearchOrganizationInsightsInput {
+                account_ids: self.account_ids
+                ,
+                start_time_range: self.start_time_range
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

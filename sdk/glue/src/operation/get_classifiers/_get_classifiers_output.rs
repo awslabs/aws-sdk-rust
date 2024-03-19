@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClassifiersOutput {
+pub struct GetClassifiersOutput  {
     /// <p>The requested list of classifier objects.</p>
-    pub classifiers: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>,
+    pub classifiers: ::std::option::Option<::std::vec::Vec::<crate::types::Classifier>>,
     /// <p>A continuation token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetClassifiersOutput {
+impl  GetClassifiersOutput  {
     /// <p>The requested list of classifier objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifiers.is_none()`.
-    pub fn classifiers(&self) -> &[crate::types::Classifier] {
-        self.classifiers.as_deref().unwrap_or_default()
+    pub fn classifiers(&self) -> & [crate::types::Classifier] {
+        self.classifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A continuation token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetClassifiersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetClassifiersOutput {
     /// Creates a new builder-style object to manufacture [`GetClassifiersOutput`](crate::operation::get_classifiers::GetClassifiersOutput).
     pub fn builder() -> crate::operation::get_classifiers::builders::GetClassifiersOutputBuilder {
@@ -37,7 +38,7 @@ impl GetClassifiersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassifiersOutputBuilder {
-    pub(crate) classifiers: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>,
+    pub(crate) classifiers: ::std::option::Option<::std::vec::Vec::<crate::types::Classifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetClassifiersOutputBuilder {
     /// <p>The requested list of classifier objects.</p>
     pub fn classifiers(mut self, input: crate::types::Classifier) -> Self {
         let mut v = self.classifiers.unwrap_or_default();
-        v.push(input);
-        self.classifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.classifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested list of classifier objects.</p>
-    pub fn set_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>) -> Self {
-        self.classifiers = input;
-        self
+    pub fn set_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Classifier>>) -> Self {
+        self.classifiers = input; self
     }
     /// <p>The requested list of classifier objects.</p>
-    pub fn get_classifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Classifier>> {
+    pub fn get_classifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Classifier>> {
         &self.classifiers
     }
     /// <p>A continuation token.</p>
@@ -69,28 +69,30 @@ impl GetClassifiersOutputBuilder {
     }
     /// <p>A continuation token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetClassifiersOutput`](crate::operation::get_classifiers::GetClassifiersOutput).
     pub fn build(self) -> crate::operation::get_classifiers::GetClassifiersOutput {
         crate::operation::get_classifiers::GetClassifiersOutput {
-            classifiers: self.classifiers,
-            next_token: self.next_token,
+            classifiers: self.classifiers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

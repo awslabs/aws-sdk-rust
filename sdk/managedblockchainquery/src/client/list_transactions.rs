@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTransactions`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`address(impl Into<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::address) / [`set_address(Option<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_address):<br>required: **true**<br><p>The address (either a contract or wallet), whose transactions are being requested.</p><br>
     ///   - [`network(QueryNetwork)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::network) / [`set_network(Option<QueryNetwork>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_network):<br>required: **true**<br><p>The blockchain network where the transactions occurred.</p><br>
     ///   - [`from_blockchain_instant(BlockchainInstant)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::from_blockchain_instant) / [`set_from_blockchain_instant(Option<BlockchainInstant>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_from_blockchain_instant):<br>required: **false**<br><p>The container for time.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of transactions to list.</p> <p>Default: <code>100</code></p><note>  <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>  <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p> </note><br>
     ///   - [`confirmation_status_filter(ConfirmationStatusFilter)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::confirmation_status_filter) / [`set_confirmation_status_filter(Option<ConfirmationStatusFilter>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_confirmation_status_filter):<br>required: **false**<br><p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p><br>
-    /// - On success, responds with [`ListTransactionsOutput`](crate::operation::list_transactions::ListTransactionsOutput) with field(s):
+                            /// - On success, responds with [`ListTransactionsOutput`](crate::operation::list_transactions::ListTransactionsOutput) with field(s):
     ///   - [`transactions(Vec::<TransactionOutputItem>)`](crate::operation::list_transactions::ListTransactionsOutput::transactions): <p>The array of transactions returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transactions::ListTransactionsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListTransactionsError>`](crate::operation::list_transactions::ListTransactionsError)
+                            /// - On failure, responds with [`SdkError<ListTransactionsError>`](crate::operation::list_transactions::ListTransactionsError)
     pub fn list_transactions(&self) -> crate::operation::list_transactions::builders::ListTransactionsFluentBuilder {
-        crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

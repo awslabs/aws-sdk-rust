@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFleetsOutput {
+pub struct ListFleetsOutput  {
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of compute fleet names.</p>
-    pub fleets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub fleets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListFleetsOutput {
+impl  ListFleetsOutput  {
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of compute fleet names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleets.is_none()`.
-    pub fn fleets(&self) -> &[::std::string::String] {
-        self.fleets.as_deref().unwrap_or_default()
+    pub fn fleets(&self) -> & [::std::string::String] {
+        self.fleets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFleetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
     pub fn builder() -> crate::operation::list_fleets::builders::ListFleetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListFleetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) fleets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) fleets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListFleetsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListFleetsOutputBuilder {
     }
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListFleetsOutputBuilder {
     /// <p>The list of compute fleet names.</p>
     pub fn fleets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fleets.unwrap_or_default();
-        v.push(input.into());
-        self.fleets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.fleets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of compute fleet names.</p>
-    pub fn set_fleets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.fleets = input;
-        self
+    pub fn set_fleets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.fleets = input; self
     }
     /// <p>The list of compute fleet names.</p>
-    pub fn get_fleets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fleets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.fleets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
     pub fn build(self) -> crate::operation::list_fleets::ListFleetsOutput {
         crate::operation::list_fleets::ListFleetsOutput {
-            next_token: self.next_token,
-            fleets: self.fleets,
+            next_token: self.next_token
+            ,
+            fleets: self.fleets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

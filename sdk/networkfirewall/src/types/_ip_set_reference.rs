@@ -4,13 +4,13 @@
 /// <p>Network Firewall currently supports <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references.html#rule-groups-referencing-resource-groups">resource groups</a> in IP set references.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpSetReference {
+pub struct IpSetReference  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
     pub reference_arn: ::std::option::Option<::std::string::String>,
 }
-impl IpSetReference {
+impl  IpSetReference  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
-    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reference_arn(&self) -> ::std::option::Option<& str> {
         self.reference_arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl IpSetReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
     pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_arn = input;
-        self
+        self.reference_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
     pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl IpSetReferenceBuilder {
     /// Consumes the builder and constructs a [`IpSetReference`](crate::types::IpSetReference).
     pub fn build(self) -> crate::types::IpSetReference {
         crate::types::IpSetReference {
-            reference_arn: self.reference_arn,
+            reference_arn: self.reference_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateDrtRoleInput {}
+pub struct DisassociateDrtRoleInput  {
+}
 impl DisassociateDrtRoleInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleInput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleInput).
     pub fn builder() -> crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleInputBuilder {
@@ -13,13 +14,15 @@ impl DisassociateDrtRoleInput {
 /// A builder for [`DisassociateDrtRoleInput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisassociateDrtRoleInputBuilder {}
+pub struct DisassociateDrtRoleInputBuilder {
+}
 impl DisassociateDrtRoleInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateDrtRoleInput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_drt_role::DisassociateDrtRoleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_drt_role::DisassociateDrtRoleInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_drt_role::DisassociateDrtRoleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_drt_role::DisassociateDrtRoleInput {
+            }
+        )
     }
 }
+

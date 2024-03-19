@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignPayloadInput {
+pub struct SignPayloadInput  {
     /// <p>The name of the signing profile.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the profile owner.</p>
@@ -12,21 +12,21 @@ pub struct SignPayloadInput {
     /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub payload_format: ::std::option::Option<::std::string::String>,
 }
-impl SignPayloadInput {
+impl  SignPayloadInput  {
     /// <p>The name of the signing profile.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn profile_owner(&self) -> ::std::option::Option<&str> {
+    pub fn profile_owner(&self) -> ::std::option::Option<& str> {
         self.profile_owner.as_deref()
     }
     /// <p>Specifies the object digest (hash) to sign.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
-    pub fn payload_format(&self) -> ::std::option::Option<&str> {
+    pub fn payload_format(&self) -> ::std::option::Option<& str> {
         self.payload_format.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl SignPayloadInputBuilder {
     }
     /// <p>The name of the signing profile.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The name of the signing profile.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SignPayloadInputBuilder {
     }
     /// <p>The AWS account ID of the profile owner.</p>
     pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_owner = input;
-        self
+        self.profile_owner = input; self
     }
     /// <p>The AWS account ID of the profile owner.</p>
     pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl SignPayloadInputBuilder {
     }
     /// <p>Specifies the object digest (hash) to sign.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>Specifies the object digest (hash) to sign.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -99,8 +96,7 @@ impl SignPayloadInputBuilder {
     }
     /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn set_payload_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_format = input;
-        self
+        self.payload_format = input; self
     }
     /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn get_payload_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,11 +104,18 @@ impl SignPayloadInputBuilder {
     }
     /// Consumes the builder and constructs a [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::sign_payload::SignPayloadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::sign_payload::SignPayloadInput {
-            profile_name: self.profile_name,
-            profile_owner: self.profile_owner,
-            payload: self.payload,
-            payload_format: self.payload_format,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::sign_payload::SignPayloadInput {
+                profile_name: self.profile_name
+                ,
+                profile_owner: self.profile_owner
+                ,
+                payload: self.payload
+                ,
+                payload_format: self.payload_format
+                ,
+            }
+        )
     }
 }
+

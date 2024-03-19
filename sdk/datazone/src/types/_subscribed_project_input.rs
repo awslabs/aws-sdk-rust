@@ -3,13 +3,13 @@
 /// <p>The project that is to be given a subscription grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscribedProjectInput {
+pub struct SubscribedProjectInput  {
     /// <p>The identifier of the project that is to be given a subscription grant.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl SubscribedProjectInput {
+impl  SubscribedProjectInput  {
     /// <p>The identifier of the project that is to be given a subscription grant.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SubscribedProjectInputBuilder {
     }
     /// <p>The identifier of the project that is to be given a subscription grant.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the project that is to be given a subscription grant.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl SubscribedProjectInputBuilder {
     }
     /// Consumes the builder and constructs a [`SubscribedProjectInput`](crate::types::SubscribedProjectInput).
     pub fn build(self) -> crate::types::SubscribedProjectInput {
-        crate::types::SubscribedProjectInput { identifier: self.identifier }
+        crate::types::SubscribedProjectInput {
+            identifier: self.identifier
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMetadataTransferJobOutput {
+pub struct CancelMetadataTransferJobOutput  {
     /// <p>The metadata transfer job Id.</p>
     pub metadata_transfer_job_id: ::std::string::String,
     /// <p>The metadata transfer job ARN.</p>
@@ -15,35 +15,33 @@ pub struct CancelMetadataTransferJobOutput {
     pub progress: ::std::option::Option<crate::types::MetadataTransferJobProgress>,
     _request_id: Option<String>,
 }
-impl CancelMetadataTransferJobOutput {
+impl  CancelMetadataTransferJobOutput  {
     /// <p>The metadata transfer job Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_transfer_job_id.deref()
+    pub fn metadata_transfer_job_id(&self) -> & str {
+        use std::ops::Deref; self.metadata_transfer_job_id.deref()
     }
     /// <p>The metadata transfer job ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Used to update the DateTime property.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The metadata transfer job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobStatus> {
         self.status.as_ref()
     }
     /// <p>The metadata transfer job's progress.</p>
-    pub fn progress(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobProgress> {
+    pub fn progress(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobProgress> {
         self.progress.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelMetadataTransferJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelMetadataTransferJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelMetadataTransferJobOutput`](crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobOutput).
     pub fn builder() -> crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder {
@@ -71,8 +69,7 @@ impl CancelMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl CancelMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The metadata transfer job ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl CancelMetadataTransferJobOutputBuilder {
     }
     /// <p>Used to update the DateTime property.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>Used to update the DateTime property.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -116,8 +111,7 @@ impl CancelMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The metadata transfer job's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MetadataTransferJobStatus> {
@@ -130,55 +124,51 @@ impl CancelMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's progress.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobProgress>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The metadata transfer job's progress.</p>
     pub fn get_progress(&self) -> &::std::option::Option<crate::types::MetadataTransferJobProgress> {
         &self.progress
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelMetadataTransferJobOutput`](crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_transfer_job_id`](crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder::metadata_transfer_job_id)
     /// - [`arn`](crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder::arn)
     /// - [`update_date_time`](crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder::update_date_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobOutput {
-            metadata_transfer_job_id: self.metadata_transfer_job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_transfer_job_id",
-                    "metadata_transfer_job_id was not specified but it is required when building CancelMetadataTransferJobOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CancelMetadataTransferJobOutput",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building CancelMetadataTransferJobOutput",
-                )
-            })?,
-            status: self.status,
-            progress: self.progress,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobOutput {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_transfer_job_id", "metadata_transfer_job_id was not specified but it is required when building CancelMetadataTransferJobOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CancelMetadataTransferJobOutput")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building CancelMetadataTransferJobOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                progress: self.progress
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

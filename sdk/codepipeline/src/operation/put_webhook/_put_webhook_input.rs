@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutWebhookInput {
+pub struct PutWebhookInput  {
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
     pub webhook: ::std::option::Option<crate::types::WebhookDefinition>,
     /// <p>The tags for the webhook.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutWebhookInput {
+impl  PutWebhookInput  {
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
-    pub fn webhook(&self) -> ::std::option::Option<&crate::types::WebhookDefinition> {
+    pub fn webhook(&self) -> ::std::option::Option<& crate::types::WebhookDefinition> {
         self.webhook.as_ref()
     }
     /// <p>The tags for the webhook.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutWebhookInput {
@@ -32,7 +33,7 @@ impl PutWebhookInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutWebhookInputBuilder {
     pub(crate) webhook: ::std::option::Option<crate::types::WebhookDefinition>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutWebhookInputBuilder {
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
@@ -43,8 +44,7 @@ impl PutWebhookInputBuilder {
     }
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
     pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::WebhookDefinition>) -> Self {
-        self.webhook = input;
-        self
+        self.webhook = input; self
     }
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
     pub fn get_webhook(&self) -> &::std::option::Option<crate::types::WebhookDefinition> {
@@ -57,24 +57,28 @@ impl PutWebhookInputBuilder {
     /// <p>The tags for the webhook.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the webhook.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the webhook.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutWebhookInput`](crate::operation::put_webhook::PutWebhookInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_webhook::PutWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_webhook::PutWebhookInput {
-            webhook: self.webhook,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_webhook::PutWebhookInput {
+                webhook: self.webhook
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

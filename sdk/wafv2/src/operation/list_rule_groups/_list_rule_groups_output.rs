@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRuleGroupsOutput {
+pub struct ListRuleGroupsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>,
+    pub rule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSummary>>,
     _request_id: Option<String>,
 }
-impl ListRuleGroupsOutput {
+impl  ListRuleGroupsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_groups.is_none()`.
-    pub fn rule_groups(&self) -> &[crate::types::RuleGroupSummary] {
-        self.rule_groups.as_deref().unwrap_or_default()
+    pub fn rule_groups(&self) -> & [crate::types::RuleGroupSummary] {
+        self.rule_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRuleGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::operation::list_rule_groups::ListRuleGroupsOutput).
     pub fn builder() -> crate::operation::list_rule_groups::builders::ListRuleGroupsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListRuleGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>,
+    pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListRuleGroupsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListRuleGroupsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListRuleGroupsOutputBuilder {
     /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn rule_groups(mut self, input: crate::types::RuleGroupSummary) -> Self {
         let mut v = self.rule_groups.unwrap_or_default();
-        v.push(input);
-        self.rule_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>) -> Self {
-        self.rule_groups = input;
-        self
+    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSummary>>) -> Self {
+        self.rule_groups = input; self
     }
     /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>> {
+    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSummary>> {
         &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::operation::list_rule_groups::ListRuleGroupsOutput).
     pub fn build(self) -> crate::operation::list_rule_groups::ListRuleGroupsOutput {
         crate::operation::list_rule_groups::ListRuleGroupsOutput {
-            next_marker: self.next_marker,
-            rule_groups: self.rule_groups,
+            next_marker: self.next_marker
+            ,
+            rule_groups: self.rule_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

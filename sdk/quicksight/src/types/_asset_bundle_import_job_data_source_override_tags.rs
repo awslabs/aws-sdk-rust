@@ -3,22 +3,20 @@
 /// <p>An object that contains a list of tags to be assigned to a list of data source IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobDataSourceOverrideTags {
+pub struct AssetBundleImportJobDataSourceOverrideTags  {
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub data_source_ids: ::std::vec::Vec<::std::string::String>,
+    pub data_source_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of tags for the data source that you want to apply overrides to.</p>
-    pub tags: ::std::vec::Vec<crate::types::Tag>,
+    pub tags: ::std::vec::Vec::<crate::types::Tag>,
 }
-impl AssetBundleImportJobDataSourceOverrideTags {
+impl  AssetBundleImportJobDataSourceOverrideTags  {
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub fn data_source_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.data_source_ids.deref()
+    pub fn data_source_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.data_source_ids.deref()
     }
     /// <p>A list of tags for the data source that you want to apply overrides to.</p>
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        use std::ops::Deref;
-        self.tags.deref()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        use std::ops::Deref; self.tags.deref()
     }
 }
 impl AssetBundleImportJobDataSourceOverrideTags {
@@ -32,8 +30,8 @@ impl AssetBundleImportJobDataSourceOverrideTags {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSourceOverrideTagsBuilder {
-    pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AssetBundleImportJobDataSourceOverrideTagsBuilder {
     /// Appends an item to `data_source_ids`.
@@ -43,17 +41,16 @@ impl AssetBundleImportJobDataSourceOverrideTagsBuilder {
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
     pub fn data_source_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_source_ids.unwrap_or_default();
-        v.push(input.into());
-        self.data_source_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.data_source_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub fn set_data_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.data_source_ids = input;
-        self
+    pub fn set_data_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.data_source_ids = input; self
     }
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub fn get_data_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_source_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.data_source_ids
     }
     /// Appends an item to `tags`.
@@ -63,39 +60,37 @@ impl AssetBundleImportJobDataSourceOverrideTagsBuilder {
     /// <p>A list of tags for the data source that you want to apply overrides to.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags for the data source that you want to apply overrides to.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags for the data source that you want to apply overrides to.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSourceOverrideTags`](crate::types::AssetBundleImportJobDataSourceOverrideTags).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_ids`](crate::types::builders::AssetBundleImportJobDataSourceOverrideTagsBuilder::data_source_ids)
     /// - [`tags`](crate::types::builders::AssetBundleImportJobDataSourceOverrideTagsBuilder::tags)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSourceOverrideTags {
-            data_source_ids: self.data_source_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_ids",
-                    "data_source_ids was not specified but it is required when building AssetBundleImportJobDataSourceOverrideTags",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building AssetBundleImportJobDataSourceOverrideTags",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverrideTags, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobDataSourceOverrideTags {
+                data_source_ids: self.data_source_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_ids", "data_source_ids was not specified but it is required when building AssetBundleImportJobDataSourceOverrideTags")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building AssetBundleImportJobDataSourceOverrideTags")
+                    )?
+                ,
+            }
+        )
     }
 }
+

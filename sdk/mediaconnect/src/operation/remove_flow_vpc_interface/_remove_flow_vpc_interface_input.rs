@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFlowVpcInterfaceInput {
+pub struct RemoveFlowVpcInterfaceInput  {
     /// The flow that you want to remove a VPC interface from.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface that you want to remove.
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
-impl RemoveFlowVpcInterfaceInput {
+impl  RemoveFlowVpcInterfaceInput  {
     /// The flow that you want to remove a VPC interface from.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The name of the VPC interface that you want to remove.
-    pub fn vpc_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> ::std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RemoveFlowVpcInterfaceInputBuilder {
     }
     /// The flow that you want to remove a VPC interface from.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The flow that you want to remove a VPC interface from.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl RemoveFlowVpcInterfaceInputBuilder {
     }
     /// The name of the VPC interface that you want to remove.
     pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_interface_name = input;
-        self
+        self.vpc_interface_name = input; self
     }
     /// The name of the VPC interface that you want to remove.
     pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_interface_name
     }
     /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceInput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput {
-            flow_arn: self.flow_arn,
-            vpc_interface_name: self.vpc_interface_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput {
+                flow_arn: self.flow_arn
+                ,
+                vpc_interface_name: self.vpc_interface_name
+                ,
+            }
+        )
     }
 }
+

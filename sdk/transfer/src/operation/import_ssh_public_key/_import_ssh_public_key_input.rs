@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportSshPublicKeyInput {
+pub struct ImportSshPublicKeyInput  {
     /// <p>A system-assigned unique identifier for a server.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The public key portion of an SSH key pair.</p>
@@ -11,18 +11,18 @@ pub struct ImportSshPublicKeyInput {
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
 }
-impl ImportSshPublicKeyInput {
+impl  ImportSshPublicKeyInput  {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn ssh_public_key_body(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key_body(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key_body.as_deref()
     }
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ImportSshPublicKeyInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl ImportSshPublicKeyInputBuilder {
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_body = input;
-        self
+        self.ssh_public_key_body = input; self
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
@@ -83,22 +81,24 @@ impl ImportSshPublicKeyInputBuilder {
     }
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
     /// Consumes the builder and constructs a [`ImportSshPublicKeyInput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_ssh_public_key::ImportSshPublicKeyInput {
-            server_id: self.server_id,
-            ssh_public_key_body: self.ssh_public_key_body,
-            user_name: self.user_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_ssh_public_key::ImportSshPublicKeyInput {
+                server_id: self.server_id
+                ,
+                ssh_public_key_body: self.ssh_public_key_body
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

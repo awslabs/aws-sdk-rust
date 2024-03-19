@@ -3,19 +3,19 @@
 /// <p>The summary data of a media capture pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaCapturePipelineSummary {
+pub struct MediaCapturePipelineSummary  {
     /// <p>The ID of the media pipeline in the summary.</p>
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
-impl MediaCapturePipelineSummary {
+impl  MediaCapturePipelineSummary  {
     /// <p>The ID of the media pipeline in the summary.</p>
-    pub fn media_pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
-    pub fn media_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MediaCapturePipelineSummaryBuilder {
     }
     /// <p>The ID of the media pipeline in the summary.</p>
     pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_pipeline_id = input;
-        self
+        self.media_pipeline_id = input; self
     }
     /// <p>The ID of the media pipeline in the summary.</p>
     pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MediaCapturePipelineSummaryBuilder {
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_pipeline_arn = input;
-        self
+        self.media_pipeline_arn = input; self
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MediaCapturePipelineSummaryBuilder {
     /// Consumes the builder and constructs a [`MediaCapturePipelineSummary`](crate::types::MediaCapturePipelineSummary).
     pub fn build(self) -> crate::types::MediaCapturePipelineSummary {
         crate::types::MediaCapturePipelineSummary {
-            media_pipeline_id: self.media_pipeline_id,
-            media_pipeline_arn: self.media_pipeline_arn,
+            media_pipeline_id: self.media_pipeline_id
+            ,
+            media_pipeline_arn: self.media_pipeline_arn
+            ,
         }
     }
 }
+

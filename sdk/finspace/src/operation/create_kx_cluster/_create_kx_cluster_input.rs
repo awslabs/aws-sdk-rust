@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxClusterInput {
+pub struct CreateKxClusterInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
@@ -26,9 +26,9 @@ pub struct CreateKxClusterInput {
     /// <p>A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub tickerplant_log_configuration: ::std::option::Option<crate::types::TickerplantLogConfiguration>,
     /// <p>A list of databases that will be available for querying.</p>
-    pub databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
+    pub databases: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>,
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
-    pub cache_storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>>,
+    pub cache_storage_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxCacheStorageConfiguration>>,
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     /// <p>A description of the cluster.</p>
@@ -42,7 +42,7 @@ pub struct CreateKxClusterInput {
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    pub command_line_arguments: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>,
+    pub command_line_arguments: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>,
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub code: ::std::option::Option<crate::types::CodeConfiguration>,
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
@@ -60,21 +60,21 @@ pub struct CreateKxClusterInput {
     /// <p>The availability zone identifiers for the requested regions.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The structure that stores the configuration details of a scaling group.</p>
     pub scaling_group_configuration: ::std::option::Option<crate::types::KxScalingGroupConfiguration>,
 }
-impl CreateKxClusterInput {
+impl  CreateKxClusterInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique name for the cluster that you want to create.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
@@ -90,65 +90,68 @@ impl CreateKxClusterInput {
     /// <li>
     /// <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
-    pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::KxClusterType> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& crate::types::KxClusterType> {
         self.cluster_type.as_ref()
     }
     /// <p>A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
-    pub fn tickerplant_log_configuration(&self) -> ::std::option::Option<&crate::types::TickerplantLogConfiguration> {
+    pub fn tickerplant_log_configuration(&self) -> ::std::option::Option<& crate::types::TickerplantLogConfiguration> {
         self.tickerplant_log_configuration.as_ref()
     }
     /// <p>A list of databases that will be available for querying.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
-    pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
-        self.databases.as_deref().unwrap_or_default()
+    pub fn databases(&self) -> & [crate::types::KxDatabaseConfiguration] {
+        self.databases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_storage_configurations.is_none()`.
-    pub fn cache_storage_configurations(&self) -> &[crate::types::KxCacheStorageConfiguration] {
-        self.cache_storage_configurations.as_deref().unwrap_or_default()
+    pub fn cache_storage_configurations(&self) -> & [crate::types::KxCacheStorageConfiguration] {
+        self.cache_storage_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
-    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
+    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<& crate::types::AutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
     /// <p>A description of the cluster.</p>
-    pub fn cluster_description(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_description(&self) -> ::std::option::Option<& str> {
         self.cluster_description.as_deref()
     }
     /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
-    pub fn capacity_configuration(&self) -> ::std::option::Option<&crate::types::CapacityConfiguration> {
+    pub fn capacity_configuration(&self) -> ::std::option::Option<& crate::types::CapacityConfiguration> {
         self.capacity_configuration.as_ref()
     }
     /// <p>The version of FinSpace managed kdb to run.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
+    pub fn release_label(&self) -> ::std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>Configuration details about the network where the Privatelink endpoint of the cluster resides.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
-    pub fn initialization_script(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_script(&self) -> ::std::option::Option<& str> {
         self.initialization_script.as_deref()
     }
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_line_arguments.is_none()`.
-    pub fn command_line_arguments(&self) -> &[crate::types::KxCommandLineArgument] {
-        self.command_line_arguments.as_deref().unwrap_or_default()
+    pub fn command_line_arguments(&self) -> & [crate::types::KxCommandLineArgument] {
+        self.command_line_arguments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::CodeConfiguration> {
         self.code.as_ref()
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose <code>clusterType</code> as RDB. All the data written to this storage space is lost when the cluster node is restarted.</p>
-    pub fn savedown_storage_configuration(&self) -> ::std::option::Option<&crate::types::KxSavedownStorageConfiguration> {
+    pub fn savedown_storage_configuration(&self) -> ::std::option::Option<& crate::types::KxSavedownStorageConfiguration> {
         self.savedown_storage_configuration.as_ref()
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
@@ -158,19 +161,19 @@ impl CreateKxClusterInput {
     /// <li>
     /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The availability zone identifiers for the requested regions.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The structure that stores the configuration details of a scaling group.</p>
-    pub fn scaling_group_configuration(&self) -> ::std::option::Option<&crate::types::KxScalingGroupConfiguration> {
+    pub fn scaling_group_configuration(&self) -> ::std::option::Option<& crate::types::KxScalingGroupConfiguration> {
         self.scaling_group_configuration.as_ref()
     }
 }
@@ -190,21 +193,21 @@ pub struct CreateKxClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<crate::types::KxClusterType>,
     pub(crate) tickerplant_log_configuration: ::std::option::Option<crate::types::TickerplantLogConfiguration>,
-    pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
-    pub(crate) cache_storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>>,
+    pub(crate) databases: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>,
+    pub(crate) cache_storage_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxCacheStorageConfiguration>>,
     pub(crate) auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     pub(crate) cluster_description: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_configuration: ::std::option::Option<crate::types::CapacityConfiguration>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) initialization_script: ::std::option::Option<::std::string::String>,
-    pub(crate) command_line_arguments: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>,
+    pub(crate) command_line_arguments: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>,
     pub(crate) code: ::std::option::Option<crate::types::CodeConfiguration>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) savedown_storage_configuration: ::std::option::Option<crate::types::KxSavedownStorageConfiguration>,
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) scaling_group_configuration: ::std::option::Option<crate::types::KxScalingGroupConfiguration>,
 }
 impl CreateKxClusterInputBuilder {
@@ -215,8 +218,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +232,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +246,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>A unique name for the cluster that you want to create.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>A unique name for the cluster that you want to create.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +284,7 @@ impl CreateKxClusterInputBuilder {
     /// <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
@@ -310,8 +309,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub fn set_tickerplant_log_configuration(mut self, input: ::std::option::Option<crate::types::TickerplantLogConfiguration>) -> Self {
-        self.tickerplant_log_configuration = input;
-        self
+        self.tickerplant_log_configuration = input; self
     }
     /// <p>A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
     pub fn get_tickerplant_log_configuration(&self) -> &::std::option::Option<crate::types::TickerplantLogConfiguration> {
@@ -324,17 +322,16 @@ impl CreateKxClusterInputBuilder {
     /// <p>A list of databases that will be available for querying.</p>
     pub fn databases(mut self, input: crate::types::KxDatabaseConfiguration) -> Self {
         let mut v = self.databases.unwrap_or_default();
-        v.push(input);
-        self.databases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.databases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of databases that will be available for querying.</p>
-    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
-        self.databases = input;
-        self
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>) -> Self {
+        self.databases = input; self
     }
     /// <p>A list of databases that will be available for querying.</p>
-    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>> {
         &self.databases
     }
     /// Appends an item to `cache_storage_configurations`.
@@ -344,20 +341,16 @@ impl CreateKxClusterInputBuilder {
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
     pub fn cache_storage_configurations(mut self, input: crate::types::KxCacheStorageConfiguration) -> Self {
         let mut v = self.cache_storage_configurations.unwrap_or_default();
-        v.push(input);
-        self.cache_storage_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_storage_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
-    pub fn set_cache_storage_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>>,
-    ) -> Self {
-        self.cache_storage_configurations = input;
-        self
+    pub fn set_cache_storage_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxCacheStorageConfiguration>>) -> Self {
+        self.cache_storage_configurations = input; self
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
-    pub fn get_cache_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>> {
+    pub fn get_cache_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxCacheStorageConfiguration>> {
         &self.cache_storage_configurations
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
@@ -367,8 +360,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::AutoScalingConfiguration>) -> Self {
-        self.auto_scaling_configuration = input;
-        self
+        self.auto_scaling_configuration = input; self
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::AutoScalingConfiguration> {
@@ -381,8 +373,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>A description of the cluster.</p>
     pub fn set_cluster_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_description = input;
-        self
+        self.cluster_description = input; self
     }
     /// <p>A description of the cluster.</p>
     pub fn get_cluster_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -395,8 +386,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::CapacityConfiguration>) -> Self {
-        self.capacity_configuration = input;
-        self
+        self.capacity_configuration = input; self
     }
     /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::CapacityConfiguration> {
@@ -410,8 +400,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>The version of FinSpace managed kdb to run.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The version of FinSpace managed kdb to run.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -425,8 +414,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>Configuration details about the network where the Privatelink endpoint of the cluster resides.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>Configuration details about the network where the Privatelink endpoint of the cluster resides.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
@@ -439,8 +427,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn set_initialization_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_script = input;
-        self
+        self.initialization_script = input; self
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn get_initialization_script(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,17 +440,16 @@ impl CreateKxClusterInputBuilder {
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
     pub fn command_line_arguments(mut self, input: crate::types::KxCommandLineArgument) -> Self {
         let mut v = self.command_line_arguments.unwrap_or_default();
-        v.push(input);
-        self.command_line_arguments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.command_line_arguments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>) -> Self {
-        self.command_line_arguments = input;
-        self
+    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>) -> Self {
+        self.command_line_arguments = input; self
     }
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
+    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>> {
         &self.command_line_arguments
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
@@ -473,8 +459,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::CodeConfiguration>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
@@ -487,8 +472,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -501,8 +485,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>The size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose <code>clusterType</code> as RDB. All the data written to this storage space is lost when the cluster node is restarted.</p>
     pub fn set_savedown_storage_configuration(mut self, input: ::std::option::Option<crate::types::KxSavedownStorageConfiguration>) -> Self {
-        self.savedown_storage_configuration = input;
-        self
+        self.savedown_storage_configuration = input; self
     }
     /// <p>The size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose <code>clusterType</code> as RDB. All the data written to this storage space is lost when the cluster node is restarted.</p>
     pub fn get_savedown_storage_configuration(&self) -> &::std::option::Option<crate::types::KxSavedownStorageConfiguration> {
@@ -528,8 +511,7 @@ impl CreateKxClusterInputBuilder {
     /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
@@ -548,8 +530,7 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -562,17 +543,16 @@ impl CreateKxClusterInputBuilder {
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The structure that stores the configuration details of a scaling group.</p>
@@ -582,39 +562,60 @@ impl CreateKxClusterInputBuilder {
     }
     /// <p>The structure that stores the configuration details of a scaling group.</p>
     pub fn set_scaling_group_configuration(mut self, input: ::std::option::Option<crate::types::KxScalingGroupConfiguration>) -> Self {
-        self.scaling_group_configuration = input;
-        self
+        self.scaling_group_configuration = input; self
     }
     /// <p>The structure that stores the configuration details of a scaling group.</p>
     pub fn get_scaling_group_configuration(&self) -> &::std::option::Option<crate::types::KxScalingGroupConfiguration> {
         &self.scaling_group_configuration
     }
     /// Consumes the builder and constructs a [`CreateKxClusterInput`](crate::operation::create_kx_cluster::CreateKxClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_kx_cluster::CreateKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_kx_cluster::CreateKxClusterInput {
-            client_token: self.client_token,
-            environment_id: self.environment_id,
-            cluster_name: self.cluster_name,
-            cluster_type: self.cluster_type,
-            tickerplant_log_configuration: self.tickerplant_log_configuration,
-            databases: self.databases,
-            cache_storage_configurations: self.cache_storage_configurations,
-            auto_scaling_configuration: self.auto_scaling_configuration,
-            cluster_description: self.cluster_description,
-            capacity_configuration: self.capacity_configuration,
-            release_label: self.release_label,
-            vpc_configuration: self.vpc_configuration,
-            initialization_script: self.initialization_script,
-            command_line_arguments: self.command_line_arguments,
-            code: self.code,
-            execution_role: self.execution_role,
-            savedown_storage_configuration: self.savedown_storage_configuration,
-            az_mode: self.az_mode,
-            availability_zone_id: self.availability_zone_id,
-            tags: self.tags,
-            scaling_group_configuration: self.scaling_group_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_kx_cluster::CreateKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_kx_cluster::CreateKxClusterInput {
+                client_token: self.client_token
+                ,
+                environment_id: self.environment_id
+                ,
+                cluster_name: self.cluster_name
+                ,
+                cluster_type: self.cluster_type
+                ,
+                tickerplant_log_configuration: self.tickerplant_log_configuration
+                ,
+                databases: self.databases
+                ,
+                cache_storage_configurations: self.cache_storage_configurations
+                ,
+                auto_scaling_configuration: self.auto_scaling_configuration
+                ,
+                cluster_description: self.cluster_description
+                ,
+                capacity_configuration: self.capacity_configuration
+                ,
+                release_label: self.release_label
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                initialization_script: self.initialization_script
+                ,
+                command_line_arguments: self.command_line_arguments
+                ,
+                code: self.code
+                ,
+                execution_role: self.execution_role
+                ,
+                savedown_storage_configuration: self.savedown_storage_configuration
+                ,
+                az_mode: self.az_mode
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                tags: self.tags
+                ,
+                scaling_group_configuration: self.scaling_group_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>This structure contains much of the configuration data for the app monitor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppMonitorConfiguration {
+pub struct AppMonitorConfiguration  {
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub excluded_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub included_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub included_pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
-    pub favorite_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub favorite_pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more data but also incurs more costs.</p>
     /// <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are sampled.</p>
     /// <p>If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.</p>
@@ -40,34 +40,37 @@ pub struct AppMonitorConfiguration {
     /// <li>
     /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
-    pub telemetries: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>,
+    pub telemetries: ::std::option::Option<::std::vec::Vec::<crate::types::Telemetry>>,
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub enable_x_ray: ::std::option::Option<bool>,
 }
-impl AppMonitorConfiguration {
+impl  AppMonitorConfiguration  {
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_pages.is_none()`.
-    pub fn excluded_pages(&self) -> &[::std::string::String] {
-        self.excluded_pages.as_deref().unwrap_or_default()
+    pub fn excluded_pages(&self) -> & [::std::string::String] {
+        self.excluded_pages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_pages.is_none()`.
-    pub fn included_pages(&self) -> &[::std::string::String] {
-        self.included_pages.as_deref().unwrap_or_default()
+    pub fn included_pages(&self) -> & [::std::string::String] {
+        self.included_pages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.favorite_pages.is_none()`.
-    pub fn favorite_pages(&self) -> &[::std::string::String] {
-        self.favorite_pages.as_deref().unwrap_or_default()
+    pub fn favorite_pages(&self) -> & [::std::string::String] {
+        self.favorite_pages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more data but also incurs more costs.</p>
     /// <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are sampled.</p>
@@ -85,7 +88,7 @@ impl AppMonitorConfiguration {
     /// <p>Make a separate <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p></li>
     /// </ul>
     /// </note>
-    pub fn guest_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn guest_role_arn(&self) -> ::std::option::Option<& str> {
         self.guest_role_arn.as_deref()
     }
     /// <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.</p>
@@ -101,10 +104,11 @@ impl AppMonitorConfiguration {
     /// <li>
     /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetries.is_none()`.
-    pub fn telemetries(&self) -> &[crate::types::Telemetry] {
-        self.telemetries.as_deref().unwrap_or_default()
+    pub fn telemetries(&self) -> & [crate::types::Telemetry] {
+        self.telemetries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn enable_x_ray(&self) -> ::std::option::Option<bool> {
@@ -123,13 +127,13 @@ impl AppMonitorConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppMonitorConfigurationBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) excluded_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) included_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) favorite_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) excluded_pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) included_pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) favorite_pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) session_sample_rate: ::std::option::Option<f64>,
     pub(crate) guest_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) allow_cookies: ::std::option::Option<bool>,
-    pub(crate) telemetries: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>,
+    pub(crate) telemetries: ::std::option::Option<::std::vec::Vec::<crate::types::Telemetry>>,
     pub(crate) enable_x_ray: ::std::option::Option<bool>,
 }
 impl AppMonitorConfigurationBuilder {
@@ -140,8 +144,7 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,19 +158,18 @@ impl AppMonitorConfigurationBuilder {
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub fn excluded_pages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_pages.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub fn set_excluded_pages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_pages = input;
-        self
+    pub fn set_excluded_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_pages = input; self
     }
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub fn get_excluded_pages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_pages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_pages
     }
     /// Appends an item to `included_pages`.
@@ -178,19 +180,18 @@ impl AppMonitorConfigurationBuilder {
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
     pub fn included_pages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.included_pages.unwrap_or_default();
-        v.push(input.into());
-        self.included_pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.included_pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub fn set_included_pages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.included_pages = input;
-        self
+    pub fn set_included_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.included_pages = input; self
     }
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub fn get_included_pages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_included_pages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.included_pages
     }
     /// Appends an item to `favorite_pages`.
@@ -200,17 +201,16 @@ impl AppMonitorConfigurationBuilder {
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
     pub fn favorite_pages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.favorite_pages.unwrap_or_default();
-        v.push(input.into());
-        self.favorite_pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.favorite_pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
-    pub fn set_favorite_pages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.favorite_pages = input;
-        self
+    pub fn set_favorite_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.favorite_pages = input; self
     }
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
-    pub fn get_favorite_pages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_favorite_pages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.favorite_pages
     }
     /// <p>Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more data but also incurs more costs.</p>
@@ -224,8 +224,7 @@ impl AppMonitorConfigurationBuilder {
     /// <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are sampled.</p>
     /// <p>If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.</p>
     pub fn set_session_sample_rate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.session_sample_rate = input;
-        self
+        self.session_sample_rate = input; self
     }
     /// <p>Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more data but also incurs more costs.</p>
     /// <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are sampled.</p>
@@ -258,8 +257,7 @@ impl AppMonitorConfigurationBuilder {
     /// </ul>
     /// </note>
     pub fn set_guest_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.guest_role_arn = input;
-        self
+        self.guest_role_arn = input; self
     }
     /// <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p><note>
     /// <p>It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this can happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new identity pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a> response because it is not stored by the service.</p>
@@ -281,8 +279,7 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.</p>
     pub fn set_allow_cookies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_cookies = input;
-        self
+        self.allow_cookies = input; self
     }
     /// <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.</p>
     pub fn get_allow_cookies(&self) -> &::std::option::Option<bool> {
@@ -303,9 +300,9 @@ impl AppMonitorConfigurationBuilder {
     /// </ul>
     pub fn telemetries(mut self, input: crate::types::Telemetry) -> Self {
         let mut v = self.telemetries.unwrap_or_default();
-        v.push(input);
-        self.telemetries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.telemetries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
@@ -316,9 +313,8 @@ impl AppMonitorConfigurationBuilder {
     /// <li>
     /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
-    pub fn set_telemetries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>) -> Self {
-        self.telemetries = input;
-        self
+    pub fn set_telemetries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Telemetry>>) -> Self {
+        self.telemetries = input; self
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
@@ -329,7 +325,7 @@ impl AppMonitorConfigurationBuilder {
     /// <li>
     /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
-    pub fn get_telemetries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Telemetry>> {
+    pub fn get_telemetries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Telemetry>> {
         &self.telemetries
     }
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
@@ -339,8 +335,7 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn set_enable_x_ray(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_x_ray = input;
-        self
+        self.enable_x_ray = input; self
     }
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
     pub fn get_enable_x_ray(&self) -> &::std::option::Option<bool> {
@@ -349,15 +344,26 @@ impl AppMonitorConfigurationBuilder {
     /// Consumes the builder and constructs a [`AppMonitorConfiguration`](crate::types::AppMonitorConfiguration).
     pub fn build(self) -> crate::types::AppMonitorConfiguration {
         crate::types::AppMonitorConfiguration {
-            identity_pool_id: self.identity_pool_id,
-            excluded_pages: self.excluded_pages,
-            included_pages: self.included_pages,
-            favorite_pages: self.favorite_pages,
-            session_sample_rate: self.session_sample_rate.unwrap_or_default(),
-            guest_role_arn: self.guest_role_arn,
-            allow_cookies: self.allow_cookies,
-            telemetries: self.telemetries,
-            enable_x_ray: self.enable_x_ray,
+            identity_pool_id: self.identity_pool_id
+            ,
+            excluded_pages: self.excluded_pages
+            ,
+            included_pages: self.included_pages
+            ,
+            favorite_pages: self.favorite_pages
+            ,
+            session_sample_rate: self.session_sample_rate
+                .unwrap_or_default()
+            ,
+            guest_role_arn: self.guest_role_arn
+            ,
+            allow_cookies: self.allow_cookies
+            ,
+            telemetries: self.telemetries
+            ,
+            enable_x_ray: self.enable_x_ray
+            ,
         }
     }
 }
+

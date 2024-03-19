@@ -5,48 +5,50 @@ pub use crate::operation::analyze_id::_analyze_id_input::AnalyzeIdInputBuilder;
 
 impl AnalyzeIdInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_id::AnalyzeIdOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::analyze_id::AnalyzeIDError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.analyze_id();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::analyze_id::AnalyzeIdOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::analyze_id::AnalyzeIDError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.analyze_id();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AnalyzeID`.
-///
+/// 
 /// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AnalyzeIDFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::analyze_id::builders::AnalyzeIdInputBuilder,
+                    inner: crate::operation::analyze_id::builders::AnalyzeIdInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
-impl crate::client::customize::internal::CustomizableSend<crate::operation::analyze_id::AnalyzeIdOutput, crate::operation::analyze_id::AnalyzeIDError>
-    for AnalyzeIDFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::operation::analyze_id::AnalyzeIdOutput, crate::operation::analyze_id::AnalyzeIDError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+impl
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::analyze_id::AnalyzeIdOutput,
+                    crate::operation::analyze_id::AnalyzeIDError,
+                > for AnalyzeIDFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::analyze_id::AnalyzeIdOutput,
+                        crate::operation::analyze_id::AnalyzeIDError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AnalyzeIDFluentBuilder {
     /// Creates a new `AnalyzeID`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -55,53 +57,44 @@ impl AnalyzeIDFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_id::AnalyzeIdOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::analyze_id::AnalyzeIDError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::analyze_id::AnalyzeID::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::analyze_id::AnalyzeID::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::analyze_id::AnalyzeIdOutput,
-        crate::operation::analyze_id::AnalyzeIDError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::analyze_id::AnalyzeIdOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::analyze_id::AnalyzeIDError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::analyze_id::AnalyzeID::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::analyze_id::AnalyzeID::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::analyze_id::AnalyzeIdOutput, crate::operation::analyze_id::AnalyzeIDError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `DocumentPages`.
     ///
     /// To override the contents of this collection use [`set_document_pages`](Self::set_document_pages).
@@ -112,12 +105,13 @@ impl AnalyzeIDFluentBuilder {
         self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn set_document_pages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
+    pub fn set_document_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Document>>) -> Self {
         self.inner = self.inner.set_document_pages(input);
         self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn get_document_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+    pub fn get_document_pages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Document>> {
         self.inner.get_document_pages()
     }
 }
+

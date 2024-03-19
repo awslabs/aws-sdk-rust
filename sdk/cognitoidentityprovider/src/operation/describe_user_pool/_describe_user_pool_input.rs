@@ -3,13 +3,13 @@
 /// <p>Represents the request to describe the user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserPoolInput {
+pub struct DescribeUserPoolInput  {
     /// <p>The user pool ID for the user pool you want to describe.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeUserPoolInput {
+impl  DescribeUserPoolInput  {
     /// <p>The user pool ID for the user pool you want to describe.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DescribeUserPoolInputBuilder {
     }
     /// <p>The user pool ID for the user pool you want to describe.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool you want to describe.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
     /// Consumes the builder and constructs a [`DescribeUserPoolInput`](crate::operation::describe_user_pool::DescribeUserPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_user_pool::DescribeUserPoolInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_user_pool::DescribeUserPoolInput {
-            user_pool_id: self.user_pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user_pool::DescribeUserPoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_user_pool::DescribeUserPoolInput {
+                user_pool_id: self.user_pool_id
+                ,
+            }
+        )
     }
 }
+

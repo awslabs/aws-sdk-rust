@@ -3,7 +3,7 @@
 /// <p>An array of settings that describes characteristics of a network profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkProfile {
+pub struct NetworkProfile  {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile.</p>
@@ -29,21 +29,21 @@ pub struct NetworkProfile {
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub downlink_loss_percent: i32,
 }
-impl NetworkProfile {
+impl  NetworkProfile  {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the network profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the network profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of network profile. Valid values are listed here.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkProfileType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::NetworkProfileType> {
         self.r#type.as_ref()
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
@@ -111,8 +111,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The name of the network profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the network profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The description of the network profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the network profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The type of network profile. Valid values are listed here.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkProfileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of network profile. Valid values are listed here.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkProfileType> {
@@ -167,8 +163,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn set_uplink_bandwidth_bits(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.uplink_bandwidth_bits = input;
-        self
+        self.uplink_bandwidth_bits = input; self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn get_uplink_bandwidth_bits(&self) -> &::std::option::Option<i64> {
@@ -181,8 +176,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn set_downlink_bandwidth_bits(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.downlink_bandwidth_bits = input;
-        self
+        self.downlink_bandwidth_bits = input; self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn get_downlink_bandwidth_bits(&self) -> &::std::option::Option<i64> {
@@ -195,8 +189,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn set_uplink_delay_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.uplink_delay_ms = input;
-        self
+        self.uplink_delay_ms = input; self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn get_uplink_delay_ms(&self) -> &::std::option::Option<i64> {
@@ -209,8 +202,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn set_downlink_delay_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.downlink_delay_ms = input;
-        self
+        self.downlink_delay_ms = input; self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn get_downlink_delay_ms(&self) -> &::std::option::Option<i64> {
@@ -223,8 +215,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn set_uplink_jitter_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.uplink_jitter_ms = input;
-        self
+        self.uplink_jitter_ms = input; self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn get_uplink_jitter_ms(&self) -> &::std::option::Option<i64> {
@@ -237,8 +228,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn set_downlink_jitter_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.downlink_jitter_ms = input;
-        self
+        self.downlink_jitter_ms = input; self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn get_downlink_jitter_ms(&self) -> &::std::option::Option<i64> {
@@ -251,8 +241,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn set_uplink_loss_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.uplink_loss_percent = input;
-        self
+        self.uplink_loss_percent = input; self
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn get_uplink_loss_percent(&self) -> &::std::option::Option<i32> {
@@ -265,8 +254,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub fn set_downlink_loss_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.downlink_loss_percent = input;
-        self
+        self.downlink_loss_percent = input; self
     }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub fn get_downlink_loss_percent(&self) -> &::std::option::Option<i32> {
@@ -275,18 +263,33 @@ impl NetworkProfileBuilder {
     /// Consumes the builder and constructs a [`NetworkProfile`](crate::types::NetworkProfile).
     pub fn build(self) -> crate::types::NetworkProfile {
         crate::types::NetworkProfile {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            uplink_bandwidth_bits: self.uplink_bandwidth_bits,
-            downlink_bandwidth_bits: self.downlink_bandwidth_bits,
-            uplink_delay_ms: self.uplink_delay_ms,
-            downlink_delay_ms: self.downlink_delay_ms,
-            uplink_jitter_ms: self.uplink_jitter_ms,
-            downlink_jitter_ms: self.downlink_jitter_ms,
-            uplink_loss_percent: self.uplink_loss_percent.unwrap_or_default(),
-            downlink_loss_percent: self.downlink_loss_percent.unwrap_or_default(),
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            uplink_bandwidth_bits: self.uplink_bandwidth_bits
+            ,
+            downlink_bandwidth_bits: self.downlink_bandwidth_bits
+            ,
+            uplink_delay_ms: self.uplink_delay_ms
+            ,
+            downlink_delay_ms: self.downlink_delay_ms
+            ,
+            uplink_jitter_ms: self.uplink_jitter_ms
+            ,
+            downlink_jitter_ms: self.downlink_jitter_ms
+            ,
+            uplink_loss_percent: self.uplink_loss_percent
+                .unwrap_or_default()
+            ,
+            downlink_loss_percent: self.downlink_loss_percent
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

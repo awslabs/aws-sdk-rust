@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLicenseManagerReportGeneratorInput {
+pub struct DeleteLicenseManagerReportGeneratorInput  {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     pub license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLicenseManagerReportGeneratorInput {
+impl  DeleteLicenseManagerReportGeneratorInput  {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-    pub fn license_manager_report_generator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> ::std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteLicenseManagerReportGeneratorInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     pub fn set_license_manager_report_generator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_manager_report_generator_arn = input;
-        self
+        self.license_manager_report_generator_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     pub fn get_license_manager_report_generator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_manager_report_generator_arn
     }
     /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorInput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
-            },
+                license_manager_report_generator_arn: self.license_manager_report_generator_arn
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Segment {
+pub struct Segment  {
     /// <p>The duration (in seconds) of each segment. Enter a value equal to, or a multiple of, the input segment duration. If the value that you enter is different from the input segment duration, MediaPackage rounds segments to the nearest multiple of the input segment duration.</p>
     pub segment_duration_seconds: ::std::option::Option<i32>,
     /// <p>The name that describes the segment. The name is the base name of the segment used in all content manifests inside of the endpoint. You can't use spaces in the name.</p>
@@ -19,13 +19,13 @@ pub struct Segment {
     /// <p>The parameters for encrypting content.</p>
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
-impl Segment {
+impl  Segment  {
     /// <p>The duration (in seconds) of each segment. Enter a value equal to, or a multiple of, the input segment duration. If the value that you enter is different from the input segment duration, MediaPackage rounds segments to the nearest multiple of the input segment duration.</p>
     pub fn segment_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// <p>The name that describes the segment. The name is the base name of the segment used in all content manifests inside of the endpoint. You can't use spaces in the name.</p>
-    pub fn segment_name(&self) -> ::std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<& str> {
         self.segment_name.as_deref()
     }
     /// <p>When selected, MediaPackage bundles all audio tracks in a rendition group. All other tracks in the stream can be used with any audio rendition from the group.</p>
@@ -41,11 +41,11 @@ impl Segment {
         self.ts_include_dvb_subtitles
     }
     /// <p>The SCTE configuration options in the segment settings.</p>
-    pub fn scte(&self) -> ::std::option::Option<&crate::types::Scte> {
+    pub fn scte(&self) -> ::std::option::Option<& crate::types::Scte> {
         self.scte.as_ref()
     }
     /// <p>The parameters for encrypting content.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl SegmentBuilder {
     }
     /// <p>The duration (in seconds) of each segment. Enter a value equal to, or a multiple of, the input segment duration. If the value that you enter is different from the input segment duration, MediaPackage rounds segments to the nearest multiple of the input segment duration.</p>
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segment_duration_seconds = input;
-        self
+        self.segment_duration_seconds = input; self
     }
     /// <p>The duration (in seconds) of each segment. Enter a value equal to, or a multiple of, the input segment duration. If the value that you enter is different from the input segment duration, MediaPackage rounds segments to the nearest multiple of the input segment duration.</p>
     pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
@@ -90,8 +89,7 @@ impl SegmentBuilder {
     }
     /// <p>The name that describes the segment. The name is the base name of the segment used in all content manifests inside of the endpoint. You can't use spaces in the name.</p>
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_name = input;
-        self
+        self.segment_name = input; self
     }
     /// <p>The name that describes the segment. The name is the base name of the segment used in all content manifests inside of the endpoint. You can't use spaces in the name.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl SegmentBuilder {
     }
     /// <p>When selected, MediaPackage bundles all audio tracks in a rendition group. All other tracks in the stream can be used with any audio rendition from the group.</p>
     pub fn set_ts_use_audio_rendition_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ts_use_audio_rendition_group = input;
-        self
+        self.ts_use_audio_rendition_group = input; self
     }
     /// <p>When selected, MediaPackage bundles all audio tracks in a rendition group. All other tracks in the stream can be used with any audio rendition from the group.</p>
     pub fn get_ts_use_audio_rendition_group(&self) -> &::std::option::Option<bool> {
@@ -118,8 +115,7 @@ impl SegmentBuilder {
     }
     /// <p>When selected, the stream set includes an additional I-frame only stream, along with the other tracks. If false, this extra stream is not included. MediaPackage generates an I-frame only stream from the first rendition in the manifest. The service inserts EXT-I-FRAMES-ONLY tags in the output manifest, and then generates and includes an I-frames only playlist in the stream. This playlist permits player functionality like fast forward and rewind.</p>
     pub fn set_include_iframe_only_streams(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_iframe_only_streams = input;
-        self
+        self.include_iframe_only_streams = input; self
     }
     /// <p>When selected, the stream set includes an additional I-frame only stream, along with the other tracks. If false, this extra stream is not included. MediaPackage generates an I-frame only stream from the first rendition in the manifest. The service inserts EXT-I-FRAMES-ONLY tags in the output manifest, and then generates and includes an I-frames only playlist in the stream. This playlist permits player functionality like fast forward and rewind.</p>
     pub fn get_include_iframe_only_streams(&self) -> &::std::option::Option<bool> {
@@ -132,8 +128,7 @@ impl SegmentBuilder {
     }
     /// <p>By default, MediaPackage excludes all digital video broadcasting (DVB) subtitles from the output. When selected, MediaPackage passes through DVB subtitles into the output.</p>
     pub fn set_ts_include_dvb_subtitles(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ts_include_dvb_subtitles = input;
-        self
+        self.ts_include_dvb_subtitles = input; self
     }
     /// <p>By default, MediaPackage excludes all digital video broadcasting (DVB) subtitles from the output. When selected, MediaPackage passes through DVB subtitles into the output.</p>
     pub fn get_ts_include_dvb_subtitles(&self) -> &::std::option::Option<bool> {
@@ -146,8 +141,7 @@ impl SegmentBuilder {
     }
     /// <p>The SCTE configuration options in the segment settings.</p>
     pub fn set_scte(mut self, input: ::std::option::Option<crate::types::Scte>) -> Self {
-        self.scte = input;
-        self
+        self.scte = input; self
     }
     /// <p>The SCTE configuration options in the segment settings.</p>
     pub fn get_scte(&self) -> &::std::option::Option<crate::types::Scte> {
@@ -160,8 +154,7 @@ impl SegmentBuilder {
     }
     /// <p>The parameters for encrypting content.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>The parameters for encrypting content.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -170,13 +163,21 @@ impl SegmentBuilder {
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     pub fn build(self) -> crate::types::Segment {
         crate::types::Segment {
-            segment_duration_seconds: self.segment_duration_seconds,
-            segment_name: self.segment_name,
-            ts_use_audio_rendition_group: self.ts_use_audio_rendition_group,
-            include_iframe_only_streams: self.include_iframe_only_streams,
-            ts_include_dvb_subtitles: self.ts_include_dvb_subtitles,
-            scte: self.scte,
-            encryption: self.encryption,
+            segment_duration_seconds: self.segment_duration_seconds
+            ,
+            segment_name: self.segment_name
+            ,
+            ts_use_audio_rendition_group: self.ts_use_audio_rendition_group
+            ,
+            include_iframe_only_streams: self.include_iframe_only_streams
+            ,
+            ts_include_dvb_subtitles: self.ts_include_dvb_subtitles
+            ,
+            scte: self.scte
+            ,
+            encryption: self.encryption
+            ,
         }
     }
 }
+

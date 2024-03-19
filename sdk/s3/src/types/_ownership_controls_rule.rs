@@ -3,7 +3,7 @@
 /// <p>The container element for an ownership control rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnershipControlsRule {
+pub struct OwnershipControlsRule  {
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -13,7 +13,7 @@ pub struct OwnershipControlsRule {
     /// </note>
     pub object_ownership: crate::types::ObjectOwnership,
 }
-impl OwnershipControlsRule {
+impl  OwnershipControlsRule  {
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -21,7 +21,7 @@ impl OwnershipControlsRule {
     /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
-    pub fn object_ownership(&self) -> &crate::types::ObjectOwnership {
+    pub fn object_ownership(&self) -> & crate::types::ObjectOwnership {
         &self.object_ownership
     }
 }
@@ -59,8 +59,7 @@ impl OwnershipControlsRuleBuilder {
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub fn set_object_ownership(mut self, input: ::std::option::Option<crate::types::ObjectOwnership>) -> Self {
-        self.object_ownership = input;
-        self
+        self.object_ownership = input; self
     }
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -76,13 +75,15 @@ impl OwnershipControlsRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_ownership`](crate::types::builders::OwnershipControlsRuleBuilder::object_ownership)
     pub fn build(self) -> ::std::result::Result<crate::types::OwnershipControlsRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OwnershipControlsRule {
-            object_ownership: self.object_ownership.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_ownership",
-                    "object_ownership was not specified but it is required when building OwnershipControlsRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OwnershipControlsRule {
+                object_ownership: self.object_ownership
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_ownership", "object_ownership was not specified but it is required when building OwnershipControlsRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

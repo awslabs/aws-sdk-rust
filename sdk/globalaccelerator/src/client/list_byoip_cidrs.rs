@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListByoipCidrs`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`ListByoipCidrsOutput`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput) with field(s):
+                            /// - On success, responds with [`ListByoipCidrsOutput`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput) with field(s):
     ///   - [`byoip_cidrs(Option<Vec::<ByoipCidr>>)`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput::byoip_cidrs): <p>Information about your address ranges.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListByoipCidrsError>`](crate::operation::list_byoip_cidrs::ListByoipCidrsError)
+                            /// - On failure, responds with [`SdkError<ListByoipCidrsError>`](crate::operation::list_byoip_cidrs::ListByoipCidrsError)
     pub fn list_byoip_cidrs(&self) -> crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder {
-        crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

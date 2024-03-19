@@ -5,55 +5,51 @@ pub use crate::operation::describe_reserved_node_offerings::_describe_reserved_n
 
 impl DescribeReservedNodeOfferingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_reserved_node_offerings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_reserved_node_offerings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeReservedNodeOfferings`.
-///
+/// 
 /// <p>Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed and recurring costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which reserve node offering you want to purchase. You then use the unique offering ID in you call to <code>PurchaseReservedNodeOffering</code> to reserve one or more nodes for your Amazon Redshift cluster.</p>
 /// <p>For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder,
+                    inner: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-    > for DescribeReservedNodeOfferingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
+                    crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+                > for DescribeReservedNodeOfferingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
+                        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeReservedNodeOfferingsFluentBuilder {
     /// Creates a new `DescribeReservedNodeOfferings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput, crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator {
-        crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator {
+                                crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for the offering.</p>
     pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_offering_id(input.into());
@@ -164,3 +151,4 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
         self.inner.get_marker()
     }
 }
+

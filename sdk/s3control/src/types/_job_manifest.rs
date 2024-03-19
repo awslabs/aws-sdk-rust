@@ -3,19 +3,19 @@
 /// <p>Contains the configuration information for a job's manifest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobManifest {
+pub struct JobManifest  {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
     pub spec: ::std::option::Option<crate::types::JobManifestSpec>,
     /// <p>Contains the information required to locate the specified job's manifest. Manifests can't be imported from directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
     pub location: ::std::option::Option<crate::types::JobManifestLocation>,
 }
-impl JobManifest {
+impl  JobManifest  {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::JobManifestSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::JobManifestSpec> {
         self.spec.as_ref()
     }
     /// <p>Contains the information required to locate the specified job's manifest. Manifests can't be imported from directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::JobManifestLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::JobManifestLocation> {
         self.location.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl JobManifestBuilder {
     }
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::JobManifestSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::JobManifestSpec> {
@@ -57,8 +56,7 @@ impl JobManifestBuilder {
     }
     /// <p>Contains the information required to locate the specified job's manifest. Manifests can't be imported from directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::JobManifestLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Contains the information required to locate the specified job's manifest. Manifests can't be imported from directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::JobManifestLocation> {
@@ -67,8 +65,11 @@ impl JobManifestBuilder {
     /// Consumes the builder and constructs a [`JobManifest`](crate::types::JobManifest).
     pub fn build(self) -> crate::types::JobManifest {
         crate::types::JobManifest {
-            spec: self.spec,
-            location: self.location,
+            spec: self.spec
+            ,
+            location: self.location
+            ,
         }
     }
 }
+

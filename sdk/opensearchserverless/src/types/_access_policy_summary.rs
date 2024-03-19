@@ -3,7 +3,7 @@
 /// <p>A summary of the data access policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPolicySummary {
+pub struct AccessPolicySummary  {
     /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the access policy.</p>
@@ -17,21 +17,21 @@ pub struct AccessPolicySummary {
     /// <p>The date and time when the collection was last modified.</p>
     pub last_modified_date: ::std::option::Option<i64>,
 }
-impl AccessPolicySummary {
+impl  AccessPolicySummary  {
     /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the access policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> ::std::option::Option<&str> {
+    pub fn policy_version(&self) -> ::std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the access policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Epoch time when the access policy was created.</p>
@@ -69,8 +69,7 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
@@ -83,8 +82,7 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The name of the access policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the access policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The version of the policy.</p>
     pub fn set_policy_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_version = input;
-        self
+        self.policy_version = input; self
     }
     /// <p>The version of the policy.</p>
     pub fn get_policy_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The description of the access policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the access policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The Epoch time when the access policy was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The Epoch time when the access policy was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<i64> {
@@ -139,8 +134,7 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The date and time when the collection was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time when the collection was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
@@ -149,12 +143,19 @@ impl AccessPolicySummaryBuilder {
     /// Consumes the builder and constructs a [`AccessPolicySummary`](crate::types::AccessPolicySummary).
     pub fn build(self) -> crate::types::AccessPolicySummary {
         crate::types::AccessPolicySummary {
-            r#type: self.r#type,
-            name: self.name,
-            policy_version: self.policy_version,
-            description: self.description,
-            created_date: self.created_date,
-            last_modified_date: self.last_modified_date,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            policy_version: self.policy_version
+            ,
+            description: self.description
+            ,
+            created_date: self.created_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

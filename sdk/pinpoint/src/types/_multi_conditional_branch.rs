@@ -3,19 +3,19 @@
 /// <p>Specifies a condition to evaluate for an activity path in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiConditionalBranch {
+pub struct MultiConditionalBranch  {
     /// <p>The condition to evaluate for the activity path.</p>
     pub condition: ::std::option::Option<crate::types::SimpleCondition>,
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     pub next_activity: ::std::option::Option<::std::string::String>,
 }
-impl MultiConditionalBranch {
+impl  MultiConditionalBranch  {
     /// <p>The condition to evaluate for the activity path.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::SimpleCondition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::SimpleCondition> {
         self.condition.as_ref()
     }
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
-    pub fn next_activity(&self) -> ::std::option::Option<&str> {
+    pub fn next_activity(&self) -> ::std::option::Option<& str> {
         self.next_activity.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MultiConditionalBranchBuilder {
     }
     /// <p>The condition to evaluate for the activity path.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::SimpleCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The condition to evaluate for the activity path.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::SimpleCondition> {
@@ -55,8 +54,7 @@ impl MultiConditionalBranchBuilder {
     }
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     pub fn set_next_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_activity = input;
-        self
+        self.next_activity = input; self
     }
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MultiConditionalBranchBuilder {
     /// Consumes the builder and constructs a [`MultiConditionalBranch`](crate::types::MultiConditionalBranch).
     pub fn build(self) -> crate::types::MultiConditionalBranch {
         crate::types::MultiConditionalBranch {
-            condition: self.condition,
-            next_activity: self.next_activity,
+            condition: self.condition
+            ,
+            next_activity: self.next_activity
+            ,
         }
     }
 }
+

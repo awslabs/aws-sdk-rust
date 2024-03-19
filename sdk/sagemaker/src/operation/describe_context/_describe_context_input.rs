@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContextInput {
+pub struct DescribeContextInput  {
     /// <p>The name of the context to describe.</p>
     pub context_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeContextInput {
+impl  DescribeContextInput  {
     /// <p>The name of the context to describe.</p>
-    pub fn context_name(&self) -> ::std::option::Option<&str> {
+    pub fn context_name(&self) -> ::std::option::Option<& str> {
         self.context_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeContextInputBuilder {
     }
     /// <p>The name of the context to describe.</p>
     pub fn set_context_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context_name = input;
-        self
+        self.context_name = input; self
     }
     /// <p>The name of the context to describe.</p>
     pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.context_name
     }
     /// Consumes the builder and constructs a [`DescribeContextInput`](crate::operation::describe_context::DescribeContextInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_context::DescribeContextInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_context::DescribeContextInput {
-            context_name: self.context_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_context::DescribeContextInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_context::DescribeContextInput {
+                context_name: self.context_name
+                ,
+            }
+        )
     }
 }
+

@@ -5,30 +5,32 @@
 /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CookieMatchPattern {
+pub struct CookieMatchPattern  {
     /// <p>Inspect all cookies.</p>
     pub all: ::std::option::Option<crate::types::All>,
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here.</p>
-    pub included_cookies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub included_cookies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here.</p>
-    pub excluded_cookies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_cookies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CookieMatchPattern {
+impl  CookieMatchPattern  {
     /// <p>Inspect all cookies.</p>
-    pub fn all(&self) -> ::std::option::Option<&crate::types::All> {
+    pub fn all(&self) -> ::std::option::Option<& crate::types::All> {
         self.all.as_ref()
     }
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_cookies.is_none()`.
-    pub fn included_cookies(&self) -> &[::std::string::String] {
-        self.included_cookies.as_deref().unwrap_or_default()
+    pub fn included_cookies(&self) -> & [::std::string::String] {
+        self.included_cookies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_cookies.is_none()`.
-    pub fn excluded_cookies(&self) -> &[::std::string::String] {
-        self.excluded_cookies.as_deref().unwrap_or_default()
+    pub fn excluded_cookies(&self) -> & [::std::string::String] {
+        self.excluded_cookies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CookieMatchPattern {
@@ -43,8 +45,8 @@ impl CookieMatchPattern {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CookieMatchPatternBuilder {
     pub(crate) all: ::std::option::Option<crate::types::All>,
-    pub(crate) included_cookies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) excluded_cookies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) included_cookies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) excluded_cookies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CookieMatchPatternBuilder {
     /// <p>Inspect all cookies.</p>
@@ -54,8 +56,7 @@ impl CookieMatchPatternBuilder {
     }
     /// <p>Inspect all cookies.</p>
     pub fn set_all(mut self, input: ::std::option::Option<crate::types::All>) -> Self {
-        self.all = input;
-        self
+        self.all = input; self
     }
     /// <p>Inspect all cookies.</p>
     pub fn get_all(&self) -> &::std::option::Option<crate::types::All> {
@@ -68,17 +69,16 @@ impl CookieMatchPatternBuilder {
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here.</p>
     pub fn included_cookies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.included_cookies.unwrap_or_default();
-        v.push(input.into());
-        self.included_cookies = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.included_cookies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here.</p>
-    pub fn set_included_cookies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.included_cookies = input;
-        self
+    pub fn set_included_cookies(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.included_cookies = input; self
     }
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here.</p>
-    pub fn get_included_cookies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_included_cookies(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.included_cookies
     }
     /// Appends an item to `excluded_cookies`.
@@ -88,25 +88,28 @@ impl CookieMatchPatternBuilder {
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here.</p>
     pub fn excluded_cookies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_cookies.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_cookies = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_cookies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here.</p>
-    pub fn set_excluded_cookies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_cookies = input;
-        self
+    pub fn set_excluded_cookies(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_cookies = input; self
     }
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here.</p>
-    pub fn get_excluded_cookies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_cookies(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_cookies
     }
     /// Consumes the builder and constructs a [`CookieMatchPattern`](crate::types::CookieMatchPattern).
     pub fn build(self) -> crate::types::CookieMatchPattern {
         crate::types::CookieMatchPattern {
-            all: self.all,
-            included_cookies: self.included_cookies,
-            excluded_cookies: self.excluded_cookies,
+            all: self.all
+            ,
+            included_cookies: self.included_cookies
+            ,
+            excluded_cookies: self.excluded_cookies
+            ,
         }
     }
 }
+

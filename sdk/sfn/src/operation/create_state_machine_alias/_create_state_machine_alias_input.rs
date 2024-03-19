@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateStateMachineAliasInput {
+pub struct CreateStateMachineAliasInput  {
     /// <p>A description for the state machine alias.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
+    pub routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>>,
 }
-impl CreateStateMachineAliasInput {
+impl  CreateStateMachineAliasInput  {
     /// <p>A description for the state machine alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
-    pub fn routing_configuration(&self) -> &[crate::types::RoutingConfigurationListItem] {
-        self.routing_configuration.as_deref().unwrap_or_default()
+    pub fn routing_configuration(&self) -> & [crate::types::RoutingConfigurationListItem] {
+        self.routing_configuration.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateStateMachineAliasInput {
+impl  ::std::fmt::Debug for CreateStateMachineAliasInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStateMachineAliasInput");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -50,7 +51,7 @@ impl CreateStateMachineAliasInput {
 pub struct CreateStateMachineAliasInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
+    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>>,
 }
 impl CreateStateMachineAliasInputBuilder {
     /// <p>A description for the state machine alias.</p>
@@ -60,8 +61,7 @@ impl CreateStateMachineAliasInputBuilder {
     }
     /// <p>A description for the state machine alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the state machine alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl CreateStateMachineAliasInputBuilder {
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
@@ -92,31 +91,30 @@ impl CreateStateMachineAliasInputBuilder {
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
     pub fn routing_configuration(mut self, input: crate::types::RoutingConfigurationListItem) -> Self {
         let mut v = self.routing_configuration.unwrap_or_default();
-        v.push(input);
-        self.routing_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routing_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>) -> Self {
-        self.routing_configuration = input;
-        self
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>>) -> Self {
+        self.routing_configuration = input; self
     }
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>> {
         &self.routing_configuration
     }
     /// Consumes the builder and constructs a [`CreateStateMachineAliasInput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_state_machine_alias::CreateStateMachineAliasInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_state_machine_alias::CreateStateMachineAliasInput {
-            description: self.description,
-            name: self.name,
-            routing_configuration: self.routing_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_state_machine_alias::CreateStateMachineAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasInput {
+                description: self.description
+                ,
+                name: self.name
+                ,
+                routing_configuration: self.routing_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateStateMachineAliasInputBuilder {
@@ -128,3 +126,4 @@ impl ::std::fmt::Debug for CreateStateMachineAliasInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Contains a <code>Bounce</code> object if the event type is <code>BOUNCE</code>. Contains a <code>Complaint</code> object if the event type is <code>COMPLAINT</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventDetails {
+pub struct EventDetails  {
     /// <p>Information about a <code>Bounce</code> event.</p>
     pub bounce: ::std::option::Option<crate::types::Bounce>,
     /// <p>Information about a <code>Complaint</code> event.</p>
     pub complaint: ::std::option::Option<crate::types::Complaint>,
 }
-impl EventDetails {
+impl  EventDetails  {
     /// <p>Information about a <code>Bounce</code> event.</p>
-    pub fn bounce(&self) -> ::std::option::Option<&crate::types::Bounce> {
+    pub fn bounce(&self) -> ::std::option::Option<& crate::types::Bounce> {
         self.bounce.as_ref()
     }
     /// <p>Information about a <code>Complaint</code> event.</p>
-    pub fn complaint(&self) -> ::std::option::Option<&crate::types::Complaint> {
+    pub fn complaint(&self) -> ::std::option::Option<& crate::types::Complaint> {
         self.complaint.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EventDetailsBuilder {
     }
     /// <p>Information about a <code>Bounce</code> event.</p>
     pub fn set_bounce(mut self, input: ::std::option::Option<crate::types::Bounce>) -> Self {
-        self.bounce = input;
-        self
+        self.bounce = input; self
     }
     /// <p>Information about a <code>Bounce</code> event.</p>
     pub fn get_bounce(&self) -> &::std::option::Option<crate::types::Bounce> {
@@ -55,8 +54,7 @@ impl EventDetailsBuilder {
     }
     /// <p>Information about a <code>Complaint</code> event.</p>
     pub fn set_complaint(mut self, input: ::std::option::Option<crate::types::Complaint>) -> Self {
-        self.complaint = input;
-        self
+        self.complaint = input; self
     }
     /// <p>Information about a <code>Complaint</code> event.</p>
     pub fn get_complaint(&self) -> &::std::option::Option<crate::types::Complaint> {
@@ -65,8 +63,11 @@ impl EventDetailsBuilder {
     /// Consumes the builder and constructs a [`EventDetails`](crate::types::EventDetails).
     pub fn build(self) -> crate::types::EventDetails {
         crate::types::EventDetails {
-            bounce: self.bounce,
-            complaint: self.complaint,
+            bounce: self.bounce
+            ,
+            complaint: self.complaint
+            ,
         }
     }
 }
+

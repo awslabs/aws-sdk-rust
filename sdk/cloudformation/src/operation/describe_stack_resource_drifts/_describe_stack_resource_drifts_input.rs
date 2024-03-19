@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackResourceDriftsInput {
+pub struct DescribeStackResourceDriftsInput  {
     /// <p>The name of the stack for which you want drift information.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
@@ -16,15 +16,15 @@ pub struct DescribeStackResourceDriftsInput {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>,
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeStackResourceDriftsInput {
+impl  DescribeStackResourceDriftsInput  {
     /// <p>The name of the stack for which you want drift information.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
@@ -38,13 +38,14 @@ impl DescribeStackResourceDriftsInput {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_resource_drift_status_filters.is_none()`.
-    pub fn stack_resource_drift_status_filters(&self) -> &[crate::types::StackResourceDriftStatus] {
-        self.stack_resource_drift_status_filters.as_deref().unwrap_or_default()
+    pub fn stack_resource_drift_status_filters(&self) -> & [crate::types::StackResourceDriftStatus] {
+        self.stack_resource_drift_status_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -64,7 +65,7 @@ impl DescribeStackResourceDriftsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
-    pub(crate) stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub(crate) stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -77,8 +78,7 @@ impl DescribeStackResourceDriftsInputBuilder {
     }
     /// <p>The name of the stack for which you want drift information.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack for which you want drift information.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,9 +101,9 @@ impl DescribeStackResourceDriftsInputBuilder {
     /// </ul>
     pub fn stack_resource_drift_status_filters(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         let mut v = self.stack_resource_drift_status_filters.unwrap_or_default();
-        v.push(input);
-        self.stack_resource_drift_status_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stack_resource_drift_status_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
     /// <ul>
@@ -116,12 +116,8 @@ impl DescribeStackResourceDriftsInputBuilder {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub fn set_stack_resource_drift_status_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
-    ) -> Self {
-        self.stack_resource_drift_status_filters = input;
-        self
+    pub fn set_stack_resource_drift_status_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>) -> Self {
+        self.stack_resource_drift_status_filters = input; self
     }
     /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
     /// <ul>
@@ -134,7 +130,7 @@ impl DescribeStackResourceDriftsInputBuilder {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub fn get_stack_resource_drift_status_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
+    pub fn get_stack_resource_drift_status_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>> {
         &self.stack_resource_drift_status_filters
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
@@ -144,8 +140,7 @@ impl DescribeStackResourceDriftsInputBuilder {
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,25 +153,26 @@ impl DescribeStackResourceDriftsInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeStackResourceDriftsInput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
-            stack_name: self.stack_name,
-            stack_resource_drift_status_filters: self.stack_resource_drift_status_filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
+                stack_name: self.stack_name
+                ,
+                stack_resource_drift_status_filters: self.stack_resource_drift_status_filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

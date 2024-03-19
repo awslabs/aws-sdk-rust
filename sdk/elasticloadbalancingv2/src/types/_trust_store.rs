@@ -3,7 +3,7 @@
 /// <p>Information about a trust store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustStore {
+pub struct TrustStore  {
     /// <p>The name of the trust store.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
@@ -15,17 +15,17 @@ pub struct TrustStore {
     /// <p>The number of revoked certificates in the trust store.</p>
     pub total_revoked_entries: ::std::option::Option<i64>,
 }
-impl TrustStore {
+impl  TrustStore  {
     /// <p>The name of the trust store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The current status of the trust store.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TrustStoreStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TrustStoreStatus> {
         self.status.as_ref()
     }
     /// <p>The number of ca certificates in the trust store.</p>
@@ -62,8 +62,7 @@ impl TrustStoreBuilder {
     }
     /// <p>The name of the trust store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trust store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl TrustStoreBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl TrustStoreBuilder {
     }
     /// <p>The current status of the trust store.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TrustStoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the trust store.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TrustStoreStatus> {
@@ -104,8 +101,7 @@ impl TrustStoreBuilder {
     }
     /// <p>The number of ca certificates in the trust store.</p>
     pub fn set_number_of_ca_certificates(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_ca_certificates = input;
-        self
+        self.number_of_ca_certificates = input; self
     }
     /// <p>The number of ca certificates in the trust store.</p>
     pub fn get_number_of_ca_certificates(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl TrustStoreBuilder {
     }
     /// <p>The number of revoked certificates in the trust store.</p>
     pub fn set_total_revoked_entries(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_revoked_entries = input;
-        self
+        self.total_revoked_entries = input; self
     }
     /// <p>The number of revoked certificates in the trust store.</p>
     pub fn get_total_revoked_entries(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,17 @@ impl TrustStoreBuilder {
     /// Consumes the builder and constructs a [`TrustStore`](crate::types::TrustStore).
     pub fn build(self) -> crate::types::TrustStore {
         crate::types::TrustStore {
-            name: self.name,
-            trust_store_arn: self.trust_store_arn,
-            status: self.status,
-            number_of_ca_certificates: self.number_of_ca_certificates,
-            total_revoked_entries: self.total_revoked_entries,
+            name: self.name
+            ,
+            trust_store_arn: self.trust_store_arn
+            ,
+            status: self.status
+            ,
+            number_of_ca_certificates: self.number_of_ca_certificates
+            ,
+            total_revoked_entries: self.total_revoked_entries
+            ,
         }
     }
 }
+

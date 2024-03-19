@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateSpaceInput {
+pub struct CreateSpaceInput  {
     /// <p>The name for the private re:Post. This must be unique in your account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The subdomain that you use to access your AWS re:Post Private private re:Post. All custom subdomains must be approved by AWS before use. In addition to your custom subdomain, all private re:Posts are issued an AWS generated subdomain for immediate use.</p>
@@ -14,41 +14,41 @@ pub struct CreateSpaceInput {
     /// <p>The AWS KMS key ARN that’s used for the AWS KMS encryption. If you don't provide a key, your data is encrypted by default with a key that AWS owns and manages for you.</p>
     pub user_kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags associated with the private re:Post.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateSpaceInput {
+impl  CreateSpaceInput  {
     /// <p>The name for the private re:Post. This must be unique in your account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The subdomain that you use to access your AWS re:Post Private private re:Post. All custom subdomains must be approved by AWS before use. In addition to your custom subdomain, all private re:Posts are issued an AWS generated subdomain for immediate use.</p>
-    pub fn subdomain(&self) -> ::std::option::Option<&str> {
+    pub fn subdomain(&self) -> ::std::option::Option<& str> {
         self.subdomain.as_deref()
     }
     /// <p>The pricing tier for the private re:Post.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::TierLevel> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::TierLevel> {
         self.tier.as_ref()
     }
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The AWS KMS key ARN that’s used for the AWS KMS encryption. If you don't provide a key, your data is encrypted by default with a key that AWS owns and manages for you.</p>
-    pub fn user_kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn user_kms_key(&self) -> ::std::option::Option<& str> {
         self.user_kms_key.as_deref()
     }
     /// <p>The list of tags associated with the private re:Post.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateSpaceInput {
+impl  ::std::fmt::Debug for CreateSpaceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSpaceInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -77,7 +77,7 @@ pub struct CreateSpaceInputBuilder {
     pub(crate) tier: ::std::option::Option<crate::types::TierLevel>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) user_kms_key: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSpaceInputBuilder {
@@ -89,8 +89,7 @@ impl CreateSpaceInputBuilder {
     }
     /// <p>The name for the private re:Post. This must be unique in your account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the private re:Post. This must be unique in your account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl CreateSpaceInputBuilder {
     }
     /// <p>The subdomain that you use to access your AWS re:Post Private private re:Post. All custom subdomains must be approved by AWS before use. In addition to your custom subdomain, all private re:Posts are issued an AWS generated subdomain for immediate use.</p>
     pub fn set_subdomain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdomain = input;
-        self
+        self.subdomain = input; self
     }
     /// <p>The subdomain that you use to access your AWS re:Post Private private re:Post. All custom subdomains must be approved by AWS before use. In addition to your custom subdomain, all private re:Posts are issued an AWS generated subdomain for immediate use.</p>
     pub fn get_subdomain(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl CreateSpaceInputBuilder {
     }
     /// <p>The pricing tier for the private re:Post.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::TierLevel>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The pricing tier for the private re:Post.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::TierLevel> {
@@ -133,8 +130,7 @@ impl CreateSpaceInputBuilder {
     }
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +143,7 @@ impl CreateSpaceInputBuilder {
     }
     /// <p>The AWS KMS key ARN that’s used for the AWS KMS encryption. If you don't provide a key, your data is encrypted by default with a key that AWS owns and manages for you.</p>
     pub fn set_user_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_kms_key = input;
-        self
+        self.user_kms_key = input; self
     }
     /// <p>The AWS KMS key ARN that’s used for the AWS KMS encryption. If you don't provide a key, your data is encrypted by default with a key that AWS owns and manages for you.</p>
     pub fn get_user_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,17 +156,16 @@ impl CreateSpaceInputBuilder {
     /// <p>The list of tags associated with the private re:Post.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tags associated with the private re:Post.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags associated with the private re:Post.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
@@ -181,8 +175,7 @@ impl CreateSpaceInputBuilder {
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,15 +183,24 @@ impl CreateSpaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_space::CreateSpaceInput {
-            name: self.name,
-            subdomain: self.subdomain,
-            tier: self.tier,
-            description: self.description,
-            user_kms_key: self.user_kms_key,
-            tags: self.tags,
-            role_arn: self.role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_space::CreateSpaceInput {
+                name: self.name
+                ,
+                subdomain: self.subdomain
+                ,
+                tier: self.tier
+                ,
+                description: self.description
+                ,
+                user_kms_key: self.user_kms_key
+                ,
+                tags: self.tags
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateSpaceInputBuilder {
@@ -214,3 +216,4 @@ impl ::std::fmt::Debug for CreateSpaceInputBuilder {
         formatter.finish()
     }
 }
+

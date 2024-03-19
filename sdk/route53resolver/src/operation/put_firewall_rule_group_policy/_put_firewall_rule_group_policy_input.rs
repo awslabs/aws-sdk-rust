@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFirewallRuleGroupPolicyInput {
+pub struct PutFirewallRuleGroupPolicyInput  {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
     pub firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
 }
-impl PutFirewallRuleGroupPolicyInput {
+impl  PutFirewallRuleGroupPolicyInput  {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-    pub fn firewall_rule_group_policy(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_rule_group_policy(&self) -> ::std::option::Option<& str> {
         self.firewall_rule_group_policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutFirewallRuleGroupPolicyInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl PutFirewallRuleGroupPolicyInputBuilder {
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
     pub fn set_firewall_rule_group_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_rule_group_policy = input;
-        self
+        self.firewall_rule_group_policy = input; self
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
     pub fn get_firewall_rule_group_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_policy
     }
     /// Consumes the builder and constructs a [`PutFirewallRuleGroupPolicyInput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput {
-            arn: self.arn,
-            firewall_rule_group_policy: self.firewall_rule_group_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput {
+                arn: self.arn
+                ,
+                firewall_rule_group_policy: self.firewall_rule_group_policy
+                ,
+            }
+        )
     }
 }
+

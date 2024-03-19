@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListComponentVersions`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::set_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per paginated request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
-    /// - On success, responds with [`ListComponentVersionsOutput`](crate::operation::list_component_versions::ListComponentVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListComponentVersionsOutput`](crate::operation::list_component_versions::ListComponentVersionsOutput) with field(s):
     ///   - [`component_versions(Option<Vec::<ComponentVersionListItem>>)`](crate::operation::list_component_versions::ListComponentVersionsOutput::component_versions): <p>A list of versions that exist for the component.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_versions::ListComponentVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListComponentVersionsError>`](crate::operation::list_component_versions::ListComponentVersionsError)
+                            /// - On failure, responds with [`SdkError<ListComponentVersionsError>`](crate::operation::list_component_versions::ListComponentVersionsError)
     pub fn list_component_versions(&self) -> crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder {
-        crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The parameters for PostgreSQL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PostgreSqlParameters {
+pub struct PostgreSqlParameters  {
     /// <p>Host.</p>
     pub host: ::std::string::String,
     /// <p>Port.</p>
@@ -11,20 +11,18 @@ pub struct PostgreSqlParameters {
     /// <p>Database.</p>
     pub database: ::std::string::String,
 }
-impl PostgreSqlParameters {
+impl  PostgreSqlParameters  {
     /// <p>Host.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>Port.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
 }
 impl PostgreSqlParameters {
@@ -51,8 +49,7 @@ impl PostgreSqlParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>Host.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl PostgreSqlParametersBuilder {
     }
     /// <p>Port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Port.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -81,8 +77,7 @@ impl PostgreSqlParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>Database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl PostgreSqlParametersBuilder {
     /// - [`port`](crate::types::builders::PostgreSqlParametersBuilder::port)
     /// - [`database`](crate::types::builders::PostgreSqlParametersBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::PostgreSqlParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PostgreSqlParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building PostgreSqlParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building PostgreSqlParameters",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building PostgreSqlParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PostgreSqlParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building PostgreSqlParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building PostgreSqlParameters")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building PostgreSqlParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

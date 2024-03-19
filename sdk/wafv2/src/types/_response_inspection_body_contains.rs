@@ -5,26 +5,24 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseInspectionBodyContains {
+pub struct ResponseInspectionBodyContains  {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
-    pub success_strings: ::std::vec::Vec<::std::string::String>,
+    pub success_strings: ::std::vec::Vec::<::std::string::String>,
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
-    pub failure_strings: ::std::vec::Vec<::std::string::String>,
+    pub failure_strings: ::std::vec::Vec::<::std::string::String>,
 }
-impl ResponseInspectionBodyContains {
+impl  ResponseInspectionBodyContains  {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
-    pub fn success_strings(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.success_strings.deref()
+    pub fn success_strings(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.success_strings.deref()
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
-    pub fn failure_strings(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.failure_strings.deref()
+    pub fn failure_strings(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.failure_strings.deref()
     }
 }
 impl ResponseInspectionBodyContains {
@@ -38,8 +36,8 @@ impl ResponseInspectionBodyContains {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseInspectionBodyContainsBuilder {
-    pub(crate) success_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) failure_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) success_strings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) failure_strings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResponseInspectionBodyContainsBuilder {
     /// Appends an item to `success_strings`.
@@ -50,19 +48,18 @@ impl ResponseInspectionBodyContainsBuilder {
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
     pub fn success_strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.success_strings.unwrap_or_default();
-        v.push(input.into());
-        self.success_strings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.success_strings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
-    pub fn set_success_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.success_strings = input;
-        self
+    pub fn set_success_strings(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.success_strings = input; self
     }
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
-    pub fn get_success_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_success_strings(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.success_strings
     }
     /// Appends an item to `failure_strings`.
@@ -73,19 +70,18 @@ impl ResponseInspectionBodyContainsBuilder {
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
     pub fn failure_strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_strings.unwrap_or_default();
-        v.push(input.into());
-        self.failure_strings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_strings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
-    pub fn set_failure_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_strings = input;
-        self
+    pub fn set_failure_strings(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_strings = input; self
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
-    pub fn get_failure_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_strings(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_strings
     }
     /// Consumes the builder and constructs a [`ResponseInspectionBodyContains`](crate::types::ResponseInspectionBodyContains).
@@ -93,19 +89,20 @@ impl ResponseInspectionBodyContainsBuilder {
     /// - [`success_strings`](crate::types::builders::ResponseInspectionBodyContainsBuilder::success_strings)
     /// - [`failure_strings`](crate::types::builders::ResponseInspectionBodyContainsBuilder::failure_strings)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionBodyContains, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseInspectionBodyContains {
-            success_strings: self.success_strings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "success_strings",
-                    "success_strings was not specified but it is required when building ResponseInspectionBodyContains",
-                )
-            })?,
-            failure_strings: self.failure_strings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failure_strings",
-                    "failure_strings was not specified but it is required when building ResponseInspectionBodyContains",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseInspectionBodyContains {
+                success_strings: self.success_strings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("success_strings", "success_strings was not specified but it is required when building ResponseInspectionBodyContains")
+                    )?
+                ,
+                failure_strings: self.failure_strings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failure_strings", "failure_strings was not specified but it is required when building ResponseInspectionBodyContains")
+                    )?
+                ,
+            }
+        )
     }
 }
+

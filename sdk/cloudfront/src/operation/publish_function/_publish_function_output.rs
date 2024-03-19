@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishFunctionOutput {
+pub struct PublishFunctionOutput  {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     pub function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     _request_id: Option<String>,
 }
-impl PublishFunctionOutput {
+impl  PublishFunctionOutput  {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
-    pub fn function_summary(&self) -> ::std::option::Option<&crate::types::FunctionSummary> {
+    pub fn function_summary(&self) -> ::std::option::Option<& crate::types::FunctionSummary> {
         self.function_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PublishFunctionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishFunctionOutput {
     /// Creates a new builder-style object to manufacture [`PublishFunctionOutput`](crate::operation::publish_function::PublishFunctionOutput).
     pub fn builder() -> crate::operation::publish_function::builders::PublishFunctionOutputBuilder {
@@ -40,27 +40,28 @@ impl PublishFunctionOutputBuilder {
     }
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     pub fn set_function_summary(mut self, input: ::std::option::Option<crate::types::FunctionSummary>) -> Self {
-        self.function_summary = input;
-        self
+        self.function_summary = input; self
     }
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
     pub fn get_function_summary(&self) -> &::std::option::Option<crate::types::FunctionSummary> {
         &self.function_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishFunctionOutput`](crate::operation::publish_function::PublishFunctionOutput).
     pub fn build(self) -> crate::operation::publish_function::PublishFunctionOutput {
         crate::operation::publish_function::PublishFunctionOutput {
-            function_summary: self.function_summary,
+            function_summary: self.function_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplateSteps`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`template_id(impl Into<String>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::set_template_id):<br>required: **true**<br><p>The ID of the template.</p><br>
     ///   - [`step_group_id(impl Into<String>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::set_step_group_id):<br>required: **true**<br><p>The ID of the step group.</p><br>
-    /// - On success, responds with [`ListTemplateStepsOutput`](crate::operation::list_template_steps::ListTemplateStepsOutput) with field(s):
+                            /// - On success, responds with [`ListTemplateStepsOutput`](crate::operation::list_template_steps::ListTemplateStepsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_steps::ListTemplateStepsOutput::next_token): <p>The pagination token.</p>
     ///   - [`template_step_summary_list(Option<Vec::<TemplateStepSummary>>)`](crate::operation::list_template_steps::ListTemplateStepsOutput::template_step_summary_list): <p>The list of summaries of steps in a template.</p>
-    /// - On failure, responds with [`SdkError<ListTemplateStepsError>`](crate::operation::list_template_steps::ListTemplateStepsError)
+                            /// - On failure, responds with [`SdkError<ListTemplateStepsError>`](crate::operation::list_template_steps::ListTemplateStepsError)
     pub fn list_template_steps(&self) -> crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder {
-        crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

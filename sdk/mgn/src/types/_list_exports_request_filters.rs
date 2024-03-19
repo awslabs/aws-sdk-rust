@@ -3,16 +3,17 @@
 /// <p>List exports request filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExportsRequestFilters {
+pub struct ListExportsRequestFilters  {
     /// <p>List exports request filters export ids.</p>
-    pub export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub export_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListExportsRequestFilters {
+impl  ListExportsRequestFilters  {
     /// <p>List exports request filters export ids.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_ids.is_none()`.
-    pub fn export_ids(&self) -> &[::std::string::String] {
-        self.export_ids.as_deref().unwrap_or_default()
+    pub fn export_ids(&self) -> & [::std::string::String] {
+        self.export_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListExportsRequestFilters {
@@ -26,7 +27,7 @@ impl ListExportsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExportsRequestFiltersBuilder {
-    pub(crate) export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) export_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListExportsRequestFiltersBuilder {
     /// Appends an item to `export_ids`.
@@ -36,21 +37,24 @@ impl ListExportsRequestFiltersBuilder {
     /// <p>List exports request filters export ids.</p>
     pub fn export_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.export_ids.unwrap_or_default();
-        v.push(input.into());
-        self.export_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.export_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List exports request filters export ids.</p>
-    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.export_ids = input;
-        self
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.export_ids = input; self
     }
     /// <p>List exports request filters export ids.</p>
-    pub fn get_export_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.export_ids
     }
     /// Consumes the builder and constructs a [`ListExportsRequestFilters`](crate::types::ListExportsRequestFilters).
     pub fn build(self) -> crate::types::ListExportsRequestFilters {
-        crate::types::ListExportsRequestFilters { export_ids: self.export_ids }
+        crate::types::ListExportsRequestFilters {
+            export_ids: self.export_ids
+            ,
+        }
     }
 }
+

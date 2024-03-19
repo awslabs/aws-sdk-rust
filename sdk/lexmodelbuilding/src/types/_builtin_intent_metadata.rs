@@ -3,22 +3,23 @@
 /// <p>Provides metadata for a built-in intent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuiltinIntentMetadata {
+pub struct BuiltinIntentMetadata  {
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub signature: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers for the locales that the intent supports.</p>
-    pub supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
+    pub supported_locales: ::std::option::Option<::std::vec::Vec::<crate::types::Locale>>,
 }
-impl BuiltinIntentMetadata {
+impl  BuiltinIntentMetadata  {
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn signature(&self) -> ::std::option::Option<&str> {
+    pub fn signature(&self) -> ::std::option::Option<& str> {
         self.signature.as_deref()
     }
     /// <p>A list of identifiers for the locales that the intent supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_locales.is_none()`.
-    pub fn supported_locales(&self) -> &[crate::types::Locale] {
-        self.supported_locales.as_deref().unwrap_or_default()
+    pub fn supported_locales(&self) -> & [crate::types::Locale] {
+        self.supported_locales.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BuiltinIntentMetadata {
@@ -33,7 +34,7 @@ impl BuiltinIntentMetadata {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuiltinIntentMetadataBuilder {
     pub(crate) signature: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
+    pub(crate) supported_locales: ::std::option::Option<::std::vec::Vec::<crate::types::Locale>>,
 }
 impl BuiltinIntentMetadataBuilder {
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
@@ -43,8 +44,7 @@ impl BuiltinIntentMetadataBuilder {
     }
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature = input;
-        self
+        self.signature = input; self
     }
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl BuiltinIntentMetadataBuilder {
     /// <p>A list of identifiers for the locales that the intent supports.</p>
     pub fn supported_locales(mut self, input: crate::types::Locale) -> Self {
         let mut v = self.supported_locales.unwrap_or_default();
-        v.push(input);
-        self.supported_locales = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_locales = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of identifiers for the locales that the intent supports.</p>
-    pub fn set_supported_locales(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>) -> Self {
-        self.supported_locales = input;
-        self
+    pub fn set_supported_locales(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Locale>>) -> Self {
+        self.supported_locales = input; self
     }
     /// <p>A list of identifiers for the locales that the intent supports.</p>
-    pub fn get_supported_locales(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
+    pub fn get_supported_locales(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Locale>> {
         &self.supported_locales
     }
     /// Consumes the builder and constructs a [`BuiltinIntentMetadata`](crate::types::BuiltinIntentMetadata).
     pub fn build(self) -> crate::types::BuiltinIntentMetadata {
         crate::types::BuiltinIntentMetadata {
-            signature: self.signature,
-            supported_locales: self.supported_locales,
+            signature: self.signature
+            ,
+            supported_locales: self.supported_locales
+            ,
         }
     }
 }
+

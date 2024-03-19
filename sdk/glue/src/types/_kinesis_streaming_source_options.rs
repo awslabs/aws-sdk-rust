@@ -3,7 +3,7 @@
 /// <p>Additional options for the Amazon Kinesis streaming data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamingSourceOptions {
+pub struct KinesisStreamingSourceOptions  {
     /// <p>The URL of the Kinesis endpoint.</p>
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kinesis data stream.</p>
@@ -48,26 +48,26 @@ pub struct KinesisStreamingSourceOptions {
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
     pub starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KinesisStreamingSourceOptions {
+impl  KinesisStreamingSourceOptions  {
     /// <p>The URL of the Kinesis endpoint.</p>
-    pub fn endpoint_url(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_url(&self) -> ::std::option::Option<& str> {
         self.endpoint_url.as_deref()
     }
     /// <p>The name of the Kinesis data stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>An optional classification.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>Specifies the delimiter character.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.</p>
     /// <p>Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue version 4.0 or later.</p>
-    pub fn starting_position(&self) -> ::std::option::Option<&crate::types::StartingPosition> {
+    pub fn starting_position(&self) -> ::std::option::Option<& crate::types::StartingPosition> {
         self.starting_position.as_ref()
     }
     /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
@@ -111,27 +111,27 @@ impl KinesisStreamingSourceOptions {
         self.avoid_empty_batches
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
-    pub fn role_session_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_session_name(&self) -> ::std::option::Option<& str> {
         self.role_session_name.as_deref()
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn add_record_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn add_record_timestamp(&self) -> ::std::option::Option<& str> {
         self.add_record_timestamp.as_deref()
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
-    pub fn emit_consumer_lag_metrics(&self) -> ::std::option::Option<&str> {
+    pub fn emit_consumer_lag_metrics(&self) -> ::std::option::Option<& str> {
         self.emit_consumer_lag_metrics.as_deref()
     }
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
-    pub fn starting_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn starting_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.starting_timestamp.as_ref()
     }
 }
@@ -176,8 +176,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The URL of the Kinesis endpoint.</p>
     pub fn set_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_url = input;
-        self
+        self.endpoint_url = input; self
     }
     /// <p>The URL of the Kinesis endpoint.</p>
     pub fn get_endpoint_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +189,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The name of the Kinesis data stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the Kinesis data stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +202,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>An optional classification.</p>
     pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classification = input;
-        self
+        self.classification = input; self
     }
     /// <p>An optional classification.</p>
     pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +215,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>Specifies the delimiter character.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>Specifies the delimiter character.</p>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +230,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.</p>
     /// <p>Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue version 4.0 or later.</p>
     pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::StartingPosition>) -> Self {
-        self.starting_position = input;
-        self
+        self.starting_position = input; self
     }
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.</p>
     /// <p>Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue version 4.0 or later.</p>
@@ -249,8 +244,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
     pub fn set_max_fetch_time_in_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_fetch_time_in_ms = input;
-        self
+        self.max_fetch_time_in_ms = input; self
     }
     /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
     pub fn get_max_fetch_time_in_ms(&self) -> &::std::option::Option<i64> {
@@ -263,8 +257,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
     pub fn set_max_fetch_records_per_shard(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_fetch_records_per_shard = input;
-        self
+        self.max_fetch_records_per_shard = input; self
     }
     /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
     pub fn get_max_fetch_records_per_shard(&self) -> &::std::option::Option<i64> {
@@ -277,8 +270,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
     pub fn set_max_record_per_read(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_record_per_read = input;
-        self
+        self.max_record_per_read = input; self
     }
     /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
     pub fn get_max_record_per_read(&self) -> &::std::option::Option<i64> {
@@ -291,8 +283,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
     pub fn set_add_idle_time_between_reads(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.add_idle_time_between_reads = input;
-        self
+        self.add_idle_time_between_reads = input; self
     }
     /// <p>Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.</p>
     pub fn get_add_idle_time_between_reads(&self) -> &::std::option::Option<bool> {
@@ -305,8 +296,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
     pub fn set_idle_time_between_reads_in_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.idle_time_between_reads_in_ms = input;
-        self
+        self.idle_time_between_reads_in_ms = input; self
     }
     /// <p>The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.</p>
     pub fn get_idle_time_between_reads_in_ms(&self) -> &::std::option::Option<i64> {
@@ -319,8 +309,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
     pub fn set_describe_shard_interval(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.describe_shard_interval = input;
-        self
+        self.describe_shard_interval = input; self
     }
     /// <p>The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.</p>
     pub fn get_describe_shard_interval(&self) -> &::std::option::Option<i64> {
@@ -333,8 +322,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
     pub fn set_num_retries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_retries = input;
-        self
+        self.num_retries = input; self
     }
     /// <p>The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.</p>
     pub fn get_num_retries(&self) -> &::std::option::Option<i32> {
@@ -347,8 +335,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
     pub fn set_retry_interval_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.retry_interval_ms = input;
-        self
+        self.retry_interval_ms = input; self
     }
     /// <p>The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.</p>
     pub fn get_retry_interval_ms(&self) -> &::std::option::Option<i64> {
@@ -361,8 +348,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
     pub fn set_max_retry_interval_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_retry_interval_ms = input;
-        self
+        self.max_retry_interval_ms = input; self
     }
     /// <p>The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.</p>
     pub fn get_max_retry_interval_ms(&self) -> &::std::option::Option<i64> {
@@ -375,8 +361,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
     pub fn set_avoid_empty_batches(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.avoid_empty_batches = input;
-        self
+        self.avoid_empty_batches = input; self
     }
     /// <p>Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.</p>
     pub fn get_avoid_empty_batches(&self) -> &::std::option::Option<bool> {
@@ -389,8 +374,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -403,8 +387,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -417,8 +400,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
     pub fn set_role_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_session_name = input;
-        self
+        self.role_session_name = input; self
     }
     /// <p>An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.</p>
     pub fn get_role_session_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -431,8 +413,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     pub fn set_add_record_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.add_record_timestamp = input;
-        self
+        self.add_record_timestamp = input; self
     }
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     pub fn get_add_record_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -445,8 +426,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     pub fn set_emit_consumer_lag_metrics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.emit_consumer_lag_metrics = input;
-        self
+        self.emit_consumer_lag_metrics = input; self
     }
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     pub fn get_emit_consumer_lag_metrics(&self) -> &::std::option::Option<::std::string::String> {
@@ -459,8 +439,7 @@ impl KinesisStreamingSourceOptionsBuilder {
     }
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
     pub fn set_starting_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.starting_timestamp = input;
-        self
+        self.starting_timestamp = input; self
     }
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
     pub fn get_starting_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -469,27 +448,49 @@ impl KinesisStreamingSourceOptionsBuilder {
     /// Consumes the builder and constructs a [`KinesisStreamingSourceOptions`](crate::types::KinesisStreamingSourceOptions).
     pub fn build(self) -> crate::types::KinesisStreamingSourceOptions {
         crate::types::KinesisStreamingSourceOptions {
-            endpoint_url: self.endpoint_url,
-            stream_name: self.stream_name,
-            classification: self.classification,
-            delimiter: self.delimiter,
-            starting_position: self.starting_position,
-            max_fetch_time_in_ms: self.max_fetch_time_in_ms,
-            max_fetch_records_per_shard: self.max_fetch_records_per_shard,
-            max_record_per_read: self.max_record_per_read,
-            add_idle_time_between_reads: self.add_idle_time_between_reads,
-            idle_time_between_reads_in_ms: self.idle_time_between_reads_in_ms,
-            describe_shard_interval: self.describe_shard_interval,
-            num_retries: self.num_retries,
-            retry_interval_ms: self.retry_interval_ms,
-            max_retry_interval_ms: self.max_retry_interval_ms,
-            avoid_empty_batches: self.avoid_empty_batches,
-            stream_arn: self.stream_arn,
-            role_arn: self.role_arn,
-            role_session_name: self.role_session_name,
-            add_record_timestamp: self.add_record_timestamp,
-            emit_consumer_lag_metrics: self.emit_consumer_lag_metrics,
-            starting_timestamp: self.starting_timestamp,
+            endpoint_url: self.endpoint_url
+            ,
+            stream_name: self.stream_name
+            ,
+            classification: self.classification
+            ,
+            delimiter: self.delimiter
+            ,
+            starting_position: self.starting_position
+            ,
+            max_fetch_time_in_ms: self.max_fetch_time_in_ms
+            ,
+            max_fetch_records_per_shard: self.max_fetch_records_per_shard
+            ,
+            max_record_per_read: self.max_record_per_read
+            ,
+            add_idle_time_between_reads: self.add_idle_time_between_reads
+            ,
+            idle_time_between_reads_in_ms: self.idle_time_between_reads_in_ms
+            ,
+            describe_shard_interval: self.describe_shard_interval
+            ,
+            num_retries: self.num_retries
+            ,
+            retry_interval_ms: self.retry_interval_ms
+            ,
+            max_retry_interval_ms: self.max_retry_interval_ms
+            ,
+            avoid_empty_batches: self.avoid_empty_batches
+            ,
+            stream_arn: self.stream_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            role_session_name: self.role_session_name
+            ,
+            add_record_timestamp: self.add_record_timestamp
+            ,
+            emit_consumer_lag_metrics: self.emit_consumer_lag_metrics
+            ,
+            starting_timestamp: self.starting_timestamp
+            ,
         }
     }
 }
+

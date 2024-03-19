@@ -5,55 +5,51 @@ pub use crate::operation::put_profile_object_type::_put_profile_object_type_inpu
 
 impl PutProfileObjectTypeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_profile_object_type();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_profile_object_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutProfileObjectType`.
-///
+/// 
 /// <p>Defines a ProfileObjectType.</p>
 /// <p>To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"> TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutProfileObjectTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_profile_object_type::builders::PutProfileObjectTypeInputBuilder,
+                    inner: crate::operation::put_profile_object_type::builders::PutProfileObjectTypeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-    > for PutProfileObjectTypeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
+                    crate::operation::put_profile_object_type::PutProfileObjectTypeError,
+                > for PutProfileObjectTypeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
+                        crate::operation::put_profile_object_type::PutProfileObjectTypeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutProfileObjectTypeFluentBuilder {
     /// Creates a new `PutProfileObjectType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl PutProfileObjectTypeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_profile_object_type::PutProfileObjectType::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_profile_object_type::PutProfileObjectType::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        crate::operation::put_profile_object_type::PutProfileObjectTypeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_profile_object_type::PutProfileObjectTypeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_profile_object_type::PutProfileObjectType::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_profile_object_type::PutProfileObjectType::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_profile_object_type::PutProfileObjectTypeOutput, crate::operation::put_profile_object_type::PutProfileObjectTypeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -231,15 +218,12 @@ impl PutProfileObjectTypeFluentBuilder {
         self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>> {
         self.inner.get_fields()
     }
     /// Adds a key-value pair to `Keys`.
@@ -247,22 +231,17 @@ impl PutProfileObjectTypeFluentBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::ObjectTypeKey>) -> Self {
+    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::ObjectTypeKey>) -> Self {
         self.inner = self.inner.keys(k.into(), v);
         self
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>) -> Self {
         self.inner = self.inner.set_keys(input);
         self
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn get_keys(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>> {
         self.inner.get_keys()
     }
     /// Adds a key-value pair to `Tags`.
@@ -275,12 +254,13 @@ impl PutProfileObjectTypeFluentBuilder {
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }
+

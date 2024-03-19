@@ -3,7 +3,7 @@
 /// <p>Information about an S3 object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>The bucket containing the object.</p>
     pub bucket: ::std::string::String,
     /// <p>The key of the object.</p>
@@ -11,19 +11,17 @@ pub struct S3Object {
     /// <p>The etag of the object.</p>
     pub etag: ::std::option::Option<::std::string::String>,
 }
-impl S3Object {
+impl  S3Object  {
     /// <p>The bucket containing the object.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The key of the object.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The etag of the object.</p>
-    pub fn etag(&self) -> ::std::option::Option<&str> {
+    pub fn etag(&self) -> ::std::option::Option<& str> {
         self.etag.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl S3ObjectBuilder {
     }
     /// <p>The bucket containing the object.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The bucket containing the object.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl S3ObjectBuilder {
     }
     /// <p>The key of the object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl S3ObjectBuilder {
     }
     /// <p>The etag of the object.</p>
     pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.etag = input;
-        self
+        self.etag = input; self
     }
     /// <p>The etag of the object.</p>
     pub fn get_etag(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl S3ObjectBuilder {
     /// - [`bucket`](crate::types::builders::S3ObjectBuilder::bucket)
     /// - [`key`](crate::types::builders::S3ObjectBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Object, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Object {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3Object",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building S3Object",
-                )
-            })?,
-            etag: self.etag,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Object {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3Object")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3Object")
+                    )?
+                ,
+                etag: self.etag
+                ,
+            }
+        )
     }
 }
+

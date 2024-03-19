@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetUnhealthyNodeReplacementInput {
+pub struct SetUnhealthyNodeReplacementInput  {
     /// <p>The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the <code>RunJobFlow</code> or the <code>DescribeJobFlows</code> operations.</p>
-    pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>
     pub unhealthy_node_replacement: ::std::option::Option<bool>,
 }
-impl SetUnhealthyNodeReplacementInput {
+impl  SetUnhealthyNodeReplacementInput  {
     /// <p>The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the <code>RunJobFlow</code> or the <code>DescribeJobFlows</code> operations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
-    pub fn job_flow_ids(&self) -> &[::std::string::String] {
-        self.job_flow_ids.as_deref().unwrap_or_default()
+    pub fn job_flow_ids(&self) -> & [::std::string::String] {
+        self.job_flow_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>
     pub fn unhealthy_node_replacement(&self) -> ::std::option::Option<bool> {
@@ -31,7 +32,7 @@ impl SetUnhealthyNodeReplacementInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetUnhealthyNodeReplacementInputBuilder {
-    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) unhealthy_node_replacement: ::std::option::Option<bool>,
 }
 impl SetUnhealthyNodeReplacementInputBuilder {
@@ -42,17 +43,16 @@ impl SetUnhealthyNodeReplacementInputBuilder {
     /// <p>The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the <code>RunJobFlow</code> or the <code>DescribeJobFlows</code> operations.</p>
     pub fn job_flow_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_flow_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_flow_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the <code>RunJobFlow</code> or the <code>DescribeJobFlows</code> operations.</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_flow_ids = input;
-        self
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_flow_ids = input; self
     }
     /// <p>The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the <code>RunJobFlow</code> or the <code>DescribeJobFlows</code> operations.</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_flow_ids
     }
     /// <p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>
@@ -63,23 +63,22 @@ impl SetUnhealthyNodeReplacementInputBuilder {
     }
     /// <p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>
     pub fn set_unhealthy_node_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unhealthy_node_replacement = input;
-        self
+        self.unhealthy_node_replacement = input; self
     }
     /// <p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>
     pub fn get_unhealthy_node_replacement(&self) -> &::std::option::Option<bool> {
         &self.unhealthy_node_replacement
     }
     /// Consumes the builder and constructs a [`SetUnhealthyNodeReplacementInput`](crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementInput {
-            job_flow_ids: self.job_flow_ids,
-            unhealthy_node_replacement: self.unhealthy_node_replacement,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementInput {
+                job_flow_ids: self.job_flow_ids
+                ,
+                unhealthy_node_replacement: self.unhealthy_node_replacement
+                ,
+            }
+        )
     }
 }
+

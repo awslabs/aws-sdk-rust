@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRepositoriesForApprovalRuleTemplateInput {
+pub struct ListRepositoriesForApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -10,13 +10,13 @@ pub struct ListRepositoriesForApprovalRuleTemplateInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRepositoriesForApprovalRuleTemplateInput {
+impl  ListRepositoriesForApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
-    pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -26,8 +26,7 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
 }
 impl ListRepositoriesForApprovalRuleTemplateInput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateInput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput).
-    pub fn builder() -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder {
         crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
     }
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_name = input;
-        self
+        self.approval_rule_template_name = input; self
     }
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +61,7 @@ impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +74,24 @@ impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRepositoriesForApprovalRuleTemplateInput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput {
-                approval_rule_template_name: self.approval_rule_template_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

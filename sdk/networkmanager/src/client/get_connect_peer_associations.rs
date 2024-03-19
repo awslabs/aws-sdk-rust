@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetConnectPeerAssociations`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`connect_peer_ids(impl Into<String>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::connect_peer_ids) / [`set_connect_peer_ids(Option<Vec::<String>>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::set_connect_peer_ids):<br>required: **false**<br><p>The IDs of the Connect peers.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput) with field(s):
+                            /// - On success, responds with [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput) with field(s):
     ///   - [`connect_peer_associations(Option<Vec::<ConnectPeerAssociation>>)`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput::connect_peer_associations): <p>Displays a list of Connect peer associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetConnectPeerAssociationsError>`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError)
-    pub fn get_connect_peer_associations(
-        &self,
-    ) -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder {
-        crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetConnectPeerAssociationsError>`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError)
+    pub fn get_connect_peer_associations(&self) -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder {
+                                crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

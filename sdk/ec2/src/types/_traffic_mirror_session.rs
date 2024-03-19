@@ -3,7 +3,7 @@
 /// <p>Describes a Traffic Mirror session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficMirrorSession {
+pub struct TrafficMirrorSession  {
     /// <p>The ID for the Traffic Mirror session.</p>
     pub traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Traffic Mirror target.</p>
@@ -24,27 +24,27 @@ pub struct TrafficMirrorSession {
     /// <p>The description of the Traffic Mirror session.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Traffic Mirror session.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TrafficMirrorSession {
+impl  TrafficMirrorSession  {
     /// <p>The ID for the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_session_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_session_id.as_deref()
     }
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn traffic_mirror_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_target_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_target_id.as_deref()
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>The ID of the Traffic Mirror session's network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The ID of the account that owns the Traffic Mirror session.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The number of bytes in each packet to mirror. These are the bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet</p>
@@ -61,14 +61,15 @@ impl TrafficMirrorSession {
         self.virtual_network_id
     }
     /// <p>The description of the Traffic Mirror session.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags assigned to the Traffic Mirror session.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TrafficMirrorSession {
@@ -91,7 +92,7 @@ pub struct TrafficMirrorSessionBuilder {
     pub(crate) session_number: ::std::option::Option<i32>,
     pub(crate) virtual_network_id: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TrafficMirrorSessionBuilder {
     /// <p>The ID for the Traffic Mirror session.</p>
@@ -101,8 +102,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The ID for the Traffic Mirror session.</p>
     pub fn set_traffic_mirror_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_session_id = input;
-        self
+        self.traffic_mirror_session_id = input; self
     }
     /// <p>The ID for the Traffic Mirror session.</p>
     pub fn get_traffic_mirror_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +115,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The ID of the Traffic Mirror target.</p>
     pub fn set_traffic_mirror_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_target_id = input;
-        self
+        self.traffic_mirror_target_id = input; self
     }
     /// <p>The ID of the Traffic Mirror target.</p>
     pub fn get_traffic_mirror_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_filter_id = input;
-        self
+        self.traffic_mirror_filter_id = input; self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The ID of the Traffic Mirror session's network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the Traffic Mirror session's network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +154,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The ID of the account that owns the Traffic Mirror session.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the account that owns the Traffic Mirror session.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +167,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The number of bytes in each packet to mirror. These are the bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet</p>
     pub fn set_packet_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.packet_length = input;
-        self
+        self.packet_length = input; self
     }
     /// <p>The number of bytes in each packet to mirror. These are the bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet</p>
     pub fn get_packet_length(&self) -> &::std::option::Option<i32> {
@@ -187,8 +182,7 @@ impl TrafficMirrorSessionBuilder {
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
     pub fn set_session_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_number = input;
-        self
+        self.session_number = input; self
     }
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
@@ -202,8 +196,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The virtual network ID associated with the Traffic Mirror session.</p>
     pub fn set_virtual_network_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.virtual_network_id = input;
-        self
+        self.virtual_network_id = input; self
     }
     /// <p>The virtual network ID associated with the Traffic Mirror session.</p>
     pub fn get_virtual_network_id(&self) -> &::std::option::Option<i32> {
@@ -216,8 +209,7 @@ impl TrafficMirrorSessionBuilder {
     }
     /// <p>The description of the Traffic Mirror session.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Traffic Mirror session.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,32 +222,42 @@ impl TrafficMirrorSessionBuilder {
     /// <p>The tags assigned to the Traffic Mirror session.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the Traffic Mirror session.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the Traffic Mirror session.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TrafficMirrorSession`](crate::types::TrafficMirrorSession).
     pub fn build(self) -> crate::types::TrafficMirrorSession {
         crate::types::TrafficMirrorSession {
-            traffic_mirror_session_id: self.traffic_mirror_session_id,
-            traffic_mirror_target_id: self.traffic_mirror_target_id,
-            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
-            network_interface_id: self.network_interface_id,
-            owner_id: self.owner_id,
-            packet_length: self.packet_length,
-            session_number: self.session_number,
-            virtual_network_id: self.virtual_network_id,
-            description: self.description,
-            tags: self.tags,
+            traffic_mirror_session_id: self.traffic_mirror_session_id
+            ,
+            traffic_mirror_target_id: self.traffic_mirror_target_id
+            ,
+            traffic_mirror_filter_id: self.traffic_mirror_filter_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            owner_id: self.owner_id
+            ,
+            packet_length: self.packet_length
+            ,
+            session_number: self.session_number
+            ,
+            virtual_network_id: self.virtual_network_id
+            ,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

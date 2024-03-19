@@ -3,7 +3,7 @@
 /// <p>The metadata for a feature. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeatureMetadata {
+pub struct FeatureMetadata  {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct FeatureMetadata {
     /// </ul>
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
-impl FeatureMetadata {
+impl  FeatureMetadata  {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl FeatureMetadata {
     /// <li>
     /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl FeatureMetadataBuilder {
     /// <p><code>UNKNOWN</code> - The feature status couldn't be determined.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
@@ -113,6 +112,10 @@ impl FeatureMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`FeatureMetadata`](crate::types::FeatureMetadata).
     pub fn build(self) -> crate::types::FeatureMetadata {
-        crate::types::FeatureMetadata { status: self.status }
+        crate::types::FeatureMetadata {
+            status: self.status
+            ,
+        }
     }
 }
+

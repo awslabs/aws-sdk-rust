@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum number of network interfaces to be attached to an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails  {
     /// <p>The maximum number of network interfaces.</p>
     pub max: ::std::option::Option<i32>,
     /// <p>The minimum number of network interfaces.</p>
     pub min: ::std::option::Option<i32>,
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
+impl  AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails  {
     /// <p>The maximum number of network interfaces.</p>
     pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
@@ -41,8 +41,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     }
     /// <p>The maximum number of network interfaces.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum number of network interfaces.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     }
     /// <p>The minimum number of network interfaces.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum number of network interfaces.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
-            max: self.max,
-            min: self.min,
+            max: self.max
+            ,
+            min: self.min
+            ,
         }
     }
 }
+

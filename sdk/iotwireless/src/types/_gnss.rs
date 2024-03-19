@@ -3,7 +3,7 @@
 /// <p>Global navigation satellite system (GNSS) object used for positioning.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Gnss {
+pub struct Gnss  {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
     pub payload: ::std::string::String,
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
@@ -11,17 +11,16 @@ pub struct Gnss {
     /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
     pub capture_time_accuracy: ::std::option::Option<f32>,
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
-    pub assist_position: ::std::option::Option<::std::vec::Vec<f32>>,
+    pub assist_position: ::std::option::Option<::std::vec::Vec::<f32>>,
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
     pub assist_altitude: ::std::option::Option<f32>,
     /// <p>Optional parameter that forces 2D solve, which modifies the positioning algorithm to a 2D solution problem. When this parameter is specified, the assistance altitude should have an accuracy of at least 10 meters.</p>
     pub use2_d_solver: bool,
 }
-impl Gnss {
+impl  Gnss  {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
-    pub fn payload(&self) -> &str {
-        use std::ops::Deref;
-        self.payload.deref()
+    pub fn payload(&self) -> & str {
+        use std::ops::Deref; self.payload.deref()
     }
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
     pub fn capture_time(&self) -> ::std::option::Option<f32> {
@@ -32,10 +31,11 @@ impl Gnss {
         self.capture_time_accuracy
     }
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assist_position.is_none()`.
-    pub fn assist_position(&self) -> &[f32] {
-        self.assist_position.as_deref().unwrap_or_default()
+    pub fn assist_position(&self) -> & [f32] {
+        self.assist_position.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
     pub fn assist_altitude(&self) -> ::std::option::Option<f32> {
@@ -60,7 +60,7 @@ pub struct GnssBuilder {
     pub(crate) payload: ::std::option::Option<::std::string::String>,
     pub(crate) capture_time: ::std::option::Option<f32>,
     pub(crate) capture_time_accuracy: ::std::option::Option<f32>,
-    pub(crate) assist_position: ::std::option::Option<::std::vec::Vec<f32>>,
+    pub(crate) assist_position: ::std::option::Option<::std::vec::Vec::<f32>>,
     pub(crate) assist_altitude: ::std::option::Option<f32>,
     pub(crate) use2_d_solver: ::std::option::Option<bool>,
 }
@@ -73,8 +73,7 @@ impl GnssBuilder {
     }
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl GnssBuilder {
     }
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
     pub fn set_capture_time(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.capture_time = input;
-        self
+        self.capture_time = input; self
     }
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
     pub fn get_capture_time(&self) -> &::std::option::Option<f32> {
@@ -101,8 +99,7 @@ impl GnssBuilder {
     }
     /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
     pub fn set_capture_time_accuracy(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.capture_time_accuracy = input;
-        self
+        self.capture_time_accuracy = input; self
     }
     /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
     pub fn get_capture_time_accuracy(&self) -> &::std::option::Option<f32> {
@@ -115,17 +112,16 @@ impl GnssBuilder {
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
     pub fn assist_position(mut self, input: f32) -> Self {
         let mut v = self.assist_position.unwrap_or_default();
-        v.push(input);
-        self.assist_position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assist_position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
-    pub fn set_assist_position(mut self, input: ::std::option::Option<::std::vec::Vec<f32>>) -> Self {
-        self.assist_position = input;
-        self
+    pub fn set_assist_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f32>>) -> Self {
+        self.assist_position = input; self
     }
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
-    pub fn get_assist_position(&self) -> &::std::option::Option<::std::vec::Vec<f32>> {
+    pub fn get_assist_position(&self) -> &::std::option::Option<::std::vec::Vec::<f32>> {
         &self.assist_position
     }
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
@@ -135,8 +131,7 @@ impl GnssBuilder {
     }
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
     pub fn set_assist_altitude(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.assist_altitude = input;
-        self
+        self.assist_altitude = input; self
     }
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
     pub fn get_assist_altitude(&self) -> &::std::option::Option<f32> {
@@ -149,8 +144,7 @@ impl GnssBuilder {
     }
     /// <p>Optional parameter that forces 2D solve, which modifies the positioning algorithm to a 2D solution problem. When this parameter is specified, the assistance altitude should have an accuracy of at least 10 meters.</p>
     pub fn set_use2_d_solver(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use2_d_solver = input;
-        self
+        self.use2_d_solver = input; self
     }
     /// <p>Optional parameter that forces 2D solve, which modifies the positioning algorithm to a 2D solution problem. When this parameter is specified, the assistance altitude should have an accuracy of at least 10 meters.</p>
     pub fn get_use2_d_solver(&self) -> &::std::option::Option<bool> {
@@ -160,18 +154,26 @@ impl GnssBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`payload`](crate::types::builders::GnssBuilder::payload)
     pub fn build(self) -> ::std::result::Result<crate::types::Gnss, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Gnss {
-            payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload",
-                    "payload was not specified but it is required when building Gnss",
-                )
-            })?,
-            capture_time: self.capture_time,
-            capture_time_accuracy: self.capture_time_accuracy,
-            assist_position: self.assist_position,
-            assist_altitude: self.assist_altitude,
-            use2_d_solver: self.use2_d_solver.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::Gnss {
+                payload: self.payload
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload", "payload was not specified but it is required when building Gnss")
+                    )?
+                ,
+                capture_time: self.capture_time
+                ,
+                capture_time_accuracy: self.capture_time_accuracy
+                ,
+                assist_position: self.assist_position
+                ,
+                assist_altitude: self.assist_altitude
+                ,
+                use2_d_solver: self.use2_d_solver
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

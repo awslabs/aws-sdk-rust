@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 bucket where the Amazon Web Services IoT FleetWise campaign sends data. Amazon S3 is an object storage service that stores data as objects within buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Config {
+pub struct S3Config  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
     pub bucket_arn: ::std::string::String,
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
@@ -20,11 +20,10 @@ pub struct S3Config {
     /// <p>By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code> (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to this default prefix. For example, if you enter the prefix <code>vehicles</code>, the prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3Config {
+impl  S3Config  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
@@ -33,16 +32,16 @@ impl S3Config {
     /// <li>
     /// <p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
-    pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
+    pub fn data_format(&self) -> ::std::option::Option<& crate::types::DataFormat> {
         self.data_format.as_ref()
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
-    pub fn storage_compression_format(&self) -> ::std::option::Option<&crate::types::StorageCompressionFormat> {
+    pub fn storage_compression_format(&self) -> ::std::option::Option<& crate::types::StorageCompressionFormat> {
         self.storage_compression_format.as_ref()
     }
     /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// <p>By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code> (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to this default prefix. For example, if you enter the prefix <code>vehicles</code>, the prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -71,8 +70,7 @@ impl S3ConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl S3ConfigBuilder {
     /// <p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
@@ -117,8 +114,7 @@ impl S3ConfigBuilder {
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
     pub fn set_storage_compression_format(mut self, input: ::std::option::Option<crate::types::StorageCompressionFormat>) -> Self {
-        self.storage_compression_format = input;
-        self
+        self.storage_compression_format = input; self
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
     pub fn get_storage_compression_format(&self) -> &::std::option::Option<crate::types::StorageCompressionFormat> {
@@ -133,8 +129,7 @@ impl S3ConfigBuilder {
     /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// <p>By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code> (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to this default prefix. For example, if you enter the prefix <code>vehicles</code>, the prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// <p>By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code> (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to this default prefix. For example, if you enter the prefix <code>vehicles</code>, the prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.</p>
@@ -145,16 +140,21 @@ impl S3ConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_arn`](crate::types::builders::S3ConfigBuilder::bucket_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Config {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3Config",
-                )
-            })?,
-            data_format: self.data_format,
-            storage_compression_format: self.storage_compression_format,
-            prefix: self.prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Config {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3Config")
+                    )?
+                ,
+                data_format: self.data_format
+                ,
+                storage_compression_format: self.storage_compression_format
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

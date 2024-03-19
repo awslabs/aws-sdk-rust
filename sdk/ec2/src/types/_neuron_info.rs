@@ -3,18 +3,19 @@
 /// <p>Describes the neuron accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NeuronInfo {
+pub struct NeuronInfo  {
     /// <p>Describes the neuron accelerators for the instance type.</p>
-    pub neuron_devices: ::std::option::Option<::std::vec::Vec<crate::types::NeuronDeviceInfo>>,
+    pub neuron_devices: ::std::option::Option<::std::vec::Vec::<crate::types::NeuronDeviceInfo>>,
     /// <p>The total size of the memory for the neuron accelerators for the instance type, in MiB.</p>
     pub total_neuron_device_memory_in_mib: ::std::option::Option<i32>,
 }
-impl NeuronInfo {
+impl  NeuronInfo  {
     /// <p>Describes the neuron accelerators for the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neuron_devices.is_none()`.
-    pub fn neuron_devices(&self) -> &[crate::types::NeuronDeviceInfo] {
-        self.neuron_devices.as_deref().unwrap_or_default()
+    pub fn neuron_devices(&self) -> & [crate::types::NeuronDeviceInfo] {
+        self.neuron_devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total size of the memory for the neuron accelerators for the instance type, in MiB.</p>
     pub fn total_neuron_device_memory_in_mib(&self) -> ::std::option::Option<i32> {
@@ -32,7 +33,7 @@ impl NeuronInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NeuronInfoBuilder {
-    pub(crate) neuron_devices: ::std::option::Option<::std::vec::Vec<crate::types::NeuronDeviceInfo>>,
+    pub(crate) neuron_devices: ::std::option::Option<::std::vec::Vec::<crate::types::NeuronDeviceInfo>>,
     pub(crate) total_neuron_device_memory_in_mib: ::std::option::Option<i32>,
 }
 impl NeuronInfoBuilder {
@@ -43,17 +44,16 @@ impl NeuronInfoBuilder {
     /// <p>Describes the neuron accelerators for the instance type.</p>
     pub fn neuron_devices(mut self, input: crate::types::NeuronDeviceInfo) -> Self {
         let mut v = self.neuron_devices.unwrap_or_default();
-        v.push(input);
-        self.neuron_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.neuron_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the neuron accelerators for the instance type.</p>
-    pub fn set_neuron_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NeuronDeviceInfo>>) -> Self {
-        self.neuron_devices = input;
-        self
+    pub fn set_neuron_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NeuronDeviceInfo>>) -> Self {
+        self.neuron_devices = input; self
     }
     /// <p>Describes the neuron accelerators for the instance type.</p>
-    pub fn get_neuron_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NeuronDeviceInfo>> {
+    pub fn get_neuron_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NeuronDeviceInfo>> {
         &self.neuron_devices
     }
     /// <p>The total size of the memory for the neuron accelerators for the instance type, in MiB.</p>
@@ -63,8 +63,7 @@ impl NeuronInfoBuilder {
     }
     /// <p>The total size of the memory for the neuron accelerators for the instance type, in MiB.</p>
     pub fn set_total_neuron_device_memory_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_neuron_device_memory_in_mib = input;
-        self
+        self.total_neuron_device_memory_in_mib = input; self
     }
     /// <p>The total size of the memory for the neuron accelerators for the instance type, in MiB.</p>
     pub fn get_total_neuron_device_memory_in_mib(&self) -> &::std::option::Option<i32> {
@@ -73,8 +72,11 @@ impl NeuronInfoBuilder {
     /// Consumes the builder and constructs a [`NeuronInfo`](crate::types::NeuronInfo).
     pub fn build(self) -> crate::types::NeuronInfo {
         crate::types::NeuronInfo {
-            neuron_devices: self.neuron_devices,
-            total_neuron_device_memory_in_mib: self.total_neuron_device_memory_in_mib,
+            neuron_devices: self.neuron_devices
+            ,
+            total_neuron_device_memory_in_mib: self.total_neuron_device_memory_in_mib
+            ,
         }
     }
 }
+

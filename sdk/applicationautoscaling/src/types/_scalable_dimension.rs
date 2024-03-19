@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scalabledimension = unimplemented!();
 /// match scalabledimension {
@@ -50,16 +50,14 @@
 /// Specifically, when `scalabledimension` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScalableDimension::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ScalableDimension {
     #[allow(missing_docs)] // documentation missing in model
     AppstreamFleetDesiredCapacity,
@@ -107,148 +105,122 @@ pub enum ScalableDimension {
     SageMakerVariantDesiredProvisionedConcurrency,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ScalableDimension {
-    fn from(s: &str) -> Self {
-        match s {
-            "appstream:fleet:DesiredCapacity" => ScalableDimension::AppstreamFleetDesiredCapacity,
-            "cassandra:table:ReadCapacityUnits" => ScalableDimension::CassandraTableReadCapacityUnits,
-            "cassandra:table:WriteCapacityUnits" => ScalableDimension::CassandraTableWriteCapacityUnits,
-            "comprehend:document-classifier-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits,
-            "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits,
-            "custom-resource:ResourceType:Property" => ScalableDimension::CustomResourceScalableDimension,
-            "dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
-            "dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
-            "dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
-            "dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
-            "ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
-            "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
-            "elasticache:replication-group:NodeGroups" => ScalableDimension::ElastiCacheReplicationGroupNodeGroups,
-            "elasticache:replication-group:Replicas" => ScalableDimension::ElastiCacheReplicationGroupReplicas,
-            "elasticmapreduce:instancegroup:InstanceCount" => ScalableDimension::EmrInstanceGroupInstanceCount,
-            "kafka:broker-storage:VolumeSize" => ScalableDimension::KafkaBrokerStorageVolumeSize,
-            "lambda:function:ProvisionedConcurrency" => ScalableDimension::LambdaFunctionProvisionedConcurrency,
-            "neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
-            "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
-            "sagemaker:inference-component:DesiredCopyCount" => ScalableDimension::SageMakerInferenceComponentDesiredCopyCount,
-            "sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
-            "sagemaker:variant:DesiredProvisionedConcurrency" => ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency,
-            other => ScalableDimension::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "appstream:fleet:DesiredCapacity" => ScalableDimension::AppstreamFleetDesiredCapacity,
+"cassandra:table:ReadCapacityUnits" => ScalableDimension::CassandraTableReadCapacityUnits,
+"cassandra:table:WriteCapacityUnits" => ScalableDimension::CassandraTableWriteCapacityUnits,
+"comprehend:document-classifier-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits,
+"comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits,
+"custom-resource:ResourceType:Property" => ScalableDimension::CustomResourceScalableDimension,
+"dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
+"dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
+"dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
+"dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
+"ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
+"ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
+"elasticache:replication-group:NodeGroups" => ScalableDimension::ElastiCacheReplicationGroupNodeGroups,
+"elasticache:replication-group:Replicas" => ScalableDimension::ElastiCacheReplicationGroupReplicas,
+"elasticmapreduce:instancegroup:InstanceCount" => ScalableDimension::EmrInstanceGroupInstanceCount,
+"kafka:broker-storage:VolumeSize" => ScalableDimension::KafkaBrokerStorageVolumeSize,
+"lambda:function:ProvisionedConcurrency" => ScalableDimension::LambdaFunctionProvisionedConcurrency,
+"neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
+"rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
+"sagemaker:inference-component:DesiredCopyCount" => ScalableDimension::SageMakerInferenceComponentDesiredCopyCount,
+"sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
+"sagemaker:variant:DesiredProvisionedConcurrency" => ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency,
+other => ScalableDimension::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ScalableDimension {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ScalableDimension::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ScalableDimension::from(s))
+                    }
+                }
 impl ScalableDimension {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalableDimension::AppstreamFleetDesiredCapacity => "appstream:fleet:DesiredCapacity",
-            ScalableDimension::CassandraTableReadCapacityUnits => "cassandra:table:ReadCapacityUnits",
-            ScalableDimension::CassandraTableWriteCapacityUnits => "cassandra:table:WriteCapacityUnits",
-            ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => "comprehend:document-classifier-endpoint:DesiredInferenceUnits",
-            ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits",
-            ScalableDimension::CustomResourceScalableDimension => "custom-resource:ResourceType:Property",
-            ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
-            ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
-            ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
-            ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
-            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
-            ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
-            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => "elasticache:replication-group:NodeGroups",
-            ScalableDimension::ElastiCacheReplicationGroupReplicas => "elasticache:replication-group:Replicas",
-            ScalableDimension::EmrInstanceGroupInstanceCount => "elasticmapreduce:instancegroup:InstanceCount",
-            ScalableDimension::KafkaBrokerStorageVolumeSize => "kafka:broker-storage:VolumeSize",
-            ScalableDimension::LambdaFunctionProvisionedConcurrency => "lambda:function:ProvisionedConcurrency",
-            ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
-            ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
-            ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => "sagemaker:inference-component:DesiredCopyCount",
-            ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
-            ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => "sagemaker:variant:DesiredProvisionedConcurrency",
-            ScalableDimension::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "appstream:fleet:DesiredCapacity",
-            "cassandra:table:ReadCapacityUnits",
-            "cassandra:table:WriteCapacityUnits",
-            "comprehend:document-classifier-endpoint:DesiredInferenceUnits",
-            "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits",
-            "custom-resource:ResourceType:Property",
-            "dynamodb:index:ReadCapacityUnits",
-            "dynamodb:index:WriteCapacityUnits",
-            "dynamodb:table:ReadCapacityUnits",
-            "dynamodb:table:WriteCapacityUnits",
-            "ec2:spot-fleet-request:TargetCapacity",
-            "ecs:service:DesiredCount",
-            "elasticache:replication-group:NodeGroups",
-            "elasticache:replication-group:Replicas",
-            "elasticmapreduce:instancegroup:InstanceCount",
-            "kafka:broker-storage:VolumeSize",
-            "lambda:function:ProvisionedConcurrency",
-            "neptune:cluster:ReadReplicaCount",
-            "rds:cluster:ReadReplicaCount",
-            "sagemaker:inference-component:DesiredCopyCount",
-            "sagemaker:variant:DesiredInstanceCount",
-            "sagemaker:variant:DesiredProvisionedConcurrency",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalableDimension::AppstreamFleetDesiredCapacity => "appstream:fleet:DesiredCapacity",
+    ScalableDimension::CassandraTableReadCapacityUnits => "cassandra:table:ReadCapacityUnits",
+    ScalableDimension::CassandraTableWriteCapacityUnits => "cassandra:table:WriteCapacityUnits",
+    ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => "comprehend:document-classifier-endpoint:DesiredInferenceUnits",
+    ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits",
+    ScalableDimension::CustomResourceScalableDimension => "custom-resource:ResourceType:Property",
+    ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
+    ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
+    ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
+    ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
+    ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
+    ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
+    ScalableDimension::ElastiCacheReplicationGroupNodeGroups => "elasticache:replication-group:NodeGroups",
+    ScalableDimension::ElastiCacheReplicationGroupReplicas => "elasticache:replication-group:Replicas",
+    ScalableDimension::EmrInstanceGroupInstanceCount => "elasticmapreduce:instancegroup:InstanceCount",
+    ScalableDimension::KafkaBrokerStorageVolumeSize => "kafka:broker-storage:VolumeSize",
+    ScalableDimension::LambdaFunctionProvisionedConcurrency => "lambda:function:ProvisionedConcurrency",
+    ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
+    ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
+    ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => "sagemaker:inference-component:DesiredCopyCount",
+    ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
+    ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => "sagemaker:variant:DesiredProvisionedConcurrency",
+    ScalableDimension::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["appstream:fleet:DesiredCapacity", "cassandra:table:ReadCapacityUnits", "cassandra:table:WriteCapacityUnits", "comprehend:document-classifier-endpoint:DesiredInferenceUnits", "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits", "custom-resource:ResourceType:Property", "dynamodb:index:ReadCapacityUnits", "dynamodb:index:WriteCapacityUnits", "dynamodb:table:ReadCapacityUnits", "dynamodb:table:WriteCapacityUnits", "ec2:spot-fleet-request:TargetCapacity", "ecs:service:DesiredCount", "elasticache:replication-group:NodeGroups", "elasticache:replication-group:Replicas", "elasticmapreduce:instancegroup:InstanceCount", "kafka:broker-storage:VolumeSize", "lambda:function:ProvisionedConcurrency", "neptune:cluster:ReadReplicaCount", "rds:cluster:ReadReplicaCount", "sagemaker:inference-component:DesiredCopyCount", "sagemaker:variant:DesiredInstanceCount", "sagemaker:variant:DesiredProvisionedConcurrency"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ScalableDimension {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ScalableDimension {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ScalableDimension {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ScalableDimension::AppstreamFleetDesiredCapacity => write!(f, "appstream:fleet:DesiredCapacity"),
-            ScalableDimension::CassandraTableReadCapacityUnits => write!(f, "cassandra:table:ReadCapacityUnits"),
-            ScalableDimension::CassandraTableWriteCapacityUnits => write!(f, "cassandra:table:WriteCapacityUnits"),
-            ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => {
-                write!(f, "comprehend:document-classifier-endpoint:DesiredInferenceUnits")
-            }
-            ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => {
-                write!(f, "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits")
-            }
-            ScalableDimension::CustomResourceScalableDimension => write!(f, "custom-resource:ResourceType:Property"),
-            ScalableDimension::DynamoDbIndexReadCapacityUnits => write!(f, "dynamodb:index:ReadCapacityUnits"),
-            ScalableDimension::DynamoDbIndexWriteCapacityUnits => write!(f, "dynamodb:index:WriteCapacityUnits"),
-            ScalableDimension::DynamoDbTableReadCapacityUnits => write!(f, "dynamodb:table:ReadCapacityUnits"),
-            ScalableDimension::DynamoDbTableWriteCapacityUnits => write!(f, "dynamodb:table:WriteCapacityUnits"),
-            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => write!(f, "ec2:spot-fleet-request:TargetCapacity"),
-            ScalableDimension::EcsServiceDesiredCount => write!(f, "ecs:service:DesiredCount"),
-            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => write!(f, "elasticache:replication-group:NodeGroups"),
-            ScalableDimension::ElastiCacheReplicationGroupReplicas => write!(f, "elasticache:replication-group:Replicas"),
-            ScalableDimension::EmrInstanceGroupInstanceCount => write!(f, "elasticmapreduce:instancegroup:InstanceCount"),
-            ScalableDimension::KafkaBrokerStorageVolumeSize => write!(f, "kafka:broker-storage:VolumeSize"),
-            ScalableDimension::LambdaFunctionProvisionedConcurrency => write!(f, "lambda:function:ProvisionedConcurrency"),
-            ScalableDimension::NeptuneClusterReadReplicaCount => write!(f, "neptune:cluster:ReadReplicaCount"),
-            ScalableDimension::RdsClusterReadReplicaCount => write!(f, "rds:cluster:ReadReplicaCount"),
-            ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => write!(f, "sagemaker:inference-component:DesiredCopyCount"),
-            ScalableDimension::SageMakerVariantDesiredInstanceCount => write!(f, "sagemaker:variant:DesiredInstanceCount"),
-            ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => write!(f, "sagemaker:variant:DesiredProvisionedConcurrency"),
-            ScalableDimension::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ScalableDimension::AppstreamFleetDesiredCapacity => write!(f, "appstream:fleet:DesiredCapacity"),
+ScalableDimension::CassandraTableReadCapacityUnits => write!(f, "cassandra:table:ReadCapacityUnits"),
+ScalableDimension::CassandraTableWriteCapacityUnits => write!(f, "cassandra:table:WriteCapacityUnits"),
+ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => write!(f, "comprehend:document-classifier-endpoint:DesiredInferenceUnits"),
+ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => write!(f, "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits"),
+ScalableDimension::CustomResourceScalableDimension => write!(f, "custom-resource:ResourceType:Property"),
+ScalableDimension::DynamoDbIndexReadCapacityUnits => write!(f, "dynamodb:index:ReadCapacityUnits"),
+ScalableDimension::DynamoDbIndexWriteCapacityUnits => write!(f, "dynamodb:index:WriteCapacityUnits"),
+ScalableDimension::DynamoDbTableReadCapacityUnits => write!(f, "dynamodb:table:ReadCapacityUnits"),
+ScalableDimension::DynamoDbTableWriteCapacityUnits => write!(f, "dynamodb:table:WriteCapacityUnits"),
+ScalableDimension::Ec2SpotFleetRequestTargetCapacity => write!(f, "ec2:spot-fleet-request:TargetCapacity"),
+ScalableDimension::EcsServiceDesiredCount => write!(f, "ecs:service:DesiredCount"),
+ScalableDimension::ElastiCacheReplicationGroupNodeGroups => write!(f, "elasticache:replication-group:NodeGroups"),
+ScalableDimension::ElastiCacheReplicationGroupReplicas => write!(f, "elasticache:replication-group:Replicas"),
+ScalableDimension::EmrInstanceGroupInstanceCount => write!(f, "elasticmapreduce:instancegroup:InstanceCount"),
+ScalableDimension::KafkaBrokerStorageVolumeSize => write!(f, "kafka:broker-storage:VolumeSize"),
+ScalableDimension::LambdaFunctionProvisionedConcurrency => write!(f, "lambda:function:ProvisionedConcurrency"),
+ScalableDimension::NeptuneClusterReadReplicaCount => write!(f, "neptune:cluster:ReadReplicaCount"),
+ScalableDimension::RdsClusterReadReplicaCount => write!(f, "rds:cluster:ReadReplicaCount"),
+ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => write!(f, "sagemaker:inference-component:DesiredCopyCount"),
+ScalableDimension::SageMakerVariantDesiredInstanceCount => write!(f, "sagemaker:variant:DesiredInstanceCount"),
+ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => write!(f, "sagemaker:variant:DesiredProvisionedConcurrency"),
+ScalableDimension::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

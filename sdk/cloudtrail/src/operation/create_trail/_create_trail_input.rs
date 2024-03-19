@@ -3,7 +3,7 @@
 /// <p>Specifies the settings for each trail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrailInput {
+pub struct CreateTrailInput  {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -54,9 +54,9 @@ pub struct CreateTrailInput {
     /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     pub is_organization_trail: ::std::option::Option<bool>,
     /// <p>A list of tags.</p>
-    pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateTrailInput {
+impl  CreateTrailInput  {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -70,19 +70,19 @@ impl CreateTrailInput {
     /// <li>
     /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-    pub fn sns_topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_name(&self) -> ::std::option::Option<& str> {
         self.sns_topic_name.as_deref()
     }
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
@@ -101,11 +101,11 @@ impl CreateTrailInput {
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
@@ -121,7 +121,7 @@ impl CreateTrailInput {
     /// <li>
     /// <p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
@@ -129,10 +129,11 @@ impl CreateTrailInput {
         self.is_organization_trail
     }
     /// <p>A list of tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
-    pub fn tags_list(&self) -> &[crate::types::Tag] {
-        self.tags_list.as_deref().unwrap_or_default()
+    pub fn tags_list(&self) -> & [crate::types::Tag] {
+        self.tags_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateTrailInput {
@@ -157,7 +158,7 @@ pub struct CreateTrailInputBuilder {
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_organization_trail: ::std::option::Option<bool>,
-    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateTrailInputBuilder {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
@@ -192,8 +193,7 @@ impl CreateTrailInputBuilder {
     /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
@@ -219,8 +219,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +232,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +245,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn set_sns_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_name = input;
-        self
+        self.sns_topic_name = input; self
     }
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn get_sns_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,8 +258,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub fn set_include_global_service_events(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_global_service_events = input;
-        self
+        self.include_global_service_events = input; self
     }
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub fn get_include_global_service_events(&self) -> &::std::option::Option<bool> {
@@ -275,8 +271,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_multi_region_trail = input;
-        self
+        self.is_multi_region_trail = input; self
     }
     /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn get_is_multi_region_trail(&self) -> &::std::option::Option<bool> {
@@ -293,8 +288,7 @@ impl CreateTrailInputBuilder {
     /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn set_enable_log_file_validation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_log_file_validation = input;
-        self
+        self.enable_log_file_validation = input; self
     }
     /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p><note>
     /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
@@ -311,8 +305,7 @@ impl CreateTrailInputBuilder {
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+        self.cloud_watch_logs_log_group_arn = input; self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
@@ -326,8 +319,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = input;
-        self
+        self.cloud_watch_logs_role_arn = input; self
     }
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,8 +356,7 @@ impl CreateTrailInputBuilder {
     /// <p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -390,8 +381,7 @@ impl CreateTrailInputBuilder {
     }
     /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_organization_trail = input;
-        self
+        self.is_organization_trail = input; self
     }
     /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
     pub fn get_is_organization_trail(&self) -> &::std::option::Option<bool> {
@@ -404,34 +394,48 @@ impl CreateTrailInputBuilder {
     /// <p>A list of tags.</p>
     pub fn tags_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_list.unwrap_or_default();
-        v.push(input);
-        self.tags_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags_list = input;
-        self
+    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags_list = input; self
     }
     /// <p>A list of tags.</p>
-    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags_list
     }
     /// Consumes the builder and constructs a [`CreateTrailInput`](crate::operation::create_trail::CreateTrailInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_trail::CreateTrailInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_trail::CreateTrailInput {
-            name: self.name,
-            s3_bucket_name: self.s3_bucket_name,
-            s3_key_prefix: self.s3_key_prefix,
-            sns_topic_name: self.sns_topic_name,
-            include_global_service_events: self.include_global_service_events,
-            is_multi_region_trail: self.is_multi_region_trail,
-            enable_log_file_validation: self.enable_log_file_validation,
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-            kms_key_id: self.kms_key_id,
-            is_organization_trail: self.is_organization_trail,
-            tags_list: self.tags_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_trail::CreateTrailInput {
+                name: self.name
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
+                sns_topic_name: self.sns_topic_name
+                ,
+                include_global_service_events: self.include_global_service_events
+                ,
+                is_multi_region_trail: self.is_multi_region_trail
+                ,
+                enable_log_file_validation: self.enable_log_file_validation
+                ,
+                cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+                ,
+                cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                is_organization_trail: self.is_organization_trail
+                ,
+                tags_list: self.tags_list
+                ,
+            }
+        )
     }
 }
+

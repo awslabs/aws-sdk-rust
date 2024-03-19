@@ -3,11 +3,11 @@
 /// <p>The possible Amazon Web Services Free Tier configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeTierConfig {
+pub struct FreeTierConfig  {
     /// <p>Activate or deactivate Amazon Web Services Free Tier application.</p>
     pub activated: bool,
 }
-impl FreeTierConfig {
+impl  FreeTierConfig  {
     /// <p>Activate or deactivate Amazon Web Services Free Tier application.</p>
     pub fn activated(&self) -> bool {
         self.activated
@@ -35,8 +35,7 @@ impl FreeTierConfigBuilder {
     }
     /// <p>Activate or deactivate Amazon Web Services Free Tier application.</p>
     pub fn set_activated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.activated = input;
-        self
+        self.activated = input; self
     }
     /// <p>Activate or deactivate Amazon Web Services Free Tier application.</p>
     pub fn get_activated(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl FreeTierConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`activated`](crate::types::builders::FreeTierConfigBuilder::activated)
     pub fn build(self) -> ::std::result::Result<crate::types::FreeTierConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FreeTierConfig {
-            activated: self.activated.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "activated",
-                    "activated was not specified but it is required when building FreeTierConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FreeTierConfig {
+                activated: self.activated
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("activated", "activated was not specified but it is required when building FreeTierConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

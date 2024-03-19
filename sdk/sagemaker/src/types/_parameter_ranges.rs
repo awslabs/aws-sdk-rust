@@ -5,40 +5,44 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterRanges {
+pub struct ParameterRanges  {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    pub integer_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
+    pub integer_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::IntegerParameterRange>>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    pub continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
+    pub continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::ContinuousParameterRange>>,
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    pub categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
+    pub categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::CategoricalParameterRange>>,
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
-    pub auto_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AutoParameter>>,
+    pub auto_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AutoParameter>>,
 }
-impl ParameterRanges {
+impl  ParameterRanges  {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_parameter_ranges.is_none()`.
-    pub fn integer_parameter_ranges(&self) -> &[crate::types::IntegerParameterRange] {
-        self.integer_parameter_ranges.as_deref().unwrap_or_default()
+    pub fn integer_parameter_ranges(&self) -> & [crate::types::IntegerParameterRange] {
+        self.integer_parameter_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.continuous_parameter_ranges.is_none()`.
-    pub fn continuous_parameter_ranges(&self) -> &[crate::types::ContinuousParameterRange] {
-        self.continuous_parameter_ranges.as_deref().unwrap_or_default()
+    pub fn continuous_parameter_ranges(&self) -> & [crate::types::ContinuousParameterRange] {
+        self.continuous_parameter_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categorical_parameter_ranges.is_none()`.
-    pub fn categorical_parameter_ranges(&self) -> &[crate::types::CategoricalParameterRange] {
-        self.categorical_parameter_ranges.as_deref().unwrap_or_default()
+    pub fn categorical_parameter_ranges(&self) -> & [crate::types::CategoricalParameterRange] {
+        self.categorical_parameter_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_parameters.is_none()`.
-    pub fn auto_parameters(&self) -> &[crate::types::AutoParameter] {
-        self.auto_parameters.as_deref().unwrap_or_default()
+    pub fn auto_parameters(&self) -> & [crate::types::AutoParameter] {
+        self.auto_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ParameterRanges {
@@ -52,10 +56,10 @@ impl ParameterRanges {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterRangesBuilder {
-    pub(crate) integer_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
-    pub(crate) continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
-    pub(crate) categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
-    pub(crate) auto_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AutoParameter>>,
+    pub(crate) integer_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::IntegerParameterRange>>,
+    pub(crate) continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::ContinuousParameterRange>>,
+    pub(crate) categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::CategoricalParameterRange>>,
+    pub(crate) auto_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AutoParameter>>,
 }
 impl ParameterRangesBuilder {
     /// Appends an item to `integer_parameter_ranges`.
@@ -65,17 +69,16 @@ impl ParameterRangesBuilder {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
     pub fn integer_parameter_ranges(mut self, input: crate::types::IntegerParameterRange) -> Self {
         let mut v = self.integer_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.integer_parameter_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.integer_parameter_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn set_integer_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>) -> Self {
-        self.integer_parameter_ranges = input;
-        self
+    pub fn set_integer_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntegerParameterRange>>) -> Self {
+        self.integer_parameter_ranges = input; self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn get_integer_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>> {
+    pub fn get_integer_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntegerParameterRange>> {
         &self.integer_parameter_ranges
     }
     /// Appends an item to `continuous_parameter_ranges`.
@@ -85,17 +88,16 @@ impl ParameterRangesBuilder {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
     pub fn continuous_parameter_ranges(mut self, input: crate::types::ContinuousParameterRange) -> Self {
         let mut v = self.continuous_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.continuous_parameter_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.continuous_parameter_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn set_continuous_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>) -> Self {
-        self.continuous_parameter_ranges = input;
-        self
+    pub fn set_continuous_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContinuousParameterRange>>) -> Self {
+        self.continuous_parameter_ranges = input; self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn get_continuous_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>> {
+    pub fn get_continuous_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContinuousParameterRange>> {
         &self.continuous_parameter_ranges
     }
     /// Appends an item to `categorical_parameter_ranges`.
@@ -105,20 +107,16 @@ impl ParameterRangesBuilder {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
     pub fn categorical_parameter_ranges(mut self, input: crate::types::CategoricalParameterRange) -> Self {
         let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.categorical_parameter_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.categorical_parameter_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn set_categorical_parameter_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
-    ) -> Self {
-        self.categorical_parameter_ranges = input;
-        self
+    pub fn set_categorical_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CategoricalParameterRange>>) -> Self {
+        self.categorical_parameter_ranges = input; self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn get_categorical_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>> {
+    pub fn get_categorical_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CategoricalParameterRange>> {
         &self.categorical_parameter_ranges
     }
     /// Appends an item to `auto_parameters`.
@@ -128,26 +126,30 @@ impl ParameterRangesBuilder {
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
     pub fn auto_parameters(mut self, input: crate::types::AutoParameter) -> Self {
         let mut v = self.auto_parameters.unwrap_or_default();
-        v.push(input);
-        self.auto_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auto_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
-    pub fn set_auto_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoParameter>>) -> Self {
-        self.auto_parameters = input;
-        self
+    pub fn set_auto_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoParameter>>) -> Self {
+        self.auto_parameters = input; self
     }
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
-    pub fn get_auto_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoParameter>> {
+    pub fn get_auto_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoParameter>> {
         &self.auto_parameters
     }
     /// Consumes the builder and constructs a [`ParameterRanges`](crate::types::ParameterRanges).
     pub fn build(self) -> crate::types::ParameterRanges {
         crate::types::ParameterRanges {
-            integer_parameter_ranges: self.integer_parameter_ranges,
-            continuous_parameter_ranges: self.continuous_parameter_ranges,
-            categorical_parameter_ranges: self.categorical_parameter_ranges,
-            auto_parameters: self.auto_parameters,
+            integer_parameter_ranges: self.integer_parameter_ranges
+            ,
+            continuous_parameter_ranges: self.continuous_parameter_ranges
+            ,
+            categorical_parameter_ranges: self.categorical_parameter_ranges
+            ,
+            auto_parameters: self.auto_parameters
+            ,
         }
     }
 }
+

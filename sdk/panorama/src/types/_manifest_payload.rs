@@ -21,11 +21,7 @@ impl ManifestPayload {
     /// Tries to convert the enum instance into [`PayloadData`](crate::types::ManifestPayload::PayloadData), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_payload_data(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ManifestPayload::PayloadData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ManifestPayload::PayloadData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PayloadData`](crate::types::ManifestPayload::PayloadData).
     pub fn is_payload_data(&self) -> bool {
@@ -36,3 +32,4 @@ impl ManifestPayload {
         matches!(self, Self::Unknown)
     }
 }
+

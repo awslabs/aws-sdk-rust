@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetLocationsOutput {
+pub struct DeleteFleetLocationsOutput  {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -10,32 +10,33 @@ pub struct DeleteFleetLocationsOutput {
     /// </region></code>.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
+    pub location_states: ::std::option::Option<::std::vec::Vec::<crate::types::LocationState>>,
     _request_id: Option<String>,
 }
-impl DeleteFleetLocationsOutput {
+impl  DeleteFleetLocationsOutput  {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_states.is_none()`.
-    pub fn location_states(&self) -> &[crate::types::LocationState] {
-        self.location_states.as_deref().unwrap_or_default()
+    pub fn location_states(&self) -> & [crate::types::LocationState] {
+        self.location_states.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFleetLocationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFleetLocationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetLocationsOutput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput).
     pub fn builder() -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsOutputBuilder {
@@ -49,7 +50,7 @@ impl DeleteFleetLocationsOutput {
 pub struct DeleteFleetLocationsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
+    pub(crate) location_states: ::std::option::Option<::std::vec::Vec::<crate::types::LocationState>>,
     _request_id: Option<String>,
 }
 impl DeleteFleetLocationsOutputBuilder {
@@ -60,8 +61,7 @@ impl DeleteFleetLocationsOutputBuilder {
     }
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl DeleteFleetLocationsOutputBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -94,35 +93,38 @@ impl DeleteFleetLocationsOutputBuilder {
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
     pub fn location_states(mut self, input: crate::types::LocationState) -> Self {
         let mut v = self.location_states.unwrap_or_default();
-        v.push(input);
-        self.location_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.location_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub fn set_location_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>) -> Self {
-        self.location_states = input;
-        self
+    pub fn set_location_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LocationState>>) -> Self {
+        self.location_states = input; self
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub fn get_location_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
+    pub fn get_location_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LocationState>> {
         &self.location_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFleetLocationsOutput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput).
     pub fn build(self) -> crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput {
         crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            location_states: self.location_states,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            location_states: self.location_states
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

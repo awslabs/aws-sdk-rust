@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveComponentCandidatesInput {
+pub struct ResolveComponentCandidatesInput  {
     /// <p>The platform to use to resolve compatible components.</p>
     pub platform: ::std::option::Option<crate::types::ComponentPlatform>,
     /// <p>The list of components to resolve.</p>
-    pub component_candidates: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>,
+    pub component_candidates: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentCandidate>>,
 }
-impl ResolveComponentCandidatesInput {
+impl  ResolveComponentCandidatesInput  {
     /// <p>The platform to use to resolve compatible components.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::ComponentPlatform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::ComponentPlatform> {
         self.platform.as_ref()
     }
     /// <p>The list of components to resolve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_candidates.is_none()`.
-    pub fn component_candidates(&self) -> &[crate::types::ComponentCandidate] {
-        self.component_candidates.as_deref().unwrap_or_default()
+    pub fn component_candidates(&self) -> & [crate::types::ComponentCandidate] {
+        self.component_candidates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResolveComponentCandidatesInput {
@@ -32,7 +33,7 @@ impl ResolveComponentCandidatesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::ComponentPlatform>,
-    pub(crate) component_candidates: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>,
+    pub(crate) component_candidates: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentCandidate>>,
 }
 impl ResolveComponentCandidatesInputBuilder {
     /// <p>The platform to use to resolve compatible components.</p>
@@ -42,8 +43,7 @@ impl ResolveComponentCandidatesInputBuilder {
     }
     /// <p>The platform to use to resolve compatible components.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::ComponentPlatform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform to use to resolve compatible components.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::ComponentPlatform> {
@@ -56,29 +56,28 @@ impl ResolveComponentCandidatesInputBuilder {
     /// <p>The list of components to resolve.</p>
     pub fn component_candidates(mut self, input: crate::types::ComponentCandidate) -> Self {
         let mut v = self.component_candidates.unwrap_or_default();
-        v.push(input);
-        self.component_candidates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_candidates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of components to resolve.</p>
-    pub fn set_component_candidates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>) -> Self {
-        self.component_candidates = input;
-        self
+    pub fn set_component_candidates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentCandidate>>) -> Self {
+        self.component_candidates = input; self
     }
     /// <p>The list of components to resolve.</p>
-    pub fn get_component_candidates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>> {
+    pub fn get_component_candidates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentCandidate>> {
         &self.component_candidates
     }
     /// Consumes the builder and constructs a [`ResolveComponentCandidatesInput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput {
-            platform: self.platform,
-            component_candidates: self.component_candidates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput {
+                platform: self.platform
+                ,
+                component_candidates: self.component_candidates
+                ,
+            }
+        )
     }
 }
+

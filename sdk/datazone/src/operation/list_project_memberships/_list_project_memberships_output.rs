@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProjectMembershipsOutput {
+pub struct ListProjectMembershipsOutput  {
     /// <p>The members of the project.</p>
-    pub members: ::std::vec::Vec<crate::types::ProjectMember>,
+    pub members: ::std::vec::Vec::<crate::types::ProjectMember>,
     /// <p>When the number of memberships is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of memberships, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjectMemberships</code> to list the next set of memberships.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListProjectMembershipsOutput {
+impl  ListProjectMembershipsOutput  {
     /// <p>The members of the project.</p>
-    pub fn members(&self) -> &[crate::types::ProjectMember] {
-        use std::ops::Deref;
-        self.members.deref()
+    pub fn members(&self) -> & [crate::types::ProjectMember] {
+        use std::ops::Deref; self.members.deref()
     }
     /// <p>When the number of memberships is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of memberships, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjectMemberships</code> to list the next set of memberships.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProjectMembershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProjectMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectMembershipsOutput`](crate::operation::list_project_memberships::ListProjectMembershipsOutput).
     pub fn builder() -> crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListProjectMembershipsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectMembershipsOutputBuilder {
-    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMember>>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListProjectMembershipsOutputBuilder {
     /// <p>The members of the project.</p>
     pub fn members(mut self, input: crate::types::ProjectMember) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input);
-        self.members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The members of the project.</p>
-    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMember>>) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectMember>>) -> Self {
+        self.members = input; self
     }
     /// <p>The members of the project.</p>
-    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectMember>> {
         &self.members
     }
     /// <p>When the number of memberships is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of memberships, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjectMemberships</code> to list the next set of memberships.</p>
@@ -68,40 +66,37 @@ impl ListProjectMembershipsOutputBuilder {
     }
     /// <p>When the number of memberships is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of memberships, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjectMemberships</code> to list the next set of memberships.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of memberships is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of memberships, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjectMemberships</code> to list the next set of memberships.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProjectMembershipsOutput`](crate::operation::list_project_memberships::ListProjectMembershipsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`members`](crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder::members)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_project_memberships::ListProjectMembershipsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_project_memberships::ListProjectMembershipsOutput {
-            members: self.members.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "members",
-                    "members was not specified but it is required when building ListProjectMembershipsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_project_memberships::ListProjectMembershipsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_project_memberships::ListProjectMembershipsOutput {
+                members: self.members
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("members", "members was not specified but it is required when building ListProjectMembershipsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTestSetInput {
+pub struct UpdateTestSetInput  {
     /// <p>The test set Id for which update test operation to be performed.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The new test set name.</p>
@@ -10,17 +10,17 @@ pub struct UpdateTestSetInput {
     /// <p>The new test set description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTestSetInput {
+impl  UpdateTestSetInput  {
     /// <p>The test set Id for which update test operation to be performed.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The new test set name.</p>
-    pub fn test_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_name(&self) -> ::std::option::Option<& str> {
         self.test_set_name.as_deref()
     }
     /// <p>The new test set description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateTestSetInputBuilder {
     }
     /// <p>The test set Id for which update test operation to be performed.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for which update test operation to be performed.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateTestSetInputBuilder {
     }
     /// <p>The new test set name.</p>
     pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_name = input;
-        self
+        self.test_set_name = input; self
     }
     /// <p>The new test set name.</p>
     pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl UpdateTestSetInputBuilder {
     }
     /// <p>The new test set description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new test set description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateTestSetInput`](crate::operation::update_test_set::UpdateTestSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_test_set::UpdateTestSetInput {
-            test_set_id: self.test_set_id,
-            test_set_name: self.test_set_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_test_set::UpdateTestSetInput {
+                test_set_id: self.test_set_id
+                ,
+                test_set_name: self.test_set_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

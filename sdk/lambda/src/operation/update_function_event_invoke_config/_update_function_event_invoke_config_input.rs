@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFunctionEventInvokeConfigInput {
+pub struct UpdateFunctionEventInvokeConfigInput  {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -35,7 +35,7 @@ pub struct UpdateFunctionEventInvokeConfigInput {
     /// </ul>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
-impl UpdateFunctionEventInvokeConfigInput {
+impl  UpdateFunctionEventInvokeConfigInput  {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -47,11 +47,11 @@ impl UpdateFunctionEventInvokeConfigInput {
     /// <p><b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>A version number or alias name.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -74,7 +74,7 @@ impl UpdateFunctionEventInvokeConfigInput {
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
-    pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
+    pub fn destination_config(&self) -> ::std::option::Option<& crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
@@ -124,8 +124,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -148,8 +147,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
     }
     /// <p>A version number or alias name.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>A version number or alias name.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
     pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_retry_attempts = input;
-        self
+        self.maximum_retry_attempts = input; self
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
     pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
@@ -176,8 +173,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub fn set_maximum_event_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_event_age_in_seconds = input;
-        self
+        self.maximum_event_age_in_seconds = input; self
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub fn get_maximum_event_age_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -212,8 +208,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
-        self.destination_config = input;
-        self
+        self.destination_config = input; self
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
@@ -231,20 +226,21 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
         &self.destination_config
     }
     /// Consumes the builder and constructs a [`UpdateFunctionEventInvokeConfigInput`](crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigInput {
-                function_name: self.function_name,
-                qualifier: self.qualifier,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-                destination_config: self.destination_config,
-            },
+                function_name: self.function_name
+                ,
+                qualifier: self.qualifier
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+                ,
+                destination_config: self.destination_config
+                ,
+            }
         )
     }
 }
+

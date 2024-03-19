@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDirectorySetupInput {
+pub struct UpdateDirectorySetupInput  {
     /// <p>The identifier of the directory on which you want to perform the update.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
@@ -12,17 +12,17 @@ pub struct UpdateDirectorySetupInput {
     /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
     pub create_snapshot_before_update: ::std::option::Option<bool>,
 }
-impl UpdateDirectorySetupInput {
+impl  UpdateDirectorySetupInput  {
     /// <p>The identifier of the directory on which you want to perform the update.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
+    pub fn update_type(&self) -> ::std::option::Option<& crate::types::UpdateType> {
         self.update_type.as_ref()
     }
     /// <p>The settings for the OS update that needs to be performed on the directory.</p>
-    pub fn os_update_settings(&self) -> ::std::option::Option<&crate::types::OsUpdateSettings> {
+    pub fn os_update_settings(&self) -> ::std::option::Option<& crate::types::OsUpdateSettings> {
         self.os_update_settings.as_ref()
     }
     /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
@@ -55,8 +55,7 @@ impl UpdateDirectorySetupInputBuilder {
     }
     /// <p>The identifier of the directory on which you want to perform the update.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory on which you want to perform the update.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateDirectorySetupInputBuilder {
     }
     /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
-        self.update_type = input;
-        self
+        self.update_type = input; self
     }
     /// <p>The type of update that needs to be performed on the directory. For example, OS.</p>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
@@ -84,8 +82,7 @@ impl UpdateDirectorySetupInputBuilder {
     }
     /// <p>The settings for the OS update that needs to be performed on the directory.</p>
     pub fn set_os_update_settings(mut self, input: ::std::option::Option<crate::types::OsUpdateSettings>) -> Self {
-        self.os_update_settings = input;
-        self
+        self.os_update_settings = input; self
     }
     /// <p>The settings for the OS update that needs to be performed on the directory.</p>
     pub fn get_os_update_settings(&self) -> &::std::option::Option<crate::types::OsUpdateSettings> {
@@ -98,23 +95,26 @@ impl UpdateDirectorySetupInputBuilder {
     }
     /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
     pub fn set_create_snapshot_before_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_snapshot_before_update = input;
-        self
+        self.create_snapshot_before_update = input; self
     }
     /// <p>The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory.</p>
     pub fn get_create_snapshot_before_update(&self) -> &::std::option::Option<bool> {
         &self.create_snapshot_before_update
     }
     /// Consumes the builder and constructs a [`UpdateDirectorySetupInput`](crate::operation::update_directory_setup::UpdateDirectorySetupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_directory_setup::UpdateDirectorySetupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_directory_setup::UpdateDirectorySetupInput {
-            directory_id: self.directory_id,
-            update_type: self.update_type,
-            os_update_settings: self.os_update_settings,
-            create_snapshot_before_update: self.create_snapshot_before_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_directory_setup::UpdateDirectorySetupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_directory_setup::UpdateDirectorySetupInput {
+                directory_id: self.directory_id
+                ,
+                update_type: self.update_type
+                ,
+                os_update_settings: self.os_update_settings
+                ,
+                create_snapshot_before_update: self.create_snapshot_before_update
+                ,
+            }
+        )
     }
 }
+

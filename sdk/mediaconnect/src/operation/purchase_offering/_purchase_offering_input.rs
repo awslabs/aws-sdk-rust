@@ -3,7 +3,7 @@
 /// A request to purchase a offering.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseOfferingInput {
+pub struct PurchaseOfferingInput  {
     /// The Amazon Resource Name (ARN) of the offering.
     pub offering_arn: ::std::option::Option<::std::string::String>,
     /// The name that you want to use for the reservation.
@@ -11,17 +11,17 @@ pub struct PurchaseOfferingInput {
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
     pub start: ::std::option::Option<::std::string::String>,
 }
-impl PurchaseOfferingInput {
+impl  PurchaseOfferingInput  {
     /// The Amazon Resource Name (ARN) of the offering.
-    pub fn offering_arn(&self) -> ::std::option::Option<&str> {
+    pub fn offering_arn(&self) -> ::std::option::Option<& str> {
         self.offering_arn.as_deref()
     }
     /// The name that you want to use for the reservation.
-    pub fn reservation_name(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_name(&self) -> ::std::option::Option<& str> {
         self.reservation_name.as_deref()
     }
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
-    pub fn start(&self) -> ::std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<& str> {
         self.start.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the offering.
     pub fn set_offering_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_arn = input;
-        self
+        self.offering_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the offering.
     pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// The name that you want to use for the reservation.
     pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_name = input;
-        self
+        self.reservation_name = input; self
     }
     /// The name that you want to use for the reservation.
     pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,21 +77,24 @@ impl PurchaseOfferingInputBuilder {
     }
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
         &self.start
     }
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
-            offering_arn: self.offering_arn,
-            reservation_name: self.reservation_name,
-            start: self.start,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::purchase_offering::PurchaseOfferingInput {
+                offering_arn: self.offering_arn
+                ,
+                reservation_name: self.reservation_name
+                ,
+                start: self.start
+                ,
+            }
+        )
     }
 }
+

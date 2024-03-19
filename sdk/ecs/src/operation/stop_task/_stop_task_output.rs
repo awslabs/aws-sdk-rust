@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopTaskOutput {
+pub struct StopTaskOutput  {
     /// <p>The task that was stopped.</p>
     pub task: ::std::option::Option<crate::types::Task>,
     _request_id: Option<String>,
 }
-impl StopTaskOutput {
+impl  StopTaskOutput  {
     /// <p>The task that was stopped.</p>
-    pub fn task(&self) -> ::std::option::Option<&crate::types::Task> {
+    pub fn task(&self) -> ::std::option::Option<& crate::types::Task> {
         self.task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopTaskOutput {
     /// Creates a new builder-style object to manufacture [`StopTaskOutput`](crate::operation::stop_task::StopTaskOutput).
     pub fn builder() -> crate::operation::stop_task::builders::StopTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl StopTaskOutputBuilder {
     }
     /// <p>The task that was stopped.</p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::Task>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>The task that was stopped.</p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::Task> {
         &self.task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopTaskOutput`](crate::operation::stop_task::StopTaskOutput).
     pub fn build(self) -> crate::operation::stop_task::StopTaskOutput {
         crate::operation::stop_task::StopTaskOutput {
-            task: self.task,
+            task: self.task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjoberrorcode = unimplemented!();
 /// match simulationjoberrorcode {
@@ -59,16 +59,14 @@
 /// Specifically, when `simulationjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SimulationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     BadPermissionsCloudwatchLogs,
@@ -134,180 +132,149 @@ pub enum SimulationJobErrorCode {
     WrongRegionSimulationApplication,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SimulationJobErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
-            "BadPermissionsRobotApplication" => SimulationJobErrorCode::BadPermissionsRobotApplication,
-            "BadPermissionsS3Object" => SimulationJobErrorCode::BadPermissionsS3Object,
-            "BadPermissionsS3Output" => SimulationJobErrorCode::BadPermissionsS3Output,
-            "BadPermissionsSimulationApplication" => SimulationJobErrorCode::BadPermissionsSimulationApplication,
-            "BadPermissionsUserCredentials" => SimulationJobErrorCode::BadPermissionsUserCredentials,
-            "BatchCanceled" => SimulationJobErrorCode::BatchCanceled,
-            "BatchTimedOut" => SimulationJobErrorCode::BatchTimedOut,
-            "ENILimitExceeded" => SimulationJobErrorCode::EniLimitExceeded,
-            "InternalServiceError" => SimulationJobErrorCode::InternalServiceError,
-            "InvalidBundleRobotApplication" => SimulationJobErrorCode::InvalidBundleRobotApplication,
-            "InvalidBundleSimulationApplication" => SimulationJobErrorCode::InvalidBundleSimulationApplication,
-            "InvalidInput" => SimulationJobErrorCode::InvalidInput,
-            "InvalidS3Resource" => SimulationJobErrorCode::InvalidS3Resource,
-            "LimitExceeded" => SimulationJobErrorCode::LimitExceeded,
-            "MismatchedEtag" => SimulationJobErrorCode::MismatchedEtag,
-            "RequestThrottled" => SimulationJobErrorCode::RequestThrottled,
-            "ResourceNotFound" => SimulationJobErrorCode::ResourceNotFound,
-            "RobotApplicationCrash" => SimulationJobErrorCode::RobotApplicationCrash,
-            "RobotApplicationHealthCheckFailure" => SimulationJobErrorCode::RobotApplicationHealthCheckFailure,
-            "RobotApplicationVersionMismatchedEtag" => SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag,
-            "SimulationApplicationCrash" => SimulationJobErrorCode::SimulationApplicationCrash,
-            "SimulationApplicationHealthCheckFailure" => SimulationJobErrorCode::SimulationApplicationHealthCheckFailure,
-            "SimulationApplicationVersionMismatchedEtag" => SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag,
-            "SubnetIpLimitExceeded" => SimulationJobErrorCode::SubnetIpLimitExceeded,
-            "ThrottlingError" => SimulationJobErrorCode::ThrottlingError,
-            "UploadContentMismatchError" => SimulationJobErrorCode::UploadContentMismatchError,
-            "WrongRegionRobotApplication" => SimulationJobErrorCode::WrongRegionRobotApplication,
-            "WrongRegionS3Bucket" => SimulationJobErrorCode::WrongRegionS3Bucket,
-            "WrongRegionS3Output" => SimulationJobErrorCode::WrongRegionS3Output,
-            "WrongRegionSimulationApplication" => SimulationJobErrorCode::WrongRegionSimulationApplication,
-            other => SimulationJobErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
+"BadPermissionsRobotApplication" => SimulationJobErrorCode::BadPermissionsRobotApplication,
+"BadPermissionsS3Object" => SimulationJobErrorCode::BadPermissionsS3Object,
+"BadPermissionsS3Output" => SimulationJobErrorCode::BadPermissionsS3Output,
+"BadPermissionsSimulationApplication" => SimulationJobErrorCode::BadPermissionsSimulationApplication,
+"BadPermissionsUserCredentials" => SimulationJobErrorCode::BadPermissionsUserCredentials,
+"BatchCanceled" => SimulationJobErrorCode::BatchCanceled,
+"BatchTimedOut" => SimulationJobErrorCode::BatchTimedOut,
+"ENILimitExceeded" => SimulationJobErrorCode::EniLimitExceeded,
+"InternalServiceError" => SimulationJobErrorCode::InternalServiceError,
+"InvalidBundleRobotApplication" => SimulationJobErrorCode::InvalidBundleRobotApplication,
+"InvalidBundleSimulationApplication" => SimulationJobErrorCode::InvalidBundleSimulationApplication,
+"InvalidInput" => SimulationJobErrorCode::InvalidInput,
+"InvalidS3Resource" => SimulationJobErrorCode::InvalidS3Resource,
+"LimitExceeded" => SimulationJobErrorCode::LimitExceeded,
+"MismatchedEtag" => SimulationJobErrorCode::MismatchedEtag,
+"RequestThrottled" => SimulationJobErrorCode::RequestThrottled,
+"ResourceNotFound" => SimulationJobErrorCode::ResourceNotFound,
+"RobotApplicationCrash" => SimulationJobErrorCode::RobotApplicationCrash,
+"RobotApplicationHealthCheckFailure" => SimulationJobErrorCode::RobotApplicationHealthCheckFailure,
+"RobotApplicationVersionMismatchedEtag" => SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag,
+"SimulationApplicationCrash" => SimulationJobErrorCode::SimulationApplicationCrash,
+"SimulationApplicationHealthCheckFailure" => SimulationJobErrorCode::SimulationApplicationHealthCheckFailure,
+"SimulationApplicationVersionMismatchedEtag" => SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag,
+"SubnetIpLimitExceeded" => SimulationJobErrorCode::SubnetIpLimitExceeded,
+"ThrottlingError" => SimulationJobErrorCode::ThrottlingError,
+"UploadContentMismatchError" => SimulationJobErrorCode::UploadContentMismatchError,
+"WrongRegionRobotApplication" => SimulationJobErrorCode::WrongRegionRobotApplication,
+"WrongRegionS3Bucket" => SimulationJobErrorCode::WrongRegionS3Bucket,
+"WrongRegionS3Output" => SimulationJobErrorCode::WrongRegionS3Output,
+"WrongRegionSimulationApplication" => SimulationJobErrorCode::WrongRegionSimulationApplication,
+other => SimulationJobErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SimulationJobErrorCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SimulationJobErrorCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SimulationJobErrorCode::from(s))
+                    }
+                }
 impl SimulationJobErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobErrorCode::BadPermissionsCloudwatchLogs => "BadPermissionsCloudwatchLogs",
-            SimulationJobErrorCode::BadPermissionsRobotApplication => "BadPermissionsRobotApplication",
-            SimulationJobErrorCode::BadPermissionsS3Object => "BadPermissionsS3Object",
-            SimulationJobErrorCode::BadPermissionsS3Output => "BadPermissionsS3Output",
-            SimulationJobErrorCode::BadPermissionsSimulationApplication => "BadPermissionsSimulationApplication",
-            SimulationJobErrorCode::BadPermissionsUserCredentials => "BadPermissionsUserCredentials",
-            SimulationJobErrorCode::BatchCanceled => "BatchCanceled",
-            SimulationJobErrorCode::BatchTimedOut => "BatchTimedOut",
-            SimulationJobErrorCode::EniLimitExceeded => "ENILimitExceeded",
-            SimulationJobErrorCode::InternalServiceError => "InternalServiceError",
-            SimulationJobErrorCode::InvalidBundleRobotApplication => "InvalidBundleRobotApplication",
-            SimulationJobErrorCode::InvalidBundleSimulationApplication => "InvalidBundleSimulationApplication",
-            SimulationJobErrorCode::InvalidInput => "InvalidInput",
-            SimulationJobErrorCode::InvalidS3Resource => "InvalidS3Resource",
-            SimulationJobErrorCode::LimitExceeded => "LimitExceeded",
-            SimulationJobErrorCode::MismatchedEtag => "MismatchedEtag",
-            SimulationJobErrorCode::RequestThrottled => "RequestThrottled",
-            SimulationJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            SimulationJobErrorCode::RobotApplicationCrash => "RobotApplicationCrash",
-            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => "RobotApplicationHealthCheckFailure",
-            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => "RobotApplicationVersionMismatchedEtag",
-            SimulationJobErrorCode::SimulationApplicationCrash => "SimulationApplicationCrash",
-            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => "SimulationApplicationHealthCheckFailure",
-            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => "SimulationApplicationVersionMismatchedEtag",
-            SimulationJobErrorCode::SubnetIpLimitExceeded => "SubnetIpLimitExceeded",
-            SimulationJobErrorCode::ThrottlingError => "ThrottlingError",
-            SimulationJobErrorCode::UploadContentMismatchError => "UploadContentMismatchError",
-            SimulationJobErrorCode::WrongRegionRobotApplication => "WrongRegionRobotApplication",
-            SimulationJobErrorCode::WrongRegionS3Bucket => "WrongRegionS3Bucket",
-            SimulationJobErrorCode::WrongRegionS3Output => "WrongRegionS3Output",
-            SimulationJobErrorCode::WrongRegionSimulationApplication => "WrongRegionSimulationApplication",
-            SimulationJobErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BadPermissionsCloudwatchLogs",
-            "BadPermissionsRobotApplication",
-            "BadPermissionsS3Object",
-            "BadPermissionsS3Output",
-            "BadPermissionsSimulationApplication",
-            "BadPermissionsUserCredentials",
-            "BatchCanceled",
-            "BatchTimedOut",
-            "ENILimitExceeded",
-            "InternalServiceError",
-            "InvalidBundleRobotApplication",
-            "InvalidBundleSimulationApplication",
-            "InvalidInput",
-            "InvalidS3Resource",
-            "LimitExceeded",
-            "MismatchedEtag",
-            "RequestThrottled",
-            "ResourceNotFound",
-            "RobotApplicationCrash",
-            "RobotApplicationHealthCheckFailure",
-            "RobotApplicationVersionMismatchedEtag",
-            "SimulationApplicationCrash",
-            "SimulationApplicationHealthCheckFailure",
-            "SimulationApplicationVersionMismatchedEtag",
-            "SubnetIpLimitExceeded",
-            "ThrottlingError",
-            "UploadContentMismatchError",
-            "WrongRegionRobotApplication",
-            "WrongRegionS3Bucket",
-            "WrongRegionS3Output",
-            "WrongRegionSimulationApplication",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobErrorCode::BadPermissionsCloudwatchLogs => "BadPermissionsCloudwatchLogs",
+    SimulationJobErrorCode::BadPermissionsRobotApplication => "BadPermissionsRobotApplication",
+    SimulationJobErrorCode::BadPermissionsS3Object => "BadPermissionsS3Object",
+    SimulationJobErrorCode::BadPermissionsS3Output => "BadPermissionsS3Output",
+    SimulationJobErrorCode::BadPermissionsSimulationApplication => "BadPermissionsSimulationApplication",
+    SimulationJobErrorCode::BadPermissionsUserCredentials => "BadPermissionsUserCredentials",
+    SimulationJobErrorCode::BatchCanceled => "BatchCanceled",
+    SimulationJobErrorCode::BatchTimedOut => "BatchTimedOut",
+    SimulationJobErrorCode::EniLimitExceeded => "ENILimitExceeded",
+    SimulationJobErrorCode::InternalServiceError => "InternalServiceError",
+    SimulationJobErrorCode::InvalidBundleRobotApplication => "InvalidBundleRobotApplication",
+    SimulationJobErrorCode::InvalidBundleSimulationApplication => "InvalidBundleSimulationApplication",
+    SimulationJobErrorCode::InvalidInput => "InvalidInput",
+    SimulationJobErrorCode::InvalidS3Resource => "InvalidS3Resource",
+    SimulationJobErrorCode::LimitExceeded => "LimitExceeded",
+    SimulationJobErrorCode::MismatchedEtag => "MismatchedEtag",
+    SimulationJobErrorCode::RequestThrottled => "RequestThrottled",
+    SimulationJobErrorCode::ResourceNotFound => "ResourceNotFound",
+    SimulationJobErrorCode::RobotApplicationCrash => "RobotApplicationCrash",
+    SimulationJobErrorCode::RobotApplicationHealthCheckFailure => "RobotApplicationHealthCheckFailure",
+    SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => "RobotApplicationVersionMismatchedEtag",
+    SimulationJobErrorCode::SimulationApplicationCrash => "SimulationApplicationCrash",
+    SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => "SimulationApplicationHealthCheckFailure",
+    SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => "SimulationApplicationVersionMismatchedEtag",
+    SimulationJobErrorCode::SubnetIpLimitExceeded => "SubnetIpLimitExceeded",
+    SimulationJobErrorCode::ThrottlingError => "ThrottlingError",
+    SimulationJobErrorCode::UploadContentMismatchError => "UploadContentMismatchError",
+    SimulationJobErrorCode::WrongRegionRobotApplication => "WrongRegionRobotApplication",
+    SimulationJobErrorCode::WrongRegionS3Bucket => "WrongRegionS3Bucket",
+    SimulationJobErrorCode::WrongRegionS3Output => "WrongRegionS3Output",
+    SimulationJobErrorCode::WrongRegionSimulationApplication => "WrongRegionSimulationApplication",
+    SimulationJobErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BadPermissionsCloudwatchLogs", "BadPermissionsRobotApplication", "BadPermissionsS3Object", "BadPermissionsS3Output", "BadPermissionsSimulationApplication", "BadPermissionsUserCredentials", "BatchCanceled", "BatchTimedOut", "ENILimitExceeded", "InternalServiceError", "InvalidBundleRobotApplication", "InvalidBundleSimulationApplication", "InvalidInput", "InvalidS3Resource", "LimitExceeded", "MismatchedEtag", "RequestThrottled", "ResourceNotFound", "RobotApplicationCrash", "RobotApplicationHealthCheckFailure", "RobotApplicationVersionMismatchedEtag", "SimulationApplicationCrash", "SimulationApplicationHealthCheckFailure", "SimulationApplicationVersionMismatchedEtag", "SubnetIpLimitExceeded", "ThrottlingError", "UploadContentMismatchError", "WrongRegionRobotApplication", "WrongRegionS3Bucket", "WrongRegionS3Output", "WrongRegionSimulationApplication"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SimulationJobErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SimulationJobErrorCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SimulationJobErrorCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SimulationJobErrorCode::BadPermissionsCloudwatchLogs => write!(f, "BadPermissionsCloudwatchLogs"),
-            SimulationJobErrorCode::BadPermissionsRobotApplication => write!(f, "BadPermissionsRobotApplication"),
-            SimulationJobErrorCode::BadPermissionsS3Object => write!(f, "BadPermissionsS3Object"),
-            SimulationJobErrorCode::BadPermissionsS3Output => write!(f, "BadPermissionsS3Output"),
-            SimulationJobErrorCode::BadPermissionsSimulationApplication => write!(f, "BadPermissionsSimulationApplication"),
-            SimulationJobErrorCode::BadPermissionsUserCredentials => write!(f, "BadPermissionsUserCredentials"),
-            SimulationJobErrorCode::BatchCanceled => write!(f, "BatchCanceled"),
-            SimulationJobErrorCode::BatchTimedOut => write!(f, "BatchTimedOut"),
-            SimulationJobErrorCode::EniLimitExceeded => write!(f, "ENILimitExceeded"),
-            SimulationJobErrorCode::InternalServiceError => write!(f, "InternalServiceError"),
-            SimulationJobErrorCode::InvalidBundleRobotApplication => write!(f, "InvalidBundleRobotApplication"),
-            SimulationJobErrorCode::InvalidBundleSimulationApplication => write!(f, "InvalidBundleSimulationApplication"),
-            SimulationJobErrorCode::InvalidInput => write!(f, "InvalidInput"),
-            SimulationJobErrorCode::InvalidS3Resource => write!(f, "InvalidS3Resource"),
-            SimulationJobErrorCode::LimitExceeded => write!(f, "LimitExceeded"),
-            SimulationJobErrorCode::MismatchedEtag => write!(f, "MismatchedEtag"),
-            SimulationJobErrorCode::RequestThrottled => write!(f, "RequestThrottled"),
-            SimulationJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
-            SimulationJobErrorCode::RobotApplicationCrash => write!(f, "RobotApplicationCrash"),
-            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => write!(f, "RobotApplicationHealthCheckFailure"),
-            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => write!(f, "RobotApplicationVersionMismatchedEtag"),
-            SimulationJobErrorCode::SimulationApplicationCrash => write!(f, "SimulationApplicationCrash"),
-            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => write!(f, "SimulationApplicationHealthCheckFailure"),
-            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => write!(f, "SimulationApplicationVersionMismatchedEtag"),
-            SimulationJobErrorCode::SubnetIpLimitExceeded => write!(f, "SubnetIpLimitExceeded"),
-            SimulationJobErrorCode::ThrottlingError => write!(f, "ThrottlingError"),
-            SimulationJobErrorCode::UploadContentMismatchError => write!(f, "UploadContentMismatchError"),
-            SimulationJobErrorCode::WrongRegionRobotApplication => write!(f, "WrongRegionRobotApplication"),
-            SimulationJobErrorCode::WrongRegionS3Bucket => write!(f, "WrongRegionS3Bucket"),
-            SimulationJobErrorCode::WrongRegionS3Output => write!(f, "WrongRegionS3Output"),
-            SimulationJobErrorCode::WrongRegionSimulationApplication => write!(f, "WrongRegionSimulationApplication"),
-            SimulationJobErrorCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SimulationJobErrorCode::BadPermissionsCloudwatchLogs => write!(f, "BadPermissionsCloudwatchLogs"),
+SimulationJobErrorCode::BadPermissionsRobotApplication => write!(f, "BadPermissionsRobotApplication"),
+SimulationJobErrorCode::BadPermissionsS3Object => write!(f, "BadPermissionsS3Object"),
+SimulationJobErrorCode::BadPermissionsS3Output => write!(f, "BadPermissionsS3Output"),
+SimulationJobErrorCode::BadPermissionsSimulationApplication => write!(f, "BadPermissionsSimulationApplication"),
+SimulationJobErrorCode::BadPermissionsUserCredentials => write!(f, "BadPermissionsUserCredentials"),
+SimulationJobErrorCode::BatchCanceled => write!(f, "BatchCanceled"),
+SimulationJobErrorCode::BatchTimedOut => write!(f, "BatchTimedOut"),
+SimulationJobErrorCode::EniLimitExceeded => write!(f, "ENILimitExceeded"),
+SimulationJobErrorCode::InternalServiceError => write!(f, "InternalServiceError"),
+SimulationJobErrorCode::InvalidBundleRobotApplication => write!(f, "InvalidBundleRobotApplication"),
+SimulationJobErrorCode::InvalidBundleSimulationApplication => write!(f, "InvalidBundleSimulationApplication"),
+SimulationJobErrorCode::InvalidInput => write!(f, "InvalidInput"),
+SimulationJobErrorCode::InvalidS3Resource => write!(f, "InvalidS3Resource"),
+SimulationJobErrorCode::LimitExceeded => write!(f, "LimitExceeded"),
+SimulationJobErrorCode::MismatchedEtag => write!(f, "MismatchedEtag"),
+SimulationJobErrorCode::RequestThrottled => write!(f, "RequestThrottled"),
+SimulationJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+SimulationJobErrorCode::RobotApplicationCrash => write!(f, "RobotApplicationCrash"),
+SimulationJobErrorCode::RobotApplicationHealthCheckFailure => write!(f, "RobotApplicationHealthCheckFailure"),
+SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => write!(f, "RobotApplicationVersionMismatchedEtag"),
+SimulationJobErrorCode::SimulationApplicationCrash => write!(f, "SimulationApplicationCrash"),
+SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => write!(f, "SimulationApplicationHealthCheckFailure"),
+SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => write!(f, "SimulationApplicationVersionMismatchedEtag"),
+SimulationJobErrorCode::SubnetIpLimitExceeded => write!(f, "SubnetIpLimitExceeded"),
+SimulationJobErrorCode::ThrottlingError => write!(f, "ThrottlingError"),
+SimulationJobErrorCode::UploadContentMismatchError => write!(f, "UploadContentMismatchError"),
+SimulationJobErrorCode::WrongRegionRobotApplication => write!(f, "WrongRegionRobotApplication"),
+SimulationJobErrorCode::WrongRegionS3Bucket => write!(f, "WrongRegionS3Bucket"),
+SimulationJobErrorCode::WrongRegionS3Output => write!(f, "WrongRegionS3Output"),
+SimulationJobErrorCode::WrongRegionSimulationApplication => write!(f, "WrongRegionSimulationApplication"),
+SimulationJobErrorCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the <code>AccessLog</code> attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessLog {
+pub struct AccessLog  {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
     pub enabled: bool,
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
@@ -14,13 +14,13 @@ pub struct AccessLog {
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
     pub s3_bucket_prefix: ::std::option::Option<::std::string::String>,
 }
-impl AccessLog {
+impl  AccessLog  {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
@@ -29,7 +29,7 @@ impl AccessLog {
         self.emit_interval
     }
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn s3_bucket_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_prefix.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl AccessLogBuilder {
     }
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -72,8 +71,7 @@ impl AccessLogBuilder {
     }
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl AccessLogBuilder {
     /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
     /// <p>Default: 60 minutes</p>
     pub fn set_emit_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.emit_interval = input;
-        self
+        self.emit_interval = input; self
     }
     /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
     /// <p>Default: 60 minutes</p>
@@ -103,8 +100,7 @@ impl AccessLogBuilder {
     }
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
     pub fn set_s3_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_prefix = input;
-        self
+        self.s3_bucket_prefix = input; self
     }
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
     pub fn get_s3_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,10 +109,16 @@ impl AccessLogBuilder {
     /// Consumes the builder and constructs a [`AccessLog`](crate::types::AccessLog).
     pub fn build(self) -> crate::types::AccessLog {
         crate::types::AccessLog {
-            enabled: self.enabled.unwrap_or_default(),
-            s3_bucket_name: self.s3_bucket_name,
-            emit_interval: self.emit_interval,
-            s3_bucket_prefix: self.s3_bucket_prefix,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            emit_interval: self.emit_interval
+            ,
+            s3_bucket_prefix: self.s3_bucket_prefix
+            ,
         }
     }
 }
+

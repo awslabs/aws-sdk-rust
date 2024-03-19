@@ -3,7 +3,7 @@
 /// <p>The data volume configuration for tasks launched using this task definition. Specifying a volume configuration in a task definition is optional. The volume configuration may contain multiple volumes but only one volume configured at launch is supported. Each volume defined in the volume configuration may only specify a <code>name</code> and one of either <code>configuredAtLaunch</code>, <code>dockerVolumeConfiguration</code>, <code>efsVolumeConfiguration</code>, <code>fsxWindowsFileServerVolumeConfiguration</code>, or <code>host</code>. If an empty volume configuration is specified, by default Amazon ECS uses a host volume. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Volume {
+pub struct Volume  {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     /// <p>When using a volume configured at launch, the <code>name</code> is required and must also be specified as the volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when creating your service or standalone task.</p>
     /// <p>For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the <code>mountPoints</code> object in the container definition.</p>
@@ -25,32 +25,32 @@ pub struct Volume {
     /// <p>To configure a volume at launch time, use this task definition revision and specify a <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.</p>
     pub configured_at_launch: ::std::option::Option<bool>,
 }
-impl Volume {
+impl  Volume  {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     /// <p>When using a volume configured at launch, the <code>name</code> is required and must also be specified as the volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when creating your service or standalone task.</p>
     /// <p>For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the <code>mountPoints</code> object in the container definition.</p>
     /// <p>When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
-    pub fn host(&self) -> ::std::option::Option<&crate::types::HostVolumeProperties> {
+    pub fn host(&self) -> ::std::option::Option<& crate::types::HostVolumeProperties> {
         self.host.as_ref()
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
     /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
-    pub fn docker_volume_configuration(&self) -> ::std::option::Option<&crate::types::DockerVolumeConfiguration> {
+    pub fn docker_volume_configuration(&self) -> ::std::option::Option<& crate::types::DockerVolumeConfiguration> {
         self.docker_volume_configuration.as_ref()
     }
     /// <p>This parameter is specified when you use an Amazon Elastic File System file system for task storage.</p>
-    pub fn efs_volume_configuration(&self) -> ::std::option::Option<&crate::types::EfsVolumeConfiguration> {
+    pub fn efs_volume_configuration(&self) -> ::std::option::Option<& crate::types::EfsVolumeConfiguration> {
         self.efs_volume_configuration.as_ref()
     }
     /// <p>This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.</p>
-    pub fn fsx_windows_file_server_volume_configuration(&self) -> ::std::option::Option<&crate::types::FSxWindowsFileServerVolumeConfiguration> {
+    pub fn fsx_windows_file_server_volume_configuration(&self) -> ::std::option::Option<& crate::types::FSxWindowsFileServerVolumeConfiguration> {
         self.fsx_windows_file_server_volume_configuration.as_ref()
     }
     /// <p>Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume configured at launch in the volume configuration.</p>
@@ -91,8 +91,7 @@ impl VolumeBuilder {
     /// <p>For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the <code>mountPoints</code> object in the container definition.</p>
     /// <p>When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
     /// <p>When using a volume configured at launch, the <code>name</code> is required and must also be specified as the volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when creating your service or standalone task.</p>
@@ -110,8 +109,7 @@ impl VolumeBuilder {
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
     pub fn set_host(mut self, input: ::std::option::Option<crate::types::HostVolumeProperties>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
@@ -131,8 +129,7 @@ impl VolumeBuilder {
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
     pub fn set_docker_volume_configuration(mut self, input: ::std::option::Option<crate::types::DockerVolumeConfiguration>) -> Self {
-        self.docker_volume_configuration = input;
-        self
+        self.docker_volume_configuration = input; self
     }
     /// <p>This parameter is specified when you use Docker volumes.</p>
     /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p><note>
@@ -148,8 +145,7 @@ impl VolumeBuilder {
     }
     /// <p>This parameter is specified when you use an Amazon Elastic File System file system for task storage.</p>
     pub fn set_efs_volume_configuration(mut self, input: ::std::option::Option<crate::types::EfsVolumeConfiguration>) -> Self {
-        self.efs_volume_configuration = input;
-        self
+        self.efs_volume_configuration = input; self
     }
     /// <p>This parameter is specified when you use an Amazon Elastic File System file system for task storage.</p>
     pub fn get_efs_volume_configuration(&self) -> &::std::option::Option<crate::types::EfsVolumeConfiguration> {
@@ -161,12 +157,8 @@ impl VolumeBuilder {
         self
     }
     /// <p>This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.</p>
-    pub fn set_fsx_windows_file_server_volume_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FSxWindowsFileServerVolumeConfiguration>,
-    ) -> Self {
-        self.fsx_windows_file_server_volume_configuration = input;
-        self
+    pub fn set_fsx_windows_file_server_volume_configuration(mut self, input: ::std::option::Option<crate::types::FSxWindowsFileServerVolumeConfiguration>) -> Self {
+        self.fsx_windows_file_server_volume_configuration = input; self
     }
     /// <p>This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.</p>
     pub fn get_fsx_windows_file_server_volume_configuration(&self) -> &::std::option::Option<crate::types::FSxWindowsFileServerVolumeConfiguration> {
@@ -181,8 +173,7 @@ impl VolumeBuilder {
     /// <p>Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume configured at launch in the volume configuration.</p>
     /// <p>To configure a volume at launch time, use this task definition revision and specify a <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.</p>
     pub fn set_configured_at_launch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.configured_at_launch = input;
-        self
+        self.configured_at_launch = input; self
     }
     /// <p>Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume configured at launch in the volume configuration.</p>
     /// <p>To configure a volume at launch time, use this task definition revision and specify a <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.</p>
@@ -192,12 +183,19 @@ impl VolumeBuilder {
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).
     pub fn build(self) -> crate::types::Volume {
         crate::types::Volume {
-            name: self.name,
-            host: self.host,
-            docker_volume_configuration: self.docker_volume_configuration,
-            efs_volume_configuration: self.efs_volume_configuration,
-            fsx_windows_file_server_volume_configuration: self.fsx_windows_file_server_volume_configuration,
-            configured_at_launch: self.configured_at_launch,
+            name: self.name
+            ,
+            host: self.host
+            ,
+            docker_volume_configuration: self.docker_volume_configuration
+            ,
+            efs_volume_configuration: self.efs_volume_configuration
+            ,
+            fsx_windows_file_server_volume_configuration: self.fsx_windows_file_server_volume_configuration
+            ,
+            configured_at_launch: self.configured_at_launch
+            ,
         }
     }
 }
+

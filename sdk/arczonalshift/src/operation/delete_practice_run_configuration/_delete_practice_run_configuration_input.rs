@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePracticeRunConfigurationInput {
+pub struct DeletePracticeRunConfigurationInput  {
     /// <p>The identifier for the resource that you want to delete the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeletePracticeRunConfigurationInput {
+impl  DeletePracticeRunConfigurationInput  {
     /// <p>The identifier for the resource that you want to delete the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeletePracticeRunConfigurationInputBuilder {
     }
     /// <p>The identifier for the resource that you want to delete the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource that you want to delete the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`DeletePracticeRunConfigurationInput`](crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationInput {
-            resource_identifier: self.resource_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationInput {
+                resource_identifier: self.resource_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReplicatorOutput {
+pub struct CreateReplicatorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub replicator_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the replicator provided by the customer.</p>
@@ -11,25 +11,25 @@ pub struct CreateReplicatorOutput {
     pub replicator_state: ::std::option::Option<crate::types::ReplicatorState>,
     _request_id: Option<String>,
 }
-impl CreateReplicatorOutput {
+impl  CreateReplicatorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
-    pub fn replicator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_arn.as_deref()
     }
     /// <p>Name of the replicator provided by the customer.</p>
-    pub fn replicator_name(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_name(&self) -> ::std::option::Option<& str> {
         self.replicator_name.as_deref()
     }
     /// <p>State of the replicator.</p>
-    pub fn replicator_state(&self) -> ::std::option::Option<&crate::types::ReplicatorState> {
+    pub fn replicator_state(&self) -> ::std::option::Option<& crate::types::ReplicatorState> {
         self.replicator_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateReplicatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateReplicatorOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicatorOutput`](crate::operation::create_replicator::CreateReplicatorOutput).
     pub fn builder() -> crate::operation::create_replicator::builders::CreateReplicatorOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateReplicatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn set_replicator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_arn = input;
-        self
+        self.replicator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn get_replicator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl CreateReplicatorOutputBuilder {
     }
     /// <p>Name of the replicator provided by the customer.</p>
     pub fn set_replicator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_name = input;
-        self
+        self.replicator_name = input; self
     }
     /// <p>Name of the replicator provided by the customer.</p>
     pub fn get_replicator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateReplicatorOutputBuilder {
     }
     /// <p>State of the replicator.</p>
     pub fn set_replicator_state(mut self, input: ::std::option::Option<crate::types::ReplicatorState>) -> Self {
-        self.replicator_state = input;
-        self
+        self.replicator_state = input; self
     }
     /// <p>State of the replicator.</p>
     pub fn get_replicator_state(&self) -> &::std::option::Option<crate::types::ReplicatorState> {
         &self.replicator_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateReplicatorOutput`](crate::operation::create_replicator::CreateReplicatorOutput).
     pub fn build(self) -> crate::operation::create_replicator::CreateReplicatorOutput {
         crate::operation::create_replicator::CreateReplicatorOutput {
-            replicator_arn: self.replicator_arn,
-            replicator_name: self.replicator_name,
-            replicator_state: self.replicator_state,
+            replicator_arn: self.replicator_arn
+            ,
+            replicator_name: self.replicator_name
+            ,
+            replicator_state: self.replicator_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

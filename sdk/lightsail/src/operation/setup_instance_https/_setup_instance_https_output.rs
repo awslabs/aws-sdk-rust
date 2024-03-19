@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetupInstanceHttpsOutput {
+pub struct SetupInstanceHttpsOutput  {
     /// <p>The available API operations for <code>SetupInstanceHttps</code>.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     _request_id: Option<String>,
 }
-impl SetupInstanceHttpsOutput {
+impl  SetupInstanceHttpsOutput  {
     /// <p>The available API operations for <code>SetupInstanceHttps</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::Operation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::Operation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for SetupInstanceHttpsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetupInstanceHttpsOutput {
     /// Creates a new builder-style object to manufacture [`SetupInstanceHttpsOutput`](crate::operation::setup_instance_https::SetupInstanceHttpsOutput).
     pub fn builder() -> crate::operation::setup_instance_https::builders::SetupInstanceHttpsOutputBuilder {
@@ -31,7 +32,7 @@ impl SetupInstanceHttpsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetupInstanceHttpsOutputBuilder {
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     _request_id: Option<String>,
 }
 impl SetupInstanceHttpsOutputBuilder {
@@ -42,33 +43,34 @@ impl SetupInstanceHttpsOutputBuilder {
     /// <p>The available API operations for <code>SetupInstanceHttps</code>.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The available API operations for <code>SetupInstanceHttps</code>.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>The available API operations for <code>SetupInstanceHttps</code>.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetupInstanceHttpsOutput`](crate::operation::setup_instance_https::SetupInstanceHttpsOutput).
     pub fn build(self) -> crate::operation::setup_instance_https::SetupInstanceHttpsOutput {
         crate::operation::setup_instance_https::SetupInstanceHttpsOutput {
-            operations: self.operations,
+            operations: self.operations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

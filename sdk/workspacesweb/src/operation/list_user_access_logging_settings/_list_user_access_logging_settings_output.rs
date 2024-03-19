@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserAccessLoggingSettingsOutput {
+pub struct ListUserAccessLoggingSettingsOutput  {
     /// <p>The user access logging settings.</p>
-    pub user_access_logging_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
+    pub user_access_logging_settings: ::std::option::Option<::std::vec::Vec::<crate::types::UserAccessLoggingSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListUserAccessLoggingSettingsOutput {
+impl  ListUserAccessLoggingSettingsOutput  {
     /// <p>The user access logging settings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_access_logging_settings.is_none()`.
-    pub fn user_access_logging_settings(&self) -> &[crate::types::UserAccessLoggingSettingsSummary] {
-        self.user_access_logging_settings.as_deref().unwrap_or_default()
+    pub fn user_access_logging_settings(&self) -> & [crate::types::UserAccessLoggingSettingsSummary] {
+        self.user_access_logging_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUserAccessLoggingSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput).
     pub fn builder() -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListUserAccessLoggingSettingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserAccessLoggingSettingsOutputBuilder {
-    pub(crate) user_access_logging_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
+    pub(crate) user_access_logging_settings: ::std::option::Option<::std::vec::Vec::<crate::types::UserAccessLoggingSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListUserAccessLoggingSettingsOutputBuilder {
     /// <p>The user access logging settings.</p>
     pub fn user_access_logging_settings(mut self, input: crate::types::UserAccessLoggingSettingsSummary) -> Self {
         let mut v = self.user_access_logging_settings.unwrap_or_default();
-        v.push(input);
-        self.user_access_logging_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_access_logging_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user access logging settings.</p>
-    pub fn set_user_access_logging_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
-    ) -> Self {
-        self.user_access_logging_settings = input;
-        self
+    pub fn set_user_access_logging_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAccessLoggingSettingsSummary>>) -> Self {
+        self.user_access_logging_settings = input; self
     }
     /// <p>The user access logging settings.</p>
-    pub fn get_user_access_logging_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>> {
+    pub fn get_user_access_logging_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAccessLoggingSettingsSummary>> {
         &self.user_access_logging_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -72,28 +69,30 @@ impl ListUserAccessLoggingSettingsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput).
     pub fn build(self) -> crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput {
         crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput {
-            user_access_logging_settings: self.user_access_logging_settings,
-            next_token: self.next_token,
+            user_access_logging_settings: self.user_access_logging_settings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

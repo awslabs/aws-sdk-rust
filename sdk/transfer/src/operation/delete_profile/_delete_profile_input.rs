@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProfileInput {
+pub struct DeleteProfileInput  {
     /// <p>The identifier of the profile that you are deleting.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProfileInput {
+impl  DeleteProfileInput  {
     /// <p>The identifier of the profile that you are deleting.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteProfileInputBuilder {
     }
     /// <p>The identifier of the profile that you are deleting.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The identifier of the profile that you are deleting.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_profile::DeleteProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_profile::DeleteProfileInput { profile_id: self.profile_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_profile::DeleteProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_profile::DeleteProfileInput {
+                profile_id: self.profile_id
+                ,
+            }
+        )
     }
 }
+

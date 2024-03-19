@@ -22,11 +22,7 @@ impl RelatedItemContent {
     /// Tries to convert the enum instance into [`Comment`](crate::types::RelatedItemContent::Comment), extracting the inner [`CommentContent`](crate::types::CommentContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_comment(&self) -> ::std::result::Result<&crate::types::CommentContent, &Self> {
-        if let RelatedItemContent::Comment(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RelatedItemContent::Comment(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Comment`](crate::types::RelatedItemContent::Comment).
     pub fn is_comment(&self) -> bool {
@@ -35,11 +31,7 @@ impl RelatedItemContent {
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemContent::Contact), extracting the inner [`ContactContent`](crate::types::ContactContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> ::std::result::Result<&crate::types::ContactContent, &Self> {
-        if let RelatedItemContent::Contact(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RelatedItemContent::Contact(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemContent::Contact).
     pub fn is_contact(&self) -> bool {
@@ -50,3 +42,4 @@ impl RelatedItemContent {
         matches!(self, Self::Unknown)
     }
 }
+

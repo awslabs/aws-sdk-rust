@@ -3,26 +3,25 @@
 /// <p>nformation about the filter used to narrow the results returned in a list of projects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectListFilter {
+pub struct ProjectListFilter  {
     /// <p>A key that can be used to sort results.</p>
     pub key: crate::types::FilterKey,
     /// <p>The values of the key.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator used to compare the fields.</p>
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
-impl ProjectListFilter {
+impl  ProjectListFilter  {
     /// <p>A key that can be used to sort results.</p>
-    pub fn key(&self) -> &crate::types::FilterKey {
+    pub fn key(&self) -> & crate::types::FilterKey {
         &self.key
     }
     /// <p>The values of the key.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator used to compare the fields.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
 }
@@ -38,7 +37,7 @@ impl ProjectListFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectListFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::FilterKey>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl ProjectListFilterBuilder {
@@ -50,8 +49,7 @@ impl ProjectListFilterBuilder {
     }
     /// <p>A key that can be used to sort results.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::FilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>A key that can be used to sort results.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::FilterKey> {
@@ -64,17 +62,16 @@ impl ProjectListFilterBuilder {
     /// <p>The values of the key.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the key.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the key.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator used to compare the fields.</p>
@@ -84,8 +81,7 @@ impl ProjectListFilterBuilder {
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
@@ -96,20 +92,22 @@ impl ProjectListFilterBuilder {
     /// - [`key`](crate::types::builders::ProjectListFilterBuilder::key)
     /// - [`values`](crate::types::builders::ProjectListFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectListFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectListFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building ProjectListFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building ProjectListFilter",
-                )
-            })?,
-            comparison_operator: self.comparison_operator,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectListFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building ProjectListFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building ProjectListFilter")
+                    )?
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+            }
+        )
     }
 }
+

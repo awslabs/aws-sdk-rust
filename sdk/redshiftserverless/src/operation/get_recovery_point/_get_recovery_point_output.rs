@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecoveryPointOutput {
+pub struct GetRecoveryPointOutput  {
     /// <p>The returned recovery point object.</p>
     pub recovery_point: ::std::option::Option<crate::types::RecoveryPoint>,
     _request_id: Option<String>,
 }
-impl GetRecoveryPointOutput {
+impl  GetRecoveryPointOutput  {
     /// <p>The returned recovery point object.</p>
-    pub fn recovery_point(&self) -> ::std::option::Option<&crate::types::RecoveryPoint> {
+    pub fn recovery_point(&self) -> ::std::option::Option<& crate::types::RecoveryPoint> {
         self.recovery_point.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecoveryPointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryPointOutput`](crate::operation::get_recovery_point::GetRecoveryPointOutput).
     pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointOutputBuilder {
@@ -40,27 +40,28 @@ impl GetRecoveryPointOutputBuilder {
     }
     /// <p>The returned recovery point object.</p>
     pub fn set_recovery_point(mut self, input: ::std::option::Option<crate::types::RecoveryPoint>) -> Self {
-        self.recovery_point = input;
-        self
+        self.recovery_point = input; self
     }
     /// <p>The returned recovery point object.</p>
     pub fn get_recovery_point(&self) -> &::std::option::Option<crate::types::RecoveryPoint> {
         &self.recovery_point
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecoveryPointOutput`](crate::operation::get_recovery_point::GetRecoveryPointOutput).
     pub fn build(self) -> crate::operation::get_recovery_point::GetRecoveryPointOutput {
         crate::operation::get_recovery_point::GetRecoveryPointOutput {
-            recovery_point: self.recovery_point,
+            recovery_point: self.recovery_point
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

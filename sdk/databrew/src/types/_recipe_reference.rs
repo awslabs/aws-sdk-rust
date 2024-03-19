@@ -3,20 +3,19 @@
 /// <p>Represents the name and version of a DataBrew recipe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecipeReference {
+pub struct RecipeReference  {
     /// <p>The name of the recipe.</p>
     pub name: ::std::string::String,
     /// <p>The identifier for the version for the recipe.</p>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
-impl RecipeReference {
+impl  RecipeReference  {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The identifier for the version for the recipe.</p>
-    pub fn recipe_version(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_version(&self) -> ::std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl RecipeReferenceBuilder {
     }
     /// <p>The name of the recipe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recipe.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl RecipeReferenceBuilder {
     }
     /// <p>The identifier for the version for the recipe.</p>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_version = input;
-        self
+        self.recipe_version = input; self
     }
     /// <p>The identifier for the version for the recipe.</p>
     pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl RecipeReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RecipeReferenceBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::RecipeReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecipeReference {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RecipeReference",
-                )
-            })?,
-            recipe_version: self.recipe_version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecipeReference {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RecipeReference")
+                    )?
+                ,
+                recipe_version: self.recipe_version
+                ,
+            }
+        )
     }
 }
+

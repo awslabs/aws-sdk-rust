@@ -3,24 +3,22 @@
 /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectFromCollection {
+pub struct SelectFromCollection  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub index: i32,
 }
-impl SelectFromCollection {
+impl  SelectFromCollection  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn index(&self) -> i32 {
@@ -39,7 +37,7 @@ impl SelectFromCollection {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectFromCollectionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) index: ::std::option::Option<i32>,
 }
 impl SelectFromCollectionBuilder {
@@ -51,8 +49,7 @@ impl SelectFromCollectionBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl SelectFromCollectionBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
@@ -86,8 +82,7 @@ impl SelectFromCollectionBuilder {
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
@@ -98,20 +93,23 @@ impl SelectFromCollectionBuilder {
     /// - [`name`](crate::types::builders::SelectFromCollectionBuilder::name)
     /// - [`inputs`](crate::types::builders::SelectFromCollectionBuilder::inputs)
     pub fn build(self) -> ::std::result::Result<crate::types::SelectFromCollection, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SelectFromCollection {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SelectFromCollection",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building SelectFromCollection",
-                )
-            })?,
-            index: self.index.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::SelectFromCollection {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SelectFromCollection")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building SelectFromCollection")
+                    )?
+                ,
+                index: self.index
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>A statistic in a Performance Insights collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceInsightsStat {
+pub struct PerformanceInsightsStat  {
     /// <p>The statistic type.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The value of the statistic.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl PerformanceInsightsStat {
+impl  PerformanceInsightsStat  {
     /// <p>The statistic type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The value of the statistic.</p>
@@ -41,8 +41,7 @@ impl PerformanceInsightsStatBuilder {
     }
     /// <p>The statistic type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The statistic type.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PerformanceInsightsStatBuilder {
     }
     /// <p>The value of the statistic.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the statistic.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl PerformanceInsightsStatBuilder {
     /// Consumes the builder and constructs a [`PerformanceInsightsStat`](crate::types::PerformanceInsightsStat).
     pub fn build(self) -> crate::types::PerformanceInsightsStat {
         crate::types::PerformanceInsightsStat {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

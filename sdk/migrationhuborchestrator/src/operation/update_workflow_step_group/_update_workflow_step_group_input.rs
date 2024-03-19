@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkflowStepGroupInput {
+pub struct UpdateWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
@@ -12,38 +12,40 @@ pub struct UpdateWorkflowStepGroupInput {
     /// <p>The description of the step group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The next step group.</p>
-    pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The previous step group.</p>
-    pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateWorkflowStepGroupInput {
+impl  UpdateWorkflowStepGroupInput  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the step group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The next step group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
-    pub fn next(&self) -> &[::std::string::String] {
-        self.next.as_deref().unwrap_or_default()
+    pub fn next(&self) -> & [::std::string::String] {
+        self.next.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The previous step group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
-    pub fn previous(&self) -> &[::std::string::String] {
-        self.previous.as_deref().unwrap_or_default()
+    pub fn previous(&self) -> & [::std::string::String] {
+        self.previous.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateWorkflowStepGroupInput {
@@ -61,8 +63,8 @@ pub struct UpdateWorkflowStepGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateWorkflowStepGroupInputBuilder {
     /// <p>The ID of the migration workflow.</p>
@@ -73,8 +75,7 @@ impl UpdateWorkflowStepGroupInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +89,7 @@ impl UpdateWorkflowStepGroupInputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the step group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +102,7 @@ impl UpdateWorkflowStepGroupInputBuilder {
     }
     /// <p>The name of the step group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl UpdateWorkflowStepGroupInputBuilder {
     }
     /// <p>The description of the step group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the step group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,17 +128,16 @@ impl UpdateWorkflowStepGroupInputBuilder {
     /// <p>The next step group.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
-        v.push(input.into());
-        self.next = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.next = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.next = input;
-        self
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.next = input; self
     }
     /// <p>The next step group.</p>
-    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.next
     }
     /// Appends an item to `previous`.
@@ -150,33 +147,36 @@ impl UpdateWorkflowStepGroupInputBuilder {
     /// <p>The previous step group.</p>
     pub fn previous(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
-        v.push(input.into());
-        self.previous = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.previous = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.previous = input;
-        self
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.previous = input; self
     }
     /// <p>The previous step group.</p>
-    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.previous
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowStepGroupInput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput {
-            workflow_id: self.workflow_id,
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            next: self.next,
-            previous: self.previous,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput {
+                workflow_id: self.workflow_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                next: self.next
+                ,
+                previous: self.previous
+                ,
+            }
+        )
     }
 }
+

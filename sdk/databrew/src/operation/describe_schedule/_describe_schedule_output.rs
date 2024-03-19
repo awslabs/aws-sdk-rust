@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScheduleOutput {
+pub struct DescribeScheduleOutput  {
     /// <p>The date and time that the schedule was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
-    pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the schedule was last modified.</p>
@@ -18,57 +18,57 @@ pub struct DescribeScheduleOutput {
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags associated with this schedule.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The name of the schedule.</p>
     pub name: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DescribeScheduleOutput {
+impl  DescribeScheduleOutput  {
     /// <p>The date and time that the schedule was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who created the schedule.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
-    pub fn job_names(&self) -> &[::std::string::String] {
-        self.job_names.as_deref().unwrap_or_default()
+    pub fn job_names(&self) -> & [::std::string::String] {
+        self.job_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time that the schedule was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
     /// <p>Metadata tags associated with this schedule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
     pub fn builder() -> crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder {
@@ -82,12 +82,12 @@ impl DescribeScheduleOutput {
 pub struct DescribeScheduleOutputBuilder {
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
-    pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -99,8 +99,7 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The date and time that the schedule was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time that the schedule was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,8 +112,7 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The identifier (user name) of the user who created the schedule.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +125,16 @@ impl DescribeScheduleOutputBuilder {
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
     pub fn job_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_names.unwrap_or_default();
-        v.push(input.into());
-        self.job_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
-    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_names = input;
-        self
+    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_names = input; self
     }
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
-    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_names
     }
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
@@ -147,8 +144,7 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The date and time that the schedule was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time that the schedule was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,8 +170,7 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +183,7 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression = input;
-        self
+        self.cron_expression = input; self
     }
     /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,17 +196,16 @@ impl DescribeScheduleOutputBuilder {
     /// <p>Metadata tags associated with this schedule.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata tags associated with this schedule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata tags associated with this schedule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The name of the schedule.</p>
@@ -224,44 +216,51 @@ impl DescribeScheduleOutputBuilder {
     }
     /// <p>The name of the schedule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schedule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_schedule::DescribeScheduleOutput {
-            create_date: self.create_date,
-            created_by: self.created_by,
-            job_names: self.job_names,
-            last_modified_by: self.last_modified_by,
-            last_modified_date: self.last_modified_date,
-            resource_arn: self.resource_arn,
-            cron_expression: self.cron_expression,
-            tags: self.tags,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DescribeScheduleOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_schedule::DescribeScheduleOutput {
+                create_date: self.create_date
+                ,
+                created_by: self.created_by
+                ,
+                job_names: self.job_names
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                resource_arn: self.resource_arn
+                ,
+                cron_expression: self.cron_expression
+                ,
+                tags: self.tags
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DescribeScheduleOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

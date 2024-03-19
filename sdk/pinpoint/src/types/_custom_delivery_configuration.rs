@@ -3,7 +3,7 @@
 /// <p>Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomDeliveryConfiguration {
+pub struct CustomDeliveryConfiguration  {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -13,9 +13,9 @@ pub struct CustomDeliveryConfiguration {
     /// </ul>
     pub delivery_uri: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
+    pub endpoint_types: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointTypesElement>>,
 }
-impl CustomDeliveryConfiguration {
+impl  CustomDeliveryConfiguration  {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -23,14 +23,15 @@ impl CustomDeliveryConfiguration {
     /// <li>
     /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
-    pub fn delivery_uri(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_uri(&self) -> ::std::option::Option<& str> {
         self.delivery_uri.as_deref()
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_types.is_none()`.
-    pub fn endpoint_types(&self) -> &[crate::types::EndpointTypesElement] {
-        self.endpoint_types.as_deref().unwrap_or_default()
+    pub fn endpoint_types(&self) -> & [crate::types::EndpointTypesElement] {
+        self.endpoint_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomDeliveryConfiguration {
@@ -45,7 +46,7 @@ impl CustomDeliveryConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomDeliveryConfigurationBuilder {
     pub(crate) delivery_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
+    pub(crate) endpoint_types: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointTypesElement>>,
 }
 impl CustomDeliveryConfigurationBuilder {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
@@ -68,8 +69,7 @@ impl CustomDeliveryConfigurationBuilder {
     /// <p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     pub fn set_delivery_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_uri = input;
-        self
+        self.delivery_uri = input; self
     }
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
@@ -88,24 +88,26 @@ impl CustomDeliveryConfigurationBuilder {
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
     pub fn endpoint_types(mut self, input: crate::types::EndpointTypesElement) -> Self {
         let mut v = self.endpoint_types.unwrap_or_default();
-        v.push(input);
-        self.endpoint_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoint_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn set_endpoint_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>) -> Self {
-        self.endpoint_types = input;
-        self
+    pub fn set_endpoint_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointTypesElement>>) -> Self {
+        self.endpoint_types = input; self
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn get_endpoint_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>> {
+    pub fn get_endpoint_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndpointTypesElement>> {
         &self.endpoint_types
     }
     /// Consumes the builder and constructs a [`CustomDeliveryConfiguration`](crate::types::CustomDeliveryConfiguration).
     pub fn build(self) -> crate::types::CustomDeliveryConfiguration {
         crate::types::CustomDeliveryConfiguration {
-            delivery_uri: self.delivery_uri,
-            endpoint_types: self.endpoint_types,
+            delivery_uri: self.delivery_uri
+            ,
+            endpoint_types: self.endpoint_types
+            ,
         }
     }
 }
+

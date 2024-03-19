@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteTargetInput {
+pub struct DeleteTargetInput  {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
     pub target_address: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     pub force_unsubscribe_all: ::std::option::Option<bool>,
 }
-impl DeleteTargetInput {
+impl  DeleteTargetInput  {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
-    pub fn target_address(&self) -> ::std::option::Option<&str> {
+    pub fn target_address(&self) -> ::std::option::Option<& str> {
         self.target_address.as_deref()
     }
     /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
@@ -18,7 +18,7 @@ impl DeleteTargetInput {
         self.force_unsubscribe_all
     }
 }
-impl ::std::fmt::Debug for DeleteTargetInput {
+impl  ::std::fmt::Debug for DeleteTargetInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTargetInput");
         formatter.field("target_address", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl DeleteTargetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
     pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_address = input;
-        self
+        self.target_address = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
     pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,21 +62,22 @@ impl DeleteTargetInputBuilder {
     }
     /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     pub fn set_force_unsubscribe_all(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_unsubscribe_all = input;
-        self
+        self.force_unsubscribe_all = input; self
     }
     /// <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     pub fn get_force_unsubscribe_all(&self) -> &::std::option::Option<bool> {
         &self.force_unsubscribe_all
     }
     /// Consumes the builder and constructs a [`DeleteTargetInput`](crate::operation::delete_target::DeleteTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_target::DeleteTargetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_target::DeleteTargetInput {
-            target_address: self.target_address,
-            force_unsubscribe_all: self.force_unsubscribe_all,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_target::DeleteTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_target::DeleteTargetInput {
+                target_address: self.target_address
+                ,
+                force_unsubscribe_all: self.force_unsubscribe_all
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteTargetInputBuilder {
@@ -88,3 +88,4 @@ impl ::std::fmt::Debug for DeleteTargetInputBuilder {
         formatter.finish()
     }
 }
+

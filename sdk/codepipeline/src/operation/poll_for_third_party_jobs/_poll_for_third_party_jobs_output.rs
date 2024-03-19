@@ -3,24 +3,25 @@
 /// <p>Represents the output of a <code>PollForThirdPartyJobs</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PollForThirdPartyJobsOutput {
+pub struct PollForThirdPartyJobsOutput  {
     /// <p>Information about the jobs to take action on.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,
 }
-impl PollForThirdPartyJobsOutput {
+impl  PollForThirdPartyJobsOutput  {
     /// <p>Information about the jobs to take action on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
-    pub fn jobs(&self) -> &[crate::types::ThirdPartyJob] {
-        self.jobs.as_deref().unwrap_or_default()
+    pub fn jobs(&self) -> & [crate::types::ThirdPartyJob] {
+        self.jobs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PollForThirdPartyJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PollForThirdPartyJobsOutput {
     /// Creates a new builder-style object to manufacture [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput).
     pub fn builder() -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsOutputBuilder {
@@ -32,7 +33,7 @@ impl PollForThirdPartyJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsOutputBuilder {
-    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,
 }
 impl PollForThirdPartyJobsOutputBuilder {
@@ -43,33 +44,34 @@ impl PollForThirdPartyJobsOutputBuilder {
     /// <p>Information about the jobs to take action on.</p>
     pub fn jobs(mut self, input: crate::types::ThirdPartyJob) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the jobs to take action on.</p>
-    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThirdPartyJob>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>Information about the jobs to take action on.</p>
-    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThirdPartyJob>> {
         &self.jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput).
     pub fn build(self) -> crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput {
         crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput {
-            jobs: self.jobs,
+            jobs: self.jobs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

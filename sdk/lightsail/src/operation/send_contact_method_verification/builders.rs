@@ -5,23 +5,20 @@ pub use crate::operation::send_contact_method_verification::_send_contact_method
 
 impl SendContactMethodVerificationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.send_contact_method_verification();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.send_contact_method_verification();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SendContactMethodVerification`.
-///
+/// 
 /// <p>Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact methods don't need to be verified.</p>
 /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
 /// <p>A verification request is sent to the contact method when you initially create it. Use this action to send another verification request if a previous verification request was deleted, or has expired.</p><important>
@@ -30,33 +27,32 @@ impl SendContactMethodVerificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendContactMethodVerificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder,
+                    inner: crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-    > for SendContactMethodVerificationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
+                    crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
+                > for SendContactMethodVerificationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
+                        crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SendContactMethodVerificationFluentBuilder {
     /// Creates a new `SendContactMethodVerification`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl SendContactMethodVerificationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::send_contact_method_verification::SendContactMethodVerification::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::send_contact_method_verification::SendContactMethodVerification::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::send_contact_method_verification::SendContactMethodVerification::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::send_contact_method_verification::SendContactMethodVerification::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput, crate::operation::send_contact_method_verification::SendContactMethodVerificationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
     pub fn protocol(mut self, input: crate::types::ContactMethodVerificationProtocol) -> Self {
         self.inner = self.inner.protocol(input);
@@ -127,3 +114,4 @@ impl SendContactMethodVerificationFluentBuilder {
         self.inner.get_protocol()
     }
 }
+

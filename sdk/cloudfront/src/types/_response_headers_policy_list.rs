@@ -3,7 +3,7 @@
 /// <p>A list of response headers policies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyList {
+pub struct ResponseHeadersPolicyList  {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response headers policies requested.</p>
@@ -11,11 +11,11 @@ pub struct ResponseHeadersPolicyList {
     /// <p>The number of response headers policies returned.</p>
     pub quantity: i32,
     /// <p>The response headers policies in the list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicySummary>>,
 }
-impl ResponseHeadersPolicyList {
+impl  ResponseHeadersPolicyList  {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of response headers policies requested.</p>
@@ -27,10 +27,11 @@ impl ResponseHeadersPolicyList {
         self.quantity
     }
     /// <p>The response headers policies in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::ResponseHeadersPolicySummary] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::ResponseHeadersPolicySummary] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResponseHeadersPolicyList {
@@ -47,7 +48,7 @@ pub struct ResponseHeadersPolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicySummary>>,
 }
 impl ResponseHeadersPolicyListBuilder {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
@@ -57,8 +58,7 @@ impl ResponseHeadersPolicyListBuilder {
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl ResponseHeadersPolicyListBuilder {
     }
     /// <p>The maximum number of response headers policies requested.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of response headers policies requested.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -87,8 +86,7 @@ impl ResponseHeadersPolicyListBuilder {
     }
     /// <p>The number of response headers policies returned.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of response headers policies returned.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -101,17 +99,16 @@ impl ResponseHeadersPolicyListBuilder {
     /// <p>The response headers policies in the list.</p>
     pub fn items(mut self, input: crate::types::ResponseHeadersPolicySummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The response headers policies in the list.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicySummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>The response headers policies in the list.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyList`](crate::types::ResponseHeadersPolicyList).
@@ -119,21 +116,24 @@ impl ResponseHeadersPolicyListBuilder {
     /// - [`max_items`](crate::types::builders::ResponseHeadersPolicyListBuilder::max_items)
     /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyListBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyList {
-            next_marker: self.next_marker,
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building ResponseHeadersPolicyList",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building ResponseHeadersPolicyList",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyList {
+                next_marker: self.next_marker
+                ,
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building ResponseHeadersPolicyList")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building ResponseHeadersPolicyList")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

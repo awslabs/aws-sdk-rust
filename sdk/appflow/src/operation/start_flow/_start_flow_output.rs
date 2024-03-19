@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFlowOutput {
+pub struct StartFlowOutput  {
     /// <p>The flow's Amazon Resource Name (ARN).</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current status of the flow.</p>
@@ -11,25 +11,25 @@ pub struct StartFlowOutput {
     pub execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartFlowOutput {
+impl  StartFlowOutput  {
     /// <p>The flow's Amazon Resource Name (ARN).</p>
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p>Indicates the current status of the flow.</p>
-    pub fn flow_status(&self) -> ::std::option::Option<&crate::types::FlowStatus> {
+    pub fn flow_status(&self) -> ::std::option::Option<& crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
     /// <p>Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartFlowOutput {
     /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput).
     pub fn builder() -> crate::operation::start_flow::builders::StartFlowOutputBuilder {
@@ -54,8 +54,7 @@ impl StartFlowOutputBuilder {
     }
     /// <p>The flow's Amazon Resource Name (ARN).</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// <p>The flow's Amazon Resource Name (ARN).</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl StartFlowOutputBuilder {
     }
     /// <p>Indicates the current status of the flow.</p>
     pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
-        self.flow_status = input;
-        self
+        self.flow_status = input; self
     }
     /// <p>Indicates the current status of the flow.</p>
     pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
@@ -82,29 +80,32 @@ impl StartFlowOutputBuilder {
     }
     /// <p>Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput).
     pub fn build(self) -> crate::operation::start_flow::StartFlowOutput {
         crate::operation::start_flow::StartFlowOutput {
-            flow_arn: self.flow_arn,
-            flow_status: self.flow_status,
-            execution_id: self.execution_id,
+            flow_arn: self.flow_arn
+            ,
+            flow_status: self.flow_status
+            ,
+            execution_id: self.execution_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

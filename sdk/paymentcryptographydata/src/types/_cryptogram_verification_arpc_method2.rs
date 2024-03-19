@@ -3,20 +3,19 @@
 /// <p>Parameters that are required for ARPC response generation using method2 after ARQC verification is successful.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CryptogramVerificationArpcMethod2 {
+pub struct CryptogramVerificationArpcMethod2  {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
     pub card_status_update: ::std::string::String,
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
     pub proprietary_authentication_data: ::std::option::Option<::std::string::String>,
 }
-impl CryptogramVerificationArpcMethod2 {
+impl  CryptogramVerificationArpcMethod2  {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
-    pub fn card_status_update(&self) -> &str {
-        use std::ops::Deref;
-        self.card_status_update.deref()
+    pub fn card_status_update(&self) -> & str {
+        use std::ops::Deref; self.card_status_update.deref()
     }
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
-    pub fn proprietary_authentication_data(&self) -> ::std::option::Option<&str> {
+    pub fn proprietary_authentication_data(&self) -> ::std::option::Option<& str> {
         self.proprietary_authentication_data.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl CryptogramVerificationArpcMethod2Builder {
     }
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
     pub fn set_card_status_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.card_status_update = input;
-        self
+        self.card_status_update = input; self
     }
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
     pub fn get_card_status_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl CryptogramVerificationArpcMethod2Builder {
     }
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
     pub fn set_proprietary_authentication_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proprietary_authentication_data = input;
-        self
+        self.proprietary_authentication_data = input; self
     }
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
     pub fn get_proprietary_authentication_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl CryptogramVerificationArpcMethod2Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`card_status_update`](crate::types::builders::CryptogramVerificationArpcMethod2Builder::card_status_update)
     pub fn build(self) -> ::std::result::Result<crate::types::CryptogramVerificationArpcMethod2, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CryptogramVerificationArpcMethod2 {
-            card_status_update: self.card_status_update.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "card_status_update",
-                    "card_status_update was not specified but it is required when building CryptogramVerificationArpcMethod2",
-                )
-            })?,
-            proprietary_authentication_data: self.proprietary_authentication_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CryptogramVerificationArpcMethod2 {
+                card_status_update: self.card_status_update
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("card_status_update", "card_status_update was not specified but it is required when building CryptogramVerificationArpcMethod2")
+                    )?
+                ,
+                proprietary_authentication_data: self.proprietary_authentication_data
+                ,
+            }
+        )
     }
 }
+

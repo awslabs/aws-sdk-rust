@@ -3,15 +3,14 @@
 /// <p>Information about a validator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Validator {
+pub struct Validator  {
     /// <p>The S3 URI where the validation data is stored.</p>
     pub s3_uri: ::std::string::String,
 }
-impl Validator {
+impl  Validator  {
     /// <p>The S3 URI where the validation data is stored.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
 }
 impl Validator {
@@ -36,8 +35,7 @@ impl ValidatorBuilder {
     }
     /// <p>The S3 URI where the validation data is stored.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The S3 URI where the validation data is stored.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ValidatorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::ValidatorBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::Validator, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Validator {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building Validator",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Validator {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building Validator")
+                    )?
+                ,
+            }
+        )
     }
 }
+

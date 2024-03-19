@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisioningArtifactsInput {
+pub struct ListProvisioningArtifactsInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct ListProvisioningArtifactsInput {
     /// <p>The product identifier.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
 }
-impl ListProvisioningArtifactsInput {
+impl  ListProvisioningArtifactsInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -22,11 +22,11 @@ impl ListProvisioningArtifactsInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl ListProvisioningArtifactsInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -85,23 +84,22 @@ impl ListProvisioningArtifactsInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_id
     }
     /// Consumes the builder and constructs a [`ListProvisioningArtifactsInput`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput {
-            accept_language: self.accept_language,
-            product_id: self.product_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput {
+                accept_language: self.accept_language
+                ,
+                product_id: self.product_id
+                ,
+            }
+        )
     }
 }
+

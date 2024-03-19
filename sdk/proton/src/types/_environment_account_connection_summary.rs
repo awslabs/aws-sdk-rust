@@ -3,7 +3,7 @@
 /// <p>Summary data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentAccountConnectionSummary {
+pub struct EnvironmentAccountConnectionSummary  {
     /// <p>The ID of the environment account connection.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
@@ -27,53 +27,47 @@ pub struct EnvironmentAccountConnectionSummary {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub component_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl EnvironmentAccountConnectionSummary {
+impl  EnvironmentAccountConnectionSummary  {
     /// <p>The ID of the environment account connection.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
-    pub fn management_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.management_account_id.deref()
+    pub fn management_account_id(&self) -> & str {
+        use std::ops::Deref; self.management_account_id.deref()
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
-    pub fn environment_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_account_id.deref()
+    pub fn environment_account_id(&self) -> & str {
+        use std::ops::Deref; self.environment_account_id.deref()
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> & str {
+        use std::ops::Deref; self.environment_name.deref()
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn requested_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn requested_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.requested_at
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_at
     }
     /// <p>The status of the environment account connection.</p>
-    pub fn status(&self) -> &crate::types::EnvironmentAccountConnectionStatus {
+    pub fn status(&self) -> & crate::types::EnvironmentAccountConnectionStatus {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> ::std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
 }
@@ -108,8 +102,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The ID of the environment account connection.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the environment account connection.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +116,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +130,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
     pub fn set_management_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.management_account_id = input;
-        self
+        self.management_account_id = input; self
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
     pub fn get_management_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +144,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
     pub fn set_environment_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_account_id = input;
-        self
+        self.environment_account_id = input; self
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
     pub fn get_environment_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +158,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +172,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +186,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The time when the environment account connection request was made.</p>
     pub fn set_requested_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.requested_at = input;
-        self
+        self.requested_at = input; self
     }
     /// <p>The time when the environment account connection request was made.</p>
     pub fn get_requested_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -213,8 +200,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The time when the environment account connection was last modified.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>The time when the environment account connection was last modified.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -228,8 +214,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The status of the environment account connection.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentAccountConnectionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the environment account connection.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentAccountConnectionStatus> {
@@ -246,8 +231,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_component_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_role_arn = input;
-        self
+        self.component_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
@@ -267,62 +251,57 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     /// - [`last_modified_at`](crate::types::builders::EnvironmentAccountConnectionSummaryBuilder::last_modified_at)
     /// - [`status`](crate::types::builders::EnvironmentAccountConnectionSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentAccountConnectionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentAccountConnectionSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            management_account_id: self.management_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "management_account_id",
-                    "management_account_id was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            environment_account_id: self.environment_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_account_id",
-                    "environment_account_id was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            requested_at: self.requested_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "requested_at",
-                    "requested_at was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_at",
-                    "last_modified_at was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EnvironmentAccountConnectionSummary",
-                )
-            })?,
-            component_role_arn: self.component_role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentAccountConnectionSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                management_account_id: self.management_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("management_account_id", "management_account_id was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                environment_account_id: self.environment_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_account_id", "environment_account_id was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                environment_name: self.environment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_name", "environment_name was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                requested_at: self.requested_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("requested_at", "requested_at was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                last_modified_at: self.last_modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_at", "last_modified_at was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EnvironmentAccountConnectionSummary")
+                    )?
+                ,
+                component_role_arn: self.component_role_arn
+                ,
+            }
+        )
     }
 }
+

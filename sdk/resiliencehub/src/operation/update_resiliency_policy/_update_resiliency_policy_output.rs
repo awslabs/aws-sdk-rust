@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResiliencyPolicyOutput {
+pub struct UpdateResiliencyPolicyOutput  {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
 }
-impl UpdateResiliencyPolicyOutput {
+impl  UpdateResiliencyPolicyOutput  {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::ResiliencyPolicy> {
         self.policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateResiliencyPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyOutput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput).
     pub fn builder() -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateResiliencyPolicyOutputBuilder {
     }
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResiliencyPolicy> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateResiliencyPolicyOutput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput).
     pub fn build(self) -> crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput {
         crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput {
-            policy: self.policy,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterDropDownControl {
+pub struct ParameterDropDownControl  {
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
     pub parameter_control_id: ::std::string::String,
     /// <p>The title of the <code>ParameterDropDownControl</code>.</p>
@@ -19,36 +19,33 @@ pub struct ParameterDropDownControl {
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
 }
-impl ParameterDropDownControl {
+impl  ParameterDropDownControl  {
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
-    pub fn parameter_control_id(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_control_id.deref()
+    pub fn parameter_control_id(&self) -> & str {
+        use std::ops::Deref; self.parameter_control_id.deref()
     }
     /// <p>The title of the <code>ParameterDropDownControl</code>.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The source parameter name of the <code>ParameterDropDownControl</code>.</p>
-    pub fn source_parameter_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_parameter_name.deref()
+    pub fn source_parameter_name(&self) -> & str {
+        use std::ops::Deref; self.source_parameter_name.deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(&self) -> ::std::option::Option<&crate::types::DropDownControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<& crate::types::DropDownControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The type parameter name of the <code>ParameterDropDownControl</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlListType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SheetControlListType> {
         self.r#type.as_ref()
     }
     /// <p>A list of selectable values that are used in a control.</p>
-    pub fn selectable_values(&self) -> ::std::option::Option<&crate::types::ParameterSelectableValues> {
+    pub fn selectable_values(&self) -> ::std::option::Option<& crate::types::ParameterSelectableValues> {
         self.selectable_values.as_ref()
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
-    pub fn cascading_control_configuration(&self) -> ::std::option::Option<&crate::types::CascadingControlConfiguration> {
+    pub fn cascading_control_configuration(&self) -> ::std::option::Option<& crate::types::CascadingControlConfiguration> {
         self.cascading_control_configuration.as_ref()
     }
 }
@@ -80,8 +77,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
     pub fn set_parameter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_control_id = input;
-        self
+        self.parameter_control_id = input; self
     }
     /// <p>The ID of the <code>ParameterDropDownControl</code>.</p>
     pub fn get_parameter_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>The title of the <code>ParameterDropDownControl</code>.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the <code>ParameterDropDownControl</code>.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>The source parameter name of the <code>ParameterDropDownControl</code>.</p>
     pub fn set_source_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_parameter_name = input;
-        self
+        self.source_parameter_name = input; self
     }
     /// <p>The source parameter name of the <code>ParameterDropDownControl</code>.</p>
     pub fn get_source_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>The display options of a control.</p>
     pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::DropDownControlDisplayOptions>) -> Self {
-        self.display_options = input;
-        self
+        self.display_options = input; self
     }
     /// <p>The display options of a control.</p>
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::DropDownControlDisplayOptions> {
@@ -138,8 +131,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>The type parameter name of the <code>ParameterDropDownControl</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlListType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type parameter name of the <code>ParameterDropDownControl</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlListType> {
@@ -152,8 +144,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn set_selectable_values(mut self, input: ::std::option::Option<crate::types::ParameterSelectableValues>) -> Self {
-        self.selectable_values = input;
-        self
+        self.selectable_values = input; self
     }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn get_selectable_values(&self) -> &::std::option::Option<crate::types::ParameterSelectableValues> {
@@ -166,8 +157,7 @@ impl ParameterDropDownControlBuilder {
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn set_cascading_control_configuration(mut self, input: ::std::option::Option<crate::types::CascadingControlConfiguration>) -> Self {
-        self.cascading_control_configuration = input;
-        self
+        self.cascading_control_configuration = input; self
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn get_cascading_control_configuration(&self) -> &::std::option::Option<crate::types::CascadingControlConfiguration> {
@@ -179,29 +169,33 @@ impl ParameterDropDownControlBuilder {
     /// - [`title`](crate::types::builders::ParameterDropDownControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterDropDownControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterDropDownControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParameterDropDownControl {
-            parameter_control_id: self.parameter_control_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_control_id",
-                    "parameter_control_id was not specified but it is required when building ParameterDropDownControl",
-                )
-            })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterDropDownControl",
-                )
-            })?,
-            source_parameter_name: self.source_parameter_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_parameter_name",
-                    "source_parameter_name was not specified but it is required when building ParameterDropDownControl",
-                )
-            })?,
-            display_options: self.display_options,
-            r#type: self.r#type,
-            selectable_values: self.selectable_values,
-            cascading_control_configuration: self.cascading_control_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParameterDropDownControl {
+                parameter_control_id: self.parameter_control_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_control_id", "parameter_control_id was not specified but it is required when building ParameterDropDownControl")
+                    )?
+                ,
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building ParameterDropDownControl")
+                    )?
+                ,
+                source_parameter_name: self.source_parameter_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_parameter_name", "source_parameter_name was not specified but it is required when building ParameterDropDownControl")
+                    )?
+                ,
+                display_options: self.display_options
+                ,
+                r#type: self.r#type
+                ,
+                selectable_values: self.selectable_values
+                ,
+                cascading_control_configuration: self.cascading_control_configuration
+                ,
+            }
+        )
     }
 }
+

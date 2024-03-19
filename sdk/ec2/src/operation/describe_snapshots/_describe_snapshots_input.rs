@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotsInput {
+pub struct DescribeSnapshotsInput  {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -25,10 +25,10 @@ pub struct DescribeSnapshotsInput {
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -38,22 +38,22 @@ pub struct DescribeSnapshotsInput {
     /// <li>
     /// <p><code>volume-size</code> - The size of the volume, in GiB.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub owner_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub restorable_by_user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeSnapshotsInput {
+impl  DescribeSnapshotsInput  {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -76,10 +76,10 @@ impl DescribeSnapshotsInput {
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -89,37 +89,41 @@ impl DescribeSnapshotsInput {
     /// <li>
     /// <p><code>volume-size</code> - The size of the volume, in GiB.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owner_ids.is_none()`.
-    pub fn owner_ids(&self) -> &[::std::string::String] {
-        self.owner_ids.as_deref().unwrap_or_default()
+    pub fn owner_ids(&self) -> & [::std::string::String] {
+        self.owner_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restorable_by_user_ids.is_none()`.
-    pub fn restorable_by_user_ids(&self) -> &[::std::string::String] {
-        self.restorable_by_user_ids.as_deref().unwrap_or_default()
+    pub fn restorable_by_user_ids(&self) -> & [::std::string::String] {
+        self.restorable_by_user_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
-    pub fn snapshot_ids(&self) -> &[::std::string::String] {
-        self.snapshot_ids.as_deref().unwrap_or_default()
+    pub fn snapshot_ids(&self) -> & [::std::string::String] {
+        self.snapshot_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -137,12 +141,12 @@ impl DescribeSnapshotsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) owner_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) restorable_by_user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInputBuilder {
@@ -172,10 +176,10 @@ impl DescribeSnapshotsInputBuilder {
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -187,9 +191,9 @@ impl DescribeSnapshotsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -213,10 +217,10 @@ impl DescribeSnapshotsInputBuilder {
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -226,9 +230,8 @@ impl DescribeSnapshotsInputBuilder {
     /// <li>
     /// <p><code>volume-size</code> - The size of the volume, in GiB.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -252,10 +255,10 @@ impl DescribeSnapshotsInputBuilder {
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -265,7 +268,7 @@ impl DescribeSnapshotsInputBuilder {
     /// <li>
     /// <p><code>volume-size</code> - The size of the volume, in GiB.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -275,8 +278,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -289,8 +291,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,17 +304,16 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
     pub fn owner_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.owner_ids.unwrap_or_default();
-        v.push(input.into());
-        self.owner_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.owner_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn set_owner_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.owner_ids = input;
-        self
+    pub fn set_owner_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.owner_ids = input; self
     }
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn get_owner_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owner_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.owner_ids
     }
     /// Appends an item to `restorable_by_user_ids`.
@@ -323,17 +323,16 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
     pub fn restorable_by_user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.restorable_by_user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.restorable_by_user_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.restorable_by_user_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn set_restorable_by_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.restorable_by_user_ids = input;
-        self
+    pub fn set_restorable_by_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.restorable_by_user_ids = input; self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.restorable_by_user_ids
     }
     /// Appends an item to `snapshot_ids`.
@@ -344,19 +343,18 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
     pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_ids.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_ids = input;
-        self
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_ids = input; self
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -366,25 +364,32 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            owner_ids: self.owner_ids,
-            restorable_by_user_ids: self.restorable_by_user_ids,
-            snapshot_ids: self.snapshot_ids,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshots::DescribeSnapshotsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                owner_ids: self.owner_ids
+                ,
+                restorable_by_user_ids: self.restorable_by_user_ids
+                ,
+                snapshot_ids: self.snapshot_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

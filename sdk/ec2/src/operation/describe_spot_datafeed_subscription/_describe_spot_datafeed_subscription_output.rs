@@ -3,22 +3,22 @@
 /// <p>Contains the output of DescribeSpotDatafeedSubscription.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSpotDatafeedSubscriptionOutput {
+pub struct DescribeSpotDatafeedSubscriptionOutput  {
     /// <p>The Spot Instance data feed subscription.</p>
     pub spot_datafeed_subscription: ::std::option::Option<crate::types::SpotDatafeedSubscription>,
     _request_id: Option<String>,
 }
-impl DescribeSpotDatafeedSubscriptionOutput {
+impl  DescribeSpotDatafeedSubscriptionOutput  {
     /// <p>The Spot Instance data feed subscription.</p>
-    pub fn spot_datafeed_subscription(&self) -> ::std::option::Option<&crate::types::SpotDatafeedSubscription> {
+    pub fn spot_datafeed_subscription(&self) -> ::std::option::Option<& crate::types::SpotDatafeedSubscription> {
         self.spot_datafeed_subscription.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSpotDatafeedSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSpotDatafeedSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotDatafeedSubscriptionOutput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput).
     pub fn builder() -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeSpotDatafeedSubscriptionOutputBuilder {
     }
     /// <p>The Spot Instance data feed subscription.</p>
     pub fn set_spot_datafeed_subscription(mut self, input: ::std::option::Option<crate::types::SpotDatafeedSubscription>) -> Self {
-        self.spot_datafeed_subscription = input;
-        self
+        self.spot_datafeed_subscription = input; self
     }
     /// <p>The Spot Instance data feed subscription.</p>
     pub fn get_spot_datafeed_subscription(&self) -> &::std::option::Option<crate::types::SpotDatafeedSubscription> {
         &self.spot_datafeed_subscription
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSpotDatafeedSubscriptionOutput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput).
     pub fn build(self) -> crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput {
         crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput {
-            spot_datafeed_subscription: self.spot_datafeed_subscription,
+            spot_datafeed_subscription: self.spot_datafeed_subscription
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

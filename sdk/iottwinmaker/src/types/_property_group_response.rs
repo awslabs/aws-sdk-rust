@@ -3,23 +3,22 @@
 /// <p>The property group response</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyGroupResponse {
+pub struct PropertyGroupResponse  {
     /// <p>The group types.</p>
     pub group_type: crate::types::GroupType,
     /// <p>The names of properties.</p>
-    pub property_names: ::std::vec::Vec<::std::string::String>,
+    pub property_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
     pub is_inherited: bool,
 }
-impl PropertyGroupResponse {
+impl  PropertyGroupResponse  {
     /// <p>The group types.</p>
-    pub fn group_type(&self) -> &crate::types::GroupType {
+    pub fn group_type(&self) -> & crate::types::GroupType {
         &self.group_type
     }
     /// <p>The names of properties.</p>
-    pub fn property_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.property_names.deref()
+    pub fn property_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.property_names.deref()
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
     pub fn is_inherited(&self) -> bool {
@@ -38,7 +37,7 @@ impl PropertyGroupResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyGroupResponseBuilder {
     pub(crate) group_type: ::std::option::Option<crate::types::GroupType>,
-    pub(crate) property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) property_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) is_inherited: ::std::option::Option<bool>,
 }
 impl PropertyGroupResponseBuilder {
@@ -50,8 +49,7 @@ impl PropertyGroupResponseBuilder {
     }
     /// <p>The group types.</p>
     pub fn set_group_type(mut self, input: ::std::option::Option<crate::types::GroupType>) -> Self {
-        self.group_type = input;
-        self
+        self.group_type = input; self
     }
     /// <p>The group types.</p>
     pub fn get_group_type(&self) -> &::std::option::Option<crate::types::GroupType> {
@@ -64,17 +62,16 @@ impl PropertyGroupResponseBuilder {
     /// <p>The names of properties.</p>
     pub fn property_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.property_names.unwrap_or_default();
-        v.push(input.into());
-        self.property_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.property_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of properties.</p>
-    pub fn set_property_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.property_names = input;
-        self
+    pub fn set_property_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.property_names = input; self
     }
     /// <p>The names of properties.</p>
-    pub fn get_property_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_property_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.property_names
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
@@ -85,8 +82,7 @@ impl PropertyGroupResponseBuilder {
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
     pub fn set_is_inherited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_inherited = input;
-        self
+        self.is_inherited = input; self
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
     pub fn get_is_inherited(&self) -> &::std::option::Option<bool> {
@@ -98,25 +94,25 @@ impl PropertyGroupResponseBuilder {
     /// - [`property_names`](crate::types::builders::PropertyGroupResponseBuilder::property_names)
     /// - [`is_inherited`](crate::types::builders::PropertyGroupResponseBuilder::is_inherited)
     pub fn build(self) -> ::std::result::Result<crate::types::PropertyGroupResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PropertyGroupResponse {
-            group_type: self.group_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_type",
-                    "group_type was not specified but it is required when building PropertyGroupResponse",
-                )
-            })?,
-            property_names: self.property_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_names",
-                    "property_names was not specified but it is required when building PropertyGroupResponse",
-                )
-            })?,
-            is_inherited: self.is_inherited.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_inherited",
-                    "is_inherited was not specified but it is required when building PropertyGroupResponse",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PropertyGroupResponse {
+                group_type: self.group_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_type", "group_type was not specified but it is required when building PropertyGroupResponse")
+                    )?
+                ,
+                property_names: self.property_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_names", "property_names was not specified but it is required when building PropertyGroupResponse")
+                    )?
+                ,
+                is_inherited: self.is_inherited
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_inherited", "is_inherited was not specified but it is required when building PropertyGroupResponse")
+                    )?
+                ,
+            }
+        )
     }
 }
+

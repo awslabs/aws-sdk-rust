@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryStatisticsOutput {
+pub struct GetQueryStatisticsOutput  {
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
     pub execution_statistics: ::std::option::Option<crate::types::ExecutionStatistics>,
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
@@ -11,25 +11,25 @@ pub struct GetQueryStatisticsOutput {
     pub query_submission_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetQueryStatisticsOutput {
+impl  GetQueryStatisticsOutput  {
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
-    pub fn execution_statistics(&self) -> ::std::option::Option<&crate::types::ExecutionStatistics> {
+    pub fn execution_statistics(&self) -> ::std::option::Option<& crate::types::ExecutionStatistics> {
         self.execution_statistics.as_ref()
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
-    pub fn planning_statistics(&self) -> ::std::option::Option<&crate::types::PlanningStatistics> {
+    pub fn planning_statistics(&self) -> ::std::option::Option<& crate::types::PlanningStatistics> {
         self.planning_statistics.as_ref()
     }
     /// <p>The time that the query was submitted.</p>
-    pub fn query_submission_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn query_submission_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.query_submission_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetQueryStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetQueryStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryStatisticsOutput`](crate::operation::get_query_statistics::GetQueryStatisticsOutput).
     pub fn builder() -> crate::operation::get_query_statistics::builders::GetQueryStatisticsOutputBuilder {
@@ -54,8 +54,7 @@ impl GetQueryStatisticsOutputBuilder {
     }
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
     pub fn set_execution_statistics(mut self, input: ::std::option::Option<crate::types::ExecutionStatistics>) -> Self {
-        self.execution_statistics = input;
-        self
+        self.execution_statistics = input; self
     }
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
     pub fn get_execution_statistics(&self) -> &::std::option::Option<crate::types::ExecutionStatistics> {
@@ -68,8 +67,7 @@ impl GetQueryStatisticsOutputBuilder {
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
     pub fn set_planning_statistics(mut self, input: ::std::option::Option<crate::types::PlanningStatistics>) -> Self {
-        self.planning_statistics = input;
-        self
+        self.planning_statistics = input; self
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
     pub fn get_planning_statistics(&self) -> &::std::option::Option<crate::types::PlanningStatistics> {
@@ -82,29 +80,32 @@ impl GetQueryStatisticsOutputBuilder {
     }
     /// <p>The time that the query was submitted.</p>
     pub fn set_query_submission_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.query_submission_time = input;
-        self
+        self.query_submission_time = input; self
     }
     /// <p>The time that the query was submitted.</p>
     pub fn get_query_submission_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.query_submission_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetQueryStatisticsOutput`](crate::operation::get_query_statistics::GetQueryStatisticsOutput).
     pub fn build(self) -> crate::operation::get_query_statistics::GetQueryStatisticsOutput {
         crate::operation::get_query_statistics::GetQueryStatisticsOutput {
-            execution_statistics: self.execution_statistics,
-            planning_statistics: self.planning_statistics,
-            query_submission_time: self.query_submission_time,
+            execution_statistics: self.execution_statistics
+            ,
+            planning_statistics: self.planning_statistics
+            ,
+            query_submission_time: self.query_submission_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

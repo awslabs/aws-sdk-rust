@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMediaPipelineKinesisVideoStreamPoolsOutput {
+pub struct ListMediaPipelineKinesisVideoStreamPoolsOutput  {
     /// <p>The list of video stream pools.</p>
-    pub kinesis_video_stream_pools: ::std::option::Option<::std::vec::Vec<crate::types::KinesisVideoStreamPoolSummary>>,
+    pub kinesis_video_stream_pools: ::std::option::Option<::std::vec::Vec::<crate::types::KinesisVideoStreamPoolSummary>>,
     /// <p>The token used to return the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMediaPipelineKinesisVideoStreamPoolsOutput {
+impl  ListMediaPipelineKinesisVideoStreamPoolsOutput  {
     /// <p>The list of video stream pools.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kinesis_video_stream_pools.is_none()`.
-    pub fn kinesis_video_stream_pools(&self) -> &[crate::types::KinesisVideoStreamPoolSummary] {
-        self.kinesis_video_stream_pools.as_deref().unwrap_or_default()
+    pub fn kinesis_video_stream_pools(&self) -> & [crate::types::KinesisVideoStreamPoolSummary] {
+        self.kinesis_video_stream_pools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token used to return the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMediaPipelineKinesisVideoStreamPoolsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMediaPipelineKinesisVideoStreamPoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListMediaPipelineKinesisVideoStreamPoolsOutput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder {
+    pub fn builder() -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder {
         crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder::default()
     }
 }
@@ -38,7 +38,7 @@ impl ListMediaPipelineKinesisVideoStreamPoolsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder {
-    pub(crate) kinesis_video_stream_pools: ::std::option::Option<::std::vec::Vec<crate::types::KinesisVideoStreamPoolSummary>>,
+    pub(crate) kinesis_video_stream_pools: ::std::option::Option<::std::vec::Vec::<crate::types::KinesisVideoStreamPoolSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,20 +50,16 @@ impl ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder {
     /// <p>The list of video stream pools.</p>
     pub fn kinesis_video_stream_pools(mut self, input: crate::types::KinesisVideoStreamPoolSummary) -> Self {
         let mut v = self.kinesis_video_stream_pools.unwrap_or_default();
-        v.push(input);
-        self.kinesis_video_stream_pools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kinesis_video_stream_pools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of video stream pools.</p>
-    pub fn set_kinesis_video_stream_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KinesisVideoStreamPoolSummary>>,
-    ) -> Self {
-        self.kinesis_video_stream_pools = input;
-        self
+    pub fn set_kinesis_video_stream_pools(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KinesisVideoStreamPoolSummary>>) -> Self {
+        self.kinesis_video_stream_pools = input; self
     }
     /// <p>The list of video stream pools.</p>
-    pub fn get_kinesis_video_stream_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KinesisVideoStreamPoolSummary>> {
+    pub fn get_kinesis_video_stream_pools(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KinesisVideoStreamPoolSummary>> {
         &self.kinesis_video_stream_pools
     }
     /// <p>The token used to return the next page of results.</p>
@@ -73,28 +69,30 @@ impl ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder {
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMediaPipelineKinesisVideoStreamPoolsOutput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput).
     pub fn build(self) -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput {
         crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput {
-            kinesis_video_stream_pools: self.kinesis_video_stream_pools,
-            next_token: self.next_token,
+            kinesis_video_stream_pools: self.kinesis_video_stream_pools
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

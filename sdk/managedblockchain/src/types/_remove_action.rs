@@ -4,15 +4,14 @@
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveAction {
+pub struct RemoveAction  {
     /// <p>The unique identifier of the member to remove.</p>
     pub member_id: ::std::string::String,
 }
-impl RemoveAction {
+impl  RemoveAction  {
     /// <p>The unique identifier of the member to remove.</p>
-    pub fn member_id(&self) -> &str {
-        use std::ops::Deref;
-        self.member_id.deref()
+    pub fn member_id(&self) -> & str {
+        use std::ops::Deref; self.member_id.deref()
     }
 }
 impl RemoveAction {
@@ -37,8 +36,7 @@ impl RemoveActionBuilder {
     }
     /// <p>The unique identifier of the member to remove.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The unique identifier of the member to remove.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -48,13 +46,15 @@ impl RemoveActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`member_id`](crate::types::builders::RemoveActionBuilder::member_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RemoveAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RemoveAction {
-            member_id: self.member_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "member_id",
-                    "member_id was not specified but it is required when building RemoveAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RemoveAction {
+                member_id: self.member_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("member_id", "member_id was not specified but it is required when building RemoveAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

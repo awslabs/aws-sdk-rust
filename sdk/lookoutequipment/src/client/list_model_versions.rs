@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelVersions`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_name(impl Into<String>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::set_model_name):<br>required: **true**<br><p>Then name of the machine learning model for which the model versions are to be listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of machine learning model versions to list.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`created_at_start_time(DateTime)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::created_at_start_time) / [`set_created_at_start_time(Option<DateTime>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::set_created_at_start_time):<br>required: **false**<br><p>Filter results to return all the model versions created after this time.</p><br>
     ///   - [`max_model_version(i64)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::max_model_version) / [`set_max_model_version(Option<i64>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::set_max_model_version):<br>required: **false**<br><p>Specifies the highest version of the model to return in the list.</p><br>
     ///   - [`min_model_version(i64)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::min_model_version) / [`set_min_model_version(Option<i64>)`](crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::set_min_model_version):<br>required: **false**<br><p>Specifies the lowest version of the model to return in the list.</p><br>
-    /// - On success, responds with [`ListModelVersionsOutput`](crate::operation::list_model_versions::ListModelVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListModelVersionsOutput`](crate::operation::list_model_versions::ListModelVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_versions::ListModelVersionsOutput::next_token): <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     ///   - [`model_version_summaries(Option<Vec::<ModelVersionSummary>>)`](crate::operation::list_model_versions::ListModelVersionsOutput::model_version_summaries): <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>  <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p> </note>
-    /// - On failure, responds with [`SdkError<ListModelVersionsError>`](crate::operation::list_model_versions::ListModelVersionsError)
+                            /// - On failure, responds with [`SdkError<ListModelVersionsError>`](crate::operation::list_model_versions::ListModelVersionsError)
     pub fn list_model_versions(&self) -> crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder {
-        crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

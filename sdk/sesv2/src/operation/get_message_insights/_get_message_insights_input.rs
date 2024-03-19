@@ -3,13 +3,13 @@
 /// <p>A request to return information about a message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMessageInsightsInput {
+pub struct GetMessageInsightsInput  {
     /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMessageInsightsInput {
+impl  GetMessageInsightsInput  {
     /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
@@ -35,18 +35,20 @@ impl GetMessageInsightsInputBuilder {
     }
     /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
     /// Consumes the builder and constructs a [`GetMessageInsightsInput`](crate::operation::get_message_insights::GetMessageInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_message_insights::GetMessageInsightsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_message_insights::GetMessageInsightsInput { message_id: self.message_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_message_insights::GetMessageInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_message_insights::GetMessageInsightsInput {
+                message_id: self.message_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A description of the app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct App {
+pub struct App  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The app stack ID.</p>
@@ -15,90 +15,93 @@ pub struct App {
     /// <p>A description of the app.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The app's data sources.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSource>>,
     /// <p>The app type.</p>
     pub r#type: ::std::option::Option<crate::types::AppType>,
     /// <p>A <code>Source</code> object that describes the app repository.</p>
     pub app_source: ::std::option::Option<crate::types::Source>,
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
-    pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Whether to enable SSL for the app.</p>
     pub enable_ssl: ::std::option::Option<bool>,
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     pub ssl_configuration: ::std::option::Option<crate::types::SslConfiguration>,
     /// <p>The stack attributes.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::AppAttributesKeys, ::std::string::String>>,
     /// <p>When the app was created.</p>
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p><note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
-    pub environment: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub environment: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>,
 }
-impl App {
+impl  App  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The app's short name.</p>
-    pub fn shortname(&self) -> ::std::option::Option<&str> {
+    pub fn shortname(&self) -> ::std::option::Option<& str> {
         self.shortname.as_deref()
     }
     /// <p>The app name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the app.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The app's data sources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::DataSource] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::DataSource] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The app type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AppType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AppType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>Source</code> object that describes the app repository.</p>
-    pub fn app_source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn app_source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.app_source.as_ref()
     }
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
-    pub fn domains(&self) -> &[::std::string::String] {
-        self.domains.as_deref().unwrap_or_default()
+    pub fn domains(&self) -> & [::std::string::String] {
+        self.domains.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether to enable SSL for the app.</p>
     pub fn enable_ssl(&self) -> ::std::option::Option<bool> {
         self.enable_ssl
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-    pub fn ssl_configuration(&self) -> ::std::option::Option<&crate::types::SslConfiguration> {
+    pub fn ssl_configuration(&self) -> ::std::option::Option<& crate::types::SslConfiguration> {
         self.ssl_configuration.as_ref()
     }
     /// <p>The stack attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::AppAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>When the app was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p><note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
-    pub fn environment(&self) -> &[crate::types::EnvironmentVariable] {
-        self.environment.as_deref().unwrap_or_default()
+    pub fn environment(&self) -> & [crate::types::EnvironmentVariable] {
+        self.environment.as_deref()
+        .unwrap_or_default()
     }
 }
 impl App {
@@ -117,15 +120,15 @@ pub struct AppBuilder {
     pub(crate) shortname: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSource>>,
     pub(crate) r#type: ::std::option::Option<crate::types::AppType>,
     pub(crate) app_source: ::std::option::Option<crate::types::Source>,
-    pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enable_ssl: ::std::option::Option<bool>,
     pub(crate) ssl_configuration: ::std::option::Option<crate::types::SslConfiguration>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::AppAttributesKeys, ::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) environment: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>,
 }
 impl AppBuilder {
     /// <p>The app ID.</p>
@@ -135,8 +138,7 @@ impl AppBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +151,7 @@ impl AppBuilder {
     }
     /// <p>The app stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The app stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +164,7 @@ impl AppBuilder {
     }
     /// <p>The app's short name.</p>
     pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shortname = input;
-        self
+        self.shortname = input; self
     }
     /// <p>The app's short name.</p>
     pub fn get_shortname(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +177,7 @@ impl AppBuilder {
     }
     /// <p>The app name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The app name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +190,7 @@ impl AppBuilder {
     }
     /// <p>A description of the app.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the app.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,17 +203,16 @@ impl AppBuilder {
     /// <p>The app's data sources.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The app's data sources.</p>
-    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSource>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>The app's data sources.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSource>> {
         &self.data_sources
     }
     /// <p>The app type.</p>
@@ -225,8 +222,7 @@ impl AppBuilder {
     }
     /// <p>The app type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The app type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AppType> {
@@ -239,8 +235,7 @@ impl AppBuilder {
     }
     /// <p>A <code>Source</code> object that describes the app repository.</p>
     pub fn set_app_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.app_source = input;
-        self
+        self.app_source = input; self
     }
     /// <p>A <code>Source</code> object that describes the app repository.</p>
     pub fn get_app_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -253,17 +248,16 @@ impl AppBuilder {
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
-    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
-    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domains
     }
     /// <p>Whether to enable SSL for the app.</p>
@@ -273,8 +267,7 @@ impl AppBuilder {
     }
     /// <p>Whether to enable SSL for the app.</p>
     pub fn set_enable_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_ssl = input;
-        self
+        self.enable_ssl = input; self
     }
     /// <p>Whether to enable SSL for the app.</p>
     pub fn get_enable_ssl(&self) -> &::std::option::Option<bool> {
@@ -287,8 +280,7 @@ impl AppBuilder {
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     pub fn set_ssl_configuration(mut self, input: ::std::option::Option<crate::types::SslConfiguration>) -> Self {
-        self.ssl_configuration = input;
-        self
+        self.ssl_configuration = input; self
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     pub fn get_ssl_configuration(&self) -> &::std::option::Option<crate::types::SslConfiguration> {
@@ -301,20 +293,16 @@ impl AppBuilder {
     /// <p>The stack attributes.</p>
     pub fn attributes(mut self, k: crate::types::AppAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The stack attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::AppAttributesKeys, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The stack attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::AppAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
     /// <p>When the app was created.</p>
@@ -324,8 +312,7 @@ impl AppBuilder {
     }
     /// <p>When the app was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>When the app was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,40 +327,54 @@ impl AppBuilder {
     /// </note>
     pub fn environment(mut self, input: crate::types::EnvironmentVariable) -> Self {
         let mut v = self.environment.unwrap_or_default();
-        v.push(input);
-        self.environment = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environment = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p><note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
-    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment = input; self
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p><note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     pub fn build(self) -> crate::types::App {
         crate::types::App {
-            app_id: self.app_id,
-            stack_id: self.stack_id,
-            shortname: self.shortname,
-            name: self.name,
-            description: self.description,
-            data_sources: self.data_sources,
-            r#type: self.r#type,
-            app_source: self.app_source,
-            domains: self.domains,
-            enable_ssl: self.enable_ssl,
-            ssl_configuration: self.ssl_configuration,
-            attributes: self.attributes,
-            created_at: self.created_at,
-            environment: self.environment,
+            app_id: self.app_id
+            ,
+            stack_id: self.stack_id
+            ,
+            shortname: self.shortname
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            data_sources: self.data_sources
+            ,
+            r#type: self.r#type
+            ,
+            app_source: self.app_source
+            ,
+            domains: self.domains
+            ,
+            enable_ssl: self.enable_ssl
+            ,
+            ssl_configuration: self.ssl_configuration
+            ,
+            attributes: self.attributes
+            ,
+            created_at: self.created_at
+            ,
+            environment: self.environment
+            ,
         }
     }
 }
+

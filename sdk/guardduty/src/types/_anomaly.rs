@@ -3,31 +3,19 @@
 /// <p>Contains information about the anomalies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Anomaly {
+pub struct Anomaly  {
     /// <p>Information about the types of profiles.</p>
-    pub profiles: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::AnomalyObject>>,
-        >,
-    >,
+    pub profiles: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::AnomalyObject>>>>,
     /// <p>Information about the behavior of the anomalies.</p>
     pub unusual: ::std::option::Option<crate::types::AnomalyUnusual>,
 }
-impl Anomaly {
+impl  Anomaly  {
     /// <p>Information about the types of profiles.</p>
-    pub fn profiles(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::AnomalyObject>>,
-        >,
-    > {
+    pub fn profiles(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::AnomalyObject>>>> {
         self.profiles.as_ref()
     }
     /// <p>Information about the behavior of the anomalies.</p>
-    pub fn unusual(&self) -> ::std::option::Option<&crate::types::AnomalyUnusual> {
+    pub fn unusual(&self) -> ::std::option::Option<& crate::types::AnomalyUnusual> {
         self.unusual.as_ref()
     }
 }
@@ -42,12 +30,7 @@ impl Anomaly {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyBuilder {
-    pub(crate) profiles: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::AnomalyObject>>,
-        >,
-    >,
+    pub(crate) profiles: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::AnomalyObject>>>>,
     pub(crate) unusual: ::std::option::Option<crate::types::AnomalyUnusual>,
 }
 impl AnomalyBuilder {
@@ -56,38 +39,18 @@ impl AnomalyBuilder {
     /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
     ///
     /// <p>Information about the types of profiles.</p>
-    pub fn profiles(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::AnomalyObject>>,
-    ) -> Self {
+    pub fn profiles(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::AnomalyObject>>) -> Self {
         let mut hash_map = self.profiles.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.profiles = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.profiles = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Information about the types of profiles.</p>
-    pub fn set_profiles(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::AnomalyObject>>,
-            >,
-        >,
-    ) -> Self {
-        self.profiles = input;
-        self
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::AnomalyObject>>>>) -> Self {
+        self.profiles = input; self
     }
     /// <p>Information about the types of profiles.</p>
-    pub fn get_profiles(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::AnomalyObject>>,
-        >,
-    > {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::AnomalyObject>>>> {
         &self.profiles
     }
     /// <p>Information about the behavior of the anomalies.</p>
@@ -97,8 +60,7 @@ impl AnomalyBuilder {
     }
     /// <p>Information about the behavior of the anomalies.</p>
     pub fn set_unusual(mut self, input: ::std::option::Option<crate::types::AnomalyUnusual>) -> Self {
-        self.unusual = input;
-        self
+        self.unusual = input; self
     }
     /// <p>Information about the behavior of the anomalies.</p>
     pub fn get_unusual(&self) -> &::std::option::Option<crate::types::AnomalyUnusual> {
@@ -107,8 +69,11 @@ impl AnomalyBuilder {
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
     pub fn build(self) -> crate::types::Anomaly {
         crate::types::Anomaly {
-            profiles: self.profiles,
-            unusual: self.unusual,
+            profiles: self.profiles
+            ,
+            unusual: self.unusual
+            ,
         }
     }
 }
+

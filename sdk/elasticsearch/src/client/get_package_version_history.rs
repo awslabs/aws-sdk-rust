@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetPackageVersionHistory`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`package_id(impl Into<String>)`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::set_package_id):<br>required: **true**<br><p>Returns an audit history of versions of the package.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::set_max_results):<br>required: **false**<br><p>Limits results to a maximum number of versions.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p><br>
-    /// - On success, responds with [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput) with field(s):
+                            /// - On success, responds with [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput) with field(s):
     ///   - [`package_id(Option<String>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::package_id): (undocumented)
     ///   - [`package_version_history_list(Option<Vec::<PackageVersionHistory>>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::package_version_history_list): <p>List of <code>PackageVersionHistory</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::next_token): (undocumented)
-    /// - On failure, responds with [`SdkError<GetPackageVersionHistoryError>`](crate::operation::get_package_version_history::GetPackageVersionHistoryError)
+                            /// - On failure, responds with [`SdkError<GetPackageVersionHistoryError>`](crate::operation::get_package_version_history::GetPackageVersionHistoryError)
     pub fn get_package_version_history(&self) -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder {
-        crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

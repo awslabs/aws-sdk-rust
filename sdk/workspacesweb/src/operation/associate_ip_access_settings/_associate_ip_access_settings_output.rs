@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateIpAccessSettingsOutput {
+pub struct AssociateIpAccessSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The ARN of the IP access settings resource.</p>
     pub ip_access_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AssociateIpAccessSettingsOutput {
+impl  AssociateIpAccessSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn ip_access_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_access_settings_arn.deref()
+    pub fn ip_access_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.ip_access_settings_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateIpAccessSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateIpAccessSettingsOutput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput).
     pub fn builder() -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder {
@@ -50,8 +48,7 @@ impl AssociateIpAccessSettingsOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,46 +62,41 @@ impl AssociateIpAccessSettingsOutputBuilder {
     }
     /// <p>The ARN of the IP access settings resource.</p>
     pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_access_settings_arn = input;
-        self
+        self.ip_access_settings_arn = input; self
     }
     /// <p>The ARN of the IP access settings resource.</p>
     pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_access_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateIpAccessSettingsOutput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder::portal_arn)
     /// - [`ip_access_settings_arn`](crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder::ip_access_settings_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput {
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building AssociateIpAccessSettingsOutput",
-                )
-            })?,
-            ip_access_settings_arn: self.ip_access_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_access_settings_arn",
-                    "ip_access_settings_arn was not specified but it is required when building AssociateIpAccessSettingsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateIpAccessSettingsOutput")
+                    )?
+                ,
+                ip_access_settings_arn: self.ip_access_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_access_settings_arn", "ip_access_settings_arn was not specified but it is required when building AssociateIpAccessSettingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

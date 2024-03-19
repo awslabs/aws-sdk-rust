@@ -3,19 +3,19 @@
 /// <p>A request to modify the delivery options for a configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigurationSetDeliveryOptionsInput {
+pub struct PutConfigurationSetDeliveryOptionsInput  {
     /// <p>The name of the configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
 }
-impl PutConfigurationSetDeliveryOptionsInput {
+impl  PutConfigurationSetDeliveryOptionsInput  {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
-    pub fn delivery_options(&self) -> ::std::option::Option<&crate::types::DeliveryOptions> {
+    pub fn delivery_options(&self) -> ::std::option::Option<& crate::types::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
     }
     /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn set_delivery_options(mut self, input: ::std::option::Option<crate::types::DeliveryOptions>) -> Self {
-        self.delivery_options = input;
-        self
+        self.delivery_options = input; self
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn get_delivery_options(&self) -> &::std::option::Option<crate::types::DeliveryOptions> {
         &self.delivery_options
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-                delivery_options: self.delivery_options,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                delivery_options: self.delivery_options
+                ,
+            }
         )
     }
 }
+

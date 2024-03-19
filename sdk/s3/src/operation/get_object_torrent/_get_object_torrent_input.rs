@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetObjectTorrentInput {
+pub struct GetObjectTorrentInput  {
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The object key for which to get the information.</p>
@@ -14,23 +14,23 @@ pub struct GetObjectTorrentInput {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl GetObjectTorrentInput {
+impl  GetObjectTorrentInput  {
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The object key for which to get the information.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_payer(&self) -> ::std::option::Option<&crate::types::RequestPayer> {
+    pub fn request_payer(&self) -> ::std::option::Option<& crate::types::RequestPayer> {
         self.request_payer.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl GetObjectTorrentInputBuilder {
     }
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl GetObjectTorrentInputBuilder {
     }
     /// <p>The object key for which to get the information.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The object key for which to get the information.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl GetObjectTorrentInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
-        self.request_payer = input;
-        self
+        self.request_payer = input; self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -108,22 +105,26 @@ impl GetObjectTorrentInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`GetObjectTorrentInput`](crate::operation::get_object_torrent::GetObjectTorrentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_object_torrent::GetObjectTorrentInput {
-            bucket: self.bucket,
-            key: self.key,
-            request_payer: self.request_payer,
-            expected_bucket_owner: self.expected_bucket_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_object_torrent::GetObjectTorrentInput {
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
+                request_payer: self.request_payer
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+            }
+        )
     }
 }
+

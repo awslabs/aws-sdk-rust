@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGateway {
+pub struct TransitGateway  {
     /// <p>The ID of the transit gateway.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
@@ -19,42 +19,43 @@ pub struct TransitGateway {
     /// <p>The transit gateway options.</p>
     pub options: ::std::option::Option<crate::types::TransitGatewayOptions>,
     /// <p>The tags for the transit gateway.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TransitGateway {
+impl  TransitGateway  {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn transit_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_arn.as_deref()
     }
     /// <p>The state of the transit gateway.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayState> {
         self.state.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The description of the transit gateway.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The transit gateway options.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::TransitGatewayOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::TransitGatewayOptions> {
         self.options.as_ref()
     }
     /// <p>The tags for the transit gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransitGateway {
@@ -75,7 +76,7 @@ pub struct TransitGatewayBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) options: ::std::option::Option<crate::types::TransitGatewayOptions>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TransitGatewayBuilder {
     /// <p>The ID of the transit gateway.</p>
@@ -85,8 +86,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_arn = input;
-        self
+        self.transit_gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The state of the transit gateway.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the transit gateway.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayState> {
@@ -127,8 +125,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The description of the transit gateway.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the transit gateway.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +164,7 @@ impl TransitGatewayBuilder {
     }
     /// <p>The transit gateway options.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The transit gateway options.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayOptions> {
@@ -183,30 +177,38 @@ impl TransitGatewayBuilder {
     /// <p>The tags for the transit gateway.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the transit gateway.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the transit gateway.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGateway`](crate::types::TransitGateway).
     pub fn build(self) -> crate::types::TransitGateway {
         crate::types::TransitGateway {
-            transit_gateway_id: self.transit_gateway_id,
-            transit_gateway_arn: self.transit_gateway_arn,
-            state: self.state,
-            owner_id: self.owner_id,
-            description: self.description,
-            creation_time: self.creation_time,
-            options: self.options,
-            tags: self.tags,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            transit_gateway_arn: self.transit_gateway_arn
+            ,
+            state: self.state
+            ,
+            owner_id: self.owner_id
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            options: self.options
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

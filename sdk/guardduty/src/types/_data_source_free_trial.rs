@@ -3,11 +3,11 @@
 /// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceFreeTrial {
+pub struct DataSourceFreeTrial  {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
     pub free_trial_days_remaining: ::std::option::Option<i32>,
 }
-impl DataSourceFreeTrial {
+impl  DataSourceFreeTrial  {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
     pub fn free_trial_days_remaining(&self) -> ::std::option::Option<i32> {
         self.free_trial_days_remaining
@@ -34,8 +34,7 @@ impl DataSourceFreeTrialBuilder {
     }
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
     pub fn set_free_trial_days_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.free_trial_days_remaining = input;
-        self
+        self.free_trial_days_remaining = input; self
     }
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
     pub fn get_free_trial_days_remaining(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl DataSourceFreeTrialBuilder {
     /// Consumes the builder and constructs a [`DataSourceFreeTrial`](crate::types::DataSourceFreeTrial).
     pub fn build(self) -> crate::types::DataSourceFreeTrial {
         crate::types::DataSourceFreeTrial {
-            free_trial_days_remaining: self.free_trial_days_remaining,
+            free_trial_days_remaining: self.free_trial_days_remaining
+            ,
         }
     }
 }
+

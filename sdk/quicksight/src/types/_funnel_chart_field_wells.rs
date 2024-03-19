@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunnelChartFieldWells {
+pub struct FunnelChartFieldWells  {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
     pub funnel_chart_aggregated_field_wells: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
 }
-impl FunnelChartFieldWells {
+impl  FunnelChartFieldWells  {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
-    pub fn funnel_chart_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::FunnelChartAggregatedFieldWells> {
+    pub fn funnel_chart_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::FunnelChartAggregatedFieldWells> {
         self.funnel_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl FunnelChartFieldWellsBuilder {
     }
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
     pub fn set_funnel_chart_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>) -> Self {
-        self.funnel_chart_aggregated_field_wells = input;
-        self
+        self.funnel_chart_aggregated_field_wells = input; self
     }
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
     pub fn get_funnel_chart_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::FunnelChartAggregatedFieldWells> {
@@ -45,7 +44,9 @@ impl FunnelChartFieldWellsBuilder {
     /// Consumes the builder and constructs a [`FunnelChartFieldWells`](crate::types::FunnelChartFieldWells).
     pub fn build(self) -> crate::types::FunnelChartFieldWells {
         crate::types::FunnelChartFieldWells {
-            funnel_chart_aggregated_field_wells: self.funnel_chart_aggregated_field_wells,
+            funnel_chart_aggregated_field_wells: self.funnel_chart_aggregated_field_wells
+            ,
         }
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalReplicationGroupInput {
+pub struct DeleteGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub retain_primary_replication_group: ::std::option::Option<bool>,
 }
-impl DeleteGlobalReplicationGroupInput {
+impl  DeleteGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_replication_group_id(&self) -> ::std::option::Option<& str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>The primary replication group is retained as a standalone replication group.</p>
@@ -41,8 +41,7 @@ impl DeleteGlobalReplicationGroupInputBuilder {
     }
     /// <p>The name of the Global datastore</p>
     pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_replication_group_id = input;
-        self
+        self.global_replication_group_id = input; self
     }
     /// <p>The name of the Global datastore</p>
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteGlobalReplicationGroupInputBuilder {
     }
     /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub fn set_retain_primary_replication_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retain_primary_replication_group = input;
-        self
+        self.retain_primary_replication_group = input; self
     }
     /// <p>The primary replication group is retained as a standalone replication group.</p>
     pub fn get_retain_primary_replication_group(&self) -> &::std::option::Option<bool> {
         &self.retain_primary_replication_group
     }
     /// Consumes the builder and constructs a [`DeleteGlobalReplicationGroupInput`](crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput {
-            global_replication_group_id: self.global_replication_group_id,
-            retain_primary_replication_group: self.retain_primary_replication_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput {
+                global_replication_group_id: self.global_replication_group_id
+                ,
+                retain_primary_replication_group: self.retain_primary_replication_group
+                ,
+            }
+        )
     }
 }
+

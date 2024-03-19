@@ -3,11 +3,11 @@
 /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnclaveOptions {
+pub struct EnclaveOptions  {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl EnclaveOptions {
+impl  EnclaveOptions  {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl EnclaveOptionsBuilder {
     }
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl EnclaveOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`EnclaveOptions`](crate::types::EnclaveOptions).
     pub fn build(self) -> crate::types::EnclaveOptions {
-        crate::types::EnclaveOptions { enabled: self.enabled }
+        crate::types::EnclaveOptions {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

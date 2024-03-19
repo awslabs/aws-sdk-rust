@@ -3,7 +3,7 @@
 /// <p>Describes a Capacity Reservation Fleet that was successfully cancelled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityReservationFleetCancellationState {
+pub struct CapacityReservationFleetCancellationState  {
     /// <p>The current state of the Capacity Reservation Fleet.</p>
     pub current_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
@@ -11,17 +11,17 @@ pub struct CapacityReservationFleetCancellationState {
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
 }
-impl CapacityReservationFleetCancellationState {
+impl  CapacityReservationFleetCancellationState  {
     /// <p>The current state of the Capacity Reservation Fleet.</p>
-    pub fn current_fleet_state(&self) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
+    pub fn current_fleet_state(&self) -> ::std::option::Option<& crate::types::CapacityReservationFleetState> {
         self.current_fleet_state.as_ref()
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
-    pub fn previous_fleet_state(&self) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
+    pub fn previous_fleet_state(&self) -> ::std::option::Option<& crate::types::CapacityReservationFleetState> {
         self.previous_fleet_state.as_ref()
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
-    pub fn capacity_reservation_fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_fleet_id(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_fleet_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CapacityReservationFleetCancellationStateBuilder {
     }
     /// <p>The current state of the Capacity Reservation Fleet.</p>
     pub fn set_current_fleet_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationFleetState>) -> Self {
-        self.current_fleet_state = input;
-        self
+        self.current_fleet_state = input; self
     }
     /// <p>The current state of the Capacity Reservation Fleet.</p>
     pub fn get_current_fleet_state(&self) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
@@ -62,8 +61,7 @@ impl CapacityReservationFleetCancellationStateBuilder {
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
     pub fn set_previous_fleet_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationFleetState>) -> Self {
-        self.previous_fleet_state = input;
-        self
+        self.previous_fleet_state = input; self
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
     pub fn get_previous_fleet_state(&self) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
@@ -76,8 +74,7 @@ impl CapacityReservationFleetCancellationStateBuilder {
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
     pub fn set_capacity_reservation_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_fleet_id = input;
-        self
+        self.capacity_reservation_fleet_id = input; self
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
     pub fn get_capacity_reservation_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl CapacityReservationFleetCancellationStateBuilder {
     /// Consumes the builder and constructs a [`CapacityReservationFleetCancellationState`](crate::types::CapacityReservationFleetCancellationState).
     pub fn build(self) -> crate::types::CapacityReservationFleetCancellationState {
         crate::types::CapacityReservationFleetCancellationState {
-            current_fleet_state: self.current_fleet_state,
-            previous_fleet_state: self.previous_fleet_state,
-            capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+            current_fleet_state: self.current_fleet_state
+            ,
+            previous_fleet_state: self.previous_fleet_state
+            ,
+            capacity_reservation_fleet_id: self.capacity_reservation_fleet_id
+            ,
         }
     }
 }
+

@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIntegrationAssociations`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`integration_type(IntegrationType)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::integration_type) / [`set_integration_type(Option<IntegrationType>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::set_integration_type):<br>required: **false**<br><p>The integration type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`integration_arn(impl Into<String>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::integration_arn) / [`set_integration_arn(Option<String>)`](crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::set_integration_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the integration.</p><br>
-    /// - On success, responds with [`ListIntegrationAssociationsOutput`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListIntegrationAssociationsOutput`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput) with field(s):
     ///   - [`integration_association_summary_list(Option<Vec::<IntegrationAssociationSummary>>)`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput::integration_association_summary_list): <p>The associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListIntegrationAssociationsError>`](crate::operation::list_integration_associations::ListIntegrationAssociationsError)
-    pub fn list_integration_associations(
-        &self,
-    ) -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder {
-        crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListIntegrationAssociationsError>`](crate::operation::list_integration_associations::ListIntegrationAssociationsError)
+    pub fn list_integration_associations(&self) -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder {
+                                crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

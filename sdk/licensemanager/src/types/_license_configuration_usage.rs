@@ -3,7 +3,7 @@
 /// <p>Details about the usage of a resource associated with a license configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LicenseConfigurationUsage {
+pub struct LicenseConfigurationUsage  {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Type of resource.</p>
@@ -17,25 +17,25 @@ pub struct LicenseConfigurationUsage {
     /// <p>Number of licenses consumed by the resource.</p>
     pub consumed_licenses: ::std::option::Option<i64>,
 }
-impl LicenseConfigurationUsage {
+impl  LicenseConfigurationUsage  {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Type of resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Status of the resource.</p>
-    pub fn resource_status(&self) -> ::std::option::Option<&str> {
+    pub fn resource_status(&self) -> ::std::option::Option<& str> {
         self.resource_status.as_deref()
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> ::std::option::Option<& str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    pub fn association_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Number of licenses consumed by the resource.</p>
@@ -69,8 +69,7 @@ impl LicenseConfigurationUsageBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl LicenseConfigurationUsageBuilder {
     }
     /// <p>Type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -97,8 +95,7 @@ impl LicenseConfigurationUsageBuilder {
     }
     /// <p>Status of the resource.</p>
     pub fn set_resource_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_status = input;
-        self
+        self.resource_status = input; self
     }
     /// <p>Status of the resource.</p>
     pub fn get_resource_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl LicenseConfigurationUsageBuilder {
     }
     /// <p>ID of the account that owns the resource.</p>
     pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner_id = input;
-        self
+        self.resource_owner_id = input; self
     }
     /// <p>ID of the account that owns the resource.</p>
     pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl LicenseConfigurationUsageBuilder {
     }
     /// <p>Time when the license configuration was initially associated with the resource.</p>
     pub fn set_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.association_time = input;
-        self
+        self.association_time = input; self
     }
     /// <p>Time when the license configuration was initially associated with the resource.</p>
     pub fn get_association_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl LicenseConfigurationUsageBuilder {
     }
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn set_consumed_licenses(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.consumed_licenses = input;
-        self
+        self.consumed_licenses = input; self
     }
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn get_consumed_licenses(&self) -> &::std::option::Option<i64> {
@@ -149,12 +143,19 @@ impl LicenseConfigurationUsageBuilder {
     /// Consumes the builder and constructs a [`LicenseConfigurationUsage`](crate::types::LicenseConfigurationUsage).
     pub fn build(self) -> crate::types::LicenseConfigurationUsage {
         crate::types::LicenseConfigurationUsage {
-            resource_arn: self.resource_arn,
-            resource_type: self.resource_type,
-            resource_status: self.resource_status,
-            resource_owner_id: self.resource_owner_id,
-            association_time: self.association_time,
-            consumed_licenses: self.consumed_licenses,
+            resource_arn: self.resource_arn
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_status: self.resource_status
+            ,
+            resource_owner_id: self.resource_owner_id
+            ,
+            association_time: self.association_time
+            ,
+            consumed_licenses: self.consumed_licenses
+            ,
         }
     }
 }
+

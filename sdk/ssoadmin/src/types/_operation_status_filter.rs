@@ -3,13 +3,13 @@
 /// <p>Filters the operation status list based on the passed attribute value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperationStatusFilter {
+pub struct OperationStatusFilter  {
     /// <p>Filters the list operations result based on the status attribute.</p>
     pub status: ::std::option::Option<crate::types::StatusValues>,
 }
-impl OperationStatusFilter {
+impl  OperationStatusFilter  {
     /// <p>Filters the list operations result based on the status attribute.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusValues> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StatusValues> {
         self.status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OperationStatusFilterBuilder {
     }
     /// <p>Filters the list operations result based on the status attribute.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusValues>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Filters the list operations result based on the status attribute.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusValues> {
@@ -43,6 +42,10 @@ impl OperationStatusFilterBuilder {
     }
     /// Consumes the builder and constructs a [`OperationStatusFilter`](crate::types::OperationStatusFilter).
     pub fn build(self) -> crate::types::OperationStatusFilter {
-        crate::types::OperationStatusFilter { status: self.status }
+        crate::types::OperationStatusFilter {
+            status: self.status
+            ,
+        }
     }
 }
+

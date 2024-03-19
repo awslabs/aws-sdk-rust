@@ -3,7 +3,7 @@
 /// <p>A single principal-resource pair that has Lake Formation permissins enforced.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LakeFormationOptInsInfo {
+pub struct LakeFormationOptInsInfo  {
     /// <p>A structure for the resource.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
@@ -13,21 +13,21 @@ pub struct LakeFormationOptInsInfo {
     /// <p>The user who updated the record.</p>
     pub last_updated_by: ::std::option::Option<::std::string::String>,
 }
-impl LakeFormationOptInsInfo {
+impl  LakeFormationOptInsInfo  {
     /// <p>A structure for the resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The last modified date and time of the record.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The user who updated the record.</p>
-    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> ::std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LakeFormationOptInsInfoBuilder {
     }
     /// <p>A structure for the resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>A structure for the resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -69,8 +68,7 @@ impl LakeFormationOptInsInfoBuilder {
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
@@ -83,8 +81,7 @@ impl LakeFormationOptInsInfoBuilder {
     }
     /// <p>The last modified date and time of the record.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The last modified date and time of the record.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl LakeFormationOptInsInfoBuilder {
     }
     /// <p>The user who updated the record.</p>
     pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_by = input;
-        self
+        self.last_updated_by = input; self
     }
     /// <p>The user who updated the record.</p>
     pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl LakeFormationOptInsInfoBuilder {
     /// Consumes the builder and constructs a [`LakeFormationOptInsInfo`](crate::types::LakeFormationOptInsInfo).
     pub fn build(self) -> crate::types::LakeFormationOptInsInfo {
         crate::types::LakeFormationOptInsInfo {
-            resource: self.resource,
-            principal: self.principal,
-            last_modified: self.last_modified,
-            last_updated_by: self.last_updated_by,
+            resource: self.resource
+            ,
+            principal: self.principal
+            ,
+            last_modified: self.last_modified
+            ,
+            last_updated_by: self.last_updated_by
+            ,
         }
     }
 }
+

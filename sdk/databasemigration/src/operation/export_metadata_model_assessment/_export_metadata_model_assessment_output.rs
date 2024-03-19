@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportMetadataModelAssessmentOutput {
+pub struct ExportMetadataModelAssessmentOutput  {
     /// <p>The Amazon S3 details for an assessment exported in PDF format.</p>
     pub pdf_report: ::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry>,
     /// <p>The Amazon S3 details for an assessment exported in CSV format.</p>
     pub csv_report: ::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry>,
     _request_id: Option<String>,
 }
-impl ExportMetadataModelAssessmentOutput {
+impl  ExportMetadataModelAssessmentOutput  {
     /// <p>The Amazon S3 details for an assessment exported in PDF format.</p>
-    pub fn pdf_report(&self) -> ::std::option::Option<&crate::types::ExportMetadataModelAssessmentResultEntry> {
+    pub fn pdf_report(&self) -> ::std::option::Option<& crate::types::ExportMetadataModelAssessmentResultEntry> {
         self.pdf_report.as_ref()
     }
     /// <p>The Amazon S3 details for an assessment exported in CSV format.</p>
-    pub fn csv_report(&self) -> ::std::option::Option<&crate::types::ExportMetadataModelAssessmentResultEntry> {
+    pub fn csv_report(&self) -> ::std::option::Option<& crate::types::ExportMetadataModelAssessmentResultEntry> {
         self.csv_report.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportMetadataModelAssessmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportMetadataModelAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`ExportMetadataModelAssessmentOutput`](crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput).
     pub fn builder() -> crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentOutputBuilder {
@@ -47,8 +47,7 @@ impl ExportMetadataModelAssessmentOutputBuilder {
     }
     /// <p>The Amazon S3 details for an assessment exported in PDF format.</p>
     pub fn set_pdf_report(mut self, input: ::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry>) -> Self {
-        self.pdf_report = input;
-        self
+        self.pdf_report = input; self
     }
     /// <p>The Amazon S3 details for an assessment exported in PDF format.</p>
     pub fn get_pdf_report(&self) -> &::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry> {
@@ -61,28 +60,30 @@ impl ExportMetadataModelAssessmentOutputBuilder {
     }
     /// <p>The Amazon S3 details for an assessment exported in CSV format.</p>
     pub fn set_csv_report(mut self, input: ::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry>) -> Self {
-        self.csv_report = input;
-        self
+        self.csv_report = input; self
     }
     /// <p>The Amazon S3 details for an assessment exported in CSV format.</p>
     pub fn get_csv_report(&self) -> &::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry> {
         &self.csv_report
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportMetadataModelAssessmentOutput`](crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput).
     pub fn build(self) -> crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput {
         crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput {
-            pdf_report: self.pdf_report,
-            csv_report: self.csv_report,
+            pdf_report: self.pdf_report
+            ,
+            csv_report: self.csv_report
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

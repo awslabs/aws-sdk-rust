@@ -4,7 +4,7 @@
 /// <p>You can use the API operation to return this information about multiple created campaigns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignSummary {
+pub struct CampaignSummary  {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a campaign.</p>
@@ -32,25 +32,25 @@ pub struct CampaignSummary {
     /// <p>The last time the campaign was modified.</p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
 }
-impl CampaignSummary {
+impl  CampaignSummary  {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of a campaign.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the campaign.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the signal catalog associated with the campaign.</p>
-    pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> ::std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The state of a campaign. The status can be one of the following:</p>
@@ -64,15 +64,15 @@ impl CampaignSummary {
     /// <li>
     /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CampaignStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CampaignStatus> {
         self.status.as_ref()
     }
     /// <p>The time the campaign was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The last time the campaign was modified.</p>
-    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modification_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
 }
@@ -104,8 +104,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The name of a campaign.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a campaign.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The description of the campaign.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the campaign.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The ARN of the signal catalog associated with the campaign.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signal_catalog_arn = input;
-        self
+        self.signal_catalog_arn = input; self
     }
     /// <p>The ARN of the signal catalog associated with the campaign.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl CampaignSummaryBuilder {
     /// <p><code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CampaignStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of a campaign. The status can be one of the following:</p>
     /// <ul>
@@ -219,8 +213,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The time the campaign was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the campaign was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -234,8 +227,7 @@ impl CampaignSummaryBuilder {
     }
     /// <p>The last time the campaign was modified.</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The last time the campaign was modified.</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -246,25 +238,32 @@ impl CampaignSummaryBuilder {
     /// - [`creation_time`](crate::types::builders::CampaignSummaryBuilder::creation_time)
     /// - [`last_modification_time`](crate::types::builders::CampaignSummaryBuilder::last_modification_time)
     pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CampaignSummary {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            signal_catalog_arn: self.signal_catalog_arn,
-            target_arn: self.target_arn,
-            status: self.status,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building CampaignSummary",
-                )
-            })?,
-            last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modification_time",
-                    "last_modification_time was not specified but it is required when building CampaignSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CampaignSummary {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                target_arn: self.target_arn
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building CampaignSummary")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modification_time", "last_modification_time was not specified but it is required when building CampaignSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

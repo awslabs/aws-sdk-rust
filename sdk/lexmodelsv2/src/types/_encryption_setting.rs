@@ -3,7 +3,7 @@
 /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation, as well as the KMS key ARN used to encrypt the associated metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EncryptionSetting {
+pub struct EncryptionSetting  {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
@@ -11,21 +11,21 @@ pub struct EncryptionSetting {
     /// <p>The password used to encrypt the associated transcript file.</p>
     pub associated_transcripts_password: ::std::option::Option<::std::string::String>,
 }
-impl EncryptionSetting {
+impl  EncryptionSetting  {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    pub fn bot_locale_export_password(&self) -> ::std::option::Option<&str> {
+    pub fn bot_locale_export_password(&self) -> ::std::option::Option<& str> {
         self.bot_locale_export_password.as_deref()
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
-    pub fn associated_transcripts_password(&self) -> ::std::option::Option<&str> {
+    pub fn associated_transcripts_password(&self) -> ::std::option::Option<& str> {
         self.associated_transcripts_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for EncryptionSetting {
+impl  ::std::fmt::Debug for EncryptionSetting  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionSetting");
         formatter.field("kms_key_arn", &self.kms_key_arn);
@@ -57,8 +57,7 @@ impl EncryptionSettingBuilder {
     }
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl EncryptionSettingBuilder {
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
     pub fn set_bot_locale_export_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_locale_export_password = input;
-        self
+        self.bot_locale_export_password = input; self
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
     pub fn get_bot_locale_export_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl EncryptionSettingBuilder {
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
     pub fn set_associated_transcripts_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_transcripts_password = input;
-        self
+        self.associated_transcripts_password = input; self
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
     pub fn get_associated_transcripts_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl EncryptionSettingBuilder {
     /// Consumes the builder and constructs a [`EncryptionSetting`](crate::types::EncryptionSetting).
     pub fn build(self) -> crate::types::EncryptionSetting {
         crate::types::EncryptionSetting {
-            kms_key_arn: self.kms_key_arn,
-            bot_locale_export_password: self.bot_locale_export_password,
-            associated_transcripts_password: self.associated_transcripts_password,
+            kms_key_arn: self.kms_key_arn
+            ,
+            bot_locale_export_password: self.bot_locale_export_password
+            ,
+            associated_transcripts_password: self.associated_transcripts_password
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for EncryptionSettingBuilder {
         formatter.finish()
     }
 }
+

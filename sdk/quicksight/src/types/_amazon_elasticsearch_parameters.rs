@@ -3,15 +3,14 @@
 /// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmazonElasticsearchParameters {
+pub struct AmazonElasticsearchParameters  {
     /// <p>The OpenSearch domain.</p>
     pub domain: ::std::string::String,
 }
-impl AmazonElasticsearchParameters {
+impl  AmazonElasticsearchParameters  {
     /// <p>The OpenSearch domain.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> & str {
+        use std::ops::Deref; self.domain.deref()
     }
 }
 impl AmazonElasticsearchParameters {
@@ -36,8 +35,7 @@ impl AmazonElasticsearchParametersBuilder {
     }
     /// <p>The OpenSearch domain.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The OpenSearch domain.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AmazonElasticsearchParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain`](crate::types::builders::AmazonElasticsearchParametersBuilder::domain)
     pub fn build(self) -> ::std::result::Result<crate::types::AmazonElasticsearchParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AmazonElasticsearchParameters {
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building AmazonElasticsearchParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AmazonElasticsearchParameters {
+                domain: self.domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "domain was not specified but it is required when building AmazonElasticsearchParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSoftwareSetInput {
+pub struct UpdateSoftwareSetInput  {
     /// <p>The ID of the software set to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An option to define if the software set has been validated.</p>
     pub validation_status: ::std::option::Option<crate::types::SoftwareSetValidationStatus>,
 }
-impl UpdateSoftwareSetInput {
+impl  UpdateSoftwareSetInput  {
     /// <p>The ID of the software set to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An option to define if the software set has been validated.</p>
-    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::SoftwareSetValidationStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<& crate::types::SoftwareSetValidationStatus> {
         self.validation_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateSoftwareSetInputBuilder {
     }
     /// <p>The ID of the software set to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the software set to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateSoftwareSetInputBuilder {
     }
     /// <p>An option to define if the software set has been validated.</p>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::SoftwareSetValidationStatus>) -> Self {
-        self.validation_status = input;
-        self
+        self.validation_status = input; self
     }
     /// <p>An option to define if the software set has been validated.</p>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::SoftwareSetValidationStatus> {
         &self.validation_status
     }
     /// Consumes the builder and constructs a [`UpdateSoftwareSetInput`](crate::operation::update_software_set::UpdateSoftwareSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_software_set::UpdateSoftwareSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_software_set::UpdateSoftwareSetInput {
-            id: self.id,
-            validation_status: self.validation_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_software_set::UpdateSoftwareSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_software_set::UpdateSoftwareSetInput {
+                id: self.id
+                ,
+                validation_status: self.validation_status
+                ,
+            }
+        )
     }
 }
+

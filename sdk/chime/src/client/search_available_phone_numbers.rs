@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchAvailablePhoneNumbers`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`area_code(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::area_code) / [`set_area_code(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_area_code):<br>required: **false**<br><p>The area code used to filter results. Only applies to the US.</p><br>
     ///   - [`city(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::city) / [`set_city(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_city):<br>required: **false**<br><p>The city used to filter results. Only applies to the US.</p><br>
     ///   - [`country(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::country) / [`set_country(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_country):<br>required: **false**<br><p>The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`phone_number_type(PhoneNumberType)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::phone_number_type) / [`set_phone_number_type(Option<PhoneNumberType>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_phone_number_type):<br>required: **false**<br><p>The phone number type used to filter results. Required for non-US numbers.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput) with field(s):
+                            /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput) with field(s):
     ///   - [`e164_phone_numbers(Option<Vec::<String>>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::next_token): <p>The token used to retrieve the next page of search results.</p>
-    /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError)
-    pub fn search_available_phone_numbers(
-        &self,
-    ) -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder {
-        crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError)
+    pub fn search_available_phone_numbers(&self) -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder {
+                                crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

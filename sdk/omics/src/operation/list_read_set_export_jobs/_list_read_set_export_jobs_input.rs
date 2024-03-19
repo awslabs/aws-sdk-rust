@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReadSetExportJobsInput {
+pub struct ListReadSetExportJobsInput  {
     /// <p>The jobs' sequence store ID.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of jobs to return in one page of results.</p>
@@ -12,9 +12,9 @@ pub struct ListReadSetExportJobsInput {
     /// <p>A filter to apply to the list.</p>
     pub filter: ::std::option::Option<crate::types::ExportReadSetFilter>,
 }
-impl ListReadSetExportJobsInput {
+impl  ListReadSetExportJobsInput  {
     /// <p>The jobs' sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
@@ -22,11 +22,11 @@ impl ListReadSetExportJobsInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ExportReadSetFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ExportReadSetFilter> {
         self.filter.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListReadSetExportJobsInputBuilder {
     }
     /// <p>The jobs' sequence store ID.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The jobs' sequence store ID.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListReadSetExportJobsInputBuilder {
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListReadSetExportJobsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl ListReadSetExportJobsInputBuilder {
     }
     /// <p>A filter to apply to the list.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ExportReadSetFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A filter to apply to the list.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ExportReadSetFilter> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListReadSetExportJobsInput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput {
-            sequence_store_id: self.sequence_store_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filter: self.filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput {
+                sequence_store_id: self.sequence_store_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

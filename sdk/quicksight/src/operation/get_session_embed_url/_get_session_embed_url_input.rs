@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSessionEmbedUrlInput {
+pub struct GetSessionEmbedUrlInput  {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
@@ -35,9 +35,9 @@ pub struct GetSessionEmbedUrlInput {
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetSessionEmbedUrlInput {
+impl  GetSessionEmbedUrlInput  {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
@@ -55,7 +55,7 @@ impl GetSessionEmbedUrlInput {
     /// <li>
     /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p></li>
     /// </ul>
-    pub fn entry_point(&self) -> ::std::option::Option<&str> {
+    pub fn entry_point(&self) -> ::std::option::Option<& str> {
         self.entry_point.as_deref()
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
@@ -72,7 +72,7 @@ impl GetSessionEmbedUrlInput {
     /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p></li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
@@ -101,8 +101,7 @@ impl GetSessionEmbedUrlInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl GetSessionEmbedUrlInputBuilder {
     /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p></li>
     /// </ul>
     pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_point = input;
-        self
+        self.entry_point = input; self
     }
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
@@ -171,8 +169,7 @@ impl GetSessionEmbedUrlInputBuilder {
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub fn set_session_lifetime_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.session_lifetime_in_minutes = input;
-        self
+        self.session_lifetime_in_minutes = input; self
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
@@ -203,8 +200,7 @@ impl GetSessionEmbedUrlInputBuilder {
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
@@ -220,15 +216,19 @@ impl GetSessionEmbedUrlInputBuilder {
         &self.user_arn
     }
     /// Consumes the builder and constructs a [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_session_embed_url::GetSessionEmbedUrlInput {
-            aws_account_id: self.aws_account_id,
-            entry_point: self.entry_point,
-            session_lifetime_in_minutes: self.session_lifetime_in_minutes,
-            user_arn: self.user_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_session_embed_url::GetSessionEmbedUrlInput {
+                aws_account_id: self.aws_account_id
+                ,
+                entry_point: self.entry_point
+                ,
+                session_lifetime_in_minutes: self.session_lifetime_in_minutes
+                ,
+                user_arn: self.user_arn
+                ,
+            }
+        )
     }
 }
+

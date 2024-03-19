@@ -5,7 +5,7 @@
 /// <p>You cannot apply both event selectors and advanced event selectors to a trail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventSelector {
+pub struct EventSelector  {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p>By default, the value is <code>All</code>.</p>
     pub read_write_type: ::std::option::Option<crate::types::ReadWriteType>,
@@ -16,14 +16,14 @@ pub struct EventSelector {
     pub include_management_events: ::std::option::Option<bool>,
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
-    pub data_resources: ::std::option::Option<::std::vec::Vec<crate::types::DataResource>>,
+    pub data_resources: ::std::option::Option<::std::vec::Vec::<crate::types::DataResource>>,
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in Regions that support the event source.</p>
-    pub exclude_management_event_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclude_management_event_sources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EventSelector {
+impl  EventSelector  {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p>By default, the value is <code>All</code>.</p>
-    pub fn read_write_type(&self) -> ::std::option::Option<&crate::types::ReadWriteType> {
+    pub fn read_write_type(&self) -> ::std::option::Option<& crate::types::ReadWriteType> {
         self.read_write_type.as_ref()
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
@@ -35,16 +35,18 @@ impl EventSelector {
     }
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_resources.is_none()`.
-    pub fn data_resources(&self) -> &[crate::types::DataResource] {
-        self.data_resources.as_deref().unwrap_or_default()
+    pub fn data_resources(&self) -> & [crate::types::DataResource] {
+        self.data_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in Regions that support the event source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_management_event_sources.is_none()`.
-    pub fn exclude_management_event_sources(&self) -> &[::std::string::String] {
-        self.exclude_management_event_sources.as_deref().unwrap_or_default()
+    pub fn exclude_management_event_sources(&self) -> & [::std::string::String] {
+        self.exclude_management_event_sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EventSelector {
@@ -60,8 +62,8 @@ impl EventSelector {
 pub struct EventSelectorBuilder {
     pub(crate) read_write_type: ::std::option::Option<crate::types::ReadWriteType>,
     pub(crate) include_management_events: ::std::option::Option<bool>,
-    pub(crate) data_resources: ::std::option::Option<::std::vec::Vec<crate::types::DataResource>>,
-    pub(crate) exclude_management_event_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_resources: ::std::option::Option<::std::vec::Vec::<crate::types::DataResource>>,
+    pub(crate) exclude_management_event_sources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EventSelectorBuilder {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
@@ -73,8 +75,7 @@ impl EventSelectorBuilder {
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p>By default, the value is <code>All</code>.</p>
     pub fn set_read_write_type(mut self, input: ::std::option::Option<crate::types::ReadWriteType>) -> Self {
-        self.read_write_type = input;
-        self
+        self.read_write_type = input; self
     }
     /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p>By default, the value is <code>All</code>.</p>
@@ -94,8 +95,7 @@ impl EventSelectorBuilder {
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn set_include_management_events(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_management_events = input;
-        self
+        self.include_management_events = input; self
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -112,19 +112,18 @@ impl EventSelectorBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
     pub fn data_resources(mut self, input: crate::types::DataResource) -> Self {
         let mut v = self.data_resources.unwrap_or_default();
-        v.push(input);
-        self.data_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
-    pub fn set_data_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataResource>>) -> Self {
-        self.data_resources = input;
-        self
+    pub fn set_data_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataResource>>) -> Self {
+        self.data_resources = input; self
     }
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
-    pub fn get_data_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataResource>> {
+    pub fn get_data_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataResource>> {
         &self.data_resources
     }
     /// Appends an item to `exclude_management_event_sources`.
@@ -134,26 +133,30 @@ impl EventSelectorBuilder {
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in Regions that support the event source.</p>
     pub fn exclude_management_event_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclude_management_event_sources.unwrap_or_default();
-        v.push(input.into());
-        self.exclude_management_event_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclude_management_event_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in Regions that support the event source.</p>
-    pub fn set_exclude_management_event_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclude_management_event_sources = input;
-        self
+    pub fn set_exclude_management_event_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclude_management_event_sources = input; self
     }
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in Regions that support the event source.</p>
-    pub fn get_exclude_management_event_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclude_management_event_sources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclude_management_event_sources
     }
     /// Consumes the builder and constructs a [`EventSelector`](crate::types::EventSelector).
     pub fn build(self) -> crate::types::EventSelector {
         crate::types::EventSelector {
-            read_write_type: self.read_write_type,
-            include_management_events: self.include_management_events,
-            data_resources: self.data_resources,
-            exclude_management_event_sources: self.exclude_management_event_sources,
+            read_write_type: self.read_write_type
+            ,
+            include_management_events: self.include_management_events
+            ,
+            data_resources: self.data_resources
+            ,
+            exclude_management_event_sources: self.exclude_management_event_sources
+            ,
         }
     }
 }
+

@@ -6,7 +6,7 @@
 /// <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeValueUpdate {
+pub struct AttributeValueUpdate  {
     /// <p>Represents the data for an attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -44,11 +44,11 @@ pub struct AttributeValueUpdate {
     /// </ul>
     pub action: ::std::option::Option<crate::types::AttributeAction>,
 }
-impl AttributeValueUpdate {
+impl  AttributeValueUpdate  {
     /// <p>Represents the data for an attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.value.as_ref()
     }
     /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.</p>
@@ -82,7 +82,7 @@ impl AttributeValueUpdate {
     /// <li>
     /// <p><code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the attribute value. The only data types allowed are number, number set, string set or binary set.</p></li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::AttributeAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::AttributeAction> {
         self.action.as_ref()
     }
 }
@@ -112,8 +112,7 @@ impl AttributeValueUpdateBuilder {
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Represents the data for an attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
@@ -188,8 +187,7 @@ impl AttributeValueUpdateBuilder {
     /// <p><code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the attribute value. The only data types allowed are number, number set, string set or binary set.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::AttributeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.</p>
     /// <p><b>If an item with the specified <i>Key</i> is found in the table:</b></p>
@@ -228,8 +226,11 @@ impl AttributeValueUpdateBuilder {
     /// Consumes the builder and constructs a [`AttributeValueUpdate`](crate::types::AttributeValueUpdate).
     pub fn build(self) -> crate::types::AttributeValueUpdate {
         crate::types::AttributeValueUpdate {
-            value: self.value,
-            action: self.action,
+            value: self.value
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

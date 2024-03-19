@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExclusionsInput {
+pub struct ListExclusionsInput  {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
@@ -10,13 +10,13 @@ pub struct ListExclusionsInput {
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListExclusionsInput {
+impl  ListExclusionsInput  {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
-    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
@@ -48,8 +48,7 @@ impl ListExclusionsInputBuilder {
     }
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
     pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_run_arn = input;
-        self
+        self.assessment_run_arn = input; self
     }
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
     pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListExclusionsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ListExclusionsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListExclusionsInput`](crate::operation::list_exclusions::ListExclusionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_exclusions::ListExclusionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_exclusions::ListExclusionsInput {
-            assessment_run_arn: self.assessment_run_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_exclusions::ListExclusionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_exclusions::ListExclusionsInput {
+                assessment_run_arn: self.assessment_run_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

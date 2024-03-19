@@ -3,19 +3,19 @@
 /// <p>Describes the state of a target network association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationStatus {
+pub struct AssociationStatus  {
     /// <p>The state of the target network association.</p>
     pub code: ::std::option::Option<crate::types::AssociationStatusCode>,
     /// <p>A message about the status of the target network association, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AssociationStatus {
+impl  AssociationStatus  {
     /// <p>The state of the target network association.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AssociationStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::AssociationStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the target network association, if applicable.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>The state of the target network association.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::AssociationStatusCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The state of the target network association.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::AssociationStatusCode> {
@@ -55,8 +54,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>A message about the status of the target network association, if applicable.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message about the status of the target network association, if applicable.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AssociationStatusBuilder {
     /// Consumes the builder and constructs a [`AssociationStatus`](crate::types::AssociationStatus).
     pub fn build(self) -> crate::types::AssociationStatus {
         crate::types::AssociationStatus {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

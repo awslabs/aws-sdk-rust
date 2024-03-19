@@ -3,13 +3,13 @@
 /// Placeholder documentation for DescribeOfferingRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOfferingInput {
+pub struct DescribeOfferingInput  {
     /// Unique offering ID, e.g. '87654321'
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeOfferingInput {
+impl  DescribeOfferingInput  {
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DescribeOfferingInputBuilder {
     }
     /// Unique offering ID, e.g. '87654321'
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// Unique offering ID, e.g. '87654321'
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_id
     }
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
-            offering_id: self.offering_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_offering::DescribeOfferingInput {
+                offering_id: self.offering_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The name of the connection to be created.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub host_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateConnectionInput {
+impl  CreateConnectionInput  {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The name of the connection to be created.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
-    pub fn host_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<& str> {
         self.host_arn.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl CreateConnectionInput {
 pub struct CreateConnectionInputBuilder {
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) host_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionInputBuilder {
@@ -56,8 +57,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -71,8 +71,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The name of the connection to be created.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to be created.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl CreateConnectionInputBuilder {
     /// <p>The key-value pair to use when tagging the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
@@ -105,22 +103,26 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_arn
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
-            provider_type: self.provider_type,
-            connection_name: self.connection_name,
-            tags: self.tags,
-            host_arn: self.host_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                provider_type: self.provider_type
+                ,
+                connection_name: self.connection_name
+                ,
+                tags: self.tags
+                ,
+                host_arn: self.host_arn
+                ,
+            }
+        )
     }
 }
+

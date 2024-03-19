@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceRegistrationInput {
+pub struct GetDeviceRegistrationInput  {
     /// <p>The unique name of the device you want to get the registration status from.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet that the device belongs to.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDeviceRegistrationInput {
+impl  GetDeviceRegistrationInput  {
     /// <p>The unique name of the device you want to get the registration status from.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDeviceRegistrationInputBuilder {
     }
     /// <p>The unique name of the device you want to get the registration status from.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The unique name of the device you want to get the registration status from.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetDeviceRegistrationInputBuilder {
     }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`GetDeviceRegistrationInput`](crate::operation::get_device_registration::GetDeviceRegistrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_device_registration::GetDeviceRegistrationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_device_registration::GetDeviceRegistrationInput {
-            device_name: self.device_name,
-            device_fleet_name: self.device_fleet_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_registration::GetDeviceRegistrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_device_registration::GetDeviceRegistrationInput {
+                device_name: self.device_name
+                ,
+                device_fleet_name: self.device_fleet_name
+                ,
+            }
+        )
     }
 }
+

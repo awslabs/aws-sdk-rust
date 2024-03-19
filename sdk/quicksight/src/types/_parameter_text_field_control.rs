@@ -3,7 +3,7 @@
 /// <p>A control to display a text box that is used to enter a single entry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterTextFieldControl {
+pub struct ParameterTextFieldControl  {
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
     pub parameter_control_id: ::std::string::String,
     /// <p>The title of the <code>ParameterTextFieldControl</code>.</p>
@@ -13,24 +13,21 @@ pub struct ParameterTextFieldControl {
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::TextFieldControlDisplayOptions>,
 }
-impl ParameterTextFieldControl {
+impl  ParameterTextFieldControl  {
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
-    pub fn parameter_control_id(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_control_id.deref()
+    pub fn parameter_control_id(&self) -> & str {
+        use std::ops::Deref; self.parameter_control_id.deref()
     }
     /// <p>The title of the <code>ParameterTextFieldControl</code>.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The source parameter name of the <code>ParameterTextFieldControl</code>.</p>
-    pub fn source_parameter_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_parameter_name.deref()
+    pub fn source_parameter_name(&self) -> & str {
+        use std::ops::Deref; self.source_parameter_name.deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(&self) -> ::std::option::Option<&crate::types::TextFieldControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<& crate::types::TextFieldControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -59,8 +56,7 @@ impl ParameterTextFieldControlBuilder {
     }
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
     pub fn set_parameter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_control_id = input;
-        self
+        self.parameter_control_id = input; self
     }
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
     pub fn get_parameter_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl ParameterTextFieldControlBuilder {
     }
     /// <p>The title of the <code>ParameterTextFieldControl</code>.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the <code>ParameterTextFieldControl</code>.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ParameterTextFieldControlBuilder {
     }
     /// <p>The source parameter name of the <code>ParameterTextFieldControl</code>.</p>
     pub fn set_source_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_parameter_name = input;
-        self
+        self.source_parameter_name = input; self
     }
     /// <p>The source parameter name of the <code>ParameterTextFieldControl</code>.</p>
     pub fn get_source_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl ParameterTextFieldControlBuilder {
     }
     /// <p>The display options of a control.</p>
     pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::TextFieldControlDisplayOptions>) -> Self {
-        self.display_options = input;
-        self
+        self.display_options = input; self
     }
     /// <p>The display options of a control.</p>
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::TextFieldControlDisplayOptions> {
@@ -116,26 +109,27 @@ impl ParameterTextFieldControlBuilder {
     /// - [`title`](crate::types::builders::ParameterTextFieldControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterTextFieldControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterTextFieldControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParameterTextFieldControl {
-            parameter_control_id: self.parameter_control_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_control_id",
-                    "parameter_control_id was not specified but it is required when building ParameterTextFieldControl",
-                )
-            })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterTextFieldControl",
-                )
-            })?,
-            source_parameter_name: self.source_parameter_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_parameter_name",
-                    "source_parameter_name was not specified but it is required when building ParameterTextFieldControl",
-                )
-            })?,
-            display_options: self.display_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParameterTextFieldControl {
+                parameter_control_id: self.parameter_control_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_control_id", "parameter_control_id was not specified but it is required when building ParameterTextFieldControl")
+                    )?
+                ,
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building ParameterTextFieldControl")
+                    )?
+                ,
+                source_parameter_name: self.source_parameter_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_parameter_name", "source_parameter_name was not specified but it is required when building ParameterTextFieldControl")
+                    )?
+                ,
+                display_options: self.display_options
+                ,
+            }
+        )
     }
 }
+

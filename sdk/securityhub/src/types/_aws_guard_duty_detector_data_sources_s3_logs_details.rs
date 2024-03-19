@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of S3 data event logs as a data source for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGuardDutyDetectorDataSourcesS3LogsDetails {
+pub struct AwsGuardDutyDetectorDataSourcesS3LogsDetails  {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of an organization.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsGuardDutyDetectorDataSourcesS3LogsDetails {
+impl  AwsGuardDutyDetectorDataSourcesS3LogsDetails  {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of an organization.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsGuardDutyDetectorDataSourcesS3LogsDetailsBuilder {
     }
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of an organization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of an organization.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsGuardDutyDetectorDataSourcesS3LogsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesS3LogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails {
-        crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails { status: self.status }
+        crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails {
+            status: self.status
+            ,
+        }
     }
 }
+

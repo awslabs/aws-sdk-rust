@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateQualificationFromWorkerInput {
+pub struct DisassociateQualificationFromWorkerInput  {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
@@ -10,17 +10,17 @@ pub struct DisassociateQualificationFromWorkerInput {
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateQualificationFromWorkerInput {
+impl  DisassociateQualificationFromWorkerInput  {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> ::std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DisassociateQualificationFromWorkerInputBuilder {
     }
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DisassociateQualificationFromWorkerInputBuilder {
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
     pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_type_id = input;
-        self
+        self.qualification_type_id = input; self
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl DisassociateQualificationFromWorkerInputBuilder {
     }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput {
-                worker_id: self.worker_id,
-                qualification_type_id: self.qualification_type_id,
-                reason: self.reason,
-            },
+                worker_id: self.worker_id
+                ,
+                qualification_type_id: self.qualification_type_id
+                ,
+                reason: self.reason
+                ,
+            }
         )
     }
 }
+

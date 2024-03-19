@@ -3,22 +3,20 @@
 /// <p>Information about proficiency to be disassociated from the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserProficiencyDisassociate {
+pub struct UserProficiencyDisassociate  {
     /// <p>The name of user's proficiency.</p>
     pub attribute_name: ::std::string::String,
     /// <p>The value of user's proficiency.</p>
     pub attribute_value: ::std::string::String,
 }
-impl UserProficiencyDisassociate {
+impl  UserProficiencyDisassociate  {
     /// <p>The name of user's proficiency.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
     /// <p>The value of user's proficiency.</p>
-    pub fn attribute_value(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_value.deref()
+    pub fn attribute_value(&self) -> & str {
+        use std::ops::Deref; self.attribute_value.deref()
     }
 }
 impl UserProficiencyDisassociate {
@@ -44,8 +42,7 @@ impl UserProficiencyDisassociateBuilder {
     }
     /// <p>The name of user's proficiency.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of user's proficiency.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl UserProficiencyDisassociateBuilder {
     }
     /// <p>The value of user's proficiency.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of user's proficiency.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl UserProficiencyDisassociateBuilder {
     /// - [`attribute_name`](crate::types::builders::UserProficiencyDisassociateBuilder::attribute_name)
     /// - [`attribute_value`](crate::types::builders::UserProficiencyDisassociateBuilder::attribute_value)
     pub fn build(self) -> ::std::result::Result<crate::types::UserProficiencyDisassociate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserProficiencyDisassociate {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building UserProficiencyDisassociate",
-                )
-            })?,
-            attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_value",
-                    "attribute_value was not specified but it is required when building UserProficiencyDisassociate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserProficiencyDisassociate {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building UserProficiencyDisassociate")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_value", "attribute_value was not specified but it is required when building UserProficiencyDisassociate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

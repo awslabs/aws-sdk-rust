@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMembershipInput {
+pub struct DeleteMembershipInput  {
     /// <p>The identifier for a membership resource.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMembershipInput {
+impl  DeleteMembershipInput  {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteMembershipInputBuilder {
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`DeleteMembershipInput`](crate::operation::delete_membership::DeleteMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_membership::DeleteMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_membership::DeleteMembershipInput {
-            membership_identifier: self.membership_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_membership::DeleteMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_membership::DeleteMembershipInput {
+                membership_identifier: self.membership_identifier
+                ,
+            }
+        )
     }
 }
+

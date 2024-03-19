@@ -3,7 +3,7 @@
 /// <p>Use this structure to specify the distribution of On-Demand Instances and Spot Instances and the allocation strategies used to fulfill On-Demand and Spot capacities for a mixed instances policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstancesDistribution {
+pub struct InstancesDistribution  {
     /// <p>The allocation strategy to apply to your On-Demand Instances when they are launched. Possible instance types are determined by the launch template overrides that you specify.</p>
     /// <p>The following lists the valid values:</p>
     /// <dl>
@@ -66,7 +66,7 @@ pub struct InstancesDistribution {
     /// <p>Valid Range: Minimum value of 0.001</p>
     pub spot_max_price: ::std::option::Option<::std::string::String>,
 }
-impl InstancesDistribution {
+impl  InstancesDistribution  {
     /// <p>The allocation strategy to apply to your On-Demand Instances when they are launched. Possible instance types are determined by the launch template overrides that you specify.</p>
     /// <p>The following lists the valid values:</p>
     /// <dl>
@@ -83,7 +83,7 @@ impl InstancesDistribution {
     /// <p>You set the order of instance types for the launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling launches your highest priority instance types first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on. This is the default value for Auto Scaling groups that don't specify <code>InstanceRequirements</code> and cannot be used for groups that do.</p>
     /// </dd>
     /// </dl>
-    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<&str> {
+    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<& str> {
         self.on_demand_allocation_strategy.as_deref()
     }
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales.</p>
@@ -125,7 +125,7 @@ impl InstancesDistribution {
     /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price.</p>
     /// </dd>
     /// </dl>
-    pub fn spot_allocation_strategy(&self) -> ::std::option::Option<&str> {
+    pub fn spot_allocation_strategy(&self) -> ::std::option::Option<& str> {
         self.spot_allocation_strategy.as_deref()
     }
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the <code>SpotAllocationStrategy</code> is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
@@ -137,7 +137,7 @@ impl InstancesDistribution {
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
-    pub fn spot_max_price(&self) -> ::std::option::Option<&str> {
+    pub fn spot_max_price(&self) -> ::std::option::Option<& str> {
         self.spot_max_price.as_deref()
     }
 }
@@ -197,8 +197,7 @@ impl InstancesDistributionBuilder {
     /// </dd>
     /// </dl>
     pub fn set_on_demand_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_demand_allocation_strategy = input;
-        self
+        self.on_demand_allocation_strategy = input; self
     }
     /// <p>The allocation strategy to apply to your On-Demand Instances when they are launched. Possible instance types are determined by the launch template overrides that you specify.</p>
     /// <p>The following lists the valid values:</p>
@@ -230,8 +229,7 @@ impl InstancesDistributionBuilder {
     /// <p>This number has the same unit of measurement as the group's desired capacity. If you change the default unit of measurement (number of instances) by specifying weighted capacity values in your launch template overrides list, or by changing the default desired capacity type setting of the group, you must specify this number using the same unit of measurement.</p>
     /// <p>Default: 0</p>
     pub fn set_on_demand_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_base_capacity = input;
-        self
+        self.on_demand_base_capacity = input; self
     }
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales.</p>
     /// <p>This number has the same unit of measurement as the group's desired capacity. If you change the default unit of measurement (number of instances) by specifying weighted capacity values in your launch template overrides list, or by changing the default desired capacity type setting of the group, you must specify this number using the same unit of measurement.</p>
@@ -248,8 +246,7 @@ impl InstancesDistributionBuilder {
     /// <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand Instances are used.</p>
     /// <p>Default: 100</p>
     pub fn set_on_demand_percentage_above_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_percentage_above_base_capacity = input;
-        self
+        self.on_demand_percentage_above_base_capacity = input; self
     }
     /// <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand Instances are used.</p>
     /// <p>Default: 100</p>
@@ -317,8 +314,7 @@ impl InstancesDistributionBuilder {
     /// </dd>
     /// </dl>
     pub fn set_spot_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_allocation_strategy = input;
-        self
+        self.spot_allocation_strategy = input; self
     }
     /// <p>The allocation strategy to apply to your Spot Instances when they are launched. Possible instance types are determined by the launch template overrides that you specify.</p>
     /// <p>The following lists the valid values:</p>
@@ -360,8 +356,7 @@ impl InstancesDistributionBuilder {
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the <code>SpotAllocationStrategy</code> is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
     /// <p>Default: 2</p>
     pub fn set_spot_instance_pools(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.spot_instance_pools = input;
-        self
+        self.spot_instance_pools = input; self
     }
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the <code>SpotAllocationStrategy</code> is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
     /// <p>Default: 2</p>
@@ -381,8 +376,7 @@ impl InstancesDistributionBuilder {
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
     pub fn set_spot_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_max_price = input;
-        self
+        self.spot_max_price = input; self
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
@@ -394,12 +388,19 @@ impl InstancesDistributionBuilder {
     /// Consumes the builder and constructs a [`InstancesDistribution`](crate::types::InstancesDistribution).
     pub fn build(self) -> crate::types::InstancesDistribution {
         crate::types::InstancesDistribution {
-            on_demand_allocation_strategy: self.on_demand_allocation_strategy,
-            on_demand_base_capacity: self.on_demand_base_capacity,
-            on_demand_percentage_above_base_capacity: self.on_demand_percentage_above_base_capacity,
-            spot_allocation_strategy: self.spot_allocation_strategy,
-            spot_instance_pools: self.spot_instance_pools,
-            spot_max_price: self.spot_max_price,
+            on_demand_allocation_strategy: self.on_demand_allocation_strategy
+            ,
+            on_demand_base_capacity: self.on_demand_base_capacity
+            ,
+            on_demand_percentage_above_base_capacity: self.on_demand_percentage_above_base_capacity
+            ,
+            spot_allocation_strategy: self.spot_allocation_strategy
+            ,
+            spot_instance_pools: self.spot_instance_pools
+            ,
+            spot_max_price: self.spot_max_price
+            ,
         }
     }
 }
+

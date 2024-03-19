@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssetBundleExportJobInput {
+pub struct DescribeAssetBundleExportJobInput  {
     /// <p>The ID of the Amazon Web Services account the export job is executed in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAssetBundleExportJobInput {
+impl  DescribeAssetBundleExportJobInput  {
     /// <p>The ID of the Amazon Web Services account the export job is executed in.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<& str> {
         self.asset_bundle_export_job_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeAssetBundleExportJobInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account the export job is executed in.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account the export job is executed in.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeAssetBundleExportJobInputBuilder {
     }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub fn set_asset_bundle_export_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_bundle_export_job_id = input;
-        self
+        self.asset_bundle_export_job_id = input; self
     }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_bundle_export_job_id
     }
     /// Consumes the builder and constructs a [`DescribeAssetBundleExportJobInput`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput {
-            aws_account_id: self.aws_account_id,
-            asset_bundle_export_job_id: self.asset_bundle_export_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput {
+                aws_account_id: self.aws_account_id
+                ,
+                asset_bundle_export_job_id: self.asset_bundle_export_job_id
+                ,
+            }
+        )
     }
 }
+

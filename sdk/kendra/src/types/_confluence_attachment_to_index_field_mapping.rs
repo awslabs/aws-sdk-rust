@@ -3,7 +3,7 @@
 /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confuence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfluenceAttachmentToIndexFieldMapping {
+pub struct ConfluenceAttachmentToIndexFieldMapping  {
     /// <p>The name of the field in the data source.</p>
     /// <p>You must first create the index field using the <code>UpdateIndex</code> API.</p>
     pub data_source_field_name: ::std::option::Option<crate::types::ConfluenceAttachmentFieldName>,
@@ -12,18 +12,18 @@ pub struct ConfluenceAttachmentToIndexFieldMapping {
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub index_field_name: ::std::option::Option<::std::string::String>,
 }
-impl ConfluenceAttachmentToIndexFieldMapping {
+impl  ConfluenceAttachmentToIndexFieldMapping  {
     /// <p>The name of the field in the data source.</p>
     /// <p>You must first create the index field using the <code>UpdateIndex</code> API.</p>
-    pub fn data_source_field_name(&self) -> ::std::option::Option<&crate::types::ConfluenceAttachmentFieldName> {
+    pub fn data_source_field_name(&self) -> ::std::option::Option<& crate::types::ConfluenceAttachmentFieldName> {
         self.data_source_field_name.as_ref()
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
-    pub fn date_field_format(&self) -> ::std::option::Option<&str> {
+    pub fn date_field_format(&self) -> ::std::option::Option<& str> {
         self.date_field_format.as_deref()
     }
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
-    pub fn index_field_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_field_name(&self) -> ::std::option::Option<& str> {
         self.index_field_name.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl ConfluenceAttachmentToIndexFieldMappingBuilder {
     /// <p>The name of the field in the data source.</p>
     /// <p>You must first create the index field using the <code>UpdateIndex</code> API.</p>
     pub fn set_data_source_field_name(mut self, input: ::std::option::Option<crate::types::ConfluenceAttachmentFieldName>) -> Self {
-        self.data_source_field_name = input;
-        self
+        self.data_source_field_name = input; self
     }
     /// <p>The name of the field in the data source.</p>
     /// <p>You must first create the index field using the <code>UpdateIndex</code> API.</p>
@@ -67,8 +66,7 @@ impl ConfluenceAttachmentToIndexFieldMappingBuilder {
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
     pub fn set_date_field_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_field_format = input;
-        self
+        self.date_field_format = input; self
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
     pub fn get_date_field_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl ConfluenceAttachmentToIndexFieldMappingBuilder {
     }
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub fn set_index_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_field_name = input;
-        self
+        self.index_field_name = input; self
     }
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub fn get_index_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,9 +88,13 @@ impl ConfluenceAttachmentToIndexFieldMappingBuilder {
     /// Consumes the builder and constructs a [`ConfluenceAttachmentToIndexFieldMapping`](crate::types::ConfluenceAttachmentToIndexFieldMapping).
     pub fn build(self) -> crate::types::ConfluenceAttachmentToIndexFieldMapping {
         crate::types::ConfluenceAttachmentToIndexFieldMapping {
-            data_source_field_name: self.data_source_field_name,
-            date_field_format: self.date_field_format,
-            index_field_name: self.index_field_name,
+            data_source_field_name: self.data_source_field_name
+            ,
+            date_field_format: self.date_field_format
+            ,
+            index_field_name: self.index_field_name
+            ,
         }
     }
 }
+

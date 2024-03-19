@@ -3,22 +3,23 @@
 /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PossibleRemediationActions {
+pub struct PossibleRemediationActions  {
     /// <p>A description of the possible remediation actions list.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the actions.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::PossibleRemediationAction>>,
 }
-impl PossibleRemediationActions {
+impl  PossibleRemediationActions  {
     /// <p>A description of the possible remediation actions list.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the actions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::PossibleRemediationAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::PossibleRemediationAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PossibleRemediationActions {
@@ -33,7 +34,7 @@ impl PossibleRemediationActions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PossibleRemediationActionsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::PossibleRemediationAction>>,
 }
 impl PossibleRemediationActionsBuilder {
     /// <p>A description of the possible remediation actions list.</p>
@@ -43,8 +44,7 @@ impl PossibleRemediationActionsBuilder {
     }
     /// <p>A description of the possible remediation actions list.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the possible remediation actions list.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl PossibleRemediationActionsBuilder {
     /// <p>Information about the actions.</p>
     pub fn actions(mut self, input: crate::types::PossibleRemediationAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the actions.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PossibleRemediationAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>Information about the actions.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PossibleRemediationAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`PossibleRemediationActions`](crate::types::PossibleRemediationActions).
     pub fn build(self) -> crate::types::PossibleRemediationActions {
         crate::types::PossibleRemediationActions {
-            description: self.description,
-            actions: self.actions,
+            description: self.description
+            ,
+            actions: self.actions
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines a resource mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceMapping {
+pub struct ResourceMapping  {
     /// <p>Name of the resource that the resource is mapped to.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
@@ -49,21 +49,21 @@ pub struct ResourceMapping {
     /// </note>
     pub eks_source_name: ::std::option::Option<::std::string::String>,
 }
-impl ResourceMapping {
+impl  ResourceMapping  {
     /// <p>Name of the resource that the resource is mapped to.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
-    pub fn logical_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn logical_stack_name(&self) -> ::std::option::Option<& str> {
         self.logical_stack_name.as_deref()
     }
     /// <p>The name of the application this resource is mapped to.</p>
-    pub fn app_registry_app_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_registry_app_name(&self) -> ::std::option::Option<& str> {
         self.app_registry_app_name.as_deref()
     }
     /// <p>Name of the resource group that the resource is mapped to.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>Specifies the type of resource mapping.</p>
@@ -93,21 +93,21 @@ impl ResourceMapping {
     /// <p>The resource is mapped to Resource Groups. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
-    pub fn mapping_type(&self) -> &crate::types::ResourceMappingType {
+    pub fn mapping_type(&self) -> & crate::types::ResourceMappingType {
         &self.mapping_type
     }
     /// <p>Identifier of the physical resource.</p>
-    pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> ::std::option::Option<& crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The short name of the Terraform source.</p>
-    pub fn terraform_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn terraform_source_name(&self) -> ::std::option::Option<& str> {
         self.terraform_source_name.as_deref()
     }
     /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    pub fn eks_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn eks_source_name(&self) -> ::std::option::Option<& str> {
         self.eks_source_name.as_deref()
     }
 }
@@ -139,8 +139,7 @@ impl ResourceMappingBuilder {
     }
     /// <p>Name of the resource that the resource is mapped to.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>Name of the resource that the resource is mapped to.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +152,7 @@ impl ResourceMappingBuilder {
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
     pub fn set_logical_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_stack_name = input;
-        self
+        self.logical_stack_name = input; self
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
     pub fn get_logical_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +165,7 @@ impl ResourceMappingBuilder {
     }
     /// <p>The name of the application this resource is mapped to.</p>
     pub fn set_app_registry_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_registry_app_name = input;
-        self
+        self.app_registry_app_name = input; self
     }
     /// <p>The name of the application this resource is mapped to.</p>
     pub fn get_app_registry_app_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +178,7 @@ impl ResourceMappingBuilder {
     }
     /// <p>Name of the resource group that the resource is mapped to.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>Name of the resource group that the resource is mapped to.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +244,7 @@ impl ResourceMappingBuilder {
     /// </dd>
     /// </dl>
     pub fn set_mapping_type(mut self, input: ::std::option::Option<crate::types::ResourceMappingType>) -> Self {
-        self.mapping_type = input;
-        self
+        self.mapping_type = input; self
     }
     /// <p>Specifies the type of resource mapping.</p>
     /// <dl>
@@ -289,8 +284,7 @@ impl ResourceMappingBuilder {
     }
     /// <p>Identifier of the physical resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<crate::types::PhysicalResourceId>) -> Self {
-        self.physical_resource_id = input;
-        self
+        self.physical_resource_id = input; self
     }
     /// <p>Identifier of the physical resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
@@ -303,8 +297,7 @@ impl ResourceMappingBuilder {
     }
     /// <p>The short name of the Terraform source.</p>
     pub fn set_terraform_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.terraform_source_name = input;
-        self
+        self.terraform_source_name = input; self
     }
     /// <p>The short name of the Terraform source.</p>
     pub fn get_terraform_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +314,7 @@ impl ResourceMappingBuilder {
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn set_eks_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eks_source_name = input;
-        self
+        self.eks_source_name = input; self
     }
     /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
@@ -334,20 +326,29 @@ impl ResourceMappingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mapping_type`](crate::types::builders::ResourceMappingBuilder::mapping_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceMapping {
-            resource_name: self.resource_name,
-            logical_stack_name: self.logical_stack_name,
-            app_registry_app_name: self.app_registry_app_name,
-            resource_group_name: self.resource_group_name,
-            mapping_type: self.mapping_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mapping_type",
-                    "mapping_type was not specified but it is required when building ResourceMapping",
-                )
-            })?,
-            physical_resource_id: self.physical_resource_id,
-            terraform_source_name: self.terraform_source_name,
-            eks_source_name: self.eks_source_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceMapping {
+                resource_name: self.resource_name
+                ,
+                logical_stack_name: self.logical_stack_name
+                ,
+                app_registry_app_name: self.app_registry_app_name
+                ,
+                resource_group_name: self.resource_group_name
+                ,
+                mapping_type: self.mapping_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mapping_type", "mapping_type was not specified but it is required when building ResourceMapping")
+                    )?
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                terraform_source_name: self.terraform_source_name
+                ,
+                eks_source_name: self.eks_source_name
+                ,
+            }
+        )
     }
 }
+

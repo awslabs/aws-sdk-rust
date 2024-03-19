@@ -3,7 +3,7 @@
 /// <p>The cumulative configuration requirements for every worker instance of the worker type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkerResourceConfig {
+pub struct WorkerResourceConfig  {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
     pub cpu: ::std::string::String,
     /// <p>The memory requirements for every worker instance of the worker type.</p>
@@ -11,19 +11,17 @@ pub struct WorkerResourceConfig {
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub disk: ::std::option::Option<::std::string::String>,
 }
-impl WorkerResourceConfig {
+impl  WorkerResourceConfig  {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
-    pub fn cpu(&self) -> &str {
-        use std::ops::Deref;
-        self.cpu.deref()
+    pub fn cpu(&self) -> & str {
+        use std::ops::Deref; self.cpu.deref()
     }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
-    pub fn memory(&self) -> &str {
-        use std::ops::Deref;
-        self.memory.deref()
+    pub fn memory(&self) -> & str {
+        use std::ops::Deref; self.memory.deref()
     }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
-    pub fn disk(&self) -> ::std::option::Option<&str> {
+    pub fn disk(&self) -> ::std::option::Option<& str> {
         self.disk.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl WorkerResourceConfigBuilder {
     }
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl WorkerResourceConfigBuilder {
     }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl WorkerResourceConfigBuilder {
     }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub fn set_disk(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk = input;
-        self
+        self.disk = input; self
     }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub fn get_disk(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl WorkerResourceConfigBuilder {
     /// - [`cpu`](crate::types::builders::WorkerResourceConfigBuilder::cpu)
     /// - [`memory`](crate::types::builders::WorkerResourceConfigBuilder::memory)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkerResourceConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkerResourceConfig {
-            cpu: self.cpu.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cpu",
-                    "cpu was not specified but it is required when building WorkerResourceConfig",
-                )
-            })?,
-            memory: self.memory.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "memory",
-                    "memory was not specified but it is required when building WorkerResourceConfig",
-                )
-            })?,
-            disk: self.disk,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkerResourceConfig {
+                cpu: self.cpu
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cpu", "cpu was not specified but it is required when building WorkerResourceConfig")
+                    )?
+                ,
+                memory: self.memory
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("memory", "memory was not specified but it is required when building WorkerResourceConfig")
+                    )?
+                ,
+                disk: self.disk
+                ,
+            }
+        )
     }
 }
+

@@ -3,25 +3,25 @@
 /// <p>Defines a container that provides the runtime environment for a model that you deploy with an inference component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentContainerSpecification {
+pub struct InferenceComponentContainerSpecification  {
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub artifact_url: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl InferenceComponentContainerSpecification {
+impl  InferenceComponentContainerSpecification  {
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn artifact_url(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_url(&self) -> ::std::option::Option<& str> {
         self.artifact_url.as_deref()
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl InferenceComponentContainerSpecification {
 pub struct InferenceComponentContainerSpecificationBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_url: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl InferenceComponentContainerSpecificationBuilder {
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
@@ -48,8 +48,7 @@ impl InferenceComponentContainerSpecificationBuilder {
     }
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl InferenceComponentContainerSpecificationBuilder {
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn set_artifact_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_url = input;
-        self
+        self.artifact_url = input; self
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn get_artifact_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,28 +74,28 @@ impl InferenceComponentContainerSpecificationBuilder {
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the Environment string-to-string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`InferenceComponentContainerSpecification`](crate::types::InferenceComponentContainerSpecification).
     pub fn build(self) -> crate::types::InferenceComponentContainerSpecification {
         crate::types::InferenceComponentContainerSpecification {
-            image: self.image,
-            artifact_url: self.artifact_url,
-            environment: self.environment,
+            image: self.image
+            ,
+            artifact_url: self.artifact_url
+            ,
+            environment: self.environment
+            ,
         }
     }
 }
+

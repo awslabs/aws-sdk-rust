@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResourcePolicyInput {
+pub struct UpdateResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
@@ -12,19 +12,19 @@ pub struct UpdateResourcePolicyInput {
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateResourcePolicyInput {
+impl  UpdateResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
     /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn expected_revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn expected_revision_id(&self) -> ::std::option::Option<& str> {
         self.expected_revision_id.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl UpdateResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateResourcePolicyInputBuilder {
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
     /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
     /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
@@ -86,8 +84,7 @@ impl UpdateResourcePolicyInputBuilder {
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_revision_id = input;
-        self
+        self.expected_revision_id = input; self
     }
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
@@ -95,14 +92,17 @@ impl UpdateResourcePolicyInputBuilder {
         &self.expected_revision_id
     }
     /// Consumes the builder and constructs a [`UpdateResourcePolicyInput`](crate::operation::update_resource_policy::UpdateResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_resource_policy::UpdateResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_resource_policy::UpdateResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            policy: self.policy,
-            expected_revision_id: self.expected_revision_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resource_policy::UpdateResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_resource_policy::UpdateResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
+                expected_revision_id: self.expected_revision_id
+                ,
+            }
+        )
     }
 }
+

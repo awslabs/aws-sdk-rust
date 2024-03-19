@@ -3,7 +3,7 @@
 /// <p>Represents a request for a purchase offering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseOfferingInput {
+pub struct PurchaseOfferingInput  {
     /// <p>The ID of the offering.</p>
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of device slots to purchase in an offering request.</p>
@@ -11,9 +11,9 @@ pub struct PurchaseOfferingInput {
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
     pub offering_promotion_id: ::std::option::Option<::std::string::String>,
 }
-impl PurchaseOfferingInput {
+impl  PurchaseOfferingInput  {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The number of device slots to purchase in an offering request.</p>
@@ -21,7 +21,7 @@ impl PurchaseOfferingInput {
         self.quantity
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
-    pub fn offering_promotion_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_promotion_id(&self) -> ::std::option::Option<& str> {
         self.offering_promotion_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// <p>The ID of the offering.</p>
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// <p>The ID of the offering.</p>
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// <p>The number of device slots to purchase in an offering request.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of device slots to purchase in an offering request.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -78,21 +76,24 @@ impl PurchaseOfferingInputBuilder {
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
     pub fn set_offering_promotion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_promotion_id = input;
-        self
+        self.offering_promotion_id = input; self
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
     pub fn get_offering_promotion_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_promotion_id
     }
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
-            offering_id: self.offering_id,
-            quantity: self.quantity,
-            offering_promotion_id: self.offering_promotion_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::purchase_offering::PurchaseOfferingInput {
+                offering_id: self.offering_id
+                ,
+                quantity: self.quantity
+                ,
+                offering_promotion_id: self.offering_promotion_id
+                ,
+            }
+        )
     }
 }
+

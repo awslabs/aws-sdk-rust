@@ -3,7 +3,7 @@
 /// UpdateCampaignOutboundCallConfigRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCampaignOutboundCallConfigInput {
+pub struct UpdateCampaignOutboundCallConfigInput  {
     /// Identifier representing a Campaign
     pub id: ::std::option::Option<::std::string::String>,
     /// The identifier of the contact flow for the outbound call.
@@ -13,21 +13,21 @@ pub struct UpdateCampaignOutboundCallConfigInput {
     /// Answering Machine Detection config
     pub answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
 }
-impl UpdateCampaignOutboundCallConfigInput {
+impl  UpdateCampaignOutboundCallConfigInput  {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The identifier of the contact flow for the outbound call.
-    pub fn connect_contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn connect_contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.connect_contact_flow_id.as_deref()
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-    pub fn connect_source_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn connect_source_phone_number(&self) -> ::std::option::Option<& str> {
         self.connect_source_phone_number.as_deref()
     }
     /// Answering Machine Detection config
-    pub fn answer_machine_detection_config(&self) -> ::std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
+    pub fn answer_machine_detection_config(&self) -> ::std::option::Option<& crate::types::AnswerMachineDetectionConfig> {
         self.answer_machine_detection_config.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Identifier representing a Campaign
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     }
     /// The identifier of the contact flow for the outbound call.
     pub fn set_connect_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_contact_flow_id = input;
-        self
+        self.connect_contact_flow_id = input; self
     }
     /// The identifier of the contact flow for the outbound call.
     pub fn get_connect_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn set_connect_source_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_source_phone_number = input;
-        self
+        self.connect_source_phone_number = input; self
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn get_connect_source_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     }
     /// Answering Machine Detection config
     pub fn set_answer_machine_detection_config(mut self, input: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>) -> Self {
-        self.answer_machine_detection_config = input;
-        self
+        self.answer_machine_detection_config = input; self
     }
     /// Answering Machine Detection config
     pub fn get_answer_machine_detection_config(&self) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
         &self.answer_machine_detection_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigInput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput {
-                id: self.id,
-                connect_contact_flow_id: self.connect_contact_flow_id,
-                connect_source_phone_number: self.connect_source_phone_number,
-                answer_machine_detection_config: self.answer_machine_detection_config,
-            },
+                id: self.id
+                ,
+                connect_contact_flow_id: self.connect_contact_flow_id
+                ,
+                connect_source_phone_number: self.connect_source_phone_number
+                ,
+                answer_machine_detection_config: self.answer_machine_detection_config
+                ,
+            }
         )
     }
 }
+

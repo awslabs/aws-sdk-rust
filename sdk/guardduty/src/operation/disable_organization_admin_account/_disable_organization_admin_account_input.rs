@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableOrganizationAdminAccountInput {
+pub struct DisableOrganizationAdminAccountInput  {
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
-impl DisableOrganizationAdminAccountInput {
+impl  DisableOrganizationAdminAccountInput  {
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
-    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> ::std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DisableOrganizationAdminAccountInputBuilder {
     }
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_account_id = input;
-        self
+        self.admin_account_id = input; self
     }
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }
     /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput {
-                admin_account_id: self.admin_account_id,
-            },
+                admin_account_id: self.admin_account_id
+                ,
+            }
         )
     }
 }
+

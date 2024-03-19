@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PrepareQueryInput {
+pub struct PrepareQueryInput  {
     /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
     pub validate_only: ::std::option::Option<bool>,
 }
-impl PrepareQueryInput {
+impl  PrepareQueryInput  {
     /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
@@ -18,7 +18,7 @@ impl PrepareQueryInput {
         self.validate_only
     }
 }
-impl ::std::fmt::Debug for PrepareQueryInput {
+impl  ::std::fmt::Debug for PrepareQueryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PrepareQueryInput");
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl PrepareQueryInputBuilder {
     }
     /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,21 +62,22 @@ impl PrepareQueryInputBuilder {
     }
     /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
     pub fn set_validate_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.validate_only = input;
-        self
+        self.validate_only = input; self
     }
     /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
     pub fn get_validate_only(&self) -> &::std::option::Option<bool> {
         &self.validate_only
     }
     /// Consumes the builder and constructs a [`PrepareQueryInput`](crate::operation::prepare_query::PrepareQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::prepare_query::PrepareQueryInput {
-            query_string: self.query_string,
-            validate_only: self.validate_only,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::prepare_query::PrepareQueryInput {
+                query_string: self.query_string
+                ,
+                validate_only: self.validate_only
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PrepareQueryInputBuilder {
@@ -88,3 +88,4 @@ impl ::std::fmt::Debug for PrepareQueryInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Feedback for an anomalous metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyGroupTimeSeriesFeedback {
+pub struct AnomalyGroupTimeSeriesFeedback  {
     /// <p>The ID of the anomaly group.</p>
     pub anomaly_group_id: ::std::string::String,
     /// <p>The ID of the metric.</p>
@@ -11,16 +11,14 @@ pub struct AnomalyGroupTimeSeriesFeedback {
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub is_anomaly: bool,
 }
-impl AnomalyGroupTimeSeriesFeedback {
+impl  AnomalyGroupTimeSeriesFeedback  {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.anomaly_group_id.deref()
+    pub fn anomaly_group_id(&self) -> & str {
+        use std::ops::Deref; self.anomaly_group_id.deref()
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> &str {
-        use std::ops::Deref;
-        self.time_series_id.deref()
+    pub fn time_series_id(&self) -> & str {
+        use std::ops::Deref; self.time_series_id.deref()
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn is_anomaly(&self) -> bool {
@@ -51,8 +49,7 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_group_id = input;
-        self
+        self.anomaly_group_id = input; self
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
     }
     /// <p>The ID of the metric.</p>
     pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_series_id = input;
-        self
+        self.time_series_id = input; self
     }
     /// <p>The ID of the metric.</p>
     pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn set_is_anomaly(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_anomaly = input;
-        self
+        self.is_anomaly = input; self
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn get_is_anomaly(&self) -> &::std::option::Option<bool> {
@@ -94,25 +89,25 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
     /// - [`time_series_id`](crate::types::builders::AnomalyGroupTimeSeriesFeedbackBuilder::time_series_id)
     /// - [`is_anomaly`](crate::types::builders::AnomalyGroupTimeSeriesFeedbackBuilder::is_anomaly)
     pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeriesFeedback, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnomalyGroupTimeSeriesFeedback {
-            anomaly_group_id: self.anomaly_group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "anomaly_group_id",
-                    "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeriesFeedback",
-                )
-            })?,
-            time_series_id: self.time_series_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_series_id",
-                    "time_series_id was not specified but it is required when building AnomalyGroupTimeSeriesFeedback",
-                )
-            })?,
-            is_anomaly: self.is_anomaly.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_anomaly",
-                    "is_anomaly was not specified but it is required when building AnomalyGroupTimeSeriesFeedback",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnomalyGroupTimeSeriesFeedback {
+                anomaly_group_id: self.anomaly_group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("anomaly_group_id", "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeriesFeedback")
+                    )?
+                ,
+                time_series_id: self.time_series_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_series_id", "time_series_id was not specified but it is required when building AnomalyGroupTimeSeriesFeedback")
+                    )?
+                ,
+                is_anomaly: self.is_anomaly
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_anomaly", "is_anomaly was not specified but it is required when building AnomalyGroupTimeSeriesFeedback")
+                    )?
+                ,
+            }
+        )
     }
 }
+

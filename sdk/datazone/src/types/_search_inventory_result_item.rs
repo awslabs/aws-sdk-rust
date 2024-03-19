@@ -26,11 +26,7 @@ impl SearchInventoryResultItem {
     /// Tries to convert the enum instance into [`AssetItem`](crate::types::SearchInventoryResultItem::AssetItem), extracting the inner [`AssetItem`](crate::types::AssetItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_item(&self) -> ::std::result::Result<&crate::types::AssetItem, &Self> {
-        if let SearchInventoryResultItem::AssetItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchInventoryResultItem::AssetItem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AssetItem`](crate::types::SearchInventoryResultItem::AssetItem).
     pub fn is_asset_item(&self) -> bool {
@@ -39,11 +35,7 @@ impl SearchInventoryResultItem {
     /// Tries to convert the enum instance into [`DataProductItem`](crate::types::SearchInventoryResultItem::DataProductItem), extracting the inner [`DataProductSummary`](crate::types::DataProductSummary).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_data_product_item(&self) -> ::std::result::Result<&crate::types::DataProductSummary, &Self> {
-        if let SearchInventoryResultItem::DataProductItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchInventoryResultItem::DataProductItem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DataProductItem`](crate::types::SearchInventoryResultItem::DataProductItem).
     pub fn is_data_product_item(&self) -> bool {
@@ -52,11 +44,7 @@ impl SearchInventoryResultItem {
     /// Tries to convert the enum instance into [`GlossaryItem`](crate::types::SearchInventoryResultItem::GlossaryItem), extracting the inner [`GlossaryItem`](crate::types::GlossaryItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_glossary_item(&self) -> ::std::result::Result<&crate::types::GlossaryItem, &Self> {
-        if let SearchInventoryResultItem::GlossaryItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchInventoryResultItem::GlossaryItem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GlossaryItem`](crate::types::SearchInventoryResultItem::GlossaryItem).
     pub fn is_glossary_item(&self) -> bool {
@@ -65,11 +53,7 @@ impl SearchInventoryResultItem {
     /// Tries to convert the enum instance into [`GlossaryTermItem`](crate::types::SearchInventoryResultItem::GlossaryTermItem), extracting the inner [`GlossaryTermItem`](crate::types::GlossaryTermItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_glossary_term_item(&self) -> ::std::result::Result<&crate::types::GlossaryTermItem, &Self> {
-        if let SearchInventoryResultItem::GlossaryTermItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchInventoryResultItem::GlossaryTermItem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GlossaryTermItem`](crate::types::SearchInventoryResultItem::GlossaryTermItem).
     pub fn is_glossary_term_item(&self) -> bool {
@@ -80,3 +64,4 @@ impl SearchInventoryResultItem {
         matches!(self, Self::Unknown)
     }
 }
+

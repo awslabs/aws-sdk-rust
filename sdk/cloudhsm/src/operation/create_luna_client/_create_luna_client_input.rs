@@ -3,19 +3,19 @@
 /// <p>Contains the inputs for the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLunaClientInput {
+pub struct CreateLunaClientInput  {
     /// <p>The label for the client.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
 }
-impl CreateLunaClientInput {
+impl  CreateLunaClientInput  {
     /// <p>The label for the client.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateLunaClientInputBuilder {
     }
     /// <p>The label for the client.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The label for the client.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CreateLunaClientInputBuilder {
     }
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }
     /// Consumes the builder and constructs a [`CreateLunaClientInput`](crate::operation::create_luna_client::CreateLunaClientInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_luna_client::CreateLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_luna_client::CreateLunaClientInput {
-            label: self.label,
-            certificate: self.certificate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_luna_client::CreateLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_luna_client::CreateLunaClientInput {
+                label: self.label
+                ,
+                certificate: self.certificate
+                ,
+            }
+        )
     }
 }
+

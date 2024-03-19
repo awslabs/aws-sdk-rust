@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateSecurityProfileBehaviorsOutput {
+pub struct ValidateSecurityProfileBehaviorsOutput  {
     /// <p>True if the behaviors were valid.</p>
     pub valid: bool,
     /// <p>The list of any errors found in the behaviors.</p>
-    pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>>,
     _request_id: Option<String>,
 }
-impl ValidateSecurityProfileBehaviorsOutput {
+impl  ValidateSecurityProfileBehaviorsOutput  {
     /// <p>True if the behaviors were valid.</p>
     pub fn valid(&self) -> bool {
         self.valid
     }
     /// <p>The list of any errors found in the behaviors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
-    pub fn validation_errors(&self) -> &[crate::types::ValidationError] {
-        self.validation_errors.as_deref().unwrap_or_default()
+    pub fn validation_errors(&self) -> & [crate::types::ValidationError] {
+        self.validation_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ValidateSecurityProfileBehaviorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ValidateSecurityProfileBehaviorsOutput {
     /// Creates a new builder-style object to manufacture [`ValidateSecurityProfileBehaviorsOutput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput).
     pub fn builder() -> crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsOutputBuilder {
@@ -38,7 +39,7 @@ impl ValidateSecurityProfileBehaviorsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSecurityProfileBehaviorsOutputBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
-    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>>,
     _request_id: Option<String>,
 }
 impl ValidateSecurityProfileBehaviorsOutputBuilder {
@@ -49,8 +50,7 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
     }
     /// <p>True if the behaviors were valid.</p>
     pub fn set_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.valid = input;
-        self
+        self.valid = input; self
     }
     /// <p>True if the behaviors were valid.</p>
     pub fn get_valid(&self) -> &::std::option::Option<bool> {
@@ -63,34 +63,37 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
     /// <p>The list of any errors found in the behaviors.</p>
     pub fn validation_errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
-        v.push(input);
-        self.validation_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of any errors found in the behaviors.</p>
-    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
-        self.validation_errors = input;
-        self
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>>) -> Self {
+        self.validation_errors = input; self
     }
     /// <p>The list of any errors found in the behaviors.</p>
-    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>> {
         &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ValidateSecurityProfileBehaviorsOutput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput).
     pub fn build(self) -> crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput {
         crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput {
-            valid: self.valid.unwrap_or_default(),
-            validation_errors: self.validation_errors,
+            valid: self.valid
+                .unwrap_or_default()
+            ,
+            validation_errors: self.validation_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

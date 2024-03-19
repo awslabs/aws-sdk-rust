@@ -4,15 +4,14 @@
 /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-training-data-cer.html">Preparing training data</a> in the Comprehend Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetEntityRecognizerEntityList {
+pub struct DatasetEntityRecognizerEntityList  {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
     pub s3_uri: ::std::string::String,
 }
-impl DatasetEntityRecognizerEntityList {
+impl  DatasetEntityRecognizerEntityList  {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
 }
 impl DatasetEntityRecognizerEntityList {
@@ -37,8 +36,7 @@ impl DatasetEntityRecognizerEntityListBuilder {
     }
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -48,13 +46,15 @@ impl DatasetEntityRecognizerEntityListBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::DatasetEntityRecognizerEntityListBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::DatasetEntityRecognizerEntityList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatasetEntityRecognizerEntityList {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building DatasetEntityRecognizerEntityList",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatasetEntityRecognizerEntityList {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building DatasetEntityRecognizerEntityList")
+                    )?
+                ,
+            }
+        )
     }
 }
+

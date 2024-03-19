@@ -3,24 +3,26 @@
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for a predictive scaling policy. This structure includes the data points for that capacity forecast, along with the timestamps of those data points.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityForecast {
+pub struct CapacityForecast  {
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>The values of the data points.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
-impl CapacityForecast {
+impl  CapacityForecast  {
     /// <p>The timestamps for the data points, in UTC format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
-    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
-        self.timestamps.as_deref().unwrap_or_default()
+    pub fn timestamps(&self) -> & [::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The values of the data points.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[f64] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [f64] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CapacityForecast {
@@ -34,8 +36,8 @@ impl CapacityForecast {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityForecastBuilder {
-    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
 impl CapacityForecastBuilder {
     /// Appends an item to `timestamps`.
@@ -45,17 +47,16 @@ impl CapacityForecastBuilder {
     /// <p>The timestamps for the data points, in UTC format.</p>
     pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.
@@ -65,24 +66,26 @@ impl CapacityForecastBuilder {
     /// <p>The values of the data points.</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the data points.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the data points.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`CapacityForecast`](crate::types::CapacityForecast).
     pub fn build(self) -> crate::types::CapacityForecast {
         crate::types::CapacityForecast {
-            timestamps: self.timestamps,
-            values: self.values,
+            timestamps: self.timestamps
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

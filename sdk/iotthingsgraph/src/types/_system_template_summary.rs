@@ -3,7 +3,7 @@
 /// <p>An object that contains information about a system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SystemTemplateSummary {
+pub struct SystemTemplateSummary  {
     /// <p>The ID of the system.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the system.</p>
@@ -13,13 +13,13 @@ pub struct SystemTemplateSummary {
     /// <p>The date when the system was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SystemTemplateSummary {
+impl  SystemTemplateSummary  {
     /// <p>The ID of the system.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the system.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The revision number of the system.</p>
@@ -27,7 +27,7 @@ impl SystemTemplateSummary {
         self.revision_number
     }
     /// <p>The date when the system was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SystemTemplateSummaryBuilder {
     }
     /// <p>The ID of the system.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the system.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SystemTemplateSummaryBuilder {
     }
     /// <p>The ARN of the system.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the system.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl SystemTemplateSummaryBuilder {
     }
     /// <p>The revision number of the system.</p>
     pub fn set_revision_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision_number = input;
-        self
+        self.revision_number = input; self
     }
     /// <p>The revision number of the system.</p>
     pub fn get_revision_number(&self) -> &::std::option::Option<i64> {
@@ -97,8 +94,7 @@ impl SystemTemplateSummaryBuilder {
     }
     /// <p>The date when the system was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date when the system was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl SystemTemplateSummaryBuilder {
     /// Consumes the builder and constructs a [`SystemTemplateSummary`](crate::types::SystemTemplateSummary).
     pub fn build(self) -> crate::types::SystemTemplateSummary {
         crate::types::SystemTemplateSummary {
-            id: self.id,
-            arn: self.arn,
-            revision_number: self.revision_number,
-            created_at: self.created_at,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            revision_number: self.revision_number
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

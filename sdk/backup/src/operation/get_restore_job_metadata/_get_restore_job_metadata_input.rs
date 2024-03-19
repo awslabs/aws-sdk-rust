@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRestoreJobMetadataInput {
+pub struct GetRestoreJobMetadataInput  {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub restore_job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRestoreJobMetadataInput {
+impl  GetRestoreJobMetadataInput  {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
-    pub fn restore_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn restore_job_id(&self) -> ::std::option::Option<& str> {
         self.restore_job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetRestoreJobMetadataInputBuilder {
     }
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub fn set_restore_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_job_id = input;
-        self
+        self.restore_job_id = input; self
     }
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_job_id
     }
     /// Consumes the builder and constructs a [`GetRestoreJobMetadataInput`](crate::operation::get_restore_job_metadata::GetRestoreJobMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_restore_job_metadata::GetRestoreJobMetadataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_restore_job_metadata::GetRestoreJobMetadataInput {
-            restore_job_id: self.restore_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_restore_job_metadata::GetRestoreJobMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_restore_job_metadata::GetRestoreJobMetadataInput {
+                restore_job_id: self.restore_job_id
+                ,
+            }
+        )
     }
 }
+

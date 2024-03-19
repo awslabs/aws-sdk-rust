@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSourceLocations`](crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of source locations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> source locations, use the value of <code>NextToken</code> in the response to get the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p><br>
-    /// - On success, responds with [`ListSourceLocationsOutput`](crate::operation::list_source_locations::ListSourceLocationsOutput) with field(s):
+                            /// - On success, responds with [`ListSourceLocationsOutput`](crate::operation::list_source_locations::ListSourceLocationsOutput) with field(s):
     ///   - [`items(Option<Vec::<SourceLocation>>)`](crate::operation::list_source_locations::ListSourceLocationsOutput::items): <p>A list of source locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_locations::ListSourceLocationsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSourceLocationsError>`](crate::operation::list_source_locations::ListSourceLocationsError)
+                            /// - On failure, responds with [`SdkError<ListSourceLocationsError>`](crate::operation::list_source_locations::ListSourceLocationsError)
     pub fn list_source_locations(&self) -> crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder {
-        crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

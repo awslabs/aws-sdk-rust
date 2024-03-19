@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMembershipsInput {
+pub struct ListMembershipsInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -10,9 +10,9 @@ pub struct ListMembershipsInput {
     /// <p>A filter which will return only memberships in the specified status.</p>
     pub status: ::std::option::Option<crate::types::MembershipStatus>,
 }
-impl ListMembershipsInput {
+impl  ListMembershipsInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -20,7 +20,7 @@ impl ListMembershipsInput {
         self.max_results
     }
     /// <p>A filter which will return only memberships in the specified status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MembershipStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MembershipStatus> {
         self.status.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ListMembershipsInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListMembershipsInputBuilder {
     }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListMembershipsInputBuilder {
     }
     /// <p>A filter which will return only memberships in the specified status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A filter which will return only memberships in the specified status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MembershipStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListMembershipsInput`](crate::operation::list_memberships::ListMembershipsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_memberships::ListMembershipsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_memberships::ListMembershipsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_memberships::ListMembershipsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_memberships::ListMembershipsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

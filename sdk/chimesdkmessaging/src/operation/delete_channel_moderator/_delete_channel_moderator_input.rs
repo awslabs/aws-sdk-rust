@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteChannelModeratorInput {
+pub struct DeleteChannelModeratorInput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
@@ -10,17 +10,17 @@ pub struct DeleteChannelModeratorInput {
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
-impl DeleteChannelModeratorInput {
+impl  DeleteChannelModeratorInput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
-    pub fn channel_moderator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_moderator_arn(&self) -> ::std::option::Option<& str> {
         self.channel_moderator_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteChannelModeratorInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteChannelModeratorInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
     pub fn set_channel_moderator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_moderator_arn = input;
-        self
+        self.channel_moderator_arn = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
     pub fn get_channel_moderator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteChannelModeratorInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`DeleteChannelModeratorInput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_channel_moderator::DeleteChannelModeratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_channel_moderator::DeleteChannelModeratorInput {
-            channel_arn: self.channel_arn,
-            channel_moderator_arn: self.channel_moderator_arn,
-            chime_bearer: self.chime_bearer,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_channel_moderator::DeleteChannelModeratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_channel_moderator::DeleteChannelModeratorInput {
+                channel_arn: self.channel_arn
+                ,
+                channel_moderator_arn: self.channel_moderator_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
+        )
     }
 }
+

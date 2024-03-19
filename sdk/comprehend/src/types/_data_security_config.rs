@@ -3,7 +3,7 @@
 /// <p>Data security configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSecurityConfig {
+pub struct DataSecurityConfig  {
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct DataSecurityConfig {
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl DataSecurityConfig {
+impl  DataSecurityConfig  {
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
     /// <li>
@@ -27,19 +27,19 @@ impl DataSecurityConfig {
     /// <li>
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
-    pub fn model_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.model_kms_key_id.as_deref()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the volume.</p>
-    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the data in the data lake.</p>
-    pub fn data_lake_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_lake_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.data_lake_kms_key_id.as_deref()
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -79,8 +79,7 @@ impl DataSecurityConfigBuilder {
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_kms_key_id = input;
-        self
+        self.model_kms_key_id = input; self
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -99,8 +98,7 @@ impl DataSecurityConfigBuilder {
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the volume.</p>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_kms_key_id = input;
-        self
+        self.volume_kms_key_id = input; self
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the volume.</p>
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl DataSecurityConfigBuilder {
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the data in the data lake.</p>
     pub fn set_data_lake_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_lake_kms_key_id = input;
-        self
+        self.data_lake_kms_key_id = input; self
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the data in the data lake.</p>
     pub fn get_data_lake_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl DataSecurityConfigBuilder {
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -137,10 +133,15 @@ impl DataSecurityConfigBuilder {
     /// Consumes the builder and constructs a [`DataSecurityConfig`](crate::types::DataSecurityConfig).
     pub fn build(self) -> crate::types::DataSecurityConfig {
         crate::types::DataSecurityConfig {
-            model_kms_key_id: self.model_kms_key_id,
-            volume_kms_key_id: self.volume_kms_key_id,
-            data_lake_kms_key_id: self.data_lake_kms_key_id,
-            vpc_config: self.vpc_config,
+            model_kms_key_id: self.model_kms_key_id
+            ,
+            volume_kms_key_id: self.volume_kms_key_id
+            ,
+            data_lake_kms_key_id: self.data_lake_kms_key_id
+            ,
+            vpc_config: self.vpc_config
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationTaskAssessmentResultsInput {
+pub struct DescribeReplicationTaskAssessmentResultsInput  {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.</p>
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -13,9 +13,9 @@ pub struct DescribeReplicationTaskAssessmentResultsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReplicationTaskAssessmentResultsInput {
+impl  DescribeReplicationTaskAssessmentResultsInput  {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.</p>
-    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -25,14 +25,13 @@ impl DescribeReplicationTaskAssessmentResultsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeReplicationTaskAssessmentResultsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentResultsInput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput).
-    pub fn builder() -> crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder {
         crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder::default()
     }
 }
@@ -53,8 +52,7 @@ impl DescribeReplicationTaskAssessmentResultsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_arn = input;
-        self
+        self.replication_task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl DescribeReplicationTaskAssessmentResultsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -87,26 +84,24 @@ impl DescribeReplicationTaskAssessmentResultsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentResultsInput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput {
-                replication_task_arn: self.replication_task_arn,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
+                replication_task_arn: self.replication_task_arn
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

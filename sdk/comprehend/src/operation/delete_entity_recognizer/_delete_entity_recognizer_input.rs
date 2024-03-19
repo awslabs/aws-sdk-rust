@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEntityRecognizerInput {
+pub struct DeleteEntityRecognizerInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEntityRecognizerInput {
+impl  DeleteEntityRecognizerInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entity_recognizer_arn(&self) -> ::std::option::Option<& str> {
         self.entity_recognizer_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteEntityRecognizerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_recognizer_arn = input;
-        self
+        self.entity_recognizer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub fn get_entity_recognizer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_recognizer_arn
     }
     /// Consumes the builder and constructs a [`DeleteEntityRecognizerInput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput {
-            entity_recognizer_arn: self.entity_recognizer_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput {
+                entity_recognizer_arn: self.entity_recognizer_arn
+                ,
+            }
+        )
     }
 }
+

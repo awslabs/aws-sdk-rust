@@ -3,7 +3,7 @@
 /// <p>Describes the VPC attachment options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayVpcAttachmentOptions {
+pub struct TransitGatewayVpcAttachmentOptions  {
     /// <p>Indicates whether DNS support is enabled.</p>
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     /// <note>
@@ -16,24 +16,24 @@ pub struct TransitGatewayVpcAttachmentOptions {
     /// <p>Indicates whether appliance mode support is enabled.</p>
     pub appliance_mode_support: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
 }
-impl TransitGatewayVpcAttachmentOptions {
+impl  TransitGatewayVpcAttachmentOptions  {
     /// <p>Indicates whether DNS support is enabled.</p>
-    pub fn dns_support(&self) -> ::std::option::Option<&crate::types::DnsSupportValue> {
+    pub fn dns_support(&self) -> ::std::option::Option<& crate::types::DnsSupportValue> {
         self.dns_support.as_ref()
     }
     /// <note>
     /// <p>This parameter is in preview and may not be available for your account.</p>
     /// </note>
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
-    pub fn security_group_referencing_support(&self) -> ::std::option::Option<&crate::types::SecurityGroupReferencingSupportValue> {
+    pub fn security_group_referencing_support(&self) -> ::std::option::Option<& crate::types::SecurityGroupReferencingSupportValue> {
         self.security_group_referencing_support.as_ref()
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
-    pub fn ipv6_support(&self) -> ::std::option::Option<&crate::types::Ipv6SupportValue> {
+    pub fn ipv6_support(&self) -> ::std::option::Option<& crate::types::Ipv6SupportValue> {
         self.ipv6_support.as_ref()
     }
     /// <p>Indicates whether appliance mode support is enabled.</p>
-    pub fn appliance_mode_support(&self) -> ::std::option::Option<&crate::types::ApplianceModeSupportValue> {
+    pub fn appliance_mode_support(&self) -> ::std::option::Option<& crate::types::ApplianceModeSupportValue> {
         self.appliance_mode_support.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     }
     /// <p>Indicates whether DNS support is enabled.</p>
     pub fn set_dns_support(mut self, input: ::std::option::Option<crate::types::DnsSupportValue>) -> Self {
-        self.dns_support = input;
-        self
+        self.dns_support = input; self
     }
     /// <p>Indicates whether DNS support is enabled.</p>
     pub fn get_dns_support(&self) -> &::std::option::Option<crate::types::DnsSupportValue> {
@@ -80,12 +79,8 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     /// <p>This parameter is in preview and may not be available for your account.</p>
     /// </note>
     /// <p>Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
-    pub fn set_security_group_referencing_support(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
-    ) -> Self {
-        self.security_group_referencing_support = input;
-        self
+    pub fn set_security_group_referencing_support(mut self, input: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>) -> Self {
+        self.security_group_referencing_support = input; self
     }
     /// <note>
     /// <p>This parameter is in preview and may not be available for your account.</p>
@@ -101,8 +96,7 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
     pub fn set_ipv6_support(mut self, input: ::std::option::Option<crate::types::Ipv6SupportValue>) -> Self {
-        self.ipv6_support = input;
-        self
+        self.ipv6_support = input; self
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
     pub fn get_ipv6_support(&self) -> &::std::option::Option<crate::types::Ipv6SupportValue> {
@@ -115,8 +109,7 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     }
     /// <p>Indicates whether appliance mode support is enabled.</p>
     pub fn set_appliance_mode_support(mut self, input: ::std::option::Option<crate::types::ApplianceModeSupportValue>) -> Self {
-        self.appliance_mode_support = input;
-        self
+        self.appliance_mode_support = input; self
     }
     /// <p>Indicates whether appliance mode support is enabled.</p>
     pub fn get_appliance_mode_support(&self) -> &::std::option::Option<crate::types::ApplianceModeSupportValue> {
@@ -125,10 +118,15 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayVpcAttachmentOptions`](crate::types::TransitGatewayVpcAttachmentOptions).
     pub fn build(self) -> crate::types::TransitGatewayVpcAttachmentOptions {
         crate::types::TransitGatewayVpcAttachmentOptions {
-            dns_support: self.dns_support,
-            security_group_referencing_support: self.security_group_referencing_support,
-            ipv6_support: self.ipv6_support,
-            appliance_mode_support: self.appliance_mode_support,
+            dns_support: self.dns_support
+            ,
+            security_group_referencing_support: self.security_group_referencing_support
+            ,
+            ipv6_support: self.ipv6_support
+            ,
+            appliance_mode_support: self.appliance_mode_support
+            ,
         }
     }
 }
+

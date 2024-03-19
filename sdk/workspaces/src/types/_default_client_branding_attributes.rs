@@ -5,7 +5,7 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultClientBrandingAttributes {
+pub struct DefaultClientBrandingAttributes  {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo_url: ::std::option::Option<::std::string::String>,
     /// <p>The support email. The company's customer support email address.</p><note>
@@ -29,11 +29,11 @@ pub struct DefaultClientBrandingAttributes {
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub forgot_password_link: ::std::option::Option<::std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub login_message: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub login_message: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DefaultClientBrandingAttributes {
+impl  DefaultClientBrandingAttributes  {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
-    pub fn logo_url(&self) -> ::std::option::Option<&str> {
+    pub fn logo_url(&self) -> ::std::option::Option<& str> {
         self.logo_url.as_deref()
     }
     /// <p>The support email. The company's customer support email address.</p><note>
@@ -44,7 +44,7 @@ impl DefaultClientBrandingAttributes {
     /// <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
-    pub fn support_email(&self) -> ::std::option::Option<&str> {
+    pub fn support_email(&self) -> ::std::option::Option<& str> {
         self.support_email.as_deref()
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p><note>
@@ -55,15 +55,15 @@ impl DefaultClientBrandingAttributes {
     /// <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
-    pub fn support_link(&self) -> ::std::option::Option<&str> {
+    pub fn support_link(&self) -> ::std::option::Option<& str> {
         self.support_link.as_deref()
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
-    pub fn forgot_password_link(&self) -> ::std::option::Option<&str> {
+    pub fn forgot_password_link(&self) -> ::std::option::Option<& str> {
         self.forgot_password_link.as_deref()
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub fn login_message(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn login_message(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.login_message.as_ref()
     }
 }
@@ -82,7 +82,7 @@ pub struct DefaultClientBrandingAttributesBuilder {
     pub(crate) support_email: ::std::option::Option<::std::string::String>,
     pub(crate) support_link: ::std::option::Option<::std::string::String>,
     pub(crate) forgot_password_link: ::std::option::Option<::std::string::String>,
-    pub(crate) login_message: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) login_message: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DefaultClientBrandingAttributesBuilder {
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
@@ -92,8 +92,7 @@ impl DefaultClientBrandingAttributesBuilder {
     }
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn set_logo_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logo_url = input;
-        self
+        self.logo_url = input; self
     }
     /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn get_logo_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl DefaultClientBrandingAttributesBuilder {
     /// </ul>
     /// </note>
     pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_email = input;
-        self
+        self.support_email = input; self
     }
     /// <p>The support email. The company's customer support email address.</p><note>
     /// <ul>
@@ -155,8 +153,7 @@ impl DefaultClientBrandingAttributesBuilder {
     /// </ul>
     /// </note>
     pub fn set_support_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_link = input;
-        self
+        self.support_link = input; self
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p><note>
     /// <ul>
@@ -176,8 +173,7 @@ impl DefaultClientBrandingAttributesBuilder {
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub fn set_forgot_password_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forgot_password_link = input;
-        self
+        self.forgot_password_link = input; self
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub fn get_forgot_password_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,30 +186,32 @@ impl DefaultClientBrandingAttributesBuilder {
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.login_message.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.login_message = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.login_message = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub fn set_login_message(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.login_message = input;
-        self
+    pub fn set_login_message(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.login_message = input; self
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub fn get_login_message(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_login_message(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.login_message
     }
     /// Consumes the builder and constructs a [`DefaultClientBrandingAttributes`](crate::types::DefaultClientBrandingAttributes).
     pub fn build(self) -> crate::types::DefaultClientBrandingAttributes {
         crate::types::DefaultClientBrandingAttributes {
-            logo_url: self.logo_url,
-            support_email: self.support_email,
-            support_link: self.support_link,
-            forgot_password_link: self.forgot_password_link,
-            login_message: self.login_message,
+            logo_url: self.logo_url
+            ,
+            support_email: self.support_email
+            ,
+            support_link: self.support_link
+            ,
+            forgot_password_link: self.forgot_password_link
+            ,
+            login_message: self.login_message
+            ,
         }
     }
 }
+

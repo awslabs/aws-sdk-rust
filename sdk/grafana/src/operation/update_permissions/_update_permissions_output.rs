@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePermissionsOutput {
+pub struct UpdatePermissionsOutput  {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub errors: ::std::vec::Vec<crate::types::UpdateError>,
+    pub errors: ::std::vec::Vec::<crate::types::UpdateError>,
     _request_id: Option<String>,
 }
-impl UpdatePermissionsOutput {
+impl  UpdatePermissionsOutput  {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn errors(&self) -> &[crate::types::UpdateError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::UpdateError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
     pub fn builder() -> crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder {
@@ -30,7 +29,7 @@ impl UpdatePermissionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePermissionsOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateError>>,
     _request_id: Option<String>,
 }
 impl UpdatePermissionsOutputBuilder {
@@ -41,42 +40,41 @@ impl UpdatePermissionsOutputBuilder {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
     pub fn errors(mut self, input: crate::types::UpdateError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_permissions::UpdatePermissionsOutput {
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building UpdatePermissionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_permissions::UpdatePermissionsOutput {
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building UpdatePermissionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

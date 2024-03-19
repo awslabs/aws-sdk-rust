@@ -3,11 +3,11 @@
 /// <p>A version of a template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateVersion {
+pub struct TemplateVersion  {
     /// <p>The time that this template version was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Errors associated with this template version.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>>,
     /// <p>The version number of the template version.</p>
     pub version_number: ::std::option::Option<i64>,
     /// <p>The status that is associated with the template.</p>
@@ -29,7 +29,7 @@ pub struct TemplateVersion {
     /// </ul>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub data_set_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetConfiguration>>,
     /// <p>The description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
@@ -37,18 +37,19 @@ pub struct TemplateVersion {
     /// <p>The ARN of the theme associated with this version of the template.</p>
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
+    pub sheets: ::std::option::Option<::std::vec::Vec::<crate::types::Sheet>>,
 }
-impl TemplateVersion {
+impl  TemplateVersion  {
     /// <p>The time that this template version was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Errors associated with this template version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::TemplateError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::TemplateError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The version number of the template version.</p>
     pub fn version_number(&self) -> ::std::option::Option<i64> {
@@ -71,32 +72,34 @@ impl TemplateVersion {
     /// <li>
     /// <p><code>DELETED</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_set_configurations.is_none()`.
-    pub fn data_set_configurations(&self) -> &[crate::types::DataSetConfiguration] {
-        self.data_set_configurations.as_deref().unwrap_or_default()
+    pub fn data_set_configurations(&self) -> & [crate::types::DataSetConfiguration] {
+        self.data_set_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The description of the template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
-    pub fn source_entity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_entity_arn(&self) -> ::std::option::Option<& str> {
         self.source_entity_arn.as_deref()
     }
     /// <p>The ARN of the theme associated with this version of the template.</p>
-    pub fn theme_arn(&self) -> ::std::option::Option<&str> {
+    pub fn theme_arn(&self) -> ::std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheets.is_none()`.
-    pub fn sheets(&self) -> &[crate::types::Sheet] {
-        self.sheets.as_deref().unwrap_or_default()
+    pub fn sheets(&self) -> & [crate::types::Sheet] {
+        self.sheets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TemplateVersion {
@@ -111,14 +114,14 @@ impl TemplateVersion {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateVersionBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>>,
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub(crate) data_set_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetConfiguration>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source_entity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
+    pub(crate) sheets: ::std::option::Option<::std::vec::Vec::<crate::types::Sheet>>,
 }
 impl TemplateVersionBuilder {
     /// <p>The time that this template version was created.</p>
@@ -128,8 +131,7 @@ impl TemplateVersionBuilder {
     }
     /// <p>The time that this template version was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that this template version was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -142,17 +144,16 @@ impl TemplateVersionBuilder {
     /// <p>Errors associated with this template version.</p>
     pub fn errors(mut self, input: crate::types::TemplateError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Errors associated with this template version.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Errors associated with this template version.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>> {
         &self.errors
     }
     /// <p>The version number of the template version.</p>
@@ -162,8 +163,7 @@ impl TemplateVersionBuilder {
     }
     /// <p>The version number of the template version.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number of the template version.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -208,8 +208,7 @@ impl TemplateVersionBuilder {
     /// <p><code>DELETED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status that is associated with the template.</p>
     /// <ul>
@@ -238,17 +237,16 @@ impl TemplateVersionBuilder {
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
     pub fn data_set_configurations(mut self, input: crate::types::DataSetConfiguration) -> Self {
         let mut v = self.data_set_configurations.unwrap_or_default();
-        v.push(input);
-        self.data_set_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_set_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub fn set_data_set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>) -> Self {
-        self.data_set_configurations = input;
-        self
+    pub fn set_data_set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetConfiguration>>) -> Self {
+        self.data_set_configurations = input; self
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub fn get_data_set_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>> {
+    pub fn get_data_set_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSetConfiguration>> {
         &self.data_set_configurations
     }
     /// <p>The description of the template.</p>
@@ -258,8 +256,7 @@ impl TemplateVersionBuilder {
     }
     /// <p>The description of the template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +269,7 @@ impl TemplateVersionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
     pub fn set_source_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_entity_arn = input;
-        self
+        self.source_entity_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
     pub fn get_source_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +282,7 @@ impl TemplateVersionBuilder {
     }
     /// <p>The ARN of the theme associated with this version of the template.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_arn = input;
-        self
+        self.theme_arn = input; self
     }
     /// <p>The ARN of the theme associated with this version of the template.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,31 +295,40 @@ impl TemplateVersionBuilder {
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub fn sheets(mut self, input: crate::types::Sheet) -> Self {
         let mut v = self.sheets.unwrap_or_default();
-        v.push(input);
-        self.sheets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sheets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn set_sheets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>) -> Self {
-        self.sheets = input;
-        self
+    pub fn set_sheets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Sheet>>) -> Self {
+        self.sheets = input; self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn get_sheets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sheet>> {
+    pub fn get_sheets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Sheet>> {
         &self.sheets
     }
     /// Consumes the builder and constructs a [`TemplateVersion`](crate::types::TemplateVersion).
     pub fn build(self) -> crate::types::TemplateVersion {
         crate::types::TemplateVersion {
-            created_time: self.created_time,
-            errors: self.errors,
-            version_number: self.version_number,
-            status: self.status,
-            data_set_configurations: self.data_set_configurations,
-            description: self.description,
-            source_entity_arn: self.source_entity_arn,
-            theme_arn: self.theme_arn,
-            sheets: self.sheets,
+            created_time: self.created_time
+            ,
+            errors: self.errors
+            ,
+            version_number: self.version_number
+            ,
+            status: self.status
+            ,
+            data_set_configurations: self.data_set_configurations
+            ,
+            description: self.description
+            ,
+            source_entity_arn: self.source_entity_arn
+            ,
+            theme_arn: self.theme_arn
+            ,
+            sheets: self.sheets
+            ,
         }
     }
 }
+

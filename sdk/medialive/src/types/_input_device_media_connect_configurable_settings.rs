@@ -3,7 +3,7 @@
 /// Parameters required to attach a MediaConnect flow to the device.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDeviceMediaConnectConfigurableSettings {
+pub struct InputDeviceMediaConnectConfigurableSettings  {
     /// The ARN of the MediaConnect flow to attach this device to.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The ARN for the role that MediaLive assumes to access the attached flow and secret. For more information about how to create this role, see the MediaLive user guide.
@@ -13,21 +13,21 @@ pub struct InputDeviceMediaConnectConfigurableSettings {
     /// The name of the MediaConnect Flow source to stream to.
     pub source_name: ::std::option::Option<::std::string::String>,
 }
-impl InputDeviceMediaConnectConfigurableSettings {
+impl  InputDeviceMediaConnectConfigurableSettings  {
     /// The ARN of the MediaConnect flow to attach this device to.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The ARN for the role that MediaLive assumes to access the attached flow and secret. For more information about how to create this role, see the MediaLive user guide.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// The ARN for the secret that holds the encryption key to encrypt the content output by the device.
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// The name of the MediaConnect Flow source to stream to.
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl InputDeviceMediaConnectConfigurableSettingsBuilder {
     }
     /// The ARN of the MediaConnect flow to attach this device to.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the MediaConnect flow to attach this device to.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl InputDeviceMediaConnectConfigurableSettingsBuilder {
     }
     /// The ARN for the role that MediaLive assumes to access the attached flow and secret. For more information about how to create this role, see the MediaLive user guide.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// The ARN for the role that MediaLive assumes to access the attached flow and secret. For more information about how to create this role, see the MediaLive user guide.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl InputDeviceMediaConnectConfigurableSettingsBuilder {
     }
     /// The ARN for the secret that holds the encryption key to encrypt the content output by the device.
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// The ARN for the secret that holds the encryption key to encrypt the content output by the device.
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl InputDeviceMediaConnectConfigurableSettingsBuilder {
     }
     /// The name of the MediaConnect Flow source to stream to.
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// The name of the MediaConnect Flow source to stream to.
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl InputDeviceMediaConnectConfigurableSettingsBuilder {
     /// Consumes the builder and constructs a [`InputDeviceMediaConnectConfigurableSettings`](crate::types::InputDeviceMediaConnectConfigurableSettings).
     pub fn build(self) -> crate::types::InputDeviceMediaConnectConfigurableSettings {
         crate::types::InputDeviceMediaConnectConfigurableSettings {
-            flow_arn: self.flow_arn,
-            role_arn: self.role_arn,
-            secret_arn: self.secret_arn,
-            source_name: self.source_name,
+            flow_arn: self.flow_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            secret_arn: self.secret_arn
+            ,
+            source_name: self.source_name
+            ,
         }
     }
 }
+

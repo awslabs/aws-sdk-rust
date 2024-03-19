@@ -3,13 +3,13 @@
 /// <p>Access Control List files for the documents in a data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControlListConfiguration {
+pub struct AccessControlListConfiguration  {
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     pub key_path: ::std::option::Option<::std::string::String>,
 }
-impl AccessControlListConfiguration {
+impl  AccessControlListConfiguration  {
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
-    pub fn key_path(&self) -> ::std::option::Option<&str> {
+    pub fn key_path(&self) -> ::std::option::Option<& str> {
         self.key_path.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AccessControlListConfigurationBuilder {
     }
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     pub fn set_key_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_path = input;
-        self
+        self.key_path = input; self
     }
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     pub fn get_key_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AccessControlListConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`AccessControlListConfiguration`](crate::types::AccessControlListConfiguration).
     pub fn build(self) -> crate::types::AccessControlListConfiguration {
-        crate::types::AccessControlListConfiguration { key_path: self.key_path }
+        crate::types::AccessControlListConfiguration {
+            key_path: self.key_path
+            ,
+        }
     }
 }
+

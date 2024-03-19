@@ -3,7 +3,7 @@
 /// <p>Information about a simulation job batch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimulationJobBatchSummary {
+pub struct SimulationJobBatchSummary  {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
@@ -76,17 +76,17 @@ pub struct SimulationJobBatchSummary {
     /// <p>The number of created simulation job requests.</p>
     pub created_request_count: i32,
 }
-impl SimulationJobBatchSummary {
+impl  SimulationJobBatchSummary  {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the simulation job batch.</p>
@@ -147,7 +147,7 @@ impl SimulationJobBatchSummary {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SimulationJobBatchStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SimulationJobBatchStatus> {
         self.status.as_ref()
     }
     /// <p>The number of failed simulation job requests.</p>
@@ -190,8 +190,7 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +203,7 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +216,7 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -346,8 +343,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationJobBatchStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
@@ -417,8 +413,7 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The number of failed simulation job requests.</p>
     pub fn set_failed_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_request_count = input;
-        self
+        self.failed_request_count = input; self
     }
     /// <p>The number of failed simulation job requests.</p>
     pub fn get_failed_request_count(&self) -> &::std::option::Option<i32> {
@@ -431,8 +426,7 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The number of pending simulation job requests.</p>
     pub fn set_pending_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_request_count = input;
-        self
+        self.pending_request_count = input; self
     }
     /// <p>The number of pending simulation job requests.</p>
     pub fn get_pending_request_count(&self) -> &::std::option::Option<i32> {
@@ -445,8 +439,7 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The number of created simulation job requests.</p>
     pub fn set_created_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.created_request_count = input;
-        self
+        self.created_request_count = input; self
     }
     /// <p>The number of created simulation job requests.</p>
     pub fn get_created_request_count(&self) -> &::std::option::Option<i32> {
@@ -455,13 +448,24 @@ impl SimulationJobBatchSummaryBuilder {
     /// Consumes the builder and constructs a [`SimulationJobBatchSummary`](crate::types::SimulationJobBatchSummary).
     pub fn build(self) -> crate::types::SimulationJobBatchSummary {
         crate::types::SimulationJobBatchSummary {
-            arn: self.arn,
-            last_updated_at: self.last_updated_at,
-            created_at: self.created_at,
-            status: self.status,
-            failed_request_count: self.failed_request_count.unwrap_or_default(),
-            pending_request_count: self.pending_request_count.unwrap_or_default(),
-            created_request_count: self.created_request_count.unwrap_or_default(),
+            arn: self.arn
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            created_at: self.created_at
+            ,
+            status: self.status
+            ,
+            failed_request_count: self.failed_request_count
+                .unwrap_or_default()
+            ,
+            pending_request_count: self.pending_request_count
+                .unwrap_or_default()
+            ,
+            created_request_count: self.created_request_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

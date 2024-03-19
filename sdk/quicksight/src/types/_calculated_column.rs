@@ -3,7 +3,7 @@
 /// <p>A calculated column for a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CalculatedColumn {
+pub struct CalculatedColumn  {
     /// <p>Column name.</p>
     pub column_name: ::std::string::String,
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
@@ -11,24 +11,21 @@ pub struct CalculatedColumn {
     /// <p>An expression that defines the calculated column.</p>
     pub expression: ::std::string::String,
 }
-impl CalculatedColumn {
+impl  CalculatedColumn  {
     /// <p>Column name.</p>
-    pub fn column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.column_name.deref()
+    pub fn column_name(&self) -> & str {
+        use std::ops::Deref; self.column_name.deref()
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
-    pub fn column_id(&self) -> &str {
-        use std::ops::Deref;
-        self.column_id.deref()
+    pub fn column_id(&self) -> & str {
+        use std::ops::Deref; self.column_id.deref()
     }
     /// <p>An expression that defines the calculated column.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
 }
-impl ::std::fmt::Debug for CalculatedColumn {
+impl  ::std::fmt::Debug for CalculatedColumn  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedColumn");
         formatter.field("column_name", &self.column_name);
@@ -61,8 +58,7 @@ impl CalculatedColumnBuilder {
     }
     /// <p>Column name.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>Column name.</p>
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +72,7 @@ impl CalculatedColumnBuilder {
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
     pub fn set_column_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_id = input;
-        self
+        self.column_id = input; self
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
     pub fn get_column_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +86,7 @@ impl CalculatedColumnBuilder {
     }
     /// <p>An expression that defines the calculated column.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>An expression that defines the calculated column.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,26 +98,25 @@ impl CalculatedColumnBuilder {
     /// - [`column_id`](crate::types::builders::CalculatedColumnBuilder::column_id)
     /// - [`expression`](crate::types::builders::CalculatedColumnBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::CalculatedColumn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CalculatedColumn {
-            column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_name",
-                    "column_name was not specified but it is required when building CalculatedColumn",
-                )
-            })?,
-            column_id: self.column_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_id",
-                    "column_id was not specified but it is required when building CalculatedColumn",
-                )
-            })?,
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building CalculatedColumn",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CalculatedColumn {
+                column_name: self.column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_name", "column_name was not specified but it is required when building CalculatedColumn")
+                    )?
+                ,
+                column_id: self.column_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_id", "column_id was not specified but it is required when building CalculatedColumn")
+                    )?
+                ,
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building CalculatedColumn")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CalculatedColumnBuilder {
@@ -135,3 +128,4 @@ impl ::std::fmt::Debug for CalculatedColumnBuilder {
         formatter.finish()
     }
 }
+

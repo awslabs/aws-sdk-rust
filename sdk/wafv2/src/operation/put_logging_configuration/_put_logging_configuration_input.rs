@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLoggingConfigurationInput {
+pub struct PutLoggingConfigurationInput  {
     /// <p></p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
 }
-impl PutLoggingConfigurationInput {
+impl  PutLoggingConfigurationInput  {
     /// <p></p>
-    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl PutLoggingConfigurationInputBuilder {
     }
     /// <p></p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input;
-        self
+        self.logging_configuration = input; self
     }
     /// <p></p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// Consumes the builder and constructs a [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_logging_configuration::PutLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_logging_configuration::PutLoggingConfigurationInput {
-            logging_configuration: self.logging_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_logging_configuration::PutLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_logging_configuration::PutLoggingConfigurationInput {
+                logging_configuration: self.logging_configuration
+                ,
+            }
+        )
     }
 }
+

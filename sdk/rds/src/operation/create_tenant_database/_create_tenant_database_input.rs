@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateTenantDatabaseInput {
+pub struct CreateTenantDatabaseInput  {
     /// <p>The user-supplied DB instance identifier. RDS creates your tenant database in this DB instance. This parameter isn't case-sensitive.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of the tenant database that you want to create in your DB instance. This parameter has the same constraints as <code>DBName</code> in <code>CreateDBInstance</code>.</p>
@@ -32,15 +32,15 @@ pub struct CreateTenantDatabaseInput {
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateTenantDatabaseInput {
+impl  CreateTenantDatabaseInput  {
     /// <p>The user-supplied DB instance identifier. RDS creates your tenant database in this DB instance. This parameter isn't case-sensitive.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The user-supplied name of the tenant database that you want to create in your DB instance. This parameter has the same constraints as <code>DBName</code> in <code>CreateDBInstance</code>.</p>
-    pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.tenant_db_name.as_deref()
     }
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
@@ -53,7 +53,7 @@ impl CreateTenantDatabaseInput {
     /// <li>
     /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The password for the master user in your tenant database.</p>
@@ -64,25 +64,26 @@ impl CreateTenantDatabaseInput {
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
     /// </ul>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The character set for your tenant database. If you don't specify a value, the character set name defaults to <code>AL32UTF8</code>.</p>
-    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<& str> {
         self.character_set_name.as_deref()
     }
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
-    pub fn nchar_character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn nchar_character_set_name(&self) -> ::std::option::Option<& str> {
         self.nchar_character_set_name.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateTenantDatabaseInput {
+impl  ::std::fmt::Debug for CreateTenantDatabaseInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTenantDatabaseInput");
         formatter.field("db_instance_identifier", &self.db_instance_identifier);
@@ -112,7 +113,7 @@ pub struct CreateTenantDatabaseInputBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateTenantDatabaseInputBuilder {
     /// <p>The user-supplied DB instance identifier. RDS creates your tenant database in this DB instance. This parameter isn't case-sensitive.</p>
@@ -123,8 +124,7 @@ impl CreateTenantDatabaseInputBuilder {
     }
     /// <p>The user-supplied DB instance identifier. RDS creates your tenant database in this DB instance. This parameter isn't case-sensitive.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The user-supplied DB instance identifier. RDS creates your tenant database in this DB instance. This parameter isn't case-sensitive.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +138,7 @@ impl CreateTenantDatabaseInputBuilder {
     }
     /// <p>The user-supplied name of the tenant database that you want to create in your DB instance. This parameter has the same constraints as <code>DBName</code> in <code>CreateDBInstance</code>.</p>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_db_name = input;
-        self
+        self.tenant_db_name = input; self
     }
     /// <p>The user-supplied name of the tenant database that you want to create in your DB instance. This parameter has the same constraints as <code>DBName</code> in <code>CreateDBInstance</code>.</p>
     pub fn get_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +170,7 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -209,8 +207,7 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
@@ -230,8 +227,7 @@ impl CreateTenantDatabaseInputBuilder {
     }
     /// <p>The character set for your tenant database. If you don't specify a value, the character set name defaults to <code>AL32UTF8</code>.</p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.character_set_name = input;
-        self
+        self.character_set_name = input; self
     }
     /// <p>The character set for your tenant database. If you don't specify a value, the character set name defaults to <code>AL32UTF8</code>.</p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +240,7 @@ impl CreateTenantDatabaseInputBuilder {
     }
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub fn set_nchar_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nchar_character_set_name = input;
-        self
+        self.nchar_character_set_name = input; self
     }
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub fn get_nchar_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,33 +253,38 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTenantDatabaseInput`](crate::operation::create_tenant_database::CreateTenantDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_tenant_database::CreateTenantDatabaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_tenant_database::CreateTenantDatabaseInput {
-            db_instance_identifier: self.db_instance_identifier,
-            tenant_db_name: self.tenant_db_name,
-            master_username: self.master_username,
-            master_user_password: self.master_user_password,
-            character_set_name: self.character_set_name,
-            nchar_character_set_name: self.nchar_character_set_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tenant_database::CreateTenantDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_tenant_database::CreateTenantDatabaseInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                tenant_db_name: self.tenant_db_name
+                ,
+                master_username: self.master_username
+                ,
+                master_user_password: self.master_user_password
+                ,
+                character_set_name: self.character_set_name
+                ,
+                nchar_character_set_name: self.nchar_character_set_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateTenantDatabaseInputBuilder {
@@ -300,3 +300,4 @@ impl ::std::fmt::Debug for CreateTenantDatabaseInputBuilder {
         formatter.finish()
     }
 }
+

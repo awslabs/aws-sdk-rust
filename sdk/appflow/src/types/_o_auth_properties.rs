@@ -3,29 +3,26 @@
 /// <p>The OAuth properties required for OAuth type authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OAuthProperties {
+pub struct OAuthProperties  {
     /// <p>The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     pub token_url: ::std::string::String,
     /// <p>The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication.</p>
     pub auth_code_url: ::std::string::String,
     /// <p>The OAuth scopes required for OAuth type authentication.</p>
-    pub o_auth_scopes: ::std::vec::Vec<::std::string::String>,
+    pub o_auth_scopes: ::std::vec::Vec::<::std::string::String>,
 }
-impl OAuthProperties {
+impl  OAuthProperties  {
     /// <p>The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
-    pub fn token_url(&self) -> &str {
-        use std::ops::Deref;
-        self.token_url.deref()
+    pub fn token_url(&self) -> & str {
+        use std::ops::Deref; self.token_url.deref()
     }
     /// <p>The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication.</p>
-    pub fn auth_code_url(&self) -> &str {
-        use std::ops::Deref;
-        self.auth_code_url.deref()
+    pub fn auth_code_url(&self) -> & str {
+        use std::ops::Deref; self.auth_code_url.deref()
     }
     /// <p>The OAuth scopes required for OAuth type authentication.</p>
-    pub fn o_auth_scopes(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.o_auth_scopes.deref()
+    pub fn o_auth_scopes(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.o_auth_scopes.deref()
     }
 }
 impl OAuthProperties {
@@ -41,7 +38,7 @@ impl OAuthProperties {
 pub struct OAuthPropertiesBuilder {
     pub(crate) token_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_code_url: ::std::option::Option<::std::string::String>,
-    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl OAuthPropertiesBuilder {
     /// <p>The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
@@ -52,8 +49,7 @@ impl OAuthPropertiesBuilder {
     }
     /// <p>The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     pub fn set_token_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_url = input;
-        self
+        self.token_url = input; self
     }
     /// <p>The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     pub fn get_token_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl OAuthPropertiesBuilder {
     }
     /// <p>The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication.</p>
     pub fn set_auth_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_code_url = input;
-        self
+        self.auth_code_url = input; self
     }
     /// <p>The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication.</p>
     pub fn get_auth_code_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,17 +76,16 @@ impl OAuthPropertiesBuilder {
     /// <p>The OAuth scopes required for OAuth type authentication.</p>
     pub fn o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
-        v.push(input.into());
-        self.o_auth_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.o_auth_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The OAuth scopes required for OAuth type authentication.</p>
-    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.o_auth_scopes = input;
-        self
+    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.o_auth_scopes = input; self
     }
     /// <p>The OAuth scopes required for OAuth type authentication.</p>
-    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.o_auth_scopes
     }
     /// Consumes the builder and constructs a [`OAuthProperties`](crate::types::OAuthProperties).
@@ -100,25 +94,25 @@ impl OAuthPropertiesBuilder {
     /// - [`auth_code_url`](crate::types::builders::OAuthPropertiesBuilder::auth_code_url)
     /// - [`o_auth_scopes`](crate::types::builders::OAuthPropertiesBuilder::o_auth_scopes)
     pub fn build(self) -> ::std::result::Result<crate::types::OAuthProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OAuthProperties {
-            token_url: self.token_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token_url",
-                    "token_url was not specified but it is required when building OAuthProperties",
-                )
-            })?,
-            auth_code_url: self.auth_code_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "auth_code_url",
-                    "auth_code_url was not specified but it is required when building OAuthProperties",
-                )
-            })?,
-            o_auth_scopes: self.o_auth_scopes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "o_auth_scopes",
-                    "o_auth_scopes was not specified but it is required when building OAuthProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OAuthProperties {
+                token_url: self.token_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token_url", "token_url was not specified but it is required when building OAuthProperties")
+                    )?
+                ,
+                auth_code_url: self.auth_code_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("auth_code_url", "auth_code_url was not specified but it is required when building OAuthProperties")
+                    )?
+                ,
+                o_auth_scopes: self.o_auth_scopes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("o_auth_scopes", "o_auth_scopes was not specified but it is required when building OAuthProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a revocation file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevocationContent {
+pub struct RevocationContent  {
     /// <p>The Amazon S3 bucket for the revocation file.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path for the revocation file.</p>
@@ -13,21 +13,21 @@ pub struct RevocationContent {
     /// <p>The type of revocation file.</p>
     pub revocation_type: ::std::option::Option<crate::types::RevocationType>,
 }
-impl RevocationContent {
+impl  RevocationContent  {
     /// <p>The Amazon S3 bucket for the revocation file.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 path for the revocation file.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The Amazon S3 object version of the revocation file.</p>
-    pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> ::std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
     /// <p>The type of revocation file.</p>
-    pub fn revocation_type(&self) -> ::std::option::Option<&crate::types::RevocationType> {
+    pub fn revocation_type(&self) -> ::std::option::Option<& crate::types::RevocationType> {
         self.revocation_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl RevocationContentBuilder {
     }
     /// <p>The Amazon S3 bucket for the revocation file.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket for the revocation file.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RevocationContentBuilder {
     }
     /// <p>The Amazon S3 path for the revocation file.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The Amazon S3 path for the revocation file.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RevocationContentBuilder {
     }
     /// <p>The Amazon S3 object version of the revocation file.</p>
     pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_version = input;
-        self
+        self.s3_object_version = input; self
     }
     /// <p>The Amazon S3 object version of the revocation file.</p>
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RevocationContentBuilder {
     }
     /// <p>The type of revocation file.</p>
     pub fn set_revocation_type(mut self, input: ::std::option::Option<crate::types::RevocationType>) -> Self {
-        self.revocation_type = input;
-        self
+        self.revocation_type = input; self
     }
     /// <p>The type of revocation file.</p>
     pub fn get_revocation_type(&self) -> &::std::option::Option<crate::types::RevocationType> {
@@ -107,10 +103,15 @@ impl RevocationContentBuilder {
     /// Consumes the builder and constructs a [`RevocationContent`](crate::types::RevocationContent).
     pub fn build(self) -> crate::types::RevocationContent {
         crate::types::RevocationContent {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            s3_object_version: self.s3_object_version,
-            revocation_type: self.revocation_type,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
+            s3_object_version: self.s3_object_version
+            ,
+            revocation_type: self.revocation_type
+            ,
         }
     }
 }
+

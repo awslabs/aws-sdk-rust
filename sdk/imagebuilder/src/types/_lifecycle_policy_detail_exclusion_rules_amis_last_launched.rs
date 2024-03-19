@@ -3,19 +3,19 @@
 /// <p>Defines criteria to exclude AMIs from lifecycle actions based on the last time they were used to launch an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
+pub struct LifecyclePolicyDetailExclusionRulesAmisLastLaunched  {
     /// <p>The integer number of units for the time period. For example <code>6</code> (months).</p>
     pub value: i32,
     /// <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed time since the last instance launched from the AMI. For example: days, weeks, months, or years.</p>
     pub unit: crate::types::LifecyclePolicyTimeUnit,
 }
-impl LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
+impl  LifecyclePolicyDetailExclusionRulesAmisLastLaunched  {
     /// <p>The integer number of units for the time period. For example <code>6</code> (months).</p>
     pub fn value(&self) -> i32 {
         self.value
     }
     /// <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed time since the last instance launched from the AMI. For example: days, weeks, months, or years.</p>
-    pub fn unit(&self) -> &crate::types::LifecyclePolicyTimeUnit {
+    pub fn unit(&self) -> & crate::types::LifecyclePolicyTimeUnit {
         &self.unit
     }
 }
@@ -42,8 +42,7 @@ impl LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder {
     }
     /// <p>The integer number of units for the time period. For example <code>6</code> (months).</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The integer number of units for the time period. For example <code>6</code> (months).</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder {
     }
     /// <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed time since the last instance launched from the AMI. For example: days, weeks, months, or years.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyTimeUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed time since the last instance launched from the AMI. For example: days, weeks, months, or years.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::LifecyclePolicyTimeUnit> {
@@ -68,23 +66,21 @@ impl LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder::value)
     /// - [`unit`](crate::types::builders::LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder::unit)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building LifecyclePolicyDetailExclusionRulesAmisLastLaunched",
-                )
-            })?,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building LifecyclePolicyDetailExclusionRulesAmisLastLaunched",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building LifecyclePolicyDetailExclusionRulesAmisLastLaunched")
+                    )?
+                ,
+                unit: self.unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unit", "unit was not specified but it is required when building LifecyclePolicyDetailExclusionRulesAmisLastLaunched")
+                    )?
+                ,
+            }
+        )
     }
 }
+

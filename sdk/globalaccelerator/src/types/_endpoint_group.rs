@@ -3,13 +3,13 @@
 /// <p>A complex type for the endpoint group. An Amazon Web Services Region can have only one endpoint group for a specific listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointGroup {
+pub struct EndpointGroup  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>The list of endpoint objects.</p>
-    pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
+    pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>>,
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
@@ -26,22 +26,23 @@ pub struct EndpointGroup {
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub threshold_count: ::std::option::Option<i32>,
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on.</p>
-    pub port_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
+    pub port_overrides: ::std::option::Option<::std::vec::Vec::<crate::types::PortOverride>>,
 }
-impl EndpointGroup {
+impl  EndpointGroup  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
-    pub fn endpoint_group_region(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_region(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_region.as_deref()
     }
     /// <p>The list of endpoint objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
-    pub fn endpoint_descriptions(&self) -> &[crate::types::EndpointDescription] {
-        self.endpoint_descriptions.as_deref().unwrap_or_default()
+    pub fn endpoint_descriptions(&self) -> & [crate::types::EndpointDescription] {
+        self.endpoint_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
@@ -55,11 +56,11 @@ impl EndpointGroup {
         self.health_check_port
     }
     /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn health_check_protocol(&self) -> ::std::option::Option<&crate::types::HealthCheckProtocol> {
+    pub fn health_check_protocol(&self) -> ::std::option::Option<& crate::types::HealthCheckProtocol> {
         self.health_check_protocol.as_ref()
     }
     /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>
-    pub fn health_check_path(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_path(&self) -> ::std::option::Option<& str> {
         self.health_check_path.as_deref()
     }
     /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
@@ -71,10 +72,11 @@ impl EndpointGroup {
         self.threshold_count
     }
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_overrides.is_none()`.
-    pub fn port_overrides(&self) -> &[crate::types::PortOverride] {
-        self.port_overrides.as_deref().unwrap_or_default()
+    pub fn port_overrides(&self) -> & [crate::types::PortOverride] {
+        self.port_overrides.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EndpointGroup {
@@ -90,14 +92,14 @@ impl EndpointGroup {
 pub struct EndpointGroupBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_group_region: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
+    pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>>,
     pub(crate) traffic_dial_percentage: ::std::option::Option<f32>,
     pub(crate) health_check_port: ::std::option::Option<i32>,
     pub(crate) health_check_protocol: ::std::option::Option<crate::types::HealthCheckProtocol>,
     pub(crate) health_check_path: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_interval_seconds: ::std::option::Option<i32>,
     pub(crate) threshold_count: ::std::option::Option<i32>,
-    pub(crate) port_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
+    pub(crate) port_overrides: ::std::option::Option<::std::vec::Vec::<crate::types::PortOverride>>,
 }
 impl EndpointGroupBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -107,8 +109,7 @@ impl EndpointGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +122,7 @@ impl EndpointGroupBuilder {
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub fn set_endpoint_group_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_region = input;
-        self
+        self.endpoint_group_region = input; self
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,17 +135,16 @@ impl EndpointGroupBuilder {
     /// <p>The list of endpoint objects.</p>
     pub fn endpoint_descriptions(mut self, input: crate::types::EndpointDescription) -> Self {
         let mut v = self.endpoint_descriptions.unwrap_or_default();
-        v.push(input);
-        self.endpoint_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoint_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn set_endpoint_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>) -> Self {
-        self.endpoint_descriptions = input;
-        self
+    pub fn set_endpoint_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>>) -> Self {
+        self.endpoint_descriptions = input; self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn get_endpoint_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>> {
+    pub fn get_endpoint_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>> {
         &self.endpoint_descriptions
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
@@ -159,8 +158,7 @@ impl EndpointGroupBuilder {
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn set_traffic_dial_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.traffic_dial_percentage = input;
-        self
+        self.traffic_dial_percentage = input; self
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
@@ -177,8 +175,7 @@ impl EndpointGroupBuilder {
     /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group.</p>
     /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.</p>
     pub fn set_health_check_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_port = input;
-        self
+        self.health_check_port = input; self
     }
     /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group.</p>
     /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.</p>
@@ -192,8 +189,7 @@ impl EndpointGroupBuilder {
     }
     /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocol>) -> Self {
-        self.health_check_protocol = input;
-        self
+        self.health_check_protocol = input; self
     }
     /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub fn get_health_check_protocol(&self) -> &::std::option::Option<crate::types::HealthCheckProtocol> {
@@ -206,8 +202,7 @@ impl EndpointGroupBuilder {
     }
     /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>
     pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check_path = input;
-        self
+        self.health_check_path = input; self
     }
     /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +215,7 @@ impl EndpointGroupBuilder {
     }
     /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
     pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_interval_seconds = input;
-        self
+        self.health_check_interval_seconds = input; self
     }
     /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
     pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
@@ -234,8 +228,7 @@ impl EndpointGroupBuilder {
     }
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub fn set_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threshold_count = input;
-        self
+        self.threshold_count = input; self
     }
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     pub fn get_threshold_count(&self) -> &::std::option::Option<i32> {
@@ -248,32 +241,42 @@ impl EndpointGroupBuilder {
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on.</p>
     pub fn port_overrides(mut self, input: crate::types::PortOverride) -> Self {
         let mut v = self.port_overrides.unwrap_or_default();
-        v.push(input);
-        self.port_overrides = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_overrides = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on.</p>
-    pub fn set_port_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>) -> Self {
-        self.port_overrides = input;
-        self
+    pub fn set_port_overrides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortOverride>>) -> Self {
+        self.port_overrides = input; self
     }
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on.</p>
-    pub fn get_port_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortOverride>> {
+    pub fn get_port_overrides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortOverride>> {
         &self.port_overrides
     }
     /// Consumes the builder and constructs a [`EndpointGroup`](crate::types::EndpointGroup).
     pub fn build(self) -> crate::types::EndpointGroup {
         crate::types::EndpointGroup {
-            endpoint_group_arn: self.endpoint_group_arn,
-            endpoint_group_region: self.endpoint_group_region,
-            endpoint_descriptions: self.endpoint_descriptions,
-            traffic_dial_percentage: self.traffic_dial_percentage,
-            health_check_port: self.health_check_port,
-            health_check_protocol: self.health_check_protocol,
-            health_check_path: self.health_check_path,
-            health_check_interval_seconds: self.health_check_interval_seconds,
-            threshold_count: self.threshold_count,
-            port_overrides: self.port_overrides,
+            endpoint_group_arn: self.endpoint_group_arn
+            ,
+            endpoint_group_region: self.endpoint_group_region
+            ,
+            endpoint_descriptions: self.endpoint_descriptions
+            ,
+            traffic_dial_percentage: self.traffic_dial_percentage
+            ,
+            health_check_port: self.health_check_port
+            ,
+            health_check_protocol: self.health_check_protocol
+            ,
+            health_check_path: self.health_check_path
+            ,
+            health_check_interval_seconds: self.health_check_interval_seconds
+            ,
+            threshold_count: self.threshold_count
+            ,
+            port_overrides: self.port_overrides
+            ,
         }
     }
 }
+

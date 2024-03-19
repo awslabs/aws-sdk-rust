@@ -3,13 +3,13 @@
 /// <p>Provides configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputProcessingConfigurationDescription {
+pub struct InputProcessingConfigurationDescription  {
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
     pub input_lambda_processor_description: ::std::option::Option<crate::types::InputLambdaProcessorDescription>,
 }
-impl InputProcessingConfigurationDescription {
+impl  InputProcessingConfigurationDescription  {
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
-    pub fn input_lambda_processor_description(&self) -> ::std::option::Option<&crate::types::InputLambdaProcessorDescription> {
+    pub fn input_lambda_processor_description(&self) -> ::std::option::Option<& crate::types::InputLambdaProcessorDescription> {
         self.input_lambda_processor_description.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl InputProcessingConfigurationDescriptionBuilder {
     }
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
     pub fn set_input_lambda_processor_description(mut self, input: ::std::option::Option<crate::types::InputLambdaProcessorDescription>) -> Self {
-        self.input_lambda_processor_description = input;
-        self
+        self.input_lambda_processor_description = input; self
     }
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
     pub fn get_input_lambda_processor_description(&self) -> &::std::option::Option<crate::types::InputLambdaProcessorDescription> {
@@ -44,7 +43,9 @@ impl InputProcessingConfigurationDescriptionBuilder {
     /// Consumes the builder and constructs a [`InputProcessingConfigurationDescription`](crate::types::InputProcessingConfigurationDescription).
     pub fn build(self) -> crate::types::InputProcessingConfigurationDescription {
         crate::types::InputProcessingConfigurationDescription {
-            input_lambda_processor_description: self.input_lambda_processor_description,
+            input_lambda_processor_description: self.input_lambda_processor_description
+            ,
         }
     }
 }
+

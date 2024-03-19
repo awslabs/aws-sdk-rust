@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBuiltinIntents`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`locale(Locale)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::locale) / [`set_locale(Option<Locale>)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::set_locale):<br>required: **false**<br><p>A list of locales that the intent supports.</p><br>
     ///   - [`signature_contains(impl Into<String>)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::signature_contains) / [`set_signature_contains(Option<String>)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::set_signature_contains):<br>required: **false**<br><p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of intents to return in the response. The default is 10.</p><br>
-    /// - On success, responds with [`GetBuiltinIntentsOutput`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput) with field(s):
+                            /// - On success, responds with [`GetBuiltinIntentsOutput`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput) with field(s):
     ///   - [`intents(Option<Vec::<BuiltinIntentMetadata>>)`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput::intents): <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput::next_token): <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
-    /// - On failure, responds with [`SdkError<GetBuiltinIntentsError>`](crate::operation::get_builtin_intents::GetBuiltinIntentsError)
+                            /// - On failure, responds with [`SdkError<GetBuiltinIntentsError>`](crate::operation::get_builtin_intents::GetBuiltinIntentsError)
     pub fn get_builtin_intents(&self) -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder {
-        crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

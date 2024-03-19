@@ -3,9 +3,9 @@
 /// <p>The analysis result for Network Firewall's stateless rule group analyzer. Every time you call <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code> on a stateless rule group, Network Firewall analyzes the stateless rule groups in your account and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in a list of analysis results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisResult {
+pub struct AnalysisResult  {
     /// <p>The priority number of the stateless rules identified in the analysis.</p>
-    pub identified_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identified_rule_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
     /// <li>
@@ -27,12 +27,13 @@ pub struct AnalysisResult {
     /// <p>Provides analysis details for the identified rule.</p>
     pub analysis_detail: ::std::option::Option<::std::string::String>,
 }
-impl AnalysisResult {
+impl  AnalysisResult  {
     /// <p>The priority number of the stateless rules identified in the analysis.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identified_rule_ids.is_none()`.
-    pub fn identified_rule_ids(&self) -> &[::std::string::String] {
-        self.identified_rule_ids.as_deref().unwrap_or_default()
+    pub fn identified_rule_ids(&self) -> & [::std::string::String] {
+        self.identified_rule_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
@@ -51,11 +52,11 @@ impl AnalysisResult {
     /// <p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn identified_type(&self) -> ::std::option::Option<&crate::types::IdentifiedType> {
+    pub fn identified_type(&self) -> ::std::option::Option<& crate::types::IdentifiedType> {
         self.identified_type.as_ref()
     }
     /// <p>Provides analysis details for the identified rule.</p>
-    pub fn analysis_detail(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_detail(&self) -> ::std::option::Option<& str> {
         self.analysis_detail.as_deref()
     }
 }
@@ -70,7 +71,7 @@ impl AnalysisResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisResultBuilder {
-    pub(crate) identified_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identified_rule_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) identified_type: ::std::option::Option<crate::types::IdentifiedType>,
     pub(crate) analysis_detail: ::std::option::Option<::std::string::String>,
 }
@@ -82,17 +83,16 @@ impl AnalysisResultBuilder {
     /// <p>The priority number of the stateless rules identified in the analysis.</p>
     pub fn identified_rule_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identified_rule_ids.unwrap_or_default();
-        v.push(input.into());
-        self.identified_rule_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identified_rule_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The priority number of the stateless rules identified in the analysis.</p>
-    pub fn set_identified_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.identified_rule_ids = input;
-        self
+    pub fn set_identified_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.identified_rule_ids = input; self
     }
     /// <p>The priority number of the stateless rules identified in the analysis.</p>
-    pub fn get_identified_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identified_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.identified_rule_ids
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
@@ -134,8 +134,7 @@ impl AnalysisResultBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_identified_type(mut self, input: ::std::option::Option<crate::types::IdentifiedType>) -> Self {
-        self.identified_type = input;
-        self
+        self.identified_type = input; self
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
@@ -164,8 +163,7 @@ impl AnalysisResultBuilder {
     }
     /// <p>Provides analysis details for the identified rule.</p>
     pub fn set_analysis_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_detail = input;
-        self
+        self.analysis_detail = input; self
     }
     /// <p>Provides analysis details for the identified rule.</p>
     pub fn get_analysis_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,9 +172,13 @@ impl AnalysisResultBuilder {
     /// Consumes the builder and constructs a [`AnalysisResult`](crate::types::AnalysisResult).
     pub fn build(self) -> crate::types::AnalysisResult {
         crate::types::AnalysisResult {
-            identified_rule_ids: self.identified_rule_ids,
-            identified_type: self.identified_type,
-            analysis_detail: self.analysis_detail,
+            identified_rule_ids: self.identified_rule_ids
+            ,
+            identified_type: self.identified_type
+            ,
+            analysis_detail: self.analysis_detail
+            ,
         }
     }
 }
+

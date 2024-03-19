@@ -2,44 +2,47 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleInput {
+pub struct CreateRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The conditions.</p>
-    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
+    pub conditions: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The actions.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     /// <p>The tags to assign to the rule.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRuleInput {
+impl  CreateRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
-    pub fn conditions(&self) -> &[crate::types::RuleCondition] {
-        self.conditions.as_deref().unwrap_or_default()
+    pub fn conditions(&self) -> & [crate::types::RuleCondition] {
+        self.conditions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The actions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::Action] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to assign to the rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRuleInput {
@@ -54,10 +57,10 @@ impl CreateRuleInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>,
     pub(crate) priority: ::std::option::Option<i32>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -68,8 +71,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,17 +84,16 @@ impl CreateRuleInputBuilder {
     /// <p>The conditions.</p>
     pub fn conditions(mut self, input: crate::types::RuleCondition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
-        v.push(input);
-        self.conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The conditions.</p>
-    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>) -> Self {
-        self.conditions = input;
-        self
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>) -> Self {
+        self.conditions = input; self
     }
     /// <p>The conditions.</p>
-    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>> {
         &self.conditions
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -103,8 +104,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -117,17 +117,16 @@ impl CreateRuleInputBuilder {
     /// <p>The actions.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// Appends an item to `tags`.
@@ -137,27 +136,34 @@ impl CreateRuleInputBuilder {
     /// <p>The tags to assign to the rule.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the rule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the rule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
-            listener_arn: self.listener_arn,
-            conditions: self.conditions,
-            priority: self.priority,
-            actions: self.actions,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_rule::CreateRuleInput {
+                listener_arn: self.listener_arn
+                ,
+                conditions: self.conditions
+                ,
+                priority: self.priority
+                ,
+                actions: self.actions
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

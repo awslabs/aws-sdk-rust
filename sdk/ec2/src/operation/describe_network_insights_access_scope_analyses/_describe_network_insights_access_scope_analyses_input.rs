@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNetworkInsightsAccessScopeAnalysesInput {
+pub struct DescribeNetworkInsightsAccessScopeAnalysesInput  {
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the Network Access Scope.</p>
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
@@ -12,7 +12,7 @@ pub struct DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
     pub analysis_start_time_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>There are no supported filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -20,30 +20,32 @@ pub struct DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeNetworkInsightsAccessScopeAnalysesInput {
+impl  DescribeNetworkInsightsAccessScopeAnalysesInput  {
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_insights_access_scope_analysis_ids.is_none()`.
-    pub fn network_insights_access_scope_analysis_ids(&self) -> &[::std::string::String] {
-        self.network_insights_access_scope_analysis_ids.as_deref().unwrap_or_default()
+    pub fn network_insights_access_scope_analysis_ids(&self) -> & [::std::string::String] {
+        self.network_insights_access_scope_analysis_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
-    pub fn analysis_start_time_begin(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analysis_start_time_begin(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.analysis_start_time_begin.as_ref()
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
-    pub fn analysis_start_time_end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analysis_start_time_end(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.analysis_start_time_end.as_ref()
     }
     /// <p>There are no supported filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -54,14 +56,13 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInput {
         self.dry_run
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
+    pub fn builder() -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
         crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder::default()
     }
 }
@@ -70,11 +71,11 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
-    pub(crate) network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_start_time_begin: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) analysis_start_time_end: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -87,17 +88,16 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     /// <p>The IDs of the Network Access Scope analyses.</p>
     pub fn network_insights_access_scope_analysis_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_insights_access_scope_analysis_ids.unwrap_or_default();
-        v.push(input.into());
-        self.network_insights_access_scope_analysis_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.network_insights_access_scope_analysis_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn set_network_insights_access_scope_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.network_insights_access_scope_analysis_ids = input;
-        self
+    pub fn set_network_insights_access_scope_analysis_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.network_insights_access_scope_analysis_ids = input; self
     }
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn get_network_insights_access_scope_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_insights_access_scope_analysis_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.network_insights_access_scope_analysis_ids
     }
     /// <p>The ID of the Network Access Scope.</p>
@@ -107,8 +107,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_id = input;
-        self
+        self.network_insights_access_scope_id = input; self
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
     pub fn set_analysis_start_time_begin(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.analysis_start_time_begin = input;
-        self
+        self.analysis_start_time_begin = input; self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
     pub fn get_analysis_start_time_begin(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -135,8 +133,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
     pub fn set_analysis_start_time_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.analysis_start_time_end = input;
-        self
+        self.analysis_start_time_end = input; self
     }
     /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
     pub fn get_analysis_start_time_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,17 +146,16 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     /// <p>There are no supported filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>There are no supported filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>There are no supported filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -169,8 +165,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -183,8 +178,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -197,31 +191,34 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput {
-                network_insights_access_scope_analysis_ids: self.network_insights_access_scope_analysis_ids,
-                network_insights_access_scope_id: self.network_insights_access_scope_id,
-                analysis_start_time_begin: self.analysis_start_time_begin,
-                analysis_start_time_end: self.analysis_start_time_end,
-                filters: self.filters,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-            },
+                network_insights_access_scope_analysis_ids: self.network_insights_access_scope_analysis_ids
+                ,
+                network_insights_access_scope_id: self.network_insights_access_scope_id
+                ,
+                analysis_start_time_begin: self.analysis_start_time_begin
+                ,
+                analysis_start_time_end: self.analysis_start_time_end
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                dry_run: self.dry_run
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

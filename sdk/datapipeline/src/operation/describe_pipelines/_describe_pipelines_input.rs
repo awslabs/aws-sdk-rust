@@ -3,16 +3,17 @@
 /// <p>Contains the parameters for DescribePipelines.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePipelinesInput {
+pub struct DescribePipelinesInput  {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    pub pipeline_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pipeline_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribePipelinesInput {
+impl  DescribePipelinesInput  {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_ids.is_none()`.
-    pub fn pipeline_ids(&self) -> &[::std::string::String] {
-        self.pipeline_ids.as_deref().unwrap_or_default()
+    pub fn pipeline_ids(&self) -> & [::std::string::String] {
+        self.pipeline_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribePipelinesInput {
@@ -26,7 +27,7 @@ impl DescribePipelinesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelinesInputBuilder {
-    pub(crate) pipeline_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pipeline_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribePipelinesInputBuilder {
     /// Appends an item to `pipeline_ids`.
@@ -36,25 +37,26 @@ impl DescribePipelinesInputBuilder {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
     pub fn pipeline_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pipeline_ids.unwrap_or_default();
-        v.push(input.into());
-        self.pipeline_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pipeline_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    pub fn set_pipeline_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.pipeline_ids = input;
-        self
+    pub fn set_pipeline_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.pipeline_ids = input; self
     }
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    pub fn get_pipeline_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pipeline_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.pipeline_ids
     }
     /// Consumes the builder and constructs a [`DescribePipelinesInput`](crate::operation::describe_pipelines::DescribePipelinesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_pipelines::DescribePipelinesInput {
-            pipeline_ids: self.pipeline_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_pipelines::DescribePipelinesInput {
+                pipeline_ids: self.pipeline_ids
+                ,
+            }
+        )
     }
 }
+

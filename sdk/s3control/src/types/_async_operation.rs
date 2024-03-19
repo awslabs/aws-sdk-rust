@@ -3,7 +3,7 @@
 /// <p>A container for the information about an asynchronous operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AsyncOperation {
+pub struct AsyncOperation  {
     /// <p>The time that the request was sent to the service.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The specific operation for the asynchronous request.</p>
@@ -17,29 +17,29 @@ pub struct AsyncOperation {
     /// <p>The details of the response.</p>
     pub response_details: ::std::option::Option<crate::types::AsyncResponseDetails>,
 }
-impl AsyncOperation {
+impl  AsyncOperation  {
     /// <p>The time that the request was sent to the service.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The specific operation for the asynchronous request.</p>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::AsyncOperationName> {
+    pub fn operation(&self) -> ::std::option::Option<& crate::types::AsyncOperationName> {
         self.operation.as_ref()
     }
     /// <p>The request token associated with the request.</p>
-    pub fn request_token_arn(&self) -> ::std::option::Option<&str> {
+    pub fn request_token_arn(&self) -> ::std::option::Option<& str> {
         self.request_token_arn.as_deref()
     }
     /// <p>The parameters associated with the request.</p>
-    pub fn request_parameters(&self) -> ::std::option::Option<&crate::types::AsyncRequestParameters> {
+    pub fn request_parameters(&self) -> ::std::option::Option<& crate::types::AsyncRequestParameters> {
         self.request_parameters.as_ref()
     }
     /// <p>The current status of the request.</p>
-    pub fn request_status(&self) -> ::std::option::Option<&str> {
+    pub fn request_status(&self) -> ::std::option::Option<& str> {
         self.request_status.as_deref()
     }
     /// <p>The details of the response.</p>
-    pub fn response_details(&self) -> ::std::option::Option<&crate::types::AsyncResponseDetails> {
+    pub fn response_details(&self) -> ::std::option::Option<& crate::types::AsyncResponseDetails> {
         self.response_details.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl AsyncOperationBuilder {
     }
     /// <p>The time that the request was sent to the service.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the request was sent to the service.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +82,7 @@ impl AsyncOperationBuilder {
     }
     /// <p>The specific operation for the asynchronous request.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::AsyncOperationName>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The specific operation for the asynchronous request.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::AsyncOperationName> {
@@ -97,8 +95,7 @@ impl AsyncOperationBuilder {
     }
     /// <p>The request token associated with the request.</p>
     pub fn set_request_token_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_token_arn = input;
-        self
+        self.request_token_arn = input; self
     }
     /// <p>The request token associated with the request.</p>
     pub fn get_request_token_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl AsyncOperationBuilder {
     }
     /// <p>The parameters associated with the request.</p>
     pub fn set_request_parameters(mut self, input: ::std::option::Option<crate::types::AsyncRequestParameters>) -> Self {
-        self.request_parameters = input;
-        self
+        self.request_parameters = input; self
     }
     /// <p>The parameters associated with the request.</p>
     pub fn get_request_parameters(&self) -> &::std::option::Option<crate::types::AsyncRequestParameters> {
@@ -125,8 +121,7 @@ impl AsyncOperationBuilder {
     }
     /// <p>The current status of the request.</p>
     pub fn set_request_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_status = input;
-        self
+        self.request_status = input; self
     }
     /// <p>The current status of the request.</p>
     pub fn get_request_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl AsyncOperationBuilder {
     }
     /// <p>The details of the response.</p>
     pub fn set_response_details(mut self, input: ::std::option::Option<crate::types::AsyncResponseDetails>) -> Self {
-        self.response_details = input;
-        self
+        self.response_details = input; self
     }
     /// <p>The details of the response.</p>
     pub fn get_response_details(&self) -> &::std::option::Option<crate::types::AsyncResponseDetails> {
@@ -149,12 +143,19 @@ impl AsyncOperationBuilder {
     /// Consumes the builder and constructs a [`AsyncOperation`](crate::types::AsyncOperation).
     pub fn build(self) -> crate::types::AsyncOperation {
         crate::types::AsyncOperation {
-            creation_time: self.creation_time,
-            operation: self.operation,
-            request_token_arn: self.request_token_arn,
-            request_parameters: self.request_parameters,
-            request_status: self.request_status,
-            response_details: self.response_details,
+            creation_time: self.creation_time
+            ,
+            operation: self.operation
+            ,
+            request_token_arn: self.request_token_arn
+            ,
+            request_parameters: self.request_parameters
+            ,
+            request_status: self.request_status
+            ,
+            response_details: self.response_details
+            ,
         }
     }
 }
+

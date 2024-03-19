@@ -3,22 +3,20 @@
 /// <p>An array of objects representing the destination for a replication rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationDestination {
+pub struct ReplicationDestination  {
     /// <p>The Region to replicate to.</p>
     pub region: ::std::string::String,
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     pub registry_id: ::std::string::String,
 }
-impl ReplicationDestination {
+impl  ReplicationDestination  {
     /// <p>The Region to replicate to.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub fn registry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.registry_id.deref()
+    pub fn registry_id(&self) -> & str {
+        use std::ops::Deref; self.registry_id.deref()
     }
 }
 impl ReplicationDestination {
@@ -44,8 +42,7 @@ impl ReplicationDestinationBuilder {
     }
     /// <p>The Region to replicate to.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Region to replicate to.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ReplicationDestinationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ReplicationDestinationBuilder {
     /// - [`region`](crate::types::builders::ReplicationDestinationBuilder::region)
     /// - [`registry_id`](crate::types::builders::ReplicationDestinationBuilder::registry_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicationDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicationDestination {
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building ReplicationDestination",
-                )
-            })?,
-            registry_id: self.registry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registry_id",
-                    "registry_id was not specified but it is required when building ReplicationDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicationDestination {
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building ReplicationDestination")
+                    )?
+                ,
+                registry_id: self.registry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registry_id", "registry_id was not specified but it is required when building ReplicationDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::create_patch_baseline::_create_patch_baseline_input::C
 
 impl CreatePatchBaselineInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_patch_baseline::CreatePatchBaselineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_patch_baseline();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_patch_baseline::CreatePatchBaselineError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_patch_baseline();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreatePatchBaseline`.
-///
+/// 
 /// <p>Creates a patch baseline.</p><note>
 /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <code>PatchFilter</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePatchBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_patch_baseline::builders::CreatePatchBaselineInputBuilder,
+                    inner: crate::operation::create_patch_baseline::builders::CreatePatchBaselineInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-        crate::operation::create_patch_baseline::CreatePatchBaselineError,
-    > for CreatePatchBaselineFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-            crate::operation::create_patch_baseline::CreatePatchBaselineError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
+                    crate::operation::create_patch_baseline::CreatePatchBaselineError,
+                > for CreatePatchBaselineFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
+                        crate::operation::create_patch_baseline::CreatePatchBaselineError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreatePatchBaselineFluentBuilder {
     /// Creates a new `CreatePatchBaseline`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CreatePatchBaselineFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_patch_baseline::CreatePatchBaselineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_patch_baseline::CreatePatchBaseline::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_patch_baseline::CreatePatchBaseline::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-        crate::operation::create_patch_baseline::CreatePatchBaselineError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_patch_baseline::CreatePatchBaselineOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_patch_baseline::CreatePatchBaselineError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_patch_baseline::CreatePatchBaseline::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_patch_baseline::CreatePatchBaseline::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_patch_baseline::CreatePatchBaselineOutput, crate::operation::create_patch_baseline::CreatePatchBaselineError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.inner = self.inner.operating_system(input);
@@ -178,13 +165,13 @@ impl CreatePatchBaselineFluentBuilder {
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_approved_patches(input);
         self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_approved_patches()
     }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
@@ -227,13 +214,13 @@ impl CreatePatchBaselineFluentBuilder {
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rejected_patches(input);
         self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_rejected_patches()
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
@@ -292,12 +279,12 @@ impl CreatePatchBaselineFluentBuilder {
         self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchSource>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchSource>> {
         self.inner.get_sources()
     }
     /// <p>User-provided idempotency token.</p>
@@ -340,7 +327,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -353,7 +340,8 @@ impl CreatePatchBaselineFluentBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

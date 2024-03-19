@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFeedbackOutput {
+pub struct GetFeedbackOutput  {
     /// <p>Feedback for an anomalous metric.</p>
-    pub anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
+    pub anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesFeedback>>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetFeedbackOutput {
+impl  GetFeedbackOutput  {
     /// <p>Feedback for an anomalous metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_group_time_series_feedback.is_none()`.
-    pub fn anomaly_group_time_series_feedback(&self) -> &[crate::types::TimeSeriesFeedback] {
-        self.anomaly_group_time_series_feedback.as_deref().unwrap_or_default()
+    pub fn anomaly_group_time_series_feedback(&self) -> & [crate::types::TimeSeriesFeedback] {
+        self.anomaly_group_time_series_feedback.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFeedbackOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput).
     pub fn builder() -> crate::operation::get_feedback::builders::GetFeedbackOutputBuilder {
@@ -37,7 +38,7 @@ impl GetFeedbackOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFeedbackOutputBuilder {
-    pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
+    pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesFeedback>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetFeedbackOutputBuilder {
     /// <p>Feedback for an anomalous metric.</p>
     pub fn anomaly_group_time_series_feedback(mut self, input: crate::types::TimeSeriesFeedback) -> Self {
         let mut v = self.anomaly_group_time_series_feedback.unwrap_or_default();
-        v.push(input);
-        self.anomaly_group_time_series_feedback = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anomaly_group_time_series_feedback = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>) -> Self {
-        self.anomaly_group_time_series_feedback = input;
-        self
+    pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesFeedback>>) -> Self {
+        self.anomaly_group_time_series_feedback = input; self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>> {
+    pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesFeedback>> {
         &self.anomaly_group_time_series_feedback
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -69,28 +69,30 @@ impl GetFeedbackOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput).
     pub fn build(self) -> crate::operation::get_feedback::GetFeedbackOutput {
         crate::operation::get_feedback::GetFeedbackOutput {
-            anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,
-            next_token: self.next_token,
+            anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

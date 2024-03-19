@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePublishingDestinationOutput {
+pub struct DescribePublishingDestinationOutput  {
     /// <p>The ID of the publishing destination.</p>
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
@@ -15,17 +15,17 @@ pub struct DescribePublishingDestinationOutput {
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
     _request_id: Option<String>,
 }
-impl DescribePublishingDestinationOutput {
+impl  DescribePublishingDestinationOutput  {
     /// <p>The ID of the publishing destination.</p>
-    pub fn destination_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_id(&self) -> ::std::option::Option<& str> {
         self.destination_id.as_deref()
     }
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
-    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::DestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<& crate::types::DestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>The status of the publishing destination.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PublishingStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PublishingStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
@@ -33,15 +33,15 @@ impl DescribePublishingDestinationOutput {
         self.publishing_failure_start_timestamp
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
+    pub fn destination_properties(&self) -> ::std::option::Option<& crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePublishingDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePublishingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribePublishingDestinationOutput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput).
     pub fn builder() -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationOutputBuilder {
@@ -69,8 +69,7 @@ impl DescribePublishingDestinationOutputBuilder {
     }
     /// <p>The ID of the publishing destination.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_id = input;
-        self
+        self.destination_id = input; self
     }
     /// <p>The ID of the publishing destination.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl DescribePublishingDestinationOutputBuilder {
     }
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
@@ -99,8 +97,7 @@ impl DescribePublishingDestinationOutputBuilder {
     }
     /// <p>The status of the publishing destination.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PublishingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the publishing destination.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PublishingStatus> {
@@ -114,8 +111,7 @@ impl DescribePublishingDestinationOutputBuilder {
     }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     pub fn set_publishing_failure_start_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.publishing_failure_start_timestamp = input;
-        self
+        self.publishing_failure_start_timestamp = input; self
     }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     pub fn get_publishing_failure_start_timestamp(&self) -> &::std::option::Option<i64> {
@@ -129,31 +125,36 @@ impl DescribePublishingDestinationOutputBuilder {
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
-        self.destination_properties = input;
-        self
+        self.destination_properties = input; self
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         &self.destination_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePublishingDestinationOutput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput).
     pub fn build(self) -> crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput {
         crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput {
-            destination_id: self.destination_id,
-            destination_type: self.destination_type,
-            status: self.status,
-            publishing_failure_start_timestamp: self.publishing_failure_start_timestamp,
-            destination_properties: self.destination_properties,
+            destination_id: self.destination_id
+            ,
+            destination_type: self.destination_type
+            ,
+            status: self.status
+            ,
+            publishing_failure_start_timestamp: self.publishing_failure_start_timestamp
+            ,
+            destination_properties: self.destination_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

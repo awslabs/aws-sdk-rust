@@ -3,25 +3,23 @@
 /// <p>The table calculation measure field for pivot tables.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CalculatedMeasureField {
+pub struct CalculatedMeasureField  {
     /// <p>The custom field ID.</p>
     pub field_id: ::std::string::String,
     /// <p>The expression in the table calculation.</p>
     pub expression: ::std::string::String,
 }
-impl CalculatedMeasureField {
+impl  CalculatedMeasureField  {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The expression in the table calculation.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
 }
-impl ::std::fmt::Debug for CalculatedMeasureField {
+impl  ::std::fmt::Debug for CalculatedMeasureField  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedMeasureField");
         formatter.field("field_id", &self.field_id);
@@ -52,8 +50,7 @@ impl CalculatedMeasureFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The custom field ID.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl CalculatedMeasureFieldBuilder {
     }
     /// <p>The expression in the table calculation.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The expression in the table calculation.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl CalculatedMeasureFieldBuilder {
     /// - [`field_id`](crate::types::builders::CalculatedMeasureFieldBuilder::field_id)
     /// - [`expression`](crate::types::builders::CalculatedMeasureFieldBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::CalculatedMeasureField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CalculatedMeasureField {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building CalculatedMeasureField",
-                )
-            })?,
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building CalculatedMeasureField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CalculatedMeasureField {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building CalculatedMeasureField")
+                    )?
+                ,
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building CalculatedMeasureField")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CalculatedMeasureFieldBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for CalculatedMeasureFieldBuilder {
         formatter.finish()
     }
 }
+

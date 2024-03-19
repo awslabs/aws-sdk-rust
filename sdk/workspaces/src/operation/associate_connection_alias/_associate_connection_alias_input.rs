@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateConnectionAliasInput {
+pub struct AssociateConnectionAliasInput  {
     /// <p>The identifier of the connection alias.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory to associate the connection alias with.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl AssociateConnectionAliasInput {
+impl  AssociateConnectionAliasInput  {
     /// <p>The identifier of the connection alias.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
     /// <p>The identifier of the directory to associate the connection alias with.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateConnectionAliasInputBuilder {
     }
     /// <p>The identifier of the connection alias.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>The identifier of the connection alias.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AssociateConnectionAliasInputBuilder {
     }
     /// <p>The identifier of the directory to associate the connection alias with.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the directory to associate the connection alias with.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`AssociateConnectionAliasInput`](crate::operation::associate_connection_alias::AssociateConnectionAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_connection_alias::AssociateConnectionAliasInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_connection_alias::AssociateConnectionAliasInput {
-            alias_id: self.alias_id,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_connection_alias::AssociateConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_connection_alias::AssociateConnectionAliasInput {
+                alias_id: self.alias_id
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

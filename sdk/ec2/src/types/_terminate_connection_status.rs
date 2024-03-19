@@ -3,7 +3,7 @@
 /// <p>Information about a terminated Client VPN endpoint client connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateConnectionStatus {
+pub struct TerminateConnectionStatus  {
     /// <p>The ID of the client connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the client connection.</p>
@@ -11,17 +11,17 @@ pub struct TerminateConnectionStatus {
     /// <p>A message about the status of the client connection, if applicable.</p>
     pub current_status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
 }
-impl TerminateConnectionStatus {
+impl  TerminateConnectionStatus  {
     /// <p>The ID of the client connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The state of the client connection.</p>
-    pub fn previous_status(&self) -> ::std::option::Option<&crate::types::ClientVpnConnectionStatus> {
+    pub fn previous_status(&self) -> ::std::option::Option<& crate::types::ClientVpnConnectionStatus> {
         self.previous_status.as_ref()
     }
     /// <p>A message about the status of the client connection, if applicable.</p>
-    pub fn current_status(&self) -> ::std::option::Option<&crate::types::ClientVpnConnectionStatus> {
+    pub fn current_status(&self) -> ::std::option::Option<& crate::types::ClientVpnConnectionStatus> {
         self.current_status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TerminateConnectionStatusBuilder {
     }
     /// <p>The ID of the client connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the client connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl TerminateConnectionStatusBuilder {
     }
     /// <p>The state of the client connection.</p>
     pub fn set_previous_status(mut self, input: ::std::option::Option<crate::types::ClientVpnConnectionStatus>) -> Self {
-        self.previous_status = input;
-        self
+        self.previous_status = input; self
     }
     /// <p>The state of the client connection.</p>
     pub fn get_previous_status(&self) -> &::std::option::Option<crate::types::ClientVpnConnectionStatus> {
@@ -76,8 +74,7 @@ impl TerminateConnectionStatusBuilder {
     }
     /// <p>A message about the status of the client connection, if applicable.</p>
     pub fn set_current_status(mut self, input: ::std::option::Option<crate::types::ClientVpnConnectionStatus>) -> Self {
-        self.current_status = input;
-        self
+        self.current_status = input; self
     }
     /// <p>A message about the status of the client connection, if applicable.</p>
     pub fn get_current_status(&self) -> &::std::option::Option<crate::types::ClientVpnConnectionStatus> {
@@ -86,9 +83,13 @@ impl TerminateConnectionStatusBuilder {
     /// Consumes the builder and constructs a [`TerminateConnectionStatus`](crate::types::TerminateConnectionStatus).
     pub fn build(self) -> crate::types::TerminateConnectionStatus {
         crate::types::TerminateConnectionStatus {
-            connection_id: self.connection_id,
-            previous_status: self.previous_status,
-            current_status: self.current_status,
+            connection_id: self.connection_id
+            ,
+            previous_status: self.previous_status
+            ,
+            current_status: self.current_status
+            ,
         }
     }
 }
+

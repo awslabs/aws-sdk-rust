@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNodeAssociationStatusInput {
+pub struct DescribeNodeAssociationStatusInput  {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub node_association_status_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server from which to disassociate the node.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeNodeAssociationStatusInput {
+impl  DescribeNodeAssociationStatusInput  {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
-    pub fn node_association_status_token(&self) -> ::std::option::Option<&str> {
+    pub fn node_association_status_token(&self) -> ::std::option::Option<& str> {
         self.node_association_status_token.as_deref()
     }
     /// <p>The name of the server from which to disassociate the node.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeNodeAssociationStatusInputBuilder {
     }
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_association_status_token = input;
-        self
+        self.node_association_status_token = input; self
     }
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeNodeAssociationStatusInputBuilder {
     }
     /// <p>The name of the server from which to disassociate the node.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server from which to disassociate the node.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }
     /// Consumes the builder and constructs a [`DescribeNodeAssociationStatusInput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput {
-            node_association_status_token: self.node_association_status_token,
-            server_name: self.server_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput {
+                node_association_status_token: self.node_association_status_token
+                ,
+                server_name: self.server_name
+                ,
+            }
+        )
     }
 }
+

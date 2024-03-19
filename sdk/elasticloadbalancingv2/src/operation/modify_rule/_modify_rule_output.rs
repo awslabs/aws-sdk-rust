@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyRuleOutput {
+pub struct ModifyRuleOutput  {
     /// <p>Information about the modified rule.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
     _request_id: Option<String>,
 }
-impl ModifyRuleOutput {
+impl  ModifyRuleOutput  {
     /// <p>Information about the modified rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::Rule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::Rule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyRuleOutput {
     /// Creates a new builder-style object to manufacture [`ModifyRuleOutput`](crate::operation::modify_rule::ModifyRuleOutput).
     pub fn builder() -> crate::operation::modify_rule::builders::ModifyRuleOutputBuilder {
@@ -31,7 +32,7 @@ impl ModifyRuleOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyRuleOutputBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
     _request_id: Option<String>,
 }
 impl ModifyRuleOutputBuilder {
@@ -42,33 +43,34 @@ impl ModifyRuleOutputBuilder {
     /// <p>Information about the modified rule.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the modified rule.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Information about the modified rule.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rule>> {
         &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyRuleOutput`](crate::operation::modify_rule::ModifyRuleOutput).
     pub fn build(self) -> crate::operation::modify_rule::ModifyRuleOutput {
         crate::operation::modify_rule::ModifyRuleOutput {
-            rules: self.rules,
+            rules: self.rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

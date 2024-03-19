@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of a subnet for a VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubnetConfiguration {
+pub struct SubnetConfiguration  {
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address to assign to the endpoint network interface in the subnet. You must provide an IPv4 address if the VPC endpoint supports IPv4.</p>
@@ -13,19 +13,19 @@ pub struct SubnetConfiguration {
     /// <p>If you specify an IPv6 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
-impl SubnetConfiguration {
+impl  SubnetConfiguration  {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The IPv4 address to assign to the endpoint network interface in the subnet. You must provide an IPv4 address if the VPC endpoint supports IPv4.</p>
     /// <p>If you specify an IPv4 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
-    pub fn ipv4(&self) -> ::std::option::Option<&str> {
+    pub fn ipv4(&self) -> ::std::option::Option<& str> {
         self.ipv4.as_deref()
     }
     /// <p>The IPv6 address to assign to the endpoint network interface in the subnet. You must provide an IPv6 address if the VPC endpoint supports IPv6.</p>
     /// <p>If you specify an IPv6 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
-    pub fn ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6(&self) -> ::std::option::Option<& str> {
         self.ipv6.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl SubnetConfigurationBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl SubnetConfigurationBuilder {
     /// <p>The IPv4 address to assign to the endpoint network interface in the subnet. You must provide an IPv4 address if the VPC endpoint supports IPv4.</p>
     /// <p>If you specify an IPv4 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
     pub fn set_ipv4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv4 = input;
-        self
+        self.ipv4 = input; self
     }
     /// <p>The IPv4 address to assign to the endpoint network interface in the subnet. You must provide an IPv4 address if the VPC endpoint supports IPv4.</p>
     /// <p>If you specify an IPv4 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
@@ -85,8 +83,7 @@ impl SubnetConfigurationBuilder {
     /// <p>The IPv6 address to assign to the endpoint network interface in the subnet. You must provide an IPv6 address if the VPC endpoint supports IPv6.</p>
     /// <p>If you specify an IPv6 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6 = input;
-        self
+        self.ipv6 = input; self
     }
     /// <p>The IPv6 address to assign to the endpoint network interface in the subnet. You must provide an IPv6 address if the VPC endpoint supports IPv6.</p>
     /// <p>If you specify an IPv6 address when modifying a VPC endpoint, we replace the existing endpoint network interface with a new endpoint network interface with this IP address. This process temporarily disconnects the subnet and the VPC endpoint.</p>
@@ -96,9 +93,13 @@ impl SubnetConfigurationBuilder {
     /// Consumes the builder and constructs a [`SubnetConfiguration`](crate::types::SubnetConfiguration).
     pub fn build(self) -> crate::types::SubnetConfiguration {
         crate::types::SubnetConfiguration {
-            subnet_id: self.subnet_id,
-            ipv4: self.ipv4,
-            ipv6: self.ipv6,
+            subnet_id: self.subnet_id
+            ,
+            ipv4: self.ipv4
+            ,
+            ipv6: self.ipv6
+            ,
         }
     }
 }
+

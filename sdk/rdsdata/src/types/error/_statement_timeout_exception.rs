@@ -3,14 +3,14 @@
 /// <p>The execution of the SQL statement timed out.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatementTimeoutException {
+pub struct StatementTimeoutException  {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub db_connection_id: i64,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl StatementTimeoutException {
+impl  StatementTimeoutException  {
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub fn db_connection_id(&self) -> i64 {
         self.db_connection_id
@@ -18,15 +18,13 @@ impl StatementTimeoutException {
 }
 impl StatementTimeoutException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for StatementTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "StatementTimeoutException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::StatementTimeou
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StatementTimeoutException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl StatementTimeoutException {
     /// Creates a new builder-style object to manufacture [`StatementTimeoutException`](crate::types::error::StatementTimeoutException).
@@ -68,8 +64,7 @@ impl StatementTimeoutExceptionBuilder {
     }
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,30 +77,33 @@ impl StatementTimeoutExceptionBuilder {
     }
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub fn set_db_connection_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.db_connection_id = input;
-        self
+        self.db_connection_id = input; self
     }
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub fn get_db_connection_id(&self) -> &::std::option::Option<i64> {
         &self.db_connection_id
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`StatementTimeoutException`](crate::types::error::StatementTimeoutException).
     pub fn build(self) -> crate::types::error::StatementTimeoutException {
         crate::types::error::StatementTimeoutException {
-            message: self.message,
-            db_connection_id: self.db_connection_id.unwrap_or_default(),
+            message: self.message
+            ,
+            db_connection_id: self.db_connection_id
+                .unwrap_or_default()
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

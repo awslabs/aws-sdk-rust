@@ -3,7 +3,7 @@
 /// <p>Contains details about the configuration of the knowledge store used for the <code>AMAZON.QnAIntent</code>. You must have already created the knowledge store and indexed the documents within it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceConfiguration {
+pub struct DataSourceConfiguration  {
     /// <p>Contains details about the configuration of the Amazon OpenSearch Service database used for the <code>AMAZON.QnAIntent</code>. To create a domain, follow the steps at <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
     pub opensearch_configuration: ::std::option::Option<crate::types::OpensearchConfiguration>,
     /// <p>Contains details about the configuration of the Amazon Kendra index used for the <code>AMAZON.QnAIntent</code>. To create a Amazon Kendra index, follow the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/create-index.html">Creating an index</a>.</p>
@@ -11,17 +11,17 @@ pub struct DataSourceConfiguration {
     /// <p>Contains details about the configuration of the Amazon Bedrock knowledge base used for the <code>AMAZON.QnAIntent</code>. To set up a knowledge base, follow the steps at <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html">Building a knowledge base</a>.</p>
     pub bedrock_knowledge_store_configuration: ::std::option::Option<crate::types::BedrockKnowledgeStoreConfiguration>,
 }
-impl DataSourceConfiguration {
+impl  DataSourceConfiguration  {
     /// <p>Contains details about the configuration of the Amazon OpenSearch Service database used for the <code>AMAZON.QnAIntent</code>. To create a domain, follow the steps at <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
-    pub fn opensearch_configuration(&self) -> ::std::option::Option<&crate::types::OpensearchConfiguration> {
+    pub fn opensearch_configuration(&self) -> ::std::option::Option<& crate::types::OpensearchConfiguration> {
         self.opensearch_configuration.as_ref()
     }
     /// <p>Contains details about the configuration of the Amazon Kendra index used for the <code>AMAZON.QnAIntent</code>. To create a Amazon Kendra index, follow the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/create-index.html">Creating an index</a>.</p>
-    pub fn kendra_configuration(&self) -> ::std::option::Option<&crate::types::QnAKendraConfiguration> {
+    pub fn kendra_configuration(&self) -> ::std::option::Option<& crate::types::QnAKendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>Contains details about the configuration of the Amazon Bedrock knowledge base used for the <code>AMAZON.QnAIntent</code>. To set up a knowledge base, follow the steps at <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html">Building a knowledge base</a>.</p>
-    pub fn bedrock_knowledge_store_configuration(&self) -> ::std::option::Option<&crate::types::BedrockKnowledgeStoreConfiguration> {
+    pub fn bedrock_knowledge_store_configuration(&self) -> ::std::option::Option<& crate::types::BedrockKnowledgeStoreConfiguration> {
         self.bedrock_knowledge_store_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// <p>Contains details about the configuration of the Amazon OpenSearch Service database used for the <code>AMAZON.QnAIntent</code>. To create a domain, follow the steps at <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
     pub fn set_opensearch_configuration(mut self, input: ::std::option::Option<crate::types::OpensearchConfiguration>) -> Self {
-        self.opensearch_configuration = input;
-        self
+        self.opensearch_configuration = input; self
     }
     /// <p>Contains details about the configuration of the Amazon OpenSearch Service database used for the <code>AMAZON.QnAIntent</code>. To create a domain, follow the steps at <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
     pub fn get_opensearch_configuration(&self) -> &::std::option::Option<crate::types::OpensearchConfiguration> {
@@ -62,8 +61,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// <p>Contains details about the configuration of the Amazon Kendra index used for the <code>AMAZON.QnAIntent</code>. To create a Amazon Kendra index, follow the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/create-index.html">Creating an index</a>.</p>
     pub fn set_kendra_configuration(mut self, input: ::std::option::Option<crate::types::QnAKendraConfiguration>) -> Self {
-        self.kendra_configuration = input;
-        self
+        self.kendra_configuration = input; self
     }
     /// <p>Contains details about the configuration of the Amazon Kendra index used for the <code>AMAZON.QnAIntent</code>. To create a Amazon Kendra index, follow the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/create-index.html">Creating an index</a>.</p>
     pub fn get_kendra_configuration(&self) -> &::std::option::Option<crate::types::QnAKendraConfiguration> {
@@ -75,12 +73,8 @@ impl DataSourceConfigurationBuilder {
         self
     }
     /// <p>Contains details about the configuration of the Amazon Bedrock knowledge base used for the <code>AMAZON.QnAIntent</code>. To set up a knowledge base, follow the steps at <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html">Building a knowledge base</a>.</p>
-    pub fn set_bedrock_knowledge_store_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BedrockKnowledgeStoreConfiguration>,
-    ) -> Self {
-        self.bedrock_knowledge_store_configuration = input;
-        self
+    pub fn set_bedrock_knowledge_store_configuration(mut self, input: ::std::option::Option<crate::types::BedrockKnowledgeStoreConfiguration>) -> Self {
+        self.bedrock_knowledge_store_configuration = input; self
     }
     /// <p>Contains details about the configuration of the Amazon Bedrock knowledge base used for the <code>AMAZON.QnAIntent</code>. To set up a knowledge base, follow the steps at <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html">Building a knowledge base</a>.</p>
     pub fn get_bedrock_knowledge_store_configuration(&self) -> &::std::option::Option<crate::types::BedrockKnowledgeStoreConfiguration> {
@@ -89,9 +83,13 @@ impl DataSourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
     pub fn build(self) -> crate::types::DataSourceConfiguration {
         crate::types::DataSourceConfiguration {
-            opensearch_configuration: self.opensearch_configuration,
-            kendra_configuration: self.kendra_configuration,
-            bedrock_knowledge_store_configuration: self.bedrock_knowledge_store_configuration,
+            opensearch_configuration: self.opensearch_configuration
+            ,
+            kendra_configuration: self.kendra_configuration
+            ,
+            bedrock_knowledge_store_configuration: self.bedrock_knowledge_store_configuration
+            ,
         }
     }
 }
+

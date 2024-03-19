@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgentStatusInput {
+pub struct UpdateAgentStatusInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the agent status.</p>
@@ -18,25 +18,25 @@ pub struct UpdateAgentStatusInput {
     /// <p>A number indicating the reset order of the agent status.</p>
     pub reset_order_number: ::std::option::Option<bool>,
 }
-impl UpdateAgentStatusInput {
+impl  UpdateAgentStatusInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_status_id(&self) -> ::std::option::Option<& str> {
         self.agent_status_id.as_deref()
     }
     /// <p>The name of the agent status.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the agent status.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the agent status.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AgentStatusState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AgentStatusState> {
         self.state.as_ref()
     }
     /// <p>The display order of the agent status.</p>
@@ -76,8 +76,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>The identifier of the agent status.</p>
     pub fn set_agent_status_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_status_id = input;
-        self
+        self.agent_status_id = input; self
     }
     /// <p>The identifier of the agent status.</p>
     pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>The name of the agent status.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the agent status.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>The description of the agent status.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the agent status.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>The state of the agent status.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AgentStatusState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the agent status.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AgentStatusState> {
@@ -147,8 +142,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>The display order of the agent status.</p>
     pub fn set_display_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.display_order = input;
-        self
+        self.display_order = input; self
     }
     /// <p>The display order of the agent status.</p>
     pub fn get_display_order(&self) -> &::std::option::Option<i32> {
@@ -161,25 +155,32 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>A number indicating the reset order of the agent status.</p>
     pub fn set_reset_order_number(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reset_order_number = input;
-        self
+        self.reset_order_number = input; self
     }
     /// <p>A number indicating the reset order of the agent status.</p>
     pub fn get_reset_order_number(&self) -> &::std::option::Option<bool> {
         &self.reset_order_number
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agent_status::UpdateAgentStatusInput {
-            instance_id: self.instance_id,
-            agent_status_id: self.agent_status_id,
-            name: self.name,
-            description: self.description,
-            state: self.state,
-            display_order: self.display_order,
-            reset_order_number: self.reset_order_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_agent_status::UpdateAgentStatusInput {
+                instance_id: self.instance_id
+                ,
+                agent_status_id: self.agent_status_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                display_order: self.display_order
+                ,
+                reset_order_number: self.reset_order_number
+                ,
+            }
+        )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContexts`](crate::operation::list_contexts::builders::ListContextsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`source_uri(impl Into<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::source_uri) / [`set_source_uri(Option<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_source_uri):<br>required: **false**<br><p>A filter that returns only contexts with the specified source URI.</p><br>
     ///   - [`context_type(impl Into<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::context_type) / [`set_context_type(Option<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_context_type):<br>required: **false**<br><p>A filter that returns only contexts of the specified type.</p><br>
     ///   - [`created_after(DateTime)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_created_after):<br>required: **false**<br><p>A filter that returns only contexts created on or after the specified time.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contexts::builders::ListContextsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of contexts to return in the response. The default value is 10.</p><br>
-    /// - On success, responds with [`ListContextsOutput`](crate::operation::list_contexts::ListContextsOutput) with field(s):
+                            /// - On success, responds with [`ListContextsOutput`](crate::operation::list_contexts::ListContextsOutput) with field(s):
     ///   - [`context_summaries(Option<Vec::<ContextSummary>>)`](crate::operation::list_contexts::ListContextsOutput::context_summaries): <p>A list of contexts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contexts::ListContextsOutput::next_token): <p>A token for getting the next set of contexts, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListContextsError>`](crate::operation::list_contexts::ListContextsError)
+                            /// - On failure, responds with [`SdkError<ListContextsError>`](crate::operation::list_contexts::ListContextsError)
     pub fn list_contexts(&self) -> crate::operation::list_contexts::builders::ListContextsFluentBuilder {
-        crate::operation::list_contexts::builders::ListContextsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contexts::builders::ListContextsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

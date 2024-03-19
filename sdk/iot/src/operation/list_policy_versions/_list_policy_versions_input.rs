@@ -3,13 +3,13 @@
 /// <p>The input for the ListPolicyVersions operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPolicyVersionsInput {
+pub struct ListPolicyVersionsInput  {
     /// <p>The policy name.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
-impl ListPolicyVersionsInput {
+impl  ListPolicyVersionsInput  {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl ListPolicyVersionsInputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The policy name.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_policy_versions::ListPolicyVersionsInput {
-            policy_name: self.policy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_policy_versions::ListPolicyVersionsInput {
+                policy_name: self.policy_name
+                ,
+            }
+        )
     }
 }
+

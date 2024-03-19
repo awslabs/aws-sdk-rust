@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExclusionsPreviewInput {
+pub struct GetExclusionsPreviewInput  {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     pub assessment_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier associated of the exclusions preview.</p>
@@ -14,17 +14,17 @@ pub struct GetExclusionsPreviewInput {
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub locale: ::std::option::Option<crate::types::Locale>,
 }
-impl GetExclusionsPreviewInput {
+impl  GetExclusionsPreviewInput  {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    pub fn assessment_template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_template_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_template_arn.as_deref()
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    pub fn preview_token(&self) -> ::std::option::Option<&str> {
+    pub fn preview_token(&self) -> ::std::option::Option<& str> {
         self.preview_token.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
@@ -32,7 +32,7 @@ impl GetExclusionsPreviewInput {
         self.max_results
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl GetExclusionsPreviewInputBuilder {
     }
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_template_arn = input;
-        self
+        self.assessment_template_arn = input; self
     }
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl GetExclusionsPreviewInputBuilder {
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
     pub fn set_preview_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preview_token = input;
-        self
+        self.preview_token = input; self
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
     pub fn get_preview_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl GetExclusionsPreviewInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl GetExclusionsPreviewInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,24 +115,28 @@ impl GetExclusionsPreviewInputBuilder {
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
         &self.locale
     }
     /// Consumes the builder and constructs a [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_exclusions_preview::GetExclusionsPreviewInput {
-            assessment_template_arn: self.assessment_template_arn,
-            preview_token: self.preview_token,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            locale: self.locale,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_exclusions_preview::GetExclusionsPreviewInput {
+                assessment_template_arn: self.assessment_template_arn
+                ,
+                preview_token: self.preview_token
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                locale: self.locale
+                ,
+            }
+        )
     }
 }
+

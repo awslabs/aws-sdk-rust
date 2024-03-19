@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventPredictionMetadataInput {
+pub struct GetEventPredictionMetadataInput  {
     /// <p>The event ID.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type associated with the detector specified for the prediction.</p>
@@ -15,26 +15,26 @@ pub struct GetEventPredictionMetadataInput {
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub prediction_timestamp: ::std::option::Option<::std::string::String>,
 }
-impl GetEventPredictionMetadataInput {
+impl  GetEventPredictionMetadataInput  {
     /// <p>The event ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> ::std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
-    pub fn prediction_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn prediction_timestamp(&self) -> ::std::option::Option<& str> {
         self.prediction_timestamp.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl GetEventPredictionMetadataInputBuilder {
     }
     /// <p>The event ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The event ID.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl GetEventPredictionMetadataInputBuilder {
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl GetEventPredictionMetadataInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl GetEventPredictionMetadataInputBuilder {
     }
     /// <p>The detector version ID.</p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_version_id = input;
-        self
+        self.detector_version_id = input; self
     }
     /// <p>The detector version ID.</p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl GetEventPredictionMetadataInputBuilder {
     /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn set_prediction_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prediction_timestamp = input;
-        self
+        self.prediction_timestamp = input; self
     }
     /// <p>The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
@@ -135,18 +130,21 @@ impl GetEventPredictionMetadataInputBuilder {
         &self.prediction_timestamp
     }
     /// Consumes the builder and constructs a [`GetEventPredictionMetadataInput`](crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput {
-            event_id: self.event_id,
-            event_type_name: self.event_type_name,
-            detector_id: self.detector_id,
-            detector_version_id: self.detector_version_id,
-            prediction_timestamp: self.prediction_timestamp,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput {
+                event_id: self.event_id
+                ,
+                event_type_name: self.event_type_name
+                ,
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                prediction_timestamp: self.prediction_timestamp
+                ,
+            }
+        )
     }
 }
+

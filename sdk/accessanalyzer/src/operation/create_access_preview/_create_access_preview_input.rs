@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPreviewInput {
+pub struct CreateAccessPreviewInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
+    pub configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateAccessPreviewInput {
+impl  CreateAccessPreviewInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> ::std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
+    pub fn configurations(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Configuration>> {
         self.configurations.as_ref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -36,7 +36,7 @@ impl CreateAccessPreviewInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
+    pub(crate) configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPreviewInputBuilder {
@@ -48,8 +48,7 @@ impl CreateAccessPreviewInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,20 +61,16 @@ impl CreateAccessPreviewInputBuilder {
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
     pub fn configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.configurations.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.configurations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.configurations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
-    ) -> Self {
-        self.configurations = input;
-        self
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>>) -> Self {
+        self.configurations = input; self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>A client token.</p>
@@ -85,22 +80,24 @@ impl CreateAccessPreviewInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewInput {
-            analyzer_arn: self.analyzer_arn,
-            configurations: self.configurations,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_preview::CreateAccessPreviewInput {
+                analyzer_arn: self.analyzer_arn
+                ,
+                configurations: self.configurations
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

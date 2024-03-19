@@ -220,3 +220,4 @@ pub fn de_route(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     }
     Ok(builder.build())
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDefaultAutoScalingConfigurationInput {
+pub struct UpdateDefaultAutoScalingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to set as the default.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is set as the default.</p>
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDefaultAutoScalingConfigurationInput {
+impl  UpdateDefaultAutoScalingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to set as the default.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is set as the default.</p>
-    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl UpdateDefaultAutoScalingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to set as the default.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is set as the default.</p>
     pub fn set_auto_scaling_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_configuration_arn = input;
-        self
+        self.auto_scaling_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to set as the default.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is set as the default.</p>
@@ -47,16 +46,13 @@ impl UpdateDefaultAutoScalingConfigurationInputBuilder {
         &self.auto_scaling_configuration_arn
     }
     /// Consumes the builder and constructs a [`UpdateDefaultAutoScalingConfigurationInput`](crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationInput {
-                auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
-            },
+                auto_scaling_configuration_arn: self.auto_scaling_configuration_arn
+                ,
+            }
         )
     }
 }
+

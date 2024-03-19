@@ -26,11 +26,7 @@ impl VirtualGatewayConnectionPool {
     /// Tries to convert the enum instance into [`Grpc`](crate::types::VirtualGatewayConnectionPool::Grpc), extracting the inner [`VirtualGatewayGrpcConnectionPool`](crate::types::VirtualGatewayGrpcConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(&self) -> ::std::result::Result<&crate::types::VirtualGatewayGrpcConnectionPool, &Self> {
-        if let VirtualGatewayConnectionPool::Grpc(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualGatewayConnectionPool::Grpc(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Grpc`](crate::types::VirtualGatewayConnectionPool::Grpc).
     pub fn is_grpc(&self) -> bool {
@@ -39,11 +35,7 @@ impl VirtualGatewayConnectionPool {
     /// Tries to convert the enum instance into [`Http`](crate::types::VirtualGatewayConnectionPool::Http), extracting the inner [`VirtualGatewayHttpConnectionPool`](crate::types::VirtualGatewayHttpConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(&self) -> ::std::result::Result<&crate::types::VirtualGatewayHttpConnectionPool, &Self> {
-        if let VirtualGatewayConnectionPool::Http(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualGatewayConnectionPool::Http(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Http`](crate::types::VirtualGatewayConnectionPool::Http).
     pub fn is_http(&self) -> bool {
@@ -52,11 +44,7 @@ impl VirtualGatewayConnectionPool {
     /// Tries to convert the enum instance into [`Http2`](crate::types::VirtualGatewayConnectionPool::Http2), extracting the inner [`VirtualGatewayHttp2ConnectionPool`](crate::types::VirtualGatewayHttp2ConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(&self) -> ::std::result::Result<&crate::types::VirtualGatewayHttp2ConnectionPool, &Self> {
-        if let VirtualGatewayConnectionPool::Http2(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualGatewayConnectionPool::Http2(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Http2`](crate::types::VirtualGatewayConnectionPool::Http2).
     pub fn is_http2(&self) -> bool {
@@ -67,3 +55,4 @@ impl VirtualGatewayConnectionPool {
         matches!(self, Self::Unknown)
     }
 }
+

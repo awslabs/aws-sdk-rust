@@ -3,19 +3,19 @@
 /// <p>Information required to join the call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionData {
+pub struct ConnectionData  {
     /// <p>The attendee information, including attendee ID and join token.</p>
     pub attendee: ::std::option::Option<crate::types::Attendee>,
     /// <p>A meeting created using the Amazon Chime SDK.</p>
     pub meeting: ::std::option::Option<crate::types::Meeting>,
 }
-impl ConnectionData {
+impl  ConnectionData  {
     /// <p>The attendee information, including attendee ID and join token.</p>
-    pub fn attendee(&self) -> ::std::option::Option<&crate::types::Attendee> {
+    pub fn attendee(&self) -> ::std::option::Option<& crate::types::Attendee> {
         self.attendee.as_ref()
     }
     /// <p>A meeting created using the Amazon Chime SDK.</p>
-    pub fn meeting(&self) -> ::std::option::Option<&crate::types::Meeting> {
+    pub fn meeting(&self) -> ::std::option::Option<& crate::types::Meeting> {
         self.meeting.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ConnectionDataBuilder {
     }
     /// <p>The attendee information, including attendee ID and join token.</p>
     pub fn set_attendee(mut self, input: ::std::option::Option<crate::types::Attendee>) -> Self {
-        self.attendee = input;
-        self
+        self.attendee = input; self
     }
     /// <p>The attendee information, including attendee ID and join token.</p>
     pub fn get_attendee(&self) -> &::std::option::Option<crate::types::Attendee> {
@@ -55,8 +54,7 @@ impl ConnectionDataBuilder {
     }
     /// <p>A meeting created using the Amazon Chime SDK.</p>
     pub fn set_meeting(mut self, input: ::std::option::Option<crate::types::Meeting>) -> Self {
-        self.meeting = input;
-        self
+        self.meeting = input; self
     }
     /// <p>A meeting created using the Amazon Chime SDK.</p>
     pub fn get_meeting(&self) -> &::std::option::Option<crate::types::Meeting> {
@@ -65,8 +63,11 @@ impl ConnectionDataBuilder {
     /// Consumes the builder and constructs a [`ConnectionData`](crate::types::ConnectionData).
     pub fn build(self) -> crate::types::ConnectionData {
         crate::types::ConnectionData {
-            attendee: self.attendee,
-            meeting: self.meeting,
+            attendee: self.attendee
+            ,
+            meeting: self.meeting
+            ,
         }
     }
 }
+

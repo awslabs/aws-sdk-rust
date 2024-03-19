@@ -3,15 +3,14 @@
 /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryFilter {
+pub struct InventoryFilter  {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     pub prefix: ::std::string::String,
 }
-impl InventoryFilter {
+impl  InventoryFilter  {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
-    pub fn prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.prefix.deref()
+    pub fn prefix(&self) -> & str {
+        use std::ops::Deref; self.prefix.deref()
     }
 }
 impl InventoryFilter {
@@ -36,8 +35,7 @@ impl InventoryFilterBuilder {
     }
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl InventoryFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`prefix`](crate::types::builders::InventoryFilterBuilder::prefix)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryFilter {
-            prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "prefix",
-                    "prefix was not specified but it is required when building InventoryFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryFilter {
+                prefix: self.prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("prefix", "prefix was not specified but it is required when building InventoryFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

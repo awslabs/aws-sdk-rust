@@ -3,27 +3,26 @@
 /// <p>Retrieves attributes within a facet that are associated with an object inside an <code>BatchRead</code> operation. For more information, see <code>GetObjectAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetObjectAttributes {
+pub struct BatchGetObjectAttributes  {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub attribute_names: ::std::vec::Vec<::std::string::String>,
+    pub attribute_names: ::std::vec::Vec::<::std::string::String>,
 }
-impl BatchGetObjectAttributes {
+impl  BatchGetObjectAttributes  {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> ::std::option::Option<&crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> ::std::option::Option<& crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.attribute_names.deref()
+    pub fn attribute_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.attribute_names.deref()
     }
 }
 impl BatchGetObjectAttributes {
@@ -39,7 +38,7 @@ impl BatchGetObjectAttributes {
 pub struct BatchGetObjectAttributesBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetObjectAttributesBuilder {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
@@ -50,8 +49,7 @@ impl BatchGetObjectAttributesBuilder {
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -65,8 +63,7 @@ impl BatchGetObjectAttributesBuilder {
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
-        self.schema_facet = input;
-        self
+        self.schema_facet = input; self
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
@@ -79,32 +76,35 @@ impl BatchGetObjectAttributesBuilder {
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_names
     }
     /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::types::BatchGetObjectAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_names`](crate::types::builders::BatchGetObjectAttributesBuilder::attribute_names)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetObjectAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetObjectAttributes {
-            object_reference: self.object_reference,
-            schema_facet: self.schema_facet,
-            attribute_names: self.attribute_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_names",
-                    "attribute_names was not specified but it is required when building BatchGetObjectAttributes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetObjectAttributes {
+                object_reference: self.object_reference
+                ,
+                schema_facet: self.schema_facet
+                ,
+                attribute_names: self.attribute_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_names", "attribute_names was not specified but it is required when building BatchGetObjectAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

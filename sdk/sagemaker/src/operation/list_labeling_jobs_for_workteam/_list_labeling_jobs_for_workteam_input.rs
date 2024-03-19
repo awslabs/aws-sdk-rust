@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLabelingJobsForWorkteamInput {
+pub struct ListLabelingJobsForWorkteamInput  {
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
@@ -20,9 +20,9 @@ pub struct ListLabelingJobsForWorkteamInput {
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListLabelingJobsForWorkteamInput {
+impl  ListLabelingJobsForWorkteamInput  {
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
-    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<& str> {
         self.workteam_arn.as_deref()
     }
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
@@ -30,27 +30,27 @@ impl ListLabelingJobsForWorkteamInput {
         self.max_results
     }
     /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    pub fn job_reference_code_contains(&self) -> ::std::option::Option<&str> {
+    pub fn job_reference_code_contains(&self) -> ::std::option::Option<& str> {
         self.job_reference_code_contains.as_deref()
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListLabelingJobsForWorkteamSortByOptions> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ListLabelingJobsForWorkteamSortByOptions> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
     pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_arn = input;
-        self
+        self.workteam_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
     pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -111,8 +109,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +135,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +148,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
     pub fn set_job_reference_code_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_reference_code_contains = input;
-        self
+        self.job_reference_code_contains = input; self
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
     pub fn get_job_reference_code_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions> {
@@ -181,29 +174,34 @@ impl ListLabelingJobsForWorkteamInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListLabelingJobsForWorkteamInput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput {
-            workteam_arn: self.workteam_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            job_reference_code_contains: self.job_reference_code_contains,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput {
+                workteam_arn: self.workteam_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                job_reference_code_contains: self.job_reference_code_contains
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

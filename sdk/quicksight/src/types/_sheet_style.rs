@@ -3,19 +3,19 @@
 /// <p>The theme display options for sheets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SheetStyle {
+pub struct SheetStyle  {
     /// <p>The display options for tiles.</p>
     pub tile: ::std::option::Option<crate::types::TileStyle>,
     /// <p>The layout options for tiles.</p>
     pub tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
 }
-impl SheetStyle {
+impl  SheetStyle  {
     /// <p>The display options for tiles.</p>
-    pub fn tile(&self) -> ::std::option::Option<&crate::types::TileStyle> {
+    pub fn tile(&self) -> ::std::option::Option<& crate::types::TileStyle> {
         self.tile.as_ref()
     }
     /// <p>The layout options for tiles.</p>
-    pub fn tile_layout(&self) -> ::std::option::Option<&crate::types::TileLayoutStyle> {
+    pub fn tile_layout(&self) -> ::std::option::Option<& crate::types::TileLayoutStyle> {
         self.tile_layout.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SheetStyleBuilder {
     }
     /// <p>The display options for tiles.</p>
     pub fn set_tile(mut self, input: ::std::option::Option<crate::types::TileStyle>) -> Self {
-        self.tile = input;
-        self
+        self.tile = input; self
     }
     /// <p>The display options for tiles.</p>
     pub fn get_tile(&self) -> &::std::option::Option<crate::types::TileStyle> {
@@ -55,8 +54,7 @@ impl SheetStyleBuilder {
     }
     /// <p>The layout options for tiles.</p>
     pub fn set_tile_layout(mut self, input: ::std::option::Option<crate::types::TileLayoutStyle>) -> Self {
-        self.tile_layout = input;
-        self
+        self.tile_layout = input; self
     }
     /// <p>The layout options for tiles.</p>
     pub fn get_tile_layout(&self) -> &::std::option::Option<crate::types::TileLayoutStyle> {
@@ -65,8 +63,11 @@ impl SheetStyleBuilder {
     /// Consumes the builder and constructs a [`SheetStyle`](crate::types::SheetStyle).
     pub fn build(self) -> crate::types::SheetStyle {
         crate::types::SheetStyle {
-            tile: self.tile,
-            tile_layout: self.tile_layout,
+            tile: self.tile
+            ,
+            tile_layout: self.tile_layout
+            ,
         }
     }
 }
+

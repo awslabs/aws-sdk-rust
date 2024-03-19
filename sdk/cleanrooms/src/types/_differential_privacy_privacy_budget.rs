@@ -3,17 +3,16 @@
 /// <p>Specifies the configured epsilon value and the utility in terms of total aggregations, as well as the remaining aggregations available.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacyPrivacyBudget {
+pub struct DifferentialPrivacyPrivacyBudget  {
     /// <p>This information includes the configured epsilon value and the utility in terms of total aggregations, as well as the remaining aggregations.</p>
-    pub aggregations: ::std::vec::Vec<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>,
+    pub aggregations: ::std::vec::Vec::<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>,
     /// <p>The epsilon value that you configured.</p>
     pub epsilon: i32,
 }
-impl DifferentialPrivacyPrivacyBudget {
+impl  DifferentialPrivacyPrivacyBudget  {
     /// <p>This information includes the configured epsilon value and the utility in terms of total aggregations, as well as the remaining aggregations.</p>
-    pub fn aggregations(&self) -> &[crate::types::DifferentialPrivacyPrivacyBudgetAggregation] {
-        use std::ops::Deref;
-        self.aggregations.deref()
+    pub fn aggregations(&self) -> & [crate::types::DifferentialPrivacyPrivacyBudgetAggregation] {
+        use std::ops::Deref; self.aggregations.deref()
     }
     /// <p>The epsilon value that you configured.</p>
     pub fn epsilon(&self) -> i32 {
@@ -31,7 +30,7 @@ impl DifferentialPrivacyPrivacyBudget {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DifferentialPrivacyPrivacyBudgetBuilder {
-    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>>,
+    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec::<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>>,
     pub(crate) epsilon: ::std::option::Option<i32>,
 }
 impl DifferentialPrivacyPrivacyBudgetBuilder {
@@ -42,20 +41,16 @@ impl DifferentialPrivacyPrivacyBudgetBuilder {
     /// <p>This information includes the configured epsilon value and the utility in terms of total aggregations, as well as the remaining aggregations.</p>
     pub fn aggregations(mut self, input: crate::types::DifferentialPrivacyPrivacyBudgetAggregation) -> Self {
         let mut v = self.aggregations.unwrap_or_default();
-        v.push(input);
-        self.aggregations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This information includes the configured epsilon value and the utility in terms of total aggregations, as well as the remaining aggregations.</p>
-    pub fn set_aggregations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>>,
-    ) -> Self {
-        self.aggregations = input;
-        self
+    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>>) -> Self {
+        self.aggregations = input; self
     }
     /// <p>This information includes the configured epsilon value and the utility in terms of total aggregations, as well as the remaining aggregations.</p>
-    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>> {
+    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>> {
         &self.aggregations
     }
     /// <p>The epsilon value that you configured.</p>
@@ -66,8 +61,7 @@ impl DifferentialPrivacyPrivacyBudgetBuilder {
     }
     /// <p>The epsilon value that you configured.</p>
     pub fn set_epsilon(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.epsilon = input;
-        self
+        self.epsilon = input; self
     }
     /// <p>The epsilon value that you configured.</p>
     pub fn get_epsilon(&self) -> &::std::option::Option<i32> {
@@ -78,19 +72,20 @@ impl DifferentialPrivacyPrivacyBudgetBuilder {
     /// - [`aggregations`](crate::types::builders::DifferentialPrivacyPrivacyBudgetBuilder::aggregations)
     /// - [`epsilon`](crate::types::builders::DifferentialPrivacyPrivacyBudgetBuilder::epsilon)
     pub fn build(self) -> ::std::result::Result<crate::types::DifferentialPrivacyPrivacyBudget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DifferentialPrivacyPrivacyBudget {
-            aggregations: self.aggregations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregations",
-                    "aggregations was not specified but it is required when building DifferentialPrivacyPrivacyBudget",
-                )
-            })?,
-            epsilon: self.epsilon.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "epsilon",
-                    "epsilon was not specified but it is required when building DifferentialPrivacyPrivacyBudget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DifferentialPrivacyPrivacyBudget {
+                aggregations: self.aggregations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregations", "aggregations was not specified but it is required when building DifferentialPrivacyPrivacyBudget")
+                    )?
+                ,
+                epsilon: self.epsilon
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("epsilon", "epsilon was not specified but it is required when building DifferentialPrivacyPrivacyBudget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

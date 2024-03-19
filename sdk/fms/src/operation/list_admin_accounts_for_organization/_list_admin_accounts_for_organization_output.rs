@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAdminAccountsForOrganizationOutput {
+pub struct ListAdminAccountsForOrganizationOutput  {
     /// <p>A list of Firewall Manager administrator accounts within the organization that were onboarded as administrators by <code>AssociateAdminAccount</code> or <code>PutAdminAccount</code>.</p>
-    pub admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccountSummary>>,
+    pub admin_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::AdminAccountSummary>>,
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAdminAccountsForOrganizationOutput {
+impl  ListAdminAccountsForOrganizationOutput  {
     /// <p>A list of Firewall Manager administrator accounts within the organization that were onboarded as administrators by <code>AssociateAdminAccount</code> or <code>PutAdminAccount</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_accounts.is_none()`.
-    pub fn admin_accounts(&self) -> &[crate::types::AdminAccountSummary] {
-        self.admin_accounts.as_deref().unwrap_or_default()
+    pub fn admin_accounts(&self) -> & [crate::types::AdminAccountSummary] {
+        self.admin_accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAdminAccountsForOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAdminAccountsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListAdminAccountsForOrganizationOutput`](crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationOutput).
     pub fn builder() -> crate::operation::list_admin_accounts_for_organization::builders::ListAdminAccountsForOrganizationOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAdminAccountsForOrganizationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAdminAccountsForOrganizationOutputBuilder {
-    pub(crate) admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccountSummary>>,
+    pub(crate) admin_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::AdminAccountSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAdminAccountsForOrganizationOutputBuilder {
     /// <p>A list of Firewall Manager administrator accounts within the organization that were onboarded as administrators by <code>AssociateAdminAccount</code> or <code>PutAdminAccount</code>.</p>
     pub fn admin_accounts(mut self, input: crate::types::AdminAccountSummary) -> Self {
         let mut v = self.admin_accounts.unwrap_or_default();
-        v.push(input);
-        self.admin_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.admin_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Firewall Manager administrator accounts within the organization that were onboarded as administrators by <code>AssociateAdminAccount</code> or <code>PutAdminAccount</code>.</p>
-    pub fn set_admin_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccountSummary>>) -> Self {
-        self.admin_accounts = input;
-        self
+    pub fn set_admin_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdminAccountSummary>>) -> Self {
+        self.admin_accounts = input; self
     }
     /// <p>A list of Firewall Manager administrator accounts within the organization that were onboarded as administrators by <code>AssociateAdminAccount</code> or <code>PutAdminAccount</code>.</p>
-    pub fn get_admin_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdminAccountSummary>> {
+    pub fn get_admin_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdminAccountSummary>> {
         &self.admin_accounts
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -69,28 +69,30 @@ impl ListAdminAccountsForOrganizationOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAdminAccountsForOrganizationOutput`](crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationOutput).
     pub fn build(self) -> crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationOutput {
         crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationOutput {
-            admin_accounts: self.admin_accounts,
-            next_token: self.next_token,
+            admin_accounts: self.admin_accounts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

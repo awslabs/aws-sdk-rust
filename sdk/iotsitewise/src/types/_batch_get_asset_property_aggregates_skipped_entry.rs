@@ -3,7 +3,7 @@
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
+pub struct BatchGetAssetPropertyAggregatesSkippedEntry  {
     /// <p>The ID of the entry.</p>
     pub entry_id: ::std::string::String,
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
@@ -11,18 +11,17 @@ pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
     /// <p>The error information, such as the error code and the timestamp.</p>
     pub error_info: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>,
 }
-impl BatchGetAssetPropertyAggregatesSkippedEntry {
+impl  BatchGetAssetPropertyAggregatesSkippedEntry  {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-    pub fn completion_status(&self) -> &crate::types::BatchEntryCompletionStatus {
+    pub fn completion_status(&self) -> & crate::types::BatchEntryCompletionStatus {
         &self.completion_status
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyAggregatesErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<& crate::types::BatchGetAssetPropertyAggregatesErrorInfo> {
         self.error_info.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The ID of the entry.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
     pub fn set_completion_status(mut self, input: ::std::option::Option<crate::types::BatchEntryCompletionStatus>) -> Self {
-        self.completion_status = input;
-        self
+        self.completion_status = input; self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
     pub fn get_completion_status(&self) -> &::std::option::Option<crate::types::BatchEntryCompletionStatus> {
@@ -79,8 +76,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>) -> Self {
-        self.error_info = input;
-        self
+        self.error_info = input; self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
     pub fn get_error_info(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo> {
@@ -90,23 +86,23 @@ impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyAggregatesSkippedEntryBuilder::entry_id)
     /// - [`completion_status`](crate::types::builders::BatchGetAssetPropertyAggregatesSkippedEntryBuilder::completion_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesSkippedEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyAggregatesSkippedEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchGetAssetPropertyAggregatesSkippedEntry",
-                )
-            })?,
-            completion_status: self.completion_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "completion_status",
-                    "completion_status was not specified but it is required when building BatchGetAssetPropertyAggregatesSkippedEntry",
-                )
-            })?,
-            error_info: self.error_info,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesSkippedEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchGetAssetPropertyAggregatesSkippedEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchGetAssetPropertyAggregatesSkippedEntry")
+                    )?
+                ,
+                completion_status: self.completion_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("completion_status", "completion_status was not specified but it is required when building BatchGetAssetPropertyAggregatesSkippedEntry")
+                    )?
+                ,
+                error_info: self.error_info
+                ,
+            }
+        )
     }
 }
+

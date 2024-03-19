@@ -3,7 +3,7 @@
 /// <p>The association of a datashare from a producer account with a data consumer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataShareAssociation {
+pub struct DataShareAssociation  {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     pub consumer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the datashare that is associated.</p>
@@ -19,25 +19,25 @@ pub struct DataShareAssociation {
     /// <p>Specifies whether write operations were allowed during data share association.</p>
     pub consumer_accepted_writes: ::std::option::Option<bool>,
 }
-impl DataShareAssociation {
+impl  DataShareAssociation  {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_identifier(&self) -> ::std::option::Option<& str> {
         self.consumer_identifier.as_deref()
     }
     /// <p>The status of the datashare that is associated.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataShareStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_region(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_region(&self) -> ::std::option::Option<& str> {
         self.consumer_region.as_deref()
     }
     /// <p>The creation date of the datashare that is associated.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The status change data of the datashare that is associated.</p>
-    pub fn status_change_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn status_change_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.status_change_date.as_ref()
     }
     /// <p>Specifies whether write operations were allowed during data share authorization.</p>
@@ -76,8 +76,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     pub fn set_consumer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_identifier = input;
-        self
+        self.consumer_identifier = input; self
     }
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>The status of the datashare that is associated.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataShareStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the datashare that is associated.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataShareStatus> {
@@ -104,8 +102,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
     pub fn set_consumer_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_region = input;
-        self
+        self.consumer_region = input; self
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
     pub fn get_consumer_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>The creation date of the datashare that is associated.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The creation date of the datashare that is associated.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>The status change data of the datashare that is associated.</p>
     pub fn set_status_change_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.status_change_date = input;
-        self
+        self.status_change_date = input; self
     }
     /// <p>The status change data of the datashare that is associated.</p>
     pub fn get_status_change_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>Specifies whether write operations were allowed during data share authorization.</p>
     pub fn set_producer_allowed_writes(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.producer_allowed_writes = input;
-        self
+        self.producer_allowed_writes = input; self
     }
     /// <p>Specifies whether write operations were allowed during data share authorization.</p>
     pub fn get_producer_allowed_writes(&self) -> &::std::option::Option<bool> {
@@ -160,8 +154,7 @@ impl DataShareAssociationBuilder {
     }
     /// <p>Specifies whether write operations were allowed during data share association.</p>
     pub fn set_consumer_accepted_writes(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.consumer_accepted_writes = input;
-        self
+        self.consumer_accepted_writes = input; self
     }
     /// <p>Specifies whether write operations were allowed during data share association.</p>
     pub fn get_consumer_accepted_writes(&self) -> &::std::option::Option<bool> {
@@ -170,13 +163,21 @@ impl DataShareAssociationBuilder {
     /// Consumes the builder and constructs a [`DataShareAssociation`](crate::types::DataShareAssociation).
     pub fn build(self) -> crate::types::DataShareAssociation {
         crate::types::DataShareAssociation {
-            consumer_identifier: self.consumer_identifier,
-            status: self.status,
-            consumer_region: self.consumer_region,
-            created_date: self.created_date,
-            status_change_date: self.status_change_date,
-            producer_allowed_writes: self.producer_allowed_writes,
-            consumer_accepted_writes: self.consumer_accepted_writes,
+            consumer_identifier: self.consumer_identifier
+            ,
+            status: self.status
+            ,
+            consumer_region: self.consumer_region
+            ,
+            created_date: self.created_date
+            ,
+            status_change_date: self.status_change_date
+            ,
+            producer_allowed_writes: self.producer_allowed_writes
+            ,
+            consumer_accepted_writes: self.consumer_accepted_writes
+            ,
         }
     }
 }
+

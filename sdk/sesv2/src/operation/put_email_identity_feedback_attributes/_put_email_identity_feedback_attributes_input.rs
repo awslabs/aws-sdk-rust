@@ -3,7 +3,7 @@
 /// <p>A request to set the attributes that control how bounce and complaint events are processed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEmailIdentityFeedbackAttributesInput {
+pub struct PutEmailIdentityFeedbackAttributesInput  {
     /// <p>The email identity.</p>
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
@@ -11,9 +11,9 @@ pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     pub email_forwarding_enabled: ::std::option::Option<bool>,
 }
-impl PutEmailIdentityFeedbackAttributesInput {
+impl  PutEmailIdentityFeedbackAttributesInput  {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> ::std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<& str> {
         self.email_identity.as_deref()
     }
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
@@ -46,8 +46,7 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
     }
     /// <p>The email identity.</p>
     pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The email identity.</p>
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     pub fn set_email_forwarding_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.email_forwarding_enabled = input;
-        self
+        self.email_forwarding_enabled = input; self
     }
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
@@ -74,17 +72,15 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
         &self.email_forwarding_enabled
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput {
-                email_identity: self.email_identity,
-                email_forwarding_enabled: self.email_forwarding_enabled,
-            },
+                email_identity: self.email_identity
+                ,
+                email_forwarding_enabled: self.email_forwarding_enabled
+                ,
+            }
         )
     }
 }
+

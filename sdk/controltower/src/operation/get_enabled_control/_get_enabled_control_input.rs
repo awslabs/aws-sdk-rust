@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnabledControlInput {
+pub struct GetEnabledControlInput  {
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetEnabledControlInput {
+impl  GetEnabledControlInput  {
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub fn enabled_control_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn enabled_control_identifier(&self) -> ::std::option::Option<& str> {
         self.enabled_control_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetEnabledControlInputBuilder {
     }
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enabled_control_identifier = input;
-        self
+        self.enabled_control_identifier = input; self
     }
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.enabled_control_identifier
     }
     /// Consumes the builder and constructs a [`GetEnabledControlInput`](crate::operation::get_enabled_control::GetEnabledControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_enabled_control::GetEnabledControlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_enabled_control::GetEnabledControlInput {
-            enabled_control_identifier: self.enabled_control_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_enabled_control::GetEnabledControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_enabled_control::GetEnabledControlInput {
+                enabled_control_identifier: self.enabled_control_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the bot parameters required for importing a bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotImportSpecification {
+pub struct BotImportSpecification  {
     /// <p>The name that Amazon Lex should use for the bot.</p>
     pub bot_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
@@ -15,23 +15,21 @@ pub struct BotImportSpecification {
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub bot_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl BotImportSpecification {
+impl  BotImportSpecification  {
     /// <p>The name that Amazon Lex should use for the bot.</p>
-    pub fn bot_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_name.deref()
+    pub fn bot_name(&self) -> & str {
+        use std::ops::Deref; self.bot_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
-    pub fn data_privacy(&self) -> ::std::option::Option<&crate::types::DataPrivacy> {
+    pub fn data_privacy(&self) -> ::std::option::Option<& crate::types::DataPrivacy> {
         self.data_privacy.as_ref()
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
@@ -41,11 +39,11 @@ impl BotImportSpecification {
         self.idle_session_ttl_in_seconds
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn bot_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn bot_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.bot_tags.as_ref()
     }
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn test_bot_alias_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn test_bot_alias_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.test_bot_alias_tags.as_ref()
     }
 }
@@ -64,8 +62,8 @@ pub struct BotImportSpecificationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
-    pub(crate) bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) bot_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl BotImportSpecificationBuilder {
     /// <p>The name that Amazon Lex should use for the bot.</p>
@@ -76,8 +74,7 @@ impl BotImportSpecificationBuilder {
     }
     /// <p>The name that Amazon Lex should use for the bot.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name that Amazon Lex should use for the bot.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl BotImportSpecificationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl BotImportSpecificationBuilder {
     }
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
     pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
-        self.data_privacy = input;
-        self
+        self.data_privacy = input; self
     }
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
     pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
@@ -124,8 +119,7 @@ impl BotImportSpecificationBuilder {
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
@@ -140,17 +134,16 @@ impl BotImportSpecificationBuilder {
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn bot_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.bot_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.bot_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.bot_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_bot_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.bot_tags = input;
-        self
+    pub fn set_bot_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.bot_tags = input; self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn get_bot_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_bot_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.bot_tags
     }
     /// Adds a key-value pair to `test_bot_alias_tags`.
@@ -158,26 +151,18 @@ impl BotImportSpecificationBuilder {
     /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
     ///
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn test_bot_alias_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_bot_alias_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.test_bot_alias_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.test_bot_alias_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.test_bot_alias_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn set_test_bot_alias_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.test_bot_alias_tags = input;
-        self
+    pub fn set_test_bot_alias_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.test_bot_alias_tags = input; self
     }
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn get_test_bot_alias_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_test_bot_alias_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.test_bot_alias_tags
     }
     /// Consumes the builder and constructs a [`BotImportSpecification`](crate::types::BotImportSpecification).
@@ -185,23 +170,28 @@ impl BotImportSpecificationBuilder {
     /// - [`bot_name`](crate::types::builders::BotImportSpecificationBuilder::bot_name)
     /// - [`role_arn`](crate::types::builders::BotImportSpecificationBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::BotImportSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotImportSpecification {
-            bot_name: self.bot_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_name",
-                    "bot_name was not specified but it is required when building BotImportSpecification",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building BotImportSpecification",
-                )
-            })?,
-            data_privacy: self.data_privacy,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-            bot_tags: self.bot_tags,
-            test_bot_alias_tags: self.test_bot_alias_tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotImportSpecification {
+                bot_name: self.bot_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_name", "bot_name was not specified but it is required when building BotImportSpecification")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building BotImportSpecification")
+                    )?
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_tags: self.bot_tags
+                ,
+                test_bot_alias_tags: self.test_bot_alias_tags
+                ,
+            }
+        )
     }
 }
+

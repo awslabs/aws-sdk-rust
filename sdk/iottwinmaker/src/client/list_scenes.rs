@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListScenes`](crate::operation::list_scenes::builders::ListScenesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace that contains the scenes.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of results to display.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scenes::builders::ListScenesFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results.</p><br>
-    /// - On success, responds with [`ListScenesOutput`](crate::operation::list_scenes::ListScenesOutput) with field(s):
+                            /// - On success, responds with [`ListScenesOutput`](crate::operation::list_scenes::ListScenesOutput) with field(s):
     ///   - [`scene_summaries(Option<Vec::<SceneSummary>>)`](crate::operation::list_scenes::ListScenesOutput::scene_summaries): <p>A list of objects that contain information about the scenes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scenes::ListScenesOutput::next_token): <p>The string that specifies the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListScenesError>`](crate::operation::list_scenes::ListScenesError)
+                            /// - On failure, responds with [`SdkError<ListScenesError>`](crate::operation::list_scenes::ListScenesError)
     pub fn list_scenes(&self) -> crate::operation::list_scenes::builders::ListScenesFluentBuilder {
-        crate::operation::list_scenes::builders::ListScenesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_scenes::builders::ListScenesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

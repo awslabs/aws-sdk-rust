@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkloadInput {
+pub struct UpdateWorkloadInput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -12,21 +12,21 @@ pub struct UpdateWorkloadInput {
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
     pub workload_configuration: ::std::option::Option<crate::types::WorkloadConfiguration>,
 }
-impl UpdateWorkloadInput {
+impl  UpdateWorkloadInput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The ID of the workload.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
-    pub fn workload_configuration(&self) -> ::std::option::Option<&crate::types::WorkloadConfiguration> {
+    pub fn workload_configuration(&self) -> ::std::option::Option<& crate::types::WorkloadConfiguration> {
         self.workload_configuration.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateWorkloadInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateWorkloadInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateWorkloadInputBuilder {
     }
     /// <p>The ID of the workload.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID of the workload.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl UpdateWorkloadInputBuilder {
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
     pub fn set_workload_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadConfiguration>) -> Self {
-        self.workload_configuration = input;
-        self
+        self.workload_configuration = input; self
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
     pub fn get_workload_configuration(&self) -> &::std::option::Option<crate::types::WorkloadConfiguration> {
         &self.workload_configuration
     }
     /// Consumes the builder and constructs a [`UpdateWorkloadInput`](crate::operation::update_workload::UpdateWorkloadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workload::UpdateWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_workload::UpdateWorkloadInput {
-            resource_group_name: self.resource_group_name,
-            component_name: self.component_name,
-            workload_id: self.workload_id,
-            workload_configuration: self.workload_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workload::UpdateWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workload::UpdateWorkloadInput {
+                resource_group_name: self.resource_group_name
+                ,
+                component_name: self.component_name
+                ,
+                workload_id: self.workload_id
+                ,
+                workload_configuration: self.workload_configuration
+                ,
+            }
+        )
     }
 }
+

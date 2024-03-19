@@ -3,7 +3,7 @@
 /// <p>Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputConfig {
+pub struct InputConfig  {
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The data inputs are <code>Framework</code> specific.</p>
@@ -171,9 +171,9 @@ pub struct InputConfig {
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
     pub framework_version: ::std::option::Option<::std::string::String>,
 }
-impl InputConfig {
+impl  InputConfig  {
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The data inputs are <code>Framework</code> specific.</p>
@@ -334,16 +334,16 @@ impl InputConfig {
     /// <p><code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn data_input_config(&self) -> ::std::option::Option<&str> {
+    pub fn data_input_config(&self) -> ::std::option::Option<& str> {
         self.data_input_config.as_deref()
     }
     /// <p>Identifies the framework in which the model was trained. For example: TENSORFLOW.</p>
-    pub fn framework(&self) -> ::std::option::Option<&crate::types::Framework> {
+    pub fn framework(&self) -> ::std::option::Option<& crate::types::Framework> {
         self.framework.as_ref()
     }
     /// <p>Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p>
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
-    pub fn framework_version(&self) -> ::std::option::Option<&str> {
+    pub fn framework_version(&self) -> ::std::option::Option<& str> {
         self.framework_version.as_deref()
     }
 }
@@ -372,8 +372,7 @@ impl InputConfigBuilder {
     }
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -700,8 +699,7 @@ impl InputConfigBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_input_config = input;
-        self
+        self.data_input_config = input; self
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The data inputs are <code>Framework</code> specific.</p>
     /// <ul>
@@ -872,8 +870,7 @@ impl InputConfigBuilder {
     }
     /// <p>Identifies the framework in which the model was trained. For example: TENSORFLOW.</p>
     pub fn set_framework(mut self, input: ::std::option::Option<crate::types::Framework>) -> Self {
-        self.framework = input;
-        self
+        self.framework = input; self
     }
     /// <p>Identifies the framework in which the model was trained. For example: TENSORFLOW.</p>
     pub fn get_framework(&self) -> &::std::option::Option<crate::types::Framework> {
@@ -888,8 +885,7 @@ impl InputConfigBuilder {
     /// <p>Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p>
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
     pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_version = input;
-        self
+        self.framework_version = input; self
     }
     /// <p>Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p>
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
@@ -899,10 +895,15 @@ impl InputConfigBuilder {
     /// Consumes the builder and constructs a [`InputConfig`](crate::types::InputConfig).
     pub fn build(self) -> crate::types::InputConfig {
         crate::types::InputConfig {
-            s3_uri: self.s3_uri,
-            data_input_config: self.data_input_config,
-            framework: self.framework,
-            framework_version: self.framework_version,
+            s3_uri: self.s3_uri
+            ,
+            data_input_config: self.data_input_config
+            ,
+            framework: self.framework
+            ,
+            framework_version: self.framework_version
+            ,
         }
     }
 }
+

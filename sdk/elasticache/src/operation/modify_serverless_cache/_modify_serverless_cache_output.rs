@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyServerlessCacheOutput {
+pub struct ModifyServerlessCacheOutput  {
     /// <p>The response for the attempt to modify the serverless cache.</p>
     pub serverless_cache: ::std::option::Option<crate::types::ServerlessCache>,
     _request_id: Option<String>,
 }
-impl ModifyServerlessCacheOutput {
+impl  ModifyServerlessCacheOutput  {
     /// <p>The response for the attempt to modify the serverless cache.</p>
-    pub fn serverless_cache(&self) -> ::std::option::Option<&crate::types::ServerlessCache> {
+    pub fn serverless_cache(&self) -> ::std::option::Option<& crate::types::ServerlessCache> {
         self.serverless_cache.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyServerlessCacheOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyServerlessCacheOutput {
     /// Creates a new builder-style object to manufacture [`ModifyServerlessCacheOutput`](crate::operation::modify_serverless_cache::ModifyServerlessCacheOutput).
     pub fn builder() -> crate::operation::modify_serverless_cache::builders::ModifyServerlessCacheOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyServerlessCacheOutputBuilder {
     }
     /// <p>The response for the attempt to modify the serverless cache.</p>
     pub fn set_serverless_cache(mut self, input: ::std::option::Option<crate::types::ServerlessCache>) -> Self {
-        self.serverless_cache = input;
-        self
+        self.serverless_cache = input; self
     }
     /// <p>The response for the attempt to modify the serverless cache.</p>
     pub fn get_serverless_cache(&self) -> &::std::option::Option<crate::types::ServerlessCache> {
         &self.serverless_cache
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyServerlessCacheOutput`](crate::operation::modify_serverless_cache::ModifyServerlessCacheOutput).
     pub fn build(self) -> crate::operation::modify_serverless_cache::ModifyServerlessCacheOutput {
         crate::operation::modify_serverless_cache::ModifyServerlessCacheOutput {
-            serverless_cache: self.serverless_cache,
+            serverless_cache: self.serverless_cache
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsInput {
+pub struct ListApplicationsInput  {
     /// <p>Applications list filters.</p>
     pub filters: ::std::option::Option<crate::types::ListApplicationsRequestFilters>,
     /// <p>Maximum results to return when listing applications.</p>
@@ -12,9 +12,9 @@ pub struct ListApplicationsInput {
     /// <p>Applications list Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListApplicationsInput {
+impl  ListApplicationsInput  {
     /// <p>Applications list filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListApplicationsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListApplicationsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum results to return when listing applications.</p>
@@ -22,11 +22,11 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>Request next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Applications list Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>Applications list filters.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListApplicationsRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Applications list filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListApplicationsRequestFilters> {
@@ -68,8 +67,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>Maximum results to return when listing applications.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum results to return when listing applications.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>Request next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Request next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,22 +93,26 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>Applications list Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Applications list Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_applications::ListApplicationsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

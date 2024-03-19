@@ -5,54 +5,50 @@ pub use crate::operation::get_network_routes::_get_network_routes_input::GetNetw
 
 impl GetNetworkRoutesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_routes::GetNetworkRoutesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_network_routes::GetNetworkRoutesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_network_routes();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_network_routes::GetNetworkRoutesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_network_routes::GetNetworkRoutesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_network_routes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetNetworkRoutes`.
-///
+/// 
 /// <p>Gets the network routes of the specified global network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNetworkRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder,
+                    inner: crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_network_routes::GetNetworkRoutesOutput,
-        crate::operation::get_network_routes::GetNetworkRoutesError,
-    > for GetNetworkRoutesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_network_routes::GetNetworkRoutesOutput,
-            crate::operation::get_network_routes::GetNetworkRoutesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_network_routes::GetNetworkRoutesOutput,
+                    crate::operation::get_network_routes::GetNetworkRoutesError,
+                > for GetNetworkRoutesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_network_routes::GetNetworkRoutesOutput,
+                        crate::operation::get_network_routes::GetNetworkRoutesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetNetworkRoutesFluentBuilder {
     /// Creates a new `GetNetworkRoutes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl GetNetworkRoutesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_routes::GetNetworkRoutesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_network_routes::GetNetworkRoutesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_network_routes::GetNetworkRoutes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_network_routes::GetNetworkRoutes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_network_routes::GetNetworkRoutesOutput,
-        crate::operation::get_network_routes::GetNetworkRoutesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_network_routes::GetNetworkRoutesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_network_routes::GetNetworkRoutesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_network_routes::GetNetworkRoutes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_network_routes::GetNetworkRoutes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_network_routes::GetNetworkRoutesOutput, crate::operation::get_network_routes::GetNetworkRoutesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
@@ -146,12 +133,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>An exact CIDR block.</p>
-    pub fn set_exact_cidr_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_exact_cidr_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_exact_cidr_matches(input);
         self
     }
     /// <p>An exact CIDR block.</p>
-    pub fn get_exact_cidr_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exact_cidr_matches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_exact_cidr_matches()
     }
     /// Appends an item to `LongestPrefixMatches`.
@@ -164,12 +151,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    pub fn set_longest_prefix_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_longest_prefix_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_longest_prefix_matches(input);
         self
     }
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    pub fn get_longest_prefix_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_longest_prefix_matches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_longest_prefix_matches()
     }
     /// Appends an item to `SubnetOfMatches`.
@@ -182,12 +169,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    pub fn set_subnet_of_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_subnet_of_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_of_matches(input);
         self
     }
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    pub fn get_subnet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_subnet_of_matches()
     }
     /// Appends an item to `SupernetOfMatches`.
@@ -200,12 +187,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    pub fn set_supernet_of_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_supernet_of_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supernet_of_matches(input);
         self
     }
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    pub fn get_supernet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supernet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_supernet_of_matches()
     }
     /// Appends an item to `PrefixListIds`.
@@ -218,12 +205,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>The IDs of the prefix lists.</p>
-    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_prefix_list_ids(input);
         self
     }
     /// <p>The IDs of the prefix lists.</p>
-    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_prefix_list_ids()
     }
     /// Appends an item to `States`.
@@ -236,12 +223,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>The route states.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteState>>) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
     /// <p>The route states.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteState>> {
         self.inner.get_states()
     }
     /// Appends an item to `Types`.
@@ -254,12 +241,12 @@ impl GetNetworkRoutesFluentBuilder {
         self
     }
     /// <p>The route types.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteType>>) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteType>>) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
     /// <p>The route types.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteType>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteType>> {
         self.inner.get_types()
     }
     /// Adds a key-value pair to `DestinationFilters`.
@@ -267,22 +254,18 @@ impl GetNetworkRoutesFluentBuilder {
     /// To override the contents of this collection use [`set_destination_filters`](Self::set_destination_filters).
     ///
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn destination_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn destination_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         self.inner = self.inner.destination_filters(k.into(), v);
         self
     }
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn set_destination_filters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_destination_filters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_destination_filters(input);
         self
     }
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn get_destination_filters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_destination_filters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.inner.get_destination_filters()
     }
 }
+

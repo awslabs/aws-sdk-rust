@@ -3,20 +3,19 @@
 /// <p>Filter the selection by using a condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The key that you're filtering on.</p>
     pub key: ::std::string::String,
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub condition: ::std::option::Option<crate::types::Condition>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The key that you're filtering on.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::Condition> {
         self.condition.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl FilterBuilder {
     }
     /// <p>The key that you're filtering on.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key that you're filtering on.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl FilterBuilder {
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
@@ -69,14 +66,17 @@ impl FilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::FilterBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building Filter",
-                )
-            })?,
-            condition: self.condition,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Filter")
+                    )?
+                ,
+                condition: self.condition
+                ,
+            }
+        )
     }
 }
+

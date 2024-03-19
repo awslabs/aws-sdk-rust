@@ -3,7 +3,7 @@
 /// <p>Information related to a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserData {
+pub struct UserData  {
     /// <p>The ARN of a user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The first name of a user.</p>
@@ -17,29 +17,29 @@ pub struct UserData {
     /// <p>The enrollment ARN of a user.</p>
     pub enrollment_id: ::std::option::Option<::std::string::String>,
 }
-impl UserData {
+impl  UserData  {
     /// <p>The ARN of a user.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The first name of a user.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of a user.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The email of a user.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The enrollment status of a user.</p>
-    pub fn enrollment_status(&self) -> ::std::option::Option<&crate::types::EnrollmentStatus> {
+    pub fn enrollment_status(&self) -> ::std::option::Option<& crate::types::EnrollmentStatus> {
         self.enrollment_status.as_ref()
     }
     /// <p>The enrollment ARN of a user.</p>
-    pub fn enrollment_id(&self) -> ::std::option::Option<&str> {
+    pub fn enrollment_id(&self) -> ::std::option::Option<& str> {
         self.enrollment_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UserDataBuilder {
     }
     /// <p>The ARN of a user.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The ARN of a user.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UserDataBuilder {
     }
     /// <p>The first name of a user.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name of a user.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl UserDataBuilder {
     }
     /// <p>The last name of a user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name of a user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl UserDataBuilder {
     }
     /// <p>The email of a user.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of a user.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl UserDataBuilder {
     }
     /// <p>The enrollment status of a user.</p>
     pub fn set_enrollment_status(mut self, input: ::std::option::Option<crate::types::EnrollmentStatus>) -> Self {
-        self.enrollment_status = input;
-        self
+        self.enrollment_status = input; self
     }
     /// <p>The enrollment status of a user.</p>
     pub fn get_enrollment_status(&self) -> &::std::option::Option<crate::types::EnrollmentStatus> {
@@ -139,8 +134,7 @@ impl UserDataBuilder {
     }
     /// <p>The enrollment ARN of a user.</p>
     pub fn set_enrollment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enrollment_id = input;
-        self
+        self.enrollment_id = input; self
     }
     /// <p>The enrollment ARN of a user.</p>
     pub fn get_enrollment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl UserDataBuilder {
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {
         crate::types::UserData {
-            user_arn: self.user_arn,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            email: self.email,
-            enrollment_status: self.enrollment_status,
-            enrollment_id: self.enrollment_id,
+            user_arn: self.user_arn
+            ,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
+            email: self.email
+            ,
+            enrollment_status: self.enrollment_status
+            ,
+            enrollment_id: self.enrollment_id
+            ,
         }
     }
 }
+

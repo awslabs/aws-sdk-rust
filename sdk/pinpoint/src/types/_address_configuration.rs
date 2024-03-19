@@ -3,47 +3,45 @@
 /// <p>Specifies address-based configuration settings for a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddressConfiguration {
+pub struct AddressConfiguration  {
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
     pub body_override: ::std::option::Option<::std::string::String>,
     /// <p>The channel to use when sending the message.</p>
     pub channel_type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
     pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
-    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
     pub title_override: ::std::option::Option<::std::string::String>,
 }
-impl AddressConfiguration {
+impl  AddressConfiguration  {
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
-    pub fn body_override(&self) -> ::std::option::Option<&str> {
+    pub fn body_override(&self) -> ::std::option::Option<& str> {
         self.body_override.as_deref()
     }
     /// <p>The channel to use when sending the message.</p>
-    pub fn channel_type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
+    pub fn channel_type(&self) -> ::std::option::Option<& crate::types::ChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn context(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.context.as_ref()
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
-    pub fn raw_content(&self) -> ::std::option::Option<&str> {
+    pub fn raw_content(&self) -> ::std::option::Option<& str> {
         self.raw_content.as_deref()
     }
     /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
-    pub fn substitutions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn substitutions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
-    pub fn title_override(&self) -> ::std::option::Option<&str> {
+    pub fn title_override(&self) -> ::std::option::Option<& str> {
         self.title_override.as_deref()
     }
 }
@@ -60,9 +58,9 @@ impl AddressConfiguration {
 pub struct AddressConfigurationBuilder {
     pub(crate) body_override: ::std::option::Option<::std::string::String>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
-    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) raw_content: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) title_override: ::std::option::Option<::std::string::String>,
 }
 impl AddressConfigurationBuilder {
@@ -73,8 +71,7 @@ impl AddressConfigurationBuilder {
     }
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
     pub fn set_body_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body_override = input;
-        self
+        self.body_override = input; self
     }
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
     pub fn get_body_override(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl AddressConfigurationBuilder {
     }
     /// <p>The channel to use when sending the message.</p>
     pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.channel_type = input;
-        self
+        self.channel_type = input; self
     }
     /// <p>The channel to use when sending the message.</p>
     pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
@@ -102,19 +98,18 @@ impl AddressConfigurationBuilder {
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
     pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.context = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.context = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.context = input;
-        self
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input; self
     }
     /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.context
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
@@ -124,8 +119,7 @@ impl AddressConfigurationBuilder {
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
     pub fn set_raw_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_content = input;
-        self
+        self.raw_content = input; self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
     pub fn get_raw_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,24 +130,18 @@ impl AddressConfigurationBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
-    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.substitutions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.substitutions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
-    pub fn set_substitutions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.substitutions = input;
-        self
+    pub fn set_substitutions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.substitutions = input; self
     }
     /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
-    pub fn get_substitutions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_substitutions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
@@ -163,8 +151,7 @@ impl AddressConfigurationBuilder {
     }
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
     pub fn set_title_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title_override = input;
-        self
+        self.title_override = input; self
     }
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
     pub fn get_title_override(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,12 +160,19 @@ impl AddressConfigurationBuilder {
     /// Consumes the builder and constructs a [`AddressConfiguration`](crate::types::AddressConfiguration).
     pub fn build(self) -> crate::types::AddressConfiguration {
         crate::types::AddressConfiguration {
-            body_override: self.body_override,
-            channel_type: self.channel_type,
-            context: self.context,
-            raw_content: self.raw_content,
-            substitutions: self.substitutions,
-            title_override: self.title_override,
+            body_override: self.body_override
+            ,
+            channel_type: self.channel_type
+            ,
+            context: self.context
+            ,
+            raw_content: self.raw_content
+            ,
+            substitutions: self.substitutions
+            ,
+            title_override: self.title_override
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BucketTranscriptSource {
+pub struct S3BucketTranscriptSource  {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
     pub s3_bucket_name: ::std::string::String,
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
@@ -15,26 +15,25 @@ pub struct S3BucketTranscriptSource {
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl S3BucketTranscriptSource {
+impl  S3BucketTranscriptSource  {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn s3_bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket_name.deref()
+    pub fn s3_bucket_name(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket_name.deref()
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-    pub fn path_format(&self) -> ::std::option::Option<&crate::types::PathFormat> {
+    pub fn path_format(&self) -> ::std::option::Option<& crate::types::PathFormat> {
         self.path_format.as_ref()
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
-    pub fn transcript_format(&self) -> &crate::types::TranscriptFormat {
+    pub fn transcript_format(&self) -> & crate::types::TranscriptFormat {
         &self.transcript_format
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
-    pub fn transcript_filter(&self) -> ::std::option::Option<&crate::types::TranscriptFilter> {
+    pub fn transcript_filter(&self) -> ::std::option::Option<& crate::types::TranscriptFilter> {
         self.transcript_filter.as_ref()
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl S3BucketTranscriptSourceBuilder {
     }
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl S3BucketTranscriptSourceBuilder {
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
     pub fn set_path_format(mut self, input: ::std::option::Option<crate::types::PathFormat>) -> Self {
-        self.path_format = input;
-        self
+        self.path_format = input; self
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
     pub fn get_path_format(&self) -> &::std::option::Option<crate::types::PathFormat> {
@@ -93,8 +90,7 @@ impl S3BucketTranscriptSourceBuilder {
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
     pub fn set_transcript_format(mut self, input: ::std::option::Option<crate::types::TranscriptFormat>) -> Self {
-        self.transcript_format = input;
-        self
+        self.transcript_format = input; self
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
     pub fn get_transcript_format(&self) -> &::std::option::Option<crate::types::TranscriptFormat> {
@@ -107,8 +103,7 @@ impl S3BucketTranscriptSourceBuilder {
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
     pub fn set_transcript_filter(mut self, input: ::std::option::Option<crate::types::TranscriptFilter>) -> Self {
-        self.transcript_filter = input;
-        self
+        self.transcript_filter = input; self
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
     pub fn get_transcript_filter(&self) -> &::std::option::Option<crate::types::TranscriptFilter> {
@@ -121,8 +116,7 @@ impl S3BucketTranscriptSourceBuilder {
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,22 +127,26 @@ impl S3BucketTranscriptSourceBuilder {
     /// - [`s3_bucket_name`](crate::types::builders::S3BucketTranscriptSourceBuilder::s3_bucket_name)
     /// - [`transcript_format`](crate::types::builders::S3BucketTranscriptSourceBuilder::transcript_format)
     pub fn build(self) -> ::std::result::Result<crate::types::S3BucketTranscriptSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3BucketTranscriptSource {
-            s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket_name",
-                    "s3_bucket_name was not specified but it is required when building S3BucketTranscriptSource",
-                )
-            })?,
-            path_format: self.path_format,
-            transcript_format: self.transcript_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transcript_format",
-                    "transcript_format was not specified but it is required when building S3BucketTranscriptSource",
-                )
-            })?,
-            transcript_filter: self.transcript_filter,
-            kms_key_arn: self.kms_key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3BucketTranscriptSource {
+                s3_bucket_name: self.s3_bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket_name", "s3_bucket_name was not specified but it is required when building S3BucketTranscriptSource")
+                    )?
+                ,
+                path_format: self.path_format
+                ,
+                transcript_format: self.transcript_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transcript_format", "transcript_format was not specified but it is required when building S3BucketTranscriptSource")
+                    )?
+                ,
+                transcript_filter: self.transcript_filter
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+            }
+        )
     }
 }
+

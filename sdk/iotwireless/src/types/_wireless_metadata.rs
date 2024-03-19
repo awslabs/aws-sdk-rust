@@ -3,19 +3,19 @@
 /// <p>WirelessMetadata object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WirelessMetadata {
+pub struct WirelessMetadata  {
     /// <p>LoRaWAN device info.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkSendDataToDevice>,
 }
-impl WirelessMetadata {
+impl  WirelessMetadata  {
     /// <p>LoRaWAN device info.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanSendDataToDevice> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanSendDataToDevice> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkSendDataToDevice> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkSendDataToDevice> {
         self.sidewalk.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl WirelessMetadataBuilder {
     }
     /// <p>LoRaWAN device info.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>LoRaWAN device info.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanSendDataToDevice> {
@@ -55,8 +54,7 @@ impl WirelessMetadataBuilder {
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkSendDataToDevice>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkSendDataToDevice> {
@@ -65,8 +63,11 @@ impl WirelessMetadataBuilder {
     /// Consumes the builder and constructs a [`WirelessMetadata`](crate::types::WirelessMetadata).
     pub fn build(self) -> crate::types::WirelessMetadata {
         crate::types::WirelessMetadata {
-            lo_ra_wan: self.lo_ra_wan,
-            sidewalk: self.sidewalk,
+            lo_ra_wan: self.lo_ra_wan
+            ,
+            sidewalk: self.sidewalk
+            ,
         }
     }
 }
+

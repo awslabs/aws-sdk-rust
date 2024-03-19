@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSiteAddressOutput {
+pub struct GetSiteAddressOutput  {
     /// <p>The ID of the site.</p>
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the address you receive.</p>
@@ -11,25 +11,25 @@ pub struct GetSiteAddressOutput {
     pub address: ::std::option::Option<crate::types::Address>,
     _request_id: Option<String>,
 }
-impl GetSiteAddressOutput {
+impl  GetSiteAddressOutput  {
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> ::std::option::Option<&str> {
+    pub fn site_id(&self) -> ::std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The type of the address you receive.</p>
-    pub fn address_type(&self) -> ::std::option::Option<&crate::types::AddressType> {
+    pub fn address_type(&self) -> ::std::option::Option<& crate::types::AddressType> {
         self.address_type.as_ref()
     }
     /// <p>Information about the address.</p>
-    pub fn address(&self) -> ::std::option::Option<&crate::types::Address> {
+    pub fn address(&self) -> ::std::option::Option<& crate::types::Address> {
         self.address.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSiteAddressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSiteAddressOutput {
     /// Creates a new builder-style object to manufacture [`GetSiteAddressOutput`](crate::operation::get_site_address::GetSiteAddressOutput).
     pub fn builder() -> crate::operation::get_site_address::builders::GetSiteAddressOutputBuilder {
@@ -54,8 +54,7 @@ impl GetSiteAddressOutputBuilder {
     }
     /// <p>The ID of the site.</p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
     }
     /// <p>The ID of the site.</p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetSiteAddressOutputBuilder {
     }
     /// <p>The type of the address you receive.</p>
     pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
-        self.address_type = input;
-        self
+        self.address_type = input; self
     }
     /// <p>The type of the address you receive.</p>
     pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
@@ -82,29 +80,32 @@ impl GetSiteAddressOutputBuilder {
     }
     /// <p>Information about the address.</p>
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>Information about the address.</p>
     pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
         &self.address
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSiteAddressOutput`](crate::operation::get_site_address::GetSiteAddressOutput).
     pub fn build(self) -> crate::operation::get_site_address::GetSiteAddressOutput {
         crate::operation::get_site_address::GetSiteAddressOutput {
-            site_id: self.site_id,
-            address_type: self.address_type,
-            address: self.address,
+            site_id: self.site_id
+            ,
+            address_type: self.address_type
+            ,
+            address: self.address
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

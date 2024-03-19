@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBotVersionOutput {
+pub struct CreateBotVersionOutput  {
     /// <p>The bot identifier specified in the request.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the version specified in the request.</p>
@@ -10,47 +10,44 @@ pub struct CreateBotVersionOutput {
     /// <p>The version number assigned to the version.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The source versions used for each locale in the new version.</p>
-    pub bot_version_locale_specification:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
+    pub bot_version_locale_specification: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BotVersionLocaleDetails>>,
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     /// <p>A timestamp of the date and time that the version was created.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateBotVersionOutput {
+impl  CreateBotVersionOutput  {
     /// <p>The bot identifier specified in the request.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The description of the version specified in the request.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version number assigned to the version.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The source versions used for each locale in the new version.</p>
-    pub fn bot_version_locale_specification(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>> {
+    pub fn bot_version_locale_specification(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::BotVersionLocaleDetails>> {
         self.bot_version_locale_specification.as_ref()
     }
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
-    pub fn bot_status(&self) -> ::std::option::Option<&crate::types::BotStatus> {
+    pub fn bot_status(&self) -> ::std::option::Option<& crate::types::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBotVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotVersionOutput`](crate::operation::create_bot_version::CreateBotVersionOutput).
     pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionOutputBuilder {
@@ -65,8 +62,7 @@ pub struct CreateBotVersionOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_version_locale_specification:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
+    pub(crate) bot_version_locale_specification: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BotVersionLocaleDetails>>,
     pub(crate) bot_status: ::std::option::Option<crate::types::BotStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -79,8 +75,7 @@ impl CreateBotVersionOutputBuilder {
     }
     /// <p>The bot identifier specified in the request.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot identifier specified in the request.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +88,7 @@ impl CreateBotVersionOutputBuilder {
     }
     /// <p>The description of the version specified in the request.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the version specified in the request.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +101,7 @@ impl CreateBotVersionOutputBuilder {
     }
     /// <p>The version number assigned to the version.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version number assigned to the version.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,28 +112,18 @@ impl CreateBotVersionOutputBuilder {
     /// To override the contents of this collection use [`set_bot_version_locale_specification`](Self::set_bot_version_locale_specification).
     ///
     /// <p>The source versions used for each locale in the new version.</p>
-    pub fn bot_version_locale_specification(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::BotVersionLocaleDetails,
-    ) -> Self {
+    pub fn bot_version_locale_specification(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BotVersionLocaleDetails) -> Self {
         let mut hash_map = self.bot_version_locale_specification.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.bot_version_locale_specification = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.bot_version_locale_specification = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The source versions used for each locale in the new version.</p>
-    pub fn set_bot_version_locale_specification(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
-    ) -> Self {
-        self.bot_version_locale_specification = input;
-        self
+    pub fn set_bot_version_locale_specification(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BotVersionLocaleDetails>>) -> Self {
+        self.bot_version_locale_specification = input; self
     }
     /// <p>The source versions used for each locale in the new version.</p>
-    pub fn get_bot_version_locale_specification(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>> {
+    pub fn get_bot_version_locale_specification(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BotVersionLocaleDetails>> {
         &self.bot_version_locale_specification
     }
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
@@ -150,8 +133,7 @@ impl CreateBotVersionOutputBuilder {
     }
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
-        self.bot_status = input;
-        self
+        self.bot_status = input; self
     }
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
     pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
@@ -164,32 +146,38 @@ impl CreateBotVersionOutputBuilder {
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBotVersionOutput`](crate::operation::create_bot_version::CreateBotVersionOutput).
     pub fn build(self) -> crate::operation::create_bot_version::CreateBotVersionOutput {
         crate::operation::create_bot_version::CreateBotVersionOutput {
-            bot_id: self.bot_id,
-            description: self.description,
-            bot_version: self.bot_version,
-            bot_version_locale_specification: self.bot_version_locale_specification,
-            bot_status: self.bot_status,
-            creation_date_time: self.creation_date_time,
+            bot_id: self.bot_id
+            ,
+            description: self.description
+            ,
+            bot_version: self.bot_version
+            ,
+            bot_version_locale_specification: self.bot_version_locale_specification
+            ,
+            bot_status: self.bot_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

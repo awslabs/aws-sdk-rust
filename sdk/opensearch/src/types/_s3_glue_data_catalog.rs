@@ -3,13 +3,13 @@
 /// <p>Information about the Amazon S3 Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3GlueDataCatalog {
+pub struct S3GlueDataCatalog  {
     /// <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl S3GlueDataCatalog {
+impl  S3GlueDataCatalog  {
     /// <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl S3GlueDataCatalogBuilder {
     }
     /// <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl S3GlueDataCatalogBuilder {
     }
     /// Consumes the builder and constructs a [`S3GlueDataCatalog`](crate::types::S3GlueDataCatalog).
     pub fn build(self) -> crate::types::S3GlueDataCatalog {
-        crate::types::S3GlueDataCatalog { role_arn: self.role_arn }
+        crate::types::S3GlueDataCatalog {
+            role_arn: self.role_arn
+            ,
+        }
     }
 }
+

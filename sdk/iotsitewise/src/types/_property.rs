@@ -3,7 +3,7 @@
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Property {
+pub struct Property  {
     /// <p>The ID of the asset property.</p>
     pub id: ::std::string::String,
     /// <p>The name of the property.</p>
@@ -19,49 +19,48 @@ pub struct Property {
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
     /// <p>The structured path to the property from the root of the asset.</p>
-    pub path: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>,
+    pub path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyPathSegment>>,
     /// <p>The external ID of the asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
 }
-impl Property {
+impl  Property  {
     /// <p>The ID of the asset property.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::PropertyNotification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::PropertyNotification> {
         self.notification.as_ref()
     }
     /// <p>The property data type.</p>
-    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+    pub fn data_type(&self) -> & crate::types::PropertyDataType {
         &self.data_type
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PropertyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PropertyType> {
         self.r#type.as_ref()
     }
     /// <p>The structured path to the property from the root of the asset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path.is_none()`.
-    pub fn path(&self) -> &[crate::types::AssetPropertyPathSegment] {
-        self.path.as_deref().unwrap_or_default()
+    pub fn path(&self) -> & [crate::types::AssetPropertyPathSegment] {
+        self.path.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The external ID of the asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
@@ -83,7 +82,7 @@ pub struct PropertyBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::PropertyDataType>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PropertyType>,
-    pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>,
+    pub(crate) path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyPathSegment>>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl PropertyBuilder {
@@ -95,8 +94,7 @@ impl PropertyBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the asset property.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl PropertyBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the property.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl PropertyBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl PropertyBuilder {
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::PropertyNotification>) -> Self {
-        self.notification = input;
-        self
+        self.notification = input; self
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::PropertyNotification> {
@@ -153,8 +148,7 @@ impl PropertyBuilder {
     }
     /// <p>The property data type.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The property data type.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::PropertyDataType> {
@@ -167,8 +161,7 @@ impl PropertyBuilder {
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl PropertyBuilder {
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PropertyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PropertyType> {
@@ -195,17 +187,16 @@ impl PropertyBuilder {
     /// <p>The structured path to the property from the root of the asset.</p>
     pub fn path(mut self, input: crate::types::AssetPropertyPathSegment) -> Self {
         let mut v = self.path.unwrap_or_default();
-        v.push(input);
-        self.path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The structured path to the property from the root of the asset.</p>
-    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>) -> Self {
-        self.path = input;
-        self
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyPathSegment>>) -> Self {
+        self.path = input; self
     }
     /// <p>The structured path to the property from the root of the asset.</p>
-    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>> {
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyPathSegment>> {
         &self.path
     }
     /// <p>The external ID of the asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -215,8 +206,7 @@ impl PropertyBuilder {
     }
     /// <p>The external ID of the asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID of the asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,31 +218,37 @@ impl PropertyBuilder {
     /// - [`name`](crate::types::builders::PropertyBuilder::name)
     /// - [`data_type`](crate::types::builders::PropertyBuilder::data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Property, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Property {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Property",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Property",
-                )
-            })?,
-            alias: self.alias,
-            notification: self.notification,
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building Property",
-                )
-            })?,
-            unit: self.unit,
-            r#type: self.r#type,
-            path: self.path,
-            external_id: self.external_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Property {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Property")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Property")
+                    )?
+                ,
+                alias: self.alias
+                ,
+                notification: self.notification
+                ,
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building Property")
+                    )?
+                ,
+                unit: self.unit
+                ,
+                r#type: self.r#type
+                ,
+                path: self.path
+                ,
+                external_id: self.external_id
+                ,
+            }
+        )
     }
 }
+

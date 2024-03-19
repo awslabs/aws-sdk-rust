@@ -3,7 +3,8 @@
 /// <p>Represents the output of an <code>AttachPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAttachPolicyResponse {}
+pub struct BatchAttachPolicyResponse  {
+}
 impl BatchAttachPolicyResponse {
     /// Creates a new builder-style object to manufacture [`BatchAttachPolicyResponse`](crate::types::BatchAttachPolicyResponse).
     pub fn builder() -> crate::types::builders::BatchAttachPolicyResponseBuilder {
@@ -14,10 +15,13 @@ impl BatchAttachPolicyResponse {
 /// A builder for [`BatchAttachPolicyResponse`](crate::types::BatchAttachPolicyResponse).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct BatchAttachPolicyResponseBuilder {}
+pub struct BatchAttachPolicyResponseBuilder {
+}
 impl BatchAttachPolicyResponseBuilder {
     /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::types::BatchAttachPolicyResponse).
     pub fn build(self) -> crate::types::BatchAttachPolicyResponse {
-        crate::types::BatchAttachPolicyResponse {}
+        crate::types::BatchAttachPolicyResponse {
+        }
     }
 }
+

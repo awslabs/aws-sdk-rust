@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSmartHomeAppliancesInput {
+pub struct ListSmartHomeAppliancesInput  {
     /// <p>The room that the appliances are associated with.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
@@ -10,9 +10,9 @@ pub struct ListSmartHomeAppliancesInput {
     /// <p>The tokens used for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListSmartHomeAppliancesInput {
+impl  ListSmartHomeAppliancesInput  {
     /// <p>The room that the appliances are associated with.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
@@ -20,7 +20,7 @@ impl ListSmartHomeAppliancesInput {
         self.max_results
     }
     /// <p>The tokens used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListSmartHomeAppliancesInputBuilder {
     }
     /// <p>The room that the appliances are associated with.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The room that the appliances are associated with.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListSmartHomeAppliancesInputBuilder {
     }
     /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListSmartHomeAppliancesInputBuilder {
     }
     /// <p>The tokens used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The tokens used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSmartHomeAppliancesInput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput {
-            room_arn: self.room_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput {
+                room_arn: self.room_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detail input data for a linked repository branch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryBranchInput {
+pub struct RepositoryBranchInput  {
     /// <p>The repository provider.</p>
     pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name.</p>
@@ -11,20 +11,18 @@ pub struct RepositoryBranchInput {
     /// <p>The repository branch.</p>
     pub branch: ::std::string::String,
 }
-impl RepositoryBranchInput {
+impl  RepositoryBranchInput  {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+    pub fn provider(&self) -> & crate::types::RepositoryProvider {
         &self.provider
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> & str {
+        use std::ops::Deref; self.branch.deref()
     }
 }
 impl RepositoryBranchInput {
@@ -51,8 +49,7 @@ impl RepositoryBranchInputBuilder {
     }
     /// <p>The repository provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The repository provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
@@ -66,8 +63,7 @@ impl RepositoryBranchInputBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The repository name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl RepositoryBranchInputBuilder {
     }
     /// <p>The repository branch.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The repository branch.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl RepositoryBranchInputBuilder {
     /// - [`name`](crate::types::builders::RepositoryBranchInputBuilder::name)
     /// - [`branch`](crate::types::builders::RepositoryBranchInputBuilder::branch)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositoryBranchInput {
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building RepositoryBranchInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RepositoryBranchInput",
-                )
-            })?,
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building RepositoryBranchInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositoryBranchInput {
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building RepositoryBranchInput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RepositoryBranchInput")
+                    )?
+                ,
+                branch: self.branch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("branch", "branch was not specified but it is required when building RepositoryBranchInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

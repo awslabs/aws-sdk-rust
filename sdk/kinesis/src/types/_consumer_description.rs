@@ -3,7 +3,7 @@
 /// <p>An object that represents the details of a registered consumer. This type of object is returned by <code>DescribeStreamConsumer</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConsumerDescription {
+pub struct ConsumerDescription  {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     pub consumer_name: ::std::string::String,
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
@@ -16,30 +16,27 @@ pub struct ConsumerDescription {
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub stream_arn: ::std::string::String,
 }
-impl ConsumerDescription {
+impl  ConsumerDescription  {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn consumer_name(&self) -> &str {
-        use std::ops::Deref;
-        self.consumer_name.deref()
+    pub fn consumer_name(&self) -> & str {
+        use std::ops::Deref; self.consumer_name.deref()
     }
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    pub fn consumer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.consumer_arn.deref()
+    pub fn consumer_arn(&self) -> & str {
+        use std::ops::Deref; self.consumer_arn.deref()
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    pub fn consumer_status(&self) -> &crate::types::ConsumerStatus {
+    pub fn consumer_status(&self) -> & crate::types::ConsumerStatus {
         &self.consumer_status
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn consumer_creation_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.consumer_creation_timestamp
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
-    pub fn stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_arn.deref()
+    pub fn stream_arn(&self) -> & str {
+        use std::ops::Deref; self.stream_arn.deref()
     }
 }
 impl ConsumerDescription {
@@ -68,8 +65,7 @@ impl ConsumerDescriptionBuilder {
     }
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_name = input;
-        self
+        self.consumer_name = input; self
     }
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +81,7 @@ impl ConsumerDescriptionBuilder {
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_arn = input;
-        self
+        self.consumer_arn = input; self
     }
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
@@ -101,8 +96,7 @@ impl ConsumerDescriptionBuilder {
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
     pub fn set_consumer_status(mut self, input: ::std::option::Option<crate::types::ConsumerStatus>) -> Self {
-        self.consumer_status = input;
-        self
+        self.consumer_status = input; self
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
     pub fn get_consumer_status(&self) -> &::std::option::Option<crate::types::ConsumerStatus> {
@@ -116,8 +110,7 @@ impl ConsumerDescriptionBuilder {
     }
     /// <p></p>
     pub fn set_consumer_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.consumer_creation_timestamp = input;
-        self
+        self.consumer_creation_timestamp = input; self
     }
     /// <p></p>
     pub fn get_consumer_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +124,7 @@ impl ConsumerDescriptionBuilder {
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,37 +138,35 @@ impl ConsumerDescriptionBuilder {
     /// - [`consumer_creation_timestamp`](crate::types::builders::ConsumerDescriptionBuilder::consumer_creation_timestamp)
     /// - [`stream_arn`](crate::types::builders::ConsumerDescriptionBuilder::stream_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ConsumerDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConsumerDescription {
-            consumer_name: self.consumer_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "consumer_name",
-                    "consumer_name was not specified but it is required when building ConsumerDescription",
-                )
-            })?,
-            consumer_arn: self.consumer_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "consumer_arn",
-                    "consumer_arn was not specified but it is required when building ConsumerDescription",
-                )
-            })?,
-            consumer_status: self.consumer_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "consumer_status",
-                    "consumer_status was not specified but it is required when building ConsumerDescription",
-                )
-            })?,
-            consumer_creation_timestamp: self.consumer_creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "consumer_creation_timestamp",
-                    "consumer_creation_timestamp was not specified but it is required when building ConsumerDescription",
-                )
-            })?,
-            stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_arn",
-                    "stream_arn was not specified but it is required when building ConsumerDescription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConsumerDescription {
+                consumer_name: self.consumer_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("consumer_name", "consumer_name was not specified but it is required when building ConsumerDescription")
+                    )?
+                ,
+                consumer_arn: self.consumer_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("consumer_arn", "consumer_arn was not specified but it is required when building ConsumerDescription")
+                    )?
+                ,
+                consumer_status: self.consumer_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("consumer_status", "consumer_status was not specified but it is required when building ConsumerDescription")
+                    )?
+                ,
+                consumer_creation_timestamp: self.consumer_creation_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("consumer_creation_timestamp", "consumer_creation_timestamp was not specified but it is required when building ConsumerDescription")
+                    )?
+                ,
+                stream_arn: self.stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_arn", "stream_arn was not specified but it is required when building ConsumerDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableIpamOrganizationAdminAccountOutput {
+pub struct EnableIpamOrganizationAdminAccountOutput  {
     /// <p>The result of enabling the IPAM account.</p>
     pub success: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl EnableIpamOrganizationAdminAccountOutput {
+impl  EnableIpamOrganizationAdminAccountOutput  {
     /// <p>The result of enabling the IPAM account.</p>
     pub fn success(&self) -> ::std::option::Option<bool> {
         self.success
     }
 }
 impl ::aws_types::request_id::RequestId for EnableIpamOrganizationAdminAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableIpamOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`EnableIpamOrganizationAdminAccountOutput`](crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput).
     pub fn builder() -> crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountOutputBuilder {
@@ -40,27 +40,28 @@ impl EnableIpamOrganizationAdminAccountOutputBuilder {
     }
     /// <p>The result of enabling the IPAM account.</p>
     pub fn set_success(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.success = input;
-        self
+        self.success = input; self
     }
     /// <p>The result of enabling the IPAM account.</p>
     pub fn get_success(&self) -> &::std::option::Option<bool> {
         &self.success
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableIpamOrganizationAdminAccountOutput`](crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput).
     pub fn build(self) -> crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput {
         crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput {
-            success: self.success,
+            success: self.success
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information for a simulation application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimulationApplicationSummary {
+pub struct SimulationApplicationSummary  {
     /// <p>The name of the simulation application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
@@ -17,29 +17,29 @@ pub struct SimulationApplicationSummary {
     /// <p>Information about a simulation software suite.</p>
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
 }
-impl SimulationApplicationSummary {
+impl  SimulationApplicationSummary  {
     /// <p>The name of the simulation application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the simulation application.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> ::std::option::Option<& crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>Information about a simulation software suite.</p>
-    pub fn simulation_software_suite(&self) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(&self) -> ::std::option::Option<& crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl SimulationApplicationSummaryBuilder {
     }
     /// <p>The name of the simulation application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the simulation application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl SimulationApplicationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl SimulationApplicationSummaryBuilder {
     }
     /// <p>The version of the simulation application.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the simulation application.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl SimulationApplicationSummaryBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl SimulationApplicationSummaryBuilder {
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
-        self.robot_software_suite = input;
-        self
+        self.robot_software_suite = input; self
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
@@ -139,8 +134,7 @@ impl SimulationApplicationSummaryBuilder {
     }
     /// <p>Information about a simulation software suite.</p>
     pub fn set_simulation_software_suite(mut self, input: ::std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
-        self.simulation_software_suite = input;
-        self
+        self.simulation_software_suite = input; self
     }
     /// <p>Information about a simulation software suite.</p>
     pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
@@ -149,12 +143,19 @@ impl SimulationApplicationSummaryBuilder {
     /// Consumes the builder and constructs a [`SimulationApplicationSummary`](crate::types::SimulationApplicationSummary).
     pub fn build(self) -> crate::types::SimulationApplicationSummary {
         crate::types::SimulationApplicationSummary {
-            name: self.name,
-            arn: self.arn,
-            version: self.version,
-            last_updated_at: self.last_updated_at,
-            robot_software_suite: self.robot_software_suite,
-            simulation_software_suite: self.simulation_software_suite,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            version: self.version
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            robot_software_suite: self.robot_software_suite
+            ,
+            simulation_software_suite: self.simulation_software_suite
+            ,
         }
     }
 }
+

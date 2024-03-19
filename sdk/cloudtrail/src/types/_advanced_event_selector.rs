@@ -28,21 +28,20 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdvancedEventSelector {
+pub struct AdvancedEventSelector  {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub field_selectors: ::std::vec::Vec<crate::types::AdvancedFieldSelector>,
+    pub field_selectors: ::std::vec::Vec::<crate::types::AdvancedFieldSelector>,
 }
-impl AdvancedEventSelector {
+impl  AdvancedEventSelector  {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub fn field_selectors(&self) -> &[crate::types::AdvancedFieldSelector] {
-        use std::ops::Deref;
-        self.field_selectors.deref()
+    pub fn field_selectors(&self) -> & [crate::types::AdvancedFieldSelector] {
+        use std::ops::Deref; self.field_selectors.deref()
     }
 }
 impl AdvancedEventSelector {
@@ -57,7 +56,7 @@ impl AdvancedEventSelector {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedEventSelectorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) field_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
+    pub(crate) field_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedFieldSelector>>,
 }
 impl AdvancedEventSelectorBuilder {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
@@ -67,8 +66,7 @@ impl AdvancedEventSelectorBuilder {
     }
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,31 +79,33 @@ impl AdvancedEventSelectorBuilder {
     /// <p>Contains all selector statements in an advanced event selector.</p>
     pub fn field_selectors(mut self, input: crate::types::AdvancedFieldSelector) -> Self {
         let mut v = self.field_selectors.unwrap_or_default();
-        v.push(input);
-        self.field_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub fn set_field_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>) -> Self {
-        self.field_selectors = input;
-        self
+    pub fn set_field_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedFieldSelector>>) -> Self {
+        self.field_selectors = input; self
     }
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub fn get_field_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>> {
+    pub fn get_field_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdvancedFieldSelector>> {
         &self.field_selectors
     }
     /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_selectors`](crate::types::builders::AdvancedEventSelectorBuilder::field_selectors)
     pub fn build(self) -> ::std::result::Result<crate::types::AdvancedEventSelector, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AdvancedEventSelector {
-            name: self.name,
-            field_selectors: self.field_selectors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_selectors",
-                    "field_selectors was not specified but it is required when building AdvancedEventSelector",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AdvancedEventSelector {
+                name: self.name
+                ,
+                field_selectors: self.field_selectors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_selectors", "field_selectors was not specified but it is required when building AdvancedEventSelector")
+                    )?
+                ,
+            }
+        )
     }
 }
+

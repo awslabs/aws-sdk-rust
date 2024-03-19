@@ -3,20 +3,19 @@
 /// <p>Contains information about an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Bucket {
+pub struct S3Bucket  {
     /// <p>The name of the Amazon S3 bucket.</p>
     pub bucket_name: ::std::string::String,
     /// <p>The object key to use.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3Bucket {
+impl  S3Bucket  {
     /// <p>The name of the Amazon S3 bucket.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The object key to use.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl S3BucketBuilder {
     }
     /// <p>The name of the Amazon S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl S3BucketBuilder {
     }
     /// <p>The object key to use.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The object key to use.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl S3BucketBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::S3BucketBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Bucket, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Bucket {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Bucket",
-                )
-            })?,
-            prefix: self.prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Bucket {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Bucket")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

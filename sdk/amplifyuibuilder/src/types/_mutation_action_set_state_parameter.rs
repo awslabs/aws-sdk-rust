@@ -3,7 +3,7 @@
 /// <p>Represents the state configuration when an action modifies a property of another element within the same component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MutationActionSetStateParameter {
+pub struct MutationActionSetStateParameter  {
     /// <p>The name of the component that is being modified.</p>
     pub component_name: ::std::string::String,
     /// <p>The name of the component property to apply the state configuration to.</p>
@@ -11,19 +11,17 @@ pub struct MutationActionSetStateParameter {
     /// <p>The state configuration to assign to the property.</p>
     pub set: ::std::option::Option<crate::types::ComponentProperty>,
 }
-impl MutationActionSetStateParameter {
+impl  MutationActionSetStateParameter  {
     /// <p>The name of the component that is being modified.</p>
-    pub fn component_name(&self) -> &str {
-        use std::ops::Deref;
-        self.component_name.deref()
+    pub fn component_name(&self) -> & str {
+        use std::ops::Deref; self.component_name.deref()
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
-    pub fn property(&self) -> &str {
-        use std::ops::Deref;
-        self.property.deref()
+    pub fn property(&self) -> & str {
+        use std::ops::Deref; self.property.deref()
     }
     /// <p>The state configuration to assign to the property.</p>
-    pub fn set(&self) -> ::std::option::Option<&crate::types::ComponentProperty> {
+    pub fn set(&self) -> ::std::option::Option<& crate::types::ComponentProperty> {
         self.set.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl MutationActionSetStateParameterBuilder {
     }
     /// <p>The name of the component that is being modified.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component that is being modified.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl MutationActionSetStateParameterBuilder {
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
     pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl MutationActionSetStateParameterBuilder {
     }
     /// <p>The state configuration to assign to the property.</p>
     pub fn set_set(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
-        self.set = input;
-        self
+        self.set = input; self
     }
     /// <p>The state configuration to assign to the property.</p>
     pub fn get_set(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
@@ -93,20 +88,22 @@ impl MutationActionSetStateParameterBuilder {
     /// - [`component_name`](crate::types::builders::MutationActionSetStateParameterBuilder::component_name)
     /// - [`property`](crate::types::builders::MutationActionSetStateParameterBuilder::property)
     pub fn build(self) -> ::std::result::Result<crate::types::MutationActionSetStateParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MutationActionSetStateParameter {
-            component_name: self.component_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_name",
-                    "component_name was not specified but it is required when building MutationActionSetStateParameter",
-                )
-            })?,
-            property: self.property.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property",
-                    "property was not specified but it is required when building MutationActionSetStateParameter",
-                )
-            })?,
-            set: self.set,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MutationActionSetStateParameter {
+                component_name: self.component_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_name", "component_name was not specified but it is required when building MutationActionSetStateParameter")
+                    )?
+                ,
+                property: self.property
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property", "property was not specified but it is required when building MutationActionSetStateParameter")
+                    )?
+                ,
+                set: self.set
+                ,
+            }
+        )
     }
 }
+

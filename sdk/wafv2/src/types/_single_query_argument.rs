@@ -5,15 +5,14 @@
 /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleQueryArgument {
+pub struct SingleQueryArgument  {
     /// <p>The name of the query argument to inspect.</p>
     pub name: ::std::string::String,
 }
-impl SingleQueryArgument {
+impl  SingleQueryArgument  {
     /// <p>The name of the query argument to inspect.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl SingleQueryArgument {
@@ -38,8 +37,7 @@ impl SingleQueryArgumentBuilder {
     }
     /// <p>The name of the query argument to inspect.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the query argument to inspect.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -49,13 +47,15 @@ impl SingleQueryArgumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SingleQueryArgumentBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SingleQueryArgument, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SingleQueryArgument {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SingleQueryArgument",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SingleQueryArgument {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SingleQueryArgument")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,25 +3,26 @@
 /// <p>Contains the inputs for the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectoriesInput {
+pub struct DescribeDirectoriesInput  {
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub directory_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeDirectoriesInput {
+impl  DescribeDirectoriesInput  {
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_ids.is_none()`.
-    pub fn directory_ids(&self) -> &[::std::string::String] {
-        self.directory_ids.as_deref().unwrap_or_default()
+    pub fn directory_ids(&self) -> & [::std::string::String] {
+        self.directory_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
@@ -40,7 +41,7 @@ impl DescribeDirectoriesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectoriesInputBuilder {
-    pub(crate) directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) directory_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -53,19 +54,18 @@ impl DescribeDirectoriesInputBuilder {
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub fn directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.directory_ids.unwrap_or_default();
-        v.push(input.into());
-        self.directory_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.directory_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.directory_ids = input;
-        self
+    pub fn set_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.directory_ids = input; self
     }
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.directory_ids
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
@@ -75,8 +75,7 @@ impl DescribeDirectoriesInputBuilder {
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,22 +88,24 @@ impl DescribeDirectoriesInputBuilder {
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_directories::DescribeDirectoriesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_directories::DescribeDirectoriesInput {
-            directory_ids: self.directory_ids,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_directories::DescribeDirectoriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_directories::DescribeDirectoriesInput {
+                directory_ids: self.directory_ids
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

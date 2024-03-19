@@ -3,7 +3,7 @@
 /// <p>A hosted endpoint for real-time inference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
@@ -11,7 +11,7 @@ pub struct Endpoint {
     /// <p>The endpoint configuration associated with the endpoint.</p>
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
-    pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfigSummary>,
     /// <p>The status of the endpoint.</p>
@@ -23,68 +23,72 @@ pub struct Endpoint {
     /// <p>The last time the endpoint was modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    pub monitoring_schedules: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringSchedule>>,
+    pub monitoring_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::MonitoringSchedule>>,
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
-    pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub shadow_production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
 }
-impl Endpoint {
+impl  Endpoint  {
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The endpoint configuration associated with the endpoint.</p>
-    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
-    pub fn production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
-        self.production_variants.as_deref().unwrap_or_default()
+    pub fn production_variants(&self) -> & [crate::types::ProductionVariantSummary] {
+        self.production_variants.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
-    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfigSummary> {
+    pub fn data_capture_config(&self) -> ::std::option::Option<& crate::types::DataCaptureConfigSummary> {
         self.data_capture_config.as_ref()
     }
     /// <p>The status of the endpoint.</p>
-    pub fn endpoint_status(&self) -> ::std::option::Option<&crate::types::EndpointStatus> {
+    pub fn endpoint_status(&self) -> ::std::option::Option<& crate::types::EndpointStatus> {
         self.endpoint_status.as_ref()
     }
     /// <p>If the endpoint failed, the reason it failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The time that the endpoint was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the endpoint was modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_schedules.is_none()`.
-    pub fn monitoring_schedules(&self) -> &[crate::types::MonitoringSchedule] {
-        self.monitoring_schedules.as_deref().unwrap_or_default()
+    pub fn monitoring_schedules(&self) -> & [crate::types::MonitoringSchedule] {
+        self.monitoring_schedules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
-    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
-        self.shadow_production_variants.as_deref().unwrap_or_default()
+    pub fn shadow_production_variants(&self) -> & [crate::types::ProductionVariantSummary] {
+        self.shadow_production_variants.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Endpoint {
@@ -101,15 +105,15 @@ pub struct EndpointBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
-    pub(crate) production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub(crate) production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
     pub(crate) data_capture_config: ::std::option::Option<crate::types::DataCaptureConfigSummary>,
     pub(crate) endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) monitoring_schedules: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringSchedule>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub(crate) monitoring_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::MonitoringSchedule>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>,
 }
 impl EndpointBuilder {
     /// <p>The name of the endpoint.</p>
@@ -120,8 +124,7 @@ impl EndpointBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of the endpoint.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +138,7 @@ impl EndpointBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +152,7 @@ impl EndpointBuilder {
     }
     /// <p>The endpoint configuration associated with the endpoint.</p>
     pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_config_name = input;
-        self
+        self.endpoint_config_name = input; self
     }
     /// <p>The endpoint configuration associated with the endpoint.</p>
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,17 +165,16 @@ impl EndpointBuilder {
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
     pub fn production_variants(mut self, input: crate::types::ProductionVariantSummary) -> Self {
         let mut v = self.production_variants.unwrap_or_default();
-        v.push(input);
-        self.production_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.production_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
-    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>) -> Self {
-        self.production_variants = input;
-        self
+    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>) -> Self {
+        self.production_variants = input; self
     }
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
-    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>> {
         &self.production_variants
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
@@ -184,8 +184,7 @@ impl EndpointBuilder {
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::DataCaptureConfigSummary>) -> Self {
-        self.data_capture_config = input;
-        self
+        self.data_capture_config = input; self
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfigSummary> {
@@ -199,8 +198,7 @@ impl EndpointBuilder {
     }
     /// <p>The status of the endpoint.</p>
     pub fn set_endpoint_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
-        self.endpoint_status = input;
-        self
+        self.endpoint_status = input; self
     }
     /// <p>The status of the endpoint.</p>
     pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
@@ -213,8 +211,7 @@ impl EndpointBuilder {
     }
     /// <p>If the endpoint failed, the reason it failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If the endpoint failed, the reason it failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +225,7 @@ impl EndpointBuilder {
     }
     /// <p>The time that the endpoint was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the endpoint was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -243,8 +239,7 @@ impl EndpointBuilder {
     }
     /// <p>The last time the endpoint was modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last time the endpoint was modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -257,17 +252,16 @@ impl EndpointBuilder {
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
     pub fn monitoring_schedules(mut self, input: crate::types::MonitoringSchedule) -> Self {
         let mut v = self.monitoring_schedules.unwrap_or_default();
-        v.push(input);
-        self.monitoring_schedules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitoring_schedules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    pub fn set_monitoring_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringSchedule>>) -> Self {
-        self.monitoring_schedules = input;
-        self
+    pub fn set_monitoring_schedules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MonitoringSchedule>>) -> Self {
+        self.monitoring_schedules = input; self
     }
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    pub fn get_monitoring_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringSchedule>> {
+    pub fn get_monitoring_schedules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MonitoringSchedule>> {
         &self.monitoring_schedules
     }
     /// Appends an item to `tags`.
@@ -277,17 +271,16 @@ impl EndpointBuilder {
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `shadow_production_variants`.
@@ -297,34 +290,46 @@ impl EndpointBuilder {
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
     pub fn shadow_production_variants(mut self, input: crate::types::ProductionVariantSummary) -> Self {
         let mut v = self.shadow_production_variants.unwrap_or_default();
-        v.push(input);
-        self.shadow_production_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shadow_production_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
-    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>) -> Self {
-        self.shadow_production_variants = input;
-        self
+    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>>) -> Self {
+        self.shadow_production_variants = input; self
     }
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
-    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantSummary>> {
         &self.shadow_production_variants
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            endpoint_name: self.endpoint_name,
-            endpoint_arn: self.endpoint_arn,
-            endpoint_config_name: self.endpoint_config_name,
-            production_variants: self.production_variants,
-            data_capture_config: self.data_capture_config,
-            endpoint_status: self.endpoint_status,
-            failure_reason: self.failure_reason,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            monitoring_schedules: self.monitoring_schedules,
-            tags: self.tags,
-            shadow_production_variants: self.shadow_production_variants,
+            endpoint_name: self.endpoint_name
+            ,
+            endpoint_arn: self.endpoint_arn
+            ,
+            endpoint_config_name: self.endpoint_config_name
+            ,
+            production_variants: self.production_variants
+            ,
+            data_capture_config: self.data_capture_config
+            ,
+            endpoint_status: self.endpoint_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            monitoring_schedules: self.monitoring_schedules
+            ,
+            tags: self.tags
+            ,
+            shadow_production_variants: self.shadow_production_variants
+            ,
         }
     }
 }
+

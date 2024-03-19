@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSimulationApplicationOutput {
+pub struct DeleteSimulationApplicationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteSimulationApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSimulationApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationOutput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput).
     pub fn builder() -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteSimulationApplicationOutputBuilder {
 }
 impl DeleteSimulationApplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSimulationApplicationOutput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput).
     pub fn build(self) -> crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput {
         crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput {
@@ -40,3 +40,4 @@ impl DeleteSimulationApplicationOutputBuilder {
         }
     }
 }
+

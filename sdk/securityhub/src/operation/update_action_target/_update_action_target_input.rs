@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateActionTargetInput {
+pub struct UpdateActionTargetInput  {
     /// <p>The ARN of the custom action target to update.</p>
     pub action_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the custom action target.</p>
@@ -10,17 +10,17 @@ pub struct UpdateActionTargetInput {
     /// <p>The updated description for the custom action target.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateActionTargetInput {
+impl  UpdateActionTargetInput  {
     /// <p>The ARN of the custom action target to update.</p>
-    pub fn action_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_target_arn(&self) -> ::std::option::Option<& str> {
         self.action_target_arn.as_deref()
     }
     /// <p>The updated name of the custom action target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated description for the custom action target.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateActionTargetInputBuilder {
     }
     /// <p>The ARN of the custom action target to update.</p>
     pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_target_arn = input;
-        self
+        self.action_target_arn = input; self
     }
     /// <p>The ARN of the custom action target to update.</p>
     pub fn get_action_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateActionTargetInputBuilder {
     }
     /// <p>The updated name of the custom action target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated name of the custom action target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateActionTargetInputBuilder {
     }
     /// <p>The updated description for the custom action target.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description for the custom action target.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateActionTargetInput`](crate::operation::update_action_target::UpdateActionTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_action_target::UpdateActionTargetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_action_target::UpdateActionTargetInput {
-            action_target_arn: self.action_target_arn,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_action_target::UpdateActionTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_action_target::UpdateActionTargetInput {
+                action_target_arn: self.action_target_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

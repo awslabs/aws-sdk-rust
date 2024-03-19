@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableAutoScalingSettingsOutput {
+pub struct GetTableAutoScalingSettingsOutput  {
     /// <p>The name of the keyspace.</p>
     pub keyspace_name: ::std::string::String,
     /// <p>The name of the table.</p>
@@ -12,41 +12,39 @@ pub struct GetTableAutoScalingSettingsOutput {
     /// <p>The auto scaling settings of the table.</p>
     pub auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
     /// <p>The Amazon Web Services Region specific settings of a multi-Region table. Returns the settings for all Regions the table is replicated in.</p>
-    pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingSpecification>>,
+    pub replica_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaAutoScalingSpecification>>,
     _request_id: Option<String>,
 }
-impl GetTableAutoScalingSettingsOutput {
+impl  GetTableAutoScalingSettingsOutput  {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.keyspace_name.deref()
+    pub fn keyspace_name(&self) -> & str {
+        use std::ops::Deref; self.keyspace_name.deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the table.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The auto scaling settings of the table.</p>
-    pub fn auto_scaling_specification(&self) -> ::std::option::Option<&crate::types::AutoScalingSpecification> {
+    pub fn auto_scaling_specification(&self) -> ::std::option::Option<& crate::types::AutoScalingSpecification> {
         self.auto_scaling_specification.as_ref()
     }
     /// <p>The Amazon Web Services Region specific settings of a multi-Region table. Returns the settings for all Regions the table is replicated in.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_specifications.is_none()`.
-    pub fn replica_specifications(&self) -> &[crate::types::ReplicaAutoScalingSpecification] {
-        self.replica_specifications.as_deref().unwrap_or_default()
+    pub fn replica_specifications(&self) -> & [crate::types::ReplicaAutoScalingSpecification] {
+        self.replica_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTableAutoScalingSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTableAutoScalingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetTableAutoScalingSettingsOutput`](crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsOutput).
     pub fn builder() -> crate::operation::get_table_auto_scaling_settings::builders::GetTableAutoScalingSettingsOutputBuilder {
@@ -62,7 +60,7 @@ pub struct GetTableAutoScalingSettingsOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
-    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingSpecification>>,
+    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaAutoScalingSpecification>>,
     _request_id: Option<String>,
 }
 impl GetTableAutoScalingSettingsOutputBuilder {
@@ -74,8 +72,7 @@ impl GetTableAutoScalingSettingsOutputBuilder {
     }
     /// <p>The name of the keyspace.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +86,7 @@ impl GetTableAutoScalingSettingsOutputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +100,7 @@ impl GetTableAutoScalingSettingsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the table.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the table.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +113,7 @@ impl GetTableAutoScalingSettingsOutputBuilder {
     }
     /// <p>The auto scaling settings of the table.</p>
     pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
-        self.auto_scaling_specification = input;
-        self
+        self.auto_scaling_specification = input; self
     }
     /// <p>The auto scaling settings of the table.</p>
     pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
@@ -132,64 +126,57 @@ impl GetTableAutoScalingSettingsOutputBuilder {
     /// <p>The Amazon Web Services Region specific settings of a multi-Region table. Returns the settings for all Regions the table is replicated in.</p>
     pub fn replica_specifications(mut self, input: crate::types::ReplicaAutoScalingSpecification) -> Self {
         let mut v = self.replica_specifications.unwrap_or_default();
-        v.push(input);
-        self.replica_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replica_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services Region specific settings of a multi-Region table. Returns the settings for all Regions the table is replicated in.</p>
-    pub fn set_replica_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingSpecification>>,
-    ) -> Self {
-        self.replica_specifications = input;
-        self
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaAutoScalingSpecification>>) -> Self {
+        self.replica_specifications = input; self
     }
     /// <p>The Amazon Web Services Region specific settings of a multi-Region table. Returns the settings for all Regions the table is replicated in.</p>
-    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingSpecification>> {
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaAutoScalingSpecification>> {
         &self.replica_specifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTableAutoScalingSettingsOutput`](crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`keyspace_name`](crate::operation::get_table_auto_scaling_settings::builders::GetTableAutoScalingSettingsOutputBuilder::keyspace_name)
     /// - [`table_name`](crate::operation::get_table_auto_scaling_settings::builders::GetTableAutoScalingSettingsOutputBuilder::table_name)
     /// - [`resource_arn`](crate::operation::get_table_auto_scaling_settings::builders::GetTableAutoScalingSettingsOutputBuilder::resource_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsOutput {
-            keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyspace_name",
-                    "keyspace_name was not specified but it is required when building GetTableAutoScalingSettingsOutput",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building GetTableAutoScalingSettingsOutput",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building GetTableAutoScalingSettingsOutput",
-                )
-            })?,
-            auto_scaling_specification: self.auto_scaling_specification,
-            replica_specifications: self.replica_specifications,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsOutput {
+                keyspace_name: self.keyspace_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyspace_name", "keyspace_name was not specified but it is required when building GetTableAutoScalingSettingsOutput")
+                    )?
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building GetTableAutoScalingSettingsOutput")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building GetTableAutoScalingSettingsOutput")
+                    )?
+                ,
+                auto_scaling_specification: self.auto_scaling_specification
+                ,
+                replica_specifications: self.replica_specifications
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

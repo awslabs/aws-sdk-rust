@@ -3,19 +3,19 @@
 /// <p>The configuration of a job template parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateParameterConfiguration {
+pub struct TemplateParameterConfiguration  {
     /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     pub r#type: ::std::option::Option<crate::types::TemplateParameterDataType>,
     /// <p>The default value for the job template parameter.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
 }
-impl TemplateParameterConfiguration {
+impl  TemplateParameterConfiguration  {
     /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TemplateParameterDataType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TemplateParameterDataType> {
         self.r#type.as_ref()
     }
     /// <p>The default value for the job template parameter.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TemplateParameterConfigurationBuilder {
     }
     /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TemplateParameterDataType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TemplateParameterDataType> {
@@ -55,8 +54,7 @@ impl TemplateParameterConfigurationBuilder {
     }
     /// <p>The default value for the job template parameter.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value for the job template parameter.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TemplateParameterConfigurationBuilder {
     /// Consumes the builder and constructs a [`TemplateParameterConfiguration`](crate::types::TemplateParameterConfiguration).
     pub fn build(self) -> crate::types::TemplateParameterConfiguration {
         crate::types::TemplateParameterConfiguration {
-            r#type: self.r#type,
-            default_value: self.default_value,
+            r#type: self.r#type
+            ,
+            default_value: self.default_value
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentTemplateOutput {
+pub struct DeleteEnvironmentTemplateOutput  {
     /// <p>The detailed data of the environment template being deleted.</p>
     pub environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
 }
-impl DeleteEnvironmentTemplateOutput {
+impl  DeleteEnvironmentTemplateOutput  {
     /// <p>The detailed data of the environment template being deleted.</p>
-    pub fn environment_template(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
+    pub fn environment_template(&self) -> ::std::option::Option<& crate::types::EnvironmentTemplate> {
         self.environment_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteEnvironmentTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteEnvironmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput).
     pub fn builder() -> crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteEnvironmentTemplateOutputBuilder {
     }
     /// <p>The detailed data of the environment template being deleted.</p>
     pub fn set_environment_template(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplate>) -> Self {
-        self.environment_template = input;
-        self
+        self.environment_template = input; self
     }
     /// <p>The detailed data of the environment template being deleted.</p>
     pub fn get_environment_template(&self) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
         &self.environment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput).
     pub fn build(self) -> crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput {
         crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput {
-            environment_template: self.environment_template,
+            environment_template: self.environment_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

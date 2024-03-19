@@ -3,13 +3,13 @@
 /// <p>Event that Amazon Lex V2 sends to indicate that the stream is still open between the client application and Amazon Lex V2</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HeartbeatEvent {
+pub struct HeartbeatEvent  {
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
 }
-impl HeartbeatEvent {
+impl  HeartbeatEvent  {
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl HeartbeatEventBuilder {
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl HeartbeatEventBuilder {
     }
     /// Consumes the builder and constructs a [`HeartbeatEvent`](crate::types::HeartbeatEvent).
     pub fn build(self) -> crate::types::HeartbeatEvent {
-        crate::types::HeartbeatEvent { event_id: self.event_id }
+        crate::types::HeartbeatEvent {
+            event_id: self.event_id
+            ,
+        }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeServiceInput {
+pub struct ResumeServiceInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
     pub service_arn: ::std::option::Option<::std::string::String>,
 }
-impl ResumeServiceInput {
+impl  ResumeServiceInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl ResumeServiceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_arn
     }
     /// Consumes the builder and constructs a [`ResumeServiceInput`](crate::operation::resume_service::ResumeServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::resume_service::ResumeServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::resume_service::ResumeServiceInput {
-            service_arn: self.service_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resume_service::ResumeServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resume_service::ResumeServiceInput {
+                service_arn: self.service_arn
+                ,
+            }
+        )
     }
 }
+

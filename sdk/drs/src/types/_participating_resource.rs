@@ -3,19 +3,19 @@
 /// <p>Represents a resource participating in an asynchronous Job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParticipatingResource {
+pub struct ParticipatingResource  {
     /// <p>The ID of a participating resource.</p>
     pub participating_resource_id: ::std::option::Option<crate::types::ParticipatingResourceId>,
     /// <p>The launch status of a participating resource.</p>
     pub launch_status: ::std::option::Option<crate::types::LaunchStatus>,
 }
-impl ParticipatingResource {
+impl  ParticipatingResource  {
     /// <p>The ID of a participating resource.</p>
-    pub fn participating_resource_id(&self) -> ::std::option::Option<&crate::types::ParticipatingResourceId> {
+    pub fn participating_resource_id(&self) -> ::std::option::Option<& crate::types::ParticipatingResourceId> {
         self.participating_resource_id.as_ref()
     }
     /// <p>The launch status of a participating resource.</p>
-    pub fn launch_status(&self) -> ::std::option::Option<&crate::types::LaunchStatus> {
+    pub fn launch_status(&self) -> ::std::option::Option<& crate::types::LaunchStatus> {
         self.launch_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ParticipatingResourceBuilder {
     }
     /// <p>The ID of a participating resource.</p>
     pub fn set_participating_resource_id(mut self, input: ::std::option::Option<crate::types::ParticipatingResourceId>) -> Self {
-        self.participating_resource_id = input;
-        self
+        self.participating_resource_id = input; self
     }
     /// <p>The ID of a participating resource.</p>
     pub fn get_participating_resource_id(&self) -> &::std::option::Option<crate::types::ParticipatingResourceId> {
@@ -55,8 +54,7 @@ impl ParticipatingResourceBuilder {
     }
     /// <p>The launch status of a participating resource.</p>
     pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
-        self.launch_status = input;
-        self
+        self.launch_status = input; self
     }
     /// <p>The launch status of a participating resource.</p>
     pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
@@ -65,8 +63,11 @@ impl ParticipatingResourceBuilder {
     /// Consumes the builder and constructs a [`ParticipatingResource`](crate::types::ParticipatingResource).
     pub fn build(self) -> crate::types::ParticipatingResource {
         crate::types::ParticipatingResource {
-            participating_resource_id: self.participating_resource_id,
-            launch_status: self.launch_status,
+            participating_resource_id: self.participating_resource_id
+            ,
+            launch_status: self.launch_status
+            ,
         }
     }
 }
+

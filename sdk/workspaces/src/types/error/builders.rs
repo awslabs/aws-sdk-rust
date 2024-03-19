@@ -36,3 +36,4 @@ pub use crate::types::error::_operating_system_not_compatible_exception::Operati
 pub use crate::types::error::_compute_not_compatible_exception::ComputeNotCompatibleExceptionBuilder;
 
 pub use crate::types::error::_application_not_supported_exception::ApplicationNotSupportedExceptionBuilder;
+

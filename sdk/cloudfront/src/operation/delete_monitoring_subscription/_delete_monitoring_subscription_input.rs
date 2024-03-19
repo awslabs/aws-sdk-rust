@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMonitoringSubscriptionInput {
+pub struct DeleteMonitoringSubscriptionInput  {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
     pub distribution_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMonitoringSubscriptionInput {
+impl  DeleteMonitoringSubscriptionInput  {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
-    pub fn distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_id(&self) -> ::std::option::Option<& str> {
         self.distribution_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteMonitoringSubscriptionInputBuilder {
     }
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
     pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_id = input;
-        self
+        self.distribution_id = input; self
     }
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
     pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_id
     }
     /// Consumes the builder and constructs a [`DeleteMonitoringSubscriptionInput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput {
-            distribution_id: self.distribution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput {
+                distribution_id: self.distribution_id
+                ,
+            }
+        )
     }
 }
+

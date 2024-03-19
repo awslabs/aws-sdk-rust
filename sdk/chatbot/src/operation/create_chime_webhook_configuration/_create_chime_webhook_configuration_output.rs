@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateChimeWebhookConfigurationOutput {
+pub struct CreateChimeWebhookConfigurationOutput  {
     /// Chime webhook configuration.
     pub webhook_configuration: ::std::option::Option<crate::types::ChimeWebhookConfiguration>,
     _request_id: Option<String>,
 }
-impl CreateChimeWebhookConfigurationOutput {
+impl  CreateChimeWebhookConfigurationOutput  {
     /// Chime webhook configuration.
-    pub fn webhook_configuration(&self) -> ::std::option::Option<&crate::types::ChimeWebhookConfiguration> {
+    pub fn webhook_configuration(&self) -> ::std::option::Option<& crate::types::ChimeWebhookConfiguration> {
         self.webhook_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateChimeWebhookConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateChimeWebhookConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateChimeWebhookConfigurationOutput`](crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationOutput).
     pub fn builder() -> crate::operation::create_chime_webhook_configuration::builders::CreateChimeWebhookConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateChimeWebhookConfigurationOutputBuilder {
     }
     /// Chime webhook configuration.
     pub fn set_webhook_configuration(mut self, input: ::std::option::Option<crate::types::ChimeWebhookConfiguration>) -> Self {
-        self.webhook_configuration = input;
-        self
+        self.webhook_configuration = input; self
     }
     /// Chime webhook configuration.
     pub fn get_webhook_configuration(&self) -> &::std::option::Option<crate::types::ChimeWebhookConfiguration> {
         &self.webhook_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateChimeWebhookConfigurationOutput`](crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationOutput).
     pub fn build(self) -> crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationOutput {
         crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationOutput {
-            webhook_configuration: self.webhook_configuration,
+            webhook_configuration: self.webhook_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

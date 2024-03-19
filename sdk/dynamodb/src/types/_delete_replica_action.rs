@@ -3,15 +3,14 @@
 /// <p>Represents a replica to be removed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicaAction {
+pub struct DeleteReplicaAction  {
     /// <p>The Region of the replica to be removed.</p>
     pub region_name: ::std::string::String,
 }
-impl DeleteReplicaAction {
+impl  DeleteReplicaAction  {
     /// <p>The Region of the replica to be removed.</p>
-    pub fn region_name(&self) -> &str {
-        use std::ops::Deref;
-        self.region_name.deref()
+    pub fn region_name(&self) -> & str {
+        use std::ops::Deref; self.region_name.deref()
     }
 }
 impl DeleteReplicaAction {
@@ -36,8 +35,7 @@ impl DeleteReplicaActionBuilder {
     }
     /// <p>The Region of the replica to be removed.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The Region of the replica to be removed.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeleteReplicaActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region_name`](crate::types::builders::DeleteReplicaActionBuilder::region_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteReplicaAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteReplicaAction {
-            region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region_name",
-                    "region_name was not specified but it is required when building DeleteReplicaAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteReplicaAction {
+                region_name: self.region_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region_name", "region_name was not specified but it is required when building DeleteReplicaAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

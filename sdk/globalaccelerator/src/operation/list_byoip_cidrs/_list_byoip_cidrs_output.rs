@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListByoipCidrsOutput {
+pub struct ListByoipCidrsOutput  {
     /// <p>Information about your address ranges.</p>
-    pub byoip_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>,
+    pub byoip_cidrs: ::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidr>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListByoipCidrsOutput {
+impl  ListByoipCidrsOutput  {
     /// <p>Information about your address ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.byoip_cidrs.is_none()`.
-    pub fn byoip_cidrs(&self) -> &[crate::types::ByoipCidr] {
-        self.byoip_cidrs.as_deref().unwrap_or_default()
+    pub fn byoip_cidrs(&self) -> & [crate::types::ByoipCidr] {
+        self.byoip_cidrs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListByoipCidrsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListByoipCidrsOutput {
     /// Creates a new builder-style object to manufacture [`ListByoipCidrsOutput`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput).
     pub fn builder() -> crate::operation::list_byoip_cidrs::builders::ListByoipCidrsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListByoipCidrsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListByoipCidrsOutputBuilder {
-    pub(crate) byoip_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>,
+    pub(crate) byoip_cidrs: ::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListByoipCidrsOutputBuilder {
     /// <p>Information about your address ranges.</p>
     pub fn byoip_cidrs(mut self, input: crate::types::ByoipCidr) -> Self {
         let mut v = self.byoip_cidrs.unwrap_or_default();
-        v.push(input);
-        self.byoip_cidrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.byoip_cidrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about your address ranges.</p>
-    pub fn set_byoip_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>) -> Self {
-        self.byoip_cidrs = input;
-        self
+    pub fn set_byoip_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidr>>) -> Self {
+        self.byoip_cidrs = input; self
     }
     /// <p>Information about your address ranges.</p>
-    pub fn get_byoip_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>> {
+    pub fn get_byoip_cidrs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidr>> {
         &self.byoip_cidrs
     }
     /// <p>The token for the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListByoipCidrsOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListByoipCidrsOutput`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput).
     pub fn build(self) -> crate::operation::list_byoip_cidrs::ListByoipCidrsOutput {
         crate::operation::list_byoip_cidrs::ListByoipCidrsOutput {
-            byoip_cidrs: self.byoip_cidrs,
-            next_token: self.next_token,
+            byoip_cidrs: self.byoip_cidrs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

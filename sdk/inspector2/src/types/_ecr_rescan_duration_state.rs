@@ -3,7 +3,7 @@
 /// <p>Details about the state of your ECR re-scan duration settings. The ECR re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the duration configured for image pull date, and the duration configured for image pull date, the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcrRescanDurationState {
+pub struct EcrRescanDurationState  {
     /// <p>The rescan duration configured for image push date.</p>
     pub rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
@@ -13,21 +13,21 @@ pub struct EcrRescanDurationState {
     /// <p>The rescan duration configured for image pull date.</p>
     pub pull_date_rescan_duration: ::std::option::Option<crate::types::EcrPullDateRescanDuration>,
 }
-impl EcrRescanDurationState {
+impl  EcrRescanDurationState  {
     /// <p>The rescan duration configured for image push date.</p>
-    pub fn rescan_duration(&self) -> ::std::option::Option<&crate::types::EcrRescanDuration> {
+    pub fn rescan_duration(&self) -> ::std::option::Option<& crate::types::EcrRescanDuration> {
         self.rescan_duration.as_ref()
     }
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EcrRescanDurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EcrRescanDurationStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The rescan duration configured for image pull date.</p>
-    pub fn pull_date_rescan_duration(&self) -> ::std::option::Option<&crate::types::EcrPullDateRescanDuration> {
+    pub fn pull_date_rescan_duration(&self) -> ::std::option::Option<& crate::types::EcrPullDateRescanDuration> {
         self.pull_date_rescan_duration.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EcrRescanDurationStateBuilder {
     }
     /// <p>The rescan duration configured for image push date.</p>
     pub fn set_rescan_duration(mut self, input: ::std::option::Option<crate::types::EcrRescanDuration>) -> Self {
-        self.rescan_duration = input;
-        self
+        self.rescan_duration = input; self
     }
     /// <p>The rescan duration configured for image push date.</p>
     pub fn get_rescan_duration(&self) -> &::std::option::Option<crate::types::EcrRescanDuration> {
@@ -69,8 +68,7 @@ impl EcrRescanDurationStateBuilder {
     }
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EcrRescanDurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EcrRescanDurationStatus> {
@@ -83,8 +81,7 @@ impl EcrRescanDurationStateBuilder {
     }
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl EcrRescanDurationStateBuilder {
     }
     /// <p>The rescan duration configured for image pull date.</p>
     pub fn set_pull_date_rescan_duration(mut self, input: ::std::option::Option<crate::types::EcrPullDateRescanDuration>) -> Self {
-        self.pull_date_rescan_duration = input;
-        self
+        self.pull_date_rescan_duration = input; self
     }
     /// <p>The rescan duration configured for image pull date.</p>
     pub fn get_pull_date_rescan_duration(&self) -> &::std::option::Option<crate::types::EcrPullDateRescanDuration> {
@@ -107,10 +103,15 @@ impl EcrRescanDurationStateBuilder {
     /// Consumes the builder and constructs a [`EcrRescanDurationState`](crate::types::EcrRescanDurationState).
     pub fn build(self) -> crate::types::EcrRescanDurationState {
         crate::types::EcrRescanDurationState {
-            rescan_duration: self.rescan_duration,
-            status: self.status,
-            updated_at: self.updated_at,
-            pull_date_rescan_duration: self.pull_date_rescan_duration,
+            rescan_duration: self.rescan_duration
+            ,
+            status: self.status
+            ,
+            updated_at: self.updated_at
+            ,
+            pull_date_rescan_duration: self.pull_date_rescan_duration
+            ,
         }
     }
 }
+

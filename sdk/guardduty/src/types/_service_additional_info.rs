@@ -3,19 +3,19 @@
 /// <p>Additional information about the generated finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceAdditionalInfo {
+pub struct ServiceAdditionalInfo  {
     /// <p>This field specifies the value of the additional information.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Describes the type of the additional information.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl ServiceAdditionalInfo {
+impl  ServiceAdditionalInfo  {
     /// <p>This field specifies the value of the additional information.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Describes the type of the additional information.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ServiceAdditionalInfoBuilder {
     }
     /// <p>This field specifies the value of the additional information.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>This field specifies the value of the additional information.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ServiceAdditionalInfoBuilder {
     }
     /// <p>Describes the type of the additional information.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Describes the type of the additional information.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ServiceAdditionalInfoBuilder {
     /// Consumes the builder and constructs a [`ServiceAdditionalInfo`](crate::types::ServiceAdditionalInfo).
     pub fn build(self) -> crate::types::ServiceAdditionalInfo {
         crate::types::ServiceAdditionalInfo {
-            value: self.value,
-            r#type: self.r#type,
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -3,17 +3,16 @@
 /// <p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayListItem {
+pub struct GatewayListItem  {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
     pub gateway_id: ::std::string::String,
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub downlink_frequency: i32,
 }
-impl GatewayListItem {
+impl  GatewayListItem  {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
-    pub fn gateway_id(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_id.deref()
+    pub fn gateway_id(&self) -> & str {
+        use std::ops::Deref; self.gateway_id.deref()
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub fn downlink_frequency(&self) -> i32 {
@@ -43,8 +42,7 @@ impl GatewayListItemBuilder {
     }
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl GatewayListItemBuilder {
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub fn set_downlink_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.downlink_frequency = input;
-        self
+        self.downlink_frequency = input; self
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub fn get_downlink_frequency(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl GatewayListItemBuilder {
     /// - [`gateway_id`](crate::types::builders::GatewayListItemBuilder::gateway_id)
     /// - [`downlink_frequency`](crate::types::builders::GatewayListItemBuilder::downlink_frequency)
     pub fn build(self) -> ::std::result::Result<crate::types::GatewayListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GatewayListItem {
-            gateway_id: self.gateway_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "gateway_id",
-                    "gateway_id was not specified but it is required when building GatewayListItem",
-                )
-            })?,
-            downlink_frequency: self.downlink_frequency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "downlink_frequency",
-                    "downlink_frequency was not specified but it is required when building GatewayListItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GatewayListItem {
+                gateway_id: self.gateway_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("gateway_id", "gateway_id was not specified but it is required when building GatewayListItem")
+                    )?
+                ,
+                downlink_frequency: self.downlink_frequency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("downlink_frequency", "downlink_frequency was not specified but it is required when building GatewayListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

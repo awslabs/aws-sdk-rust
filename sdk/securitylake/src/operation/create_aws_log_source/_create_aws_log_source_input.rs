@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAwsLogSourceInput {
+pub struct CreateAwsLogSourceInput  {
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceConfiguration>>,
 }
-impl CreateAwsLogSourceInput {
+impl  CreateAwsLogSourceInput  {
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::AwsLogSourceConfiguration] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::AwsLogSourceConfiguration] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAwsLogSourceInput {
@@ -25,7 +26,7 @@ impl CreateAwsLogSourceInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceInputBuilder {
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceConfiguration>>,
 }
 impl CreateAwsLogSourceInputBuilder {
     /// Appends an item to `sources`.
@@ -35,24 +36,26 @@ impl CreateAwsLogSourceInputBuilder {
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
     pub fn sources(mut self, input: crate::types::AwsLogSourceConfiguration) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceConfiguration>>) -> Self {
+        self.sources = input; self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceConfiguration>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_aws_log_source::CreateAwsLogSourceInput { sources: self.sources })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_aws_log_source::CreateAwsLogSourceInput {
+                sources: self.sources
+                ,
+            }
+        )
     }
 }
+

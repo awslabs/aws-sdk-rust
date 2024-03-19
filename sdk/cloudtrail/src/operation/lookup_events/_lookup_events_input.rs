@@ -3,9 +3,9 @@
 /// <p>Contains a request for LookupEvents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookupEventsInput {
+pub struct LookupEventsInput  {
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub lookup_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
+    pub lookup_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::LookupAttribute>>,
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
@@ -17,23 +17,24 @@ pub struct LookupEventsInput {
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl LookupEventsInput {
+impl  LookupEventsInput  {
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lookup_attributes.is_none()`.
-    pub fn lookup_attributes(&self) -> &[crate::types::LookupAttribute] {
-        self.lookup_attributes.as_deref().unwrap_or_default()
+    pub fn lookup_attributes(&self) -> & [crate::types::LookupAttribute] {
+        self.lookup_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
-    pub fn event_category(&self) -> ::std::option::Option<&crate::types::EventCategory> {
+    pub fn event_category(&self) -> ::std::option::Option<& crate::types::EventCategory> {
         self.event_category.as_ref()
     }
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
@@ -41,7 +42,7 @@ impl LookupEventsInput {
         self.max_results
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,7 +57,7 @@ impl LookupEventsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupEventsInputBuilder {
-    pub(crate) lookup_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
+    pub(crate) lookup_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::LookupAttribute>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_category: ::std::option::Option<crate::types::EventCategory>,
@@ -71,17 +72,16 @@ impl LookupEventsInputBuilder {
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
     pub fn lookup_attributes(mut self, input: crate::types::LookupAttribute) -> Self {
         let mut v = self.lookup_attributes.unwrap_or_default();
-        v.push(input);
-        self.lookup_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lookup_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn set_lookup_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>) -> Self {
-        self.lookup_attributes = input;
-        self
+    pub fn set_lookup_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LookupAttribute>>) -> Self {
+        self.lookup_attributes = input; self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn get_lookup_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
+    pub fn get_lookup_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LookupAttribute>> {
         &self.lookup_attributes
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
@@ -91,8 +91,7 @@ impl LookupEventsInputBuilder {
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -105,8 +104,7 @@ impl LookupEventsInputBuilder {
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +117,7 @@ impl LookupEventsInputBuilder {
     }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub fn set_event_category(mut self, input: ::std::option::Option<crate::types::EventCategory>) -> Self {
-        self.event_category = input;
-        self
+        self.event_category = input; self
     }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub fn get_event_category(&self) -> &::std::option::Option<crate::types::EventCategory> {
@@ -133,8 +130,7 @@ impl LookupEventsInputBuilder {
     }
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -147,24 +143,30 @@ impl LookupEventsInputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::lookup_events::LookupEventsInput {
-            lookup_attributes: self.lookup_attributes,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            event_category: self.event_category,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::lookup_events::LookupEventsInput {
+                lookup_attributes: self.lookup_attributes
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                event_category: self.event_category
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

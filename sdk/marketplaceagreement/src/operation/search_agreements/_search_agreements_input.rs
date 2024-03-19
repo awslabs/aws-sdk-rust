@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchAgreementsInput {
+pub struct SearchAgreementsInput  {
     /// <p>The catalog in which the agreement was created.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The filter name and value pair used to return a specific list of results.</p>
@@ -27,7 +27,7 @@ pub struct SearchAgreementsInput {
     /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The maximum number of agreements to return in the response.</p>
@@ -35,9 +35,9 @@ pub struct SearchAgreementsInput {
     /// <p>A token to specify where to start pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl SearchAgreementsInput {
+impl  SearchAgreementsInput  {
     /// <p>The catalog in which the agreement was created.</p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>The filter name and value pair used to return a specific list of results.</p>
@@ -62,13 +62,14 @@ impl SearchAgreementsInput {
     /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::Sort> {
         self.sort.as_ref()
     }
     /// <p>The maximum number of agreements to return in the response.</p>
@@ -76,7 +77,7 @@ impl SearchAgreementsInput {
         self.max_results
     }
     /// <p>A token to specify where to start pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -92,7 +93,7 @@ impl SearchAgreementsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAgreementsInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) sort: ::std::option::Option<crate::types::Sort>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -105,8 +106,7 @@ impl SearchAgreementsInputBuilder {
     }
     /// <p>The catalog in which the agreement was created.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>The catalog in which the agreement was created.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,9 +140,9 @@ impl SearchAgreementsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter name and value pair used to return a specific list of results.</p>
     /// <p>The following filters are supported:</p>
@@ -166,9 +166,8 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filter name and value pair used to return a specific list of results.</p>
     /// <p>The following filters are supported:</p>
@@ -192,7 +191,7 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
@@ -202,8 +201,7 @@ impl SearchAgreementsInputBuilder {
     }
     /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
@@ -216,8 +214,7 @@ impl SearchAgreementsInputBuilder {
     }
     /// <p>The maximum number of agreements to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of agreements to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -230,23 +227,28 @@ impl SearchAgreementsInputBuilder {
     }
     /// <p>A token to specify where to start pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`SearchAgreementsInput`](crate::operation::search_agreements::SearchAgreementsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_agreements::SearchAgreementsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_agreements::SearchAgreementsInput {
-            catalog: self.catalog,
-            filters: self.filters,
-            sort: self.sort,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_agreements::SearchAgreementsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_agreements::SearchAgreementsInput {
+                catalog: self.catalog
+                ,
+                filters: self.filters
+                ,
+                sort: self.sort
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

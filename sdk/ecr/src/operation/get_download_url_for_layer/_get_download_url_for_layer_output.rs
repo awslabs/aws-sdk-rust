@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDownloadUrlForLayerOutput {
+pub struct GetDownloadUrlForLayerOutput  {
     /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>The digest of the image layer to download.</p>
     pub layer_digest: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDownloadUrlForLayerOutput {
+impl  GetDownloadUrlForLayerOutput  {
     /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
-    pub fn download_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<& str> {
         self.download_url.as_deref()
     }
     /// <p>The digest of the image layer to download.</p>
-    pub fn layer_digest(&self) -> ::std::option::Option<&str> {
+    pub fn layer_digest(&self) -> ::std::option::Option<& str> {
         self.layer_digest.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDownloadUrlForLayerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDownloadUrlForLayerOutput {
     /// Creates a new builder-style object to manufacture [`GetDownloadUrlForLayerOutput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput).
     pub fn builder() -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerOutputBuilder {
@@ -47,8 +47,7 @@ impl GetDownloadUrlForLayerOutputBuilder {
     }
     /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_url = input;
-        self
+        self.download_url = input; self
     }
     /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
     pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetDownloadUrlForLayerOutputBuilder {
     }
     /// <p>The digest of the image layer to download.</p>
     pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_digest = input;
-        self
+        self.layer_digest = input; self
     }
     /// <p>The digest of the image layer to download.</p>
     pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.layer_digest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDownloadUrlForLayerOutput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput).
     pub fn build(self) -> crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput {
         crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput {
-            download_url: self.download_url,
-            layer_digest: self.layer_digest,
+            download_url: self.download_url
+            ,
+            layer_digest: self.layer_digest
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

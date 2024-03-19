@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemas`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`registry_id(RegistryId)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_registry_id):<br>required: **false**<br><p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
+                            /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
     ///   - [`schemas(Option<Vec::<SchemaListItem>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
+                            /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
     pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
-        crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

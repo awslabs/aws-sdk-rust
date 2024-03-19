@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchstatementerrorcodeenum = unimplemented!();
 /// match batchstatementerrorcodeenum {
@@ -39,16 +39,14 @@
 /// Specifically, when `batchstatementerrorcodeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchStatementErrorCodeEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum BatchStatementErrorCodeEnum {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -74,100 +72,89 @@ pub enum BatchStatementErrorCodeEnum {
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for BatchStatementErrorCodeEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => BatchStatementErrorCodeEnum::AccessDenied,
-            "ConditionalCheckFailed" => BatchStatementErrorCodeEnum::ConditionalCheckFailed,
-            "DuplicateItem" => BatchStatementErrorCodeEnum::DuplicateItem,
-            "InternalServerError" => BatchStatementErrorCodeEnum::InternalServerError,
-            "ItemCollectionSizeLimitExceeded" => BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded,
-            "ProvisionedThroughputExceeded" => BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded,
-            "RequestLimitExceeded" => BatchStatementErrorCodeEnum::RequestLimitExceeded,
-            "ResourceNotFound" => BatchStatementErrorCodeEnum::ResourceNotFound,
-            "ThrottlingError" => BatchStatementErrorCodeEnum::ThrottlingError,
-            "TransactionConflict" => BatchStatementErrorCodeEnum::TransactionConflict,
-            "ValidationError" => BatchStatementErrorCodeEnum::ValidationError,
-            other => BatchStatementErrorCodeEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AccessDenied" => BatchStatementErrorCodeEnum::AccessDenied,
+"ConditionalCheckFailed" => BatchStatementErrorCodeEnum::ConditionalCheckFailed,
+"DuplicateItem" => BatchStatementErrorCodeEnum::DuplicateItem,
+"InternalServerError" => BatchStatementErrorCodeEnum::InternalServerError,
+"ItemCollectionSizeLimitExceeded" => BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded,
+"ProvisionedThroughputExceeded" => BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded,
+"RequestLimitExceeded" => BatchStatementErrorCodeEnum::RequestLimitExceeded,
+"ResourceNotFound" => BatchStatementErrorCodeEnum::ResourceNotFound,
+"ThrottlingError" => BatchStatementErrorCodeEnum::ThrottlingError,
+"TransactionConflict" => BatchStatementErrorCodeEnum::TransactionConflict,
+"ValidationError" => BatchStatementErrorCodeEnum::ValidationError,
+other => BatchStatementErrorCodeEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for BatchStatementErrorCodeEnum {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(BatchStatementErrorCodeEnum::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(BatchStatementErrorCodeEnum::from(s))
+                    }
+                }
 impl BatchStatementErrorCodeEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchStatementErrorCodeEnum::AccessDenied => "AccessDenied",
-            BatchStatementErrorCodeEnum::ConditionalCheckFailed => "ConditionalCheckFailed",
-            BatchStatementErrorCodeEnum::DuplicateItem => "DuplicateItem",
-            BatchStatementErrorCodeEnum::InternalServerError => "InternalServerError",
-            BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => "ItemCollectionSizeLimitExceeded",
-            BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => "ProvisionedThroughputExceeded",
-            BatchStatementErrorCodeEnum::RequestLimitExceeded => "RequestLimitExceeded",
-            BatchStatementErrorCodeEnum::ResourceNotFound => "ResourceNotFound",
-            BatchStatementErrorCodeEnum::ThrottlingError => "ThrottlingError",
-            BatchStatementErrorCodeEnum::TransactionConflict => "TransactionConflict",
-            BatchStatementErrorCodeEnum::ValidationError => "ValidationError",
-            BatchStatementErrorCodeEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied",
-            "ConditionalCheckFailed",
-            "DuplicateItem",
-            "InternalServerError",
-            "ItemCollectionSizeLimitExceeded",
-            "ProvisionedThroughputExceeded",
-            "RequestLimitExceeded",
-            "ResourceNotFound",
-            "ThrottlingError",
-            "TransactionConflict",
-            "ValidationError",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchStatementErrorCodeEnum::AccessDenied => "AccessDenied",
+    BatchStatementErrorCodeEnum::ConditionalCheckFailed => "ConditionalCheckFailed",
+    BatchStatementErrorCodeEnum::DuplicateItem => "DuplicateItem",
+    BatchStatementErrorCodeEnum::InternalServerError => "InternalServerError",
+    BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => "ItemCollectionSizeLimitExceeded",
+    BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => "ProvisionedThroughputExceeded",
+    BatchStatementErrorCodeEnum::RequestLimitExceeded => "RequestLimitExceeded",
+    BatchStatementErrorCodeEnum::ResourceNotFound => "ResourceNotFound",
+    BatchStatementErrorCodeEnum::ThrottlingError => "ThrottlingError",
+    BatchStatementErrorCodeEnum::TransactionConflict => "TransactionConflict",
+    BatchStatementErrorCodeEnum::ValidationError => "ValidationError",
+    BatchStatementErrorCodeEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "ConditionalCheckFailed", "DuplicateItem", "InternalServerError", "ItemCollectionSizeLimitExceeded", "ProvisionedThroughputExceeded", "RequestLimitExceeded", "ResourceNotFound", "ThrottlingError", "TransactionConflict", "ValidationError"]
+                }
+            }
 impl ::std::convert::AsRef<str> for BatchStatementErrorCodeEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl BatchStatementErrorCodeEnum {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for BatchStatementErrorCodeEnum {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            BatchStatementErrorCodeEnum::AccessDenied => write!(f, "AccessDenied"),
-            BatchStatementErrorCodeEnum::ConditionalCheckFailed => write!(f, "ConditionalCheckFailed"),
-            BatchStatementErrorCodeEnum::DuplicateItem => write!(f, "DuplicateItem"),
-            BatchStatementErrorCodeEnum::InternalServerError => write!(f, "InternalServerError"),
-            BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => write!(f, "ItemCollectionSizeLimitExceeded"),
-            BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => write!(f, "ProvisionedThroughputExceeded"),
-            BatchStatementErrorCodeEnum::RequestLimitExceeded => write!(f, "RequestLimitExceeded"),
-            BatchStatementErrorCodeEnum::ResourceNotFound => write!(f, "ResourceNotFound"),
-            BatchStatementErrorCodeEnum::ThrottlingError => write!(f, "ThrottlingError"),
-            BatchStatementErrorCodeEnum::TransactionConflict => write!(f, "TransactionConflict"),
-            BatchStatementErrorCodeEnum::ValidationError => write!(f, "ValidationError"),
-            BatchStatementErrorCodeEnum::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                BatchStatementErrorCodeEnum::AccessDenied => write!(f, "AccessDenied"),
+BatchStatementErrorCodeEnum::ConditionalCheckFailed => write!(f, "ConditionalCheckFailed"),
+BatchStatementErrorCodeEnum::DuplicateItem => write!(f, "DuplicateItem"),
+BatchStatementErrorCodeEnum::InternalServerError => write!(f, "InternalServerError"),
+BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => write!(f, "ItemCollectionSizeLimitExceeded"),
+BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => write!(f, "ProvisionedThroughputExceeded"),
+BatchStatementErrorCodeEnum::RequestLimitExceeded => write!(f, "RequestLimitExceeded"),
+BatchStatementErrorCodeEnum::ResourceNotFound => write!(f, "ResourceNotFound"),
+BatchStatementErrorCodeEnum::ThrottlingError => write!(f, "ThrottlingError"),
+BatchStatementErrorCodeEnum::TransactionConflict => write!(f, "TransactionConflict"),
+BatchStatementErrorCodeEnum::ValidationError => write!(f, "ValidationError"),
+BatchStatementErrorCodeEnum::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

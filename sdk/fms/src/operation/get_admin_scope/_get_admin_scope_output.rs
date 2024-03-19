@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdminScopeOutput {
+pub struct GetAdminScopeOutput  {
     /// <p>Contains details about the administrative scope of the requested account.</p>
     pub admin_scope: ::std::option::Option<crate::types::AdminScope>,
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
@@ -19,9 +19,9 @@ pub struct GetAdminScopeOutput {
     pub status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,
 }
-impl GetAdminScopeOutput {
+impl  GetAdminScopeOutput  {
     /// <p>Contains details about the administrative scope of the requested account.</p>
-    pub fn admin_scope(&self) -> ::std::option::Option<&crate::types::AdminScope> {
+    pub fn admin_scope(&self) -> ::std::option::Option<& crate::types::AdminScope> {
         self.admin_scope.as_ref()
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
@@ -35,15 +35,15 @@ impl GetAdminScopeOutput {
     /// <li>
     /// <p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OrganizationStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAdminScopeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAdminScopeOutput {
     /// Creates a new builder-style object to manufacture [`GetAdminScopeOutput`](crate::operation::get_admin_scope::GetAdminScopeOutput).
     pub fn builder() -> crate::operation::get_admin_scope::builders::GetAdminScopeOutputBuilder {
@@ -67,8 +67,7 @@ impl GetAdminScopeOutputBuilder {
     }
     /// <p>Contains details about the administrative scope of the requested account.</p>
     pub fn set_admin_scope(mut self, input: ::std::option::Option<crate::types::AdminScope>) -> Self {
-        self.admin_scope = input;
-        self
+        self.admin_scope = input; self
     }
     /// <p>Contains details about the administrative scope of the requested account.</p>
     pub fn get_admin_scope(&self) -> &::std::option::Option<crate::types::AdminScope> {
@@ -101,8 +100,7 @@ impl GetAdminScopeOutputBuilder {
     /// <p><code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
@@ -119,20 +117,23 @@ impl GetAdminScopeOutputBuilder {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAdminScopeOutput`](crate::operation::get_admin_scope::GetAdminScopeOutput).
     pub fn build(self) -> crate::operation::get_admin_scope::GetAdminScopeOutput {
         crate::operation::get_admin_scope::GetAdminScopeOutput {
-            admin_scope: self.admin_scope,
-            status: self.status,
+            admin_scope: self.admin_scope
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

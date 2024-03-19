@@ -21,11 +21,7 @@ impl ProcessingConfiguration {
     /// Tries to convert the enum instance into [`AuditLog`](crate::types::ProcessingConfiguration::AuditLog), extracting the inner [`AuditLogProcessingConfiguration`](crate::types::AuditLogProcessingConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audit_log(&self) -> ::std::result::Result<&crate::types::AuditLogProcessingConfiguration, &Self> {
-        if let ProcessingConfiguration::AuditLog(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ProcessingConfiguration::AuditLog(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AuditLog`](crate::types::ProcessingConfiguration::AuditLog).
     pub fn is_audit_log(&self) -> bool {
@@ -36,3 +32,4 @@ impl ProcessingConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

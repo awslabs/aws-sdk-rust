@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"Count": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountAction {}
+pub struct CountAction  {
+}
 impl CountAction {
     /// Creates a new builder-style object to manufacture [`CountAction`](crate::types::CountAction).
     pub fn builder() -> crate::types::builders::CountActionBuilder {
@@ -16,10 +17,13 @@ impl CountAction {
 /// A builder for [`CountAction`](crate::types::CountAction).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct CountActionBuilder {}
+pub struct CountActionBuilder {
+}
 impl CountActionBuilder {
     /// Consumes the builder and constructs a [`CountAction`](crate::types::CountAction).
     pub fn build(self) -> crate::types::CountAction {
-        crate::types::CountAction {}
+        crate::types::CountAction {
+        }
     }
 }
+

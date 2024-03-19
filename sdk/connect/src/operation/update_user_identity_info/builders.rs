@@ -5,56 +5,52 @@ pub use crate::operation::update_user_identity_info::_update_user_identity_info_
 
 impl UpdateUserIdentityInfoInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_user_identity_info();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_user_identity_info();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateUserIdentityInfo`.
-///
+/// 
 /// <p>Updates the identity information for the specified user.</p><important>
 /// <p>We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the login credentials of other users by changing their email address. This poses a security risk to your organization. They can change the email address of a user to the attacker's email address, and then reset the password through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserIdentityInfoFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder,
+                    inner: crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-    > for UpdateUserIdentityInfoFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
+                    crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
+                > for UpdateUserIdentityInfoFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
+                        crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateUserIdentityInfoFluentBuilder {
     /// Creates a new `UpdateUserIdentityInfo`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateUserIdentityInfoFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_user_identity_info::UpdateUserIdentityInfo::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfo::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_identity_info::UpdateUserIdentityInfoError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_user_identity_info::UpdateUserIdentityInfo::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_user_identity_info::UpdateUserIdentityInfo::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput, crate::operation::update_user_identity_info::UpdateUserIdentityInfoError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identity information for the user.</p>
     pub fn identity_info(mut self, input: crate::types::UserIdentityInfo) -> Self {
         self.inner = self.inner.identity_info(input);
@@ -153,3 +140,4 @@ impl UpdateUserIdentityInfoFluentBuilder {
         self.inner.get_instance_id()
     }
 }
+

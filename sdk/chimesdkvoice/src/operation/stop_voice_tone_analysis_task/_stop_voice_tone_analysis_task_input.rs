@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopVoiceToneAnalysisTaskInput {
+pub struct StopVoiceToneAnalysisTaskInput  {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the voice tone analysis task.</p>
     pub voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
 }
-impl StopVoiceToneAnalysisTaskInput {
+impl  StopVoiceToneAnalysisTaskInput  {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<& str> {
         self.voice_tone_analysis_task_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
     }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_tone_analysis_task_id = input;
-        self
+        self.voice_tone_analysis_task_id = input; self
     }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_tone_analysis_task_id
     }
     /// Consumes the builder and constructs a [`StopVoiceToneAnalysisTaskInput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput {
-            voice_connector_id: self.voice_connector_id,
-            voice_tone_analysis_task_id: self.voice_tone_analysis_task_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput {
+                voice_connector_id: self.voice_connector_id
+                ,
+                voice_tone_analysis_task_id: self.voice_tone_analysis_task_id
+                ,
+            }
+        )
     }
 }
+

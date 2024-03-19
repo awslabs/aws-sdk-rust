@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WithdrawByoipCidrInput {
+pub struct WithdrawByoipCidrInput  {
     /// <p>The address range, in CIDR notation.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
-impl WithdrawByoipCidrInput {
+impl  WithdrawByoipCidrInput  {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl WithdrawByoipCidrInputBuilder {
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
     /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput { cidr: self.cidr })
+    pub fn build(self) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput {
+                cidr: self.cidr
+                ,
+            }
+        )
     }
 }
+

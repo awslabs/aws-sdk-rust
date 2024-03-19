@@ -3,22 +3,20 @@
 /// <p>Contains information about discrepancy in an intent information between the test set and the bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetIntentDiscrepancyItem {
+pub struct TestSetIntentDiscrepancyItem  {
     /// <p>The name of the intent in the discrepancy report.</p>
     pub intent_name: ::std::string::String,
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub error_message: ::std::string::String,
 }
-impl TestSetIntentDiscrepancyItem {
+impl  TestSetIntentDiscrepancyItem  {
     /// <p>The name of the intent in the discrepancy report.</p>
-    pub fn intent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.intent_name.deref()
+    pub fn intent_name(&self) -> & str {
+        use std::ops::Deref; self.intent_name.deref()
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl TestSetIntentDiscrepancyItem {
@@ -44,8 +42,7 @@ impl TestSetIntentDiscrepancyItemBuilder {
     }
     /// <p>The name of the intent in the discrepancy report.</p>
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The name of the intent in the discrepancy report.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TestSetIntentDiscrepancyItemBuilder {
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TestSetIntentDiscrepancyItemBuilder {
     /// - [`intent_name`](crate::types::builders::TestSetIntentDiscrepancyItemBuilder::intent_name)
     /// - [`error_message`](crate::types::builders::TestSetIntentDiscrepancyItemBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::TestSetIntentDiscrepancyItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TestSetIntentDiscrepancyItem {
-            intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "intent_name",
-                    "intent_name was not specified but it is required when building TestSetIntentDiscrepancyItem",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building TestSetIntentDiscrepancyItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TestSetIntentDiscrepancyItem {
+                intent_name: self.intent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("intent_name", "intent_name was not specified but it is required when building TestSetIntentDiscrepancyItem")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building TestSetIntentDiscrepancyItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

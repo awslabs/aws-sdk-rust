@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCollaborationAnalysisTemplateInput {
+pub struct GetCollaborationAnalysisTemplateInput  {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub analysis_template_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetCollaborationAnalysisTemplateInput {
+impl  GetCollaborationAnalysisTemplateInput  {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub fn analysis_template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_template_arn(&self) -> ::std::option::Option<& str> {
         self.analysis_template_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetCollaborationAnalysisTemplateInputBuilder {
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetCollaborationAnalysisTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub fn set_analysis_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_template_arn = input;
-        self
+        self.analysis_template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub fn get_analysis_template_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_template_arn
     }
     /// Consumes the builder and constructs a [`GetCollaborationAnalysisTemplateInput`](crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput {
-                collaboration_identifier: self.collaboration_identifier,
-                analysis_template_arn: self.analysis_template_arn,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                analysis_template_arn: self.analysis_template_arn
+                ,
+            }
         )
     }
 }
+

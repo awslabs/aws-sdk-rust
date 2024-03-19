@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationAssignmentInput {
+pub struct CreateApplicationAssignmentInput  {
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
@@ -10,17 +10,17 @@ pub struct CreateApplicationAssignmentInput {
     /// <p>The entity type for which the assignment will be created.</p>
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
-impl CreateApplicationAssignmentInput {
+impl  CreateApplicationAssignmentInput  {
     /// <p>The ARN of the application provider under which the operation will run.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> ::std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateApplicationAssignmentInputBuilder {
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the application provider under which the operation will run.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateApplicationAssignmentInputBuilder {
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl CreateApplicationAssignmentInputBuilder {
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input;
-        self
+        self.principal_type = input; self
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
         &self.principal_type
     }
     /// Consumes the builder and constructs a [`CreateApplicationAssignmentInput`](crate::operation::create_application_assignment::CreateApplicationAssignmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application_assignment::CreateApplicationAssignmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_application_assignment::CreateApplicationAssignmentInput {
-            application_arn: self.application_arn,
-            principal_id: self.principal_id,
-            principal_type: self.principal_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application_assignment::CreateApplicationAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application_assignment::CreateApplicationAssignmentInput {
+                application_arn: self.application_arn
+                ,
+                principal_id: self.principal_id
+                ,
+                principal_type: self.principal_type
+                ,
+            }
+        )
     }
 }
+

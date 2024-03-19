@@ -3,7 +3,7 @@
 /// <p>Container for information about nodes on the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainNodesStatus {
+pub struct DomainNodesStatus  {
     /// <p>The ID of the node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
@@ -21,37 +21,37 @@ pub struct DomainNodesStatus {
     /// <p>The storage size of the node, in GiB.</p>
     pub storage_size: ::std::option::Option<::std::string::String>,
 }
-impl DomainNodesStatus {
+impl  DomainNodesStatus  {
     /// <p>The ID of the node.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&crate::types::NodeType> {
+    pub fn node_type(&self) -> ::std::option::Option<& crate::types::NodeType> {
         self.node_type.as_ref()
     }
     /// <p>The Availability Zone of the node.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The instance type information of the node.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Indicates if the node is active or in standby.</p>
-    pub fn node_status(&self) -> ::std::option::Option<&crate::types::NodeStatus> {
+    pub fn node_status(&self) -> ::std::option::Option<& crate::types::NodeStatus> {
         self.node_status.as_ref()
     }
     /// <p>Indicates if the node has EBS or instance storage.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
-    pub fn storage_volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
+    pub fn storage_volume_type(&self) -> ::std::option::Option<& crate::types::VolumeType> {
         self.storage_volume_type.as_ref()
     }
     /// <p>The storage size of the node, in GiB.</p>
-    pub fn storage_size(&self) -> ::std::option::Option<&str> {
+    pub fn storage_size(&self) -> ::std::option::Option<& str> {
         self.storage_size.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>The ID of the node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The ID of the node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<crate::types::NodeType>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<crate::types::NodeType> {
@@ -111,8 +109,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>The Availability Zone of the node.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of the node.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>The instance type information of the node.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type information of the node.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
@@ -139,8 +135,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>Indicates if the node is active or in standby.</p>
     pub fn set_node_status(mut self, input: ::std::option::Option<crate::types::NodeStatus>) -> Self {
-        self.node_status = input;
-        self
+        self.node_status = input; self
     }
     /// <p>Indicates if the node is active or in standby.</p>
     pub fn get_node_status(&self) -> &::std::option::Option<crate::types::NodeStatus> {
@@ -153,8 +148,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>Indicates if the node has EBS or instance storage.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Indicates if the node has EBS or instance storage.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
     pub fn set_storage_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
-        self.storage_volume_type = input;
-        self
+        self.storage_volume_type = input; self
     }
     /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
     pub fn get_storage_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
@@ -181,8 +174,7 @@ impl DomainNodesStatusBuilder {
     }
     /// <p>The storage size of the node, in GiB.</p>
     pub fn set_storage_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_size = input;
-        self
+        self.storage_size = input; self
     }
     /// <p>The storage size of the node, in GiB.</p>
     pub fn get_storage_size(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl DomainNodesStatusBuilder {
     /// Consumes the builder and constructs a [`DomainNodesStatus`](crate::types::DomainNodesStatus).
     pub fn build(self) -> crate::types::DomainNodesStatus {
         crate::types::DomainNodesStatus {
-            node_id: self.node_id,
-            node_type: self.node_type,
-            availability_zone: self.availability_zone,
-            instance_type: self.instance_type,
-            node_status: self.node_status,
-            storage_type: self.storage_type,
-            storage_volume_type: self.storage_volume_type,
-            storage_size: self.storage_size,
+            node_id: self.node_id
+            ,
+            node_type: self.node_type
+            ,
+            availability_zone: self.availability_zone
+            ,
+            instance_type: self.instance_type
+            ,
+            node_status: self.node_status
+            ,
+            storage_type: self.storage_type
+            ,
+            storage_volume_type: self.storage_volume_type
+            ,
+            storage_size: self.storage_size
+            ,
         }
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Describes the memory available to the media accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaDeviceMemoryInfo {
+pub struct MediaDeviceMemoryInfo  {
     /// <p>The size of the memory available to each media accelerator, in MiB.</p>
     pub size_in_mib: ::std::option::Option<i32>,
 }
-impl MediaDeviceMemoryInfo {
+impl  MediaDeviceMemoryInfo  {
     /// <p>The size of the memory available to each media accelerator, in MiB.</p>
     pub fn size_in_mib(&self) -> ::std::option::Option<i32> {
         self.size_in_mib
@@ -34,8 +34,7 @@ impl MediaDeviceMemoryInfoBuilder {
     }
     /// <p>The size of the memory available to each media accelerator, in MiB.</p>
     pub fn set_size_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mib = input;
-        self
+        self.size_in_mib = input; self
     }
     /// <p>The size of the memory available to each media accelerator, in MiB.</p>
     pub fn get_size_in_mib(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl MediaDeviceMemoryInfoBuilder {
     /// Consumes the builder and constructs a [`MediaDeviceMemoryInfo`](crate::types::MediaDeviceMemoryInfo).
     pub fn build(self) -> crate::types::MediaDeviceMemoryInfo {
         crate::types::MediaDeviceMemoryInfo {
-            size_in_mib: self.size_in_mib,
+            size_in_mib: self.size_in_mib
+            ,
         }
     }
 }
+

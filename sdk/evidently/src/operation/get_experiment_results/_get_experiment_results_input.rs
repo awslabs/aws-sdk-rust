@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExperimentResultsInput {
+pub struct GetExperimentResultsInput  {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to retrieve the results of.</p>
@@ -12,9 +12,9 @@ pub struct GetExperimentResultsInput {
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub metric_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub treatment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub treatment_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub base_stat: ::std::option::Option<crate::types::ExperimentBaseStat>,
     /// <p>The statistics that you want to see in the returned results.</p>
@@ -28,43 +28,45 @@ pub struct GetExperimentResultsInput {
     /// <li>
     /// <p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
-    pub result_stats: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>,
+    pub result_stats: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentResultRequestType>>,
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub report_names: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
+    pub report_names: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentReportName>>,
     /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub period: ::std::option::Option<i64>,
 }
-impl GetExperimentResultsInput {
+impl  GetExperimentResultsInput  {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
+    pub fn experiment(&self) -> ::std::option::Option<& str> {
         self.experiment.as_deref()
     }
     /// <p>The date and time that the experiment started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_names.is_none()`.
-    pub fn metric_names(&self) -> &[::std::string::String] {
-        self.metric_names.as_deref().unwrap_or_default()
+    pub fn metric_names(&self) -> & [::std::string::String] {
+        self.metric_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatment_names.is_none()`.
-    pub fn treatment_names(&self) -> &[::std::string::String] {
-        self.treatment_names.as_deref().unwrap_or_default()
+    pub fn treatment_names(&self) -> & [::std::string::String] {
+        self.treatment_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
-    pub fn base_stat(&self) -> ::std::option::Option<&crate::types::ExperimentBaseStat> {
+    pub fn base_stat(&self) -> ::std::option::Option<& crate::types::ExperimentBaseStat> {
         self.base_stat.as_ref()
     }
     /// <p>The statistics that you want to see in the returned results.</p>
@@ -78,16 +80,18 @@ impl GetExperimentResultsInput {
     /// <li>
     /// <p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_stats.is_none()`.
-    pub fn result_stats(&self) -> &[crate::types::ExperimentResultRequestType] {
-        self.result_stats.as_deref().unwrap_or_default()
+    pub fn result_stats(&self) -> & [crate::types::ExperimentResultRequestType] {
+        self.result_stats.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_names.is_none()`.
-    pub fn report_names(&self) -> &[crate::types::ExperimentReportName] {
-        self.report_names.as_deref().unwrap_or_default()
+    pub fn report_names(&self) -> & [crate::types::ExperimentReportName] {
+        self.report_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub fn period(&self) -> ::std::option::Option<i64> {
@@ -109,11 +113,11 @@ pub struct GetExperimentResultsInputBuilder {
     pub(crate) experiment: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) treatment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) metric_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) treatment_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) base_stat: ::std::option::Option<crate::types::ExperimentBaseStat>,
-    pub(crate) result_stats: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>,
-    pub(crate) report_names: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
+    pub(crate) result_stats: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentResultRequestType>>,
+    pub(crate) report_names: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentReportName>>,
     pub(crate) period: ::std::option::Option<i64>,
 }
 impl GetExperimentResultsInputBuilder {
@@ -125,8 +129,7 @@ impl GetExperimentResultsInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +143,7 @@ impl GetExperimentResultsInputBuilder {
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment = input;
-        self
+        self.experiment = input; self
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
     pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +156,7 @@ impl GetExperimentResultsInputBuilder {
     }
     /// <p>The date and time that the experiment started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time that the experiment started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +169,7 @@ impl GetExperimentResultsInputBuilder {
     }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,17 +182,16 @@ impl GetExperimentResultsInputBuilder {
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
     pub fn metric_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_names.unwrap_or_default();
-        v.push(input.into());
-        self.metric_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.metric_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.metric_names = input;
-        self
+    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.metric_names = input; self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.metric_names
     }
     /// Appends an item to `treatment_names`.
@@ -202,17 +201,16 @@ impl GetExperimentResultsInputBuilder {
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
     pub fn treatment_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.treatment_names.unwrap_or_default();
-        v.push(input.into());
-        self.treatment_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.treatment_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn set_treatment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.treatment_names = input;
-        self
+    pub fn set_treatment_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.treatment_names = input; self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn get_treatment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_treatment_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.treatment_names
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
@@ -222,8 +220,7 @@ impl GetExperimentResultsInputBuilder {
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn set_base_stat(mut self, input: ::std::option::Option<crate::types::ExperimentBaseStat>) -> Self {
-        self.base_stat = input;
-        self
+        self.base_stat = input; self
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn get_base_stat(&self) -> &::std::option::Option<crate::types::ExperimentBaseStat> {
@@ -246,9 +243,9 @@ impl GetExperimentResultsInputBuilder {
     /// </ul>
     pub fn result_stats(mut self, input: crate::types::ExperimentResultRequestType) -> Self {
         let mut v = self.result_stats.unwrap_or_default();
-        v.push(input);
-        self.result_stats = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_stats = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
@@ -261,9 +258,8 @@ impl GetExperimentResultsInputBuilder {
     /// <li>
     /// <p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
-    pub fn set_result_stats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>) -> Self {
-        self.result_stats = input;
-        self
+    pub fn set_result_stats(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentResultRequestType>>) -> Self {
+        self.result_stats = input; self
     }
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
@@ -276,7 +272,7 @@ impl GetExperimentResultsInputBuilder {
     /// <li>
     /// <p><code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p></li>
     /// </ul>
-    pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
+    pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperimentResultRequestType>> {
         &self.result_stats
     }
     /// Appends an item to `report_names`.
@@ -286,17 +282,16 @@ impl GetExperimentResultsInputBuilder {
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
     pub fn report_names(mut self, input: crate::types::ExperimentReportName) -> Self {
         let mut v = self.report_names.unwrap_or_default();
-        v.push(input);
-        self.report_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.report_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn set_report_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>) -> Self {
-        self.report_names = input;
-        self
+    pub fn set_report_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperimentReportName>>) -> Self {
+        self.report_names = input; self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn get_report_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>> {
+    pub fn get_report_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperimentReportName>> {
         &self.report_names
     }
     /// <p>In seconds, the amount of time to aggregate results together.</p>
@@ -306,29 +301,38 @@ impl GetExperimentResultsInputBuilder {
     }
     /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>In seconds, the amount of time to aggregate results together.</p>
     pub fn get_period(&self) -> &::std::option::Option<i64> {
         &self.period
     }
     /// Consumes the builder and constructs a [`GetExperimentResultsInput`](crate::operation::get_experiment_results::GetExperimentResultsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_experiment_results::GetExperimentResultsInput {
-            project: self.project,
-            experiment: self.experiment,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            metric_names: self.metric_names,
-            treatment_names: self.treatment_names,
-            base_stat: self.base_stat,
-            result_stats: self.result_stats,
-            report_names: self.report_names,
-            period: self.period,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_experiment_results::GetExperimentResultsInput {
+                project: self.project
+                ,
+                experiment: self.experiment
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                metric_names: self.metric_names
+                ,
+                treatment_names: self.treatment_names
+                ,
+                base_stat: self.base_stat
+                ,
+                result_stats: self.result_stats
+                ,
+                report_names: self.report_names
+                ,
+                period: self.period
+                ,
+            }
+        )
     }
 }
+

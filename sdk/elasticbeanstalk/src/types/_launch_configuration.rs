@@ -3,13 +3,13 @@
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchConfiguration {
+pub struct LaunchConfiguration  {
     /// <p>The name of the launch configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl LaunchConfiguration {
+impl  LaunchConfiguration  {
     /// <p>The name of the launch configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl LaunchConfigurationBuilder {
     }
     /// <p>The name of the launch configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the launch configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl LaunchConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LaunchConfiguration`](crate::types::LaunchConfiguration).
     pub fn build(self) -> crate::types::LaunchConfiguration {
-        crate::types::LaunchConfiguration { name: self.name }
+        crate::types::LaunchConfiguration {
+            name: self.name
+            ,
+        }
     }
 }
+

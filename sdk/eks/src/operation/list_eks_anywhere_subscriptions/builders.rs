@@ -5,54 +5,50 @@ pub use crate::operation::list_eks_anywhere_subscriptions::_list_eks_anywhere_su
 
 impl ListEksAnywhereSubscriptionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_eks_anywhere_subscriptions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_eks_anywhere_subscriptions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListEksAnywhereSubscriptions`.
-///
+/// 
 /// <p>Displays the full description of the subscription.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEksAnywhereSubscriptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_eks_anywhere_subscriptions::builders::ListEksAnywhereSubscriptionsInputBuilder,
+                    inner: crate::operation::list_eks_anywhere_subscriptions::builders::ListEksAnywhereSubscriptionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
-    > for ListEksAnywhereSubscriptionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
-            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
+                    crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
+                > for ListEksAnywhereSubscriptionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
+                        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListEksAnywhereSubscriptionsFluentBuilder {
     /// Creates a new `ListEksAnywhereSubscriptions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListEksAnywhereSubscriptionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput,
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput, crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_eks_anywhere_subscriptions::paginator::ListEksAnywhereSubscriptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_eks_anywhere_subscriptions::paginator::ListEksAnywhereSubscriptionsPaginator {
-        crate::operation::list_eks_anywhere_subscriptions::paginator::ListEksAnywhereSubscriptionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_eks_anywhere_subscriptions::paginator::ListEksAnywhereSubscriptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_eks_anywhere_subscriptions::paginator::ListEksAnywhereSubscriptionsPaginator {
+                                crate::operation::list_eks_anywhere_subscriptions::paginator::ListEksAnywhereSubscriptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of cluster results returned by ListEksAnywhereSubscriptions in paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns only maxResults results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions request with the returned nextToken value. This value can be between 1 and 100. If you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a nextToken value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -152,12 +139,13 @@ impl ListEksAnywhereSubscriptionsFluentBuilder {
         self
     }
     /// <p>An array of subscription statuses to filter on.</p>
-    pub fn set_include_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscriptionStatus>>) -> Self {
+    pub fn set_include_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscriptionStatus>>) -> Self {
         self.inner = self.inner.set_include_status(input);
         self
     }
     /// <p>An array of subscription statuses to filter on.</p>
-    pub fn get_include_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscriptionStatus>> {
+    pub fn get_include_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscriptionStatus>> {
         self.inner.get_include_status()
     }
 }
+

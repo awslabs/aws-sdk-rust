@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateGlossaryInput {
+pub struct CreateGlossaryInput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of this business glossary.</p>
@@ -16,33 +16,33 @@ pub struct CreateGlossaryInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateGlossaryInput {
+impl  CreateGlossaryInput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The name of this business glossary.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the project that currently owns business glossary.</p>
-    pub fn owning_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_identifier(&self) -> ::std::option::Option<& str> {
         self.owning_project_identifier.as_deref()
     }
     /// <p>The description of this business glossary.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of this business glossary.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GlossaryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GlossaryStatus> {
         self.status.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateGlossaryInput {
+impl  ::std::fmt::Debug for CreateGlossaryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGlossaryInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -81,8 +81,7 @@ impl CreateGlossaryInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateGlossaryInputBuilder {
     }
     /// <p>The name of this business glossary.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this business glossary.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl CreateGlossaryInputBuilder {
     }
     /// <p>The ID of the project that currently owns business glossary.</p>
     pub fn set_owning_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_identifier = input;
-        self
+        self.owning_project_identifier = input; self
     }
     /// <p>The ID of the project that currently owns business glossary.</p>
     pub fn get_owning_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl CreateGlossaryInputBuilder {
     }
     /// <p>The description of this business glossary.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of this business glossary.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl CreateGlossaryInputBuilder {
     }
     /// <p>The status of this business glossary.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GlossaryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of this business glossary.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryStatus> {
@@ -153,25 +148,30 @@ impl CreateGlossaryInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateGlossaryInput`](crate::operation::create_glossary::CreateGlossaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_glossary::CreateGlossaryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_glossary::CreateGlossaryInput {
-            domain_identifier: self.domain_identifier,
-            name: self.name,
-            owning_project_identifier: self.owning_project_identifier,
-            description: self.description,
-            status: self.status,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_glossary::CreateGlossaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_glossary::CreateGlossaryInput {
+                domain_identifier: self.domain_identifier
+                ,
+                name: self.name
+                ,
+                owning_project_identifier: self.owning_project_identifier
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateGlossaryInputBuilder {
@@ -186,3 +186,4 @@ impl ::std::fmt::Debug for CreateGlossaryInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure containing the details for a registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistryListItem {
+pub struct RegistryListItem  {
     /// <p>The name of the registry.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
@@ -17,29 +17,29 @@ pub struct RegistryListItem {
     /// <p>The date the registry was updated.</p>
     pub updated_time: ::std::option::Option<::std::string::String>,
 }
-impl RegistryListItem {
+impl  RegistryListItem  {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registry_arn(&self) -> ::std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>A description of the registry.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the registry.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RegistryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RegistryStatus> {
         self.status.as_ref()
     }
     /// <p>The data the registry was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>The date the registry was updated.</p>
-    pub fn updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn updated_time(&self) -> ::std::option::Option<& str> {
         self.updated_time.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl RegistryListItemBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl RegistryListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_arn = input;
-        self
+        self.registry_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl RegistryListItemBuilder {
     }
     /// <p>A description of the registry.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the registry.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl RegistryListItemBuilder {
     }
     /// <p>The status of the registry.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the registry.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryStatus> {
@@ -125,8 +121,7 @@ impl RegistryListItemBuilder {
     }
     /// <p>The data the registry was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The data the registry was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl RegistryListItemBuilder {
     }
     /// <p>The date the registry was updated.</p>
     pub fn set_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_time = input;
-        self
+        self.updated_time = input; self
     }
     /// <p>The date the registry was updated.</p>
     pub fn get_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl RegistryListItemBuilder {
     /// Consumes the builder and constructs a [`RegistryListItem`](crate::types::RegistryListItem).
     pub fn build(self) -> crate::types::RegistryListItem {
         crate::types::RegistryListItem {
-            registry_name: self.registry_name,
-            registry_arn: self.registry_arn,
-            description: self.description,
-            status: self.status,
-            created_time: self.created_time,
-            updated_time: self.updated_time,
+            registry_name: self.registry_name
+            ,
+            registry_arn: self.registry_arn
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            created_time: self.created_time
+            ,
+            updated_time: self.updated_time
+            ,
         }
     }
 }
+

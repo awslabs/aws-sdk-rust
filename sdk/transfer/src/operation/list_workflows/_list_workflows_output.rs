@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkflowsOutput {
+pub struct ListWorkflowsOutput  {
     /// <p><code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub workflows: ::std::vec::Vec<crate::types::ListedWorkflow>,
+    pub workflows: ::std::vec::Vec::<crate::types::ListedWorkflow>,
     _request_id: Option<String>,
 }
-impl ListWorkflowsOutput {
+impl  ListWorkflowsOutput  {
     /// <p><code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn workflows(&self) -> &[crate::types::ListedWorkflow] {
-        use std::ops::Deref;
-        self.workflows.deref()
+    pub fn workflows(&self) -> & [crate::types::ListedWorkflow] {
+        use std::ops::Deref; self.workflows.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkflowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
     pub fn builder() -> crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListWorkflowsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>>,
+    pub(crate) workflows: ::std::option::Option<::std::vec::Vec::<crate::types::ListedWorkflow>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListWorkflowsOutputBuilder {
     }
     /// <p><code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p><code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListWorkflowsOutputBuilder {
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
     pub fn workflows(mut self, input: crate::types::ListedWorkflow) -> Self {
         let mut v = self.workflows.unwrap_or_default();
-        v.push(input);
-        self.workflows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workflows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>>) -> Self {
-        self.workflows = input;
-        self
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedWorkflow>>) -> Self {
+        self.workflows = input; self
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>> {
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedWorkflow>> {
         &self.workflows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflows`](crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder::workflows)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsOutput {
-            next_token: self.next_token,
-            workflows: self.workflows.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflows",
-                    "workflows was not specified but it is required when building ListWorkflowsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workflows::ListWorkflowsOutput {
+                next_token: self.next_token
+                ,
+                workflows: self.workflows
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflows", "workflows was not specified but it is required when building ListWorkflowsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

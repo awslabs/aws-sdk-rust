@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccessOutput {
+pub struct UpdateAccessOutput  {
     /// <p>The identifier of the server that the user is attached to.</p>
     pub server_id: ::std::string::String,
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub external_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateAccessOutput {
+impl  UpdateAccessOutput  {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> & str {
+        use std::ops::Deref; self.server_id.deref()
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
-    pub fn external_id(&self) -> &str {
-        use std::ops::Deref;
-        self.external_id.deref()
+    pub fn external_id(&self) -> & str {
+        use std::ops::Deref; self.external_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAccessOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessOutput`](crate::operation::update_access::UpdateAccessOutput).
     pub fn builder() -> crate::operation::update_access::builders::UpdateAccessOutputBuilder {
@@ -50,8 +48,7 @@ impl UpdateAccessOutputBuilder {
     }
     /// <p>The identifier of the server that the user is attached to.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The identifier of the server that the user is attached to.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,43 +62,41 @@ impl UpdateAccessOutputBuilder {
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAccessOutput`](crate::operation::update_access::UpdateAccessOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_id`](crate::operation::update_access::builders::UpdateAccessOutputBuilder::server_id)
     /// - [`external_id`](crate::operation::update_access::builders::UpdateAccessOutputBuilder::external_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_access::UpdateAccessOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_access::UpdateAccessOutput {
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building UpdateAccessOutput",
-                )
-            })?,
-            external_id: self.external_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "external_id",
-                    "external_id was not specified but it is required when building UpdateAccessOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_access::UpdateAccessOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_access::UpdateAccessOutput {
+                server_id: self.server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_id", "server_id was not specified but it is required when building UpdateAccessOutput")
+                    )?
+                ,
+                external_id: self.external_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("external_id", "external_id was not specified but it is required when building UpdateAccessOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

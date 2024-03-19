@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssociatedAttributeGroups`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application(impl Into<String>)`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::set_application):<br>required: **true**<br><p>The name or ID of the application.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to get the next page of results after a previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p><br>
-    /// - On success, responds with [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput) with field(s):
     ///   - [`attribute_groups(Option<Vec::<String>>)`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput::attribute_groups): <p>A list of attribute group IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput::next_token): <p>The token to use to get the next page of results after a previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListAssociatedAttributeGroupsError>`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError)
-    pub fn list_associated_attribute_groups(
-        &self,
-    ) -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder {
-        crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAssociatedAttributeGroupsError>`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError)
+    pub fn list_associated_attribute_groups(&self) -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder {
+                                crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

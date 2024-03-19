@@ -3,15 +3,14 @@
 /// <p>Details identifying the users with permissions to use the action type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTypePermissions {
+pub struct ActionTypePermissions  {
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub allowed_accounts: ::std::vec::Vec<::std::string::String>,
+    pub allowed_accounts: ::std::vec::Vec::<::std::string::String>,
 }
-impl ActionTypePermissions {
+impl  ActionTypePermissions  {
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn allowed_accounts(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.allowed_accounts.deref()
+    pub fn allowed_accounts(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.allowed_accounts.deref()
     }
 }
 impl ActionTypePermissions {
@@ -25,7 +24,7 @@ impl ActionTypePermissions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypePermissionsBuilder {
-    pub(crate) allowed_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ActionTypePermissionsBuilder {
     /// Appends an item to `allowed_accounts`.
@@ -35,30 +34,31 @@ impl ActionTypePermissionsBuilder {
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
     pub fn allowed_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn set_allowed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_accounts = input;
-        self
+    pub fn set_allowed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_accounts = input; self
     }
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn get_allowed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_accounts
     }
     /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::types::ActionTypePermissions).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_accounts`](crate::types::builders::ActionTypePermissionsBuilder::allowed_accounts)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionTypePermissions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionTypePermissions {
-            allowed_accounts: self.allowed_accounts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_accounts",
-                    "allowed_accounts was not specified but it is required when building ActionTypePermissions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionTypePermissions {
+                allowed_accounts: self.allowed_accounts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_accounts", "allowed_accounts was not specified but it is required when building ActionTypePermissions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

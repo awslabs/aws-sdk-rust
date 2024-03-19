@@ -3,7 +3,7 @@
 /// <p>Metadata information about a Key Value Store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeKeyValueStoreOutput {
+pub struct DescribeKeyValueStoreOutput  {
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub item_count: i32,
     /// <p>Total size of the Key Value Store in bytes.</p>
@@ -22,7 +22,7 @@ pub struct DescribeKeyValueStoreOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeKeyValueStoreOutput {
+impl  DescribeKeyValueStoreOutput  {
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub fn item_count(&self) -> i32 {
         self.item_count
@@ -32,37 +32,35 @@ impl DescribeKeyValueStoreOutput {
         self.total_size_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
-    pub fn kvs_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kvs_arn.deref()
+    pub fn kvs_arn(&self) -> & str {
+        use std::ops::Deref; self.kvs_arn.deref()
     }
     /// <p>Date and time when the Key Value Store was created.</p>
-    pub fn created(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created(&self) -> & ::aws_smithy_types::DateTime {
         &self.created
     }
     /// <p>The version identifier for the current version of the Key Value Store.</p>
-    pub fn e_tag(&self) -> &str {
-        use std::ops::Deref;
-        self.e_tag.deref()
+    pub fn e_tag(&self) -> & str {
+        use std::ops::Deref; self.e_tag.deref()
     }
     /// <p>Date and time when the key value pairs in the Key Value Store was last modified.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The current status of the Key Value Store.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The reason for Key Value Store creation failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeKeyValueStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeKeyValueStoreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput).
     pub fn builder() -> crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder {
@@ -93,8 +91,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>Number of key value pairs in the Key Value Store.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -108,8 +105,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>Total size of the Key Value Store in bytes.</p>
     pub fn set_total_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_size_in_bytes = input;
-        self
+        self.total_size_in_bytes = input; self
     }
     /// <p>Total size of the Key Value Store in bytes.</p>
     pub fn get_total_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -123,8 +119,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kvs_arn = input;
-        self
+        self.kvs_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +133,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>Date and time when the Key Value Store was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>Date and time when the Key Value Store was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +147,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>The version identifier for the current version of the Key Value Store.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The version identifier for the current version of the Key Value Store.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +160,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>Date and time when the key value pairs in the Key Value Store was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>Date and time when the key value pairs in the Key Value Store was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +173,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>The current status of the Key Value Store.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the Key Value Store.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,22 +186,21 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>The reason for Key Value Store creation failure.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason for Key Value Store creation failure.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`item_count`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder::item_count)
@@ -218,47 +208,43 @@ impl DescribeKeyValueStoreOutputBuilder {
     /// - [`kvs_arn`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder::kvs_arn)
     /// - [`created`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder::created)
     /// - [`e_tag`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder::e_tag)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput {
-            item_count: self.item_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "item_count",
-                    "item_count was not specified but it is required when building DescribeKeyValueStoreOutput",
-                )
-            })?,
-            total_size_in_bytes: self.total_size_in_bytes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_size_in_bytes",
-                    "total_size_in_bytes was not specified but it is required when building DescribeKeyValueStoreOutput",
-                )
-            })?,
-            kvs_arn: self.kvs_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kvs_arn",
-                    "kvs_arn was not specified but it is required when building DescribeKeyValueStoreOutput",
-                )
-            })?,
-            created: self.created.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created",
-                    "created was not specified but it is required when building DescribeKeyValueStoreOutput",
-                )
-            })?,
-            e_tag: self.e_tag.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "e_tag",
-                    "e_tag was not specified but it is required when building DescribeKeyValueStoreOutput",
-                )
-            })?,
-            last_modified: self.last_modified,
-            status: self.status,
-            failure_reason: self.failure_reason,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput {
+                item_count: self.item_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("item_count", "item_count was not specified but it is required when building DescribeKeyValueStoreOutput")
+                    )?
+                ,
+                total_size_in_bytes: self.total_size_in_bytes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_size_in_bytes", "total_size_in_bytes was not specified but it is required when building DescribeKeyValueStoreOutput")
+                    )?
+                ,
+                kvs_arn: self.kvs_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kvs_arn", "kvs_arn was not specified but it is required when building DescribeKeyValueStoreOutput")
+                    )?
+                ,
+                created: self.created
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created", "created was not specified but it is required when building DescribeKeyValueStoreOutput")
+                    )?
+                ,
+                e_tag: self.e_tag
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("e_tag", "e_tag was not specified but it is required when building DescribeKeyValueStoreOutput")
+                    )?
+                ,
+                last_modified: self.last_modified
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSourceRepositories`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`space_name(impl Into<String>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     ///   - [`project_name(impl Into<String>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::set_project_name):<br>required: **true**<br><p>The name of the project in the space.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListSourceRepositoriesOutput`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput) with field(s):
+                            /// - On success, responds with [`ListSourceRepositoriesOutput`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput) with field(s):
     ///   - [`items(Option<Vec::<ListSourceRepositoriesItem>>)`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput::items): <p>Information about the source repositories.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On failure, responds with [`SdkError<ListSourceRepositoriesError>`](crate::operation::list_source_repositories::ListSourceRepositoriesError)
+                            /// - On failure, responds with [`SdkError<ListSourceRepositoriesError>`](crate::operation::list_source_repositories::ListSourceRepositoriesError)
     pub fn list_source_repositories(&self) -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder {
-        crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

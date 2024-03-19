@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKxScalingGroupInput {
+pub struct DeleteKxScalingGroupInput  {
     /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb scaling group.</p>
@@ -10,17 +10,17 @@ pub struct DeleteKxScalingGroupInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteKxScalingGroupInput {
+impl  DeleteKxScalingGroupInput  {
     /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
-    pub fn scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.scaling_group_name.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteKxScalingGroupInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteKxScalingGroupInputBuilder {
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_group_name = input;
-        self
+        self.scaling_group_name = input; self
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DeleteKxScalingGroupInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteKxScalingGroupInput`](crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupInput {
-            environment_id: self.environment_id,
-            scaling_group_name: self.scaling_group_name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupInput {
+                environment_id: self.environment_id
+                ,
+                scaling_group_name: self.scaling_group_name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

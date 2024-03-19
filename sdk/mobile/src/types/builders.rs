@@ -6,3 +6,4 @@ pub use crate::types::_resource::ResourceBuilder;
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
 
 pub use crate::types::_bundle_details::BundleDetailsBuilder;
+

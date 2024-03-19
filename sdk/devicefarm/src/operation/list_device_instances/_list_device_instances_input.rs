@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeviceInstancesInput {
+pub struct ListDeviceInstancesInput  {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDeviceInstancesInput {
+impl  ListDeviceInstancesInput  {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListDeviceInstancesInputBuilder {
     }
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -54,21 +53,22 @@ impl ListDeviceInstancesInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeviceInstancesInput`](crate::operation::list_device_instances::ListDeviceInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_device_instances::ListDeviceInstancesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_device_instances::ListDeviceInstancesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_device_instances::ListDeviceInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_device_instances::ListDeviceInstancesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

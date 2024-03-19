@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourcePermissionsOutput {
+pub struct DescribeResourcePermissionsOutput  {
     /// <p>The principals.</p>
-    pub principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub principals: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeResourcePermissionsOutput {
+impl  DescribeResourcePermissionsOutput  {
     /// <p>The principals.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
-    pub fn principals(&self) -> &[crate::types::Principal] {
-        self.principals.as_deref().unwrap_or_default()
+    pub fn principals(&self) -> & [crate::types::Principal] {
+        self.principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResourcePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput).
     pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeResourcePermissionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourcePermissionsOutputBuilder {
-    pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeResourcePermissionsOutputBuilder {
     /// <p>The principals.</p>
     pub fn principals(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input);
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The principals.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>) -> Self {
+        self.principals = input; self
     }
     /// <p>The principals.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Principal>> {
         &self.principals
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeResourcePermissionsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput).
     pub fn build(self) -> crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput {
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput {
-            principals: self.principals,
-            marker: self.marker,
+            principals: self.principals
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

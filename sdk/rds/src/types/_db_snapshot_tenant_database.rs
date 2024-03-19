@@ -3,7 +3,7 @@
 /// <p>Contains the details of a tenant database in a snapshot of a DB instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbSnapshotTenantDatabase {
+pub struct DbSnapshotTenantDatabase  {
     /// <p>The identifier for the snapshot of the DB instance.</p>
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the DB instance that contains the tenant databases.</p>
@@ -29,62 +29,63 @@ pub struct DbSnapshotTenantDatabase {
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
     pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DbSnapshotTenantDatabase {
+impl  DbSnapshotTenantDatabase  {
     /// <p>The identifier for the snapshot of the DB instance.</p>
-    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_snapshot_identifier.as_deref()
     }
     /// <p>The ID for the DB instance that contains the tenant databases.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The resource identifier of the source CDB instance. This identifier can't be changed and is unique to an Amazon Web Services Region.</p>
-    pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn dbi_resource_id(&self) -> ::std::option::Option<& str> {
         self.dbi_resource_id.as_deref()
     }
     /// <p>The name of the database engine.</p>
-    pub fn engine_name(&self) -> ::std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<& str> {
         self.engine_name.as_deref()
     }
     /// <p>The type of DB snapshot.</p>
-    pub fn snapshot_type(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> ::std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
     /// <p>The time the DB snapshot was taken, specified in Coordinated Universal Time (UTC). If you copy the snapshot, the creation time changes.</p>
-    pub fn tenant_database_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn tenant_database_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.tenant_database_create_time.as_ref()
     }
     /// <p>The name of the tenant database.</p>
-    pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.tenant_db_name.as_deref()
     }
     /// <p>The master username of the tenant database.</p>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The resource ID of the tenant database.</p>
-    pub fn tenant_database_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_database_resource_id(&self) -> ::std::option::Option<& str> {
         self.tenant_database_resource_id.as_deref()
     }
     /// <p>The name of the character set of a tenant database.</p>
-    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<& str> {
         self.character_set_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the snapshot tenant database.</p>
-    pub fn db_snapshot_tenant_database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_snapshot_tenant_database_arn(&self) -> ::std::option::Option<& str> {
         self.db_snapshot_tenant_database_arn.as_deref()
     }
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
-    pub fn nchar_character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn nchar_character_set_name(&self) -> ::std::option::Option<& str> {
         self.nchar_character_set_name.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DbSnapshotTenantDatabase {
@@ -110,7 +111,7 @@ pub struct DbSnapshotTenantDatabaseBuilder {
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshot_tenant_database_arn: ::std::option::Option<::std::string::String>,
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DbSnapshotTenantDatabaseBuilder {
     /// <p>The identifier for the snapshot of the DB instance.</p>
@@ -120,8 +121,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The identifier for the snapshot of the DB instance.</p>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_snapshot_identifier = input;
-        self
+        self.db_snapshot_identifier = input; self
     }
     /// <p>The identifier for the snapshot of the DB instance.</p>
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +134,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The ID for the DB instance that contains the tenant databases.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The ID for the DB instance that contains the tenant databases.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The resource identifier of the source CDB instance. This identifier can't be changed and is unique to an Amazon Web Services Region.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dbi_resource_id = input;
-        self
+        self.dbi_resource_id = input; self
     }
     /// <p>The resource identifier of the source CDB instance. This identifier can't be changed and is unique to an Amazon Web Services Region.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The name of the database engine.</p>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_name = input;
-        self
+        self.engine_name = input; self
     }
     /// <p>The name of the database engine.</p>
     pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +173,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The type of DB snapshot.</p>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_type = input;
-        self
+        self.snapshot_type = input; self
     }
     /// <p>The type of DB snapshot.</p>
     pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +186,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The time the DB snapshot was taken, specified in Coordinated Universal Time (UTC). If you copy the snapshot, the creation time changes.</p>
     pub fn set_tenant_database_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.tenant_database_create_time = input;
-        self
+        self.tenant_database_create_time = input; self
     }
     /// <p>The time the DB snapshot was taken, specified in Coordinated Universal Time (UTC). If you copy the snapshot, the creation time changes.</p>
     pub fn get_tenant_database_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,8 +199,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The name of the tenant database.</p>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_db_name = input;
-        self
+        self.tenant_db_name = input; self
     }
     /// <p>The name of the tenant database.</p>
     pub fn get_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +212,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The master username of the tenant database.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The master username of the tenant database.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +225,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The resource ID of the tenant database.</p>
     pub fn set_tenant_database_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_database_resource_id = input;
-        self
+        self.tenant_database_resource_id = input; self
     }
     /// <p>The resource ID of the tenant database.</p>
     pub fn get_tenant_database_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +238,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The name of the character set of a tenant database.</p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.character_set_name = input;
-        self
+        self.character_set_name = input; self
     }
     /// <p>The name of the character set of a tenant database.</p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +251,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the snapshot tenant database.</p>
     pub fn set_db_snapshot_tenant_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_snapshot_tenant_database_arn = input;
-        self
+        self.db_snapshot_tenant_database_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the snapshot tenant database.</p>
     pub fn get_db_snapshot_tenant_database_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +264,7 @@ impl DbSnapshotTenantDatabaseBuilder {
     }
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
     pub fn set_nchar_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nchar_character_set_name = input;
-        self
+        self.nchar_character_set_name = input; self
     }
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
     pub fn get_nchar_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,35 +277,48 @@ impl DbSnapshotTenantDatabaseBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`DbSnapshotTenantDatabase`](crate::types::DbSnapshotTenantDatabase).
     pub fn build(self) -> crate::types::DbSnapshotTenantDatabase {
         crate::types::DbSnapshotTenantDatabase {
-            db_snapshot_identifier: self.db_snapshot_identifier,
-            db_instance_identifier: self.db_instance_identifier,
-            dbi_resource_id: self.dbi_resource_id,
-            engine_name: self.engine_name,
-            snapshot_type: self.snapshot_type,
-            tenant_database_create_time: self.tenant_database_create_time,
-            tenant_db_name: self.tenant_db_name,
-            master_username: self.master_username,
-            tenant_database_resource_id: self.tenant_database_resource_id,
-            character_set_name: self.character_set_name,
-            db_snapshot_tenant_database_arn: self.db_snapshot_tenant_database_arn,
-            nchar_character_set_name: self.nchar_character_set_name,
-            tag_list: self.tag_list,
+            db_snapshot_identifier: self.db_snapshot_identifier
+            ,
+            db_instance_identifier: self.db_instance_identifier
+            ,
+            dbi_resource_id: self.dbi_resource_id
+            ,
+            engine_name: self.engine_name
+            ,
+            snapshot_type: self.snapshot_type
+            ,
+            tenant_database_create_time: self.tenant_database_create_time
+            ,
+            tenant_db_name: self.tenant_db_name
+            ,
+            master_username: self.master_username
+            ,
+            tenant_database_resource_id: self.tenant_database_resource_id
+            ,
+            character_set_name: self.character_set_name
+            ,
+            db_snapshot_tenant_database_arn: self.db_snapshot_tenant_database_arn
+            ,
+            nchar_character_set_name: self.nchar_character_set_name
+            ,
+            tag_list: self.tag_list
+            ,
         }
     }
 }
+

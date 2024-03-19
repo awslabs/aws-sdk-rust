@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLongTermPricingInput {
+pub struct ListLongTermPricingInput  {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLongTermPricingInput {
+impl  ListLongTermPricingInput  {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListLongTermPricingInputBuilder {
     }
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -54,21 +53,22 @@ impl ListLongTermPricingInputBuilder {
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLongTermPricingInput`](crate::operation::list_long_term_pricing::ListLongTermPricingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_long_term_pricing::ListLongTermPricingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_long_term_pricing::ListLongTermPricingInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_long_term_pricing::ListLongTermPricingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_long_term_pricing::ListLongTermPricingInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

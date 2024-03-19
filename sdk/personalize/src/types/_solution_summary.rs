@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the properties of a solution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SolutionSummary {
+pub struct SolutionSummary  {
     /// <p>The name of the solution.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
@@ -24,13 +24,13 @@ pub struct SolutionSummary {
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
     pub recipe_arn: ::std::option::Option<::std::string::String>,
 }
-impl SolutionSummary {
+impl  SolutionSummary  {
     /// <p>The name of the solution.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
-    pub fn solution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_arn(&self) -> ::std::option::Option<& str> {
         self.solution_arn.as_deref()
     }
     /// <p>The status of the solution.</p>
@@ -41,19 +41,19 @@ impl SolutionSummary {
     /// <li>
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the solution was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
-    pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> ::std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl SolutionSummaryBuilder {
     }
     /// <p>The name of the solution.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the solution.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl SolutionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub fn set_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_arn = input;
-        self
+        self.solution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl SolutionSummaryBuilder {
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the solution.</p>
     /// <p>A solution can be in one of the following states:</p>
@@ -146,8 +143,7 @@ impl SolutionSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the solution was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the solution was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +156,7 @@ impl SolutionSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +169,7 @@ impl SolutionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_arn = input;
-        self
+        self.recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
     pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,12 +178,19 @@ impl SolutionSummaryBuilder {
     /// Consumes the builder and constructs a [`SolutionSummary`](crate::types::SolutionSummary).
     pub fn build(self) -> crate::types::SolutionSummary {
         crate::types::SolutionSummary {
-            name: self.name,
-            solution_arn: self.solution_arn,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            recipe_arn: self.recipe_arn,
+            name: self.name
+            ,
+            solution_arn: self.solution_arn
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            recipe_arn: self.recipe_arn
+            ,
         }
     }
 }
+

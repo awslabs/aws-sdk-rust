@@ -3,39 +3,40 @@
 /// <p>Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricFilter {
+pub struct MetricFilter  {
     /// <p>The name of the metric filter.</p>
     pub filter_name: ::std::option::Option<::std::string::String>,
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The metric transformations.</p>
-    pub metric_transformations: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
+    pub metric_transformations: ::std::option::Option<::std::vec::Vec::<crate::types::MetricTransformation>>,
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub creation_time: ::std::option::Option<i64>,
     /// <p>The name of the log group.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
-impl MetricFilter {
+impl  MetricFilter  {
     /// <p>The name of the metric filter.</p>
-    pub fn filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn filter_name(&self) -> ::std::option::Option<& str> {
         self.filter_name.as_deref()
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> ::std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The metric transformations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_transformations.is_none()`.
-    pub fn metric_transformations(&self) -> &[crate::types::MetricTransformation] {
-        self.metric_transformations.as_deref().unwrap_or_default()
+    pub fn metric_transformations(&self) -> & [crate::types::MetricTransformation] {
+        self.metric_transformations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> ::std::option::Option<i64> {
         self.creation_time
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
@@ -52,7 +53,7 @@ impl MetricFilter {
 pub struct MetricFilterBuilder {
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_pattern: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_transformations: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
+    pub(crate) metric_transformations: ::std::option::Option<::std::vec::Vec::<crate::types::MetricTransformation>>,
     pub(crate) creation_time: ::std::option::Option<i64>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -64,8 +65,7 @@ impl MetricFilterBuilder {
     }
     /// <p>The name of the metric filter.</p>
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_name = input;
-        self
+        self.filter_name = input; self
     }
     /// <p>The name of the metric filter.</p>
     pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl MetricFilterBuilder {
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_pattern = input;
-        self
+        self.filter_pattern = input; self
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +91,16 @@ impl MetricFilterBuilder {
     /// <p>The metric transformations.</p>
     pub fn metric_transformations(mut self, input: crate::types::MetricTransformation) -> Self {
         let mut v = self.metric_transformations.unwrap_or_default();
-        v.push(input);
-        self.metric_transformations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_transformations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metric transformations.</p>
-    pub fn set_metric_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>) -> Self {
-        self.metric_transformations = input;
-        self
+    pub fn set_metric_transformations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricTransformation>>) -> Self {
+        self.metric_transformations = input; self
     }
     /// <p>The metric transformations.</p>
-    pub fn get_metric_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
+    pub fn get_metric_transformations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricTransformation>> {
         &self.metric_transformations
     }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -112,8 +110,7 @@ impl MetricFilterBuilder {
     }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
@@ -126,8 +123,7 @@ impl MetricFilterBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,11 +132,17 @@ impl MetricFilterBuilder {
     /// Consumes the builder and constructs a [`MetricFilter`](crate::types::MetricFilter).
     pub fn build(self) -> crate::types::MetricFilter {
         crate::types::MetricFilter {
-            filter_name: self.filter_name,
-            filter_pattern: self.filter_pattern,
-            metric_transformations: self.metric_transformations,
-            creation_time: self.creation_time,
-            log_group_name: self.log_group_name,
+            filter_name: self.filter_name
+            ,
+            filter_pattern: self.filter_pattern
+            ,
+            metric_transformations: self.metric_transformations
+            ,
+            creation_time: self.creation_time
+            ,
+            log_group_name: self.log_group_name
+            ,
         }
     }
 }
+

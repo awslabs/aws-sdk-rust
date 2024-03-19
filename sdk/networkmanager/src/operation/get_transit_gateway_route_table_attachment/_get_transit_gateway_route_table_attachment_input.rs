@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransitGatewayRouteTableAttachmentInput {
+pub struct GetTransitGatewayRouteTableAttachmentInput  {
     /// <p>The ID of the transit gateway route table attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTransitGatewayRouteTableAttachmentInput {
+impl  GetTransitGatewayRouteTableAttachmentInput  {
     /// <p>The ID of the transit gateway route table attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetTransitGatewayRouteTableAttachmentInputBuilder {
     }
     /// <p>The ID of the transit gateway route table attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the transit gateway route table attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAttachmentInput`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput {
-                attachment_id: self.attachment_id,
-            },
+                attachment_id: self.attachment_id
+                ,
+            }
         )
     }
 }
+

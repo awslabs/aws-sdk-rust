@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub console_access: ::std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
     pub pending: ::std::option::Option<crate::types::UserPendingChanges>,
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -17,9 +17,9 @@ pub struct DescribeUserOutput {
     pub replication_user: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl DescribeUserOutput {
+impl  DescribeUserOutput  {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -27,17 +27,18 @@ impl DescribeUserOutput {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
-    pub fn pending(&self) -> ::std::option::Option<&crate::types::UserPendingChanges> {
+    pub fn pending(&self) -> ::std::option::Option<& crate::types::UserPendingChanges> {
         self.pending.as_ref()
     }
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>Describes whether the user is intended for data replication</p>
@@ -46,10 +47,10 @@ impl DescribeUserOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -63,7 +64,7 @@ impl DescribeUserOutput {
 pub struct DescribeUserOutputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     pub(crate) console_access: ::std::option::Option<bool>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pending: ::std::option::Option<crate::types::UserPendingChanges>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) replication_user: ::std::option::Option<bool>,
@@ -77,8 +78,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.console_access = input;
-        self
+        self.console_access = input; self
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn get_console_access(&self) -> &::std::option::Option<bool> {
@@ -105,17 +104,16 @@ impl DescribeUserOutputBuilder {
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
@@ -125,8 +123,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
     pub fn set_pending(mut self, input: ::std::option::Option<crate::types::UserPendingChanges>) -> Self {
-        self.pending = input;
-        self
+        self.pending = input; self
     }
     /// <p>The status of the changes pending for the ActiveMQ user.</p>
     pub fn get_pending(&self) -> &::std::option::Option<crate::types::UserPendingChanges> {
@@ -139,8 +136,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,32 +149,38 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>Describes whether the user is intended for data replication</p>
     pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replication_user = input;
-        self
+        self.replication_user = input; self
     }
     /// <p>Describes whether the user is intended for data replication</p>
     pub fn get_replication_user(&self) -> &::std::option::Option<bool> {
         &self.replication_user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
-            broker_id: self.broker_id,
-            console_access: self.console_access,
-            groups: self.groups,
-            pending: self.pending,
-            username: self.username,
-            replication_user: self.replication_user,
+            broker_id: self.broker_id
+            ,
+            console_access: self.console_access
+            ,
+            groups: self.groups
+            ,
+            pending: self.pending
+            ,
+            username: self.username
+            ,
+            replication_user: self.replication_user
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

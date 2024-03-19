@@ -27,3 +27,4 @@ impl<T, E> EventReceiver<T, E> {
         self.inner.recv().await
     }
 }
+

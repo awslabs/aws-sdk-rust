@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSimulations`](crate::operation::list_simulations::builders::ListSimulationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of simulations to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p><br>
-    /// - On success, responds with [`ListSimulationsOutput`](crate::operation::list_simulations::ListSimulationsOutput) with field(s):
+                            /// - On success, responds with [`ListSimulationsOutput`](crate::operation::list_simulations::ListSimulationsOutput) with field(s):
     ///   - [`simulations(Option<Vec::<SimulationMetadata>>)`](crate::operation::list_simulations::ListSimulationsOutput::simulations): <p>The list of simulations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_simulations::ListSimulationsOutput::next_token): <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
-    /// - On failure, responds with [`SdkError<ListSimulationsError>`](crate::operation::list_simulations::ListSimulationsError)
+                            /// - On failure, responds with [`SdkError<ListSimulationsError>`](crate::operation::list_simulations::ListSimulationsError)
     pub fn list_simulations(&self) -> crate::operation::list_simulations::builders::ListSimulationsFluentBuilder {
-        crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_simulations::builders::ListSimulationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

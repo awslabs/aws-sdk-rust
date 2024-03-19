@@ -5,23 +5,20 @@ pub use crate::operation::recognize_utterance::_recognize_utterance_input::Recog
 
 impl RecognizeUtteranceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.recognize_utterance();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::recognize_utterance::RecognizeUtteranceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.recognize_utterance();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RecognizeUtterance`.
-///
+/// 
 /// <p>Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets the user input using the machine learning model built for the bot.</p>
 /// <p>The following request fields must be compressed with gzip and then base64 encoded before you send them to Amazon Lex V2.</p>
 /// <ul>
@@ -57,33 +54,32 @@ impl RecognizeUtteranceInputBuilder {
 #[derive(::std::fmt::Debug)]
 pub struct RecognizeUtteranceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder,
+                    inner: crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        crate::operation::recognize_utterance::RecognizeUtteranceError,
-    > for RecognizeUtteranceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::recognize_utterance::RecognizeUtteranceOutput,
+                    crate::operation::recognize_utterance::RecognizeUtteranceError,
+                > for RecognizeUtteranceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
+                        crate::operation::recognize_utterance::RecognizeUtteranceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RecognizeUtteranceFluentBuilder {
     /// Creates a new `RecognizeUtterance`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -92,53 +88,44 @@ impl RecognizeUtteranceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::recognize_utterance::RecognizeUtterance::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::recognize_utterance::RecognizeUtterance::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        crate::operation::recognize_utterance::RecognizeUtteranceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::recognize_utterance::RecognizeUtteranceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::recognize_utterance::RecognizeUtterance::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::recognize_utterance::RecognizeUtterance::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::recognize_utterance::RecognizeUtteranceOutput, crate::operation::recognize_utterance::RecognizeUtteranceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the bot that should receive the request.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -413,3 +400,4 @@ impl RecognizeUtteranceFluentBuilder {
         self.inner.get_input_stream()
     }
 }
+

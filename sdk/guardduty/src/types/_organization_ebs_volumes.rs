@@ -3,11 +3,11 @@
 /// <p>Organization-wide EBS volumes scan configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationEbsVolumes {
+pub struct OrganizationEbsVolumes  {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub auto_enable: ::std::option::Option<bool>,
 }
-impl OrganizationEbsVolumes {
+impl  OrganizationEbsVolumes  {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
@@ -34,8 +34,7 @@ impl OrganizationEbsVolumesBuilder {
     }
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl OrganizationEbsVolumesBuilder {
     /// Consumes the builder and constructs a [`OrganizationEbsVolumes`](crate::types::OrganizationEbsVolumes).
     pub fn build(self) -> crate::types::OrganizationEbsVolumes {
         crate::types::OrganizationEbsVolumes {
-            auto_enable: self.auto_enable,
+            auto_enable: self.auto_enable
+            ,
         }
     }
 }
+

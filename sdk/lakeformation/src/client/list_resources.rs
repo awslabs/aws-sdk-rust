@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResources`](crate::operation::list_resources::builders::ListResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter_condition_list(FilterCondition)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::filter_condition_list) / [`set_filter_condition_list(Option<Vec::<FilterCondition>>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::set_filter_condition_list):<br>required: **false**<br><p>Any applicable row-level and/or column-level filtering conditions for the resources.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resource results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resources::builders::ListResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is not the first call to retrieve these resources.</p><br>
-    /// - On success, responds with [`ListResourcesOutput`](crate::operation::list_resources::ListResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListResourcesOutput`](crate::operation::list_resources::ListResourcesOutput) with field(s):
     ///   - [`resource_info_list(Option<Vec::<ResourceInfo>>)`](crate::operation::list_resources::ListResourcesOutput::resource_info_list): <p>A summary of the data lake resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources::ListResourcesOutput::next_token): <p>A continuation token, if this is not the first call to retrieve these resources.</p>
-    /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
+                            /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
     pub fn list_resources(&self) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
-        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

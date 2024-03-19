@@ -4,7 +4,7 @@
 /// <p>For information about publishing email sending events to Amazon CloudWatch, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchDimensionConfiguration {
+pub struct CloudWatchDimensionConfiguration  {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct CloudWatchDimensionConfiguration {
     /// </ul>
     pub default_dimension_value: ::std::string::String,
 }
-impl CloudWatchDimensionConfiguration {
+impl  CloudWatchDimensionConfiguration  {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -32,12 +32,11 @@ impl CloudWatchDimensionConfiguration {
     /// <li>
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
-    pub fn dimension_name(&self) -> &str {
-        use std::ops::Deref;
-        self.dimension_name.deref()
+    pub fn dimension_name(&self) -> & str {
+        use std::ops::Deref; self.dimension_name.deref()
     }
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify <code>linkTag</code>.</p>
-    pub fn dimension_value_source(&self) -> &crate::types::DimensionValueSource {
+    pub fn dimension_value_source(&self) -> & crate::types::DimensionValueSource {
         &self.dimension_value_source
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
@@ -47,9 +46,8 @@ impl CloudWatchDimensionConfiguration {
     /// <li>
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
-    pub fn default_dimension_value(&self) -> &str {
-        use std::ops::Deref;
-        self.default_dimension_value.deref()
+    pub fn default_dimension_value(&self) -> & str {
+        use std::ops::Deref; self.default_dimension_value.deref()
     }
 }
 impl CloudWatchDimensionConfiguration {
@@ -88,8 +86,7 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_name = input;
-        self
+        self.dimension_name = input; self
     }
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
@@ -109,8 +106,7 @@ impl CloudWatchDimensionConfigurationBuilder {
     }
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify <code>linkTag</code>.</p>
     pub fn set_dimension_value_source(mut self, input: ::std::option::Option<crate::types::DimensionValueSource>) -> Self {
-        self.dimension_value_source = input;
-        self
+        self.dimension_value_source = input; self
     }
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify <code>linkTag</code>.</p>
     pub fn get_dimension_value_source(&self) -> &::std::option::Option<crate::types::DimensionValueSource> {
@@ -136,8 +132,7 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn set_default_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_dimension_value = input;
-        self
+        self.default_dimension_value = input; self
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
     /// <ul>
@@ -155,25 +150,25 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// - [`dimension_value_source`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::dimension_value_source)
     /// - [`default_dimension_value`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::default_dimension_value)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudWatchDimensionConfiguration {
-            dimension_name: self.dimension_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_name",
-                    "dimension_name was not specified but it is required when building CloudWatchDimensionConfiguration",
-                )
-            })?,
-            dimension_value_source: self.dimension_value_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_value_source",
-                    "dimension_value_source was not specified but it is required when building CloudWatchDimensionConfiguration",
-                )
-            })?,
-            default_dimension_value: self.default_dimension_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_dimension_value",
-                    "default_dimension_value was not specified but it is required when building CloudWatchDimensionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudWatchDimensionConfiguration {
+                dimension_name: self.dimension_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_name", "dimension_name was not specified but it is required when building CloudWatchDimensionConfiguration")
+                    )?
+                ,
+                dimension_value_source: self.dimension_value_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_value_source", "dimension_value_source was not specified but it is required when building CloudWatchDimensionConfiguration")
+                    )?
+                ,
+                default_dimension_value: self.default_dimension_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_dimension_value", "default_dimension_value was not specified but it is required when building CloudWatchDimensionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

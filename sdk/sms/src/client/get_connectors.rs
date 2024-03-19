@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetConnectors`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
-    /// - On success, responds with [`GetConnectorsOutput`](crate::operation::get_connectors::GetConnectorsOutput) with field(s):
+                            /// - On success, responds with [`GetConnectorsOutput`](crate::operation::get_connectors::GetConnectorsOutput) with field(s):
     ///   - [`connector_list(Option<Vec::<Connector>>)`](crate::operation::get_connectors::GetConnectorsOutput::connector_list): <p>Information about the registered connectors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connectors::GetConnectorsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<GetConnectorsError>`](crate::operation::get_connectors::GetConnectorsError)
+                            /// - On failure, responds with [`SdkError<GetConnectorsError>`](crate::operation::get_connectors::GetConnectorsError)
     pub fn get_connectors(&self) -> crate::operation::get_connectors::builders::GetConnectorsFluentBuilder {
-        crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

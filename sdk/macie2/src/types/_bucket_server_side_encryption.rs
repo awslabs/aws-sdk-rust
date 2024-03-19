@@ -3,7 +3,7 @@
 /// <p>Provides information about the default server-side encryption settings for an S3 bucket. For detailed information about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketServerSideEncryption {
+pub struct BucketServerSideEncryption  {
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.</p>
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket. Possible values are:</p>
@@ -19,9 +19,9 @@ pub struct BucketServerSideEncryption {
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
-impl BucketServerSideEncryption {
+impl  BucketServerSideEncryption  {
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.</p>
-    pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_master_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_master_key_id.as_deref()
     }
     /// <p>The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket. Possible values are:</p>
@@ -35,7 +35,7 @@ impl BucketServerSideEncryption {
     /// <li>
     /// <p>NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl BucketServerSideEncryptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.</p>
     pub fn set_kms_master_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_master_key_id = input;
-        self
+        self.kms_master_key_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.</p>
     pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl BucketServerSideEncryptionBuilder {
     /// <p>NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket. Possible values are:</p>
     /// <ul>
@@ -115,8 +113,11 @@ impl BucketServerSideEncryptionBuilder {
     /// Consumes the builder and constructs a [`BucketServerSideEncryption`](crate::types::BucketServerSideEncryption).
     pub fn build(self) -> crate::types::BucketServerSideEncryption {
         crate::types::BucketServerSideEncryption {
-            kms_master_key_id: self.kms_master_key_id,
-            r#type: self.r#type,
+            kms_master_key_id: self.kms_master_key_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Get Action Group Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentActionGroupInput {
+pub struct GetAgentActionGroupInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Version number generated when a version is created
@@ -11,17 +11,17 @@ pub struct GetAgentActionGroupInput {
     /// Id generated at the server side when an Agent Action Group is created
     pub action_group_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAgentActionGroupInput {
+impl  GetAgentActionGroupInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Version number generated when a version is created
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Id generated at the server side when an Agent Action Group is created
-    pub fn action_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_group_id(&self) -> ::std::option::Option<& str> {
         self.action_group_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetAgentActionGroupInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl GetAgentActionGroupInputBuilder {
     }
     /// Version number generated when a version is created
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Version number generated when a version is created
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl GetAgentActionGroupInputBuilder {
     }
     /// Id generated at the server side when an Agent Action Group is created
     pub fn set_action_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_group_id = input;
-        self
+        self.action_group_id = input; self
     }
     /// Id generated at the server side when an Agent Action Group is created
     pub fn get_action_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_group_id
     }
     /// Consumes the builder and constructs a [`GetAgentActionGroupInput`](crate::operation::get_agent_action_group::GetAgentActionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_agent_action_group::GetAgentActionGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_agent_action_group::GetAgentActionGroupInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            action_group_id: self.action_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_agent_action_group::GetAgentActionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_agent_action_group::GetAgentActionGroupInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                action_group_id: self.action_group_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateNetworkProfileInput {
+pub struct UpdateNetworkProfileInput  {
     /// <p>The ARN of the network profile associated with a device.</p>
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
@@ -16,41 +16,42 @@ pub struct UpdateNetworkProfileInput {
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    pub trust_anchors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub trust_anchors: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateNetworkProfileInput {
+impl  UpdateNetworkProfileInput  {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> ::std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current password of the Wi-Fi network.</p>
-    pub fn current_password(&self) -> ::std::option::Option<&str> {
+    pub fn current_password(&self) -> ::std::option::Option<& str> {
         self.current_password.as_deref()
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
-    pub fn next_password(&self) -> ::std::option::Option<&str> {
+    pub fn next_password(&self) -> ::std::option::Option<& str> {
         self.next_password.as_deref()
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_anchors.is_none()`.
-    pub fn trust_anchors(&self) -> &[::std::string::String] {
-        self.trust_anchors.as_deref().unwrap_or_default()
+    pub fn trust_anchors(&self) -> & [::std::string::String] {
+        self.trust_anchors.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for UpdateNetworkProfileInput {
+impl  ::std::fmt::Debug for UpdateNetworkProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNetworkProfileInput");
         formatter.field("network_profile_arn", &self.network_profile_arn);
@@ -80,7 +81,7 @@ pub struct UpdateNetworkProfileInputBuilder {
     pub(crate) current_password: ::std::option::Option<::std::string::String>,
     pub(crate) next_password: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) trust_anchors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) trust_anchors: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateNetworkProfileInputBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
@@ -91,8 +92,7 @@ impl UpdateNetworkProfileInputBuilder {
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_profile_arn = input;
-        self
+        self.network_profile_arn = input; self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl UpdateNetworkProfileInputBuilder {
     }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn set_network_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_profile_name = input;
-        self
+        self.network_profile_name = input; self
     }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn get_network_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl UpdateNetworkProfileInputBuilder {
     }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl UpdateNetworkProfileInputBuilder {
     }
     /// <p>The current password of the Wi-Fi network.</p>
     pub fn set_current_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_password = input;
-        self
+        self.current_password = input; self
     }
     /// <p>The current password of the Wi-Fi network.</p>
     pub fn get_current_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl UpdateNetworkProfileInputBuilder {
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn set_next_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_password = input;
-        self
+        self.next_password = input; self
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn get_next_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl UpdateNetworkProfileInputBuilder {
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,33 +170,38 @@ impl UpdateNetworkProfileInputBuilder {
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub fn trust_anchors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trust_anchors.unwrap_or_default();
-        v.push(input.into());
-        self.trust_anchors = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.trust_anchors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.trust_anchors = input;
-        self
+    pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.trust_anchors = input; self
     }
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.trust_anchors
     }
     /// Consumes the builder and constructs a [`UpdateNetworkProfileInput`](crate::operation::update_network_profile::UpdateNetworkProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_network_profile::UpdateNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_network_profile::UpdateNetworkProfileInput {
-            network_profile_arn: self.network_profile_arn,
-            network_profile_name: self.network_profile_name,
-            description: self.description,
-            current_password: self.current_password,
-            next_password: self.next_password,
-            certificate_authority_arn: self.certificate_authority_arn,
-            trust_anchors: self.trust_anchors,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_network_profile::UpdateNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_network_profile::UpdateNetworkProfileInput {
+                network_profile_arn: self.network_profile_arn
+                ,
+                network_profile_name: self.network_profile_name
+                ,
+                description: self.description
+                ,
+                current_password: self.current_password
+                ,
+                next_password: self.next_password
+                ,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                trust_anchors: self.trust_anchors
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateNetworkProfileInputBuilder {
@@ -217,3 +217,4 @@ impl ::std::fmt::Debug for UpdateNetworkProfileInputBuilder {
         formatter.finish()
     }
 }
+

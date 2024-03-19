@@ -3,7 +3,7 @@
 /// <p>The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkGroupConfigurationUpdates {
+pub struct WorkGroupConfigurationUpdates  {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub enforce_work_group_configuration: ::std::option::Option<bool>,
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
@@ -32,13 +32,13 @@ pub struct WorkGroupConfigurationUpdates {
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
-impl WorkGroupConfigurationUpdates {
+impl  WorkGroupConfigurationUpdates  {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn enforce_work_group_configuration(&self) -> ::std::option::Option<bool> {
         self.enforce_work_group_configuration
     }
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
-    pub fn result_configuration_updates(&self) -> ::std::option::Option<&crate::types::ResultConfigurationUpdates> {
+    pub fn result_configuration_updates(&self) -> ::std::option::Option<& crate::types::ResultConfigurationUpdates> {
         self.result_configuration_updates.as_ref()
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
@@ -58,7 +58,7 @@ impl WorkGroupConfigurationUpdates {
         self.requester_pays_enabled
     }
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
+    pub fn engine_version(&self) -> ::std::option::Option<& crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
     /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
@@ -66,15 +66,15 @@ impl WorkGroupConfigurationUpdates {
         self.remove_customer_content_encryption_configuration
     }
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
-    pub fn additional_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn additional_configuration(&self) -> ::std::option::Option<& str> {
         self.additional_configuration.as_deref()
     }
     /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>Specifies the customer managed KMS key that is used to encrypt the user's data stores in Athena. When an Amazon Web Services managed key is used, this value is null. This setting does not apply to Athena SQL workgroups.</p>
-    pub fn customer_content_encryption_configuration(&self) -> ::std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
+    pub fn customer_content_encryption_configuration(&self) -> ::std::option::Option<& crate::types::CustomerContentEncryptionConfiguration> {
         self.customer_content_encryption_configuration.as_ref()
     }
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries. This setting does not apply to Spark-enabled workgroups.</p>
@@ -83,7 +83,7 @@ impl WorkGroupConfigurationUpdates {
         self.enable_minimum_encryption_configuration
     }
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
-    pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<&crate::types::QueryResultsS3AccessGrantsConfiguration> {
+    pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<& crate::types::QueryResultsS3AccessGrantsConfiguration> {
         self.query_results_s3_access_grants_configuration.as_ref()
     }
 }
@@ -120,8 +120,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn set_enforce_work_group_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enforce_work_group_configuration = input;
-        self
+        self.enforce_work_group_configuration = input; self
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn get_enforce_work_group_configuration(&self) -> &::std::option::Option<bool> {
@@ -134,8 +133,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
     pub fn set_result_configuration_updates(mut self, input: ::std::option::Option<crate::types::ResultConfigurationUpdates>) -> Self {
-        self.result_configuration_updates = input;
-        self
+        self.result_configuration_updates = input; self
     }
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
     pub fn get_result_configuration_updates(&self) -> &::std::option::Option<crate::types::ResultConfigurationUpdates> {
@@ -148,8 +146,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub fn set_publish_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish_cloud_watch_metrics_enabled = input;
-        self
+        self.publish_cloud_watch_metrics_enabled = input; self
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub fn get_publish_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -162,8 +159,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
     pub fn set_bytes_scanned_cutoff_per_query(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_scanned_cutoff_per_query = input;
-        self
+        self.bytes_scanned_cutoff_per_query = input; self
     }
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
     pub fn get_bytes_scanned_cutoff_per_query(&self) -> &::std::option::Option<i64> {
@@ -176,8 +172,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
     pub fn set_remove_bytes_scanned_cutoff_per_query(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_bytes_scanned_cutoff_per_query = input;
-        self
+        self.remove_bytes_scanned_cutoff_per_query = input; self
     }
     /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code></p>
     pub fn get_remove_bytes_scanned_cutoff_per_query(&self) -> &::std::option::Option<bool> {
@@ -190,8 +185,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub fn set_requester_pays_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.requester_pays_enabled = input;
-        self
+        self.requester_pays_enabled = input; self
     }
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub fn get_requester_pays_enabled(&self) -> &::std::option::Option<bool> {
@@ -204,8 +198,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<crate::types::EngineVersion>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<crate::types::EngineVersion> {
@@ -218,8 +211,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
     pub fn set_remove_customer_content_encryption_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_customer_content_encryption_configuration = input;
-        self
+        self.remove_customer_content_encryption_configuration = input; self
     }
     /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
     pub fn get_remove_customer_content_encryption_configuration(&self) -> &::std::option::Option<bool> {
@@ -232,8 +224,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
     pub fn set_additional_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.additional_configuration = input;
-        self
+        self.additional_configuration = input; self
     }
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
     pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +237,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,12 +249,8 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>Specifies the customer managed KMS key that is used to encrypt the user's data stores in Athena. When an Amazon Web Services managed key is used, this value is null. This setting does not apply to Athena SQL workgroups.</p>
-    pub fn set_customer_content_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
-    ) -> Self {
-        self.customer_content_encryption_configuration = input;
-        self
+    pub fn set_customer_content_encryption_configuration(mut self, input: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>) -> Self {
+        self.customer_content_encryption_configuration = input; self
     }
     /// <p>Specifies the customer managed KMS key that is used to encrypt the user's data stores in Athena. When an Amazon Web Services managed key is used, this value is null. This setting does not apply to Athena SQL workgroups.</p>
     pub fn get_customer_content_encryption_configuration(&self) -> &::std::option::Option<crate::types::CustomerContentEncryptionConfiguration> {
@@ -279,8 +265,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries. This setting does not apply to Spark-enabled workgroups.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
     pub fn set_enable_minimum_encryption_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_minimum_encryption_configuration = input;
-        self
+        self.enable_minimum_encryption_configuration = input; self
     }
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries. This setting does not apply to Spark-enabled workgroups.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
@@ -293,12 +278,8 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
-    pub fn set_query_results_s3_access_grants_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
-    ) -> Self {
-        self.query_results_s3_access_grants_configuration = input;
-        self
+    pub fn set_query_results_s3_access_grants_configuration(mut self, input: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>) -> Self {
+        self.query_results_s3_access_grants_configuration = input; self
     }
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub fn get_query_results_s3_access_grants_configuration(&self) -> &::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration> {
@@ -307,19 +288,33 @@ impl WorkGroupConfigurationUpdatesBuilder {
     /// Consumes the builder and constructs a [`WorkGroupConfigurationUpdates`](crate::types::WorkGroupConfigurationUpdates).
     pub fn build(self) -> crate::types::WorkGroupConfigurationUpdates {
         crate::types::WorkGroupConfigurationUpdates {
-            enforce_work_group_configuration: self.enforce_work_group_configuration,
-            result_configuration_updates: self.result_configuration_updates,
-            publish_cloud_watch_metrics_enabled: self.publish_cloud_watch_metrics_enabled,
-            bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query,
-            remove_bytes_scanned_cutoff_per_query: self.remove_bytes_scanned_cutoff_per_query,
-            requester_pays_enabled: self.requester_pays_enabled,
-            engine_version: self.engine_version,
-            remove_customer_content_encryption_configuration: self.remove_customer_content_encryption_configuration,
-            additional_configuration: self.additional_configuration,
-            execution_role: self.execution_role,
-            customer_content_encryption_configuration: self.customer_content_encryption_configuration,
-            enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
-            query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration,
+            enforce_work_group_configuration: self.enforce_work_group_configuration
+            ,
+            result_configuration_updates: self.result_configuration_updates
+            ,
+            publish_cloud_watch_metrics_enabled: self.publish_cloud_watch_metrics_enabled
+            ,
+            bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query
+            ,
+            remove_bytes_scanned_cutoff_per_query: self.remove_bytes_scanned_cutoff_per_query
+            ,
+            requester_pays_enabled: self.requester_pays_enabled
+            ,
+            engine_version: self.engine_version
+            ,
+            remove_customer_content_encryption_configuration: self.remove_customer_content_encryption_configuration
+            ,
+            additional_configuration: self.additional_configuration
+            ,
+            execution_role: self.execution_role
+            ,
+            customer_content_encryption_configuration: self.customer_content_encryption_configuration
+            ,
+            enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration
+            ,
+            query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration
+            ,
         }
     }
 }
+

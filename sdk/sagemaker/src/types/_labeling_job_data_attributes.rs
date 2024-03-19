@@ -3,16 +3,17 @@
 /// <p>Attributes of the data specified by the customer. Use these to describe the data to be labeled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelingJobDataAttributes {
+pub struct LabelingJobDataAttributes  {
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
-    pub content_classifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>,
+    pub content_classifiers: ::std::option::Option<::std::vec::Vec::<crate::types::ContentClassifier>>,
 }
-impl LabelingJobDataAttributes {
+impl  LabelingJobDataAttributes  {
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_classifiers.is_none()`.
-    pub fn content_classifiers(&self) -> &[crate::types::ContentClassifier] {
-        self.content_classifiers.as_deref().unwrap_or_default()
+    pub fn content_classifiers(&self) -> & [crate::types::ContentClassifier] {
+        self.content_classifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LabelingJobDataAttributes {
@@ -26,7 +27,7 @@ impl LabelingJobDataAttributes {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingJobDataAttributesBuilder {
-    pub(crate) content_classifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>,
+    pub(crate) content_classifiers: ::std::option::Option<::std::vec::Vec::<crate::types::ContentClassifier>>,
 }
 impl LabelingJobDataAttributesBuilder {
     /// Appends an item to `content_classifiers`.
@@ -36,23 +37,24 @@ impl LabelingJobDataAttributesBuilder {
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
     pub fn content_classifiers(mut self, input: crate::types::ContentClassifier) -> Self {
         let mut v = self.content_classifiers.unwrap_or_default();
-        v.push(input);
-        self.content_classifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content_classifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
-    pub fn set_content_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>) -> Self {
-        self.content_classifiers = input;
-        self
+    pub fn set_content_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContentClassifier>>) -> Self {
+        self.content_classifiers = input; self
     }
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
-    pub fn get_content_classifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>> {
+    pub fn get_content_classifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContentClassifier>> {
         &self.content_classifiers
     }
     /// Consumes the builder and constructs a [`LabelingJobDataAttributes`](crate::types::LabelingJobDataAttributes).
     pub fn build(self) -> crate::types::LabelingJobDataAttributes {
         crate::types::LabelingJobDataAttributes {
-            content_classifiers: self.content_classifiers,
+            content_classifiers: self.content_classifiers
+            ,
         }
     }
 }
+

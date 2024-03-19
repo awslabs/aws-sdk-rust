@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersInput {
+pub struct ListUsersInput  {
     /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to continue listing additional users.</p>
@@ -10,17 +10,17 @@ pub struct ListUsersInput {
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
 }
-impl ListUsersInput {
+impl  ListUsersInput  {
     /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to continue listing additional users.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to continue listing additional users.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to continue listing additional users.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl ListUsersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            server_id: self.server_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_users::ListUsersInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                server_id: self.server_id
+                ,
+            }
+        )
     }
 }
+

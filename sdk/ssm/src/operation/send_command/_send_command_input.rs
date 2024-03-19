@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SendCommandInput {
+pub struct SendCommandInput  {
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
     /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
@@ -33,7 +33,7 @@ pub struct SendCommandInput {
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The required and optional parameters specified in the document being run.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
@@ -54,46 +54,48 @@ pub struct SendCommandInput {
     /// <p>The CloudWatch alarm you want to apply to your command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
-impl SendCommandInput {
+impl  SendCommandInput  {
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
     /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
+    pub fn instance_ids(&self) -> & [::std::string::String] {
+        self.instance_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_name(&self) -> ::std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p>--document-version "\$DEFAULT"</p>
     /// <p>--document-version "\$LATEST"</p>
     /// <p>--document-version "3"</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
-    pub fn document_hash(&self) -> ::std::option::Option<&str> {
+    pub fn document_hash(&self) -> ::std::option::Option<& str> {
         self.document_hash.as_deref()
     }
     /// <p>Sha256 or Sha1.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
-    pub fn document_hash_type(&self) -> ::std::option::Option<&crate::types::DocumentHashType> {
+    pub fn document_hash_type(&self) -> ::std::option::Option<& crate::types::DocumentHashType> {
         self.document_hash_type.as_ref()
     }
     /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
@@ -101,52 +103,52 @@ impl SendCommandInput {
         self.timeout_seconds
     }
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The required and optional parameters specified in the document being run.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-    pub fn output_s3_region(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_region(&self) -> ::std::option::Option<& str> {
         self.output_s3_region.as_deref()
     }
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
-    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
-    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.output_s3_key_prefix.as_deref()
     }
     /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> ::std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn max_errors(&self) -> ::std::option::Option<&str> {
+    pub fn max_errors(&self) -> ::std::option::Option<& str> {
         self.max_errors.as_deref()
     }
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
     /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>Configurations for sending notifications.</p>
-    pub fn notification_config(&self) -> ::std::option::Option<&crate::types::NotificationConfig> {
+    pub fn notification_config(&self) -> ::std::option::Option<& crate::types::NotificationConfig> {
         self.notification_config.as_ref()
     }
     /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
+    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<& crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
     /// <p>The CloudWatch alarm you want to apply to your command.</p>
-    pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> ::std::option::Option<& crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for SendCommandInput {
+impl  ::std::fmt::Debug for SendCommandInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SendCommandInput");
         formatter.field("instance_ids", &self.instance_ids);
@@ -181,15 +183,15 @@ impl SendCommandInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SendCommandInputBuilder {
-    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) document_hash: ::std::option::Option<::std::string::String>,
     pub(crate) document_hash_type: ::std::option::Option<crate::types::DocumentHashType>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) output_s3_region: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_key_prefix: ::std::option::Option<::std::string::String>,
@@ -210,21 +212,20 @@ impl SendCommandInputBuilder {
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
     /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
     /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_ids
     }
     /// Appends an item to `targets`.
@@ -236,21 +237,20 @@ impl SendCommandInputBuilder {
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
@@ -265,8 +265,7 @@ impl SendCommandInputBuilder {
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_name = input;
-        self
+        self.document_name = input; self
     }
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
@@ -287,8 +286,7 @@ impl SendCommandInputBuilder {
     /// <p>--document-version "\$LATEST"</p>
     /// <p>--document-version "3"</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p>--document-version "\$DEFAULT"</p>
@@ -308,8 +306,7 @@ impl SendCommandInputBuilder {
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_document_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_hash = input;
-        self
+        self.document_hash = input; self
     }
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
@@ -328,8 +325,7 @@ impl SendCommandInputBuilder {
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_document_hash_type(mut self, input: ::std::option::Option<crate::types::DocumentHashType>) -> Self {
-        self.document_hash_type = input;
-        self
+        self.document_hash_type = input; self
     }
     /// <p>Sha256 or Sha1.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
@@ -344,8 +340,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_seconds = input;
-        self
+        self.timeout_seconds = input; self
     }
     /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
     pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
@@ -358,8 +353,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -370,24 +364,18 @@ impl SendCommandInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The required and optional parameters specified in the document being run.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The required and optional parameters specified in the document being run.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The required and optional parameters specified in the document being run.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.parameters
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
@@ -397,8 +385,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub fn set_output_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_region = input;
-        self
+        self.output_s3_region = input; self
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub fn get_output_s3_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -411,8 +398,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
     pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_bucket_name = input;
-        self
+        self.output_s3_bucket_name = input; self
     }
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
     pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -425,8 +411,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
     pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_key_prefix = input;
-        self
+        self.output_s3_key_prefix = input; self
     }
     /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
     pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -439,8 +424,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,8 +437,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_errors = input;
-        self
+        self.max_errors = input; self
     }
     /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
@@ -469,8 +452,7 @@ impl SendCommandInputBuilder {
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
     /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role_arn = input;
-        self
+        self.service_role_arn = input; self
     }
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
     /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -484,8 +466,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>Configurations for sending notifications.</p>
     pub fn set_notification_config(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
-        self.notification_config = input;
-        self
+        self.notification_config = input; self
     }
     /// <p>Configurations for sending notifications.</p>
     pub fn get_notification_config(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
@@ -498,8 +479,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
     pub fn set_cloud_watch_output_config(mut self, input: ::std::option::Option<crate::types::CloudWatchOutputConfig>) -> Self {
-        self.cloud_watch_output_config = input;
-        self
+        self.cloud_watch_output_config = input; self
     }
     /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
     pub fn get_cloud_watch_output_config(&self) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
@@ -512,8 +492,7 @@ impl SendCommandInputBuilder {
     }
     /// <p>The CloudWatch alarm you want to apply to your command.</p>
     pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
-        self.alarm_configuration = input;
-        self
+        self.alarm_configuration = input; self
     }
     /// <p>The CloudWatch alarm you want to apply to your command.</p>
     pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
@@ -521,26 +500,46 @@ impl SendCommandInputBuilder {
     }
     /// Consumes the builder and constructs a [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_command::SendCommandInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_command::SendCommandInput {
-            instance_ids: self.instance_ids,
-            targets: self.targets,
-            document_name: self.document_name,
-            document_version: self.document_version,
-            document_hash: self.document_hash,
-            document_hash_type: self.document_hash_type,
-            timeout_seconds: self.timeout_seconds,
-            comment: self.comment,
-            parameters: self.parameters,
-            output_s3_region: self.output_s3_region,
-            output_s3_bucket_name: self.output_s3_bucket_name,
-            output_s3_key_prefix: self.output_s3_key_prefix,
-            max_concurrency: self.max_concurrency,
-            max_errors: self.max_errors,
-            service_role_arn: self.service_role_arn,
-            notification_config: self.notification_config,
-            cloud_watch_output_config: self.cloud_watch_output_config,
-            alarm_configuration: self.alarm_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::send_command::SendCommandInput {
+                instance_ids: self.instance_ids
+                ,
+                targets: self.targets
+                ,
+                document_name: self.document_name
+                ,
+                document_version: self.document_version
+                ,
+                document_hash: self.document_hash
+                ,
+                document_hash_type: self.document_hash_type
+                ,
+                timeout_seconds: self.timeout_seconds
+                ,
+                comment: self.comment
+                ,
+                parameters: self.parameters
+                ,
+                output_s3_region: self.output_s3_region
+                ,
+                output_s3_bucket_name: self.output_s3_bucket_name
+                ,
+                output_s3_key_prefix: self.output_s3_key_prefix
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                max_errors: self.max_errors
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                notification_config: self.notification_config
+                ,
+                cloud_watch_output_config: self.cloud_watch_output_config
+                ,
+                alarm_configuration: self.alarm_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SendCommandInputBuilder {
@@ -567,3 +566,4 @@ impl ::std::fmt::Debug for SendCommandInputBuilder {
         formatter.finish()
     }
 }
+

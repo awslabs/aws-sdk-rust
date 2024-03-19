@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnomalyDetectorInput {
+pub struct UpdateAnomalyDetectorInput  {
     /// <p>The ARN of the detector to update.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
@@ -12,21 +12,21 @@ pub struct UpdateAnomalyDetectorInput {
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
     pub anomaly_detector_config: ::std::option::Option<crate::types::AnomalyDetectorConfig>,
 }
-impl UpdateAnomalyDetectorInput {
+impl  UpdateAnomalyDetectorInput  {
     /// <p>The ARN of the detector to update.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The updated detector description.</p>
-    pub fn anomaly_detector_description(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_description(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_description.as_deref()
     }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
-    pub fn anomaly_detector_config(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfig> {
+    pub fn anomaly_detector_config(&self) -> ::std::option::Option<& crate::types::AnomalyDetectorConfig> {
         self.anomaly_detector_config.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateAnomalyDetectorInputBuilder {
     }
     /// <p>The ARN of the detector to update.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the detector to update.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateAnomalyDetectorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateAnomalyDetectorInputBuilder {
     }
     /// <p>The updated detector description.</p>
     pub fn set_anomaly_detector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_description = input;
-        self
+        self.anomaly_detector_description = input; self
     }
     /// <p>The updated detector description.</p>
     pub fn get_anomaly_detector_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl UpdateAnomalyDetectorInputBuilder {
     }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
     pub fn set_anomaly_detector_config(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorConfig>) -> Self {
-        self.anomaly_detector_config = input;
-        self
+        self.anomaly_detector_config = input; self
     }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
     pub fn get_anomaly_detector_config(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
         &self.anomaly_detector_config
     }
     /// Consumes the builder and constructs a [`UpdateAnomalyDetectorInput`](crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            kms_key_arn: self.kms_key_arn,
-            anomaly_detector_description: self.anomaly_detector_description,
-            anomaly_detector_config: self.anomaly_detector_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                anomaly_detector_description: self.anomaly_detector_description
+                ,
+                anomaly_detector_config: self.anomaly_detector_config
+                ,
+            }
+        )
     }
 }
+

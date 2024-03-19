@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>GetServerCertificate</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerCertificate {
+pub struct ServerCertificate  {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     pub server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     /// <p>The contents of the public key certificate.</p>
@@ -12,27 +12,27 @@ pub struct ServerCertificate {
     /// <p>The contents of the public key certificate chain.</p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ServerCertificate {
+impl  ServerCertificate  {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    pub fn server_certificate_metadata(&self) -> ::std::option::Option<&crate::types::ServerCertificateMetadata> {
+    pub fn server_certificate_metadata(&self) -> ::std::option::Option<& crate::types::ServerCertificateMetadata> {
         self.server_certificate_metadata.as_ref()
     }
     /// <p>The contents of the public key certificate.</p>
-    pub fn certificate_body(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_body.deref()
+    pub fn certificate_body(&self) -> & str {
+        use std::ops::Deref; self.certificate_body.deref()
     }
     /// <p>The contents of the public key certificate chain.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServerCertificate {
@@ -49,7 +49,7 @@ pub struct ServerCertificateBuilder {
     pub(crate) server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     pub(crate) certificate_body: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ServerCertificateBuilder {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
@@ -60,8 +60,7 @@ impl ServerCertificateBuilder {
     }
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     pub fn set_server_certificate_metadata(mut self, input: ::std::option::Option<crate::types::ServerCertificateMetadata>) -> Self {
-        self.server_certificate_metadata = input;
-        self
+        self.server_certificate_metadata = input; self
     }
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     pub fn get_server_certificate_metadata(&self) -> &::std::option::Option<crate::types::ServerCertificateMetadata> {
@@ -75,8 +74,7 @@ impl ServerCertificateBuilder {
     }
     /// <p>The contents of the public key certificate.</p>
     pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_body = input;
-        self
+        self.certificate_body = input; self
     }
     /// <p>The contents of the public key certificate.</p>
     pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl ServerCertificateBuilder {
     }
     /// <p>The contents of the public key certificate chain.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>The contents of the public key certificate chain.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,33 +100,37 @@ impl ServerCertificateBuilder {
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ServerCertificate`](crate::types::ServerCertificate).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_body`](crate::types::builders::ServerCertificateBuilder::certificate_body)
     pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServerCertificate {
-            server_certificate_metadata: self.server_certificate_metadata,
-            certificate_body: self.certificate_body.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_body",
-                    "certificate_body was not specified but it is required when building ServerCertificate",
-                )
-            })?,
-            certificate_chain: self.certificate_chain,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServerCertificate {
+                server_certificate_metadata: self.server_certificate_metadata
+                ,
+                certificate_body: self.certificate_body
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_body", "certificate_body was not specified but it is required when building ServerCertificate")
+                    )?
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

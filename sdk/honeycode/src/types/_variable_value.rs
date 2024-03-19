@@ -3,18 +3,17 @@
 /// <p>The input variables to the app to be used by the InvokeScreenAutomation action request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct VariableValue {
+pub struct VariableValue  {
     /// <p>Raw value of the variable.</p>
     pub raw_value: ::std::string::String,
 }
-impl VariableValue {
+impl  VariableValue  {
     /// <p>Raw value of the variable.</p>
-    pub fn raw_value(&self) -> &str {
-        use std::ops::Deref;
-        self.raw_value.deref()
+    pub fn raw_value(&self) -> & str {
+        use std::ops::Deref; self.raw_value.deref()
     }
 }
-impl ::std::fmt::Debug for VariableValue {
+impl  ::std::fmt::Debug for VariableValue  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValue");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl VariableValueBuilder {
     }
     /// <p>Raw value of the variable.</p>
     pub fn set_raw_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_value = input;
-        self
+        self.raw_value = input; self
     }
     /// <p>Raw value of the variable.</p>
     pub fn get_raw_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl VariableValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`raw_value`](crate::types::builders::VariableValueBuilder::raw_value)
     pub fn build(self) -> ::std::result::Result<crate::types::VariableValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VariableValue {
-            raw_value: self.raw_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "raw_value",
-                    "raw_value was not specified but it is required when building VariableValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VariableValue {
+                raw_value: self.raw_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("raw_value", "raw_value was not specified but it is required when building VariableValue")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for VariableValueBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for VariableValueBuilder {
         formatter.finish()
     }
 }
+

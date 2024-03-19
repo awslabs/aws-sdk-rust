@@ -3,27 +3,28 @@
 /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeValue {
+pub struct DocumentAttributeValue  {
     /// <p>A string, such as "department".</p>
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub string_list_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub string_list_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A long integer value.</p>
     pub long_value: ::std::option::Option<i64>,
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
     pub date_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DocumentAttributeValue {
+impl  DocumentAttributeValue  {
     /// <p>A string, such as "department".</p>
-    pub fn string_value(&self) -> ::std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<& str> {
         self.string_value.as_deref()
     }
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_list_value.is_none()`.
-    pub fn string_list_value(&self) -> &[::std::string::String] {
-        self.string_list_value.as_deref().unwrap_or_default()
+    pub fn string_list_value(&self) -> & [::std::string::String] {
+        self.string_list_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A long integer value.</p>
     pub fn long_value(&self) -> ::std::option::Option<i64> {
@@ -31,7 +32,7 @@ impl DocumentAttributeValue {
     }
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
-    pub fn date_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_value(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_value.as_ref()
     }
 }
@@ -47,7 +48,7 @@ impl DocumentAttributeValue {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentAttributeValueBuilder {
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
-    pub(crate) string_list_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) string_list_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) long_value: ::std::option::Option<i64>,
     pub(crate) date_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -59,8 +60,7 @@ impl DocumentAttributeValueBuilder {
     }
     /// <p>A string, such as "department".</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>A string, such as "department".</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +73,16 @@ impl DocumentAttributeValueBuilder {
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
     pub fn string_list_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_list_value.unwrap_or_default();
-        v.push(input.into());
-        self.string_list_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.string_list_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub fn set_string_list_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.string_list_value = input;
-        self
+    pub fn set_string_list_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.string_list_value = input; self
     }
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub fn get_string_list_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_list_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.string_list_value
     }
     /// <p>A long integer value.</p>
@@ -93,8 +92,7 @@ impl DocumentAttributeValueBuilder {
     }
     /// <p>A long integer value.</p>
     pub fn set_long_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.long_value = input;
-        self
+        self.long_value = input; self
     }
     /// <p>A long integer value.</p>
     pub fn get_long_value(&self) -> &::std::option::Option<i64> {
@@ -109,8 +107,7 @@ impl DocumentAttributeValueBuilder {
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
     pub fn set_date_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_value = input;
-        self
+        self.date_value = input; self
     }
     /// <p>A date expressed as an ISO 8601 string.</p>
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
@@ -120,10 +117,15 @@ impl DocumentAttributeValueBuilder {
     /// Consumes the builder and constructs a [`DocumentAttributeValue`](crate::types::DocumentAttributeValue).
     pub fn build(self) -> crate::types::DocumentAttributeValue {
         crate::types::DocumentAttributeValue {
-            string_value: self.string_value,
-            string_list_value: self.string_list_value,
-            long_value: self.long_value,
-            date_value: self.date_value,
+            string_value: self.string_value
+            ,
+            string_list_value: self.string_list_value
+            ,
+            long_value: self.long_value
+            ,
+            date_value: self.date_value
+            ,
         }
     }
 }
+

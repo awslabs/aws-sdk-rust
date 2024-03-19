@@ -3,24 +3,23 @@
 /// <p>Formatting configuration for gradient color.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConditionalFormattingGradientColor {
+pub struct ConditionalFormattingGradientColor  {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
     pub expression: ::std::string::String,
     /// <p>Determines the color.</p>
     pub color: ::std::option::Option<crate::types::GradientColor>,
 }
-impl ConditionalFormattingGradientColor {
+impl  ConditionalFormattingGradientColor  {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> ::std::option::Option<&crate::types::GradientColor> {
+    pub fn color(&self) -> ::std::option::Option<& crate::types::GradientColor> {
         self.color.as_ref()
     }
 }
-impl ::std::fmt::Debug for ConditionalFormattingGradientColor {
+impl  ::std::fmt::Debug for ConditionalFormattingGradientColor  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingGradientColor");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl ConditionalFormattingGradientColorBuilder {
     }
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl ConditionalFormattingGradientColorBuilder {
     }
     /// <p>Determines the color.</p>
     pub fn set_color(mut self, input: ::std::option::Option<crate::types::GradientColor>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>Determines the color.</p>
     pub fn get_color(&self) -> &::std::option::Option<crate::types::GradientColor> {
@@ -77,15 +74,17 @@ impl ConditionalFormattingGradientColorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::ConditionalFormattingGradientColorBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::ConditionalFormattingGradientColor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConditionalFormattingGradientColor {
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building ConditionalFormattingGradientColor",
-                )
-            })?,
-            color: self.color,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConditionalFormattingGradientColor {
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building ConditionalFormattingGradientColor")
+                    )?
+                ,
+                color: self.color
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ConditionalFormattingGradientColorBuilder {
@@ -96,3 +95,4 @@ impl ::std::fmt::Debug for ConditionalFormattingGradientColorBuilder {
         formatter.finish()
     }
 }
+

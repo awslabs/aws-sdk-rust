@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vocabularylanguagecode = unimplemented!();
 /// match vocabularylanguagecode {
@@ -51,16 +51,14 @@
 /// Specifically, when `vocabularylanguagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VocabularyLanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VocabularyLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ArAe,
@@ -110,127 +108,125 @@ pub enum VocabularyLanguageCode {
     ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VocabularyLanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ar-AE" => VocabularyLanguageCode::ArAe,
-            "de-CH" => VocabularyLanguageCode::DeCh,
-            "de-DE" => VocabularyLanguageCode::DeDe,
-            "en-AB" => VocabularyLanguageCode::EnAb,
-            "en-AU" => VocabularyLanguageCode::EnAu,
-            "en-GB" => VocabularyLanguageCode::EnGb,
-            "en-IE" => VocabularyLanguageCode::EnIe,
-            "en-IN" => VocabularyLanguageCode::EnIn,
-            "en-NZ" => VocabularyLanguageCode::EnNz,
-            "en-US" => VocabularyLanguageCode::EnUs,
-            "en-WL" => VocabularyLanguageCode::EnWl,
-            "en-ZA" => VocabularyLanguageCode::EnZa,
-            "es-ES" => VocabularyLanguageCode::EsEs,
-            "es-US" => VocabularyLanguageCode::EsUs,
-            "fr-CA" => VocabularyLanguageCode::FrCa,
-            "fr-FR" => VocabularyLanguageCode::FrFr,
-            "hi-IN" => VocabularyLanguageCode::HiIn,
-            "it-IT" => VocabularyLanguageCode::ItIt,
-            "ja-JP" => VocabularyLanguageCode::JaJp,
-            "ko-KR" => VocabularyLanguageCode::KoKr,
-            "pt-BR" => VocabularyLanguageCode::PtBr,
-            "pt-PT" => VocabularyLanguageCode::PtPt,
-            "zh-CN" => VocabularyLanguageCode::ZhCn,
-            other => VocabularyLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ar-AE" => VocabularyLanguageCode::ArAe,
+"de-CH" => VocabularyLanguageCode::DeCh,
+"de-DE" => VocabularyLanguageCode::DeDe,
+"en-AB" => VocabularyLanguageCode::EnAb,
+"en-AU" => VocabularyLanguageCode::EnAu,
+"en-GB" => VocabularyLanguageCode::EnGb,
+"en-IE" => VocabularyLanguageCode::EnIe,
+"en-IN" => VocabularyLanguageCode::EnIn,
+"en-NZ" => VocabularyLanguageCode::EnNz,
+"en-US" => VocabularyLanguageCode::EnUs,
+"en-WL" => VocabularyLanguageCode::EnWl,
+"en-ZA" => VocabularyLanguageCode::EnZa,
+"es-ES" => VocabularyLanguageCode::EsEs,
+"es-US" => VocabularyLanguageCode::EsUs,
+"fr-CA" => VocabularyLanguageCode::FrCa,
+"fr-FR" => VocabularyLanguageCode::FrFr,
+"hi-IN" => VocabularyLanguageCode::HiIn,
+"it-IT" => VocabularyLanguageCode::ItIt,
+"ja-JP" => VocabularyLanguageCode::JaJp,
+"ko-KR" => VocabularyLanguageCode::KoKr,
+"pt-BR" => VocabularyLanguageCode::PtBr,
+"pt-PT" => VocabularyLanguageCode::PtPt,
+"zh-CN" => VocabularyLanguageCode::ZhCn,
+other => VocabularyLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VocabularyLanguageCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VocabularyLanguageCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VocabularyLanguageCode::from(s))
+                    }
+                }
 impl VocabularyLanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VocabularyLanguageCode::ArAe => "ar-AE",
-            VocabularyLanguageCode::DeCh => "de-CH",
-            VocabularyLanguageCode::DeDe => "de-DE",
-            VocabularyLanguageCode::EnAb => "en-AB",
-            VocabularyLanguageCode::EnAu => "en-AU",
-            VocabularyLanguageCode::EnGb => "en-GB",
-            VocabularyLanguageCode::EnIe => "en-IE",
-            VocabularyLanguageCode::EnIn => "en-IN",
-            VocabularyLanguageCode::EnNz => "en-NZ",
-            VocabularyLanguageCode::EnUs => "en-US",
-            VocabularyLanguageCode::EnWl => "en-WL",
-            VocabularyLanguageCode::EnZa => "en-ZA",
-            VocabularyLanguageCode::EsEs => "es-ES",
-            VocabularyLanguageCode::EsUs => "es-US",
-            VocabularyLanguageCode::FrCa => "fr-CA",
-            VocabularyLanguageCode::FrFr => "fr-FR",
-            VocabularyLanguageCode::HiIn => "hi-IN",
-            VocabularyLanguageCode::ItIt => "it-IT",
-            VocabularyLanguageCode::JaJp => "ja-JP",
-            VocabularyLanguageCode::KoKr => "ko-KR",
-            VocabularyLanguageCode::PtBr => "pt-BR",
-            VocabularyLanguageCode::PtPt => "pt-PT",
-            VocabularyLanguageCode::ZhCn => "zh-CN",
-            VocabularyLanguageCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fr-CA",
-            "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "pt-PT", "zh-CN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VocabularyLanguageCode::ArAe => "ar-AE",
+    VocabularyLanguageCode::DeCh => "de-CH",
+    VocabularyLanguageCode::DeDe => "de-DE",
+    VocabularyLanguageCode::EnAb => "en-AB",
+    VocabularyLanguageCode::EnAu => "en-AU",
+    VocabularyLanguageCode::EnGb => "en-GB",
+    VocabularyLanguageCode::EnIe => "en-IE",
+    VocabularyLanguageCode::EnIn => "en-IN",
+    VocabularyLanguageCode::EnNz => "en-NZ",
+    VocabularyLanguageCode::EnUs => "en-US",
+    VocabularyLanguageCode::EnWl => "en-WL",
+    VocabularyLanguageCode::EnZa => "en-ZA",
+    VocabularyLanguageCode::EsEs => "es-ES",
+    VocabularyLanguageCode::EsUs => "es-US",
+    VocabularyLanguageCode::FrCa => "fr-CA",
+    VocabularyLanguageCode::FrFr => "fr-FR",
+    VocabularyLanguageCode::HiIn => "hi-IN",
+    VocabularyLanguageCode::ItIt => "it-IT",
+    VocabularyLanguageCode::JaJp => "ja-JP",
+    VocabularyLanguageCode::KoKr => "ko-KR",
+    VocabularyLanguageCode::PtBr => "pt-BR",
+    VocabularyLanguageCode::PtPt => "pt-PT",
+    VocabularyLanguageCode::ZhCn => "zh-CN",
+    VocabularyLanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "pt-PT", "zh-CN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VocabularyLanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VocabularyLanguageCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VocabularyLanguageCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VocabularyLanguageCode::ArAe => write!(f, "ar-AE"),
-            VocabularyLanguageCode::DeCh => write!(f, "de-CH"),
-            VocabularyLanguageCode::DeDe => write!(f, "de-DE"),
-            VocabularyLanguageCode::EnAb => write!(f, "en-AB"),
-            VocabularyLanguageCode::EnAu => write!(f, "en-AU"),
-            VocabularyLanguageCode::EnGb => write!(f, "en-GB"),
-            VocabularyLanguageCode::EnIe => write!(f, "en-IE"),
-            VocabularyLanguageCode::EnIn => write!(f, "en-IN"),
-            VocabularyLanguageCode::EnNz => write!(f, "en-NZ"),
-            VocabularyLanguageCode::EnUs => write!(f, "en-US"),
-            VocabularyLanguageCode::EnWl => write!(f, "en-WL"),
-            VocabularyLanguageCode::EnZa => write!(f, "en-ZA"),
-            VocabularyLanguageCode::EsEs => write!(f, "es-ES"),
-            VocabularyLanguageCode::EsUs => write!(f, "es-US"),
-            VocabularyLanguageCode::FrCa => write!(f, "fr-CA"),
-            VocabularyLanguageCode::FrFr => write!(f, "fr-FR"),
-            VocabularyLanguageCode::HiIn => write!(f, "hi-IN"),
-            VocabularyLanguageCode::ItIt => write!(f, "it-IT"),
-            VocabularyLanguageCode::JaJp => write!(f, "ja-JP"),
-            VocabularyLanguageCode::KoKr => write!(f, "ko-KR"),
-            VocabularyLanguageCode::PtBr => write!(f, "pt-BR"),
-            VocabularyLanguageCode::PtPt => write!(f, "pt-PT"),
-            VocabularyLanguageCode::ZhCn => write!(f, "zh-CN"),
-            VocabularyLanguageCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VocabularyLanguageCode::ArAe => write!(f, "ar-AE"),
+VocabularyLanguageCode::DeCh => write!(f, "de-CH"),
+VocabularyLanguageCode::DeDe => write!(f, "de-DE"),
+VocabularyLanguageCode::EnAb => write!(f, "en-AB"),
+VocabularyLanguageCode::EnAu => write!(f, "en-AU"),
+VocabularyLanguageCode::EnGb => write!(f, "en-GB"),
+VocabularyLanguageCode::EnIe => write!(f, "en-IE"),
+VocabularyLanguageCode::EnIn => write!(f, "en-IN"),
+VocabularyLanguageCode::EnNz => write!(f, "en-NZ"),
+VocabularyLanguageCode::EnUs => write!(f, "en-US"),
+VocabularyLanguageCode::EnWl => write!(f, "en-WL"),
+VocabularyLanguageCode::EnZa => write!(f, "en-ZA"),
+VocabularyLanguageCode::EsEs => write!(f, "es-ES"),
+VocabularyLanguageCode::EsUs => write!(f, "es-US"),
+VocabularyLanguageCode::FrCa => write!(f, "fr-CA"),
+VocabularyLanguageCode::FrFr => write!(f, "fr-FR"),
+VocabularyLanguageCode::HiIn => write!(f, "hi-IN"),
+VocabularyLanguageCode::ItIt => write!(f, "it-IT"),
+VocabularyLanguageCode::JaJp => write!(f, "ja-JP"),
+VocabularyLanguageCode::KoKr => write!(f, "ko-KR"),
+VocabularyLanguageCode::PtBr => write!(f, "pt-BR"),
+VocabularyLanguageCode::PtPt => write!(f, "pt-PT"),
+VocabularyLanguageCode::ZhCn => write!(f, "zh-CN"),
+VocabularyLanguageCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

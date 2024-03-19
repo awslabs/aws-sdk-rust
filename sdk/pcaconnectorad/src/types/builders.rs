@@ -78,3 +78,4 @@ pub use crate::types::_connector::ConnectorBuilder;
 pub use crate::types::_vpc_information::VpcInformationBuilder;
 
 pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
+

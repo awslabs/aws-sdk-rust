@@ -3,15 +3,14 @@
 /// <p>Describes an Lambda data source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaDataSourceConfig {
+pub struct LambdaDataSourceConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     pub lambda_function_arn: ::std::string::String,
 }
-impl LambdaDataSourceConfig {
+impl  LambdaDataSourceConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
-    pub fn lambda_function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_function_arn.deref()
+    pub fn lambda_function_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_function_arn.deref()
     }
 }
 impl LambdaDataSourceConfig {
@@ -36,8 +35,7 @@ impl LambdaDataSourceConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LambdaDataSourceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_function_arn`](crate::types::builders::LambdaDataSourceConfigBuilder::lambda_function_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaDataSourceConfig {
-            lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_function_arn",
-                    "lambda_function_arn was not specified but it is required when building LambdaDataSourceConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaDataSourceConfig {
+                lambda_function_arn: self.lambda_function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_function_arn", "lambda_function_arn was not specified but it is required when building LambdaDataSourceConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

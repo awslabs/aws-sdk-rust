@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MergePullRequestBySquashInput {
+pub struct MergePullRequestBySquashInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository where the pull request was created.</p>
@@ -24,37 +24,37 @@ pub struct MergePullRequestBySquashInput {
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
 }
-impl MergePullRequestBySquashInput {
+impl  MergePullRequestBySquashInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn source_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_commit_id(&self) -> ::std::option::Option<& str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(&self) -> ::std::option::Option<&crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn conflict_detail_level(&self) -> ::std::option::Option<& crate::types::ConflictDetailLevelTypeEnum> {
         self.conflict_detail_level.as_ref()
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(&self) -> ::std::option::Option<&crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn conflict_resolution_strategy(&self) -> ::std::option::Option<& crate::types::ConflictResolutionStrategyTypeEnum> {
         self.conflict_resolution_strategy.as_ref()
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
-    pub fn commit_message(&self) -> ::std::option::Option<&str> {
+    pub fn commit_message(&self) -> ::std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
-    pub fn author_name(&self) -> ::std::option::Option<&str> {
+    pub fn author_name(&self) -> ::std::option::Option<& str> {
         self.author_name.as_deref()
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
@@ -62,7 +62,7 @@ impl MergePullRequestBySquashInput {
         self.keep_empty_folders
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
-    pub fn conflict_resolution(&self) -> ::std::option::Option<&crate::types::ConflictResolution> {
+    pub fn conflict_resolution(&self) -> ::std::option::Option<& crate::types::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_commit_id = input;
-        self
+        self.source_commit_id = input; self
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn set_conflict_detail_level(mut self, input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
-        self.conflict_detail_level = input;
-        self
+        self.conflict_detail_level = input; self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn get_conflict_detail_level(&self) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
@@ -154,8 +150,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn set_conflict_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
-        self.conflict_resolution_strategy = input;
-        self
+        self.conflict_resolution_strategy = input; self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn get_conflict_resolution_strategy(&self) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
@@ -168,8 +163,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
     pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +176,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn set_author_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author_name = input;
-        self
+        self.author_name = input; self
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +189,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +202,7 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.keep_empty_folders = input;
-        self
+        self.keep_empty_folders = input; self
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
@@ -224,31 +215,38 @@ impl MergePullRequestBySquashInputBuilder {
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
-        self.conflict_resolution = input;
-        self
+        self.conflict_resolution = input; self
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
     /// Consumes the builder and constructs a [`MergePullRequestBySquashInput`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput {
-            pull_request_id: self.pull_request_id,
-            repository_name: self.repository_name,
-            source_commit_id: self.source_commit_id,
-            conflict_detail_level: self.conflict_detail_level,
-            conflict_resolution_strategy: self.conflict_resolution_strategy,
-            commit_message: self.commit_message,
-            author_name: self.author_name,
-            email: self.email,
-            keep_empty_folders: self.keep_empty_folders,
-            conflict_resolution: self.conflict_resolution,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput {
+                pull_request_id: self.pull_request_id
+                ,
+                repository_name: self.repository_name
+                ,
+                source_commit_id: self.source_commit_id
+                ,
+                conflict_detail_level: self.conflict_detail_level
+                ,
+                conflict_resolution_strategy: self.conflict_resolution_strategy
+                ,
+                commit_message: self.commit_message
+                ,
+                author_name: self.author_name
+                ,
+                email: self.email
+                ,
+                keep_empty_folders: self.keep_empty_folders
+                ,
+                conflict_resolution: self.conflict_resolution
+                ,
+            }
+        )
     }
 }
+

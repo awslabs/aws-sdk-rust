@@ -3,7 +3,7 @@
 /// <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemporaryCredential {
+pub struct TemporaryCredential  {
     /// <p>The user name.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password.</p>
@@ -13,13 +13,13 @@ pub struct TemporaryCredential {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl TemporaryCredential {
+impl  TemporaryCredential  {
     /// <p>The user name.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
@@ -27,7 +27,7 @@ impl TemporaryCredential {
         self.valid_for_in_minutes
     }
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TemporaryCredentialBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TemporaryCredentialBuilder {
     }
     /// <p>The password.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TemporaryCredentialBuilder {
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
     pub fn set_valid_for_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.valid_for_in_minutes = input;
-        self
+        self.valid_for_in_minutes = input; self
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
     pub fn get_valid_for_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl TemporaryCredentialBuilder {
     }
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl TemporaryCredentialBuilder {
     /// Consumes the builder and constructs a [`TemporaryCredential`](crate::types::TemporaryCredential).
     pub fn build(self) -> crate::types::TemporaryCredential {
         crate::types::TemporaryCredential {
-            username: self.username,
-            password: self.password,
-            valid_for_in_minutes: self.valid_for_in_minutes,
-            instance_id: self.instance_id,
+            username: self.username
+            ,
+            password: self.password
+            ,
+            valid_for_in_minutes: self.valid_for_in_minutes
+            ,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

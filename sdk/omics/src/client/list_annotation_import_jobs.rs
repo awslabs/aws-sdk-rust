@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnnotationImportJobs`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of jobs to return in one page of results.</p><br>
     ///   - [`ids(impl Into<String>)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::ids) / [`set_ids(Option<Vec::<String>>)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::set_ids):<br>required: **false**<br><p>IDs of annotation import jobs to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ListAnnotationImportJobsFilter)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::filter) / [`set_filter(Option<ListAnnotationImportJobsFilter>)`](crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput) with field(s):
     ///   - [`annotation_import_jobs(Option<Vec::<AnnotationImportJobItem>>)`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput::annotation_import_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput::next_token): <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAnnotationImportJobsError>`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListAnnotationImportJobsError>`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError)
     pub fn list_annotation_import_jobs(&self) -> crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder {
-        crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object representing a change in state for a managed agent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedAgentStateChange {
+pub struct ManagedAgentStateChange  {
     /// <p>The name of the container that's associated with the managed agent.</p>
     pub container_name: ::std::string::String,
     /// <p>The name of the managed agent.</p>
@@ -13,23 +13,21 @@ pub struct ManagedAgentStateChange {
     /// <p>The reason for the status of the managed agent.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl ManagedAgentStateChange {
+impl  ManagedAgentStateChange  {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn container_name(&self) -> &str {
-        use std::ops::Deref;
-        self.container_name.deref()
+    pub fn container_name(&self) -> & str {
+        use std::ops::Deref; self.container_name.deref()
     }
     /// <p>The name of the managed agent.</p>
-    pub fn managed_agent_name(&self) -> &crate::types::ManagedAgentName {
+    pub fn managed_agent_name(&self) -> & crate::types::ManagedAgentName {
         &self.managed_agent_name
     }
     /// <p>The status of the managed agent.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The reason for the status of the managed agent.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -58,8 +56,7 @@ impl ManagedAgentStateChangeBuilder {
     }
     /// <p>The name of the container that's associated with the managed agent.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that's associated with the managed agent.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl ManagedAgentStateChangeBuilder {
     }
     /// <p>The name of the managed agent.</p>
     pub fn set_managed_agent_name(mut self, input: ::std::option::Option<crate::types::ManagedAgentName>) -> Self {
-        self.managed_agent_name = input;
-        self
+        self.managed_agent_name = input; self
     }
     /// <p>The name of the managed agent.</p>
     pub fn get_managed_agent_name(&self) -> &::std::option::Option<crate::types::ManagedAgentName> {
@@ -88,8 +84,7 @@ impl ManagedAgentStateChangeBuilder {
     }
     /// <p>The status of the managed agent.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the managed agent.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl ManagedAgentStateChangeBuilder {
     }
     /// <p>The reason for the status of the managed agent.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the status of the managed agent.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +109,27 @@ impl ManagedAgentStateChangeBuilder {
     /// - [`managed_agent_name`](crate::types::builders::ManagedAgentStateChangeBuilder::managed_agent_name)
     /// - [`status`](crate::types::builders::ManagedAgentStateChangeBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ManagedAgentStateChange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ManagedAgentStateChange {
-            container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "container_name",
-                    "container_name was not specified but it is required when building ManagedAgentStateChange",
-                )
-            })?,
-            managed_agent_name: self.managed_agent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "managed_agent_name",
-                    "managed_agent_name was not specified but it is required when building ManagedAgentStateChange",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ManagedAgentStateChange",
-                )
-            })?,
-            reason: self.reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ManagedAgentStateChange {
+                container_name: self.container_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("container_name", "container_name was not specified but it is required when building ManagedAgentStateChange")
+                    )?
+                ,
+                managed_agent_name: self.managed_agent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("managed_agent_name", "managed_agent_name was not specified but it is required when building ManagedAgentStateChange")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ManagedAgentStateChange")
+                    )?
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

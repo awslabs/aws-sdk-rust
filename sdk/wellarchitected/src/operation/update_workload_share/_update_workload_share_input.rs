@@ -3,7 +3,7 @@
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkloadShareInput {
+pub struct UpdateWorkloadShareInput  {
     /// <p>The ID associated with the share.</p>
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -11,17 +11,17 @@ pub struct UpdateWorkloadShareInput {
     /// <p>Permission granted on a share request.</p>
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
 }
-impl UpdateWorkloadShareInput {
+impl  UpdateWorkloadShareInput  {
     /// <p>The ID associated with the share.</p>
-    pub fn share_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<& str> {
         self.share_id.as_deref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>Permission granted on a share request.</p>
-    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<& crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl UpdateWorkloadShareInputBuilder {
     }
     /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The ID associated with the share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl UpdateWorkloadShareInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl UpdateWorkloadShareInputBuilder {
     }
     /// <p>Permission granted on a share request.</p>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
-        self.permission_type = input;
-        self
+        self.permission_type = input; self
     }
     /// <p>Permission granted on a share request.</p>
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
         &self.permission_type
     }
     /// Consumes the builder and constructs a [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workload_share::UpdateWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_workload_share::UpdateWorkloadShareInput {
-            share_id: self.share_id,
-            workload_id: self.workload_id,
-            permission_type: self.permission_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workload_share::UpdateWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workload_share::UpdateWorkloadShareInput {
+                share_id: self.share_id
+                ,
+                workload_id: self.workload_id
+                ,
+                permission_type: self.permission_type
+                ,
+            }
+        )
     }
 }
+

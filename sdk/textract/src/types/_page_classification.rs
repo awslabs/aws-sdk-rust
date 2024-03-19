@@ -3,22 +3,20 @@
 /// <p>The class assigned to a Page object detected in an input document. Contains information regarding the predicted type/class of a document's page and the page number that the Page object was detected on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PageClassification {
+pub struct PageClassification  {
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    pub page_type: ::std::vec::Vec<crate::types::Prediction>,
+    pub page_type: ::std::vec::Vec::<crate::types::Prediction>,
     /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    pub page_number: ::std::vec::Vec<crate::types::Prediction>,
+    pub page_number: ::std::vec::Vec::<crate::types::Prediction>,
 }
-impl PageClassification {
+impl  PageClassification  {
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    pub fn page_type(&self) -> &[crate::types::Prediction] {
-        use std::ops::Deref;
-        self.page_type.deref()
+    pub fn page_type(&self) -> & [crate::types::Prediction] {
+        use std::ops::Deref; self.page_type.deref()
     }
     /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    pub fn page_number(&self) -> &[crate::types::Prediction] {
-        use std::ops::Deref;
-        self.page_number.deref()
+    pub fn page_number(&self) -> & [crate::types::Prediction] {
+        use std::ops::Deref; self.page_number.deref()
     }
 }
 impl PageClassification {
@@ -32,8 +30,8 @@ impl PageClassification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PageClassificationBuilder {
-    pub(crate) page_type: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
-    pub(crate) page_number: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
+    pub(crate) page_type: ::std::option::Option<::std::vec::Vec::<crate::types::Prediction>>,
+    pub(crate) page_number: ::std::option::Option<::std::vec::Vec::<crate::types::Prediction>>,
 }
 impl PageClassificationBuilder {
     /// Appends an item to `page_type`.
@@ -43,17 +41,16 @@ impl PageClassificationBuilder {
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
     pub fn page_type(mut self, input: crate::types::Prediction) -> Self {
         let mut v = self.page_type.unwrap_or_default();
-        v.push(input);
-        self.page_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.page_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    pub fn set_page_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>) -> Self {
-        self.page_type = input;
-        self
+    pub fn set_page_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Prediction>>) -> Self {
+        self.page_type = input; self
     }
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    pub fn get_page_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
+    pub fn get_page_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Prediction>> {
         &self.page_type
     }
     /// Appends an item to `page_number`.
@@ -63,17 +60,16 @@ impl PageClassificationBuilder {
     /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
     pub fn page_number(mut self, input: crate::types::Prediction) -> Self {
         let mut v = self.page_number.unwrap_or_default();
-        v.push(input);
-        self.page_number = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.page_number = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    pub fn set_page_number(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>) -> Self {
-        self.page_number = input;
-        self
+    pub fn set_page_number(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Prediction>>) -> Self {
+        self.page_number = input; self
     }
     /// <p>The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    pub fn get_page_number(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
+    pub fn get_page_number(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Prediction>> {
         &self.page_number
     }
     /// Consumes the builder and constructs a [`PageClassification`](crate::types::PageClassification).
@@ -81,19 +77,20 @@ impl PageClassificationBuilder {
     /// - [`page_type`](crate::types::builders::PageClassificationBuilder::page_type)
     /// - [`page_number`](crate::types::builders::PageClassificationBuilder::page_number)
     pub fn build(self) -> ::std::result::Result<crate::types::PageClassification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PageClassification {
-            page_type: self.page_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "page_type",
-                    "page_type was not specified but it is required when building PageClassification",
-                )
-            })?,
-            page_number: self.page_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "page_number",
-                    "page_number was not specified but it is required when building PageClassification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PageClassification {
+                page_type: self.page_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("page_type", "page_type was not specified but it is required when building PageClassification")
+                    )?
+                ,
+                page_number: self.page_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("page_number", "page_number was not specified but it is required when building PageClassification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

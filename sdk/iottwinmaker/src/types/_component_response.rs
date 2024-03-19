@@ -3,7 +3,7 @@
 /// <p>An object that returns information about a component type create or update request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentResponse {
+pub struct ComponentResponse  {
     /// <p>The name of the component.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component type.</p>
@@ -15,51 +15,49 @@ pub struct ComponentResponse {
     /// <p>The name of the property definition set in the request.</p>
     pub defined_in: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyResponse>>,
     /// <p>The property groups.</p>
-    pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
+    pub property_groups: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
     pub are_all_properties_returned: ::std::option::Option<bool>,
     /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
-    pub composite_components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>>,
+    pub composite_components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentSummary>>,
     /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
     pub are_all_composite_components_returned: ::std::option::Option<bool>,
 }
-impl ComponentResponse {
+impl  ComponentResponse  {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The description of the component type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
     /// <p>The status of the component type.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The name of the property definition set in the request.</p>
-    pub fn defined_in(&self) -> ::std::option::Option<&str> {
+    pub fn defined_in(&self) -> ::std::option::Option<& str> {
         self.defined_in.as_deref()
     }
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PropertyResponse>> {
         self.properties.as_ref()
     }
     /// <p>The property groups.</p>
-    pub fn property_groups(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>> {
+    pub fn property_groups(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupResponse>> {
         self.property_groups.as_ref()
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-    pub fn sync_source(&self) -> ::std::option::Option<&str> {
+    pub fn sync_source(&self) -> ::std::option::Option<& str> {
         self.sync_source.as_deref()
     }
     /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
@@ -67,7 +65,7 @@ impl ComponentResponse {
         self.are_all_properties_returned
     }
     /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
-    pub fn composite_components(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>> {
+    pub fn composite_components(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentSummary>> {
         self.composite_components.as_ref()
     }
     /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
@@ -91,12 +89,11 @@ pub struct ComponentResponseBuilder {
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) defined_in: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>>,
-    pub(crate) property_groups:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyResponse>>,
+    pub(crate) property_groups: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
     pub(crate) are_all_properties_returned: ::std::option::Option<bool>,
-    pub(crate) composite_components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>>,
+    pub(crate) composite_components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentSummary>>,
     pub(crate) are_all_composite_components_returned: ::std::option::Option<bool>,
 }
 impl ComponentResponseBuilder {
@@ -107,8 +104,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +117,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>The description of the component type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the component type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +130,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>The ID of the component type.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>The ID of the component type.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +143,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>The status of the component type.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the component type.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -163,8 +156,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>The name of the property definition set in the request.</p>
     pub fn set_defined_in(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.defined_in = input;
-        self
+        self.defined_in = input; self
     }
     /// <p>The name of the property definition set in the request.</p>
     pub fn get_defined_in(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,20 +169,16 @@ impl ComponentResponseBuilder {
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyResponse) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyResponse>>) -> Self {
+        self.properties = input; self
     }
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyResponse>> {
         &self.properties
     }
     /// Adds a key-value pair to `property_groups`.
@@ -200,22 +188,16 @@ impl ComponentResponseBuilder {
     /// <p>The property groups.</p>
     pub fn property_groups(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentPropertyGroupResponse) -> Self {
         let mut hash_map = self.property_groups.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.property_groups = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.property_groups = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The property groups.</p>
-    pub fn set_property_groups(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
-    ) -> Self {
-        self.property_groups = input;
-        self
+    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupResponse>>) -> Self {
+        self.property_groups = input; self
     }
     /// <p>The property groups.</p>
-    pub fn get_property_groups(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>> {
+    pub fn get_property_groups(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupResponse>> {
         &self.property_groups
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
@@ -225,8 +207,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +220,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
     pub fn set_are_all_properties_returned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.are_all_properties_returned = input;
-        self
+        self.are_all_properties_returned = input; self
     }
     /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
     pub fn get_are_all_properties_returned(&self) -> &::std::option::Option<bool> {
@@ -253,22 +233,16 @@ impl ComponentResponseBuilder {
     /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
     pub fn composite_components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentSummary) -> Self {
         let mut hash_map = self.composite_components.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.composite_components = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.composite_components = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
-    pub fn set_composite_components(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>>,
-    ) -> Self {
-        self.composite_components = input;
-        self
+    pub fn set_composite_components(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentSummary>>) -> Self {
+        self.composite_components = input; self
     }
     /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
-    pub fn get_composite_components(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>> {
+    pub fn get_composite_components(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentSummary>> {
         &self.composite_components
     }
     /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
@@ -278,8 +252,7 @@ impl ComponentResponseBuilder {
     }
     /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
     pub fn set_are_all_composite_components_returned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.are_all_composite_components_returned = input;
-        self
+        self.are_all_composite_components_returned = input; self
     }
     /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
     pub fn get_are_all_composite_components_returned(&self) -> &::std::option::Option<bool> {
@@ -288,17 +261,29 @@ impl ComponentResponseBuilder {
     /// Consumes the builder and constructs a [`ComponentResponse`](crate::types::ComponentResponse).
     pub fn build(self) -> crate::types::ComponentResponse {
         crate::types::ComponentResponse {
-            component_name: self.component_name,
-            description: self.description,
-            component_type_id: self.component_type_id,
-            status: self.status,
-            defined_in: self.defined_in,
-            properties: self.properties,
-            property_groups: self.property_groups,
-            sync_source: self.sync_source,
-            are_all_properties_returned: self.are_all_properties_returned,
-            composite_components: self.composite_components,
-            are_all_composite_components_returned: self.are_all_composite_components_returned,
+            component_name: self.component_name
+            ,
+            description: self.description
+            ,
+            component_type_id: self.component_type_id
+            ,
+            status: self.status
+            ,
+            defined_in: self.defined_in
+            ,
+            properties: self.properties
+            ,
+            property_groups: self.property_groups
+            ,
+            sync_source: self.sync_source
+            ,
+            are_all_properties_returned: self.are_all_properties_returned
+            ,
+            composite_components: self.composite_components
+            ,
+            are_all_composite_components_returned: self.are_all_composite_components_returned
+            ,
         }
     }
 }
+

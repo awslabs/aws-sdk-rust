@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCrawlersInput {
+pub struct BatchGetCrawlersInput  {
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub crawler_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub crawler_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetCrawlersInput {
+impl  BatchGetCrawlersInput  {
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawler_names.is_none()`.
-    pub fn crawler_names(&self) -> &[::std::string::String] {
-        self.crawler_names.as_deref().unwrap_or_default()
+    pub fn crawler_names(&self) -> & [::std::string::String] {
+        self.crawler_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetCrawlersInput {
@@ -25,7 +26,7 @@ impl BatchGetCrawlersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCrawlersInputBuilder {
-    pub(crate) crawler_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) crawler_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetCrawlersInputBuilder {
     /// Appends an item to `crawler_names`.
@@ -35,25 +36,26 @@ impl BatchGetCrawlersInputBuilder {
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
     pub fn crawler_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.crawler_names.unwrap_or_default();
-        v.push(input.into());
-        self.crawler_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.crawler_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn set_crawler_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.crawler_names = input;
-        self
+    pub fn set_crawler_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.crawler_names = input; self
     }
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn get_crawler_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_crawler_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.crawler_names
     }
     /// Consumes the builder and constructs a [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_crawlers::BatchGetCrawlersInput {
-            crawler_names: self.crawler_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_crawlers::BatchGetCrawlersInput {
+                crawler_names: self.crawler_names
+                ,
+            }
+        )
     }
 }
+

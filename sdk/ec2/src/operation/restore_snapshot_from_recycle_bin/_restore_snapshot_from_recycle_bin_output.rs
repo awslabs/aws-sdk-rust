@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreSnapshotFromRecycleBinOutput {
+pub struct RestoreSnapshotFromRecycleBinOutput  {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
@@ -27,17 +27,17 @@ pub struct RestoreSnapshotFromRecycleBinOutput {
     pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
-impl RestoreSnapshotFromRecycleBinOutput {
+impl  RestoreSnapshotFromRecycleBinOutput  {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The description for the snapshot.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
@@ -45,23 +45,23 @@ impl RestoreSnapshotFromRecycleBinOutput {
         self.encrypted
     }
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The progress of the snapshot, as a percentage.</p>
-    pub fn progress(&self) -> ::std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<& str> {
         self.progress.as_deref()
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The state of the snapshot.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SnapshotState> {
         self.state.as_ref()
     }
     /// <p>The ID of the volume that was used to create the snapshot.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -69,15 +69,15 @@ impl RestoreSnapshotFromRecycleBinOutput {
         self.volume_size
     }
     /// <p>Reserved for future use.</p>
-    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+    pub fn sse_type(&self) -> ::std::option::Option<& crate::types::SseType> {
         self.sse_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreSnapshotFromRecycleBinOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RestoreSnapshotFromRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotFromRecycleBinOutput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput).
     pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder {
@@ -110,8 +110,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +136,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The description for the snapshot.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the snapshot.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -166,8 +162,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +175,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +188,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +201,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The state of the snapshot.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the snapshot.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotState> {
@@ -222,8 +214,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The ID of the volume that was used to create the snapshot.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The ID of the volume that was used to create the snapshot.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +227,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
@@ -250,37 +240,48 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
-        self.sse_type = input;
-        self
+        self.sse_type = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RestoreSnapshotFromRecycleBinOutput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput).
     pub fn build(self) -> crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput {
         crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput {
-            snapshot_id: self.snapshot_id,
-            outpost_arn: self.outpost_arn,
-            description: self.description,
-            encrypted: self.encrypted,
-            owner_id: self.owner_id,
-            progress: self.progress,
-            start_time: self.start_time,
-            state: self.state,
-            volume_id: self.volume_id,
-            volume_size: self.volume_size,
-            sse_type: self.sse_type,
+            snapshot_id: self.snapshot_id
+            ,
+            outpost_arn: self.outpost_arn
+            ,
+            description: self.description
+            ,
+            encrypted: self.encrypted
+            ,
+            owner_id: self.owner_id
+            ,
+            progress: self.progress
+            ,
+            start_time: self.start_time
+            ,
+            state: self.state
+            ,
+            volume_id: self.volume_id
+            ,
+            volume_size: self.volume_size
+            ,
+            sse_type: self.sse_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

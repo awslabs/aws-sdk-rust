@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataRepositoryAssociations`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`association_ids(impl Into<String>)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::association_ids) / [`set_association_ids(Option<Vec::<String>>)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::set_association_ids):<br>required: **false**<br><p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::set_filters):<br>required: **false**<br><p>A list of <code>Filter</code> elements.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p><br>
-    /// - On success, responds with [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput) with field(s):
     ///   - [`associations(Option<Vec::<DataRepositoryAssociation>>)`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput::associations): <p>An array of one or more data repository association descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    /// - On failure, responds with [`SdkError<DescribeDataRepositoryAssociationsError>`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError)
-    pub fn describe_data_repository_associations(
-        &self,
-    ) -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder {
-        crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeDataRepositoryAssociationsError>`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError)
+    pub fn describe_data_repository_associations(&self) -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder {
+                                crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

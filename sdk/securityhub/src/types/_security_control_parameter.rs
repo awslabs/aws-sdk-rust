@@ -3,22 +3,23 @@
 /// <p>A parameter that a security control accepts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityControlParameter {
+pub struct SecurityControlParameter  {
     /// <p>The name of a</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current value of a control parameter.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SecurityControlParameter {
+impl  SecurityControlParameter  {
     /// <p>The name of a</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current value of a control parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
-    pub fn value(&self) -> &[::std::string::String] {
-        self.value.as_deref().unwrap_or_default()
+    pub fn value(&self) -> & [::std::string::String] {
+        self.value.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SecurityControlParameter {
@@ -33,7 +34,7 @@ impl SecurityControlParameter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityControlParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SecurityControlParameterBuilder {
     /// <p>The name of a</p>
@@ -43,8 +44,7 @@ impl SecurityControlParameterBuilder {
     }
     /// <p>The name of a</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl SecurityControlParameterBuilder {
     /// <p>The current value of a control parameter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current value of a control parameter.</p>
-    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value = input; self
     }
     /// <p>The current value of a control parameter.</p>
-    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value
     }
     /// Consumes the builder and constructs a [`SecurityControlParameter`](crate::types::SecurityControlParameter).
     pub fn build(self) -> crate::types::SecurityControlParameter {
         crate::types::SecurityControlParameter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -4,19 +4,19 @@
 /// <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationVersionLifecycleConfig {
+pub struct ApplicationVersionLifecycleConfig  {
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     pub max_count_rule: ::std::option::Option<crate::types::MaxCountRule>,
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
     pub max_age_rule: ::std::option::Option<crate::types::MaxAgeRule>,
 }
-impl ApplicationVersionLifecycleConfig {
+impl  ApplicationVersionLifecycleConfig  {
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
-    pub fn max_count_rule(&self) -> ::std::option::Option<&crate::types::MaxCountRule> {
+    pub fn max_count_rule(&self) -> ::std::option::Option<& crate::types::MaxCountRule> {
         self.max_count_rule.as_ref()
     }
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
-    pub fn max_age_rule(&self) -> ::std::option::Option<&crate::types::MaxAgeRule> {
+    pub fn max_age_rule(&self) -> ::std::option::Option<& crate::types::MaxAgeRule> {
         self.max_age_rule.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ApplicationVersionLifecycleConfigBuilder {
     }
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     pub fn set_max_count_rule(mut self, input: ::std::option::Option<crate::types::MaxCountRule>) -> Self {
-        self.max_count_rule = input;
-        self
+        self.max_count_rule = input; self
     }
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     pub fn get_max_count_rule(&self) -> &::std::option::Option<crate::types::MaxCountRule> {
@@ -56,8 +55,7 @@ impl ApplicationVersionLifecycleConfigBuilder {
     }
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
     pub fn set_max_age_rule(mut self, input: ::std::option::Option<crate::types::MaxAgeRule>) -> Self {
-        self.max_age_rule = input;
-        self
+        self.max_age_rule = input; self
     }
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
     pub fn get_max_age_rule(&self) -> &::std::option::Option<crate::types::MaxAgeRule> {
@@ -66,8 +64,11 @@ impl ApplicationVersionLifecycleConfigBuilder {
     /// Consumes the builder and constructs a [`ApplicationVersionLifecycleConfig`](crate::types::ApplicationVersionLifecycleConfig).
     pub fn build(self) -> crate::types::ApplicationVersionLifecycleConfig {
         crate::types::ApplicationVersionLifecycleConfig {
-            max_count_rule: self.max_count_rule,
-            max_age_rule: self.max_age_rule,
+            max_count_rule: self.max_count_rule
+            ,
+            max_age_rule: self.max_age_rule
+            ,
         }
     }
 }
+

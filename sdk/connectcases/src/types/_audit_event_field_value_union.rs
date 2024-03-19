@@ -31,11 +31,7 @@ impl AuditEventFieldValueUnion {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::types::AuditEventFieldValueUnion::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> ::std::result::Result<&bool, &Self> {
-        if let AuditEventFieldValueUnion::BooleanValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AuditEventFieldValueUnion::BooleanValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::AuditEventFieldValueUnion::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -44,11 +40,7 @@ impl AuditEventFieldValueUnion {
     /// Tries to convert the enum instance into [`DoubleValue`](crate::types::AuditEventFieldValueUnion::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> ::std::result::Result<&f64, &Self> {
-        if let AuditEventFieldValueUnion::DoubleValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AuditEventFieldValueUnion::DoubleValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::AuditEventFieldValueUnion::DoubleValue).
     pub fn is_double_value(&self) -> bool {
@@ -57,11 +49,7 @@ impl AuditEventFieldValueUnion {
     /// Tries to convert the enum instance into [`EmptyValue`](crate::types::AuditEventFieldValueUnion::EmptyValue), extracting the inner [`EmptyFieldValue`](crate::types::EmptyFieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_empty_value(&self) -> ::std::result::Result<&crate::types::EmptyFieldValue, &Self> {
-        if let AuditEventFieldValueUnion::EmptyValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AuditEventFieldValueUnion::EmptyValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EmptyValue`](crate::types::AuditEventFieldValueUnion::EmptyValue).
     pub fn is_empty_value(&self) -> bool {
@@ -70,11 +58,7 @@ impl AuditEventFieldValueUnion {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::AuditEventFieldValueUnion::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AuditEventFieldValueUnion::StringValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AuditEventFieldValueUnion::StringValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::AuditEventFieldValueUnion::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -83,11 +67,7 @@ impl AuditEventFieldValueUnion {
     /// Tries to convert the enum instance into [`UserArnValue`](crate::types::AuditEventFieldValueUnion::UserArnValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user_arn_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AuditEventFieldValueUnion::UserArnValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AuditEventFieldValueUnion::UserArnValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UserArnValue`](crate::types::AuditEventFieldValueUnion::UserArnValue).
     pub fn is_user_arn_value(&self) -> bool {
@@ -98,3 +78,4 @@ impl AuditEventFieldValueUnion {
         matches!(self, Self::Unknown)
     }
 }
+

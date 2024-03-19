@@ -3,13 +3,13 @@
 /// <p>Configure the export output details for an Amazon SageMaker Model Card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelCardExportOutputConfig {
+pub struct ModelCardExportOutputConfig  {
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
-impl ModelCardExportOutputConfig {
+impl  ModelCardExportOutputConfig  {
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl ModelCardExportOutputConfigBuilder {
     }
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_path = input;
-        self
+        self.s3_output_path = input; self
     }
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
     pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl ModelCardExportOutputConfigBuilder {
     /// Consumes the builder and constructs a [`ModelCardExportOutputConfig`](crate::types::ModelCardExportOutputConfig).
     pub fn build(self) -> crate::types::ModelCardExportOutputConfig {
         crate::types::ModelCardExportOutputConfig {
-            s3_output_path: self.s3_output_path,
+            s3_output_path: self.s3_output_path
+            ,
         }
     }
 }
+

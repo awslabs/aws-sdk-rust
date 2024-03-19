@@ -3,22 +3,23 @@
 /// <p>Describes the rule options for a stateful rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupRuleOptionsPair {
+pub struct RuleGroupRuleOptionsPair  {
     /// <p>The ARN of the rule group.</p>
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule options.</p>
-    pub rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
+    pub rule_options: ::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>>,
 }
-impl RuleGroupRuleOptionsPair {
+impl  RuleGroupRuleOptionsPair  {
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> ::std::option::Option<& str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The rule options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_options.is_none()`.
-    pub fn rule_options(&self) -> &[crate::types::RuleOption] {
-        self.rule_options.as_deref().unwrap_or_default()
+    pub fn rule_options(&self) -> & [crate::types::RuleOption] {
+        self.rule_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleGroupRuleOptionsPair {
@@ -33,7 +34,7 @@ impl RuleGroupRuleOptionsPair {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupRuleOptionsPairBuilder {
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
+    pub(crate) rule_options: ::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>>,
 }
 impl RuleGroupRuleOptionsPairBuilder {
     /// <p>The ARN of the rule group.</p>
@@ -43,8 +44,7 @@ impl RuleGroupRuleOptionsPairBuilder {
     }
     /// <p>The ARN of the rule group.</p>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_arn = input;
-        self
+        self.rule_group_arn = input; self
     }
     /// <p>The ARN of the rule group.</p>
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl RuleGroupRuleOptionsPairBuilder {
     /// <p>The rule options.</p>
     pub fn rule_options(mut self, input: crate::types::RuleOption) -> Self {
         let mut v = self.rule_options.unwrap_or_default();
-        v.push(input);
-        self.rule_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rule options.</p>
-    pub fn set_rule_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>) -> Self {
-        self.rule_options = input;
-        self
+    pub fn set_rule_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>>) -> Self {
+        self.rule_options = input; self
     }
     /// <p>The rule options.</p>
-    pub fn get_rule_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
+    pub fn get_rule_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>> {
         &self.rule_options
     }
     /// Consumes the builder and constructs a [`RuleGroupRuleOptionsPair`](crate::types::RuleGroupRuleOptionsPair).
     pub fn build(self) -> crate::types::RuleGroupRuleOptionsPair {
         crate::types::RuleGroupRuleOptionsPair {
-            rule_group_arn: self.rule_group_arn,
-            rule_options: self.rule_options,
+            rule_group_arn: self.rule_group_arn
+            ,
+            rule_options: self.rule_options
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateQueueStatusInput {
+pub struct UpdateQueueStatusInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
@@ -10,17 +10,17 @@ pub struct UpdateQueueStatusInput {
     /// <p>The status of the queue.</p>
     pub status: ::std::option::Option<crate::types::QueueStatus>,
 }
-impl UpdateQueueStatusInput {
+impl  UpdateQueueStatusInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> ::std::option::Option<&str> {
+    pub fn queue_id(&self) -> ::std::option::Option<& str> {
         self.queue_id.as_deref()
     }
     /// <p>The status of the queue.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QueueStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::QueueStatus> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateQueueStatusInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateQueueStatusInputBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl UpdateQueueStatusInputBuilder {
     }
     /// <p>The status of the queue.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the queue.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateQueueStatusInput`](crate::operation::update_queue_status::UpdateQueueStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_queue_status::UpdateQueueStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_queue_status::UpdateQueueStatusInput {
-            instance_id: self.instance_id,
-            queue_id: self.queue_id,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_queue_status::UpdateQueueStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_queue_status::UpdateQueueStatusInput {
+                instance_id: self.instance_id
+                ,
+                queue_id: self.queue_id
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

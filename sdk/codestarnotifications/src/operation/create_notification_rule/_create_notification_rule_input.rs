@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateNotificationRuleInput {
+pub struct CreateNotificationRuleInput  {
     /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    pub event_type_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_type_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: ::std::option::Option<crate::types::DetailType>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
@@ -18,51 +18,53 @@ pub struct CreateNotificationRuleInput {
     /// </note>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
     pub status: ::std::option::Option<crate::types::NotificationRuleStatus>,
 }
-impl CreateNotificationRuleInput {
+impl  CreateNotificationRuleInput  {
     /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_ids.is_none()`.
-    pub fn event_type_ids(&self) -> &[::std::string::String] {
-        self.event_type_ids.as_deref().unwrap_or_default()
+    pub fn event_type_ids(&self) -> & [::std::string::String] {
+        self.event_type_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
+    pub fn detail_type(&self) -> ::std::option::Option<& crate::types::DetailType> {
         self.detail_type.as_ref()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NotificationRuleStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NotificationRuleStatus> {
         self.status.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateNotificationRuleInput {
+impl  ::std::fmt::Debug for CreateNotificationRuleInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNotificationRuleInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -88,12 +90,12 @@ impl CreateNotificationRuleInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateNotificationRuleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) event_type_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_type_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     pub(crate) detail_type: ::std::option::Option<crate::types::DetailType>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::NotificationRuleStatus>,
 }
 impl CreateNotificationRuleInputBuilder {
@@ -105,8 +107,7 @@ impl CreateNotificationRuleInputBuilder {
     }
     /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,17 +120,16 @@ impl CreateNotificationRuleInputBuilder {
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
     pub fn event_type_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_type_ids.unwrap_or_default();
-        v.push(input.into());
-        self.event_type_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_type_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    pub fn set_event_type_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_type_ids = input;
-        self
+    pub fn set_event_type_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_type_ids = input; self
     }
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    pub fn get_event_type_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_type_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_type_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
@@ -140,8 +140,7 @@ impl CreateNotificationRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +153,16 @@ impl CreateNotificationRuleInputBuilder {
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
@@ -175,8 +173,7 @@ impl CreateNotificationRuleInputBuilder {
     }
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn set_detail_type(mut self, input: ::std::option::Option<crate::types::DetailType>) -> Self {
-        self.detail_type = input;
-        self
+        self.detail_type = input; self
     }
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
@@ -193,8 +190,7 @@ impl CreateNotificationRuleInputBuilder {
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p><note>
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
@@ -209,17 +205,16 @@ impl CreateNotificationRuleInputBuilder {
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
@@ -229,30 +224,34 @@ impl CreateNotificationRuleInputBuilder {
     }
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotificationRuleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationRuleStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`CreateNotificationRuleInput`](crate::operation::create_notification_rule::CreateNotificationRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_notification_rule::CreateNotificationRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_notification_rule::CreateNotificationRuleInput {
-            name: self.name,
-            event_type_ids: self.event_type_ids,
-            resource: self.resource,
-            targets: self.targets,
-            detail_type: self.detail_type,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_notification_rule::CreateNotificationRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_notification_rule::CreateNotificationRuleInput {
+                name: self.name
+                ,
+                event_type_ids: self.event_type_ids
+                ,
+                resource: self.resource
+                ,
+                targets: self.targets
+                ,
+                detail_type: self.detail_type
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateNotificationRuleInputBuilder {
@@ -269,3 +268,4 @@ impl ::std::fmt::Debug for CreateNotificationRuleInputBuilder {
         formatter.finish()
     }
 }
+

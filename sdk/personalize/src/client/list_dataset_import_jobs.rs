@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasetImportJobs`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_arn(impl Into<String>)`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::set_dataset_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of dataset import jobs to return.</p><br>
-    /// - On success, responds with [`ListDatasetImportJobsOutput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListDatasetImportJobsOutput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput) with field(s):
     ///   - [`dataset_import_jobs(Option<Vec::<DatasetImportJobSummary>>)`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput::dataset_import_jobs): <p>The list of dataset import jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput::next_token): <p>A token for getting the next set of dataset import jobs (if they exist).</p>
-    /// - On failure, responds with [`SdkError<ListDatasetImportJobsError>`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListDatasetImportJobsError>`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError)
     pub fn list_dataset_import_jobs(&self) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder {
-        crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

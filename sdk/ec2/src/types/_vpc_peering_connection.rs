@@ -3,7 +3,7 @@
 /// <p>Describes a VPC peering connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcPeeringConnection {
+pub struct VpcPeeringConnection  {
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
     pub accepter_vpc_info: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
@@ -13,35 +13,36 @@ pub struct VpcPeeringConnection {
     /// <p>The status of the VPC peering connection.</p>
     pub status: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>,
     /// <p>Any tags assigned to the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The ID of the VPC peering connection.</p>
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
-impl VpcPeeringConnection {
+impl  VpcPeeringConnection  {
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn accepter_vpc_info(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnectionVpcInfo> {
+    pub fn accepter_vpc_info(&self) -> ::std::option::Option<& crate::types::VpcPeeringConnectionVpcInfo> {
         self.accepter_vpc_info.as_ref()
     }
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn requester_vpc_info(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnectionVpcInfo> {
+    pub fn requester_vpc_info(&self) -> ::std::option::Option<& crate::types::VpcPeeringConnectionVpcInfo> {
         self.requester_vpc_info.as_ref()
     }
     /// <p>The status of the VPC peering connection.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnectionStateReason> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcPeeringConnectionStateReason> {
         self.status.as_ref()
     }
     /// <p>Any tags assigned to the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_peering_connection_id.as_deref()
     }
 }
@@ -60,7 +61,7 @@ pub struct VpcPeeringConnectionBuilder {
     pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) requester_vpc_info: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
     pub(crate) status: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcPeeringConnectionBuilder {
@@ -71,8 +72,7 @@ impl VpcPeeringConnectionBuilder {
     }
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
     pub fn set_accepter_vpc_info(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>) -> Self {
-        self.accepter_vpc_info = input;
-        self
+        self.accepter_vpc_info = input; self
     }
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
     pub fn get_accepter_vpc_info(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo> {
@@ -85,8 +85,7 @@ impl VpcPeeringConnectionBuilder {
     }
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +98,7 @@ impl VpcPeeringConnectionBuilder {
     }
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
     pub fn set_requester_vpc_info(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>) -> Self {
-        self.requester_vpc_info = input;
-        self
+        self.requester_vpc_info = input; self
     }
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
     pub fn get_requester_vpc_info(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo> {
@@ -113,8 +111,7 @@ impl VpcPeeringConnectionBuilder {
     }
     /// <p>The status of the VPC peering connection.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the VPC peering connection.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionStateReason> {
@@ -127,17 +124,16 @@ impl VpcPeeringConnectionBuilder {
     /// <p>Any tags assigned to the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The ID of the VPC peering connection.</p>
@@ -147,8 +143,7 @@ impl VpcPeeringConnectionBuilder {
     }
     /// <p>The ID of the VPC peering connection.</p>
     pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_peering_connection_id = input;
-        self
+        self.vpc_peering_connection_id = input; self
     }
     /// <p>The ID of the VPC peering connection.</p>
     pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,12 +152,19 @@ impl VpcPeeringConnectionBuilder {
     /// Consumes the builder and constructs a [`VpcPeeringConnection`](crate::types::VpcPeeringConnection).
     pub fn build(self) -> crate::types::VpcPeeringConnection {
         crate::types::VpcPeeringConnection {
-            accepter_vpc_info: self.accepter_vpc_info,
-            expiration_time: self.expiration_time,
-            requester_vpc_info: self.requester_vpc_info,
-            status: self.status,
-            tags: self.tags,
-            vpc_peering_connection_id: self.vpc_peering_connection_id,
+            accepter_vpc_info: self.accepter_vpc_info
+            ,
+            expiration_time: self.expiration_time
+            ,
+            requester_vpc_info: self.requester_vpc_info
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
+            vpc_peering_connection_id: self.vpc_peering_connection_id
+            ,
         }
     }
 }
+

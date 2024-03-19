@@ -244,3 +244,4 @@ pub mod builders;
 
 /// Error types that AWS Single Sign-On Admin can respond with.
 pub mod error;
+

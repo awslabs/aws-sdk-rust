@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workspaceimageerrordetailcode = unimplemented!();
 /// match workspaceimageerrordetailcode {
@@ -54,16 +54,14 @@
 /// Specifically, when `workspaceimageerrordetailcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkspaceImageErrorDetailCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum WorkspaceImageErrorDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     AdditionalDrivesAttached,
@@ -119,160 +117,134 @@ pub enum WorkspaceImageErrorDetailCode {
     ZeroRearmCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for WorkspaceImageErrorDetailCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AdditionalDrivesAttached" => WorkspaceImageErrorDetailCode::AdditionalDrivesAttached,
-            "AntiVirusInstalled" => WorkspaceImageErrorDetailCode::AntiVirusInstalled,
-            "AutoLogonEnabled" => WorkspaceImageErrorDetailCode::AutoLogonEnabled,
-            "AutoMountDisabled" => WorkspaceImageErrorDetailCode::AutoMountDisabled,
-            "AzureDomainJoined" => WorkspaceImageErrorDetailCode::AzureDomainJoined,
-            "DHCPDisabled" => WorkspaceImageErrorDetailCode::DhcpDisabled,
-            "DiskFreeSpace" => WorkspaceImageErrorDetailCode::DiskFreeSpace,
-            "DiskSizeExceeded" => WorkspaceImageErrorDetailCode::DiskSizeExceeded,
-            "DomainJoined" => WorkspaceImageErrorDetailCode::DomainJoined,
-            "FirewallEnabled" => WorkspaceImageErrorDetailCode::FirewallEnabled,
-            "InPlaceUpgrade" => WorkspaceImageErrorDetailCode::InPlaceUpgrade,
-            "IncompatiblePartitioning" => WorkspaceImageErrorDetailCode::IncompatiblePartitioning,
-            "MultipleBootPartition" => WorkspaceImageErrorDetailCode::MultipleBootPartition,
-            "OSNotSupported" => WorkspaceImageErrorDetailCode::OsNotSupported,
-            "OfficeInstalled" => WorkspaceImageErrorDetailCode::OfficeInstalled,
-            "OutdatedPowershellVersion" => WorkspaceImageErrorDetailCode::OutdatedPowershellVersion,
-            "PCoIPAgentInstalled" => WorkspaceImageErrorDetailCode::PcoipAgentInstalled,
-            "PendingReboot" => WorkspaceImageErrorDetailCode::PendingReboot,
-            "RealTimeUniversalDisabled" => WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled,
-            "Requires64BitOS" => WorkspaceImageErrorDetailCode::SixtyFourBitOs,
-            "UEFINotSupported" => WorkspaceImageErrorDetailCode::UefiNotSupported,
-            "VMWareToolsInstalled" => WorkspaceImageErrorDetailCode::VmwareToolsInstalled,
-            "WindowsUpdatesEnabled" => WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled,
-            "WorkspacesBYOLAccountDisabled" => WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled,
-            "WorkspacesBYOLAccountNotFound" => WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound,
-            "ZeroRearmCount" => WorkspaceImageErrorDetailCode::ZeroRearmCount,
-            other => WorkspaceImageErrorDetailCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AdditionalDrivesAttached" => WorkspaceImageErrorDetailCode::AdditionalDrivesAttached,
+"AntiVirusInstalled" => WorkspaceImageErrorDetailCode::AntiVirusInstalled,
+"AutoLogonEnabled" => WorkspaceImageErrorDetailCode::AutoLogonEnabled,
+"AutoMountDisabled" => WorkspaceImageErrorDetailCode::AutoMountDisabled,
+"AzureDomainJoined" => WorkspaceImageErrorDetailCode::AzureDomainJoined,
+"DHCPDisabled" => WorkspaceImageErrorDetailCode::DhcpDisabled,
+"DiskFreeSpace" => WorkspaceImageErrorDetailCode::DiskFreeSpace,
+"DiskSizeExceeded" => WorkspaceImageErrorDetailCode::DiskSizeExceeded,
+"DomainJoined" => WorkspaceImageErrorDetailCode::DomainJoined,
+"FirewallEnabled" => WorkspaceImageErrorDetailCode::FirewallEnabled,
+"InPlaceUpgrade" => WorkspaceImageErrorDetailCode::InPlaceUpgrade,
+"IncompatiblePartitioning" => WorkspaceImageErrorDetailCode::IncompatiblePartitioning,
+"MultipleBootPartition" => WorkspaceImageErrorDetailCode::MultipleBootPartition,
+"OSNotSupported" => WorkspaceImageErrorDetailCode::OsNotSupported,
+"OfficeInstalled" => WorkspaceImageErrorDetailCode::OfficeInstalled,
+"OutdatedPowershellVersion" => WorkspaceImageErrorDetailCode::OutdatedPowershellVersion,
+"PCoIPAgentInstalled" => WorkspaceImageErrorDetailCode::PcoipAgentInstalled,
+"PendingReboot" => WorkspaceImageErrorDetailCode::PendingReboot,
+"RealTimeUniversalDisabled" => WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled,
+"Requires64BitOS" => WorkspaceImageErrorDetailCode::SixtyFourBitOs,
+"UEFINotSupported" => WorkspaceImageErrorDetailCode::UefiNotSupported,
+"VMWareToolsInstalled" => WorkspaceImageErrorDetailCode::VmwareToolsInstalled,
+"WindowsUpdatesEnabled" => WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled,
+"WorkspacesBYOLAccountDisabled" => WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled,
+"WorkspacesBYOLAccountNotFound" => WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound,
+"ZeroRearmCount" => WorkspaceImageErrorDetailCode::ZeroRearmCount,
+other => WorkspaceImageErrorDetailCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for WorkspaceImageErrorDetailCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(WorkspaceImageErrorDetailCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(WorkspaceImageErrorDetailCode::from(s))
+                    }
+                }
 impl WorkspaceImageErrorDetailCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => "AdditionalDrivesAttached",
-            WorkspaceImageErrorDetailCode::AntiVirusInstalled => "AntiVirusInstalled",
-            WorkspaceImageErrorDetailCode::AutoLogonEnabled => "AutoLogonEnabled",
-            WorkspaceImageErrorDetailCode::AutoMountDisabled => "AutoMountDisabled",
-            WorkspaceImageErrorDetailCode::AzureDomainJoined => "AzureDomainJoined",
-            WorkspaceImageErrorDetailCode::DhcpDisabled => "DHCPDisabled",
-            WorkspaceImageErrorDetailCode::DiskFreeSpace => "DiskFreeSpace",
-            WorkspaceImageErrorDetailCode::DiskSizeExceeded => "DiskSizeExceeded",
-            WorkspaceImageErrorDetailCode::DomainJoined => "DomainJoined",
-            WorkspaceImageErrorDetailCode::FirewallEnabled => "FirewallEnabled",
-            WorkspaceImageErrorDetailCode::InPlaceUpgrade => "InPlaceUpgrade",
-            WorkspaceImageErrorDetailCode::IncompatiblePartitioning => "IncompatiblePartitioning",
-            WorkspaceImageErrorDetailCode::MultipleBootPartition => "MultipleBootPartition",
-            WorkspaceImageErrorDetailCode::OsNotSupported => "OSNotSupported",
-            WorkspaceImageErrorDetailCode::OfficeInstalled => "OfficeInstalled",
-            WorkspaceImageErrorDetailCode::OutdatedPowershellVersion => "OutdatedPowershellVersion",
-            WorkspaceImageErrorDetailCode::PcoipAgentInstalled => "PCoIPAgentInstalled",
-            WorkspaceImageErrorDetailCode::PendingReboot => "PendingReboot",
-            WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => "RealTimeUniversalDisabled",
-            WorkspaceImageErrorDetailCode::SixtyFourBitOs => "Requires64BitOS",
-            WorkspaceImageErrorDetailCode::UefiNotSupported => "UEFINotSupported",
-            WorkspaceImageErrorDetailCode::VmwareToolsInstalled => "VMWareToolsInstalled",
-            WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => "WindowsUpdatesEnabled",
-            WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => "WorkspacesBYOLAccountDisabled",
-            WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound => "WorkspacesBYOLAccountNotFound",
-            WorkspaceImageErrorDetailCode::ZeroRearmCount => "ZeroRearmCount",
-            WorkspaceImageErrorDetailCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AdditionalDrivesAttached",
-            "AntiVirusInstalled",
-            "AutoLogonEnabled",
-            "AutoMountDisabled",
-            "AzureDomainJoined",
-            "DHCPDisabled",
-            "DiskFreeSpace",
-            "DiskSizeExceeded",
-            "DomainJoined",
-            "FirewallEnabled",
-            "InPlaceUpgrade",
-            "IncompatiblePartitioning",
-            "MultipleBootPartition",
-            "OSNotSupported",
-            "OfficeInstalled",
-            "OutdatedPowershellVersion",
-            "PCoIPAgentInstalled",
-            "PendingReboot",
-            "RealTimeUniversalDisabled",
-            "Requires64BitOS",
-            "UEFINotSupported",
-            "VMWareToolsInstalled",
-            "WindowsUpdatesEnabled",
-            "WorkspacesBYOLAccountDisabled",
-            "WorkspacesBYOLAccountNotFound",
-            "ZeroRearmCount",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => "AdditionalDrivesAttached",
+    WorkspaceImageErrorDetailCode::AntiVirusInstalled => "AntiVirusInstalled",
+    WorkspaceImageErrorDetailCode::AutoLogonEnabled => "AutoLogonEnabled",
+    WorkspaceImageErrorDetailCode::AutoMountDisabled => "AutoMountDisabled",
+    WorkspaceImageErrorDetailCode::AzureDomainJoined => "AzureDomainJoined",
+    WorkspaceImageErrorDetailCode::DhcpDisabled => "DHCPDisabled",
+    WorkspaceImageErrorDetailCode::DiskFreeSpace => "DiskFreeSpace",
+    WorkspaceImageErrorDetailCode::DiskSizeExceeded => "DiskSizeExceeded",
+    WorkspaceImageErrorDetailCode::DomainJoined => "DomainJoined",
+    WorkspaceImageErrorDetailCode::FirewallEnabled => "FirewallEnabled",
+    WorkspaceImageErrorDetailCode::InPlaceUpgrade => "InPlaceUpgrade",
+    WorkspaceImageErrorDetailCode::IncompatiblePartitioning => "IncompatiblePartitioning",
+    WorkspaceImageErrorDetailCode::MultipleBootPartition => "MultipleBootPartition",
+    WorkspaceImageErrorDetailCode::OsNotSupported => "OSNotSupported",
+    WorkspaceImageErrorDetailCode::OfficeInstalled => "OfficeInstalled",
+    WorkspaceImageErrorDetailCode::OutdatedPowershellVersion => "OutdatedPowershellVersion",
+    WorkspaceImageErrorDetailCode::PcoipAgentInstalled => "PCoIPAgentInstalled",
+    WorkspaceImageErrorDetailCode::PendingReboot => "PendingReboot",
+    WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => "RealTimeUniversalDisabled",
+    WorkspaceImageErrorDetailCode::SixtyFourBitOs => "Requires64BitOS",
+    WorkspaceImageErrorDetailCode::UefiNotSupported => "UEFINotSupported",
+    WorkspaceImageErrorDetailCode::VmwareToolsInstalled => "VMWareToolsInstalled",
+    WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => "WindowsUpdatesEnabled",
+    WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => "WorkspacesBYOLAccountDisabled",
+    WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound => "WorkspacesBYOLAccountNotFound",
+    WorkspaceImageErrorDetailCode::ZeroRearmCount => "ZeroRearmCount",
+    WorkspaceImageErrorDetailCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AdditionalDrivesAttached", "AntiVirusInstalled", "AutoLogonEnabled", "AutoMountDisabled", "AzureDomainJoined", "DHCPDisabled", "DiskFreeSpace", "DiskSizeExceeded", "DomainJoined", "FirewallEnabled", "InPlaceUpgrade", "IncompatiblePartitioning", "MultipleBootPartition", "OSNotSupported", "OfficeInstalled", "OutdatedPowershellVersion", "PCoIPAgentInstalled", "PendingReboot", "RealTimeUniversalDisabled", "Requires64BitOS", "UEFINotSupported", "VMWareToolsInstalled", "WindowsUpdatesEnabled", "WorkspacesBYOLAccountDisabled", "WorkspacesBYOLAccountNotFound", "ZeroRearmCount"]
+                }
+            }
 impl ::std::convert::AsRef<str> for WorkspaceImageErrorDetailCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl WorkspaceImageErrorDetailCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for WorkspaceImageErrorDetailCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => write!(f, "AdditionalDrivesAttached"),
-            WorkspaceImageErrorDetailCode::AntiVirusInstalled => write!(f, "AntiVirusInstalled"),
-            WorkspaceImageErrorDetailCode::AutoLogonEnabled => write!(f, "AutoLogonEnabled"),
-            WorkspaceImageErrorDetailCode::AutoMountDisabled => write!(f, "AutoMountDisabled"),
-            WorkspaceImageErrorDetailCode::AzureDomainJoined => write!(f, "AzureDomainJoined"),
-            WorkspaceImageErrorDetailCode::DhcpDisabled => write!(f, "DHCPDisabled"),
-            WorkspaceImageErrorDetailCode::DiskFreeSpace => write!(f, "DiskFreeSpace"),
-            WorkspaceImageErrorDetailCode::DiskSizeExceeded => write!(f, "DiskSizeExceeded"),
-            WorkspaceImageErrorDetailCode::DomainJoined => write!(f, "DomainJoined"),
-            WorkspaceImageErrorDetailCode::FirewallEnabled => write!(f, "FirewallEnabled"),
-            WorkspaceImageErrorDetailCode::InPlaceUpgrade => write!(f, "InPlaceUpgrade"),
-            WorkspaceImageErrorDetailCode::IncompatiblePartitioning => write!(f, "IncompatiblePartitioning"),
-            WorkspaceImageErrorDetailCode::MultipleBootPartition => write!(f, "MultipleBootPartition"),
-            WorkspaceImageErrorDetailCode::OsNotSupported => write!(f, "OSNotSupported"),
-            WorkspaceImageErrorDetailCode::OfficeInstalled => write!(f, "OfficeInstalled"),
-            WorkspaceImageErrorDetailCode::OutdatedPowershellVersion => write!(f, "OutdatedPowershellVersion"),
-            WorkspaceImageErrorDetailCode::PcoipAgentInstalled => write!(f, "PCoIPAgentInstalled"),
-            WorkspaceImageErrorDetailCode::PendingReboot => write!(f, "PendingReboot"),
-            WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => write!(f, "RealTimeUniversalDisabled"),
-            WorkspaceImageErrorDetailCode::SixtyFourBitOs => write!(f, "Requires64BitOS"),
-            WorkspaceImageErrorDetailCode::UefiNotSupported => write!(f, "UEFINotSupported"),
-            WorkspaceImageErrorDetailCode::VmwareToolsInstalled => write!(f, "VMWareToolsInstalled"),
-            WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => write!(f, "WindowsUpdatesEnabled"),
-            WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => write!(f, "WorkspacesBYOLAccountDisabled"),
-            WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound => write!(f, "WorkspacesBYOLAccountNotFound"),
-            WorkspaceImageErrorDetailCode::ZeroRearmCount => write!(f, "ZeroRearmCount"),
-            WorkspaceImageErrorDetailCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => write!(f, "AdditionalDrivesAttached"),
+WorkspaceImageErrorDetailCode::AntiVirusInstalled => write!(f, "AntiVirusInstalled"),
+WorkspaceImageErrorDetailCode::AutoLogonEnabled => write!(f, "AutoLogonEnabled"),
+WorkspaceImageErrorDetailCode::AutoMountDisabled => write!(f, "AutoMountDisabled"),
+WorkspaceImageErrorDetailCode::AzureDomainJoined => write!(f, "AzureDomainJoined"),
+WorkspaceImageErrorDetailCode::DhcpDisabled => write!(f, "DHCPDisabled"),
+WorkspaceImageErrorDetailCode::DiskFreeSpace => write!(f, "DiskFreeSpace"),
+WorkspaceImageErrorDetailCode::DiskSizeExceeded => write!(f, "DiskSizeExceeded"),
+WorkspaceImageErrorDetailCode::DomainJoined => write!(f, "DomainJoined"),
+WorkspaceImageErrorDetailCode::FirewallEnabled => write!(f, "FirewallEnabled"),
+WorkspaceImageErrorDetailCode::InPlaceUpgrade => write!(f, "InPlaceUpgrade"),
+WorkspaceImageErrorDetailCode::IncompatiblePartitioning => write!(f, "IncompatiblePartitioning"),
+WorkspaceImageErrorDetailCode::MultipleBootPartition => write!(f, "MultipleBootPartition"),
+WorkspaceImageErrorDetailCode::OsNotSupported => write!(f, "OSNotSupported"),
+WorkspaceImageErrorDetailCode::OfficeInstalled => write!(f, "OfficeInstalled"),
+WorkspaceImageErrorDetailCode::OutdatedPowershellVersion => write!(f, "OutdatedPowershellVersion"),
+WorkspaceImageErrorDetailCode::PcoipAgentInstalled => write!(f, "PCoIPAgentInstalled"),
+WorkspaceImageErrorDetailCode::PendingReboot => write!(f, "PendingReboot"),
+WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => write!(f, "RealTimeUniversalDisabled"),
+WorkspaceImageErrorDetailCode::SixtyFourBitOs => write!(f, "Requires64BitOS"),
+WorkspaceImageErrorDetailCode::UefiNotSupported => write!(f, "UEFINotSupported"),
+WorkspaceImageErrorDetailCode::VmwareToolsInstalled => write!(f, "VMWareToolsInstalled"),
+WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => write!(f, "WindowsUpdatesEnabled"),
+WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => write!(f, "WorkspacesBYOLAccountDisabled"),
+WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound => write!(f, "WorkspacesBYOLAccountNotFound"),
+WorkspaceImageErrorDetailCode::ZeroRearmCount => write!(f, "ZeroRearmCount"),
+WorkspaceImageErrorDetailCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

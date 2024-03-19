@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLanguageModelsInput {
+pub struct ListLanguageModelsInput  {
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub status_equals: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
@@ -12,17 +12,17 @@ pub struct ListLanguageModelsInput {
     /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListLanguageModelsInput {
+impl  ListLanguageModelsInput  {
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::ModelStatus> {
         self.status_equals.as_ref()
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>If your <code>ListLanguageModels</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
@@ -54,8 +54,7 @@ impl ListLanguageModelsInputBuilder {
     }
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::ModelStatus> {
@@ -68,8 +67,7 @@ impl ListLanguageModelsInputBuilder {
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListLanguageModelsInputBuilder {
     }
     /// <p>If your <code>ListLanguageModels</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your <code>ListLanguageModels</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,23 +93,26 @@ impl ListLanguageModelsInputBuilder {
     }
     /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLanguageModelsInput`](crate::operation::list_language_models::ListLanguageModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_language_models::ListLanguageModelsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_language_models::ListLanguageModelsInput {
-            status_equals: self.status_equals,
-            name_contains: self.name_contains,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_language_models::ListLanguageModelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_language_models::ListLanguageModelsInput {
+                status_equals: self.status_equals
+                ,
+                name_contains: self.name_contains
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

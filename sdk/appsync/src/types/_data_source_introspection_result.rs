@@ -3,21 +3,22 @@
 /// <p>Represents the output of a <code>DataSourceIntrospectionResult</code>. This is the populated result of a <code>GetDataSourceIntrospection</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceIntrospectionResult {
+pub struct DataSourceIntrospectionResult  {
     /// <p>The array of <code>DataSourceIntrospectionModel</code> objects.</p>
-    pub models: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceIntrospectionModel>>,
+    pub models: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceIntrospectionModel>>,
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DataSourceIntrospectionResult {
+impl  DataSourceIntrospectionResult  {
     /// <p>The array of <code>DataSourceIntrospectionModel</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
-    pub fn models(&self) -> &[crate::types::DataSourceIntrospectionModel] {
-        self.models.as_deref().unwrap_or_default()
+    pub fn models(&self) -> & [crate::types::DataSourceIntrospectionModel] {
+        self.models.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl DataSourceIntrospectionResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceIntrospectionResultBuilder {
-    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceIntrospectionModel>>,
+    pub(crate) models: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceIntrospectionModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceIntrospectionResultBuilder {
@@ -43,17 +44,16 @@ impl DataSourceIntrospectionResultBuilder {
     /// <p>The array of <code>DataSourceIntrospectionModel</code> objects.</p>
     pub fn models(mut self, input: crate::types::DataSourceIntrospectionModel) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>DataSourceIntrospectionModel</code> objects.</p>
-    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceIntrospectionModel>>) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceIntrospectionModel>>) -> Self {
+        self.models = input; self
     }
     /// <p>The array of <code>DataSourceIntrospectionModel</code> objects.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceIntrospectionModel>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceIntrospectionModel>> {
         &self.models
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
@@ -63,8 +63,7 @@ impl DataSourceIntrospectionResultBuilder {
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl DataSourceIntrospectionResultBuilder {
     /// Consumes the builder and constructs a [`DataSourceIntrospectionResult`](crate::types::DataSourceIntrospectionResult).
     pub fn build(self) -> crate::types::DataSourceIntrospectionResult {
         crate::types::DataSourceIntrospectionResult {
-            models: self.models,
-            next_token: self.next_token,
+            models: self.models
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

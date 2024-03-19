@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUnsupportedAppVersionResources`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_arn(impl Into<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::app_arn) / [`set_app_arn(Option<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::set_app_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p><br>
     ///   - [`app_version(impl Into<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::app_version) / [`set_app_version(Option<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::set_app_version):<br>required: **true**<br><p>The version of the application.</p><br>
     ///   - [`resolution_id(impl Into<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::resolution_id) / [`set_resolution_id(Option<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::set_resolution_id):<br>required: **false**<br><p>The identifier for a specific resolution.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput) with field(s):
     ///   - [`unsupported_resources(Vec::<UnsupportedResource>)`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput::unsupported_resources): <p>The unsupported resources for the application.</p>
     ///   - [`resolution_id(String)`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput::resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListUnsupportedAppVersionResourcesError>`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError)
-    pub fn list_unsupported_app_version_resources(
-        &self,
-    ) -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder {
-        crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListUnsupportedAppVersionResourcesError>`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError)
+    pub fn list_unsupported_app_version_resources(&self) -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder {
+                                crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

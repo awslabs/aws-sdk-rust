@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIamPolicyAssignmentInput {
+pub struct CreateIamPolicyAssignmentInput  {
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
@@ -20,17 +20,17 @@ pub struct CreateIamPolicyAssignmentInput {
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub identities: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The namespace that contains the assignment.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl CreateIamPolicyAssignmentInput {
+impl  CreateIamPolicyAssignmentInput  {
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
-    pub fn assignment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_name(&self) -> ::std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
@@ -42,19 +42,19 @@ impl CreateIamPolicyAssignmentInput {
     /// <li>
     /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
     /// </ul>
-    pub fn assignment_status(&self) -> ::std::option::Option<&crate::types::AssignmentStatus> {
+    pub fn assignment_status(&self) -> ::std::option::Option<& crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn identities(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn identities(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.identities.as_ref()
     }
     /// <p>The namespace that contains the assignment.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -73,7 +73,7 @@ pub struct CreateIamPolicyAssignmentInputBuilder {
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) identities: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
 impl CreateIamPolicyAssignmentInputBuilder {
@@ -85,8 +85,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assignment_name = input;
-        self
+        self.assignment_name = input; self
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
     /// <p><code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p></li>
     /// </ul>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
-        self.assignment_status = input;
-        self
+        self.assignment_status = input; self
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -153,8 +150,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,24 +161,18 @@ impl CreateIamPolicyAssignmentInputBuilder {
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn identities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn identities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.identities.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.identities = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.identities = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.identities = input;
-        self
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.identities = input; self
     }
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn get_identities(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_identities(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.identities
     }
     /// <p>The namespace that contains the assignment.</p>
@@ -193,27 +183,30 @@ impl CreateIamPolicyAssignmentInputBuilder {
     }
     /// <p>The namespace that contains the assignment.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace that contains the assignment.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`CreateIamPolicyAssignmentInput`](crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentInput {
-            aws_account_id: self.aws_account_id,
-            assignment_name: self.assignment_name,
-            assignment_status: self.assignment_status,
-            policy_arn: self.policy_arn,
-            identities: self.identities,
-            namespace: self.namespace,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentInput {
+                aws_account_id: self.aws_account_id
+                ,
+                assignment_name: self.assignment_name
+                ,
+                assignment_status: self.assignment_status
+                ,
+                policy_arn: self.policy_arn
+                ,
+                identities: self.identities
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

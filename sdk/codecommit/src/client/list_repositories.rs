@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRepositories`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p><br>
     ///   - [`sort_by(SortByEnum)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::sort_by) / [`set_sort_by(Option<SortByEnum>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_sort_by):<br>required: **false**<br><p>The criteria used to sort the results of a list repositories operation.</p><br>
     ///   - [`order(OrderEnum)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::order) / [`set_order(Option<OrderEnum>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_order):<br>required: **false**<br><p>The order in which to sort the results of a list repositories operation.</p><br>
-    /// - On success, responds with [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput) with field(s):
+                            /// - On success, responds with [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput) with field(s):
     ///   - [`repositories(Option<Vec::<RepositoryNameIdPair>>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p>Lists the repositories called by the list repositories operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories::ListRepositoriesOutput::next_token): <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p>
-    /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
+                            /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
     pub fn list_repositories(&self) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
-        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

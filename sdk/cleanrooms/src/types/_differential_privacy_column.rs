@@ -3,15 +3,14 @@
 /// <p>Specifies the name of the column that contains the unique identifier of your users, whose privacy you want to protect.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacyColumn {
+pub struct DifferentialPrivacyColumn  {
     /// <p>The name of the column, such as user_id, that contains the unique identifier of your users, whose privacy you want to protect. If you want to turn on differential privacy for two or more tables in a collaboration, you must configure the same column as the user identifier column in both analysis rules.</p>
     pub name: ::std::string::String,
 }
-impl DifferentialPrivacyColumn {
+impl  DifferentialPrivacyColumn  {
     /// <p>The name of the column, such as user_id, that contains the unique identifier of your users, whose privacy you want to protect. If you want to turn on differential privacy for two or more tables in a collaboration, you must configure the same column as the user identifier column in both analysis rules.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl DifferentialPrivacyColumn {
@@ -36,8 +35,7 @@ impl DifferentialPrivacyColumnBuilder {
     }
     /// <p>The name of the column, such as user_id, that contains the unique identifier of your users, whose privacy you want to protect. If you want to turn on differential privacy for two or more tables in a collaboration, you must configure the same column as the user identifier column in both analysis rules.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column, such as user_id, that contains the unique identifier of your users, whose privacy you want to protect. If you want to turn on differential privacy for two or more tables in a collaboration, you must configure the same column as the user identifier column in both analysis rules.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DifferentialPrivacyColumnBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DifferentialPrivacyColumnBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DifferentialPrivacyColumn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DifferentialPrivacyColumn {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DifferentialPrivacyColumn",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DifferentialPrivacyColumn {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DifferentialPrivacyColumn")
+                    )?
+                ,
+            }
+        )
     }
 }
+

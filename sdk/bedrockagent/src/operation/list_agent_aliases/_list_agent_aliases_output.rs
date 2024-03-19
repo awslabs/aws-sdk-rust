@@ -3,29 +3,28 @@
 /// List Agent Aliases Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAgentAliasesOutput {
+pub struct ListAgentAliasesOutput  {
     /// The list of summaries of all the aliases for an Agent.
-    pub agent_alias_summaries: ::std::vec::Vec<crate::types::AgentAliasSummary>,
+    pub agent_alias_summaries: ::std::vec::Vec::<crate::types::AgentAliasSummary>,
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAgentAliasesOutput {
+impl  ListAgentAliasesOutput  {
     /// The list of summaries of all the aliases for an Agent.
-    pub fn agent_alias_summaries(&self) -> &[crate::types::AgentAliasSummary] {
-        use std::ops::Deref;
-        self.agent_alias_summaries.deref()
+    pub fn agent_alias_summaries(&self) -> & [crate::types::AgentAliasSummary] {
+        use std::ops::Deref; self.agent_alias_summaries.deref()
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAgentAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAgentAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAgentAliasesOutput`](crate::operation::list_agent_aliases::ListAgentAliasesOutput).
     pub fn builder() -> crate::operation::list_agent_aliases::builders::ListAgentAliasesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListAgentAliasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgentAliasesOutputBuilder {
-    pub(crate) agent_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasSummary>>,
+    pub(crate) agent_alias_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListAgentAliasesOutputBuilder {
     /// The list of summaries of all the aliases for an Agent.
     pub fn agent_alias_summaries(mut self, input: crate::types::AgentAliasSummary) -> Self {
         let mut v = self.agent_alias_summaries.unwrap_or_default();
-        v.push(input);
-        self.agent_alias_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.agent_alias_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of summaries of all the aliases for an Agent.
-    pub fn set_agent_alias_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasSummary>>) -> Self {
-        self.agent_alias_summaries = input;
-        self
+    pub fn set_agent_alias_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasSummary>>) -> Self {
+        self.agent_alias_summaries = input; self
     }
     /// The list of summaries of all the aliases for an Agent.
-    pub fn get_agent_alias_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasSummary>> {
+    pub fn get_agent_alias_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasSummary>> {
         &self.agent_alias_summaries
     }
     /// Opaque continuation token of previous paginated response.
@@ -69,37 +67,37 @@ impl ListAgentAliasesOutputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAgentAliasesOutput`](crate::operation::list_agent_aliases::ListAgentAliasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_alias_summaries`](crate::operation::list_agent_aliases::builders::ListAgentAliasesOutputBuilder::agent_alias_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_agent_aliases::ListAgentAliasesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_agent_aliases::ListAgentAliasesOutput {
-            agent_alias_summaries: self.agent_alias_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_alias_summaries",
-                    "agent_alias_summaries was not specified but it is required when building ListAgentAliasesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_agent_aliases::ListAgentAliasesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_agent_aliases::ListAgentAliasesOutput {
+                agent_alias_summaries: self.agent_alias_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_alias_summaries", "agent_alias_summaries was not specified but it is required when building ListAgentAliasesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

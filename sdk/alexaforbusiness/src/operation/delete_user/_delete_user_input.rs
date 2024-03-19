@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>The ARN of the user to delete in the organization. Required.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
     pub enrollment_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserInput {
+impl  DeleteUserInput  {
     /// <p>The ARN of the user to delete in the organization. Required.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
-    pub fn enrollment_id(&self) -> ::std::option::Option<&str> {
+    pub fn enrollment_id(&self) -> ::std::option::Option<& str> {
         self.enrollment_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The ARN of the user to delete in the organization. Required.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The ARN of the user to delete in the organization. Required.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
     pub fn set_enrollment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enrollment_id = input;
-        self
+        self.enrollment_id = input; self
     }
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
     pub fn get_enrollment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl DeleteUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            user_arn: self.user_arn,
-            enrollment_id: self.enrollment_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                user_arn: self.user_arn
+                ,
+                enrollment_id: self.enrollment_id
+                ,
+            }
+        )
     }
 }
+

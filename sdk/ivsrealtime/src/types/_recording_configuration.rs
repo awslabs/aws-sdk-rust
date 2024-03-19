@@ -3,13 +3,13 @@
 /// <p>An object representing a configuration to record a stage stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordingConfiguration {
+pub struct RecordingConfiguration  {
     /// <p>The recording format for storing a recording in Amazon S3.</p>
     pub format: ::std::option::Option<crate::types::RecordingConfigurationFormat>,
 }
-impl RecordingConfiguration {
+impl  RecordingConfiguration  {
     /// <p>The recording format for storing a recording in Amazon S3.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::RecordingConfigurationFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::RecordingConfigurationFormat> {
         self.format.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RecordingConfigurationBuilder {
     }
     /// <p>The recording format for storing a recording in Amazon S3.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::RecordingConfigurationFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The recording format for storing a recording in Amazon S3.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::RecordingConfigurationFormat> {
@@ -43,6 +42,10 @@ impl RecordingConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::types::RecordingConfiguration).
     pub fn build(self) -> crate::types::RecordingConfiguration {
-        crate::types::RecordingConfiguration { format: self.format }
+        crate::types::RecordingConfiguration {
+            format: self.format
+            ,
+        }
     }
 }
+

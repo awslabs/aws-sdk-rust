@@ -3,30 +3,31 @@
 /// <p>The result that's associated with a time period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultByTime {
+pub struct ResultByTime  {
     /// <p>The time period that the result covers.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The total amount of cost or usage accrued during the time period.</p>
-    pub total: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
+    pub total: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricValue>>,
     /// <p>The groups that this time period includes.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
     /// <p>Determines whether the result is estimated.</p>
     pub estimated: bool,
 }
-impl ResultByTime {
+impl  ResultByTime  {
     /// <p>The time period that the result covers.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The total amount of cost or usage accrued during the time period.</p>
-    pub fn total(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetricValue>> {
+    pub fn total(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::MetricValue>> {
         self.total.as_ref()
     }
     /// <p>The groups that this time period includes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::Group] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::Group] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Determines whether the result is estimated.</p>
     pub fn estimated(&self) -> bool {
@@ -45,8 +46,8 @@ impl ResultByTime {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultByTimeBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
-    pub(crate) total: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub(crate) total: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricValue>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
     pub(crate) estimated: ::std::option::Option<bool>,
 }
 impl ResultByTimeBuilder {
@@ -57,8 +58,7 @@ impl ResultByTimeBuilder {
     }
     /// <p>The time period that the result covers.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The time period that the result covers.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -71,17 +71,16 @@ impl ResultByTimeBuilder {
     /// <p>The total amount of cost or usage accrued during the time period.</p>
     pub fn total(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetricValue) -> Self {
         let mut hash_map = self.total.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.total = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.total = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The total amount of cost or usage accrued during the time period.</p>
-    pub fn set_total(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>) -> Self {
-        self.total = input;
-        self
+    pub fn set_total(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricValue>>) -> Self {
+        self.total = input; self
     }
     /// <p>The total amount of cost or usage accrued during the time period.</p>
-    pub fn get_total(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>> {
+    pub fn get_total(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricValue>> {
         &self.total
     }
     /// Appends an item to `groups`.
@@ -91,17 +90,16 @@ impl ResultByTimeBuilder {
     /// <p>The groups that this time period includes.</p>
     pub fn groups(mut self, input: crate::types::Group) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups that this time period includes.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The groups that this time period includes.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Group>> {
         &self.groups
     }
     /// <p>Determines whether the result is estimated.</p>
@@ -111,8 +109,7 @@ impl ResultByTimeBuilder {
     }
     /// <p>Determines whether the result is estimated.</p>
     pub fn set_estimated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.estimated = input;
-        self
+        self.estimated = input; self
     }
     /// <p>Determines whether the result is estimated.</p>
     pub fn get_estimated(&self) -> &::std::option::Option<bool> {
@@ -121,10 +118,16 @@ impl ResultByTimeBuilder {
     /// Consumes the builder and constructs a [`ResultByTime`](crate::types::ResultByTime).
     pub fn build(self) -> crate::types::ResultByTime {
         crate::types::ResultByTime {
-            time_period: self.time_period,
-            total: self.total,
-            groups: self.groups,
-            estimated: self.estimated.unwrap_or_default(),
+            time_period: self.time_period
+            ,
+            total: self.total
+            ,
+            groups: self.groups
+            ,
+            estimated: self.estimated
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

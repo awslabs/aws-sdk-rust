@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>GetPipelineState</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPipelineStateOutput {
+pub struct GetPipelineStateOutput  {
     /// <p>The name of the pipeline for which you want to get the state.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline.</p><note>
@@ -11,16 +11,16 @@ pub struct GetPipelineStateOutput {
     /// </note>
     pub pipeline_version: ::std::option::Option<i32>,
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
-    pub stage_states: ::std::option::Option<::std::vec::Vec<crate::types::StageState>>,
+    pub stage_states: ::std::option::Option<::std::vec::Vec::<crate::types::StageState>>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPipelineStateOutput {
+impl  GetPipelineStateOutput  {
     /// <p>The name of the pipeline for which you want to get the state.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The version number of the pipeline.</p><note>
@@ -30,25 +30,26 @@ impl GetPipelineStateOutput {
         self.pipeline_version
     }
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stage_states.is_none()`.
-    pub fn stage_states(&self) -> &[crate::types::StageState] {
-        self.stage_states.as_deref().unwrap_or_default()
+    pub fn stage_states(&self) -> & [crate::types::StageState] {
+        self.stage_states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPipelineStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPipelineStateOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineStateOutput`](crate::operation::get_pipeline_state::GetPipelineStateOutput).
     pub fn builder() -> crate::operation::get_pipeline_state::builders::GetPipelineStateOutputBuilder {
@@ -62,7 +63,7 @@ impl GetPipelineStateOutput {
 pub struct GetPipelineStateOutputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_version: ::std::option::Option<i32>,
-    pub(crate) stage_states: ::std::option::Option<::std::vec::Vec<crate::types::StageState>>,
+    pub(crate) stage_states: ::std::option::Option<::std::vec::Vec::<crate::types::StageState>>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -75,8 +76,7 @@ impl GetPipelineStateOutputBuilder {
     }
     /// <p>The name of the pipeline for which you want to get the state.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline for which you want to get the state.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl GetPipelineStateOutputBuilder {
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pipeline_version = input;
-        self
+        self.pipeline_version = input; self
     }
     /// <p>The version number of the pipeline.</p><note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
@@ -109,17 +108,16 @@ impl GetPipelineStateOutputBuilder {
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
     pub fn stage_states(mut self, input: crate::types::StageState) -> Self {
         let mut v = self.stage_states.unwrap_or_default();
-        v.push(input);
-        self.stage_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stage_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
-    pub fn set_stage_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageState>>) -> Self {
-        self.stage_states = input;
-        self
+    pub fn set_stage_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StageState>>) -> Self {
+        self.stage_states = input; self
     }
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
-    pub fn get_stage_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageState>> {
+    pub fn get_stage_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StageState>> {
         &self.stage_states
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
@@ -129,8 +127,7 @@ impl GetPipelineStateOutputBuilder {
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -143,31 +140,36 @@ impl GetPipelineStateOutputBuilder {
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub fn set_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated = input;
-        self
+        self.updated = input; self
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub fn get_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPipelineStateOutput`](crate::operation::get_pipeline_state::GetPipelineStateOutput).
     pub fn build(self) -> crate::operation::get_pipeline_state::GetPipelineStateOutput {
         crate::operation::get_pipeline_state::GetPipelineStateOutput {
-            pipeline_name: self.pipeline_name,
-            pipeline_version: self.pipeline_version,
-            stage_states: self.stage_states,
-            created: self.created,
-            updated: self.updated,
+            pipeline_name: self.pipeline_name
+            ,
+            pipeline_version: self.pipeline_version
+            ,
+            stage_states: self.stage_states
+            ,
+            created: self.created
+            ,
+            updated: self.updated
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

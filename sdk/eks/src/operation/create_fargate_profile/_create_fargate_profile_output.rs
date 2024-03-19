@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFargateProfileOutput {
+pub struct CreateFargateProfileOutput  {
     /// <p>The full description of your new Fargate profile.</p>
     pub fargate_profile: ::std::option::Option<crate::types::FargateProfile>,
     _request_id: Option<String>,
 }
-impl CreateFargateProfileOutput {
+impl  CreateFargateProfileOutput  {
     /// <p>The full description of your new Fargate profile.</p>
-    pub fn fargate_profile(&self) -> ::std::option::Option<&crate::types::FargateProfile> {
+    pub fn fargate_profile(&self) -> ::std::option::Option<& crate::types::FargateProfile> {
         self.fargate_profile.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFargateProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFargateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateFargateProfileOutput`](crate::operation::create_fargate_profile::CreateFargateProfileOutput).
     pub fn builder() -> crate::operation::create_fargate_profile::builders::CreateFargateProfileOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateFargateProfileOutputBuilder {
     }
     /// <p>The full description of your new Fargate profile.</p>
     pub fn set_fargate_profile(mut self, input: ::std::option::Option<crate::types::FargateProfile>) -> Self {
-        self.fargate_profile = input;
-        self
+        self.fargate_profile = input; self
     }
     /// <p>The full description of your new Fargate profile.</p>
     pub fn get_fargate_profile(&self) -> &::std::option::Option<crate::types::FargateProfile> {
         &self.fargate_profile
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFargateProfileOutput`](crate::operation::create_fargate_profile::CreateFargateProfileOutput).
     pub fn build(self) -> crate::operation::create_fargate_profile::CreateFargateProfileOutput {
         crate::operation::create_fargate_profile::CreateFargateProfileOutput {
-            fargate_profile: self.fargate_profile,
+            fargate_profile: self.fargate_profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

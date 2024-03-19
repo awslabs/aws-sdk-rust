@@ -3,7 +3,7 @@
 /// A request for a list of records.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecordsInput {
+pub struct ListRecordsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -19,17 +19,17 @@ pub struct ListRecordsInput {
     /// A token containing a session ID, identity ID, and expiration.
     pub sync_session_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRecordsInput {
+impl  ListRecordsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// The last server sync count for this record.
@@ -37,7 +37,7 @@ impl ListRecordsInput {
         self.last_sync_count
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The maximum number of results to be returned.
@@ -45,7 +45,7 @@ impl ListRecordsInput {
         self.max_results
     }
     /// A token containing a session ID, identity ID, and expiration.
-    pub fn sync_session_token(&self) -> ::std::option::Option<&str> {
+    pub fn sync_session_token(&self) -> ::std::option::Option<& str> {
         self.sync_session_token.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl ListRecordsInputBuilder {
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListRecordsInputBuilder {
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl ListRecordsInputBuilder {
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +118,7 @@ impl ListRecordsInputBuilder {
     }
     /// The last server sync count for this record.
     pub fn set_last_sync_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_sync_count = input;
-        self
+        self.last_sync_count = input; self
     }
     /// The last server sync count for this record.
     pub fn get_last_sync_count(&self) -> &::std::option::Option<i64> {
@@ -135,8 +131,7 @@ impl ListRecordsInputBuilder {
     }
     /// A pagination token for obtaining the next page of results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// A pagination token for obtaining the next page of results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +144,7 @@ impl ListRecordsInputBuilder {
     }
     /// The maximum number of results to be returned.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The maximum number of results to be returned.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -163,8 +157,7 @@ impl ListRecordsInputBuilder {
     }
     /// A token containing a session ID, identity ID, and expiration.
     pub fn set_sync_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_session_token = input;
-        self
+        self.sync_session_token = input; self
     }
     /// A token containing a session ID, identity ID, and expiration.
     pub fn get_sync_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,14 +165,24 @@ impl ListRecordsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRecordsInput`](crate::operation::list_records::ListRecordsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_records::ListRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_records::ListRecordsInput {
-            identity_pool_id: self.identity_pool_id,
-            identity_id: self.identity_id,
-            dataset_name: self.dataset_name,
-            last_sync_count: self.last_sync_count,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            sync_session_token: self.sync_session_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_records::ListRecordsInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+                identity_id: self.identity_id
+                ,
+                dataset_name: self.dataset_name
+                ,
+                last_sync_count: self.last_sync_count
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sync_session_token: self.sync_session_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>DeregisterOnPremisesInstance</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterOnPremisesInstanceInput {
+pub struct DeregisterOnPremisesInstanceInput  {
     /// <p>The name of the on-premises instance to deregister.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterOnPremisesInstanceInput {
+impl  DeregisterOnPremisesInstanceInput  {
     /// <p>The name of the on-premises instance to deregister.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeregisterOnPremisesInstanceInputBuilder {
     }
     /// <p>The name of the on-premises instance to deregister.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the on-premises instance to deregister.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
     /// Consumes the builder and constructs a [`DeregisterOnPremisesInstanceInput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput {
-            instance_name: self.instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput {
+                instance_name: self.instance_name
+                ,
+            }
+        )
     }
 }
+

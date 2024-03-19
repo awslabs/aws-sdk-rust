@@ -3,17 +3,17 @@
 /// <p>Aggregated statistics for a group of anomalous metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyGroupStatistics {
+pub struct AnomalyGroupStatistics  {
     /// <p>The start of the time range that was searched.</p>
     pub evaluation_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The number of groups found.</p>
     pub total_count: i32,
     /// <p>Statistics for individual metrics within the group.</p>
-    pub itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
+    pub itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec::<crate::types::ItemizedMetricStats>>,
 }
-impl AnomalyGroupStatistics {
+impl  AnomalyGroupStatistics  {
     /// <p>The start of the time range that was searched.</p>
-    pub fn evaluation_start_date(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_start_date(&self) -> ::std::option::Option<& str> {
         self.evaluation_start_date.as_deref()
     }
     /// <p>The number of groups found.</p>
@@ -21,10 +21,11 @@ impl AnomalyGroupStatistics {
         self.total_count
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.itemized_metric_stats_list.is_none()`.
-    pub fn itemized_metric_stats_list(&self) -> &[crate::types::ItemizedMetricStats] {
-        self.itemized_metric_stats_list.as_deref().unwrap_or_default()
+    pub fn itemized_metric_stats_list(&self) -> & [crate::types::ItemizedMetricStats] {
+        self.itemized_metric_stats_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnomalyGroupStatistics {
@@ -40,7 +41,7 @@ impl AnomalyGroupStatistics {
 pub struct AnomalyGroupStatisticsBuilder {
     pub(crate) evaluation_start_date: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
-    pub(crate) itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
+    pub(crate) itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec::<crate::types::ItemizedMetricStats>>,
 }
 impl AnomalyGroupStatisticsBuilder {
     /// <p>The start of the time range that was searched.</p>
@@ -50,8 +51,7 @@ impl AnomalyGroupStatisticsBuilder {
     }
     /// <p>The start of the time range that was searched.</p>
     pub fn set_evaluation_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_start_date = input;
-        self
+        self.evaluation_start_date = input; self
     }
     /// <p>The start of the time range that was searched.</p>
     pub fn get_evaluation_start_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl AnomalyGroupStatisticsBuilder {
     }
     /// <p>The number of groups found.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The number of groups found.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
@@ -78,25 +77,29 @@ impl AnomalyGroupStatisticsBuilder {
     /// <p>Statistics for individual metrics within the group.</p>
     pub fn itemized_metric_stats_list(mut self, input: crate::types::ItemizedMetricStats) -> Self {
         let mut v = self.itemized_metric_stats_list.unwrap_or_default();
-        v.push(input);
-        self.itemized_metric_stats_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.itemized_metric_stats_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn set_itemized_metric_stats_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>) -> Self {
-        self.itemized_metric_stats_list = input;
-        self
+    pub fn set_itemized_metric_stats_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ItemizedMetricStats>>) -> Self {
+        self.itemized_metric_stats_list = input; self
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn get_itemized_metric_stats_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>> {
+    pub fn get_itemized_metric_stats_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ItemizedMetricStats>> {
         &self.itemized_metric_stats_list
     }
     /// Consumes the builder and constructs a [`AnomalyGroupStatistics`](crate::types::AnomalyGroupStatistics).
     pub fn build(self) -> crate::types::AnomalyGroupStatistics {
         crate::types::AnomalyGroupStatistics {
-            evaluation_start_date: self.evaluation_start_date,
-            total_count: self.total_count.unwrap_or_default(),
-            itemized_metric_stats_list: self.itemized_metric_stats_list,
+            evaluation_start_date: self.evaluation_start_date
+            ,
+            total_count: self.total_count
+                .unwrap_or_default()
+            ,
+            itemized_metric_stats_list: self.itemized_metric_stats_list
+            ,
         }
     }
 }
+

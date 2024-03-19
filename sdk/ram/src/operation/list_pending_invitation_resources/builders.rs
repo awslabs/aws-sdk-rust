@@ -5,54 +5,50 @@ pub use crate::operation::list_pending_invitation_resources::_list_pending_invit
 
 impl ListPendingInvitationResourcesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_pending_invitation_resources();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_pending_invitation_resources();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListPendingInvitationResources`.
-///
+/// 
 /// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder,
+                    inner: crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
-    > for ListPendingInvitationResourcesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
-            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
+                    crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
+                > for ListPendingInvitationResourcesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
+                        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListPendingInvitationResourcesFluentBuilder {
     /// Creates a new `ListPendingInvitationResources`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListPendingInvitationResourcesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_pending_invitation_resources::ListPendingInvitationResources::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResources::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput,
-        crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_pending_invitation_resources::ListPendingInvitationResources::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_pending_invitation_resources::ListPendingInvitationResources::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput, crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator {
-        crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator {
+                                crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     pub fn resource_share_invitation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_invitation_arn(input.into());
@@ -198,3 +185,4 @@ impl ListPendingInvitationResourcesFluentBuilder {
         self.inner.get_resource_region_scope()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRestoreTestingSelectionOutput {
+pub struct CreateRestoreTestingSelectionOutput  {
     /// <p>This is the time the resource testing selection was created successfully.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
@@ -14,33 +14,30 @@ pub struct CreateRestoreTestingSelectionOutput {
     pub restore_testing_selection_name: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateRestoreTestingSelectionOutput {
+impl  CreateRestoreTestingSelectionOutput  {
     /// <p>This is the time the resource testing selection was created successfully.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
-    pub fn restore_testing_plan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_arn.deref()
+    pub fn restore_testing_plan_arn(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_arn.deref()
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
-    pub fn restore_testing_selection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_selection_name.deref()
+    pub fn restore_testing_selection_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_selection_name.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRestoreTestingSelectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRestoreTestingSelectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateRestoreTestingSelectionOutput`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput).
     pub fn builder() -> crate::operation::create_restore_testing_selection::builders::CreateRestoreTestingSelectionOutputBuilder {
@@ -67,8 +64,7 @@ impl CreateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the time the resource testing selection was created successfully.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>This is the time the resource testing selection was created successfully.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,8 +78,7 @@ impl CreateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
     pub fn set_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_arn = input;
-        self
+        self.restore_testing_plan_arn = input; self
     }
     /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl CreateRestoreTestingSelectionOutputBuilder {
     /// <p>Unique string that is the name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
@@ -115,60 +109,53 @@ impl CreateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_selection_name = input;
-        self
+        self.restore_testing_selection_name = input; self
     }
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRestoreTestingSelectionOutput`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_time`](crate::operation::create_restore_testing_selection::builders::CreateRestoreTestingSelectionOutputBuilder::creation_time)
     /// - [`restore_testing_plan_arn`](crate::operation::create_restore_testing_selection::builders::CreateRestoreTestingSelectionOutputBuilder::restore_testing_plan_arn)
     /// - [`restore_testing_plan_name`](crate::operation::create_restore_testing_selection::builders::CreateRestoreTestingSelectionOutputBuilder::restore_testing_plan_name)
     /// - [`restore_testing_selection_name`](crate::operation::create_restore_testing_selection::builders::CreateRestoreTestingSelectionOutputBuilder::restore_testing_selection_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput {
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building CreateRestoreTestingSelectionOutput",
-                )
-            })?,
-            restore_testing_plan_arn: self.restore_testing_plan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_arn",
-                    "restore_testing_plan_arn was not specified but it is required when building CreateRestoreTestingSelectionOutput",
-                )
-            })?,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building CreateRestoreTestingSelectionOutput",
-                )
-            })?,
-            restore_testing_selection_name: self.restore_testing_selection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_selection_name",
-                    "restore_testing_selection_name was not specified but it is required when building CreateRestoreTestingSelectionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput {
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building CreateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                restore_testing_plan_arn: self.restore_testing_plan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_arn", "restore_testing_plan_arn was not specified but it is required when building CreateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building CreateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                restore_testing_selection_name: self.restore_testing_selection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_selection_name", "restore_testing_selection_name was not specified but it is required when building CreateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

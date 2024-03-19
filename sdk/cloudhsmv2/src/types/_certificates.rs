@@ -3,7 +3,7 @@
 /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Certificates {
+pub struct Certificates  {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     pub cluster_csr: ::std::option::Option<::std::string::String>,
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
@@ -15,25 +15,25 @@ pub struct Certificates {
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub cluster_certificate: ::std::option::Option<::std::string::String>,
 }
-impl Certificates {
+impl  Certificates  {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
-    pub fn cluster_csr(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_csr(&self) -> ::std::option::Option<& str> {
         self.cluster_csr.as_deref()
     }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-    pub fn hsm_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_certificate(&self) -> ::std::option::Option<& str> {
         self.hsm_certificate.as_deref()
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-    pub fn aws_hardware_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn aws_hardware_certificate(&self) -> ::std::option::Option<& str> {
         self.aws_hardware_certificate.as_deref()
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-    pub fn manufacturer_hardware_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer_hardware_certificate(&self) -> ::std::option::Option<& str> {
         self.manufacturer_hardware_certificate.as_deref()
     }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
-    pub fn cluster_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_certificate(&self) -> ::std::option::Option<& str> {
         self.cluster_certificate.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl CertificatesBuilder {
     }
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     pub fn set_cluster_csr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_csr = input;
-        self
+        self.cluster_csr = input; self
     }
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     pub fn get_cluster_csr(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CertificatesBuilder {
     }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
     pub fn set_hsm_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_certificate = input;
-        self
+        self.hsm_certificate = input; self
     }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
     pub fn get_hsm_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CertificatesBuilder {
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
     pub fn set_aws_hardware_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_hardware_certificate = input;
-        self
+        self.aws_hardware_certificate = input; self
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
     pub fn get_aws_hardware_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl CertificatesBuilder {
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
     pub fn set_manufacturer_hardware_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer_hardware_certificate = input;
-        self
+        self.manufacturer_hardware_certificate = input; self
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
     pub fn get_manufacturer_hardware_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl CertificatesBuilder {
     }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub fn set_cluster_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_certificate = input;
-        self
+        self.cluster_certificate = input; self
     }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub fn get_cluster_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl CertificatesBuilder {
     /// Consumes the builder and constructs a [`Certificates`](crate::types::Certificates).
     pub fn build(self) -> crate::types::Certificates {
         crate::types::Certificates {
-            cluster_csr: self.cluster_csr,
-            hsm_certificate: self.hsm_certificate,
-            aws_hardware_certificate: self.aws_hardware_certificate,
-            manufacturer_hardware_certificate: self.manufacturer_hardware_certificate,
-            cluster_certificate: self.cluster_certificate,
+            cluster_csr: self.cluster_csr
+            ,
+            hsm_certificate: self.hsm_certificate
+            ,
+            aws_hardware_certificate: self.aws_hardware_certificate
+            ,
+            manufacturer_hardware_certificate: self.manufacturer_hardware_certificate
+            ,
+            cluster_certificate: self.cluster_certificate
+            ,
         }
     }
 }
+

@@ -69,3 +69,4 @@ pub mod update_microsoft_teams_channel_configuration;
 
 /// Types for the `UpdateSlackChannelConfiguration` operation.
 pub mod update_slack_channel_configuration;
+

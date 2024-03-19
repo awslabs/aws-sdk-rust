@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVerifiedAccessGroupPolicyOutput {
+pub struct GetVerifiedAccessGroupPolicyOutput  {
     /// <p>The status of the Verified Access policy.</p>
     pub policy_enabled: ::std::option::Option<bool>,
     /// <p>The Verified Access policy document.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetVerifiedAccessGroupPolicyOutput {
+impl  GetVerifiedAccessGroupPolicyOutput  {
     /// <p>The status of the Verified Access policy.</p>
     pub fn policy_enabled(&self) -> ::std::option::Option<bool> {
         self.policy_enabled
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetVerifiedAccessGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetVerifiedAccessGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetVerifiedAccessGroupPolicyOutput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput).
     pub fn builder() -> crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl GetVerifiedAccessGroupPolicyOutputBuilder {
     }
     /// <p>The status of the Verified Access policy.</p>
     pub fn set_policy_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.policy_enabled = input;
-        self
+        self.policy_enabled = input; self
     }
     /// <p>The status of the Verified Access policy.</p>
     pub fn get_policy_enabled(&self) -> &::std::option::Option<bool> {
@@ -61,28 +60,30 @@ impl GetVerifiedAccessGroupPolicyOutputBuilder {
     }
     /// <p>The Verified Access policy document.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The Verified Access policy document.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetVerifiedAccessGroupPolicyOutput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput).
     pub fn build(self) -> crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput {
         crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput {
-            policy_enabled: self.policy_enabled,
-            policy_document: self.policy_document,
+            policy_enabled: self.policy_enabled
+            ,
+            policy_document: self.policy_document
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

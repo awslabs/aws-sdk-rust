@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRotationsOutput {
+pub struct ListRotationsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub rotations: ::std::vec::Vec<crate::types::Rotation>,
+    pub rotations: ::std::vec::Vec::<crate::types::Rotation>,
     _request_id: Option<String>,
 }
-impl ListRotationsOutput {
+impl  ListRotationsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn rotations(&self) -> &[crate::types::Rotation] {
-        use std::ops::Deref;
-        self.rotations.deref()
+    pub fn rotations(&self) -> & [crate::types::Rotation] {
+        use std::ops::Deref; self.rotations.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRotationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRotationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
     pub fn builder() -> crate::operation::list_rotations::builders::ListRotationsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListRotationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) rotations: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>,
+    pub(crate) rotations: ::std::option::Option<::std::vec::Vec::<crate::types::Rotation>>,
     _request_id: Option<String>,
 }
 impl ListRotationsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListRotationsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListRotationsOutputBuilder {
     /// <p>Information about rotations that meet the filter criteria.</p>
     pub fn rotations(mut self, input: crate::types::Rotation) -> Self {
         let mut v = self.rotations.unwrap_or_default();
-        v.push(input);
-        self.rotations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rotations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn set_rotations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>) -> Self {
-        self.rotations = input;
-        self
+    pub fn set_rotations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rotation>>) -> Self {
+        self.rotations = input; self
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn get_rotations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rotation>> {
+    pub fn get_rotations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rotation>> {
         &self.rotations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rotations`](crate::operation::list_rotations::builders::ListRotationsOutputBuilder::rotations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_rotations::ListRotationsOutput {
-            next_token: self.next_token,
-            rotations: self.rotations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rotations",
-                    "rotations was not specified but it is required when building ListRotationsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_rotations::ListRotationsOutput {
+                next_token: self.next_token
+                ,
+                rotations: self.rotations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rotations", "rotations was not specified but it is required when building ListRotationsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

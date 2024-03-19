@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateModelOutput {
+pub struct CreateModelOutput  {
     /// <p>The ARN of the model created in SageMaker.</p>
     pub model_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateModelOutput {
+impl  CreateModelOutput  {
     /// <p>The ARN of the model created in SageMaker.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput).
     pub fn builder() -> crate::operation::create_model::builders::CreateModelOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateModelOutputBuilder {
     }
     /// <p>The ARN of the model created in SageMaker.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The ARN of the model created in SageMaker.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput).
     pub fn build(self) -> crate::operation::create_model::CreateModelOutput {
         crate::operation::create_model::CreateModelOutput {
-            model_arn: self.model_arn,
+            model_arn: self.model_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

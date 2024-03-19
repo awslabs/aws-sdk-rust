@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetExportJobOutput {
+pub struct DescribeDatasetExportJobOutput  {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct DescribeDatasetExportJobOutput {
     pub dataset_export_job: ::std::option::Option<crate::types::DatasetExportJob>,
     _request_id: Option<String>,
 }
-impl DescribeDatasetExportJobOutput {
+impl  DescribeDatasetExportJobOutput  {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
@@ -31,15 +31,15 @@ impl DescribeDatasetExportJobOutput {
     /// <li>
     /// <p>CREATE FAILED</p></li>
     /// </ul>
-    pub fn dataset_export_job(&self) -> ::std::option::Option<&crate::types::DatasetExportJob> {
+    pub fn dataset_export_job(&self) -> ::std::option::Option<& crate::types::DatasetExportJob> {
         self.dataset_export_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDatasetExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDatasetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput).
     pub fn builder() -> crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobOutputBuilder {
@@ -84,8 +84,7 @@ impl DescribeDatasetExportJobOutputBuilder {
     /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn set_dataset_export_job(mut self, input: ::std::option::Option<crate::types::DatasetExportJob>) -> Self {
-        self.dataset_export_job = input;
-        self
+        self.dataset_export_job = input; self
     }
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
@@ -103,19 +102,21 @@ impl DescribeDatasetExportJobOutputBuilder {
         &self.dataset_export_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput).
     pub fn build(self) -> crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput {
         crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput {
-            dataset_export_job: self.dataset_export_job,
+            dataset_export_job: self.dataset_export_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

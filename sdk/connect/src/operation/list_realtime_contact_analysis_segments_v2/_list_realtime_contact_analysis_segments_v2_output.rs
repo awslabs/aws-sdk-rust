@@ -2,41 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRealtimeContactAnalysisSegmentsV2Output {
+pub struct ListRealtimeContactAnalysisSegmentsV2Output  {
     /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub channel: crate::types::RealTimeContactAnalysisSupportedChannel,
     /// <p>Status of real-time contact analysis.</p>
     pub status: crate::types::RealTimeContactAnalysisStatus,
     /// <p>An analyzed transcript or category.</p>
-    pub segments: ::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>,
+    pub segments: ::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRealtimeContactAnalysisSegmentsV2Output {
+impl  ListRealtimeContactAnalysisSegmentsV2Output  {
     /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
-    pub fn channel(&self) -> &crate::types::RealTimeContactAnalysisSupportedChannel {
+    pub fn channel(&self) -> & crate::types::RealTimeContactAnalysisSupportedChannel {
         &self.channel
     }
     /// <p>Status of real-time contact analysis.</p>
-    pub fn status(&self) -> &crate::types::RealTimeContactAnalysisStatus {
+    pub fn status(&self) -> & crate::types::RealTimeContactAnalysisStatus {
         &self.status
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn segments(&self) -> &[crate::types::RealtimeContactAnalysisSegment] {
-        use std::ops::Deref;
-        self.segments.deref()
+    pub fn segments(&self) -> & [crate::types::RealtimeContactAnalysisSegment] {
+        use std::ops::Deref; self.segments.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRealtimeContactAnalysisSegmentsV2Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRealtimeContactAnalysisSegmentsV2Output {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsV2Output`](crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output).
     pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
@@ -50,7 +49,7 @@ impl ListRealtimeContactAnalysisSegmentsV2Output {
 pub struct ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::RealTimeContactAnalysisSupportedChannel>,
     pub(crate) status: ::std::option::Option<crate::types::RealTimeContactAnalysisStatus>,
-    pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
+    pub(crate) segments: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,8 +62,7 @@ impl ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     }
     /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSupportedChannel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The channel of the contact. <code>Voice</code> will not be returned.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSupportedChannel> {
@@ -78,8 +76,7 @@ impl ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     }
     /// <p>Status of real-time contact analysis.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of real-time contact analysis.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisStatus> {
@@ -92,17 +89,16 @@ impl ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     /// <p>An analyzed transcript or category.</p>
     pub fn segments(mut self, input: crate::types::RealtimeContactAnalysisSegment) -> Self {
         let mut v = self.segments.unwrap_or_default();
-        v.push(input);
-        self.segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>) -> Self {
-        self.segments = input;
-        self
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>>) -> Self {
+        self.segments = input; self
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>> {
+    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>> {
         &self.segments
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -112,56 +108,49 @@ impl ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsV2Output`](crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output).
     /// This method will fail if any of the following fields are not set:
     /// - [`channel`](crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder::channel)
     /// - [`status`](crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder::status)
     /// - [`segments`](crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder::segments)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output {
-                channel: self.channel.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "channel",
-                        "channel was not specified but it is required when building ListRealtimeContactAnalysisSegmentsV2Output",
-                    )
-                })?,
-                status: self.status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "status",
-                        "status was not specified but it is required when building ListRealtimeContactAnalysisSegmentsV2Output",
-                    )
-                })?,
-                segments: self.segments.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "segments",
-                        "segments was not specified but it is required when building ListRealtimeContactAnalysisSegmentsV2Output",
-                    )
-                })?,
-                next_token: self.next_token,
+                channel: self.channel
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel", "channel was not specified but it is required when building ListRealtimeContactAnalysisSegmentsV2Output")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ListRealtimeContactAnalysisSegmentsV2Output")
+                    )?
+                ,
+                segments: self.segments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("segments", "segments was not specified but it is required when building ListRealtimeContactAnalysisSegmentsV2Output")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -3,25 +3,23 @@
 /// <p>The connector-specific credentials required by Datadog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DatadogConnectorProfileCredentials {
+pub struct DatadogConnectorProfileCredentials  {
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
     pub api_key: ::std::string::String,
     /// <p>Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API.</p>
     pub application_key: ::std::string::String,
 }
-impl DatadogConnectorProfileCredentials {
+impl  DatadogConnectorProfileCredentials  {
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
-    pub fn api_key(&self) -> &str {
-        use std::ops::Deref;
-        self.api_key.deref()
+    pub fn api_key(&self) -> & str {
+        use std::ops::Deref; self.api_key.deref()
     }
     /// <p>Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API.</p>
-    pub fn application_key(&self) -> &str {
-        use std::ops::Deref;
-        self.application_key.deref()
+    pub fn application_key(&self) -> & str {
+        use std::ops::Deref; self.application_key.deref()
     }
 }
-impl ::std::fmt::Debug for DatadogConnectorProfileCredentials {
+impl  ::std::fmt::Debug for DatadogConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DatadogConnectorProfileCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl DatadogConnectorProfileCredentialsBuilder {
     }
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl DatadogConnectorProfileCredentialsBuilder {
     }
     /// <p>Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API.</p>
     pub fn set_application_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_key = input;
-        self
+        self.application_key = input; self
     }
     /// <p>Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API.</p>
     pub fn get_application_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl DatadogConnectorProfileCredentialsBuilder {
     /// - [`api_key`](crate::types::builders::DatadogConnectorProfileCredentialsBuilder::api_key)
     /// - [`application_key`](crate::types::builders::DatadogConnectorProfileCredentialsBuilder::application_key)
     pub fn build(self) -> ::std::result::Result<crate::types::DatadogConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatadogConnectorProfileCredentials {
-            api_key: self.api_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_key",
-                    "api_key was not specified but it is required when building DatadogConnectorProfileCredentials",
-                )
-            })?,
-            application_key: self.application_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_key",
-                    "application_key was not specified but it is required when building DatadogConnectorProfileCredentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatadogConnectorProfileCredentials {
+                api_key: self.api_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_key", "api_key was not specified but it is required when building DatadogConnectorProfileCredentials")
+                    )?
+                ,
+                application_key: self.application_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_key", "application_key was not specified but it is required when building DatadogConnectorProfileCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DatadogConnectorProfileCredentialsBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for DatadogConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

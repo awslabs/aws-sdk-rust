@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReportGroupTrendInput {
+pub struct GetReportGroupTrendInput  {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
     pub report_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
@@ -83,9 +83,9 @@ pub struct GetReportGroupTrendInput {
     /// </dl>
     pub trend_field: ::std::option::Option<crate::types::ReportGroupTrendFieldType>,
 }
-impl GetReportGroupTrendInput {
+impl  GetReportGroupTrendInput  {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    pub fn report_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn report_group_arn(&self) -> ::std::option::Option<& str> {
         self.report_group_arn.as_deref()
     }
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
@@ -166,7 +166,7 @@ impl GetReportGroupTrendInput {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn trend_field(&self) -> ::std::option::Option<&crate::types::ReportGroupTrendFieldType> {
+    pub fn trend_field(&self) -> ::std::option::Option<& crate::types::ReportGroupTrendFieldType> {
         self.trend_field.as_ref()
     }
 }
@@ -194,8 +194,7 @@ impl GetReportGroupTrendInputBuilder {
     }
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
     pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_group_arn = input;
-        self
+        self.report_group_arn = input; self
     }
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
     pub fn get_report_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +209,7 @@ impl GetReportGroupTrendInputBuilder {
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
     pub fn set_num_of_reports(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_of_reports = input;
-        self
+        self.num_of_reports = input; self
     }
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
@@ -370,8 +368,7 @@ impl GetReportGroupTrendInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_trend_field(mut self, input: ::std::option::Option<crate::types::ReportGroupTrendFieldType>) -> Self {
-        self.trend_field = input;
-        self
+        self.trend_field = input; self
     }
     /// <p>The test report value to accumulate. This must be one of the following values:</p>
     /// <dl>
@@ -450,14 +447,17 @@ impl GetReportGroupTrendInputBuilder {
         &self.trend_field
     }
     /// Consumes the builder and constructs a [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_report_group_trend::GetReportGroupTrendInput {
-            report_group_arn: self.report_group_arn,
-            num_of_reports: self.num_of_reports,
-            trend_field: self.trend_field,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_report_group_trend::GetReportGroupTrendInput {
+                report_group_arn: self.report_group_arn
+                ,
+                num_of_reports: self.num_of_reports
+                ,
+                trend_field: self.trend_field
+                ,
+            }
+        )
     }
 }
+

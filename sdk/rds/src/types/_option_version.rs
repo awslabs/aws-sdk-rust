@@ -3,15 +3,15 @@
 /// <p>The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptionVersion {
+pub struct OptionVersion  {
     /// <p>The version of the option.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the version is the default version of the option.</p>
     pub is_default: ::std::option::Option<bool>,
 }
-impl OptionVersion {
+impl  OptionVersion  {
     /// <p>The version of the option.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Indicates whether the version is the default version of the option.</p>
@@ -41,8 +41,7 @@ impl OptionVersionBuilder {
     }
     /// <p>The version of the option.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the option.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl OptionVersionBuilder {
     }
     /// <p>Indicates whether the version is the default version of the option.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Indicates whether the version is the default version of the option.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl OptionVersionBuilder {
     /// Consumes the builder and constructs a [`OptionVersion`](crate::types::OptionVersion).
     pub fn build(self) -> crate::types::OptionVersion {
         crate::types::OptionVersion {
-            version: self.version,
-            is_default: self.is_default,
+            version: self.version
+            ,
+            is_default: self.is_default
+            ,
         }
     }
 }
+

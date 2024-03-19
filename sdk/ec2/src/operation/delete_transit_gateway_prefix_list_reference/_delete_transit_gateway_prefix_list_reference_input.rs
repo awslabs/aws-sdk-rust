@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTransitGatewayPrefixListReferenceInput {
+pub struct DeleteTransitGatewayPrefixListReferenceInput  {
     /// <p>The ID of the route table.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
@@ -10,13 +10,13 @@ pub struct DeleteTransitGatewayPrefixListReferenceInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DeleteTransitGatewayPrefixListReferenceInput {
+impl  DeleteTransitGatewayPrefixListReferenceInput  {
     /// <p>The ID of the route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -26,8 +26,7 @@ impl DeleteTransitGatewayPrefixListReferenceInput {
 }
 impl DeleteTransitGatewayPrefixListReferenceInput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPrefixListReferenceInput`](crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceInput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceInputBuilder {
         crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ impl DeleteTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl DeleteTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +75,24 @@ impl DeleteTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayPrefixListReferenceInput`](crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                prefix_list_id: self.prefix_list_id,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id
+                ,
+                prefix_list_id: self.prefix_list_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

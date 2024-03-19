@@ -5,23 +5,20 @@ pub use crate::operation::disconnect_custom_key_store::_disconnect_custom_key_st
 
 impl DisconnectCustomKeyStoreInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disconnect_custom_key_store();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disconnect_custom_key_store();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisconnectCustomKeyStore`.
-///
+/// 
 /// <p>Disconnects the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> from its backing key store. This operation disconnects an CloudHSM key store from its associated CloudHSM cluster or disconnects an external key store from the external key store proxy that communicates with your external key manager.</p>
 /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p>
 /// <p>While a custom key store is disconnected, you can manage the custom key store and its KMS keys, but you cannot create or use its KMS keys. You can reconnect the custom key store at any time.</p><note>
@@ -48,33 +45,32 @@ impl DisconnectCustomKeyStoreInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder,
+                    inner: crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-    > for DisconnectCustomKeyStoreFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
+                    crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
+                > for DisconnectCustomKeyStoreFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
+                        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisconnectCustomKeyStoreFluentBuilder {
     /// Creates a new `DisconnectCustomKeyStore`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -83,53 +79,44 @@ impl DisconnectCustomKeyStoreFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStore::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStore::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput,
-        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStore::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStore::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput, crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
@@ -145,3 +132,4 @@ impl DisconnectCustomKeyStoreFluentBuilder {
         self.inner.get_custom_key_store_id()
     }
 }
+

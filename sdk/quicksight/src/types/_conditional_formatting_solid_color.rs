@@ -3,24 +3,23 @@
 /// <p>Formatting configuration for solid color.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConditionalFormattingSolidColor {
+pub struct ConditionalFormattingSolidColor  {
     /// <p>The expression that determines the formatting configuration for solid color.</p>
     pub expression: ::std::string::String,
     /// <p>Determines the color.</p>
     pub color: ::std::option::Option<::std::string::String>,
 }
-impl ConditionalFormattingSolidColor {
+impl  ConditionalFormattingSolidColor  {
     /// <p>The expression that determines the formatting configuration for solid color.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<& str> {
         self.color.as_deref()
     }
 }
-impl ::std::fmt::Debug for ConditionalFormattingSolidColor {
+impl  ::std::fmt::Debug for ConditionalFormattingSolidColor  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingSolidColor");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl ConditionalFormattingSolidColorBuilder {
     }
     /// <p>The expression that determines the formatting configuration for solid color.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The expression that determines the formatting configuration for solid color.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ConditionalFormattingSolidColorBuilder {
     }
     /// <p>Determines the color.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>Determines the color.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl ConditionalFormattingSolidColorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::ConditionalFormattingSolidColorBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::ConditionalFormattingSolidColor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConditionalFormattingSolidColor {
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building ConditionalFormattingSolidColor",
-                )
-            })?,
-            color: self.color,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConditionalFormattingSolidColor {
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building ConditionalFormattingSolidColor")
+                    )?
+                ,
+                color: self.color
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ConditionalFormattingSolidColorBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for ConditionalFormattingSolidColorBuilder {
         formatter.finish()
     }
 }
+

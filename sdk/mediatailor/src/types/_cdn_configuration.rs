@@ -3,19 +3,19 @@
 /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CdnConfiguration {
+pub struct CdnConfiguration  {
     /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.<i>&lt;region&gt;</i>.amazonaws.com. Then specify the rule's name in this <code>AdSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
     pub ad_segment_url_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
     pub content_segment_url_prefix: ::std::option::Option<::std::string::String>,
 }
-impl CdnConfiguration {
+impl  CdnConfiguration  {
     /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.<i>&lt;region&gt;</i>.amazonaws.com. Then specify the rule's name in this <code>AdSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
-    pub fn ad_segment_url_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ad_segment_url_prefix(&self) -> ::std::option::Option<& str> {
         self.ad_segment_url_prefix.as_deref()
     }
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
-    pub fn content_segment_url_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn content_segment_url_prefix(&self) -> ::std::option::Option<& str> {
         self.content_segment_url_prefix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CdnConfigurationBuilder {
     }
     /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.<i>&lt;region&gt;</i>.amazonaws.com. Then specify the rule's name in this <code>AdSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
     pub fn set_ad_segment_url_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ad_segment_url_prefix = input;
-        self
+        self.ad_segment_url_prefix = input; self
     }
     /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.<i>&lt;region&gt;</i>.amazonaws.com. Then specify the rule's name in this <code>AdSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
     pub fn get_ad_segment_url_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CdnConfigurationBuilder {
     }
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
     pub fn set_content_segment_url_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_segment_url_prefix = input;
-        self
+        self.content_segment_url_prefix = input; self
     }
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
     pub fn get_content_segment_url_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CdnConfigurationBuilder {
     /// Consumes the builder and constructs a [`CdnConfiguration`](crate::types::CdnConfiguration).
     pub fn build(self) -> crate::types::CdnConfiguration {
         crate::types::CdnConfiguration {
-            ad_segment_url_prefix: self.ad_segment_url_prefix,
-            content_segment_url_prefix: self.content_segment_url_prefix,
+            ad_segment_url_prefix: self.ad_segment_url_prefix
+            ,
+            content_segment_url_prefix: self.content_segment_url_prefix
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotReplicaInput {
+pub struct DescribeBotReplicaInput  {
     /// <p>The request for the unique bot ID of the replicated bot being monitored.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The request for the region of the replicated bot being monitored.</p>
     pub replica_region: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBotReplicaInput {
+impl  DescribeBotReplicaInput  {
     /// <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The request for the region of the replicated bot being monitored.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeBotReplicaInputBuilder {
     }
     /// <p>The request for the unique bot ID of the replicated bot being monitored.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The request for the unique bot ID of the replicated bot being monitored.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeBotReplicaInputBuilder {
     }
     /// <p>The request for the region of the replicated bot being monitored.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The request for the region of the replicated bot being monitored.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_region
     }
     /// Consumes the builder and constructs a [`DescribeBotReplicaInput`](crate::operation::describe_bot_replica::DescribeBotReplicaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_bot_replica::DescribeBotReplicaInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_bot_replica::DescribeBotReplicaInput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot_replica::DescribeBotReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bot_replica::DescribeBotReplicaInput {
+                bot_id: self.bot_id
+                ,
+                replica_region: self.replica_region
+                ,
+            }
+        )
     }
 }
+

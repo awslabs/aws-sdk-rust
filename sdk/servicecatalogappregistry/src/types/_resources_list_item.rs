@@ -3,7 +3,7 @@
 /// <p>The resource in a list of resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcesListItem {
+pub struct ResourcesListItem  {
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The message returned if the call fails.</p>
@@ -13,21 +13,21 @@ pub struct ResourcesListItem {
     /// <p>Provides information about the AppRegistry resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
-impl ResourcesListItem {
+impl  ResourcesListItem  {
     /// <p>The Amazon resource name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The message returned if the call fails.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The status of the list item.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Provides information about the AppRegistry resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ResourcesListItemBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ResourcesListItemBuilder {
     }
     /// <p>The message returned if the call fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message returned if the call fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ResourcesListItemBuilder {
     }
     /// <p>The status of the list item.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the list item.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ResourcesListItemBuilder {
     }
     /// <p>Provides information about the AppRegistry resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Provides information about the AppRegistry resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ResourcesListItemBuilder {
     /// Consumes the builder and constructs a [`ResourcesListItem`](crate::types::ResourcesListItem).
     pub fn build(self) -> crate::types::ResourcesListItem {
         crate::types::ResourcesListItem {
-            resource_arn: self.resource_arn,
-            error_message: self.error_message,
-            status: self.status,
-            resource_type: self.resource_type,
+            resource_arn: self.resource_arn
+            ,
+            error_message: self.error_message
+            ,
+            status: self.status
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

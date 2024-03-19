@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCoreDefinitionVersionOutput {
+pub struct GetCoreDefinitionVersionOutput  {
     /// The ARN of the core definition version.
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the core definition version was created.
@@ -17,37 +17,37 @@ pub struct GetCoreDefinitionVersionOutput {
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetCoreDefinitionVersionOutput {
+impl  GetCoreDefinitionVersionOutput  {
     /// The ARN of the core definition version.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the core definition version was created.
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the core definition version.
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::CoreDefinitionVersion> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::CoreDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the core definition version.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The version of the core definition version.
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCoreDefinitionVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCoreDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreDefinitionVersionOutput`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput).
     pub fn builder() -> crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionOutputBuilder {
@@ -75,8 +75,7 @@ impl GetCoreDefinitionVersionOutputBuilder {
     }
     /// The ARN of the core definition version.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The ARN of the core definition version.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl GetCoreDefinitionVersionOutputBuilder {
     }
     /// The time, in milliseconds since the epoch, when the core definition version was created.
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// The time, in milliseconds since the epoch, when the core definition version was created.
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl GetCoreDefinitionVersionOutputBuilder {
     }
     /// Information about the core definition version.
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::CoreDefinitionVersion>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// Information about the core definition version.
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::CoreDefinitionVersion> {
@@ -117,8 +114,7 @@ impl GetCoreDefinitionVersionOutputBuilder {
     }
     /// The ID of the core definition version.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the core definition version.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl GetCoreDefinitionVersionOutputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,38 @@ impl GetCoreDefinitionVersionOutputBuilder {
     }
     /// The version of the core definition version.
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// The version of the core definition version.
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCoreDefinitionVersionOutput`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput).
     pub fn build(self) -> crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput {
         crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput {
-            arn: self.arn,
-            creation_timestamp: self.creation_timestamp,
-            definition: self.definition,
-            id: self.id,
-            next_token: self.next_token,
-            version: self.version,
+            arn: self.arn
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            definition: self.definition
+            ,
+            id: self.id
+            ,
+            next_token: self.next_token
+            ,
+            version: self.version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

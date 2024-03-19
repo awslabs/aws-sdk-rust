@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelContactInput {
+pub struct CancelContactInput  {
     /// <p>UUID of a contact.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelContactInput {
+impl  CancelContactInput  {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl CancelContactInputBuilder {
     }
     /// <p>UUID of a contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>UUID of a contact.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
     /// Consumes the builder and constructs a [`CancelContactInput`](crate::operation::cancel_contact::CancelContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_contact::CancelContactInput { contact_id: self.contact_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_contact::CancelContactInput {
+                contact_id: self.contact_id
+                ,
+            }
+        )
     }
 }
+

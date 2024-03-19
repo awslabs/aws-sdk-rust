@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyInput {
+pub struct CreateKeyInput  {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
@@ -18,16 +18,16 @@ pub struct CreateKeyInput {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateKeyInput {
+impl  CreateKeyInput  {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn key_attributes(&self) -> ::std::option::Option<&crate::types::KeyAttributes> {
+    pub fn key_attributes(&self) -> ::std::option::Option<& crate::types::KeyAttributes> {
         self.key_attributes.as_ref()
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
+    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<& crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
@@ -44,10 +44,11 @@ impl CreateKeyInput {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateKeyInput {
@@ -65,7 +66,7 @@ pub struct CreateKeyInputBuilder {
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
     pub(crate) exportable: ::std::option::Option<bool>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateKeyInputBuilder {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
@@ -76,8 +77,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
-        self.key_attributes = input;
-        self
+        self.key_attributes = input; self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
@@ -92,8 +92,7 @@ impl CreateKeyInputBuilder {
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
     pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
-        self.key_check_value_algorithm = input;
-        self
+        self.key_check_value_algorithm = input; self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
@@ -108,8 +107,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
     pub fn set_exportable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exportable = input;
-        self
+        self.exportable = input; self
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
     pub fn get_exportable(&self) -> &::std::option::Option<bool> {
@@ -122,8 +120,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>Specifies whether to enable the key. If the key is enabled, it is activated for use within the service. If the key is not enabled, then it is created but not activated. The default value is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether to enable the key. If the key is enabled, it is activated for use within the service. If the key is not enabled, then it is created but not activated. The default value is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -141,9 +138,9 @@ impl CreateKeyInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is created. To tag an existing Amazon Web Services Payment Cryptography key, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key.</p><important>
@@ -151,9 +148,8 @@ impl CreateKeyInputBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is created. To tag an existing Amazon Web Services Payment Cryptography key, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key.</p><important>
@@ -161,17 +157,25 @@ impl CreateKeyInputBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
-            key_attributes: self.key_attributes,
-            key_check_value_algorithm: self.key_check_value_algorithm,
-            exportable: self.exportable,
-            enabled: self.enabled,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_key::CreateKeyInput {
+                key_attributes: self.key_attributes
+                ,
+                key_check_value_algorithm: self.key_check_value_algorithm
+                ,
+                exportable: self.exportable
+                ,
+                enabled: self.enabled
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

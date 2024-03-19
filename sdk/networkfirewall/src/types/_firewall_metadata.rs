@@ -3,19 +3,19 @@
 /// <p>High-level information about a firewall, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a firewall.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallMetadata {
+pub struct FirewallMetadata  {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
 }
-impl FirewallMetadata {
+impl  FirewallMetadata  {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_name(&self) -> ::std::option::Option<& str> {
         self.firewall_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FirewallMetadataBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_name = input;
-        self
+        self.firewall_name = input; self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FirewallMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_arn = input;
-        self
+        self.firewall_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FirewallMetadataBuilder {
     /// Consumes the builder and constructs a [`FirewallMetadata`](crate::types::FirewallMetadata).
     pub fn build(self) -> crate::types::FirewallMetadata {
         crate::types::FirewallMetadata {
-            firewall_name: self.firewall_name,
-            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name
+            ,
+            firewall_arn: self.firewall_arn
+            ,
         }
     }
 }
+

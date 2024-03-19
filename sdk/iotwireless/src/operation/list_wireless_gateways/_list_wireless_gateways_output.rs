@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWirelessGatewaysOutput {
+pub struct ListWirelessGatewaysOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless gateway.</p>
-    pub wireless_gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
+    pub wireless_gateway_list: ::std::option::Option<::std::vec::Vec::<crate::types::WirelessGatewayStatistics>>,
     _request_id: Option<String>,
 }
-impl ListWirelessGatewaysOutput {
+impl  ListWirelessGatewaysOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the wireless gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateway_list.is_none()`.
-    pub fn wireless_gateway_list(&self) -> &[crate::types::WirelessGatewayStatistics] {
-        self.wireless_gateway_list.as_deref().unwrap_or_default()
+    pub fn wireless_gateway_list(&self) -> & [crate::types::WirelessGatewayStatistics] {
+        self.wireless_gateway_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWirelessGatewaysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWirelessGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput).
     pub fn builder() -> crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysOutputBuilder {
@@ -38,7 +39,7 @@ impl ListWirelessGatewaysOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWirelessGatewaysOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) wireless_gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,
+    pub(crate) wireless_gateway_list: ::std::option::Option<::std::vec::Vec::<crate::types::WirelessGatewayStatistics>>,
     _request_id: Option<String>,
 }
 impl ListWirelessGatewaysOutputBuilder {
@@ -49,8 +50,7 @@ impl ListWirelessGatewaysOutputBuilder {
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListWirelessGatewaysOutputBuilder {
     /// <p>The ID of the wireless gateway.</p>
     pub fn wireless_gateway_list(mut self, input: crate::types::WirelessGatewayStatistics) -> Self {
         let mut v = self.wireless_gateway_list.unwrap_or_default();
-        v.push(input);
-        self.wireless_gateway_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.wireless_gateway_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn set_wireless_gateway_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>) -> Self {
-        self.wireless_gateway_list = input;
-        self
+    pub fn set_wireless_gateway_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WirelessGatewayStatistics>>) -> Self {
+        self.wireless_gateway_list = input; self
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn get_wireless_gateway_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>> {
+    pub fn get_wireless_gateway_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WirelessGatewayStatistics>> {
         &self.wireless_gateway_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput).
     pub fn build(self) -> crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput {
         crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput {
-            next_token: self.next_token,
-            wireless_gateway_list: self.wireless_gateway_list,
+            next_token: self.next_token
+            ,
+            wireless_gateway_list: self.wireless_gateway_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

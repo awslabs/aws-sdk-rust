@@ -3,15 +3,14 @@
 /// <p>A source for a read set activation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartReadSetActivationJobSourceItem {
+pub struct StartReadSetActivationJobSourceItem  {
     /// <p>The source's read set ID.</p>
     pub read_set_id: ::std::string::String,
 }
-impl StartReadSetActivationJobSourceItem {
+impl  StartReadSetActivationJobSourceItem  {
     /// <p>The source's read set ID.</p>
-    pub fn read_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.read_set_id.deref()
+    pub fn read_set_id(&self) -> & str {
+        use std::ops::Deref; self.read_set_id.deref()
     }
 }
 impl StartReadSetActivationJobSourceItem {
@@ -36,8 +35,7 @@ impl StartReadSetActivationJobSourceItemBuilder {
     }
     /// <p>The source's read set ID.</p>
     pub fn set_read_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.read_set_id = input;
-        self
+        self.read_set_id = input; self
     }
     /// <p>The source's read set ID.</p>
     pub fn get_read_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl StartReadSetActivationJobSourceItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`read_set_id`](crate::types::builders::StartReadSetActivationJobSourceItemBuilder::read_set_id)
     pub fn build(self) -> ::std::result::Result<crate::types::StartReadSetActivationJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartReadSetActivationJobSourceItem {
-            read_set_id: self.read_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "read_set_id",
-                    "read_set_id was not specified but it is required when building StartReadSetActivationJobSourceItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StartReadSetActivationJobSourceItem {
+                read_set_id: self.read_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("read_set_id", "read_set_id was not specified but it is required when building StartReadSetActivationJobSourceItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

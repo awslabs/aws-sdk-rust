@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNotebookInstanceInput {
+pub struct DeleteNotebookInstanceInput  {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteNotebookInstanceInput {
+impl  DeleteNotebookInstanceInput  {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
-    pub fn notebook_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_name(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteNotebookInstanceInputBuilder {
     }
     /// <p>The name of the SageMaker notebook instance to delete.</p>
     pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_instance_name = input;
-        self
+        self.notebook_instance_name = input; self
     }
     /// <p>The name of the SageMaker notebook instance to delete.</p>
     pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_name
     }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput {
-            notebook_instance_name: self.notebook_instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput {
+                notebook_instance_name: self.notebook_instance_name
+                ,
+            }
+        )
     }
 }
+

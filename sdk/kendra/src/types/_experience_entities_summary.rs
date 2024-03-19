@@ -3,7 +3,7 @@
 /// <p>Summary information for users or groups in your IAM Identity Center identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperienceEntitiesSummary {
+pub struct ExperienceEntitiesSummary  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
@@ -11,17 +11,17 @@ pub struct ExperienceEntitiesSummary {
     /// <p>Information about the user entity.</p>
     pub display_data: ::std::option::Option<crate::types::EntityDisplayData>,
 }
-impl ExperienceEntitiesSummary {
+impl  ExperienceEntitiesSummary  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn entity_type(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.entity_type.as_ref()
     }
     /// <p>Information about the user entity.</p>
-    pub fn display_data(&self) -> ::std::option::Option<&crate::types::EntityDisplayData> {
+    pub fn display_data(&self) -> ::std::option::Option<& crate::types::EntityDisplayData> {
         self.display_data.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ExperienceEntitiesSummaryBuilder {
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExperienceEntitiesSummaryBuilder {
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -76,8 +74,7 @@ impl ExperienceEntitiesSummaryBuilder {
     }
     /// <p>Information about the user entity.</p>
     pub fn set_display_data(mut self, input: ::std::option::Option<crate::types::EntityDisplayData>) -> Self {
-        self.display_data = input;
-        self
+        self.display_data = input; self
     }
     /// <p>Information about the user entity.</p>
     pub fn get_display_data(&self) -> &::std::option::Option<crate::types::EntityDisplayData> {
@@ -86,9 +83,13 @@ impl ExperienceEntitiesSummaryBuilder {
     /// Consumes the builder and constructs a [`ExperienceEntitiesSummary`](crate::types::ExperienceEntitiesSummary).
     pub fn build(self) -> crate::types::ExperienceEntitiesSummary {
         crate::types::ExperienceEntitiesSummary {
-            entity_id: self.entity_id,
-            entity_type: self.entity_type,
-            display_data: self.display_data,
+            entity_id: self.entity_id
+            ,
+            entity_type: self.entity_type
+            ,
+            display_data: self.display_data
+            ,
         }
     }
 }
+

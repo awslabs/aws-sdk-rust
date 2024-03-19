@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInferenceSchedulerInput {
+pub struct DescribeInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler being described.</p>
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInferenceSchedulerInput {
+impl  DescribeInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler being described.</p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeInferenceSchedulerInputBuilder {
     }
     /// <p>The name of the inference scheduler being described.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_name = input;
-        self
+        self.inference_scheduler_name = input; self
     }
     /// <p>The name of the inference scheduler being described.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_scheduler_name
     }
     /// Consumes the builder and constructs a [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput {
-            inference_scheduler_name: self.inference_scheduler_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+            }
+        )
     }
 }
+

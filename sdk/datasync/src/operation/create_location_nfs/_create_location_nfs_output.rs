@@ -3,22 +3,22 @@
 /// <p>CreateLocationNfsResponse</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLocationNfsOutput {
+pub struct CreateLocationNfsOutput  {
     /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLocationNfsOutput {
+impl  CreateLocationNfsOutput  {
     /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLocationNfsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationNfsOutput`](crate::operation::create_location_nfs::CreateLocationNfsOutput).
     pub fn builder() -> crate::operation::create_location_nfs::builders::CreateLocationNfsOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateLocationNfsOutputBuilder {
     }
     /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLocationNfsOutput`](crate::operation::create_location_nfs::CreateLocationNfsOutput).
     pub fn build(self) -> crate::operation::create_location_nfs::CreateLocationNfsOutput {
         crate::operation::create_location_nfs::CreateLocationNfsOutput {
-            location_arn: self.location_arn,
+            location_arn: self.location_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

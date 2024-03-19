@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAlarmInput {
+pub struct PutAlarmInput  {
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to associate with the alarm.</p>
@@ -50,7 +50,7 @@ pub struct PutAlarmInput {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
+    pub contact_protocols: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>,
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
@@ -69,14 +69,14 @@ pub struct PutAlarmInput {
     /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
+    pub notification_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmState>>,
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
     pub notification_enabled: ::std::option::Option<bool>,
 }
-impl PutAlarmInput {
+impl  PutAlarmInput  {
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The name of the metric to associate with the alarm.</p>
@@ -91,16 +91,16 @@ impl PutAlarmInput {
     /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::MetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::MetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn monitored_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitored_resource_name(&self) -> ::std::option::Option<& str> {
         self.monitored_resource_name.as_deref()
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>The value against which the specified statistic is compared.</p>
@@ -131,17 +131,18 @@ impl PutAlarmInput {
     /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
-    pub fn treat_missing_data(&self) -> ::std::option::Option<&crate::types::TreatMissingData> {
+    pub fn treat_missing_data(&self) -> ::std::option::Option<& crate::types::TreatMissingData> {
         self.treat_missing_data.as_ref()
     }
     /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_protocols.is_none()`.
-    pub fn contact_protocols(&self) -> &[crate::types::ContactProtocol] {
-        self.contact_protocols.as_deref().unwrap_or_default()
+    pub fn contact_protocols(&self) -> & [crate::types::ContactProtocol] {
+        self.contact_protocols.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -161,10 +162,11 @@ impl PutAlarmInput {
     /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_triggers.is_none()`.
-    pub fn notification_triggers(&self) -> &[crate::types::AlarmState] {
-        self.notification_triggers.as_deref().unwrap_or_default()
+    pub fn notification_triggers(&self) -> & [crate::types::AlarmState] {
+        self.notification_triggers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
@@ -191,8 +193,8 @@ pub struct PutAlarmInputBuilder {
     pub(crate) evaluation_periods: ::std::option::Option<i32>,
     pub(crate) datapoints_to_alarm: ::std::option::Option<i32>,
     pub(crate) treat_missing_data: ::std::option::Option<crate::types::TreatMissingData>,
-    pub(crate) contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
-    pub(crate) notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
+    pub(crate) contact_protocols: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>,
+    pub(crate) notification_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmState>>,
     pub(crate) notification_enabled: ::std::option::Option<bool>,
 }
 impl PutAlarmInputBuilder {
@@ -204,8 +206,7 @@ impl PutAlarmInputBuilder {
     }
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +242,7 @@ impl PutAlarmInputBuilder {
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the metric to associate with the alarm.</p>
     /// <p>You can configure up to two alarms per metric.</p>
@@ -269,8 +269,7 @@ impl PutAlarmInputBuilder {
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
     pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitored_resource_name = input;
-        self
+        self.monitored_resource_name = input; self
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
@@ -285,8 +284,7 @@ impl PutAlarmInputBuilder {
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
@@ -300,8 +298,7 @@ impl PutAlarmInputBuilder {
     }
     /// <p>The value against which the specified statistic is compared.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The value against which the specified statistic is compared.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<f64> {
@@ -321,8 +318,7 @@ impl PutAlarmInputBuilder {
     /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>
     /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
     pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_periods = input;
-        self
+        self.evaluation_periods = input; self
     }
     /// <p>The number of most recent periods over which data is compared to the specified threshold. If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the N.</p>
     /// <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>
@@ -338,8 +334,7 @@ impl PutAlarmInputBuilder {
     }
     /// <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
     pub fn set_datapoints_to_alarm(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.datapoints_to_alarm = input;
-        self
+        self.datapoints_to_alarm = input; self
     }
     /// <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
     pub fn get_datapoints_to_alarm(&self) -> &::std::option::Option<i32> {
@@ -376,8 +371,7 @@ impl PutAlarmInputBuilder {
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
     pub fn set_treat_missing_data(mut self, input: ::std::option::Option<crate::types::TreatMissingData>) -> Self {
-        self.treat_missing_data = input;
-        self
+        self.treat_missing_data = input; self
     }
     /// <p>Sets how this alarm will handle missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
@@ -405,23 +399,22 @@ impl PutAlarmInputBuilder {
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
     pub fn contact_protocols(mut self, input: crate::types::ContactProtocol) -> Self {
         let mut v = self.contact_protocols.unwrap_or_default();
-        v.push(input);
-        self.contact_protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contact_protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn set_contact_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
-        self.contact_protocols = input;
-        self
+    pub fn set_contact_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>) -> Self {
+        self.contact_protocols = input; self
     }
     /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>> {
         &self.contact_protocols
     }
     /// Appends an item to `notification_triggers`.
@@ -448,9 +441,9 @@ impl PutAlarmInputBuilder {
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
     pub fn notification_triggers(mut self, input: crate::types::AlarmState) -> Self {
         let mut v = self.notification_triggers.unwrap_or_default();
-        v.push(input);
-        self.notification_triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notification_triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -470,9 +463,8 @@ impl PutAlarmInputBuilder {
     /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>) -> Self {
-        self.notification_triggers = input;
-        self
+    pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmState>>) -> Self {
+        self.notification_triggers = input; self
     }
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -492,7 +484,7 @@ impl PutAlarmInputBuilder {
     /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
+    pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmState>> {
         &self.notification_triggers
     }
     /// <p>Indicates whether the alarm is enabled.</p>
@@ -504,8 +496,7 @@ impl PutAlarmInputBuilder {
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
     pub fn set_notification_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.notification_enabled = input;
-        self
+        self.notification_enabled = input; self
     }
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
@@ -514,18 +505,32 @@ impl PutAlarmInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_alarm::PutAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_alarm::PutAlarmInput {
-            alarm_name: self.alarm_name,
-            metric_name: self.metric_name,
-            monitored_resource_name: self.monitored_resource_name,
-            comparison_operator: self.comparison_operator,
-            threshold: self.threshold,
-            evaluation_periods: self.evaluation_periods,
-            datapoints_to_alarm: self.datapoints_to_alarm,
-            treat_missing_data: self.treat_missing_data,
-            contact_protocols: self.contact_protocols,
-            notification_triggers: self.notification_triggers,
-            notification_enabled: self.notification_enabled,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_alarm::PutAlarmInput {
+                alarm_name: self.alarm_name
+                ,
+                metric_name: self.metric_name
+                ,
+                monitored_resource_name: self.monitored_resource_name
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+                threshold: self.threshold
+                ,
+                evaluation_periods: self.evaluation_periods
+                ,
+                datapoints_to_alarm: self.datapoints_to_alarm
+                ,
+                treat_missing_data: self.treat_missing_data
+                ,
+                contact_protocols: self.contact_protocols
+                ,
+                notification_triggers: self.notification_triggers
+                ,
+                notification_enabled: self.notification_enabled
+                ,
+            }
+        )
     }
 }
+

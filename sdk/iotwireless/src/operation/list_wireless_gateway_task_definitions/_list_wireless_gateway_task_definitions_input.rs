@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWirelessGatewayTaskDefinitionsInput {
+pub struct ListWirelessGatewayTaskDefinitionsInput  {
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -10,17 +10,17 @@ pub struct ListWirelessGatewayTaskDefinitionsInput {
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
     pub task_definition_type: ::std::option::Option<crate::types::WirelessGatewayTaskDefinitionType>,
 }
-impl ListWirelessGatewayTaskDefinitionsInput {
+impl  ListWirelessGatewayTaskDefinitionsInput  {
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
-    pub fn task_definition_type(&self) -> ::std::option::Option<&crate::types::WirelessGatewayTaskDefinitionType> {
+    pub fn task_definition_type(&self) -> ::std::option::Option<& crate::types::WirelessGatewayTaskDefinitionType> {
         self.task_definition_type.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ListWirelessGatewayTaskDefinitionsInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListWirelessGatewayTaskDefinitionsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,26 +73,24 @@ impl ListWirelessGatewayTaskDefinitionsInputBuilder {
     }
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
     pub fn set_task_definition_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayTaskDefinitionType>) -> Self {
-        self.task_definition_type = input;
-        self
+        self.task_definition_type = input; self
     }
     /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
     pub fn get_task_definition_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayTaskDefinitionType> {
         &self.task_definition_type
     }
     /// Consumes the builder and constructs a [`ListWirelessGatewayTaskDefinitionsInput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                task_definition_type: self.task_definition_type,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                task_definition_type: self.task_definition_type
+                ,
+            }
         )
     }
 }
+

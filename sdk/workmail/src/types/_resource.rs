@@ -3,7 +3,7 @@
 /// <p>The representation of a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The identifier of the resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the resource.</p>
@@ -21,37 +21,37 @@ pub struct Resource {
     /// <p>Resource description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The identifier of the resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email of the resource.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the resource: equipment or room.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
     /// <p>Resource description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl ResourceBuilder {
     }
     /// <p>The identifier of the resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ResourceBuilder {
     }
     /// <p>The email of the resource.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of the resource.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ResourceBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ResourceBuilder {
     }
     /// <p>The type of the resource: equipment or room.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the resource: equipment or room.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -139,8 +135,7 @@ impl ResourceBuilder {
     }
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
@@ -153,8 +148,7 @@ impl ResourceBuilder {
     }
     /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
     pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enabled_date = input;
-        self
+        self.enabled_date = input; self
     }
     /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
     pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +161,7 @@ impl ResourceBuilder {
     }
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.disabled_date = input;
-        self
+        self.disabled_date = input; self
     }
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +174,7 @@ impl ResourceBuilder {
     }
     /// <p>Resource description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Resource description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl ResourceBuilder {
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            id: self.id,
-            email: self.email,
-            name: self.name,
-            r#type: self.r#type,
-            state: self.state,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
-            description: self.description,
+            id: self.id
+            ,
+            email: self.email
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

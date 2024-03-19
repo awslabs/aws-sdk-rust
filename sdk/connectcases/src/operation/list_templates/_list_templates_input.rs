@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplatesInput {
+pub struct ListTemplatesInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -10,11 +10,11 @@ pub struct ListTemplatesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of status values to filter on.</p>
-    pub status: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>>,
+    pub status: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateStatus>>,
 }
-impl ListTemplatesInput {
+impl  ListTemplatesInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -22,14 +22,15 @@ impl ListTemplatesInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of status values to filter on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
-    pub fn status(&self) -> &[crate::types::TemplateStatus] {
-        self.status.as_deref().unwrap_or_default()
+    pub fn status(&self) -> & [crate::types::TemplateStatus] {
+        self.status.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListTemplatesInput {
@@ -46,7 +47,7 @@ pub struct ListTemplatesInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) status: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>>,
+    pub(crate) status: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateStatus>>,
 }
 impl ListTemplatesInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -57,8 +58,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -85,8 +84,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,28 +97,32 @@ impl ListTemplatesInputBuilder {
     /// <p>A list of status values to filter on.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
-        v.push(input);
-        self.status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>>) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateStatus>>) -> Self {
+        self.status = input; self
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateStatus>> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
-            domain_id: self.domain_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_templates::ListTemplatesInput {
+                domain_id: self.domain_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

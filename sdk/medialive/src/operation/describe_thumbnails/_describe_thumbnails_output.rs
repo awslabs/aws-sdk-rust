@@ -3,24 +3,25 @@
 /// Placeholder documentation for DescribeThumbnailsResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThumbnailsOutput {
+pub struct DescribeThumbnailsOutput  {
     /// Placeholder documentation for __listOfThumbnailDetail
-    pub thumbnail_details: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
+    pub thumbnail_details: ::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailDetail>>,
     _request_id: Option<String>,
 }
-impl DescribeThumbnailsOutput {
+impl  DescribeThumbnailsOutput  {
     /// Placeholder documentation for __listOfThumbnailDetail
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbnail_details.is_none()`.
-    pub fn thumbnail_details(&self) -> &[crate::types::ThumbnailDetail] {
-        self.thumbnail_details.as_deref().unwrap_or_default()
+    pub fn thumbnail_details(&self) -> & [crate::types::ThumbnailDetail] {
+        self.thumbnail_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeThumbnailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeThumbnailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput).
     pub fn builder() -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeThumbnailsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThumbnailsOutputBuilder {
-    pub(crate) thumbnail_details: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
+    pub(crate) thumbnail_details: ::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeThumbnailsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeThumbnailsOutputBuilder {
     /// Placeholder documentation for __listOfThumbnailDetail
     pub fn thumbnail_details(mut self, input: crate::types::ThumbnailDetail) -> Self {
         let mut v = self.thumbnail_details.unwrap_or_default();
-        v.push(input);
-        self.thumbnail_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.thumbnail_details = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfThumbnailDetail
-    pub fn set_thumbnail_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>) -> Self {
-        self.thumbnail_details = input;
-        self
+    pub fn set_thumbnail_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailDetail>>) -> Self {
+        self.thumbnail_details = input; self
     }
     /// Placeholder documentation for __listOfThumbnailDetail
-    pub fn get_thumbnail_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>> {
+    pub fn get_thumbnail_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailDetail>> {
         &self.thumbnail_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput).
     pub fn build(self) -> crate::operation::describe_thumbnails::DescribeThumbnailsOutput {
         crate::operation::describe_thumbnails::DescribeThumbnailsOutput {
-            thumbnail_details: self.thumbnail_details,
+            thumbnail_details: self.thumbnail_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

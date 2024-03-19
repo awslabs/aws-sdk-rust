@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTopicOutput {
+pub struct UpdateTopicOutput  {
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
@@ -15,21 +15,21 @@ pub struct UpdateTopicOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl UpdateTopicOutput {
+impl  UpdateTopicOutput  {
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the topic refresh.</p>
-    pub fn refresh_arn(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_arn(&self) -> ::std::option::Option<& str> {
         self.refresh_arn.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -38,10 +38,10 @@ impl UpdateTopicOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateTopicOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateTopicOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTopicOutput`](crate::operation::update_topic::UpdateTopicOutput).
     pub fn builder() -> crate::operation::update_topic::builders::UpdateTopicOutputBuilder {
@@ -68,8 +68,7 @@ impl UpdateTopicOutputBuilder {
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl UpdateTopicOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl UpdateTopicOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the topic refresh.</p>
     pub fn set_refresh_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.refresh_arn = input;
-        self
+        self.refresh_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the topic refresh.</p>
     pub fn get_refresh_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl UpdateTopicOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,37 @@ impl UpdateTopicOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateTopicOutput`](crate::operation::update_topic::UpdateTopicOutput).
     pub fn build(self) -> crate::operation::update_topic::UpdateTopicOutput {
         crate::operation::update_topic::UpdateTopicOutput {
-            topic_id: self.topic_id,
-            arn: self.arn,
-            refresh_arn: self.refresh_arn,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            topic_id: self.topic_id
+            ,
+            arn: self.arn
+            ,
+            refresh_arn: self.refresh_arn
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

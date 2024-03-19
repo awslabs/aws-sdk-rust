@@ -3,7 +3,7 @@
 /// <p>The details of a single calculated attribute for a profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCalculatedAttributeForProfileItem {
+pub struct ListCalculatedAttributeForProfileItem  {
     /// <p>The unique name of the calculated attribute.</p>
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the calculated attribute.</p>
@@ -13,21 +13,21 @@ pub struct ListCalculatedAttributeForProfileItem {
     /// <p>The value of the calculated attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ListCalculatedAttributeForProfileItem {
+impl  ListCalculatedAttributeForProfileItem  {
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn calculated_attribute_name(&self) -> ::std::option::Option<& str> {
         self.calculated_attribute_name.as_deref()
     }
     /// <p>The display name of the calculated attribute.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
-    pub fn is_data_partial(&self) -> ::std::option::Option<&str> {
+    pub fn is_data_partial(&self) -> ::std::option::Option<& str> {
         self.is_data_partial.as_deref()
     }
     /// <p>The value of the calculated attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListCalculatedAttributeForProfileItemBuilder {
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculated_attribute_name = input;
-        self
+        self.calculated_attribute_name = input; self
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListCalculatedAttributeForProfileItemBuilder {
     }
     /// <p>The display name of the calculated attribute.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the calculated attribute.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListCalculatedAttributeForProfileItemBuilder {
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
     pub fn set_is_data_partial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.is_data_partial = input;
-        self
+        self.is_data_partial = input; self
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
     pub fn get_is_data_partial(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ListCalculatedAttributeForProfileItemBuilder {
     }
     /// <p>The value of the calculated attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the calculated attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ListCalculatedAttributeForProfileItemBuilder {
     /// Consumes the builder and constructs a [`ListCalculatedAttributeForProfileItem`](crate::types::ListCalculatedAttributeForProfileItem).
     pub fn build(self) -> crate::types::ListCalculatedAttributeForProfileItem {
         crate::types::ListCalculatedAttributeForProfileItem {
-            calculated_attribute_name: self.calculated_attribute_name,
-            display_name: self.display_name,
-            is_data_partial: self.is_data_partial,
-            value: self.value,
+            calculated_attribute_name: self.calculated_attribute_name
+            ,
+            display_name: self.display_name
+            ,
+            is_data_partial: self.is_data_partial
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

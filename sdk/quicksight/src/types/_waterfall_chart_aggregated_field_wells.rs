@@ -3,32 +3,35 @@
 /// <p>The field well configuration of a waterfall visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WaterfallChartAggregatedFieldWells {
+pub struct WaterfallChartAggregatedFieldWells  {
     /// <p>The category field wells of a waterfall visual.</p>
-    pub categories: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub categories: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
     /// <p>The value field wells of a waterfall visual.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    pub breakdowns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub breakdowns: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
 }
-impl WaterfallChartAggregatedFieldWells {
+impl  WaterfallChartAggregatedFieldWells  {
     /// <p>The category field wells of a waterfall visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
-    pub fn categories(&self) -> &[crate::types::DimensionField] {
-        self.categories.as_deref().unwrap_or_default()
+    pub fn categories(&self) -> & [crate::types::DimensionField] {
+        self.categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value field wells of a waterfall visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[crate::types::MeasureField] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [crate::types::MeasureField] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.breakdowns.is_none()`.
-    pub fn breakdowns(&self) -> &[crate::types::DimensionField] {
-        self.breakdowns.as_deref().unwrap_or_default()
+    pub fn breakdowns(&self) -> & [crate::types::DimensionField] {
+        self.breakdowns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl WaterfallChartAggregatedFieldWells {
@@ -42,9 +45,9 @@ impl WaterfallChartAggregatedFieldWells {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaterfallChartAggregatedFieldWellsBuilder {
-    pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    pub(crate) breakdowns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
+    pub(crate) breakdowns: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
 }
 impl WaterfallChartAggregatedFieldWellsBuilder {
     /// Appends an item to `categories`.
@@ -54,17 +57,16 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     /// <p>The category field wells of a waterfall visual.</p>
     pub fn categories(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.categories.unwrap_or_default();
-        v.push(input);
-        self.categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The category field wells of a waterfall visual.</p>
-    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.categories = input;
-        self
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>) -> Self {
+        self.categories = input; self
     }
     /// <p>The category field wells of a waterfall visual.</p>
-    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>> {
         &self.categories
     }
     /// Appends an item to `values`.
@@ -74,17 +76,16 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     /// <p>The value field wells of a waterfall visual.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value field wells of a waterfall visual.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value field wells of a waterfall visual.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>> {
         &self.values
     }
     /// Appends an item to `breakdowns`.
@@ -94,25 +95,28 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     /// <p>The breakdown field wells of a waterfall visual.</p>
     pub fn breakdowns(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.breakdowns.unwrap_or_default();
-        v.push(input);
-        self.breakdowns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.breakdowns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    pub fn set_breakdowns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.breakdowns = input;
-        self
+    pub fn set_breakdowns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>) -> Self {
+        self.breakdowns = input; self
     }
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    pub fn get_breakdowns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_breakdowns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>> {
         &self.breakdowns
     }
     /// Consumes the builder and constructs a [`WaterfallChartAggregatedFieldWells`](crate::types::WaterfallChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::WaterfallChartAggregatedFieldWells {
         crate::types::WaterfallChartAggregatedFieldWells {
-            categories: self.categories,
-            values: self.values,
-            breakdowns: self.breakdowns,
+            categories: self.categories
+            ,
+            values: self.values
+            ,
+            breakdowns: self.breakdowns
+            ,
         }
     }
 }
+

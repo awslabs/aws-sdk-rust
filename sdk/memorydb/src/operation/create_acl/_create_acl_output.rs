@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAclOutput {
+pub struct CreateAclOutput  {
     /// <p>The newly-created Access Control List.</p>
     pub acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
 }
-impl CreateAclOutput {
+impl  CreateAclOutput  {
     /// <p>The newly-created Access Control List.</p>
-    pub fn acl(&self) -> ::std::option::Option<&crate::types::Acl> {
+    pub fn acl(&self) -> ::std::option::Option<& crate::types::Acl> {
         self.acl.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateAclOutput`](crate::operation::create_acl::CreateAclOutput).
     pub fn builder() -> crate::operation::create_acl::builders::CreateAclOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateAclOutputBuilder {
     }
     /// <p>The newly-created Access Control List.</p>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::Acl>) -> Self {
-        self.acl = input;
-        self
+        self.acl = input; self
     }
     /// <p>The newly-created Access Control List.</p>
     pub fn get_acl(&self) -> &::std::option::Option<crate::types::Acl> {
         &self.acl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAclOutput`](crate::operation::create_acl::CreateAclOutput).
     pub fn build(self) -> crate::operation::create_acl::CreateAclOutput {
         crate::operation::create_acl::CreateAclOutput {
-            acl: self.acl,
+            acl: self.acl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

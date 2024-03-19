@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubmitAttachmentStateChangesInput {
+pub struct SubmitAttachmentStateChangesInput  {
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>Any attachments associated with the state change request.</p>
-    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentStateChange>>,
 }
-impl SubmitAttachmentStateChangesInput {
+impl  SubmitAttachmentStateChangesInput  {
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>Any attachments associated with the state change request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
-    pub fn attachments(&self) -> &[crate::types::AttachmentStateChange] {
-        self.attachments.as_deref().unwrap_or_default()
+    pub fn attachments(&self) -> & [crate::types::AttachmentStateChange] {
+        self.attachments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SubmitAttachmentStateChangesInput {
@@ -32,7 +33,7 @@ impl SubmitAttachmentStateChangesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
-    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentStateChange>>,
 }
 impl SubmitAttachmentStateChangesInputBuilder {
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
@@ -42,8 +43,7 @@ impl SubmitAttachmentStateChangesInputBuilder {
     }
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,29 +56,28 @@ impl SubmitAttachmentStateChangesInputBuilder {
     /// <p>Any attachments associated with the state change request.</p>
     pub fn attachments(mut self, input: crate::types::AttachmentStateChange) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentStateChange>>) -> Self {
+        self.attachments = input; self
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttachmentStateChange>> {
         &self.attachments
     }
     /// Consumes the builder and constructs a [`SubmitAttachmentStateChangesInput`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput {
-            cluster: self.cluster,
-            attachments: self.attachments,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput {
+                cluster: self.cluster
+                ,
+                attachments: self.attachments
+                ,
+            }
+        )
     }
 }
+

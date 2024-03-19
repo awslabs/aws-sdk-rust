@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFhirDatastoreInput {
+pub struct CreateFhirDatastoreInput  {
     /// <p>The user generated name for the data store.</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
@@ -14,39 +14,40 @@ pub struct CreateFhirDatastoreInput {
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Resource tags that are applied to a data store when it is created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
-impl CreateFhirDatastoreInput {
+impl  CreateFhirDatastoreInput  {
     /// <p>The user generated name for the data store.</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_name(&self) -> ::std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
-    pub fn datastore_type_version(&self) -> ::std::option::Option<&crate::types::FhirVersion> {
+    pub fn datastore_type_version(&self) -> ::std::option::Option<& crate::types::FhirVersion> {
         self.datastore_type_version.as_ref()
     }
     /// <p>The server-side encryption key configuration for a customer provided encryption key specified for creating a data store.</p>
-    pub fn sse_configuration(&self) -> ::std::option::Option<&crate::types::SseConfiguration> {
+    pub fn sse_configuration(&self) -> ::std::option::Option<& crate::types::SseConfiguration> {
         self.sse_configuration.as_ref()
     }
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
-    pub fn preload_data_config(&self) -> ::std::option::Option<&crate::types::PreloadDataConfig> {
+    pub fn preload_data_config(&self) -> ::std::option::Option<& crate::types::PreloadDataConfig> {
         self.preload_data_config.as_ref()
     }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Resource tags that are applied to a data store when it is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
-    pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
+    pub fn identity_provider_configuration(&self) -> ::std::option::Option<& crate::types::IdentityProviderConfiguration> {
         self.identity_provider_configuration.as_ref()
     }
 }
@@ -66,7 +67,7 @@ pub struct CreateFhirDatastoreInputBuilder {
     pub(crate) sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     pub(crate) preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl CreateFhirDatastoreInputBuilder {
@@ -77,8 +78,7 @@ impl CreateFhirDatastoreInputBuilder {
     }
     /// <p>The user generated name for the data store.</p>
     pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_name = input;
-        self
+        self.datastore_name = input; self
     }
     /// <p>The user generated name for the data store.</p>
     pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl CreateFhirDatastoreInputBuilder {
     }
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
     pub fn set_datastore_type_version(mut self, input: ::std::option::Option<crate::types::FhirVersion>) -> Self {
-        self.datastore_type_version = input;
-        self
+        self.datastore_type_version = input; self
     }
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
     pub fn get_datastore_type_version(&self) -> &::std::option::Option<crate::types::FhirVersion> {
@@ -106,8 +105,7 @@ impl CreateFhirDatastoreInputBuilder {
     }
     /// <p>The server-side encryption key configuration for a customer provided encryption key specified for creating a data store.</p>
     pub fn set_sse_configuration(mut self, input: ::std::option::Option<crate::types::SseConfiguration>) -> Self {
-        self.sse_configuration = input;
-        self
+        self.sse_configuration = input; self
     }
     /// <p>The server-side encryption key configuration for a customer provided encryption key specified for creating a data store.</p>
     pub fn get_sse_configuration(&self) -> &::std::option::Option<crate::types::SseConfiguration> {
@@ -120,8 +118,7 @@ impl CreateFhirDatastoreInputBuilder {
     }
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub fn set_preload_data_config(mut self, input: ::std::option::Option<crate::types::PreloadDataConfig>) -> Self {
-        self.preload_data_config = input;
-        self
+        self.preload_data_config = input; self
     }
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub fn get_preload_data_config(&self) -> &::std::option::Option<crate::types::PreloadDataConfig> {
@@ -134,8 +131,7 @@ impl CreateFhirDatastoreInputBuilder {
     }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,17 +144,16 @@ impl CreateFhirDatastoreInputBuilder {
     /// <p>Resource tags that are applied to a data store when it is created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Resource tags that are applied to a data store when it is created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Resource tags that are applied to a data store when it is created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
@@ -168,26 +163,32 @@ impl CreateFhirDatastoreInputBuilder {
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
     pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
-        self.identity_provider_configuration = input;
-        self
+        self.identity_provider_configuration = input; self
     }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         &self.identity_provider_configuration
     }
     /// Consumes the builder and constructs a [`CreateFhirDatastoreInput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_fhir_datastore::CreateFhirDatastoreInput {
-            datastore_name: self.datastore_name,
-            datastore_type_version: self.datastore_type_version,
-            sse_configuration: self.sse_configuration,
-            preload_data_config: self.preload_data_config,
-            client_token: self.client_token,
-            tags: self.tags,
-            identity_provider_configuration: self.identity_provider_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_fhir_datastore::CreateFhirDatastoreInput {
+                datastore_name: self.datastore_name
+                ,
+                datastore_type_version: self.datastore_type_version
+                ,
+                sse_configuration: self.sse_configuration
+                ,
+                preload_data_config: self.preload_data_config
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+                identity_provider_configuration: self.identity_provider_configuration
+                ,
+            }
+        )
     }
 }
+

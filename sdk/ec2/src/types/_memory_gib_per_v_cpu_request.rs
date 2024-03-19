@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemoryGiBPerVCpuRequest {
+pub struct MemoryGiBPerVCpuRequest  {
     /// <p>The minimum amount of memory per vCPU, in GiB. To specify no minimum limit, omit this parameter.</p>
     pub min: ::std::option::Option<f64>,
     /// <p>The maximum amount of memory per vCPU, in GiB. To specify no maximum limit, omit this parameter.</p>
     pub max: ::std::option::Option<f64>,
 }
-impl MemoryGiBPerVCpuRequest {
+impl  MemoryGiBPerVCpuRequest  {
     /// <p>The minimum amount of memory per vCPU, in GiB. To specify no minimum limit, omit this parameter.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
@@ -41,8 +41,7 @@ impl MemoryGiBPerVCpuRequestBuilder {
     }
     /// <p>The minimum amount of memory per vCPU, in GiB. To specify no minimum limit, omit this parameter.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum amount of memory per vCPU, in GiB. To specify no minimum limit, omit this parameter.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl MemoryGiBPerVCpuRequestBuilder {
     }
     /// <p>The maximum amount of memory per vCPU, in GiB. To specify no maximum limit, omit this parameter.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum amount of memory per vCPU, in GiB. To specify no maximum limit, omit this parameter.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl MemoryGiBPerVCpuRequestBuilder {
     /// Consumes the builder and constructs a [`MemoryGiBPerVCpuRequest`](crate::types::MemoryGiBPerVCpuRequest).
     pub fn build(self) -> crate::types::MemoryGiBPerVCpuRequest {
         crate::types::MemoryGiBPerVCpuRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

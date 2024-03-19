@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePackageImportJobInput {
+pub struct CreatePackageImportJobInput  {
     /// <p>A job type for the package import job.</p>
     pub job_type: ::std::option::Option<crate::types::PackageImportJobType>,
     /// <p>An input config for the package import job.</p>
@@ -12,30 +12,31 @@ pub struct CreatePackageImportJobInput {
     /// <p>A client token for the package import job.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the package import job.</p>
-    pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
+    pub job_tags: ::std::option::Option<::std::vec::Vec::<crate::types::JobResourceTags>>,
 }
-impl CreatePackageImportJobInput {
+impl  CreatePackageImportJobInput  {
     /// <p>A job type for the package import job.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::PackageImportJobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::PackageImportJobType> {
         self.job_type.as_ref()
     }
     /// <p>An input config for the package import job.</p>
-    pub fn input_config(&self) -> ::std::option::Option<&crate::types::PackageImportJobInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<& crate::types::PackageImportJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>An output config for the package import job.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::PackageImportJobOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::PackageImportJobOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>A client token for the package import job.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Tags for the package import job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
-    pub fn job_tags(&self) -> &[crate::types::JobResourceTags] {
-        self.job_tags.as_deref().unwrap_or_default()
+    pub fn job_tags(&self) -> & [crate::types::JobResourceTags] {
+        self.job_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreatePackageImportJobInput {
@@ -53,7 +54,7 @@ pub struct CreatePackageImportJobInputBuilder {
     pub(crate) input_config: ::std::option::Option<crate::types::PackageImportJobInputConfig>,
     pub(crate) output_config: ::std::option::Option<crate::types::PackageImportJobOutputConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
+    pub(crate) job_tags: ::std::option::Option<::std::vec::Vec::<crate::types::JobResourceTags>>,
 }
 impl CreatePackageImportJobInputBuilder {
     /// <p>A job type for the package import job.</p>
@@ -64,8 +65,7 @@ impl CreatePackageImportJobInputBuilder {
     }
     /// <p>A job type for the package import job.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::PackageImportJobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>A job type for the package import job.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::PackageImportJobType> {
@@ -79,8 +79,7 @@ impl CreatePackageImportJobInputBuilder {
     }
     /// <p>An input config for the package import job.</p>
     pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::PackageImportJobInputConfig>) -> Self {
-        self.input_config = input;
-        self
+        self.input_config = input; self
     }
     /// <p>An input config for the package import job.</p>
     pub fn get_input_config(&self) -> &::std::option::Option<crate::types::PackageImportJobInputConfig> {
@@ -94,8 +93,7 @@ impl CreatePackageImportJobInputBuilder {
     }
     /// <p>An output config for the package import job.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::PackageImportJobOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>An output config for the package import job.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::PackageImportJobOutputConfig> {
@@ -109,8 +107,7 @@ impl CreatePackageImportJobInputBuilder {
     }
     /// <p>A client token for the package import job.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A client token for the package import job.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,32 +120,34 @@ impl CreatePackageImportJobInputBuilder {
     /// <p>Tags for the package import job.</p>
     pub fn job_tags(mut self, input: crate::types::JobResourceTags) -> Self {
         let mut v = self.job_tags.unwrap_or_default();
-        v.push(input);
-        self.job_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags for the package import job.</p>
-    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>) -> Self {
-        self.job_tags = input;
-        self
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobResourceTags>>) -> Self {
+        self.job_tags = input; self
     }
     /// <p>Tags for the package import job.</p>
-    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobResourceTags>> {
         &self.job_tags
     }
     /// Consumes the builder and constructs a [`CreatePackageImportJobInput`](crate::operation::create_package_import_job::CreatePackageImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_package_import_job::CreatePackageImportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_package_import_job::CreatePackageImportJobInput {
-            job_type: self.job_type,
-            input_config: self.input_config,
-            output_config: self.output_config,
-            client_token: self.client_token,
-            job_tags: self.job_tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_package_import_job::CreatePackageImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_package_import_job::CreatePackageImportJobInput {
+                job_type: self.job_type
+                ,
+                input_config: self.input_config
+                ,
+                output_config: self.output_config
+                ,
+                client_token: self.client_token
+                ,
+                job_tags: self.job_tags
+                ,
+            }
+        )
     }
 }
+

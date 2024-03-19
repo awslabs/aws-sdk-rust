@@ -2,44 +2,47 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSignalCatalogInput {
+pub struct UpdateSignalCatalogInput  {
     /// <p>The name of the signal catalog to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the signal catalog to update.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of information about nodes to add to the signal catalog.</p>
-    pub nodes_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
+    pub nodes_to_add: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>,
     /// <p>A list of information about nodes to update in the signal catalog.</p>
-    pub nodes_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
+    pub nodes_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>,
     /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
-    pub nodes_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub nodes_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateSignalCatalogInput {
+impl  UpdateSignalCatalogInput  {
     /// <p>The name of the signal catalog to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the signal catalog to update.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of information about nodes to add to the signal catalog.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_add.is_none()`.
-    pub fn nodes_to_add(&self) -> &[crate::types::Node] {
-        self.nodes_to_add.as_deref().unwrap_or_default()
+    pub fn nodes_to_add(&self) -> & [crate::types::Node] {
+        self.nodes_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of information about nodes to update in the signal catalog.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_update.is_none()`.
-    pub fn nodes_to_update(&self) -> &[crate::types::Node] {
-        self.nodes_to_update.as_deref().unwrap_or_default()
+    pub fn nodes_to_update(&self) -> & [crate::types::Node] {
+        self.nodes_to_update.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_remove.is_none()`.
-    pub fn nodes_to_remove(&self) -> &[::std::string::String] {
-        self.nodes_to_remove.as_deref().unwrap_or_default()
+    pub fn nodes_to_remove(&self) -> & [::std::string::String] {
+        self.nodes_to_remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateSignalCatalogInput {
@@ -55,9 +58,9 @@ impl UpdateSignalCatalogInput {
 pub struct UpdateSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) nodes_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    pub(crate) nodes_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    pub(crate) nodes_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) nodes_to_add: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>,
+    pub(crate) nodes_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>,
+    pub(crate) nodes_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateSignalCatalogInputBuilder {
     /// <p>The name of the signal catalog to update.</p>
@@ -68,8 +71,7 @@ impl UpdateSignalCatalogInputBuilder {
     }
     /// <p>The name of the signal catalog to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the signal catalog to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +84,7 @@ impl UpdateSignalCatalogInputBuilder {
     }
     /// <p>A brief description of the signal catalog to update.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the signal catalog to update.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,17 +97,16 @@ impl UpdateSignalCatalogInputBuilder {
     /// <p>A list of information about nodes to add to the signal catalog.</p>
     pub fn nodes_to_add(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes_to_add.unwrap_or_default();
-        v.push(input);
-        self.nodes_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nodes_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about nodes to add to the signal catalog.</p>
-    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
-        self.nodes_to_add = input;
-        self
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>) -> Self {
+        self.nodes_to_add = input; self
     }
     /// <p>A list of information about nodes to add to the signal catalog.</p>
-    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Node>> {
         &self.nodes_to_add
     }
     /// Appends an item to `nodes_to_update`.
@@ -116,17 +116,16 @@ impl UpdateSignalCatalogInputBuilder {
     /// <p>A list of information about nodes to update in the signal catalog.</p>
     pub fn nodes_to_update(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes_to_update.unwrap_or_default();
-        v.push(input);
-        self.nodes_to_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nodes_to_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about nodes to update in the signal catalog.</p>
-    pub fn set_nodes_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
-        self.nodes_to_update = input;
-        self
+    pub fn set_nodes_to_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>) -> Self {
+        self.nodes_to_update = input; self
     }
     /// <p>A list of information about nodes to update in the signal catalog.</p>
-    pub fn get_nodes_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+    pub fn get_nodes_to_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Node>> {
         &self.nodes_to_update
     }
     /// Appends an item to `nodes_to_remove`.
@@ -136,30 +135,34 @@ impl UpdateSignalCatalogInputBuilder {
     /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
     pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.nodes_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.nodes_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
-    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.nodes_to_remove = input;
-        self
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.nodes_to_remove = input; self
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.</p>
-    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.nodes_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
-            name: self.name,
-            description: self.description,
-            nodes_to_add: self.nodes_to_add,
-            nodes_to_update: self.nodes_to_update,
-            nodes_to_remove: self.nodes_to_remove,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                nodes_to_add: self.nodes_to_add
+                ,
+                nodes_to_update: self.nodes_to_update
+                ,
+                nodes_to_remove: self.nodes_to_remove
+                ,
+            }
+        )
     }
 }
+

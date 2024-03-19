@@ -3,7 +3,7 @@
 /// <p>A structure that is used to specify a connection to create or update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionInput {
+pub struct ConnectionInput  {
     /// <p>The name of the connection. Connection will not function as expected without a name.</p>
     pub name: ::std::string::String,
     /// <p>The description of the connection.</p>
@@ -67,20 +67,19 @@ pub struct ConnectionInput {
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
     pub connection_type: crate::types::ConnectionType,
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub match_criteria: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection.</p>
-    pub connection_properties: ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
+    pub connection_properties: ::std::collections::HashMap::<crate::types::ConnectionPropertyKey, ::std::string::String>,
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
 }
-impl ConnectionInput {
+impl  ConnectionInput  {
     /// <p>The name of the connection. Connection will not function as expected without a name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the connection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the connection. Currently, these types are supported:</p>
@@ -140,21 +139,22 @@ impl ConnectionInput {
     /// <p><code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
-    pub fn connection_type(&self) -> &crate::types::ConnectionType {
+    pub fn connection_type(&self) -> & crate::types::ConnectionType {
         &self.connection_type
     }
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_criteria.is_none()`.
-    pub fn match_criteria(&self) -> &[::std::string::String] {
-        self.match_criteria.as_deref().unwrap_or_default()
+    pub fn match_criteria(&self) -> & [::std::string::String] {
+        self.match_criteria.as_deref()
+        .unwrap_or_default()
     }
     /// <p>These key-value pairs define parameters for the connection.</p>
-    pub fn connection_properties(&self) -> &::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String> {
+    pub fn connection_properties(&self) -> & ::std::collections::HashMap::<crate::types::ConnectionPropertyKey, ::std::string::String> {
         &self.connection_properties
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
-    pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
+    pub fn physical_connection_requirements(&self) -> ::std::option::Option<& crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
     }
 }
@@ -172,8 +172,8 @@ pub struct ConnectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
-    pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap::<crate::types::ConnectionPropertyKey, ::std::string::String>>,
     pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
 }
 impl ConnectionInputBuilder {
@@ -185,8 +185,7 @@ impl ConnectionInputBuilder {
     }
     /// <p>The name of the connection. Connection will not function as expected without a name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the connection. Connection will not function as expected without a name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +198,7 @@ impl ConnectionInputBuilder {
     }
     /// <p>The description of the connection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the connection.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +324,7 @@ impl ConnectionInputBuilder {
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
     pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>The type of the connection. Currently, these types are supported:</p>
     /// <ul>
@@ -396,17 +393,16 @@ impl ConnectionInputBuilder {
     /// <p>A list of criteria that can be used in selecting this connection.</p>
     pub fn match_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_criteria.unwrap_or_default();
-        v.push(input.into());
-        self.match_criteria = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.match_criteria = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub fn set_match_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.match_criteria = input;
-        self
+    pub fn set_match_criteria(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.match_criteria = input; self
     }
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub fn get_match_criteria(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_match_criteria(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.match_criteria
     }
     /// Adds a key-value pair to `connection_properties`.
@@ -416,22 +412,16 @@ impl ConnectionInputBuilder {
     /// <p>These key-value pairs define parameters for the connection.</p>
     pub fn connection_properties(mut self, k: crate::types::ConnectionPropertyKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.connection_properties.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.connection_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.connection_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>These key-value pairs define parameters for the connection.</p>
-    pub fn set_connection_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
-    ) -> Self {
-        self.connection_properties = input;
-        self
+    pub fn set_connection_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::ConnectionPropertyKey, ::std::string::String>>) -> Self {
+        self.connection_properties = input; self
     }
     /// <p>These key-value pairs define parameters for the connection.</p>
-    pub fn get_connection_properties(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
+    pub fn get_connection_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
@@ -441,8 +431,7 @@ impl ConnectionInputBuilder {
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn set_physical_connection_requirements(mut self, input: ::std::option::Option<crate::types::PhysicalConnectionRequirements>) -> Self {
-        self.physical_connection_requirements = input;
-        self
+        self.physical_connection_requirements = input; self
     }
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn get_physical_connection_requirements(&self) -> &::std::option::Option<crate::types::PhysicalConnectionRequirements> {
@@ -454,28 +443,31 @@ impl ConnectionInputBuilder {
     /// - [`connection_type`](crate::types::builders::ConnectionInputBuilder::connection_type)
     /// - [`connection_properties`](crate::types::builders::ConnectionInputBuilder::connection_properties)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectionInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConnectionInput",
-                )
-            })?,
-            description: self.description,
-            connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_type",
-                    "connection_type was not specified but it is required when building ConnectionInput",
-                )
-            })?,
-            match_criteria: self.match_criteria,
-            connection_properties: self.connection_properties.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_properties",
-                    "connection_properties was not specified but it is required when building ConnectionInput",
-                )
-            })?,
-            physical_connection_requirements: self.physical_connection_requirements,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectionInput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConnectionInput")
+                    )?
+                ,
+                description: self.description
+                ,
+                connection_type: self.connection_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_type", "connection_type was not specified but it is required when building ConnectionInput")
+                    )?
+                ,
+                match_criteria: self.match_criteria
+                ,
+                connection_properties: self.connection_properties
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_properties", "connection_properties was not specified but it is required when building ConnectionInput")
+                    )?
+                ,
+                physical_connection_requirements: self.physical_connection_requirements
+                ,
+            }
+        )
     }
 }
+

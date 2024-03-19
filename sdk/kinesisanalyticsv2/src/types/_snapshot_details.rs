@@ -3,7 +3,7 @@
 /// <p>Provides details about a snapshot of application state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotDetails {
+pub struct SnapshotDetails  {
     /// <p>The identifier for the application snapshot.</p>
     pub snapshot_name: ::std::string::String,
     /// <p>The status of the application snapshot.</p>
@@ -15,14 +15,13 @@ pub struct SnapshotDetails {
     /// <p>The Flink Runtime for the application snapshot.</p>
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
 }
-impl SnapshotDetails {
+impl  SnapshotDetails  {
     /// <p>The identifier for the application snapshot.</p>
-    pub fn snapshot_name(&self) -> &str {
-        use std::ops::Deref;
-        self.snapshot_name.deref()
+    pub fn snapshot_name(&self) -> & str {
+        use std::ops::Deref; self.snapshot_name.deref()
     }
     /// <p>The status of the application snapshot.</p>
-    pub fn snapshot_status(&self) -> &crate::types::SnapshotStatus {
+    pub fn snapshot_status(&self) -> & crate::types::SnapshotStatus {
         &self.snapshot_status
     }
     /// <p>The current application version ID when the snapshot was created.</p>
@@ -30,11 +29,11 @@ impl SnapshotDetails {
         self.application_version_id
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn snapshot_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn snapshot_creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
     /// <p>The Flink Runtime for the application snapshot.</p>
-    pub fn runtime_environment(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
+    pub fn runtime_environment(&self) -> ::std::option::Option<& crate::types::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The identifier for the application snapshot.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The identifier for the application snapshot.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The status of the application snapshot.</p>
     pub fn set_snapshot_status(mut self, input: ::std::option::Option<crate::types::SnapshotStatus>) -> Self {
-        self.snapshot_status = input;
-        self
+        self.snapshot_status = input; self
     }
     /// <p>The status of the application snapshot.</p>
     pub fn get_snapshot_status(&self) -> &::std::option::Option<crate::types::SnapshotStatus> {
@@ -94,8 +91,7 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The current application version ID when the snapshot was created.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>The current application version ID when the snapshot was created.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -108,8 +104,7 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The timestamp of the application snapshot.</p>
     pub fn set_snapshot_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.snapshot_creation_timestamp = input;
-        self
+        self.snapshot_creation_timestamp = input; self
     }
     /// <p>The timestamp of the application snapshot.</p>
     pub fn get_snapshot_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +117,7 @@ impl SnapshotDetailsBuilder {
     }
     /// <p>The Flink Runtime for the application snapshot.</p>
     pub fn set_runtime_environment(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
-        self.runtime_environment = input;
-        self
+        self.runtime_environment = input; self
     }
     /// <p>The Flink Runtime for the application snapshot.</p>
     pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
@@ -135,27 +129,29 @@ impl SnapshotDetailsBuilder {
     /// - [`snapshot_status`](crate::types::builders::SnapshotDetailsBuilder::snapshot_status)
     /// - [`application_version_id`](crate::types::builders::SnapshotDetailsBuilder::application_version_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SnapshotDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnapshotDetails {
-            snapshot_name: self.snapshot_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snapshot_name",
-                    "snapshot_name was not specified but it is required when building SnapshotDetails",
-                )
-            })?,
-            snapshot_status: self.snapshot_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snapshot_status",
-                    "snapshot_status was not specified but it is required when building SnapshotDetails",
-                )
-            })?,
-            application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version_id",
-                    "application_version_id was not specified but it is required when building SnapshotDetails",
-                )
-            })?,
-            snapshot_creation_timestamp: self.snapshot_creation_timestamp,
-            runtime_environment: self.runtime_environment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnapshotDetails {
+                snapshot_name: self.snapshot_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snapshot_name", "snapshot_name was not specified but it is required when building SnapshotDetails")
+                    )?
+                ,
+                snapshot_status: self.snapshot_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snapshot_status", "snapshot_status was not specified but it is required when building SnapshotDetails")
+                    )?
+                ,
+                application_version_id: self.application_version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version_id", "application_version_id was not specified but it is required when building SnapshotDetails")
+                    )?
+                ,
+                snapshot_creation_timestamp: self.snapshot_creation_timestamp
+                ,
+                runtime_environment: self.runtime_environment
+                ,
+            }
+        )
     }
 }
+

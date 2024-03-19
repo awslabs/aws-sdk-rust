@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMetadataModelImportInput {
+pub struct StartMetadataModelImportInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the database objects to import.</p>
@@ -12,17 +12,17 @@ pub struct StartMetadataModelImportInput {
     /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
     pub refresh: ::std::option::Option<bool>,
 }
-impl StartMetadataModelImportInput {
+impl  StartMetadataModelImportInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
-    pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_identifier(&self) -> ::std::option::Option<& str> {
         self.migration_project_identifier.as_deref()
     }
     /// <p>A value that specifies the database objects to import.</p>
-    pub fn selection_rules(&self) -> ::std::option::Option<&str> {
+    pub fn selection_rules(&self) -> ::std::option::Option<& str> {
         self.selection_rules.as_deref()
     }
     /// <p>Whether to load metadata to the source or target database.</p>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::OriginTypeValue> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::OriginTypeValue> {
         self.origin.as_ref()
     }
     /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
@@ -55,8 +55,7 @@ impl StartMetadataModelImportInputBuilder {
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_identifier = input;
-        self
+        self.migration_project_identifier = input; self
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartMetadataModelImportInputBuilder {
     }
     /// <p>A value that specifies the database objects to import.</p>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_rules = input;
-        self
+        self.selection_rules = input; self
     }
     /// <p>A value that specifies the database objects to import.</p>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StartMetadataModelImportInputBuilder {
     }
     /// <p>Whether to load metadata to the source or target database.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::OriginTypeValue>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>Whether to load metadata to the source or target database.</p>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::OriginTypeValue> {
@@ -99,25 +96,26 @@ impl StartMetadataModelImportInputBuilder {
     }
     /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
     pub fn set_refresh(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.refresh = input;
-        self
+        self.refresh = input; self
     }
     /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
     pub fn get_refresh(&self) -> &::std::option::Option<bool> {
         &self.refresh
     }
     /// Consumes the builder and constructs a [`StartMetadataModelImportInput`](crate::operation::start_metadata_model_import::StartMetadataModelImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_metadata_model_import::StartMetadataModelImportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_metadata_model_import::StartMetadataModelImportInput {
-            migration_project_identifier: self.migration_project_identifier,
-            selection_rules: self.selection_rules,
-            origin: self.origin,
-            refresh: self.refresh,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_metadata_model_import::StartMetadataModelImportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_metadata_model_import::StartMetadataModelImportInput {
+                migration_project_identifier: self.migration_project_identifier
+                ,
+                selection_rules: self.selection_rules
+                ,
+                origin: self.origin
+                ,
+                refresh: self.refresh
+                ,
+            }
+        )
     }
 }
+

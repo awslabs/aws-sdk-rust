@@ -3,7 +3,7 @@
 /// <p>The collection of settings used by an AutoML job V2 for the text classification problem type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextClassificationJobConfig {
+pub struct TextClassificationJobConfig  {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
@@ -11,17 +11,17 @@ pub struct TextClassificationJobConfig {
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
     pub target_label_column: ::std::option::Option<::std::string::String>,
 }
-impl TextClassificationJobConfig {
+impl  TextClassificationJobConfig  {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn completion_criteria(&self) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> ::std::option::Option<& crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
-    pub fn content_column(&self) -> ::std::option::Option<&str> {
+    pub fn content_column(&self) -> ::std::option::Option<& str> {
         self.content_column.as_deref()
     }
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
-    pub fn target_label_column(&self) -> ::std::option::Option<&str> {
+    pub fn target_label_column(&self) -> ::std::option::Option<& str> {
         self.target_label_column.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl TextClassificationJobConfigBuilder {
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn set_completion_criteria(mut self, input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
-        self.completion_criteria = input;
-        self
+        self.completion_criteria = input; self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn get_completion_criteria(&self) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
@@ -63,8 +62,7 @@ impl TextClassificationJobConfigBuilder {
     }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
     pub fn set_content_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_column = input;
-        self
+        self.content_column = input; self
     }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
     pub fn get_content_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl TextClassificationJobConfigBuilder {
     }
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
     pub fn set_target_label_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_label_column = input;
-        self
+        self.target_label_column = input; self
     }
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
     pub fn get_target_label_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl TextClassificationJobConfigBuilder {
     /// Consumes the builder and constructs a [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
     pub fn build(self) -> crate::types::TextClassificationJobConfig {
         crate::types::TextClassificationJobConfig {
-            completion_criteria: self.completion_criteria,
-            content_column: self.content_column,
-            target_label_column: self.target_label_column,
+            completion_criteria: self.completion_criteria
+            ,
+            content_column: self.content_column
+            ,
+            target_label_column: self.target_label_column
+            ,
         }
     }
 }
+

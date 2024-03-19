@@ -3,41 +3,43 @@
 /// <p>The active version of the dataview that is currently in use by this cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxDataviewActiveVersion {
+pub struct KxDataviewActiveVersion  {
     /// <p>A unique identifier for the changeset.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
     /// <p>The list of clusters that are currently using this dataview.</p>
-    pub attached_clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attached_clusters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The timestamp at which the dataview version was active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique identifier of the active version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl KxDataviewActiveVersion {
+impl  KxDataviewActiveVersion  {
     /// <p>A unique identifier for the changeset.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
-    pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
-        self.segment_configurations.as_deref().unwrap_or_default()
+    pub fn segment_configurations(&self) -> & [crate::types::KxDataviewSegmentConfiguration] {
+        self.segment_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of clusters that are currently using this dataview.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_clusters.is_none()`.
-    pub fn attached_clusters(&self) -> &[::std::string::String] {
-        self.attached_clusters.as_deref().unwrap_or_default()
+    pub fn attached_clusters(&self) -> & [::std::string::String] {
+        self.attached_clusters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp at which the dataview version was active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>A unique identifier of the active version.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -53,8 +55,8 @@ impl KxDataviewActiveVersion {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KxDataviewActiveVersionBuilder {
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
-    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
-    pub(crate) attached_clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
+    pub(crate) attached_clusters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
@@ -66,8 +68,7 @@ impl KxDataviewActiveVersionBuilder {
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl KxDataviewActiveVersionBuilder {
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
-        v.push(input);
-        self.segment_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
-        self.segment_configurations = input;
-        self
+    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
+        self.segment_configurations = input; self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
+    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
     /// Appends an item to `attached_clusters`.
@@ -100,17 +100,16 @@ impl KxDataviewActiveVersionBuilder {
     /// <p>The list of clusters that are currently using this dataview.</p>
     pub fn attached_clusters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attached_clusters.unwrap_or_default();
-        v.push(input.into());
-        self.attached_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attached_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of clusters that are currently using this dataview.</p>
-    pub fn set_attached_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attached_clusters = input;
-        self
+    pub fn set_attached_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attached_clusters = input; self
     }
     /// <p>The list of clusters that are currently using this dataview.</p>
-    pub fn get_attached_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attached_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attached_clusters
     }
     /// <p>The timestamp at which the dataview version was active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -120,8 +119,7 @@ impl KxDataviewActiveVersionBuilder {
     }
     /// <p>The timestamp at which the dataview version was active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the dataview version was active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -134,8 +132,7 @@ impl KxDataviewActiveVersionBuilder {
     }
     /// <p>A unique identifier of the active version.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>A unique identifier of the active version.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,11 +141,17 @@ impl KxDataviewActiveVersionBuilder {
     /// Consumes the builder and constructs a [`KxDataviewActiveVersion`](crate::types::KxDataviewActiveVersion).
     pub fn build(self) -> crate::types::KxDataviewActiveVersion {
         crate::types::KxDataviewActiveVersion {
-            changeset_id: self.changeset_id,
-            segment_configurations: self.segment_configurations,
-            attached_clusters: self.attached_clusters,
-            created_timestamp: self.created_timestamp,
-            version_id: self.version_id,
+            changeset_id: self.changeset_id
+            ,
+            segment_configurations: self.segment_configurations
+            ,
+            attached_clusters: self.attached_clusters
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

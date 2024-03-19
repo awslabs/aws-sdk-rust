@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSshPublicKeyInput {
+pub struct GetSshPublicKeyInput  {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -12,19 +12,19 @@ pub struct GetSshPublicKeyInput {
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
     pub encoding: ::std::option::Option<crate::types::EncodingType>,
 }
-impl GetSshPublicKeyInput {
+impl  GetSshPublicKeyInput  {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn ssh_public_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key_id(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key_id.as_deref()
     }
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
-    pub fn encoding(&self) -> ::std::option::Option<&crate::types::EncodingType> {
+    pub fn encoding(&self) -> ::std::option::Option<& crate::types::EncodingType> {
         self.encoding.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl GetSshPublicKeyInputBuilder {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -72,8 +71,7 @@ impl GetSshPublicKeyInputBuilder {
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_id = input;
-        self
+        self.ssh_public_key_id = input; self
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
@@ -88,21 +86,24 @@ impl GetSshPublicKeyInputBuilder {
     }
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
     pub fn set_encoding(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
-        self.encoding = input;
-        self
+        self.encoding = input; self
     }
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
     pub fn get_encoding(&self) -> &::std::option::Option<crate::types::EncodingType> {
         &self.encoding
     }
     /// Consumes the builder and constructs a [`GetSshPublicKeyInput`](crate::operation::get_ssh_public_key::GetSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_ssh_public_key::GetSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ssh_public_key::GetSshPublicKeyInput {
-            user_name: self.user_name,
-            ssh_public_key_id: self.ssh_public_key_id,
-            encoding: self.encoding,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ssh_public_key::GetSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ssh_public_key::GetSshPublicKeyInput {
+                user_name: self.user_name
+                ,
+                ssh_public_key_id: self.ssh_public_key_id
+                ,
+                encoding: self.encoding
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCatalogItems`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum page size.</p><br>
     ///   - [`item_class_filter(CatalogItemClass)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::item_class_filter) / [`set_item_class_filter(Option<Vec::<CatalogItemClass>>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::set_item_class_filter):<br>required: **false**<br><p>Filters the results by item class.</p><br>
     ///   - [`supported_storage_filter(SupportedStorageEnum)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::supported_storage_filter) / [`set_supported_storage_filter(Option<Vec::<SupportedStorageEnum>>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::set_supported_storage_filter):<br>required: **false**<br><p>Filters the results by storage option.</p><br>
     ///   - [`ec2_family_filter(impl Into<String>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::ec2_family_filter) / [`set_ec2_family_filter(Option<Vec::<String>>)`](crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::set_ec2_family_filter):<br>required: **false**<br><p>Filters the results by EC2 family (for example, M5).</p><br>
-    /// - On success, responds with [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput) with field(s):
+                            /// - On success, responds with [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput) with field(s):
     ///   - [`catalog_items(Option<Vec::<CatalogItem>>)`](crate::operation::list_catalog_items::ListCatalogItemsOutput::catalog_items): <p>Information about the catalog items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_catalog_items::ListCatalogItemsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListCatalogItemsError>`](crate::operation::list_catalog_items::ListCatalogItemsError)
+                            /// - On failure, responds with [`SdkError<ListCatalogItemsError>`](crate::operation::list_catalog_items::ListCatalogItemsError)
     pub fn list_catalog_items(&self) -> crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder {
-        crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

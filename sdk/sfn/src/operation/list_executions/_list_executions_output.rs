@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExecutionsOutput {
+pub struct ListExecutionsOutput  {
     /// <p>The list of matching executions.</p>
-    pub executions: ::std::vec::Vec<crate::types::ExecutionListItem>,
+    pub executions: ::std::vec::Vec::<crate::types::ExecutionListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListExecutionsOutput {
+impl  ListExecutionsOutput  {
     /// <p>The list of matching executions.</p>
-    pub fn executions(&self) -> &[crate::types::ExecutionListItem] {
-        use std::ops::Deref;
-        self.executions.deref()
+    pub fn executions(&self) -> & [crate::types::ExecutionListItem] {
+        use std::ops::Deref; self.executions.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
     pub fn builder() -> crate::operation::list_executions::builders::ListExecutionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutionsOutputBuilder {
-    pub(crate) executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>>,
+    pub(crate) executions: ::std::option::Option<::std::vec::Vec::<crate::types::ExecutionListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListExecutionsOutputBuilder {
     /// <p>The list of matching executions.</p>
     pub fn executions(mut self, input: crate::types::ExecutionListItem) -> Self {
         let mut v = self.executions.unwrap_or_default();
-        v.push(input);
-        self.executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of matching executions.</p>
-    pub fn set_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>>) -> Self {
-        self.executions = input;
-        self
+    pub fn set_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExecutionListItem>>) -> Self {
+        self.executions = input; self
     }
     /// <p>The list of matching executions.</p>
-    pub fn get_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>> {
+    pub fn get_executions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExecutionListItem>> {
         &self.executions
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -68,37 +66,37 @@ impl ListExecutionsOutputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`executions`](crate::operation::list_executions::builders::ListExecutionsOutputBuilder::executions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsOutput {
-            executions: self.executions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "executions",
-                    "executions was not specified but it is required when building ListExecutionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_executions::ListExecutionsOutput {
+                executions: self.executions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("executions", "executions was not specified but it is required when building ListExecutionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

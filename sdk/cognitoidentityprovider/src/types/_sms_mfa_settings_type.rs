@@ -3,13 +3,13 @@
 /// <p>The type used for enabling SMS multi-factor authentication (MFA) at the user level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmsMfaSettingsType {
+pub struct SmsMfaSettingsType  {
     /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     pub enabled: bool,
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
     pub preferred_mfa: bool,
 }
-impl SmsMfaSettingsType {
+impl  SmsMfaSettingsType  {
     /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -41,8 +41,7 @@ impl SmsMfaSettingsTypeBuilder {
     }
     /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl SmsMfaSettingsTypeBuilder {
     }
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
     pub fn set_preferred_mfa(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preferred_mfa = input;
-        self
+        self.preferred_mfa = input; self
     }
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
     pub fn get_preferred_mfa(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,13 @@ impl SmsMfaSettingsTypeBuilder {
     /// Consumes the builder and constructs a [`SmsMfaSettingsType`](crate::types::SmsMfaSettingsType).
     pub fn build(self) -> crate::types::SmsMfaSettingsType {
         crate::types::SmsMfaSettingsType {
-            enabled: self.enabled.unwrap_or_default(),
-            preferred_mfa: self.preferred_mfa.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            preferred_mfa: self.preferred_mfa
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

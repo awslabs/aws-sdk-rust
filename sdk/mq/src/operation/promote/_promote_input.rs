@@ -3,19 +3,19 @@
 /// <p>Promotes a data replication replica broker to the primary broker role.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PromoteInput {
+pub struct PromoteInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
     pub mode: ::std::option::Option<crate::types::PromoteMode>,
 }
-impl PromoteInput {
+impl  PromoteInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::PromoteMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::PromoteMode> {
         self.mode.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PromoteInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl PromoteInputBuilder {
     }
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PromoteMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::PromoteMode> {
@@ -66,9 +64,14 @@ impl PromoteInputBuilder {
     }
     /// Consumes the builder and constructs a [`PromoteInput`](crate::operation::promote::PromoteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::promote::PromoteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::promote::PromoteInput {
-            broker_id: self.broker_id,
-            mode: self.mode,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::promote::PromoteInput {
+                broker_id: self.broker_id
+                ,
+                mode: self.mode
+                ,
+            }
+        )
     }
 }
+

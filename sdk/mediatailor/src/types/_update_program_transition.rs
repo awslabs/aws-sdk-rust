@@ -3,13 +3,13 @@
 /// <p>Program transition configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProgramTransition {
+pub struct UpdateProgramTransition  {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
     pub scheduled_start_time_millis: ::std::option::Option<i64>,
     /// <p>The duration of the live program in seconds.</p>
     pub duration_millis: ::std::option::Option<i64>,
 }
-impl UpdateProgramTransition {
+impl  UpdateProgramTransition  {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
     pub fn scheduled_start_time_millis(&self) -> ::std::option::Option<i64> {
         self.scheduled_start_time_millis
@@ -41,8 +41,7 @@ impl UpdateProgramTransitionBuilder {
     }
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
     pub fn set_scheduled_start_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_start_time_millis = input;
-        self
+        self.scheduled_start_time_millis = input; self
     }
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
     pub fn get_scheduled_start_time_millis(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl UpdateProgramTransitionBuilder {
     }
     /// <p>The duration of the live program in seconds.</p>
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_millis = input;
-        self
+        self.duration_millis = input; self
     }
     /// <p>The duration of the live program in seconds.</p>
     pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl UpdateProgramTransitionBuilder {
     /// Consumes the builder and constructs a [`UpdateProgramTransition`](crate::types::UpdateProgramTransition).
     pub fn build(self) -> crate::types::UpdateProgramTransition {
         crate::types::UpdateProgramTransition {
-            scheduled_start_time_millis: self.scheduled_start_time_millis,
-            duration_millis: self.duration_millis,
+            scheduled_start_time_millis: self.scheduled_start_time_millis
+            ,
+            duration_millis: self.duration_millis
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The status of the ACL update</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcLsUpdateStatus {
+pub struct AcLsUpdateStatus  {
     /// <p>A list of ACLs pending to be applied.</p>
     pub acl_to_apply: ::std::option::Option<::std::string::String>,
 }
-impl AcLsUpdateStatus {
+impl  AcLsUpdateStatus  {
     /// <p>A list of ACLs pending to be applied.</p>
-    pub fn acl_to_apply(&self) -> ::std::option::Option<&str> {
+    pub fn acl_to_apply(&self) -> ::std::option::Option<& str> {
         self.acl_to_apply.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AcLsUpdateStatusBuilder {
     }
     /// <p>A list of ACLs pending to be applied.</p>
     pub fn set_acl_to_apply(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.acl_to_apply = input;
-        self
+        self.acl_to_apply = input; self
     }
     /// <p>A list of ACLs pending to be applied.</p>
     pub fn get_acl_to_apply(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AcLsUpdateStatusBuilder {
     /// Consumes the builder and constructs a [`AcLsUpdateStatus`](crate::types::AcLsUpdateStatus).
     pub fn build(self) -> crate::types::AcLsUpdateStatus {
         crate::types::AcLsUpdateStatus {
-            acl_to_apply: self.acl_to_apply,
+            acl_to_apply: self.acl_to_apply
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIdentityPropagationConfigInput {
+pub struct DeleteIdentityPropagationConfigInput  {
     /// <p>The ID of the Amazon Web Services account that you want to delete an identity propagation configuration from.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service that you want to delete the associated access scopes and authorized targets from.</p>
     pub service: ::std::option::Option<crate::types::ServiceType>,
 }
-impl DeleteIdentityPropagationConfigInput {
+impl  DeleteIdentityPropagationConfigInput  {
     /// <p>The ID of the Amazon Web Services account that you want to delete an identity propagation configuration from.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name of the Amazon Web Services service that you want to delete the associated access scopes and authorized targets from.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteIdentityPropagationConfigInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that you want to delete an identity propagation configuration from.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that you want to delete an identity propagation configuration from.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteIdentityPropagationConfigInputBuilder {
     }
     /// <p>The name of the Amazon Web Services service that you want to delete the associated access scopes and authorized targets from.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The name of the Amazon Web Services service that you want to delete the associated access scopes and authorized targets from.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceType> {
         &self.service
     }
     /// Consumes the builder and constructs a [`DeleteIdentityPropagationConfigInput`](crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigInput {
-                aws_account_id: self.aws_account_id,
-                service: self.service,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                service: self.service
+                ,
+            }
         )
     }
 }
+

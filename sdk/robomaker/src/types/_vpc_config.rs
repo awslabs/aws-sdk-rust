@@ -3,25 +3,25 @@
 /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConfig {
+pub struct VpcConfig  {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub subnets: ::std::vec::Vec<::std::string::String>,
+    pub subnets: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub assign_public_ip: bool,
 }
-impl VpcConfig {
+impl  VpcConfig  {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnets.deref()
+    pub fn subnets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnets.deref()
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn assign_public_ip(&self) -> bool {
@@ -39,8 +39,8 @@ impl VpcConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConfigBuilder {
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) assign_public_ip: ::std::option::Option<bool>,
 }
 impl VpcConfigBuilder {
@@ -51,17 +51,16 @@ impl VpcConfigBuilder {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnets
     }
     /// Appends an item to `security_groups`.
@@ -71,17 +70,16 @@ impl VpcConfigBuilder {
     /// <p>A list of one or more security groups IDs in your VPC.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
@@ -91,8 +89,7 @@ impl VpcConfigBuilder {
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn set_assign_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.assign_public_ip = input;
-        self
+        self.assign_public_ip = input; self
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn get_assign_public_ip(&self) -> &::std::option::Option<bool> {
@@ -102,15 +99,20 @@ impl VpcConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`subnets`](crate::types::builders::VpcConfigBuilder::subnets)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VpcConfig {
-            subnets: self.subnets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnets",
-                    "subnets was not specified but it is required when building VpcConfig",
-                )
-            })?,
-            security_groups: self.security_groups,
-            assign_public_ip: self.assign_public_ip.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::VpcConfig {
+                subnets: self.subnets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnets", "subnets was not specified but it is required when building VpcConfig")
+                    )?
+                ,
+                security_groups: self.security_groups
+                ,
+                assign_public_ip: self.assign_public_ip
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

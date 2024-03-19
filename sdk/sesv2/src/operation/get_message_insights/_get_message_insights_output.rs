@@ -3,7 +3,7 @@
 /// <p>Information about a message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetMessageInsightsOutput {
+pub struct GetMessageInsightsOutput  {
     /// <p>A unique identifier for the message.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The from address used to send the message.</p>
@@ -11,38 +11,40 @@ pub struct GetMessageInsightsOutput {
     /// <p>The subject line of the message.</p>
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
-    pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub email_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     /// <p>A set of insights associated with the message.</p>
-    pub insights: ::std::option::Option<::std::vec::Vec<crate::types::EmailInsights>>,
+    pub insights: ::std::option::Option<::std::vec::Vec::<crate::types::EmailInsights>>,
     _request_id: Option<String>,
 }
-impl GetMessageInsightsOutput {
+impl  GetMessageInsightsOutput  {
     /// <p>A unique identifier for the message.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The from address used to send the message.</p>
-    pub fn from_email_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_email_address(&self) -> ::std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The subject line of the message.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_tags.is_none()`.
-    pub fn email_tags(&self) -> &[crate::types::MessageTag] {
-        self.email_tags.as_deref().unwrap_or_default()
+    pub fn email_tags(&self) -> & [crate::types::MessageTag] {
+        self.email_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A set of insights associated with the message.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights.is_none()`.
-    pub fn insights(&self) -> &[crate::types::EmailInsights] {
-        self.insights.as_deref().unwrap_or_default()
+    pub fn insights(&self) -> & [crate::types::EmailInsights] {
+        self.insights.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for GetMessageInsightsOutput {
+impl  ::std::fmt::Debug for GetMessageInsightsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMessageInsightsOutput");
         formatter.field("message_id", &self.message_id);
@@ -55,10 +57,10 @@ impl ::std::fmt::Debug for GetMessageInsightsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetMessageInsightsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMessageInsightsOutput {
     /// Creates a new builder-style object to manufacture [`GetMessageInsightsOutput`](crate::operation::get_message_insights::GetMessageInsightsOutput).
     pub fn builder() -> crate::operation::get_message_insights::builders::GetMessageInsightsOutputBuilder {
@@ -73,8 +75,8 @@ pub struct GetMessageInsightsOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
-    pub(crate) email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
-    pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::EmailInsights>>,
+    pub(crate) email_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
+    pub(crate) insights: ::std::option::Option<::std::vec::Vec::<crate::types::EmailInsights>>,
     _request_id: Option<String>,
 }
 impl GetMessageInsightsOutputBuilder {
@@ -85,8 +87,7 @@ impl GetMessageInsightsOutputBuilder {
     }
     /// <p>A unique identifier for the message.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>A unique identifier for the message.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +100,7 @@ impl GetMessageInsightsOutputBuilder {
     }
     /// <p>The from address used to send the message.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_email_address = input;
-        self
+        self.from_email_address = input; self
     }
     /// <p>The from address used to send the message.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl GetMessageInsightsOutputBuilder {
     }
     /// <p>The subject line of the message.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject line of the message.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +126,16 @@ impl GetMessageInsightsOutputBuilder {
     /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
     pub fn email_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.email_tags.unwrap_or_default();
-        v.push(input);
-        self.email_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.email_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
-    pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
-        self.email_tags = input;
-        self
+    pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>) -> Self {
+        self.email_tags = input; self
     }
     /// <p>A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.</p>
-    pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>> {
         &self.email_tags
     }
     /// Appends an item to `insights`.
@@ -147,36 +145,40 @@ impl GetMessageInsightsOutputBuilder {
     /// <p>A set of insights associated with the message.</p>
     pub fn insights(mut self, input: crate::types::EmailInsights) -> Self {
         let mut v = self.insights.unwrap_or_default();
-        v.push(input);
-        self.insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of insights associated with the message.</p>
-    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmailInsights>>) -> Self {
-        self.insights = input;
-        self
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EmailInsights>>) -> Self {
+        self.insights = input; self
     }
     /// <p>A set of insights associated with the message.</p>
-    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailInsights>> {
+    pub fn get_insights(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EmailInsights>> {
         &self.insights
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMessageInsightsOutput`](crate::operation::get_message_insights::GetMessageInsightsOutput).
     pub fn build(self) -> crate::operation::get_message_insights::GetMessageInsightsOutput {
         crate::operation::get_message_insights::GetMessageInsightsOutput {
-            message_id: self.message_id,
-            from_email_address: self.from_email_address,
-            subject: self.subject,
-            email_tags: self.email_tags,
-            insights: self.insights,
+            message_id: self.message_id
+            ,
+            from_email_address: self.from_email_address
+            ,
+            subject: self.subject
+            ,
+            email_tags: self.email_tags
+            ,
+            insights: self.insights
+            ,
             _request_id: self._request_id,
         }
     }
@@ -193,3 +195,4 @@ impl ::std::fmt::Debug for GetMessageInsightsOutputBuilder {
         formatter.finish()
     }
 }
+

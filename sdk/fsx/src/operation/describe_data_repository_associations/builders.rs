@@ -5,56 +5,52 @@ pub use crate::operation::describe_data_repository_associations::_describe_data_
 
 impl DescribeDataRepositoryAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_data_repository_associations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_data_repository_associations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeDataRepositoryAssociations`.
-///
+/// 
 /// <p>Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository associations, if one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the request. Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and 2,15 file systems, excluding <code>scratch_1</code> deployment type.</p>
 /// <p>You can use filters to narrow the response to include just data repository associations for specific file systems (use the <code>file-system-id</code> filter with the ID of the file system) or caches (use the <code>file-cache-id</code> filter with the ID of the cache), or data repository associations for a specific repository type (use the <code>data-repository-type</code> filter with a value of <code>S3</code> or <code>NFS</code>). If you don't use filters, the response returns all data repository associations owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
 /// <p>When retrieving all data repository associations, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of data repository associations returned in a response. If more data repository associations remain, a <code>NextToken</code> value is returned in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder,
+                    inner: crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
-    > for DescribeDataRepositoryAssociationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
-            crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
+                    crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
+                > for DescribeDataRepositoryAssociationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
+                        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeDataRepositoryAssociationsFluentBuilder {
     /// Creates a new `DescribeDataRepositoryAssociations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
-        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput, crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator {
-        crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator {
+                                crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AssociationIds`.
     ///
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
@@ -126,12 +113,12 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_association_ids(input);
         self
     }
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_association_ids()
     }
     /// Appends an item to `Filters`.
@@ -144,12 +131,12 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>A list of <code>Filter</code> elements.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of <code>Filter</code> elements.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -181,3 +168,4 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

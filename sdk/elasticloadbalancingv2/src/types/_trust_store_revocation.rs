@@ -3,7 +3,7 @@
 /// <p>Information about a revocation file in use by a trust store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustStoreRevocation {
+pub struct TrustStoreRevocation  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revocation ID of the revocation file.</p>
@@ -13,9 +13,9 @@ pub struct TrustStoreRevocation {
     /// <p>The number of revoked certificates.</p>
     pub number_of_revoked_entries: ::std::option::Option<i64>,
 }
-impl TrustStoreRevocation {
+impl  TrustStoreRevocation  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The revocation ID of the revocation file.</p>
@@ -23,7 +23,7 @@ impl TrustStoreRevocation {
         self.revocation_id
     }
     /// <p>The type of revocation file.</p>
-    pub fn revocation_type(&self) -> ::std::option::Option<&crate::types::RevocationType> {
+    pub fn revocation_type(&self) -> ::std::option::Option<& crate::types::RevocationType> {
         self.revocation_type.as_ref()
     }
     /// <p>The number of revoked certificates.</p>
@@ -55,8 +55,7 @@ impl TrustStoreRevocationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TrustStoreRevocationBuilder {
     }
     /// <p>The revocation ID of the revocation file.</p>
     pub fn set_revocation_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revocation_id = input;
-        self
+        self.revocation_id = input; self
     }
     /// <p>The revocation ID of the revocation file.</p>
     pub fn get_revocation_id(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl TrustStoreRevocationBuilder {
     }
     /// <p>The type of revocation file.</p>
     pub fn set_revocation_type(mut self, input: ::std::option::Option<crate::types::RevocationType>) -> Self {
-        self.revocation_type = input;
-        self
+        self.revocation_type = input; self
     }
     /// <p>The type of revocation file.</p>
     pub fn get_revocation_type(&self) -> &::std::option::Option<crate::types::RevocationType> {
@@ -97,8 +94,7 @@ impl TrustStoreRevocationBuilder {
     }
     /// <p>The number of revoked certificates.</p>
     pub fn set_number_of_revoked_entries(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_revoked_entries = input;
-        self
+        self.number_of_revoked_entries = input; self
     }
     /// <p>The number of revoked certificates.</p>
     pub fn get_number_of_revoked_entries(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,15 @@ impl TrustStoreRevocationBuilder {
     /// Consumes the builder and constructs a [`TrustStoreRevocation`](crate::types::TrustStoreRevocation).
     pub fn build(self) -> crate::types::TrustStoreRevocation {
         crate::types::TrustStoreRevocation {
-            trust_store_arn: self.trust_store_arn,
-            revocation_id: self.revocation_id,
-            revocation_type: self.revocation_type,
-            number_of_revoked_entries: self.number_of_revoked_entries,
+            trust_store_arn: self.trust_store_arn
+            ,
+            revocation_id: self.revocation_id
+            ,
+            revocation_type: self.revocation_type
+            ,
+            number_of_revoked_entries: self.number_of_revoked_entries
+            ,
         }
     }
 }
+

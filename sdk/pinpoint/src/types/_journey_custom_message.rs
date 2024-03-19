@@ -3,13 +3,13 @@
 /// <p>Specifies the message content for a custom channel message that's sent to participants in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyCustomMessage {
+pub struct JourneyCustomMessage  {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
-impl JourneyCustomMessage {
+impl  JourneyCustomMessage  {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl JourneyCustomMessageBuilder {
     }
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl JourneyCustomMessageBuilder {
     }
     /// Consumes the builder and constructs a [`JourneyCustomMessage`](crate::types::JourneyCustomMessage).
     pub fn build(self) -> crate::types::JourneyCustomMessage {
-        crate::types::JourneyCustomMessage { data: self.data }
+        crate::types::JourneyCustomMessage {
+            data: self.data
+            ,
+        }
     }
 }
+

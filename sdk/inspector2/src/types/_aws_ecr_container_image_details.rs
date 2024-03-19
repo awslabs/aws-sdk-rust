@@ -3,11 +3,11 @@
 /// <p>The image details of the Amazon ECR container image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcrContainerImageDetails {
+pub struct AwsEcrContainerImageDetails  {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
     pub repository_name: ::std::string::String,
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub image_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The image author of the Amazon ECR container image.</p>
@@ -21,42 +21,40 @@ pub struct AwsEcrContainerImageDetails {
     /// <p>The platform of the Amazon ECR container image.</p>
     pub platform: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcrContainerImageDetails {
+impl  AwsEcrContainerImageDetails  {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> & str {
+        use std::ops::Deref; self.repository_name.deref()
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
-    pub fn image_tags(&self) -> &[::std::string::String] {
-        self.image_tags.as_deref().unwrap_or_default()
+    pub fn image_tags(&self) -> & [::std::string::String] {
+        self.image_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
-    pub fn pushed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn pushed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.pushed_at.as_ref()
     }
     /// <p>The image author of the Amazon ECR container image.</p>
-    pub fn author(&self) -> ::std::option::Option<&str> {
+    pub fn author(&self) -> ::std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
-    pub fn image_hash(&self) -> &str {
-        use std::ops::Deref;
-        self.image_hash.deref()
+    pub fn image_hash(&self) -> & str {
+        use std::ops::Deref; self.image_hash.deref()
     }
     /// <p>The registry for the Amazon ECR container image.</p>
-    pub fn registry(&self) -> &str {
-        use std::ops::Deref;
-        self.registry.deref()
+    pub fn registry(&self) -> & str {
+        use std::ops::Deref; self.registry.deref()
     }
     /// <p>The platform of the Amazon ECR container image.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
 }
@@ -72,7 +70,7 @@ impl AwsEcrContainerImageDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetailsBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
-    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) author: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
@@ -89,8 +87,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,17 +100,16 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// <p>The image tags attached to the Amazon ECR container image.</p>
     pub fn image_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
-        v.push(input.into());
-        self.image_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_tags = input;
-        self
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.image_tags = input; self
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.image_tags
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
@@ -123,8 +119,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub fn set_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.pushed_at = input;
-        self
+        self.pushed_at = input; self
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub fn get_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -137,8 +132,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The image author of the Amazon ECR container image.</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author = input;
-        self
+        self.author = input; self
     }
     /// <p>The image author of the Amazon ECR container image.</p>
     pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +145,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +159,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
     pub fn set_image_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_hash = input;
-        self
+        self.image_hash = input; self
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
     pub fn get_image_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +173,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The registry for the Amazon ECR container image.</p>
     pub fn set_registry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry = input;
-        self
+        self.registry = input; self
     }
     /// <p>The registry for the Amazon ECR container image.</p>
     pub fn get_registry(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +186,7 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,30 +198,35 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// - [`image_hash`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::image_hash)
     /// - [`registry`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::registry)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsEcrContainerImageDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsEcrContainerImageDetails {
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building AwsEcrContainerImageDetails",
-                )
-            })?,
-            image_tags: self.image_tags,
-            pushed_at: self.pushed_at,
-            author: self.author,
-            architecture: self.architecture,
-            image_hash: self.image_hash.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_hash",
-                    "image_hash was not specified but it is required when building AwsEcrContainerImageDetails",
-                )
-            })?,
-            registry: self.registry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registry",
-                    "registry was not specified but it is required when building AwsEcrContainerImageDetails",
-                )
-            })?,
-            platform: self.platform,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsEcrContainerImageDetails {
+                repository_name: self.repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_name", "repository_name was not specified but it is required when building AwsEcrContainerImageDetails")
+                    )?
+                ,
+                image_tags: self.image_tags
+                ,
+                pushed_at: self.pushed_at
+                ,
+                author: self.author
+                ,
+                architecture: self.architecture
+                ,
+                image_hash: self.image_hash
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_hash", "image_hash was not specified but it is required when building AwsEcrContainerImageDetails")
+                    )?
+                ,
+                registry: self.registry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registry", "registry was not specified but it is required when building AwsEcrContainerImageDetails")
+                    )?
+                ,
+                platform: self.platform
+                ,
+            }
+        )
     }
 }
+

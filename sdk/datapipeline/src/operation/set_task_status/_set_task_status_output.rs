@@ -3,14 +3,14 @@
 /// <p>Contains the output of SetTaskStatus.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTaskStatusOutput {
+pub struct SetTaskStatusOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for SetTaskStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetTaskStatusOutput {
     /// Creates a new builder-style object to manufacture [`SetTaskStatusOutput`](crate::operation::set_task_status::SetTaskStatusOutput).
     pub fn builder() -> crate::operation::set_task_status::builders::SetTaskStatusOutputBuilder {
@@ -26,14 +26,14 @@ pub struct SetTaskStatusOutputBuilder {
 }
 impl SetTaskStatusOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetTaskStatusOutput`](crate::operation::set_task_status::SetTaskStatusOutput).
     pub fn build(self) -> crate::operation::set_task_status::SetTaskStatusOutput {
         crate::operation::set_task_status::SetTaskStatusOutput {
@@ -41,3 +41,4 @@ impl SetTaskStatusOutputBuilder {
         }
     }
 }
+

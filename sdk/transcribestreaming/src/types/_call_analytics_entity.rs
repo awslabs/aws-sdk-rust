@@ -3,7 +3,7 @@
 /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, content, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CallAnalyticsEntity {
+pub struct CallAnalyticsEntity  {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
     pub begin_offset_millis: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
@@ -18,7 +18,7 @@ pub struct CallAnalyticsEntity {
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub confidence: ::std::option::Option<f64>,
 }
-impl CallAnalyticsEntity {
+impl  CallAnalyticsEntity  {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
     pub fn begin_offset_millis(&self) -> ::std::option::Option<i64> {
         self.begin_offset_millis
@@ -28,15 +28,15 @@ impl CallAnalyticsEntity {
         self.end_offset_millis
     }
     /// <p>The category of information identified. For example, <code>PII</code>.</p>
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The word or words that represent the identified entity.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
@@ -71,8 +71,7 @@ impl CallAnalyticsEntityBuilder {
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
     pub fn set_begin_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.begin_offset_millis = input;
-        self
+        self.begin_offset_millis = input; self
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
     pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i64> {
@@ -85,8 +84,7 @@ impl CallAnalyticsEntityBuilder {
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_offset_millis = input;
-        self
+        self.end_offset_millis = input; self
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
     pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
@@ -99,8 +97,7 @@ impl CallAnalyticsEntityBuilder {
     }
     /// <p>The category of information identified. For example, <code>PII</code>.</p>
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of information identified. For example, <code>PII</code>.</p>
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl CallAnalyticsEntityBuilder {
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl CallAnalyticsEntityBuilder {
     }
     /// <p>The word or words that represent the identified entity.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The word or words that represent the identified entity.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +138,7 @@ impl CallAnalyticsEntityBuilder {
     /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
@@ -154,12 +148,19 @@ impl CallAnalyticsEntityBuilder {
     /// Consumes the builder and constructs a [`CallAnalyticsEntity`](crate::types::CallAnalyticsEntity).
     pub fn build(self) -> crate::types::CallAnalyticsEntity {
         crate::types::CallAnalyticsEntity {
-            begin_offset_millis: self.begin_offset_millis,
-            end_offset_millis: self.end_offset_millis,
-            category: self.category,
-            r#type: self.r#type,
-            content: self.content,
-            confidence: self.confidence,
+            begin_offset_millis: self.begin_offset_millis
+            ,
+            end_offset_millis: self.end_offset_millis
+            ,
+            category: self.category
+            ,
+            r#type: self.r#type
+            ,
+            content: self.content
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

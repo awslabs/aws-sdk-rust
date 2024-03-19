@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplySchemaOutput {
+pub struct ApplySchemaOutput  {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     pub applied_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ApplySchemaOutput {
+impl  ApplySchemaOutput  {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn applied_schema_arn(&self) -> ::std::option::Option<& str> {
         self.applied_schema_arn.as_deref()
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ApplySchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ApplySchemaOutput {
     /// Creates a new builder-style object to manufacture [`ApplySchemaOutput`](crate::operation::apply_schema::ApplySchemaOutput).
     pub fn builder() -> crate::operation::apply_schema::builders::ApplySchemaOutputBuilder {
@@ -47,8 +47,7 @@ impl ApplySchemaOutputBuilder {
     }
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     pub fn set_applied_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.applied_schema_arn = input;
-        self
+        self.applied_schema_arn = input; self
     }
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     pub fn get_applied_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ApplySchemaOutputBuilder {
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ApplySchemaOutput`](crate::operation::apply_schema::ApplySchemaOutput).
     pub fn build(self) -> crate::operation::apply_schema::ApplySchemaOutput {
         crate::operation::apply_schema::ApplySchemaOutput {
-            applied_schema_arn: self.applied_schema_arn,
-            directory_arn: self.directory_arn,
+            applied_schema_arn: self.applied_schema_arn
+            ,
+            directory_arn: self.directory_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

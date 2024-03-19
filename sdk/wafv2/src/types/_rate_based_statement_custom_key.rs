@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateBasedStatementCustomKey {
+pub struct RateBasedStatementCustomKey  {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
     pub header: ::std::option::Option<crate::types::RateLimitHeader>,
     /// <p>Use the value of a cookie in the request as an aggregate key. Each distinct value in the cookie contributes to the aggregation instance. If you use a single cookie as your custom key, then each value fully defines an aggregation instance.</p>
@@ -30,46 +30,46 @@ pub struct RateBasedStatementCustomKey {
     /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance.</p>
     pub uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
 }
-impl RateBasedStatementCustomKey {
+impl  RateBasedStatementCustomKey  {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
-    pub fn header(&self) -> ::std::option::Option<&crate::types::RateLimitHeader> {
+    pub fn header(&self) -> ::std::option::Option<& crate::types::RateLimitHeader> {
         self.header.as_ref()
     }
     /// <p>Use the value of a cookie in the request as an aggregate key. Each distinct value in the cookie contributes to the aggregation instance. If you use a single cookie as your custom key, then each value fully defines an aggregation instance.</p>
-    pub fn cookie(&self) -> ::std::option::Option<&crate::types::RateLimitCookie> {
+    pub fn cookie(&self) -> ::std::option::Option<& crate::types::RateLimitCookie> {
         self.cookie.as_ref()
     }
     /// <p>Use the specified query argument as an aggregate key. Each distinct value for the named query argument contributes to the aggregation instance. If you use a single query argument as your custom key, then each value fully defines an aggregation instance.</p>
-    pub fn query_argument(&self) -> ::std::option::Option<&crate::types::RateLimitQueryArgument> {
+    pub fn query_argument(&self) -> ::std::option::Option<& crate::types::RateLimitQueryArgument> {
         self.query_argument.as_ref()
     }
     /// <p>Use the request's query string as an aggregate key. Each distinct string contributes to the aggregation instance. If you use just the query string as your custom key, then each string fully defines an aggregation instance.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&crate::types::RateLimitQueryString> {
+    pub fn query_string(&self) -> ::std::option::Option<& crate::types::RateLimitQueryString> {
         self.query_string.as_ref()
     }
     /// <p>Use the request's HTTP method as an aggregate key. Each distinct HTTP method contributes to the aggregation instance. If you use just the HTTP method as your custom key, then each method fully defines an aggregation instance.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&crate::types::RateLimitHttpMethod> {
+    pub fn http_method(&self) -> ::std::option::Option<& crate::types::RateLimitHttpMethod> {
         self.http_method.as_ref()
     }
     /// <p>Use the first IP address in an HTTP header as an aggregate key. Each distinct forwarded IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the forwarded IP address by specifying <code>FORWARDED_IP</code> in your rate-based statement's <code>AggregateKeyType</code>.</p>
     /// <p>With this option, you must specify the header to use in the rate-based rule's <code>ForwardedIPConfig</code> property.</p>
-    pub fn forwarded_ip(&self) -> ::std::option::Option<&crate::types::RateLimitForwardedIp> {
+    pub fn forwarded_ip(&self) -> ::std::option::Option<& crate::types::RateLimitForwardedIp> {
         self.forwarded_ip.as_ref()
     }
     /// <p>Use the request's originating IP address as an aggregate key. Each distinct IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the IP address by specifying <code>IP</code> in your rate-based statement's <code>AggregateKeyType</code>.</p>
-    pub fn ip(&self) -> ::std::option::Option<&crate::types::RateLimitIp> {
+    pub fn ip(&self) -> ::std::option::Option<& crate::types::RateLimitIp> {
         self.ip.as_ref()
     }
     /// <p>Use the specified label namespace as an aggregate key. Each distinct fully qualified label name that has the specified label namespace contributes to the aggregation instance. If you use just one label namespace as your custom key, then each label name fully defines an aggregation instance.</p>
     /// <p>This uses only labels that have been added to the request by rules that are evaluated before this rate-based rule in the web ACL.</p>
     /// <p>For information about label namespaces and names, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn label_namespace(&self) -> ::std::option::Option<&crate::types::RateLimitLabelNamespace> {
+    pub fn label_namespace(&self) -> ::std::option::Option<& crate::types::RateLimitLabelNamespace> {
         self.label_namespace.as_ref()
     }
     /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance.</p>
-    pub fn uri_path(&self) -> ::std::option::Option<&crate::types::RateLimitUriPath> {
+    pub fn uri_path(&self) -> ::std::option::Option<& crate::types::RateLimitUriPath> {
         self.uri_path.as_ref()
     }
 }
@@ -102,8 +102,7 @@ impl RateBasedStatementCustomKeyBuilder {
     }
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
     pub fn set_header(mut self, input: ::std::option::Option<crate::types::RateLimitHeader>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
     pub fn get_header(&self) -> &::std::option::Option<crate::types::RateLimitHeader> {
@@ -116,8 +115,7 @@ impl RateBasedStatementCustomKeyBuilder {
     }
     /// <p>Use the value of a cookie in the request as an aggregate key. Each distinct value in the cookie contributes to the aggregation instance. If you use a single cookie as your custom key, then each value fully defines an aggregation instance.</p>
     pub fn set_cookie(mut self, input: ::std::option::Option<crate::types::RateLimitCookie>) -> Self {
-        self.cookie = input;
-        self
+        self.cookie = input; self
     }
     /// <p>Use the value of a cookie in the request as an aggregate key. Each distinct value in the cookie contributes to the aggregation instance. If you use a single cookie as your custom key, then each value fully defines an aggregation instance.</p>
     pub fn get_cookie(&self) -> &::std::option::Option<crate::types::RateLimitCookie> {
@@ -130,8 +128,7 @@ impl RateBasedStatementCustomKeyBuilder {
     }
     /// <p>Use the specified query argument as an aggregate key. Each distinct value for the named query argument contributes to the aggregation instance. If you use a single query argument as your custom key, then each value fully defines an aggregation instance.</p>
     pub fn set_query_argument(mut self, input: ::std::option::Option<crate::types::RateLimitQueryArgument>) -> Self {
-        self.query_argument = input;
-        self
+        self.query_argument = input; self
     }
     /// <p>Use the specified query argument as an aggregate key. Each distinct value for the named query argument contributes to the aggregation instance. If you use a single query argument as your custom key, then each value fully defines an aggregation instance.</p>
     pub fn get_query_argument(&self) -> &::std::option::Option<crate::types::RateLimitQueryArgument> {
@@ -144,8 +141,7 @@ impl RateBasedStatementCustomKeyBuilder {
     }
     /// <p>Use the request's query string as an aggregate key. Each distinct string contributes to the aggregation instance. If you use just the query string as your custom key, then each string fully defines an aggregation instance.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<crate::types::RateLimitQueryString>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>Use the request's query string as an aggregate key. Each distinct string contributes to the aggregation instance. If you use just the query string as your custom key, then each string fully defines an aggregation instance.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<crate::types::RateLimitQueryString> {
@@ -158,8 +154,7 @@ impl RateBasedStatementCustomKeyBuilder {
     }
     /// <p>Use the request's HTTP method as an aggregate key. Each distinct HTTP method contributes to the aggregation instance. If you use just the HTTP method as your custom key, then each method fully defines an aggregation instance.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<crate::types::RateLimitHttpMethod>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>Use the request's HTTP method as an aggregate key. Each distinct HTTP method contributes to the aggregation instance. If you use just the HTTP method as your custom key, then each method fully defines an aggregation instance.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<crate::types::RateLimitHttpMethod> {
@@ -176,8 +171,7 @@ impl RateBasedStatementCustomKeyBuilder {
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the forwarded IP address by specifying <code>FORWARDED_IP</code> in your rate-based statement's <code>AggregateKeyType</code>.</p>
     /// <p>With this option, you must specify the header to use in the rate-based rule's <code>ForwardedIPConfig</code> property.</p>
     pub fn set_forwarded_ip(mut self, input: ::std::option::Option<crate::types::RateLimitForwardedIp>) -> Self {
-        self.forwarded_ip = input;
-        self
+        self.forwarded_ip = input; self
     }
     /// <p>Use the first IP address in an HTTP header as an aggregate key. Each distinct forwarded IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the forwarded IP address by specifying <code>FORWARDED_IP</code> in your rate-based statement's <code>AggregateKeyType</code>.</p>
@@ -194,8 +188,7 @@ impl RateBasedStatementCustomKeyBuilder {
     /// <p>Use the request's originating IP address as an aggregate key. Each distinct IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the IP address by specifying <code>IP</code> in your rate-based statement's <code>AggregateKeyType</code>.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<crate::types::RateLimitIp>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
     }
     /// <p>Use the request's originating IP address as an aggregate key. Each distinct IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the IP address by specifying <code>IP</code> in your rate-based statement's <code>AggregateKeyType</code>.</p>
@@ -213,8 +206,7 @@ impl RateBasedStatementCustomKeyBuilder {
     /// <p>This uses only labels that have been added to the request by rules that are evaluated before this rate-based rule in the web ACL.</p>
     /// <p>For information about label namespaces and names, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<crate::types::RateLimitLabelNamespace>) -> Self {
-        self.label_namespace = input;
-        self
+        self.label_namespace = input; self
     }
     /// <p>Use the specified label namespace as an aggregate key. Each distinct fully qualified label name that has the specified label namespace contributes to the aggregation instance. If you use just one label namespace as your custom key, then each label name fully defines an aggregation instance.</p>
     /// <p>This uses only labels that have been added to the request by rules that are evaluated before this rate-based rule in the web ACL.</p>
@@ -229,8 +221,7 @@ impl RateBasedStatementCustomKeyBuilder {
     }
     /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance.</p>
     pub fn set_uri_path(mut self, input: ::std::option::Option<crate::types::RateLimitUriPath>) -> Self {
-        self.uri_path = input;
-        self
+        self.uri_path = input; self
     }
     /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance.</p>
     pub fn get_uri_path(&self) -> &::std::option::Option<crate::types::RateLimitUriPath> {
@@ -239,15 +230,25 @@ impl RateBasedStatementCustomKeyBuilder {
     /// Consumes the builder and constructs a [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
     pub fn build(self) -> crate::types::RateBasedStatementCustomKey {
         crate::types::RateBasedStatementCustomKey {
-            header: self.header,
-            cookie: self.cookie,
-            query_argument: self.query_argument,
-            query_string: self.query_string,
-            http_method: self.http_method,
-            forwarded_ip: self.forwarded_ip,
-            ip: self.ip,
-            label_namespace: self.label_namespace,
-            uri_path: self.uri_path,
+            header: self.header
+            ,
+            cookie: self.cookie
+            ,
+            query_argument: self.query_argument
+            ,
+            query_string: self.query_string
+            ,
+            http_method: self.http_method
+            ,
+            forwarded_ip: self.forwarded_ip
+            ,
+            ip: self.ip
+            ,
+            label_namespace: self.label_namespace
+            ,
+            uri_path: self.uri_path
+            ,
         }
     }
 }
+

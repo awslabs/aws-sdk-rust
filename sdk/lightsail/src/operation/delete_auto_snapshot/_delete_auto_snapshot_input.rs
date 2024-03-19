@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAutoSnapshotInput {
+pub struct DeleteAutoSnapshotInput  {
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
     pub date: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAutoSnapshotInput {
+impl  DeleteAutoSnapshotInput  {
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
-    pub fn date(&self) -> ::std::option::Option<&str> {
+    pub fn date(&self) -> ::std::option::Option<& str> {
         self.date.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAutoSnapshotInputBuilder {
     }
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteAutoSnapshotInputBuilder {
     }
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
     pub fn get_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.date
     }
     /// Consumes the builder and constructs a [`DeleteAutoSnapshotInput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput {
-            resource_name: self.resource_name,
-            date: self.date,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput {
+                resource_name: self.resource_name
+                ,
+                date: self.date
+                ,
+            }
+        )
     }
 }
+

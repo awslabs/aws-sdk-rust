@@ -5,23 +5,20 @@ pub use crate::operation::send_message::_send_message_input::SendMessageInputBui
 
 impl SendMessageInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::send_message::SendMessageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_message::SendMessageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.send_message();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::send_message::SendMessageOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::send_message::SendMessageError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.send_message();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SendMessage`.
-///
+/// 
 /// <p>Delivers a message to the specified queue.</p><important>
 /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
 /// <p><code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code></p>
@@ -30,33 +27,32 @@ impl SendMessageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendMessageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_message::builders::SendMessageInputBuilder,
+                    inner: crate::operation::send_message::builders::SendMessageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::send_message::SendMessageOutput,
-        crate::operation::send_message::SendMessageError,
-    > for SendMessageFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::send_message::SendMessageOutput,
-            crate::operation::send_message::SendMessageError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::send_message::SendMessageOutput,
+                    crate::operation::send_message::SendMessageError,
+                > for SendMessageFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::send_message::SendMessageOutput,
+                        crate::operation::send_message::SendMessageError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SendMessageFluentBuilder {
     /// Creates a new `SendMessage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl SendMessageFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_message::SendMessageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_message::SendMessageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::send_message::SendMessage::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::send_message::SendMessage::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::send_message::SendMessageOutput,
-        crate::operation::send_message::SendMessageError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::send_message::SendMessageOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_message::SendMessageError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::send_message::SendMessage::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::send_message::SendMessage::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::send_message::SendMessageOutput, crate::operation::send_message::SendMessageError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,17 +172,12 @@ impl SendMessageFluentBuilder {
         self
     }
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn set_message_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
-    ) -> Self {
+    pub fn set_message_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>) -> Self {
         self.inner = self.inner.set_message_attributes(input);
         self
     }
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn get_message_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
+    pub fn get_message_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>> {
         self.inner.get_message_attributes()
     }
     /// Adds a key-value pair to `MessageSystemAttributes`.
@@ -210,11 +192,7 @@ impl SendMessageFluentBuilder {
     /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p></li>
     /// </ul>
     /// </important>
-    pub fn message_system_attributes(
-        mut self,
-        k: crate::types::MessageSystemAttributeNameForSends,
-        v: crate::types::MessageSystemAttributeValue,
-    ) -> Self {
+    pub fn message_system_attributes(mut self, k: crate::types::MessageSystemAttributeNameForSends, v: crate::types::MessageSystemAttributeValue) -> Self {
         self.inner = self.inner.message_system_attributes(k, v);
         self
     }
@@ -226,12 +204,7 @@ impl SendMessageFluentBuilder {
     /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p></li>
     /// </ul>
     /// </important>
-    pub fn set_message_system_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::MessageSystemAttributeNameForSends, crate::types::MessageSystemAttributeValue>,
-        >,
-    ) -> Self {
+    pub fn set_message_system_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::MessageSystemAttributeNameForSends, crate::types::MessageSystemAttributeValue>>) -> Self {
         self.inner = self.inner.set_message_system_attributes(input);
         self
     }
@@ -243,11 +216,7 @@ impl SendMessageFluentBuilder {
     /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p></li>
     /// </ul>
     /// </important>
-    pub fn get_message_system_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::MessageSystemAttributeNameForSends, crate::types::MessageSystemAttributeValue>,
-    > {
+    pub fn get_message_system_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::MessageSystemAttributeNameForSends, crate::types::MessageSystemAttributeValue>> {
         self.inner.get_message_system_attributes()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -387,3 +356,4 @@ impl SendMessageFluentBuilder {
         self.inner.get_message_group_id()
     }
 }
+

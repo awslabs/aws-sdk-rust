@@ -3,19 +3,19 @@
 /// <p>Contains a response headers policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicySummary {
+pub struct ResponseHeadersPolicySummary  {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub r#type: crate::types::ResponseHeadersPolicyType,
     /// <p>The response headers policy.</p>
     pub response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
 }
-impl ResponseHeadersPolicySummary {
+impl  ResponseHeadersPolicySummary  {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> &crate::types::ResponseHeadersPolicyType {
+    pub fn r#type(&self) -> & crate::types::ResponseHeadersPolicyType {
         &self.r#type
     }
     /// <p>The response headers policy.</p>
-    pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ResponseHeadersPolicySummaryBuilder {
     }
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyType> {
@@ -57,8 +56,7 @@ impl ResponseHeadersPolicySummaryBuilder {
     }
     /// <p>The response headers policy.</p>
     pub fn set_response_headers_policy(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
-        self.response_headers_policy = input;
-        self
+        self.response_headers_policy = input; self
     }
     /// <p>The response headers policy.</p>
     pub fn get_response_headers_policy(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
@@ -68,14 +66,17 @@ impl ResponseHeadersPolicySummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ResponseHeadersPolicySummaryBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicySummary {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ResponseHeadersPolicySummary",
-                )
-            })?,
-            response_headers_policy: self.response_headers_policy,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicySummary {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ResponseHeadersPolicySummary")
+                    )?
+                ,
+                response_headers_policy: self.response_headers_policy
+                ,
+            }
+        )
     }
 }
+

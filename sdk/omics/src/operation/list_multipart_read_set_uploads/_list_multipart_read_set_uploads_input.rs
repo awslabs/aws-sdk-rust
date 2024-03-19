@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMultipartReadSetUploadsInput {
+pub struct ListMultipartReadSetUploadsInput  {
     /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of multipart uploads returned in a page.</p>
@@ -10,9 +10,9 @@ pub struct ListMultipartReadSetUploadsInput {
     /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListMultipartReadSetUploadsInput {
+impl  ListMultipartReadSetUploadsInput  {
     /// <p>The Sequence Store ID used for the multipart uploads.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The maximum number of multipart uploads returned in a page.</p>
@@ -20,7 +20,7 @@ impl ListMultipartReadSetUploadsInput {
         self.max_results
     }
     /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
     }
     /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
     }
     /// <p>The maximum number of multipart uploads returned in a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of multipart uploads returned in a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListMultipartReadSetUploadsInputBuilder {
     }
     /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMultipartReadSetUploadsInput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput {
-            sequence_store_id: self.sequence_store_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput {
+                sequence_store_id: self.sequence_store_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

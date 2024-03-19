@@ -5,54 +5,50 @@ pub use crate::operation::get_event_prediction::_get_event_prediction_input::Get
 
 impl GetEventPredictionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_prediction::GetEventPredictionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_event_prediction::GetEventPredictionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_event_prediction();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_event_prediction::GetEventPredictionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_event_prediction::GetEventPredictionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_event_prediction();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetEventPrediction`.
-///
+/// 
 /// <p>Evaluates an event against a detector version. If a version ID is not provided, the detector’s (<code>ACTIVE</code>) version is used.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventPredictionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder,
+                    inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_event_prediction::GetEventPredictionOutput,
-        crate::operation::get_event_prediction::GetEventPredictionError,
-    > for GetEventPredictionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_event_prediction::GetEventPredictionOutput,
-            crate::operation::get_event_prediction::GetEventPredictionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_event_prediction::GetEventPredictionOutput,
+                    crate::operation::get_event_prediction::GetEventPredictionError,
+                > for GetEventPredictionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_event_prediction::GetEventPredictionOutput,
+                        crate::operation::get_event_prediction::GetEventPredictionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetEventPredictionFluentBuilder {
     /// Creates a new `GetEventPrediction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl GetEventPredictionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_prediction::GetEventPredictionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_event_prediction::GetEventPredictionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_event_prediction::GetEventPrediction::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_event_prediction::GetEventPrediction::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_event_prediction::GetEventPredictionOutput,
-        crate::operation::get_event_prediction::GetEventPredictionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_event_prediction::GetEventPredictionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_prediction::GetEventPredictionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_event_prediction::GetEventPrediction::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_event_prediction::GetEventPrediction::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_event_prediction::GetEventPredictionOutput, crate::operation::get_event_prediction::GetEventPredictionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The detector ID.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -174,12 +161,12 @@ impl GetEventPredictionFluentBuilder {
         self
     }
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Entity>>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Entity>> {
         self.inner.get_entities()
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
@@ -208,11 +195,7 @@ impl GetEventPredictionFluentBuilder {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p><b>For imported SageMaker models:</b></p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.</p>
-    pub fn event_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_variables(k.into(), v.into());
         self
     }
@@ -224,10 +207,7 @@ impl GetEventPredictionFluentBuilder {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p><b>For imported SageMaker models:</b></p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.</p>
-    pub fn set_event_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_variables(input);
         self
     }
@@ -239,7 +219,7 @@ impl GetEventPredictionFluentBuilder {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p><b>For imported SageMaker models:</b></p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.</p>
-    pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_event_variables()
     }
     /// Adds a key-value pair to `externalModelEndpointDataBlobs`.
@@ -247,26 +227,18 @@ impl GetEventPredictionFluentBuilder {
     /// To override the contents of this collection use [`set_external_model_endpoint_data_blobs`](Self::set_external_model_endpoint_data_blobs).
     ///
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
-    pub fn external_model_endpoint_data_blobs(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ModelEndpointDataBlob,
-    ) -> Self {
+    pub fn external_model_endpoint_data_blobs(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ModelEndpointDataBlob) -> Self {
         self.inner = self.inner.external_model_endpoint_data_blobs(k.into(), v);
         self
     }
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
-    pub fn set_external_model_endpoint_data_blobs(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>>,
-    ) -> Self {
+    pub fn set_external_model_endpoint_data_blobs(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ModelEndpointDataBlob>>) -> Self {
         self.inner = self.inner.set_external_model_endpoint_data_blobs(input);
         self
     }
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
-    pub fn get_external_model_endpoint_data_blobs(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>> {
+    pub fn get_external_model_endpoint_data_blobs(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ModelEndpointDataBlob>> {
         self.inner.get_external_model_endpoint_data_blobs()
     }
 }
+

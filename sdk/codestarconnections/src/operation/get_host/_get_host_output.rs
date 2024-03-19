@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHostOutput {
+pub struct GetHostOutput  {
     /// <p>The name of the requested host.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the requested host.</p>
@@ -15,33 +15,33 @@ pub struct GetHostOutput {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     _request_id: Option<String>,
 }
-impl GetHostOutput {
+impl  GetHostOutput  {
     /// <p>The name of the requested host.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the requested host.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The endpoint of the infrastructure represented by the requested host.</p>
-    pub fn provider_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn provider_endpoint(&self) -> ::std::option::Option<& str> {
         self.provider_endpoint.as_deref()
     }
     /// <p>The VPC configuration of the requested host.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetHostOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetHostOutput {
     /// Creates a new builder-style object to manufacture [`GetHostOutput`](crate::operation::get_host::GetHostOutput).
     pub fn builder() -> crate::operation::get_host::builders::GetHostOutputBuilder {
@@ -68,8 +68,7 @@ impl GetHostOutputBuilder {
     }
     /// <p>The name of the requested host.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the requested host.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetHostOutputBuilder {
     }
     /// <p>The status of the requested host.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the requested host.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl GetHostOutputBuilder {
     }
     /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -110,8 +107,7 @@ impl GetHostOutputBuilder {
     }
     /// <p>The endpoint of the infrastructure represented by the requested host.</p>
     pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_endpoint = input;
-        self
+        self.provider_endpoint = input; self
     }
     /// <p>The endpoint of the infrastructure represented by the requested host.</p>
     pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,36 @@ impl GetHostOutputBuilder {
     }
     /// <p>The VPC configuration of the requested host.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>The VPC configuration of the requested host.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
         &self.vpc_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetHostOutput`](crate::operation::get_host::GetHostOutput).
     pub fn build(self) -> crate::operation::get_host::GetHostOutput {
         crate::operation::get_host::GetHostOutput {
-            name: self.name,
-            status: self.status,
-            provider_type: self.provider_type,
-            provider_endpoint: self.provider_endpoint,
-            vpc_configuration: self.vpc_configuration,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            provider_type: self.provider_type
+            ,
+            provider_endpoint: self.provider_endpoint
+            ,
+            vpc_configuration: self.vpc_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The object used for specifying the data range that the customer wants Amazon Lex to read through in the input transcripts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateRangeFilter {
+pub struct DateRangeFilter  {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
     pub start_date_time: ::aws_smithy_types::DateTime,
     /// <p>A timestamp indicating the end date for the date range filter.</p>
     pub end_date_time: ::aws_smithy_types::DateTime,
 }
-impl DateRangeFilter {
+impl  DateRangeFilter  {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    pub fn start_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_date_time
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    pub fn end_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_date_time
     }
 }
@@ -42,8 +42,7 @@ impl DateRangeFilterBuilder {
     }
     /// <p>A timestamp indicating the start date for the date range filter.</p>
     pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input;
-        self
+        self.start_date_time = input; self
     }
     /// <p>A timestamp indicating the start date for the date range filter.</p>
     pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -57,8 +56,7 @@ impl DateRangeFilterBuilder {
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,19 +67,20 @@ impl DateRangeFilterBuilder {
     /// - [`start_date_time`](crate::types::builders::DateRangeFilterBuilder::start_date_time)
     /// - [`end_date_time`](crate::types::builders::DateRangeFilterBuilder::end_date_time)
     pub fn build(self) -> ::std::result::Result<crate::types::DateRangeFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateRangeFilter {
-            start_date_time: self.start_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_date_time",
-                    "start_date_time was not specified but it is required when building DateRangeFilter",
-                )
-            })?,
-            end_date_time: self.end_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_date_time",
-                    "end_date_time was not specified but it is required when building DateRangeFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateRangeFilter {
+                start_date_time: self.start_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_date_time", "start_date_time was not specified but it is required when building DateRangeFilter")
+                    )?
+                ,
+                end_date_time: self.end_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_date_time", "end_date_time was not specified but it is required when building DateRangeFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

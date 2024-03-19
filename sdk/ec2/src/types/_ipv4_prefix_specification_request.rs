@@ -3,13 +3,13 @@
 /// <p>Describes the IPv4 prefix option for a network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ipv4PrefixSpecificationRequest {
+pub struct Ipv4PrefixSpecificationRequest  {
     /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html"> Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
-impl Ipv4PrefixSpecificationRequest {
+impl  Ipv4PrefixSpecificationRequest  {
     /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html"> Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn ipv4_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ipv4_prefix(&self) -> ::std::option::Option<& str> {
         self.ipv4_prefix.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl Ipv4PrefixSpecificationRequestBuilder {
     }
     /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html"> Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_ipv4_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv4_prefix = input;
-        self
+        self.ipv4_prefix = input; self
     }
     /// <p>The IPv4 prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html"> Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_ipv4_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl Ipv4PrefixSpecificationRequestBuilder {
     /// Consumes the builder and constructs a [`Ipv4PrefixSpecificationRequest`](crate::types::Ipv4PrefixSpecificationRequest).
     pub fn build(self) -> crate::types::Ipv4PrefixSpecificationRequest {
         crate::types::Ipv4PrefixSpecificationRequest {
-            ipv4_prefix: self.ipv4_prefix,
+            ipv4_prefix: self.ipv4_prefix
+            ,
         }
     }
 }
+

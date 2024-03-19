@@ -3,11 +3,11 @@
 /// <p>Contains information about an unused access analyzer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnusedAccessConfiguration {
+pub struct UnusedAccessConfiguration  {
     /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
     pub unused_access_age: ::std::option::Option<i32>,
 }
-impl UnusedAccessConfiguration {
+impl  UnusedAccessConfiguration  {
     /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
     pub fn unused_access_age(&self) -> ::std::option::Option<i32> {
         self.unused_access_age
@@ -34,8 +34,7 @@ impl UnusedAccessConfigurationBuilder {
     }
     /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
     pub fn set_unused_access_age(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unused_access_age = input;
-        self
+        self.unused_access_age = input; self
     }
     /// <p>The specified access age in days for which to generate findings for unused access. For example, if you specify 90 days, the analyzer will generate findings for IAM entities within the accounts of the selected organization for any access that hasn't been used in 90 or more days since the analyzer's last scan. You can choose a value between 1 and 180 days.</p>
     pub fn get_unused_access_age(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl UnusedAccessConfigurationBuilder {
     /// Consumes the builder and constructs a [`UnusedAccessConfiguration`](crate::types::UnusedAccessConfiguration).
     pub fn build(self) -> crate::types::UnusedAccessConfiguration {
         crate::types::UnusedAccessConfiguration {
-            unused_access_age: self.unused_access_age,
+            unused_access_age: self.unused_access_age
+            ,
         }
     }
 }
+

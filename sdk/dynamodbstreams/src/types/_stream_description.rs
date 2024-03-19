@@ -3,7 +3,7 @@
 /// <p>Represents all of the data describing a particular stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamDescription {
+pub struct StreamDescription  {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -46,17 +46,17 @@ pub struct StreamDescription {
     /// <p>The DynamoDB table with which the stream is associated.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>>,
     /// <p>The shards that comprise the stream.</p>
-    pub shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
+    pub shards: ::std::option::Option<::std::vec::Vec::<crate::types::Shard>>,
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub last_evaluated_shard_id: ::std::option::Option<::std::string::String>,
 }
-impl StreamDescription {
+impl  StreamDescription  {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -69,7 +69,7 @@ impl StreamDescription {
     /// <li>
     /// <p>the <code>StreamLabel</code></p></li>
     /// </ul>
-    pub fn stream_label(&self) -> ::std::option::Option<&str> {
+    pub fn stream_label(&self) -> ::std::option::Option<& str> {
         self.stream_label.as_deref()
     }
     /// <p>Indicates the current status of the stream:</p>
@@ -83,7 +83,7 @@ impl StreamDescription {
     /// <li>
     /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
     /// </ul>
-    pub fn stream_status(&self) -> ::std::option::Option<&crate::types::StreamStatus> {
+    pub fn stream_status(&self) -> ::std::option::Option<& crate::types::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p>Indicates the format of the records within this stream:</p>
@@ -97,33 +97,35 @@ impl StreamDescription {
     /// <li>
     /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
     /// </ul>
-    pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
+    pub fn stream_view_type(&self) -> ::std::option::Option<& crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn creation_request_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_request_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_request_date_time.as_ref()
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
-    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
-        self.key_schema.as_deref().unwrap_or_default()
+    pub fn key_schema(&self) -> & [crate::types::KeySchemaElement] {
+        self.key_schema.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The shards that comprise the stream.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shards.is_none()`.
-    pub fn shards(&self) -> &[crate::types::Shard] {
-        self.shards.as_deref().unwrap_or_default()
+    pub fn shards(&self) -> & [crate::types::Shard] {
+        self.shards.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
-    pub fn last_evaluated_shard_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_evaluated_shard_id(&self) -> ::std::option::Option<& str> {
         self.last_evaluated_shard_id.as_deref()
     }
 }
@@ -144,8 +146,8 @@ pub struct StreamDescriptionBuilder {
     pub(crate) stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
     pub(crate) creation_request_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
-    pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>>,
+    pub(crate) shards: ::std::option::Option<::std::vec::Vec::<crate::types::Shard>>,
     pub(crate) last_evaluated_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl StreamDescriptionBuilder {
@@ -156,8 +158,7 @@ impl StreamDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +189,7 @@ impl StreamDescriptionBuilder {
     /// <p>the <code>StreamLabel</code></p></li>
     /// </ul>
     pub fn set_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_label = input;
-        self
+        self.stream_label = input; self
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -231,8 +231,7 @@ impl StreamDescriptionBuilder {
     /// <p><code>DISABLED</code> - the stream is disabled.</p></li>
     /// </ul>
     pub fn set_stream_status(mut self, input: ::std::option::Option<crate::types::StreamStatus>) -> Self {
-        self.stream_status = input;
-        self
+        self.stream_status = input; self
     }
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
@@ -275,8 +274,7 @@ impl StreamDescriptionBuilder {
     /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p></li>
     /// </ul>
     pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
-        self.stream_view_type = input;
-        self
+        self.stream_view_type = input; self
     }
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
@@ -299,8 +297,7 @@ impl StreamDescriptionBuilder {
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
     pub fn set_creation_request_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_request_date_time = input;
-        self
+        self.creation_request_date_time = input; self
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
     pub fn get_creation_request_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -313,8 +310,7 @@ impl StreamDescriptionBuilder {
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,17 +323,16 @@ impl StreamDescriptionBuilder {
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
-        v.push(input);
-        self.key_schema = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_schema = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
-        self.key_schema = input;
-        self
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>>) -> Self {
+        self.key_schema = input; self
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>> {
         &self.key_schema
     }
     /// Appends an item to `shards`.
@@ -347,17 +342,16 @@ impl StreamDescriptionBuilder {
     /// <p>The shards that comprise the stream.</p>
     pub fn shards(mut self, input: crate::types::Shard) -> Self {
         let mut v = self.shards.unwrap_or_default();
-        v.push(input);
-        self.shards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The shards that comprise the stream.</p>
-    pub fn set_shards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>) -> Self {
-        self.shards = input;
-        self
+    pub fn set_shards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Shard>>) -> Self {
+        self.shards = input; self
     }
     /// <p>The shards that comprise the stream.</p>
-    pub fn get_shards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Shard>> {
+    pub fn get_shards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Shard>> {
         &self.shards
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
@@ -371,8 +365,7 @@ impl StreamDescriptionBuilder {
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub fn set_last_evaluated_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_evaluated_shard_id = input;
-        self
+        self.last_evaluated_shard_id = input; self
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
@@ -383,15 +376,25 @@ impl StreamDescriptionBuilder {
     /// Consumes the builder and constructs a [`StreamDescription`](crate::types::StreamDescription).
     pub fn build(self) -> crate::types::StreamDescription {
         crate::types::StreamDescription {
-            stream_arn: self.stream_arn,
-            stream_label: self.stream_label,
-            stream_status: self.stream_status,
-            stream_view_type: self.stream_view_type,
-            creation_request_date_time: self.creation_request_date_time,
-            table_name: self.table_name,
-            key_schema: self.key_schema,
-            shards: self.shards,
-            last_evaluated_shard_id: self.last_evaluated_shard_id,
+            stream_arn: self.stream_arn
+            ,
+            stream_label: self.stream_label
+            ,
+            stream_status: self.stream_status
+            ,
+            stream_view_type: self.stream_view_type
+            ,
+            creation_request_date_time: self.creation_request_date_time
+            ,
+            table_name: self.table_name
+            ,
+            key_schema: self.key_schema
+            ,
+            shards: self.shards
+            ,
+            last_evaluated_shard_id: self.last_evaluated_shard_id
+            ,
         }
     }
 }
+

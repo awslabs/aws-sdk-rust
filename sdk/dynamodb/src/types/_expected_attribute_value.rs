@@ -10,7 +10,7 @@
 /// <p><code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpectedAttributeValue {
+pub struct ExpectedAttributeValue  {
     /// <p>Represents the data for the expected attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -93,13 +93,13 @@ pub struct ExpectedAttributeValue {
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub attribute_value_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
+    pub attribute_value_list: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>>,
 }
-impl ExpectedAttributeValue {
+impl  ExpectedAttributeValue  {
     /// <p>Represents the data for the expected attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.value.as_ref()
     }
     /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
@@ -176,7 +176,7 @@ impl ExpectedAttributeValue {
     /// <p><code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value.</p>
     /// <p><code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code></p></li>
     /// </ul>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
@@ -184,10 +184,11 @@ impl ExpectedAttributeValue {
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_value_list.is_none()`.
-    pub fn attribute_value_list(&self) -> &[crate::types::AttributeValue] {
-        self.attribute_value_list.as_deref().unwrap_or_default()
+    pub fn attribute_value_list(&self) -> & [crate::types::AttributeValue] {
+        self.attribute_value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExpectedAttributeValue {
@@ -204,7 +205,7 @@ pub struct ExpectedAttributeValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) exists: ::std::option::Option<bool>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
-    pub(crate) attribute_value_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
+    pub(crate) attribute_value_list: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>>,
 }
 impl ExpectedAttributeValueBuilder {
     /// <p>Represents the data for the expected attribute.</p>
@@ -218,8 +219,7 @@ impl ExpectedAttributeValueBuilder {
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Represents the data for the expected attribute.</p>
     /// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
@@ -262,8 +262,7 @@ impl ExpectedAttributeValueBuilder {
     /// <p><code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>. (You cannot expect an attribute to have a value, while also expecting it not to exist.)</p></li>
     /// </ul>
     pub fn set_exists(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exists = input;
-        self
+        self.exists = input; self
     }
     /// <p>Causes DynamoDB to evaluate the value before attempting a conditional operation:</p>
     /// <ul>
@@ -400,8 +399,7 @@ impl ExpectedAttributeValueBuilder {
     /// <p><code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code></p></li>
     /// </ul>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>A comparator for evaluating attributes in the <code>AttributeValueList</code>. For example, equals, greater than, less than, etc.</p>
     /// <p>The following comparison operators are available:</p>
@@ -473,34 +471,38 @@ impl ExpectedAttributeValueBuilder {
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attribute_value_list(mut self, input: crate::types::AttributeValue) -> Self {
         let mut v = self.attribute_value_list.unwrap_or_default();
-        v.push(input);
-        self.attribute_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_attribute_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>) -> Self {
-        self.attribute_value_list = input;
-        self
+    pub fn set_attribute_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>>) -> Self {
+        self.attribute_value_list = input; self
     }
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn get_attribute_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
+    pub fn get_attribute_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>> {
         &self.attribute_value_list
     }
     /// Consumes the builder and constructs a [`ExpectedAttributeValue`](crate::types::ExpectedAttributeValue).
     pub fn build(self) -> crate::types::ExpectedAttributeValue {
         crate::types::ExpectedAttributeValue {
-            value: self.value,
-            exists: self.exists,
-            comparison_operator: self.comparison_operator,
-            attribute_value_list: self.attribute_value_list,
+            value: self.value
+            ,
+            exists: self.exists
+            ,
+            comparison_operator: self.comparison_operator
+            ,
+            attribute_value_list: self.attribute_value_list
+            ,
         }
     }
 }
+

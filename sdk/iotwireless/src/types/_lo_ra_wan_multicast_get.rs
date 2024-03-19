@@ -3,7 +3,7 @@
 /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanMulticastGet {
+pub struct LoRaWanMulticastGet  {
     /// <p>Supported RfRegions</p>
     pub rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
@@ -13,13 +13,13 @@ pub struct LoRaWanMulticastGet {
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub number_of_devices_in_group: ::std::option::Option<i32>,
 }
-impl LoRaWanMulticastGet {
+impl  LoRaWanMulticastGet  {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> ::std::option::Option<&crate::types::SupportedRfRegion> {
+    pub fn rf_region(&self) -> ::std::option::Option<& crate::types::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    pub fn dl_class(&self) -> ::std::option::Option<&crate::types::DlClass> {
+    pub fn dl_class(&self) -> ::std::option::Option<& crate::types::DlClass> {
         self.dl_class.as_ref()
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
@@ -55,8 +55,7 @@ impl LoRaWanMulticastGetBuilder {
     }
     /// <p>Supported RfRegions</p>
     pub fn set_rf_region(mut self, input: ::std::option::Option<crate::types::SupportedRfRegion>) -> Self {
-        self.rf_region = input;
-        self
+        self.rf_region = input; self
     }
     /// <p>Supported RfRegions</p>
     pub fn get_rf_region(&self) -> &::std::option::Option<crate::types::SupportedRfRegion> {
@@ -69,8 +68,7 @@ impl LoRaWanMulticastGetBuilder {
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn set_dl_class(mut self, input: ::std::option::Option<crate::types::DlClass>) -> Self {
-        self.dl_class = input;
-        self
+        self.dl_class = input; self
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn get_dl_class(&self) -> &::std::option::Option<crate::types::DlClass> {
@@ -83,8 +81,7 @@ impl LoRaWanMulticastGetBuilder {
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
     pub fn set_number_of_devices_requested(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_devices_requested = input;
-        self
+        self.number_of_devices_requested = input; self
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
     pub fn get_number_of_devices_requested(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl LoRaWanMulticastGetBuilder {
     }
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub fn set_number_of_devices_in_group(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_devices_in_group = input;
-        self
+        self.number_of_devices_in_group = input; self
     }
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub fn get_number_of_devices_in_group(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl LoRaWanMulticastGetBuilder {
     /// Consumes the builder and constructs a [`LoRaWanMulticastGet`](crate::types::LoRaWanMulticastGet).
     pub fn build(self) -> crate::types::LoRaWanMulticastGet {
         crate::types::LoRaWanMulticastGet {
-            rf_region: self.rf_region,
-            dl_class: self.dl_class,
-            number_of_devices_requested: self.number_of_devices_requested,
-            number_of_devices_in_group: self.number_of_devices_in_group,
+            rf_region: self.rf_region
+            ,
+            dl_class: self.dl_class
+            ,
+            number_of_devices_requested: self.number_of_devices_requested
+            ,
+            number_of_devices_in_group: self.number_of_devices_in_group
+            ,
         }
     }
 }
+

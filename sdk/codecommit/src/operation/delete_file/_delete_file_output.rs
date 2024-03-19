@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileOutput {
+pub struct DeleteFileOutput  {
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
     pub commit_id: ::std::string::String,
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
@@ -13,33 +13,29 @@ pub struct DeleteFileOutput {
     pub file_path: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeleteFileOutput {
+impl  DeleteFileOutput  {
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
-    pub fn commit_id(&self) -> &str {
-        use std::ops::Deref;
-        self.commit_id.deref()
+    pub fn commit_id(&self) -> & str {
+        use std::ops::Deref; self.commit_id.deref()
     }
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
-    pub fn blob_id(&self) -> &str {
-        use std::ops::Deref;
-        self.blob_id.deref()
+    pub fn blob_id(&self) -> & str {
+        use std::ops::Deref; self.blob_id.deref()
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
-    pub fn tree_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tree_id.deref()
+    pub fn tree_id(&self) -> & str {
+        use std::ops::Deref; self.tree_id.deref()
     }
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileOutput`](crate::operation::delete_file::DeleteFileOutput).
     pub fn builder() -> crate::operation::delete_file::builders::DeleteFileOutputBuilder {
@@ -66,8 +62,7 @@ impl DeleteFileOutputBuilder {
     }
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +76,7 @@ impl DeleteFileOutputBuilder {
     }
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blob_id = input;
-        self
+        self.blob_id = input; self
     }
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
     pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +90,7 @@ impl DeleteFileOutputBuilder {
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
     pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,22 +104,21 @@ impl DeleteFileOutputBuilder {
     }
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFileOutput`](crate::operation::delete_file::DeleteFileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`commit_id`](crate::operation::delete_file::builders::DeleteFileOutputBuilder::commit_id)
@@ -134,32 +126,31 @@ impl DeleteFileOutputBuilder {
     /// - [`tree_id`](crate::operation::delete_file::builders::DeleteFileOutputBuilder::tree_id)
     /// - [`file_path`](crate::operation::delete_file::builders::DeleteFileOutputBuilder::file_path)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_file::DeleteFileOutput {
-            commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_id",
-                    "commit_id was not specified but it is required when building DeleteFileOutput",
-                )
-            })?,
-            blob_id: self.blob_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "blob_id",
-                    "blob_id was not specified but it is required when building DeleteFileOutput",
-                )
-            })?,
-            tree_id: self.tree_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tree_id",
-                    "tree_id was not specified but it is required when building DeleteFileOutput",
-                )
-            })?,
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building DeleteFileOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_file::DeleteFileOutput {
+                commit_id: self.commit_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_id", "commit_id was not specified but it is required when building DeleteFileOutput")
+                    )?
+                ,
+                blob_id: self.blob_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("blob_id", "blob_id was not specified but it is required when building DeleteFileOutput")
+                    )?
+                ,
+                tree_id: self.tree_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tree_id", "tree_id was not specified but it is required when building DeleteFileOutput")
+                    )?
+                ,
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building DeleteFileOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

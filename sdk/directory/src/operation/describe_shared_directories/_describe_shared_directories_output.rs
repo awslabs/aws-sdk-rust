@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSharedDirectoriesOutput {
+pub struct DescribeSharedDirectoriesOutput  {
     /// <p>A list of all shared directories in your account.</p>
-    pub shared_directories: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
+    pub shared_directories: ::std::option::Option<::std::vec::Vec::<crate::types::SharedDirectory>>,
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeSharedDirectoriesOutput {
+impl  DescribeSharedDirectoriesOutput  {
     /// <p>A list of all shared directories in your account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_directories.is_none()`.
-    pub fn shared_directories(&self) -> &[crate::types::SharedDirectory] {
-        self.shared_directories.as_deref().unwrap_or_default()
+    pub fn shared_directories(&self) -> & [crate::types::SharedDirectory] {
+        self.shared_directories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSharedDirectoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSharedDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSharedDirectoriesOutput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput).
     pub fn builder() -> crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeSharedDirectoriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesOutputBuilder {
-    pub(crate) shared_directories: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
+    pub(crate) shared_directories: ::std::option::Option<::std::vec::Vec::<crate::types::SharedDirectory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeSharedDirectoriesOutputBuilder {
     /// <p>A list of all shared directories in your account.</p>
     pub fn shared_directories(mut self, input: crate::types::SharedDirectory) -> Self {
         let mut v = self.shared_directories.unwrap_or_default();
-        v.push(input);
-        self.shared_directories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shared_directories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all shared directories in your account.</p>
-    pub fn set_shared_directories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>) -> Self {
-        self.shared_directories = input;
-        self
+    pub fn set_shared_directories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SharedDirectory>>) -> Self {
+        self.shared_directories = input; self
     }
     /// <p>A list of all shared directories in your account.</p>
-    pub fn get_shared_directories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>> {
+    pub fn get_shared_directories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SharedDirectory>> {
         &self.shared_directories
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
@@ -69,28 +69,30 @@ impl DescribeSharedDirectoriesOutputBuilder {
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSharedDirectoriesOutput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput).
     pub fn build(self) -> crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput {
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput {
-            shared_directories: self.shared_directories,
-            next_token: self.next_token,
+            shared_directories: self.shared_directories
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

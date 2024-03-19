@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResolverQueryLogConfigInput {
+pub struct CreateResolverQueryLogConfigInput  {
     /// <p>The name that you want to give the query logging configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
@@ -23,11 +23,11 @@ pub struct CreateResolverQueryLogConfigInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateResolverQueryLogConfigInput {
+impl  CreateResolverQueryLogConfigInput  {
     /// <p>The name that you want to give the query logging configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
@@ -44,18 +44,19 @@ impl CreateResolverQueryLogConfigInput {
     /// <p><b>Kinesis Data Firehose delivery stream</b>:</p>
     /// <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
     /// </ul>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateResolverQueryLogConfigInput {
@@ -72,7 +73,7 @@ pub struct CreateResolverQueryLogConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateResolverQueryLogConfigInputBuilder {
     /// <p>The name that you want to give the query logging configuration.</p>
@@ -83,8 +84,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
     }
     /// <p>The name that you want to give the query logging configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name that you want to give the query logging configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +124,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
     /// </ul>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
     /// <ul>
@@ -152,8 +151,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,31 +164,32 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResolverQueryLogConfigInput`](crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput {
-            name: self.name,
-            destination_arn: self.destination_arn,
-            creator_request_id: self.creator_request_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput {
+                name: self.name
+                ,
+                destination_arn: self.destination_arn
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

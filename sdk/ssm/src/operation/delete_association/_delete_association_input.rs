@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssociationInput {
+pub struct DeleteAssociationInput  {
     /// <p>The name of the SSM document.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p><note>
@@ -12,19 +12,19 @@ pub struct DeleteAssociationInput {
     /// <p>The association ID that you want to delete.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAssociationInput {
+impl  DeleteAssociationInput  {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The managed node ID.</p><note>
     /// <p><code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
     /// </note>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The association ID that you want to delete.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl DeleteAssociationInputBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the SSM document.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteAssociationInputBuilder {
     /// <p><code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The managed node ID.</p><note>
     /// <p><code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
@@ -85,21 +83,24 @@ impl DeleteAssociationInputBuilder {
     }
     /// <p>The association ID that you want to delete.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The association ID that you want to delete.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }
     /// Consumes the builder and constructs a [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_association::DeleteAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_association::DeleteAssociationInput {
-            name: self.name,
-            instance_id: self.instance_id,
-            association_id: self.association_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_association::DeleteAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_association::DeleteAssociationInput {
+                name: self.name
+                ,
+                instance_id: self.instance_id
+                ,
+                association_id: self.association_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the Traffic Mirror rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficMirrorFilterRule {
+pub struct TrafficMirrorFilterRule  {
     /// <p>The ID of the Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
@@ -27,17 +27,17 @@ pub struct TrafficMirrorFilterRule {
     /// <p>The description of the Traffic Mirror rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl TrafficMirrorFilterRule {
+impl  TrafficMirrorFilterRule  {
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn traffic_mirror_filter_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_filter_rule_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_filter_rule_id.as_deref()
     }
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
-    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>The traffic direction assigned to the Traffic Mirror rule.</p>
-    pub fn traffic_direction(&self) -> ::std::option::Option<&crate::types::TrafficDirection> {
+    pub fn traffic_direction(&self) -> ::std::option::Option<& crate::types::TrafficDirection> {
         self.traffic_direction.as_ref()
     }
     /// <p>The rule number of the Traffic Mirror rule.</p>
@@ -45,7 +45,7 @@ impl TrafficMirrorFilterRule {
         self.rule_number
     }
     /// <p>The action assigned to the Traffic Mirror rule.</p>
-    pub fn rule_action(&self) -> ::std::option::Option<&crate::types::TrafficMirrorRuleAction> {
+    pub fn rule_action(&self) -> ::std::option::Option<& crate::types::TrafficMirrorRuleAction> {
         self.rule_action.as_ref()
     }
     /// <p>The protocol assigned to the Traffic Mirror rule.</p>
@@ -53,23 +53,23 @@ impl TrafficMirrorFilterRule {
         self.protocol
     }
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
-    pub fn destination_port_range(&self) -> ::std::option::Option<&crate::types::TrafficMirrorPortRange> {
+    pub fn destination_port_range(&self) -> ::std::option::Option<& crate::types::TrafficMirrorPortRange> {
         self.destination_port_range.as_ref()
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
-    pub fn source_port_range(&self) -> ::std::option::Option<&crate::types::TrafficMirrorPortRange> {
+    pub fn source_port_range(&self) -> ::std::option::Option<& crate::types::TrafficMirrorPortRange> {
         self.source_port_range.as_ref()
     }
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The source CIDR block assigned to the Traffic Mirror rule.</p>
-    pub fn source_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn source_cidr_block(&self) -> ::std::option::Option<& str> {
         self.source_cidr_block.as_deref()
     }
     /// <p>The description of the Traffic Mirror rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
     pub fn set_traffic_mirror_filter_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_filter_rule_id = input;
-        self
+        self.traffic_mirror_filter_rule_id = input; self
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
     pub fn get_traffic_mirror_filter_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
     pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_filter_id = input;
-        self
+        self.traffic_mirror_filter_id = input; self
     }
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
     pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The traffic direction assigned to the Traffic Mirror rule.</p>
     pub fn set_traffic_direction(mut self, input: ::std::option::Option<crate::types::TrafficDirection>) -> Self {
-        self.traffic_direction = input;
-        self
+        self.traffic_direction = input; self
     }
     /// <p>The traffic direction assigned to the Traffic Mirror rule.</p>
     pub fn get_traffic_direction(&self) -> &::std::option::Option<crate::types::TrafficDirection> {
@@ -146,8 +143,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The rule number of the Traffic Mirror rule.</p>
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_number = input;
-        self
+        self.rule_number = input; self
     }
     /// <p>The rule number of the Traffic Mirror rule.</p>
     pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
@@ -160,8 +156,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The action assigned to the Traffic Mirror rule.</p>
     pub fn set_rule_action(mut self, input: ::std::option::Option<crate::types::TrafficMirrorRuleAction>) -> Self {
-        self.rule_action = input;
-        self
+        self.rule_action = input; self
     }
     /// <p>The action assigned to the Traffic Mirror rule.</p>
     pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::TrafficMirrorRuleAction> {
@@ -174,8 +169,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The protocol assigned to the Traffic Mirror rule.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol assigned to the Traffic Mirror rule.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<i32> {
@@ -188,8 +182,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
     pub fn set_destination_port_range(mut self, input: ::std::option::Option<crate::types::TrafficMirrorPortRange>) -> Self {
-        self.destination_port_range = input;
-        self
+        self.destination_port_range = input; self
     }
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
     pub fn get_destination_port_range(&self) -> &::std::option::Option<crate::types::TrafficMirrorPortRange> {
@@ -202,8 +195,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
     pub fn set_source_port_range(mut self, input: ::std::option::Option<crate::types::TrafficMirrorPortRange>) -> Self {
-        self.source_port_range = input;
-        self
+        self.source_port_range = input; self
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
     pub fn get_source_port_range(&self) -> &::std::option::Option<crate::types::TrafficMirrorPortRange> {
@@ -216,8 +208,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +221,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The source CIDR block assigned to the Traffic Mirror rule.</p>
     pub fn set_source_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_cidr_block = input;
-        self
+        self.source_cidr_block = input; self
     }
     /// <p>The source CIDR block assigned to the Traffic Mirror rule.</p>
     pub fn get_source_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl TrafficMirrorFilterRuleBuilder {
     }
     /// <p>The description of the Traffic Mirror rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Traffic Mirror rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl TrafficMirrorFilterRuleBuilder {
     /// Consumes the builder and constructs a [`TrafficMirrorFilterRule`](crate::types::TrafficMirrorFilterRule).
     pub fn build(self) -> crate::types::TrafficMirrorFilterRule {
         crate::types::TrafficMirrorFilterRule {
-            traffic_mirror_filter_rule_id: self.traffic_mirror_filter_rule_id,
-            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
-            traffic_direction: self.traffic_direction,
-            rule_number: self.rule_number,
-            rule_action: self.rule_action,
-            protocol: self.protocol,
-            destination_port_range: self.destination_port_range,
-            source_port_range: self.source_port_range,
-            destination_cidr_block: self.destination_cidr_block,
-            source_cidr_block: self.source_cidr_block,
-            description: self.description,
+            traffic_mirror_filter_rule_id: self.traffic_mirror_filter_rule_id
+            ,
+            traffic_mirror_filter_id: self.traffic_mirror_filter_id
+            ,
+            traffic_direction: self.traffic_direction
+            ,
+            rule_number: self.rule_number
+            ,
+            rule_action: self.rule_action
+            ,
+            protocol: self.protocol
+            ,
+            destination_port_range: self.destination_port_range
+            ,
+            source_port_range: self.source_port_range
+            ,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            source_cidr_block: self.source_cidr_block
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

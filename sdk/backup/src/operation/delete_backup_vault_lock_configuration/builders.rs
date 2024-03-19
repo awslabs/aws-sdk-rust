@@ -5,55 +5,51 @@ pub use crate::operation::delete_backup_vault_lock_configuration::_delete_backup
 
 impl DeleteBackupVaultLockConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_backup_vault_lock_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_backup_vault_lock_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteBackupVaultLockConfiguration`.
-///
+/// 
 /// <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault name.</p>
 /// <p>If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using API operations, and you will receive an <code>InvalidRequestException</code> if you attempt to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault Lock</a> in the <i>Backup Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultLockConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder,
+                    inner: crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
-    > for DeleteBackupVaultLockConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
-            crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
+                    crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
+                > for DeleteBackupVaultLockConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
+                        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteBackupVaultLockConfigurationFluentBuilder {
     /// Creates a new `DeleteBackupVaultLockConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DeleteBackupVaultLockConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput,
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput, crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
@@ -124,3 +111,4 @@ impl DeleteBackupVaultLockConfigurationFluentBuilder {
         self.inner.get_backup_vault_name()
     }
 }
+

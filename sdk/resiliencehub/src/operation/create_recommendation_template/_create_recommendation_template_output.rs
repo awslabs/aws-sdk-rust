@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRecommendationTemplateOutput {
+pub struct CreateRecommendationTemplateOutput  {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
     pub recommendation_template: ::std::option::Option<crate::types::RecommendationTemplate>,
     _request_id: Option<String>,
 }
-impl CreateRecommendationTemplateOutput {
+impl  CreateRecommendationTemplateOutput  {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
-    pub fn recommendation_template(&self) -> ::std::option::Option<&crate::types::RecommendationTemplate> {
+    pub fn recommendation_template(&self) -> ::std::option::Option<& crate::types::RecommendationTemplate> {
         self.recommendation_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRecommendationTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRecommendationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecommendationTemplateOutput`](crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput).
     pub fn builder() -> crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateRecommendationTemplateOutputBuilder {
     }
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
     pub fn set_recommendation_template(mut self, input: ::std::option::Option<crate::types::RecommendationTemplate>) -> Self {
-        self.recommendation_template = input;
-        self
+        self.recommendation_template = input; self
     }
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
     pub fn get_recommendation_template(&self) -> &::std::option::Option<crate::types::RecommendationTemplate> {
         &self.recommendation_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRecommendationTemplateOutput`](crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput).
     pub fn build(self) -> crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput {
         crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput {
-            recommendation_template: self.recommendation_template,
+            recommendation_template: self.recommendation_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

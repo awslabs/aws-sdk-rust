@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetEnabledBaselineOutput {
+pub struct ResetEnabledBaselineOutput  {
     /// <p>The ID (in UUID format) of the asynchronous <code>ResetEnabledBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
     pub operation_identifier: ::std::string::String,
     _request_id: Option<String>,
 }
-impl ResetEnabledBaselineOutput {
+impl  ResetEnabledBaselineOutput  {
     /// <p>The ID (in UUID format) of the asynchronous <code>ResetEnabledBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
-    pub fn operation_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_identifier.deref()
+    pub fn operation_identifier(&self) -> & str {
+        use std::ops::Deref; self.operation_identifier.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ResetEnabledBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResetEnabledBaselineOutput {
     /// Creates a new builder-style object to manufacture [`ResetEnabledBaselineOutput`](crate::operation::reset_enabled_baseline::ResetEnabledBaselineOutput).
     pub fn builder() -> crate::operation::reset_enabled_baseline::builders::ResetEnabledBaselineOutputBuilder {
@@ -42,37 +41,35 @@ impl ResetEnabledBaselineOutputBuilder {
     }
     /// <p>The ID (in UUID format) of the asynchronous <code>ResetEnabledBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>The ID (in UUID format) of the asynchronous <code>ResetEnabledBaseline</code> operation. This <code>operationIdentifier</code> is used to track status through calls to the <code>GetBaselineOperation</code> API.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResetEnabledBaselineOutput`](crate::operation::reset_enabled_baseline::ResetEnabledBaselineOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`operation_identifier`](crate::operation::reset_enabled_baseline::builders::ResetEnabledBaselineOutputBuilder::operation_identifier)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_enabled_baseline::ResetEnabledBaselineOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::reset_enabled_baseline::ResetEnabledBaselineOutput {
-            operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_identifier",
-                    "operation_identifier was not specified but it is required when building ResetEnabledBaselineOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_enabled_baseline::ResetEnabledBaselineOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_enabled_baseline::ResetEnabledBaselineOutput {
+                operation_identifier: self.operation_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_identifier", "operation_identifier was not specified but it is required when building ResetEnabledBaselineOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

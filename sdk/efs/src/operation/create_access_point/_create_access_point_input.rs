@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPointInput {
+pub struct CreateAccessPointInput  {
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
@@ -15,28 +15,29 @@ pub struct CreateAccessPointInput {
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
     pub root_directory: ::std::option::Option<crate::types::RootDirectory>,
 }
-impl CreateAccessPointInput {
+impl  CreateAccessPointInput  {
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
-    pub fn posix_user(&self) -> ::std::option::Option<&crate::types::PosixUser> {
+    pub fn posix_user(&self) -> ::std::option::Option<& crate::types::PosixUser> {
         self.posix_user.as_ref()
     }
     /// <p>Specifies the directory on the EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
-    pub fn root_directory(&self) -> ::std::option::Option<&crate::types::RootDirectory> {
+    pub fn root_directory(&self) -> ::std::option::Option<& crate::types::RootDirectory> {
         self.root_directory.as_ref()
     }
 }
@@ -52,7 +53,7 @@ impl CreateAccessPointInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) posix_user: ::std::option::Option<crate::types::PosixUser>,
     pub(crate) root_directory: ::std::option::Option<crate::types::RootDirectory>,
@@ -66,8 +67,7 @@ impl CreateAccessPointInputBuilder {
     }
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +80,16 @@ impl CreateAccessPointInputBuilder {
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
@@ -101,8 +100,7 @@ impl CreateAccessPointInputBuilder {
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl CreateAccessPointInputBuilder {
     }
     /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
     pub fn set_posix_user(mut self, input: ::std::option::Option<crate::types::PosixUser>) -> Self {
-        self.posix_user = input;
-        self
+        self.posix_user = input; self
     }
     /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
     pub fn get_posix_user(&self) -> &::std::option::Option<crate::types::PosixUser> {
@@ -131,8 +128,7 @@ impl CreateAccessPointInputBuilder {
     /// <p>Specifies the directory on the EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
     pub fn set_root_directory(mut self, input: ::std::option::Option<crate::types::RootDirectory>) -> Self {
-        self.root_directory = input;
-        self
+        self.root_directory = input; self
     }
     /// <p>Specifies the directory on the EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, Amazon EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
@@ -140,15 +136,21 @@ impl CreateAccessPointInputBuilder {
         &self.root_directory
     }
     /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_point::CreateAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_access_point::CreateAccessPointInput {
-            client_token: self.client_token,
-            tags: self.tags,
-            file_system_id: self.file_system_id,
-            posix_user: self.posix_user,
-            root_directory: self.root_directory,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_point::CreateAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_point::CreateAccessPointInput {
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+                file_system_id: self.file_system_id
+                ,
+                posix_user: self.posix_user
+                ,
+                root_directory: self.root_directory
+                ,
+            }
+        )
     }
 }
+

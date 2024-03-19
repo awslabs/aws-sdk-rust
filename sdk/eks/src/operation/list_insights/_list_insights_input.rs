@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInsightsInput {
+pub struct ListInsightsInput  {
     /// <p>The name of the Amazon EKS cluster associated with the insights.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria to filter your list of insights for your cluster. You can filter which insights are returned by category, associated Kubernetes version, and status.</p>
@@ -12,13 +12,13 @@ pub struct ListInsightsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListInsights</code> request. When the results of a <code>ListInsights</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListInsightsInput {
+impl  ListInsightsInput  {
     /// <p>The name of the Amazon EKS cluster associated with the insights.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The criteria to filter your list of insights for your cluster. You can filter which insights are returned by category, associated Kubernetes version, and status.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::InsightsFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::InsightsFilter> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of identity provider configurations returned by <code>ListInsights</code> in paginated output. When you use this parameter, <code>ListInsights</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListInsights</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListInsights</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
@@ -26,7 +26,7 @@ impl ListInsightsInput {
         self.max_results
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListInsights</code> request. When the results of a <code>ListInsights</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListInsightsInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster associated with the insights.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the Amazon EKS cluster associated with the insights.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListInsightsInputBuilder {
     }
     /// <p>The criteria to filter your list of insights for your cluster. You can filter which insights are returned by category, associated Kubernetes version, and status.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::InsightsFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The criteria to filter your list of insights for your cluster. You can filter which insights are returned by category, associated Kubernetes version, and status.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::InsightsFilter> {
@@ -83,8 +81,7 @@ impl ListInsightsInputBuilder {
     }
     /// <p>The maximum number of identity provider configurations returned by <code>ListInsights</code> in paginated output. When you use this parameter, <code>ListInsights</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListInsights</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListInsights</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of identity provider configurations returned by <code>ListInsights</code> in paginated output. When you use this parameter, <code>ListInsights</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListInsights</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListInsights</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,22 +94,26 @@ impl ListInsightsInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListInsights</code> request. When the results of a <code>ListInsights</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListInsights</code> request. When the results of a <code>ListInsights</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInsightsInput`](crate::operation::list_insights::ListInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_insights::ListInsightsInput {
-            cluster_name: self.cluster_name,
-            filter: self.filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_insights::ListInsightsInput {
+                cluster_name: self.cluster_name
+                ,
+                filter: self.filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

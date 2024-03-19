@@ -3,13 +3,13 @@
 /// <p>The table style target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableStyleTarget {
+pub struct TableStyleTarget  {
     /// <p>The cell type of the table style target.</p>
     pub cell_type: crate::types::StyledCellType,
 }
-impl TableStyleTarget {
+impl  TableStyleTarget  {
     /// <p>The cell type of the table style target.</p>
-    pub fn cell_type(&self) -> &crate::types::StyledCellType {
+    pub fn cell_type(&self) -> & crate::types::StyledCellType {
         &self.cell_type
     }
 }
@@ -35,8 +35,7 @@ impl TableStyleTargetBuilder {
     }
     /// <p>The cell type of the table style target.</p>
     pub fn set_cell_type(mut self, input: ::std::option::Option<crate::types::StyledCellType>) -> Self {
-        self.cell_type = input;
-        self
+        self.cell_type = input; self
     }
     /// <p>The cell type of the table style target.</p>
     pub fn get_cell_type(&self) -> &::std::option::Option<crate::types::StyledCellType> {
@@ -46,13 +45,15 @@ impl TableStyleTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cell_type`](crate::types::builders::TableStyleTargetBuilder::cell_type)
     pub fn build(self) -> ::std::result::Result<crate::types::TableStyleTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TableStyleTarget {
-            cell_type: self.cell_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cell_type",
-                    "cell_type was not specified but it is required when building TableStyleTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TableStyleTarget {
+                cell_type: self.cell_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cell_type", "cell_type was not specified but it is required when building TableStyleTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

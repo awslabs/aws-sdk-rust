@@ -3,7 +3,7 @@
 /// <p>Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlueInstanceTerminationOption {
+pub struct BlueInstanceTerminationOption  {
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct BlueInstanceTerminationOption {
     /// <p>The maximum setting is 2880 minutes (2 days).</p>
     pub termination_wait_time_in_minutes: i32,
 }
-impl BlueInstanceTerminationOption {
+impl  BlueInstanceTerminationOption  {
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl BlueInstanceTerminationOption {
     /// <li>
     /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::InstanceAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::InstanceAction> {
         self.action.as_ref()
     }
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
@@ -69,8 +69,7 @@ impl BlueInstanceTerminationOptionBuilder {
     /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::InstanceAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
@@ -93,8 +92,7 @@ impl BlueInstanceTerminationOptionBuilder {
     /// <p>For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set.</p>
     /// <p>The maximum setting is 2880 minutes (2 days).</p>
     pub fn set_termination_wait_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.termination_wait_time_in_minutes = input;
-        self
+        self.termination_wait_time_in_minutes = input; self
     }
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
     /// <p>For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set.</p>
@@ -105,8 +103,12 @@ impl BlueInstanceTerminationOptionBuilder {
     /// Consumes the builder and constructs a [`BlueInstanceTerminationOption`](crate::types::BlueInstanceTerminationOption).
     pub fn build(self) -> crate::types::BlueInstanceTerminationOption {
         crate::types::BlueInstanceTerminationOption {
-            action: self.action,
-            termination_wait_time_in_minutes: self.termination_wait_time_in_minutes.unwrap_or_default(),
+            action: self.action
+            ,
+            termination_wait_time_in_minutes: self.termination_wait_time_in_minutes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

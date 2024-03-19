@@ -3,22 +3,22 @@
 /// <p>The support case ID returned by a successful completion of the <code>CreateCase</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCaseOutput {
+pub struct CreateCaseOutput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub case_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateCaseOutput {
+impl  CreateCaseOutput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<& str> {
         self.case_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateCaseOutput`](crate::operation::create_case::CreateCaseOutput).
     pub fn builder() -> crate::operation::create_case::builders::CreateCaseOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateCaseOutputBuilder {
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCaseOutput`](crate::operation::create_case::CreateCaseOutput).
     pub fn build(self) -> crate::operation::create_case::CreateCaseOutput {
         crate::operation::create_case::CreateCaseOutput {
-            case_id: self.case_id,
+            case_id: self.case_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

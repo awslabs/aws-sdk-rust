@@ -3,13 +3,13 @@
 /// <p>GSM local ID information, which corresponds to the local identification parameters of a GSM cell.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GsmLocalId {
+pub struct GsmLocalId  {
     /// <p>GSM base station identity code (BSIC).</p>
     pub bsic: i32,
     /// <p>GSM broadcast control channel.</p>
     pub bcch: i32,
 }
-impl GsmLocalId {
+impl  GsmLocalId  {
     /// <p>GSM base station identity code (BSIC).</p>
     pub fn bsic(&self) -> i32 {
         self.bsic
@@ -42,8 +42,7 @@ impl GsmLocalIdBuilder {
     }
     /// <p>GSM base station identity code (BSIC).</p>
     pub fn set_bsic(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bsic = input;
-        self
+        self.bsic = input; self
     }
     /// <p>GSM base station identity code (BSIC).</p>
     pub fn get_bsic(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl GsmLocalIdBuilder {
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn set_bcch(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bcch = input;
-        self
+        self.bcch = input; self
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn get_bcch(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl GsmLocalIdBuilder {
     /// - [`bsic`](crate::types::builders::GsmLocalIdBuilder::bsic)
     /// - [`bcch`](crate::types::builders::GsmLocalIdBuilder::bcch)
     pub fn build(self) -> ::std::result::Result<crate::types::GsmLocalId, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GsmLocalId {
-            bsic: self.bsic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bsic",
-                    "bsic was not specified but it is required when building GsmLocalId",
-                )
-            })?,
-            bcch: self.bcch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bcch",
-                    "bcch was not specified but it is required when building GsmLocalId",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GsmLocalId {
+                bsic: self.bsic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bsic", "bsic was not specified but it is required when building GsmLocalId")
+                    )?
+                ,
+                bcch: self.bcch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bcch", "bcch was not specified but it is required when building GsmLocalId")
+                    )?
+                ,
+            }
+        )
     }
 }
+

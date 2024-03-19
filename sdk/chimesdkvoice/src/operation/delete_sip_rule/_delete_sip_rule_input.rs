@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSipRuleInput {
+pub struct DeleteSipRuleInput  {
     /// <p>The SIP rule ID.</p>
     pub sip_rule_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSipRuleInput {
+impl  DeleteSipRuleInput  {
     /// <p>The SIP rule ID.</p>
-    pub fn sip_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_rule_id(&self) -> ::std::option::Option<& str> {
         self.sip_rule_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteSipRuleInputBuilder {
     }
     /// <p>The SIP rule ID.</p>
     pub fn set_sip_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sip_rule_id = input;
-        self
+        self.sip_rule_id = input; self
     }
     /// <p>The SIP rule ID.</p>
     pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sip_rule_id
     }
     /// Consumes the builder and constructs a [`DeleteSipRuleInput`](crate::operation::delete_sip_rule::DeleteSipRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_sip_rule::DeleteSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_sip_rule::DeleteSipRuleInput {
-            sip_rule_id: self.sip_rule_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sip_rule::DeleteSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sip_rule::DeleteSipRuleInput {
+                sip_rule_id: self.sip_rule_id
+                ,
+            }
+        )
     }
 }
+

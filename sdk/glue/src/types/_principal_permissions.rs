@@ -3,22 +3,23 @@
 /// <p>Permissions granted to a principal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrincipalPermissions {
+pub struct PrincipalPermissions  {
     /// <p>The principal who is granted permissions.</p>
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The permissions that are granted to the principal.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
 }
-impl PrincipalPermissions {
+impl  PrincipalPermissions  {
     /// <p>The principal who is granted permissions.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The permissions that are granted to the principal.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::Permission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::Permission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PrincipalPermissions {
@@ -33,7 +34,7 @@ impl PrincipalPermissions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalPermissionsBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
 }
 impl PrincipalPermissionsBuilder {
     /// <p>The principal who is granted permissions.</p>
@@ -43,8 +44,7 @@ impl PrincipalPermissionsBuilder {
     }
     /// <p>The principal who is granted permissions.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The principal who is granted permissions.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
@@ -57,24 +57,26 @@ impl PrincipalPermissionsBuilder {
     /// <p>The permissions that are granted to the principal.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`PrincipalPermissions`](crate::types::PrincipalPermissions).
     pub fn build(self) -> crate::types::PrincipalPermissions {
         crate::types::PrincipalPermissions {
-            principal: self.principal,
-            permissions: self.permissions,
+            principal: self.principal
+            ,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

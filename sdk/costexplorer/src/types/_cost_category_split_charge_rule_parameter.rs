@@ -3,21 +3,20 @@
 /// <p>The parameters for a split charge method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostCategorySplitChargeRuleParameter {
+pub struct CostCategorySplitChargeRuleParameter  {
     /// <p>The parameter type.</p>
     pub r#type: crate::types::CostCategorySplitChargeRuleParameterType,
     /// <p>The parameter values.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl CostCategorySplitChargeRuleParameter {
+impl  CostCategorySplitChargeRuleParameter  {
     /// <p>The parameter type.</p>
-    pub fn r#type(&self) -> &crate::types::CostCategorySplitChargeRuleParameterType {
+    pub fn r#type(&self) -> & crate::types::CostCategorySplitChargeRuleParameterType {
         &self.r#type
     }
     /// <p>The parameter values.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl CostCategorySplitChargeRuleParameter {
@@ -32,7 +31,7 @@ impl CostCategorySplitChargeRuleParameter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategorySplitChargeRuleParameterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CostCategorySplitChargeRuleParameterBuilder {
     /// <p>The parameter type.</p>
@@ -43,8 +42,7 @@ impl CostCategorySplitChargeRuleParameterBuilder {
     }
     /// <p>The parameter type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The parameter type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType> {
@@ -57,39 +55,37 @@ impl CostCategorySplitChargeRuleParameterBuilder {
     /// <p>The parameter values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameter values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The parameter values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRuleParameter`](crate::types::CostCategorySplitChargeRuleParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::CostCategorySplitChargeRuleParameterBuilder::r#type)
     /// - [`values`](crate::types::builders::CostCategorySplitChargeRuleParameterBuilder::values)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CostCategorySplitChargeRuleParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CostCategorySplitChargeRuleParameter {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CostCategorySplitChargeRuleParameter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building CostCategorySplitChargeRuleParameter",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CostCategorySplitChargeRuleParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CostCategorySplitChargeRuleParameter {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building CostCategorySplitChargeRuleParameter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building CostCategorySplitChargeRuleParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -7,7 +7,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HookConfiguration {
+pub struct HookConfiguration  {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Q should invoke a function that inserts the current date-time.</p>
     pub invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
@@ -18,22 +18,22 @@ pub struct HookConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl HookConfiguration {
+impl  HookConfiguration  {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Q should invoke a function that inserts the current date-time.</p>
-    pub fn invocation_condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
+    pub fn invocation_condition(&self) -> ::std::option::Option<& crate::types::DocumentAttributeCondition> {
         self.invocation_condition.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
-    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts">Data contracts for Lambda functions</a>.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl HookConfigurationBuilder {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Q should invoke a function that inserts the current date-time.</p>
     pub fn set_invocation_condition(mut self, input: ::std::option::Option<crate::types::DocumentAttributeCondition>) -> Self {
-        self.invocation_condition = input;
-        self
+        self.invocation_condition = input; self
     }
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Q should invoke a function that inserts the current date-time.</p>
@@ -78,8 +77,7 @@ impl HookConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl HookConfigurationBuilder {
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts">Data contracts for Lambda functions</a>.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts">Data contracts for Lambda functions</a>.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl HookConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,10 +112,15 @@ impl HookConfigurationBuilder {
     /// Consumes the builder and constructs a [`HookConfiguration`](crate::types::HookConfiguration).
     pub fn build(self) -> crate::types::HookConfiguration {
         crate::types::HookConfiguration {
-            invocation_condition: self.invocation_condition,
-            lambda_arn: self.lambda_arn,
-            s3_bucket_name: self.s3_bucket_name,
-            role_arn: self.role_arn,
+            invocation_condition: self.invocation_condition
+            ,
+            lambda_arn: self.lambda_arn
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserInput {
+pub struct CreateUserInput  {
     /// <p>The ARN for the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The first name for the user.</p>
@@ -14,34 +14,35 @@ pub struct CreateUserInput {
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the user.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateUserInput {
+impl  CreateUserInput  {
     /// <p>The ARN for the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The first name for the user.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name for the user.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The email address for the user.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateUserInput {
@@ -60,7 +61,7 @@ pub struct CreateUserInputBuilder {
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateUserInputBuilder {
     /// <p>The ARN for the user.</p>
@@ -71,8 +72,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The ARN for the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ARN for the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The first name for the user.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name for the user.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The last name for the user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name for the user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The email address for the user.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address for the user.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,28 +137,36 @@ impl CreateUserInputBuilder {
     /// <p>The tags for the user.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the user.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the user.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
-            user_id: self.user_id,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            email: self.email,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_user::CreateUserInput {
+                user_id: self.user_id
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                email: self.email
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

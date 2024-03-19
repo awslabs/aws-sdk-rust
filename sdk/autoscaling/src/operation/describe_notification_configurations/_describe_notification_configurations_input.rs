@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotificationConfigurationsInput {
+pub struct DescribeNotificationConfigurationsInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_scaling_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeNotificationConfigurationsInput {
+impl  DescribeNotificationConfigurationsInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_group_names.is_none()`.
-    pub fn auto_scaling_group_names(&self) -> &[::std::string::String] {
-        self.auto_scaling_group_names.as_deref().unwrap_or_default()
+    pub fn auto_scaling_group_names(&self) -> & [::std::string::String] {
+        self.auto_scaling_group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -37,7 +38,7 @@ impl DescribeNotificationConfigurationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationsInputBuilder {
-    pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl DescribeNotificationConfigurationsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.auto_scaling_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_scaling_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.auto_scaling_group_names = input;
-        self
+    pub fn set_auto_scaling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.auto_scaling_group_names = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.auto_scaling_group_names
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -69,8 +69,7 @@ impl DescribeNotificationConfigurationsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,26 +82,24 @@ impl DescribeNotificationConfigurationsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeNotificationConfigurationsInput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput {
-                auto_scaling_group_names: self.auto_scaling_group_names,
-                next_token: self.next_token,
-                max_records: self.max_records,
-            },
+                auto_scaling_group_names: self.auto_scaling_group_names
+                ,
+                next_token: self.next_token
+                ,
+                max_records: self.max_records
+                ,
+            }
         )
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>SMS settings for authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SmsSettings {
+pub struct SmsSettings  {
     /// <p>The contents of the SMS message.</p>
     pub sms_message: ::std::option::Option<::std::string::String>,
 }
-impl SmsSettings {
+impl  SmsSettings  {
     /// <p>The contents of the SMS message.</p>
-    pub fn sms_message(&self) -> ::std::option::Option<&str> {
+    pub fn sms_message(&self) -> ::std::option::Option<& str> {
         self.sms_message.as_deref()
     }
 }
-impl ::std::fmt::Debug for SmsSettings {
+impl  ::std::fmt::Debug for SmsSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SmsSettings");
         formatter.field("sms_message", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl SmsSettingsBuilder {
     }
     /// <p>The contents of the SMS message.</p>
     pub fn set_sms_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sms_message = input;
-        self
+        self.sms_message = input; self
     }
     /// <p>The contents of the SMS message.</p>
     pub fn get_sms_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -51,7 +50,8 @@ impl SmsSettingsBuilder {
     /// Consumes the builder and constructs a [`SmsSettings`](crate::types::SmsSettings).
     pub fn build(self) -> crate::types::SmsSettings {
         crate::types::SmsSettings {
-            sms_message: self.sms_message,
+            sms_message: self.sms_message
+            ,
         }
     }
 }
@@ -62,3 +62,4 @@ impl ::std::fmt::Debug for SmsSettingsBuilder {
         formatter.finish()
     }
 }
+

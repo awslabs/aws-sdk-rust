@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGeneratedTemplates`](crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that identifies the next page of resource scan results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListGeneratedTemplates</code> API action will return at most 50 results in each response. The maximum value is 100.</p><br>
-    /// - On success, responds with [`ListGeneratedTemplatesOutput`](crate::operation::list_generated_templates::ListGeneratedTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListGeneratedTemplatesOutput`](crate::operation::list_generated_templates::ListGeneratedTemplatesOutput) with field(s):
     ///   - [`summaries(Option<Vec::<TemplateSummary>>)`](crate::operation::list_generated_templates::ListGeneratedTemplatesOutput::summaries): <p>A list of summaries of the generated templates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_generated_templates::ListGeneratedTemplatesOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListGeneratedTemplates</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
-    /// - On failure, responds with [`SdkError<ListGeneratedTemplatesError>`](crate::operation::list_generated_templates::ListGeneratedTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListGeneratedTemplatesError>`](crate::operation::list_generated_templates::ListGeneratedTemplatesError)
     pub fn list_generated_templates(&self) -> crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder {
-        crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_generated_templates::builders::ListGeneratedTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAddressTransfers`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`allocation_ids(impl Into<String>)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::allocation_ids) / [`set_allocation_ids(Option<Vec::<String>>)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::set_allocation_ids):<br>required: **false**<br><p>The allocation IDs of Elastic IP addresses.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of address transfers to return in one page of results.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`DescribeAddressTransfersOutput`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput) with field(s):
+                            /// - On success, responds with [`DescribeAddressTransfersOutput`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput) with field(s):
     ///   - [`address_transfers(Option<Vec::<AddressTransfer>>)`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput::address_transfers): <p>The Elastic IP address transfer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeAddressTransfersError>`](crate::operation::describe_address_transfers::DescribeAddressTransfersError)
+                            /// - On failure, responds with [`SdkError<DescribeAddressTransfersError>`](crate::operation::describe_address_transfers::DescribeAddressTransfersError)
     pub fn describe_address_transfers(&self) -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder {
-        crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

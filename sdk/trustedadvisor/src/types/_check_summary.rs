@@ -3,7 +3,7 @@
 /// <p>A summary of an AWS Trusted Advisor Check</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckSummary {
+pub struct CheckSummary  {
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
     pub id: ::std::string::String,
     /// <p>The ARN of the AWS Trusted Advisor Check</p>
@@ -13,51 +13,45 @@ pub struct CheckSummary {
     /// <p>A description of what the AWS Trusted Advisor Check is monitoring</p>
     pub description: ::std::string::String,
     /// <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
-    pub pillars: ::std::vec::Vec<crate::types::RecommendationPillar>,
+    pub pillars: ::std::vec::Vec::<crate::types::RecommendationPillar>,
     /// <p>The AWS Services that the Check applies to</p>
-    pub aws_services: ::std::vec::Vec<::std::string::String>,
+    pub aws_services: ::std::vec::Vec::<::std::string::String>,
     /// <p>The source of the Recommendation</p>
     pub source: crate::types::RecommendationSource,
     /// <p>The column headings for the metadata returned in the resource</p>
-    pub metadata: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub metadata: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
 }
-impl CheckSummary {
+impl  CheckSummary  {
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ARN of the AWS Trusted Advisor Check</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the AWS Trusted Advisor Check</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of what the AWS Trusted Advisor Check is monitoring</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
-    pub fn pillars(&self) -> &[crate::types::RecommendationPillar] {
-        use std::ops::Deref;
-        self.pillars.deref()
+    pub fn pillars(&self) -> & [crate::types::RecommendationPillar] {
+        use std::ops::Deref; self.pillars.deref()
     }
     /// <p>The AWS Services that the Check applies to</p>
-    pub fn aws_services(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.aws_services.deref()
+    pub fn aws_services(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.aws_services.deref()
     }
     /// <p>The source of the Recommendation</p>
-    pub fn source(&self) -> &crate::types::RecommendationSource {
+    pub fn source(&self) -> & crate::types::RecommendationSource {
         &self.source
     }
     /// <p>The column headings for the metadata returned in the resource</p>
-    pub fn metadata(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn metadata(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.metadata
     }
 }
@@ -76,10 +70,10 @@ pub struct CheckSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) pillars: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPillar>>,
-    pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pillars: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPillar>>,
+    pub(crate) aws_services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) source: ::std::option::Option<crate::types::RecommendationSource>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CheckSummaryBuilder {
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
@@ -90,8 +84,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The ARN of the AWS Trusted Advisor Check</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the AWS Trusted Advisor Check</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +112,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The name of the AWS Trusted Advisor Check</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the AWS Trusted Advisor Check</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +126,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>A description of what the AWS Trusted Advisor Check is monitoring</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of what the AWS Trusted Advisor Check is monitoring</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,17 +139,16 @@ impl CheckSummaryBuilder {
     /// <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
     pub fn pillars(mut self, input: crate::types::RecommendationPillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
-        v.push(input);
-        self.pillars = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pillars = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
-    pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPillar>>) -> Self {
-        self.pillars = input;
-        self
+    pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPillar>>) -> Self {
+        self.pillars = input; self
     }
     /// <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
-    pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPillar>> {
+    pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPillar>> {
         &self.pillars
     }
     /// Appends an item to `aws_services`.
@@ -169,17 +158,16 @@ impl CheckSummaryBuilder {
     /// <p>The AWS Services that the Check applies to</p>
     pub fn aws_services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_services.unwrap_or_default();
-        v.push(input.into());
-        self.aws_services = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS Services that the Check applies to</p>
-    pub fn set_aws_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_services = input;
-        self
+    pub fn set_aws_services(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_services = input; self
     }
     /// <p>The AWS Services that the Check applies to</p>
-    pub fn get_aws_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_services(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_services
     }
     /// <p>The source of the Recommendation</p>
@@ -190,8 +178,7 @@ impl CheckSummaryBuilder {
     }
     /// <p>The source of the Recommendation</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the Recommendation</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::RecommendationSource> {
@@ -204,17 +191,16 @@ impl CheckSummaryBuilder {
     /// <p>The column headings for the metadata returned in the resource</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The column headings for the metadata returned in the resource</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>The column headings for the metadata returned in the resource</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`CheckSummary`](crate::types::CheckSummary).
@@ -228,55 +214,50 @@ impl CheckSummaryBuilder {
     /// - [`source`](crate::types::builders::CheckSummaryBuilder::source)
     /// - [`metadata`](crate::types::builders::CheckSummaryBuilder::metadata)
     pub fn build(self) -> ::std::result::Result<crate::types::CheckSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CheckSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            pillars: self.pillars.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pillars",
-                    "pillars was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            aws_services: self.aws_services.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_services",
-                    "aws_services was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building CheckSummary",
-                )
-            })?,
-            metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata",
-                    "metadata was not specified but it is required when building CheckSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CheckSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                pillars: self.pillars
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pillars", "pillars was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                aws_services: self.aws_services
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_services", "aws_services was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+                metadata: self.metadata
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata", "metadata was not specified but it is required when building CheckSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

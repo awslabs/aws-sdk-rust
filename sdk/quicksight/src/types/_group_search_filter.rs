@@ -3,7 +3,7 @@
 /// <p>A <code>GroupSearchFilter</code> object that you want to apply to your search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupSearchFilter {
+pub struct GroupSearchFilter  {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
     pub operator: crate::types::GroupFilterOperator,
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
@@ -11,19 +11,18 @@ pub struct GroupSearchFilter {
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub value: ::std::string::String,
 }
-impl GroupSearchFilter {
+impl  GroupSearchFilter  {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
-    pub fn operator(&self) -> &crate::types::GroupFilterOperator {
+    pub fn operator(&self) -> & crate::types::GroupFilterOperator {
         &self.operator
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
-    pub fn name(&self) -> &crate::types::GroupFilterAttribute {
+    pub fn name(&self) -> & crate::types::GroupFilterAttribute {
         &self.name
     }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl GroupSearchFilter {
@@ -50,8 +49,7 @@ impl GroupSearchFilterBuilder {
     }
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::GroupFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::GroupFilterOperator> {
@@ -65,8 +63,7 @@ impl GroupSearchFilterBuilder {
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::GroupFilterAttribute>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::GroupFilterAttribute> {
@@ -80,8 +77,7 @@ impl GroupSearchFilterBuilder {
     }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl GroupSearchFilterBuilder {
     /// - [`name`](crate::types::builders::GroupSearchFilterBuilder::name)
     /// - [`value`](crate::types::builders::GroupSearchFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::GroupSearchFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GroupSearchFilter {
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building GroupSearchFilter",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GroupSearchFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building GroupSearchFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GroupSearchFilter {
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building GroupSearchFilter")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GroupSearchFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building GroupSearchFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

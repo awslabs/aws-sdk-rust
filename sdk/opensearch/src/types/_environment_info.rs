@@ -3,16 +3,17 @@
 /// <p>Information about the active domain environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentInfo {
+pub struct EnvironmentInfo  {
     /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-    pub availability_zone_information: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
+    pub availability_zone_information: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZoneInfo>>,
 }
-impl EnvironmentInfo {
+impl  EnvironmentInfo  {
     /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_information.is_none()`.
-    pub fn availability_zone_information(&self) -> &[crate::types::AvailabilityZoneInfo] {
-        self.availability_zone_information.as_deref().unwrap_or_default()
+    pub fn availability_zone_information(&self) -> & [crate::types::AvailabilityZoneInfo] {
+        self.availability_zone_information.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnvironmentInfo {
@@ -26,7 +27,7 @@ impl EnvironmentInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentInfoBuilder {
-    pub(crate) availability_zone_information: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
+    pub(crate) availability_zone_information: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZoneInfo>>,
 }
 impl EnvironmentInfoBuilder {
     /// Appends an item to `availability_zone_information`.
@@ -36,23 +37,24 @@ impl EnvironmentInfoBuilder {
     /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub fn availability_zone_information(mut self, input: crate::types::AvailabilityZoneInfo) -> Self {
         let mut v = self.availability_zone_information.unwrap_or_default();
-        v.push(input);
-        self.availability_zone_information = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.availability_zone_information = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-    pub fn set_availability_zone_information(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>) -> Self {
-        self.availability_zone_information = input;
-        self
+    pub fn set_availability_zone_information(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZoneInfo>>) -> Self {
+        self.availability_zone_information = input; self
     }
     /// <p>A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-    pub fn get_availability_zone_information(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>> {
+    pub fn get_availability_zone_information(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZoneInfo>> {
         &self.availability_zone_information
     }
     /// Consumes the builder and constructs a [`EnvironmentInfo`](crate::types::EnvironmentInfo).
     pub fn build(self) -> crate::types::EnvironmentInfo {
         crate::types::EnvironmentInfo {
-            availability_zone_information: self.availability_zone_information,
+            availability_zone_information: self.availability_zone_information
+            ,
         }
     }
 }
+

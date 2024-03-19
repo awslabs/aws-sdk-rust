@@ -4,7 +4,7 @@
 /// <p>The and APIs return a list of <code>PredictedItem</code>s.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictedItem {
+pub struct PredictedItem  {
     /// <p>The recommended item ID.</p>
     pub item_id: ::std::option::Option<::std::string::String>,
     /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
@@ -12,11 +12,11 @@ pub struct PredictedItem {
     /// <p>The name of the promotion that included the predicted item.</p>
     pub promotion_name: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about the item from your Items dataset.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PredictedItem {
+impl  PredictedItem  {
     /// <p>The recommended item ID.</p>
-    pub fn item_id(&self) -> ::std::option::Option<&str> {
+    pub fn item_id(&self) -> ::std::option::Option<& str> {
         self.item_id.as_deref()
     }
     /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
@@ -24,11 +24,11 @@ impl PredictedItem {
         self.score
     }
     /// <p>The name of the promotion that included the predicted item.</p>
-    pub fn promotion_name(&self) -> ::std::option::Option<&str> {
+    pub fn promotion_name(&self) -> ::std::option::Option<& str> {
         self.promotion_name.as_deref()
     }
     /// <p>Metadata about the item from your Items dataset.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -46,7 +46,7 @@ pub struct PredictedItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) promotion_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PredictedItemBuilder {
     /// <p>The recommended item ID.</p>
@@ -56,8 +56,7 @@ impl PredictedItemBuilder {
     }
     /// <p>The recommended item ID.</p>
     pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.item_id = input;
-        self
+        self.item_id = input; self
     }
     /// <p>The recommended item ID.</p>
     pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PredictedItemBuilder {
     }
     /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
     pub fn get_score(&self) -> &::std::option::Option<f64> {
@@ -84,8 +82,7 @@ impl PredictedItemBuilder {
     }
     /// <p>The name of the promotion that included the predicted item.</p>
     pub fn set_promotion_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.promotion_name = input;
-        self
+        self.promotion_name = input; self
     }
     /// <p>The name of the promotion that included the predicted item.</p>
     pub fn get_promotion_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,26 +95,30 @@ impl PredictedItemBuilder {
     /// <p>Metadata about the item from your Items dataset.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata about the item from your Items dataset.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>Metadata about the item from your Items dataset.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`PredictedItem`](crate::types::PredictedItem).
     pub fn build(self) -> crate::types::PredictedItem {
         crate::types::PredictedItem {
-            item_id: self.item_id,
-            score: self.score,
-            promotion_name: self.promotion_name,
-            metadata: self.metadata,
+            item_id: self.item_id
+            ,
+            score: self.score
+            ,
+            promotion_name: self.promotion_name
+            ,
+            metadata: self.metadata
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentitySourcesInput {
+pub struct ListIdentitySourcesInput  {
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -11,15 +11,15 @@ pub struct ListIdentitySourcesInput {
     /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::IdentitySourceFilter>>,
 }
-impl ListIdentitySourcesInput {
+impl  ListIdentitySourcesInput  {
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -28,10 +28,11 @@ impl ListIdentitySourcesInput {
         self.max_results
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::IdentitySourceFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::IdentitySourceFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListIdentitySourcesInput {
@@ -48,7 +49,7 @@ pub struct ListIdentitySourcesInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::IdentitySourceFilter>>,
 }
 impl ListIdentitySourcesInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
@@ -59,8 +60,7 @@ impl ListIdentitySourcesInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +73,7 @@ impl ListIdentitySourcesInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ListIdentitySourcesInputBuilder {
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
@@ -104,29 +102,32 @@ impl ListIdentitySourcesInputBuilder {
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
     pub fn filters(mut self, input: crate::types::IdentitySourceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdentitySourceFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdentitySourceFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListIdentitySourcesInput`](crate::operation::list_identity_sources::ListIdentitySourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_identity_sources::ListIdentitySourcesInput {
-            policy_store_id: self.policy_store_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_identity_sources::ListIdentitySourcesInput {
+                policy_store_id: self.policy_store_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

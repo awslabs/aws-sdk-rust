@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProjectInput {
+pub struct UpdateProjectInput  {
     /// <p>The ID of the project to update.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>A new friendly name for the project.</p>
@@ -12,21 +12,21 @@ pub struct UpdateProjectInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateProjectInput {
+impl  UpdateProjectInput  {
     /// <p>The ID of the project to update.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>A new friendly name for the project.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>A new description for the project.</p>
-    pub fn project_description(&self) -> ::std::option::Option<&str> {
+    pub fn project_description(&self) -> ::std::option::Option<& str> {
         self.project_description.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The ID of the project to update.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project to update.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>A new friendly name for the project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>A new friendly name for the project.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>A new description for the project.</p>
     pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_description = input;
-        self
+        self.project_description = input; self
     }
     /// <p>A new description for the project.</p>
     pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
-            project_id: self.project_id,
-            project_name: self.project_name,
-            project_description: self.project_description,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_project::UpdateProjectInput {
+                project_id: self.project_id
+                ,
+                project_name: self.project_name
+                ,
+                project_description: self.project_description
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

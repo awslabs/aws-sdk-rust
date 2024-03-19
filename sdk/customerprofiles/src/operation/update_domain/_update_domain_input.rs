@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainInput {
+pub struct UpdateDomainInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
@@ -17,11 +17,11 @@ pub struct UpdateDomainInput {
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl UpdateDomainInput {
+impl  UpdateDomainInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The default number of days until the data within the domain expires.</p>
@@ -29,24 +29,24 @@ impl UpdateDomainInput {
         self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
-    pub fn default_encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn default_encryption_key(&self) -> ::std::option::Option<& str> {
         self.default_encryption_key.as_deref()
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
-    pub fn dead_letter_queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn dead_letter_queue_url(&self) -> ::std::option::Option<& str> {
         self.dead_letter_queue_url.as_deref()
     }
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.</p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    pub fn matching(&self) -> ::std::option::Option<&crate::types::MatchingRequest> {
+    pub fn matching(&self) -> ::std::option::Option<& crate::types::MatchingRequest> {
         self.matching.as_ref()
     }
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
-    pub fn rule_based_matching(&self) -> ::std::option::Option<&crate::types::RuleBasedMatchingRequest> {
+    pub fn rule_based_matching(&self) -> ::std::option::Option<& crate::types::RuleBasedMatchingRequest> {
         self.rule_based_matching.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -67,7 +67,7 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) dead_letter_queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) matching: ::std::option::Option<crate::types::MatchingRequest>,
     pub(crate) rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingRequest>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDomainInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -78,8 +78,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The default number of days until the data within the domain expires.</p>
     pub fn set_default_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_expiration_days = input;
-        self
+        self.default_expiration_days = input; self
     }
     /// <p>The default number of days until the data within the domain expires.</p>
     pub fn get_default_expiration_days(&self) -> &::std::option::Option<i32> {
@@ -106,8 +104,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
     pub fn set_default_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_encryption_key = input;
-        self
+        self.default_encryption_key = input; self
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
     pub fn get_default_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn set_dead_letter_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dead_letter_queue_url = input;
-        self
+        self.dead_letter_queue_url = input; self
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn get_dead_letter_queue_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +132,7 @@ impl UpdateDomainInputBuilder {
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.</p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn set_matching(mut self, input: ::std::option::Option<crate::types::MatchingRequest>) -> Self {
-        self.matching = input;
-        self
+        self.matching = input; self
     }
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.</p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
@@ -151,8 +146,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn set_rule_based_matching(mut self, input: ::std::option::Option<crate::types::RuleBasedMatchingRequest>) -> Self {
-        self.rule_based_matching = input;
-        self
+        self.rule_based_matching = input; self
     }
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn get_rule_based_matching(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingRequest> {
@@ -165,31 +159,38 @@ impl UpdateDomainInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
-            domain_name: self.domain_name,
-            default_expiration_days: self.default_expiration_days,
-            default_encryption_key: self.default_encryption_key,
-            dead_letter_queue_url: self.dead_letter_queue_url,
-            matching: self.matching,
-            rule_based_matching: self.rule_based_matching,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain::UpdateDomainInput {
+                domain_name: self.domain_name
+                ,
+                default_expiration_days: self.default_expiration_days
+                ,
+                default_encryption_key: self.default_encryption_key
+                ,
+                dead_letter_queue_url: self.dead_letter_queue_url
+                ,
+                matching: self.matching
+                ,
+                rule_based_matching: self.rule_based_matching
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

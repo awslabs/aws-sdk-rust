@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInvitationsCountOutput {
+pub struct GetInvitationsCountOutput  {
     /// <p>The number of received invitations.</p>
     pub invitations_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl GetInvitationsCountOutput {
+impl  GetInvitationsCountOutput  {
     /// <p>The number of received invitations.</p>
     pub fn invitations_count(&self) -> ::std::option::Option<i32> {
         self.invitations_count
     }
 }
 impl ::aws_types::request_id::RequestId for GetInvitationsCountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInvitationsCountOutput {
     /// Creates a new builder-style object to manufacture [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
     pub fn builder() -> crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder {
@@ -40,27 +40,28 @@ impl GetInvitationsCountOutputBuilder {
     }
     /// <p>The number of received invitations.</p>
     pub fn set_invitations_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.invitations_count = input;
-        self
+        self.invitations_count = input; self
     }
     /// <p>The number of received invitations.</p>
     pub fn get_invitations_count(&self) -> &::std::option::Option<i32> {
         &self.invitations_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
     pub fn build(self) -> crate::operation::get_invitations_count::GetInvitationsCountOutput {
         crate::operation::get_invitations_count::GetInvitationsCountOutput {
-            invitations_count: self.invitations_count,
+            invitations_count: self.invitations_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

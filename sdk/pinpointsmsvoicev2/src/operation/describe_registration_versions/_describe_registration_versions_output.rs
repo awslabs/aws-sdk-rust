@@ -2,43 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationVersionsOutput {
+pub struct DescribeRegistrationVersionsOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub registration_arn: ::std::string::String,
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::string::String,
     /// <p>An array of RegistrationVersions objects.</p>
-    pub registration_versions: ::std::vec::Vec<crate::types::RegistrationVersionInformation>,
+    pub registration_versions: ::std::vec::Vec::<crate::types::RegistrationVersionInformation>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRegistrationVersionsOutput {
+impl  DescribeRegistrationVersionsOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
-    pub fn registration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_arn.deref()
+    pub fn registration_arn(&self) -> & str {
+        use std::ops::Deref; self.registration_arn.deref()
     }
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_id.deref()
+    pub fn registration_id(&self) -> & str {
+        use std::ops::Deref; self.registration_id.deref()
     }
     /// <p>An array of RegistrationVersions objects.</p>
-    pub fn registration_versions(&self) -> &[crate::types::RegistrationVersionInformation] {
-        use std::ops::Deref;
-        self.registration_versions.deref()
+    pub fn registration_versions(&self) -> & [crate::types::RegistrationVersionInformation] {
+        use std::ops::Deref; self.registration_versions.deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistrationVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistrationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistrationVersionsOutput`](crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput).
     pub fn builder() -> crate::operation::describe_registration_versions::builders::DescribeRegistrationVersionsOutputBuilder {
@@ -52,7 +49,7 @@ impl DescribeRegistrationVersionsOutput {
 pub struct DescribeRegistrationVersionsOutputBuilder {
     pub(crate) registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) registration_versions: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationVersionInformation>>,
+    pub(crate) registration_versions: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationVersionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -65,8 +62,7 @@ impl DescribeRegistrationVersionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn set_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_arn = input;
-        self
+        self.registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn get_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl DescribeRegistrationVersionsOutputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +89,16 @@ impl DescribeRegistrationVersionsOutputBuilder {
     /// <p>An array of RegistrationVersions objects.</p>
     pub fn registration_versions(mut self, input: crate::types::RegistrationVersionInformation) -> Self {
         let mut v = self.registration_versions.unwrap_or_default();
-        v.push(input);
-        self.registration_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.registration_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationVersions objects.</p>
-    pub fn set_registration_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationVersionInformation>>) -> Self {
-        self.registration_versions = input;
-        self
+    pub fn set_registration_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationVersionInformation>>) -> Self {
+        self.registration_versions = input; self
     }
     /// <p>An array of RegistrationVersions objects.</p>
-    pub fn get_registration_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationVersionInformation>> {
+    pub fn get_registration_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationVersionInformation>> {
         &self.registration_versions
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -114,54 +108,49 @@ impl DescribeRegistrationVersionsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistrationVersionsOutput`](crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_arn`](crate::operation::describe_registration_versions::builders::DescribeRegistrationVersionsOutputBuilder::registration_arn)
     /// - [`registration_id`](crate::operation::describe_registration_versions::builders::DescribeRegistrationVersionsOutputBuilder::registration_id)
     /// - [`registration_versions`](crate::operation::describe_registration_versions::builders::DescribeRegistrationVersionsOutputBuilder::registration_versions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput {
-            registration_arn: self.registration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_arn",
-                    "registration_arn was not specified but it is required when building DescribeRegistrationVersionsOutput",
-                )
-            })?,
-            registration_id: self.registration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_id",
-                    "registration_id was not specified but it is required when building DescribeRegistrationVersionsOutput",
-                )
-            })?,
-            registration_versions: self.registration_versions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_versions",
-                    "registration_versions was not specified but it is required when building DescribeRegistrationVersionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput {
+                registration_arn: self.registration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_arn", "registration_arn was not specified but it is required when building DescribeRegistrationVersionsOutput")
+                    )?
+                ,
+                registration_id: self.registration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_id", "registration_id was not specified but it is required when building DescribeRegistrationVersionsOutput")
+                    )?
+                ,
+                registration_versions: self.registration_versions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_versions", "registration_versions was not specified but it is required when building DescribeRegistrationVersionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

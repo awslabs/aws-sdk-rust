@@ -3,7 +3,7 @@
 /// <p>Amazon Web Services Private CA Connector for Active Directory is a service that links your Active Directory with Amazon Web Services Private CA. The connector brokers the exchange of certificates from Amazon Web Services Private CA to domain-joined users and machines managed with Active Directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Connector {
+pub struct Connector  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
@@ -23,41 +23,41 @@ pub struct Connector {
     /// <p>The date and time that the connector was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Connector {
+impl  Connector  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>Certificate enrollment endpoint for Active Directory domain-joined objects reach out to when requesting certificates.</p>
-    pub fn certificate_enrollment_policy_server_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_enrollment_policy_server_endpoint(&self) -> ::std::option::Option<& str> {
         self.certificate_enrollment_policy_server_endpoint.as_deref()
     }
     /// <p>The identifier of the Active Directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>Information of the VPC and security group(s) used with the connector.</p>
-    pub fn vpc_information(&self) -> ::std::option::Option<&crate::types::VpcInformation> {
+    pub fn vpc_information(&self) -> ::std::option::Option<& crate::types::VpcInformation> {
         self.vpc_information.as_ref()
     }
     /// <p>Status of the connector. Status can be creating, active, deleting, or failed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ConnectorStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ConnectorStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the connector status if the status is failed.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::ConnectorStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::ConnectorStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>The date and time that the connector was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the connector was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ConnectorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ConnectorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ConnectorBuilder {
     }
     /// <p>Certificate enrollment endpoint for Active Directory domain-joined objects reach out to when requesting certificates.</p>
     pub fn set_certificate_enrollment_policy_server_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_enrollment_policy_server_endpoint = input;
-        self
+        self.certificate_enrollment_policy_server_endpoint = input; self
     }
     /// <p>Certificate enrollment endpoint for Active Directory domain-joined objects reach out to when requesting certificates.</p>
     pub fn get_certificate_enrollment_policy_server_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ConnectorBuilder {
     }
     /// <p>The identifier of the Active Directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the Active Directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ConnectorBuilder {
     }
     /// <p>Information of the VPC and security group(s) used with the connector.</p>
     pub fn set_vpc_information(mut self, input: ::std::option::Option<crate::types::VpcInformation>) -> Self {
-        self.vpc_information = input;
-        self
+        self.vpc_information = input; self
     }
     /// <p>Information of the VPC and security group(s) used with the connector.</p>
     pub fn get_vpc_information(&self) -> &::std::option::Option<crate::types::VpcInformation> {
@@ -160,8 +155,7 @@ impl ConnectorBuilder {
     }
     /// <p>Status of the connector. Status can be creating, active, deleting, or failed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectorStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the connector. Status can be creating, active, deleting, or failed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
@@ -174,8 +168,7 @@ impl ConnectorBuilder {
     }
     /// <p>Additional information about the connector status if the status is failed.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::ConnectorStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Additional information about the connector status if the status is failed.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::ConnectorStatusReason> {
@@ -188,8 +181,7 @@ impl ConnectorBuilder {
     }
     /// <p>The date and time that the connector was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the connector was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -202,8 +194,7 @@ impl ConnectorBuilder {
     }
     /// <p>The date and time that the connector was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the connector was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -212,15 +203,25 @@ impl ConnectorBuilder {
     /// Consumes the builder and constructs a [`Connector`](crate::types::Connector).
     pub fn build(self) -> crate::types::Connector {
         crate::types::Connector {
-            arn: self.arn,
-            certificate_authority_arn: self.certificate_authority_arn,
-            certificate_enrollment_policy_server_endpoint: self.certificate_enrollment_policy_server_endpoint,
-            directory_id: self.directory_id,
-            vpc_information: self.vpc_information,
-            status: self.status,
-            status_reason: self.status_reason,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            arn: self.arn
+            ,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
+            certificate_enrollment_policy_server_endpoint: self.certificate_enrollment_policy_server_endpoint
+            ,
+            directory_id: self.directory_id
+            ,
+            vpc_information: self.vpc_information
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::complete_attachment_upload::_complete_attachment_uploa
 
 impl CompleteAttachmentUploadInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.complete_attachment_upload();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.complete_attachment_upload();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
-///
+/// 
 /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. A conflict exception is thrown when an attachment with that identifier is already being uploaded.</p><note>
 /// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl CompleteAttachmentUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteAttachmentUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder,
+                    inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-    > for CompleteAttachmentUploadFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
+                    crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+                > for CompleteAttachmentUploadFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
+                        crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CompleteAttachmentUploadFluentBuilder {
     /// Creates a new `CompleteAttachmentUpload`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CompleteAttachmentUploadFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::complete_attachment_upload::CompleteAttachmentUpload::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::complete_attachment_upload::CompleteAttachmentUpload::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::complete_attachment_upload::CompleteAttachmentUpload::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::complete_attachment_upload::CompleteAttachmentUpload::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput, crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `AttachmentIds`.
     ///
     /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
@@ -121,12 +108,12 @@ impl CompleteAttachmentUploadFluentBuilder {
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn set_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_attachment_ids(input);
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn get_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_attachment_ids()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -158,3 +145,4 @@ impl CompleteAttachmentUploadFluentBuilder {
         self.inner.get_connection_token()
     }
 }
+

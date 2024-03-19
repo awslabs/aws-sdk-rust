@@ -3,21 +3,21 @@
 /// <p>A filtering criterion to scope down the result list of the <code>ListServiceInstances</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServiceInstancesFilter {
+pub struct ListServiceInstancesFilter  {
     /// <p>The name of a filtering criterion.</p>
     pub key: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ListServiceInstancesFilter {
+impl  ListServiceInstancesFilter  {
     /// <p>The name of a filtering criterion.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::ListServiceInstancesFilterBy> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::ListServiceInstancesFilterBy> {
         self.key.as_ref()
     }
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ListServiceInstancesFilterBuilder {
     }
     /// <p>The name of a filtering criterion.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of a filtering criterion.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::ListServiceInstancesFilterBy> {
@@ -59,8 +58,7 @@ impl ListServiceInstancesFilterBuilder {
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
@@ -70,8 +68,11 @@ impl ListServiceInstancesFilterBuilder {
     /// Consumes the builder and constructs a [`ListServiceInstancesFilter`](crate::types::ListServiceInstancesFilter).
     pub fn build(self) -> crate::types::ListServiceInstancesFilter {
         crate::types::ListServiceInstancesFilter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

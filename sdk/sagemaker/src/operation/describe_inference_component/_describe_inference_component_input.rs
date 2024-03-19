@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInferenceComponentInput {
+pub struct DescribeInferenceComponentInput  {
     /// <p>The name of the inference component.</p>
     pub inference_component_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInferenceComponentInput {
+impl  DescribeInferenceComponentInput  {
     /// <p>The name of the inference component.</p>
-    pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_component_name(&self) -> ::std::option::Option<& str> {
         self.inference_component_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeInferenceComponentInputBuilder {
     }
     /// <p>The name of the inference component.</p>
     pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_component_name = input;
-        self
+        self.inference_component_name = input; self
     }
     /// <p>The name of the inference component.</p>
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_component_name
     }
     /// Consumes the builder and constructs a [`DescribeInferenceComponentInput`](crate::operation::describe_inference_component::DescribeInferenceComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inference_component::DescribeInferenceComponentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_inference_component::DescribeInferenceComponentInput {
-            inference_component_name: self.inference_component_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inference_component::DescribeInferenceComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_inference_component::DescribeInferenceComponentInput {
+                inference_component_name: self.inference_component_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisconnectParticipantInput {
+pub struct DisconnectParticipantInput  {
     /// <p>ARN of the stage to which the participant is attached.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
@@ -10,17 +10,17 @@ pub struct DisconnectParticipantInput {
     /// <p>Description of why this participant is being disconnected.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DisconnectParticipantInput {
+impl  DisconnectParticipantInput  {
     /// <p>ARN of the stage to which the participant is attached.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stage_arn(&self) -> ::std::option::Option<& str> {
         self.stage_arn.as_deref()
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>Description of why this participant is being disconnected.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DisconnectParticipantInputBuilder {
     }
     /// <p>ARN of the stage to which the participant is attached.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>ARN of the stage to which the participant is attached.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DisconnectParticipantInputBuilder {
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DisconnectParticipantInputBuilder {
     }
     /// <p>Description of why this participant is being disconnected.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Description of why this participant is being disconnected.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disconnect_participant::DisconnectParticipantInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disconnect_participant::DisconnectParticipantInput {
-            stage_arn: self.stage_arn,
-            participant_id: self.participant_id,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disconnect_participant::DisconnectParticipantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disconnect_participant::DisconnectParticipantInput {
+                stage_arn: self.stage_arn
+                ,
+                participant_id: self.participant_id
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

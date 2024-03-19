@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImagePipelineExecutionInput {
+pub struct StartImagePipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartImagePipelineExecutionInput {
+impl  StartImagePipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn image_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StartImagePipelineExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
     pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_pipeline_arn = input;
-        self
+        self.image_pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
     pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StartImagePipelineExecutionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
-            image_pipeline_arn: self.image_pipeline_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
+                image_pipeline_arn: self.image_pipeline_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

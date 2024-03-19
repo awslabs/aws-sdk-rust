@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateChannelModeratorOutput {
+pub struct CreateChannelModeratorOutput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the channel and the moderator.</p>
     pub channel_moderator: ::std::option::Option<crate::types::Identity>,
     _request_id: Option<String>,
 }
-impl CreateChannelModeratorOutput {
+impl  CreateChannelModeratorOutput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARNs of the channel and the moderator.</p>
-    pub fn channel_moderator(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn channel_moderator(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.channel_moderator.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateChannelModeratorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateChannelModeratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelModeratorOutput`](crate::operation::create_channel_moderator::CreateChannelModeratorOutput).
     pub fn builder() -> crate::operation::create_channel_moderator::builders::CreateChannelModeratorOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateChannelModeratorOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateChannelModeratorOutputBuilder {
     }
     /// <p>The ARNs of the channel and the moderator.</p>
     pub fn set_channel_moderator(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.channel_moderator = input;
-        self
+        self.channel_moderator = input; self
     }
     /// <p>The ARNs of the channel and the moderator.</p>
     pub fn get_channel_moderator(&self) -> &::std::option::Option<crate::types::Identity> {
         &self.channel_moderator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateChannelModeratorOutput`](crate::operation::create_channel_moderator::CreateChannelModeratorOutput).
     pub fn build(self) -> crate::operation::create_channel_moderator::CreateChannelModeratorOutput {
         crate::operation::create_channel_moderator::CreateChannelModeratorOutput {
-            channel_arn: self.channel_arn,
-            channel_moderator: self.channel_moderator,
+            channel_arn: self.channel_arn
+            ,
+            channel_moderator: self.channel_moderator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

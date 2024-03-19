@@ -3,17 +3,17 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOptionGroupInput {
+pub struct DeleteOptionGroupInput  {
     /// <p>The name of the option group to be deleted.</p><note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub option_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteOptionGroupInput {
+impl  DeleteOptionGroupInput  {
     /// <p>The name of the option group to be deleted.</p><note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DeleteOptionGroupInputBuilder {
     /// <p>You can't delete default option groups.</p>
     /// </note>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>The name of the option group to be deleted.</p><note>
     /// <p>You can't delete default option groups.</p>
@@ -53,11 +52,13 @@ impl DeleteOptionGroupInputBuilder {
         &self.option_group_name
     }
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_option_group::DeleteOptionGroupInput {
-            option_group_name: self.option_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_option_group::DeleteOptionGroupInput {
+                option_group_name: self.option_group_name
+                ,
+            }
+        )
     }
 }
+

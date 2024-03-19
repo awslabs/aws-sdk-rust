@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReferenceImportJobOutput {
+pub struct GetReferenceImportJobOutput  {
     /// <p>The job's ID.</p>
     pub id: ::std::string::String,
     /// <p>The job's reference store ID.</p>
@@ -18,52 +18,48 @@ pub struct GetReferenceImportJobOutput {
     /// <p>When the job completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's source files.</p>
-    pub sources: ::std::vec::Vec<crate::types::ImportReferenceSourceItem>,
+    pub sources: ::std::vec::Vec::<crate::types::ImportReferenceSourceItem>,
     _request_id: Option<String>,
 }
-impl GetReferenceImportJobOutput {
+impl  GetReferenceImportJobOutput  {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_store_id.deref()
+    pub fn reference_store_id(&self) -> & str {
+        use std::ops::Deref; self.reference_store_id.deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> &crate::types::ReferenceImportJobStatus {
+    pub fn status(&self) -> & crate::types::ReferenceImportJobStatus {
         &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> &[crate::types::ImportReferenceSourceItem] {
-        use std::ops::Deref;
-        self.sources.deref()
+    pub fn sources(&self) -> & [crate::types::ImportReferenceSourceItem] {
+        use std::ops::Deref; self.sources.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReferenceImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReferenceImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceImportJobOutput`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput).
     pub fn builder() -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder {
@@ -82,7 +78,7 @@ pub struct GetReferenceImportJobOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::ImportReferenceSourceItem>>,
     _request_id: Option<String>,
 }
 impl GetReferenceImportJobOutputBuilder {
@@ -94,8 +90,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The job's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +104,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>The job's reference store ID.</p>
     pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_store_id = input;
-        self
+        self.reference_store_id = input; self
     }
     /// <p>The job's reference store ID.</p>
     pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>The job's service role ARN.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The job's service role ARN.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +132,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>The job's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceImportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The job's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceImportJobStatus> {
@@ -153,8 +145,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>The job's status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The job's status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +159,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>When the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +172,7 @@ impl GetReferenceImportJobOutputBuilder {
     }
     /// <p>When the job completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>When the job completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,28 +185,27 @@ impl GetReferenceImportJobOutputBuilder {
     /// <p>The job's source files.</p>
     pub fn sources(mut self, input: crate::types::ImportReferenceSourceItem) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportReferenceSourceItem>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportReferenceSourceItem>> {
         &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReferenceImportJobOutput`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder::id)
@@ -226,52 +214,46 @@ impl GetReferenceImportJobOutputBuilder {
     /// - [`status`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder::status)
     /// - [`creation_time`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder::creation_time)
     /// - [`sources`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder::sources)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reference_import_job::GetReferenceImportJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_reference_import_job::GetReferenceImportJobOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetReferenceImportJobOutput",
-                )
-            })?,
-            reference_store_id: self.reference_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_store_id",
-                    "reference_store_id was not specified but it is required when building GetReferenceImportJobOutput",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building GetReferenceImportJobOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetReferenceImportJobOutput",
-                )
-            })?,
-            status_message: self.status_message,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetReferenceImportJobOutput",
-                )
-            })?,
-            completion_time: self.completion_time,
-            sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sources",
-                    "sources was not specified but it is required when building GetReferenceImportJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference_import_job::GetReferenceImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reference_import_job::GetReferenceImportJobOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetReferenceImportJobOutput")
+                    )?
+                ,
+                reference_store_id: self.reference_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_store_id", "reference_store_id was not specified but it is required when building GetReferenceImportJobOutput")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building GetReferenceImportJobOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetReferenceImportJobOutput")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetReferenceImportJobOutput")
+                    )?
+                ,
+                completion_time: self.completion_time
+                ,
+                sources: self.sources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sources", "sources was not specified but it is required when building GetReferenceImportJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

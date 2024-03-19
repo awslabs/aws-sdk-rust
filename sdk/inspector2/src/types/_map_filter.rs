@@ -3,7 +3,7 @@
 /// <p>An object that describes details of a map filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MapFilter {
+pub struct MapFilter  {
     /// <p>The operator to use when comparing values in the filter.</p>
     pub comparison: crate::types::MapComparison,
     /// <p>The tag key used in the filter.</p>
@@ -11,18 +11,17 @@ pub struct MapFilter {
     /// <p>The tag value used in the filter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl MapFilter {
+impl  MapFilter  {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn comparison(&self) -> &crate::types::MapComparison {
+    pub fn comparison(&self) -> & crate::types::MapComparison {
         &self.comparison
     }
     /// <p>The tag key used in the filter.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The tag value used in the filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl MapFilterBuilder {
     }
     /// <p>The operator to use when comparing values in the filter.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::MapComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::MapComparison> {
@@ -65,8 +63,7 @@ impl MapFilterBuilder {
     }
     /// <p>The tag key used in the filter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag key used in the filter.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl MapFilterBuilder {
     }
     /// <p>The tag value used in the filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The tag value used in the filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl MapFilterBuilder {
     /// - [`comparison`](crate::types::builders::MapFilterBuilder::comparison)
     /// - [`key`](crate::types::builders::MapFilterBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::MapFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MapFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building MapFilter",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building MapFilter",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MapFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building MapFilter")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building MapFilter")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

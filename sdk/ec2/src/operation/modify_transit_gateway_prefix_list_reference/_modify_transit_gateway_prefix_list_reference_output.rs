@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTransitGatewayPrefixListReferenceOutput {
+pub struct ModifyTransitGatewayPrefixListReferenceOutput  {
     /// <p>Information about the prefix list reference.</p>
     pub transit_gateway_prefix_list_reference: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
     _request_id: Option<String>,
 }
-impl ModifyTransitGatewayPrefixListReferenceOutput {
+impl  ModifyTransitGatewayPrefixListReferenceOutput  {
     /// <p>Information about the prefix list reference.</p>
-    pub fn transit_gateway_prefix_list_reference(&self) -> ::std::option::Option<&crate::types::TransitGatewayPrefixListReference> {
+    pub fn transit_gateway_prefix_list_reference(&self) -> ::std::option::Option<& crate::types::TransitGatewayPrefixListReference> {
         self.transit_gateway_prefix_list_reference.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyTransitGatewayPrefixListReferenceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyTransitGatewayPrefixListReferenceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayPrefixListReferenceOutput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceOutput).
-    pub fn builder() -> crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceOutputBuilder {
         crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceOutputBuilder::default()
     }
 }
@@ -40,31 +39,29 @@ impl ModifyTransitGatewayPrefixListReferenceOutputBuilder {
         self
     }
     /// <p>Information about the prefix list reference.</p>
-    pub fn set_transit_gateway_prefix_list_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
-    ) -> Self {
-        self.transit_gateway_prefix_list_reference = input;
-        self
+    pub fn set_transit_gateway_prefix_list_reference(mut self, input: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>) -> Self {
+        self.transit_gateway_prefix_list_reference = input; self
     }
     /// <p>Information about the prefix list reference.</p>
     pub fn get_transit_gateway_prefix_list_reference(&self) -> &::std::option::Option<crate::types::TransitGatewayPrefixListReference> {
         &self.transit_gateway_prefix_list_reference
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayPrefixListReferenceOutput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceOutput).
     pub fn build(self) -> crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceOutput {
         crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceOutput {
-            transit_gateway_prefix_list_reference: self.transit_gateway_prefix_list_reference,
+            transit_gateway_prefix_list_reference: self.transit_gateway_prefix_list_reference
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

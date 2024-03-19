@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssessmentRunsInput {
+pub struct DescribeAssessmentRunsInput  {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assessment_run_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeAssessmentRunsInput {
+impl  DescribeAssessmentRunsInput  {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_run_arns.is_none()`.
-    pub fn assessment_run_arns(&self) -> &[::std::string::String] {
-        self.assessment_run_arns.as_deref().unwrap_or_default()
+    pub fn assessment_run_arns(&self) -> & [::std::string::String] {
+        self.assessment_run_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeAssessmentRunsInput {
@@ -25,7 +26,7 @@ impl DescribeAssessmentRunsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentRunsInputBuilder {
-    pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeAssessmentRunsInputBuilder {
     /// Appends an item to `assessment_run_arns`.
@@ -35,28 +36,26 @@ impl DescribeAssessmentRunsInputBuilder {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
     pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
-        v.push(input.into());
-        self.assessment_run_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assessment_run_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assessment_run_arns = input;
-        self
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assessment_run_arns = input; self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assessment_run_arns
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput {
-            assessment_run_arns: self.assessment_run_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput {
+                assessment_run_arns: self.assessment_run_arns
+                ,
+            }
+        )
     }
 }
+

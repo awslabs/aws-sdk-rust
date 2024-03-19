@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of VPC Flow Logs as a data source for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
+pub struct AwsGuardDutyDetectorDataSourcesFlowLogsDetails  {
     /// <p>Describes whether VPC Flow Logs are activated as a data source for the detector.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
+impl  AwsGuardDutyDetectorDataSourcesFlowLogsDetails  {
     /// <p>Describes whether VPC Flow Logs are activated as a data source for the detector.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder {
     }
     /// <p>Describes whether VPC Flow Logs are activated as a data source for the detector.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes whether VPC Flow Logs are activated as a data source for the detector.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesFlowLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
-        crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails { status: self.status }
+        crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
+            status: self.status
+            ,
+        }
     }
 }
+

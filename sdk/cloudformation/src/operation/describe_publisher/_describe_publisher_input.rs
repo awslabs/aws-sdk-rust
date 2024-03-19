@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePublisherInput {
+pub struct DescribePublisherInput  {
     /// <p>The ID of the extension publisher.</p>
     /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
     pub publisher_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribePublisherInput {
+impl  DescribePublisherInput  {
     /// <p>The ID of the extension publisher.</p>
     /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
 }
@@ -37,8 +37,7 @@ impl DescribePublisherInputBuilder {
     /// <p>The ID of the extension publisher.</p>
     /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The ID of the extension publisher.</p>
     /// <p>If you don't supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
@@ -46,11 +45,13 @@ impl DescribePublisherInputBuilder {
         &self.publisher_id
     }
     /// Consumes the builder and constructs a [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_publisher::DescribePublisherInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_publisher::DescribePublisherInput {
-            publisher_id: self.publisher_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_publisher::DescribePublisherInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_publisher::DescribePublisherInput {
+                publisher_id: self.publisher_id
+                ,
+            }
+        )
     }
 }
+

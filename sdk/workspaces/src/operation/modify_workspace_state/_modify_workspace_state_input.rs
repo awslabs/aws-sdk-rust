@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyWorkspaceStateInput {
+pub struct ModifyWorkspaceStateInput  {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkSpace state.</p>
     pub workspace_state: ::std::option::Option<crate::types::TargetWorkspaceState>,
 }
-impl ModifyWorkspaceStateInput {
+impl  ModifyWorkspaceStateInput  {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The WorkSpace state.</p>
-    pub fn workspace_state(&self) -> ::std::option::Option<&crate::types::TargetWorkspaceState> {
+    pub fn workspace_state(&self) -> ::std::option::Option<& crate::types::TargetWorkspaceState> {
         self.workspace_state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyWorkspaceStateInputBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ModifyWorkspaceStateInputBuilder {
     }
     /// <p>The WorkSpace state.</p>
     pub fn set_workspace_state(mut self, input: ::std::option::Option<crate::types::TargetWorkspaceState>) -> Self {
-        self.workspace_state = input;
-        self
+        self.workspace_state = input; self
     }
     /// <p>The WorkSpace state.</p>
     pub fn get_workspace_state(&self) -> &::std::option::Option<crate::types::TargetWorkspaceState> {
         &self.workspace_state
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_workspace_state::ModifyWorkspaceStateInput {
-            workspace_id: self.workspace_id,
-            workspace_state: self.workspace_state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_workspace_state::ModifyWorkspaceStateInput {
+                workspace_id: self.workspace_id
+                ,
+                workspace_state: self.workspace_state
+                ,
+            }
+        )
     }
 }
+

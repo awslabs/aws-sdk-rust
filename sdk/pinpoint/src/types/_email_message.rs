@@ -3,7 +3,7 @@
 /// <p>Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailMessage {
+pub struct EmailMessage  {
     /// <p>The body of the email message.</p>
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
@@ -13,43 +13,42 @@ pub struct EmailMessage {
     /// <p>The email message, represented as a raw MIME message.</p>
     pub raw_email: ::std::option::Option<crate::types::RawEmail>,
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
-    pub reply_to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reply_to_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
     pub simple_email: ::std::option::Option<crate::types::SimpleEmail>,
     /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
-    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl EmailMessage {
+impl  EmailMessage  {
     /// <p>The body of the email message.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
-    pub fn feedback_forwarding_address(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_forwarding_address(&self) -> ::std::option::Option<& str> {
         self.feedback_forwarding_address.as_deref()
     }
     /// <p>The verified email address to send the email message from. The default value is the FromAddress specified for the email channel.</p>
-    pub fn from_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<& str> {
         self.from_address.as_deref()
     }
     /// <p>The email message, represented as a raw MIME message.</p>
-    pub fn raw_email(&self) -> ::std::option::Option<&crate::types::RawEmail> {
+    pub fn raw_email(&self) -> ::std::option::Option<& crate::types::RawEmail> {
         self.raw_email.as_ref()
     }
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reply_to_addresses.is_none()`.
-    pub fn reply_to_addresses(&self) -> &[::std::string::String] {
-        self.reply_to_addresses.as_deref().unwrap_or_default()
+    pub fn reply_to_addresses(&self) -> & [::std::string::String] {
+        self.reply_to_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
-    pub fn simple_email(&self) -> ::std::option::Option<&crate::types::SimpleEmail> {
+    pub fn simple_email(&self) -> ::std::option::Option<& crate::types::SimpleEmail> {
         self.simple_email.as_ref()
     }
     /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn substitutions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.substitutions.as_ref()
     }
 }
@@ -68,9 +67,9 @@ pub struct EmailMessageBuilder {
     pub(crate) feedback_forwarding_address: ::std::option::Option<::std::string::String>,
     pub(crate) from_address: ::std::option::Option<::std::string::String>,
     pub(crate) raw_email: ::std::option::Option<crate::types::RawEmail>,
-    pub(crate) reply_to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reply_to_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) simple_email: ::std::option::Option<crate::types::SimpleEmail>,
-    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl EmailMessageBuilder {
     /// <p>The body of the email message.</p>
@@ -80,8 +79,7 @@ impl EmailMessageBuilder {
     }
     /// <p>The body of the email message.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the email message.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl EmailMessageBuilder {
     }
     /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
     pub fn set_feedback_forwarding_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feedback_forwarding_address = input;
-        self
+        self.feedback_forwarding_address = input; self
     }
     /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
     pub fn get_feedback_forwarding_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +105,7 @@ impl EmailMessageBuilder {
     }
     /// <p>The verified email address to send the email message from. The default value is the FromAddress specified for the email channel.</p>
     pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_address = input;
-        self
+        self.from_address = input; self
     }
     /// <p>The verified email address to send the email message from. The default value is the FromAddress specified for the email channel.</p>
     pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl EmailMessageBuilder {
     }
     /// <p>The email message, represented as a raw MIME message.</p>
     pub fn set_raw_email(mut self, input: ::std::option::Option<crate::types::RawEmail>) -> Self {
-        self.raw_email = input;
-        self
+        self.raw_email = input; self
     }
     /// <p>The email message, represented as a raw MIME message.</p>
     pub fn get_raw_email(&self) -> &::std::option::Option<crate::types::RawEmail> {
@@ -136,17 +131,16 @@ impl EmailMessageBuilder {
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
     pub fn reply_to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reply_to_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.reply_to_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reply_to_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
-    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reply_to_addresses = input;
-        self
+    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reply_to_addresses = input; self
     }
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
-    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reply_to_addresses
     }
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
@@ -156,8 +150,7 @@ impl EmailMessageBuilder {
     }
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
     pub fn set_simple_email(mut self, input: ::std::option::Option<crate::types::SimpleEmail>) -> Self {
-        self.simple_email = input;
-        self
+        self.simple_email = input; self
     }
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
     pub fn get_simple_email(&self) -> &::std::option::Option<crate::types::SimpleEmail> {
@@ -168,36 +161,38 @@ impl EmailMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.substitutions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.substitutions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
-    pub fn set_substitutions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.substitutions = input;
-        self
+    pub fn set_substitutions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.substitutions = input; self
     }
     /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
-    pub fn get_substitutions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_substitutions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.substitutions
     }
     /// Consumes the builder and constructs a [`EmailMessage`](crate::types::EmailMessage).
     pub fn build(self) -> crate::types::EmailMessage {
         crate::types::EmailMessage {
-            body: self.body,
-            feedback_forwarding_address: self.feedback_forwarding_address,
-            from_address: self.from_address,
-            raw_email: self.raw_email,
-            reply_to_addresses: self.reply_to_addresses,
-            simple_email: self.simple_email,
-            substitutions: self.substitutions,
+            body: self.body
+            ,
+            feedback_forwarding_address: self.feedback_forwarding_address
+            ,
+            from_address: self.from_address
+            ,
+            raw_email: self.raw_email
+            ,
+            reply_to_addresses: self.reply_to_addresses
+            ,
+            simple_email: self.simple_email
+            ,
+            substitutions: self.substitutions
+            ,
         }
     }
 }
+

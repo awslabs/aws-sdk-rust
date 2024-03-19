@@ -3,7 +3,7 @@
 /// <p>Details on a member account in your organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Member {
+pub struct Member  {
     /// <p>The Amazon Web Services account ID of the member account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the member account.</p>
@@ -13,21 +13,21 @@ pub struct Member {
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Member {
+impl  Member  {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the member account.</p>
-    pub fn relationship_status(&self) -> ::std::option::Option<&crate::types::RelationshipStatus> {
+    pub fn relationship_status(&self) -> ::std::option::Option<& crate::types::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
-    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Web Services account ID of the member account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the member account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl MemberBuilder {
     }
     /// <p>The status of the member account.</p>
     pub fn set_relationship_status(mut self, input: ::std::option::Option<crate::types::RelationshipStatus>) -> Self {
-        self.relationship_status = input;
-        self
+        self.relationship_status = input; self
     }
     /// <p>The status of the member account.</p>
     pub fn get_relationship_status(&self) -> &::std::option::Option<crate::types::RelationshipStatus> {
@@ -83,8 +81,7 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
     pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delegated_admin_account_id = input;
-        self
+        self.delegated_admin_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
     pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl MemberBuilder {
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl MemberBuilder {
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {
         crate::types::Member {
-            account_id: self.account_id,
-            relationship_status: self.relationship_status,
-            delegated_admin_account_id: self.delegated_admin_account_id,
-            updated_at: self.updated_at,
+            account_id: self.account_id
+            ,
+            relationship_status: self.relationship_status
+            ,
+            delegated_admin_account_id: self.delegated_admin_account_id
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

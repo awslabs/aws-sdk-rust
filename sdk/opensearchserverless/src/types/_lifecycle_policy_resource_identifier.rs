@@ -3,21 +3,20 @@
 /// <p>The unique identifiers of policy types and resource names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyResourceIdentifier {
+pub struct LifecyclePolicyResourceIdentifier  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: crate::types::LifecyclePolicyType,
     /// <p>The name of the OpenSearch Serverless ilndex resource.</p>
     pub resource: ::std::string::String,
 }
-impl LifecyclePolicyResourceIdentifier {
+impl  LifecyclePolicyResourceIdentifier  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> &crate::types::LifecyclePolicyType {
+    pub fn r#type(&self) -> & crate::types::LifecyclePolicyType {
         &self.r#type
     }
     /// <p>The name of the OpenSearch Serverless ilndex resource.</p>
-    pub fn resource(&self) -> &str {
-        use std::ops::Deref;
-        self.resource.deref()
+    pub fn resource(&self) -> & str {
+        use std::ops::Deref; self.resource.deref()
     }
 }
 impl LifecyclePolicyResourceIdentifier {
@@ -43,8 +42,7 @@ impl LifecyclePolicyResourceIdentifierBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -58,8 +56,7 @@ impl LifecyclePolicyResourceIdentifierBuilder {
     }
     /// <p>The name of the OpenSearch Serverless ilndex resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The name of the OpenSearch Serverless ilndex resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl LifecyclePolicyResourceIdentifierBuilder {
     /// - [`r#type`](crate::types::builders::LifecyclePolicyResourceIdentifierBuilder::r#type)
     /// - [`resource`](crate::types::builders::LifecyclePolicyResourceIdentifierBuilder::resource)
     pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyResourceIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LifecyclePolicyResourceIdentifier {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building LifecyclePolicyResourceIdentifier",
-                )
-            })?,
-            resource: self.resource.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource",
-                    "resource was not specified but it is required when building LifecyclePolicyResourceIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LifecyclePolicyResourceIdentifier {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building LifecyclePolicyResourceIdentifier")
+                    )?
+                ,
+                resource: self.resource
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource", "resource was not specified but it is required when building LifecyclePolicyResourceIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaAction {
+pub struct KafkaAction  {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     pub destination_arn: ::std::string::String,
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
@@ -13,38 +13,37 @@ pub struct KafkaAction {
     /// <p>The Kafka message partition.</p>
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub client_properties: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub client_properties: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>The list of Kafka headers that you specify.</p>
-    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>>,
+    pub headers: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaActionHeader>>,
 }
-impl KafkaAction {
+impl  KafkaAction  {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn destination_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_arn.deref()
+    pub fn destination_arn(&self) -> & str {
+        use std::ops::Deref; self.destination_arn.deref()
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-    pub fn topic(&self) -> &str {
-        use std::ops::Deref;
-        self.topic.deref()
+    pub fn topic(&self) -> & str {
+        use std::ops::Deref; self.topic.deref()
     }
     /// <p>The Kafka message key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Kafka message partition.</p>
-    pub fn partition(&self) -> ::std::option::Option<&str> {
+    pub fn partition(&self) -> ::std::option::Option<& str> {
         self.partition.as_deref()
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn client_properties(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn client_properties(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.client_properties
     }
     /// <p>The list of Kafka headers that you specify.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
-    pub fn headers(&self) -> &[crate::types::KafkaActionHeader] {
-        self.headers.as_deref().unwrap_or_default()
+    pub fn headers(&self) -> & [crate::types::KafkaActionHeader] {
+        self.headers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KafkaAction {
@@ -62,8 +61,8 @@ pub struct KafkaActionBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<::std::string::String>,
-    pub(crate) client_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>>,
+    pub(crate) client_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaActionHeader>>,
 }
 impl KafkaActionBuilder {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
@@ -74,8 +73,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
     pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The Kafka message key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The Kafka message key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +113,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The Kafka message partition.</p>
     pub fn set_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
     }
     /// <p>The Kafka message partition.</p>
     pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,26 +124,18 @@ impl KafkaActionBuilder {
     /// To override the contents of this collection use [`set_client_properties`](Self::set_client_properties).
     ///
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn client_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.client_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.client_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.client_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn set_client_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.client_properties = input;
-        self
+    pub fn set_client_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.client_properties = input; self
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn get_client_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_client_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.client_properties
     }
     /// Appends an item to `headers`.
@@ -158,17 +145,16 @@ impl KafkaActionBuilder {
     /// <p>The list of Kafka headers that you specify.</p>
     pub fn headers(mut self, input: crate::types::KafkaActionHeader) -> Self {
         let mut v = self.headers.unwrap_or_default();
-        v.push(input);
-        self.headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Kafka headers that you specify.</p>
-    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>>) -> Self {
-        self.headers = input;
-        self
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaActionHeader>>) -> Self {
+        self.headers = input; self
     }
     /// <p>The list of Kafka headers that you specify.</p>
-    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>> {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KafkaActionHeader>> {
         &self.headers
     }
     /// Consumes the builder and constructs a [`KafkaAction`](crate::types::KafkaAction).
@@ -177,28 +163,31 @@ impl KafkaActionBuilder {
     /// - [`topic`](crate::types::builders::KafkaActionBuilder::topic)
     /// - [`client_properties`](crate::types::builders::KafkaActionBuilder::client_properties)
     pub fn build(self) -> ::std::result::Result<crate::types::KafkaAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KafkaAction {
-            destination_arn: self.destination_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_arn",
-                    "destination_arn was not specified but it is required when building KafkaAction",
-                )
-            })?,
-            topic: self.topic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic",
-                    "topic was not specified but it is required when building KafkaAction",
-                )
-            })?,
-            key: self.key,
-            partition: self.partition,
-            client_properties: self.client_properties.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_properties",
-                    "client_properties was not specified but it is required when building KafkaAction",
-                )
-            })?,
-            headers: self.headers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KafkaAction {
+                destination_arn: self.destination_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_arn", "destination_arn was not specified but it is required when building KafkaAction")
+                    )?
+                ,
+                topic: self.topic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic", "topic was not specified but it is required when building KafkaAction")
+                    )?
+                ,
+                key: self.key
+                ,
+                partition: self.partition
+                ,
+                client_properties: self.client_properties
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_properties", "client_properties was not specified but it is required when building KafkaAction")
+                    )?
+                ,
+                headers: self.headers
+                ,
+            }
+        )
     }
 }
+

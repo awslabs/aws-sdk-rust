@@ -3,22 +3,20 @@
 /// <p>A button that appears on a response card show to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Button {
+pub struct Button  {
     /// <p>The text that is displayed on the button.</p>
     pub text: ::std::string::String,
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
     pub value: ::std::string::String,
 }
-impl Button {
+impl  Button  {
     /// <p>The text that is displayed on the button.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Button {
@@ -44,8 +42,7 @@ impl ButtonBuilder {
     }
     /// <p>The text that is displayed on the button.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text that is displayed on the button.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ButtonBuilder {
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ButtonBuilder {
     /// - [`text`](crate::types::builders::ButtonBuilder::text)
     /// - [`value`](crate::types::builders::ButtonBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Button, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Button {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building Button",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Button",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Button {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building Button")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Button")
+                    )?
+                ,
+            }
+        )
     }
 }
+

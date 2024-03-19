@@ -3,22 +3,20 @@
 /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeHook {
+pub struct CodeHook  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub uri: ::std::string::String,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
     pub message_version: ::std::string::String,
 }
-impl CodeHook {
+impl  CodeHook  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
-    pub fn message_version(&self) -> &str {
-        use std::ops::Deref;
-        self.message_version.deref()
+    pub fn message_version(&self) -> & str {
+        use std::ops::Deref; self.message_version.deref()
     }
 }
 impl CodeHook {
@@ -44,8 +42,7 @@ impl CodeHookBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl CodeHookBuilder {
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
     pub fn set_message_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_version = input;
-        self
+        self.message_version = input; self
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
     pub fn get_message_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl CodeHookBuilder {
     /// - [`uri`](crate::types::builders::CodeHookBuilder::uri)
     /// - [`message_version`](crate::types::builders::CodeHookBuilder::message_version)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeHook, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeHook {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building CodeHook",
-                )
-            })?,
-            message_version: self.message_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_version",
-                    "message_version was not specified but it is required when building CodeHook",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeHook {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building CodeHook")
+                    )?
+                ,
+                message_version: self.message_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_version", "message_version was not specified but it is required when building CodeHook")
+                    )?
+                ,
+            }
+        )
     }
 }
+

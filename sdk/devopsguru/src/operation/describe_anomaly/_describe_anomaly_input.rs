@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAnomalyInput {
+pub struct DescribeAnomalyInput  {
     /// <p>The ID of the anomaly.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the member account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAnomalyInput {
+impl  DescribeAnomalyInput  {
     /// <p>The ID of the anomaly.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the member account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeAnomalyInputBuilder {
     }
     /// <p>The ID of the anomaly.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the anomaly.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeAnomalyInputBuilder {
     }
     /// <p>The ID of the member account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the member account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyInput`](crate::operation::describe_anomaly::DescribeAnomalyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_anomaly::DescribeAnomalyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_anomaly::DescribeAnomalyInput {
-            id: self.id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_anomaly::DescribeAnomalyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_anomaly::DescribeAnomalyInput {
+                id: self.id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

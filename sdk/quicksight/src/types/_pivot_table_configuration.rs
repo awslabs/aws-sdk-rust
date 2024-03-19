@@ -3,7 +3,7 @@
 /// <p>The configuration for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableConfiguration {
+pub struct PivotTableConfiguration  {
     /// <p>The field wells of the visual.</p>
     pub field_wells: ::std::option::Option<crate::types::PivotTableFieldWells>,
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
@@ -19,33 +19,33 @@ pub struct PivotTableConfiguration {
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl PivotTableConfiguration {
+impl  PivotTableConfiguration  {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::PivotTableFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::PivotTableFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
-    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::PivotTableSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<& crate::types::PivotTableSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The table options for a pivot table visual.</p>
-    pub fn table_options(&self) -> ::std::option::Option<&crate::types::PivotTableOptions> {
+    pub fn table_options(&self) -> ::std::option::Option<& crate::types::PivotTableOptions> {
         self.table_options.as_ref()
     }
     /// <p>The total options for a pivot table visual.</p>
-    pub fn total_options(&self) -> ::std::option::Option<&crate::types::PivotTableTotalOptions> {
+    pub fn total_options(&self) -> ::std::option::Option<& crate::types::PivotTableTotalOptions> {
         self.total_options.as_ref()
     }
     /// <p>The field options for a pivot table visual.</p>
-    pub fn field_options(&self) -> ::std::option::Option<&crate::types::PivotTableFieldOptions> {
+    pub fn field_options(&self) -> ::std::option::Option<& crate::types::PivotTableFieldOptions> {
         self.field_options.as_ref()
     }
     /// <p>The paginated report options for a pivot table visual.</p>
-    pub fn paginated_report_options(&self) -> ::std::option::Option<&crate::types::PivotTablePaginatedReportOptions> {
+    pub fn paginated_report_options(&self) -> ::std::option::Option<& crate::types::PivotTablePaginatedReportOptions> {
         self.paginated_report_options.as_ref()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::PivotTableFieldWells>) -> Self {
-        self.field_wells = input;
-        self
+        self.field_wells = input; self
     }
     /// <p>The field wells of the visual.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::PivotTableFieldWells> {
@@ -90,8 +89,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
     pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::PivotTableSortConfiguration>) -> Self {
-        self.sort_configuration = input;
-        self
+        self.sort_configuration = input; self
     }
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
     pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::PivotTableSortConfiguration> {
@@ -104,8 +102,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The table options for a pivot table visual.</p>
     pub fn set_table_options(mut self, input: ::std::option::Option<crate::types::PivotTableOptions>) -> Self {
-        self.table_options = input;
-        self
+        self.table_options = input; self
     }
     /// <p>The table options for a pivot table visual.</p>
     pub fn get_table_options(&self) -> &::std::option::Option<crate::types::PivotTableOptions> {
@@ -118,8 +115,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The total options for a pivot table visual.</p>
     pub fn set_total_options(mut self, input: ::std::option::Option<crate::types::PivotTableTotalOptions>) -> Self {
-        self.total_options = input;
-        self
+        self.total_options = input; self
     }
     /// <p>The total options for a pivot table visual.</p>
     pub fn get_total_options(&self) -> &::std::option::Option<crate::types::PivotTableTotalOptions> {
@@ -132,8 +128,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The field options for a pivot table visual.</p>
     pub fn set_field_options(mut self, input: ::std::option::Option<crate::types::PivotTableFieldOptions>) -> Self {
-        self.field_options = input;
-        self
+        self.field_options = input; self
     }
     /// <p>The field options for a pivot table visual.</p>
     pub fn get_field_options(&self) -> &::std::option::Option<crate::types::PivotTableFieldOptions> {
@@ -146,8 +141,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The paginated report options for a pivot table visual.</p>
     pub fn set_paginated_report_options(mut self, input: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>) -> Self {
-        self.paginated_report_options = input;
-        self
+        self.paginated_report_options = input; self
     }
     /// <p>The paginated report options for a pivot table visual.</p>
     pub fn get_paginated_report_options(&self) -> &::std::option::Option<crate::types::PivotTablePaginatedReportOptions> {
@@ -160,8 +154,7 @@ impl PivotTableConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -170,13 +163,21 @@ impl PivotTableConfigurationBuilder {
     /// Consumes the builder and constructs a [`PivotTableConfiguration`](crate::types::PivotTableConfiguration).
     pub fn build(self) -> crate::types::PivotTableConfiguration {
         crate::types::PivotTableConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            table_options: self.table_options,
-            total_options: self.total_options,
-            field_options: self.field_options,
-            paginated_report_options: self.paginated_report_options,
-            interactions: self.interactions,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            table_options: self.table_options
+            ,
+            total_options: self.total_options
+            ,
+            field_options: self.field_options
+            ,
+            paginated_report_options: self.paginated_report_options
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

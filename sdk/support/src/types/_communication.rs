@@ -3,7 +3,7 @@
 /// <p>A communication associated with a support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Communication {
+pub struct Communication  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
@@ -15,32 +15,33 @@ pub struct Communication {
     /// <p>The time the communication was created.</p>
     pub time_created: ::std::option::Option<::std::string::String>,
     /// <p>Information about the attachments to the case communication.</p>
-    pub attachment_set: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
+    pub attachment_set: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentDetails>>,
 }
-impl Communication {
+impl  Communication  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
     /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
-    pub fn submitted_by(&self) -> ::std::option::Option<&str> {
+    pub fn submitted_by(&self) -> ::std::option::Option<& str> {
         self.submitted_by.as_deref()
     }
     /// <p>The time the communication was created.</p>
-    pub fn time_created(&self) -> ::std::option::Option<&str> {
+    pub fn time_created(&self) -> ::std::option::Option<& str> {
         self.time_created.as_deref()
     }
     /// <p>Information about the attachments to the case communication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_set.is_none()`.
-    pub fn attachment_set(&self) -> &[crate::types::AttachmentDetails] {
-        self.attachment_set.as_deref().unwrap_or_default()
+    pub fn attachment_set(&self) -> & [crate::types::AttachmentDetails] {
+        self.attachment_set.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Communication {
@@ -58,7 +59,7 @@ pub struct CommunicationBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) submitted_by: ::std::option::Option<::std::string::String>,
     pub(crate) time_created: ::std::option::Option<::std::string::String>,
-    pub(crate) attachment_set: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
+    pub(crate) attachment_set: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentDetails>>,
 }
 impl CommunicationBuilder {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
@@ -68,8 +69,7 @@ impl CommunicationBuilder {
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl CommunicationBuilder {
     }
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl CommunicationBuilder {
     /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
     pub fn set_submitted_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.submitted_by = input;
-        self
+        self.submitted_by = input; self
     }
     /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
     /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
@@ -116,8 +114,7 @@ impl CommunicationBuilder {
     }
     /// <p>The time the communication was created.</p>
     pub fn set_time_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_created = input;
-        self
+        self.time_created = input; self
     }
     /// <p>The time the communication was created.</p>
     pub fn get_time_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,27 +127,32 @@ impl CommunicationBuilder {
     /// <p>Information about the attachments to the case communication.</p>
     pub fn attachment_set(mut self, input: crate::types::AttachmentDetails) -> Self {
         let mut v = self.attachment_set.unwrap_or_default();
-        v.push(input);
-        self.attachment_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachment_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the attachments to the case communication.</p>
-    pub fn set_attachment_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>) -> Self {
-        self.attachment_set = input;
-        self
+    pub fn set_attachment_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentDetails>>) -> Self {
+        self.attachment_set = input; self
     }
     /// <p>Information about the attachments to the case communication.</p>
-    pub fn get_attachment_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>> {
+    pub fn get_attachment_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttachmentDetails>> {
         &self.attachment_set
     }
     /// Consumes the builder and constructs a [`Communication`](crate::types::Communication).
     pub fn build(self) -> crate::types::Communication {
         crate::types::Communication {
-            case_id: self.case_id,
-            body: self.body,
-            submitted_by: self.submitted_by,
-            time_created: self.time_created,
-            attachment_set: self.attachment_set,
+            case_id: self.case_id
+            ,
+            body: self.body
+            ,
+            submitted_by: self.submitted_by
+            ,
+            time_created: self.time_created
+            ,
+            attachment_set: self.attachment_set
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains a recommendation set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationSet {
+pub struct RecommendationSet  {
     /// <p>The target destination for the recommendation set.</p>
     pub transformation_tool: ::std::option::Option<crate::types::TransformationTool>,
     /// <p>The recommended target destination.</p>
@@ -11,17 +11,17 @@ pub struct RecommendationSet {
     /// <p>The recommended strategy.</p>
     pub strategy: ::std::option::Option<crate::types::Strategy>,
 }
-impl RecommendationSet {
+impl  RecommendationSet  {
     /// <p>The target destination for the recommendation set.</p>
-    pub fn transformation_tool(&self) -> ::std::option::Option<&crate::types::TransformationTool> {
+    pub fn transformation_tool(&self) -> ::std::option::Option<& crate::types::TransformationTool> {
         self.transformation_tool.as_ref()
     }
     /// <p>The recommended target destination.</p>
-    pub fn target_destination(&self) -> ::std::option::Option<&crate::types::TargetDestination> {
+    pub fn target_destination(&self) -> ::std::option::Option<& crate::types::TargetDestination> {
         self.target_destination.as_ref()
     }
     /// <p>The recommended strategy.</p>
-    pub fn strategy(&self) -> ::std::option::Option<&crate::types::Strategy> {
+    pub fn strategy(&self) -> ::std::option::Option<& crate::types::Strategy> {
         self.strategy.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl RecommendationSetBuilder {
     }
     /// <p>The target destination for the recommendation set.</p>
     pub fn set_transformation_tool(mut self, input: ::std::option::Option<crate::types::TransformationTool>) -> Self {
-        self.transformation_tool = input;
-        self
+        self.transformation_tool = input; self
     }
     /// <p>The target destination for the recommendation set.</p>
     pub fn get_transformation_tool(&self) -> &::std::option::Option<crate::types::TransformationTool> {
@@ -62,8 +61,7 @@ impl RecommendationSetBuilder {
     }
     /// <p>The recommended target destination.</p>
     pub fn set_target_destination(mut self, input: ::std::option::Option<crate::types::TargetDestination>) -> Self {
-        self.target_destination = input;
-        self
+        self.target_destination = input; self
     }
     /// <p>The recommended target destination.</p>
     pub fn get_target_destination(&self) -> &::std::option::Option<crate::types::TargetDestination> {
@@ -76,8 +74,7 @@ impl RecommendationSetBuilder {
     }
     /// <p>The recommended strategy.</p>
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::Strategy>) -> Self {
-        self.strategy = input;
-        self
+        self.strategy = input; self
     }
     /// <p>The recommended strategy.</p>
     pub fn get_strategy(&self) -> &::std::option::Option<crate::types::Strategy> {
@@ -86,9 +83,13 @@ impl RecommendationSetBuilder {
     /// Consumes the builder and constructs a [`RecommendationSet`](crate::types::RecommendationSet).
     pub fn build(self) -> crate::types::RecommendationSet {
         crate::types::RecommendationSet {
-            transformation_tool: self.transformation_tool,
-            target_destination: self.target_destination,
-            strategy: self.strategy,
+            transformation_tool: self.transformation_tool
+            ,
+            target_destination: self.target_destination
+            ,
+            strategy: self.strategy
+            ,
         }
     }
 }
+

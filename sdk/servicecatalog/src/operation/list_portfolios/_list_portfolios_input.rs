@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPortfoliosInput {
+pub struct ListPortfoliosInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct ListPortfoliosInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListPortfoliosInput {
+impl  ListPortfoliosInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -24,11 +24,11 @@ impl ListPortfoliosInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -71,8 +71,7 @@ impl ListPortfoliosInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -91,8 +90,7 @@ impl ListPortfoliosInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,21 +103,24 @@ impl ListPortfoliosInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListPortfoliosInput`](crate::operation::list_portfolios::ListPortfoliosInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_portfolios::ListPortfoliosInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_portfolios::ListPortfoliosInput {
-            accept_language: self.accept_language,
-            page_token: self.page_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_portfolios::ListPortfoliosInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_portfolios::ListPortfoliosInput {
+                accept_language: self.accept_language
+                ,
+                page_token: self.page_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

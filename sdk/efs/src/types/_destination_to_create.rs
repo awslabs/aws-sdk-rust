@@ -3,7 +3,7 @@
 /// <p>Describes the new or existing destination file system for the replication configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationToCreate {
+pub struct DestinationToCreate  {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
@@ -23,13 +23,13 @@ pub struct DestinationToCreate {
     /// <p>The ID of the file system to use for the destination. The file system's replication overwrite replication must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl DestinationToCreate {
+impl  DestinationToCreate  {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
-    pub fn availability_zone_name(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> ::std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
@@ -43,11 +43,11 @@ impl DestinationToCreate {
     /// <li>
     /// <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The ID of the file system to use for the destination. The file system's replication overwrite replication must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl DestinationToCreateBuilder {
     }
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl DestinationToCreateBuilder {
     }
     /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
     pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_name = input;
-        self
+        self.availability_zone_name = input; self
     }
     /// <p>To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
     pub fn get_availability_zone_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl DestinationToCreateBuilder {
     /// <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
     /// <ul>
@@ -147,8 +144,7 @@ impl DestinationToCreateBuilder {
     }
     /// <p>The ID of the file system to use for the destination. The file system's replication overwrite replication must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system to use for the destination. The file system's replication overwrite replication must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,10 +153,15 @@ impl DestinationToCreateBuilder {
     /// Consumes the builder and constructs a [`DestinationToCreate`](crate::types::DestinationToCreate).
     pub fn build(self) -> crate::types::DestinationToCreate {
         crate::types::DestinationToCreate {
-            region: self.region,
-            availability_zone_name: self.availability_zone_name,
-            kms_key_id: self.kms_key_id,
-            file_system_id: self.file_system_id,
+            region: self.region
+            ,
+            availability_zone_name: self.availability_zone_name
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            file_system_id: self.file_system_id
+            ,
         }
     }
 }
+

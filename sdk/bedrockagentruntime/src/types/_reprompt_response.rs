@@ -3,23 +3,23 @@
 /// <p>Contains details about the agent's response to reprompt the input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RepromptResponse {
+pub struct RepromptResponse  {
     /// <p>The text reprompting the input.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what output is prompting the agent to reprompt the input.</p>
     pub source: ::std::option::Option<crate::types::Source>,
 }
-impl RepromptResponse {
+impl  RepromptResponse  {
     /// <p>The text reprompting the input.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>Specifies what output is prompting the agent to reprompt the input.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
 }
-impl ::std::fmt::Debug for RepromptResponse {
+impl  ::std::fmt::Debug for RepromptResponse  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RepromptResponse");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl RepromptResponseBuilder {
     }
     /// <p>The text reprompting the input.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text reprompting the input.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RepromptResponseBuilder {
     }
     /// <p>Specifies what output is prompting the agent to reprompt the input.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Specifies what output is prompting the agent to reprompt the input.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -73,8 +71,10 @@ impl RepromptResponseBuilder {
     /// Consumes the builder and constructs a [`RepromptResponse`](crate::types::RepromptResponse).
     pub fn build(self) -> crate::types::RepromptResponse {
         crate::types::RepromptResponse {
-            text: self.text,
-            source: self.source,
+            text: self.text
+            ,
+            source: self.source
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for RepromptResponseBuilder {
         formatter.finish()
     }
 }
+

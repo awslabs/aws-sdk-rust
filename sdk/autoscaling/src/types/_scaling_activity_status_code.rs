@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scalingactivitystatuscode = unimplemented!();
 /// match scalingactivitystatuscode {
@@ -41,16 +41,14 @@
 /// Specifically, when `scalingactivitystatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScalingActivityStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ScalingActivityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -80,108 +78,95 @@ pub enum ScalingActivityStatusCode {
     WaitingForSpotInstanceRequestId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ScalingActivityStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cancelled" => ScalingActivityStatusCode::Cancelled,
-            "Failed" => ScalingActivityStatusCode::Failed,
-            "InProgress" => ScalingActivityStatusCode::InProgress,
-            "MidLifecycleAction" => ScalingActivityStatusCode::MidLifecycleAction,
-            "PendingSpotBidPlacement" => ScalingActivityStatusCode::PendingSpotBidPlacement,
-            "PreInService" => ScalingActivityStatusCode::PreInService,
-            "Successful" => ScalingActivityStatusCode::Successful,
-            "WaitingForConnectionDraining" => ScalingActivityStatusCode::WaitingForConnectionDraining,
-            "WaitingForELBConnectionDraining" => ScalingActivityStatusCode::WaitingForElbConnectionDraining,
-            "WaitingForInstanceId" => ScalingActivityStatusCode::WaitingForInstanceId,
-            "WaitingForInstanceWarmup" => ScalingActivityStatusCode::WaitingForInstanceWarmup,
-            "WaitingForSpotInstanceId" => ScalingActivityStatusCode::WaitingForSpotInstanceId,
-            "WaitingForSpotInstanceRequestId" => ScalingActivityStatusCode::WaitingForSpotInstanceRequestId,
-            other => ScalingActivityStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Cancelled" => ScalingActivityStatusCode::Cancelled,
+"Failed" => ScalingActivityStatusCode::Failed,
+"InProgress" => ScalingActivityStatusCode::InProgress,
+"MidLifecycleAction" => ScalingActivityStatusCode::MidLifecycleAction,
+"PendingSpotBidPlacement" => ScalingActivityStatusCode::PendingSpotBidPlacement,
+"PreInService" => ScalingActivityStatusCode::PreInService,
+"Successful" => ScalingActivityStatusCode::Successful,
+"WaitingForConnectionDraining" => ScalingActivityStatusCode::WaitingForConnectionDraining,
+"WaitingForELBConnectionDraining" => ScalingActivityStatusCode::WaitingForElbConnectionDraining,
+"WaitingForInstanceId" => ScalingActivityStatusCode::WaitingForInstanceId,
+"WaitingForInstanceWarmup" => ScalingActivityStatusCode::WaitingForInstanceWarmup,
+"WaitingForSpotInstanceId" => ScalingActivityStatusCode::WaitingForSpotInstanceId,
+"WaitingForSpotInstanceRequestId" => ScalingActivityStatusCode::WaitingForSpotInstanceRequestId,
+other => ScalingActivityStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ScalingActivityStatusCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ScalingActivityStatusCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ScalingActivityStatusCode::from(s))
+                    }
+                }
 impl ScalingActivityStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingActivityStatusCode::Cancelled => "Cancelled",
-            ScalingActivityStatusCode::Failed => "Failed",
-            ScalingActivityStatusCode::InProgress => "InProgress",
-            ScalingActivityStatusCode::MidLifecycleAction => "MidLifecycleAction",
-            ScalingActivityStatusCode::PendingSpotBidPlacement => "PendingSpotBidPlacement",
-            ScalingActivityStatusCode::PreInService => "PreInService",
-            ScalingActivityStatusCode::Successful => "Successful",
-            ScalingActivityStatusCode::WaitingForConnectionDraining => "WaitingForConnectionDraining",
-            ScalingActivityStatusCode::WaitingForElbConnectionDraining => "WaitingForELBConnectionDraining",
-            ScalingActivityStatusCode::WaitingForInstanceId => "WaitingForInstanceId",
-            ScalingActivityStatusCode::WaitingForInstanceWarmup => "WaitingForInstanceWarmup",
-            ScalingActivityStatusCode::WaitingForSpotInstanceId => "WaitingForSpotInstanceId",
-            ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => "WaitingForSpotInstanceRequestId",
-            ScalingActivityStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cancelled",
-            "Failed",
-            "InProgress",
-            "MidLifecycleAction",
-            "PendingSpotBidPlacement",
-            "PreInService",
-            "Successful",
-            "WaitingForConnectionDraining",
-            "WaitingForELBConnectionDraining",
-            "WaitingForInstanceId",
-            "WaitingForInstanceWarmup",
-            "WaitingForSpotInstanceId",
-            "WaitingForSpotInstanceRequestId",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingActivityStatusCode::Cancelled => "Cancelled",
+    ScalingActivityStatusCode::Failed => "Failed",
+    ScalingActivityStatusCode::InProgress => "InProgress",
+    ScalingActivityStatusCode::MidLifecycleAction => "MidLifecycleAction",
+    ScalingActivityStatusCode::PendingSpotBidPlacement => "PendingSpotBidPlacement",
+    ScalingActivityStatusCode::PreInService => "PreInService",
+    ScalingActivityStatusCode::Successful => "Successful",
+    ScalingActivityStatusCode::WaitingForConnectionDraining => "WaitingForConnectionDraining",
+    ScalingActivityStatusCode::WaitingForElbConnectionDraining => "WaitingForELBConnectionDraining",
+    ScalingActivityStatusCode::WaitingForInstanceId => "WaitingForInstanceId",
+    ScalingActivityStatusCode::WaitingForInstanceWarmup => "WaitingForInstanceWarmup",
+    ScalingActivityStatusCode::WaitingForSpotInstanceId => "WaitingForSpotInstanceId",
+    ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => "WaitingForSpotInstanceRequestId",
+    ScalingActivityStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cancelled", "Failed", "InProgress", "MidLifecycleAction", "PendingSpotBidPlacement", "PreInService", "Successful", "WaitingForConnectionDraining", "WaitingForELBConnectionDraining", "WaitingForInstanceId", "WaitingForInstanceWarmup", "WaitingForSpotInstanceId", "WaitingForSpotInstanceRequestId"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ScalingActivityStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ScalingActivityStatusCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ScalingActivityStatusCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ScalingActivityStatusCode::Cancelled => write!(f, "Cancelled"),
-            ScalingActivityStatusCode::Failed => write!(f, "Failed"),
-            ScalingActivityStatusCode::InProgress => write!(f, "InProgress"),
-            ScalingActivityStatusCode::MidLifecycleAction => write!(f, "MidLifecycleAction"),
-            ScalingActivityStatusCode::PendingSpotBidPlacement => write!(f, "PendingSpotBidPlacement"),
-            ScalingActivityStatusCode::PreInService => write!(f, "PreInService"),
-            ScalingActivityStatusCode::Successful => write!(f, "Successful"),
-            ScalingActivityStatusCode::WaitingForConnectionDraining => write!(f, "WaitingForConnectionDraining"),
-            ScalingActivityStatusCode::WaitingForElbConnectionDraining => write!(f, "WaitingForELBConnectionDraining"),
-            ScalingActivityStatusCode::WaitingForInstanceId => write!(f, "WaitingForInstanceId"),
-            ScalingActivityStatusCode::WaitingForInstanceWarmup => write!(f, "WaitingForInstanceWarmup"),
-            ScalingActivityStatusCode::WaitingForSpotInstanceId => write!(f, "WaitingForSpotInstanceId"),
-            ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => write!(f, "WaitingForSpotInstanceRequestId"),
-            ScalingActivityStatusCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ScalingActivityStatusCode::Cancelled => write!(f, "Cancelled"),
+ScalingActivityStatusCode::Failed => write!(f, "Failed"),
+ScalingActivityStatusCode::InProgress => write!(f, "InProgress"),
+ScalingActivityStatusCode::MidLifecycleAction => write!(f, "MidLifecycleAction"),
+ScalingActivityStatusCode::PendingSpotBidPlacement => write!(f, "PendingSpotBidPlacement"),
+ScalingActivityStatusCode::PreInService => write!(f, "PreInService"),
+ScalingActivityStatusCode::Successful => write!(f, "Successful"),
+ScalingActivityStatusCode::WaitingForConnectionDraining => write!(f, "WaitingForConnectionDraining"),
+ScalingActivityStatusCode::WaitingForElbConnectionDraining => write!(f, "WaitingForELBConnectionDraining"),
+ScalingActivityStatusCode::WaitingForInstanceId => write!(f, "WaitingForInstanceId"),
+ScalingActivityStatusCode::WaitingForInstanceWarmup => write!(f, "WaitingForInstanceWarmup"),
+ScalingActivityStatusCode::WaitingForSpotInstanceId => write!(f, "WaitingForSpotInstanceId"),
+ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => write!(f, "WaitingForSpotInstanceRequestId"),
+ScalingActivityStatusCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

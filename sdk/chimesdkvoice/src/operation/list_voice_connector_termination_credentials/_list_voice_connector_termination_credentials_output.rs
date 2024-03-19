@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVoiceConnectorTerminationCredentialsOutput {
+pub struct ListVoiceConnectorTerminationCredentialsOutput  {
     /// <p>A list of user names.</p>
-    pub usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub usernames: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListVoiceConnectorTerminationCredentialsOutput {
+impl  ListVoiceConnectorTerminationCredentialsOutput  {
     /// <p>A list of user names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usernames.is_none()`.
-    pub fn usernames(&self) -> &[::std::string::String] {
-        self.usernames.as_deref().unwrap_or_default()
+    pub fn usernames(&self) -> & [::std::string::String] {
+        self.usernames.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVoiceConnectorTerminationCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVoiceConnectorTerminationCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorTerminationCredentialsOutput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput).
-    pub fn builder() -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder {
         crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder::default()
     }
 }
@@ -32,7 +32,7 @@ impl ListVoiceConnectorTerminationCredentialsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsOutputBuilder {
-    pub(crate) usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) usernames: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVoiceConnectorTerminationCredentialsOutputBuilder {
@@ -43,33 +43,34 @@ impl ListVoiceConnectorTerminationCredentialsOutputBuilder {
     /// <p>A list of user names.</p>
     pub fn usernames(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.usernames.unwrap_or_default();
-        v.push(input.into());
-        self.usernames = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.usernames = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of user names.</p>
-    pub fn set_usernames(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.usernames = input;
-        self
+    pub fn set_usernames(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.usernames = input; self
     }
     /// <p>A list of user names.</p>
-    pub fn get_usernames(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_usernames(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.usernames
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVoiceConnectorTerminationCredentialsOutput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput).
     pub fn build(self) -> crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput {
         crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput {
-            usernames: self.usernames,
+            usernames: self.usernames
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

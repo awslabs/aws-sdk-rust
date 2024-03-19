@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMlModelTrainingJobsInput {
+pub struct ListMlModelTrainingJobsInput  {
     /// <p>The maximum number of items to return (from 1 to 1024; the default is 10).</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub neptune_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListMlModelTrainingJobsInput {
+impl  ListMlModelTrainingJobsInput  {
     /// <p>The maximum number of items to return (from 1 to 1024; the default is 10).</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
-    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.neptune_iam_role_arn.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListMlModelTrainingJobsInputBuilder {
     }
     /// <p>The maximum number of items to return (from 1 to 1024; the default is 10).</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of items to return (from 1 to 1024; the default is 10).</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -54,23 +53,22 @@ impl ListMlModelTrainingJobsInputBuilder {
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub fn set_neptune_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.neptune_iam_role_arn = input;
-        self
+        self.neptune_iam_role_arn = input; self
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub fn get_neptune_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.neptune_iam_role_arn
     }
     /// Consumes the builder and constructs a [`ListMlModelTrainingJobsInput`](crate::operation::list_ml_model_training_jobs::ListMlModelTrainingJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ml_model_training_jobs::ListMlModelTrainingJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_ml_model_training_jobs::ListMlModelTrainingJobsInput {
-            max_items: self.max_items,
-            neptune_iam_role_arn: self.neptune_iam_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ml_model_training_jobs::ListMlModelTrainingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_ml_model_training_jobs::ListMlModelTrainingJobsInput {
+                max_items: self.max_items
+                ,
+                neptune_iam_role_arn: self.neptune_iam_role_arn
+                ,
+            }
+        )
     }
 }
+

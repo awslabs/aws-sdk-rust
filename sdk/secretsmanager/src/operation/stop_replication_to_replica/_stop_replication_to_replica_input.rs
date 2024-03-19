@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopReplicationToReplicaInput {
+pub struct StopReplicationToReplicaInput  {
     /// <p>The ARN of the primary secret.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
-impl StopReplicationToReplicaInput {
+impl  StopReplicationToReplicaInput  {
     /// <p>The ARN of the primary secret.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopReplicationToReplicaInputBuilder {
     }
     /// <p>The ARN of the primary secret.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN of the primary secret.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_id
     }
     /// Consumes the builder and constructs a [`StopReplicationToReplicaInput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput { secret_id: self.secret_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput {
+                secret_id: self.secret_id
+                ,
+            }
+        )
     }
 }
+

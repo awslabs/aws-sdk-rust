@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReviewTemplateInput {
+pub struct UpdateReviewTemplateInput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The review template name.</p>
@@ -13,39 +13,41 @@ pub struct UpdateReviewTemplateInput {
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A list of lens aliases or ARNs to apply to the review template.</p>
-    pub lenses_to_associate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lenses_to_associate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code> lens cannot be unapplied.</p>
-    pub lenses_to_disassociate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lenses_to_disassociate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateReviewTemplateInput {
+impl  UpdateReviewTemplateInput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The review template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The review template description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn notes(&self) -> ::std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p>A list of lens aliases or ARNs to apply to the review template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses_to_associate.is_none()`.
-    pub fn lenses_to_associate(&self) -> &[::std::string::String] {
-        self.lenses_to_associate.as_deref().unwrap_or_default()
+    pub fn lenses_to_associate(&self) -> & [::std::string::String] {
+        self.lenses_to_associate.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code> lens cannot be unapplied.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses_to_disassociate.is_none()`.
-    pub fn lenses_to_disassociate(&self) -> &[::std::string::String] {
-        self.lenses_to_disassociate.as_deref().unwrap_or_default()
+    pub fn lenses_to_disassociate(&self) -> & [::std::string::String] {
+        self.lenses_to_disassociate.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateReviewTemplateInput {
@@ -63,8 +65,8 @@ pub struct UpdateReviewTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
-    pub(crate) lenses_to_associate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) lenses_to_disassociate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lenses_to_associate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) lenses_to_disassociate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateReviewTemplateInputBuilder {
     /// <p>The review template ARN.</p>
@@ -75,8 +77,7 @@ impl UpdateReviewTemplateInputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +90,7 @@ impl UpdateReviewTemplateInputBuilder {
     }
     /// <p>The review template name.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The review template name.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +103,7 @@ impl UpdateReviewTemplateInputBuilder {
     }
     /// <p>The review template description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The review template description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl UpdateReviewTemplateInputBuilder {
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notes = input;
-        self
+        self.notes = input; self
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -134,17 +132,16 @@ impl UpdateReviewTemplateInputBuilder {
     /// <p>A list of lens aliases or ARNs to apply to the review template.</p>
     pub fn lenses_to_associate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses_to_associate.unwrap_or_default();
-        v.push(input.into());
-        self.lenses_to_associate = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lenses_to_associate = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of lens aliases or ARNs to apply to the review template.</p>
-    pub fn set_lenses_to_associate(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lenses_to_associate = input;
-        self
+    pub fn set_lenses_to_associate(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lenses_to_associate = input; self
     }
     /// <p>A list of lens aliases or ARNs to apply to the review template.</p>
-    pub fn get_lenses_to_associate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lenses_to_associate(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lenses_to_associate
     }
     /// Appends an item to `lenses_to_disassociate`.
@@ -154,31 +151,36 @@ impl UpdateReviewTemplateInputBuilder {
     /// <p>A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code> lens cannot be unapplied.</p>
     pub fn lenses_to_disassociate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses_to_disassociate.unwrap_or_default();
-        v.push(input.into());
-        self.lenses_to_disassociate = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lenses_to_disassociate = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code> lens cannot be unapplied.</p>
-    pub fn set_lenses_to_disassociate(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lenses_to_disassociate = input;
-        self
+    pub fn set_lenses_to_disassociate(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lenses_to_disassociate = input; self
     }
     /// <p>A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code> lens cannot be unapplied.</p>
-    pub fn get_lenses_to_disassociate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lenses_to_disassociate(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lenses_to_disassociate
     }
     /// Consumes the builder and constructs a [`UpdateReviewTemplateInput`](crate::operation::update_review_template::UpdateReviewTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_review_template::UpdateReviewTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_review_template::UpdateReviewTemplateInput {
-            template_arn: self.template_arn,
-            template_name: self.template_name,
-            description: self.description,
-            notes: self.notes,
-            lenses_to_associate: self.lenses_to_associate,
-            lenses_to_disassociate: self.lenses_to_disassociate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_review_template::UpdateReviewTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_review_template::UpdateReviewTemplateInput {
+                template_arn: self.template_arn
+                ,
+                template_name: self.template_name
+                ,
+                description: self.description
+                ,
+                notes: self.notes
+                ,
+                lenses_to_associate: self.lenses_to_associate
+                ,
+                lenses_to_disassociate: self.lenses_to_disassociate
+                ,
+            }
+        )
     }
 }
+

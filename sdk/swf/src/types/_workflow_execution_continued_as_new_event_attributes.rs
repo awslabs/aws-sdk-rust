@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowExecutionContinuedAsNewEventAttributes {
+pub struct WorkflowExecutionContinuedAsNewEventAttributes  {
     /// <p>The input provided to the new workflow execution.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -32,15 +32,15 @@ pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// </ul>
     pub child_policy: crate::types::ChildPolicy,
     /// <p>The list of tags associated with the new workflow execution.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The workflow type of this execution.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
-impl WorkflowExecutionContinuedAsNewEventAttributes {
+impl  WorkflowExecutionContinuedAsNewEventAttributes  {
     /// <p>The input provided to the new workflow execution.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -48,26 +48,25 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
-    pub fn new_execution_run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.new_execution_run_id.deref()
+    pub fn new_execution_run_id(&self) -> & str {
+        use std::ops::Deref; self.new_execution_run_id.deref()
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.execution_start_to_close_timeout.as_deref()
     }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
-    pub fn task_priority(&self) -> ::std::option::Option<&str> {
+    pub fn task_priority(&self) -> ::std::option::Option<& str> {
         self.task_priority.as_deref()
     }
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.task_start_to_close_timeout.as_deref()
     }
     /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
@@ -80,21 +79,22 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
     /// <li>
     /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
-    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+    pub fn child_policy(&self) -> & crate::types::ChildPolicy {
         &self.child_policy
     }
     /// <p>The list of tags associated with the new workflow execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[::std::string::String] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [::std::string::String] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The workflow type of this execution.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
-    pub fn lambda_role(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_role(&self) -> ::std::option::Option<& str> {
         self.lambda_role.as_deref()
     }
 }
@@ -117,7 +117,7 @@ pub struct WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     pub(crate) task_priority: ::std::option::Option<::std::string::String>,
     pub(crate) task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     pub(crate) child_policy: ::std::option::Option<crate::types::ChildPolicy>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) lambda_role: ::std::option::Option<::std::string::String>,
 }
@@ -129,8 +129,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The input provided to the new workflow execution.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The input provided to the new workflow execution.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +143,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+        self.decision_task_completed_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
@@ -159,8 +157,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
     pub fn set_new_execution_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_execution_run_id = input;
-        self
+        self.new_execution_run_id = input; self
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
     pub fn get_new_execution_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +172,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_execution_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_start_to_close_timeout = input;
-        self
+        self.execution_start_to_close_timeout = input; self
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -191,8 +187,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
     }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
     pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
@@ -205,8 +200,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
     pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_priority = input;
-        self
+        self.task_priority = input; self
     }
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
     pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +215,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_start_to_close_timeout = input;
-        self
+        self.task_start_to_close_timeout = input; self
     }
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -255,8 +248,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
-        self.child_policy = input;
-        self
+        self.child_policy = input; self
     }
     /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -278,17 +270,16 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// <p>The list of tags associated with the new workflow execution.</p>
     pub fn tag_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input.into());
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags associated with the new workflow execution.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>The list of tags associated with the new workflow execution.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_list
     }
     /// <p>The workflow type of this execution.</p>
@@ -299,8 +290,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The workflow type of this execution.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The workflow type of this execution.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -313,8 +303,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
     pub fn set_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_role = input;
-        self
+        self.lambda_role = input; self
     }
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
     pub fn get_lambda_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -324,31 +313,40 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`new_execution_run_id`](crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder::new_execution_run_id)
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder::child_policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionContinuedAsNewEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
-            input: self.input,
-            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-            new_execution_run_id: self.new_execution_run_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "new_execution_run_id",
-                    "new_execution_run_id was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes",
-                )
-            })?,
-            execution_start_to_close_timeout: self.execution_start_to_close_timeout,
-            task_list: self.task_list,
-            task_priority: self.task_priority,
-            task_start_to_close_timeout: self.task_start_to_close_timeout,
-            child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "child_policy",
-                    "child_policy was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes",
-                )
-            })?,
-            tag_list: self.tag_list,
-            workflow_type: self.workflow_type,
-            lambda_role: self.lambda_role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionContinuedAsNewEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
+                input: self.input
+                ,
+                decision_task_completed_event_id: self.decision_task_completed_event_id
+                    .unwrap_or_default()
+                ,
+                new_execution_run_id: self.new_execution_run_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("new_execution_run_id", "new_execution_run_id was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes")
+                    )?
+                ,
+                execution_start_to_close_timeout: self.execution_start_to_close_timeout
+                ,
+                task_list: self.task_list
+                ,
+                task_priority: self.task_priority
+                ,
+                task_start_to_close_timeout: self.task_start_to_close_timeout
+                ,
+                child_policy: self.child_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("child_policy", "child_policy was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes")
+                    )?
+                ,
+                tag_list: self.tag_list
+                ,
+                workflow_type: self.workflow_type
+                ,
+                lambda_role: self.lambda_role
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyConversionConfigurationInput {
+pub struct ModifyConversionConfigurationInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new conversion configuration.</p>
     pub conversion_configuration: ::std::option::Option<::std::string::String>,
 }
-impl ModifyConversionConfigurationInput {
+impl  ModifyConversionConfigurationInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
-    pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_identifier(&self) -> ::std::option::Option<& str> {
         self.migration_project_identifier.as_deref()
     }
     /// <p>The new conversion configuration.</p>
-    pub fn conversion_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn conversion_configuration(&self) -> ::std::option::Option<& str> {
         self.conversion_configuration.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyConversionConfigurationInputBuilder {
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_identifier = input;
-        self
+        self.migration_project_identifier = input; self
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ModifyConversionConfigurationInputBuilder {
     }
     /// <p>The new conversion configuration.</p>
     pub fn set_conversion_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversion_configuration = input;
-        self
+        self.conversion_configuration = input; self
     }
     /// <p>The new conversion configuration.</p>
     pub fn get_conversion_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversion_configuration
     }
     /// Consumes the builder and constructs a [`ModifyConversionConfigurationInput`](crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput {
-            migration_project_identifier: self.migration_project_identifier,
-            conversion_configuration: self.conversion_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput {
+                migration_project_identifier: self.migration_project_identifier
+                ,
+                conversion_configuration: self.conversion_configuration
+                ,
+            }
+        )
     }
 }
+

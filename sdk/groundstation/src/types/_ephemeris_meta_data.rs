@@ -3,7 +3,7 @@
 /// <p>Metadata describing a particular ephemeris.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EphemerisMetaData {
+pub struct EphemerisMetaData  {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
     pub source: crate::types::EphemerisSource,
     /// <p>UUID of a customer-provided ephemeris.</p>
@@ -16,24 +16,24 @@ pub struct EphemerisMetaData {
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl EphemerisMetaData {
+impl  EphemerisMetaData  {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    pub fn source(&self) -> &crate::types::EphemerisSource {
+    pub fn source(&self) -> & crate::types::EphemerisSource {
         &self.source
     }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
-    pub fn epoch(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn epoch(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.epoch.as_ref()
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl EphemerisMetaDataBuilder {
     }
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::EphemerisSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::EphemerisSource> {
@@ -78,8 +77,7 @@ impl EphemerisMetaDataBuilder {
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ephemeris_id = input;
-        self
+        self.ephemeris_id = input; self
     }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
@@ -95,8 +93,7 @@ impl EphemerisMetaDataBuilder {
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
     pub fn set_epoch(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.epoch = input;
-        self
+        self.epoch = input; self
     }
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
@@ -112,8 +109,7 @@ impl EphemerisMetaDataBuilder {
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
@@ -124,16 +120,21 @@ impl EphemerisMetaDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::EphemerisMetaDataBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::EphemerisMetaData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EphemerisMetaData {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building EphemerisMetaData",
-                )
-            })?,
-            ephemeris_id: self.ephemeris_id,
-            epoch: self.epoch,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EphemerisMetaData {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building EphemerisMetaData")
+                    )?
+                ,
+                ephemeris_id: self.ephemeris_id
+                ,
+                epoch: self.epoch
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

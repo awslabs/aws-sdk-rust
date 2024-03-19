@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContactEvaluationOutput {
+pub struct UpdateContactEvaluationOutput  {
     /// <p>A unique identifier for the contact evaluation.</p>
     pub evaluation_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub evaluation_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateContactEvaluationOutput {
+impl  UpdateContactEvaluationOutput  {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_id.deref()
+    pub fn evaluation_id(&self) -> & str {
+        use std::ops::Deref; self.evaluation_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_arn.deref()
+    pub fn evaluation_arn(&self) -> & str {
+        use std::ops::Deref; self.evaluation_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateContactEvaluationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateContactEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
     pub fn builder() -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder {
@@ -50,8 +48,7 @@ impl UpdateContactEvaluationOutputBuilder {
     }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_id = input;
-        self
+        self.evaluation_id = input; self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,46 +62,41 @@ impl UpdateContactEvaluationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn set_evaluation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_arn = input;
-        self
+        self.evaluation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn get_evaluation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_id`](crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder::evaluation_id)
     /// - [`evaluation_arn`](crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder::evaluation_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
-            evaluation_id: self.evaluation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_id",
-                    "evaluation_id was not specified but it is required when building UpdateContactEvaluationOutput",
-                )
-            })?,
-            evaluation_arn: self.evaluation_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_arn",
-                    "evaluation_arn was not specified but it is required when building UpdateContactEvaluationOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
+                evaluation_id: self.evaluation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_id", "evaluation_id was not specified but it is required when building UpdateContactEvaluationOutput")
+                    )?
+                ,
+                evaluation_arn: self.evaluation_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_arn", "evaluation_arn was not specified but it is required when building UpdateContactEvaluationOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterVolumeInput {
+pub struct DeregisterVolumeInput  {
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterVolumeInput {
+impl  DeregisterVolumeInput  {
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeregisterVolumeInputBuilder {
     }
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
     /// Consumes the builder and constructs a [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deregister_volume::DeregisterVolumeInput { volume_id: self.volume_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_volume::DeregisterVolumeInput {
+                volume_id: self.volume_id
+                ,
+            }
+        )
     }
 }
+

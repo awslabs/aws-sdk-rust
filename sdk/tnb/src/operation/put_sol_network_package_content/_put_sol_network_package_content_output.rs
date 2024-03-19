@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSolNetworkPackageContentOutput {
+pub struct PutSolNetworkPackageContentOutput  {
     /// <p>Network package ID.</p>
     pub id: ::std::string::String,
     /// <p>Network package ARN.</p>
@@ -14,52 +14,46 @@ pub struct PutSolNetworkPackageContentOutput {
     /// <p>Network service descriptor version.</p>
     pub nsd_version: ::std::string::String,
     /// <p>Function package IDs.</p>
-    pub vnf_pkg_ids: ::std::vec::Vec<::std::string::String>,
+    pub vnf_pkg_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>Network package metadata.</p>
     pub metadata: ::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata>,
     _request_id: Option<String>,
 }
-impl PutSolNetworkPackageContentOutput {
+impl  PutSolNetworkPackageContentOutput  {
     /// <p>Network package ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Network package ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Network service descriptor ID.</p>
-    pub fn nsd_id(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_id.deref()
+    pub fn nsd_id(&self) -> & str {
+        use std::ops::Deref; self.nsd_id.deref()
     }
     /// <p>Network service descriptor name.</p>
-    pub fn nsd_name(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_name.deref()
+    pub fn nsd_name(&self) -> & str {
+        use std::ops::Deref; self.nsd_name.deref()
     }
     /// <p>Network service descriptor version.</p>
-    pub fn nsd_version(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_version.deref()
+    pub fn nsd_version(&self) -> & str {
+        use std::ops::Deref; self.nsd_version.deref()
     }
     /// <p>Function package IDs.</p>
-    pub fn vnf_pkg_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.vnf_pkg_ids.deref()
+    pub fn vnf_pkg_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.vnf_pkg_ids.deref()
     }
     /// <p>Network package metadata.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::PutSolNetworkPackageContentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::PutSolNetworkPackageContentMetadata> {
         self.metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutSolNetworkPackageContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutSolNetworkPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`PutSolNetworkPackageContentOutput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput).
     pub fn builder() -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder {
@@ -76,7 +70,7 @@ pub struct PutSolNetworkPackageContentOutputBuilder {
     pub(crate) nsd_id: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_name: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_version: ::std::option::Option<::std::string::String>,
-    pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) metadata: ::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata>,
     _request_id: Option<String>,
 }
@@ -89,8 +83,7 @@ impl PutSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network package ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Network package ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +97,7 @@ impl PutSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network package ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Network package ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +111,7 @@ impl PutSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network service descriptor ID.</p>
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_id = input;
-        self
+        self.nsd_id = input; self
     }
     /// <p>Network service descriptor ID.</p>
     pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +125,7 @@ impl PutSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network service descriptor name.</p>
     pub fn set_nsd_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_name = input;
-        self
+        self.nsd_name = input; self
     }
     /// <p>Network service descriptor name.</p>
     pub fn get_nsd_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +139,7 @@ impl PutSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network service descriptor version.</p>
     pub fn set_nsd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_version = input;
-        self
+        self.nsd_version = input; self
     }
     /// <p>Network service descriptor version.</p>
     pub fn get_nsd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,17 +152,16 @@ impl PutSolNetworkPackageContentOutputBuilder {
     /// <p>Function package IDs.</p>
     pub fn vnf_pkg_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vnf_pkg_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vnf_pkg_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vnf_pkg_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Function package IDs.</p>
-    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vnf_pkg_ids = input;
-        self
+    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vnf_pkg_ids = input; self
     }
     /// <p>Function package IDs.</p>
-    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vnf_pkg_ids
     }
     /// <p>Network package metadata.</p>
@@ -184,22 +172,21 @@ impl PutSolNetworkPackageContentOutputBuilder {
     }
     /// <p>Network package metadata.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Network package metadata.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutSolNetworkPackageContentOutput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder::id)
@@ -208,51 +195,44 @@ impl PutSolNetworkPackageContentOutputBuilder {
     /// - [`nsd_name`](crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder::nsd_name)
     /// - [`nsd_version`](crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder::nsd_version)
     /// - [`vnf_pkg_ids`](crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder::vnf_pkg_ids)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PutSolNetworkPackageContentOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building PutSolNetworkPackageContentOutput",
-                )
-            })?,
-            nsd_id: self.nsd_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_id",
-                    "nsd_id was not specified but it is required when building PutSolNetworkPackageContentOutput",
-                )
-            })?,
-            nsd_name: self.nsd_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_name",
-                    "nsd_name was not specified but it is required when building PutSolNetworkPackageContentOutput",
-                )
-            })?,
-            nsd_version: self.nsd_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_version",
-                    "nsd_version was not specified but it is required when building PutSolNetworkPackageContentOutput",
-                )
-            })?,
-            vnf_pkg_ids: self.vnf_pkg_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnf_pkg_ids",
-                    "vnf_pkg_ids was not specified but it is required when building PutSolNetworkPackageContentOutput",
-                )
-            })?,
-            metadata: self.metadata,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PutSolNetworkPackageContentOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building PutSolNetworkPackageContentOutput")
+                    )?
+                ,
+                nsd_id: self.nsd_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_id", "nsd_id was not specified but it is required when building PutSolNetworkPackageContentOutput")
+                    )?
+                ,
+                nsd_name: self.nsd_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_name", "nsd_name was not specified but it is required when building PutSolNetworkPackageContentOutput")
+                    )?
+                ,
+                nsd_version: self.nsd_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_version", "nsd_version was not specified but it is required when building PutSolNetworkPackageContentOutput")
+                    )?
+                ,
+                vnf_pkg_ids: self.vnf_pkg_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnf_pkg_ids", "vnf_pkg_ids was not specified but it is required when building PutSolNetworkPackageContentOutput")
+                    )?
+                ,
+                metadata: self.metadata
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

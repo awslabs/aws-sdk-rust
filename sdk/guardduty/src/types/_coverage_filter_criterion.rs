@@ -3,7 +3,7 @@
 /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageFilterCriterion {
+pub struct CoverageFilterCriterion  {
     /// <p>An enum value representing possible filter fields.</p><note>
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
     /// </note>
@@ -11,15 +11,15 @@ pub struct CoverageFilterCriterion {
     /// <p>Contains information about the condition.</p>
     pub filter_condition: ::std::option::Option<crate::types::CoverageFilterCondition>,
 }
-impl CoverageFilterCriterion {
+impl  CoverageFilterCriterion  {
     /// <p>An enum value representing possible filter fields.</p><note>
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
     /// </note>
-    pub fn criterion_key(&self) -> ::std::option::Option<&crate::types::CoverageFilterCriterionKey> {
+    pub fn criterion_key(&self) -> ::std::option::Option<& crate::types::CoverageFilterCriterionKey> {
         self.criterion_key.as_ref()
     }
     /// <p>Contains information about the condition.</p>
-    pub fn filter_condition(&self) -> ::std::option::Option<&crate::types::CoverageFilterCondition> {
+    pub fn filter_condition(&self) -> ::std::option::Option<& crate::types::CoverageFilterCondition> {
         self.filter_condition.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CoverageFilterCriterionBuilder {
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
     /// </note>
     pub fn set_criterion_key(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriterionKey>) -> Self {
-        self.criterion_key = input;
-        self
+        self.criterion_key = input; self
     }
     /// <p>An enum value representing possible filter fields.</p><note>
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
@@ -65,8 +64,7 @@ impl CoverageFilterCriterionBuilder {
     }
     /// <p>Contains information about the condition.</p>
     pub fn set_filter_condition(mut self, input: ::std::option::Option<crate::types::CoverageFilterCondition>) -> Self {
-        self.filter_condition = input;
-        self
+        self.filter_condition = input; self
     }
     /// <p>Contains information about the condition.</p>
     pub fn get_filter_condition(&self) -> &::std::option::Option<crate::types::CoverageFilterCondition> {
@@ -75,8 +73,11 @@ impl CoverageFilterCriterionBuilder {
     /// Consumes the builder and constructs a [`CoverageFilterCriterion`](crate::types::CoverageFilterCriterion).
     pub fn build(self) -> crate::types::CoverageFilterCriterion {
         crate::types::CoverageFilterCriterion {
-            criterion_key: self.criterion_key,
-            filter_condition: self.filter_condition,
+            criterion_key: self.criterion_key
+            ,
+            filter_condition: self.filter_condition
+            ,
         }
     }
 }
+

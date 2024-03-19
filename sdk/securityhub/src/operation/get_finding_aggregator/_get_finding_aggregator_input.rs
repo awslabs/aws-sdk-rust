@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingAggregatorInput {
+pub struct GetFindingAggregatorInput  {
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetFindingAggregatorInput {
+impl  GetFindingAggregatorInput  {
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<& str> {
         self.finding_aggregator_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetFindingAggregatorInputBuilder {
     }
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_aggregator_arn = input;
-        self
+        self.finding_aggregator_arn = input; self
     }
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.finding_aggregator_arn
     }
     /// Consumes the builder and constructs a [`GetFindingAggregatorInput`](crate::operation::get_finding_aggregator::GetFindingAggregatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_finding_aggregator::GetFindingAggregatorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_finding_aggregator::GetFindingAggregatorInput {
-            finding_aggregator_arn: self.finding_aggregator_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_finding_aggregator::GetFindingAggregatorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_finding_aggregator::GetFindingAggregatorInput {
+                finding_aggregator_arn: self.finding_aggregator_arn
+                ,
+            }
+        )
     }
 }
+

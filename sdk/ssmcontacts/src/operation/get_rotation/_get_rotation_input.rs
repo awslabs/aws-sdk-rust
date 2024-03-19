@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRotationInput {
+pub struct GetRotationInput  {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
     pub rotation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRotationInput {
+impl  GetRotationInput  {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
-    pub fn rotation_id(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_id(&self) -> ::std::option::Option<& str> {
         self.rotation_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetRotationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
     pub fn set_rotation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_id = input;
-        self
+        self.rotation_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
     pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetRotationInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_rotation::GetRotationInput {
-            rotation_id: self.rotation_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_rotation::GetRotationInput {
+                rotation_id: self.rotation_id
+                ,
+            }
+        )
     }
 }
+

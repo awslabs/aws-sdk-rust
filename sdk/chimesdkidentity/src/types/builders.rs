@@ -38,3 +38,4 @@ pub use crate::types::_app_instance_bot::AppInstanceBotBuilder;
 pub use crate::types::_app_instance_admin::AppInstanceAdminBuilder;
 
 pub use crate::types::_app_instance::AppInstanceBuilder;
+

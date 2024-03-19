@@ -3,15 +3,15 @@
 /// <p>Stores the holiday featurization attributes applicable to each item of time-series datasets during the training of a forecasting model. This allows the model to identify patterns associated with specific holidays.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HolidayConfigAttributes {
+pub struct HolidayConfigAttributes  {
     /// <p>The country code for the holiday calendar.</p>
     /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub country_code: ::std::option::Option<::std::string::String>,
 }
-impl HolidayConfigAttributes {
+impl  HolidayConfigAttributes  {
     /// <p>The country code for the holiday calendar.</p>
     /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
-    pub fn country_code(&self) -> ::std::option::Option<&str> {
+    pub fn country_code(&self) -> ::std::option::Option<& str> {
         self.country_code.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl HolidayConfigAttributesBuilder {
     /// <p>The country code for the holiday calendar.</p>
     /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>The country code for the holiday calendar.</p>
     /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
@@ -49,7 +48,9 @@ impl HolidayConfigAttributesBuilder {
     /// Consumes the builder and constructs a [`HolidayConfigAttributes`](crate::types::HolidayConfigAttributes).
     pub fn build(self) -> crate::types::HolidayConfigAttributes {
         crate::types::HolidayConfigAttributes {
-            country_code: self.country_code,
+            country_code: self.country_code
+            ,
         }
     }
 }
+

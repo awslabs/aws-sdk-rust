@@ -3,7 +3,7 @@
 /// <p>Contains information about an Amazon Inspector finding. This data type is used as the response element in the <code>DescribeFindings</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Finding {
+pub struct Finding  {
     /// <p>The ARN that specifies the finding.</p>
     pub arn: ::std::string::String,
     /// <p>The schema version of this data type.</p>
@@ -33,58 +33,57 @@ pub struct Finding {
     /// <p>This data element is currently not used.</p>
     pub indicator_of_compromise: ::std::option::Option<bool>,
     /// <p>The system-defined attributes for the finding.</p>
-    pub attributes: ::std::vec::Vec<crate::types::Attribute>,
+    pub attributes: ::std::vec::Vec::<crate::types::Attribute>,
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub user_attributes: ::std::vec::Vec<crate::types::Attribute>,
+    pub user_attributes: ::std::vec::Vec::<crate::types::Attribute>,
     /// <p>The time when the finding was generated.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl Finding {
+impl  Finding  {
     /// <p>The ARN that specifies the finding.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The schema version of this data type.</p>
     pub fn schema_version(&self) -> i32 {
         self.schema_version
     }
     /// <p>The data element is set to "Inspector".</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
-    pub fn service_attributes(&self) -> ::std::option::Option<&crate::types::InspectorServiceAttributes> {
+    pub fn service_attributes(&self) -> ::std::option::Option<& crate::types::InspectorServiceAttributes> {
         self.service_attributes.as_ref()
     }
     /// <p>The type of the host from which the finding is generated.</p>
-    pub fn asset_type(&self) -> ::std::option::Option<&crate::types::AssetType> {
+    pub fn asset_type(&self) -> ::std::option::Option<& crate::types::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn asset_attributes(&self) -> ::std::option::Option<&crate::types::AssetAttributes> {
+    pub fn asset_attributes(&self) -> ::std::option::Option<& crate::types::AssetAttributes> {
         self.asset_attributes.as_ref()
     }
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the finding.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the finding.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommendation for the finding.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation(&self) -> ::std::option::Option<& str> {
         self.recommendation.as_deref()
     }
     /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::Severity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::Severity> {
         self.severity.as_ref()
     }
     /// <p>The numeric value of the finding severity.</p>
@@ -100,21 +99,19 @@ impl Finding {
         self.indicator_of_compromise
     }
     /// <p>The system-defined attributes for the finding.</p>
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        use std::ops::Deref; self.attributes.deref()
     }
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub fn user_attributes(&self) -> &[crate::types::Attribute] {
-        use std::ops::Deref;
-        self.user_attributes.deref()
+    pub fn user_attributes(&self) -> & [crate::types::Attribute] {
+        use std::ops::Deref; self.user_attributes.deref()
     }
     /// <p>The time when the finding was generated.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -143,8 +140,8 @@ pub struct FindingBuilder {
     pub(crate) numeric_severity: ::std::option::Option<f64>,
     pub(crate) confidence: ::std::option::Option<i32>,
     pub(crate) indicator_of_compromise: ::std::option::Option<bool>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -157,8 +154,7 @@ impl FindingBuilder {
     }
     /// <p>The ARN that specifies the finding.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN that specifies the finding.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +167,7 @@ impl FindingBuilder {
     }
     /// <p>The schema version of this data type.</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The schema version of this data type.</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<i32> {
@@ -185,8 +180,7 @@ impl FindingBuilder {
     }
     /// <p>The data element is set to "Inspector".</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The data element is set to "Inspector".</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +193,7 @@ impl FindingBuilder {
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
     pub fn set_service_attributes(mut self, input: ::std::option::Option<crate::types::InspectorServiceAttributes>) -> Self {
-        self.service_attributes = input;
-        self
+        self.service_attributes = input; self
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
     pub fn get_service_attributes(&self) -> &::std::option::Option<crate::types::InspectorServiceAttributes> {
@@ -213,8 +206,7 @@ impl FindingBuilder {
     }
     /// <p>The type of the host from which the finding is generated.</p>
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AssetType>) -> Self {
-        self.asset_type = input;
-        self
+        self.asset_type = input; self
     }
     /// <p>The type of the host from which the finding is generated.</p>
     pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AssetType> {
@@ -227,8 +219,7 @@ impl FindingBuilder {
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
     pub fn set_asset_attributes(mut self, input: ::std::option::Option<crate::types::AssetAttributes>) -> Self {
-        self.asset_attributes = input;
-        self
+        self.asset_attributes = input; self
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
     pub fn get_asset_attributes(&self) -> &::std::option::Option<crate::types::AssetAttributes> {
@@ -241,8 +232,7 @@ impl FindingBuilder {
     }
     /// <p>The ID of the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the finding.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +245,7 @@ impl FindingBuilder {
     }
     /// <p>The name of the finding.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The name of the finding.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,8 +258,7 @@ impl FindingBuilder {
     }
     /// <p>The description of the finding.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the finding.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,8 +271,7 @@ impl FindingBuilder {
     }
     /// <p>The recommendation for the finding.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>The recommendation for the finding.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<::std::string::String> {
@@ -297,8 +284,7 @@ impl FindingBuilder {
     }
     /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
@@ -311,8 +297,7 @@ impl FindingBuilder {
     }
     /// <p>The numeric value of the finding severity.</p>
     pub fn set_numeric_severity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.numeric_severity = input;
-        self
+        self.numeric_severity = input; self
     }
     /// <p>The numeric value of the finding severity.</p>
     pub fn get_numeric_severity(&self) -> &::std::option::Option<f64> {
@@ -325,8 +310,7 @@ impl FindingBuilder {
     }
     /// <p>This data element is currently not used.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>This data element is currently not used.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<i32> {
@@ -339,8 +323,7 @@ impl FindingBuilder {
     }
     /// <p>This data element is currently not used.</p>
     pub fn set_indicator_of_compromise(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.indicator_of_compromise = input;
-        self
+        self.indicator_of_compromise = input; self
     }
     /// <p>This data element is currently not used.</p>
     pub fn get_indicator_of_compromise(&self) -> &::std::option::Option<bool> {
@@ -353,17 +336,16 @@ impl FindingBuilder {
     /// <p>The system-defined attributes for the finding.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The system-defined attributes for the finding.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The system-defined attributes for the finding.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Appends an item to `user_attributes`.
@@ -373,17 +355,16 @@ impl FindingBuilder {
     /// <p>The user-defined attributes that are assigned to the finding.</p>
     pub fn user_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
-        v.push(input);
-        self.user_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.user_attributes = input;
-        self
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.user_attributes = input; self
     }
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.user_attributes
     }
     /// <p>The time when the finding was generated.</p>
@@ -394,8 +375,7 @@ impl FindingBuilder {
     }
     /// <p>The time when the finding was generated.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the finding was generated.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -409,8 +389,7 @@ impl FindingBuilder {
     }
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -424,50 +403,64 @@ impl FindingBuilder {
     /// - [`created_at`](crate::types::builders::FindingBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::FindingBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Finding {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Finding",
-                )
-            })?,
-            schema_version: self.schema_version.unwrap_or_default(),
-            service: self.service,
-            service_attributes: self.service_attributes,
-            asset_type: self.asset_type,
-            asset_attributes: self.asset_attributes,
-            id: self.id,
-            title: self.title,
-            description: self.description,
-            recommendation: self.recommendation,
-            severity: self.severity,
-            numeric_severity: self.numeric_severity.unwrap_or_default(),
-            confidence: self.confidence.unwrap_or_default(),
-            indicator_of_compromise: self.indicator_of_compromise,
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building Finding",
-                )
-            })?,
-            user_attributes: self.user_attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_attributes",
-                    "user_attributes was not specified but it is required when building Finding",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building Finding",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building Finding",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Finding {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Finding")
+                    )?
+                ,
+                schema_version: self.schema_version
+                    .unwrap_or_default()
+                ,
+                service: self.service
+                ,
+                service_attributes: self.service_attributes
+                ,
+                asset_type: self.asset_type
+                ,
+                asset_attributes: self.asset_attributes
+                ,
+                id: self.id
+                ,
+                title: self.title
+                ,
+                description: self.description
+                ,
+                recommendation: self.recommendation
+                ,
+                severity: self.severity
+                ,
+                numeric_severity: self.numeric_severity
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                    .unwrap_or_default()
+                ,
+                indicator_of_compromise: self.indicator_of_compromise
+                ,
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building Finding")
+                    )?
+                ,
+                user_attributes: self.user_attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_attributes", "user_attributes was not specified but it is required when building Finding")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building Finding")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building Finding")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutInvitationConfigurationInput {
+pub struct PutInvitationConfigurationInput  {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub organization_name: ::std::option::Option<::std::string::String>,
     /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
     pub contact_email: ::std::option::Option<::std::string::String>,
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub private_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub private_skill_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PutInvitationConfigurationInput {
+impl  PutInvitationConfigurationInput  {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    pub fn organization_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_name(&self) -> ::std::option::Option<& str> {
         self.organization_name.as_deref()
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
-    pub fn contact_email(&self) -> ::std::option::Option<&str> {
+    pub fn contact_email(&self) -> ::std::option::Option<& str> {
         self.contact_email.as_deref()
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_skill_ids.is_none()`.
-    pub fn private_skill_ids(&self) -> &[::std::string::String] {
-        self.private_skill_ids.as_deref().unwrap_or_default()
+    pub fn private_skill_ids(&self) -> & [::std::string::String] {
+        self.private_skill_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutInvitationConfigurationInput {
@@ -39,7 +40,7 @@ impl PutInvitationConfigurationInput {
 pub struct PutInvitationConfigurationInputBuilder {
     pub(crate) organization_name: ::std::option::Option<::std::string::String>,
     pub(crate) contact_email: ::std::option::Option<::std::string::String>,
-    pub(crate) private_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) private_skill_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PutInvitationConfigurationInputBuilder {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
@@ -50,8 +51,7 @@ impl PutInvitationConfigurationInputBuilder {
     }
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_name = input;
-        self
+        self.organization_name = input; self
     }
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl PutInvitationConfigurationInputBuilder {
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
     pub fn set_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_email = input;
-        self
+        self.contact_email = input; self
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use.</p>
     pub fn get_contact_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,30 +77,30 @@ impl PutInvitationConfigurationInputBuilder {
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub fn private_skill_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.private_skill_ids.unwrap_or_default();
-        v.push(input.into());
-        self.private_skill_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.private_skill_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn set_private_skill_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.private_skill_ids = input;
-        self
+    pub fn set_private_skill_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.private_skill_ids = input; self
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn get_private_skill_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_skill_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.private_skill_ids
     }
     /// Consumes the builder and constructs a [`PutInvitationConfigurationInput`](crate::operation::put_invitation_configuration::PutInvitationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_invitation_configuration::PutInvitationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_invitation_configuration::PutInvitationConfigurationInput {
-            organization_name: self.organization_name,
-            contact_email: self.contact_email,
-            private_skill_ids: self.private_skill_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_invitation_configuration::PutInvitationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_invitation_configuration::PutInvitationConfigurationInput {
+                organization_name: self.organization_name
+                ,
+                contact_email: self.contact_email
+                ,
+                private_skill_ids: self.private_skill_ids
+                ,
+            }
+        )
     }
 }
+

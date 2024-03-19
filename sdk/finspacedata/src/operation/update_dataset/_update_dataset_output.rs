@@ -3,22 +3,22 @@
 /// The response from an UpdateDataset operation
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatasetOutput {
+pub struct UpdateDatasetOutput  {
     /// <p>The unique identifier for updated Dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateDatasetOutput {
+impl  UpdateDatasetOutput  {
     /// <p>The unique identifier for updated Dataset.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput).
     pub fn builder() -> crate::operation::update_dataset::builders::UpdateDatasetOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateDatasetOutputBuilder {
     }
     /// <p>The unique identifier for updated Dataset.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
     }
     /// <p>The unique identifier for updated Dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput).
     pub fn build(self) -> crate::operation::update_dataset::UpdateDatasetOutput {
         crate::operation::update_dataset::UpdateDatasetOutput {
-            dataset_id: self.dataset_id,
+            dataset_id: self.dataset_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

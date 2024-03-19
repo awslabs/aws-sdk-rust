@@ -3,7 +3,7 @@
 /// <p>Information required to run the <code>containerAction</code> to produce dataset contents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerDatasetAction {
+pub struct ContainerDatasetAction  {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     pub image: ::std::string::String,
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
@@ -11,28 +11,27 @@ pub struct ContainerDatasetAction {
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
     pub resource_configuration: ::std::option::Option<crate::types::ResourceConfiguration>,
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
+    pub variables: ::std::option::Option<::std::vec::Vec::<crate::types::Variable>>,
 }
-impl ContainerDatasetAction {
+impl  ContainerDatasetAction  {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
-    pub fn image(&self) -> &str {
-        use std::ops::Deref;
-        self.image.deref()
+    pub fn image(&self) -> & str {
+        use std::ops::Deref; self.image.deref()
     }
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
-    pub fn execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role_arn.deref()
+    pub fn execution_role_arn(&self) -> & str {
+        use std::ops::Deref; self.execution_role_arn.deref()
     }
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
-    pub fn resource_configuration(&self) -> ::std::option::Option<&crate::types::ResourceConfiguration> {
+    pub fn resource_configuration(&self) -> ::std::option::Option<& crate::types::ResourceConfiguration> {
         self.resource_configuration.as_ref()
     }
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
-    pub fn variables(&self) -> &[crate::types::Variable] {
-        self.variables.as_deref().unwrap_or_default()
+    pub fn variables(&self) -> & [crate::types::Variable] {
+        self.variables.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ContainerDatasetAction {
@@ -49,7 +48,7 @@ pub struct ContainerDatasetActionBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_configuration: ::std::option::Option<crate::types::ResourceConfiguration>,
-    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec::<crate::types::Variable>>,
 }
 impl ContainerDatasetActionBuilder {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
@@ -60,8 +59,7 @@ impl ContainerDatasetActionBuilder {
     }
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl ContainerDatasetActionBuilder {
     }
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +87,7 @@ impl ContainerDatasetActionBuilder {
     }
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
     pub fn set_resource_configuration(mut self, input: ::std::option::Option<crate::types::ResourceConfiguration>) -> Self {
-        self.resource_configuration = input;
-        self
+        self.resource_configuration = input; self
     }
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
     pub fn get_resource_configuration(&self) -> &::std::option::Option<crate::types::ResourceConfiguration> {
@@ -104,17 +100,16 @@ impl ContainerDatasetActionBuilder {
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
     pub fn variables(mut self, input: crate::types::Variable) -> Self {
         let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Variable>>) -> Self {
+        self.variables = input; self
     }
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Variable>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Variable>> {
         &self.variables
     }
     /// Consumes the builder and constructs a [`ContainerDatasetAction`](crate::types::ContainerDatasetAction).
@@ -122,21 +117,24 @@ impl ContainerDatasetActionBuilder {
     /// - [`image`](crate::types::builders::ContainerDatasetActionBuilder::image)
     /// - [`execution_role_arn`](crate::types::builders::ContainerDatasetActionBuilder::execution_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ContainerDatasetAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContainerDatasetAction {
-            image: self.image.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image",
-                    "image was not specified but it is required when building ContainerDatasetAction",
-                )
-            })?,
-            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role_arn",
-                    "execution_role_arn was not specified but it is required when building ContainerDatasetAction",
-                )
-            })?,
-            resource_configuration: self.resource_configuration,
-            variables: self.variables,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContainerDatasetAction {
+                image: self.image
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image", "image was not specified but it is required when building ContainerDatasetAction")
+                    )?
+                ,
+                execution_role_arn: self.execution_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_role_arn", "execution_role_arn was not specified but it is required when building ContainerDatasetAction")
+                    )?
+                ,
+                resource_configuration: self.resource_configuration
+                ,
+                variables: self.variables
+                ,
+            }
+        )
     }
 }
+

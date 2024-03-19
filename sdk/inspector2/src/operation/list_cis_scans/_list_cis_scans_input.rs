@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCisScansInput {
+pub struct ListCisScansInput  {
     /// <p>The CIS scan filter criteria.</p>
     pub filter_criteria: ::std::option::Option<crate::types::ListCisScansFilterCriteria>,
     /// <p>The detail applied to the CIS scan.</p>
@@ -16,25 +16,25 @@ pub struct ListCisScansInput {
     /// <p>The maximum number of results to be returned.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCisScansInput {
+impl  ListCisScansInput  {
     /// <p>The CIS scan filter criteria.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::ListCisScansFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::ListCisScansFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The detail applied to the CIS scan.</p>
-    pub fn detail_level(&self) -> ::std::option::Option<&crate::types::ListCisScansDetailLevel> {
+    pub fn detail_level(&self) -> ::std::option::Option<& crate::types::ListCisScansDetailLevel> {
         self.detail_level.as_ref()
     }
     /// <p>The CIS scans sort by order.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListCisScansSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ListCisScansSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The CIS scans sort order.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::CisSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::CisSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned.</p>
@@ -68,8 +68,7 @@ impl ListCisScansInputBuilder {
     }
     /// <p>The CIS scan filter criteria.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ListCisScansFilterCriteria>) -> Self {
-        self.filter_criteria = input;
-        self
+        self.filter_criteria = input; self
     }
     /// <p>The CIS scan filter criteria.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ListCisScansFilterCriteria> {
@@ -82,8 +81,7 @@ impl ListCisScansInputBuilder {
     }
     /// <p>The detail applied to the CIS scan.</p>
     pub fn set_detail_level(mut self, input: ::std::option::Option<crate::types::ListCisScansDetailLevel>) -> Self {
-        self.detail_level = input;
-        self
+        self.detail_level = input; self
     }
     /// <p>The detail applied to the CIS scan.</p>
     pub fn get_detail_level(&self) -> &::std::option::Option<crate::types::ListCisScansDetailLevel> {
@@ -96,8 +94,7 @@ impl ListCisScansInputBuilder {
     }
     /// <p>The CIS scans sort by order.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListCisScansSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The CIS scans sort by order.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListCisScansSortBy> {
@@ -110,8 +107,7 @@ impl ListCisScansInputBuilder {
     }
     /// <p>The CIS scans sort order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::CisSortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The CIS scans sort order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::CisSortOrder> {
@@ -124,8 +120,7 @@ impl ListCisScansInputBuilder {
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,24 +133,30 @@ impl ListCisScansInputBuilder {
     }
     /// <p>The maximum number of results to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCisScansInput`](crate::operation::list_cis_scans::ListCisScansInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_cis_scans::ListCisScansInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_cis_scans::ListCisScansInput {
-            filter_criteria: self.filter_criteria,
-            detail_level: self.detail_level,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cis_scans::ListCisScansInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_cis_scans::ListCisScansInput {
+                filter_criteria: self.filter_criteria
+                ,
+                detail_level: self.detail_level
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

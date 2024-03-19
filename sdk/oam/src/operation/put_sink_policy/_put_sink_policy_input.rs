@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSinkPolicyInput {
+pub struct PutSinkPolicyInput  {
     /// <p>The ARN of the sink to attach this policy to.</p>
     pub sink_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
@@ -10,15 +10,15 @@ pub struct PutSinkPolicyInput {
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutSinkPolicyInput {
+impl  PutSinkPolicyInput  {
     /// <p>The ARN of the sink to attach this policy to.</p>
-    pub fn sink_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn sink_identifier(&self) -> ::std::option::Option<& str> {
         self.sink_identifier.as_deref()
     }
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl PutSinkPolicyInputBuilder {
     }
     /// <p>The ARN of the sink to attach this policy to.</p>
     pub fn set_sink_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_identifier = input;
-        self
+        self.sink_identifier = input; self
     }
     /// <p>The ARN of the sink to attach this policy to.</p>
     pub fn get_sink_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl PutSinkPolicyInputBuilder {
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
@@ -74,12 +72,15 @@ impl PutSinkPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutSinkPolicyInput`](crate::operation::put_sink_policy::PutSinkPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_sink_policy::PutSinkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_sink_policy::PutSinkPolicyInput {
-            sink_identifier: self.sink_identifier,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_sink_policy::PutSinkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_sink_policy::PutSinkPolicyInput {
+                sink_identifier: self.sink_identifier
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

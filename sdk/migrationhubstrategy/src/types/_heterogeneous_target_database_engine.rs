@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let heterogeneoustargetdatabaseengine = unimplemented!();
 /// match heterogeneoustargetdatabaseengine {
@@ -38,16 +38,14 @@
 /// Specifically, when `heterogeneoustargetdatabaseengine` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HeterogeneousTargetDatabaseEngine::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum HeterogeneousTargetDatabaseEngine {
     #[allow(missing_docs)] // documentation missing in model
     AwsPostgresql,
@@ -71,96 +69,86 @@ pub enum HeterogeneousTargetDatabaseEngine {
     Sap,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for HeterogeneousTargetDatabaseEngine {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS PostgreSQL" => HeterogeneousTargetDatabaseEngine::AwsPostgresql,
-            "Amazon Aurora" => HeterogeneousTargetDatabaseEngine::AmazonAurora,
-            "Db2 LUW" => HeterogeneousTargetDatabaseEngine::Db2Luw,
-            "MariaDB" => HeterogeneousTargetDatabaseEngine::MariaDb,
-            "Microsoft SQL Server" => HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer,
-            "MongoDB" => HeterogeneousTargetDatabaseEngine::MongoDb,
-            "MySQL" => HeterogeneousTargetDatabaseEngine::Mysql,
-            "None specified" => HeterogeneousTargetDatabaseEngine::NoneSpecified,
-            "Oracle Database" => HeterogeneousTargetDatabaseEngine::OracleDatabase,
-            "SAP" => HeterogeneousTargetDatabaseEngine::Sap,
-            other => HeterogeneousTargetDatabaseEngine::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AWS PostgreSQL" => HeterogeneousTargetDatabaseEngine::AwsPostgresql,
+"Amazon Aurora" => HeterogeneousTargetDatabaseEngine::AmazonAurora,
+"Db2 LUW" => HeterogeneousTargetDatabaseEngine::Db2Luw,
+"MariaDB" => HeterogeneousTargetDatabaseEngine::MariaDb,
+"Microsoft SQL Server" => HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer,
+"MongoDB" => HeterogeneousTargetDatabaseEngine::MongoDb,
+"MySQL" => HeterogeneousTargetDatabaseEngine::Mysql,
+"None specified" => HeterogeneousTargetDatabaseEngine::NoneSpecified,
+"Oracle Database" => HeterogeneousTargetDatabaseEngine::OracleDatabase,
+"SAP" => HeterogeneousTargetDatabaseEngine::Sap,
+other => HeterogeneousTargetDatabaseEngine::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for HeterogeneousTargetDatabaseEngine {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(HeterogeneousTargetDatabaseEngine::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(HeterogeneousTargetDatabaseEngine::from(s))
+                    }
+                }
 impl HeterogeneousTargetDatabaseEngine {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HeterogeneousTargetDatabaseEngine::AwsPostgresql => "AWS PostgreSQL",
-            HeterogeneousTargetDatabaseEngine::AmazonAurora => "Amazon Aurora",
-            HeterogeneousTargetDatabaseEngine::Db2Luw => "Db2 LUW",
-            HeterogeneousTargetDatabaseEngine::MariaDb => "MariaDB",
-            HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer => "Microsoft SQL Server",
-            HeterogeneousTargetDatabaseEngine::MongoDb => "MongoDB",
-            HeterogeneousTargetDatabaseEngine::Mysql => "MySQL",
-            HeterogeneousTargetDatabaseEngine::NoneSpecified => "None specified",
-            HeterogeneousTargetDatabaseEngine::OracleDatabase => "Oracle Database",
-            HeterogeneousTargetDatabaseEngine::Sap => "SAP",
-            HeterogeneousTargetDatabaseEngine::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS PostgreSQL",
-            "Amazon Aurora",
-            "Db2 LUW",
-            "MariaDB",
-            "Microsoft SQL Server",
-            "MongoDB",
-            "MySQL",
-            "None specified",
-            "Oracle Database",
-            "SAP",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HeterogeneousTargetDatabaseEngine::AwsPostgresql => "AWS PostgreSQL",
+    HeterogeneousTargetDatabaseEngine::AmazonAurora => "Amazon Aurora",
+    HeterogeneousTargetDatabaseEngine::Db2Luw => "Db2 LUW",
+    HeterogeneousTargetDatabaseEngine::MariaDb => "MariaDB",
+    HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer => "Microsoft SQL Server",
+    HeterogeneousTargetDatabaseEngine::MongoDb => "MongoDB",
+    HeterogeneousTargetDatabaseEngine::Mysql => "MySQL",
+    HeterogeneousTargetDatabaseEngine::NoneSpecified => "None specified",
+    HeterogeneousTargetDatabaseEngine::OracleDatabase => "Oracle Database",
+    HeterogeneousTargetDatabaseEngine::Sap => "SAP",
+    HeterogeneousTargetDatabaseEngine::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS PostgreSQL", "Amazon Aurora", "Db2 LUW", "MariaDB", "Microsoft SQL Server", "MongoDB", "MySQL", "None specified", "Oracle Database", "SAP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for HeterogeneousTargetDatabaseEngine {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl HeterogeneousTargetDatabaseEngine {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for HeterogeneousTargetDatabaseEngine {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            HeterogeneousTargetDatabaseEngine::AwsPostgresql => write!(f, "AWS PostgreSQL"),
-            HeterogeneousTargetDatabaseEngine::AmazonAurora => write!(f, "Amazon Aurora"),
-            HeterogeneousTargetDatabaseEngine::Db2Luw => write!(f, "Db2 LUW"),
-            HeterogeneousTargetDatabaseEngine::MariaDb => write!(f, "MariaDB"),
-            HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer => write!(f, "Microsoft SQL Server"),
-            HeterogeneousTargetDatabaseEngine::MongoDb => write!(f, "MongoDB"),
-            HeterogeneousTargetDatabaseEngine::Mysql => write!(f, "MySQL"),
-            HeterogeneousTargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
-            HeterogeneousTargetDatabaseEngine::OracleDatabase => write!(f, "Oracle Database"),
-            HeterogeneousTargetDatabaseEngine::Sap => write!(f, "SAP"),
-            HeterogeneousTargetDatabaseEngine::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                HeterogeneousTargetDatabaseEngine::AwsPostgresql => write!(f, "AWS PostgreSQL"),
+HeterogeneousTargetDatabaseEngine::AmazonAurora => write!(f, "Amazon Aurora"),
+HeterogeneousTargetDatabaseEngine::Db2Luw => write!(f, "Db2 LUW"),
+HeterogeneousTargetDatabaseEngine::MariaDb => write!(f, "MariaDB"),
+HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer => write!(f, "Microsoft SQL Server"),
+HeterogeneousTargetDatabaseEngine::MongoDb => write!(f, "MongoDB"),
+HeterogeneousTargetDatabaseEngine::Mysql => write!(f, "MySQL"),
+HeterogeneousTargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
+HeterogeneousTargetDatabaseEngine::OracleDatabase => write!(f, "Oracle Database"),
+HeterogeneousTargetDatabaseEngine::Sap => write!(f, "SAP"),
+HeterogeneousTargetDatabaseEngine::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

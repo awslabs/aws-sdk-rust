@@ -3,11 +3,11 @@
 /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunctionStartedEventAttributes {
+pub struct LambdaFunctionStartedEventAttributes  {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub scheduled_event_id: i64,
 }
-impl LambdaFunctionStartedEventAttributes {
+impl  LambdaFunctionStartedEventAttributes  {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(&self) -> i64 {
         self.scheduled_event_id
@@ -35,8 +35,7 @@ impl LambdaFunctionStartedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
@@ -45,7 +44,10 @@ impl LambdaFunctionStartedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`LambdaFunctionStartedEventAttributes`](crate::types::LambdaFunctionStartedEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionStartedEventAttributes {
         crate::types::LambdaFunctionStartedEventAttributes {
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
+            scheduled_event_id: self.scheduled_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

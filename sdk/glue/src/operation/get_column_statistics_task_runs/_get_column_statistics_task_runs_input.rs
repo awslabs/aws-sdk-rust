@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetColumnStatisticsTaskRunsInput {
+pub struct GetColumnStatisticsTaskRunsInput  {
     /// <p>The name of the database where the table resides.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
@@ -12,13 +12,13 @@ pub struct GetColumnStatisticsTaskRunsInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetColumnStatisticsTaskRunsInput {
+impl  GetColumnStatisticsTaskRunsInput  {
     /// <p>The name of the database where the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The maximum size of the response.</p>
@@ -26,7 +26,7 @@ impl GetColumnStatisticsTaskRunsInput {
         self.max_results
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl GetColumnStatisticsTaskRunsInputBuilder {
     }
     /// <p>The name of the database where the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl GetColumnStatisticsTaskRunsInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl GetColumnStatisticsTaskRunsInputBuilder {
     }
     /// <p>The maximum size of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,25 +95,26 @@ impl GetColumnStatisticsTaskRunsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetColumnStatisticsTaskRunsInput`](crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

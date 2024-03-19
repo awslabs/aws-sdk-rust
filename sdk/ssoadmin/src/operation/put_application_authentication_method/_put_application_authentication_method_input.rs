@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutApplicationAuthenticationMethodInput {
+pub struct PutApplicationAuthenticationMethodInput  {
     /// <p>Specifies the ARN of the application with the authentication method to add or update.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of the authentication method that you want to add or update.</p>
@@ -10,17 +10,17 @@ pub struct PutApplicationAuthenticationMethodInput {
     /// <p>Specifies a structure that describes the authentication method to add or update. The structure type you provide is determined by the <code>AuthenticationMethodType</code> parameter.</p>
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethod>,
 }
-impl PutApplicationAuthenticationMethodInput {
+impl  PutApplicationAuthenticationMethodInput  {
     /// <p>Specifies the ARN of the application with the authentication method to add or update.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Specifies the type of the authentication method that you want to add or update.</p>
-    pub fn authentication_method_type(&self) -> ::std::option::Option<&crate::types::AuthenticationMethodType> {
+    pub fn authentication_method_type(&self) -> ::std::option::Option<& crate::types::AuthenticationMethodType> {
         self.authentication_method_type.as_ref()
     }
     /// <p>Specifies a structure that describes the authentication method to add or update. The structure type you provide is determined by the <code>AuthenticationMethodType</code> parameter.</p>
-    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::AuthenticationMethod> {
+    pub fn authentication_method(&self) -> ::std::option::Option<& crate::types::AuthenticationMethod> {
         self.authentication_method.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PutApplicationAuthenticationMethodInputBuilder {
     }
     /// <p>Specifies the ARN of the application with the authentication method to add or update.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application with the authentication method to add or update.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutApplicationAuthenticationMethodInputBuilder {
     }
     /// <p>Specifies the type of the authentication method that you want to add or update.</p>
     pub fn set_authentication_method_type(mut self, input: ::std::option::Option<crate::types::AuthenticationMethodType>) -> Self {
-        self.authentication_method_type = input;
-        self
+        self.authentication_method_type = input; self
     }
     /// <p>Specifies the type of the authentication method that you want to add or update.</p>
     pub fn get_authentication_method_type(&self) -> &::std::option::Option<crate::types::AuthenticationMethodType> {
@@ -78,26 +76,24 @@ impl PutApplicationAuthenticationMethodInputBuilder {
     }
     /// <p>Specifies a structure that describes the authentication method to add or update. The structure type you provide is determined by the <code>AuthenticationMethodType</code> parameter.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethod>) -> Self {
-        self.authentication_method = input;
-        self
+        self.authentication_method = input; self
     }
     /// <p>Specifies a structure that describes the authentication method to add or update. The structure type you provide is determined by the <code>AuthenticationMethodType</code> parameter.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethod> {
         &self.authentication_method
     }
     /// Consumes the builder and constructs a [`PutApplicationAuthenticationMethodInput`](crate::operation::put_application_authentication_method::PutApplicationAuthenticationMethodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_application_authentication_method::PutApplicationAuthenticationMethodInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_application_authentication_method::PutApplicationAuthenticationMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_application_authentication_method::PutApplicationAuthenticationMethodInput {
-                application_arn: self.application_arn,
-                authentication_method_type: self.authentication_method_type,
-                authentication_method: self.authentication_method,
-            },
+                application_arn: self.application_arn
+                ,
+                authentication_method_type: self.authentication_method_type
+                ,
+                authentication_method: self.authentication_method
+                ,
+            }
         )
     }
 }
+

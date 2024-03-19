@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AbortMultipartReadSetUploadOutput {
+pub struct AbortMultipartReadSetUploadOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AbortMultipartReadSetUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AbortMultipartReadSetUploadOutput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartReadSetUploadOutput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput).
     pub fn builder() -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AbortMultipartReadSetUploadOutputBuilder {
 }
 impl AbortMultipartReadSetUploadOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AbortMultipartReadSetUploadOutput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput).
     pub fn build(self) -> crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput {
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput {
@@ -40,3 +40,4 @@ impl AbortMultipartReadSetUploadOutputBuilder {
         }
     }
 }
+

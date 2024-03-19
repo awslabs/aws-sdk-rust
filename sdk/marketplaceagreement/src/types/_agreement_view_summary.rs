@@ -3,7 +3,7 @@
 /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, version, proposer, and acceptor).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgreementViewSummary {
+pub struct AgreementViewSummary  {
     /// <p>The unique identifier of the agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the agreement was accepted.</p>
@@ -23,41 +23,41 @@ pub struct AgreementViewSummary {
     /// <p>The current status of the agreement.</p>
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
 }
-impl AgreementViewSummary {
+impl  AgreementViewSummary  {
     /// <p>The unique identifier of the agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>The date and time that the agreement was accepted.</p>
-    pub fn acceptance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn acceptance_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.acceptance_time.as_ref()
     }
     /// <p>The date and time when the agreement starts.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
-    pub fn agreement_type(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_type(&self) -> ::std::option::Option<& str> {
         self.agreement_type.as_deref()
     }
     /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
-    pub fn acceptor(&self) -> ::std::option::Option<&crate::types::Acceptor> {
+    pub fn acceptor(&self) -> ::std::option::Option<& crate::types::Acceptor> {
         self.acceptor.as_ref()
     }
     /// <p>Details of the party proposing the agreement terms, most commonly the seller for <code>PurchaseAgreement</code>.</p>
-    pub fn proposer(&self) -> ::std::option::Option<&crate::types::Proposer> {
+    pub fn proposer(&self) -> ::std::option::Option<& crate::types::Proposer> {
         self.proposer.as_ref()
     }
     /// <p>A summary of the proposal</p>
-    pub fn proposal_summary(&self) -> ::std::option::Option<&crate::types::ProposalSummary> {
+    pub fn proposal_summary(&self) -> ::std::option::Option<& crate::types::ProposalSummary> {
         self.proposal_summary.as_ref()
     }
     /// <p>The current status of the agreement.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgreementStatus> {
         self.status.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>The date and time that the agreement was accepted.</p>
     pub fn set_acceptance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.acceptance_time = input;
-        self
+        self.acceptance_time = input; self
     }
     /// <p>The date and time that the agreement was accepted.</p>
     pub fn get_acceptance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +116,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>The date and time when the agreement starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time when the agreement starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +129,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +142,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
     pub fn set_agreement_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_type = input;
-        self
+        self.agreement_type = input; self
     }
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
     pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
     pub fn set_acceptor(mut self, input: ::std::option::Option<crate::types::Acceptor>) -> Self {
-        self.acceptor = input;
-        self
+        self.acceptor = input; self
     }
     /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
     pub fn get_acceptor(&self) -> &::std::option::Option<crate::types::Acceptor> {
@@ -174,8 +168,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>Details of the party proposing the agreement terms, most commonly the seller for <code>PurchaseAgreement</code>.</p>
     pub fn set_proposer(mut self, input: ::std::option::Option<crate::types::Proposer>) -> Self {
-        self.proposer = input;
-        self
+        self.proposer = input; self
     }
     /// <p>Details of the party proposing the agreement terms, most commonly the seller for <code>PurchaseAgreement</code>.</p>
     pub fn get_proposer(&self) -> &::std::option::Option<crate::types::Proposer> {
@@ -188,8 +181,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>A summary of the proposal</p>
     pub fn set_proposal_summary(mut self, input: ::std::option::Option<crate::types::ProposalSummary>) -> Self {
-        self.proposal_summary = input;
-        self
+        self.proposal_summary = input; self
     }
     /// <p>A summary of the proposal</p>
     pub fn get_proposal_summary(&self) -> &::std::option::Option<crate::types::ProposalSummary> {
@@ -202,8 +194,7 @@ impl AgreementViewSummaryBuilder {
     }
     /// <p>The current status of the agreement.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the agreement.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatus> {
@@ -212,15 +203,25 @@ impl AgreementViewSummaryBuilder {
     /// Consumes the builder and constructs a [`AgreementViewSummary`](crate::types::AgreementViewSummary).
     pub fn build(self) -> crate::types::AgreementViewSummary {
         crate::types::AgreementViewSummary {
-            agreement_id: self.agreement_id,
-            acceptance_time: self.acceptance_time,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            agreement_type: self.agreement_type,
-            acceptor: self.acceptor,
-            proposer: self.proposer,
-            proposal_summary: self.proposal_summary,
-            status: self.status,
+            agreement_id: self.agreement_id
+            ,
+            acceptance_time: self.acceptance_time
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            agreement_type: self.agreement_type
+            ,
+            acceptor: self.acceptor
+            ,
+            proposer: self.proposer
+            ,
+            proposal_summary: self.proposal_summary
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

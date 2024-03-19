@@ -4,11 +4,11 @@
 /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyContentTypeOptions {
+pub struct ResponseHeadersPolicyContentTypeOptions  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub r#override: bool,
 }
-impl ResponseHeadersPolicyContentTypeOptions {
+impl  ResponseHeadersPolicyContentTypeOptions  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(&self) -> bool {
         self.r#override
@@ -36,8 +36,7 @@ impl ResponseHeadersPolicyContentTypeOptionsBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<bool> {
@@ -46,16 +45,16 @@ impl ResponseHeadersPolicyContentTypeOptionsBuilder {
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentTypeOptions`](crate::types::ResponseHeadersPolicyContentTypeOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentTypeOptionsBuilder::r#override)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyContentTypeOptions {
-            r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#override",
-                    "r#override was not specified but it is required when building ResponseHeadersPolicyContentTypeOptions",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyContentTypeOptions {
+                r#override: self.r#override
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#override", "r#override was not specified but it is required when building ResponseHeadersPolicyContentTypeOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

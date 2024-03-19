@@ -3,7 +3,7 @@
 /// <p>Contains details of infected file including name, file path and hash.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanFilePath {
+pub struct ScanFilePath  {
     /// <p>The file path of the infected file.</p>
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume Arn details of the infected file.</p>
@@ -13,21 +13,21 @@ pub struct ScanFilePath {
     /// <p>File name of the infected file.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
 }
-impl ScanFilePath {
+impl  ScanFilePath  {
     /// <p>The file path of the infected file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>EBS volume Arn details of the infected file.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The hash value of the infected file.</p>
-    pub fn hash(&self) -> ::std::option::Option<&str> {
+    pub fn hash(&self) -> ::std::option::Option<& str> {
         self.hash.as_deref()
     }
     /// <p>File name of the infected file.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ScanFilePathBuilder {
     }
     /// <p>The file path of the infected file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The file path of the infected file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ScanFilePathBuilder {
     }
     /// <p>EBS volume Arn details of the infected file.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>EBS volume Arn details of the infected file.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ScanFilePathBuilder {
     }
     /// <p>The hash value of the infected file.</p>
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash = input;
-        self
+        self.hash = input; self
     }
     /// <p>The hash value of the infected file.</p>
     pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ScanFilePathBuilder {
     }
     /// <p>File name of the infected file.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>File name of the infected file.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ScanFilePathBuilder {
     /// Consumes the builder and constructs a [`ScanFilePath`](crate::types::ScanFilePath).
     pub fn build(self) -> crate::types::ScanFilePath {
         crate::types::ScanFilePath {
-            file_path: self.file_path,
-            volume_arn: self.volume_arn,
-            hash: self.hash,
-            file_name: self.file_name,
+            file_path: self.file_path
+            ,
+            volume_arn: self.volume_arn
+            ,
+            hash: self.hash
+            ,
+            file_name: self.file_name
+            ,
         }
     }
 }
+

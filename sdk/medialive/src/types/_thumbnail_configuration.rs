@@ -3,13 +3,13 @@
 /// Thumbnail Configuration
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThumbnailConfiguration {
+pub struct ThumbnailConfiguration  {
     /// Enables the thumbnail feature. The feature generates thumbnails of the incoming video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns the feature off.
     pub state: ::std::option::Option<crate::types::ThumbnailState>,
 }
-impl ThumbnailConfiguration {
+impl  ThumbnailConfiguration  {
     /// Enables the thumbnail feature. The feature generates thumbnails of the incoming video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns the feature off.
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ThumbnailState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ThumbnailState> {
         self.state.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ThumbnailConfigurationBuilder {
     }
     /// Enables the thumbnail feature. The feature generates thumbnails of the incoming video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns the feature off.
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ThumbnailState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Enables the thumbnail feature. The feature generates thumbnails of the incoming video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns the feature off.
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ThumbnailState> {
@@ -44,6 +43,10 @@ impl ThumbnailConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ThumbnailConfiguration`](crate::types::ThumbnailConfiguration).
     pub fn build(self) -> crate::types::ThumbnailConfiguration {
-        crate::types::ThumbnailConfiguration { state: self.state }
+        crate::types::ThumbnailConfiguration {
+            state: self.state
+            ,
+        }
     }
 }
+

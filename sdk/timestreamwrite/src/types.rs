@@ -164,3 +164,4 @@ pub mod builders;
 
 /// Error types that Amazon Timestream Write can respond with.
 pub mod error;
+

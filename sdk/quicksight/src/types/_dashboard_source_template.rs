@@ -3,22 +3,20 @@
 /// <p>Dashboard source template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DashboardSourceTemplate {
+pub struct DashboardSourceTemplate  {
     /// <p>Dataset references.</p>
-    pub data_set_references: ::std::vec::Vec<crate::types::DataSetReference>,
+    pub data_set_references: ::std::vec::Vec::<crate::types::DataSetReference>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: ::std::string::String,
 }
-impl DashboardSourceTemplate {
+impl  DashboardSourceTemplate  {
     /// <p>Dataset references.</p>
-    pub fn data_set_references(&self) -> &[crate::types::DataSetReference] {
-        use std::ops::Deref;
-        self.data_set_references.deref()
+    pub fn data_set_references(&self) -> & [crate::types::DataSetReference] {
+        use std::ops::Deref; self.data_set_references.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl DashboardSourceTemplate {
@@ -32,7 +30,7 @@ impl DashboardSourceTemplate {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardSourceTemplateBuilder {
-    pub(crate) data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
+    pub(crate) data_set_references: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetReference>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl DashboardSourceTemplateBuilder {
@@ -43,17 +41,16 @@ impl DashboardSourceTemplateBuilder {
     /// <p>Dataset references.</p>
     pub fn data_set_references(mut self, input: crate::types::DataSetReference) -> Self {
         let mut v = self.data_set_references.unwrap_or_default();
-        v.push(input);
-        self.data_set_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_set_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Dataset references.</p>
-    pub fn set_data_set_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>) -> Self {
-        self.data_set_references = input;
-        self
+    pub fn set_data_set_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetReference>>) -> Self {
+        self.data_set_references = input; self
     }
     /// <p>Dataset references.</p>
-    pub fn get_data_set_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>> {
+    pub fn get_data_set_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSetReference>> {
         &self.data_set_references
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -64,8 +61,7 @@ impl DashboardSourceTemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl DashboardSourceTemplateBuilder {
     /// - [`data_set_references`](crate::types::builders::DashboardSourceTemplateBuilder::data_set_references)
     /// - [`arn`](crate::types::builders::DashboardSourceTemplateBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DashboardSourceTemplate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DashboardSourceTemplate {
-            data_set_references: self.data_set_references.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_references",
-                    "data_set_references was not specified but it is required when building DashboardSourceTemplate",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DashboardSourceTemplate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DashboardSourceTemplate {
+                data_set_references: self.data_set_references
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_references", "data_set_references was not specified but it is required when building DashboardSourceTemplate")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DashboardSourceTemplate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

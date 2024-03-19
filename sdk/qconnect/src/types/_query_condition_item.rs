@@ -3,7 +3,7 @@
 /// <p>The condition for the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryConditionItem {
+pub struct QueryConditionItem  {
     /// <p>The name of the field for query condition to query on.</p>
     pub field: crate::types::QueryConditionFieldName,
     /// <p>The comparison operator for query condition to query on.</p>
@@ -11,19 +11,18 @@ pub struct QueryConditionItem {
     /// <p>The value for the query condition to query on.</p>
     pub value: ::std::string::String,
 }
-impl QueryConditionItem {
+impl  QueryConditionItem  {
     /// <p>The name of the field for query condition to query on.</p>
-    pub fn field(&self) -> &crate::types::QueryConditionFieldName {
+    pub fn field(&self) -> & crate::types::QueryConditionFieldName {
         &self.field
     }
     /// <p>The comparison operator for query condition to query on.</p>
-    pub fn comparator(&self) -> &crate::types::QueryConditionComparisonOperator {
+    pub fn comparator(&self) -> & crate::types::QueryConditionComparisonOperator {
         &self.comparator
     }
     /// <p>The value for the query condition to query on.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl QueryConditionItem {
@@ -50,8 +49,7 @@ impl QueryConditionItemBuilder {
     }
     /// <p>The name of the field for query condition to query on.</p>
     pub fn set_field(mut self, input: ::std::option::Option<crate::types::QueryConditionFieldName>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The name of the field for query condition to query on.</p>
     pub fn get_field(&self) -> &::std::option::Option<crate::types::QueryConditionFieldName> {
@@ -65,8 +63,7 @@ impl QueryConditionItemBuilder {
     }
     /// <p>The comparison operator for query condition to query on.</p>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::QueryConditionComparisonOperator>) -> Self {
-        self.comparator = input;
-        self
+        self.comparator = input; self
     }
     /// <p>The comparison operator for query condition to query on.</p>
     pub fn get_comparator(&self) -> &::std::option::Option<crate::types::QueryConditionComparisonOperator> {
@@ -80,8 +77,7 @@ impl QueryConditionItemBuilder {
     }
     /// <p>The value for the query condition to query on.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the query condition to query on.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl QueryConditionItemBuilder {
     /// - [`comparator`](crate::types::builders::QueryConditionItemBuilder::comparator)
     /// - [`value`](crate::types::builders::QueryConditionItemBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::QueryConditionItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueryConditionItem {
-            field: self.field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field",
-                    "field was not specified but it is required when building QueryConditionItem",
-                )
-            })?,
-            comparator: self.comparator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparator",
-                    "comparator was not specified but it is required when building QueryConditionItem",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building QueryConditionItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QueryConditionItem {
+                field: self.field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field", "field was not specified but it is required when building QueryConditionItem")
+                    )?
+                ,
+                comparator: self.comparator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparator", "comparator was not specified but it is required when building QueryConditionItem")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building QueryConditionItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

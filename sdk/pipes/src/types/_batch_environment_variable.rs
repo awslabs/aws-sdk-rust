@@ -5,19 +5,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEnvironmentVariable {
+pub struct BatchEnvironmentVariable  {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl BatchEnvironmentVariable {
+impl  BatchEnvironmentVariable  {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl BatchEnvironmentVariableBuilder {
     }
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl BatchEnvironmentVariableBuilder {
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl BatchEnvironmentVariableBuilder {
     /// Consumes the builder and constructs a [`BatchEnvironmentVariable`](crate::types::BatchEnvironmentVariable).
     pub fn build(self) -> crate::types::BatchEnvironmentVariable {
         crate::types::BatchEnvironmentVariable {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

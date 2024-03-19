@@ -3,20 +3,19 @@
 /// <p>Information about a repository that will be cloned to a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryInput {
+pub struct RepositoryInput  {
     /// <p>The name of the source repository.</p>
     pub repository_name: ::std::string::String,
     /// <p>The name of the branch in a source repository.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
-impl RepositoryInput {
+impl  RepositoryInput  {
     /// <p>The name of the source repository.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> & str {
+        use std::ops::Deref; self.repository_name.deref()
     }
     /// <p>The name of the branch in a source repository.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl RepositoryInputBuilder {
     }
     /// <p>The name of the source repository.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the source repository.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl RepositoryInputBuilder {
     }
     /// <p>The name of the branch in a source repository.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch in a source repository.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl RepositoryInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`repository_name`](crate::types::builders::RepositoryInputBuilder::repository_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositoryInput {
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building RepositoryInput",
-                )
-            })?,
-            branch_name: self.branch_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositoryInput {
+                repository_name: self.repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_name", "repository_name was not specified but it is required when building RepositoryInput")
+                    )?
+                ,
+                branch_name: self.branch_name
+                ,
+            }
+        )
     }
 }
+

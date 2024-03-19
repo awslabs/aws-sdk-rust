@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSharedReportGroupsInput {
+pub struct ListSharedReportGroupsInput  {
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct ListSharedReportGroupsInput {
     /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSharedReportGroupsInput {
+impl  ListSharedReportGroupsInput  {
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -32,7 +32,7 @@ impl ListSharedReportGroupsInput {
     /// <li>
     /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
@@ -42,11 +42,11 @@ impl ListSharedReportGroupsInput {
     /// <li>
     /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SharedResourceSortByType> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SharedResourceSortByType> {
         self.sort_by.as_ref()
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
@@ -90,8 +90,7 @@ impl ListSharedReportGroupsInputBuilder {
     /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
@@ -122,8 +121,7 @@ impl ListSharedReportGroupsInputBuilder {
     /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
@@ -142,8 +140,7 @@ impl ListSharedReportGroupsInputBuilder {
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,25 +153,26 @@ impl ListSharedReportGroupsInputBuilder {
     }
     /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSharedReportGroupsInput`](crate::operation::list_shared_report_groups::ListSharedReportGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_shared_report_groups::ListSharedReportGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_shared_report_groups::ListSharedReportGroupsInput {
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shared_report_groups::ListSharedReportGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_shared_report_groups::ListSharedReportGroupsInput {
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

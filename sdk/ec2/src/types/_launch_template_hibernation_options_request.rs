@@ -3,12 +3,12 @@
 /// <p>Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateHibernationOptionsRequest {
+pub struct LaunchTemplateHibernationOptionsRequest  {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code></p>
     pub configured: ::std::option::Option<bool>,
 }
-impl LaunchTemplateHibernationOptionsRequest {
+impl  LaunchTemplateHibernationOptionsRequest  {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code></p>
     pub fn configured(&self) -> ::std::option::Option<bool> {
@@ -38,8 +38,7 @@ impl LaunchTemplateHibernationOptionsRequestBuilder {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.configured = input;
-        self
+        self.configured = input; self
     }
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code></p>
@@ -48,6 +47,10 @@ impl LaunchTemplateHibernationOptionsRequestBuilder {
     }
     /// Consumes the builder and constructs a [`LaunchTemplateHibernationOptionsRequest`](crate::types::LaunchTemplateHibernationOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateHibernationOptionsRequest {
-        crate::types::LaunchTemplateHibernationOptionsRequest { configured: self.configured }
+        crate::types::LaunchTemplateHibernationOptionsRequest {
+            configured: self.configured
+            ,
+        }
     }
 }
+

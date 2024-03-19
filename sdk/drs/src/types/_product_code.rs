@@ -3,19 +3,19 @@
 /// <p>Properties of a product code associated with a volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductCode {
+pub struct ProductCode  {
     /// <p>Id of a product code associated with a volume.</p>
     pub product_code_id: ::std::option::Option<::std::string::String>,
     /// <p>Mode of a product code associated with a volume.</p>
     pub product_code_mode: ::std::option::Option<crate::types::ProductCodeMode>,
 }
-impl ProductCode {
+impl  ProductCode  {
     /// <p>Id of a product code associated with a volume.</p>
-    pub fn product_code_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_code_id(&self) -> ::std::option::Option<& str> {
         self.product_code_id.as_deref()
     }
     /// <p>Mode of a product code associated with a volume.</p>
-    pub fn product_code_mode(&self) -> ::std::option::Option<&crate::types::ProductCodeMode> {
+    pub fn product_code_mode(&self) -> ::std::option::Option<& crate::types::ProductCodeMode> {
         self.product_code_mode.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ProductCodeBuilder {
     }
     /// <p>Id of a product code associated with a volume.</p>
     pub fn set_product_code_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code_id = input;
-        self
+        self.product_code_id = input; self
     }
     /// <p>Id of a product code associated with a volume.</p>
     pub fn get_product_code_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ProductCodeBuilder {
     }
     /// <p>Mode of a product code associated with a volume.</p>
     pub fn set_product_code_mode(mut self, input: ::std::option::Option<crate::types::ProductCodeMode>) -> Self {
-        self.product_code_mode = input;
-        self
+        self.product_code_mode = input; self
     }
     /// <p>Mode of a product code associated with a volume.</p>
     pub fn get_product_code_mode(&self) -> &::std::option::Option<crate::types::ProductCodeMode> {
@@ -65,8 +63,11 @@ impl ProductCodeBuilder {
     /// Consumes the builder and constructs a [`ProductCode`](crate::types::ProductCode).
     pub fn build(self) -> crate::types::ProductCode {
         crate::types::ProductCode {
-            product_code_id: self.product_code_id,
-            product_code_mode: self.product_code_mode,
+            product_code_id: self.product_code_id
+            ,
+            product_code_mode: self.product_code_mode
+            ,
         }
     }
 }
+

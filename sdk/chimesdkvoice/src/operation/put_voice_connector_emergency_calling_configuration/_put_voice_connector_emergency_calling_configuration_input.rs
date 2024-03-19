@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutVoiceConnectorEmergencyCallingConfigurationInput {
+pub struct PutVoiceConnectorEmergencyCallingConfigurationInput  {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration being updated.</p>
     pub emergency_calling_configuration: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
 }
-impl PutVoiceConnectorEmergencyCallingConfigurationInput {
+impl  PutVoiceConnectorEmergencyCallingConfigurationInput  {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The configuration being updated.</p>
-    pub fn emergency_calling_configuration(&self) -> ::std::option::Option<&crate::types::EmergencyCallingConfiguration> {
+    pub fn emergency_calling_configuration(&self) -> ::std::option::Option<& crate::types::EmergencyCallingConfiguration> {
         self.emergency_calling_configuration.as_ref()
     }
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder::default()
     }
 }
@@ -43,8 +41,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,25 +55,22 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     }
     /// <p>The configuration being updated.</p>
     pub fn set_emergency_calling_configuration(mut self, input: ::std::option::Option<crate::types::EmergencyCallingConfiguration>) -> Self {
-        self.emergency_calling_configuration = input;
-        self
+        self.emergency_calling_configuration = input; self
     }
     /// <p>The configuration being updated.</p>
     pub fn get_emergency_calling_configuration(&self) -> &::std::option::Option<crate::types::EmergencyCallingConfiguration> {
         &self.emergency_calling_configuration
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput {
-                voice_connector_id: self.voice_connector_id,
-                emergency_calling_configuration: self.emergency_calling_configuration,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                emergency_calling_configuration: self.emergency_calling_configuration
+                ,
+            }
         )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterInput {
+pub struct UpdateClusterInput  {
     /// <p>The name of the cluster to update</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster to update</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The SecurityGroupIds to update</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
@@ -50,20 +50,21 @@ pub struct UpdateClusterInput {
     /// <p>The Access Control List that is associated with the cluster</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateClusterInput {
+impl  UpdateClusterInput  {
     /// <p>The name of the cluster to update</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The description of the cluster to update</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The SecurityGroupIds to update</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -84,23 +85,23 @@ impl UpdateClusterInput {
     /// <p><code>sat</code></p></li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
-    pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_window(&self) -> ::std::option::Option<& str> {
         self.maintenance_window.as_deref()
     }
     /// <p>The SNS topic ARN to update</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
-    pub fn sns_topic_status(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_status(&self) -> ::std::option::Option<& str> {
         self.sns_topic_status.as_deref()
     }
     /// <p>The name of the parameter group to update</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
-    pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_window(&self) -> ::std::option::Option<& str> {
         self.snapshot_window.as_deref()
     }
     /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
@@ -108,23 +109,23 @@ impl UpdateClusterInput {
         self.snapshot_retention_limit
     }
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The number of replicas that will reside in each shard</p>
-    pub fn replica_configuration(&self) -> ::std::option::Option<&crate::types::ReplicaConfigurationRequest> {
+    pub fn replica_configuration(&self) -> ::std::option::Option<& crate::types::ReplicaConfigurationRequest> {
         self.replica_configuration.as_ref()
     }
     /// <p>The number of shards in the cluster</p>
-    pub fn shard_configuration(&self) -> ::std::option::Option<&crate::types::ShardConfigurationRequest> {
+    pub fn shard_configuration(&self) -> ::std::option::Option<& crate::types::ShardConfigurationRequest> {
         self.shard_configuration.as_ref()
     }
     /// <p>The Access Control List that is associated with the cluster</p>
-    pub fn acl_name(&self) -> ::std::option::Option<&str> {
+    pub fn acl_name(&self) -> ::std::option::Option<& str> {
         self.acl_name.as_deref()
     }
 }
@@ -141,7 +142,7 @@ impl UpdateClusterInput {
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_status: ::std::option::Option<::std::string::String>,
@@ -163,8 +164,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The name of the cluster to update</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster to update</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +177,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The description of the cluster to update</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the cluster to update</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,17 +190,16 @@ impl UpdateClusterInputBuilder {
     /// <p>The SecurityGroupIds to update</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The SecurityGroupIds to update</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The SecurityGroupIds to update</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -247,8 +245,7 @@ impl UpdateClusterInputBuilder {
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintenance_window = input;
-        self
+        self.maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -279,8 +276,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The SNS topic ARN to update</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The SNS topic ARN to update</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +289,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
     pub fn set_sns_topic_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_status = input;
-        self
+        self.sns_topic_status = input; self
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
     pub fn get_sns_topic_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +302,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The name of the parameter group to update</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to update</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +315,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_window = input;
-        self
+        self.snapshot_window = input; self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +328,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
@@ -349,8 +341,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,8 +354,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -377,8 +367,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The number of replicas that will reside in each shard</p>
     pub fn set_replica_configuration(mut self, input: ::std::option::Option<crate::types::ReplicaConfigurationRequest>) -> Self {
-        self.replica_configuration = input;
-        self
+        self.replica_configuration = input; self
     }
     /// <p>The number of replicas that will reside in each shard</p>
     pub fn get_replica_configuration(&self) -> &::std::option::Option<crate::types::ReplicaConfigurationRequest> {
@@ -391,8 +380,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The number of shards in the cluster</p>
     pub fn set_shard_configuration(mut self, input: ::std::option::Option<crate::types::ShardConfigurationRequest>) -> Self {
-        self.shard_configuration = input;
-        self
+        self.shard_configuration = input; self
     }
     /// <p>The number of shards in the cluster</p>
     pub fn get_shard_configuration(&self) -> &::std::option::Option<crate::types::ShardConfigurationRequest> {
@@ -405,32 +393,46 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The Access Control List that is associated with the cluster</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.acl_name = input;
-        self
+        self.acl_name = input; self
     }
     /// <p>The Access Control List that is associated with the cluster</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
-            cluster_name: self.cluster_name,
-            description: self.description,
-            security_group_ids: self.security_group_ids,
-            maintenance_window: self.maintenance_window,
-            sns_topic_arn: self.sns_topic_arn,
-            sns_topic_status: self.sns_topic_status,
-            parameter_group_name: self.parameter_group_name,
-            snapshot_window: self.snapshot_window,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            node_type: self.node_type,
-            engine_version: self.engine_version,
-            replica_configuration: self.replica_configuration,
-            shard_configuration: self.shard_configuration,
-            acl_name: self.acl_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster::UpdateClusterInput {
+                cluster_name: self.cluster_name
+                ,
+                description: self.description
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                maintenance_window: self.maintenance_window
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                sns_topic_status: self.sns_topic_status
+                ,
+                parameter_group_name: self.parameter_group_name
+                ,
+                snapshot_window: self.snapshot_window
+                ,
+                snapshot_retention_limit: self.snapshot_retention_limit
+                ,
+                node_type: self.node_type
+                ,
+                engine_version: self.engine_version
+                ,
+                replica_configuration: self.replica_configuration
+                ,
+                shard_configuration: self.shard_configuration
+                ,
+                acl_name: self.acl_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationChannel {
+pub struct NotificationChannel  {
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
     pub sns_topic_arn: ::std::string::String,
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic.</p>
     pub role_arn: ::std::string::String,
 }
-impl NotificationChannel {
+impl  NotificationChannel  {
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
-    pub fn sns_topic_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.sns_topic_arn.deref()
+    pub fn sns_topic_arn(&self) -> & str {
+        use std::ops::Deref; self.sns_topic_arn.deref()
     }
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl NotificationChannel {
@@ -44,8 +42,7 @@ impl NotificationChannelBuilder {
     }
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl NotificationChannelBuilder {
     }
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl NotificationChannelBuilder {
     /// - [`sns_topic_arn`](crate::types::builders::NotificationChannelBuilder::sns_topic_arn)
     /// - [`role_arn`](crate::types::builders::NotificationChannelBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationChannel, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationChannel {
-            sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sns_topic_arn",
-                    "sns_topic_arn was not specified but it is required when building NotificationChannel",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building NotificationChannel",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationChannel {
+                sns_topic_arn: self.sns_topic_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sns_topic_arn", "sns_topic_arn was not specified but it is required when building NotificationChannel")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building NotificationChannel")
+                    )?
+                ,
+            }
+        )
     }
 }
+

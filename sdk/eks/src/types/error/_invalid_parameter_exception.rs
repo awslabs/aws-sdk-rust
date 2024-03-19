@@ -3,7 +3,7 @@
 /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
@@ -18,39 +18,37 @@ pub struct InvalidParameterException {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl InvalidParameterException {
+impl  InvalidParameterException  {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<& str> {
         self.nodegroup_name.as_deref()
     }
     /// <p>The Fargate profile associated with the exception.</p>
-    pub fn fargate_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn fargate_profile_name(&self) -> ::std::option::Option<& str> {
         self.fargate_profile_name.as_deref()
     }
     /// <p>The specified parameter for the add-on name is invalid. Review the available parameters for the API request</p>
-    pub fn addon_name(&self) -> ::std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<& str> {
         self.addon_name.as_deref()
     }
     /// <p>The Amazon EKS subscription ID with the exception.</p>
-    pub fn subscription_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_id(&self) -> ::std::option::Option<& str> {
         self.subscription_id.as_deref()
     }
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidParameterException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -65,9 +63,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvalidParamete
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::types::error::InvalidParameterException).
@@ -96,8 +92,7 @@ impl InvalidParameterExceptionBuilder {
     }
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl InvalidParameterExceptionBuilder {
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nodegroup_name = input;
-        self
+        self.nodegroup_name = input; self
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl InvalidParameterExceptionBuilder {
     }
     /// <p>The Fargate profile associated with the exception.</p>
     pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fargate_profile_name = input;
-        self
+        self.fargate_profile_name = input; self
     }
     /// <p>The Fargate profile associated with the exception.</p>
     pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl InvalidParameterExceptionBuilder {
     }
     /// <p>The specified parameter for the add-on name is invalid. Review the available parameters for the API request</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_name = input;
-        self
+        self.addon_name = input; self
     }
     /// <p>The specified parameter for the add-on name is invalid. Review the available parameters for the API request</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +144,7 @@ impl InvalidParameterExceptionBuilder {
     }
     /// <p>The Amazon EKS subscription ID with the exception.</p>
     pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_id = input;
-        self
+        self.subscription_id = input; self
     }
     /// <p>The Amazon EKS subscription ID with the exception.</p>
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,34 +157,40 @@ impl InvalidParameterExceptionBuilder {
     }
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`InvalidParameterException`](crate::types::error::InvalidParameterException).
     pub fn build(self) -> crate::types::error::InvalidParameterException {
         crate::types::error::InvalidParameterException {
-            cluster_name: self.cluster_name,
-            nodegroup_name: self.nodegroup_name,
-            fargate_profile_name: self.fargate_profile_name,
-            addon_name: self.addon_name,
-            subscription_id: self.subscription_id,
-            message: self.message,
+            cluster_name: self.cluster_name
+            ,
+            nodegroup_name: self.nodegroup_name
+            ,
+            fargate_profile_name: self.fargate_profile_name
+            ,
+            addon_name: self.addon_name
+            ,
+            subscription_id: self.subscription_id
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

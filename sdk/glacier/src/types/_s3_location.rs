@@ -3,7 +3,7 @@
 /// <p>Contains information about the location in Amazon S3 where the select job results are stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to the results for this request.</p>
@@ -13,47 +13,48 @@ pub struct S3Location {
     /// <p>The canned access control list (ACL) to apply to the job results.</p>
     pub canned_acl: ::std::option::Option<crate::types::CannedAcl>,
     /// <p>A list of grants that control access to the staged results.</p>
-    pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
+    pub access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::Grant>>,
     /// <p>The tag-set that is applied to the job results.</p>
-    pub tagging: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tagging: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-    pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub user_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The storage class used to store the job results.</p>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The prefix that is prepended to the results for this request.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
     /// <p>The canned access control list (ACL) to apply to the job results.</p>
-    pub fn canned_acl(&self) -> ::std::option::Option<&crate::types::CannedAcl> {
+    pub fn canned_acl(&self) -> ::std::option::Option<& crate::types::CannedAcl> {
         self.canned_acl.as_ref()
     }
     /// <p>A list of grants that control access to the staged results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
-    pub fn access_control_list(&self) -> &[crate::types::Grant] {
-        self.access_control_list.as_deref().unwrap_or_default()
+    pub fn access_control_list(&self) -> & [crate::types::Grant] {
+        self.access_control_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tag-set that is applied to the job results.</p>
-    pub fn tagging(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tagging(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tagging.as_ref()
     }
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-    pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn user_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p>The storage class used to store the job results.</p>
-    pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
+    pub fn storage_class(&self) -> ::std::option::Option<& crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
 }
@@ -72,9 +73,9 @@ pub struct S3LocationBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::Encryption>,
     pub(crate) canned_acl: ::std::option::Option<crate::types::CannedAcl>,
-    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    pub(crate) tagging: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::Grant>>,
+    pub(crate) tagging: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
 }
 impl S3LocationBuilder {
@@ -85,8 +86,7 @@ impl S3LocationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl S3LocationBuilder {
     }
     /// <p>The prefix that is prepended to the results for this request.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix that is prepended to the results for this request.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl S3LocationBuilder {
     }
     /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -127,8 +125,7 @@ impl S3LocationBuilder {
     }
     /// <p>The canned access control list (ACL) to apply to the job results.</p>
     pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::CannedAcl>) -> Self {
-        self.canned_acl = input;
-        self
+        self.canned_acl = input; self
     }
     /// <p>The canned access control list (ACL) to apply to the job results.</p>
     pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::CannedAcl> {
@@ -141,17 +138,16 @@ impl S3LocationBuilder {
     /// <p>A list of grants that control access to the staged results.</p>
     pub fn access_control_list(mut self, input: crate::types::Grant) -> Self {
         let mut v = self.access_control_list.unwrap_or_default();
-        v.push(input);
-        self.access_control_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_control_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of grants that control access to the staged results.</p>
-    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>) -> Self {
-        self.access_control_list = input;
-        self
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Grant>>) -> Self {
+        self.access_control_list = input; self
     }
     /// <p>A list of grants that control access to the staged results.</p>
-    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grant>> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Grant>> {
         &self.access_control_list
     }
     /// Adds a key-value pair to `tagging`.
@@ -161,17 +157,16 @@ impl S3LocationBuilder {
     /// <p>The tag-set that is applied to the job results.</p>
     pub fn tagging(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tagging.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tagging = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tagging = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tag-set that is applied to the job results.</p>
-    pub fn set_tagging(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tagging = input;
-        self
+    pub fn set_tagging(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tagging = input; self
     }
     /// <p>The tag-set that is applied to the job results.</p>
-    pub fn get_tagging(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tagging(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tagging
     }
     /// Adds a key-value pair to `user_metadata`.
@@ -181,20 +176,16 @@ impl S3LocationBuilder {
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
     pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.user_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.user_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-    pub fn set_user_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.user_metadata = input;
-        self
+    pub fn set_user_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.user_metadata = input; self
     }
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.user_metadata
     }
     /// <p>The storage class used to store the job results.</p>
@@ -204,8 +195,7 @@ impl S3LocationBuilder {
     }
     /// <p>The storage class used to store the job results.</p>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>The storage class used to store the job results.</p>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
@@ -214,14 +204,23 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
-            encryption: self.encryption,
-            canned_acl: self.canned_acl,
-            access_control_list: self.access_control_list,
-            tagging: self.tagging,
-            user_metadata: self.user_metadata,
-            storage_class: self.storage_class,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
+            encryption: self.encryption
+            ,
+            canned_acl: self.canned_acl
+            ,
+            access_control_list: self.access_control_list
+            ,
+            tagging: self.tagging
+            ,
+            user_metadata: self.user_metadata
+            ,
+            storage_class: self.storage_class
+            ,
         }
     }
 }
+

@@ -180,3 +180,4 @@ pub mod builders;
 
 /// Error types that Amazon VPC Lattice can respond with.
 pub mod error;
+

@@ -3,22 +3,23 @@
 /// A request to add outputs to the specified bridge.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddBridgeOutputsInput {
+pub struct AddBridgeOutputsInput  {
     /// The ARN of the bridge that you want to update.
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The outputs that you want to add to this bridge.
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::AddBridgeOutputRequest>>,
 }
-impl AddBridgeOutputsInput {
+impl  AddBridgeOutputsInput  {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     /// The outputs that you want to add to this bridge.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::AddBridgeOutputRequest] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::AddBridgeOutputRequest] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddBridgeOutputsInput {
@@ -33,7 +34,7 @@ impl AddBridgeOutputsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddBridgeOutputsInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::AddBridgeOutputRequest>>,
 }
 impl AddBridgeOutputsInputBuilder {
     /// The ARN of the bridge that you want to update.
@@ -44,8 +45,7 @@ impl AddBridgeOutputsInputBuilder {
     }
     /// The ARN of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
     }
     /// The ARN of the bridge that you want to update.
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,26 +58,28 @@ impl AddBridgeOutputsInputBuilder {
     /// The outputs that you want to add to this bridge.
     pub fn outputs(mut self, input: crate::types::AddBridgeOutputRequest) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// The outputs that you want to add to this bridge.
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddBridgeOutputRequest>>) -> Self {
+        self.outputs = input; self
     }
     /// The outputs that you want to add to this bridge.
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddBridgeOutputRequest>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_bridge_outputs::AddBridgeOutputsInput {
-            bridge_arn: self.bridge_arn,
-            outputs: self.outputs,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_bridge_outputs::AddBridgeOutputsInput {
+                bridge_arn: self.bridge_arn
+                ,
+                outputs: self.outputs
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ModifyDbInstanceInput {
+pub struct ModifyDbInstanceInput  {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -27,7 +27,7 @@ pub struct ModifyDbInstanceInput {
     /// <li>
     /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
-    pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub db_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
@@ -35,7 +35,7 @@ pub struct ModifyDbInstanceInput {
     /// <li>
     /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p>If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
     /// <p>Default: <code>false</code></p>
@@ -144,14 +144,14 @@ pub struct ModifyDbInstanceInput {
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
-impl ModifyDbInstanceInput {
+impl  ModifyDbInstanceInput  {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>Not supported by Neptune.</p>
@@ -161,14 +161,14 @@ impl ModifyDbInstanceInput {
     /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC.</p>
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetGroup</code></p>
-    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
@@ -177,10 +177,11 @@ impl ModifyDbInstanceInput {
     /// <li>
     /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
-    pub fn db_security_groups(&self) -> &[::std::string::String] {
-        self.db_security_groups.as_deref().unwrap_or_default()
+    pub fn db_security_groups(&self) -> & [::std::string::String] {
+        self.db_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -189,10 +190,11 @@ impl ModifyDbInstanceInput {
     /// <li>
     /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p>If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
@@ -201,13 +203,13 @@ impl ModifyDbInstanceInput {
         self.apply_immediately
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
-    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -228,7 +230,7 @@ impl ModifyDbInstanceInput {
     /// <li>
     /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
@@ -236,7 +238,7 @@ impl ModifyDbInstanceInput {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
@@ -244,7 +246,7 @@ impl ModifyDbInstanceInput {
         self.multi_az
     }
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
@@ -256,7 +258,7 @@ impl ModifyDbInstanceInput {
         self.auto_minor_version_upgrade
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
@@ -266,7 +268,7 @@ impl ModifyDbInstanceInput {
         self.iops
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
@@ -280,27 +282,27 @@ impl ModifyDbInstanceInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
-    pub fn new_db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn new_db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.new_db_instance_identifier.as_deref()
     }
     /// <p>Not supported.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    pub fn tde_credential_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tde_credential_arn(&self) -> ::std::option::Option<& str> {
         self.tde_credential_arn.as_deref()
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
-    pub fn tde_credential_password(&self) -> ::std::option::Option<&str> {
+    pub fn tde_credential_password(&self) -> ::std::option::Option<& str> {
         self.tde_credential_password.as_deref()
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_identifier.as_deref()
     }
     /// <p>Not supported.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
@@ -327,11 +329,11 @@ impl ModifyDbInstanceInput {
     }
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-    pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_role_arn(&self) -> ::std::option::Option<& str> {
         self.monitoring_role_arn.as_deref()
     }
     /// <p>Not supported</p>
-    pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_iam_role_name(&self) -> ::std::option::Option<& str> {
         self.domain_iam_role_name.as_deref()
     }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
@@ -352,11 +354,11 @@ impl ModifyDbInstanceInput {
         self.enable_performance_insights
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
-    pub fn cloudwatch_logs_export_configuration(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsExportConfiguration> {
+    pub fn cloudwatch_logs_export_configuration(&self) -> ::std::option::Option<& crate::types::CloudwatchLogsExportConfiguration> {
         self.cloudwatch_logs_export_configuration.as_ref()
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
@@ -364,7 +366,7 @@ impl ModifyDbInstanceInput {
         self.deletion_protection
     }
 }
-impl ::std::fmt::Debug for ModifyDbInstanceInput {
+impl  ::std::fmt::Debug for ModifyDbInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbInstanceInput");
         formatter.field("db_instance_identifier", &self.db_instance_identifier);
@@ -422,8 +424,8 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -475,8 +477,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -494,8 +495,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -512,8 +512,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request.</p>
@@ -534,8 +533,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetGroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_name = input;
-        self
+        self.db_subnet_group_name = input; self
     }
     /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC.</p>
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.</p>
@@ -556,9 +554,9 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     pub fn db_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.db_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.db_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
@@ -566,9 +564,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <li>
     /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
-    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.db_security_groups = input;
-        self
+    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.db_security_groups = input; self
     }
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
@@ -576,7 +573,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li>
     /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
-    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.db_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -592,9 +589,9 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -603,9 +600,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <li>
     /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -614,7 +610,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li>
     /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
@@ -628,8 +624,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p>If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
@@ -644,8 +639,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -662,8 +656,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_name = input;
-        self
+        self.db_parameter_group_name = input; self
     }
     /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.</p>
     /// <p>Default: Uses existing setting</p>
@@ -680,8 +673,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: Uses existing setting</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: Uses existing setting</p>
@@ -719,8 +711,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -753,8 +744,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
@@ -771,8 +761,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -785,8 +774,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -799,8 +787,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_major_version_upgrade = input;
-        self
+        self.allow_major_version_upgrade = input; self
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -813,8 +800,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -827,8 +813,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -845,8 +830,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
     /// <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
@@ -861,8 +845,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -895,8 +878,7 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_new_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_db_instance_identifier = input;
-        self
+        self.new_db_instance_identifier = input; self
     }
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -919,8 +901,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Not supported.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Not supported.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -933,8 +914,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub fn set_tde_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tde_credential_arn = input;
-        self
+        self.tde_credential_arn = input; self
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -947,8 +927,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     pub fn set_tde_credential_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tde_credential_password = input;
-        self
+        self.tde_credential_password = input; self
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     pub fn get_tde_credential_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -961,8 +940,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
     pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = input;
-        self
+        self.ca_certificate_identifier = input; self
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -975,8 +953,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Not supported.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>Not supported.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -989,8 +966,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
+        self.copy_tags_to_snapshot = input; self
     }
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
@@ -1007,8 +983,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code></p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.monitoring_interval = input;
-        self
+        self.monitoring_interval = input; self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
@@ -1029,8 +1004,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>8182</code></p>
     pub fn set_db_port_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.db_port_number = input;
-        self
+        self.db_port_number = input; self
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option group for the DB instance.</p>
@@ -1048,8 +1022,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
@@ -1065,8 +1038,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_role_arn = input;
-        self
+        self.monitoring_role_arn = input; self
     }
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -1080,8 +1052,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Not supported</p>
     pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_iam_role_name = input;
-        self
+        self.domain_iam_role_name = input; self
     }
     /// <p>Not supported</p>
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1098,8 +1069,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.promotion_tier = input;
-        self
+        self.promotion_tier = input; self
     }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
@@ -1120,8 +1090,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_iam_database_authentication = input;
-        self
+        self.enable_iam_database_authentication = input; self
     }
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>You can enable IAM database authentication for the following database engines</p>
@@ -1137,8 +1106,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_performance_insights = input;
-        self
+        self.enable_performance_insights = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
@@ -1151,8 +1119,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.performance_insights_kms_key_id = input;
-        self
+        self.performance_insights_kms_key_id = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1165,8 +1132,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
     pub fn set_cloudwatch_logs_export_configuration(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>) -> Self {
-        self.cloudwatch_logs_export_configuration = input;
-        self
+        self.cloudwatch_logs_export_configuration = input; self
     }
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
     pub fn get_cloudwatch_logs_export_configuration(&self) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
@@ -1179,56 +1145,92 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_db_instance::ModifyDbInstanceInput {
-            db_instance_identifier: self.db_instance_identifier,
-            allocated_storage: self.allocated_storage,
-            db_instance_class: self.db_instance_class,
-            db_subnet_group_name: self.db_subnet_group_name,
-            db_security_groups: self.db_security_groups,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            apply_immediately: self.apply_immediately,
-            master_user_password: self.master_user_password,
-            db_parameter_group_name: self.db_parameter_group_name,
-            backup_retention_period: self.backup_retention_period,
-            preferred_backup_window: self.preferred_backup_window,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            multi_az: self.multi_az,
-            engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            license_model: self.license_model,
-            iops: self.iops,
-            option_group_name: self.option_group_name,
-            new_db_instance_identifier: self.new_db_instance_identifier,
-            storage_type: self.storage_type,
-            tde_credential_arn: self.tde_credential_arn,
-            tde_credential_password: self.tde_credential_password,
-            ca_certificate_identifier: self.ca_certificate_identifier,
-            domain: self.domain,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-            monitoring_interval: self.monitoring_interval,
-            db_port_number: self.db_port_number,
-            publicly_accessible: self.publicly_accessible,
-            monitoring_role_arn: self.monitoring_role_arn,
-            domain_iam_role_name: self.domain_iam_role_name,
-            promotion_tier: self.promotion_tier,
-            enable_iam_database_authentication: self.enable_iam_database_authentication,
-            enable_performance_insights: self.enable_performance_insights,
-            performance_insights_kms_key_id: self.performance_insights_kms_key_id,
-            cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
-            deletion_protection: self.deletion_protection,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_instance::ModifyDbInstanceInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                allocated_storage: self.allocated_storage
+                ,
+                db_instance_class: self.db_instance_class
+                ,
+                db_subnet_group_name: self.db_subnet_group_name
+                ,
+                db_security_groups: self.db_security_groups
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+                master_user_password: self.master_user_password
+                ,
+                db_parameter_group_name: self.db_parameter_group_name
+                ,
+                backup_retention_period: self.backup_retention_period
+                ,
+                preferred_backup_window: self.preferred_backup_window
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                multi_az: self.multi_az
+                ,
+                engine_version: self.engine_version
+                ,
+                allow_major_version_upgrade: self.allow_major_version_upgrade
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                license_model: self.license_model
+                ,
+                iops: self.iops
+                ,
+                option_group_name: self.option_group_name
+                ,
+                new_db_instance_identifier: self.new_db_instance_identifier
+                ,
+                storage_type: self.storage_type
+                ,
+                tde_credential_arn: self.tde_credential_arn
+                ,
+                tde_credential_password: self.tde_credential_password
+                ,
+                ca_certificate_identifier: self.ca_certificate_identifier
+                ,
+                domain: self.domain
+                ,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot
+                ,
+                monitoring_interval: self.monitoring_interval
+                ,
+                db_port_number: self.db_port_number
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                monitoring_role_arn: self.monitoring_role_arn
+                ,
+                domain_iam_role_name: self.domain_iam_role_name
+                ,
+                promotion_tier: self.promotion_tier
+                ,
+                enable_iam_database_authentication: self.enable_iam_database_authentication
+                ,
+                enable_performance_insights: self.enable_performance_insights
+                ,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id
+                ,
+                cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ModifyDbInstanceInputBuilder {
@@ -1274,3 +1276,4 @@ impl ::std::fmt::Debug for ModifyDbInstanceInputBuilder {
         formatter.finish()
     }
 }
+

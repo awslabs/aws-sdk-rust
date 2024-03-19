@@ -3,7 +3,7 @@
 /// <p>Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultWorkspaceCreationProperties {
+pub struct DefaultWorkspaceCreationProperties  {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
     pub enable_work_docs: ::std::option::Option<bool>,
     /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
@@ -17,7 +17,7 @@ pub struct DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub enable_maintenance_mode: ::std::option::Option<bool>,
 }
-impl DefaultWorkspaceCreationProperties {
+impl  DefaultWorkspaceCreationProperties  {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
     pub fn enable_work_docs(&self) -> ::std::option::Option<bool> {
         self.enable_work_docs
@@ -27,11 +27,11 @@ impl DefaultWorkspaceCreationProperties {
         self.enable_internet_access
     }
     /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
-    pub fn default_ou(&self) -> ::std::option::Option<&str> {
+    pub fn default_ou(&self) -> ::std::option::Option<& str> {
         self.default_ou.as_deref()
     }
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
-    pub fn custom_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn custom_security_group_id(&self) -> ::std::option::Option<& str> {
         self.custom_security_group_id.as_deref()
     }
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
@@ -69,8 +69,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     }
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
     pub fn set_enable_work_docs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_work_docs = input;
-        self
+        self.enable_work_docs = input; self
     }
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
     pub fn get_enable_work_docs(&self) -> &::std::option::Option<bool> {
@@ -83,8 +82,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     }
     /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
     pub fn set_enable_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_internet_access = input;
-        self
+        self.enable_internet_access = input; self
     }
     /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
     pub fn get_enable_internet_access(&self) -> &::std::option::Option<bool> {
@@ -97,8 +95,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     }
     /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
     pub fn set_default_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_ou = input;
-        self
+        self.default_ou = input; self
     }
     /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
     pub fn get_default_ou(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     }
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
     pub fn set_custom_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_security_group_id = input;
-        self
+        self.custom_security_group_id = input; self
     }
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
     pub fn get_custom_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     }
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
     pub fn set_user_enabled_as_local_administrator(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_enabled_as_local_administrator = input;
-        self
+        self.user_enabled_as_local_administrator = input; self
     }
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
     pub fn get_user_enabled_as_local_administrator(&self) -> &::std::option::Option<bool> {
@@ -139,8 +134,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     }
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub fn set_enable_maintenance_mode(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_maintenance_mode = input;
-        self
+        self.enable_maintenance_mode = input; self
     }
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub fn get_enable_maintenance_mode(&self) -> &::std::option::Option<bool> {
@@ -149,12 +143,19 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     /// Consumes the builder and constructs a [`DefaultWorkspaceCreationProperties`](crate::types::DefaultWorkspaceCreationProperties).
     pub fn build(self) -> crate::types::DefaultWorkspaceCreationProperties {
         crate::types::DefaultWorkspaceCreationProperties {
-            enable_work_docs: self.enable_work_docs,
-            enable_internet_access: self.enable_internet_access,
-            default_ou: self.default_ou,
-            custom_security_group_id: self.custom_security_group_id,
-            user_enabled_as_local_administrator: self.user_enabled_as_local_administrator,
-            enable_maintenance_mode: self.enable_maintenance_mode,
+            enable_work_docs: self.enable_work_docs
+            ,
+            enable_internet_access: self.enable_internet_access
+            ,
+            default_ou: self.default_ou
+            ,
+            custom_security_group_id: self.custom_security_group_id
+            ,
+            user_enabled_as_local_administrator: self.user_enabled_as_local_administrator
+            ,
+            enable_maintenance_mode: self.enable_maintenance_mode
+            ,
         }
     }
 }
+

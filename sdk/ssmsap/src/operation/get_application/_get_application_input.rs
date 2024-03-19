@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationInput {
+pub struct GetApplicationInput  {
     /// <p>The ID of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -10,17 +10,17 @@ pub struct GetApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
     pub app_registry_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetApplicationInput {
+impl  GetApplicationInput  {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
-    pub fn app_registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_registry_arn(&self) -> ::std::option::Option<& str> {
         self.app_registry_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetApplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl GetApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
     pub fn set_app_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_registry_arn = input;
-        self
+        self.app_registry_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
     pub fn get_app_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_registry_arn
     }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_application::GetApplicationInput {
-            application_id: self.application_id,
-            application_arn: self.application_arn,
-            app_registry_arn: self.app_registry_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_application::GetApplicationInput {
+                application_id: self.application_id
+                ,
+                application_arn: self.application_arn
+                ,
+                app_registry_arn: self.app_registry_arn
+                ,
+            }
+        )
     }
 }
+

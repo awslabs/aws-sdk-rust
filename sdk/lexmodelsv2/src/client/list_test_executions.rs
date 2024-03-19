@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTestExecutions`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by(TestExecutionSortBy)`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::sort_by) / [`set_sort_by(Option<TestExecutionSortBy>)`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The sort order of the test set executions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of test executions to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the ListTestExecutions operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListTestExecutionsOutput`](crate::operation::list_test_executions::ListTestExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListTestExecutionsOutput`](crate::operation::list_test_executions::ListTestExecutionsOutput) with field(s):
     ///   - [`test_executions(Option<Vec::<TestExecutionSummary>>)`](crate::operation::list_test_executions::ListTestExecutionsOutput::test_executions): <p>The list of test executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_executions::ListTestExecutionsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListTestExecutionsError>`](crate::operation::list_test_executions::ListTestExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListTestExecutionsError>`](crate::operation::list_test_executions::ListTestExecutionsError)
     pub fn list_test_executions(&self) -> crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder {
-        crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_test_executions::builders::ListTestExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

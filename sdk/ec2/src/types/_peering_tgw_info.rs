@@ -3,7 +3,7 @@
 /// <p>Information about the transit gateway in the peering attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PeeringTgwInfo {
+pub struct PeeringTgwInfo  {
     /// <p>The ID of the transit gateway.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
@@ -13,21 +13,21 @@ pub struct PeeringTgwInfo {
     /// <p>The Region of the transit gateway.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl PeeringTgwInfo {
+impl  PeeringTgwInfo  {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The Region of the transit gateway.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PeeringTgwInfoBuilder {
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PeeringTgwInfoBuilder {
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PeeringTgwInfoBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl PeeringTgwInfoBuilder {
     }
     /// <p>The Region of the transit gateway.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Region of the transit gateway.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PeeringTgwInfoBuilder {
     /// Consumes the builder and constructs a [`PeeringTgwInfo`](crate::types::PeeringTgwInfo).
     pub fn build(self) -> crate::types::PeeringTgwInfo {
         crate::types::PeeringTgwInfo {
-            transit_gateway_id: self.transit_gateway_id,
-            core_network_id: self.core_network_id,
-            owner_id: self.owner_id,
-            region: self.region,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            core_network_id: self.core_network_id
+            ,
+            owner_id: self.owner_id
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

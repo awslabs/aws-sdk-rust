@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFirewallDomainsOutput {
+pub struct ListFirewallDomainsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the domains in the firewall domain list.</p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>.</p>
-    pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListFirewallDomainsOutput {
+impl  ListFirewallDomainsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the domains in the firewall domain list.</p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
-    pub fn domains(&self) -> &[::std::string::String] {
-        self.domains.as_deref().unwrap_or_default()
+    pub fn domains(&self) -> & [::std::string::String] {
+        self.domains.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFirewallDomainsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainsOutput`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput).
     pub fn builder() -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsOutputBuilder {
@@ -40,7 +41,7 @@ impl ListFirewallDomainsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallDomainsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListFirewallDomainsOutputBuilder {
@@ -51,8 +52,7 @@ impl ListFirewallDomainsOutputBuilder {
     }
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,36 +66,38 @@ impl ListFirewallDomainsOutputBuilder {
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>.</p>
     pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the domains in the firewall domain list.</p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>.</p>
-    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// <p>A list of the domains in the firewall domain list.</p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>.</p>
-    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domains
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFirewallDomainsOutput`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput).
     pub fn build(self) -> crate::operation::list_firewall_domains::ListFirewallDomainsOutput {
         crate::operation::list_firewall_domains::ListFirewallDomainsOutput {
-            next_token: self.next_token,
-            domains: self.domains,
+            next_token: self.next_token
+            ,
+            domains: self.domains
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

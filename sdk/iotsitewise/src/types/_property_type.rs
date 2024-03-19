@@ -3,7 +3,7 @@
 /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyType {
+pub struct PropertyType  {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     pub attribute: ::std::option::Option<crate::types::Attribute>,
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
@@ -13,21 +13,21 @@ pub struct PropertyType {
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub metric: ::std::option::Option<crate::types::Metric>,
 }
-impl PropertyType {
+impl  PropertyType  {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::Attribute> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::Attribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
-    pub fn measurement(&self) -> ::std::option::Option<&crate::types::Measurement> {
+    pub fn measurement(&self) -> ::std::option::Option<& crate::types::Measurement> {
         self.measurement.as_ref()
     }
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
-    pub fn transform(&self) -> ::std::option::Option<&crate::types::Transform> {
+    pub fn transform(&self) -> ::std::option::Option<& crate::types::Transform> {
         self.transform.as_ref()
     }
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::Metric> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::Metric> {
         self.metric.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PropertyTypeBuilder {
     }
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::Attribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::Attribute> {
@@ -69,8 +68,7 @@ impl PropertyTypeBuilder {
     }
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
     pub fn set_measurement(mut self, input: ::std::option::Option<crate::types::Measurement>) -> Self {
-        self.measurement = input;
-        self
+        self.measurement = input; self
     }
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
     pub fn get_measurement(&self) -> &::std::option::Option<crate::types::Measurement> {
@@ -83,8 +81,7 @@ impl PropertyTypeBuilder {
     }
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
     pub fn set_transform(mut self, input: ::std::option::Option<crate::types::Transform>) -> Self {
-        self.transform = input;
-        self
+        self.transform = input; self
     }
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
     pub fn get_transform(&self) -> &::std::option::Option<crate::types::Transform> {
@@ -97,8 +94,7 @@ impl PropertyTypeBuilder {
     }
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::Metric> {
@@ -107,10 +103,15 @@ impl PropertyTypeBuilder {
     /// Consumes the builder and constructs a [`PropertyType`](crate::types::PropertyType).
     pub fn build(self) -> crate::types::PropertyType {
         crate::types::PropertyType {
-            attribute: self.attribute,
-            measurement: self.measurement,
-            transform: self.transform,
-            metric: self.metric,
+            attribute: self.attribute
+            ,
+            measurement: self.measurement
+            ,
+            transform: self.transform
+            ,
+            metric: self.metric
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detector
 
 impl DescribeAnomalyDetectorsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_anomaly_detectors();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_anomaly_detectors();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeAnomalyDetectors`.
-///
+/// 
 /// <p>Lists the anomaly detection models that you have created in your account. For single metric anomaly detectors, you can list all of the models in your account or filter the results to only the models that are related to a certain namespace, metric name, or metric dimension. For metric math anomaly detectors, you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will return all metric math anomaly detectors in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder,
+                    inner: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
-    > for DescribeAnomalyDetectorsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
+                    crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
+                > for DescribeAnomalyDetectorsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
+                        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeAnomalyDetectorsFluentBuilder {
     /// Creates a new `DescribeAnomalyDetectors`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectors::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectors::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectors::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectors::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput, crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator {
-        crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator {
+                                crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -183,12 +170,12 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         self.inner.get_dimensions()
     }
     /// Appends an item to `AnomalyDetectorTypes`.
@@ -201,12 +188,13 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         self
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn set_anomaly_detector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>) -> Self {
+    pub fn set_anomaly_detector_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyDetectorType>>) -> Self {
         self.inner = self.inner.set_anomaly_detector_types(input);
         self
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn get_anomaly_detector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>> {
+    pub fn get_anomaly_detector_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnomalyDetectorType>> {
         self.inner.get_anomaly_detector_types()
     }
 }
+

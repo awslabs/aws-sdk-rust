@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkingLocationInput {
+pub struct GetWorkingLocationInput  {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
     /// <li>
@@ -12,7 +12,7 @@ pub struct GetWorkingLocationInput {
     /// </ul>
     pub location_type: ::std::option::Option<crate::types::LocationType>,
 }
-impl GetWorkingLocationInput {
+impl  GetWorkingLocationInput  {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
     /// <li>
@@ -20,7 +20,7 @@ impl GetWorkingLocationInput {
     /// <li>
     /// <p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
     /// </ul>
-    pub fn location_type(&self) -> ::std::option::Option<&crate::types::LocationType> {
+    pub fn location_type(&self) -> ::std::option::Option<& crate::types::LocationType> {
         self.location_type.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl GetWorkingLocationInputBuilder {
     /// <p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
     /// </ul>
     pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
-        self.location_type = input;
-        self
+        self.location_type = input; self
     }
     /// <p>Specify the type of the working location.</p>
     /// <ul>
@@ -71,12 +70,13 @@ impl GetWorkingLocationInputBuilder {
         &self.location_type
     }
     /// Consumes the builder and constructs a [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_working_location::GetWorkingLocationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_working_location::GetWorkingLocationInput {
-            location_type: self.location_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_working_location::GetWorkingLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_working_location::GetWorkingLocationInput {
+                location_type: self.location_type
+                ,
+            }
+        )
     }
 }
+

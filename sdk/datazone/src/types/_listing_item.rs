@@ -21,11 +21,7 @@ impl ListingItem {
     /// Tries to convert the enum instance into [`AssetListing`](crate::types::ListingItem::AssetListing), extracting the inner [`AssetListing`](crate::types::AssetListing).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_listing(&self) -> ::std::result::Result<&crate::types::AssetListing, &Self> {
-        if let ListingItem::AssetListing(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListingItem::AssetListing(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AssetListing`](crate::types::ListingItem::AssetListing).
     pub fn is_asset_listing(&self) -> bool {
@@ -36,3 +32,4 @@ impl ListingItem {
         matches!(self, Self::Unknown)
     }
 }
+

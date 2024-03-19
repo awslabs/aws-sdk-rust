@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParticipantTokenInput {
+pub struct CreateParticipantTokenInput  {
     /// <p>ARN of the stage to which this token is scoped.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
@@ -10,13 +10,13 @@ pub struct CreateParticipantTokenInput {
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>>,
 }
-impl CreateParticipantTokenInput {
+impl  CreateParticipantTokenInput  {
     /// <p>ARN of the stage to which this token is scoped.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stage_arn(&self) -> ::std::option::Option<& str> {
         self.stage_arn.as_deref()
     }
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
@@ -24,18 +24,19 @@ impl CreateParticipantTokenInput {
         self.duration
     }
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::ParticipantTokenCapability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::ParticipantTokenCapability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateParticipantTokenInput {
@@ -52,8 +53,8 @@ pub struct CreateParticipantTokenInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>>,
 }
 impl CreateParticipantTokenInputBuilder {
     /// <p>ARN of the stage to which this token is scoped.</p>
@@ -64,8 +65,7 @@ impl CreateParticipantTokenInputBuilder {
     }
     /// <p>ARN of the stage to which this token is scoped.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>ARN of the stage to which this token is scoped.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateParticipantTokenInputBuilder {
     }
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -92,8 +91,7 @@ impl CreateParticipantTokenInputBuilder {
     }
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +104,16 @@ impl CreateParticipantTokenInputBuilder {
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Appends an item to `capabilities`.
@@ -126,32 +123,34 @@ impl CreateParticipantTokenInputBuilder {
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
     pub fn capabilities(mut self, input: crate::types::ParticipantTokenCapability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>> {
         &self.capabilities
     }
     /// Consumes the builder and constructs a [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_participant_token::CreateParticipantTokenInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_participant_token::CreateParticipantTokenInput {
-            stage_arn: self.stage_arn,
-            duration: self.duration,
-            user_id: self.user_id,
-            attributes: self.attributes,
-            capabilities: self.capabilities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_participant_token::CreateParticipantTokenInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_participant_token::CreateParticipantTokenInput {
+                stage_arn: self.stage_arn
+                ,
+                duration: self.duration
+                ,
+                user_id: self.user_id
+                ,
+                attributes: self.attributes
+                ,
+                capabilities: self.capabilities
+                ,
+            }
+        )
     }
 }
+

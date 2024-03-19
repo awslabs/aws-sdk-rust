@@ -6,13 +6,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleaseConfiguration {
+pub struct ReleaseConfiguration  {
     /// <p>Defines the point-in-time since an exported file was last accessed, in order for that file to be eligible for release. Only files that were last accessed before this point-in-time are eligible to be released from the file system.</p>
     pub duration_since_last_access: ::std::option::Option<crate::types::DurationSinceLastAccess>,
 }
-impl ReleaseConfiguration {
+impl  ReleaseConfiguration  {
     /// <p>Defines the point-in-time since an exported file was last accessed, in order for that file to be eligible for release. Only files that were last accessed before this point-in-time are eligible to be released from the file system.</p>
-    pub fn duration_since_last_access(&self) -> ::std::option::Option<&crate::types::DurationSinceLastAccess> {
+    pub fn duration_since_last_access(&self) -> ::std::option::Option<& crate::types::DurationSinceLastAccess> {
         self.duration_since_last_access.as_ref()
     }
 }
@@ -37,8 +37,7 @@ impl ReleaseConfigurationBuilder {
     }
     /// <p>Defines the point-in-time since an exported file was last accessed, in order for that file to be eligible for release. Only files that were last accessed before this point-in-time are eligible to be released from the file system.</p>
     pub fn set_duration_since_last_access(mut self, input: ::std::option::Option<crate::types::DurationSinceLastAccess>) -> Self {
-        self.duration_since_last_access = input;
-        self
+        self.duration_since_last_access = input; self
     }
     /// <p>Defines the point-in-time since an exported file was last accessed, in order for that file to be eligible for release. Only files that were last accessed before this point-in-time are eligible to be released from the file system.</p>
     pub fn get_duration_since_last_access(&self) -> &::std::option::Option<crate::types::DurationSinceLastAccess> {
@@ -47,7 +46,9 @@ impl ReleaseConfigurationBuilder {
     /// Consumes the builder and constructs a [`ReleaseConfiguration`](crate::types::ReleaseConfiguration).
     pub fn build(self) -> crate::types::ReleaseConfiguration {
         crate::types::ReleaseConfiguration {
-            duration_since_last_access: self.duration_since_last_access,
+            duration_since_last_access: self.duration_since_last_access
+            ,
         }
     }
 }
+

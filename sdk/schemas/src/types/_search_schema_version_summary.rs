@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSchemaVersionSummary {
+pub struct SearchSchemaVersionSummary  {
     /// <p>The date the schema version was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version number of the schema</p>
@@ -10,17 +10,17 @@ pub struct SearchSchemaVersionSummary {
     /// <p>The type of schema.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
-impl SearchSchemaVersionSummary {
+impl  SearchSchemaVersionSummary  {
     /// <p>The date the schema version was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version number of the schema</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The type of schema.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl SearchSchemaVersionSummaryBuilder {
     }
     /// <p>The date the schema version was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the schema version was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -61,8 +60,7 @@ impl SearchSchemaVersionSummaryBuilder {
     }
     /// <p>The version number of the schema</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The version number of the schema</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl SearchSchemaVersionSummaryBuilder {
     }
     /// <p>The type of schema.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of schema.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -85,9 +82,13 @@ impl SearchSchemaVersionSummaryBuilder {
     /// Consumes the builder and constructs a [`SearchSchemaVersionSummary`](crate::types::SearchSchemaVersionSummary).
     pub fn build(self) -> crate::types::SearchSchemaVersionSummary {
         crate::types::SearchSchemaVersionSummary {
-            created_date: self.created_date,
-            schema_version: self.schema_version,
-            r#type: self.r#type,
+            created_date: self.created_date
+            ,
+            schema_version: self.schema_version
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

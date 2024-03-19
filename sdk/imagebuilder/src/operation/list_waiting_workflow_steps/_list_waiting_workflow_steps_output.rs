@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWaitingWorkflowStepsOutput {
+pub struct ListWaitingWorkflowStepsOutput  {
     /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>>,
+    pub steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepExecution>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWaitingWorkflowStepsOutput {
+impl  ListWaitingWorkflowStepsOutput  {
     /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
-    pub fn steps(&self) -> &[crate::types::WorkflowStepExecution] {
-        self.steps.as_deref().unwrap_or_default()
+    pub fn steps(&self) -> & [crate::types::WorkflowStepExecution] {
+        self.steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWaitingWorkflowStepsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWaitingWorkflowStepsOutput {
     /// Creates a new builder-style object to manufacture [`ListWaitingWorkflowStepsOutput`](crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput).
     pub fn builder() -> crate::operation::list_waiting_workflow_steps::builders::ListWaitingWorkflowStepsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListWaitingWorkflowStepsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWaitingWorkflowStepsOutputBuilder {
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListWaitingWorkflowStepsOutputBuilder {
     /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
     pub fn steps(mut self, input: crate::types::WorkflowStepExecution) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepExecution>>) -> Self {
+        self.steps = input; self
     }
     /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepExecution>> {
         &self.steps
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -69,28 +69,30 @@ impl ListWaitingWorkflowStepsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWaitingWorkflowStepsOutput`](crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput).
     pub fn build(self) -> crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput {
         crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput {
-            steps: self.steps,
-            next_token: self.next_token,
+            steps: self.steps
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

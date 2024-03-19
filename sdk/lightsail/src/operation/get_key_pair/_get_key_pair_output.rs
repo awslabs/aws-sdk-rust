@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyPairOutput {
+pub struct GetKeyPairOutput  {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
     pub key_pair: ::std::option::Option<crate::types::KeyPair>,
     _request_id: Option<String>,
 }
-impl GetKeyPairOutput {
+impl  GetKeyPairOutput  {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
-    pub fn key_pair(&self) -> ::std::option::Option<&crate::types::KeyPair> {
+    pub fn key_pair(&self) -> ::std::option::Option<& crate::types::KeyPair> {
         self.key_pair.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyPairOutput`](crate::operation::get_key_pair::GetKeyPairOutput).
     pub fn builder() -> crate::operation::get_key_pair::builders::GetKeyPairOutputBuilder {
@@ -40,27 +40,28 @@ impl GetKeyPairOutputBuilder {
     }
     /// <p>An array of key-value pairs containing information about the key pair.</p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<crate::types::KeyPair>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>An array of key-value pairs containing information about the key pair.</p>
     pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::KeyPair> {
         &self.key_pair
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKeyPairOutput`](crate::operation::get_key_pair::GetKeyPairOutput).
     pub fn build(self) -> crate::operation::get_key_pair::GetKeyPairOutput {
         crate::operation::get_key_pair::GetKeyPairOutput {
-            key_pair: self.key_pair,
+            key_pair: self.key_pair
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

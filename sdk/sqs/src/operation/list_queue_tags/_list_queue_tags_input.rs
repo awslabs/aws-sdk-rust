@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueueTagsInput {
+pub struct ListQueueTagsInput  {
     /// <p>The URL of the queue.</p>
     pub queue_url: ::std::option::Option<::std::string::String>,
 }
-impl ListQueueTagsInput {
+impl  ListQueueTagsInput  {
     /// <p>The URL of the queue.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl ListQueueTagsInputBuilder {
     }
     /// <p>The URL of the queue.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the queue.</p>
     pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_url
     }
     /// Consumes the builder and constructs a [`ListQueueTagsInput`](crate::operation::list_queue_tags::ListQueueTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_queue_tags::ListQueueTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_queue_tags::ListQueueTagsInput { queue_url: self.queue_url })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queue_tags::ListQueueTagsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_queue_tags::ListQueueTagsInput {
+                queue_url: self.queue_url
+                ,
+            }
+        )
     }
 }
+

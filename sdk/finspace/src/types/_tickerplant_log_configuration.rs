@@ -3,16 +3,17 @@
 /// <p>A configuration to store the Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TickerplantLogConfiguration {
+pub struct TickerplantLogConfiguration  {
     /// <p>The name of the volumes for tickerplant logs.</p>
-    pub tickerplant_log_volumes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tickerplant_log_volumes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TickerplantLogConfiguration {
+impl  TickerplantLogConfiguration  {
     /// <p>The name of the volumes for tickerplant logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tickerplant_log_volumes.is_none()`.
-    pub fn tickerplant_log_volumes(&self) -> &[::std::string::String] {
-        self.tickerplant_log_volumes.as_deref().unwrap_or_default()
+    pub fn tickerplant_log_volumes(&self) -> & [::std::string::String] {
+        self.tickerplant_log_volumes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TickerplantLogConfiguration {
@@ -26,7 +27,7 @@ impl TickerplantLogConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TickerplantLogConfigurationBuilder {
-    pub(crate) tickerplant_log_volumes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tickerplant_log_volumes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TickerplantLogConfigurationBuilder {
     /// Appends an item to `tickerplant_log_volumes`.
@@ -36,23 +37,24 @@ impl TickerplantLogConfigurationBuilder {
     /// <p>The name of the volumes for tickerplant logs.</p>
     pub fn tickerplant_log_volumes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tickerplant_log_volumes.unwrap_or_default();
-        v.push(input.into());
-        self.tickerplant_log_volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tickerplant_log_volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the volumes for tickerplant logs.</p>
-    pub fn set_tickerplant_log_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tickerplant_log_volumes = input;
-        self
+    pub fn set_tickerplant_log_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tickerplant_log_volumes = input; self
     }
     /// <p>The name of the volumes for tickerplant logs.</p>
-    pub fn get_tickerplant_log_volumes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tickerplant_log_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tickerplant_log_volumes
     }
     /// Consumes the builder and constructs a [`TickerplantLogConfiguration`](crate::types::TickerplantLogConfiguration).
     pub fn build(self) -> crate::types::TickerplantLogConfiguration {
         crate::types::TickerplantLogConfiguration {
-            tickerplant_log_volumes: self.tickerplant_log_volumes,
+            tickerplant_log_volumes: self.tickerplant_log_volumes
+            ,
         }
     }
 }
+

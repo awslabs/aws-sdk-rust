@@ -3,7 +3,7 @@
 /// <p>A structure that describes how the portal represents an application provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisplayData {
+pub struct DisplayData  {
     /// <p>The name of the application provider that appears in the portal.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A URL that points to an icon that represents the application provider.</p>
@@ -11,17 +11,17 @@ pub struct DisplayData {
     /// <p>The description of the application provider that appears in the portal.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl DisplayData {
+impl  DisplayData  {
     /// <p>The name of the application provider that appears in the portal.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A URL that points to an icon that represents the application provider.</p>
-    pub fn icon_url(&self) -> ::std::option::Option<&str> {
+    pub fn icon_url(&self) -> ::std::option::Option<& str> {
         self.icon_url.as_deref()
     }
     /// <p>The description of the application provider that appears in the portal.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DisplayDataBuilder {
     }
     /// <p>The name of the application provider that appears in the portal.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the application provider that appears in the portal.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DisplayDataBuilder {
     }
     /// <p>A URL that points to an icon that represents the application provider.</p>
     pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.icon_url = input;
-        self
+        self.icon_url = input; self
     }
     /// <p>A URL that points to an icon that represents the application provider.</p>
     pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl DisplayDataBuilder {
     }
     /// <p>The description of the application provider that appears in the portal.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application provider that appears in the portal.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl DisplayDataBuilder {
     /// Consumes the builder and constructs a [`DisplayData`](crate::types::DisplayData).
     pub fn build(self) -> crate::types::DisplayData {
         crate::types::DisplayData {
-            display_name: self.display_name,
-            icon_url: self.icon_url,
-            description: self.description,
+            display_name: self.display_name
+            ,
+            icon_url: self.icon_url
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

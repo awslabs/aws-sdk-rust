@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAliasInput {
+pub struct CreateAliasInput  {
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the alias.</p>
@@ -10,26 +10,27 @@ pub struct CreateAliasInput {
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAliasInput {
+impl  CreateAliasInput  {
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A human-readable description of the alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
-    pub fn routing_strategy(&self) -> ::std::option::Option<&crate::types::RoutingStrategy> {
+    pub fn routing_strategy(&self) -> ::std::option::Option<& crate::types::RoutingStrategy> {
         self.routing_strategy.as_ref()
     }
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAliasInput {
@@ -46,7 +47,7 @@ pub struct CreateAliasInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAliasInputBuilder {
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -57,8 +58,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>A human-readable description of the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A human-readable description of the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
-        self.routing_strategy = input;
-        self
+        self.routing_strategy = input; self
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
@@ -100,26 +98,32 @@ impl CreateAliasInputBuilder {
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_alias::CreateAliasInput {
-            name: self.name,
-            description: self.description,
-            routing_strategy: self.routing_strategy,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_alias::CreateAliasInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                routing_strategy: self.routing_strategy
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

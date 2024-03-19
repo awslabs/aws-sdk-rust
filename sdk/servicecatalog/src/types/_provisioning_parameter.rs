@@ -3,19 +3,19 @@
 /// <p>Information about a parameter used to provision a product.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisioningParameter {
+pub struct ProvisioningParameter  {
     /// <p>The parameter key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ProvisioningParameter {
+impl  ProvisioningParameter  {
     /// <p>The parameter key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The parameter value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ProvisioningParameterBuilder {
     }
     /// <p>The parameter key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The parameter key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ProvisioningParameterBuilder {
     }
     /// <p>The parameter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The parameter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ProvisioningParameterBuilder {
     /// Consumes the builder and constructs a [`ProvisioningParameter`](crate::types::ProvisioningParameter).
     pub fn build(self) -> crate::types::ProvisioningParameter {
         crate::types::ProvisioningParameter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

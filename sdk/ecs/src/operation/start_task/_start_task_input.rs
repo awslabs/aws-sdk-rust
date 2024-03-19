@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTaskInput {
+pub struct StartTaskInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub container_instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on the execute command functionality on all containers in the task.</p>
@@ -44,22 +44,23 @@ pub struct StartTaskInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
-    pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>,
+    pub volume_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TaskVolumeConfiguration>>,
 }
-impl StartTaskInput {
+impl  StartTaskInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instances.is_none()`.
-    pub fn container_instances(&self) -> &[::std::string::String] {
-        self.container_instances.as_deref().unwrap_or_default()
+    pub fn container_instances(&self) -> & [::std::string::String] {
+        self.container_instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(&self) -> ::std::option::Option<bool> {
@@ -70,30 +71,30 @@ impl StartTaskInput {
         self.enable_execute_command
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p><note>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
-    pub fn overrides(&self) -> ::std::option::Option<&crate::types::TaskOverride> {
+    pub fn overrides(&self) -> ::std::option::Option<& crate::types::TaskOverride> {
         self.overrides.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
+    pub fn propagate_tags(&self) -> ::std::option::Option<& crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
     /// <p>The reference ID to use for the task.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
-    pub fn started_by(&self) -> ::std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
@@ -114,20 +115,22 @@ impl StartTaskInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&str> {
+    pub fn task_definition(&self) -> ::std::option::Option<& str> {
         self.task_definition.as_deref()
     }
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_configurations.is_none()`.
-    pub fn volume_configurations(&self) -> &[crate::types::TaskVolumeConfiguration] {
-        self.volume_configurations.as_deref().unwrap_or_default()
+    pub fn volume_configurations(&self) -> & [crate::types::TaskVolumeConfiguration] {
+        self.volume_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartTaskInput {
@@ -142,7 +145,7 @@ impl StartTaskInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTaskInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
-    pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) container_instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
@@ -151,9 +154,9 @@ pub struct StartTaskInputBuilder {
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>,
+    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TaskVolumeConfiguration>>,
 }
 impl StartTaskInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -163,8 +166,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,17 +179,16 @@ impl StartTaskInputBuilder {
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
     pub fn container_instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_instances.unwrap_or_default();
-        v.push(input.into());
-        self.container_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.container_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.container_instances = input;
-        self
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.container_instances = input; self
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.container_instances
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -197,8 +198,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_ecs_managed_tags = input;
-        self
+        self.enable_ecs_managed_tags = input; self
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
@@ -211,8 +211,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on the execute command functionality on all containers in the task.</p>
     pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_execute_command = input;
-        self
+        self.enable_execute_command = input; self
     }
     /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on the execute command functionality on all containers in the task.</p>
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
@@ -225,8 +224,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +237,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -257,8 +254,7 @@ impl StartTaskInputBuilder {
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
     pub fn set_overrides(mut self, input: ::std::option::Option<crate::types::TaskOverride>) -> Self {
-        self.overrides = input;
-        self
+        self.overrides = input; self
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p><note>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
@@ -273,8 +269,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
-        self.propagate_tags = input;
-        self
+        self.propagate_tags = input; self
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
@@ -287,8 +282,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>The reference ID to use for the task.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>The reference ID to use for the task.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,8 +297,7 @@ impl StartTaskInputBuilder {
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
     }
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
@@ -335,9 +328,9 @@ impl StartTaskInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -357,9 +350,8 @@ impl StartTaskInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -379,7 +371,7 @@ impl StartTaskInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
@@ -390,8 +382,7 @@ impl StartTaskInputBuilder {
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_definition = input;
-        self
+        self.task_definition = input; self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -404,35 +395,50 @@ impl StartTaskInputBuilder {
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
     pub fn volume_configurations(mut self, input: crate::types::TaskVolumeConfiguration) -> Self {
         let mut v = self.volume_configurations.unwrap_or_default();
-        v.push(input);
-        self.volume_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volume_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
-    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>) -> Self {
-        self.volume_configurations = input;
-        self
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskVolumeConfiguration>>) -> Self {
+        self.volume_configurations = input; self
     }
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
-    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskVolumeConfiguration>> {
         &self.volume_configurations
     }
     /// Consumes the builder and constructs a [`StartTaskInput`](crate::operation::start_task::StartTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_task::StartTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_task::StartTaskInput {
-            cluster: self.cluster,
-            container_instances: self.container_instances,
-            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
-            enable_execute_command: self.enable_execute_command,
-            group: self.group,
-            network_configuration: self.network_configuration,
-            overrides: self.overrides,
-            propagate_tags: self.propagate_tags,
-            reference_id: self.reference_id,
-            started_by: self.started_by,
-            tags: self.tags,
-            task_definition: self.task_definition,
-            volume_configurations: self.volume_configurations,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_task::StartTaskInput {
+                cluster: self.cluster
+                ,
+                container_instances: self.container_instances
+                ,
+                enable_ecs_managed_tags: self.enable_ecs_managed_tags
+                ,
+                enable_execute_command: self.enable_execute_command
+                ,
+                group: self.group
+                ,
+                network_configuration: self.network_configuration
+                ,
+                overrides: self.overrides
+                ,
+                propagate_tags: self.propagate_tags
+                ,
+                reference_id: self.reference_id
+                ,
+                started_by: self.started_by
+                ,
+                tags: self.tags
+                ,
+                task_definition: self.task_definition
+                ,
+                volume_configurations: self.volume_configurations
+                ,
+            }
+        )
     }
 }
+

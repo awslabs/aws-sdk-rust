@@ -3,7 +3,7 @@
 /// <p>The definition for a repository with a sync configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositorySyncDefinition {
+pub struct RepositorySyncDefinition  {
     /// <p>The branch specified for a repository sync definition.</p>
     pub branch: ::std::string::String,
     /// <p>The configuration file for a repository sync definition. This value comes from creating or updating the <code>config-file</code> field of a <code>sync-configuration</code>.</p>
@@ -13,26 +13,22 @@ pub struct RepositorySyncDefinition {
     /// <p>The target resource specified for a repository sync definition. In some cases, such as CFN_STACK_SYNC, the parent and target resource are the same.</p>
     pub target: ::std::string::String,
 }
-impl RepositorySyncDefinition {
+impl  RepositorySyncDefinition  {
     /// <p>The branch specified for a repository sync definition.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> & str {
+        use std::ops::Deref; self.branch.deref()
     }
     /// <p>The configuration file for a repository sync definition. This value comes from creating or updating the <code>config-file</code> field of a <code>sync-configuration</code>.</p>
-    pub fn directory(&self) -> &str {
-        use std::ops::Deref;
-        self.directory.deref()
+    pub fn directory(&self) -> & str {
+        use std::ops::Deref; self.directory.deref()
     }
     /// <p>The parent resource specified for a repository sync definition.</p>
-    pub fn parent(&self) -> &str {
-        use std::ops::Deref;
-        self.parent.deref()
+    pub fn parent(&self) -> & str {
+        use std::ops::Deref; self.parent.deref()
     }
     /// <p>The target resource specified for a repository sync definition. In some cases, such as CFN_STACK_SYNC, the parent and target resource are the same.</p>
-    pub fn target(&self) -> &str {
-        use std::ops::Deref;
-        self.target.deref()
+    pub fn target(&self) -> & str {
+        use std::ops::Deref; self.target.deref()
     }
 }
 impl RepositorySyncDefinition {
@@ -60,8 +56,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The branch specified for a repository sync definition.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The branch specified for a repository sync definition.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The configuration file for a repository sync definition. This value comes from creating or updating the <code>config-file</code> field of a <code>sync-configuration</code>.</p>
     pub fn set_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory = input;
-        self
+        self.directory = input; self
     }
     /// <p>The configuration file for a repository sync definition. This value comes from creating or updating the <code>config-file</code> field of a <code>sync-configuration</code>.</p>
     pub fn get_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The parent resource specified for a repository sync definition.</p>
     pub fn set_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent = input;
-        self
+        self.parent = input; self
     }
     /// <p>The parent resource specified for a repository sync definition.</p>
     pub fn get_parent(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The target resource specified for a repository sync definition. In some cases, such as CFN_STACK_SYNC, the parent and target resource are the same.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target resource specified for a repository sync definition. In some cases, such as CFN_STACK_SYNC, the parent and target resource are the same.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl RepositorySyncDefinitionBuilder {
     /// - [`parent`](crate::types::builders::RepositorySyncDefinitionBuilder::parent)
     /// - [`target`](crate::types::builders::RepositorySyncDefinitionBuilder::target)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositorySyncDefinition {
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-            directory: self.directory.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "directory",
-                    "directory was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-            parent: self.parent.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parent",
-                    "parent was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-            target: self.target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target",
-                    "target was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositorySyncDefinition {
+                branch: self.branch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("branch", "branch was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+                directory: self.directory
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("directory", "directory was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+                parent: self.parent
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parent", "parent was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+                target: self.target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target", "target was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

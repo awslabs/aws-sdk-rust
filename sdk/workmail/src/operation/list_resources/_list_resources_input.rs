@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcesInput {
+pub struct ListResourcesInput  {
     /// <p>The identifier for the organization under which the resources exist.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
@@ -12,13 +12,13 @@ pub struct ListResourcesInput {
     /// <p>Limit the resource search results based on the filter criteria. You can only use one filter per request.</p>
     pub filters: ::std::option::Option<crate::types::ListResourcesFilters>,
 }
-impl ListResourcesInput {
+impl  ListResourcesInput  {
     /// <p>The identifier for the organization under which the resources exist.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -26,7 +26,7 @@ impl ListResourcesInput {
         self.max_results
     }
     /// <p>Limit the resource search results based on the filter criteria. You can only use one filter per request.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListResourcesFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListResourcesFilters> {
         self.filters.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListResourcesInputBuilder {
     }
     /// <p>The identifier for the organization under which the resources exist.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the resources exist.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListResourcesInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListResourcesInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,22 +94,26 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Limit the resource search results based on the filter criteria. You can only use one filter per request.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListResourcesFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Limit the resource search results based on the filter criteria. You can only use one filter per request.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListResourcesFilters> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
-            organization_id: self.organization_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resources::ListResourcesInput {
+                organization_id: self.organization_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

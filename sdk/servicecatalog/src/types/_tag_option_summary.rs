@@ -3,22 +3,23 @@
 /// <p>Summary information about a TagOption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagOptionSummary {
+pub struct TagOptionSummary  {
     /// <p>The TagOption key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The TagOption value.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TagOptionSummary {
+impl  TagOptionSummary  {
     /// <p>The TagOption key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The TagOption value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TagOptionSummary {
@@ -33,7 +34,7 @@ impl TagOptionSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagOptionSummaryBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TagOptionSummaryBuilder {
     /// <p>The TagOption key.</p>
@@ -43,8 +44,7 @@ impl TagOptionSummaryBuilder {
     }
     /// <p>The TagOption key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The TagOption key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl TagOptionSummaryBuilder {
     /// <p>The TagOption value.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The TagOption value.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The TagOption value.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`TagOptionSummary`](crate::types::TagOptionSummary).
     pub fn build(self) -> crate::types::TagOptionSummary {
         crate::types::TagOptionSummary {
-            key: self.key,
-            values: self.values,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

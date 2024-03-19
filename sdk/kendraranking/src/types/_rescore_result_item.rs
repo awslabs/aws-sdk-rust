@@ -3,15 +3,15 @@
 /// <p>A result item for a document with a new relevancy score.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RescoreResultItem {
+pub struct RescoreResultItem  {
     /// <p>The identifier of the document from the search service.</p>
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
     pub score: ::std::option::Option<f32>,
 }
-impl RescoreResultItem {
+impl  RescoreResultItem  {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
@@ -41,8 +41,7 @@ impl RescoreResultItemBuilder {
     }
     /// <p>The identifier of the document from the search service.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The identifier of the document from the search service.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RescoreResultItemBuilder {
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
     pub fn get_score(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,11 @@ impl RescoreResultItemBuilder {
     /// Consumes the builder and constructs a [`RescoreResultItem`](crate::types::RescoreResultItem).
     pub fn build(self) -> crate::types::RescoreResultItem {
         crate::types::RescoreResultItem {
-            document_id: self.document_id,
-            score: self.score,
+            document_id: self.document_id
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

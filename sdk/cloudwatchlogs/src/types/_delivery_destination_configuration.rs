@@ -3,15 +3,14 @@
 /// <p>A structure that contains information about one logs delivery destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeliveryDestinationConfiguration {
+pub struct DeliveryDestinationConfiguration  {
     /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub destination_resource_arn: ::std::string::String,
 }
-impl DeliveryDestinationConfiguration {
+impl  DeliveryDestinationConfiguration  {
     /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
-    pub fn destination_resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_resource_arn.deref()
+    pub fn destination_resource_arn(&self) -> & str {
+        use std::ops::Deref; self.destination_resource_arn.deref()
     }
 }
 impl DeliveryDestinationConfiguration {
@@ -36,8 +35,7 @@ impl DeliveryDestinationConfigurationBuilder {
     }
     /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub fn set_destination_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_resource_arn = input;
-        self
+        self.destination_resource_arn = input; self
     }
     /// <p>The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
     pub fn get_destination_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeliveryDestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_resource_arn`](crate::types::builders::DeliveryDestinationConfigurationBuilder::destination_resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DeliveryDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeliveryDestinationConfiguration {
-            destination_resource_arn: self.destination_resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_resource_arn",
-                    "destination_resource_arn was not specified but it is required when building DeliveryDestinationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeliveryDestinationConfiguration {
+                destination_resource_arn: self.destination_resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_resource_arn", "destination_resource_arn was not specified but it is required when building DeliveryDestinationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

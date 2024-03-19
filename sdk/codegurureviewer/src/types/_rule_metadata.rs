@@ -3,7 +3,7 @@
 /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleMetadata {
+pub struct RuleMetadata  {
     /// <p>The ID of the rule.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
@@ -13,30 +13,31 @@ pub struct RuleMetadata {
     /// <p>A long description of the rule.</p>
     pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are associated with the rule.</p>
-    pub rule_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rule_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RuleMetadata {
+impl  RuleMetadata  {
     /// <p>The ID of the rule.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>A short description of the rule.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>A long description of the rule.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>Tags that are associated with the rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_tags.is_none()`.
-    pub fn rule_tags(&self) -> &[::std::string::String] {
-        self.rule_tags.as_deref().unwrap_or_default()
+    pub fn rule_tags(&self) -> & [::std::string::String] {
+        self.rule_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleMetadata {
@@ -54,7 +55,7 @@ pub struct RuleMetadataBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) long_description: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) rule_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RuleMetadataBuilder {
     /// <p>The ID of the rule.</p>
@@ -64,8 +65,7 @@ impl RuleMetadataBuilder {
     }
     /// <p>The ID of the rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The ID of the rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl RuleMetadataBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl RuleMetadataBuilder {
     }
     /// <p>A short description of the rule.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>A short description of the rule.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl RuleMetadataBuilder {
     }
     /// <p>A long description of the rule.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>A long description of the rule.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,27 +117,32 @@ impl RuleMetadataBuilder {
     /// <p>Tags that are associated with the rule.</p>
     pub fn rule_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule_tags.unwrap_or_default();
-        v.push(input.into());
-        self.rule_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rule_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags that are associated with the rule.</p>
-    pub fn set_rule_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rule_tags = input;
-        self
+    pub fn set_rule_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rule_tags = input; self
     }
     /// <p>Tags that are associated with the rule.</p>
-    pub fn get_rule_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rule_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rule_tags
     }
     /// Consumes the builder and constructs a [`RuleMetadata`](crate::types::RuleMetadata).
     pub fn build(self) -> crate::types::RuleMetadata {
         crate::types::RuleMetadata {
-            rule_id: self.rule_id,
-            rule_name: self.rule_name,
-            short_description: self.short_description,
-            long_description: self.long_description,
-            rule_tags: self.rule_tags,
+            rule_id: self.rule_id
+            ,
+            rule_name: self.rule_name
+            ,
+            short_description: self.short_description
+            ,
+            long_description: self.long_description
+            ,
+            rule_tags: self.rule_tags
+            ,
         }
     }
 }
+

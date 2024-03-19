@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGroupsForEntityInput {
+pub struct ListGroupsForEntityInput  {
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the entity.</p>
@@ -23,9 +23,9 @@ pub struct ListGroupsForEntityInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListGroupsForEntityInput {
+impl  ListGroupsForEntityInput  {
     /// <p>The identifier for the organization under which the entity exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the entity.</p>
@@ -38,15 +38,15 @@ impl ListGroupsForEntityInput {
     /// <li>
     /// <p>Entity name: entity</p></li>
     /// </ul>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>Limit the search results based on the filter criteria.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListGroupsForEntityFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListGroupsForEntityFilters> {
         self.filters.as_ref()
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -80,8 +80,7 @@ impl ListGroupsForEntityInputBuilder {
     }
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl ListGroupsForEntityInputBuilder {
     /// <p>Entity name: entity</p></li>
     /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier for the entity.</p>
     /// <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
@@ -136,8 +134,7 @@ impl ListGroupsForEntityInputBuilder {
     }
     /// <p>Limit the search results based on the filter criteria.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListGroupsForEntityFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Limit the search results based on the filter criteria.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListGroupsForEntityFilters> {
@@ -150,8 +147,7 @@ impl ListGroupsForEntityInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,24 +160,28 @@ impl ListGroupsForEntityInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGroupsForEntityInput`](crate::operation::list_groups_for_entity::ListGroupsForEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_groups_for_entity::ListGroupsForEntityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_groups_for_entity::ListGroupsForEntityInput {
-            organization_id: self.organization_id,
-            entity_id: self.entity_id,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups_for_entity::ListGroupsForEntityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_groups_for_entity::ListGroupsForEntityInput {
+                organization_id: self.organization_id
+                ,
+                entity_id: self.entity_id
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

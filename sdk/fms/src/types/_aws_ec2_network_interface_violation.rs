@@ -3,22 +3,23 @@
 /// <p>Violation detail for network interfaces associated with an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2NetworkInterfaceViolation {
+pub struct AwsEc2NetworkInterfaceViolation  {
     /// <p>The resource ID of the network interface.</p>
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
-    pub violating_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub violating_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AwsEc2NetworkInterfaceViolation {
+impl  AwsEc2NetworkInterfaceViolation  {
     /// <p>The resource ID of the network interface.</p>
-    pub fn violation_target(&self) -> ::std::option::Option<&str> {
+    pub fn violation_target(&self) -> ::std::option::Option<& str> {
         self.violation_target.as_deref()
     }
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violating_security_groups.is_none()`.
-    pub fn violating_security_groups(&self) -> &[::std::string::String] {
-        self.violating_security_groups.as_deref().unwrap_or_default()
+    pub fn violating_security_groups(&self) -> & [::std::string::String] {
+        self.violating_security_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEc2NetworkInterfaceViolation {
@@ -33,7 +34,7 @@ impl AwsEc2NetworkInterfaceViolation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
-    pub(crate) violating_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) violating_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AwsEc2NetworkInterfaceViolationBuilder {
     /// <p>The resource ID of the network interface.</p>
@@ -43,8 +44,7 @@ impl AwsEc2NetworkInterfaceViolationBuilder {
     }
     /// <p>The resource ID of the network interface.</p>
     pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.violation_target = input;
-        self
+        self.violation_target = input; self
     }
     /// <p>The resource ID of the network interface.</p>
     pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl AwsEc2NetworkInterfaceViolationBuilder {
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
     pub fn violating_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.violating_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.violating_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.violating_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
-    pub fn set_violating_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.violating_security_groups = input;
-        self
+    pub fn set_violating_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.violating_security_groups = input; self
     }
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
-    pub fn get_violating_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_violating_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.violating_security_groups
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceViolation`](crate::types::AwsEc2NetworkInterfaceViolation).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfaceViolation {
         crate::types::AwsEc2NetworkInterfaceViolation {
-            violation_target: self.violation_target,
-            violating_security_groups: self.violating_security_groups,
+            violation_target: self.violation_target
+            ,
+            violating_security_groups: self.violating_security_groups
+            ,
         }
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMessagingSessionEndpointInput {}
+pub struct GetMessagingSessionEndpointInput  {
+}
 impl GetMessagingSessionEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
     pub fn builder() -> crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder {
@@ -13,15 +14,15 @@ impl GetMessagingSessionEndpointInput {
 /// A builder for [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetMessagingSessionEndpointInputBuilder {}
+pub struct GetMessagingSessionEndpointInputBuilder {
+}
 impl GetMessagingSessionEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput {
+            }
+        )
     }
 }
+

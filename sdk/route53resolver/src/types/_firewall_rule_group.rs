@@ -3,7 +3,7 @@
 /// <p>High-level information for a firewall rule group. A firewall rule group is a collection of rules that DNS Firewall uses to filter DNS network traffic for a VPC. To retrieve the rules for the rule group, call <code>ListFirewallRules</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallRuleGroup {
+pub struct FirewallRuleGroup  {
     /// <p>The ID of the rule group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
@@ -27,17 +27,17 @@ pub struct FirewallRuleGroup {
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
-impl FirewallRuleGroup {
+impl  FirewallRuleGroup  {
     /// <p>The ID of the rule group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the rule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The number of rules in the rule group.</p>
@@ -45,31 +45,31 @@ impl FirewallRuleGroup {
         self.rule_count
     }
     /// <p>The status of the domain list.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FirewallRuleGroupStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the status of the rule group, if available.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    pub fn share_status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+    pub fn share_status(&self) -> ::std::option::Option<& crate::types::ShareStatus> {
         self.share_status.as_ref()
     }
     /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(&self) -> ::std::option::Option<&str> {
+    pub fn modification_time(&self) -> ::std::option::Option<& str> {
         self.modification_time.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The ID of the rule group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the rule group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The name of the rule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The number of rules in the rule group.</p>
     pub fn set_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_count = input;
-        self
+        self.rule_count = input; self
     }
     /// <p>The number of rules in the rule group.</p>
     pub fn get_rule_count(&self) -> &::std::option::Option<i32> {
@@ -160,8 +156,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The status of the domain list.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the domain list.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallRuleGroupStatus> {
@@ -174,8 +169,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>Additional information about the status of the rule group, if available.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Additional information about the status of the rule group, if available.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +208,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.share_status = input;
-        self
+        self.share_status = input; self
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn get_share_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
@@ -230,8 +221,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl FirewallRuleGroupBuilder {
     }
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.modification_time = input;
-        self
+        self.modification_time = input; self
     }
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl FirewallRuleGroupBuilder {
     /// Consumes the builder and constructs a [`FirewallRuleGroup`](crate::types::FirewallRuleGroup).
     pub fn build(self) -> crate::types::FirewallRuleGroup {
         crate::types::FirewallRuleGroup {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            rule_count: self.rule_count,
-            status: self.status,
-            status_message: self.status_message,
-            owner_id: self.owner_id,
-            creator_request_id: self.creator_request_id,
-            share_status: self.share_status,
-            creation_time: self.creation_time,
-            modification_time: self.modification_time,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            rule_count: self.rule_count
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            owner_id: self.owner_id
+            ,
+            creator_request_id: self.creator_request_id
+            ,
+            share_status: self.share_status
+            ,
+            creation_time: self.creation_time
+            ,
+            modification_time: self.modification_time
+            ,
         }
     }
 }
+

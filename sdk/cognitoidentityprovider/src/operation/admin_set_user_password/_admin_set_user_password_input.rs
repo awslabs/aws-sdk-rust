@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminSetUserPasswordInput {
+pub struct AdminSetUserPasswordInput  {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
@@ -12,17 +12,17 @@ pub struct AdminSetUserPasswordInput {
     /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub permanent: ::std::option::Option<bool>,
 }
-impl AdminSetUserPasswordInput {
+impl  AdminSetUserPasswordInput  {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password for the user.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
@@ -30,7 +30,7 @@ impl AdminSetUserPasswordInput {
         self.permanent
     }
 }
-impl ::std::fmt::Debug for AdminSetUserPasswordInput {
+impl  ::std::fmt::Debug for AdminSetUserPasswordInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserPasswordInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -65,8 +65,7 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p>The password for the user.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password for the user.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,24 +106,26 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn set_permanent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.permanent = input;
-        self
+        self.permanent = input; self
     }
     /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn get_permanent(&self) -> &::std::option::Option<bool> {
         &self.permanent
     }
     /// Consumes the builder and constructs a [`AdminSetUserPasswordInput`](crate::operation::admin_set_user_password::AdminSetUserPasswordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::admin_set_user_password::AdminSetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::admin_set_user_password::AdminSetUserPasswordInput {
-            user_pool_id: self.user_pool_id,
-            username: self.username,
-            password: self.password,
-            permanent: self.permanent,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_set_user_password::AdminSetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_set_user_password::AdminSetUserPasswordInput {
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                permanent: self.permanent
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminSetUserPasswordInputBuilder {
@@ -139,3 +138,4 @@ impl ::std::fmt::Debug for AdminSetUserPasswordInputBuilder {
         formatter.finish()
     }
 }
+

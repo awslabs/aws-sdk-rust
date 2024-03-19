@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRemediationExecutionInput {
+pub struct StartRemediationExecutionInput  {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
+    pub resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>,
 }
-impl StartRemediationExecutionInput {
+impl  StartRemediationExecutionInput  {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
-    pub fn resource_keys(&self) -> &[crate::types::ResourceKey] {
-        self.resource_keys.as_deref().unwrap_or_default()
+    pub fn resource_keys(&self) -> & [crate::types::ResourceKey] {
+        self.resource_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartRemediationExecutionInput {
@@ -32,7 +33,7 @@ impl StartRemediationExecutionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRemediationExecutionInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
+    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>,
 }
 impl StartRemediationExecutionInputBuilder {
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
@@ -43,8 +44,7 @@ impl StartRemediationExecutionInputBuilder {
     }
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl StartRemediationExecutionInputBuilder {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn resource_keys(mut self, input: crate::types::ResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>) -> Self {
+        self.resource_keys = input; self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>> {
         &self.resource_keys
     }
     /// Consumes the builder and constructs a [`StartRemediationExecutionInput`](crate::operation::start_remediation_execution::StartRemediationExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_remediation_execution::StartRemediationExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_remediation_execution::StartRemediationExecutionInput {
-            config_rule_name: self.config_rule_name,
-            resource_keys: self.resource_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_remediation_execution::StartRemediationExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_remediation_execution::StartRemediationExecutionInput {
+                config_rule_name: self.config_rule_name
+                ,
+                resource_keys: self.resource_keys
+                ,
+            }
+        )
     }
 }
+

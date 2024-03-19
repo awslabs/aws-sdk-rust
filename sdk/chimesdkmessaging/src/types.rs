@@ -212,3 +212,4 @@ pub mod builders;
 
 /// Error types that Amazon Chime SDK Messaging can respond with.
 pub mod error;
+

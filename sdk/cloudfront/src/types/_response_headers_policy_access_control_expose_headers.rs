@@ -4,22 +4,23 @@
 /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyAccessControlExposeHeaders {
+pub struct ResponseHeadersPolicyAccessControlExposeHeaders  {
     /// <p>The number of HTTP headers in the list.</p>
     pub quantity: i32,
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ResponseHeadersPolicyAccessControlExposeHeaders {
+impl  ResponseHeadersPolicyAccessControlExposeHeaders  {
     /// <p>The number of HTTP headers in the list.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[::std::string::String] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [::std::string::String] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResponseHeadersPolicyAccessControlExposeHeaders {
@@ -34,7 +35,7 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
     /// <p>The number of HTTP headers in the list.</p>
@@ -45,8 +46,7 @@ impl ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
     }
     /// <p>The number of HTTP headers in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of HTTP headers in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -59,33 +59,33 @@ impl ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::types::ResponseHeadersPolicyAccessControlExposeHeaders).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyAccessControlExposeHeadersBuilder::quantity)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyAccessControlExposeHeaders {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlExposeHeaders",
-                )
-            })?,
-            items: self.items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyAccessControlExposeHeaders {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlExposeHeaders")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateGlossaryInput {
+pub struct UpdateGlossaryInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the business glossary to be updated.</p>
@@ -16,33 +16,33 @@ pub struct UpdateGlossaryInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGlossaryInput {
+impl  UpdateGlossaryInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the business glossary to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossary</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateGlossary</code> action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status to be updated as part of the <code>UpdateGlossary</code> action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GlossaryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GlossaryStatus> {
         self.status.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateGlossaryInput {
+impl  ::std::fmt::Debug for UpdateGlossaryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGlossaryInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -81,8 +81,7 @@ impl UpdateGlossaryInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl UpdateGlossaryInputBuilder {
     }
     /// <p>The identifier of the business glossary to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the business glossary to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl UpdateGlossaryInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl UpdateGlossaryInputBuilder {
     }
     /// <p>The description to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl UpdateGlossaryInputBuilder {
     }
     /// <p>The status to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GlossaryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryStatus> {
@@ -152,25 +147,30 @@ impl UpdateGlossaryInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateGlossaryInput`](crate::operation::update_glossary::UpdateGlossaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_glossary::UpdateGlossaryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_glossary::UpdateGlossaryInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_glossary::UpdateGlossaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_glossary::UpdateGlossaryInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateGlossaryInputBuilder {
@@ -185,3 +185,4 @@ impl ::std::fmt::Debug for UpdateGlossaryInputBuilder {
         formatter.finish()
     }
 }
+

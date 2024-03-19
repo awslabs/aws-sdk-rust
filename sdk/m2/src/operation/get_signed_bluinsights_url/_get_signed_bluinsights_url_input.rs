@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSignedBluinsightsUrlInput {}
+pub struct GetSignedBluinsightsUrlInput  {
+}
 impl GetSignedBluinsightsUrlInput {
     /// Creates a new builder-style object to manufacture [`GetSignedBluinsightsUrlInput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput).
     pub fn builder() -> crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlInputBuilder {
@@ -13,15 +14,15 @@ impl GetSignedBluinsightsUrlInput {
 /// A builder for [`GetSignedBluinsightsUrlInput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetSignedBluinsightsUrlInputBuilder {}
+pub struct GetSignedBluinsightsUrlInputBuilder {
+}
 impl GetSignedBluinsightsUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetSignedBluinsightsUrlInput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput {
+            }
+        )
     }
 }
+

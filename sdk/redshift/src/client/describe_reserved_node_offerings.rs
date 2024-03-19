@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservedNodeOfferings`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reserved_node_offering_id(impl Into<String>)`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::reserved_node_offering_id) / [`set_reserved_node_offering_id(Option<String>)`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::set_reserved_node_offering_id):<br>required: **false**<br><p>The unique identifier for the offering.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20, maximum 100.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeReservedNodeOfferings</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p><br>
-    /// - On success, responds with [`DescribeReservedNodeOfferingsOutput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput) with field(s):
+                            /// - On success, responds with [`DescribeReservedNodeOfferingsOutput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     ///   - [`reserved_node_offerings(Option<Vec::<ReservedNodeOffering>>)`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput::reserved_node_offerings): <p>A list of <code>ReservedNodeOffering</code> objects.</p>
-    /// - On failure, responds with [`SdkError<DescribeReservedNodeOfferingsError>`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError)
-    pub fn describe_reserved_node_offerings(
-        &self,
-    ) -> crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder {
-        crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReservedNodeOfferingsError>`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError)
+    pub fn describe_reserved_node_offerings(&self) -> crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder {
+                                crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

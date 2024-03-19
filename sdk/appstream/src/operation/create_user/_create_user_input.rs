@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateUserInput {
+pub struct CreateUserInput  {
     /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
     /// </note>
@@ -18,33 +18,33 @@ pub struct CreateUserInput {
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
-impl CreateUserInput {
+impl  CreateUserInput  {
     /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
     /// </note>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent.</p><note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
-    pub fn message_action(&self) -> ::std::option::Option<&crate::types::MessageAction> {
+    pub fn message_action(&self) -> ::std::option::Option<& crate::types::MessageAction> {
         self.message_action.as_ref()
     }
     /// <p>The first name, or given name, of the user.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name, or surname, of the user.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateUserInput {
+impl  ::std::fmt::Debug for CreateUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -85,8 +85,7 @@ impl CreateUserInputBuilder {
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
@@ -105,8 +104,7 @@ impl CreateUserInputBuilder {
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
     pub fn set_message_action(mut self, input: ::std::option::Option<crate::types::MessageAction>) -> Self {
-        self.message_action = input;
-        self
+        self.message_action = input; self
     }
     /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent.</p><note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
@@ -121,8 +119,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The first name, or given name, of the user.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name, or given name, of the user.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The last name, or surname, of the user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name, or surname, of the user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +146,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
@@ -159,13 +154,20 @@ impl CreateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
-            user_name: self.user_name,
-            message_action: self.message_action,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            authentication_type: self.authentication_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_user::CreateUserInput {
+                user_name: self.user_name
+                ,
+                message_action: self.message_action
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                authentication_type: self.authentication_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateUserInputBuilder {
@@ -179,3 +181,4 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.finish()
     }
 }
+

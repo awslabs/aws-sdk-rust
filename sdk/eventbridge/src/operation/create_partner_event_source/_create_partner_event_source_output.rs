@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePartnerEventSourceOutput {
+pub struct CreatePartnerEventSourceOutput  {
     /// <p>The ARN of the partner event source.</p>
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePartnerEventSourceOutput {
+impl  CreatePartnerEventSourceOutput  {
     /// <p>The ARN of the partner event source.</p>
-    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePartnerEventSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput).
     pub fn builder() -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceOutputBuilder {
@@ -40,27 +40,28 @@ impl CreatePartnerEventSourceOutputBuilder {
     }
     /// <p>The ARN of the partner event source.</p>
     pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source_arn = input;
-        self
+        self.event_source_arn = input; self
     }
     /// <p>The ARN of the partner event source.</p>
     pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput).
     pub fn build(self) -> crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput {
         crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput {
-            event_source_arn: self.event_source_arn,
+            event_source_arn: self.event_source_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// Response to a successful DescribeIdentityPoolUsage request.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIdentityPoolUsageOutput {
+pub struct DescribeIdentityPoolUsageOutput  {
     /// Information about the usage of the identity pool.
     pub identity_pool_usage: ::std::option::Option<crate::types::IdentityPoolUsage>,
     _request_id: Option<String>,
 }
-impl DescribeIdentityPoolUsageOutput {
+impl  DescribeIdentityPoolUsageOutput  {
     /// Information about the usage of the identity pool.
-    pub fn identity_pool_usage(&self) -> ::std::option::Option<&crate::types::IdentityPoolUsage> {
+    pub fn identity_pool_usage(&self) -> ::std::option::Option<& crate::types::IdentityPoolUsage> {
         self.identity_pool_usage.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIdentityPoolUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIdentityPoolUsageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolUsageOutput`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput).
     pub fn builder() -> crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeIdentityPoolUsageOutputBuilder {
     }
     /// Information about the usage of the identity pool.
     pub fn set_identity_pool_usage(mut self, input: ::std::option::Option<crate::types::IdentityPoolUsage>) -> Self {
-        self.identity_pool_usage = input;
-        self
+        self.identity_pool_usage = input; self
     }
     /// Information about the usage of the identity pool.
     pub fn get_identity_pool_usage(&self) -> &::std::option::Option<crate::types::IdentityPoolUsage> {
         &self.identity_pool_usage
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIdentityPoolUsageOutput`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput).
     pub fn build(self) -> crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput {
         crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput {
-            identity_pool_usage: self.identity_pool_usage,
+            identity_pool_usage: self.identity_pool_usage
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

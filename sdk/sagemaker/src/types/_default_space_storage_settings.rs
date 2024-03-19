@@ -3,13 +3,13 @@
 /// <p>The default storage settings for a private space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultSpaceStorageSettings {
+pub struct DefaultSpaceStorageSettings  {
     /// <p>The default EBS storage settings for a private space.</p>
     pub default_ebs_storage_settings: ::std::option::Option<crate::types::DefaultEbsStorageSettings>,
 }
-impl DefaultSpaceStorageSettings {
+impl  DefaultSpaceStorageSettings  {
     /// <p>The default EBS storage settings for a private space.</p>
-    pub fn default_ebs_storage_settings(&self) -> ::std::option::Option<&crate::types::DefaultEbsStorageSettings> {
+    pub fn default_ebs_storage_settings(&self) -> ::std::option::Option<& crate::types::DefaultEbsStorageSettings> {
         self.default_ebs_storage_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DefaultSpaceStorageSettingsBuilder {
     }
     /// <p>The default EBS storage settings for a private space.</p>
     pub fn set_default_ebs_storage_settings(mut self, input: ::std::option::Option<crate::types::DefaultEbsStorageSettings>) -> Self {
-        self.default_ebs_storage_settings = input;
-        self
+        self.default_ebs_storage_settings = input; self
     }
     /// <p>The default EBS storage settings for a private space.</p>
     pub fn get_default_ebs_storage_settings(&self) -> &::std::option::Option<crate::types::DefaultEbsStorageSettings> {
@@ -44,7 +43,9 @@ impl DefaultSpaceStorageSettingsBuilder {
     /// Consumes the builder and constructs a [`DefaultSpaceStorageSettings`](crate::types::DefaultSpaceStorageSettings).
     pub fn build(self) -> crate::types::DefaultSpaceStorageSettings {
         crate::types::DefaultSpaceStorageSettings {
-            default_ebs_storage_settings: self.default_ebs_storage_settings,
+            default_ebs_storage_settings: self.default_ebs_storage_settings
+            ,
         }
     }
 }
+

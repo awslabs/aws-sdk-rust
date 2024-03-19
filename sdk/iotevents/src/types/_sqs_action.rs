@@ -3,7 +3,7 @@
 /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqsAction {
+pub struct SqsAction  {
     /// <p>The URL of the SQS queue where the data is written.</p>
     pub queue_url: ::std::string::String,
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
@@ -11,18 +11,17 @@ pub struct SqsAction {
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
-impl SqsAction {
+impl  SqsAction  {
     /// <p>The URL of the SQS queue where the data is written.</p>
-    pub fn queue_url(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_url.deref()
+    pub fn queue_url(&self) -> & str {
+        use std::ops::Deref; self.queue_url.deref()
     }
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
     pub fn use_base64(&self) -> ::std::option::Option<bool> {
         self.use_base64
     }
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl SqsActionBuilder {
     }
     /// <p>The URL of the SQS queue where the data is written.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the SQS queue where the data is written.</p>
     pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl SqsActionBuilder {
     }
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
     pub fn set_use_base64(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_base64 = input;
-        self
+        self.use_base64 = input; self
     }
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
     pub fn get_use_base64(&self) -> &::std::option::Option<bool> {
@@ -78,8 +75,7 @@ impl SqsActionBuilder {
     }
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
@@ -89,15 +85,19 @@ impl SqsActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`queue_url`](crate::types::builders::SqsActionBuilder::queue_url)
     pub fn build(self) -> ::std::result::Result<crate::types::SqsAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SqsAction {
-            queue_url: self.queue_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_url",
-                    "queue_url was not specified but it is required when building SqsAction",
-                )
-            })?,
-            use_base64: self.use_base64,
-            payload: self.payload,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SqsAction {
+                queue_url: self.queue_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_url", "queue_url was not specified but it is required when building SqsAction")
+                    )?
+                ,
+                use_base64: self.use_base64
+                ,
+                payload: self.payload
+                ,
+            }
+        )
     }
 }
+

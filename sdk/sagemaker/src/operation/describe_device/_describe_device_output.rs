@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceOutput {
+pub struct DescribeDeviceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the device.</p>
@@ -18,7 +18,7 @@ pub struct DescribeDeviceOutput {
     /// <p>The last heartbeat received from the device.</p>
     pub latest_heartbeat: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Models on the device.</p>
-    pub models: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>>,
+    pub models: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeModel>>,
     /// <p>The maximum number of models.</p>
     pub max_models: ::std::option::Option<i32>,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -27,59 +27,60 @@ pub struct DescribeDeviceOutput {
     pub agent_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDeviceOutput {
+impl  DescribeDeviceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>A description of the device.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the fleet the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
-    pub fn iot_thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn iot_thing_name(&self) -> ::std::option::Option<& str> {
         self.iot_thing_name.as_deref()
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
-    pub fn registration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn registration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.registration_time.as_ref()
     }
     /// <p>The last heartbeat received from the device.</p>
-    pub fn latest_heartbeat(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_heartbeat(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_heartbeat.as_ref()
     }
     /// <p>Models on the device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
-    pub fn models(&self) -> &[crate::types::EdgeModel] {
-        self.models.as_deref().unwrap_or_default()
+    pub fn models(&self) -> & [crate::types::EdgeModel] {
+        self.models.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of models.</p>
     pub fn max_models(&self) -> ::std::option::Option<i32> {
         self.max_models
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Edge Manager agent version.</p>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
     pub fn builder() -> crate::operation::describe_device::builders::DescribeDeviceOutputBuilder {
@@ -98,7 +99,7 @@ pub struct DescribeDeviceOutputBuilder {
     pub(crate) iot_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) registration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_heartbeat: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>>,
+    pub(crate) models: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeModel>>,
     pub(crate) max_models: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
@@ -112,8 +113,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>A description of the device.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the device.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +154,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The name of the fleet the device belongs to.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet the device belongs to.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +167,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
     pub fn set_iot_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iot_thing_name = input;
-        self
+        self.iot_thing_name = input; self
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
     pub fn get_iot_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +181,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub fn set_registration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.registration_time = input;
-        self
+        self.registration_time = input; self
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub fn get_registration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -199,8 +194,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The last heartbeat received from the device.</p>
     pub fn set_latest_heartbeat(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_heartbeat = input;
-        self
+        self.latest_heartbeat = input; self
     }
     /// <p>The last heartbeat received from the device.</p>
     pub fn get_latest_heartbeat(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -213,17 +207,16 @@ impl DescribeDeviceOutputBuilder {
     /// <p>Models on the device.</p>
     pub fn models(mut self, input: crate::types::EdgeModel) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Models on the device.</p>
-    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>>) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeModel>>) -> Self {
+        self.models = input; self
     }
     /// <p>Models on the device.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EdgeModel>> {
         &self.models
     }
     /// <p>The maximum number of models.</p>
@@ -233,8 +226,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The maximum number of models.</p>
     pub fn set_max_models(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_models = input;
-        self
+        self.max_models = input; self
     }
     /// <p>The maximum number of models.</p>
     pub fn get_max_models(&self) -> &::std::option::Option<i32> {
@@ -247,8 +239,7 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,37 +252,48 @@ impl DescribeDeviceOutputBuilder {
     }
     /// <p>Edge Manager agent version.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>Edge Manager agent version.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
     pub fn build(self) -> crate::operation::describe_device::DescribeDeviceOutput {
         crate::operation::describe_device::DescribeDeviceOutput {
-            device_arn: self.device_arn,
-            device_name: self.device_name,
-            description: self.description,
-            device_fleet_name: self.device_fleet_name,
-            iot_thing_name: self.iot_thing_name,
-            registration_time: self.registration_time,
-            latest_heartbeat: self.latest_heartbeat,
-            models: self.models,
-            max_models: self.max_models,
-            next_token: self.next_token,
-            agent_version: self.agent_version,
+            device_arn: self.device_arn
+            ,
+            device_name: self.device_name
+            ,
+            description: self.description
+            ,
+            device_fleet_name: self.device_fleet_name
+            ,
+            iot_thing_name: self.iot_thing_name
+            ,
+            registration_time: self.registration_time
+            ,
+            latest_heartbeat: self.latest_heartbeat
+            ,
+            models: self.models
+            ,
+            max_models: self.max_models
+            ,
+            next_token: self.next_token
+            ,
+            agent_version: self.agent_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

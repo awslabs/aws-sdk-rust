@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDataSourceIntrospectionInput {
+pub struct StartDataSourceIntrospectionInput  {
     /// <p>The <code>rdsDataApiConfig</code> object data.</p>
     pub rds_data_api_config: ::std::option::Option<crate::types::RdsDataApiConfig>,
 }
-impl StartDataSourceIntrospectionInput {
+impl  StartDataSourceIntrospectionInput  {
     /// <p>The <code>rdsDataApiConfig</code> object data.</p>
-    pub fn rds_data_api_config(&self) -> ::std::option::Option<&crate::types::RdsDataApiConfig> {
+    pub fn rds_data_api_config(&self) -> ::std::option::Option<& crate::types::RdsDataApiConfig> {
         self.rds_data_api_config.as_ref()
     }
 }
@@ -33,22 +33,20 @@ impl StartDataSourceIntrospectionInputBuilder {
     }
     /// <p>The <code>rdsDataApiConfig</code> object data.</p>
     pub fn set_rds_data_api_config(mut self, input: ::std::option::Option<crate::types::RdsDataApiConfig>) -> Self {
-        self.rds_data_api_config = input;
-        self
+        self.rds_data_api_config = input; self
     }
     /// <p>The <code>rdsDataApiConfig</code> object data.</p>
     pub fn get_rds_data_api_config(&self) -> &::std::option::Option<crate::types::RdsDataApiConfig> {
         &self.rds_data_api_config
     }
     /// Consumes the builder and constructs a [`StartDataSourceIntrospectionInput`](crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput {
-            rds_data_api_config: self.rds_data_api_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput {
+                rds_data_api_config: self.rds_data_api_config
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScalingConfigurationRecommendationOutput {
+pub struct GetScalingConfigurationRecommendationOutput  {
     /// <p>The name of a previously completed Inference Recommender job.</p>
     pub inference_recommendations_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation ID of a previously completed inference recommendation.</p>
@@ -19,17 +19,17 @@ pub struct GetScalingConfigurationRecommendationOutput {
     pub dynamic_scaling_configuration: ::std::option::Option<crate::types::DynamicScalingConfiguration>,
     _request_id: Option<String>,
 }
-impl GetScalingConfigurationRecommendationOutput {
+impl  GetScalingConfigurationRecommendationOutput  {
     /// <p>The name of a previously completed Inference Recommender job.</p>
-    pub fn inference_recommendations_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_recommendations_job_name(&self) -> ::std::option::Option<& str> {
         self.inference_recommendations_job_name.as_deref()
     }
     /// <p>The recommendation ID of a previously completed inference recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The name of an endpoint benchmarked during a previously completed Inference Recommender job.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The percentage of how much utilization you want an instance to use before autoscaling, which you specified in the request. The default value is 50%.</p>
@@ -37,23 +37,23 @@ impl GetScalingConfigurationRecommendationOutput {
         self.target_cpu_utilization_per_core
     }
     /// <p>An object representing the anticipated traffic pattern for an endpoint that you specified in the request.</p>
-    pub fn scaling_policy_objective(&self) -> ::std::option::Option<&crate::types::ScalingPolicyObjective> {
+    pub fn scaling_policy_objective(&self) -> ::std::option::Option<& crate::types::ScalingPolicyObjective> {
         self.scaling_policy_objective.as_ref()
     }
     /// <p>An object with a list of metrics that were benchmarked during the previously completed Inference Recommender job.</p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::ScalingPolicyMetric> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::ScalingPolicyMetric> {
         self.metric.as_ref()
     }
     /// <p>An object with the recommended values for you to specify when creating an autoscaling policy.</p>
-    pub fn dynamic_scaling_configuration(&self) -> ::std::option::Option<&crate::types::DynamicScalingConfiguration> {
+    pub fn dynamic_scaling_configuration(&self) -> ::std::option::Option<& crate::types::DynamicScalingConfiguration> {
         self.dynamic_scaling_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetScalingConfigurationRecommendationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetScalingConfigurationRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetScalingConfigurationRecommendationOutput`](crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationOutput).
     pub fn builder() -> crate::operation::get_scaling_configuration_recommendation::builders::GetScalingConfigurationRecommendationOutputBuilder {
@@ -82,8 +82,7 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>The name of a previously completed Inference Recommender job.</p>
     pub fn set_inference_recommendations_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_recommendations_job_name = input;
-        self
+        self.inference_recommendations_job_name = input; self
     }
     /// <p>The name of a previously completed Inference Recommender job.</p>
     pub fn get_inference_recommendations_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>The recommendation ID of a previously completed inference recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The recommendation ID of a previously completed inference recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>The name of an endpoint benchmarked during a previously completed Inference Recommender job.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of an endpoint benchmarked during a previously completed Inference Recommender job.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>The percentage of how much utilization you want an instance to use before autoscaling, which you specified in the request. The default value is 50%.</p>
     pub fn set_target_cpu_utilization_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_cpu_utilization_per_core = input;
-        self
+        self.target_cpu_utilization_per_core = input; self
     }
     /// <p>The percentage of how much utilization you want an instance to use before autoscaling, which you specified in the request. The default value is 50%.</p>
     pub fn get_target_cpu_utilization_per_core(&self) -> &::std::option::Option<i32> {
@@ -138,8 +134,7 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>An object representing the anticipated traffic pattern for an endpoint that you specified in the request.</p>
     pub fn set_scaling_policy_objective(mut self, input: ::std::option::Option<crate::types::ScalingPolicyObjective>) -> Self {
-        self.scaling_policy_objective = input;
-        self
+        self.scaling_policy_objective = input; self
     }
     /// <p>An object representing the anticipated traffic pattern for an endpoint that you specified in the request.</p>
     pub fn get_scaling_policy_objective(&self) -> &::std::option::Option<crate::types::ScalingPolicyObjective> {
@@ -152,8 +147,7 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>An object with a list of metrics that were benchmarked during the previously completed Inference Recommender job.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::ScalingPolicyMetric>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>An object with a list of metrics that were benchmarked during the previously completed Inference Recommender job.</p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::ScalingPolicyMetric> {
@@ -166,33 +160,40 @@ impl GetScalingConfigurationRecommendationOutputBuilder {
     }
     /// <p>An object with the recommended values for you to specify when creating an autoscaling policy.</p>
     pub fn set_dynamic_scaling_configuration(mut self, input: ::std::option::Option<crate::types::DynamicScalingConfiguration>) -> Self {
-        self.dynamic_scaling_configuration = input;
-        self
+        self.dynamic_scaling_configuration = input; self
     }
     /// <p>An object with the recommended values for you to specify when creating an autoscaling policy.</p>
     pub fn get_dynamic_scaling_configuration(&self) -> &::std::option::Option<crate::types::DynamicScalingConfiguration> {
         &self.dynamic_scaling_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetScalingConfigurationRecommendationOutput`](crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationOutput).
     pub fn build(self) -> crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationOutput {
         crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationOutput {
-            inference_recommendations_job_name: self.inference_recommendations_job_name,
-            recommendation_id: self.recommendation_id,
-            endpoint_name: self.endpoint_name,
-            target_cpu_utilization_per_core: self.target_cpu_utilization_per_core,
-            scaling_policy_objective: self.scaling_policy_objective,
-            metric: self.metric,
-            dynamic_scaling_configuration: self.dynamic_scaling_configuration,
+            inference_recommendations_job_name: self.inference_recommendations_job_name
+            ,
+            recommendation_id: self.recommendation_id
+            ,
+            endpoint_name: self.endpoint_name
+            ,
+            target_cpu_utilization_per_core: self.target_cpu_utilization_per_core
+            ,
+            scaling_policy_objective: self.scaling_policy_objective
+            ,
+            metric: self.metric
+            ,
+            dynamic_scaling_configuration: self.dynamic_scaling_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

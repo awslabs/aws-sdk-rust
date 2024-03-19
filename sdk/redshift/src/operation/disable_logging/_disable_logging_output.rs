@@ -3,7 +3,7 @@
 /// <p>Describes the status of logging for a cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableLoggingOutput {
+pub struct DisableLoggingOutput  {
     /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub logging_enabled: ::std::option::Option<bool>,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
@@ -19,50 +19,51 @@ pub struct DisableLoggingOutput {
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DisableLoggingOutput {
+impl  DisableLoggingOutput  {
     /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn logging_enabled(&self) -> ::std::option::Option<bool> {
         self.logging_enabled
     }
     /// <p>The name of the S3 bucket where the log files are stored.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The prefix applied to the log file names.</p>
-    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The last time that logs were delivered.</p>
-    pub fn last_successful_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_delivery_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_successful_delivery_time.as_ref()
     }
     /// <p>The last time when logs failed to be delivered.</p>
-    pub fn last_failure_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_failure_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_failure_time.as_ref()
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
-    pub fn last_failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn last_failure_message(&self) -> ::std::option::Option<& str> {
         self.last_failure_message.as_deref()
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
+    pub fn log_destination_type(&self) -> ::std::option::Option<& crate::types::LogDestinationType> {
         self.log_destination_type.as_ref()
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
-    pub fn log_exports(&self) -> &[::std::string::String] {
-        self.log_exports.as_deref().unwrap_or_default()
+    pub fn log_exports(&self) -> & [::std::string::String] {
+        self.log_exports.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DisableLoggingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisableLoggingOutput {
     /// Creates a new builder-style object to manufacture [`DisableLoggingOutput`](crate::operation::disable_logging::DisableLoggingOutput).
     pub fn builder() -> crate::operation::disable_logging::builders::DisableLoggingOutputBuilder {
@@ -81,7 +82,7 @@ pub struct DisableLoggingOutputBuilder {
     pub(crate) last_failure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
-    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DisableLoggingOutputBuilder {
@@ -92,8 +93,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn set_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.logging_enabled = input;
-        self
+        self.logging_enabled = input; self
     }
     /// <p><code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn get_logging_enabled(&self) -> &::std::option::Option<bool> {
@@ -106,8 +106,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p>The prefix applied to the log file names.</p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// <p>The prefix applied to the log file names.</p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p>The last time that logs were delivered.</p>
     pub fn set_last_successful_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_successful_delivery_time = input;
-        self
+        self.last_successful_delivery_time = input; self
     }
     /// <p>The last time that logs were delivered.</p>
     pub fn get_last_successful_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -148,8 +145,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p>The last time when logs failed to be delivered.</p>
     pub fn set_last_failure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_failure_time = input;
-        self
+        self.last_failure_time = input; self
     }
     /// <p>The last time when logs failed to be delivered.</p>
     pub fn get_last_failure_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,8 +158,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub fn set_last_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_failure_message = input;
-        self
+        self.last_failure_message = input; self
     }
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub fn get_last_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +171,7 @@ impl DisableLoggingOutputBuilder {
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
-        self.log_destination_type = input;
-        self
+        self.log_destination_type = input; self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
@@ -190,40 +184,48 @@ impl DisableLoggingOutputBuilder {
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
-        v.push(input.into());
-        self.log_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_exports = input;
-        self
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_exports = input; self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_exports
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisableLoggingOutput`](crate::operation::disable_logging::DisableLoggingOutput).
     pub fn build(self) -> crate::operation::disable_logging::DisableLoggingOutput {
         crate::operation::disable_logging::DisableLoggingOutput {
-            logging_enabled: self.logging_enabled,
-            bucket_name: self.bucket_name,
-            s3_key_prefix: self.s3_key_prefix,
-            last_successful_delivery_time: self.last_successful_delivery_time,
-            last_failure_time: self.last_failure_time,
-            last_failure_message: self.last_failure_message,
-            log_destination_type: self.log_destination_type,
-            log_exports: self.log_exports,
+            logging_enabled: self.logging_enabled
+            ,
+            bucket_name: self.bucket_name
+            ,
+            s3_key_prefix: self.s3_key_prefix
+            ,
+            last_successful_delivery_time: self.last_successful_delivery_time
+            ,
+            last_failure_time: self.last_failure_time
+            ,
+            last_failure_message: self.last_failure_message
+            ,
+            log_destination_type: self.log_destination_type
+            ,
+            log_exports: self.log_exports
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

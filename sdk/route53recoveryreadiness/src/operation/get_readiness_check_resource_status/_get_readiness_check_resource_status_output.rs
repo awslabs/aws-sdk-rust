@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadinessCheckResourceStatusOutput {
+pub struct GetReadinessCheckResourceStatusOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The readiness at a rule level.</p>
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>Details of the rule's results.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::RuleResult>>,
     _request_id: Option<String>,
 }
-impl GetReadinessCheckResourceStatusOutput {
+impl  GetReadinessCheckResourceStatusOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The readiness at a rule level.</p>
-    pub fn readiness(&self) -> ::std::option::Option<&crate::types::Readiness> {
+    pub fn readiness(&self) -> ::std::option::Option<& crate::types::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>Details of the rule's results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::RuleResult] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::RuleResult] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReadinessCheckResourceStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReadinessCheckResourceStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput).
     pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusOutputBuilder {
@@ -45,7 +46,7 @@ impl GetReadinessCheckResourceStatusOutput {
 pub struct GetReadinessCheckResourceStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::RuleResult>>,
     _request_id: Option<String>,
 }
 impl GetReadinessCheckResourceStatusOutputBuilder {
@@ -56,8 +57,7 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
     }
     /// <p>The readiness at a rule level.</p>
     pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
-        self.readiness = input;
-        self
+        self.readiness = input; self
     }
     /// <p>The readiness at a rule level.</p>
     pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
@@ -84,35 +83,38 @@ impl GetReadinessCheckResourceStatusOutputBuilder {
     /// <p>Details of the rule's results.</p>
     pub fn rules(mut self, input: crate::types::RuleResult) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the rule's results.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleResult>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Details of the rule's results.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleResult>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleResult>> {
         &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput).
     pub fn build(self) -> crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput {
         crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput {
-            next_token: self.next_token,
-            readiness: self.readiness,
-            rules: self.rules,
+            next_token: self.next_token
+            ,
+            readiness: self.readiness
+            ,
+            rules: self.rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

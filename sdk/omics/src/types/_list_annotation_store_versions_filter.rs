@@ -3,13 +3,13 @@
 /// <p>Use filters to focus the returned annotation store versions on a specific parameter, such as the status of the annotation store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnnotationStoreVersionsFilter {
+pub struct ListAnnotationStoreVersionsFilter  {
     /// <p>The status of an annotation store version.</p>
     pub status: ::std::option::Option<crate::types::VersionStatus>,
 }
-impl ListAnnotationStoreVersionsFilter {
+impl  ListAnnotationStoreVersionsFilter  {
     /// <p>The status of an annotation store version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VersionStatus> {
         self.status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ListAnnotationStoreVersionsFilterBuilder {
     }
     /// <p>The status of an annotation store version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an annotation store version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
@@ -43,6 +42,10 @@ impl ListAnnotationStoreVersionsFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ListAnnotationStoreVersionsFilter`](crate::types::ListAnnotationStoreVersionsFilter).
     pub fn build(self) -> crate::types::ListAnnotationStoreVersionsFilter {
-        crate::types::ListAnnotationStoreVersionsFilter { status: self.status }
+        crate::types::ListAnnotationStoreVersionsFilter {
+            status: self.status
+            ,
+        }
     }
 }
+

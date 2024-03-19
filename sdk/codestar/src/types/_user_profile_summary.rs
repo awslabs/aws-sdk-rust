@@ -3,7 +3,7 @@
 /// <p>Information about a user's profile in AWS CodeStar.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserProfileSummary {
+pub struct UserProfileSummary  {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
@@ -13,25 +13,25 @@ pub struct UserProfileSummary {
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
 }
-impl UserProfileSummary {
+impl  UserProfileSummary  {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The email address associated with the user.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
-    pub fn ssh_public_key(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
 }
-impl ::std::fmt::Debug for UserProfileSummary {
+impl  ::std::fmt::Debug for UserProfileSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserProfileSummary");
         formatter.field("user_arn", &self.user_arn);
@@ -65,8 +65,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The email address associated with the user.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address associated with the user.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl UserProfileSummaryBuilder {
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key = input;
-        self
+        self.ssh_public_key = input; self
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl UserProfileSummaryBuilder {
     /// Consumes the builder and constructs a [`UserProfileSummary`](crate::types::UserProfileSummary).
     pub fn build(self) -> crate::types::UserProfileSummary {
         crate::types::UserProfileSummary {
-            user_arn: self.user_arn,
-            display_name: self.display_name,
-            email_address: self.email_address,
-            ssh_public_key: self.ssh_public_key,
+            user_arn: self.user_arn
+            ,
+            display_name: self.display_name
+            ,
+            email_address: self.email_address
+            ,
+            ssh_public_key: self.ssh_public_key
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for UserProfileSummaryBuilder {
         formatter.finish()
     }
 }
+

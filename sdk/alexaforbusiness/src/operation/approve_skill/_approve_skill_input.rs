@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApproveSkillInput {
+pub struct ApproveSkillInput  {
     /// <p>The unique identifier of the skill.</p>
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
-impl ApproveSkillInput {
+impl  ApproveSkillInput  {
     /// <p>The unique identifier of the skill.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl ApproveSkillInputBuilder {
     }
     /// <p>The unique identifier of the skill.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The unique identifier of the skill.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`ApproveSkillInput`](crate::operation::approve_skill::ApproveSkillInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::approve_skill::ApproveSkillInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::approve_skill::ApproveSkillInput { skill_id: self.skill_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::approve_skill::ApproveSkillInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::approve_skill::ApproveSkillInput {
+                skill_id: self.skill_id
+                ,
+            }
+        )
     }
 }
+

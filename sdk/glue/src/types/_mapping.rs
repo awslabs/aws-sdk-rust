@@ -3,11 +3,11 @@
 /// <p>Specifies the mapping of data property keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Mapping {
+pub struct Mapping  {
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
     pub to_key: ::std::option::Option<::std::string::String>,
     /// <p>The table or column to be modified.</p>
-    pub from_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub from_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The type of the data to be modified.</p>
     pub from_type: ::std::option::Option<::std::string::String>,
     /// <p>The data type that the data is to be modified to.</p>
@@ -19,25 +19,26 @@ pub struct Mapping {
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
-    pub children: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
+    pub children: ::std::option::Option<::std::vec::Vec::<crate::types::Mapping>>,
 }
-impl Mapping {
+impl  Mapping  {
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
-    pub fn to_key(&self) -> ::std::option::Option<&str> {
+    pub fn to_key(&self) -> ::std::option::Option<& str> {
         self.to_key.as_deref()
     }
     /// <p>The table or column to be modified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_path.is_none()`.
-    pub fn from_path(&self) -> &[::std::string::String] {
-        self.from_path.as_deref().unwrap_or_default()
+    pub fn from_path(&self) -> & [::std::string::String] {
+        self.from_path.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of the data to be modified.</p>
-    pub fn from_type(&self) -> ::std::option::Option<&str> {
+    pub fn from_type(&self) -> ::std::option::Option<& str> {
         self.from_type.as_deref()
     }
     /// <p>The data type that the data is to be modified to.</p>
-    pub fn to_type(&self) -> ::std::option::Option<&str> {
+    pub fn to_type(&self) -> ::std::option::Option<& str> {
         self.to_type.as_deref()
     }
     /// <p>If true, then the column is removed.</p>
@@ -49,10 +50,11 @@ impl Mapping {
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
-    pub fn children(&self) -> &[crate::types::Mapping] {
-        self.children.as_deref().unwrap_or_default()
+    pub fn children(&self) -> & [crate::types::Mapping] {
+        self.children.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Mapping {
@@ -67,11 +69,11 @@ impl Mapping {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MappingBuilder {
     pub(crate) to_key: ::std::option::Option<::std::string::String>,
-    pub(crate) from_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) from_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) from_type: ::std::option::Option<::std::string::String>,
     pub(crate) to_type: ::std::option::Option<::std::string::String>,
     pub(crate) dropped: ::std::option::Option<bool>,
-    pub(crate) children: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
+    pub(crate) children: ::std::option::Option<::std::vec::Vec::<crate::types::Mapping>>,
 }
 impl MappingBuilder {
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
@@ -81,8 +83,7 @@ impl MappingBuilder {
     }
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
     pub fn set_to_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to_key = input;
-        self
+        self.to_key = input; self
     }
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
     pub fn get_to_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,17 +96,16 @@ impl MappingBuilder {
     /// <p>The table or column to be modified.</p>
     pub fn from_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.from_path.unwrap_or_default();
-        v.push(input.into());
-        self.from_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.from_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The table or column to be modified.</p>
-    pub fn set_from_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.from_path = input;
-        self
+    pub fn set_from_path(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.from_path = input; self
     }
     /// <p>The table or column to be modified.</p>
-    pub fn get_from_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_from_path(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.from_path
     }
     /// <p>The type of the data to be modified.</p>
@@ -115,8 +115,7 @@ impl MappingBuilder {
     }
     /// <p>The type of the data to be modified.</p>
     pub fn set_from_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_type = input;
-        self
+        self.from_type = input; self
     }
     /// <p>The type of the data to be modified.</p>
     pub fn get_from_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl MappingBuilder {
     }
     /// <p>The data type that the data is to be modified to.</p>
     pub fn set_to_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to_type = input;
-        self
+        self.to_type = input; self
     }
     /// <p>The data type that the data is to be modified to.</p>
     pub fn get_to_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl MappingBuilder {
     }
     /// <p>If true, then the column is removed.</p>
     pub fn set_dropped(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dropped = input;
-        self
+        self.dropped = input; self
     }
     /// <p>If true, then the column is removed.</p>
     pub fn get_dropped(&self) -> &::std::option::Option<bool> {
@@ -161,36 +158,42 @@ impl MappingBuilder {
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
     pub fn children(mut self, input: crate::types::Mapping) -> Self {
         let mut v = self.children.unwrap_or_default();
-        v.push(input);
-        self.children = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.children = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
-    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>) -> Self {
-        self.children = input;
-        self
+    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Mapping>>) -> Self {
+        self.children = input; self
     }
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
-    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mapping>> {
+    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Mapping>> {
         &self.children
     }
     /// Consumes the builder and constructs a [`Mapping`](crate::types::Mapping).
     pub fn build(self) -> crate::types::Mapping {
         crate::types::Mapping {
-            to_key: self.to_key,
-            from_path: self.from_path,
-            from_type: self.from_type,
-            to_type: self.to_type,
-            dropped: self.dropped,
-            children: self.children,
+            to_key: self.to_key
+            ,
+            from_path: self.from_path
+            ,
+            from_type: self.from_type
+            ,
+            to_type: self.to_type
+            ,
+            dropped: self.dropped
+            ,
+            children: self.children
+            ,
         }
     }
 }
+

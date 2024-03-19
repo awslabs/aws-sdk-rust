@@ -3,33 +3,34 @@
 /// <p>Provides information about an WAF web access control list (web ACL).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafWebAclDetails {
+pub struct AwsWafWebAclDetails  {
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
     pub default_action: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafWebAclRule>>,
     /// <p>A unique identifier for a web ACL.</p>
     pub web_acl_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafWebAclDetails {
+impl  AwsWafWebAclDetails  {
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    pub fn default_action(&self) -> ::std::option::Option<&str> {
+    pub fn default_action(&self) -> ::std::option::Option<& str> {
         self.default_action.as_deref()
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AwsWafWebAclRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AwsWafWebAclRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier for a web ACL.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> ::std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl AwsWafWebAclDetails {
 pub struct AwsWafWebAclDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_action: ::std::option::Option<::std::string::String>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafWebAclRule>>,
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclDetailsBuilder {
@@ -57,8 +58,7 @@ impl AwsWafWebAclDetailsBuilder {
     }
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl AwsWafWebAclDetailsBuilder {
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
     pub fn set_default_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_action = input;
-        self
+        self.default_action = input; self
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
     pub fn get_default_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl AwsWafWebAclDetailsBuilder {
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
     pub fn rules(mut self, input: crate::types::AwsWafWebAclRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafWebAclRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsWafWebAclRule>> {
         &self.rules
     }
     /// <p>A unique identifier for a web ACL.</p>
@@ -105,8 +103,7 @@ impl AwsWafWebAclDetailsBuilder {
     }
     /// <p>A unique identifier for a web ACL.</p>
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_id = input;
-        self
+        self.web_acl_id = input; self
     }
     /// <p>A unique identifier for a web ACL.</p>
     pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl AwsWafWebAclDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafWebAclDetails`](crate::types::AwsWafWebAclDetails).
     pub fn build(self) -> crate::types::AwsWafWebAclDetails {
         crate::types::AwsWafWebAclDetails {
-            name: self.name,
-            default_action: self.default_action,
-            rules: self.rules,
-            web_acl_id: self.web_acl_id,
+            name: self.name
+            ,
+            default_action: self.default_action
+            ,
+            rules: self.rules
+            ,
+            web_acl_id: self.web_acl_id
+            ,
         }
     }
 }
+

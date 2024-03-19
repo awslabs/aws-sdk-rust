@@ -3,19 +3,19 @@
 /// <p>The options for the label thta is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableRowsLabelOptions {
+pub struct PivotTableRowsLabelOptions  {
     /// <p>The visibility of the rows label.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The custom label string for the rows label.</p>
     pub custom_label: ::std::option::Option<::std::string::String>,
 }
-impl PivotTableRowsLabelOptions {
+impl  PivotTableRowsLabelOptions  {
     /// <p>The visibility of the rows label.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The custom label string for the rows label.</p>
-    pub fn custom_label(&self) -> ::std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<& str> {
         self.custom_label.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PivotTableRowsLabelOptionsBuilder {
     }
     /// <p>The visibility of the rows label.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the rows label.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -55,8 +54,7 @@ impl PivotTableRowsLabelOptionsBuilder {
     }
     /// <p>The custom label string for the rows label.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
     }
     /// <p>The custom label string for the rows label.</p>
     pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PivotTableRowsLabelOptionsBuilder {
     /// Consumes the builder and constructs a [`PivotTableRowsLabelOptions`](crate::types::PivotTableRowsLabelOptions).
     pub fn build(self) -> crate::types::PivotTableRowsLabelOptions {
         crate::types::PivotTableRowsLabelOptions {
-            visibility: self.visibility,
-            custom_label: self.custom_label,
+            visibility: self.visibility
+            ,
+            custom_label: self.custom_label
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCollaborationPrivacyBudgetTemplateOutput {
+pub struct GetCollaborationPrivacyBudgetTemplateOutput  {
     /// <p>Returns the details of the privacy budget template that you requested.</p>
     pub collaboration_privacy_budget_template: ::std::option::Option<crate::types::CollaborationPrivacyBudgetTemplate>,
     _request_id: Option<String>,
 }
-impl GetCollaborationPrivacyBudgetTemplateOutput {
+impl  GetCollaborationPrivacyBudgetTemplateOutput  {
     /// <p>Returns the details of the privacy budget template that you requested.</p>
-    pub fn collaboration_privacy_budget_template(&self) -> ::std::option::Option<&crate::types::CollaborationPrivacyBudgetTemplate> {
+    pub fn collaboration_privacy_budget_template(&self) -> ::std::option::Option<& crate::types::CollaborationPrivacyBudgetTemplate> {
         self.collaboration_privacy_budget_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCollaborationPrivacyBudgetTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCollaborationPrivacyBudgetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationPrivacyBudgetTemplateOutput`](crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateOutput).
     pub fn builder() -> crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder {
@@ -40,31 +40,29 @@ impl GetCollaborationPrivacyBudgetTemplateOutputBuilder {
         self
     }
     /// <p>Returns the details of the privacy budget template that you requested.</p>
-    pub fn set_collaboration_privacy_budget_template(
-        mut self,
-        input: ::std::option::Option<crate::types::CollaborationPrivacyBudgetTemplate>,
-    ) -> Self {
-        self.collaboration_privacy_budget_template = input;
-        self
+    pub fn set_collaboration_privacy_budget_template(mut self, input: ::std::option::Option<crate::types::CollaborationPrivacyBudgetTemplate>) -> Self {
+        self.collaboration_privacy_budget_template = input; self
     }
     /// <p>Returns the details of the privacy budget template that you requested.</p>
     pub fn get_collaboration_privacy_budget_template(&self) -> &::std::option::Option<crate::types::CollaborationPrivacyBudgetTemplate> {
         &self.collaboration_privacy_budget_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCollaborationPrivacyBudgetTemplateOutput`](crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateOutput).
     pub fn build(self) -> crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateOutput {
         crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateOutput {
-            collaboration_privacy_budget_template: self.collaboration_privacy_budget_template,
+            collaboration_privacy_budget_template: self.collaboration_privacy_budget_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

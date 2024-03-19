@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSimulationJobBatchOutput {
+pub struct StartSimulationJobBatchOutput  {
     /// <p>The Amazon Resource Name (arn) of the batch.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the simulation job batch.</p>
@@ -75,18 +75,18 @@ pub struct StartSimulationJobBatchOutput {
     /// <p>The reason the simulation job batch failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
-    pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>,
+    pub failed_requests: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCreateSimulationJobRequest>>,
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
-    pub pending_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>,
+    pub pending_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobRequest>>,
     /// <p>A list of created simulation job request summaries.</p>
-    pub created_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>>,
+    pub created_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobSummary>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl StartSimulationJobBatchOutput {
+impl  StartSimulationJobBatchOutput  {
     /// <p>The Amazon Resource Name (arn) of the batch.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the simulation job batch.</p>
@@ -147,57 +147,60 @@ impl StartSimulationJobBatchOutput {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SimulationJobBatchStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SimulationJobBatchStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The batch policy.</p>
-    pub fn batch_policy(&self) -> ::std::option::Option<&crate::types::BatchPolicy> {
+    pub fn batch_policy(&self) -> ::std::option::Option<& crate::types::BatchPolicy> {
         self.batch_policy.as_ref()
     }
     /// <p>The failure code if the simulation job batch failed.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::SimulationJobBatchErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::SimulationJobBatchErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason the simulation job batch failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
-    pub fn failed_requests(&self) -> &[crate::types::FailedCreateSimulationJobRequest] {
-        self.failed_requests.as_deref().unwrap_or_default()
+    pub fn failed_requests(&self) -> & [crate::types::FailedCreateSimulationJobRequest] {
+        self.failed_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_requests.is_none()`.
-    pub fn pending_requests(&self) -> &[crate::types::SimulationJobRequest] {
-        self.pending_requests.as_deref().unwrap_or_default()
+    pub fn pending_requests(&self) -> & [crate::types::SimulationJobRequest] {
+        self.pending_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of created simulation job request summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created_requests.is_none()`.
-    pub fn created_requests(&self) -> &[crate::types::SimulationJobSummary] {
-        self.created_requests.as_deref().unwrap_or_default()
+    pub fn created_requests(&self) -> & [crate::types::SimulationJobSummary] {
+        self.created_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartSimulationJobBatchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartSimulationJobBatchOutput {
     /// Creates a new builder-style object to manufacture [`StartSimulationJobBatchOutput`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput).
     pub fn builder() -> crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchOutputBuilder {
@@ -216,10 +219,10 @@ pub struct StartSimulationJobBatchOutputBuilder {
     pub(crate) batch_policy: ::std::option::Option<crate::types::BatchPolicy>,
     pub(crate) failure_code: ::std::option::Option<crate::types::SimulationJobBatchErrorCode>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>,
-    pub(crate) pending_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>,
-    pub(crate) created_requests: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCreateSimulationJobRequest>>,
+    pub(crate) pending_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobRequest>>,
+    pub(crate) created_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobSummary>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartSimulationJobBatchOutputBuilder {
@@ -230,8 +233,7 @@ impl StartSimulationJobBatchOutputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the batch.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the batch.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -358,8 +360,7 @@ impl StartSimulationJobBatchOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationJobBatchStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
@@ -429,8 +430,7 @@ impl StartSimulationJobBatchOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -443,8 +443,7 @@ impl StartSimulationJobBatchOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -457,8 +456,7 @@ impl StartSimulationJobBatchOutputBuilder {
     }
     /// <p>The batch policy.</p>
     pub fn set_batch_policy(mut self, input: ::std::option::Option<crate::types::BatchPolicy>) -> Self {
-        self.batch_policy = input;
-        self
+        self.batch_policy = input; self
     }
     /// <p>The batch policy.</p>
     pub fn get_batch_policy(&self) -> &::std::option::Option<crate::types::BatchPolicy> {
@@ -471,8 +469,7 @@ impl StartSimulationJobBatchOutputBuilder {
     }
     /// <p>The failure code if the simulation job batch failed.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::SimulationJobBatchErrorCode>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code if the simulation job batch failed.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::SimulationJobBatchErrorCode> {
@@ -485,8 +482,7 @@ impl StartSimulationJobBatchOutputBuilder {
     }
     /// <p>The reason the simulation job batch failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason the simulation job batch failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -499,17 +495,16 @@ impl StartSimulationJobBatchOutputBuilder {
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
     pub fn failed_requests(mut self, input: crate::types::FailedCreateSimulationJobRequest) -> Self {
         let mut v = self.failed_requests.unwrap_or_default();
-        v.push(input);
-        self.failed_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
-    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>) -> Self {
-        self.failed_requests = input;
-        self
+    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCreateSimulationJobRequest>>) -> Self {
+        self.failed_requests = input; self
     }
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID.</p>
-    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>> {
+    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedCreateSimulationJobRequest>> {
         &self.failed_requests
     }
     /// Appends an item to `pending_requests`.
@@ -519,17 +514,16 @@ impl StartSimulationJobBatchOutputBuilder {
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
     pub fn pending_requests(mut self, input: crate::types::SimulationJobRequest) -> Self {
         let mut v = self.pending_requests.unwrap_or_default();
-        v.push(input);
-        self.pending_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pending_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
-    pub fn set_pending_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>) -> Self {
-        self.pending_requests = input;
-        self
+    pub fn set_pending_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobRequest>>) -> Self {
+        self.pending_requests = input; self
     }
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
-    pub fn get_pending_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>> {
+    pub fn get_pending_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobRequest>> {
         &self.pending_requests
     }
     /// Appends an item to `created_requests`.
@@ -539,17 +533,16 @@ impl StartSimulationJobBatchOutputBuilder {
     /// <p>A list of created simulation job request summaries.</p>
     pub fn created_requests(mut self, input: crate::types::SimulationJobSummary) -> Self {
         let mut v = self.created_requests.unwrap_or_default();
-        v.push(input);
-        self.created_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.created_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of created simulation job request summaries.</p>
-    pub fn set_created_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>>) -> Self {
-        self.created_requests = input;
-        self
+    pub fn set_created_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobSummary>>) -> Self {
+        self.created_requests = input; self
     }
     /// <p>A list of created simulation job request summaries.</p>
-    pub fn get_created_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>> {
+    pub fn get_created_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SimulationJobSummary>> {
         &self.created_requests
     }
     /// Adds a key-value pair to `tags`.
@@ -559,43 +552,54 @@ impl StartSimulationJobBatchOutputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartSimulationJobBatchOutput`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput).
     pub fn build(self) -> crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput {
         crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput {
-            arn: self.arn,
-            status: self.status,
-            created_at: self.created_at,
-            client_request_token: self.client_request_token,
-            batch_policy: self.batch_policy,
-            failure_code: self.failure_code,
-            failure_reason: self.failure_reason,
-            failed_requests: self.failed_requests,
-            pending_requests: self.pending_requests,
-            created_requests: self.created_requests,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            client_request_token: self.client_request_token
+            ,
+            batch_policy: self.batch_policy
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_reason: self.failure_reason
+            ,
+            failed_requests: self.failed_requests
+            ,
+            pending_requests: self.pending_requests
+            ,
+            created_requests: self.created_requests
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Contains configurations for protected query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MembershipProtectedQueryResultConfiguration {
+pub struct MembershipProtectedQueryResultConfiguration  {
     /// <p>Configuration for protected query results.</p>
     pub output_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryOutputConfiguration>,
     /// <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected query results to the result location, given by the member who can receive results.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl MembershipProtectedQueryResultConfiguration {
+impl  MembershipProtectedQueryResultConfiguration  {
     /// <p>Configuration for protected query results.</p>
-    pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryOutputConfiguration> {
+    pub fn output_configuration(&self) -> ::std::option::Option<& crate::types::MembershipProtectedQueryOutputConfiguration> {
         self.output_configuration.as_ref()
     }
     /// <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected query results to the result location, given by the member who can receive results.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl MembershipProtectedQueryResultConfigurationBuilder {
     }
     /// <p>Configuration for protected query results.</p>
     pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::MembershipProtectedQueryOutputConfiguration>) -> Self {
-        self.output_configuration = input;
-        self
+        self.output_configuration = input; self
     }
     /// <p>Configuration for protected query results.</p>
     pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryOutputConfiguration> {
@@ -56,8 +55,7 @@ impl MembershipProtectedQueryResultConfigurationBuilder {
     }
     /// <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected query results to the result location, given by the member who can receive results.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The unique ARN for an IAM role that is used by Clean Rooms to write protected query results to the result location, given by the member who can receive results.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl MembershipProtectedQueryResultConfigurationBuilder {
     /// Consumes the builder and constructs a [`MembershipProtectedQueryResultConfiguration`](crate::types::MembershipProtectedQueryResultConfiguration).
     pub fn build(self) -> crate::types::MembershipProtectedQueryResultConfiguration {
         crate::types::MembershipProtectedQueryResultConfiguration {
-            output_configuration: self.output_configuration,
-            role_arn: self.role_arn,
+            output_configuration: self.output_configuration
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

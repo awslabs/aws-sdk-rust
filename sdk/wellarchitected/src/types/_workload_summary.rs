@@ -3,7 +3,7 @@
 /// <p>A workload summary return object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkloadSummary {
+pub struct WorkloadSummary  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
@@ -17,61 +17,63 @@ pub struct WorkloadSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lenses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
     /// <p>The improvement status for a workload.</p>
     pub improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
     /// <p>Profile associated with a workload.</p>
-    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    pub profiles: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
 }
-impl WorkloadSummary {
+impl  WorkloadSummary  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The ARN for the workload.</p>
-    pub fn workload_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workload_arn(&self) -> ::std::option::Option<& str> {
         self.workload_arn.as_deref()
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
-    pub fn lenses(&self) -> &[::std::string::String] {
-        self.lenses.as_deref().unwrap_or_default()
+    pub fn lenses(&self) -> & [::std::string::String] {
+        self.lenses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn improvement_status(&self) -> ::std::option::Option<&crate::types::WorkloadImprovementStatus> {
+    pub fn improvement_status(&self) -> ::std::option::Option<& crate::types::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
     }
     /// <p>Profile associated with a workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
-    pub fn profiles(&self) -> &[crate::types::WorkloadProfile] {
-        self.profiles.as_deref().unwrap_or_default()
+    pub fn profiles(&self) -> & [crate::types::WorkloadProfile] {
+        self.profiles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn prioritized_risk_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Risk, i32>> {
         self.prioritized_risk_counts.as_ref()
     }
 }
@@ -91,11 +93,11 @@ pub struct WorkloadSummaryBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) lenses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
     pub(crate) improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
-    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
-    pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>>,
+    pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
 }
 impl WorkloadSummaryBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -105,8 +107,7 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +120,7 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>The ARN for the workload.</p>
     pub fn set_workload_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_arn = input;
-        self
+        self.workload_arn = input; self
     }
     /// <p>The ARN for the workload.</p>
     pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +135,7 @@ impl WorkloadSummaryBuilder {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -150,8 +149,7 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +162,7 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -179,19 +176,18 @@ impl WorkloadSummaryBuilder {
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn lenses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
-        v.push(input.into());
-        self.lenses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lenses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lenses = input;
-        self
+    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lenses = input; self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lenses
     }
     /// Adds a key-value pair to `risk_counts`.
@@ -201,17 +197,16 @@ impl WorkloadSummaryBuilder {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.risk_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.risk_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
-        self.risk_counts = input;
-        self
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>) -> Self {
+        self.risk_counts = input; self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// <p>The improvement status for a workload.</p>
@@ -221,8 +216,7 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>The improvement status for a workload.</p>
     pub fn set_improvement_status(mut self, input: ::std::option::Option<crate::types::WorkloadImprovementStatus>) -> Self {
-        self.improvement_status = input;
-        self
+        self.improvement_status = input; self
     }
     /// <p>The improvement status for a workload.</p>
     pub fn get_improvement_status(&self) -> &::std::option::Option<crate::types::WorkloadImprovementStatus> {
@@ -235,17 +229,16 @@ impl WorkloadSummaryBuilder {
     /// <p>Profile associated with a workload.</p>
     pub fn profiles(mut self, input: crate::types::WorkloadProfile) -> Self {
         let mut v = self.profiles.unwrap_or_default();
-        v.push(input);
-        self.profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Profile associated with a workload.</p>
-    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>) -> Self {
-        self.profiles = input;
-        self
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>>) -> Self {
+        self.profiles = input; self
     }
     /// <p>Profile associated with a workload.</p>
-    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>> {
         &self.profiles
     }
     /// Adds a key-value pair to `prioritized_risk_counts`.
@@ -255,32 +248,42 @@ impl WorkloadSummaryBuilder {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn prioritized_risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.prioritized_risk_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_prioritized_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
-        self.prioritized_risk_counts = input;
-        self
+    pub fn set_prioritized_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>) -> Self {
+        self.prioritized_risk_counts = input; self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>> {
         &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`WorkloadSummary`](crate::types::WorkloadSummary).
     pub fn build(self) -> crate::types::WorkloadSummary {
         crate::types::WorkloadSummary {
-            workload_id: self.workload_id,
-            workload_arn: self.workload_arn,
-            workload_name: self.workload_name,
-            owner: self.owner,
-            updated_at: self.updated_at,
-            lenses: self.lenses,
-            risk_counts: self.risk_counts,
-            improvement_status: self.improvement_status,
-            profiles: self.profiles,
-            prioritized_risk_counts: self.prioritized_risk_counts,
+            workload_id: self.workload_id
+            ,
+            workload_arn: self.workload_arn
+            ,
+            workload_name: self.workload_name
+            ,
+            owner: self.owner
+            ,
+            updated_at: self.updated_at
+            ,
+            lenses: self.lenses
+            ,
+            risk_counts: self.risk_counts
+            ,
+            improvement_status: self.improvement_status
+            ,
+            profiles: self.profiles
+            ,
+            prioritized_risk_counts: self.prioritized_risk_counts
+            ,
         }
     }
 }
+

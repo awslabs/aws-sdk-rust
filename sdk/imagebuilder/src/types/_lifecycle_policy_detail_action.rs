@@ -3,19 +3,19 @@
 /// <p>Contains selection criteria for the lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyDetailAction {
+pub struct LifecyclePolicyDetailAction  {
     /// <p>Specifies the lifecycle action to take.</p>
     pub r#type: crate::types::LifecyclePolicyDetailActionType,
     /// <p>Specifies the resources that the lifecycle policy applies to.</p>
     pub include_resources: ::std::option::Option<crate::types::LifecyclePolicyDetailActionIncludeResources>,
 }
-impl LifecyclePolicyDetailAction {
+impl  LifecyclePolicyDetailAction  {
     /// <p>Specifies the lifecycle action to take.</p>
-    pub fn r#type(&self) -> &crate::types::LifecyclePolicyDetailActionType {
+    pub fn r#type(&self) -> & crate::types::LifecyclePolicyDetailActionType {
         &self.r#type
     }
     /// <p>Specifies the resources that the lifecycle policy applies to.</p>
-    pub fn include_resources(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetailActionIncludeResources> {
+    pub fn include_resources(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyDetailActionIncludeResources> {
         self.include_resources.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl LifecyclePolicyDetailActionBuilder {
     }
     /// <p>Specifies the lifecycle action to take.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the lifecycle action to take.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailActionType> {
@@ -56,8 +55,7 @@ impl LifecyclePolicyDetailActionBuilder {
     }
     /// <p>Specifies the resources that the lifecycle policy applies to.</p>
     pub fn set_include_resources(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailActionIncludeResources>) -> Self {
-        self.include_resources = input;
-        self
+        self.include_resources = input; self
     }
     /// <p>Specifies the resources that the lifecycle policy applies to.</p>
     pub fn get_include_resources(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailActionIncludeResources> {
@@ -67,14 +65,17 @@ impl LifecyclePolicyDetailActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::LifecyclePolicyDetailActionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyDetailAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LifecyclePolicyDetailAction {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building LifecyclePolicyDetailAction",
-                )
-            })?,
-            include_resources: self.include_resources,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LifecyclePolicyDetailAction {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building LifecyclePolicyDetailAction")
+                    )?
+                ,
+                include_resources: self.include_resources
+                ,
+            }
+        )
     }
 }
+

@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMonitorInput {
+pub struct CreateMonitorInput  {
     /// <p>The name identifying the monitor. It can contain only letters, underscores (_), or dashes (-), and can be up to 255 characters.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Displays a list of all of the probes created for a monitor.</p>
-    pub probes: ::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>>,
+    pub probes: ::std::option::Option<::std::vec::Vec::<crate::types::CreateMonitorProbeInput>>,
     /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub aggregation_period: ::std::option::Option<i64>,
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs created and assigned to the monitor.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateMonitorInput {
+impl  CreateMonitorInput  {
     /// <p>The name identifying the monitor. It can contain only letters, underscores (_), or dashes (-), and can be up to 255 characters.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>Displays a list of all of the probes created for a monitor.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.probes.is_none()`.
-    pub fn probes(&self) -> &[crate::types::CreateMonitorProbeInput] {
-        self.probes.as_deref().unwrap_or_default()
+    pub fn probes(&self) -> & [crate::types::CreateMonitorProbeInput] {
+        self.probes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub fn aggregation_period(&self) -> ::std::option::Option<i64> {
         self.aggregation_period
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The list of key-value pairs created and assigned to the monitor.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -50,10 +51,10 @@ impl CreateMonitorInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
-    pub(crate) probes: ::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>>,
+    pub(crate) probes: ::std::option::Option<::std::vec::Vec::<crate::types::CreateMonitorProbeInput>>,
     pub(crate) aggregation_period: ::std::option::Option<i64>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateMonitorInputBuilder {
     /// <p>The name identifying the monitor. It can contain only letters, underscores (_), or dashes (-), and can be up to 255 characters.</p>
@@ -64,8 +65,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>The name identifying the monitor. It can contain only letters, underscores (_), or dashes (-), and can be up to 255 characters.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name identifying the monitor. It can contain only letters, underscores (_), or dashes (-), and can be up to 255 characters.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl CreateMonitorInputBuilder {
     /// <p>Displays a list of all of the probes created for a monitor.</p>
     pub fn probes(mut self, input: crate::types::CreateMonitorProbeInput) -> Self {
         let mut v = self.probes.unwrap_or_default();
-        v.push(input);
-        self.probes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.probes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Displays a list of all of the probes created for a monitor.</p>
-    pub fn set_probes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>>) -> Self {
-        self.probes = input;
-        self
+    pub fn set_probes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateMonitorProbeInput>>) -> Self {
+        self.probes = input; self
     }
     /// <p>Displays a list of all of the probes created for a monitor.</p>
-    pub fn get_probes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>> {
+    pub fn get_probes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateMonitorProbeInput>> {
         &self.probes
     }
     /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
@@ -98,8 +97,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
@@ -112,8 +110,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,29 +123,34 @@ impl CreateMonitorInputBuilder {
     /// <p>The list of key-value pairs created and assigned to the monitor.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs created and assigned to the monitor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value pairs created and assigned to the monitor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_monitor::CreateMonitorInput {
-            monitor_name: self.monitor_name,
-            probes: self.probes,
-            aggregation_period: self.aggregation_period,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_monitor::CreateMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+                probes: self.probes
+                ,
+                aggregation_period: self.aggregation_period
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

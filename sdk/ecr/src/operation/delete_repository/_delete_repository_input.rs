@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRepositoryInput {
+pub struct DeleteRepositoryInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to delete.</p>
@@ -10,13 +10,13 @@ pub struct DeleteRepositoryInput {
     /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl DeleteRepositoryInput {
+impl  DeleteRepositoryInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository to delete.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
@@ -47,8 +47,7 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The name of the repository to delete.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository to delete.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_repository::DeleteRepositoryInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsEnvironmentVariable {
+pub struct EcsEnvironmentVariable  {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl EcsEnvironmentVariable {
+impl  EcsEnvironmentVariable  {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EcsEnvironmentVariableBuilder {
     }
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EcsEnvironmentVariableBuilder {
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EcsEnvironmentVariableBuilder {
     /// Consumes the builder and constructs a [`EcsEnvironmentVariable`](crate::types::EcsEnvironmentVariable).
     pub fn build(self) -> crate::types::EcsEnvironmentVariable {
         crate::types::EcsEnvironmentVariable {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

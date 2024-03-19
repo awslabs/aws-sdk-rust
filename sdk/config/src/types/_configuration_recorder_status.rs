@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationRecorderStatus {
+pub struct ConfigurationRecorderStatus  {
     /// <p>The name of the configuration recorder.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time the recorder was last started.</p>
@@ -23,17 +23,17 @@ pub struct ConfigurationRecorderStatus {
     /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
     pub last_status_change_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ConfigurationRecorderStatus {
+impl  ConfigurationRecorderStatus  {
     /// <p>The name of the configuration recorder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the recorder was last started.</p>
-    pub fn last_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_start_time.as_ref()
     }
     /// <p>The time the recorder was last stopped.</p>
-    pub fn last_stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_stop_time.as_ref()
     }
     /// <p>Specifies whether or not the recorder is currently recording.</p>
@@ -41,19 +41,19 @@ impl ConfigurationRecorderStatus {
         self.recording
     }
     /// <p>The status of the latest recording event processed by the recorder.</p>
-    pub fn last_status(&self) -> ::std::option::Option<&crate::types::RecorderStatus> {
+    pub fn last_status(&self) -> ::std::option::Option<& crate::types::RecorderStatus> {
         self.last_status.as_ref()
     }
     /// <p>The latest error code from when the recorder last failed.</p>
-    pub fn last_error_code(&self) -> ::std::option::Option<&str> {
+    pub fn last_error_code(&self) -> ::std::option::Option<& str> {
         self.last_error_code.as_deref()
     }
     /// <p>The latest error message from when the recorder last failed.</p>
-    pub fn last_error_message(&self) -> ::std::option::Option<&str> {
+    pub fn last_error_message(&self) -> ::std::option::Option<& str> {
         self.last_error_message.as_deref()
     }
     /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
-    pub fn last_status_change_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_status_change_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_status_change_time.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The name of the configuration recorder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration recorder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The time the recorder was last started.</p>
     pub fn set_last_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_start_time = input;
-        self
+        self.last_start_time = input; self
     }
     /// <p>The time the recorder was last started.</p>
     pub fn get_last_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,8 +111,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The time the recorder was last stopped.</p>
     pub fn set_last_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_stop_time = input;
-        self
+        self.last_stop_time = input; self
     }
     /// <p>The time the recorder was last stopped.</p>
     pub fn get_last_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +124,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>Specifies whether or not the recorder is currently recording.</p>
     pub fn set_recording(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.recording = input;
-        self
+        self.recording = input; self
     }
     /// <p>Specifies whether or not the recorder is currently recording.</p>
     pub fn get_recording(&self) -> &::std::option::Option<bool> {
@@ -141,8 +137,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The status of the latest recording event processed by the recorder.</p>
     pub fn set_last_status(mut self, input: ::std::option::Option<crate::types::RecorderStatus>) -> Self {
-        self.last_status = input;
-        self
+        self.last_status = input; self
     }
     /// <p>The status of the latest recording event processed by the recorder.</p>
     pub fn get_last_status(&self) -> &::std::option::Option<crate::types::RecorderStatus> {
@@ -155,8 +150,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The latest error code from when the recorder last failed.</p>
     pub fn set_last_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_error_code = input;
-        self
+        self.last_error_code = input; self
     }
     /// <p>The latest error code from when the recorder last failed.</p>
     pub fn get_last_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +163,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The latest error message from when the recorder last failed.</p>
     pub fn set_last_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_error_message = input;
-        self
+        self.last_error_message = input; self
     }
     /// <p>The latest error message from when the recorder last failed.</p>
     pub fn get_last_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +176,7 @@ impl ConfigurationRecorderStatusBuilder {
     }
     /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
     pub fn set_last_status_change_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_status_change_time = input;
-        self
+        self.last_status_change_time = input; self
     }
     /// <p>The time of the latest change in status of an recording event processed by the recorder.</p>
     pub fn get_last_status_change_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -193,14 +185,24 @@ impl ConfigurationRecorderStatusBuilder {
     /// Consumes the builder and constructs a [`ConfigurationRecorderStatus`](crate::types::ConfigurationRecorderStatus).
     pub fn build(self) -> crate::types::ConfigurationRecorderStatus {
         crate::types::ConfigurationRecorderStatus {
-            name: self.name,
-            last_start_time: self.last_start_time,
-            last_stop_time: self.last_stop_time,
-            recording: self.recording.unwrap_or_default(),
-            last_status: self.last_status,
-            last_error_code: self.last_error_code,
-            last_error_message: self.last_error_message,
-            last_status_change_time: self.last_status_change_time,
+            name: self.name
+            ,
+            last_start_time: self.last_start_time
+            ,
+            last_stop_time: self.last_stop_time
+            ,
+            recording: self.recording
+                .unwrap_or_default()
+            ,
+            last_status: self.last_status
+            ,
+            last_error_code: self.last_error_code
+            ,
+            last_error_message: self.last_error_message
+            ,
+            last_status_change_time: self.last_status_change_time
+            ,
         }
     }
 }
+

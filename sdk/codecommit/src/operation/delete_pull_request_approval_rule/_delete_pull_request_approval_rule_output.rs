@@ -2,27 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePullRequestApprovalRuleOutput {
+pub struct DeletePullRequestApprovalRuleOutput  {
     /// <p>The ID of the deleted approval rule.</p><note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub approval_rule_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeletePullRequestApprovalRuleOutput {
+impl  DeletePullRequestApprovalRuleOutput  {
     /// <p>The ID of the deleted approval rule.</p><note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
-    pub fn approval_rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.approval_rule_id.deref()
+    pub fn approval_rule_id(&self) -> & str {
+        use std::ops::Deref; self.approval_rule_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePullRequestApprovalRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePullRequestApprovalRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
     pub fn builder() -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleOutputBuilder {
@@ -50,8 +49,7 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
     pub fn set_approval_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_id = input;
-        self
+        self.approval_rule_id = input; self
     }
     /// <p>The ID of the deleted approval rule.</p><note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
@@ -60,31 +58,28 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
         &self.approval_rule_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`approval_rule_id`](crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleOutputBuilder::approval_rule_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
-            approval_rule_id: self.approval_rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "approval_rule_id",
-                    "approval_rule_id was not specified but it is required when building DeletePullRequestApprovalRuleOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
+                approval_rule_id: self.approval_rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("approval_rule_id", "approval_rule_id was not specified but it is required when building DeletePullRequestApprovalRuleOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

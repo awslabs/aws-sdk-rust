@@ -3,15 +3,14 @@
 /// <p>Information about a workflow definition file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowDefinition {
+pub struct WorkflowDefinition  {
     /// <p>The path to the workflow definition file stored in the source repository for the project, including the file name.</p>
     pub path: ::std::string::String,
 }
-impl WorkflowDefinition {
+impl  WorkflowDefinition  {
     /// <p>The path to the workflow definition file stored in the source repository for the project, including the file name.</p>
-    pub fn path(&self) -> &str {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & str {
+        use std::ops::Deref; self.path.deref()
     }
 }
 impl WorkflowDefinition {
@@ -36,8 +35,7 @@ impl WorkflowDefinitionBuilder {
     }
     /// <p>The path to the workflow definition file stored in the source repository for the project, including the file name.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path to the workflow definition file stored in the source repository for the project, including the file name.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl WorkflowDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::WorkflowDefinitionBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowDefinition {
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building WorkflowDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowDefinition {
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building WorkflowDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

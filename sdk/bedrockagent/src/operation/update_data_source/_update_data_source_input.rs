@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSourceInput {
+pub struct UpdateDataSourceInput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// Identifier for a resource.
@@ -18,33 +18,33 @@ pub struct UpdateDataSourceInput {
     /// Configures ingestion for a vector knowledge base
     pub vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
 }
-impl UpdateDataSourceInput {
+impl  UpdateDataSourceInput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// Name for a resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Specifies a raw data source location to ingest.
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// Server-side encryption configuration.
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// Configures ingestion for a vector knowledge base
-    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
+    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<& crate::types::VectorIngestionConfiguration> {
         self.vector_ingestion_configuration.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Name for a resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for a resource.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +131,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Specifies a raw data source location to ingest.
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// Specifies a raw data source location to ingest.
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
@@ -149,8 +144,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Server-side encryption configuration.
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// Server-side encryption configuration.
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
@@ -163,25 +157,32 @@ impl UpdateDataSourceInputBuilder {
     }
     /// Configures ingestion for a vector knowledge base
     pub fn set_vector_ingestion_configuration(mut self, input: ::std::option::Option<crate::types::VectorIngestionConfiguration>) -> Self {
-        self.vector_ingestion_configuration = input;
-        self
+        self.vector_ingestion_configuration = input; self
     }
     /// Configures ingestion for a vector knowledge base
     pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
         &self.vector_ingestion_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
-            knowledge_base_id: self.knowledge_base_id,
-            data_source_id: self.data_source_id,
-            name: self.name,
-            description: self.description,
-            data_source_configuration: self.data_source_configuration,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            vector_ingestion_configuration: self.vector_ingestion_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_source::UpdateDataSourceInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                vector_ingestion_configuration: self.vector_ingestion_configuration
+                ,
+            }
+        )
     }
 }
+

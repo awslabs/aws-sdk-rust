@@ -3,7 +3,7 @@
 /// <p>The revision of an inventory asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetRevision {
+pub struct AssetRevision  {
     /// <p>The Amazon DataZone user who created the inventory asset.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the inventory asset revision.</p>
@@ -15,25 +15,25 @@ pub struct AssetRevision {
     /// <p>The timestamp of when an inventory asset revison was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AssetRevision {
+impl  AssetRevision  {
     /// <p>The Amazon DataZone user who created the inventory asset.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the inventory asset revision.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision details of the inventory asset.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The Amazon DataZone user who created the asset revision.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The timestamp of when an inventory asset revison was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl AssetRevisionBuilder {
     }
     /// <p>The Amazon DataZone user who created the inventory asset.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The Amazon DataZone user who created the inventory asset.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl AssetRevisionBuilder {
     }
     /// <p>The identifier of the inventory asset revision.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the inventory asset revision.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl AssetRevisionBuilder {
     }
     /// <p>The revision details of the inventory asset.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision details of the inventory asset.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl AssetRevisionBuilder {
     }
     /// <p>The Amazon DataZone user who created the asset revision.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the asset revision.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl AssetRevisionBuilder {
     }
     /// <p>The timestamp of when an inventory asset revison was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when an inventory asset revison was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl AssetRevisionBuilder {
     /// Consumes the builder and constructs a [`AssetRevision`](crate::types::AssetRevision).
     pub fn build(self) -> crate::types::AssetRevision {
         crate::types::AssetRevision {
-            domain_id: self.domain_id,
-            id: self.id,
-            revision: self.revision,
-            created_by: self.created_by,
-            created_at: self.created_at,
+            domain_id: self.domain_id
+            ,
+            id: self.id
+            ,
+            revision: self.revision
+            ,
+            created_by: self.created_by
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDocumentOutput {
+pub struct GetDocumentOutput  {
     /// <p>The metadata details of the document.</p>
     pub metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The custom metadata on the document.</p>
-    pub custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub custom_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetDocumentOutput {
+impl  GetDocumentOutput  {
     /// <p>The metadata details of the document.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::DocumentMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The custom metadata on the document.</p>
-    pub fn custom_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn custom_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.custom_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDocumentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDocumentOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput).
     pub fn builder() -> crate::operation::get_document::builders::GetDocumentOutputBuilder {
@@ -36,7 +36,7 @@ impl GetDocumentOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDocumentOutputBuilder {
@@ -47,8 +47,7 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The metadata details of the document.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata details of the document.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
@@ -59,43 +58,38 @@ impl GetDocumentOutputBuilder {
     /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).
     ///
     /// <p>The custom metadata on the document.</p>
-    pub fn custom_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.custom_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.custom_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The custom metadata on the document.</p>
-    pub fn set_custom_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.custom_metadata = input;
-        self
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.custom_metadata = input; self
     }
     /// <p>The custom metadata on the document.</p>
-    pub fn get_custom_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.custom_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput).
     pub fn build(self) -> crate::operation::get_document::GetDocumentOutput {
         crate::operation::get_document::GetDocumentOutput {
-            metadata: self.metadata,
-            custom_metadata: self.custom_metadata,
+            metadata: self.metadata
+            ,
+            custom_metadata: self.custom_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

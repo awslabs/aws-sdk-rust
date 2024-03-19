@@ -3,20 +3,19 @@
 /// <p>Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> API to provide click information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClickFeedback {
+pub struct ClickFeedback  {
     /// <p>The identifier of the search result that was clicked.</p>
     pub result_id: ::std::string::String,
     /// <p>The Unix timestamp when the result was clicked.</p>
     pub click_time: ::aws_smithy_types::DateTime,
 }
-impl ClickFeedback {
+impl  ClickFeedback  {
     /// <p>The identifier of the search result that was clicked.</p>
-    pub fn result_id(&self) -> &str {
-        use std::ops::Deref;
-        self.result_id.deref()
+    pub fn result_id(&self) -> & str {
+        use std::ops::Deref; self.result_id.deref()
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn click_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn click_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.click_time
     }
 }
@@ -43,8 +42,7 @@ impl ClickFeedbackBuilder {
     }
     /// <p>The identifier of the search result that was clicked.</p>
     pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// <p>The identifier of the search result that was clicked.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ClickFeedbackBuilder {
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn set_click_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.click_time = input;
-        self
+        self.click_time = input; self
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn get_click_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,19 +67,20 @@ impl ClickFeedbackBuilder {
     /// - [`result_id`](crate::types::builders::ClickFeedbackBuilder::result_id)
     /// - [`click_time`](crate::types::builders::ClickFeedbackBuilder::click_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ClickFeedback, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ClickFeedback {
-            result_id: self.result_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "result_id",
-                    "result_id was not specified but it is required when building ClickFeedback",
-                )
-            })?,
-            click_time: self.click_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "click_time",
-                    "click_time was not specified but it is required when building ClickFeedback",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ClickFeedback {
+                result_id: self.result_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("result_id", "result_id was not specified but it is required when building ClickFeedback")
+                    )?
+                ,
+                click_time: self.click_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("click_time", "click_time was not specified but it is required when building ClickFeedback")
+                    )?
+                ,
+            }
+        )
     }
 }
+

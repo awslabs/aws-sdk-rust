@@ -3,7 +3,7 @@
 /// <p>Contains status components of a Gremlin query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GremlinQueryStatusAttributes {
+pub struct GremlinQueryStatusAttributes  {
     /// <p>The status message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP response code returned fro the Gremlin query request..</p>
@@ -11,9 +11,9 @@ pub struct GremlinQueryStatusAttributes {
     /// <p>Attributes of the Gremlin query status.</p>
     pub attributes: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl GremlinQueryStatusAttributes {
+impl  GremlinQueryStatusAttributes  {
     /// <p>The status message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The HTTP response code returned fro the Gremlin query request..</p>
@@ -21,7 +21,7 @@ impl GremlinQueryStatusAttributes {
         self.code
     }
     /// <p>Attributes of the Gremlin query status.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.attributes.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GremlinQueryStatusAttributesBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GremlinQueryStatusAttributesBuilder {
     }
     /// <p>The HTTP response code returned fro the Gremlin query request..</p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The HTTP response code returned fro the Gremlin query request..</p>
     pub fn get_code(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl GremlinQueryStatusAttributesBuilder {
     }
     /// <p>Attributes of the Gremlin query status.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.attributes = input;
-        self
+        self.attributes = input; self
     }
     /// <p>Attributes of the Gremlin query status.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -86,9 +83,13 @@ impl GremlinQueryStatusAttributesBuilder {
     /// Consumes the builder and constructs a [`GremlinQueryStatusAttributes`](crate::types::GremlinQueryStatusAttributes).
     pub fn build(self) -> crate::types::GremlinQueryStatusAttributes {
         crate::types::GremlinQueryStatusAttributes {
-            message: self.message,
-            code: self.code,
-            attributes: self.attributes,
+            message: self.message
+            ,
+            code: self.code
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

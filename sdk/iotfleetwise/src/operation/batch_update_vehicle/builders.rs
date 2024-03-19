@@ -5,23 +5,20 @@ pub use crate::operation::batch_update_vehicle::_batch_update_vehicle_input::Bat
 
 impl BatchUpdateVehicleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_update_vehicle();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_update_vehicle();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchUpdateVehicle`.
-///
+/// 
 /// <p>Updates a group, or batch, of vehicles.</p><note>
 /// <p>You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl BatchUpdateVehicleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder,
+                    inner: crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-    > for BatchUpdateVehicleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
+                    crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
+                > for BatchUpdateVehicleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
+                        crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchUpdateVehicleFluentBuilder {
     /// Creates a new `BatchUpdateVehicle`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl BatchUpdateVehicleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_update_vehicle::BatchUpdateVehicle::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_update_vehicle::BatchUpdateVehicle::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_vehicle::BatchUpdateVehicleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_update_vehicle::BatchUpdateVehicle::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_update_vehicle::BatchUpdateVehicle::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput, crate::operation::batch_update_vehicle::BatchUpdateVehicleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `vehicles`.
     ///
     /// To override the contents of this collection use [`set_vehicles`](Self::set_vehicles).
@@ -121,12 +108,13 @@ impl BatchUpdateVehicleFluentBuilder {
         self
     }
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>) -> Self {
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleRequestItem>>) -> Self {
         self.inner = self.inner.set_vehicles(input);
         self
     }
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleRequestItem>> {
         self.inner.get_vehicles()
     }
 }
+

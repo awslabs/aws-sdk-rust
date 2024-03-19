@@ -3,7 +3,7 @@
 /// <p>Contains the details of a single Amazon SNS message along with an <code>Id</code> that identifies a message within the batch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishBatchRequestEntry {
+pub struct PublishBatchRequestEntry  {
     /// <p>An identifier for the message in this batch.</p><note>
     /// <p>The <code>Ids</code> of a batch request must be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
@@ -23,7 +23,7 @@ pub struct PublishBatchRequestEntry {
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
     pub message_structure: ::std::option::Option<::std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
-    pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
+    pub message_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
     /// <ul>
@@ -60,22 +60,20 @@ pub struct PublishBatchRequestEntry {
     /// </important>
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
-impl PublishBatchRequestEntry {
+impl  PublishBatchRequestEntry  {
     /// <p>An identifier for the message in this batch.</p><note>
     /// <p>The <code>Ids</code> of a batch request must be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The body of the message.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>The subject of the batch message.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
@@ -86,13 +84,11 @@ impl PublishBatchRequestEntry {
     /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
-    pub fn message_structure(&self) -> ::std::option::Option<&str> {
+    pub fn message_structure(&self) -> ::std::option::Option<& str> {
         self.message_structure.as_deref()
     }
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
-    pub fn message_attributes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
+    pub fn message_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>> {
         self.message_attributes.as_ref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
@@ -121,7 +117,7 @@ impl PublishBatchRequestEntry {
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
     /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
-    pub fn message_deduplication_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_deduplication_id(&self) -> ::std::option::Option<& str> {
         self.message_deduplication_id.as_deref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
@@ -131,7 +127,7 @@ impl PublishBatchRequestEntry {
     /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p><important>
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
-    pub fn message_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_group_id(&self) -> ::std::option::Option<& str> {
         self.message_group_id.as_deref()
     }
 }
@@ -150,7 +146,7 @@ pub struct PublishBatchRequestEntryBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) message_structure: ::std::option::Option<::std::string::String>,
-    pub(crate) message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
+    pub(crate) message_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>,
     pub(crate) message_deduplication_id: ::std::option::Option<::std::string::String>,
     pub(crate) message_group_id: ::std::option::Option<::std::string::String>,
 }
@@ -169,8 +165,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>An identifier for the message in this batch.</p><note>
     /// <p>The <code>Ids</code> of a batch request must be unique within a request.</p>
@@ -187,8 +182,7 @@ impl PublishBatchRequestEntryBuilder {
     }
     /// <p>The body of the message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The body of the message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +195,7 @@ impl PublishBatchRequestEntryBuilder {
     }
     /// <p>The subject of the batch message.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject of the batch message.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +222,7 @@ impl PublishBatchRequestEntryBuilder {
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
     pub fn set_message_structure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_structure = input;
-        self
+        self.message_structure = input; self
     }
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
     /// <ul>
@@ -250,22 +242,16 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
     pub fn message_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
         let mut hash_map = self.message_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.message_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.message_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
-    pub fn set_message_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
-    ) -> Self {
-        self.message_attributes = input;
-        self
+    pub fn set_message_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>) -> Self {
+        self.message_attributes = input; self
     }
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
-    pub fn get_message_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
+    pub fn get_message_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>> {
         &self.message_attributes
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
@@ -325,8 +311,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
     /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
     pub fn set_message_deduplication_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_deduplication_id = input;
-        self
+        self.message_deduplication_id = input; self
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
@@ -376,8 +361,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
     pub fn set_message_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_group_id = input;
-        self
+        self.message_group_id = input; self
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
@@ -394,24 +378,30 @@ impl PublishBatchRequestEntryBuilder {
     /// - [`id`](crate::types::builders::PublishBatchRequestEntryBuilder::id)
     /// - [`message`](crate::types::builders::PublishBatchRequestEntryBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::PublishBatchRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PublishBatchRequestEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PublishBatchRequestEntry",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building PublishBatchRequestEntry",
-                )
-            })?,
-            subject: self.subject,
-            message_structure: self.message_structure,
-            message_attributes: self.message_attributes,
-            message_deduplication_id: self.message_deduplication_id,
-            message_group_id: self.message_group_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PublishBatchRequestEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PublishBatchRequestEntry")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building PublishBatchRequestEntry")
+                    )?
+                ,
+                subject: self.subject
+                ,
+                message_structure: self.message_structure
+                ,
+                message_attributes: self.message_attributes
+                ,
+                message_deduplication_id: self.message_deduplication_id
+                ,
+                message_group_id: self.message_group_id
+                ,
+            }
+        )
     }
 }
+

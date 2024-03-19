@@ -3,17 +3,17 @@
 /// <p>The streaming configuration associated with an Amazon Chime SDK Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingConfiguration {
+pub struct StreamingConfiguration  {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
     pub data_retention_in_hours: i32,
     /// <p>When true, streaming to Kinesis is off.</p>
     pub disabled: bool,
     /// <p>The streaming notification targets.</p>
-    pub streaming_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+    pub streaming_notification_targets: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingNotificationTarget>>,
     /// <p>The call analytics configuration.</p>
     pub media_insights_configuration: ::std::option::Option<crate::types::MediaInsightsConfiguration>,
 }
-impl StreamingConfiguration {
+impl  StreamingConfiguration  {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
     pub fn data_retention_in_hours(&self) -> i32 {
         self.data_retention_in_hours
@@ -23,13 +23,14 @@ impl StreamingConfiguration {
         self.disabled
     }
     /// <p>The streaming notification targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_notification_targets.is_none()`.
-    pub fn streaming_notification_targets(&self) -> &[crate::types::StreamingNotificationTarget] {
-        self.streaming_notification_targets.as_deref().unwrap_or_default()
+    pub fn streaming_notification_targets(&self) -> & [crate::types::StreamingNotificationTarget] {
+        self.streaming_notification_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The call analytics configuration.</p>
-    pub fn media_insights_configuration(&self) -> ::std::option::Option<&crate::types::MediaInsightsConfiguration> {
+    pub fn media_insights_configuration(&self) -> ::std::option::Option<& crate::types::MediaInsightsConfiguration> {
         self.media_insights_configuration.as_ref()
     }
 }
@@ -46,7 +47,7 @@ impl StreamingConfiguration {
 pub struct StreamingConfigurationBuilder {
     pub(crate) data_retention_in_hours: ::std::option::Option<i32>,
     pub(crate) disabled: ::std::option::Option<bool>,
-    pub(crate) streaming_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+    pub(crate) streaming_notification_targets: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingNotificationTarget>>,
     pub(crate) media_insights_configuration: ::std::option::Option<crate::types::MediaInsightsConfiguration>,
 }
 impl StreamingConfigurationBuilder {
@@ -58,8 +59,7 @@ impl StreamingConfigurationBuilder {
     }
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
     pub fn set_data_retention_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.data_retention_in_hours = input;
-        self
+        self.data_retention_in_hours = input; self
     }
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
     pub fn get_data_retention_in_hours(&self) -> &::std::option::Option<i32> {
@@ -73,8 +73,7 @@ impl StreamingConfigurationBuilder {
     }
     /// <p>When true, streaming to Kinesis is off.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>When true, streaming to Kinesis is off.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
@@ -87,20 +86,16 @@ impl StreamingConfigurationBuilder {
     /// <p>The streaming notification targets.</p>
     pub fn streaming_notification_targets(mut self, input: crate::types::StreamingNotificationTarget) -> Self {
         let mut v = self.streaming_notification_targets.unwrap_or_default();
-        v.push(input);
-        self.streaming_notification_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streaming_notification_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The streaming notification targets.</p>
-    pub fn set_streaming_notification_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
-    ) -> Self {
-        self.streaming_notification_targets = input;
-        self
+    pub fn set_streaming_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingNotificationTarget>>) -> Self {
+        self.streaming_notification_targets = input; self
     }
     /// <p>The streaming notification targets.</p>
-    pub fn get_streaming_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>> {
+    pub fn get_streaming_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamingNotificationTarget>> {
         &self.streaming_notification_targets
     }
     /// <p>The call analytics configuration.</p>
@@ -110,8 +105,7 @@ impl StreamingConfigurationBuilder {
     }
     /// <p>The call analytics configuration.</p>
     pub fn set_media_insights_configuration(mut self, input: ::std::option::Option<crate::types::MediaInsightsConfiguration>) -> Self {
-        self.media_insights_configuration = input;
-        self
+        self.media_insights_configuration = input; self
     }
     /// <p>The call analytics configuration.</p>
     pub fn get_media_insights_configuration(&self) -> &::std::option::Option<crate::types::MediaInsightsConfiguration> {
@@ -122,21 +116,24 @@ impl StreamingConfigurationBuilder {
     /// - [`data_retention_in_hours`](crate::types::builders::StreamingConfigurationBuilder::data_retention_in_hours)
     /// - [`disabled`](crate::types::builders::StreamingConfigurationBuilder::disabled)
     pub fn build(self) -> ::std::result::Result<crate::types::StreamingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StreamingConfiguration {
-            data_retention_in_hours: self.data_retention_in_hours.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_retention_in_hours",
-                    "data_retention_in_hours was not specified but it is required when building StreamingConfiguration",
-                )
-            })?,
-            disabled: self.disabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "disabled",
-                    "disabled was not specified but it is required when building StreamingConfiguration",
-                )
-            })?,
-            streaming_notification_targets: self.streaming_notification_targets,
-            media_insights_configuration: self.media_insights_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StreamingConfiguration {
+                data_retention_in_hours: self.data_retention_in_hours
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_retention_in_hours", "data_retention_in_hours was not specified but it is required when building StreamingConfiguration")
+                    )?
+                ,
+                disabled: self.disabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("disabled", "disabled was not specified but it is required when building StreamingConfiguration")
+                    )?
+                ,
+                streaming_notification_targets: self.streaming_notification_targets
+                ,
+                media_insights_configuration: self.media_insights_configuration
+                ,
+            }
+        )
     }
 }
+

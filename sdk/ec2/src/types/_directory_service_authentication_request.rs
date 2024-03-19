@@ -3,13 +3,13 @@
 /// <p>Describes the Active Directory to be used for client authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryServiceAuthenticationRequest {
+pub struct DirectoryServiceAuthenticationRequest  {
     /// <p>The ID of the Active Directory to be used for authentication.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl DirectoryServiceAuthenticationRequest {
+impl  DirectoryServiceAuthenticationRequest  {
     /// <p>The ID of the Active Directory to be used for authentication.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DirectoryServiceAuthenticationRequestBuilder {
     }
     /// <p>The ID of the Active Directory to be used for authentication.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The ID of the Active Directory to be used for authentication.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl DirectoryServiceAuthenticationRequestBuilder {
     /// Consumes the builder and constructs a [`DirectoryServiceAuthenticationRequest`](crate::types::DirectoryServiceAuthenticationRequest).
     pub fn build(self) -> crate::types::DirectoryServiceAuthenticationRequest {
         crate::types::DirectoryServiceAuthenticationRequest {
-            directory_id: self.directory_id,
+            directory_id: self.directory_id
+            ,
         }
     }
 }
+

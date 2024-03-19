@@ -3,15 +3,14 @@
 /// <p>Contains information about the utterances in the results of the test set execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtteranceLevelTestResults {
+pub struct UtteranceLevelTestResults  {
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub items: ::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>,
+    pub items: ::std::vec::Vec::<crate::types::UtteranceLevelTestResultItem>,
 }
-impl UtteranceLevelTestResults {
+impl  UtteranceLevelTestResults  {
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub fn items(&self) -> &[crate::types::UtteranceLevelTestResultItem] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::UtteranceLevelTestResultItem] {
+        use std::ops::Deref; self.items.deref()
     }
 }
 impl UtteranceLevelTestResults {
@@ -25,7 +24,7 @@ impl UtteranceLevelTestResults {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResultsBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceLevelTestResultItem>>,
 }
 impl UtteranceLevelTestResultsBuilder {
     /// Appends an item to `items`.
@@ -35,30 +34,31 @@ impl UtteranceLevelTestResultsBuilder {
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
     pub fn items(mut self, input: crate::types::UtteranceLevelTestResultItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceLevelTestResultItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtteranceLevelTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`UtteranceLevelTestResults`](crate::types::UtteranceLevelTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::UtteranceLevelTestResultsBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::types::UtteranceLevelTestResults, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UtteranceLevelTestResults {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building UtteranceLevelTestResults",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UtteranceLevelTestResults {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building UtteranceLevelTestResults")
+                    )?
+                ,
+            }
+        )
     }
 }
+

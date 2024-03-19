@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenderUiTemplateInput {
+pub struct RenderUiTemplateInput  {
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
     pub ui_template: ::std::option::Option<crate::types::UiTemplate>,
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
@@ -13,22 +13,22 @@ pub struct RenderUiTemplateInput {
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
 }
-impl RenderUiTemplateInput {
+impl  RenderUiTemplateInput  {
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
-    pub fn ui_template(&self) -> ::std::option::Option<&crate::types::UiTemplate> {
+    pub fn ui_template(&self) -> ::std::option::Option<& crate::types::UiTemplate> {
         self.ui_template.as_ref()
     }
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
-    pub fn task(&self) -> ::std::option::Option<&crate::types::RenderableTask> {
+    pub fn task(&self) -> ::std::option::Option<& crate::types::RenderableTask> {
         self.task.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
-    pub fn human_task_ui_arn(&self) -> ::std::option::Option<&str> {
+    pub fn human_task_ui_arn(&self) -> ::std::option::Option<& str> {
         self.human_task_ui_arn.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl RenderUiTemplateInputBuilder {
     }
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
     pub fn set_ui_template(mut self, input: ::std::option::Option<crate::types::UiTemplate>) -> Self {
-        self.ui_template = input;
-        self
+        self.ui_template = input; self
     }
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
     pub fn get_ui_template(&self) -> &::std::option::Option<crate::types::UiTemplate> {
@@ -71,8 +70,7 @@ impl RenderUiTemplateInputBuilder {
     }
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::RenderableTask>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::RenderableTask> {
@@ -86,8 +84,7 @@ impl RenderUiTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +99,7 @@ impl RenderUiTemplateInputBuilder {
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
     pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_task_ui_arn = input;
-        self
+        self.human_task_ui_arn = input; self
     }
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
@@ -111,14 +107,19 @@ impl RenderUiTemplateInputBuilder {
         &self.human_task_ui_arn
     }
     /// Consumes the builder and constructs a [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::render_ui_template::RenderUiTemplateInput {
-            ui_template: self.ui_template,
-            task: self.task,
-            role_arn: self.role_arn,
-            human_task_ui_arn: self.human_task_ui_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::render_ui_template::RenderUiTemplateInput {
+                ui_template: self.ui_template
+                ,
+                task: self.task
+                ,
+                role_arn: self.role_arn
+                ,
+                human_task_ui_arn: self.human_task_ui_arn
+                ,
+            }
+        )
     }
 }
+

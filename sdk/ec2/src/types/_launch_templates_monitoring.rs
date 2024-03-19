@@ -3,11 +3,11 @@
 /// <p>Describes the monitoring for the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplatesMonitoring {
+pub struct LaunchTemplatesMonitoring  {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl LaunchTemplatesMonitoring {
+impl  LaunchTemplatesMonitoring  {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl LaunchTemplatesMonitoringBuilder {
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl LaunchTemplatesMonitoringBuilder {
     }
     /// Consumes the builder and constructs a [`LaunchTemplatesMonitoring`](crate::types::LaunchTemplatesMonitoring).
     pub fn build(self) -> crate::types::LaunchTemplatesMonitoring {
-        crate::types::LaunchTemplatesMonitoring { enabled: self.enabled }
+        crate::types::LaunchTemplatesMonitoring {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

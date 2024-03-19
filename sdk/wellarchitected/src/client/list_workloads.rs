@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkloads`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_name_prefix(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::workload_name_prefix) / [`set_workload_name_prefix(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_workload_name_prefix):<br>required: **false**<br><p>An optional string added to the beginning of each workload name returned in the results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
-    /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
     ///   - [`workload_summaries(Option<Vec::<WorkloadSummary>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_summaries): <p>A list of workload summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workloads::ListWorkloadsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
+                            /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
     pub fn list_workloads(&self) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {
-        crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

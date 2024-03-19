@@ -3,7 +3,7 @@
 /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutomatedAbrSettings {
+pub struct AutomatedAbrSettings  {
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub max_abr_bitrate: ::std::option::Option<i32>,
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
@@ -11,9 +11,9 @@ pub struct AutomatedAbrSettings {
     /// Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
     pub min_abr_bitrate: ::std::option::Option<i32>,
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AutomatedAbrRule>>,
 }
-impl AutomatedAbrSettings {
+impl  AutomatedAbrSettings  {
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub fn max_abr_bitrate(&self) -> ::std::option::Option<i32> {
         self.max_abr_bitrate
@@ -27,10 +27,11 @@ impl AutomatedAbrSettings {
         self.min_abr_bitrate
     }
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AutomatedAbrRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AutomatedAbrRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutomatedAbrSettings {
@@ -47,7 +48,7 @@ pub struct AutomatedAbrSettingsBuilder {
     pub(crate) max_abr_bitrate: ::std::option::Option<i32>,
     pub(crate) max_renditions: ::std::option::Option<i32>,
     pub(crate) min_abr_bitrate: ::std::option::Option<i32>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AutomatedAbrRule>>,
 }
 impl AutomatedAbrSettingsBuilder {
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
@@ -57,8 +58,7 @@ impl AutomatedAbrSettingsBuilder {
     }
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub fn set_max_abr_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_abr_bitrate = input;
-        self
+        self.max_abr_bitrate = input; self
     }
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub fn get_max_abr_bitrate(&self) -> &::std::option::Option<i32> {
@@ -71,8 +71,7 @@ impl AutomatedAbrSettingsBuilder {
     }
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
     pub fn set_max_renditions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_renditions = input;
-        self
+        self.max_renditions = input; self
     }
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
     pub fn get_max_renditions(&self) -> &::std::option::Option<i32> {
@@ -85,8 +84,7 @@ impl AutomatedAbrSettingsBuilder {
     }
     /// Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
     pub fn set_min_abr_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_abr_bitrate = input;
-        self
+        self.min_abr_bitrate = input; self
     }
     /// Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
     pub fn get_min_abr_bitrate(&self) -> &::std::option::Option<i32> {
@@ -99,26 +97,30 @@ impl AutomatedAbrSettingsBuilder {
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
     pub fn rules(mut self, input: crate::types::AutomatedAbrRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutomatedAbrRule>>) -> Self {
+        self.rules = input; self
     }
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutomatedAbrRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`AutomatedAbrSettings`](crate::types::AutomatedAbrSettings).
     pub fn build(self) -> crate::types::AutomatedAbrSettings {
         crate::types::AutomatedAbrSettings {
-            max_abr_bitrate: self.max_abr_bitrate,
-            max_renditions: self.max_renditions,
-            min_abr_bitrate: self.min_abr_bitrate,
-            rules: self.rules,
+            max_abr_bitrate: self.max_abr_bitrate
+            ,
+            max_renditions: self.max_renditions
+            ,
+            min_abr_bitrate: self.min_abr_bitrate
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

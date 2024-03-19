@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbInstance {
+pub struct DbInstance  {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
@@ -28,11 +28,11 @@ pub struct DbInstance {
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    pub db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
+    pub db_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DbSecurityGroupMembership>>,
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
-    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-    pub db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>>,
+    pub db_parameter_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupStatus>>,
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
@@ -52,15 +52,15 @@ pub struct DbInstance {
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
-    pub read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
-    pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>License model information for this DB instance.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
+    pub option_group_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::OptionGroupMembership>>,
     /// <p><i>(Not supported by Neptune)</i></p>
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
@@ -69,7 +69,7 @@ pub struct DbInstance {
     #[deprecated]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-    pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
+    pub status_infos: ::std::option::Option<::std::vec::Vec::<crate::types::DbInstanceStatusInfo>>,
     /// <p>Specifies the storage type associated with DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
@@ -87,7 +87,7 @@ pub struct DbInstance {
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported</p>
-    pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
+    pub domain_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::DomainMembership>>,
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
@@ -109,37 +109,37 @@ pub struct DbInstance {
     /// <p><i>(Not supported by Neptune)</i></p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
-impl DbInstance {
+impl  DbInstance  {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>Provides the name of the database engine to be used for this DB instance.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>Specifies the current state of this database.</p>
-    pub fn db_instance_status(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_status(&self) -> ::std::option::Option<& str> {
         self.db_instance_status.as_deref()
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The database name.</p>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>Specifies the connection endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>Not supported by Neptune.</p>
@@ -147,11 +147,11 @@ impl DbInstance {
         self.allocated_storage
     }
     /// <p>Provides the date and time the DB instance was created.</p>
-    pub fn instance_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn instance_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
@@ -159,41 +159,44 @@ impl DbInstance {
         self.backup_retention_period
     }
     /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
-    pub fn db_security_groups(&self) -> &[crate::types::DbSecurityGroupMembership] {
-        self.db_security_groups.as_deref().unwrap_or_default()
+    pub fn db_security_groups(&self) -> & [crate::types::DbSecurityGroupMembership] {
+        self.db_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
-    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
-        self.vpc_security_groups.as_deref().unwrap_or_default()
+    pub fn vpc_security_groups(&self) -> & [crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_parameter_groups.is_none()`.
-    pub fn db_parameter_groups(&self) -> &[crate::types::DbParameterGroupStatus] {
-        self.db_parameter_groups.as_deref().unwrap_or_default()
+    pub fn db_parameter_groups(&self) -> & [crate::types::DbParameterGroupStatus] {
+        self.db_parameter_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
-    pub fn db_subnet_group(&self) -> ::std::option::Option<&crate::types::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> ::std::option::Option<& crate::types::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
-    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::PendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<& crate::types::PendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    pub fn latest_restorable_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_restorable_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
@@ -201,7 +204,7 @@ impl DbInstance {
         self.multi_az
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Indicates that minor version patches are applied automatically.</p>
@@ -209,23 +212,25 @@ impl DbInstance {
         self.auto_minor_version_upgrade
     }
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
-    pub fn read_replica_source_db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn read_replica_source_db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.read_replica_source_db_instance_identifier.as_deref()
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_db_instance_identifiers.is_none()`.
-    pub fn read_replica_db_instance_identifiers(&self) -> &[::std::string::String] {
-        self.read_replica_db_instance_identifiers.as_deref().unwrap_or_default()
+    pub fn read_replica_db_instance_identifiers(&self) -> & [::std::string::String] {
+        self.read_replica_db_instance_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_db_cluster_identifiers.is_none()`.
-    pub fn read_replica_db_cluster_identifiers(&self) -> &[::std::string::String] {
-        self.read_replica_db_cluster_identifiers.as_deref().unwrap_or_default()
+    pub fn read_replica_db_cluster_identifiers(&self) -> & [::std::string::String] {
+        self.read_replica_db_cluster_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>License model information for this DB instance.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
@@ -233,17 +238,18 @@ impl DbInstance {
         self.iops
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_group_memberships.is_none()`.
-    pub fn option_group_memberships(&self) -> &[crate::types::OptionGroupMembership] {
-        self.option_group_memberships.as_deref().unwrap_or_default()
+    pub fn option_group_memberships(&self) -> & [crate::types::OptionGroupMembership] {
+        self.option_group_memberships.as_deref()
+        .unwrap_or_default()
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<& str> {
         self.character_set_name.as_deref()
     }
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
-    pub fn secondary_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn secondary_availability_zone(&self) -> ::std::option::Option<& str> {
         self.secondary_availability_zone.as_deref()
     }
     /// <p>This flag should no longer be used.</p>
@@ -252,17 +258,18 @@ impl DbInstance {
         self.publicly_accessible
     }
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_infos.is_none()`.
-    pub fn status_infos(&self) -> &[crate::types::DbInstanceStatusInfo] {
-        self.status_infos.as_deref().unwrap_or_default()
+    pub fn status_infos(&self) -> & [crate::types::DbInstanceStatusInfo] {
+        self.status_infos.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the storage type associated with DB instance.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
-    pub fn tde_credential_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tde_credential_arn(&self) -> ::std::option::Option<& str> {
         self.tde_credential_arn.as_deref()
     }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
@@ -270,7 +277,7 @@ impl DbInstance {
         self.db_instance_port
     }
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
@@ -278,22 +285,23 @@ impl DbInstance {
         self.storage_encrypted
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
-    pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn dbi_resource_id(&self) -> ::std::option::Option<& str> {
         self.dbi_resource_id.as_deref()
     }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
-    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_identifier.as_deref()
     }
     /// <p>Not supported</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_memberships.is_none()`.
-    pub fn domain_memberships(&self) -> &[crate::types::DomainMembership] {
-        self.domain_memberships.as_deref().unwrap_or_default()
+    pub fn domain_memberships(&self) -> & [crate::types::DomainMembership] {
+        self.domain_memberships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
@@ -304,11 +312,11 @@ impl DbInstance {
         self.monitoring_interval
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
-    pub fn enhanced_monitoring_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn enhanced_monitoring_resource_arn(&self) -> ::std::option::Option<& str> {
         self.enhanced_monitoring_resource_arn.as_deref()
     }
     /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_role_arn(&self) -> ::std::option::Option<& str> {
         self.monitoring_role_arn.as_deref()
     }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
@@ -316,11 +324,11 @@ impl DbInstance {
         self.promotion_tier
     }
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
-    pub fn db_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_arn(&self) -> ::std::option::Option<& str> {
         self.db_instance_arn.as_deref()
     }
     /// <p>Not supported.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
@@ -332,14 +340,15 @@ impl DbInstance {
         self.performance_insights_enabled
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
-    pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
-        self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
+    pub fn enabled_cloudwatch_logs_exports(&self) -> & [::std::string::String] {
+        self.enabled_cloudwatch_logs_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -368,9 +377,9 @@ pub struct DbInstanceBuilder {
     pub(crate) instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
-    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
-    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
-    pub(crate) db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>>,
+    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DbSecurityGroupMembership>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>>,
+    pub(crate) db_parameter_groups: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupStatus>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
@@ -380,15 +389,15 @@ pub struct DbInstanceBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
-    pub(crate) option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
+    pub(crate) option_group_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::OptionGroupMembership>>,
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) secondary_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
+    pub(crate) status_infos: ::std::option::Option<::std::vec::Vec::<crate::types::DbInstanceStatusInfo>>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) tde_credential_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_port: ::std::option::Option<i32>,
@@ -397,7 +406,7 @@ pub struct DbInstanceBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
+    pub(crate) domain_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::DomainMembership>>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
     pub(crate) monitoring_interval: ::std::option::Option<i32>,
     pub(crate) enhanced_monitoring_resource_arn: ::std::option::Option<::std::string::String>,
@@ -408,7 +417,7 @@ pub struct DbInstanceBuilder {
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) performance_insights_enabled: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl DbInstanceBuilder {
@@ -419,8 +428,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -433,8 +441,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -447,8 +454,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Provides the name of the database engine to be used for this DB instance.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>Provides the name of the database engine to be used for this DB instance.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -461,8 +467,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the current state of this database.</p>
     pub fn set_db_instance_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_status = input;
-        self
+        self.db_instance_status = input; self
     }
     /// <p>Specifies the current state of this database.</p>
     pub fn get_db_instance_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -475,8 +480,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -489,8 +493,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The database name.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The database name.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -503,8 +506,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the connection endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>Specifies the connection endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
@@ -517,8 +519,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -531,8 +532,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Provides the date and time the DB instance was created.</p>
     pub fn set_instance_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.instance_create_time = input;
-        self
+        self.instance_create_time = input; self
     }
     /// <p>Provides the date and time the DB instance was created.</p>
     pub fn get_instance_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -545,8 +545,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -559,8 +558,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
@@ -573,17 +571,16 @@ impl DbInstanceBuilder {
     /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub fn db_security_groups(mut self, input: crate::types::DbSecurityGroupMembership) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
-        v.push(input);
-        self.db_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>) -> Self {
-        self.db_security_groups = input;
-        self
+    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbSecurityGroupMembership>>) -> Self {
+        self.db_security_groups = input; self
     }
     /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>> {
+    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbSecurityGroupMembership>> {
         &self.db_security_groups
     }
     /// Appends an item to `vpc_security_groups`.
@@ -593,17 +590,16 @@ impl DbInstanceBuilder {
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
     pub fn vpc_security_groups(mut self, input: crate::types::VpcSecurityGroupMembership) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
-        v.push(input);
-        self.vpc_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
-    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>) -> Self {
-        self.vpc_security_groups = input;
-        self
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>>) -> Self {
+        self.vpc_security_groups = input; self
     }
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
-    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>> {
         &self.vpc_security_groups
     }
     /// Appends an item to `db_parameter_groups`.
@@ -613,17 +609,16 @@ impl DbInstanceBuilder {
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
     pub fn db_parameter_groups(mut self, input: crate::types::DbParameterGroupStatus) -> Self {
         let mut v = self.db_parameter_groups.unwrap_or_default();
-        v.push(input);
-        self.db_parameter_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_parameter_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-    pub fn set_db_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>>) -> Self {
-        self.db_parameter_groups = input;
-        self
+    pub fn set_db_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupStatus>>) -> Self {
+        self.db_parameter_groups = input; self
     }
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-    pub fn get_db_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>> {
+    pub fn get_db_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupStatus>> {
         &self.db_parameter_groups
     }
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
@@ -633,8 +628,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -647,8 +641,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
     pub fn set_db_subnet_group(mut self, input: ::std::option::Option<crate::types::DbSubnetGroup>) -> Self {
-        self.db_subnet_group = input;
-        self
+        self.db_subnet_group = input; self
     }
     /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
     pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::DbSubnetGroup> {
@@ -661,8 +654,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -675,8 +667,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
     pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::PendingModifiedValues>) -> Self {
-        self.pending_modified_values = input;
-        self
+        self.pending_modified_values = input; self
     }
     /// <p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
     pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::PendingModifiedValues> {
@@ -689,8 +680,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn set_latest_restorable_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_restorable_time = input;
-        self
+        self.latest_restorable_time = input; self
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn get_latest_restorable_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -703,8 +693,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -717,8 +706,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Indicates the database engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>Indicates the database engine version.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -731,8 +719,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Indicates that minor version patches are applied automatically.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>Indicates that minor version patches are applied automatically.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -745,8 +732,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
     pub fn set_read_replica_source_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.read_replica_source_db_instance_identifier = input;
-        self
+        self.read_replica_source_db_instance_identifier = input; self
     }
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
     pub fn get_read_replica_source_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -759,17 +745,16 @@ impl DbInstanceBuilder {
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
     pub fn read_replica_db_instance_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.read_replica_db_instance_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.read_replica_db_instance_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.read_replica_db_instance_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
-    pub fn set_read_replica_db_instance_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.read_replica_db_instance_identifiers = input;
-        self
+    pub fn set_read_replica_db_instance_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.read_replica_db_instance_identifiers = input; self
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
-    pub fn get_read_replica_db_instance_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_replica_db_instance_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.read_replica_db_instance_identifiers
     }
     /// Appends an item to `read_replica_db_cluster_identifiers`.
@@ -779,17 +764,16 @@ impl DbInstanceBuilder {
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
     pub fn read_replica_db_cluster_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.read_replica_db_cluster_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.read_replica_db_cluster_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.read_replica_db_cluster_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
-    pub fn set_read_replica_db_cluster_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.read_replica_db_cluster_identifiers = input;
-        self
+    pub fn set_read_replica_db_cluster_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.read_replica_db_cluster_identifiers = input; self
     }
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
-    pub fn get_read_replica_db_cluster_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_replica_db_cluster_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.read_replica_db_cluster_identifiers
     }
     /// <p>License model information for this DB instance.</p>
@@ -799,8 +783,7 @@ impl DbInstanceBuilder {
     }
     /// <p>License model information for this DB instance.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>License model information for this DB instance.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -813,8 +796,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -827,17 +809,16 @@ impl DbInstanceBuilder {
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn option_group_memberships(mut self, input: crate::types::OptionGroupMembership) -> Self {
         let mut v = self.option_group_memberships.unwrap_or_default();
-        v.push(input);
-        self.option_group_memberships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.option_group_memberships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub fn set_option_group_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>) -> Self {
-        self.option_group_memberships = input;
-        self
+    pub fn set_option_group_memberships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptionGroupMembership>>) -> Self {
+        self.option_group_memberships = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
-    pub fn get_option_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>> {
+    pub fn get_option_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptionGroupMembership>> {
         &self.option_group_memberships
     }
     /// <p><i>(Not supported by Neptune)</i></p>
@@ -847,8 +828,7 @@ impl DbInstanceBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.character_set_name = input;
-        self
+        self.character_set_name = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -861,8 +841,7 @@ impl DbInstanceBuilder {
     }
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub fn set_secondary_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secondary_availability_zone = input;
-        self
+        self.secondary_availability_zone = input; self
     }
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub fn get_secondary_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -877,8 +856,7 @@ impl DbInstanceBuilder {
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
@@ -892,17 +870,16 @@ impl DbInstanceBuilder {
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
     pub fn status_infos(mut self, input: crate::types::DbInstanceStatusInfo) -> Self {
         let mut v = self.status_infos.unwrap_or_default();
-        v.push(input);
-        self.status_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-    pub fn set_status_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>) -> Self {
-        self.status_infos = input;
-        self
+    pub fn set_status_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbInstanceStatusInfo>>) -> Self {
+        self.status_infos = input; self
     }
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-    pub fn get_status_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>> {
+    pub fn get_status_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbInstanceStatusInfo>> {
         &self.status_infos
     }
     /// <p>Specifies the storage type associated with DB instance.</p>
@@ -912,8 +889,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the storage type associated with DB instance.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Specifies the storage type associated with DB instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -926,8 +902,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub fn set_tde_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tde_credential_arn = input;
-        self
+        self.tde_credential_arn = input; self
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -940,8 +915,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
     pub fn set_db_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.db_instance_port = input;
-        self
+        self.db_instance_port = input; self
     }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
     pub fn get_db_instance_port(&self) -> &::std::option::Option<i32> {
@@ -954,8 +928,7 @@ impl DbInstanceBuilder {
     }
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -968,8 +941,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input;
-        self
+        self.storage_encrypted = input; self
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
@@ -982,8 +954,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -996,8 +967,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dbi_resource_id = input;
-        self
+        self.dbi_resource_id = input; self
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1010,8 +980,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = input;
-        self
+        self.ca_certificate_identifier = input; self
     }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -1024,17 +993,16 @@ impl DbInstanceBuilder {
     /// <p>Not supported</p>
     pub fn domain_memberships(mut self, input: crate::types::DomainMembership) -> Self {
         let mut v = self.domain_memberships.unwrap_or_default();
-        v.push(input);
-        self.domain_memberships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_memberships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Not supported</p>
-    pub fn set_domain_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>) -> Self {
-        self.domain_memberships = input;
-        self
+    pub fn set_domain_memberships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainMembership>>) -> Self {
+        self.domain_memberships = input; self
     }
     /// <p>Not supported</p>
-    pub fn get_domain_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>> {
+    pub fn get_domain_memberships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainMembership>> {
         &self.domain_memberships
     }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
@@ -1044,8 +1012,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
+        self.copy_tags_to_snapshot = input; self
     }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
@@ -1058,8 +1025,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.monitoring_interval = input;
-        self
+        self.monitoring_interval = input; self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
     pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
@@ -1072,8 +1038,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
     pub fn set_enhanced_monitoring_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enhanced_monitoring_resource_arn = input;
-        self
+        self.enhanced_monitoring_resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
     pub fn get_enhanced_monitoring_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1086,8 +1051,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_role_arn = input;
-        self
+        self.monitoring_role_arn = input; self
     }
     /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1100,8 +1064,7 @@ impl DbInstanceBuilder {
     }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.promotion_tier = input;
-        self
+        self.promotion_tier = input; self
     }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
@@ -1114,8 +1077,7 @@ impl DbInstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
     pub fn set_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_arn = input;
-        self
+        self.db_instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
     pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1128,8 +1090,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Not supported.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>Not supported.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -1142,8 +1103,7 @@ impl DbInstanceBuilder {
     }
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.iam_database_authentication_enabled = input;
-        self
+        self.iam_database_authentication_enabled = input; self
     }
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
@@ -1156,8 +1116,7 @@ impl DbInstanceBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_performance_insights_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.performance_insights_enabled = input;
-        self
+        self.performance_insights_enabled = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_performance_insights_enabled(&self) -> &::std::option::Option<bool> {
@@ -1170,8 +1129,7 @@ impl DbInstanceBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.performance_insights_kms_key_id = input;
-        self
+        self.performance_insights_kms_key_id = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1184,17 +1142,16 @@ impl DbInstanceBuilder {
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     pub fn enabled_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
-        v.push(input.into());
-        self.enabled_cloudwatch_logs_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enabled_cloudwatch_logs_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enabled_cloudwatch_logs_exports = input;
-        self
+    pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enabled_cloudwatch_logs_exports = input; self
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enabled_cloudwatch_logs_exports
     }
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
@@ -1204,8 +1161,7 @@ impl DbInstanceBuilder {
     }
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -1214,59 +1170,113 @@ impl DbInstanceBuilder {
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
-            db_instance_identifier: self.db_instance_identifier,
-            db_instance_class: self.db_instance_class,
-            engine: self.engine,
-            db_instance_status: self.db_instance_status,
-            master_username: self.master_username,
-            db_name: self.db_name,
-            endpoint: self.endpoint,
-            allocated_storage: self.allocated_storage,
-            instance_create_time: self.instance_create_time,
-            preferred_backup_window: self.preferred_backup_window,
-            backup_retention_period: self.backup_retention_period,
-            db_security_groups: self.db_security_groups,
-            vpc_security_groups: self.vpc_security_groups,
-            db_parameter_groups: self.db_parameter_groups,
-            availability_zone: self.availability_zone,
-            db_subnet_group: self.db_subnet_group,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            pending_modified_values: self.pending_modified_values,
-            latest_restorable_time: self.latest_restorable_time,
-            multi_az: self.multi_az,
-            engine_version: self.engine_version,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            read_replica_source_db_instance_identifier: self.read_replica_source_db_instance_identifier,
-            read_replica_db_instance_identifiers: self.read_replica_db_instance_identifiers,
-            read_replica_db_cluster_identifiers: self.read_replica_db_cluster_identifiers,
-            license_model: self.license_model,
-            iops: self.iops,
-            option_group_memberships: self.option_group_memberships,
-            character_set_name: self.character_set_name,
-            secondary_availability_zone: self.secondary_availability_zone,
-            publicly_accessible: self.publicly_accessible,
-            status_infos: self.status_infos,
-            storage_type: self.storage_type,
-            tde_credential_arn: self.tde_credential_arn,
-            db_instance_port: self.db_instance_port,
-            db_cluster_identifier: self.db_cluster_identifier,
-            storage_encrypted: self.storage_encrypted,
-            kms_key_id: self.kms_key_id,
-            dbi_resource_id: self.dbi_resource_id,
-            ca_certificate_identifier: self.ca_certificate_identifier,
-            domain_memberships: self.domain_memberships,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-            monitoring_interval: self.monitoring_interval,
-            enhanced_monitoring_resource_arn: self.enhanced_monitoring_resource_arn,
-            monitoring_role_arn: self.monitoring_role_arn,
-            promotion_tier: self.promotion_tier,
-            db_instance_arn: self.db_instance_arn,
-            timezone: self.timezone,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
-            performance_insights_enabled: self.performance_insights_enabled,
-            performance_insights_kms_key_id: self.performance_insights_kms_key_id,
-            enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
-            deletion_protection: self.deletion_protection,
+            db_instance_identifier: self.db_instance_identifier
+            ,
+            db_instance_class: self.db_instance_class
+            ,
+            engine: self.engine
+            ,
+            db_instance_status: self.db_instance_status
+            ,
+            master_username: self.master_username
+            ,
+            db_name: self.db_name
+            ,
+            endpoint: self.endpoint
+            ,
+            allocated_storage: self.allocated_storage
+            ,
+            instance_create_time: self.instance_create_time
+            ,
+            preferred_backup_window: self.preferred_backup_window
+            ,
+            backup_retention_period: self.backup_retention_period
+            ,
+            db_security_groups: self.db_security_groups
+            ,
+            vpc_security_groups: self.vpc_security_groups
+            ,
+            db_parameter_groups: self.db_parameter_groups
+            ,
+            availability_zone: self.availability_zone
+            ,
+            db_subnet_group: self.db_subnet_group
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            pending_modified_values: self.pending_modified_values
+            ,
+            latest_restorable_time: self.latest_restorable_time
+            ,
+            multi_az: self.multi_az
+            ,
+            engine_version: self.engine_version
+            ,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade
+            ,
+            read_replica_source_db_instance_identifier: self.read_replica_source_db_instance_identifier
+            ,
+            read_replica_db_instance_identifiers: self.read_replica_db_instance_identifiers
+            ,
+            read_replica_db_cluster_identifiers: self.read_replica_db_cluster_identifiers
+            ,
+            license_model: self.license_model
+            ,
+            iops: self.iops
+            ,
+            option_group_memberships: self.option_group_memberships
+            ,
+            character_set_name: self.character_set_name
+            ,
+            secondary_availability_zone: self.secondary_availability_zone
+            ,
+            publicly_accessible: self.publicly_accessible
+            ,
+            status_infos: self.status_infos
+            ,
+            storage_type: self.storage_type
+            ,
+            tde_credential_arn: self.tde_credential_arn
+            ,
+            db_instance_port: self.db_instance_port
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            storage_encrypted: self.storage_encrypted
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            dbi_resource_id: self.dbi_resource_id
+            ,
+            ca_certificate_identifier: self.ca_certificate_identifier
+            ,
+            domain_memberships: self.domain_memberships
+            ,
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot
+            ,
+            monitoring_interval: self.monitoring_interval
+            ,
+            enhanced_monitoring_resource_arn: self.enhanced_monitoring_resource_arn
+            ,
+            monitoring_role_arn: self.monitoring_role_arn
+            ,
+            promotion_tier: self.promotion_tier
+            ,
+            db_instance_arn: self.db_instance_arn
+            ,
+            timezone: self.timezone
+            ,
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled
+            ,
+            performance_insights_enabled: self.performance_insights_enabled
+            ,
+            performance_insights_kms_key_id: self.performance_insights_kms_key_id
+            ,
+            enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports
+            ,
+            deletion_protection: self.deletion_protection
+            ,
         }
     }
 }
+

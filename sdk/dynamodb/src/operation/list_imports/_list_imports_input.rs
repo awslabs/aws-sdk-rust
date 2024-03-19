@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportsInput {
+pub struct ListImportsInput  {
     /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
@@ -10,9 +10,9 @@ pub struct ListImportsInput {
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListImportsInput {
+impl  ListImportsInput  {
     /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
-    pub fn table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn table_arn(&self) -> ::std::option::Option<& str> {
         self.table_arn.as_deref()
     }
     /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
@@ -20,7 +20,7 @@ impl ListImportsInput {
         self.page_size
     }
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListImportsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_arn = input;
-        self
+        self.table_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the table that was imported to.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListImportsInputBuilder {
     }
     /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of <code>ImportSummary </code>objects returned in a single page.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -75,8 +73,7 @@ impl ListImportsInputBuilder {
     }
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,10 +81,16 @@ impl ListImportsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_imports::ListImportsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_imports::ListImportsInput {
-            table_arn: self.table_arn,
-            page_size: self.page_size,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_imports::ListImportsInput {
+                table_arn: self.table_arn
+                ,
+                page_size: self.page_size
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

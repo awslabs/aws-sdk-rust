@@ -3,7 +3,7 @@
 /// <p>Access configuration parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessConfiguration {
+pub struct AccessConfiguration  {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location.</p>
     /// <p><code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p>
     /// <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p>
@@ -23,7 +23,7 @@ pub struct AccessConfiguration {
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     pub secrets_manager_access_token_configuration: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
 }
-impl AccessConfiguration {
+impl  AccessConfiguration  {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location.</p>
     /// <p><code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p>
     /// <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p>
@@ -39,11 +39,11 @@ impl AccessConfiguration {
     /// <p>• You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code> principal access in IAM. For more information about configuring access in IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User Guide.</i>.</p>
     /// <p>• The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level manifests referenced by the <code>VodSource</code> packaging configurations.</p>
     /// <p>• The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.</p>
-    pub fn access_type(&self) -> ::std::option::Option<&crate::types::AccessType> {
+    pub fn access_type(&self) -> ::std::option::Option<& crate::types::AccessType> {
         self.access_type.as_ref()
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
-    pub fn secrets_manager_access_token_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerAccessTokenConfiguration> {
+    pub fn secrets_manager_access_token_configuration(&self) -> ::std::option::Option<& crate::types::SecretsManagerAccessTokenConfiguration> {
         self.secrets_manager_access_token_configuration.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl AccessConfigurationBuilder {
     /// <p>• The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level manifests referenced by the <code>VodSource</code> packaging configurations.</p>
     /// <p>• The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.</p>
     pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::AccessType>) -> Self {
-        self.access_type = input;
-        self
+        self.access_type = input; self
     }
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location.</p>
     /// <p><code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p>
@@ -124,12 +123,8 @@ impl AccessConfigurationBuilder {
         self
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
-    pub fn set_secrets_manager_access_token_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
-    ) -> Self {
-        self.secrets_manager_access_token_configuration = input;
-        self
+    pub fn set_secrets_manager_access_token_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>) -> Self {
+        self.secrets_manager_access_token_configuration = input; self
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     pub fn get_secrets_manager_access_token_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration> {
@@ -138,8 +133,11 @@ impl AccessConfigurationBuilder {
     /// Consumes the builder and constructs a [`AccessConfiguration`](crate::types::AccessConfiguration).
     pub fn build(self) -> crate::types::AccessConfiguration {
         crate::types::AccessConfiguration {
-            access_type: self.access_type,
-            secrets_manager_access_token_configuration: self.secrets_manager_access_token_configuration,
+            access_type: self.access_type
+            ,
+            secrets_manager_access_token_configuration: self.secrets_manager_access_token_configuration
+            ,
         }
     }
 }
+

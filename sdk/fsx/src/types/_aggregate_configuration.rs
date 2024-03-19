@@ -3,7 +3,7 @@
 /// <p>Used to specify configuration options for a volume’s storage aggregate or aggregates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregateConfiguration {
+pub struct AggregateConfiguration  {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
@@ -14,11 +14,11 @@ pub struct AggregateConfiguration {
     /// <li>
     /// <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
-    pub aggregates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aggregates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The total number of constituents this FlexGroup volume has. Not applicable for FlexVols.</p>
     pub total_constituents: ::std::option::Option<i32>,
 }
-impl AggregateConfiguration {
+impl  AggregateConfiguration  {
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
@@ -29,10 +29,11 @@ impl AggregateConfiguration {
     /// <li>
     /// <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregates.is_none()`.
-    pub fn aggregates(&self) -> &[::std::string::String] {
-        self.aggregates.as_deref().unwrap_or_default()
+    pub fn aggregates(&self) -> & [::std::string::String] {
+        self.aggregates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total number of constituents this FlexGroup volume has. Not applicable for FlexVols.</p>
     pub fn total_constituents(&self) -> ::std::option::Option<i32> {
@@ -50,7 +51,7 @@ impl AggregateConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateConfigurationBuilder {
-    pub(crate) aggregates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aggregates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) total_constituents: ::std::option::Option<i32>,
 }
 impl AggregateConfigurationBuilder {
@@ -70,9 +71,9 @@ impl AggregateConfigurationBuilder {
     /// </ul>
     pub fn aggregates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aggregates.unwrap_or_default();
-        v.push(input.into());
-        self.aggregates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aggregates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
@@ -84,9 +85,8 @@ impl AggregateConfigurationBuilder {
     /// <li>
     /// <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
-    pub fn set_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aggregates = input;
-        self
+    pub fn set_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aggregates = input; self
     }
     /// <p>The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. Each high-availability (HA) pair has one aggregate. The names of the aggregates map to the names of the aggregates in the ONTAP CLI and REST API. For FlexVols, there will always be a single entry.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
@@ -98,7 +98,7 @@ impl AggregateConfigurationBuilder {
     /// <li>
     /// <p>One or more of the aggregates supplied are too close to the volume limit to support adding more volumes.</p></li>
     /// </ul>
-    pub fn get_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aggregates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aggregates
     }
     /// <p>The total number of constituents this FlexGroup volume has. Not applicable for FlexVols.</p>
@@ -108,8 +108,7 @@ impl AggregateConfigurationBuilder {
     }
     /// <p>The total number of constituents this FlexGroup volume has. Not applicable for FlexVols.</p>
     pub fn set_total_constituents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_constituents = input;
-        self
+        self.total_constituents = input; self
     }
     /// <p>The total number of constituents this FlexGroup volume has. Not applicable for FlexVols.</p>
     pub fn get_total_constituents(&self) -> &::std::option::Option<i32> {
@@ -118,8 +117,11 @@ impl AggregateConfigurationBuilder {
     /// Consumes the builder and constructs a [`AggregateConfiguration`](crate::types::AggregateConfiguration).
     pub fn build(self) -> crate::types::AggregateConfiguration {
         crate::types::AggregateConfiguration {
-            aggregates: self.aggregates,
-            total_constituents: self.total_constituents,
+            aggregates: self.aggregates
+            ,
+            total_constituents: self.total_constituents
+            ,
         }
     }
 }
+

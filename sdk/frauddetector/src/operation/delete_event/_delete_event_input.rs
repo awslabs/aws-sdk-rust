@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventInput {
+pub struct DeleteEventInput  {
     /// <p>The ID of the event to delete.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
@@ -10,13 +10,13 @@ pub struct DeleteEventInput {
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
     pub delete_audit_history: ::std::option::Option<bool>,
 }
-impl DeleteEventInput {
+impl  DeleteEventInput  {
     /// <p>The ID of the event to delete.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
@@ -48,8 +48,7 @@ impl DeleteEventInputBuilder {
     }
     /// <p>The ID of the event to delete.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the event to delete.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteEventInputBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The name of the event type.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl DeleteEventInputBuilder {
     }
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
     pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_audit_history = input;
-        self
+        self.delete_audit_history = input; self
     }
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,</p>
     pub fn get_delete_audit_history(&self) -> &::std::option::Option<bool> {
@@ -86,10 +83,16 @@ impl DeleteEventInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteEventInput`](crate::operation::delete_event::DeleteEventInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_event::DeleteEventInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_event::DeleteEventInput {
-            event_id: self.event_id,
-            event_type_name: self.event_type_name,
-            delete_audit_history: self.delete_audit_history,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_event::DeleteEventInput {
+                event_id: self.event_id
+                ,
+                event_type_name: self.event_type_name
+                ,
+                delete_audit_history: self.delete_audit_history
+                ,
+            }
+        )
     }
 }
+

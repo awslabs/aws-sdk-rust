@@ -3,7 +3,7 @@
 /// <p>An event from a source outside of Amazon Web Services that you want CloudTrail to log.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditEvent {
+pub struct AuditEvent  {
     /// <p>The original event ID from the source event.</p>
     pub id: ::std::string::String,
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
@@ -12,20 +12,18 @@ pub struct AuditEvent {
     /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub event_data_checksum: ::std::option::Option<::std::string::String>,
 }
-impl AuditEvent {
+impl  AuditEvent  {
     /// <p>The original event ID from the source event.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    pub fn event_data(&self) -> &str {
-        use std::ops::Deref;
-        self.event_data.deref()
+    pub fn event_data(&self) -> & str {
+        use std::ops::Deref; self.event_data.deref()
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
-    pub fn event_data_checksum(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_checksum(&self) -> ::std::option::Option<& str> {
         self.event_data_checksum.as_deref()
     }
 }
@@ -53,8 +51,7 @@ impl AuditEventBuilder {
     }
     /// <p>The original event ID from the source event.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The original event ID from the source event.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +65,7 @@ impl AuditEventBuilder {
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
     pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data = input;
-        self
+        self.event_data = input; self
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
     pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +80,7 @@ impl AuditEventBuilder {
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
     pub fn set_event_data_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_checksum = input;
-        self
+        self.event_data_checksum = input; self
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p><code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code></p>
@@ -97,20 +92,22 @@ impl AuditEventBuilder {
     /// - [`id`](crate::types::builders::AuditEventBuilder::id)
     /// - [`event_data`](crate::types::builders::AuditEventBuilder::event_data)
     pub fn build(self) -> ::std::result::Result<crate::types::AuditEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuditEvent {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AuditEvent",
-                )
-            })?,
-            event_data: self.event_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_data",
-                    "event_data was not specified but it is required when building AuditEvent",
-                )
-            })?,
-            event_data_checksum: self.event_data_checksum,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuditEvent {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AuditEvent")
+                    )?
+                ,
+                event_data: self.event_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_data", "event_data was not specified but it is required when building AuditEvent")
+                    )?
+                ,
+                event_data_checksum: self.event_data_checksum
+                ,
+            }
+        )
     }
 }
+

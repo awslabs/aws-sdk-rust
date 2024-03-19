@@ -3,13 +3,13 @@
 /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceAssociationOutputUrl {
+pub struct InstanceAssociationOutputUrl  {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     pub s3_output_url: ::std::option::Option<crate::types::S3OutputUrl>,
 }
-impl InstanceAssociationOutputUrl {
+impl  InstanceAssociationOutputUrl  {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
-    pub fn s3_output_url(&self) -> ::std::option::Option<&crate::types::S3OutputUrl> {
+    pub fn s3_output_url(&self) -> ::std::option::Option<& crate::types::S3OutputUrl> {
         self.s3_output_url.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl InstanceAssociationOutputUrlBuilder {
     }
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     pub fn set_s3_output_url(mut self, input: ::std::option::Option<crate::types::S3OutputUrl>) -> Self {
-        self.s3_output_url = input;
-        self
+        self.s3_output_url = input; self
     }
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     pub fn get_s3_output_url(&self) -> &::std::option::Option<crate::types::S3OutputUrl> {
@@ -44,7 +43,9 @@ impl InstanceAssociationOutputUrlBuilder {
     /// Consumes the builder and constructs a [`InstanceAssociationOutputUrl`](crate::types::InstanceAssociationOutputUrl).
     pub fn build(self) -> crate::types::InstanceAssociationOutputUrl {
         crate::types::InstanceAssociationOutputUrl {
-            s3_output_url: self.s3_output_url,
+            s3_output_url: self.s3_output_url
+            ,
         }
     }
 }
+

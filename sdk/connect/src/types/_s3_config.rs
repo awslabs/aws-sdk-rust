@@ -3,7 +3,7 @@
 /// <p>Information about the Amazon Simple Storage Service (Amazon S3) storage type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Config {
+pub struct S3Config  {
     /// <p>The S3 bucket name.</p>
     pub bucket_name: ::std::string::String,
     /// <p>The S3 bucket prefix.</p>
@@ -11,19 +11,17 @@ pub struct S3Config {
     /// <p>The Amazon S3 encryption configuration.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
-impl S3Config {
+impl  S3Config  {
     /// <p>The S3 bucket name.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn bucket_prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_prefix.deref()
+    pub fn bucket_prefix(&self) -> & str {
+        use std::ops::Deref; self.bucket_prefix.deref()
     }
     /// <p>The Amazon S3 encryption configuration.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl S3ConfigBuilder {
     }
     /// <p>The S3 bucket name.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The S3 bucket name.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl S3ConfigBuilder {
     }
     /// <p>The S3 bucket prefix.</p>
     pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_prefix = input;
-        self
+        self.bucket_prefix = input; self
     }
     /// <p>The S3 bucket prefix.</p>
     pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl S3ConfigBuilder {
     }
     /// <p>The Amazon S3 encryption configuration.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
-        self.encryption_config = input;
-        self
+        self.encryption_config = input; self
     }
     /// <p>The Amazon S3 encryption configuration.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
@@ -92,20 +87,22 @@ impl S3ConfigBuilder {
     /// - [`bucket_name`](crate::types::builders::S3ConfigBuilder::bucket_name)
     /// - [`bucket_prefix`](crate::types::builders::S3ConfigBuilder::bucket_prefix)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Config {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Config",
-                )
-            })?,
-            bucket_prefix: self.bucket_prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_prefix",
-                    "bucket_prefix was not specified but it is required when building S3Config",
-                )
-            })?,
-            encryption_config: self.encryption_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Config {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Config")
+                    )?
+                ,
+                bucket_prefix: self.bucket_prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_prefix", "bucket_prefix was not specified but it is required when building S3Config")
+                    )?
+                ,
+                encryption_config: self.encryption_config
+                ,
+            }
+        )
     }
 }
+

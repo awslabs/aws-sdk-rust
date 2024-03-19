@@ -3,19 +3,19 @@
 /// <p>Event sent from Amazon Lex V2 to your client application that contains a transcript of voice audio.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranscriptEvent {
+pub struct TranscriptEvent  {
     /// <p>The transcript of the voice audio from the user.</p>
     pub transcript: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
 }
-impl TranscriptEvent {
+impl  TranscriptEvent  {
     /// <p>The transcript of the voice audio from the user.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&str> {
+    pub fn transcript(&self) -> ::std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TranscriptEventBuilder {
     }
     /// <p>The transcript of the voice audio from the user.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// <p>The transcript of the voice audio from the user.</p>
     pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TranscriptEventBuilder {
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TranscriptEventBuilder {
     /// Consumes the builder and constructs a [`TranscriptEvent`](crate::types::TranscriptEvent).
     pub fn build(self) -> crate::types::TranscriptEvent {
         crate::types::TranscriptEvent {
-            transcript: self.transcript,
-            event_id: self.event_id,
+            transcript: self.transcript
+            ,
+            event_id: self.event_id
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveRegionInput {
+pub struct RemoveRegionInput  {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveRegionInput {
+impl  RemoveRegionInput  {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl RemoveRegionInputBuilder {
     }
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`RemoveRegionInput`](crate::operation::remove_region::RemoveRegionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_region::RemoveRegionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_region::RemoveRegionInput {
-            directory_id: self.directory_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_region::RemoveRegionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_region::RemoveRegionInput {
+                directory_id: self.directory_id
+                ,
+            }
+        )
     }
 }
+

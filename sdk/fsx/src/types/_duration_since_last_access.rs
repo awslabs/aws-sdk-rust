@@ -3,7 +3,7 @@
 /// <p>Defines the minimum amount of time since last access for a file to be eligible for release. Only files that have been exported to S3 and that were last accessed or modified before this point-in-time are eligible to be released from the Amazon FSx for Lustre file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DurationSinceLastAccess {
+pub struct DurationSinceLastAccess  {
     /// <p>The unit of time used by the <code>Value</code> parameter to determine if a file can be released, based on when it was last accessed. <code>DAYS</code> is the only supported value. This is a required parameter.</p>
     pub unit: ::std::option::Option<crate::types::Unit>,
     /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
@@ -11,9 +11,9 @@ pub struct DurationSinceLastAccess {
     /// </note>
     pub value: ::std::option::Option<i64>,
 }
-impl DurationSinceLastAccess {
+impl  DurationSinceLastAccess  {
     /// <p>The unit of time used by the <code>Value</code> parameter to determine if a file can be released, based on when it was last accessed. <code>DAYS</code> is the only supported value. This is a required parameter.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::Unit> {
         self.unit.as_ref()
     }
     /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
@@ -45,8 +45,7 @@ impl DurationSinceLastAccessBuilder {
     }
     /// <p>The unit of time used by the <code>Value</code> parameter to determine if a file can be released, based on when it was last accessed. <code>DAYS</code> is the only supported value. This is a required parameter.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of time used by the <code>Value</code> parameter to determine if a file can be released, based on when it was last accessed. <code>DAYS</code> is the only supported value. This is a required parameter.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
@@ -63,8 +62,7 @@ impl DurationSinceLastAccessBuilder {
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
     /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>An integer that represents the minimum amount of time (in days) since a file was last accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of time in the past (relative to the task create time) will be released. The default of <code>Value</code> is <code>0</code>. This is a required parameter.</p><note>
     /// <p>If an exported file meets the last accessed time criteria, its file or directory path must also be specified in the <code>Paths</code> parameter of the operation in order for the file to be released.</p>
@@ -75,8 +73,11 @@ impl DurationSinceLastAccessBuilder {
     /// Consumes the builder and constructs a [`DurationSinceLastAccess`](crate::types::DurationSinceLastAccess).
     pub fn build(self) -> crate::types::DurationSinceLastAccess {
         crate::types::DurationSinceLastAccess {
-            unit: self.unit,
-            value: self.value,
+            unit: self.unit
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

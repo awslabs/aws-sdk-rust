@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccountPermissionsInput {
+pub struct ListAccountPermissionsInput  {
     /// <p>The service scan type to check permissions for.</p>
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
@@ -10,9 +10,9 @@ pub struct ListAccountPermissionsInput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAccountPermissionsInput {
+impl  ListAccountPermissionsInput  {
     /// <p>The service scan type to check permissions for.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::Service> {
+    pub fn service(&self) -> ::std::option::Option<& crate::types::Service> {
         self.service.as_ref()
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
@@ -20,7 +20,7 @@ impl ListAccountPermissionsInput {
         self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListAccountPermissionsInputBuilder {
     }
     /// <p>The service scan type to check permissions for.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::Service>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The service scan type to check permissions for.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
@@ -61,8 +60,7 @@ impl ListAccountPermissionsInputBuilder {
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl ListAccountPermissionsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAccountPermissionsInput`](crate::operation::list_account_permissions::ListAccountPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_account_permissions::ListAccountPermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_account_permissions::ListAccountPermissionsInput {
-            service: self.service,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_account_permissions::ListAccountPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_account_permissions::ListAccountPermissionsInput {
+                service: self.service
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

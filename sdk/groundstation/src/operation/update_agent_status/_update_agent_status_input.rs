@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgentStatusInput {
+pub struct UpdateAgentStatusInput  {
     /// <p>UUID of agent to update.</p>
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>GUID of agent task.</p>
@@ -10,26 +10,27 @@ pub struct UpdateAgentStatusInput {
     /// <p>Aggregate status for agent.</p>
     pub aggregate_status: ::std::option::Option<crate::types::AggregateStatus>,
     /// <p>List of component statuses for agent.</p>
-    pub component_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
+    pub component_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentStatusData>>,
 }
-impl UpdateAgentStatusInput {
+impl  UpdateAgentStatusInput  {
     /// <p>UUID of agent to update.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>GUID of agent task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>Aggregate status for agent.</p>
-    pub fn aggregate_status(&self) -> ::std::option::Option<&crate::types::AggregateStatus> {
+    pub fn aggregate_status(&self) -> ::std::option::Option<& crate::types::AggregateStatus> {
         self.aggregate_status.as_ref()
     }
     /// <p>List of component statuses for agent.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_statuses.is_none()`.
-    pub fn component_statuses(&self) -> &[crate::types::ComponentStatusData] {
-        self.component_statuses.as_deref().unwrap_or_default()
+    pub fn component_statuses(&self) -> & [crate::types::ComponentStatusData] {
+        self.component_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateAgentStatusInput {
@@ -46,7 +47,7 @@ pub struct UpdateAgentStatusInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregate_status: ::std::option::Option<crate::types::AggregateStatus>,
-    pub(crate) component_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
+    pub(crate) component_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentStatusData>>,
 }
 impl UpdateAgentStatusInputBuilder {
     /// <p>UUID of agent to update.</p>
@@ -57,8 +58,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>UUID of agent to update.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>UUID of agent to update.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>GUID of agent task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>GUID of agent task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>Aggregate status for agent.</p>
     pub fn set_aggregate_status(mut self, input: ::std::option::Option<crate::types::AggregateStatus>) -> Self {
-        self.aggregate_status = input;
-        self
+        self.aggregate_status = input; self
     }
     /// <p>Aggregate status for agent.</p>
     pub fn get_aggregate_status(&self) -> &::std::option::Option<crate::types::AggregateStatus> {
@@ -101,28 +99,32 @@ impl UpdateAgentStatusInputBuilder {
     /// <p>List of component statuses for agent.</p>
     pub fn component_statuses(mut self, input: crate::types::ComponentStatusData) -> Self {
         let mut v = self.component_statuses.unwrap_or_default();
-        v.push(input);
-        self.component_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn set_component_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>) -> Self {
-        self.component_statuses = input;
-        self
+    pub fn set_component_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentStatusData>>) -> Self {
+        self.component_statuses = input; self
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn get_component_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>> {
+    pub fn get_component_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentStatusData>> {
         &self.component_statuses
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agent_status::UpdateAgentStatusInput {
-            agent_id: self.agent_id,
-            task_id: self.task_id,
-            aggregate_status: self.aggregate_status,
-            component_statuses: self.component_statuses,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_agent_status::UpdateAgentStatusInput {
+                agent_id: self.agent_id
+                ,
+                task_id: self.task_id
+                ,
+                aggregate_status: self.aggregate_status
+                ,
+                component_statuses: self.component_statuses
+                ,
+            }
+        )
     }
 }
+

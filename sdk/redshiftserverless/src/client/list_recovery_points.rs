@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecoveryPoints`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::set_start_time):<br>required: **false**<br><p>The time when the recovery point's creation was initiated.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::set_end_time):<br>required: **false**<br><p>The time when creation of the recovery point finished.</p><br>
     ///   - [`namespace_name(impl Into<String>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::set_namespace_name):<br>required: **false**<br><p>The name of the namespace to list recovery points for.</p><br>
     ///   - [`namespace_arn(impl Into<String>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::namespace_arn) / [`set_namespace_arn(Option<String>)`](crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::set_namespace_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p><br>
-    /// - On success, responds with [`ListRecoveryPointsOutput`](crate::operation::list_recovery_points::ListRecoveryPointsOutput) with field(s):
+                            /// - On success, responds with [`ListRecoveryPointsOutput`](crate::operation::list_recovery_points::ListRecoveryPointsOutput) with field(s):
     ///   - [`recovery_points(Option<Vec::<RecoveryPoint>>)`](crate::operation::list_recovery_points::ListRecoveryPointsOutput::recovery_points): <p>The returned recovery point objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_points::ListRecoveryPointsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListRecoveryPointsError>`](crate::operation::list_recovery_points::ListRecoveryPointsError)
+                            /// - On failure, responds with [`SdkError<ListRecoveryPointsError>`](crate::operation::list_recovery_points::ListRecoveryPointsError)
     pub fn list_recovery_points(&self) -> crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder {
-        crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

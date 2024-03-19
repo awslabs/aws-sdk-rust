@@ -5,55 +5,51 @@ pub use crate::operation::confirm_topic_rule_destination::_confirm_topic_rule_de
 
 impl ConfirmTopicRuleDestinationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.confirm_topic_rule_destination();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.confirm_topic_rule_destination();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ConfirmTopicRuleDestination`.
-///
+/// 
 /// <p>Confirms a topic rule destination. When you create a rule requiring a destination, IoT sends a confirmation message to the endpoint or base address you specify. The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access to the endpoint.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmTopicRuleDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationInputBuilder,
+                    inner: crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
-    > for ConfirmTopicRuleDestinationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
-            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
+                    crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
+                > for ConfirmTopicRuleDestinationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
+                        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ConfirmTopicRuleDestinationFluentBuilder {
     /// Creates a new `ConfirmTopicRuleDestination`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ConfirmTopicRuleDestinationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestination::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestination::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
-        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestination::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestination::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput, crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     pub fn confirmation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.confirmation_token(input.into());
@@ -124,3 +111,4 @@ impl ConfirmTopicRuleDestinationFluentBuilder {
         self.inner.get_confirmation_token()
     }
 }
+

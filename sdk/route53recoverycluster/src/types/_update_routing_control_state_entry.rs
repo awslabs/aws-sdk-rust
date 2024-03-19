@@ -3,20 +3,19 @@
 /// <p>A routing control state entry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoutingControlStateEntry {
+pub struct UpdateRoutingControlStateEntry  {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     pub routing_control_arn: ::std::string::String,
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub routing_control_state: crate::types::RoutingControlState,
 }
-impl UpdateRoutingControlStateEntry {
+impl  UpdateRoutingControlStateEntry  {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-    pub fn routing_control_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.routing_control_arn.deref()
+    pub fn routing_control_arn(&self) -> & str {
+        use std::ops::Deref; self.routing_control_arn.deref()
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
-    pub fn routing_control_state(&self) -> &crate::types::RoutingControlState {
+    pub fn routing_control_state(&self) -> & crate::types::RoutingControlState {
         &self.routing_control_state
     }
 }
@@ -43,8 +42,7 @@ impl UpdateRoutingControlStateEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_control_arn = input;
-        self
+        self.routing_control_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl UpdateRoutingControlStateEntryBuilder {
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub fn set_routing_control_state(mut self, input: ::std::option::Option<crate::types::RoutingControlState>) -> Self {
-        self.routing_control_state = input;
-        self
+        self.routing_control_state = input; self
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
@@ -70,19 +67,20 @@ impl UpdateRoutingControlStateEntryBuilder {
     /// - [`routing_control_arn`](crate::types::builders::UpdateRoutingControlStateEntryBuilder::routing_control_arn)
     /// - [`routing_control_state`](crate::types::builders::UpdateRoutingControlStateEntryBuilder::routing_control_state)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateRoutingControlStateEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateRoutingControlStateEntry {
-            routing_control_arn: self.routing_control_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "routing_control_arn",
-                    "routing_control_arn was not specified but it is required when building UpdateRoutingControlStateEntry",
-                )
-            })?,
-            routing_control_state: self.routing_control_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "routing_control_state",
-                    "routing_control_state was not specified but it is required when building UpdateRoutingControlStateEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateRoutingControlStateEntry {
+                routing_control_arn: self.routing_control_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("routing_control_arn", "routing_control_arn was not specified but it is required when building UpdateRoutingControlStateEntry")
+                    )?
+                ,
+                routing_control_state: self.routing_control_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("routing_control_state", "routing_control_state was not specified but it is required when building UpdateRoutingControlStateEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

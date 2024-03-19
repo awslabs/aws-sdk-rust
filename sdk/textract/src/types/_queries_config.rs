@@ -3,15 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueriesConfig {
+pub struct QueriesConfig  {
     /// <p></p>
-    pub queries: ::std::vec::Vec<crate::types::Query>,
+    pub queries: ::std::vec::Vec::<crate::types::Query>,
 }
-impl QueriesConfig {
+impl  QueriesConfig  {
     /// <p></p>
-    pub fn queries(&self) -> &[crate::types::Query] {
-        use std::ops::Deref;
-        self.queries.deref()
+    pub fn queries(&self) -> & [crate::types::Query] {
+        use std::ops::Deref; self.queries.deref()
     }
 }
 impl QueriesConfig {
@@ -25,7 +24,7 @@ impl QueriesConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueriesConfigBuilder {
-    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec::<crate::types::Query>>,
 }
 impl QueriesConfigBuilder {
     /// Appends an item to `queries`.
@@ -35,30 +34,31 @@ impl QueriesConfigBuilder {
     /// <p></p>
     pub fn queries(mut self, input: crate::types::Query) -> Self {
         let mut v = self.queries.unwrap_or_default();
-        v.push(input);
-        self.queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Query>>) -> Self {
-        self.queries = input;
-        self
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Query>>) -> Self {
+        self.queries = input; self
     }
     /// <p></p>
-    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Query>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Query>> {
         &self.queries
     }
     /// Consumes the builder and constructs a [`QueriesConfig`](crate::types::QueriesConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`queries`](crate::types::builders::QueriesConfigBuilder::queries)
     pub fn build(self) -> ::std::result::Result<crate::types::QueriesConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueriesConfig {
-            queries: self.queries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queries",
-                    "queries was not specified but it is required when building QueriesConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QueriesConfig {
+                queries: self.queries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queries", "queries was not specified but it is required when building QueriesConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

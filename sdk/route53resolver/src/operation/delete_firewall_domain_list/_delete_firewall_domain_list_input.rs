@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFirewallDomainListInput {
+pub struct DeleteFirewallDomainListInput  {
     /// <p>The ID of the domain list that you want to delete.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFirewallDomainListInput {
+impl  DeleteFirewallDomainListInput  {
     /// <p>The ID of the domain list that you want to delete.</p>
-    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<& str> {
         self.firewall_domain_list_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteFirewallDomainListInputBuilder {
     }
     /// <p>The ID of the domain list that you want to delete.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_domain_list_id = input;
-        self
+        self.firewall_domain_list_id = input; self
     }
     /// <p>The ID of the domain list that you want to delete.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_domain_list_id
     }
     /// Consumes the builder and constructs a [`DeleteFirewallDomainListInput`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput {
-            firewall_domain_list_id: self.firewall_domain_list_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput {
+                firewall_domain_list_id: self.firewall_domain_list_id
+                ,
+            }
+        )
     }
 }
+

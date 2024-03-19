@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFeatureGroupOutput {
+pub struct UpdateFeatureGroupOutput  {
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateFeatureGroupOutput {
+impl  UpdateFeatureGroupOutput  {
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
-    pub fn feature_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_arn(&self) -> ::std::option::Option<& str> {
         self.feature_group_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFeatureGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFeatureGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupOutput`](crate::operation::update_feature_group::UpdateFeatureGroupOutput).
     pub fn builder() -> crate::operation::update_feature_group::builders::UpdateFeatureGroupOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateFeatureGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
     pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_group_arn = input;
-        self
+        self.feature_group_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
     pub fn get_feature_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFeatureGroupOutput`](crate::operation::update_feature_group::UpdateFeatureGroupOutput).
     pub fn build(self) -> crate::operation::update_feature_group::UpdateFeatureGroupOutput {
         crate::operation::update_feature_group::UpdateFeatureGroupOutput {
-            feature_group_arn: self.feature_group_arn,
+            feature_group_arn: self.feature_group_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

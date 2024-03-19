@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PauseContactInput {
+pub struct PauseContactInput  {
     /// <p>The identifier of the contact.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can find the <code>instanceId</code> in the ARN of the instance.</p>
@@ -10,17 +10,17 @@ pub struct PauseContactInput {
     /// <p>The identifier of the flow.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
 }
-impl PauseContactInput {
+impl  PauseContactInput  {
     /// <p>The identifier of the contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the <code>instanceId</code> in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PauseContactInputBuilder {
     }
     /// <p>The identifier of the contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PauseContactInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the <code>instanceId</code> in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the <code>instanceId</code> in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl PauseContactInputBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`PauseContactInput`](crate::operation::pause_contact::PauseContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::pause_contact::PauseContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::pause_contact::PauseContactInput {
-            contact_id: self.contact_id,
-            instance_id: self.instance_id,
-            contact_flow_id: self.contact_flow_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::pause_contact::PauseContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::pause_contact::PauseContactInput {
+                contact_id: self.contact_id
+                ,
+                instance_id: self.instance_id
+                ,
+                contact_flow_id: self.contact_flow_id
+                ,
+            }
+        )
     }
 }
+

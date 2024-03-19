@@ -3,7 +3,7 @@
 /// <p>Information about how to render the content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenderingConfiguration {
+pub struct RenderingConfiguration  {
     /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the following:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct RenderingConfiguration {
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetContent.html">GetContent</a>.</p>
     pub template_uri: ::std::option::Option<::std::string::String>,
 }
-impl RenderingConfiguration {
+impl  RenderingConfiguration  {
     /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the following:</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ impl RenderingConfiguration {
     /// <p>Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code></p></li>
     /// </ul>
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetContent.html">GetContent</a>.</p>
-    pub fn template_uri(&self) -> ::std::option::Option<&str> {
+    pub fn template_uri(&self) -> ::std::option::Option<& str> {
         self.template_uri.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl RenderingConfigurationBuilder {
     /// </ul>
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetContent.html">GetContent</a>.</p>
     pub fn set_template_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_uri = input;
-        self
+        self.template_uri = input; self
     }
     /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the following:</p>
     /// <ul>
@@ -89,7 +88,9 @@ impl RenderingConfigurationBuilder {
     /// Consumes the builder and constructs a [`RenderingConfiguration`](crate::types::RenderingConfiguration).
     pub fn build(self) -> crate::types::RenderingConfiguration {
         crate::types::RenderingConfiguration {
-            template_uri: self.template_uri,
+            template_uri: self.template_uri
+            ,
         }
     }
 }
+

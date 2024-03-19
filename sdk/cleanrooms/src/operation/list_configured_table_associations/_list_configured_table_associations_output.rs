@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfiguredTableAssociationsOutput {
+pub struct ListConfiguredTableAssociationsOutput  {
     /// <p>The retrieved list of configured table associations.</p>
-    pub configured_table_association_summaries: ::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>,
+    pub configured_table_association_summaries: ::std::vec::Vec::<crate::types::ConfiguredTableAssociationSummary>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListConfiguredTableAssociationsOutput {
+impl  ListConfiguredTableAssociationsOutput  {
     /// <p>The retrieved list of configured table associations.</p>
-    pub fn configured_table_association_summaries(&self) -> &[crate::types::ConfiguredTableAssociationSummary] {
-        use std::ops::Deref;
-        self.configured_table_association_summaries.deref()
+    pub fn configured_table_association_summaries(&self) -> & [crate::types::ConfiguredTableAssociationSummary] {
+        use std::ops::Deref; self.configured_table_association_summaries.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConfiguredTableAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConfiguredTableAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfiguredTableAssociationsOutput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput).
     pub fn builder() -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListConfiguredTableAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfiguredTableAssociationsOutputBuilder {
-    pub(crate) configured_table_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>>,
+    pub(crate) configured_table_association_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ConfiguredTableAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,22 +47,16 @@ impl ListConfiguredTableAssociationsOutputBuilder {
     /// <p>The retrieved list of configured table associations.</p>
     pub fn configured_table_association_summaries(mut self, input: crate::types::ConfiguredTableAssociationSummary) -> Self {
         let mut v = self.configured_table_association_summaries.unwrap_or_default();
-        v.push(input);
-        self.configured_table_association_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configured_table_association_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The retrieved list of configured table associations.</p>
-    pub fn set_configured_table_association_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>>,
-    ) -> Self {
-        self.configured_table_association_summaries = input;
-        self
+    pub fn set_configured_table_association_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfiguredTableAssociationSummary>>) -> Self {
+        self.configured_table_association_summaries = input; self
     }
     /// <p>The retrieved list of configured table associations.</p>
-    pub fn get_configured_table_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>> {
+    pub fn get_configured_table_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfiguredTableAssociationSummary>> {
         &self.configured_table_association_summaries
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -73,31 +66,25 @@ impl ListConfiguredTableAssociationsOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConfiguredTableAssociationsOutput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`configured_table_association_summaries`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder::configured_table_association_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput {
                 configured_table_association_summaries: self.configured_table_association_summaries
@@ -112,3 +99,4 @@ impl ListConfiguredTableAssociationsOutputBuilder {
         )
     }
 }
+

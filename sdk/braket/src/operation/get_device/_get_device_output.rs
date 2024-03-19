@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceOutput {
+pub struct GetDeviceOutput  {
     /// <p>The ARN of the device.</p>
     pub device_arn: ::std::string::String,
     /// <p>The name of the device.</p>
@@ -16,50 +16,47 @@ pub struct GetDeviceOutput {
     /// <p>Details about the capabilities of the device.</p>
     pub device_capabilities: ::std::string::String,
     /// <p>List of information about tasks and jobs queued on a device.</p>
-    pub device_queue_info: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>,
+    pub device_queue_info: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceQueueInfo>>,
     _request_id: Option<String>,
 }
-impl GetDeviceOutput {
+impl  GetDeviceOutput  {
     /// <p>The ARN of the device.</p>
-    pub fn device_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.device_arn.deref()
+    pub fn device_arn(&self) -> & str {
+        use std::ops::Deref; self.device_arn.deref()
     }
     /// <p>The name of the device.</p>
-    pub fn device_name(&self) -> &str {
-        use std::ops::Deref;
-        self.device_name.deref()
+    pub fn device_name(&self) -> & str {
+        use std::ops::Deref; self.device_name.deref()
     }
     /// <p>The name of the partner company for the device.</p>
-    pub fn provider_name(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_name.deref()
+    pub fn provider_name(&self) -> & str {
+        use std::ops::Deref; self.provider_name.deref()
     }
     /// <p>The type of the device.</p>
-    pub fn device_type(&self) -> &crate::types::DeviceType {
+    pub fn device_type(&self) -> & crate::types::DeviceType {
         &self.device_type
     }
     /// <p>The status of the device.</p>
-    pub fn device_status(&self) -> &crate::types::DeviceStatus {
+    pub fn device_status(&self) -> & crate::types::DeviceStatus {
         &self.device_status
     }
     /// <p>Details about the capabilities of the device.</p>
-    pub fn device_capabilities(&self) -> &str {
-        use std::ops::Deref;
-        self.device_capabilities.deref()
+    pub fn device_capabilities(&self) -> & str {
+        use std::ops::Deref; self.device_capabilities.deref()
     }
     /// <p>List of information about tasks and jobs queued on a device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_queue_info.is_none()`.
-    pub fn device_queue_info(&self) -> &[crate::types::DeviceQueueInfo] {
-        self.device_queue_info.as_deref().unwrap_or_default()
+    pub fn device_queue_info(&self) -> & [crate::types::DeviceQueueInfo] {
+        self.device_queue_info.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeviceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput).
     pub fn builder() -> crate::operation::get_device::builders::GetDeviceOutputBuilder {
@@ -77,7 +74,7 @@ pub struct GetDeviceOutputBuilder {
     pub(crate) device_type: ::std::option::Option<crate::types::DeviceType>,
     pub(crate) device_status: ::std::option::Option<crate::types::DeviceStatus>,
     pub(crate) device_capabilities: ::std::option::Option<::std::string::String>,
-    pub(crate) device_queue_info: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>,
+    pub(crate) device_queue_info: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceQueueInfo>>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutputBuilder {
@@ -89,8 +86,7 @@ impl GetDeviceOutputBuilder {
     }
     /// <p>The ARN of the device.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +100,7 @@ impl GetDeviceOutputBuilder {
     }
     /// <p>The name of the device.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The name of the device.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +114,7 @@ impl GetDeviceOutputBuilder {
     }
     /// <p>The name of the partner company for the device.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the partner company for the device.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +128,7 @@ impl GetDeviceOutputBuilder {
     }
     /// <p>The type of the device.</p>
     pub fn set_device_type(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
     }
     /// <p>The type of the device.</p>
     pub fn get_device_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
@@ -149,8 +142,7 @@ impl GetDeviceOutputBuilder {
     }
     /// <p>The status of the device.</p>
     pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
-        self.device_status = input;
-        self
+        self.device_status = input; self
     }
     /// <p>The status of the device.</p>
     pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
@@ -164,8 +156,7 @@ impl GetDeviceOutputBuilder {
     }
     /// <p>Details about the capabilities of the device.</p>
     pub fn set_device_capabilities(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_capabilities = input;
-        self
+        self.device_capabilities = input; self
     }
     /// <p>Details about the capabilities of the device.</p>
     pub fn get_device_capabilities(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,28 +169,27 @@ impl GetDeviceOutputBuilder {
     /// <p>List of information about tasks and jobs queued on a device.</p>
     pub fn device_queue_info(mut self, input: crate::types::DeviceQueueInfo) -> Self {
         let mut v = self.device_queue_info.unwrap_or_default();
-        v.push(input);
-        self.device_queue_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.device_queue_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of information about tasks and jobs queued on a device.</p>
-    pub fn set_device_queue_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>) -> Self {
-        self.device_queue_info = input;
-        self
+    pub fn set_device_queue_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceQueueInfo>>) -> Self {
+        self.device_queue_info = input; self
     }
     /// <p>List of information about tasks and jobs queued on a device.</p>
-    pub fn get_device_queue_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>> {
+    pub fn get_device_queue_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceQueueInfo>> {
         &self.device_queue_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`device_arn`](crate::operation::get_device::builders::GetDeviceOutputBuilder::device_arn)
@@ -209,45 +199,43 @@ impl GetDeviceOutputBuilder {
     /// - [`device_status`](crate::operation::get_device::builders::GetDeviceOutputBuilder::device_status)
     /// - [`device_capabilities`](crate::operation::get_device::builders::GetDeviceOutputBuilder::device_capabilities)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_device::GetDeviceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_device::GetDeviceOutput {
-            device_arn: self.device_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_arn",
-                    "device_arn was not specified but it is required when building GetDeviceOutput",
-                )
-            })?,
-            device_name: self.device_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_name",
-                    "device_name was not specified but it is required when building GetDeviceOutput",
-                )
-            })?,
-            provider_name: self.provider_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_name",
-                    "provider_name was not specified but it is required when building GetDeviceOutput",
-                )
-            })?,
-            device_type: self.device_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_type",
-                    "device_type was not specified but it is required when building GetDeviceOutput",
-                )
-            })?,
-            device_status: self.device_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_status",
-                    "device_status was not specified but it is required when building GetDeviceOutput",
-                )
-            })?,
-            device_capabilities: self.device_capabilities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_capabilities",
-                    "device_capabilities was not specified but it is required when building GetDeviceOutput",
-                )
-            })?,
-            device_queue_info: self.device_queue_info,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_device::GetDeviceOutput {
+                device_arn: self.device_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_arn", "device_arn was not specified but it is required when building GetDeviceOutput")
+                    )?
+                ,
+                device_name: self.device_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_name", "device_name was not specified but it is required when building GetDeviceOutput")
+                    )?
+                ,
+                provider_name: self.provider_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_name", "provider_name was not specified but it is required when building GetDeviceOutput")
+                    )?
+                ,
+                device_type: self.device_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_type", "device_type was not specified but it is required when building GetDeviceOutput")
+                    )?
+                ,
+                device_status: self.device_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_status", "device_status was not specified but it is required when building GetDeviceOutput")
+                    )?
+                ,
+                device_capabilities: self.device_capabilities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_capabilities", "device_capabilities was not specified but it is required when building GetDeviceOutput")
+                    )?
+                ,
+                device_queue_info: self.device_queue_info
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

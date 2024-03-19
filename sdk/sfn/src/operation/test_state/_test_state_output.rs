@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TestStateOutput {
+pub struct TestStateOutput  {
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>The error returned when the execution of a state fails.</p>
@@ -17,33 +17,33 @@ pub struct TestStateOutput {
     pub status: ::std::option::Option<crate::types::TestExecutionStatus>,
     _request_id: Option<String>,
 }
-impl TestStateOutput {
+impl  TestStateOutput  {
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(&self) -> ::std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>The error returned when the execution of a state fails.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A detailed explanation of the cause for the error when the execution of a state fails.</p>
-    pub fn cause(&self) -> ::std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<& str> {
         self.cause.as_deref()
     }
     /// <p>Returns additional details about the state's execution, including its input and output data processing flow, and HTTP request and response information. The <code>inspectionLevel</code> request parameter specifies which details are returned.</p>
-    pub fn inspection_data(&self) -> ::std::option::Option<&crate::types::InspectionData> {
+    pub fn inspection_data(&self) -> ::std::option::Option<& crate::types::InspectionData> {
         self.inspection_data.as_ref()
     }
     /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
-    pub fn next_state(&self) -> ::std::option::Option<&str> {
+    pub fn next_state(&self) -> ::std::option::Option<& str> {
         self.next_state.as_deref()
     }
     /// <p>The execution status of the state.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TestExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TestExecutionStatus> {
         self.status.as_ref()
     }
 }
-impl ::std::fmt::Debug for TestStateOutput {
+impl  ::std::fmt::Debug for TestStateOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestStateOutput");
         formatter.field("output", &"*** Sensitive Data Redacted ***");
@@ -57,10 +57,10 @@ impl ::std::fmt::Debug for TestStateOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for TestStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestStateOutput {
     /// Creates a new builder-style object to manufacture [`TestStateOutput`](crate::operation::test_state::TestStateOutput).
     pub fn builder() -> crate::operation::test_state::builders::TestStateOutputBuilder {
@@ -88,8 +88,7 @@ impl TestStateOutputBuilder {
     }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl TestStateOutputBuilder {
     }
     /// <p>The error returned when the execution of a state fails.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error returned when the execution of a state fails.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl TestStateOutputBuilder {
     }
     /// <p>A detailed explanation of the cause for the error when the execution of a state fails.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>A detailed explanation of the cause for the error when the execution of a state fails.</p>
     pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl TestStateOutputBuilder {
     }
     /// <p>Returns additional details about the state's execution, including its input and output data processing flow, and HTTP request and response information. The <code>inspectionLevel</code> request parameter specifies which details are returned.</p>
     pub fn set_inspection_data(mut self, input: ::std::option::Option<crate::types::InspectionData>) -> Self {
-        self.inspection_data = input;
-        self
+        self.inspection_data = input; self
     }
     /// <p>Returns additional details about the state's execution, including its input and output data processing flow, and HTTP request and response information. The <code>inspectionLevel</code> request parameter specifies which details are returned.</p>
     pub fn get_inspection_data(&self) -> &::std::option::Option<crate::types::InspectionData> {
@@ -144,8 +140,7 @@ impl TestStateOutputBuilder {
     }
     /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
     pub fn set_next_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_state = input;
-        self
+        self.next_state = input; self
     }
     /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
     pub fn get_next_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,31 +153,36 @@ impl TestStateOutputBuilder {
     }
     /// <p>The execution status of the state.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The execution status of the state.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TestExecutionStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestStateOutput`](crate::operation::test_state::TestStateOutput).
     pub fn build(self) -> crate::operation::test_state::TestStateOutput {
         crate::operation::test_state::TestStateOutput {
-            output: self.output,
-            error: self.error,
-            cause: self.cause,
-            inspection_data: self.inspection_data,
-            next_state: self.next_state,
-            status: self.status,
+            output: self.output
+            ,
+            error: self.error
+            ,
+            cause: self.cause
+            ,
+            inspection_data: self.inspection_data
+            ,
+            next_state: self.next_state
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
@@ -200,3 +200,4 @@ impl ::std::fmt::Debug for TestStateOutputBuilder {
         formatter.finish()
     }
 }
+

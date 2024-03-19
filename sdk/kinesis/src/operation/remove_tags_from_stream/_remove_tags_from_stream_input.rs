@@ -3,27 +3,28 @@
 /// <p>Represents the input for <code>RemoveTagsFromStream</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsFromStreamInput {
+pub struct RemoveTagsFromStreamInput  {
     /// <p>The name of the stream.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl RemoveTagsFromStreamInput {
+impl  RemoveTagsFromStreamInput  {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl RemoveTagsFromStreamInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveTagsFromStreamInputBuilder {
@@ -50,8 +51,7 @@ impl RemoveTagsFromStreamInputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl RemoveTagsFromStreamInputBuilder {
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// <p>The ARN of the stream.</p>
@@ -84,22 +83,24 @@ impl RemoveTagsFromStreamInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
-            stream_name: self.stream_name,
-            tag_keys: self.tag_keys,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
+                stream_name: self.stream_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

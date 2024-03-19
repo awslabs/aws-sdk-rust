@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGateways`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of gateways to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
-    /// - On success, responds with [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput) with field(s):
+                            /// - On success, responds with [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput) with field(s):
     ///   - [`gateways(Option<Vec::<Gateway>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>A list of your gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
+                            /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
     pub fn list_gateways(&self) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
-        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostForecastInput {
+pub struct GetCostForecastInput  {
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
@@ -76,9 +76,9 @@ pub struct GetCostForecastInput {
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub prediction_interval_level: ::std::option::Option<i32>,
 }
-impl GetCostForecastInput {
+impl  GetCostForecastInput  {
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
@@ -95,12 +95,12 @@ impl GetCostForecastInput {
     /// <li>
     /// <p>UNBLENDED_COST</p></li>
     /// </ul>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::Metric> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::Metric> {
         self.metric.as_ref()
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&crate::types::Granularity> {
+    pub fn granularity(&self) -> ::std::option::Option<& crate::types::Granularity> {
         self.granularity.as_ref()
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
@@ -152,7 +152,7 @@ impl GetCostForecastInput {
     /// <li>
     /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
     /// </ul>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
@@ -186,8 +186,7 @@ impl GetCostForecastInputBuilder {
     }
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -227,8 +226,7 @@ impl GetCostForecastInputBuilder {
     /// <p>UNBLENDED_COST</p></li>
     /// </ul>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
     /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
@@ -257,8 +255,7 @@ impl GetCostForecastInputBuilder {
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -368,8 +365,7 @@ impl GetCostForecastInputBuilder {
     /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
@@ -430,23 +426,28 @@ impl GetCostForecastInputBuilder {
     }
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn set_prediction_interval_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.prediction_interval_level = input;
-        self
+        self.prediction_interval_level = input; self
     }
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn get_prediction_interval_level(&self) -> &::std::option::Option<i32> {
         &self.prediction_interval_level
     }
     /// Consumes the builder and constructs a [`GetCostForecastInput`](crate::operation::get_cost_forecast::GetCostForecastInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cost_forecast::GetCostForecastInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cost_forecast::GetCostForecastInput {
-            time_period: self.time_period,
-            metric: self.metric,
-            granularity: self.granularity,
-            filter: self.filter,
-            prediction_interval_level: self.prediction_interval_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cost_forecast::GetCostForecastInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cost_forecast::GetCostForecastInput {
+                time_period: self.time_period
+                ,
+                metric: self.metric
+                ,
+                granularity: self.granularity
+                ,
+                filter: self.filter
+                ,
+                prediction_interval_level: self.prediction_interval_level
+                ,
+            }
+        )
     }
 }
+

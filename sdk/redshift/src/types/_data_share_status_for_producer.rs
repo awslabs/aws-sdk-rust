@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasharestatusforproducer = unimplemented!();
 /// match datasharestatusforproducer {
@@ -33,16 +33,14 @@
 /// Specifically, when `datasharestatusforproducer` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataShareStatusForProducer::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DataShareStatusForProducer {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -56,70 +54,71 @@ pub enum DataShareStatusForProducer {
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DataShareStatusForProducer {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => DataShareStatusForProducer::Active,
-            "AUTHORIZED" => DataShareStatusForProducer::Authorized,
-            "DEAUTHORIZED" => DataShareStatusForProducer::Deauthorized,
-            "PENDING_AUTHORIZATION" => DataShareStatusForProducer::PendingAuthorization,
-            "REJECTED" => DataShareStatusForProducer::Rejected,
-            other => DataShareStatusForProducer::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE" => DataShareStatusForProducer::Active,
+"AUTHORIZED" => DataShareStatusForProducer::Authorized,
+"DEAUTHORIZED" => DataShareStatusForProducer::Deauthorized,
+"PENDING_AUTHORIZATION" => DataShareStatusForProducer::PendingAuthorization,
+"REJECTED" => DataShareStatusForProducer::Rejected,
+other => DataShareStatusForProducer::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DataShareStatusForProducer {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DataShareStatusForProducer::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DataShareStatusForProducer::from(s))
+                    }
+                }
 impl DataShareStatusForProducer {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataShareStatusForProducer::Active => "ACTIVE",
-            DataShareStatusForProducer::Authorized => "AUTHORIZED",
-            DataShareStatusForProducer::Deauthorized => "DEAUTHORIZED",
-            DataShareStatusForProducer::PendingAuthorization => "PENDING_AUTHORIZATION",
-            DataShareStatusForProducer::Rejected => "REJECTED",
-            DataShareStatusForProducer::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "AUTHORIZED", "DEAUTHORIZED", "PENDING_AUTHORIZATION", "REJECTED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataShareStatusForProducer::Active => "ACTIVE",
+    DataShareStatusForProducer::Authorized => "AUTHORIZED",
+    DataShareStatusForProducer::Deauthorized => "DEAUTHORIZED",
+    DataShareStatusForProducer::PendingAuthorization => "PENDING_AUTHORIZATION",
+    DataShareStatusForProducer::Rejected => "REJECTED",
+    DataShareStatusForProducer::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "AUTHORIZED", "DEAUTHORIZED", "PENDING_AUTHORIZATION", "REJECTED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DataShareStatusForProducer {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DataShareStatusForProducer {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DataShareStatusForProducer {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DataShareStatusForProducer::Active => write!(f, "ACTIVE"),
-            DataShareStatusForProducer::Authorized => write!(f, "AUTHORIZED"),
-            DataShareStatusForProducer::Deauthorized => write!(f, "DEAUTHORIZED"),
-            DataShareStatusForProducer::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
-            DataShareStatusForProducer::Rejected => write!(f, "REJECTED"),
-            DataShareStatusForProducer::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DataShareStatusForProducer::Active => write!(f, "ACTIVE"),
+DataShareStatusForProducer::Authorized => write!(f, "AUTHORIZED"),
+DataShareStatusForProducer::Deauthorized => write!(f, "DEAUTHORIZED"),
+DataShareStatusForProducer::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
+DataShareStatusForProducer::Rejected => write!(f, "REJECTED"),
+DataShareStatusForProducer::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

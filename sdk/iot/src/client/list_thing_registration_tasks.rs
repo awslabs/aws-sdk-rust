@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThingRegistrationTasks`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
     ///   - [`status(Status)`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::status) / [`set_status(Option<Status>)`](crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::set_status):<br>required: **false**<br><p>The status of the bulk thing provisioning task.</p><br>
-    /// - On success, responds with [`ListThingRegistrationTasksOutput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput) with field(s):
+                            /// - On success, responds with [`ListThingRegistrationTasksOutput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput) with field(s):
     ///   - [`task_ids(Option<Vec::<String>>)`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput::task_ids): <p>A list of bulk thing provisioning task IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListThingRegistrationTasksError>`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError)
-    pub fn list_thing_registration_tasks(
-        &self,
-    ) -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder {
-        crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListThingRegistrationTasksError>`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError)
+    pub fn list_thing_registration_tasks(&self) -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder {
+                                crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

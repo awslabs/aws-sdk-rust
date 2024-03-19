@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterSubnetGroupInput {
+pub struct DeleteClusterSubnetGroupInput  {
     /// <p>The name of the cluster subnet group name to be deleted.</p>
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterSubnetGroupInput {
+impl  DeleteClusterSubnetGroupInput  {
     /// <p>The name of the cluster subnet group name to be deleted.</p>
-    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteClusterSubnetGroupInputBuilder {
     }
     /// <p>The name of the cluster subnet group name to be deleted.</p>
     pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_subnet_group_name = input;
-        self
+        self.cluster_subnet_group_name = input; self
     }
     /// <p>The name of the cluster subnet group name to be deleted.</p>
     pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_subnet_group_name
     }
     /// Consumes the builder and constructs a [`DeleteClusterSubnetGroupInput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput {
-            cluster_subnet_group_name: self.cluster_subnet_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput {
+                cluster_subnet_group_name: self.cluster_subnet_group_name
+                ,
+            }
+        )
     }
 }
+

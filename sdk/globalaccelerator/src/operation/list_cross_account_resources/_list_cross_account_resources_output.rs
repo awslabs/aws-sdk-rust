@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrossAccountResourcesOutput {
+pub struct ListCrossAccountResourcesOutput  {
     /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
-    pub cross_account_resources: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>>,
+    pub cross_account_resources: ::std::option::Option<::std::vec::Vec::<crate::types::CrossAccountResource>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCrossAccountResourcesOutput {
+impl  ListCrossAccountResourcesOutput  {
     /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_resources.is_none()`.
-    pub fn cross_account_resources(&self) -> &[crate::types::CrossAccountResource] {
-        self.cross_account_resources.as_deref().unwrap_or_default()
+    pub fn cross_account_resources(&self) -> & [crate::types::CrossAccountResource] {
+        self.cross_account_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCrossAccountResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCrossAccountResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountResourcesOutput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput).
     pub fn builder() -> crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCrossAccountResourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrossAccountResourcesOutputBuilder {
-    pub(crate) cross_account_resources: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>>,
+    pub(crate) cross_account_resources: ::std::option::Option<::std::vec::Vec::<crate::types::CrossAccountResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCrossAccountResourcesOutputBuilder {
     /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
     pub fn cross_account_resources(mut self, input: crate::types::CrossAccountResource) -> Self {
         let mut v = self.cross_account_resources.unwrap_or_default();
-        v.push(input);
-        self.cross_account_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cross_account_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
-    pub fn set_cross_account_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>>) -> Self {
-        self.cross_account_resources = input;
-        self
+    pub fn set_cross_account_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CrossAccountResource>>) -> Self {
+        self.cross_account_resources = input; self
     }
     /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
-    pub fn get_cross_account_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>> {
+    pub fn get_cross_account_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CrossAccountResource>> {
         &self.cross_account_resources
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -69,28 +69,30 @@ impl ListCrossAccountResourcesOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCrossAccountResourcesOutput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput).
     pub fn build(self) -> crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput {
         crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput {
-            cross_account_resources: self.cross_account_resources,
-            next_token: self.next_token,
+            cross_account_resources: self.cross_account_resources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

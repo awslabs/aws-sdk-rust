@@ -3,7 +3,7 @@
 /// <p>Details about the security service that is being used to protect the resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityServicePolicyData {
+pub struct SecurityServicePolicyData  {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     pub r#type: crate::types::SecurityServiceType,
     /// <p>Details about the service that are specific to the service type, in JSON format.</p>
@@ -115,9 +115,9 @@ pub struct SecurityServicePolicyData {
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     pub policy_option: ::std::option::Option<crate::types::PolicyOption>,
 }
-impl SecurityServicePolicyData {
+impl  SecurityServicePolicyData  {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
-    pub fn r#type(&self) -> &crate::types::SecurityServiceType {
+    pub fn r#type(&self) -> & crate::types::SecurityServiceType {
         &self.r#type
     }
     /// <p>Details about the service that are specific to the service type, in JSON format.</p>
@@ -225,11 +225,11 @@ impl SecurityServicePolicyData {
     /// <p>Example: <code>WAF Classic</code></p>
     /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
     /// </ul>
-    pub fn managed_service_data(&self) -> ::std::option::Option<&str> {
+    pub fn managed_service_data(&self) -> ::std::option::Option<& str> {
         self.managed_service_data.as_deref()
     }
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
-    pub fn policy_option(&self) -> ::std::option::Option<&crate::types::PolicyOption> {
+    pub fn policy_option(&self) -> ::std::option::Option<& crate::types::PolicyOption> {
         self.policy_option.as_ref()
     }
 }
@@ -257,8 +257,7 @@ impl SecurityServicePolicyDataBuilder {
     }
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityServiceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityServiceType> {
@@ -479,8 +478,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
     /// </ul>
     pub fn set_managed_service_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_service_data = input;
-        self
+        self.managed_service_data = input; self
     }
     /// <p>Details about the service that are specific to the service type, in JSON format.</p>
     /// <ul>
@@ -597,8 +595,7 @@ impl SecurityServicePolicyDataBuilder {
     }
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     pub fn set_policy_option(mut self, input: ::std::option::Option<crate::types::PolicyOption>) -> Self {
-        self.policy_option = input;
-        self
+        self.policy_option = input; self
     }
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     pub fn get_policy_option(&self) -> &::std::option::Option<crate::types::PolicyOption> {
@@ -608,15 +605,19 @@ impl SecurityServicePolicyDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::SecurityServicePolicyDataBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SecurityServicePolicyData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SecurityServicePolicyData {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SecurityServicePolicyData",
-                )
-            })?,
-            managed_service_data: self.managed_service_data,
-            policy_option: self.policy_option,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SecurityServicePolicyData {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SecurityServicePolicyData")
+                    )?
+                ,
+                managed_service_data: self.managed_service_data
+                ,
+                policy_option: self.policy_option
+                ,
+            }
+        )
     }
 }
+

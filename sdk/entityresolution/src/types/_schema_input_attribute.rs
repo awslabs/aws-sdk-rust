@@ -3,7 +3,7 @@
 /// <p>An object containing <code>FieldName</code>, <code>Type</code>, <code>GroupName</code>, and <code>MatchKey</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaInputAttribute {
+pub struct SchemaInputAttribute  {
     /// <p>A string containing the field name.</p>
     pub field_name: ::std::string::String,
     /// <p>The type of the attribute, selected from a list of values.</p>
@@ -15,26 +15,25 @@ pub struct SchemaInputAttribute {
     /// <p>The subtype of the attribute, selected from a list of values.</p>
     pub sub_type: ::std::option::Option<::std::string::String>,
 }
-impl SchemaInputAttribute {
+impl  SchemaInputAttribute  {
     /// <p>A string containing the field name.</p>
-    pub fn field_name(&self) -> &str {
-        use std::ops::Deref;
-        self.field_name.deref()
+    pub fn field_name(&self) -> & str {
+        use std::ops::Deref; self.field_name.deref()
     }
     /// <p>The type of the attribute, selected from a list of values.</p>
-    pub fn r#type(&self) -> &crate::types::SchemaAttributeType {
+    pub fn r#type(&self) -> & crate::types::SchemaAttributeType {
         &self.r#type
     }
     /// <p>Instruct Entity Resolution to combine several columns into a unified column with the identical attribute type. For example, when working with columns such as first_name, middle_name, and last_name, assigning them a common <code>GroupName</code> will prompt Entity Resolution to concatenate them into a single value.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>A key that allows grouping of multiple input attributes into a unified matching group. For example, let's consider a scenario where the source table contains various addresses, such as <code>business_address</code> and <code>shipping_address</code>. By assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity Resolution will match records across these fields to create a consolidated matching group. If no <code>MatchKey</code> is specified for a column, it won't be utilized for matching purposes but will still be included in the output table.</p>
-    pub fn match_key(&self) -> ::std::option::Option<&str> {
+    pub fn match_key(&self) -> ::std::option::Option<& str> {
         self.match_key.as_deref()
     }
     /// <p>The subtype of the attribute, selected from a list of values.</p>
-    pub fn sub_type(&self) -> ::std::option::Option<&str> {
+    pub fn sub_type(&self) -> ::std::option::Option<& str> {
         self.sub_type.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl SchemaInputAttributeBuilder {
     }
     /// <p>A string containing the field name.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>A string containing the field name.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl SchemaInputAttributeBuilder {
     }
     /// <p>The type of the attribute, selected from a list of values.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaAttributeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the attribute, selected from a list of values.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaAttributeType> {
@@ -93,8 +90,7 @@ impl SchemaInputAttributeBuilder {
     }
     /// <p>Instruct Entity Resolution to combine several columns into a unified column with the identical attribute type. For example, when working with columns such as first_name, middle_name, and last_name, assigning them a common <code>GroupName</code> will prompt Entity Resolution to concatenate them into a single value.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>Instruct Entity Resolution to combine several columns into a unified column with the identical attribute type. For example, when working with columns such as first_name, middle_name, and last_name, assigning them a common <code>GroupName</code> will prompt Entity Resolution to concatenate them into a single value.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl SchemaInputAttributeBuilder {
     }
     /// <p>A key that allows grouping of multiple input attributes into a unified matching group. For example, let's consider a scenario where the source table contains various addresses, such as <code>business_address</code> and <code>shipping_address</code>. By assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity Resolution will match records across these fields to create a consolidated matching group. If no <code>MatchKey</code> is specified for a column, it won't be utilized for matching purposes but will still be included in the output table.</p>
     pub fn set_match_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.match_key = input;
-        self
+        self.match_key = input; self
     }
     /// <p>A key that allows grouping of multiple input attributes into a unified matching group. For example, let's consider a scenario where the source table contains various addresses, such as <code>business_address</code> and <code>shipping_address</code>. By assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity Resolution will match records across these fields to create a consolidated matching group. If no <code>MatchKey</code> is specified for a column, it won't be utilized for matching purposes but will still be included in the output table.</p>
     pub fn get_match_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +116,7 @@ impl SchemaInputAttributeBuilder {
     }
     /// <p>The subtype of the attribute, selected from a list of values.</p>
     pub fn set_sub_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_type = input;
-        self
+        self.sub_type = input; self
     }
     /// <p>The subtype of the attribute, selected from a list of values.</p>
     pub fn get_sub_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,22 +127,26 @@ impl SchemaInputAttributeBuilder {
     /// - [`field_name`](crate::types::builders::SchemaInputAttributeBuilder::field_name)
     /// - [`r#type`](crate::types::builders::SchemaInputAttributeBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaInputAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SchemaInputAttribute {
-            field_name: self.field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_name",
-                    "field_name was not specified but it is required when building SchemaInputAttribute",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SchemaInputAttribute",
-                )
-            })?,
-            group_name: self.group_name,
-            match_key: self.match_key,
-            sub_type: self.sub_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SchemaInputAttribute {
+                field_name: self.field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_name", "field_name was not specified but it is required when building SchemaInputAttribute")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SchemaInputAttribute")
+                    )?
+                ,
+                group_name: self.group_name
+                ,
+                match_key: self.match_key
+                ,
+                sub_type: self.sub_type
+                ,
+            }
+        )
     }
 }
+

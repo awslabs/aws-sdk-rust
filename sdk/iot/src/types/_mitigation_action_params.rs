@@ -3,7 +3,7 @@
 /// <p>The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MitigationActionParams {
+pub struct MitigationActionParams  {
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
     pub update_device_certificate_params: ::std::option::Option<crate::types::UpdateDeviceCertificateParams>,
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
@@ -17,29 +17,29 @@ pub struct MitigationActionParams {
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
     pub publish_finding_to_sns_params: ::std::option::Option<crate::types::PublishFindingToSnsParams>,
 }
-impl MitigationActionParams {
+impl  MitigationActionParams  {
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
-    pub fn update_device_certificate_params(&self) -> ::std::option::Option<&crate::types::UpdateDeviceCertificateParams> {
+    pub fn update_device_certificate_params(&self) -> ::std::option::Option<& crate::types::UpdateDeviceCertificateParams> {
         self.update_device_certificate_params.as_ref()
     }
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
-    pub fn update_ca_certificate_params(&self) -> ::std::option::Option<&crate::types::UpdateCaCertificateParams> {
+    pub fn update_ca_certificate_params(&self) -> ::std::option::Option<& crate::types::UpdateCaCertificateParams> {
         self.update_ca_certificate_params.as_ref()
     }
     /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
-    pub fn add_things_to_thing_group_params(&self) -> ::std::option::Option<&crate::types::AddThingsToThingGroupParams> {
+    pub fn add_things_to_thing_group_params(&self) -> ::std::option::Option<& crate::types::AddThingsToThingGroupParams> {
         self.add_things_to_thing_group_params.as_ref()
     }
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
-    pub fn replace_default_policy_version_params(&self) -> ::std::option::Option<&crate::types::ReplaceDefaultPolicyVersionParams> {
+    pub fn replace_default_policy_version_params(&self) -> ::std::option::Option<& crate::types::ReplaceDefaultPolicyVersionParams> {
         self.replace_default_policy_version_params.as_ref()
     }
     /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
-    pub fn enable_io_t_logging_params(&self) -> ::std::option::Option<&crate::types::EnableIoTLoggingParams> {
+    pub fn enable_io_t_logging_params(&self) -> ::std::option::Option<& crate::types::EnableIoTLoggingParams> {
         self.enable_io_t_logging_params.as_ref()
     }
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
-    pub fn publish_finding_to_sns_params(&self) -> ::std::option::Option<&crate::types::PublishFindingToSnsParams> {
+    pub fn publish_finding_to_sns_params(&self) -> ::std::option::Option<& crate::types::PublishFindingToSnsParams> {
         self.publish_finding_to_sns_params.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl MitigationActionParamsBuilder {
     }
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
     pub fn set_update_device_certificate_params(mut self, input: ::std::option::Option<crate::types::UpdateDeviceCertificateParams>) -> Self {
-        self.update_device_certificate_params = input;
-        self
+        self.update_device_certificate_params = input; self
     }
     /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
     pub fn get_update_device_certificate_params(&self) -> &::std::option::Option<crate::types::UpdateDeviceCertificateParams> {
@@ -83,8 +82,7 @@ impl MitigationActionParamsBuilder {
     }
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
     pub fn set_update_ca_certificate_params(mut self, input: ::std::option::Option<crate::types::UpdateCaCertificateParams>) -> Self {
-        self.update_ca_certificate_params = input;
-        self
+        self.update_ca_certificate_params = input; self
     }
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
     pub fn get_update_ca_certificate_params(&self) -> &::std::option::Option<crate::types::UpdateCaCertificateParams> {
@@ -97,8 +95,7 @@ impl MitigationActionParamsBuilder {
     }
     /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
     pub fn set_add_things_to_thing_group_params(mut self, input: ::std::option::Option<crate::types::AddThingsToThingGroupParams>) -> Self {
-        self.add_things_to_thing_group_params = input;
-        self
+        self.add_things_to_thing_group_params = input; self
     }
     /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
     pub fn get_add_things_to_thing_group_params(&self) -> &::std::option::Option<crate::types::AddThingsToThingGroupParams> {
@@ -110,12 +107,8 @@ impl MitigationActionParamsBuilder {
         self
     }
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
-    pub fn set_replace_default_policy_version_params(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplaceDefaultPolicyVersionParams>,
-    ) -> Self {
-        self.replace_default_policy_version_params = input;
-        self
+    pub fn set_replace_default_policy_version_params(mut self, input: ::std::option::Option<crate::types::ReplaceDefaultPolicyVersionParams>) -> Self {
+        self.replace_default_policy_version_params = input; self
     }
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
     pub fn get_replace_default_policy_version_params(&self) -> &::std::option::Option<crate::types::ReplaceDefaultPolicyVersionParams> {
@@ -128,8 +121,7 @@ impl MitigationActionParamsBuilder {
     }
     /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
     pub fn set_enable_io_t_logging_params(mut self, input: ::std::option::Option<crate::types::EnableIoTLoggingParams>) -> Self {
-        self.enable_io_t_logging_params = input;
-        self
+        self.enable_io_t_logging_params = input; self
     }
     /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
     pub fn get_enable_io_t_logging_params(&self) -> &::std::option::Option<crate::types::EnableIoTLoggingParams> {
@@ -142,8 +134,7 @@ impl MitigationActionParamsBuilder {
     }
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
     pub fn set_publish_finding_to_sns_params(mut self, input: ::std::option::Option<crate::types::PublishFindingToSnsParams>) -> Self {
-        self.publish_finding_to_sns_params = input;
-        self
+        self.publish_finding_to_sns_params = input; self
     }
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
     pub fn get_publish_finding_to_sns_params(&self) -> &::std::option::Option<crate::types::PublishFindingToSnsParams> {
@@ -152,12 +143,19 @@ impl MitigationActionParamsBuilder {
     /// Consumes the builder and constructs a [`MitigationActionParams`](crate::types::MitigationActionParams).
     pub fn build(self) -> crate::types::MitigationActionParams {
         crate::types::MitigationActionParams {
-            update_device_certificate_params: self.update_device_certificate_params,
-            update_ca_certificate_params: self.update_ca_certificate_params,
-            add_things_to_thing_group_params: self.add_things_to_thing_group_params,
-            replace_default_policy_version_params: self.replace_default_policy_version_params,
-            enable_io_t_logging_params: self.enable_io_t_logging_params,
-            publish_finding_to_sns_params: self.publish_finding_to_sns_params,
+            update_device_certificate_params: self.update_device_certificate_params
+            ,
+            update_ca_certificate_params: self.update_ca_certificate_params
+            ,
+            add_things_to_thing_group_params: self.add_things_to_thing_group_params
+            ,
+            replace_default_policy_version_params: self.replace_default_policy_version_params
+            ,
+            enable_io_t_logging_params: self.enable_io_t_logging_params
+            ,
+            publish_finding_to_sns_params: self.publish_finding_to_sns_params
+            ,
         }
     }
 }
+

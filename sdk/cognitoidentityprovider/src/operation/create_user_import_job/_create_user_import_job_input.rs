@@ -3,7 +3,7 @@
 /// <p>Represents the request to create the user import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserImportJobInput {
+pub struct CreateUserImportJobInput  {
     /// <p>The job name for the user import job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
@@ -11,17 +11,17 @@ pub struct CreateUserImportJobInput {
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateUserImportJobInput {
+impl  CreateUserImportJobInput  {
     /// <p>The job name for the user import job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateUserImportJobInputBuilder {
     }
     /// <p>The job name for the user import job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The job name for the user import job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateUserImportJobInputBuilder {
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl CreateUserImportJobInputBuilder {
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
     pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = input;
-        self
+        self.cloud_watch_logs_role_arn = input; self
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_role_arn
     }
     /// Consumes the builder and constructs a [`CreateUserImportJobInput`](crate::operation::create_user_import_job::CreateUserImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_user_import_job::CreateUserImportJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_user_import_job::CreateUserImportJobInput {
-            job_name: self.job_name,
-            user_pool_id: self.user_pool_id,
-            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user_import_job::CreateUserImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_user_import_job::CreateUserImportJobInput {
+                job_name: self.job_name
+                ,
+                user_pool_id: self.user_pool_id
+                ,
+                cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn
+                ,
+            }
+        )
     }
 }
+

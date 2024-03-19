@@ -5,54 +5,50 @@ pub use crate::operation::update_ip_access_settings::_update_ip_access_settings_
 
 impl UpdateIpAccessSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_ip_access_settings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_ip_access_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateIpAccessSettings`.
-///
+/// 
 /// <p>Updates IP access settings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIpAccessSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder,
+                    inner: crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-    > for UpdateIpAccessSettingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
+                    crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
+                > for UpdateIpAccessSettingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
+                        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateIpAccessSettingsFluentBuilder {
     /// Creates a new `UpdateIpAccessSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateIpAccessSettingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_ip_access_settings::UpdateIpAccessSettings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-        crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_ip_access_settings::UpdateIpAccessSettings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_ip_access_settings::UpdateIpAccessSettings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput, crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ARN of the IP access settings.</p>
     pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_access_settings_arn(input.into());
@@ -160,12 +147,12 @@ impl UpdateIpAccessSettingsFluentBuilder {
         self
     }
     /// <p>The updated IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpRule>>) -> Self {
         self.inner = self.inner.set_ip_rules(input);
         self
     }
     /// <p>The updated IP rules of the IP access settings.</p>
-    pub fn get_ip_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRule>> {
+    pub fn get_ip_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpRule>> {
         self.inner.get_ip_rules()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request.</p>
@@ -186,3 +173,4 @@ impl UpdateIpAccessSettingsFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

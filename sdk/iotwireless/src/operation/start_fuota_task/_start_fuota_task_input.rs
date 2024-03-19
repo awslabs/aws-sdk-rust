@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFuotaTaskInput {
+pub struct StartFuotaTaskInput  {
     /// <p>The ID of a FUOTA task.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>,
 }
-impl StartFuotaTaskInput {
+impl  StartFuotaTaskInput  {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanStartFuotaTask> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanStartFuotaTask> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartFuotaTaskInputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl StartFuotaTaskInputBuilder {
     }
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanStartFuotaTask>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>The LoRaWAN information used to start a FUOTA task.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanStartFuotaTask> {
         &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`StartFuotaTaskInput`](crate::operation::start_fuota_task::StartFuotaTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_fuota_task::StartFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_fuota_task::StartFuotaTaskInput {
-            id: self.id,
-            lo_ra_wan: self.lo_ra_wan,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_fuota_task::StartFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_fuota_task::StartFuotaTaskInput {
+                id: self.id
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+            }
+        )
     }
 }
+

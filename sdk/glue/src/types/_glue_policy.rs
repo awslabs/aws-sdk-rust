@@ -3,7 +3,7 @@
 /// <p>A structure for returning a resource policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GluePolicy {
+pub struct GluePolicy  {
     /// <p>Contains the requested policy document, in JSON format.</p>
     pub policy_in_json: ::std::option::Option<::std::string::String>,
     /// <p>Contains the hash value associated with this policy.</p>
@@ -13,21 +13,21 @@ pub struct GluePolicy {
     /// <p>The date and time at which the policy was last updated.</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GluePolicy {
+impl  GluePolicy  {
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn policy_in_json(&self) -> ::std::option::Option<&str> {
+    pub fn policy_in_json(&self) -> ::std::option::Option<& str> {
         self.policy_in_json.as_deref()
     }
     /// <p>Contains the hash value associated with this policy.</p>
-    pub fn policy_hash(&self) -> ::std::option::Option<&str> {
+    pub fn policy_hash(&self) -> ::std::option::Option<& str> {
         self.policy_hash.as_deref()
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl GluePolicyBuilder {
     }
     /// <p>Contains the requested policy document, in JSON format.</p>
     pub fn set_policy_in_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_in_json = input;
-        self
+        self.policy_in_json = input; self
     }
     /// <p>Contains the requested policy document, in JSON format.</p>
     pub fn get_policy_in_json(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GluePolicyBuilder {
     }
     /// <p>Contains the hash value associated with this policy.</p>
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_hash = input;
-        self
+        self.policy_hash = input; self
     }
     /// <p>Contains the hash value associated with this policy.</p>
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GluePolicyBuilder {
     }
     /// <p>The date and time at which the policy was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The date and time at which the policy was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl GluePolicyBuilder {
     }
     /// <p>The date and time at which the policy was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The date and time at which the policy was last updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl GluePolicyBuilder {
     /// Consumes the builder and constructs a [`GluePolicy`](crate::types::GluePolicy).
     pub fn build(self) -> crate::types::GluePolicy {
         crate::types::GluePolicy {
-            policy_in_json: self.policy_in_json,
-            policy_hash: self.policy_hash,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            policy_in_json: self.policy_in_json
+            ,
+            policy_hash: self.policy_hash
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
         }
     }
 }
+

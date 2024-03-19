@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendQuota {
+pub struct SendQuota  {
     /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
     pub max24_hour_send: f64,
     /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
@@ -11,7 +11,7 @@ pub struct SendQuota {
     /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24 hours.</p>
     pub sent_last24_hours: f64,
 }
-impl SendQuota {
+impl  SendQuota  {
     /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
     pub fn max24_hour_send(&self) -> f64 {
         self.max24_hour_send
@@ -48,8 +48,7 @@ impl SendQuotaBuilder {
     }
     /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
     pub fn set_max24_hour_send(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max24_hour_send = input;
-        self
+        self.max24_hour_send = input; self
     }
     /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value is also referred to as your <i>sending quota</i>.)</p>
     pub fn get_max24_hour_send(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl SendQuotaBuilder {
     }
     /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
     pub fn set_max_send_rate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_send_rate = input;
-        self
+        self.max_send_rate = input; self
     }
     /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
     pub fn get_max_send_rate(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl SendQuotaBuilder {
     }
     /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24 hours.</p>
     pub fn set_sent_last24_hours(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sent_last24_hours = input;
-        self
+        self.sent_last24_hours = input; self
     }
     /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the past 24 hours.</p>
     pub fn get_sent_last24_hours(&self) -> &::std::option::Option<f64> {
@@ -86,9 +83,16 @@ impl SendQuotaBuilder {
     /// Consumes the builder and constructs a [`SendQuota`](crate::types::SendQuota).
     pub fn build(self) -> crate::types::SendQuota {
         crate::types::SendQuota {
-            max24_hour_send: self.max24_hour_send.unwrap_or_default(),
-            max_send_rate: self.max_send_rate.unwrap_or_default(),
-            sent_last24_hours: self.sent_last24_hours.unwrap_or_default(),
+            max24_hour_send: self.max24_hour_send
+                .unwrap_or_default()
+            ,
+            max_send_rate: self.max_send_rate
+                .unwrap_or_default()
+            ,
+            sent_last24_hours: self.sent_last24_hours
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

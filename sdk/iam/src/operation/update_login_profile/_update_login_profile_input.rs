@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateLoginProfileInput {
+pub struct UpdateLoginProfileInput  {
     /// <p>The name of the user whose password you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -21,10 +21,10 @@ pub struct UpdateLoginProfileInput {
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     pub password_reset_required: ::std::option::Option<bool>,
 }
-impl UpdateLoginProfileInput {
+impl  UpdateLoginProfileInput  {
     /// <p>The name of the user whose password you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The new password for the specified IAM user.</p>
@@ -38,7 +38,7 @@ impl UpdateLoginProfileInput {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
@@ -46,7 +46,7 @@ impl UpdateLoginProfileInput {
         self.password_reset_required
     }
 }
-impl ::std::fmt::Debug for UpdateLoginProfileInput {
+impl  ::std::fmt::Debug for UpdateLoginProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoginProfileInput");
         formatter.field("user_name", &self.user_name);
@@ -81,8 +81,7 @@ impl UpdateLoginProfileInputBuilder {
     /// <p>The name of the user whose password you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user whose password you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -116,8 +115,7 @@ impl UpdateLoginProfileInputBuilder {
     /// </ul>
     /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The new password for the specified IAM user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -140,23 +138,24 @@ impl UpdateLoginProfileInputBuilder {
     }
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     pub fn set_password_reset_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.password_reset_required = input;
-        self
+        self.password_reset_required = input; self
     }
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
         &self.password_reset_required
     }
     /// Consumes the builder and constructs a [`UpdateLoginProfileInput`](crate::operation::update_login_profile::UpdateLoginProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_login_profile::UpdateLoginProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_login_profile::UpdateLoginProfileInput {
-            user_name: self.user_name,
-            password: self.password,
-            password_reset_required: self.password_reset_required,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_login_profile::UpdateLoginProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_login_profile::UpdateLoginProfileInput {
+                user_name: self.user_name
+                ,
+                password: self.password
+                ,
+                password_reset_required: self.password_reset_required
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateLoginProfileInputBuilder {
@@ -168,3 +167,4 @@ impl ::std::fmt::Debug for UpdateLoginProfileInputBuilder {
         formatter.finish()
     }
 }
+

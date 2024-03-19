@@ -3,19 +3,19 @@
 /// <p>Contains information about an email template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateMetadata {
+pub struct TemplateMetadata  {
     /// <p>The name of the template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time and date the template was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl TemplateMetadata {
+impl  TemplateMetadata  {
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time and date the template was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TemplateMetadataBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TemplateMetadataBuilder {
     }
     /// <p>The time and date the template was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time and date the template was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl TemplateMetadataBuilder {
     /// Consumes the builder and constructs a [`TemplateMetadata`](crate::types::TemplateMetadata).
     pub fn build(self) -> crate::types::TemplateMetadata {
         crate::types::TemplateMetadata {
-            name: self.name,
-            created_timestamp: self.created_timestamp,
+            name: self.name
+            ,
+            created_timestamp: self.created_timestamp
+            ,
         }
     }
 }
+

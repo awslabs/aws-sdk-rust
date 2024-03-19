@@ -3,15 +3,14 @@
 /// <p>The color to be used in the heatmap point style.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeospatialHeatmapDataColor {
+pub struct GeospatialHeatmapDataColor  {
     /// <p>The hex color to be used in the heatmap point style.</p>
     pub color: ::std::string::String,
 }
-impl GeospatialHeatmapDataColor {
+impl  GeospatialHeatmapDataColor  {
     /// <p>The hex color to be used in the heatmap point style.</p>
-    pub fn color(&self) -> &str {
-        use std::ops::Deref;
-        self.color.deref()
+    pub fn color(&self) -> & str {
+        use std::ops::Deref; self.color.deref()
     }
 }
 impl GeospatialHeatmapDataColor {
@@ -36,8 +35,7 @@ impl GeospatialHeatmapDataColorBuilder {
     }
     /// <p>The hex color to be used in the heatmap point style.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The hex color to be used in the heatmap point style.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GeospatialHeatmapDataColorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`color`](crate::types::builders::GeospatialHeatmapDataColorBuilder::color)
     pub fn build(self) -> ::std::result::Result<crate::types::GeospatialHeatmapDataColor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeospatialHeatmapDataColor {
-            color: self.color.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "color",
-                    "color was not specified but it is required when building GeospatialHeatmapDataColor",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeospatialHeatmapDataColor {
+                color: self.color
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("color", "color was not specified but it is required when building GeospatialHeatmapDataColor")
+                    )?
+                ,
+            }
+        )
     }
 }
+

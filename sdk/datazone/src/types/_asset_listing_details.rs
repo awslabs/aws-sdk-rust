@@ -3,20 +3,19 @@
 /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetListingDetails {
+pub struct AssetListingDetails  {
     /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
     pub listing_id: ::std::string::String,
     /// <p>The status of an asset published in an Amazon DataZone catalog.</p>
     pub listing_status: crate::types::ListingStatus,
 }
-impl AssetListingDetails {
+impl  AssetListingDetails  {
     /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
-    pub fn listing_id(&self) -> &str {
-        use std::ops::Deref;
-        self.listing_id.deref()
+    pub fn listing_id(&self) -> & str {
+        use std::ops::Deref; self.listing_id.deref()
     }
     /// <p>The status of an asset published in an Amazon DataZone catalog.</p>
-    pub fn listing_status(&self) -> &crate::types::ListingStatus {
+    pub fn listing_status(&self) -> & crate::types::ListingStatus {
         &self.listing_status
     }
 }
@@ -43,8 +42,7 @@ impl AssetListingDetailsBuilder {
     }
     /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_id = input;
-        self
+        self.listing_id = input; self
     }
     /// <p>The identifier of an asset published in an Amazon DataZone catalog.</p>
     pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AssetListingDetailsBuilder {
     }
     /// <p>The status of an asset published in an Amazon DataZone catalog.</p>
     pub fn set_listing_status(mut self, input: ::std::option::Option<crate::types::ListingStatus>) -> Self {
-        self.listing_status = input;
-        self
+        self.listing_status = input; self
     }
     /// <p>The status of an asset published in an Amazon DataZone catalog.</p>
     pub fn get_listing_status(&self) -> &::std::option::Option<crate::types::ListingStatus> {
@@ -70,19 +67,20 @@ impl AssetListingDetailsBuilder {
     /// - [`listing_id`](crate::types::builders::AssetListingDetailsBuilder::listing_id)
     /// - [`listing_status`](crate::types::builders::AssetListingDetailsBuilder::listing_status)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetListingDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetListingDetails {
-            listing_id: self.listing_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "listing_id",
-                    "listing_id was not specified but it is required when building AssetListingDetails",
-                )
-            })?,
-            listing_status: self.listing_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "listing_status",
-                    "listing_status was not specified but it is required when building AssetListingDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetListingDetails {
+                listing_id: self.listing_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("listing_id", "listing_id was not specified but it is required when building AssetListingDetails")
+                    )?
+                ,
+                listing_status: self.listing_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("listing_status", "listing_status was not specified but it is required when building AssetListingDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

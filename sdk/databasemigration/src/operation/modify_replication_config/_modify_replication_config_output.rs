@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReplicationConfigOutput {
+pub struct ModifyReplicationConfigOutput  {
     /// <p>Information about the serverless replication config that was modified.</p>
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,
 }
-impl ModifyReplicationConfigOutput {
+impl  ModifyReplicationConfigOutput  {
     /// <p>Information about the serverless replication config that was modified.</p>
-    pub fn replication_config(&self) -> ::std::option::Option<&crate::types::ReplicationConfig> {
+    pub fn replication_config(&self) -> ::std::option::Option<& crate::types::ReplicationConfig> {
         self.replication_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyReplicationConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyReplicationConfigOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationConfigOutput`](crate::operation::modify_replication_config::ModifyReplicationConfigOutput).
     pub fn builder() -> crate::operation::modify_replication_config::builders::ModifyReplicationConfigOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyReplicationConfigOutputBuilder {
     }
     /// <p>Information about the serverless replication config that was modified.</p>
     pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
-        self.replication_config = input;
-        self
+        self.replication_config = input; self
     }
     /// <p>Information about the serverless replication config that was modified.</p>
     pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyReplicationConfigOutput`](crate::operation::modify_replication_config::ModifyReplicationConfigOutput).
     pub fn build(self) -> crate::operation::modify_replication_config::ModifyReplicationConfigOutput {
         crate::operation::modify_replication_config::ModifyReplicationConfigOutput {
-            replication_config: self.replication_config,
+            replication_config: self.replication_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

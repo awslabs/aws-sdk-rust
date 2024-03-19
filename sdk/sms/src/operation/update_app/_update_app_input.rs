@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAppInput {
+pub struct UpdateAppInput  {
     /// <p>The ID of the application.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the application.</p>
@@ -12,38 +12,40 @@ pub struct UpdateAppInput {
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The server groups in the application to update.</p>
-    pub server_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
+    pub server_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ServerGroup>>,
     /// <p>The tags to associate with the application.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UpdateAppInput {
+impl  UpdateAppInput  {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The new name of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The server groups in the application to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_groups.is_none()`.
-    pub fn server_groups(&self) -> &[crate::types::ServerGroup] {
-        self.server_groups.as_deref().unwrap_or_default()
+    pub fn server_groups(&self) -> & [crate::types::ServerGroup] {
+        self.server_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to associate with the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateAppInput {
@@ -61,8 +63,8 @@ pub struct UpdateAppInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) server_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) server_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ServerGroup>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UpdateAppInputBuilder {
     /// <p>The ID of the application.</p>
@@ -72,8 +74,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +87,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The new name of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The new description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,17 +126,16 @@ impl UpdateAppInputBuilder {
     /// <p>The server groups in the application to update.</p>
     pub fn server_groups(mut self, input: crate::types::ServerGroup) -> Self {
         let mut v = self.server_groups.unwrap_or_default();
-        v.push(input);
-        self.server_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.server_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The server groups in the application to update.</p>
-    pub fn set_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>) -> Self {
-        self.server_groups = input;
-        self
+    pub fn set_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerGroup>>) -> Self {
+        self.server_groups = input; self
     }
     /// <p>The server groups in the application to update.</p>
-    pub fn get_server_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+    pub fn get_server_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerGroup>> {
         &self.server_groups
     }
     /// Appends an item to `tags`.
@@ -148,28 +145,36 @@ impl UpdateAppInputBuilder {
     /// <p>The tags to associate with the application.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to associate with the application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to associate with the application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
-            app_id: self.app_id,
-            name: self.name,
-            description: self.description,
-            role_name: self.role_name,
-            server_groups: self.server_groups,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_app::UpdateAppInput {
+                app_id: self.app_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                role_name: self.role_name
+                ,
+                server_groups: self.server_groups
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

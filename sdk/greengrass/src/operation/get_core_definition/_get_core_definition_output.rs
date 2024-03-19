@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCoreDefinitionOutput {
+pub struct GetCoreDefinitionOutput  {
     /// The ARN of the definition.
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
@@ -18,48 +18,48 @@ pub struct GetCoreDefinitionOutput {
     /// The name of the definition.
     pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) attached to the resource arn.
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetCoreDefinitionOutput {
+impl  GetCoreDefinitionOutput  {
     /// The ARN of the definition.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> ::std::option::Option<&str> {
+    pub fn latest_version(&self) -> ::std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> ::std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCoreDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreDefinitionOutput`](crate::operation::get_core_definition::GetCoreDefinitionOutput).
     pub fn builder() -> crate::operation::get_core_definition::builders::GetCoreDefinitionOutputBuilder {
@@ -78,7 +78,7 @@ pub struct GetCoreDefinitionOutputBuilder {
     pub(crate) latest_version: ::std::option::Option<::std::string::String>,
     pub(crate) latest_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCoreDefinitionOutputBuilder {
@@ -89,8 +89,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The ARN of the definition.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The ARN of the definition.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The ID of the definition.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the definition.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The ID of the latest version associated with the definition.
     pub fn set_latest_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_version = input;
-        self
+        self.latest_version = input; self
     }
     /// The ID of the latest version associated with the definition.
     pub fn get_latest_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The ARN of the latest version associated with the definition.
     pub fn set_latest_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_version_arn = input;
-        self
+        self.latest_version_arn = input; self
     }
     /// The ARN of the latest version associated with the definition.
     pub fn get_latest_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl GetCoreDefinitionOutputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the definition.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,40 +180,48 @@ impl GetCoreDefinitionOutputBuilder {
     /// Tag(s) attached to the resource arn.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// Tag(s) attached to the resource arn.
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Tag(s) attached to the resource arn.
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCoreDefinitionOutput`](crate::operation::get_core_definition::GetCoreDefinitionOutput).
     pub fn build(self) -> crate::operation::get_core_definition::GetCoreDefinitionOutput {
         crate::operation::get_core_definition::GetCoreDefinitionOutput {
-            arn: self.arn,
-            creation_timestamp: self.creation_timestamp,
-            id: self.id,
-            last_updated_timestamp: self.last_updated_timestamp,
-            latest_version: self.latest_version,
-            latest_version_arn: self.latest_version_arn,
-            name: self.name,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            id: self.id
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            latest_version: self.latest_version
+            ,
+            latest_version_arn: self.latest_version_arn
+            ,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

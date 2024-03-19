@@ -3,7 +3,7 @@
 /// <p>Provides information about the CloudFormation stack output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFormationStackOutputsDetails {
+pub struct AwsCloudFormationStackOutputsDetails  {
     /// <p>A user-defined description associated with the output.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key associated with the output.</p>
@@ -11,17 +11,17 @@ pub struct AwsCloudFormationStackOutputsDetails {
     /// <p>The value associated with the output.</p>
     pub output_value: ::std::option::Option<::std::string::String>,
 }
-impl AwsCloudFormationStackOutputsDetails {
+impl  AwsCloudFormationStackOutputsDetails  {
     /// <p>A user-defined description associated with the output.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The key associated with the output.</p>
-    pub fn output_key(&self) -> ::std::option::Option<&str> {
+    pub fn output_key(&self) -> ::std::option::Option<& str> {
         self.output_key.as_deref()
     }
     /// <p>The value associated with the output.</p>
-    pub fn output_value(&self) -> ::std::option::Option<&str> {
+    pub fn output_value(&self) -> ::std::option::Option<& str> {
         self.output_value.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
     }
     /// <p>A user-defined description associated with the output.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-defined description associated with the output.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
     }
     /// <p>The key associated with the output.</p>
     pub fn set_output_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_key = input;
-        self
+        self.output_key = input; self
     }
     /// <p>The key associated with the output.</p>
     pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
     }
     /// <p>The value associated with the output.</p>
     pub fn set_output_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_value = input;
-        self
+        self.output_value = input; self
     }
     /// <p>The value associated with the output.</p>
     pub fn get_output_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsCloudFormationStackOutputsDetails`](crate::types::AwsCloudFormationStackOutputsDetails).
     pub fn build(self) -> crate::types::AwsCloudFormationStackOutputsDetails {
         crate::types::AwsCloudFormationStackOutputsDetails {
-            description: self.description,
-            output_key: self.output_key,
-            output_value: self.output_value,
+            description: self.description
+            ,
+            output_key: self.output_key
+            ,
+            output_value: self.output_value
+            ,
         }
     }
 }
+

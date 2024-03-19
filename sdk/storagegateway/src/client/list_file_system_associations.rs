@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFileSystemAssociations`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`gateway_arn(impl Into<String>)`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::set_gateway_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::set_marker):<br>required: **false**<br><p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p><br>
-    /// - On success, responds with [`ListFileSystemAssociationsOutput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListFileSystemAssociationsOutput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::marker): <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::next_marker): <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
     ///   - [`file_system_association_summary_list(Option<Vec::<FileSystemAssociationSummary>>)`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput::file_system_association_summary_list): <p>An array of information about the Amazon FSx gateway's file system associations.</p>
-    /// - On failure, responds with [`SdkError<ListFileSystemAssociationsError>`](crate::operation::list_file_system_associations::ListFileSystemAssociationsError)
-    pub fn list_file_system_associations(
-        &self,
-    ) -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder {
-        crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListFileSystemAssociationsError>`](crate::operation::list_file_system_associations::ListFileSystemAssociationsError)
+    pub fn list_file_system_associations(&self) -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder {
+                                crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ChangedBlock {
+pub struct ChangedBlock  {
     /// <p>The block index.</p>
     pub block_index: ::std::option::Option<i32>,
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
@@ -11,21 +11,21 @@ pub struct ChangedBlock {
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
     pub second_block_token: ::std::option::Option<::std::string::String>,
 }
-impl ChangedBlock {
+impl  ChangedBlock  {
     /// <p>The block index.</p>
     pub fn block_index(&self) -> ::std::option::Option<i32> {
         self.block_index
     }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
-    pub fn first_block_token(&self) -> ::std::option::Option<&str> {
+    pub fn first_block_token(&self) -> ::std::option::Option<& str> {
         self.first_block_token.as_deref()
     }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
-    pub fn second_block_token(&self) -> ::std::option::Option<&str> {
+    pub fn second_block_token(&self) -> ::std::option::Option<& str> {
         self.second_block_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ChangedBlock {
+impl  ::std::fmt::Debug for ChangedBlock  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChangedBlock");
         formatter.field("block_index", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl ChangedBlockBuilder {
     }
     /// <p>The block index.</p>
     pub fn set_block_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.block_index = input;
-        self
+        self.block_index = input; self
     }
     /// <p>The block index.</p>
     pub fn get_block_index(&self) -> &::std::option::Option<i32> {
@@ -71,8 +70,7 @@ impl ChangedBlockBuilder {
     }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
     pub fn set_first_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_block_token = input;
-        self
+        self.first_block_token = input; self
     }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
     pub fn get_first_block_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ChangedBlockBuilder {
     }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
     pub fn set_second_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.second_block_token = input;
-        self
+        self.second_block_token = input; self
     }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
     pub fn get_second_block_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl ChangedBlockBuilder {
     /// Consumes the builder and constructs a [`ChangedBlock`](crate::types::ChangedBlock).
     pub fn build(self) -> crate::types::ChangedBlock {
         crate::types::ChangedBlock {
-            block_index: self.block_index,
-            first_block_token: self.first_block_token,
-            second_block_token: self.second_block_token,
+            block_index: self.block_index
+            ,
+            first_block_token: self.first_block_token
+            ,
+            second_block_token: self.second_block_token
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for ChangedBlockBuilder {
         formatter.finish()
     }
 }
+

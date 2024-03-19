@@ -3,7 +3,7 @@
 /// <p>Contains summary information about the associated AppIntegrations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegrationAssociationSummary {
+pub struct IntegrationAssociationSummary  {
     /// <p>The identifier for the AppIntegration association.</p>
     pub integration_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
@@ -21,37 +21,37 @@ pub struct IntegrationAssociationSummary {
     /// <p>The name of the source.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
 }
-impl IntegrationAssociationSummary {
+impl  IntegrationAssociationSummary  {
     /// <p>The identifier for the AppIntegration association.</p>
-    pub fn integration_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_association_id(&self) -> ::std::option::Option<& str> {
         self.integration_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
-    pub fn integration_association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_association_arn(&self) -> ::std::option::Option<& str> {
         self.integration_association_arn.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The integration type.</p>
-    pub fn integration_type(&self) -> ::std::option::Option<&crate::types::IntegrationType> {
+    pub fn integration_type(&self) -> ::std::option::Option<& crate::types::IntegrationType> {
         self.integration_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<& str> {
         self.integration_arn.as_deref()
     }
     /// <p>The URL for the external application.</p>
-    pub fn source_application_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_application_url(&self) -> ::std::option::Option<& str> {
         self.source_application_url.as_deref()
     }
     /// <p>The user-provided, friendly name for the external application.</p>
-    pub fn source_application_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_application_name(&self) -> ::std::option::Option<& str> {
         self.source_application_name.as_deref()
     }
     /// <p>The name of the source.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The identifier for the AppIntegration association.</p>
     pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_association_id = input;
-        self
+        self.integration_association_id = input; self
     }
     /// <p>The identifier for the AppIntegration association.</p>
     pub fn get_integration_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
     pub fn set_integration_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_association_arn = input;
-        self
+        self.integration_association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
     pub fn get_integration_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The integration type.</p>
     pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
-        self.integration_type = input;
-        self
+        self.integration_type = input; self
     }
     /// <p>The integration type.</p>
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
@@ -139,8 +135,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_arn = input;
-        self
+        self.integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The URL for the external application.</p>
     pub fn set_source_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_application_url = input;
-        self
+        self.source_application_url = input; self
     }
     /// <p>The URL for the external application.</p>
     pub fn get_source_application_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The user-provided, friendly name for the external application.</p>
     pub fn set_source_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_application_name = input;
-        self
+        self.source_application_name = input; self
     }
     /// <p>The user-provided, friendly name for the external application.</p>
     pub fn get_source_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl IntegrationAssociationSummaryBuilder {
     }
     /// <p>The name of the source.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The name of the source.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
@@ -191,14 +183,23 @@ impl IntegrationAssociationSummaryBuilder {
     /// Consumes the builder and constructs a [`IntegrationAssociationSummary`](crate::types::IntegrationAssociationSummary).
     pub fn build(self) -> crate::types::IntegrationAssociationSummary {
         crate::types::IntegrationAssociationSummary {
-            integration_association_id: self.integration_association_id,
-            integration_association_arn: self.integration_association_arn,
-            instance_id: self.instance_id,
-            integration_type: self.integration_type,
-            integration_arn: self.integration_arn,
-            source_application_url: self.source_application_url,
-            source_application_name: self.source_application_name,
-            source_type: self.source_type,
+            integration_association_id: self.integration_association_id
+            ,
+            integration_association_arn: self.integration_association_arn
+            ,
+            instance_id: self.instance_id
+            ,
+            integration_type: self.integration_type
+            ,
+            integration_arn: self.integration_arn
+            ,
+            source_application_url: self.source_application_url
+            ,
+            source_application_name: self.source_application_name
+            ,
+            source_type: self.source_type
+            ,
         }
     }
 }
+

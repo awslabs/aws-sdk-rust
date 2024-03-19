@@ -3,19 +3,19 @@
 /// <p>Information about how a package originally entered the CodeArtifact domain. For packages published directly to CodeArtifact, the entry point is the repository it was published to. For packages ingested from an external repository, the entry point is the external connection that it was ingested from. An external connection is a CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainEntryPoint {
+pub struct DomainEntryPoint  {
     /// <p>The name of the repository that a package was originally published to.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the external connection that a package was ingested from.</p>
     pub external_connection_name: ::std::option::Option<::std::string::String>,
 }
-impl DomainEntryPoint {
+impl  DomainEntryPoint  {
     /// <p>The name of the repository that a package was originally published to.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the external connection that a package was ingested from.</p>
-    pub fn external_connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn external_connection_name(&self) -> ::std::option::Option<& str> {
         self.external_connection_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DomainEntryPointBuilder {
     }
     /// <p>The name of the repository that a package was originally published to.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that a package was originally published to.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DomainEntryPointBuilder {
     }
     /// <p>The name of the external connection that a package was ingested from.</p>
     pub fn set_external_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_connection_name = input;
-        self
+        self.external_connection_name = input; self
     }
     /// <p>The name of the external connection that a package was ingested from.</p>
     pub fn get_external_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DomainEntryPointBuilder {
     /// Consumes the builder and constructs a [`DomainEntryPoint`](crate::types::DomainEntryPoint).
     pub fn build(self) -> crate::types::DomainEntryPoint {
         crate::types::DomainEntryPoint {
-            repository_name: self.repository_name,
-            external_connection_name: self.external_connection_name,
+            repository_name: self.repository_name
+            ,
+            external_connection_name: self.external_connection_name
+            ,
         }
     }
 }
+

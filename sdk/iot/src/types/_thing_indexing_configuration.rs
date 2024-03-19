@@ -3,7 +3,7 @@
 /// <p>The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThingIndexingConfiguration {
+pub struct ThingIndexingConfiguration  {
     /// <p>Thing indexing mode. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -43,9 +43,9 @@ pub struct ThingIndexingConfiguration {
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p><note>
     /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
     /// </note>
-    pub managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub managed_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
     /// <p>Contains custom field names and their data type.</p>
-    pub custom_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub custom_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
     /// <p>Provides additional selections for named shadows and geolocation data.</p>
     /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
     /// <p>To add geolocation data to your fleet indexing configuration:</p>
@@ -57,7 +57,7 @@ pub struct ThingIndexingConfiguration {
     /// </ul>
     pub filter: ::std::option::Option<crate::types::IndexingFilter>,
 }
-impl ThingIndexingConfiguration {
+impl  ThingIndexingConfiguration  {
     /// <p>Thing indexing mode. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -67,7 +67,7 @@ impl ThingIndexingConfiguration {
     /// <li>
     /// <p>OFF - Thing indexing is disabled.</p></li>
     /// </ul>
-    pub fn thing_indexing_mode(&self) -> &crate::types::ThingIndexingMode {
+    pub fn thing_indexing_mode(&self) -> & crate::types::ThingIndexingMode {
         &self.thing_indexing_mode
     }
     /// <p>Thing connectivity indexing mode. Valid values are:</p>
@@ -77,7 +77,7 @@ impl ThingIndexingConfiguration {
     /// <li>
     /// <p>OFF - Thing connectivity status indexing is disabled.</p></li>
     /// </ul>
-    pub fn thing_connectivity_indexing_mode(&self) -> ::std::option::Option<&crate::types::ThingConnectivityIndexingMode> {
+    pub fn thing_connectivity_indexing_mode(&self) -> ::std::option::Option<& crate::types::ThingConnectivityIndexingMode> {
         self.thing_connectivity_indexing_mode.as_ref()
     }
     /// <p>Device Defender indexing mode. Valid values are:</p>
@@ -88,7 +88,7 @@ impl ThingIndexingConfiguration {
     /// <p>OFF - Device Defender indexing is disabled.</p></li>
     /// </ul>
     /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a></p>
-    pub fn device_defender_indexing_mode(&self) -> ::std::option::Option<&crate::types::DeviceDefenderIndexingMode> {
+    pub fn device_defender_indexing_mode(&self) -> ::std::option::Option<& crate::types::DeviceDefenderIndexingMode> {
         self.device_defender_indexing_mode.as_ref()
     }
     /// <p>Named shadow indexing mode. Valid values are:</p>
@@ -99,22 +99,24 @@ impl ThingIndexingConfiguration {
     /// <p>OFF - Named shadow indexing is disabled.</p></li>
     /// </ul>
     /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
-    pub fn named_shadow_indexing_mode(&self) -> ::std::option::Option<&crate::types::NamedShadowIndexingMode> {
+    pub fn named_shadow_indexing_mode(&self) -> ::std::option::Option<& crate::types::NamedShadowIndexingMode> {
         self.named_shadow_indexing_mode.as_ref()
     }
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p><note>
     /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_fields.is_none()`.
-    pub fn managed_fields(&self) -> &[crate::types::Field] {
-        self.managed_fields.as_deref().unwrap_or_default()
+    pub fn managed_fields(&self) -> & [crate::types::Field] {
+        self.managed_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains custom field names and their data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_fields.is_none()`.
-    pub fn custom_fields(&self) -> &[crate::types::Field] {
-        self.custom_fields.as_deref().unwrap_or_default()
+    pub fn custom_fields(&self) -> & [crate::types::Field] {
+        self.custom_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides additional selections for named shadows and geolocation data.</p>
     /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
@@ -125,7 +127,7 @@ impl ThingIndexingConfiguration {
     /// <li>
     /// <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p></li>
     /// </ul>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::IndexingFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::IndexingFilter> {
         self.filter.as_ref()
     }
 }
@@ -144,8 +146,8 @@ pub struct ThingIndexingConfigurationBuilder {
     pub(crate) thing_connectivity_indexing_mode: ::std::option::Option<crate::types::ThingConnectivityIndexingMode>,
     pub(crate) device_defender_indexing_mode: ::std::option::Option<crate::types::DeviceDefenderIndexingMode>,
     pub(crate) named_shadow_indexing_mode: ::std::option::Option<crate::types::NamedShadowIndexingMode>,
-    pub(crate) managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    pub(crate) custom_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub(crate) managed_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
+    pub(crate) custom_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
     pub(crate) filter: ::std::option::Option<crate::types::IndexingFilter>,
 }
 impl ThingIndexingConfigurationBuilder {
@@ -173,8 +175,7 @@ impl ThingIndexingConfigurationBuilder {
     /// <p>OFF - Thing indexing is disabled.</p></li>
     /// </ul>
     pub fn set_thing_indexing_mode(mut self, input: ::std::option::Option<crate::types::ThingIndexingMode>) -> Self {
-        self.thing_indexing_mode = input;
-        self
+        self.thing_indexing_mode = input; self
     }
     /// <p>Thing indexing mode. Valid values are:</p>
     /// <ul>
@@ -207,8 +208,7 @@ impl ThingIndexingConfigurationBuilder {
     /// <p>OFF - Thing connectivity status indexing is disabled.</p></li>
     /// </ul>
     pub fn set_thing_connectivity_indexing_mode(mut self, input: ::std::option::Option<crate::types::ThingConnectivityIndexingMode>) -> Self {
-        self.thing_connectivity_indexing_mode = input;
-        self
+        self.thing_connectivity_indexing_mode = input; self
     }
     /// <p>Thing connectivity indexing mode. Valid values are:</p>
     /// <ul>
@@ -241,8 +241,7 @@ impl ThingIndexingConfigurationBuilder {
     /// </ul>
     /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a></p>
     pub fn set_device_defender_indexing_mode(mut self, input: ::std::option::Option<crate::types::DeviceDefenderIndexingMode>) -> Self {
-        self.device_defender_indexing_mode = input;
-        self
+        self.device_defender_indexing_mode = input; self
     }
     /// <p>Device Defender indexing mode. Valid values are:</p>
     /// <ul>
@@ -276,8 +275,7 @@ impl ThingIndexingConfigurationBuilder {
     /// </ul>
     /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a></p>
     pub fn set_named_shadow_indexing_mode(mut self, input: ::std::option::Option<crate::types::NamedShadowIndexingMode>) -> Self {
-        self.named_shadow_indexing_mode = input;
-        self
+        self.named_shadow_indexing_mode = input; self
     }
     /// <p>Named shadow indexing mode. Valid values are:</p>
     /// <ul>
@@ -299,21 +297,20 @@ impl ThingIndexingConfigurationBuilder {
     /// </note>
     pub fn managed_fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.managed_fields.unwrap_or_default();
-        v.push(input);
-        self.managed_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p><note>
     /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
     /// </note>
-    pub fn set_managed_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
-        self.managed_fields = input;
-        self
+    pub fn set_managed_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>) -> Self {
+        self.managed_fields = input; self
     }
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p><note>
     /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
     /// </note>
-    pub fn get_managed_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_managed_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Field>> {
         &self.managed_fields
     }
     /// Appends an item to `custom_fields`.
@@ -323,17 +320,16 @@ impl ThingIndexingConfigurationBuilder {
     /// <p>Contains custom field names and their data type.</p>
     pub fn custom_fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.custom_fields.unwrap_or_default();
-        v.push(input);
-        self.custom_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains custom field names and their data type.</p>
-    pub fn set_custom_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
-        self.custom_fields = input;
-        self
+    pub fn set_custom_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>) -> Self {
+        self.custom_fields = input; self
     }
     /// <p>Contains custom field names and their data type.</p>
-    pub fn get_custom_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_custom_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Field>> {
         &self.custom_fields
     }
     /// <p>Provides additional selections for named shadows and geolocation data.</p>
@@ -359,8 +355,7 @@ impl ThingIndexingConfigurationBuilder {
     /// <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::IndexingFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Provides additional selections for named shadows and geolocation data.</p>
     /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
@@ -378,19 +373,27 @@ impl ThingIndexingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`thing_indexing_mode`](crate::types::builders::ThingIndexingConfigurationBuilder::thing_indexing_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::ThingIndexingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ThingIndexingConfiguration {
-            thing_indexing_mode: self.thing_indexing_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "thing_indexing_mode",
-                    "thing_indexing_mode was not specified but it is required when building ThingIndexingConfiguration",
-                )
-            })?,
-            thing_connectivity_indexing_mode: self.thing_connectivity_indexing_mode,
-            device_defender_indexing_mode: self.device_defender_indexing_mode,
-            named_shadow_indexing_mode: self.named_shadow_indexing_mode,
-            managed_fields: self.managed_fields,
-            custom_fields: self.custom_fields,
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ThingIndexingConfiguration {
+                thing_indexing_mode: self.thing_indexing_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("thing_indexing_mode", "thing_indexing_mode was not specified but it is required when building ThingIndexingConfiguration")
+                    )?
+                ,
+                thing_connectivity_indexing_mode: self.thing_connectivity_indexing_mode
+                ,
+                device_defender_indexing_mode: self.device_defender_indexing_mode
+                ,
+                named_shadow_indexing_mode: self.named_shadow_indexing_mode
+                ,
+                managed_fields: self.managed_fields
+                ,
+                custom_fields: self.custom_fields
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

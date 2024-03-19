@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserInput {
+impl  DeleteUserInput  {
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DeleteUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            server_id: self.server_id,
-            user_name: self.user_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                server_id: self.server_id
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Specifies whether your Amazon EC2 instance is configured for hibernation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataHibernationOptionsDetails {
+pub struct AwsEc2LaunchTemplateDataHibernationOptionsDetails  {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     pub configured: ::std::option::Option<bool>,
 }
-impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
+impl  AwsEc2LaunchTemplateDataHibernationOptionsDetails  {
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     pub fn configured(&self) -> ::std::option::Option<bool> {
         self.configured
@@ -34,8 +34,7 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
     }
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.configured = input;
-        self
+        self.configured = input; self
     }
     /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
     pub fn get_configured(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails {
-        crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails { configured: self.configured }
+        crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails {
+            configured: self.configured
+            ,
+        }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MouthOpen {
+pub struct MouthOpen  {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl MouthOpen {
+impl  MouthOpen  {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     pub fn value(&self) -> bool {
         self.value
@@ -41,8 +41,7 @@ impl MouthOpenBuilder {
     }
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     pub fn get_value(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl MouthOpenBuilder {
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,12 @@ impl MouthOpenBuilder {
     /// Consumes the builder and constructs a [`MouthOpen`](crate::types::MouthOpen).
     pub fn build(self) -> crate::types::MouthOpen {
         crate::types::MouthOpen {
-            value: self.value.unwrap_or_default(),
-            confidence: self.confidence,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

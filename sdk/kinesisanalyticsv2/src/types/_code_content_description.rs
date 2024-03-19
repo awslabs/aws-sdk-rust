@@ -3,7 +3,7 @@
 /// <p>Describes details about the code of a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeContentDescription {
+pub struct CodeContentDescription  {
     /// <p>The text-format code</p>
     pub text_content: ::std::option::Option<::std::string::String>,
     /// <p>The checksum that can be used to validate zip-format code.</p>
@@ -13,13 +13,13 @@ pub struct CodeContentDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
     pub s3_application_code_location_description: ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
 }
-impl CodeContentDescription {
+impl  CodeContentDescription  {
     /// <p>The text-format code</p>
-    pub fn text_content(&self) -> ::std::option::Option<&str> {
+    pub fn text_content(&self) -> ::std::option::Option<& str> {
         self.text_content.as_deref()
     }
     /// <p>The checksum that can be used to validate zip-format code.</p>
-    pub fn code_md5(&self) -> ::std::option::Option<&str> {
+    pub fn code_md5(&self) -> ::std::option::Option<& str> {
         self.code_md5.as_deref()
     }
     /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
@@ -27,7 +27,7 @@ impl CodeContentDescription {
         self.code_size
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
-    pub fn s3_application_code_location_description(&self) -> ::std::option::Option<&crate::types::S3ApplicationCodeLocationDescription> {
+    pub fn s3_application_code_location_description(&self) -> ::std::option::Option<& crate::types::S3ApplicationCodeLocationDescription> {
         self.s3_application_code_location_description.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CodeContentDescriptionBuilder {
     }
     /// <p>The text-format code</p>
     pub fn set_text_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_content = input;
-        self
+        self.text_content = input; self
     }
     /// <p>The text-format code</p>
     pub fn get_text_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CodeContentDescriptionBuilder {
     }
     /// <p>The checksum that can be used to validate zip-format code.</p>
     pub fn set_code_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_md5 = input;
-        self
+        self.code_md5 = input; self
     }
     /// <p>The checksum that can be used to validate zip-format code.</p>
     pub fn get_code_md5(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CodeContentDescriptionBuilder {
     }
     /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.code_size = input;
-        self
+        self.code_size = input; self
     }
     /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
     pub fn get_code_size(&self) -> &::std::option::Option<i64> {
@@ -96,12 +93,8 @@ impl CodeContentDescriptionBuilder {
         self
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
-    pub fn set_s3_application_code_location_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
-    ) -> Self {
-        self.s3_application_code_location_description = input;
-        self
+    pub fn set_s3_application_code_location_description(mut self, input: ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>) -> Self {
+        self.s3_application_code_location_description = input; self
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
     pub fn get_s3_application_code_location_description(&self) -> &::std::option::Option<crate::types::S3ApplicationCodeLocationDescription> {
@@ -110,10 +103,15 @@ impl CodeContentDescriptionBuilder {
     /// Consumes the builder and constructs a [`CodeContentDescription`](crate::types::CodeContentDescription).
     pub fn build(self) -> crate::types::CodeContentDescription {
         crate::types::CodeContentDescription {
-            text_content: self.text_content,
-            code_md5: self.code_md5,
-            code_size: self.code_size,
-            s3_application_code_location_description: self.s3_application_code_location_description,
+            text_content: self.text_content
+            ,
+            code_md5: self.code_md5
+            ,
+            code_size: self.code_size
+            ,
+            s3_application_code_location_description: self.s3_application_code_location_description
+            ,
         }
     }
 }
+

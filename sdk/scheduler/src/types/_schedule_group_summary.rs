@@ -3,7 +3,7 @@
 /// <p>The details of a schedule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleGroupSummary {
+pub struct ScheduleGroupSummary  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule group.</p>
@@ -15,25 +15,25 @@ pub struct ScheduleGroupSummary {
     /// <p>The time at which the schedule group was last modified.</p>
     pub last_modification_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ScheduleGroupSummary {
+impl  ScheduleGroupSummary  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the schedule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the state of the schedule group.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduleGroupState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ScheduleGroupState> {
         self.state.as_ref()
     }
     /// <p>The time at which the schedule group was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn last_modification_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_date.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ScheduleGroupSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ScheduleGroupSummaryBuilder {
     }
     /// <p>The name of the schedule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schedule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ScheduleGroupSummaryBuilder {
     }
     /// <p>Specifies the state of the schedule group.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduleGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Specifies the state of the schedule group.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduleGroupState> {
@@ -104,8 +101,7 @@ impl ScheduleGroupSummaryBuilder {
     }
     /// <p>The time at which the schedule group was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The time at which the schedule group was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl ScheduleGroupSummaryBuilder {
     }
     /// <p>The time at which the schedule group was last modified.</p>
     pub fn set_last_modification_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_date = input;
-        self
+        self.last_modification_date = input; self
     }
     /// <p>The time at which the schedule group was last modified.</p>
     pub fn get_last_modification_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl ScheduleGroupSummaryBuilder {
     /// Consumes the builder and constructs a [`ScheduleGroupSummary`](crate::types::ScheduleGroupSummary).
     pub fn build(self) -> crate::types::ScheduleGroupSummary {
         crate::types::ScheduleGroupSummary {
-            arn: self.arn,
-            name: self.name,
-            state: self.state,
-            creation_date: self.creation_date,
-            last_modification_date: self.last_modification_date,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modification_date: self.last_modification_date
+            ,
         }
     }
 }
+

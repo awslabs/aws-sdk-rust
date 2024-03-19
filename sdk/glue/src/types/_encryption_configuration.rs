@@ -3,27 +3,28 @@
 /// <p>Specifies an encryption configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionConfiguration {
+pub struct EncryptionConfiguration  {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
-    pub s3_encryption: ::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>>,
+    pub s3_encryption: ::std::option::Option<::std::vec::Vec::<crate::types::S3Encryption>>,
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
     pub cloud_watch_encryption: ::std::option::Option<crate::types::CloudWatchEncryption>,
     /// <p>The encryption configuration for job bookmarks.</p>
     pub job_bookmarks_encryption: ::std::option::Option<crate::types::JobBookmarksEncryption>,
 }
-impl EncryptionConfiguration {
+impl  EncryptionConfiguration  {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_encryption.is_none()`.
-    pub fn s3_encryption(&self) -> &[crate::types::S3Encryption] {
-        self.s3_encryption.as_deref().unwrap_or_default()
+    pub fn s3_encryption(&self) -> & [crate::types::S3Encryption] {
+        self.s3_encryption.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
-    pub fn cloud_watch_encryption(&self) -> ::std::option::Option<&crate::types::CloudWatchEncryption> {
+    pub fn cloud_watch_encryption(&self) -> ::std::option::Option<& crate::types::CloudWatchEncryption> {
         self.cloud_watch_encryption.as_ref()
     }
     /// <p>The encryption configuration for job bookmarks.</p>
-    pub fn job_bookmarks_encryption(&self) -> ::std::option::Option<&crate::types::JobBookmarksEncryption> {
+    pub fn job_bookmarks_encryption(&self) -> ::std::option::Option<& crate::types::JobBookmarksEncryption> {
         self.job_bookmarks_encryption.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl EncryptionConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigurationBuilder {
-    pub(crate) s3_encryption: ::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>>,
+    pub(crate) s3_encryption: ::std::option::Option<::std::vec::Vec::<crate::types::S3Encryption>>,
     pub(crate) cloud_watch_encryption: ::std::option::Option<crate::types::CloudWatchEncryption>,
     pub(crate) job_bookmarks_encryption: ::std::option::Option<crate::types::JobBookmarksEncryption>,
 }
@@ -50,17 +51,16 @@ impl EncryptionConfigurationBuilder {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
     pub fn s3_encryption(mut self, input: crate::types::S3Encryption) -> Self {
         let mut v = self.s3_encryption.unwrap_or_default();
-        v.push(input);
-        self.s3_encryption = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.s3_encryption = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
-    pub fn set_s3_encryption(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>>) -> Self {
-        self.s3_encryption = input;
-        self
+    pub fn set_s3_encryption(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Encryption>>) -> Self {
+        self.s3_encryption = input; self
     }
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
-    pub fn get_s3_encryption(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>> {
+    pub fn get_s3_encryption(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Encryption>> {
         &self.s3_encryption
     }
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
@@ -70,8 +70,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
     pub fn set_cloud_watch_encryption(mut self, input: ::std::option::Option<crate::types::CloudWatchEncryption>) -> Self {
-        self.cloud_watch_encryption = input;
-        self
+        self.cloud_watch_encryption = input; self
     }
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
     pub fn get_cloud_watch_encryption(&self) -> &::std::option::Option<crate::types::CloudWatchEncryption> {
@@ -84,8 +83,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The encryption configuration for job bookmarks.</p>
     pub fn set_job_bookmarks_encryption(mut self, input: ::std::option::Option<crate::types::JobBookmarksEncryption>) -> Self {
-        self.job_bookmarks_encryption = input;
-        self
+        self.job_bookmarks_encryption = input; self
     }
     /// <p>The encryption configuration for job bookmarks.</p>
     pub fn get_job_bookmarks_encryption(&self) -> &::std::option::Option<crate::types::JobBookmarksEncryption> {
@@ -94,9 +92,13 @@ impl EncryptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {
-            s3_encryption: self.s3_encryption,
-            cloud_watch_encryption: self.cloud_watch_encryption,
-            job_bookmarks_encryption: self.job_bookmarks_encryption,
+            s3_encryption: self.s3_encryption
+            ,
+            cloud_watch_encryption: self.cloud_watch_encryption
+            ,
+            job_bookmarks_encryption: self.job_bookmarks_encryption
+            ,
         }
     }
 }
+

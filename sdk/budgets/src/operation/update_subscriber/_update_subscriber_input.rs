@@ -3,7 +3,7 @@
 /// <p>Request of UpdateSubscriber</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSubscriberInput {
+pub struct UpdateSubscriberInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose subscriber you want to update.</p>
@@ -15,25 +15,25 @@ pub struct UpdateSubscriberInput {
     /// <p>The updated subscriber that is associated with a budget notification.</p>
     pub new_subscriber: ::std::option::Option<crate::types::Subscriber>,
 }
-impl UpdateSubscriberInput {
+impl  UpdateSubscriberInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscriber you want to update.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The previous subscriber that is associated with a budget notification.</p>
-    pub fn old_subscriber(&self) -> ::std::option::Option<&crate::types::Subscriber> {
+    pub fn old_subscriber(&self) -> ::std::option::Option<& crate::types::Subscriber> {
         self.old_subscriber.as_ref()
     }
     /// <p>The updated subscriber that is associated with a budget notification.</p>
-    pub fn new_subscriber(&self) -> ::std::option::Option<&crate::types::Subscriber> {
+    pub fn new_subscriber(&self) -> ::std::option::Option<& crate::types::Subscriber> {
         self.new_subscriber.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The notification whose subscriber you want to update.</p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input;
-        self
+        self.notification = input; self
     }
     /// <p>The notification whose subscriber you want to update.</p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
@@ -108,8 +105,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The previous subscriber that is associated with a budget notification.</p>
     pub fn set_old_subscriber(mut self, input: ::std::option::Option<crate::types::Subscriber>) -> Self {
-        self.old_subscriber = input;
-        self
+        self.old_subscriber = input; self
     }
     /// <p>The previous subscriber that is associated with a budget notification.</p>
     pub fn get_old_subscriber(&self) -> &::std::option::Option<crate::types::Subscriber> {
@@ -123,23 +119,28 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The updated subscriber that is associated with a budget notification.</p>
     pub fn set_new_subscriber(mut self, input: ::std::option::Option<crate::types::Subscriber>) -> Self {
-        self.new_subscriber = input;
-        self
+        self.new_subscriber = input; self
     }
     /// <p>The updated subscriber that is associated with a budget notification.</p>
     pub fn get_new_subscriber(&self) -> &::std::option::Option<crate::types::Subscriber> {
         &self.new_subscriber
     }
     /// Consumes the builder and constructs a [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_subscriber::UpdateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_subscriber::UpdateSubscriberInput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
-            notification: self.notification,
-            old_subscriber: self.old_subscriber,
-            new_subscriber: self.new_subscriber,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscriber::UpdateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscriber::UpdateSubscriberInput {
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                notification: self.notification
+                ,
+                old_subscriber: self.old_subscriber
+                ,
+                new_subscriber: self.new_subscriber
+                ,
+            }
+        )
     }
 }
+

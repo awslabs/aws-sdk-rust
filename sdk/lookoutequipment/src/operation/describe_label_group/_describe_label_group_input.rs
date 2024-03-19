@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLabelGroupInput {
+pub struct DescribeLabelGroupInput  {
     /// <p>Returns the name of the label group.</p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLabelGroupInput {
+impl  DescribeLabelGroupInput  {
     /// <p>Returns the name of the label group.</p>
-    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeLabelGroupInputBuilder {
     }
     /// <p>Returns the name of the label group.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// <p>Returns the name of the label group.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
     /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_label_group::DescribeLabelGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_label_group::DescribeLabelGroupInput {
-            label_group_name: self.label_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_label_group::DescribeLabelGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_label_group::DescribeLabelGroupInput {
+                label_group_name: self.label_group_name
+                ,
+            }
+        )
     }
 }
+

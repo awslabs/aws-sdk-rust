@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointsOutput {
+pub struct DescribeEndpointsOutput  {
     /// <p>List of endpoints.</p>
-    pub endpoints: ::std::vec::Vec<crate::types::Endpoint>,
+    pub endpoints: ::std::vec::Vec::<crate::types::Endpoint>,
     _request_id: Option<String>,
 }
-impl DescribeEndpointsOutput {
+impl  DescribeEndpointsOutput  {
     /// <p>List of endpoints.</p>
-    pub fn endpoints(&self) -> &[crate::types::Endpoint] {
-        use std::ops::Deref;
-        self.endpoints.deref()
+    pub fn endpoints(&self) -> & [crate::types::Endpoint] {
+        use std::ops::Deref; self.endpoints.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
     pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder {
@@ -30,7 +29,7 @@ impl DescribeEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointsOutputBuilder {
-    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::Endpoint>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointsOutputBuilder {
@@ -41,42 +40,41 @@ impl DescribeEndpointsOutputBuilder {
     /// <p>List of endpoints.</p>
     pub fn endpoints(mut self, input: crate::types::Endpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of endpoints.</p>
-    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Endpoint>>) -> Self {
+        self.endpoints = input; self
     }
     /// <p>List of endpoints.</p>
-    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Endpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Endpoint>> {
         &self.endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoints`](crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder::endpoints)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_endpoints::DescribeEndpointsOutput {
-            endpoints: self.endpoints.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoints",
-                    "endpoints was not specified but it is required when building DescribeEndpointsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_endpoints::DescribeEndpointsOutput {
+                endpoints: self.endpoints
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoints", "endpoints was not specified but it is required when building DescribeEndpointsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

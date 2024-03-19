@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMediaAnalysisJobs`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token, if the previous response was incomplete.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an <code>InvalidParameterException</code> error occurs. The default value is 100.</p><br>
-    /// - On success, responds with [`ListMediaAnalysisJobsOutput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput) with field(s):
+                            /// - On success, responds with [`ListMediaAnalysisJobsOutput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput::next_token): <p>Pagination token, if the previous response was incomplete.</p>
     ///   - [`media_analysis_jobs(Vec::<MediaAnalysisJobDescription>)`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput::media_analysis_jobs): <p>Contains a list of all media analysis jobs.</p>
-    /// - On failure, responds with [`SdkError<ListMediaAnalysisJobsError>`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError)
+                            /// - On failure, responds with [`SdkError<ListMediaAnalysisJobsError>`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError)
     pub fn list_media_analysis_jobs(&self) -> crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder {
-        crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

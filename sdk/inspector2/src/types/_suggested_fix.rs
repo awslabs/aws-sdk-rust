@@ -3,19 +3,19 @@
 /// <p>A suggested fix for a vulnerability in your Lambda function code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggestedFix {
+pub struct SuggestedFix  {
     /// <p>The fix's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The fix's code.</p>
     pub code: ::std::option::Option<::std::string::String>,
 }
-impl SuggestedFix {
+impl  SuggestedFix  {
     /// <p>The fix's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The fix's code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SuggestedFixBuilder {
     }
     /// <p>The fix's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The fix's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SuggestedFixBuilder {
     }
     /// <p>The fix's code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The fix's code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SuggestedFixBuilder {
     /// Consumes the builder and constructs a [`SuggestedFix`](crate::types::SuggestedFix).
     pub fn build(self) -> crate::types::SuggestedFix {
         crate::types::SuggestedFix {
-            description: self.description,
-            code: self.code,
+            description: self.description
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

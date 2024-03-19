@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCompositionOutput {
+pub struct GetCompositionOutput  {
     /// <p>The Composition that was returned.</p>
     pub composition: ::std::option::Option<crate::types::Composition>,
     _request_id: Option<String>,
 }
-impl GetCompositionOutput {
+impl  GetCompositionOutput  {
     /// <p>The Composition that was returned.</p>
-    pub fn composition(&self) -> ::std::option::Option<&crate::types::Composition> {
+    pub fn composition(&self) -> ::std::option::Option<& crate::types::Composition> {
         self.composition.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCompositionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCompositionOutput {
     /// Creates a new builder-style object to manufacture [`GetCompositionOutput`](crate::operation::get_composition::GetCompositionOutput).
     pub fn builder() -> crate::operation::get_composition::builders::GetCompositionOutputBuilder {
@@ -40,27 +40,28 @@ impl GetCompositionOutputBuilder {
     }
     /// <p>The Composition that was returned.</p>
     pub fn set_composition(mut self, input: ::std::option::Option<crate::types::Composition>) -> Self {
-        self.composition = input;
-        self
+        self.composition = input; self
     }
     /// <p>The Composition that was returned.</p>
     pub fn get_composition(&self) -> &::std::option::Option<crate::types::Composition> {
         &self.composition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCompositionOutput`](crate::operation::get_composition::GetCompositionOutput).
     pub fn build(self) -> crate::operation::get_composition::GetCompositionOutput {
         crate::operation::get_composition::GetCompositionOutput {
-            composition: self.composition,
+            composition: self.composition
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeExecutionOutput {
+pub struct DescribeExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub execution_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
@@ -95,16 +95,14 @@ pub struct DescribeExecutionOutput {
     pub redrive_status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeExecutionOutput {
+impl  DescribeExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_arn.deref()
+    pub fn execution_arn(&self) -> & str {
+        use std::ops::Deref; self.execution_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    pub fn state_machine_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.state_machine_arn.deref()
+    pub fn state_machine_arn(&self) -> & str {
+        use std::ops::Deref; self.state_machine_arn.deref()
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -121,63 +119,63 @@ impl DescribeExecutionOutput {
     /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> &crate::types::ExecutionStatus {
+    pub fn status(&self) -> & crate::types::ExecutionStatus {
         &self.status
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_date
     }
     /// <p>If the execution ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(&self) -> ::std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
+    pub fn input_details(&self) -> ::std::option::Option<& crate::types::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
-    pub fn output(&self) -> ::std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(&self) -> ::std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
+    pub fn output_details(&self) -> ::std::option::Option<& crate::types::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    pub fn trace_header(&self) -> ::std::option::Option<&str> {
+    pub fn trace_header(&self) -> ::std::option::Option<& str> {
         self.trace_header.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
-    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The error string if the state machine execution failed.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The cause string if the state machine execution failed.</p>
-    pub fn cause(&self) -> ::std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<& str> {
         self.cause.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
-    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
-    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_alias_arn.as_deref()
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive an execution.</p>
@@ -186,7 +184,7 @@ impl DescribeExecutionOutput {
     }
     /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
     /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
-    pub fn redrive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn redrive_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.redrive_date.as_ref()
     }
     /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
@@ -199,7 +197,7 @@ impl DescribeExecutionOutput {
     /// <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p>
     /// <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p></li>
     /// </ul>
-    pub fn redrive_status(&self) -> ::std::option::Option<&crate::types::ExecutionRedriveStatus> {
+    pub fn redrive_status(&self) -> ::std::option::Option<& crate::types::ExecutionRedriveStatus> {
         self.redrive_status.as_ref()
     }
     /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
@@ -225,11 +223,11 @@ impl DescribeExecutionOutput {
     /// <li>
     /// <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p></li>
     /// </ul>
-    pub fn redrive_status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn redrive_status_reason(&self) -> ::std::option::Option<& str> {
         self.redrive_status_reason.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeExecutionOutput {
+impl  ::std::fmt::Debug for DescribeExecutionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExecutionOutput");
         formatter.field("execution_arn", &self.execution_arn);
@@ -257,10 +255,10 @@ impl ::std::fmt::Debug for DescribeExecutionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
     pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
@@ -303,8 +301,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -318,8 +315,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,8 +356,7 @@ impl DescribeExecutionOutputBuilder {
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -389,8 +384,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The current status of the execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
@@ -404,8 +398,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The date the execution is started.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The date the execution is started.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -418,8 +411,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>If the execution ended, the date the execution stopped.</p>
     pub fn set_stop_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stop_date = input;
-        self
+        self.stop_date = input; self
     }
     /// <p>If the execution ended, the date the execution stopped.</p>
     pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -432,8 +424,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -446,8 +437,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>Provides details about execution input or output.</p>
     pub fn set_input_details(mut self, input: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>) -> Self {
-        self.input_details = input;
-        self
+        self.input_details = input; self
     }
     /// <p>Provides details about execution input or output.</p>
     pub fn get_input_details(&self) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
@@ -464,8 +454,7 @@ impl DescribeExecutionOutputBuilder {
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p><note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
@@ -480,8 +469,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>Provides details about execution input or output.</p>
     pub fn set_output_details(mut self, input: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>) -> Self {
-        self.output_details = input;
-        self
+        self.output_details = input; self
     }
     /// <p>Provides details about execution input or output.</p>
     pub fn get_output_details(&self) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
@@ -494,8 +482,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
@@ -508,8 +495,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
     pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -522,8 +508,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The error string if the state machine execution failed.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error string if the state machine execution failed.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -536,8 +521,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The cause string if the state machine execution failed.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>The cause string if the state machine execution failed.</p>
     pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
@@ -552,8 +536,7 @@ impl DescribeExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
     pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_version_arn = input;
-        self
+        self.state_machine_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
@@ -569,8 +552,7 @@ impl DescribeExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
     pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_alias_arn = input;
-        self
+        self.state_machine_alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
@@ -584,8 +566,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive an execution.</p>
     pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.redrive_count = input;
-        self
+        self.redrive_count = input; self
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive an execution.</p>
     pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
@@ -600,8 +581,7 @@ impl DescribeExecutionOutputBuilder {
     /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
     /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
     pub fn set_redrive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.redrive_date = input;
-        self
+        self.redrive_date = input; self
     }
     /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
     /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
@@ -633,8 +613,7 @@ impl DescribeExecutionOutputBuilder {
     /// <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p></li>
     /// </ul>
     pub fn set_redrive_status(mut self, input: ::std::option::Option<crate::types::ExecutionRedriveStatus>) -> Self {
-        self.redrive_status = input;
-        self
+        self.redrive_status = input; self
     }
     /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
     /// <ul>
@@ -700,8 +679,7 @@ impl DescribeExecutionOutputBuilder {
     /// <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p></li>
     /// </ul>
     pub fn set_redrive_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redrive_status_reason = input;
-        self
+        self.redrive_status_reason = input; self
     }
     /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
     /// <ul>
@@ -730,66 +708,78 @@ impl DescribeExecutionOutputBuilder {
         &self.redrive_status_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_arn`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::execution_arn)
     /// - [`state_machine_arn`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::state_machine_arn)
     /// - [`status`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::status)
     /// - [`start_date`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::start_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionOutput {
-            execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_arn",
-                    "execution_arn was not specified but it is required when building DescribeExecutionOutput",
-                )
-            })?,
-            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machine_arn",
-                    "state_machine_arn was not specified but it is required when building DescribeExecutionOutput",
-                )
-            })?,
-            name: self.name,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DescribeExecutionOutput",
-                )
-            })?,
-            start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_date",
-                    "start_date was not specified but it is required when building DescribeExecutionOutput",
-                )
-            })?,
-            stop_date: self.stop_date,
-            input: self.input,
-            input_details: self.input_details,
-            output: self.output,
-            output_details: self.output_details,
-            trace_header: self.trace_header,
-            map_run_arn: self.map_run_arn,
-            error: self.error,
-            cause: self.cause,
-            state_machine_version_arn: self.state_machine_version_arn,
-            state_machine_alias_arn: self.state_machine_alias_arn,
-            redrive_count: self.redrive_count,
-            redrive_date: self.redrive_date,
-            redrive_status: self.redrive_status,
-            redrive_status_reason: self.redrive_status_reason,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_execution::DescribeExecutionOutput {
+                execution_arn: self.execution_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_arn", "execution_arn was not specified but it is required when building DescribeExecutionOutput")
+                    )?
+                ,
+                state_machine_arn: self.state_machine_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machine_arn", "state_machine_arn was not specified but it is required when building DescribeExecutionOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DescribeExecutionOutput")
+                    )?
+                ,
+                start_date: self.start_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_date", "start_date was not specified but it is required when building DescribeExecutionOutput")
+                    )?
+                ,
+                stop_date: self.stop_date
+                ,
+                input: self.input
+                ,
+                input_details: self.input_details
+                ,
+                output: self.output
+                ,
+                output_details: self.output_details
+                ,
+                trace_header: self.trace_header
+                ,
+                map_run_arn: self.map_run_arn
+                ,
+                error: self.error
+                ,
+                cause: self.cause
+                ,
+                state_machine_version_arn: self.state_machine_version_arn
+                ,
+                state_machine_alias_arn: self.state_machine_alias_arn
+                ,
+                redrive_count: self.redrive_count
+                ,
+                redrive_date: self.redrive_date
+                ,
+                redrive_status: self.redrive_status
+                ,
+                redrive_status_reason: self.redrive_status_reason
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeExecutionOutputBuilder {
@@ -819,3 +809,4 @@ impl ::std::fmt::Debug for DescribeExecutionOutputBuilder {
         formatter.finish()
     }
 }
+

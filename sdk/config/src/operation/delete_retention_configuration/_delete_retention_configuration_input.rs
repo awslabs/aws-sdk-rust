@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRetentionConfigurationInput {
+pub struct DeleteRetentionConfigurationInput  {
     /// <p>The name of the retention configuration to delete.</p>
     pub retention_configuration_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRetentionConfigurationInput {
+impl  DeleteRetentionConfigurationInput  {
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn retention_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn retention_configuration_name(&self) -> ::std::option::Option<& str> {
         self.retention_configuration_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteRetentionConfigurationInputBuilder {
     }
     /// <p>The name of the retention configuration to delete.</p>
     pub fn set_retention_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retention_configuration_name = input;
-        self
+        self.retention_configuration_name = input; self
     }
     /// <p>The name of the retention configuration to delete.</p>
     pub fn get_retention_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.retention_configuration_name
     }
     /// Consumes the builder and constructs a [`DeleteRetentionConfigurationInput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput {
-            retention_configuration_name: self.retention_configuration_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput {
+                retention_configuration_name: self.retention_configuration_name
+                ,
+            }
+        )
     }
 }
+

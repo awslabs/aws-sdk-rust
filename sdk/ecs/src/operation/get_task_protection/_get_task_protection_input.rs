@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTaskProtectionInput {
+pub struct GetTaskProtectionInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetTaskProtectionInput {
+impl  GetTaskProtectionInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
-    pub fn tasks(&self) -> &[::std::string::String] {
-        self.tasks.as_deref().unwrap_or_default()
+    pub fn tasks(&self) -> & [::std::string::String] {
+        self.tasks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetTaskProtectionInput {
@@ -32,7 +33,7 @@ impl GetTaskProtectionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTaskProtectionInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
-    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetTaskProtectionInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
@@ -43,8 +44,7 @@ impl GetTaskProtectionInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl GetTaskProtectionInputBuilder {
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
     pub fn tasks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input.into());
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tasks = input; self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tasks
     }
     /// Consumes the builder and constructs a [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_task_protection::GetTaskProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_task_protection::GetTaskProtectionInput {
-            cluster: self.cluster,
-            tasks: self.tasks,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_task_protection::GetTaskProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_task_protection::GetTaskProtectionInput {
+                cluster: self.cluster
+                ,
+                tasks: self.tasks
+                ,
+            }
+        )
     }
 }
+

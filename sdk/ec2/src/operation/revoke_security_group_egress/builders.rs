@@ -5,23 +5,20 @@ pub use crate::operation::revoke_security_group_egress::_revoke_security_group_e
 
 impl RevokeSecurityGroupEgressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.revoke_security_group_egress();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.revoke_security_group_egress();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RevokeSecurityGroupEgress`.
-///
+/// 
 /// <p>Removes the specified outbound (egress) rules from the specified security group.</p>
 /// <p>You can specify rules using either rule IDs or security group rule properties. If you use rule properties, the values that you specify (for example, ports) must match the existing rule's values exactly. Each rule has a protocol, from and to ports, and destination (CIDR range, security group, or prefix list). For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If the security group rule has a description, you do not need to specify the description to revoke the rule.</p>
 /// <p>For a default VPC, if the values you specify do not match the existing rule's values, no error is returned, and the output describes the security group rules that were not revoked.</p>
@@ -30,33 +27,32 @@ impl RevokeSecurityGroupEgressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressInputBuilder,
+                    inner: crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
-    > for RevokeSecurityGroupEgressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
-            crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
+                    crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
+                > for RevokeSecurityGroupEgressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
+                        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RevokeSecurityGroupEgressFluentBuilder {
     /// Creates a new `RevokeSecurityGroupEgress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput,
-        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput, crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -150,12 +137,12 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpPermission>> {
         self.inner.get_ip_permissions()
     }
     /// Appends an item to `SecurityGroupRuleIds`.
@@ -168,12 +155,12 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn set_security_group_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_group_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_rule_ids(input);
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_group_rule_ids()
     }
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
@@ -261,3 +248,4 @@ impl RevokeSecurityGroupEgressFluentBuilder {
         self.inner.get_source_security_group_owner_id()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains an Amazon Web Services Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceRegion {
+pub struct SourceRegion  {
     /// <p>The name of the source Amazon Web Services Region.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
@@ -13,17 +13,17 @@ pub struct SourceRegion {
     /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub supports_db_instance_automated_backups_replication: ::std::option::Option<bool>,
 }
-impl SourceRegion {
+impl  SourceRegion  {
     /// <p>The name of the source Amazon Web Services Region.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The status of the source Amazon Web Services Region.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
@@ -55,8 +55,7 @@ impl SourceRegionBuilder {
     }
     /// <p>The name of the source Amazon Web Services Region.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The name of the source Amazon Web Services Region.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SourceRegionBuilder {
     }
     /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl SourceRegionBuilder {
     }
     /// <p>The status of the source Amazon Web Services Region.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the source Amazon Web Services Region.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl SourceRegionBuilder {
     }
     /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn set_supports_db_instance_automated_backups_replication(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_db_instance_automated_backups_replication = input;
-        self
+        self.supports_db_instance_automated_backups_replication = input; self
     }
     /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn get_supports_db_instance_automated_backups_replication(&self) -> &::std::option::Option<bool> {
@@ -107,10 +103,15 @@ impl SourceRegionBuilder {
     /// Consumes the builder and constructs a [`SourceRegion`](crate::types::SourceRegion).
     pub fn build(self) -> crate::types::SourceRegion {
         crate::types::SourceRegion {
-            region_name: self.region_name,
-            endpoint: self.endpoint,
-            status: self.status,
-            supports_db_instance_automated_backups_replication: self.supports_db_instance_automated_backups_replication,
+            region_name: self.region_name
+            ,
+            endpoint: self.endpoint
+            ,
+            status: self.status
+            ,
+            supports_db_instance_automated_backups_replication: self.supports_db_instance_automated_backups_replication
+            ,
         }
     }
 }
+

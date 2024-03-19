@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMediaCapturePipelineInput {
+pub struct DeleteMediaCapturePipelineInput  {
     /// <p>The ID of the media capture pipeline being deleted.</p>
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMediaCapturePipelineInput {
+impl  DeleteMediaCapturePipelineInput  {
     /// <p>The ID of the media capture pipeline being deleted.</p>
-    pub fn media_pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> ::std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteMediaCapturePipelineInputBuilder {
     }
     /// <p>The ID of the media capture pipeline being deleted.</p>
     pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_pipeline_id = input;
-        self
+        self.media_pipeline_id = input; self
     }
     /// <p>The ID of the media capture pipeline being deleted.</p>
     pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_pipeline_id
     }
     /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineInput`](crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput {
-            media_pipeline_id: self.media_pipeline_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput {
+                media_pipeline_id: self.media_pipeline_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartOnDemandReplicationRunOutput {
+pub struct StartOnDemandReplicationRunOutput  {
     /// <p>The ID of the replication run.</p>
     pub replication_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartOnDemandReplicationRunOutput {
+impl  StartOnDemandReplicationRunOutput  {
     /// <p>The ID of the replication run.</p>
-    pub fn replication_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_run_id(&self) -> ::std::option::Option<& str> {
         self.replication_run_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartOnDemandReplicationRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartOnDemandReplicationRunOutput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput).
     pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunOutputBuilder {
@@ -40,27 +40,28 @@ impl StartOnDemandReplicationRunOutputBuilder {
     }
     /// <p>The ID of the replication run.</p>
     pub fn set_replication_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_run_id = input;
-        self
+        self.replication_run_id = input; self
     }
     /// <p>The ID of the replication run.</p>
     pub fn get_replication_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_run_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput).
     pub fn build(self) -> crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput {
         crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput {
-            replication_run_id: self.replication_run_id,
+            replication_run_id: self.replication_run_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

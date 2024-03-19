@@ -3,7 +3,7 @@
 /// <p>The information for a phone number, in E.164 format, in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberInformation {
+pub struct PhoneNumberInformation  {
     /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
     pub phone_number_arn: ::std::string::String,
     /// <p>The unique identifier for the phone number.</p>
@@ -17,7 +17,7 @@ pub struct PhoneNumberInformation {
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_type: crate::types::MessageType,
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub number_capabilities: ::std::vec::Vec<crate::types::NumberCapability>,
+    pub number_capabilities: ::std::vec::Vec::<crate::types::NumberCapability>,
     /// <p>The type of phone number.</p>
     pub number_type: crate::types::NumberType,
     /// <p>The price, in US dollars, to lease the phone number.</p>
@@ -41,58 +41,53 @@ pub struct PhoneNumberInformation {
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
 }
-impl PhoneNumberInformation {
+impl  PhoneNumberInformation  {
     /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
-    pub fn phone_number_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number_arn.deref()
+    pub fn phone_number_arn(&self) -> & str {
+        use std::ops::Deref; self.phone_number_arn.deref()
     }
     /// <p>The unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number.deref()
+    pub fn phone_number(&self) -> & str {
+        use std::ops::Deref; self.phone_number.deref()
     }
     /// <p>The current status of the phone number.</p>
-    pub fn status(&self) -> &crate::types::NumberStatus {
+    pub fn status(&self) -> & crate::types::NumberStatus {
         &self.status
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.iso_country_code.deref()
+    pub fn iso_country_code(&self) -> & str {
+        use std::ops::Deref; self.iso_country_code.deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> &crate::types::MessageType {
+    pub fn message_type(&self) -> & crate::types::MessageType {
         &self.message_type
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
-        use std::ops::Deref;
-        self.number_capabilities.deref()
+    pub fn number_capabilities(&self) -> & [crate::types::NumberCapability] {
+        use std::ops::Deref; self.number_capabilities.deref()
     }
     /// <p>The type of phone number.</p>
-    pub fn number_type(&self) -> &crate::types::NumberType {
+    pub fn number_type(&self) -> & crate::types::NumberType {
         &self.number_type
     }
     /// <p>The price, in US dollars, to lease the phone number.</p>
-    pub fn monthly_leasing_price(&self) -> &str {
-        use std::ops::Deref;
-        self.monthly_leasing_price.deref()
+    pub fn monthly_leasing_price(&self) -> & str {
+        use std::ops::Deref; self.monthly_leasing_price.deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
     pub fn two_way_enabled(&self) -> bool {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
-    pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_role(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_role.as_deref()
     }
     /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
@@ -100,24 +95,23 @@ impl PhoneNumberInformation {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the phone number.</p>
-    pub fn opt_out_list_name(&self) -> &str {
-        use std::ops::Deref;
-        self.opt_out_list_name.deref()
+    pub fn opt_out_list_name(&self) -> & str {
+        use std::ops::Deref; self.opt_out_list_name.deref()
     }
     /// <p>When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(&self) -> bool {
         self.deletion_protection_enabled
     }
     /// <p>The unique identifier of the pool associated with the phone number.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_id(&self) -> ::std::option::Option<& str> {
         self.registration_id.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
 }
@@ -138,7 +132,7 @@ pub struct PhoneNumberInformationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::NumberStatus>,
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
-    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>>,
     pub(crate) number_type: ::std::option::Option<crate::types::NumberType>,
     pub(crate) monthly_leasing_price: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
@@ -160,8 +154,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
     pub fn set_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_arn = input;
-        self
+        self.phone_number_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
     pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +167,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The unique identifier for the phone number.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +181,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The phone number in E.164 format.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number in E.164 format.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +195,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The current status of the phone number.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NumberStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the phone number.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NumberStatus> {
@@ -219,8 +209,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +223,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
@@ -248,17 +236,16 @@ impl PhoneNumberInformationBuilder {
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
-        v.push(input);
-        self.number_capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.number_capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
-        self.number_capabilities = input;
-        self
+    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>>) -> Self {
+        self.number_capabilities = input; self
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
     /// <p>The type of phone number.</p>
@@ -269,8 +256,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The type of phone number.</p>
     pub fn set_number_type(mut self, input: ::std::option::Option<crate::types::NumberType>) -> Self {
-        self.number_type = input;
-        self
+        self.number_type = input; self
     }
     /// <p>The type of phone number.</p>
     pub fn get_number_type(&self) -> &::std::option::Option<crate::types::NumberType> {
@@ -284,8 +270,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The price, in US dollars, to lease the phone number.</p>
     pub fn set_monthly_leasing_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monthly_leasing_price = input;
-        self
+        self.monthly_leasing_price = input; self
     }
     /// <p>The price, in US dollars, to lease the phone number.</p>
     pub fn get_monthly_leasing_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +284,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.two_way_enabled = input;
-        self
+        self.two_way_enabled = input; self
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
     pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
@@ -313,8 +297,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.two_way_channel_arn = input;
-        self
+        self.two_way_channel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,8 +310,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.two_way_channel_role = input;
-        self
+        self.two_way_channel_role = input; self
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -342,8 +324,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.self_managed_opt_outs_enabled = input;
-        self
+        self.self_managed_opt_outs_enabled = input; self
     }
     /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a></p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
@@ -357,8 +338,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The name of the OptOutList associated with the phone number.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The name of the OptOutList associated with the phone number.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -372,8 +352,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>When set to true the phone number can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
+        self.deletion_protection_enabled = input; self
     }
     /// <p>When set to true the phone number can't be deleted.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
@@ -386,8 +365,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The unique identifier of the pool associated with the phone number.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The unique identifier of the pool associated with the phone number.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +378,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -415,8 +392,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -435,75 +411,79 @@ impl PhoneNumberInformationBuilder {
     /// - [`opt_out_list_name`](crate::types::builders::PhoneNumberInformationBuilder::opt_out_list_name)
     /// - [`created_timestamp`](crate::types::builders::PhoneNumberInformationBuilder::created_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PhoneNumberInformation {
-            phone_number_arn: self.phone_number_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone_number_arn",
-                    "phone_number_arn was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            phone_number_id: self.phone_number_id,
-            phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone_number",
-                    "phone_number was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iso_country_code",
-                    "iso_country_code was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            message_type: self.message_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_type",
-                    "message_type was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            number_capabilities: self.number_capabilities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "number_capabilities",
-                    "number_capabilities was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            number_type: self.number_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "number_type",
-                    "number_type was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            monthly_leasing_price: self.monthly_leasing_price.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monthly_leasing_price",
-                    "monthly_leasing_price was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-            two_way_channel_arn: self.two_way_channel_arn,
-            two_way_channel_role: self.two_way_channel_role,
-            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
-            opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "opt_out_list_name",
-                    "opt_out_list_name was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-            deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-            pool_id: self.pool_id,
-            registration_id: self.registration_id,
-            created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_timestamp",
-                    "created_timestamp was not specified but it is required when building PhoneNumberInformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PhoneNumberInformation {
+                phone_number_arn: self.phone_number_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number_arn", "phone_number_arn was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                phone_number_id: self.phone_number_id
+                ,
+                phone_number: self.phone_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number", "phone_number was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                iso_country_code: self.iso_country_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iso_country_code", "iso_country_code was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                message_type: self.message_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_type", "message_type was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                number_capabilities: self.number_capabilities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("number_capabilities", "number_capabilities was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                number_type: self.number_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("number_type", "number_type was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                monthly_leasing_price: self.monthly_leasing_price
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monthly_leasing_price", "monthly_leasing_price was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                two_way_channel_role: self.two_way_channel_role
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("opt_out_list_name", "opt_out_list_name was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                pool_id: self.pool_id
+                ,
+                registration_id: self.registration_id
+                ,
+                created_timestamp: self.created_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_timestamp", "created_timestamp was not specified but it is required when building PhoneNumberInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

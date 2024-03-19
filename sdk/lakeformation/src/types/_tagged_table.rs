@@ -3,38 +3,41 @@
 /// <p>A structure describing a table resource with LF-tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaggedTable {
+pub struct TaggedTable  {
     /// <p>A table that has LF-tags attached to it.</p>
     pub table: ::std::option::Option<crate::types::TableResource>,
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    pub lf_tag_on_database: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
+    pub lf_tag_on_database: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
     /// <p>A list of LF-tags attached to the table.</p>
-    pub lf_tags_on_table: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
+    pub lf_tags_on_table: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    pub lf_tags_on_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
+    pub lf_tags_on_columns: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLfTag>>,
 }
-impl TaggedTable {
+impl  TaggedTable  {
     /// <p>A table that has LF-tags attached to it.</p>
-    pub fn table(&self) -> ::std::option::Option<&crate::types::TableResource> {
+    pub fn table(&self) -> ::std::option::Option<& crate::types::TableResource> {
         self.table.as_ref()
     }
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tag_on_database.is_none()`.
-    pub fn lf_tag_on_database(&self) -> &[crate::types::LfTagPair] {
-        self.lf_tag_on_database.as_deref().unwrap_or_default()
+    pub fn lf_tag_on_database(&self) -> & [crate::types::LfTagPair] {
+        self.lf_tag_on_database.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of LF-tags attached to the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags_on_table.is_none()`.
-    pub fn lf_tags_on_table(&self) -> &[crate::types::LfTagPair] {
-        self.lf_tags_on_table.as_deref().unwrap_or_default()
+    pub fn lf_tags_on_table(&self) -> & [crate::types::LfTagPair] {
+        self.lf_tags_on_table.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags_on_columns.is_none()`.
-    pub fn lf_tags_on_columns(&self) -> &[crate::types::ColumnLfTag] {
-        self.lf_tags_on_columns.as_deref().unwrap_or_default()
+    pub fn lf_tags_on_columns(&self) -> & [crate::types::ColumnLfTag] {
+        self.lf_tags_on_columns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TaggedTable {
@@ -49,9 +52,9 @@ impl TaggedTable {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaggedTableBuilder {
     pub(crate) table: ::std::option::Option<crate::types::TableResource>,
-    pub(crate) lf_tag_on_database: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    pub(crate) lf_tags_on_table: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    pub(crate) lf_tags_on_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
+    pub(crate) lf_tag_on_database: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
+    pub(crate) lf_tags_on_table: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
+    pub(crate) lf_tags_on_columns: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLfTag>>,
 }
 impl TaggedTableBuilder {
     /// <p>A table that has LF-tags attached to it.</p>
@@ -61,8 +64,7 @@ impl TaggedTableBuilder {
     }
     /// <p>A table that has LF-tags attached to it.</p>
     pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableResource>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>A table that has LF-tags attached to it.</p>
     pub fn get_table(&self) -> &::std::option::Option<crate::types::TableResource> {
@@ -75,17 +77,16 @@ impl TaggedTableBuilder {
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
     pub fn lf_tag_on_database(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tag_on_database.unwrap_or_default();
-        v.push(input);
-        self.lf_tag_on_database = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lf_tag_on_database = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    pub fn set_lf_tag_on_database(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
-        self.lf_tag_on_database = input;
-        self
+    pub fn set_lf_tag_on_database(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>) -> Self {
+        self.lf_tag_on_database = input; self
     }
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    pub fn get_lf_tag_on_database(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tag_on_database(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>> {
         &self.lf_tag_on_database
     }
     /// Appends an item to `lf_tags_on_table`.
@@ -95,17 +96,16 @@ impl TaggedTableBuilder {
     /// <p>A list of LF-tags attached to the table.</p>
     pub fn lf_tags_on_table(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags_on_table.unwrap_or_default();
-        v.push(input);
-        self.lf_tags_on_table = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags_on_table = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tags attached to the table.</p>
-    pub fn set_lf_tags_on_table(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
-        self.lf_tags_on_table = input;
-        self
+    pub fn set_lf_tags_on_table(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>) -> Self {
+        self.lf_tags_on_table = input; self
     }
     /// <p>A list of LF-tags attached to the table.</p>
-    pub fn get_lf_tags_on_table(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tags_on_table(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>> {
         &self.lf_tags_on_table
     }
     /// Appends an item to `lf_tags_on_columns`.
@@ -115,26 +115,30 @@ impl TaggedTableBuilder {
     /// <p>A list of LF-tags attached to columns in the table.</p>
     pub fn lf_tags_on_columns(mut self, input: crate::types::ColumnLfTag) -> Self {
         let mut v = self.lf_tags_on_columns.unwrap_or_default();
-        v.push(input);
-        self.lf_tags_on_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags_on_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    pub fn set_lf_tags_on_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>) -> Self {
-        self.lf_tags_on_columns = input;
-        self
+    pub fn set_lf_tags_on_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLfTag>>) -> Self {
+        self.lf_tags_on_columns = input; self
     }
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    pub fn get_lf_tags_on_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>> {
+    pub fn get_lf_tags_on_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnLfTag>> {
         &self.lf_tags_on_columns
     }
     /// Consumes the builder and constructs a [`TaggedTable`](crate::types::TaggedTable).
     pub fn build(self) -> crate::types::TaggedTable {
         crate::types::TaggedTable {
-            table: self.table,
-            lf_tag_on_database: self.lf_tag_on_database,
-            lf_tags_on_table: self.lf_tags_on_table,
-            lf_tags_on_columns: self.lf_tags_on_columns,
+            table: self.table
+            ,
+            lf_tag_on_database: self.lf_tag_on_database
+            ,
+            lf_tags_on_table: self.lf_tags_on_table
+            ,
+            lf_tags_on_columns: self.lf_tags_on_columns
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputFormatOptions {
+pub struct InputFormatOptions  {
     /// <p>The options for imported source files in CSV format. The values are Delimiter and HeaderList.</p>
     pub csv: ::std::option::Option<crate::types::CsvOptions>,
 }
-impl InputFormatOptions {
+impl  InputFormatOptions  {
     /// <p>The options for imported source files in CSV format. The values are Delimiter and HeaderList.</p>
-    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvOptions> {
+    pub fn csv(&self) -> ::std::option::Option<& crate::types::CsvOptions> {
         self.csv.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl InputFormatOptionsBuilder {
     }
     /// <p>The options for imported source files in CSV format. The values are Delimiter and HeaderList.</p>
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvOptions>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
     }
     /// <p>The options for imported source files in CSV format. The values are Delimiter and HeaderList.</p>
     pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOptions> {
@@ -43,6 +42,10 @@ impl InputFormatOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`InputFormatOptions`](crate::types::InputFormatOptions).
     pub fn build(self) -> crate::types::InputFormatOptions {
-        crate::types::InputFormatOptions { csv: self.csv }
+        crate::types::InputFormatOptions {
+            csv: self.csv
+            ,
+        }
     }
 }
+

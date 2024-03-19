@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbRecommendationInput {
+pub struct ModifyDbRecommendationInput  {
     /// <p>The identifier of the recommendation to update.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The language of the modified recommendation.</p>
@@ -17,15 +17,15 @@ pub struct ModifyDbRecommendationInput {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The list of recommended action status to update. You can update multiple recommended actions at one time.</p>
-    pub recommended_action_updates: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionUpdate>>,
+    pub recommended_action_updates: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionUpdate>>,
 }
-impl ModifyDbRecommendationInput {
+impl  ModifyDbRecommendationInput  {
     /// <p>The identifier of the recommendation to update.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The language of the modified recommendation.</p>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>The recommendation status to update.</p>
@@ -36,14 +36,15 @@ impl ModifyDbRecommendationInput {
     /// <li>
     /// <p>dismissed</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The list of recommended action status to update. You can update multiple recommended actions at one time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_action_updates.is_none()`.
-    pub fn recommended_action_updates(&self) -> &[crate::types::RecommendedActionUpdate] {
-        self.recommended_action_updates.as_deref().unwrap_or_default()
+    pub fn recommended_action_updates(&self) -> & [crate::types::RecommendedActionUpdate] {
+        self.recommended_action_updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyDbRecommendationInput {
@@ -60,7 +61,7 @@ pub struct ModifyDbRecommendationInputBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) recommended_action_updates: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionUpdate>>,
+    pub(crate) recommended_action_updates: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionUpdate>>,
 }
 impl ModifyDbRecommendationInputBuilder {
     /// <p>The identifier of the recommendation to update.</p>
@@ -71,8 +72,7 @@ impl ModifyDbRecommendationInputBuilder {
     }
     /// <p>The identifier of the recommendation to update.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The identifier of the recommendation to update.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl ModifyDbRecommendationInputBuilder {
     }
     /// <p>The language of the modified recommendation.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The language of the modified recommendation.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl ModifyDbRecommendationInputBuilder {
     /// <p>dismissed</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The recommendation status to update.</p>
     /// <p>Valid values:</p>
@@ -134,31 +132,32 @@ impl ModifyDbRecommendationInputBuilder {
     /// <p>The list of recommended action status to update. You can update multiple recommended actions at one time.</p>
     pub fn recommended_action_updates(mut self, input: crate::types::RecommendedActionUpdate) -> Self {
         let mut v = self.recommended_action_updates.unwrap_or_default();
-        v.push(input);
-        self.recommended_action_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommended_action_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of recommended action status to update. You can update multiple recommended actions at one time.</p>
-    pub fn set_recommended_action_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionUpdate>>) -> Self {
-        self.recommended_action_updates = input;
-        self
+    pub fn set_recommended_action_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionUpdate>>) -> Self {
+        self.recommended_action_updates = input; self
     }
     /// <p>The list of recommended action status to update. You can update multiple recommended actions at one time.</p>
-    pub fn get_recommended_action_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionUpdate>> {
+    pub fn get_recommended_action_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionUpdate>> {
         &self.recommended_action_updates
     }
     /// Consumes the builder and constructs a [`ModifyDbRecommendationInput`](crate::operation::modify_db_recommendation::ModifyDbRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_recommendation::ModifyDbRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_db_recommendation::ModifyDbRecommendationInput {
-            recommendation_id: self.recommendation_id,
-            locale: self.locale,
-            status: self.status,
-            recommended_action_updates: self.recommended_action_updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_recommendation::ModifyDbRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_recommendation::ModifyDbRecommendationInput {
+                recommendation_id: self.recommendation_id
+                ,
+                locale: self.locale
+                ,
+                status: self.status
+                ,
+                recommended_action_updates: self.recommended_action_updates
+                ,
+            }
+        )
     }
 }
+

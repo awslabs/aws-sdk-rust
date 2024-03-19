@@ -3,15 +3,14 @@
 /// <p>Array of up to 10 validators.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationDataConfig {
+pub struct ValidationDataConfig  {
     /// <p>Information about the validators.</p>
-    pub validators: ::std::vec::Vec<crate::types::Validator>,
+    pub validators: ::std::vec::Vec::<crate::types::Validator>,
 }
-impl ValidationDataConfig {
+impl  ValidationDataConfig  {
     /// <p>Information about the validators.</p>
-    pub fn validators(&self) -> &[crate::types::Validator] {
-        use std::ops::Deref;
-        self.validators.deref()
+    pub fn validators(&self) -> & [crate::types::Validator] {
+        use std::ops::Deref; self.validators.deref()
     }
 }
 impl ValidationDataConfig {
@@ -25,7 +24,7 @@ impl ValidationDataConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationDataConfigBuilder {
-    pub(crate) validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
+    pub(crate) validators: ::std::option::Option<::std::vec::Vec::<crate::types::Validator>>,
 }
 impl ValidationDataConfigBuilder {
     /// Appends an item to `validators`.
@@ -35,30 +34,31 @@ impl ValidationDataConfigBuilder {
     /// <p>Information about the validators.</p>
     pub fn validators(mut self, input: crate::types::Validator) -> Self {
         let mut v = self.validators.unwrap_or_default();
-        v.push(input);
-        self.validators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the validators.</p>
-    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
-        self.validators = input;
-        self
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Validator>>) -> Self {
+        self.validators = input; self
     }
     /// <p>Information about the validators.</p>
-    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Validator>> {
         &self.validators
     }
     /// Consumes the builder and constructs a [`ValidationDataConfig`](crate::types::ValidationDataConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`validators`](crate::types::builders::ValidationDataConfigBuilder::validators)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidationDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidationDataConfig {
-            validators: self.validators.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "validators",
-                    "validators was not specified but it is required when building ValidationDataConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidationDataConfig {
+                validators: self.validators
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("validators", "validators was not specified but it is required when building ValidationDataConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -4,15 +4,15 @@
 /// <p>When using the <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html">PutScalingPolicy</a> API, this parameter is required when you are creating a policy with the policy type <code>TargetTrackingScaling</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingScalingPolicyConfiguration {
+pub struct TargetTrackingScalingPolicyConfiguration  {
     /// <p>An object containing information about a metric.</p>
     pub metric_specification: ::std::option::Option<crate::types::MetricSpecification>,
     /// <p>The recommended target value to specify for the metric when creating a scaling policy.</p>
     pub target_value: ::std::option::Option<f64>,
 }
-impl TargetTrackingScalingPolicyConfiguration {
+impl  TargetTrackingScalingPolicyConfiguration  {
     /// <p>An object containing information about a metric.</p>
-    pub fn metric_specification(&self) -> ::std::option::Option<&crate::types::MetricSpecification> {
+    pub fn metric_specification(&self) -> ::std::option::Option<& crate::types::MetricSpecification> {
         self.metric_specification.as_ref()
     }
     /// <p>The recommended target value to specify for the metric when creating a scaling policy.</p>
@@ -42,8 +42,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     }
     /// <p>An object containing information about a metric.</p>
     pub fn set_metric_specification(mut self, input: ::std::option::Option<crate::types::MetricSpecification>) -> Self {
-        self.metric_specification = input;
-        self
+        self.metric_specification = input; self
     }
     /// <p>An object containing information about a metric.</p>
     pub fn get_metric_specification(&self) -> &::std::option::Option<crate::types::MetricSpecification> {
@@ -56,8 +55,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     }
     /// <p>The recommended target value to specify for the metric when creating a scaling policy.</p>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.target_value = input;
-        self
+        self.target_value = input; self
     }
     /// <p>The recommended target value to specify for the metric when creating a scaling policy.</p>
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingScalingPolicyConfiguration {
         crate::types::TargetTrackingScalingPolicyConfiguration {
-            metric_specification: self.metric_specification,
-            target_value: self.target_value,
+            metric_specification: self.metric_specification
+            ,
+            target_value: self.target_value
+            ,
         }
     }
 }
+

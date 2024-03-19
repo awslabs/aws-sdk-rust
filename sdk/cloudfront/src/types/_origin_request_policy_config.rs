@@ -13,7 +13,7 @@
 /// <p>CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginRequestPolicyConfig {
+pub struct OriginRequestPolicyConfig  {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A unique name to identify the origin request policy.</p>
@@ -25,26 +25,25 @@ pub struct OriginRequestPolicyConfig {
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
     pub query_strings_config: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
 }
-impl OriginRequestPolicyConfig {
+impl  OriginRequestPolicyConfig  {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>A unique name to identify the origin request policy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
-    pub fn headers_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyHeadersConfig> {
+    pub fn headers_config(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicyHeadersConfig> {
         self.headers_config.as_ref()
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
-    pub fn cookies_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyCookiesConfig> {
+    pub fn cookies_config(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicyCookiesConfig> {
         self.cookies_config.as_ref()
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
-    pub fn query_strings_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyQueryStringsConfig> {
+    pub fn query_strings_config(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicyQueryStringsConfig> {
         self.query_strings_config.as_ref()
     }
 }
@@ -73,8 +72,7 @@ impl OriginRequestPolicyConfigBuilder {
     }
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl OriginRequestPolicyConfigBuilder {
     }
     /// <p>A unique name to identify the origin request policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name to identify the origin request policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl OriginRequestPolicyConfigBuilder {
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
     pub fn set_headers_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>) -> Self {
-        self.headers_config = input;
-        self
+        self.headers_config = input; self
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
     pub fn get_headers_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig> {
@@ -118,8 +114,7 @@ impl OriginRequestPolicyConfigBuilder {
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
     pub fn set_cookies_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>) -> Self {
-        self.cookies_config = input;
-        self
+        self.cookies_config = input; self
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
     pub fn get_cookies_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig> {
@@ -133,8 +128,7 @@ impl OriginRequestPolicyConfigBuilder {
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
     pub fn set_query_strings_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>) -> Self {
-        self.query_strings_config = input;
-        self
+        self.query_strings_config = input; self
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
     pub fn get_query_strings_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig> {
@@ -144,17 +138,23 @@ impl OriginRequestPolicyConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OriginRequestPolicyConfigBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginRequestPolicyConfig {
-            comment: self.comment,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building OriginRequestPolicyConfig",
-                )
-            })?,
-            headers_config: self.headers_config,
-            cookies_config: self.cookies_config,
-            query_strings_config: self.query_strings_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginRequestPolicyConfig {
+                comment: self.comment
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building OriginRequestPolicyConfig")
+                    )?
+                ,
+                headers_config: self.headers_config
+                ,
+                cookies_config: self.cookies_config
+                ,
+                query_strings_config: self.query_strings_config
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The parameters for using an MSK stream as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PipeSourceManagedStreamingKafkaParameters {
+pub struct PipeSourceManagedStreamingKafkaParameters  {
     /// <p>The name of the topic that the pipe will read from.</p>
     pub topic_name: ::std::string::String,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
@@ -17,14 +17,13 @@ pub struct PipeSourceManagedStreamingKafkaParameters {
     /// <p>The credentials needed to access the resource.</p>
     pub credentials: ::std::option::Option<crate::types::MskAccessCredentials>,
 }
-impl PipeSourceManagedStreamingKafkaParameters {
+impl  PipeSourceManagedStreamingKafkaParameters  {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub fn topic_name(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_name.deref()
+    pub fn topic_name(&self) -> & str {
+        use std::ops::Deref; self.topic_name.deref()
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(&self) -> ::std::option::Option<&crate::types::MskStartPosition> {
+    pub fn starting_position(&self) -> ::std::option::Option<& crate::types::MskStartPosition> {
         self.starting_position.as_ref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -36,15 +35,15 @@ impl PipeSourceManagedStreamingKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn consumer_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_group_id(&self) -> ::std::option::Option<& str> {
         self.consumer_group_id.as_deref()
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::MskAccessCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::MskAccessCredentials> {
         self.credentials.as_ref()
     }
 }
-impl ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters {
+impl  ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceManagedStreamingKafkaParameters");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
@@ -83,8 +82,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>The name of the topic that the pipe will read from.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The name of the topic that the pipe will read from.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::MskStartPosition>) -> Self {
-        self.starting_position = input;
-        self
+        self.starting_position = input; self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::MskStartPosition> {
@@ -111,8 +108,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
@@ -125,8 +121,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_batching_window_in_seconds = input;
-        self
+        self.maximum_batching_window_in_seconds = input; self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -139,8 +134,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn set_consumer_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_group_id = input;
-        self
+        self.consumer_group_id = input; self
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn get_consumer_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +147,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>The credentials needed to access the resource.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::MskAccessCredentials>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>The credentials needed to access the resource.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::MskAccessCredentials> {
@@ -163,22 +156,26 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     /// Consumes the builder and constructs a [`PipeSourceManagedStreamingKafkaParameters`](crate::types::PipeSourceManagedStreamingKafkaParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_name`](crate::types::builders::PipeSourceManagedStreamingKafkaParametersBuilder::topic_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::PipeSourceManagedStreamingKafkaParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipeSourceManagedStreamingKafkaParameters {
-            topic_name: self.topic_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_name",
-                    "topic_name was not specified but it is required when building PipeSourceManagedStreamingKafkaParameters",
-                )
-            })?,
-            starting_position: self.starting_position,
-            batch_size: self.batch_size,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-            consumer_group_id: self.consumer_group_id,
-            credentials: self.credentials,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceManagedStreamingKafkaParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::PipeSourceManagedStreamingKafkaParameters {
+                topic_name: self.topic_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_name", "topic_name was not specified but it is required when building PipeSourceManagedStreamingKafkaParameters")
+                    )?
+                ,
+                starting_position: self.starting_position
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                consumer_group_id: self.consumer_group_id
+                ,
+                credentials: self.credentials
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParametersBuilder {
@@ -193,3 +190,4 @@ impl ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParametersBuilder {
         formatter.finish()
     }
 }
+

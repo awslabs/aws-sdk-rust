@@ -21,11 +21,7 @@ impl LakeFormationScopeUnion {
     /// Tries to convert the enum instance into [`LakeFormationQuery`](crate::types::LakeFormationScopeUnion::LakeFormationQuery), extracting the inner [`LakeFormationQuery`](crate::types::LakeFormationQuery).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lake_formation_query(&self) -> ::std::result::Result<&crate::types::LakeFormationQuery, &Self> {
-        if let LakeFormationScopeUnion::LakeFormationQuery(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LakeFormationScopeUnion::LakeFormationQuery(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`LakeFormationQuery`](crate::types::LakeFormationScopeUnion::LakeFormationQuery).
     pub fn is_lake_formation_query(&self) -> bool {
@@ -36,3 +32,4 @@ impl LakeFormationScopeUnion {
         matches!(self, Self::Unknown)
     }
 }
+

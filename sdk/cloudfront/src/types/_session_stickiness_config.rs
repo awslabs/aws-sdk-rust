@@ -3,7 +3,7 @@
 /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SessionStickinessConfig {
+pub struct SessionStickinessConfig  {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub idle_ttl: i32,
@@ -11,7 +11,7 @@ pub struct SessionStickinessConfig {
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     pub maximum_ttl: i32,
 }
-impl SessionStickinessConfig {
+impl  SessionStickinessConfig  {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub fn idle_ttl(&self) -> i32 {
@@ -48,8 +48,7 @@ impl SessionStickinessConfigBuilder {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub fn set_idle_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_ttl = input;
-        self
+        self.idle_ttl = input; self
     }
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
@@ -66,8 +65,7 @@ impl SessionStickinessConfigBuilder {
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     pub fn set_maximum_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_ttl = input;
-        self
+        self.maximum_ttl = input; self
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
@@ -79,19 +77,20 @@ impl SessionStickinessConfigBuilder {
     /// - [`idle_ttl`](crate::types::builders::SessionStickinessConfigBuilder::idle_ttl)
     /// - [`maximum_ttl`](crate::types::builders::SessionStickinessConfigBuilder::maximum_ttl)
     pub fn build(self) -> ::std::result::Result<crate::types::SessionStickinessConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SessionStickinessConfig {
-            idle_ttl: self.idle_ttl.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "idle_ttl",
-                    "idle_ttl was not specified but it is required when building SessionStickinessConfig",
-                )
-            })?,
-            maximum_ttl: self.maximum_ttl.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "maximum_ttl",
-                    "maximum_ttl was not specified but it is required when building SessionStickinessConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SessionStickinessConfig {
+                idle_ttl: self.idle_ttl
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("idle_ttl", "idle_ttl was not specified but it is required when building SessionStickinessConfig")
+                    )?
+                ,
+                maximum_ttl: self.maximum_ttl
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("maximum_ttl", "maximum_ttl was not specified but it is required when building SessionStickinessConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersInput {
+pub struct ListUsersInput  {
     /// <p>The ID of an existing collection.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of UsersID to return.</p>
@@ -10,9 +10,9 @@ pub struct ListUsersInput {
     /// <p>Pagingation token to receive the next set of UsersID.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListUsersInput {
+impl  ListUsersInput  {
     /// <p>The ID of an existing collection.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>Maximum number of UsersID to return.</p>
@@ -20,7 +20,7 @@ impl ListUsersInput {
         self.max_results
     }
     /// <p>Pagingation token to receive the next set of UsersID.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The ID of an existing collection.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>The ID of an existing collection.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>Maximum number of UsersID to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of UsersID to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>Pagingation token to receive the next set of UsersID.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagingation token to receive the next set of UsersID.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl ListUsersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
-            collection_id: self.collection_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_users::ListUsersInput {
+                collection_id: self.collection_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

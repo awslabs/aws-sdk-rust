@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateMembersInput {
+pub struct DisassociateMembersInput  {
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociateMembersInput {
+impl  DisassociateMembersInput  {
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateMembersInput {
@@ -25,7 +26,7 @@ impl DisassociateMembersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMembersInputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociateMembersInputBuilder {
     /// Appends an item to `account_ids`.
@@ -35,26 +36,26 @@ impl DisassociateMembersInputBuilder {
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_members::DisassociateMembersInput {
-            account_ids: self.account_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_members::DisassociateMembersInput {
+                account_ids: self.account_ids
+                ,
+            }
+        )
     }
 }
+

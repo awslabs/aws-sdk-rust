@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProfileTemplateInput {}
+pub struct GetProfileTemplateInput  {
+}
 impl GetProfileTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetProfileTemplateInput`](crate::operation::get_profile_template::GetProfileTemplateInput).
     pub fn builder() -> crate::operation::get_profile_template::builders::GetProfileTemplateInputBuilder {
@@ -13,13 +14,15 @@ impl GetProfileTemplateInput {
 /// A builder for [`GetProfileTemplateInput`](crate::operation::get_profile_template::GetProfileTemplateInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetProfileTemplateInputBuilder {}
+pub struct GetProfileTemplateInputBuilder {
+}
 impl GetProfileTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetProfileTemplateInput`](crate::operation::get_profile_template::GetProfileTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_profile_template::GetProfileTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_profile_template::GetProfileTemplateInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile_template::GetProfileTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_profile_template::GetProfileTemplateInput {
+            }
+        )
     }
 }
+

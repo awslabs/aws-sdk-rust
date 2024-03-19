@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEncryptionConfigurationOutput {
+pub struct PutEncryptionConfigurationOutput  {
     /// <p>The ID of the KMS key that is used for encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption status.</p>
@@ -11,25 +11,25 @@ pub struct PutEncryptionConfigurationOutput {
     pub encryption_type: crate::types::EncryptionType,
     _request_id: Option<String>,
 }
-impl PutEncryptionConfigurationOutput {
+impl  PutEncryptionConfigurationOutput  {
     /// <p>The ID of the KMS key that is used for encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The encryption status.</p>
-    pub fn encryption_status(&self) -> &crate::types::EncryptionStatus {
+    pub fn encryption_status(&self) -> & crate::types::EncryptionStatus {
         &self.encryption_status
     }
     /// <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an KMS key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
-    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+    pub fn encryption_type(&self) -> & crate::types::EncryptionType {
         &self.encryption_type
     }
 }
 impl ::aws_types::request_id::RequestId for PutEncryptionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutEncryptionConfigurationOutput`](crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput).
     pub fn builder() -> crate::operation::put_encryption_configuration::builders::PutEncryptionConfigurationOutputBuilder {
@@ -54,8 +54,7 @@ impl PutEncryptionConfigurationOutputBuilder {
     }
     /// <p>The ID of the KMS key that is used for encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the KMS key that is used for encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PutEncryptionConfigurationOutputBuilder {
     }
     /// <p>The encryption status.</p>
     pub fn set_encryption_status(mut self, input: ::std::option::Option<crate::types::EncryptionStatus>) -> Self {
-        self.encryption_status = input;
-        self
+        self.encryption_status = input; self
     }
     /// <p>The encryption status.</p>
     pub fn get_encryption_status(&self) -> &::std::option::Option<crate::types::EncryptionStatus> {
@@ -84,47 +82,43 @@ impl PutEncryptionConfigurationOutputBuilder {
     }
     /// <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an KMS key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an KMS key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         &self.encryption_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutEncryptionConfigurationOutput`](crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`encryption_status`](crate::operation::put_encryption_configuration::builders::PutEncryptionConfigurationOutputBuilder::encryption_status)
     /// - [`encryption_type`](crate::operation::put_encryption_configuration::builders::PutEncryptionConfigurationOutputBuilder::encryption_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput {
-            kms_key_id: self.kms_key_id,
-            encryption_status: self.encryption_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_status",
-                    "encryption_status was not specified but it is required when building PutEncryptionConfigurationOutput",
-                )
-            })?,
-            encryption_type: self.encryption_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_type",
-                    "encryption_type was not specified but it is required when building PutEncryptionConfigurationOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput {
+                kms_key_id: self.kms_key_id
+                ,
+                encryption_status: self.encryption_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_status", "encryption_status was not specified but it is required when building PutEncryptionConfigurationOutput")
+                    )?
+                ,
+                encryption_type: self.encryption_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_type", "encryption_type was not specified but it is required when building PutEncryptionConfigurationOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

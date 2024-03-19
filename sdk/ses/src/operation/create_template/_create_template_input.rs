@@ -3,13 +3,13 @@
 /// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateInput {
+pub struct CreateTemplateInput  {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub template: ::std::option::Option<crate::types::Template>,
 }
-impl CreateTemplateInput {
+impl  CreateTemplateInput  {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
-    pub fn template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.template.as_ref()
     }
 }
@@ -35,17 +35,20 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
         &self.template
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput { template: self.template })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_template::CreateTemplateInput {
+                template: self.template
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplateStepGroupsInput {
+pub struct ListTemplateStepGroupsInput  {
     /// <p>The maximum number of results that can be returned.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
@@ -10,17 +10,17 @@ pub struct ListTemplateStepGroupsInput {
     /// <p>The ID of the template.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
 }
-impl ListTemplateStepGroupsInput {
+impl  ListTemplateStepGroupsInput  {
     /// <p>The maximum number of results that can be returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListTemplateStepGroupsInputBuilder {
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListTemplateStepGroupsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ListTemplateStepGroupsInputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_id
     }
     /// Consumes the builder and constructs a [`ListTemplateStepGroupsInput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_template_step_groups::ListTemplateStepGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_template_step_groups::ListTemplateStepGroupsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            template_id: self.template_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_template_step_groups::ListTemplateStepGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_template_step_groups::ListTemplateStepGroupsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                template_id: self.template_id
+                ,
+            }
+        )
     }
 }
+

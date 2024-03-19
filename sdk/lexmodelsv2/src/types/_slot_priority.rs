@@ -3,21 +3,20 @@
 /// <p>Sets the priority that Amazon Lex should use when eliciting slot values from a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotPriority {
+pub struct SlotPriority  {
     /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub priority: i32,
     /// <p>The unique identifier of the slot.</p>
     pub slot_id: ::std::string::String,
 }
-impl SlotPriority {
+impl  SlotPriority  {
     /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>The unique identifier of the slot.</p>
-    pub fn slot_id(&self) -> &str {
-        use std::ops::Deref;
-        self.slot_id.deref()
+    pub fn slot_id(&self) -> & str {
+        use std::ops::Deref; self.slot_id.deref()
     }
 }
 impl SlotPriority {
@@ -43,8 +42,7 @@ impl SlotPriorityBuilder {
     }
     /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -58,8 +56,7 @@ impl SlotPriorityBuilder {
     }
     /// <p>The unique identifier of the slot.</p>
     pub fn set_slot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_id = input;
-        self
+        self.slot_id = input; self
     }
     /// <p>The unique identifier of the slot.</p>
     pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl SlotPriorityBuilder {
     /// - [`priority`](crate::types::builders::SlotPriorityBuilder::priority)
     /// - [`slot_id`](crate::types::builders::SlotPriorityBuilder::slot_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotPriority, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotPriority {
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building SlotPriority",
-                )
-            })?,
-            slot_id: self.slot_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slot_id",
-                    "slot_id was not specified but it is required when building SlotPriority",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotPriority {
+                priority: self.priority
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("priority", "priority was not specified but it is required when building SlotPriority")
+                    )?
+                ,
+                slot_id: self.slot_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slot_id", "slot_id was not specified but it is required when building SlotPriority")
+                    )?
+                ,
+            }
+        )
     }
 }
+

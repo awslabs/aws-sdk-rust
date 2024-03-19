@@ -3,7 +3,7 @@
 /// <p>Includes basic information for a data column such as its description, name, and type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Column {
+pub struct Column  {
     /// <p>The column name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The kind of data a column stores.</p>
@@ -11,17 +11,17 @@ pub struct Column {
     /// <p>The description for a column.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl Column {
+impl  Column  {
     /// <p>The column name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The kind of data a column stores.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The description for a column.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ColumnBuilder {
     }
     /// <p>The column name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The column name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ColumnBuilder {
     }
     /// <p>The kind of data a column stores.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The kind of data a column stores.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ColumnBuilder {
     }
     /// <p>The description for a column.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for a column.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ColumnBuilder {
     /// Consumes the builder and constructs a [`Column`](crate::types::Column).
     pub fn build(self) -> crate::types::Column {
         crate::types::Column {
-            name: self.name,
-            r#type: self.r#type,
-            description: self.description,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

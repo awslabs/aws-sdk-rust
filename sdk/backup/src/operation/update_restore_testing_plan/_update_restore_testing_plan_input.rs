@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRestoreTestingPlanInput {
+pub struct UpdateRestoreTestingPlanInput  {
     /// <p>Specifies the body of a restore testing plan.</p>
     pub restore_testing_plan: ::std::option::Option<crate::types::RestoreTestingPlanForUpdate>,
     /// <p>This is the restore testing plan name you wish to update.</p>
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRestoreTestingPlanInput {
+impl  UpdateRestoreTestingPlanInput  {
     /// <p>Specifies the body of a restore testing plan.</p>
-    pub fn restore_testing_plan(&self) -> ::std::option::Option<&crate::types::RestoreTestingPlanForUpdate> {
+    pub fn restore_testing_plan(&self) -> ::std::option::Option<& crate::types::RestoreTestingPlanForUpdate> {
         self.restore_testing_plan.as_ref()
     }
     /// <p>This is the restore testing plan name you wish to update.</p>
-    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_plan_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateRestoreTestingPlanInputBuilder {
     }
     /// <p>Specifies the body of a restore testing plan.</p>
     pub fn set_restore_testing_plan(mut self, input: ::std::option::Option<crate::types::RestoreTestingPlanForUpdate>) -> Self {
-        self.restore_testing_plan = input;
-        self
+        self.restore_testing_plan = input; self
     }
     /// <p>Specifies the body of a restore testing plan.</p>
     pub fn get_restore_testing_plan(&self) -> &::std::option::Option<crate::types::RestoreTestingPlanForUpdate> {
@@ -56,23 +55,22 @@ impl UpdateRestoreTestingPlanInputBuilder {
     }
     /// <p>This is the restore testing plan name you wish to update.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>This is the restore testing plan name you wish to update.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }
     /// Consumes the builder and constructs a [`UpdateRestoreTestingPlanInput`](crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanInput {
-            restore_testing_plan: self.restore_testing_plan,
-            restore_testing_plan_name: self.restore_testing_plan_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanInput {
+                restore_testing_plan: self.restore_testing_plan
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                ,
+            }
+        )
     }
 }
+

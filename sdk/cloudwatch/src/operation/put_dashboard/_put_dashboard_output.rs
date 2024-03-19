@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDashboardOutput {
+pub struct PutDashboardOutput  {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    pub dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
+    pub dashboard_validation_messages: ::std::option::Option<::std::vec::Vec::<crate::types::DashboardValidationMessage>>,
     _request_id: Option<String>,
 }
-impl PutDashboardOutput {
+impl  PutDashboardOutput  {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboard_validation_messages.is_none()`.
-    pub fn dashboard_validation_messages(&self) -> &[crate::types::DashboardValidationMessage] {
-        self.dashboard_validation_messages.as_deref().unwrap_or_default()
+    pub fn dashboard_validation_messages(&self) -> & [crate::types::DashboardValidationMessage] {
+        self.dashboard_validation_messages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutDashboardOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutDashboardOutput {
     /// Creates a new builder-style object to manufacture [`PutDashboardOutput`](crate::operation::put_dashboard::PutDashboardOutput).
     pub fn builder() -> crate::operation::put_dashboard::builders::PutDashboardOutputBuilder {
@@ -35,7 +36,7 @@ impl PutDashboardOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDashboardOutputBuilder {
-    pub(crate) dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
+    pub(crate) dashboard_validation_messages: ::std::option::Option<::std::vec::Vec::<crate::types::DashboardValidationMessage>>,
     _request_id: Option<String>,
 }
 impl PutDashboardOutputBuilder {
@@ -48,40 +49,38 @@ impl PutDashboardOutputBuilder {
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
     pub fn dashboard_validation_messages(mut self, input: crate::types::DashboardValidationMessage) -> Self {
         let mut v = self.dashboard_validation_messages.unwrap_or_default();
-        v.push(input);
-        self.dashboard_validation_messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dashboard_validation_messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    pub fn set_dashboard_validation_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
-    ) -> Self {
-        self.dashboard_validation_messages = input;
-        self
+    pub fn set_dashboard_validation_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DashboardValidationMessage>>) -> Self {
+        self.dashboard_validation_messages = input; self
     }
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    pub fn get_dashboard_validation_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>> {
+    pub fn get_dashboard_validation_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DashboardValidationMessage>> {
         &self.dashboard_validation_messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutDashboardOutput`](crate::operation::put_dashboard::PutDashboardOutput).
     pub fn build(self) -> crate::operation::put_dashboard::PutDashboardOutput {
         crate::operation::put_dashboard::PutDashboardOutput {
-            dashboard_validation_messages: self.dashboard_validation_messages,
+            dashboard_validation_messages: self.dashboard_validation_messages
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

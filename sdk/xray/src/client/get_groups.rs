@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetGroups`](crate::operation::get_groups::builders::GetGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`GetGroupsOutput`](crate::operation::get_groups::GetGroupsOutput) with field(s):
+                            /// - On success, responds with [`GetGroupsOutput`](crate::operation::get_groups::GetGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec::<GroupSummary>>)`](crate::operation::get_groups::GetGroupsOutput::groups): <p>The collection of all active groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_groups::GetGroupsOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<GetGroupsError>`](crate::operation::get_groups::GetGroupsError)
+                            /// - On failure, responds with [`SdkError<GetGroupsError>`](crate::operation::get_groups::GetGroupsError)
     pub fn get_groups(&self) -> crate::operation::get_groups::builders::GetGroupsFluentBuilder {
-        crate::operation::get_groups::builders::GetGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_groups::builders::GetGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

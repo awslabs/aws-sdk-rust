@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServerlessCacheInput {
+pub struct DeleteServerlessCacheInput  {
     /// <p>The identifier of the serverless cache to be deleted.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub final_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServerlessCacheInput {
+impl  DeleteServerlessCacheInput  {
     /// <p>The identifier of the serverless cache to be deleted.</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
-    pub fn final_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn final_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.final_snapshot_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteServerlessCacheInputBuilder {
     }
     /// <p>The identifier of the serverless cache to be deleted.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>The identifier of the serverless cache to be deleted.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DeleteServerlessCacheInputBuilder {
     }
     /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn set_final_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_snapshot_name = input;
-        self
+        self.final_snapshot_name = input; self
     }
     /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteServerlessCacheInput`](crate::operation::delete_serverless_cache::DeleteServerlessCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_serverless_cache::DeleteServerlessCacheInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_serverless_cache::DeleteServerlessCacheInput {
-            serverless_cache_name: self.serverless_cache_name,
-            final_snapshot_name: self.final_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_serverless_cache::DeleteServerlessCacheInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheInput {
+                serverless_cache_name: self.serverless_cache_name
+                ,
+                final_snapshot_name: self.final_snapshot_name
+                ,
+            }
+        )
     }
 }
+

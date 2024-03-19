@@ -26,7 +26,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,50 +39,44 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::ConcurrentLimitExceededException(inner) => inner.meta(),
-            Self::ConflictException(inner) => inner.meta(),
-            Self::InternalServerException(inner) => inner.meta(),
-            Self::RequestThrottledException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::ServiceQuotaExceededException(inner) => inner.meta(),
-            Self::ValidationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::ConcurrentLimitExceededException(inner) => inner.meta(),
+Self::ConflictException(inner) => inner.meta(),
+Self::InternalServerException(inner) => inner.meta(),
+Self::RequestThrottledException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::ServiceQuotaExceededException(inner) => inner.meta(),
+Self::ValidationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_snapshot::CompleteSnapshotError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -93,25 +87,22 @@ impl From<crate::operation::complete_snapshot::CompleteSnapshotError> for Error 
             crate::operation::complete_snapshot::CompleteSnapshotError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::complete_snapshot::CompleteSnapshotError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
             crate::operation::complete_snapshot::CompleteSnapshotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::complete_snapshot::CompleteSnapshotError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::complete_snapshot::CompleteSnapshotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::complete_snapshot::CompleteSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::complete_snapshot::CompleteSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_snapshot_block::GetSnapshotBlockError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_snapshot_block::GetSnapshotBlockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_snapshot_block::GetSnapshotBlockError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -122,25 +113,22 @@ impl From<crate::operation::get_snapshot_block::GetSnapshotBlockError> for Error
             crate::operation::get_snapshot_block::GetSnapshotBlockError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_snapshot_block::GetSnapshotBlockError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
             crate::operation::get_snapshot_block::GetSnapshotBlockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_snapshot_block::GetSnapshotBlockError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::get_snapshot_block::GetSnapshotBlockError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_snapshot_block::GetSnapshotBlockError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_snapshot_block::GetSnapshotBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_changed_blocks::ListChangedBlocksError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -149,31 +137,24 @@ impl From<crate::operation::list_changed_blocks::ListChangedBlocksError> for Err
         match err {
             crate::operation::list_changed_blocks::ListChangedBlocksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_changed_blocks::ListChangedBlocksError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_changed_blocks::ListChangedBlocksError::RequestThrottledException(inner) => {
-                Error::RequestThrottledException(inner)
-            }
-            crate::operation::list_changed_blocks::ListChangedBlocksError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_changed_blocks::ListChangedBlocksError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::list_changed_blocks::ListChangedBlocksError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
+            crate::operation::list_changed_blocks::ListChangedBlocksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_changed_blocks::ListChangedBlocksError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::list_changed_blocks::ListChangedBlocksError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_changed_blocks::ListChangedBlocksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -182,31 +163,24 @@ impl From<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError> for E
         match err {
             crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::RequestThrottledException(inner) => {
-                Error::RequestThrottledException(inner)
-            }
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
+            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_snapshot_block::PutSnapshotBlockError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_snapshot_block::PutSnapshotBlockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_snapshot_block::PutSnapshotBlockError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -217,25 +191,22 @@ impl From<crate::operation::put_snapshot_block::PutSnapshotBlockError> for Error
             crate::operation::put_snapshot_block::PutSnapshotBlockError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::put_snapshot_block::PutSnapshotBlockError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
             crate::operation::put_snapshot_block::PutSnapshotBlockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_snapshot_block::PutSnapshotBlockError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::put_snapshot_block::PutSnapshotBlockError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::put_snapshot_block::PutSnapshotBlockError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_snapshot_block::PutSnapshotBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snapshot::StartSnapshotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snapshot::StartSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snapshot::StartSnapshotError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -243,9 +214,7 @@ impl From<crate::operation::start_snapshot::StartSnapshotError> for Error {
     fn from(err: crate::operation::start_snapshot::StartSnapshotError) -> Self {
         match err {
             crate::operation::start_snapshot::StartSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::start_snapshot::StartSnapshotError::ConcurrentLimitExceededException(inner) => {
-                Error::ConcurrentLimitExceededException(inner)
-            }
+            crate::operation::start_snapshot::StartSnapshotError::ConcurrentLimitExceededException(inner) => Error::ConcurrentLimitExceededException(inner),
             crate::operation::start_snapshot::StartSnapshotError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_snapshot::StartSnapshotError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::start_snapshot::StartSnapshotError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
@@ -267,7 +236,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -286,3 +255,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

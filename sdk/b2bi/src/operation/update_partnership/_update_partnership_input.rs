@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePartnershipInput {
+pub struct UpdatePartnershipInput  {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
     pub partnership_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partnership, used to identify it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of the capabilities associated with this partnership.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdatePartnershipInput {
+impl  UpdatePartnershipInput  {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
-    pub fn partnership_id(&self) -> ::std::option::Option<&str> {
+    pub fn partnership_id(&self) -> ::std::option::Option<& str> {
         self.partnership_id.as_deref()
     }
     /// <p>The name of the partnership, used to identify it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>List of the capabilities associated with this partnership.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[::std::string::String] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [::std::string::String] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdatePartnershipInput {
@@ -39,7 +40,7 @@ impl UpdatePartnershipInput {
 pub struct UpdatePartnershipInputBuilder {
     pub(crate) partnership_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdatePartnershipInputBuilder {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
@@ -50,8 +51,7 @@ impl UpdatePartnershipInputBuilder {
     }
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
     pub fn set_partnership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partnership_id = input;
-        self
+        self.partnership_id = input; self
     }
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
     pub fn get_partnership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl UpdatePartnershipInputBuilder {
     }
     /// <p>The name of the partnership, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the partnership, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,27 +77,30 @@ impl UpdatePartnershipInputBuilder {
     /// <p>List of the capabilities associated with this partnership.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input.into());
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the capabilities associated with this partnership.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>List of the capabilities associated with this partnership.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capabilities
     }
     /// Consumes the builder and constructs a [`UpdatePartnershipInput`](crate::operation::update_partnership::UpdatePartnershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_partnership::UpdatePartnershipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_partnership::UpdatePartnershipInput {
-            partnership_id: self.partnership_id,
-            name: self.name,
-            capabilities: self.capabilities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_partnership::UpdatePartnershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_partnership::UpdatePartnershipInput {
+                partnership_id: self.partnership_id
+                ,
+                name: self.name
+                ,
+                capabilities: self.capabilities
+                ,
+            }
+        )
     }
 }
+

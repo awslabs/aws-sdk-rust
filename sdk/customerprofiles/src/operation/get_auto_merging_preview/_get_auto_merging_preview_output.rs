@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAutoMergingPreviewOutput {
+pub struct GetAutoMergingPreviewOutput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::string::String,
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
@@ -13,11 +13,10 @@ pub struct GetAutoMergingPreviewOutput {
     pub number_of_profiles_will_be_merged: i64,
     _request_id: Option<String>,
 }
-impl GetAutoMergingPreviewOutput {
+impl  GetAutoMergingPreviewOutput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
     pub fn number_of_matches_in_sample(&self) -> i64 {
@@ -33,10 +32,10 @@ impl GetAutoMergingPreviewOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetAutoMergingPreviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAutoMergingPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewOutput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput).
     pub fn builder() -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewOutputBuilder {
@@ -63,8 +62,7 @@ impl GetAutoMergingPreviewOutputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetAutoMergingPreviewOutputBuilder {
     }
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
     pub fn set_number_of_matches_in_sample(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_matches_in_sample = input;
-        self
+        self.number_of_matches_in_sample = input; self
     }
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
     pub fn get_number_of_matches_in_sample(&self) -> &::std::option::Option<i64> {
@@ -91,8 +88,7 @@ impl GetAutoMergingPreviewOutputBuilder {
     }
     /// <p>The number of profiles found in this preview dry run.</p>
     pub fn set_number_of_profiles_in_sample(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_profiles_in_sample = input;
-        self
+        self.number_of_profiles_in_sample = input; self
     }
     /// <p>The number of profiles found in this preview dry run.</p>
     pub fn get_number_of_profiles_in_sample(&self) -> &::std::option::Option<i64> {
@@ -105,42 +101,44 @@ impl GetAutoMergingPreviewOutputBuilder {
     }
     /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
     pub fn set_number_of_profiles_will_be_merged(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_profiles_will_be_merged = input;
-        self
+        self.number_of_profiles_will_be_merged = input; self
     }
     /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
     pub fn get_number_of_profiles_will_be_merged(&self) -> &::std::option::Option<i64> {
         &self.number_of_profiles_will_be_merged
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAutoMergingPreviewOutput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewOutputBuilder::domain_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building GetAutoMergingPreviewOutput",
-                )
-            })?,
-            number_of_matches_in_sample: self.number_of_matches_in_sample.unwrap_or_default(),
-            number_of_profiles_in_sample: self.number_of_profiles_in_sample.unwrap_or_default(),
-            number_of_profiles_will_be_merged: self.number_of_profiles_will_be_merged.unwrap_or_default(),
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building GetAutoMergingPreviewOutput")
+                    )?
+                ,
+                number_of_matches_in_sample: self.number_of_matches_in_sample
+                    .unwrap_or_default()
+                ,
+                number_of_profiles_in_sample: self.number_of_profiles_in_sample
+                    .unwrap_or_default()
+                ,
+                number_of_profiles_will_be_merged: self.number_of_profiles_will_be_merged
+                    .unwrap_or_default()
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

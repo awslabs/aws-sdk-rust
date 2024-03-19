@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreFromRecoveryPointInput {
+pub struct RestoreFromRecoveryPointInput  {
     /// <p>The unique identifier of the recovery point to restore from.</p>
     pub recovery_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace to restore data into.</p>
@@ -10,17 +10,17 @@ pub struct RestoreFromRecoveryPointInput {
     /// <p>The name of the workgroup used to restore data.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
-impl RestoreFromRecoveryPointInput {
+impl  RestoreFromRecoveryPointInput  {
     /// <p>The unique identifier of the recovery point to restore from.</p>
-    pub fn recovery_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_id(&self) -> ::std::option::Option<& str> {
         self.recovery_point_id.as_deref()
     }
     /// <p>The name of the namespace to restore data into.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the workgroup used to restore data.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RestoreFromRecoveryPointInputBuilder {
     }
     /// <p>The unique identifier of the recovery point to restore from.</p>
     pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_id = input;
-        self
+        self.recovery_point_id = input; self
     }
     /// <p>The unique identifier of the recovery point to restore from.</p>
     pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RestoreFromRecoveryPointInputBuilder {
     }
     /// <p>The name of the namespace to restore data into.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the namespace to restore data into.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl RestoreFromRecoveryPointInputBuilder {
     }
     /// <p>The name of the workgroup used to restore data.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup used to restore data.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`RestoreFromRecoveryPointInput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput {
-            recovery_point_id: self.recovery_point_id,
-            namespace_name: self.namespace_name,
-            workgroup_name: self.workgroup_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput {
+                recovery_point_id: self.recovery_point_id
+                ,
+                namespace_name: self.namespace_name
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+            }
+        )
     }
 }
+

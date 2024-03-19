@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClustersOutput {
+pub struct DescribeClustersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
-    pub clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
+    pub clusters: ::std::option::Option<::std::vec::Vec::<crate::types::Cluster>>,
     _request_id: Option<String>,
 }
-impl DescribeClustersOutput {
+impl  DescribeClustersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
-    pub fn clusters(&self) -> &[crate::types::Cluster] {
-        self.clusters.as_deref().unwrap_or_default()
+    pub fn clusters(&self) -> & [crate::types::Cluster] {
+        self.clusters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeClustersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
     pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeClustersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClustersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
+    pub(crate) clusters: ::std::option::Option<::std::vec::Vec::<crate::types::Cluster>>,
     _request_id: Option<String>,
 }
 impl DescribeClustersOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeClustersOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeClustersOutputBuilder {
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
     pub fn clusters(mut self, input: crate::types::Cluster) -> Self {
         let mut v = self.clusters.unwrap_or_default();
-        v.push(input);
-        self.clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
-    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>) -> Self {
-        self.clusters = input;
-        self
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Cluster>>) -> Self {
+        self.clusters = input; self
     }
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
-    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Cluster>> {
         &self.clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
     pub fn build(self) -> crate::operation::describe_clusters::DescribeClustersOutput {
         crate::operation::describe_clusters::DescribeClustersOutput {
-            next_token: self.next_token,
-            clusters: self.clusters,
+            next_token: self.next_token
+            ,
+            clusters: self.clusters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a network site.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkSite {
+pub struct NetworkSite  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub network_site_arn: ::std::string::String,
     /// <p>The name of the network site.</p>
@@ -27,52 +27,49 @@ pub struct NetworkSite {
     /// <p>The parent Availability Zone ID for the network site.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
-impl NetworkSite {
+impl  NetworkSite  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_site_arn.deref()
+    pub fn network_site_arn(&self) -> & str {
+        use std::ops::Deref; self.network_site_arn.deref()
     }
     /// <p>The name of the network site.</p>
-    pub fn network_site_name(&self) -> &str {
-        use std::ops::Deref;
-        self.network_site_name.deref()
+    pub fn network_site_name(&self) -> & str {
+        use std::ops::Deref; self.network_site_name.deref()
     }
     /// <p>The description of the network site.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the network site.</p>
-    pub fn status(&self) -> &crate::types::NetworkSiteStatus {
+    pub fn status(&self) -> & crate::types::NetworkSiteStatus {
         &self.status
     }
     /// <p>The status reason of the network site.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
-    pub fn network_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_arn.deref()
+    pub fn network_arn(&self) -> & str {
+        use std::ops::Deref; self.network_arn.deref()
     }
     /// <p>The pending plan of the network site.</p>
-    pub fn pending_plan(&self) -> ::std::option::Option<&crate::types::SitePlan> {
+    pub fn pending_plan(&self) -> ::std::option::Option<& crate::types::SitePlan> {
         self.pending_plan.as_ref()
     }
     /// <p>The current plan of the network site.</p>
-    pub fn current_plan(&self) -> ::std::option::Option<&crate::types::SitePlan> {
+    pub fn current_plan(&self) -> ::std::option::Option<& crate::types::SitePlan> {
         self.current_plan.as_ref()
     }
     /// <p>The creation time of the network site.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The parent Availability Zone for the network site.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The parent Availability Zone ID for the network site.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
 }
@@ -108,8 +105,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_site_arn = input;
-        self
+        self.network_site_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +119,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The name of the network site.</p>
     pub fn set_network_site_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_site_name = input;
-        self
+        self.network_site_name = input; self
     }
     /// <p>The name of the network site.</p>
     pub fn get_network_site_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +132,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The description of the network site.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the network site.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +146,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The status of the network site.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NetworkSiteStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the network site.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NetworkSiteStatus> {
@@ -166,8 +159,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The status reason of the network site.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The status reason of the network site.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +173,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
     pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_arn = input;
-        self
+        self.network_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
     pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +186,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The pending plan of the network site.</p>
     pub fn set_pending_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
-        self.pending_plan = input;
-        self
+        self.pending_plan = input; self
     }
     /// <p>The pending plan of the network site.</p>
     pub fn get_pending_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
@@ -209,8 +199,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The current plan of the network site.</p>
     pub fn set_current_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
-        self.current_plan = input;
-        self
+        self.current_plan = input; self
     }
     /// <p>The current plan of the network site.</p>
     pub fn get_current_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
@@ -223,8 +212,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The creation time of the network site.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The creation time of the network site.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -237,8 +225,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The parent Availability Zone for the network site.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The parent Availability Zone for the network site.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +238,7 @@ impl NetworkSiteBuilder {
     }
     /// <p>The parent Availability Zone ID for the network site.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The parent Availability Zone ID for the network site.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,38 +251,44 @@ impl NetworkSiteBuilder {
     /// - [`status`](crate::types::builders::NetworkSiteBuilder::status)
     /// - [`network_arn`](crate::types::builders::NetworkSiteBuilder::network_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkSite, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NetworkSite {
-            network_site_arn: self.network_site_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_site_arn",
-                    "network_site_arn was not specified but it is required when building NetworkSite",
-                )
-            })?,
-            network_site_name: self.network_site_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_site_name",
-                    "network_site_name was not specified but it is required when building NetworkSite",
-                )
-            })?,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building NetworkSite",
-                )
-            })?,
-            status_reason: self.status_reason,
-            network_arn: self.network_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_arn",
-                    "network_arn was not specified but it is required when building NetworkSite",
-                )
-            })?,
-            pending_plan: self.pending_plan,
-            current_plan: self.current_plan,
-            created_at: self.created_at,
-            availability_zone: self.availability_zone,
-            availability_zone_id: self.availability_zone_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NetworkSite {
+                network_site_arn: self.network_site_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_site_arn", "network_site_arn was not specified but it is required when building NetworkSite")
+                    )?
+                ,
+                network_site_name: self.network_site_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_site_name", "network_site_name was not specified but it is required when building NetworkSite")
+                    )?
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building NetworkSite")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+                network_arn: self.network_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_arn", "network_arn was not specified but it is required when building NetworkSite")
+                    )?
+                ,
+                pending_plan: self.pending_plan
+                ,
+                current_plan: self.current_plan
+                ,
+                created_at: self.created_at
+                ,
+                availability_zone: self.availability_zone
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+            }
+        )
     }
 }
+

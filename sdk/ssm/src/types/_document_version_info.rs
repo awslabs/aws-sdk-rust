@@ -3,7 +3,7 @@
 /// <p>Version information about the document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentVersionInfo {
+pub struct DocumentVersionInfo  {
     /// <p>The document name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
@@ -25,25 +25,25 @@ pub struct DocumentVersionInfo {
     /// <p>The current status of the approval review for the latest version of the document.</p>
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
 }
-impl DocumentVersionInfo {
+impl  DocumentVersionInfo  {
     /// <p>The document name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The document version.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The date the document was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>An identifier for the default version of the document.</p>
@@ -51,19 +51,19 @@ impl DocumentVersionInfo {
         self.is_default_version
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn document_format(&self) -> ::std::option::Option<&crate::types::DocumentFormat> {
+    pub fn document_format(&self) -> ::std::option::Option<& crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DocumentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DocumentStatus> {
         self.status.as_ref()
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn status_information(&self) -> ::std::option::Option<&str> {
+    pub fn status_information(&self) -> ::std::option::Option<& str> {
         self.status_information.as_deref()
     }
     /// <p>The current status of the approval review for the latest version of the document.</p>
-    pub fn review_status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
+    pub fn review_status(&self) -> ::std::option::Option<& crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The document name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The document name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The document version.</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The document version.</p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The date the document was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the document was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +162,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>An identifier for the default version of the document.</p>
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default_version = input;
-        self
+        self.is_default_version = input; self
     }
     /// <p>An identifier for the default version of the document.</p>
     pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
@@ -181,8 +175,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The document format, either JSON or YAML.</p>
     pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
-        self.document_format = input;
-        self
+        self.document_format = input; self
     }
     /// <p>The document format, either JSON or YAML.</p>
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
@@ -195,8 +188,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DocumentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DocumentStatus> {
@@ -209,8 +201,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub fn set_status_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_information = input;
-        self
+        self.status_information = input; self
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub fn get_status_information(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +214,7 @@ impl DocumentVersionInfoBuilder {
     }
     /// <p>The current status of the approval review for the latest version of the document.</p>
     pub fn set_review_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
-        self.review_status = input;
-        self
+        self.review_status = input; self
     }
     /// <p>The current status of the approval review for the latest version of the document.</p>
     pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
@@ -233,16 +223,28 @@ impl DocumentVersionInfoBuilder {
     /// Consumes the builder and constructs a [`DocumentVersionInfo`](crate::types::DocumentVersionInfo).
     pub fn build(self) -> crate::types::DocumentVersionInfo {
         crate::types::DocumentVersionInfo {
-            name: self.name,
-            display_name: self.display_name,
-            document_version: self.document_version,
-            version_name: self.version_name,
-            created_date: self.created_date,
-            is_default_version: self.is_default_version.unwrap_or_default(),
-            document_format: self.document_format,
-            status: self.status,
-            status_information: self.status_information,
-            review_status: self.review_status,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
+            document_version: self.document_version
+            ,
+            version_name: self.version_name
+            ,
+            created_date: self.created_date
+            ,
+            is_default_version: self.is_default_version
+                .unwrap_or_default()
+            ,
+            document_format: self.document_format
+            ,
+            status: self.status
+            ,
+            status_information: self.status_information
+            ,
+            review_status: self.review_status
+            ,
         }
     }
 }
+

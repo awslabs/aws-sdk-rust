@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReportMetadataInput {
+pub struct GetReportMetadataInput  {
     /// <p>Unique resource ID for the report resource.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>Version for the report resource.</p>
     pub report_version: ::std::option::Option<i64>,
 }
-impl GetReportMetadataInput {
+impl  GetReportMetadataInput  {
     /// <p>Unique resource ID for the report resource.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>Version for the report resource.</p>
@@ -41,8 +41,7 @@ impl GetReportMetadataInputBuilder {
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetReportMetadataInputBuilder {
     }
     /// <p>Version for the report resource.</p>
     pub fn set_report_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.report_version = input;
-        self
+        self.report_version = input; self
     }
     /// <p>Version for the report resource.</p>
     pub fn get_report_version(&self) -> &::std::option::Option<i64> {
         &self.report_version
     }
     /// Consumes the builder and constructs a [`GetReportMetadataInput`](crate::operation::get_report_metadata::GetReportMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_report_metadata::GetReportMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_report_metadata::GetReportMetadataInput {
-            report_id: self.report_id,
-            report_version: self.report_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_report_metadata::GetReportMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_report_metadata::GetReportMetadataInput {
+                report_id: self.report_id
+                ,
+                report_version: self.report_version
+                ,
+            }
+        )
     }
 }
+

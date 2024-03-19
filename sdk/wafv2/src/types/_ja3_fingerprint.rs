@@ -7,7 +7,7 @@
 /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ja3Fingerprint {
+pub struct Ja3Fingerprint  {
     /// <p>The match status to assign to the web request if the request doesn't have a JA3 fingerprint.</p>
     /// <p>You can specify the following fallback behaviors:</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct Ja3Fingerprint {
     /// </ul>
     pub fallback_behavior: crate::types::FallbackBehavior,
 }
-impl Ja3Fingerprint {
+impl  Ja3Fingerprint  {
     /// <p>The match status to assign to the web request if the request doesn't have a JA3 fingerprint.</p>
     /// <p>You can specify the following fallback behaviors:</p>
     /// <ul>
@@ -27,7 +27,7 @@ impl Ja3Fingerprint {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    pub fn fallback_behavior(&self) -> &crate::types::FallbackBehavior {
+    pub fn fallback_behavior(&self) -> & crate::types::FallbackBehavior {
         &self.fallback_behavior
     }
 }
@@ -67,8 +67,7 @@ impl Ja3FingerprintBuilder {
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn set_fallback_behavior(mut self, input: ::std::option::Option<crate::types::FallbackBehavior>) -> Self {
-        self.fallback_behavior = input;
-        self
+        self.fallback_behavior = input; self
     }
     /// <p>The match status to assign to the web request if the request doesn't have a JA3 fingerprint.</p>
     /// <p>You can specify the following fallback behaviors:</p>
@@ -85,13 +84,15 @@ impl Ja3FingerprintBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fallback_behavior`](crate::types::builders::Ja3FingerprintBuilder::fallback_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::Ja3Fingerprint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ja3Fingerprint {
-            fallback_behavior: self.fallback_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fallback_behavior",
-                    "fallback_behavior was not specified but it is required when building Ja3Fingerprint",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ja3Fingerprint {
+                fallback_behavior: self.fallback_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fallback_behavior", "fallback_behavior was not specified but it is required when building Ja3Fingerprint")
+                    )?
+                ,
+            }
+        )
     }
 }
+

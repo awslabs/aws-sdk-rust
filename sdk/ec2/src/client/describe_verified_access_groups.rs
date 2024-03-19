@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVerifiedAccessGroups`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`verified_access_group_ids(impl Into<String>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::verified_access_group_ids) / [`set_verified_access_group_ids(Option<Vec::<String>>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::set_verified_access_group_ids):<br>required: **false**<br><p>The ID of the Verified Access groups.</p><br>
     ///   - [`verified_access_instance_id(impl Into<String>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::verified_access_instance_id) / [`set_verified_access_instance_id(Option<String>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::set_verified_access_instance_id):<br>required: **false**<br><p>The ID of the Verified Access instance.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Filter names and values are case-sensitive.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`DescribeVerifiedAccessGroupsOutput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput) with field(s):
+                            /// - On success, responds with [`DescribeVerifiedAccessGroupsOutput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput) with field(s):
     ///   - [`verified_access_groups(Option<Vec::<VerifiedAccessGroup>>)`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput::verified_access_groups): <p>Details about the Verified Access groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeVerifiedAccessGroupsError>`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError)
-    pub fn describe_verified_access_groups(
-        &self,
-    ) -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder {
-        crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeVerifiedAccessGroupsError>`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError)
+    pub fn describe_verified_access_groups(&self) -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder {
+                                crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

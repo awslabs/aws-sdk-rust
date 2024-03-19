@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluateFeatureOutput {
+pub struct EvaluateFeatureOutput  {
     /// <p>The name of the variation that was served to the user session.</p>
     pub variation: ::std::option::Option<::std::string::String>,
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
@@ -13,29 +13,29 @@ pub struct EvaluateFeatureOutput {
     pub details: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl EvaluateFeatureOutput {
+impl  EvaluateFeatureOutput  {
     /// <p>The name of the variation that was served to the user session.</p>
-    pub fn variation(&self) -> ::std::option::Option<&str> {
+    pub fn variation(&self) -> ::std::option::Option<& str> {
         self.variation.as_deref()
     }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::VariableValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::VariableValue> {
         self.value.as_ref()
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for EvaluateFeatureOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EvaluateFeatureOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateFeatureOutput`](crate::operation::evaluate_feature::EvaluateFeatureOutput).
     pub fn builder() -> crate::operation::evaluate_feature::builders::EvaluateFeatureOutputBuilder {
@@ -61,8 +61,7 @@ impl EvaluateFeatureOutputBuilder {
     }
     /// <p>The name of the variation that was served to the user session.</p>
     pub fn set_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variation = input;
-        self
+        self.variation = input; self
     }
     /// <p>The name of the variation that was served to the user session.</p>
     pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl EvaluateFeatureOutputBuilder {
     }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
@@ -89,8 +87,7 @@ impl EvaluateFeatureOutputBuilder {
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl EvaluateFeatureOutputBuilder {
     }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EvaluateFeatureOutput`](crate::operation::evaluate_feature::EvaluateFeatureOutput).
     pub fn build(self) -> crate::operation::evaluate_feature::EvaluateFeatureOutput {
         crate::operation::evaluate_feature::EvaluateFeatureOutput {
-            variation: self.variation,
-            value: self.value,
-            reason: self.reason,
-            details: self.details,
+            variation: self.variation
+            ,
+            value: self.value
+            ,
+            reason: self.reason
+            ,
+            details: self.details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

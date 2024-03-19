@@ -4,24 +4,26 @@
 /// <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudwatchLogsExportConfiguration {
+pub struct CloudwatchLogsExportConfiguration  {
     /// <p>The list of log types to enable.</p>
-    pub enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of log types to disable.</p>
-    pub disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub disable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CloudwatchLogsExportConfiguration {
+impl  CloudwatchLogsExportConfiguration  {
     /// <p>The list of log types to enable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_log_types.is_none()`.
-    pub fn enable_log_types(&self) -> &[::std::string::String] {
-        self.enable_log_types.as_deref().unwrap_or_default()
+    pub fn enable_log_types(&self) -> & [::std::string::String] {
+        self.enable_log_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of log types to disable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disable_log_types.is_none()`.
-    pub fn disable_log_types(&self) -> &[::std::string::String] {
-        self.disable_log_types.as_deref().unwrap_or_default()
+    pub fn disable_log_types(&self) -> & [::std::string::String] {
+        self.disable_log_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CloudwatchLogsExportConfiguration {
@@ -35,8 +37,8 @@ impl CloudwatchLogsExportConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudwatchLogsExportConfigurationBuilder {
-    pub(crate) enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) disable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CloudwatchLogsExportConfigurationBuilder {
     /// Appends an item to `enable_log_types`.
@@ -46,17 +48,16 @@ impl CloudwatchLogsExportConfigurationBuilder {
     /// <p>The list of log types to enable.</p>
     pub fn enable_log_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_log_types.unwrap_or_default();
-        v.push(input.into());
-        self.enable_log_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enable_log_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of log types to enable.</p>
-    pub fn set_enable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enable_log_types = input;
-        self
+    pub fn set_enable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enable_log_types = input; self
     }
     /// <p>The list of log types to enable.</p>
-    pub fn get_enable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_log_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enable_log_types
     }
     /// Appends an item to `disable_log_types`.
@@ -66,24 +67,26 @@ impl CloudwatchLogsExportConfigurationBuilder {
     /// <p>The list of log types to disable.</p>
     pub fn disable_log_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disable_log_types.unwrap_or_default();
-        v.push(input.into());
-        self.disable_log_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.disable_log_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of log types to disable.</p>
-    pub fn set_disable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.disable_log_types = input;
-        self
+    pub fn set_disable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.disable_log_types = input; self
     }
     /// <p>The list of log types to disable.</p>
-    pub fn get_disable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disable_log_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.disable_log_types
     }
     /// Consumes the builder and constructs a [`CloudwatchLogsExportConfiguration`](crate::types::CloudwatchLogsExportConfiguration).
     pub fn build(self) -> crate::types::CloudwatchLogsExportConfiguration {
         crate::types::CloudwatchLogsExportConfiguration {
-            enable_log_types: self.enable_log_types,
-            disable_log_types: self.disable_log_types,
+            enable_log_types: self.enable_log_types
+            ,
+            disable_log_types: self.disable_log_types
+            ,
         }
     }
 }
+

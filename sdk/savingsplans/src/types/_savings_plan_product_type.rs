@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanproducttype = unimplemented!();
 /// match savingsplanproducttype {
@@ -32,16 +32,14 @@
 /// Specifically, when `savingsplanproducttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanProductType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SavingsPlanProductType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
@@ -53,67 +51,68 @@ pub enum SavingsPlanProductType {
     Sagemaker,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SavingsPlanProductType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC2" => SavingsPlanProductType::Ec2,
-            "Fargate" => SavingsPlanProductType::Fargate,
-            "Lambda" => SavingsPlanProductType::Lambda,
-            "SageMaker" => SavingsPlanProductType::Sagemaker,
-            other => SavingsPlanProductType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EC2" => SavingsPlanProductType::Ec2,
+"Fargate" => SavingsPlanProductType::Fargate,
+"Lambda" => SavingsPlanProductType::Lambda,
+"SageMaker" => SavingsPlanProductType::Sagemaker,
+other => SavingsPlanProductType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SavingsPlanProductType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SavingsPlanProductType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SavingsPlanProductType::from(s))
+                    }
+                }
 impl SavingsPlanProductType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanProductType::Ec2 => "EC2",
-            SavingsPlanProductType::Fargate => "Fargate",
-            SavingsPlanProductType::Lambda => "Lambda",
-            SavingsPlanProductType::Sagemaker => "SageMaker",
-            SavingsPlanProductType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EC2", "Fargate", "Lambda", "SageMaker"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanProductType::Ec2 => "EC2",
+    SavingsPlanProductType::Fargate => "Fargate",
+    SavingsPlanProductType::Lambda => "Lambda",
+    SavingsPlanProductType::Sagemaker => "SageMaker",
+    SavingsPlanProductType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC2", "Fargate", "Lambda", "SageMaker"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SavingsPlanProductType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SavingsPlanProductType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SavingsPlanProductType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SavingsPlanProductType::Ec2 => write!(f, "EC2"),
-            SavingsPlanProductType::Fargate => write!(f, "Fargate"),
-            SavingsPlanProductType::Lambda => write!(f, "Lambda"),
-            SavingsPlanProductType::Sagemaker => write!(f, "SageMaker"),
-            SavingsPlanProductType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SavingsPlanProductType::Ec2 => write!(f, "EC2"),
+SavingsPlanProductType::Fargate => write!(f, "Fargate"),
+SavingsPlanProductType::Lambda => write!(f, "Lambda"),
+SavingsPlanProductType::Sagemaker => write!(f, "SageMaker"),
+SavingsPlanProductType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

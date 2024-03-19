@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAutoScalingConfigurationInput {
+pub struct CreateAutoScalingConfigurationInput  {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p><note>
     /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
@@ -29,9 +29,9 @@ pub struct CreateAutoScalingConfigurationInput {
     /// <p>Default: <code>25</code></p>
     pub max_size: ::std::option::Option<i32>,
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAutoScalingConfigurationInput {
+impl  CreateAutoScalingConfigurationInput  {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p><note>
     /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
@@ -46,7 +46,7 @@ impl CreateAutoScalingConfigurationInput {
     /// <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p></li>
     /// </ul>
     /// </note>
-    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
@@ -66,10 +66,11 @@ impl CreateAutoScalingConfigurationInput {
         self.max_size
     }
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAutoScalingConfigurationInput {
@@ -87,7 +88,7 @@ pub struct CreateAutoScalingConfigurationInputBuilder {
     pub(crate) max_concurrency: ::std::option::Option<i32>,
     pub(crate) min_size: ::std::option::Option<i32>,
     pub(crate) max_size: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAutoScalingConfigurationInputBuilder {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p><note>
@@ -124,8 +125,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_configuration_name = input;
-        self
+        self.auto_scaling_configuration_name = input; self
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p><note>
     /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
@@ -153,8 +153,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code></p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code></p>
@@ -172,8 +171,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
     /// <p>Default: <code>1</code></p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_size = input;
-        self
+        self.min_size = input; self
     }
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
@@ -190,8 +188,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     /// <p>Default: <code>25</code></p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     /// <p>Default: <code>25</code></p>
@@ -205,32 +202,34 @@ impl CreateAutoScalingConfigurationInputBuilder {
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAutoScalingConfigurationInput`](crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput {
-            auto_scaling_configuration_name: self.auto_scaling_configuration_name,
-            max_concurrency: self.max_concurrency,
-            min_size: self.min_size,
-            max_size: self.max_size,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput {
+                auto_scaling_configuration_name: self.auto_scaling_configuration_name
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                min_size: self.min_size
+                ,
+                max_size: self.max_size
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

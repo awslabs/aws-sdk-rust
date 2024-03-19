@@ -3,20 +3,19 @@
 /// <p>An object that contains a list of permissions to be applied to a list of theme IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobThemeOverridePermissions {
+pub struct AssetBundleImportJobThemeOverridePermissions  {
     /// <p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>
-    pub theme_ids: ::std::vec::Vec<::std::string::String>,
+    pub theme_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of permissions for the themes that you want to apply overrides to.</p>
     pub permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
 }
-impl AssetBundleImportJobThemeOverridePermissions {
+impl  AssetBundleImportJobThemeOverridePermissions  {
     /// <p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>
-    pub fn theme_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.theme_ids.deref()
+    pub fn theme_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.theme_ids.deref()
     }
     /// <p>A list of permissions for the themes that you want to apply overrides to.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::AssetBundleResourcePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::AssetBundleResourcePermissions> {
         self.permissions.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl AssetBundleImportJobThemeOverridePermissions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobThemeOverridePermissionsBuilder {
-    pub(crate) theme_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) theme_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
 }
 impl AssetBundleImportJobThemeOverridePermissionsBuilder {
@@ -42,17 +41,16 @@ impl AssetBundleImportJobThemeOverridePermissionsBuilder {
     /// <p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>
     pub fn theme_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.theme_ids.unwrap_or_default();
-        v.push(input.into());
-        self.theme_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.theme_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>
-    pub fn set_theme_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.theme_ids = input;
-        self
+    pub fn set_theme_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.theme_ids = input; self
     }
     /// <p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>
-    pub fn get_theme_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_theme_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.theme_ids
     }
     /// <p>A list of permissions for the themes that you want to apply overrides to.</p>
@@ -63,8 +61,7 @@ impl AssetBundleImportJobThemeOverridePermissionsBuilder {
     }
     /// <p>A list of permissions for the themes that you want to apply overrides to.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::AssetBundleResourcePermissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>A list of permissions for the themes that you want to apply overrides to.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::AssetBundleResourcePermissions> {
@@ -73,17 +70,18 @@ impl AssetBundleImportJobThemeOverridePermissionsBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobThemeOverridePermissions`](crate::types::AssetBundleImportJobThemeOverridePermissions).
     /// This method will fail if any of the following fields are not set:
     /// - [`theme_ids`](crate::types::builders::AssetBundleImportJobThemeOverridePermissionsBuilder::theme_ids)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobThemeOverridePermissions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobThemeOverridePermissions {
-            theme_ids: self.theme_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "theme_ids",
-                    "theme_ids was not specified but it is required when building AssetBundleImportJobThemeOverridePermissions",
-                )
-            })?,
-            permissions: self.permissions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobThemeOverridePermissions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobThemeOverridePermissions {
+                theme_ids: self.theme_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("theme_ids", "theme_ids was not specified but it is required when building AssetBundleImportJobThemeOverridePermissions")
+                    )?
+                ,
+                permissions: self.permissions
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Represents the response from the server that lists detailed information about the remote access session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRemoteAccessSessionOutput {
+pub struct GetRemoteAccessSessionOutput  {
     /// <p>A container that lists detailed information about the remote access session.</p>
     pub remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,
 }
-impl GetRemoteAccessSessionOutput {
+impl  GetRemoteAccessSessionOutput  {
     /// <p>A container that lists detailed information about the remote access session.</p>
-    pub fn remote_access_session(&self) -> ::std::option::Option<&crate::types::RemoteAccessSession> {
+    pub fn remote_access_session(&self) -> ::std::option::Option<& crate::types::RemoteAccessSession> {
         self.remote_access_session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRemoteAccessSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRemoteAccessSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetRemoteAccessSessionOutput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionOutput).
     pub fn builder() -> crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionOutputBuilder {
@@ -41,27 +41,28 @@ impl GetRemoteAccessSessionOutputBuilder {
     }
     /// <p>A container that lists detailed information about the remote access session.</p>
     pub fn set_remote_access_session(mut self, input: ::std::option::Option<crate::types::RemoteAccessSession>) -> Self {
-        self.remote_access_session = input;
-        self
+        self.remote_access_session = input; self
     }
     /// <p>A container that lists detailed information about the remote access session.</p>
     pub fn get_remote_access_session(&self) -> &::std::option::Option<crate::types::RemoteAccessSession> {
         &self.remote_access_session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRemoteAccessSessionOutput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionOutput).
     pub fn build(self) -> crate::operation::get_remote_access_session::GetRemoteAccessSessionOutput {
         crate::operation::get_remote_access_session::GetRemoteAccessSessionOutput {
-            remote_access_session: self.remote_access_session,
+            remote_access_session: self.remote_access_session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+
